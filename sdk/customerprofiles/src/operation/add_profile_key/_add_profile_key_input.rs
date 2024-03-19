@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddProfileKeyInput {
+pub struct AddProfileKeyInput  {
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key values.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl AddProfileKeyInput {
+impl  AddProfileKeyInput  {
     /// <p>The unique identifier of a customer profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>A list of key values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl AddProfileKeyInput {
 pub struct AddProfileKeyInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl AddProfileKeyInputBuilder {
@@ -57,8 +58,7 @@ impl AddProfileKeyInputBuilder {
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl AddProfileKeyInputBuilder {
     }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl AddProfileKeyInputBuilder {
     /// <p>A list of key values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>A list of key values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The unique name of the domain.</p>
@@ -107,22 +105,26 @@ impl AddProfileKeyInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`AddProfileKeyInput`](crate::operation::add_profile_key::AddProfileKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_profile_key::AddProfileKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::add_profile_key::AddProfileKeyInput {
-            profile_id: self.profile_id,
-            key_name: self.key_name,
-            values: self.values,
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_profile_key::AddProfileKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_profile_key::AddProfileKeyInput {
+                profile_id: self.profile_id
+                ,
+                key_name: self.key_name
+                ,
+                values: self.values
+                ,
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

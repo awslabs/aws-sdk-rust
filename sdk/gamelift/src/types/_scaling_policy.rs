@@ -3,7 +3,7 @@
 /// <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalingPolicy {
+pub struct ScalingPolicy  {
     /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
@@ -83,19 +83,19 @@ pub struct ScalingPolicy {
     /// <p>The fleet location.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl ScalingPolicy {
+impl  ScalingPolicy  {
     /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
@@ -115,7 +115,7 @@ impl ScalingPolicy {
     /// <li>
     /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ScalingStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ScalingStatusType> {
         self.status.as_ref()
     }
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
@@ -131,11 +131,11 @@ impl ScalingPolicy {
     /// <li>
     /// <p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p></li>
     /// </ul>
-    pub fn scaling_adjustment_type(&self) -> ::std::option::Option<&crate::types::ScalingAdjustmentType> {
+    pub fn scaling_adjustment_type(&self) -> ::std::option::Option<& crate::types::ScalingAdjustmentType> {
         self.scaling_adjustment_type.as_ref()
     }
     /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperatorType> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperatorType> {
         self.comparison_operator.as_ref()
     }
     /// <p>Metric value used to trigger a scaling event.</p>
@@ -171,23 +171,23 @@ impl ScalingPolicy {
     /// <li>
     /// <p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::MetricName> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::MetricName> {
         self.metric_name.as_ref()
     }
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
+    pub fn policy_type(&self) -> ::std::option::Option<& crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
     /// <p>An object that contains settings for a target-based scaling policy.</p>
-    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::TargetConfiguration> {
+    pub fn target_configuration(&self) -> ::std::option::Option<& crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
     /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    pub fn update_status(&self) -> ::std::option::Option<&crate::types::LocationUpdateStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<& crate::types::LocationUpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>The fleet location.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
@@ -225,8 +225,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet that is associated with this scaling policy.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +242,7 @@ impl ScalingPolicyBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -259,8 +257,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,8 +302,7 @@ impl ScalingPolicyBuilder {
     /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ScalingStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the policy status does not change.</p>
     /// <ul>
@@ -335,8 +331,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
     pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scaling_adjustment = input;
-        self
+        self.scaling_adjustment = input; self
     }
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
     pub fn get_scaling_adjustment(&self) -> &::std::option::Option<i32> {
@@ -365,8 +360,7 @@ impl ScalingPolicyBuilder {
     /// <p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down.</p></li>
     /// </ul>
     pub fn set_scaling_adjustment_type(mut self, input: ::std::option::Option<crate::types::ScalingAdjustmentType>) -> Self {
-        self.scaling_adjustment_type = input;
-        self
+        self.scaling_adjustment_type = input; self
     }
     /// <p>The type of adjustment to make to a fleet's instance count.</p>
     /// <ul>
@@ -387,8 +381,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperatorType>) -> Self {
-        self.comparison_operator = input;
-        self
+        self.comparison_operator = input; self
     }
     /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperatorType> {
@@ -401,8 +394,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>Metric value used to trigger a scaling event.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>Metric value used to trigger a scaling event.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<f64> {
@@ -415,8 +407,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evaluation_periods = input;
-        self
+        self.evaluation_periods = input; self
     }
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub fn get_evaluation_periods(&self) -> &::std::option::Option<i32> {
@@ -477,8 +468,7 @@ impl ScalingPolicyBuilder {
     /// <p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
     /// <ul>
@@ -515,8 +505,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
@@ -529,8 +518,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>An object that contains settings for a target-based scaling policy.</p>
     pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::TargetConfiguration>) -> Self {
-        self.target_configuration = input;
-        self
+        self.target_configuration = input; self
     }
     /// <p>An object that contains settings for a target-based scaling policy.</p>
     pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::TargetConfiguration> {
@@ -543,8 +531,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::LocationUpdateStatus>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>The current status of the fleet's scaling policies in a requested fleet location. The status <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::LocationUpdateStatus> {
@@ -557,8 +544,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The fleet location.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fleet location.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -567,20 +553,35 @@ impl ScalingPolicyBuilder {
     /// Consumes the builder and constructs a [`ScalingPolicy`](crate::types::ScalingPolicy).
     pub fn build(self) -> crate::types::ScalingPolicy {
         crate::types::ScalingPolicy {
-            fleet_id: self.fleet_id,
-            fleet_arn: self.fleet_arn,
-            name: self.name,
-            status: self.status,
-            scaling_adjustment: self.scaling_adjustment,
-            scaling_adjustment_type: self.scaling_adjustment_type,
-            comparison_operator: self.comparison_operator,
-            threshold: self.threshold,
-            evaluation_periods: self.evaluation_periods,
-            metric_name: self.metric_name,
-            policy_type: self.policy_type,
-            target_configuration: self.target_configuration,
-            update_status: self.update_status,
-            location: self.location,
+            fleet_id: self.fleet_id
+            ,
+            fleet_arn: self.fleet_arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            scaling_adjustment: self.scaling_adjustment
+            ,
+            scaling_adjustment_type: self.scaling_adjustment_type
+            ,
+            comparison_operator: self.comparison_operator
+            ,
+            threshold: self.threshold
+            ,
+            evaluation_periods: self.evaluation_periods
+            ,
+            metric_name: self.metric_name
+            ,
+            policy_type: self.policy_type
+            ,
+            target_configuration: self.target_configuration
+            ,
+            update_status: self.update_status
+            ,
+            location: self.location
+            ,
         }
     }
 }
+

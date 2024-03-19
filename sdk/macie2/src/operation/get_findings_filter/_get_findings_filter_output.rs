@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingsFilterOutput {
+pub struct GetFindingsFilterOutput  {
     /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub action: ::std::option::Option<crate::types::FindingsFilterAction>,
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
@@ -18,32 +18,32 @@ pub struct GetFindingsFilterOutput {
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     pub position: ::std::option::Option<i32>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetFindingsFilterOutput {
+impl  GetFindingsFilterOutput  {
     /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::FindingsFilterAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::FindingsFilterAction> {
         self.action.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The custom description of the filter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The criteria that's used to filter findings.</p>
-    pub fn finding_criteria(&self) -> ::std::option::Option<&crate::types::FindingCriteria> {
+    pub fn finding_criteria(&self) -> ::std::option::Option<& crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
     /// <p>The unique identifier for the filter.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The custom name of the filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
@@ -51,15 +51,15 @@ impl GetFindingsFilterOutput {
         self.position
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFindingsFilterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFindingsFilterOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsFilterOutput`](crate::operation::get_findings_filter::GetFindingsFilterOutput).
     pub fn builder() -> crate::operation::get_findings_filter::builders::GetFindingsFilterOutputBuilder {
@@ -78,7 +78,7 @@ pub struct GetFindingsFilterOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFindingsFilterOutputBuilder {
@@ -89,8 +89,7 @@ impl GetFindingsFilterOutputBuilder {
     }
     /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingsFilterAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::FindingsFilterAction> {
@@ -103,8 +102,7 @@ impl GetFindingsFilterOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl GetFindingsFilterOutputBuilder {
     }
     /// <p>The custom description of the filter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The custom description of the filter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl GetFindingsFilterOutputBuilder {
     }
     /// <p>The criteria that's used to filter findings.</p>
     pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
-        self.finding_criteria = input;
-        self
+        self.finding_criteria = input; self
     }
     /// <p>The criteria that's used to filter findings.</p>
     pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
@@ -145,8 +141,7 @@ impl GetFindingsFilterOutputBuilder {
     }
     /// <p>The unique identifier for the filter.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the filter.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl GetFindingsFilterOutputBuilder {
     }
     /// <p>The custom name of the filter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The custom name of the filter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl GetFindingsFilterOutputBuilder {
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     pub fn set_position(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     pub fn get_position(&self) -> &::std::option::Option<i32> {
@@ -187,40 +180,48 @@ impl GetFindingsFilterOutputBuilder {
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFindingsFilterOutput`](crate::operation::get_findings_filter::GetFindingsFilterOutput).
     pub fn build(self) -> crate::operation::get_findings_filter::GetFindingsFilterOutput {
         crate::operation::get_findings_filter::GetFindingsFilterOutput {
-            action: self.action,
-            arn: self.arn,
-            description: self.description,
-            finding_criteria: self.finding_criteria,
-            id: self.id,
-            name: self.name,
-            position: self.position,
-            tags: self.tags,
+            action: self.action
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            finding_criteria: self.finding_criteria
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            position: self.position
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

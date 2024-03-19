@@ -3,19 +3,19 @@
 /// <p>Slate VOD source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlateSource {
+pub struct SlateSource  {
     /// <p>The name of the source location where the slate VOD source is stored.</p>
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
-impl SlateSource {
+impl  SlateSource  {
     /// <p>The name of the source location where the slate VOD source is stored.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
     /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
-    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SlateSourceBuilder {
     }
     /// <p>The name of the source location where the slate VOD source is stored.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location where the slate VOD source is stored.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SlateSourceBuilder {
     }
     /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
     pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vod_source_name = input;
-        self
+        self.vod_source_name = input; self
     }
     /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
     pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SlateSourceBuilder {
     /// Consumes the builder and constructs a [`SlateSource`](crate::types::SlateSource).
     pub fn build(self) -> crate::types::SlateSource {
         crate::types::SlateSource {
-            source_location_name: self.source_location_name,
-            vod_source_name: self.vod_source_name,
+            source_location_name: self.source_location_name
+            ,
+            vod_source_name: self.vod_source_name
+            ,
         }
     }
 }
+

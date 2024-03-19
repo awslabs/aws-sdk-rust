@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetCapacityInput {
+pub struct DescribeFleetCapacityInput  {
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
-    pub fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub fleet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFleetCapacityInput {
+impl  DescribeFleetCapacityInput  {
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_ids.is_none()`.
-    pub fn fleet_ids(&self) -> &[::std::string::String] {
-        self.fleet_ids.as_deref().unwrap_or_default()
+    pub fn fleet_ids(&self) -> & [::std::string::String] {
+        self.fleet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl DescribeFleetCapacityInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetCapacityInputBuilder {
-    pub(crate) fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) fleet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl DescribeFleetCapacityInputBuilder {
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
     pub fn fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fleet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.fleet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.fleet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
-    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.fleet_ids = input;
-        self
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.fleet_ids = input; self
     }
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
-    pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.fleet_ids
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
@@ -69,8 +69,7 @@ impl DescribeFleetCapacityInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -83,22 +82,24 @@ impl DescribeFleetCapacityInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeFleetCapacityInput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput {
-            fleet_ids: self.fleet_ids,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput {
+                fleet_ids: self.fleet_ids
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

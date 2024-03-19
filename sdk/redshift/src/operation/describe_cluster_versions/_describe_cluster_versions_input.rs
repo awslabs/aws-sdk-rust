@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClusterVersionsInput {
+pub struct DescribeClusterVersionsInput  {
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code></p>
     pub cluster_version: ::std::option::Option<::std::string::String>,
@@ -25,10 +25,10 @@ pub struct DescribeClusterVersionsInput {
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeClusterVersionsInput {
+impl  DescribeClusterVersionsInput  {
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code></p>
-    pub fn cluster_version(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_version(&self) -> ::std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
@@ -41,7 +41,7 @@ impl DescribeClusterVersionsInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    pub fn cluster_parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.cluster_parameter_group_family.as_deref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -51,7 +51,7 @@ impl DescribeClusterVersionsInput {
         self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl DescribeClusterVersionsInputBuilder {
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code></p>
     pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_version = input;
-        self
+        self.cluster_version = input; self
     }
     /// <p>The specific cluster version to return.</p>
     /// <p>Example: <code>1.0</code></p>
@@ -114,8 +113,7 @@ impl DescribeClusterVersionsInputBuilder {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_cluster_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_parameter_group_family = input;
-        self
+        self.cluster_parameter_group_family = input; self
     }
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
@@ -141,8 +139,7 @@ impl DescribeClusterVersionsInputBuilder {
     /// <p>Default: <code>100</code></p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     /// <p>Default: <code>100</code></p>
@@ -157,25 +154,26 @@ impl DescribeClusterVersionsInputBuilder {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeClusterVersionsInput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cluster_versions::DescribeClusterVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_cluster_versions::DescribeClusterVersionsInput {
-            cluster_version: self.cluster_version,
-            cluster_parameter_group_family: self.cluster_parameter_group_family,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_cluster_versions::DescribeClusterVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsInput {
+                cluster_version: self.cluster_version
+                ,
+                cluster_parameter_group_family: self.cluster_parameter_group_family
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

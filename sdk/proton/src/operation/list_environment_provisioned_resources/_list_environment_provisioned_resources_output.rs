@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnvironmentProvisionedResourcesOutput {
+pub struct ListEnvironmentProvisionedResourcesOutput  {
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment provisioned resources.</p>
-    pub provisioned_resources: ::std::vec::Vec<crate::types::ProvisionedResource>,
+    pub provisioned_resources: ::std::vec::Vec::<crate::types::ProvisionedResource>,
     _request_id: Option<String>,
 }
-impl ListEnvironmentProvisionedResourcesOutput {
+impl  ListEnvironmentProvisionedResourcesOutput  {
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of environment provisioned resources.</p>
-    pub fn provisioned_resources(&self) -> &[crate::types::ProvisionedResource] {
-        use std::ops::Deref;
-        self.provisioned_resources.deref()
+    pub fn provisioned_resources(&self) -> & [crate::types::ProvisionedResource] {
+        use std::ops::Deref; self.provisioned_resources.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEnvironmentProvisionedResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEnvironmentProvisionedResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentProvisionedResourcesOutput`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput).
     pub fn builder() -> crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListEnvironmentProvisionedResourcesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentProvisionedResourcesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,
+    pub(crate) provisioned_resources: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedResource>>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentProvisionedResourcesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListEnvironmentProvisionedResourcesOutputBuilder {
     }
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,48 +60,43 @@ impl ListEnvironmentProvisionedResourcesOutputBuilder {
     /// <p>An array of environment provisioned resources.</p>
     pub fn provisioned_resources(mut self, input: crate::types::ProvisionedResource) -> Self {
         let mut v = self.provisioned_resources.unwrap_or_default();
-        v.push(input);
-        self.provisioned_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioned_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of environment provisioned resources.</p>
-    pub fn set_provisioned_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>) -> Self {
-        self.provisioned_resources = input;
-        self
+    pub fn set_provisioned_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedResource>>) -> Self {
+        self.provisioned_resources = input; self
     }
     /// <p>An array of environment provisioned resources.</p>
-    pub fn get_provisioned_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>> {
+    pub fn get_provisioned_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedResource>> {
         &self.provisioned_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEnvironmentProvisionedResourcesOutput`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`provisioned_resources`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesOutputBuilder::provisioned_resources)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput {
-                next_token: self.next_token,
-                provisioned_resources: self.provisioned_resources.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "provisioned_resources",
-                        "provisioned_resources was not specified but it is required when building ListEnvironmentProvisionedResourcesOutput",
-                    )
-                })?,
+                next_token: self.next_token
+                ,
+                provisioned_resources: self.provisioned_resources
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provisioned_resources", "provisioned_resources was not specified but it is required when building ListEnvironmentProvisionedResourcesOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

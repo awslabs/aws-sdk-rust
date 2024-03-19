@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopLaunchOutput {
+pub struct StopLaunchOutput  {
     /// <p>The date and time that the launch stopped.</p>
     pub ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl StopLaunchOutput {
+impl  StopLaunchOutput  {
     /// <p>The date and time that the launch stopped.</p>
-    pub fn ended_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ended_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ended_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopLaunchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopLaunchOutput {
     /// Creates a new builder-style object to manufacture [`StopLaunchOutput`](crate::operation::stop_launch::StopLaunchOutput).
     pub fn builder() -> crate::operation::stop_launch::builders::StopLaunchOutputBuilder {
@@ -40,27 +40,28 @@ impl StopLaunchOutputBuilder {
     }
     /// <p>The date and time that the launch stopped.</p>
     pub fn set_ended_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ended_time = input;
-        self
+        self.ended_time = input; self
     }
     /// <p>The date and time that the launch stopped.</p>
     pub fn get_ended_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopLaunchOutput`](crate::operation::stop_launch::StopLaunchOutput).
     pub fn build(self) -> crate::operation::stop_launch::StopLaunchOutput {
         crate::operation::stop_launch::StopLaunchOutput {
-            ended_time: self.ended_time,
+            ended_time: self.ended_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

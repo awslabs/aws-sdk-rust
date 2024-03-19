@@ -4,22 +4,23 @@
 /// <p>A third-party application's metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Application {
+pub struct Application  {
     /// <p>Namespace of the application that you want to give access to.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
-    pub application_permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_permissions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Application {
+impl  Application  {
     /// <p>Namespace of the application that you want to give access to.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_permissions.is_none()`.
-    pub fn application_permissions(&self) -> &[::std::string::String] {
-        self.application_permissions.as_deref().unwrap_or_default()
+    pub fn application_permissions(&self) -> & [::std::string::String] {
+        self.application_permissions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Application {
@@ -34,7 +35,7 @@ impl Application {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) application_permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_permissions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ApplicationBuilder {
     /// <p>Namespace of the application that you want to give access to.</p>
@@ -44,8 +45,7 @@ impl ApplicationBuilder {
     }
     /// <p>Namespace of the application that you want to give access to.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>Namespace of the application that you want to give access to.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,24 +58,26 @@ impl ApplicationBuilder {
     /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
     pub fn application_permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_permissions.unwrap_or_default();
-        v.push(input.into());
-        self.application_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.application_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
-    pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_permissions = input;
-        self
+    pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.application_permissions = input; self
     }
     /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
-    pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.application_permissions
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
-            namespace: self.namespace,
-            application_permissions: self.application_permissions,
+            namespace: self.namespace
+            ,
+            application_permissions: self.application_permissions
+            ,
         }
     }
 }
+

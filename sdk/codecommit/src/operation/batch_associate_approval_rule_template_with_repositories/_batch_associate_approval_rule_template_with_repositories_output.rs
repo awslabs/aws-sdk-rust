@@ -2,33 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesOutput  {
     /// <p>A list of names of the repositories that have been associated with the template.</p>
-    pub associated_repository_names: ::std::vec::Vec<::std::string::String>,
+    pub associated_repository_names: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
     _request_id: Option<String>,
 }
-impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+impl  BatchAssociateApprovalRuleTemplateWithRepositoriesOutput  {
     /// <p>A list of names of the repositories that have been associated with the template.</p>
-    pub fn associated_repository_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.associated_repository_names.deref()
+    pub fn associated_repository_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.associated_repository_names.deref()
     }
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
-    pub fn errors(&self) -> &[crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput).
-    pub fn builder() -> crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
         crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder::default()
     }
 }
@@ -37,8 +35,8 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
-    pub(crate) associated_repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>>,
+    pub(crate) associated_repository_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
@@ -49,17 +47,16 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
     /// <p>A list of names of the repositories that have been associated with the template.</p>
     pub fn associated_repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_repository_names.unwrap_or_default();
-        v.push(input.into());
-        self.associated_repository_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_repository_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names of the repositories that have been associated with the template.</p>
-    pub fn set_associated_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.associated_repository_names = input;
-        self
+    pub fn set_associated_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.associated_repository_names = input; self
     }
     /// <p>A list of names of the repositories that have been associated with the template.</p>
-    pub fn get_associated_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_repository_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.associated_repository_names
     }
     /// Appends an item to `errors`.
@@ -69,41 +66,32 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
     pub fn errors(mut self, input: crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`associated_repository_names`](crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder::associated_repository_names)
     /// - [`errors`](crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
                 associated_repository_names: self.associated_repository_names
@@ -121,3 +109,4 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
         )
     }
 }
+

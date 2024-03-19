@@ -3,20 +3,21 @@
 /// <p>The input for the <code>GetSMSAttributes</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSmsAttributesInput {
+pub struct GetSmsAttributesInput  {
     /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
     /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetSmsAttributesInput {
+impl  GetSmsAttributesInput  {
     /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
     /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[::std::string::String] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [::std::string::String] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetSmsAttributesInput {
@@ -30,7 +31,7 @@ impl GetSmsAttributesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSmsAttributesInputBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetSmsAttributesInputBuilder {
     /// Appends an item to `attributes`.
@@ -42,27 +43,30 @@ impl GetSmsAttributesInputBuilder {
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input.into());
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
     /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
     /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`GetSmsAttributesInput`](crate::operation::get_sms_attributes::GetSmsAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sms_attributes::GetSmsAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_sms_attributes::GetSmsAttributesInput { attributes: self.attributes })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sms_attributes::GetSmsAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sms_attributes::GetSmsAttributesInput {
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

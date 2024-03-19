@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inboundconnectionstatuscode = unimplemented!();
 /// match inboundconnectionstatuscode {
@@ -36,16 +36,14 @@
 /// Specifically, when `inboundconnectionstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InboundConnectionStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum InboundConnectionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -65,88 +63,80 @@ pub enum InboundConnectionStatusCode {
     Rejecting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for InboundConnectionStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => InboundConnectionStatusCode::Active,
-            "APPROVED" => InboundConnectionStatusCode::Approved,
-            "DELETED" => InboundConnectionStatusCode::Deleted,
-            "DELETING" => InboundConnectionStatusCode::Deleting,
-            "PENDING_ACCEPTANCE" => InboundConnectionStatusCode::PendingAcceptance,
-            "PROVISIONING" => InboundConnectionStatusCode::Provisioning,
-            "REJECTED" => InboundConnectionStatusCode::Rejected,
-            "REJECTING" => InboundConnectionStatusCode::Rejecting,
-            other => InboundConnectionStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACTIVE" => InboundConnectionStatusCode::Active,
+"APPROVED" => InboundConnectionStatusCode::Approved,
+"DELETED" => InboundConnectionStatusCode::Deleted,
+"DELETING" => InboundConnectionStatusCode::Deleting,
+"PENDING_ACCEPTANCE" => InboundConnectionStatusCode::PendingAcceptance,
+"PROVISIONING" => InboundConnectionStatusCode::Provisioning,
+"REJECTED" => InboundConnectionStatusCode::Rejected,
+"REJECTING" => InboundConnectionStatusCode::Rejecting,
+other => InboundConnectionStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for InboundConnectionStatusCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(InboundConnectionStatusCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(InboundConnectionStatusCode::from(s))
+                    }
+                }
 impl InboundConnectionStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InboundConnectionStatusCode::Active => "ACTIVE",
-            InboundConnectionStatusCode::Approved => "APPROVED",
-            InboundConnectionStatusCode::Deleted => "DELETED",
-            InboundConnectionStatusCode::Deleting => "DELETING",
-            InboundConnectionStatusCode::PendingAcceptance => "PENDING_ACCEPTANCE",
-            InboundConnectionStatusCode::Provisioning => "PROVISIONING",
-            InboundConnectionStatusCode::Rejected => "REJECTED",
-            InboundConnectionStatusCode::Rejecting => "REJECTING",
-            InboundConnectionStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "APPROVED",
-            "DELETED",
-            "DELETING",
-            "PENDING_ACCEPTANCE",
-            "PROVISIONING",
-            "REJECTED",
-            "REJECTING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InboundConnectionStatusCode::Active => "ACTIVE",
+    InboundConnectionStatusCode::Approved => "APPROVED",
+    InboundConnectionStatusCode::Deleted => "DELETED",
+    InboundConnectionStatusCode::Deleting => "DELETING",
+    InboundConnectionStatusCode::PendingAcceptance => "PENDING_ACCEPTANCE",
+    InboundConnectionStatusCode::Provisioning => "PROVISIONING",
+    InboundConnectionStatusCode::Rejected => "REJECTED",
+    InboundConnectionStatusCode::Rejecting => "REJECTING",
+    InboundConnectionStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "APPROVED", "DELETED", "DELETING", "PENDING_ACCEPTANCE", "PROVISIONING", "REJECTED", "REJECTING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for InboundConnectionStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl InboundConnectionStatusCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for InboundConnectionStatusCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            InboundConnectionStatusCode::Active => write!(f, "ACTIVE"),
-            InboundConnectionStatusCode::Approved => write!(f, "APPROVED"),
-            InboundConnectionStatusCode::Deleted => write!(f, "DELETED"),
-            InboundConnectionStatusCode::Deleting => write!(f, "DELETING"),
-            InboundConnectionStatusCode::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
-            InboundConnectionStatusCode::Provisioning => write!(f, "PROVISIONING"),
-            InboundConnectionStatusCode::Rejected => write!(f, "REJECTED"),
-            InboundConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
-            InboundConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                InboundConnectionStatusCode::Active => write!(f, "ACTIVE"),
+InboundConnectionStatusCode::Approved => write!(f, "APPROVED"),
+InboundConnectionStatusCode::Deleted => write!(f, "DELETED"),
+InboundConnectionStatusCode::Deleting => write!(f, "DELETING"),
+InboundConnectionStatusCode::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
+InboundConnectionStatusCode::Provisioning => write!(f, "PROVISIONING"),
+InboundConnectionStatusCode::Rejected => write!(f, "REJECTED"),
+InboundConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
+InboundConnectionStatusCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

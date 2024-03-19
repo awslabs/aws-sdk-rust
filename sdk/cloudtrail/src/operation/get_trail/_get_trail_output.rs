@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrailOutput {
+pub struct GetTrailOutput  {
     /// <p>The settings for a trail.</p>
     pub trail: ::std::option::Option<crate::types::Trail>,
     _request_id: Option<String>,
 }
-impl GetTrailOutput {
+impl  GetTrailOutput  {
     /// <p>The settings for a trail.</p>
-    pub fn trail(&self) -> ::std::option::Option<&crate::types::Trail> {
+    pub fn trail(&self) -> ::std::option::Option<& crate::types::Trail> {
         self.trail.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTrailOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTrailOutput {
     /// Creates a new builder-style object to manufacture [`GetTrailOutput`](crate::operation::get_trail::GetTrailOutput).
     pub fn builder() -> crate::operation::get_trail::builders::GetTrailOutputBuilder {
@@ -40,27 +40,28 @@ impl GetTrailOutputBuilder {
     }
     /// <p>The settings for a trail.</p>
     pub fn set_trail(mut self, input: ::std::option::Option<crate::types::Trail>) -> Self {
-        self.trail = input;
-        self
+        self.trail = input; self
     }
     /// <p>The settings for a trail.</p>
     pub fn get_trail(&self) -> &::std::option::Option<crate::types::Trail> {
         &self.trail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTrailOutput`](crate::operation::get_trail::GetTrailOutput).
     pub fn build(self) -> crate::operation::get_trail::GetTrailOutput {
         crate::operation::get_trail::GetTrailOutput {
-            trail: self.trail,
+            trail: self.trail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

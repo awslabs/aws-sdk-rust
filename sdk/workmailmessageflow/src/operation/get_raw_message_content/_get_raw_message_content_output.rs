@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetRawMessageContentOutput {
+pub struct GetRawMessageContentOutput  {
     /// <p>The raw content of the email message, in MIME format.</p>
     pub message_content: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
-impl GetRawMessageContentOutput {
+impl  GetRawMessageContentOutput  {
     /// <p>The raw content of the email message, in MIME format.</p>
-    pub fn message_content(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn message_content(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.message_content
     }
 }
 impl ::aws_types::request_id::RequestId for GetRawMessageContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRawMessageContentOutput {
     /// Creates a new builder-style object to manufacture [`GetRawMessageContentOutput`](crate::operation::get_raw_message_content::GetRawMessageContentOutput).
     pub fn builder() -> crate::operation::get_raw_message_content::builders::GetRawMessageContentOutputBuilder {
@@ -41,27 +41,29 @@ impl GetRawMessageContentOutputBuilder {
     }
     /// <p>The raw content of the email message, in MIME format.</p>
     pub fn set_message_content(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.message_content = input;
-        self
+        self.message_content = input; self
     }
     /// <p>The raw content of the email message, in MIME format.</p>
     pub fn get_message_content(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.message_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRawMessageContentOutput`](crate::operation::get_raw_message_content::GetRawMessageContentOutput).
     pub fn build(self) -> crate::operation::get_raw_message_content::GetRawMessageContentOutput {
         crate::operation::get_raw_message_content::GetRawMessageContentOutput {
-            message_content: self.message_content.unwrap_or_default(),
+            message_content: self.message_content
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

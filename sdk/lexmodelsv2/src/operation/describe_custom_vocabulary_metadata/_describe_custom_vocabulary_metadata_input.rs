@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCustomVocabularyMetadataInput {
+pub struct DescribeCustomVocabularyMetadataInput  {
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot version of the bot to return metadata for.</p>
@@ -10,17 +10,17 @@ pub struct DescribeCustomVocabularyMetadataInput {
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCustomVocabularyMetadataInput {
+impl  DescribeCustomVocabularyMetadataInput  {
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The bot version of the bot to return metadata for.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
     }
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
     }
     /// <p>The bot version of the bot to return metadata for.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The bot version of the bot to return metadata for.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl DescribeCustomVocabularyMetadataInputBuilder {
     }
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`DescribeCustomVocabularyMetadataInput`](crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-            },
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+            }
         )
     }
 }
+

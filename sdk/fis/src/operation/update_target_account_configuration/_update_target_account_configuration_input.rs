@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTargetAccountConfigurationInput {
+pub struct UpdateTargetAccountConfigurationInput  {
     /// <p>The ID of the experiment template.</p>
     pub experiment_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the target account.</p>
@@ -12,21 +12,21 @@ pub struct UpdateTargetAccountConfigurationInput {
     /// <p>The description of the target account.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateTargetAccountConfigurationInput {
+impl  UpdateTargetAccountConfigurationInput  {
     /// <p>The ID of the experiment template.</p>
-    pub fn experiment_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_template_id(&self) -> ::std::option::Option<& str> {
         self.experiment_template_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The description of the target account.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateTargetAccountConfigurationInputBuilder {
     }
     /// <p>The ID of the experiment template.</p>
     pub fn set_experiment_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_template_id = input;
-        self
+        self.experiment_template_id = input; self
     }
     /// <p>The ID of the experiment template.</p>
     pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateTargetAccountConfigurationInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateTargetAccountConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,27 +95,26 @@ impl UpdateTargetAccountConfigurationInputBuilder {
     }
     /// <p>The description of the target account.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the target account.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateTargetAccountConfigurationInput`](crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationInput {
-                experiment_template_id: self.experiment_template_id,
-                account_id: self.account_id,
-                role_arn: self.role_arn,
-                description: self.description,
-            },
+                experiment_template_id: self.experiment_template_id
+                ,
+                account_id: self.account_id
+                ,
+                role_arn: self.role_arn
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

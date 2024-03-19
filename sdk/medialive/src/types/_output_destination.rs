@@ -3,36 +3,38 @@
 /// Placeholder documentation for OutputDestination
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputDestination {
+pub struct OutputDestination  {
     /// User-specified id. This is used in an output group or an output.
     pub id: ::std::option::Option<::std::string::String>,
     /// Destination settings for a MediaPackage output; one destination for both encoders.
-    pub media_package_settings: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageOutputDestinationSettings>>,
+    pub media_package_settings: ::std::option::Option<::std::vec::Vec::<crate::types::MediaPackageOutputDestinationSettings>>,
     /// Destination settings for a Multiplex output; one destination for both encoders.
     pub multiplex_settings: ::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings>,
     /// Destination settings for a standard output; one destination for each redundant encoder.
-    pub settings: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>>,
+    pub settings: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDestinationSettings>>,
 }
-impl OutputDestination {
+impl  OutputDestination  {
     /// User-specified id. This is used in an output group or an output.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Destination settings for a MediaPackage output; one destination for both encoders.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_package_settings.is_none()`.
-    pub fn media_package_settings(&self) -> &[crate::types::MediaPackageOutputDestinationSettings] {
-        self.media_package_settings.as_deref().unwrap_or_default()
+    pub fn media_package_settings(&self) -> & [crate::types::MediaPackageOutputDestinationSettings] {
+        self.media_package_settings.as_deref()
+        .unwrap_or_default()
     }
     /// Destination settings for a Multiplex output; one destination for both encoders.
-    pub fn multiplex_settings(&self) -> ::std::option::Option<&crate::types::MultiplexProgramChannelDestinationSettings> {
+    pub fn multiplex_settings(&self) -> ::std::option::Option<& crate::types::MultiplexProgramChannelDestinationSettings> {
         self.multiplex_settings.as_ref()
     }
     /// Destination settings for a standard output; one destination for each redundant encoder.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
-    pub fn settings(&self) -> &[crate::types::OutputDestinationSettings] {
-        self.settings.as_deref().unwrap_or_default()
+    pub fn settings(&self) -> & [crate::types::OutputDestinationSettings] {
+        self.settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OutputDestination {
@@ -47,9 +49,9 @@ impl OutputDestination {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputDestinationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) media_package_settings: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageOutputDestinationSettings>>,
+    pub(crate) media_package_settings: ::std::option::Option<::std::vec::Vec::<crate::types::MediaPackageOutputDestinationSettings>>,
     pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings>,
-    pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>>,
+    pub(crate) settings: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDestinationSettings>>,
 }
 impl OutputDestinationBuilder {
     /// User-specified id. This is used in an output group or an output.
@@ -59,8 +61,7 @@ impl OutputDestinationBuilder {
     }
     /// User-specified id. This is used in an output group or an output.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// User-specified id. This is used in an output group or an output.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,20 +74,16 @@ impl OutputDestinationBuilder {
     /// Destination settings for a MediaPackage output; one destination for both encoders.
     pub fn media_package_settings(mut self, input: crate::types::MediaPackageOutputDestinationSettings) -> Self {
         let mut v = self.media_package_settings.unwrap_or_default();
-        v.push(input);
-        self.media_package_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.media_package_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// Destination settings for a MediaPackage output; one destination for both encoders.
-    pub fn set_media_package_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageOutputDestinationSettings>>,
-    ) -> Self {
-        self.media_package_settings = input;
-        self
+    pub fn set_media_package_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaPackageOutputDestinationSettings>>) -> Self {
+        self.media_package_settings = input; self
     }
     /// Destination settings for a MediaPackage output; one destination for both encoders.
-    pub fn get_media_package_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaPackageOutputDestinationSettings>> {
+    pub fn get_media_package_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaPackageOutputDestinationSettings>> {
         &self.media_package_settings
     }
     /// Destination settings for a Multiplex output; one destination for both encoders.
@@ -96,8 +93,7 @@ impl OutputDestinationBuilder {
     }
     /// Destination settings for a Multiplex output; one destination for both encoders.
     pub fn set_multiplex_settings(mut self, input: ::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings>) -> Self {
-        self.multiplex_settings = input;
-        self
+        self.multiplex_settings = input; self
     }
     /// Destination settings for a Multiplex output; one destination for both encoders.
     pub fn get_multiplex_settings(&self) -> &::std::option::Option<crate::types::MultiplexProgramChannelDestinationSettings> {
@@ -110,26 +106,30 @@ impl OutputDestinationBuilder {
     /// Destination settings for a standard output; one destination for each redundant encoder.
     pub fn settings(mut self, input: crate::types::OutputDestinationSettings) -> Self {
         let mut v = self.settings.unwrap_or_default();
-        v.push(input);
-        self.settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.settings = ::std::option::Option::Some(v);
+                        self
     }
     /// Destination settings for a standard output; one destination for each redundant encoder.
-    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>>) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDestinationSettings>>) -> Self {
+        self.settings = input; self
     }
     /// Destination settings for a standard output; one destination for each redundant encoder.
-    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestinationSettings>> {
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputDestinationSettings>> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`OutputDestination`](crate::types::OutputDestination).
     pub fn build(self) -> crate::types::OutputDestination {
         crate::types::OutputDestination {
-            id: self.id,
-            media_package_settings: self.media_package_settings,
-            multiplex_settings: self.multiplex_settings,
-            settings: self.settings,
+            id: self.id
+            ,
+            media_package_settings: self.media_package_settings
+            ,
+            multiplex_settings: self.multiplex_settings
+            ,
+            settings: self.settings
+            ,
         }
     }
 }
+

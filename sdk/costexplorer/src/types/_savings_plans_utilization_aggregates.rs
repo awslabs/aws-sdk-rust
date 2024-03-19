@@ -3,7 +3,7 @@
 /// <p>The aggregated utilization metrics for your Savings Plans usage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlansUtilizationAggregates {
+pub struct SavingsPlansUtilizationAggregates  {
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub utilization: ::std::option::Option<crate::types::SavingsPlansUtilization>,
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
@@ -11,17 +11,17 @@ pub struct SavingsPlansUtilizationAggregates {
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
     pub amortized_commitment: ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>,
 }
-impl SavingsPlansUtilizationAggregates {
+impl  SavingsPlansUtilizationAggregates  {
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
-    pub fn utilization(&self) -> ::std::option::Option<&crate::types::SavingsPlansUtilization> {
+    pub fn utilization(&self) -> ::std::option::Option<& crate::types::SavingsPlansUtilization> {
         self.utilization.as_ref()
     }
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
-    pub fn savings(&self) -> ::std::option::Option<&crate::types::SavingsPlansSavings> {
+    pub fn savings(&self) -> ::std::option::Option<& crate::types::SavingsPlansSavings> {
         self.savings.as_ref()
     }
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
-    pub fn amortized_commitment(&self) -> ::std::option::Option<&crate::types::SavingsPlansAmortizedCommitment> {
+    pub fn amortized_commitment(&self) -> ::std::option::Option<& crate::types::SavingsPlansAmortizedCommitment> {
         self.amortized_commitment.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl SavingsPlansUtilizationAggregatesBuilder {
     }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub fn set_utilization(mut self, input: ::std::option::Option<crate::types::SavingsPlansUtilization>) -> Self {
-        self.utilization = input;
-        self
+        self.utilization = input; self
     }
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
     pub fn get_utilization(&self) -> &::std::option::Option<crate::types::SavingsPlansUtilization> {
@@ -63,8 +62,7 @@ impl SavingsPlansUtilizationAggregatesBuilder {
     }
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub fn set_savings(mut self, input: ::std::option::Option<crate::types::SavingsPlansSavings>) -> Self {
-        self.savings = input;
-        self
+        self.savings = input; self
     }
     /// <p>The amount that's saved by using existing Savings Plans. Savings returns both net savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the Savings Plans when considering the utilization rate.</p>
     pub fn get_savings(&self) -> &::std::option::Option<crate::types::SavingsPlansSavings> {
@@ -77,8 +75,7 @@ impl SavingsPlansUtilizationAggregatesBuilder {
     }
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
     pub fn set_amortized_commitment(mut self, input: ::std::option::Option<crate::types::SavingsPlansAmortizedCommitment>) -> Self {
-        self.amortized_commitment = input;
-        self
+        self.amortized_commitment = input; self
     }
     /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the upfront and recurring Savings Plans fees.</p>
     pub fn get_amortized_commitment(&self) -> &::std::option::Option<crate::types::SavingsPlansAmortizedCommitment> {
@@ -87,9 +84,13 @@ impl SavingsPlansUtilizationAggregatesBuilder {
     /// Consumes the builder and constructs a [`SavingsPlansUtilizationAggregates`](crate::types::SavingsPlansUtilizationAggregates).
     pub fn build(self) -> crate::types::SavingsPlansUtilizationAggregates {
         crate::types::SavingsPlansUtilizationAggregates {
-            utilization: self.utilization,
-            savings: self.savings,
-            amortized_commitment: self.amortized_commitment,
+            utilization: self.utilization
+            ,
+            savings: self.savings
+            ,
+            amortized_commitment: self.amortized_commitment
+            ,
         }
     }
 }
+

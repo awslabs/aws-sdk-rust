@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutApplicationGrantInput {
+pub struct PutApplicationGrantInput  {
     /// <p>Specifies the ARN of the application to update.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of grant to update.</p>
@@ -10,17 +10,17 @@ pub struct PutApplicationGrantInput {
     /// <p>Specifies a structure that describes the grant to update.</p>
     pub grant: ::std::option::Option<crate::types::Grant>,
 }
-impl PutApplicationGrantInput {
+impl  PutApplicationGrantInput  {
     /// <p>Specifies the ARN of the application to update.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Specifies the type of grant to update.</p>
-    pub fn grant_type(&self) -> ::std::option::Option<&crate::types::GrantType> {
+    pub fn grant_type(&self) -> ::std::option::Option<& crate::types::GrantType> {
         self.grant_type.as_ref()
     }
     /// <p>Specifies a structure that describes the grant to update.</p>
-    pub fn grant(&self) -> ::std::option::Option<&crate::types::Grant> {
+    pub fn grant(&self) -> ::std::option::Option<& crate::types::Grant> {
         self.grant.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PutApplicationGrantInputBuilder {
     }
     /// <p>Specifies the ARN of the application to update.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>Specifies the ARN of the application to update.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutApplicationGrantInputBuilder {
     }
     /// <p>Specifies the type of grant to update.</p>
     pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::GrantType>) -> Self {
-        self.grant_type = input;
-        self
+        self.grant_type = input; self
     }
     /// <p>Specifies the type of grant to update.</p>
     pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::GrantType> {
@@ -78,22 +76,24 @@ impl PutApplicationGrantInputBuilder {
     }
     /// <p>Specifies a structure that describes the grant to update.</p>
     pub fn set_grant(mut self, input: ::std::option::Option<crate::types::Grant>) -> Self {
-        self.grant = input;
-        self
+        self.grant = input; self
     }
     /// <p>Specifies a structure that describes the grant to update.</p>
     pub fn get_grant(&self) -> &::std::option::Option<crate::types::Grant> {
         &self.grant
     }
     /// Consumes the builder and constructs a [`PutApplicationGrantInput`](crate::operation::put_application_grant::PutApplicationGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_application_grant::PutApplicationGrantInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_application_grant::PutApplicationGrantInput {
-            application_arn: self.application_arn,
-            grant_type: self.grant_type,
-            grant: self.grant,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_application_grant::PutApplicationGrantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_application_grant::PutApplicationGrantInput {
+                application_arn: self.application_arn
+                ,
+                grant_type: self.grant_type
+                ,
+                grant: self.grant
+                ,
+            }
+        )
     }
 }
+

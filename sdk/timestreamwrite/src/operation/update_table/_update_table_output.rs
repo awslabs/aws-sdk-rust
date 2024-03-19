@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTableOutput {
+pub struct UpdateTableOutput  {
     /// <p>The updated Timestream table.</p>
     pub table: ::std::option::Option<crate::types::Table>,
     _request_id: Option<String>,
 }
-impl UpdateTableOutput {
+impl  UpdateTableOutput  {
     /// <p>The updated Timestream table.</p>
-    pub fn table(&self) -> ::std::option::Option<&crate::types::Table> {
+    pub fn table(&self) -> ::std::option::Option<& crate::types::Table> {
         self.table.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTableOutput`](crate::operation::update_table::UpdateTableOutput).
     pub fn builder() -> crate::operation::update_table::builders::UpdateTableOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateTableOutputBuilder {
     }
     /// <p>The updated Timestream table.</p>
     pub fn set_table(mut self, input: ::std::option::Option<crate::types::Table>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The updated Timestream table.</p>
     pub fn get_table(&self) -> &::std::option::Option<crate::types::Table> {
         &self.table
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateTableOutput`](crate::operation::update_table::UpdateTableOutput).
     pub fn build(self) -> crate::operation::update_table::UpdateTableOutput {
         crate::operation::update_table::UpdateTableOutput {
-            table: self.table,
+            table: self.table
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

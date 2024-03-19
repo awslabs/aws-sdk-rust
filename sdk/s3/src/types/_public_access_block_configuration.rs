@@ -3,7 +3,7 @@
 /// <p>The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicAccessBlockConfiguration {
+pub struct PublicAccessBlockConfiguration  {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct PublicAccessBlockConfiguration {
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     pub restrict_public_buckets: ::std::option::Option<bool>,
 }
-impl PublicAccessBlockConfiguration {
+impl  PublicAccessBlockConfiguration  {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
     /// <li>
@@ -97,8 +97,7 @@ impl PublicAccessBlockConfigurationBuilder {
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     pub fn set_block_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.block_public_acls = input;
-        self
+        self.block_public_acls = input; self
     }
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
@@ -122,8 +121,7 @@ impl PublicAccessBlockConfigurationBuilder {
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     pub fn set_ignore_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_public_acls = input;
-        self
+        self.ignore_public_acls = input; self
     }
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
@@ -139,8 +137,7 @@ impl PublicAccessBlockConfigurationBuilder {
     /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access.</p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.block_public_policy = input;
-        self
+        self.block_public_policy = input; self
     }
     /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access.</p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
@@ -156,8 +153,7 @@ impl PublicAccessBlockConfigurationBuilder {
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     pub fn set_restrict_public_buckets(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.restrict_public_buckets = input;
-        self
+        self.restrict_public_buckets = input; self
     }
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
@@ -167,10 +163,15 @@ impl PublicAccessBlockConfigurationBuilder {
     /// Consumes the builder and constructs a [`PublicAccessBlockConfiguration`](crate::types::PublicAccessBlockConfiguration).
     pub fn build(self) -> crate::types::PublicAccessBlockConfiguration {
         crate::types::PublicAccessBlockConfiguration {
-            block_public_acls: self.block_public_acls,
-            ignore_public_acls: self.ignore_public_acls,
-            block_public_policy: self.block_public_policy,
-            restrict_public_buckets: self.restrict_public_buckets,
+            block_public_acls: self.block_public_acls
+            ,
+            ignore_public_acls: self.ignore_public_acls
+            ,
+            block_public_policy: self.block_public_policy
+            ,
+            restrict_public_buckets: self.restrict_public_buckets
+            ,
         }
     }
 }
+

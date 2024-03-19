@@ -3,29 +3,26 @@
 /// <p>Details from an import from Amazon Redshift datashare request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportAssetsFromRedshiftDataSharesRequestDetails {
+pub struct ImportAssetsFromRedshiftDataSharesRequestDetails  {
     /// <p>A list of Amazon Redshift datashare assets.</p>
-    pub asset_sources: ::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>,
+    pub asset_sources: ::std::vec::Vec::<crate::types::RedshiftDataShareAssetSourceEntry>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub data_set_id: ::std::string::String,
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub revision_id: ::std::string::String,
 }
-impl ImportAssetsFromRedshiftDataSharesRequestDetails {
+impl  ImportAssetsFromRedshiftDataSharesRequestDetails  {
     /// <p>A list of Amazon Redshift datashare assets.</p>
-    pub fn asset_sources(&self) -> &[crate::types::RedshiftDataShareAssetSourceEntry] {
-        use std::ops::Deref;
-        self.asset_sources.deref()
+    pub fn asset_sources(&self) -> & [crate::types::RedshiftDataShareAssetSourceEntry] {
+        use std::ops::Deref; self.asset_sources.deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
 }
 impl ImportAssetsFromRedshiftDataSharesRequestDetails {
@@ -39,7 +36,7 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
-    pub(crate) asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
+    pub(crate) asset_sources: ::std::option::Option<::std::vec::Vec::<crate::types::RedshiftDataShareAssetSourceEntry>>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,17 +48,16 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
     /// <p>A list of Amazon Redshift datashare assets.</p>
     pub fn asset_sources(mut self, input: crate::types::RedshiftDataShareAssetSourceEntry) -> Self {
         let mut v = self.asset_sources.unwrap_or_default();
-        v.push(input);
-        self.asset_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Redshift datashare assets.</p>
-    pub fn set_asset_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>) -> Self {
-        self.asset_sources = input;
-        self
+    pub fn set_asset_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RedshiftDataShareAssetSourceEntry>>) -> Self {
+        self.asset_sources = input; self
     }
     /// <p>A list of Amazon Redshift datashare assets.</p>
-    pub fn get_asset_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>> {
+    pub fn get_asset_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RedshiftDataShareAssetSourceEntry>> {
         &self.asset_sources
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
@@ -72,8 +68,7 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +82,7 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,28 +93,26 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
     /// - [`asset_sources`](crate::types::builders::ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder::asset_sources)
     /// - [`data_set_id`](crate::types::builders::ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder::data_set_id)
     /// - [`revision_id`](crate::types::builders::ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder::revision_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails {
-            asset_sources: self.asset_sources.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_sources",
-                    "asset_sources was not specified but it is required when building ImportAssetsFromRedshiftDataSharesRequestDetails",
-                )
-            })?,
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building ImportAssetsFromRedshiftDataSharesRequestDetails",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building ImportAssetsFromRedshiftDataSharesRequestDetails",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails {
+                asset_sources: self.asset_sources
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_sources", "asset_sources was not specified but it is required when building ImportAssetsFromRedshiftDataSharesRequestDetails")
+                    )?
+                ,
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ImportAssetsFromRedshiftDataSharesRequestDetails")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ImportAssetsFromRedshiftDataSharesRequestDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

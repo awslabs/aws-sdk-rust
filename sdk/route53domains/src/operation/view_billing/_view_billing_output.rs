@@ -3,30 +3,31 @@
 /// <p>The ViewBilling response includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViewBillingOutput {
+pub struct ViewBillingOutput  {
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub next_page_marker: ::std::option::Option<::std::string::String>,
     /// <p>A summary of billing records.</p>
-    pub billing_records: ::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>>,
+    pub billing_records: ::std::option::Option<::std::vec::Vec::<crate::types::BillingRecord>>,
     _request_id: Option<String>,
 }
-impl ViewBillingOutput {
+impl  ViewBillingOutput  {
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn next_page_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_marker(&self) -> ::std::option::Option<& str> {
         self.next_page_marker.as_deref()
     }
     /// <p>A summary of billing records.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_records.is_none()`.
-    pub fn billing_records(&self) -> &[crate::types::BillingRecord] {
-        self.billing_records.as_deref().unwrap_or_default()
+    pub fn billing_records(&self) -> & [crate::types::BillingRecord] {
+        self.billing_records.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ViewBillingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ViewBillingOutput {
     /// Creates a new builder-style object to manufacture [`ViewBillingOutput`](crate::operation::view_billing::ViewBillingOutput).
     pub fn builder() -> crate::operation::view_billing::builders::ViewBillingOutputBuilder {
@@ -39,7 +40,7 @@ impl ViewBillingOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViewBillingOutputBuilder {
     pub(crate) next_page_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) billing_records: ::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>>,
+    pub(crate) billing_records: ::std::option::Option<::std::vec::Vec::<crate::types::BillingRecord>>,
     _request_id: Option<String>,
 }
 impl ViewBillingOutputBuilder {
@@ -50,8 +51,7 @@ impl ViewBillingOutputBuilder {
     }
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_marker = input;
-        self
+        self.next_page_marker = input; self
     }
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn get_next_page_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl ViewBillingOutputBuilder {
     /// <p>A summary of billing records.</p>
     pub fn billing_records(mut self, input: crate::types::BillingRecord) -> Self {
         let mut v = self.billing_records.unwrap_or_default();
-        v.push(input);
-        self.billing_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.billing_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A summary of billing records.</p>
-    pub fn set_billing_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>>) -> Self {
-        self.billing_records = input;
-        self
+    pub fn set_billing_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BillingRecord>>) -> Self {
+        self.billing_records = input; self
     }
     /// <p>A summary of billing records.</p>
-    pub fn get_billing_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingRecord>> {
+    pub fn get_billing_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BillingRecord>> {
         &self.billing_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ViewBillingOutput`](crate::operation::view_billing::ViewBillingOutput).
     pub fn build(self) -> crate::operation::view_billing::ViewBillingOutput {
         crate::operation::view_billing::ViewBillingOutput {
-            next_page_marker: self.next_page_marker,
-            billing_records: self.billing_records,
+            next_page_marker: self.next_page_marker
+            ,
+            billing_records: self.billing_records
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

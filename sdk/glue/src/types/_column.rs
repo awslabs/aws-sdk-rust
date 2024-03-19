@@ -3,7 +3,7 @@
 /// <p>A column in a <code>Table</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Column {
+pub struct Column  {
     /// <p>The name of the <code>Column</code>.</p>
     pub name: ::std::string::String,
     /// <p>The data type of the <code>Column</code>.</p>
@@ -11,24 +11,23 @@ pub struct Column {
     /// <p>A free-form text comment.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define properties associated with the column.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Column {
+impl  Column  {
     /// <p>The name of the <code>Column</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data type of the <code>Column</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A free-form text comment.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>These key-value pairs define properties associated with the column.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -46,7 +45,7 @@ pub struct ColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ColumnBuilder {
     /// <p>The name of the <code>Column</code>.</p>
@@ -57,8 +56,7 @@ impl ColumnBuilder {
     }
     /// <p>The name of the <code>Column</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>Column</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl ColumnBuilder {
     }
     /// <p>The data type of the <code>Column</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The data type of the <code>Column</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl ColumnBuilder {
     }
     /// <p>A free-form text comment.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A free-form text comment.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,33 +95,37 @@ impl ColumnBuilder {
     /// <p>These key-value pairs define properties associated with the column.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>These key-value pairs define properties associated with the column.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>These key-value pairs define properties associated with the column.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`Column`](crate::types::Column).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ColumnBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Column, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Column {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Column",
-                )
-            })?,
-            r#type: self.r#type,
-            comment: self.comment,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Column {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Column")
+                    )?
+                ,
+                r#type: self.r#type
+                ,
+                comment: self.comment
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

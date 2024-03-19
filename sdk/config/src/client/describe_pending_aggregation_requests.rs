@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribePendingAggregationRequests`](crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`limit(i32)`](crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`DescribePendingAggregationRequestsOutput`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput) with field(s):
+                            /// - On success, responds with [`DescribePendingAggregationRequestsOutput`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput) with field(s):
     ///   - [`pending_aggregation_requests(Option<Vec::<PendingAggregationRequest>>)`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput::pending_aggregation_requests): <p>Returns a PendingAggregationRequests object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<DescribePendingAggregationRequestsError>`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError)
-    pub fn describe_pending_aggregation_requests(
-        &self,
-    ) -> crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder {
-        crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribePendingAggregationRequestsError>`](crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError)
+    pub fn describe_pending_aggregation_requests(&self) -> crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder {
+                                crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

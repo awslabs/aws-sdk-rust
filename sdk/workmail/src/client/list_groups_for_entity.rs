@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGroupsForEntity`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::set_organization_id):<br>required: **true**<br><p>The identifier for the organization under which the entity exists.</p><br>
     ///   - [`entity_id(impl Into<String>)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::set_entity_id):<br>required: **true**<br><p>The identifier for the entity.</p> <p>The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.</p> <ul>  <li>   <p>Entity ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>  <li>   <p>Email address: entity@domain.tld</p></li>  <li>   <p>Entity name: entity</p></li> </ul><br>
     ///   - [`filters(ListGroupsForEntityFilters)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::filters) / [`set_filters(Option<ListGroupsForEntityFilters>)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::set_filters):<br>required: **false**<br><p>Limit the search results based on the filter criteria.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
-    /// - On success, responds with [`ListGroupsForEntityOutput`](crate::operation::list_groups_for_entity::ListGroupsForEntityOutput) with field(s):
+                            /// - On success, responds with [`ListGroupsForEntityOutput`](crate::operation::list_groups_for_entity::ListGroupsForEntityOutput) with field(s):
     ///   - [`groups(Option<Vec::<GroupIdentifier>>)`](crate::operation::list_groups_for_entity::ListGroupsForEntityOutput::groups): <p>The overview of groups in an organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_groups_for_entity::ListGroupsForEntityOutput::next_token): <p>The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListGroupsForEntityError>`](crate::operation::list_groups_for_entity::ListGroupsForEntityError)
+                            /// - On failure, responds with [`SdkError<ListGroupsForEntityError>`](crate::operation::list_groups_for_entity::ListGroupsForEntityError)
     pub fn list_groups_for_entity(&self) -> crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder {
-        crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_groups_for_entity::builders::ListGroupsForEntityFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,20 +3,19 @@
 /// <p>The detector model and the specific detectors (instances) for which the logging level is given.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectorDebugOption {
+pub struct DetectorDebugOption  {
     /// <p>The name of the detector model.</p>
     pub detector_model_name: ::std::string::String,
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub key_value: ::std::option::Option<::std::string::String>,
 }
-impl DetectorDebugOption {
+impl  DetectorDebugOption  {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(&self) -> &str {
-        use std::ops::Deref;
-        self.detector_model_name.deref()
+    pub fn detector_model_name(&self) -> & str {
+        use std::ops::Deref; self.detector_model_name.deref()
     }
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
-    pub fn key_value(&self) -> ::std::option::Option<&str> {
+    pub fn key_value(&self) -> ::std::option::Option<& str> {
         self.key_value.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl DetectorDebugOptionBuilder {
     }
     /// <p>The name of the detector model.</p>
     pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_model_name = input;
-        self
+        self.detector_model_name = input; self
     }
     /// <p>The name of the detector model.</p>
     pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DetectorDebugOptionBuilder {
     }
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
     }
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl DetectorDebugOptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`detector_model_name`](crate::types::builders::DetectorDebugOptionBuilder::detector_model_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DetectorDebugOption, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DetectorDebugOption {
-            detector_model_name: self.detector_model_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "detector_model_name",
-                    "detector_model_name was not specified but it is required when building DetectorDebugOption",
-                )
-            })?,
-            key_value: self.key_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DetectorDebugOption {
+                detector_model_name: self.detector_model_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("detector_model_name", "detector_model_name was not specified but it is required when building DetectorDebugOption")
+                    )?
+                ,
+                key_value: self.key_value
+                ,
+            }
+        )
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountGateResult {
+pub struct AccountGateResult  {
     /// <p>The status of the account gate function.</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ pub struct AccountGateResult {
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
-impl AccountGateResult {
+impl  AccountGateResult  {
     /// <p>The status of the account gate function.</p>
     /// <ul>
     /// <li>
@@ -45,11 +45,11 @@ impl AccountGateResult {
     /// <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AccountGateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AccountGateStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
@@ -107,8 +107,7 @@ impl AccountGateResultBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccountGateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the account gate function.</p>
     /// <ul>
@@ -137,8 +136,7 @@ impl AccountGateResultBuilder {
     }
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +145,11 @@ impl AccountGateResultBuilder {
     /// Consumes the builder and constructs a [`AccountGateResult`](crate::types::AccountGateResult).
     pub fn build(self) -> crate::types::AccountGateResult {
         crate::types::AccountGateResult {
-            status: self.status,
-            status_reason: self.status_reason,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
         }
     }
 }
+

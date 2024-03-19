@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEvaluationFormOutput {
+pub struct DescribeEvaluationFormOutput  {
     /// <p>Information about the evaluation form.</p>
     pub evaluation_form: ::std::option::Option<crate::types::EvaluationForm>,
     _request_id: Option<String>,
 }
-impl DescribeEvaluationFormOutput {
+impl  DescribeEvaluationFormOutput  {
     /// <p>Information about the evaluation form.</p>
-    pub fn evaluation_form(&self) -> ::std::option::Option<&crate::types::EvaluationForm> {
+    pub fn evaluation_form(&self) -> ::std::option::Option<& crate::types::EvaluationForm> {
         self.evaluation_form.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEvaluationFormOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEvaluationFormOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEvaluationFormOutput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput).
     pub fn builder() -> crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeEvaluationFormOutputBuilder {
     }
     /// <p>Information about the evaluation form.</p>
     pub fn set_evaluation_form(mut self, input: ::std::option::Option<crate::types::EvaluationForm>) -> Self {
-        self.evaluation_form = input;
-        self
+        self.evaluation_form = input; self
     }
     /// <p>Information about the evaluation form.</p>
     pub fn get_evaluation_form(&self) -> &::std::option::Option<crate::types::EvaluationForm> {
         &self.evaluation_form
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEvaluationFormOutput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput).
     pub fn build(self) -> crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput {
         crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput {
-            evaluation_form: self.evaluation_form,
+            evaluation_form: self.evaluation_form
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

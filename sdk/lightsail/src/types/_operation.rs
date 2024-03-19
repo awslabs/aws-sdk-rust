@@ -3,7 +3,7 @@
 /// <p>Describes the API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Operation {
+pub struct Operation  {
     /// <p>The ID of the operation.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The resource name.</p>
@@ -29,25 +29,25 @@ pub struct Operation {
     /// <p>The error details.</p>
     pub error_details: ::std::option::Option<::std::string::String>,
 }
-impl Operation {
+impl  Operation  {
     /// <p>The ID of the operation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The resource name.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The timestamp when the operation was initialized (<code>1479816991.349</code>).</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
@@ -55,27 +55,27 @@ impl Operation {
         self.is_terminal
     }
     /// <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
-    pub fn operation_details(&self) -> ::std::option::Option<&str> {
+    pub fn operation_details(&self) -> ::std::option::Option<& str> {
         self.operation_details.as_deref()
     }
     /// <p>The type of operation.</p>
-    pub fn operation_type(&self) -> ::std::option::Option<&crate::types::OperationType> {
+    pub fn operation_type(&self) -> ::std::option::Option<& crate::types::OperationType> {
         self.operation_type.as_ref()
     }
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
-    pub fn status_changed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn status_changed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.status_changed_at.as_ref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error details.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&str> {
+    pub fn error_details(&self) -> ::std::option::Option<& str> {
         self.error_details.as_deref()
     }
 }
@@ -111,8 +111,7 @@ impl OperationBuilder {
     }
     /// <p>The ID of the operation.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the operation.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl OperationBuilder {
     }
     /// <p>The resource name.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The resource name.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl OperationBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -153,8 +150,7 @@ impl OperationBuilder {
     }
     /// <p>The timestamp when the operation was initialized (<code>1479816991.349</code>).</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the operation was initialized (<code>1479816991.349</code>).</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +163,7 @@ impl OperationBuilder {
     }
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
@@ -181,8 +176,7 @@ impl OperationBuilder {
     }
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
     pub fn set_is_terminal(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_terminal = input;
-        self
+        self.is_terminal = input; self
     }
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
     pub fn get_is_terminal(&self) -> &::std::option::Option<bool> {
@@ -195,8 +189,7 @@ impl OperationBuilder {
     }
     /// <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
     pub fn set_operation_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_details = input;
-        self
+        self.operation_details = input; self
     }
     /// <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
     pub fn get_operation_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +202,7 @@ impl OperationBuilder {
     }
     /// <p>The type of operation.</p>
     pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
-        self.operation_type = input;
-        self
+        self.operation_type = input; self
     }
     /// <p>The type of operation.</p>
     pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::OperationType> {
@@ -223,8 +215,7 @@ impl OperationBuilder {
     }
     /// <p>The status of the operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
@@ -237,8 +228,7 @@ impl OperationBuilder {
     }
     /// <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
     pub fn set_status_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.status_changed_at = input;
-        self
+        self.status_changed_at = input; self
     }
     /// <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
     pub fn get_status_changed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -251,8 +241,7 @@ impl OperationBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +254,7 @@ impl OperationBuilder {
     }
     /// <p>The error details.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>The error details.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,18 +263,31 @@ impl OperationBuilder {
     /// Consumes the builder and constructs a [`Operation`](crate::types::Operation).
     pub fn build(self) -> crate::types::Operation {
         crate::types::Operation {
-            id: self.id,
-            resource_name: self.resource_name,
-            resource_type: self.resource_type,
-            created_at: self.created_at,
-            location: self.location,
-            is_terminal: self.is_terminal,
-            operation_details: self.operation_details,
-            operation_type: self.operation_type,
-            status: self.status,
-            status_changed_at: self.status_changed_at,
-            error_code: self.error_code,
-            error_details: self.error_details,
+            id: self.id
+            ,
+            resource_name: self.resource_name
+            ,
+            resource_type: self.resource_type
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            is_terminal: self.is_terminal
+            ,
+            operation_details: self.operation_details
+            ,
+            operation_type: self.operation_type
+            ,
+            status: self.status
+            ,
+            status_changed_at: self.status_changed_at
+            ,
+            error_code: self.error_code
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

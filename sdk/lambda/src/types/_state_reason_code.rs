@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statereasoncode = unimplemented!();
 /// match statereasoncode {
@@ -52,16 +52,14 @@
 /// Specifically, when `statereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StateReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -113,152 +111,128 @@ pub enum StateReasonCode {
     SubnetOutOfIpAddresses,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StateReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Creating" => StateReasonCode::Creating,
-            "DisabledKMSKey" => StateReasonCode::DisabledKmsKey,
-            "EFSIOError" => StateReasonCode::EfsioError,
-            "EFSMountConnectivityError" => StateReasonCode::EfsMountConnectivityError,
-            "EFSMountFailure" => StateReasonCode::EfsMountFailure,
-            "EFSMountTimeout" => StateReasonCode::EfsMountTimeout,
-            "EniLimitExceeded" => StateReasonCode::EniLimitExceeded,
-            "FunctionError" => StateReasonCode::FunctionError,
-            "Idle" => StateReasonCode::Idle,
-            "ImageAccessDenied" => StateReasonCode::ImageAccessDenied,
-            "ImageDeleted" => StateReasonCode::ImageDeleted,
-            "InsufficientRolePermissions" => StateReasonCode::InsufficientRolePermissions,
-            "InternalError" => StateReasonCode::InternalError,
-            "InvalidConfiguration" => StateReasonCode::InvalidConfiguration,
-            "InvalidImage" => StateReasonCode::InvalidImage,
-            "InvalidRuntime" => StateReasonCode::InvalidRuntime,
-            "InvalidSecurityGroup" => StateReasonCode::InvalidSecurityGroup,
-            "InvalidStateKMSKey" => StateReasonCode::InvalidStateKmsKey,
-            "InvalidSubnet" => StateReasonCode::InvalidSubnet,
-            "InvalidZipFileException" => StateReasonCode::InvalidZipFileException,
-            "KMSKeyAccessDenied" => StateReasonCode::KmsKeyAccessDenied,
-            "KMSKeyNotFound" => StateReasonCode::KmsKeyNotFound,
-            "Restoring" => StateReasonCode::Restoring,
-            "SubnetOutOfIPAddresses" => StateReasonCode::SubnetOutOfIpAddresses,
-            other => StateReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Creating" => StateReasonCode::Creating,
+"DisabledKMSKey" => StateReasonCode::DisabledKmsKey,
+"EFSIOError" => StateReasonCode::EfsioError,
+"EFSMountConnectivityError" => StateReasonCode::EfsMountConnectivityError,
+"EFSMountFailure" => StateReasonCode::EfsMountFailure,
+"EFSMountTimeout" => StateReasonCode::EfsMountTimeout,
+"EniLimitExceeded" => StateReasonCode::EniLimitExceeded,
+"FunctionError" => StateReasonCode::FunctionError,
+"Idle" => StateReasonCode::Idle,
+"ImageAccessDenied" => StateReasonCode::ImageAccessDenied,
+"ImageDeleted" => StateReasonCode::ImageDeleted,
+"InsufficientRolePermissions" => StateReasonCode::InsufficientRolePermissions,
+"InternalError" => StateReasonCode::InternalError,
+"InvalidConfiguration" => StateReasonCode::InvalidConfiguration,
+"InvalidImage" => StateReasonCode::InvalidImage,
+"InvalidRuntime" => StateReasonCode::InvalidRuntime,
+"InvalidSecurityGroup" => StateReasonCode::InvalidSecurityGroup,
+"InvalidStateKMSKey" => StateReasonCode::InvalidStateKmsKey,
+"InvalidSubnet" => StateReasonCode::InvalidSubnet,
+"InvalidZipFileException" => StateReasonCode::InvalidZipFileException,
+"KMSKeyAccessDenied" => StateReasonCode::KmsKeyAccessDenied,
+"KMSKeyNotFound" => StateReasonCode::KmsKeyNotFound,
+"Restoring" => StateReasonCode::Restoring,
+"SubnetOutOfIPAddresses" => StateReasonCode::SubnetOutOfIpAddresses,
+other => StateReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StateReasonCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StateReasonCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StateReasonCode::from(s))
+                    }
+                }
 impl StateReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StateReasonCode::Creating => "Creating",
-            StateReasonCode::DisabledKmsKey => "DisabledKMSKey",
-            StateReasonCode::EfsioError => "EFSIOError",
-            StateReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
-            StateReasonCode::EfsMountFailure => "EFSMountFailure",
-            StateReasonCode::EfsMountTimeout => "EFSMountTimeout",
-            StateReasonCode::EniLimitExceeded => "EniLimitExceeded",
-            StateReasonCode::FunctionError => "FunctionError",
-            StateReasonCode::Idle => "Idle",
-            StateReasonCode::ImageAccessDenied => "ImageAccessDenied",
-            StateReasonCode::ImageDeleted => "ImageDeleted",
-            StateReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
-            StateReasonCode::InternalError => "InternalError",
-            StateReasonCode::InvalidConfiguration => "InvalidConfiguration",
-            StateReasonCode::InvalidImage => "InvalidImage",
-            StateReasonCode::InvalidRuntime => "InvalidRuntime",
-            StateReasonCode::InvalidSecurityGroup => "InvalidSecurityGroup",
-            StateReasonCode::InvalidStateKmsKey => "InvalidStateKMSKey",
-            StateReasonCode::InvalidSubnet => "InvalidSubnet",
-            StateReasonCode::InvalidZipFileException => "InvalidZipFileException",
-            StateReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
-            StateReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
-            StateReasonCode::Restoring => "Restoring",
-            StateReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
-            StateReasonCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Creating",
-            "DisabledKMSKey",
-            "EFSIOError",
-            "EFSMountConnectivityError",
-            "EFSMountFailure",
-            "EFSMountTimeout",
-            "EniLimitExceeded",
-            "FunctionError",
-            "Idle",
-            "ImageAccessDenied",
-            "ImageDeleted",
-            "InsufficientRolePermissions",
-            "InternalError",
-            "InvalidConfiguration",
-            "InvalidImage",
-            "InvalidRuntime",
-            "InvalidSecurityGroup",
-            "InvalidStateKMSKey",
-            "InvalidSubnet",
-            "InvalidZipFileException",
-            "KMSKeyAccessDenied",
-            "KMSKeyNotFound",
-            "Restoring",
-            "SubnetOutOfIPAddresses",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StateReasonCode::Creating => "Creating",
+    StateReasonCode::DisabledKmsKey => "DisabledKMSKey",
+    StateReasonCode::EfsioError => "EFSIOError",
+    StateReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
+    StateReasonCode::EfsMountFailure => "EFSMountFailure",
+    StateReasonCode::EfsMountTimeout => "EFSMountTimeout",
+    StateReasonCode::EniLimitExceeded => "EniLimitExceeded",
+    StateReasonCode::FunctionError => "FunctionError",
+    StateReasonCode::Idle => "Idle",
+    StateReasonCode::ImageAccessDenied => "ImageAccessDenied",
+    StateReasonCode::ImageDeleted => "ImageDeleted",
+    StateReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
+    StateReasonCode::InternalError => "InternalError",
+    StateReasonCode::InvalidConfiguration => "InvalidConfiguration",
+    StateReasonCode::InvalidImage => "InvalidImage",
+    StateReasonCode::InvalidRuntime => "InvalidRuntime",
+    StateReasonCode::InvalidSecurityGroup => "InvalidSecurityGroup",
+    StateReasonCode::InvalidStateKmsKey => "InvalidStateKMSKey",
+    StateReasonCode::InvalidSubnet => "InvalidSubnet",
+    StateReasonCode::InvalidZipFileException => "InvalidZipFileException",
+    StateReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
+    StateReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
+    StateReasonCode::Restoring => "Restoring",
+    StateReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
+    StateReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Creating", "DisabledKMSKey", "EFSIOError", "EFSMountConnectivityError", "EFSMountFailure", "EFSMountTimeout", "EniLimitExceeded", "FunctionError", "Idle", "ImageAccessDenied", "ImageDeleted", "InsufficientRolePermissions", "InternalError", "InvalidConfiguration", "InvalidImage", "InvalidRuntime", "InvalidSecurityGroup", "InvalidStateKMSKey", "InvalidSubnet", "InvalidZipFileException", "KMSKeyAccessDenied", "KMSKeyNotFound", "Restoring", "SubnetOutOfIPAddresses"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StateReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StateReasonCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StateReasonCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StateReasonCode::Creating => write!(f, "Creating"),
-            StateReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
-            StateReasonCode::EfsioError => write!(f, "EFSIOError"),
-            StateReasonCode::EfsMountConnectivityError => write!(f, "EFSMountConnectivityError"),
-            StateReasonCode::EfsMountFailure => write!(f, "EFSMountFailure"),
-            StateReasonCode::EfsMountTimeout => write!(f, "EFSMountTimeout"),
-            StateReasonCode::EniLimitExceeded => write!(f, "EniLimitExceeded"),
-            StateReasonCode::FunctionError => write!(f, "FunctionError"),
-            StateReasonCode::Idle => write!(f, "Idle"),
-            StateReasonCode::ImageAccessDenied => write!(f, "ImageAccessDenied"),
-            StateReasonCode::ImageDeleted => write!(f, "ImageDeleted"),
-            StateReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
-            StateReasonCode::InternalError => write!(f, "InternalError"),
-            StateReasonCode::InvalidConfiguration => write!(f, "InvalidConfiguration"),
-            StateReasonCode::InvalidImage => write!(f, "InvalidImage"),
-            StateReasonCode::InvalidRuntime => write!(f, "InvalidRuntime"),
-            StateReasonCode::InvalidSecurityGroup => write!(f, "InvalidSecurityGroup"),
-            StateReasonCode::InvalidStateKmsKey => write!(f, "InvalidStateKMSKey"),
-            StateReasonCode::InvalidSubnet => write!(f, "InvalidSubnet"),
-            StateReasonCode::InvalidZipFileException => write!(f, "InvalidZipFileException"),
-            StateReasonCode::KmsKeyAccessDenied => write!(f, "KMSKeyAccessDenied"),
-            StateReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
-            StateReasonCode::Restoring => write!(f, "Restoring"),
-            StateReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
-            StateReasonCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StateReasonCode::Creating => write!(f, "Creating"),
+StateReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
+StateReasonCode::EfsioError => write!(f, "EFSIOError"),
+StateReasonCode::EfsMountConnectivityError => write!(f, "EFSMountConnectivityError"),
+StateReasonCode::EfsMountFailure => write!(f, "EFSMountFailure"),
+StateReasonCode::EfsMountTimeout => write!(f, "EFSMountTimeout"),
+StateReasonCode::EniLimitExceeded => write!(f, "EniLimitExceeded"),
+StateReasonCode::FunctionError => write!(f, "FunctionError"),
+StateReasonCode::Idle => write!(f, "Idle"),
+StateReasonCode::ImageAccessDenied => write!(f, "ImageAccessDenied"),
+StateReasonCode::ImageDeleted => write!(f, "ImageDeleted"),
+StateReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
+StateReasonCode::InternalError => write!(f, "InternalError"),
+StateReasonCode::InvalidConfiguration => write!(f, "InvalidConfiguration"),
+StateReasonCode::InvalidImage => write!(f, "InvalidImage"),
+StateReasonCode::InvalidRuntime => write!(f, "InvalidRuntime"),
+StateReasonCode::InvalidSecurityGroup => write!(f, "InvalidSecurityGroup"),
+StateReasonCode::InvalidStateKmsKey => write!(f, "InvalidStateKMSKey"),
+StateReasonCode::InvalidSubnet => write!(f, "InvalidSubnet"),
+StateReasonCode::InvalidZipFileException => write!(f, "InvalidZipFileException"),
+StateReasonCode::KmsKeyAccessDenied => write!(f, "KMSKeyAccessDenied"),
+StateReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
+StateReasonCode::Restoring => write!(f, "Restoring"),
+StateReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
+StateReasonCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

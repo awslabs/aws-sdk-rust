@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventTrackerInput {
+pub struct DeleteEventTrackerInput  {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
     pub event_tracker_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEventTrackerInput {
+impl  DeleteEventTrackerInput  {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-    pub fn event_tracker_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_tracker_arn(&self) -> ::std::option::Option<& str> {
         self.event_tracker_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteEventTrackerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
     pub fn set_event_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_tracker_arn = input;
-        self
+        self.event_tracker_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
     pub fn get_event_tracker_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_tracker_arn
     }
     /// Consumes the builder and constructs a [`DeleteEventTrackerInput`](crate::operation::delete_event_tracker::DeleteEventTrackerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_event_tracker::DeleteEventTrackerInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_event_tracker::DeleteEventTrackerInput {
-            event_tracker_arn: self.event_tracker_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_event_tracker::DeleteEventTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_event_tracker::DeleteEventTrackerInput {
+                event_tracker_arn: self.event_tracker_arn
+                ,
+            }
+        )
     }
 }
+

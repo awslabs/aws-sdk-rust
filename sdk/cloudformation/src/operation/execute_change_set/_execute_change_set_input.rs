@@ -3,7 +3,7 @@
 /// <p>The input for the <code>ExecuteChangeSet</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteChangeSetInput {
+pub struct ExecuteChangeSetInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If you specified the name of a change set, specify the stack name or Amazon Resource Name (ARN) that's associated with the change set you want to execute.</p>
@@ -23,17 +23,17 @@ pub struct ExecuteChangeSetInput {
     /// <p>Default: <code>false</code></p>
     pub retain_except_on_create: ::std::option::Option<bool>,
 }
-impl ExecuteChangeSetInput {
+impl  ExecuteChangeSetInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
-    pub fn change_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn change_set_name(&self) -> ::std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>If you specified the name of a change set, specify the stack name or Amazon Resource Name (ARN) that's associated with the change set you want to execute.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Preserves the state of previously provisioned resources when an operation fails. This parameter can't be specified when the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation was specified.</p>
@@ -79,8 +79,7 @@ impl ExecuteChangeSetInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
     pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_set_name = input;
-        self
+        self.change_set_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
     pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl ExecuteChangeSetInputBuilder {
     }
     /// <p>If you specified the name of a change set, specify the stack name or Amazon Resource Name (ARN) that's associated with the change set you want to execute.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>If you specified the name of a change set, specify the stack name or Amazon Resource Name (ARN) that's associated with the change set you want to execute.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl ExecuteChangeSetInputBuilder {
     }
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl ExecuteChangeSetInputBuilder {
     /// </ul>
     /// <p>Default: <code>True</code></p>
     pub fn set_disable_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_rollback = input;
-        self
+        self.disable_rollback = input; self
     }
     /// <p>Preserves the state of previously provisioned resources when an operation fails. This parameter can't be specified when the <code>OnStackFailure</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a> API operation was specified.</p>
     /// <ul>
@@ -158,8 +154,7 @@ impl ExecuteChangeSetInputBuilder {
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.retain_except_on_create = input;
-        self
+        self.retain_except_on_create = input; self
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
@@ -167,15 +162,21 @@ impl ExecuteChangeSetInputBuilder {
         &self.retain_except_on_create
     }
     /// Consumes the builder and constructs a [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_change_set::ExecuteChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::execute_change_set::ExecuteChangeSetInput {
-            change_set_name: self.change_set_name,
-            stack_name: self.stack_name,
-            client_request_token: self.client_request_token,
-            disable_rollback: self.disable_rollback,
-            retain_except_on_create: self.retain_except_on_create,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_change_set::ExecuteChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_change_set::ExecuteChangeSetInput {
+                change_set_name: self.change_set_name
+                ,
+                stack_name: self.stack_name
+                ,
+                client_request_token: self.client_request_token
+                ,
+                disable_rollback: self.disable_rollback
+                ,
+                retain_except_on_create: self.retain_except_on_create
+                ,
+            }
+        )
     }
 }
+

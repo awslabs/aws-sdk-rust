@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let bucketlocationconstraint = unimplemented!();
 /// match bucketlocationconstraint {
@@ -39,16 +39,14 @@
 /// Specifically, when `bucketlocationconstraint` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BucketLocationConstraint::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     Eu,
@@ -74,100 +72,89 @@ pub enum BucketLocationConstraint {
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for BucketLocationConstraint {
-    fn from(s: &str) -> Self {
-        match s {
-            "EU" => BucketLocationConstraint::Eu,
-            "ap-northeast-1" => BucketLocationConstraint::ApNortheast1,
-            "ap-south-1" => BucketLocationConstraint::ApSouth1,
-            "ap-southeast-1" => BucketLocationConstraint::ApSoutheast1,
-            "ap-southeast-2" => BucketLocationConstraint::ApSoutheast2,
-            "cn-north-1" => BucketLocationConstraint::CnNorth1,
-            "eu-central-1" => BucketLocationConstraint::EuCentral1,
-            "eu-west-1" => BucketLocationConstraint::EuWest1,
-            "sa-east-1" => BucketLocationConstraint::SaEast1,
-            "us-west-1" => BucketLocationConstraint::UsWest1,
-            "us-west-2" => BucketLocationConstraint::UsWest2,
-            other => BucketLocationConstraint::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "EU" => BucketLocationConstraint::Eu,
+"ap-northeast-1" => BucketLocationConstraint::ApNortheast1,
+"ap-south-1" => BucketLocationConstraint::ApSouth1,
+"ap-southeast-1" => BucketLocationConstraint::ApSoutheast1,
+"ap-southeast-2" => BucketLocationConstraint::ApSoutheast2,
+"cn-north-1" => BucketLocationConstraint::CnNorth1,
+"eu-central-1" => BucketLocationConstraint::EuCentral1,
+"eu-west-1" => BucketLocationConstraint::EuWest1,
+"sa-east-1" => BucketLocationConstraint::SaEast1,
+"us-west-1" => BucketLocationConstraint::UsWest1,
+"us-west-2" => BucketLocationConstraint::UsWest2,
+other => BucketLocationConstraint::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for BucketLocationConstraint {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(BucketLocationConstraint::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(BucketLocationConstraint::from(s))
+                    }
+                }
 impl BucketLocationConstraint {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BucketLocationConstraint::Eu => "EU",
-            BucketLocationConstraint::ApNortheast1 => "ap-northeast-1",
-            BucketLocationConstraint::ApSouth1 => "ap-south-1",
-            BucketLocationConstraint::ApSoutheast1 => "ap-southeast-1",
-            BucketLocationConstraint::ApSoutheast2 => "ap-southeast-2",
-            BucketLocationConstraint::CnNorth1 => "cn-north-1",
-            BucketLocationConstraint::EuCentral1 => "eu-central-1",
-            BucketLocationConstraint::EuWest1 => "eu-west-1",
-            BucketLocationConstraint::SaEast1 => "sa-east-1",
-            BucketLocationConstraint::UsWest1 => "us-west-1",
-            BucketLocationConstraint::UsWest2 => "us-west-2",
-            BucketLocationConstraint::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EU",
-            "ap-northeast-1",
-            "ap-south-1",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "cn-north-1",
-            "eu-central-1",
-            "eu-west-1",
-            "sa-east-1",
-            "us-west-1",
-            "us-west-2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BucketLocationConstraint::Eu => "EU",
+    BucketLocationConstraint::ApNortheast1 => "ap-northeast-1",
+    BucketLocationConstraint::ApSouth1 => "ap-south-1",
+    BucketLocationConstraint::ApSoutheast1 => "ap-southeast-1",
+    BucketLocationConstraint::ApSoutheast2 => "ap-southeast-2",
+    BucketLocationConstraint::CnNorth1 => "cn-north-1",
+    BucketLocationConstraint::EuCentral1 => "eu-central-1",
+    BucketLocationConstraint::EuWest1 => "eu-west-1",
+    BucketLocationConstraint::SaEast1 => "sa-east-1",
+    BucketLocationConstraint::UsWest1 => "us-west-1",
+    BucketLocationConstraint::UsWest2 => "us-west-2",
+    BucketLocationConstraint::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EU", "ap-northeast-1", "ap-south-1", "ap-southeast-1", "ap-southeast-2", "cn-north-1", "eu-central-1", "eu-west-1", "sa-east-1", "us-west-1", "us-west-2"]
+                }
+            }
 impl ::std::convert::AsRef<str> for BucketLocationConstraint {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl BucketLocationConstraint {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for BucketLocationConstraint {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            BucketLocationConstraint::Eu => write!(f, "EU"),
-            BucketLocationConstraint::ApNortheast1 => write!(f, "ap-northeast-1"),
-            BucketLocationConstraint::ApSouth1 => write!(f, "ap-south-1"),
-            BucketLocationConstraint::ApSoutheast1 => write!(f, "ap-southeast-1"),
-            BucketLocationConstraint::ApSoutheast2 => write!(f, "ap-southeast-2"),
-            BucketLocationConstraint::CnNorth1 => write!(f, "cn-north-1"),
-            BucketLocationConstraint::EuCentral1 => write!(f, "eu-central-1"),
-            BucketLocationConstraint::EuWest1 => write!(f, "eu-west-1"),
-            BucketLocationConstraint::SaEast1 => write!(f, "sa-east-1"),
-            BucketLocationConstraint::UsWest1 => write!(f, "us-west-1"),
-            BucketLocationConstraint::UsWest2 => write!(f, "us-west-2"),
-            BucketLocationConstraint::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                BucketLocationConstraint::Eu => write!(f, "EU"),
+BucketLocationConstraint::ApNortheast1 => write!(f, "ap-northeast-1"),
+BucketLocationConstraint::ApSouth1 => write!(f, "ap-south-1"),
+BucketLocationConstraint::ApSoutheast1 => write!(f, "ap-southeast-1"),
+BucketLocationConstraint::ApSoutheast2 => write!(f, "ap-southeast-2"),
+BucketLocationConstraint::CnNorth1 => write!(f, "cn-north-1"),
+BucketLocationConstraint::EuCentral1 => write!(f, "eu-central-1"),
+BucketLocationConstraint::EuWest1 => write!(f, "eu-west-1"),
+BucketLocationConstraint::SaEast1 => write!(f, "sa-east-1"),
+BucketLocationConstraint::UsWest1 => write!(f, "us-west-1"),
+BucketLocationConstraint::UsWest2 => write!(f, "us-west-2"),
+BucketLocationConstraint::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

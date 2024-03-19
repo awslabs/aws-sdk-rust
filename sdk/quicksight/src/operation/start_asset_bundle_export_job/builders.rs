@@ -5,56 +5,52 @@ pub use crate::operation::start_asset_bundle_export_job::_start_asset_bundle_exp
 
 impl StartAssetBundleExportJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_asset_bundle_export_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_asset_bundle_export_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartAssetBundleExportJob`.
-///
+/// 
 /// <p>Starts an Asset Bundle export job.</p>
 /// <p>An Asset Bundle export job exports specified Amazon QuickSight assets. You can also choose to export any asset dependencies in the same job. Export jobs run asynchronously and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When a job is successfully completed, a download URL that contains the exported assets is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight account can run up to 5 export jobs concurrently.</p>
 /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAssetBundleExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_asset_bundle_export_job::builders::StartAssetBundleExportJobInputBuilder,
+                    inner: crate::operation::start_asset_bundle_export_job::builders::StartAssetBundleExportJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
-        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
-    > for StartAssetBundleExportJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
-            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
+                    crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
+                > for StartAssetBundleExportJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
+                        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartAssetBundleExportJobFluentBuilder {
     /// Creates a new `StartAssetBundleExportJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl StartAssetBundleExportJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
-        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput, crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the Amazon Web Services account to export assets from.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -182,7 +169,7 @@ impl StartAssetBundleExportJobFluentBuilder {
     /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
@@ -204,7 +191,7 @@ impl StartAssetBundleExportJobFluentBuilder {
     /// <p><code>VPCConnection</code></p></li>
     /// </ul>
     /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
@@ -237,27 +224,19 @@ impl StartAssetBundleExportJobFluentBuilder {
     }
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
-    pub fn cloud_formation_override_property_configuration(
-        mut self,
-        input: crate::types::AssetBundleCloudFormationOverridePropertyConfiguration,
-    ) -> Self {
+    pub fn cloud_formation_override_property_configuration(mut self, input: crate::types::AssetBundleCloudFormationOverridePropertyConfiguration) -> Self {
         self.inner = self.inner.cloud_formation_override_property_configuration(input);
         self
     }
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
-    pub fn set_cloud_formation_override_property_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
-    ) -> Self {
+    pub fn set_cloud_formation_override_property_configuration(mut self, input: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>) -> Self {
         self.inner = self.inner.set_cloud_formation_override_property_configuration(input);
         self
     }
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
-    pub fn get_cloud_formation_override_property_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
+    pub fn get_cloud_formation_override_property_configuration(&self) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration> {
         self.inner.get_cloud_formation_override_property_configuration()
     }
     /// <p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.</p>
@@ -303,3 +282,4 @@ impl StartAssetBundleExportJobFluentBuilder {
         self.inner.get_validation_strategy()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetChunkOutput {
+pub struct GetChunkOutput  {
     /// Chunk data
     pub data: ::aws_smithy_types::byte_stream::ByteStream,
     /// Data length
@@ -13,9 +13,9 @@ pub struct GetChunkOutput {
     pub checksum_algorithm: crate::types::DataChecksumAlgorithm,
     _request_id: Option<String>,
 }
-impl GetChunkOutput {
+impl  GetChunkOutput  {
     /// Chunk data
-    pub fn data(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn data(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.data
     }
     /// Data length
@@ -23,20 +23,19 @@ impl GetChunkOutput {
         self.length
     }
     /// Data checksum
-    pub fn checksum(&self) -> &str {
-        use std::ops::Deref;
-        self.checksum.deref()
+    pub fn checksum(&self) -> & str {
+        use std::ops::Deref; self.checksum.deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(&self) -> &crate::types::DataChecksumAlgorithm {
+    pub fn checksum_algorithm(&self) -> & crate::types::DataChecksumAlgorithm {
         &self.checksum_algorithm
     }
 }
 impl ::aws_types::request_id::RequestId for GetChunkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetChunkOutput {
     /// Creates a new builder-style object to manufacture [`GetChunkOutput`](crate::operation::get_chunk::GetChunkOutput).
     pub fn builder() -> crate::operation::get_chunk::builders::GetChunkOutputBuilder {
@@ -63,8 +62,7 @@ impl GetChunkOutputBuilder {
     }
     /// Chunk data
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// Chunk data
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -78,8 +76,7 @@ impl GetChunkOutputBuilder {
     }
     /// Data length
     pub fn set_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// Data length
     pub fn get_length(&self) -> &::std::option::Option<i64> {
@@ -93,8 +90,7 @@ impl GetChunkOutputBuilder {
     }
     /// Data checksum
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// Data checksum
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,43 +104,47 @@ impl GetChunkOutputBuilder {
     }
     /// Checksum algorithm
     pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
-        self.checksum_algorithm = input;
-        self
+        self.checksum_algorithm = input; self
     }
     /// Checksum algorithm
     pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetChunkOutput`](crate::operation::get_chunk::GetChunkOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`checksum`](crate::operation::get_chunk::builders::GetChunkOutputBuilder::checksum)
     /// - [`checksum_algorithm`](crate::operation::get_chunk::builders::GetChunkOutputBuilder::checksum_algorithm)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_chunk::GetChunkOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_chunk::GetChunkOutput {
-            data: self.data.unwrap_or_default(),
-            length: self.length.unwrap_or_default(),
-            checksum: self.checksum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "checksum",
-                    "checksum was not specified but it is required when building GetChunkOutput",
-                )
-            })?,
-            checksum_algorithm: self.checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "checksum_algorithm",
-                    "checksum_algorithm was not specified but it is required when building GetChunkOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_chunk::GetChunkOutput {
+                data: self.data
+                    .unwrap_or_default()
+                ,
+                length: self.length
+                    .unwrap_or_default()
+                ,
+                checksum: self.checksum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("checksum", "checksum was not specified but it is required when building GetChunkOutput")
+                    )?
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("checksum_algorithm", "checksum_algorithm was not specified but it is required when building GetChunkOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

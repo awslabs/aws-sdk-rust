@@ -3,7 +3,7 @@
 /// <p>Describes the properties of the related standby WorkSpaces.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StandbyWorkspacesProperties {
+pub struct StandbyWorkspacesProperties  {
     /// <p>The identifier of the standby WorkSpace</p>
     pub standby_workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
@@ -11,17 +11,17 @@ pub struct StandbyWorkspacesProperties {
     /// <p>The date and time at which the last successful snapshot was taken of the primary WorkSpace used for replicating data.</p>
     pub recovery_snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl StandbyWorkspacesProperties {
+impl  StandbyWorkspacesProperties  {
     /// <p>The identifier of the standby WorkSpace</p>
-    pub fn standby_workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn standby_workspace_id(&self) -> ::std::option::Option<& str> {
         self.standby_workspace_id.as_deref()
     }
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
-    pub fn data_replication(&self) -> ::std::option::Option<&crate::types::DataReplication> {
+    pub fn data_replication(&self) -> ::std::option::Option<& crate::types::DataReplication> {
         self.data_replication.as_ref()
     }
     /// <p>The date and time at which the last successful snapshot was taken of the primary WorkSpace used for replicating data.</p>
-    pub fn recovery_snapshot_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn recovery_snapshot_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.recovery_snapshot_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl StandbyWorkspacesPropertiesBuilder {
     }
     /// <p>The identifier of the standby WorkSpace</p>
     pub fn set_standby_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.standby_workspace_id = input;
-        self
+        self.standby_workspace_id = input; self
     }
     /// <p>The identifier of the standby WorkSpace</p>
     pub fn get_standby_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StandbyWorkspacesPropertiesBuilder {
     }
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
     pub fn set_data_replication(mut self, input: ::std::option::Option<crate::types::DataReplication>) -> Self {
-        self.data_replication = input;
-        self
+        self.data_replication = input; self
     }
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
     pub fn get_data_replication(&self) -> &::std::option::Option<crate::types::DataReplication> {
@@ -76,8 +74,7 @@ impl StandbyWorkspacesPropertiesBuilder {
     }
     /// <p>The date and time at which the last successful snapshot was taken of the primary WorkSpace used for replicating data.</p>
     pub fn set_recovery_snapshot_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.recovery_snapshot_time = input;
-        self
+        self.recovery_snapshot_time = input; self
     }
     /// <p>The date and time at which the last successful snapshot was taken of the primary WorkSpace used for replicating data.</p>
     pub fn get_recovery_snapshot_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl StandbyWorkspacesPropertiesBuilder {
     /// Consumes the builder and constructs a [`StandbyWorkspacesProperties`](crate::types::StandbyWorkspacesProperties).
     pub fn build(self) -> crate::types::StandbyWorkspacesProperties {
         crate::types::StandbyWorkspacesProperties {
-            standby_workspace_id: self.standby_workspace_id,
-            data_replication: self.data_replication,
-            recovery_snapshot_time: self.recovery_snapshot_time,
+            standby_workspace_id: self.standby_workspace_id
+            ,
+            data_replication: self.data_replication
+            ,
+            recovery_snapshot_time: self.recovery_snapshot_time
+            ,
         }
     }
 }
+

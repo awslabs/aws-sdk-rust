@@ -3,15 +3,14 @@
 /// <p>Describes an action to invoke a Lambda function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaAction {
+pub struct LambdaAction  {
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: ::std::string::String,
 }
-impl LambdaAction {
+impl  LambdaAction  {
     /// <p>The ARN of the Lambda function.</p>
-    pub fn function_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.function_arn.deref()
+    pub fn function_arn(&self) -> & str {
+        use std::ops::Deref; self.function_arn.deref()
     }
 }
 impl LambdaAction {
@@ -36,8 +35,7 @@ impl LambdaActionBuilder {
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl LambdaActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`function_arn`](crate::types::builders::LambdaActionBuilder::function_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaAction {
-            function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_arn",
-                    "function_arn was not specified but it is required when building LambdaAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaAction {
+                function_arn: self.function_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_arn", "function_arn was not specified but it is required when building LambdaAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

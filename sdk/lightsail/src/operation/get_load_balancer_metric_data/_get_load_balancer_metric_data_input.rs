@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLoadBalancerMetricDataInput {
+pub struct GetLoadBalancerMetricDataInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric for which you want to return information.</p>
@@ -80,11 +80,11 @@ pub struct GetLoadBalancerMetricDataInput {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
+    pub statistics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>,
 }
-impl GetLoadBalancerMetricDataInput {
+impl  GetLoadBalancerMetricDataInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The metric for which you want to return information.</p>
@@ -139,7 +139,7 @@ impl GetLoadBalancerMetricDataInput {
     /// <p><code>Statistics</code>: The most useful statistic are <code>Average</code>, <code>Minimum</code>, and <code>Maximum</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
     /// </ul>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::LoadBalancerMetricName> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::LoadBalancerMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
@@ -147,15 +147,15 @@ impl GetLoadBalancerMetricDataInput {
         self.period
     }
     /// <p>The start time of the period.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the period.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::MetricUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::MetricUnit> {
         self.unit.as_ref()
     }
     /// <p>The statistic for the metric.</p>
@@ -172,10 +172,11 @@ impl GetLoadBalancerMetricDataInput {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
-    pub fn statistics(&self) -> &[crate::types::MetricStatistic] {
-        self.statistics.as_deref().unwrap_or_default()
+    pub fn statistics(&self) -> & [crate::types::MetricStatistic] {
+        self.statistics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetLoadBalancerMetricDataInput {
@@ -195,7 +196,7 @@ pub struct GetLoadBalancerMetricDataInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) unit: ::std::option::Option<crate::types::MetricUnit>,
-    pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
+    pub(crate) statistics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>,
 }
 impl GetLoadBalancerMetricDataInputBuilder {
     /// <p>The name of the load balancer.</p>
@@ -206,8 +207,7 @@ impl GetLoadBalancerMetricDataInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -323,8 +323,7 @@ impl GetLoadBalancerMetricDataInputBuilder {
     /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::LoadBalancerMetricName>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid load balancer metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>
@@ -389,8 +388,7 @@ impl GetLoadBalancerMetricDataInputBuilder {
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
@@ -404,8 +402,7 @@ impl GetLoadBalancerMetricDataInputBuilder {
     }
     /// <p>The start time of the period.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the period.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -419,8 +416,7 @@ impl GetLoadBalancerMetricDataInputBuilder {
     }
     /// <p>The end time of the period.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the period.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -434,8 +430,7 @@ impl GetLoadBalancerMetricDataInputBuilder {
     }
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::MetricUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::MetricUnit> {
@@ -461,9 +456,9 @@ impl GetLoadBalancerMetricDataInputBuilder {
     /// </ul>
     pub fn statistics(mut self, input: crate::types::MetricStatistic) -> Self {
         let mut v = self.statistics.unwrap_or_default();
-        v.push(input);
-        self.statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -479,9 +474,8 @@ impl GetLoadBalancerMetricDataInputBuilder {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>) -> Self {
+        self.statistics = input; self
     }
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -497,24 +491,29 @@ impl GetLoadBalancerMetricDataInputBuilder {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>> {
         &self.statistics
     }
     /// Consumes the builder and constructs a [`GetLoadBalancerMetricDataInput`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataInput {
-            load_balancer_name: self.load_balancer_name,
-            metric_name: self.metric_name,
-            period: self.period,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            unit: self.unit,
-            statistics: self.statistics,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataInput {
+                load_balancer_name: self.load_balancer_name
+                ,
+                metric_name: self.metric_name
+                ,
+                period: self.period
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                unit: self.unit
+                ,
+                statistics: self.statistics
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about a batch load task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchLoadTask {
+pub struct BatchLoadTask  {
     /// <p>The ID of the batch load task.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the batch load task.</p>
@@ -19,33 +19,33 @@ pub struct BatchLoadTask {
     /// <p></p>
     pub resumable_until: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl BatchLoadTask {
+impl  BatchLoadTask  {
     /// <p>The ID of the batch load task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>Status of the batch load task.</p>
-    pub fn task_status(&self) -> ::std::option::Option<&crate::types::BatchLoadStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<& crate::types::BatchLoadStatus> {
         self.task_status.as_ref()
     }
     /// <p>Database name for the database into which a batch load task loads data.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Table name for the table into which a batch load task loads data.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The time when the Timestream batch load task was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time when the Timestream batch load task was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p></p>
-    pub fn resumable_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn resumable_until(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.resumable_until.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl BatchLoadTaskBuilder {
     }
     /// <p>The ID of the batch load task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the batch load task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl BatchLoadTaskBuilder {
     }
     /// <p>Status of the batch load task.</p>
     pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::BatchLoadStatus>) -> Self {
-        self.task_status = input;
-        self
+        self.task_status = input; self
     }
     /// <p>Status of the batch load task.</p>
     pub fn get_task_status(&self) -> &::std::option::Option<crate::types::BatchLoadStatus> {
@@ -104,8 +102,7 @@ impl BatchLoadTaskBuilder {
     }
     /// <p>Database name for the database into which a batch load task loads data.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>Database name for the database into which a batch load task loads data.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl BatchLoadTaskBuilder {
     }
     /// <p>Table name for the table into which a batch load task loads data.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>Table name for the table into which a batch load task loads data.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl BatchLoadTaskBuilder {
     }
     /// <p>The time when the Timestream batch load task was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the Timestream batch load task was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl BatchLoadTaskBuilder {
     }
     /// <p>The time when the Timestream batch load task was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time when the Timestream batch load task was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl BatchLoadTaskBuilder {
     }
     /// <p></p>
     pub fn set_resumable_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.resumable_until = input;
-        self
+        self.resumable_until = input; self
     }
     /// <p></p>
     pub fn get_resumable_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl BatchLoadTaskBuilder {
     /// Consumes the builder and constructs a [`BatchLoadTask`](crate::types::BatchLoadTask).
     pub fn build(self) -> crate::types::BatchLoadTask {
         crate::types::BatchLoadTask {
-            task_id: self.task_id,
-            task_status: self.task_status,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            resumable_until: self.resumable_until,
+            task_id: self.task_id
+            ,
+            task_status: self.task_status
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            resumable_until: self.resumable_until
+            ,
         }
     }
 }
+

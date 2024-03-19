@@ -3,14 +3,14 @@
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConfigurationSetSendingOptionsOutput {
+pub struct PutConfigurationSetSendingOptionsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for PutConfigurationSetSendingOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutConfigurationSetSendingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetSendingOptionsOutput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput).
     pub fn builder() -> crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsOutputBuilder {
@@ -26,14 +26,14 @@ pub struct PutConfigurationSetSendingOptionsOutputBuilder {
 }
 impl PutConfigurationSetSendingOptionsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsOutput`](crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput).
     pub fn build(self) -> crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput {
         crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput {
@@ -41,3 +41,4 @@ impl PutConfigurationSetSendingOptionsOutputBuilder {
         }
     }
 }
+

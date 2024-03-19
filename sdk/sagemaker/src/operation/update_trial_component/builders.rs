@@ -5,54 +5,50 @@ pub use crate::operation::update_trial_component::_update_trial_component_input:
 
 impl UpdateTrialComponentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_trial_component::UpdateTrialComponentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_trial_component::UpdateTrialComponentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_trial_component();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_trial_component::UpdateTrialComponentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_trial_component::UpdateTrialComponentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_trial_component();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateTrialComponent`.
-///
+/// 
 /// <p>Updates one or more properties of a trial component.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTrialComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder,
+                    inner: crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_trial_component::UpdateTrialComponentOutput,
-        crate::operation::update_trial_component::UpdateTrialComponentError,
-    > for UpdateTrialComponentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_trial_component::UpdateTrialComponentOutput,
-            crate::operation::update_trial_component::UpdateTrialComponentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_trial_component::UpdateTrialComponentOutput,
+                    crate::operation::update_trial_component::UpdateTrialComponentError,
+                > for UpdateTrialComponentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_trial_component::UpdateTrialComponentOutput,
+                        crate::operation::update_trial_component::UpdateTrialComponentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateTrialComponentFluentBuilder {
     /// Creates a new `UpdateTrialComponent`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateTrialComponentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_trial_component::UpdateTrialComponentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_trial_component::UpdateTrialComponentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_trial_component::UpdateTrialComponent::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_trial_component::UpdateTrialComponent::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_trial_component::UpdateTrialComponentOutput,
-        crate::operation::update_trial_component::UpdateTrialComponentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_trial_component::UpdateTrialComponentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_trial_component::UpdateTrialComponentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_trial_component::UpdateTrialComponent::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_trial_component::UpdateTrialComponent::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_trial_component::UpdateTrialComponentOutput, crate::operation::update_trial_component::UpdateTrialComponentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the component to update.</p>
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_component_name(input.into());
@@ -188,17 +175,12 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TrialComponentParameterValue>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TrialComponentParameterValue>> {
         self.inner.get_parameters()
     }
     /// Appends an item to `ParametersToRemove`.
@@ -211,12 +193,12 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>The hyperparameters to remove from the component.</p>
-    pub fn set_parameters_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_parameters_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_parameters_to_remove(input);
         self
     }
     /// <p>The hyperparameters to remove from the component.</p>
-    pub fn get_parameters_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parameters_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_parameters_to_remove()
     }
     /// Adds a key-value pair to `InputArtifacts`.
@@ -229,17 +211,12 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
-    pub fn set_input_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
-    ) -> Self {
+    pub fn set_input_artifacts(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TrialComponentArtifact>>) -> Self {
         self.inner = self.inner.set_input_artifacts(input);
         self
     }
     /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
-    pub fn get_input_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>> {
+    pub fn get_input_artifacts(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TrialComponentArtifact>> {
         self.inner.get_input_artifacts()
     }
     /// Appends an item to `InputArtifactsToRemove`.
@@ -252,12 +229,12 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>The input artifacts to remove from the component.</p>
-    pub fn set_input_artifacts_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_input_artifacts_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_input_artifacts_to_remove(input);
         self
     }
     /// <p>The input artifacts to remove from the component.</p>
-    pub fn get_input_artifacts_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_input_artifacts_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_input_artifacts_to_remove()
     }
     /// Adds a key-value pair to `OutputArtifacts`.
@@ -270,17 +247,12 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
-    pub fn set_output_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
-    ) -> Self {
+    pub fn set_output_artifacts(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TrialComponentArtifact>>) -> Self {
         self.inner = self.inner.set_output_artifacts(input);
         self
     }
     /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
-    pub fn get_output_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>> {
+    pub fn get_output_artifacts(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TrialComponentArtifact>> {
         self.inner.get_output_artifacts()
     }
     /// Appends an item to `OutputArtifactsToRemove`.
@@ -293,12 +265,13 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>The output artifacts to remove from the component.</p>
-    pub fn set_output_artifacts_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_output_artifacts_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_output_artifacts_to_remove(input);
         self
     }
     /// <p>The output artifacts to remove from the component.</p>
-    pub fn get_output_artifacts_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_output_artifacts_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_output_artifacts_to_remove()
     }
 }
+

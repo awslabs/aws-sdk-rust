@@ -22,11 +22,7 @@ impl Destination {
     /// Tries to convert the enum instance into [`FirehoseStream`](crate::types::Destination::FirehoseStream), extracting the inner [`FirehoseStream`](crate::types::FirehoseStream).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_firehose_stream(&self) -> ::std::result::Result<&crate::types::FirehoseStream, &Self> {
-        if let Destination::FirehoseStream(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Destination::FirehoseStream(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FirehoseStream`](crate::types::Destination::FirehoseStream).
     pub fn is_firehose_stream(&self) -> bool {
@@ -35,11 +31,7 @@ impl Destination {
     /// Tries to convert the enum instance into [`S3Bucket`](crate::types::Destination::S3Bucket), extracting the inner [`S3Bucket`](crate::types::S3Bucket).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_bucket(&self) -> ::std::result::Result<&crate::types::S3Bucket, &Self> {
-        if let Destination::S3Bucket(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Destination::S3Bucket(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3Bucket`](crate::types::Destination::S3Bucket).
     pub fn is_s3_bucket(&self) -> bool {
@@ -50,3 +42,4 @@ impl Destination {
         matches!(self, Self::Unknown)
     }
 }
+

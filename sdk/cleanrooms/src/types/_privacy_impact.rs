@@ -21,11 +21,7 @@ impl PrivacyImpact {
     /// Tries to convert the enum instance into [`DifferentialPrivacy`](crate::types::PrivacyImpact::DifferentialPrivacy), extracting the inner [`DifferentialPrivacyPrivacyImpact`](crate::types::DifferentialPrivacyPrivacyImpact).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_differential_privacy(&self) -> ::std::result::Result<&crate::types::DifferentialPrivacyPrivacyImpact, &Self> {
-        if let PrivacyImpact::DifferentialPrivacy(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PrivacyImpact::DifferentialPrivacy(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DifferentialPrivacy`](crate::types::PrivacyImpact::DifferentialPrivacy).
     pub fn is_differential_privacy(&self) -> bool {
@@ -36,3 +32,4 @@ impl PrivacyImpact {
         matches!(self, Self::Unknown)
     }
 }
+

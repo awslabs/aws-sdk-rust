@@ -3,13 +3,13 @@
 /// <p>Represents a request to retrieve an existing custom verification email template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCustomVerificationEmailTemplateInput {
+pub struct GetCustomVerificationEmailTemplateInput  {
     /// <p>The name of the custom verification email template to retrieve.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCustomVerificationEmailTemplateInput {
+impl  GetCustomVerificationEmailTemplateInput  {
     /// <p>The name of the custom verification email template to retrieve.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl GetCustomVerificationEmailTemplateInputBuilder {
     }
     /// <p>The name of the custom verification email template to retrieve.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the custom verification email template to retrieve.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`GetCustomVerificationEmailTemplateInput`](crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput {
-                template_name: self.template_name,
-            },
+                template_name: self.template_name
+                ,
+            }
         )
     }
 }
+

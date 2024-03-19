@@ -241,3 +241,4 @@ pub fn de_volume(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

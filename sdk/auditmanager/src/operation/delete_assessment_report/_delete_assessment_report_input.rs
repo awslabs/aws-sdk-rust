@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAssessmentReportInput {
+pub struct DeleteAssessmentReportInput  {
     /// <p>The unique identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the assessment report.</p>
     pub assessment_report_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAssessmentReportInput {
+impl  DeleteAssessmentReportInput  {
     /// <p>The unique identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The unique identifier for the assessment report.</p>
-    pub fn assessment_report_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_report_id(&self) -> ::std::option::Option<& str> {
         self.assessment_report_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAssessmentReportInputBuilder {
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteAssessmentReportInputBuilder {
     }
     /// <p>The unique identifier for the assessment report.</p>
     pub fn set_assessment_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_report_id = input;
-        self
+        self.assessment_report_id = input; self
     }
     /// <p>The unique identifier for the assessment report.</p>
     pub fn get_assessment_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_report_id
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentReportInput`](crate::operation::delete_assessment_report::DeleteAssessmentReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_assessment_report::DeleteAssessmentReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_assessment_report::DeleteAssessmentReportInput {
-            assessment_id: self.assessment_id,
-            assessment_report_id: self.assessment_report_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_assessment_report::DeleteAssessmentReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_assessment_report::DeleteAssessmentReportInput {
+                assessment_id: self.assessment_id
+                ,
+                assessment_report_id: self.assessment_report_id
+                ,
+            }
+        )
     }
 }
+

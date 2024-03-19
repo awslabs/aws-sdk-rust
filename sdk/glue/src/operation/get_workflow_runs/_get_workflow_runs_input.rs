@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowRunsInput {
+pub struct GetWorkflowRunsInput  {
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
@@ -12,9 +12,9 @@ pub struct GetWorkflowRunsInput {
     /// <p>The maximum number of workflow runs to be included in the response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetWorkflowRunsInput {
+impl  GetWorkflowRunsInput  {
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
@@ -22,7 +22,7 @@ impl GetWorkflowRunsInput {
         self.include_graph
     }
     /// <p>The maximum size of the response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of workflow runs to be included in the response.</p>
@@ -55,8 +55,7 @@ impl GetWorkflowRunsInputBuilder {
     }
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GetWorkflowRunsInputBuilder {
     }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_graph = input;
-        self
+        self.include_graph = input; self
     }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl GetWorkflowRunsInputBuilder {
     }
     /// <p>The maximum size of the response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum size of the response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl GetWorkflowRunsInputBuilder {
     }
     /// <p>The maximum number of workflow runs to be included in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of workflow runs to be included in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunsInput`](crate::operation::get_workflow_runs::GetWorkflowRunsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_runs::GetWorkflowRunsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_workflow_runs::GetWorkflowRunsInput {
-            name: self.name,
-            include_graph: self.include_graph,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow_runs::GetWorkflowRunsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow_runs::GetWorkflowRunsInput {
+                name: self.name
+                ,
+                include_graph: self.include_graph
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

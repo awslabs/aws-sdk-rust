@@ -3,15 +3,15 @@
 /// <p>Gets information about a specific traffic policy version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrafficPolicyInput {
+pub struct GetTrafficPolicyInput  {
     /// <p>The ID of the traffic policy that you want to get information about.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the traffic policy that you want to get information about.</p>
     pub version: ::std::option::Option<i32>,
 }
-impl GetTrafficPolicyInput {
+impl  GetTrafficPolicyInput  {
     /// <p>The ID of the traffic policy that you want to get information about.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
@@ -42,8 +42,7 @@ impl GetTrafficPolicyInputBuilder {
     }
     /// <p>The ID of the traffic policy that you want to get information about.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the traffic policy that you want to get information about.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl GetTrafficPolicyInputBuilder {
     }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetTrafficPolicyInput`](crate::operation::get_traffic_policy::GetTrafficPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_traffic_policy::GetTrafficPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_traffic_policy::GetTrafficPolicyInput {
-            id: self.id,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_traffic_policy::GetTrafficPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_traffic_policy::GetTrafficPolicyInput {
+                id: self.id
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

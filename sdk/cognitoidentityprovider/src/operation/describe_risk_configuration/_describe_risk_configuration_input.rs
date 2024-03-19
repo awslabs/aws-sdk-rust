@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeRiskConfigurationInput {
+pub struct DescribeRiskConfigurationInput  {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRiskConfigurationInput {
+impl  DescribeRiskConfigurationInput  {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The app client ID.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for DescribeRiskConfigurationInput {
+impl  ::std::fmt::Debug for DescribeRiskConfigurationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRiskConfigurationInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -49,8 +49,7 @@ impl DescribeRiskConfigurationInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,24 +62,22 @@ impl DescribeRiskConfigurationInputBuilder {
     }
     /// <p>The app client ID.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The app client ID.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
     /// Consumes the builder and constructs a [`DescribeRiskConfigurationInput`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput {
-            user_pool_id: self.user_pool_id,
-            client_id: self.client_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput {
+                user_pool_id: self.user_pool_id
+                ,
+                client_id: self.client_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribeRiskConfigurationInputBuilder {
@@ -91,3 +88,4 @@ impl ::std::fmt::Debug for DescribeRiskConfigurationInputBuilder {
         formatter.finish()
     }
 }
+

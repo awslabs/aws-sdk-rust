@@ -3,7 +3,7 @@
 /// <p>Describes a transit gateway Connect peer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayConnectPeer {
+pub struct TransitGatewayConnectPeer  {
     /// <p>The ID of the Connect attachment.</p>
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Connect peer.</p>
@@ -15,34 +15,35 @@ pub struct TransitGatewayConnectPeer {
     /// <p>The Connect peer details.</p>
     pub connect_peer_configuration: ::std::option::Option<crate::types::TransitGatewayConnectPeerConfiguration>,
     /// <p>The tags for the Connect peer.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl TransitGatewayConnectPeer {
+impl  TransitGatewayConnectPeer  {
     /// <p>The ID of the Connect attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn transit_gateway_connect_peer_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_connect_peer_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_connect_peer_id.as_deref()
     }
     /// <p>The state of the Connect peer.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayConnectPeerState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayConnectPeerState> {
         self.state.as_ref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Connect peer details.</p>
-    pub fn connect_peer_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConnectPeerConfiguration> {
+    pub fn connect_peer_configuration(&self) -> ::std::option::Option<& crate::types::TransitGatewayConnectPeerConfiguration> {
         self.connect_peer_configuration.as_ref()
     }
     /// <p>The tags for the Connect peer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TransitGatewayConnectPeer {
@@ -61,7 +62,7 @@ pub struct TransitGatewayConnectPeerBuilder {
     pub(crate) state: ::std::option::Option<crate::types::TransitGatewayConnectPeerState>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) connect_peer_configuration: ::std::option::Option<crate::types::TransitGatewayConnectPeerConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TransitGatewayConnectPeerBuilder {
     /// <p>The ID of the Connect attachment.</p>
@@ -71,8 +72,7 @@ impl TransitGatewayConnectPeerBuilder {
     }
     /// <p>The ID of the Connect attachment.</p>
     pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>The ID of the Connect attachment.</p>
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl TransitGatewayConnectPeerBuilder {
     }
     /// <p>The ID of the Connect peer.</p>
     pub fn set_transit_gateway_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_connect_peer_id = input;
-        self
+        self.transit_gateway_connect_peer_id = input; self
     }
     /// <p>The ID of the Connect peer.</p>
     pub fn get_transit_gateway_connect_peer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl TransitGatewayConnectPeerBuilder {
     }
     /// <p>The state of the Connect peer.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayConnectPeerState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the Connect peer.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayConnectPeerState> {
@@ -113,8 +111,7 @@ impl TransitGatewayConnectPeerBuilder {
     }
     /// <p>The creation time.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -127,8 +124,7 @@ impl TransitGatewayConnectPeerBuilder {
     }
     /// <p>The Connect peer details.</p>
     pub fn set_connect_peer_configuration(mut self, input: ::std::option::Option<crate::types::TransitGatewayConnectPeerConfiguration>) -> Self {
-        self.connect_peer_configuration = input;
-        self
+        self.connect_peer_configuration = input; self
     }
     /// <p>The Connect peer details.</p>
     pub fn get_connect_peer_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConnectPeerConfiguration> {
@@ -141,28 +137,34 @@ impl TransitGatewayConnectPeerBuilder {
     /// <p>The tags for the Connect peer.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the Connect peer.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the Connect peer.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGatewayConnectPeer`](crate::types::TransitGatewayConnectPeer).
     pub fn build(self) -> crate::types::TransitGatewayConnectPeer {
         crate::types::TransitGatewayConnectPeer {
-            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-            transit_gateway_connect_peer_id: self.transit_gateway_connect_peer_id,
-            state: self.state,
-            creation_time: self.creation_time,
-            connect_peer_configuration: self.connect_peer_configuration,
-            tags: self.tags,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id
+            ,
+            transit_gateway_connect_peer_id: self.transit_gateway_connect_peer_id
+            ,
+            state: self.state
+            ,
+            creation_time: self.creation_time
+            ,
+            connect_peer_configuration: self.connect_peer_configuration
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

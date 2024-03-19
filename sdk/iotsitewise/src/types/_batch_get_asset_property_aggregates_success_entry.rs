@@ -3,22 +3,20 @@
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesSuccessEntry {
+pub struct BatchGetAssetPropertyAggregatesSuccessEntry  {
     /// <p>The ID of the entry.</p>
     pub entry_id: ::std::string::String,
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-    pub aggregated_values: ::std::vec::Vec<crate::types::AggregatedValue>,
+    pub aggregated_values: ::std::vec::Vec::<crate::types::AggregatedValue>,
 }
-impl BatchGetAssetPropertyAggregatesSuccessEntry {
+impl  BatchGetAssetPropertyAggregatesSuccessEntry  {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_id.deref()
+    pub fn entry_id(&self) -> & str {
+        use std::ops::Deref; self.entry_id.deref()
     }
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-    pub fn aggregated_values(&self) -> &[crate::types::AggregatedValue] {
-        use std::ops::Deref;
-        self.aggregated_values.deref()
+    pub fn aggregated_values(&self) -> & [crate::types::AggregatedValue] {
+        use std::ops::Deref; self.aggregated_values.deref()
     }
 }
 impl BatchGetAssetPropertyAggregatesSuccessEntry {
@@ -33,7 +31,7 @@ impl BatchGetAssetPropertyAggregatesSuccessEntry {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
-    pub(crate) aggregated_values: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>,
+    pub(crate) aggregated_values: ::std::option::Option<::std::vec::Vec::<crate::types::AggregatedValue>>,
 }
 impl BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
     /// <p>The ID of the entry.</p>
@@ -44,8 +42,7 @@ impl BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>The ID of the entry.</p>
     pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,39 +55,37 @@ impl BatchGetAssetPropertyAggregatesSuccessEntryBuilder {
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
     pub fn aggregated_values(mut self, input: crate::types::AggregatedValue) -> Self {
         let mut v = self.aggregated_values.unwrap_or_default();
-        v.push(input);
-        self.aggregated_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggregated_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-    pub fn set_aggregated_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>) -> Self {
-        self.aggregated_values = input;
-        self
+    pub fn set_aggregated_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AggregatedValue>>) -> Self {
+        self.aggregated_values = input; self
     }
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-    pub fn get_aggregated_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>> {
+    pub fn get_aggregated_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AggregatedValue>> {
         &self.aggregated_values
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::types::BatchGetAssetPropertyAggregatesSuccessEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyAggregatesSuccessEntryBuilder::entry_id)
     /// - [`aggregated_values`](crate::types::builders::BatchGetAssetPropertyAggregatesSuccessEntryBuilder::aggregated_values)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyAggregatesSuccessEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyAggregatesSuccessEntry {
-            entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_id",
-                    "entry_id was not specified but it is required when building BatchGetAssetPropertyAggregatesSuccessEntry",
-                )
-            })?,
-            aggregated_values: self.aggregated_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregated_values",
-                    "aggregated_values was not specified but it is required when building BatchGetAssetPropertyAggregatesSuccessEntry",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetAssetPropertyAggregatesSuccessEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::BatchGetAssetPropertyAggregatesSuccessEntry {
+                entry_id: self.entry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_id", "entry_id was not specified but it is required when building BatchGetAssetPropertyAggregatesSuccessEntry")
+                    )?
+                ,
+                aggregated_values: self.aggregated_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregated_values", "aggregated_values was not specified but it is required when building BatchGetAssetPropertyAggregatesSuccessEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

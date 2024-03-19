@@ -3,22 +3,23 @@
 /// <p>Configuration for validating an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerGroupValidationConfiguration {
+pub struct ServerGroupValidationConfiguration  {
     /// <p>The ID of the server group.</p>
     pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The validation configuration.</p>
-    pub server_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerValidationConfiguration>>,
+    pub server_validation_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ServerValidationConfiguration>>,
 }
-impl ServerGroupValidationConfiguration {
+impl  ServerGroupValidationConfiguration  {
     /// <p>The ID of the server group.</p>
-    pub fn server_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_group_id(&self) -> ::std::option::Option<& str> {
         self.server_group_id.as_deref()
     }
     /// <p>The validation configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_validation_configurations.is_none()`.
-    pub fn server_validation_configurations(&self) -> &[crate::types::ServerValidationConfiguration] {
-        self.server_validation_configurations.as_deref().unwrap_or_default()
+    pub fn server_validation_configurations(&self) -> & [crate::types::ServerValidationConfiguration] {
+        self.server_validation_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ServerGroupValidationConfiguration {
@@ -33,7 +34,7 @@ impl ServerGroupValidationConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerGroupValidationConfigurationBuilder {
     pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) server_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerValidationConfiguration>>,
+    pub(crate) server_validation_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ServerValidationConfiguration>>,
 }
 impl ServerGroupValidationConfigurationBuilder {
     /// <p>The ID of the server group.</p>
@@ -43,8 +44,7 @@ impl ServerGroupValidationConfigurationBuilder {
     }
     /// <p>The ID of the server group.</p>
     pub fn set_server_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_group_id = input;
-        self
+        self.server_group_id = input; self
     }
     /// <p>The ID of the server group.</p>
     pub fn get_server_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,26 @@ impl ServerGroupValidationConfigurationBuilder {
     /// <p>The validation configuration.</p>
     pub fn server_validation_configurations(mut self, input: crate::types::ServerValidationConfiguration) -> Self {
         let mut v = self.server_validation_configurations.unwrap_or_default();
-        v.push(input);
-        self.server_validation_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.server_validation_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The validation configuration.</p>
-    pub fn set_server_validation_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerValidationConfiguration>>,
-    ) -> Self {
-        self.server_validation_configurations = input;
-        self
+    pub fn set_server_validation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServerValidationConfiguration>>) -> Self {
+        self.server_validation_configurations = input; self
     }
     /// <p>The validation configuration.</p>
-    pub fn get_server_validation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerValidationConfiguration>> {
+    pub fn get_server_validation_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServerValidationConfiguration>> {
         &self.server_validation_configurations
     }
     /// Consumes the builder and constructs a [`ServerGroupValidationConfiguration`](crate::types::ServerGroupValidationConfiguration).
     pub fn build(self) -> crate::types::ServerGroupValidationConfiguration {
         crate::types::ServerGroupValidationConfiguration {
-            server_group_id: self.server_group_id,
-            server_validation_configurations: self.server_validation_configurations,
+            server_group_id: self.server_group_id
+            ,
+            server_validation_configurations: self.server_validation_configurations
+            ,
         }
     }
 }
+

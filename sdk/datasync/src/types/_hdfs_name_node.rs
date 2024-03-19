@@ -3,17 +3,16 @@
 /// <p>The NameNode of the Hadoop Distributed File System (HDFS). The NameNode manages the file system's namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HdfsNameNode {
+pub struct HdfsNameNode  {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
     pub hostname: ::std::string::String,
     /// <p>The port that the NameNode uses to listen to client requests.</p>
     pub port: i32,
 }
-impl HdfsNameNode {
+impl  HdfsNameNode  {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
-    pub fn hostname(&self) -> &str {
-        use std::ops::Deref;
-        self.hostname.deref()
+    pub fn hostname(&self) -> & str {
+        use std::ops::Deref; self.hostname.deref()
     }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
     pub fn port(&self) -> i32 {
@@ -43,8 +42,7 @@ impl HdfsNameNodeBuilder {
     }
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl HdfsNameNodeBuilder {
     }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl HdfsNameNodeBuilder {
     /// - [`hostname`](crate::types::builders::HdfsNameNodeBuilder::hostname)
     /// - [`port`](crate::types::builders::HdfsNameNodeBuilder::port)
     pub fn build(self) -> ::std::result::Result<crate::types::HdfsNameNode, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HdfsNameNode {
-            hostname: self.hostname.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hostname",
-                    "hostname was not specified but it is required when building HdfsNameNode",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building HdfsNameNode",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HdfsNameNode {
+                hostname: self.hostname
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hostname", "hostname was not specified but it is required when building HdfsNameNode")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building HdfsNameNode")
+                    )?
+                ,
+            }
+        )
     }
 }
+

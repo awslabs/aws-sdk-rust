@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventStreamInput {
+pub struct CreateEventStreamInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name</p>
@@ -10,23 +10,23 @@ pub struct CreateEventStreamInput {
     /// <p>The name of the event stream.</p>
     pub event_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateEventStreamInput {
+impl  CreateEventStreamInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The name of the event stream.</p>
-    pub fn event_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_stream_name(&self) -> ::std::option::Option<& str> {
         self.event_stream_name.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -44,7 +44,7 @@ pub struct CreateEventStreamInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) event_stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateEventStreamInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -55,8 +55,7 @@ impl CreateEventStreamInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateEventStreamInputBuilder {
     }
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateEventStreamInputBuilder {
     }
     /// <p>The name of the event stream.</p>
     pub fn set_event_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_stream_name = input;
-        self
+        self.event_stream_name = input; self
     }
     /// <p>The name of the event stream.</p>
     pub fn get_event_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,28 +96,32 @@ impl CreateEventStreamInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEventStreamInput`](crate::operation::create_event_stream::CreateEventStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_event_stream::CreateEventStreamInput {
-            domain_name: self.domain_name,
-            uri: self.uri,
-            event_stream_name: self.event_stream_name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_event_stream::CreateEventStreamInput {
+                domain_name: self.domain_name
+                ,
+                uri: self.uri
+                ,
+                event_stream_name: self.event_stream_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

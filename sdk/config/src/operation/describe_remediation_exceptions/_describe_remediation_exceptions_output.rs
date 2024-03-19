@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRemediationExceptionsOutput {
+pub struct DescribeRemediationExceptionsOutput  {
     /// <p>Returns a list of remediation exception objects.</p>
-    pub remediation_exceptions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>,
+    pub remediation_exceptions: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationException>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRemediationExceptionsOutput {
+impl  DescribeRemediationExceptionsOutput  {
     /// <p>Returns a list of remediation exception objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_exceptions.is_none()`.
-    pub fn remediation_exceptions(&self) -> &[crate::types::RemediationException] {
-        self.remediation_exceptions.as_deref().unwrap_or_default()
+    pub fn remediation_exceptions(&self) -> & [crate::types::RemediationException] {
+        self.remediation_exceptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRemediationExceptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRemediationExceptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRemediationExceptionsOutput`](crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput).
     pub fn builder() -> crate::operation::describe_remediation_exceptions::builders::DescribeRemediationExceptionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeRemediationExceptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRemediationExceptionsOutputBuilder {
-    pub(crate) remediation_exceptions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>,
+    pub(crate) remediation_exceptions: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationException>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeRemediationExceptionsOutputBuilder {
     /// <p>Returns a list of remediation exception objects.</p>
     pub fn remediation_exceptions(mut self, input: crate::types::RemediationException) -> Self {
         let mut v = self.remediation_exceptions.unwrap_or_default();
-        v.push(input);
-        self.remediation_exceptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remediation_exceptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of remediation exception objects.</p>
-    pub fn set_remediation_exceptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>) -> Self {
-        self.remediation_exceptions = input;
-        self
+    pub fn set_remediation_exceptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationException>>) -> Self {
+        self.remediation_exceptions = input; self
     }
     /// <p>Returns a list of remediation exception objects.</p>
-    pub fn get_remediation_exceptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationException>> {
+    pub fn get_remediation_exceptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationException>> {
         &self.remediation_exceptions
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -69,28 +69,30 @@ impl DescribeRemediationExceptionsOutputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRemediationExceptionsOutput`](crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput).
     pub fn build(self) -> crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput {
         crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput {
-            remediation_exceptions: self.remediation_exceptions,
-            next_token: self.next_token,
+            remediation_exceptions: self.remediation_exceptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,36 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVpcEndpointServicePermissionsInput {
+pub struct ModifyVpcEndpointServicePermissionsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
-    pub add_allowed_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub add_allowed_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
-    pub remove_allowed_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_allowed_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyVpcEndpointServicePermissionsInput {
+impl  ModifyVpcEndpointServicePermissionsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the service.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_allowed_principals.is_none()`.
-    pub fn add_allowed_principals(&self) -> &[::std::string::String] {
-        self.add_allowed_principals.as_deref().unwrap_or_default()
+    pub fn add_allowed_principals(&self) -> & [::std::string::String] {
+        self.add_allowed_principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_allowed_principals.is_none()`.
-    pub fn remove_allowed_principals(&self) -> &[::std::string::String] {
-        self.remove_allowed_principals.as_deref().unwrap_or_default()
+    pub fn remove_allowed_principals(&self) -> & [::std::string::String] {
+        self.remove_allowed_principals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyVpcEndpointServicePermissionsInput {
@@ -47,8 +49,8 @@ impl ModifyVpcEndpointServicePermissionsInput {
 pub struct ModifyVpcEndpointServicePermissionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
-    pub(crate) add_allowed_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) remove_allowed_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_allowed_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) remove_allowed_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyVpcEndpointServicePermissionsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -58,8 +60,7 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -73,8 +74,7 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the service.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +87,16 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
     pub fn add_allowed_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_allowed_principals.unwrap_or_default();
-        v.push(input.into());
-        self.add_allowed_principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.add_allowed_principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
-    pub fn set_add_allowed_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.add_allowed_principals = input;
-        self
+    pub fn set_add_allowed_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.add_allowed_principals = input; self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
-    pub fn get_add_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.add_allowed_principals
     }
     /// Appends an item to `remove_allowed_principals`.
@@ -107,33 +106,32 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
     pub fn remove_allowed_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_allowed_principals.unwrap_or_default();
-        v.push(input.into());
-        self.remove_allowed_principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_allowed_principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
-    pub fn set_remove_allowed_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_allowed_principals = input;
-        self
+    pub fn set_remove_allowed_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_allowed_principals = input; self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
-    pub fn get_remove_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_allowed_principals
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePermissionsInput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput {
-                dry_run: self.dry_run,
-                service_id: self.service_id,
-                add_allowed_principals: self.add_allowed_principals,
-                remove_allowed_principals: self.remove_allowed_principals,
-            },
+                dry_run: self.dry_run
+                ,
+                service_id: self.service_id
+                ,
+                add_allowed_principals: self.add_allowed_principals
+                ,
+                remove_allowed_principals: self.remove_allowed_principals
+                ,
+            }
         )
     }
 }
+

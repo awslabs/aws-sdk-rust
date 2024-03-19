@@ -3,7 +3,7 @@
 /// <p>An object that represents a virtual gateway returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualGatewayData {
+pub struct VirtualGatewayData  {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     pub mesh_name: ::std::string::String,
     /// <p>The name of the virtual gateway.</p>
@@ -15,27 +15,25 @@ pub struct VirtualGatewayData {
     /// <p>The current status of the virtual gateway.</p>
     pub status: ::std::option::Option<crate::types::VirtualGatewayStatus>,
 }
-impl VirtualGatewayData {
+impl  VirtualGatewayData  {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> & str {
+        use std::ops::Deref; self.mesh_name.deref()
     }
     /// <p>The name of the virtual gateway.</p>
-    pub fn virtual_gateway_name(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_gateway_name.deref()
+    pub fn virtual_gateway_name(&self) -> & str {
+        use std::ops::Deref; self.virtual_gateway_name.deref()
     }
     /// <p>The specifications of the virtual gateway.</p>
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::VirtualGatewaySpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::VirtualGatewaySpec> {
         self.spec.as_ref()
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ResourceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The current status of the virtual gateway.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualGatewayStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VirtualGatewayStatus> {
         self.status.as_ref()
     }
 }
@@ -65,8 +63,7 @@ impl VirtualGatewayDataBuilder {
     }
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl VirtualGatewayDataBuilder {
     }
     /// <p>The name of the virtual gateway.</p>
     pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_gateway_name = input;
-        self
+        self.virtual_gateway_name = input; self
     }
     /// <p>The name of the virtual gateway.</p>
     pub fn get_virtual_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl VirtualGatewayDataBuilder {
     }
     /// <p>The specifications of the virtual gateway.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualGatewaySpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The specifications of the virtual gateway.</p>
     pub fn get_spec(&self) -> &::std::option::Option<crate::types::VirtualGatewaySpec> {
@@ -110,8 +105,7 @@ impl VirtualGatewayDataBuilder {
     }
     /// <p>An object that represents metadata for a resource.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>An object that represents metadata for a resource.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
@@ -125,8 +119,7 @@ impl VirtualGatewayDataBuilder {
     }
     /// <p>The current status of the virtual gateway.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualGatewayStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the virtual gateway.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualGatewayStatus> {
@@ -137,22 +130,26 @@ impl VirtualGatewayDataBuilder {
     /// - [`mesh_name`](crate::types::builders::VirtualGatewayDataBuilder::mesh_name)
     /// - [`virtual_gateway_name`](crate::types::builders::VirtualGatewayDataBuilder::virtual_gateway_name)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualGatewayData {
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building VirtualGatewayData",
-                )
-            })?,
-            virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_gateway_name",
-                    "virtual_gateway_name was not specified but it is required when building VirtualGatewayData",
-                )
-            })?,
-            spec: self.spec,
-            metadata: self.metadata,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualGatewayData {
+                mesh_name: self.mesh_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mesh_name", "mesh_name was not specified but it is required when building VirtualGatewayData")
+                    )?
+                ,
+                virtual_gateway_name: self.virtual_gateway_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_gateway_name", "virtual_gateway_name was not specified but it is required when building VirtualGatewayData")
+                    )?
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

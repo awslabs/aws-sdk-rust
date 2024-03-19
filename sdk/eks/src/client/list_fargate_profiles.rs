@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFargateProfiles`](crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_name(impl Into<String>)`](crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::set_cluster_name):<br>required: **true**<br><p>The name of your cluster.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>  <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note><br>
-    /// - On success, responds with [`ListFargateProfilesOutput`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListFargateProfilesOutput`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput) with field(s):
     ///   - [`fargate_profile_names(Option<Vec::<String>>)`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput::fargate_profile_names): <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fargate_profiles::ListFargateProfilesOutput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>  <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-    /// - On failure, responds with [`SdkError<ListFargateProfilesError>`](crate::operation::list_fargate_profiles::ListFargateProfilesError)
+                            /// - On failure, responds with [`SdkError<ListFargateProfilesError>`](crate::operation::list_fargate_profiles::ListFargateProfilesError)
     pub fn list_fargate_profiles(&self) -> crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder {
-        crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_fargate_profiles::builders::ListFargateProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

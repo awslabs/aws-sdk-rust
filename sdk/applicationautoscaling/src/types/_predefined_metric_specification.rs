@@ -4,7 +4,7 @@
 /// <p>Only the Amazon Web Services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Monitor your resources using CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredefinedMetricSpecification {
+pub struct PredefinedMetricSpecification  {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
     pub predefined_metric_type: crate::types::MetricType,
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot Fleet or ECS service.</p>
@@ -30,9 +30,9 @@ pub struct PredefinedMetricSpecification {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub resource_label: ::std::option::Option<::std::string::String>,
 }
-impl PredefinedMetricSpecification {
+impl  PredefinedMetricSpecification  {
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
-    pub fn predefined_metric_type(&self) -> &crate::types::MetricType {
+    pub fn predefined_metric_type(&self) -> & crate::types::MetricType {
         &self.predefined_metric_type
     }
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot Fleet or ECS service.</p>
@@ -56,7 +56,7 @@ impl PredefinedMetricSpecification {
     /// </target-group-name></p></li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn resource_label(&self) -> ::std::option::Option<&str> {
+    pub fn resource_label(&self) -> ::std::option::Option<& str> {
         self.resource_label.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl PredefinedMetricSpecificationBuilder {
     }
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
     pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
-        self.predefined_metric_type = input;
-        self
+        self.predefined_metric_type = input; self
     }
     /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot Fleets and ECS services.</p>
     pub fn get_predefined_metric_type(&self) -> &::std::option::Option<crate::types::MetricType> {
@@ -137,8 +136,7 @@ impl PredefinedMetricSpecificationBuilder {
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn set_resource_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_label = input;
-        self
+        self.resource_label = input; self
     }
     /// <p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot Fleet or ECS service.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -168,14 +166,17 @@ impl PredefinedMetricSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`predefined_metric_type`](crate::types::builders::PredefinedMetricSpecificationBuilder::predefined_metric_type)
     pub fn build(self) -> ::std::result::Result<crate::types::PredefinedMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PredefinedMetricSpecification {
-            predefined_metric_type: self.predefined_metric_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "predefined_metric_type",
-                    "predefined_metric_type was not specified but it is required when building PredefinedMetricSpecification",
-                )
-            })?,
-            resource_label: self.resource_label,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PredefinedMetricSpecification {
+                predefined_metric_type: self.predefined_metric_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("predefined_metric_type", "predefined_metric_type was not specified but it is required when building PredefinedMetricSpecification")
+                    )?
+                ,
+                resource_label: self.resource_label
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoiseReducer {
+pub struct NoiseReducer  {
     /// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
     pub filter: ::std::option::Option<crate::types::NoiseReducerFilter>,
     /// Settings for a noise reducer filter
@@ -13,21 +13,21 @@ pub struct NoiseReducer {
     /// Noise reducer filter settings for temporal filter.
     pub temporal_filter_settings: ::std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>,
 }
-impl NoiseReducer {
+impl  NoiseReducer  {
     /// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::NoiseReducerFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::NoiseReducerFilter> {
         self.filter.as_ref()
     }
     /// Settings for a noise reducer filter
-    pub fn filter_settings(&self) -> ::std::option::Option<&crate::types::NoiseReducerFilterSettings> {
+    pub fn filter_settings(&self) -> ::std::option::Option<& crate::types::NoiseReducerFilterSettings> {
         self.filter_settings.as_ref()
     }
     /// Noise reducer filter settings for spatial filter.
-    pub fn spatial_filter_settings(&self) -> ::std::option::Option<&crate::types::NoiseReducerSpatialFilterSettings> {
+    pub fn spatial_filter_settings(&self) -> ::std::option::Option<& crate::types::NoiseReducerSpatialFilterSettings> {
         self.spatial_filter_settings.as_ref()
     }
     /// Noise reducer filter settings for temporal filter.
-    pub fn temporal_filter_settings(&self) -> ::std::option::Option<&crate::types::NoiseReducerTemporalFilterSettings> {
+    pub fn temporal_filter_settings(&self) -> ::std::option::Option<& crate::types::NoiseReducerTemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl NoiseReducerBuilder {
     }
     /// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::NoiseReducerFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::NoiseReducerFilter> {
@@ -69,8 +68,7 @@ impl NoiseReducerBuilder {
     }
     /// Settings for a noise reducer filter
     pub fn set_filter_settings(mut self, input: ::std::option::Option<crate::types::NoiseReducerFilterSettings>) -> Self {
-        self.filter_settings = input;
-        self
+        self.filter_settings = input; self
     }
     /// Settings for a noise reducer filter
     pub fn get_filter_settings(&self) -> &::std::option::Option<crate::types::NoiseReducerFilterSettings> {
@@ -83,8 +81,7 @@ impl NoiseReducerBuilder {
     }
     /// Noise reducer filter settings for spatial filter.
     pub fn set_spatial_filter_settings(mut self, input: ::std::option::Option<crate::types::NoiseReducerSpatialFilterSettings>) -> Self {
-        self.spatial_filter_settings = input;
-        self
+        self.spatial_filter_settings = input; self
     }
     /// Noise reducer filter settings for spatial filter.
     pub fn get_spatial_filter_settings(&self) -> &::std::option::Option<crate::types::NoiseReducerSpatialFilterSettings> {
@@ -97,8 +94,7 @@ impl NoiseReducerBuilder {
     }
     /// Noise reducer filter settings for temporal filter.
     pub fn set_temporal_filter_settings(mut self, input: ::std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>) -> Self {
-        self.temporal_filter_settings = input;
-        self
+        self.temporal_filter_settings = input; self
     }
     /// Noise reducer filter settings for temporal filter.
     pub fn get_temporal_filter_settings(&self) -> &::std::option::Option<crate::types::NoiseReducerTemporalFilterSettings> {
@@ -107,10 +103,15 @@ impl NoiseReducerBuilder {
     /// Consumes the builder and constructs a [`NoiseReducer`](crate::types::NoiseReducer).
     pub fn build(self) -> crate::types::NoiseReducer {
         crate::types::NoiseReducer {
-            filter: self.filter,
-            filter_settings: self.filter_settings,
-            spatial_filter_settings: self.spatial_filter_settings,
-            temporal_filter_settings: self.temporal_filter_settings,
+            filter: self.filter
+            ,
+            filter_settings: self.filter_settings
+            ,
+            spatial_filter_settings: self.spatial_filter_settings
+            ,
+            temporal_filter_settings: self.temporal_filter_settings
+            ,
         }
     }
 }
+

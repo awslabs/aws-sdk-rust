@@ -2,30 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTargetHealthInput {
+pub struct DescribeTargetHealthInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The targets.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::TargetDescription>>,
     /// <p>Used to inclue anomaly detection information.</p>
-    pub include: ::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>>,
+    pub include: ::std::option::Option<::std::vec::Vec::<crate::types::DescribeTargetHealthInputIncludeEnum>>,
 }
-impl DescribeTargetHealthInput {
+impl  DescribeTargetHealthInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> ::std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The targets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::TargetDescription] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::TargetDescription] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Used to inclue anomaly detection information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
-    pub fn include(&self) -> &[crate::types::DescribeTargetHealthInputIncludeEnum] {
-        self.include.as_deref().unwrap_or_default()
+    pub fn include(&self) -> & [crate::types::DescribeTargetHealthInputIncludeEnum] {
+        self.include.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeTargetHealthInput {
@@ -40,8 +42,8 @@ impl DescribeTargetHealthInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTargetHealthInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>,
-    pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::TargetDescription>>,
+    pub(crate) include: ::std::option::Option<::std::vec::Vec::<crate::types::DescribeTargetHealthInputIncludeEnum>>,
 }
 impl DescribeTargetHealthInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -52,8 +54,7 @@ impl DescribeTargetHealthInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_group_arn = input;
-        self
+        self.target_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +67,16 @@ impl DescribeTargetHealthInputBuilder {
     /// <p>The targets.</p>
     pub fn targets(mut self, input: crate::types::TargetDescription) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The targets.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetDescription>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The targets.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetDescription>> {
         &self.targets
     }
     /// Appends an item to `include`.
@@ -86,28 +86,30 @@ impl DescribeTargetHealthInputBuilder {
     /// <p>Used to inclue anomaly detection information.</p>
     pub fn include(mut self, input: crate::types::DescribeTargetHealthInputIncludeEnum) -> Self {
         let mut v = self.include.unwrap_or_default();
-        v.push(input);
-        self.include = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Used to inclue anomaly detection information.</p>
-    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>>) -> Self {
-        self.include = input;
-        self
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DescribeTargetHealthInputIncludeEnum>>) -> Self {
+        self.include = input; self
     }
     /// <p>Used to inclue anomaly detection information.</p>
-    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DescribeTargetHealthInputIncludeEnum>> {
         &self.include
     }
     /// Consumes the builder and constructs a [`DescribeTargetHealthInput`](crate::operation::describe_target_health::DescribeTargetHealthInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_target_health::DescribeTargetHealthInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_target_health::DescribeTargetHealthInput {
-            target_group_arn: self.target_group_arn,
-            targets: self.targets,
-            include: self.include,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_target_health::DescribeTargetHealthInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_target_health::DescribeTargetHealthInput {
+                target_group_arn: self.target_group_arn
+                ,
+                targets: self.targets
+                ,
+                include: self.include
+                ,
+            }
+        )
     }
 }
+

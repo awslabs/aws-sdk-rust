@@ -3,7 +3,7 @@
 /// <p>Describes an action to write data to an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Action {
+pub struct S3Action  {
     /// <p>The ARN of the IAM role that grants access.</p>
     pub role_arn: ::std::string::String,
     /// <p>The Amazon S3 bucket.</p>
@@ -13,24 +13,21 @@ pub struct S3Action {
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub canned_acl: ::std::option::Option<crate::types::CannedAccessControlList>,
 }
-impl S3Action {
+impl  S3Action  {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The Amazon S3 bucket.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
-    pub fn canned_acl(&self) -> ::std::option::Option<&crate::types::CannedAccessControlList> {
+    pub fn canned_acl(&self) -> ::std::option::Option<& crate::types::CannedAccessControlList> {
         self.canned_acl.as_ref()
     }
 }
@@ -59,8 +56,7 @@ impl S3ActionBuilder {
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl S3ActionBuilder {
     }
     /// <p>The Amazon S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The Amazon S3 bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl S3ActionBuilder {
     }
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl S3ActionBuilder {
     }
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub fn set_canned_acl(mut self, input: ::std::option::Option<crate::types::CannedAccessControlList>) -> Self {
-        self.canned_acl = input;
-        self
+        self.canned_acl = input; self
     }
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub fn get_canned_acl(&self) -> &::std::option::Option<crate::types::CannedAccessControlList> {
@@ -116,26 +109,27 @@ impl S3ActionBuilder {
     /// - [`bucket_name`](crate::types::builders::S3ActionBuilder::bucket_name)
     /// - [`key`](crate::types::builders::S3ActionBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Action, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Action {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building S3Action",
-                )
-            })?,
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3Action",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building S3Action",
-                )
-            })?,
-            canned_acl: self.canned_acl,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Action {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building S3Action")
+                    )?
+                ,
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3Action")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building S3Action")
+                    )?
+                ,
+                canned_acl: self.canned_acl
+                ,
+            }
+        )
     }
 }
+

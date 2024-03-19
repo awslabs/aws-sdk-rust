@@ -3,7 +3,7 @@
 /// <p>Returns a summary of information about an enabled control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnabledControlSummary {
+pub struct EnabledControlSummary  {
     /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the enabled control.</p>
@@ -15,25 +15,25 @@ pub struct EnabledControlSummary {
     /// <p>The drift status of the enabled control.</p>
     pub drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
 }
-impl EnabledControlSummary {
+impl  EnabledControlSummary  {
     /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
-    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn control_identifier(&self) -> ::std::option::Option<& str> {
         self.control_identifier.as_deref()
     }
     /// <p>The ARN of the enabled control.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the organizational unit.</p>
-    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_identifier(&self) -> ::std::option::Option<& str> {
         self.target_identifier.as_deref()
     }
     /// <p>A short description of the status of the enabled control.</p>
-    pub fn status_summary(&self) -> ::std::option::Option<&crate::types::EnablementStatusSummary> {
+    pub fn status_summary(&self) -> ::std::option::Option<& crate::types::EnablementStatusSummary> {
         self.status_summary.as_ref()
     }
     /// <p>The drift status of the enabled control.</p>
-    pub fn drift_status_summary(&self) -> ::std::option::Option<&crate::types::DriftStatusSummary> {
+    pub fn drift_status_summary(&self) -> ::std::option::Option<& crate::types::DriftStatusSummary> {
         self.drift_status_summary.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl EnabledControlSummaryBuilder {
     }
     /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_identifier = input;
-        self
+        self.control_identifier = input; self
     }
     /// <p>The <code>controlIdentifier</code> of the enabled control.</p>
     pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl EnabledControlSummaryBuilder {
     }
     /// <p>The ARN of the enabled control.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the enabled control.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl EnabledControlSummaryBuilder {
     }
     /// <p>The ARN of the organizational unit.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_identifier = input;
-        self
+        self.target_identifier = input; self
     }
     /// <p>The ARN of the organizational unit.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl EnabledControlSummaryBuilder {
     }
     /// <p>A short description of the status of the enabled control.</p>
     pub fn set_status_summary(mut self, input: ::std::option::Option<crate::types::EnablementStatusSummary>) -> Self {
-        self.status_summary = input;
-        self
+        self.status_summary = input; self
     }
     /// <p>A short description of the status of the enabled control.</p>
     pub fn get_status_summary(&self) -> &::std::option::Option<crate::types::EnablementStatusSummary> {
@@ -118,8 +114,7 @@ impl EnabledControlSummaryBuilder {
     }
     /// <p>The drift status of the enabled control.</p>
     pub fn set_drift_status_summary(mut self, input: ::std::option::Option<crate::types::DriftStatusSummary>) -> Self {
-        self.drift_status_summary = input;
-        self
+        self.drift_status_summary = input; self
     }
     /// <p>The drift status of the enabled control.</p>
     pub fn get_drift_status_summary(&self) -> &::std::option::Option<crate::types::DriftStatusSummary> {
@@ -128,11 +123,17 @@ impl EnabledControlSummaryBuilder {
     /// Consumes the builder and constructs a [`EnabledControlSummary`](crate::types::EnabledControlSummary).
     pub fn build(self) -> crate::types::EnabledControlSummary {
         crate::types::EnabledControlSummary {
-            control_identifier: self.control_identifier,
-            arn: self.arn,
-            target_identifier: self.target_identifier,
-            status_summary: self.status_summary,
-            drift_status_summary: self.drift_status_summary,
+            control_identifier: self.control_identifier
+            ,
+            arn: self.arn
+            ,
+            target_identifier: self.target_identifier
+            ,
+            status_summary: self.status_summary
+            ,
+            drift_status_summary: self.drift_status_summary
+            ,
         }
     }
 }
+

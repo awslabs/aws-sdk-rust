@@ -5,55 +5,51 @@ pub use crate::operation::describe_host_reservation_offerings::_describe_host_re
 
 impl DescribeHostReservationOfferingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_host_reservation_offerings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_host_reservation_offerings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeHostReservationOfferings`.
-///
+/// 
 /// <p>Describes the Dedicated Host reservations that are available to purchase.</p>
 /// <p>The results describe all of the Dedicated Host reservation offerings, including offerings that might not match the instance family and Region of your Dedicated Hosts. When purchasing an offering, ensure that the instance family and Region of the offering matches that of the Dedicated Hosts with which it is to be associated. For more information about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHostReservationOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder,
+                    inner: crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
-        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
-    > for DescribeHostReservationOfferingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
-            crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
+                    crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
+                > for DescribeHostReservationOfferingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
+                        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeHostReservationOfferingsFluentBuilder {
     /// Creates a new `DescribeHostReservationOfferings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
-        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput, crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator {
-        crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator {
+                                crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
@@ -137,7 +124,7 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     /// <li>
     /// <p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
     /// </ul>
-    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -148,7 +135,7 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     /// <li>
     /// <p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
     /// </ul>
-    pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filter()
     }
     /// <p>This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.</p>
@@ -222,3 +209,4 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         self.inner.get_offering_id()
     }
 }
+

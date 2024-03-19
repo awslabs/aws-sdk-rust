@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
@@ -15,7 +15,7 @@ pub struct CreateApplicationInput {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
@@ -53,86 +53,87 @@ pub struct CreateApplicationInput {
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
     pub template_url: ::std::option::Option<::std::string::String>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    pub fn author(&self) -> ::std::option::Option<&str> {
+    pub fn author(&self) -> ::std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(&self) -> ::std::option::Option<&str> {
+    pub fn home_page_url(&self) -> ::std::option::Option<& str> {
         self.home_page_url.as_deref()
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[::std::string::String] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [::std::string::String] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-    pub fn license_body(&self) -> ::std::option::Option<&str> {
+    pub fn license_body(&self) -> ::std::option::Option<& str> {
         self.license_body.as_deref()
     }
     /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-    pub fn license_url(&self) -> ::std::option::Option<&str> {
+    pub fn license_url(&self) -> ::std::option::Option<& str> {
         self.license_url.as_deref()
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-    pub fn readme_body(&self) -> ::std::option::Option<&str> {
+    pub fn readme_body(&self) -> ::std::option::Option<& str> {
         self.readme_body.as_deref()
     }
     /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-    pub fn readme_url(&self) -> ::std::option::Option<&str> {
+    pub fn readme_url(&self) -> ::std::option::Option<& str> {
         self.readme_url.as_deref()
     }
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
-    pub fn semantic_version(&self) -> ::std::option::Option<&str> {
+    pub fn semantic_version(&self) -> ::std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn source_code_archive_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_code_archive_url(&self) -> ::std::option::Option<& str> {
         self.source_code_archive_url.as_deref()
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_code_url(&self) -> ::std::option::Option<& str> {
         self.source_code_url.as_deref()
     }
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-    pub fn spdx_license_id(&self) -> ::std::option::Option<&str> {
+    pub fn spdx_license_id(&self) -> ::std::option::Option<& str> {
         self.spdx_license_id.as_deref()
     }
     /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-    pub fn template_body(&self) -> ::std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-    pub fn template_url(&self) -> ::std::option::Option<&str> {
+    pub fn template_url(&self) -> ::std::option::Option<& str> {
         self.template_url.as_deref()
     }
 }
@@ -150,7 +151,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) author: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) home_page_url: ::std::option::Option<::std::string::String>,
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) license_body: ::std::option::Option<::std::string::String>,
     pub(crate) license_url: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -176,8 +177,7 @@ impl CreateApplicationInputBuilder {
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author = input;
-        self
+        self.author = input; self
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
@@ -195,8 +195,7 @@ impl CreateApplicationInputBuilder {
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
@@ -210,8 +209,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub fn set_home_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_page_url = input;
-        self
+        self.home_page_url = input; self
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub fn get_home_page_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,21 +224,20 @@ impl CreateApplicationInputBuilder {
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
@@ -254,8 +251,7 @@ impl CreateApplicationInputBuilder {
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
     pub fn set_license_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_body = input;
-        self
+        self.license_body = input; self
     }
     /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
@@ -274,8 +270,7 @@ impl CreateApplicationInputBuilder {
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
     pub fn set_license_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_url = input;
-        self
+        self.license_url = input; self
     }
     /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
@@ -295,8 +290,7 @@ impl CreateApplicationInputBuilder {
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
@@ -315,8 +309,7 @@ impl CreateApplicationInputBuilder {
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
     pub fn set_readme_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.readme_body = input;
-        self
+        self.readme_body = input; self
     }
     /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
@@ -335,8 +328,7 @@ impl CreateApplicationInputBuilder {
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
     pub fn set_readme_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.readme_url = input;
-        self
+        self.readme_url = input; self
     }
     /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
@@ -353,8 +345,7 @@ impl CreateApplicationInputBuilder {
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.semantic_version = input;
-        self
+        self.semantic_version = input; self
     }
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
@@ -370,8 +361,7 @@ impl CreateApplicationInputBuilder {
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
     pub fn set_source_code_archive_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_code_archive_url = input;
-        self
+        self.source_code_archive_url = input; self
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
@@ -385,8 +375,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn set_source_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_code_url = input;
-        self
+        self.source_code_url = input; self
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn get_source_code_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -399,8 +388,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
     pub fn set_spdx_license_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spdx_license_id = input;
-        self
+        self.spdx_license_id = input; self
     }
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
     pub fn get_spdx_license_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -415,8 +403,7 @@ impl CreateApplicationInputBuilder {
     /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
@@ -432,8 +419,7 @@ impl CreateApplicationInputBuilder {
     /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
     }
     /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
@@ -441,25 +427,41 @@ impl CreateApplicationInputBuilder {
         &self.template_url
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            author: self.author,
-            description: self.description,
-            home_page_url: self.home_page_url,
-            labels: self.labels,
-            license_body: self.license_body,
-            license_url: self.license_url,
-            name: self.name,
-            readme_body: self.readme_body,
-            readme_url: self.readme_url,
-            semantic_version: self.semantic_version,
-            source_code_archive_url: self.source_code_archive_url,
-            source_code_url: self.source_code_url,
-            spdx_license_id: self.spdx_license_id,
-            template_body: self.template_body,
-            template_url: self.template_url,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                author: self.author
+                ,
+                description: self.description
+                ,
+                home_page_url: self.home_page_url
+                ,
+                labels: self.labels
+                ,
+                license_body: self.license_body
+                ,
+                license_url: self.license_url
+                ,
+                name: self.name
+                ,
+                readme_body: self.readme_body
+                ,
+                readme_url: self.readme_url
+                ,
+                semantic_version: self.semantic_version
+                ,
+                source_code_archive_url: self.source_code_archive_url
+                ,
+                source_code_url: self.source_code_url
+                ,
+                spdx_license_id: self.spdx_license_id
+                ,
+                template_body: self.template_body
+                ,
+                template_url: self.template_url
+                ,
+            }
+        )
     }
 }
+

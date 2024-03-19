@@ -3,7 +3,7 @@
 /// <p>Information about the encryption configuration for X-Ray.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsXrayEncryptionConfigDetails {
+pub struct AwsXrayEncryptionConfigDetails  {
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
@@ -12,18 +12,18 @@ pub struct AwsXrayEncryptionConfigDetails {
     /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsXrayEncryptionConfigDetails {
+impl  AwsXrayEncryptionConfigDetails  {
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl AwsXrayEncryptionConfigDetailsBuilder {
     }
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl AwsXrayEncryptionConfigDetailsBuilder {
     /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
@@ -81,8 +79,7 @@ impl AwsXrayEncryptionConfigDetailsBuilder {
     }
     /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,9 +88,13 @@ impl AwsXrayEncryptionConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsXrayEncryptionConfigDetails`](crate::types::AwsXrayEncryptionConfigDetails).
     pub fn build(self) -> crate::types::AwsXrayEncryptionConfigDetails {
         crate::types::AwsXrayEncryptionConfigDetails {
-            key_id: self.key_id,
-            status: self.status,
-            r#type: self.r#type,
+            key_id: self.key_id
+            ,
+            status: self.status
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

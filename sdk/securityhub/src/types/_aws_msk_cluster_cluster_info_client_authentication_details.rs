@@ -3,7 +3,7 @@
 /// <p>Provides details about different modes of client authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsMskClusterClusterInfoClientAuthenticationDetails {
+pub struct AwsMskClusterClusterInfoClientAuthenticationDetails  {
     /// <p>Provides details for client authentication using SASL.</p>
     pub sasl: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails>,
     /// <p>Provides details for allowing no client authentication.</p>
@@ -11,17 +11,17 @@ pub struct AwsMskClusterClusterInfoClientAuthenticationDetails {
     /// <p>Provides details for client authentication using TLS.</p>
     pub tls: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationTlsDetails>,
 }
-impl AwsMskClusterClusterInfoClientAuthenticationDetails {
+impl  AwsMskClusterClusterInfoClientAuthenticationDetails  {
     /// <p>Provides details for client authentication using SASL.</p>
-    pub fn sasl(&self) -> ::std::option::Option<&crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails> {
+    pub fn sasl(&self) -> ::std::option::Option<& crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails> {
         self.sasl.as_ref()
     }
     /// <p>Provides details for allowing no client authentication.</p>
-    pub fn unauthenticated(&self) -> ::std::option::Option<&crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails> {
+    pub fn unauthenticated(&self) -> ::std::option::Option<& crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails> {
         self.unauthenticated.as_ref()
     }
     /// <p>Provides details for client authentication using TLS.</p>
-    pub fn tls(&self) -> ::std::option::Option<&crate::types::AwsMskClusterClusterInfoClientAuthenticationTlsDetails> {
+    pub fn tls(&self) -> ::std::option::Option<& crate::types::AwsMskClusterClusterInfoClientAuthenticationTlsDetails> {
         self.tls.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsMskClusterClusterInfoClientAuthenticationDetailsBuilder {
     }
     /// <p>Provides details for client authentication using SASL.</p>
     pub fn set_sasl(mut self, input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails>) -> Self {
-        self.sasl = input;
-        self
+        self.sasl = input; self
     }
     /// <p>Provides details for client authentication using SASL.</p>
     pub fn get_sasl(&self) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails> {
@@ -61,12 +60,8 @@ impl AwsMskClusterClusterInfoClientAuthenticationDetailsBuilder {
         self
     }
     /// <p>Provides details for allowing no client authentication.</p>
-    pub fn set_unauthenticated(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails>,
-    ) -> Self {
-        self.unauthenticated = input;
-        self
+    pub fn set_unauthenticated(mut self, input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails>) -> Self {
+        self.unauthenticated = input; self
     }
     /// <p>Provides details for allowing no client authentication.</p>
     pub fn get_unauthenticated(&self) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails> {
@@ -79,8 +74,7 @@ impl AwsMskClusterClusterInfoClientAuthenticationDetailsBuilder {
     }
     /// <p>Provides details for client authentication using TLS.</p>
     pub fn set_tls(mut self, input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationTlsDetails>) -> Self {
-        self.tls = input;
-        self
+        self.tls = input; self
     }
     /// <p>Provides details for client authentication using TLS.</p>
     pub fn get_tls(&self) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationTlsDetails> {
@@ -89,9 +83,13 @@ impl AwsMskClusterClusterInfoClientAuthenticationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsMskClusterClusterInfoClientAuthenticationDetails`](crate::types::AwsMskClusterClusterInfoClientAuthenticationDetails).
     pub fn build(self) -> crate::types::AwsMskClusterClusterInfoClientAuthenticationDetails {
         crate::types::AwsMskClusterClusterInfoClientAuthenticationDetails {
-            sasl: self.sasl,
-            unauthenticated: self.unauthenticated,
-            tls: self.tls,
+            sasl: self.sasl
+            ,
+            unauthenticated: self.unauthenticated
+            ,
+            tls: self.tls
+            ,
         }
     }
 }
+

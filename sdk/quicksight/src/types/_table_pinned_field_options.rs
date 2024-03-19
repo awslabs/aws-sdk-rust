@@ -3,16 +3,17 @@
 /// <p>The settings for the pinned columns of a table visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TablePinnedFieldOptions {
+pub struct TablePinnedFieldOptions  {
     /// <p>A list of columns to be pinned to the left of a table visual.</p>
-    pub pinned_left_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub pinned_left_fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TablePinnedFieldOptions {
+impl  TablePinnedFieldOptions  {
     /// <p>A list of columns to be pinned to the left of a table visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pinned_left_fields.is_none()`.
-    pub fn pinned_left_fields(&self) -> &[::std::string::String] {
-        self.pinned_left_fields.as_deref().unwrap_or_default()
+    pub fn pinned_left_fields(&self) -> & [::std::string::String] {
+        self.pinned_left_fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TablePinnedFieldOptions {
@@ -26,7 +27,7 @@ impl TablePinnedFieldOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TablePinnedFieldOptionsBuilder {
-    pub(crate) pinned_left_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pinned_left_fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TablePinnedFieldOptionsBuilder {
     /// Appends an item to `pinned_left_fields`.
@@ -36,23 +37,24 @@ impl TablePinnedFieldOptionsBuilder {
     /// <p>A list of columns to be pinned to the left of a table visual.</p>
     pub fn pinned_left_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pinned_left_fields.unwrap_or_default();
-        v.push(input.into());
-        self.pinned_left_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.pinned_left_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of columns to be pinned to the left of a table visual.</p>
-    pub fn set_pinned_left_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.pinned_left_fields = input;
-        self
+    pub fn set_pinned_left_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.pinned_left_fields = input; self
     }
     /// <p>A list of columns to be pinned to the left of a table visual.</p>
-    pub fn get_pinned_left_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pinned_left_fields(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.pinned_left_fields
     }
     /// Consumes the builder and constructs a [`TablePinnedFieldOptions`](crate::types::TablePinnedFieldOptions).
     pub fn build(self) -> crate::types::TablePinnedFieldOptions {
         crate::types::TablePinnedFieldOptions {
-            pinned_left_fields: self.pinned_left_fields,
+            pinned_left_fields: self.pinned_left_fields
+            ,
         }
     }
 }
+

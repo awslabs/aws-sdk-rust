@@ -2,20 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOptedOutNumbers`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`opt_out_list_name(impl Into<String>)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::opt_out_list_name) / [`set_opt_out_list_name(Option<String>)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::set_opt_out_list_name):<br>required: **true**<br><p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p><br>
     ///   - [`opted_out_numbers(impl Into<String>)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::opted_out_numbers) / [`set_opted_out_numbers(Option<Vec::<String>>)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::set_opted_out_numbers):<br>required: **false**<br><p>An array of phone numbers to search for in the OptOutList.</p><br>
     ///   - [`filters(OptedOutFilter)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::filters) / [`set_filters(Option<Vec::<OptedOutFilter>>)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::set_filters):<br>required: **false**<br><p>An array of OptedOutFilter objects to filter the results on.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`DescribeOptedOutNumbersOutput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput) with field(s):
+                            /// - On success, responds with [`DescribeOptedOutNumbersOutput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput) with field(s):
     ///   - [`opt_out_list_arn(Option<String>)`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput::opt_out_list_arn): <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     ///   - [`opt_out_list_name(Option<String>)`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput::opt_out_list_name): <p>The name of the OptOutList.</p>
     ///   - [`opted_out_numbers(Option<Vec::<OptedOutNumberInformation>>)`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput::opted_out_numbers): <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    /// - On failure, responds with [`SdkError<DescribeOptedOutNumbersError>`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError)
+                            /// - On failure, responds with [`SdkError<DescribeOptedOutNumbersError>`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError)
     pub fn describe_opted_out_numbers(&self) -> crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder {
-        crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

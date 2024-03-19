@@ -3,7 +3,7 @@
 /// <p>The pipeline (queue) that is used to manage jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Pipeline {
+pub struct Pipeline  {
     /// <p>The identifier for the pipeline. You use this value to identify the pipeline in which you want to perform a variety of operations, such as creating a job or a preset.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the pipeline.</p>
@@ -117,18 +117,18 @@ pub struct Pipeline {
     /// </ul>
     pub thumbnail_config: ::std::option::Option<crate::types::PipelineOutputConfig>,
 }
-impl Pipeline {
+impl  Pipeline  {
     /// <p>The identifier for the pipeline. You use this value to identify the pipeline in which you want to perform a variety of operations, such as creating a job or a preset.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the pipeline.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the pipeline:</p>
@@ -138,24 +138,24 @@ impl Pipeline {
     /// <li>
     /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding and the graphics files, if any, that you want to use for watermarks.</p>
-    pub fn input_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn input_bucket(&self) -> ::std::option::Option<& str> {
         self.input_bucket.as_deref()
     }
     /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files, thumbnails, and playlists. Either you specify this value, or you specify both <code>ContentConfig</code> and <code>ThumbnailConfig</code>.</p>
-    pub fn output_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn output_bucket(&self) -> ::std::option::Option<& str> {
         self.output_bucket.as_deref()
     }
     /// <p>The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses to transcode jobs for this pipeline.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-    pub fn aws_kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn aws_kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.aws_kms_key_arn.as_deref()
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p><important>
@@ -171,7 +171,7 @@ impl Pipeline {
     /// <li>
     /// <p><b>Error</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p></li>
     /// </ul>
-    pub fn notifications(&self) -> ::std::option::Option<&crate::types::Notifications> {
+    pub fn notifications(&self) -> ::std::option::Option<& crate::types::Notifications> {
         self.notifications.as_ref()
     }
     /// <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. Either you specify both <code>ContentConfig</code> and <code>ThumbnailConfig</code>, or you specify <code>OutputBucket</code>.</p>
@@ -209,7 +209,7 @@ impl Pipeline {
     /// <li>
     /// <p><b>StorageClass</b>: The Amazon S3 storage class, Standard or ReducedRedundancy, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p></li>
     /// </ul>
-    pub fn content_config(&self) -> ::std::option::Option<&crate::types::PipelineOutputConfig> {
+    pub fn content_config(&self) -> ::std::option::Option<& crate::types::PipelineOutputConfig> {
         self.content_config.as_ref()
     }
     /// <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files. Either you specify both <code>ContentConfig</code> and <code>ThumbnailConfig</code>, or you specify <code>OutputBucket</code>.</p>
@@ -249,7 +249,7 @@ impl Pipeline {
     /// <li>
     /// <p><code>StorageClass</code>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p></li>
     /// </ul>
-    pub fn thumbnail_config(&self) -> ::std::option::Option<&crate::types::PipelineOutputConfig> {
+    pub fn thumbnail_config(&self) -> ::std::option::Option<& crate::types::PipelineOutputConfig> {
         self.thumbnail_config.as_ref()
     }
 }
@@ -284,8 +284,7 @@ impl PipelineBuilder {
     }
     /// <p>The identifier for the pipeline. You use this value to identify the pipeline in which you want to perform a variety of operations, such as creating a job or a preset.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the pipeline. You use this value to identify the pipeline in which you want to perform a variety of operations, such as creating a job or a preset.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -298,8 +297,7 @@ impl PipelineBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the pipeline.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the pipeline.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -314,8 +312,7 @@ impl PipelineBuilder {
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters</p>
@@ -341,8 +338,7 @@ impl PipelineBuilder {
     /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the pipeline:</p>
     /// <ul>
@@ -361,8 +357,7 @@ impl PipelineBuilder {
     }
     /// <p>The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding and the graphics files, if any, that you want to use for watermarks.</p>
     pub fn set_input_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_bucket = input;
-        self
+        self.input_bucket = input; self
     }
     /// <p>The Amazon S3 bucket from which Elastic Transcoder gets media files for transcoding and the graphics files, if any, that you want to use for watermarks.</p>
     pub fn get_input_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -375,8 +370,7 @@ impl PipelineBuilder {
     }
     /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files, thumbnails, and playlists. Either you specify this value, or you specify both <code>ContentConfig</code> and <code>ThumbnailConfig</code>.</p>
     pub fn set_output_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_bucket = input;
-        self
+        self.output_bucket = input; self
     }
     /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files, thumbnails, and playlists. Either you specify this value, or you specify both <code>ContentConfig</code> and <code>ThumbnailConfig</code>.</p>
     pub fn get_output_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -389,8 +383,7 @@ impl PipelineBuilder {
     }
     /// <p>The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses to transcode jobs for this pipeline.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The IAM Amazon Resource Name (ARN) for the role that Elastic Transcoder uses to transcode jobs for this pipeline.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -405,8 +398,7 @@ impl PipelineBuilder {
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
     pub fn set_aws_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_kms_key_arn = input;
-        self
+        self.aws_kms_key_arn = input; self
     }
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
@@ -444,8 +436,7 @@ impl PipelineBuilder {
     /// <p><b>Error</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p></li>
     /// </ul>
     pub fn set_notifications(mut self, input: ::std::option::Option<crate::types::Notifications>) -> Self {
-        self.notifications = input;
-        self
+        self.notifications = input; self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p><important>
     /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
@@ -538,8 +529,7 @@ impl PipelineBuilder {
     /// <p><b>StorageClass</b>: The Amazon S3 storage class, Standard or ReducedRedundancy, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn set_content_config(mut self, input: ::std::option::Option<crate::types::PipelineOutputConfig>) -> Self {
-        self.content_config = input;
-        self
+        self.content_config = input; self
     }
     /// <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. Either you specify both <code>ContentConfig</code> and <code>ThumbnailConfig</code>, or you specify <code>OutputBucket</code>.</p>
     /// <ul>
@@ -658,8 +648,7 @@ impl PipelineBuilder {
     /// <p><code>StorageClass</code>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn set_thumbnail_config(mut self, input: ::std::option::Option<crate::types::PipelineOutputConfig>) -> Self {
-        self.thumbnail_config = input;
-        self
+        self.thumbnail_config = input; self
     }
     /// <p>Information about the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files. Either you specify both <code>ContentConfig</code> and <code>ThumbnailConfig</code>, or you specify <code>OutputBucket</code>.</p>
     /// <ul>
@@ -704,17 +693,29 @@ impl PipelineBuilder {
     /// Consumes the builder and constructs a [`Pipeline`](crate::types::Pipeline).
     pub fn build(self) -> crate::types::Pipeline {
         crate::types::Pipeline {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            status: self.status,
-            input_bucket: self.input_bucket,
-            output_bucket: self.output_bucket,
-            role: self.role,
-            aws_kms_key_arn: self.aws_kms_key_arn,
-            notifications: self.notifications,
-            content_config: self.content_config,
-            thumbnail_config: self.thumbnail_config,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            input_bucket: self.input_bucket
+            ,
+            output_bucket: self.output_bucket
+            ,
+            role: self.role
+            ,
+            aws_kms_key_arn: self.aws_kms_key_arn
+            ,
+            notifications: self.notifications
+            ,
+            content_config: self.content_config
+            ,
+            thumbnail_config: self.thumbnail_config
+            ,
         }
     }
 }
+

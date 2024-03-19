@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHsmOutput {
+pub struct CreateHsmOutput  {
     /// <p>Information about the HSM that was created.</p>
     pub hsm: ::std::option::Option<crate::types::Hsm>,
     _request_id: Option<String>,
 }
-impl CreateHsmOutput {
+impl  CreateHsmOutput  {
     /// <p>Information about the HSM that was created.</p>
-    pub fn hsm(&self) -> ::std::option::Option<&crate::types::Hsm> {
+    pub fn hsm(&self) -> ::std::option::Option<& crate::types::Hsm> {
         self.hsm.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateHsmOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateHsmOutput {
     /// Creates a new builder-style object to manufacture [`CreateHsmOutput`](crate::operation::create_hsm::CreateHsmOutput).
     pub fn builder() -> crate::operation::create_hsm::builders::CreateHsmOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateHsmOutputBuilder {
     }
     /// <p>Information about the HSM that was created.</p>
     pub fn set_hsm(mut self, input: ::std::option::Option<crate::types::Hsm>) -> Self {
-        self.hsm = input;
-        self
+        self.hsm = input; self
     }
     /// <p>Information about the HSM that was created.</p>
     pub fn get_hsm(&self) -> &::std::option::Option<crate::types::Hsm> {
         &self.hsm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateHsmOutput`](crate::operation::create_hsm::CreateHsmOutput).
     pub fn build(self) -> crate::operation::create_hsm::CreateHsmOutput {
         crate::operation::create_hsm::CreateHsmOutput {
-            hsm: self.hsm,
+            hsm: self.hsm
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

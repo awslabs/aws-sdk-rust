@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppMonitorInput {
+pub struct CreateAppMonitorInput  {
     /// <p>A name for the app monitor.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
@@ -12,7 +12,7 @@ pub struct CreateAppMonitorInput {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an app monitor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
     pub app_monitor_configuration: ::std::option::Option<crate::types::AppMonitorConfiguration>,
@@ -23,13 +23,13 @@ pub struct CreateAppMonitorInput {
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     pub custom_events: ::std::option::Option<crate::types::CustomEvents>,
 }
-impl CreateAppMonitorInput {
+impl  CreateAppMonitorInput  {
     /// <p>A name for the app monitor.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
@@ -37,12 +37,12 @@ impl CreateAppMonitorInput {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an app monitor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
-    pub fn app_monitor_configuration(&self) -> ::std::option::Option<&crate::types::AppMonitorConfiguration> {
+    pub fn app_monitor_configuration(&self) -> ::std::option::Option<& crate::types::AppMonitorConfiguration> {
         self.app_monitor_configuration.as_ref()
     }
     /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
@@ -52,7 +52,7 @@ impl CreateAppMonitorInput {
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. If you omit this parameter, custom events are <code>DISABLED</code>.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
-    pub fn custom_events(&self) -> ::std::option::Option<&crate::types::CustomEvents> {
+    pub fn custom_events(&self) -> ::std::option::Option<& crate::types::CustomEvents> {
         self.custom_events.as_ref()
     }
 }
@@ -69,7 +69,7 @@ impl CreateAppMonitorInput {
 pub struct CreateAppMonitorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) app_monitor_configuration: ::std::option::Option<crate::types::AppMonitorConfiguration>,
     pub(crate) cw_log_enabled: ::std::option::Option<bool>,
     pub(crate) custom_events: ::std::option::Option<crate::types::CustomEvents>,
@@ -83,8 +83,7 @@ impl CreateAppMonitorInputBuilder {
     }
     /// <p>A name for the app monitor.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the app monitor.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl CreateAppMonitorInputBuilder {
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,25 +114,24 @@ impl CreateAppMonitorInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an app monitor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an app monitor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
@@ -146,8 +143,7 @@ impl CreateAppMonitorInputBuilder {
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
     pub fn set_app_monitor_configuration(mut self, input: ::std::option::Option<crate::types::AppMonitorConfiguration>) -> Self {
-        self.app_monitor_configuration = input;
-        self
+        self.app_monitor_configuration = input; self
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
@@ -163,8 +159,7 @@ impl CreateAppMonitorInputBuilder {
     /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
     /// <p>If you omit this parameter, the default is <code>false</code>.</p>
     pub fn set_cw_log_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cw_log_enabled = input;
-        self
+        self.cw_log_enabled = input; self
     }
     /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
     /// <p>If you omit this parameter, the default is <code>false</code>.</p>
@@ -180,8 +175,7 @@ impl CreateAppMonitorInputBuilder {
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. If you omit this parameter, custom events are <code>DISABLED</code>.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     pub fn set_custom_events(mut self, input: ::std::option::Option<crate::types::CustomEvents>) -> Self {
-        self.custom_events = input;
-        self
+        self.custom_events = input; self
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. If you omit this parameter, custom events are <code>DISABLED</code>.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
@@ -189,16 +183,23 @@ impl CreateAppMonitorInputBuilder {
         &self.custom_events
     }
     /// Consumes the builder and constructs a [`CreateAppMonitorInput`](crate::operation::create_app_monitor::CreateAppMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_app_monitor::CreateAppMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_app_monitor::CreateAppMonitorInput {
-            name: self.name,
-            domain: self.domain,
-            tags: self.tags,
-            app_monitor_configuration: self.app_monitor_configuration,
-            cw_log_enabled: self.cw_log_enabled,
-            custom_events: self.custom_events,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app_monitor::CreateAppMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_app_monitor::CreateAppMonitorInput {
+                name: self.name
+                ,
+                domain: self.domain
+                ,
+                tags: self.tags
+                ,
+                app_monitor_configuration: self.app_monitor_configuration
+                ,
+                cw_log_enabled: self.cw_log_enabled
+                ,
+                custom_events: self.custom_events
+                ,
+            }
+        )
     }
 }
+

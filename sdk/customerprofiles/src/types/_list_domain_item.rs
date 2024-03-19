@@ -3,7 +3,7 @@
 /// <p>An object in a list that represents a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainItem {
+pub struct ListDomainItem  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::string::String,
     /// <p>The timestamp of when the domain was created.</p>
@@ -11,24 +11,23 @@ pub struct ListDomainItem {
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ListDomainItem {
+impl  ListDomainItem  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -46,7 +45,7 @@ pub struct ListDomainItemBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ListDomainItemBuilder {
     /// <p>The unique name of the domain.</p>
@@ -57,8 +56,7 @@ impl ListDomainItemBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl ListDomainItemBuilder {
     }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -87,8 +84,7 @@ impl ListDomainItemBuilder {
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -101,17 +97,16 @@ impl ListDomainItemBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListDomainItem`](crate::types::ListDomainItem).
@@ -120,26 +115,27 @@ impl ListDomainItemBuilder {
     /// - [`created_at`](crate::types::builders::ListDomainItemBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::ListDomainItemBuilder::last_updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::ListDomainItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListDomainItem {
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building ListDomainItem",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building ListDomainItem",
-                )
-            })?,
-            last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_at",
-                    "last_updated_at was not specified but it is required when building ListDomainItem",
-                )
-            })?,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListDomainItem {
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building ListDomainItem")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building ListDomainItem")
+                    )?
+                ,
+                last_updated_at: self.last_updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_at", "last_updated_at was not specified but it is required when building ListDomainItem")
+                    )?
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

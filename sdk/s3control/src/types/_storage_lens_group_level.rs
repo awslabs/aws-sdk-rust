@@ -3,13 +3,13 @@
 /// <p>Specifies the Storage Lens groups to include in the Storage Lens group aggregation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageLensGroupLevel {
+pub struct StorageLensGroupLevel  {
     /// <p>Indicates which Storage Lens group ARNs to include or exclude in the Storage Lens group aggregation. If this value is left null, then all Storage Lens groups are selected.</p>
     pub selection_criteria: ::std::option::Option<crate::types::StorageLensGroupLevelSelectionCriteria>,
 }
-impl StorageLensGroupLevel {
+impl  StorageLensGroupLevel  {
     /// <p>Indicates which Storage Lens group ARNs to include or exclude in the Storage Lens group aggregation. If this value is left null, then all Storage Lens groups are selected.</p>
-    pub fn selection_criteria(&self) -> ::std::option::Option<&crate::types::StorageLensGroupLevelSelectionCriteria> {
+    pub fn selection_criteria(&self) -> ::std::option::Option<& crate::types::StorageLensGroupLevelSelectionCriteria> {
         self.selection_criteria.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl StorageLensGroupLevelBuilder {
     }
     /// <p>Indicates which Storage Lens group ARNs to include or exclude in the Storage Lens group aggregation. If this value is left null, then all Storage Lens groups are selected.</p>
     pub fn set_selection_criteria(mut self, input: ::std::option::Option<crate::types::StorageLensGroupLevelSelectionCriteria>) -> Self {
-        self.selection_criteria = input;
-        self
+        self.selection_criteria = input; self
     }
     /// <p>Indicates which Storage Lens group ARNs to include or exclude in the Storage Lens group aggregation. If this value is left null, then all Storage Lens groups are selected.</p>
     pub fn get_selection_criteria(&self) -> &::std::option::Option<crate::types::StorageLensGroupLevelSelectionCriteria> {
@@ -44,7 +43,9 @@ impl StorageLensGroupLevelBuilder {
     /// Consumes the builder and constructs a [`StorageLensGroupLevel`](crate::types::StorageLensGroupLevel).
     pub fn build(self) -> crate::types::StorageLensGroupLevel {
         crate::types::StorageLensGroupLevel {
-            selection_criteria: self.selection_criteria,
+            selection_criteria: self.selection_criteria
+            ,
         }
     }
 }
+

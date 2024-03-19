@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelCards`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Only list model cards that were created after the time specified.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>Only list model cards that were created before the time specified.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of model cards to list.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to a previous <code>ListModelCards</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model cards, use the token in the next request.</p><br>
     ///   - [`sort_by(ModelCardSortBy)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::sort_by) / [`set_sort_by(Option<ModelCardSortBy>)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sort model cards by either name or creation time. Sorts by creation time by default.</p><br>
     ///   - [`sort_order(ModelCardSortOrder)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::sort_order) / [`set_sort_order(Option<ModelCardSortOrder>)`](crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::set_sort_order):<br>required: **false**<br><p>Sort model cards by ascending or descending order.</p><br>
-    /// - On success, responds with [`ListModelCardsOutput`](crate::operation::list_model_cards::ListModelCardsOutput) with field(s):
+                            /// - On success, responds with [`ListModelCardsOutput`](crate::operation::list_model_cards::ListModelCardsOutput) with field(s):
     ///   - [`model_card_summaries(Option<Vec::<ModelCardSummary>>)`](crate::operation::list_model_cards::ListModelCardsOutput::model_card_summaries): <p>The summaries of the listed model cards.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_cards::ListModelCardsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListModelCardsError>`](crate::operation::list_model_cards::ListModelCardsError)
+                            /// - On failure, responds with [`SdkError<ListModelCardsError>`](crate::operation::list_model_cards::ListModelCardsError)
     pub fn list_model_cards(&self) -> crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder {
-        crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_model_cards::builders::ListModelCardsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

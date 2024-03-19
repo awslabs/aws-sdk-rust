@@ -3,13 +3,13 @@
 /// <p>Request data replication info.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataReplicationInfo {
+pub struct DataReplicationInfo  {
     /// <p>Request to query data replication lag duration.</p>
     pub lag_duration: ::std::option::Option<::std::string::String>,
     /// <p>Request to query the time when data replication will be complete.</p>
     pub eta_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Request to query disks replicated.</p>
-    pub replicated_disks: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInfoReplicatedDisk>>,
+    pub replicated_disks: ::std::option::Option<::std::vec::Vec::<crate::types::DataReplicationInfoReplicatedDisk>>,
     /// <p>Request to query the data replication state.</p>
     pub data_replication_state: ::std::option::Option<crate::types::DataReplicationState>,
     /// <p>Request to query whether data replication has been initiated.</p>
@@ -19,35 +19,36 @@ pub struct DataReplicationInfo {
     /// <p>Request to query data replication last snapshot time.</p>
     pub last_snapshot_date_time: ::std::option::Option<::std::string::String>,
 }
-impl DataReplicationInfo {
+impl  DataReplicationInfo  {
     /// <p>Request to query data replication lag duration.</p>
-    pub fn lag_duration(&self) -> ::std::option::Option<&str> {
+    pub fn lag_duration(&self) -> ::std::option::Option<& str> {
         self.lag_duration.as_deref()
     }
     /// <p>Request to query the time when data replication will be complete.</p>
-    pub fn eta_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn eta_date_time(&self) -> ::std::option::Option<& str> {
         self.eta_date_time.as_deref()
     }
     /// <p>Request to query disks replicated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicated_disks.is_none()`.
-    pub fn replicated_disks(&self) -> &[crate::types::DataReplicationInfoReplicatedDisk] {
-        self.replicated_disks.as_deref().unwrap_or_default()
+    pub fn replicated_disks(&self) -> & [crate::types::DataReplicationInfoReplicatedDisk] {
+        self.replicated_disks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Request to query the data replication state.</p>
-    pub fn data_replication_state(&self) -> ::std::option::Option<&crate::types::DataReplicationState> {
+    pub fn data_replication_state(&self) -> ::std::option::Option<& crate::types::DataReplicationState> {
         self.data_replication_state.as_ref()
     }
     /// <p>Request to query whether data replication has been initiated.</p>
-    pub fn data_replication_initiation(&self) -> ::std::option::Option<&crate::types::DataReplicationInitiation> {
+    pub fn data_replication_initiation(&self) -> ::std::option::Option<& crate::types::DataReplicationInitiation> {
         self.data_replication_initiation.as_ref()
     }
     /// <p>Error in obtaining data replication info.</p>
-    pub fn data_replication_error(&self) -> ::std::option::Option<&crate::types::DataReplicationError> {
+    pub fn data_replication_error(&self) -> ::std::option::Option<& crate::types::DataReplicationError> {
         self.data_replication_error.as_ref()
     }
     /// <p>Request to query data replication last snapshot time.</p>
-    pub fn last_snapshot_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_snapshot_date_time(&self) -> ::std::option::Option<& str> {
         self.last_snapshot_date_time.as_deref()
     }
 }
@@ -64,7 +65,7 @@ impl DataReplicationInfo {
 pub struct DataReplicationInfoBuilder {
     pub(crate) lag_duration: ::std::option::Option<::std::string::String>,
     pub(crate) eta_date_time: ::std::option::Option<::std::string::String>,
-    pub(crate) replicated_disks: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInfoReplicatedDisk>>,
+    pub(crate) replicated_disks: ::std::option::Option<::std::vec::Vec::<crate::types::DataReplicationInfoReplicatedDisk>>,
     pub(crate) data_replication_state: ::std::option::Option<crate::types::DataReplicationState>,
     pub(crate) data_replication_initiation: ::std::option::Option<crate::types::DataReplicationInitiation>,
     pub(crate) data_replication_error: ::std::option::Option<crate::types::DataReplicationError>,
@@ -78,8 +79,7 @@ impl DataReplicationInfoBuilder {
     }
     /// <p>Request to query data replication lag duration.</p>
     pub fn set_lag_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lag_duration = input;
-        self
+        self.lag_duration = input; self
     }
     /// <p>Request to query data replication lag duration.</p>
     pub fn get_lag_duration(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl DataReplicationInfoBuilder {
     }
     /// <p>Request to query the time when data replication will be complete.</p>
     pub fn set_eta_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eta_date_time = input;
-        self
+        self.eta_date_time = input; self
     }
     /// <p>Request to query the time when data replication will be complete.</p>
     pub fn get_eta_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,17 +105,16 @@ impl DataReplicationInfoBuilder {
     /// <p>Request to query disks replicated.</p>
     pub fn replicated_disks(mut self, input: crate::types::DataReplicationInfoReplicatedDisk) -> Self {
         let mut v = self.replicated_disks.unwrap_or_default();
-        v.push(input);
-        self.replicated_disks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replicated_disks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Request to query disks replicated.</p>
-    pub fn set_replicated_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInfoReplicatedDisk>>) -> Self {
-        self.replicated_disks = input;
-        self
+    pub fn set_replicated_disks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataReplicationInfoReplicatedDisk>>) -> Self {
+        self.replicated_disks = input; self
     }
     /// <p>Request to query disks replicated.</p>
-    pub fn get_replicated_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInfoReplicatedDisk>> {
+    pub fn get_replicated_disks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataReplicationInfoReplicatedDisk>> {
         &self.replicated_disks
     }
     /// <p>Request to query the data replication state.</p>
@@ -126,8 +124,7 @@ impl DataReplicationInfoBuilder {
     }
     /// <p>Request to query the data replication state.</p>
     pub fn set_data_replication_state(mut self, input: ::std::option::Option<crate::types::DataReplicationState>) -> Self {
-        self.data_replication_state = input;
-        self
+        self.data_replication_state = input; self
     }
     /// <p>Request to query the data replication state.</p>
     pub fn get_data_replication_state(&self) -> &::std::option::Option<crate::types::DataReplicationState> {
@@ -140,8 +137,7 @@ impl DataReplicationInfoBuilder {
     }
     /// <p>Request to query whether data replication has been initiated.</p>
     pub fn set_data_replication_initiation(mut self, input: ::std::option::Option<crate::types::DataReplicationInitiation>) -> Self {
-        self.data_replication_initiation = input;
-        self
+        self.data_replication_initiation = input; self
     }
     /// <p>Request to query whether data replication has been initiated.</p>
     pub fn get_data_replication_initiation(&self) -> &::std::option::Option<crate::types::DataReplicationInitiation> {
@@ -154,8 +150,7 @@ impl DataReplicationInfoBuilder {
     }
     /// <p>Error in obtaining data replication info.</p>
     pub fn set_data_replication_error(mut self, input: ::std::option::Option<crate::types::DataReplicationError>) -> Self {
-        self.data_replication_error = input;
-        self
+        self.data_replication_error = input; self
     }
     /// <p>Error in obtaining data replication info.</p>
     pub fn get_data_replication_error(&self) -> &::std::option::Option<crate::types::DataReplicationError> {
@@ -168,8 +163,7 @@ impl DataReplicationInfoBuilder {
     }
     /// <p>Request to query data replication last snapshot time.</p>
     pub fn set_last_snapshot_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_snapshot_date_time = input;
-        self
+        self.last_snapshot_date_time = input; self
     }
     /// <p>Request to query data replication last snapshot time.</p>
     pub fn get_last_snapshot_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,13 +172,21 @@ impl DataReplicationInfoBuilder {
     /// Consumes the builder and constructs a [`DataReplicationInfo`](crate::types::DataReplicationInfo).
     pub fn build(self) -> crate::types::DataReplicationInfo {
         crate::types::DataReplicationInfo {
-            lag_duration: self.lag_duration,
-            eta_date_time: self.eta_date_time,
-            replicated_disks: self.replicated_disks,
-            data_replication_state: self.data_replication_state,
-            data_replication_initiation: self.data_replication_initiation,
-            data_replication_error: self.data_replication_error,
-            last_snapshot_date_time: self.last_snapshot_date_time,
+            lag_duration: self.lag_duration
+            ,
+            eta_date_time: self.eta_date_time
+            ,
+            replicated_disks: self.replicated_disks
+            ,
+            data_replication_state: self.data_replication_state
+            ,
+            data_replication_initiation: self.data_replication_initiation
+            ,
+            data_replication_error: self.data_replication_error
+            ,
+            last_snapshot_date_time: self.last_snapshot_date_time
+            ,
         }
     }
 }
+

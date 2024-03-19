@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBatchDeleteConfigurationTaskInput {
+pub struct DescribeBatchDeleteConfigurationTaskInput  {
     /// <p>The ID of the task to delete.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBatchDeleteConfigurationTaskInput {
+impl  DescribeBatchDeleteConfigurationTaskInput  {
     /// <p>The ID of the task to delete.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeBatchDeleteConfigurationTaskInputBuilder {
     }
     /// <p>The ID of the task to delete.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the task to delete.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`DescribeBatchDeleteConfigurationTaskInput`](crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput { task_id: self.task_id },
+            crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput {
+                task_id: self.task_id
+                ,
+            }
         )
     }
 }
+

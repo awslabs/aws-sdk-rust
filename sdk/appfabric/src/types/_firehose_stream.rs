@@ -3,15 +3,14 @@
 /// <p>Contains information about an Amazon Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirehoseStream {
+pub struct FirehoseStream  {
     /// <p>The name of the Amazon Kinesis Data Firehose delivery stream.</p>
     pub stream_name: ::std::string::String,
 }
-impl FirehoseStream {
+impl  FirehoseStream  {
     /// <p>The name of the Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn stream_name(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_name.deref()
+    pub fn stream_name(&self) -> & str {
+        use std::ops::Deref; self.stream_name.deref()
     }
 }
 impl FirehoseStream {
@@ -36,8 +35,7 @@ impl FirehoseStreamBuilder {
     }
     /// <p>The name of the Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl FirehoseStreamBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_name`](crate::types::builders::FirehoseStreamBuilder::stream_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FirehoseStream, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FirehoseStream {
-            stream_name: self.stream_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_name",
-                    "stream_name was not specified but it is required when building FirehoseStream",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FirehoseStream {
+                stream_name: self.stream_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_name", "stream_name was not specified but it is required when building FirehoseStream")
+                    )?
+                ,
+            }
+        )
     }
 }
+

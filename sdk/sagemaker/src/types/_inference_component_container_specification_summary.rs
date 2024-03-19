@@ -3,27 +3,27 @@
 /// <p>Details about the resources that are deployed with this inference component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceComponentContainerSpecificationSummary {
+pub struct InferenceComponentContainerSpecificationSummary  {
     /// <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.</p>
     /// <p>If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.</p>
     pub deployed_image: ::std::option::Option<crate::types::DeployedImage>,
     /// <p>The Amazon S3 path where the model artifacts are stored.</p>
     pub artifact_url: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl InferenceComponentContainerSpecificationSummary {
+impl  InferenceComponentContainerSpecificationSummary  {
     /// <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.</p>
     /// <p>If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub fn deployed_image(&self) -> ::std::option::Option<&crate::types::DeployedImage> {
+    pub fn deployed_image(&self) -> ::std::option::Option<& crate::types::DeployedImage> {
         self.deployed_image.as_ref()
     }
     /// <p>The Amazon S3 path where the model artifacts are stored.</p>
-    pub fn artifact_url(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_url(&self) -> ::std::option::Option<& str> {
         self.artifact_url.as_deref()
     }
     /// <p>The environment variables to set in the Docker container.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
 }
@@ -40,7 +40,7 @@ impl InferenceComponentContainerSpecificationSummary {
 pub struct InferenceComponentContainerSpecificationSummaryBuilder {
     pub(crate) deployed_image: ::std::option::Option<crate::types::DeployedImage>,
     pub(crate) artifact_url: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl InferenceComponentContainerSpecificationSummaryBuilder {
     /// <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.</p>
@@ -52,8 +52,7 @@ impl InferenceComponentContainerSpecificationSummaryBuilder {
     /// <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.</p>
     /// <p>If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.</p>
     pub fn set_deployed_image(mut self, input: ::std::option::Option<crate::types::DeployedImage>) -> Self {
-        self.deployed_image = input;
-        self
+        self.deployed_image = input; self
     }
     /// <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.</p>
     /// <p>If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.</p>
@@ -67,8 +66,7 @@ impl InferenceComponentContainerSpecificationSummaryBuilder {
     }
     /// <p>The Amazon S3 path where the model artifacts are stored.</p>
     pub fn set_artifact_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_url = input;
-        self
+        self.artifact_url = input; self
     }
     /// <p>The Amazon S3 path where the model artifacts are stored.</p>
     pub fn get_artifact_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,28 +79,28 @@ impl InferenceComponentContainerSpecificationSummaryBuilder {
     /// <p>The environment variables to set in the Docker container.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables to set in the Docker container.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The environment variables to set in the Docker container.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// Consumes the builder and constructs a [`InferenceComponentContainerSpecificationSummary`](crate::types::InferenceComponentContainerSpecificationSummary).
     pub fn build(self) -> crate::types::InferenceComponentContainerSpecificationSummary {
         crate::types::InferenceComponentContainerSpecificationSummary {
-            deployed_image: self.deployed_image,
-            artifact_url: self.artifact_url,
-            environment: self.environment,
+            deployed_image: self.deployed_image
+            ,
+            artifact_url: self.artifact_url
+            ,
+            environment: self.environment
+            ,
         }
     }
 }
+

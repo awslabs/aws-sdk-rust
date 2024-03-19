@@ -3,28 +3,29 @@
 /// <p>The structure representing input for resampling operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResamplingConfigInput {
+pub struct ResamplingConfigInput  {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
     pub output_resolution: ::std::option::Option<crate::types::OutputResolutionResamplingInput>,
     /// <p>The name of the algorithm used for resampling.</p>
     pub algorithm_name: ::std::option::Option<crate::types::AlgorithmNameResampling>,
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
-    pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_bands: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ResamplingConfigInput {
+impl  ResamplingConfigInput  {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
-    pub fn output_resolution(&self) -> ::std::option::Option<&crate::types::OutputResolutionResamplingInput> {
+    pub fn output_resolution(&self) -> ::std::option::Option<& crate::types::OutputResolutionResamplingInput> {
         self.output_resolution.as_ref()
     }
     /// <p>The name of the algorithm used for resampling.</p>
-    pub fn algorithm_name(&self) -> ::std::option::Option<&crate::types::AlgorithmNameResampling> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<& crate::types::AlgorithmNameResampling> {
         self.algorithm_name.as_ref()
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_bands.is_none()`.
-    pub fn target_bands(&self) -> &[::std::string::String] {
-        self.target_bands.as_deref().unwrap_or_default()
+    pub fn target_bands(&self) -> & [::std::string::String] {
+        self.target_bands.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResamplingConfigInput {
@@ -40,7 +41,7 @@ impl ResamplingConfigInput {
 pub struct ResamplingConfigInputBuilder {
     pub(crate) output_resolution: ::std::option::Option<crate::types::OutputResolutionResamplingInput>,
     pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameResampling>,
-    pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_bands: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ResamplingConfigInputBuilder {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
@@ -51,8 +52,7 @@ impl ResamplingConfigInputBuilder {
     }
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
     pub fn set_output_resolution(mut self, input: ::std::option::Option<crate::types::OutputResolutionResamplingInput>) -> Self {
-        self.output_resolution = input;
-        self
+        self.output_resolution = input; self
     }
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
     pub fn get_output_resolution(&self) -> &::std::option::Option<crate::types::OutputResolutionResamplingInput> {
@@ -65,8 +65,7 @@ impl ResamplingConfigInputBuilder {
     }
     /// <p>The name of the algorithm used for resampling.</p>
     pub fn set_algorithm_name(mut self, input: ::std::option::Option<crate::types::AlgorithmNameResampling>) -> Self {
-        self.algorithm_name = input;
-        self
+        self.algorithm_name = input; self
     }
     /// <p>The name of the algorithm used for resampling.</p>
     pub fn get_algorithm_name(&self) -> &::std::option::Option<crate::types::AlgorithmNameResampling> {
@@ -79,25 +78,28 @@ impl ResamplingConfigInputBuilder {
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
     pub fn target_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_bands.unwrap_or_default();
-        v.push(input.into());
-        self.target_bands = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_bands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
-    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_bands = input;
-        self
+    pub fn set_target_bands(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_bands = input; self
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
-    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_bands(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_bands
     }
     /// Consumes the builder and constructs a [`ResamplingConfigInput`](crate::types::ResamplingConfigInput).
     pub fn build(self) -> crate::types::ResamplingConfigInput {
         crate::types::ResamplingConfigInput {
-            output_resolution: self.output_resolution,
-            algorithm_name: self.algorithm_name,
-            target_bands: self.target_bands,
+            output_resolution: self.output_resolution
+            ,
+            algorithm_name: self.algorithm_name
+            ,
+            target_bands: self.target_bands
+            ,
         }
     }
 }
+

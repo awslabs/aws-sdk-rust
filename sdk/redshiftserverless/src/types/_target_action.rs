@@ -22,11 +22,7 @@ impl TargetAction {
     /// Tries to convert the enum instance into [`CreateSnapshot`](crate::types::TargetAction::CreateSnapshot), extracting the inner [`CreateSnapshotScheduleActionParameters`](crate::types::CreateSnapshotScheduleActionParameters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_create_snapshot(&self) -> ::std::result::Result<&crate::types::CreateSnapshotScheduleActionParameters, &Self> {
-        if let TargetAction::CreateSnapshot(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TargetAction::CreateSnapshot(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CreateSnapshot`](crate::types::TargetAction::CreateSnapshot).
     pub fn is_create_snapshot(&self) -> bool {
@@ -37,3 +33,4 @@ impl TargetAction {
         matches!(self, Self::Unknown)
     }
 }
+

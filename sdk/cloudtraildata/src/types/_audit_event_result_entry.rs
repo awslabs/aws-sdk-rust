@@ -3,22 +3,20 @@
 /// <p>A response that includes successful and failed event results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditEventResultEntry {
+pub struct AuditEventResultEntry  {
     /// <p>The original event ID from the source event.</p>
     pub id: ::std::string::String,
     /// <p>The event ID assigned by CloudTrail.</p>
     pub event_id: ::std::string::String,
 }
-impl AuditEventResultEntry {
+impl  AuditEventResultEntry  {
     /// <p>The original event ID from the source event.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The event ID assigned by CloudTrail.</p>
-    pub fn event_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_id.deref()
+    pub fn event_id(&self) -> & str {
+        use std::ops::Deref; self.event_id.deref()
     }
 }
 impl AuditEventResultEntry {
@@ -44,8 +42,7 @@ impl AuditEventResultEntryBuilder {
     }
     /// <p>The original event ID from the source event.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The original event ID from the source event.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl AuditEventResultEntryBuilder {
     }
     /// <p>The event ID assigned by CloudTrail.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The event ID assigned by CloudTrail.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl AuditEventResultEntryBuilder {
     /// - [`id`](crate::types::builders::AuditEventResultEntryBuilder::id)
     /// - [`event_id`](crate::types::builders::AuditEventResultEntryBuilder::event_id)
     pub fn build(self) -> ::std::result::Result<crate::types::AuditEventResultEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuditEventResultEntry {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AuditEventResultEntry",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building AuditEventResultEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuditEventResultEntry {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AuditEventResultEntry")
+                    )?
+                ,
+                event_id: self.event_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_id", "event_id was not specified but it is required when building AuditEventResultEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

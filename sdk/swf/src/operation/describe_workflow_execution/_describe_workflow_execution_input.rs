@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkflowExecutionInput {
+pub struct DescribeWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The workflow execution to describe.</p>
     pub execution: ::std::option::Option<crate::types::WorkflowExecution>,
 }
-impl DescribeWorkflowExecutionInput {
+impl  DescribeWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflow execution to describe.</p>
-    pub fn execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn execution(&self) -> ::std::option::Option<& crate::types::WorkflowExecution> {
         self.execution.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeWorkflowExecutionInputBuilder {
     }
     /// <p>The name of the domain containing the workflow execution.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain containing the workflow execution.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeWorkflowExecutionInputBuilder {
     }
     /// <p>The workflow execution to describe.</p>
     pub fn set_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
-        self.execution = input;
-        self
+        self.execution = input; self
     }
     /// <p>The workflow execution to describe.</p>
     pub fn get_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
         &self.execution
     }
     /// Consumes the builder and constructs a [`DescribeWorkflowExecutionInput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput {
-            domain: self.domain,
-            execution: self.execution,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput {
+                domain: self.domain
+                ,
+                execution: self.execution
+                ,
+            }
+        )
     }
 }
+

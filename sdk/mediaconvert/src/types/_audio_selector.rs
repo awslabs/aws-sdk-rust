@@ -3,7 +3,7 @@
 /// Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioSelector {
+pub struct AudioSelector  {
     /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
     pub audio_duration_correction: ::std::option::Option<crate::types::AudioDurationCorrection>,
     /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
@@ -19,7 +19,7 @@ pub struct AudioSelector {
     /// Specifies a time delta in milliseconds to offset the audio from the input video.
     pub offset: ::std::option::Option<i32>,
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
-    pub pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub pids: ::std::option::Option<::std::vec::Vec::<i32>>,
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
     pub program_selection: ::std::option::Option<i32>,
     /// Use these settings to reorder the audio channels of one input to match those of another input. This allows you to combine the two files into a single output, one after the other.
@@ -27,31 +27,31 @@ pub struct AudioSelector {
     /// Specifies the type of the audio selector.
     pub selector_type: ::std::option::Option<crate::types::AudioSelectorType>,
     /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
-    pub tracks: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub tracks: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
-impl AudioSelector {
+impl  AudioSelector  {
     /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
-    pub fn audio_duration_correction(&self) -> ::std::option::Option<&crate::types::AudioDurationCorrection> {
+    pub fn audio_duration_correction(&self) -> ::std::option::Option<& crate::types::AudioDurationCorrection> {
         self.audio_duration_correction.as_ref()
     }
     /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
-    pub fn custom_language_code(&self) -> ::std::option::Option<&str> {
+    pub fn custom_language_code(&self) -> ::std::option::Option<& str> {
         self.custom_language_code.as_deref()
     }
     /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
-    pub fn default_selection(&self) -> ::std::option::Option<&crate::types::AudioDefaultSelection> {
+    pub fn default_selection(&self) -> ::std::option::Option<& crate::types::AudioDefaultSelection> {
         self.default_selection.as_ref()
     }
     /// Specifies audio data from an external file source.
-    pub fn external_audio_file_input(&self) -> ::std::option::Option<&str> {
+    pub fn external_audio_file_input(&self) -> ::std::option::Option<& str> {
         self.external_audio_file_input.as_deref()
     }
     /// Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen instead.
-    pub fn hls_rendition_group_settings(&self) -> ::std::option::Option<&crate::types::HlsRenditionGroupSettings> {
+    pub fn hls_rendition_group_settings(&self) -> ::std::option::Option<& crate::types::HlsRenditionGroupSettings> {
         self.hls_rendition_group_settings.as_ref()
     }
     /// Selects a specific language code from within an audio source.
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// Specifies a time delta in milliseconds to offset the audio from the input video.
@@ -59,28 +59,30 @@ impl AudioSelector {
         self.offset
     }
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pids.is_none()`.
-    pub fn pids(&self) -> &[i32] {
-        self.pids.as_deref().unwrap_or_default()
+    pub fn pids(&self) -> & [i32] {
+        self.pids.as_deref()
+        .unwrap_or_default()
     }
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
     pub fn program_selection(&self) -> ::std::option::Option<i32> {
         self.program_selection
     }
     /// Use these settings to reorder the audio channels of one input to match those of another input. This allows you to combine the two files into a single output, one after the other.
-    pub fn remix_settings(&self) -> ::std::option::Option<&crate::types::RemixSettings> {
+    pub fn remix_settings(&self) -> ::std::option::Option<& crate::types::RemixSettings> {
         self.remix_settings.as_ref()
     }
     /// Specifies the type of the audio selector.
-    pub fn selector_type(&self) -> ::std::option::Option<&crate::types::AudioSelectorType> {
+    pub fn selector_type(&self) -> ::std::option::Option<& crate::types::AudioSelectorType> {
         self.selector_type.as_ref()
     }
     /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tracks.is_none()`.
-    pub fn tracks(&self) -> &[i32] {
-        self.tracks.as_deref().unwrap_or_default()
+    pub fn tracks(&self) -> & [i32] {
+        self.tracks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AudioSelector {
@@ -101,11 +103,11 @@ pub struct AudioSelectorBuilder {
     pub(crate) hls_rendition_group_settings: ::std::option::Option<crate::types::HlsRenditionGroupSettings>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) offset: ::std::option::Option<i32>,
-    pub(crate) pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) pids: ::std::option::Option<::std::vec::Vec::<i32>>,
     pub(crate) program_selection: ::std::option::Option<i32>,
     pub(crate) remix_settings: ::std::option::Option<crate::types::RemixSettings>,
     pub(crate) selector_type: ::std::option::Option<crate::types::AudioSelectorType>,
-    pub(crate) tracks: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) tracks: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
 impl AudioSelectorBuilder {
     /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
@@ -115,8 +117,7 @@ impl AudioSelectorBuilder {
     }
     /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
     pub fn set_audio_duration_correction(mut self, input: ::std::option::Option<crate::types::AudioDurationCorrection>) -> Self {
-        self.audio_duration_correction = input;
-        self
+        self.audio_duration_correction = input; self
     }
     /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
     pub fn get_audio_duration_correction(&self) -> &::std::option::Option<crate::types::AudioDurationCorrection> {
@@ -129,8 +130,7 @@ impl AudioSelectorBuilder {
     }
     /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub fn set_custom_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_language_code = input;
-        self
+        self.custom_language_code = input; self
     }
     /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub fn get_custom_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +143,7 @@ impl AudioSelectorBuilder {
     }
     /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
     pub fn set_default_selection(mut self, input: ::std::option::Option<crate::types::AudioDefaultSelection>) -> Self {
-        self.default_selection = input;
-        self
+        self.default_selection = input; self
     }
     /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
     pub fn get_default_selection(&self) -> &::std::option::Option<crate::types::AudioDefaultSelection> {
@@ -157,8 +156,7 @@ impl AudioSelectorBuilder {
     }
     /// Specifies audio data from an external file source.
     pub fn set_external_audio_file_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_audio_file_input = input;
-        self
+        self.external_audio_file_input = input; self
     }
     /// Specifies audio data from an external file source.
     pub fn get_external_audio_file_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +169,7 @@ impl AudioSelectorBuilder {
     }
     /// Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen instead.
     pub fn set_hls_rendition_group_settings(mut self, input: ::std::option::Option<crate::types::HlsRenditionGroupSettings>) -> Self {
-        self.hls_rendition_group_settings = input;
-        self
+        self.hls_rendition_group_settings = input; self
     }
     /// Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen instead.
     pub fn get_hls_rendition_group_settings(&self) -> &::std::option::Option<crate::types::HlsRenditionGroupSettings> {
@@ -185,8 +182,7 @@ impl AudioSelectorBuilder {
     }
     /// Selects a specific language code from within an audio source.
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// Selects a specific language code from within an audio source.
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -199,8 +195,7 @@ impl AudioSelectorBuilder {
     }
     /// Specifies a time delta in milliseconds to offset the audio from the input video.
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
     }
     /// Specifies a time delta in milliseconds to offset the audio from the input video.
     pub fn get_offset(&self) -> &::std::option::Option<i32> {
@@ -213,17 +208,16 @@ impl AudioSelectorBuilder {
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
     pub fn pids(mut self, input: i32) -> Self {
         let mut v = self.pids.unwrap_or_default();
-        v.push(input);
-        self.pids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pids = ::std::option::Option::Some(v);
+                        self
     }
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
-    pub fn set_pids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.pids = input;
-        self
+    pub fn set_pids(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.pids = input; self
     }
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
-    pub fn get_pids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_pids(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.pids
     }
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
@@ -233,8 +227,7 @@ impl AudioSelectorBuilder {
     }
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
     pub fn set_program_selection(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.program_selection = input;
-        self
+        self.program_selection = input; self
     }
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
     pub fn get_program_selection(&self) -> &::std::option::Option<i32> {
@@ -247,8 +240,7 @@ impl AudioSelectorBuilder {
     }
     /// Use these settings to reorder the audio channels of one input to match those of another input. This allows you to combine the two files into a single output, one after the other.
     pub fn set_remix_settings(mut self, input: ::std::option::Option<crate::types::RemixSettings>) -> Self {
-        self.remix_settings = input;
-        self
+        self.remix_settings = input; self
     }
     /// Use these settings to reorder the audio channels of one input to match those of another input. This allows you to combine the two files into a single output, one after the other.
     pub fn get_remix_settings(&self) -> &::std::option::Option<crate::types::RemixSettings> {
@@ -261,8 +253,7 @@ impl AudioSelectorBuilder {
     }
     /// Specifies the type of the audio selector.
     pub fn set_selector_type(mut self, input: ::std::option::Option<crate::types::AudioSelectorType>) -> Self {
-        self.selector_type = input;
-        self
+        self.selector_type = input; self
     }
     /// Specifies the type of the audio selector.
     pub fn get_selector_type(&self) -> &::std::option::Option<crate::types::AudioSelectorType> {
@@ -275,34 +266,46 @@ impl AudioSelectorBuilder {
     /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
     pub fn tracks(mut self, input: i32) -> Self {
         let mut v = self.tracks.unwrap_or_default();
-        v.push(input);
-        self.tracks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tracks = ::std::option::Option::Some(v);
+                        self
     }
     /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
-    pub fn set_tracks(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.tracks = input;
-        self
+    pub fn set_tracks(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.tracks = input; self
     }
     /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
-    pub fn get_tracks(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_tracks(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.tracks
     }
     /// Consumes the builder and constructs a [`AudioSelector`](crate::types::AudioSelector).
     pub fn build(self) -> crate::types::AudioSelector {
         crate::types::AudioSelector {
-            audio_duration_correction: self.audio_duration_correction,
-            custom_language_code: self.custom_language_code,
-            default_selection: self.default_selection,
-            external_audio_file_input: self.external_audio_file_input,
-            hls_rendition_group_settings: self.hls_rendition_group_settings,
-            language_code: self.language_code,
-            offset: self.offset,
-            pids: self.pids,
-            program_selection: self.program_selection,
-            remix_settings: self.remix_settings,
-            selector_type: self.selector_type,
-            tracks: self.tracks,
+            audio_duration_correction: self.audio_duration_correction
+            ,
+            custom_language_code: self.custom_language_code
+            ,
+            default_selection: self.default_selection
+            ,
+            external_audio_file_input: self.external_audio_file_input
+            ,
+            hls_rendition_group_settings: self.hls_rendition_group_settings
+            ,
+            language_code: self.language_code
+            ,
+            offset: self.offset
+            ,
+            pids: self.pids
+            ,
+            program_selection: self.program_selection
+            ,
+            remix_settings: self.remix_settings
+            ,
+            selector_type: self.selector_type
+            ,
+            tracks: self.tracks
+            ,
         }
     }
 }
+

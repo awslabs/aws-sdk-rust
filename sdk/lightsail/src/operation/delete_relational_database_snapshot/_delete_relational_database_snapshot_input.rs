@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRelationalDatabaseSnapshotInput {
+pub struct DeleteRelationalDatabaseSnapshotInput  {
     /// <p>The name of the database snapshot that you are deleting.</p>
     pub relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRelationalDatabaseSnapshotInput {
+impl  DeleteRelationalDatabaseSnapshotInput  {
     /// <p>The name of the database snapshot that you are deleting.</p>
-    pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_snapshot_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteRelationalDatabaseSnapshotInputBuilder {
     }
     /// <p>The name of the database snapshot that you are deleting.</p>
     pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_snapshot_name = input;
-        self
+        self.relational_database_snapshot_name = input; self
     }
     /// <p>The name of the database snapshot that you are deleting.</p>
     pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteRelationalDatabaseSnapshotInput`](crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotInput {
-                relational_database_snapshot_name: self.relational_database_snapshot_name,
-            },
+                relational_database_snapshot_name: self.relational_database_snapshot_name
+                ,
+            }
         )
     }
 }
+

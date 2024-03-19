@@ -3,7 +3,7 @@
 /// <p>Provides information about the requested verified destintion phone number.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifiedDestinationNumberInformation {
+pub struct VerifiedDestinationNumberInformation  {
     /// <p>The Amazon Resource Name (ARN) for the verified destination phone number.</p>
     pub verified_destination_number_arn: ::std::string::String,
     /// <p>The unique identifier for the verified destination phone number.</p>
@@ -21,21 +21,18 @@ pub struct VerifiedDestinationNumberInformation {
     /// <p>The time when the destination phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
 }
-impl VerifiedDestinationNumberInformation {
+impl  VerifiedDestinationNumberInformation  {
     /// <p>The Amazon Resource Name (ARN) for the verified destination phone number.</p>
-    pub fn verified_destination_number_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.verified_destination_number_arn.deref()
+    pub fn verified_destination_number_arn(&self) -> & str {
+        use std::ops::Deref; self.verified_destination_number_arn.deref()
     }
     /// <p>The unique identifier for the verified destination phone number.</p>
-    pub fn verified_destination_number_id(&self) -> &str {
-        use std::ops::Deref;
-        self.verified_destination_number_id.deref()
+    pub fn verified_destination_number_id(&self) -> & str {
+        use std::ops::Deref; self.verified_destination_number_id.deref()
     }
     /// <p>The verified destination phone number, in E.164 format.</p>
-    pub fn destination_phone_number(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_phone_number.deref()
+    pub fn destination_phone_number(&self) -> & str {
+        use std::ops::Deref; self.destination_phone_number.deref()
     }
     /// <p>The status of the verified destination phone number.</p>
     /// <ul>
@@ -44,11 +41,11 @@ impl VerifiedDestinationNumberInformation {
     /// <li>
     /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::VerificationStatus {
+    pub fn status(&self) -> & crate::types::VerificationStatus {
         &self.status
     }
     /// <p>The time when the destination phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_timestamp
     }
 }
@@ -78,8 +75,7 @@ impl VerifiedDestinationNumberInformationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the verified destination phone number.</p>
     pub fn set_verified_destination_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_destination_number_arn = input;
-        self
+        self.verified_destination_number_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the verified destination phone number.</p>
     pub fn get_verified_destination_number_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +89,7 @@ impl VerifiedDestinationNumberInformationBuilder {
     }
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub fn set_verified_destination_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_destination_number_id = input;
-        self
+        self.verified_destination_number_id = input; self
     }
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub fn get_verified_destination_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl VerifiedDestinationNumberInformationBuilder {
     }
     /// <p>The verified destination phone number, in E.164 format.</p>
     pub fn set_destination_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_phone_number = input;
-        self
+        self.destination_phone_number = input; self
     }
     /// <p>The verified destination phone number, in E.164 format.</p>
     pub fn get_destination_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +129,7 @@ impl VerifiedDestinationNumberInformationBuilder {
     /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the verified destination phone number.</p>
     /// <ul>
@@ -156,8 +149,7 @@ impl VerifiedDestinationNumberInformationBuilder {
     }
     /// <p>The time when the destination phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the destination phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,40 +162,36 @@ impl VerifiedDestinationNumberInformationBuilder {
     /// - [`destination_phone_number`](crate::types::builders::VerifiedDestinationNumberInformationBuilder::destination_phone_number)
     /// - [`status`](crate::types::builders::VerifiedDestinationNumberInformationBuilder::status)
     /// - [`created_timestamp`](crate::types::builders::VerifiedDestinationNumberInformationBuilder::created_timestamp)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::VerifiedDestinationNumberInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VerifiedDestinationNumberInformation {
-            verified_destination_number_arn: self.verified_destination_number_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "verified_destination_number_arn",
-                    "verified_destination_number_arn was not specified but it is required when building VerifiedDestinationNumberInformation",
-                )
-            })?,
-            verified_destination_number_id: self.verified_destination_number_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "verified_destination_number_id",
-                    "verified_destination_number_id was not specified but it is required when building VerifiedDestinationNumberInformation",
-                )
-            })?,
-            destination_phone_number: self.destination_phone_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_phone_number",
-                    "destination_phone_number was not specified but it is required when building VerifiedDestinationNumberInformation",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building VerifiedDestinationNumberInformation",
-                )
-            })?,
-            created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_timestamp",
-                    "created_timestamp was not specified but it is required when building VerifiedDestinationNumberInformation",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::VerifiedDestinationNumberInformation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::VerifiedDestinationNumberInformation {
+                verified_destination_number_arn: self.verified_destination_number_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("verified_destination_number_arn", "verified_destination_number_arn was not specified but it is required when building VerifiedDestinationNumberInformation")
+                    )?
+                ,
+                verified_destination_number_id: self.verified_destination_number_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("verified_destination_number_id", "verified_destination_number_id was not specified but it is required when building VerifiedDestinationNumberInformation")
+                    )?
+                ,
+                destination_phone_number: self.destination_phone_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_phone_number", "destination_phone_number was not specified but it is required when building VerifiedDestinationNumberInformation")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building VerifiedDestinationNumberInformation")
+                    )?
+                ,
+                created_timestamp: self.created_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_timestamp", "created_timestamp was not specified but it is required when building VerifiedDestinationNumberInformation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a source code repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeRepository {
+pub struct CodeRepository  {
     /// <p>The location of the repository that contains the source code.</p>
     pub repository_url: ::std::string::String,
     /// <p>The version that should be used within the source code repository.</p>
@@ -15,24 +15,23 @@ pub struct CodeRepository {
     /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
     pub source_directory: ::std::option::Option<::std::string::String>,
 }
-impl CodeRepository {
+impl  CodeRepository  {
     /// <p>The location of the repository that contains the source code.</p>
-    pub fn repository_url(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_url.deref()
+    pub fn repository_url(&self) -> & str {
+        use std::ops::Deref; self.repository_url.deref()
     }
     /// <p>The version that should be used within the source code repository.</p>
-    pub fn source_code_version(&self) -> ::std::option::Option<&crate::types::SourceCodeVersion> {
+    pub fn source_code_version(&self) -> ::std::option::Option<& crate::types::SourceCodeVersion> {
         self.source_code_version.as_ref()
     }
     /// <p>Configuration for building and running the service from a source code repository.</p><note>
     /// <p><code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
-    pub fn code_configuration(&self) -> ::std::option::Option<&crate::types::CodeConfiguration> {
+    pub fn code_configuration(&self) -> ::std::option::Option<& crate::types::CodeConfiguration> {
         self.code_configuration.as_ref()
     }
     /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
-    pub fn source_directory(&self) -> ::std::option::Option<&str> {
+    pub fn source_directory(&self) -> ::std::option::Option<& str> {
         self.source_directory.as_deref()
     }
 }
@@ -61,8 +60,7 @@ impl CodeRepositoryBuilder {
     }
     /// <p>The location of the repository that contains the source code.</p>
     pub fn set_repository_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_url = input;
-        self
+        self.repository_url = input; self
     }
     /// <p>The location of the repository that contains the source code.</p>
     pub fn get_repository_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl CodeRepositoryBuilder {
     }
     /// <p>The version that should be used within the source code repository.</p>
     pub fn set_source_code_version(mut self, input: ::std::option::Option<crate::types::SourceCodeVersion>) -> Self {
-        self.source_code_version = input;
-        self
+        self.source_code_version = input; self
     }
     /// <p>The version that should be used within the source code repository.</p>
     pub fn get_source_code_version(&self) -> &::std::option::Option<crate::types::SourceCodeVersion> {
@@ -94,8 +91,7 @@ impl CodeRepositoryBuilder {
     /// <p><code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
     pub fn set_code_configuration(mut self, input: ::std::option::Option<crate::types::CodeConfiguration>) -> Self {
-        self.code_configuration = input;
-        self
+        self.code_configuration = input; self
     }
     /// <p>Configuration for building and running the service from a source code repository.</p><note>
     /// <p><code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
@@ -110,8 +106,7 @@ impl CodeRepositoryBuilder {
     }
     /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
     pub fn set_source_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_directory = input;
-        self
+        self.source_directory = input; self
     }
     /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
     pub fn get_source_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,16 +116,21 @@ impl CodeRepositoryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`repository_url`](crate::types::builders::CodeRepositoryBuilder::repository_url)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeRepository, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeRepository {
-            repository_url: self.repository_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_url",
-                    "repository_url was not specified but it is required when building CodeRepository",
-                )
-            })?,
-            source_code_version: self.source_code_version,
-            code_configuration: self.code_configuration,
-            source_directory: self.source_directory,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeRepository {
+                repository_url: self.repository_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_url", "repository_url was not specified but it is required when building CodeRepository")
+                    )?
+                ,
+                source_code_version: self.source_code_version
+                ,
+                code_configuration: self.code_configuration
+                ,
+                source_directory: self.source_directory
+                ,
+            }
+        )
     }
 }
+

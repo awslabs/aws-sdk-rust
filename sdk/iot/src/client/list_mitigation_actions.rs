@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMitigationActions`](crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`action_type(MitigationActionType)`](crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::action_type) / [`set_action_type(Option<MitigationActionType>)`](crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::set_action_type):<br>required: **false**<br><p>Specify a value to limit the result to mitigation actions with a specific action type.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
-    /// - On success, responds with [`ListMitigationActionsOutput`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput) with field(s):
+                            /// - On success, responds with [`ListMitigationActionsOutput`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput) with field(s):
     ///   - [`action_identifiers(Option<Vec::<MitigationActionIdentifier>>)`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput::action_identifiers): <p>A set of actions that matched the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput::next_token): <p>The token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListMitigationActionsError>`](crate::operation::list_mitigation_actions::ListMitigationActionsError)
+                            /// - On failure, responds with [`SdkError<ListMitigationActionsError>`](crate::operation::list_mitigation_actions::ListMitigationActionsError)
     pub fn list_mitigation_actions(&self) -> crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder {
-        crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_mitigation_actions::builders::ListMitigationActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

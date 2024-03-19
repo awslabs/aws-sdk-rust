@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SearchPlaceIndexForPositionInput {
+pub struct SearchPlaceIndexForPositionInput  {
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub position: ::std::option::Option<::std::vec::Vec::<f64>>,
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code></p>
     pub max_results: ::std::option::Option<i32>,
@@ -21,18 +21,19 @@ pub struct SearchPlaceIndexForPositionInput {
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl SearchPlaceIndexForPositionInput {
+impl  SearchPlaceIndexForPositionInput  {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
-    pub fn position(&self) -> &[f64] {
-        self.position.as_deref().unwrap_or_default()
+    pub fn position(&self) -> & [f64] {
+        self.position.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code></p>
@@ -44,15 +45,15 @@ impl SearchPlaceIndexForPositionInput {
     /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
-impl ::std::fmt::Debug for SearchPlaceIndexForPositionInput {
+impl  ::std::fmt::Debug for SearchPlaceIndexForPositionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForPositionInput");
         formatter.field("index_name", &self.index_name);
@@ -75,7 +76,7 @@ impl SearchPlaceIndexForPositionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SearchPlaceIndexForPositionInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
-    pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) position: ::std::option::Option<::std::vec::Vec::<f64>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -89,8 +90,7 @@ impl SearchPlaceIndexForPositionInputBuilder {
     }
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,21 +105,20 @@ impl SearchPlaceIndexForPositionInputBuilder {
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
-        v.push(input);
-        self.position = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.position = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.position = input;
-        self
+    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.position = input; self
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p>This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.position
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
@@ -131,8 +130,7 @@ impl SearchPlaceIndexForPositionInputBuilder {
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code></p>
@@ -154,8 +152,7 @@ impl SearchPlaceIndexForPositionInputBuilder {
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -172,27 +169,28 @@ impl SearchPlaceIndexForPositionInputBuilder {
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionInput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput {
-            index_name: self.index_name,
-            position: self.position,
-            max_results: self.max_results,
-            language: self.language,
-            key: self.key,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput {
+                index_name: self.index_name
+                ,
+                position: self.position
+                ,
+                max_results: self.max_results
+                ,
+                language: self.language
+                ,
+                key: self.key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SearchPlaceIndexForPositionInputBuilder {
@@ -206,3 +204,4 @@ impl ::std::fmt::Debug for SearchPlaceIndexForPositionInputBuilder {
         formatter.finish()
     }
 }
+

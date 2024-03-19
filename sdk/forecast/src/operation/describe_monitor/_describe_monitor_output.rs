@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMonitorOutput {
+pub struct DescribeMonitorOutput  {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
@@ -27,45 +27,45 @@ pub struct DescribeMonitorOutput {
     pub estimated_evaluation_time_remaining_in_minutes: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl DescribeMonitorOutput {
+impl  DescribeMonitorOutput  {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> ::std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The status of the monitor resource.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
-    pub fn last_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_evaluation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_evaluation_time.as_ref()
     }
     /// <p>The state of the monitor's latest evaluation.</p>
-    pub fn last_evaluation_state(&self) -> ::std::option::Option<&str> {
+    pub fn last_evaluation_state(&self) -> ::std::option::Option<& str> {
         self.last_evaluation_state.as_deref()
     }
     /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
-    pub fn baseline(&self) -> ::std::option::Option<&crate::types::Baseline> {
+    pub fn baseline(&self) -> ::std::option::Option<& crate::types::Baseline> {
         self.baseline.as_ref()
     }
     /// <p>An error message, if any, for the monitor.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The timestamp for when the monitor resource was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp of the latest modification to the monitor.</p>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
@@ -74,10 +74,10 @@ impl DescribeMonitorOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMonitorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMonitorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMonitorOutput`](crate::operation::describe_monitor::DescribeMonitorOutput).
     pub fn builder() -> crate::operation::describe_monitor::builders::DescribeMonitorOutputBuilder {
@@ -110,8 +110,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +136,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +149,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The status of the monitor resource.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the monitor resource.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +162,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
     pub fn set_last_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_evaluation_time = input;
-        self
+        self.last_evaluation_time = input; self
     }
     /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
     pub fn get_last_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,8 +175,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The state of the monitor's latest evaluation.</p>
     pub fn set_last_evaluation_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_evaluation_state = input;
-        self
+        self.last_evaluation_state = input; self
     }
     /// <p>The state of the monitor's latest evaluation.</p>
     pub fn get_last_evaluation_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +188,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
     pub fn set_baseline(mut self, input: ::std::option::Option<crate::types::Baseline>) -> Self {
-        self.baseline = input;
-        self
+        self.baseline = input; self
     }
     /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
     pub fn get_baseline(&self) -> &::std::option::Option<crate::types::Baseline> {
@@ -208,8 +201,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>An error message, if any, for the monitor.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An error message, if any, for the monitor.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +214,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The timestamp for when the monitor resource was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp for when the monitor resource was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +227,7 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The timestamp of the latest modification to the monitor.</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The timestamp of the latest modification to the monitor.</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -250,37 +240,48 @@ impl DescribeMonitorOutputBuilder {
     }
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
     pub fn set_estimated_evaluation_time_remaining_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.estimated_evaluation_time_remaining_in_minutes = input;
-        self
+        self.estimated_evaluation_time_remaining_in_minutes = input; self
     }
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
     pub fn get_estimated_evaluation_time_remaining_in_minutes(&self) -> &::std::option::Option<i64> {
         &self.estimated_evaluation_time_remaining_in_minutes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMonitorOutput`](crate::operation::describe_monitor::DescribeMonitorOutput).
     pub fn build(self) -> crate::operation::describe_monitor::DescribeMonitorOutput {
         crate::operation::describe_monitor::DescribeMonitorOutput {
-            monitor_name: self.monitor_name,
-            monitor_arn: self.monitor_arn,
-            resource_arn: self.resource_arn,
-            status: self.status,
-            last_evaluation_time: self.last_evaluation_time,
-            last_evaluation_state: self.last_evaluation_state,
-            baseline: self.baseline,
-            message: self.message,
-            creation_time: self.creation_time,
-            last_modification_time: self.last_modification_time,
-            estimated_evaluation_time_remaining_in_minutes: self.estimated_evaluation_time_remaining_in_minutes,
+            monitor_name: self.monitor_name
+            ,
+            monitor_arn: self.monitor_arn
+            ,
+            resource_arn: self.resource_arn
+            ,
+            status: self.status
+            ,
+            last_evaluation_time: self.last_evaluation_time
+            ,
+            last_evaluation_state: self.last_evaluation_state
+            ,
+            baseline: self.baseline
+            ,
+            message: self.message
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modification_time: self.last_modification_time
+            ,
+            estimated_evaluation_time_remaining_in_minutes: self.estimated_evaluation_time_remaining_in_minutes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

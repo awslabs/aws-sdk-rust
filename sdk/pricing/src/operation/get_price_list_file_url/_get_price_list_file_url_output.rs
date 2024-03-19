@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPriceListFileUrlOutput {
+pub struct GetPriceListFileUrlOutput  {
     /// <p>The URL to download your Price List file from.</p>
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPriceListFileUrlOutput {
+impl  GetPriceListFileUrlOutput  {
     /// <p>The URL to download your Price List file from.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPriceListFileUrlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPriceListFileUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetPriceListFileUrlOutput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput).
     pub fn builder() -> crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlOutputBuilder {
@@ -40,27 +40,28 @@ impl GetPriceListFileUrlOutputBuilder {
     }
     /// <p>The URL to download your Price List file from.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL to download your Price List file from.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPriceListFileUrlOutput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput).
     pub fn build(self) -> crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput {
         crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput {
-            url: self.url,
+            url: self.url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

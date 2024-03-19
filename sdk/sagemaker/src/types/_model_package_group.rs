@@ -3,7 +3,7 @@
 /// <p>A group of versioned models in the model registry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelPackageGroup {
+pub struct ModelPackageGroup  {
     /// <p>The name of the model group.</p>
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
@@ -31,27 +31,27 @@ pub struct ModelPackageGroup {
     /// </ul>
     pub model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ModelPackageGroup {
+impl  ModelPackageGroup  {
     /// <p>The name of the model group.</p>
-    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> ::std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn model_package_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_group_arn(&self) -> ::std::option::Option<& str> {
         self.model_package_group_arn.as_deref()
     }
     /// <p>The description for the model group.</p>
-    pub fn model_package_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_group_description(&self) -> ::std::option::Option<& str> {
         self.model_package_group_description.as_deref()
     }
     /// <p>The time that the model group was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
@@ -69,14 +69,15 @@ impl ModelPackageGroup {
     /// <li>
     /// <p><code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p></li>
     /// </ul>
-    pub fn model_package_group_status(&self) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
+    pub fn model_package_group_status(&self) -> ::std::option::Option<& crate::types::ModelPackageGroupStatus> {
         self.model_package_group_status.as_ref()
     }
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModelPackageGroup {
@@ -96,7 +97,7 @@ pub struct ModelPackageGroupBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ModelPackageGroupBuilder {
     /// <p>The name of the model group.</p>
@@ -106,8 +107,7 @@ impl ModelPackageGroupBuilder {
     }
     /// <p>The name of the model group.</p>
     pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_group_name = input;
-        self
+        self.model_package_group_name = input; self
     }
     /// <p>The name of the model group.</p>
     pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl ModelPackageGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
     pub fn set_model_package_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_group_arn = input;
-        self
+        self.model_package_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
     pub fn get_model_package_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl ModelPackageGroupBuilder {
     }
     /// <p>The description for the model group.</p>
     pub fn set_model_package_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_group_description = input;
-        self
+        self.model_package_group_description = input; self
     }
     /// <p>The description for the model group.</p>
     pub fn get_model_package_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +146,7 @@ impl ModelPackageGroupBuilder {
     }
     /// <p>The time that the model group was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the model group was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,8 +159,7 @@ impl ModelPackageGroupBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -204,8 +200,7 @@ impl ModelPackageGroupBuilder {
     /// <p><code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p></li>
     /// </ul>
     pub fn set_model_package_group_status(mut self, input: ::std::option::Option<crate::types::ModelPackageGroupStatus>) -> Self {
-        self.model_package_group_status = input;
-        self
+        self.model_package_group_status = input; self
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
@@ -232,29 +227,36 @@ impl ModelPackageGroupBuilder {
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ModelPackageGroup`](crate::types::ModelPackageGroup).
     pub fn build(self) -> crate::types::ModelPackageGroup {
         crate::types::ModelPackageGroup {
-            model_package_group_name: self.model_package_group_name,
-            model_package_group_arn: self.model_package_group_arn,
-            model_package_group_description: self.model_package_group_description,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            model_package_group_status: self.model_package_group_status,
-            tags: self.tags,
+            model_package_group_name: self.model_package_group_name
+            ,
+            model_package_group_arn: self.model_package_group_arn
+            ,
+            model_package_group_description: self.model_package_group_description
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            model_package_group_status: self.model_package_group_status
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

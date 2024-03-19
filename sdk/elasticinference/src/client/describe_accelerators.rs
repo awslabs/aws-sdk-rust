@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAccelerators`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`accelerator_ids(impl Into<String>)`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::accelerator_ids) / [`set_accelerator_ids(Option<Vec::<String>>)`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::set_accelerator_ids):<br>required: **false**<br><p>The IDs of the accelerators to describe.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p><br>
-    /// - On success, responds with [`DescribeAcceleratorsOutput`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput) with field(s):
+                            /// - On success, responds with [`DescribeAcceleratorsOutput`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput) with field(s):
     ///   - [`accelerator_set(Option<Vec::<ElasticInferenceAccelerator>>)`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput::accelerator_set): <p>The details of the Elastic Inference Accelerators.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    /// - On failure, responds with [`SdkError<DescribeAcceleratorsError>`](crate::operation::describe_accelerators::DescribeAcceleratorsError)
+                            /// - On failure, responds with [`SdkError<DescribeAcceleratorsError>`](crate::operation::describe_accelerators::DescribeAcceleratorsError)
     pub fn describe_accelerators(&self) -> crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder {
-        crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_accelerators::builders::DescribeAcceleratorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

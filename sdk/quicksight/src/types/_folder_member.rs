@@ -3,19 +3,19 @@
 /// <p>An asset in a Amazon QuickSight folder, such as a dashboard, analysis, or dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FolderMember {
+pub struct FolderMember  {
     /// <p>The ID of an asset in the folder.</p>
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of asset that it is.</p>
     pub member_type: ::std::option::Option<crate::types::MemberType>,
 }
-impl FolderMember {
+impl  FolderMember  {
     /// <p>The ID of an asset in the folder.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The type of asset that it is.</p>
-    pub fn member_type(&self) -> ::std::option::Option<&crate::types::MemberType> {
+    pub fn member_type(&self) -> ::std::option::Option<& crate::types::MemberType> {
         self.member_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl FolderMemberBuilder {
     }
     /// <p>The ID of an asset in the folder.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The ID of an asset in the folder.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl FolderMemberBuilder {
     }
     /// <p>The type of asset that it is.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
-        self.member_type = input;
-        self
+        self.member_type = input; self
     }
     /// <p>The type of asset that it is.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MemberType> {
@@ -65,8 +63,11 @@ impl FolderMemberBuilder {
     /// Consumes the builder and constructs a [`FolderMember`](crate::types::FolderMember).
     pub fn build(self) -> crate::types::FolderMember {
         crate::types::FolderMember {
-            member_id: self.member_id,
-            member_type: self.member_type,
+            member_id: self.member_id
+            ,
+            member_type: self.member_type
+            ,
         }
     }
 }
+

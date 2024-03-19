@@ -4,7 +4,8 @@
 /// <p><code>[DestinationPrefix][YYYY]-[MM]-[DD]-[hh]-[mm]-[ss]-[UniqueString]</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimplePrefix {}
+pub struct SimplePrefix  {
+}
 impl SimplePrefix {
     /// Creates a new builder-style object to manufacture [`SimplePrefix`](crate::types::SimplePrefix).
     pub fn builder() -> crate::types::builders::SimplePrefixBuilder {
@@ -15,10 +16,13 @@ impl SimplePrefix {
 /// A builder for [`SimplePrefix`](crate::types::SimplePrefix).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct SimplePrefixBuilder {}
+pub struct SimplePrefixBuilder {
+}
 impl SimplePrefixBuilder {
     /// Consumes the builder and constructs a [`SimplePrefix`](crate::types::SimplePrefix).
     pub fn build(self) -> crate::types::SimplePrefix {
-        crate::types::SimplePrefix {}
+        crate::types::SimplePrefix {
+        }
     }
 }
+

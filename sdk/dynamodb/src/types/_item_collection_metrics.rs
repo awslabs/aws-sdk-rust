@@ -3,24 +3,25 @@
 /// <p>Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ItemCollectionMetrics {
+pub struct ItemCollectionMetrics  {
     /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
-    pub item_collection_key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub item_collection_key: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
-    pub size_estimate_range_gb: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub size_estimate_range_gb: ::std::option::Option<::std::vec::Vec::<f64>>,
 }
-impl ItemCollectionMetrics {
+impl  ItemCollectionMetrics  {
     /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
-    pub fn item_collection_key(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn item_collection_key(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         self.item_collection_key.as_ref()
     }
     /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.size_estimate_range_gb.is_none()`.
-    pub fn size_estimate_range_gb(&self) -> &[f64] {
-        self.size_estimate_range_gb.as_deref().unwrap_or_default()
+    pub fn size_estimate_range_gb(&self) -> & [f64] {
+        self.size_estimate_range_gb.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ItemCollectionMetrics {
@@ -34,8 +35,8 @@ impl ItemCollectionMetrics {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ItemCollectionMetricsBuilder {
-    pub(crate) item_collection_key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    pub(crate) size_estimate_range_gb: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) item_collection_key: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
+    pub(crate) size_estimate_range_gb: ::std::option::Option<::std::vec::Vec::<f64>>,
 }
 impl ItemCollectionMetricsBuilder {
     /// Adds a key-value pair to `item_collection_key`.
@@ -45,22 +46,16 @@ impl ItemCollectionMetricsBuilder {
     /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
     pub fn item_collection_key(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.item_collection_key.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.item_collection_key = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.item_collection_key = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
-    pub fn set_item_collection_key(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    ) -> Self {
-        self.item_collection_key = input;
-        self
+    pub fn set_item_collection_key(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.item_collection_key = input; self
     }
     /// <p>The partition key value of the item collection. This value is the same as the partition key value of the item.</p>
-    pub fn get_item_collection_key(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn get_item_collection_key(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         &self.item_collection_key
     }
     /// Appends an item to `size_estimate_range_gb`.
@@ -71,26 +66,28 @@ impl ItemCollectionMetricsBuilder {
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
     pub fn size_estimate_range_gb(mut self, input: f64) -> Self {
         let mut v = self.size_estimate_range_gb.unwrap_or_default();
-        v.push(input);
-        self.size_estimate_range_gb = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.size_estimate_range_gb = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
-    pub fn set_size_estimate_range_gb(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.size_estimate_range_gb = input;
-        self
+    pub fn set_size_estimate_range_gb(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.size_estimate_range_gb = input; self
     }
     /// <p>An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p>
     /// <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p>
-    pub fn get_size_estimate_range_gb(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_size_estimate_range_gb(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.size_estimate_range_gb
     }
     /// Consumes the builder and constructs a [`ItemCollectionMetrics`](crate::types::ItemCollectionMetrics).
     pub fn build(self) -> crate::types::ItemCollectionMetrics {
         crate::types::ItemCollectionMetrics {
-            item_collection_key: self.item_collection_key,
-            size_estimate_range_gb: self.size_estimate_range_gb,
+            item_collection_key: self.item_collection_key
+            ,
+            size_estimate_range_gb: self.size_estimate_range_gb
+            ,
         }
     }
 }
+

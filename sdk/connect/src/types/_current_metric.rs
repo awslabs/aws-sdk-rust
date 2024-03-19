@@ -3,19 +3,19 @@
 /// <p>Contains information about a real-time metric. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CurrentMetric {
+pub struct CurrentMetric  {
     /// <p>The name of the metric.</p>
     pub name: ::std::option::Option<crate::types::CurrentMetricName>,
     /// <p>The unit for the metric.</p>
     pub unit: ::std::option::Option<crate::types::Unit>,
 }
-impl CurrentMetric {
+impl  CurrentMetric  {
     /// <p>The name of the metric.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::CurrentMetricName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::CurrentMetricName> {
         self.name.as_ref()
     }
     /// <p>The unit for the metric.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::Unit> {
         self.unit.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CurrentMetricBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::CurrentMetricName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the metric.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::CurrentMetricName> {
@@ -55,8 +54,7 @@ impl CurrentMetricBuilder {
     }
     /// <p>The unit for the metric.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit for the metric.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
@@ -65,8 +63,11 @@ impl CurrentMetricBuilder {
     /// Consumes the builder and constructs a [`CurrentMetric`](crate::types::CurrentMetric).
     pub fn build(self) -> crate::types::CurrentMetric {
         crate::types::CurrentMetric {
-            name: self.name,
-            unit: self.unit,
+            name: self.name
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

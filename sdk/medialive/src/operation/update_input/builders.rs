@@ -5,54 +5,50 @@ pub use crate::operation::update_input::_update_input_input::UpdateInputInputBui
 
 impl UpdateInputInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_input::UpdateInputOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_input::UpdateInputError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_input();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_input::UpdateInputOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_input::UpdateInputError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_input();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateInput`.
-///
+/// 
 /// Updates an input.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_input::builders::UpdateInputInputBuilder,
+                    inner: crate::operation::update_input::builders::UpdateInputInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_input::UpdateInputOutput,
-        crate::operation::update_input::UpdateInputError,
-    > for UpdateInputFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_input::UpdateInputOutput,
-            crate::operation::update_input::UpdateInputError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_input::UpdateInputOutput,
+                    crate::operation::update_input::UpdateInputError,
+                > for UpdateInputFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_input::UpdateInputOutput,
+                        crate::operation::update_input::UpdateInputError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateInputFluentBuilder {
     /// Creates a new `UpdateInput`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateInputFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_input::UpdateInputOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_input::UpdateInputError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_input::UpdateInput::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_input::UpdateInput::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_input::UpdateInputOutput,
-        crate::operation::update_input::UpdateInputError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_input::UpdateInputOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_input::UpdateInputError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_input::UpdateInput::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_input::UpdateInput::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_input::UpdateInputOutput, crate::operation::update_input::UpdateInputError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `Destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -118,12 +105,12 @@ impl UpdateInputFluentBuilder {
         self
     }
     /// Destination settings for PUSH type inputs.
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputDestinationRequest>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// Destination settings for PUSH type inputs.
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputDestinationRequest>> {
         self.inner.get_destinations()
     }
     /// Appends an item to `InputDevices`.
@@ -136,12 +123,12 @@ impl UpdateInputFluentBuilder {
         self
     }
     /// Settings for the devices.
-    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>>) -> Self {
+    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceRequest>>) -> Self {
         self.inner = self.inner.set_input_devices(input);
         self
     }
     /// Settings for the devices.
-    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>> {
+    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceRequest>> {
         self.inner.get_input_devices()
     }
     /// Unique ID of the input.
@@ -168,12 +155,12 @@ impl UpdateInputFluentBuilder {
         self
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn set_input_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_input_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_input_security_groups(input);
         self
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn get_input_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_input_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_input_security_groups()
     }
     /// Appends an item to `MediaConnectFlows`.
@@ -186,12 +173,12 @@ impl UpdateInputFluentBuilder {
         self
     }
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub fn set_media_connect_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>) -> Self {
+    pub fn set_media_connect_flows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaConnectFlowRequest>>) -> Self {
         self.inner = self.inner.set_media_connect_flows(input);
         self
     }
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub fn get_media_connect_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>> {
+    pub fn get_media_connect_flows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaConnectFlowRequest>> {
         self.inner.get_media_connect_flows()
     }
     /// Name of the input.
@@ -232,12 +219,13 @@ impl UpdateInputFluentBuilder {
         self
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputSourceRequest>> {
         self.inner.get_sources()
     }
 }
+

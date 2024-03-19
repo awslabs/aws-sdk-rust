@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateShardCountInput {
+pub struct UpdateShardCountInput  {
     /// <p>The name of the stream.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
@@ -22,9 +22,9 @@ pub struct UpdateShardCountInput {
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateShardCountInput {
+impl  UpdateShardCountInput  {
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
@@ -42,11 +42,11 @@ impl UpdateShardCountInput {
         self.target_shard_count
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-    pub fn scaling_type(&self) -> ::std::option::Option<&crate::types::ScalingType> {
+    pub fn scaling_type(&self) -> ::std::option::Option<& crate::types::ScalingType> {
         self.scaling_type.as_ref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -74,8 +74,7 @@ impl UpdateShardCountInputBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +108,7 @@ impl UpdateShardCountInputBuilder {
     /// <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     pub fn set_target_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_shard_count = input;
-        self
+        self.target_shard_count = input; self
     }
     /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
@@ -134,8 +132,7 @@ impl UpdateShardCountInputBuilder {
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
     pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::ScalingType>) -> Self {
-        self.scaling_type = input;
-        self
+        self.scaling_type = input; self
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
     pub fn get_scaling_type(&self) -> &::std::option::Option<crate::types::ScalingType> {
@@ -148,22 +145,26 @@ impl UpdateShardCountInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`UpdateShardCountInput`](crate::operation::update_shard_count::UpdateShardCountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_shard_count::UpdateShardCountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_shard_count::UpdateShardCountInput {
-            stream_name: self.stream_name,
-            target_shard_count: self.target_shard_count,
-            scaling_type: self.scaling_type,
-            stream_arn: self.stream_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_shard_count::UpdateShardCountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_shard_count::UpdateShardCountInput {
+                stream_name: self.stream_name
+                ,
+                target_shard_count: self.target_shard_count
+                ,
+                scaling_type: self.scaling_type
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

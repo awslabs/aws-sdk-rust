@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContentInput {
+pub struct UpdateContentInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -16,29 +16,29 @@ pub struct UpdateContentInput {
     /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
     pub remove_override_link_out_uri: ::std::option::Option<bool>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateContentInput {
+impl  UpdateContentInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn content_id(&self) -> ::std::option::Option<&str> {
+    pub fn content_id(&self) -> ::std::option::Option<& str> {
         self.content_id.as_deref()
     }
     /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The title of the content.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
-    pub fn override_link_out_uri(&self) -> ::std::option::Option<&str> {
+    pub fn override_link_out_uri(&self) -> ::std::option::Option<& str> {
         self.override_link_out_uri.as_deref()
     }
     /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
@@ -46,11 +46,11 @@ impl UpdateContentInput {
         self.remove_override_link_out_uri
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
 }
@@ -71,7 +71,7 @@ pub struct UpdateContentInputBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) override_link_out_uri: ::std::option::Option<::std::string::String>,
     pub(crate) remove_override_link_out_uri: ::std::option::Option<bool>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContentInputBuilder {
@@ -83,8 +83,7 @@ impl UpdateContentInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl UpdateContentInputBuilder {
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_content_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_id = input;
-        self
+        self.content_id = input; self
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl UpdateContentInputBuilder {
     }
     /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +123,7 @@ impl UpdateContentInputBuilder {
     }
     /// <p>The title of the content.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the content.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +136,7 @@ impl UpdateContentInputBuilder {
     }
     /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
     pub fn set_override_link_out_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.override_link_out_uri = input;
-        self
+        self.override_link_out_uri = input; self
     }
     /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
     pub fn get_override_link_out_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +149,7 @@ impl UpdateContentInputBuilder {
     }
     /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
     pub fn set_remove_override_link_out_uri(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_override_link_out_uri = input;
-        self
+        self.remove_override_link_out_uri = input; self
     }
     /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
     pub fn get_remove_override_link_out_uri(&self) -> &::std::option::Option<bool> {
@@ -168,17 +162,16 @@ impl UpdateContentInputBuilder {
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
@@ -188,26 +181,34 @@ impl UpdateContentInputBuilder {
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }
     /// Consumes the builder and constructs a [`UpdateContentInput`](crate::operation::update_content::UpdateContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_content::UpdateContentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_content::UpdateContentInput {
-            knowledge_base_id: self.knowledge_base_id,
-            content_id: self.content_id,
-            revision_id: self.revision_id,
-            title: self.title,
-            override_link_out_uri: self.override_link_out_uri,
-            remove_override_link_out_uri: self.remove_override_link_out_uri,
-            metadata: self.metadata,
-            upload_id: self.upload_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_content::UpdateContentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_content::UpdateContentInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                content_id: self.content_id
+                ,
+                revision_id: self.revision_id
+                ,
+                title: self.title
+                ,
+                override_link_out_uri: self.override_link_out_uri
+                ,
+                remove_override_link_out_uri: self.remove_override_link_out_uri
+                ,
+                metadata: self.metadata
+                ,
+                upload_id: self.upload_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,27 +3,25 @@
 /// <p>Updates the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSettings {
+pub struct UpdateSettings  {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub add_subnets: ::std::vec::Vec<::std::string::String>,
+    pub add_subnets: ::std::vec::Vec::<::std::string::String>,
     /// <p>The ID of one or more subnets to remove.</p>
-    pub remove_subnets: ::std::vec::Vec<::std::string::String>,
+    pub remove_subnets: ::std::vec::Vec::<::std::string::String>,
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
     pub security_group_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSettings {
+impl  UpdateSettings  {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn add_subnets(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.add_subnets.deref()
+    pub fn add_subnets(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.add_subnets.deref()
     }
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn remove_subnets(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.remove_subnets.deref()
+    pub fn remove_subnets(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.remove_subnets.deref()
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
-    pub fn security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_group_id(&self) -> ::std::option::Option<& str> {
         self.security_group_id.as_deref()
     }
 }
@@ -38,8 +36,8 @@ impl UpdateSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSettingsBuilder {
-    pub(crate) add_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) remove_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) remove_subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSettingsBuilder {
@@ -50,17 +48,16 @@ impl UpdateSettingsBuilder {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
     pub fn add_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_subnets.unwrap_or_default();
-        v.push(input.into());
-        self.add_subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.add_subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn set_add_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.add_subnets = input;
-        self
+    pub fn set_add_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.add_subnets = input; self
     }
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn get_add_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.add_subnets
     }
     /// Appends an item to `remove_subnets`.
@@ -70,17 +67,16 @@ impl UpdateSettingsBuilder {
     /// <p>The ID of one or more subnets to remove.</p>
     pub fn remove_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_subnets.unwrap_or_default();
-        v.push(input.into());
-        self.remove_subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn set_remove_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_subnets = input;
-        self
+    pub fn set_remove_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_subnets = input; self
     }
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn get_remove_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_subnets
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
@@ -90,8 +86,7 @@ impl UpdateSettingsBuilder {
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
     pub fn set_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_group_id = input;
-        self
+        self.security_group_id = input; self
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
     pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,20 +97,22 @@ impl UpdateSettingsBuilder {
     /// - [`add_subnets`](crate::types::builders::UpdateSettingsBuilder::add_subnets)
     /// - [`remove_subnets`](crate::types::builders::UpdateSettingsBuilder::remove_subnets)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateSettings {
-            add_subnets: self.add_subnets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "add_subnets",
-                    "add_subnets was not specified but it is required when building UpdateSettings",
-                )
-            })?,
-            remove_subnets: self.remove_subnets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "remove_subnets",
-                    "remove_subnets was not specified but it is required when building UpdateSettings",
-                )
-            })?,
-            security_group_id: self.security_group_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateSettings {
+                add_subnets: self.add_subnets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("add_subnets", "add_subnets was not specified but it is required when building UpdateSettings")
+                    )?
+                ,
+                remove_subnets: self.remove_subnets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("remove_subnets", "remove_subnets was not specified but it is required when building UpdateSettings")
+                    )?
+                ,
+                security_group_id: self.security_group_id
+                ,
+            }
+        )
     }
 }
+

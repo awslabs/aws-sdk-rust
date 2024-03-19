@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSecretVersionStageInput {
+pub struct UpdateSecretVersionStageInput  {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
@@ -14,23 +14,23 @@ pub struct UpdateSecretVersionStageInput {
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
     pub move_to_version_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSecretVersionStageInput {
+impl  UpdateSecretVersionStageInput  {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
     /// <p>The staging label to add to this version.</p>
-    pub fn version_stage(&self) -> ::std::option::Option<&str> {
+    pub fn version_stage(&self) -> ::std::option::Option<& str> {
         self.version_stage.as_deref()
     }
     /// <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
-    pub fn remove_from_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn remove_from_version_id(&self) -> ::std::option::Option<& str> {
         self.remove_from_version_id.as_deref()
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
-    pub fn move_to_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn move_to_version_id(&self) -> ::std::option::Option<& str> {
         self.move_to_version_id.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl UpdateSecretVersionStageInputBuilder {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -77,8 +76,7 @@ impl UpdateSecretVersionStageInputBuilder {
     }
     /// <p>The staging label to add to this version.</p>
     pub fn set_version_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_stage = input;
-        self
+        self.version_stage = input; self
     }
     /// <p>The staging label to add to this version.</p>
     pub fn get_version_stage(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdateSecretVersionStageInputBuilder {
     }
     /// <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
     pub fn set_remove_from_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remove_from_version_id = input;
-        self
+        self.remove_from_version_id = input; self
     }
     /// <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
     pub fn get_remove_from_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl UpdateSecretVersionStageInputBuilder {
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
     pub fn set_move_to_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.move_to_version_id = input;
-        self
+        self.move_to_version_id = input; self
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
@@ -116,17 +112,19 @@ impl UpdateSecretVersionStageInputBuilder {
         &self.move_to_version_id
     }
     /// Consumes the builder and constructs a [`UpdateSecretVersionStageInput`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput {
-            secret_id: self.secret_id,
-            version_stage: self.version_stage,
-            remove_from_version_id: self.remove_from_version_id,
-            move_to_version_id: self.move_to_version_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput {
+                secret_id: self.secret_id
+                ,
+                version_stage: self.version_stage
+                ,
+                remove_from_version_id: self.remove_from_version_id
+                ,
+                move_to_version_id: self.move_to_version_id
+                ,
+            }
+        )
     }
 }
+

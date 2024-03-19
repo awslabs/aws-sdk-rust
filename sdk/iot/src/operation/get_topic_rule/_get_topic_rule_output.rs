@@ -3,28 +3,28 @@
 /// <p>The output from the GetTopicRule operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTopicRuleOutput {
+pub struct GetTopicRuleOutput  {
     /// <p>The rule ARN.</p>
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rule.</p>
     pub rule: ::std::option::Option<crate::types::TopicRule>,
     _request_id: Option<String>,
 }
-impl GetTopicRuleOutput {
+impl  GetTopicRuleOutput  {
     /// <p>The rule ARN.</p>
-    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_arn(&self) -> ::std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>The rule.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::TopicRule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::TopicRule> {
         self.rule.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTopicRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTopicRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetTopicRuleOutput`](crate::operation::get_topic_rule::GetTopicRuleOutput).
     pub fn builder() -> crate::operation::get_topic_rule::builders::GetTopicRuleOutputBuilder {
@@ -48,8 +48,7 @@ impl GetTopicRuleOutputBuilder {
     }
     /// <p>The rule ARN.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The rule ARN.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl GetTopicRuleOutputBuilder {
     }
     /// <p>The rule.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::TopicRule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>The rule.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::TopicRule> {
         &self.rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTopicRuleOutput`](crate::operation::get_topic_rule::GetTopicRuleOutput).
     pub fn build(self) -> crate::operation::get_topic_rule::GetTopicRuleOutput {
         crate::operation::get_topic_rule::GetTopicRuleOutput {
-            rule_arn: self.rule_arn,
-            rule: self.rule,
+            rule_arn: self.rule_arn
+            ,
+            rule: self.rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>Container for the response returned by the <code>CreatePackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePackageOutput {
+pub struct CreatePackageOutput  {
     /// <p>Basic information about an OpenSearch Service package.</p>
     pub package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,
 }
-impl CreatePackageOutput {
+impl  CreatePackageOutput  {
     /// <p>Basic information about an OpenSearch Service package.</p>
-    pub fn package_details(&self) -> ::std::option::Option<&crate::types::PackageDetails> {
+    pub fn package_details(&self) -> ::std::option::Option<& crate::types::PackageDetails> {
         self.package_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePackageOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
     pub fn builder() -> crate::operation::create_package::builders::CreatePackageOutputBuilder {
@@ -41,27 +41,28 @@ impl CreatePackageOutputBuilder {
     }
     /// <p>Basic information about an OpenSearch Service package.</p>
     pub fn set_package_details(mut self, input: ::std::option::Option<crate::types::PackageDetails>) -> Self {
-        self.package_details = input;
-        self
+        self.package_details = input; self
     }
     /// <p>Basic information about an OpenSearch Service package.</p>
     pub fn get_package_details(&self) -> &::std::option::Option<crate::types::PackageDetails> {
         &self.package_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
     pub fn build(self) -> crate::operation::create_package::CreatePackageOutput {
         crate::operation::create_package::CreatePackageOutput {
-            package_details: self.package_details,
+            package_details: self.package_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

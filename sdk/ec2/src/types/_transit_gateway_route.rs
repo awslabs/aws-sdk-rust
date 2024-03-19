@@ -3,7 +3,7 @@
 /// <p>Describes a route for a transit gateway route table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayRoute {
+pub struct TransitGatewayRoute  {
     /// <p>The CIDR block used for destination matches.</p>
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list used for destination matches.</p>
@@ -11,37 +11,38 @@ pub struct TransitGatewayRoute {
     /// <p>The ID of the transit gateway route table announcement.</p>
     pub transit_gateway_route_table_announcement_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachments.</p>
-    pub transit_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteAttachment>>,
+    pub transit_gateway_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayRouteAttachment>>,
     /// <p>The route type.</p>
     pub r#type: ::std::option::Option<crate::types::TransitGatewayRouteType>,
     /// <p>The state of the route.</p>
     pub state: ::std::option::Option<crate::types::TransitGatewayRouteState>,
 }
-impl TransitGatewayRoute {
+impl  TransitGatewayRoute  {
     /// <p>The CIDR block used for destination matches.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the prefix list used for destination matches.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The ID of the transit gateway route table announcement.</p>
-    pub fn transit_gateway_route_table_announcement_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_announcement_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_announcement_id.as_deref()
     }
     /// <p>The attachments.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_attachments.is_none()`.
-    pub fn transit_gateway_attachments(&self) -> &[crate::types::TransitGatewayRouteAttachment] {
-        self.transit_gateway_attachments.as_deref().unwrap_or_default()
+    pub fn transit_gateway_attachments(&self) -> & [crate::types::TransitGatewayRouteAttachment] {
+        self.transit_gateway_attachments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The route type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TransitGatewayRouteType> {
         self.r#type.as_ref()
     }
     /// <p>The state of the route.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayRouteState> {
         self.state.as_ref()
     }
 }
@@ -59,7 +60,7 @@ pub struct TransitGatewayRouteBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_route_table_announcement_id: ::std::option::Option<::std::string::String>,
-    pub(crate) transit_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteAttachment>>,
+    pub(crate) transit_gateway_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayRouteAttachment>>,
     pub(crate) r#type: ::std::option::Option<crate::types::TransitGatewayRouteType>,
     pub(crate) state: ::std::option::Option<crate::types::TransitGatewayRouteState>,
 }
@@ -71,8 +72,7 @@ impl TransitGatewayRouteBuilder {
     }
     /// <p>The CIDR block used for destination matches.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>The CIDR block used for destination matches.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl TransitGatewayRouteBuilder {
     }
     /// <p>The ID of the prefix list used for destination matches.</p>
     pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The ID of the prefix list used for destination matches.</p>
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl TransitGatewayRouteBuilder {
     }
     /// <p>The ID of the transit gateway route table announcement.</p>
     pub fn set_transit_gateway_route_table_announcement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_route_table_announcement_id = input;
-        self
+        self.transit_gateway_route_table_announcement_id = input; self
     }
     /// <p>The ID of the transit gateway route table announcement.</p>
     pub fn get_transit_gateway_route_table_announcement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,20 +111,16 @@ impl TransitGatewayRouteBuilder {
     /// <p>The attachments.</p>
     pub fn transit_gateway_attachments(mut self, input: crate::types::TransitGatewayRouteAttachment) -> Self {
         let mut v = self.transit_gateway_attachments.unwrap_or_default();
-        v.push(input);
-        self.transit_gateway_attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.transit_gateway_attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attachments.</p>
-    pub fn set_transit_gateway_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteAttachment>>,
-    ) -> Self {
-        self.transit_gateway_attachments = input;
-        self
+    pub fn set_transit_gateway_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayRouteAttachment>>) -> Self {
+        self.transit_gateway_attachments = input; self
     }
     /// <p>The attachments.</p>
-    pub fn get_transit_gateway_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteAttachment>> {
+    pub fn get_transit_gateway_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayRouteAttachment>> {
         &self.transit_gateway_attachments
     }
     /// <p>The route type.</p>
@@ -136,8 +130,7 @@ impl TransitGatewayRouteBuilder {
     }
     /// <p>The route type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TransitGatewayRouteType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The route type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteType> {
@@ -150,8 +143,7 @@ impl TransitGatewayRouteBuilder {
     }
     /// <p>The state of the route.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayRouteState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the route.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteState> {
@@ -160,12 +152,19 @@ impl TransitGatewayRouteBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayRoute`](crate::types::TransitGatewayRoute).
     pub fn build(self) -> crate::types::TransitGatewayRoute {
         crate::types::TransitGatewayRoute {
-            destination_cidr_block: self.destination_cidr_block,
-            prefix_list_id: self.prefix_list_id,
-            transit_gateway_route_table_announcement_id: self.transit_gateway_route_table_announcement_id,
-            transit_gateway_attachments: self.transit_gateway_attachments,
-            r#type: self.r#type,
-            state: self.state,
+            destination_cidr_block: self.destination_cidr_block
+            ,
+            prefix_list_id: self.prefix_list_id
+            ,
+            transit_gateway_route_table_announcement_id: self.transit_gateway_route_table_announcement_id
+            ,
+            transit_gateway_attachments: self.transit_gateway_attachments
+            ,
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

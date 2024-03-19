@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserProfilesInput {
+pub struct DescribeUserProfilesInput  {
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub iam_user_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub iam_user_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeUserProfilesInput {
+impl  DescribeUserProfilesInput  {
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_user_arns.is_none()`.
-    pub fn iam_user_arns(&self) -> &[::std::string::String] {
-        self.iam_user_arns.as_deref().unwrap_or_default()
+    pub fn iam_user_arns(&self) -> & [::std::string::String] {
+        self.iam_user_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeUserProfilesInput {
@@ -25,7 +26,7 @@ impl DescribeUserProfilesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserProfilesInputBuilder {
-    pub(crate) iam_user_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) iam_user_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeUserProfilesInputBuilder {
     /// Appends an item to `iam_user_arns`.
@@ -35,26 +36,26 @@ impl DescribeUserProfilesInputBuilder {
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
     pub fn iam_user_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.iam_user_arns.unwrap_or_default();
-        v.push(input.into());
-        self.iam_user_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.iam_user_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn set_iam_user_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.iam_user_arns = input;
-        self
+    pub fn set_iam_user_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.iam_user_arns = input; self
     }
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn get_iam_user_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_iam_user_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.iam_user_arns
     }
     /// Consumes the builder and constructs a [`DescribeUserProfilesInput`](crate::operation::describe_user_profiles::DescribeUserProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_user_profiles::DescribeUserProfilesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_user_profiles::DescribeUserProfilesInput {
-            iam_user_arns: self.iam_user_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user_profiles::DescribeUserProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_user_profiles::DescribeUserProfilesInput {
+                iam_user_arns: self.iam_user_arns
+                ,
+            }
+        )
     }
 }
+

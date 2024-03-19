@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePermissionsInput {
+pub struct DescribePermissionsInput  {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The stack ID.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribePermissionsInput {
+impl  DescribePermissionsInput  {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn iam_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> ::std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DescribePermissionsInputBuilder {
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_user_arn = input;
-        self
+        self.iam_user_arn = input; self
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl DescribePermissionsInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ID.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_id
     }
     /// Consumes the builder and constructs a [`DescribePermissionsInput`](crate::operation::describe_permissions::DescribePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_permissions::DescribePermissionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_permissions::DescribePermissionsInput {
-            iam_user_arn: self.iam_user_arn,
-            stack_id: self.stack_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_permissions::DescribePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_permissions::DescribePermissionsInput {
+                iam_user_arn: self.iam_user_arn
+                ,
+                stack_id: self.stack_id
+                ,
+            }
+        )
     }
 }
+

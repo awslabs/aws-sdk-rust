@@ -3,19 +3,19 @@
 /// <p>Contains specifications for the sample utterance generation feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SampleUtteranceGenerationSpecification {
+pub struct SampleUtteranceGenerationSpecification  {
     /// <p>Specifies whether to enable sample utterance generation or not.</p>
     pub enabled: bool,
     /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
     pub bedrock_model_specification: ::std::option::Option<crate::types::BedrockModelSpecification>,
 }
-impl SampleUtteranceGenerationSpecification {
+impl  SampleUtteranceGenerationSpecification  {
     /// <p>Specifies whether to enable sample utterance generation or not.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
-    pub fn bedrock_model_specification(&self) -> ::std::option::Option<&crate::types::BedrockModelSpecification> {
+    pub fn bedrock_model_specification(&self) -> ::std::option::Option<& crate::types::BedrockModelSpecification> {
         self.bedrock_model_specification.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl SampleUtteranceGenerationSpecificationBuilder {
     }
     /// <p>Specifies whether to enable sample utterance generation or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether to enable sample utterance generation or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl SampleUtteranceGenerationSpecificationBuilder {
     }
     /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
     pub fn set_bedrock_model_specification(mut self, input: ::std::option::Option<crate::types::BedrockModelSpecification>) -> Self {
-        self.bedrock_model_specification = input;
-        self
+        self.bedrock_model_specification = input; self
     }
     /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
     pub fn get_bedrock_model_specification(&self) -> &::std::option::Option<crate::types::BedrockModelSpecification> {
@@ -66,8 +64,12 @@ impl SampleUtteranceGenerationSpecificationBuilder {
     /// Consumes the builder and constructs a [`SampleUtteranceGenerationSpecification`](crate::types::SampleUtteranceGenerationSpecification).
     pub fn build(self) -> crate::types::SampleUtteranceGenerationSpecification {
         crate::types::SampleUtteranceGenerationSpecification {
-            enabled: self.enabled.unwrap_or_default(),
-            bedrock_model_specification: self.bedrock_model_specification,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            bedrock_model_specification: self.bedrock_model_specification
+            ,
         }
     }
 }
+

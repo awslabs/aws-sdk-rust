@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBillingGroupInput {
+pub struct DescribeBillingGroupInput  {
     /// <p>The name of the billing group.</p>
     pub billing_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBillingGroupInput {
+impl  DescribeBillingGroupInput  {
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn billing_group_name(&self) -> ::std::option::Option<& str> {
         self.billing_group_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeBillingGroupInputBuilder {
     }
     /// <p>The name of the billing group.</p>
     pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_group_name = input;
-        self
+        self.billing_group_name = input; self
     }
     /// <p>The name of the billing group.</p>
     pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.billing_group_name
     }
     /// Consumes the builder and constructs a [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_billing_group::DescribeBillingGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_billing_group::DescribeBillingGroupInput {
-            billing_group_name: self.billing_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_billing_group::DescribeBillingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_billing_group::DescribeBillingGroupInput {
+                billing_group_name: self.billing_group_name
+                ,
+            }
+        )
     }
 }
+

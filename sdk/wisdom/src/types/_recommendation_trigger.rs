@@ -3,7 +3,7 @@
 /// <p>A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationTrigger {
+pub struct RecommendationTrigger  {
     /// <p>The identifier of the recommendation trigger.</p>
     pub id: ::std::string::String,
     /// <p>The type of recommendation trigger.</p>
@@ -19,16 +19,15 @@ pub struct RecommendationTrigger {
     /// <p>A union type containing information related to the trigger.</p>
     pub data: ::std::option::Option<crate::types::RecommendationTriggerData>,
     /// <p>The identifiers of the recommendations.</p>
-    pub recommendation_ids: ::std::vec::Vec<::std::string::String>,
+    pub recommendation_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl RecommendationTrigger {
+impl  RecommendationTrigger  {
     /// <p>The identifier of the recommendation trigger.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The type of recommendation trigger.</p>
-    pub fn r#type(&self) -> &crate::types::RecommendationTriggerType {
+    pub fn r#type(&self) -> & crate::types::RecommendationTriggerType {
         &self.r#type
     }
     /// <p>The source of the recommendation trigger.</p>
@@ -38,17 +37,16 @@ impl RecommendationTrigger {
     /// <li>
     /// <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
     /// </ul>
-    pub fn source(&self) -> &crate::types::RecommendationSourceType {
+    pub fn source(&self) -> & crate::types::RecommendationSourceType {
         &self.source
     }
     /// <p>A union type containing information related to the trigger.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::RecommendationTriggerData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::RecommendationTriggerData> {
         self.data.as_ref()
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.recommendation_ids.deref()
+    pub fn recommendation_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.recommendation_ids.deref()
     }
 }
 impl RecommendationTrigger {
@@ -66,7 +64,7 @@ pub struct RecommendationTriggerBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RecommendationTriggerType>,
     pub(crate) source: ::std::option::Option<crate::types::RecommendationSourceType>,
     pub(crate) data: ::std::option::Option<crate::types::RecommendationTriggerData>,
-    pub(crate) recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recommendation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RecommendationTriggerBuilder {
     /// <p>The identifier of the recommendation trigger.</p>
@@ -77,8 +75,7 @@ impl RecommendationTriggerBuilder {
     }
     /// <p>The identifier of the recommendation trigger.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the recommendation trigger.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl RecommendationTriggerBuilder {
     }
     /// <p>The type of recommendation trigger.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecommendationTriggerType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of recommendation trigger.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationTriggerType> {
@@ -119,8 +115,7 @@ impl RecommendationTriggerBuilder {
     /// <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p></li>
     /// </ul>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::RecommendationSourceType>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
@@ -140,8 +135,7 @@ impl RecommendationTriggerBuilder {
     }
     /// <p>A union type containing information related to the trigger.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::RecommendationTriggerData>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>A union type containing information related to the trigger.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::RecommendationTriggerData> {
@@ -154,17 +148,16 @@ impl RecommendationTriggerBuilder {
     /// <p>The identifiers of the recommendations.</p>
     pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recommendation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recommendation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.recommendation_ids = input;
-        self
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.recommendation_ids = input; self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`RecommendationTrigger`](crate::types::RecommendationTrigger).
@@ -174,32 +167,32 @@ impl RecommendationTriggerBuilder {
     /// - [`source`](crate::types::builders::RecommendationTriggerBuilder::source)
     /// - [`recommendation_ids`](crate::types::builders::RecommendationTriggerBuilder::recommendation_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::RecommendationTrigger, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecommendationTrigger {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RecommendationTrigger",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building RecommendationTrigger",
-                )
-            })?,
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building RecommendationTrigger",
-                )
-            })?,
-            data: self.data,
-            recommendation_ids: self.recommendation_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recommendation_ids",
-                    "recommendation_ids was not specified but it is required when building RecommendationTrigger",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecommendationTrigger {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RecommendationTrigger")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building RecommendationTrigger")
+                    )?
+                ,
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building RecommendationTrigger")
+                    )?
+                ,
+                data: self.data
+                ,
+                recommendation_ids: self.recommendation_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recommendation_ids", "recommendation_ids was not specified but it is required when building RecommendationTrigger")
+                    )?
+                ,
+            }
+        )
     }
 }
+

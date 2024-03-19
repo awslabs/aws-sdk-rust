@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCustomDomainAssociationInput {
+pub struct UpdateCustomDomainAssociationInput  {
     /// <p>The name of the workgroup associated with the database.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The custom domain name associated with the workgroup.</p>
@@ -10,17 +10,17 @@ pub struct UpdateCustomDomainAssociationInput {
     /// <p>The custom domain name’s certificate Amazon resource name (ARN). This is optional.</p>
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateCustomDomainAssociationInput {
+impl  UpdateCustomDomainAssociationInput  {
     /// <p>The name of the workgroup associated with the database.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The custom domain name associated with the workgroup.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN). This is optional.</p>
-    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_domain_certificate_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateCustomDomainAssociationInputBuilder {
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateCustomDomainAssociationInputBuilder {
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateCustomDomainAssociationInputBuilder {
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN). This is optional.</p>
     pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_certificate_arn = input;
-        self
+        self.custom_domain_certificate_arn = input; self
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN). This is optional.</p>
     pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_certificate_arn
     }
     /// Consumes the builder and constructs a [`UpdateCustomDomainAssociationInput`](crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationInput {
-            workgroup_name: self.workgroup_name,
-            custom_domain_name: self.custom_domain_name,
-            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationInput {
+                workgroup_name: self.workgroup_name
+                ,
+                custom_domain_name: self.custom_domain_name
+                ,
+                custom_domain_certificate_arn: self.custom_domain_certificate_arn
+                ,
+            }
+        )
     }
 }
+

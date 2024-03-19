@@ -5,54 +5,50 @@ pub use crate::operation::put_registry_catalog_data::_put_registry_catalog_data_
 
 impl PutRegistryCatalogDataInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_registry_catalog_data();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_registry_catalog_data();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutRegistryCatalogData`.
-///
+/// 
 /// <p>Create or update the catalog data for a public registry.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRegistryCatalogDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataInputBuilder,
+                    inner: crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput,
-        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError,
-    > for PutRegistryCatalogDataFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput,
-            crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput,
+                    crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError,
+                > for PutRegistryCatalogDataFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput,
+                        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutRegistryCatalogDataFluentBuilder {
     /// Creates a new `PutRegistryCatalogData`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl PutRegistryCatalogDataFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_registry_catalog_data::PutRegistryCatalogData::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_registry_catalog_data::PutRegistryCatalogData::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput,
-        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_registry_catalog_data::PutRegistryCatalogData::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_registry_catalog_data::PutRegistryCatalogData::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput, crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p><note>
     /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
@@ -129,3 +116,4 @@ impl PutRegistryCatalogDataFluentBuilder {
         self.inner.get_display_name()
     }
 }
+

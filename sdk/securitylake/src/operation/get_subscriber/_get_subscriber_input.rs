@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSubscriberInput {
+pub struct GetSubscriberInput  {
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
     pub subscriber_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSubscriberInput {
+impl  GetSubscriberInput  {
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-    pub fn subscriber_id(&self) -> ::std::option::Option<&str> {
+    pub fn subscriber_id(&self) -> ::std::option::Option<& str> {
         self.subscriber_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetSubscriberInputBuilder {
     }
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
     pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscriber_id = input;
-        self
+        self.subscriber_id = input; self
     }
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
     pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscriber_id
     }
     /// Consumes the builder and constructs a [`GetSubscriberInput`](crate::operation::get_subscriber::GetSubscriberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_subscriber::GetSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_subscriber::GetSubscriberInput {
-            subscriber_id: self.subscriber_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_subscriber::GetSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_subscriber::GetSubscriberInput {
+                subscriber_id: self.subscriber_id
+                ,
+            }
+        )
     }
 }
+

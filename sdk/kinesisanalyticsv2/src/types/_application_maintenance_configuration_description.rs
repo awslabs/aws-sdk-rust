@@ -3,22 +3,20 @@
 /// <p>The details of the maintenance configuration for the application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationMaintenanceConfigurationDescription {
+pub struct ApplicationMaintenanceConfigurationDescription  {
     /// <p>The start time for the maintenance window.</p>
     pub application_maintenance_window_start_time: ::std::string::String,
     /// <p>The end time for the maintenance window.</p>
     pub application_maintenance_window_end_time: ::std::string::String,
 }
-impl ApplicationMaintenanceConfigurationDescription {
+impl  ApplicationMaintenanceConfigurationDescription  {
     /// <p>The start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time(&self) -> &str {
-        use std::ops::Deref;
-        self.application_maintenance_window_start_time.deref()
+    pub fn application_maintenance_window_start_time(&self) -> & str {
+        use std::ops::Deref; self.application_maintenance_window_start_time.deref()
     }
     /// <p>The end time for the maintenance window.</p>
-    pub fn application_maintenance_window_end_time(&self) -> &str {
-        use std::ops::Deref;
-        self.application_maintenance_window_end_time.deref()
+    pub fn application_maintenance_window_end_time(&self) -> & str {
+        use std::ops::Deref; self.application_maintenance_window_end_time.deref()
     }
 }
 impl ApplicationMaintenanceConfigurationDescription {
@@ -44,8 +42,7 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     }
     /// <p>The start time for the maintenance window.</p>
     pub fn set_application_maintenance_window_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_maintenance_window_start_time = input;
-        self
+        self.application_maintenance_window_start_time = input; self
     }
     /// <p>The start time for the maintenance window.</p>
     pub fn get_application_maintenance_window_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     }
     /// <p>The end time for the maintenance window.</p>
     pub fn set_application_maintenance_window_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_maintenance_window_end_time = input;
-        self
+        self.application_maintenance_window_end_time = input; self
     }
     /// <p>The end time for the maintenance window.</p>
     pub fn get_application_maintenance_window_end_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,9 +66,7 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`application_maintenance_window_start_time`](crate::types::builders::ApplicationMaintenanceConfigurationDescriptionBuilder::application_maintenance_window_start_time)
     /// - [`application_maintenance_window_end_time`](crate::types::builders::ApplicationMaintenanceConfigurationDescriptionBuilder::application_maintenance_window_end_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::types::ApplicationMaintenanceConfigurationDescription {
                 application_maintenance_window_start_time: self.application_maintenance_window_start_time
@@ -89,3 +83,4 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
         )
     }
 }
+

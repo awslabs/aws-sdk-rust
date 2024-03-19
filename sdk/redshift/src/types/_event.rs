@@ -3,7 +3,7 @@
 /// <p>Describes an event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>The identifier for the source of the event.</p>
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The source type for this event.</p>
@@ -12,7 +12,7 @@ pub struct Event {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A list of the event categories.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
     pub severity: ::std::option::Option<::std::string::String>,
@@ -21,37 +21,38 @@ pub struct Event {
     /// <p>The identifier of the event.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
 }
-impl Event {
+impl  Event  {
     /// <p>The identifier for the source of the event.</p>
-    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_identifier(&self) -> ::std::option::Option<& str> {
         self.source_identifier.as_deref()
     }
     /// <p>The source type for this event.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>The text of this event.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>A list of the event categories.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
-    pub fn event_categories(&self) -> &[::std::string::String] {
-        self.event_categories.as_deref().unwrap_or_default()
+    pub fn event_categories(&self) -> & [::std::string::String] {
+        self.event_categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
-    pub fn severity(&self) -> ::std::option::Option<&str> {
+    pub fn severity(&self) -> ::std::option::Option<& str> {
         self.severity.as_deref()
     }
     /// <p>The date and time of the event.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The identifier of the event.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
 }
@@ -69,7 +70,7 @@ pub struct EventBuilder {
     pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) event_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) severity: ::std::option::Option<::std::string::String>,
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
@@ -82,8 +83,7 @@ impl EventBuilder {
     }
     /// <p>The identifier for the source of the event.</p>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_identifier = input;
-        self
+        self.source_identifier = input; self
     }
     /// <p>The identifier for the source of the event.</p>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +96,7 @@ impl EventBuilder {
     }
     /// <p>The source type for this event.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The source type for this event.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
@@ -110,8 +109,7 @@ impl EventBuilder {
     }
     /// <p>The text of this event.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The text of this event.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,19 +123,18 @@ impl EventBuilder {
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
     pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
-        v.push(input.into());
-        self.event_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the event categories.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_categories = input;
-        self
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_categories = input; self
     }
     /// <p>A list of the event categories.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_categories
     }
     /// <p>The severity of the event.</p>
@@ -149,8 +146,7 @@ impl EventBuilder {
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
     pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
@@ -164,8 +160,7 @@ impl EventBuilder {
     }
     /// <p>The date and time of the event.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date and time of the event.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -178,8 +173,7 @@ impl EventBuilder {
     }
     /// <p>The identifier of the event.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The identifier of the event.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,13 +182,21 @@ impl EventBuilder {
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            source_identifier: self.source_identifier,
-            source_type: self.source_type,
-            message: self.message,
-            event_categories: self.event_categories,
-            severity: self.severity,
-            date: self.date,
-            event_id: self.event_id,
+            source_identifier: self.source_identifier
+            ,
+            source_type: self.source_type
+            ,
+            message: self.message
+            ,
+            event_categories: self.event_categories
+            ,
+            severity: self.severity
+            ,
+            date: self.date
+            ,
+            event_id: self.event_id
+            ,
         }
     }
 }
+

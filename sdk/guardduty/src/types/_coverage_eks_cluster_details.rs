@@ -3,7 +3,7 @@
 /// <p>Information about the EKS cluster that has a coverage status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageEksClusterDetails {
+pub struct CoverageEksClusterDetails  {
     /// <p>Name of the EKS cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
@@ -17,9 +17,9 @@ pub struct CoverageEksClusterDetails {
     /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
     pub management_type: ::std::option::Option<crate::types::ManagementType>,
 }
-impl CoverageEksClusterDetails {
+impl  CoverageEksClusterDetails  {
     /// <p>Name of the EKS cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
@@ -31,13 +31,13 @@ impl CoverageEksClusterDetails {
         self.compatible_nodes
     }
     /// <p>Information about the installed EKS add-on.</p>
-    pub fn addon_details(&self) -> ::std::option::Option<&crate::types::AddonDetails> {
+    pub fn addon_details(&self) -> ::std::option::Option<& crate::types::AddonDetails> {
         self.addon_details.as_ref()
     }
     /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
     /// <p><code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
     /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
-    pub fn management_type(&self) -> ::std::option::Option<&crate::types::ManagementType> {
+    pub fn management_type(&self) -> ::std::option::Option<& crate::types::ManagementType> {
         self.management_type.as_ref()
     }
 }
@@ -66,8 +66,7 @@ impl CoverageEksClusterDetailsBuilder {
     }
     /// <p>Name of the EKS cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>Name of the EKS cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CoverageEksClusterDetailsBuilder {
     }
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
     pub fn set_covered_nodes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.covered_nodes = input;
-        self
+        self.covered_nodes = input; self
     }
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
     pub fn get_covered_nodes(&self) -> &::std::option::Option<i64> {
@@ -94,8 +92,7 @@ impl CoverageEksClusterDetailsBuilder {
     }
     /// <p>Represents all the nodes within the EKS cluster in your account.</p>
     pub fn set_compatible_nodes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.compatible_nodes = input;
-        self
+        self.compatible_nodes = input; self
     }
     /// <p>Represents all the nodes within the EKS cluster in your account.</p>
     pub fn get_compatible_nodes(&self) -> &::std::option::Option<i64> {
@@ -108,8 +105,7 @@ impl CoverageEksClusterDetailsBuilder {
     }
     /// <p>Information about the installed EKS add-on.</p>
     pub fn set_addon_details(mut self, input: ::std::option::Option<crate::types::AddonDetails>) -> Self {
-        self.addon_details = input;
-        self
+        self.addon_details = input; self
     }
     /// <p>Information about the installed EKS add-on.</p>
     pub fn get_addon_details(&self) -> &::std::option::Option<crate::types::AddonDetails> {
@@ -126,8 +122,7 @@ impl CoverageEksClusterDetailsBuilder {
     /// <p><code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
     /// <p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
     pub fn set_management_type(mut self, input: ::std::option::Option<crate::types::ManagementType>) -> Self {
-        self.management_type = input;
-        self
+        self.management_type = input; self
     }
     /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
     /// <p><code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
@@ -138,11 +133,17 @@ impl CoverageEksClusterDetailsBuilder {
     /// Consumes the builder and constructs a [`CoverageEksClusterDetails`](crate::types::CoverageEksClusterDetails).
     pub fn build(self) -> crate::types::CoverageEksClusterDetails {
         crate::types::CoverageEksClusterDetails {
-            cluster_name: self.cluster_name,
-            covered_nodes: self.covered_nodes,
-            compatible_nodes: self.compatible_nodes,
-            addon_details: self.addon_details,
-            management_type: self.management_type,
+            cluster_name: self.cluster_name
+            ,
+            covered_nodes: self.covered_nodes
+            ,
+            compatible_nodes: self.compatible_nodes
+            ,
+            addon_details: self.addon_details
+            ,
+            management_type: self.management_type
+            ,
         }
     }
 }
+

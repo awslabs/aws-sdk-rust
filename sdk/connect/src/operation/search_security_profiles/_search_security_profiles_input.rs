@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchSecurityProfilesInput {
+pub struct SearchSecurityProfilesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -18,13 +18,13 @@ pub struct SearchSecurityProfilesInput {
     /// <p>Filters to be applied to search results.</p>
     pub search_filter: ::std::option::Option<crate::types::SecurityProfilesSearchFilter>,
 }
-impl SearchSecurityProfilesInput {
+impl  SearchSecurityProfilesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -36,11 +36,11 @@ impl SearchSecurityProfilesInput {
     /// </note> <note>
     /// <p>The currently supported value for <code>FieldName</code>: <code>name</code></p>
     /// </note>
-    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::SecurityProfileSearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<& crate::types::SecurityProfileSearchCriteria> {
         self.search_criteria.as_ref()
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn search_filter(&self) -> ::std::option::Option<&crate::types::SecurityProfilesSearchFilter> {
+    pub fn search_filter(&self) -> ::std::option::Option<& crate::types::SecurityProfilesSearchFilter> {
         self.search_filter.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl SearchSecurityProfilesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl SearchSecurityProfilesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl SearchSecurityProfilesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -120,8 +117,7 @@ impl SearchSecurityProfilesInputBuilder {
     /// <p>The currently supported value for <code>FieldName</code>: <code>name</code></p>
     /// </note>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::SecurityProfileSearchCriteria>) -> Self {
-        self.search_criteria = input;
-        self
+        self.search_criteria = input; self
     }
     /// <p>The search criteria to be used to return security profiles.</p><note>
     /// <p>The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
@@ -138,26 +134,28 @@ impl SearchSecurityProfilesInputBuilder {
     }
     /// <p>Filters to be applied to search results.</p>
     pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::SecurityProfilesSearchFilter>) -> Self {
-        self.search_filter = input;
-        self
+        self.search_filter = input; self
     }
     /// <p>Filters to be applied to search results.</p>
     pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::SecurityProfilesSearchFilter> {
         &self.search_filter
     }
     /// Consumes the builder and constructs a [`SearchSecurityProfilesInput`](crate::operation::search_security_profiles::SearchSecurityProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_security_profiles::SearchSecurityProfilesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::search_security_profiles::SearchSecurityProfilesInput {
-            instance_id: self.instance_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            search_criteria: self.search_criteria,
-            search_filter: self.search_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_security_profiles::SearchSecurityProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_security_profiles::SearchSecurityProfilesInput {
+                instance_id: self.instance_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                search_criteria: self.search_criteria
+                ,
+                search_filter: self.search_filter
+                ,
+            }
+        )
     }
 }
+

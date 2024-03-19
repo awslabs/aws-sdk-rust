@@ -3,7 +3,7 @@
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExportJobOutput {
+pub struct GetExportJobOutput  {
     /// <p>The export job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of source of the export job.</p>
@@ -24,49 +24,49 @@ pub struct GetExportJobOutput {
     pub statistics: ::std::option::Option<crate::types::ExportStatistics>,
     _request_id: Option<String>,
 }
-impl GetExportJobOutput {
+impl  GetExportJobOutput  {
     /// <p>The export job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The type of source of the export job.</p>
-    pub fn export_source_type(&self) -> ::std::option::Option<&crate::types::ExportSourceType> {
+    pub fn export_source_type(&self) -> ::std::option::Option<& crate::types::ExportSourceType> {
         self.export_source_type.as_ref()
     }
     /// <p>The status of the export job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The destination of the export job.</p>
-    pub fn export_destination(&self) -> ::std::option::Option<&crate::types::ExportDestination> {
+    pub fn export_destination(&self) -> ::std::option::Option<& crate::types::ExportDestination> {
         self.export_destination.as_ref()
     }
     /// <p>The data source of the export job.</p>
-    pub fn export_data_source(&self) -> ::std::option::Option<&crate::types::ExportDataSource> {
+    pub fn export_data_source(&self) -> ::std::option::Option<& crate::types::ExportDataSource> {
         self.export_data_source.as_ref()
     }
     /// <p>The timestamp of when the export job was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The timestamp of when the export job was completed.</p>
-    pub fn completed_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_timestamp.as_ref()
     }
     /// <p>The failure details about an export job.</p>
-    pub fn failure_info(&self) -> ::std::option::Option<&crate::types::FailureInfo> {
+    pub fn failure_info(&self) -> ::std::option::Option<& crate::types::FailureInfo> {
         self.failure_info.as_ref()
     }
     /// <p>The statistics about the export job.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&crate::types::ExportStatistics> {
+    pub fn statistics(&self) -> ::std::option::Option<& crate::types::ExportStatistics> {
         self.statistics.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`GetExportJobOutput`](crate::operation::get_export_job::GetExportJobOutput).
     pub fn builder() -> crate::operation::get_export_job::builders::GetExportJobOutputBuilder {
@@ -97,8 +97,7 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The export job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The export job ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The type of source of the export job.</p>
     pub fn set_export_source_type(mut self, input: ::std::option::Option<crate::types::ExportSourceType>) -> Self {
-        self.export_source_type = input;
-        self
+        self.export_source_type = input; self
     }
     /// <p>The type of source of the export job.</p>
     pub fn get_export_source_type(&self) -> &::std::option::Option<crate::types::ExportSourceType> {
@@ -125,8 +123,7 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The status of the export job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the export job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -139,8 +136,7 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The destination of the export job.</p>
     pub fn set_export_destination(mut self, input: ::std::option::Option<crate::types::ExportDestination>) -> Self {
-        self.export_destination = input;
-        self
+        self.export_destination = input; self
     }
     /// <p>The destination of the export job.</p>
     pub fn get_export_destination(&self) -> &::std::option::Option<crate::types::ExportDestination> {
@@ -153,8 +149,7 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The data source of the export job.</p>
     pub fn set_export_data_source(mut self, input: ::std::option::Option<crate::types::ExportDataSource>) -> Self {
-        self.export_data_source = input;
-        self
+        self.export_data_source = input; self
     }
     /// <p>The data source of the export job.</p>
     pub fn get_export_data_source(&self) -> &::std::option::Option<crate::types::ExportDataSource> {
@@ -167,8 +162,7 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The timestamp of when the export job was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp of when the export job was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +175,7 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The timestamp of when the export job was completed.</p>
     pub fn set_completed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_timestamp = input;
-        self
+        self.completed_timestamp = input; self
     }
     /// <p>The timestamp of when the export job was completed.</p>
     pub fn get_completed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,8 +188,7 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The failure details about an export job.</p>
     pub fn set_failure_info(mut self, input: ::std::option::Option<crate::types::FailureInfo>) -> Self {
-        self.failure_info = input;
-        self
+        self.failure_info = input; self
     }
     /// <p>The failure details about an export job.</p>
     pub fn get_failure_info(&self) -> &::std::option::Option<crate::types::FailureInfo> {
@@ -209,35 +201,44 @@ impl GetExportJobOutputBuilder {
     }
     /// <p>The statistics about the export job.</p>
     pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::ExportStatistics>) -> Self {
-        self.statistics = input;
-        self
+        self.statistics = input; self
     }
     /// <p>The statistics about the export job.</p>
     pub fn get_statistics(&self) -> &::std::option::Option<crate::types::ExportStatistics> {
         &self.statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetExportJobOutput`](crate::operation::get_export_job::GetExportJobOutput).
     pub fn build(self) -> crate::operation::get_export_job::GetExportJobOutput {
         crate::operation::get_export_job::GetExportJobOutput {
-            job_id: self.job_id,
-            export_source_type: self.export_source_type,
-            job_status: self.job_status,
-            export_destination: self.export_destination,
-            export_data_source: self.export_data_source,
-            created_timestamp: self.created_timestamp,
-            completed_timestamp: self.completed_timestamp,
-            failure_info: self.failure_info,
-            statistics: self.statistics,
+            job_id: self.job_id
+            ,
+            export_source_type: self.export_source_type
+            ,
+            job_status: self.job_status
+            ,
+            export_destination: self.export_destination
+            ,
+            export_data_source: self.export_data_source
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            completed_timestamp: self.completed_timestamp
+            ,
+            failure_info: self.failure_info
+            ,
+            statistics: self.statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

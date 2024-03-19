@@ -3,15 +3,15 @@
 /// Scte27 Source Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Scte27SourceSettings {
+pub struct Scte27SourceSettings  {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub ocr_language: ::std::option::Option<crate::types::Scte27OcrLanguage>,
     /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
     pub pid: ::std::option::Option<i32>,
 }
-impl Scte27SourceSettings {
+impl  Scte27SourceSettings  {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
-    pub fn ocr_language(&self) -> ::std::option::Option<&crate::types::Scte27OcrLanguage> {
+    pub fn ocr_language(&self) -> ::std::option::Option<& crate::types::Scte27OcrLanguage> {
         self.ocr_language.as_ref()
     }
     /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
@@ -41,8 +41,7 @@ impl Scte27SourceSettingsBuilder {
     }
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub fn set_ocr_language(mut self, input: ::std::option::Option<crate::types::Scte27OcrLanguage>) -> Self {
-        self.ocr_language = input;
-        self
+        self.ocr_language = input; self
     }
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub fn get_ocr_language(&self) -> &::std::option::Option<crate::types::Scte27OcrLanguage> {
@@ -55,8 +54,7 @@ impl Scte27SourceSettingsBuilder {
     }
     /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
     pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pid = input;
-        self
+        self.pid = input; self
     }
     /// The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
     pub fn get_pid(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl Scte27SourceSettingsBuilder {
     /// Consumes the builder and constructs a [`Scte27SourceSettings`](crate::types::Scte27SourceSettings).
     pub fn build(self) -> crate::types::Scte27SourceSettings {
         crate::types::Scte27SourceSettings {
-            ocr_language: self.ocr_language,
-            pid: self.pid,
+            ocr_language: self.ocr_language
+            ,
+            pid: self.pid
+            ,
         }
     }
 }
+

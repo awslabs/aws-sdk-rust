@@ -3,11 +3,11 @@
 /// <p>Represents a request to enable or disable the email sending capabilities for your entire Amazon SES account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountSendingEnabledInput {
+pub struct UpdateAccountSendingEnabledInput  {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl UpdateAccountSendingEnabledInput {
+impl  UpdateAccountSendingEnabledInput  {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,20 +34,20 @@ impl UpdateAccountSendingEnabledInputBuilder {
     }
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateAccountSendingEnabledInput`](crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput { enabled: self.enabled })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput {
+                enabled: self.enabled
+                ,
+            }
+        )
     }
 }
+

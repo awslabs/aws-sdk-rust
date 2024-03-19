@@ -3,16 +3,17 @@
 /// Information about a device definition version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceDefinitionVersion {
+pub struct DeviceDefinitionVersion  {
     /// A list of devices in the definition version.
-    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
+    pub devices: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>,
 }
-impl DeviceDefinitionVersion {
+impl  DeviceDefinitionVersion  {
     /// A list of devices in the definition version.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
-    pub fn devices(&self) -> &[crate::types::Device] {
-        self.devices.as_deref().unwrap_or_default()
+    pub fn devices(&self) -> & [crate::types::Device] {
+        self.devices.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeviceDefinitionVersion {
@@ -26,7 +27,7 @@ impl DeviceDefinitionVersion {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceDefinitionVersionBuilder {
-    pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
+    pub(crate) devices: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>,
 }
 impl DeviceDefinitionVersionBuilder {
     /// Appends an item to `devices`.
@@ -36,21 +37,24 @@ impl DeviceDefinitionVersionBuilder {
     /// A list of devices in the definition version.
     pub fn devices(mut self, input: crate::types::Device) -> Self {
         let mut v = self.devices.unwrap_or_default();
-        v.push(input);
-        self.devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.devices = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of devices in the definition version.
-    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>) -> Self {
+        self.devices = input; self
     }
     /// A list of devices in the definition version.
-    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Device>> {
         &self.devices
     }
     /// Consumes the builder and constructs a [`DeviceDefinitionVersion`](crate::types::DeviceDefinitionVersion).
     pub fn build(self) -> crate::types::DeviceDefinitionVersion {
-        crate::types::DeviceDefinitionVersion { devices: self.devices }
+        crate::types::DeviceDefinitionVersion {
+            devices: self.devices
+            ,
+        }
     }
 }
+

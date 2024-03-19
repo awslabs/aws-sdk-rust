@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWirelessGateways`](crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
-    /// - On success, responds with [`ListWirelessGatewaysOutput`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput) with field(s):
+                            /// - On success, responds with [`ListWirelessGatewaysOutput`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`wireless_gateway_list(Option<Vec::<WirelessGatewayStatistics>>)`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput::wireless_gateway_list): <p>The ID of the wireless gateway.</p>
-    /// - On failure, responds with [`SdkError<ListWirelessGatewaysError>`](crate::operation::list_wireless_gateways::ListWirelessGatewaysError)
+                            /// - On failure, responds with [`SdkError<ListWirelessGatewaysError>`](crate::operation::list_wireless_gateways::ListWirelessGatewaysError)
     pub fn list_wireless_gateways(&self) -> crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder {
-        crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysFluentBuilder::new(self.handle.clone())
+                            }
 }
+

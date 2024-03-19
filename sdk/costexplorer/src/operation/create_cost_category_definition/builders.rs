@@ -5,54 +5,50 @@ pub use crate::operation::create_cost_category_definition::_create_cost_category
 
 impl CreateCostCategoryDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_cost_category_definition();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_cost_category_definition();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCostCategoryDefinition`.
-///
+/// 
 /// <p>Creates a new Cost Category with the requested name and rules.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCostCategoryDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionInputBuilder,
+                    inner: crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
-    > for CreateCostCategoryDefinitionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
-            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
+                    crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
+                > for CreateCostCategoryDefinitionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
+                        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCostCategoryDefinitionFluentBuilder {
     /// Creates a new `CreateCostCategoryDefinition`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateCostCategoryDefinitionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_cost_category_definition::CreateCostCategoryDefinition::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinition::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_cost_category_definition::CreateCostCategoryDefinition::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_cost_category_definition::CreateCostCategoryDefinition::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput, crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique name of the Cost Category.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -160,12 +147,12 @@ impl CreateCostCategoryDefinitionFluentBuilder {
         self
     }
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryRule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryRule>> {
         self.inner.get_rules()
     }
     /// <p>The default value for the cost category.</p>
@@ -192,12 +179,12 @@ impl CreateCostCategoryDefinitionFluentBuilder {
         self
     }
     /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
-    pub fn set_split_charge_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
+    pub fn set_split_charge_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CostCategorySplitChargeRule>>) -> Self {
         self.inner = self.inner.set_split_charge_rules(input);
         self
     }
     /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
-    pub fn get_split_charge_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
+    pub fn get_split_charge_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CostCategorySplitChargeRule>> {
         self.inner.get_split_charge_rules()
     }
     /// Appends an item to `ResourceTags`.
@@ -244,7 +231,7 @@ impl CreateCostCategoryDefinitionFluentBuilder {
     /// <li>
     /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
@@ -266,7 +253,8 @@ impl CreateCostCategoryDefinitionFluentBuilder {
     /// <li>
     /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>> {
         self.inner.get_resource_tags()
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecipeVersionsOutput {
+pub struct ListRecipeVersionsOutput  {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of versions for the specified recipe.</p>
-    pub recipes: ::std::vec::Vec<crate::types::Recipe>,
+    pub recipes: ::std::vec::Vec::<crate::types::Recipe>,
     _request_id: Option<String>,
 }
-impl ListRecipeVersionsOutput {
+impl  ListRecipeVersionsOutput  {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of versions for the specified recipe.</p>
-    pub fn recipes(&self) -> &[crate::types::Recipe] {
-        use std::ops::Deref;
-        self.recipes.deref()
+    pub fn recipes(&self) -> & [crate::types::Recipe] {
+        use std::ops::Deref; self.recipes.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRecipeVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRecipeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecipeVersionsOutput`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput).
     pub fn builder() -> crate::operation::list_recipe_versions::builders::ListRecipeVersionsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListRecipeVersionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecipeVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recipes: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>,
+    pub(crate) recipes: ::std::option::Option<::std::vec::Vec::<crate::types::Recipe>>,
     _request_id: Option<String>,
 }
 impl ListRecipeVersionsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListRecipeVersionsOutputBuilder {
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListRecipeVersionsOutputBuilder {
     /// <p>A list of versions for the specified recipe.</p>
     pub fn recipes(mut self, input: crate::types::Recipe) -> Self {
         let mut v = self.recipes.unwrap_or_default();
-        v.push(input);
-        self.recipes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recipes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of versions for the specified recipe.</p>
-    pub fn set_recipes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>) -> Self {
-        self.recipes = input;
-        self
+    pub fn set_recipes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Recipe>>) -> Self {
+        self.recipes = input; self
     }
     /// <p>A list of versions for the specified recipe.</p>
-    pub fn get_recipes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recipe>> {
+    pub fn get_recipes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Recipe>> {
         &self.recipes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRecipeVersionsOutput`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`recipes`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsOutputBuilder::recipes)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_recipe_versions::ListRecipeVersionsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_recipe_versions::ListRecipeVersionsOutput {
-            next_token: self.next_token,
-            recipes: self.recipes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recipes",
-                    "recipes was not specified but it is required when building ListRecipeVersionsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recipe_versions::ListRecipeVersionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_recipe_versions::ListRecipeVersionsOutput {
+                next_token: self.next_token
+                ,
+                recipes: self.recipes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recipes", "recipes was not specified but it is required when building ListRecipeVersionsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

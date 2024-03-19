@@ -3,15 +3,14 @@
 /// <p>The search expression.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchExpression {
+pub struct SearchExpression  {
     /// <p>The search expression filters.</p>
-    pub filters: ::std::vec::Vec<crate::types::Filter>,
+    pub filters: ::std::vec::Vec::<crate::types::Filter>,
 }
-impl SearchExpression {
+impl  SearchExpression  {
     /// <p>The search expression filters.</p>
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        use std::ops::Deref;
-        self.filters.deref()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        use std::ops::Deref; self.filters.deref()
     }
 }
 impl SearchExpression {
@@ -25,7 +24,7 @@ impl SearchExpression {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchExpressionBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
 }
 impl SearchExpressionBuilder {
     /// Appends an item to `filters`.
@@ -35,30 +34,31 @@ impl SearchExpressionBuilder {
     /// <p>The search expression filters.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The search expression filters.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The search expression filters.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchExpression`](crate::types::SearchExpression).
     /// This method will fail if any of the following fields are not set:
     /// - [`filters`](crate::types::builders::SearchExpressionBuilder::filters)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchExpression, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchExpression {
-            filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filters",
-                    "filters was not specified but it is required when building SearchExpression",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchExpression {
+                filters: self.filters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filters", "filters was not specified but it is required when building SearchExpression")
+                    )?
+                ,
+            }
+        )
     }
 }
+

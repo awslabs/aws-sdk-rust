@@ -3,7 +3,7 @@
 /// <p>Information about the build artifacts for the CodeBuild project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCodeBuildProjectArtifactsDetails {
+pub struct AwsCodeBuildProjectArtifactsDetails  {
     /// <p>An identifier for the artifact definition.</p>
     pub artifact_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
@@ -23,9 +23,9 @@ pub struct AwsCodeBuildProjectArtifactsDetails {
     /// <p>The type of build artifact.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsCodeBuildProjectArtifactsDetails {
+impl  AwsCodeBuildProjectArtifactsDetails  {
     /// <p>An identifier for the artifact definition.</p>
-    pub fn artifact_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_identifier(&self) -> ::std::option::Option<& str> {
         self.artifact_identifier.as_deref()
     }
     /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
@@ -33,15 +33,15 @@ impl AwsCodeBuildProjectArtifactsDetails {
         self.encryption_disabled
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    pub fn namespace_type(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_type(&self) -> ::std::option::Option<& str> {
         self.namespace_type.as_deref()
     }
     /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
@@ -49,15 +49,15 @@ impl AwsCodeBuildProjectArtifactsDetails {
         self.override_artifact_name
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
-    pub fn packaging(&self) -> ::std::option::Option<&str> {
+    pub fn packaging(&self) -> ::std::option::Option<& str> {
         self.packaging.as_deref()
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The type of build artifact.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>An identifier for the artifact definition.</p>
     pub fn set_artifact_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_identifier = input;
-        self
+        self.artifact_identifier = input; self
     }
     /// <p>An identifier for the artifact definition.</p>
     pub fn get_artifact_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
     pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encryption_disabled = input;
-        self
+        self.encryption_disabled = input; self
     }
     /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
     pub fn get_encryption_disabled(&self) -> &::std::option::Option<bool> {
@@ -118,8 +116,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
     pub fn set_namespace_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_type = input;
-        self
+        self.namespace_type = input; self
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
     pub fn get_namespace_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
     pub fn set_override_artifact_name(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.override_artifact_name = input;
-        self
+        self.override_artifact_name = input; self
     }
     /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
     pub fn get_override_artifact_name(&self) -> &::std::option::Option<bool> {
@@ -174,8 +168,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
     pub fn set_packaging(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.packaging = input;
-        self
+        self.packaging = input; self
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
     pub fn get_packaging(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +181,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     }
     /// <p>The type of build artifact.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of build artifact.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,15 +203,25 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectArtifactsDetails`](crate::types::AwsCodeBuildProjectArtifactsDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectArtifactsDetails {
         crate::types::AwsCodeBuildProjectArtifactsDetails {
-            artifact_identifier: self.artifact_identifier,
-            encryption_disabled: self.encryption_disabled,
-            location: self.location,
-            name: self.name,
-            namespace_type: self.namespace_type,
-            override_artifact_name: self.override_artifact_name,
-            packaging: self.packaging,
-            path: self.path,
-            r#type: self.r#type,
+            artifact_identifier: self.artifact_identifier
+            ,
+            encryption_disabled: self.encryption_disabled
+            ,
+            location: self.location
+            ,
+            name: self.name
+            ,
+            namespace_type: self.namespace_type
+            ,
+            override_artifact_name: self.override_artifact_name
+            ,
+            packaging: self.packaging
+            ,
+            path: self.path
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

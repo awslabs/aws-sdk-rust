@@ -3,19 +3,19 @@
 /// <p>Contains the category by which the intent stage analytics and the values for that category were grouped.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsIntentStageGroupByKey {
+pub struct AnalyticsIntentStageGroupByKey  {
     /// <p>A category by which the intent stage analytics were grouped.</p>
     pub name: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
     /// <p>A member of the category by which the intent stage analytics were grouped.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AnalyticsIntentStageGroupByKey {
+impl  AnalyticsIntentStageGroupByKey  {
     /// <p>A category by which the intent stage analytics were grouped.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsIntentStageField> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AnalyticsIntentStageField> {
         self.name.as_ref()
     }
     /// <p>A member of the category by which the intent stage analytics were grouped.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AnalyticsIntentStageGroupByKeyBuilder {
     }
     /// <p>A category by which the intent stage analytics were grouped.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentStageField>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A category by which the intent stage analytics were grouped.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentStageField> {
@@ -55,8 +54,7 @@ impl AnalyticsIntentStageGroupByKeyBuilder {
     }
     /// <p>A member of the category by which the intent stage analytics were grouped.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A member of the category by which the intent stage analytics were grouped.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AnalyticsIntentStageGroupByKeyBuilder {
     /// Consumes the builder and constructs a [`AnalyticsIntentStageGroupByKey`](crate::types::AnalyticsIntentStageGroupByKey).
     pub fn build(self) -> crate::types::AnalyticsIntentStageGroupByKey {
         crate::types::AnalyticsIntentStageGroupByKey {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

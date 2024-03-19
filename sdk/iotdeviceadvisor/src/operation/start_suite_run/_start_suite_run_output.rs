@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSuiteRunOutput {
+pub struct StartSuiteRunOutput  {
     /// <p>Suite Run ID of the started suite run.</p>
     pub suite_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
@@ -13,29 +13,29 @@ pub struct StartSuiteRunOutput {
     pub endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartSuiteRunOutput {
+impl  StartSuiteRunOutput  {
     /// <p>Suite Run ID of the started suite run.</p>
-    pub fn suite_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_run_id(&self) -> ::std::option::Option<& str> {
         self.suite_run_id.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
-    pub fn suite_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn suite_run_arn(&self) -> ::std::option::Option<& str> {
         self.suite_run_arn.as_deref()
     }
     /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The response of an Device Advisor test endpoint.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartSuiteRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartSuiteRunOutput {
     /// Creates a new builder-style object to manufacture [`StartSuiteRunOutput`](crate::operation::start_suite_run::StartSuiteRunOutput).
     pub fn builder() -> crate::operation::start_suite_run::builders::StartSuiteRunOutputBuilder {
@@ -61,8 +61,7 @@ impl StartSuiteRunOutputBuilder {
     }
     /// <p>Suite Run ID of the started suite run.</p>
     pub fn set_suite_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_run_id = input;
-        self
+        self.suite_run_id = input; self
     }
     /// <p>Suite Run ID of the started suite run.</p>
     pub fn get_suite_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl StartSuiteRunOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
     pub fn set_suite_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_run_arn = input;
-        self
+        self.suite_run_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the started suite run.</p>
     pub fn get_suite_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl StartSuiteRunOutputBuilder {
     }
     /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Starts a Device Advisor test suite run based on suite create time.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,30 +100,34 @@ impl StartSuiteRunOutputBuilder {
     }
     /// <p>The response of an Device Advisor test endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The response of an Device Advisor test endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartSuiteRunOutput`](crate::operation::start_suite_run::StartSuiteRunOutput).
     pub fn build(self) -> crate::operation::start_suite_run::StartSuiteRunOutput {
         crate::operation::start_suite_run::StartSuiteRunOutput {
-            suite_run_id: self.suite_run_id,
-            suite_run_arn: self.suite_run_arn,
-            created_at: self.created_at,
-            endpoint: self.endpoint,
+            suite_run_id: self.suite_run_id
+            ,
+            suite_run_arn: self.suite_run_arn
+            ,
+            created_at: self.created_at
+            ,
+            endpoint: self.endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::list_custom_vocabulary_items::_list_custom_vocabulary_
 
 impl ListCustomVocabularyItemsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_custom_vocabulary_items();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_custom_vocabulary_items();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListCustomVocabularyItems`.
-///
+/// 
 /// <p>Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomVocabularyItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder,
+                    inner: crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
-        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-    > for ListCustomVocabularyItemsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
+                    crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
+                > for ListCustomVocabularyItemsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
+                        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListCustomVocabularyItemsFluentBuilder {
     /// Creates a new `ListCustomVocabularyItems`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListCustomVocabularyItemsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItems::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItems::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
-        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItems::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItems::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput, crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator {
-        crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator {
+                                crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -185,3 +172,4 @@ impl ListCustomVocabularyItemsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

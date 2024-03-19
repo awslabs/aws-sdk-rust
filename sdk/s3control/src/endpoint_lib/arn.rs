@@ -59,7 +59,8 @@ impl Error for InvalidArn {}
 impl<'a> Arn<'a> {
     pub(crate) fn parse(arn: &'a str) -> Result<Self, InvalidArn> {
         let mut split = arn.splitn(6, ':');
-        let invalid_format = || InvalidArn::from_static("ARN must have 6 components delimited by `:`");
+        let invalid_format =
+            || InvalidArn::from_static("ARN must have 6 components delimited by `:`");
         let arn = split.next().ok_or_else(invalid_format)?;
         let partition = split.next().ok_or_else(invalid_format)?;
         let service = split.next().ok_or_else(invalid_format)?;
@@ -68,10 +69,14 @@ impl<'a> Arn<'a> {
         let resource_id = split.next().ok_or_else(invalid_format)?;
 
         if arn != "arn" {
-            return Err(InvalidArn::from_static("first component of the ARN must be `arn`"));
+            return Err(InvalidArn::from_static(
+                "first component of the ARN must be `arn`",
+            ));
         }
         if partition.is_empty() || service.is_empty() || resource_id.is_empty() {
-            return Err(InvalidArn::from_static("partition, service, and resource id must all be non-empty"));
+            return Err(InvalidArn::from_static(
+                "partition, service, and resource id must all be non-empty",
+            ));
         }
 
         let resource_id = resource_id.split([':', '/']).collect::<Vec<_>>();
@@ -146,3 +151,4 @@ mod test {
         );
     }
 }
+

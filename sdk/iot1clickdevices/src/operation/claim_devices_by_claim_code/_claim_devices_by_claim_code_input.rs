@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClaimDevicesByClaimCodeInput {
+pub struct ClaimDevicesByClaimCodeInput  {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
     pub claim_code: ::std::option::Option<::std::string::String>,
 }
-impl ClaimDevicesByClaimCodeInput {
+impl  ClaimDevicesByClaimCodeInput  {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
-    pub fn claim_code(&self) -> ::std::option::Option<&str> {
+    pub fn claim_code(&self) -> ::std::option::Option<& str> {
         self.claim_code.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl ClaimDevicesByClaimCodeInputBuilder {
     }
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
     pub fn set_claim_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.claim_code = input;
-        self
+        self.claim_code = input; self
     }
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
     pub fn get_claim_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.claim_code
     }
     /// Consumes the builder and constructs a [`ClaimDevicesByClaimCodeInput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput { claim_code: self.claim_code })
+    pub fn build(self) -> ::std::result::Result<crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput {
+                claim_code: self.claim_code
+                ,
+            }
+        )
     }
 }
+

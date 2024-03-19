@@ -3,19 +3,19 @@
 /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamPoolCidrFailureReason {
+pub struct IpamPoolCidrFailureReason  {
     /// <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub code: ::std::option::Option<crate::types::IpamPoolCidrFailureCode>,
     /// <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl IpamPoolCidrFailureReason {
+impl  IpamPoolCidrFailureReason  {
     /// <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::IpamPoolCidrFailureCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::IpamPoolCidrFailureCode> {
         self.code.as_ref()
     }
     /// <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IpamPoolCidrFailureReasonBuilder {
     }
     /// <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::IpamPoolCidrFailureCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>An error code related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::IpamPoolCidrFailureCode> {
@@ -55,8 +54,7 @@ impl IpamPoolCidrFailureReasonBuilder {
     }
     /// <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl IpamPoolCidrFailureReasonBuilder {
     /// Consumes the builder and constructs a [`IpamPoolCidrFailureReason`](crate::types::IpamPoolCidrFailureReason).
     pub fn build(self) -> crate::types::IpamPoolCidrFailureReason {
         crate::types::IpamPoolCidrFailureReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

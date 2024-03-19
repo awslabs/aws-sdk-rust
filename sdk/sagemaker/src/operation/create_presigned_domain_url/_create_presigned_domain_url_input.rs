@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePresignedDomainUrlInput {
+pub struct CreatePresignedDomainUrlInput  {
     /// <p>The domain ID.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the UserProfile to sign-in as.</p>
@@ -30,13 +30,13 @@ pub struct CreatePresignedDomainUrlInput {
     /// </ul>
     pub landing_uri: ::std::option::Option<::std::string::String>,
 }
-impl CreatePresignedDomainUrlInput {
+impl  CreatePresignedDomainUrlInput  {
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The name of the UserProfile to sign-in as.</p>
-    pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_profile_name(&self) -> ::std::option::Option<& str> {
         self.user_profile_name.as_deref()
     }
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
@@ -48,7 +48,7 @@ impl CreatePresignedDomainUrlInput {
         self.expires_in_seconds
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The landing page that the user is directed to when accessing the presigned URL. Using this value, users can access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values are:</p>
@@ -66,7 +66,7 @@ impl CreatePresignedDomainUrlInput {
     /// <li>
     /// <p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
-    pub fn landing_uri(&self) -> ::std::option::Option<&str> {
+    pub fn landing_uri(&self) -> ::std::option::Option<& str> {
         self.landing_uri.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl CreatePresignedDomainUrlInputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The domain ID.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl CreatePresignedDomainUrlInputBuilder {
     }
     /// <p>The name of the UserProfile to sign-in as.</p>
     pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_profile_name = input;
-        self
+        self.user_profile_name = input; self
     }
     /// <p>The name of the UserProfile to sign-in as.</p>
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl CreatePresignedDomainUrlInputBuilder {
     }
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
     pub fn set_session_expiration_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_expiration_duration_in_seconds = input;
-        self
+        self.session_expiration_duration_in_seconds = input; self
     }
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
     pub fn get_session_expiration_duration_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -140,8 +137,7 @@ impl CreatePresignedDomainUrlInputBuilder {
     }
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
     pub fn set_expires_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expires_in_seconds = input;
-        self
+        self.expires_in_seconds = input; self
     }
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
     pub fn get_expires_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -154,8 +150,7 @@ impl CreatePresignedDomainUrlInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +191,7 @@ impl CreatePresignedDomainUrlInputBuilder {
     /// <p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub fn set_landing_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.landing_uri = input;
-        self
+        self.landing_uri = input; self
     }
     /// <p>The landing page that the user is directed to when accessing the presigned URL. Using this value, users can access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values are:</p>
     /// <ul>
@@ -218,19 +212,23 @@ impl CreatePresignedDomainUrlInputBuilder {
         &self.landing_uri
     }
     /// Consumes the builder and constructs a [`CreatePresignedDomainUrlInput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput {
-            domain_id: self.domain_id,
-            user_profile_name: self.user_profile_name,
-            session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds,
-            expires_in_seconds: self.expires_in_seconds,
-            space_name: self.space_name,
-            landing_uri: self.landing_uri,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput {
+                domain_id: self.domain_id
+                ,
+                user_profile_name: self.user_profile_name
+                ,
+                session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds
+                ,
+                expires_in_seconds: self.expires_in_seconds
+                ,
+                space_name: self.space_name
+                ,
+                landing_uri: self.landing_uri
+                ,
+            }
+        )
     }
 }
+

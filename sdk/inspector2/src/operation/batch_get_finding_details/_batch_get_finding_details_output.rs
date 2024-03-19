@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetFindingDetailsOutput {
+pub struct BatchGetFindingDetailsOutput  {
     /// <p>A finding's vulnerability details.</p>
-    pub finding_details: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetail>>,
+    pub finding_details: ::std::option::Option<::std::vec::Vec::<crate::types::FindingDetail>>,
     /// <p>Error information for findings that details could not be returned for.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetailsError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::FindingDetailsError>>,
     _request_id: Option<String>,
 }
-impl BatchGetFindingDetailsOutput {
+impl  BatchGetFindingDetailsOutput  {
     /// <p>A finding's vulnerability details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_details.is_none()`.
-    pub fn finding_details(&self) -> &[crate::types::FindingDetail] {
-        self.finding_details.as_deref().unwrap_or_default()
+    pub fn finding_details(&self) -> & [crate::types::FindingDetail] {
+        self.finding_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Error information for findings that details could not be returned for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::FindingDetailsError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::FindingDetailsError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetFindingDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetFindingDetailsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetFindingDetailsOutput`](crate::operation::batch_get_finding_details::BatchGetFindingDetailsOutput).
     pub fn builder() -> crate::operation::batch_get_finding_details::builders::BatchGetFindingDetailsOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetFindingDetailsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFindingDetailsOutputBuilder {
-    pub(crate) finding_details: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetail>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetailsError>>,
+    pub(crate) finding_details: ::std::option::Option<::std::vec::Vec::<crate::types::FindingDetail>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::FindingDetailsError>>,
     _request_id: Option<String>,
 }
 impl BatchGetFindingDetailsOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetFindingDetailsOutputBuilder {
     /// <p>A finding's vulnerability details.</p>
     pub fn finding_details(mut self, input: crate::types::FindingDetail) -> Self {
         let mut v = self.finding_details.unwrap_or_default();
-        v.push(input);
-        self.finding_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.finding_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A finding's vulnerability details.</p>
-    pub fn set_finding_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetail>>) -> Self {
-        self.finding_details = input;
-        self
+    pub fn set_finding_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FindingDetail>>) -> Self {
+        self.finding_details = input; self
     }
     /// <p>A finding's vulnerability details.</p>
-    pub fn get_finding_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingDetail>> {
+    pub fn get_finding_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FindingDetail>> {
         &self.finding_details
     }
     /// Appends an item to `errors`.
@@ -71,34 +72,36 @@ impl BatchGetFindingDetailsOutputBuilder {
     /// <p>Error information for findings that details could not be returned for.</p>
     pub fn errors(mut self, input: crate::types::FindingDetailsError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Error information for findings that details could not be returned for.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetailsError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FindingDetailsError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Error information for findings that details could not be returned for.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingDetailsError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FindingDetailsError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetFindingDetailsOutput`](crate::operation::batch_get_finding_details::BatchGetFindingDetailsOutput).
     pub fn build(self) -> crate::operation::batch_get_finding_details::BatchGetFindingDetailsOutput {
         crate::operation::batch_get_finding_details::BatchGetFindingDetailsOutput {
-            finding_details: self.finding_details,
-            errors: self.errors,
+            finding_details: self.finding_details
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

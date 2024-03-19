@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSigningJobInput {
+pub struct DescribeSigningJobInput  {
     /// <p>The ID of the signing job on input.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSigningJobInput {
+impl  DescribeSigningJobInput  {
     /// <p>The ID of the signing job on input.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DescribeSigningJobInputBuilder {
     }
     /// <p>The ID of the signing job on input.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the signing job on input.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeSigningJobInput`](crate::operation::describe_signing_job::DescribeSigningJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_signing_job::DescribeSigningJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_signing_job::DescribeSigningJobInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_signing_job::DescribeSigningJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_signing_job::DescribeSigningJobInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

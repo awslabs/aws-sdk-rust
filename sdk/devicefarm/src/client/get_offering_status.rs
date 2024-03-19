@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetOfferingStatus`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
-    /// - On success, responds with [`GetOfferingStatusOutput`](crate::operation::get_offering_status::GetOfferingStatusOutput) with field(s):
+                            /// - On success, responds with [`GetOfferingStatusOutput`](crate::operation::get_offering_status::GetOfferingStatusOutput) with field(s):
     ///   - [`current(Option<HashMap::<String, OfferingStatus>>)`](crate::operation::get_offering_status::GetOfferingStatusOutput::current): <p>When specified, gets the offering status for the current period.</p>
     ///   - [`next_period(Option<HashMap::<String, OfferingStatus>>)`](crate::operation::get_offering_status::GetOfferingStatusOutput::next_period): <p>When specified, gets the offering status for the next period.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_offering_status::GetOfferingStatusOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<GetOfferingStatusError>`](crate::operation::get_offering_status::GetOfferingStatusError)
+                            /// - On failure, responds with [`SdkError<GetOfferingStatusError>`](crate::operation::get_offering_status::GetOfferingStatusError)
     pub fn get_offering_status(&self) -> crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder {
-        crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

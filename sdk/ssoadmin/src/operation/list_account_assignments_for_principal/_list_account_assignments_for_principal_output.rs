@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccountAssignmentsForPrincipalOutput {
+pub struct ListAccountAssignmentsForPrincipalOutput  {
     /// <p>An array list of the account assignments for the principal.</p>
-    pub account_assignments: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentForPrincipal>>,
+    pub account_assignments: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAssignmentForPrincipal>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAccountAssignmentsForPrincipalOutput {
+impl  ListAccountAssignmentsForPrincipalOutput  {
     /// <p>An array list of the account assignments for the principal.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_assignments.is_none()`.
-    pub fn account_assignments(&self) -> &[crate::types::AccountAssignmentForPrincipal] {
-        self.account_assignments.as_deref().unwrap_or_default()
+    pub fn account_assignments(&self) -> & [crate::types::AccountAssignmentForPrincipal] {
+        self.account_assignments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccountAssignmentsForPrincipalOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccountAssignmentsForPrincipalOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsForPrincipalOutput`](crate::operation::list_account_assignments_for_principal::ListAccountAssignmentsForPrincipalOutput).
     pub fn builder() -> crate::operation::list_account_assignments_for_principal::builders::ListAccountAssignmentsForPrincipalOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAccountAssignmentsForPrincipalOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentsForPrincipalOutputBuilder {
-    pub(crate) account_assignments: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentForPrincipal>>,
+    pub(crate) account_assignments: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAssignmentForPrincipal>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAccountAssignmentsForPrincipalOutputBuilder {
     /// <p>An array list of the account assignments for the principal.</p>
     pub fn account_assignments(mut self, input: crate::types::AccountAssignmentForPrincipal) -> Self {
         let mut v = self.account_assignments.unwrap_or_default();
-        v.push(input);
-        self.account_assignments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_assignments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array list of the account assignments for the principal.</p>
-    pub fn set_account_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentForPrincipal>>) -> Self {
-        self.account_assignments = input;
-        self
+    pub fn set_account_assignments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAssignmentForPrincipal>>) -> Self {
+        self.account_assignments = input; self
     }
     /// <p>An array list of the account assignments for the principal.</p>
-    pub fn get_account_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentForPrincipal>> {
+    pub fn get_account_assignments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountAssignmentForPrincipal>> {
         &self.account_assignments
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -69,28 +69,30 @@ impl ListAccountAssignmentsForPrincipalOutputBuilder {
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccountAssignmentsForPrincipalOutput`](crate::operation::list_account_assignments_for_principal::ListAccountAssignmentsForPrincipalOutput).
     pub fn build(self) -> crate::operation::list_account_assignments_for_principal::ListAccountAssignmentsForPrincipalOutput {
         crate::operation::list_account_assignments_for_principal::ListAccountAssignmentsForPrincipalOutput {
-            account_assignments: self.account_assignments,
-            next_token: self.next_token,
+            account_assignments: self.account_assignments
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

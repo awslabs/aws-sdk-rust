@@ -3,15 +3,14 @@
 /// <p>The Lambda function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaFunction {
+pub struct LambdaFunction  {
     /// <p>The ARN of the Lambda function.</p>
     pub arn: ::std::string::String,
 }
-impl LambdaFunction {
+impl  LambdaFunction  {
     /// <p>The ARN of the Lambda function.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl LambdaFunction {
@@ -36,8 +35,7 @@ impl LambdaFunctionBuilder {
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl LambdaFunctionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::LambdaFunctionBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaFunction {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building LambdaFunction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaFunction {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building LambdaFunction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

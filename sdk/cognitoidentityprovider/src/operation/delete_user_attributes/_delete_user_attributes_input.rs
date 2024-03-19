@@ -3,27 +3,28 @@
 /// <p>Represents the request to delete user attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteUserAttributesInput {
+pub struct DeleteUserAttributesInput  {
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
-    pub user_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserAttributesInput {
+impl  DeleteUserAttributesInput  {
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attribute_names.is_none()`.
-    pub fn user_attribute_names(&self) -> &[::std::string::String] {
-        self.user_attribute_names.as_deref().unwrap_or_default()
+    pub fn user_attribute_names(&self) -> & [::std::string::String] {
+        self.user_attribute_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for DeleteUserAttributesInput {
+impl  ::std::fmt::Debug for DeleteUserAttributesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserAttributesInput");
         formatter.field("user_attribute_names", &self.user_attribute_names);
@@ -42,7 +43,7 @@ impl DeleteUserAttributesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DeleteUserAttributesInputBuilder {
-    pub(crate) user_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserAttributesInputBuilder {
@@ -54,19 +55,18 @@ impl DeleteUserAttributesInputBuilder {
     /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
     pub fn user_attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.user_attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
-    pub fn set_user_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_attribute_names = input;
-        self
+    pub fn set_user_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_attribute_names = input; self
     }
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
-    pub fn get_user_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_attribute_names
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
@@ -77,22 +77,22 @@ impl DeleteUserAttributesInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`DeleteUserAttributesInput`](crate::operation::delete_user_attributes::DeleteUserAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_user_attributes::DeleteUserAttributesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_user_attributes::DeleteUserAttributesInput {
-            user_attribute_names: self.user_attribute_names,
-            access_token: self.access_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_attributes::DeleteUserAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_user_attributes::DeleteUserAttributesInput {
+                user_attribute_names: self.user_attribute_names
+                ,
+                access_token: self.access_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteUserAttributesInputBuilder {
@@ -103,3 +103,4 @@ impl ::std::fmt::Debug for DeleteUserAttributesInputBuilder {
         formatter.finish()
     }
 }
+

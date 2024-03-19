@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFormOutput {
+pub struct GetFormOutput  {
     /// <p>Represents the configuration settings for the form.</p>
     pub form: ::std::option::Option<crate::types::Form>,
     _request_id: Option<String>,
 }
-impl GetFormOutput {
+impl  GetFormOutput  {
     /// <p>Represents the configuration settings for the form.</p>
-    pub fn form(&self) -> ::std::option::Option<&crate::types::Form> {
+    pub fn form(&self) -> ::std::option::Option<& crate::types::Form> {
         self.form.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFormOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFormOutput {
     /// Creates a new builder-style object to manufacture [`GetFormOutput`](crate::operation::get_form::GetFormOutput).
     pub fn builder() -> crate::operation::get_form::builders::GetFormOutputBuilder {
@@ -40,27 +40,28 @@ impl GetFormOutputBuilder {
     }
     /// <p>Represents the configuration settings for the form.</p>
     pub fn set_form(mut self, input: ::std::option::Option<crate::types::Form>) -> Self {
-        self.form = input;
-        self
+        self.form = input; self
     }
     /// <p>Represents the configuration settings for the form.</p>
     pub fn get_form(&self) -> &::std::option::Option<crate::types::Form> {
         &self.form
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFormOutput`](crate::operation::get_form::GetFormOutput).
     pub fn build(self) -> crate::operation::get_form::GetFormOutput {
         crate::operation::get_form::GetFormOutput {
-            form: self.form,
+            form: self.form
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

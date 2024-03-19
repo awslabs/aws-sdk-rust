@@ -3,19 +3,19 @@
 /// <p>Export task error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportTaskError {
+pub struct ExportTaskError  {
     /// <p>Export task error datetime.</p>
     pub error_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Export task error data.</p>
     pub error_data: ::std::option::Option<crate::types::ExportErrorData>,
 }
-impl ExportTaskError {
+impl  ExportTaskError  {
     /// <p>Export task error datetime.</p>
-    pub fn error_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn error_date_time(&self) -> ::std::option::Option<& str> {
         self.error_date_time.as_deref()
     }
     /// <p>Export task error data.</p>
-    pub fn error_data(&self) -> ::std::option::Option<&crate::types::ExportErrorData> {
+    pub fn error_data(&self) -> ::std::option::Option<& crate::types::ExportErrorData> {
         self.error_data.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ExportTaskErrorBuilder {
     }
     /// <p>Export task error datetime.</p>
     pub fn set_error_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_date_time = input;
-        self
+        self.error_date_time = input; self
     }
     /// <p>Export task error datetime.</p>
     pub fn get_error_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ExportTaskErrorBuilder {
     }
     /// <p>Export task error data.</p>
     pub fn set_error_data(mut self, input: ::std::option::Option<crate::types::ExportErrorData>) -> Self {
-        self.error_data = input;
-        self
+        self.error_data = input; self
     }
     /// <p>Export task error data.</p>
     pub fn get_error_data(&self) -> &::std::option::Option<crate::types::ExportErrorData> {
@@ -65,8 +63,11 @@ impl ExportTaskErrorBuilder {
     /// Consumes the builder and constructs a [`ExportTaskError`](crate::types::ExportTaskError).
     pub fn build(self) -> crate::types::ExportTaskError {
         crate::types::ExportTaskError {
-            error_date_time: self.error_date_time,
-            error_data: self.error_data,
+            error_date_time: self.error_date_time
+            ,
+            error_data: self.error_data
+            ,
         }
     }
 }
+

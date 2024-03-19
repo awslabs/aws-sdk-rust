@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBotChannelAssociationsOutput {
+pub struct GetBotChannelAssociationsOutput  {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
-    pub bot_channel_associations: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
+    pub bot_channel_associations: ::std::option::Option<::std::vec::Vec::<crate::types::BotChannelAssociation>>,
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetBotChannelAssociationsOutput {
+impl  GetBotChannelAssociationsOutput  {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_channel_associations.is_none()`.
-    pub fn bot_channel_associations(&self) -> &[crate::types::BotChannelAssociation] {
-        self.bot_channel_associations.as_deref().unwrap_or_default()
+    pub fn bot_channel_associations(&self) -> & [crate::types::BotChannelAssociation] {
+        self.bot_channel_associations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBotChannelAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBotChannelAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetBotChannelAssociationsOutput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput).
     pub fn builder() -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetBotChannelAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBotChannelAssociationsOutputBuilder {
-    pub(crate) bot_channel_associations: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
+    pub(crate) bot_channel_associations: ::std::option::Option<::std::vec::Vec::<crate::types::BotChannelAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetBotChannelAssociationsOutputBuilder {
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
     pub fn bot_channel_associations(mut self, input: crate::types::BotChannelAssociation) -> Self {
         let mut v = self.bot_channel_associations.unwrap_or_default();
-        v.push(input);
-        self.bot_channel_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bot_channel_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
-    pub fn set_bot_channel_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>) -> Self {
-        self.bot_channel_associations = input;
-        self
+    pub fn set_bot_channel_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BotChannelAssociation>>) -> Self {
+        self.bot_channel_associations = input; self
     }
     /// <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
-    pub fn get_bot_channel_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>> {
+    pub fn get_bot_channel_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BotChannelAssociation>> {
         &self.bot_channel_associations
     }
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
@@ -69,28 +69,30 @@ impl GetBotChannelAssociationsOutputBuilder {
     }
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBotChannelAssociationsOutput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput).
     pub fn build(self) -> crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput {
         crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput {
-            bot_channel_associations: self.bot_channel_associations,
-            next_token: self.next_token,
+            bot_channel_associations: self.bot_channel_associations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

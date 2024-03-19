@@ -3,27 +3,28 @@
 /// <p>Describes a proposed segment change. In some cases, the segment change must first be evaluated and accepted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProposedSegmentChange {
+pub struct ProposedSegmentChange  {
     /// <p>The list of key-value tags that changed for the segment.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The rule number in the policy document that applies to this change.</p>
     pub attachment_policy_rule_number: ::std::option::Option<i32>,
     /// <p>The name of the segment to change.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
 }
-impl ProposedSegmentChange {
+impl  ProposedSegmentChange  {
     /// <p>The list of key-value tags that changed for the segment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The rule number in the policy document that applies to this change.</p>
     pub fn attachment_policy_rule_number(&self) -> ::std::option::Option<i32> {
         self.attachment_policy_rule_number
     }
     /// <p>The name of the segment to change.</p>
-    pub fn segment_name(&self) -> ::std::option::Option<&str> {
+    pub fn segment_name(&self) -> ::std::option::Option<& str> {
         self.segment_name.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl ProposedSegmentChange {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProposedSegmentChangeBuilder {
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) attachment_policy_rule_number: ::std::option::Option<i32>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,17 +51,16 @@ impl ProposedSegmentChangeBuilder {
     /// <p>The list of key-value tags that changed for the segment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of key-value tags that changed for the segment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value tags that changed for the segment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The rule number in the policy document that applies to this change.</p>
@@ -70,8 +70,7 @@ impl ProposedSegmentChangeBuilder {
     }
     /// <p>The rule number in the policy document that applies to this change.</p>
     pub fn set_attachment_policy_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attachment_policy_rule_number = input;
-        self
+        self.attachment_policy_rule_number = input; self
     }
     /// <p>The rule number in the policy document that applies to this change.</p>
     pub fn get_attachment_policy_rule_number(&self) -> &::std::option::Option<i32> {
@@ -84,8 +83,7 @@ impl ProposedSegmentChangeBuilder {
     }
     /// <p>The name of the segment to change.</p>
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_name = input;
-        self
+        self.segment_name = input; self
     }
     /// <p>The name of the segment to change.</p>
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,9 +92,13 @@ impl ProposedSegmentChangeBuilder {
     /// Consumes the builder and constructs a [`ProposedSegmentChange`](crate::types::ProposedSegmentChange).
     pub fn build(self) -> crate::types::ProposedSegmentChange {
         crate::types::ProposedSegmentChange {
-            tags: self.tags,
-            attachment_policy_rule_number: self.attachment_policy_rule_number,
-            segment_name: self.segment_name,
+            tags: self.tags
+            ,
+            attachment_policy_rule_number: self.attachment_policy_rule_number
+            ,
+            segment_name: self.segment_name
+            ,
         }
     }
 }
+

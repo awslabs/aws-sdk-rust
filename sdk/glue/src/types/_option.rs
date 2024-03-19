@@ -3,7 +3,7 @@
 /// <p>Specifies an option value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Option {
+pub struct Option  {
     /// <p>Specifies the value of the option.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the label of the option.</p>
@@ -11,17 +11,17 @@ pub struct Option {
     /// <p>Specifies the description of the option.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl Option {
+impl  Option  {
     /// <p>Specifies the value of the option.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Specifies the label of the option.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>Specifies the description of the option.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl OptionBuilder {
     }
     /// <p>Specifies the value of the option.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Specifies the value of the option.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl OptionBuilder {
     }
     /// <p>Specifies the label of the option.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>Specifies the label of the option.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl OptionBuilder {
     }
     /// <p>Specifies the description of the option.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies the description of the option.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl OptionBuilder {
     /// Consumes the builder and constructs a [`Option`](crate::types::Option).
     pub fn build(self) -> crate::types::Option {
         crate::types::Option {
-            value: self.value,
-            label: self.label,
-            description: self.description,
+            value: self.value
+            ,
+            label: self.label
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

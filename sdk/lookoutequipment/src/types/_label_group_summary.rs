@@ -3,7 +3,7 @@
 /// <p>Contains information about the label group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelGroupSummary {
+pub struct LabelGroupSummary  {
     /// <p>The name of the label group.</p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the label group.</p>
@@ -13,21 +13,21 @@ pub struct LabelGroupSummary {
     /// <p>The time at which the label group was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LabelGroupSummary {
+impl  LabelGroupSummary  {
     /// <p>The name of the label group.</p>
-    pub fn label_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_name(&self) -> ::std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the label group.</p>
-    pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> ::std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
     /// <p>The time at which the label group was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the label group was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl LabelGroupSummaryBuilder {
     }
     /// <p>The name of the label group.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_group_name = input;
-        self
+        self.label_group_name = input; self
     }
     /// <p>The name of the label group.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl LabelGroupSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the label group.</p>
     pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_group_arn = input;
-        self
+        self.label_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the label group.</p>
     pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl LabelGroupSummaryBuilder {
     }
     /// <p>The time at which the label group was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the label group was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl LabelGroupSummaryBuilder {
     }
     /// <p>The time at which the label group was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time at which the label group was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl LabelGroupSummaryBuilder {
     /// Consumes the builder and constructs a [`LabelGroupSummary`](crate::types::LabelGroupSummary).
     pub fn build(self) -> crate::types::LabelGroupSummary {
         crate::types::LabelGroupSummary {
-            label_group_name: self.label_group_name,
-            label_group_arn: self.label_group_arn,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            label_group_name: self.label_group_name
+            ,
+            label_group_arn: self.label_group_arn
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

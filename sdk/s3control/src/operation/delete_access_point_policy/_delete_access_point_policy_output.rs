@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccessPointPolicyOutput {
+pub struct DeleteAccessPointPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteAccessPointPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAccessPointPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyOutput`](crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput).
     pub fn builder() -> crate::operation::delete_access_point_policy::builders::DeleteAccessPointPolicyOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteAccessPointPolicyOutputBuilder {
 }
 impl DeleteAccessPointPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAccessPointPolicyOutput`](crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput).
     pub fn build(self) -> crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput {
         crate::operation::delete_access_point_policy::DeleteAccessPointPolicyOutput {
@@ -40,3 +40,4 @@ impl DeleteAccessPointPolicyOutputBuilder {
         }
     }
 }
+

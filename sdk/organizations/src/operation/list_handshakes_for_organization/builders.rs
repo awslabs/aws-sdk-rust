@@ -5,23 +5,20 @@ pub use crate::operation::list_handshakes_for_organization::_list_handshakes_for
 
 impl ListHandshakesForOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_handshakes_for_organization();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_handshakes_for_organization();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListHandshakesForOrganization`.
-///
+/// 
 /// <p>Lists the handshakes that are associated with the organization that the requesting user is part of. The <code>ListHandshakesForOrganization</code> operation returns a list of handshake structures. Each structure contains details and status about a handshake.</p>
 /// <p>Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>, or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing to that state. After that, they're deleted and no longer accessible.</p><note>
 /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
@@ -30,33 +27,32 @@ impl ListHandshakesForOrganizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHandshakesForOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationInputBuilder,
+                    inner: crate::operation::list_handshakes_for_organization::builders::ListHandshakesForOrganizationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
-        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-    > for ListHandshakesForOrganizationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
-            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
+                    crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
+                > for ListHandshakesForOrganizationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
+                        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListHandshakesForOrganizationFluentBuilder {
     /// Creates a new `ListHandshakesForOrganization`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,59 +61,50 @@ impl ListHandshakesForOrganizationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_handshakes_for_organization::ListHandshakesForOrganization::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganization::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
-        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_handshakes_for_organization::ListHandshakesForOrganization::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganization::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput, crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator {
-        crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator {
+                                crate::operation::list_handshakes_for_organization::paginator::ListHandshakesForOrganizationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
     pub fn filter(mut self, input: crate::types::HandshakeFilter) -> Self {
         self.inner = self.inner.filter(input);
@@ -161,3 +148,4 @@ impl ListHandshakesForOrganizationFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

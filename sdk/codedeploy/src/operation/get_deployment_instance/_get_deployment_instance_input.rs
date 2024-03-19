@@ -3,19 +3,19 @@
 /// <p>Represents the input of a <code>GetDeploymentInstance</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentInstanceInput {
+pub struct GetDeploymentInstanceInput  {
     /// <p>The unique ID of a deployment.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of an instance in the deployment group.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDeploymentInstanceInput {
+impl  GetDeploymentInstanceInput  {
     /// <p>The unique ID of a deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The unique ID of an instance in the deployment group.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetDeploymentInstanceInputBuilder {
     }
     /// <p>The unique ID of a deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The unique ID of a deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl GetDeploymentInstanceInputBuilder {
     }
     /// <p>The unique ID of an instance in the deployment group.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The unique ID of an instance in the deployment group.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`GetDeploymentInstanceInput`](crate::operation::get_deployment_instance::GetDeploymentInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_deployment_instance::GetDeploymentInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_deployment_instance::GetDeploymentInstanceInput {
-            deployment_id: self.deployment_id,
-            instance_id: self.instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deployment_instance::GetDeploymentInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_deployment_instance::GetDeploymentInstanceInput {
+                deployment_id: self.deployment_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

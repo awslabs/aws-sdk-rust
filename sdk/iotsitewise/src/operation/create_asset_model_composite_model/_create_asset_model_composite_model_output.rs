@@ -2,36 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssetModelCompositeModelOutput {
+pub struct CreateAssetModelCompositeModelOutput  {
     /// <p>The ID of the composed asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
     pub asset_model_composite_model_id: ::std::string::String,
     /// <p>The path to the composite model listing the parent composite models.</p>
-    pub asset_model_composite_model_path: ::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>,
+    pub asset_model_composite_model_path: ::std::vec::Vec::<crate::types::AssetModelCompositeModelPathSegment>,
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
 }
-impl CreateAssetModelCompositeModelOutput {
+impl  CreateAssetModelCompositeModelOutput  {
     /// <p>The ID of the composed asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
-    pub fn asset_model_composite_model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_composite_model_id.deref()
+    pub fn asset_model_composite_model_id(&self) -> & str {
+        use std::ops::Deref; self.asset_model_composite_model_id.deref()
     }
     /// <p>The path to the composite model listing the parent composite models.</p>
-    pub fn asset_model_composite_model_path(&self) -> &[crate::types::AssetModelCompositeModelPathSegment] {
-        use std::ops::Deref;
-        self.asset_model_composite_model_path.deref()
+    pub fn asset_model_composite_model_path(&self) -> & [crate::types::AssetModelCompositeModelPathSegment] {
+        use std::ops::Deref; self.asset_model_composite_model_path.deref()
     }
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_model_status(&self) -> ::std::option::Option<&crate::types::AssetModelStatus> {
+    pub fn asset_model_status(&self) -> ::std::option::Option<& crate::types::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAssetModelCompositeModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAssetModelCompositeModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssetModelCompositeModelOutput`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput).
     pub fn builder() -> crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelOutputBuilder {
@@ -44,7 +42,7 @@ impl CreateAssetModelCompositeModelOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssetModelCompositeModelOutputBuilder {
     pub(crate) asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_model_composite_model_path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,
+    pub(crate) asset_model_composite_model_path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelPathSegment>>,
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
 }
@@ -57,8 +55,7 @@ impl CreateAssetModelCompositeModelOutputBuilder {
     }
     /// <p>The ID of the composed asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
     pub fn set_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_id = input;
-        self
+        self.asset_model_composite_model_id = input; self
     }
     /// <p>The ID of the composed asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
     pub fn get_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,20 +68,16 @@ impl CreateAssetModelCompositeModelOutputBuilder {
     /// <p>The path to the composite model listing the parent composite models.</p>
     pub fn asset_model_composite_model_path(mut self, input: crate::types::AssetModelCompositeModelPathSegment) -> Self {
         let mut v = self.asset_model_composite_model_path.unwrap_or_default();
-        v.push(input);
-        self.asset_model_composite_model_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_model_composite_model_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The path to the composite model listing the parent composite models.</p>
-    pub fn set_asset_model_composite_model_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,
-    ) -> Self {
-        self.asset_model_composite_model_path = input;
-        self
+    pub fn set_asset_model_composite_model_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelPathSegment>>) -> Self {
+        self.asset_model_composite_model_path = input; self
     }
     /// <p>The path to the composite model listing the parent composite models.</p>
-    pub fn get_asset_model_composite_model_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>> {
+    pub fn get_asset_model_composite_model_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelPathSegment>> {
         &self.asset_model_composite_model_path
     }
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -95,49 +88,43 @@ impl CreateAssetModelCompositeModelOutputBuilder {
     }
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_status(mut self, input: ::std::option::Option<crate::types::AssetModelStatus>) -> Self {
-        self.asset_model_status = input;
-        self
+        self.asset_model_status = input; self
     }
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_model_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
         &self.asset_model_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAssetModelCompositeModelOutput`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_model_composite_model_id`](crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelOutputBuilder::asset_model_composite_model_id)
     /// - [`asset_model_composite_model_path`](crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelOutputBuilder::asset_model_composite_model_path)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput {
-                asset_model_composite_model_id: self.asset_model_composite_model_id.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "asset_model_composite_model_id",
-                        "asset_model_composite_model_id was not specified but it is required when building CreateAssetModelCompositeModelOutput",
-                    )
-                })?,
-                asset_model_composite_model_path: self.asset_model_composite_model_path.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "asset_model_composite_model_path",
-                        "asset_model_composite_model_path was not specified but it is required when building CreateAssetModelCompositeModelOutput",
-                    )
-                })?,
-                asset_model_status: self.asset_model_status,
+                asset_model_composite_model_id: self.asset_model_composite_model_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_model_composite_model_id", "asset_model_composite_model_id was not specified but it is required when building CreateAssetModelCompositeModelOutput")
+                    )?
+                ,
+                asset_model_composite_model_path: self.asset_model_composite_model_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_model_composite_model_path", "asset_model_composite_model_path was not specified but it is required when building CreateAssetModelCompositeModelOutput")
+                    )?
+                ,
+                asset_model_status: self.asset_model_status
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

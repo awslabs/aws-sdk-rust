@@ -3,7 +3,7 @@
 /// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LayerVersionContentOutput {
+pub struct LayerVersionContentOutput  {
     /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 hash of the layer archive.</p>
@@ -15,13 +15,13 @@ pub struct LayerVersionContentOutput {
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub signing_job_arn: ::std::option::Option<::std::string::String>,
 }
-impl LayerVersionContentOutput {
+impl  LayerVersionContentOutput  {
     /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The SHA-256 hash of the layer archive.</p>
-    pub fn code_sha256(&self) -> ::std::option::Option<&str> {
+    pub fn code_sha256(&self) -> ::std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The size of the layer archive in bytes.</p>
@@ -29,11 +29,11 @@ impl LayerVersionContentOutput {
         self.code_size
     }
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> ::std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
-    pub fn signing_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> ::std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl LayerVersionContentOutputBuilder {
     }
     /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl LayerVersionContentOutputBuilder {
     }
     /// <p>The SHA-256 hash of the layer archive.</p>
     pub fn set_code_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_sha256 = input;
-        self
+        self.code_sha256 = input; self
     }
     /// <p>The SHA-256 hash of the layer archive.</p>
     pub fn get_code_sha256(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl LayerVersionContentOutputBuilder {
     }
     /// <p>The size of the layer archive in bytes.</p>
     pub fn set_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.code_size = input;
-        self
+        self.code_size = input; self
     }
     /// <p>The size of the layer archive in bytes.</p>
     pub fn get_code_size(&self) -> &::std::option::Option<i64> {
@@ -104,8 +101,7 @@ impl LayerVersionContentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
     pub fn set_signing_profile_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signing_profile_version_arn = input;
-        self
+        self.signing_profile_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
     pub fn get_signing_profile_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl LayerVersionContentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub fn set_signing_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signing_job_arn = input;
-        self
+        self.signing_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub fn get_signing_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,18 @@ impl LayerVersionContentOutputBuilder {
     /// Consumes the builder and constructs a [`LayerVersionContentOutput`](crate::types::LayerVersionContentOutput).
     pub fn build(self) -> crate::types::LayerVersionContentOutput {
         crate::types::LayerVersionContentOutput {
-            location: self.location,
-            code_sha256: self.code_sha256,
-            code_size: self.code_size.unwrap_or_default(),
-            signing_profile_version_arn: self.signing_profile_version_arn,
-            signing_job_arn: self.signing_job_arn,
+            location: self.location
+            ,
+            code_sha256: self.code_sha256
+            ,
+            code_size: self.code_size
+                .unwrap_or_default()
+            ,
+            signing_profile_version_arn: self.signing_profile_version_arn
+            ,
+            signing_job_arn: self.signing_job_arn
+            ,
         }
     }
 }
+

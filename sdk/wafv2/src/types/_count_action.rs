@@ -4,15 +4,15 @@
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CountAction {
+pub struct CountAction  {
     /// <p>Defines custom handling for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     pub custom_request_handling: ::std::option::Option<crate::types::CustomRequestHandling>,
 }
-impl CountAction {
+impl  CountAction  {
     /// <p>Defines custom handling for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn custom_request_handling(&self) -> ::std::option::Option<&crate::types::CustomRequestHandling> {
+    pub fn custom_request_handling(&self) -> ::std::option::Option<& crate::types::CustomRequestHandling> {
         self.custom_request_handling.as_ref()
     }
 }
@@ -39,8 +39,7 @@ impl CountActionBuilder {
     /// <p>Defines custom handling for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_custom_request_handling(mut self, input: ::std::option::Option<crate::types::CustomRequestHandling>) -> Self {
-        self.custom_request_handling = input;
-        self
+        self.custom_request_handling = input; self
     }
     /// <p>Defines custom handling for the web request.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
@@ -50,7 +49,9 @@ impl CountActionBuilder {
     /// Consumes the builder and constructs a [`CountAction`](crate::types::CountAction).
     pub fn build(self) -> crate::types::CountAction {
         crate::types::CountAction {
-            custom_request_handling: self.custom_request_handling,
+            custom_request_handling: self.custom_request_handling
+            ,
         }
     }
 }
+

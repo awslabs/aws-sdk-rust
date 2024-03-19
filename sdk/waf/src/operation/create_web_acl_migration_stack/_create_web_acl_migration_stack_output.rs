@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWebAclMigrationStackOutput {
+pub struct CreateWebAclMigrationStackOutput  {
     /// <p>The URL of the template created in Amazon S3.</p>
     pub s3_object_url: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateWebAclMigrationStackOutput {
+impl  CreateWebAclMigrationStackOutput  {
     /// <p>The URL of the template created in Amazon S3.</p>
-    pub fn s3_object_url(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_object_url.deref()
+    pub fn s3_object_url(&self) -> & str {
+        use std::ops::Deref; self.s3_object_url.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWebAclMigrationStackOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateWebAclMigrationStackOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackOutput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput).
     pub fn builder() -> crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackOutputBuilder {
@@ -42,39 +41,35 @@ impl CreateWebAclMigrationStackOutputBuilder {
     }
     /// <p>The URL of the template created in Amazon S3.</p>
     pub fn set_s3_object_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_url = input;
-        self
+        self.s3_object_url = input; self
     }
     /// <p>The URL of the template created in Amazon S3.</p>
     pub fn get_s3_object_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_object_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateWebAclMigrationStackOutput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_object_url`](crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackOutputBuilder::s3_object_url)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput {
-            s3_object_url: self.s3_object_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_object_url",
-                    "s3_object_url was not specified but it is required when building CreateWebAclMigrationStackOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput {
+                s3_object_url: self.s3_object_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_object_url", "s3_object_url was not specified but it is required when building CreateWebAclMigrationStackOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

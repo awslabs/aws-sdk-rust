@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomDomainAssociationsInput {
+pub struct ListCustomDomainAssociationsInput  {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
@@ -12,9 +12,9 @@ pub struct ListCustomDomainAssociationsInput {
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListCustomDomainAssociationsInput {
+impl  ListCustomDomainAssociationsInput  {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
@@ -22,11 +22,11 @@ impl ListCustomDomainAssociationsInput {
         self.max_results
     }
     /// <p>The custom domain name associated with the workgroup.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
-    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_domain_certificate_arn.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListCustomDomainAssociationsInputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListCustomDomainAssociationsInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListCustomDomainAssociationsInputBuilder {
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,25 +93,26 @@ impl ListCustomDomainAssociationsInputBuilder {
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
     pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_certificate_arn = input;
-        self
+        self.custom_domain_certificate_arn = input; self
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
     pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_certificate_arn
     }
     /// Consumes the builder and constructs a [`ListCustomDomainAssociationsInput`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            custom_domain_name: self.custom_domain_name,
-            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                custom_domain_name: self.custom_domain_name
+                ,
+                custom_domain_certificate_arn: self.custom_domain_certificate_arn
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::update_budget_action::_update_budget_action_input::Upd
 
 impl UpdateBudgetActionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_budget_action::UpdateBudgetActionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_budget_action::UpdateBudgetActionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_budget_action();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_budget_action::UpdateBudgetActionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_budget_action::UpdateBudgetActionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_budget_action();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateBudgetAction`.
-///
+/// 
 /// <p>Updates a budget action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBudgetActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_budget_action::builders::UpdateBudgetActionInputBuilder,
+                    inner: crate::operation::update_budget_action::builders::UpdateBudgetActionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_budget_action::UpdateBudgetActionOutput,
-        crate::operation::update_budget_action::UpdateBudgetActionError,
-    > for UpdateBudgetActionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_budget_action::UpdateBudgetActionOutput,
-            crate::operation::update_budget_action::UpdateBudgetActionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_budget_action::UpdateBudgetActionOutput,
+                    crate::operation::update_budget_action::UpdateBudgetActionError,
+                > for UpdateBudgetActionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_budget_action::UpdateBudgetActionOutput,
+                        crate::operation::update_budget_action::UpdateBudgetActionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateBudgetActionFluentBuilder {
     /// Creates a new `UpdateBudgetAction`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateBudgetActionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_budget_action::UpdateBudgetActionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_budget_action::UpdateBudgetActionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_budget_action::UpdateBudgetAction::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_budget_action::UpdateBudgetAction::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_budget_action::UpdateBudgetActionOutput,
-        crate::operation::update_budget_action::UpdateBudgetActionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_budget_action::UpdateBudgetActionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_budget_action::UpdateBudgetActionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_budget_action::UpdateBudgetAction::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_budget_action::UpdateBudgetAction::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_budget_action::UpdateBudgetActionOutput, crate::operation::update_budget_action::UpdateBudgetActionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -230,12 +217,13 @@ impl UpdateBudgetActionFluentBuilder {
         self
     }
     /// <p>A list of subscribers.</p>
-    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Subscriber>>) -> Self {
         self.inner = self.inner.set_subscribers(input);
         self
     }
     /// <p>A list of subscribers.</p>
-    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Subscriber>> {
         self.inner.get_subscribers()
     }
 }
+

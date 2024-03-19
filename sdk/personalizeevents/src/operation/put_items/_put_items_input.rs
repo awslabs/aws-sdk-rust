@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutItemsInput {
+pub struct PutItemsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of item data.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::Item>>,
 }
-impl PutItemsInput {
+impl  PutItemsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>A list of item data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::Item] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::Item] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutItemsInput {
@@ -32,7 +33,7 @@ impl PutItemsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutItemsInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::Item>>,
 }
 impl PutItemsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
@@ -43,8 +44,7 @@ impl PutItemsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,28 @@ impl PutItemsInputBuilder {
     /// <p>A list of item data.</p>
     pub fn items(mut self, input: crate::types::Item) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of item data.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Item>>) -> Self {
+        self.items = input; self
     }
     /// <p>A list of item data.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Item>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Item>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`PutItemsInput`](crate::operation::put_items::PutItemsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_items::PutItemsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_items::PutItemsInput {
-            dataset_arn: self.dataset_arn,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_items::PutItemsInput {
+                dataset_arn: self.dataset_arn
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

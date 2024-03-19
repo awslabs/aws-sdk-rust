@@ -3,7 +3,7 @@
 /// <p>Provides information about the status of a sensitive data finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClassificationResultStatus {
+pub struct ClassificationResultStatus  {
     /// <p>The status of the finding. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -63,7 +63,7 @@ pub struct ClassificationResultStatus {
     /// <p>For information about quotas, supported storage classes, and supported file and storage formats, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage classes and formats</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl ClassificationResultStatus {
+impl  ClassificationResultStatus  {
     /// <p>The status of the finding. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -73,7 +73,7 @@ impl ClassificationResultStatus {
     /// <li>
     /// <p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file that uses an unsupported format.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A brief description of the status of the finding. This value is null if the status (code) of the finding is COMPLETE.</p>
@@ -123,7 +123,7 @@ impl ClassificationResultStatus {
     /// <p>UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.</p></li>
     /// </ul>
     /// <p>For information about quotas, supported storage classes, and supported file and storage formats, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage classes and formats</a> in the <i>Amazon Macie User Guide</i>.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -165,8 +165,7 @@ impl ClassificationResultStatusBuilder {
     /// <p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file that uses an unsupported format.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The status of the finding. Possible values are:</p>
     /// <ul>
@@ -279,8 +278,7 @@ impl ClassificationResultStatusBuilder {
     /// </ul>
     /// <p>For information about quotas, supported storage classes, and supported file and storage formats, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage classes and formats</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A brief description of the status of the finding. This value is null if the status (code) of the finding is COMPLETE.</p>
     /// <p>Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding and the affected S3 object. Possible values are:</p>
@@ -335,8 +333,11 @@ impl ClassificationResultStatusBuilder {
     /// Consumes the builder and constructs a [`ClassificationResultStatus`](crate::types::ClassificationResultStatus).
     pub fn build(self) -> crate::types::ClassificationResultStatus {
         crate::types::ClassificationResultStatus {
-            code: self.code,
-            reason: self.reason,
+            code: self.code
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MutualTlsAuthenticationInput {
+pub struct MutualTlsAuthenticationInput  {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     pub truststore_uri: ::std::option::Option<::std::string::String>,
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket</p>
     pub truststore_version: ::std::option::Option<::std::string::String>,
 }
-impl MutualTlsAuthenticationInput {
+impl  MutualTlsAuthenticationInput  {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
-    pub fn truststore_uri(&self) -> ::std::option::Option<&str> {
+    pub fn truststore_uri(&self) -> ::std::option::Option<& str> {
         self.truststore_uri.as_deref()
     }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket</p>
-    pub fn truststore_version(&self) -> ::std::option::Option<&str> {
+    pub fn truststore_version(&self) -> ::std::option::Option<& str> {
         self.truststore_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MutualTlsAuthenticationInputBuilder {
     }
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     pub fn set_truststore_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.truststore_uri = input;
-        self
+        self.truststore_uri = input; self
     }
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     pub fn get_truststore_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MutualTlsAuthenticationInputBuilder {
     }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket</p>
     pub fn set_truststore_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.truststore_version = input;
-        self
+        self.truststore_version = input; self
     }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket</p>
     pub fn get_truststore_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MutualTlsAuthenticationInputBuilder {
     /// Consumes the builder and constructs a [`MutualTlsAuthenticationInput`](crate::types::MutualTlsAuthenticationInput).
     pub fn build(self) -> crate::types::MutualTlsAuthenticationInput {
         crate::types::MutualTlsAuthenticationInput {
-            truststore_uri: self.truststore_uri,
-            truststore_version: self.truststore_version,
+            truststore_uri: self.truststore_uri
+            ,
+            truststore_version: self.truststore_version
+            ,
         }
     }
 }
+

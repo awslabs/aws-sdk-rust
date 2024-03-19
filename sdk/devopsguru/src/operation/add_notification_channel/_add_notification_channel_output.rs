@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddNotificationChannelOutput {
+pub struct AddNotificationChannelOutput  {
     /// <p>The ID of the added notification channel.</p>
     pub id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl AddNotificationChannelOutput {
+impl  AddNotificationChannelOutput  {
     /// <p>The ID of the added notification channel.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AddNotificationChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddNotificationChannelOutput {
     /// Creates a new builder-style object to manufacture [`AddNotificationChannelOutput`](crate::operation::add_notification_channel::AddNotificationChannelOutput).
     pub fn builder() -> crate::operation::add_notification_channel::builders::AddNotificationChannelOutputBuilder {
@@ -42,39 +41,35 @@ impl AddNotificationChannelOutputBuilder {
     }
     /// <p>The ID of the added notification channel.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the added notification channel.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddNotificationChannelOutput`](crate::operation::add_notification_channel::AddNotificationChannelOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::add_notification_channel::builders::AddNotificationChannelOutputBuilder::id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_notification_channel::AddNotificationChannelOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::add_notification_channel::AddNotificationChannelOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AddNotificationChannelOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_notification_channel::AddNotificationChannelOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_notification_channel::AddNotificationChannelOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AddNotificationChannelOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

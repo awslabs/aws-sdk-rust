@@ -3,13 +3,13 @@
 /// Frame Capture S3 Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FrameCaptureS3Settings {
+pub struct FrameCaptureS3Settings  {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     pub canned_acl: ::std::option::Option<crate::types::S3CannedAcl>,
 }
-impl FrameCaptureS3Settings {
+impl  FrameCaptureS3Settings  {
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
-    pub fn canned_acl(&self) -> ::std::option::Option<&crate::types::S3CannedAcl> {
+    pub fn canned_acl(&self) -> ::std::option::Option<& crate::types::S3CannedAcl> {
         self.canned_acl.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl FrameCaptureS3SettingsBuilder {
     }
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     pub fn set_canned_acl(mut self, input: ::std::option::Option<crate::types::S3CannedAcl>) -> Self {
-        self.canned_acl = input;
-        self
+        self.canned_acl = input; self
     }
     /// Specify the canned ACL to apply to each S3 request. Defaults to none.
     pub fn get_canned_acl(&self) -> &::std::option::Option<crate::types::S3CannedAcl> {
@@ -43,6 +42,10 @@ impl FrameCaptureS3SettingsBuilder {
     }
     /// Consumes the builder and constructs a [`FrameCaptureS3Settings`](crate::types::FrameCaptureS3Settings).
     pub fn build(self) -> crate::types::FrameCaptureS3Settings {
-        crate::types::FrameCaptureS3Settings { canned_acl: self.canned_acl }
+        crate::types::FrameCaptureS3Settings {
+            canned_acl: self.canned_acl
+            ,
+        }
     }
 }
+

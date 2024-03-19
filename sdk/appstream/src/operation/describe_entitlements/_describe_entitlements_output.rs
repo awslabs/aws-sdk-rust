@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntitlementsOutput {
+pub struct DescribeEntitlementsOutput  {
     /// <p>The entitlements.</p>
-    pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
+    pub entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeEntitlementsOutput {
+impl  DescribeEntitlementsOutput  {
     /// <p>The entitlements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
-    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
-        self.entitlements.as_deref().unwrap_or_default()
+    pub fn entitlements(&self) -> & [crate::types::Entitlement] {
+        self.entitlements.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEntitlementsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEntitlementsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntitlementsOutput`](crate::operation::describe_entitlements::DescribeEntitlementsOutput).
     pub fn builder() -> crate::operation::describe_entitlements::builders::DescribeEntitlementsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeEntitlementsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntitlementsOutputBuilder {
-    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
+    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeEntitlementsOutputBuilder {
     /// <p>The entitlements.</p>
     pub fn entitlements(mut self, input: crate::types::Entitlement) -> Self {
         let mut v = self.entitlements.unwrap_or_default();
-        v.push(input);
-        self.entitlements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entitlements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The entitlements.</p>
-    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
-        self.entitlements = input;
-        self
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>) -> Self {
+        self.entitlements = input; self
     }
     /// <p>The entitlements.</p>
-    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>> {
         &self.entitlements
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -69,28 +69,30 @@ impl DescribeEntitlementsOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEntitlementsOutput`](crate::operation::describe_entitlements::DescribeEntitlementsOutput).
     pub fn build(self) -> crate::operation::describe_entitlements::DescribeEntitlementsOutput {
         crate::operation::describe_entitlements::DescribeEntitlementsOutput {
-            entitlements: self.entitlements,
-            next_token: self.next_token,
+            entitlements: self.entitlements
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

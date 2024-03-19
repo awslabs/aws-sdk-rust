@@ -3,20 +3,19 @@
 /// <p>An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that <code>VirtualPut</code> was called before writing the object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualObject {
+pub struct VirtualObject  {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
     pub uri: ::std::string::String,
     /// <p>The ETag of the Amazon S3 object.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
-impl VirtualObject {
+impl  VirtualObject  {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
-    pub fn uri(&self) -> &str {
-        use std::ops::Deref;
-        self.uri.deref()
+    pub fn uri(&self) -> & str {
+        use std::ops::Deref; self.uri.deref()
     }
     /// <p>The ETag of the Amazon S3 object.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl VirtualObjectBuilder {
     }
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl VirtualObjectBuilder {
     }
     /// <p>The ETag of the Amazon S3 object.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The ETag of the Amazon S3 object.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl VirtualObjectBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::VirtualObjectBuilder::uri)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualObject, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualObject {
-            uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uri",
-                    "uri was not specified but it is required when building VirtualObject",
-                )
-            })?,
-            e_tag: self.e_tag,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualObject {
+                uri: self.uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uri", "uri was not specified but it is required when building VirtualObject")
+                    )?
+                ,
+                e_tag: self.e_tag
+                ,
+            }
+        )
     }
 }
+

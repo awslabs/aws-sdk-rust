@@ -3,7 +3,7 @@
 /// <p>The QualificationRequest data structure represents a request a Worker has made for a Qualification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QualificationRequest {
+pub struct QualificationRequest  {
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted.</p>
     pub qualification_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation.</p>
@@ -17,29 +17,29 @@ pub struct QualificationRequest {
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test.</p>
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl QualificationRequest {
+impl  QualificationRequest  {
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted.</p>
-    pub fn qualification_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn qualification_request_id(&self) -> ::std::option::Option<& str> {
         self.qualification_request_id.as_deref()
     }
     /// <p>The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation.</p>
-    pub fn qualification_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> ::std::option::Option<& str> {
         self.qualification_type_id.as_deref()
     }
     /// <p>The ID of the Worker requesting the Qualification.</p>
-    pub fn worker_id(&self) -> ::std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<& str> {
         self.worker_id.as_deref()
     }
     /// <p>The contents of the Qualification test that was presented to the Worker, if the type has a test and the Worker has submitted answers. This value is identical to the QuestionForm associated with the Qualification type at the time the Worker requests the Qualification.</p>
-    pub fn test(&self) -> ::std::option::Option<&str> {
+    pub fn test(&self) -> ::std::option::Option<& str> {
         self.test.as_deref()
     }
     /// <p>The Worker's answers for the Qualification type's test contained in a QuestionFormAnswers document, if the type has a test and the Worker has submitted answers. If the Worker does not provide any answers, Answer may be empty.</p>
-    pub fn answer(&self) -> ::std::option::Option<&str> {
+    pub fn answer(&self) -> ::std::option::Option<& str> {
         self.answer.as_deref()
     }
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test.</p>
-    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl QualificationRequestBuilder {
     }
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted.</p>
     pub fn set_qualification_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualification_request_id = input;
-        self
+        self.qualification_request_id = input; self
     }
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted.</p>
     pub fn get_qualification_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl QualificationRequestBuilder {
     }
     /// <p>The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation.</p>
     pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualification_type_id = input;
-        self
+        self.qualification_type_id = input; self
     }
     /// <p>The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation.</p>
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl QualificationRequestBuilder {
     }
     /// <p>The ID of the Worker requesting the Qualification.</p>
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>The ID of the Worker requesting the Qualification.</p>
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl QualificationRequestBuilder {
     }
     /// <p>The contents of the Qualification test that was presented to the Worker, if the type has a test and the Worker has submitted answers. This value is identical to the QuestionForm associated with the Qualification type at the time the Worker requests the Qualification.</p>
     pub fn set_test(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test = input;
-        self
+        self.test = input; self
     }
     /// <p>The contents of the Qualification test that was presented to the Worker, if the type has a test and the Worker has submitted answers. This value is identical to the QuestionForm associated with the Qualification type at the time the Worker requests the Qualification.</p>
     pub fn get_test(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl QualificationRequestBuilder {
     }
     /// <p>The Worker's answers for the Qualification type's test contained in a QuestionFormAnswers document, if the type has a test and the Worker has submitted answers. If the Worker does not provide any answers, Answer may be empty.</p>
     pub fn set_answer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.answer = input;
-        self
+        self.answer = input; self
     }
     /// <p>The Worker's answers for the Qualification type's test contained in a QuestionFormAnswers document, if the type has a test and the Worker has submitted answers. If the Worker does not provide any answers, Answer may be empty.</p>
     pub fn get_answer(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl QualificationRequestBuilder {
     }
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test.</p>
     pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submit_time = input;
-        self
+        self.submit_time = input; self
     }
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test.</p>
     pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl QualificationRequestBuilder {
     /// Consumes the builder and constructs a [`QualificationRequest`](crate::types::QualificationRequest).
     pub fn build(self) -> crate::types::QualificationRequest {
         crate::types::QualificationRequest {
-            qualification_request_id: self.qualification_request_id,
-            qualification_type_id: self.qualification_type_id,
-            worker_id: self.worker_id,
-            test: self.test,
-            answer: self.answer,
-            submit_time: self.submit_time,
+            qualification_request_id: self.qualification_request_id
+            ,
+            qualification_type_id: self.qualification_type_id
+            ,
+            worker_id: self.worker_id
+            ,
+            test: self.test
+            ,
+            answer: self.answer
+            ,
+            submit_time: self.submit_time
+            ,
         }
     }
 }
+

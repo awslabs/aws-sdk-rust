@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceSettingsInput {}
+pub struct GetServiceSettingsInput  {
+}
 impl GetServiceSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingsInput`](crate::operation::get_service_settings::GetServiceSettingsInput).
     pub fn builder() -> crate::operation::get_service_settings::builders::GetServiceSettingsInputBuilder {
@@ -13,13 +14,15 @@ impl GetServiceSettingsInput {
 /// A builder for [`GetServiceSettingsInput`](crate::operation::get_service_settings::GetServiceSettingsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetServiceSettingsInputBuilder {}
+pub struct GetServiceSettingsInputBuilder {
+}
 impl GetServiceSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceSettingsInput`](crate::operation::get_service_settings::GetServiceSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_service_settings::GetServiceSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_service_settings::GetServiceSettingsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_settings::GetServiceSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_service_settings::GetServiceSettingsInput {
+            }
+        )
     }
 }
+

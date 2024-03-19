@@ -3,13 +3,13 @@
 /// <p>Represents a request to the delete device pool operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDevicePoolInput {
+pub struct DeleteDevicePoolInput  {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDevicePoolInput {
+impl  DeleteDevicePoolInput  {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DeleteDevicePoolInputBuilder {
     }
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteDevicePoolInput`](crate::operation::delete_device_pool::DeleteDevicePoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_device_pool::DeleteDevicePoolInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_device_pool::DeleteDevicePoolInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_device_pool::DeleteDevicePoolInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_device_pool::DeleteDevicePoolInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

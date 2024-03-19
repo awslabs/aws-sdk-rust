@@ -3,13 +3,13 @@
 /// <p>The capability configuration for an Amazon Q assistant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssistantCapabilityConfiguration {
+pub struct AssistantCapabilityConfiguration  {
     /// <p>The type of Amazon Q assistant capability.</p>
     pub r#type: ::std::option::Option<crate::types::AssistantCapabilityType>,
 }
-impl AssistantCapabilityConfiguration {
+impl  AssistantCapabilityConfiguration  {
     /// <p>The type of Amazon Q assistant capability.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AssistantCapabilityType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AssistantCapabilityType> {
         self.r#type.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AssistantCapabilityConfigurationBuilder {
     }
     /// <p>The type of Amazon Q assistant capability.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AssistantCapabilityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of Amazon Q assistant capability.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AssistantCapabilityType> {
@@ -43,6 +42,10 @@ impl AssistantCapabilityConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`AssistantCapabilityConfiguration`](crate::types::AssistantCapabilityConfiguration).
     pub fn build(self) -> crate::types::AssistantCapabilityConfiguration {
-        crate::types::AssistantCapabilityConfiguration { r#type: self.r#type }
+        crate::types::AssistantCapabilityConfiguration {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

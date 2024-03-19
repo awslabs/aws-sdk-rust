@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendWorkflowStepActionInput {
+pub struct SendWorkflowStepActionInput  {
     /// <p>Uniquely identifies the workflow step that sent the step action.</p>
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image build version to send action for.</p>
@@ -14,25 +14,25 @@ pub struct SendWorkflowStepActionInput {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl SendWorkflowStepActionInput {
+impl  SendWorkflowStepActionInput  {
     /// <p>Uniquely identifies the workflow step that sent the step action.</p>
-    pub fn step_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_execution_id(&self) -> ::std::option::Option<& str> {
         self.step_execution_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image build version to send action for.</p>
-    pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> ::std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>The action for the image creation process to take while a workflow <code>WaitForAction</code> step waits for an asynchronous action to complete.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::WorkflowStepActionType> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::WorkflowStepActionType> {
         self.action.as_ref()
     }
     /// <p>The reason why this action is sent.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl SendWorkflowStepActionInputBuilder {
     }
     /// <p>Uniquely identifies the workflow step that sent the step action.</p>
     pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_execution_id = input;
-        self
+        self.step_execution_id = input; self
     }
     /// <p>Uniquely identifies the workflow step that sent the step action.</p>
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl SendWorkflowStepActionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image build version to send action for.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_build_version_arn = input;
-        self
+        self.image_build_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image build version to send action for.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl SendWorkflowStepActionInputBuilder {
     }
     /// <p>The action for the image creation process to take while a workflow <code>WaitForAction</code> step waits for an asynchronous action to complete.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::WorkflowStepActionType>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action for the image creation process to take while a workflow <code>WaitForAction</code> step waits for an asynchronous action to complete.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::WorkflowStepActionType> {
@@ -106,8 +103,7 @@ impl SendWorkflowStepActionInputBuilder {
     }
     /// <p>The reason why this action is sent.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason why this action is sent.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,26 +117,28 @@ impl SendWorkflowStepActionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`SendWorkflowStepActionInput`](crate::operation::send_workflow_step_action::SendWorkflowStepActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_workflow_step_action::SendWorkflowStepActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::send_workflow_step_action::SendWorkflowStepActionInput {
-            step_execution_id: self.step_execution_id,
-            image_build_version_arn: self.image_build_version_arn,
-            action: self.action,
-            reason: self.reason,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_workflow_step_action::SendWorkflowStepActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionInput {
+                step_execution_id: self.step_execution_id
+                ,
+                image_build_version_arn: self.image_build_version_arn
+                ,
+                action: self.action
+                ,
+                reason: self.reason
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

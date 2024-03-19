@@ -5,54 +5,50 @@ pub use crate::operation::list_cost_category_definitions::_list_cost_category_de
 
 impl ListCostCategoryDefinitionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_cost_category_definitions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_cost_category_definitions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListCostCategoryDefinitions`.
-///
+/// 
 /// <p>Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a <code>MaxResults</code> range up to 100.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsInputBuilder,
+                    inner: crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
-        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
-    > for ListCostCategoryDefinitionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
-            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
+                    crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
+                > for ListCostCategoryDefinitionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
+                        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListCostCategoryDefinitionsFluentBuilder {
     /// Creates a new `ListCostCategoryDefinitions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListCostCategoryDefinitionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_cost_category_definitions::ListCostCategoryDefinitions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
-        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_cost_category_definitions::ListCostCategoryDefinitions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput, crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator {
-        crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator {
+                                crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The date when the Cost Category was effective.</p>
     pub fn effective_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_on(input.into());
@@ -157,3 +144,4 @@ impl ListCostCategoryDefinitionsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

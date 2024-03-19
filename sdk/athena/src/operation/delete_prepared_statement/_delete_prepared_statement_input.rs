@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePreparedStatementInput {
+pub struct DeletePreparedStatementInput  {
     /// <p>The name of the prepared statement to delete.</p>
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
     pub work_group: ::std::option::Option<::std::string::String>,
 }
-impl DeletePreparedStatementInput {
+impl  DeletePreparedStatementInput  {
     /// <p>The name of the prepared statement to delete.</p>
-    pub fn statement_name(&self) -> ::std::option::Option<&str> {
+    pub fn statement_name(&self) -> ::std::option::Option<& str> {
         self.statement_name.as_deref()
     }
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
-    pub fn work_group(&self) -> ::std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<& str> {
         self.work_group.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeletePreparedStatementInputBuilder {
     }
     /// <p>The name of the prepared statement to delete.</p>
     pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_name = input;
-        self
+        self.statement_name = input; self
     }
     /// <p>The name of the prepared statement to delete.</p>
     pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeletePreparedStatementInputBuilder {
     }
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
     }
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.work_group
     }
     /// Consumes the builder and constructs a [`DeletePreparedStatementInput`](crate::operation::delete_prepared_statement::DeletePreparedStatementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_prepared_statement::DeletePreparedStatementInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_prepared_statement::DeletePreparedStatementInput {
-            statement_name: self.statement_name,
-            work_group: self.work_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_prepared_statement::DeletePreparedStatementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_prepared_statement::DeletePreparedStatementInput {
+                statement_name: self.statement_name
+                ,
+                work_group: self.work_group
+                ,
+            }
+        )
     }
 }
+

@@ -5,55 +5,51 @@ pub use crate::operation::describe_accelerator_offerings::_describe_accelerator_
 
 impl DescribeAcceleratorOfferingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_accelerator_offerings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_accelerator_offerings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeAcceleratorOfferings`.
-///
+/// 
 /// <p>Describes the locations in which a given accelerator type or set of types is present in a given region.</p>
 /// <p>February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder,
+                    inner: crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
-        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-    > for DescribeAcceleratorOfferingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
+                    crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
+                > for DescribeAcceleratorOfferingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
+                        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeAcceleratorOfferingsFluentBuilder {
     /// Creates a new `DescribeAcceleratorOfferings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
-        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput, crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
         self.inner = self.inner.location_type(input);
@@ -133,12 +120,13 @@ impl DescribeAcceleratorOfferingsFluentBuilder {
         self
     }
     /// <p>The list of accelerator types to describe.</p>
-    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_accelerator_types(input);
         self
     }
     /// <p>The list of accelerator types to describe.</p>
-    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_accelerator_types()
     }
 }
+

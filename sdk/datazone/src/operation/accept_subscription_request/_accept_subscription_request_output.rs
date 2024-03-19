@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AcceptSubscriptionRequestOutput {
+pub struct AcceptSubscriptionRequestOutput  {
     /// <p>The identifier of the subscription request.</p>
     pub id: ::std::string::String,
     /// <p>Specifies the Amazon DataZone user that accepted the specified subscription request.</p>
@@ -20,72 +20,66 @@ pub struct AcceptSubscriptionRequestOutput {
     /// <p>Specifies the reason for requesting a subscription to the asset.</p>
     pub request_reason: ::std::string::String,
     /// <p>Specifies the Amazon DataZone users who are subscribed to the asset specified in the subscription request.</p>
-    pub subscribed_principals: ::std::vec::Vec<crate::types::SubscribedPrincipal>,
+    pub subscribed_principals: ::std::vec::Vec::<crate::types::SubscribedPrincipal>,
     /// <p>Specifies the asset for which the subscription request was created.</p>
-    pub subscribed_listings: ::std::vec::Vec<crate::types::SubscribedListing>,
+    pub subscribed_listings: ::std::vec::Vec::<crate::types::SubscribedListing>,
     /// <p>Specifes the ID of the Amazon DataZone user who reviewed the subscription request.</p>
     pub reviewer_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the reason for accepting the subscription request.</p>
     pub decision_comment: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AcceptSubscriptionRequestOutput {
+impl  AcceptSubscriptionRequestOutput  {
     /// <p>The identifier of the subscription request.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Specifies the Amazon DataZone user that accepted the specified subscription request.</p>
-    pub fn created_by(&self) -> &str {
-        use std::ops::Deref;
-        self.created_by.deref()
+    pub fn created_by(&self) -> & str {
+        use std::ops::Deref; self.created_by.deref()
     }
     /// <p>Specifies the Amazon DataZone user who updated the subscription request.</p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
     /// <p>The unique identifier of the Amazon DataZone domain where the specified subscription request was accepted.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>Specifies the status of the subscription request.</p>
-    pub fn status(&self) -> &crate::types::SubscriptionRequestStatus {
+    pub fn status(&self) -> & crate::types::SubscriptionRequestStatus {
         &self.status
     }
     /// <p>The timestamp that specifies when the subscription request was accepted.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>Specifies the timestamp when subscription request was updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>Specifies the reason for requesting a subscription to the asset.</p>
-    pub fn request_reason(&self) -> &str {
-        use std::ops::Deref;
-        self.request_reason.deref()
+    pub fn request_reason(&self) -> & str {
+        use std::ops::Deref; self.request_reason.deref()
     }
     /// <p>Specifies the Amazon DataZone users who are subscribed to the asset specified in the subscription request.</p>
-    pub fn subscribed_principals(&self) -> &[crate::types::SubscribedPrincipal] {
-        use std::ops::Deref;
-        self.subscribed_principals.deref()
+    pub fn subscribed_principals(&self) -> & [crate::types::SubscribedPrincipal] {
+        use std::ops::Deref; self.subscribed_principals.deref()
     }
     /// <p>Specifies the asset for which the subscription request was created.</p>
-    pub fn subscribed_listings(&self) -> &[crate::types::SubscribedListing] {
-        use std::ops::Deref;
-        self.subscribed_listings.deref()
+    pub fn subscribed_listings(&self) -> & [crate::types::SubscribedListing] {
+        use std::ops::Deref; self.subscribed_listings.deref()
     }
     /// <p>Specifes the ID of the Amazon DataZone user who reviewed the subscription request.</p>
-    pub fn reviewer_id(&self) -> ::std::option::Option<&str> {
+    pub fn reviewer_id(&self) -> ::std::option::Option<& str> {
         self.reviewer_id.as_deref()
     }
     /// <p>Specifies the reason for accepting the subscription request.</p>
-    pub fn decision_comment(&self) -> ::std::option::Option<&str> {
+    pub fn decision_comment(&self) -> ::std::option::Option<& str> {
         self.decision_comment.as_deref()
     }
 }
-impl ::std::fmt::Debug for AcceptSubscriptionRequestOutput {
+impl  ::std::fmt::Debug for AcceptSubscriptionRequestOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AcceptSubscriptionRequestOutput");
         formatter.field("id", &self.id);
@@ -105,10 +99,10 @@ impl ::std::fmt::Debug for AcceptSubscriptionRequestOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for AcceptSubscriptionRequestOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AcceptSubscriptionRequestOutput {
     /// Creates a new builder-style object to manufacture [`AcceptSubscriptionRequestOutput`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput).
     pub fn builder() -> crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder {
@@ -128,8 +122,8 @@ pub struct AcceptSubscriptionRequestOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) request_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) subscribed_principals: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipal>>,
-    pub(crate) subscribed_listings: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListing>>,
+    pub(crate) subscribed_principals: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedPrincipal>>,
+    pub(crate) subscribed_listings: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedListing>>,
     pub(crate) reviewer_id: ::std::option::Option<::std::string::String>,
     pub(crate) decision_comment: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -143,8 +137,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>The identifier of the subscription request.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the subscription request.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +151,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>Specifies the Amazon DataZone user that accepted the specified subscription request.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Specifies the Amazon DataZone user that accepted the specified subscription request.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +164,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>Specifies the Amazon DataZone user who updated the subscription request.</p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p>Specifies the Amazon DataZone user who updated the subscription request.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +178,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>The unique identifier of the Amazon DataZone domain where the specified subscription request was accepted.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the Amazon DataZone domain where the specified subscription request was accepted.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +192,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>Specifies the status of the subscription request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SubscriptionRequestStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies the status of the subscription request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SubscriptionRequestStatus> {
@@ -217,8 +206,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>The timestamp that specifies when the subscription request was accepted.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp that specifies when the subscription request was accepted.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -232,8 +220,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>Specifies the timestamp when subscription request was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>Specifies the timestamp when subscription request was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -247,8 +234,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>Specifies the reason for requesting a subscription to the asset.</p>
     pub fn set_request_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_reason = input;
-        self
+        self.request_reason = input; self
     }
     /// <p>Specifies the reason for requesting a subscription to the asset.</p>
     pub fn get_request_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,17 +247,16 @@ impl AcceptSubscriptionRequestOutputBuilder {
     /// <p>Specifies the Amazon DataZone users who are subscribed to the asset specified in the subscription request.</p>
     pub fn subscribed_principals(mut self, input: crate::types::SubscribedPrincipal) -> Self {
         let mut v = self.subscribed_principals.unwrap_or_default();
-        v.push(input);
-        self.subscribed_principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscribed_principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the Amazon DataZone users who are subscribed to the asset specified in the subscription request.</p>
-    pub fn set_subscribed_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipal>>) -> Self {
-        self.subscribed_principals = input;
-        self
+    pub fn set_subscribed_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedPrincipal>>) -> Self {
+        self.subscribed_principals = input; self
     }
     /// <p>Specifies the Amazon DataZone users who are subscribed to the asset specified in the subscription request.</p>
-    pub fn get_subscribed_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipal>> {
+    pub fn get_subscribed_principals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubscribedPrincipal>> {
         &self.subscribed_principals
     }
     /// Appends an item to `subscribed_listings`.
@@ -281,17 +266,16 @@ impl AcceptSubscriptionRequestOutputBuilder {
     /// <p>Specifies the asset for which the subscription request was created.</p>
     pub fn subscribed_listings(mut self, input: crate::types::SubscribedListing) -> Self {
         let mut v = self.subscribed_listings.unwrap_or_default();
-        v.push(input);
-        self.subscribed_listings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscribed_listings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the asset for which the subscription request was created.</p>
-    pub fn set_subscribed_listings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListing>>) -> Self {
-        self.subscribed_listings = input;
-        self
+    pub fn set_subscribed_listings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedListing>>) -> Self {
+        self.subscribed_listings = input; self
     }
     /// <p>Specifies the asset for which the subscription request was created.</p>
-    pub fn get_subscribed_listings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedListing>> {
+    pub fn get_subscribed_listings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubscribedListing>> {
         &self.subscribed_listings
     }
     /// <p>Specifes the ID of the Amazon DataZone user who reviewed the subscription request.</p>
@@ -301,8 +285,7 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>Specifes the ID of the Amazon DataZone user who reviewed the subscription request.</p>
     pub fn set_reviewer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reviewer_id = input;
-        self
+        self.reviewer_id = input; self
     }
     /// <p>Specifes the ID of the Amazon DataZone user who reviewed the subscription request.</p>
     pub fn get_reviewer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,22 +298,21 @@ impl AcceptSubscriptionRequestOutputBuilder {
     }
     /// <p>Specifies the reason for accepting the subscription request.</p>
     pub fn set_decision_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.decision_comment = input;
-        self
+        self.decision_comment = input; self
     }
     /// <p>Specifies the reason for accepting the subscription request.</p>
     pub fn get_decision_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.decision_comment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AcceptSubscriptionRequestOutput`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder::id)
@@ -342,72 +324,63 @@ impl AcceptSubscriptionRequestOutputBuilder {
     /// - [`request_reason`](crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder::request_reason)
     /// - [`subscribed_principals`](crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder::subscribed_principals)
     /// - [`subscribed_listings`](crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder::subscribed_listings)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_by",
-                    "created_by was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            updated_by: self.updated_by,
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            request_reason: self.request_reason.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "request_reason",
-                    "request_reason was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            subscribed_principals: self.subscribed_principals.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subscribed_principals",
-                    "subscribed_principals was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            subscribed_listings: self.subscribed_listings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subscribed_listings",
-                    "subscribed_listings was not specified but it is required when building AcceptSubscriptionRequestOutput",
-                )
-            })?,
-            reviewer_id: self.reviewer_id,
-            decision_comment: self.decision_comment,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::accept_subscription_request::AcceptSubscriptionRequestOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                created_by: self.created_by
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_by", "created_by was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                updated_by: self.updated_by
+                ,
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                request_reason: self.request_reason
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("request_reason", "request_reason was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                subscribed_principals: self.subscribed_principals
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subscribed_principals", "subscribed_principals was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                subscribed_listings: self.subscribed_listings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subscribed_listings", "subscribed_listings was not specified but it is required when building AcceptSubscriptionRequestOutput")
+                    )?
+                ,
+                reviewer_id: self.reviewer_id
+                ,
+                decision_comment: self.decision_comment
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AcceptSubscriptionRequestOutputBuilder {
@@ -429,3 +402,4 @@ impl ::std::fmt::Debug for AcceptSubscriptionRequestOutputBuilder {
         formatter.finish()
     }
 }
+

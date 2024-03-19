@@ -3,23 +3,23 @@
 /// <p>Options that specify the subnets and security groups for an OpenSearch Ingestion VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcOptions {
+pub struct VpcOptions  {
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
-    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
+    pub subnet_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of security groups associated with the VPC endpoint.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl VpcOptions {
+impl  VpcOptions  {
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.subnet_ids.deref()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.subnet_ids.deref()
     }
     /// <p>A list of security groups associated with the VPC endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl VpcOptions {
@@ -33,8 +33,8 @@ impl VpcOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcOptionsBuilder {
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl VpcOptionsBuilder {
     /// Appends an item to `subnet_ids`.
@@ -44,17 +44,16 @@ impl VpcOptionsBuilder {
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
@@ -64,31 +63,33 @@ impl VpcOptionsBuilder {
     /// <p>A list of security groups associated with the VPC endpoint.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security groups associated with the VPC endpoint.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>A list of security groups associated with the VPC endpoint.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`subnet_ids`](crate::types::builders::VpcOptionsBuilder::subnet_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::VpcOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VpcOptions {
-            subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnet_ids",
-                    "subnet_ids was not specified but it is required when building VpcOptions",
-                )
-            })?,
-            security_group_ids: self.security_group_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VpcOptions {
+                subnet_ids: self.subnet_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnet_ids", "subnet_ids was not specified but it is required when building VpcOptions")
+                    )?
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+            }
+        )
     }
 }
+

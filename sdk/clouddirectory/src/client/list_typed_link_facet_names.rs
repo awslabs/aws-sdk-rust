@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTypedLinkFacetNames`](crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`schema_arn(impl Into<String>)`](crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::set_schema_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
-    /// - On success, responds with [`ListTypedLinkFacetNamesOutput`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput) with field(s):
+                            /// - On success, responds with [`ListTypedLinkFacetNamesOutput`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput) with field(s):
     ///   - [`facet_names(Option<Vec::<String>>)`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput::facet_names): <p>The names of typed link facets that exist within the schema.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListTypedLinkFacetNamesError>`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError)
+                            /// - On failure, responds with [`SdkError<ListTypedLinkFacetNamesError>`](crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError)
     pub fn list_typed_link_facet_names(&self) -> crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder {
-        crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

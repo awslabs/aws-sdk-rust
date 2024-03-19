@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCapabilityOutput {
+pub struct UpdateCapabilityOutput  {
     /// <p>Returns a system-assigned unique identifier for the capability.</p>
     pub capability_id: ::std::string::String,
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
@@ -14,57 +14,55 @@ pub struct UpdateCapabilityOutput {
     /// <p>Returns a structure that contains the details for a capability.</p>
     pub configuration: ::std::option::Option<crate::types::CapabilityConfiguration>,
     /// <p>Returns one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
-    pub instructions_documents: ::std::option::Option<::std::vec::Vec<crate::types::S3Location>>,
+    pub instructions_documents: ::std::option::Option<::std::vec::Vec::<crate::types::S3Location>>,
     /// <p>Returns a timestamp for creation date and time of the capability.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>Returns a timestamp for last time the capability was modified.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateCapabilityOutput {
+impl  UpdateCapabilityOutput  {
     /// <p>Returns a system-assigned unique identifier for the capability.</p>
-    pub fn capability_id(&self) -> &str {
-        use std::ops::Deref;
-        self.capability_id.deref()
+    pub fn capability_id(&self) -> & str {
+        use std::ops::Deref; self.capability_id.deref()
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
-    pub fn capability_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.capability_arn.deref()
+    pub fn capability_arn(&self) -> & str {
+        use std::ops::Deref; self.capability_arn.deref()
     }
     /// <p>Returns the name of the capability, used to identify it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
-    pub fn r#type(&self) -> &crate::types::CapabilityType {
+    pub fn r#type(&self) -> & crate::types::CapabilityType {
         &self.r#type
     }
     /// <p>Returns a structure that contains the details for a capability.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::CapabilityConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::CapabilityConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Returns one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instructions_documents.is_none()`.
-    pub fn instructions_documents(&self) -> &[crate::types::S3Location] {
-        self.instructions_documents.as_deref().unwrap_or_default()
+    pub fn instructions_documents(&self) -> & [crate::types::S3Location] {
+        self.instructions_documents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Returns a timestamp for creation date and time of the capability.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>Returns a timestamp for last time the capability was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateCapabilityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateCapabilityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCapabilityOutput`](crate::operation::update_capability::UpdateCapabilityOutput).
     pub fn builder() -> crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder {
@@ -81,7 +79,7 @@ pub struct UpdateCapabilityOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::CapabilityType>,
     pub(crate) configuration: ::std::option::Option<crate::types::CapabilityConfiguration>,
-    pub(crate) instructions_documents: ::std::option::Option<::std::vec::Vec<crate::types::S3Location>>,
+    pub(crate) instructions_documents: ::std::option::Option<::std::vec::Vec::<crate::types::S3Location>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -95,8 +93,7 @@ impl UpdateCapabilityOutputBuilder {
     }
     /// <p>Returns a system-assigned unique identifier for the capability.</p>
     pub fn set_capability_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capability_id = input;
-        self
+        self.capability_id = input; self
     }
     /// <p>Returns a system-assigned unique identifier for the capability.</p>
     pub fn get_capability_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl UpdateCapabilityOutputBuilder {
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
     pub fn set_capability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capability_arn = input;
-        self
+        self.capability_arn = input; self
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
     pub fn get_capability_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl UpdateCapabilityOutputBuilder {
     }
     /// <p>Returns the name of the capability, used to identify it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Returns the name of the capability, used to identify it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +135,7 @@ impl UpdateCapabilityOutputBuilder {
     }
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CapabilityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CapabilityType> {
@@ -155,8 +149,7 @@ impl UpdateCapabilityOutputBuilder {
     }
     /// <p>Returns a structure that contains the details for a capability.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CapabilityConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Returns a structure that contains the details for a capability.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CapabilityConfiguration> {
@@ -169,17 +162,16 @@ impl UpdateCapabilityOutputBuilder {
     /// <p>Returns one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
     pub fn instructions_documents(mut self, input: crate::types::S3Location) -> Self {
         let mut v = self.instructions_documents.unwrap_or_default();
-        v.push(input);
-        self.instructions_documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instructions_documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
-    pub fn set_instructions_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Location>>) -> Self {
-        self.instructions_documents = input;
-        self
+    pub fn set_instructions_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Location>>) -> Self {
+        self.instructions_documents = input; self
     }
     /// <p>Returns one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
-    pub fn get_instructions_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Location>> {
+    pub fn get_instructions_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Location>> {
         &self.instructions_documents
     }
     /// <p>Returns a timestamp for creation date and time of the capability.</p>
@@ -190,8 +182,7 @@ impl UpdateCapabilityOutputBuilder {
     }
     /// <p>Returns a timestamp for creation date and time of the capability.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Returns a timestamp for creation date and time of the capability.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,22 +195,21 @@ impl UpdateCapabilityOutputBuilder {
     }
     /// <p>Returns a timestamp for last time the capability was modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>Returns a timestamp for last time the capability was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateCapabilityOutput`](crate::operation::update_capability::UpdateCapabilityOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`capability_id`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::capability_id)
@@ -227,44 +217,43 @@ impl UpdateCapabilityOutputBuilder {
     /// - [`name`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::name)
     /// - [`r#type`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::r#type)
     /// - [`created_at`](crate::operation::update_capability::builders::UpdateCapabilityOutputBuilder::created_at)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_capability::UpdateCapabilityOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_capability::UpdateCapabilityOutput {
-            capability_id: self.capability_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capability_id",
-                    "capability_id was not specified but it is required when building UpdateCapabilityOutput",
-                )
-            })?,
-            capability_arn: self.capability_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capability_arn",
-                    "capability_arn was not specified but it is required when building UpdateCapabilityOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateCapabilityOutput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building UpdateCapabilityOutput",
-                )
-            })?,
-            configuration: self.configuration,
-            instructions_documents: self.instructions_documents,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building UpdateCapabilityOutput",
-                )
-            })?,
-            modified_at: self.modified_at,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_capability::UpdateCapabilityOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_capability::UpdateCapabilityOutput {
+                capability_id: self.capability_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capability_id", "capability_id was not specified but it is required when building UpdateCapabilityOutput")
+                    )?
+                ,
+                capability_arn: self.capability_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capability_arn", "capability_arn was not specified but it is required when building UpdateCapabilityOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdateCapabilityOutput")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building UpdateCapabilityOutput")
+                    )?
+                ,
+                configuration: self.configuration
+                ,
+                instructions_documents: self.instructions_documents
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building UpdateCapabilityOutput")
+                    )?
+                ,
+                modified_at: self.modified_at
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

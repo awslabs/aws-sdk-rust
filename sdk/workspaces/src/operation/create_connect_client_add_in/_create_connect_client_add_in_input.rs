@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectClientAddInInput {
+pub struct CreateConnectClientAddInInput  {
     /// <p>The directory identifier for which to configure the client add-in.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the client add-in.</p>
@@ -10,17 +10,17 @@ pub struct CreateConnectClientAddInInput {
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl CreateConnectClientAddInInput {
+impl  CreateConnectClientAddInInput  {
     /// <p>The directory identifier for which to configure the client add-in.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The name of the client add-in.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateConnectClientAddInInputBuilder {
     }
     /// <p>The directory identifier for which to configure the client add-in.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The directory identifier for which to configure the client add-in.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateConnectClientAddInInputBuilder {
     }
     /// <p>The name of the client add-in.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the client add-in.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl CreateConnectClientAddInInputBuilder {
     }
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
     /// Consumes the builder and constructs a [`CreateConnectClientAddInInput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput {
-            resource_id: self.resource_id,
-            name: self.name,
-            url: self.url,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput {
+                resource_id: self.resource_id
+                ,
+                name: self.name
+                ,
+                url: self.url
+                ,
+            }
+        )
     }
 }
+

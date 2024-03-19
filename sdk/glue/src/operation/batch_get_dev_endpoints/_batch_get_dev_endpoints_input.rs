@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDevEndpointsInput {
+pub struct BatchGetDevEndpointsInput  {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub dev_endpoint_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dev_endpoint_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetDevEndpointsInput {
+impl  BatchGetDevEndpointsInput  {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dev_endpoint_names.is_none()`.
-    pub fn dev_endpoint_names(&self) -> &[::std::string::String] {
-        self.dev_endpoint_names.as_deref().unwrap_or_default()
+    pub fn dev_endpoint_names(&self) -> & [::std::string::String] {
+        self.dev_endpoint_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetDevEndpointsInput {
@@ -25,7 +26,7 @@ impl BatchGetDevEndpointsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDevEndpointsInputBuilder {
-    pub(crate) dev_endpoint_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dev_endpoint_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetDevEndpointsInputBuilder {
     /// Appends an item to `dev_endpoint_names`.
@@ -35,26 +36,26 @@ impl BatchGetDevEndpointsInputBuilder {
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
     pub fn dev_endpoint_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dev_endpoint_names.unwrap_or_default();
-        v.push(input.into());
-        self.dev_endpoint_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dev_endpoint_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub fn set_dev_endpoint_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dev_endpoint_names = input;
-        self
+    pub fn set_dev_endpoint_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dev_endpoint_names = input; self
     }
     /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
-    pub fn get_dev_endpoint_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dev_endpoint_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dev_endpoint_names
     }
     /// Consumes the builder and constructs a [`BatchGetDevEndpointsInput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput {
-            dev_endpoint_names: self.dev_endpoint_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput {
+                dev_endpoint_names: self.dev_endpoint_names
+                ,
+            }
+        )
     }
 }
+

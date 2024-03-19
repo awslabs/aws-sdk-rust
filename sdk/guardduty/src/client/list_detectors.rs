@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDetectors`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::set_max_results):<br>required: **false**<br><p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::set_next_token):<br>required: **false**<br><p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p><br>
-    /// - On success, responds with [`ListDetectorsOutput`](crate::operation::list_detectors::ListDetectorsOutput) with field(s):
+                            /// - On success, responds with [`ListDetectorsOutput`](crate::operation::list_detectors::ListDetectorsOutput) with field(s):
     ///   - [`detector_ids(Option<Vec::<String>>)`](crate::operation::list_detectors::ListDetectorsOutput::detector_ids): <p>A list of detector IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_detectors::ListDetectorsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    /// - On failure, responds with [`SdkError<ListDetectorsError>`](crate::operation::list_detectors::ListDetectorsError)
+                            /// - On failure, responds with [`SdkError<ListDetectorsError>`](crate::operation::list_detectors::ListDetectorsError)
     pub fn list_detectors(&self) -> crate::operation::list_detectors::builders::ListDetectorsFluentBuilder {
-        crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_detectors::builders::ListDetectorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPackageConfigurationInput {}
+pub struct GetPackageConfigurationInput  {
+}
 impl GetPackageConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetPackageConfigurationInput`](crate::operation::get_package_configuration::GetPackageConfigurationInput).
     pub fn builder() -> crate::operation::get_package_configuration::builders::GetPackageConfigurationInputBuilder {
@@ -13,15 +14,15 @@ impl GetPackageConfigurationInput {
 /// A builder for [`GetPackageConfigurationInput`](crate::operation::get_package_configuration::GetPackageConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetPackageConfigurationInputBuilder {}
+pub struct GetPackageConfigurationInputBuilder {
+}
 impl GetPackageConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetPackageConfigurationInput`](crate::operation::get_package_configuration::GetPackageConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_package_configuration::GetPackageConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_package_configuration::GetPackageConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_package_configuration::GetPackageConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_package_configuration::GetPackageConfigurationInput {
+            }
+        )
     }
 }
+

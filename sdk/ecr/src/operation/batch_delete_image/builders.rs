@@ -5,56 +5,52 @@ pub use crate::operation::batch_delete_image::_batch_delete_image_input::BatchDe
 
 impl BatchDeleteImageInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_image::BatchDeleteImageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_delete_image::BatchDeleteImageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_delete_image();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_delete_image::BatchDeleteImageOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_delete_image::BatchDeleteImageError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_delete_image();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchDeleteImage`.
-///
+/// 
 /// <p>Deletes a list of specified images within a repository. Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.</p>
 /// <p>You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag from an image, the image is deleted from your repository.</p>
 /// <p>You can completely delete an image (and all of its tags) by specifying the image's digest in your request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_delete_image::builders::BatchDeleteImageInputBuilder,
+                    inner: crate::operation::batch_delete_image::builders::BatchDeleteImageInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_delete_image::BatchDeleteImageOutput,
-        crate::operation::batch_delete_image::BatchDeleteImageError,
-    > for BatchDeleteImageFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_delete_image::BatchDeleteImageOutput,
-            crate::operation::batch_delete_image::BatchDeleteImageError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_delete_image::BatchDeleteImageOutput,
+                    crate::operation::batch_delete_image::BatchDeleteImageError,
+                > for BatchDeleteImageFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_delete_image::BatchDeleteImageOutput,
+                        crate::operation::batch_delete_image::BatchDeleteImageError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchDeleteImageFluentBuilder {
     /// Creates a new `BatchDeleteImage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl BatchDeleteImageFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_image::BatchDeleteImageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_delete_image::BatchDeleteImageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_delete_image::BatchDeleteImage::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_delete_image::BatchDeleteImage::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_delete_image::BatchDeleteImageOutput,
-        crate::operation::batch_delete_image::BatchDeleteImageError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_delete_image::BatchDeleteImageOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_image::BatchDeleteImageError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_delete_image::BatchDeleteImage::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_delete_image::BatchDeleteImage::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_delete_image::BatchDeleteImageOutput, crate::operation::batch_delete_image::BatchDeleteImageError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
@@ -148,12 +135,13 @@ impl BatchDeleteImageFluentBuilder {
         self
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageIdentifier>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageIdentifier>> {
         self.inner.get_image_ids()
     }
 }
+

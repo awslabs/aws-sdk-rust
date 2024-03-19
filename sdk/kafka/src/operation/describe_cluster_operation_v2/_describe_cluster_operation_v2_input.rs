@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClusterOperationV2Input {
+pub struct DescribeClusterOperationV2Input  {
     /// ARN of the cluster operation to describe.
     pub cluster_operation_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeClusterOperationV2Input {
+impl  DescribeClusterOperationV2Input  {
     /// ARN of the cluster operation to describe.
-    pub fn cluster_operation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeClusterOperationV2InputBuilder {
     }
     /// ARN of the cluster operation to describe.
     pub fn set_cluster_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_operation_arn = input;
-        self
+        self.cluster_operation_arn = input; self
     }
     /// ARN of the cluster operation to describe.
     pub fn get_cluster_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_operation_arn
     }
     /// Consumes the builder and constructs a [`DescribeClusterOperationV2Input`](crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input {
-            cluster_operation_arn: self.cluster_operation_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input {
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
+            }
+        )
     }
 }
+

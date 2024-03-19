@@ -3,39 +3,40 @@
 /// <p>Updates findings with the new values provided in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFindingsInput {
+pub struct UpdateFindingsInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
     pub status: ::std::option::Option<crate::types::FindingStatusUpdate>,
     /// <p>The IDs of the findings to update.</p>
-    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ARN of the resource identified in the finding.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateFindingsInput {
+impl  UpdateFindingsInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> ::std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FindingStatusUpdate> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FindingStatusUpdate> {
         self.status.as_ref()
     }
     /// <p>The IDs of the findings to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
-    pub fn ids(&self) -> &[::std::string::String] {
-        self.ids.as_deref().unwrap_or_default()
+    pub fn ids(&self) -> & [::std::string::String] {
+        self.ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the resource identified in the finding.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -52,7 +53,7 @@ impl UpdateFindingsInput {
 pub struct UpdateFindingsInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FindingStatusUpdate>,
-    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -65,8 +66,7 @@ impl UpdateFindingsInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyzer_arn = input;
-        self
+        self.analyzer_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
     pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +80,7 @@ impl UpdateFindingsInputBuilder {
     }
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatusUpdate>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatusUpdate> {
@@ -94,17 +93,16 @@ impl UpdateFindingsInputBuilder {
     /// <p>The IDs of the findings to update.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the findings to update.</p>
-    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>The IDs of the findings to update.</p>
-    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ids
     }
     /// <p>The ARN of the resource identified in the finding.</p>
@@ -114,8 +112,7 @@ impl UpdateFindingsInputBuilder {
     }
     /// <p>The ARN of the resource identified in the finding.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the resource identified in the finding.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,23 +125,28 @@ impl UpdateFindingsInputBuilder {
     }
     /// <p>A client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A client token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateFindingsInput`](crate::operation::update_findings::UpdateFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_findings::UpdateFindingsInput {
-            analyzer_arn: self.analyzer_arn,
-            status: self.status,
-            ids: self.ids,
-            resource_arn: self.resource_arn,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_findings::UpdateFindingsInput {
+                analyzer_arn: self.analyzer_arn
+                ,
+                status: self.status
+                ,
+                ids: self.ids
+                ,
+                resource_arn: self.resource_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

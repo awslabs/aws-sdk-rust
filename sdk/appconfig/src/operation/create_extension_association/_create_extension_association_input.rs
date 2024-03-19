@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateExtensionAssociationInput {
+pub struct CreateExtensionAssociationInput  {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
@@ -10,13 +10,13 @@ pub struct CreateExtensionAssociationInput {
     /// <p>The ARN of an application, configuration profile, or environment.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateExtensionAssociationInput {
+impl  CreateExtensionAssociationInput  {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn extension_identifier(&self) -> ::std::option::Option<& str> {
         self.extension_identifier.as_deref()
     }
     /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
@@ -24,15 +24,15 @@ impl CreateExtensionAssociationInput {
         self.extension_version_number
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -50,8 +50,8 @@ pub struct CreateExtensionAssociationInputBuilder {
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) extension_version_number: ::std::option::Option<i32>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateExtensionAssociationInputBuilder {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
@@ -62,8 +62,7 @@ impl CreateExtensionAssociationInputBuilder {
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_identifier = input;
-        self
+        self.extension_identifier = input; self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CreateExtensionAssociationInputBuilder {
     }
     /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
     pub fn set_extension_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.extension_version_number = input;
-        self
+        self.extension_version_number = input; self
     }
     /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
     pub fn get_extension_version_number(&self) -> &::std::option::Option<i32> {
@@ -91,8 +89,7 @@ impl CreateExtensionAssociationInputBuilder {
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,17 +102,16 @@ impl CreateExtensionAssociationInputBuilder {
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Adds a key-value pair to `tags`.
@@ -125,32 +121,34 @@ impl CreateExtensionAssociationInputBuilder {
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateExtensionAssociationInput`](crate::operation::create_extension_association::CreateExtensionAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_extension_association::CreateExtensionAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_extension_association::CreateExtensionAssociationInput {
-            extension_identifier: self.extension_identifier,
-            extension_version_number: self.extension_version_number,
-            resource_identifier: self.resource_identifier,
-            parameters: self.parameters,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_extension_association::CreateExtensionAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_extension_association::CreateExtensionAssociationInput {
+                extension_identifier: self.extension_identifier
+                ,
+                extension_version_number: self.extension_version_number
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+                parameters: self.parameters
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

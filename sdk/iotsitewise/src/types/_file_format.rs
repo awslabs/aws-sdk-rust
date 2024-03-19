@@ -3,19 +3,19 @@
 /// <p>The file format of the data in S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileFormat {
+pub struct FileFormat  {
     /// <p>The file is in .CSV format.</p>
     pub csv: ::std::option::Option<crate::types::Csv>,
     /// <p>The file is in parquet format.</p>
     pub parquet: ::std::option::Option<crate::types::Parquet>,
 }
-impl FileFormat {
+impl  FileFormat  {
     /// <p>The file is in .CSV format.</p>
-    pub fn csv(&self) -> ::std::option::Option<&crate::types::Csv> {
+    pub fn csv(&self) -> ::std::option::Option<& crate::types::Csv> {
         self.csv.as_ref()
     }
     /// <p>The file is in parquet format.</p>
-    pub fn parquet(&self) -> ::std::option::Option<&crate::types::Parquet> {
+    pub fn parquet(&self) -> ::std::option::Option<& crate::types::Parquet> {
         self.parquet.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl FileFormatBuilder {
     }
     /// <p>The file is in .CSV format.</p>
     pub fn set_csv(mut self, input: ::std::option::Option<crate::types::Csv>) -> Self {
-        self.csv = input;
-        self
+        self.csv = input; self
     }
     /// <p>The file is in .CSV format.</p>
     pub fn get_csv(&self) -> &::std::option::Option<crate::types::Csv> {
@@ -55,8 +54,7 @@ impl FileFormatBuilder {
     }
     /// <p>The file is in parquet format.</p>
     pub fn set_parquet(mut self, input: ::std::option::Option<crate::types::Parquet>) -> Self {
-        self.parquet = input;
-        self
+        self.parquet = input; self
     }
     /// <p>The file is in parquet format.</p>
     pub fn get_parquet(&self) -> &::std::option::Option<crate::types::Parquet> {
@@ -65,8 +63,11 @@ impl FileFormatBuilder {
     /// Consumes the builder and constructs a [`FileFormat`](crate::types::FileFormat).
     pub fn build(self) -> crate::types::FileFormat {
         crate::types::FileFormat {
-            csv: self.csv,
-            parquet: self.parquet,
+            csv: self.csv
+            ,
+            parquet: self.parquet
+            ,
         }
     }
 }
+

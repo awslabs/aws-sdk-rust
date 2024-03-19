@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceInput {
+pub struct DeleteInstanceInput  {
     /// <p>The name of the instance to delete.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
     pub force_delete_add_ons: ::std::option::Option<bool>,
 }
-impl DeleteInstanceInput {
+impl  DeleteInstanceInput  {
     /// <p>The name of the instance to delete.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
@@ -41,8 +41,7 @@ impl DeleteInstanceInputBuilder {
     }
     /// <p>The name of the instance to delete.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the instance to delete.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeleteInstanceInputBuilder {
     }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
     pub fn set_force_delete_add_ons(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete_add_ons = input;
-        self
+        self.force_delete_add_ons = input; self
     }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
     pub fn get_force_delete_add_ons(&self) -> &::std::option::Option<bool> {
         &self.force_delete_add_ons
     }
     /// Consumes the builder and constructs a [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_instance::DeleteInstanceInput {
-            instance_name: self.instance_name,
-            force_delete_add_ons: self.force_delete_add_ons,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_instance::DeleteInstanceInput {
+                instance_name: self.instance_name
+                ,
+                force_delete_add_ons: self.force_delete_add_ons
+                ,
+            }
+        )
     }
 }
+

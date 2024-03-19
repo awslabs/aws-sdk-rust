@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCommandInvocationInput {
+pub struct GetCommandInvocationInput  {
     /// <p>(Required) The parent command ID of the invocation plugin.</p>
     pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
@@ -11,18 +11,18 @@ pub struct GetCommandInvocationInput {
     /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
     pub plugin_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCommandInvocationInput {
+impl  GetCommandInvocationInput  {
     /// <p>(Required) The parent command ID of the invocation plugin.</p>
-    pub fn command_id(&self) -> ::std::option::Option<&str> {
+    pub fn command_id(&self) -> ::std::option::Option<& str> {
         self.command_id.as_deref()
     }
     /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
     /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
-    pub fn plugin_name(&self) -> ::std::option::Option<&str> {
+    pub fn plugin_name(&self) -> ::std::option::Option<& str> {
         self.plugin_name.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl GetCommandInvocationInputBuilder {
     }
     /// <p>(Required) The parent command ID of the invocation plugin.</p>
     pub fn set_command_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command_id = input;
-        self
+        self.command_id = input; self
     }
     /// <p>(Required) The parent command ID of the invocation plugin.</p>
     pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl GetCommandInvocationInputBuilder {
     }
     /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl GetCommandInvocationInputBuilder {
     /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
     /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
     pub fn set_plugin_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_name = input;
-        self
+        self.plugin_name = input; self
     }
     /// <p>The name of the step for which you want detailed results. If the document contains only one step, you can omit the name and details for that step. If the document contains more than one step, you must specify the name of the step for which you want to view details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.</p>
     /// <p>To find the <code>PluginName</code>, check the document content and find the name of the step you want details for. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
@@ -90,14 +87,17 @@ impl GetCommandInvocationInputBuilder {
         &self.plugin_name
     }
     /// Consumes the builder and constructs a [`GetCommandInvocationInput`](crate::operation::get_command_invocation::GetCommandInvocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_command_invocation::GetCommandInvocationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_command_invocation::GetCommandInvocationInput {
-            command_id: self.command_id,
-            instance_id: self.instance_id,
-            plugin_name: self.plugin_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_command_invocation::GetCommandInvocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_command_invocation::GetCommandInvocationInput {
+                command_id: self.command_id
+                ,
+                instance_id: self.instance_id
+                ,
+                plugin_name: self.plugin_name
+                ,
+            }
+        )
     }
 }
+

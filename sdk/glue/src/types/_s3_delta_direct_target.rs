@@ -3,13 +3,13 @@
 /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DeltaDirectTarget {
+pub struct S3DeltaDirectTarget  {
     /// <p>The name of the data target.</p>
     pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the data target.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub partition_keys: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
     pub path: ::std::string::String,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
@@ -17,46 +17,44 @@ pub struct S3DeltaDirectTarget {
     /// <p>Specifies the data output format for the target.</p>
     pub format: crate::types::TargetFormat,
     /// <p>Specifies additional connection options for the connector.</p>
-    pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub additional_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
-impl S3DeltaDirectTarget {
+impl  S3DeltaDirectTarget  {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
-    pub fn partition_keys(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        self.partition_keys.as_deref().unwrap_or_default()
+    pub fn partition_keys(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        self.partition_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
-    pub fn path(&self) -> &str {
-        use std::ops::Deref;
-        self.path.deref()
+    pub fn path(&self) -> & str {
+        use std::ops::Deref; self.path.deref()
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn compression(&self) -> &crate::types::DeltaTargetCompressionType {
+    pub fn compression(&self) -> & crate::types::DeltaTargetCompressionType {
         &self.compression
     }
     /// <p>Specifies the data output format for the target.</p>
-    pub fn format(&self) -> &crate::types::TargetFormat {
+    pub fn format(&self) -> & crate::types::TargetFormat {
         &self.format
     }
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn additional_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn additional_options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.additional_options.as_ref()
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
+    pub fn schema_change_policy(&self) -> ::std::option::Option<& crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
 }
@@ -72,12 +70,12 @@ impl S3DeltaDirectTarget {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DeltaDirectTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) compression: ::std::option::Option<crate::types::DeltaTargetCompressionType>,
     pub(crate) format: ::std::option::Option<crate::types::TargetFormat>,
-    pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3DeltaDirectTargetBuilder {
@@ -89,8 +87,7 @@ impl S3DeltaDirectTargetBuilder {
     }
     /// <p>The name of the data target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,17 +100,16 @@ impl S3DeltaDirectTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// Appends an item to `partition_keys`.
@@ -121,19 +117,18 @@ impl S3DeltaDirectTargetBuilder {
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
     ///
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn partition_keys(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
-        v.push(input);
-        self.partition_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.partition_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.partition_keys = input;
-        self
+    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.partition_keys = input; self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.partition_keys
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
@@ -144,8 +139,7 @@ impl S3DeltaDirectTargetBuilder {
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +153,7 @@ impl S3DeltaDirectTargetBuilder {
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn set_compression(mut self, input: ::std::option::Option<crate::types::DeltaTargetCompressionType>) -> Self {
-        self.compression = input;
-        self
+        self.compression = input; self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::DeltaTargetCompressionType> {
@@ -174,8 +167,7 @@ impl S3DeltaDirectTargetBuilder {
     }
     /// <p>Specifies the data output format for the target.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::TargetFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Specifies the data output format for the target.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::TargetFormat> {
@@ -186,26 +178,18 @@ impl S3DeltaDirectTargetBuilder {
     /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
     ///
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn additional_options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.additional_options = input;
-        self
+    pub fn set_additional_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_options = input; self
     }
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn get_additional_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_additional_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.additional_options
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
@@ -215,8 +199,7 @@ impl S3DeltaDirectTargetBuilder {
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn set_schema_change_policy(mut self, input: ::std::option::Option<crate::types::DirectSchemaChangePolicy>) -> Self {
-        self.schema_change_policy = input;
-        self
+        self.schema_change_policy = input; self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::DirectSchemaChangePolicy> {
@@ -230,40 +213,41 @@ impl S3DeltaDirectTargetBuilder {
     /// - [`compression`](crate::types::builders::S3DeltaDirectTargetBuilder::compression)
     /// - [`format`](crate::types::builders::S3DeltaDirectTargetBuilder::format)
     pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaDirectTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3DeltaDirectTarget {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building S3DeltaDirectTarget",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building S3DeltaDirectTarget",
-                )
-            })?,
-            partition_keys: self.partition_keys,
-            path: self.path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "path",
-                    "path was not specified but it is required when building S3DeltaDirectTarget",
-                )
-            })?,
-            compression: self.compression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compression",
-                    "compression was not specified but it is required when building S3DeltaDirectTarget",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building S3DeltaDirectTarget",
-                )
-            })?,
-            additional_options: self.additional_options,
-            schema_change_policy: self.schema_change_policy,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3DeltaDirectTarget {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building S3DeltaDirectTarget")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building S3DeltaDirectTarget")
+                    )?
+                ,
+                partition_keys: self.partition_keys
+                ,
+                path: self.path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("path", "path was not specified but it is required when building S3DeltaDirectTarget")
+                    )?
+                ,
+                compression: self.compression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compression", "compression was not specified but it is required when building S3DeltaDirectTarget")
+                    )?
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building S3DeltaDirectTarget")
+                    )?
+                ,
+                additional_options: self.additional_options
+                ,
+                schema_change_policy: self.schema_change_policy
+                ,
+            }
+        )
     }
 }
+

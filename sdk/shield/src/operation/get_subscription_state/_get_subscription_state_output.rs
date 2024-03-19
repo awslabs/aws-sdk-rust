@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSubscriptionStateOutput {
+pub struct GetSubscriptionStateOutput  {
     /// <p>The status of the subscription.</p>
     pub subscription_state: crate::types::SubscriptionState,
     _request_id: Option<String>,
 }
-impl GetSubscriptionStateOutput {
+impl  GetSubscriptionStateOutput  {
     /// <p>The status of the subscription.</p>
-    pub fn subscription_state(&self) -> &crate::types::SubscriptionState {
+    pub fn subscription_state(&self) -> & crate::types::SubscriptionState {
         &self.subscription_state
     }
 }
 impl ::aws_types::request_id::RequestId for GetSubscriptionStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSubscriptionStateOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionStateOutput`](crate::operation::get_subscription_state::GetSubscriptionStateOutput).
     pub fn builder() -> crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder {
@@ -41,37 +41,35 @@ impl GetSubscriptionStateOutputBuilder {
     }
     /// <p>The status of the subscription.</p>
     pub fn set_subscription_state(mut self, input: ::std::option::Option<crate::types::SubscriptionState>) -> Self {
-        self.subscription_state = input;
-        self
+        self.subscription_state = input; self
     }
     /// <p>The status of the subscription.</p>
     pub fn get_subscription_state(&self) -> &::std::option::Option<crate::types::SubscriptionState> {
         &self.subscription_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSubscriptionStateOutput`](crate::operation::get_subscription_state::GetSubscriptionStateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`subscription_state`](crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder::subscription_state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_subscription_state::GetSubscriptionStateOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_subscription_state::GetSubscriptionStateOutput {
-            subscription_state: self.subscription_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subscription_state",
-                    "subscription_state was not specified but it is required when building GetSubscriptionStateOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_subscription_state::GetSubscriptionStateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_subscription_state::GetSubscriptionStateOutput {
+                subscription_state: self.subscription_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subscription_state", "subscription_state was not specified but it is required when building GetSubscriptionStateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateParticipantOutput {
+pub struct CreateParticipantOutput  {
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
     pub participant_credentials: ::std::option::Option<crate::types::ParticipantTokenCredentials>,
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub participant_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateParticipantOutput {
+impl  CreateParticipantOutput  {
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
-    pub fn participant_credentials(&self) -> ::std::option::Option<&crate::types::ParticipantTokenCredentials> {
+    pub fn participant_credentials(&self) -> ::std::option::Option<& crate::types::ParticipantTokenCredentials> {
         self.participant_credentials.as_ref()
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateParticipantOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateParticipantOutput {
     /// Creates a new builder-style object to manufacture [`CreateParticipantOutput`](crate::operation::create_participant::CreateParticipantOutput).
     pub fn builder() -> crate::operation::create_participant::builders::CreateParticipantOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateParticipantOutputBuilder {
     }
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
     pub fn set_participant_credentials(mut self, input: ::std::option::Option<crate::types::ParticipantTokenCredentials>) -> Self {
-        self.participant_credentials = input;
-        self
+        self.participant_credentials = input; self
     }
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
     pub fn get_participant_credentials(&self) -> &::std::option::Option<crate::types::ParticipantTokenCredentials> {
@@ -61,28 +60,30 @@ impl CreateParticipantOutputBuilder {
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.participant_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateParticipantOutput`](crate::operation::create_participant::CreateParticipantOutput).
     pub fn build(self) -> crate::operation::create_participant::CreateParticipantOutput {
         crate::operation::create_participant::CreateParticipantOutput {
-            participant_credentials: self.participant_credentials,
-            participant_id: self.participant_id,
+            participant_credentials: self.participant_credentials
+            ,
+            participant_id: self.participant_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

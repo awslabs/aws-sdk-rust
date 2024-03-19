@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkspaceBundleInput {
+pub struct UpdateWorkspaceBundleInput  {
     /// <p>The identifier of the bundle.</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the image.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateWorkspaceBundleInput {
+impl  UpdateWorkspaceBundleInput  {
     /// <p>The identifier of the bundle.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The identifier of the image.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateWorkspaceBundleInputBuilder {
     }
     /// <p>The identifier of the bundle.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The identifier of the bundle.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl UpdateWorkspaceBundleInputBuilder {
     }
     /// <p>The identifier of the image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The identifier of the image.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput {
-            bundle_id: self.bundle_id,
-            image_id: self.image_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput {
+                bundle_id: self.bundle_id
+                ,
+                image_id: self.image_id
+                ,
+            }
+        )
     }
 }
+

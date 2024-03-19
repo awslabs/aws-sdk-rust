@@ -3,20 +3,19 @@
 /// <p>The override parameters for a single analysis that is being imported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobAnalysisOverrideParameters {
+pub struct AssetBundleImportJobAnalysisOverrideParameters  {
     /// <p>The ID of the analysis that you ant to apply overrides to.</p>
     pub analysis_id: ::std::string::String,
     /// <p>A new name for the analysis.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl AssetBundleImportJobAnalysisOverrideParameters {
+impl  AssetBundleImportJobAnalysisOverrideParameters  {
     /// <p>The ID of the analysis that you ant to apply overrides to.</p>
-    pub fn analysis_id(&self) -> &str {
-        use std::ops::Deref;
-        self.analysis_id.deref()
+    pub fn analysis_id(&self) -> & str {
+        use std::ops::Deref; self.analysis_id.deref()
     }
     /// <p>A new name for the analysis.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl AssetBundleImportJobAnalysisOverrideParametersBuilder {
     }
     /// <p>The ID of the analysis that you ant to apply overrides to.</p>
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_id = input;
-        self
+        self.analysis_id = input; self
     }
     /// <p>The ID of the analysis that you ant to apply overrides to.</p>
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AssetBundleImportJobAnalysisOverrideParametersBuilder {
     }
     /// <p>A new name for the analysis.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A new name for the analysis.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,17 +64,18 @@ impl AssetBundleImportJobAnalysisOverrideParametersBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobAnalysisOverrideParameters`](crate::types::AssetBundleImportJobAnalysisOverrideParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`analysis_id`](crate::types::builders::AssetBundleImportJobAnalysisOverrideParametersBuilder::analysis_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobAnalysisOverrideParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobAnalysisOverrideParameters {
-            analysis_id: self.analysis_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analysis_id",
-                    "analysis_id was not specified but it is required when building AssetBundleImportJobAnalysisOverrideParameters",
-                )
-            })?,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobAnalysisOverrideParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobAnalysisOverrideParameters {
+                analysis_id: self.analysis_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_id", "analysis_id was not specified but it is required when building AssetBundleImportJobAnalysisOverrideParameters")
+                    )?
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

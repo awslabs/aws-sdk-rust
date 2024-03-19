@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupInput {
+pub struct UpdateGroupInput  {
     /// <p>The name of the group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The user pool ID for the user pool.</p>
@@ -14,21 +14,21 @@ pub struct UpdateGroupInput {
     /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
     pub precedence: ::std::option::Option<i32>,
 }
-impl UpdateGroupInput {
+impl  UpdateGroupInput  {
     /// <p>The name of the group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>A string containing the new description of the group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
@@ -62,8 +62,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>A string containing the new description of the group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A string containing the new description of the group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The new role Amazon Resource Name (ARN) for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
     pub fn set_precedence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.precedence = input;
-        self
+        self.precedence = input; self
     }
     /// <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
     pub fn get_precedence(&self) -> &::std::option::Option<i32> {
@@ -128,12 +123,20 @@ impl UpdateGroupInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
-            group_name: self.group_name,
-            user_pool_id: self.user_pool_id,
-            description: self.description,
-            role_arn: self.role_arn,
-            precedence: self.precedence,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_group::UpdateGroupInput {
+                group_name: self.group_name
+                ,
+                user_pool_id: self.user_pool_id
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                precedence: self.precedence
+                ,
+            }
+        )
     }
 }
+

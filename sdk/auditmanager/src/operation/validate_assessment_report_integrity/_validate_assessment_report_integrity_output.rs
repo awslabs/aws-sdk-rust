@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidateAssessmentReportIntegrityOutput {
+pub struct ValidateAssessmentReportIntegrityOutput  {
     /// <p>Specifies whether the signature key is valid.</p>
     pub signature_valid: ::std::option::Option<bool>,
     /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
@@ -12,38 +12,39 @@ pub struct ValidateAssessmentReportIntegrityOutput {
     /// <p>The unique identifier for the validation signature key.</p>
     pub signature_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents any errors that occurred when validating the assessment report.</p>
-    pub validation_errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub validation_errors: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ValidateAssessmentReportIntegrityOutput {
+impl  ValidateAssessmentReportIntegrityOutput  {
     /// <p>Specifies whether the signature key is valid.</p>
     pub fn signature_valid(&self) -> ::std::option::Option<bool> {
         self.signature_valid
     }
     /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
-    pub fn signature_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn signature_algorithm(&self) -> ::std::option::Option<& str> {
         self.signature_algorithm.as_deref()
     }
     /// <p>The date and time signature that specifies when the assessment report was created.</p>
-    pub fn signature_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn signature_date_time(&self) -> ::std::option::Option<& str> {
         self.signature_date_time.as_deref()
     }
     /// <p>The unique identifier for the validation signature key.</p>
-    pub fn signature_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn signature_key_id(&self) -> ::std::option::Option<& str> {
         self.signature_key_id.as_deref()
     }
     /// <p>Represents any errors that occurred when validating the assessment report.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_errors.is_none()`.
-    pub fn validation_errors(&self) -> &[::std::string::String] {
-        self.validation_errors.as_deref().unwrap_or_default()
+    pub fn validation_errors(&self) -> & [::std::string::String] {
+        self.validation_errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ValidateAssessmentReportIntegrityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ValidateAssessmentReportIntegrityOutput {
     /// Creates a new builder-style object to manufacture [`ValidateAssessmentReportIntegrityOutput`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput).
     pub fn builder() -> crate::operation::validate_assessment_report_integrity::builders::ValidateAssessmentReportIntegrityOutputBuilder {
@@ -59,7 +60,7 @@ pub struct ValidateAssessmentReportIntegrityOutputBuilder {
     pub(crate) signature_algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) signature_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) signature_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ValidateAssessmentReportIntegrityOutputBuilder {
@@ -70,8 +71,7 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     }
     /// <p>Specifies whether the signature key is valid.</p>
     pub fn set_signature_valid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.signature_valid = input;
-        self
+        self.signature_valid = input; self
     }
     /// <p>Specifies whether the signature key is valid.</p>
     pub fn get_signature_valid(&self) -> &::std::option::Option<bool> {
@@ -84,8 +84,7 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     }
     /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
     pub fn set_signature_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signature_algorithm = input;
-        self
+        self.signature_algorithm = input; self
     }
     /// <p>The signature algorithm that's used to code sign the assessment report file.</p>
     pub fn get_signature_algorithm(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     }
     /// <p>The date and time signature that specifies when the assessment report was created.</p>
     pub fn set_signature_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signature_date_time = input;
-        self
+        self.signature_date_time = input; self
     }
     /// <p>The date and time signature that specifies when the assessment report was created.</p>
     pub fn get_signature_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     }
     /// <p>The unique identifier for the validation signature key.</p>
     pub fn set_signature_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signature_key_id = input;
-        self
+        self.signature_key_id = input; self
     }
     /// <p>The unique identifier for the validation signature key.</p>
     pub fn get_signature_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,37 +123,42 @@ impl ValidateAssessmentReportIntegrityOutputBuilder {
     /// <p>Represents any errors that occurred when validating the assessment report.</p>
     pub fn validation_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
-        v.push(input.into());
-        self.validation_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.validation_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents any errors that occurred when validating the assessment report.</p>
-    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.validation_errors = input;
-        self
+    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.validation_errors = input; self
     }
     /// <p>Represents any errors that occurred when validating the assessment report.</p>
-    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.validation_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ValidateAssessmentReportIntegrityOutput`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput).
     pub fn build(self) -> crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput {
         crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput {
-            signature_valid: self.signature_valid,
-            signature_algorithm: self.signature_algorithm,
-            signature_date_time: self.signature_date_time,
-            signature_key_id: self.signature_key_id,
-            validation_errors: self.validation_errors,
+            signature_valid: self.signature_valid
+            ,
+            signature_algorithm: self.signature_algorithm
+            ,
+            signature_date_time: self.signature_date_time
+            ,
+            signature_key_id: self.signature_key_id
+            ,
+            validation_errors: self.validation_errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

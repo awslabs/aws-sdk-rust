@@ -3,7 +3,7 @@
 /// <p>Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeliveryStreamEncryptionConfigurationInput {
+pub struct DeliveryStreamEncryptionConfigurationInput  {
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a service-account CMK.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of customer master key (CMK) to use for encryption. The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>. When you invoke <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> with <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Firehose service to use the customer managed CMK to perform encryption and decryption. Firehose manages that grant.</p>
@@ -13,9 +13,9 @@ pub struct DeliveryStreamEncryptionConfigurationInput {
     /// </important>
     pub key_type: crate::types::KeyType,
 }
-impl DeliveryStreamEncryptionConfigurationInput {
+impl  DeliveryStreamEncryptionConfigurationInput  {
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a service-account CMK.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<& str> {
         self.key_arn.as_deref()
     }
     /// <p>Indicates the type of customer master key (CMK) to use for encryption. The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>. When you invoke <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> with <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Firehose service to use the customer managed CMK to perform encryption and decryption. Firehose manages that grant.</p>
@@ -23,7 +23,7 @@ impl DeliveryStreamEncryptionConfigurationInput {
     /// <p>You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> operation exceeds this limit, Firehose throws a <code>LimitExceededException</code>.</p><important>
     /// <p>To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.</p>
     /// </important>
-    pub fn key_type(&self) -> &crate::types::KeyType {
+    pub fn key_type(&self) -> & crate::types::KeyType {
         &self.key_type
     }
 }
@@ -49,8 +49,7 @@ impl DeliveryStreamEncryptionConfigurationInputBuilder {
     }
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a service-account CMK.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a service-account CMK.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl DeliveryStreamEncryptionConfigurationInputBuilder {
     /// <p>To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.</p>
     /// </important>
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
-        self.key_type = input;
-        self
+        self.key_type = input; self
     }
     /// <p>Indicates the type of customer master key (CMK) to use for encryption. The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>. When you invoke <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> with <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Firehose service to use the customer managed CMK to perform encryption and decryption. Firehose manages that grant.</p>
     /// <p>When you invoke <code>StartDeliveryStreamEncryption</code> to change the CMK for a delivery stream that is encrypted with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.</p>
@@ -86,17 +84,18 @@ impl DeliveryStreamEncryptionConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeliveryStreamEncryptionConfigurationInput`](crate::types::DeliveryStreamEncryptionConfigurationInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_type`](crate::types::builders::DeliveryStreamEncryptionConfigurationInputBuilder::key_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::DeliveryStreamEncryptionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeliveryStreamEncryptionConfigurationInput {
-            key_arn: self.key_arn,
-            key_type: self.key_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_type",
-                    "key_type was not specified but it is required when building DeliveryStreamEncryptionConfigurationInput",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::DeliveryStreamEncryptionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::DeliveryStreamEncryptionConfigurationInput {
+                key_arn: self.key_arn
+                ,
+                key_type: self.key_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_type", "key_type was not specified but it is required when building DeliveryStreamEncryptionConfigurationInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

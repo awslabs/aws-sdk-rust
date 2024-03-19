@@ -3,7 +3,7 @@
 /// <p>List of limits that are specific to a given instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdditionalLimit {
+pub struct AdditionalLimit  {
     /// <ul>
     /// <li>
     /// <p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
@@ -12,23 +12,24 @@ pub struct AdditionalLimit {
     /// </ul>
     pub limit_name: ::std::option::Option<::std::string::String>,
     /// <p>The values of the additional instance type limits.</p>
-    pub limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub limit_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AdditionalLimit {
+impl  AdditionalLimit  {
     /// <ul>
     /// <li>
     /// <p><code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the maximum number of data nodes of a given instance type a master node can support.</p></li>
     /// <li>
     /// <p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
     /// </ul>
-    pub fn limit_name(&self) -> ::std::option::Option<&str> {
+    pub fn limit_name(&self) -> ::std::option::Option<& str> {
         self.limit_name.as_deref()
     }
     /// <p>The values of the additional instance type limits.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.limit_values.is_none()`.
-    pub fn limit_values(&self) -> &[::std::string::String] {
-        self.limit_values.as_deref().unwrap_or_default()
+    pub fn limit_values(&self) -> & [::std::string::String] {
+        self.limit_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AdditionalLimit {
@@ -43,7 +44,7 @@ impl AdditionalLimit {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalLimitBuilder {
     pub(crate) limit_name: ::std::option::Option<::std::string::String>,
-    pub(crate) limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) limit_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AdditionalLimitBuilder {
     /// <ul>
@@ -63,8 +64,7 @@ impl AdditionalLimitBuilder {
     /// <p><code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies the maximum number of data nodes of a given instance type can exist without a master node governing them.</p></li>
     /// </ul>
     pub fn set_limit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.limit_name = input;
-        self
+        self.limit_name = input; self
     }
     /// <ul>
     /// <li>
@@ -82,24 +82,26 @@ impl AdditionalLimitBuilder {
     /// <p>The values of the additional instance type limits.</p>
     pub fn limit_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.limit_values.unwrap_or_default();
-        v.push(input.into());
-        self.limit_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.limit_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the additional instance type limits.</p>
-    pub fn set_limit_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.limit_values = input;
-        self
+    pub fn set_limit_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.limit_values = input; self
     }
     /// <p>The values of the additional instance type limits.</p>
-    pub fn get_limit_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_limit_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.limit_values
     }
     /// Consumes the builder and constructs a [`AdditionalLimit`](crate::types::AdditionalLimit).
     pub fn build(self) -> crate::types::AdditionalLimit {
         crate::types::AdditionalLimit {
-            limit_name: self.limit_name,
-            limit_values: self.limit_values,
+            limit_name: self.limit_name
+            ,
+            limit_values: self.limit_values
+            ,
         }
     }
 }
+

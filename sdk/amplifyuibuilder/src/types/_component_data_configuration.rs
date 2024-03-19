@@ -3,37 +3,38 @@
 /// <p>Describes the configuration for binding a component's properties to data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentDataConfiguration {
+pub struct ComponentDataConfiguration  {
     /// <p>The name of the data model to use to bind data to a component.</p>
     pub model: ::std::string::String,
     /// <p>Describes how to sort the component's properties.</p>
-    pub sort: ::std::option::Option<::std::vec::Vec<crate::types::SortProperty>>,
+    pub sort: ::std::option::Option<::std::vec::Vec::<crate::types::SortProperty>>,
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
     pub predicate: ::std::option::Option<crate::types::Predicate>,
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ComponentDataConfiguration {
+impl  ComponentDataConfiguration  {
     /// <p>The name of the data model to use to bind data to a component.</p>
-    pub fn model(&self) -> &str {
-        use std::ops::Deref;
-        self.model.deref()
+    pub fn model(&self) -> & str {
+        use std::ops::Deref; self.model.deref()
     }
     /// <p>Describes how to sort the component's properties.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort.is_none()`.
-    pub fn sort(&self) -> &[crate::types::SortProperty] {
-        self.sort.as_deref().unwrap_or_default()
+    pub fn sort(&self) -> & [crate::types::SortProperty] {
+        self.sort.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
-    pub fn predicate(&self) -> ::std::option::Option<&crate::types::Predicate> {
+    pub fn predicate(&self) -> ::std::option::Option<& crate::types::Predicate> {
         self.predicate.as_ref()
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identifiers.is_none()`.
-    pub fn identifiers(&self) -> &[::std::string::String] {
-        self.identifiers.as_deref().unwrap_or_default()
+    pub fn identifiers(&self) -> & [::std::string::String] {
+        self.identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ComponentDataConfiguration {
@@ -48,9 +49,9 @@ impl ComponentDataConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentDataConfigurationBuilder {
     pub(crate) model: ::std::option::Option<::std::string::String>,
-    pub(crate) sort: ::std::option::Option<::std::vec::Vec<crate::types::SortProperty>>,
+    pub(crate) sort: ::std::option::Option<::std::vec::Vec::<crate::types::SortProperty>>,
     pub(crate) predicate: ::std::option::Option<crate::types::Predicate>,
-    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ComponentDataConfigurationBuilder {
     /// <p>The name of the data model to use to bind data to a component.</p>
@@ -61,8 +62,7 @@ impl ComponentDataConfigurationBuilder {
     }
     /// <p>The name of the data model to use to bind data to a component.</p>
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>The name of the data model to use to bind data to a component.</p>
     pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,17 +75,16 @@ impl ComponentDataConfigurationBuilder {
     /// <p>Describes how to sort the component's properties.</p>
     pub fn sort(mut self, input: crate::types::SortProperty) -> Self {
         let mut v = self.sort.unwrap_or_default();
-        v.push(input);
-        self.sort = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sort = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes how to sort the component's properties.</p>
-    pub fn set_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortProperty>>) -> Self {
-        self.sort = input;
-        self
+    pub fn set_sort(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SortProperty>>) -> Self {
+        self.sort = input; self
     }
     /// <p>Describes how to sort the component's properties.</p>
-    pub fn get_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortProperty>> {
+    pub fn get_sort(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SortProperty>> {
         &self.sort
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
@@ -95,8 +94,7 @@ impl ComponentDataConfigurationBuilder {
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
-        self.predicate = input;
-        self
+        self.predicate = input; self
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
     pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
@@ -109,33 +107,37 @@ impl ComponentDataConfigurationBuilder {
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
     pub fn identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.identifiers = input;
-        self
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.identifiers = input; self
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.identifiers
     }
     /// Consumes the builder and constructs a [`ComponentDataConfiguration`](crate::types::ComponentDataConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`model`](crate::types::builders::ComponentDataConfigurationBuilder::model)
     pub fn build(self) -> ::std::result::Result<crate::types::ComponentDataConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ComponentDataConfiguration {
-            model: self.model.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model",
-                    "model was not specified but it is required when building ComponentDataConfiguration",
-                )
-            })?,
-            sort: self.sort,
-            predicate: self.predicate,
-            identifiers: self.identifiers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ComponentDataConfiguration {
+                model: self.model
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model", "model was not specified but it is required when building ComponentDataConfiguration")
+                    )?
+                ,
+                sort: self.sort
+                ,
+                predicate: self.predicate
+                ,
+                identifiers: self.identifiers
+                ,
+            }
+        )
     }
 }
+

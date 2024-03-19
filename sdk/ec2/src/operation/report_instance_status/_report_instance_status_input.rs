@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportInstanceStatusInput {
+pub struct ReportInstanceStatusInput  {
     /// <p>Descriptive text about the health state of your instance.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -10,7 +10,7 @@ pub struct ReportInstanceStatusInput {
     /// <p>The time at which the reported instance health state ended.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The instances.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The reason codes that describe the health state of your instance.</p>
     /// <ul>
     /// <li>
@@ -32,15 +32,15 @@ pub struct ReportInstanceStatusInput {
     /// <li>
     /// <p><code>other</code>: [explain using the description parameter]</p></li>
     /// </ul>
-    pub reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
+    pub reason_codes: ::std::option::Option<::std::vec::Vec::<crate::types::ReportInstanceReasonCodes>>,
     /// <p>The time at which the reported instance health state began.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of all instances listed.</p>
     pub status: ::std::option::Option<crate::types::ReportStatusType>,
 }
-impl ReportInstanceStatusInput {
+impl  ReportInstanceStatusInput  {
     /// <p>Descriptive text about the health state of your instance.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,14 +48,15 @@ impl ReportInstanceStatusInput {
         self.dry_run
     }
     /// <p>The time at which the reported instance health state ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[::std::string::String] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [::std::string::String] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The reason codes that describe the health state of your instance.</p>
     /// <ul>
@@ -78,17 +79,18 @@ impl ReportInstanceStatusInput {
     /// <li>
     /// <p><code>other</code>: [explain using the description parameter]</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reason_codes.is_none()`.
-    pub fn reason_codes(&self) -> &[crate::types::ReportInstanceReasonCodes] {
-        self.reason_codes.as_deref().unwrap_or_default()
+    pub fn reason_codes(&self) -> & [crate::types::ReportInstanceReasonCodes] {
+        self.reason_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time at which the reported instance health state began.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The status of all instances listed.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReportStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReportStatusType> {
         self.status.as_ref()
     }
 }
@@ -106,8 +108,8 @@ pub struct ReportInstanceStatusInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) reason_codes: ::std::option::Option<::std::vec::Vec::<crate::types::ReportInstanceReasonCodes>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ReportStatusType>,
 }
@@ -119,8 +121,7 @@ impl ReportInstanceStatusInputBuilder {
     }
     /// <p>Descriptive text about the health state of your instance.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Descriptive text about the health state of your instance.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +134,7 @@ impl ReportInstanceStatusInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -147,8 +147,7 @@ impl ReportInstanceStatusInputBuilder {
     }
     /// <p>The time at which the reported instance health state ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time at which the reported instance health state ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -161,17 +160,16 @@ impl ReportInstanceStatusInputBuilder {
     /// <p>The instances.</p>
     pub fn instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input.into());
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instances.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instances = input; self
     }
     /// <p>The instances.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instances
     }
     /// Appends an item to `reason_codes`.
@@ -201,9 +199,9 @@ impl ReportInstanceStatusInputBuilder {
     /// </ul>
     pub fn reason_codes(mut self, input: crate::types::ReportInstanceReasonCodes) -> Self {
         let mut v = self.reason_codes.unwrap_or_default();
-        v.push(input);
-        self.reason_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reason_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reason codes that describe the health state of your instance.</p>
     /// <ul>
@@ -226,9 +224,8 @@ impl ReportInstanceStatusInputBuilder {
     /// <li>
     /// <p><code>other</code>: [explain using the description parameter]</p></li>
     /// </ul>
-    pub fn set_reason_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>) -> Self {
-        self.reason_codes = input;
-        self
+    pub fn set_reason_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReportInstanceReasonCodes>>) -> Self {
+        self.reason_codes = input; self
     }
     /// <p>The reason codes that describe the health state of your instance.</p>
     /// <ul>
@@ -251,7 +248,7 @@ impl ReportInstanceStatusInputBuilder {
     /// <li>
     /// <p><code>other</code>: [explain using the description parameter]</p></li>
     /// </ul>
-    pub fn get_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
+    pub fn get_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReportInstanceReasonCodes>> {
         &self.reason_codes
     }
     /// <p>The time at which the reported instance health state began.</p>
@@ -261,8 +258,7 @@ impl ReportInstanceStatusInputBuilder {
     }
     /// <p>The time at which the reported instance health state began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time at which the reported instance health state began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -276,26 +272,32 @@ impl ReportInstanceStatusInputBuilder {
     }
     /// <p>The status of all instances listed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of all instances listed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatusType> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ReportInstanceStatusInput`](crate::operation::report_instance_status::ReportInstanceStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::report_instance_status::ReportInstanceStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::report_instance_status::ReportInstanceStatusInput {
-            description: self.description,
-            dry_run: self.dry_run,
-            end_time: self.end_time,
-            instances: self.instances,
-            reason_codes: self.reason_codes,
-            start_time: self.start_time,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::report_instance_status::ReportInstanceStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::report_instance_status::ReportInstanceStatusInput {
+                description: self.description
+                ,
+                dry_run: self.dry_run
+                ,
+                end_time: self.end_time
+                ,
+                instances: self.instances
+                ,
+                reason_codes: self.reason_codes
+                ,
+                start_time: self.start_time
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

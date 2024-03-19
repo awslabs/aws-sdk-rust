@@ -3,19 +3,19 @@
 /// <p>Specifies the details for the Amazon S3 file location that is being used with Amazon Web Services B2BI Data Interchange. File locations in Amazon S3 are identified using a combination of the bucket and key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>Specifies the name of the Amazon S3 bucket.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon S3 key for the file location.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>Specifies the name of the Amazon S3 bucket.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>Specifies the Amazon S3 key for the file location.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3LocationBuilder {
     }
     /// <p>Specifies the name of the Amazon S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>Specifies the name of the Amazon S3 bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3LocationBuilder {
     }
     /// <p>Specifies the Amazon S3 key for the file location.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Specifies the Amazon S3 key for the file location.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3LocationBuilder {
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            bucket_name: self.bucket_name,
-            key: self.key,
+            bucket_name: self.bucket_name
+            ,
+            key: self.key
+            ,
         }
     }
 }
+

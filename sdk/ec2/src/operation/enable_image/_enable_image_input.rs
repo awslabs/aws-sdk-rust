@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableImageInput {
+pub struct EnableImageInput  {
     /// <p>The ID of the AMI.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl EnableImageInput {
+impl  EnableImageInput  {
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,8 +41,7 @@ impl EnableImageInputBuilder {
     }
     /// <p>The ID of the AMI.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The ID of the AMI.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EnableImageInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -64,9 +62,14 @@ impl EnableImageInputBuilder {
     }
     /// Consumes the builder and constructs a [`EnableImageInput`](crate::operation::enable_image::EnableImageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::enable_image::EnableImageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_image::EnableImageInput {
-            image_id: self.image_id,
-            dry_run: self.dry_run,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::enable_image::EnableImageInput {
+                image_id: self.image_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

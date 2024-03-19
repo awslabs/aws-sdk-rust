@@ -3,7 +3,7 @@
 /// <p>Details about the LF-tag policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LfTagPolicyDetails {
+pub struct LfTagPolicyDetails  {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
     pub catalog_id: ::std::string::String,
     /// <p>The resource type for which the LF-tag policy applies.</p>
@@ -11,18 +11,17 @@ pub struct LfTagPolicyDetails {
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
     pub resource_details: ::std::option::Option<crate::types::LfResourceDetails>,
 }
-impl LfTagPolicyDetails {
+impl  LfTagPolicyDetails  {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
-    pub fn catalog_id(&self) -> &str {
-        use std::ops::Deref;
-        self.catalog_id.deref()
+    pub fn catalog_id(&self) -> & str {
+        use std::ops::Deref; self.catalog_id.deref()
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub fn resource_type(&self) -> &crate::types::LfResourceType {
+    pub fn resource_type(&self) -> & crate::types::LfResourceType {
         &self.resource_type
     }
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
-    pub fn resource_details(&self) -> ::std::option::Option<&crate::types::LfResourceDetails> {
+    pub fn resource_details(&self) -> ::std::option::Option<& crate::types::LfResourceDetails> {
         self.resource_details.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl LfTagPolicyDetailsBuilder {
     }
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl LfTagPolicyDetailsBuilder {
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::LfResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::LfResourceType> {
@@ -80,8 +77,7 @@ impl LfTagPolicyDetailsBuilder {
     }
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
     pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::LfResourceDetails>) -> Self {
-        self.resource_details = input;
-        self
+        self.resource_details = input; self
     }
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
     pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::LfResourceDetails> {
@@ -92,20 +88,22 @@ impl LfTagPolicyDetailsBuilder {
     /// - [`catalog_id`](crate::types::builders::LfTagPolicyDetailsBuilder::catalog_id)
     /// - [`resource_type`](crate::types::builders::LfTagPolicyDetailsBuilder::resource_type)
     pub fn build(self) -> ::std::result::Result<crate::types::LfTagPolicyDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LfTagPolicyDetails {
-            catalog_id: self.catalog_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "catalog_id",
-                    "catalog_id was not specified but it is required when building LfTagPolicyDetails",
-                )
-            })?,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building LfTagPolicyDetails",
-                )
-            })?,
-            resource_details: self.resource_details,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LfTagPolicyDetails {
+                catalog_id: self.catalog_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("catalog_id", "catalog_id was not specified but it is required when building LfTagPolicyDetails")
+                    )?
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building LfTagPolicyDetails")
+                    )?
+                ,
+                resource_details: self.resource_details
+                ,
+            }
+        )
     }
 }
+

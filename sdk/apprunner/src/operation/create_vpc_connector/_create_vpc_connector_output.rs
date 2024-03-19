@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcConnectorOutput {
+pub struct CreateVpcConnectorOutput  {
     /// <p>A description of the App Runner VPC connector that's created by this request.</p>
     pub vpc_connector: ::std::option::Option<crate::types::VpcConnector>,
     _request_id: Option<String>,
 }
-impl CreateVpcConnectorOutput {
+impl  CreateVpcConnectorOutput  {
     /// <p>A description of the App Runner VPC connector that's created by this request.</p>
-    pub fn vpc_connector(&self) -> ::std::option::Option<&crate::types::VpcConnector> {
+    pub fn vpc_connector(&self) -> ::std::option::Option<& crate::types::VpcConnector> {
         self.vpc_connector.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateVpcConnectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateVpcConnectorOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcConnectorOutput`](crate::operation::create_vpc_connector::CreateVpcConnectorOutput).
     pub fn builder() -> crate::operation::create_vpc_connector::builders::CreateVpcConnectorOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateVpcConnectorOutputBuilder {
     }
     /// <p>A description of the App Runner VPC connector that's created by this request.</p>
     pub fn set_vpc_connector(mut self, input: ::std::option::Option<crate::types::VpcConnector>) -> Self {
-        self.vpc_connector = input;
-        self
+        self.vpc_connector = input; self
     }
     /// <p>A description of the App Runner VPC connector that's created by this request.</p>
     pub fn get_vpc_connector(&self) -> &::std::option::Option<crate::types::VpcConnector> {
         &self.vpc_connector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateVpcConnectorOutput`](crate::operation::create_vpc_connector::CreateVpcConnectorOutput).
     pub fn build(self) -> crate::operation::create_vpc_connector::CreateVpcConnectorOutput {
         crate::operation::create_vpc_connector::CreateVpcConnectorOutput {
-            vpc_connector: self.vpc_connector,
+            vpc_connector: self.vpc_connector
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

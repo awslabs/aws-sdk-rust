@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrafficDistributionGroupOutput {
+pub struct CreateTrafficDistributionGroupOutput  {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateTrafficDistributionGroupOutput {
+impl  CreateTrafficDistributionGroupOutput  {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTrafficDistributionGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTrafficDistributionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficDistributionGroupOutput`](crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput).
     pub fn builder() -> crate::operation::create_traffic_distribution_group::builders::CreateTrafficDistributionGroupOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateTrafficDistributionGroupOutputBuilder {
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateTrafficDistributionGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTrafficDistributionGroupOutput`](crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput).
     pub fn build(self) -> crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput {
         crate::operation::create_traffic_distribution_group::CreateTrafficDistributionGroupOutput {
-            id: self.id,
-            arn: self.arn,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

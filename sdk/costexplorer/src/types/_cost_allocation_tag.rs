@@ -3,7 +3,7 @@
 /// <p>The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CostAllocationTag {
+pub struct CostAllocationTag  {
     /// <p>The key for the cost allocation tag.</p>
     pub tag_key: ::std::string::String,
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
@@ -15,26 +15,25 @@ pub struct CostAllocationTag {
     /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
     pub last_used_date: ::std::option::Option<::std::string::String>,
 }
-impl CostAllocationTag {
+impl  CostAllocationTag  {
     /// <p>The key for the cost allocation tag.</p>
-    pub fn tag_key(&self) -> &str {
-        use std::ops::Deref;
-        self.tag_key.deref()
+    pub fn tag_key(&self) -> & str {
+        use std::ops::Deref; self.tag_key.deref()
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
-    pub fn r#type(&self) -> &crate::types::CostAllocationTagType {
+    pub fn r#type(&self) -> & crate::types::CostAllocationTagType {
         &self.r#type
     }
     /// <p>The status of a cost allocation tag.</p>
-    pub fn status(&self) -> &crate::types::CostAllocationTagStatus {
+    pub fn status(&self) -> & crate::types::CostAllocationTagStatus {
         &self.status
     }
     /// <p>The last date that the tag was either activated or deactivated.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& str> {
         self.last_updated_date.as_deref()
     }
     /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
-    pub fn last_used_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_used_date(&self) -> ::std::option::Option<& str> {
         self.last_used_date.as_deref()
     }
 }
@@ -64,8 +63,7 @@ impl CostAllocationTagBuilder {
     }
     /// <p>The key for the cost allocation tag.</p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
     }
     /// <p>The key for the cost allocation tag.</p>
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl CostAllocationTagBuilder {
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CostAllocationTagType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CostAllocationTagType> {
@@ -94,8 +91,7 @@ impl CostAllocationTagBuilder {
     }
     /// <p>The status of a cost allocation tag.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a cost allocation tag.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CostAllocationTagStatus> {
@@ -108,8 +104,7 @@ impl CostAllocationTagBuilder {
     }
     /// <p>The last date that the tag was either activated or deactivated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The last date that the tag was either activated or deactivated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +117,7 @@ impl CostAllocationTagBuilder {
     }
     /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
     pub fn set_last_used_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_used_date = input;
-        self
+        self.last_used_date = input; self
     }
     /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
     pub fn get_last_used_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,27 +129,29 @@ impl CostAllocationTagBuilder {
     /// - [`r#type`](crate::types::builders::CostAllocationTagBuilder::r#type)
     /// - [`status`](crate::types::builders::CostAllocationTagBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::CostAllocationTag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CostAllocationTag {
-            tag_key: self.tag_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_key",
-                    "tag_key was not specified but it is required when building CostAllocationTag",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CostAllocationTag",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building CostAllocationTag",
-                )
-            })?,
-            last_updated_date: self.last_updated_date,
-            last_used_date: self.last_used_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CostAllocationTag {
+                tag_key: self.tag_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_key", "tag_key was not specified but it is required when building CostAllocationTag")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building CostAllocationTag")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building CostAllocationTag")
+                    )?
+                ,
+                last_updated_date: self.last_updated_date
+                ,
+                last_used_date: self.last_used_date
+                ,
+            }
+        )
     }
 }
+

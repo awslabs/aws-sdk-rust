@@ -3,19 +3,19 @@
 /// <p>Configuration for Moderation Labels Detection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaAnalysisDetectModerationLabelsConfig {
+pub struct MediaAnalysisDetectModerationLabelsConfig  {
     /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>Specifies the custom moderation model to be used during the label detection job. If not provided the pre-trained model is used.</p>
     pub project_version: ::std::option::Option<::std::string::String>,
 }
-impl MediaAnalysisDetectModerationLabelsConfig {
+impl  MediaAnalysisDetectModerationLabelsConfig  {
     /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
     pub fn min_confidence(&self) -> ::std::option::Option<f32> {
         self.min_confidence
     }
     /// <p>Specifies the custom moderation model to be used during the label detection job. If not provided the pre-trained model is used.</p>
-    pub fn project_version(&self) -> ::std::option::Option<&str> {
+    pub fn project_version(&self) -> ::std::option::Option<& str> {
         self.project_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MediaAnalysisDetectModerationLabelsConfigBuilder {
     }
     /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_confidence = input;
-        self
+        self.min_confidence = input; self
     }
     /// <p>Specifies the minimum confidence level for the moderation labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
     pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
@@ -55,8 +54,7 @@ impl MediaAnalysisDetectModerationLabelsConfigBuilder {
     }
     /// <p>Specifies the custom moderation model to be used during the label detection job. If not provided the pre-trained model is used.</p>
     pub fn set_project_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_version = input;
-        self
+        self.project_version = input; self
     }
     /// <p>Specifies the custom moderation model to be used during the label detection job. If not provided the pre-trained model is used.</p>
     pub fn get_project_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MediaAnalysisDetectModerationLabelsConfigBuilder {
     /// Consumes the builder and constructs a [`MediaAnalysisDetectModerationLabelsConfig`](crate::types::MediaAnalysisDetectModerationLabelsConfig).
     pub fn build(self) -> crate::types::MediaAnalysisDetectModerationLabelsConfig {
         crate::types::MediaAnalysisDetectModerationLabelsConfig {
-            min_confidence: self.min_confidence,
-            project_version: self.project_version,
+            min_confidence: self.min_confidence
+            ,
+            project_version: self.project_version
+            ,
         }
     }
 }
+

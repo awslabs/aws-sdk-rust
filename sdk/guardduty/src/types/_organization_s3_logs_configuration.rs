@@ -3,11 +3,11 @@
 /// <p>Describes whether S3 data event logs will be automatically enabled for new members of the organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationS3LogsConfiguration {
+pub struct OrganizationS3LogsConfiguration  {
     /// <p>A value that contains information on whether S3 data event logs will be enabled automatically as a data source for the organization.</p>
     pub auto_enable: ::std::option::Option<bool>,
 }
-impl OrganizationS3LogsConfiguration {
+impl  OrganizationS3LogsConfiguration  {
     /// <p>A value that contains information on whether S3 data event logs will be enabled automatically as a data source for the organization.</p>
     pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
@@ -35,8 +35,7 @@ impl OrganizationS3LogsConfigurationBuilder {
     }
     /// <p>A value that contains information on whether S3 data event logs will be enabled automatically as a data source for the organization.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
     }
     /// <p>A value that contains information on whether S3 data event logs will be enabled automatically as a data source for the organization.</p>
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
@@ -45,7 +44,9 @@ impl OrganizationS3LogsConfigurationBuilder {
     /// Consumes the builder and constructs a [`OrganizationS3LogsConfiguration`](crate::types::OrganizationS3LogsConfiguration).
     pub fn build(self) -> crate::types::OrganizationS3LogsConfiguration {
         crate::types::OrganizationS3LogsConfiguration {
-            auto_enable: self.auto_enable,
+            auto_enable: self.auto_enable
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The details of the external (Amazon Sagemaker) model evaluated for generating predictions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EvaluatedExternalModel {
+pub struct EvaluatedExternalModel  {
     /// <p>The endpoint of the external (Amazon Sagemaker) model.</p>
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether event variables were used to generate predictions.</p>
     pub use_event_variables: ::std::option::Option<bool>,
     /// <p>Input variables use for generating predictions.</p>
-    pub input_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub input_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Output variables.</p>
-    pub output_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub output_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl EvaluatedExternalModel {
+impl  EvaluatedExternalModel  {
     /// <p>The endpoint of the external (Amazon Sagemaker) model.</p>
-    pub fn model_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn model_endpoint(&self) -> ::std::option::Option<& str> {
         self.model_endpoint.as_deref()
     }
     /// <p>Indicates whether event variables were used to generate predictions.</p>
@@ -23,15 +23,15 @@ impl EvaluatedExternalModel {
         self.use_event_variables
     }
     /// <p>Input variables use for generating predictions.</p>
-    pub fn input_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn input_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.input_variables.as_ref()
     }
     /// <p>Output variables.</p>
-    pub fn output_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn output_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.output_variables.as_ref()
     }
 }
-impl ::std::fmt::Debug for EvaluatedExternalModel {
+impl  ::std::fmt::Debug for EvaluatedExternalModel  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EvaluatedExternalModel");
         formatter.field("model_endpoint", &self.model_endpoint);
@@ -54,8 +54,8 @@ impl EvaluatedExternalModel {
 pub struct EvaluatedExternalModelBuilder {
     pub(crate) model_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) use_event_variables: ::std::option::Option<bool>,
-    pub(crate) input_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) output_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) input_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) output_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl EvaluatedExternalModelBuilder {
     /// <p>The endpoint of the external (Amazon Sagemaker) model.</p>
@@ -65,8 +65,7 @@ impl EvaluatedExternalModelBuilder {
     }
     /// <p>The endpoint of the external (Amazon Sagemaker) model.</p>
     pub fn set_model_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_endpoint = input;
-        self
+        self.model_endpoint = input; self
     }
     /// <p>The endpoint of the external (Amazon Sagemaker) model.</p>
     pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl EvaluatedExternalModelBuilder {
     }
     /// <p>Indicates whether event variables were used to generate predictions.</p>
     pub fn set_use_event_variables(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_event_variables = input;
-        self
+        self.use_event_variables = input; self
     }
     /// <p>Indicates whether event variables were used to generate predictions.</p>
     pub fn get_use_event_variables(&self) -> &::std::option::Option<bool> {
@@ -91,26 +89,18 @@ impl EvaluatedExternalModelBuilder {
     /// To override the contents of this collection use [`set_input_variables`](Self::set_input_variables).
     ///
     /// <p>Input variables use for generating predictions.</p>
-    pub fn input_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.input_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.input_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.input_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Input variables use for generating predictions.</p>
-    pub fn set_input_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.input_variables = input;
-        self
+    pub fn set_input_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.input_variables = input; self
     }
     /// <p>Input variables use for generating predictions.</p>
-    pub fn get_input_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_input_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.input_variables
     }
     /// Adds a key-value pair to `output_variables`.
@@ -118,35 +108,31 @@ impl EvaluatedExternalModelBuilder {
     /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).
     ///
     /// <p>Output variables.</p>
-    pub fn output_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.output_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.output_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.output_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Output variables.</p>
-    pub fn set_output_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.output_variables = input;
-        self
+    pub fn set_output_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.output_variables = input; self
     }
     /// <p>Output variables.</p>
-    pub fn get_output_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_output_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.output_variables
     }
     /// Consumes the builder and constructs a [`EvaluatedExternalModel`](crate::types::EvaluatedExternalModel).
     pub fn build(self) -> crate::types::EvaluatedExternalModel {
         crate::types::EvaluatedExternalModel {
-            model_endpoint: self.model_endpoint,
-            use_event_variables: self.use_event_variables,
-            input_variables: self.input_variables,
-            output_variables: self.output_variables,
+            model_endpoint: self.model_endpoint
+            ,
+            use_event_variables: self.use_event_variables
+            ,
+            input_variables: self.input_variables
+            ,
+            output_variables: self.output_variables
+            ,
         }
     }
 }
@@ -160,3 +146,4 @@ impl ::std::fmt::Debug for EvaluatedExternalModelBuilder {
         formatter.finish()
     }
 }
+

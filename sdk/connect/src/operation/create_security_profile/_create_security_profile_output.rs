@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSecurityProfileOutput {
+pub struct CreateSecurityProfileOutput  {
     /// <p>The identifier for the security profle.</p>
     pub security_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub security_profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateSecurityProfileOutput {
+impl  CreateSecurityProfileOutput  {
     /// <p>The identifier for the security profle.</p>
-    pub fn security_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_profile_id(&self) -> ::std::option::Option<& str> {
         self.security_profile_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
-    pub fn security_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn security_profile_arn(&self) -> ::std::option::Option<& str> {
         self.security_profile_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSecurityProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityProfileOutput`](crate::operation::create_security_profile::CreateSecurityProfileOutput).
     pub fn builder() -> crate::operation::create_security_profile::builders::CreateSecurityProfileOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateSecurityProfileOutputBuilder {
     }
     /// <p>The identifier for the security profle.</p>
     pub fn set_security_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_profile_id = input;
-        self
+        self.security_profile_id = input; self
     }
     /// <p>The identifier for the security profle.</p>
     pub fn get_security_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateSecurityProfileOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub fn set_security_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_profile_arn = input;
-        self
+        self.security_profile_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the security profile.</p>
     pub fn get_security_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_profile_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSecurityProfileOutput`](crate::operation::create_security_profile::CreateSecurityProfileOutput).
     pub fn build(self) -> crate::operation::create_security_profile::CreateSecurityProfileOutput {
         crate::operation::create_security_profile::CreateSecurityProfileOutput {
-            security_profile_id: self.security_profile_id,
-            security_profile_arn: self.security_profile_arn,
+            security_profile_id: self.security_profile_id
+            ,
+            security_profile_arn: self.security_profile_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

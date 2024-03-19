@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOutpostsOutput {
+pub struct ListOutpostsOutput  {
     /// <p>Information about the Outposts.</p>
-    pub outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
+    pub outposts: ::std::option::Option<::std::vec::Vec::<crate::types::Outpost>>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOutpostsOutput {
+impl  ListOutpostsOutput  {
     /// <p>Information about the Outposts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outposts.is_none()`.
-    pub fn outposts(&self) -> &[crate::types::Outpost] {
-        self.outposts.as_deref().unwrap_or_default()
+    pub fn outposts(&self) -> & [crate::types::Outpost] {
+        self.outposts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOutpostsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOutpostsOutput {
     /// Creates a new builder-style object to manufacture [`ListOutpostsOutput`](crate::operation::list_outposts::ListOutpostsOutput).
     pub fn builder() -> crate::operation::list_outposts::builders::ListOutpostsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListOutpostsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutpostsOutputBuilder {
-    pub(crate) outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
+    pub(crate) outposts: ::std::option::Option<::std::vec::Vec::<crate::types::Outpost>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListOutpostsOutputBuilder {
     /// <p>Information about the Outposts.</p>
     pub fn outposts(mut self, input: crate::types::Outpost) -> Self {
         let mut v = self.outposts.unwrap_or_default();
-        v.push(input);
-        self.outposts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outposts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the Outposts.</p>
-    pub fn set_outposts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>) -> Self {
-        self.outposts = input;
-        self
+    pub fn set_outposts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Outpost>>) -> Self {
+        self.outposts = input; self
     }
     /// <p>Information about the Outposts.</p>
-    pub fn get_outposts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Outpost>> {
+    pub fn get_outposts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Outpost>> {
         &self.outposts
     }
     /// <p>The pagination token.</p>
@@ -69,28 +69,30 @@ impl ListOutpostsOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOutpostsOutput`](crate::operation::list_outposts::ListOutpostsOutput).
     pub fn build(self) -> crate::operation::list_outposts::ListOutpostsOutput {
         crate::operation::list_outposts::ListOutpostsOutput {
-            outposts: self.outposts,
-            next_token: self.next_token,
+            outposts: self.outposts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

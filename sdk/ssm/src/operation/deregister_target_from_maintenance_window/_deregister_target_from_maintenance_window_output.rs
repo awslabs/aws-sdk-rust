@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterTargetFromMaintenanceWindowOutput {
+pub struct DeregisterTargetFromMaintenanceWindowOutput  {
     /// <p>The ID of the maintenance window the target was removed from.</p>
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the removed target definition.</p>
     pub window_target_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeregisterTargetFromMaintenanceWindowOutput {
+impl  DeregisterTargetFromMaintenanceWindowOutput  {
     /// <p>The ID of the maintenance window the target was removed from.</p>
-    pub fn window_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The ID of the removed target definition.</p>
-    pub fn window_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_target_id(&self) -> ::std::option::Option<& str> {
         self.window_target_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeregisterTargetFromMaintenanceWindowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeregisterTargetFromMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTargetFromMaintenanceWindowOutput`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowOutput).
     pub fn builder() -> crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowOutputBuilder {
@@ -47,8 +47,7 @@ impl DeregisterTargetFromMaintenanceWindowOutputBuilder {
     }
     /// <p>The ID of the maintenance window the target was removed from.</p>
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     /// <p>The ID of the maintenance window the target was removed from.</p>
     pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeregisterTargetFromMaintenanceWindowOutputBuilder {
     }
     /// <p>The ID of the removed target definition.</p>
     pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_target_id = input;
-        self
+        self.window_target_id = input; self
     }
     /// <p>The ID of the removed target definition.</p>
     pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.window_target_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeregisterTargetFromMaintenanceWindowOutput`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowOutput).
     pub fn build(self) -> crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowOutput {
         crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowOutput {
-            window_id: self.window_id,
-            window_target_id: self.window_target_id,
+            window_id: self.window_id
+            ,
+            window_target_id: self.window_target_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

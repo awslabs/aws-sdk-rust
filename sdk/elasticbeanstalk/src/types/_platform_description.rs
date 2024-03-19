@@ -3,7 +3,7 @@
 /// <p>Detailed information about a platform version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlatformDescription {
+pub struct PlatformDescription  {
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the person who created the platform version.</p>
@@ -31,15 +31,15 @@ pub struct PlatformDescription {
     /// <p>The version of the operating system used by the platform version.</p>
     pub operating_system_version: ::std::option::Option<::std::string::String>,
     /// <p>The programming languages supported by the platform version.</p>
-    pub programming_languages: ::std::option::Option<::std::vec::Vec<crate::types::PlatformProgrammingLanguage>>,
+    pub programming_languages: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformProgrammingLanguage>>,
     /// <p>The frameworks supported by the platform version.</p>
-    pub frameworks: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFramework>>,
+    pub frameworks: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformFramework>>,
     /// <p>The custom AMIs supported by the platform version.</p>
-    pub custom_ami_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>>,
+    pub custom_ami_list: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAmi>>,
     /// <p>The tiers supported by the platform version.</p>
-    pub supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_tier_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The additions supported by the platform version.</p>
-    pub supported_addon_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_addon_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
@@ -50,102 +50,107 @@ pub struct PlatformDescription {
     /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
     pub platform_branch_lifecycle_state: ::std::option::Option<::std::string::String>,
 }
-impl PlatformDescription {
+impl  PlatformDescription  {
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>The AWS account ID of the person who created the platform version.</p>
-    pub fn platform_owner(&self) -> ::std::option::Option<&str> {
+    pub fn platform_owner(&self) -> ::std::option::Option<& str> {
         self.platform_owner.as_deref()
     }
     /// <p>The name of the platform version.</p>
-    pub fn platform_name(&self) -> ::std::option::Option<&str> {
+    pub fn platform_name(&self) -> ::std::option::Option<& str> {
         self.platform_name.as_deref()
     }
     /// <p>The version of the platform version.</p>
-    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+    pub fn platform_version(&self) -> ::std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>The name of the solution stack used by the platform version.</p>
-    pub fn solution_stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> ::std::option::Option<& str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The status of the platform version.</p>
-    pub fn platform_status(&self) -> ::std::option::Option<&crate::types::PlatformStatus> {
+    pub fn platform_status(&self) -> ::std::option::Option<& crate::types::PlatformStatus> {
         self.platform_status.as_ref()
     }
     /// <p>The date when the platform version was created.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date when the platform version was last updated.</p>
-    pub fn date_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>The category of the platform version.</p>
-    pub fn platform_category(&self) -> ::std::option::Option<&str> {
+    pub fn platform_category(&self) -> ::std::option::Option<& str> {
         self.platform_category.as_deref()
     }
     /// <p>The description of the platform version.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the maintainer of the platform version.</p>
-    pub fn maintainer(&self) -> ::std::option::Option<&str> {
+    pub fn maintainer(&self) -> ::std::option::Option<& str> {
         self.maintainer.as_deref()
     }
     /// <p>The operating system used by the platform version.</p>
-    pub fn operating_system_name(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system_name(&self) -> ::std::option::Option<& str> {
         self.operating_system_name.as_deref()
     }
     /// <p>The version of the operating system used by the platform version.</p>
-    pub fn operating_system_version(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system_version(&self) -> ::std::option::Option<& str> {
         self.operating_system_version.as_deref()
     }
     /// <p>The programming languages supported by the platform version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.programming_languages.is_none()`.
-    pub fn programming_languages(&self) -> &[crate::types::PlatformProgrammingLanguage] {
-        self.programming_languages.as_deref().unwrap_or_default()
+    pub fn programming_languages(&self) -> & [crate::types::PlatformProgrammingLanguage] {
+        self.programming_languages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The frameworks supported by the platform version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.frameworks.is_none()`.
-    pub fn frameworks(&self) -> &[crate::types::PlatformFramework] {
-        self.frameworks.as_deref().unwrap_or_default()
+    pub fn frameworks(&self) -> & [crate::types::PlatformFramework] {
+        self.frameworks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The custom AMIs supported by the platform version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_ami_list.is_none()`.
-    pub fn custom_ami_list(&self) -> &[crate::types::CustomAmi] {
-        self.custom_ami_list.as_deref().unwrap_or_default()
+    pub fn custom_ami_list(&self) -> & [crate::types::CustomAmi] {
+        self.custom_ami_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tiers supported by the platform version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_tier_list.is_none()`.
-    pub fn supported_tier_list(&self) -> &[::std::string::String] {
-        self.supported_tier_list.as_deref().unwrap_or_default()
+    pub fn supported_tier_list(&self) -> & [::std::string::String] {
+        self.supported_tier_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The additions supported by the platform version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_addon_list.is_none()`.
-    pub fn supported_addon_list(&self) -> &[::std::string::String] {
-        self.supported_addon_list.as_deref().unwrap_or_default()
+    pub fn supported_addon_list(&self) -> & [::std::string::String] {
+        self.supported_addon_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
-    pub fn platform_lifecycle_state(&self) -> ::std::option::Option<&str> {
+    pub fn platform_lifecycle_state(&self) -> ::std::option::Option<& str> {
         self.platform_lifecycle_state.as_deref()
     }
     /// <p>The platform branch to which the platform version belongs.</p>
-    pub fn platform_branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn platform_branch_name(&self) -> ::std::option::Option<& str> {
         self.platform_branch_name.as_deref()
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
-    pub fn platform_branch_lifecycle_state(&self) -> ::std::option::Option<&str> {
+    pub fn platform_branch_lifecycle_state(&self) -> ::std::option::Option<& str> {
         self.platform_branch_lifecycle_state.as_deref()
     }
 }
@@ -173,11 +178,11 @@ pub struct PlatformDescriptionBuilder {
     pub(crate) maintainer: ::std::option::Option<::std::string::String>,
     pub(crate) operating_system_name: ::std::option::Option<::std::string::String>,
     pub(crate) operating_system_version: ::std::option::Option<::std::string::String>,
-    pub(crate) programming_languages: ::std::option::Option<::std::vec::Vec<crate::types::PlatformProgrammingLanguage>>,
-    pub(crate) frameworks: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFramework>>,
-    pub(crate) custom_ami_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>>,
-    pub(crate) supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supported_addon_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) programming_languages: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformProgrammingLanguage>>,
+    pub(crate) frameworks: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformFramework>>,
+    pub(crate) custom_ami_list: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAmi>>,
+    pub(crate) supported_tier_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) supported_addon_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) platform_lifecycle_state: ::std::option::Option<::std::string::String>,
     pub(crate) platform_branch_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_branch_lifecycle_state: ::std::option::Option<::std::string::String>,
@@ -190,8 +195,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The ARN of the platform version.</p>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_arn = input;
-        self
+        self.platform_arn = input; self
     }
     /// <p>The ARN of the platform version.</p>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +208,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The AWS account ID of the person who created the platform version.</p>
     pub fn set_platform_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_owner = input;
-        self
+        self.platform_owner = input; self
     }
     /// <p>The AWS account ID of the person who created the platform version.</p>
     pub fn get_platform_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +221,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The name of the platform version.</p>
     pub fn set_platform_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_name = input;
-        self
+        self.platform_name = input; self
     }
     /// <p>The name of the platform version.</p>
     pub fn get_platform_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +234,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The version of the platform version.</p>
     pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_version = input;
-        self
+        self.platform_version = input; self
     }
     /// <p>The version of the platform version.</p>
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +247,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The name of the solution stack used by the platform version.</p>
     pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_stack_name = input;
-        self
+        self.solution_stack_name = input; self
     }
     /// <p>The name of the solution stack used by the platform version.</p>
     pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +260,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The status of the platform version.</p>
     pub fn set_platform_status(mut self, input: ::std::option::Option<crate::types::PlatformStatus>) -> Self {
-        self.platform_status = input;
-        self
+        self.platform_status = input; self
     }
     /// <p>The status of the platform version.</p>
     pub fn get_platform_status(&self) -> &::std::option::Option<crate::types::PlatformStatus> {
@@ -274,8 +273,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The date when the platform version was created.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date when the platform version was created.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -288,8 +286,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The date when the platform version was last updated.</p>
     pub fn set_date_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_updated = input;
-        self
+        self.date_updated = input; self
     }
     /// <p>The date when the platform version was last updated.</p>
     pub fn get_date_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -302,8 +299,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The category of the platform version.</p>
     pub fn set_platform_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_category = input;
-        self
+        self.platform_category = input; self
     }
     /// <p>The category of the platform version.</p>
     pub fn get_platform_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +312,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The description of the platform version.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the platform version.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,8 +325,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>Information about the maintainer of the platform version.</p>
     pub fn set_maintainer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.maintainer = input;
-        self
+        self.maintainer = input; self
     }
     /// <p>Information about the maintainer of the platform version.</p>
     pub fn get_maintainer(&self) -> &::std::option::Option<::std::string::String> {
@@ -344,8 +338,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The operating system used by the platform version.</p>
     pub fn set_operating_system_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system_name = input;
-        self
+        self.operating_system_name = input; self
     }
     /// <p>The operating system used by the platform version.</p>
     pub fn get_operating_system_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -358,8 +351,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The version of the operating system used by the platform version.</p>
     pub fn set_operating_system_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system_version = input;
-        self
+        self.operating_system_version = input; self
     }
     /// <p>The version of the operating system used by the platform version.</p>
     pub fn get_operating_system_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -372,17 +364,16 @@ impl PlatformDescriptionBuilder {
     /// <p>The programming languages supported by the platform version.</p>
     pub fn programming_languages(mut self, input: crate::types::PlatformProgrammingLanguage) -> Self {
         let mut v = self.programming_languages.unwrap_or_default();
-        v.push(input);
-        self.programming_languages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.programming_languages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The programming languages supported by the platform version.</p>
-    pub fn set_programming_languages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformProgrammingLanguage>>) -> Self {
-        self.programming_languages = input;
-        self
+    pub fn set_programming_languages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformProgrammingLanguage>>) -> Self {
+        self.programming_languages = input; self
     }
     /// <p>The programming languages supported by the platform version.</p>
-    pub fn get_programming_languages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformProgrammingLanguage>> {
+    pub fn get_programming_languages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlatformProgrammingLanguage>> {
         &self.programming_languages
     }
     /// Appends an item to `frameworks`.
@@ -392,17 +383,16 @@ impl PlatformDescriptionBuilder {
     /// <p>The frameworks supported by the platform version.</p>
     pub fn frameworks(mut self, input: crate::types::PlatformFramework) -> Self {
         let mut v = self.frameworks.unwrap_or_default();
-        v.push(input);
-        self.frameworks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.frameworks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The frameworks supported by the platform version.</p>
-    pub fn set_frameworks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFramework>>) -> Self {
-        self.frameworks = input;
-        self
+    pub fn set_frameworks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformFramework>>) -> Self {
+        self.frameworks = input; self
     }
     /// <p>The frameworks supported by the platform version.</p>
-    pub fn get_frameworks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformFramework>> {
+    pub fn get_frameworks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlatformFramework>> {
         &self.frameworks
     }
     /// Appends an item to `custom_ami_list`.
@@ -412,17 +402,16 @@ impl PlatformDescriptionBuilder {
     /// <p>The custom AMIs supported by the platform version.</p>
     pub fn custom_ami_list(mut self, input: crate::types::CustomAmi) -> Self {
         let mut v = self.custom_ami_list.unwrap_or_default();
-        v.push(input);
-        self.custom_ami_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_ami_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The custom AMIs supported by the platform version.</p>
-    pub fn set_custom_ami_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>>) -> Self {
-        self.custom_ami_list = input;
-        self
+    pub fn set_custom_ami_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAmi>>) -> Self {
+        self.custom_ami_list = input; self
     }
     /// <p>The custom AMIs supported by the platform version.</p>
-    pub fn get_custom_ami_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>> {
+    pub fn get_custom_ami_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomAmi>> {
         &self.custom_ami_list
     }
     /// Appends an item to `supported_tier_list`.
@@ -432,17 +421,16 @@ impl PlatformDescriptionBuilder {
     /// <p>The tiers supported by the platform version.</p>
     pub fn supported_tier_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_tier_list.unwrap_or_default();
-        v.push(input.into());
-        self.supported_tier_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_tier_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tiers supported by the platform version.</p>
-    pub fn set_supported_tier_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_tier_list = input;
-        self
+    pub fn set_supported_tier_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_tier_list = input; self
     }
     /// <p>The tiers supported by the platform version.</p>
-    pub fn get_supported_tier_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_tier_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_tier_list
     }
     /// Appends an item to `supported_addon_list`.
@@ -452,17 +440,16 @@ impl PlatformDescriptionBuilder {
     /// <p>The additions supported by the platform version.</p>
     pub fn supported_addon_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_addon_list.unwrap_or_default();
-        v.push(input.into());
-        self.supported_addon_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_addon_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The additions supported by the platform version.</p>
-    pub fn set_supported_addon_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_addon_list = input;
-        self
+    pub fn set_supported_addon_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_addon_list = input; self
     }
     /// <p>The additions supported by the platform version.</p>
-    pub fn get_supported_addon_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_addon_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_addon_list
     }
     /// <p>The state of the platform version in its lifecycle.</p>
@@ -476,8 +463,7 @@ impl PlatformDescriptionBuilder {
     /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     pub fn set_platform_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_lifecycle_state = input;
-        self
+        self.platform_lifecycle_state = input; self
     }
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
@@ -492,8 +478,7 @@ impl PlatformDescriptionBuilder {
     }
     /// <p>The platform branch to which the platform version belongs.</p>
     pub fn set_platform_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_branch_name = input;
-        self
+        self.platform_branch_name = input; self
     }
     /// <p>The platform branch to which the platform version belongs.</p>
     pub fn get_platform_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -508,8 +493,7 @@ impl PlatformDescriptionBuilder {
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
     pub fn set_platform_branch_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_branch_lifecycle_state = input;
-        self
+        self.platform_branch_lifecycle_state = input; self
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
@@ -519,27 +503,49 @@ impl PlatformDescriptionBuilder {
     /// Consumes the builder and constructs a [`PlatformDescription`](crate::types::PlatformDescription).
     pub fn build(self) -> crate::types::PlatformDescription {
         crate::types::PlatformDescription {
-            platform_arn: self.platform_arn,
-            platform_owner: self.platform_owner,
-            platform_name: self.platform_name,
-            platform_version: self.platform_version,
-            solution_stack_name: self.solution_stack_name,
-            platform_status: self.platform_status,
-            date_created: self.date_created,
-            date_updated: self.date_updated,
-            platform_category: self.platform_category,
-            description: self.description,
-            maintainer: self.maintainer,
-            operating_system_name: self.operating_system_name,
-            operating_system_version: self.operating_system_version,
-            programming_languages: self.programming_languages,
-            frameworks: self.frameworks,
-            custom_ami_list: self.custom_ami_list,
-            supported_tier_list: self.supported_tier_list,
-            supported_addon_list: self.supported_addon_list,
-            platform_lifecycle_state: self.platform_lifecycle_state,
-            platform_branch_name: self.platform_branch_name,
-            platform_branch_lifecycle_state: self.platform_branch_lifecycle_state,
+            platform_arn: self.platform_arn
+            ,
+            platform_owner: self.platform_owner
+            ,
+            platform_name: self.platform_name
+            ,
+            platform_version: self.platform_version
+            ,
+            solution_stack_name: self.solution_stack_name
+            ,
+            platform_status: self.platform_status
+            ,
+            date_created: self.date_created
+            ,
+            date_updated: self.date_updated
+            ,
+            platform_category: self.platform_category
+            ,
+            description: self.description
+            ,
+            maintainer: self.maintainer
+            ,
+            operating_system_name: self.operating_system_name
+            ,
+            operating_system_version: self.operating_system_version
+            ,
+            programming_languages: self.programming_languages
+            ,
+            frameworks: self.frameworks
+            ,
+            custom_ami_list: self.custom_ami_list
+            ,
+            supported_tier_list: self.supported_tier_list
+            ,
+            supported_addon_list: self.supported_addon_list
+            ,
+            platform_lifecycle_state: self.platform_lifecycle_state
+            ,
+            platform_branch_name: self.platform_branch_name
+            ,
+            platform_branch_lifecycle_state: self.platform_branch_lifecycle_state
+            ,
         }
     }
 }
+

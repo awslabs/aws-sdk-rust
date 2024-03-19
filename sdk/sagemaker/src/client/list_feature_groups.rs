@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFeatureGroups`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::set_name_contains):<br>required: **false**<br><p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p><br>
     ///   - [`feature_group_status_equals(FeatureGroupStatus)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::feature_group_status_equals) / [`set_feature_group_status_equals(Option<FeatureGroupStatus>)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::set_feature_group_status_equals):<br>required: **false**<br><p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status.</p><br>
     ///   - [`offline_store_status_equals(OfflineStoreStatusValue)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::offline_store_status_equals) / [`set_offline_store_status_equals(Option<OfflineStoreStatusValue>)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::set_offline_store_status_equals):<br>required: **false**<br><p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`sort_by(FeatureGroupSortBy)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::sort_by) / [`set_sort_by(Option<FeatureGroupSortBy>)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The value on which the feature group list is sorted.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p><br>
-    /// - On success, responds with [`ListFeatureGroupsOutput`](crate::operation::list_feature_groups::ListFeatureGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListFeatureGroupsOutput`](crate::operation::list_feature_groups::ListFeatureGroupsOutput) with field(s):
     ///   - [`feature_group_summaries(Option<Vec::<FeatureGroupSummary>>)`](crate::operation::list_feature_groups::ListFeatureGroupsOutput::feature_group_summaries): <p>A summary of feature groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_feature_groups::ListFeatureGroupsOutput::next_token): <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
-    /// - On failure, responds with [`SdkError<ListFeatureGroupsError>`](crate::operation::list_feature_groups::ListFeatureGroupsError)
+                            /// - On failure, responds with [`SdkError<ListFeatureGroupsError>`](crate::operation::list_feature_groups::ListFeatureGroupsError)
     pub fn list_feature_groups(&self) -> crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder {
-        crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_feature_groups::builders::ListFeatureGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

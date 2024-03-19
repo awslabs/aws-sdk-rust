@@ -3,24 +3,25 @@
 /// <p>A list of IP address filters that exist under your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReceiptFiltersOutput {
+pub struct ListReceiptFiltersOutput  {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptFilter>>,
     _request_id: Option<String>,
 }
-impl ListReceiptFiltersOutput {
+impl  ListReceiptFiltersOutput  {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ReceiptFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ReceiptFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListReceiptFiltersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListReceiptFiltersOutput {
     /// Creates a new builder-style object to manufacture [`ListReceiptFiltersOutput`](crate::operation::list_receipt_filters::ListReceiptFiltersOutput).
     pub fn builder() -> crate::operation::list_receipt_filters::builders::ListReceiptFiltersOutputBuilder {
@@ -32,7 +33,7 @@ impl ListReceiptFiltersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceiptFiltersOutputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptFilter>>,
     _request_id: Option<String>,
 }
 impl ListReceiptFiltersOutputBuilder {
@@ -43,33 +44,34 @@ impl ListReceiptFiltersOutputBuilder {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub fn filters(mut self, input: crate::types::ReceiptFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReceiptFilter>> {
         &self.filters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListReceiptFiltersOutput`](crate::operation::list_receipt_filters::ListReceiptFiltersOutput).
     pub fn build(self) -> crate::operation::list_receipt_filters::ListReceiptFiltersOutput {
         crate::operation::list_receipt_filters::ListReceiptFiltersOutput {
-            filters: self.filters,
+            filters: self.filters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

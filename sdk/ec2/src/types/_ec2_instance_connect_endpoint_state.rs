@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ec2instanceconnectendpointstate = unimplemented!();
 /// match ec2instanceconnectendpointstate {
@@ -34,16 +34,14 @@
 /// Specifically, when `ec2instanceconnectendpointstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Ec2InstanceConnectEndpointState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Ec2InstanceConnectEndpointState {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -59,80 +57,74 @@ pub enum Ec2InstanceConnectEndpointState {
     DeleteInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Ec2InstanceConnectEndpointState {
-    fn from(s: &str) -> Self {
-        match s {
-            "create-complete" => Ec2InstanceConnectEndpointState::CreateComplete,
-            "create-failed" => Ec2InstanceConnectEndpointState::CreateFailed,
-            "create-in-progress" => Ec2InstanceConnectEndpointState::CreateInProgress,
-            "delete-complete" => Ec2InstanceConnectEndpointState::DeleteComplete,
-            "delete-failed" => Ec2InstanceConnectEndpointState::DeleteFailed,
-            "delete-in-progress" => Ec2InstanceConnectEndpointState::DeleteInProgress,
-            other => Ec2InstanceConnectEndpointState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "create-complete" => Ec2InstanceConnectEndpointState::CreateComplete,
+"create-failed" => Ec2InstanceConnectEndpointState::CreateFailed,
+"create-in-progress" => Ec2InstanceConnectEndpointState::CreateInProgress,
+"delete-complete" => Ec2InstanceConnectEndpointState::DeleteComplete,
+"delete-failed" => Ec2InstanceConnectEndpointState::DeleteFailed,
+"delete-in-progress" => Ec2InstanceConnectEndpointState::DeleteInProgress,
+other => Ec2InstanceConnectEndpointState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Ec2InstanceConnectEndpointState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Ec2InstanceConnectEndpointState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Ec2InstanceConnectEndpointState::from(s))
+                    }
+                }
 impl Ec2InstanceConnectEndpointState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Ec2InstanceConnectEndpointState::CreateComplete => "create-complete",
-            Ec2InstanceConnectEndpointState::CreateFailed => "create-failed",
-            Ec2InstanceConnectEndpointState::CreateInProgress => "create-in-progress",
-            Ec2InstanceConnectEndpointState::DeleteComplete => "delete-complete",
-            Ec2InstanceConnectEndpointState::DeleteFailed => "delete-failed",
-            Ec2InstanceConnectEndpointState::DeleteInProgress => "delete-in-progress",
-            Ec2InstanceConnectEndpointState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "create-complete",
-            "create-failed",
-            "create-in-progress",
-            "delete-complete",
-            "delete-failed",
-            "delete-in-progress",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Ec2InstanceConnectEndpointState::CreateComplete => "create-complete",
+    Ec2InstanceConnectEndpointState::CreateFailed => "create-failed",
+    Ec2InstanceConnectEndpointState::CreateInProgress => "create-in-progress",
+    Ec2InstanceConnectEndpointState::DeleteComplete => "delete-complete",
+    Ec2InstanceConnectEndpointState::DeleteFailed => "delete-failed",
+    Ec2InstanceConnectEndpointState::DeleteInProgress => "delete-in-progress",
+    Ec2InstanceConnectEndpointState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["create-complete", "create-failed", "create-in-progress", "delete-complete", "delete-failed", "delete-in-progress"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Ec2InstanceConnectEndpointState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Ec2InstanceConnectEndpointState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Ec2InstanceConnectEndpointState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Ec2InstanceConnectEndpointState::CreateComplete => write!(f, "create-complete"),
-            Ec2InstanceConnectEndpointState::CreateFailed => write!(f, "create-failed"),
-            Ec2InstanceConnectEndpointState::CreateInProgress => write!(f, "create-in-progress"),
-            Ec2InstanceConnectEndpointState::DeleteComplete => write!(f, "delete-complete"),
-            Ec2InstanceConnectEndpointState::DeleteFailed => write!(f, "delete-failed"),
-            Ec2InstanceConnectEndpointState::DeleteInProgress => write!(f, "delete-in-progress"),
-            Ec2InstanceConnectEndpointState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Ec2InstanceConnectEndpointState::CreateComplete => write!(f, "create-complete"),
+Ec2InstanceConnectEndpointState::CreateFailed => write!(f, "create-failed"),
+Ec2InstanceConnectEndpointState::CreateInProgress => write!(f, "create-in-progress"),
+Ec2InstanceConnectEndpointState::DeleteComplete => write!(f, "delete-complete"),
+Ec2InstanceConnectEndpointState::DeleteFailed => write!(f, "delete-failed"),
+Ec2InstanceConnectEndpointState::DeleteInProgress => write!(f, "delete-in-progress"),
+Ec2InstanceConnectEndpointState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

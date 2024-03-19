@@ -3,7 +3,7 @@
 /// <p>Defines a pricing model where customers are charged a fixed recurring price at the end of each billing period.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecurringPaymentTerm {
+pub struct RecurringPaymentTerm  {
     /// <p>Type of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Defines the currency for the prices mentioned in this term.</p>
@@ -13,21 +13,21 @@ pub struct RecurringPaymentTerm {
     /// <p>Amount charged to the buyer every billing period.</p>
     pub price: ::std::option::Option<::std::string::String>,
 }
-impl RecurringPaymentTerm {
+impl  RecurringPaymentTerm  {
     /// <p>Type of the term being updated.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Defines the currency for the prices mentioned in this term.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>Defines the recurrence at which buyers are charged.</p>
-    pub fn billing_period(&self) -> ::std::option::Option<&str> {
+    pub fn billing_period(&self) -> ::std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>Amount charged to the buyer every billing period.</p>
-    pub fn price(&self) -> ::std::option::Option<&str> {
+    pub fn price(&self) -> ::std::option::Option<& str> {
         self.price.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl RecurringPaymentTermBuilder {
     }
     /// <p>Type of the term being updated.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RecurringPaymentTermBuilder {
     }
     /// <p>Defines the currency for the prices mentioned in this term.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>Defines the currency for the prices mentioned in this term.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RecurringPaymentTermBuilder {
     }
     /// <p>Defines the recurrence at which buyers are charged.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_period = input;
-        self
+        self.billing_period = input; self
     }
     /// <p>Defines the recurrence at which buyers are charged.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl RecurringPaymentTermBuilder {
     }
     /// <p>Amount charged to the buyer every billing period.</p>
     pub fn set_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>Amount charged to the buyer every billing period.</p>
     pub fn get_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl RecurringPaymentTermBuilder {
     /// Consumes the builder and constructs a [`RecurringPaymentTerm`](crate::types::RecurringPaymentTerm).
     pub fn build(self) -> crate::types::RecurringPaymentTerm {
         crate::types::RecurringPaymentTerm {
-            r#type: self.r#type,
-            currency_code: self.currency_code,
-            billing_period: self.billing_period,
-            price: self.price,
+            r#type: self.r#type
+            ,
+            currency_code: self.currency_code
+            ,
+            billing_period: self.billing_period
+            ,
+            price: self.price
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let channeltype = unimplemented!();
 /// match channeltype {
@@ -41,16 +41,14 @@
 /// Specifically, when `channeltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChannelType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ChannelType {
     #[allow(missing_docs)] // documentation missing in model
     Adm,
@@ -80,108 +78,95 @@ pub enum ChannelType {
     Voice,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ChannelType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADM" => ChannelType::Adm,
-            "APNS" => ChannelType::Apns,
-            "APNS_SANDBOX" => ChannelType::ApnsSandbox,
-            "APNS_VOIP" => ChannelType::ApnsVoip,
-            "APNS_VOIP_SANDBOX" => ChannelType::ApnsVoipSandbox,
-            "BAIDU" => ChannelType::Baidu,
-            "CUSTOM" => ChannelType::Custom,
-            "EMAIL" => ChannelType::Email,
-            "GCM" => ChannelType::Gcm,
-            "IN_APP" => ChannelType::InApp,
-            "PUSH" => ChannelType::Push,
-            "SMS" => ChannelType::Sms,
-            "VOICE" => ChannelType::Voice,
-            other => ChannelType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADM" => ChannelType::Adm,
+"APNS" => ChannelType::Apns,
+"APNS_SANDBOX" => ChannelType::ApnsSandbox,
+"APNS_VOIP" => ChannelType::ApnsVoip,
+"APNS_VOIP_SANDBOX" => ChannelType::ApnsVoipSandbox,
+"BAIDU" => ChannelType::Baidu,
+"CUSTOM" => ChannelType::Custom,
+"EMAIL" => ChannelType::Email,
+"GCM" => ChannelType::Gcm,
+"IN_APP" => ChannelType::InApp,
+"PUSH" => ChannelType::Push,
+"SMS" => ChannelType::Sms,
+"VOICE" => ChannelType::Voice,
+other => ChannelType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ChannelType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ChannelType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ChannelType::from(s))
+                    }
+                }
 impl ChannelType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChannelType::Adm => "ADM",
-            ChannelType::Apns => "APNS",
-            ChannelType::ApnsSandbox => "APNS_SANDBOX",
-            ChannelType::ApnsVoip => "APNS_VOIP",
-            ChannelType::ApnsVoipSandbox => "APNS_VOIP_SANDBOX",
-            ChannelType::Baidu => "BAIDU",
-            ChannelType::Custom => "CUSTOM",
-            ChannelType::Email => "EMAIL",
-            ChannelType::Gcm => "GCM",
-            ChannelType::InApp => "IN_APP",
-            ChannelType::Push => "PUSH",
-            ChannelType::Sms => "SMS",
-            ChannelType::Voice => "VOICE",
-            ChannelType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADM",
-            "APNS",
-            "APNS_SANDBOX",
-            "APNS_VOIP",
-            "APNS_VOIP_SANDBOX",
-            "BAIDU",
-            "CUSTOM",
-            "EMAIL",
-            "GCM",
-            "IN_APP",
-            "PUSH",
-            "SMS",
-            "VOICE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChannelType::Adm => "ADM",
+    ChannelType::Apns => "APNS",
+    ChannelType::ApnsSandbox => "APNS_SANDBOX",
+    ChannelType::ApnsVoip => "APNS_VOIP",
+    ChannelType::ApnsVoipSandbox => "APNS_VOIP_SANDBOX",
+    ChannelType::Baidu => "BAIDU",
+    ChannelType::Custom => "CUSTOM",
+    ChannelType::Email => "EMAIL",
+    ChannelType::Gcm => "GCM",
+    ChannelType::InApp => "IN_APP",
+    ChannelType::Push => "PUSH",
+    ChannelType::Sms => "SMS",
+    ChannelType::Voice => "VOICE",
+    ChannelType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADM", "APNS", "APNS_SANDBOX", "APNS_VOIP", "APNS_VOIP_SANDBOX", "BAIDU", "CUSTOM", "EMAIL", "GCM", "IN_APP", "PUSH", "SMS", "VOICE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ChannelType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ChannelType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ChannelType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ChannelType::Adm => write!(f, "ADM"),
-            ChannelType::Apns => write!(f, "APNS"),
-            ChannelType::ApnsSandbox => write!(f, "APNS_SANDBOX"),
-            ChannelType::ApnsVoip => write!(f, "APNS_VOIP"),
-            ChannelType::ApnsVoipSandbox => write!(f, "APNS_VOIP_SANDBOX"),
-            ChannelType::Baidu => write!(f, "BAIDU"),
-            ChannelType::Custom => write!(f, "CUSTOM"),
-            ChannelType::Email => write!(f, "EMAIL"),
-            ChannelType::Gcm => write!(f, "GCM"),
-            ChannelType::InApp => write!(f, "IN_APP"),
-            ChannelType::Push => write!(f, "PUSH"),
-            ChannelType::Sms => write!(f, "SMS"),
-            ChannelType::Voice => write!(f, "VOICE"),
-            ChannelType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ChannelType::Adm => write!(f, "ADM"),
+ChannelType::Apns => write!(f, "APNS"),
+ChannelType::ApnsSandbox => write!(f, "APNS_SANDBOX"),
+ChannelType::ApnsVoip => write!(f, "APNS_VOIP"),
+ChannelType::ApnsVoipSandbox => write!(f, "APNS_VOIP_SANDBOX"),
+ChannelType::Baidu => write!(f, "BAIDU"),
+ChannelType::Custom => write!(f, "CUSTOM"),
+ChannelType::Email => write!(f, "EMAIL"),
+ChannelType::Gcm => write!(f, "GCM"),
+ChannelType::InApp => write!(f, "IN_APP"),
+ChannelType::Push => write!(f, "PUSH"),
+ChannelType::Sms => write!(f, "SMS"),
+ChannelType::Voice => write!(f, "VOICE"),
+ChannelType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

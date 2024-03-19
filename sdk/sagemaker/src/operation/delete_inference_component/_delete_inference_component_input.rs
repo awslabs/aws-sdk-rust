@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInferenceComponentInput {
+pub struct DeleteInferenceComponentInput  {
     /// <p>The name of the inference component to delete.</p>
     pub inference_component_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInferenceComponentInput {
+impl  DeleteInferenceComponentInput  {
     /// <p>The name of the inference component to delete.</p>
-    pub fn inference_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_component_name(&self) -> ::std::option::Option<& str> {
         self.inference_component_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteInferenceComponentInputBuilder {
     }
     /// <p>The name of the inference component to delete.</p>
     pub fn set_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_component_name = input;
-        self
+        self.inference_component_name = input; self
     }
     /// <p>The name of the inference component to delete.</p>
     pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_component_name
     }
     /// Consumes the builder and constructs a [`DeleteInferenceComponentInput`](crate::operation::delete_inference_component::DeleteInferenceComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_inference_component::DeleteInferenceComponentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_inference_component::DeleteInferenceComponentInput {
-            inference_component_name: self.inference_component_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_inference_component::DeleteInferenceComponentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_inference_component::DeleteInferenceComponentInput {
+                inference_component_name: self.inference_component_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Full detail for report resource metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportDetail {
+pub struct ReportDetail  {
     /// <p>Unique resource ID for the report resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Name for the report resource.</p>
@@ -45,65 +45,65 @@ pub struct ReportDetail {
     /// <p>The message associated with the current upload state.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl ReportDetail {
+impl  ReportDetail  {
     /// <p>Unique resource ID for the report resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Name for the report resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description for the report resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Timestamp indicating the report resource effective start.</p>
-    pub fn period_start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn period_start(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.period_start.as_ref()
     }
     /// <p>Timestamp indicating the report resource effective end.</p>
-    pub fn period_end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn period_end(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.period_end.as_ref()
     }
     /// <p>Timestamp indicating when the report resource was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Timestamp indicating when the report resource was last modified.</p>
-    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>Timestamp indicating when the report resource was deleted.</p>
-    pub fn deleted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deleted_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
     }
     /// <p>Current state of the report resource</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PublishedState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::PublishedState> {
         self.state.as_ref()
     }
     /// <p>ARN for the report resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Series for the report resource.</p>
-    pub fn series(&self) -> ::std::option::Option<&str> {
+    pub fn series(&self) -> ::std::option::Option<& str> {
         self.series.as_deref()
     }
     /// <p>Category for the report resource.</p>
-    pub fn category(&self) -> ::std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>Associated company name for the report resource.</p>
-    pub fn company_name(&self) -> ::std::option::Option<&str> {
+    pub fn company_name(&self) -> ::std::option::Option<& str> {
         self.company_name.as_deref()
     }
     /// <p>Associated product name for the report resource.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
+    pub fn product_name(&self) -> ::std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>Unique resource ARN for term resource.</p>
-    pub fn term_arn(&self) -> ::std::option::Option<&str> {
+    pub fn term_arn(&self) -> ::std::option::Option<& str> {
         self.term_arn.as_deref()
     }
     /// <p>Version for the report resource.</p>
@@ -111,7 +111,7 @@ impl ReportDetail {
         self.version
     }
     /// <p>Acceptance type for report.</p>
-    pub fn acceptance_type(&self) -> ::std::option::Option<&crate::types::AcceptanceType> {
+    pub fn acceptance_type(&self) -> ::std::option::Option<& crate::types::AcceptanceType> {
         self.acceptance_type.as_ref()
     }
     /// <p>Sequence number to enforce optimistic locking.</p>
@@ -119,11 +119,11 @@ impl ReportDetail {
         self.sequence_number
     }
     /// <p>The current state of the document upload.</p>
-    pub fn upload_state(&self) -> ::std::option::Option<&crate::types::UploadState> {
+    pub fn upload_state(&self) -> ::std::option::Option<& crate::types::UploadState> {
         self.upload_state.as_ref()
     }
     /// <p>The message associated with the current upload state.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -167,8 +167,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Unique resource ID for the report resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique resource ID for the report resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +180,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Name for the report resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name for the report resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +193,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Description for the report resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description for the report resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +206,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Timestamp indicating the report resource effective start.</p>
     pub fn set_period_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.period_start = input;
-        self
+        self.period_start = input; self
     }
     /// <p>Timestamp indicating the report resource effective start.</p>
     pub fn get_period_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +219,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Timestamp indicating the report resource effective end.</p>
     pub fn set_period_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.period_end = input;
-        self
+        self.period_end = input; self
     }
     /// <p>Timestamp indicating the report resource effective end.</p>
     pub fn get_period_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -237,8 +232,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Timestamp indicating when the report resource was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Timestamp indicating when the report resource was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -251,8 +245,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Timestamp indicating when the report resource was last modified.</p>
     pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_at = input;
-        self
+        self.last_modified_at = input; self
     }
     /// <p>Timestamp indicating when the report resource was last modified.</p>
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -265,8 +258,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Timestamp indicating when the report resource was deleted.</p>
     pub fn set_deleted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deleted_at = input;
-        self
+        self.deleted_at = input; self
     }
     /// <p>Timestamp indicating when the report resource was deleted.</p>
     pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -279,8 +271,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Current state of the report resource</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PublishedState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Current state of the report resource</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PublishedState> {
@@ -293,8 +284,7 @@ impl ReportDetailBuilder {
     }
     /// <p>ARN for the report resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN for the report resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +297,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Series for the report resource.</p>
     pub fn set_series(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.series = input;
-        self
+        self.series = input; self
     }
     /// <p>Series for the report resource.</p>
     pub fn get_series(&self) -> &::std::option::Option<::std::string::String> {
@@ -321,8 +310,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Category for the report resource.</p>
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>Category for the report resource.</p>
     pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -335,8 +323,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Associated company name for the report resource.</p>
     pub fn set_company_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.company_name = input;
-        self
+        self.company_name = input; self
     }
     /// <p>Associated company name for the report resource.</p>
     pub fn get_company_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,8 +336,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Associated product name for the report resource.</p>
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
+        self.product_name = input; self
     }
     /// <p>Associated product name for the report resource.</p>
     pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -363,8 +349,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Unique resource ARN for term resource.</p>
     pub fn set_term_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.term_arn = input;
-        self
+        self.term_arn = input; self
     }
     /// <p>Unique resource ARN for term resource.</p>
     pub fn get_term_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -377,8 +362,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Version for the report resource.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version for the report resource.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -391,8 +375,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Acceptance type for report.</p>
     pub fn set_acceptance_type(mut self, input: ::std::option::Option<crate::types::AcceptanceType>) -> Self {
-        self.acceptance_type = input;
-        self
+        self.acceptance_type = input; self
     }
     /// <p>Acceptance type for report.</p>
     pub fn get_acceptance_type(&self) -> &::std::option::Option<crate::types::AcceptanceType> {
@@ -405,8 +388,7 @@ impl ReportDetailBuilder {
     }
     /// <p>Sequence number to enforce optimistic locking.</p>
     pub fn set_sequence_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.sequence_number = input;
-        self
+        self.sequence_number = input; self
     }
     /// <p>Sequence number to enforce optimistic locking.</p>
     pub fn get_sequence_number(&self) -> &::std::option::Option<i64> {
@@ -419,8 +401,7 @@ impl ReportDetailBuilder {
     }
     /// <p>The current state of the document upload.</p>
     pub fn set_upload_state(mut self, input: ::std::option::Option<crate::types::UploadState>) -> Self {
-        self.upload_state = input;
-        self
+        self.upload_state = input; self
     }
     /// <p>The current state of the document upload.</p>
     pub fn get_upload_state(&self) -> &::std::option::Option<crate::types::UploadState> {
@@ -433,8 +414,7 @@ impl ReportDetailBuilder {
     }
     /// <p>The message associated with the current upload state.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The message associated with the current upload state.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -443,26 +423,47 @@ impl ReportDetailBuilder {
     /// Consumes the builder and constructs a [`ReportDetail`](crate::types::ReportDetail).
     pub fn build(self) -> crate::types::ReportDetail {
         crate::types::ReportDetail {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            period_start: self.period_start,
-            period_end: self.period_end,
-            created_at: self.created_at,
-            last_modified_at: self.last_modified_at,
-            deleted_at: self.deleted_at,
-            state: self.state,
-            arn: self.arn,
-            series: self.series,
-            category: self.category,
-            company_name: self.company_name,
-            product_name: self.product_name,
-            term_arn: self.term_arn,
-            version: self.version,
-            acceptance_type: self.acceptance_type,
-            sequence_number: self.sequence_number,
-            upload_state: self.upload_state,
-            status_message: self.status_message,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            period_start: self.period_start
+            ,
+            period_end: self.period_end
+            ,
+            created_at: self.created_at
+            ,
+            last_modified_at: self.last_modified_at
+            ,
+            deleted_at: self.deleted_at
+            ,
+            state: self.state
+            ,
+            arn: self.arn
+            ,
+            series: self.series
+            ,
+            category: self.category
+            ,
+            company_name: self.company_name
+            ,
+            product_name: self.product_name
+            ,
+            term_arn: self.term_arn
+            ,
+            version: self.version
+            ,
+            acceptance_type: self.acceptance_type
+            ,
+            sequence_number: self.sequence_number
+            ,
+            upload_state: self.upload_state
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

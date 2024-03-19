@@ -3,13 +3,13 @@
 /// <p>The unit of data in a delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Record {
+pub struct Record  {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
     pub data: ::aws_smithy_types::Blob,
 }
-impl Record {
+impl  Record  {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
-    pub fn data(&self) -> &::aws_smithy_types::Blob {
+    pub fn data(&self) -> & ::aws_smithy_types::Blob {
         &self.data
     }
 }
@@ -35,8 +35,7 @@ impl RecordBuilder {
     }
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -46,13 +45,15 @@ impl RecordBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data`](crate::types::builders::RecordBuilder::data)
     pub fn build(self) -> ::std::result::Result<crate::types::Record, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Record {
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data",
-                    "data was not specified but it is required when building Record",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Record {
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building Record")
+                    )?
+                ,
+            }
+        )
     }
 }
+

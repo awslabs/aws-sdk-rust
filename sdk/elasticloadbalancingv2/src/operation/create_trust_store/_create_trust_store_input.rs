@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrustStoreInput {
+pub struct CreateTrustStoreInput  {
     /// <p>The name of the trust store.</p>
     /// <p>This name must be unique per region and cannot be changed after creation.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,31 +13,32 @@ pub struct CreateTrustStoreInput {
     /// <p>The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.</p>
     pub ca_certificates_bundle_s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the trust store.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateTrustStoreInput {
+impl  CreateTrustStoreInput  {
     /// <p>The name of the trust store.</p>
     /// <p>This name must be unique per region and cannot be changed after creation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon S3 bucket for the ca certificates bundle.</p>
-    pub fn ca_certificates_bundle_s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificates_bundle_s3_bucket(&self) -> ::std::option::Option<& str> {
         self.ca_certificates_bundle_s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 path for the ca certificates bundle.</p>
-    pub fn ca_certificates_bundle_s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificates_bundle_s3_key(&self) -> ::std::option::Option<& str> {
         self.ca_certificates_bundle_s3_key.as_deref()
     }
     /// <p>The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.</p>
-    pub fn ca_certificates_bundle_s3_object_version(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificates_bundle_s3_object_version(&self) -> ::std::option::Option<& str> {
         self.ca_certificates_bundle_s3_object_version.as_deref()
     }
     /// <p>The tags to assign to the trust store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateTrustStoreInput {
@@ -55,7 +56,7 @@ pub struct CreateTrustStoreInputBuilder {
     pub(crate) ca_certificates_bundle_s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificates_bundle_s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificates_bundle_s3_object_version: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateTrustStoreInputBuilder {
     /// <p>The name of the trust store.</p>
@@ -68,8 +69,7 @@ impl CreateTrustStoreInputBuilder {
     /// <p>The name of the trust store.</p>
     /// <p>This name must be unique per region and cannot be changed after creation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the trust store.</p>
     /// <p>This name must be unique per region and cannot be changed after creation.</p>
@@ -84,8 +84,7 @@ impl CreateTrustStoreInputBuilder {
     }
     /// <p>The Amazon S3 bucket for the ca certificates bundle.</p>
     pub fn set_ca_certificates_bundle_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificates_bundle_s3_bucket = input;
-        self
+        self.ca_certificates_bundle_s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket for the ca certificates bundle.</p>
     pub fn get_ca_certificates_bundle_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl CreateTrustStoreInputBuilder {
     }
     /// <p>The Amazon S3 path for the ca certificates bundle.</p>
     pub fn set_ca_certificates_bundle_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificates_bundle_s3_key = input;
-        self
+        self.ca_certificates_bundle_s3_key = input; self
     }
     /// <p>The Amazon S3 path for the ca certificates bundle.</p>
     pub fn get_ca_certificates_bundle_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl CreateTrustStoreInputBuilder {
     }
     /// <p>The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.</p>
     pub fn set_ca_certificates_bundle_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificates_bundle_s3_object_version = input;
-        self
+        self.ca_certificates_bundle_s3_object_version = input; self
     }
     /// <p>The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.</p>
     pub fn get_ca_certificates_bundle_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,29 +124,34 @@ impl CreateTrustStoreInputBuilder {
     /// <p>The tags to assign to the trust store.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the trust store.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to assign to the trust store.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTrustStoreInput`](crate::operation::create_trust_store::CreateTrustStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_trust_store::CreateTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_trust_store::CreateTrustStoreInput {
-            name: self.name,
-            ca_certificates_bundle_s3_bucket: self.ca_certificates_bundle_s3_bucket,
-            ca_certificates_bundle_s3_key: self.ca_certificates_bundle_s3_key,
-            ca_certificates_bundle_s3_object_version: self.ca_certificates_bundle_s3_object_version,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trust_store::CreateTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_trust_store::CreateTrustStoreInput {
+                name: self.name
+                ,
+                ca_certificates_bundle_s3_bucket: self.ca_certificates_bundle_s3_bucket
+                ,
+                ca_certificates_bundle_s3_key: self.ca_certificates_bundle_s3_key
+                ,
+                ca_certificates_bundle_s3_object_version: self.ca_certificates_bundle_s3_object_version
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

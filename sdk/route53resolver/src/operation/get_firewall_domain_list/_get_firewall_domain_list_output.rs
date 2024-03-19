@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFirewallDomainListOutput {
+pub struct GetFirewallDomainListOutput  {
     /// <p>The domain list that you requested.</p>
     pub firewall_domain_list: ::std::option::Option<crate::types::FirewallDomainList>,
     _request_id: Option<String>,
 }
-impl GetFirewallDomainListOutput {
+impl  GetFirewallDomainListOutput  {
     /// <p>The domain list that you requested.</p>
-    pub fn firewall_domain_list(&self) -> ::std::option::Option<&crate::types::FirewallDomainList> {
+    pub fn firewall_domain_list(&self) -> ::std::option::Option<& crate::types::FirewallDomainList> {
         self.firewall_domain_list.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFirewallDomainListOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFirewallDomainListOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallDomainListOutput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput).
     pub fn builder() -> crate::operation::get_firewall_domain_list::builders::GetFirewallDomainListOutputBuilder {
@@ -40,27 +40,28 @@ impl GetFirewallDomainListOutputBuilder {
     }
     /// <p>The domain list that you requested.</p>
     pub fn set_firewall_domain_list(mut self, input: ::std::option::Option<crate::types::FirewallDomainList>) -> Self {
-        self.firewall_domain_list = input;
-        self
+        self.firewall_domain_list = input; self
     }
     /// <p>The domain list that you requested.</p>
     pub fn get_firewall_domain_list(&self) -> &::std::option::Option<crate::types::FirewallDomainList> {
         &self.firewall_domain_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFirewallDomainListOutput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput).
     pub fn build(self) -> crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput {
         crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput {
-            firewall_domain_list: self.firewall_domain_list,
+            firewall_domain_list: self.firewall_domain_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

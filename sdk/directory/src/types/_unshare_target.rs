@@ -3,20 +3,19 @@
 /// <p>Identifier that contains details about the directory consumer account with whom the directory is being unshared.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnshareTarget {
+pub struct UnshareTarget  {
     /// <p>Identifier of the directory consumer account.</p>
     pub id: ::std::string::String,
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
     pub r#type: crate::types::TargetType,
 }
-impl UnshareTarget {
+impl  UnshareTarget  {
     /// <p>Identifier of the directory consumer account.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
-    pub fn r#type(&self) -> &crate::types::TargetType {
+    pub fn r#type(&self) -> & crate::types::TargetType {
         &self.r#type
     }
 }
@@ -43,8 +42,7 @@ impl UnshareTargetBuilder {
     }
     /// <p>Identifier of the directory consumer account.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Identifier of the directory consumer account.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl UnshareTargetBuilder {
     }
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetType> {
@@ -70,19 +67,20 @@ impl UnshareTargetBuilder {
     /// - [`id`](crate::types::builders::UnshareTargetBuilder::id)
     /// - [`r#type`](crate::types::builders::UnshareTargetBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::UnshareTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UnshareTarget {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UnshareTarget",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building UnshareTarget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UnshareTarget {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building UnshareTarget")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building UnshareTarget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides detailed error metrics to evaluate the performance of a predictor. This object is part of the <code>Metrics</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorMetric {
+pub struct ErrorMetric  {
     /// <p>The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.</p>
     pub forecast_type: ::std::option::Option<::std::string::String>,
     /// <p>The weighted absolute percentage error (WAPE).</p>
@@ -15,9 +15,9 @@ pub struct ErrorMetric {
     /// <p>The Mean Absolute Percentage Error (MAPE)</p>
     pub mape: ::std::option::Option<f64>,
 }
-impl ErrorMetric {
+impl  ErrorMetric  {
     /// <p>The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.</p>
-    pub fn forecast_type(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_type(&self) -> ::std::option::Option<& str> {
         self.forecast_type.as_deref()
     }
     /// <p>The weighted absolute percentage error (WAPE).</p>
@@ -62,8 +62,7 @@ impl ErrorMetricBuilder {
     }
     /// <p>The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.</p>
     pub fn set_forecast_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_type = input;
-        self
+        self.forecast_type = input; self
     }
     /// <p>The Forecast type used to compute WAPE, MAPE, MASE, and RMSE.</p>
     pub fn get_forecast_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ErrorMetricBuilder {
     }
     /// <p>The weighted absolute percentage error (WAPE).</p>
     pub fn set_wape(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.wape = input;
-        self
+        self.wape = input; self
     }
     /// <p>The weighted absolute percentage error (WAPE).</p>
     pub fn get_wape(&self) -> &::std::option::Option<f64> {
@@ -90,8 +88,7 @@ impl ErrorMetricBuilder {
     }
     /// <p>The root-mean-square error (RMSE).</p>
     pub fn set_rmse(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.rmse = input;
-        self
+        self.rmse = input; self
     }
     /// <p>The root-mean-square error (RMSE).</p>
     pub fn get_rmse(&self) -> &::std::option::Option<f64> {
@@ -104,8 +101,7 @@ impl ErrorMetricBuilder {
     }
     /// <p>The Mean Absolute Scaled Error (MASE)</p>
     pub fn set_mase(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.mase = input;
-        self
+        self.mase = input; self
     }
     /// <p>The Mean Absolute Scaled Error (MASE)</p>
     pub fn get_mase(&self) -> &::std::option::Option<f64> {
@@ -118,8 +114,7 @@ impl ErrorMetricBuilder {
     }
     /// <p>The Mean Absolute Percentage Error (MAPE)</p>
     pub fn set_mape(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.mape = input;
-        self
+        self.mape = input; self
     }
     /// <p>The Mean Absolute Percentage Error (MAPE)</p>
     pub fn get_mape(&self) -> &::std::option::Option<f64> {
@@ -128,11 +123,17 @@ impl ErrorMetricBuilder {
     /// Consumes the builder and constructs a [`ErrorMetric`](crate::types::ErrorMetric).
     pub fn build(self) -> crate::types::ErrorMetric {
         crate::types::ErrorMetric {
-            forecast_type: self.forecast_type,
-            wape: self.wape,
-            rmse: self.rmse,
-            mase: self.mase,
-            mape: self.mape,
+            forecast_type: self.forecast_type
+            ,
+            wape: self.wape
+            ,
+            rmse: self.rmse
+            ,
+            mase: self.mase
+            ,
+            mape: self.mape
+            ,
         }
     }
 }
+

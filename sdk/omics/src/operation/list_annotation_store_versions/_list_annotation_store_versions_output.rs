@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnnotationStoreVersionsOutput {
+pub struct ListAnnotationStoreVersionsOutput  {
     /// <p>Lists all versions of an annotation store.</p>
-    pub annotation_store_versions: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>>,
+    pub annotation_store_versions: ::std::option::Option<::std::vec::Vec::<crate::types::AnnotationStoreVersionItem>>,
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAnnotationStoreVersionsOutput {
+impl  ListAnnotationStoreVersionsOutput  {
     /// <p>Lists all versions of an annotation store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.annotation_store_versions.is_none()`.
-    pub fn annotation_store_versions(&self) -> &[crate::types::AnnotationStoreVersionItem] {
-        self.annotation_store_versions.as_deref().unwrap_or_default()
+    pub fn annotation_store_versions(&self) -> & [crate::types::AnnotationStoreVersionItem] {
+        self.annotation_store_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAnnotationStoreVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAnnotationStoreVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAnnotationStoreVersionsOutput`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput).
     pub fn builder() -> crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAnnotationStoreVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnnotationStoreVersionsOutputBuilder {
-    pub(crate) annotation_store_versions: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>>,
+    pub(crate) annotation_store_versions: ::std::option::Option<::std::vec::Vec::<crate::types::AnnotationStoreVersionItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAnnotationStoreVersionsOutputBuilder {
     /// <p>Lists all versions of an annotation store.</p>
     pub fn annotation_store_versions(mut self, input: crate::types::AnnotationStoreVersionItem) -> Self {
         let mut v = self.annotation_store_versions.unwrap_or_default();
-        v.push(input);
-        self.annotation_store_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.annotation_store_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists all versions of an annotation store.</p>
-    pub fn set_annotation_store_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>>) -> Self {
-        self.annotation_store_versions = input;
-        self
+    pub fn set_annotation_store_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnnotationStoreVersionItem>>) -> Self {
+        self.annotation_store_versions = input; self
     }
     /// <p>Lists all versions of an annotation store.</p>
-    pub fn get_annotation_store_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>> {
+    pub fn get_annotation_store_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnnotationStoreVersionItem>> {
         &self.annotation_store_versions
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListAnnotationStoreVersionsOutputBuilder {
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAnnotationStoreVersionsOutput`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput).
     pub fn build(self) -> crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput {
         crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput {
-            annotation_store_versions: self.annotation_store_versions,
-            next_token: self.next_token,
+            annotation_store_versions: self.annotation_store_versions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

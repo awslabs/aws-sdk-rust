@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateConfigurationItemsFromApplicationInput {
+pub struct DisassociateConfigurationItemsFromApplicationInput  {
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
     pub application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub configuration_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociateConfigurationItemsFromApplicationInput {
+impl  DisassociateConfigurationItemsFromApplicationInput  {
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
-    pub fn application_configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_configuration_id(&self) -> ::std::option::Option<& str> {
         self.application_configuration_id.as_deref()
     }
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
-    pub fn configuration_ids(&self) -> &[::std::string::String] {
-        self.configuration_ids.as_deref().unwrap_or_default()
+    pub fn configuration_ids(&self) -> & [::std::string::String] {
+        self.configuration_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociateConfigurationItemsFromApplicationInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConfigurationItemsFromApplicationInput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder {
         crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder::default()
     }
 }
@@ -34,7 +33,7 @@ impl DisassociateConfigurationItemsFromApplicationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateConfigurationItemsFromApplicationInputBuilder {
     pub(crate) application_configuration_id: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociateConfigurationItemsFromApplicationInputBuilder {
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
@@ -45,8 +44,7 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
     }
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
     pub fn set_application_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_configuration_id = input;
-        self
+        self.application_configuration_id = input; self
     }
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
     pub fn get_application_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +57,28 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
     pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.configuration_ids = input;
-        self
+    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.configuration_ids = input; self
     }
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.configuration_ids
     }
     /// Consumes the builder and constructs a [`DisassociateConfigurationItemsFromApplicationInput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput {
-                application_configuration_id: self.application_configuration_id,
-                configuration_ids: self.configuration_ids,
-            },
+                application_configuration_id: self.application_configuration_id
+                ,
+                configuration_ids: self.configuration_ids
+                ,
+            }
         )
     }
 }
+

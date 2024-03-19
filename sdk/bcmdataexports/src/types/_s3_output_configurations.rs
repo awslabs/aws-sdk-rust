@@ -3,7 +3,7 @@
 /// <p>The compression type, file format, and overwrite preference for the data export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3OutputConfigurations {
+pub struct S3OutputConfigurations  {
     /// <p>The output type for the data export.</p>
     pub output_type: crate::types::S3OutputType,
     /// <p>The file format for the data export.</p>
@@ -13,21 +13,21 @@ pub struct S3OutputConfigurations {
     /// <p>The rule to follow when generating a version of the data export file. You have the choice to overwrite the previous version or to be delivered in addition to the previous versions. Overwriting exports can save on Amazon S3 storage costs. Creating new export versions allows you to track the changes in cost and usage data over time.</p>
     pub overwrite: crate::types::OverwriteOption,
 }
-impl S3OutputConfigurations {
+impl  S3OutputConfigurations  {
     /// <p>The output type for the data export.</p>
-    pub fn output_type(&self) -> &crate::types::S3OutputType {
+    pub fn output_type(&self) -> & crate::types::S3OutputType {
         &self.output_type
     }
     /// <p>The file format for the data export.</p>
-    pub fn format(&self) -> &crate::types::FormatOption {
+    pub fn format(&self) -> & crate::types::FormatOption {
         &self.format
     }
     /// <p>The compression type for the data export.</p>
-    pub fn compression(&self) -> &crate::types::CompressionOption {
+    pub fn compression(&self) -> & crate::types::CompressionOption {
         &self.compression
     }
     /// <p>The rule to follow when generating a version of the data export file. You have the choice to overwrite the previous version or to be delivered in addition to the previous versions. Overwriting exports can save on Amazon S3 storage costs. Creating new export versions allows you to track the changes in cost and usage data over time.</p>
-    pub fn overwrite(&self) -> &crate::types::OverwriteOption {
+    pub fn overwrite(&self) -> & crate::types::OverwriteOption {
         &self.overwrite
     }
 }
@@ -56,8 +56,7 @@ impl S3OutputConfigurationsBuilder {
     }
     /// <p>The output type for the data export.</p>
     pub fn set_output_type(mut self, input: ::std::option::Option<crate::types::S3OutputType>) -> Self {
-        self.output_type = input;
-        self
+        self.output_type = input; self
     }
     /// <p>The output type for the data export.</p>
     pub fn get_output_type(&self) -> &::std::option::Option<crate::types::S3OutputType> {
@@ -71,8 +70,7 @@ impl S3OutputConfigurationsBuilder {
     }
     /// <p>The file format for the data export.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::FormatOption>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The file format for the data export.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::FormatOption> {
@@ -86,8 +84,7 @@ impl S3OutputConfigurationsBuilder {
     }
     /// <p>The compression type for the data export.</p>
     pub fn set_compression(mut self, input: ::std::option::Option<crate::types::CompressionOption>) -> Self {
-        self.compression = input;
-        self
+        self.compression = input; self
     }
     /// <p>The compression type for the data export.</p>
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::CompressionOption> {
@@ -101,8 +98,7 @@ impl S3OutputConfigurationsBuilder {
     }
     /// <p>The rule to follow when generating a version of the data export file. You have the choice to overwrite the previous version or to be delivered in addition to the previous versions. Overwriting exports can save on Amazon S3 storage costs. Creating new export versions allows you to track the changes in cost and usage data over time.</p>
     pub fn set_overwrite(mut self, input: ::std::option::Option<crate::types::OverwriteOption>) -> Self {
-        self.overwrite = input;
-        self
+        self.overwrite = input; self
     }
     /// <p>The rule to follow when generating a version of the data export file. You have the choice to overwrite the previous version or to be delivered in addition to the previous versions. Overwriting exports can save on Amazon S3 storage costs. Creating new export versions allows you to track the changes in cost and usage data over time.</p>
     pub fn get_overwrite(&self) -> &::std::option::Option<crate::types::OverwriteOption> {
@@ -115,31 +111,30 @@ impl S3OutputConfigurationsBuilder {
     /// - [`compression`](crate::types::builders::S3OutputConfigurationsBuilder::compression)
     /// - [`overwrite`](crate::types::builders::S3OutputConfigurationsBuilder::overwrite)
     pub fn build(self) -> ::std::result::Result<crate::types::S3OutputConfigurations, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3OutputConfigurations {
-            output_type: self.output_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output_type",
-                    "output_type was not specified but it is required when building S3OutputConfigurations",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building S3OutputConfigurations",
-                )
-            })?,
-            compression: self.compression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compression",
-                    "compression was not specified but it is required when building S3OutputConfigurations",
-                )
-            })?,
-            overwrite: self.overwrite.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "overwrite",
-                    "overwrite was not specified but it is required when building S3OutputConfigurations",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3OutputConfigurations {
+                output_type: self.output_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("output_type", "output_type was not specified but it is required when building S3OutputConfigurations")
+                    )?
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building S3OutputConfigurations")
+                    )?
+                ,
+                compression: self.compression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compression", "compression was not specified but it is required when building S3OutputConfigurations")
+                    )?
+                ,
+                overwrite: self.overwrite
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("overwrite", "overwrite was not specified but it is required when building S3OutputConfigurations")
+                    )?
+                ,
+            }
+        )
     }
 }
+

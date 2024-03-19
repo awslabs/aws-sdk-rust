@@ -3,7 +3,7 @@
 /// <p>Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGrokClassifierRequest {
+pub struct UpdateGrokClassifierRequest  {
     /// <p>The name of the <code>GrokClassifier</code>.</p>
     pub name: ::std::string::String,
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
@@ -13,22 +13,21 @@ pub struct UpdateGrokClassifierRequest {
     /// <p>Optional custom grok patterns used by this classifier.</p>
     pub custom_patterns: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGrokClassifierRequest {
+impl  UpdateGrokClassifierRequest  {
     /// <p>The name of the <code>GrokClassifier</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
-    pub fn classification(&self) -> ::std::option::Option<&str> {
+    pub fn classification(&self) -> ::std::option::Option<& str> {
         self.classification.as_deref()
     }
     /// <p>The grok pattern used by this classifier.</p>
-    pub fn grok_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn grok_pattern(&self) -> ::std::option::Option<& str> {
         self.grok_pattern.as_deref()
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
-    pub fn custom_patterns(&self) -> ::std::option::Option<&str> {
+    pub fn custom_patterns(&self) -> ::std::option::Option<& str> {
         self.custom_patterns.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl UpdateGrokClassifierRequestBuilder {
     }
     /// <p>The name of the <code>GrokClassifier</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>GrokClassifier</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl UpdateGrokClassifierRequestBuilder {
     }
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.classification = input;
-        self
+        self.classification = input; self
     }
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl UpdateGrokClassifierRequestBuilder {
     }
     /// <p>The grok pattern used by this classifier.</p>
     pub fn set_grok_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grok_pattern = input;
-        self
+        self.grok_pattern = input; self
     }
     /// <p>The grok pattern used by this classifier.</p>
     pub fn get_grok_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl UpdateGrokClassifierRequestBuilder {
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
     pub fn set_custom_patterns(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_patterns = input;
-        self
+        self.custom_patterns = input; self
     }
     /// <p>Optional custom grok patterns used by this classifier.</p>
     pub fn get_custom_patterns(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,16 +105,21 @@ impl UpdateGrokClassifierRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::UpdateGrokClassifierRequestBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateGrokClassifierRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateGrokClassifierRequest {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateGrokClassifierRequest",
-                )
-            })?,
-            classification: self.classification,
-            grok_pattern: self.grok_pattern,
-            custom_patterns: self.custom_patterns,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateGrokClassifierRequest {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdateGrokClassifierRequest")
+                    )?
+                ,
+                classification: self.classification
+                ,
+                grok_pattern: self.grok_pattern
+                ,
+                custom_patterns: self.custom_patterns
+                ,
+            }
+        )
     }
 }
+

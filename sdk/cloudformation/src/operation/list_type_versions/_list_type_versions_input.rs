@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTypeVersionsInput {
+pub struct ListTypeVersionsInput  {
     /// <p>The kind of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
@@ -30,20 +30,20 @@ pub struct ListTypeVersionsInput {
     /// <p>Extensions published by Amazon aren't assigned a publisher ID.</p>
     pub publisher_id: ::std::option::Option<::std::string::String>,
 }
-impl ListTypeVersionsInput {
+impl  ListTypeVersionsInput  {
     /// <p>The kind of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RegistryType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RegistryType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -51,7 +51,7 @@ impl ListTypeVersionsInput {
         self.max_results
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
@@ -63,12 +63,12 @@ impl ListTypeVersionsInput {
     /// <p><code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p></li>
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
-    pub fn deprecated_status(&self) -> ::std::option::Option<&crate::types::DeprecatedStatus> {
+    pub fn deprecated_status(&self) -> ::std::option::Option<& crate::types::DeprecatedStatus> {
         self.deprecated_status.as_ref()
     }
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID.</p>
-    pub fn publisher_id(&self) -> ::std::option::Option<&str> {
+    pub fn publisher_id(&self) -> ::std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
 }
@@ -101,8 +101,7 @@ impl ListTypeVersionsInputBuilder {
     /// <p>The kind of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RegistryType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The kind of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -118,8 +117,7 @@ impl ListTypeVersionsInputBuilder {
     /// <p>The name of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -135,8 +133,7 @@ impl ListTypeVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
@@ -150,8 +147,7 @@ impl ListTypeVersionsInputBuilder {
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -164,8 +160,7 @@ impl ListTypeVersionsInputBuilder {
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl ListTypeVersionsInputBuilder {
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
     pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
-        self.deprecated_status = input;
-        self
+        self.deprecated_status = input; self
     }
     /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
@@ -218,8 +212,7 @@ impl ListTypeVersionsInputBuilder {
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID.</p>
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.publisher_id = input;
-        self
+        self.publisher_id = input; self
     }
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID.</p>
@@ -227,17 +220,25 @@ impl ListTypeVersionsInputBuilder {
         &self.publisher_id
     }
     /// Consumes the builder and constructs a [`ListTypeVersionsInput`](crate::operation::list_type_versions::ListTypeVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_type_versions::ListTypeVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_type_versions::ListTypeVersionsInput {
-            r#type: self.r#type,
-            type_name: self.type_name,
-            arn: self.arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            deprecated_status: self.deprecated_status,
-            publisher_id: self.publisher_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_type_versions::ListTypeVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_type_versions::ListTypeVersionsInput {
+                r#type: self.r#type
+                ,
+                type_name: self.type_name
+                ,
+                arn: self.arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                deprecated_status: self.deprecated_status
+                ,
+                publisher_id: self.publisher_id
+                ,
+            }
+        )
     }
 }
+

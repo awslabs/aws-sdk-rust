@@ -3,11 +3,11 @@
 /// <p>A configuration for logging events.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogConfiguration {
+pub struct LogConfiguration  {
     /// <p>Indicates whether logging is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl LogConfiguration {
+impl  LogConfiguration  {
     /// <p>Indicates whether logging is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl LogConfigurationBuilder {
     }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl LogConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`LogConfiguration`](crate::types::LogConfiguration).
     pub fn build(self) -> crate::types::LogConfiguration {
-        crate::types::LogConfiguration { enabled: self.enabled }
+        crate::types::LogConfiguration {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Used as the request parameter in the <code>ListAssessmentRuns</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentRunFilter {
+pub struct AssessmentRunFilter  {
     /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
     pub name_pattern: ::std::option::Option<::std::string::String>,
     /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub states: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunState>>,
+    pub states: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunState>>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
     pub duration_range: ::std::option::Option<crate::types::DurationRange>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rules_package_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
     pub start_time_range: ::std::option::Option<crate::types::TimestampRange>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>completedAt</b> property of the <code>AssessmentRun</code> data type.</p>
@@ -19,37 +19,39 @@ pub struct AssessmentRunFilter {
     /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
     pub state_change_time_range: ::std::option::Option<crate::types::TimestampRange>,
 }
-impl AssessmentRunFilter {
+impl  AssessmentRunFilter  {
     /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn name_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn name_pattern(&self) -> ::std::option::Option<& str> {
         self.name_pattern.as_deref()
     }
     /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
-    pub fn states(&self) -> &[crate::types::AssessmentRunState] {
-        self.states.as_deref().unwrap_or_default()
+    pub fn states(&self) -> & [crate::types::AssessmentRunState] {
+        self.states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn duration_range(&self) -> ::std::option::Option<&crate::types::DurationRange> {
+    pub fn duration_range(&self) -> ::std::option::Option<& crate::types::DurationRange> {
         self.duration_range.as_ref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules_package_arns.is_none()`.
-    pub fn rules_package_arns(&self) -> &[::std::string::String] {
-        self.rules_package_arns.as_deref().unwrap_or_default()
+    pub fn rules_package_arns(&self) -> & [::std::string::String] {
+        self.rules_package_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn start_time_range(&self) -> ::std::option::Option<&crate::types::TimestampRange> {
+    pub fn start_time_range(&self) -> ::std::option::Option<& crate::types::TimestampRange> {
         self.start_time_range.as_ref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>completedAt</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn completion_time_range(&self) -> ::std::option::Option<&crate::types::TimestampRange> {
+    pub fn completion_time_range(&self) -> ::std::option::Option<& crate::types::TimestampRange> {
         self.completion_time_range.as_ref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn state_change_time_range(&self) -> ::std::option::Option<&crate::types::TimestampRange> {
+    pub fn state_change_time_range(&self) -> ::std::option::Option<& crate::types::TimestampRange> {
         self.state_change_time_range.as_ref()
     }
 }
@@ -65,9 +67,9 @@ impl AssessmentRunFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentRunFilterBuilder {
     pub(crate) name_pattern: ::std::option::Option<::std::string::String>,
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunState>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunState>>,
     pub(crate) duration_range: ::std::option::Option<crate::types::DurationRange>,
-    pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) start_time_range: ::std::option::Option<crate::types::TimestampRange>,
     pub(crate) completion_time_range: ::std::option::Option<crate::types::TimestampRange>,
     pub(crate) state_change_time_range: ::std::option::Option<crate::types::TimestampRange>,
@@ -80,8 +82,7 @@ impl AssessmentRunFilterBuilder {
     }
     /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn set_name_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_pattern = input;
-        self
+        self.name_pattern = input; self
     }
     /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn get_name_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,17 +95,16 @@ impl AssessmentRunFilterBuilder {
     /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn states(mut self, input: crate::types::AssessmentRunState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunState>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunState>>) -> Self {
+        self.states = input; self
     }
     /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunState>> {
         &self.states
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
@@ -114,8 +114,7 @@ impl AssessmentRunFilterBuilder {
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn set_duration_range(mut self, input: ::std::option::Option<crate::types::DurationRange>) -> Self {
-        self.duration_range = input;
-        self
+        self.duration_range = input; self
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn get_duration_range(&self) -> &::std::option::Option<crate::types::DurationRange> {
@@ -128,17 +127,16 @@ impl AssessmentRunFilterBuilder {
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn rules_package_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
-        v.push(input.into());
-        self.rules_package_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rules_package_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rules_package_arns = input;
-        self
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rules_package_arns = input; self
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rules_package_arns
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
@@ -148,8 +146,7 @@ impl AssessmentRunFilterBuilder {
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::TimestampRange>) -> Self {
-        self.start_time_range = input;
-        self
+        self.start_time_range = input; self
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::TimestampRange> {
@@ -162,8 +159,7 @@ impl AssessmentRunFilterBuilder {
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>completedAt</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn set_completion_time_range(mut self, input: ::std::option::Option<crate::types::TimestampRange>) -> Self {
-        self.completion_time_range = input;
-        self
+        self.completion_time_range = input; self
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>completedAt</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn get_completion_time_range(&self) -> &::std::option::Option<crate::types::TimestampRange> {
@@ -176,8 +172,7 @@ impl AssessmentRunFilterBuilder {
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn set_state_change_time_range(mut self, input: ::std::option::Option<crate::types::TimestampRange>) -> Self {
-        self.state_change_time_range = input;
-        self
+        self.state_change_time_range = input; self
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn get_state_change_time_range(&self) -> &::std::option::Option<crate::types::TimestampRange> {
@@ -186,13 +181,21 @@ impl AssessmentRunFilterBuilder {
     /// Consumes the builder and constructs a [`AssessmentRunFilter`](crate::types::AssessmentRunFilter).
     pub fn build(self) -> crate::types::AssessmentRunFilter {
         crate::types::AssessmentRunFilter {
-            name_pattern: self.name_pattern,
-            states: self.states,
-            duration_range: self.duration_range,
-            rules_package_arns: self.rules_package_arns,
-            start_time_range: self.start_time_range,
-            completion_time_range: self.completion_time_range,
-            state_change_time_range: self.state_change_time_range,
+            name_pattern: self.name_pattern
+            ,
+            states: self.states
+            ,
+            duration_range: self.duration_range
+            ,
+            rules_package_arns: self.rules_package_arns
+            ,
+            start_time_range: self.start_time_range
+            ,
+            completion_time_range: self.completion_time_range
+            ,
+            state_change_time_range: self.state_change_time_range
+            ,
         }
     }
 }
+

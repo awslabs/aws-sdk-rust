@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelDataRepositoryTaskOutput {
+pub struct CancelDataRepositoryTaskOutput  {
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct CancelDataRepositoryTaskOutput {
     pub task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CancelDataRepositoryTaskOutput {
+impl  CancelDataRepositoryTaskOutput  {
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
     /// <li>
@@ -39,19 +39,19 @@ impl CancelDataRepositoryTaskOutput {
     /// <li>
     /// <p><code>CANCELING</code> - FSx is in process of canceling the task.</p></li>
     /// </ul>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::DataRepositoryTaskLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::DataRepositoryTaskLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The ID of the task being canceled.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelDataRepositoryTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelDataRepositoryTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskOutput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput).
     pub fn builder() -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskOutputBuilder {
@@ -103,8 +103,7 @@ impl CancelDataRepositoryTaskOutputBuilder {
     /// <p><code>CANCELING</code> - FSx is in process of canceling the task.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskLifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>The lifecycle status of the data repository task, as follows:</p>
     /// <ul>
@@ -131,28 +130,30 @@ impl CancelDataRepositoryTaskOutputBuilder {
     }
     /// <p>The ID of the task being canceled.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the task being canceled.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelDataRepositoryTaskOutput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput).
     pub fn build(self) -> crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput {
         crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput {
-            lifecycle: self.lifecycle,
-            task_id: self.task_id,
+            lifecycle: self.lifecycle
+            ,
+            task_id: self.task_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

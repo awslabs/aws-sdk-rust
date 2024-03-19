@@ -3,7 +3,7 @@
 /// <p>The output from the GetRetainedMessage operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRetainedMessageOutput {
+pub struct GetRetainedMessageOutput  {
     /// <p>The topic name to which the retained message was published.</p>
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded message payload of the retained message body.</p>
@@ -18,13 +18,13 @@ pub struct GetRetainedMessageOutput {
     pub user_properties: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
-impl GetRetainedMessageOutput {
+impl  GetRetainedMessageOutput  {
     /// <p>The topic name to which the retained message was published.</p>
-    pub fn topic(&self) -> ::std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<& str> {
         self.topic.as_deref()
     }
     /// <p>The Base64-encoded message payload of the retained message body.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
@@ -38,15 +38,15 @@ impl GetRetainedMessageOutput {
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
     /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
-    pub fn user_properties(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn user_properties(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.user_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRetainedMessageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRetainedMessageOutput {
     /// Creates a new builder-style object to manufacture [`GetRetainedMessageOutput`](crate::operation::get_retained_message::GetRetainedMessageOutput).
     pub fn builder() -> crate::operation::get_retained_message::builders::GetRetainedMessageOutputBuilder {
@@ -73,8 +73,7 @@ impl GetRetainedMessageOutputBuilder {
     }
     /// <p>The topic name to which the retained message was published.</p>
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// <p>The topic name to which the retained message was published.</p>
     pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl GetRetainedMessageOutputBuilder {
     }
     /// <p>The Base64-encoded message payload of the retained message body.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The Base64-encoded message payload of the retained message body.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -101,8 +99,7 @@ impl GetRetainedMessageOutputBuilder {
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     pub fn set_qos(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.qos = input;
-        self
+        self.qos = input; self
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     pub fn get_qos(&self) -> &::std::option::Option<i32> {
@@ -115,8 +112,7 @@ impl GetRetainedMessageOutputBuilder {
     }
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
@@ -133,8 +129,7 @@ impl GetRetainedMessageOutputBuilder {
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
     /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub fn set_user_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.user_properties = input;
-        self
+        self.user_properties = input; self
     }
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
@@ -143,23 +138,31 @@ impl GetRetainedMessageOutputBuilder {
         &self.user_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRetainedMessageOutput`](crate::operation::get_retained_message::GetRetainedMessageOutput).
     pub fn build(self) -> crate::operation::get_retained_message::GetRetainedMessageOutput {
         crate::operation::get_retained_message::GetRetainedMessageOutput {
-            topic: self.topic,
-            payload: self.payload,
-            qos: self.qos.unwrap_or_default(),
-            last_modified_time: self.last_modified_time.unwrap_or_default(),
-            user_properties: self.user_properties,
+            topic: self.topic
+            ,
+            payload: self.payload
+            ,
+            qos: self.qos
+                .unwrap_or_default()
+            ,
+            last_modified_time: self.last_modified_time
+                .unwrap_or_default()
+            ,
+            user_properties: self.user_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

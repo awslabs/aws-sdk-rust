@@ -3,13 +3,13 @@
 /// <p>An object that represents the status of a virtual router.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualRouterStatus {
+pub struct VirtualRouterStatus  {
     /// <p>The current status of the virtual router.</p>
     pub status: crate::types::VirtualRouterStatusCode,
 }
-impl VirtualRouterStatus {
+impl  VirtualRouterStatus  {
     /// <p>The current status of the virtual router.</p>
-    pub fn status(&self) -> &crate::types::VirtualRouterStatusCode {
+    pub fn status(&self) -> & crate::types::VirtualRouterStatusCode {
         &self.status
     }
 }
@@ -35,8 +35,7 @@ impl VirtualRouterStatusBuilder {
     }
     /// <p>The current status of the virtual router.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualRouterStatusCode>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the virtual router.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualRouterStatusCode> {
@@ -46,13 +45,15 @@ impl VirtualRouterStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::VirtualRouterStatusBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualRouterStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualRouterStatus {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building VirtualRouterStatus",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualRouterStatus {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building VirtualRouterStatus")
+                    )?
+                ,
+            }
+        )
     }
 }
+

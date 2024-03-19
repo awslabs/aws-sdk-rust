@@ -3,7 +3,7 @@
 /// <p>Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SmsMessage {
+pub struct SmsMessage  {
     /// <p>The body of the SMS message.</p>
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
@@ -17,49 +17,47 @@ pub struct SmsMessage {
     /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
-    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub template_id: ::std::option::Option<::std::string::String>,
 }
-impl SmsMessage {
+impl  SmsMessage  {
     /// <p>The body of the SMS message.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
-    pub fn keyword(&self) -> ::std::option::Option<&str> {
+    pub fn keyword(&self) -> ::std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p>This field is reserved for future use.</p>
-    pub fn media_url(&self) -> ::std::option::Option<&str> {
+    pub fn media_url(&self) -> ::std::option::Option<& str> {
         self.media_url.as_deref()
     }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<& crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
-    pub fn origination_number(&self) -> ::std::option::Option<&str> {
+    pub fn origination_number(&self) -> ::std::option::Option<& str> {
         self.origination_number.as_deref()
     }
     /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
-    pub fn sender_id(&self) -> ::std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<& str> {
         self.sender_id.as_deref()
     }
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn substitutions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
 }
@@ -80,7 +78,7 @@ pub struct SmsMessageBuilder {
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) origination_number: ::std::option::Option<::std::string::String>,
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,
-    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
 }
@@ -92,8 +90,7 @@ impl SmsMessageBuilder {
     }
     /// <p>The body of the SMS message.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The body of the SMS message.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl SmsMessageBuilder {
     }
     /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyword = input;
-        self
+        self.keyword = input; self
     }
     /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
     pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl SmsMessageBuilder {
     }
     /// <p>This field is reserved for future use.</p>
     pub fn set_media_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_url = input;
-        self
+        self.media_url = input; self
     }
     /// <p>This field is reserved for future use.</p>
     pub fn get_media_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +129,7 @@ impl SmsMessageBuilder {
     }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
@@ -148,8 +142,7 @@ impl SmsMessageBuilder {
     }
     /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
     pub fn set_origination_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origination_number = input;
-        self
+        self.origination_number = input; self
     }
     /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
     pub fn get_origination_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +155,7 @@ impl SmsMessageBuilder {
     }
     /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender_id = input;
-        self
+        self.sender_id = input; self
     }
     /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,24 +166,18 @@ impl SmsMessageBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.substitutions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.substitutions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
-    pub fn set_substitutions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.substitutions = input;
-        self
+    pub fn set_substitutions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.substitutions = input; self
     }
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
-    pub fn get_substitutions(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_substitutions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.substitutions
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
@@ -201,8 +187,7 @@ impl SmsMessageBuilder {
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +200,7 @@ impl SmsMessageBuilder {
     }
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,15 +209,25 @@ impl SmsMessageBuilder {
     /// Consumes the builder and constructs a [`SmsMessage`](crate::types::SmsMessage).
     pub fn build(self) -> crate::types::SmsMessage {
         crate::types::SmsMessage {
-            body: self.body,
-            keyword: self.keyword,
-            media_url: self.media_url,
-            message_type: self.message_type,
-            origination_number: self.origination_number,
-            sender_id: self.sender_id,
-            substitutions: self.substitutions,
-            entity_id: self.entity_id,
-            template_id: self.template_id,
+            body: self.body
+            ,
+            keyword: self.keyword
+            ,
+            media_url: self.media_url
+            ,
+            message_type: self.message_type
+            ,
+            origination_number: self.origination_number
+            ,
+            sender_id: self.sender_id
+            ,
+            substitutions: self.substitutions
+            ,
+            entity_id: self.entity_id
+            ,
+            template_id: self.template_id
+            ,
         }
     }
 }
+

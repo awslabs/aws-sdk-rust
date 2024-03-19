@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRemediationExceptionsInput {
+pub struct DeleteRemediationExceptionsInput  {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub resource_keys: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>,
 }
-impl DeleteRemediationExceptionsInput {
+impl  DeleteRemediationExceptionsInput  {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
-    pub fn resource_keys(&self) -> &[crate::types::RemediationExceptionResourceKey] {
-        self.resource_keys.as_deref().unwrap_or_default()
+    pub fn resource_keys(&self) -> & [crate::types::RemediationExceptionResourceKey] {
+        self.resource_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteRemediationExceptionsInput {
@@ -32,7 +33,7 @@ impl DeleteRemediationExceptionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRemediationExceptionsInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>,
 }
 impl DeleteRemediationExceptionsInputBuilder {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
@@ -43,8 +44,7 @@ impl DeleteRemediationExceptionsInputBuilder {
     }
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl DeleteRemediationExceptionsInputBuilder {
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
     pub fn resource_keys(mut self, input: crate::types::RemediationExceptionResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
-        v.push(input);
-        self.resource_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>) -> Self {
-        self.resource_keys = input;
-        self
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>) -> Self {
+        self.resource_keys = input; self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>> {
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>> {
         &self.resource_keys
     }
     /// Consumes the builder and constructs a [`DeleteRemediationExceptionsInput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput {
-            config_rule_name: self.config_rule_name,
-            resource_keys: self.resource_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput {
+                config_rule_name: self.config_rule_name
+                ,
+                resource_keys: self.resource_keys
+                ,
+            }
+        )
     }
 }
+

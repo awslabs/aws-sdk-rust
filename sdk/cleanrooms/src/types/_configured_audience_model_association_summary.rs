@@ -3,7 +3,7 @@
 /// <p>A summary of the configured audience model association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfiguredAudienceModelAssociationSummary {
+pub struct ConfiguredAudienceModelAssociationSummary  {
     /// <p>A unique identifier of the membership that contains the configured audience model association.</p>
     pub membership_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the membership that contains the configured audience model association.</p>
@@ -27,57 +27,49 @@ pub struct ConfiguredAudienceModelAssociationSummary {
     /// <p>The description of the configured audience model association.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ConfiguredAudienceModelAssociationSummary {
+impl  ConfiguredAudienceModelAssociationSummary  {
     /// <p>A unique identifier of the membership that contains the configured audience model association.</p>
-    pub fn membership_id(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_id.deref()
+    pub fn membership_id(&self) -> & str {
+        use std::ops::Deref; self.membership_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the membership that contains the configured audience model association.</p>
-    pub fn membership_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_arn.deref()
+    pub fn membership_arn(&self) -> & str {
+        use std::ops::Deref; self.membership_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collaboration that contains the configured audience model association.</p>
-    pub fn collaboration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_arn.deref()
+    pub fn collaboration_arn(&self) -> & str {
+        use std::ops::Deref; self.collaboration_arn.deref()
     }
     /// <p>A unique identifier of the collaboration that configured audience model is associated with.</p>
-    pub fn collaboration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_id.deref()
+    pub fn collaboration_id(&self) -> & str {
+        use std::ops::Deref; self.collaboration_id.deref()
     }
     /// <p>The time at which the configured audience model association was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the configured audience model association was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>A unique identifier of the configured audience model association.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model association.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the configured audience model association.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this configured audience model association.</p>
-    pub fn configured_audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_arn.deref()
+    pub fn configured_audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_arn.deref()
     }
     /// <p>The description of the configured audience model association.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -113,8 +105,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>A unique identifier of the membership that contains the configured audience model association.</p>
     pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// <p>A unique identifier of the membership that contains the configured audience model association.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +119,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the membership that contains the configured audience model association.</p>
     pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_arn = input;
-        self
+        self.membership_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the membership that contains the configured audience model association.</p>
     pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +133,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the collaboration that contains the configured audience model association.</p>
     pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_arn = input;
-        self
+        self.collaboration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the collaboration that contains the configured audience model association.</p>
     pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +147,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>A unique identifier of the collaboration that configured audience model is associated with.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>A unique identifier of the collaboration that configured audience model is associated with.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +161,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>The time at which the configured audience model association was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the configured audience model association was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +175,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>The most recent time at which the configured audience model association was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the configured audience model association was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -203,8 +189,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>A unique identifier of the configured audience model association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier of the configured audience model association.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +203,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +217,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>The name of the configured audience model association.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configured audience model association.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +231,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this configured audience model association.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this configured audience model association.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,8 +244,7 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     }
     /// <p>The description of the configured audience model association.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configured audience model association.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,71 +262,63 @@ impl ConfiguredAudienceModelAssociationSummaryBuilder {
     /// - [`arn`](crate::types::builders::ConfiguredAudienceModelAssociationSummaryBuilder::arn)
     /// - [`name`](crate::types::builders::ConfiguredAudienceModelAssociationSummaryBuilder::name)
     /// - [`configured_audience_model_arn`](crate::types::builders::ConfiguredAudienceModelAssociationSummaryBuilder::configured_audience_model_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ConfiguredAudienceModelAssociationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfiguredAudienceModelAssociationSummary {
-            membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_id",
-                    "membership_id was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_arn",
-                    "membership_arn was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_arn",
-                    "collaboration_arn was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_id",
-                    "collaboration_id was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            configured_audience_model_arn: self.configured_audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_audience_model_arn",
-                    "configured_audience_model_arn was not specified but it is required when building ConfiguredAudienceModelAssociationSummary",
-                )
-            })?,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredAudienceModelAssociationSummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ConfiguredAudienceModelAssociationSummary {
+                membership_id: self.membership_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_id", "membership_id was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                membership_arn: self.membership_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_arn", "membership_arn was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                collaboration_arn: self.collaboration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_arn", "collaboration_arn was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                collaboration_id: self.collaboration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_id", "collaboration_id was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_arn", "configured_audience_model_arn was not specified but it is required when building ConfiguredAudienceModelAssociationSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Connection information for a new game session that is created in response to a start matchmaking request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the matchmaking ticket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GameSessionConnectionInfo {
+pub struct GameSessionConnectionInfo  {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
     pub game_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
@@ -27,15 +27,15 @@ pub struct GameSessionConnectionInfo {
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
-    pub matched_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
+    pub matched_player_sessions: ::std::option::Option<::std::vec::Vec::<crate::types::MatchedPlayerSession>>,
 }
-impl GameSessionConnectionInfo {
+impl  GameSessionConnectionInfo  {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
-    pub fn game_session_arn(&self) -> ::std::option::Option<&str> {
+    pub fn game_session_arn(&self) -> ::std::option::Option<& str> {
         self.game_session_arn.as_deref()
     }
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
@@ -53,7 +53,7 @@ impl GameSessionConnectionInfo {
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
@@ -61,13 +61,14 @@ impl GameSessionConnectionInfo {
         self.port
     }
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_player_sessions.is_none()`.
-    pub fn matched_player_sessions(&self) -> &[crate::types::MatchedPlayerSession] {
-        self.matched_player_sessions.as_deref().unwrap_or_default()
+    pub fn matched_player_sessions(&self) -> & [crate::types::MatchedPlayerSession] {
+        self.matched_player_sessions.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for GameSessionConnectionInfo {
+impl  ::std::fmt::Debug for GameSessionConnectionInfo  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GameSessionConnectionInfo");
         formatter.field("game_session_arn", &self.game_session_arn);
@@ -93,7 +94,7 @@ pub struct GameSessionConnectionInfoBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
-    pub(crate) matched_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
+    pub(crate) matched_player_sessions: ::std::option::Option<::std::vec::Vec::<crate::types::MatchedPlayerSession>>,
 }
 impl GameSessionConnectionInfoBuilder {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
@@ -103,8 +104,7 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
     pub fn set_game_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_session_arn = input;
-        self
+        self.game_session_arn = input; self
     }
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
     pub fn get_game_session_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +117,7 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +158,7 @@ impl GameSessionConnectionInfoBuilder {
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
@@ -187,8 +185,7 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -201,27 +198,31 @@ impl GameSessionConnectionInfoBuilder {
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
     pub fn matched_player_sessions(mut self, input: crate::types::MatchedPlayerSession) -> Self {
         let mut v = self.matched_player_sessions.unwrap_or_default();
-        v.push(input);
-        self.matched_player_sessions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.matched_player_sessions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
-    pub fn set_matched_player_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>) -> Self {
-        self.matched_player_sessions = input;
-        self
+    pub fn set_matched_player_sessions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MatchedPlayerSession>>) -> Self {
+        self.matched_player_sessions = input; self
     }
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
-    pub fn get_matched_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>> {
+    pub fn get_matched_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MatchedPlayerSession>> {
         &self.matched_player_sessions
     }
     /// Consumes the builder and constructs a [`GameSessionConnectionInfo`](crate::types::GameSessionConnectionInfo).
     pub fn build(self) -> crate::types::GameSessionConnectionInfo {
         crate::types::GameSessionConnectionInfo {
-            game_session_arn: self.game_session_arn,
-            ip_address: self.ip_address,
-            dns_name: self.dns_name,
-            port: self.port,
-            matched_player_sessions: self.matched_player_sessions,
+            game_session_arn: self.game_session_arn
+            ,
+            ip_address: self.ip_address
+            ,
+            dns_name: self.dns_name
+            ,
+            port: self.port
+            ,
+            matched_player_sessions: self.matched_player_sessions
+            ,
         }
     }
 }
@@ -236,3 +237,4 @@ impl ::std::fmt::Debug for GameSessionConnectionInfoBuilder {
         formatter.finish()
     }
 }
+

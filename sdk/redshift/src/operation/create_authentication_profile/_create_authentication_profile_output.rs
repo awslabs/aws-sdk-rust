@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAuthenticationProfileOutput {
+pub struct CreateAuthenticationProfileOutput  {
     /// <p>The name of the authentication profile that was created.</p>
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the authentication profile in JSON format.</p>
     pub authentication_profile_content: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateAuthenticationProfileOutput {
+impl  CreateAuthenticationProfileOutput  {
     /// <p>The name of the authentication profile that was created.</p>
-    pub fn authentication_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_profile_name(&self) -> ::std::option::Option<& str> {
         self.authentication_profile_name.as_deref()
     }
     /// <p>The content of the authentication profile in JSON format.</p>
-    pub fn authentication_profile_content(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_profile_content(&self) -> ::std::option::Option<& str> {
         self.authentication_profile_content.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAuthenticationProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAuthenticationProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateAuthenticationProfileOutput`](crate::operation::create_authentication_profile::CreateAuthenticationProfileOutput).
     pub fn builder() -> crate::operation::create_authentication_profile::builders::CreateAuthenticationProfileOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateAuthenticationProfileOutputBuilder {
     }
     /// <p>The name of the authentication profile that was created.</p>
     pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_profile_name = input;
-        self
+        self.authentication_profile_name = input; self
     }
     /// <p>The name of the authentication profile that was created.</p>
     pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateAuthenticationProfileOutputBuilder {
     }
     /// <p>The content of the authentication profile in JSON format.</p>
     pub fn set_authentication_profile_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_profile_content = input;
-        self
+        self.authentication_profile_content = input; self
     }
     /// <p>The content of the authentication profile in JSON format.</p>
     pub fn get_authentication_profile_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_profile_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAuthenticationProfileOutput`](crate::operation::create_authentication_profile::CreateAuthenticationProfileOutput).
     pub fn build(self) -> crate::operation::create_authentication_profile::CreateAuthenticationProfileOutput {
         crate::operation::create_authentication_profile::CreateAuthenticationProfileOutput {
-            authentication_profile_name: self.authentication_profile_name,
-            authentication_profile_content: self.authentication_profile_content,
+            authentication_profile_name: self.authentication_profile_name
+            ,
+            authentication_profile_content: self.authentication_profile_content
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

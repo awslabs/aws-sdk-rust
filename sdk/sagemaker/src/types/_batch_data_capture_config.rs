@@ -3,7 +3,7 @@
 /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDataCaptureConfig {
+pub struct BatchDataCaptureConfig  {
     /// <p>The Amazon S3 location being used to capture the data.</p>
     pub destination_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
@@ -22,9 +22,9 @@ pub struct BatchDataCaptureConfig {
     /// <p>Flag that indicates whether to append inference id to the output.</p>
     pub generate_inference_id: ::std::option::Option<bool>,
 }
-impl BatchDataCaptureConfig {
+impl  BatchDataCaptureConfig  {
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn destination_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn destination_s3_uri(&self) -> ::std::option::Option<& str> {
         self.destination_s3_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
@@ -39,7 +39,7 @@ impl BatchDataCaptureConfig {
     /// <li>
     /// <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Flag that indicates whether to append inference id to the output.</p>
@@ -71,8 +71,7 @@ impl BatchDataCaptureConfigBuilder {
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
     pub fn set_destination_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_s3_uri = input;
-        self
+        self.destination_s3_uri = input; self
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
     pub fn get_destination_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +106,7 @@ impl BatchDataCaptureConfigBuilder {
     /// <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
     /// <p>The KmsKeyId can be any of the following formats:</p>
@@ -132,8 +130,7 @@ impl BatchDataCaptureConfigBuilder {
     }
     /// <p>Flag that indicates whether to append inference id to the output.</p>
     pub fn set_generate_inference_id(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.generate_inference_id = input;
-        self
+        self.generate_inference_id = input; self
     }
     /// <p>Flag that indicates whether to append inference id to the output.</p>
     pub fn get_generate_inference_id(&self) -> &::std::option::Option<bool> {
@@ -142,9 +139,13 @@ impl BatchDataCaptureConfigBuilder {
     /// Consumes the builder and constructs a [`BatchDataCaptureConfig`](crate::types::BatchDataCaptureConfig).
     pub fn build(self) -> crate::types::BatchDataCaptureConfig {
         crate::types::BatchDataCaptureConfig {
-            destination_s3_uri: self.destination_s3_uri,
-            kms_key_id: self.kms_key_id,
-            generate_inference_id: self.generate_inference_id,
+            destination_s3_uri: self.destination_s3_uri
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            generate_inference_id: self.generate_inference_id
+            ,
         }
     }
 }
+

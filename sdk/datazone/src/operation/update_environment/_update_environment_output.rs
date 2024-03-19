@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateEnvironmentOutput {
+pub struct UpdateEnvironmentOutput  {
     /// <p>The project identifier of the environment.</p>
     pub project_id: ::std::string::String,
     /// <p>The identifier of the environment that is to be updated.</p>
@@ -28,15 +28,15 @@ pub struct UpdateEnvironmentOutput {
     /// <p>The provider identifier of the environment.</p>
     pub provider: ::std::string::String,
     /// <p>The provisioned resources to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub provisioned_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     /// <p>The status to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>The environment actions to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub environment_actions: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableEnvironmentAction>>,
+    pub environment_actions: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableEnvironmentAction>>,
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    pub user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>,
     /// <p>The last deployment of the environment.</p>
     pub last_deployment: ::std::option::Option<crate::types::Deployment>,
     /// <p>The provisioning properties to be updated as part of the <code>UpdateEnvironment</code> action.</p>
@@ -47,107 +47,105 @@ pub struct UpdateEnvironmentOutput {
     pub environment_blueprint_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateEnvironmentOutput {
+impl  UpdateEnvironmentOutput  {
     /// <p>The project identifier of the environment.</p>
-    pub fn project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.project_id.deref()
+    pub fn project_id(&self) -> & str {
+        use std::ops::Deref; self.project_id.deref()
     }
     /// <p>The identifier of the environment that is to be updated.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
-    pub fn created_by(&self) -> &str {
-        use std::ops::Deref;
-        self.created_by.deref()
+    pub fn created_by(&self) -> & str {
+        use std::ops::Deref; self.created_by.deref()
     }
     /// <p>The timestamp of when the environment was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the environment was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The profile identifier of the environment.</p>
-    pub fn environment_profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_profile_id.deref()
+    pub fn environment_profile_id(&self) -> & str {
+        use std::ops::Deref; self.environment_profile_id.deref()
     }
     /// <p>The identifier of the Amazon Web Services account in which the environment is to be updated.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the environment is updated.</p>
-    pub fn aws_account_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_region(&self) -> ::std::option::Option<& str> {
         self.aws_account_region.as_deref()
     }
     /// <p>The provider identifier of the environment.</p>
-    pub fn provider(&self) -> &str {
-        use std::ops::Deref;
-        self.provider.deref()
+    pub fn provider(&self) -> & str {
+        use std::ops::Deref; self.provider.deref()
     }
     /// <p>The provisioned resources to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_resources.is_none()`.
-    pub fn provisioned_resources(&self) -> &[crate::types::Resource] {
-        self.provisioned_resources.as_deref().unwrap_or_default()
+    pub fn provisioned_resources(&self) -> & [crate::types::Resource] {
+        self.provisioned_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>The environment actions to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_actions.is_none()`.
-    pub fn environment_actions(&self) -> &[crate::types::ConfigurableEnvironmentAction] {
-        self.environment_actions.as_deref().unwrap_or_default()
+    pub fn environment_actions(&self) -> & [crate::types::ConfigurableEnvironmentAction] {
+        self.environment_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[::std::string::String] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [::std::string::String] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
-    pub fn user_parameters(&self) -> &[crate::types::CustomParameter] {
-        self.user_parameters.as_deref().unwrap_or_default()
+    pub fn user_parameters(&self) -> & [crate::types::CustomParameter] {
+        self.user_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The last deployment of the environment.</p>
-    pub fn last_deployment(&self) -> ::std::option::Option<&crate::types::Deployment> {
+    pub fn last_deployment(&self) -> ::std::option::Option<& crate::types::Deployment> {
         self.last_deployment.as_ref()
     }
     /// <p>The provisioning properties to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn provisioning_properties(&self) -> ::std::option::Option<&crate::types::ProvisioningProperties> {
+    pub fn provisioning_properties(&self) -> ::std::option::Option<& crate::types::ProvisioningProperties> {
         self.provisioning_properties.as_ref()
     }
     /// <p>The deployment properties to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn deployment_properties(&self) -> ::std::option::Option<&crate::types::DeploymentProperties> {
+    pub fn deployment_properties(&self) -> ::std::option::Option<& crate::types::DeploymentProperties> {
         self.deployment_properties.as_ref()
     }
     /// <p>The blueprint identifier of the environment.</p>
-    pub fn environment_blueprint_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_blueprint_id(&self) -> ::std::option::Option<& str> {
         self.environment_blueprint_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateEnvironmentOutput {
+impl  ::std::fmt::Debug for UpdateEnvironmentOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentOutput");
         formatter.field("project_id", &self.project_id);
@@ -176,10 +174,10 @@ impl ::std::fmt::Debug for UpdateEnvironmentOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
     pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
@@ -203,11 +201,11 @@ pub struct UpdateEnvironmentOutputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_region: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) provisioned_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     pub(crate) status: ::std::option::Option<crate::types::EnvironmentStatus>,
-    pub(crate) environment_actions: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableEnvironmentAction>>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    pub(crate) environment_actions: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableEnvironmentAction>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>,
     pub(crate) last_deployment: ::std::option::Option<crate::types::Deployment>,
     pub(crate) provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     pub(crate) deployment_properties: ::std::option::Option<crate::types::DeploymentProperties>,
@@ -223,8 +221,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The project identifier of the environment.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The project identifier of the environment.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +234,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The identifier of the environment that is to be updated.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the environment that is to be updated.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +248,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,8 +262,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,8 +275,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The timestamp of when the environment was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the environment was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -295,8 +288,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The timestamp of when the environment was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the environment was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -310,8 +302,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -324,8 +315,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -339,8 +329,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The profile identifier of the environment.</p>
     pub fn set_environment_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_profile_id = input;
-        self
+        self.environment_profile_id = input; self
     }
     /// <p>The profile identifier of the environment.</p>
     pub fn get_environment_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -353,8 +342,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account in which the environment is to be updated.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services account in which the environment is to be updated.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -367,8 +355,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The Amazon Web Services Region in which the environment is updated.</p>
     pub fn set_aws_account_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_region = input;
-        self
+        self.aws_account_region = input; self
     }
     /// <p>The Amazon Web Services Region in which the environment is updated.</p>
     pub fn get_aws_account_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -382,8 +369,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The provider identifier of the environment.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider identifier of the environment.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -396,17 +382,16 @@ impl UpdateEnvironmentOutputBuilder {
     /// <p>The provisioned resources to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn provisioned_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.provisioned_resources.unwrap_or_default();
-        v.push(input);
-        self.provisioned_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioned_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The provisioned resources to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn set_provisioned_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.provisioned_resources = input;
-        self
+    pub fn set_provisioned_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.provisioned_resources = input; self
     }
     /// <p>The provisioned resources to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn get_provisioned_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_provisioned_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.provisioned_resources
     }
     /// <p>The status to be updated as part of the <code>UpdateEnvironment</code> action.</p>
@@ -416,8 +401,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The status to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
@@ -430,17 +414,16 @@ impl UpdateEnvironmentOutputBuilder {
     /// <p>The environment actions to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn environment_actions(mut self, input: crate::types::ConfigurableEnvironmentAction) -> Self {
         let mut v = self.environment_actions.unwrap_or_default();
-        v.push(input);
-        self.environment_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.environment_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The environment actions to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn set_environment_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableEnvironmentAction>>) -> Self {
-        self.environment_actions = input;
-        self
+    pub fn set_environment_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableEnvironmentAction>>) -> Self {
+        self.environment_actions = input; self
     }
     /// <p>The environment actions to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn get_environment_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurableEnvironmentAction>> {
+    pub fn get_environment_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableEnvironmentAction>> {
         &self.environment_actions
     }
     /// Appends an item to `glossary_terms`.
@@ -450,17 +433,16 @@ impl UpdateEnvironmentOutputBuilder {
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input.into());
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.glossary_terms
     }
     /// Appends an item to `user_parameters`.
@@ -470,17 +452,16 @@ impl UpdateEnvironmentOutputBuilder {
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn user_parameters(mut self, input: crate::types::CustomParameter) -> Self {
         let mut v = self.user_parameters.unwrap_or_default();
-        v.push(input);
-        self.user_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>) -> Self {
-        self.user_parameters = input;
-        self
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>) -> Self {
+        self.user_parameters = input; self
     }
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>> {
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>> {
         &self.user_parameters
     }
     /// <p>The last deployment of the environment.</p>
@@ -490,8 +471,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The last deployment of the environment.</p>
     pub fn set_last_deployment(mut self, input: ::std::option::Option<crate::types::Deployment>) -> Self {
-        self.last_deployment = input;
-        self
+        self.last_deployment = input; self
     }
     /// <p>The last deployment of the environment.</p>
     pub fn get_last_deployment(&self) -> &::std::option::Option<crate::types::Deployment> {
@@ -504,8 +484,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The provisioning properties to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn set_provisioning_properties(mut self, input: ::std::option::Option<crate::types::ProvisioningProperties>) -> Self {
-        self.provisioning_properties = input;
-        self
+        self.provisioning_properties = input; self
     }
     /// <p>The provisioning properties to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn get_provisioning_properties(&self) -> &::std::option::Option<crate::types::ProvisioningProperties> {
@@ -518,8 +497,7 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The deployment properties to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn set_deployment_properties(mut self, input: ::std::option::Option<crate::types::DeploymentProperties>) -> Self {
-        self.deployment_properties = input;
-        self
+        self.deployment_properties = input; self
     }
     /// <p>The deployment properties to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn get_deployment_properties(&self) -> &::std::option::Option<crate::types::DeploymentProperties> {
@@ -532,22 +510,21 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The blueprint identifier of the environment.</p>
     pub fn set_environment_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_blueprint_id = input;
-        self
+        self.environment_blueprint_id = input; self
     }
     /// <p>The blueprint identifier of the environment.</p>
     pub fn get_environment_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_blueprint_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`project_id`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::project_id)
@@ -556,63 +533,72 @@ impl UpdateEnvironmentOutputBuilder {
     /// - [`name`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::name)
     /// - [`environment_profile_id`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::environment_profile_id)
     /// - [`provider`](crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::provider)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentOutput {
-            project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_id",
-                    "project_id was not specified but it is required when building UpdateEnvironmentOutput",
-                )
-            })?,
-            id: self.id,
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building UpdateEnvironmentOutput",
-                )
-            })?,
-            created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_by",
-                    "created_by was not specified but it is required when building UpdateEnvironmentOutput",
-                )
-            })?,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateEnvironmentOutput",
-                )
-            })?,
-            description: self.description,
-            environment_profile_id: self.environment_profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_profile_id",
-                    "environment_profile_id was not specified but it is required when building UpdateEnvironmentOutput",
-                )
-            })?,
-            aws_account_id: self.aws_account_id,
-            aws_account_region: self.aws_account_region,
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building UpdateEnvironmentOutput",
-                )
-            })?,
-            provisioned_resources: self.provisioned_resources,
-            status: self.status,
-            environment_actions: self.environment_actions,
-            glossary_terms: self.glossary_terms,
-            user_parameters: self.user_parameters,
-            last_deployment: self.last_deployment,
-            provisioning_properties: self.provisioning_properties,
-            deployment_properties: self.deployment_properties,
-            environment_blueprint_id: self.environment_blueprint_id,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_environment::UpdateEnvironmentOutput {
+                project_id: self.project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_id", "project_id was not specified but it is required when building UpdateEnvironmentOutput")
+                    )?
+                ,
+                id: self.id
+                ,
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building UpdateEnvironmentOutput")
+                    )?
+                ,
+                created_by: self.created_by
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_by", "created_by was not specified but it is required when building UpdateEnvironmentOutput")
+                    )?
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdateEnvironmentOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                environment_profile_id: self.environment_profile_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_profile_id", "environment_profile_id was not specified but it is required when building UpdateEnvironmentOutput")
+                    )?
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                aws_account_region: self.aws_account_region
+                ,
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building UpdateEnvironmentOutput")
+                    )?
+                ,
+                provisioned_resources: self.provisioned_resources
+                ,
+                status: self.status
+                ,
+                environment_actions: self.environment_actions
+                ,
+                glossary_terms: self.glossary_terms
+                ,
+                user_parameters: self.user_parameters
+                ,
+                last_deployment: self.last_deployment
+                ,
+                provisioning_properties: self.provisioning_properties
+                ,
+                deployment_properties: self.deployment_properties
+                ,
+                environment_blueprint_id: self.environment_blueprint_id
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentOutputBuilder {
@@ -643,3 +629,4 @@ impl ::std::fmt::Debug for UpdateEnvironmentOutputBuilder {
         formatter.finish()
     }
 }
+

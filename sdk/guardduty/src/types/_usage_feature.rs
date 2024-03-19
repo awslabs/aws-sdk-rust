@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let usagefeature = unimplemented!();
 /// match usagefeature {
@@ -41,16 +41,14 @@
 /// Specifically, when `usagefeature` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UsageFeature::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum UsageFeature {
     #[allow(missing_docs)] // documentation missing in model
     CloudTrail,
@@ -80,108 +78,95 @@ pub enum UsageFeature {
     S3DataEvents,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for UsageFeature {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLOUD_TRAIL" => UsageFeature::CloudTrail,
-            "DNS_LOGS" => UsageFeature::DnsLogs,
-            "EBS_MALWARE_PROTECTION" => UsageFeature::EbsMalwareProtection,
-            "EC2_RUNTIME_MONITORING" => UsageFeature::Ec2RuntimeMonitoring,
-            "EKS_AUDIT_LOGS" => UsageFeature::EksAuditLogs,
-            "EKS_RUNTIME_MONITORING" => UsageFeature::EksRuntimeMonitoring,
-            "FARGATE_RUNTIME_MONITORING" => UsageFeature::FargateRuntimeMonitoring,
-            "FLOW_LOGS" => UsageFeature::FlowLogs,
-            "LAMBDA_NETWORK_LOGS" => UsageFeature::LambdaNetworkLogs,
-            "RDS_DBI_PROTECTION_PROVISIONED" => UsageFeature::RdsDbiProtectionProvisioned,
-            "RDS_DBI_PROTECTION_SERVERLESS" => UsageFeature::RdsDbiProtectionServerless,
-            "RDS_LOGIN_EVENTS" => UsageFeature::RdsLoginEvents,
-            "S3_DATA_EVENTS" => UsageFeature::S3DataEvents,
-            other => UsageFeature::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CLOUD_TRAIL" => UsageFeature::CloudTrail,
+"DNS_LOGS" => UsageFeature::DnsLogs,
+"EBS_MALWARE_PROTECTION" => UsageFeature::EbsMalwareProtection,
+"EC2_RUNTIME_MONITORING" => UsageFeature::Ec2RuntimeMonitoring,
+"EKS_AUDIT_LOGS" => UsageFeature::EksAuditLogs,
+"EKS_RUNTIME_MONITORING" => UsageFeature::EksRuntimeMonitoring,
+"FARGATE_RUNTIME_MONITORING" => UsageFeature::FargateRuntimeMonitoring,
+"FLOW_LOGS" => UsageFeature::FlowLogs,
+"LAMBDA_NETWORK_LOGS" => UsageFeature::LambdaNetworkLogs,
+"RDS_DBI_PROTECTION_PROVISIONED" => UsageFeature::RdsDbiProtectionProvisioned,
+"RDS_DBI_PROTECTION_SERVERLESS" => UsageFeature::RdsDbiProtectionServerless,
+"RDS_LOGIN_EVENTS" => UsageFeature::RdsLoginEvents,
+"S3_DATA_EVENTS" => UsageFeature::S3DataEvents,
+other => UsageFeature::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for UsageFeature {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(UsageFeature::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(UsageFeature::from(s))
+                    }
+                }
 impl UsageFeature {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UsageFeature::CloudTrail => "CLOUD_TRAIL",
-            UsageFeature::DnsLogs => "DNS_LOGS",
-            UsageFeature::EbsMalwareProtection => "EBS_MALWARE_PROTECTION",
-            UsageFeature::Ec2RuntimeMonitoring => "EC2_RUNTIME_MONITORING",
-            UsageFeature::EksAuditLogs => "EKS_AUDIT_LOGS",
-            UsageFeature::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
-            UsageFeature::FargateRuntimeMonitoring => "FARGATE_RUNTIME_MONITORING",
-            UsageFeature::FlowLogs => "FLOW_LOGS",
-            UsageFeature::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
-            UsageFeature::RdsDbiProtectionProvisioned => "RDS_DBI_PROTECTION_PROVISIONED",
-            UsageFeature::RdsDbiProtectionServerless => "RDS_DBI_PROTECTION_SERVERLESS",
-            UsageFeature::RdsLoginEvents => "RDS_LOGIN_EVENTS",
-            UsageFeature::S3DataEvents => "S3_DATA_EVENTS",
-            UsageFeature::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLOUD_TRAIL",
-            "DNS_LOGS",
-            "EBS_MALWARE_PROTECTION",
-            "EC2_RUNTIME_MONITORING",
-            "EKS_AUDIT_LOGS",
-            "EKS_RUNTIME_MONITORING",
-            "FARGATE_RUNTIME_MONITORING",
-            "FLOW_LOGS",
-            "LAMBDA_NETWORK_LOGS",
-            "RDS_DBI_PROTECTION_PROVISIONED",
-            "RDS_DBI_PROTECTION_SERVERLESS",
-            "RDS_LOGIN_EVENTS",
-            "S3_DATA_EVENTS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UsageFeature::CloudTrail => "CLOUD_TRAIL",
+    UsageFeature::DnsLogs => "DNS_LOGS",
+    UsageFeature::EbsMalwareProtection => "EBS_MALWARE_PROTECTION",
+    UsageFeature::Ec2RuntimeMonitoring => "EC2_RUNTIME_MONITORING",
+    UsageFeature::EksAuditLogs => "EKS_AUDIT_LOGS",
+    UsageFeature::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
+    UsageFeature::FargateRuntimeMonitoring => "FARGATE_RUNTIME_MONITORING",
+    UsageFeature::FlowLogs => "FLOW_LOGS",
+    UsageFeature::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
+    UsageFeature::RdsDbiProtectionProvisioned => "RDS_DBI_PROTECTION_PROVISIONED",
+    UsageFeature::RdsDbiProtectionServerless => "RDS_DBI_PROTECTION_SERVERLESS",
+    UsageFeature::RdsLoginEvents => "RDS_LOGIN_EVENTS",
+    UsageFeature::S3DataEvents => "S3_DATA_EVENTS",
+    UsageFeature::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLOUD_TRAIL", "DNS_LOGS", "EBS_MALWARE_PROTECTION", "EC2_RUNTIME_MONITORING", "EKS_AUDIT_LOGS", "EKS_RUNTIME_MONITORING", "FARGATE_RUNTIME_MONITORING", "FLOW_LOGS", "LAMBDA_NETWORK_LOGS", "RDS_DBI_PROTECTION_PROVISIONED", "RDS_DBI_PROTECTION_SERVERLESS", "RDS_LOGIN_EVENTS", "S3_DATA_EVENTS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for UsageFeature {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl UsageFeature {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for UsageFeature {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            UsageFeature::CloudTrail => write!(f, "CLOUD_TRAIL"),
-            UsageFeature::DnsLogs => write!(f, "DNS_LOGS"),
-            UsageFeature::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
-            UsageFeature::Ec2RuntimeMonitoring => write!(f, "EC2_RUNTIME_MONITORING"),
-            UsageFeature::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
-            UsageFeature::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
-            UsageFeature::FargateRuntimeMonitoring => write!(f, "FARGATE_RUNTIME_MONITORING"),
-            UsageFeature::FlowLogs => write!(f, "FLOW_LOGS"),
-            UsageFeature::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
-            UsageFeature::RdsDbiProtectionProvisioned => write!(f, "RDS_DBI_PROTECTION_PROVISIONED"),
-            UsageFeature::RdsDbiProtectionServerless => write!(f, "RDS_DBI_PROTECTION_SERVERLESS"),
-            UsageFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
-            UsageFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
-            UsageFeature::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                UsageFeature::CloudTrail => write!(f, "CLOUD_TRAIL"),
+UsageFeature::DnsLogs => write!(f, "DNS_LOGS"),
+UsageFeature::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
+UsageFeature::Ec2RuntimeMonitoring => write!(f, "EC2_RUNTIME_MONITORING"),
+UsageFeature::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
+UsageFeature::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
+UsageFeature::FargateRuntimeMonitoring => write!(f, "FARGATE_RUNTIME_MONITORING"),
+UsageFeature::FlowLogs => write!(f, "FLOW_LOGS"),
+UsageFeature::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
+UsageFeature::RdsDbiProtectionProvisioned => write!(f, "RDS_DBI_PROTECTION_PROVISIONED"),
+UsageFeature::RdsDbiProtectionServerless => write!(f, "RDS_DBI_PROTECTION_SERVERLESS"),
+UsageFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
+UsageFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
+UsageFeature::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

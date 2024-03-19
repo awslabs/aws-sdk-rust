@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceActionInput {
+pub struct UpdateServiceActionInput  {
     /// <p>The self-service action identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The self-service action name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map that defines the self-service action.</p>
-    pub definition: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
+    pub definition: ::std::option::Option<::std::collections::HashMap::<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
     /// <p>The self-service action description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The language code.</p>
@@ -20,21 +20,21 @@ pub struct UpdateServiceActionInput {
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
 }
-impl UpdateServiceActionInput {
+impl  UpdateServiceActionInput  {
     /// <p>The self-service action identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The self-service action name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A map that defines the self-service action.</p>
-    pub fn definition(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>> {
+    pub fn definition(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::ServiceActionDefinitionKey, ::std::string::String>> {
         self.definition.as_ref()
     }
     /// <p>The self-service action description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The language code.</p>
@@ -44,7 +44,7 @@ impl UpdateServiceActionInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
 }
@@ -61,7 +61,7 @@ impl UpdateServiceActionInput {
 pub struct UpdateServiceActionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) definition: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
+    pub(crate) definition: ::std::option::Option<::std::collections::HashMap::<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
 }
@@ -74,8 +74,7 @@ impl UpdateServiceActionInputBuilder {
     }
     /// <p>The self-service action identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The self-service action identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl UpdateServiceActionInputBuilder {
     }
     /// <p>The self-service action name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The self-service action name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,22 +100,16 @@ impl UpdateServiceActionInputBuilder {
     /// <p>A map that defines the self-service action.</p>
     pub fn definition(mut self, k: crate::types::ServiceActionDefinitionKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.definition.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.definition = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.definition = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that defines the self-service action.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::ServiceActionDefinitionKey, ::std::string::String>>) -> Self {
+        self.definition = input; self
     }
     /// <p>A map that defines the self-service action.</p>
-    pub fn get_definition(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>> {
+    pub fn get_definition(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::ServiceActionDefinitionKey, ::std::string::String>> {
         &self.definition
     }
     /// <p>The self-service action description.</p>
@@ -127,8 +119,7 @@ impl UpdateServiceActionInputBuilder {
     }
     /// <p>The self-service action description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The self-service action description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +144,7 @@ impl UpdateServiceActionInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -167,16 +157,21 @@ impl UpdateServiceActionInputBuilder {
         &self.accept_language
     }
     /// Consumes the builder and constructs a [`UpdateServiceActionInput`](crate::operation::update_service_action::UpdateServiceActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_service_action::UpdateServiceActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_service_action::UpdateServiceActionInput {
-            id: self.id,
-            name: self.name,
-            definition: self.definition,
-            description: self.description,
-            accept_language: self.accept_language,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_action::UpdateServiceActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_action::UpdateServiceActionInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                definition: self.definition
+                ,
+                description: self.description
+                ,
+                accept_language: self.accept_language
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVariableInput {
+pub struct CreateVariableInput  {
     /// <p>The name of the variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the variable.</p>
@@ -17,39 +17,40 @@ pub struct CreateVariableInput {
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code></p>
     pub variable_type: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateVariableInput {
+impl  CreateVariableInput  {
     /// <p>The name of the variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the variable.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::DataType> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::DataType> {
         self.data_type.as_ref()
     }
     /// <p>The source of the data.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The default value for the variable when no value is received.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code></p>
-    pub fn variable_type(&self) -> ::std::option::Option<&str> {
+    pub fn variable_type(&self) -> ::std::option::Option<& str> {
         self.variable_type.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateVariableInput {
@@ -69,7 +70,7 @@ pub struct CreateVariableInputBuilder {
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) variable_type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateVariableInputBuilder {
     /// <p>The name of the variable.</p>
@@ -80,8 +81,7 @@ impl CreateVariableInputBuilder {
     }
     /// <p>The name of the variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +95,7 @@ impl CreateVariableInputBuilder {
     }
     /// <p>The data type of the variable.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type of the variable.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
@@ -110,8 +109,7 @@ impl CreateVariableInputBuilder {
     }
     /// <p>The source of the data.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The source of the data.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -125,8 +123,7 @@ impl CreateVariableInputBuilder {
     }
     /// <p>The default value for the variable when no value is received.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value for the variable when no value is received.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl CreateVariableInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl CreateVariableInputBuilder {
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code></p>
     pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variable_type = input;
-        self
+        self.variable_type = input; self
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code></p>
@@ -170,31 +165,38 @@ impl CreateVariableInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVariableInput`](crate::operation::create_variable::CreateVariableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_variable::CreateVariableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_variable::CreateVariableInput {
-            name: self.name,
-            data_type: self.data_type,
-            data_source: self.data_source,
-            default_value: self.default_value,
-            description: self.description,
-            variable_type: self.variable_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_variable::CreateVariableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_variable::CreateVariableInput {
+                name: self.name
+                ,
+                data_type: self.data_type
+                ,
+                data_source: self.data_source
+                ,
+                default_value: self.default_value
+                ,
+                description: self.description
+                ,
+                variable_type: self.variable_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

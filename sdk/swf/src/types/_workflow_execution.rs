@@ -3,22 +3,20 @@
 /// <p>Represents a workflow execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowExecution {
+pub struct WorkflowExecution  {
     /// <p>The user defined identifier associated with the workflow execution.</p>
     pub workflow_id: ::std::string::String,
     /// <p>A system-generated unique identifier for the workflow execution.</p>
     pub run_id: ::std::string::String,
 }
-impl WorkflowExecution {
+impl  WorkflowExecution  {
     /// <p>The user defined identifier associated with the workflow execution.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> & str {
+        use std::ops::Deref; self.workflow_id.deref()
     }
     /// <p>A system-generated unique identifier for the workflow execution.</p>
-    pub fn run_id(&self) -> &str {
-        use std::ops::Deref;
-        self.run_id.deref()
+    pub fn run_id(&self) -> & str {
+        use std::ops::Deref; self.run_id.deref()
     }
 }
 impl WorkflowExecution {
@@ -44,8 +42,7 @@ impl WorkflowExecutionBuilder {
     }
     /// <p>The user defined identifier associated with the workflow execution.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The user defined identifier associated with the workflow execution.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl WorkflowExecutionBuilder {
     }
     /// <p>A system-generated unique identifier for the workflow execution.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>A system-generated unique identifier for the workflow execution.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl WorkflowExecutionBuilder {
     /// - [`workflow_id`](crate::types::builders::WorkflowExecutionBuilder::workflow_id)
     /// - [`run_id`](crate::types::builders::WorkflowExecutionBuilder::run_id)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowExecution {
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building WorkflowExecution",
-                )
-            })?,
-            run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "run_id",
-                    "run_id was not specified but it is required when building WorkflowExecution",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkflowExecution {
+                workflow_id: self.workflow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_id", "workflow_id was not specified but it is required when building WorkflowExecution")
+                    )?
+                ,
+                run_id: self.run_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("run_id", "run_id was not specified but it is required when building WorkflowExecution")
+                    )?
+                ,
+            }
+        )
     }
 }
+

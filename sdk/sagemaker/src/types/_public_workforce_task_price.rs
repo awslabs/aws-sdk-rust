@@ -205,13 +205,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicWorkforceTaskPrice {
+pub struct PublicWorkforceTaskPrice  {
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
     pub amount_in_usd: ::std::option::Option<crate::types::Usd>,
 }
-impl PublicWorkforceTaskPrice {
+impl  PublicWorkforceTaskPrice  {
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
-    pub fn amount_in_usd(&self) -> ::std::option::Option<&crate::types::Usd> {
+    pub fn amount_in_usd(&self) -> ::std::option::Option<& crate::types::Usd> {
         self.amount_in_usd.as_ref()
     }
 }
@@ -236,8 +236,7 @@ impl PublicWorkforceTaskPriceBuilder {
     }
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
     pub fn set_amount_in_usd(mut self, input: ::std::option::Option<crate::types::Usd>) -> Self {
-        self.amount_in_usd = input;
-        self
+        self.amount_in_usd = input; self
     }
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
     pub fn get_amount_in_usd(&self) -> &::std::option::Option<crate::types::Usd> {
@@ -246,7 +245,9 @@ impl PublicWorkforceTaskPriceBuilder {
     /// Consumes the builder and constructs a [`PublicWorkforceTaskPrice`](crate::types::PublicWorkforceTaskPrice).
     pub fn build(self) -> crate::types::PublicWorkforceTaskPrice {
         crate::types::PublicWorkforceTaskPrice {
-            amount_in_usd: self.amount_in_usd,
+            amount_in_usd: self.amount_in_usd
+            ,
         }
     }
 }
+

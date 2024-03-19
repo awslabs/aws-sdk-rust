@@ -4,19 +4,19 @@
 /// <p>This data type is used as a response element in the <code>GetAccountAuthorizationDetails</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyDetail {
+pub struct PolicyDetail  {
     /// <p>The name of the policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy document.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
-impl PolicyDetail {
+impl  PolicyDetail  {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy document.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl PolicyDetailBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl PolicyDetailBuilder {
     }
     /// <p>The policy document.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The policy document.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl PolicyDetailBuilder {
     /// Consumes the builder and constructs a [`PolicyDetail`](crate::types::PolicyDetail).
     pub fn build(self) -> crate::types::PolicyDetail {
         crate::types::PolicyDetail {
-            policy_name: self.policy_name,
-            policy_document: self.policy_document,
+            policy_name: self.policy_name
+            ,
+            policy_document: self.policy_document
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCrossAccountAuthorizationInput {
+pub struct DeleteCrossAccountAuthorizationInput  {
     /// <p>The cross-account authorization.</p>
     pub cross_account_authorization: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCrossAccountAuthorizationInput {
+impl  DeleteCrossAccountAuthorizationInput  {
     /// <p>The cross-account authorization.</p>
-    pub fn cross_account_authorization(&self) -> ::std::option::Option<&str> {
+    pub fn cross_account_authorization(&self) -> ::std::option::Option<& str> {
         self.cross_account_authorization.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteCrossAccountAuthorizationInputBuilder {
     }
     /// <p>The cross-account authorization.</p>
     pub fn set_cross_account_authorization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cross_account_authorization = input;
-        self
+        self.cross_account_authorization = input; self
     }
     /// <p>The cross-account authorization.</p>
     pub fn get_cross_account_authorization(&self) -> &::std::option::Option<::std::string::String> {
         &self.cross_account_authorization
     }
     /// Consumes the builder and constructs a [`DeleteCrossAccountAuthorizationInput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput {
-                cross_account_authorization: self.cross_account_authorization,
-            },
+                cross_account_authorization: self.cross_account_authorization
+                ,
+            }
         )
     }
 }
+

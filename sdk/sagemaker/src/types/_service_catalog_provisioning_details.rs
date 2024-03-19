@@ -3,7 +3,7 @@
 /// <p>Details that you specify to provision a service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceCatalogProvisioningDetails {
+pub struct ServiceCatalogProvisioningDetails  {
     /// <p>The ID of the product to provision.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the provisioning artifact.</p>
@@ -11,26 +11,27 @@ pub struct ServiceCatalogProvisioningDetails {
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
     pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
+    pub provisioning_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningParameter>>,
 }
-impl ServiceCatalogProvisioningDetails {
+impl  ServiceCatalogProvisioningDetails  {
     /// <p>The ID of the product to provision.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The ID of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
-    pub fn path_id(&self) -> ::std::option::Option<&str> {
+    pub fn path_id(&self) -> ::std::option::Option<& str> {
         self.path_id.as_deref()
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_parameters.is_none()`.
-    pub fn provisioning_parameters(&self) -> &[crate::types::ProvisioningParameter] {
-        self.provisioning_parameters.as_deref().unwrap_or_default()
+    pub fn provisioning_parameters(&self) -> & [crate::types::ProvisioningParameter] {
+        self.provisioning_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ServiceCatalogProvisioningDetails {
@@ -47,7 +48,7 @@ pub struct ServiceCatalogProvisioningDetailsBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     pub(crate) path_id: ::std::option::Option<::std::string::String>,
-    pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
+    pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningParameter>>,
 }
 impl ServiceCatalogProvisioningDetailsBuilder {
     /// <p>The ID of the product to provision.</p>
@@ -58,8 +59,7 @@ impl ServiceCatalogProvisioningDetailsBuilder {
     }
     /// <p>The ID of the product to provision.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The ID of the product to provision.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl ServiceCatalogProvisioningDetailsBuilder {
     }
     /// <p>The ID of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The ID of the provisioning artifact.</p>
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl ServiceCatalogProvisioningDetailsBuilder {
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
     pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path_id = input;
-        self
+        self.path_id = input; self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path.</p>
     pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,26 +98,30 @@ impl ServiceCatalogProvisioningDetailsBuilder {
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
     pub fn provisioning_parameters(mut self, input: crate::types::ProvisioningParameter) -> Self {
         let mut v = self.provisioning_parameters.unwrap_or_default();
-        v.push(input);
-        self.provisioning_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioning_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>) -> Self {
-        self.provisioning_parameters = input;
-        self
+    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningParameter>>) -> Self {
+        self.provisioning_parameters = input; self
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>> {
+    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProvisioningParameter>> {
         &self.provisioning_parameters
     }
     /// Consumes the builder and constructs a [`ServiceCatalogProvisioningDetails`](crate::types::ServiceCatalogProvisioningDetails).
     pub fn build(self) -> crate::types::ServiceCatalogProvisioningDetails {
         crate::types::ServiceCatalogProvisioningDetails {
-            product_id: self.product_id,
-            provisioning_artifact_id: self.provisioning_artifact_id,
-            path_id: self.path_id,
-            provisioning_parameters: self.provisioning_parameters,
+            product_id: self.product_id
+            ,
+            provisioning_artifact_id: self.provisioning_artifact_id
+            ,
+            path_id: self.path_id
+            ,
+            provisioning_parameters: self.provisioning_parameters
+            ,
         }
     }
 }
+

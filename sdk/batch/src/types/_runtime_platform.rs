@@ -3,7 +3,7 @@
 /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuntimePlatform {
+pub struct RuntimePlatform  {
     /// <p>The operating system for the compute environment. Valid values are: <code>LINUX</code> (default), <code>WINDOWS_SERVER_2019_CORE</code>, <code>WINDOWS_SERVER_2019_FULL</code>, <code>WINDOWS_SERVER_2022_CORE</code>, and <code>WINDOWS_SERVER_2022_FULL</code>.</p><note>
     /// <p>The following parameters can’t be set for Windows containers: <code>linuxParameters</code>, <code>privileged</code>, <code>user</code>, <code>ulimits</code>, <code>readonlyRootFilesystem</code>, and <code>efsVolumeConfiguration</code>.</p>
     /// </note> <note>
@@ -19,7 +19,7 @@ pub struct RuntimePlatform {
     /// </note>
     pub cpu_architecture: ::std::option::Option<::std::string::String>,
 }
-impl RuntimePlatform {
+impl  RuntimePlatform  {
     /// <p>The operating system for the compute environment. Valid values are: <code>LINUX</code> (default), <code>WINDOWS_SERVER_2019_CORE</code>, <code>WINDOWS_SERVER_2019_FULL</code>, <code>WINDOWS_SERVER_2022_CORE</code>, and <code>WINDOWS_SERVER_2022_FULL</code>.</p><note>
     /// <p>The following parameters can’t be set for Windows containers: <code>linuxParameters</code>, <code>privileged</code>, <code>user</code>, <code>ulimits</code>, <code>readonlyRootFilesystem</code>, and <code>efsVolumeConfiguration</code>.</p>
     /// </note> <note>
@@ -27,7 +27,7 @@ impl RuntimePlatform {
     /// </note> <note>
     /// <p>Fargate Spot is not supported for <code>ARM64</code> and Windows-based containers on Fargate. A job queue will be blocked if a Fargate <code>ARM64</code> or Windows job is submitted to a job queue with only Fargate Spot compute environments. However, you can attach both <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
     /// </note>
-    pub fn operating_system_family(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system_family(&self) -> ::std::option::Option<& str> {
         self.operating_system_family.as_deref()
     }
     /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code>ARM64</code>.</p><note>
@@ -35,7 +35,7 @@ impl RuntimePlatform {
     /// </note> <note>
     /// <p>Fargate Spot is not supported for <code>ARM64</code> and Windows-based containers on Fargate. A job queue will be blocked if a Fargate <code>ARM64</code> or Windows job is submitted to a job queue with only Fargate Spot compute environments. However, you can attach both <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
     /// </note>
-    pub fn cpu_architecture(&self) -> ::std::option::Option<&str> {
+    pub fn cpu_architecture(&self) -> ::std::option::Option<& str> {
         self.cpu_architecture.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl RuntimePlatformBuilder {
     /// <p>Fargate Spot is not supported for <code>ARM64</code> and Windows-based containers on Fargate. A job queue will be blocked if a Fargate <code>ARM64</code> or Windows job is submitted to a job queue with only Fargate Spot compute environments. However, you can attach both <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
     /// </note>
     pub fn set_operating_system_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system_family = input;
-        self
+        self.operating_system_family = input; self
     }
     /// <p>The operating system for the compute environment. Valid values are: <code>LINUX</code> (default), <code>WINDOWS_SERVER_2019_CORE</code>, <code>WINDOWS_SERVER_2019_FULL</code>, <code>WINDOWS_SERVER_2022_CORE</code>, and <code>WINDOWS_SERVER_2022_FULL</code>.</p><note>
     /// <p>The following parameters can’t be set for Windows containers: <code>linuxParameters</code>, <code>privileged</code>, <code>user</code>, <code>ulimits</code>, <code>readonlyRootFilesystem</code>, and <code>efsVolumeConfiguration</code>.</p>
@@ -101,8 +100,7 @@ impl RuntimePlatformBuilder {
     /// <p>Fargate Spot is not supported for <code>ARM64</code> and Windows-based containers on Fargate. A job queue will be blocked if a Fargate <code>ARM64</code> or Windows job is submitted to a job queue with only Fargate Spot compute environments. However, you can attach both <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
     /// </note>
     pub fn set_cpu_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu_architecture = input;
-        self
+        self.cpu_architecture = input; self
     }
     /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code>ARM64</code>.</p><note>
     /// <p>This parameter must be set to <code>X86_64</code> for Windows containers.</p>
@@ -115,8 +113,11 @@ impl RuntimePlatformBuilder {
     /// Consumes the builder and constructs a [`RuntimePlatform`](crate::types::RuntimePlatform).
     pub fn build(self) -> crate::types::RuntimePlatform {
         crate::types::RuntimePlatform {
-            operating_system_family: self.operating_system_family,
-            cpu_architecture: self.cpu_architecture,
+            operating_system_family: self.operating_system_family
+            ,
+            cpu_architecture: self.cpu_architecture
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A public IP Address discovered by IPAM.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamDiscoveredPublicAddress {
+pub struct IpamDiscoveredPublicAddress  {
     /// <p>The resource discovery ID.</p>
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region of the resource the IP address is assigned to.</p>
@@ -39,87 +39,88 @@ pub struct IpamDiscoveredPublicAddress {
     /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>Security groups associated with the resource that the IP address is assigned to.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressSecurityGroup>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::IpamPublicAddressSecurityGroup>>,
     /// <p>The last successful resource discovery time.</p>
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl IpamDiscoveredPublicAddress {
+impl  IpamDiscoveredPublicAddress  {
     /// <p>The resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<& str> {
         self.ipam_resource_discovery_id.as_deref()
     }
     /// <p>The Region of the resource the IP address is assigned to.</p>
-    pub fn address_region(&self) -> ::std::option::Option<&str> {
+    pub fn address_region(&self) -> ::std::option::Option<& str> {
         self.address_region.as_deref()
     }
     /// <p>The IP address.</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The ID of the owner of the resource the IP address is assigned to.</p>
-    pub fn address_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn address_owner_id(&self) -> ::std::option::Option<& str> {
         self.address_owner_id.as_deref()
     }
     /// <p>The allocation ID of the resource the IP address is assigned to.</p>
-    pub fn address_allocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn address_allocation_id(&self) -> ::std::option::Option<& str> {
         self.address_allocation_id.as_deref()
     }
     /// <p>The association status.</p>
-    pub fn association_status(&self) -> ::std::option::Option<&crate::types::IpamPublicAddressAssociationStatus> {
+    pub fn association_status(&self) -> ::std::option::Option<& crate::types::IpamPublicAddressAssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>The IP address type.</p>
-    pub fn address_type(&self) -> ::std::option::Option<&crate::types::IpamPublicAddressType> {
+    pub fn address_type(&self) -> ::std::option::Option<& crate::types::IpamPublicAddressType> {
         self.address_type.as_ref()
     }
     /// <p>The Amazon Web Services service associated with the IP address.</p>
-    pub fn service(&self) -> ::std::option::Option<&crate::types::IpamPublicAddressAwsService> {
+    pub fn service(&self) -> ::std::option::Option<& crate::types::IpamPublicAddressAwsService> {
         self.service.as_ref()
     }
     /// <p>The resource ARN or ID.</p>
-    pub fn service_resource(&self) -> ::std::option::Option<&str> {
+    pub fn service_resource(&self) -> ::std::option::Option<& str> {
         self.service_resource.as_deref()
     }
     /// <p>The ID of the VPC that the resource with the assigned IP address is in.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the subnet that the resource with the assigned IP address is in.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the public IPv4 pool that the resource with the assigned IP address is from.</p>
-    pub fn public_ipv4_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn public_ipv4_pool_id(&self) -> ::std::option::Option<& str> {
         self.public_ipv4_pool_id.as_deref()
     }
     /// <p>The network interface ID of the resource with the assigned IP address.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The description of the network interface that IP address is assigned to.</p>
-    pub fn network_interface_description(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_description(&self) -> ::std::option::Option<& str> {
         self.network_interface_description.as_deref()
     }
     /// <p>The instance ID of the instance the assigned IP address is assigned to.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Tags associated with the IP address.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::IpamPublicAddressTags> {
+    pub fn tags(&self) -> ::std::option::Option<& crate::types::IpamPublicAddressTags> {
         self.tags.as_ref()
     }
     /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
-    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+    pub fn network_border_group(&self) -> ::std::option::Option<& str> {
         self.network_border_group.as_deref()
     }
     /// <p>Security groups associated with the resource that the IP address is assigned to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[crate::types::IpamPublicAddressSecurityGroup] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [crate::types::IpamPublicAddressSecurityGroup] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The last successful resource discovery time.</p>
-    pub fn sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
 }
@@ -151,7 +152,7 @@ pub struct IpamDiscoveredPublicAddressBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<crate::types::IpamPublicAddressTags>,
     pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressSecurityGroup>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::IpamPublicAddressSecurityGroup>>,
     pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IpamDiscoveredPublicAddressBuilder {
@@ -162,8 +163,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The resource discovery ID.</p>
     pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_resource_discovery_id = input;
-        self
+        self.ipam_resource_discovery_id = input; self
     }
     /// <p>The resource discovery ID.</p>
     pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +176,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The Region of the resource the IP address is assigned to.</p>
     pub fn set_address_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_region = input;
-        self
+        self.address_region = input; self
     }
     /// <p>The Region of the resource the IP address is assigned to.</p>
     pub fn get_address_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +189,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The IP address.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The IP address.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +202,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The ID of the owner of the resource the IP address is assigned to.</p>
     pub fn set_address_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_owner_id = input;
-        self
+        self.address_owner_id = input; self
     }
     /// <p>The ID of the owner of the resource the IP address is assigned to.</p>
     pub fn get_address_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +215,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The allocation ID of the resource the IP address is assigned to.</p>
     pub fn set_address_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_allocation_id = input;
-        self
+        self.address_allocation_id = input; self
     }
     /// <p>The allocation ID of the resource the IP address is assigned to.</p>
     pub fn get_address_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +228,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The association status.</p>
     pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::IpamPublicAddressAssociationStatus>) -> Self {
-        self.association_status = input;
-        self
+        self.association_status = input; self
     }
     /// <p>The association status.</p>
     pub fn get_association_status(&self) -> &::std::option::Option<crate::types::IpamPublicAddressAssociationStatus> {
@@ -246,8 +241,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The IP address type.</p>
     pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::IpamPublicAddressType>) -> Self {
-        self.address_type = input;
-        self
+        self.address_type = input; self
     }
     /// <p>The IP address type.</p>
     pub fn get_address_type(&self) -> &::std::option::Option<crate::types::IpamPublicAddressType> {
@@ -260,8 +254,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The Amazon Web Services service associated with the IP address.</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::IpamPublicAddressAwsService>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The Amazon Web Services service associated with the IP address.</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::IpamPublicAddressAwsService> {
@@ -274,8 +267,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The resource ARN or ID.</p>
     pub fn set_service_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_resource = input;
-        self
+        self.service_resource = input; self
     }
     /// <p>The resource ARN or ID.</p>
     pub fn get_service_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +280,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The ID of the VPC that the resource with the assigned IP address is in.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC that the resource with the assigned IP address is in.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +293,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The ID of the subnet that the resource with the assigned IP address is in.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet that the resource with the assigned IP address is in.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +306,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The ID of the public IPv4 pool that the resource with the assigned IP address is from.</p>
     pub fn set_public_ipv4_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ipv4_pool_id = input;
-        self
+        self.public_ipv4_pool_id = input; self
     }
     /// <p>The ID of the public IPv4 pool that the resource with the assigned IP address is from.</p>
     pub fn get_public_ipv4_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,8 +319,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The network interface ID of the resource with the assigned IP address.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The network interface ID of the resource with the assigned IP address.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -344,8 +332,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The description of the network interface that IP address is assigned to.</p>
     pub fn set_network_interface_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_description = input;
-        self
+        self.network_interface_description = input; self
     }
     /// <p>The description of the network interface that IP address is assigned to.</p>
     pub fn get_network_interface_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -358,8 +345,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The instance ID of the instance the assigned IP address is assigned to.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID of the instance the assigned IP address is assigned to.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -372,8 +358,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>Tags associated with the IP address.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::IpamPublicAddressTags>) -> Self {
-        self.tags = input;
-        self
+        self.tags = input; self
     }
     /// <p>Tags associated with the IP address.</p>
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::IpamPublicAddressTags> {
@@ -386,8 +371,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
     pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_border_group = input;
-        self
+        self.network_border_group = input; self
     }
     /// <p>The network border group that the resource that the IP address is assigned to is in.</p>
     pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,17 +384,16 @@ impl IpamDiscoveredPublicAddressBuilder {
     /// <p>Security groups associated with the resource that the IP address is assigned to.</p>
     pub fn security_groups(mut self, input: crate::types::IpamPublicAddressSecurityGroup) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input);
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Security groups associated with the resource that the IP address is assigned to.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressSecurityGroup>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpamPublicAddressSecurityGroup>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>Security groups associated with the resource that the IP address is assigned to.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressSecurityGroup>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpamPublicAddressSecurityGroup>> {
         &self.security_groups
     }
     /// <p>The last successful resource discovery time.</p>
@@ -420,8 +403,7 @@ impl IpamDiscoveredPublicAddressBuilder {
     }
     /// <p>The last successful resource discovery time.</p>
     pub fn set_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.sample_time = input;
-        self
+        self.sample_time = input; self
     }
     /// <p>The last successful resource discovery time.</p>
     pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -430,25 +412,45 @@ impl IpamDiscoveredPublicAddressBuilder {
     /// Consumes the builder and constructs a [`IpamDiscoveredPublicAddress`](crate::types::IpamDiscoveredPublicAddress).
     pub fn build(self) -> crate::types::IpamDiscoveredPublicAddress {
         crate::types::IpamDiscoveredPublicAddress {
-            ipam_resource_discovery_id: self.ipam_resource_discovery_id,
-            address_region: self.address_region,
-            address: self.address,
-            address_owner_id: self.address_owner_id,
-            address_allocation_id: self.address_allocation_id,
-            association_status: self.association_status,
-            address_type: self.address_type,
-            service: self.service,
-            service_resource: self.service_resource,
-            vpc_id: self.vpc_id,
-            subnet_id: self.subnet_id,
-            public_ipv4_pool_id: self.public_ipv4_pool_id,
-            network_interface_id: self.network_interface_id,
-            network_interface_description: self.network_interface_description,
-            instance_id: self.instance_id,
-            tags: self.tags,
-            network_border_group: self.network_border_group,
-            security_groups: self.security_groups,
-            sample_time: self.sample_time,
+            ipam_resource_discovery_id: self.ipam_resource_discovery_id
+            ,
+            address_region: self.address_region
+            ,
+            address: self.address
+            ,
+            address_owner_id: self.address_owner_id
+            ,
+            address_allocation_id: self.address_allocation_id
+            ,
+            association_status: self.association_status
+            ,
+            address_type: self.address_type
+            ,
+            service: self.service
+            ,
+            service_resource: self.service_resource
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_id: self.subnet_id
+            ,
+            public_ipv4_pool_id: self.public_ipv4_pool_id
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            network_interface_description: self.network_interface_description
+            ,
+            instance_id: self.instance_id
+            ,
+            tags: self.tags
+            ,
+            network_border_group: self.network_border_group
+            ,
+            security_groups: self.security_groups
+            ,
+            sample_time: self.sample_time
+            ,
         }
     }
 }
+

@@ -754,3 +754,4 @@ pub fn de_cluster(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
     }
     Ok(builder.build())
 }
+

@@ -4,29 +4,29 @@
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageDsn {
+pub struct MessageDsn  {
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
     pub reporting_mta: ::std::string::String,
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
     pub arrival_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Additional X-headers to include in the DSN.</p>
-    pub extension_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
+    pub extension_fields: ::std::option::Option<::std::vec::Vec::<crate::types::ExtensionField>>,
 }
-impl MessageDsn {
+impl  MessageDsn  {
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
-    pub fn reporting_mta(&self) -> &str {
-        use std::ops::Deref;
-        self.reporting_mta.deref()
+    pub fn reporting_mta(&self) -> & str {
+        use std::ops::Deref; self.reporting_mta.deref()
     }
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    pub fn arrival_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn arrival_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.arrival_date.as_ref()
     }
     /// <p>Additional X-headers to include in the DSN.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extension_fields.is_none()`.
-    pub fn extension_fields(&self) -> &[crate::types::ExtensionField] {
-        self.extension_fields.as_deref().unwrap_or_default()
+    pub fn extension_fields(&self) -> & [crate::types::ExtensionField] {
+        self.extension_fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MessageDsn {
@@ -42,7 +42,7 @@ impl MessageDsn {
 pub struct MessageDsnBuilder {
     pub(crate) reporting_mta: ::std::option::Option<::std::string::String>,
     pub(crate) arrival_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) extension_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
+    pub(crate) extension_fields: ::std::option::Option<::std::vec::Vec::<crate::types::ExtensionField>>,
 }
 impl MessageDsnBuilder {
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
@@ -53,8 +53,7 @@ impl MessageDsnBuilder {
     }
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
     pub fn set_reporting_mta(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reporting_mta = input;
-        self
+        self.reporting_mta = input; self
     }
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
     pub fn get_reporting_mta(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl MessageDsnBuilder {
     }
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
     pub fn set_arrival_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.arrival_date = input;
-        self
+        self.arrival_date = input; self
     }
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
     pub fn get_arrival_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -81,32 +79,35 @@ impl MessageDsnBuilder {
     /// <p>Additional X-headers to include in the DSN.</p>
     pub fn extension_fields(mut self, input: crate::types::ExtensionField) -> Self {
         let mut v = self.extension_fields.unwrap_or_default();
-        v.push(input);
-        self.extension_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.extension_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional X-headers to include in the DSN.</p>
-    pub fn set_extension_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>) -> Self {
-        self.extension_fields = input;
-        self
+    pub fn set_extension_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExtensionField>>) -> Self {
+        self.extension_fields = input; self
     }
     /// <p>Additional X-headers to include in the DSN.</p>
-    pub fn get_extension_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>> {
+    pub fn get_extension_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExtensionField>> {
         &self.extension_fields
     }
     /// Consumes the builder and constructs a [`MessageDsn`](crate::types::MessageDsn).
     /// This method will fail if any of the following fields are not set:
     /// - [`reporting_mta`](crate::types::builders::MessageDsnBuilder::reporting_mta)
     pub fn build(self) -> ::std::result::Result<crate::types::MessageDsn, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MessageDsn {
-            reporting_mta: self.reporting_mta.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reporting_mta",
-                    "reporting_mta was not specified but it is required when building MessageDsn",
-                )
-            })?,
-            arrival_date: self.arrival_date,
-            extension_fields: self.extension_fields,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MessageDsn {
+                reporting_mta: self.reporting_mta
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reporting_mta", "reporting_mta was not specified but it is required when building MessageDsn")
+                    )?
+                ,
+                arrival_date: self.arrival_date
+                ,
+                extension_fields: self.extension_fields
+                ,
+            }
+        )
     }
 }
+

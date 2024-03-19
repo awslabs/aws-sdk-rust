@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAssociateAnalyticsDataSetOutput {
+pub struct BatchAssociateAnalyticsDataSetOutput  {
     /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
-    pub created: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>>,
+    pub created: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsDataAssociationResult>>,
     /// <p>A list of errors for datasets that aren't successfully associated with the target account.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorResult>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::ErrorResult>>,
     _request_id: Option<String>,
 }
-impl BatchAssociateAnalyticsDataSetOutput {
+impl  BatchAssociateAnalyticsDataSetOutput  {
     /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.created.is_none()`.
-    pub fn created(&self) -> &[crate::types::AnalyticsDataAssociationResult] {
-        self.created.as_deref().unwrap_or_default()
+    pub fn created(&self) -> & [crate::types::AnalyticsDataAssociationResult] {
+        self.created.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of errors for datasets that aren't successfully associated with the target account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::ErrorResult] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::ErrorResult] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchAssociateAnalyticsDataSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchAssociateAnalyticsDataSetOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateAnalyticsDataSetOutput`](crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetOutput).
     pub fn builder() -> crate::operation::batch_associate_analytics_data_set::builders::BatchAssociateAnalyticsDataSetOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchAssociateAnalyticsDataSetOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateAnalyticsDataSetOutputBuilder {
-    pub(crate) created: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorResult>>,
+    pub(crate) created: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsDataAssociationResult>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::ErrorResult>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateAnalyticsDataSetOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchAssociateAnalyticsDataSetOutputBuilder {
     /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
     pub fn created(mut self, input: crate::types::AnalyticsDataAssociationResult) -> Self {
         let mut v = self.created.unwrap_or_default();
-        v.push(input);
-        self.created = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.created = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
-    pub fn set_created(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>>) -> Self {
-        self.created = input;
-        self
+    pub fn set_created(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsDataAssociationResult>>) -> Self {
+        self.created = input; self
     }
     /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
-    pub fn get_created(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>> {
+    pub fn get_created(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsDataAssociationResult>> {
         &self.created
     }
     /// Appends an item to `errors`.
@@ -71,34 +72,36 @@ impl BatchAssociateAnalyticsDataSetOutputBuilder {
     /// <p>A list of errors for datasets that aren't successfully associated with the target account.</p>
     pub fn errors(mut self, input: crate::types::ErrorResult) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of errors for datasets that aren't successfully associated with the target account.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorResult>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ErrorResult>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of errors for datasets that aren't successfully associated with the target account.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorResult>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ErrorResult>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchAssociateAnalyticsDataSetOutput`](crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetOutput).
     pub fn build(self) -> crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetOutput {
         crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetOutput {
-            created: self.created,
-            errors: self.errors,
+            created: self.created
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

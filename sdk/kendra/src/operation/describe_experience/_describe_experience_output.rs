@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExperienceOutput {
+pub struct DescribeExperienceOutput  {
     /// <p>Shows the identifier of your Amazon Kendra experience.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
@@ -10,7 +10,7 @@ pub struct DescribeExperienceOutput {
     /// <p>Shows the name of your Amazon Kendra experience.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>,
+    pub endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::ExperienceEndpoint>>,
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub configuration: ::std::option::Option<crate::types::ExperienceConfiguration>,
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
@@ -27,59 +27,60 @@ pub struct DescribeExperienceOutput {
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeExperienceOutput {
+impl  DescribeExperienceOutput  {
     /// <p>Shows the identifier of your Amazon Kendra experience.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>Shows the name of your Amazon Kendra experience.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
-    pub fn endpoints(&self) -> &[crate::types::ExperienceEndpoint] {
-        self.endpoints.as_deref().unwrap_or_default()
+    pub fn endpoints(&self) -> & [crate::types::ExperienceEndpoint] {
+        self.endpoints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ExperienceConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ExperienceConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Shows the description for your Amazon Kendra experience.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExperienceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ExperienceStatus> {
         self.status.as_ref()
     }
     /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeExperienceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeExperienceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExperienceOutput`](crate::operation::describe_experience::DescribeExperienceOutput).
     pub fn builder() -> crate::operation::describe_experience::builders::DescribeExperienceOutputBuilder {
@@ -94,7 +95,7 @@ pub struct DescribeExperienceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::ExperienceEndpoint>>,
     pub(crate) configuration: ::std::option::Option<crate::types::ExperienceConfiguration>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -112,8 +113,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>Shows the identifier of your Amazon Kendra experience.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Shows the identifier of your Amazon Kendra experience.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +126,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +139,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>Shows the name of your Amazon Kendra experience.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Shows the name of your Amazon Kendra experience.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,17 +152,16 @@ impl DescribeExperienceOutputBuilder {
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
     pub fn endpoints(mut self, input: crate::types::ExperienceEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-        v.push(input);
-        self.endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>>) -> Self {
-        self.endpoints = input;
-        self
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExperienceEndpoint>>) -> Self {
+        self.endpoints = input; self
     }
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExperienceEndpoint>> {
         &self.endpoints
     }
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
@@ -174,8 +171,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ExperienceConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ExperienceConfiguration> {
@@ -188,8 +184,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -202,8 +197,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -216,8 +210,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>Shows the description for your Amazon Kendra experience.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Shows the description for your Amazon Kendra experience.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +223,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExperienceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExperienceStatus> {
@@ -244,8 +236,7 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,37 +249,48 @@ impl DescribeExperienceOutputBuilder {
     }
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The reason your Amazon Kendra experience could not properly process.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeExperienceOutput`](crate::operation::describe_experience::DescribeExperienceOutput).
     pub fn build(self) -> crate::operation::describe_experience::DescribeExperienceOutput {
         crate::operation::describe_experience::DescribeExperienceOutput {
-            id: self.id,
-            index_id: self.index_id,
-            name: self.name,
-            endpoints: self.endpoints,
-            configuration: self.configuration,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            description: self.description,
-            status: self.status,
-            role_arn: self.role_arn,
-            error_message: self.error_message,
+            id: self.id
+            ,
+            index_id: self.index_id
+            ,
+            name: self.name
+            ,
+            endpoints: self.endpoints
+            ,
+            configuration: self.configuration
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            role_arn: self.role_arn
+            ,
+            error_message: self.error_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

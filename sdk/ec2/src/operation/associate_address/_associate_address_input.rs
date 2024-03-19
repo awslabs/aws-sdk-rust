@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAddressInput {
+pub struct AssociateAddressInput  {
     /// <p>The allocation ID. This is required.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
@@ -19,17 +19,17 @@ pub struct AssociateAddressInput {
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
-impl AssociateAddressInput {
+impl  AssociateAddressInput  {
     /// <p>The allocation ID. This is required.</p>
-    pub fn allocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn allocation_id(&self) -> ::std::option::Option<& str> {
         self.allocation_id.as_deref()
     }
     /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Deprecated.</p>
-    pub fn public_ip(&self) -> ::std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<& str> {
         self.public_ip.as_deref()
     }
     /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
@@ -42,11 +42,11 @@ impl AssociateAddressInput {
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
     /// <p>You can specify either the instance ID or the network interface ID, but not both.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl AssociateAddressInputBuilder {
     }
     /// <p>The allocation ID. This is required.</p>
     pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allocation_id = input;
-        self
+        self.allocation_id = input; self
     }
     /// <p>The allocation ID. This is required.</p>
     pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl AssociateAddressInputBuilder {
     }
     /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl AssociateAddressInputBuilder {
     }
     /// <p>Deprecated.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip = input;
-        self
+        self.public_ip = input; self
     }
     /// <p>Deprecated.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl AssociateAddressInputBuilder {
     }
     /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
     pub fn set_allow_reassociation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_reassociation = input;
-        self
+        self.allow_reassociation = input; self
     }
     /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
     pub fn get_allow_reassociation(&self) -> &::std::option::Option<bool> {
@@ -133,8 +129,7 @@ impl AssociateAddressInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -149,8 +144,7 @@ impl AssociateAddressInputBuilder {
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
     /// <p>You can specify either the instance ID or the network interface ID, but not both.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
     /// <p>You can specify either the instance ID or the network interface ID, but not both.</p>
@@ -164,25 +158,32 @@ impl AssociateAddressInputBuilder {
     }
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
+        self.private_ip_address = input; self
     }
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_ip_address
     }
     /// Consumes the builder and constructs a [`AssociateAddressInput`](crate::operation::associate_address::AssociateAddressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_address::AssociateAddressInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_address::AssociateAddressInput {
-            allocation_id: self.allocation_id,
-            instance_id: self.instance_id,
-            public_ip: self.public_ip,
-            allow_reassociation: self.allow_reassociation,
-            dry_run: self.dry_run,
-            network_interface_id: self.network_interface_id,
-            private_ip_address: self.private_ip_address,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_address::AssociateAddressInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_address::AssociateAddressInput {
+                allocation_id: self.allocation_id
+                ,
+                instance_id: self.instance_id
+                ,
+                public_ip: self.public_ip
+                ,
+                allow_reassociation: self.allow_reassociation
+                ,
+                dry_run: self.dry_run
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+            }
+        )
     }
 }
+

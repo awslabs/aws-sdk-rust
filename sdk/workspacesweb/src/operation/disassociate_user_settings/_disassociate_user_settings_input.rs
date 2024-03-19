@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateUserSettingsInput {
+pub struct DisassociateUserSettingsInput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateUserSettingsInput {
+impl  DisassociateUserSettingsInput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DisassociateUserSettingsInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.portal_arn
     }
     /// Consumes the builder and constructs a [`DisassociateUserSettingsInput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_user_settings::DisassociateUserSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_user_settings::DisassociateUserSettingsInput { portal_arn: self.portal_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_user_settings::DisassociateUserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_user_settings::DisassociateUserSettingsInput {
+                portal_arn: self.portal_arn
+                ,
+            }
+        )
     }
 }
+

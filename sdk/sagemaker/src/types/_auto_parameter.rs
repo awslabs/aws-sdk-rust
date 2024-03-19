@@ -3,19 +3,19 @@
 /// <p>The name and an example value of the hyperparameter that you want to use in Autotune. If Automatic model tuning (AMT) determines that your hyperparameter is eligible for Autotune, an optimal hyperparameter range is selected for you.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoParameter {
+pub struct AutoParameter  {
     /// <p>The name of the hyperparameter to optimize using Autotune.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An example value of the hyperparameter to optimize using Autotune.</p>
     pub value_hint: ::std::option::Option<::std::string::String>,
 }
-impl AutoParameter {
+impl  AutoParameter  {
     /// <p>The name of the hyperparameter to optimize using Autotune.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An example value of the hyperparameter to optimize using Autotune.</p>
-    pub fn value_hint(&self) -> ::std::option::Option<&str> {
+    pub fn value_hint(&self) -> ::std::option::Option<& str> {
         self.value_hint.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl AutoParameterBuilder {
     }
     /// <p>The name of the hyperparameter to optimize using Autotune.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the hyperparameter to optimize using Autotune.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl AutoParameterBuilder {
     }
     /// <p>An example value of the hyperparameter to optimize using Autotune.</p>
     pub fn set_value_hint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_hint = input;
-        self
+        self.value_hint = input; self
     }
     /// <p>An example value of the hyperparameter to optimize using Autotune.</p>
     pub fn get_value_hint(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl AutoParameterBuilder {
     /// Consumes the builder and constructs a [`AutoParameter`](crate::types::AutoParameter).
     pub fn build(self) -> crate::types::AutoParameter {
         crate::types::AutoParameter {
-            name: self.name,
-            value_hint: self.value_hint,
+            name: self.name
+            ,
+            value_hint: self.value_hint
+            ,
         }
     }
 }
+

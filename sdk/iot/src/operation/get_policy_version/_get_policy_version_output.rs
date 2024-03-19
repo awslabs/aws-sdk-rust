@@ -3,7 +3,7 @@
 /// <p>The output from the GetPolicyVersion operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPolicyVersionOutput {
+pub struct GetPolicyVersionOutput  {
     /// <p>The policy ARN.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy name.</p>
@@ -22,21 +22,21 @@ pub struct GetPolicyVersionOutput {
     pub generation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPolicyVersionOutput {
+impl  GetPolicyVersionOutput  {
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_version_id(&self) -> ::std::option::Option<& str> {
         self.policy_version_id.as_deref()
     }
     /// <p>Specifies whether the policy version is the default.</p>
@@ -44,23 +44,23 @@ impl GetPolicyVersionOutput {
         self.is_default_version
     }
     /// <p>The date the policy was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the policy was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The generation ID of the policy version.</p>
-    pub fn generation_id(&self) -> ::std::option::Option<&str> {
+    pub fn generation_id(&self) -> ::std::option::Option<& str> {
         self.generation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPolicyVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyVersionOutput`](crate::operation::get_policy_version::GetPolicyVersionOutput).
     pub fn builder() -> crate::operation::get_policy_version::builders::GetPolicyVersionOutputBuilder {
@@ -90,8 +90,7 @@ impl GetPolicyVersionOutputBuilder {
     }
     /// <p>The policy ARN.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The policy ARN.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl GetPolicyVersionOutputBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The policy name.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl GetPolicyVersionOutputBuilder {
     }
     /// <p>The JSON document that describes the policy.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The JSON document that describes the policy.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl GetPolicyVersionOutputBuilder {
     }
     /// <p>The policy version ID.</p>
     pub fn set_policy_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_version_id = input;
-        self
+        self.policy_version_id = input; self
     }
     /// <p>The policy version ID.</p>
     pub fn get_policy_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl GetPolicyVersionOutputBuilder {
     }
     /// <p>Specifies whether the policy version is the default.</p>
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default_version = input;
-        self
+        self.is_default_version = input; self
     }
     /// <p>Specifies whether the policy version is the default.</p>
     pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
@@ -160,8 +155,7 @@ impl GetPolicyVersionOutputBuilder {
     }
     /// <p>The date the policy was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date the policy was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +168,7 @@ impl GetPolicyVersionOutputBuilder {
     }
     /// <p>The date the policy was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date the policy was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,34 +181,43 @@ impl GetPolicyVersionOutputBuilder {
     }
     /// <p>The generation ID of the policy version.</p>
     pub fn set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_id = input;
-        self
+        self.generation_id = input; self
     }
     /// <p>The generation ID of the policy version.</p>
     pub fn get_generation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.generation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPolicyVersionOutput`](crate::operation::get_policy_version::GetPolicyVersionOutput).
     pub fn build(self) -> crate::operation::get_policy_version::GetPolicyVersionOutput {
         crate::operation::get_policy_version::GetPolicyVersionOutput {
-            policy_arn: self.policy_arn,
-            policy_name: self.policy_name,
-            policy_document: self.policy_document,
-            policy_version_id: self.policy_version_id,
-            is_default_version: self.is_default_version.unwrap_or_default(),
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
-            generation_id: self.generation_id,
+            policy_arn: self.policy_arn
+            ,
+            policy_name: self.policy_name
+            ,
+            policy_document: self.policy_document
+            ,
+            policy_version_id: self.policy_version_id
+            ,
+            is_default_version: self.is_default_version
+                .unwrap_or_default()
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            generation_id: self.generation_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

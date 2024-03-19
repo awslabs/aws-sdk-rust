@@ -428,3 +428,4 @@ pub mod builders;
 
 /// Error types that Amazon CloudDirectory can respond with.
 pub mod error;
+

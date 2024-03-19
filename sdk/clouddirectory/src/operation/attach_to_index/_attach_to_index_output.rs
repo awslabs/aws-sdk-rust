@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachToIndexOutput {
+pub struct AttachToIndexOutput  {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     pub attached_object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AttachToIndexOutput {
+impl  AttachToIndexOutput  {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn attached_object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn attached_object_identifier(&self) -> ::std::option::Option<& str> {
         self.attached_object_identifier.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AttachToIndexOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AttachToIndexOutput {
     /// Creates a new builder-style object to manufacture [`AttachToIndexOutput`](crate::operation::attach_to_index::AttachToIndexOutput).
     pub fn builder() -> crate::operation::attach_to_index::builders::AttachToIndexOutputBuilder {
@@ -40,27 +40,28 @@ impl AttachToIndexOutputBuilder {
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     pub fn set_attached_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attached_object_identifier = input;
-        self
+        self.attached_object_identifier = input; self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     pub fn get_attached_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.attached_object_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AttachToIndexOutput`](crate::operation::attach_to_index::AttachToIndexOutput).
     pub fn build(self) -> crate::operation::attach_to_index::AttachToIndexOutput {
         crate::operation::attach_to_index::AttachToIndexOutput {
-            attached_object_identifier: self.attached_object_identifier,
+            attached_object_identifier: self.attached_object_identifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

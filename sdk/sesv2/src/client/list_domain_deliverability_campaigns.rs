@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDomainDeliverabilityCampaigns`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`start_date(DateTime)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::start_date) / [`set_start_date(Option<DateTime>)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::set_start_date):<br>required: **true**<br><p>The first day that you want to obtain deliverability data for.</p><br>
     ///   - [`end_date(DateTime)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::end_date) / [`set_end_date(Option<DateTime>)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::set_end_date):<br>required: **true**<br><p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p><br>
     ///   - [`subscribed_domain(impl Into<String>)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::subscribed_domain) / [`set_subscribed_domain(Option<String>)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::set_subscribed_domain):<br>required: **true**<br><p>The domain to obtain deliverability data for.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
-    /// - On success, responds with [`ListDomainDeliverabilityCampaignsOutput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput) with field(s):
+                            /// - On success, responds with [`ListDomainDeliverabilityCampaignsOutput`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput) with field(s):
     ///   - [`domain_deliverability_campaigns(Vec::<DomainDeliverabilityCampaign>)`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput::domain_deliverability_campaigns): <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput::next_token): <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
-    /// - On failure, responds with [`SdkError<ListDomainDeliverabilityCampaignsError>`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError)
-    pub fn list_domain_deliverability_campaigns(
-        &self,
-    ) -> crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder {
-        crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDomainDeliverabilityCampaignsError>`](crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError)
+    pub fn list_domain_deliverability_campaigns(&self) -> crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder {
+                                crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

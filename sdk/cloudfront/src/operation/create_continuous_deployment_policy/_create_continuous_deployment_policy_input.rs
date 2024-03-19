@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateContinuousDeploymentPolicyInput {
+pub struct CreateContinuousDeploymentPolicyInput  {
     /// <p>Contains the configuration for a continuous deployment policy.</p>
     pub continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
 }
-impl CreateContinuousDeploymentPolicyInput {
+impl  CreateContinuousDeploymentPolicyInput  {
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    pub fn continuous_deployment_policy_config(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyConfig> {
+    pub fn continuous_deployment_policy_config(&self) -> ::std::option::Option<& crate::types::ContinuousDeploymentPolicyConfig> {
         self.continuous_deployment_policy_config.as_ref()
     }
 }
@@ -34,24 +34,20 @@ impl CreateContinuousDeploymentPolicyInputBuilder {
     }
     /// <p>Contains the configuration for a continuous deployment policy.</p>
     pub fn set_continuous_deployment_policy_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>) -> Self {
-        self.continuous_deployment_policy_config = input;
-        self
+        self.continuous_deployment_policy_config = input; self
     }
     /// <p>Contains the configuration for a continuous deployment policy.</p>
     pub fn get_continuous_deployment_policy_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
         &self.continuous_deployment_policy_config
     }
     /// Consumes the builder and constructs a [`CreateContinuousDeploymentPolicyInput`](crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyInput {
-                continuous_deployment_policy_config: self.continuous_deployment_policy_config,
-            },
+                continuous_deployment_policy_config: self.continuous_deployment_policy_config
+                ,
+            }
         )
     }
 }
+

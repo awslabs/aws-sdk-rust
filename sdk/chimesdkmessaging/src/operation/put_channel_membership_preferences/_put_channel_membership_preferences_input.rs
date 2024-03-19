@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutChannelMembershipPreferencesInput {
+pub struct PutChannelMembershipPreferencesInput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the member setting the preferences.</p>
@@ -12,21 +12,21 @@ pub struct PutChannelMembershipPreferencesInput {
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
     pub preferences: ::std::option::Option<crate::types::ChannelMembershipPreferences>,
 }
-impl PutChannelMembershipPreferencesInput {
+impl  PutChannelMembershipPreferencesInput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN of the member setting the preferences.</p>
-    pub fn member_arn(&self) -> ::std::option::Option<&str> {
+    pub fn member_arn(&self) -> ::std::option::Option<& str> {
         self.member_arn.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
-    pub fn preferences(&self) -> ::std::option::Option<&crate::types::ChannelMembershipPreferences> {
+    pub fn preferences(&self) -> ::std::option::Option<& crate::types::ChannelMembershipPreferences> {
         self.preferences.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PutChannelMembershipPreferencesInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutChannelMembershipPreferencesInputBuilder {
     }
     /// <p>The ARN of the member setting the preferences.</p>
     pub fn set_member_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_arn = input;
-        self
+        self.member_arn = input; self
     }
     /// <p>The ARN of the member setting the preferences.</p>
     pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl PutChannelMembershipPreferencesInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,27 +97,26 @@ impl PutChannelMembershipPreferencesInputBuilder {
     }
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
     pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::ChannelMembershipPreferences>) -> Self {
-        self.preferences = input;
-        self
+        self.preferences = input; self
     }
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
     pub fn get_preferences(&self) -> &::std::option::Option<crate::types::ChannelMembershipPreferences> {
         &self.preferences
     }
     /// Consumes the builder and constructs a [`PutChannelMembershipPreferencesInput`](crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesInput {
-                channel_arn: self.channel_arn,
-                member_arn: self.member_arn,
-                chime_bearer: self.chime_bearer,
-                preferences: self.preferences,
-            },
+                channel_arn: self.channel_arn
+                ,
+                member_arn: self.member_arn
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+                preferences: self.preferences
+                ,
+            }
         )
     }
 }
+

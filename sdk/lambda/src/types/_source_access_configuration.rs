@@ -3,7 +3,7 @@
 /// <p>To secure and define access to your event source, you can specify the authentication protocol, VPC components, or virtual host.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceAccessConfiguration {
+pub struct SourceAccessConfiguration  {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ pub struct SourceAccessConfiguration {
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
     pub uri: ::std::option::Option<::std::string::String>,
 }
-impl SourceAccessConfiguration {
+impl  SourceAccessConfiguration  {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
     /// <li>
@@ -51,11 +51,11 @@ impl SourceAccessConfiguration {
     /// <li>
     /// <p><code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SourceAccessType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SourceAccessType> {
         self.r#type.as_ref()
     }
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
 }
@@ -121,8 +121,7 @@ impl SourceAccessConfigurationBuilder {
     /// <p><code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceAccessType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
@@ -155,8 +154,7 @@ impl SourceAccessConfigurationBuilder {
     }
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +163,11 @@ impl SourceAccessConfigurationBuilder {
     /// Consumes the builder and constructs a [`SourceAccessConfiguration`](crate::types::SourceAccessConfiguration).
     pub fn build(self) -> crate::types::SourceAccessConfiguration {
         crate::types::SourceAccessConfiguration {
-            r#type: self.r#type,
-            uri: self.uri,
+            r#type: self.r#type
+            ,
+            uri: self.uri
+            ,
         }
     }
 }
+

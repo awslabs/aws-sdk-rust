@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRetrainingSchedulerInput {
+pub struct CreateRetrainingSchedulerInput  {
     /// <p>The name of the model to add the retraining scheduler to.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.</p>
@@ -24,13 +24,13 @@ pub struct CreateRetrainingSchedulerInput {
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateRetrainingSchedulerInput {
+impl  CreateRetrainingSchedulerInput  {
     /// <p>The name of the model to add the retraining scheduler to.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.</p>
-    pub fn retraining_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn retraining_start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.retraining_start_date.as_ref()
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
@@ -42,19 +42,19 @@ impl CreateRetrainingSchedulerInput {
     /// <li>
     /// <p>P150D – Every 150 days</p></li>
     /// </ul>
-    pub fn retraining_frequency(&self) -> ::std::option::Option<&str> {
+    pub fn retraining_frequency(&self) -> ::std::option::Option<& str> {
         self.retraining_frequency.as_deref()
     }
     /// <p>The number of past days of data that will be used for retraining.</p>
-    pub fn lookback_window(&self) -> ::std::option::Option<&str> {
+    pub fn lookback_window(&self) -> ::std::option::Option<& str> {
         self.lookback_window.as_deref()
     }
     /// <p>Indicates how the service will use new models. In <code>MANAGED</code> mode, new models will automatically be used for inference if they have better performance than the current model. In <code>MANUAL</code> mode, the new models will not be used <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation">until they are manually activated</a>.</p>
-    pub fn promote_mode(&self) -> ::std::option::Option<&crate::types::ModelPromoteMode> {
+    pub fn promote_mode(&self) -> ::std::option::Option<& crate::types::ModelPromoteMode> {
         self.promote_mode.as_ref()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -85,8 +85,7 @@ impl CreateRetrainingSchedulerInputBuilder {
     }
     /// <p>The name of the model to add the retraining scheduler to.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model to add the retraining scheduler to.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl CreateRetrainingSchedulerInputBuilder {
     }
     /// <p>The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.</p>
     pub fn set_retraining_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.retraining_start_date = input;
-        self
+        self.retraining_start_date = input; self
     }
     /// <p>The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.</p>
     pub fn get_retraining_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -130,8 +128,7 @@ impl CreateRetrainingSchedulerInputBuilder {
     /// <p>P150D – Every 150 days</p></li>
     /// </ul>
     pub fn set_retraining_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retraining_frequency = input;
-        self
+        self.retraining_frequency = input; self
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
@@ -153,8 +150,7 @@ impl CreateRetrainingSchedulerInputBuilder {
     }
     /// <p>The number of past days of data that will be used for retraining.</p>
     pub fn set_lookback_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lookback_window = input;
-        self
+        self.lookback_window = input; self
     }
     /// <p>The number of past days of data that will be used for retraining.</p>
     pub fn get_lookback_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +163,7 @@ impl CreateRetrainingSchedulerInputBuilder {
     }
     /// <p>Indicates how the service will use new models. In <code>MANAGED</code> mode, new models will automatically be used for inference if they have better performance than the current model. In <code>MANUAL</code> mode, the new models will not be used <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation">until they are manually activated</a>.</p>
     pub fn set_promote_mode(mut self, input: ::std::option::Option<crate::types::ModelPromoteMode>) -> Self {
-        self.promote_mode = input;
-        self
+        self.promote_mode = input; self
     }
     /// <p>Indicates how the service will use new models. In <code>MANAGED</code> mode, new models will automatically be used for inference if they have better performance than the current model. In <code>MANUAL</code> mode, the new models will not be used <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation">until they are manually activated</a>.</p>
     pub fn get_promote_mode(&self) -> &::std::option::Option<crate::types::ModelPromoteMode> {
@@ -182,27 +177,30 @@ impl CreateRetrainingSchedulerInputBuilder {
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateRetrainingSchedulerInput`](crate::operation::create_retraining_scheduler::CreateRetrainingSchedulerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_retraining_scheduler::CreateRetrainingSchedulerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_retraining_scheduler::CreateRetrainingSchedulerInput {
-            model_name: self.model_name,
-            retraining_start_date: self.retraining_start_date,
-            retraining_frequency: self.retraining_frequency,
-            lookback_window: self.lookback_window,
-            promote_mode: self.promote_mode,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_retraining_scheduler::CreateRetrainingSchedulerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_retraining_scheduler::CreateRetrainingSchedulerInput {
+                model_name: self.model_name
+                ,
+                retraining_start_date: self.retraining_start_date
+                ,
+                retraining_frequency: self.retraining_frequency
+                ,
+                lookback_window: self.lookback_window
+                ,
+                promote_mode: self.promote_mode
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

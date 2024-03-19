@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetOutput {
+pub struct DescribeDatasetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
@@ -39,34 +39,34 @@ pub struct DescribeDatasetOutput {
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeDatasetOutput {
+impl  DescribeDatasetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The domain associated with the dataset.</p>
-    pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
+    pub fn domain(&self) -> ::std::option::Option<& crate::types::Domain> {
         self.domain.as_ref()
     }
     /// <p>The dataset type.</p>
-    pub fn dataset_type(&self) -> ::std::option::Option<&crate::types::DatasetType> {
+    pub fn dataset_type(&self) -> ::std::option::Option<& crate::types::DatasetType> {
         self.dataset_type.as_ref()
     }
     /// <p>The frequency of data collection.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
-    pub fn data_frequency(&self) -> ::std::option::Option<&str> {
+    pub fn data_frequency(&self) -> ::std::option::Option<& str> {
         self.data_frequency.as_deref()
     }
     /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::Schema> {
         self.schema.as_ref()
     }
     /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> ::std::option::Option<& crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
     /// <p>The status of the dataset. States include:</p>
@@ -83,23 +83,23 @@ impl DescribeDatasetOutput {
     /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p><note>
     /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
     /// </note>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>When the dataset was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDatasetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
     pub fn builder() -> crate::operation::describe_dataset::builders::DescribeDatasetOutputBuilder {
@@ -131,8 +131,7 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +144,7 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>The name of the dataset.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +157,7 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>The domain associated with the dataset.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain associated with the dataset.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
@@ -173,8 +170,7 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>The dataset type.</p>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// <p>The dataset type.</p>
     pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
@@ -189,8 +185,7 @@ impl DescribeDatasetOutputBuilder {
     /// <p>The frequency of data collection.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
     pub fn set_data_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_frequency = input;
-        self
+        self.data_frequency = input; self
     }
     /// <p>The frequency of data collection.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
@@ -204,8 +199,7 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
@@ -218,8 +212,7 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
-        self.encryption_config = input;
-        self
+        self.encryption_config = input; self
     }
     /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
@@ -258,8 +251,7 @@ impl DescribeDatasetOutputBuilder {
     /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the dataset. States include:</p>
     /// <ul>
@@ -285,8 +277,7 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>When the dataset was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the dataset was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -299,36 +290,46 @@ impl DescribeDatasetOutputBuilder {
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
     pub fn build(self) -> crate::operation::describe_dataset::DescribeDatasetOutput {
         crate::operation::describe_dataset::DescribeDatasetOutput {
-            dataset_arn: self.dataset_arn,
-            dataset_name: self.dataset_name,
-            domain: self.domain,
-            dataset_type: self.dataset_type,
-            data_frequency: self.data_frequency,
-            schema: self.schema,
-            encryption_config: self.encryption_config,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_modification_time: self.last_modification_time,
+            dataset_arn: self.dataset_arn
+            ,
+            dataset_name: self.dataset_name
+            ,
+            domain: self.domain
+            ,
+            dataset_type: self.dataset_type
+            ,
+            data_frequency: self.data_frequency
+            ,
+            schema: self.schema
+            ,
+            encryption_config: self.encryption_config
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modification_time: self.last_modification_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The time range drill down filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeRangeDrillDownFilter {
+pub struct TimeRangeDrillDownFilter  {
     /// <p>The column that the filter is applied to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The minimum value for the filter value range.</p>
@@ -13,21 +13,21 @@ pub struct TimeRangeDrillDownFilter {
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub time_granularity: crate::types::TimeGranularity,
 }
-impl TimeRangeDrillDownFilter {
+impl  TimeRangeDrillDownFilter  {
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn range_minimum(&self) -> &::aws_smithy_types::DateTime {
+    pub fn range_minimum(&self) -> & ::aws_smithy_types::DateTime {
         &self.range_minimum
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn range_maximum(&self) -> &::aws_smithy_types::DateTime {
+    pub fn range_maximum(&self) -> & ::aws_smithy_types::DateTime {
         &self.range_maximum
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn time_granularity(&self) -> &crate::types::TimeGranularity {
+    pub fn time_granularity(&self) -> & crate::types::TimeGranularity {
         &self.time_granularity
     }
 }
@@ -56,8 +56,7 @@ impl TimeRangeDrillDownFilterBuilder {
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -71,8 +70,7 @@ impl TimeRangeDrillDownFilterBuilder {
     }
     /// <p>The minimum value for the filter value range.</p>
     pub fn set_range_minimum(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.range_minimum = input;
-        self
+        self.range_minimum = input; self
     }
     /// <p>The minimum value for the filter value range.</p>
     pub fn get_range_minimum(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,8 +84,7 @@ impl TimeRangeDrillDownFilterBuilder {
     }
     /// <p>The maximum value for the filter value range.</p>
     pub fn set_range_maximum(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.range_maximum = input;
-        self
+        self.range_maximum = input; self
     }
     /// <p>The maximum value for the filter value range.</p>
     pub fn get_range_maximum(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -101,8 +98,7 @@ impl TimeRangeDrillDownFilterBuilder {
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
-        self.time_granularity = input;
-        self
+        self.time_granularity = input; self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
@@ -114,26 +110,27 @@ impl TimeRangeDrillDownFilterBuilder {
     /// - [`range_maximum`](crate::types::builders::TimeRangeDrillDownFilterBuilder::range_maximum)
     /// - [`time_granularity`](crate::types::builders::TimeRangeDrillDownFilterBuilder::time_granularity)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeRangeDrillDownFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeRangeDrillDownFilter {
-            column: self.column,
-            range_minimum: self.range_minimum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "range_minimum",
-                    "range_minimum was not specified but it is required when building TimeRangeDrillDownFilter",
-                )
-            })?,
-            range_maximum: self.range_maximum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "range_maximum",
-                    "range_maximum was not specified but it is required when building TimeRangeDrillDownFilter",
-                )
-            })?,
-            time_granularity: self.time_granularity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_granularity",
-                    "time_granularity was not specified but it is required when building TimeRangeDrillDownFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeRangeDrillDownFilter {
+                column: self.column
+                ,
+                range_minimum: self.range_minimum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("range_minimum", "range_minimum was not specified but it is required when building TimeRangeDrillDownFilter")
+                    )?
+                ,
+                range_maximum: self.range_maximum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("range_maximum", "range_maximum was not specified but it is required when building TimeRangeDrillDownFilter")
+                    )?
+                ,
+                time_granularity: self.time_granularity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_granularity", "time_granularity was not specified but it is required when building TimeRangeDrillDownFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

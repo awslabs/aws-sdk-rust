@@ -3,13 +3,13 @@
 /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceleratorTotalMemoryMiB {
+pub struct AcceleratorTotalMemoryMiB  {
     /// <p>The minimum amount of accelerator memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum amount of accelerator memory, in MiB. If this parameter is not specified, there is no maximum limit.</p>
     pub max: ::std::option::Option<i32>,
 }
-impl AcceleratorTotalMemoryMiB {
+impl  AcceleratorTotalMemoryMiB  {
     /// <p>The minimum amount of accelerator memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
     pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
@@ -41,8 +41,7 @@ impl AcceleratorTotalMemoryMiBBuilder {
     }
     /// <p>The minimum amount of accelerator memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum amount of accelerator memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
     pub fn get_min(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl AcceleratorTotalMemoryMiBBuilder {
     }
     /// <p>The maximum amount of accelerator memory, in MiB. If this parameter is not specified, there is no maximum limit.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum amount of accelerator memory, in MiB. If this parameter is not specified, there is no maximum limit.</p>
     pub fn get_max(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AcceleratorTotalMemoryMiBBuilder {
     /// Consumes the builder and constructs a [`AcceleratorTotalMemoryMiB`](crate::types::AcceleratorTotalMemoryMiB).
     pub fn build(self) -> crate::types::AcceleratorTotalMemoryMiB {
         crate::types::AcceleratorTotalMemoryMiB {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>Configuration ID of the application to be updated.</p>
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>New name of the application to be updated.</p>
@@ -10,17 +10,17 @@ pub struct UpdateApplicationInput {
     /// <p>New description of the application to be updated.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateApplicationInput {
+impl  UpdateApplicationInput  {
     /// <p>Configuration ID of the application to be updated.</p>
-    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>New name of the application to be updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>New description of the application to be updated.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Configuration ID of the application to be updated.</p>
     pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>Configuration ID of the application to be updated.</p>
     pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>New name of the application to be updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>New name of the application to be updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>New description of the application to be updated.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>New description of the application to be updated.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            configuration_id: self.configuration_id,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application::UpdateApplicationInput {
+                configuration_id: self.configuration_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateClusterInput {
+pub struct CreateClusterInput  {
     /// <p>The name of the new elastic cluster. This parameter is stored as a lowercase string.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
@@ -42,9 +42,9 @@ pub struct CreateClusterInput {
     /// <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
     pub shard_count: ::std::option::Option<i32>,
     /// <p>A list of EC2 VPC security groups to associate with the new elastic cluster.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon EC2 subnet IDs for the new elastic cluster.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The KMS key identifier to use to encrypt the new elastic cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
     /// <p>If an encryption key is not specified, Amazon DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
@@ -58,7 +58,7 @@ pub struct CreateClusterInput {
     /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the new elastic cluster.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The number of days for which automatic snapshots are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
@@ -66,7 +66,7 @@ pub struct CreateClusterInput {
     /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
     pub shard_instance_count: ::std::option::Option<i32>,
 }
-impl CreateClusterInput {
+impl  CreateClusterInput  {
     /// <p>The name of the new elastic cluster. This parameter is stored as a lowercase string.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
@@ -78,11 +78,11 @@ impl CreateClusterInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p><i>Example</i>: <code>my-cluster</code></p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or <code>SECRET_ARN</code>.</p>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::Auth> {
+    pub fn auth_type(&self) -> ::std::option::Option<& crate::types::Auth> {
         self.auth_type.as_ref()
     }
     /// <p>The name of the Amazon DocumentDB elastic clusters administrator.</p>
@@ -95,7 +95,7 @@ impl CreateClusterInput {
     /// <li>
     /// <p>Cannot be a reserved word.</p></li>
     /// </ul>
-    pub fn admin_user_name(&self) -> ::std::option::Option<&str> {
+    pub fn admin_user_name(&self) -> ::std::option::Option<& str> {
         self.admin_user_name.as_deref()
     }
     /// <p>The password for the Amazon DocumentDB elastic clusters administrator. The password can contain any printable ASCII characters.</p>
@@ -106,7 +106,7 @@ impl CreateClusterInput {
     /// <li>
     /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
     /// </ul>
-    pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn admin_user_password(&self) -> ::std::option::Option<& str> {
         self.admin_user_password.as_deref()
     }
     /// <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.</p>
@@ -118,25 +118,27 @@ impl CreateClusterInput {
         self.shard_count
     }
     /// <p>A list of EC2 VPC security groups to associate with the new elastic cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon EC2 subnet IDs for the new elastic cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The KMS key identifier to use to encrypt the new elastic cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
     /// <p>If an encryption key is not specified, Amazon DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The client token for the elastic cluster.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -144,11 +146,11 @@ impl CreateClusterInput {
     /// <p><i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The tags to be assigned to the new elastic cluster.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The number of days for which automatic snapshots are retained.</p>
@@ -156,7 +158,7 @@ impl CreateClusterInput {
         self.backup_retention_period
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
@@ -164,7 +166,7 @@ impl CreateClusterInput {
         self.shard_instance_count
     }
 }
-impl ::std::fmt::Debug for CreateClusterInput {
+impl  ::std::fmt::Debug for CreateClusterInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateClusterInput");
         formatter.field("cluster_name", &self.cluster_name);
@@ -202,12 +204,12 @@ pub struct CreateClusterInputBuilder {
     pub(crate) admin_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) shard_capacity: ::std::option::Option<i32>,
     pub(crate) shard_count: ::std::option::Option<i32>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) shard_instance_count: ::std::option::Option<i32>,
@@ -241,8 +243,7 @@ impl CreateClusterInputBuilder {
     /// </ul>
     /// <p><i>Example</i>: <code>my-cluster</code></p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the new elastic cluster. This parameter is stored as a lowercase string.</p>
     /// <p><i>Constraints</i>:</p>
@@ -266,8 +267,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or <code>SECRET_ARN</code>.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::Auth>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or <code>SECRET_ARN</code>.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::Auth> {
@@ -299,8 +299,7 @@ impl CreateClusterInputBuilder {
     /// <p>Cannot be a reserved word.</p></li>
     /// </ul>
     pub fn set_admin_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_user_name = input;
-        self
+        self.admin_user_name = input; self
     }
     /// <p>The name of the Amazon DocumentDB elastic clusters administrator.</p>
     /// <p><i>Constraints</i>:</p>
@@ -337,8 +336,7 @@ impl CreateClusterInputBuilder {
     /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
     /// </ul>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_user_password = input;
-        self
+        self.admin_user_password = input; self
     }
     /// <p>The password for the Amazon DocumentDB elastic clusters administrator. The password can contain any printable ASCII characters.</p>
     /// <p><i>Constraints</i>:</p>
@@ -359,8 +357,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.</p>
     pub fn set_shard_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shard_capacity = input;
-        self
+        self.shard_capacity = input; self
     }
     /// <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.</p>
     pub fn get_shard_capacity(&self) -> &::std::option::Option<i32> {
@@ -374,8 +371,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
     pub fn set_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shard_count = input;
-        self
+        self.shard_count = input; self
     }
     /// <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
     pub fn get_shard_count(&self) -> &::std::option::Option<i32> {
@@ -388,17 +384,16 @@ impl CreateClusterInputBuilder {
     /// <p>A list of EC2 VPC security groups to associate with the new elastic cluster.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of EC2 VPC security groups to associate with the new elastic cluster.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>A list of EC2 VPC security groups to associate with the new elastic cluster.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -408,17 +403,16 @@ impl CreateClusterInputBuilder {
     /// <p>The Amazon EC2 subnet IDs for the new elastic cluster.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon EC2 subnet IDs for the new elastic cluster.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The Amazon EC2 subnet IDs for the new elastic cluster.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The KMS key identifier to use to encrypt the new elastic cluster.</p>
@@ -432,8 +426,7 @@ impl CreateClusterInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
     /// <p>If an encryption key is not specified, Amazon DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key identifier to use to encrypt the new elastic cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
@@ -448,8 +441,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The client token for the elastic cluster.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token for the elastic cluster.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -470,8 +462,7 @@ impl CreateClusterInputBuilder {
     /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
@@ -488,17 +479,16 @@ impl CreateClusterInputBuilder {
     /// <p>The tags to be assigned to the new elastic cluster.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be assigned to the new elastic cluster.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to the new elastic cluster.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The number of days for which automatic snapshots are retained.</p>
@@ -508,8 +498,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The number of days for which automatic snapshots are retained.</p>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.backup_retention_period = input;
-        self
+        self.backup_retention_period = input; self
     }
     /// <p>The number of days for which automatic snapshots are retained.</p>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
@@ -522,8 +511,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -536,34 +524,48 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
     pub fn set_shard_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shard_instance_count = input;
-        self
+        self.shard_instance_count = input; self
     }
     /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
     pub fn get_shard_instance_count(&self) -> &::std::option::Option<i32> {
         &self.shard_instance_count
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
-            cluster_name: self.cluster_name,
-            auth_type: self.auth_type,
-            admin_user_name: self.admin_user_name,
-            admin_user_password: self.admin_user_password,
-            shard_capacity: self.shard_capacity,
-            shard_count: self.shard_count,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            subnet_ids: self.subnet_ids,
-            kms_key_id: self.kms_key_id,
-            client_token: self.client_token,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            tags: self.tags,
-            backup_retention_period: self.backup_retention_period,
-            preferred_backup_window: self.preferred_backup_window,
-            shard_instance_count: self.shard_instance_count,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cluster::CreateClusterInput {
+                cluster_name: self.cluster_name
+                ,
+                auth_type: self.auth_type
+                ,
+                admin_user_name: self.admin_user_name
+                ,
+                admin_user_password: self.admin_user_password
+                ,
+                shard_capacity: self.shard_capacity
+                ,
+                shard_count: self.shard_count
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                client_token: self.client_token
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                tags: self.tags
+                ,
+                backup_retention_period: self.backup_retention_period
+                ,
+                preferred_backup_window: self.preferred_backup_window
+                ,
+                shard_instance_count: self.shard_instance_count
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateClusterInputBuilder {
@@ -587,3 +589,4 @@ impl ::std::fmt::Debug for CreateClusterInputBuilder {
         formatter.finish()
     }
 }
+

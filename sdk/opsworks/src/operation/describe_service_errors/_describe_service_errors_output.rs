@@ -3,24 +3,25 @@
 /// <p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServiceErrorsOutput {
+pub struct DescribeServiceErrorsOutput  {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    pub service_errors: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
+    pub service_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceError>>,
     _request_id: Option<String>,
 }
-impl DescribeServiceErrorsOutput {
+impl  DescribeServiceErrorsOutput  {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_errors.is_none()`.
-    pub fn service_errors(&self) -> &[crate::types::ServiceError] {
-        self.service_errors.as_deref().unwrap_or_default()
+    pub fn service_errors(&self) -> & [crate::types::ServiceError] {
+        self.service_errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeServiceErrorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeServiceErrorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput).
     pub fn builder() -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeServiceErrorsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServiceErrorsOutputBuilder {
-    pub(crate) service_errors: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
+    pub(crate) service_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceError>>,
     _request_id: Option<String>,
 }
 impl DescribeServiceErrorsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeServiceErrorsOutputBuilder {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     pub fn service_errors(mut self, input: crate::types::ServiceError) -> Self {
         let mut v = self.service_errors.unwrap_or_default();
-        v.push(input);
-        self.service_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    pub fn set_service_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>) -> Self {
-        self.service_errors = input;
-        self
+    pub fn set_service_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceError>>) -> Self {
+        self.service_errors = input; self
     }
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    pub fn get_service_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceError>> {
+    pub fn get_service_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceError>> {
         &self.service_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput).
     pub fn build(self) -> crate::operation::describe_service_errors::DescribeServiceErrorsOutput {
         crate::operation::describe_service_errors::DescribeServiceErrorsOutput {
-            service_errors: self.service_errors,
+            service_errors: self.service_errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

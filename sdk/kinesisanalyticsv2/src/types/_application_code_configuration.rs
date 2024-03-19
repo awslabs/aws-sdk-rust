@@ -3,19 +3,19 @@
 /// <p>Describes code configuration for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationCodeConfiguration {
+pub struct ApplicationCodeConfiguration  {
     /// <p>The location and type of the application code.</p>
     pub code_content: ::std::option::Option<crate::types::CodeContent>,
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub code_content_type: crate::types::CodeContentType,
 }
-impl ApplicationCodeConfiguration {
+impl  ApplicationCodeConfiguration  {
     /// <p>The location and type of the application code.</p>
-    pub fn code_content(&self) -> ::std::option::Option<&crate::types::CodeContent> {
+    pub fn code_content(&self) -> ::std::option::Option<& crate::types::CodeContent> {
         self.code_content.as_ref()
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn code_content_type(&self) -> &crate::types::CodeContentType {
+    pub fn code_content_type(&self) -> & crate::types::CodeContentType {
         &self.code_content_type
     }
 }
@@ -41,8 +41,7 @@ impl ApplicationCodeConfigurationBuilder {
     }
     /// <p>The location and type of the application code.</p>
     pub fn set_code_content(mut self, input: ::std::option::Option<crate::types::CodeContent>) -> Self {
-        self.code_content = input;
-        self
+        self.code_content = input; self
     }
     /// <p>The location and type of the application code.</p>
     pub fn get_code_content(&self) -> &::std::option::Option<crate::types::CodeContent> {
@@ -56,8 +55,7 @@ impl ApplicationCodeConfigurationBuilder {
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub fn set_code_content_type(mut self, input: ::std::option::Option<crate::types::CodeContentType>) -> Self {
-        self.code_content_type = input;
-        self
+        self.code_content_type = input; self
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub fn get_code_content_type(&self) -> &::std::option::Option<crate::types::CodeContentType> {
@@ -67,14 +65,17 @@ impl ApplicationCodeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`code_content_type`](crate::types::builders::ApplicationCodeConfigurationBuilder::code_content_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationCodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationCodeConfiguration {
-            code_content: self.code_content,
-            code_content_type: self.code_content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code_content_type",
-                    "code_content_type was not specified but it is required when building ApplicationCodeConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationCodeConfiguration {
+                code_content: self.code_content
+                ,
+                code_content_type: self.code_content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code_content_type", "code_content_type was not specified but it is required when building ApplicationCodeConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

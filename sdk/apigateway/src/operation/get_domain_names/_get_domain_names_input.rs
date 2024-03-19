@@ -3,15 +3,15 @@
 /// <p>Request to describe a collection of DomainName resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainNamesInput {
+pub struct GetDomainNamesInput  {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl GetDomainNamesInput {
+impl  GetDomainNamesInput  {
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -41,8 +41,7 @@ impl GetDomainNamesInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl GetDomainNamesInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetDomainNamesInput`](crate::operation::get_domain_names::GetDomainNamesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_domain_names::GetDomainNamesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_domain_names::GetDomainNamesInput {
-            position: self.position,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain_names::GetDomainNamesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_domain_names::GetDomainNamesInput {
+                position: self.position
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

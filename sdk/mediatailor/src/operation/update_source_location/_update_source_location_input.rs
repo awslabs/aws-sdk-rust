@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSourceLocationInput {
+pub struct UpdateSourceLocationInput  {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     pub access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     /// <p>The optional configuration for the host server that serves segments.</p>
@@ -10,31 +10,32 @@ pub struct UpdateSourceLocationInput {
     /// <p>The HTTP configuration for the source location.</p>
     pub http_configuration: ::std::option::Option<crate::types::HttpConfiguration>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
+    pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
     pub source_location_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSourceLocationInput {
+impl  UpdateSourceLocationInput  {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    pub fn access_configuration(&self) -> ::std::option::Option<&crate::types::AccessConfiguration> {
+    pub fn access_configuration(&self) -> ::std::option::Option<& crate::types::AccessConfiguration> {
         self.access_configuration.as_ref()
     }
     /// <p>The optional configuration for the host server that serves segments.</p>
-    pub fn default_segment_delivery_configuration(&self) -> ::std::option::Option<&crate::types::DefaultSegmentDeliveryConfiguration> {
+    pub fn default_segment_delivery_configuration(&self) -> ::std::option::Option<& crate::types::DefaultSegmentDeliveryConfiguration> {
         self.default_segment_delivery_configuration.as_ref()
     }
     /// <p>The HTTP configuration for the source location.</p>
-    pub fn http_configuration(&self) -> ::std::option::Option<&crate::types::HttpConfiguration> {
+    pub fn http_configuration(&self) -> ::std::option::Option<& crate::types::HttpConfiguration> {
         self.http_configuration.as_ref()
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_delivery_configurations.is_none()`.
-    pub fn segment_delivery_configurations(&self) -> &[crate::types::SegmentDeliveryConfiguration] {
-        self.segment_delivery_configurations.as_deref().unwrap_or_default()
+    pub fn segment_delivery_configurations(&self) -> & [crate::types::SegmentDeliveryConfiguration] {
+        self.segment_delivery_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
 }
@@ -52,7 +53,7 @@ pub struct UpdateSourceLocationInputBuilder {
     pub(crate) access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     pub(crate) default_segment_delivery_configuration: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
     pub(crate) http_configuration: ::std::option::Option<crate::types::HttpConfiguration>,
-    pub(crate) segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
+    pub(crate) segment_delivery_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SegmentDeliveryConfiguration>>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSourceLocationInputBuilder {
@@ -63,8 +64,7 @@ impl UpdateSourceLocationInputBuilder {
     }
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     pub fn set_access_configuration(mut self, input: ::std::option::Option<crate::types::AccessConfiguration>) -> Self {
-        self.access_configuration = input;
-        self
+        self.access_configuration = input; self
     }
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     pub fn get_access_configuration(&self) -> &::std::option::Option<crate::types::AccessConfiguration> {
@@ -76,12 +76,8 @@ impl UpdateSourceLocationInputBuilder {
         self
     }
     /// <p>The optional configuration for the host server that serves segments.</p>
-    pub fn set_default_segment_delivery_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
-    ) -> Self {
-        self.default_segment_delivery_configuration = input;
-        self
+    pub fn set_default_segment_delivery_configuration(mut self, input: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>) -> Self {
+        self.default_segment_delivery_configuration = input; self
     }
     /// <p>The optional configuration for the host server that serves segments.</p>
     pub fn get_default_segment_delivery_configuration(&self) -> &::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration> {
@@ -95,8 +91,7 @@ impl UpdateSourceLocationInputBuilder {
     }
     /// <p>The HTTP configuration for the source location.</p>
     pub fn set_http_configuration(mut self, input: ::std::option::Option<crate::types::HttpConfiguration>) -> Self {
-        self.http_configuration = input;
-        self
+        self.http_configuration = input; self
     }
     /// <p>The HTTP configuration for the source location.</p>
     pub fn get_http_configuration(&self) -> &::std::option::Option<crate::types::HttpConfiguration> {
@@ -109,20 +104,16 @@ impl UpdateSourceLocationInputBuilder {
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub fn segment_delivery_configurations(mut self, input: crate::types::SegmentDeliveryConfiguration) -> Self {
         let mut v = self.segment_delivery_configurations.unwrap_or_default();
-        v.push(input);
-        self.segment_delivery_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segment_delivery_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn set_segment_delivery_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
-    ) -> Self {
-        self.segment_delivery_configurations = input;
-        self
+    pub fn set_segment_delivery_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SegmentDeliveryConfiguration>>) -> Self {
+        self.segment_delivery_configurations = input; self
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn get_segment_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>> {
+    pub fn get_segment_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SegmentDeliveryConfiguration>> {
         &self.segment_delivery_configurations
     }
     /// <p>The name of the source location.</p>
@@ -133,24 +124,28 @@ impl UpdateSourceLocationInputBuilder {
     }
     /// <p>The name of the source location.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`UpdateSourceLocationInput`](crate::operation::update_source_location::UpdateSourceLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_source_location::UpdateSourceLocationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_source_location::UpdateSourceLocationInput {
-            access_configuration: self.access_configuration,
-            default_segment_delivery_configuration: self.default_segment_delivery_configuration,
-            http_configuration: self.http_configuration,
-            segment_delivery_configurations: self.segment_delivery_configurations,
-            source_location_name: self.source_location_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_source_location::UpdateSourceLocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_source_location::UpdateSourceLocationInput {
+                access_configuration: self.access_configuration
+                ,
+                default_segment_delivery_configuration: self.default_segment_delivery_configuration
+                ,
+                http_configuration: self.http_configuration
+                ,
+                segment_delivery_configurations: self.segment_delivery_configurations
+                ,
+                source_location_name: self.source_location_name
+                ,
+            }
+        )
     }
 }
+

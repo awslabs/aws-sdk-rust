@@ -3,7 +3,7 @@
 /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MicrosoftSqlServerCatalogSource {
+pub struct MicrosoftSqlServerCatalogSource  {
     /// <p>The name of the data source.</p>
     pub name: ::std::string::String,
     /// <p>The name of the database to read from.</p>
@@ -11,21 +11,18 @@ pub struct MicrosoftSqlServerCatalogSource {
     /// <p>The name of the table in the database to read from.</p>
     pub table: ::std::string::String,
 }
-impl MicrosoftSqlServerCatalogSource {
+impl  MicrosoftSqlServerCatalogSource  {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> &str {
-        use std::ops::Deref;
-        self.table.deref()
+    pub fn table(&self) -> & str {
+        use std::ops::Deref; self.table.deref()
     }
 }
 impl MicrosoftSqlServerCatalogSource {
@@ -52,8 +49,7 @@ impl MicrosoftSqlServerCatalogSourceBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl MicrosoftSqlServerCatalogSourceBuilder {
     }
     /// <p>The name of the database to read from.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database to read from.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl MicrosoftSqlServerCatalogSourceBuilder {
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl MicrosoftSqlServerCatalogSourceBuilder {
     /// - [`database`](crate::types::builders::MicrosoftSqlServerCatalogSourceBuilder::database)
     /// - [`table`](crate::types::builders::MicrosoftSqlServerCatalogSourceBuilder::table)
     pub fn build(self) -> ::std::result::Result<crate::types::MicrosoftSqlServerCatalogSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MicrosoftSqlServerCatalogSource {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building MicrosoftSqlServerCatalogSource",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building MicrosoftSqlServerCatalogSource",
-                )
-            })?,
-            table: self.table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table",
-                    "table was not specified but it is required when building MicrosoftSqlServerCatalogSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MicrosoftSqlServerCatalogSource {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building MicrosoftSqlServerCatalogSource")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building MicrosoftSqlServerCatalogSource")
+                    )?
+                ,
+                table: self.table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table", "table was not specified but it is required when building MicrosoftSqlServerCatalogSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

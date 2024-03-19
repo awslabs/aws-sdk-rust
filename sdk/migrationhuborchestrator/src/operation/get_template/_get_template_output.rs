@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateOutput {
+pub struct GetTemplateOutput  {
     /// <p>The ID of the template.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>&gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -12,9 +12,9 @@ pub struct GetTemplateOutput {
     /// <p>The time at which the template was last created.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateInput>>,
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
+    pub tools: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>,
     /// <p>The time at which the template was last created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The owner of the migration workflow template.</p>
@@ -40,52 +40,54 @@ pub struct GetTemplateOutput {
     /// </ul>
     pub template_class: ::std::option::Option<::std::string::String>,
     /// <p>The tags added to the migration workflow template.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetTemplateOutput {
+impl  GetTemplateOutput  {
     /// <p>The ID of the template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>&gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time at which the template was last created.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
-    pub fn inputs(&self) -> &[crate::types::TemplateInput] {
-        self.inputs.as_deref().unwrap_or_default()
+    pub fn inputs(&self) -> & [crate::types::TemplateInput] {
+        self.inputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tools.is_none()`.
-    pub fn tools(&self) -> &[crate::types::Tool] {
-        self.tools.as_deref().unwrap_or_default()
+    pub fn tools(&self) -> & [crate::types::Tool] {
+        self.tools.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time at which the template was last created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The owner of the migration workflow template.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The status of the template.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TemplateStatus> {
         self.status.as_ref()
     }
     /// <p>The status message of retrieving migration workflow templates.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The class of the migration workflow template. The available template classes are:</p>
@@ -103,19 +105,19 @@ impl GetTemplateOutput {
     /// <li>
     /// <p>VMIE</p></li>
     /// </ul>
-    pub fn template_class(&self) -> ::std::option::Option<&str> {
+    pub fn template_class(&self) -> ::std::option::Option<& str> {
         self.template_class.as_deref()
     }
     /// <p>The tags added to the migration workflow template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
     pub fn builder() -> crate::operation::get_template::builders::GetTemplateOutputBuilder {
@@ -131,14 +133,14 @@ pub struct GetTemplateOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>>,
-    pub(crate) tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateInput>>,
+    pub(crate) tools: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TemplateStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) template_class: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutputBuilder {
@@ -149,8 +151,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +164,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>&gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>&gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +177,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +190,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The time at which the template was last created.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The time at which the template was last created.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,17 +203,16 @@ impl GetTemplateOutputBuilder {
     /// <p>The inputs provided for the creation of the migration workflow.</p>
     pub fn inputs(mut self, input: crate::types::TemplateInput) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input);
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateInput>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateInput>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateInput>> {
         &self.inputs
     }
     /// Appends an item to `tools`.
@@ -225,17 +222,16 @@ impl GetTemplateOutputBuilder {
     /// <p>List of AWS services utilized in a migration workflow.</p>
     pub fn tools(mut self, input: crate::types::Tool) -> Self {
         let mut v = self.tools.unwrap_or_default();
-        v.push(input);
-        self.tools = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tools = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>) -> Self {
-        self.tools = input;
-        self
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>) -> Self {
+        self.tools = input; self
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tool>> {
+    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tool>> {
         &self.tools
     }
     /// <p>The time at which the template was last created.</p>
@@ -245,8 +241,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The time at which the template was last created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time at which the template was last created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -259,8 +254,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The owner of the migration workflow template.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the migration workflow template.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +267,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The status of the template.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the template.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
@@ -287,8 +280,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The status message of retrieving migration workflow templates.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message of retrieving migration workflow templates.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -329,8 +321,7 @@ impl GetTemplateOutputBuilder {
     /// <p>VMIE</p></li>
     /// </ul>
     pub fn set_template_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_class = input;
-        self
+        self.template_class = input; self
     }
     /// <p>The class of the migration workflow template. The available template classes are:</p>
     /// <ul>
@@ -357,44 +348,56 @@ impl GetTemplateOutputBuilder {
     /// <p>The tags added to the migration workflow template.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags added to the migration workflow template.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags added to the migration workflow template.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
     pub fn build(self) -> crate::operation::get_template::GetTemplateOutput {
         crate::operation::get_template::GetTemplateOutput {
-            id: self.id,
-            template_arn: self.template_arn,
-            name: self.name,
-            description: self.description,
-            inputs: self.inputs,
-            tools: self.tools,
-            creation_time: self.creation_time,
-            owner: self.owner,
-            status: self.status,
-            status_message: self.status_message,
-            template_class: self.template_class,
-            tags: self.tags,
+            id: self.id
+            ,
+            template_arn: self.template_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            inputs: self.inputs
+            ,
+            tools: self.tools
+            ,
+            creation_time: self.creation_time
+            ,
+            owner: self.owner
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            template_class: self.template_class
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

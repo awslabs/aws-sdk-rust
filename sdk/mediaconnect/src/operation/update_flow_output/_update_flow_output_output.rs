@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFlowOutputOutput {
+pub struct UpdateFlowOutputOutput  {
     /// The ARN of the flow that is associated with the updated output.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The new settings of the output that you updated.
     pub output: ::std::option::Option<crate::types::Output>,
     _request_id: Option<String>,
 }
-impl UpdateFlowOutputOutput {
+impl  UpdateFlowOutputOutput  {
     /// The ARN of the flow that is associated with the updated output.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The new settings of the output that you updated.
-    pub fn output(&self) -> ::std::option::Option<&crate::types::Output> {
+    pub fn output(&self) -> ::std::option::Option<& crate::types::Output> {
         self.output.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFlowOutputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateFlowOutputOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutputOutput`](crate::operation::update_flow_output::UpdateFlowOutputOutput).
     pub fn builder() -> crate::operation::update_flow_output::builders::UpdateFlowOutputOutputBuilder {
@@ -47,8 +47,7 @@ impl UpdateFlowOutputOutputBuilder {
     }
     /// The ARN of the flow that is associated with the updated output.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the flow that is associated with the updated output.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl UpdateFlowOutputOutputBuilder {
     }
     /// The new settings of the output that you updated.
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::Output>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// The new settings of the output that you updated.
     pub fn get_output(&self) -> &::std::option::Option<crate::types::Output> {
         &self.output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateFlowOutputOutput`](crate::operation::update_flow_output::UpdateFlowOutputOutput).
     pub fn build(self) -> crate::operation::update_flow_output::UpdateFlowOutputOutput {
         crate::operation::update_flow_output::UpdateFlowOutputOutput {
-            flow_arn: self.flow_arn,
-            output: self.output,
+            flow_arn: self.flow_arn
+            ,
+            output: self.output
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

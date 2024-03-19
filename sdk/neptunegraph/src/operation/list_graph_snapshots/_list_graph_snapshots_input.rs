@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGraphSnapshotsInput {
+pub struct ListGraphSnapshotsInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Pagination token used to paginate output.</p>
@@ -12,14 +12,14 @@ pub struct ListGraphSnapshotsInput {
     /// <p>If the total number of records available is more than the value specified, <code>nextToken</code> is provided in the command's output. To resume pagination, provide the <code>nextToken</code> output value in the <code>nextToken</code> argument of a subsequent command. Do not use the <code>nextToken</code> response element directly outside of the Amazon CLI.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListGraphSnapshotsInput {
+impl  ListGraphSnapshotsInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of records to return in the command's output.</p>
@@ -51,8 +51,7 @@ impl ListGraphSnapshotsInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl ListGraphSnapshotsInputBuilder {
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
@@ -84,8 +82,7 @@ impl ListGraphSnapshotsInputBuilder {
     /// <p>The total number of records to return in the command's output.</p>
     /// <p>If the total number of records available is more than the value specified, <code>nextToken</code> is provided in the command's output. To resume pagination, provide the <code>nextToken</code> output value in the <code>nextToken</code> argument of a subsequent command. Do not use the <code>nextToken</code> response element directly outside of the Amazon CLI.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The total number of records to return in the command's output.</p>
     /// <p>If the total number of records available is more than the value specified, <code>nextToken</code> is provided in the command's output. To resume pagination, provide the <code>nextToken</code> output value in the <code>nextToken</code> argument of a subsequent command. Do not use the <code>nextToken</code> response element directly outside of the Amazon CLI.</p>
@@ -93,14 +90,17 @@ impl ListGraphSnapshotsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListGraphSnapshotsInput`](crate::operation::list_graph_snapshots::ListGraphSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_graph_snapshots::ListGraphSnapshotsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_graph_snapshots::ListGraphSnapshotsInput {
-            graph_identifier: self.graph_identifier,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_graph_snapshots::ListGraphSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_graph_snapshots::ListGraphSnapshotsInput {
+                graph_identifier: self.graph_identifier
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

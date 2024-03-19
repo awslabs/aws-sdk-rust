@@ -3,15 +3,14 @@
 /// <p>An optional comment that describes the table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Comment {
+pub struct Comment  {
     /// <p>An optional description of the table.</p>
     pub message: ::std::string::String,
 }
-impl Comment {
+impl  Comment  {
     /// <p>An optional description of the table.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl Comment {
@@ -36,8 +35,7 @@ impl CommentBuilder {
     }
     /// <p>An optional description of the table.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An optional description of the table.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl CommentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::builders::CommentBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::Comment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Comment {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building Comment",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Comment {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building Comment")
+                    )?
+                ,
+            }
+        )
     }
 }
+

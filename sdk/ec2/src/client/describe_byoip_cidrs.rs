@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeByoipCidrs`](crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::set_max_results):<br>required: **true**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`DescribeByoipCidrsOutput`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsOutput) with field(s):
+                            /// - On success, responds with [`DescribeByoipCidrsOutput`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsOutput) with field(s):
     ///   - [`byoip_cidrs(Option<Vec::<ByoipCidr>>)`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsOutput::byoip_cidrs): <p>Information about your address ranges.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeByoipCidrsError>`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsError)
+                            /// - On failure, responds with [`SdkError<DescribeByoipCidrsError>`](crate::operation::describe_byoip_cidrs::DescribeByoipCidrsError)
     pub fn describe_byoip_cidrs(&self) -> crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder {
-        crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_byoip_cidrs::builders::DescribeByoipCidrsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

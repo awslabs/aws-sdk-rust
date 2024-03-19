@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterInstanceEventNotificationAttributesOutput {
+pub struct RegisterInstanceEventNotificationAttributesOutput  {
     /// <p>The resulting set of tag keys.</p>
     pub instance_tag_attribute: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
     _request_id: Option<String>,
 }
-impl RegisterInstanceEventNotificationAttributesOutput {
+impl  RegisterInstanceEventNotificationAttributesOutput  {
     /// <p>The resulting set of tag keys.</p>
-    pub fn instance_tag_attribute(&self) -> ::std::option::Option<&crate::types::InstanceTagNotificationAttribute> {
+    pub fn instance_tag_attribute(&self) -> ::std::option::Option<& crate::types::InstanceTagNotificationAttribute> {
         self.instance_tag_attribute.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterInstanceEventNotificationAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterInstanceEventNotificationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`RegisterInstanceEventNotificationAttributesOutput`](crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesOutputBuilder {
-        crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesOutputBuilder {
+        crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,28 @@ impl RegisterInstanceEventNotificationAttributesOutputBuilder {
     }
     /// <p>The resulting set of tag keys.</p>
     pub fn set_instance_tag_attribute(mut self, input: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>) -> Self {
-        self.instance_tag_attribute = input;
-        self
+        self.instance_tag_attribute = input; self
     }
     /// <p>The resulting set of tag keys.</p>
     pub fn get_instance_tag_attribute(&self) -> &::std::option::Option<crate::types::InstanceTagNotificationAttribute> {
         &self.instance_tag_attribute
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterInstanceEventNotificationAttributesOutput`](crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput).
     pub fn build(self) -> crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput {
         crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput {
-            instance_tag_attribute: self.instance_tag_attribute,
+            instance_tag_attribute: self.instance_tag_attribute
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

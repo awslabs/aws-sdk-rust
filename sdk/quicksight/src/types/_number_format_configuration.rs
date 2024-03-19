@@ -3,13 +3,13 @@
 /// <p>Formatting configuration for number fields.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumberFormatConfiguration {
+pub struct NumberFormatConfiguration  {
     /// <p>The options that determine the numeric format configuration.</p>
     pub format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
-impl NumberFormatConfiguration {
+impl  NumberFormatConfiguration  {
     /// <p>The options that determine the numeric format configuration.</p>
-    pub fn format_configuration(&self) -> ::std::option::Option<&crate::types::NumericFormatConfiguration> {
+    pub fn format_configuration(&self) -> ::std::option::Option<& crate::types::NumericFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl NumberFormatConfigurationBuilder {
     }
     /// <p>The options that determine the numeric format configuration.</p>
     pub fn set_format_configuration(mut self, input: ::std::option::Option<crate::types::NumericFormatConfiguration>) -> Self {
-        self.format_configuration = input;
-        self
+        self.format_configuration = input; self
     }
     /// <p>The options that determine the numeric format configuration.</p>
     pub fn get_format_configuration(&self) -> &::std::option::Option<crate::types::NumericFormatConfiguration> {
@@ -44,7 +43,9 @@ impl NumberFormatConfigurationBuilder {
     /// Consumes the builder and constructs a [`NumberFormatConfiguration`](crate::types::NumberFormatConfiguration).
     pub fn build(self) -> crate::types::NumberFormatConfiguration {
         crate::types::NumberFormatConfiguration {
-            format_configuration: self.format_configuration,
+            format_configuration: self.format_configuration
+            ,
         }
     }
 }
+

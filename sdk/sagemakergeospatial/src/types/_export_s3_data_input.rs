@@ -3,20 +3,19 @@
 /// <p>The structure containing the Amazon S3 path to export the Earth Observation job output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportS3DataInput {
+pub struct ExportS3DataInput  {
     /// <p>The URL to the Amazon S3 data input.</p>
     pub s3_uri: ::std::string::String,
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl ExportS3DataInput {
+impl  ExportS3DataInput  {
     /// <p>The URL to the Amazon S3 data input.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ExportS3DataInputBuilder {
     }
     /// <p>The URL to the Amazon S3 data input.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The URL to the Amazon S3 data input.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ExportS3DataInputBuilder {
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ExportS3DataInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::ExportS3DataInputBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportS3DataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportS3DataInput {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building ExportS3DataInput",
-                )
-            })?,
-            kms_key_id: self.kms_key_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportS3DataInput {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building ExportS3DataInput")
+                    )?
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
+        )
     }
 }
+

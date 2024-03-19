@@ -3,13 +3,13 @@
 /// <p>Contains information for the <code>ConnectDirectory</code> operation when an AD Connector directory is being created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectoryConnectSettings {
+pub struct DirectoryConnectSettings  {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
     pub vpc_id: ::std::string::String,
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
+    pub subnet_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub customer_dns_ips: ::std::vec::Vec<::std::string::String>,
+    pub customer_dns_ips: ::std::vec::Vec::<::std::string::String>,
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
     /// <li>
@@ -21,21 +21,18 @@ pub struct DirectoryConnectSettings {
     /// </ul>
     pub customer_user_name: ::std::string::String,
 }
-impl DirectoryConnectSettings {
+impl  DirectoryConnectSettings  {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
-    pub fn vpc_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vpc_id.deref()
+    pub fn vpc_id(&self) -> & str {
+        use std::ops::Deref; self.vpc_id.deref()
     }
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.subnet_ids.deref()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.subnet_ids.deref()
     }
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub fn customer_dns_ips(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.customer_dns_ips.deref()
+    pub fn customer_dns_ips(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.customer_dns_ips.deref()
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
@@ -46,9 +43,8 @@ impl DirectoryConnectSettings {
     /// <li>
     /// <p>Join computers to the domain</p></li>
     /// </ul>
-    pub fn customer_user_name(&self) -> &str {
-        use std::ops::Deref;
-        self.customer_user_name.deref()
+    pub fn customer_user_name(&self) -> & str {
+        use std::ops::Deref; self.customer_user_name.deref()
     }
 }
 impl DirectoryConnectSettings {
@@ -63,8 +59,8 @@ impl DirectoryConnectSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectoryConnectSettingsBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) customer_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) customer_dns_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) customer_user_name: ::std::option::Option<::std::string::String>,
 }
 impl DirectoryConnectSettingsBuilder {
@@ -76,8 +72,7 @@ impl DirectoryConnectSettingsBuilder {
     }
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,17 +85,16 @@ impl DirectoryConnectSettingsBuilder {
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Appends an item to `customer_dns_ips`.
@@ -110,17 +104,16 @@ impl DirectoryConnectSettingsBuilder {
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
     pub fn customer_dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.customer_dns_ips.unwrap_or_default();
-        v.push(input.into());
-        self.customer_dns_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.customer_dns_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub fn set_customer_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.customer_dns_ips = input;
-        self
+    pub fn set_customer_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.customer_dns_ips = input; self
     }
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub fn get_customer_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_customer_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.customer_dns_ips
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
@@ -147,8 +140,7 @@ impl DirectoryConnectSettingsBuilder {
     /// <p>Join computers to the domain</p></li>
     /// </ul>
     pub fn set_customer_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_user_name = input;
-        self
+        self.customer_user_name = input; self
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
@@ -169,31 +161,30 @@ impl DirectoryConnectSettingsBuilder {
     /// - [`customer_dns_ips`](crate::types::builders::DirectoryConnectSettingsBuilder::customer_dns_ips)
     /// - [`customer_user_name`](crate::types::builders::DirectoryConnectSettingsBuilder::customer_user_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DirectoryConnectSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DirectoryConnectSettings {
-            vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vpc_id",
-                    "vpc_id was not specified but it is required when building DirectoryConnectSettings",
-                )
-            })?,
-            subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnet_ids",
-                    "subnet_ids was not specified but it is required when building DirectoryConnectSettings",
-                )
-            })?,
-            customer_dns_ips: self.customer_dns_ips.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "customer_dns_ips",
-                    "customer_dns_ips was not specified but it is required when building DirectoryConnectSettings",
-                )
-            })?,
-            customer_user_name: self.customer_user_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "customer_user_name",
-                    "customer_user_name was not specified but it is required when building DirectoryConnectSettings",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DirectoryConnectSettings {
+                vpc_id: self.vpc_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_id", "vpc_id was not specified but it is required when building DirectoryConnectSettings")
+                    )?
+                ,
+                subnet_ids: self.subnet_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnet_ids", "subnet_ids was not specified but it is required when building DirectoryConnectSettings")
+                    )?
+                ,
+                customer_dns_ips: self.customer_dns_ips
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("customer_dns_ips", "customer_dns_ips was not specified but it is required when building DirectoryConnectSettings")
+                    )?
+                ,
+                customer_user_name: self.customer_user_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("customer_user_name", "customer_user_name was not specified but it is required when building DirectoryConnectSettings")
+                    )?
+                ,
+            }
+        )
     }
 }
+

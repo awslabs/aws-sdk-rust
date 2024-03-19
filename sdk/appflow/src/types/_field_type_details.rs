@@ -3,13 +3,13 @@
 /// <p>Contains details regarding the supported field type and the operators that can be applied for filtering.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldTypeDetails {
+pub struct FieldTypeDetails  {
     /// <p>The type of field, such as string, integer, date, and so on.</p>
     pub field_type: ::std::string::String,
     /// <p>The list of operators supported by a field.</p>
-    pub filter_operators: ::std::vec::Vec<crate::types::Operator>,
+    pub filter_operators: ::std::vec::Vec::<crate::types::Operator>,
     /// <p>The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false".</p>
-    pub supported_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The regular expression pattern for the field name.</p>
     pub value_regex_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The date format that the field supports.</p>
@@ -19,37 +19,36 @@ pub struct FieldTypeDetails {
     /// <p>This is the allowable length range for this field's value.</p>
     pub field_length_range: ::std::option::Option<crate::types::Range>,
 }
-impl FieldTypeDetails {
+impl  FieldTypeDetails  {
     /// <p>The type of field, such as string, integer, date, and so on.</p>
-    pub fn field_type(&self) -> &str {
-        use std::ops::Deref;
-        self.field_type.deref()
+    pub fn field_type(&self) -> & str {
+        use std::ops::Deref; self.field_type.deref()
     }
     /// <p>The list of operators supported by a field.</p>
-    pub fn filter_operators(&self) -> &[crate::types::Operator] {
-        use std::ops::Deref;
-        self.filter_operators.deref()
+    pub fn filter_operators(&self) -> & [crate::types::Operator] {
+        use std::ops::Deref; self.filter_operators.deref()
     }
     /// <p>The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false".</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_values.is_none()`.
-    pub fn supported_values(&self) -> &[::std::string::String] {
-        self.supported_values.as_deref().unwrap_or_default()
+    pub fn supported_values(&self) -> & [::std::string::String] {
+        self.supported_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The regular expression pattern for the field name.</p>
-    pub fn value_regex_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn value_regex_pattern(&self) -> ::std::option::Option<& str> {
         self.value_regex_pattern.as_deref()
     }
     /// <p>The date format that the field supports.</p>
-    pub fn supported_date_format(&self) -> ::std::option::Option<&str> {
+    pub fn supported_date_format(&self) -> ::std::option::Option<& str> {
         self.supported_date_format.as_deref()
     }
     /// <p>The range of values this field can hold.</p>
-    pub fn field_value_range(&self) -> ::std::option::Option<&crate::types::Range> {
+    pub fn field_value_range(&self) -> ::std::option::Option<& crate::types::Range> {
         self.field_value_range.as_ref()
     }
     /// <p>This is the allowable length range for this field's value.</p>
-    pub fn field_length_range(&self) -> ::std::option::Option<&crate::types::Range> {
+    pub fn field_length_range(&self) -> ::std::option::Option<& crate::types::Range> {
         self.field_length_range.as_ref()
     }
 }
@@ -65,8 +64,8 @@ impl FieldTypeDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldTypeDetailsBuilder {
     pub(crate) field_type: ::std::option::Option<::std::string::String>,
-    pub(crate) filter_operators: ::std::option::Option<::std::vec::Vec<crate::types::Operator>>,
-    pub(crate) supported_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filter_operators: ::std::option::Option<::std::vec::Vec::<crate::types::Operator>>,
+    pub(crate) supported_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) value_regex_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) supported_date_format: ::std::option::Option<::std::string::String>,
     pub(crate) field_value_range: ::std::option::Option<crate::types::Range>,
@@ -81,8 +80,7 @@ impl FieldTypeDetailsBuilder {
     }
     /// <p>The type of field, such as string, integer, date, and so on.</p>
     pub fn set_field_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_type = input;
-        self
+        self.field_type = input; self
     }
     /// <p>The type of field, such as string, integer, date, and so on.</p>
     pub fn get_field_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,17 +93,16 @@ impl FieldTypeDetailsBuilder {
     /// <p>The list of operators supported by a field.</p>
     pub fn filter_operators(mut self, input: crate::types::Operator) -> Self {
         let mut v = self.filter_operators.unwrap_or_default();
-        v.push(input);
-        self.filter_operators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_operators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of operators supported by a field.</p>
-    pub fn set_filter_operators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operator>>) -> Self {
-        self.filter_operators = input;
-        self
+    pub fn set_filter_operators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Operator>>) -> Self {
+        self.filter_operators = input; self
     }
     /// <p>The list of operators supported by a field.</p>
-    pub fn get_filter_operators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operator>> {
+    pub fn get_filter_operators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Operator>> {
         &self.filter_operators
     }
     /// Appends an item to `supported_values`.
@@ -115,17 +112,16 @@ impl FieldTypeDetailsBuilder {
     /// <p>The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false".</p>
     pub fn supported_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_values.unwrap_or_default();
-        v.push(input.into());
-        self.supported_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false".</p>
-    pub fn set_supported_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_values = input;
-        self
+    pub fn set_supported_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_values = input; self
     }
     /// <p>The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false".</p>
-    pub fn get_supported_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_values
     }
     /// <p>The regular expression pattern for the field name.</p>
@@ -135,8 +131,7 @@ impl FieldTypeDetailsBuilder {
     }
     /// <p>The regular expression pattern for the field name.</p>
     pub fn set_value_regex_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_regex_pattern = input;
-        self
+        self.value_regex_pattern = input; self
     }
     /// <p>The regular expression pattern for the field name.</p>
     pub fn get_value_regex_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +144,7 @@ impl FieldTypeDetailsBuilder {
     }
     /// <p>The date format that the field supports.</p>
     pub fn set_supported_date_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.supported_date_format = input;
-        self
+        self.supported_date_format = input; self
     }
     /// <p>The date format that the field supports.</p>
     pub fn get_supported_date_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +157,7 @@ impl FieldTypeDetailsBuilder {
     }
     /// <p>The range of values this field can hold.</p>
     pub fn set_field_value_range(mut self, input: ::std::option::Option<crate::types::Range>) -> Self {
-        self.field_value_range = input;
-        self
+        self.field_value_range = input; self
     }
     /// <p>The range of values this field can hold.</p>
     pub fn get_field_value_range(&self) -> &::std::option::Option<crate::types::Range> {
@@ -177,8 +170,7 @@ impl FieldTypeDetailsBuilder {
     }
     /// <p>This is the allowable length range for this field's value.</p>
     pub fn set_field_length_range(mut self, input: ::std::option::Option<crate::types::Range>) -> Self {
-        self.field_length_range = input;
-        self
+        self.field_length_range = input; self
     }
     /// <p>This is the allowable length range for this field's value.</p>
     pub fn get_field_length_range(&self) -> &::std::option::Option<crate::types::Range> {
@@ -189,24 +181,30 @@ impl FieldTypeDetailsBuilder {
     /// - [`field_type`](crate::types::builders::FieldTypeDetailsBuilder::field_type)
     /// - [`filter_operators`](crate::types::builders::FieldTypeDetailsBuilder::filter_operators)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldTypeDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldTypeDetails {
-            field_type: self.field_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_type",
-                    "field_type was not specified but it is required when building FieldTypeDetails",
-                )
-            })?,
-            filter_operators: self.filter_operators.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filter_operators",
-                    "filter_operators was not specified but it is required when building FieldTypeDetails",
-                )
-            })?,
-            supported_values: self.supported_values,
-            value_regex_pattern: self.value_regex_pattern,
-            supported_date_format: self.supported_date_format,
-            field_value_range: self.field_value_range,
-            field_length_range: self.field_length_range,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldTypeDetails {
+                field_type: self.field_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_type", "field_type was not specified but it is required when building FieldTypeDetails")
+                    )?
+                ,
+                filter_operators: self.filter_operators
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filter_operators", "filter_operators was not specified but it is required when building FieldTypeDetails")
+                    )?
+                ,
+                supported_values: self.supported_values
+                ,
+                value_regex_pattern: self.value_regex_pattern
+                ,
+                supported_date_format: self.supported_date_format
+                ,
+                field_value_range: self.field_value_range
+                ,
+                field_length_range: self.field_length_range
+                ,
+            }
+        )
     }
 }
+

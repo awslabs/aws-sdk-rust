@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceInstanceOutput {
+pub struct GetDeviceInstanceOutput  {
     /// <p>An object that contains information about your device instance.</p>
     pub device_instance: ::std::option::Option<crate::types::DeviceInstance>,
     _request_id: Option<String>,
 }
-impl GetDeviceInstanceOutput {
+impl  GetDeviceInstanceOutput  {
     /// <p>An object that contains information about your device instance.</p>
-    pub fn device_instance(&self) -> ::std::option::Option<&crate::types::DeviceInstance> {
+    pub fn device_instance(&self) -> ::std::option::Option<& crate::types::DeviceInstance> {
         self.device_instance.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeviceInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeviceInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceInstanceOutput`](crate::operation::get_device_instance::GetDeviceInstanceOutput).
     pub fn builder() -> crate::operation::get_device_instance::builders::GetDeviceInstanceOutputBuilder {
@@ -40,27 +40,28 @@ impl GetDeviceInstanceOutputBuilder {
     }
     /// <p>An object that contains information about your device instance.</p>
     pub fn set_device_instance(mut self, input: ::std::option::Option<crate::types::DeviceInstance>) -> Self {
-        self.device_instance = input;
-        self
+        self.device_instance = input; self
     }
     /// <p>An object that contains information about your device instance.</p>
     pub fn get_device_instance(&self) -> &::std::option::Option<crate::types::DeviceInstance> {
         &self.device_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeviceInstanceOutput`](crate::operation::get_device_instance::GetDeviceInstanceOutput).
     pub fn build(self) -> crate::operation::get_device_instance::GetDeviceInstanceOutput {
         crate::operation::get_device_instance::GetDeviceInstanceOutput {
-            device_instance: self.device_instance,
+            device_instance: self.device_instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

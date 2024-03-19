@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCampaignInput {
+pub struct DeleteCampaignInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
     pub campaign_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCampaignInput {
+impl  DeleteCampaignInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the campaign.</p>
-    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteCampaignInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteCampaignInputBuilder {
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_id = input;
-        self
+        self.campaign_id = input; self
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.campaign_id
     }
     /// Consumes the builder and constructs a [`DeleteCampaignInput`](crate::operation::delete_campaign::DeleteCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_campaign::DeleteCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_campaign::DeleteCampaignInput {
-            application_id: self.application_id,
-            campaign_id: self.campaign_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_campaign::DeleteCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_campaign::DeleteCampaignInput {
+                application_id: self.application_id
+                ,
+                campaign_id: self.campaign_id
+                ,
+            }
+        )
     }
 }
+

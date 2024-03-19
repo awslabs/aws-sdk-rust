@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVerifiedDestinationNumbersOutput {
+pub struct DescribeVerifiedDestinationNumbersOutput  {
     /// <p>An array of VerifiedDestinationNumberInformation objects</p>
-    pub verified_destination_numbers: ::std::vec::Vec<crate::types::VerifiedDestinationNumberInformation>,
+    pub verified_destination_numbers: ::std::vec::Vec::<crate::types::VerifiedDestinationNumberInformation>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeVerifiedDestinationNumbersOutput {
+impl  DescribeVerifiedDestinationNumbersOutput  {
     /// <p>An array of VerifiedDestinationNumberInformation objects</p>
-    pub fn verified_destination_numbers(&self) -> &[crate::types::VerifiedDestinationNumberInformation] {
-        use std::ops::Deref;
-        self.verified_destination_numbers.deref()
+    pub fn verified_destination_numbers(&self) -> & [crate::types::VerifiedDestinationNumberInformation] {
+        use std::ops::Deref; self.verified_destination_numbers.deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVerifiedDestinationNumbersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVerifiedDestinationNumbersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVerifiedDestinationNumbersOutput`](crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput).
     pub fn builder() -> crate::operation::describe_verified_destination_numbers::builders::DescribeVerifiedDestinationNumbersOutputBuilder {
@@ -36,7 +35,7 @@ impl DescribeVerifiedDestinationNumbersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedDestinationNumbersOutputBuilder {
-    pub(crate) verified_destination_numbers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberInformation>>,
+    pub(crate) verified_destination_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedDestinationNumberInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,20 +47,16 @@ impl DescribeVerifiedDestinationNumbersOutputBuilder {
     /// <p>An array of VerifiedDestinationNumberInformation objects</p>
     pub fn verified_destination_numbers(mut self, input: crate::types::VerifiedDestinationNumberInformation) -> Self {
         let mut v = self.verified_destination_numbers.unwrap_or_default();
-        v.push(input);
-        self.verified_destination_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.verified_destination_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of VerifiedDestinationNumberInformation objects</p>
-    pub fn set_verified_destination_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberInformation>>,
-    ) -> Self {
-        self.verified_destination_numbers = input;
-        self
+    pub fn set_verified_destination_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedDestinationNumberInformation>>) -> Self {
+        self.verified_destination_numbers = input; self
     }
     /// <p>An array of VerifiedDestinationNumberInformation objects</p>
-    pub fn get_verified_destination_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberInformation>> {
+    pub fn get_verified_destination_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VerifiedDestinationNumberInformation>> {
         &self.verified_destination_numbers
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -71,42 +66,37 @@ impl DescribeVerifiedDestinationNumbersOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVerifiedDestinationNumbersOutput`](crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`verified_destination_numbers`](crate::operation::describe_verified_destination_numbers::builders::DescribeVerifiedDestinationNumbersOutputBuilder::verified_destination_numbers)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput {
-                verified_destination_numbers: self.verified_destination_numbers.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "verified_destination_numbers",
-                        "verified_destination_numbers was not specified but it is required when building DescribeVerifiedDestinationNumbersOutput",
-                    )
-                })?,
-                next_token: self.next_token,
+                verified_destination_numbers: self.verified_destination_numbers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("verified_destination_numbers", "verified_destination_numbers was not specified but it is required when building DescribeVerifiedDestinationNumbersOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

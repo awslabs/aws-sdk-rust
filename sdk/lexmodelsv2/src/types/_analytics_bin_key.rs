@@ -3,15 +3,15 @@
 /// <p>An object containing the criterion by which to bin the results and the value that defines that bin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsBinKey {
+pub struct AnalyticsBinKey  {
     /// <p>The criterion by which to bin the results.</p>
     pub name: ::std::option::Option<crate::types::AnalyticsBinByName>,
     /// <p>The value of the criterion that defines the bin.</p>
     pub value: ::std::option::Option<i64>,
 }
-impl AnalyticsBinKey {
+impl  AnalyticsBinKey  {
     /// <p>The criterion by which to bin the results.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsBinByName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AnalyticsBinByName> {
         self.name.as_ref()
     }
     /// <p>The value of the criterion that defines the bin.</p>
@@ -41,8 +41,7 @@ impl AnalyticsBinKeyBuilder {
     }
     /// <p>The criterion by which to bin the results.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsBinByName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The criterion by which to bin the results.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsBinByName> {
@@ -55,8 +54,7 @@ impl AnalyticsBinKeyBuilder {
     }
     /// <p>The value of the criterion that defines the bin.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the criterion that defines the bin.</p>
     pub fn get_value(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl AnalyticsBinKeyBuilder {
     /// Consumes the builder and constructs a [`AnalyticsBinKey`](crate::types::AnalyticsBinKey).
     pub fn build(self) -> crate::types::AnalyticsBinKey {
         crate::types::AnalyticsBinKey {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

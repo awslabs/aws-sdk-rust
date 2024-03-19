@@ -3,30 +3,28 @@
 /// <p>The structure representing the <code>putPermissionResponse</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPermissionOutput {
+pub struct PutPermissionOutput  {
     /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
     pub policy: ::std::string::String,
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub revision_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl PutPermissionOutput {
+impl  PutPermissionOutput  {
     /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> & str {
+        use std::ops::Deref; self.policy.deref()
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutPermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutPermissionOutput {
     /// Creates a new builder-style object to manufacture [`PutPermissionOutput`](crate::operation::put_permission::PutPermissionOutput).
     pub fn builder() -> crate::operation::put_permission::builders::PutPermissionOutputBuilder {
@@ -51,8 +49,7 @@ impl PutPermissionOutputBuilder {
     }
     /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,43 +63,41 @@ impl PutPermissionOutputBuilder {
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutPermissionOutput`](crate::operation::put_permission::PutPermissionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy`](crate::operation::put_permission::builders::PutPermissionOutputBuilder::policy)
     /// - [`revision_id`](crate::operation::put_permission::builders::PutPermissionOutputBuilder::revision_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_permission::PutPermissionOutput {
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building PutPermissionOutput",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building PutPermissionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_permission::PutPermissionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_permission::PutPermissionOutput {
+                policy: self.policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy", "policy was not specified but it is required when building PutPermissionOutput")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building PutPermissionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

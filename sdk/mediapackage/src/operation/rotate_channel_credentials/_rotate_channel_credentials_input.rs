@@ -3,13 +3,13 @@
 #[deprecated]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RotateChannelCredentialsInput {
+pub struct RotateChannelCredentialsInput  {
     /// The ID of the channel to update.
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl RotateChannelCredentialsInput {
+impl  RotateChannelCredentialsInput  {
     /// The ID of the channel to update.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl RotateChannelCredentialsInputBuilder {
     }
     /// The ID of the channel to update.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the channel to update.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`RotateChannelCredentialsInput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

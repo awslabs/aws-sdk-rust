@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeploymentOutput {
+pub struct DeleteDeploymentOutput  {
     /// <p>The status of the deployment.</p>
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The reason for the deployment status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteDeploymentOutput {
+impl  DeleteDeploymentOutput  {
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the deployment status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput).
     pub fn builder() -> crate::operation::delete_deployment::builders::DeleteDeploymentOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteDeploymentOutputBuilder {
     }
     /// <p>The status of the deployment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the deployment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
@@ -61,28 +60,30 @@ impl DeleteDeploymentOutputBuilder {
     }
     /// <p>The reason for the deployment status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the deployment status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput).
     pub fn build(self) -> crate::operation::delete_deployment::DeleteDeploymentOutput {
         crate::operation::delete_deployment::DeleteDeploymentOutput {
-            status: self.status,
-            status_reason: self.status_reason,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

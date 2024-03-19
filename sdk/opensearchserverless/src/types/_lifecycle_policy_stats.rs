@@ -3,11 +3,11 @@
 /// <p>Statistics for an OpenSearch Serverless lifecycle policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyStats {
+pub struct LifecyclePolicyStats  {
     /// <p>The number of retention lifecycle policies in the current account.</p>
     pub retention_policy_count: ::std::option::Option<i64>,
 }
-impl LifecyclePolicyStats {
+impl  LifecyclePolicyStats  {
     /// <p>The number of retention lifecycle policies in the current account.</p>
     pub fn retention_policy_count(&self) -> ::std::option::Option<i64> {
         self.retention_policy_count
@@ -34,8 +34,7 @@ impl LifecyclePolicyStatsBuilder {
     }
     /// <p>The number of retention lifecycle policies in the current account.</p>
     pub fn set_retention_policy_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.retention_policy_count = input;
-        self
+        self.retention_policy_count = input; self
     }
     /// <p>The number of retention lifecycle policies in the current account.</p>
     pub fn get_retention_policy_count(&self) -> &::std::option::Option<i64> {
@@ -44,7 +43,9 @@ impl LifecyclePolicyStatsBuilder {
     /// Consumes the builder and constructs a [`LifecyclePolicyStats`](crate::types::LifecyclePolicyStats).
     pub fn build(self) -> crate::types::LifecyclePolicyStats {
         crate::types::LifecyclePolicyStats {
-            retention_policy_count: self.retention_policy_count,
+            retention_policy_count: self.retention_policy_count
+            ,
         }
     }
 }
+

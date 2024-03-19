@@ -3,13 +3,13 @@
 /// <p>The input for the <code>DeliverConfigSnapshot</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeliverConfigSnapshotInput {
+pub struct DeliverConfigSnapshotInput  {
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     pub delivery_channel_name: ::std::option::Option<::std::string::String>,
 }
-impl DeliverConfigSnapshotInput {
+impl  DeliverConfigSnapshotInput  {
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
-    pub fn delivery_channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_channel_name(&self) -> ::std::option::Option<& str> {
         self.delivery_channel_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeliverConfigSnapshotInputBuilder {
     }
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     pub fn set_delivery_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_channel_name = input;
-        self
+        self.delivery_channel_name = input; self
     }
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     pub fn get_delivery_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_channel_name
     }
     /// Consumes the builder and constructs a [`DeliverConfigSnapshotInput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput {
-            delivery_channel_name: self.delivery_channel_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput {
+                delivery_channel_name: self.delivery_channel_name
+                ,
+            }
+        )
     }
 }
+

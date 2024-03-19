@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutAssetPropertyValueOutput {
+pub struct BatchPutAssetPropertyValueOutput  {
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub error_entries: ::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>,
+    pub error_entries: ::std::vec::Vec::<crate::types::BatchPutAssetPropertyErrorEntry>,
     _request_id: Option<String>,
 }
-impl BatchPutAssetPropertyValueOutput {
+impl  BatchPutAssetPropertyValueOutput  {
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn error_entries(&self) -> &[crate::types::BatchPutAssetPropertyErrorEntry] {
-        use std::ops::Deref;
-        self.error_entries.deref()
+    pub fn error_entries(&self) -> & [crate::types::BatchPutAssetPropertyErrorEntry] {
+        use std::ops::Deref; self.error_entries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchPutAssetPropertyValueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchPutAssetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyValueOutput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput).
     pub fn builder() -> crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueOutputBuilder {
@@ -30,7 +29,7 @@ impl BatchPutAssetPropertyValueOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueOutputBuilder {
-    pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>,
+    pub(crate) error_entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPutAssetPropertyErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutAssetPropertyValueOutputBuilder {
@@ -41,45 +40,41 @@ impl BatchPutAssetPropertyValueOutputBuilder {
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
     pub fn error_entries(mut self, input: crate::types::BatchPutAssetPropertyErrorEntry) -> Self {
         let mut v = self.error_entries.unwrap_or_default();
-        v.push(input);
-        self.error_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.error_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn set_error_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>) -> Self {
-        self.error_entries = input;
-        self
+    pub fn set_error_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPutAssetPropertyErrorEntry>>) -> Self {
+        self.error_entries = input; self
     }
     /// <p>A list of the errors (if any) associated with the batch put request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn get_error_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>> {
+    pub fn get_error_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchPutAssetPropertyErrorEntry>> {
         &self.error_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyValueOutput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`error_entries`](crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueOutputBuilder::error_entries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput {
-            error_entries: self.error_entries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_entries",
-                    "error_entries was not specified but it is required when building BatchPutAssetPropertyValueOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput {
+                error_entries: self.error_entries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_entries", "error_entries was not specified but it is required when building BatchPutAssetPropertyValueOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

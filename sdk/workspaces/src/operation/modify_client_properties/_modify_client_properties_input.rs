@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClientPropertiesInput {
+pub struct ModifyClientPropertiesInput  {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub client_properties: ::std::option::Option<crate::types::ClientProperties>,
 }
-impl ModifyClientPropertiesInput {
+impl  ModifyClientPropertiesInput  {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
-    pub fn client_properties(&self) -> ::std::option::Option<&crate::types::ClientProperties> {
+    pub fn client_properties(&self) -> ::std::option::Option<& crate::types::ClientProperties> {
         self.client_properties.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ModifyClientPropertiesInputBuilder {
     }
     /// <p>The resource identifiers, in the form of directory IDs.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource identifiers, in the form of directory IDs.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ModifyClientPropertiesInputBuilder {
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub fn set_client_properties(mut self, input: ::std::option::Option<crate::types::ClientProperties>) -> Self {
-        self.client_properties = input;
-        self
+        self.client_properties = input; self
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub fn get_client_properties(&self) -> &::std::option::Option<crate::types::ClientProperties> {
         &self.client_properties
     }
     /// Consumes the builder and constructs a [`ModifyClientPropertiesInput`](crate::operation::modify_client_properties::ModifyClientPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_client_properties::ModifyClientPropertiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_client_properties::ModifyClientPropertiesInput {
-            resource_id: self.resource_id,
-            client_properties: self.client_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_client_properties::ModifyClientPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_client_properties::ModifyClientPropertiesInput {
+                resource_id: self.resource_id
+                ,
+                client_properties: self.client_properties
+                ,
+            }
+        )
     }
 }
+

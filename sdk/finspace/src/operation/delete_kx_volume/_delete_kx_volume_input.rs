@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKxVolumeInput {
+pub struct DeleteKxVolumeInput  {
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the volume that you want to delete.</p>
@@ -10,17 +10,17 @@ pub struct DeleteKxVolumeInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteKxVolumeInput {
+impl  DeleteKxVolumeInput  {
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the volume that you want to delete.</p>
-    pub fn volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn volume_name(&self) -> ::std::option::Option<& str> {
         self.volume_name.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteKxVolumeInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteKxVolumeInputBuilder {
     }
     /// <p>The name of the volume that you want to delete.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_name = input;
-        self
+        self.volume_name = input; self
     }
     /// <p>The name of the volume that you want to delete.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl DeleteKxVolumeInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteKxVolumeInput`](crate::operation::delete_kx_volume::DeleteKxVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_kx_volume::DeleteKxVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_kx_volume::DeleteKxVolumeInput {
-            environment_id: self.environment_id,
-            volume_name: self.volume_name,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_kx_volume::DeleteKxVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_kx_volume::DeleteKxVolumeInput {
+                environment_id: self.environment_id
+                ,
+                volume_name: self.volume_name
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

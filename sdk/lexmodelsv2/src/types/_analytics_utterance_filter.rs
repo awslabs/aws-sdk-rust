@@ -30,7 +30,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsUtteranceFilter {
+pub struct AnalyticsUtteranceFilter  {
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
     /// <ul>
     /// <li>
@@ -87,9 +87,9 @@ pub struct AnalyticsUtteranceFilter {
     /// </ul>
     pub operator: crate::types::AnalyticsFilterOperator,
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl AnalyticsUtteranceFilter {
+impl  AnalyticsUtteranceFilter  {
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
     /// <ul>
     /// <li>
@@ -111,7 +111,7 @@ impl AnalyticsUtteranceFilter {
     /// <li>
     /// <p><code>UtteranceText</code> – The text in the utterance.</p></li>
     /// </ul>
-    pub fn name(&self) -> &crate::types::AnalyticsUtteranceFilterName {
+    pub fn name(&self) -> & crate::types::AnalyticsUtteranceFilterName {
         &self.name
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
@@ -146,13 +146,12 @@ impl AnalyticsUtteranceFilter {
     /// <li>
     /// <p><code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
-    pub fn operator(&self) -> &crate::types::AnalyticsFilterOperator {
+    pub fn operator(&self) -> & crate::types::AnalyticsFilterOperator {
         &self.operator
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl AnalyticsUtteranceFilter {
@@ -168,7 +167,7 @@ impl AnalyticsUtteranceFilter {
 pub struct AnalyticsUtteranceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceFilterName>,
     pub(crate) operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AnalyticsUtteranceFilterBuilder {
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
@@ -219,8 +218,7 @@ impl AnalyticsUtteranceFilterBuilder {
     /// <p><code>UtteranceText</code> – The text in the utterance.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The category by which to filter the utterances. The descriptions for each option are as follows:</p>
     /// <ul>
@@ -316,8 +314,7 @@ impl AnalyticsUtteranceFilterBuilder {
     /// <p><code>UtteranceText</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::AnalyticsFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
@@ -361,17 +358,16 @@ impl AnalyticsUtteranceFilterBuilder {
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceFilter`](crate::types::AnalyticsUtteranceFilter).
@@ -380,25 +376,25 @@ impl AnalyticsUtteranceFilterBuilder {
     /// - [`operator`](crate::types::builders::AnalyticsUtteranceFilterBuilder::operator)
     /// - [`values`](crate::types::builders::AnalyticsUtteranceFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsUtteranceFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyticsUtteranceFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AnalyticsUtteranceFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building AnalyticsUtteranceFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building AnalyticsUtteranceFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalyticsUtteranceFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AnalyticsUtteranceFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building AnalyticsUtteranceFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building AnalyticsUtteranceFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

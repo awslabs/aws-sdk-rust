@@ -32,3 +32,4 @@ pub use crate::types::_logging_config::LoggingConfigBuilder;
 pub use crate::types::_s3_config::S3ConfigBuilder;
 
 pub use crate::types::_cloud_watch_config::CloudWatchConfigBuilder;
+

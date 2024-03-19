@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplacePermissionAssociationsOutput {
+pub struct ReplacePermissionAssociationsOutput  {
     /// <p>Specifies a data structure that you can use to track the asynchronous tasks that RAM performs to complete this operation. You can use the <code>ListReplacePermissionAssociationsWork</code> operation and pass the <code>id</code> value returned in this structure.</p>
     pub replace_permission_associations_work: ::std::option::Option<crate::types::ReplacePermissionAssociationsWork>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ReplacePermissionAssociationsOutput {
+impl  ReplacePermissionAssociationsOutput  {
     /// <p>Specifies a data structure that you can use to track the asynchronous tasks that RAM performs to complete this operation. You can use the <code>ListReplacePermissionAssociationsWork</code> operation and pass the <code>id</code> value returned in this structure.</p>
-    pub fn replace_permission_associations_work(&self) -> ::std::option::Option<&crate::types::ReplacePermissionAssociationsWork> {
+    pub fn replace_permission_associations_work(&self) -> ::std::option::Option<& crate::types::ReplacePermissionAssociationsWork> {
         self.replace_permission_associations_work.as_ref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ReplacePermissionAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ReplacePermissionAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ReplacePermissionAssociationsOutput`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput).
     pub fn builder() -> crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsOutputBuilder {
@@ -47,8 +47,7 @@ impl ReplacePermissionAssociationsOutputBuilder {
     }
     /// <p>Specifies a data structure that you can use to track the asynchronous tasks that RAM performs to complete this operation. You can use the <code>ListReplacePermissionAssociationsWork</code> operation and pass the <code>id</code> value returned in this structure.</p>
     pub fn set_replace_permission_associations_work(mut self, input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWork>) -> Self {
-        self.replace_permission_associations_work = input;
-        self
+        self.replace_permission_associations_work = input; self
     }
     /// <p>Specifies a data structure that you can use to track the asynchronous tasks that RAM performs to complete this operation. You can use the <code>ListReplacePermissionAssociationsWork</code> operation and pass the <code>id</code> value returned in this structure.</p>
     pub fn get_replace_permission_associations_work(&self) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWork> {
@@ -61,28 +60,30 @@ impl ReplacePermissionAssociationsOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ReplacePermissionAssociationsOutput`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput).
     pub fn build(self) -> crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput {
         crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput {
-            replace_permission_associations_work: self.replace_permission_associations_work,
-            client_token: self.client_token,
+            replace_permission_associations_work: self.replace_permission_associations_work
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

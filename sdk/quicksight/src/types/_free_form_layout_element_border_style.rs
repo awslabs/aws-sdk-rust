@@ -3,19 +3,19 @@
 /// <p>The background style configuration of a free-form layout element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FreeFormLayoutElementBorderStyle {
+pub struct FreeFormLayoutElementBorderStyle  {
     /// <p>The border visibility of a free-form layout element.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The border color of a free-form layout element.</p>
     pub color: ::std::option::Option<::std::string::String>,
 }
-impl FreeFormLayoutElementBorderStyle {
+impl  FreeFormLayoutElementBorderStyle  {
     /// <p>The border visibility of a free-form layout element.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The border color of a free-form layout element.</p>
-    pub fn color(&self) -> ::std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<& str> {
         self.color.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FreeFormLayoutElementBorderStyleBuilder {
     }
     /// <p>The border visibility of a free-form layout element.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The border visibility of a free-form layout element.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -55,8 +54,7 @@ impl FreeFormLayoutElementBorderStyleBuilder {
     }
     /// <p>The border color of a free-form layout element.</p>
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>The border color of a free-form layout element.</p>
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl FreeFormLayoutElementBorderStyleBuilder {
     /// Consumes the builder and constructs a [`FreeFormLayoutElementBorderStyle`](crate::types::FreeFormLayoutElementBorderStyle).
     pub fn build(self) -> crate::types::FreeFormLayoutElementBorderStyle {
         crate::types::FreeFormLayoutElementBorderStyle {
-            visibility: self.visibility,
-            color: self.color,
+            visibility: self.visibility
+            ,
+            color: self.color
+            ,
         }
     }
 }
+

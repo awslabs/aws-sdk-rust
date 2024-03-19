@@ -3,30 +3,31 @@
 /// <p>Container for results of a <code>DescribeReservedInstanceOfferings</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedInstanceOfferingsOutput {
+pub struct DescribeReservedInstanceOfferingsOutput  {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of Reserved Instance offerings.</p>
-    pub reserved_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>,
+    pub reserved_instance_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedInstanceOffering>>,
     _request_id: Option<String>,
 }
-impl DescribeReservedInstanceOfferingsOutput {
+impl  DescribeReservedInstanceOfferingsOutput  {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of Reserved Instance offerings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instance_offerings.is_none()`.
-    pub fn reserved_instance_offerings(&self) -> &[crate::types::ReservedInstanceOffering] {
-        self.reserved_instance_offerings.as_deref().unwrap_or_default()
+    pub fn reserved_instance_offerings(&self) -> & [crate::types::ReservedInstanceOffering] {
+        self.reserved_instance_offerings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReservedInstanceOfferingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReservedInstanceOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstanceOfferingsOutput`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput).
     pub fn builder() -> crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReservedInstanceOfferingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstanceOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>,
+    pub(crate) reserved_instance_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedInstanceOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstanceOfferingsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReservedInstanceOfferingsOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeReservedInstanceOfferingsOutputBuilder {
     /// <p>List of Reserved Instance offerings.</p>
     pub fn reserved_instance_offerings(mut self, input: crate::types::ReservedInstanceOffering) -> Self {
         let mut v = self.reserved_instance_offerings.unwrap_or_default();
-        v.push(input);
-        self.reserved_instance_offerings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reserved_instance_offerings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of Reserved Instance offerings.</p>
-    pub fn set_reserved_instance_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>>) -> Self {
-        self.reserved_instance_offerings = input;
-        self
+    pub fn set_reserved_instance_offerings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedInstanceOffering>>) -> Self {
+        self.reserved_instance_offerings = input; self
     }
     /// <p>List of Reserved Instance offerings.</p>
-    pub fn get_reserved_instance_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstanceOffering>> {
+    pub fn get_reserved_instance_offerings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservedInstanceOffering>> {
         &self.reserved_instance_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReservedInstanceOfferingsOutput`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput).
     pub fn build(self) -> crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput {
         crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput {
-            next_token: self.next_token,
-            reserved_instance_offerings: self.reserved_instance_offerings,
+            next_token: self.next_token
+            ,
+            reserved_instance_offerings: self.reserved_instance_offerings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

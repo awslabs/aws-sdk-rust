@@ -3,13 +3,13 @@
 /// <p>The dead-letter queue for failed asynchronous invocations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsLambdaFunctionDeadLetterConfig {
+pub struct AwsLambdaFunctionDeadLetterConfig  {
     /// <p>The ARN of an SQS queue or SNS topic.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
 }
-impl AwsLambdaFunctionDeadLetterConfig {
+impl  AwsLambdaFunctionDeadLetterConfig  {
     /// <p>The ARN of an SQS queue or SNS topic.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsLambdaFunctionDeadLetterConfigBuilder {
     }
     /// <p>The ARN of an SQS queue or SNS topic.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The ARN of an SQS queue or SNS topic.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsLambdaFunctionDeadLetterConfigBuilder {
     }
     /// Consumes the builder and constructs a [`AwsLambdaFunctionDeadLetterConfig`](crate::types::AwsLambdaFunctionDeadLetterConfig).
     pub fn build(self) -> crate::types::AwsLambdaFunctionDeadLetterConfig {
-        crate::types::AwsLambdaFunctionDeadLetterConfig { target_arn: self.target_arn }
+        crate::types::AwsLambdaFunctionDeadLetterConfig {
+            target_arn: self.target_arn
+            ,
+        }
     }
 }
+

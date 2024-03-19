@@ -3,19 +3,19 @@
 /// <p>A description of the column in the query results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnDescription {
+pub struct ColumnDescription  {
     /// <p>The name of the column description.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the column description.</p>
     pub r#type: ::std::option::Option<crate::types::ColumnType>,
 }
-impl ColumnDescription {
+impl  ColumnDescription  {
     /// <p>The name of the column description.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the column description.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ColumnType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ColumnType> {
         self.r#type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ColumnDescriptionBuilder {
     }
     /// <p>The name of the column description.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the column description.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ColumnDescriptionBuilder {
     }
     /// <p>The type of the column description.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ColumnType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the column description.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ColumnType> {
@@ -65,8 +63,11 @@ impl ColumnDescriptionBuilder {
     /// Consumes the builder and constructs a [`ColumnDescription`](crate::types::ColumnDescription).
     pub fn build(self) -> crate::types::ColumnDescription {
         crate::types::ColumnDescription {
-            name: self.name,
-            r#type: self.r#type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

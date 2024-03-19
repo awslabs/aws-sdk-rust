@@ -3,13 +3,13 @@
 /// <p>The revision version of the template. Template updates will increment the minor revision. Re-enrolling all certificate holders will increment the major revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateRevision {
+pub struct TemplateRevision  {
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
     pub major_revision: i32,
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
     pub minor_revision: i32,
 }
-impl TemplateRevision {
+impl  TemplateRevision  {
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
     pub fn major_revision(&self) -> i32 {
         self.major_revision
@@ -42,8 +42,7 @@ impl TemplateRevisionBuilder {
     }
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
     pub fn set_major_revision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.major_revision = input;
-        self
+        self.major_revision = input; self
     }
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
     pub fn get_major_revision(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl TemplateRevisionBuilder {
     }
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
     pub fn set_minor_revision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minor_revision = input;
-        self
+        self.minor_revision = input; self
     }
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
     pub fn get_minor_revision(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl TemplateRevisionBuilder {
     /// - [`major_revision`](crate::types::builders::TemplateRevisionBuilder::major_revision)
     /// - [`minor_revision`](crate::types::builders::TemplateRevisionBuilder::minor_revision)
     pub fn build(self) -> ::std::result::Result<crate::types::TemplateRevision, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TemplateRevision {
-            major_revision: self.major_revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "major_revision",
-                    "major_revision was not specified but it is required when building TemplateRevision",
-                )
-            })?,
-            minor_revision: self.minor_revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "minor_revision",
-                    "minor_revision was not specified but it is required when building TemplateRevision",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TemplateRevision {
+                major_revision: self.major_revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("major_revision", "major_revision was not specified but it is required when building TemplateRevision")
+                    )?
+                ,
+                minor_revision: self.minor_revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("minor_revision", "minor_revision was not specified but it is required when building TemplateRevision")
+                    )?
+                ,
+            }
+        )
     }
 }
+

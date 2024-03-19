@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccessControlConfigurationInput {
+pub struct DescribeAccessControlConfigurationInput  {
     /// <p>The identifier of the index for an access control configuration.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the access control configuration you want to get information on.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAccessControlConfigurationInput {
+impl  DescribeAccessControlConfigurationInput  {
     /// <p>The identifier of the index for an access control configuration.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the access control configuration you want to get information on.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeAccessControlConfigurationInputBuilder {
     }
     /// <p>The identifier of the index for an access control configuration.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index for an access control configuration.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DescribeAccessControlConfigurationInputBuilder {
     }
     /// <p>The identifier of the access control configuration you want to get information on.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the access control configuration you want to get information on.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DescribeAccessControlConfigurationInput`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput {
-                index_id: self.index_id,
-                id: self.id,
-            },
+                index_id: self.index_id
+                ,
+                id: self.id
+                ,
+            }
         )
     }
 }
+

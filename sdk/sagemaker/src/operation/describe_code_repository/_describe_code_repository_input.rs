@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCodeRepositoryInput {
+pub struct DescribeCodeRepositoryInput  {
     /// <p>The name of the Git repository to describe.</p>
     pub code_repository_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCodeRepositoryInput {
+impl  DescribeCodeRepositoryInput  {
     /// <p>The name of the Git repository to describe.</p>
-    pub fn code_repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn code_repository_name(&self) -> ::std::option::Option<& str> {
         self.code_repository_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeCodeRepositoryInputBuilder {
     }
     /// <p>The name of the Git repository to describe.</p>
     pub fn set_code_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_repository_name = input;
-        self
+        self.code_repository_name = input; self
     }
     /// <p>The name of the Git repository to describe.</p>
     pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_repository_name
     }
     /// Consumes the builder and constructs a [`DescribeCodeRepositoryInput`](crate::operation::describe_code_repository::DescribeCodeRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_code_repository::DescribeCodeRepositoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_code_repository::DescribeCodeRepositoryInput {
-            code_repository_name: self.code_repository_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_code_repository::DescribeCodeRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_code_repository::DescribeCodeRepositoryInput {
+                code_repository_name: self.code_repository_name
+                ,
+            }
+        )
     }
 }
+

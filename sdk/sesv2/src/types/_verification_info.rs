@@ -3,7 +3,7 @@
 /// <p>An object that contains additional information about the verification status for the identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerificationInfo {
+pub struct VerificationInfo  {
     /// <p>The last time a verification attempt was made for this identity.</p>
     pub last_checked_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time a successful verification was made for this identity.</p>
@@ -25,13 +25,13 @@ pub struct VerificationInfo {
     /// <p>An object that contains information about the start of authority (SOA) record associated with the identity.</p>
     pub soa_record: ::std::option::Option<crate::types::SoaRecord>,
 }
-impl VerificationInfo {
+impl  VerificationInfo  {
     /// <p>The last time a verification attempt was made for this identity.</p>
-    pub fn last_checked_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_checked_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_checked_timestamp.as_ref()
     }
     /// <p>The last time a successful verification was made for this identity.</p>
-    pub fn last_success_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_success_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_success_timestamp.as_ref()
     }
     /// <p>Provides the reason for the failure describing why Amazon SES was not able to successfully verify the identity. Below are the possible values:</p>
@@ -47,11 +47,11 @@ impl VerificationInfo {
     /// <li>
     /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
     /// </ul>
-    pub fn error_type(&self) -> ::std::option::Option<&crate::types::VerificationError> {
+    pub fn error_type(&self) -> ::std::option::Option<& crate::types::VerificationError> {
         self.error_type.as_ref()
     }
     /// <p>An object that contains information about the start of authority (SOA) record associated with the identity.</p>
-    pub fn soa_record(&self) -> ::std::option::Option<&crate::types::SoaRecord> {
+    pub fn soa_record(&self) -> ::std::option::Option<& crate::types::SoaRecord> {
         self.soa_record.as_ref()
     }
 }
@@ -79,8 +79,7 @@ impl VerificationInfoBuilder {
     }
     /// <p>The last time a verification attempt was made for this identity.</p>
     pub fn set_last_checked_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_checked_timestamp = input;
-        self
+        self.last_checked_timestamp = input; self
     }
     /// <p>The last time a verification attempt was made for this identity.</p>
     pub fn get_last_checked_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -93,8 +92,7 @@ impl VerificationInfoBuilder {
     }
     /// <p>The last time a successful verification was made for this identity.</p>
     pub fn set_last_success_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_success_timestamp = input;
-        self
+        self.last_success_timestamp = input; self
     }
     /// <p>The last time a successful verification was made for this identity.</p>
     pub fn get_last_success_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -131,8 +129,7 @@ impl VerificationInfoBuilder {
     /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
     /// </ul>
     pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::VerificationError>) -> Self {
-        self.error_type = input;
-        self
+        self.error_type = input; self
     }
     /// <p>Provides the reason for the failure describing why Amazon SES was not able to successfully verify the identity. Below are the possible values:</p>
     /// <ul>
@@ -157,8 +154,7 @@ impl VerificationInfoBuilder {
     }
     /// <p>An object that contains information about the start of authority (SOA) record associated with the identity.</p>
     pub fn set_soa_record(mut self, input: ::std::option::Option<crate::types::SoaRecord>) -> Self {
-        self.soa_record = input;
-        self
+        self.soa_record = input; self
     }
     /// <p>An object that contains information about the start of authority (SOA) record associated with the identity.</p>
     pub fn get_soa_record(&self) -> &::std::option::Option<crate::types::SoaRecord> {
@@ -167,10 +163,15 @@ impl VerificationInfoBuilder {
     /// Consumes the builder and constructs a [`VerificationInfo`](crate::types::VerificationInfo).
     pub fn build(self) -> crate::types::VerificationInfo {
         crate::types::VerificationInfo {
-            last_checked_timestamp: self.last_checked_timestamp,
-            last_success_timestamp: self.last_success_timestamp,
-            error_type: self.error_type,
-            soa_record: self.soa_record,
+            last_checked_timestamp: self.last_checked_timestamp
+            ,
+            last_success_timestamp: self.last_success_timestamp
+            ,
+            error_type: self.error_type
+            ,
+            soa_record: self.soa_record
+            ,
         }
     }
 }
+

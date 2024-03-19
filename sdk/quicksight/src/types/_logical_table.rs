@@ -3,28 +3,28 @@
 /// <p>A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogicalTable {
+pub struct LogicalTable  {
     /// <p>A display name for the logical table.</p>
     pub alias: ::std::string::String,
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub data_transforms: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,
+    pub data_transforms: ::std::option::Option<::std::vec::Vec::<crate::types::TransformOperation>>,
     /// <p>Source of this logical table.</p>
     pub source: ::std::option::Option<crate::types::LogicalTableSource>,
 }
-impl LogicalTable {
+impl  LogicalTable  {
     /// <p>A display name for the logical table.</p>
-    pub fn alias(&self) -> &str {
-        use std::ops::Deref;
-        self.alias.deref()
+    pub fn alias(&self) -> & str {
+        use std::ops::Deref; self.alias.deref()
     }
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_transforms.is_none()`.
-    pub fn data_transforms(&self) -> &[crate::types::TransformOperation] {
-        self.data_transforms.as_deref().unwrap_or_default()
+    pub fn data_transforms(&self) -> & [crate::types::TransformOperation] {
+        self.data_transforms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Source of this logical table.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::LogicalTableSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::LogicalTableSource> {
         self.source.as_ref()
     }
 }
@@ -40,7 +40,7 @@ impl LogicalTable {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogicalTableBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
-    pub(crate) data_transforms: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>,
+    pub(crate) data_transforms: ::std::option::Option<::std::vec::Vec::<crate::types::TransformOperation>>,
     pub(crate) source: ::std::option::Option<crate::types::LogicalTableSource>,
 }
 impl LogicalTableBuilder {
@@ -52,8 +52,7 @@ impl LogicalTableBuilder {
     }
     /// <p>A display name for the logical table.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>A display name for the logical table.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +65,16 @@ impl LogicalTableBuilder {
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub fn data_transforms(mut self, input: crate::types::TransformOperation) -> Self {
         let mut v = self.data_transforms.unwrap_or_default();
-        v.push(input);
-        self.data_transforms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_transforms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub fn set_data_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>>) -> Self {
-        self.data_transforms = input;
-        self
+    pub fn set_data_transforms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransformOperation>>) -> Self {
+        self.data_transforms = input; self
     }
     /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null.</p>
-    pub fn get_data_transforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>> {
+    pub fn get_data_transforms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransformOperation>> {
         &self.data_transforms
     }
     /// <p>Source of this logical table.</p>
@@ -87,8 +85,7 @@ impl LogicalTableBuilder {
     }
     /// <p>Source of this logical table.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::LogicalTableSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Source of this logical table.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::LogicalTableSource> {
@@ -98,15 +95,19 @@ impl LogicalTableBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`alias`](crate::types::builders::LogicalTableBuilder::alias)
     pub fn build(self) -> ::std::result::Result<crate::types::LogicalTable, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LogicalTable {
-            alias: self.alias.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alias",
-                    "alias was not specified but it is required when building LogicalTable",
-                )
-            })?,
-            data_transforms: self.data_transforms,
-            source: self.source,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LogicalTable {
+                alias: self.alias
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alias", "alias was not specified but it is required when building LogicalTable")
+                    )?
+                ,
+                data_transforms: self.data_transforms
+                ,
+                source: self.source
+                ,
+            }
+        )
     }
 }
+

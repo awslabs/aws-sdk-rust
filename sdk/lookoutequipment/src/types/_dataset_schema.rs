@@ -3,13 +3,13 @@
 /// <p>Provides information about the data schema used with the given dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetSchema {
+pub struct DatasetSchema  {
     /// <p>The data schema used within the given dataset.</p>
     pub inline_data_schema: ::std::option::Option<::std::string::String>,
 }
-impl DatasetSchema {
+impl  DatasetSchema  {
     /// <p>The data schema used within the given dataset.</p>
-    pub fn inline_data_schema(&self) -> ::std::option::Option<&str> {
+    pub fn inline_data_schema(&self) -> ::std::option::Option<& str> {
         self.inline_data_schema.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DatasetSchemaBuilder {
     }
     /// <p>The data schema used within the given dataset.</p>
     pub fn set_inline_data_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inline_data_schema = input;
-        self
+        self.inline_data_schema = input; self
     }
     /// <p>The data schema used within the given dataset.</p>
     pub fn get_inline_data_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl DatasetSchemaBuilder {
     /// Consumes the builder and constructs a [`DatasetSchema`](crate::types::DatasetSchema).
     pub fn build(self) -> crate::types::DatasetSchema {
         crate::types::DatasetSchema {
-            inline_data_schema: self.inline_data_schema,
+            inline_data_schema: self.inline_data_schema
+            ,
         }
     }
 }
+

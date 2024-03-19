@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFindings`](crate::operation::list_findings::builders::ListFindingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`analyzer_arn(impl Into<String>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_analyzer_arn):<br>required: **true**<br><p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p><br>
     ///   - [`filter(impl Into<String>, Criterion)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::filter) / [`set_filter(Option<HashMap::<String, Criterion>>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to match for the findings to return.</p><br>
     ///   - [`sort(SortCriteria)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::sort) / [`set_sort(Option<SortCriteria>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_sort):<br>required: **false**<br><p>The sort order for the findings returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
-    /// - On success, responds with [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput) with field(s):
+                            /// - On success, responds with [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput) with field(s):
     ///   - [`findings(Vec::<FindingSummary>)`](crate::operation::list_findings::ListFindingsOutput::findings): <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings::ListFindingsOutput::next_token): <p>A token used for pagination of results returned.</p>
-    /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::operation::list_findings::ListFindingsError)
+                            /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::operation::list_findings::ListFindingsError)
     pub fn list_findings(&self) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
-        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

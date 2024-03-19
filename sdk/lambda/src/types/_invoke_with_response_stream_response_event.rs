@@ -22,11 +22,7 @@ impl InvokeWithResponseStreamResponseEvent {
     /// Tries to convert the enum instance into [`InvokeComplete`](crate::types::InvokeWithResponseStreamResponseEvent::InvokeComplete), extracting the inner [`InvokeWithResponseStreamCompleteEvent`](crate::types::InvokeWithResponseStreamCompleteEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_invoke_complete(&self) -> ::std::result::Result<&crate::types::InvokeWithResponseStreamCompleteEvent, &Self> {
-        if let InvokeWithResponseStreamResponseEvent::InvokeComplete(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let InvokeWithResponseStreamResponseEvent::InvokeComplete(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`InvokeComplete`](crate::types::InvokeWithResponseStreamResponseEvent::InvokeComplete).
     pub fn is_invoke_complete(&self) -> bool {
@@ -35,11 +31,7 @@ impl InvokeWithResponseStreamResponseEvent {
     /// Tries to convert the enum instance into [`PayloadChunk`](crate::types::InvokeWithResponseStreamResponseEvent::PayloadChunk), extracting the inner [`InvokeResponseStreamUpdate`](crate::types::InvokeResponseStreamUpdate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_payload_chunk(&self) -> ::std::result::Result<&crate::types::InvokeResponseStreamUpdate, &Self> {
-        if let InvokeWithResponseStreamResponseEvent::PayloadChunk(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let InvokeWithResponseStreamResponseEvent::PayloadChunk(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PayloadChunk`](crate::types::InvokeWithResponseStreamResponseEvent::PayloadChunk).
     pub fn is_payload_chunk(&self) -> bool {
@@ -50,3 +42,4 @@ impl InvokeWithResponseStreamResponseEvent {
         matches!(self, Self::Unknown)
     }
 }
+

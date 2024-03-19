@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNetworkInsightsAnalyses`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`network_insights_analysis_ids(impl Into<String>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::network_insights_analysis_ids) / [`set_network_insights_analysis_ids(Option<Vec::<String>>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::set_network_insights_analysis_ids):<br>required: **false**<br><p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p><br>
     ///   - [`network_insights_path_id(impl Into<String>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::network_insights_path_id) / [`set_network_insights_path_id(Option<String>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::set_network_insights_path_id):<br>required: **false**<br><p>The ID of the path. You must specify either a path ID or analysis IDs.</p><br>
     ///   - [`analysis_start_time(DateTime)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::analysis_start_time) / [`set_analysis_start_time(Option<DateTime>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::set_analysis_start_time):<br>required: **false**<br><p>The time when the network insights analyses started.</p><br>
@@ -12,13 +12,12 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`DescribeNetworkInsightsAnalysesOutput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput) with field(s):
+                            /// - On success, responds with [`DescribeNetworkInsightsAnalysesOutput`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput) with field(s):
     ///   - [`network_insights_analyses(Option<Vec::<NetworkInsightsAnalysis>>)`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput::network_insights_analyses): <p>Information about the network insights analyses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeNetworkInsightsAnalysesError>`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesError)
-    pub fn describe_network_insights_analyses(
-        &self,
-    ) -> crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder {
-        crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeNetworkInsightsAnalysesError>`](crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesError)
+    pub fn describe_network_insights_analyses(&self) -> crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder {
+                                crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

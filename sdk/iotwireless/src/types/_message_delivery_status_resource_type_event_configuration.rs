@@ -3,13 +3,13 @@
 /// <p>Message delivery status resource type event configuration object for enabling or disabling relevant topic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageDeliveryStatusResourceTypeEventConfiguration {
+pub struct MessageDeliveryStatusResourceTypeEventConfiguration  {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }
-impl MessageDeliveryStatusResourceTypeEventConfiguration {
+impl  MessageDeliveryStatusResourceTypeEventConfiguration  {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkResourceTypeEventConfiguration> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
     }
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>) -> Self {
-        self.sidewalk = input;
-        self
+        self.sidewalk = input; self
     }
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration> {
@@ -43,6 +42,10 @@ impl MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::types::MessageDeliveryStatusResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::MessageDeliveryStatusResourceTypeEventConfiguration {
-        crate::types::MessageDeliveryStatusResourceTypeEventConfiguration { sidewalk: self.sidewalk }
+        crate::types::MessageDeliveryStatusResourceTypeEventConfiguration {
+            sidewalk: self.sidewalk
+            ,
+        }
     }
 }
+

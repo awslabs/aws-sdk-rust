@@ -3,7 +3,7 @@
 /// <p>ExtraParam includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ExtraParam {
+pub struct ExtraParam  {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
     /// <dt>
@@ -433,7 +433,7 @@ pub struct ExtraParam {
     /// <p>The value that corresponds with the name of an extra parameter.</p>
     pub value: ::std::string::String,
 }
-impl ExtraParam {
+impl  ExtraParam  {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
     /// <dt>
@@ -859,16 +859,15 @@ impl ExtraParam {
     /// </dd>
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
-    pub fn name(&self) -> &crate::types::ExtraParamName {
+    pub fn name(&self) -> & crate::types::ExtraParamName {
         &self.name
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
-impl ::std::fmt::Debug for ExtraParam {
+impl  ::std::fmt::Debug for ExtraParam  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExtraParam");
         formatter.field("name", &self.name);
@@ -1747,8 +1746,7 @@ impl ExtraParamBuilder {
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ExtraParamName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
@@ -2186,8 +2184,7 @@ impl ExtraParamBuilder {
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -2198,20 +2195,20 @@ impl ExtraParamBuilder {
     /// - [`name`](crate::types::builders::ExtraParamBuilder::name)
     /// - [`value`](crate::types::builders::ExtraParamBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ExtraParam, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExtraParam {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ExtraParam",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ExtraParam",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExtraParam {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ExtraParam")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ExtraParam")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ExtraParamBuilder {
@@ -2222,3 +2219,4 @@ impl ::std::fmt::Debug for ExtraParamBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the interval period to use for returning results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntervalDetails {
+pub struct IntervalDetails  {
     /// <p>The timezone applied to requested metrics.</p>
     pub time_zone: ::std::option::Option<::std::string::String>,
     /// <p><code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>.</p>
@@ -25,9 +25,9 @@ pub struct IntervalDetails {
     /// </ul>
     pub interval_period: ::std::option::Option<crate::types::IntervalPeriod>,
 }
-impl IntervalDetails {
+impl  IntervalDetails  {
     /// <p>The timezone applied to requested metrics.</p>
-    pub fn time_zone(&self) -> ::std::option::Option<&str> {
+    pub fn time_zone(&self) -> ::std::option::Option<& str> {
         self.time_zone.as_deref()
     }
     /// <p><code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>.</p>
@@ -47,7 +47,7 @@ impl IntervalDetails {
     /// <li>
     /// <p><code>TOTAL</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p></li>
     /// </ul>
-    pub fn interval_period(&self) -> ::std::option::Option<&crate::types::IntervalPeriod> {
+    pub fn interval_period(&self) -> ::std::option::Option<& crate::types::IntervalPeriod> {
         self.interval_period.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl IntervalDetailsBuilder {
     }
     /// <p>The timezone applied to requested metrics.</p>
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_zone = input;
-        self
+        self.time_zone = input; self
     }
     /// <p>The timezone applied to requested metrics.</p>
     pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl IntervalDetailsBuilder {
     /// <p><code>TOTAL</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p></li>
     /// </ul>
     pub fn set_interval_period(mut self, input: ::std::option::Option<crate::types::IntervalPeriod>) -> Self {
-        self.interval_period = input;
-        self
+        self.interval_period = input; self
     }
     /// <p><code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>.</p>
     /// <p>For example, if <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Amazon Connect returns 48 results in the response. Each result is aggregated by the THIRTY_MIN period. By default Amazon Connect aggregates results based on the <code>TOTAL</code> interval period.</p>
@@ -145,8 +143,11 @@ impl IntervalDetailsBuilder {
     /// Consumes the builder and constructs a [`IntervalDetails`](crate::types::IntervalDetails).
     pub fn build(self) -> crate::types::IntervalDetails {
         crate::types::IntervalDetails {
-            time_zone: self.time_zone,
-            interval_period: self.interval_period,
+            time_zone: self.time_zone
+            ,
+            interval_period: self.interval_period
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Settings specific to WebVTT sources in HLS alternative rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique subtitle track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the specified properties, the job fails. If there is only one subtitle track in the rendition group, the settings can be left empty and the default subtitle track will be chosen. If your caption source is a sidecar file, use FileSourceSettings instead of WebvttHlsSourceSettings.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WebvttHlsSourceSettings {
+pub struct WebvttHlsSourceSettings  {
     /// Optional. Specify alternative group ID
     pub rendition_group_id: ::std::option::Option<::std::string::String>,
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
@@ -11,17 +11,17 @@ pub struct WebvttHlsSourceSettings {
     /// Optional. Specify media name
     pub rendition_name: ::std::option::Option<::std::string::String>,
 }
-impl WebvttHlsSourceSettings {
+impl  WebvttHlsSourceSettings  {
     /// Optional. Specify alternative group ID
-    pub fn rendition_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn rendition_group_id(&self) -> ::std::option::Option<& str> {
         self.rendition_group_id.as_deref()
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
-    pub fn rendition_language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn rendition_language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.rendition_language_code.as_ref()
     }
     /// Optional. Specify media name
-    pub fn rendition_name(&self) -> ::std::option::Option<&str> {
+    pub fn rendition_name(&self) -> ::std::option::Option<& str> {
         self.rendition_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl WebvttHlsSourceSettingsBuilder {
     }
     /// Optional. Specify alternative group ID
     pub fn set_rendition_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rendition_group_id = input;
-        self
+        self.rendition_group_id = input; self
     }
     /// Optional. Specify alternative group ID
     pub fn get_rendition_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl WebvttHlsSourceSettingsBuilder {
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
     pub fn set_rendition_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.rendition_language_code = input;
-        self
+        self.rendition_language_code = input; self
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
     pub fn get_rendition_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -76,8 +74,7 @@ impl WebvttHlsSourceSettingsBuilder {
     }
     /// Optional. Specify media name
     pub fn set_rendition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rendition_name = input;
-        self
+        self.rendition_name = input; self
     }
     /// Optional. Specify media name
     pub fn get_rendition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl WebvttHlsSourceSettingsBuilder {
     /// Consumes the builder and constructs a [`WebvttHlsSourceSettings`](crate::types::WebvttHlsSourceSettings).
     pub fn build(self) -> crate::types::WebvttHlsSourceSettings {
         crate::types::WebvttHlsSourceSettings {
-            rendition_group_id: self.rendition_group_id,
-            rendition_language_code: self.rendition_language_code,
-            rendition_name: self.rendition_name,
+            rendition_group_id: self.rendition_group_id
+            ,
+            rendition_language_code: self.rendition_language_code
+            ,
+            rendition_name: self.rendition_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEntityInput {
+pub struct UpdateEntityInput  {
     /// <p>The ID of the workspace that contains the entity.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity.</p>
@@ -12,44 +12,39 @@ pub struct UpdateEntityInput {
     /// <p>The description of the entity.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
-    pub component_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
+    pub component_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentUpdateRequest>>,
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub composite_component_updates:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
+    pub composite_component_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
     /// <p>An object that describes the update request for a parent entity.</p>
     pub parent_entity_update: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
 }
-impl UpdateEntityInput {
+impl  UpdateEntityInput  {
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The name of the entity.</p>
-    pub fn entity_name(&self) -> ::std::option::Option<&str> {
+    pub fn entity_name(&self) -> ::std::option::Option<& str> {
         self.entity_name.as_deref()
     }
     /// <p>The description of the entity.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
-    pub fn component_updates(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
+    pub fn component_updates(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentUpdateRequest>> {
         self.component_updates.as_ref()
     }
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub fn composite_component_updates(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>> {
+    pub fn composite_component_updates(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentUpdateRequest>> {
         self.composite_component_updates.as_ref()
     }
     /// <p>An object that describes the update request for a parent entity.</p>
-    pub fn parent_entity_update(&self) -> ::std::option::Option<&crate::types::ParentEntityUpdateRequest> {
+    pub fn parent_entity_update(&self) -> ::std::option::Option<& crate::types::ParentEntityUpdateRequest> {
         self.parent_entity_update.as_ref()
     }
 }
@@ -68,9 +63,8 @@ pub struct UpdateEntityInputBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) component_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
-    pub(crate) composite_component_updates:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
+    pub(crate) component_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentUpdateRequest>>,
+    pub(crate) composite_component_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
     pub(crate) parent_entity_update: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
 }
 impl UpdateEntityInputBuilder {
@@ -82,8 +76,7 @@ impl UpdateEntityInputBuilder {
     }
     /// <p>The ID of the workspace that contains the entity.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace that contains the entity.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +90,7 @@ impl UpdateEntityInputBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The ID of the entity.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +103,7 @@ impl UpdateEntityInputBuilder {
     }
     /// <p>The name of the entity.</p>
     pub fn set_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_name = input;
-        self
+        self.entity_name = input; self
     }
     /// <p>The name of the entity.</p>
     pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +116,7 @@ impl UpdateEntityInputBuilder {
     }
     /// <p>The description of the entity.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the entity.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,22 +129,16 @@ impl UpdateEntityInputBuilder {
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn component_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentUpdateRequest) -> Self {
         let mut hash_map = self.component_updates.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.component_updates = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.component_updates = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
-    pub fn set_component_updates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
-    ) -> Self {
-        self.component_updates = input;
-        self
+    pub fn set_component_updates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentUpdateRequest>>) -> Self {
+        self.component_updates = input; self
     }
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
-    pub fn get_component_updates(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
+    pub fn get_component_updates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentUpdateRequest>> {
         &self.component_updates
     }
     /// Adds a key-value pair to `composite_component_updates`.
@@ -162,28 +146,18 @@ impl UpdateEntityInputBuilder {
     /// To override the contents of this collection use [`set_composite_component_updates`](Self::set_composite_component_updates).
     ///
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub fn composite_component_updates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CompositeComponentUpdateRequest,
-    ) -> Self {
+    pub fn composite_component_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CompositeComponentUpdateRequest) -> Self {
         let mut hash_map = self.composite_component_updates.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.composite_component_updates = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.composite_component_updates = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub fn set_composite_component_updates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
-    ) -> Self {
-        self.composite_component_updates = input;
-        self
+    pub fn set_composite_component_updates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentUpdateRequest>>) -> Self {
+        self.composite_component_updates = input; self
     }
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub fn get_composite_component_updates(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>> {
+    pub fn get_composite_component_updates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentUpdateRequest>> {
         &self.composite_component_updates
     }
     /// <p>An object that describes the update request for a parent entity.</p>
@@ -193,25 +167,32 @@ impl UpdateEntityInputBuilder {
     }
     /// <p>An object that describes the update request for a parent entity.</p>
     pub fn set_parent_entity_update(mut self, input: ::std::option::Option<crate::types::ParentEntityUpdateRequest>) -> Self {
-        self.parent_entity_update = input;
-        self
+        self.parent_entity_update = input; self
     }
     /// <p>An object that describes the update request for a parent entity.</p>
     pub fn get_parent_entity_update(&self) -> &::std::option::Option<crate::types::ParentEntityUpdateRequest> {
         &self.parent_entity_update
     }
     /// Consumes the builder and constructs a [`UpdateEntityInput`](crate::operation::update_entity::UpdateEntityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_entity::UpdateEntityInput {
-            workspace_id: self.workspace_id,
-            entity_id: self.entity_id,
-            entity_name: self.entity_name,
-            description: self.description,
-            component_updates: self.component_updates,
-            composite_component_updates: self.composite_component_updates,
-            parent_entity_update: self.parent_entity_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_entity::UpdateEntityInput {
+                workspace_id: self.workspace_id
+                ,
+                entity_id: self.entity_id
+                ,
+                entity_name: self.entity_name
+                ,
+                description: self.description
+                ,
+                component_updates: self.component_updates
+                ,
+                composite_component_updates: self.composite_component_updates
+                ,
+                parent_entity_update: self.parent_entity_update
+                ,
+            }
+        )
     }
 }
+

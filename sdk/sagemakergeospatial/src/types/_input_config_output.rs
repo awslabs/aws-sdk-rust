@@ -3,19 +3,19 @@
 /// <p>The InputConfig for an EarthObservationJob response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputConfigOutput {
+pub struct InputConfigOutput  {
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
     pub previous_earth_observation_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     pub raster_data_collection_query: ::std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
 }
-impl InputConfigOutput {
+impl  InputConfigOutput  {
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
-    pub fn previous_earth_observation_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn previous_earth_observation_job_arn(&self) -> ::std::option::Option<& str> {
         self.previous_earth_observation_job_arn.as_deref()
     }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
-    pub fn raster_data_collection_query(&self) -> ::std::option::Option<&crate::types::RasterDataCollectionQueryOutput> {
+    pub fn raster_data_collection_query(&self) -> ::std::option::Option<& crate::types::RasterDataCollectionQueryOutput> {
         self.raster_data_collection_query.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl InputConfigOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
     pub fn set_previous_earth_observation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.previous_earth_observation_job_arn = input;
-        self
+        self.previous_earth_observation_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
     pub fn get_previous_earth_observation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl InputConfigOutputBuilder {
     }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     pub fn set_raster_data_collection_query(mut self, input: ::std::option::Option<crate::types::RasterDataCollectionQueryOutput>) -> Self {
-        self.raster_data_collection_query = input;
-        self
+        self.raster_data_collection_query = input; self
     }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     pub fn get_raster_data_collection_query(&self) -> &::std::option::Option<crate::types::RasterDataCollectionQueryOutput> {
@@ -65,8 +63,11 @@ impl InputConfigOutputBuilder {
     /// Consumes the builder and constructs a [`InputConfigOutput`](crate::types::InputConfigOutput).
     pub fn build(self) -> crate::types::InputConfigOutput {
         crate::types::InputConfigOutput {
-            previous_earth_observation_job_arn: self.previous_earth_observation_job_arn,
-            raster_data_collection_query: self.raster_data_collection_query,
+            previous_earth_observation_job_arn: self.previous_earth_observation_job_arn
+            ,
+            raster_data_collection_query: self.raster_data_collection_query
+            ,
         }
     }
 }
+

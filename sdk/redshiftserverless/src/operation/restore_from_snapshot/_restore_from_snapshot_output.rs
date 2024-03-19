@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreFromSnapshotOutput {
+pub struct RestoreFromSnapshotOutput  {
     /// <p>The name of the snapshot used to restore the namespace.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
@@ -11,25 +11,25 @@ pub struct RestoreFromSnapshotOutput {
     pub namespace: ::std::option::Option<crate::types::Namespace>,
     _request_id: Option<String>,
 }
-impl RestoreFromSnapshotOutput {
+impl  RestoreFromSnapshotOutput  {
     /// <p>The name of the snapshot used to restore the namespace.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>A collection of database objects and users.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&crate::types::Namespace> {
+    pub fn namespace(&self) -> ::std::option::Option<& crate::types::Namespace> {
         self.namespace.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RestoreFromSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RestoreFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotOutput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput).
     pub fn builder() -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotOutputBuilder {
@@ -54,8 +54,7 @@ impl RestoreFromSnapshotOutputBuilder {
     }
     /// <p>The name of the snapshot used to restore the namespace.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of the snapshot used to restore the namespace.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl RestoreFromSnapshotOutputBuilder {
     }
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl RestoreFromSnapshotOutputBuilder {
     }
     /// <p>A collection of database objects and users.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::Namespace>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>A collection of database objects and users.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<crate::types::Namespace> {
         &self.namespace
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RestoreFromSnapshotOutput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput).
     pub fn build(self) -> crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput {
         crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput {
-            snapshot_name: self.snapshot_name,
-            owner_account: self.owner_account,
-            namespace: self.namespace,
+            snapshot_name: self.snapshot_name
+            ,
+            owner_account: self.owner_account
+            ,
+            namespace: self.namespace
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

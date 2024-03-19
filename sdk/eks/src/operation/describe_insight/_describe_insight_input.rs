@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInsightInput {
+pub struct DescribeInsightInput  {
     /// <p>The name of the cluster to describe the insight for.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The identity of the insight to describe.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInsightInput {
+impl  DescribeInsightInput  {
     /// <p>The name of the cluster to describe the insight for.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The identity of the insight to describe.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeInsightInputBuilder {
     }
     /// <p>The name of the cluster to describe the insight for.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster to describe the insight for.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeInsightInputBuilder {
     }
     /// <p>The identity of the insight to describe.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identity of the insight to describe.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DescribeInsightInput`](crate::operation::describe_insight::DescribeInsightInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_insight::DescribeInsightInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_insight::DescribeInsightInput {
-            cluster_name: self.cluster_name,
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_insight::DescribeInsightInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_insight::DescribeInsightInput {
+                cluster_name: self.cluster_name
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

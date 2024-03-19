@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFormOutput {
+pub struct UpdateFormOutput  {
     /// <p>Describes the configuration of the updated form.</p>
     pub entity: ::std::option::Option<crate::types::Form>,
     _request_id: Option<String>,
 }
-impl UpdateFormOutput {
+impl  UpdateFormOutput  {
     /// <p>Describes the configuration of the updated form.</p>
-    pub fn entity(&self) -> ::std::option::Option<&crate::types::Form> {
+    pub fn entity(&self) -> ::std::option::Option<& crate::types::Form> {
         self.entity.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFormOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateFormOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFormOutput`](crate::operation::update_form::UpdateFormOutput).
     pub fn builder() -> crate::operation::update_form::builders::UpdateFormOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateFormOutputBuilder {
     }
     /// <p>Describes the configuration of the updated form.</p>
     pub fn set_entity(mut self, input: ::std::option::Option<crate::types::Form>) -> Self {
-        self.entity = input;
-        self
+        self.entity = input; self
     }
     /// <p>Describes the configuration of the updated form.</p>
     pub fn get_entity(&self) -> &::std::option::Option<crate::types::Form> {
         &self.entity
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateFormOutput`](crate::operation::update_form::UpdateFormOutput).
     pub fn build(self) -> crate::operation::update_form::UpdateFormOutput {
         crate::operation::update_form::UpdateFormOutput {
-            entity: self.entity,
+            entity: self.entity
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

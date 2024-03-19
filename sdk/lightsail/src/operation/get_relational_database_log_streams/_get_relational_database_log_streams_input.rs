@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseLogStreamsInput {
+pub struct GetRelationalDatabaseLogStreamsInput  {
     /// <p>The name of your database for which to get log streams.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
 }
-impl GetRelationalDatabaseLogStreamsInput {
+impl  GetRelationalDatabaseLogStreamsInput  {
     /// <p>The name of your database for which to get log streams.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetRelationalDatabaseLogStreamsInputBuilder {
     }
     /// <p>The name of your database for which to get log streams.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of your database for which to get log streams.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_name
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseLogStreamsInput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput {
-                relational_database_name: self.relational_database_name,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+            }
         )
     }
 }
+

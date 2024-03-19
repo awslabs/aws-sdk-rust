@@ -3,7 +3,7 @@
 /// <p>The summary of the fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetSummary {
+pub struct FleetSummary  {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the fleet was created.</p>
@@ -19,39 +19,39 @@ pub struct FleetSummary {
     /// <p>The status of the fleet.</p>
     pub fleet_status: ::std::option::Option<crate::types::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl FleetSummary {
+impl  FleetSummary  {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The time when the fleet was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time when the fleet was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The name of the fleet to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
-    pub fn company_code(&self) -> ::std::option::Option<&str> {
+    pub fn company_code(&self) -> ::std::option::Option<& str> {
         self.company_code.as_deref()
     }
     /// <p>The status of the fleet.</p>
-    pub fn fleet_status(&self) -> ::std::option::Option<&crate::types::FleetStatus> {
+    pub fn fleet_status(&self) -> ::std::option::Option<& crate::types::FleetStatus> {
         self.fleet_status.as_ref()
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -73,7 +73,7 @@ pub struct FleetSummaryBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) company_code: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_status: ::std::option::Option<crate::types::FleetStatus>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl FleetSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -83,8 +83,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The time when the fleet was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time when the fleet was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +109,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The time when the fleet was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time when the fleet was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +122,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
     }
     /// <p>The name of the fleet.</p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The name of the fleet to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the fleet to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +148,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
     pub fn set_company_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.company_code = input;
-        self
+        self.company_code = input; self
     }
     /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
     pub fn get_company_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The status of the fleet.</p>
     pub fn set_fleet_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
-        self.fleet_status = input;
-        self
+        self.fleet_status = input; self
     }
     /// <p>The status of the fleet.</p>
     pub fn get_fleet_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
@@ -181,30 +174,38 @@ impl FleetSummaryBuilder {
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`FleetSummary`](crate::types::FleetSummary).
     pub fn build(self) -> crate::types::FleetSummary {
         crate::types::FleetSummary {
-            fleet_arn: self.fleet_arn,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            fleet_name: self.fleet_name,
-            display_name: self.display_name,
-            company_code: self.company_code,
-            fleet_status: self.fleet_status,
-            tags: self.tags,
+            fleet_arn: self.fleet_arn
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            fleet_name: self.fleet_name
+            ,
+            display_name: self.display_name
+            ,
+            company_code: self.company_code
+            ,
+            fleet_status: self.fleet_status
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

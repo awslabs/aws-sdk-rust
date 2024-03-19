@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResponseHeadersPolicyOutput {
+pub struct UpdateResponseHeadersPolicyOutput  {
     /// <p>A response headers policy.</p>
     pub response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
     /// <p>The current version of the response headers policy.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateResponseHeadersPolicyOutput {
+impl  UpdateResponseHeadersPolicyOutput  {
     /// <p>A response headers policy.</p>
-    pub fn response_headers_policy(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
+    pub fn response_headers_policy(&self) -> ::std::option::Option<& crate::types::ResponseHeadersPolicy> {
         self.response_headers_policy.as_ref()
     }
     /// <p>The current version of the response headers policy.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateResponseHeadersPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateResponseHeadersPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResponseHeadersPolicyOutput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput).
     pub fn builder() -> crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl UpdateResponseHeadersPolicyOutputBuilder {
     }
     /// <p>A response headers policy.</p>
     pub fn set_response_headers_policy(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicy>) -> Self {
-        self.response_headers_policy = input;
-        self
+        self.response_headers_policy = input; self
     }
     /// <p>A response headers policy.</p>
     pub fn get_response_headers_policy(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
@@ -61,28 +60,30 @@ impl UpdateResponseHeadersPolicyOutputBuilder {
     }
     /// <p>The current version of the response headers policy.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current version of the response headers policy.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateResponseHeadersPolicyOutput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput).
     pub fn build(self) -> crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput {
         crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput {
-            response_headers_policy: self.response_headers_policy,
-            e_tag: self.e_tag,
+            response_headers_policy: self.response_headers_policy
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

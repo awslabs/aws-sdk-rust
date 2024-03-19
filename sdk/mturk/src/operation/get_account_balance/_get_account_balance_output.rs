@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccountBalanceOutput {
+pub struct GetAccountBalanceOutput  {
     /// <p>A string representing a currency amount.</p>
     pub available_balance: ::std::option::Option<::std::string::String>,
     /// <p>A string representing a currency amount.</p>
     pub on_hold_balance: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetAccountBalanceOutput {
+impl  GetAccountBalanceOutput  {
     /// <p>A string representing a currency amount.</p>
-    pub fn available_balance(&self) -> ::std::option::Option<&str> {
+    pub fn available_balance(&self) -> ::std::option::Option<& str> {
         self.available_balance.as_deref()
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn on_hold_balance(&self) -> ::std::option::Option<&str> {
+    pub fn on_hold_balance(&self) -> ::std::option::Option<& str> {
         self.on_hold_balance.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAccountBalanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAccountBalanceOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountBalanceOutput`](crate::operation::get_account_balance::GetAccountBalanceOutput).
     pub fn builder() -> crate::operation::get_account_balance::builders::GetAccountBalanceOutputBuilder {
@@ -47,8 +47,7 @@ impl GetAccountBalanceOutputBuilder {
     }
     /// <p>A string representing a currency amount.</p>
     pub fn set_available_balance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.available_balance = input;
-        self
+        self.available_balance = input; self
     }
     /// <p>A string representing a currency amount.</p>
     pub fn get_available_balance(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetAccountBalanceOutputBuilder {
     }
     /// <p>A string representing a currency amount.</p>
     pub fn set_on_hold_balance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.on_hold_balance = input;
-        self
+        self.on_hold_balance = input; self
     }
     /// <p>A string representing a currency amount.</p>
     pub fn get_on_hold_balance(&self) -> &::std::option::Option<::std::string::String> {
         &self.on_hold_balance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAccountBalanceOutput`](crate::operation::get_account_balance::GetAccountBalanceOutput).
     pub fn build(self) -> crate::operation::get_account_balance::GetAccountBalanceOutput {
         crate::operation::get_account_balance::GetAccountBalanceOutput {
-            available_balance: self.available_balance,
-            on_hold_balance: self.on_hold_balance,
+            available_balance: self.available_balance
+            ,
+            on_hold_balance: self.on_hold_balance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

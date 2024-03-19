@@ -3,13 +3,13 @@
 /// <p>A processor's metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessorConfiguration {
+pub struct ProcessorConfiguration  {
     /// <p>Indicates that the processor is of type Lambda.</p>
     pub lambda: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
-impl ProcessorConfiguration {
+impl  ProcessorConfiguration  {
     /// <p>Indicates that the processor is of type Lambda.</p>
-    pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaConfiguration> {
+    pub fn lambda(&self) -> ::std::option::Option<& crate::types::LambdaConfiguration> {
         self.lambda.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl ProcessorConfigurationBuilder {
     }
     /// <p>Indicates that the processor is of type Lambda.</p>
     pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaConfiguration>) -> Self {
-        self.lambda = input;
-        self
+        self.lambda = input; self
     }
     /// <p>Indicates that the processor is of type Lambda.</p>
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaConfiguration> {
@@ -44,6 +43,10 @@ impl ProcessorConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ProcessorConfiguration`](crate::types::ProcessorConfiguration).
     pub fn build(self) -> crate::types::ProcessorConfiguration {
-        crate::types::ProcessorConfiguration { lambda: self.lambda }
+        crate::types::ProcessorConfiguration {
+            lambda: self.lambda
+            ,
+        }
     }
 }
+

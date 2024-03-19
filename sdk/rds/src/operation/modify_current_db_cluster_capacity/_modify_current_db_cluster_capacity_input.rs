@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyCurrentDbClusterCapacityInput {
+pub struct ModifyCurrentDbClusterCapacityInput  {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -28,14 +28,14 @@ pub struct ModifyCurrentDbClusterCapacityInput {
     /// <p><code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub timeout_action: ::std::option::Option<::std::string::String>,
 }
-impl ModifyCurrentDbClusterCapacityInput {
+impl  ModifyCurrentDbClusterCapacityInput  {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The DB cluster capacity.</p>
@@ -58,7 +58,7 @@ impl ModifyCurrentDbClusterCapacityInput {
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p><code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p><code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn timeout_action(&self) -> ::std::option::Option<&str> {
+    pub fn timeout_action(&self) -> ::std::option::Option<& str> {
         self.timeout_action.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -132,8 +131,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
     /// </ul>
     pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The DB cluster capacity.</p>
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
@@ -156,8 +154,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
     /// <p>Specify a value between 10 and 600 seconds.</p>
     pub fn set_seconds_before_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.seconds_before_timeout = input;
-        self
+        self.seconds_before_timeout = input; self
     }
     /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
     /// <p>Specify a value between 10 and 600 seconds.</p>
@@ -175,8 +172,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
     /// <p><code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p><code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
     pub fn set_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timeout_action = input;
-        self
+        self.timeout_action = input; self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p><code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
@@ -185,19 +181,19 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
         &self.timeout_action
     }
     /// Consumes the builder and constructs a [`ModifyCurrentDbClusterCapacityInput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                capacity: self.capacity,
-                seconds_before_timeout: self.seconds_before_timeout,
-                timeout_action: self.timeout_action,
-            },
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                capacity: self.capacity
+                ,
+                seconds_before_timeout: self.seconds_before_timeout
+                ,
+                timeout_action: self.timeout_action
+                ,
+            }
         )
     }
 }
+

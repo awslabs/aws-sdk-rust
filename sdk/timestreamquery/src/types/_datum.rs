@@ -3,37 +3,39 @@
 /// <p>Datum represents a single data point in a query result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Datum {
+pub struct Datum  {
     /// <p>Indicates if the data point is a scalar value such as integer, string, double, or Boolean.</p>
     pub scalar_value: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the data point is a timeseries data type.</p>
-    pub time_series_value: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,
+    pub time_series_value: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesDataPoint>>,
     /// <p>Indicates if the data point is an array.</p>
-    pub array_value: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
+    pub array_value: ::std::option::Option<::std::vec::Vec::<crate::types::Datum>>,
     /// <p>Indicates if the data point is a row.</p>
     pub row_value: ::std::option::Option<crate::types::Row>,
     /// <p>Indicates if the data point is null.</p>
     pub null_value: ::std::option::Option<bool>,
 }
-impl Datum {
+impl  Datum  {
     /// <p>Indicates if the data point is a scalar value such as integer, string, double, or Boolean.</p>
-    pub fn scalar_value(&self) -> ::std::option::Option<&str> {
+    pub fn scalar_value(&self) -> ::std::option::Option<& str> {
         self.scalar_value.as_deref()
     }
     /// <p>Indicates if the data point is a timeseries data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_series_value.is_none()`.
-    pub fn time_series_value(&self) -> &[crate::types::TimeSeriesDataPoint] {
-        self.time_series_value.as_deref().unwrap_or_default()
+    pub fn time_series_value(&self) -> & [crate::types::TimeSeriesDataPoint] {
+        self.time_series_value.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates if the data point is an array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.array_value.is_none()`.
-    pub fn array_value(&self) -> &[crate::types::Datum] {
-        self.array_value.as_deref().unwrap_or_default()
+    pub fn array_value(&self) -> & [crate::types::Datum] {
+        self.array_value.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates if the data point is a row.</p>
-    pub fn row_value(&self) -> ::std::option::Option<&crate::types::Row> {
+    pub fn row_value(&self) -> ::std::option::Option<& crate::types::Row> {
         self.row_value.as_ref()
     }
     /// <p>Indicates if the data point is null.</p>
@@ -53,8 +55,8 @@ impl Datum {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatumBuilder {
     pub(crate) scalar_value: ::std::option::Option<::std::string::String>,
-    pub(crate) time_series_value: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,
-    pub(crate) array_value: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
+    pub(crate) time_series_value: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesDataPoint>>,
+    pub(crate) array_value: ::std::option::Option<::std::vec::Vec::<crate::types::Datum>>,
     pub(crate) row_value: ::std::option::Option<crate::types::Row>,
     pub(crate) null_value: ::std::option::Option<bool>,
 }
@@ -66,8 +68,7 @@ impl DatumBuilder {
     }
     /// <p>Indicates if the data point is a scalar value such as integer, string, double, or Boolean.</p>
     pub fn set_scalar_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scalar_value = input;
-        self
+        self.scalar_value = input; self
     }
     /// <p>Indicates if the data point is a scalar value such as integer, string, double, or Boolean.</p>
     pub fn get_scalar_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl DatumBuilder {
     /// <p>Indicates if the data point is a timeseries data type.</p>
     pub fn time_series_value(mut self, input: crate::types::TimeSeriesDataPoint) -> Self {
         let mut v = self.time_series_value.unwrap_or_default();
-        v.push(input);
-        self.time_series_value = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.time_series_value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates if the data point is a timeseries data type.</p>
-    pub fn set_time_series_value(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>) -> Self {
-        self.time_series_value = input;
-        self
+    pub fn set_time_series_value(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesDataPoint>>) -> Self {
+        self.time_series_value = input; self
     }
     /// <p>Indicates if the data point is a timeseries data type.</p>
-    pub fn get_time_series_value(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>> {
+    pub fn get_time_series_value(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TimeSeriesDataPoint>> {
         &self.time_series_value
     }
     /// Appends an item to `array_value`.
@@ -100,17 +100,16 @@ impl DatumBuilder {
     /// <p>Indicates if the data point is an array.</p>
     pub fn array_value(mut self, input: crate::types::Datum) -> Self {
         let mut v = self.array_value.unwrap_or_default();
-        v.push(input);
-        self.array_value = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.array_value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates if the data point is an array.</p>
-    pub fn set_array_value(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>) -> Self {
-        self.array_value = input;
-        self
+    pub fn set_array_value(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Datum>>) -> Self {
+        self.array_value = input; self
     }
     /// <p>Indicates if the data point is an array.</p>
-    pub fn get_array_value(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datum>> {
+    pub fn get_array_value(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Datum>> {
         &self.array_value
     }
     /// <p>Indicates if the data point is a row.</p>
@@ -120,8 +119,7 @@ impl DatumBuilder {
     }
     /// <p>Indicates if the data point is a row.</p>
     pub fn set_row_value(mut self, input: ::std::option::Option<crate::types::Row>) -> Self {
-        self.row_value = input;
-        self
+        self.row_value = input; self
     }
     /// <p>Indicates if the data point is a row.</p>
     pub fn get_row_value(&self) -> &::std::option::Option<crate::types::Row> {
@@ -134,8 +132,7 @@ impl DatumBuilder {
     }
     /// <p>Indicates if the data point is null.</p>
     pub fn set_null_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.null_value = input;
-        self
+        self.null_value = input; self
     }
     /// <p>Indicates if the data point is null.</p>
     pub fn get_null_value(&self) -> &::std::option::Option<bool> {
@@ -144,11 +141,17 @@ impl DatumBuilder {
     /// Consumes the builder and constructs a [`Datum`](crate::types::Datum).
     pub fn build(self) -> crate::types::Datum {
         crate::types::Datum {
-            scalar_value: self.scalar_value,
-            time_series_value: self.time_series_value,
-            array_value: self.array_value,
-            row_value: self.row_value,
-            null_value: self.null_value,
+            scalar_value: self.scalar_value
+            ,
+            time_series_value: self.time_series_value
+            ,
+            array_value: self.array_value
+            ,
+            row_value: self.row_value
+            ,
+            null_value: self.null_value
+            ,
         }
     }
 }
+

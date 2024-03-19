@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTextTranslationJobOutput {
+pub struct StartTextTranslationJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job. Possible values include:</p>
@@ -25,9 +25,9 @@ pub struct StartTextTranslationJobOutput {
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }
-impl StartTextTranslationJobOutput {
+impl  StartTextTranslationJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the job. Possible values include:</p>
@@ -47,15 +47,15 @@ impl StartTextTranslationJobOutput {
     /// <li>
     /// <p><code>STOPPED</code> - The job has been stopped.</p></li>
     /// </ul>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartTextTranslationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartTextTranslationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTextTranslationJobOutput`](crate::operation::start_text_translation_job::StartTextTranslationJobOutput).
     pub fn builder() -> crate::operation::start_text_translation_job::builders::StartTextTranslationJobOutputBuilder {
@@ -79,8 +79,7 @@ impl StartTextTranslationJobOutputBuilder {
     }
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl StartTextTranslationJobOutputBuilder {
     /// <p><code>STOPPED</code> - The job has been stopped.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the job. Possible values include:</p>
     /// <ul>
@@ -149,20 +147,23 @@ impl StartTextTranslationJobOutputBuilder {
         &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartTextTranslationJobOutput`](crate::operation::start_text_translation_job::StartTextTranslationJobOutput).
     pub fn build(self) -> crate::operation::start_text_translation_job::StartTextTranslationJobOutput {
         crate::operation::start_text_translation_job::StartTextTranslationJobOutput {
-            job_id: self.job_id,
-            job_status: self.job_status,
+            job_id: self.job_id
+            ,
+            job_status: self.job_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

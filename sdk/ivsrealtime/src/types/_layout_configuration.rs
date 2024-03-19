@@ -3,19 +3,19 @@
 /// <p>Configuration information of supported layouts for server-side composition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LayoutConfiguration {
+pub struct LayoutConfiguration  {
     /// <p>Configuration related to grid layout. Default: Grid layout.</p>
     pub grid: ::std::option::Option<crate::types::GridConfiguration>,
     /// <p>Configuration related to PiP layout.</p>
     pub pip: ::std::option::Option<crate::types::PipConfiguration>,
 }
-impl LayoutConfiguration {
+impl  LayoutConfiguration  {
     /// <p>Configuration related to grid layout. Default: Grid layout.</p>
-    pub fn grid(&self) -> ::std::option::Option<&crate::types::GridConfiguration> {
+    pub fn grid(&self) -> ::std::option::Option<& crate::types::GridConfiguration> {
         self.grid.as_ref()
     }
     /// <p>Configuration related to PiP layout.</p>
-    pub fn pip(&self) -> ::std::option::Option<&crate::types::PipConfiguration> {
+    pub fn pip(&self) -> ::std::option::Option<& crate::types::PipConfiguration> {
         self.pip.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LayoutConfigurationBuilder {
     }
     /// <p>Configuration related to grid layout. Default: Grid layout.</p>
     pub fn set_grid(mut self, input: ::std::option::Option<crate::types::GridConfiguration>) -> Self {
-        self.grid = input;
-        self
+        self.grid = input; self
     }
     /// <p>Configuration related to grid layout. Default: Grid layout.</p>
     pub fn get_grid(&self) -> &::std::option::Option<crate::types::GridConfiguration> {
@@ -55,8 +54,7 @@ impl LayoutConfigurationBuilder {
     }
     /// <p>Configuration related to PiP layout.</p>
     pub fn set_pip(mut self, input: ::std::option::Option<crate::types::PipConfiguration>) -> Self {
-        self.pip = input;
-        self
+        self.pip = input; self
     }
     /// <p>Configuration related to PiP layout.</p>
     pub fn get_pip(&self) -> &::std::option::Option<crate::types::PipConfiguration> {
@@ -65,8 +63,11 @@ impl LayoutConfigurationBuilder {
     /// Consumes the builder and constructs a [`LayoutConfiguration`](crate::types::LayoutConfiguration).
     pub fn build(self) -> crate::types::LayoutConfiguration {
         crate::types::LayoutConfiguration {
-            grid: self.grid,
-            pip: self.pip,
+            grid: self.grid
+            ,
+            pip: self.pip
+            ,
         }
     }
 }
+

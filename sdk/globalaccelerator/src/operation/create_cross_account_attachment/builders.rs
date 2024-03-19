@@ -5,55 +5,51 @@ pub use crate::operation::create_cross_account_attachment::_create_cross_account
 
 impl CreateCrossAccountAttachmentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_cross_account_attachment();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_cross_account_attachment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCrossAccountAttachment`.
-///
+/// 
 /// <p>Create a cross-account attachment in Global Accelerator. You create a cross-account attachment to specify the <i>principals</i> who have permission to add to accelerators in their own account the resources in your account that you also list in the attachment.</p>
 /// <p>A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator. For account numbers that are listed as principals, to add a resource listed in the attachment to an accelerator, you must sign in to an account specified as a principal. Then you can add the resources that are listed to any of your accelerators. If an accelerator ARN is listed in the cross-account attachment as a principal, anyone with permission to make updates to the accelerator can add as endpoints resources that are listed in the attachment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCrossAccountAttachmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_cross_account_attachment::builders::CreateCrossAccountAttachmentInputBuilder,
+                    inner: crate::operation::create_cross_account_attachment::builders::CreateCrossAccountAttachmentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput,
-        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
-    > for CreateCrossAccountAttachmentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput,
-            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput,
+                    crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
+                > for CreateCrossAccountAttachmentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput,
+                        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCrossAccountAttachmentFluentBuilder {
     /// Creates a new `CreateCrossAccountAttachment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl CreateCrossAccountAttachmentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_cross_account_attachment::CreateCrossAccountAttachment::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachment::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput,
-        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_cross_account_attachment::CreateCrossAccountAttachment::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_cross_account_attachment::CreateCrossAccountAttachment::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentOutput, crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the cross-account attachment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -133,12 +120,12 @@ impl CreateCrossAccountAttachmentFluentBuilder {
         self
     }
     /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.</p>
-    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }
     /// <p>The principals to list in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.</p>
-    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_principals()
     }
     /// Appends an item to `Resources`.
@@ -151,12 +138,12 @@ impl CreateCrossAccountAttachmentFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         self.inner.get_resources()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
@@ -185,13 +172,14 @@ impl CreateCrossAccountAttachmentFluentBuilder {
     }
     /// <p>Create tags for cross-account attachment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Create tags for cross-account attachment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

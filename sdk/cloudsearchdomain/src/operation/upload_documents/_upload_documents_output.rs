@@ -3,7 +3,7 @@
 /// <p>Contains the response to an <code>UploadDocuments</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UploadDocumentsOutput {
+pub struct UploadDocumentsOutput  {
     /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents that were added to the search domain.</p>
@@ -11,12 +11,12 @@ pub struct UploadDocumentsOutput {
     /// <p>The number of documents that were deleted from the search domain.</p>
     pub deletes: i64,
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-    pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentServiceWarning>>,
     _request_id: Option<String>,
 }
-impl UploadDocumentsOutput {
+impl  UploadDocumentsOutput  {
     /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The number of documents that were added to the search domain.</p>
@@ -28,17 +28,18 @@ impl UploadDocumentsOutput {
         self.deletes
     }
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
-    pub fn warnings(&self) -> &[crate::types::DocumentServiceWarning] {
-        self.warnings.as_deref().unwrap_or_default()
+    pub fn warnings(&self) -> & [crate::types::DocumentServiceWarning] {
+        self.warnings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UploadDocumentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UploadDocumentsOutput {
     /// Creates a new builder-style object to manufacture [`UploadDocumentsOutput`](crate::operation::upload_documents::UploadDocumentsOutput).
     pub fn builder() -> crate::operation::upload_documents::builders::UploadDocumentsOutputBuilder {
@@ -53,7 +54,7 @@ pub struct UploadDocumentsOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) adds: ::std::option::Option<i64>,
     pub(crate) deletes: ::std::option::Option<i64>,
-    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentServiceWarning>>,
     _request_id: Option<String>,
 }
 impl UploadDocumentsOutputBuilder {
@@ -64,8 +65,7 @@ impl UploadDocumentsOutputBuilder {
     }
     /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl UploadDocumentsOutputBuilder {
     }
     /// <p>The number of documents that were added to the search domain.</p>
     pub fn set_adds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.adds = input;
-        self
+        self.adds = input; self
     }
     /// <p>The number of documents that were added to the search domain.</p>
     pub fn get_adds(&self) -> &::std::option::Option<i64> {
@@ -92,8 +91,7 @@ impl UploadDocumentsOutputBuilder {
     }
     /// <p>The number of documents that were deleted from the search domain.</p>
     pub fn set_deletes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.deletes = input;
-        self
+        self.deletes = input; self
     }
     /// <p>The number of documents that were deleted from the search domain.</p>
     pub fn get_deletes(&self) -> &::std::option::Option<i64> {
@@ -106,36 +104,42 @@ impl UploadDocumentsOutputBuilder {
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
     pub fn warnings(mut self, input: crate::types::DocumentServiceWarning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input);
-        self.warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>>) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentServiceWarning>>) -> Self {
+        self.warnings = input; self
     }
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentServiceWarning>> {
         &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UploadDocumentsOutput`](crate::operation::upload_documents::UploadDocumentsOutput).
     pub fn build(self) -> crate::operation::upload_documents::UploadDocumentsOutput {
         crate::operation::upload_documents::UploadDocumentsOutput {
-            status: self.status,
-            adds: self.adds.unwrap_or_default(),
-            deletes: self.deletes.unwrap_or_default(),
-            warnings: self.warnings,
+            status: self.status
+            ,
+            adds: self.adds
+                .unwrap_or_default()
+            ,
+            deletes: self.deletes
+                .unwrap_or_default()
+            ,
+            warnings: self.warnings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

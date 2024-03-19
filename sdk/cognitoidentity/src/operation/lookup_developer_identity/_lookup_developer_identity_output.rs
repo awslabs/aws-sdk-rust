@@ -3,36 +3,37 @@
 /// <p>Returned in response to a successful <code>LookupDeveloperIdentity</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LookupDeveloperIdentityOutput {
+pub struct LookupDeveloperIdentityOutput  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>
-    pub developer_user_identifier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub developer_user_identifier_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl LookupDeveloperIdentityOutput {
+impl  LookupDeveloperIdentityOutput  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.developer_user_identifier_list.is_none()`.
-    pub fn developer_user_identifier_list(&self) -> &[::std::string::String] {
-        self.developer_user_identifier_list.as_deref().unwrap_or_default()
+    pub fn developer_user_identifier_list(&self) -> & [::std::string::String] {
+        self.developer_user_identifier_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for LookupDeveloperIdentityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl LookupDeveloperIdentityOutput {
     /// Creates a new builder-style object to manufacture [`LookupDeveloperIdentityOutput`](crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput).
     pub fn builder() -> crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityOutputBuilder {
@@ -45,7 +46,7 @@ impl LookupDeveloperIdentityOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookupDeveloperIdentityOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
-    pub(crate) developer_user_identifier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) developer_user_identifier_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,8 +58,7 @@ impl LookupDeveloperIdentityOutputBuilder {
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl LookupDeveloperIdentityOutputBuilder {
     /// <p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>
     pub fn developer_user_identifier_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.developer_user_identifier_list.unwrap_or_default();
-        v.push(input.into());
-        self.developer_user_identifier_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.developer_user_identifier_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>
-    pub fn set_developer_user_identifier_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.developer_user_identifier_list = input;
-        self
+    pub fn set_developer_user_identifier_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.developer_user_identifier_list = input; self
     }
     /// <p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>
-    pub fn get_developer_user_identifier_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_developer_user_identifier_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.developer_user_identifier_list
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
@@ -91,29 +90,32 @@ impl LookupDeveloperIdentityOutputBuilder {
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`LookupDeveloperIdentityOutput`](crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput).
     pub fn build(self) -> crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput {
         crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput {
-            identity_id: self.identity_id,
-            developer_user_identifier_list: self.developer_user_identifier_list,
-            next_token: self.next_token,
+            identity_id: self.identity_id
+            ,
+            developer_user_identifier_list: self.developer_user_identifier_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

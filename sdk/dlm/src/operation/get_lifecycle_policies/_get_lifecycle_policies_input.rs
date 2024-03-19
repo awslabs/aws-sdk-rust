@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLifecyclePoliciesInput {
+pub struct GetLifecyclePoliciesInput  {
     /// <p>The identifiers of the data lifecycle policies.</p>
-    pub policy_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The activation state.</p>
     pub state: ::std::option::Option<crate::types::GettablePolicyStateValues>,
     /// <p>The resource type.</p>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTypeValues>>,
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    pub target_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub tags_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tags_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
     /// <li>
@@ -27,37 +27,41 @@ pub struct GetLifecyclePoliciesInput {
     /// </ul>
     pub default_policy_type: ::std::option::Option<crate::types::DefaultPoliciesTypeValues>,
 }
-impl GetLifecyclePoliciesInput {
+impl  GetLifecyclePoliciesInput  {
     /// <p>The identifiers of the data lifecycle policies.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_ids.is_none()`.
-    pub fn policy_ids(&self) -> &[::std::string::String] {
-        self.policy_ids.as_deref().unwrap_or_default()
+    pub fn policy_ids(&self) -> & [::std::string::String] {
+        self.policy_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The activation state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::GettablePolicyStateValues> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::GettablePolicyStateValues> {
         self.state.as_ref()
     }
     /// <p>The resource type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[crate::types::ResourceTypeValues] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [crate::types::ResourceTypeValues] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_tags.is_none()`.
-    pub fn target_tags(&self) -> &[::std::string::String] {
-        self.target_tags.as_deref().unwrap_or_default()
+    pub fn target_tags(&self) -> & [::std::string::String] {
+        self.target_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_to_add.is_none()`.
-    pub fn tags_to_add(&self) -> &[::std::string::String] {
-        self.tags_to_add.as_deref().unwrap_or_default()
+    pub fn tags_to_add(&self) -> & [::std::string::String] {
+        self.tags_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
@@ -68,7 +72,7 @@ impl GetLifecyclePoliciesInput {
     /// <li>
     /// <p><code>ALL</code> - To get all default policies</p></li>
     /// </ul>
-    pub fn default_policy_type(&self) -> ::std::option::Option<&crate::types::DefaultPoliciesTypeValues> {
+    pub fn default_policy_type(&self) -> ::std::option::Option<& crate::types::DefaultPoliciesTypeValues> {
         self.default_policy_type.as_ref()
     }
 }
@@ -83,11 +87,11 @@ impl GetLifecyclePoliciesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLifecyclePoliciesInputBuilder {
-    pub(crate) policy_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) policy_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::GettablePolicyStateValues>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
-    pub(crate) target_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTypeValues>>,
+    pub(crate) target_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) default_policy_type: ::std::option::Option<crate::types::DefaultPoliciesTypeValues>,
 }
 impl GetLifecyclePoliciesInputBuilder {
@@ -98,17 +102,16 @@ impl GetLifecyclePoliciesInputBuilder {
     /// <p>The identifiers of the data lifecycle policies.</p>
     pub fn policy_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_ids.unwrap_or_default();
-        v.push(input.into());
-        self.policy_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the data lifecycle policies.</p>
-    pub fn set_policy_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_ids = input;
-        self
+    pub fn set_policy_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_ids = input; self
     }
     /// <p>The identifiers of the data lifecycle policies.</p>
-    pub fn get_policy_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_ids
     }
     /// <p>The activation state.</p>
@@ -118,8 +121,7 @@ impl GetLifecyclePoliciesInputBuilder {
     }
     /// <p>The activation state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::GettablePolicyStateValues>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The activation state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::GettablePolicyStateValues> {
@@ -132,17 +134,16 @@ impl GetLifecyclePoliciesInputBuilder {
     /// <p>The resource type.</p>
     pub fn resource_types(mut self, input: crate::types::ResourceTypeValues) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input);
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTypeValues>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The resource type.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTypeValues>> {
         &self.resource_types
     }
     /// Appends an item to `target_tags`.
@@ -153,19 +154,18 @@ impl GetLifecyclePoliciesInputBuilder {
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     pub fn target_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_tags.unwrap_or_default();
-        v.push(input.into());
-        self.target_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    pub fn set_target_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_tags = input;
-        self
+    pub fn set_target_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_tags = input; self
     }
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    pub fn get_target_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_tags
     }
     /// Appends an item to `tags_to_add`.
@@ -177,21 +177,20 @@ impl GetLifecyclePoliciesInputBuilder {
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub fn tags_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tags_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.tags_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tags_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn set_tags_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tags_to_add = input;
-        self
+    pub fn set_tags_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tags_to_add = input; self
     }
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tags_to_add
     }
     /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
@@ -217,8 +216,7 @@ impl GetLifecyclePoliciesInputBuilder {
     /// <p><code>ALL</code> - To get all default policies</p></li>
     /// </ul>
     pub fn set_default_policy_type(mut self, input: ::std::option::Option<crate::types::DefaultPoliciesTypeValues>) -> Self {
-        self.default_policy_type = input;
-        self
+        self.default_policy_type = input; self
     }
     /// <p><b>[Default policies only]</b> Specifies the type of default policy to get. Specify one of the following:</p>
     /// <ul>
@@ -233,17 +231,23 @@ impl GetLifecyclePoliciesInputBuilder {
         &self.default_policy_type
     }
     /// Consumes the builder and constructs a [`GetLifecyclePoliciesInput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput {
-            policy_ids: self.policy_ids,
-            state: self.state,
-            resource_types: self.resource_types,
-            target_tags: self.target_tags,
-            tags_to_add: self.tags_to_add,
-            default_policy_type: self.default_policy_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput {
+                policy_ids: self.policy_ids
+                ,
+                state: self.state
+                ,
+                resource_types: self.resource_types
+                ,
+                target_tags: self.target_tags
+                ,
+                tags_to_add: self.tags_to_add
+                ,
+                default_policy_type: self.default_policy_type
+                ,
+            }
+        )
     }
 }
+

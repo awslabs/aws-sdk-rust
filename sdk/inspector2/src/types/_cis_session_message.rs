@@ -3,7 +3,7 @@
 /// <p>The CIS session message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisSessionMessage {
+pub struct CisSessionMessage  {
     /// <p>The rule ID for the CIS session message.</p>
     pub rule_id: ::std::string::String,
     /// <p>The status of the CIS session message.</p>
@@ -11,18 +11,17 @@ pub struct CisSessionMessage {
     /// <p>The CIS rule details for the CIS session message.</p>
     pub cis_rule_details: ::aws_smithy_types::Blob,
 }
-impl CisSessionMessage {
+impl  CisSessionMessage  {
     /// <p>The rule ID for the CIS session message.</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
     /// <p>The status of the CIS session message.</p>
-    pub fn status(&self) -> &crate::types::CisRuleStatus {
+    pub fn status(&self) -> & crate::types::CisRuleStatus {
         &self.status
     }
     /// <p>The CIS rule details for the CIS session message.</p>
-    pub fn cis_rule_details(&self) -> &::aws_smithy_types::Blob {
+    pub fn cis_rule_details(&self) -> & ::aws_smithy_types::Blob {
         &self.cis_rule_details
     }
 }
@@ -50,8 +49,7 @@ impl CisSessionMessageBuilder {
     }
     /// <p>The rule ID for the CIS session message.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The rule ID for the CIS session message.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl CisSessionMessageBuilder {
     }
     /// <p>The status of the CIS session message.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CisRuleStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the CIS session message.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CisRuleStatus> {
@@ -80,8 +77,7 @@ impl CisSessionMessageBuilder {
     }
     /// <p>The CIS rule details for the CIS session message.</p>
     pub fn set_cis_rule_details(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.cis_rule_details = input;
-        self
+        self.cis_rule_details = input; self
     }
     /// <p>The CIS rule details for the CIS session message.</p>
     pub fn get_cis_rule_details(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -93,25 +89,25 @@ impl CisSessionMessageBuilder {
     /// - [`status`](crate::types::builders::CisSessionMessageBuilder::status)
     /// - [`cis_rule_details`](crate::types::builders::CisSessionMessageBuilder::cis_rule_details)
     pub fn build(self) -> ::std::result::Result<crate::types::CisSessionMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisSessionMessage {
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building CisSessionMessage",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building CisSessionMessage",
-                )
-            })?,
-            cis_rule_details: self.cis_rule_details.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cis_rule_details",
-                    "cis_rule_details was not specified but it is required when building CisSessionMessage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisSessionMessage {
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building CisSessionMessage")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building CisSessionMessage")
+                    )?
+                ,
+                cis_rule_details: self.cis_rule_details
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cis_rule_details", "cis_rule_details was not specified but it is required when building CisSessionMessage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

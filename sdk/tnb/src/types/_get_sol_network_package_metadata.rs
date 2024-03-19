@@ -4,7 +4,7 @@
 /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolNetworkPackageMetadata {
+pub struct GetSolNetworkPackageMetadata  {
     /// <p>Metadata related to the onboarded network service descriptor in the network package.</p>
     pub nsd: ::std::option::Option<crate::types::NetworkArtifactMeta>,
     /// <p>The date that the resource was created.</p>
@@ -12,17 +12,17 @@ pub struct GetSolNetworkPackageMetadata {
     /// <p>The date that the resource was last modified.</p>
     pub last_modified: ::aws_smithy_types::DateTime,
 }
-impl GetSolNetworkPackageMetadata {
+impl  GetSolNetworkPackageMetadata  {
     /// <p>Metadata related to the onboarded network service descriptor in the network package.</p>
-    pub fn nsd(&self) -> ::std::option::Option<&crate::types::NetworkArtifactMeta> {
+    pub fn nsd(&self) -> ::std::option::Option<& crate::types::NetworkArtifactMeta> {
         self.nsd.as_ref()
     }
     /// <p>The date that the resource was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date that the resource was last modified.</p>
-    pub fn last_modified(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified
     }
 }
@@ -49,8 +49,7 @@ impl GetSolNetworkPackageMetadataBuilder {
     }
     /// <p>Metadata related to the onboarded network service descriptor in the network package.</p>
     pub fn set_nsd(mut self, input: ::std::option::Option<crate::types::NetworkArtifactMeta>) -> Self {
-        self.nsd = input;
-        self
+        self.nsd = input; self
     }
     /// <p>Metadata related to the onboarded network service descriptor in the network package.</p>
     pub fn get_nsd(&self) -> &::std::option::Option<crate::types::NetworkArtifactMeta> {
@@ -64,8 +63,7 @@ impl GetSolNetworkPackageMetadataBuilder {
     }
     /// <p>The date that the resource was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date that the resource was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -79,8 +77,7 @@ impl GetSolNetworkPackageMetadataBuilder {
     }
     /// <p>The date that the resource was last modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The date that the resource was last modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -91,20 +88,22 @@ impl GetSolNetworkPackageMetadataBuilder {
     /// - [`created_at`](crate::types::builders::GetSolNetworkPackageMetadataBuilder::created_at)
     /// - [`last_modified`](crate::types::builders::GetSolNetworkPackageMetadataBuilder::last_modified)
     pub fn build(self) -> ::std::result::Result<crate::types::GetSolNetworkPackageMetadata, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GetSolNetworkPackageMetadata {
-            nsd: self.nsd,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building GetSolNetworkPackageMetadata",
-                )
-            })?,
-            last_modified: self.last_modified.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified",
-                    "last_modified was not specified but it is required when building GetSolNetworkPackageMetadata",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GetSolNetworkPackageMetadata {
+                nsd: self.nsd
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building GetSolNetworkPackageMetadata")
+                    )?
+                ,
+                last_modified: self.last_modified
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified", "last_modified was not specified but it is required when building GetSolNetworkPackageMetadata")
+                    )?
+                ,
+            }
+        )
     }
 }
+

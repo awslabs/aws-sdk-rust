@@ -3,7 +3,7 @@
 /// <p>Provides information for an Amazon Q web experience.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WebExperience {
+pub struct WebExperience  {
     /// <p>The identifier of your Amazon Q web experience.</p>
     pub web_experience_id: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
@@ -15,25 +15,25 @@ pub struct WebExperience {
     /// <p>The status of your Amazon Q web experience.</p>
     pub status: ::std::option::Option<crate::types::WebExperienceStatus>,
 }
-impl WebExperience {
+impl  WebExperience  {
     /// <p>The identifier of your Amazon Q web experience.</p>
-    pub fn web_experience_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_experience_id(&self) -> ::std::option::Option<& str> {
         self.web_experience_id.as_deref()
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when your Amazon Q web experience was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The endpoint URLs for your Amazon Q web experience. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn default_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn default_endpoint(&self) -> ::std::option::Option<& str> {
         self.default_endpoint.as_deref()
     }
     /// <p>The status of your Amazon Q web experience.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WebExperienceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WebExperienceStatus> {
         self.status.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl WebExperienceBuilder {
     }
     /// <p>The identifier of your Amazon Q web experience.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_experience_id = input;
-        self
+        self.web_experience_id = input; self
     }
     /// <p>The identifier of your Amazon Q web experience.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl WebExperienceBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +88,7 @@ impl WebExperienceBuilder {
     }
     /// <p>The Unix timestamp when your Amazon Q web experience was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when your Amazon Q web experience was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl WebExperienceBuilder {
     }
     /// <p>The endpoint URLs for your Amazon Q web experience. The URLs are unique and fully hosted by Amazon Web Services.</p>
     pub fn set_default_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_endpoint = input;
-        self
+        self.default_endpoint = input; self
     }
     /// <p>The endpoint URLs for your Amazon Q web experience. The URLs are unique and fully hosted by Amazon Web Services.</p>
     pub fn get_default_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl WebExperienceBuilder {
     }
     /// <p>The status of your Amazon Q web experience.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WebExperienceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of your Amazon Q web experience.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WebExperienceStatus> {
@@ -128,11 +123,17 @@ impl WebExperienceBuilder {
     /// Consumes the builder and constructs a [`WebExperience`](crate::types::WebExperience).
     pub fn build(self) -> crate::types::WebExperience {
         crate::types::WebExperience {
-            web_experience_id: self.web_experience_id,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            default_endpoint: self.default_endpoint,
-            status: self.status,
+            web_experience_id: self.web_experience_id
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            default_endpoint: self.default_endpoint
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

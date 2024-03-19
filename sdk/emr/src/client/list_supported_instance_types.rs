@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSupportedInstanceTypes`](crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`release_label(impl Into<String>)`](crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder::release_label) / [`set_release_label(Option<String>)`](crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder::set_release_label):<br>required: **true**<br><p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder::set_marker):<br>required: **false**<br><p>The pagination token that marks the next set of results to retrieve.</p><br>
-    /// - On success, responds with [`ListSupportedInstanceTypesOutput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput) with field(s):
+                            /// - On success, responds with [`ListSupportedInstanceTypesOutput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput) with field(s):
     ///   - [`supported_instance_types(Option<Vec::<SupportedInstanceType>>)`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput::supported_instance_types): <p>The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code> supports, filtered by Amazon Web Services Region.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput::marker): <p>The pagination token that marks the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListSupportedInstanceTypesError>`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError)
-    pub fn list_supported_instance_types(
-        &self,
-    ) -> crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder {
-        crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSupportedInstanceTypesError>`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError)
+    pub fn list_supported_instance_types(&self) -> crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder {
+                                crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

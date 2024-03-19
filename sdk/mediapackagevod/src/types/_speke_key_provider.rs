@@ -3,33 +3,34 @@
 /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpekeKeyProvider {
+pub struct SpekeKeyProvider  {
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
     pub encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// The system IDs to include in key requests.
-    pub system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub system_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// The URL of the external key provider service.
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl SpekeKeyProvider {
+impl  SpekeKeyProvider  {
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    pub fn encryption_contract_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
+    pub fn encryption_contract_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionContractConfiguration> {
         self.encryption_contract_configuration.as_ref()
     }
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// The system IDs to include in key requests.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_ids.is_none()`.
-    pub fn system_ids(&self) -> &[::std::string::String] {
-        self.system_ids.as_deref().unwrap_or_default()
+    pub fn system_ids(&self) -> & [::std::string::String] {
+        self.system_ids.as_deref()
+        .unwrap_or_default()
     }
     /// The URL of the external key provider service.
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl SpekeKeyProvider {
 pub struct SpekeKeyProviderBuilder {
     pub(crate) encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) system_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl SpekeKeyProviderBuilder {
@@ -57,8 +58,7 @@ impl SpekeKeyProviderBuilder {
     }
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
     pub fn set_encryption_contract_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionContractConfiguration>) -> Self {
-        self.encryption_contract_configuration = input;
-        self
+        self.encryption_contract_configuration = input; self
     }
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
     pub fn get_encryption_contract_configuration(&self) -> &::std::option::Option<crate::types::EncryptionContractConfiguration> {
@@ -72,8 +72,7 @@ impl SpekeKeyProviderBuilder {
     }
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl SpekeKeyProviderBuilder {
     /// The system IDs to include in key requests.
     pub fn system_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.system_ids.unwrap_or_default();
-        v.push(input.into());
-        self.system_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.system_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// The system IDs to include in key requests.
-    pub fn set_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.system_ids = input;
-        self
+    pub fn set_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.system_ids = input; self
     }
     /// The system IDs to include in key requests.
-    pub fn get_system_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_system_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.system_ids
     }
     /// The URL of the external key provider service.
@@ -107,8 +105,7 @@ impl SpekeKeyProviderBuilder {
     }
     /// The URL of the external key provider service.
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// The URL of the external key provider service.
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +114,15 @@ impl SpekeKeyProviderBuilder {
     /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
     pub fn build(self) -> crate::types::SpekeKeyProvider {
         crate::types::SpekeKeyProvider {
-            encryption_contract_configuration: self.encryption_contract_configuration,
-            role_arn: self.role_arn,
-            system_ids: self.system_ids,
-            url: self.url,
+            encryption_contract_configuration: self.encryption_contract_configuration
+            ,
+            role_arn: self.role_arn
+            ,
+            system_ids: self.system_ids
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

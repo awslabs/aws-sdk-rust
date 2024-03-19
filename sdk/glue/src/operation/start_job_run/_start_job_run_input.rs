@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartJobRunInput {
+pub struct StartJobRunInput  {
     /// <p>The name of the job definition to use.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
@@ -13,7 +13,7 @@ pub struct StartJobRunInput {
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Spark jobs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
-    pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub arguments: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
@@ -59,13 +59,13 @@ pub struct StartJobRunInput {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub execution_class: ::std::option::Option<crate::types::ExecutionClass>,
 }
-impl StartJobRunInput {
+impl  StartJobRunInput  {
     /// <p>The name of the job definition to use.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
-    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_run_id(&self) -> ::std::option::Option<& str> {
         self.job_run_id.as_deref()
     }
     /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
@@ -74,7 +74,7 @@ impl StartJobRunInput {
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Spark jobs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
-    pub fn arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn arguments(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.arguments.as_ref()
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
@@ -102,11 +102,11 @@ impl StartJobRunInput {
         self.max_capacity
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
-    pub fn security_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn security_configuration(&self) -> ::std::option::Option<& str> {
         self.security_configuration.as_deref()
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
-    pub fn notification_property(&self) -> ::std::option::Option<&crate::types::NotificationProperty> {
+    pub fn notification_property(&self) -> ::std::option::Option<& crate::types::NotificationProperty> {
         self.notification_property.as_ref()
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.</p>
@@ -124,7 +124,7 @@ impl StartJobRunInput {
     /// <li>
     /// <p>For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.</p></li>
     /// </ul>
-    pub fn worker_type(&self) -> ::std::option::Option<&crate::types::WorkerType> {
+    pub fn worker_type(&self) -> ::std::option::Option<& crate::types::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
@@ -134,7 +134,7 @@ impl StartJobRunInput {
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.</p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
-    pub fn execution_class(&self) -> ::std::option::Option<&crate::types::ExecutionClass> {
+    pub fn execution_class(&self) -> ::std::option::Option<& crate::types::ExecutionClass> {
         self.execution_class.as_ref()
     }
 }
@@ -151,7 +151,7 @@ impl StartJobRunInput {
 pub struct StartJobRunInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
-    pub(crate) arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) arguments: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) allocated_capacity: ::std::option::Option<i32>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<f64>,
@@ -170,8 +170,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The name of the job definition to use.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job definition to use.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +183,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_run_id = input;
-        self
+        self.job_run_id = input; self
     }
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
     pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,9 +201,9 @@ impl StartJobRunInputBuilder {
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
     pub fn arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.arguments.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.arguments = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.arguments = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
@@ -213,9 +211,8 @@ impl StartJobRunInputBuilder {
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Spark jobs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
-    pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.arguments = input;
-        self
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.arguments = input; self
     }
     /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
@@ -223,7 +220,7 @@ impl StartJobRunInputBuilder {
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Spark jobs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     /// <p>For information about the arguments you can provide to this field when configuring Ray jobs, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray jobs</a> in the developer guide.</p>
-    pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.arguments
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
@@ -237,8 +234,7 @@ impl StartJobRunInputBuilder {
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub fn set_allocated_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_capacity = input;
-        self
+        self.allocated_capacity = input; self
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
@@ -255,8 +251,7 @@ impl StartJobRunInputBuilder {
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
     /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
     /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
@@ -288,8 +283,7 @@ impl StartJobRunInputBuilder {
     /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p></li>
     /// </ul>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
     }
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p>
     /// <p>For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
@@ -311,8 +305,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
     pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_configuration = input;
-        self
+        self.security_configuration = input; self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
     pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -325,8 +318,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub fn set_notification_property(mut self, input: ::std::option::Option<crate::types::NotificationProperty>) -> Self {
-        self.notification_property = input;
-        self
+        self.notification_property = input; self
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub fn get_notification_property(&self) -> &::std::option::Option<crate::types::NotificationProperty> {
@@ -367,8 +359,7 @@ impl StartJobRunInputBuilder {
     /// <p>For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.</p></li>
     /// </ul>
     pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
-        self.worker_type = input;
-        self
+        self.worker_type = input; self
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.</p>
     /// <ul>
@@ -395,8 +386,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_workers = input;
-        self
+        self.number_of_workers = input; self
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
@@ -413,8 +403,7 @@ impl StartJobRunInputBuilder {
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.</p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub fn set_execution_class(mut self, input: ::std::option::Option<crate::types::ExecutionClass>) -> Self {
-        self.execution_class = input;
-        self
+        self.execution_class = input; self
     }
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.</p>
@@ -424,18 +413,32 @@ impl StartJobRunInputBuilder {
     }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
-            job_name: self.job_name,
-            job_run_id: self.job_run_id,
-            arguments: self.arguments,
-            allocated_capacity: self.allocated_capacity,
-            timeout: self.timeout,
-            max_capacity: self.max_capacity,
-            security_configuration: self.security_configuration,
-            notification_property: self.notification_property,
-            worker_type: self.worker_type,
-            number_of_workers: self.number_of_workers,
-            execution_class: self.execution_class,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_job_run::StartJobRunInput {
+                job_name: self.job_name
+                ,
+                job_run_id: self.job_run_id
+                ,
+                arguments: self.arguments
+                ,
+                allocated_capacity: self.allocated_capacity
+                ,
+                timeout: self.timeout
+                ,
+                max_capacity: self.max_capacity
+                ,
+                security_configuration: self.security_configuration
+                ,
+                notification_property: self.notification_property
+                ,
+                worker_type: self.worker_type
+                ,
+                number_of_workers: self.number_of_workers
+                ,
+                execution_class: self.execution_class
+                ,
+            }
+        )
     }
 }
+

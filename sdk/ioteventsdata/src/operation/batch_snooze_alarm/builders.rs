@@ -5,54 +5,50 @@ pub use crate::operation::batch_snooze_alarm::_batch_snooze_alarm_input::BatchSn
 
 impl BatchSnoozeAlarmInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_snooze_alarm();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_snooze_alarm();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchSnoozeAlarm`.
-///
+/// 
 /// <p>Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after you set them to the snooze mode.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchSnoozeAlarmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder,
+                    inner: crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
-        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
-    > for BatchSnoozeAlarmFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
-            crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
+                    crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
+                > for BatchSnoozeAlarmFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
+                        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchSnoozeAlarmFluentBuilder {
     /// Creates a new `BatchSnoozeAlarm`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl BatchSnoozeAlarmFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_snooze_alarm::BatchSnoozeAlarm::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_snooze_alarm::BatchSnoozeAlarm::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
-        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_snooze_alarm::BatchSnoozeAlarm::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_snooze_alarm::BatchSnoozeAlarm::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput, crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `snoozeActionRequests`.
     ///
     /// To override the contents of this collection use [`set_snooze_action_requests`](Self::set_snooze_action_requests).
@@ -118,12 +105,13 @@ impl BatchSnoozeAlarmFluentBuilder {
         self
     }
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_snooze_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>) -> Self {
+    pub fn set_snooze_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnoozeAlarmActionRequest>>) -> Self {
         self.inner = self.inner.set_snooze_action_requests(input);
         self
     }
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub fn get_snooze_action_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>> {
+    pub fn get_snooze_action_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnoozeAlarmActionRequest>> {
         self.inner.get_snooze_action_requests()
     }
 }
+

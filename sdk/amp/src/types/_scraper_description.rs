@@ -3,7 +3,7 @@
 /// <p>The <code>ScraperDescription</code> structure contains the full details about one scraper in your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScraperDescription {
+pub struct ScraperDescription  {
     /// <p>(Optional) A name associated with the scraper.</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scraper.</p>
@@ -19,7 +19,7 @@ pub struct ScraperDescription {
     /// <p>The date and time that the scraper was last modified.</p>
     pub last_modified_at: ::aws_smithy_types::DateTime,
     /// <p>(Optional) The list of tag keys and values associated with the scraper.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>If there is a failure, the reason for the failure.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The configuration file in use by the scraper.</p>
@@ -29,56 +29,53 @@ pub struct ScraperDescription {
     /// <p>The Amazon Managed Service for Prometheus workspace the scraper sends metrics to.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
 }
-impl ScraperDescription {
+impl  ScraperDescription  {
     /// <p>(Optional) A name associated with the scraper.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The ID of the scraper.</p>
-    pub fn scraper_id(&self) -> &str {
-        use std::ops::Deref;
-        self.scraper_id.deref()
+    pub fn scraper_id(&self) -> & str {
+        use std::ops::Deref; self.scraper_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the scraper.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper to discover and collect metrics on your behalf.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>A structure that contains the current status of the scraper.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ScraperStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ScraperStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the scraper was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time that the scraper was last modified.</p>
-    pub fn last_modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_at
     }
     /// <p>(Optional) The list of tag keys and values associated with the scraper.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>If there is a failure, the reason for the failure.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The configuration file in use by the scraper.</p>
-    pub fn scrape_configuration(&self) -> ::std::option::Option<&crate::types::ScrapeConfiguration> {
+    pub fn scrape_configuration(&self) -> ::std::option::Option<& crate::types::ScrapeConfiguration> {
         self.scrape_configuration.as_ref()
     }
     /// <p>The Amazon EKS cluster from which the scraper collects metrics.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>The Amazon Managed Service for Prometheus workspace the scraper sends metrics to.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
 }
@@ -100,7 +97,7 @@ pub struct ScraperDescriptionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ScraperStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) scrape_configuration: ::std::option::Option<crate::types::ScrapeConfiguration>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
@@ -114,8 +111,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>(Optional) A name associated with the scraper.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>(Optional) A name associated with the scraper.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>The ID of the scraper.</p>
     pub fn set_scraper_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scraper_id = input;
-        self
+        self.scraper_id = input; self
     }
     /// <p>The ID of the scraper.</p>
     pub fn get_scraper_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +139,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the scraper.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the scraper.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +153,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper to discover and collect metrics on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper to discover and collect metrics on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +167,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>A structure that contains the current status of the scraper.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ScraperStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A structure that contains the current status of the scraper.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ScraperStatus> {
@@ -189,8 +181,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>The date and time that the scraper was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the scraper was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,8 +195,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>The date and time that the scraper was last modified.</p>
     pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_at = input;
-        self
+        self.last_modified_at = input; self
     }
     /// <p>The date and time that the scraper was last modified.</p>
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -218,17 +208,16 @@ impl ScraperDescriptionBuilder {
     /// <p>(Optional) The list of tag keys and values associated with the scraper.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>(Optional) The list of tag keys and values associated with the scraper.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>(Optional) The list of tag keys and values associated with the scraper.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>If there is a failure, the reason for the failure.</p>
@@ -238,8 +227,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>If there is a failure, the reason for the failure.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>If there is a failure, the reason for the failure.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +241,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>The configuration file in use by the scraper.</p>
     pub fn set_scrape_configuration(mut self, input: ::std::option::Option<crate::types::ScrapeConfiguration>) -> Self {
-        self.scrape_configuration = input;
-        self
+        self.scrape_configuration = input; self
     }
     /// <p>The configuration file in use by the scraper.</p>
     pub fn get_scrape_configuration(&self) -> &::std::option::Option<crate::types::ScrapeConfiguration> {
@@ -268,8 +255,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>The Amazon EKS cluster from which the scraper collects metrics.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The Amazon EKS cluster from which the scraper collects metrics.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -283,8 +269,7 @@ impl ScraperDescriptionBuilder {
     }
     /// <p>The Amazon Managed Service for Prometheus workspace the scraper sends metrics to.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The Amazon Managed Service for Prometheus workspace the scraper sends metrics to.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
@@ -298,44 +283,49 @@ impl ScraperDescriptionBuilder {
     /// - [`created_at`](crate::types::builders::ScraperDescriptionBuilder::created_at)
     /// - [`last_modified_at`](crate::types::builders::ScraperDescriptionBuilder::last_modified_at)
     pub fn build(self) -> ::std::result::Result<crate::types::ScraperDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScraperDescription {
-            alias: self.alias,
-            scraper_id: self.scraper_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scraper_id",
-                    "scraper_id was not specified but it is required when building ScraperDescription",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ScraperDescription",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building ScraperDescription",
-                )
-            })?,
-            status: self.status,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building ScraperDescription",
-                )
-            })?,
-            last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_at",
-                    "last_modified_at was not specified but it is required when building ScraperDescription",
-                )
-            })?,
-            tags: self.tags,
-            status_reason: self.status_reason,
-            scrape_configuration: self.scrape_configuration,
-            source: self.source,
-            destination: self.destination,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScraperDescription {
+                alias: self.alias
+                ,
+                scraper_id: self.scraper_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scraper_id", "scraper_id was not specified but it is required when building ScraperDescription")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ScraperDescription")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building ScraperDescription")
+                    )?
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building ScraperDescription")
+                    )?
+                ,
+                last_modified_at: self.last_modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_at", "last_modified_at was not specified but it is required when building ScraperDescription")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                status_reason: self.status_reason
+                ,
+                scrape_configuration: self.scrape_configuration
+                ,
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+            }
+        )
     }
 }
+

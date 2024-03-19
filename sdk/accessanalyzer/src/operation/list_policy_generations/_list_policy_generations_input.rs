@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPolicyGenerationsInput {
+pub struct ListPolicyGenerationsInput  {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
@@ -10,9 +10,9 @@ pub struct ListPolicyGenerationsInput {
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPolicyGenerationsInput {
+impl  ListPolicyGenerationsInput  {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
-    pub fn principal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn principal_arn(&self) -> ::std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -20,7 +20,7 @@ impl ListPolicyGenerationsInput {
         self.max_results
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListPolicyGenerationsInputBuilder {
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListPolicyGenerationsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,22 +73,24 @@ impl ListPolicyGenerationsInputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPolicyGenerationsInput`](crate::operation::list_policy_generations::ListPolicyGenerationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_policy_generations::ListPolicyGenerationsInput {
-            principal_arn: self.principal_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_policy_generations::ListPolicyGenerationsInput {
+                principal_arn: self.principal_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

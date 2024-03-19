@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatePhoneNumberContactFlowInput {
+pub struct AssociatePhoneNumberContactFlowInput  {
     /// <p>A unique identifier for the phone number.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -10,17 +10,17 @@ pub struct AssociatePhoneNumberContactFlowInput {
     /// <p>The identifier of the flow.</p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
 }
-impl AssociatePhoneNumberContactFlowInput {
+impl  AssociatePhoneNumberContactFlowInput  {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> ::std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AssociatePhoneNumberContactFlowInputBuilder {
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AssociatePhoneNumberContactFlowInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl AssociatePhoneNumberContactFlowInputBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_id
     }
     /// Consumes the builder and constructs a [`AssociatePhoneNumberContactFlowInput`](crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowInput {
-                phone_number_id: self.phone_number_id,
-                instance_id: self.instance_id,
-                contact_flow_id: self.contact_flow_id,
-            },
+                phone_number_id: self.phone_number_id
+                ,
+                instance_id: self.instance_id
+                ,
+                contact_flow_id: self.contact_flow_id
+                ,
+            }
         )
     }
 }
+

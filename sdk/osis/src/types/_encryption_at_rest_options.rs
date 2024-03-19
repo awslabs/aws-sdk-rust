@@ -3,15 +3,14 @@
 /// <p>Options to control how OpenSearch encrypts all data-at-rest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionAtRestOptions {
+pub struct EncryptionAtRestOptions  {
     /// <p>The ARN of the KMS key used to encrypt data-at-rest in OpenSearch Ingestion. By default, data is encrypted using an AWS owned key.</p>
     pub kms_key_arn: ::std::string::String,
 }
-impl EncryptionAtRestOptions {
+impl  EncryptionAtRestOptions  {
     /// <p>The ARN of the KMS key used to encrypt data-at-rest in OpenSearch Ingestion. By default, data is encrypted using an AWS owned key.</p>
-    pub fn kms_key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_arn.deref()
+    pub fn kms_key_arn(&self) -> & str {
+        use std::ops::Deref; self.kms_key_arn.deref()
     }
 }
 impl EncryptionAtRestOptions {
@@ -36,8 +35,7 @@ impl EncryptionAtRestOptionsBuilder {
     }
     /// <p>The ARN of the KMS key used to encrypt data-at-rest in OpenSearch Ingestion. By default, data is encrypted using an AWS owned key.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The ARN of the KMS key used to encrypt data-at-rest in OpenSearch Ingestion. By default, data is encrypted using an AWS owned key.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl EncryptionAtRestOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`kms_key_arn`](crate::types::builders::EncryptionAtRestOptionsBuilder::kms_key_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionAtRestOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EncryptionAtRestOptions {
-            kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_arn",
-                    "kms_key_arn was not specified but it is required when building EncryptionAtRestOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EncryptionAtRestOptions {
+                kms_key_arn: self.kms_key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key_arn", "kms_key_arn was not specified but it is required when building EncryptionAtRestOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

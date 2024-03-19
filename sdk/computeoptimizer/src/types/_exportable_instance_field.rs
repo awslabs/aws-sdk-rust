@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exportableinstancefield = unimplemented!();
 /// match exportableinstancefield {
@@ -99,16 +99,14 @@
 /// Specifically, when `exportableinstancefield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportableInstanceField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
@@ -254,450 +252,269 @@ pub enum ExportableInstanceField {
     UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ExportableInstanceField {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccountId" => ExportableInstanceField::AccountId,
-            "CurrentInstanceGpuInfo" => ExportableInstanceField::CurrentInstanceGpuInfo,
-            "CurrentInstanceType" => ExportableInstanceField::CurrentInstanceType,
-            "CurrentMemory" => ExportableInstanceField::CurrentMemory,
-            "CurrentNetwork" => ExportableInstanceField::CurrentNetwork,
-            "CurrentOnDemandPrice" => ExportableInstanceField::CurrentOnDemandPrice,
-            "CurrentPerformanceRisk" => ExportableInstanceField::CurrentPerformanceRisk,
-            "CurrentStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice,
-            "CurrentStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice,
-            "CurrentStorage" => ExportableInstanceField::CurrentStorage,
-            "CurrentVCpus" => ExportableInstanceField::CurrentVcpus,
-            "EffectiveRecommendationPreferencesCpuVendorArchitectures" => {
-                ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures
-            }
-            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => {
-                ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics
-            }
-            "EffectiveRecommendationPreferencesExternalMetricsSource" => {
-                ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource
-            }
-            "EffectiveRecommendationPreferencesInferredWorkloadTypes" => {
-                ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes
-            }
-            "EffectiveRecommendationPreferencesLookBackPeriod" => ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod,
-            "EffectiveRecommendationPreferencesPreferredResources" => ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources,
-            "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
-                ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode
-            }
-            "EffectiveRecommendationPreferencesUtilizationPreferences" => {
-                ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences
-            }
-            "ExternalMetricStatusCode" => ExportableInstanceField::ExternalMetricStatusCode,
-            "ExternalMetricStatusReason" => ExportableInstanceField::ExternalMetricStatusReason,
-            "Finding" => ExportableInstanceField::Finding,
-            "FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
-            "Idle" => ExportableInstanceField::Idle,
-            "InferredWorkloadTypes" => ExportableInstanceField::InferredWorkloadTypes,
-            "InstanceArn" => ExportableInstanceField::InstanceArn,
-            "InstanceName" => ExportableInstanceField::InstanceName,
-            "InstanceState" => ExportableInstanceField::InstanceState,
-            "LastRefreshTimestamp" => ExportableInstanceField::LastRefreshTimestamp,
-            "LookbackPeriodInDays" => ExportableInstanceField::LookbackPeriodInDays,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => {
-                ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts
-            }
-            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue,
-            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => {
-                ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
-            }
-            "RecommendationOptionsInstanceGpuInfo" => ExportableInstanceField::RecommendationOptionsInstanceGpuInfo,
-            "RecommendationOptionsInstanceType" => ExportableInstanceField::RecommendationOptionsInstanceType,
-            "RecommendationOptionsMemory" => ExportableInstanceField::RecommendationOptionsMemory,
-            "RecommendationOptionsMigrationEffort" => ExportableInstanceField::RecommendationOptionsMigrationEffort,
-            "RecommendationOptionsNetwork" => ExportableInstanceField::RecommendationOptionsNetwork,
-            "RecommendationOptionsOnDemandPrice" => ExportableInstanceField::RecommendationOptionsOnDemandPrice,
-            "RecommendationOptionsPerformanceRisk" => ExportableInstanceField::RecommendationOptionsPerformanceRisk,
-            "RecommendationOptionsPlatformDifferences" => ExportableInstanceField::RecommendationOptionsPlatformDifferences,
-            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => {
-                ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum
-            }
-            "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum" => {
-                ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum
-            }
-            "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum" => {
-                ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum
-            }
-            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => {
-                ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum
-            }
-            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => {
-                ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage
-            }
-            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage,
-            "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => {
-                ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice
-            }
-            "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" => {
-                ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice
-            }
-            "RecommendationOptionsStorage" => ExportableInstanceField::RecommendationOptionsStorage,
-            "RecommendationOptionsVcpus" => ExportableInstanceField::RecommendationOptionsVcpus,
-            "RecommendationsSourcesRecommendationSourceArn" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn,
-            "RecommendationsSourcesRecommendationSourceType" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceType,
-            "Tags" => ExportableInstanceField::Tags,
-            "UtilizationMetricsCpuMaximum" => ExportableInstanceField::UtilizationMetricsCpuMaximum,
-            "UtilizationMetricsDiskReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum,
-            "UtilizationMetricsDiskReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum,
-            "UtilizationMetricsDiskWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum,
-            "UtilizationMetricsDiskWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum,
-            "UtilizationMetricsEbsReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum,
-            "UtilizationMetricsEbsReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum,
-            "UtilizationMetricsEbsWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum,
-            "UtilizationMetricsEbsWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum,
-            "UtilizationMetricsGpuMemoryPercentageMaximum" => ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum,
-            "UtilizationMetricsGpuPercentageMaximum" => ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum,
-            "UtilizationMetricsMemoryMaximum" => ExportableInstanceField::UtilizationMetricsMemoryMaximum,
-            "UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
-            "UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
-            "UtilizationMetricsNetworkPacketsInPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum,
-            "UtilizationMetricsNetworkPacketsOutPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
-            other => ExportableInstanceField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AccountId" => ExportableInstanceField::AccountId,
+"CurrentInstanceGpuInfo" => ExportableInstanceField::CurrentInstanceGpuInfo,
+"CurrentInstanceType" => ExportableInstanceField::CurrentInstanceType,
+"CurrentMemory" => ExportableInstanceField::CurrentMemory,
+"CurrentNetwork" => ExportableInstanceField::CurrentNetwork,
+"CurrentOnDemandPrice" => ExportableInstanceField::CurrentOnDemandPrice,
+"CurrentPerformanceRisk" => ExportableInstanceField::CurrentPerformanceRisk,
+"CurrentStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice,
+"CurrentStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice,
+"CurrentStorage" => ExportableInstanceField::CurrentStorage,
+"CurrentVCpus" => ExportableInstanceField::CurrentVcpus,
+"EffectiveRecommendationPreferencesCpuVendorArchitectures" => ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures,
+"EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+"EffectiveRecommendationPreferencesExternalMetricsSource" => ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource,
+"EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
+"EffectiveRecommendationPreferencesLookBackPeriod" => ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod,
+"EffectiveRecommendationPreferencesPreferredResources" => ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources,
+"EffectiveRecommendationPreferencesSavingsEstimationMode" => ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode,
+"EffectiveRecommendationPreferencesUtilizationPreferences" => ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences,
+"ExternalMetricStatusCode" => ExportableInstanceField::ExternalMetricStatusCode,
+"ExternalMetricStatusReason" => ExportableInstanceField::ExternalMetricStatusReason,
+"Finding" => ExportableInstanceField::Finding,
+"FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
+"Idle" => ExportableInstanceField::Idle,
+"InferredWorkloadTypes" => ExportableInstanceField::InferredWorkloadTypes,
+"InstanceArn" => ExportableInstanceField::InstanceArn,
+"InstanceName" => ExportableInstanceField::InstanceName,
+"InstanceState" => ExportableInstanceField::InstanceState,
+"LastRefreshTimestamp" => ExportableInstanceField::LastRefreshTimestamp,
+"LookbackPeriodInDays" => ExportableInstanceField::LookbackPeriodInDays,
+"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+"RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+"RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
+"RecommendationOptionsInstanceGpuInfo" => ExportableInstanceField::RecommendationOptionsInstanceGpuInfo,
+"RecommendationOptionsInstanceType" => ExportableInstanceField::RecommendationOptionsInstanceType,
+"RecommendationOptionsMemory" => ExportableInstanceField::RecommendationOptionsMemory,
+"RecommendationOptionsMigrationEffort" => ExportableInstanceField::RecommendationOptionsMigrationEffort,
+"RecommendationOptionsNetwork" => ExportableInstanceField::RecommendationOptionsNetwork,
+"RecommendationOptionsOnDemandPrice" => ExportableInstanceField::RecommendationOptionsOnDemandPrice,
+"RecommendationOptionsPerformanceRisk" => ExportableInstanceField::RecommendationOptionsPerformanceRisk,
+"RecommendationOptionsPlatformDifferences" => ExportableInstanceField::RecommendationOptionsPlatformDifferences,
+"RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+"RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum,
+"RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum,
+"RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+"RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+"RecommendationOptionsSavingsOpportunityPercentage" => ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage,
+"RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+"RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" => ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+"RecommendationOptionsStorage" => ExportableInstanceField::RecommendationOptionsStorage,
+"RecommendationOptionsVcpus" => ExportableInstanceField::RecommendationOptionsVcpus,
+"RecommendationsSourcesRecommendationSourceArn" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn,
+"RecommendationsSourcesRecommendationSourceType" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceType,
+"Tags" => ExportableInstanceField::Tags,
+"UtilizationMetricsCpuMaximum" => ExportableInstanceField::UtilizationMetricsCpuMaximum,
+"UtilizationMetricsDiskReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum,
+"UtilizationMetricsDiskReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum,
+"UtilizationMetricsDiskWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum,
+"UtilizationMetricsDiskWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum,
+"UtilizationMetricsEbsReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum,
+"UtilizationMetricsEbsReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum,
+"UtilizationMetricsEbsWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum,
+"UtilizationMetricsEbsWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+"UtilizationMetricsGpuMemoryPercentageMaximum" => ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum,
+"UtilizationMetricsGpuPercentageMaximum" => ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum,
+"UtilizationMetricsMemoryMaximum" => ExportableInstanceField::UtilizationMetricsMemoryMaximum,
+"UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
+"UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
+"UtilizationMetricsNetworkPacketsInPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum,
+"UtilizationMetricsNetworkPacketsOutPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
+other => ExportableInstanceField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ExportableInstanceField {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ExportableInstanceField::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ExportableInstanceField::from(s))
+                    }
+                }
 impl ExportableInstanceField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExportableInstanceField::AccountId => "AccountId",
-            ExportableInstanceField::CurrentInstanceGpuInfo => "CurrentInstanceGpuInfo",
-            ExportableInstanceField::CurrentInstanceType => "CurrentInstanceType",
-            ExportableInstanceField::CurrentMemory => "CurrentMemory",
-            ExportableInstanceField::CurrentNetwork => "CurrentNetwork",
-            ExportableInstanceField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
-            ExportableInstanceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-            ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice => "CurrentStandardOneYearNoUpfrontReservedPrice",
-            ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice => "CurrentStandardThreeYearNoUpfrontReservedPrice",
-            ExportableInstanceField::CurrentStorage => "CurrentStorage",
-            ExportableInstanceField::CurrentVcpus => "CurrentVCpus",
-            ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => {
-                "EffectiveRecommendationPreferencesCpuVendorArchitectures"
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => {
-                "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics"
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => {
-                "EffectiveRecommendationPreferencesExternalMetricsSource"
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => {
-                "EffectiveRecommendationPreferencesInferredWorkloadTypes"
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod => "EffectiveRecommendationPreferencesLookBackPeriod",
-            ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources => "EffectiveRecommendationPreferencesPreferredResources",
-            ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
-                "EffectiveRecommendationPreferencesSavingsEstimationMode"
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences => {
-                "EffectiveRecommendationPreferencesUtilizationPreferences"
-            }
-            ExportableInstanceField::ExternalMetricStatusCode => "ExternalMetricStatusCode",
-            ExportableInstanceField::ExternalMetricStatusReason => "ExternalMetricStatusReason",
-            ExportableInstanceField::Finding => "Finding",
-            ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
-            ExportableInstanceField::Idle => "Idle",
-            ExportableInstanceField::InferredWorkloadTypes => "InferredWorkloadTypes",
-            ExportableInstanceField::InstanceArn => "InstanceArn",
-            ExportableInstanceField::InstanceName => "InstanceName",
-            ExportableInstanceField::InstanceState => "InstanceState",
-            ExportableInstanceField::LastRefreshTimestamp => "LastRefreshTimestamp",
-            ExportableInstanceField::LookbackPeriodInDays => "LookbackPeriodInDays",
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
-                "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"
-            }
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
-                "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
-            }
-            ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => "RecommendationOptionsInstanceGpuInfo",
-            ExportableInstanceField::RecommendationOptionsInstanceType => "RecommendationOptionsInstanceType",
-            ExportableInstanceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
-            ExportableInstanceField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
-            ExportableInstanceField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
-            ExportableInstanceField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
-            ExportableInstanceField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
-            ExportableInstanceField::RecommendationOptionsPlatformDifferences => "RecommendationOptionsPlatformDifferences",
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
-                "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum"
-            }
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum => {
-                "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum"
-            }
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum => {
-                "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum"
-            }
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
-                "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
-            }
-            ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
-                "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"
-            }
-            ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-            ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => {
-                "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice"
-            }
-            ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => {
-                "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice"
-            }
-            ExportableInstanceField::RecommendationOptionsStorage => "RecommendationOptionsStorage",
-            ExportableInstanceField::RecommendationOptionsVcpus => "RecommendationOptionsVcpus",
-            ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => "RecommendationsSourcesRecommendationSourceArn",
-            ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => "RecommendationsSourcesRecommendationSourceType",
-            ExportableInstanceField::Tags => "Tags",
-            ExportableInstanceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
-            ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => "UtilizationMetricsDiskReadBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => "UtilizationMetricsDiskReadOpsPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => "UtilizationMetricsDiskWriteBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => "UtilizationMetricsDiskWriteOpsPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum => "UtilizationMetricsEbsReadBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => "UtilizationMetricsEbsReadOpsPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum => "UtilizationMetricsGpuMemoryPercentageMaximum",
-            ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum => "UtilizationMetricsGpuPercentageMaximum",
-            ExportableInstanceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
-            ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => "UtilizationMetricsNetworkPacketsInPerSecondMaximum",
-            ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
-            ExportableInstanceField::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccountId",
-            "CurrentInstanceGpuInfo",
-            "CurrentInstanceType",
-            "CurrentMemory",
-            "CurrentNetwork",
-            "CurrentOnDemandPrice",
-            "CurrentPerformanceRisk",
-            "CurrentStandardOneYearNoUpfrontReservedPrice",
-            "CurrentStandardThreeYearNoUpfrontReservedPrice",
-            "CurrentStorage",
-            "CurrentVCpus",
-            "EffectiveRecommendationPreferencesCpuVendorArchitectures",
-            "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
-            "EffectiveRecommendationPreferencesExternalMetricsSource",
-            "EffectiveRecommendationPreferencesInferredWorkloadTypes",
-            "EffectiveRecommendationPreferencesLookBackPeriod",
-            "EffectiveRecommendationPreferencesPreferredResources",
-            "EffectiveRecommendationPreferencesSavingsEstimationMode",
-            "EffectiveRecommendationPreferencesUtilizationPreferences",
-            "ExternalMetricStatusCode",
-            "ExternalMetricStatusReason",
-            "Finding",
-            "FindingReasonCodes",
-            "Idle",
-            "InferredWorkloadTypes",
-            "InstanceArn",
-            "InstanceName",
-            "InstanceState",
-            "LastRefreshTimestamp",
-            "LookbackPeriodInDays",
-            "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
-            "RecommendationOptionsEstimatedMonthlySavingsValue",
-            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
-            "RecommendationOptionsInstanceGpuInfo",
-            "RecommendationOptionsInstanceType",
-            "RecommendationOptionsMemory",
-            "RecommendationOptionsMigrationEffort",
-            "RecommendationOptionsNetwork",
-            "RecommendationOptionsOnDemandPrice",
-            "RecommendationOptionsPerformanceRisk",
-            "RecommendationOptionsPlatformDifferences",
-            "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
-            "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum",
-            "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum",
-            "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
-            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
-            "RecommendationOptionsSavingsOpportunityPercentage",
-            "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
-            "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
-            "RecommendationOptionsStorage",
-            "RecommendationOptionsVcpus",
-            "RecommendationsSourcesRecommendationSourceArn",
-            "RecommendationsSourcesRecommendationSourceType",
-            "Tags",
-            "UtilizationMetricsCpuMaximum",
-            "UtilizationMetricsDiskReadBytesPerSecondMaximum",
-            "UtilizationMetricsDiskReadOpsPerSecondMaximum",
-            "UtilizationMetricsDiskWriteBytesPerSecondMaximum",
-            "UtilizationMetricsDiskWriteOpsPerSecondMaximum",
-            "UtilizationMetricsEbsReadBytesPerSecondMaximum",
-            "UtilizationMetricsEbsReadOpsPerSecondMaximum",
-            "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
-            "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
-            "UtilizationMetricsGpuMemoryPercentageMaximum",
-            "UtilizationMetricsGpuPercentageMaximum",
-            "UtilizationMetricsMemoryMaximum",
-            "UtilizationMetricsNetworkInBytesPerSecondMaximum",
-            "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
-            "UtilizationMetricsNetworkPacketsInPerSecondMaximum",
-            "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExportableInstanceField::AccountId => "AccountId",
+    ExportableInstanceField::CurrentInstanceGpuInfo => "CurrentInstanceGpuInfo",
+    ExportableInstanceField::CurrentInstanceType => "CurrentInstanceType",
+    ExportableInstanceField::CurrentMemory => "CurrentMemory",
+    ExportableInstanceField::CurrentNetwork => "CurrentNetwork",
+    ExportableInstanceField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
+    ExportableInstanceField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+    ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice => "CurrentStandardOneYearNoUpfrontReservedPrice",
+    ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice => "CurrentStandardThreeYearNoUpfrontReservedPrice",
+    ExportableInstanceField::CurrentStorage => "CurrentStorage",
+    ExportableInstanceField::CurrentVcpus => "CurrentVCpus",
+    ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => "EffectiveRecommendationPreferencesCpuVendorArchitectures",
+    ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
+    ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => "EffectiveRecommendationPreferencesExternalMetricsSource",
+    ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
+    ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod => "EffectiveRecommendationPreferencesLookBackPeriod",
+    ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources => "EffectiveRecommendationPreferencesPreferredResources",
+    ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode => "EffectiveRecommendationPreferencesSavingsEstimationMode",
+    ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences => "EffectiveRecommendationPreferencesUtilizationPreferences",
+    ExportableInstanceField::ExternalMetricStatusCode => "ExternalMetricStatusCode",
+    ExportableInstanceField::ExternalMetricStatusReason => "ExternalMetricStatusReason",
+    ExportableInstanceField::Finding => "Finding",
+    ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
+    ExportableInstanceField::Idle => "Idle",
+    ExportableInstanceField::InferredWorkloadTypes => "InferredWorkloadTypes",
+    ExportableInstanceField::InstanceArn => "InstanceArn",
+    ExportableInstanceField::InstanceName => "InstanceName",
+    ExportableInstanceField::InstanceState => "InstanceState",
+    ExportableInstanceField::LastRefreshTimestamp => "LastRefreshTimestamp",
+    ExportableInstanceField::LookbackPeriodInDays => "LookbackPeriodInDays",
+    ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+    ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
+    ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+    ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
+    ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => "RecommendationOptionsInstanceGpuInfo",
+    ExportableInstanceField::RecommendationOptionsInstanceType => "RecommendationOptionsInstanceType",
+    ExportableInstanceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
+    ExportableInstanceField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
+    ExportableInstanceField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
+    ExportableInstanceField::RecommendationOptionsOnDemandPrice => "RecommendationOptionsOnDemandPrice",
+    ExportableInstanceField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
+    ExportableInstanceField::RecommendationOptionsPlatformDifferences => "RecommendationOptionsPlatformDifferences",
+    ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+    ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum => "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum",
+    ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum => "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum",
+    ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+    ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
+    ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
+    ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",
+    ExportableInstanceField::RecommendationOptionsStorage => "RecommendationOptionsStorage",
+    ExportableInstanceField::RecommendationOptionsVcpus => "RecommendationOptionsVcpus",
+    ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => "RecommendationsSourcesRecommendationSourceArn",
+    ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => "RecommendationsSourcesRecommendationSourceType",
+    ExportableInstanceField::Tags => "Tags",
+    ExportableInstanceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
+    ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => "UtilizationMetricsDiskReadBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => "UtilizationMetricsDiskReadOpsPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => "UtilizationMetricsDiskWriteBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => "UtilizationMetricsDiskWriteOpsPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum => "UtilizationMetricsEbsReadBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => "UtilizationMetricsEbsReadOpsPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum => "UtilizationMetricsGpuMemoryPercentageMaximum",
+    ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum => "UtilizationMetricsGpuPercentageMaximum",
+    ExportableInstanceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+    ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => "UtilizationMetricsNetworkPacketsInPerSecondMaximum",
+    ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => "UtilizationMetricsNetworkPacketsOutPerSecondMaximum",
+    ExportableInstanceField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccountId", "CurrentInstanceGpuInfo", "CurrentInstanceType", "CurrentMemory", "CurrentNetwork", "CurrentOnDemandPrice", "CurrentPerformanceRisk", "CurrentStandardOneYearNoUpfrontReservedPrice", "CurrentStandardThreeYearNoUpfrontReservedPrice", "CurrentStorage", "CurrentVCpus", "EffectiveRecommendationPreferencesCpuVendorArchitectures", "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics", "EffectiveRecommendationPreferencesExternalMetricsSource", "EffectiveRecommendationPreferencesInferredWorkloadTypes", "EffectiveRecommendationPreferencesLookBackPeriod", "EffectiveRecommendationPreferencesPreferredResources", "EffectiveRecommendationPreferencesSavingsEstimationMode", "EffectiveRecommendationPreferencesUtilizationPreferences", "ExternalMetricStatusCode", "ExternalMetricStatusReason", "Finding", "FindingReasonCodes", "Idle", "InferredWorkloadTypes", "InstanceArn", "InstanceName", "InstanceState", "LastRefreshTimestamp", "LookbackPeriodInDays", "RecommendationOptionsEstimatedMonthlySavingsCurrency", "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts", "RecommendationOptionsEstimatedMonthlySavingsValue", "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts", "RecommendationOptionsInstanceGpuInfo", "RecommendationOptionsInstanceType", "RecommendationOptionsMemory", "RecommendationOptionsMigrationEffort", "RecommendationOptionsNetwork", "RecommendationOptionsOnDemandPrice", "RecommendationOptionsPerformanceRisk", "RecommendationOptionsPlatformDifferences", "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum", "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum", "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum", "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum", "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage", "RecommendationOptionsSavingsOpportunityPercentage", "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice", "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice", "RecommendationOptionsStorage", "RecommendationOptionsVcpus", "RecommendationsSourcesRecommendationSourceArn", "RecommendationsSourcesRecommendationSourceType", "Tags", "UtilizationMetricsCpuMaximum", "UtilizationMetricsDiskReadBytesPerSecondMaximum", "UtilizationMetricsDiskReadOpsPerSecondMaximum", "UtilizationMetricsDiskWriteBytesPerSecondMaximum", "UtilizationMetricsDiskWriteOpsPerSecondMaximum", "UtilizationMetricsEbsReadBytesPerSecondMaximum", "UtilizationMetricsEbsReadOpsPerSecondMaximum", "UtilizationMetricsEbsWriteBytesPerSecondMaximum", "UtilizationMetricsEbsWriteOpsPerSecondMaximum", "UtilizationMetricsGpuMemoryPercentageMaximum", "UtilizationMetricsGpuPercentageMaximum", "UtilizationMetricsMemoryMaximum", "UtilizationMetricsNetworkInBytesPerSecondMaximum", "UtilizationMetricsNetworkOutBytesPerSecondMaximum", "UtilizationMetricsNetworkPacketsInPerSecondMaximum", "UtilizationMetricsNetworkPacketsOutPerSecondMaximum"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ExportableInstanceField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ExportableInstanceField {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ExportableInstanceField {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ExportableInstanceField::AccountId => write!(f, "AccountId"),
-            ExportableInstanceField::CurrentInstanceGpuInfo => write!(f, "CurrentInstanceGpuInfo"),
-            ExportableInstanceField::CurrentInstanceType => write!(f, "CurrentInstanceType"),
-            ExportableInstanceField::CurrentMemory => write!(f, "CurrentMemory"),
-            ExportableInstanceField::CurrentNetwork => write!(f, "CurrentNetwork"),
-            ExportableInstanceField::CurrentOnDemandPrice => write!(f, "CurrentOnDemandPrice"),
-            ExportableInstanceField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
-            ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice => write!(f, "CurrentStandardOneYearNoUpfrontReservedPrice"),
-            ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice => write!(f, "CurrentStandardThreeYearNoUpfrontReservedPrice"),
-            ExportableInstanceField::CurrentStorage => write!(f, "CurrentStorage"),
-            ExportableInstanceField::CurrentVcpus => write!(f, "CurrentVCpus"),
-            ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => {
-                write!(f, "EffectiveRecommendationPreferencesCpuVendorArchitectures")
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => {
-                write!(f, "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics")
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => {
-                write!(f, "EffectiveRecommendationPreferencesExternalMetricsSource")
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => {
-                write!(f, "EffectiveRecommendationPreferencesInferredWorkloadTypes")
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod => {
-                write!(f, "EffectiveRecommendationPreferencesLookBackPeriod")
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources => {
-                write!(f, "EffectiveRecommendationPreferencesPreferredResources")
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
-                write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
-            }
-            ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences => {
-                write!(f, "EffectiveRecommendationPreferencesUtilizationPreferences")
-            }
-            ExportableInstanceField::ExternalMetricStatusCode => write!(f, "ExternalMetricStatusCode"),
-            ExportableInstanceField::ExternalMetricStatusReason => write!(f, "ExternalMetricStatusReason"),
-            ExportableInstanceField::Finding => write!(f, "Finding"),
-            ExportableInstanceField::FindingReasonCodes => write!(f, "FindingReasonCodes"),
-            ExportableInstanceField::Idle => write!(f, "Idle"),
-            ExportableInstanceField::InferredWorkloadTypes => write!(f, "InferredWorkloadTypes"),
-            ExportableInstanceField::InstanceArn => write!(f, "InstanceArn"),
-            ExportableInstanceField::InstanceName => write!(f, "InstanceName"),
-            ExportableInstanceField::InstanceState => write!(f, "InstanceState"),
-            ExportableInstanceField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
-            ExportableInstanceField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
-            }
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts")
-            }
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
-            }
-            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
-                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts")
-            }
-            ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => write!(f, "RecommendationOptionsInstanceGpuInfo"),
-            ExportableInstanceField::RecommendationOptionsInstanceType => write!(f, "RecommendationOptionsInstanceType"),
-            ExportableInstanceField::RecommendationOptionsMemory => write!(f, "RecommendationOptionsMemory"),
-            ExportableInstanceField::RecommendationOptionsMigrationEffort => write!(f, "RecommendationOptionsMigrationEffort"),
-            ExportableInstanceField::RecommendationOptionsNetwork => write!(f, "RecommendationOptionsNetwork"),
-            ExportableInstanceField::RecommendationOptionsOnDemandPrice => write!(f, "RecommendationOptionsOnDemandPrice"),
-            ExportableInstanceField::RecommendationOptionsPerformanceRisk => write!(f, "RecommendationOptionsPerformanceRisk"),
-            ExportableInstanceField::RecommendationOptionsPlatformDifferences => write!(f, "RecommendationOptionsPlatformDifferences"),
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
-                write!(f, "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum")
-            }
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum => {
-                write!(f, "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum")
-            }
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum => {
-                write!(f, "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum")
-            }
-            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
-                write!(f, "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum")
-            }
-            ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
-                write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage")
-            }
-            ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => {
-                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
-            }
-            ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => {
-                write!(f, "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice")
-            }
-            ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => {
-                write!(f, "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice")
-            }
-            ExportableInstanceField::RecommendationOptionsStorage => write!(f, "RecommendationOptionsStorage"),
-            ExportableInstanceField::RecommendationOptionsVcpus => write!(f, "RecommendationOptionsVcpus"),
-            ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => write!(f, "RecommendationsSourcesRecommendationSourceArn"),
-            ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => write!(f, "RecommendationsSourcesRecommendationSourceType"),
-            ExportableInstanceField::Tags => write!(f, "Tags"),
-            ExportableInstanceField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
-            ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => write!(f, "UtilizationMetricsDiskReadBytesPerSecondMaximum"),
-            ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsDiskReadOpsPerSecondMaximum"),
-            ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => {
-                write!(f, "UtilizationMetricsDiskWriteBytesPerSecondMaximum")
-            }
-            ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsDiskWriteOpsPerSecondMaximum"),
-            ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum => write!(f, "UtilizationMetricsEbsReadBytesPerSecondMaximum"),
-            ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsEbsReadOpsPerSecondMaximum"),
-            ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => write!(f, "UtilizationMetricsEbsWriteBytesPerSecondMaximum"),
-            ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsEbsWriteOpsPerSecondMaximum"),
-            ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum => write!(f, "UtilizationMetricsGpuMemoryPercentageMaximum"),
-            ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum => write!(f, "UtilizationMetricsGpuPercentageMaximum"),
-            ExportableInstanceField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
-            ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => {
-                write!(f, "UtilizationMetricsNetworkInBytesPerSecondMaximum")
-            }
-            ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => {
-                write!(f, "UtilizationMetricsNetworkOutBytesPerSecondMaximum")
-            }
-            ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => {
-                write!(f, "UtilizationMetricsNetworkPacketsInPerSecondMaximum")
-            }
-            ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => {
-                write!(f, "UtilizationMetricsNetworkPacketsOutPerSecondMaximum")
-            }
-            ExportableInstanceField::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ExportableInstanceField::AccountId => write!(f, "AccountId"),
+ExportableInstanceField::CurrentInstanceGpuInfo => write!(f, "CurrentInstanceGpuInfo"),
+ExportableInstanceField::CurrentInstanceType => write!(f, "CurrentInstanceType"),
+ExportableInstanceField::CurrentMemory => write!(f, "CurrentMemory"),
+ExportableInstanceField::CurrentNetwork => write!(f, "CurrentNetwork"),
+ExportableInstanceField::CurrentOnDemandPrice => write!(f, "CurrentOnDemandPrice"),
+ExportableInstanceField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
+ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice => write!(f, "CurrentStandardOneYearNoUpfrontReservedPrice"),
+ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice => write!(f, "CurrentStandardThreeYearNoUpfrontReservedPrice"),
+ExportableInstanceField::CurrentStorage => write!(f, "CurrentStorage"),
+ExportableInstanceField::CurrentVcpus => write!(f, "CurrentVCpus"),
+ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => write!(f, "EffectiveRecommendationPreferencesCpuVendorArchitectures"),
+ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => write!(f, "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics"),
+ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => write!(f, "EffectiveRecommendationPreferencesExternalMetricsSource"),
+ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => write!(f, "EffectiveRecommendationPreferencesInferredWorkloadTypes"),
+ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod => write!(f, "EffectiveRecommendationPreferencesLookBackPeriod"),
+ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources => write!(f, "EffectiveRecommendationPreferencesPreferredResources"),
+ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode => write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode"),
+ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences => write!(f, "EffectiveRecommendationPreferencesUtilizationPreferences"),
+ExportableInstanceField::ExternalMetricStatusCode => write!(f, "ExternalMetricStatusCode"),
+ExportableInstanceField::ExternalMetricStatusReason => write!(f, "ExternalMetricStatusReason"),
+ExportableInstanceField::Finding => write!(f, "Finding"),
+ExportableInstanceField::FindingReasonCodes => write!(f, "FindingReasonCodes"),
+ExportableInstanceField::Idle => write!(f, "Idle"),
+ExportableInstanceField::InferredWorkloadTypes => write!(f, "InferredWorkloadTypes"),
+ExportableInstanceField::InstanceArn => write!(f, "InstanceArn"),
+ExportableInstanceField::InstanceName => write!(f, "InstanceName"),
+ExportableInstanceField::InstanceState => write!(f, "InstanceState"),
+ExportableInstanceField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+ExportableInstanceField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency"),
+ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"),
+ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue"),
+ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"),
+ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => write!(f, "RecommendationOptionsInstanceGpuInfo"),
+ExportableInstanceField::RecommendationOptionsInstanceType => write!(f, "RecommendationOptionsInstanceType"),
+ExportableInstanceField::RecommendationOptionsMemory => write!(f, "RecommendationOptionsMemory"),
+ExportableInstanceField::RecommendationOptionsMigrationEffort => write!(f, "RecommendationOptionsMigrationEffort"),
+ExportableInstanceField::RecommendationOptionsNetwork => write!(f, "RecommendationOptionsNetwork"),
+ExportableInstanceField::RecommendationOptionsOnDemandPrice => write!(f, "RecommendationOptionsOnDemandPrice"),
+ExportableInstanceField::RecommendationOptionsPerformanceRisk => write!(f, "RecommendationOptionsPerformanceRisk"),
+ExportableInstanceField::RecommendationOptionsPlatformDifferences => write!(f, "RecommendationOptionsPlatformDifferences"),
+ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => write!(f, "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum"),
+ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum => write!(f, "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum"),
+ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum => write!(f, "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum"),
+ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => write!(f, "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"),
+ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"),
+ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => write!(f, "RecommendationOptionsSavingsOpportunityPercentage"),
+ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => write!(f, "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice"),
+ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => write!(f, "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice"),
+ExportableInstanceField::RecommendationOptionsStorage => write!(f, "RecommendationOptionsStorage"),
+ExportableInstanceField::RecommendationOptionsVcpus => write!(f, "RecommendationOptionsVcpus"),
+ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => write!(f, "RecommendationsSourcesRecommendationSourceArn"),
+ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => write!(f, "RecommendationsSourcesRecommendationSourceType"),
+ExportableInstanceField::Tags => write!(f, "Tags"),
+ExportableInstanceField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
+ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => write!(f, "UtilizationMetricsDiskReadBytesPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsDiskReadOpsPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => write!(f, "UtilizationMetricsDiskWriteBytesPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsDiskWriteOpsPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum => write!(f, "UtilizationMetricsEbsReadBytesPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsEbsReadOpsPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => write!(f, "UtilizationMetricsEbsWriteBytesPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsEbsWriteOpsPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum => write!(f, "UtilizationMetricsGpuMemoryPercentageMaximum"),
+ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum => write!(f, "UtilizationMetricsGpuPercentageMaximum"),
+ExportableInstanceField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
+ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => write!(f, "UtilizationMetricsNetworkInBytesPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => write!(f, "UtilizationMetricsNetworkOutBytesPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => write!(f, "UtilizationMetricsNetworkPacketsInPerSecondMaximum"),
+ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => write!(f, "UtilizationMetricsNetworkPacketsOutPerSecondMaximum"),
+ExportableInstanceField::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

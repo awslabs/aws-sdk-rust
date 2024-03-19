@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelBans`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::set_channel_arn):<br>required: **true**<br><p>The ARN of the channel.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of bans that you want returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested bans are returned.</p><br>
     ///   - [`chime_bearer(impl Into<String>)`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::set_chime_bearer):<br>required: **false**<br><p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p><br>
-    /// - On success, responds with [`ListChannelBansOutput`](crate::operation::list_channel_bans::ListChannelBansOutput) with field(s):
+                            /// - On success, responds with [`ListChannelBansOutput`](crate::operation::list_channel_bans::ListChannelBansOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::list_channel_bans::ListChannelBansOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_bans::ListChannelBansOutput::next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
     ///   - [`channel_bans(Option<Vec::<ChannelBanSummary>>)`](crate::operation::list_channel_bans::ListChannelBansOutput::channel_bans): <p>The information for each requested ban.</p>
-    /// - On failure, responds with [`SdkError<ListChannelBansError>`](crate::operation::list_channel_bans::ListChannelBansError)
+                            /// - On failure, responds with [`SdkError<ListChannelBansError>`](crate::operation::list_channel_bans::ListChannelBansError)
     #[deprecated(note = "Replaced by ListChannelBans in the Amazon Chime SDK Messaging Namespace")]
     pub fn list_channel_bans(&self) -> crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder {
-        crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_channel_bans::builders::ListChannelBansFluentBuilder::new(self.handle.clone())
+                            }
 }
+

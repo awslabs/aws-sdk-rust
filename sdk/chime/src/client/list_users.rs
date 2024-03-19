@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUsers`](crate::operation::list_users::builders::ListUsersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_users::builders::ListUsersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
     ///   - [`user_email(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::user_email) / [`set_user_email(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_user_email):<br>required: **false**<br><p>Optional. The user email address used to filter results. Maximum 1.</p><br>
     ///   - [`user_type(UserType)`](crate::operation::list_users::builders::ListUsersFluentBuilder::user_type) / [`set_user_type(Option<UserType>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_user_type):<br>required: **false**<br><p>The user type.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. Defaults to 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
+                            /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
     ///   - [`users(Option<Vec::<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>List of users and user details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users::ListUsersOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::operation::list_users::ListUsersError)
+                            /// - On failure, responds with [`SdkError<ListUsersError>`](crate::operation::list_users::ListUsersError)
     pub fn list_users(&self) -> crate::operation::list_users::builders::ListUsersFluentBuilder {
-        crate::operation::list_users::builders::ListUsersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_users::builders::ListUsersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

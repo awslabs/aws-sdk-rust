@@ -3,7 +3,7 @@
 /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputClippingSettings {
+pub struct InputClippingSettings  {
     /// The source of the timecodes in the source being clipped.
     pub input_timecode_source: ::std::option::Option<crate::types::InputTimecodeSource>,
     /// Settings to identify the start of the clip.
@@ -11,17 +11,17 @@ pub struct InputClippingSettings {
     /// Settings to identify the end of the clip.
     pub stop_timecode: ::std::option::Option<crate::types::StopTimecode>,
 }
-impl InputClippingSettings {
+impl  InputClippingSettings  {
     /// The source of the timecodes in the source being clipped.
-    pub fn input_timecode_source(&self) -> ::std::option::Option<&crate::types::InputTimecodeSource> {
+    pub fn input_timecode_source(&self) -> ::std::option::Option<& crate::types::InputTimecodeSource> {
         self.input_timecode_source.as_ref()
     }
     /// Settings to identify the start of the clip.
-    pub fn start_timecode(&self) -> ::std::option::Option<&crate::types::StartTimecode> {
+    pub fn start_timecode(&self) -> ::std::option::Option<& crate::types::StartTimecode> {
         self.start_timecode.as_ref()
     }
     /// Settings to identify the end of the clip.
-    pub fn stop_timecode(&self) -> ::std::option::Option<&crate::types::StopTimecode> {
+    pub fn stop_timecode(&self) -> ::std::option::Option<& crate::types::StopTimecode> {
         self.stop_timecode.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl InputClippingSettingsBuilder {
     }
     /// The source of the timecodes in the source being clipped.
     pub fn set_input_timecode_source(mut self, input: ::std::option::Option<crate::types::InputTimecodeSource>) -> Self {
-        self.input_timecode_source = input;
-        self
+        self.input_timecode_source = input; self
     }
     /// The source of the timecodes in the source being clipped.
     pub fn get_input_timecode_source(&self) -> &::std::option::Option<crate::types::InputTimecodeSource> {
@@ -63,8 +62,7 @@ impl InputClippingSettingsBuilder {
     }
     /// Settings to identify the start of the clip.
     pub fn set_start_timecode(mut self, input: ::std::option::Option<crate::types::StartTimecode>) -> Self {
-        self.start_timecode = input;
-        self
+        self.start_timecode = input; self
     }
     /// Settings to identify the start of the clip.
     pub fn get_start_timecode(&self) -> &::std::option::Option<crate::types::StartTimecode> {
@@ -77,8 +75,7 @@ impl InputClippingSettingsBuilder {
     }
     /// Settings to identify the end of the clip.
     pub fn set_stop_timecode(mut self, input: ::std::option::Option<crate::types::StopTimecode>) -> Self {
-        self.stop_timecode = input;
-        self
+        self.stop_timecode = input; self
     }
     /// Settings to identify the end of the clip.
     pub fn get_stop_timecode(&self) -> &::std::option::Option<crate::types::StopTimecode> {
@@ -87,9 +84,13 @@ impl InputClippingSettingsBuilder {
     /// Consumes the builder and constructs a [`InputClippingSettings`](crate::types::InputClippingSettings).
     pub fn build(self) -> crate::types::InputClippingSettings {
         crate::types::InputClippingSettings {
-            input_timecode_source: self.input_timecode_source,
-            start_timecode: self.start_timecode,
-            stop_timecode: self.stop_timecode,
+            input_timecode_source: self.input_timecode_source
+            ,
+            start_timecode: self.start_timecode
+            ,
+            stop_timecode: self.stop_timecode
+            ,
         }
     }
 }
+

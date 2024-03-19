@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTapePoolInput {
+pub struct DeleteTapePoolInput  {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
     pub pool_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTapePoolInput {
+impl  DeleteTapePoolInput  {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
-    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteTapePoolInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
     pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
     pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_arn
     }
     /// Consumes the builder and constructs a [`DeleteTapePoolInput`](crate::operation::delete_tape_pool::DeleteTapePoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_tape_pool::DeleteTapePoolInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_tape_pool::DeleteTapePoolInput { pool_arn: self.pool_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tape_pool::DeleteTapePoolInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_tape_pool::DeleteTapePoolInput {
+                pool_arn: self.pool_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about an address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Address {
+pub struct Address  {
     /// <p>The name of the contact.</p>
     pub contact_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the contact.</p>
@@ -27,54 +27,49 @@ pub struct Address {
     /// <p>The municipality for the address.</p>
     pub municipality: ::std::option::Option<::std::string::String>,
 }
-impl Address {
+impl  Address  {
     /// <p>The name of the contact.</p>
-    pub fn contact_name(&self) -> ::std::option::Option<&str> {
+    pub fn contact_name(&self) -> ::std::option::Option<& str> {
         self.contact_name.as_deref()
     }
     /// <p>The phone number of the contact.</p>
-    pub fn contact_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn contact_phone_number(&self) -> ::std::option::Option<& str> {
         self.contact_phone_number.as_deref()
     }
     /// <p>The first line of the address.</p>
-    pub fn address_line1(&self) -> &str {
-        use std::ops::Deref;
-        self.address_line1.deref()
+    pub fn address_line1(&self) -> & str {
+        use std::ops::Deref; self.address_line1.deref()
     }
     /// <p>The second line of the address.</p>
-    pub fn address_line2(&self) -> ::std::option::Option<&str> {
+    pub fn address_line2(&self) -> ::std::option::Option<& str> {
         self.address_line2.as_deref()
     }
     /// <p>The third line of the address.</p>
-    pub fn address_line3(&self) -> ::std::option::Option<&str> {
+    pub fn address_line3(&self) -> ::std::option::Option<& str> {
         self.address_line3.as_deref()
     }
     /// <p>The city for the address.</p>
-    pub fn city(&self) -> &str {
-        use std::ops::Deref;
-        self.city.deref()
+    pub fn city(&self) -> & str {
+        use std::ops::Deref; self.city.deref()
     }
     /// <p>The state for the address.</p>
-    pub fn state_or_region(&self) -> &str {
-        use std::ops::Deref;
-        self.state_or_region.deref()
+    pub fn state_or_region(&self) -> & str {
+        use std::ops::Deref; self.state_or_region.deref()
     }
     /// <p>The district or county for the address.</p>
-    pub fn district_or_county(&self) -> ::std::option::Option<&str> {
+    pub fn district_or_county(&self) -> ::std::option::Option<& str> {
         self.district_or_county.as_deref()
     }
     /// <p>The postal code for the address.</p>
-    pub fn postal_code(&self) -> &str {
-        use std::ops::Deref;
-        self.postal_code.deref()
+    pub fn postal_code(&self) -> & str {
+        use std::ops::Deref; self.postal_code.deref()
     }
     /// <p>The ISO-3166 two-letter country code for the address.</p>
-    pub fn country_code(&self) -> &str {
-        use std::ops::Deref;
-        self.country_code.deref()
+    pub fn country_code(&self) -> & str {
+        use std::ops::Deref; self.country_code.deref()
     }
     /// <p>The municipality for the address.</p>
-    pub fn municipality(&self) -> ::std::option::Option<&str> {
+    pub fn municipality(&self) -> ::std::option::Option<& str> {
         self.municipality.as_deref()
     }
 }
@@ -109,8 +104,7 @@ impl AddressBuilder {
     }
     /// <p>The name of the contact.</p>
     pub fn set_contact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_name = input;
-        self
+        self.contact_name = input; self
     }
     /// <p>The name of the contact.</p>
     pub fn get_contact_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +117,7 @@ impl AddressBuilder {
     }
     /// <p>The phone number of the contact.</p>
     pub fn set_contact_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_phone_number = input;
-        self
+        self.contact_phone_number = input; self
     }
     /// <p>The phone number of the contact.</p>
     pub fn get_contact_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +131,7 @@ impl AddressBuilder {
     }
     /// <p>The first line of the address.</p>
     pub fn set_address_line1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_line1 = input;
-        self
+        self.address_line1 = input; self
     }
     /// <p>The first line of the address.</p>
     pub fn get_address_line1(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +144,7 @@ impl AddressBuilder {
     }
     /// <p>The second line of the address.</p>
     pub fn set_address_line2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_line2 = input;
-        self
+        self.address_line2 = input; self
     }
     /// <p>The second line of the address.</p>
     pub fn get_address_line2(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +157,7 @@ impl AddressBuilder {
     }
     /// <p>The third line of the address.</p>
     pub fn set_address_line3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_line3 = input;
-        self
+        self.address_line3 = input; self
     }
     /// <p>The third line of the address.</p>
     pub fn get_address_line3(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +171,7 @@ impl AddressBuilder {
     }
     /// <p>The city for the address.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>The city for the address.</p>
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +185,7 @@ impl AddressBuilder {
     }
     /// <p>The state for the address.</p>
     pub fn set_state_or_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_or_region = input;
-        self
+        self.state_or_region = input; self
     }
     /// <p>The state for the address.</p>
     pub fn get_state_or_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +198,7 @@ impl AddressBuilder {
     }
     /// <p>The district or county for the address.</p>
     pub fn set_district_or_county(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.district_or_county = input;
-        self
+        self.district_or_county = input; self
     }
     /// <p>The district or county for the address.</p>
     pub fn get_district_or_county(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +212,7 @@ impl AddressBuilder {
     }
     /// <p>The postal code for the address.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code = input;
-        self
+        self.postal_code = input; self
     }
     /// <p>The postal code for the address.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +226,7 @@ impl AddressBuilder {
     }
     /// <p>The ISO-3166 two-letter country code for the address.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country_code = input;
-        self
+        self.country_code = input; self
     }
     /// <p>The ISO-3166 two-letter country code for the address.</p>
     pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +239,7 @@ impl AddressBuilder {
     }
     /// <p>The municipality for the address.</p>
     pub fn set_municipality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.municipality = input;
-        self
+        self.municipality = input; self
     }
     /// <p>The municipality for the address.</p>
     pub fn get_municipality(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,43 +253,47 @@ impl AddressBuilder {
     /// - [`postal_code`](crate::types::builders::AddressBuilder::postal_code)
     /// - [`country_code`](crate::types::builders::AddressBuilder::country_code)
     pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Address {
-            contact_name: self.contact_name,
-            contact_phone_number: self.contact_phone_number,
-            address_line1: self.address_line1.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "address_line1",
-                    "address_line1 was not specified but it is required when building Address",
-                )
-            })?,
-            address_line2: self.address_line2,
-            address_line3: self.address_line3,
-            city: self.city.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "city",
-                    "city was not specified but it is required when building Address",
-                )
-            })?,
-            state_or_region: self.state_or_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_or_region",
-                    "state_or_region was not specified but it is required when building Address",
-                )
-            })?,
-            district_or_county: self.district_or_county,
-            postal_code: self.postal_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "postal_code",
-                    "postal_code was not specified but it is required when building Address",
-                )
-            })?,
-            country_code: self.country_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "country_code",
-                    "country_code was not specified but it is required when building Address",
-                )
-            })?,
-            municipality: self.municipality,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Address {
+                contact_name: self.contact_name
+                ,
+                contact_phone_number: self.contact_phone_number
+                ,
+                address_line1: self.address_line1
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("address_line1", "address_line1 was not specified but it is required when building Address")
+                    )?
+                ,
+                address_line2: self.address_line2
+                ,
+                address_line3: self.address_line3
+                ,
+                city: self.city
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("city", "city was not specified but it is required when building Address")
+                    )?
+                ,
+                state_or_region: self.state_or_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_or_region", "state_or_region was not specified but it is required when building Address")
+                    )?
+                ,
+                district_or_county: self.district_or_county
+                ,
+                postal_code: self.postal_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("postal_code", "postal_code was not specified but it is required when building Address")
+                    )?
+                ,
+                country_code: self.country_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("country_code", "country_code was not specified but it is required when building Address")
+                    )?
+                ,
+                municipality: self.municipality
+                ,
+            }
+        )
     }
 }
+

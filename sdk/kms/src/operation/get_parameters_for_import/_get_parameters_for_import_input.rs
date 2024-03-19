@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetParametersForImportInput {
+pub struct GetParametersForImportInput  {
     /// <p>The identifier of the KMS key that will be associated with the imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
     /// <p>All KMS key types are supported, including multi-Region keys. However, you cannot import key material into a KMS key in a custom key store.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -38,7 +38,7 @@ pub struct GetParametersForImportInput {
     /// <p>You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.</p>
     pub wrapping_key_spec: ::std::option::Option<crate::types::WrappingKeySpec>,
 }
-impl GetParametersForImportInput {
+impl  GetParametersForImportInput  {
     /// <p>The identifier of the KMS key that will be associated with the imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
     /// <p>All KMS key types are supported, including multi-Region keys. However, you cannot import key material into a KMS key in a custom key store.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -50,7 +50,7 @@ impl GetParametersForImportInput {
     /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The algorithm you will use with the RSA public key (<code>PublicKey</code>) in the response to protect your key material during import. For more information, see <a href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -70,13 +70,13 @@ impl GetParametersForImportInput {
     /// <li>
     /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
-    pub fn wrapping_algorithm(&self) -> ::std::option::Option<&crate::types::AlgorithmSpec> {
+    pub fn wrapping_algorithm(&self) -> ::std::option::Option<& crate::types::AlgorithmSpec> {
         self.wrapping_algorithm.as_ref()
     }
     /// <p>The type of RSA public key to return in the response. You will use this wrapping key with the specified wrapping algorithm to protect your key material during import.</p>
     /// <p>Use the longest RSA wrapping key that is practical.</p>
     /// <p>You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.</p>
-    pub fn wrapping_key_spec(&self) -> ::std::option::Option<&crate::types::WrappingKeySpec> {
+    pub fn wrapping_key_spec(&self) -> ::std::option::Option<& crate::types::WrappingKeySpec> {
         self.wrapping_key_spec.as_ref()
     }
 }
@@ -124,8 +124,7 @@ impl GetParametersForImportInputBuilder {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The identifier of the KMS key that will be associated with the imported key material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
     /// <p>All KMS key types are supported, including multi-Region keys. However, you cannot import key material into a KMS key in a custom key store.</p>
@@ -181,8 +180,7 @@ impl GetParametersForImportInputBuilder {
     /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     pub fn set_wrapping_algorithm(mut self, input: ::std::option::Option<crate::types::AlgorithmSpec>) -> Self {
-        self.wrapping_algorithm = input;
-        self
+        self.wrapping_algorithm = input; self
     }
     /// <p>The algorithm you will use with the RSA public key (<code>PublicKey</code>) in the response to protect your key material during import. For more information, see <a href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>For RSA_AES wrapping algorithms, you encrypt your key material with an AES key that you generate, then encrypt your AES key with the RSA public key from KMS. For RSAES wrapping algorithms, you encrypt your key material directly with the RSA public key from KMS.</p>
@@ -216,8 +214,7 @@ impl GetParametersForImportInputBuilder {
     /// <p>Use the longest RSA wrapping key that is practical.</p>
     /// <p>You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.</p>
     pub fn set_wrapping_key_spec(mut self, input: ::std::option::Option<crate::types::WrappingKeySpec>) -> Self {
-        self.wrapping_key_spec = input;
-        self
+        self.wrapping_key_spec = input; self
     }
     /// <p>The type of RSA public key to return in the response. You will use this wrapping key with the specified wrapping algorithm to protect your key material during import.</p>
     /// <p>Use the longest RSA wrapping key that is practical.</p>
@@ -226,16 +223,17 @@ impl GetParametersForImportInputBuilder {
         &self.wrapping_key_spec
     }
     /// Consumes the builder and constructs a [`GetParametersForImportInput`](crate::operation::get_parameters_for_import::GetParametersForImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_parameters_for_import::GetParametersForImportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_parameters_for_import::GetParametersForImportInput {
-            key_id: self.key_id,
-            wrapping_algorithm: self.wrapping_algorithm,
-            wrapping_key_spec: self.wrapping_key_spec,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_parameters_for_import::GetParametersForImportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_parameters_for_import::GetParametersForImportInput {
+                key_id: self.key_id
+                ,
+                wrapping_algorithm: self.wrapping_algorithm
+                ,
+                wrapping_key_spec: self.wrapping_key_spec
+                ,
+            }
+        )
     }
 }
+

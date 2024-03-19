@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComputeInput {
+pub struct ListComputeInput  {
     /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a location to retrieve compute resources for.</p>
@@ -12,13 +12,13 @@ pub struct ListComputeInput {
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListComputeInput {
+impl  ListComputeInput  {
     /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The name of a location to retrieve compute resources for.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -26,7 +26,7 @@ impl ListComputeInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListComputeInputBuilder {
     }
     /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListComputeInputBuilder {
     }
     /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListComputeInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl ListComputeInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,11 +102,18 @@ impl ListComputeInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListComputeInput`](crate::operation::list_compute::ListComputeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_compute::ListComputeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_compute::ListComputeInput {
-            fleet_id: self.fleet_id,
-            location: self.location,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_compute::ListComputeInput {
+                fleet_id: self.fleet_id
+                ,
+                location: self.location
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

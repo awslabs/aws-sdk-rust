@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateAuthEventFeedbackInput {
+pub struct UpdateAuthEventFeedbackInput  {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
@@ -14,29 +14,29 @@ pub struct UpdateAuthEventFeedbackInput {
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
 }
-impl UpdateAuthEventFeedbackInput {
+impl  UpdateAuthEventFeedbackInput  {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The event ID.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The feedback token.</p>
-    pub fn feedback_token(&self) -> ::std::option::Option<&str> {
+    pub fn feedback_token(&self) -> ::std::option::Option<& str> {
         self.feedback_token.as_deref()
     }
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
-    pub fn feedback_value(&self) -> ::std::option::Option<&crate::types::FeedbackValueType> {
+    pub fn feedback_value(&self) -> ::std::option::Option<& crate::types::FeedbackValueType> {
         self.feedback_value.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateAuthEventFeedbackInput {
+impl  ::std::fmt::Debug for UpdateAuthEventFeedbackInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAuthEventFeedbackInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -73,8 +73,7 @@ impl UpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl UpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl UpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The event ID.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The event ID.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl UpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The feedback token.</p>
     pub fn set_feedback_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feedback_token = input;
-        self
+        self.feedback_token = input; self
     }
     /// <p>The feedback token.</p>
     pub fn get_feedback_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,27 +129,28 @@ impl UpdateAuthEventFeedbackInputBuilder {
     }
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
-        self.feedback_value = input;
-        self
+        self.feedback_value = input; self
     }
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
         &self.feedback_value
     }
     /// Consumes the builder and constructs a [`UpdateAuthEventFeedbackInput`](crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput {
-            user_pool_id: self.user_pool_id,
-            username: self.username,
-            event_id: self.event_id,
-            feedback_token: self.feedback_token,
-            feedback_value: self.feedback_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput {
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                event_id: self.event_id
+                ,
+                feedback_token: self.feedback_token
+                ,
+                feedback_value: self.feedback_value
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateAuthEventFeedbackInputBuilder {
@@ -167,3 +164,4 @@ impl ::std::fmt::Debug for UpdateAuthEventFeedbackInputBuilder {
         formatter.finish()
     }
 }
+

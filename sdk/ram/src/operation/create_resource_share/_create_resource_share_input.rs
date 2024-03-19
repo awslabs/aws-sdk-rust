@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResourceShareInput {
+pub struct CreateResourceShareInput  {
     /// <p>Specifies the name of the resource share.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
     /// <p>You can include the following values:</p>
     /// <ul>
@@ -23,9 +23,9 @@ pub struct CreateResourceShareInput {
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
     pub allow_external_principals: ::std::option::Option<bool>,
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -33,20 +33,21 @@ pub struct CreateResourceShareInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub permission_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub permission_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CreateResourceShareInput {
+impl  CreateResourceShareInput  {
     /// <p>Specifies the name of the resource share.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
-    pub fn resource_arns(&self) -> &[::std::string::String] {
-        self.resource_arns.as_deref().unwrap_or_default()
+    pub fn resource_arns(&self) -> & [::std::string::String] {
+        self.resource_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
     /// <p>You can include the following values:</p>
@@ -64,16 +65,18 @@ impl CreateResourceShareInput {
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
-    pub fn principals(&self) -> &[::std::string::String] {
-        self.principals.as_deref().unwrap_or_default()
+    pub fn principals(&self) -> & [::std::string::String] {
+        self.principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
     pub fn allow_external_principals(&self) -> ::std::option::Option<bool> {
@@ -82,20 +85,22 @@ impl CreateResourceShareInput {
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_arns.is_none()`.
-    pub fn permission_arns(&self) -> &[::std::string::String] {
-        self.permission_arns.as_deref().unwrap_or_default()
+    pub fn permission_arns(&self) -> & [::std::string::String] {
+        self.permission_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[::std::string::String] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [::std::string::String] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateResourceShareInput {
@@ -110,13 +115,13 @@ impl CreateResourceShareInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourceShareInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) allow_external_principals: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) permission_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) permission_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CreateResourceShareInputBuilder {
     /// <p>Specifies the name of the resource share.</p>
@@ -127,8 +132,7 @@ impl CreateResourceShareInputBuilder {
     }
     /// <p>Specifies the name of the resource share.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the resource share.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,17 +145,16 @@ impl CreateResourceShareInputBuilder {
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_arns
     }
     /// Appends an item to `principals`.
@@ -176,9 +179,9 @@ impl CreateResourceShareInputBuilder {
     /// </note>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
-        v.push(input.into());
-        self.principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
     /// <p>You can include the following values:</p>
@@ -196,9 +199,8 @@ impl CreateResourceShareInputBuilder {
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.principals = input;
-        self
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.principals = input; self
     }
     /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
     /// <p>You can include the following values:</p>
@@ -216,7 +218,7 @@ impl CreateResourceShareInputBuilder {
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.principals
     }
     /// Appends an item to `tags`.
@@ -226,17 +228,16 @@ impl CreateResourceShareInputBuilder {
     /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
@@ -246,8 +247,7 @@ impl CreateResourceShareInputBuilder {
     }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
     pub fn set_allow_external_principals(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_external_principals = input;
-        self
+        self.allow_external_principals = input; self
     }
     /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
     pub fn get_allow_external_principals(&self) -> &::std::option::Option<bool> {
@@ -264,8 +264,7 @@ impl CreateResourceShareInputBuilder {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -280,17 +279,16 @@ impl CreateResourceShareInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
     pub fn permission_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permission_arns.unwrap_or_default();
-        v.push(input.into());
-        self.permission_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.permission_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn set_permission_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.permission_arns = input;
-        self
+    pub fn set_permission_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.permission_arns = input; self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
-    pub fn get_permission_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permission_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.permission_arns
     }
     /// Appends an item to `sources`.
@@ -300,33 +298,40 @@ impl CreateResourceShareInputBuilder {
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
     pub fn sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input.into());
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.sources = input; self
     }
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_resource_share::CreateResourceShareInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_resource_share::CreateResourceShareInput {
-            name: self.name,
-            resource_arns: self.resource_arns,
-            principals: self.principals,
-            tags: self.tags,
-            allow_external_principals: self.allow_external_principals,
-            client_token: self.client_token,
-            permission_arns: self.permission_arns,
-            sources: self.sources,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_resource_share::CreateResourceShareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_resource_share::CreateResourceShareInput {
+                name: self.name
+                ,
+                resource_arns: self.resource_arns
+                ,
+                principals: self.principals
+                ,
+                tags: self.tags
+                ,
+                allow_external_principals: self.allow_external_principals
+                ,
+                client_token: self.client_token
+                ,
+                permission_arns: self.permission_arns
+                ,
+                sources: self.sources
+                ,
+            }
+        )
     }
 }
+

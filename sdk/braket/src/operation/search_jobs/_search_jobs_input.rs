@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchJobsInput {
+pub struct SearchJobsInput  {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The filter values to use when searching for a job.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::SearchJobsFilter>>,
 }
-impl SearchJobsInput {
+impl  SearchJobsInput  {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -20,10 +20,11 @@ impl SearchJobsInput {
         self.max_results
     }
     /// <p>The filter values to use when searching for a job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::SearchJobsFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::SearchJobsFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchJobsInput {
@@ -39,7 +40,7 @@ impl SearchJobsInput {
 pub struct SearchJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::SearchJobsFilter>>,
 }
 impl SearchJobsInputBuilder {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
@@ -49,8 +50,7 @@ impl SearchJobsInputBuilder {
     }
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +63,7 @@ impl SearchJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,25 +76,30 @@ impl SearchJobsInputBuilder {
     /// <p>The filter values to use when searching for a job.</p>
     pub fn filters(mut self, input: crate::types::SearchJobsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter values to use when searching for a job.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchJobsFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filter values to use when searching for a job.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchJobsFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchJobsInput`](crate::operation::search_jobs::SearchJobsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_jobs::SearchJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::search_jobs::SearchJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

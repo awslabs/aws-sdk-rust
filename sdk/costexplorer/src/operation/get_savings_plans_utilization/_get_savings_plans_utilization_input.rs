@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSavingsPlansUtilizationInput {
+pub struct GetSavingsPlansUtilizationInput  {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
@@ -42,14 +42,14 @@ pub struct GetSavingsPlansUtilizationInput {
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::SortDefinition>,
 }
-impl GetSavingsPlansUtilizationInput {
+impl  GetSavingsPlansUtilizationInput  {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
     /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&crate::types::Granularity> {
+    pub fn granularity(&self) -> ::std::option::Option<& crate::types::Granularity> {
         self.granularity.as_ref()
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
@@ -68,7 +68,7 @@ impl GetSavingsPlansUtilizationInput {
     /// <p><code>INSTANCE_TYPE_FAMILY</code></p></li>
     /// </ul>
     /// <p><code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>The value that you want to sort the data by.</p>
@@ -86,7 +86,7 @@ impl GetSavingsPlansUtilizationInput {
     /// <p><code>NetSavings</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortDefinition> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortDefinition> {
         self.sort_by.as_ref()
     }
 }
@@ -115,8 +115,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -131,8 +130,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
     /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
-        self.granularity = input;
-        self
+        self.granularity = input; self
     }
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
     /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -176,8 +174,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
     /// </ul>
     /// <p><code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
@@ -233,8 +230,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -255,17 +251,19 @@ impl GetSavingsPlansUtilizationInputBuilder {
         &self.sort_by
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationInput`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput {
-            time_period: self.time_period,
-            granularity: self.granularity,
-            filter: self.filter,
-            sort_by: self.sort_by,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput {
+                time_period: self.time_period
+                ,
+                granularity: self.granularity
+                ,
+                filter: self.filter
+                ,
+                sort_by: self.sort_by
+                ,
+            }
+        )
     }
 }
+

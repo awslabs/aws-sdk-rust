@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMitigationActionInput {
+pub struct UpdateMitigationActionInput  {
     /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
@@ -10,17 +10,17 @@ pub struct UpdateMitigationActionInput {
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub action_params: ::std::option::Option<crate::types::MitigationActionParams>,
 }
-impl UpdateMitigationActionInput {
+impl  UpdateMitigationActionInput  {
     /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn action_params(&self) -> ::std::option::Option<&crate::types::MitigationActionParams> {
+    pub fn action_params(&self) -> ::std::option::Option<& crate::types::MitigationActionParams> {
         self.action_params.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateMitigationActionInputBuilder {
     }
     /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateMitigationActionInputBuilder {
     }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl UpdateMitigationActionInputBuilder {
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
-        self.action_params = input;
-        self
+        self.action_params = input; self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
         &self.action_params
     }
     /// Consumes the builder and constructs a [`UpdateMitigationActionInput`](crate::operation::update_mitigation_action::UpdateMitigationActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_mitigation_action::UpdateMitigationActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_mitigation_action::UpdateMitigationActionInput {
-            action_name: self.action_name,
-            role_arn: self.role_arn,
-            action_params: self.action_params,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_mitigation_action::UpdateMitigationActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_mitigation_action::UpdateMitigationActionInput {
+                action_name: self.action_name
+                ,
+                role_arn: self.role_arn
+                ,
+                action_params: self.action_params
+                ,
+            }
+        )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::count_pending_activity_tasks::_count_pending_activity_
 
 impl CountPendingActivityTasksInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.count_pending_activity_tasks();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.count_pending_activity_tasks();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CountPendingActivityTasks`.
-///
+/// 
 /// <p>Returns the estimated number of activity tasks in the specified task list. The count returned is an approximation and isn't guaranteed to be exact. If you specify a task list that no activity task was ever scheduled in then <code>0</code> is returned.</p>
 /// <p><b>Access Control</b></p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
@@ -37,33 +34,32 @@ impl CountPendingActivityTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CountPendingActivityTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder,
+                    inner: crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
-        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-    > for CountPendingActivityTasksFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
+                    crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
+                > for CountPendingActivityTasksFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
+                        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CountPendingActivityTasksFluentBuilder {
     /// Creates a new `CountPendingActivityTasks`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -72,53 +68,44 @@ impl CountPendingActivityTasksFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::count_pending_activity_tasks::CountPendingActivityTasks::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::count_pending_activity_tasks::CountPendingActivityTasks::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
-        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::count_pending_activity_tasks::CountPendingActivityTasks::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::count_pending_activity_tasks::CountPendingActivityTasks::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput, crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the domain that contains the task list.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -148,3 +135,4 @@ impl CountPendingActivityTasksFluentBuilder {
         self.inner.get_task_list()
     }
 }
+

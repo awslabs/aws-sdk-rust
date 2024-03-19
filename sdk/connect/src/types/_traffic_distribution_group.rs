@@ -3,7 +3,7 @@
 /// <p>Information about a traffic distribution group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrafficDistributionGroup {
+pub struct TrafficDistributionGroup  {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
@@ -31,31 +31,31 @@ pub struct TrafficDistributionGroup {
     /// </ul>
     pub status: ::std::option::Option<crate::types::TrafficDistributionGroupStatus>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p><note>
     /// <p>The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
     /// </note>
     pub is_default: bool,
 }
-impl TrafficDistributionGroup {
+impl  TrafficDistributionGroup  {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the traffic distribution group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the traffic distribution group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN).</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The status of the traffic distribution group.</p>
@@ -73,11 +73,11 @@ impl TrafficDistributionGroup {
     /// <li>
     /// <p><code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TrafficDistributionGroupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TrafficDistributionGroupStatus> {
         self.status.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p><note>
@@ -104,7 +104,7 @@ pub struct TrafficDistributionGroupBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TrafficDistributionGroupStatus>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) is_default: ::std::option::Option<bool>,
 }
 impl TrafficDistributionGroupBuilder {
@@ -115,8 +115,7 @@ impl TrafficDistributionGroupBuilder {
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl TrafficDistributionGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl TrafficDistributionGroupBuilder {
     }
     /// <p>The name of the traffic distribution group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the traffic distribution group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +154,7 @@ impl TrafficDistributionGroupBuilder {
     }
     /// <p>The description of the traffic distribution group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the traffic distribution group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +167,7 @@ impl TrafficDistributionGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN).</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN).</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +208,7 @@ impl TrafficDistributionGroupBuilder {
     /// <p><code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a> operation is still in progress and has not yet completed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TrafficDistributionGroupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the traffic distribution group.</p>
     /// <ul>
@@ -241,17 +235,16 @@ impl TrafficDistributionGroupBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p><note>
@@ -265,8 +258,7 @@ impl TrafficDistributionGroupBuilder {
     /// <p>The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
     /// </note>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p><note>
     /// <p>The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
@@ -277,14 +269,24 @@ impl TrafficDistributionGroupBuilder {
     /// Consumes the builder and constructs a [`TrafficDistributionGroup`](crate::types::TrafficDistributionGroup).
     pub fn build(self) -> crate::types::TrafficDistributionGroup {
         crate::types::TrafficDistributionGroup {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            instance_arn: self.instance_arn,
-            status: self.status,
-            tags: self.tags,
-            is_default: self.is_default.unwrap_or_default(),
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            instance_arn: self.instance_arn
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
+            is_default: self.is_default
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Metadata information about a Key Value Store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeyOutput {
+pub struct DeleteKeyOutput  {
     /// <p>Number of key value pairs in the Key Value Store after the successful delete.</p>
     pub item_count: i32,
     /// <p>Total size of the Key Value Store after the successful delete, in bytes.</p>
@@ -12,7 +12,7 @@ pub struct DeleteKeyOutput {
     pub e_tag: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DeleteKeyOutput {
+impl  DeleteKeyOutput  {
     /// <p>Number of key value pairs in the Key Value Store after the successful delete.</p>
     pub fn item_count(&self) -> i32 {
         self.item_count
@@ -22,16 +22,15 @@ impl DeleteKeyOutput {
         self.total_size_in_bytes
     }
     /// <p>The current version identifier of the Key Value Store after the successful delete.</p>
-    pub fn e_tag(&self) -> &str {
-        use std::ops::Deref;
-        self.e_tag.deref()
+    pub fn e_tag(&self) -> & str {
+        use std::ops::Deref; self.e_tag.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeyOutput`](crate::operation::delete_key::DeleteKeyOutput).
     pub fn builder() -> crate::operation::delete_key::builders::DeleteKeyOutputBuilder {
@@ -57,8 +56,7 @@ impl DeleteKeyOutputBuilder {
     }
     /// <p>Number of key value pairs in the Key Value Store after the successful delete.</p>
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// <p>Number of key value pairs in the Key Value Store after the successful delete.</p>
     pub fn get_item_count(&self) -> &::std::option::Option<i32> {
@@ -72,8 +70,7 @@ impl DeleteKeyOutputBuilder {
     }
     /// <p>Total size of the Key Value Store after the successful delete, in bytes.</p>
     pub fn set_total_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_size_in_bytes = input;
-        self
+        self.total_size_in_bytes = input; self
     }
     /// <p>Total size of the Key Value Store after the successful delete, in bytes.</p>
     pub fn get_total_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -87,48 +84,47 @@ impl DeleteKeyOutputBuilder {
     }
     /// <p>The current version identifier of the Key Value Store after the successful delete.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current version identifier of the Key Value Store after the successful delete.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteKeyOutput`](crate::operation::delete_key::DeleteKeyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`item_count`](crate::operation::delete_key::builders::DeleteKeyOutputBuilder::item_count)
     /// - [`total_size_in_bytes`](crate::operation::delete_key::builders::DeleteKeyOutputBuilder::total_size_in_bytes)
     /// - [`e_tag`](crate::operation::delete_key::builders::DeleteKeyOutputBuilder::e_tag)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_key::DeleteKeyOutput {
-            item_count: self.item_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "item_count",
-                    "item_count was not specified but it is required when building DeleteKeyOutput",
-                )
-            })?,
-            total_size_in_bytes: self.total_size_in_bytes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_size_in_bytes",
-                    "total_size_in_bytes was not specified but it is required when building DeleteKeyOutput",
-                )
-            })?,
-            e_tag: self.e_tag.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "e_tag",
-                    "e_tag was not specified but it is required when building DeleteKeyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_key::DeleteKeyOutput {
+                item_count: self.item_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("item_count", "item_count was not specified but it is required when building DeleteKeyOutput")
+                    )?
+                ,
+                total_size_in_bytes: self.total_size_in_bytes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_size_in_bytes", "total_size_in_bytes was not specified but it is required when building DeleteKeyOutput")
+                    )?
+                ,
+                e_tag: self.e_tag
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("e_tag", "e_tag was not specified but it is required when building DeleteKeyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

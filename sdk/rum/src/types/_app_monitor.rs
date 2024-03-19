@@ -3,7 +3,7 @@
 /// <p>A RUM app monitor collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppMonitor {
+pub struct AppMonitor  {
     /// <p>The name of the app monitor.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
@@ -15,7 +15,7 @@ pub struct AppMonitor {
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The current state of the app monitor.</p>
     pub state: ::std::option::Option<crate::types::StateEnum>,
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
@@ -26,46 +26,46 @@ pub struct AppMonitor {
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     pub custom_events: ::std::option::Option<crate::types::CustomEvents>,
 }
-impl AppMonitor {
+impl  AppMonitor  {
     /// <p>The name of the app monitor.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The unique ID of this app monitor.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time that this app monitor was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&str> {
+    pub fn created(&self) -> ::std::option::Option<& str> {
         self.created.as_deref()
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified(&self) -> ::std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The current state of the app monitor.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::StateEnum> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::StateEnum> {
         self.state.as_ref()
     }
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
-    pub fn app_monitor_configuration(&self) -> ::std::option::Option<&crate::types::AppMonitorConfiguration> {
+    pub fn app_monitor_configuration(&self) -> ::std::option::Option<& crate::types::AppMonitorConfiguration> {
         self.app_monitor_configuration.as_ref()
     }
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
-    pub fn data_storage(&self) -> ::std::option::Option<&crate::types::DataStorage> {
+    pub fn data_storage(&self) -> ::std::option::Option<& crate::types::DataStorage> {
         self.data_storage.as_ref()
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
-    pub fn custom_events(&self) -> ::std::option::Option<&crate::types::CustomEvents> {
+    pub fn custom_events(&self) -> ::std::option::Option<& crate::types::CustomEvents> {
         self.custom_events.as_ref()
     }
 }
@@ -85,7 +85,7 @@ pub struct AppMonitorBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::StateEnum>,
     pub(crate) app_monitor_configuration: ::std::option::Option<crate::types::AppMonitorConfiguration>,
     pub(crate) data_storage: ::std::option::Option<crate::types::DataStorage>,
@@ -99,8 +99,7 @@ impl AppMonitorBuilder {
     }
     /// <p>The name of the app monitor.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the app monitor.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl AppMonitorBuilder {
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl AppMonitorBuilder {
     }
     /// <p>The unique ID of this app monitor.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of this app monitor.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl AppMonitorBuilder {
     }
     /// <p>The date and time that this app monitor was created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date and time that this app monitor was created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl AppMonitorBuilder {
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,17 +164,16 @@ impl AppMonitorBuilder {
     /// <p>The list of tag keys and values associated with this app monitor.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tag keys and values associated with this app monitor.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The current state of the app monitor.</p>
@@ -189,8 +183,7 @@ impl AppMonitorBuilder {
     }
     /// <p>The current state of the app monitor.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StateEnum>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the app monitor.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::StateEnum> {
@@ -203,8 +196,7 @@ impl AppMonitorBuilder {
     }
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
     pub fn set_app_monitor_configuration(mut self, input: ::std::option::Option<crate::types::AppMonitorConfiguration>) -> Self {
-        self.app_monitor_configuration = input;
-        self
+        self.app_monitor_configuration = input; self
     }
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
     pub fn get_app_monitor_configuration(&self) -> &::std::option::Option<crate::types::AppMonitorConfiguration> {
@@ -217,8 +209,7 @@ impl AppMonitorBuilder {
     }
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
     pub fn set_data_storage(mut self, input: ::std::option::Option<crate::types::DataStorage>) -> Self {
-        self.data_storage = input;
-        self
+        self.data_storage = input; self
     }
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
     pub fn get_data_storage(&self) -> &::std::option::Option<crate::types::DataStorage> {
@@ -233,8 +224,7 @@ impl AppMonitorBuilder {
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     pub fn set_custom_events(mut self, input: ::std::option::Option<crate::types::CustomEvents>) -> Self {
-        self.custom_events = input;
-        self
+        self.custom_events = input; self
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
@@ -244,16 +234,27 @@ impl AppMonitorBuilder {
     /// Consumes the builder and constructs a [`AppMonitor`](crate::types::AppMonitor).
     pub fn build(self) -> crate::types::AppMonitor {
         crate::types::AppMonitor {
-            name: self.name,
-            domain: self.domain,
-            id: self.id,
-            created: self.created,
-            last_modified: self.last_modified,
-            tags: self.tags,
-            state: self.state,
-            app_monitor_configuration: self.app_monitor_configuration,
-            data_storage: self.data_storage,
-            custom_events: self.custom_events,
+            name: self.name
+            ,
+            domain: self.domain
+            ,
+            id: self.id
+            ,
+            created: self.created
+            ,
+            last_modified: self.last_modified
+            ,
+            tags: self.tags
+            ,
+            state: self.state
+            ,
+            app_monitor_configuration: self.app_monitor_configuration
+            ,
+            data_storage: self.data_storage
+            ,
+            custom_events: self.custom_events
+            ,
         }
     }
 }
+

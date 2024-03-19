@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFolderOutput {
+pub struct GetFolderOutput  {
     /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
     pub commit_id: ::std::string::String,
     /// <p>The fully qualified path of the folder whose contents are returned.</p>
@@ -10,60 +10,62 @@ pub struct GetFolderOutput {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     pub tree_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of folders that exist under the specified folder, if any.</p>
-    pub sub_folders: ::std::option::Option<::std::vec::Vec<crate::types::Folder>>,
+    pub sub_folders: ::std::option::Option<::std::vec::Vec::<crate::types::Folder>>,
     /// <p>The list of files in the specified folder, if any.</p>
-    pub files: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
+    pub files: ::std::option::Option<::std::vec::Vec::<crate::types::File>>,
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
-    pub symbolic_links: ::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>>,
+    pub symbolic_links: ::std::option::Option<::std::vec::Vec::<crate::types::SymbolicLink>>,
     /// <p>The list of submodules in the specified folder, if any.</p>
-    pub sub_modules: ::std::option::Option<::std::vec::Vec<crate::types::SubModule>>,
+    pub sub_modules: ::std::option::Option<::std::vec::Vec::<crate::types::SubModule>>,
     _request_id: Option<String>,
 }
-impl GetFolderOutput {
+impl  GetFolderOutput  {
     /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
-    pub fn commit_id(&self) -> &str {
-        use std::ops::Deref;
-        self.commit_id.deref()
+    pub fn commit_id(&self) -> & str {
+        use std::ops::Deref; self.commit_id.deref()
     }
     /// <p>The fully qualified path of the folder whose contents are returned.</p>
-    pub fn folder_path(&self) -> &str {
-        use std::ops::Deref;
-        self.folder_path.deref()
+    pub fn folder_path(&self) -> & str {
+        use std::ops::Deref; self.folder_path.deref()
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
-    pub fn tree_id(&self) -> ::std::option::Option<&str> {
+    pub fn tree_id(&self) -> ::std::option::Option<& str> {
         self.tree_id.as_deref()
     }
     /// <p>The list of folders that exist under the specified folder, if any.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_folders.is_none()`.
-    pub fn sub_folders(&self) -> &[crate::types::Folder] {
-        self.sub_folders.as_deref().unwrap_or_default()
+    pub fn sub_folders(&self) -> & [crate::types::Folder] {
+        self.sub_folders.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of files in the specified folder, if any.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
-    pub fn files(&self) -> &[crate::types::File] {
-        self.files.as_deref().unwrap_or_default()
+    pub fn files(&self) -> & [crate::types::File] {
+        self.files.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.symbolic_links.is_none()`.
-    pub fn symbolic_links(&self) -> &[crate::types::SymbolicLink] {
-        self.symbolic_links.as_deref().unwrap_or_default()
+    pub fn symbolic_links(&self) -> & [crate::types::SymbolicLink] {
+        self.symbolic_links.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of submodules in the specified folder, if any.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_modules.is_none()`.
-    pub fn sub_modules(&self) -> &[crate::types::SubModule] {
-        self.sub_modules.as_deref().unwrap_or_default()
+    pub fn sub_modules(&self) -> & [crate::types::SubModule] {
+        self.sub_modules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFolderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFolderOutput {
     /// Creates a new builder-style object to manufacture [`GetFolderOutput`](crate::operation::get_folder::GetFolderOutput).
     pub fn builder() -> crate::operation::get_folder::builders::GetFolderOutputBuilder {
@@ -78,10 +80,10 @@ pub struct GetFolderOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) folder_path: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,
-    pub(crate) sub_folders: ::std::option::Option<::std::vec::Vec<crate::types::Folder>>,
-    pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
-    pub(crate) symbolic_links: ::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>>,
-    pub(crate) sub_modules: ::std::option::Option<::std::vec::Vec<crate::types::SubModule>>,
+    pub(crate) sub_folders: ::std::option::Option<::std::vec::Vec::<crate::types::Folder>>,
+    pub(crate) files: ::std::option::Option<::std::vec::Vec::<crate::types::File>>,
+    pub(crate) symbolic_links: ::std::option::Option<::std::vec::Vec::<crate::types::SymbolicLink>>,
+    pub(crate) sub_modules: ::std::option::Option<::std::vec::Vec::<crate::types::SubModule>>,
     _request_id: Option<String>,
 }
 impl GetFolderOutputBuilder {
@@ -93,8 +95,7 @@ impl GetFolderOutputBuilder {
     }
     /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl GetFolderOutputBuilder {
     }
     /// <p>The fully qualified path of the folder whose contents are returned.</p>
     pub fn set_folder_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_path = input;
-        self
+        self.folder_path = input; self
     }
     /// <p>The fully qualified path of the folder whose contents are returned.</p>
     pub fn get_folder_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl GetFolderOutputBuilder {
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tree_id = input;
-        self
+        self.tree_id = input; self
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +135,16 @@ impl GetFolderOutputBuilder {
     /// <p>The list of folders that exist under the specified folder, if any.</p>
     pub fn sub_folders(mut self, input: crate::types::Folder) -> Self {
         let mut v = self.sub_folders.unwrap_or_default();
-        v.push(input);
-        self.sub_folders = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sub_folders = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of folders that exist under the specified folder, if any.</p>
-    pub fn set_sub_folders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Folder>>) -> Self {
-        self.sub_folders = input;
-        self
+    pub fn set_sub_folders(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Folder>>) -> Self {
+        self.sub_folders = input; self
     }
     /// <p>The list of folders that exist under the specified folder, if any.</p>
-    pub fn get_sub_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Folder>> {
+    pub fn get_sub_folders(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Folder>> {
         &self.sub_folders
     }
     /// Appends an item to `files`.
@@ -156,17 +154,16 @@ impl GetFolderOutputBuilder {
     /// <p>The list of files in the specified folder, if any.</p>
     pub fn files(mut self, input: crate::types::File) -> Self {
         let mut v = self.files.unwrap_or_default();
-        v.push(input);
-        self.files = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.files = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of files in the specified folder, if any.</p>
-    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
-        self.files = input;
-        self
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::File>>) -> Self {
+        self.files = input; self
     }
     /// <p>The list of files in the specified folder, if any.</p>
-    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::File>> {
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::File>> {
         &self.files
     }
     /// Appends an item to `symbolic_links`.
@@ -176,17 +173,16 @@ impl GetFolderOutputBuilder {
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
     pub fn symbolic_links(mut self, input: crate::types::SymbolicLink) -> Self {
         let mut v = self.symbolic_links.unwrap_or_default();
-        v.push(input);
-        self.symbolic_links = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.symbolic_links = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
-    pub fn set_symbolic_links(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>>) -> Self {
-        self.symbolic_links = input;
-        self
+    pub fn set_symbolic_links(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SymbolicLink>>) -> Self {
+        self.symbolic_links = input; self
     }
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
-    pub fn get_symbolic_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>> {
+    pub fn get_symbolic_links(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SymbolicLink>> {
         &self.symbolic_links
     }
     /// Appends an item to `sub_modules`.
@@ -196,52 +192,57 @@ impl GetFolderOutputBuilder {
     /// <p>The list of submodules in the specified folder, if any.</p>
     pub fn sub_modules(mut self, input: crate::types::SubModule) -> Self {
         let mut v = self.sub_modules.unwrap_or_default();
-        v.push(input);
-        self.sub_modules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sub_modules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of submodules in the specified folder, if any.</p>
-    pub fn set_sub_modules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubModule>>) -> Self {
-        self.sub_modules = input;
-        self
+    pub fn set_sub_modules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubModule>>) -> Self {
+        self.sub_modules = input; self
     }
     /// <p>The list of submodules in the specified folder, if any.</p>
-    pub fn get_sub_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubModule>> {
+    pub fn get_sub_modules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubModule>> {
         &self.sub_modules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFolderOutput`](crate::operation::get_folder::GetFolderOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`commit_id`](crate::operation::get_folder::builders::GetFolderOutputBuilder::commit_id)
     /// - [`folder_path`](crate::operation::get_folder::builders::GetFolderOutputBuilder::folder_path)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_folder::GetFolderOutput {
-            commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_id",
-                    "commit_id was not specified but it is required when building GetFolderOutput",
-                )
-            })?,
-            folder_path: self.folder_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "folder_path",
-                    "folder_path was not specified but it is required when building GetFolderOutput",
-                )
-            })?,
-            tree_id: self.tree_id,
-            sub_folders: self.sub_folders,
-            files: self.files,
-            symbolic_links: self.symbolic_links,
-            sub_modules: self.sub_modules,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_folder::GetFolderOutput {
+                commit_id: self.commit_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_id", "commit_id was not specified but it is required when building GetFolderOutput")
+                    )?
+                ,
+                folder_path: self.folder_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("folder_path", "folder_path was not specified but it is required when building GetFolderOutput")
+                    )?
+                ,
+                tree_id: self.tree_id
+                ,
+                sub_folders: self.sub_folders
+                ,
+                files: self.files
+                ,
+                symbolic_links: self.symbolic_links
+                ,
+                sub_modules: self.sub_modules
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

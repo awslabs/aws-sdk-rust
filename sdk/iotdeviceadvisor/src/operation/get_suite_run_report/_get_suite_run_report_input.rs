@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSuiteRunReportInput {
+pub struct GetSuiteRunReportInput  {
     /// <p>Suite definition ID of the test suite.</p>
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite run ID of the test suite run.</p>
     pub suite_run_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSuiteRunReportInput {
+impl  GetSuiteRunReportInput  {
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn suite_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> ::std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite run ID of the test suite run.</p>
-    pub fn suite_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_run_id(&self) -> ::std::option::Option<& str> {
         self.suite_run_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetSuiteRunReportInputBuilder {
     }
     /// <p>Suite definition ID of the test suite.</p>
     pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_id = input;
-        self
+        self.suite_definition_id = input; self
     }
     /// <p>Suite definition ID of the test suite.</p>
     pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetSuiteRunReportInputBuilder {
     }
     /// <p>Suite run ID of the test suite run.</p>
     pub fn set_suite_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_run_id = input;
-        self
+        self.suite_run_id = input; self
     }
     /// <p>Suite run ID of the test suite run.</p>
     pub fn get_suite_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.suite_run_id
     }
     /// Consumes the builder and constructs a [`GetSuiteRunReportInput`](crate::operation::get_suite_run_report::GetSuiteRunReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_suite_run_report::GetSuiteRunReportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_suite_run_report::GetSuiteRunReportInput {
-            suite_definition_id: self.suite_definition_id,
-            suite_run_id: self.suite_run_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite_run_report::GetSuiteRunReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_suite_run_report::GetSuiteRunReportInput {
+                suite_definition_id: self.suite_definition_id
+                ,
+                suite_run_id: self.suite_run_id
+                ,
+            }
+        )
     }
 }
+

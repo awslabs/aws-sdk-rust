@@ -2,79 +2,87 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSavingsPlansOfferingRatesInput {
+pub struct DescribeSavingsPlansOfferingRatesInput  {
     /// <p>The IDs of the offerings.</p>
-    pub savings_plan_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub savings_plan_offering_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The payment options.</p>
-    pub savings_plan_payment_options: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
+    pub savings_plan_payment_options: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanPaymentOption>>,
     /// <p>The plan types.</p>
-    pub savings_plan_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>,
+    pub savings_plan_types: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanType>>,
     /// <p>The AWS products.</p>
-    pub products: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
+    pub products: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanProductType>>,
     /// <p>The services.</p>
-    pub service_codes: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateServiceCode>>,
+    pub service_codes: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanRateServiceCode>>,
     /// <p>The usage details of the line item in the billing report.</p>
-    pub usage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub usage_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub operations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The filters.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanOfferingRateFilterElement>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeSavingsPlansOfferingRatesInput {
+impl  DescribeSavingsPlansOfferingRatesInput  {
     /// <p>The IDs of the offerings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_offering_ids.is_none()`.
-    pub fn savings_plan_offering_ids(&self) -> &[::std::string::String] {
-        self.savings_plan_offering_ids.as_deref().unwrap_or_default()
+    pub fn savings_plan_offering_ids(&self) -> & [::std::string::String] {
+        self.savings_plan_offering_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The payment options.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_payment_options.is_none()`.
-    pub fn savings_plan_payment_options(&self) -> &[crate::types::SavingsPlanPaymentOption] {
-        self.savings_plan_payment_options.as_deref().unwrap_or_default()
+    pub fn savings_plan_payment_options(&self) -> & [crate::types::SavingsPlanPaymentOption] {
+        self.savings_plan_payment_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The plan types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_types.is_none()`.
-    pub fn savings_plan_types(&self) -> &[crate::types::SavingsPlanType] {
-        self.savings_plan_types.as_deref().unwrap_or_default()
+    pub fn savings_plan_types(&self) -> & [crate::types::SavingsPlanType] {
+        self.savings_plan_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The AWS products.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.products.is_none()`.
-    pub fn products(&self) -> &[crate::types::SavingsPlanProductType] {
-        self.products.as_deref().unwrap_or_default()
+    pub fn products(&self) -> & [crate::types::SavingsPlanProductType] {
+        self.products.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The services.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_codes.is_none()`.
-    pub fn service_codes(&self) -> &[crate::types::SavingsPlanRateServiceCode] {
-        self.service_codes.as_deref().unwrap_or_default()
+    pub fn service_codes(&self) -> & [crate::types::SavingsPlanRateServiceCode] {
+        self.service_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_types.is_none()`.
-    pub fn usage_types(&self) -> &[::std::string::String] {
-        self.usage_types.as_deref().unwrap_or_default()
+    pub fn usage_types(&self) -> & [::std::string::String] {
+        self.usage_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
-    pub fn operations(&self) -> &[::std::string::String] {
-        self.operations.as_deref().unwrap_or_default()
+    pub fn operations(&self) -> & [::std::string::String] {
+        self.operations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::SavingsPlanOfferingRateFilterElement] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::SavingsPlanOfferingRateFilterElement] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
@@ -93,14 +101,14 @@ impl DescribeSavingsPlansOfferingRatesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingRatesInputBuilder {
-    pub(crate) savings_plan_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) savings_plan_payment_options: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
-    pub(crate) savings_plan_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>,
-    pub(crate) products: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
-    pub(crate) service_codes: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateServiceCode>>,
-    pub(crate) usage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) operations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>,
+    pub(crate) savings_plan_offering_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) savings_plan_payment_options: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanPaymentOption>>,
+    pub(crate) savings_plan_types: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanType>>,
+    pub(crate) products: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanProductType>>,
+    pub(crate) service_codes: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanRateServiceCode>>,
+    pub(crate) usage_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanOfferingRateFilterElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -112,17 +120,16 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The IDs of the offerings.</p>
     pub fn savings_plan_offering_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.savings_plan_offering_ids.unwrap_or_default();
-        v.push(input.into());
-        self.savings_plan_offering_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.savings_plan_offering_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the offerings.</p>
-    pub fn set_savings_plan_offering_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.savings_plan_offering_ids = input;
-        self
+    pub fn set_savings_plan_offering_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.savings_plan_offering_ids = input; self
     }
     /// <p>The IDs of the offerings.</p>
-    pub fn get_savings_plan_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_savings_plan_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.savings_plan_offering_ids
     }
     /// Appends an item to `savings_plan_payment_options`.
@@ -132,17 +139,16 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The payment options.</p>
     pub fn savings_plan_payment_options(mut self, input: crate::types::SavingsPlanPaymentOption) -> Self {
         let mut v = self.savings_plan_payment_options.unwrap_or_default();
-        v.push(input);
-        self.savings_plan_payment_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.savings_plan_payment_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The payment options.</p>
-    pub fn set_savings_plan_payment_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>) -> Self {
-        self.savings_plan_payment_options = input;
-        self
+    pub fn set_savings_plan_payment_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanPaymentOption>>) -> Self {
+        self.savings_plan_payment_options = input; self
     }
     /// <p>The payment options.</p>
-    pub fn get_savings_plan_payment_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>> {
+    pub fn get_savings_plan_payment_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanPaymentOption>> {
         &self.savings_plan_payment_options
     }
     /// Appends an item to `savings_plan_types`.
@@ -152,17 +158,16 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The plan types.</p>
     pub fn savings_plan_types(mut self, input: crate::types::SavingsPlanType) -> Self {
         let mut v = self.savings_plan_types.unwrap_or_default();
-        v.push(input);
-        self.savings_plan_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.savings_plan_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The plan types.</p>
-    pub fn set_savings_plan_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>) -> Self {
-        self.savings_plan_types = input;
-        self
+    pub fn set_savings_plan_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanType>>) -> Self {
+        self.savings_plan_types = input; self
     }
     /// <p>The plan types.</p>
-    pub fn get_savings_plan_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>> {
+    pub fn get_savings_plan_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanType>> {
         &self.savings_plan_types
     }
     /// Appends an item to `products`.
@@ -172,17 +177,16 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The AWS products.</p>
     pub fn products(mut self, input: crate::types::SavingsPlanProductType) -> Self {
         let mut v = self.products.unwrap_or_default();
-        v.push(input);
-        self.products = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.products = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The AWS products.</p>
-    pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>) -> Self {
-        self.products = input;
-        self
+    pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanProductType>>) -> Self {
+        self.products = input; self
     }
     /// <p>The AWS products.</p>
-    pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>> {
+    pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanProductType>> {
         &self.products
     }
     /// Appends an item to `service_codes`.
@@ -192,17 +196,16 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The services.</p>
     pub fn service_codes(mut self, input: crate::types::SavingsPlanRateServiceCode) -> Self {
         let mut v = self.service_codes.unwrap_or_default();
-        v.push(input);
-        self.service_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The services.</p>
-    pub fn set_service_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateServiceCode>>) -> Self {
-        self.service_codes = input;
-        self
+    pub fn set_service_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanRateServiceCode>>) -> Self {
+        self.service_codes = input; self
     }
     /// <p>The services.</p>
-    pub fn get_service_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateServiceCode>> {
+    pub fn get_service_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanRateServiceCode>> {
         &self.service_codes
     }
     /// Appends an item to `usage_types`.
@@ -212,17 +215,16 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The usage details of the line item in the billing report.</p>
     pub fn usage_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.usage_types.unwrap_or_default();
-        v.push(input.into());
-        self.usage_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.usage_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn set_usage_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.usage_types = input;
-        self
+    pub fn set_usage_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.usage_types = input; self
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn get_usage_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_usage_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.usage_types
     }
     /// Appends an item to `operations`.
@@ -232,17 +234,16 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The specific AWS operation for the line item in the billing report.</p>
     pub fn operations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input.into());
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.operations = input; self
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.operations
     }
     /// Appends an item to `filters`.
@@ -252,17 +253,16 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The filters.</p>
     pub fn filters(mut self, input: crate::types::SavingsPlanOfferingRateFilterElement) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanOfferingRateFilterElement>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlanOfferingRateFilterElement>> {
         &self.filters
     }
     /// <p>The token for the next page of results.</p>
@@ -272,8 +272,7 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,33 +285,38 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeSavingsPlansOfferingRatesInput`](crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput {
-                savings_plan_offering_ids: self.savings_plan_offering_ids,
-                savings_plan_payment_options: self.savings_plan_payment_options,
-                savings_plan_types: self.savings_plan_types,
-                products: self.products,
-                service_codes: self.service_codes,
-                usage_types: self.usage_types,
-                operations: self.operations,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                savings_plan_offering_ids: self.savings_plan_offering_ids
+                ,
+                savings_plan_payment_options: self.savings_plan_payment_options
+                ,
+                savings_plan_types: self.savings_plan_types
+                ,
+                products: self.products
+                ,
+                service_codes: self.service_codes
+                ,
+                usage_types: self.usage_types
+                ,
+                operations: self.operations
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

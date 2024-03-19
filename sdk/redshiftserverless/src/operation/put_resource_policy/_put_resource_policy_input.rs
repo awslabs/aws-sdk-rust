@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourcePolicyInput {
+pub struct PutResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the account to create or update a resource policy for.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.</p>
     /// <p><code>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\", \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"] , \"Effect\": \"Allow\" }]}"</code></p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutResourcePolicyInput {
+impl  PutResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the account to create or update a resource policy for.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.</p>
     /// <p><code>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\", \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"] , \"Effect\": \"Allow\" }]}"</code></p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the account to create or update a resource policy for.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the account to create or update a resource policy for.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +59,7 @@ impl PutResourcePolicyInputBuilder {
     /// <p>The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.</p>
     /// <p><code>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\", \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"] , \"Effect\": \"Allow\" }]}"</code></p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.</p>
     /// <p><code>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\", \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"] , \"Effect\": \"Allow\" }]}"</code></p>
@@ -69,12 +67,15 @@ impl PutResourcePolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
-            resource_arn: self.resource_arn,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_resource_policy::PutResourcePolicyInput {
+                resource_arn: self.resource_arn
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

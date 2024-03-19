@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStackSetsInput {
+pub struct ListStackSetsInput  {
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackSets</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -20,9 +20,9 @@ pub struct ListStackSetsInput {
     /// </ul>
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
-impl ListStackSetsInput {
+impl  ListStackSetsInput  {
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackSets</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -30,7 +30,7 @@ impl ListStackSetsInput {
         self.max_results
     }
     /// <p>The status of the stack sets that you want to get summary information about.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StackSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StackSetStatus> {
         self.status.as_ref()
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
@@ -42,7 +42,7 @@ impl ListStackSetsInput {
     /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
     /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
-    pub fn call_as(&self) -> ::std::option::Option<&crate::types::CallAs> {
+    pub fn call_as(&self) -> ::std::option::Option<& crate::types::CallAs> {
         self.call_as.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl ListStackSetsInputBuilder {
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackSets</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackSets</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl ListStackSetsInputBuilder {
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,8 +96,7 @@ impl ListStackSetsInputBuilder {
     }
     /// <p>The status of the stack sets that you want to get summary information about.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the stack sets that you want to get summary information about.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StackSetStatus> {
@@ -128,8 +125,7 @@ impl ListStackSetsInputBuilder {
     /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
-        self.call_as = input;
-        self
+        self.call_as = input; self
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -144,14 +140,19 @@ impl ListStackSetsInputBuilder {
         &self.call_as
     }
     /// Consumes the builder and constructs a [`ListStackSetsInput`](crate::operation::list_stack_sets::ListStackSetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_stack_sets::ListStackSetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_stack_sets::ListStackSetsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            status: self.status,
-            call_as: self.call_as,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stack_sets::ListStackSetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_stack_sets::ListStackSetsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+                call_as: self.call_as
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagePropertygraphStatisticsOutput {
+pub struct ManagePropertygraphStatisticsOutput  {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
     pub status: ::std::string::String,
     /// <p>This is only returned for refresh mode.</p>
     pub payload: ::std::option::Option<crate::types::RefreshStatisticsIdMap>,
     _request_id: Option<String>,
 }
-impl ManagePropertygraphStatisticsOutput {
+impl  ManagePropertygraphStatisticsOutput  {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>This is only returned for refresh mode.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::RefreshStatisticsIdMap> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::RefreshStatisticsIdMap> {
         self.payload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ManagePropertygraphStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ManagePropertygraphStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`ManagePropertygraphStatisticsOutput`](crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsOutput).
     pub fn builder() -> crate::operation::manage_propertygraph_statistics::builders::ManagePropertygraphStatisticsOutputBuilder {
@@ -49,8 +48,7 @@ impl ManagePropertygraphStatisticsOutputBuilder {
     }
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,40 +61,37 @@ impl ManagePropertygraphStatisticsOutputBuilder {
     }
     /// <p>This is only returned for refresh mode.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::RefreshStatisticsIdMap>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>This is only returned for refresh mode.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::RefreshStatisticsIdMap> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ManagePropertygraphStatisticsOutput`](crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::manage_propertygraph_statistics::builders::ManagePropertygraphStatisticsOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ManagePropertygraphStatisticsOutput",
-                )
-            })?,
-            payload: self.payload,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ManagePropertygraphStatisticsOutput")
+                    )?
+                ,
+                payload: self.payload
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

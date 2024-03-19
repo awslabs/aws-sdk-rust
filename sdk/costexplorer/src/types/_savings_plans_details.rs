@@ -3,7 +3,7 @@
 /// <p>The attribute details on a specific Savings Plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlansDetails {
+pub struct SavingsPlansDetails  {
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A group of instance types that Savings Plans applies to.</p>
@@ -11,17 +11,17 @@ pub struct SavingsPlansDetails {
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
     pub offering_id: ::std::option::Option<::std::string::String>,
 }
-impl SavingsPlansDetails {
+impl  SavingsPlansDetails  {
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>A group of instance types that Savings Plans applies to.</p>
-    pub fn instance_family(&self) -> ::std::option::Option<&str> {
+    pub fn instance_family(&self) -> ::std::option::Option<& str> {
         self.instance_family.as_deref()
     }
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
-    pub fn offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<& str> {
         self.offering_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl SavingsPlansDetailsBuilder {
     }
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SavingsPlansDetailsBuilder {
     }
     /// <p>A group of instance types that Savings Plans applies to.</p>
     pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_family = input;
-        self
+        self.instance_family = input; self
     }
     /// <p>A group of instance types that Savings Plans applies to.</p>
     pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl SavingsPlansDetailsBuilder {
     }
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl SavingsPlansDetailsBuilder {
     /// Consumes the builder and constructs a [`SavingsPlansDetails`](crate::types::SavingsPlansDetails).
     pub fn build(self) -> crate::types::SavingsPlansDetails {
         crate::types::SavingsPlansDetails {
-            region: self.region,
-            instance_family: self.instance_family,
-            offering_id: self.offering_id,
+            region: self.region
+            ,
+            instance_family: self.instance_family
+            ,
+            offering_id: self.offering_id
+            ,
         }
     }
 }
+

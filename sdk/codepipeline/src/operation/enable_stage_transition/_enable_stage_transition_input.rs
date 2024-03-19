@@ -3,7 +3,7 @@
 /// <p>Represents the input of an <code>EnableStageTransition</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableStageTransitionInput {
+pub struct EnableStageTransitionInput  {
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
@@ -11,17 +11,17 @@ pub struct EnableStageTransitionInput {
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
     pub transition_type: ::std::option::Option<crate::types::StageTransitionType>,
 }
-impl EnableStageTransitionInput {
+impl  EnableStageTransitionInput  {
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
-    pub fn transition_type(&self) -> ::std::option::Option<&crate::types::StageTransitionType> {
+    pub fn transition_type(&self) -> ::std::option::Option<& crate::types::StageTransitionType> {
         self.transition_type.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl EnableStageTransitionInputBuilder {
     }
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl EnableStageTransitionInputBuilder {
     }
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,22 +77,24 @@ impl EnableStageTransitionInputBuilder {
     }
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
     pub fn set_transition_type(mut self, input: ::std::option::Option<crate::types::StageTransitionType>) -> Self {
-        self.transition_type = input;
-        self
+        self.transition_type = input; self
     }
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
     pub fn get_transition_type(&self) -> &::std::option::Option<crate::types::StageTransitionType> {
         &self.transition_type
     }
     /// Consumes the builder and constructs a [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_stage_transition::EnableStageTransitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::enable_stage_transition::EnableStageTransitionInput {
-            pipeline_name: self.pipeline_name,
-            stage_name: self.stage_name,
-            transition_type: self.transition_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_stage_transition::EnableStageTransitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_stage_transition::EnableStageTransitionInput {
+                pipeline_name: self.pipeline_name
+                ,
+                stage_name: self.stage_name
+                ,
+                transition_type: self.transition_type
+                ,
+            }
+        )
     }
 }
+

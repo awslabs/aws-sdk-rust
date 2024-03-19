@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidatePipelineOutput {
+pub struct ValidatePipelineOutput  {
     /// <p>A boolean indicating whether or not the pipeline configuration is valid.</p>
     pub is_valid: ::std::option::Option<bool>,
     /// <p>A list of errors if the configuration is invalid.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationMessage>>,
     _request_id: Option<String>,
 }
-impl ValidatePipelineOutput {
+impl  ValidatePipelineOutput  {
     /// <p>A boolean indicating whether or not the pipeline configuration is valid.</p>
     pub fn is_valid(&self) -> ::std::option::Option<bool> {
         self.is_valid
     }
     /// <p>A list of errors if the configuration is invalid.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::ValidationMessage] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::ValidationMessage] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ValidatePipelineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ValidatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`ValidatePipelineOutput`](crate::operation::validate_pipeline::ValidatePipelineOutput).
     pub fn builder() -> crate::operation::validate_pipeline::builders::ValidatePipelineOutputBuilder {
@@ -38,7 +39,7 @@ impl ValidatePipelineOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidatePipelineOutputBuilder {
     pub(crate) is_valid: ::std::option::Option<bool>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationMessage>>,
     _request_id: Option<String>,
 }
 impl ValidatePipelineOutputBuilder {
@@ -49,8 +50,7 @@ impl ValidatePipelineOutputBuilder {
     }
     /// <p>A boolean indicating whether or not the pipeline configuration is valid.</p>
     pub fn set_is_valid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_valid = input;
-        self
+        self.is_valid = input; self
     }
     /// <p>A boolean indicating whether or not the pipeline configuration is valid.</p>
     pub fn get_is_valid(&self) -> &::std::option::Option<bool> {
@@ -63,34 +63,36 @@ impl ValidatePipelineOutputBuilder {
     /// <p>A list of errors if the configuration is invalid.</p>
     pub fn errors(mut self, input: crate::types::ValidationMessage) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of errors if the configuration is invalid.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationMessage>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of errors if the configuration is invalid.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidationMessage>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ValidatePipelineOutput`](crate::operation::validate_pipeline::ValidatePipelineOutput).
     pub fn build(self) -> crate::operation::validate_pipeline::ValidatePipelineOutput {
         crate::operation::validate_pipeline::ValidatePipelineOutput {
-            is_valid: self.is_valid,
-            errors: self.errors,
+            is_valid: self.is_valid
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

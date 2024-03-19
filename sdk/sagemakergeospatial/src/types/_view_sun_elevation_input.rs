@@ -3,13 +3,13 @@
 /// <p>The input structure for specifying ViewSunElevation angle property filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViewSunElevationInput {
+pub struct ViewSunElevationInput  {
     /// <p>The lower bound to view the sun elevation.</p>
     pub lower_bound: f32,
     /// <p>The upper bound to view the sun elevation.</p>
     pub upper_bound: f32,
 }
-impl ViewSunElevationInput {
+impl  ViewSunElevationInput  {
     /// <p>The lower bound to view the sun elevation.</p>
     pub fn lower_bound(&self) -> f32 {
         self.lower_bound
@@ -42,8 +42,7 @@ impl ViewSunElevationInputBuilder {
     }
     /// <p>The lower bound to view the sun elevation.</p>
     pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.lower_bound = input;
-        self
+        self.lower_bound = input; self
     }
     /// <p>The lower bound to view the sun elevation.</p>
     pub fn get_lower_bound(&self) -> &::std::option::Option<f32> {
@@ -57,8 +56,7 @@ impl ViewSunElevationInputBuilder {
     }
     /// <p>The upper bound to view the sun elevation.</p>
     pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
     }
     /// <p>The upper bound to view the sun elevation.</p>
     pub fn get_upper_bound(&self) -> &::std::option::Option<f32> {
@@ -69,19 +67,20 @@ impl ViewSunElevationInputBuilder {
     /// - [`lower_bound`](crate::types::builders::ViewSunElevationInputBuilder::lower_bound)
     /// - [`upper_bound`](crate::types::builders::ViewSunElevationInputBuilder::upper_bound)
     pub fn build(self) -> ::std::result::Result<crate::types::ViewSunElevationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ViewSunElevationInput {
-            lower_bound: self.lower_bound.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lower_bound",
-                    "lower_bound was not specified but it is required when building ViewSunElevationInput",
-                )
-            })?,
-            upper_bound: self.upper_bound.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upper_bound",
-                    "upper_bound was not specified but it is required when building ViewSunElevationInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ViewSunElevationInput {
+                lower_bound: self.lower_bound
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lower_bound", "lower_bound was not specified but it is required when building ViewSunElevationInput")
+                    )?
+                ,
+                upper_bound: self.upper_bound
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upper_bound", "upper_bound was not specified but it is required when building ViewSunElevationInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

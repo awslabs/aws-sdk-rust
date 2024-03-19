@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRegexPatternSetInput {
+pub struct DeleteRegexPatternSetInput  {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -19,9 +19,9 @@ pub struct DeleteRegexPatternSetInput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub lock_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRegexPatternSetInput {
+impl  DeleteRegexPatternSetInput  {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -32,15 +32,15 @@ impl DeleteRegexPatternSetInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
-    pub fn lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn lock_token(&self) -> ::std::option::Option<& str> {
         self.lock_token.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl DeleteRegexPatternSetInputBuilder {
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl DeleteRegexPatternSetInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -120,8 +118,7 @@ impl DeleteRegexPatternSetInputBuilder {
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,23 +132,26 @@ impl DeleteRegexPatternSetInputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lock_token = input;
-        self
+        self.lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.lock_token
     }
     /// Consumes the builder and constructs a [`DeleteRegexPatternSetInput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput {
-            name: self.name,
-            scope: self.scope,
-            id: self.id,
-            lock_token: self.lock_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput {
+                name: self.name
+                ,
+                scope: self.scope
+                ,
+                id: self.id
+                ,
+                lock_token: self.lock_token
+                ,
+            }
+        )
     }
 }
+

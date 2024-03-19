@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationPreferencesInput {
+pub struct GetRecommendationPreferencesInput  {
     /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
@@ -17,21 +17,21 @@ pub struct GetRecommendationPreferencesInput {
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetRecommendationPreferencesInput {
+impl  GetRecommendationPreferencesInput  {
     /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>An object that describes the scope of the recommendation preference to return.</p>
     /// <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>The token to advance to the next page of recommendation preferences.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of recommendation preferences to return with a single request.</p>
@@ -71,8 +71,7 @@ impl GetRecommendationPreferencesInputBuilder {
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>
@@ -90,8 +89,7 @@ impl GetRecommendationPreferencesInputBuilder {
     /// <p>An object that describes the scope of the recommendation preference to return.</p>
     /// <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>An object that describes the scope of the recommendation preference to return.</p>
     /// <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -105,8 +103,7 @@ impl GetRecommendationPreferencesInputBuilder {
     }
     /// <p>The token to advance to the next page of recommendation preferences.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to advance to the next page of recommendation preferences.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +118,7 @@ impl GetRecommendationPreferencesInputBuilder {
     /// <p>The maximum number of recommendation preferences to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of recommendation preferences to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -130,17 +126,19 @@ impl GetRecommendationPreferencesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetRecommendationPreferencesInput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput {
-            resource_type: self.resource_type,
-            scope: self.scope,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput {
+                resource_type: self.resource_type
+                ,
+                scope: self.scope
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -6,7 +6,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedRuleSet {
+pub struct ManagedRuleSet  {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub name: ::std::string::String,
@@ -17,7 +17,7 @@ pub struct ManagedRuleSet {
     /// <p>A description of the set that helps with identification.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The versions of this managed rule set that are available for use by customers.</p>
-    pub published_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>>,
+    pub published_versions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ManagedRuleSetVersion>>,
     /// <p>The version that you would like your customers to use.</p>
     pub recommended_version: ::std::option::Option<::std::string::String>,
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix.</p>
@@ -34,35 +34,30 @@ pub struct ManagedRuleSet {
     /// </ul>
     pub label_namespace: ::std::option::Option<::std::string::String>,
 }
-impl ManagedRuleSet {
+impl  ManagedRuleSet  {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A description of the set that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The versions of this managed rule set that are available for use by customers.</p>
-    pub fn published_versions(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>> {
+    pub fn published_versions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ManagedRuleSetVersion>> {
         self.published_versions.as_ref()
     }
     /// <p>The version that you would like your customers to use.</p>
-    pub fn recommended_version(&self) -> ::std::option::Option<&str> {
+    pub fn recommended_version(&self) -> ::std::option::Option<& str> {
         self.recommended_version.as_deref()
     }
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix.</p>
@@ -77,7 +72,7 @@ impl ManagedRuleSet {
     /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
     /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
-    pub fn label_namespace(&self) -> ::std::option::Option<&str> {
+    pub fn label_namespace(&self) -> ::std::option::Option<& str> {
         self.label_namespace.as_deref()
     }
 }
@@ -96,7 +91,7 @@ pub struct ManagedRuleSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) published_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>>,
+    pub(crate) published_versions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ManagedRuleSetVersion>>,
     pub(crate) recommended_version: ::std::option::Option<::std::string::String>,
     pub(crate) label_namespace: ::std::option::Option<::std::string::String>,
 }
@@ -111,8 +106,7 @@ impl ManagedRuleSetBuilder {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
@@ -127,8 +121,7 @@ impl ManagedRuleSetBuilder {
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +135,7 @@ impl ManagedRuleSetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +148,7 @@ impl ManagedRuleSetBuilder {
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,22 +161,16 @@ impl ManagedRuleSetBuilder {
     /// <p>The versions of this managed rule set that are available for use by customers.</p>
     pub fn published_versions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ManagedRuleSetVersion) -> Self {
         let mut hash_map = self.published_versions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.published_versions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.published_versions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The versions of this managed rule set that are available for use by customers.</p>
-    pub fn set_published_versions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>>,
-    ) -> Self {
-        self.published_versions = input;
-        self
+    pub fn set_published_versions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ManagedRuleSetVersion>>) -> Self {
+        self.published_versions = input; self
     }
     /// <p>The versions of this managed rule set that are available for use by customers.</p>
-    pub fn get_published_versions(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ManagedRuleSetVersion>> {
+    pub fn get_published_versions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ManagedRuleSetVersion>> {
         &self.published_versions
     }
     /// <p>The version that you would like your customers to use.</p>
@@ -195,8 +180,7 @@ impl ManagedRuleSetBuilder {
     }
     /// <p>The version that you would like your customers to use.</p>
     pub fn set_recommended_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommended_version = input;
-        self
+        self.recommended_version = input; self
     }
     /// <p>The version that you would like your customers to use.</p>
     pub fn get_recommended_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +215,7 @@ impl ManagedRuleSetBuilder {
     /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_namespace = input;
-        self
+        self.label_namespace = input; self
     }
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix.</p>
     /// <ul>
@@ -255,29 +238,33 @@ impl ManagedRuleSetBuilder {
     /// - [`id`](crate::types::builders::ManagedRuleSetBuilder::id)
     /// - [`arn`](crate::types::builders::ManagedRuleSetBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ManagedRuleSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ManagedRuleSet {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ManagedRuleSet",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ManagedRuleSet",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ManagedRuleSet",
-                )
-            })?,
-            description: self.description,
-            published_versions: self.published_versions,
-            recommended_version: self.recommended_version,
-            label_namespace: self.label_namespace,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ManagedRuleSet {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ManagedRuleSet")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ManagedRuleSet")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ManagedRuleSet")
+                    )?
+                ,
+                description: self.description
+                ,
+                published_versions: self.published_versions
+                ,
+                recommended_version: self.recommended_version
+                ,
+                label_namespace: self.label_namespace
+                ,
+            }
+        )
     }
 }
+

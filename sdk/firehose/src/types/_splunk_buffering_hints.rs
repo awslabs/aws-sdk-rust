@@ -3,13 +3,13 @@
 /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SplunkBufferingHints {
+pub struct SplunkBufferingHints  {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 60 (1 minute).</p>
     pub interval_in_seconds: ::std::option::Option<i32>,
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
     pub size_in_mbs: ::std::option::Option<i32>,
 }
-impl SplunkBufferingHints {
+impl  SplunkBufferingHints  {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 60 (1 minute).</p>
     pub fn interval_in_seconds(&self) -> ::std::option::Option<i32> {
         self.interval_in_seconds
@@ -41,8 +41,7 @@ impl SplunkBufferingHintsBuilder {
     }
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 60 (1 minute).</p>
     pub fn set_interval_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval_in_seconds = input;
-        self
+        self.interval_in_seconds = input; self
     }
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 60 (1 minute).</p>
     pub fn get_interval_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl SplunkBufferingHintsBuilder {
     }
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
     pub fn set_size_in_mbs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_mbs = input;
-        self
+        self.size_in_mbs = input; self
     }
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
     pub fn get_size_in_mbs(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl SplunkBufferingHintsBuilder {
     /// Consumes the builder and constructs a [`SplunkBufferingHints`](crate::types::SplunkBufferingHints).
     pub fn build(self) -> crate::types::SplunkBufferingHints {
         crate::types::SplunkBufferingHints {
-            interval_in_seconds: self.interval_in_seconds,
-            size_in_mbs: self.size_in_mbs,
+            interval_in_seconds: self.interval_in_seconds
+            ,
+            size_in_mbs: self.size_in_mbs
+            ,
         }
     }
 }
+

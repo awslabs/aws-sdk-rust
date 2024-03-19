@@ -3,7 +3,7 @@
 /// <p>Information about an Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsOpenSearchServiceDomainDetails {
+pub struct AwsOpenSearchServiceDomainDetails  {
     /// <p>The ARN of the OpenSearch Service domain.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>IAM policy document that specifies the access policies for the OpenSearch Service domain.</p>
@@ -32,72 +32,70 @@ pub struct AwsOpenSearchServiceDomainDetails {
     pub log_publishing_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails>,
     /// <p>The domain endpoints. Used if the OpenSearch domain resides in a VPC.</p>
     /// <p>This is a map of key-value pairs. The key is always <code>vpc</code>. The value is the endpoint.</p>
-    pub domain_endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub domain_endpoints: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies options for fine-grained access control.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>,
 }
-impl AwsOpenSearchServiceDomainDetails {
+impl  AwsOpenSearchServiceDomainDetails  {
     /// <p>The ARN of the OpenSearch Service domain.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>IAM policy document that specifies the access policies for the OpenSearch Service domain.</p>
-    pub fn access_policies(&self) -> ::std::option::Option<&str> {
+    pub fn access_policies(&self) -> ::std::option::Option<& str> {
         self.access_policies.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The identifier of the domain.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The domain endpoint.</p>
-    pub fn domain_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn domain_endpoint(&self) -> ::std::option::Option<& str> {
         self.domain_endpoint.as_deref()
     }
     /// <p>The version of the domain engine.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Details about the configuration for encryption at rest.</p>
-    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails> {
+    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails> {
         self.encryption_at_rest_options.as_ref()
     }
     /// <p>Details about the configuration for node-to-node encryption.</p>
-    pub fn node_to_node_encryption_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails> {
+    pub fn node_to_node_encryption_options(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails> {
         self.node_to_node_encryption_options.as_ref()
     }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
-    pub fn service_software_options(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails> {
+    pub fn service_software_options(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails> {
         self.service_software_options.as_ref()
     }
     /// <p>Details about the configuration of an OpenSearch cluster.</p>
-    pub fn cluster_config(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainClusterConfigDetails> {
+    pub fn cluster_config(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainClusterConfigDetails> {
         self.cluster_config.as_ref()
     }
     /// <p>Additional options for the domain endpoint.</p>
-    pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails> {
+    pub fn domain_endpoint_options(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails> {
         self.domain_endpoint_options.as_ref()
     }
     /// <p>Information that OpenSearch Service derives based on <code>VPCOptions</code> for the domain.</p>
-    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails> {
+    pub fn vpc_options(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails> {
         self.vpc_options.as_ref()
     }
     /// <p>Configures the CloudWatch Logs to publish for the OpenSearch domain.</p>
-    pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails> {
+    pub fn log_publishing_options(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails> {
         self.log_publishing_options.as_ref()
     }
     /// <p>The domain endpoints. Used if the OpenSearch domain resides in a VPC.</p>
     /// <p>This is a map of key-value pairs. The key is always <code>vpc</code>. The value is the endpoint.</p>
-    pub fn domain_endpoints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn domain_endpoints(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.domain_endpoints.as_ref()
     }
     /// <p>Specifies options for fine-grained access control.</p>
-    pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails> {
+    pub fn advanced_security_options(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails> {
         self.advanced_security_options.as_ref()
     }
 }
@@ -125,7 +123,7 @@ pub struct AwsOpenSearchServiceDomainDetailsBuilder {
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails>,
     pub(crate) log_publishing_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails>,
-    pub(crate) domain_endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) domain_endpoints: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>,
 }
 impl AwsOpenSearchServiceDomainDetailsBuilder {
@@ -136,8 +134,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     }
     /// <p>The ARN of the OpenSearch Service domain.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the OpenSearch Service domain.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +147,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     }
     /// <p>IAM policy document that specifies the access policies for the OpenSearch Service domain.</p>
     pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_policies = input;
-        self
+        self.access_policies = input; self
     }
     /// <p>IAM policy document that specifies the access policies for the OpenSearch Service domain.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     }
     /// <p>The name of the endpoint.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the endpoint.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +173,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     }
     /// <p>The identifier of the domain.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the domain.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +186,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     }
     /// <p>The domain endpoint.</p>
     pub fn set_domain_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_endpoint = input;
-        self
+        self.domain_endpoint = input; self
     }
     /// <p>The domain endpoint.</p>
     pub fn get_domain_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +199,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     }
     /// <p>The version of the domain engine.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the domain engine.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,12 +211,8 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
         self
     }
     /// <p>Details about the configuration for encryption at rest.</p>
-    pub fn set_encryption_at_rest_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails>,
-    ) -> Self {
-        self.encryption_at_rest_options = input;
-        self
+    pub fn set_encryption_at_rest_options(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails>) -> Self {
+        self.encryption_at_rest_options = input; self
     }
     /// <p>Details about the configuration for encryption at rest.</p>
     pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails> {
@@ -236,17 +224,11 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
         self
     }
     /// <p>Details about the configuration for node-to-node encryption.</p>
-    pub fn set_node_to_node_encryption_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails>,
-    ) -> Self {
-        self.node_to_node_encryption_options = input;
-        self
+    pub fn set_node_to_node_encryption_options(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails>) -> Self {
+        self.node_to_node_encryption_options = input; self
     }
     /// <p>Details about the configuration for node-to-node encryption.</p>
-    pub fn get_node_to_node_encryption_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails> {
+    pub fn get_node_to_node_encryption_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails> {
         &self.node_to_node_encryption_options
     }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
@@ -255,12 +237,8 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
         self
     }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
-    pub fn set_service_software_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails>,
-    ) -> Self {
-        self.service_software_options = input;
-        self
+    pub fn set_service_software_options(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails>) -> Self {
+        self.service_software_options = input; self
     }
     /// <p>Information about the status of a domain relative to the latest service software.</p>
     pub fn get_service_software_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails> {
@@ -273,8 +251,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     }
     /// <p>Details about the configuration of an OpenSearch cluster.</p>
     pub fn set_cluster_config(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigDetails>) -> Self {
-        self.cluster_config = input;
-        self
+        self.cluster_config = input; self
     }
     /// <p>Details about the configuration of an OpenSearch cluster.</p>
     pub fn get_cluster_config(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigDetails> {
@@ -286,12 +263,8 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
         self
     }
     /// <p>Additional options for the domain endpoint.</p>
-    pub fn set_domain_endpoint_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails>,
-    ) -> Self {
-        self.domain_endpoint_options = input;
-        self
+    pub fn set_domain_endpoint_options(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails>) -> Self {
+        self.domain_endpoint_options = input; self
     }
     /// <p>Additional options for the domain endpoint.</p>
     pub fn get_domain_endpoint_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails> {
@@ -304,8 +277,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     }
     /// <p>Information that OpenSearch Service derives based on <code>VPCOptions</code> for the domain.</p>
     pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails>) -> Self {
-        self.vpc_options = input;
-        self
+        self.vpc_options = input; self
     }
     /// <p>Information that OpenSearch Service derives based on <code>VPCOptions</code> for the domain.</p>
     pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails> {
@@ -317,12 +289,8 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
         self
     }
     /// <p>Configures the CloudWatch Logs to publish for the OpenSearch domain.</p>
-    pub fn set_log_publishing_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails>,
-    ) -> Self {
-        self.log_publishing_options = input;
-        self
+    pub fn set_log_publishing_options(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails>) -> Self {
+        self.log_publishing_options = input; self
     }
     /// <p>Configures the CloudWatch Logs to publish for the OpenSearch domain.</p>
     pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails> {
@@ -334,28 +302,20 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     ///
     /// <p>The domain endpoints. Used if the OpenSearch domain resides in a VPC.</p>
     /// <p>This is a map of key-value pairs. The key is always <code>vpc</code>. The value is the endpoint.</p>
-    pub fn domain_endpoints(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_endpoints(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.domain_endpoints.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.domain_endpoints = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.domain_endpoints = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The domain endpoints. Used if the OpenSearch domain resides in a VPC.</p>
     /// <p>This is a map of key-value pairs. The key is always <code>vpc</code>. The value is the endpoint.</p>
-    pub fn set_domain_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.domain_endpoints = input;
-        self
+    pub fn set_domain_endpoints(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.domain_endpoints = input; self
     }
     /// <p>The domain endpoints. Used if the OpenSearch domain resides in a VPC.</p>
     /// <p>This is a map of key-value pairs. The key is always <code>vpc</code>. The value is the endpoint.</p>
-    pub fn get_domain_endpoints(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_domain_endpoints(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.domain_endpoints
     }
     /// <p>Specifies options for fine-grained access control.</p>
@@ -364,12 +324,8 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
         self
     }
     /// <p>Specifies options for fine-grained access control.</p>
-    pub fn set_advanced_security_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>,
-    ) -> Self {
-        self.advanced_security_options = input;
-        self
+    pub fn set_advanced_security_options(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>) -> Self {
+        self.advanced_security_options = input; self
     }
     /// <p>Specifies options for fine-grained access control.</p>
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails> {
@@ -378,21 +334,37 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainDetails`](crate::types::AwsOpenSearchServiceDomainDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainDetails {
         crate::types::AwsOpenSearchServiceDomainDetails {
-            arn: self.arn,
-            access_policies: self.access_policies,
-            domain_name: self.domain_name,
-            id: self.id,
-            domain_endpoint: self.domain_endpoint,
-            engine_version: self.engine_version,
-            encryption_at_rest_options: self.encryption_at_rest_options,
-            node_to_node_encryption_options: self.node_to_node_encryption_options,
-            service_software_options: self.service_software_options,
-            cluster_config: self.cluster_config,
-            domain_endpoint_options: self.domain_endpoint_options,
-            vpc_options: self.vpc_options,
-            log_publishing_options: self.log_publishing_options,
-            domain_endpoints: self.domain_endpoints,
-            advanced_security_options: self.advanced_security_options,
+            arn: self.arn
+            ,
+            access_policies: self.access_policies
+            ,
+            domain_name: self.domain_name
+            ,
+            id: self.id
+            ,
+            domain_endpoint: self.domain_endpoint
+            ,
+            engine_version: self.engine_version
+            ,
+            encryption_at_rest_options: self.encryption_at_rest_options
+            ,
+            node_to_node_encryption_options: self.node_to_node_encryption_options
+            ,
+            service_software_options: self.service_software_options
+            ,
+            cluster_config: self.cluster_config
+            ,
+            domain_endpoint_options: self.domain_endpoint_options
+            ,
+            vpc_options: self.vpc_options
+            ,
+            log_publishing_options: self.log_publishing_options
+            ,
+            domain_endpoints: self.domain_endpoints
+            ,
+            advanced_security_options: self.advanced_security_options
+            ,
         }
     }
 }
+

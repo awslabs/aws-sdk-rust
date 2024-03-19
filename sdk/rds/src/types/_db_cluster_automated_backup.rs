@@ -3,7 +3,7 @@
 /// <p>An automated backup of a DB cluster. It consists of system backups, transaction logs, and the database cluster properties that existed at the time you deleted the source cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbClusterAutomatedBackup {
+pub struct DbClusterAutomatedBackup  {
     /// <p>The name of the database engine for this automated backup.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID associated with the DB cluster.</p>
@@ -45,7 +45,7 @@ pub struct DbClusterAutomatedBackup {
     /// <p>The engine mode of the database engine for the automated backup.</p>
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zones where instances in the DB cluster can be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
     /// <p>Valid Values: <code>1150-65535</code></p>
@@ -65,41 +65,41 @@ pub struct DbClusterAutomatedBackup {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub storage_throughput: ::std::option::Option<i32>,
 }
-impl DbClusterAutomatedBackup {
+impl  DbClusterAutomatedBackup  {
     /// <p>The name of the database engine for this automated backup.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The VPC ID associated with the DB cluster.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
-    pub fn db_cluster_automated_backups_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_automated_backups_arn(&self) -> ::std::option::Option<& str> {
         self.db_cluster_automated_backups_arn.as_deref()
     }
     /// <p>The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Earliest and latest time an instance can be restored to:</p>
-    pub fn restore_window(&self) -> ::std::option::Option<&crate::types::RestoreWindow> {
+    pub fn restore_window(&self) -> ::std::option::Option<& crate::types::RestoreWindow> {
         self.restore_window.as_ref()
     }
     /// <p>The master user name of the automated backup.</p>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The resource ID for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<& str> {
         self.db_cluster_resource_id.as_deref()
     }
     /// <p>The Amazon Web Services Region associated with the automated backup.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The license model information for this DB cluster automated backup.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>A list of status information for an automated backup:</p>
@@ -107,7 +107,7 @@ impl DbClusterAutomatedBackup {
     /// <li>
     /// <p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
@@ -115,7 +115,7 @@ impl DbClusterAutomatedBackup {
         self.iam_database_authentication_enabled
     }
     /// <p>The time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    pub fn cluster_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cluster_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>Indicates whether the source DB cluster is encrypted.</p>
@@ -127,11 +127,11 @@ impl DbClusterAutomatedBackup {
         self.allocated_storage
     }
     /// <p>The version of the database engine for the automated backup.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the source DB cluster.</p>
-    pub fn db_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.db_cluster_arn.as_deref()
     }
     /// <p>The retention period for the automated backups.</p>
@@ -139,14 +139,15 @@ impl DbClusterAutomatedBackup {
         self.backup_retention_period
     }
     /// <p>The engine mode of the database engine for the automated backup.</p>
-    pub fn engine_mode(&self) -> ::std::option::Option<&str> {
+    pub fn engine_mode(&self) -> ::std::option::Option<& str> {
         self.engine_mode.as_deref()
     }
     /// <p>The Availability Zones where instances in the DB cluster can be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
@@ -156,12 +157,12 @@ impl DbClusterAutomatedBackup {
     }
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The storage type associated with the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
@@ -170,7 +171,7 @@ impl DbClusterAutomatedBackup {
         self.iops
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
-    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<& str> {
         self.aws_backup_recovery_point_arn.as_deref()
     }
     /// <p>The storage throughput for the automated backup. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
@@ -208,7 +209,7 @@ pub struct DbClusterAutomatedBackupBuilder {
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
@@ -224,8 +225,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The name of the database engine for this automated backup.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The name of the database engine for this automated backup.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +238,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The VPC ID associated with the DB cluster.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The VPC ID associated with the DB cluster.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +251,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
     pub fn set_db_cluster_automated_backups_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_automated_backups_arn = input;
-        self
+        self.db_cluster_automated_backups_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
     pub fn get_db_cluster_automated_backups_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,8 +264,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +277,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>Earliest and latest time an instance can be restored to:</p>
     pub fn set_restore_window(mut self, input: ::std::option::Option<crate::types::RestoreWindow>) -> Self {
-        self.restore_window = input;
-        self
+        self.restore_window = input; self
     }
     /// <p>Earliest and latest time an instance can be restored to:</p>
     pub fn get_restore_window(&self) -> &::std::option::Option<crate::types::RestoreWindow> {
@@ -294,8 +290,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The master user name of the automated backup.</p>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The master user name of the automated backup.</p>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,8 +303,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The resource ID for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_resource_id = input;
-        self
+        self.db_cluster_resource_id = input; self
     }
     /// <p>The resource ID for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -322,8 +316,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The Amazon Web Services Region associated with the automated backup.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region associated with the automated backup.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -336,8 +329,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The license model information for this DB cluster automated backup.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>The license model information for this DB cluster automated backup.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -358,8 +350,7 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
@@ -376,8 +367,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.iam_database_authentication_enabled = input;
-        self
+        self.iam_database_authentication_enabled = input; self
     }
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
@@ -390,8 +380,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn set_cluster_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.cluster_create_time = input;
-        self
+        self.cluster_create_time = input; self
     }
     /// <p>The time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn get_cluster_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -404,8 +393,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_encrypted = input;
-        self
+        self.storage_encrypted = input; self
     }
     /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
@@ -418,8 +406,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -432,8 +419,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The version of the database engine for the automated backup.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the database engine for the automated backup.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -446,8 +432,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the source DB cluster.</p>
     pub fn set_db_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_arn = input;
-        self
+        self.db_cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the source DB cluster.</p>
     pub fn get_db_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -460,8 +445,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The retention period for the automated backups.</p>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.backup_retention_period = input;
-        self
+        self.backup_retention_period = input; self
     }
     /// <p>The retention period for the automated backups.</p>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
@@ -474,8 +458,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The engine mode of the database engine for the automated backup.</p>
     pub fn set_engine_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_mode = input;
-        self
+        self.engine_mode = input; self
     }
     /// <p>The engine mode of the database engine for the automated backup.</p>
     pub fn get_engine_mode(&self) -> &::std::option::Option<::std::string::String> {
@@ -488,17 +471,16 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p>The Availability Zones where instances in the DB cluster can be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Availability Zones where instances in the DB cluster can be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>The Availability Zones where instances in the DB cluster can be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>The port number that the automated backup used for connections.</p>
@@ -512,8 +494,7 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p>Default: Inherits from the source DB cluster</p>
     /// <p>Valid Values: <code>1150-65535</code></p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
@@ -530,8 +511,7 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -547,8 +527,7 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p>The storage type associated with the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The storage type associated with the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
@@ -564,8 +543,7 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
@@ -579,8 +557,7 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_backup_recovery_point_arn = input;
-        self
+        self.aws_backup_recovery_point_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -595,8 +572,7 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p>The storage throughput for the automated backup. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
-        self
+        self.storage_throughput = input; self
     }
     /// <p>The storage throughput for the automated backup. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
@@ -606,31 +582,57 @@ impl DbClusterAutomatedBackupBuilder {
     /// Consumes the builder and constructs a [`DbClusterAutomatedBackup`](crate::types::DbClusterAutomatedBackup).
     pub fn build(self) -> crate::types::DbClusterAutomatedBackup {
         crate::types::DbClusterAutomatedBackup {
-            engine: self.engine,
-            vpc_id: self.vpc_id,
-            db_cluster_automated_backups_arn: self.db_cluster_automated_backups_arn,
-            db_cluster_identifier: self.db_cluster_identifier,
-            restore_window: self.restore_window,
-            master_username: self.master_username,
-            db_cluster_resource_id: self.db_cluster_resource_id,
-            region: self.region,
-            license_model: self.license_model,
-            status: self.status,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
-            cluster_create_time: self.cluster_create_time,
-            storage_encrypted: self.storage_encrypted,
-            allocated_storage: self.allocated_storage,
-            engine_version: self.engine_version,
-            db_cluster_arn: self.db_cluster_arn,
-            backup_retention_period: self.backup_retention_period,
-            engine_mode: self.engine_mode,
-            availability_zones: self.availability_zones,
-            port: self.port,
-            kms_key_id: self.kms_key_id,
-            storage_type: self.storage_type,
-            iops: self.iops,
-            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
-            storage_throughput: self.storage_throughput,
+            engine: self.engine
+            ,
+            vpc_id: self.vpc_id
+            ,
+            db_cluster_automated_backups_arn: self.db_cluster_automated_backups_arn
+            ,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            restore_window: self.restore_window
+            ,
+            master_username: self.master_username
+            ,
+            db_cluster_resource_id: self.db_cluster_resource_id
+            ,
+            region: self.region
+            ,
+            license_model: self.license_model
+            ,
+            status: self.status
+            ,
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled
+            ,
+            cluster_create_time: self.cluster_create_time
+            ,
+            storage_encrypted: self.storage_encrypted
+            ,
+            allocated_storage: self.allocated_storage
+            ,
+            engine_version: self.engine_version
+            ,
+            db_cluster_arn: self.db_cluster_arn
+            ,
+            backup_retention_period: self.backup_retention_period
+            ,
+            engine_mode: self.engine_mode
+            ,
+            availability_zones: self.availability_zones
+            ,
+            port: self.port
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            storage_type: self.storage_type
+            ,
+            iops: self.iops
+            ,
+            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn
+            ,
+            storage_throughput: self.storage_throughput
+            ,
         }
     }
 }
+

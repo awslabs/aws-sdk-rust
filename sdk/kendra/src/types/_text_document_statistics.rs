@@ -3,13 +3,13 @@
 /// <p>Provides information about text documents indexed in an index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextDocumentStatistics {
+pub struct TextDocumentStatistics  {
     /// <p>The number of text documents indexed.</p>
     pub indexed_text_documents_count: i32,
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub indexed_text_bytes: i64,
 }
-impl TextDocumentStatistics {
+impl  TextDocumentStatistics  {
     /// <p>The number of text documents indexed.</p>
     pub fn indexed_text_documents_count(&self) -> i32 {
         self.indexed_text_documents_count
@@ -42,8 +42,7 @@ impl TextDocumentStatisticsBuilder {
     }
     /// <p>The number of text documents indexed.</p>
     pub fn set_indexed_text_documents_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.indexed_text_documents_count = input;
-        self
+        self.indexed_text_documents_count = input; self
     }
     /// <p>The number of text documents indexed.</p>
     pub fn get_indexed_text_documents_count(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl TextDocumentStatisticsBuilder {
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn set_indexed_text_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.indexed_text_bytes = input;
-        self
+        self.indexed_text_bytes = input; self
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn get_indexed_text_bytes(&self) -> &::std::option::Option<i64> {
@@ -67,8 +65,13 @@ impl TextDocumentStatisticsBuilder {
     /// Consumes the builder and constructs a [`TextDocumentStatistics`](crate::types::TextDocumentStatistics).
     pub fn build(self) -> crate::types::TextDocumentStatistics {
         crate::types::TextDocumentStatistics {
-            indexed_text_documents_count: self.indexed_text_documents_count.unwrap_or_default(),
-            indexed_text_bytes: self.indexed_text_bytes.unwrap_or_default(),
+            indexed_text_documents_count: self.indexed_text_documents_count
+                .unwrap_or_default()
+            ,
+            indexed_text_bytes: self.indexed_text_bytes
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

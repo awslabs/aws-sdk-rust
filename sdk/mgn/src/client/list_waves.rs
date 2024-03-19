@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWaves`](crate::operation::list_waves::builders::ListWavesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_waves::builders::ListWavesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(ListWavesRequestFilters)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::filters) / [`set_filters(Option<ListWavesRequestFilters>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_filters):<br>required: **false**<br><p>Waves list filters.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum results to return when listing waves.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_next_token):<br>required: **false**<br><p>Request next token.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_waves::builders::ListWavesFluentBuilder::set_account_id):<br>required: **false**<br><p>Request account ID.</p><br>
-    /// - On success, responds with [`ListWavesOutput`](crate::operation::list_waves::ListWavesOutput) with field(s):
+                            /// - On success, responds with [`ListWavesOutput`](crate::operation::list_waves::ListWavesOutput) with field(s):
     ///   - [`items(Option<Vec::<Wave>>)`](crate::operation::list_waves::ListWavesOutput::items): <p>Waves list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_waves::ListWavesOutput::next_token): <p>Response next token.</p>
-    /// - On failure, responds with [`SdkError<ListWavesError>`](crate::operation::list_waves::ListWavesError)
+                            /// - On failure, responds with [`SdkError<ListWavesError>`](crate::operation::list_waves::ListWavesError)
     pub fn list_waves(&self) -> crate::operation::list_waves::builders::ListWavesFluentBuilder {
-        crate::operation::list_waves::builders::ListWavesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_waves::builders::ListWavesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

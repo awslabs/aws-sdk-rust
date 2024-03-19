@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTermForReportOutput {
+pub struct GetTermForReportOutput  {
     /// <p>Presigned S3 url to access the term content.</p>
     pub document_presigned_url: ::std::option::Option<::std::string::String>,
     /// <p>Unique token representing this request event.</p>
     pub term_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetTermForReportOutput {
+impl  GetTermForReportOutput  {
     /// <p>Presigned S3 url to access the term content.</p>
-    pub fn document_presigned_url(&self) -> ::std::option::Option<&str> {
+    pub fn document_presigned_url(&self) -> ::std::option::Option<& str> {
         self.document_presigned_url.as_deref()
     }
     /// <p>Unique token representing this request event.</p>
-    pub fn term_token(&self) -> ::std::option::Option<&str> {
+    pub fn term_token(&self) -> ::std::option::Option<& str> {
         self.term_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTermForReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTermForReportOutput {
     /// Creates a new builder-style object to manufacture [`GetTermForReportOutput`](crate::operation::get_term_for_report::GetTermForReportOutput).
     pub fn builder() -> crate::operation::get_term_for_report::builders::GetTermForReportOutputBuilder {
@@ -47,8 +47,7 @@ impl GetTermForReportOutputBuilder {
     }
     /// <p>Presigned S3 url to access the term content.</p>
     pub fn set_document_presigned_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_presigned_url = input;
-        self
+        self.document_presigned_url = input; self
     }
     /// <p>Presigned S3 url to access the term content.</p>
     pub fn get_document_presigned_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetTermForReportOutputBuilder {
     }
     /// <p>Unique token representing this request event.</p>
     pub fn set_term_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.term_token = input;
-        self
+        self.term_token = input; self
     }
     /// <p>Unique token representing this request event.</p>
     pub fn get_term_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.term_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTermForReportOutput`](crate::operation::get_term_for_report::GetTermForReportOutput).
     pub fn build(self) -> crate::operation::get_term_for_report::GetTermForReportOutput {
         crate::operation::get_term_for_report::GetTermForReportOutput {
-            document_presigned_url: self.document_presigned_url,
-            term_token: self.term_token,
+            document_presigned_url: self.document_presigned_url
+            ,
+            term_token: self.term_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// An AWS Chatbot configuration for Amazon Chime.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChimeWebhookConfiguration {
+pub struct ChimeWebhookConfiguration  {
     /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
     pub webhook_description: ::std::string::String,
     /// The ARN of the ChimeWebhookConfiguration.
@@ -11,39 +11,35 @@ pub struct ChimeWebhookConfiguration {
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub iam_role_arn: ::std::string::String,
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub sns_topic_arns: ::std::vec::Vec<::std::string::String>,
+    pub sns_topic_arns: ::std::vec::Vec::<::std::string::String>,
     /// The name of the configuration.
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// Specifies the logging level for this configuration. This property affects the log entries pushed to Amazon CloudWatch Logs.Logging levels include ERROR, INFO, or NONE.
     pub logging_level: ::std::option::Option<::std::string::String>,
 }
-impl ChimeWebhookConfiguration {
+impl  ChimeWebhookConfiguration  {
     /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
-    pub fn webhook_description(&self) -> &str {
-        use std::ops::Deref;
-        self.webhook_description.deref()
+    pub fn webhook_description(&self) -> & str {
+        use std::ops::Deref; self.webhook_description.deref()
     }
     /// The ARN of the ChimeWebhookConfiguration.
-    pub fn chat_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.chat_configuration_arn.deref()
+    pub fn chat_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.chat_configuration_arn.deref()
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
-    pub fn iam_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_role_arn.deref()
+    pub fn iam_role_arn(&self) -> & str {
+        use std::ops::Deref; self.iam_role_arn.deref()
     }
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub fn sns_topic_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.sns_topic_arns.deref()
+    pub fn sns_topic_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.sns_topic_arns.deref()
     }
     /// The name of the configuration.
-    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_name(&self) -> ::std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// Specifies the logging level for this configuration. This property affects the log entries pushed to Amazon CloudWatch Logs.Logging levels include ERROR, INFO, or NONE.
-    pub fn logging_level(&self) -> ::std::option::Option<&str> {
+    pub fn logging_level(&self) -> ::std::option::Option<& str> {
         self.logging_level.as_deref()
     }
 }
@@ -61,7 +57,7 @@ pub struct ChimeWebhookConfigurationBuilder {
     pub(crate) webhook_description: ::std::option::Option<::std::string::String>,
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) sns_topic_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sns_topic_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
 }
@@ -74,8 +70,7 @@ impl ChimeWebhookConfigurationBuilder {
     }
     /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
     pub fn set_webhook_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.webhook_description = input;
-        self
+        self.webhook_description = input; self
     }
     /// Description of the webhook. Recommend using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details: https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
     pub fn get_webhook_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl ChimeWebhookConfigurationBuilder {
     }
     /// The ARN of the ChimeWebhookConfiguration.
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chat_configuration_arn = input;
-        self
+        self.chat_configuration_arn = input; self
     }
     /// The ARN of the ChimeWebhookConfiguration.
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl ChimeWebhookConfigurationBuilder {
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,17 +111,16 @@ impl ChimeWebhookConfigurationBuilder {
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
     pub fn sns_topic_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sns_topic_arns.unwrap_or_default();
-        v.push(input.into());
-        self.sns_topic_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.sns_topic_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub fn set_sns_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.sns_topic_arns = input;
-        self
+    pub fn set_sns_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.sns_topic_arns = input; self
     }
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub fn get_sns_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sns_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.sns_topic_arns
     }
     /// The name of the configuration.
@@ -138,8 +130,7 @@ impl ChimeWebhookConfigurationBuilder {
     }
     /// The name of the configuration.
     pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_name = input;
-        self
+        self.configuration_name = input; self
     }
     /// The name of the configuration.
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +143,7 @@ impl ChimeWebhookConfigurationBuilder {
     }
     /// Specifies the logging level for this configuration. This property affects the log entries pushed to Amazon CloudWatch Logs.Logging levels include ERROR, INFO, or NONE.
     pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logging_level = input;
-        self
+        self.logging_level = input; self
     }
     /// Specifies the logging level for this configuration. This property affects the log entries pushed to Amazon CloudWatch Logs.Logging levels include ERROR, INFO, or NONE.
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,33 +156,34 @@ impl ChimeWebhookConfigurationBuilder {
     /// - [`iam_role_arn`](crate::types::builders::ChimeWebhookConfigurationBuilder::iam_role_arn)
     /// - [`sns_topic_arns`](crate::types::builders::ChimeWebhookConfigurationBuilder::sns_topic_arns)
     pub fn build(self) -> ::std::result::Result<crate::types::ChimeWebhookConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChimeWebhookConfiguration {
-            webhook_description: self.webhook_description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "webhook_description",
-                    "webhook_description was not specified but it is required when building ChimeWebhookConfiguration",
-                )
-            })?,
-            chat_configuration_arn: self.chat_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "chat_configuration_arn",
-                    "chat_configuration_arn was not specified but it is required when building ChimeWebhookConfiguration",
-                )
-            })?,
-            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iam_role_arn",
-                    "iam_role_arn was not specified but it is required when building ChimeWebhookConfiguration",
-                )
-            })?,
-            sns_topic_arns: self.sns_topic_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sns_topic_arns",
-                    "sns_topic_arns was not specified but it is required when building ChimeWebhookConfiguration",
-                )
-            })?,
-            configuration_name: self.configuration_name,
-            logging_level: self.logging_level,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChimeWebhookConfiguration {
+                webhook_description: self.webhook_description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("webhook_description", "webhook_description was not specified but it is required when building ChimeWebhookConfiguration")
+                    )?
+                ,
+                chat_configuration_arn: self.chat_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("chat_configuration_arn", "chat_configuration_arn was not specified but it is required when building ChimeWebhookConfiguration")
+                    )?
+                ,
+                iam_role_arn: self.iam_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iam_role_arn", "iam_role_arn was not specified but it is required when building ChimeWebhookConfiguration")
+                    )?
+                ,
+                sns_topic_arns: self.sns_topic_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sns_topic_arns", "sns_topic_arns was not specified but it is required when building ChimeWebhookConfiguration")
+                    )?
+                ,
+                configuration_name: self.configuration_name
+                ,
+                logging_level: self.logging_level
+                ,
+            }
+        )
     }
 }
+

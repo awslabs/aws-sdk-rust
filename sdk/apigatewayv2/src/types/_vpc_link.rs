@@ -3,17 +3,17 @@
 /// <p>Represents a VPC link.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcLink {
+pub struct VpcLink  {
     /// <p>The timestamp when the VPC link was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the VPC link.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of subnet IDs to include in the VPC link.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Tags for the VPC link.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the VPC link.</p>
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the VPC link.</p>
@@ -23,45 +23,47 @@ pub struct VpcLink {
     /// <p>The version of the VPC link.</p>
     pub vpc_link_version: ::std::option::Option<crate::types::VpcLinkVersion>,
 }
-impl VpcLink {
+impl  VpcLink  {
     /// <p>The timestamp when the VPC link was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The name of the VPC link.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of security group IDs for the VPC link.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of subnet IDs to include in the VPC link.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags for the VPC link.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The ID of the VPC link.</p>
-    pub fn vpc_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> ::std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
     /// <p>The status of the VPC link.</p>
-    pub fn vpc_link_status(&self) -> ::std::option::Option<&crate::types::VpcLinkStatus> {
+    pub fn vpc_link_status(&self) -> ::std::option::Option<& crate::types::VpcLinkStatus> {
         self.vpc_link_status.as_ref()
     }
     /// <p>A message summarizing the cause of the status of the VPC link.</p>
-    pub fn vpc_link_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_link_status_message(&self) -> ::std::option::Option<& str> {
         self.vpc_link_status_message.as_deref()
     }
     /// <p>The version of the VPC link.</p>
-    pub fn vpc_link_version(&self) -> ::std::option::Option<&crate::types::VpcLinkVersion> {
+    pub fn vpc_link_version(&self) -> ::std::option::Option<& crate::types::VpcLinkVersion> {
         self.vpc_link_version.as_ref()
     }
 }
@@ -78,9 +80,9 @@ impl VpcLink {
 pub struct VpcLinkBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) vpc_link_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_link_status: ::std::option::Option<crate::types::VpcLinkStatus>,
     pub(crate) vpc_link_status_message: ::std::option::Option<::std::string::String>,
@@ -94,8 +96,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The timestamp when the VPC link was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The timestamp when the VPC link was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -109,8 +110,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The name of the VPC link.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the VPC link.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,17 +123,16 @@ impl VpcLinkBuilder {
     /// <p>A list of security group IDs for the VPC link.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security group IDs for the VPC link.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>A list of security group IDs for the VPC link.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -143,17 +142,16 @@ impl VpcLinkBuilder {
     /// <p>A list of subnet IDs to include in the VPC link.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet IDs to include in the VPC link.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnet IDs to include in the VPC link.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Adds a key-value pair to `tags`.
@@ -163,17 +161,16 @@ impl VpcLinkBuilder {
     /// <p>Tags for the VPC link.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags for the VPC link.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the VPC link.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The ID of the VPC link.</p>
@@ -184,8 +181,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The ID of the VPC link.</p>
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_link_id = input;
-        self
+        self.vpc_link_id = input; self
     }
     /// <p>The ID of the VPC link.</p>
     pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +194,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The status of the VPC link.</p>
     pub fn set_vpc_link_status(mut self, input: ::std::option::Option<crate::types::VpcLinkStatus>) -> Self {
-        self.vpc_link_status = input;
-        self
+        self.vpc_link_status = input; self
     }
     /// <p>The status of the VPC link.</p>
     pub fn get_vpc_link_status(&self) -> &::std::option::Option<crate::types::VpcLinkStatus> {
@@ -212,8 +207,7 @@ impl VpcLinkBuilder {
     }
     /// <p>A message summarizing the cause of the status of the VPC link.</p>
     pub fn set_vpc_link_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_link_status_message = input;
-        self
+        self.vpc_link_status_message = input; self
     }
     /// <p>A message summarizing the cause of the status of the VPC link.</p>
     pub fn get_vpc_link_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +220,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The version of the VPC link.</p>
     pub fn set_vpc_link_version(mut self, input: ::std::option::Option<crate::types::VpcLinkVersion>) -> Self {
-        self.vpc_link_version = input;
-        self
+        self.vpc_link_version = input; self
     }
     /// <p>The version of the VPC link.</p>
     pub fn get_vpc_link_version(&self) -> &::std::option::Option<crate::types::VpcLinkVersion> {
@@ -236,15 +229,25 @@ impl VpcLinkBuilder {
     /// Consumes the builder and constructs a [`VpcLink`](crate::types::VpcLink).
     pub fn build(self) -> crate::types::VpcLink {
         crate::types::VpcLink {
-            created_date: self.created_date,
-            name: self.name,
-            security_group_ids: self.security_group_ids,
-            subnet_ids: self.subnet_ids,
-            tags: self.tags,
-            vpc_link_id: self.vpc_link_id,
-            vpc_link_status: self.vpc_link_status,
-            vpc_link_status_message: self.vpc_link_status_message,
-            vpc_link_version: self.vpc_link_version,
+            created_date: self.created_date
+            ,
+            name: self.name
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            tags: self.tags
+            ,
+            vpc_link_id: self.vpc_link_id
+            ,
+            vpc_link_status: self.vpc_link_status
+            ,
+            vpc_link_status_message: self.vpc_link_status_message
+            ,
+            vpc_link_version: self.vpc_link_version
+            ,
         }
     }
 }
+

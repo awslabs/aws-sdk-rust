@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTemplates`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p><br>
     ///   - [`connector_arn(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::connector_arn) / [`set_connector_arn(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_connector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p><br>
-    /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
     ///   - [`templates(Option<Vec::<TemplateSummary>>)`](crate::operation::list_templates::ListTemplatesOutput::templates): <p>Custom configuration templates used when issuing a certificate.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::next_token): <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
     pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
-        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

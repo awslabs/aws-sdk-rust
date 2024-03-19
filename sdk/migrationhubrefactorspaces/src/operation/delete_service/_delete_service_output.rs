@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceOutput {
+pub struct DeleteServiceOutput  {
     /// <p>The unique identifier of the service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
@@ -19,41 +19,41 @@ pub struct DeleteServiceOutput {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DeleteServiceOutput {
+impl  DeleteServiceOutput  {
     /// <p>The unique identifier of the service.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the application that the service is in.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The current state of the service.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ServiceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ServiceState> {
         self.state.as_ref()
     }
     /// <p>A timestamp that indicates when the service was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteServiceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteServiceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput).
     pub fn builder() -> crate::operation::delete_service::builders::DeleteServiceOutputBuilder {
@@ -82,8 +82,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The unique identifier of the service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The unique identifier of the service.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The unique identifier of the environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of the environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The ID of the application that the service is in.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application that the service is in.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +147,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The current state of the service.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ServiceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the service.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ServiceState> {
@@ -166,33 +160,40 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>A timestamp that indicates when the service was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>A timestamp that indicates when the service was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput).
     pub fn build(self) -> crate::operation::delete_service::DeleteServiceOutput {
         crate::operation::delete_service::DeleteServiceOutput {
-            service_id: self.service_id,
-            name: self.name,
-            arn: self.arn,
-            environment_id: self.environment_id,
-            application_id: self.application_id,
-            state: self.state,
-            last_updated_time: self.last_updated_time,
+            service_id: self.service_id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            environment_id: self.environment_id
+            ,
+            application_id: self.application_id
+            ,
+            state: self.state
+            ,
+            last_updated_time: self.last_updated_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

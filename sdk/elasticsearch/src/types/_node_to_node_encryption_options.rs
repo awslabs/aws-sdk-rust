@@ -3,11 +3,11 @@
 /// <p>Specifies the node-to-node encryption options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeToNodeEncryptionOptions {
+pub struct NodeToNodeEncryptionOptions  {
     /// <p>Specify true to enable node-to-node encryption.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl NodeToNodeEncryptionOptions {
+impl  NodeToNodeEncryptionOptions  {
     /// <p>Specify true to enable node-to-node encryption.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl NodeToNodeEncryptionOptionsBuilder {
     }
     /// <p>Specify true to enable node-to-node encryption.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specify true to enable node-to-node encryption.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl NodeToNodeEncryptionOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`NodeToNodeEncryptionOptions`](crate::types::NodeToNodeEncryptionOptions).
     pub fn build(self) -> crate::types::NodeToNodeEncryptionOptions {
-        crate::types::NodeToNodeEncryptionOptions { enabled: self.enabled }
+        crate::types::NodeToNodeEncryptionOptions {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

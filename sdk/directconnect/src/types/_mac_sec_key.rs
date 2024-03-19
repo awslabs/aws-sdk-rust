@@ -3,7 +3,7 @@
 /// <p>Information about the MAC Security (MACsec) secret key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MacSecKey {
+pub struct MacSecKey  {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
@@ -24,13 +24,13 @@ pub struct MacSecKey {
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
     pub start_on: ::std::option::Option<::std::string::String>,
 }
-impl MacSecKey {
+impl  MacSecKey  {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
-    pub fn ckn(&self) -> ::std::option::Option<&str> {
+    pub fn ckn(&self) -> ::std::option::Option<& str> {
         self.ckn.as_deref()
     }
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
@@ -45,11 +45,11 @@ impl MacSecKey {
     /// <li>
     /// <p><code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
-    pub fn start_on(&self) -> ::std::option::Option<&str> {
+    pub fn start_on(&self) -> ::std::option::Option<& str> {
         self.start_on.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl MacSecKeyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl MacSecKeyBuilder {
     }
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
     pub fn set_ckn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ckn = input;
-        self
+        self.ckn = input; self
     }
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
     pub fn get_ckn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl MacSecKeyBuilder {
     /// <p><code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
@@ -152,8 +149,7 @@ impl MacSecKeyBuilder {
     }
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
     pub fn set_start_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_on = input;
-        self
+        self.start_on = input; self
     }
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
     pub fn get_start_on(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,10 +158,15 @@ impl MacSecKeyBuilder {
     /// Consumes the builder and constructs a [`MacSecKey`](crate::types::MacSecKey).
     pub fn build(self) -> crate::types::MacSecKey {
         crate::types::MacSecKey {
-            secret_arn: self.secret_arn,
-            ckn: self.ckn,
-            state: self.state,
-            start_on: self.start_on,
+            secret_arn: self.secret_arn
+            ,
+            ckn: self.ckn
+            ,
+            state: self.state
+            ,
+            start_on: self.start_on
+            ,
         }
     }
 }
+

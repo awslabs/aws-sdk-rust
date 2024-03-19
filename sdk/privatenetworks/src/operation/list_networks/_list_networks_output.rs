@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNetworksOutput {
+pub struct ListNetworksOutput  {
     /// <p>The networks.</p>
-    pub networks: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
+    pub networks: ::std::option::Option<::std::vec::Vec::<crate::types::Network>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListNetworksOutput {
+impl  ListNetworksOutput  {
     /// <p>The networks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.networks.is_none()`.
-    pub fn networks(&self) -> &[crate::types::Network] {
-        self.networks.as_deref().unwrap_or_default()
+    pub fn networks(&self) -> & [crate::types::Network] {
+        self.networks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListNetworksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListNetworksOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworksOutput`](crate::operation::list_networks::ListNetworksOutput).
     pub fn builder() -> crate::operation::list_networks::builders::ListNetworksOutputBuilder {
@@ -37,7 +38,7 @@ impl ListNetworksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworksOutputBuilder {
-    pub(crate) networks: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
+    pub(crate) networks: ::std::option::Option<::std::vec::Vec::<crate::types::Network>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListNetworksOutputBuilder {
     /// <p>The networks.</p>
     pub fn networks(mut self, input: crate::types::Network) -> Self {
         let mut v = self.networks.unwrap_or_default();
-        v.push(input);
-        self.networks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.networks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The networks.</p>
-    pub fn set_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Network>>) -> Self {
-        self.networks = input;
-        self
+    pub fn set_networks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Network>>) -> Self {
+        self.networks = input; self
     }
     /// <p>The networks.</p>
-    pub fn get_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Network>> {
+    pub fn get_networks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Network>> {
         &self.networks
     }
     /// <p>The token for the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListNetworksOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListNetworksOutput`](crate::operation::list_networks::ListNetworksOutput).
     pub fn build(self) -> crate::operation::list_networks::ListNetworksOutput {
         crate::operation::list_networks::ListNetworksOutput {
-            networks: self.networks,
-            next_token: self.next_token,
+            networks: self.networks
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

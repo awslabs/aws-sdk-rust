@@ -3,7 +3,7 @@
 /// <p>Request to delete an application version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationVersionInput {
+pub struct DeleteApplicationVersionInput  {
     /// <p>The name of the application to which the version belongs.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The label of the version to delete.</p>
@@ -11,13 +11,13 @@ pub struct DeleteApplicationVersionInput {
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     pub delete_source_bundle: ::std::option::Option<bool>,
 }
-impl DeleteApplicationVersionInput {
+impl  DeleteApplicationVersionInput  {
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The label of the version to delete.</p>
-    pub fn version_label(&self) -> ::std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<& str> {
         self.version_label.as_deref()
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
@@ -49,8 +49,7 @@ impl DeleteApplicationVersionInputBuilder {
     }
     /// <p>The name of the application to which the version belongs.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application to which the version belongs.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DeleteApplicationVersionInputBuilder {
     }
     /// <p>The label of the version to delete.</p>
     pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_label = input;
-        self
+        self.version_label = input; self
     }
     /// <p>The label of the version to delete.</p>
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteApplicationVersionInputBuilder {
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     pub fn set_delete_source_bundle(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_source_bundle = input;
-        self
+        self.delete_source_bundle = input; self
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     pub fn get_delete_source_bundle(&self) -> &::std::option::Option<bool> {
         &self.delete_source_bundle
     }
     /// Consumes the builder and constructs a [`DeleteApplicationVersionInput`](crate::operation::delete_application_version::DeleteApplicationVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_application_version::DeleteApplicationVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_application_version::DeleteApplicationVersionInput {
-            application_name: self.application_name,
-            version_label: self.version_label,
-            delete_source_bundle: self.delete_source_bundle,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_version::DeleteApplicationVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_application_version::DeleteApplicationVersionInput {
+                application_name: self.application_name
+                ,
+                version_label: self.version_label
+                ,
+                delete_source_bundle: self.delete_source_bundle
+                ,
+            }
+        )
     }
 }
+

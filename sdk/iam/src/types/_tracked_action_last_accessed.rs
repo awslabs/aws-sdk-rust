@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>GetServiceLastAccessedDetails</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrackedActionLastAccessed {
+pub struct TrackedActionLastAccessed  {
     /// <p>The name of the tracked action to which access was attempted. Tracked actions are actions that report activity to IAM.</p>
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
@@ -17,24 +17,24 @@ pub struct TrackedActionLastAccessed {
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub last_accessed_region: ::std::option::Option<::std::string::String>,
 }
-impl TrackedActionLastAccessed {
+impl  TrackedActionLastAccessed  {
     /// <p>The name of the tracked action to which access was attempted. Tracked actions are actions that report activity to IAM.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn last_accessed_entity(&self) -> ::std::option::Option<&str> {
+    pub fn last_accessed_entity(&self) -> ::std::option::Option<& str> {
         self.last_accessed_entity.as_deref()
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    pub fn last_accessed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_accessed_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_accessed_time.as_ref()
     }
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
-    pub fn last_accessed_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_accessed_region(&self) -> ::std::option::Option<& str> {
         self.last_accessed_region.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl TrackedActionLastAccessedBuilder {
     }
     /// <p>The name of the tracked action to which access was attempted. Tracked actions are actions that report activity to IAM.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The name of the tracked action to which access was attempted. Tracked actions are actions that report activity to IAM.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl TrackedActionLastAccessedBuilder {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_last_accessed_entity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_accessed_entity = input;
-        self
+        self.last_accessed_entity = input; self
     }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -95,8 +93,7 @@ impl TrackedActionLastAccessedBuilder {
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub fn set_last_accessed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_accessed_time = input;
-        self
+        self.last_accessed_time = input; self
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
@@ -112,8 +109,7 @@ impl TrackedActionLastAccessedBuilder {
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub fn set_last_accessed_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_accessed_region = input;
-        self
+        self.last_accessed_region = input; self
     }
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
@@ -123,10 +119,15 @@ impl TrackedActionLastAccessedBuilder {
     /// Consumes the builder and constructs a [`TrackedActionLastAccessed`](crate::types::TrackedActionLastAccessed).
     pub fn build(self) -> crate::types::TrackedActionLastAccessed {
         crate::types::TrackedActionLastAccessed {
-            action_name: self.action_name,
-            last_accessed_entity: self.last_accessed_entity,
-            last_accessed_time: self.last_accessed_time,
-            last_accessed_region: self.last_accessed_region,
+            action_name: self.action_name
+            ,
+            last_accessed_entity: self.last_accessed_entity
+            ,
+            last_accessed_time: self.last_accessed_time
+            ,
+            last_accessed_region: self.last_accessed_region
+            ,
         }
     }
 }
+

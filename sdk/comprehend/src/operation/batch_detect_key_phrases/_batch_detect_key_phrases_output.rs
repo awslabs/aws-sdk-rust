@@ -2,26 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct BatchDetectKeyPhrasesOutput {
+pub struct BatchDetectKeyPhrasesOutput  {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub result_list: ::std::vec::Vec<crate::types::BatchDetectKeyPhrasesItemResult>,
+    pub result_list: ::std::vec::Vec::<crate::types::BatchDetectKeyPhrasesItemResult>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub error_list: ::std::vec::Vec<crate::types::BatchItemError>,
+    pub error_list: ::std::vec::Vec::<crate::types::BatchItemError>,
     _request_id: Option<String>,
 }
-impl BatchDetectKeyPhrasesOutput {
+impl  BatchDetectKeyPhrasesOutput  {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(&self) -> &[crate::types::BatchDetectKeyPhrasesItemResult] {
-        use std::ops::Deref;
-        self.result_list.deref()
+    pub fn result_list(&self) -> & [crate::types::BatchDetectKeyPhrasesItemResult] {
+        use std::ops::Deref; self.result_list.deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> &[crate::types::BatchItemError] {
-        use std::ops::Deref;
-        self.error_list.deref()
+    pub fn error_list(&self) -> & [crate::types::BatchItemError] {
+        use std::ops::Deref; self.error_list.deref()
     }
 }
-impl ::std::fmt::Debug for BatchDetectKeyPhrasesOutput {
+impl  ::std::fmt::Debug for BatchDetectKeyPhrasesOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectKeyPhrasesOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -31,10 +29,10 @@ impl ::std::fmt::Debug for BatchDetectKeyPhrasesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDetectKeyPhrasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDetectKeyPhrasesOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesOutput`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput).
     pub fn builder() -> crate::operation::batch_detect_key_phrases::builders::BatchDetectKeyPhrasesOutputBuilder {
@@ -46,8 +44,8 @@ impl BatchDetectKeyPhrasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct BatchDetectKeyPhrasesOutputBuilder {
-    pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectKeyPhrasesItemResult>>,
-    pub(crate) error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,
+    pub(crate) result_list: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDetectKeyPhrasesItemResult>>,
+    pub(crate) error_list: ::std::option::Option<::std::vec::Vec::<crate::types::BatchItemError>>,
     _request_id: Option<String>,
 }
 impl BatchDetectKeyPhrasesOutputBuilder {
@@ -58,17 +56,16 @@ impl BatchDetectKeyPhrasesOutputBuilder {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     pub fn result_list(mut self, input: crate::types::BatchDetectKeyPhrasesItemResult) -> Self {
         let mut v = self.result_list.unwrap_or_default();
-        v.push(input);
-        self.result_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.result_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn set_result_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectKeyPhrasesItemResult>>) -> Self {
-        self.result_list = input;
-        self
+    pub fn set_result_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDetectKeyPhrasesItemResult>>) -> Self {
+        self.result_list = input; self
     }
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn get_result_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDetectKeyPhrasesItemResult>> {
+    pub fn get_result_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchDetectKeyPhrasesItemResult>> {
         &self.result_list
     }
     /// Appends an item to `error_list`.
@@ -78,53 +75,47 @@ impl BatchDetectKeyPhrasesOutputBuilder {
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     pub fn error_list(mut self, input: crate::types::BatchItemError) -> Self {
         let mut v = self.error_list.unwrap_or_default();
-        v.push(input);
-        self.error_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.error_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn set_error_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>) -> Self {
-        self.error_list = input;
-        self
+    pub fn set_error_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchItemError>>) -> Self {
+        self.error_list = input; self
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn get_error_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>> {
+    pub fn get_error_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchItemError>> {
         &self.error_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesOutput`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`result_list`](crate::operation::batch_detect_key_phrases::builders::BatchDetectKeyPhrasesOutputBuilder::result_list)
     /// - [`error_list`](crate::operation::batch_detect_key_phrases::builders::BatchDetectKeyPhrasesOutputBuilder::error_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput {
-            result_list: self.result_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "result_list",
-                    "result_list was not specified but it is required when building BatchDetectKeyPhrasesOutput",
-                )
-            })?,
-            error_list: self.error_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_list",
-                    "error_list was not specified but it is required when building BatchDetectKeyPhrasesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput {
+                result_list: self.result_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("result_list", "result_list was not specified but it is required when building BatchDetectKeyPhrasesOutput")
+                    )?
+                ,
+                error_list: self.error_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_list", "error_list was not specified but it is required when building BatchDetectKeyPhrasesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for BatchDetectKeyPhrasesOutputBuilder {
@@ -136,3 +127,4 @@ impl ::std::fmt::Debug for BatchDetectKeyPhrasesOutputBuilder {
         formatter.finish()
     }
 }
+

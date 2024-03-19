@@ -3,7 +3,7 @@
 /// <p>An adapter selected for use when analyzing documents. Contains an adapter ID and a version number. Contains information on pages selected for analysis when analyzing documents asychronously.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Adapter {
+pub struct Adapter  {
     /// <p>A unique identifier for the adapter resource.</p>
     pub adapter_id: ::std::string::String,
     /// <p>Pages is a parameter that the user inputs to specify which pages to apply an adapter to. The following is a list of rules for using this parameter.</p>
@@ -19,15 +19,14 @@ pub struct Adapter {
     /// <li>
     /// <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p></li>
     /// </ul>
-    pub pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub pages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A string that identifies the version of the adapter.</p>
     pub version: ::std::string::String,
 }
-impl Adapter {
+impl  Adapter  {
     /// <p>A unique identifier for the adapter resource.</p>
-    pub fn adapter_id(&self) -> &str {
-        use std::ops::Deref;
-        self.adapter_id.deref()
+    pub fn adapter_id(&self) -> & str {
+        use std::ops::Deref; self.adapter_id.deref()
     }
     /// <p>Pages is a parameter that the user inputs to specify which pages to apply an adapter to. The following is a list of rules for using this parameter.</p>
     /// <ul>
@@ -42,15 +41,15 @@ impl Adapter {
     /// <li>
     /// <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pages.is_none()`.
-    pub fn pages(&self) -> &[::std::string::String] {
-        self.pages.as_deref().unwrap_or_default()
+    pub fn pages(&self) -> & [::std::string::String] {
+        self.pages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that identifies the version of the adapter.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
 }
 impl Adapter {
@@ -65,7 +64,7 @@ impl Adapter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdapterBuilder {
     pub(crate) adapter_id: ::std::option::Option<::std::string::String>,
-    pub(crate) pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl AdapterBuilder {
@@ -77,8 +76,7 @@ impl AdapterBuilder {
     }
     /// <p>A unique identifier for the adapter resource.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A unique identifier for the adapter resource.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,9 +101,9 @@ impl AdapterBuilder {
     /// </ul>
     pub fn pages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pages.unwrap_or_default();
-        v.push(input.into());
-        self.pages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.pages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Pages is a parameter that the user inputs to specify which pages to apply an adapter to. The following is a list of rules for using this parameter.</p>
     /// <ul>
@@ -120,9 +118,8 @@ impl AdapterBuilder {
     /// <li>
     /// <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p></li>
     /// </ul>
-    pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.pages = input;
-        self
+    pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.pages = input; self
     }
     /// <p>Pages is a parameter that the user inputs to specify which pages to apply an adapter to. The following is a list of rules for using this parameter.</p>
     /// <ul>
@@ -137,7 +134,7 @@ impl AdapterBuilder {
     /// <li>
     /// <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p></li>
     /// </ul>
-    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.pages
     }
     /// <p>A string that identifies the version of the adapter.</p>
@@ -148,8 +145,7 @@ impl AdapterBuilder {
     }
     /// <p>A string that identifies the version of the adapter.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>A string that identifies the version of the adapter.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,20 +156,22 @@ impl AdapterBuilder {
     /// - [`adapter_id`](crate::types::builders::AdapterBuilder::adapter_id)
     /// - [`version`](crate::types::builders::AdapterBuilder::version)
     pub fn build(self) -> ::std::result::Result<crate::types::Adapter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Adapter {
-            adapter_id: self.adapter_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "adapter_id",
-                    "adapter_id was not specified but it is required when building Adapter",
-                )
-            })?,
-            pages: self.pages,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building Adapter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Adapter {
+                adapter_id: self.adapter_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("adapter_id", "adapter_id was not specified but it is required when building Adapter")
+                    )?
+                ,
+                pages: self.pages
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building Adapter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

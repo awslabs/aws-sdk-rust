@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectorInput {
+pub struct CreateConnectorInput  {
     /// <p>The identifier of the Active Directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
@@ -12,27 +12,27 @@ pub struct CreateConnectorInput {
     /// <p>Idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Metadata assigned to a connector consisting of a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateConnectorInput {
+impl  CreateConnectorInput  {
     /// <p>The identifier of the Active Directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>Security group IDs that describe the inbound and outbound rules.</p>
-    pub fn vpc_information(&self) -> ::std::option::Option<&crate::types::VpcInformation> {
+    pub fn vpc_information(&self) -> ::std::option::Option<& crate::types::VpcInformation> {
         self.vpc_information.as_ref()
     }
     /// <p>Idempotency token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Metadata assigned to a connector consisting of a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -51,7 +51,7 @@ pub struct CreateConnectorInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_information: ::std::option::Option<crate::types::VpcInformation>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateConnectorInputBuilder {
     /// <p>The identifier of the Active Directory.</p>
@@ -62,8 +62,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>The identifier of the Active Directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the Active Directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>Security group IDs that describe the inbound and outbound rules.</p>
     pub fn set_vpc_information(mut self, input: ::std::option::Option<crate::types::VpcInformation>) -> Self {
-        self.vpc_information = input;
-        self
+        self.vpc_information = input; self
     }
     /// <p>Security group IDs that describe the inbound and outbound rules.</p>
     pub fn get_vpc_information(&self) -> &::std::option::Option<crate::types::VpcInformation> {
@@ -106,8 +103,7 @@ impl CreateConnectorInputBuilder {
     }
     /// <p>Idempotency token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Idempotency token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,29 +116,34 @@ impl CreateConnectorInputBuilder {
     /// <p>Metadata assigned to a connector consisting of a key-value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata assigned to a connector consisting of a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata assigned to a connector consisting of a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorInput {
-            directory_id: self.directory_id,
-            certificate_authority_arn: self.certificate_authority_arn,
-            vpc_information: self.vpc_information,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connector::CreateConnectorInput {
+                directory_id: self.directory_id
+                ,
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+                vpc_information: self.vpc_information
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

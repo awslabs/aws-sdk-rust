@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProjectVisibilityInput {
+pub struct UpdateProjectVisibilityInput  {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
@@ -24,9 +24,9 @@ pub struct UpdateProjectVisibilityInput {
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
     pub resource_access_role: ::std::option::Option<::std::string::String>,
 }
-impl UpdateProjectVisibilityInput {
+impl  UpdateProjectVisibilityInput  {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
@@ -44,11 +44,11 @@ impl UpdateProjectVisibilityInput {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    pub fn project_visibility(&self) -> ::std::option::Option<&crate::types::ProjectVisibilityType> {
+    pub fn project_visibility(&self) -> ::std::option::Option<& crate::types::ProjectVisibilityType> {
         self.project_visibility.as_ref()
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
-    pub fn resource_access_role(&self) -> ::std::option::Option<&str> {
+    pub fn resource_access_role(&self) -> ::std::option::Option<& str> {
         self.resource_access_role.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl UpdateProjectVisibilityInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl UpdateProjectVisibilityInputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_project_visibility(mut self, input: ::std::option::Option<crate::types::ProjectVisibilityType>) -> Self {
-        self.project_visibility = input;
-        self
+        self.project_visibility = input; self
     }
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -147,24 +145,24 @@ impl UpdateProjectVisibilityInputBuilder {
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
     pub fn set_resource_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_access_role = input;
-        self
+        self.resource_access_role = input; self
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
     pub fn get_resource_access_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_access_role
     }
     /// Consumes the builder and constructs a [`UpdateProjectVisibilityInput`](crate::operation::update_project_visibility::UpdateProjectVisibilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_project_visibility::UpdateProjectVisibilityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_project_visibility::UpdateProjectVisibilityInput {
-            project_arn: self.project_arn,
-            project_visibility: self.project_visibility,
-            resource_access_role: self.resource_access_role,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_project_visibility::UpdateProjectVisibilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_project_visibility::UpdateProjectVisibilityInput {
+                project_arn: self.project_arn
+                ,
+                project_visibility: self.project_visibility
+                ,
+                resource_access_role: self.resource_access_role
+                ,
+            }
+        )
     }
 }
+

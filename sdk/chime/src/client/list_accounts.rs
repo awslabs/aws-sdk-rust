@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccounts`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::set_name):<br>required: **false**<br><p>Amazon Chime account name prefix with which to filter results.</p><br>
     ///   - [`user_email(impl Into<String>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::user_email) / [`set_user_email(Option<String>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::set_user_email):<br>required: **false**<br><p>User email address with which to filter results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_accounts::builders::ListAccountsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. Defaults to 100.</p><br>
-    /// - On success, responds with [`ListAccountsOutput`](crate::operation::list_accounts::ListAccountsOutput) with field(s):
+                            /// - On success, responds with [`ListAccountsOutput`](crate::operation::list_accounts::ListAccountsOutput) with field(s):
     ///   - [`accounts(Option<Vec::<Account>>)`](crate::operation::list_accounts::ListAccountsOutput::accounts): <p>List of Amazon Chime accounts and account details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_accounts::ListAccountsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListAccountsError>`](crate::operation::list_accounts::ListAccountsError)
+                            /// - On failure, responds with [`SdkError<ListAccountsError>`](crate::operation::list_accounts::ListAccountsError)
     pub fn list_accounts(&self) -> crate::operation::list_accounts::builders::ListAccountsFluentBuilder {
-        crate::operation::list_accounts::builders::ListAccountsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_accounts::builders::ListAccountsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

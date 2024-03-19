@@ -2,31 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGraphSnapshotsOutput {
+pub struct ListGraphSnapshotsOutput  {
     /// <p>The requested list of snapshots.</p>
-    pub graph_snapshots: ::std::vec::Vec<crate::types::GraphSnapshotSummary>,
+    pub graph_snapshots: ::std::vec::Vec::<crate::types::GraphSnapshotSummary>,
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListGraphSnapshotsOutput {
+impl  ListGraphSnapshotsOutput  {
     /// <p>The requested list of snapshots.</p>
-    pub fn graph_snapshots(&self) -> &[crate::types::GraphSnapshotSummary] {
-        use std::ops::Deref;
-        self.graph_snapshots.deref()
+    pub fn graph_snapshots(&self) -> & [crate::types::GraphSnapshotSummary] {
+        use std::ops::Deref; self.graph_snapshots.deref()
     }
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListGraphSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListGraphSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`ListGraphSnapshotsOutput`](crate::operation::list_graph_snapshots::ListGraphSnapshotsOutput).
     pub fn builder() -> crate::operation::list_graph_snapshots::builders::ListGraphSnapshotsOutputBuilder {
@@ -38,7 +37,7 @@ impl ListGraphSnapshotsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGraphSnapshotsOutputBuilder {
-    pub(crate) graph_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::GraphSnapshotSummary>>,
+    pub(crate) graph_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::GraphSnapshotSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,16 @@ impl ListGraphSnapshotsOutputBuilder {
     /// <p>The requested list of snapshots.</p>
     pub fn graph_snapshots(mut self, input: crate::types::GraphSnapshotSummary) -> Self {
         let mut v = self.graph_snapshots.unwrap_or_default();
-        v.push(input);
-        self.graph_snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.graph_snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The requested list of snapshots.</p>
-    pub fn set_graph_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GraphSnapshotSummary>>) -> Self {
-        self.graph_snapshots = input;
-        self
+    pub fn set_graph_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GraphSnapshotSummary>>) -> Self {
+        self.graph_snapshots = input; self
     }
     /// <p>The requested list of snapshots.</p>
-    pub fn get_graph_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GraphSnapshotSummary>> {
+    pub fn get_graph_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GraphSnapshotSummary>> {
         &self.graph_snapshots
     }
     /// <p>Pagination token used to paginate output.</p>
@@ -72,8 +70,7 @@ impl ListGraphSnapshotsOutputBuilder {
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
@@ -81,30 +78,30 @@ impl ListGraphSnapshotsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListGraphSnapshotsOutput`](crate::operation::list_graph_snapshots::ListGraphSnapshotsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`graph_snapshots`](crate::operation::list_graph_snapshots::builders::ListGraphSnapshotsOutputBuilder::graph_snapshots)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_graph_snapshots::ListGraphSnapshotsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_graph_snapshots::ListGraphSnapshotsOutput {
-            graph_snapshots: self.graph_snapshots.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "graph_snapshots",
-                    "graph_snapshots was not specified but it is required when building ListGraphSnapshotsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_graph_snapshots::ListGraphSnapshotsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_graph_snapshots::ListGraphSnapshotsOutput {
+                graph_snapshots: self.graph_snapshots
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("graph_snapshots", "graph_snapshots was not specified but it is required when building ListGraphSnapshotsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

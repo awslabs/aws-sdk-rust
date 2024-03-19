@@ -3,7 +3,7 @@
 /// <p>Provides information about an event tracker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventTracker {
+pub struct EventTracker  {
     /// <p>The name of the event tracker.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event tracker.</p>
@@ -28,25 +28,25 @@ pub struct EventTracker {
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EventTracker {
+impl  EventTracker  {
     /// <p>The name of the event tracker.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the event tracker.</p>
-    pub fn event_tracker_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_tracker_arn(&self) -> ::std::option::Option<& str> {
         self.event_tracker_arn.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-    pub fn tracking_id(&self) -> ::std::option::Option<&str> {
+    pub fn tracking_id(&self) -> ::std::option::Option<& str> {
         self.tracking_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The status of the event tracker.</p>
@@ -57,15 +57,15 @@ impl EventTracker {
     /// <li>
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl EventTrackerBuilder {
     }
     /// <p>The name of the event tracker.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event tracker.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl EventTrackerBuilder {
     }
     /// <p>The ARN of the event tracker.</p>
     pub fn set_event_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_tracker_arn = input;
-        self
+        self.event_tracker_arn = input; self
     }
     /// <p>The ARN of the event tracker.</p>
     pub fn get_event_tracker_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl EventTrackerBuilder {
     }
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl EventTrackerBuilder {
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub fn set_tracking_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracking_id = input;
-        self
+        self.tracking_id = input; self
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub fn get_tracking_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl EventTrackerBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +176,7 @@ impl EventTrackerBuilder {
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the event tracker.</p>
     /// <p>An event tracker can be in one of the following states:</p>
@@ -202,8 +196,7 @@ impl EventTrackerBuilder {
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -216,8 +209,7 @@ impl EventTrackerBuilder {
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -226,14 +218,23 @@ impl EventTrackerBuilder {
     /// Consumes the builder and constructs a [`EventTracker`](crate::types::EventTracker).
     pub fn build(self) -> crate::types::EventTracker {
         crate::types::EventTracker {
-            name: self.name,
-            event_tracker_arn: self.event_tracker_arn,
-            account_id: self.account_id,
-            tracking_id: self.tracking_id,
-            dataset_group_arn: self.dataset_group_arn,
-            status: self.status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            name: self.name
+            ,
+            event_tracker_arn: self.event_tracker_arn
+            ,
+            account_id: self.account_id
+            ,
+            tracking_id: self.tracking_id
+            ,
+            dataset_group_arn: self.dataset_group_arn
+            ,
+            status: self.status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResumeClusterMessage {
+pub struct ResumeClusterMessage  {
     /// <p>The identifier of the cluster to be resumed.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl ResumeClusterMessage {
+impl  ResumeClusterMessage  {
     /// <p>The identifier of the cluster to be resumed.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl ResumeClusterMessageBuilder {
     }
     /// <p>The identifier of the cluster to be resumed.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster to be resumed.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl ResumeClusterMessageBuilder {
     /// Consumes the builder and constructs a [`ResumeClusterMessage`](crate::types::ResumeClusterMessage).
     pub fn build(self) -> crate::types::ResumeClusterMessage {
         crate::types::ResumeClusterMessage {
-            cluster_identifier: self.cluster_identifier,
+            cluster_identifier: self.cluster_identifier
+            ,
         }
     }
 }
+

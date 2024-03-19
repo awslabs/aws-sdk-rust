@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBuildBatchesInput {
+pub struct ListBuildBatchesInput  {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
     pub filter: ::std::option::Option<crate::types::BuildBatchFilter>,
     /// <p>The maximum number of results to return.</p>
@@ -18,9 +18,9 @@ pub struct ListBuildBatchesInput {
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListBuildBatchesInput {
+impl  ListBuildBatchesInput  {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::BuildBatchFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::BuildBatchFilter> {
         self.filter.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -34,11 +34,11 @@ impl ListBuildBatchesInput {
     /// <li>
     /// <p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl ListBuildBatchesInputBuilder {
     }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::BuildBatchFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::BuildBatchFilter> {
@@ -80,8 +79,7 @@ impl ListBuildBatchesInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -106,8 +104,7 @@ impl ListBuildBatchesInputBuilder {
     /// <p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
@@ -126,22 +123,26 @@ impl ListBuildBatchesInputBuilder {
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBuildBatchesInput`](crate::operation::list_build_batches::ListBuildBatchesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_build_batches::ListBuildBatchesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_build_batches::ListBuildBatchesInput {
-            filter: self.filter,
-            max_results: self.max_results,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_build_batches::ListBuildBatchesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_build_batches::ListBuildBatchesInput {
+                filter: self.filter
+                ,
+                max_results: self.max_results
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

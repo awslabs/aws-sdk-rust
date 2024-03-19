@@ -3,7 +3,7 @@
 /// <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for InfluxDB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InfluxDBv2Parameters {
+pub struct InfluxDBv2Parameters  {
     /// <p>Include option to show detailed logs for Flux queries.</p>
     /// <p>Default: false</p>
     pub flux_log_enabled: ::std::option::Option<bool>,
@@ -25,7 +25,7 @@ pub struct InfluxDBv2Parameters {
     /// <p>Default: false</p>
     pub metrics_disabled: ::std::option::Option<bool>,
 }
-impl InfluxDBv2Parameters {
+impl  InfluxDBv2Parameters  {
     /// <p>Include option to show detailed logs for Flux queries.</p>
     /// <p>Default: false</p>
     pub fn flux_log_enabled(&self) -> ::std::option::Option<bool> {
@@ -33,7 +33,7 @@ impl InfluxDBv2Parameters {
     }
     /// <p>Log output level. InfluxDB outputs log entries with severity levels greater than or equal to the level specified.</p>
     /// <p>Default: info</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
     /// <p>Disable the task scheduler. If problematic tasks prevent InfluxDB from starting, use this option to start InfluxDB without scheduling or executing tasks.</p>
@@ -52,7 +52,7 @@ impl InfluxDBv2Parameters {
         self.query_queue_size
     }
     /// <p>Enable tracing in InfluxDB and specifies the tracing type. Tracing is disabled by default.</p>
-    pub fn tracing_type(&self) -> ::std::option::Option<&crate::types::TracingType> {
+    pub fn tracing_type(&self) -> ::std::option::Option<& crate::types::TracingType> {
         self.tracing_type.as_ref()
     }
     /// <p>Disable the HTTP /metrics endpoint which exposes <a href="https://docs.influxdata.com/influxdb/v2/reference/internals/metrics/">internal InfluxDB metrics</a>.</p>
@@ -90,8 +90,7 @@ impl InfluxDBv2ParametersBuilder {
     /// <p>Include option to show detailed logs for Flux queries.</p>
     /// <p>Default: false</p>
     pub fn set_flux_log_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.flux_log_enabled = input;
-        self
+        self.flux_log_enabled = input; self
     }
     /// <p>Include option to show detailed logs for Flux queries.</p>
     /// <p>Default: false</p>
@@ -107,8 +106,7 @@ impl InfluxDBv2ParametersBuilder {
     /// <p>Log output level. InfluxDB outputs log entries with severity levels greater than or equal to the level specified.</p>
     /// <p>Default: info</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>Log output level. InfluxDB outputs log entries with severity levels greater than or equal to the level specified.</p>
     /// <p>Default: info</p>
@@ -124,8 +122,7 @@ impl InfluxDBv2ParametersBuilder {
     /// <p>Disable the task scheduler. If problematic tasks prevent InfluxDB from starting, use this option to start InfluxDB without scheduling or executing tasks.</p>
     /// <p>Default: false</p>
     pub fn set_no_tasks(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_tasks = input;
-        self
+        self.no_tasks = input; self
     }
     /// <p>Disable the task scheduler. If problematic tasks prevent InfluxDB from starting, use this option to start InfluxDB without scheduling or executing tasks.</p>
     /// <p>Default: false</p>
@@ -141,8 +138,7 @@ impl InfluxDBv2ParametersBuilder {
     /// <p>Number of queries allowed to execute concurrently. Setting to 0 allows an unlimited number of concurrent queries.</p>
     /// <p>Default: 0</p>
     pub fn set_query_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.query_concurrency = input;
-        self
+        self.query_concurrency = input; self
     }
     /// <p>Number of queries allowed to execute concurrently. Setting to 0 allows an unlimited number of concurrent queries.</p>
     /// <p>Default: 0</p>
@@ -158,8 +154,7 @@ impl InfluxDBv2ParametersBuilder {
     /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
     /// <p>Default: 0</p>
     pub fn set_query_queue_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.query_queue_size = input;
-        self
+        self.query_queue_size = input; self
     }
     /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
     /// <p>Default: 0</p>
@@ -173,8 +168,7 @@ impl InfluxDBv2ParametersBuilder {
     }
     /// <p>Enable tracing in InfluxDB and specifies the tracing type. Tracing is disabled by default.</p>
     pub fn set_tracing_type(mut self, input: ::std::option::Option<crate::types::TracingType>) -> Self {
-        self.tracing_type = input;
-        self
+        self.tracing_type = input; self
     }
     /// <p>Enable tracing in InfluxDB and specifies the tracing type. Tracing is disabled by default.</p>
     pub fn get_tracing_type(&self) -> &::std::option::Option<crate::types::TracingType> {
@@ -189,8 +183,7 @@ impl InfluxDBv2ParametersBuilder {
     /// <p>Disable the HTTP /metrics endpoint which exposes <a href="https://docs.influxdata.com/influxdb/v2/reference/internals/metrics/">internal InfluxDB metrics</a>.</p>
     /// <p>Default: false</p>
     pub fn set_metrics_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.metrics_disabled = input;
-        self
+        self.metrics_disabled = input; self
     }
     /// <p>Disable the HTTP /metrics endpoint which exposes <a href="https://docs.influxdata.com/influxdb/v2/reference/internals/metrics/">internal InfluxDB metrics</a>.</p>
     /// <p>Default: false</p>
@@ -200,13 +193,21 @@ impl InfluxDBv2ParametersBuilder {
     /// Consumes the builder and constructs a [`InfluxDBv2Parameters`](crate::types::InfluxDBv2Parameters).
     pub fn build(self) -> crate::types::InfluxDBv2Parameters {
         crate::types::InfluxDBv2Parameters {
-            flux_log_enabled: self.flux_log_enabled,
-            log_level: self.log_level,
-            no_tasks: self.no_tasks,
-            query_concurrency: self.query_concurrency,
-            query_queue_size: self.query_queue_size,
-            tracing_type: self.tracing_type,
-            metrics_disabled: self.metrics_disabled,
+            flux_log_enabled: self.flux_log_enabled
+            ,
+            log_level: self.log_level
+            ,
+            no_tasks: self.no_tasks
+            ,
+            query_concurrency: self.query_concurrency
+            ,
+            query_queue_size: self.query_queue_size
+            ,
+            tracing_type: self.tracing_type
+            ,
+            metrics_disabled: self.metrics_disabled
+            ,
         }
     }
 }
+

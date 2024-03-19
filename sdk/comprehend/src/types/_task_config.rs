@@ -3,7 +3,7 @@
 /// <p>Configuration about the model associated with a flywheel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskConfig {
+pub struct TaskConfig  {
     /// <p>Language code for the language that the model supports.</p>
     pub language_code: crate::types::LanguageCode,
     /// <p>Configuration required for a document classification model.</p>
@@ -11,17 +11,17 @@ pub struct TaskConfig {
     /// <p>Configuration required for an entity recognition model.</p>
     pub entity_recognition_config: ::std::option::Option<crate::types::EntityRecognitionConfig>,
 }
-impl TaskConfig {
+impl  TaskConfig  {
     /// <p>Language code for the language that the model supports.</p>
-    pub fn language_code(&self) -> &crate::types::LanguageCode {
+    pub fn language_code(&self) -> & crate::types::LanguageCode {
         &self.language_code
     }
     /// <p>Configuration required for a document classification model.</p>
-    pub fn document_classification_config(&self) -> ::std::option::Option<&crate::types::DocumentClassificationConfig> {
+    pub fn document_classification_config(&self) -> ::std::option::Option<& crate::types::DocumentClassificationConfig> {
         self.document_classification_config.as_ref()
     }
     /// <p>Configuration required for an entity recognition model.</p>
-    pub fn entity_recognition_config(&self) -> ::std::option::Option<&crate::types::EntityRecognitionConfig> {
+    pub fn entity_recognition_config(&self) -> ::std::option::Option<& crate::types::EntityRecognitionConfig> {
         self.entity_recognition_config.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl TaskConfigBuilder {
     }
     /// <p>Language code for the language that the model supports.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>Language code for the language that the model supports.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -63,8 +62,7 @@ impl TaskConfigBuilder {
     }
     /// <p>Configuration required for a document classification model.</p>
     pub fn set_document_classification_config(mut self, input: ::std::option::Option<crate::types::DocumentClassificationConfig>) -> Self {
-        self.document_classification_config = input;
-        self
+        self.document_classification_config = input; self
     }
     /// <p>Configuration required for a document classification model.</p>
     pub fn get_document_classification_config(&self) -> &::std::option::Option<crate::types::DocumentClassificationConfig> {
@@ -77,8 +75,7 @@ impl TaskConfigBuilder {
     }
     /// <p>Configuration required for an entity recognition model.</p>
     pub fn set_entity_recognition_config(mut self, input: ::std::option::Option<crate::types::EntityRecognitionConfig>) -> Self {
-        self.entity_recognition_config = input;
-        self
+        self.entity_recognition_config = input; self
     }
     /// <p>Configuration required for an entity recognition model.</p>
     pub fn get_entity_recognition_config(&self) -> &::std::option::Option<crate::types::EntityRecognitionConfig> {
@@ -88,15 +85,19 @@ impl TaskConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`language_code`](crate::types::builders::TaskConfigBuilder::language_code)
     pub fn build(self) -> ::std::result::Result<crate::types::TaskConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TaskConfig {
-            language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "language_code",
-                    "language_code was not specified but it is required when building TaskConfig",
-                )
-            })?,
-            document_classification_config: self.document_classification_config,
-            entity_recognition_config: self.entity_recognition_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TaskConfig {
+                language_code: self.language_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("language_code", "language_code was not specified but it is required when building TaskConfig")
+                    )?
+                ,
+                document_classification_config: self.document_classification_config
+                ,
+                entity_recognition_config: self.entity_recognition_config
+                ,
+            }
+        )
     }
 }
+

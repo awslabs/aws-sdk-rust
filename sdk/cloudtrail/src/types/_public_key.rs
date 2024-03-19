@@ -3,7 +3,7 @@
 /// <p>Contains information about a returned public key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicKey {
+pub struct PublicKey  {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
     pub value: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The starting time of validity of the public key.</p>
@@ -13,21 +13,21 @@ pub struct PublicKey {
     /// <p>The fingerprint of the public key.</p>
     pub fingerprint: ::std::option::Option<::std::string::String>,
 }
-impl PublicKey {
+impl  PublicKey  {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
-    pub fn value(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn value(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.value.as_ref()
     }
     /// <p>The starting time of validity of the public key.</p>
-    pub fn validity_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn validity_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.validity_start_time.as_ref()
     }
     /// <p>The ending time of validity of the public key.</p>
-    pub fn validity_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn validity_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.validity_end_time.as_ref()
     }
     /// <p>The fingerprint of the public key.</p>
-    pub fn fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn fingerprint(&self) -> ::std::option::Option<& str> {
         self.fingerprint.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PublicKeyBuilder {
     }
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -69,8 +68,7 @@ impl PublicKeyBuilder {
     }
     /// <p>The starting time of validity of the public key.</p>
     pub fn set_validity_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.validity_start_time = input;
-        self
+        self.validity_start_time = input; self
     }
     /// <p>The starting time of validity of the public key.</p>
     pub fn get_validity_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +81,7 @@ impl PublicKeyBuilder {
     }
     /// <p>The ending time of validity of the public key.</p>
     pub fn set_validity_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.validity_end_time = input;
-        self
+        self.validity_end_time = input; self
     }
     /// <p>The ending time of validity of the public key.</p>
     pub fn get_validity_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl PublicKeyBuilder {
     }
     /// <p>The fingerprint of the public key.</p>
     pub fn set_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fingerprint = input;
-        self
+        self.fingerprint = input; self
     }
     /// <p>The fingerprint of the public key.</p>
     pub fn get_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl PublicKeyBuilder {
     /// Consumes the builder and constructs a [`PublicKey`](crate::types::PublicKey).
     pub fn build(self) -> crate::types::PublicKey {
         crate::types::PublicKey {
-            value: self.value,
-            validity_start_time: self.validity_start_time,
-            validity_end_time: self.validity_end_time,
-            fingerprint: self.fingerprint,
+            value: self.value
+            ,
+            validity_start_time: self.validity_start_time
+            ,
+            validity_end_time: self.validity_end_time
+            ,
+            fingerprint: self.fingerprint
+            ,
         }
     }
 }
+

@@ -21,11 +21,7 @@ impl Credentials {
     /// Tries to convert the enum instance into [`UsernamePassword`](crate::types::Credentials::UsernamePassword), extracting the inner [`UsernamePassword`](crate::types::UsernamePassword).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_username_password(&self) -> ::std::result::Result<&crate::types::UsernamePassword, &Self> {
-        if let Credentials::UsernamePassword(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Credentials::UsernamePassword(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UsernamePassword`](crate::types::Credentials::UsernamePassword).
     pub fn is_username_password(&self) -> bool {
@@ -44,3 +40,4 @@ impl ::std::fmt::Debug for Credentials {
         }
     }
 }
+

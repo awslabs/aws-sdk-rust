@@ -3,7 +3,7 @@
 /// <p>A single IP address specification. This is used in the <code>MatchAttributes</code> source and destination specifications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Address {
+pub struct Address  {
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6.</p>
     /// <p>Examples:</p>
     /// <ul>
@@ -19,7 +19,7 @@ pub struct Address {
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub address_definition: ::std::string::String,
 }
-impl Address {
+impl  Address  {
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6.</p>
     /// <p>Examples:</p>
     /// <ul>
@@ -33,9 +33,8 @@ impl Address {
     /// <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p></li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    pub fn address_definition(&self) -> &str {
-        use std::ops::Deref;
-        self.address_definition.deref()
+    pub fn address_definition(&self) -> & str {
+        use std::ops::Deref; self.address_definition.deref()
     }
 }
 impl Address {
@@ -84,8 +83,7 @@ impl AddressBuilder {
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub fn set_address_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_definition = input;
-        self
+        self.address_definition = input; self
     }
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6.</p>
     /// <p>Examples:</p>
@@ -107,13 +105,15 @@ impl AddressBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`address_definition`](crate::types::builders::AddressBuilder::address_definition)
     pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Address {
-            address_definition: self.address_definition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "address_definition",
-                    "address_definition was not specified but it is required when building Address",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Address {
+                address_definition: self.address_definition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("address_definition", "address_definition was not specified but it is required when building Address")
+                    )?
+                ,
+            }
+        )
     }
 }
+

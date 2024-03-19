@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePoliciesOutput {
+pub struct DescribePoliciesOutput  {
     /// <p>The scaling policies.</p>
-    pub scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
+    pub scaling_policies: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingPolicy>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribePoliciesOutput {
+impl  DescribePoliciesOutput  {
     /// <p>The scaling policies.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_policies.is_none()`.
-    pub fn scaling_policies(&self) -> &[crate::types::ScalingPolicy] {
-        self.scaling_policies.as_deref().unwrap_or_default()
+    pub fn scaling_policies(&self) -> & [crate::types::ScalingPolicy] {
+        self.scaling_policies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePoliciesOutput`](crate::operation::describe_policies::DescribePoliciesOutput).
     pub fn builder() -> crate::operation::describe_policies::builders::DescribePoliciesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribePoliciesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePoliciesOutputBuilder {
-    pub(crate) scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
+    pub(crate) scaling_policies: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribePoliciesOutputBuilder {
     /// <p>The scaling policies.</p>
     pub fn scaling_policies(mut self, input: crate::types::ScalingPolicy) -> Self {
         let mut v = self.scaling_policies.unwrap_or_default();
-        v.push(input);
-        self.scaling_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scaling_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The scaling policies.</p>
-    pub fn set_scaling_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>) -> Self {
-        self.scaling_policies = input;
-        self
+    pub fn set_scaling_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingPolicy>>) -> Self {
+        self.scaling_policies = input; self
     }
     /// <p>The scaling policies.</p>
-    pub fn get_scaling_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>> {
+    pub fn get_scaling_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScalingPolicy>> {
         &self.scaling_policies
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -69,28 +69,30 @@ impl DescribePoliciesOutputBuilder {
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePoliciesOutput`](crate::operation::describe_policies::DescribePoliciesOutput).
     pub fn build(self) -> crate::operation::describe_policies::DescribePoliciesOutput {
         crate::operation::describe_policies::DescribePoliciesOutput {
-            scaling_policies: self.scaling_policies,
-            next_token: self.next_token,
+            scaling_policies: self.scaling_policies
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportImageOutput {
+pub struct ExportImageOutput  {
     /// <p>A description of the image being exported.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The disk image format for the exported image.</p>
@@ -22,58 +22,59 @@ pub struct ExportImageOutput {
     /// <p>The status message for the export image task.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the export image task.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl ExportImageOutput {
+impl  ExportImageOutput  {
     /// <p>A description of the image being exported.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The disk image format for the exported image.</p>
-    pub fn disk_image_format(&self) -> ::std::option::Option<&crate::types::DiskImageFormat> {
+    pub fn disk_image_format(&self) -> ::std::option::Option<& crate::types::DiskImageFormat> {
         self.disk_image_format.as_ref()
     }
     /// <p>The ID of the export image task.</p>
-    pub fn export_image_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn export_image_task_id(&self) -> ::std::option::Option<& str> {
         self.export_image_task_id.as_deref()
     }
     /// <p>The ID of the image.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The percent complete of the export image task.</p>
-    pub fn progress(&self) -> ::std::option::Option<&str> {
+    pub fn progress(&self) -> ::std::option::Option<& str> {
         self.progress.as_deref()
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
-    pub fn s3_export_location(&self) -> ::std::option::Option<&crate::types::ExportTaskS3Location> {
+    pub fn s3_export_location(&self) -> ::std::option::Option<& crate::types::ExportTaskS3Location> {
         self.s3_export_location.as_ref()
     }
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The status message for the export image task.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Any tags assigned to the export image task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportImageOutput {
     /// Creates a new builder-style object to manufacture [`ExportImageOutput`](crate::operation::export_image::ExportImageOutput).
     pub fn builder() -> crate::operation::export_image::builders::ExportImageOutputBuilder {
@@ -94,7 +95,7 @@ pub struct ExportImageOutputBuilder {
     pub(crate) s3_export_location: ::std::option::Option<crate::types::ExportTaskS3Location>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl ExportImageOutputBuilder {
@@ -105,8 +106,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>A description of the image being exported.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the image being exported.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +119,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>The disk image format for the exported image.</p>
     pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
-        self.disk_image_format = input;
-        self
+        self.disk_image_format = input; self
     }
     /// <p>The disk image format for the exported image.</p>
     pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
@@ -133,8 +132,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>The ID of the export image task.</p>
     pub fn set_export_image_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_image_task_id = input;
-        self
+        self.export_image_task_id = input; self
     }
     /// <p>The ID of the export image task.</p>
     pub fn get_export_image_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +145,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>The ID of the image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The ID of the image.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +158,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +171,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>The percent complete of the export image task.</p>
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>The percent complete of the export image task.</p>
     pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +184,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
     pub fn set_s3_export_location(mut self, input: ::std::option::Option<crate::types::ExportTaskS3Location>) -> Self {
-        self.s3_export_location = input;
-        self
+        self.s3_export_location = input; self
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
     pub fn get_s3_export_location(&self) -> &::std::option::Option<crate::types::ExportTaskS3Location> {
@@ -203,8 +197,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +210,7 @@ impl ExportImageOutputBuilder {
     }
     /// <p>The status message for the export image task.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message for the export image task.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,42 +223,52 @@ impl ExportImageOutputBuilder {
     /// <p>Any tags assigned to the export image task.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the export image task.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the export image task.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportImageOutput`](crate::operation::export_image::ExportImageOutput).
     pub fn build(self) -> crate::operation::export_image::ExportImageOutput {
         crate::operation::export_image::ExportImageOutput {
-            description: self.description,
-            disk_image_format: self.disk_image_format,
-            export_image_task_id: self.export_image_task_id,
-            image_id: self.image_id,
-            role_name: self.role_name,
-            progress: self.progress,
-            s3_export_location: self.s3_export_location,
-            status: self.status,
-            status_message: self.status_message,
-            tags: self.tags,
+            description: self.description
+            ,
+            disk_image_format: self.disk_image_format
+            ,
+            export_image_task_id: self.export_image_task_id
+            ,
+            image_id: self.image_id
+            ,
+            role_name: self.role_name
+            ,
+            progress: self.progress
+            ,
+            s3_export_location: self.s3_export_location
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

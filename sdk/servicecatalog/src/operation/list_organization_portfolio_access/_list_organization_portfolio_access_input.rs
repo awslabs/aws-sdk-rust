@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOrganizationPortfolioAccessInput {
+pub struct ListOrganizationPortfolioAccessInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ pub struct ListOrganizationPortfolioAccessInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl ListOrganizationPortfolioAccessInput {
+impl  ListOrganizationPortfolioAccessInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -36,11 +36,11 @@ impl ListOrganizationPortfolioAccessInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
-    pub fn portfolio_id(&self) -> ::std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> ::std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
     /// <p>The organization node type that will be returned in the output.</p>
@@ -52,11 +52,11 @@ impl ListOrganizationPortfolioAccessInput {
     /// <li>
     /// <p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
     /// </ul>
-    pub fn organization_node_type(&self) -> ::std::option::Option<&crate::types::OrganizationNodeType> {
+    pub fn organization_node_type(&self) -> ::std::option::Option<& crate::types::OrganizationNodeType> {
         self.organization_node_type.as_ref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -101,8 +101,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -122,8 +121,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portfolio_id = input;
-        self
+        self.portfolio_id = input; self
     }
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
     pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +151,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     /// <p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li>
     /// </ul>
     pub fn set_organization_node_type(mut self, input: ::std::option::Option<crate::types::OrganizationNodeType>) -> Self {
-        self.organization_node_type = input;
-        self
+        self.organization_node_type = input; self
     }
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
@@ -175,8 +172,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,28 +185,28 @@ impl ListOrganizationPortfolioAccessInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListOrganizationPortfolioAccessInput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessInput {
-                accept_language: self.accept_language,
-                portfolio_id: self.portfolio_id,
-                organization_node_type: self.organization_node_type,
-                page_token: self.page_token,
-                page_size: self.page_size,
-            },
+                accept_language: self.accept_language
+                ,
+                portfolio_id: self.portfolio_id
+                ,
+                organization_node_type: self.organization_node_type
+                ,
+                page_token: self.page_token
+                ,
+                page_size: self.page_size
+                ,
+            }
         )
     }
 }
+

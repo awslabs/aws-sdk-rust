@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceDelegatesInput {
+pub struct ListResourceDelegatesInput  {
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the resource whose delegates are listed.</p>
@@ -21,9 +21,9 @@ pub struct ListResourceDelegatesInput {
     /// <p>The number of maximum results in a page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListResourceDelegatesInput {
+impl  ListResourceDelegatesInput  {
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the resource whose delegates are listed.</p>
@@ -36,11 +36,11 @@ impl ListResourceDelegatesInput {
     /// <li>
     /// <p>Resource name: resource</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The token used to paginate through the delegates associated with a resource.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of maximum results in a page.</p>
@@ -73,8 +73,7 @@ impl ListResourceDelegatesInputBuilder {
     }
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl ListResourceDelegatesInputBuilder {
     /// <p>Resource name: resource</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier for the resource whose delegates are listed.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
@@ -129,8 +127,7 @@ impl ListResourceDelegatesInputBuilder {
     }
     /// <p>The token used to paginate through the delegates associated with a resource.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used to paginate through the delegates associated with a resource.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,23 +140,26 @@ impl ListResourceDelegatesInputBuilder {
     }
     /// <p>The number of maximum results in a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of maximum results in a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListResourceDelegatesInput`](crate::operation::list_resource_delegates::ListResourceDelegatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resource_delegates::ListResourceDelegatesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_resource_delegates::ListResourceDelegatesInput {
-            organization_id: self.organization_id,
-            resource_id: self.resource_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_delegates::ListResourceDelegatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resource_delegates::ListResourceDelegatesInput {
+                organization_id: self.organization_id
+                ,
+                resource_id: self.resource_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

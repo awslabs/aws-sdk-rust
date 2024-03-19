@@ -3,16 +3,17 @@
 /// <p>A container for object key name prefix and suffix filtering rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3KeyFilter {
+pub struct S3KeyFilter  {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
-    pub filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub filter_rules: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
 }
-impl S3KeyFilter {
+impl  S3KeyFilter  {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_rules.is_none()`.
-    pub fn filter_rules(&self) -> &[crate::types::FilterRule] {
-        self.filter_rules.as_deref().unwrap_or_default()
+    pub fn filter_rules(&self) -> & [crate::types::FilterRule] {
+        self.filter_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl S3KeyFilter {
@@ -26,7 +27,7 @@ impl S3KeyFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3KeyFilterBuilder {
-    pub(crate) filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) filter_rules: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
 }
 impl S3KeyFilterBuilder {
     /// Appends an item to `filter_rules`.
@@ -36,23 +37,24 @@ impl S3KeyFilterBuilder {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
     pub fn filter_rules(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.filter_rules.unwrap_or_default();
-        v.push(input);
-        self.filter_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
-    pub fn set_filter_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
-        self.filter_rules = input;
-        self
+    pub fn set_filter_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>) -> Self {
+        self.filter_rules = input; self
     }
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
-    pub fn get_filter_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_filter_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>> {
         &self.filter_rules
     }
     /// Consumes the builder and constructs a [`S3KeyFilter`](crate::types::S3KeyFilter).
     pub fn build(self) -> crate::types::S3KeyFilter {
         crate::types::S3KeyFilter {
-            filter_rules: self.filter_rules,
+            filter_rules: self.filter_rules
+            ,
         }
     }
 }
+

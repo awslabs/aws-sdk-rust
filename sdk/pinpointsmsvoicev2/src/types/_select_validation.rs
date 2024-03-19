@@ -3,15 +3,15 @@
 /// <p>Validation rules for a select field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectValidation {
+pub struct SelectValidation  {
     /// <p>The minimum number of choices for the select.</p>
     pub min_choices: i32,
     /// <p>The maximum number of choices for the select.</p>
     pub max_choices: i32,
     /// <p>An array of strings for the possible selection options.</p>
-    pub options: ::std::vec::Vec<::std::string::String>,
+    pub options: ::std::vec::Vec::<::std::string::String>,
 }
-impl SelectValidation {
+impl  SelectValidation  {
     /// <p>The minimum number of choices for the select.</p>
     pub fn min_choices(&self) -> i32 {
         self.min_choices
@@ -21,9 +21,8 @@ impl SelectValidation {
         self.max_choices
     }
     /// <p>An array of strings for the possible selection options.</p>
-    pub fn options(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.options.deref()
+    pub fn options(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.options.deref()
     }
 }
 impl SelectValidation {
@@ -39,7 +38,7 @@ impl SelectValidation {
 pub struct SelectValidationBuilder {
     pub(crate) min_choices: ::std::option::Option<i32>,
     pub(crate) max_choices: ::std::option::Option<i32>,
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SelectValidationBuilder {
     /// <p>The minimum number of choices for the select.</p>
@@ -50,8 +49,7 @@ impl SelectValidationBuilder {
     }
     /// <p>The minimum number of choices for the select.</p>
     pub fn set_min_choices(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_choices = input;
-        self
+        self.min_choices = input; self
     }
     /// <p>The minimum number of choices for the select.</p>
     pub fn get_min_choices(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,7 @@ impl SelectValidationBuilder {
     }
     /// <p>The maximum number of choices for the select.</p>
     pub fn set_max_choices(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_choices = input;
-        self
+        self.max_choices = input; self
     }
     /// <p>The maximum number of choices for the select.</p>
     pub fn get_max_choices(&self) -> &::std::option::Option<i32> {
@@ -79,17 +76,16 @@ impl SelectValidationBuilder {
     /// <p>An array of strings for the possible selection options.</p>
     pub fn options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input.into());
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings for the possible selection options.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.options = input; self
     }
     /// <p>An array of strings for the possible selection options.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`SelectValidation`](crate::types::SelectValidation).
@@ -98,25 +94,25 @@ impl SelectValidationBuilder {
     /// - [`max_choices`](crate::types::builders::SelectValidationBuilder::max_choices)
     /// - [`options`](crate::types::builders::SelectValidationBuilder::options)
     pub fn build(self) -> ::std::result::Result<crate::types::SelectValidation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SelectValidation {
-            min_choices: self.min_choices.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "min_choices",
-                    "min_choices was not specified but it is required when building SelectValidation",
-                )
-            })?,
-            max_choices: self.max_choices.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_choices",
-                    "max_choices was not specified but it is required when building SelectValidation",
-                )
-            })?,
-            options: self.options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "options",
-                    "options was not specified but it is required when building SelectValidation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SelectValidation {
+                min_choices: self.min_choices
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("min_choices", "min_choices was not specified but it is required when building SelectValidation")
+                    )?
+                ,
+                max_choices: self.max_choices
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_choices", "max_choices was not specified but it is required when building SelectValidation")
+                    )?
+                ,
+                options: self.options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("options", "options was not specified but it is required when building SelectValidation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

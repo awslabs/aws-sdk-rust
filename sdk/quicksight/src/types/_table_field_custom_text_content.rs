@@ -3,19 +3,19 @@
 /// <p>The custom text content (value, font configuration) for the table link content configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableFieldCustomTextContent {
+pub struct TableFieldCustomTextContent  {
     /// <p>The string value of the custom text content for the table URL link content.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The font configuration of the custom text content for the table URL link content.</p>
     pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
 }
-impl TableFieldCustomTextContent {
+impl  TableFieldCustomTextContent  {
     /// <p>The string value of the custom text content for the table URL link content.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The font configuration of the custom text content for the table URL link content.</p>
-    pub fn font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+    pub fn font_configuration(&self) -> ::std::option::Option<& crate::types::FontConfiguration> {
         self.font_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TableFieldCustomTextContentBuilder {
     }
     /// <p>The string value of the custom text content for the table URL link content.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The string value of the custom text content for the table URL link content.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl TableFieldCustomTextContentBuilder {
     }
     /// <p>The font configuration of the custom text content for the table URL link content.</p>
     pub fn set_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
-        self.font_configuration = input;
-        self
+        self.font_configuration = input; self
     }
     /// <p>The font configuration of the custom text content for the table URL link content.</p>
     pub fn get_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
@@ -66,8 +64,11 @@ impl TableFieldCustomTextContentBuilder {
     /// Consumes the builder and constructs a [`TableFieldCustomTextContent`](crate::types::TableFieldCustomTextContent).
     pub fn build(self) -> crate::types::TableFieldCustomTextContent {
         crate::types::TableFieldCustomTextContent {
-            value: self.value,
-            font_configuration: self.font_configuration,
+            value: self.value
+            ,
+            font_configuration: self.font_configuration
+            ,
         }
     }
 }
+

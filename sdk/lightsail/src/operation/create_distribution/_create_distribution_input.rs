@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDistributionInput {
+pub struct CreateDistributionInput  {
     /// <p>The name for the distribution.</p>
     pub distribution_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
@@ -13,7 +13,7 @@ pub struct CreateDistributionInput {
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
     pub cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
+    pub cache_behaviors: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>,
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
@@ -24,50 +24,52 @@ pub struct CreateDistributionInput {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDistributionInput {
+impl  CreateDistributionInput  {
     /// <p>The name for the distribution.</p>
-    pub fn distribution_name(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_name(&self) -> ::std::option::Option<& str> {
         self.distribution_name.as_deref()
     }
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-    pub fn origin(&self) -> ::std::option::Option<&crate::types::InputOrigin> {
+    pub fn origin(&self) -> ::std::option::Option<& crate::types::InputOrigin> {
         self.origin.as_ref()
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    pub fn default_cache_behavior(&self) -> ::std::option::Option<&crate::types::CacheBehavior> {
+    pub fn default_cache_behavior(&self) -> ::std::option::Option<& crate::types::CacheBehavior> {
         self.default_cache_behavior.as_ref()
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
-    pub fn cache_behavior_settings(&self) -> ::std::option::Option<&crate::types::CacheSettings> {
+    pub fn cache_behavior_settings(&self) -> ::std::option::Option<& crate::types::CacheSettings> {
         self.cache_behavior_settings.as_ref()
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_behaviors.is_none()`.
-    pub fn cache_behaviors(&self) -> &[crate::types::CacheBehaviorPerPath] {
-        self.cache_behaviors.as_deref().unwrap_or_default()
+    pub fn cache_behaviors(&self) -> & [crate::types::CacheBehaviorPerPath] {
+        self.cache_behaviors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The IP address type for the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDistributionInput {
@@ -85,10 +87,10 @@ pub struct CreateDistributionInputBuilder {
     pub(crate) origin: ::std::option::Option<crate::types::InputOrigin>,
     pub(crate) default_cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
     pub(crate) cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
-    pub(crate) cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
+    pub(crate) cache_behaviors: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDistributionInputBuilder {
     /// <p>The name for the distribution.</p>
@@ -99,8 +101,7 @@ impl CreateDistributionInputBuilder {
     }
     /// <p>The name for the distribution.</p>
     pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_name = input;
-        self
+        self.distribution_name = input; self
     }
     /// <p>The name for the distribution.</p>
     pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +117,7 @@ impl CreateDistributionInputBuilder {
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::InputOrigin>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
@@ -132,8 +132,7 @@ impl CreateDistributionInputBuilder {
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
     pub fn set_default_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
-        self.default_cache_behavior = input;
-        self
+        self.default_cache_behavior = input; self
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
     pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
@@ -146,8 +145,7 @@ impl CreateDistributionInputBuilder {
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
     pub fn set_cache_behavior_settings(mut self, input: ::std::option::Option<crate::types::CacheSettings>) -> Self {
-        self.cache_behavior_settings = input;
-        self
+        self.cache_behavior_settings = input; self
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
     pub fn get_cache_behavior_settings(&self) -> &::std::option::Option<crate::types::CacheSettings> {
@@ -160,17 +158,16 @@ impl CreateDistributionInputBuilder {
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
     pub fn cache_behaviors(mut self, input: crate::types::CacheBehaviorPerPath) -> Self {
         let mut v = self.cache_behaviors.unwrap_or_default();
-        v.push(input);
-        self.cache_behaviors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cache_behaviors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>) -> Self {
-        self.cache_behaviors = input;
-        self
+    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>) -> Self {
+        self.cache_behaviors = input; self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
+    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>> {
         &self.cache_behaviors
     }
     /// <p>The bundle ID to use for the distribution.</p>
@@ -185,8 +182,7 @@ impl CreateDistributionInputBuilder {
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
@@ -205,8 +201,7 @@ impl CreateDistributionInputBuilder {
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address type for the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
@@ -222,34 +217,42 @@ impl CreateDistributionInputBuilder {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_distribution::CreateDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_distribution::CreateDistributionInput {
-            distribution_name: self.distribution_name,
-            origin: self.origin,
-            default_cache_behavior: self.default_cache_behavior,
-            cache_behavior_settings: self.cache_behavior_settings,
-            cache_behaviors: self.cache_behaviors,
-            bundle_id: self.bundle_id,
-            ip_address_type: self.ip_address_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_distribution::CreateDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_distribution::CreateDistributionInput {
+                distribution_name: self.distribution_name
+                ,
+                origin: self.origin
+                ,
+                default_cache_behavior: self.default_cache_behavior
+                ,
+                cache_behavior_settings: self.cache_behavior_settings
+                ,
+                cache_behaviors: self.cache_behaviors
+                ,
+                bundle_id: self.bundle_id
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

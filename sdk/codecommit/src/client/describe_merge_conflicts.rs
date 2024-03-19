@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMergeConflicts`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`repository_name(impl Into<String>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository where you want to get information about a merge conflict.</p><br>
     ///   - [`destination_commit_specifier(impl Into<String>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::destination_commit_specifier) / [`set_destination_commit_specifier(Option<String>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::set_destination_commit_specifier):<br>required: **true**<br><p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p><br>
     ///   - [`source_commit_specifier(impl Into<String>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::source_commit_specifier) / [`set_source_commit_specifier(Option<String>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::set_source_commit_specifier):<br>required: **true**<br><p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p><br>
@@ -13,15 +13,16 @@ impl super::Client {
     ///   - [`conflict_detail_level(ConflictDetailLevelTypeEnum)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::conflict_detail_level) / [`set_conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::set_conflict_detail_level):<br>required: **false**<br><p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p><br>
     ///   - [`conflict_resolution_strategy(ConflictResolutionStrategyTypeEnum)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::conflict_resolution_strategy) / [`set_conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::set_conflict_resolution_strategy):<br>required: **false**<br><p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
-    /// - On success, responds with [`DescribeMergeConflictsOutput`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput) with field(s):
+                            /// - On success, responds with [`DescribeMergeConflictsOutput`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput) with field(s):
     ///   - [`conflict_metadata(Option<ConflictMetadata>)`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput::conflict_metadata): <p>Contains metadata about the conflicts found in the merge.</p>
     ///   - [`merge_hunks(Vec::<MergeHunk>)`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput::merge_hunks): <p>A list of merge hunks of the differences between the files or lines.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     ///   - [`destination_commit_id(String)`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput::destination_commit_id): <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     ///   - [`source_commit_id(String)`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput::source_commit_id): <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     ///   - [`base_commit_id(Option<String>)`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput::base_commit_id): <p>The commit ID of the merge base.</p>
-    /// - On failure, responds with [`SdkError<DescribeMergeConflictsError>`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsError)
+                            /// - On failure, responds with [`SdkError<DescribeMergeConflictsError>`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsError)
     pub fn describe_merge_conflicts(&self) -> crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder {
-        crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

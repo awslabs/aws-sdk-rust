@@ -3,27 +3,25 @@
 /// <p>Information about a filter used to limit results of a query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>A key that can be used to sort results.</p>
     pub key: ::std::string::String,
     /// <p>The values of the key.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator used to compare the fields.</p>
     pub comparison_operator: ::std::option::Option<::std::string::String>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>A key that can be used to sort results.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The values of the key.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator used to compare the fields.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&str> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& str> {
         self.comparison_operator.as_deref()
     }
 }
@@ -39,7 +37,7 @@ impl Filter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) comparison_operator: ::std::option::Option<::std::string::String>,
 }
 impl FilterBuilder {
@@ -51,8 +49,7 @@ impl FilterBuilder {
     }
     /// <p>A key that can be used to sort results.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>A key that can be used to sort results.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +62,16 @@ impl FilterBuilder {
     /// <p>The values of the key.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the key.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of the key.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator used to compare the fields.</p>
@@ -85,8 +81,7 @@ impl FilterBuilder {
     }
     /// <p>The operator used to compare the fields.</p>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comparison_operator = input;
-        self
+        self.comparison_operator = input; self
     }
     /// <p>The operator used to compare the fields.</p>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,20 +92,22 @@ impl FilterBuilder {
     /// - [`key`](crate::types::builders::FilterBuilder::key)
     /// - [`values`](crate::types::builders::FilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building Filter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building Filter",
-                )
-            })?,
-            comparison_operator: self.comparison_operator,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Filter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building Filter")
+                    )?
+                ,
+                comparison_operator: self.comparison_operator
+                ,
+            }
+        )
     }
 }
+

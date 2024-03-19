@@ -22,11 +22,7 @@ impl RuleConfiguration {
     /// Tries to convert the enum instance into [`ContentBlockerRule`](crate::types::RuleConfiguration::ContentBlockerRule), extracting the inner [`ContentBlockerRule`](crate::types::ContentBlockerRule).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_content_blocker_rule(&self) -> ::std::result::Result<&crate::types::ContentBlockerRule, &Self> {
-        if let RuleConfiguration::ContentBlockerRule(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RuleConfiguration::ContentBlockerRule(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ContentBlockerRule`](crate::types::RuleConfiguration::ContentBlockerRule).
     pub fn is_content_blocker_rule(&self) -> bool {
@@ -35,11 +31,7 @@ impl RuleConfiguration {
     /// Tries to convert the enum instance into [`ContentRetrievalRule`](crate::types::RuleConfiguration::ContentRetrievalRule), extracting the inner [`ContentRetrievalRule`](crate::types::ContentRetrievalRule).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_content_retrieval_rule(&self) -> ::std::result::Result<&crate::types::ContentRetrievalRule, &Self> {
-        if let RuleConfiguration::ContentRetrievalRule(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RuleConfiguration::ContentRetrievalRule(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ContentRetrievalRule`](crate::types::RuleConfiguration::ContentRetrievalRule).
     pub fn is_content_retrieval_rule(&self) -> bool {
@@ -50,3 +42,4 @@ impl RuleConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

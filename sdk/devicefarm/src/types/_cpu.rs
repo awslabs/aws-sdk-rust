@@ -3,7 +3,7 @@
 /// <p>Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Cpu {
+pub struct Cpu  {
     /// <p>The CPU's frequency.</p>
     pub frequency: ::std::option::Option<::std::string::String>,
     /// <p>The CPU's architecture (for example, x86 or ARM).</p>
@@ -11,13 +11,13 @@ pub struct Cpu {
     /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
     pub clock: ::std::option::Option<f64>,
 }
-impl Cpu {
+impl  Cpu  {
     /// <p>The CPU's frequency.</p>
-    pub fn frequency(&self) -> ::std::option::Option<&str> {
+    pub fn frequency(&self) -> ::std::option::Option<& str> {
         self.frequency.as_deref()
     }
     /// <p>The CPU's architecture (for example, x86 or ARM).</p>
-    pub fn architecture(&self) -> ::std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<& str> {
         self.architecture.as_deref()
     }
     /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
@@ -48,8 +48,7 @@ impl CpuBuilder {
     }
     /// <p>The CPU's frequency.</p>
     pub fn set_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.frequency = input;
-        self
+        self.frequency = input; self
     }
     /// <p>The CPU's frequency.</p>
     pub fn get_frequency(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CpuBuilder {
     }
     /// <p>The CPU's architecture (for example, x86 or ARM).</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The CPU's architecture (for example, x86 or ARM).</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl CpuBuilder {
     }
     /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
     pub fn set_clock(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.clock = input;
-        self
+        self.clock = input; self
     }
     /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2 GHz CPU is expressed as 1200000000.</p>
     pub fn get_clock(&self) -> &::std::option::Option<f64> {
@@ -86,9 +83,13 @@ impl CpuBuilder {
     /// Consumes the builder and constructs a [`Cpu`](crate::types::Cpu).
     pub fn build(self) -> crate::types::Cpu {
         crate::types::Cpu {
-            frequency: self.frequency,
-            architecture: self.architecture,
-            clock: self.clock,
+            frequency: self.frequency
+            ,
+            architecture: self.architecture
+            ,
+            clock: self.clock
+            ,
         }
     }
 }
+

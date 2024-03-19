@@ -3,13 +3,13 @@
 /// <p>The data-volume encryption details. You can't update encryption at rest settings for existing clusters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails {
+pub struct AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails  {
     /// <p>The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
     pub data_volume_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails {
+impl  AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails  {
     /// <p>The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-    pub fn data_volume_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_volume_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.data_volume_kms_key_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
     pub fn set_data_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_volume_kms_key_id = input;
-        self
+        self.data_volume_kms_key_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
     pub fn get_data_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails`](crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails).
     pub fn build(self) -> crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails {
         crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails {
-            data_volume_kms_key_id: self.data_volume_kms_key_id,
+            data_volume_kms_key_id: self.data_volume_kms_key_id
+            ,
         }
     }
 }
+

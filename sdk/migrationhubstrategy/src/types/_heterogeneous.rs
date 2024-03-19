@@ -3,15 +3,14 @@
 /// <p>The object containing details about heterogeneous database preferences.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Heterogeneous {
+pub struct Heterogeneous  {
     /// <p>The target database engine for heterogeneous database migration preference.</p>
-    pub target_database_engine: ::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>,
+    pub target_database_engine: ::std::vec::Vec::<crate::types::HeterogeneousTargetDatabaseEngine>,
 }
-impl Heterogeneous {
+impl  Heterogeneous  {
     /// <p>The target database engine for heterogeneous database migration preference.</p>
-    pub fn target_database_engine(&self) -> &[crate::types::HeterogeneousTargetDatabaseEngine] {
-        use std::ops::Deref;
-        self.target_database_engine.deref()
+    pub fn target_database_engine(&self) -> & [crate::types::HeterogeneousTargetDatabaseEngine] {
+        use std::ops::Deref; self.target_database_engine.deref()
     }
 }
 impl Heterogeneous {
@@ -25,7 +24,7 @@ impl Heterogeneous {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeterogeneousBuilder {
-    pub(crate) target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
+    pub(crate) target_database_engine: ::std::option::Option<::std::vec::Vec::<crate::types::HeterogeneousTargetDatabaseEngine>>,
 }
 impl HeterogeneousBuilder {
     /// Appends an item to `target_database_engine`.
@@ -35,33 +34,31 @@ impl HeterogeneousBuilder {
     /// <p>The target database engine for heterogeneous database migration preference.</p>
     pub fn target_database_engine(mut self, input: crate::types::HeterogeneousTargetDatabaseEngine) -> Self {
         let mut v = self.target_database_engine.unwrap_or_default();
-        v.push(input);
-        self.target_database_engine = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_database_engine = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target database engine for heterogeneous database migration preference.</p>
-    pub fn set_target_database_engine(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
-    ) -> Self {
-        self.target_database_engine = input;
-        self
+    pub fn set_target_database_engine(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HeterogeneousTargetDatabaseEngine>>) -> Self {
+        self.target_database_engine = input; self
     }
     /// <p>The target database engine for heterogeneous database migration preference.</p>
-    pub fn get_target_database_engine(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>> {
+    pub fn get_target_database_engine(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HeterogeneousTargetDatabaseEngine>> {
         &self.target_database_engine
     }
     /// Consumes the builder and constructs a [`Heterogeneous`](crate::types::Heterogeneous).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_database_engine`](crate::types::builders::HeterogeneousBuilder::target_database_engine)
     pub fn build(self) -> ::std::result::Result<crate::types::Heterogeneous, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Heterogeneous {
-            target_database_engine: self.target_database_engine.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_database_engine",
-                    "target_database_engine was not specified but it is required when building Heterogeneous",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Heterogeneous {
+                target_database_engine: self.target_database_engine
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_database_engine", "target_database_engine was not specified but it is required when building Heterogeneous")
+                    )?
+                ,
+            }
+        )
     }
 }
+

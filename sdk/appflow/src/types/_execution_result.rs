@@ -3,7 +3,7 @@
 /// <p>Specifies the end result of the flow run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionResult {
+pub struct ExecutionResult  {
     /// <p>Provides any error message information related to the flow run.</p>
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p>The total number of bytes processed by the flow run.</p>
@@ -17,9 +17,9 @@ pub struct ExecutionResult {
     /// <p>The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.</p>
     pub max_page_size: ::std::option::Option<i64>,
 }
-impl ExecutionResult {
+impl  ExecutionResult  {
     /// <p>Provides any error message information related to the flow run.</p>
-    pub fn error_info(&self) -> ::std::option::Option<&crate::types::ErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<& crate::types::ErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p>The total number of bytes processed by the flow run.</p>
@@ -69,8 +69,7 @@ impl ExecutionResultBuilder {
     }
     /// <p>Provides any error message information related to the flow run.</p>
     pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
-        self.error_info = input;
-        self
+        self.error_info = input; self
     }
     /// <p>Provides any error message information related to the flow run.</p>
     pub fn get_error_info(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
@@ -83,8 +82,7 @@ impl ExecutionResultBuilder {
     }
     /// <p>The total number of bytes processed by the flow run.</p>
     pub fn set_bytes_processed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_processed = input;
-        self
+        self.bytes_processed = input; self
     }
     /// <p>The total number of bytes processed by the flow run.</p>
     pub fn get_bytes_processed(&self) -> &::std::option::Option<i64> {
@@ -97,8 +95,7 @@ impl ExecutionResultBuilder {
     }
     /// <p>The total number of bytes written as a result of the flow run.</p>
     pub fn set_bytes_written(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_written = input;
-        self
+        self.bytes_written = input; self
     }
     /// <p>The total number of bytes written as a result of the flow run.</p>
     pub fn get_bytes_written(&self) -> &::std::option::Option<i64> {
@@ -111,8 +108,7 @@ impl ExecutionResultBuilder {
     }
     /// <p>The number of records processed in the flow run.</p>
     pub fn set_records_processed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.records_processed = input;
-        self
+        self.records_processed = input; self
     }
     /// <p>The number of records processed in the flow run.</p>
     pub fn get_records_processed(&self) -> &::std::option::Option<i64> {
@@ -125,8 +121,7 @@ impl ExecutionResultBuilder {
     }
     /// <p>The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.</p>
     pub fn set_num_parallel_processes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_parallel_processes = input;
-        self
+        self.num_parallel_processes = input; self
     }
     /// <p>The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.</p>
     pub fn get_num_parallel_processes(&self) -> &::std::option::Option<i64> {
@@ -139,8 +134,7 @@ impl ExecutionResultBuilder {
     }
     /// <p>The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.</p>
     pub fn set_max_page_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_page_size = input;
-        self
+        self.max_page_size = input; self
     }
     /// <p>The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.</p>
     pub fn get_max_page_size(&self) -> &::std::option::Option<i64> {
@@ -149,12 +143,19 @@ impl ExecutionResultBuilder {
     /// Consumes the builder and constructs a [`ExecutionResult`](crate::types::ExecutionResult).
     pub fn build(self) -> crate::types::ExecutionResult {
         crate::types::ExecutionResult {
-            error_info: self.error_info,
-            bytes_processed: self.bytes_processed,
-            bytes_written: self.bytes_written,
-            records_processed: self.records_processed,
-            num_parallel_processes: self.num_parallel_processes,
-            max_page_size: self.max_page_size,
+            error_info: self.error_info
+            ,
+            bytes_processed: self.bytes_processed
+            ,
+            bytes_written: self.bytes_written
+            ,
+            records_processed: self.records_processed
+            ,
+            num_parallel_processes: self.num_parallel_processes
+            ,
+            max_page_size: self.max_page_size
+            ,
         }
     }
 }
+

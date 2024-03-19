@@ -3,22 +3,23 @@
 /// <p>The UpdateTagsForDomainRequest includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTagsForDomainInput {
+pub struct UpdateTagsForDomainInput  {
     /// <p>The domain for which you want to add or update tags.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    pub tags_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags_to_update: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl UpdateTagsForDomainInput {
+impl  UpdateTagsForDomainInput  {
     /// <p>The domain for which you want to add or update tags.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_to_update.is_none()`.
-    pub fn tags_to_update(&self) -> &[crate::types::Tag] {
-        self.tags_to_update.as_deref().unwrap_or_default()
+    pub fn tags_to_update(&self) -> & [crate::types::Tag] {
+        self.tags_to_update.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateTagsForDomainInput {
@@ -33,7 +34,7 @@ impl UpdateTagsForDomainInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTagsForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags_to_update: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl UpdateTagsForDomainInputBuilder {
     /// <p>The domain for which you want to add or update tags.</p>
@@ -44,8 +45,7 @@ impl UpdateTagsForDomainInputBuilder {
     }
     /// <p>The domain for which you want to add or update tags.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain for which you want to add or update tags.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,27 +58,28 @@ impl UpdateTagsForDomainInputBuilder {
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
     pub fn tags_to_update(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_to_update.unwrap_or_default();
-        v.push(input);
-        self.tags_to_update = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags_to_update = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    pub fn set_tags_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags_to_update = input;
-        self
+    pub fn set_tags_to_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags_to_update = input; self
     }
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    pub fn get_tags_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags_to_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags_to_update
     }
     /// Consumes the builder and constructs a [`UpdateTagsForDomainInput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_tags_for_domain::UpdateTagsForDomainInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_tags_for_domain::UpdateTagsForDomainInput {
-            domain_name: self.domain_name,
-            tags_to_update: self.tags_to_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_tags_for_domain::UpdateTagsForDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_tags_for_domain::UpdateTagsForDomainInput {
+                domain_name: self.domain_name
+                ,
+                tags_to_update: self.tags_to_update
+                ,
+            }
+        )
     }
 }
+

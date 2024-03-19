@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistriesOutput {
+pub struct DescribeRegistriesOutput  {
     /// <p>An object that contains the details for a public registry.</p>
-    pub registries: ::std::vec::Vec<crate::types::Registry>,
+    pub registries: ::std::vec::Vec::<crate::types::Registry>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRegistriesOutput {
+impl  DescribeRegistriesOutput  {
     /// <p>An object that contains the details for a public registry.</p>
-    pub fn registries(&self) -> &[crate::types::Registry] {
-        use std::ops::Deref;
-        self.registries.deref()
+    pub fn registries(&self) -> & [crate::types::Registry] {
+        use std::ops::Deref; self.registries.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRegistriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRegistriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistriesOutput`](crate::operation::describe_registries::DescribeRegistriesOutput).
     pub fn builder() -> crate::operation::describe_registries::builders::DescribeRegistriesOutputBuilder {
@@ -36,7 +35,7 @@ impl DescribeRegistriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegistriesOutputBuilder {
-    pub(crate) registries: ::std::option::Option<::std::vec::Vec<crate::types::Registry>>,
+    pub(crate) registries: ::std::option::Option<::std::vec::Vec::<crate::types::Registry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl DescribeRegistriesOutputBuilder {
     /// <p>An object that contains the details for a public registry.</p>
     pub fn registries(mut self, input: crate::types::Registry) -> Self {
         let mut v = self.registries.unwrap_or_default();
-        v.push(input);
-        self.registries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.registries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains the details for a public registry.</p>
-    pub fn set_registries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Registry>>) -> Self {
-        self.registries = input;
-        self
+    pub fn set_registries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Registry>>) -> Self {
+        self.registries = input; self
     }
     /// <p>An object that contains the details for a public registry.</p>
-    pub fn get_registries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Registry>> {
+    pub fn get_registries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Registry>> {
         &self.registries
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
@@ -68,38 +66,37 @@ impl DescribeRegistriesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results, this value is <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRegistriesOutput`](crate::operation::describe_registries::DescribeRegistriesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registries`](crate::operation::describe_registries::builders::DescribeRegistriesOutputBuilder::registries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_registries::DescribeRegistriesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_registries::DescribeRegistriesOutput {
-            registries: self.registries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registries",
-                    "registries was not specified but it is required when building DescribeRegistriesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registries::DescribeRegistriesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_registries::DescribeRegistriesOutput {
+                registries: self.registries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registries", "registries was not specified but it is required when building DescribeRegistriesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

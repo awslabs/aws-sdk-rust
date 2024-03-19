@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExperiencesOutput {
+pub struct ListExperiencesOutput  {
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    pub summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>,
+    pub summary_items: ::std::option::Option<::std::vec::Vec::<crate::types::ExperiencesSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListExperiencesOutput {
+impl  ListExperiencesOutput  {
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summary_items.is_none()`.
-    pub fn summary_items(&self) -> &[crate::types::ExperiencesSummary] {
-        self.summary_items.as_deref().unwrap_or_default()
+    pub fn summary_items(&self) -> & [crate::types::ExperiencesSummary] {
+        self.summary_items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListExperiencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListExperiencesOutput {
     /// Creates a new builder-style object to manufacture [`ListExperiencesOutput`](crate::operation::list_experiences::ListExperiencesOutput).
     pub fn builder() -> crate::operation::list_experiences::builders::ListExperiencesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListExperiencesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExperiencesOutputBuilder {
-    pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>,
+    pub(crate) summary_items: ::std::option::Option<::std::vec::Vec::<crate::types::ExperiencesSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListExperiencesOutputBuilder {
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
     pub fn summary_items(mut self, input: crate::types::ExperiencesSummary) -> Self {
         let mut v = self.summary_items.unwrap_or_default();
-        v.push(input);
-        self.summary_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.summary_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    pub fn set_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>) -> Self {
-        self.summary_items = input;
-        self
+    pub fn set_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExperiencesSummary>>) -> Self {
+        self.summary_items = input; self
     }
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    pub fn get_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>> {
+    pub fn get_summary_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExperiencesSummary>> {
         &self.summary_items
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
@@ -69,28 +69,30 @@ impl ListExperiencesOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListExperiencesOutput`](crate::operation::list_experiences::ListExperiencesOutput).
     pub fn build(self) -> crate::operation::list_experiences::ListExperiencesOutput {
         crate::operation::list_experiences::ListExperiencesOutput {
-            summary_items: self.summary_items,
-            next_token: self.next_token,
+            summary_items: self.summary_items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

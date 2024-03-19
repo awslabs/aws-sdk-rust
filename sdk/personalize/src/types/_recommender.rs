@@ -3,7 +3,7 @@
 /// <p>Describes a recommendation generator for a Domain dataset group. You create a recommender in a Domain dataset group for a specific domain use case (domain recipe), and specify the recommender in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Recommender {
+pub struct Recommender  {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     pub recommender_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
@@ -34,35 +34,35 @@ pub struct Recommender {
     /// <p>Provides a summary of the latest updates to the recommender.</p>
     pub latest_recommender_update: ::std::option::Option<crate::types::RecommenderUpdateSummary>,
     /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
-    pub model_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub model_metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>,
 }
-impl Recommender {
+impl  Recommender  {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
-    pub fn recommender_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> ::std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The name of the recommender.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
-    pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> ::std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn recommender_config(&self) -> ::std::option::Option<&crate::types::RecommenderConfig> {
+    pub fn recommender_config(&self) -> ::std::option::Option<& crate::types::RecommenderConfig> {
         self.recommender_config.as_ref()
     }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The status of the recommender.</p>
@@ -75,19 +75,19 @@ impl Recommender {
     /// <li>
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If a recommender fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Provides a summary of the latest updates to the recommender.</p>
-    pub fn latest_recommender_update(&self) -> ::std::option::Option<&crate::types::RecommenderUpdateSummary> {
+    pub fn latest_recommender_update(&self) -> ::std::option::Option<& crate::types::RecommenderUpdateSummary> {
         self.latest_recommender_update.as_ref()
     }
     /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
-    pub fn model_metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn model_metrics(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, f64>> {
         self.model_metrics.as_ref()
     }
 }
@@ -112,7 +112,7 @@ pub struct RecommenderBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) latest_recommender_update: ::std::option::Option<crate::types::RecommenderUpdateSummary>,
-    pub(crate) model_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) model_metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>,
 }
 impl RecommenderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
@@ -122,8 +122,7 @@ impl RecommenderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommender_arn = input;
-        self
+        self.recommender_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl RecommenderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +148,7 @@ impl RecommenderBuilder {
     }
     /// <p>The name of the recommender.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the recommender.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +161,7 @@ impl RecommenderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe_arn = input;
-        self
+        self.recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
     pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +174,7 @@ impl RecommenderBuilder {
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn set_recommender_config(mut self, input: ::std::option::Option<crate::types::RecommenderConfig>) -> Self {
-        self.recommender_config = input;
-        self
+        self.recommender_config = input; self
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
@@ -192,8 +187,7 @@ impl RecommenderBuilder {
     }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -206,8 +200,7 @@ impl RecommenderBuilder {
     }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -238,8 +231,7 @@ impl RecommenderBuilder {
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the recommender.</p>
     /// <p>A recommender can be in one of the following states:</p>
@@ -261,8 +253,7 @@ impl RecommenderBuilder {
     }
     /// <p>If a recommender fails, the reason behind the failure.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If a recommender fails, the reason behind the failure.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,8 +266,7 @@ impl RecommenderBuilder {
     }
     /// <p>Provides a summary of the latest updates to the recommender.</p>
     pub fn set_latest_recommender_update(mut self, input: ::std::option::Option<crate::types::RecommenderUpdateSummary>) -> Self {
-        self.latest_recommender_update = input;
-        self
+        self.latest_recommender_update = input; self
     }
     /// <p>Provides a summary of the latest updates to the recommender.</p>
     pub fn get_latest_recommender_update(&self) -> &::std::option::Option<crate::types::RecommenderUpdateSummary> {
@@ -289,33 +279,44 @@ impl RecommenderBuilder {
     /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
     pub fn model_metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.model_metrics.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.model_metrics = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.model_metrics = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
-    pub fn set_model_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>) -> Self {
-        self.model_metrics = input;
-        self
+    pub fn set_model_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>>) -> Self {
+        self.model_metrics = input; self
     }
     /// <p>Provides evaluation metrics that help you determine the performance of a recommender. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/evaluating-recommenders.html"> Evaluating a recommender</a>.</p>
-    pub fn get_model_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+    pub fn get_model_metrics(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, f64>> {
         &self.model_metrics
     }
     /// Consumes the builder and constructs a [`Recommender`](crate::types::Recommender).
     pub fn build(self) -> crate::types::Recommender {
         crate::types::Recommender {
-            recommender_arn: self.recommender_arn,
-            dataset_group_arn: self.dataset_group_arn,
-            name: self.name,
-            recipe_arn: self.recipe_arn,
-            recommender_config: self.recommender_config,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            status: self.status,
-            failure_reason: self.failure_reason,
-            latest_recommender_update: self.latest_recommender_update,
-            model_metrics: self.model_metrics,
+            recommender_arn: self.recommender_arn
+            ,
+            dataset_group_arn: self.dataset_group_arn
+            ,
+            name: self.name
+            ,
+            recipe_arn: self.recipe_arn
+            ,
+            recommender_config: self.recommender_config
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            latest_recommender_update: self.latest_recommender_update
+            ,
+            model_metrics: self.model_metrics
+            ,
         }
     }
 }
+

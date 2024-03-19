@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ModifyTenantDatabaseInput {
+pub struct ModifyTenantDatabaseInput  {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -41,14 +41,14 @@ pub struct ModifyTenantDatabaseInput {
     /// </ul>
     pub new_tenant_db_name: ::std::option::Option<::std::string::String>,
 }
-impl ModifyTenantDatabaseInput {
+impl  ModifyTenantDatabaseInput  {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The user-supplied name of the tenant database that you want to modify. This parameter isn’t case-sensitive.</p>
@@ -57,7 +57,7 @@ impl ModifyTenantDatabaseInput {
     /// <li>
     /// <p>Must match the identifier of an existing tenant database.</p></li>
     /// </ul>
-    pub fn tenant_db_name(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_db_name(&self) -> ::std::option::Option<& str> {
         self.tenant_db_name.as_deref()
     }
     /// <p>The new password for the master user of the specified tenant database in your DB instance.</p><note>
@@ -73,7 +73,7 @@ impl ModifyTenantDatabaseInput {
     /// <li>
     /// <p>Must contain between 8 and 30 characters.</p></li>
     /// </ul>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>The new name of the tenant database when renaming a tenant database. This parameter isn’t case-sensitive.</p>
@@ -84,11 +84,11 @@ impl ModifyTenantDatabaseInput {
     /// <li>
     /// <p>Can't be longer than 8 characters.</p></li>
     /// </ul>
-    pub fn new_tenant_db_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_tenant_db_name(&self) -> ::std::option::Option<& str> {
         self.new_tenant_db_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for ModifyTenantDatabaseInput {
+impl  ::std::fmt::Debug for ModifyTenantDatabaseInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ModifyTenantDatabaseInput");
         formatter.field("db_instance_identifier", &self.db_instance_identifier);
@@ -133,8 +133,7 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -163,8 +162,7 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>Must match the identifier of an existing tenant database.</p></li>
     /// </ul>
     pub fn set_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_db_name = input;
-        self
+        self.tenant_db_name = input; self
     }
     /// <p>The user-supplied name of the tenant database that you want to modify. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -206,8 +204,7 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>Must contain between 8 and 30 characters.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>The new password for the master user of the specified tenant database in your DB instance.</p><note>
     /// <p>Amazon RDS operations never return the password, so this action provides a way to regain access to a tenant database user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
@@ -246,8 +243,7 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     pub fn set_new_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_tenant_db_name = input;
-        self
+        self.new_tenant_db_name = input; self
     }
     /// <p>The new name of the tenant database when renaming a tenant database. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -261,16 +257,19 @@ impl ModifyTenantDatabaseInputBuilder {
         &self.new_tenant_db_name
     }
     /// Consumes the builder and constructs a [`ModifyTenantDatabaseInput`](crate::operation::modify_tenant_database::ModifyTenantDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_tenant_database::ModifyTenantDatabaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_tenant_database::ModifyTenantDatabaseInput {
-            db_instance_identifier: self.db_instance_identifier,
-            tenant_db_name: self.tenant_db_name,
-            master_user_password: self.master_user_password,
-            new_tenant_db_name: self.new_tenant_db_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_tenant_database::ModifyTenantDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_tenant_database::ModifyTenantDatabaseInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                tenant_db_name: self.tenant_db_name
+                ,
+                master_user_password: self.master_user_password
+                ,
+                new_tenant_db_name: self.new_tenant_db_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ModifyTenantDatabaseInputBuilder {
@@ -283,3 +282,4 @@ impl ::std::fmt::Debug for ModifyTenantDatabaseInputBuilder {
         formatter.finish()
     }
 }
+

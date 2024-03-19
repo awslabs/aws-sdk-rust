@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIntentInput {
+pub struct GetIntentInput  {
     /// <p>The name of the intent. The name is case sensitive.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the intent.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl GetIntentInput {
+impl  GetIntentInput  {
     /// <p>The name of the intent. The name is case sensitive.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the intent.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetIntentInputBuilder {
     }
     /// <p>The name of the intent. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the intent. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetIntentInputBuilder {
     }
     /// <p>The version of the intent.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the intent.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetIntentInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetIntentInput`](crate::operation::get_intent::GetIntentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_intent::GetIntentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_intent::GetIntentInput {
-            name: self.name,
-            version: self.version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_intent::GetIntentInput {
+                name: self.name
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

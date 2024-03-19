@@ -3,7 +3,7 @@
 /// <p>The request parameters for CreateBillOfMaterialsImportJob.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBillOfMaterialsImportJobInput {
+pub struct CreateBillOfMaterialsImportJobInput  {
     /// <p>The AWS Supply Chain instance identifier.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 URI of the CSV file to be imported. The bucket must grant permissions for AWS Supply Chain to read the file.</p>
@@ -11,17 +11,17 @@ pub struct CreateBillOfMaterialsImportJobInput {
     /// <p>An idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateBillOfMaterialsImportJobInput {
+impl  CreateBillOfMaterialsImportJobInput  {
     /// <p>The AWS Supply Chain instance identifier.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The S3 URI of the CSV file to be imported. The bucket must grant permissions for AWS Supply Chain to read the file.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>An idempotency token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateBillOfMaterialsImportJobInputBuilder {
     }
     /// <p>The AWS Supply Chain instance identifier.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The AWS Supply Chain instance identifier.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl CreateBillOfMaterialsImportJobInputBuilder {
     }
     /// <p>The S3 URI of the CSV file to be imported. The bucket must grant permissions for AWS Supply Chain to read the file.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The S3 URI of the CSV file to be imported. The bucket must grant permissions for AWS Supply Chain to read the file.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl CreateBillOfMaterialsImportJobInputBuilder {
     }
     /// <p>An idempotency token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>An idempotency token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateBillOfMaterialsImportJobInput`](crate::operation::create_bill_of_materials_import_job::CreateBillOfMaterialsImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bill_of_materials_import_job::CreateBillOfMaterialsImportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bill_of_materials_import_job::CreateBillOfMaterialsImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_bill_of_materials_import_job::CreateBillOfMaterialsImportJobInput {
-                instance_id: self.instance_id,
-                s3_uri: self.s3_uri,
-                client_token: self.client_token,
-            },
+                instance_id: self.instance_id
+                ,
+                s3_uri: self.s3_uri
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableClientAuthenticationInput {
+pub struct EnableClientAuthenticationInput  {
     /// <p>The identifier of the specified directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.</p>
     pub r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
 }
-impl EnableClientAuthenticationInput {
+impl  EnableClientAuthenticationInput  {
     /// <p>The identifier of the specified directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EnableClientAuthenticationInputBuilder {
     }
     /// <p>The identifier of the specified directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the specified directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl EnableClientAuthenticationInputBuilder {
     }
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EnableClientAuthenticationInput`](crate::operation::enable_client_authentication::EnableClientAuthenticationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_client_authentication::EnableClientAuthenticationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_client_authentication::EnableClientAuthenticationInput {
-            directory_id: self.directory_id,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_client_authentication::EnableClientAuthenticationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_client_authentication::EnableClientAuthenticationInput {
+                directory_id: self.directory_id
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

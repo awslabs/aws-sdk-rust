@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyIntegrationInput {
+pub struct ModifyIntegrationInput  {
     /// <p>The unique identifier of the integration to modify.</p>
     pub integration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the integration.</p>
@@ -12,21 +12,21 @@ pub struct ModifyIntegrationInput {
     /// <p>A new description for the integration.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ModifyIntegrationInput {
+impl  ModifyIntegrationInput  {
     /// <p>The unique identifier of the integration to modify.</p>
-    pub fn integration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn integration_identifier(&self) -> ::std::option::Option<& str> {
         self.integration_identifier.as_deref()
     }
     /// <p>A new name for the integration.</p>
-    pub fn integration_name(&self) -> ::std::option::Option<&str> {
+    pub fn integration_name(&self) -> ::std::option::Option<& str> {
         self.integration_name.as_deref()
     }
     /// <p>A new data filter for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-    pub fn data_filter(&self) -> ::std::option::Option<&str> {
+    pub fn data_filter(&self) -> ::std::option::Option<& str> {
         self.data_filter.as_deref()
     }
     /// <p>A new description for the integration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ModifyIntegrationInputBuilder {
     }
     /// <p>The unique identifier of the integration to modify.</p>
     pub fn set_integration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_identifier = input;
-        self
+        self.integration_identifier = input; self
     }
     /// <p>The unique identifier of the integration to modify.</p>
     pub fn get_integration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ModifyIntegrationInputBuilder {
     }
     /// <p>A new name for the integration.</p>
     pub fn set_integration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_name = input;
-        self
+        self.integration_name = input; self
     }
     /// <p>A new name for the integration.</p>
     pub fn get_integration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ModifyIntegrationInputBuilder {
     }
     /// <p>A new data filter for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
     pub fn set_data_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_filter = input;
-        self
+        self.data_filter = input; self
     }
     /// <p>A new data filter for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
     pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl ModifyIntegrationInputBuilder {
     }
     /// <p>A new description for the integration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A new description for the integration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`ModifyIntegrationInput`](crate::operation::modify_integration::ModifyIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_integration::ModifyIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_integration::ModifyIntegrationInput {
-            integration_identifier: self.integration_identifier,
-            integration_name: self.integration_name,
-            data_filter: self.data_filter,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_integration::ModifyIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_integration::ModifyIntegrationInput {
+                integration_identifier: self.integration_identifier
+                ,
+                integration_name: self.integration_name
+                ,
+                data_filter: self.data_filter
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A CIS check.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisCheckAggregation {
+pub struct CisCheckAggregation  {
     /// <p>The scan ARN for the CIS check scan ARN.</p>
     pub scan_arn: ::std::string::String,
     /// <p>The check ID for the CIS check.</p>
@@ -21,38 +21,37 @@ pub struct CisCheckAggregation {
     /// <p>The CIS check platform.</p>
     pub platform: ::std::option::Option<::std::string::String>,
 }
-impl CisCheckAggregation {
+impl  CisCheckAggregation  {
     /// <p>The scan ARN for the CIS check scan ARN.</p>
-    pub fn scan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_arn.deref()
+    pub fn scan_arn(&self) -> & str {
+        use std::ops::Deref; self.scan_arn.deref()
     }
     /// <p>The check ID for the CIS check.</p>
-    pub fn check_id(&self) -> ::std::option::Option<&str> {
+    pub fn check_id(&self) -> ::std::option::Option<& str> {
         self.check_id.as_deref()
     }
     /// <p>The CIS check title.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The description for the CIS check.</p>
-    pub fn check_description(&self) -> ::std::option::Option<&str> {
+    pub fn check_description(&self) -> ::std::option::Option<& str> {
         self.check_description.as_deref()
     }
     /// <p>The CIS check level.</p>
-    pub fn level(&self) -> ::std::option::Option<&crate::types::CisSecurityLevel> {
+    pub fn level(&self) -> ::std::option::Option<& crate::types::CisSecurityLevel> {
         self.level.as_ref()
     }
     /// <p>The account ID for the CIS check.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The CIS check status counts.</p>
-    pub fn status_counts(&self) -> ::std::option::Option<&crate::types::StatusCounts> {
+    pub fn status_counts(&self) -> ::std::option::Option<& crate::types::StatusCounts> {
         self.status_counts.as_ref()
     }
     /// <p>The CIS check platform.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
 }
@@ -85,8 +84,7 @@ impl CisCheckAggregationBuilder {
     }
     /// <p>The scan ARN for the CIS check scan ARN.</p>
     pub fn set_scan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_arn = input;
-        self
+        self.scan_arn = input; self
     }
     /// <p>The scan ARN for the CIS check scan ARN.</p>
     pub fn get_scan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl CisCheckAggregationBuilder {
     }
     /// <p>The check ID for the CIS check.</p>
     pub fn set_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_id = input;
-        self
+        self.check_id = input; self
     }
     /// <p>The check ID for the CIS check.</p>
     pub fn get_check_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl CisCheckAggregationBuilder {
     }
     /// <p>The CIS check title.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The CIS check title.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl CisCheckAggregationBuilder {
     }
     /// <p>The description for the CIS check.</p>
     pub fn set_check_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_description = input;
-        self
+        self.check_description = input; self
     }
     /// <p>The description for the CIS check.</p>
     pub fn get_check_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl CisCheckAggregationBuilder {
     }
     /// <p>The CIS check level.</p>
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::CisSecurityLevel>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>The CIS check level.</p>
     pub fn get_level(&self) -> &::std::option::Option<crate::types::CisSecurityLevel> {
@@ -155,8 +149,7 @@ impl CisCheckAggregationBuilder {
     }
     /// <p>The account ID for the CIS check.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID for the CIS check.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +162,7 @@ impl CisCheckAggregationBuilder {
     }
     /// <p>The CIS check status counts.</p>
     pub fn set_status_counts(mut self, input: ::std::option::Option<crate::types::StatusCounts>) -> Self {
-        self.status_counts = input;
-        self
+        self.status_counts = input; self
     }
     /// <p>The CIS check status counts.</p>
     pub fn get_status_counts(&self) -> &::std::option::Option<crate::types::StatusCounts> {
@@ -183,8 +175,7 @@ impl CisCheckAggregationBuilder {
     }
     /// <p>The CIS check platform.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The CIS check platform.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,20 +185,29 @@ impl CisCheckAggregationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`scan_arn`](crate::types::builders::CisCheckAggregationBuilder::scan_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CisCheckAggregation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisCheckAggregation {
-            scan_arn: self.scan_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_arn",
-                    "scan_arn was not specified but it is required when building CisCheckAggregation",
-                )
-            })?,
-            check_id: self.check_id,
-            title: self.title,
-            check_description: self.check_description,
-            level: self.level,
-            account_id: self.account_id,
-            status_counts: self.status_counts,
-            platform: self.platform,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisCheckAggregation {
+                scan_arn: self.scan_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_arn", "scan_arn was not specified but it is required when building CisCheckAggregation")
+                    )?
+                ,
+                check_id: self.check_id
+                ,
+                title: self.title
+                ,
+                check_description: self.check_description
+                ,
+                level: self.level
+                ,
+                account_id: self.account_id
+                ,
+                status_counts: self.status_counts
+                ,
+                platform: self.platform
+                ,
+            }
+        )
     }
 }
+

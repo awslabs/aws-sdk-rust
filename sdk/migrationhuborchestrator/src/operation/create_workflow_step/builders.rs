@@ -5,54 +5,50 @@ pub use crate::operation::create_workflow_step::_create_workflow_step_input::Cre
 
 impl CreateWorkflowStepInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_workflow_step::CreateWorkflowStepOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_workflow_step::CreateWorkflowStepError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_workflow_step();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_workflow_step::CreateWorkflowStepOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_workflow_step::CreateWorkflowStepError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_workflow_step();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateWorkflowStep`.
-///
+/// 
 /// <p>Create a step in the migration workflow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder,
+                    inner: crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_workflow_step::CreateWorkflowStepOutput,
-        crate::operation::create_workflow_step::CreateWorkflowStepError,
-    > for CreateWorkflowStepFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_workflow_step::CreateWorkflowStepOutput,
-            crate::operation::create_workflow_step::CreateWorkflowStepError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_workflow_step::CreateWorkflowStepOutput,
+                    crate::operation::create_workflow_step::CreateWorkflowStepError,
+                > for CreateWorkflowStepFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_workflow_step::CreateWorkflowStepOutput,
+                        crate::operation::create_workflow_step::CreateWorkflowStepError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateWorkflowStepFluentBuilder {
     /// Creates a new `CreateWorkflowStep`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateWorkflowStepFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workflow_step::CreateWorkflowStepOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_workflow_step::CreateWorkflowStepError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_workflow_step::CreateWorkflowStep::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_workflow_step::CreateWorkflowStep::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_workflow_step::CreateWorkflowStepOutput,
-        crate::operation::create_workflow_step::CreateWorkflowStepError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_workflow_step::CreateWorkflowStepOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workflow_step::CreateWorkflowStepError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_workflow_step::CreateWorkflowStep::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_workflow_step::CreateWorkflowStep::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_workflow_step::CreateWorkflowStepOutput, crate::operation::create_workflow_step::CreateWorkflowStepError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the step.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -184,10 +171,7 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The custom script to run tests on source or target environments.</p>
-    pub fn set_workflow_step_automation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>,
-    ) -> Self {
+    pub fn set_workflow_step_automation_configuration(mut self, input: ::std::option::Option<crate::types::WorkflowStepAutomationConfiguration>) -> Self {
         self.inner = self.inner.set_workflow_step_automation_configuration(input);
         self
     }
@@ -205,12 +189,12 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_target(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_step_target(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_step_target(input);
         self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_target(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_target(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_step_target()
     }
     /// Appends an item to `outputs`.
@@ -223,12 +207,12 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The key value pairs added for the expected output.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>>) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepOutput>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
     /// <p>The key value pairs added for the expected output.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowStepOutput>> {
         self.inner.get_outputs()
     }
     /// Appends an item to `previous`.
@@ -241,12 +225,12 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_previous(input);
         self
     }
     /// <p>The previous step.</p>
-    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_previous()
     }
     /// Appends an item to `next`.
@@ -259,12 +243,13 @@ impl CreateWorkflowStepFluentBuilder {
         self
     }
     /// <p>The next step.</p>
-    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_next(input);
         self
     }
     /// <p>The next step.</p>
-    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_next()
     }
 }
+

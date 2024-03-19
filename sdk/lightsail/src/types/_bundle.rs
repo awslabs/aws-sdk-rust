@@ -3,7 +3,7 @@
 /// <p>Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Bundle {
+pub struct Bundle  {
     /// <p>The price in US dollars (<code>5.0</code>) of the bundle.</p>
     pub price: ::std::option::Option<f32>,
     /// <p>The number of vCPUs included in the bundle (<code>2</code>).</p>
@@ -25,15 +25,15 @@ pub struct Bundle {
     /// <p>The data transfer rate per month in GB (<code>2000</code>).</p>
     pub transfer_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    pub supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
+    pub supported_platforms: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePlatform>>,
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub supported_app_categories: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
+    pub supported_app_categories: ::std::option::Option<::std::vec::Vec::<crate::types::AppCategory>>,
     /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
     pub public_ipv4_address_count: ::std::option::Option<i32>,
 }
-impl Bundle {
+impl  Bundle  {
     /// <p>The price in US dollars (<code>5.0</code>) of the bundle.</p>
     pub fn price(&self) -> ::std::option::Option<f32> {
         self.price
@@ -47,11 +47,11 @@ impl Bundle {
         self.disk_size_in_gb
     }
     /// <p>The bundle ID (<code>micro_1_0</code>).</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>A Boolean value indicating whether the bundle is active.</p>
@@ -59,7 +59,7 @@ impl Bundle {
         self.is_active
     }
     /// <p>A friendly name for the bundle (<code>Micro</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A numeric value that represents the power of the bundle (<code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
@@ -75,18 +75,20 @@ impl Bundle {
         self.transfer_per_month_in_gb
     }
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_platforms.is_none()`.
-    pub fn supported_platforms(&self) -> &[crate::types::InstancePlatform] {
-        self.supported_platforms.as_deref().unwrap_or_default()
+    pub fn supported_platforms(&self) -> & [crate::types::InstancePlatform] {
+        self.supported_platforms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_app_categories.is_none()`.
-    pub fn supported_app_categories(&self) -> &[crate::types::AppCategory] {
-        self.supported_app_categories.as_deref().unwrap_or_default()
+    pub fn supported_app_categories(&self) -> & [crate::types::AppCategory] {
+        self.supported_app_categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
     pub fn public_ipv4_address_count(&self) -> ::std::option::Option<i32> {
@@ -114,8 +116,8 @@ pub struct BundleBuilder {
     pub(crate) power: ::std::option::Option<i32>,
     pub(crate) ram_size_in_gb: ::std::option::Option<f32>,
     pub(crate) transfer_per_month_in_gb: ::std::option::Option<i32>,
-    pub(crate) supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
-    pub(crate) supported_app_categories: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
+    pub(crate) supported_platforms: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePlatform>>,
+    pub(crate) supported_app_categories: ::std::option::Option<::std::vec::Vec::<crate::types::AppCategory>>,
     pub(crate) public_ipv4_address_count: ::std::option::Option<i32>,
 }
 impl BundleBuilder {
@@ -126,8 +128,7 @@ impl BundleBuilder {
     }
     /// <p>The price in US dollars (<code>5.0</code>) of the bundle.</p>
     pub fn set_price(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>The price in US dollars (<code>5.0</code>) of the bundle.</p>
     pub fn get_price(&self) -> &::std::option::Option<f32> {
@@ -140,8 +141,7 @@ impl BundleBuilder {
     }
     /// <p>The number of vCPUs included in the bundle (<code>2</code>).</p>
     pub fn set_cpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cpu_count = input;
-        self
+        self.cpu_count = input; self
     }
     /// <p>The number of vCPUs included in the bundle (<code>2</code>).</p>
     pub fn get_cpu_count(&self) -> &::std::option::Option<i32> {
@@ -154,8 +154,7 @@ impl BundleBuilder {
     }
     /// <p>The size of the SSD (<code>30</code>).</p>
     pub fn set_disk_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.disk_size_in_gb = input;
-        self
+        self.disk_size_in_gb = input; self
     }
     /// <p>The size of the SSD (<code>30</code>).</p>
     pub fn get_disk_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -168,8 +167,7 @@ impl BundleBuilder {
     }
     /// <p>The bundle ID (<code>micro_1_0</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The bundle ID (<code>micro_1_0</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +180,7 @@ impl BundleBuilder {
     }
     /// <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +193,7 @@ impl BundleBuilder {
     }
     /// <p>A Boolean value indicating whether the bundle is active.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_active = input;
-        self
+        self.is_active = input; self
     }
     /// <p>A Boolean value indicating whether the bundle is active.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
@@ -210,8 +206,7 @@ impl BundleBuilder {
     }
     /// <p>A friendly name for the bundle (<code>Micro</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name for the bundle (<code>Micro</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +219,7 @@ impl BundleBuilder {
     }
     /// <p>A numeric value that represents the power of the bundle (<code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
     pub fn set_power(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.power = input;
-        self
+        self.power = input; self
     }
     /// <p>A numeric value that represents the power of the bundle (<code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
     pub fn get_power(&self) -> &::std::option::Option<i32> {
@@ -238,8 +232,7 @@ impl BundleBuilder {
     }
     /// <p>The amount of RAM in GB (<code>2.0</code>).</p>
     pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.ram_size_in_gb = input;
-        self
+        self.ram_size_in_gb = input; self
     }
     /// <p>The amount of RAM in GB (<code>2.0</code>).</p>
     pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
@@ -252,8 +245,7 @@ impl BundleBuilder {
     }
     /// <p>The data transfer rate per month in GB (<code>2000</code>).</p>
     pub fn set_transfer_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.transfer_per_month_in_gb = input;
-        self
+        self.transfer_per_month_in_gb = input; self
     }
     /// <p>The data transfer rate per month in GB (<code>2000</code>).</p>
     pub fn get_transfer_per_month_in_gb(&self) -> &::std::option::Option<i32> {
@@ -266,17 +258,16 @@ impl BundleBuilder {
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
     pub fn supported_platforms(mut self, input: crate::types::InstancePlatform) -> Self {
         let mut v = self.supported_platforms.unwrap_or_default();
-        v.push(input);
-        self.supported_platforms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_platforms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    pub fn set_supported_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>) -> Self {
-        self.supported_platforms = input;
-        self
+    pub fn set_supported_platforms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePlatform>>) -> Self {
+        self.supported_platforms = input; self
     }
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    pub fn get_supported_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>> {
+    pub fn get_supported_platforms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstancePlatform>> {
         &self.supported_platforms
     }
     /// Appends an item to `supported_app_categories`.
@@ -288,21 +279,20 @@ impl BundleBuilder {
     /// </important>
     pub fn supported_app_categories(mut self, input: crate::types::AppCategory) -> Self {
         let mut v = self.supported_app_categories.unwrap_or_default();
-        v.push(input);
-        self.supported_app_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_app_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn set_supported_app_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>) -> Self {
-        self.supported_app_categories = input;
-        self
+    pub fn set_supported_app_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppCategory>>) -> Self {
+        self.supported_app_categories = input; self
     }
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn get_supported_app_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppCategory>> {
+    pub fn get_supported_app_categories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppCategory>> {
         &self.supported_app_categories
     }
     /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
@@ -312,8 +302,7 @@ impl BundleBuilder {
     }
     /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
     pub fn set_public_ipv4_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.public_ipv4_address_count = input;
-        self
+        self.public_ipv4_address_count = input; self
     }
     /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
     pub fn get_public_ipv4_address_count(&self) -> &::std::option::Option<i32> {
@@ -322,19 +311,33 @@ impl BundleBuilder {
     /// Consumes the builder and constructs a [`Bundle`](crate::types::Bundle).
     pub fn build(self) -> crate::types::Bundle {
         crate::types::Bundle {
-            price: self.price,
-            cpu_count: self.cpu_count,
-            disk_size_in_gb: self.disk_size_in_gb,
-            bundle_id: self.bundle_id,
-            instance_type: self.instance_type,
-            is_active: self.is_active,
-            name: self.name,
-            power: self.power,
-            ram_size_in_gb: self.ram_size_in_gb,
-            transfer_per_month_in_gb: self.transfer_per_month_in_gb,
-            supported_platforms: self.supported_platforms,
-            supported_app_categories: self.supported_app_categories,
-            public_ipv4_address_count: self.public_ipv4_address_count,
+            price: self.price
+            ,
+            cpu_count: self.cpu_count
+            ,
+            disk_size_in_gb: self.disk_size_in_gb
+            ,
+            bundle_id: self.bundle_id
+            ,
+            instance_type: self.instance_type
+            ,
+            is_active: self.is_active
+            ,
+            name: self.name
+            ,
+            power: self.power
+            ,
+            ram_size_in_gb: self.ram_size_in_gb
+            ,
+            transfer_per_month_in_gb: self.transfer_per_month_in_gb
+            ,
+            supported_platforms: self.supported_platforms
+            ,
+            supported_app_categories: self.supported_app_categories
+            ,
+            public_ipv4_address_count: self.public_ipv4_address_count
+            ,
         }
     }
 }
+

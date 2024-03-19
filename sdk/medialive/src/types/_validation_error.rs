@@ -3,19 +3,19 @@
 /// Placeholder documentation for ValidationError
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationError {
+pub struct ValidationError  {
     /// Path to the source of the error.
     pub element_path: ::std::option::Option<::std::string::String>,
     /// The error message.
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl ValidationError {
+impl  ValidationError  {
     /// Path to the source of the error.
-    pub fn element_path(&self) -> ::std::option::Option<&str> {
+    pub fn element_path(&self) -> ::std::option::Option<& str> {
         self.element_path.as_deref()
     }
     /// The error message.
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ValidationErrorBuilder {
     }
     /// Path to the source of the error.
     pub fn set_element_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.element_path = input;
-        self
+        self.element_path = input; self
     }
     /// Path to the source of the error.
     pub fn get_element_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ValidationErrorBuilder {
     }
     /// The error message.
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// The error message.
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ValidationErrorBuilder {
     /// Consumes the builder and constructs a [`ValidationError`](crate::types::ValidationError).
     pub fn build(self) -> crate::types::ValidationError {
         crate::types::ValidationError {
-            element_path: self.element_path,
-            error_message: self.error_message,
+            element_path: self.element_path
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

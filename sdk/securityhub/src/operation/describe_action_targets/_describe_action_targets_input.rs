@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActionTargetsInput {
+pub struct DescribeActionTargetsInput  {
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    pub action_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub action_target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeActionTargetsInput {
+impl  DescribeActionTargetsInput  {
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_target_arns.is_none()`.
-    pub fn action_target_arns(&self) -> &[::std::string::String] {
-        self.action_target_arns.as_deref().unwrap_or_default()
+    pub fn action_target_arns(&self) -> & [::std::string::String] {
+        self.action_target_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -39,7 +40,7 @@ impl DescribeActionTargetsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActionTargetsInputBuilder {
-    pub(crate) action_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) action_target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -51,17 +52,16 @@ impl DescribeActionTargetsInputBuilder {
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
     pub fn action_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action_target_arns.unwrap_or_default();
-        v.push(input.into());
-        self.action_target_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.action_target_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    pub fn set_action_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.action_target_arns = input;
-        self
+    pub fn set_action_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.action_target_arns = input; self
     }
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    pub fn get_action_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action_target_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.action_target_arns
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -73,8 +73,7 @@ impl DescribeActionTargetsInputBuilder {
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
@@ -88,22 +87,24 @@ impl DescribeActionTargetsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeActionTargetsInput`](crate::operation::describe_action_targets::DescribeActionTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_action_targets::DescribeActionTargetsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_action_targets::DescribeActionTargetsInput {
-            action_target_arns: self.action_target_arns,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_action_targets::DescribeActionTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_action_targets::DescribeActionTargetsInput {
+                action_target_arns: self.action_target_arns
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

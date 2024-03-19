@@ -4,7 +4,7 @@
 /// <p>If the multi-Region table is using provisioned capacity and has optional auto scaling policies configured, note that the Region specific summary returns both read and write capacity settings. But only Region specific read capacity settings can be configured for a multi-Region table. In a multi-Region table, your write capacity units will be synced across all Amazon Web Services Regions to ensure that there is enough capacity to replicate write events across Regions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicaSpecificationSummary {
+pub struct ReplicaSpecificationSummary  {
     /// <p>The Amazon Web Services Region.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The status of the multi-Region table in the specified Amazon Web Services Region.</p>
@@ -19,13 +19,13 @@ pub struct ReplicaSpecificationSummary {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub capacity_specification: ::std::option::Option<crate::types::CapacitySpecificationSummary>,
 }
-impl ReplicaSpecificationSummary {
+impl  ReplicaSpecificationSummary  {
     /// <p>The Amazon Web Services Region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The status of the multi-Region table in the specified Amazon Web Services Region.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TableStatus> {
         self.status.as_ref()
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
@@ -36,7 +36,7 @@ impl ReplicaSpecificationSummary {
     /// <p><code>throughputMode:PROVISIONED</code>.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification(&self) -> ::std::option::Option<&crate::types::CapacitySpecificationSummary> {
+    pub fn capacity_specification(&self) -> ::std::option::Option<& crate::types::CapacitySpecificationSummary> {
         self.capacity_specification.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl ReplicaSpecificationSummaryBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ReplicaSpecificationSummaryBuilder {
     }
     /// <p>The status of the multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TableStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the multi-Region table in the specified Amazon Web Services Region.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TableStatus> {
@@ -105,8 +103,7 @@ impl ReplicaSpecificationSummaryBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_capacity_specification(mut self, input: ::std::option::Option<crate::types::CapacitySpecificationSummary>) -> Self {
-        self.capacity_specification = input;
-        self
+        self.capacity_specification = input; self
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
@@ -122,9 +119,13 @@ impl ReplicaSpecificationSummaryBuilder {
     /// Consumes the builder and constructs a [`ReplicaSpecificationSummary`](crate::types::ReplicaSpecificationSummary).
     pub fn build(self) -> crate::types::ReplicaSpecificationSummary {
         crate::types::ReplicaSpecificationSummary {
-            region: self.region,
-            status: self.status,
-            capacity_specification: self.capacity_specification,
+            region: self.region
+            ,
+            status: self.status
+            ,
+            capacity_specification: self.capacity_specification
+            ,
         }
     }
 }
+

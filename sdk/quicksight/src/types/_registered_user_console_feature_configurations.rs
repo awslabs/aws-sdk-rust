@@ -3,13 +3,13 @@
 /// <p>The feature configurations of an embedded Amazon QuickSight console.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisteredUserConsoleFeatureConfigurations {
+pub struct RegisteredUserConsoleFeatureConfigurations  {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
     pub state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
 }
-impl RegisteredUserConsoleFeatureConfigurations {
+impl  RegisteredUserConsoleFeatureConfigurations  {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
-    pub fn state_persistence(&self) -> ::std::option::Option<&crate::types::StatePersistenceConfigurations> {
+    pub fn state_persistence(&self) -> ::std::option::Option<& crate::types::StatePersistenceConfigurations> {
         self.state_persistence.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl RegisteredUserConsoleFeatureConfigurationsBuilder {
     }
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
     pub fn set_state_persistence(mut self, input: ::std::option::Option<crate::types::StatePersistenceConfigurations>) -> Self {
-        self.state_persistence = input;
-        self
+        self.state_persistence = input; self
     }
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
     pub fn get_state_persistence(&self) -> &::std::option::Option<crate::types::StatePersistenceConfigurations> {
@@ -44,7 +43,9 @@ impl RegisteredUserConsoleFeatureConfigurationsBuilder {
     /// Consumes the builder and constructs a [`RegisteredUserConsoleFeatureConfigurations`](crate::types::RegisteredUserConsoleFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserConsoleFeatureConfigurations {
         crate::types::RegisteredUserConsoleFeatureConfigurations {
-            state_persistence: self.state_persistence,
+            state_persistence: self.state_persistence
+            ,
         }
     }
 }
+

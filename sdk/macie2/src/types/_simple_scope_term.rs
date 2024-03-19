@@ -3,7 +3,7 @@
 /// <p>Specifies a property-based condition that determines whether an S3 object is included or excluded from a classification job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimpleScopeTerm {
+pub struct SimpleScopeTerm  {
     /// <p>The operator to use in the condition. Valid values for each supported property (key) are:</p>
     /// <ul>
     /// <li>
@@ -31,9 +31,9 @@ pub struct SimpleScopeTerm {
     /// <p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SimpleScopeTerm {
+impl  SimpleScopeTerm  {
     /// <p>The operator to use in the condition. Valid values for each supported property (key) are:</p>
     /// <ul>
     /// <li>
@@ -45,11 +45,11 @@ impl SimpleScopeTerm {
     /// <li>
     /// <p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
     /// </ul>
-    pub fn comparator(&self) -> ::std::option::Option<&crate::types::JobComparator> {
+    pub fn comparator(&self) -> ::std::option::Option<& crate::types::JobComparator> {
         self.comparator.as_ref()
     }
     /// <p>The object property to use in the condition.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::ScopeFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::ScopeFilterKey> {
         self.key.as_ref()
     }
     /// <p>An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise, this array can specify only one value.</p>
@@ -65,10 +65,11 @@ impl SimpleScopeTerm {
     /// <p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SimpleScopeTerm {
@@ -84,7 +85,7 @@ impl SimpleScopeTerm {
 pub struct SimpleScopeTermBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<crate::types::ScopeFilterKey>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SimpleScopeTermBuilder {
     /// <p>The operator to use in the condition. Valid values for each supported property (key) are:</p>
@@ -114,8 +115,7 @@ impl SimpleScopeTermBuilder {
     /// <p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or equals), or NE (not equals)</p></li>
     /// </ul>
     pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::JobComparator>) -> Self {
-        self.comparator = input;
-        self
+        self.comparator = input; self
     }
     /// <p>The operator to use in the condition. Valid values for each supported property (key) are:</p>
     /// <ul>
@@ -138,8 +138,7 @@ impl SimpleScopeTermBuilder {
     }
     /// <p>The object property to use in the condition.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::ScopeFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The object property to use in the condition.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::ScopeFilterKey> {
@@ -164,9 +163,9 @@ impl SimpleScopeTermBuilder {
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported property (key) are:</p>
@@ -181,9 +180,8 @@ impl SimpleScopeTermBuilder {
     /// <p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported property (key) are:</p>
@@ -198,15 +196,19 @@ impl SimpleScopeTermBuilder {
     /// <p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li>
     /// </ul>
     /// <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`SimpleScopeTerm`](crate::types::SimpleScopeTerm).
     pub fn build(self) -> crate::types::SimpleScopeTerm {
         crate::types::SimpleScopeTerm {
-            comparator: self.comparator,
-            key: self.key,
-            values: self.values,
+            comparator: self.comparator
+            ,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with MemoryDB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Subnet {
+pub struct Subnet  {
     /// <p>The unique identifier for the subnet.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where the subnet resides</p>
     pub availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
 }
-impl Subnet {
+impl  Subnet  {
     /// <p>The unique identifier for the subnet.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The Availability Zone where the subnet resides</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&crate::types::AvailabilityZone> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& crate::types::AvailabilityZone> {
         self.availability_zone.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SubnetBuilder {
     }
     /// <p>The unique identifier for the subnet.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The unique identifier for the subnet.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SubnetBuilder {
     }
     /// <p>The Availability Zone where the subnet resides</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<crate::types::AvailabilityZone>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone where the subnet resides</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<crate::types::AvailabilityZone> {
@@ -65,8 +63,11 @@ impl SubnetBuilder {
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {
         crate::types::Subnet {
-            identifier: self.identifier,
-            availability_zone: self.availability_zone,
+            identifier: self.identifier
+            ,
+            availability_zone: self.availability_zone
+            ,
         }
     }
 }
+

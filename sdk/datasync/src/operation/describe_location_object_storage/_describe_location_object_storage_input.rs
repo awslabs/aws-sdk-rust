@@ -3,13 +3,13 @@
 /// <p>DescribeLocationObjectStorageRequest</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLocationObjectStorageInput {
+pub struct DescribeLocationObjectStorageInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLocationObjectStorageInput {
+impl  DescribeLocationObjectStorageInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DescribeLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
     /// Consumes the builder and constructs a [`DescribeLocationObjectStorageInput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput {
-            location_arn: self.location_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput {
+                location_arn: self.location_arn
+                ,
+            }
+        )
     }
 }
+

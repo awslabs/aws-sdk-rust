@@ -3,19 +3,19 @@
 /// <p>Specifies resources that lifecycle policy actions should not apply to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyDetailExclusionRules {
+pub struct LifecyclePolicyDetailExclusionRules  {
     /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for Image Builder image resources that have them.</p>
-    pub tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tag_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action.</p>
     pub amis: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>,
 }
-impl LifecyclePolicyDetailExclusionRules {
+impl  LifecyclePolicyDetailExclusionRules  {
     /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for Image Builder image resources that have them.</p>
-    pub fn tag_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tag_map(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tag_map.as_ref()
     }
     /// <p>Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action.</p>
-    pub fn amis(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyDetailExclusionRulesAmis> {
+    pub fn amis(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyDetailExclusionRulesAmis> {
         self.amis.as_ref()
     }
 }
@@ -30,7 +30,7 @@ impl LifecyclePolicyDetailExclusionRules {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecyclePolicyDetailExclusionRulesBuilder {
-    pub(crate) tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tag_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) amis: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>,
 }
 impl LifecyclePolicyDetailExclusionRulesBuilder {
@@ -41,17 +41,16 @@ impl LifecyclePolicyDetailExclusionRulesBuilder {
     /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for Image Builder image resources that have them.</p>
     pub fn tag_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tag_map.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tag_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tag_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for Image Builder image resources that have them.</p>
-    pub fn set_tag_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tag_map = input;
-        self
+    pub fn set_tag_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tag_map = input; self
     }
     /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for Image Builder image resources that have them.</p>
-    pub fn get_tag_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tag_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tag_map
     }
     /// <p>Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action.</p>
@@ -61,8 +60,7 @@ impl LifecyclePolicyDetailExclusionRulesBuilder {
     }
     /// <p>Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action.</p>
     pub fn set_amis(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>) -> Self {
-        self.amis = input;
-        self
+        self.amis = input; self
     }
     /// <p>Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action.</p>
     pub fn get_amis(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis> {
@@ -71,8 +69,11 @@ impl LifecyclePolicyDetailExclusionRulesBuilder {
     /// Consumes the builder and constructs a [`LifecyclePolicyDetailExclusionRules`](crate::types::LifecyclePolicyDetailExclusionRules).
     pub fn build(self) -> crate::types::LifecyclePolicyDetailExclusionRules {
         crate::types::LifecyclePolicyDetailExclusionRules {
-            tag_map: self.tag_map,
-            amis: self.amis,
+            tag_map: self.tag_map
+            ,
+            amis: self.amis
+            ,
         }
     }
 }
+

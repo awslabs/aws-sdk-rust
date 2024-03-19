@@ -3,7 +3,7 @@
 /// <p>An SSM document required by the current document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentRequires {
+pub struct DocumentRequires  {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
     pub name: ::std::string::String,
     /// <p>The document version required by the current document.</p>
@@ -13,22 +13,21 @@ pub struct DocumentRequires {
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
 }
-impl DocumentRequires {
+impl  DocumentRequires  {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The document version required by the current document.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The document type of the required SSM document.</p>
-    pub fn require_type(&self) -> ::std::option::Option<&str> {
+    pub fn require_type(&self) -> ::std::option::Option<& str> {
         self.require_type.as_deref()
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl DocumentRequiresBuilder {
     }
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl DocumentRequiresBuilder {
     }
     /// <p>The document version required by the current document.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The document version required by the current document.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl DocumentRequiresBuilder {
     }
     /// <p>The document type of the required SSM document.</p>
     pub fn set_require_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.require_type = input;
-        self
+        self.require_type = input; self
     }
     /// <p>The document type of the required SSM document.</p>
     pub fn get_require_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl DocumentRequiresBuilder {
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,16 +105,21 @@ impl DocumentRequiresBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DocumentRequiresBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentRequires, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DocumentRequires {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DocumentRequires",
-                )
-            })?,
-            version: self.version,
-            require_type: self.require_type,
-            version_name: self.version_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DocumentRequires {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DocumentRequires")
+                    )?
+                ,
+                version: self.version
+                ,
+                require_type: self.require_type
+                ,
+                version_name: self.version_name
+                ,
+            }
+        )
     }
 }
+

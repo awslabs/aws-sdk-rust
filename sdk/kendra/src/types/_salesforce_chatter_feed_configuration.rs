@@ -3,37 +3,38 @@
 /// <p>The configuration information for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SalesforceChatterFeedConfiguration {
+pub struct SalesforceChatterFeedConfiguration  {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
     pub document_data_field_name: ::std::string::String,
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
-    pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
-    pub include_filter_types: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceChatterFeedIncludeFilterType>>,
+    pub include_filter_types: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceChatterFeedIncludeFilterType>>,
 }
-impl SalesforceChatterFeedConfiguration {
+impl  SalesforceChatterFeedConfiguration  {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
-    pub fn document_data_field_name(&self) -> &str {
-        use std::ops::Deref;
-        self.document_data_field_name.deref()
+    pub fn document_data_field_name(&self) -> & str {
+        use std::ops::Deref; self.document_data_field_name.deref()
     }
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
-    pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_title_field_name(&self) -> ::std::option::Option<& str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
-    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
-        self.field_mappings.as_deref().unwrap_or_default()
+    pub fn field_mappings(&self) -> & [crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_filter_types.is_none()`.
-    pub fn include_filter_types(&self) -> &[crate::types::SalesforceChatterFeedIncludeFilterType] {
-        self.include_filter_types.as_deref().unwrap_or_default()
+    pub fn include_filter_types(&self) -> & [crate::types::SalesforceChatterFeedIncludeFilterType] {
+        self.include_filter_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SalesforceChatterFeedConfiguration {
@@ -49,8 +50,8 @@ impl SalesforceChatterFeedConfiguration {
 pub struct SalesforceChatterFeedConfigurationBuilder {
     pub(crate) document_data_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_title_field_name: ::std::option::Option<::std::string::String>,
-    pub(crate) field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    pub(crate) include_filter_types: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceChatterFeedIncludeFilterType>>,
+    pub(crate) field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) include_filter_types: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceChatterFeedIncludeFilterType>>,
 }
 impl SalesforceChatterFeedConfigurationBuilder {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
@@ -61,8 +62,7 @@ impl SalesforceChatterFeedConfigurationBuilder {
     }
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
     pub fn set_document_data_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_data_field_name = input;
-        self
+        self.document_data_field_name = input; self
     }
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
     pub fn get_document_data_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +75,7 @@ impl SalesforceChatterFeedConfigurationBuilder {
     }
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
     pub fn set_document_title_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_title_field_name = input;
-        self
+        self.document_title_field_name = input; self
     }
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
     pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,17 +88,16 @@ impl SalesforceChatterFeedConfigurationBuilder {
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
     pub fn field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.field_mappings.unwrap_or_default();
-        v.push(input);
-        self.field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
-    pub fn set_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
-        self.field_mappings = input;
-        self
+    pub fn set_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
+        self.field_mappings = input; self
     }
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
-    pub fn get_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+    pub fn get_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>> {
         &self.field_mappings
     }
     /// Appends an item to `include_filter_types`.
@@ -109,36 +107,37 @@ impl SalesforceChatterFeedConfigurationBuilder {
     /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
     pub fn include_filter_types(mut self, input: crate::types::SalesforceChatterFeedIncludeFilterType) -> Self {
         let mut v = self.include_filter_types.unwrap_or_default();
-        v.push(input);
-        self.include_filter_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include_filter_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
-    pub fn set_include_filter_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceChatterFeedIncludeFilterType>>,
-    ) -> Self {
-        self.include_filter_types = input;
-        self
+    pub fn set_include_filter_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SalesforceChatterFeedIncludeFilterType>>) -> Self {
+        self.include_filter_types = input; self
     }
     /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
-    pub fn get_include_filter_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SalesforceChatterFeedIncludeFilterType>> {
+    pub fn get_include_filter_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SalesforceChatterFeedIncludeFilterType>> {
         &self.include_filter_types
     }
     /// Consumes the builder and constructs a [`SalesforceChatterFeedConfiguration`](crate::types::SalesforceChatterFeedConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`document_data_field_name`](crate::types::builders::SalesforceChatterFeedConfigurationBuilder::document_data_field_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SalesforceChatterFeedConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SalesforceChatterFeedConfiguration {
-            document_data_field_name: self.document_data_field_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "document_data_field_name",
-                    "document_data_field_name was not specified but it is required when building SalesforceChatterFeedConfiguration",
-                )
-            })?,
-            document_title_field_name: self.document_title_field_name,
-            field_mappings: self.field_mappings,
-            include_filter_types: self.include_filter_types,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SalesforceChatterFeedConfiguration {
+                document_data_field_name: self.document_data_field_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("document_data_field_name", "document_data_field_name was not specified but it is required when building SalesforceChatterFeedConfiguration")
+                    )?
+                ,
+                document_title_field_name: self.document_title_field_name
+                ,
+                field_mappings: self.field_mappings
+                ,
+                include_filter_types: self.include_filter_types
+                ,
+            }
+        )
     }
 }
+

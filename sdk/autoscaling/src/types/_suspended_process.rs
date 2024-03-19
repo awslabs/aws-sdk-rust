@@ -4,19 +4,19 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuspendedProcess {
+pub struct SuspendedProcess  {
     /// <p>The name of the suspended process.</p>
     pub process_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason that the process was suspended.</p>
     pub suspension_reason: ::std::option::Option<::std::string::String>,
 }
-impl SuspendedProcess {
+impl  SuspendedProcess  {
     /// <p>The name of the suspended process.</p>
-    pub fn process_name(&self) -> ::std::option::Option<&str> {
+    pub fn process_name(&self) -> ::std::option::Option<& str> {
         self.process_name.as_deref()
     }
     /// <p>The reason that the process was suspended.</p>
-    pub fn suspension_reason(&self) -> ::std::option::Option<&str> {
+    pub fn suspension_reason(&self) -> ::std::option::Option<& str> {
         self.suspension_reason.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl SuspendedProcessBuilder {
     }
     /// <p>The name of the suspended process.</p>
     pub fn set_process_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.process_name = input;
-        self
+        self.process_name = input; self
     }
     /// <p>The name of the suspended process.</p>
     pub fn get_process_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl SuspendedProcessBuilder {
     }
     /// <p>The reason that the process was suspended.</p>
     pub fn set_suspension_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suspension_reason = input;
-        self
+        self.suspension_reason = input; self
     }
     /// <p>The reason that the process was suspended.</p>
     pub fn get_suspension_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl SuspendedProcessBuilder {
     /// Consumes the builder and constructs a [`SuspendedProcess`](crate::types::SuspendedProcess).
     pub fn build(self) -> crate::types::SuspendedProcess {
         crate::types::SuspendedProcess {
-            process_name: self.process_name,
-            suspension_reason: self.suspension_reason,
+            process_name: self.process_name
+            ,
+            suspension_reason: self.suspension_reason
+            ,
         }
     }
 }
+

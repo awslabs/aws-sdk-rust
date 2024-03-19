@@ -5,55 +5,51 @@ pub use crate::operation::send_workflow_step_state::_send_workflow_step_state_in
 
 impl SendWorkflowStepStateInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.send_workflow_step_state();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.send_workflow_step_state();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SendWorkflowStepState`.
-///
+/// 
 /// <p>Sends a callback for asynchronous custom steps.</p>
 /// <p>The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are passed to the target resource during execution of a custom step of a workflow. You must include those with their callback as well as providing a status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendWorkflowStepStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder,
+                    inner: crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
-        crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
-    > for SendWorkflowStepStateFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
-            crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
+                    crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
+                > for SendWorkflowStepStateFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
+                        crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SendWorkflowStepStateFluentBuilder {
     /// Creates a new `SendWorkflowStepState`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl SendWorkflowStepStateFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::send_workflow_step_state::SendWorkflowStepState::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::send_workflow_step_state::SendWorkflowStepState::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
-        crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_workflow_step_state::SendWorkflowStepStateError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::send_workflow_step_state::SendWorkflowStepState::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::send_workflow_step_state::SendWorkflowStepState::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput, crate::operation::send_workflow_step_state::SendWorkflowStepStateError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -166,3 +153,4 @@ impl SendWorkflowStepStateFluentBuilder {
         self.inner.get_status()
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSetImportTaskInput {
+pub struct GetDataSetImportTaskInput  {
     /// <p>The application identifier.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDataSetImportTaskInput {
+impl  GetDataSetImportTaskInput  {
     /// <p>The application identifier.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetDataSetImportTaskInputBuilder {
     }
     /// <p>The application identifier.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application identifier.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetDataSetImportTaskInputBuilder {
     }
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`GetDataSetImportTaskInput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_data_set_import_task::GetDataSetImportTaskInput {
-            application_id: self.application_id,
-            task_id: self.task_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_set_import_task::GetDataSetImportTaskInput {
+                application_id: self.application_id
+                ,
+                task_id: self.task_id
+                ,
+            }
+        )
     }
 }
+

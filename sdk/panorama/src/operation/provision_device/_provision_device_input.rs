@@ -2,31 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionDeviceInput {
+pub struct ProvisionDeviceInput  {
     /// <p>A name for the device.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the device.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the device.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A networking configuration for the device.</p>
     pub networking_configuration: ::std::option::Option<crate::types::NetworkPayload>,
 }
-impl ProvisionDeviceInput {
+impl  ProvisionDeviceInput  {
     /// <p>A name for the device.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the device.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags for the device.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A networking configuration for the device.</p>
-    pub fn networking_configuration(&self) -> ::std::option::Option<&crate::types::NetworkPayload> {
+    pub fn networking_configuration(&self) -> ::std::option::Option<& crate::types::NetworkPayload> {
         self.networking_configuration.as_ref()
     }
 }
@@ -43,7 +43,7 @@ impl ProvisionDeviceInput {
 pub struct ProvisionDeviceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) networking_configuration: ::std::option::Option<crate::types::NetworkPayload>,
 }
 impl ProvisionDeviceInputBuilder {
@@ -55,8 +55,7 @@ impl ProvisionDeviceInputBuilder {
     }
     /// <p>A name for the device.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the device.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ProvisionDeviceInputBuilder {
     }
     /// <p>A description for the device.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the device.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,17 +81,16 @@ impl ProvisionDeviceInputBuilder {
     /// <p>Tags for the device.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags for the device.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the device.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A networking configuration for the device.</p>
@@ -103,22 +100,26 @@ impl ProvisionDeviceInputBuilder {
     }
     /// <p>A networking configuration for the device.</p>
     pub fn set_networking_configuration(mut self, input: ::std::option::Option<crate::types::NetworkPayload>) -> Self {
-        self.networking_configuration = input;
-        self
+        self.networking_configuration = input; self
     }
     /// <p>A networking configuration for the device.</p>
     pub fn get_networking_configuration(&self) -> &::std::option::Option<crate::types::NetworkPayload> {
         &self.networking_configuration
     }
     /// Consumes the builder and constructs a [`ProvisionDeviceInput`](crate::operation::provision_device::ProvisionDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::provision_device::ProvisionDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::provision_device::ProvisionDeviceInput {
-            name: self.name,
-            description: self.description,
-            tags: self.tags,
-            networking_configuration: self.networking_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::provision_device::ProvisionDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::provision_device::ProvisionDeviceInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                networking_configuration: self.networking_configuration
+                ,
+            }
+        )
     }
 }
+

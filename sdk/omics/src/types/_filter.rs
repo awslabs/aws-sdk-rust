@@ -3,24 +3,26 @@
 /// <p>Use filters to focus the returned annotation store versions on a specific parameter, such as the status of the annotation store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The Amazon Resource Number (Arn) for an analytics store.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of an annotation store version.</p>
-    pub status: ::std::option::Option<::std::vec::Vec<crate::types::ShareStatus>>,
+    pub status: ::std::option::Option<::std::vec::Vec::<crate::types::ShareStatus>>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The Amazon Resource Number (Arn) for an analytics store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
-    pub fn resource_arns(&self) -> &[::std::string::String] {
-        self.resource_arns.as_deref().unwrap_or_default()
+    pub fn resource_arns(&self) -> & [::std::string::String] {
+        self.resource_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of an annotation store version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
-    pub fn status(&self) -> &[crate::types::ShareStatus] {
-        self.status.as_deref().unwrap_or_default()
+    pub fn status(&self) -> & [crate::types::ShareStatus] {
+        self.status.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Filter {
@@ -34,8 +36,8 @@ impl Filter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
-    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) status: ::std::option::Option<::std::vec::Vec<crate::types::ShareStatus>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) status: ::std::option::Option<::std::vec::Vec::<crate::types::ShareStatus>>,
 }
 impl FilterBuilder {
     /// Appends an item to `resource_arns`.
@@ -45,17 +47,16 @@ impl FilterBuilder {
     /// <p>The Amazon Resource Number (Arn) for an analytics store.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Number (Arn) for an analytics store.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// <p>The Amazon Resource Number (Arn) for an analytics store.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_arns
     }
     /// Appends an item to `status`.
@@ -65,24 +66,26 @@ impl FilterBuilder {
     /// <p>The status of an annotation store version.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
-        v.push(input);
-        self.status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status of an annotation store version.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareStatus>>) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ShareStatus>>) -> Self {
+        self.status = input; self
     }
     /// <p>The status of an annotation store version.</p>
-    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareStatus>> {
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ShareStatus>> {
         &self.status
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            resource_arns: self.resource_arns,
-            status: self.status,
+            resource_arns: self.resource_arns
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

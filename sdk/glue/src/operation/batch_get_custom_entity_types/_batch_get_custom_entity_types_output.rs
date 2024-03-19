@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCustomEntityTypesOutput {
+pub struct BatchGetCustomEntityTypesOutput  {
     /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
-    pub custom_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
+    pub custom_entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::CustomEntityType>>,
     /// <p>A list of the names of custom patterns that were not found.</p>
-    pub custom_entity_types_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub custom_entity_types_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl BatchGetCustomEntityTypesOutput {
+impl  BatchGetCustomEntityTypesOutput  {
     /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_entity_types.is_none()`.
-    pub fn custom_entity_types(&self) -> &[crate::types::CustomEntityType] {
-        self.custom_entity_types.as_deref().unwrap_or_default()
+    pub fn custom_entity_types(&self) -> & [crate::types::CustomEntityType] {
+        self.custom_entity_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the names of custom patterns that were not found.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_entity_types_not_found.is_none()`.
-    pub fn custom_entity_types_not_found(&self) -> &[::std::string::String] {
-        self.custom_entity_types_not_found.as_deref().unwrap_or_default()
+    pub fn custom_entity_types_not_found(&self) -> & [::std::string::String] {
+        self.custom_entity_types_not_found.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetCustomEntityTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetCustomEntityTypesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCustomEntityTypesOutput`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput).
     pub fn builder() -> crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetCustomEntityTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCustomEntityTypesOutputBuilder {
-    pub(crate) custom_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
-    pub(crate) custom_entity_types_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::CustomEntityType>>,
+    pub(crate) custom_entity_types_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetCustomEntityTypesOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetCustomEntityTypesOutputBuilder {
     /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
     pub fn custom_entity_types(mut self, input: crate::types::CustomEntityType) -> Self {
         let mut v = self.custom_entity_types.unwrap_or_default();
-        v.push(input);
-        self.custom_entity_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_entity_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
-    pub fn set_custom_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>) -> Self {
-        self.custom_entity_types = input;
-        self
+    pub fn set_custom_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomEntityType>>) -> Self {
+        self.custom_entity_types = input; self
     }
     /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
-    pub fn get_custom_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>> {
+    pub fn get_custom_entity_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomEntityType>> {
         &self.custom_entity_types
     }
     /// Appends an item to `custom_entity_types_not_found`.
@@ -71,34 +72,36 @@ impl BatchGetCustomEntityTypesOutputBuilder {
     /// <p>A list of the names of custom patterns that were not found.</p>
     pub fn custom_entity_types_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_entity_types_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.custom_entity_types_not_found = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.custom_entity_types_not_found = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the names of custom patterns that were not found.</p>
-    pub fn set_custom_entity_types_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.custom_entity_types_not_found = input;
-        self
+    pub fn set_custom_entity_types_not_found(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.custom_entity_types_not_found = input; self
     }
     /// <p>A list of the names of custom patterns that were not found.</p>
-    pub fn get_custom_entity_types_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_entity_types_not_found(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.custom_entity_types_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetCustomEntityTypesOutput`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput).
     pub fn build(self) -> crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput {
         crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput {
-            custom_entity_types: self.custom_entity_types,
-            custom_entity_types_not_found: self.custom_entity_types_not_found,
+            custom_entity_types: self.custom_entity_types
+            ,
+            custom_entity_types_not_found: self.custom_entity_types_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

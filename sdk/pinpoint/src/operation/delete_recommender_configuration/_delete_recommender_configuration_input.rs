@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRecommenderConfigurationInput {
+pub struct DeleteRecommenderConfigurationInput  {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub recommender_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRecommenderConfigurationInput {
+impl  DeleteRecommenderConfigurationInput  {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn recommender_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommender_id(&self) -> ::std::option::Option<& str> {
         self.recommender_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteRecommenderConfigurationInputBuilder {
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_recommender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommender_id = input;
-        self
+        self.recommender_id = input; self
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_recommender_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommender_id
     }
     /// Consumes the builder and constructs a [`DeleteRecommenderConfigurationInput`](crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput {
-            recommender_id: self.recommender_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationInput {
+                recommender_id: self.recommender_id
+                ,
+            }
+        )
     }
 }
+

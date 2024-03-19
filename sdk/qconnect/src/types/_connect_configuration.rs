@@ -3,13 +3,13 @@
 /// <p>The configuration information of the Amazon Connect data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectConfiguration {
+pub struct ConnectConfiguration  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl ConnectConfiguration {
+impl  ConnectConfiguration  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ConnectConfigurationBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ConnectConfigurationBuilder {
     /// Consumes the builder and constructs a [`ConnectConfiguration`](crate::types::ConnectConfiguration).
     pub fn build(self) -> crate::types::ConnectConfiguration {
         crate::types::ConnectConfiguration {
-            instance_id: self.instance_id,
+            instance_id: self.instance_id
+            ,
         }
     }
 }
+

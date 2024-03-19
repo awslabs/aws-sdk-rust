@@ -3,20 +3,19 @@
 /// <p>Lambda function used to transform objects through an Object Lambda Access Point.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsLambdaTransformation {
+pub struct AwsLambdaTransformation  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     pub function_arn: ::std::string::String,
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
     pub function_payload: ::std::option::Option<::std::string::String>,
 }
-impl AwsLambdaTransformation {
+impl  AwsLambdaTransformation  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn function_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.function_arn.deref()
+    pub fn function_arn(&self) -> & str {
+        use std::ops::Deref; self.function_arn.deref()
     }
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
-    pub fn function_payload(&self) -> ::std::option::Option<&str> {
+    pub fn function_payload(&self) -> ::std::option::Option<& str> {
         self.function_payload.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl AwsLambdaTransformationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AwsLambdaTransformationBuilder {
     }
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
     pub fn set_function_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_payload = input;
-        self
+        self.function_payload = input; self
     }
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
     pub fn get_function_payload(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AwsLambdaTransformationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`function_arn`](crate::types::builders::AwsLambdaTransformationBuilder::function_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsLambdaTransformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsLambdaTransformation {
-            function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_arn",
-                    "function_arn was not specified but it is required when building AwsLambdaTransformation",
-                )
-            })?,
-            function_payload: self.function_payload,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsLambdaTransformation {
+                function_arn: self.function_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_arn", "function_arn was not specified but it is required when building AwsLambdaTransformation")
+                    )?
+                ,
+                function_payload: self.function_payload
+                ,
+            }
+        )
     }
 }
+

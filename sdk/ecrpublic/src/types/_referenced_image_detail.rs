@@ -3,7 +3,7 @@
 /// <p>An object that describes the image tag details that are returned by a <code>DescribeImageTags</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferencedImageDetail {
+pub struct ReferencedImageDetail  {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of the image in the repository.</p>
@@ -18,9 +18,9 @@ pub struct ReferencedImageDetail {
     /// <p>The artifact media type of the image.</p>
     pub artifact_media_type: ::std::option::Option<::std::string::String>,
 }
-impl ReferencedImageDetail {
+impl  ReferencedImageDetail  {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    pub fn image_digest(&self) -> ::std::option::Option<&str> {
+    pub fn image_digest(&self) -> ::std::option::Option<& str> {
         self.image_digest.as_deref()
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
@@ -31,15 +31,15 @@ impl ReferencedImageDetail {
         self.image_size_in_bytes
     }
     /// <p>The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the repository at.</p>
-    pub fn image_pushed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn image_pushed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.image_pushed_at.as_ref()
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn image_manifest_media_type(&self) -> ::std::option::Option<&str> {
+    pub fn image_manifest_media_type(&self) -> ::std::option::Option<& str> {
         self.image_manifest_media_type.as_deref()
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn artifact_media_type(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_media_type(&self) -> ::std::option::Option<& str> {
         self.artifact_media_type.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl ReferencedImageDetailBuilder {
     }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_digest = input;
-        self
+        self.image_digest = input; self
     }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl ReferencedImageDetailBuilder {
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn set_image_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.image_size_in_bytes = input;
-        self
+        self.image_size_in_bytes = input; self
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
@@ -105,8 +103,7 @@ impl ReferencedImageDetailBuilder {
     }
     /// <p>The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the repository at.</p>
     pub fn set_image_pushed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.image_pushed_at = input;
-        self
+        self.image_pushed_at = input; self
     }
     /// <p>The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the repository at.</p>
     pub fn get_image_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,8 +116,7 @@ impl ReferencedImageDetailBuilder {
     }
     /// <p>The media type of the image manifest.</p>
     pub fn set_image_manifest_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_manifest_media_type = input;
-        self
+        self.image_manifest_media_type = input; self
     }
     /// <p>The media type of the image manifest.</p>
     pub fn get_image_manifest_media_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl ReferencedImageDetailBuilder {
     }
     /// <p>The artifact media type of the image.</p>
     pub fn set_artifact_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_media_type = input;
-        self
+        self.artifact_media_type = input; self
     }
     /// <p>The artifact media type of the image.</p>
     pub fn get_artifact_media_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,11 +138,17 @@ impl ReferencedImageDetailBuilder {
     /// Consumes the builder and constructs a [`ReferencedImageDetail`](crate::types::ReferencedImageDetail).
     pub fn build(self) -> crate::types::ReferencedImageDetail {
         crate::types::ReferencedImageDetail {
-            image_digest: self.image_digest,
-            image_size_in_bytes: self.image_size_in_bytes,
-            image_pushed_at: self.image_pushed_at,
-            image_manifest_media_type: self.image_manifest_media_type,
-            artifact_media_type: self.artifact_media_type,
+            image_digest: self.image_digest
+            ,
+            image_size_in_bytes: self.image_size_in_bytes
+            ,
+            image_pushed_at: self.image_pushed_at
+            ,
+            image_manifest_media_type: self.image_manifest_media_type
+            ,
+            artifact_media_type: self.artifact_media_type
+            ,
         }
     }
 }
+

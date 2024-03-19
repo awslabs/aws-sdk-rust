@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRestoreTestingSelectionOutput {
+pub struct GetRestoreTestingSelectionOutput  {
     /// <p>Unique name of the restore testing selection.</p>
     pub restore_testing_selection: ::std::option::Option<crate::types::RestoreTestingSelectionForGet>,
     _request_id: Option<String>,
 }
-impl GetRestoreTestingSelectionOutput {
+impl  GetRestoreTestingSelectionOutput  {
     /// <p>Unique name of the restore testing selection.</p>
-    pub fn restore_testing_selection(&self) -> ::std::option::Option<&crate::types::RestoreTestingSelectionForGet> {
+    pub fn restore_testing_selection(&self) -> ::std::option::Option<& crate::types::RestoreTestingSelectionForGet> {
         self.restore_testing_selection.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRestoreTestingSelectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRestoreTestingSelectionOutput {
     /// Creates a new builder-style object to manufacture [`GetRestoreTestingSelectionOutput`](crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionOutput).
     pub fn builder() -> crate::operation::get_restore_testing_selection::builders::GetRestoreTestingSelectionOutputBuilder {
@@ -41,27 +41,28 @@ impl GetRestoreTestingSelectionOutputBuilder {
     }
     /// <p>Unique name of the restore testing selection.</p>
     pub fn set_restore_testing_selection(mut self, input: ::std::option::Option<crate::types::RestoreTestingSelectionForGet>) -> Self {
-        self.restore_testing_selection = input;
-        self
+        self.restore_testing_selection = input; self
     }
     /// <p>Unique name of the restore testing selection.</p>
     pub fn get_restore_testing_selection(&self) -> &::std::option::Option<crate::types::RestoreTestingSelectionForGet> {
         &self.restore_testing_selection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRestoreTestingSelectionOutput`](crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionOutput).
     pub fn build(self) -> crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionOutput {
         crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionOutput {
-            restore_testing_selection: self.restore_testing_selection,
+            restore_testing_selection: self.restore_testing_selection
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

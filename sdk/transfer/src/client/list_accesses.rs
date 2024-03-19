@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccesses`](crate::operation::list_accesses::builders::ListAccessesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_accesses::builders::ListAccessesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_accesses::builders::ListAccessesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_accesses::builders::ListAccessesFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the maximum number of access SIDs to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_accesses::builders::ListAccessesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_accesses::builders::ListAccessesFluentBuilder::set_next_token):<br>required: **false**<br><p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p><br>
     ///   - [`server_id(impl Into<String>)`](crate::operation::list_accesses::builders::ListAccessesFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::list_accesses::builders::ListAccessesFluentBuilder::set_server_id):<br>required: **true**<br><p>A system-assigned unique identifier for a server that has users assigned to it.</p><br>
-    /// - On success, responds with [`ListAccessesOutput`](crate::operation::list_accesses::ListAccessesOutput) with field(s):
+                            /// - On success, responds with [`ListAccessesOutput`](crate::operation::list_accesses::ListAccessesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_accesses::ListAccessesOutput::next_token): <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     ///   - [`server_id(String)`](crate::operation::list_accesses::ListAccessesOutput::server_id): <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     ///   - [`accesses(Vec::<ListedAccess>)`](crate::operation::list_accesses::ListAccessesOutput::accesses): <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    /// - On failure, responds with [`SdkError<ListAccessesError>`](crate::operation::list_accesses::ListAccessesError)
+                            /// - On failure, responds with [`SdkError<ListAccessesError>`](crate::operation::list_accesses::ListAccessesError)
     pub fn list_accesses(&self) -> crate::operation::list_accesses::builders::ListAccessesFluentBuilder {
-        crate::operation::list_accesses::builders::ListAccessesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_accesses::builders::ListAccessesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDomains`](crate::operation::list_domains::builders::ListDomainsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
+                            /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
     ///   - [`domains(Vec::<DomainSummary>)`](crate::operation::list_domains::ListDomainsOutput::domains): <p>The Cases domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
+                            /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
     pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
-        crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

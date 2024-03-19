@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEvaluationInput {
+pub struct GetEvaluationInput  {
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information.</p>
     pub evaluation_id: ::std::option::Option<::std::string::String>,
 }
-impl GetEvaluationInput {
+impl  GetEvaluationInput  {
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information.</p>
-    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetEvaluationInputBuilder {
     }
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information.</p>
     pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_id = input;
-        self
+        self.evaluation_id = input; self
     }
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information.</p>
     pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_id
     }
     /// Consumes the builder and constructs a [`GetEvaluationInput`](crate::operation::get_evaluation::GetEvaluationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_evaluation::GetEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_evaluation::GetEvaluationInput {
-            evaluation_id: self.evaluation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_evaluation::GetEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_evaluation::GetEvaluationInput {
+                evaluation_id: self.evaluation_id
+                ,
+            }
+        )
     }
 }
+

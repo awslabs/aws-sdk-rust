@@ -3,7 +3,7 @@
 /// <p>Information about the endpoint details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointDetails {
+pub struct EndpointDetails  {
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
     pub security_details: ::std::option::Option<crate::types::SecurityDetails>,
     /// <p>A dataflow endpoint.</p>
@@ -13,30 +13,31 @@ pub struct EndpointDetails {
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
     pub health_status: ::std::option::Option<crate::types::CapabilityHealth>,
     /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
-    pub health_reasons: ::std::option::Option<::std::vec::Vec<crate::types::CapabilityHealthReason>>,
+    pub health_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::CapabilityHealthReason>>,
 }
-impl EndpointDetails {
+impl  EndpointDetails  {
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
-    pub fn security_details(&self) -> ::std::option::Option<&crate::types::SecurityDetails> {
+    pub fn security_details(&self) -> ::std::option::Option<& crate::types::SecurityDetails> {
         self.security_details.as_ref()
     }
     /// <p>A dataflow endpoint.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::DataflowEndpoint> {
+    pub fn endpoint(&self) -> ::std::option::Option<& crate::types::DataflowEndpoint> {
         self.endpoint.as_ref()
     }
     /// <p>An agent endpoint.</p>
-    pub fn aws_ground_station_agent_endpoint(&self) -> ::std::option::Option<&crate::types::AwsGroundStationAgentEndpoint> {
+    pub fn aws_ground_station_agent_endpoint(&self) -> ::std::option::Option<& crate::types::AwsGroundStationAgentEndpoint> {
         self.aws_ground_station_agent_endpoint.as_ref()
     }
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
-    pub fn health_status(&self) -> ::std::option::Option<&crate::types::CapabilityHealth> {
+    pub fn health_status(&self) -> ::std::option::Option<& crate::types::CapabilityHealth> {
         self.health_status.as_ref()
     }
     /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.health_reasons.is_none()`.
-    pub fn health_reasons(&self) -> &[crate::types::CapabilityHealthReason] {
-        self.health_reasons.as_deref().unwrap_or_default()
+    pub fn health_reasons(&self) -> & [crate::types::CapabilityHealthReason] {
+        self.health_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EndpointDetails {
@@ -54,7 +55,7 @@ pub struct EndpointDetailsBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::DataflowEndpoint>,
     pub(crate) aws_ground_station_agent_endpoint: ::std::option::Option<crate::types::AwsGroundStationAgentEndpoint>,
     pub(crate) health_status: ::std::option::Option<crate::types::CapabilityHealth>,
-    pub(crate) health_reasons: ::std::option::Option<::std::vec::Vec<crate::types::CapabilityHealthReason>>,
+    pub(crate) health_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::CapabilityHealthReason>>,
 }
 impl EndpointDetailsBuilder {
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
@@ -64,8 +65,7 @@ impl EndpointDetailsBuilder {
     }
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
     pub fn set_security_details(mut self, input: ::std::option::Option<crate::types::SecurityDetails>) -> Self {
-        self.security_details = input;
-        self
+        self.security_details = input; self
     }
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
     pub fn get_security_details(&self) -> &::std::option::Option<crate::types::SecurityDetails> {
@@ -78,8 +78,7 @@ impl EndpointDetailsBuilder {
     }
     /// <p>A dataflow endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::DataflowEndpoint>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>A dataflow endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::DataflowEndpoint> {
@@ -92,8 +91,7 @@ impl EndpointDetailsBuilder {
     }
     /// <p>An agent endpoint.</p>
     pub fn set_aws_ground_station_agent_endpoint(mut self, input: ::std::option::Option<crate::types::AwsGroundStationAgentEndpoint>) -> Self {
-        self.aws_ground_station_agent_endpoint = input;
-        self
+        self.aws_ground_station_agent_endpoint = input; self
     }
     /// <p>An agent endpoint.</p>
     pub fn get_aws_ground_station_agent_endpoint(&self) -> &::std::option::Option<crate::types::AwsGroundStationAgentEndpoint> {
@@ -106,8 +104,7 @@ impl EndpointDetailsBuilder {
     }
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
     pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::CapabilityHealth>) -> Self {
-        self.health_status = input;
-        self
+        self.health_status = input; self
     }
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
     pub fn get_health_status(&self) -> &::std::option::Option<crate::types::CapabilityHealth> {
@@ -120,27 +117,32 @@ impl EndpointDetailsBuilder {
     /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
     pub fn health_reasons(mut self, input: crate::types::CapabilityHealthReason) -> Self {
         let mut v = self.health_reasons.unwrap_or_default();
-        v.push(input);
-        self.health_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.health_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
-    pub fn set_health_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapabilityHealthReason>>) -> Self {
-        self.health_reasons = input;
-        self
+    pub fn set_health_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapabilityHealthReason>>) -> Self {
+        self.health_reasons = input; self
     }
     /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
-    pub fn get_health_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapabilityHealthReason>> {
+    pub fn get_health_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapabilityHealthReason>> {
         &self.health_reasons
     }
     /// Consumes the builder and constructs a [`EndpointDetails`](crate::types::EndpointDetails).
     pub fn build(self) -> crate::types::EndpointDetails {
         crate::types::EndpointDetails {
-            security_details: self.security_details,
-            endpoint: self.endpoint,
-            aws_ground_station_agent_endpoint: self.aws_ground_station_agent_endpoint,
-            health_status: self.health_status,
-            health_reasons: self.health_reasons,
+            security_details: self.security_details
+            ,
+            endpoint: self.endpoint
+            ,
+            aws_ground_station_agent_endpoint: self.aws_ground_station_agent_endpoint
+            ,
+            health_status: self.health_status
+            ,
+            health_reasons: self.health_reasons
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The connector-specific profile properties required when using Snowflake.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnowflakeConnectorProfileProperties {
+pub struct SnowflakeConnectorProfileProperties  {
     /// <p>The name of the Snowflake warehouse.</p>
     pub warehouse: ::std::string::String,
     /// <p>The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
@@ -21,38 +21,35 @@ pub struct SnowflakeConnectorProfileProperties {
     /// <p>The Amazon Web Services Region of the Snowflake account.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl SnowflakeConnectorProfileProperties {
+impl  SnowflakeConnectorProfileProperties  {
     /// <p>The name of the Snowflake warehouse.</p>
-    pub fn warehouse(&self) -> &str {
-        use std::ops::Deref;
-        self.warehouse.deref()
+    pub fn warehouse(&self) -> & str {
+        use std::ops::Deref; self.warehouse.deref()
     }
     /// <p>The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
     /// .
     /// </stage></p>
-    pub fn stage(&self) -> &str {
-        use std::ops::Deref;
-        self.stage.deref()
+    pub fn stage(&self) -> & str {
+        use std::ops::Deref; self.stage.deref()
     }
     /// <p>The name of the Amazon S3 bucket associated with Snowflake.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>The bucket path that refers to the Amazon S3 bucket associated with Snowflake.</p>
-    pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_prefix(&self) -> ::std::option::Option<& str> {
         self.bucket_prefix.as_deref()
     }
     /// <p>The Snowflake Private Link service name to be used for private data transfers.</p>
-    pub fn private_link_service_name(&self) -> ::std::option::Option<&str> {
+    pub fn private_link_service_name(&self) -> ::std::option::Option<& str> {
         self.private_link_service_name.as_deref()
     }
     /// <p>The name of the account.</p>
-    pub fn account_name(&self) -> ::std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The Amazon Web Services Region of the Snowflake account.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -84,8 +81,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p>The name of the Snowflake warehouse.</p>
     pub fn set_warehouse(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.warehouse = input;
-        self
+        self.warehouse = input; self
     }
     /// <p>The name of the Snowflake warehouse.</p>
     pub fn get_warehouse(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +99,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     /// .
     /// </stage></p>
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p>The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
     /// .
@@ -120,8 +115,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p>The name of the Amazon S3 bucket associated with Snowflake.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket associated with Snowflake.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +128,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p>The bucket path that refers to the Amazon S3 bucket associated with Snowflake.</p>
     pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_prefix = input;
-        self
+        self.bucket_prefix = input; self
     }
     /// <p>The bucket path that refers to the Amazon S3 bucket associated with Snowflake.</p>
     pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +141,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p>The Snowflake Private Link service name to be used for private data transfers.</p>
     pub fn set_private_link_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_link_service_name = input;
-        self
+        self.private_link_service_name = input; self
     }
     /// <p>The Snowflake Private Link service name to be used for private data transfers.</p>
     pub fn get_private_link_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +154,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p>The name of the account.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_name = input;
-        self
+        self.account_name = input; self
     }
     /// <p>The name of the account.</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +167,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p>The Amazon Web Services Region of the Snowflake account.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region of the Snowflake account.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,29 +179,33 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     /// - [`stage`](crate::types::builders::SnowflakeConnectorProfilePropertiesBuilder::stage)
     /// - [`bucket_name`](crate::types::builders::SnowflakeConnectorProfilePropertiesBuilder::bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnowflakeConnectorProfileProperties {
-            warehouse: self.warehouse.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "warehouse",
-                    "warehouse was not specified but it is required when building SnowflakeConnectorProfileProperties",
-                )
-            })?,
-            stage: self.stage.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stage",
-                    "stage was not specified but it is required when building SnowflakeConnectorProfileProperties",
-                )
-            })?,
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building SnowflakeConnectorProfileProperties",
-                )
-            })?,
-            bucket_prefix: self.bucket_prefix,
-            private_link_service_name: self.private_link_service_name,
-            account_name: self.account_name,
-            region: self.region,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnowflakeConnectorProfileProperties {
+                warehouse: self.warehouse
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("warehouse", "warehouse was not specified but it is required when building SnowflakeConnectorProfileProperties")
+                    )?
+                ,
+                stage: self.stage
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stage", "stage was not specified but it is required when building SnowflakeConnectorProfileProperties")
+                    )?
+                ,
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building SnowflakeConnectorProfileProperties")
+                    )?
+                ,
+                bucket_prefix: self.bucket_prefix
+                ,
+                private_link_service_name: self.private_link_service_name
+                ,
+                account_name: self.account_name
+                ,
+                region: self.region
+                ,
+            }
+        )
     }
 }
+

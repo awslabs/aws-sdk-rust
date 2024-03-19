@@ -3,7 +3,7 @@
 /// <p>Describes the recommendation options for an Amazon ECS service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsServiceRecommendationOption {
+pub struct EcsServiceRecommendationOption  {
     /// <p>The memory size of the Amazon ECS service recommendation option.</p>
     pub memory: ::std::option::Option<i32>,
     /// <p>The CPU size of the Amazon ECS service recommendation option.</p>
@@ -14,14 +14,14 @@ pub struct EcsServiceRecommendationOption {
     /// </important>
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     /// <p>An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option.</p>
-    pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>,
+    pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceProjectedUtilizationMetric>>,
     /// <p>The CPU and memory size recommendations for the containers within the task of your Amazon ECS service.</p>
-    pub container_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecommendation>>,
+    pub container_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerRecommendation>>,
     /// <p>Describes the savings opportunity for Amazon ECS service recommendations or for the recommendation option.</p>
     /// <p>Savings opportunity represents the estimated monthly savings after applying Savings Plans discounts. You can achieve this by implementing a given Compute Optimizer recommendation.</p>
     pub savings_opportunity_after_discounts: ::std::option::Option<crate::types::EcsSavingsOpportunityAfterDiscounts>,
 }
-impl EcsServiceRecommendationOption {
+impl  EcsServiceRecommendationOption  {
     /// <p>The memory size of the Amazon ECS service recommendation option.</p>
     pub fn memory(&self) -> ::std::option::Option<i32> {
         self.memory
@@ -34,24 +34,26 @@ impl EcsServiceRecommendationOption {
     /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
     /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
     /// </important>
-    pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
+    pub fn savings_opportunity(&self) -> ::std::option::Option<& crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_utilization_metrics.is_none()`.
-    pub fn projected_utilization_metrics(&self) -> &[crate::types::EcsServiceProjectedUtilizationMetric] {
-        self.projected_utilization_metrics.as_deref().unwrap_or_default()
+    pub fn projected_utilization_metrics(&self) -> & [crate::types::EcsServiceProjectedUtilizationMetric] {
+        self.projected_utilization_metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The CPU and memory size recommendations for the containers within the task of your Amazon ECS service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_recommendations.is_none()`.
-    pub fn container_recommendations(&self) -> &[crate::types::ContainerRecommendation] {
-        self.container_recommendations.as_deref().unwrap_or_default()
+    pub fn container_recommendations(&self) -> & [crate::types::ContainerRecommendation] {
+        self.container_recommendations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Describes the savings opportunity for Amazon ECS service recommendations or for the recommendation option.</p>
     /// <p>Savings opportunity represents the estimated monthly savings after applying Savings Plans discounts. You can achieve this by implementing a given Compute Optimizer recommendation.</p>
-    pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<&crate::types::EcsSavingsOpportunityAfterDiscounts> {
+    pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<& crate::types::EcsSavingsOpportunityAfterDiscounts> {
         self.savings_opportunity_after_discounts.as_ref()
     }
 }
@@ -69,8 +71,8 @@ pub struct EcsServiceRecommendationOptionBuilder {
     pub(crate) memory: ::std::option::Option<i32>,
     pub(crate) cpu: ::std::option::Option<i32>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
-    pub(crate) projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>,
-    pub(crate) container_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecommendation>>,
+    pub(crate) projected_utilization_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceProjectedUtilizationMetric>>,
+    pub(crate) container_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerRecommendation>>,
     pub(crate) savings_opportunity_after_discounts: ::std::option::Option<crate::types::EcsSavingsOpportunityAfterDiscounts>,
 }
 impl EcsServiceRecommendationOptionBuilder {
@@ -81,8 +83,7 @@ impl EcsServiceRecommendationOptionBuilder {
     }
     /// <p>The memory size of the Amazon ECS service recommendation option.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>The memory size of the Amazon ECS service recommendation option.</p>
     pub fn get_memory(&self) -> &::std::option::Option<i32> {
@@ -95,8 +96,7 @@ impl EcsServiceRecommendationOptionBuilder {
     }
     /// <p>The CPU size of the Amazon ECS service recommendation option.</p>
     pub fn set_cpu(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The CPU size of the Amazon ECS service recommendation option.</p>
     pub fn get_cpu(&self) -> &::std::option::Option<i32> {
@@ -115,8 +115,7 @@ impl EcsServiceRecommendationOptionBuilder {
     /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
     /// </important>
     pub fn set_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
-        self.savings_opportunity = input;
-        self
+        self.savings_opportunity = input; self
     }
     /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
     /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
@@ -132,20 +131,16 @@ impl EcsServiceRecommendationOptionBuilder {
     /// <p>An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option.</p>
     pub fn projected_utilization_metrics(mut self, input: crate::types::EcsServiceProjectedUtilizationMetric) -> Self {
         let mut v = self.projected_utilization_metrics.unwrap_or_default();
-        v.push(input);
-        self.projected_utilization_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.projected_utilization_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option.</p>
-    pub fn set_projected_utilization_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>,
-    ) -> Self {
-        self.projected_utilization_metrics = input;
-        self
+    pub fn set_projected_utilization_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceProjectedUtilizationMetric>>) -> Self {
+        self.projected_utilization_metrics = input; self
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option.</p>
-    pub fn get_projected_utilization_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>> {
+    pub fn get_projected_utilization_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceProjectedUtilizationMetric>> {
         &self.projected_utilization_metrics
     }
     /// Appends an item to `container_recommendations`.
@@ -155,17 +150,16 @@ impl EcsServiceRecommendationOptionBuilder {
     /// <p>The CPU and memory size recommendations for the containers within the task of your Amazon ECS service.</p>
     pub fn container_recommendations(mut self, input: crate::types::ContainerRecommendation) -> Self {
         let mut v = self.container_recommendations.unwrap_or_default();
-        v.push(input);
-        self.container_recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.container_recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CPU and memory size recommendations for the containers within the task of your Amazon ECS service.</p>
-    pub fn set_container_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecommendation>>) -> Self {
-        self.container_recommendations = input;
-        self
+    pub fn set_container_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerRecommendation>>) -> Self {
+        self.container_recommendations = input; self
     }
     /// <p>The CPU and memory size recommendations for the containers within the task of your Amazon ECS service.</p>
-    pub fn get_container_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerRecommendation>> {
+    pub fn get_container_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContainerRecommendation>> {
         &self.container_recommendations
     }
     /// <p>Describes the savings opportunity for Amazon ECS service recommendations or for the recommendation option.</p>
@@ -176,12 +170,8 @@ impl EcsServiceRecommendationOptionBuilder {
     }
     /// <p>Describes the savings opportunity for Amazon ECS service recommendations or for the recommendation option.</p>
     /// <p>Savings opportunity represents the estimated monthly savings after applying Savings Plans discounts. You can achieve this by implementing a given Compute Optimizer recommendation.</p>
-    pub fn set_savings_opportunity_after_discounts(
-        mut self,
-        input: ::std::option::Option<crate::types::EcsSavingsOpportunityAfterDiscounts>,
-    ) -> Self {
-        self.savings_opportunity_after_discounts = input;
-        self
+    pub fn set_savings_opportunity_after_discounts(mut self, input: ::std::option::Option<crate::types::EcsSavingsOpportunityAfterDiscounts>) -> Self {
+        self.savings_opportunity_after_discounts = input; self
     }
     /// <p>Describes the savings opportunity for Amazon ECS service recommendations or for the recommendation option.</p>
     /// <p>Savings opportunity represents the estimated monthly savings after applying Savings Plans discounts. You can achieve this by implementing a given Compute Optimizer recommendation.</p>
@@ -191,12 +181,19 @@ impl EcsServiceRecommendationOptionBuilder {
     /// Consumes the builder and constructs a [`EcsServiceRecommendationOption`](crate::types::EcsServiceRecommendationOption).
     pub fn build(self) -> crate::types::EcsServiceRecommendationOption {
         crate::types::EcsServiceRecommendationOption {
-            memory: self.memory,
-            cpu: self.cpu,
-            savings_opportunity: self.savings_opportunity,
-            projected_utilization_metrics: self.projected_utilization_metrics,
-            container_recommendations: self.container_recommendations,
-            savings_opportunity_after_discounts: self.savings_opportunity_after_discounts,
+            memory: self.memory
+            ,
+            cpu: self.cpu
+            ,
+            savings_opportunity: self.savings_opportunity
+            ,
+            projected_utilization_metrics: self.projected_utilization_metrics
+            ,
+            container_recommendations: self.container_recommendations
+            ,
+            savings_opportunity_after_discounts: self.savings_opportunity_after_discounts
+            ,
         }
     }
 }
+

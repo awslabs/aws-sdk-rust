@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRepositorySyncDefinitionsOutput {
+pub struct ListRepositorySyncDefinitionsOutput  {
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of repository sync definitions.</p>
-    pub sync_definitions: ::std::vec::Vec<crate::types::RepositorySyncDefinition>,
+    pub sync_definitions: ::std::vec::Vec::<crate::types::RepositorySyncDefinition>,
     _request_id: Option<String>,
 }
-impl ListRepositorySyncDefinitionsOutput {
+impl  ListRepositorySyncDefinitionsOutput  {
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of repository sync definitions.</p>
-    pub fn sync_definitions(&self) -> &[crate::types::RepositorySyncDefinition] {
-        use std::ops::Deref;
-        self.sync_definitions.deref()
+    pub fn sync_definitions(&self) -> & [crate::types::RepositorySyncDefinition] {
+        use std::ops::Deref; self.sync_definitions.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRepositorySyncDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRepositorySyncDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput).
     pub fn builder() -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListRepositorySyncDefinitionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sync_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>,
+    pub(crate) sync_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::RepositorySyncDefinition>>,
     _request_id: Option<String>,
 }
 impl ListRepositorySyncDefinitionsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListRepositorySyncDefinitionsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,46 +60,43 @@ impl ListRepositorySyncDefinitionsOutputBuilder {
     /// <p>An array of repository sync definitions.</p>
     pub fn sync_definitions(mut self, input: crate::types::RepositorySyncDefinition) -> Self {
         let mut v = self.sync_definitions.unwrap_or_default();
-        v.push(input);
-        self.sync_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sync_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of repository sync definitions.</p>
-    pub fn set_sync_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>) -> Self {
-        self.sync_definitions = input;
-        self
+    pub fn set_sync_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositorySyncDefinition>>) -> Self {
+        self.sync_definitions = input; self
     }
     /// <p>An array of repository sync definitions.</p>
-    pub fn get_sync_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>> {
+    pub fn get_sync_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositorySyncDefinition>> {
         &self.sync_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`sync_definitions`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsOutputBuilder::sync_definitions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput {
-            next_token: self.next_token,
-            sync_definitions: self.sync_definitions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sync_definitions",
-                    "sync_definitions was not specified but it is required when building ListRepositorySyncDefinitionsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput {
+                next_token: self.next_token
+                ,
+                sync_definitions: self.sync_definitions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sync_definitions", "sync_definitions was not specified but it is required when building ListRepositorySyncDefinitionsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

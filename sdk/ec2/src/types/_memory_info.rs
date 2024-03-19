@@ -3,11 +3,11 @@
 /// <p>Describes the memory for the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemoryInfo {
+pub struct MemoryInfo  {
     /// <p>The size of the memory, in MiB.</p>
     pub size_in_mib: ::std::option::Option<i64>,
 }
-impl MemoryInfo {
+impl  MemoryInfo  {
     /// <p>The size of the memory, in MiB.</p>
     pub fn size_in_mib(&self) -> ::std::option::Option<i64> {
         self.size_in_mib
@@ -34,8 +34,7 @@ impl MemoryInfoBuilder {
     }
     /// <p>The size of the memory, in MiB.</p>
     pub fn set_size_in_mib(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_in_mib = input;
-        self
+        self.size_in_mib = input; self
     }
     /// <p>The size of the memory, in MiB.</p>
     pub fn get_size_in_mib(&self) -> &::std::option::Option<i64> {
@@ -44,7 +43,9 @@ impl MemoryInfoBuilder {
     /// Consumes the builder and constructs a [`MemoryInfo`](crate::types::MemoryInfo).
     pub fn build(self) -> crate::types::MemoryInfo {
         crate::types::MemoryInfo {
-            size_in_mib: self.size_in_mib,
+            size_in_mib: self.size_in_mib
+            ,
         }
     }
 }
+

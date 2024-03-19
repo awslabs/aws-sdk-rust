@@ -3,16 +3,17 @@
 /// <p>A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterConfiguration {
+pub struct FilterConfiguration  {
     /// <p>A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>.</p>
-    pub allowed_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl FilterConfiguration {
+impl  FilterConfiguration  {
     /// <p>A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_locations.is_none()`.
-    pub fn allowed_locations(&self) -> &[::std::string::String] {
-        self.allowed_locations.as_deref().unwrap_or_default()
+    pub fn allowed_locations(&self) -> & [::std::string::String] {
+        self.allowed_locations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FilterConfiguration {
@@ -26,7 +27,7 @@ impl FilterConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterConfigurationBuilder {
-    pub(crate) allowed_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FilterConfigurationBuilder {
     /// Appends an item to `allowed_locations`.
@@ -36,23 +37,24 @@ impl FilterConfigurationBuilder {
     /// <p>A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>.</p>
     pub fn allowed_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_locations.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>.</p>
-    pub fn set_allowed_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_locations = input;
-        self
+    pub fn set_allowed_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_locations = input; self
     }
     /// <p>A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>.</p>
-    pub fn get_allowed_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_locations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_locations
     }
     /// Consumes the builder and constructs a [`FilterConfiguration`](crate::types::FilterConfiguration).
     pub fn build(self) -> crate::types::FilterConfiguration {
         crate::types::FilterConfiguration {
-            allowed_locations: self.allowed_locations,
+            allowed_locations: self.allowed_locations
+            ,
         }
     }
 }
+

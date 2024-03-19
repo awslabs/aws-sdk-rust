@@ -3,19 +3,19 @@
 /// <p>Contains the state of an impacted snapshot resource that the runtime instance of the lifecycle policy identified for action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleExecutionSnapshotResource {
+pub struct LifecycleExecutionSnapshotResource  {
     /// <p>Identifies the impacted snapshot resource.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The runtime status of the lifecycle action taken for the snapshot.</p>
     pub state: ::std::option::Option<crate::types::LifecycleExecutionResourceState>,
 }
-impl LifecycleExecutionSnapshotResource {
+impl  LifecycleExecutionSnapshotResource  {
     /// <p>Identifies the impacted snapshot resource.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The runtime status of the lifecycle action taken for the snapshot.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionResourceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::LifecycleExecutionResourceState> {
         self.state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LifecycleExecutionSnapshotResourceBuilder {
     }
     /// <p>Identifies the impacted snapshot resource.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>Identifies the impacted snapshot resource.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl LifecycleExecutionSnapshotResourceBuilder {
     }
     /// <p>The runtime status of the lifecycle action taken for the snapshot.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionResourceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The runtime status of the lifecycle action taken for the snapshot.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LifecycleExecutionResourceState> {
@@ -65,8 +63,11 @@ impl LifecycleExecutionSnapshotResourceBuilder {
     /// Consumes the builder and constructs a [`LifecycleExecutionSnapshotResource`](crate::types::LifecycleExecutionSnapshotResource).
     pub fn build(self) -> crate::types::LifecycleExecutionSnapshotResource {
         crate::types::LifecycleExecutionSnapshotResource {
-            snapshot_id: self.snapshot_id,
-            state: self.state,
+            snapshot_id: self.snapshot_id
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

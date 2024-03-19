@@ -3,22 +3,23 @@
 /// <p>Information about worlds that failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailureSummary {
+pub struct FailureSummary  {
     /// <p>The total number of failures.</p>
     pub total_failure_count: i32,
     /// <p>The worlds that failed.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::WorldFailure>>,
 }
-impl FailureSummary {
+impl  FailureSummary  {
     /// <p>The total number of failures.</p>
     pub fn total_failure_count(&self) -> i32 {
         self.total_failure_count
     }
     /// <p>The worlds that failed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::WorldFailure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::WorldFailure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FailureSummary {
@@ -33,7 +34,7 @@ impl FailureSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailureSummaryBuilder {
     pub(crate) total_failure_count: ::std::option::Option<i32>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::WorldFailure>>,
 }
 impl FailureSummaryBuilder {
     /// <p>The total number of failures.</p>
@@ -43,8 +44,7 @@ impl FailureSummaryBuilder {
     }
     /// <p>The total number of failures.</p>
     pub fn set_total_failure_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_failure_count = input;
-        self
+        self.total_failure_count = input; self
     }
     /// <p>The total number of failures.</p>
     pub fn get_total_failure_count(&self) -> &::std::option::Option<i32> {
@@ -57,24 +57,27 @@ impl FailureSummaryBuilder {
     /// <p>The worlds that failed.</p>
     pub fn failures(mut self, input: crate::types::WorldFailure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The worlds that failed.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorldFailure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>The worlds that failed.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorldFailure>> {
         &self.failures
     }
     /// Consumes the builder and constructs a [`FailureSummary`](crate::types::FailureSummary).
     pub fn build(self) -> crate::types::FailureSummary {
         crate::types::FailureSummary {
-            total_failure_count: self.total_failure_count.unwrap_or_default(),
-            failures: self.failures,
+            total_failure_count: self.total_failure_count
+                .unwrap_or_default()
+            ,
+            failures: self.failures
+            ,
         }
     }
 }
+

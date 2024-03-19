@@ -2,23 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationStatesInput {
+pub struct ListApplicationStatesInput  {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to be returned per page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListApplicationStatesInput {
+impl  ListApplicationStatesInput  {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_ids.is_none()`.
-    pub fn application_ids(&self) -> &[::std::string::String] {
-        self.application_ids.as_deref().unwrap_or_default()
+    pub fn application_ids(&self) -> & [::std::string::String] {
+        self.application_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to be returned per page.</p>
@@ -37,7 +38,7 @@ impl ListApplicationStatesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationStatesInputBuilder {
-    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -49,17 +50,16 @@ impl ListApplicationStatesInputBuilder {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
     pub fn application_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_ids.unwrap_or_default();
-        v.push(input.into());
-        self.application_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.application_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_ids = input;
-        self
+    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.application_ids = input; self
     }
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.application_ids
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
@@ -69,8 +69,7 @@ impl ListApplicationStatesInputBuilder {
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,22 +82,24 @@ impl ListApplicationStatesInputBuilder {
     }
     /// <p>Maximum number of results to be returned per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to be returned per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListApplicationStatesInput`](crate::operation::list_application_states::ListApplicationStatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_application_states::ListApplicationStatesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_application_states::ListApplicationStatesInput {
-            application_ids: self.application_ids,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_application_states::ListApplicationStatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_application_states::ListApplicationStatesInput {
+                application_ids: self.application_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

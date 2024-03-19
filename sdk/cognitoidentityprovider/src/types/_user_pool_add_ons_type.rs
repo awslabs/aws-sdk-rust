@@ -4,13 +4,13 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserPoolAddOnsType {
+pub struct UserPoolAddOnsType  {
     /// <p>The operating mode of advanced security features in your user pool.</p>
     pub advanced_security_mode: crate::types::AdvancedSecurityModeType,
 }
-impl UserPoolAddOnsType {
+impl  UserPoolAddOnsType  {
     /// <p>The operating mode of advanced security features in your user pool.</p>
-    pub fn advanced_security_mode(&self) -> &crate::types::AdvancedSecurityModeType {
+    pub fn advanced_security_mode(&self) -> & crate::types::AdvancedSecurityModeType {
         &self.advanced_security_mode
     }
 }
@@ -36,8 +36,7 @@ impl UserPoolAddOnsTypeBuilder {
     }
     /// <p>The operating mode of advanced security features in your user pool.</p>
     pub fn set_advanced_security_mode(mut self, input: ::std::option::Option<crate::types::AdvancedSecurityModeType>) -> Self {
-        self.advanced_security_mode = input;
-        self
+        self.advanced_security_mode = input; self
     }
     /// <p>The operating mode of advanced security features in your user pool.</p>
     pub fn get_advanced_security_mode(&self) -> &::std::option::Option<crate::types::AdvancedSecurityModeType> {
@@ -47,13 +46,15 @@ impl UserPoolAddOnsTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`advanced_security_mode`](crate::types::builders::UserPoolAddOnsTypeBuilder::advanced_security_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::UserPoolAddOnsType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserPoolAddOnsType {
-            advanced_security_mode: self.advanced_security_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "advanced_security_mode",
-                    "advanced_security_mode was not specified but it is required when building UserPoolAddOnsType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserPoolAddOnsType {
+                advanced_security_mode: self.advanced_security_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("advanced_security_mode", "advanced_security_mode was not specified but it is required when building UserPoolAddOnsType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

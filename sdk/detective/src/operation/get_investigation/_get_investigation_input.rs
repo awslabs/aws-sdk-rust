@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInvestigationInput {
+pub struct GetInvestigationInput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The investigation ID of the investigation report.</p>
     pub investigation_id: ::std::option::Option<::std::string::String>,
 }
-impl GetInvestigationInput {
+impl  GetInvestigationInput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The investigation ID of the investigation report.</p>
-    pub fn investigation_id(&self) -> ::std::option::Option<&str> {
+    pub fn investigation_id(&self) -> ::std::option::Option<& str> {
         self.investigation_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetInvestigationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetInvestigationInputBuilder {
     }
     /// <p>The investigation ID of the investigation report.</p>
     pub fn set_investigation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.investigation_id = input;
-        self
+        self.investigation_id = input; self
     }
     /// <p>The investigation ID of the investigation report.</p>
     pub fn get_investigation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.investigation_id
     }
     /// Consumes the builder and constructs a [`GetInvestigationInput`](crate::operation::get_investigation::GetInvestigationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_investigation::GetInvestigationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_investigation::GetInvestigationInput {
-            graph_arn: self.graph_arn,
-            investigation_id: self.investigation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_investigation::GetInvestigationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_investigation::GetInvestigationInput {
+                graph_arn: self.graph_arn
+                ,
+                investigation_id: self.investigation_id
+                ,
+            }
+        )
     }
 }
+

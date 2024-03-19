@@ -5,23 +5,20 @@ pub use crate::operation::import_image::_import_image_input::ImportImageInputBui
 
 impl ImportImageInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::import_image::ImportImageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::import_image::ImportImageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.import_image();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::import_image::ImportImageOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::import_image::ImportImageError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.import_image();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ImportImage`.
-///
+/// 
 /// <note>
 /// <p>To import your virtual machines (VMs) with a console-based experience, you can use the <i>Import virtual machine images to Amazon Web Services</i> template in the <a href="https://console.aws.amazon.com/migrationhub/orchestrator">Migration Hub Orchestrator console</a>. For more information, see the <a href="https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/import-vm-images.html"> <i>Migration Hub Orchestrator User Guide</i> </a>.</p>
 /// </note>
@@ -32,33 +29,32 @@ impl ImportImageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::import_image::builders::ImportImageInputBuilder,
+                    inner: crate::operation::import_image::builders::ImportImageInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::import_image::ImportImageOutput,
-        crate::operation::import_image::ImportImageError,
-    > for ImportImageFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::import_image::ImportImageOutput,
-            crate::operation::import_image::ImportImageError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::import_image::ImportImageOutput,
+                    crate::operation::import_image::ImportImageError,
+                > for ImportImageFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::import_image::ImportImageOutput,
+                        crate::operation::import_image::ImportImageError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ImportImageFluentBuilder {
     /// Creates a new `ImportImage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl ImportImageFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::import_image::ImportImageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::import_image::ImportImageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::import_image::ImportImage::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::import_image::ImportImage::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::import_image::ImportImageOutput,
-        crate::operation::import_image::ImportImageError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::import_image::ImportImageOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_image::ImportImageError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::import_image::ImportImage::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::import_image::ImportImage::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::import_image::ImportImageOutput, crate::operation::import_image::ImportImageError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code></p>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,12 +170,12 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>Information about the disk containers.</p>
-    pub fn set_disk_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>) -> Self {
+    pub fn set_disk_containers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageDiskContainer>>) -> Self {
         self.inner = self.inner.set_disk_containers(input);
         self
     }
     /// <p>Information about the disk containers.</p>
-    pub fn get_disk_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>> {
+    pub fn get_disk_containers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageDiskContainer>> {
         self.inner.get_disk_containers()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -353,15 +340,12 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>The ARNs of the license configurations.</p>
-    pub fn set_license_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>,
-    ) -> Self {
+    pub fn set_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImportImageLicenseConfigurationRequest>>) -> Self {
         self.inner = self.inner.set_license_specifications(input);
         self
     }
     /// <p>The ARNs of the license configurations.</p>
-    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>> {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImportImageLicenseConfigurationRequest>> {
         self.inner.get_license_specifications()
     }
     /// Appends an item to `TagSpecifications`.
@@ -374,12 +358,12 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
@@ -417,3 +401,4 @@ impl ImportImageFluentBuilder {
         self.inner.get_boot_mode()
     }
 }
+

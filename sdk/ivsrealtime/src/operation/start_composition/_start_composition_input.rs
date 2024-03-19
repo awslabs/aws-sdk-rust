@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCompositionInput {
+pub struct StartCompositionInput  {
     /// <p>ARN of the stage to be used for compositing.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>Idempotency token.</p>
@@ -10,31 +10,32 @@ pub struct StartCompositionInput {
     /// <p>Layout object to configure composition parameters.</p>
     pub layout: ::std::option::Option<crate::types::LayoutConfiguration>,
     /// <p>Array of destination configuration.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationConfiguration>>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartCompositionInput {
+impl  StartCompositionInput  {
     /// <p>ARN of the stage to be used for compositing.</p>
-    pub fn stage_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stage_arn(&self) -> ::std::option::Option<& str> {
         self.stage_arn.as_deref()
     }
     /// <p>Idempotency token.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>Layout object to configure composition parameters.</p>
-    pub fn layout(&self) -> ::std::option::Option<&crate::types::LayoutConfiguration> {
+    pub fn layout(&self) -> ::std::option::Option<& crate::types::LayoutConfiguration> {
         self.layout.as_ref()
     }
     /// <p>Array of destination configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::DestinationConfiguration] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::DestinationConfiguration] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -52,8 +53,8 @@ pub struct StartCompositionInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
     pub(crate) layout: ::std::option::Option<crate::types::LayoutConfiguration>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationConfiguration>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartCompositionInputBuilder {
     /// <p>ARN of the stage to be used for compositing.</p>
@@ -64,8 +65,7 @@ impl StartCompositionInputBuilder {
     }
     /// <p>ARN of the stage to be used for compositing.</p>
     pub fn set_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_arn = input;
-        self
+        self.stage_arn = input; self
     }
     /// <p>ARN of the stage to be used for compositing.</p>
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl StartCompositionInputBuilder {
     }
     /// <p>Idempotency token.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>Idempotency token.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl StartCompositionInputBuilder {
     }
     /// <p>Layout object to configure composition parameters.</p>
     pub fn set_layout(mut self, input: ::std::option::Option<crate::types::LayoutConfiguration>) -> Self {
-        self.layout = input;
-        self
+        self.layout = input; self
     }
     /// <p>Layout object to configure composition parameters.</p>
     pub fn get_layout(&self) -> &::std::option::Option<crate::types::LayoutConfiguration> {
@@ -106,17 +104,16 @@ impl StartCompositionInputBuilder {
     /// <p>Array of destination configuration.</p>
     pub fn destinations(mut self, input: crate::types::DestinationConfiguration) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of destination configuration.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationConfiguration>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>Array of destination configuration.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DestinationConfiguration>> {
         &self.destinations
     }
     /// Adds a key-value pair to `tags`.
@@ -126,29 +123,34 @@ impl StartCompositionInputBuilder {
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartCompositionInput`](crate::operation::start_composition::StartCompositionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_composition::StartCompositionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_composition::StartCompositionInput {
-            stage_arn: self.stage_arn,
-            idempotency_token: self.idempotency_token,
-            layout: self.layout,
-            destinations: self.destinations,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_composition::StartCompositionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_composition::StartCompositionInput {
+                stage_arn: self.stage_arn
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+                layout: self.layout
+                ,
+                destinations: self.destinations
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

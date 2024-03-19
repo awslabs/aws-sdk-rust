@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMonitorInput {
+pub struct CreateMonitorInput  {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
     /// <p>If you add only Amazon VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub max_city_networks_to_monitor: ::std::option::Option<i32>,
@@ -27,26 +27,27 @@ pub struct CreateMonitorInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
-impl CreateMonitorInput {
+impl  CreateMonitorInput  {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
     /// <p>If you add only Amazon VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[::std::string::String] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [::std::string::String] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
@@ -55,7 +56,7 @@ impl CreateMonitorInput {
         self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(&self) -> ::std::option::Option<&crate::types::InternetMeasurementsLogDelivery> {
+    pub fn internet_measurements_log_delivery(&self) -> ::std::option::Option<& crate::types::InternetMeasurementsLogDelivery> {
         self.internet_measurements_log_delivery.as_ref()
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
@@ -66,7 +67,7 @@ impl CreateMonitorInput {
     /// <p>Defines the threshold percentages and other configuration information for when Amazon CloudWatch Internet Monitor creates a health event. Internet Monitor creates a health event when an internet issue that affects your application end users has a health score percentage that is at or below a specific threshold, and, sometimes, when other criteria are met.</p>
     /// <p>If you don't set a health event threshold, the default value is 95%.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn health_events_config(&self) -> ::std::option::Option<&crate::types::HealthEventsConfig> {
+    pub fn health_events_config(&self) -> ::std::option::Option<& crate::types::HealthEventsConfig> {
         self.health_events_config.as_ref()
     }
 }
@@ -82,9 +83,9 @@ impl CreateMonitorInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMonitorInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) max_city_networks_to_monitor: ::std::option::Option<i32>,
     pub(crate) internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     pub(crate) traffic_percentage_to_monitor: ::std::option::Option<i32>,
@@ -99,8 +100,7 @@ impl CreateMonitorInputBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,23 +116,22 @@ impl CreateMonitorInputBuilder {
     /// </note>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
     /// <p>If you add only Amazon VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p><note>
     /// <p>If you add only Amazon VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resources
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
@@ -142,8 +141,7 @@ impl CreateMonitorInputBuilder {
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,17 +154,16 @@ impl CreateMonitorInputBuilder {
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
@@ -178,8 +175,7 @@ impl CreateMonitorInputBuilder {
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_max_city_networks_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_city_networks_to_monitor = input;
-        self
+        self.max_city_networks_to_monitor = input; self
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
@@ -193,8 +189,7 @@ impl CreateMonitorInputBuilder {
     }
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
     pub fn set_internet_measurements_log_delivery(mut self, input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>) -> Self {
-        self.internet_measurements_log_delivery = input;
-        self
+        self.internet_measurements_log_delivery = input; self
     }
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
     pub fn get_internet_measurements_log_delivery(&self) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
@@ -209,8 +204,7 @@ impl CreateMonitorInputBuilder {
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_traffic_percentage_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.traffic_percentage_to_monitor = input;
-        self
+        self.traffic_percentage_to_monitor = input; self
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
@@ -228,8 +222,7 @@ impl CreateMonitorInputBuilder {
     /// <p>If you don't set a health event threshold, the default value is 95%.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_health_events_config(mut self, input: ::std::option::Option<crate::types::HealthEventsConfig>) -> Self {
-        self.health_events_config = input;
-        self
+        self.health_events_config = input; self
     }
     /// <p>Defines the threshold percentages and other configuration information for when Amazon CloudWatch Internet Monitor creates a health event. Internet Monitor creates a health event when an internet issue that affects your application end users has a health score percentage that is at or below a specific threshold, and, sometimes, when other criteria are met.</p>
     /// <p>If you don't set a health event threshold, the default value is 95%.</p>
@@ -238,18 +231,27 @@ impl CreateMonitorInputBuilder {
         &self.health_events_config
     }
     /// Consumes the builder and constructs a [`CreateMonitorInput`](crate::operation::create_monitor::CreateMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_monitor::CreateMonitorInput {
-            monitor_name: self.monitor_name,
-            resources: self.resources,
-            client_token: self.client_token,
-            tags: self.tags,
-            max_city_networks_to_monitor: self.max_city_networks_to_monitor,
-            internet_measurements_log_delivery: self.internet_measurements_log_delivery,
-            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor,
-            health_events_config: self.health_events_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_monitor::CreateMonitorInput {
+                monitor_name: self.monitor_name
+                ,
+                resources: self.resources
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+                max_city_networks_to_monitor: self.max_city_networks_to_monitor
+                ,
+                internet_measurements_log_delivery: self.internet_measurements_log_delivery
+                ,
+                traffic_percentage_to_monitor: self.traffic_percentage_to_monitor
+                ,
+                health_events_config: self.health_events_config
+                ,
+            }
+        )
     }
 }
+

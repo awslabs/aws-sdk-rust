@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3connectoroperator = unimplemented!();
 /// match s3connectoroperator {
@@ -48,16 +48,14 @@
 /// Specifically, when `s3connectoroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3ConnectorOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum S3ConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -101,136 +99,116 @@ pub enum S3ConnectorOperator {
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for S3ConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => S3ConnectorOperator::Addition,
-            "BETWEEN" => S3ConnectorOperator::Between,
-            "DIVISION" => S3ConnectorOperator::Division,
-            "EQUAL_TO" => S3ConnectorOperator::EqualTo,
-            "GREATER_THAN" => S3ConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => S3ConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => S3ConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => S3ConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => S3ConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => S3ConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => S3ConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => S3ConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => S3ConnectorOperator::NotEqualTo,
-            "NO_OP" => S3ConnectorOperator::NoOp,
-            "PROJECTION" => S3ConnectorOperator::Projection,
-            "SUBTRACTION" => S3ConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => S3ConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => S3ConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => S3ConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => S3ConnectorOperator::ValidateNumeric,
-            other => S3ConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADDITION" => S3ConnectorOperator::Addition,
+"BETWEEN" => S3ConnectorOperator::Between,
+"DIVISION" => S3ConnectorOperator::Division,
+"EQUAL_TO" => S3ConnectorOperator::EqualTo,
+"GREATER_THAN" => S3ConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => S3ConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => S3ConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => S3ConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => S3ConnectorOperator::MaskAll,
+"MASK_FIRST_N" => S3ConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => S3ConnectorOperator::MaskLastN,
+"MULTIPLICATION" => S3ConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => S3ConnectorOperator::NotEqualTo,
+"NO_OP" => S3ConnectorOperator::NoOp,
+"PROJECTION" => S3ConnectorOperator::Projection,
+"SUBTRACTION" => S3ConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => S3ConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => S3ConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => S3ConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => S3ConnectorOperator::ValidateNumeric,
+other => S3ConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for S3ConnectorOperator {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(S3ConnectorOperator::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(S3ConnectorOperator::from(s))
+                    }
+                }
 impl S3ConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            S3ConnectorOperator::Addition => "ADDITION",
-            S3ConnectorOperator::Between => "BETWEEN",
-            S3ConnectorOperator::Division => "DIVISION",
-            S3ConnectorOperator::EqualTo => "EQUAL_TO",
-            S3ConnectorOperator::GreaterThan => "GREATER_THAN",
-            S3ConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            S3ConnectorOperator::LessThan => "LESS_THAN",
-            S3ConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            S3ConnectorOperator::MaskAll => "MASK_ALL",
-            S3ConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            S3ConnectorOperator::MaskLastN => "MASK_LAST_N",
-            S3ConnectorOperator::Multiplication => "MULTIPLICATION",
-            S3ConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            S3ConnectorOperator::NoOp => "NO_OP",
-            S3ConnectorOperator::Projection => "PROJECTION",
-            S3ConnectorOperator::Subtraction => "SUBTRACTION",
-            S3ConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            S3ConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            S3ConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            S3ConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            S3ConnectorOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "BETWEEN",
-            "DIVISION",
-            "EQUAL_TO",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL_TO",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL_TO",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NOT_EQUAL_TO",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    S3ConnectorOperator::Addition => "ADDITION",
+    S3ConnectorOperator::Between => "BETWEEN",
+    S3ConnectorOperator::Division => "DIVISION",
+    S3ConnectorOperator::EqualTo => "EQUAL_TO",
+    S3ConnectorOperator::GreaterThan => "GREATER_THAN",
+    S3ConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    S3ConnectorOperator::LessThan => "LESS_THAN",
+    S3ConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    S3ConnectorOperator::MaskAll => "MASK_ALL",
+    S3ConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    S3ConnectorOperator::MaskLastN => "MASK_LAST_N",
+    S3ConnectorOperator::Multiplication => "MULTIPLICATION",
+    S3ConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    S3ConnectorOperator::NoOp => "NO_OP",
+    S3ConnectorOperator::Projection => "PROJECTION",
+    S3ConnectorOperator::Subtraction => "SUBTRACTION",
+    S3ConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    S3ConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    S3ConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    S3ConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    S3ConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl ::std::convert::AsRef<str> for S3ConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl S3ConnectorOperator {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for S3ConnectorOperator {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            S3ConnectorOperator::Addition => write!(f, "ADDITION"),
-            S3ConnectorOperator::Between => write!(f, "BETWEEN"),
-            S3ConnectorOperator::Division => write!(f, "DIVISION"),
-            S3ConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
-            S3ConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
-            S3ConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
-            S3ConnectorOperator::LessThan => write!(f, "LESS_THAN"),
-            S3ConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
-            S3ConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
-            S3ConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
-            S3ConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
-            S3ConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
-            S3ConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
-            S3ConnectorOperator::NoOp => write!(f, "NO_OP"),
-            S3ConnectorOperator::Projection => write!(f, "PROJECTION"),
-            S3ConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
-            S3ConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
-            S3ConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
-            S3ConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
-            S3ConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            S3ConnectorOperator::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                S3ConnectorOperator::Addition => write!(f, "ADDITION"),
+S3ConnectorOperator::Between => write!(f, "BETWEEN"),
+S3ConnectorOperator::Division => write!(f, "DIVISION"),
+S3ConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+S3ConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+S3ConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+S3ConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+S3ConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+S3ConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+S3ConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+S3ConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+S3ConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+S3ConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+S3ConnectorOperator::NoOp => write!(f, "NO_OP"),
+S3ConnectorOperator::Projection => write!(f, "PROJECTION"),
+S3ConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+S3ConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+S3ConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+S3ConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+S3ConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+S3ConnectorOperator::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,24 +3,25 @@
 /// <p>The results from a request to change the configuration settings of an environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationSettingsOutput {
+pub struct DescribeConfigurationSettingsOutput  {
     /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
-    pub configuration_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
+    pub configuration_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationSettingsDescription>>,
     _request_id: Option<String>,
 }
-impl DescribeConfigurationSettingsOutput {
+impl  DescribeConfigurationSettingsOutput  {
     /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_settings.is_none()`.
-    pub fn configuration_settings(&self) -> &[crate::types::ConfigurationSettingsDescription] {
-        self.configuration_settings.as_deref().unwrap_or_default()
+    pub fn configuration_settings(&self) -> & [crate::types::ConfigurationSettingsDescription] {
+        self.configuration_settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConfigurationSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConfigurationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSettingsOutput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput).
     pub fn builder() -> crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeConfigurationSettingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsOutputBuilder {
-    pub(crate) configuration_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
+    pub(crate) configuration_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationSettingsDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationSettingsOutputBuilder {
@@ -43,36 +44,34 @@ impl DescribeConfigurationSettingsOutputBuilder {
     /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
     pub fn configuration_settings(mut self, input: crate::types::ConfigurationSettingsDescription) -> Self {
         let mut v = self.configuration_settings.unwrap_or_default();
-        v.push(input);
-        self.configuration_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configuration_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
-    pub fn set_configuration_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
-    ) -> Self {
-        self.configuration_settings = input;
-        self
+    pub fn set_configuration_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationSettingsDescription>>) -> Self {
+        self.configuration_settings = input; self
     }
     /// <p>A list of <code>ConfigurationSettingsDescription</code>.</p>
-    pub fn get_configuration_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>> {
+    pub fn get_configuration_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationSettingsDescription>> {
         &self.configuration_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConfigurationSettingsOutput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput).
     pub fn build(self) -> crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput {
         crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput {
-            configuration_settings: self.configuration_settings,
+            configuration_settings: self.configuration_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

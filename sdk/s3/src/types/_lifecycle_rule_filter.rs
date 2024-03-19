@@ -30,11 +30,7 @@ impl LifecycleRuleFilter {
     /// Tries to convert the enum instance into [`And`](crate::types::LifecycleRuleFilter::And), extracting the inner [`LifecycleRuleAndOperator`](crate::types::LifecycleRuleAndOperator).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> ::std::result::Result<&crate::types::LifecycleRuleAndOperator, &Self> {
-        if let LifecycleRuleFilter::And(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LifecycleRuleFilter::And(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`And`](crate::types::LifecycleRuleFilter::And).
     pub fn is_and(&self) -> bool {
@@ -43,11 +39,7 @@ impl LifecycleRuleFilter {
     /// Tries to convert the enum instance into [`ObjectSizeGreaterThan`](crate::types::LifecycleRuleFilter::ObjectSizeGreaterThan), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_object_size_greater_than(&self) -> ::std::result::Result<&i64, &Self> {
-        if let LifecycleRuleFilter::ObjectSizeGreaterThan(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LifecycleRuleFilter::ObjectSizeGreaterThan(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ObjectSizeGreaterThan`](crate::types::LifecycleRuleFilter::ObjectSizeGreaterThan).
     pub fn is_object_size_greater_than(&self) -> bool {
@@ -56,11 +48,7 @@ impl LifecycleRuleFilter {
     /// Tries to convert the enum instance into [`ObjectSizeLessThan`](crate::types::LifecycleRuleFilter::ObjectSizeLessThan), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_object_size_less_than(&self) -> ::std::result::Result<&i64, &Self> {
-        if let LifecycleRuleFilter::ObjectSizeLessThan(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LifecycleRuleFilter::ObjectSizeLessThan(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ObjectSizeLessThan`](crate::types::LifecycleRuleFilter::ObjectSizeLessThan).
     pub fn is_object_size_less_than(&self) -> bool {
@@ -69,11 +57,7 @@ impl LifecycleRuleFilter {
     /// Tries to convert the enum instance into [`Prefix`](crate::types::LifecycleRuleFilter::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let LifecycleRuleFilter::Prefix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LifecycleRuleFilter::Prefix(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::types::LifecycleRuleFilter::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -82,11 +66,7 @@ impl LifecycleRuleFilter {
     /// Tries to convert the enum instance into [`Tag`](crate::types::LifecycleRuleFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> ::std::result::Result<&crate::types::Tag, &Self> {
-        if let LifecycleRuleFilter::Tag(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LifecycleRuleFilter::Tag(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Tag`](crate::types::LifecycleRuleFilter::Tag).
     pub fn is_tag(&self) -> bool {
@@ -97,3 +77,4 @@ impl LifecycleRuleFilter {
         matches!(self, Self::Unknown)
     }
 }
+

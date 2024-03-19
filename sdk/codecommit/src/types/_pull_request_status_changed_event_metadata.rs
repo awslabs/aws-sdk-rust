@@ -3,13 +3,13 @@
 /// <p>Information about a change to the status of a pull request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PullRequestStatusChangedEventMetadata {
+pub struct PullRequestStatusChangedEventMetadata  {
     /// <p>The changed status of the pull request.</p>
     pub pull_request_status: ::std::option::Option<crate::types::PullRequestStatusEnum>,
 }
-impl PullRequestStatusChangedEventMetadata {
+impl  PullRequestStatusChangedEventMetadata  {
     /// <p>The changed status of the pull request.</p>
-    pub fn pull_request_status(&self) -> ::std::option::Option<&crate::types::PullRequestStatusEnum> {
+    pub fn pull_request_status(&self) -> ::std::option::Option<& crate::types::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl PullRequestStatusChangedEventMetadataBuilder {
     }
     /// <p>The changed status of the pull request.</p>
     pub fn set_pull_request_status(mut self, input: ::std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
-        self.pull_request_status = input;
-        self
+        self.pull_request_status = input; self
     }
     /// <p>The changed status of the pull request.</p>
     pub fn get_pull_request_status(&self) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
@@ -44,7 +43,9 @@ impl PullRequestStatusChangedEventMetadataBuilder {
     /// Consumes the builder and constructs a [`PullRequestStatusChangedEventMetadata`](crate::types::PullRequestStatusChangedEventMetadata).
     pub fn build(self) -> crate::types::PullRequestStatusChangedEventMetadata {
         crate::types::PullRequestStatusChangedEventMetadata {
-            pull_request_status: self.pull_request_status,
+            pull_request_status: self.pull_request_status
+            ,
         }
     }
 }
+

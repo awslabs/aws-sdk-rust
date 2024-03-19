@@ -3,17 +3,17 @@
 /// <p>The summary of a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Summary {
+pub struct Summary  {
     /// <p>The finding classification of the recommendation.</p>
     pub name: ::std::option::Option<crate::types::Finding>,
     /// <p>The value of the recommendation summary.</p>
     pub value: f64,
     /// <p>An array of objects that summarize a finding reason code.</p>
-    pub reason_code_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
+    pub reason_code_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ReasonCodeSummary>>,
 }
-impl Summary {
+impl  Summary  {
     /// <p>The finding classification of the recommendation.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::Finding> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::Finding> {
         self.name.as_ref()
     }
     /// <p>The value of the recommendation summary.</p>
@@ -21,10 +21,11 @@ impl Summary {
         self.value
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reason_code_summaries.is_none()`.
-    pub fn reason_code_summaries(&self) -> &[crate::types::ReasonCodeSummary] {
-        self.reason_code_summaries.as_deref().unwrap_or_default()
+    pub fn reason_code_summaries(&self) -> & [crate::types::ReasonCodeSummary] {
+        self.reason_code_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Summary {
@@ -40,7 +41,7 @@ impl Summary {
 pub struct SummaryBuilder {
     pub(crate) name: ::std::option::Option<crate::types::Finding>,
     pub(crate) value: ::std::option::Option<f64>,
-    pub(crate) reason_code_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
+    pub(crate) reason_code_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ReasonCodeSummary>>,
 }
 impl SummaryBuilder {
     /// <p>The finding classification of the recommendation.</p>
@@ -50,8 +51,7 @@ impl SummaryBuilder {
     }
     /// <p>The finding classification of the recommendation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::Finding>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The finding classification of the recommendation.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::Finding> {
@@ -64,8 +64,7 @@ impl SummaryBuilder {
     }
     /// <p>The value of the recommendation summary.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the recommendation summary.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -78,25 +77,29 @@ impl SummaryBuilder {
     /// <p>An array of objects that summarize a finding reason code.</p>
     pub fn reason_code_summaries(mut self, input: crate::types::ReasonCodeSummary) -> Self {
         let mut v = self.reason_code_summaries.unwrap_or_default();
-        v.push(input);
-        self.reason_code_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reason_code_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
-    pub fn set_reason_code_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>) -> Self {
-        self.reason_code_summaries = input;
-        self
+    pub fn set_reason_code_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReasonCodeSummary>>) -> Self {
+        self.reason_code_summaries = input; self
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
-    pub fn get_reason_code_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>> {
+    pub fn get_reason_code_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReasonCodeSummary>> {
         &self.reason_code_summaries
     }
     /// Consumes the builder and constructs a [`Summary`](crate::types::Summary).
     pub fn build(self) -> crate::types::Summary {
         crate::types::Summary {
-            name: self.name,
-            value: self.value.unwrap_or_default(),
-            reason_code_summaries: self.reason_code_summaries,
+            name: self.name
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
+            reason_code_summaries: self.reason_code_summaries
+            ,
         }
     }
 }
+

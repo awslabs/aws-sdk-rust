@@ -5,23 +5,20 @@ pub use crate::operation::create_training_job::_create_training_job_input::Creat
 
 impl CreateTrainingJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_training_job::CreateTrainingJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_training_job::CreateTrainingJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_training_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_training_job::CreateTrainingJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_training_job::CreateTrainingJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_training_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateTrainingJob`.
-///
+/// 
 /// <p>Starts a model training job. After training completes, SageMaker saves the resulting model artifacts to an Amazon S3 location that you specify.</p>
 /// <p>If you choose to host your model using SageMaker hosting services, you can use the resulting model artifacts as part of the model. You can also use the artifacts in a machine learning service other than SageMaker, provided that you know how to use them for inference.</p>
 /// <p>In the request body, you provide the following:</p>
@@ -53,33 +50,32 @@ impl CreateTrainingJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrainingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_training_job::builders::CreateTrainingJobInputBuilder,
+                    inner: crate::operation::create_training_job::builders::CreateTrainingJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_training_job::CreateTrainingJobOutput,
-        crate::operation::create_training_job::CreateTrainingJobError,
-    > for CreateTrainingJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_training_job::CreateTrainingJobOutput,
-            crate::operation::create_training_job::CreateTrainingJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_training_job::CreateTrainingJobOutput,
+                    crate::operation::create_training_job::CreateTrainingJobError,
+                > for CreateTrainingJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_training_job::CreateTrainingJobOutput,
+                        crate::operation::create_training_job::CreateTrainingJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateTrainingJobFluentBuilder {
     /// Creates a new `CreateTrainingJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -88,53 +84,44 @@ impl CreateTrainingJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_training_job::CreateTrainingJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_training_job::CreateTrainingJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_training_job::CreateTrainingJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_training_job::CreateTrainingJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_training_job::CreateTrainingJobOutput,
-        crate::operation::create_training_job::CreateTrainingJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_training_job::CreateTrainingJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_training_job::CreateTrainingJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_training_job::CreateTrainingJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_training_job::CreateTrainingJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_training_job::CreateTrainingJobOutput, crate::operation::create_training_job::CreateTrainingJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.training_job_name(input.into());
@@ -157,11 +144,7 @@ impl CreateTrainingJobFluentBuilder {
     /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>.</p><important>
     /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
     /// </important>
-    pub fn hyper_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hyper_parameters(k.into(), v.into());
         self
     }
@@ -169,10 +152,7 @@ impl CreateTrainingJobFluentBuilder {
     /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>.</p><important>
     /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
     /// </important>
-    pub fn set_hyper_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_hyper_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_hyper_parameters(input);
         self
     }
@@ -180,7 +160,7 @@ impl CreateTrainingJobFluentBuilder {
     /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>.</p><important>
     /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
     /// </important>
-    pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_hyper_parameters()
     }
     /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
@@ -236,7 +216,7 @@ impl CreateTrainingJobFluentBuilder {
     /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.</p>
     /// <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
     /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
-    pub fn set_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -244,7 +224,7 @@ impl CreateTrainingJobFluentBuilder {
     /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.</p>
     /// <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
     /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
-    pub fn get_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Channel>> {
         self.inner.get_input_data_config()
     }
     /// <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
@@ -319,12 +299,12 @@ impl CreateTrainingJobFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
@@ -410,12 +390,12 @@ impl CreateTrainingJobFluentBuilder {
         self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
-    pub fn set_debug_rule_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>>) -> Self {
+    pub fn set_debug_rule_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DebugRuleConfiguration>>) -> Self {
         self.inner = self.inner.set_debug_rule_configurations(input);
         self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
-    pub fn get_debug_rule_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>> {
+    pub fn get_debug_rule_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DebugRuleConfiguration>> {
         self.inner.get_debug_rule_configurations()
     }
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
@@ -494,15 +474,12 @@ impl CreateTrainingJobFluentBuilder {
         self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
-    pub fn set_profiler_rule_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>>,
-    ) -> Self {
+    pub fn set_profiler_rule_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProfilerRuleConfiguration>>) -> Self {
         self.inner = self.inner.set_profiler_rule_configurations(input);
         self
     }
     /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
-    pub fn get_profiler_rule_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>> {
+    pub fn get_profiler_rule_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProfilerRuleConfiguration>> {
         self.inner.get_profiler_rule_configurations()
     }
     /// Adds a key-value pair to `Environment`.
@@ -515,15 +492,12 @@ impl CreateTrainingJobFluentBuilder {
         self
     }
     /// <p>The environment variables to set in the Docker container.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
     /// <p>The environment variables to set in the Docker container.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_environment()
     }
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
@@ -569,3 +543,4 @@ impl CreateTrainingJobFluentBuilder {
         self.inner.get_infra_check_config()
     }
 }
+

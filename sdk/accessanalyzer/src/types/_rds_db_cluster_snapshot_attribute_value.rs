@@ -13,7 +13,7 @@ pub enum RdsDbClusterSnapshotAttributeValue {
     /// <li>
     /// <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>accountIds</code> in the <code>RdsDbClusterSnapshotAttributeValue</code>.</p></li>
     /// </ul>
-    AccountIds(::std::vec::Vec<::std::string::String>),
+    AccountIds(::std::vec::Vec::<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -28,12 +28,8 @@ impl RdsDbClusterSnapshotAttributeValue {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AccountIds`](crate::types::RdsDbClusterSnapshotAttributeValue::AccountIds), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_account_ids(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let RdsDbClusterSnapshotAttributeValue::AccountIds(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_account_ids(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let RdsDbClusterSnapshotAttributeValue::AccountIds(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AccountIds`](crate::types::RdsDbClusterSnapshotAttributeValue::AccountIds).
     pub fn is_account_ids(&self) -> bool {
@@ -44,3 +40,4 @@ impl RdsDbClusterSnapshotAttributeValue {
         matches!(self, Self::Unknown)
     }
 }
+

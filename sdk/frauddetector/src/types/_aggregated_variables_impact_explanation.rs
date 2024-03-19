@@ -4,9 +4,9 @@
 /// <p>Account Takeover Insights (ATI) model uses the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, the model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregatedVariablesImpactExplanation {
+pub struct AggregatedVariablesImpactExplanation  {
     /// <p>The names of all the event variables that were used to derive the aggregated variables.</p>
-    pub event_variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_variable_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The relative impact of the aggregated variables in terms of magnitude on the prediction scores.</p>
     pub relative_impact: ::std::option::Option<::std::string::String>,
     /// <p>The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
@@ -18,15 +18,16 @@ pub struct AggregatedVariablesImpactExplanation {
     /// </ul>
     pub log_odds_impact: ::std::option::Option<f32>,
 }
-impl AggregatedVariablesImpactExplanation {
+impl  AggregatedVariablesImpactExplanation  {
     /// <p>The names of all the event variables that were used to derive the aggregated variables.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_variable_names.is_none()`.
-    pub fn event_variable_names(&self) -> &[::std::string::String] {
-        self.event_variable_names.as_deref().unwrap_or_default()
+    pub fn event_variable_names(&self) -> & [::std::string::String] {
+        self.event_variable_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The relative impact of the aggregated variables in terms of magnitude on the prediction scores.</p>
-    pub fn relative_impact(&self) -> ::std::option::Option<&str> {
+    pub fn relative_impact(&self) -> ::std::option::Option<& str> {
         self.relative_impact.as_deref()
     }
     /// <p>The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
@@ -51,7 +52,7 @@ impl AggregatedVariablesImpactExplanation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedVariablesImpactExplanationBuilder {
-    pub(crate) event_variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) event_variable_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) relative_impact: ::std::option::Option<::std::string::String>,
     pub(crate) log_odds_impact: ::std::option::Option<f32>,
 }
@@ -63,17 +64,16 @@ impl AggregatedVariablesImpactExplanationBuilder {
     /// <p>The names of all the event variables that were used to derive the aggregated variables.</p>
     pub fn event_variable_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_variable_names.unwrap_or_default();
-        v.push(input.into());
-        self.event_variable_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_variable_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of all the event variables that were used to derive the aggregated variables.</p>
-    pub fn set_event_variable_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_variable_names = input;
-        self
+    pub fn set_event_variable_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_variable_names = input; self
     }
     /// <p>The names of all the event variables that were used to derive the aggregated variables.</p>
-    pub fn get_event_variable_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_variable_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_variable_names
     }
     /// <p>The relative impact of the aggregated variables in terms of magnitude on the prediction scores.</p>
@@ -83,8 +83,7 @@ impl AggregatedVariablesImpactExplanationBuilder {
     }
     /// <p>The relative impact of the aggregated variables in terms of magnitude on the prediction scores.</p>
     pub fn set_relative_impact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relative_impact = input;
-        self
+        self.relative_impact = input; self
     }
     /// <p>The relative impact of the aggregated variables in terms of magnitude on the prediction scores.</p>
     pub fn get_relative_impact(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +108,7 @@ impl AggregatedVariablesImpactExplanationBuilder {
     /// <p>A negative value indicates that the variables drove the risk score down.</p></li>
     /// </ul>
     pub fn set_log_odds_impact(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.log_odds_impact = input;
-        self
+        self.log_odds_impact = input; self
     }
     /// <p>The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
@@ -125,9 +123,13 @@ impl AggregatedVariablesImpactExplanationBuilder {
     /// Consumes the builder and constructs a [`AggregatedVariablesImpactExplanation`](crate::types::AggregatedVariablesImpactExplanation).
     pub fn build(self) -> crate::types::AggregatedVariablesImpactExplanation {
         crate::types::AggregatedVariablesImpactExplanation {
-            event_variable_names: self.event_variable_names,
-            relative_impact: self.relative_impact,
-            log_odds_impact: self.log_odds_impact,
+            event_variable_names: self.event_variable_names
+            ,
+            relative_impact: self.relative_impact
+            ,
+            log_odds_impact: self.log_odds_impact
+            ,
         }
     }
 }
+

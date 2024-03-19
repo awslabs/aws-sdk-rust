@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEnabledBaselineInput {
+pub struct UpdateEnabledBaselineInput  {
     /// <p>Specifies the new <code>Baseline</code> version, to which the <code>EnabledBaseline</code> should be updated.</p>
     pub baseline_version: ::std::option::Option<::std::string::String>,
     /// <p>Parameters to apply when making an update.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledBaselineParameter>>,
     /// <p>Specifies the <code>EnabledBaseline</code> resource to be updated.</p>
     pub enabled_baseline_identifier: ::std::option::Option<::std::string::String>,
 }
-impl UpdateEnabledBaselineInput {
+impl  UpdateEnabledBaselineInput  {
     /// <p>Specifies the new <code>Baseline</code> version, to which the <code>EnabledBaseline</code> should be updated.</p>
-    pub fn baseline_version(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_version(&self) -> ::std::option::Option<& str> {
         self.baseline_version.as_deref()
     }
     /// <p>Parameters to apply when making an update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::EnabledBaselineParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::EnabledBaselineParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the <code>EnabledBaseline</code> resource to be updated.</p>
-    pub fn enabled_baseline_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn enabled_baseline_identifier(&self) -> ::std::option::Option<& str> {
         self.enabled_baseline_identifier.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl UpdateEnabledBaselineInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnabledBaselineInputBuilder {
     pub(crate) baseline_version: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledBaselineParameter>>,
     pub(crate) enabled_baseline_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEnabledBaselineInputBuilder {
@@ -50,8 +51,7 @@ impl UpdateEnabledBaselineInputBuilder {
     }
     /// <p>Specifies the new <code>Baseline</code> version, to which the <code>EnabledBaseline</code> should be updated.</p>
     pub fn set_baseline_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_version = input;
-        self
+        self.baseline_version = input; self
     }
     /// <p>Specifies the new <code>Baseline</code> version, to which the <code>EnabledBaseline</code> should be updated.</p>
     pub fn get_baseline_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl UpdateEnabledBaselineInputBuilder {
     /// <p>Parameters to apply when making an update.</p>
     pub fn parameters(mut self, input: crate::types::EnabledBaselineParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Parameters to apply when making an update.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledBaselineParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Parameters to apply when making an update.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnabledBaselineParameter>> {
         &self.parameters
     }
     /// <p>Specifies the <code>EnabledBaseline</code> resource to be updated.</p>
@@ -85,22 +84,24 @@ impl UpdateEnabledBaselineInputBuilder {
     }
     /// <p>Specifies the <code>EnabledBaseline</code> resource to be updated.</p>
     pub fn set_enabled_baseline_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enabled_baseline_identifier = input;
-        self
+        self.enabled_baseline_identifier = input; self
     }
     /// <p>Specifies the <code>EnabledBaseline</code> resource to be updated.</p>
     pub fn get_enabled_baseline_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.enabled_baseline_identifier
     }
     /// Consumes the builder and constructs a [`UpdateEnabledBaselineInput`](crate::operation::update_enabled_baseline::UpdateEnabledBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_enabled_baseline::UpdateEnabledBaselineInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_enabled_baseline::UpdateEnabledBaselineInput {
-            baseline_version: self.baseline_version,
-            parameters: self.parameters,
-            enabled_baseline_identifier: self.enabled_baseline_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_enabled_baseline::UpdateEnabledBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_enabled_baseline::UpdateEnabledBaselineInput {
+                baseline_version: self.baseline_version
+                ,
+                parameters: self.parameters
+                ,
+                enabled_baseline_identifier: self.enabled_baseline_identifier
+                ,
+            }
+        )
     }
 }
+

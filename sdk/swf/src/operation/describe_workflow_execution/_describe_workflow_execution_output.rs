@@ -3,7 +3,7 @@
 /// <p>Contains details about a workflow execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkflowExecutionOutput {
+pub struct DescribeWorkflowExecutionOutput  {
     /// <p>Information about the workflow execution.</p>
     pub execution_info: ::std::option::Option<crate::types::WorkflowExecutionInfo>,
     /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
@@ -16,33 +16,33 @@ pub struct DescribeWorkflowExecutionOutput {
     pub latest_execution_context: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeWorkflowExecutionOutput {
+impl  DescribeWorkflowExecutionOutput  {
     /// <p>Information about the workflow execution.</p>
-    pub fn execution_info(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionInfo> {
+    pub fn execution_info(&self) -> ::std::option::Option<& crate::types::WorkflowExecutionInfo> {
         self.execution_info.as_ref()
     }
     /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-    pub fn execution_configuration(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionConfiguration> {
+    pub fn execution_configuration(&self) -> ::std::option::Option<& crate::types::WorkflowExecutionConfiguration> {
         self.execution_configuration.as_ref()
     }
     /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-    pub fn open_counts(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionOpenCounts> {
+    pub fn open_counts(&self) -> ::std::option::Option<& crate::types::WorkflowExecutionOpenCounts> {
         self.open_counts.as_ref()
     }
     /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-    pub fn latest_activity_task_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_activity_task_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_activity_task_timestamp.as_ref()
     }
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
-    pub fn latest_execution_context(&self) -> ::std::option::Option<&str> {
+    pub fn latest_execution_context(&self) -> ::std::option::Option<& str> {
         self.latest_execution_context.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWorkflowExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionOutput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionOutput).
     pub fn builder() -> crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionOutputBuilder {
@@ -70,8 +70,7 @@ impl DescribeWorkflowExecutionOutputBuilder {
     }
     /// <p>Information about the workflow execution.</p>
     pub fn set_execution_info(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionInfo>) -> Self {
-        self.execution_info = input;
-        self
+        self.execution_info = input; self
     }
     /// <p>Information about the workflow execution.</p>
     pub fn get_execution_info(&self) -> &::std::option::Option<crate::types::WorkflowExecutionInfo> {
@@ -85,8 +84,7 @@ impl DescribeWorkflowExecutionOutputBuilder {
     }
     /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
     pub fn set_execution_configuration(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionConfiguration>) -> Self {
-        self.execution_configuration = input;
-        self
+        self.execution_configuration = input; self
     }
     /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
     pub fn get_execution_configuration(&self) -> &::std::option::Option<crate::types::WorkflowExecutionConfiguration> {
@@ -100,8 +98,7 @@ impl DescribeWorkflowExecutionOutputBuilder {
     }
     /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
     pub fn set_open_counts(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionOpenCounts>) -> Self {
-        self.open_counts = input;
-        self
+        self.open_counts = input; self
     }
     /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
     pub fn get_open_counts(&self) -> &::std::option::Option<crate::types::WorkflowExecutionOpenCounts> {
@@ -114,8 +111,7 @@ impl DescribeWorkflowExecutionOutputBuilder {
     }
     /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
     pub fn set_latest_activity_task_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_activity_task_timestamp = input;
-        self
+        self.latest_activity_task_timestamp = input; self
     }
     /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
     pub fn get_latest_activity_task_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,31 +124,36 @@ impl DescribeWorkflowExecutionOutputBuilder {
     }
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
     pub fn set_latest_execution_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_execution_context = input;
-        self
+        self.latest_execution_context = input; self
     }
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
     pub fn get_latest_execution_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_execution_context
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWorkflowExecutionOutput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionOutput).
     pub fn build(self) -> crate::operation::describe_workflow_execution::DescribeWorkflowExecutionOutput {
         crate::operation::describe_workflow_execution::DescribeWorkflowExecutionOutput {
-            execution_info: self.execution_info,
-            execution_configuration: self.execution_configuration,
-            open_counts: self.open_counts,
-            latest_activity_task_timestamp: self.latest_activity_task_timestamp,
-            latest_execution_context: self.latest_execution_context,
+            execution_info: self.execution_info
+            ,
+            execution_configuration: self.execution_configuration
+            ,
+            open_counts: self.open_counts
+            ,
+            latest_activity_task_timestamp: self.latest_activity_task_timestamp
+            ,
+            latest_execution_context: self.latest_execution_context
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

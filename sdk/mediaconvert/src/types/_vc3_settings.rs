@@ -3,7 +3,7 @@
 /// Required when you set Codec to the value VC3
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Vc3Settings {
+pub struct Vc3Settings  {
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub framerate_control: ::std::option::Option<crate::types::Vc3FramerateControl>,
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
@@ -23,13 +23,13 @@ pub struct Vc3Settings {
     /// Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
     pub vc3_class: ::std::option::Option<crate::types::Vc3Class>,
 }
-impl Vc3Settings {
+impl  Vc3Settings  {
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    pub fn framerate_control(&self) -> ::std::option::Option<&crate::types::Vc3FramerateControl> {
+    pub fn framerate_control(&self) -> ::std::option::Option<& crate::types::Vc3FramerateControl> {
         self.framerate_control.as_ref()
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<&crate::types::Vc3FramerateConversionAlgorithm> {
+    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<& crate::types::Vc3FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
@@ -41,23 +41,23 @@ impl Vc3Settings {
         self.framerate_numerator
     }
     /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
-    pub fn interlace_mode(&self) -> ::std::option::Option<&crate::types::Vc3InterlaceMode> {
+    pub fn interlace_mode(&self) -> ::std::option::Option<& crate::types::Vc3InterlaceMode> {
         self.interlace_mode.as_ref()
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
-    pub fn scan_type_conversion_mode(&self) -> ::std::option::Option<&crate::types::Vc3ScanTypeConversionMode> {
+    pub fn scan_type_conversion_mode(&self) -> ::std::option::Option<& crate::types::Vc3ScanTypeConversionMode> {
         self.scan_type_conversion_mode.as_ref()
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25.
-    pub fn slow_pal(&self) -> ::std::option::Option<&crate::types::Vc3SlowPal> {
+    pub fn slow_pal(&self) -> ::std::option::Option<& crate::types::Vc3SlowPal> {
         self.slow_pal.as_ref()
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
-    pub fn telecine(&self) -> ::std::option::Option<&crate::types::Vc3Telecine> {
+    pub fn telecine(&self) -> ::std::option::Option<& crate::types::Vc3Telecine> {
         self.telecine.as_ref()
     }
     /// Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
-    pub fn vc3_class(&self) -> ::std::option::Option<&crate::types::Vc3Class> {
+    pub fn vc3_class(&self) -> ::std::option::Option<& crate::types::Vc3Class> {
         self.vc3_class.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl Vc3SettingsBuilder {
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn set_framerate_control(mut self, input: ::std::option::Option<crate::types::Vc3FramerateControl>) -> Self {
-        self.framerate_control = input;
-        self
+        self.framerate_control = input; self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn get_framerate_control(&self) -> &::std::option::Option<crate::types::Vc3FramerateControl> {
@@ -104,8 +103,7 @@ impl Vc3SettingsBuilder {
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn set_framerate_conversion_algorithm(mut self, input: ::std::option::Option<crate::types::Vc3FramerateConversionAlgorithm>) -> Self {
-        self.framerate_conversion_algorithm = input;
-        self
+        self.framerate_conversion_algorithm = input; self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn get_framerate_conversion_algorithm(&self) -> &::std::option::Option<crate::types::Vc3FramerateConversionAlgorithm> {
@@ -118,8 +116,7 @@ impl Vc3SettingsBuilder {
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.framerate_denominator = input;
-        self
+        self.framerate_denominator = input; self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
@@ -132,8 +129,7 @@ impl Vc3SettingsBuilder {
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.framerate_numerator = input;
-        self
+        self.framerate_numerator = input; self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
@@ -146,8 +142,7 @@ impl Vc3SettingsBuilder {
     }
     /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
     pub fn set_interlace_mode(mut self, input: ::std::option::Option<crate::types::Vc3InterlaceMode>) -> Self {
-        self.interlace_mode = input;
-        self
+        self.interlace_mode = input; self
     }
     /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
     pub fn get_interlace_mode(&self) -> &::std::option::Option<crate::types::Vc3InterlaceMode> {
@@ -160,8 +155,7 @@ impl Vc3SettingsBuilder {
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
     pub fn set_scan_type_conversion_mode(mut self, input: ::std::option::Option<crate::types::Vc3ScanTypeConversionMode>) -> Self {
-        self.scan_type_conversion_mode = input;
-        self
+        self.scan_type_conversion_mode = input; self
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
     pub fn get_scan_type_conversion_mode(&self) -> &::std::option::Option<crate::types::Vc3ScanTypeConversionMode> {
@@ -174,8 +168,7 @@ impl Vc3SettingsBuilder {
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25.
     pub fn set_slow_pal(mut self, input: ::std::option::Option<crate::types::Vc3SlowPal>) -> Self {
-        self.slow_pal = input;
-        self
+        self.slow_pal = input; self
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25.
     pub fn get_slow_pal(&self) -> &::std::option::Option<crate::types::Vc3SlowPal> {
@@ -188,8 +181,7 @@ impl Vc3SettingsBuilder {
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub fn set_telecine(mut self, input: ::std::option::Option<crate::types::Vc3Telecine>) -> Self {
-        self.telecine = input;
-        self
+        self.telecine = input; self
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub fn get_telecine(&self) -> &::std::option::Option<crate::types::Vc3Telecine> {
@@ -202,8 +194,7 @@ impl Vc3SettingsBuilder {
     }
     /// Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
     pub fn set_vc3_class(mut self, input: ::std::option::Option<crate::types::Vc3Class>) -> Self {
-        self.vc3_class = input;
-        self
+        self.vc3_class = input; self
     }
     /// Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
     pub fn get_vc3_class(&self) -> &::std::option::Option<crate::types::Vc3Class> {
@@ -212,15 +203,25 @@ impl Vc3SettingsBuilder {
     /// Consumes the builder and constructs a [`Vc3Settings`](crate::types::Vc3Settings).
     pub fn build(self) -> crate::types::Vc3Settings {
         crate::types::Vc3Settings {
-            framerate_control: self.framerate_control,
-            framerate_conversion_algorithm: self.framerate_conversion_algorithm,
-            framerate_denominator: self.framerate_denominator,
-            framerate_numerator: self.framerate_numerator,
-            interlace_mode: self.interlace_mode,
-            scan_type_conversion_mode: self.scan_type_conversion_mode,
-            slow_pal: self.slow_pal,
-            telecine: self.telecine,
-            vc3_class: self.vc3_class,
+            framerate_control: self.framerate_control
+            ,
+            framerate_conversion_algorithm: self.framerate_conversion_algorithm
+            ,
+            framerate_denominator: self.framerate_denominator
+            ,
+            framerate_numerator: self.framerate_numerator
+            ,
+            interlace_mode: self.interlace_mode
+            ,
+            scan_type_conversion_mode: self.scan_type_conversion_mode
+            ,
+            slow_pal: self.slow_pal
+            ,
+            telecine: self.telecine
+            ,
+            vc3_class: self.vc3_class
+            ,
         }
     }
 }
+

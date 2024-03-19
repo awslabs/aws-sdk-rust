@@ -3,7 +3,7 @@
 /// <p>Payload for the property graph summary response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertygraphSummaryValueMap {
+pub struct PropertygraphSummaryValueMap  {
     /// <p>The version of this graph summary response.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
@@ -11,17 +11,17 @@ pub struct PropertygraphSummaryValueMap {
     /// <p>The graph summary.</p>
     pub graph_summary: ::std::option::Option<crate::types::PropertygraphSummary>,
 }
-impl PropertygraphSummaryValueMap {
+impl  PropertygraphSummaryValueMap  {
     /// <p>The version of this graph summary response.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
-    pub fn last_statistics_computation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_statistics_computation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_statistics_computation_time.as_ref()
     }
     /// <p>The graph summary.</p>
-    pub fn graph_summary(&self) -> ::std::option::Option<&crate::types::PropertygraphSummary> {
+    pub fn graph_summary(&self) -> ::std::option::Option<& crate::types::PropertygraphSummary> {
         self.graph_summary.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PropertygraphSummaryValueMapBuilder {
     }
     /// <p>The version of this graph summary response.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of this graph summary response.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PropertygraphSummaryValueMapBuilder {
     }
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
     pub fn set_last_statistics_computation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_statistics_computation_time = input;
-        self
+        self.last_statistics_computation_time = input; self
     }
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
     pub fn get_last_statistics_computation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl PropertygraphSummaryValueMapBuilder {
     }
     /// <p>The graph summary.</p>
     pub fn set_graph_summary(mut self, input: ::std::option::Option<crate::types::PropertygraphSummary>) -> Self {
-        self.graph_summary = input;
-        self
+        self.graph_summary = input; self
     }
     /// <p>The graph summary.</p>
     pub fn get_graph_summary(&self) -> &::std::option::Option<crate::types::PropertygraphSummary> {
@@ -86,9 +83,13 @@ impl PropertygraphSummaryValueMapBuilder {
     /// Consumes the builder and constructs a [`PropertygraphSummaryValueMap`](crate::types::PropertygraphSummaryValueMap).
     pub fn build(self) -> crate::types::PropertygraphSummaryValueMap {
         crate::types::PropertygraphSummaryValueMap {
-            version: self.version,
-            last_statistics_computation_time: self.last_statistics_computation_time,
-            graph_summary: self.graph_summary,
+            version: self.version
+            ,
+            last_statistics_computation_time: self.last_statistics_computation_time
+            ,
+            graph_summary: self.graph_summary
+            ,
         }
     }
 }
+

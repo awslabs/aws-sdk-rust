@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateListInput {
+pub struct UpdateListInput  {
     /// <p>The name of the list to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    pub elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub elements: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The new description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The update mode (type).</p>
@@ -25,20 +25,21 @@ pub struct UpdateListInput {
     /// </note>
     pub variable_type: ::std::option::Option<::std::string::String>,
 }
-impl UpdateListInput {
+impl  UpdateListInput  {
     /// <p>The name of the list to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
-    pub fn elements(&self) -> &[::std::string::String] {
-        self.elements.as_deref().unwrap_or_default()
+    pub fn elements(&self) -> & [::std::string::String] {
+        self.elements.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The new description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The update mode (type).</p>
@@ -50,13 +51,13 @@ impl UpdateListInput {
     /// <li>
     /// <p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
-    pub fn update_mode(&self) -> ::std::option::Option<&crate::types::ListUpdateMode> {
+    pub fn update_mode(&self) -> ::std::option::Option<& crate::types::ListUpdateMode> {
         self.update_mode.as_ref()
     }
     /// <p>The variable type you want to assign to the list.</p><note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
-    pub fn variable_type(&self) -> ::std::option::Option<&str> {
+    pub fn variable_type(&self) -> ::std::option::Option<& str> {
         self.variable_type.as_deref()
     }
 }
@@ -72,7 +73,7 @@ impl UpdateListInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateListInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) elements: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) update_mode: ::std::option::Option<crate::types::ListUpdateMode>,
     pub(crate) variable_type: ::std::option::Option<::std::string::String>,
@@ -86,8 +87,7 @@ impl UpdateListInputBuilder {
     }
     /// <p>The name of the list to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the list to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,19 +101,18 @@ impl UpdateListInputBuilder {
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
     pub fn elements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.elements.unwrap_or_default();
-        v.push(input.into());
-        self.elements = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.elements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.elements = input;
-        self
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.elements = input; self
     }
     /// <p>One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use.</p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.elements
     }
     /// <p>The new description.</p>
@@ -123,8 +122,7 @@ impl UpdateListInputBuilder {
     }
     /// <p>The new description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +151,7 @@ impl UpdateListInputBuilder {
     /// <p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn set_update_mode(mut self, input: ::std::option::Option<crate::types::ListUpdateMode>) -> Self {
-        self.update_mode = input;
-        self
+        self.update_mode = input; self
     }
     /// <p>The update mode (type).</p>
     /// <ul>
@@ -179,8 +176,7 @@ impl UpdateListInputBuilder {
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variable_type = input;
-        self
+        self.variable_type = input; self
     }
     /// <p>The variable type you want to assign to the list.</p><note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
@@ -190,12 +186,20 @@ impl UpdateListInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateListInput`](crate::operation::update_list::UpdateListInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_list::UpdateListInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_list::UpdateListInput {
-            name: self.name,
-            elements: self.elements,
-            description: self.description,
-            update_mode: self.update_mode,
-            variable_type: self.variable_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_list::UpdateListInput {
+                name: self.name
+                ,
+                elements: self.elements
+                ,
+                description: self.description
+                ,
+                update_mode: self.update_mode
+                ,
+                variable_type: self.variable_type
+                ,
+            }
+        )
     }
 }
+

@@ -3,24 +3,26 @@
 /// <p>The status of the user group update.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserGroupsUpdateStatus {
+pub struct UserGroupsUpdateStatus  {
     /// <p>The ID of the user group to add.</p>
-    pub user_group_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_group_ids_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the user group to remove.</p>
-    pub user_group_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_group_ids_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UserGroupsUpdateStatus {
+impl  UserGroupsUpdateStatus  {
     /// <p>The ID of the user group to add.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_group_ids_to_add.is_none()`.
-    pub fn user_group_ids_to_add(&self) -> &[::std::string::String] {
-        self.user_group_ids_to_add.as_deref().unwrap_or_default()
+    pub fn user_group_ids_to_add(&self) -> & [::std::string::String] {
+        self.user_group_ids_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the user group to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_group_ids_to_remove.is_none()`.
-    pub fn user_group_ids_to_remove(&self) -> &[::std::string::String] {
-        self.user_group_ids_to_remove.as_deref().unwrap_or_default()
+    pub fn user_group_ids_to_remove(&self) -> & [::std::string::String] {
+        self.user_group_ids_to_remove.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UserGroupsUpdateStatus {
@@ -34,8 +36,8 @@ impl UserGroupsUpdateStatus {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserGroupsUpdateStatusBuilder {
-    pub(crate) user_group_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_group_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_group_ids_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) user_group_ids_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UserGroupsUpdateStatusBuilder {
     /// Appends an item to `user_group_ids_to_add`.
@@ -45,17 +47,16 @@ impl UserGroupsUpdateStatusBuilder {
     /// <p>The ID of the user group to add.</p>
     pub fn user_group_ids_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_group_ids_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.user_group_ids_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_group_ids_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the user group to add.</p>
-    pub fn set_user_group_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_group_ids_to_add = input;
-        self
+    pub fn set_user_group_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_group_ids_to_add = input; self
     }
     /// <p>The ID of the user group to add.</p>
-    pub fn get_user_group_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_group_ids_to_add
     }
     /// Appends an item to `user_group_ids_to_remove`.
@@ -65,24 +66,26 @@ impl UserGroupsUpdateStatusBuilder {
     /// <p>The ID of the user group to remove.</p>
     pub fn user_group_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_group_ids_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.user_group_ids_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_group_ids_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the user group to remove.</p>
-    pub fn set_user_group_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_group_ids_to_remove = input;
-        self
+    pub fn set_user_group_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_group_ids_to_remove = input; self
     }
     /// <p>The ID of the user group to remove.</p>
-    pub fn get_user_group_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_group_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_group_ids_to_remove
     }
     /// Consumes the builder and constructs a [`UserGroupsUpdateStatus`](crate::types::UserGroupsUpdateStatus).
     pub fn build(self) -> crate::types::UserGroupsUpdateStatus {
         crate::types::UserGroupsUpdateStatus {
-            user_group_ids_to_add: self.user_group_ids_to_add,
-            user_group_ids_to_remove: self.user_group_ids_to_remove,
+            user_group_ids_to_add: self.user_group_ids_to_add
+            ,
+            user_group_ids_to_remove: self.user_group_ids_to_remove
+            ,
         }
     }
 }
+

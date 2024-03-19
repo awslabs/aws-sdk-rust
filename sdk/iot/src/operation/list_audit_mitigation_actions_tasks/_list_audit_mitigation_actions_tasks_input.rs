@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAuditMitigationActionsTasksInput {
+pub struct ListAuditMitigationActionsTasksInput  {
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
     pub audit_task_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
@@ -18,17 +18,17 @@ pub struct ListAuditMitigationActionsTasksInput {
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListAuditMitigationActionsTasksInput {
+impl  ListAuditMitigationActionsTasksInput  {
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
-    pub fn audit_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn audit_task_id(&self) -> ::std::option::Option<& str> {
         self.audit_task_id.as_deref()
     }
     /// <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
-    pub fn finding_id(&self) -> ::std::option::Option<&str> {
+    pub fn finding_id(&self) -> ::std::option::Option<& str> {
         self.finding_id.as_deref()
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
-    pub fn task_status(&self) -> ::std::option::Option<&crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<& crate::types::AuditMitigationActionsTaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -36,15 +36,15 @@ impl ListAuditMitigationActionsTasksInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
     }
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
     pub fn set_audit_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audit_task_id = input;
-        self
+        self.audit_task_id = input; self
     }
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
     pub fn get_audit_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
     }
     /// <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
     pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>) -> Self {
-        self.task_status = input;
-        self
+        self.task_status = input; self
     }
     /// <p>Specify this filter to limit results to tasks that are in a specific state.</p>
     pub fn get_task_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
@@ -117,8 +114,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -131,8 +127,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
     }
     /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -161,30 +155,32 @@ impl ListAuditMitigationActionsTasksInputBuilder {
     }
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`ListAuditMitigationActionsTasksInput`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksInput {
-                audit_task_id: self.audit_task_id,
-                finding_id: self.finding_id,
-                task_status: self.task_status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                start_time: self.start_time,
-                end_time: self.end_time,
-            },
+                audit_task_id: self.audit_task_id
+                ,
+                finding_id: self.finding_id
+                ,
+                task_status: self.task_status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
         )
     }
 }
+

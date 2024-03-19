@@ -3,28 +3,29 @@
 /// <p>Defines an installment-based pricing model where customers are charged a fixed price on different dates during the agreement validity period. This is used most commonly for flexible payment schedule pricing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PaymentScheduleTerm {
+pub struct PaymentScheduleTerm  {
     /// <p>Type of the term.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>List of the payment schedule where each element defines one installment of payment. It contains the information necessary for calculating the price.</p>
-    pub schedule: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleItem>>,
+    pub schedule: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleItem>>,
 }
-impl PaymentScheduleTerm {
+impl  PaymentScheduleTerm  {
     /// <p>Type of the term.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>List of the payment schedule where each element defines one installment of payment. It contains the information necessary for calculating the price.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule.is_none()`.
-    pub fn schedule(&self) -> &[crate::types::ScheduleItem] {
-        self.schedule.as_deref().unwrap_or_default()
+    pub fn schedule(&self) -> & [crate::types::ScheduleItem] {
+        self.schedule.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PaymentScheduleTerm {
@@ -40,7 +41,7 @@ impl PaymentScheduleTerm {
 pub struct PaymentScheduleTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
-    pub(crate) schedule: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleItem>>,
+    pub(crate) schedule: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleItem>>,
 }
 impl PaymentScheduleTermBuilder {
     /// <p>Type of the term.</p>
@@ -50,8 +51,7 @@ impl PaymentScheduleTermBuilder {
     }
     /// <p>Type of the term.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of the term.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl PaymentScheduleTermBuilder {
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl PaymentScheduleTermBuilder {
     /// <p>List of the payment schedule where each element defines one installment of payment. It contains the information necessary for calculating the price.</p>
     pub fn schedule(mut self, input: crate::types::ScheduleItem) -> Self {
         let mut v = self.schedule.unwrap_or_default();
-        v.push(input);
-        self.schedule = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schedule = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the payment schedule where each element defines one installment of payment. It contains the information necessary for calculating the price.</p>
-    pub fn set_schedule(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleItem>>) -> Self {
-        self.schedule = input;
-        self
+    pub fn set_schedule(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleItem>>) -> Self {
+        self.schedule = input; self
     }
     /// <p>List of the payment schedule where each element defines one installment of payment. It contains the information necessary for calculating the price.</p>
-    pub fn get_schedule(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleItem>> {
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduleItem>> {
         &self.schedule
     }
     /// Consumes the builder and constructs a [`PaymentScheduleTerm`](crate::types::PaymentScheduleTerm).
     pub fn build(self) -> crate::types::PaymentScheduleTerm {
         crate::types::PaymentScheduleTerm {
-            r#type: self.r#type,
-            currency_code: self.currency_code,
-            schedule: self.schedule,
+            r#type: self.r#type
+            ,
+            currency_code: self.currency_code
+            ,
+            schedule: self.schedule
+            ,
         }
     }
 }
+

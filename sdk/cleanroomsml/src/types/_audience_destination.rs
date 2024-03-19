@@ -3,13 +3,13 @@
 /// <p>Defines the Amazon S3 bucket where the configured audience is stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceDestination {
+pub struct AudienceDestination  {
     /// <p>The Amazon S3 bucket and path for the configured audience.</p>
     pub s3_destination: ::std::option::Option<crate::types::S3ConfigMap>,
 }
-impl AudienceDestination {
+impl  AudienceDestination  {
     /// <p>The Amazon S3 bucket and path for the configured audience.</p>
-    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3ConfigMap> {
+    pub fn s3_destination(&self) -> ::std::option::Option<& crate::types::S3ConfigMap> {
         self.s3_destination.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl AudienceDestinationBuilder {
     }
     /// <p>The Amazon S3 bucket and path for the configured audience.</p>
     pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3ConfigMap>) -> Self {
-        self.s3_destination = input;
-        self
+        self.s3_destination = input; self
     }
     /// <p>The Amazon S3 bucket and path for the configured audience.</p>
     pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3ConfigMap> {
@@ -45,7 +44,9 @@ impl AudienceDestinationBuilder {
     /// Consumes the builder and constructs a [`AudienceDestination`](crate::types::AudienceDestination).
     pub fn build(self) -> crate::types::AudienceDestination {
         crate::types::AudienceDestination {
-            s3_destination: self.s3_destination,
+            s3_destination: self.s3_destination
+            ,
         }
     }
 }
+

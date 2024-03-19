@@ -3,7 +3,7 @@
 /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginRequestPolicyHeadersConfig {
+pub struct OriginRequestPolicyHeadersConfig  {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ pub struct OriginRequestPolicyHeadersConfig {
     /// <p>Contains a list of HTTP header names.</p>
     pub headers: ::std::option::Option<crate::types::Headers>,
 }
-impl OriginRequestPolicyHeadersConfig {
+impl  OriginRequestPolicyHeadersConfig  {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -35,11 +35,11 @@ impl OriginRequestPolicyHeadersConfig {
     /// <li>
     /// <p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
     /// </ul>
-    pub fn header_behavior(&self) -> &crate::types::OriginRequestPolicyHeaderBehavior {
+    pub fn header_behavior(&self) -> & crate::types::OriginRequestPolicyHeaderBehavior {
         &self.header_behavior
     }
     /// <p>Contains a list of HTTP header names.</p>
-    pub fn headers(&self) -> ::std::option::Option<&crate::types::Headers> {
+    pub fn headers(&self) -> ::std::option::Option<& crate::types::Headers> {
         self.headers.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl OriginRequestPolicyHeadersConfigBuilder {
     /// <p><code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p></li>
     /// </ul>
     pub fn set_header_behavior(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>) -> Self {
-        self.header_behavior = input;
-        self
+        self.header_behavior = input; self
     }
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -116,8 +115,7 @@ impl OriginRequestPolicyHeadersConfigBuilder {
     }
     /// <p>Contains a list of HTTP header names.</p>
     pub fn set_headers(mut self, input: ::std::option::Option<crate::types::Headers>) -> Self {
-        self.headers = input;
-        self
+        self.headers = input; self
     }
     /// <p>Contains a list of HTTP header names.</p>
     pub fn get_headers(&self) -> &::std::option::Option<crate::types::Headers> {
@@ -127,14 +125,17 @@ impl OriginRequestPolicyHeadersConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`header_behavior`](crate::types::builders::OriginRequestPolicyHeadersConfigBuilder::header_behavior)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicyHeadersConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginRequestPolicyHeadersConfig {
-            header_behavior: self.header_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "header_behavior",
-                    "header_behavior was not specified but it is required when building OriginRequestPolicyHeadersConfig",
-                )
-            })?,
-            headers: self.headers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginRequestPolicyHeadersConfig {
+                header_behavior: self.header_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("header_behavior", "header_behavior was not specified but it is required when building OriginRequestPolicyHeadersConfig")
+                    )?
+                ,
+                headers: self.headers
+                ,
+            }
+        )
     }
 }
+

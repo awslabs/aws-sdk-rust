@@ -3,23 +3,22 @@
 /// <p>Represents a unique message ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendRawEmailOutput {
+pub struct SendRawEmailOutput  {
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
     pub message_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl SendRawEmailOutput {
+impl  SendRawEmailOutput  {
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
-    pub fn message_id(&self) -> &str {
-        use std::ops::Deref;
-        self.message_id.deref()
+    pub fn message_id(&self) -> & str {
+        use std::ops::Deref; self.message_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SendRawEmailOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendRawEmailOutput {
     /// Creates a new builder-style object to manufacture [`SendRawEmailOutput`](crate::operation::send_raw_email::SendRawEmailOutput).
     pub fn builder() -> crate::operation::send_raw_email::builders::SendRawEmailOutputBuilder {
@@ -43,36 +42,35 @@ impl SendRawEmailOutputBuilder {
     }
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendRawEmailOutput`](crate::operation::send_raw_email::SendRawEmailOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`message_id`](crate::operation::send_raw_email::builders::SendRawEmailOutputBuilder::message_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::send_raw_email::SendRawEmailOutput {
-            message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_id",
-                    "message_id was not specified but it is required when building SendRawEmailOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_raw_email::SendRawEmailOutput {
+                message_id: self.message_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_id", "message_id was not specified but it is required when building SendRawEmailOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

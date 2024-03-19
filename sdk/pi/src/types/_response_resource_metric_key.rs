@@ -3,7 +3,7 @@
 /// <p>An object describing a Performance Insights metric and one or more dimensions for that metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseResourceMetricKey {
+pub struct ResponseResourceMetricKey  {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
@@ -17,9 +17,9 @@ pub struct ResponseResourceMetricKey {
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub metric: ::std::string::String,
     /// <p>The valid dimensions for the metric.</p>
-    pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub dimensions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ResponseResourceMetricKey {
+impl  ResponseResourceMetricKey  {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
@@ -31,12 +31,11 @@ impl ResponseResourceMetricKey {
     /// <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
-    pub fn metric(&self) -> &str {
-        use std::ops::Deref;
-        self.metric.deref()
+    pub fn metric(&self) -> & str {
+        use std::ops::Deref; self.metric.deref()
     }
     /// <p>The valid dimensions for the metric.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn dimensions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.dimensions.as_ref()
     }
 }
@@ -52,7 +51,7 @@ impl ResponseResourceMetricKey {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseResourceMetricKeyBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ResponseResourceMetricKeyBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -83,8 +82,7 @@ impl ResponseResourceMetricKeyBuilder {
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -107,31 +105,33 @@ impl ResponseResourceMetricKeyBuilder {
     /// <p>The valid dimensions for the metric.</p>
     pub fn dimensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.dimensions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.dimensions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The valid dimensions for the metric.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>The valid dimensions for the metric.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`ResponseResourceMetricKey`](crate::types::ResponseResourceMetricKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`metric`](crate::types::builders::ResponseResourceMetricKeyBuilder::metric)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseResourceMetricKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseResourceMetricKey {
-            metric: self.metric.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric",
-                    "metric was not specified but it is required when building ResponseResourceMetricKey",
-                )
-            })?,
-            dimensions: self.dimensions,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseResourceMetricKey {
+                metric: self.metric
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metric", "metric was not specified but it is required when building ResponseResourceMetricKey")
+                    )?
+                ,
+                dimensions: self.dimensions
+                ,
+            }
+        )
     }
 }
+

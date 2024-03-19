@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateSyncStatusInput {
+pub struct GetTemplateSyncStatusInput  {
     /// <p>The template name.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The template type.</p>
@@ -10,17 +10,17 @@ pub struct GetTemplateSyncStatusInput {
     /// <p>The template major version.</p>
     pub template_version: ::std::option::Option<::std::string::String>,
 }
-impl GetTemplateSyncStatusInput {
+impl  GetTemplateSyncStatusInput  {
     /// <p>The template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The template type.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
+    pub fn template_type(&self) -> ::std::option::Option<& crate::types::TemplateType> {
         self.template_type.as_ref()
     }
     /// <p>The template major version.</p>
-    pub fn template_version(&self) -> ::std::option::Option<&str> {
+    pub fn template_version(&self) -> ::std::option::Option<& str> {
         self.template_version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetTemplateSyncStatusInputBuilder {
     }
     /// <p>The template name.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The template name.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetTemplateSyncStatusInputBuilder {
     }
     /// <p>The template type.</p>
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
-        self.template_type = input;
-        self
+        self.template_type = input; self
     }
     /// <p>The template type.</p>
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
@@ -78,22 +76,24 @@ impl GetTemplateSyncStatusInputBuilder {
     }
     /// <p>The template major version.</p>
     pub fn set_template_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_version = input;
-        self
+        self.template_version = input; self
     }
     /// <p>The template major version.</p>
     pub fn get_template_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_version
     }
     /// Consumes the builder and constructs a [`GetTemplateSyncStatusInput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_template_sync_status::GetTemplateSyncStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_template_sync_status::GetTemplateSyncStatusInput {
-            template_name: self.template_name,
-            template_type: self.template_type,
-            template_version: self.template_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template_sync_status::GetTemplateSyncStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_template_sync_status::GetTemplateSyncStatusInput {
+                template_name: self.template_name
+                ,
+                template_type: self.template_type
+                ,
+                template_version: self.template_version
+                ,
+            }
+        )
     }
 }
+

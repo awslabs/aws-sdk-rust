@@ -24,11 +24,7 @@ impl AudioStream {
     /// Tries to convert the enum instance into [`AudioEvent`](crate::types::AudioStream::AudioEvent), extracting the inner [`AudioEvent`](crate::types::AudioEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_audio_event(&self) -> ::std::result::Result<&crate::types::AudioEvent, &Self> {
-        if let AudioStream::AudioEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AudioStream::AudioEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AudioEvent`](crate::types::AudioStream::AudioEvent).
     pub fn is_audio_event(&self) -> bool {
@@ -37,11 +33,7 @@ impl AudioStream {
     /// Tries to convert the enum instance into [`ConfigurationEvent`](crate::types::AudioStream::ConfigurationEvent), extracting the inner [`ConfigurationEvent`](crate::types::ConfigurationEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_configuration_event(&self) -> ::std::result::Result<&crate::types::ConfigurationEvent, &Self> {
-        if let AudioStream::ConfigurationEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AudioStream::ConfigurationEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ConfigurationEvent`](crate::types::AudioStream::ConfigurationEvent).
     pub fn is_configuration_event(&self) -> bool {
@@ -52,3 +44,4 @@ impl AudioStream {
         matches!(self, Self::Unknown)
     }
 }
+

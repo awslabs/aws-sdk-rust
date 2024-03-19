@@ -3,22 +3,23 @@
 /// <p>Used when a regular object exists in a <code>Directory</code> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyToPath {
+pub struct PolicyToPath  {
     /// <p>The path that is referenced from the root.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>List of policy objects.</p>
-    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>,
+    pub policies: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyAttachment>>,
 }
-impl PolicyToPath {
+impl  PolicyToPath  {
     /// <p>The path that is referenced from the root.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>List of policy objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
-    pub fn policies(&self) -> &[crate::types::PolicyAttachment] {
-        self.policies.as_deref().unwrap_or_default()
+    pub fn policies(&self) -> & [crate::types::PolicyAttachment] {
+        self.policies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PolicyToPath {
@@ -33,7 +34,7 @@ impl PolicyToPath {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyToPathBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyAttachment>>,
 }
 impl PolicyToPathBuilder {
     /// <p>The path that is referenced from the root.</p>
@@ -43,8 +44,7 @@ impl PolicyToPathBuilder {
     }
     /// <p>The path that is referenced from the root.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path that is referenced from the root.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl PolicyToPathBuilder {
     /// <p>List of policy objects.</p>
     pub fn policies(mut self, input: crate::types::PolicyAttachment) -> Self {
         let mut v = self.policies.unwrap_or_default();
-        v.push(input);
-        self.policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of policy objects.</p>
-    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyAttachment>>) -> Self {
+        self.policies = input; self
     }
     /// <p>List of policy objects.</p>
-    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyAttachment>> {
         &self.policies
     }
     /// Consumes the builder and constructs a [`PolicyToPath`](crate::types::PolicyToPath).
     pub fn build(self) -> crate::types::PolicyToPath {
         crate::types::PolicyToPath {
-            path: self.path,
-            policies: self.policies,
+            path: self.path
+            ,
+            policies: self.policies
+            ,
         }
     }
 }
+

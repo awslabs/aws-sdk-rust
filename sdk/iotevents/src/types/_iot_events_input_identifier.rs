@@ -3,15 +3,14 @@
 /// <p>The identifier of the input routed to AWS IoT Events.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotEventsInputIdentifier {
+pub struct IotEventsInputIdentifier  {
     /// <p>The name of the input routed to AWS IoT Events.</p>
     pub input_name: ::std::string::String,
 }
-impl IotEventsInputIdentifier {
+impl  IotEventsInputIdentifier  {
     /// <p>The name of the input routed to AWS IoT Events.</p>
-    pub fn input_name(&self) -> &str {
-        use std::ops::Deref;
-        self.input_name.deref()
+    pub fn input_name(&self) -> & str {
+        use std::ops::Deref; self.input_name.deref()
     }
 }
 impl IotEventsInputIdentifier {
@@ -36,8 +35,7 @@ impl IotEventsInputIdentifierBuilder {
     }
     /// <p>The name of the input routed to AWS IoT Events.</p>
     pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// <p>The name of the input routed to AWS IoT Events.</p>
     pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl IotEventsInputIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`input_name`](crate::types::builders::IotEventsInputIdentifierBuilder::input_name)
     pub fn build(self) -> ::std::result::Result<crate::types::IotEventsInputIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IotEventsInputIdentifier {
-            input_name: self.input_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_name",
-                    "input_name was not specified but it is required when building IotEventsInputIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IotEventsInputIdentifier {
+                input_name: self.input_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_name", "input_name was not specified but it is required when building IotEventsInputIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

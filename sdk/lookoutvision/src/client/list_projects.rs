@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProjects`](crate::operation::list_projects::builders::ListProjectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of projects.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p><br>
-    /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
+                            /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
     ///   - [`projects(Option<Vec::<ProjectMetadata>>)`](crate::operation::list_projects::ListProjectsOutput::projects): <p>A list of projects in your AWS account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
-    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
+                            /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
     pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
-        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

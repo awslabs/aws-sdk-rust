@@ -3,7 +3,7 @@
 /// <p>The status of an Amazon Web Services Organization and the accounts within that organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationStatus {
+pub struct OrganizationStatus  {
     /// <p>The ID of an Amazon Web Services Organization.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
@@ -11,26 +11,27 @@ pub struct OrganizationStatus {
     /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub slr_deployment_status: ::std::option::Option<::std::string::String>,
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
-    pub account_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountStatus>>,
+    pub account_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::AccountStatus>>,
 }
-impl OrganizationStatus {
+impl  OrganizationStatus  {
     /// <p>The ID of an Amazon Web Services Organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    pub fn organization_aws_service_access_status(&self) -> ::std::option::Option<&str> {
+    pub fn organization_aws_service_access_status(&self) -> ::std::option::Option<& str> {
         self.organization_aws_service_access_status.as_deref()
     }
     /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
-    pub fn slr_deployment_status(&self) -> ::std::option::Option<&str> {
+    pub fn slr_deployment_status(&self) -> ::std::option::Option<& str> {
         self.slr_deployment_status.as_deref()
     }
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_status_list.is_none()`.
-    pub fn account_status_list(&self) -> &[crate::types::AccountStatus] {
-        self.account_status_list.as_deref().unwrap_or_default()
+    pub fn account_status_list(&self) -> & [crate::types::AccountStatus] {
+        self.account_status_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OrganizationStatus {
@@ -47,7 +48,7 @@ pub struct OrganizationStatusBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_aws_service_access_status: ::std::option::Option<::std::string::String>,
     pub(crate) slr_deployment_status: ::std::option::Option<::std::string::String>,
-    pub(crate) account_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountStatus>>,
+    pub(crate) account_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::AccountStatus>>,
 }
 impl OrganizationStatusBuilder {
     /// <p>The ID of an Amazon Web Services Organization.</p>
@@ -57,8 +58,7 @@ impl OrganizationStatusBuilder {
     }
     /// <p>The ID of an Amazon Web Services Organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The ID of an Amazon Web Services Organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl OrganizationStatusBuilder {
     }
     /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_organization_aws_service_access_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_aws_service_access_status = input;
-        self
+        self.organization_aws_service_access_status = input; self
     }
     /// <p>The status of the organization's AWS service access. This will be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn get_organization_aws_service_access_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl OrganizationStatusBuilder {
     }
     /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub fn set_slr_deployment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slr_deployment_status = input;
-        self
+        self.slr_deployment_status = input; self
     }
     /// <p>The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub fn get_slr_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl OrganizationStatusBuilder {
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
     pub fn account_status_list(mut self, input: crate::types::AccountStatus) -> Self {
         let mut v = self.account_status_list.unwrap_or_default();
-        v.push(input);
-        self.account_status_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_status_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
-    pub fn set_account_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountStatus>>) -> Self {
-        self.account_status_list = input;
-        self
+    pub fn set_account_status_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountStatus>>) -> Self {
+        self.account_status_list = input; self
     }
     /// <p>The current service-linked role (SLR) deployment status for an Amazon Web Services Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.</p>
-    pub fn get_account_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountStatus>> {
+    pub fn get_account_status_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountStatus>> {
         &self.account_status_list
     }
     /// Consumes the builder and constructs a [`OrganizationStatus`](crate::types::OrganizationStatus).
     pub fn build(self) -> crate::types::OrganizationStatus {
         crate::types::OrganizationStatus {
-            organization_id: self.organization_id,
-            organization_aws_service_access_status: self.organization_aws_service_access_status,
-            slr_deployment_status: self.slr_deployment_status,
-            account_status_list: self.account_status_list,
+            organization_id: self.organization_id
+            ,
+            organization_aws_service_access_status: self.organization_aws_service_access_status
+            ,
+            slr_deployment_status: self.slr_deployment_status
+            ,
+            account_status_list: self.account_status_list
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A monthly schedule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonthlySchedule {
+pub struct MonthlySchedule  {
     /// <p>The monthly schedule's start time.</p>
     pub start_time: ::std::option::Option<crate::types::Time>,
     /// <p>The monthly schedule's day.</p>
     pub day: crate::types::Day,
 }
-impl MonthlySchedule {
+impl  MonthlySchedule  {
     /// <p>The monthly schedule's start time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&crate::types::Time> {
+    pub fn start_time(&self) -> ::std::option::Option<& crate::types::Time> {
         self.start_time.as_ref()
     }
     /// <p>The monthly schedule's day.</p>
-    pub fn day(&self) -> &crate::types::Day {
+    pub fn day(&self) -> & crate::types::Day {
         &self.day
     }
 }
@@ -42,8 +42,7 @@ impl MonthlyScheduleBuilder {
     }
     /// <p>The monthly schedule's start time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<crate::types::Time>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The monthly schedule's start time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<crate::types::Time> {
@@ -57,8 +56,7 @@ impl MonthlyScheduleBuilder {
     }
     /// <p>The monthly schedule's day.</p>
     pub fn set_day(mut self, input: ::std::option::Option<crate::types::Day>) -> Self {
-        self.day = input;
-        self
+        self.day = input; self
     }
     /// <p>The monthly schedule's day.</p>
     pub fn get_day(&self) -> &::std::option::Option<crate::types::Day> {
@@ -68,14 +66,17 @@ impl MonthlyScheduleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`day`](crate::types::builders::MonthlyScheduleBuilder::day)
     pub fn build(self) -> ::std::result::Result<crate::types::MonthlySchedule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MonthlySchedule {
-            start_time: self.start_time,
-            day: self.day.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "day",
-                    "day was not specified but it is required when building MonthlySchedule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MonthlySchedule {
+                start_time: self.start_time
+                ,
+                day: self.day
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("day", "day was not specified but it is required when building MonthlySchedule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

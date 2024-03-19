@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInstances`](crate::operation::list_instances::builders::ListInstancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput) with field(s):
+                            /// - On success, responds with [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput) with field(s):
     ///   - [`instance_summary_list(Option<Vec::<InstanceSummary>>)`](crate::operation::list_instances::ListInstancesOutput::instance_summary_list): <p>Information about the instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instances::ListInstancesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::operation::list_instances::ListInstancesError)
+                            /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::operation::list_instances::ListInstancesError)
     pub fn list_instances(&self) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
-        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

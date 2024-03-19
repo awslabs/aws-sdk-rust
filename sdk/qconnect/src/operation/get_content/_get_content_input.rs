@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContentInput {
+pub struct GetContentInput  {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
-impl GetContentInput {
+impl  GetContentInput  {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn content_id(&self) -> ::std::option::Option<&str> {
+    pub fn content_id(&self) -> ::std::option::Option<& str> {
         self.content_id.as_deref()
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetContentInputBuilder {
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_content_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_id = input;
-        self
+        self.content_id = input; self
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetContentInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetContentInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetContentInput`](crate::operation::get_content::GetContentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_content::GetContentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_content::GetContentInput {
-            content_id: self.content_id,
-            knowledge_base_id: self.knowledge_base_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_content::GetContentInput {
+                content_id: self.content_id
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+            }
+        )
     }
 }
+

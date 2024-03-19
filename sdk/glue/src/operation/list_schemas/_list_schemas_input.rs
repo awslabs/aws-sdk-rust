@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSchemasInput {
+pub struct ListSchemasInput  {
     /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub registry_id: ::std::option::Option<crate::types::RegistryId>,
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -10,9 +10,9 @@ pub struct ListSchemasInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListSchemasInput {
+impl  ListSchemasInput  {
     /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&crate::types::RegistryId> {
+    pub fn registry_id(&self) -> ::std::option::Option<& crate::types::RegistryId> {
         self.registry_id.as_ref()
     }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -20,7 +20,7 @@ impl ListSchemasInput {
         self.max_results
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<crate::types::RegistryId>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<crate::types::RegistryId> {
@@ -61,8 +60,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,8 +73,7 @@ impl ListSchemasInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,10 +81,16 @@ impl ListSchemasInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
-            registry_id: self.registry_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_schemas::ListSchemasInput {
+                registry_id: self.registry_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

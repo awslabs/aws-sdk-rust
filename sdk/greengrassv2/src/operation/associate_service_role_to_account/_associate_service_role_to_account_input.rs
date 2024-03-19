@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateServiceRoleToAccountInput {
+pub struct AssociateServiceRoleToAccountInput  {
     /// <p>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateServiceRoleToAccountInput {
+impl  AssociateServiceRoleToAccountInput  {
     /// <p>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl AssociateServiceRoleToAccountInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`AssociateServiceRoleToAccountInput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput { role_arn: self.role_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput {
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

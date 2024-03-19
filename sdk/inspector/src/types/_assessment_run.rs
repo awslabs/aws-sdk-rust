@@ -4,7 +4,7 @@
 /// <p>Used as the response element in the <code>DescribeAssessmentRuns</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentRun {
+pub struct AssessmentRun  {
     /// <p>The ARN of the assessment run.</p>
     pub arn: ::std::string::String,
     /// <p>The auto-generated name for the assessment run.</p>
@@ -16,9 +16,9 @@ pub struct AssessmentRun {
     /// <p>The duration of the assessment run.</p>
     pub duration_in_seconds: i32,
     /// <p>The rules packages selected for the assessment run.</p>
-    pub rules_package_arns: ::std::vec::Vec<::std::string::String>,
+    pub rules_package_arns: ::std::vec::Vec::<::std::string::String>,
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub user_attributes_for_findings: ::std::vec::Vec<crate::types::Attribute>,
+    pub user_attributes_for_findings: ::std::vec::Vec::<crate::types::Attribute>,
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
@@ -30,30 +30,27 @@ pub struct AssessmentRun {
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
     pub data_collected: bool,
     /// <p>A list of the assessment run state changes.</p>
-    pub state_changes: ::std::vec::Vec<crate::types::AssessmentRunStateChange>,
+    pub state_changes: ::std::vec::Vec::<crate::types::AssessmentRunStateChange>,
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub notifications: ::std::vec::Vec<crate::types::AssessmentRunNotification>,
+    pub notifications: ::std::vec::Vec::<crate::types::AssessmentRunNotification>,
     /// <p>Provides a total count of generated findings per severity.</p>
-    pub finding_counts: ::std::collections::HashMap<crate::types::Severity, i32>,
+    pub finding_counts: ::std::collections::HashMap::<crate::types::Severity, i32>,
 }
-impl AssessmentRun {
+impl  AssessmentRun  {
     /// <p>The ARN of the assessment run.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The auto-generated name for the assessment run.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
-    pub fn assessment_template_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_template_arn.deref()
+    pub fn assessment_template_arn(&self) -> & str {
+        use std::ops::Deref; self.assessment_template_arn.deref()
     }
     /// <p>The state of the assessment run.</p>
-    pub fn state(&self) -> &crate::types::AssessmentRunState {
+    pub fn state(&self) -> & crate::types::AssessmentRunState {
         &self.state
     }
     /// <p>The duration of the assessment run.</p>
@@ -61,29 +58,27 @@ impl AssessmentRun {
         self.duration_in_seconds
     }
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn rules_package_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.rules_package_arns.deref()
+    pub fn rules_package_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.rules_package_arns.deref()
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub fn user_attributes_for_findings(&self) -> &[crate::types::Attribute] {
-        use std::ops::Deref;
-        self.user_attributes_for_findings.deref()
+    pub fn user_attributes_for_findings(&self) -> & [crate::types::Attribute] {
+        use std::ops::Deref; self.user_attributes_for_findings.deref()
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
-    pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>The last time when the assessment run's state changed.</p>
-    pub fn state_changed_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn state_changed_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.state_changed_at
     }
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
@@ -91,17 +86,15 @@ impl AssessmentRun {
         self.data_collected
     }
     /// <p>A list of the assessment run state changes.</p>
-    pub fn state_changes(&self) -> &[crate::types::AssessmentRunStateChange] {
-        use std::ops::Deref;
-        self.state_changes.deref()
+    pub fn state_changes(&self) -> & [crate::types::AssessmentRunStateChange] {
+        use std::ops::Deref; self.state_changes.deref()
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub fn notifications(&self) -> &[crate::types::AssessmentRunNotification] {
-        use std::ops::Deref;
-        self.notifications.deref()
+    pub fn notifications(&self) -> & [crate::types::AssessmentRunNotification] {
+        use std::ops::Deref; self.notifications.deref()
     }
     /// <p>Provides a total count of generated findings per severity.</p>
-    pub fn finding_counts(&self) -> &::std::collections::HashMap<crate::types::Severity, i32> {
+    pub fn finding_counts(&self) -> & ::std::collections::HashMap::<crate::types::Severity, i32> {
         &self.finding_counts
     }
 }
@@ -121,16 +114,16 @@ pub struct AssessmentRunBuilder {
     pub(crate) assessment_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::AssessmentRunState>,
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
-    pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_attributes_for_findings: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) user_attributes_for_findings: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_collected: ::std::option::Option<bool>,
-    pub(crate) state_changes: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
-    pub(crate) notifications: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
-    pub(crate) finding_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
+    pub(crate) state_changes: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunStateChange>>,
+    pub(crate) notifications: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunNotification>>,
+    pub(crate) finding_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Severity, i32>>,
 }
 impl AssessmentRunBuilder {
     /// <p>The ARN of the assessment run.</p>
@@ -141,8 +134,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The ARN of the assessment run.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the assessment run.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +148,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The auto-generated name for the assessment run.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The auto-generated name for the assessment run.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +162,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
     pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_template_arn = input;
-        self
+        self.assessment_template_arn = input; self
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
     pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +176,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The state of the assessment run.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AssessmentRunState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the assessment run.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AssessmentRunState> {
@@ -201,8 +190,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The duration of the assessment run.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// <p>The duration of the assessment run.</p>
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -215,17 +203,16 @@ impl AssessmentRunBuilder {
     /// <p>The rules packages selected for the assessment run.</p>
     pub fn rules_package_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
-        v.push(input.into());
-        self.rules_package_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rules_package_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rules_package_arns = input;
-        self
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rules_package_arns = input; self
     }
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rules_package_arns
     }
     /// Appends an item to `user_attributes_for_findings`.
@@ -235,17 +222,16 @@ impl AssessmentRunBuilder {
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
     pub fn user_attributes_for_findings(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.user_attributes_for_findings.unwrap_or_default();
-        v.push(input);
-        self.user_attributes_for_findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_attributes_for_findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub fn set_user_attributes_for_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.user_attributes_for_findings = input;
-        self
+    pub fn set_user_attributes_for_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.user_attributes_for_findings = input; self
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub fn get_user_attributes_for_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_user_attributes_for_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.user_attributes_for_findings
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
@@ -256,8 +242,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -270,8 +255,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -284,8 +268,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
     pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_at = input;
-        self
+        self.completed_at = input; self
     }
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
     pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -299,8 +282,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>The last time when the assessment run's state changed.</p>
     pub fn set_state_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.state_changed_at = input;
-        self
+        self.state_changed_at = input; self
     }
     /// <p>The last time when the assessment run's state changed.</p>
     pub fn get_state_changed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -314,8 +296,7 @@ impl AssessmentRunBuilder {
     }
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
     pub fn set_data_collected(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.data_collected = input;
-        self
+        self.data_collected = input; self
     }
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
     pub fn get_data_collected(&self) -> &::std::option::Option<bool> {
@@ -328,17 +309,16 @@ impl AssessmentRunBuilder {
     /// <p>A list of the assessment run state changes.</p>
     pub fn state_changes(mut self, input: crate::types::AssessmentRunStateChange) -> Self {
         let mut v = self.state_changes.unwrap_or_default();
-        v.push(input);
-        self.state_changes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.state_changes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the assessment run state changes.</p>
-    pub fn set_state_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>) -> Self {
-        self.state_changes = input;
-        self
+    pub fn set_state_changes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunStateChange>>) -> Self {
+        self.state_changes = input; self
     }
     /// <p>A list of the assessment run state changes.</p>
-    pub fn get_state_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>> {
+    pub fn get_state_changes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunStateChange>> {
         &self.state_changes
     }
     /// Appends an item to `notifications`.
@@ -348,17 +328,16 @@ impl AssessmentRunBuilder {
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
     pub fn notifications(mut self, input: crate::types::AssessmentRunNotification) -> Self {
         let mut v = self.notifications.unwrap_or_default();
-        v.push(input);
-        self.notifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.notifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>) -> Self {
-        self.notifications = input;
-        self
+    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunNotification>>) -> Self {
+        self.notifications = input; self
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>> {
+    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentRunNotification>> {
         &self.notifications
     }
     /// Adds a key-value pair to `finding_counts`.
@@ -368,17 +347,16 @@ impl AssessmentRunBuilder {
     /// <p>Provides a total count of generated findings per severity.</p>
     pub fn finding_counts(mut self, k: crate::types::Severity, v: i32) -> Self {
         let mut hash_map = self.finding_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.finding_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.finding_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Provides a total count of generated findings per severity.</p>
-    pub fn set_finding_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>) -> Self {
-        self.finding_counts = input;
-        self
+    pub fn set_finding_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Severity, i32>>) -> Self {
+        self.finding_counts = input; self
     }
     /// <p>Provides a total count of generated findings per severity.</p>
-    pub fn get_finding_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>> {
+    pub fn get_finding_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Severity, i32>> {
         &self.finding_counts
     }
     /// Consumes the builder and constructs a [`AssessmentRun`](crate::types::AssessmentRun).
@@ -397,87 +375,79 @@ impl AssessmentRunBuilder {
     /// - [`notifications`](crate::types::builders::AssessmentRunBuilder::notifications)
     /// - [`finding_counts`](crate::types::builders::AssessmentRunBuilder::finding_counts)
     pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRun, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssessmentRun {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            assessment_template_arn: self.assessment_template_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_template_arn",
-                    "assessment_template_arn was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "duration_in_seconds",
-                    "duration_in_seconds was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            rules_package_arns: self.rules_package_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rules_package_arns",
-                    "rules_package_arns was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            user_attributes_for_findings: self.user_attributes_for_findings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_attributes_for_findings",
-                    "user_attributes_for_findings was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            started_at: self.started_at,
-            completed_at: self.completed_at,
-            state_changed_at: self.state_changed_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_changed_at",
-                    "state_changed_at was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            data_collected: self.data_collected.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_collected",
-                    "data_collected was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            state_changes: self.state_changes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_changes",
-                    "state_changes was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            notifications: self.notifications.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "notifications",
-                    "notifications was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-            finding_counts: self.finding_counts.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_counts",
-                    "finding_counts was not specified but it is required when building AssessmentRun",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssessmentRun {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                assessment_template_arn: self.assessment_template_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_template_arn", "assessment_template_arn was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("duration_in_seconds", "duration_in_seconds was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                rules_package_arns: self.rules_package_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rules_package_arns", "rules_package_arns was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                user_attributes_for_findings: self.user_attributes_for_findings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_attributes_for_findings", "user_attributes_for_findings was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                started_at: self.started_at
+                ,
+                completed_at: self.completed_at
+                ,
+                state_changed_at: self.state_changed_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_changed_at", "state_changed_at was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                data_collected: self.data_collected
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_collected", "data_collected was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                state_changes: self.state_changes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_changes", "state_changes was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                notifications: self.notifications
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("notifications", "notifications was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+                finding_counts: self.finding_counts
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_counts", "finding_counts was not specified but it is required when building AssessmentRun")
+                    )?
+                ,
+            }
+        )
     }
 }
+

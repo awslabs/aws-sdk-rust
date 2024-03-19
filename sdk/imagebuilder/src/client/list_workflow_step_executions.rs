@@ -2,12 +2,12 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkflowStepExecutions`](crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum items to return in a request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p><br>
     ///   - [`workflow_execution_id(impl Into<String>)`](crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::workflow_execution_id) / [`set_workflow_execution_id(Option<String>)`](crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::set_workflow_execution_id):<br>required: **true**<br><p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p><br>
-    /// - On success, responds with [`ListWorkflowStepExecutionsOutput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkflowStepExecutionsOutput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`steps(Option<Vec::<WorkflowStepMetadata>>)`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput::steps): <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
     ///   - [`workflow_build_version_arn(Option<String>)`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput::workflow_build_version_arn): <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
@@ -15,10 +15,9 @@ impl super::Client {
     ///   - [`image_build_version_arn(Option<String>)`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput::image_build_version_arn): <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
     ///   - [`message(Option<String>)`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput::message): <p>The output message from the list action, if applicable.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
-    /// - On failure, responds with [`SdkError<ListWorkflowStepExecutionsError>`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError)
-    pub fn list_workflow_step_executions(
-        &self,
-    ) -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder {
-        crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListWorkflowStepExecutionsError>`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError)
+    pub fn list_workflow_step_executions(&self) -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder {
+                                crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

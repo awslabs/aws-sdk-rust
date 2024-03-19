@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAuthorizerInput {
+pub struct DescribeAuthorizerInput  {
     /// <p>The name of the authorizer to describe.</p>
     pub authorizer_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAuthorizerInput {
+impl  DescribeAuthorizerInput  {
     /// <p>The name of the authorizer to describe.</p>
-    pub fn authorizer_name(&self) -> ::std::option::Option<&str> {
+    pub fn authorizer_name(&self) -> ::std::option::Option<& str> {
         self.authorizer_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeAuthorizerInputBuilder {
     }
     /// <p>The name of the authorizer to describe.</p>
     pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorizer_name = input;
-        self
+        self.authorizer_name = input; self
     }
     /// <p>The name of the authorizer to describe.</p>
     pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorizer_name
     }
     /// Consumes the builder and constructs a [`DescribeAuthorizerInput`](crate::operation::describe_authorizer::DescribeAuthorizerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_authorizer::DescribeAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_authorizer::DescribeAuthorizerInput {
-            authorizer_name: self.authorizer_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_authorizer::DescribeAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_authorizer::DescribeAuthorizerInput {
+                authorizer_name: self.authorizer_name
+                ,
+            }
+        )
     }
 }
+

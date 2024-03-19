@@ -3,7 +3,7 @@
 /// <p>The details of the model version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelVersionDetail {
+pub struct ModelVersionDetail  {
     /// <p>The model ID.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
@@ -31,57 +31,57 @@ pub struct ModelVersionDetail {
     /// <p>The training result details. The details include the relative importance of the variables.</p>
     pub training_result_v2: ::std::option::Option<crate::types::TrainingResultV2>,
 }
-impl ModelVersionDetail {
+impl  ModelVersionDetail  {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(&self) -> ::std::option::Option<&str> {
+    pub fn model_version_number(&self) -> ::std::option::Option<& str> {
         self.model_version_number.as_deref()
     }
     /// <p>The status of the model version.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The model version training data source.</p>
-    pub fn training_data_source(&self) -> ::std::option::Option<&crate::types::TrainingDataSourceEnum> {
+    pub fn training_data_source(&self) -> ::std::option::Option<& crate::types::TrainingDataSourceEnum> {
         self.training_data_source.as_ref()
     }
     /// <p>The training data schema.</p>
-    pub fn training_data_schema(&self) -> ::std::option::Option<&crate::types::TrainingDataSchema> {
+    pub fn training_data_schema(&self) -> ::std::option::Option<& crate::types::TrainingDataSchema> {
         self.training_data_schema.as_ref()
     }
     /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>EXTERNAL_EVENTS</code>.</p>
-    pub fn external_events_detail(&self) -> ::std::option::Option<&crate::types::ExternalEventsDetail> {
+    pub fn external_events_detail(&self) -> ::std::option::Option<& crate::types::ExternalEventsDetail> {
         self.external_events_detail.as_ref()
     }
     /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>INGESTED_EVENTS</code>.</p>
-    pub fn ingested_events_detail(&self) -> ::std::option::Option<&crate::types::IngestedEventsDetail> {
+    pub fn ingested_events_detail(&self) -> ::std::option::Option<& crate::types::IngestedEventsDetail> {
         self.ingested_events_detail.as_ref()
     }
     /// <p>The training results.</p>
-    pub fn training_result(&self) -> ::std::option::Option<&crate::types::TrainingResult> {
+    pub fn training_result(&self) -> ::std::option::Option<& crate::types::TrainingResult> {
         self.training_result.as_ref()
     }
     /// <p>The timestamp when the model was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The timestamp when the model was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
     /// <p>The model version ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The training result details. The details include the relative importance of the variables.</p>
-    pub fn training_result_v2(&self) -> ::std::option::Option<&crate::types::TrainingResultV2> {
+    pub fn training_result_v2(&self) -> ::std::option::Option<& crate::types::TrainingResultV2> {
         self.training_result_v2.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The model type.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
     }
     /// <p>The model type.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
@@ -146,8 +144,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The model version number.</p>
     pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version_number = input;
-        self
+        self.model_version_number = input; self
     }
     /// <p>The model version number.</p>
     pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The status of the model version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the model version.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The model version training data source.</p>
     pub fn set_training_data_source(mut self, input: ::std::option::Option<crate::types::TrainingDataSourceEnum>) -> Self {
-        self.training_data_source = input;
-        self
+        self.training_data_source = input; self
     }
     /// <p>The model version training data source.</p>
     pub fn get_training_data_source(&self) -> &::std::option::Option<crate::types::TrainingDataSourceEnum> {
@@ -188,8 +183,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The training data schema.</p>
     pub fn set_training_data_schema(mut self, input: ::std::option::Option<crate::types::TrainingDataSchema>) -> Self {
-        self.training_data_schema = input;
-        self
+        self.training_data_schema = input; self
     }
     /// <p>The training data schema.</p>
     pub fn get_training_data_schema(&self) -> &::std::option::Option<crate::types::TrainingDataSchema> {
@@ -202,8 +196,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>EXTERNAL_EVENTS</code>.</p>
     pub fn set_external_events_detail(mut self, input: ::std::option::Option<crate::types::ExternalEventsDetail>) -> Self {
-        self.external_events_detail = input;
-        self
+        self.external_events_detail = input; self
     }
     /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>EXTERNAL_EVENTS</code>.</p>
     pub fn get_external_events_detail(&self) -> &::std::option::Option<crate::types::ExternalEventsDetail> {
@@ -216,8 +209,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>INGESTED_EVENTS</code>.</p>
     pub fn set_ingested_events_detail(mut self, input: ::std::option::Option<crate::types::IngestedEventsDetail>) -> Self {
-        self.ingested_events_detail = input;
-        self
+        self.ingested_events_detail = input; self
     }
     /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>INGESTED_EVENTS</code>.</p>
     pub fn get_ingested_events_detail(&self) -> &::std::option::Option<crate::types::IngestedEventsDetail> {
@@ -230,8 +222,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The training results.</p>
     pub fn set_training_result(mut self, input: ::std::option::Option<crate::types::TrainingResult>) -> Self {
-        self.training_result = input;
-        self
+        self.training_result = input; self
     }
     /// <p>The training results.</p>
     pub fn get_training_result(&self) -> &::std::option::Option<crate::types::TrainingResult> {
@@ -244,8 +235,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The timestamp when the model was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The timestamp when the model was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +248,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The timestamp when the model was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The timestamp when the model was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +261,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The model version ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The model version ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +274,7 @@ impl ModelVersionDetailBuilder {
     }
     /// <p>The training result details. The details include the relative importance of the variables.</p>
     pub fn set_training_result_v2(mut self, input: ::std::option::Option<crate::types::TrainingResultV2>) -> Self {
-        self.training_result_v2 = input;
-        self
+        self.training_result_v2 = input; self
     }
     /// <p>The training result details. The details include the relative importance of the variables.</p>
     pub fn get_training_result_v2(&self) -> &::std::option::Option<crate::types::TrainingResultV2> {
@@ -296,19 +283,33 @@ impl ModelVersionDetailBuilder {
     /// Consumes the builder and constructs a [`ModelVersionDetail`](crate::types::ModelVersionDetail).
     pub fn build(self) -> crate::types::ModelVersionDetail {
         crate::types::ModelVersionDetail {
-            model_id: self.model_id,
-            model_type: self.model_type,
-            model_version_number: self.model_version_number,
-            status: self.status,
-            training_data_source: self.training_data_source,
-            training_data_schema: self.training_data_schema,
-            external_events_detail: self.external_events_detail,
-            ingested_events_detail: self.ingested_events_detail,
-            training_result: self.training_result,
-            last_updated_time: self.last_updated_time,
-            created_time: self.created_time,
-            arn: self.arn,
-            training_result_v2: self.training_result_v2,
+            model_id: self.model_id
+            ,
+            model_type: self.model_type
+            ,
+            model_version_number: self.model_version_number
+            ,
+            status: self.status
+            ,
+            training_data_source: self.training_data_source
+            ,
+            training_data_schema: self.training_data_schema
+            ,
+            external_events_detail: self.external_events_detail
+            ,
+            ingested_events_detail: self.ingested_events_detail
+            ,
+            training_result: self.training_result
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            created_time: self.created_time
+            ,
+            arn: self.arn
+            ,
+            training_result_v2: self.training_result_v2
+            ,
         }
     }
 }
+

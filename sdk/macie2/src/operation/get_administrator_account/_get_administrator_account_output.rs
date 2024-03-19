@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAdministratorAccountOutput {
+pub struct GetAdministratorAccountOutput  {
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     pub administrator: ::std::option::Option<crate::types::Invitation>,
     _request_id: Option<String>,
 }
-impl GetAdministratorAccountOutput {
+impl  GetAdministratorAccountOutput  {
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
-    pub fn administrator(&self) -> ::std::option::Option<&crate::types::Invitation> {
+    pub fn administrator(&self) -> ::std::option::Option<& crate::types::Invitation> {
         self.administrator.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAdministratorAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAdministratorAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput).
     pub fn builder() -> crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder {
@@ -40,27 +40,28 @@ impl GetAdministratorAccountOutputBuilder {
     }
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     pub fn set_administrator(mut self, input: ::std::option::Option<crate::types::Invitation>) -> Self {
-        self.administrator = input;
-        self
+        self.administrator = input; self
     }
     /// <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
     pub fn get_administrator(&self) -> &::std::option::Option<crate::types::Invitation> {
         &self.administrator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput).
     pub fn build(self) -> crate::operation::get_administrator_account::GetAdministratorAccountOutput {
         crate::operation::get_administrator_account::GetAdministratorAccountOutput {
-            administrator: self.administrator,
+            administrator: self.administrator
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

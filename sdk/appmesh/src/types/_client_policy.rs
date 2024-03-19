@@ -3,13 +3,13 @@
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientPolicy {
+pub struct ClientPolicy  {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     pub tls: ::std::option::Option<crate::types::ClientPolicyTls>,
 }
-impl ClientPolicy {
+impl  ClientPolicy  {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-    pub fn tls(&self) -> ::std::option::Option<&crate::types::ClientPolicyTls> {
+    pub fn tls(&self) -> ::std::option::Option<& crate::types::ClientPolicyTls> {
         self.tls.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ClientPolicyBuilder {
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     pub fn set_tls(mut self, input: ::std::option::Option<crate::types::ClientPolicyTls>) -> Self {
-        self.tls = input;
-        self
+        self.tls = input; self
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     pub fn get_tls(&self) -> &::std::option::Option<crate::types::ClientPolicyTls> {
@@ -43,6 +42,10 @@ impl ClientPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`ClientPolicy`](crate::types::ClientPolicy).
     pub fn build(self) -> crate::types::ClientPolicy {
-        crate::types::ClientPolicy { tls: self.tls }
+        crate::types::ClientPolicy {
+            tls: self.tls
+            ,
+        }
     }
 }
+

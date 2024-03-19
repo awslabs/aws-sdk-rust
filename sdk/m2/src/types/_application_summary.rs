@@ -3,7 +3,7 @@
 /// <p>A subset of the possible application attributes. Used in the application list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The name of the application.</p>
     pub name: ::std::string::String,
     /// <p>The description of the application.</p>
@@ -31,60 +31,57 @@ pub struct ApplicationSummary {
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl ApplicationSummary {
+impl  ApplicationSummary  {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.application_arn.deref()
+    pub fn application_arn(&self) -> & str {
+        use std::ops::Deref; self.application_arn.deref()
     }
     /// <p>The version of the application.</p>
     pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> &crate::types::ApplicationLifecycle {
+    pub fn status(&self) -> & crate::types::ApplicationLifecycle {
         &self.status
     }
     /// <p>The type of the target platform for this application.</p>
-    pub fn engine_type(&self) -> &crate::types::EngineType {
+    pub fn engine_type(&self) -> & crate::types::EngineType {
         &self.engine_type
     }
     /// <p>The timestamp when the application was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
-    pub fn last_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_start_time.as_ref()
     }
     /// <p>Indicates the status of the latest version of the application.</p>
-    pub fn version_status(&self) -> ::std::option::Option<&crate::types::ApplicationVersionLifecycle> {
+    pub fn version_status(&self) -> ::std::option::Option<& crate::types::ApplicationVersionLifecycle> {
         self.version_status.as_ref()
     }
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
-    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::ApplicationDeploymentLifecycle> {
+    pub fn deployment_status(&self) -> ::std::option::Option<& crate::types::ApplicationDeploymentLifecycle> {
         self.deployment_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -122,8 +119,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +132,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The description of the application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +146,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The unique identifier of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +160,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The version of the application.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<i32> {
@@ -196,8 +188,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The status of the application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationLifecycle>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationLifecycle> {
@@ -211,8 +202,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The type of the target platform for this application.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The type of the target platform for this application.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -226,8 +216,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The timestamp when the application was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp when the application was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -240,8 +229,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +242,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     pub fn set_last_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_start_time = input;
-        self
+        self.last_start_time = input; self
     }
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
     pub fn get_last_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -268,8 +255,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>Indicates the status of the latest version of the application.</p>
     pub fn set_version_status(mut self, input: ::std::option::Option<crate::types::ApplicationVersionLifecycle>) -> Self {
-        self.version_status = input;
-        self
+        self.version_status = input; self
     }
     /// <p>Indicates the status of the latest version of the application.</p>
     pub fn get_version_status(&self) -> &::std::option::Option<crate::types::ApplicationVersionLifecycle> {
@@ -282,8 +268,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::ApplicationDeploymentLifecycle>) -> Self {
-        self.deployment_status = input;
-        self
+        self.deployment_status = input; self
     }
     /// <p>Indicates either an ongoing deployment or if the application has ever deployed successfully.</p>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::ApplicationDeploymentLifecycle> {
@@ -296,8 +281,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role associated with the application.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,55 +297,57 @@ impl ApplicationSummaryBuilder {
     /// - [`engine_type`](crate::types::builders::ApplicationSummaryBuilder::engine_type)
     /// - [`creation_time`](crate::types::builders::ApplicationSummaryBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            description: self.description,
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_arn",
-                    "application_arn was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_version",
-                    "application_version was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engine_type",
-                    "engine_type was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            environment_id: self.environment_id,
-            last_start_time: self.last_start_time,
-            version_status: self.version_status,
-            deployment_status: self.deployment_status,
-            role_arn: self.role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_arn: self.application_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_arn", "application_arn was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_version: self.application_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_version", "application_version was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                engine_type: self.engine_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engine_type", "engine_type was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                environment_id: self.environment_id
+                ,
+                last_start_time: self.last_start_time
+                ,
+                version_status: self.version_status
+                ,
+                deployment_status: self.deployment_status
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

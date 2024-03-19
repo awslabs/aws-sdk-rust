@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAssessmentTargetInput {
+pub struct DeleteAssessmentTargetInput  {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
     pub assessment_target_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAssessmentTargetInput {
+impl  DeleteAssessmentTargetInput  {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-    pub fn assessment_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_target_arn(&self) -> ::std::option::Option<& str> {
         self.assessment_target_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteAssessmentTargetInputBuilder {
     }
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
     pub fn set_assessment_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_target_arn = input;
-        self
+        self.assessment_target_arn = input; self
     }
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
     pub fn get_assessment_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_target_arn
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentTargetInput`](crate::operation::delete_assessment_target::DeleteAssessmentTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_assessment_target::DeleteAssessmentTargetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_assessment_target::DeleteAssessmentTargetInput {
-            assessment_target_arn: self.assessment_target_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_assessment_target::DeleteAssessmentTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_assessment_target::DeleteAssessmentTargetInput {
+                assessment_target_arn: self.assessment_target_arn
+                ,
+            }
+        )
     }
 }
+

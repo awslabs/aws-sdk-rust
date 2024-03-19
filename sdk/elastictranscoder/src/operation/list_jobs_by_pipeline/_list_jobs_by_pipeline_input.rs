@@ -3,7 +3,7 @@
 /// <p>The <code>ListJobsByPipelineRequest</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobsByPipelineInput {
+pub struct ListJobsByPipelineInput  {
     /// <p>The ID of the pipeline for which you want to get job information.</p>
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
@@ -11,17 +11,17 @@ pub struct ListJobsByPipelineInput {
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl ListJobsByPipelineInput {
+impl  ListJobsByPipelineInput  {
     /// <p>The ID of the pipeline for which you want to get job information.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
-    pub fn ascending(&self) -> ::std::option::Option<&str> {
+    pub fn ascending(&self) -> ::std::option::Option<& str> {
         self.ascending.as_deref()
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListJobsByPipelineInputBuilder {
     }
     /// <p>The ID of the pipeline for which you want to get job information.</p>
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The ID of the pipeline for which you want to get job information.</p>
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ListJobsByPipelineInputBuilder {
     }
     /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub fn set_ascending(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ascending = input;
-        self
+        self.ascending = input; self
     }
     /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl ListJobsByPipelineInputBuilder {
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`ListJobsByPipelineInput`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput {
-            pipeline_id: self.pipeline_id,
-            ascending: self.ascending,
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_jobs_by_pipeline::ListJobsByPipelineInput {
+                pipeline_id: self.pipeline_id
+                ,
+                ascending: self.ascending
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

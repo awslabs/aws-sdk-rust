@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDocumentClassifierInput {
+pub struct CreateDocumentClassifierInput  {
     /// <p>The name of the document classifier.</p>
     pub document_classifier_name: ::std::option::Option<::std::string::String>,
     /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the Amazon Web Services account/Amazon Web Services Region.</p>
@@ -10,7 +10,7 @@ pub struct CreateDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub input_data_config: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
@@ -46,39 +46,40 @@ pub struct CreateDocumentClassifierInput {
     /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
     pub model_policy: ::std::option::Option<::std::string::String>,
 }
-impl CreateDocumentClassifierInput {
+impl  CreateDocumentClassifierInput  {
     /// <p>The name of the document classifier.</p>
-    pub fn document_classifier_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_classifier_name(&self) -> ::std::option::Option<& str> {
         self.document_classifier_name.as_deref()
     }
     /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the Amazon Web Services account/Amazon Web Services Region.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::DocumentClassifierInputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<& crate::types::DocumentClassifierInputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::DocumentClassifierOutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::DocumentClassifierOutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
@@ -88,15 +89,15 @@ impl CreateDocumentClassifierInput {
     /// <li>
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
-    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and multi-label mode identifies one or more class labels for each document. Multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::DocumentClassifierMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::DocumentClassifierMode> {
         self.mode.as_ref()
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
@@ -106,7 +107,7 @@ impl CreateDocumentClassifierInput {
     /// <li>
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
-    pub fn model_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.model_kms_key_id.as_deref()
     }
     /// <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another Amazon Web Services account to import your custom model.</p>
@@ -114,7 +115,7 @@ impl CreateDocumentClassifierInput {
     /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
     /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
-    pub fn model_policy(&self) -> ::std::option::Option<&str> {
+    pub fn model_policy(&self) -> ::std::option::Option<& str> {
         self.model_policy.as_deref()
     }
 }
@@ -132,7 +133,7 @@ pub struct CreateDocumentClassifierInputBuilder {
     pub(crate) document_classifier_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) input_data_config: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -152,8 +153,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>The name of the document classifier.</p>
     pub fn set_document_classifier_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_classifier_name = input;
-        self
+        self.document_classifier_name = input; self
     }
     /// <p>The name of the document classifier.</p>
     pub fn get_document_classifier_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +166,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the Amazon Web Services account/Amazon Web Services Region.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the Amazon Web Services account/Amazon Web Services Region.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +180,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,17 +193,16 @@ impl CreateDocumentClassifierInputBuilder {
     /// <p>Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
@@ -216,8 +213,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>) -> Self {
-        self.input_data_config = input;
-        self
+        self.input_data_config = input; self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
@@ -230,8 +226,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>) -> Self {
-        self.output_data_config = input;
-        self
+        self.output_data_config = input; self
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native document model.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
@@ -244,8 +239,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +253,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -285,8 +278,7 @@ impl CreateDocumentClassifierInputBuilder {
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_kms_key_id = input;
-        self
+        self.volume_kms_key_id = input; self
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -305,8 +297,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -319,8 +310,7 @@ impl CreateDocumentClassifierInputBuilder {
     }
     /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and multi-label mode identifies one or more class labels for each document. Multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DocumentClassifierMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and multi-label mode identifies one or more class labels for each document. Multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::DocumentClassifierMode> {
@@ -345,8 +335,7 @@ impl CreateDocumentClassifierInputBuilder {
     /// <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub fn set_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_kms_key_id = input;
-        self
+        self.model_kms_key_id = input; self
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -373,8 +362,7 @@ impl CreateDocumentClassifierInputBuilder {
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
     /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
     pub fn set_model_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_policy = input;
-        self
+        self.model_policy = input; self
     }
     /// <p>The resource-based policy to attach to your custom document classifier model. You can use this policy to allow another Amazon Web Services account to import your custom model.</p>
     /// <p>Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
@@ -385,26 +373,37 @@ impl CreateDocumentClassifierInputBuilder {
         &self.model_policy
     }
     /// Consumes the builder and constructs a [`CreateDocumentClassifierInput`](crate::operation::create_document_classifier::CreateDocumentClassifierInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_document_classifier::CreateDocumentClassifierInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_document_classifier::CreateDocumentClassifierInput {
-            document_classifier_name: self.document_classifier_name,
-            version_name: self.version_name,
-            data_access_role_arn: self.data_access_role_arn,
-            tags: self.tags,
-            input_data_config: self.input_data_config,
-            output_data_config: self.output_data_config,
-            client_request_token: self.client_request_token,
-            language_code: self.language_code,
-            volume_kms_key_id: self.volume_kms_key_id,
-            vpc_config: self.vpc_config,
-            mode: self.mode,
-            model_kms_key_id: self.model_kms_key_id,
-            model_policy: self.model_policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_document_classifier::CreateDocumentClassifierInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_document_classifier::CreateDocumentClassifierInput {
+                document_classifier_name: self.document_classifier_name
+                ,
+                version_name: self.version_name
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                tags: self.tags
+                ,
+                input_data_config: self.input_data_config
+                ,
+                output_data_config: self.output_data_config
+                ,
+                client_request_token: self.client_request_token
+                ,
+                language_code: self.language_code
+                ,
+                volume_kms_key_id: self.volume_kms_key_id
+                ,
+                vpc_config: self.vpc_config
+                ,
+                mode: self.mode
+                ,
+                model_kms_key_id: self.model_kms_key_id
+                ,
+                model_policy: self.model_policy
+                ,
+            }
+        )
     }
 }
+

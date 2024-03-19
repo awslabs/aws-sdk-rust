@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTriggersOutput {
+pub struct GetTriggersOutput  {
     /// <p>A list of triggers for the specified job.</p>
-    pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
+    pub triggers: ::std::option::Option<::std::vec::Vec::<crate::types::Trigger>>,
     /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetTriggersOutput {
+impl  GetTriggersOutput  {
     /// <p>A list of triggers for the specified job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
-    pub fn triggers(&self) -> &[crate::types::Trigger] {
-        self.triggers.as_deref().unwrap_or_default()
+    pub fn triggers(&self) -> & [crate::types::Trigger] {
+        self.triggers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTriggersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTriggersOutput {
     /// Creates a new builder-style object to manufacture [`GetTriggersOutput`](crate::operation::get_triggers::GetTriggersOutput).
     pub fn builder() -> crate::operation::get_triggers::builders::GetTriggersOutputBuilder {
@@ -37,7 +38,7 @@ impl GetTriggersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTriggersOutputBuilder {
-    pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
+    pub(crate) triggers: ::std::option::Option<::std::vec::Vec::<crate::types::Trigger>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetTriggersOutputBuilder {
     /// <p>A list of triggers for the specified job.</p>
     pub fn triggers(mut self, input: crate::types::Trigger) -> Self {
         let mut v = self.triggers.unwrap_or_default();
-        v.push(input);
-        self.triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of triggers for the specified job.</p>
-    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>) -> Self {
-        self.triggers = input;
-        self
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Trigger>>) -> Self {
+        self.triggers = input; self
     }
     /// <p>A list of triggers for the specified job.</p>
-    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Trigger>> {
         &self.triggers
     }
     /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
@@ -69,28 +69,30 @@ impl GetTriggersOutputBuilder {
     }
     /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTriggersOutput`](crate::operation::get_triggers::GetTriggersOutput).
     pub fn build(self) -> crate::operation::get_triggers::GetTriggersOutput {
         crate::operation::get_triggers::GetTriggersOutput {
-            triggers: self.triggers,
-            next_token: self.next_token,
+            triggers: self.triggers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

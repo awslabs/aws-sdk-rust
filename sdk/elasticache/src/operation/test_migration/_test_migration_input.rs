@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestMigrationInput {
+pub struct TestMigrationInput  {
     /// <p>The ID of the replication group to which data is to be migrated.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>List of endpoints from which data should be migrated. List should have only one element.</p>
-    pub customer_node_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
+    pub customer_node_endpoint_list: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerNodeEndpoint>>,
 }
-impl TestMigrationInput {
+impl  TestMigrationInput  {
     /// <p>The ID of the replication group to which data is to be migrated.</p>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>List of endpoints from which data should be migrated. List should have only one element.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customer_node_endpoint_list.is_none()`.
-    pub fn customer_node_endpoint_list(&self) -> &[crate::types::CustomerNodeEndpoint] {
-        self.customer_node_endpoint_list.as_deref().unwrap_or_default()
+    pub fn customer_node_endpoint_list(&self) -> & [crate::types::CustomerNodeEndpoint] {
+        self.customer_node_endpoint_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TestMigrationInput {
@@ -32,7 +33,7 @@ impl TestMigrationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestMigrationInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) customer_node_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
+    pub(crate) customer_node_endpoint_list: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerNodeEndpoint>>,
 }
 impl TestMigrationInputBuilder {
     /// <p>The ID of the replication group to which data is to be migrated.</p>
@@ -43,8 +44,7 @@ impl TestMigrationInputBuilder {
     }
     /// <p>The ID of the replication group to which data is to be migrated.</p>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_id = input;
-        self
+        self.replication_group_id = input; self
     }
     /// <p>The ID of the replication group to which data is to be migrated.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl TestMigrationInputBuilder {
     /// <p>List of endpoints from which data should be migrated. List should have only one element.</p>
     pub fn customer_node_endpoint_list(mut self, input: crate::types::CustomerNodeEndpoint) -> Self {
         let mut v = self.customer_node_endpoint_list.unwrap_or_default();
-        v.push(input);
-        self.customer_node_endpoint_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.customer_node_endpoint_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of endpoints from which data should be migrated. List should have only one element.</p>
-    pub fn set_customer_node_endpoint_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>) -> Self {
-        self.customer_node_endpoint_list = input;
-        self
+    pub fn set_customer_node_endpoint_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerNodeEndpoint>>) -> Self {
+        self.customer_node_endpoint_list = input; self
     }
     /// <p>List of endpoints from which data should be migrated. List should have only one element.</p>
-    pub fn get_customer_node_endpoint_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>> {
+    pub fn get_customer_node_endpoint_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomerNodeEndpoint>> {
         &self.customer_node_endpoint_list
     }
     /// Consumes the builder and constructs a [`TestMigrationInput`](crate::operation::test_migration::TestMigrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::test_migration::TestMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_migration::TestMigrationInput {
-            replication_group_id: self.replication_group_id,
-            customer_node_endpoint_list: self.customer_node_endpoint_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_migration::TestMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_migration::TestMigrationInput {
+                replication_group_id: self.replication_group_id
+                ,
+                customer_node_endpoint_list: self.customer_node_endpoint_list
+                ,
+            }
+        )
     }
 }
+

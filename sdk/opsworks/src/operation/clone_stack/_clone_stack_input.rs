@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloneStackInput {
+pub struct CloneStackInput  {
     /// <p>The source stack ID.</p>
     pub source_stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The cloned stack name.</p>
@@ -27,7 +27,7 @@ pub struct CloneStackInput {
     /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>>,
     /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p><note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
@@ -111,7 +111,7 @@ pub struct CloneStackInput {
     /// <p>Whether to clone the source stack's permissions.</p>
     pub clone_permissions: ::std::option::Option<bool>,
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-    pub clone_app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub clone_app_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub default_root_device_type: ::std::option::Option<crate::types::RootDeviceType>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -126,17 +126,17 @@ pub struct CloneStackInput {
     /// </note>
     pub agent_version: ::std::option::Option<::std::string::String>,
 }
-impl CloneStackInput {
+impl  CloneStackInput  {
     /// <p>The source stack ID.</p>
-    pub fn source_stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_stack_id(&self) -> ::std::option::Option<& str> {
         self.source_stack_id.as_deref()
     }
     /// <p>The cloned stack name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
@@ -155,21 +155,21 @@ impl CloneStackInput {
     /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p></li>
     /// </ul>
     /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p><note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
-    pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn default_instance_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn default_instance_profile_arn(&self) -> ::std::option::Option<& str> {
         self.default_instance_profile_arn.as_deref()
     }
     /// <p>The stack's operating system, which must be set to one of the following.</p>
@@ -190,7 +190,7 @@ impl CloneStackInput {
     /// <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p><note>
     /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
-    pub fn default_os(&self) -> ::std::option::Option<&str> {
+    pub fn default_os(&self) -> ::std::option::Option<& str> {
         self.default_os.as_deref()
     }
     /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
@@ -219,29 +219,29 @@ impl CloneStackInput {
     /// <p><code>Wild_Cats</code></p></li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
-    pub fn hostname_theme(&self) -> ::std::option::Option<&str> {
+    pub fn hostname_theme(&self) -> ::std::option::Option<& str> {
         self.hostname_theme.as_deref()
     }
     /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description.</p>
-    pub fn default_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn default_availability_zone(&self) -> ::std::option::Option<& str> {
         self.default_availability_zone.as_deref()
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description.</p>
-    pub fn default_subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn default_subnet_id(&self) -> ::std::option::Option<& str> {
         self.default_subnet_id.as_deref()
     }
     /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
     /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
-    pub fn custom_json(&self) -> ::std::option::Option<&str> {
+    pub fn custom_json(&self) -> ::std::option::Option<& str> {
         self.custom_json.as_deref()
     }
     /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
-    pub fn configuration_manager(&self) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> ::std::option::Option<& crate::types::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-    pub fn chef_configuration(&self) -> ::std::option::Option<&crate::types::ChefConfiguration> {
+    pub fn chef_configuration(&self) -> ::std::option::Option<& crate::types::ChefConfiguration> {
         self.chef_configuration.as_ref()
     }
     /// <p>Whether to use custom cookbooks.</p>
@@ -261,11 +261,11 @@ impl CloneStackInput {
         self.use_opsworks_security_groups
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-    pub fn custom_cookbooks_source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn custom_cookbooks_source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.custom_cookbooks_source.as_ref()
     }
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.</p>
-    pub fn default_ssh_key_name(&self) -> ::std::option::Option<&str> {
+    pub fn default_ssh_key_name(&self) -> ::std::option::Option<& str> {
         self.default_ssh_key_name.as_deref()
     }
     /// <p>Whether to clone the source stack's permissions.</p>
@@ -273,13 +273,14 @@ impl CloneStackInput {
         self.clone_permissions
     }
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clone_app_ids.is_none()`.
-    pub fn clone_app_ids(&self) -> &[::std::string::String] {
-        self.clone_app_ids.as_deref().unwrap_or_default()
+    pub fn clone_app_ids(&self) -> & [::std::string::String] {
+        self.clone_app_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn default_root_device_type(&self) -> ::std::option::Option<&crate::types::RootDeviceType> {
+    pub fn default_root_device_type(&self) -> ::std::option::Option<& crate::types::RootDeviceType> {
         self.default_root_device_type.as_ref()
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -292,7 +293,7 @@ impl CloneStackInput {
     /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p><note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
 }
@@ -311,7 +312,7 @@ pub struct CloneStackInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>>,
     pub(crate) service_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_os: ::std::option::Option<::std::string::String>,
@@ -326,7 +327,7 @@ pub struct CloneStackInputBuilder {
     pub(crate) custom_cookbooks_source: ::std::option::Option<crate::types::Source>,
     pub(crate) default_ssh_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) clone_permissions: ::std::option::Option<bool>,
-    pub(crate) clone_app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) clone_app_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) default_root_device_type: ::std::option::Option<crate::types::RootDeviceType>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
 }
@@ -339,8 +340,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>The source stack ID.</p>
     pub fn set_source_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_stack_id = input;
-        self
+        self.source_stack_id = input; self
     }
     /// <p>The source stack ID.</p>
     pub fn get_source_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -353,8 +353,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>The cloned stack name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The cloned stack name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -367,8 +366,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -411,8 +409,7 @@ impl CloneStackInputBuilder {
     /// </ul>
     /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
     /// <ul>
@@ -440,20 +437,16 @@ impl CloneStackInputBuilder {
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
     pub fn attributes(mut self, k: crate::types::StackAttributesKeys, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::StackAttributesKeys, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p><note>
@@ -468,8 +461,7 @@ impl CloneStackInputBuilder {
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role_arn = input;
-        self
+        self.service_role_arn = input; self
     }
     /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p><note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
@@ -484,8 +476,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_default_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_instance_profile_arn = input;
-        self
+        self.default_instance_profile_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn get_default_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -532,8 +523,7 @@ impl CloneStackInputBuilder {
     /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
     pub fn set_default_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_os = input;
-        self
+        self.default_os = input; self
     }
     /// <p>The stack's operating system, which must be set to one of the following.</p>
     /// <ul>
@@ -613,8 +603,7 @@ impl CloneStackInputBuilder {
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub fn set_hostname_theme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname_theme = input;
-        self
+        self.hostname_theme = input; self
     }
     /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
@@ -652,8 +641,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description.</p>
     pub fn set_default_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_availability_zone = input;
-        self
+        self.default_availability_zone = input; self
     }
     /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description.</p>
     pub fn get_default_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -666,8 +654,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description.</p>
     pub fn set_default_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_subnet_id = input;
-        self
+        self.default_subnet_id = input; self
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description.</p>
     pub fn get_default_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -684,8 +671,7 @@ impl CloneStackInputBuilder {
     /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a></p>
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_json = input;
-        self
+        self.custom_json = input; self
     }
     /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
     /// <p><code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code></p>
@@ -700,8 +686,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
     pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
-        self.configuration_manager = input;
-        self
+        self.configuration_manager = input; self
     }
     /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
     pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
@@ -714,8 +699,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn set_chef_configuration(mut self, input: ::std::option::Option<crate::types::ChefConfiguration>) -> Self {
-        self.chef_configuration = input;
-        self
+        self.chef_configuration = input; self
     }
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn get_chef_configuration(&self) -> &::std::option::Option<crate::types::ChefConfiguration> {
@@ -728,8 +712,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>Whether to use custom cookbooks.</p>
     pub fn set_use_custom_cookbooks(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_custom_cookbooks = input;
-        self
+        self.use_custom_cookbooks = input; self
     }
     /// <p>Whether to use custom cookbooks.</p>
     pub fn get_use_custom_cookbooks(&self) -> &::std::option::Option<bool> {
@@ -758,8 +741,7 @@ impl CloneStackInputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn set_use_opsworks_security_groups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_opsworks_security_groups = input;
-        self
+        self.use_opsworks_security_groups = input; self
     }
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings:</p>
@@ -780,8 +762,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn set_custom_cookbooks_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.custom_cookbooks_source = input;
-        self
+        self.custom_cookbooks_source = input; self
     }
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn get_custom_cookbooks_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -794,8 +775,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.</p>
     pub fn set_default_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_ssh_key_name = input;
-        self
+        self.default_ssh_key_name = input; self
     }
     /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>.</p>
     pub fn get_default_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -808,8 +788,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>Whether to clone the source stack's permissions.</p>
     pub fn set_clone_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.clone_permissions = input;
-        self
+        self.clone_permissions = input; self
     }
     /// <p>Whether to clone the source stack's permissions.</p>
     pub fn get_clone_permissions(&self) -> &::std::option::Option<bool> {
@@ -822,17 +801,16 @@ impl CloneStackInputBuilder {
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
     pub fn clone_app_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.clone_app_ids.unwrap_or_default();
-        v.push(input.into());
-        self.clone_app_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.clone_app_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-    pub fn set_clone_app_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.clone_app_ids = input;
-        self
+    pub fn set_clone_app_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.clone_app_ids = input; self
     }
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-    pub fn get_clone_app_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_clone_app_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.clone_app_ids
     }
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
@@ -842,8 +820,7 @@ impl CloneStackInputBuilder {
     }
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn set_default_root_device_type(mut self, input: ::std::option::Option<crate::types::RootDeviceType>) -> Self {
-        self.default_root_device_type = input;
-        self
+        self.default_root_device_type = input; self
     }
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn get_default_root_device_type(&self) -> &::std::option::Option<crate::types::RootDeviceType> {
@@ -874,8 +851,7 @@ impl CloneStackInputBuilder {
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -892,29 +868,54 @@ impl CloneStackInputBuilder {
     }
     /// Consumes the builder and constructs a [`CloneStackInput`](crate::operation::clone_stack::CloneStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::clone_stack::CloneStackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::clone_stack::CloneStackInput {
-            source_stack_id: self.source_stack_id,
-            name: self.name,
-            region: self.region,
-            vpc_id: self.vpc_id,
-            attributes: self.attributes,
-            service_role_arn: self.service_role_arn,
-            default_instance_profile_arn: self.default_instance_profile_arn,
-            default_os: self.default_os,
-            hostname_theme: self.hostname_theme,
-            default_availability_zone: self.default_availability_zone,
-            default_subnet_id: self.default_subnet_id,
-            custom_json: self.custom_json,
-            configuration_manager: self.configuration_manager,
-            chef_configuration: self.chef_configuration,
-            use_custom_cookbooks: self.use_custom_cookbooks,
-            use_opsworks_security_groups: self.use_opsworks_security_groups,
-            custom_cookbooks_source: self.custom_cookbooks_source,
-            default_ssh_key_name: self.default_ssh_key_name,
-            clone_permissions: self.clone_permissions,
-            clone_app_ids: self.clone_app_ids,
-            default_root_device_type: self.default_root_device_type,
-            agent_version: self.agent_version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::clone_stack::CloneStackInput {
+                source_stack_id: self.source_stack_id
+                ,
+                name: self.name
+                ,
+                region: self.region
+                ,
+                vpc_id: self.vpc_id
+                ,
+                attributes: self.attributes
+                ,
+                service_role_arn: self.service_role_arn
+                ,
+                default_instance_profile_arn: self.default_instance_profile_arn
+                ,
+                default_os: self.default_os
+                ,
+                hostname_theme: self.hostname_theme
+                ,
+                default_availability_zone: self.default_availability_zone
+                ,
+                default_subnet_id: self.default_subnet_id
+                ,
+                custom_json: self.custom_json
+                ,
+                configuration_manager: self.configuration_manager
+                ,
+                chef_configuration: self.chef_configuration
+                ,
+                use_custom_cookbooks: self.use_custom_cookbooks
+                ,
+                use_opsworks_security_groups: self.use_opsworks_security_groups
+                ,
+                custom_cookbooks_source: self.custom_cookbooks_source
+                ,
+                default_ssh_key_name: self.default_ssh_key_name
+                ,
+                clone_permissions: self.clone_permissions
+                ,
+                clone_app_ids: self.clone_app_ids
+                ,
+                default_root_device_type: self.default_root_device_type
+                ,
+                agent_version: self.agent_version
+                ,
+            }
+        )
     }
 }
+

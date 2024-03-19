@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFHIRImportJobs`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`datastore_id(impl Into<String>)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::set_datastore_id):<br>required: **true**<br><p>This parameter limits the response to the import job with the specified data store ID.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`job_status(JobStatus)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::job_status) / [`set_job_status(Option<JobStatus>)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::set_job_status):<br>required: **false**<br><p>This parameter limits the response to the import job with the specified job status.</p><br>
     ///   - [`submitted_before(DateTime)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::submitted_before) / [`set_submitted_before(Option<DateTime>)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::set_submitted_before):<br>required: **false**<br><p>This parameter limits the response to FHIR import jobs submitted before a user specified date.</p><br>
     ///   - [`submitted_after(DateTime)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::submitted_after) / [`set_submitted_after(Option<DateTime>)`](crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::set_submitted_after):<br>required: **false**<br><p>This parameter limits the response to FHIR import jobs submitted after a user specified date.</p><br>
-    /// - On success, responds with [`ListFhirImportJobsOutput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListFhirImportJobsOutput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput) with field(s):
     ///   - [`import_job_properties_list(Vec::<ImportJobProperties>)`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput::import_job_properties_list): <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress report of the job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput::next_token): <p>A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.</p>
-    /// - On failure, responds with [`SdkError<ListFHIRImportJobsError>`](crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError)
+                            /// - On failure, responds with [`SdkError<ListFHIRImportJobsError>`](crate::operation::list_fhir_import_jobs::ListFHIRImportJobsError)
     pub fn list_fhir_import_jobs(&self) -> crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder {
-        crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_fhir_import_jobs::builders::ListFHIRImportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

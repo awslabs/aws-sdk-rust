@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>WorkflowExecutionTimedOut</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowExecutionTimedOutEventAttributes {
+pub struct WorkflowExecutionTimedOutEventAttributes  {
     /// <p>The type of timeout that caused this event.</p>
     pub timeout_type: crate::types::WorkflowExecutionTimeoutType,
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
@@ -18,9 +18,9 @@ pub struct WorkflowExecutionTimedOutEventAttributes {
     /// </ul>
     pub child_policy: crate::types::ChildPolicy,
 }
-impl WorkflowExecutionTimedOutEventAttributes {
+impl  WorkflowExecutionTimedOutEventAttributes  {
     /// <p>The type of timeout that caused this event.</p>
-    pub fn timeout_type(&self) -> &crate::types::WorkflowExecutionTimeoutType {
+    pub fn timeout_type(&self) -> & crate::types::WorkflowExecutionTimeoutType {
         &self.timeout_type
     }
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
@@ -33,7 +33,7 @@ impl WorkflowExecutionTimedOutEventAttributes {
     /// <li>
     /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
-    pub fn child_policy(&self) -> &crate::types::ChildPolicy {
+    pub fn child_policy(&self) -> & crate::types::ChildPolicy {
         &self.child_policy
     }
 }
@@ -60,8 +60,7 @@ impl WorkflowExecutionTimedOutEventAttributesBuilder {
     }
     /// <p>The type of timeout that caused this event.</p>
     pub fn set_timeout_type(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>) -> Self {
-        self.timeout_type = input;
-        self
+        self.timeout_type = input; self
     }
     /// <p>The type of timeout that caused this event.</p>
     pub fn get_timeout_type(&self) -> &::std::option::Option<crate::types::WorkflowExecutionTimeoutType> {
@@ -93,8 +92,7 @@ impl WorkflowExecutionTimedOutEventAttributesBuilder {
     /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
-        self.child_policy = input;
-        self
+        self.child_policy = input; self
     }
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
@@ -113,22 +111,21 @@ impl WorkflowExecutionTimedOutEventAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timeout_type`](crate::types::builders::WorkflowExecutionTimedOutEventAttributesBuilder::timeout_type)
     /// - [`child_policy`](crate::types::builders::WorkflowExecutionTimedOutEventAttributesBuilder::child_policy)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::WorkflowExecutionTimedOutEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowExecutionTimedOutEventAttributes {
-            timeout_type: self.timeout_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timeout_type",
-                    "timeout_type was not specified but it is required when building WorkflowExecutionTimedOutEventAttributes",
-                )
-            })?,
-            child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "child_policy",
-                    "child_policy was not specified but it is required when building WorkflowExecutionTimedOutEventAttributes",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionTimedOutEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::WorkflowExecutionTimedOutEventAttributes {
+                timeout_type: self.timeout_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timeout_type", "timeout_type was not specified but it is required when building WorkflowExecutionTimedOutEventAttributes")
+                    )?
+                ,
+                child_policy: self.child_policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("child_policy", "child_policy was not specified but it is required when building WorkflowExecutionTimedOutEventAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

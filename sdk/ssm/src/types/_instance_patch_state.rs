@@ -3,7 +3,7 @@
 /// <p>Defines the high-level patch compliance state for a managed node, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the managed node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InstancePatchState {
+pub struct InstancePatchState  {
     /// <p>The ID of the managed node the high-level patch compliance information was collected for.</p>
     pub instance_id: ::std::string::String,
     /// <p>The name of the patch group the managed node belongs to.</p>
@@ -66,33 +66,30 @@ pub struct InstancePatchState {
     /// <p>The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub other_non_compliant_count: ::std::option::Option<i32>,
 }
-impl InstancePatchState {
+impl  InstancePatchState  {
     /// <p>The ID of the managed node the high-level patch compliance information was collected for.</p>
-    pub fn instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.instance_id.deref()
+    pub fn instance_id(&self) -> & str {
+        use std::ops::Deref; self.instance_id.deref()
     }
     /// <p>The name of the patch group the managed node belongs to.</p>
-    pub fn patch_group(&self) -> &str {
-        use std::ops::Deref;
-        self.patch_group.deref()
+    pub fn patch_group(&self) -> & str {
+        use std::ops::Deref; self.patch_group.deref()
     }
     /// <p>The ID of the patch baseline used to patch the managed node.</p>
-    pub fn baseline_id(&self) -> &str {
-        use std::ops::Deref;
-        self.baseline_id.deref()
+    pub fn baseline_id(&self) -> & str {
+        use std::ops::Deref; self.baseline_id.deref()
     }
     /// <p>The ID of the patch baseline snapshot used during the patching operation when this compliance data was collected.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
     /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn install_override_list(&self) -> ::std::option::Option<&str> {
+    pub fn install_override_list(&self) -> ::std::option::Option<& str> {
         self.install_override_list.as_deref()
     }
     /// <p>Placeholder information. This field will always be empty in the current release of the service.</p>
-    pub fn owner_information(&self) -> ::std::option::Option<&str> {
+    pub fn owner_information(&self) -> ::std::option::Option<& str> {
         self.owner_information.as_deref()
     }
     /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
@@ -130,11 +127,11 @@ impl InstancePatchState {
         self.not_applicable_count
     }
     /// <p>The time the most recent patching operation was started on the managed node.</p>
-    pub fn operation_start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn operation_start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.operation_start_time
     }
     /// <p>The time the most recent patching operation completed on the managed node.</p>
-    pub fn operation_end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn operation_end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.operation_end_time
     }
     /// <p>The type of patching operation that was performed: or</p>
@@ -144,11 +141,11 @@ impl InstancePatchState {
     /// <li>
     /// <p><code>INSTALL</code> installs missing patches.</p></li>
     /// </ul>
-    pub fn operation(&self) -> &crate::types::PatchOperationType {
+    pub fn operation(&self) -> & crate::types::PatchOperationType {
         &self.operation
     }
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
-    pub fn last_no_reboot_install_operation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_no_reboot_install_operation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_no_reboot_install_operation_time.as_ref()
     }
     /// <p>Indicates the reboot option specified in the patch baseline.</p><note>
@@ -160,7 +157,7 @@ impl InstancePatchState {
     /// <li>
     /// <p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
     /// </ul>
-    pub fn reboot_option(&self) -> ::std::option::Option<&crate::types::RebootOption> {
+    pub fn reboot_option(&self) -> ::std::option::Option<& crate::types::RebootOption> {
         self.reboot_option.as_ref()
     }
     /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
@@ -176,7 +173,7 @@ impl InstancePatchState {
         self.other_non_compliant_count
     }
 }
-impl ::std::fmt::Debug for InstancePatchState {
+impl  ::std::fmt::Debug for InstancePatchState  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InstancePatchState");
         formatter.field("instance_id", &self.instance_id);
@@ -247,8 +244,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The ID of the managed node the high-level patch compliance information was collected for.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the managed node the high-level patch compliance information was collected for.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,8 +258,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The name of the patch group the managed node belongs to.</p>
     pub fn set_patch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_group = input;
-        self
+        self.patch_group = input; self
     }
     /// <p>The name of the patch group the managed node belongs to.</p>
     pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,8 +272,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The ID of the patch baseline used to patch the managed node.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the patch baseline used to patch the managed node.</p>
     pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -291,8 +285,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The ID of the patch baseline snapshot used during the patching operation when this compliance data was collected.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the patch baseline snapshot used during the patching operation when this compliance data was collected.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +300,7 @@ impl InstancePatchStateBuilder {
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
     /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_install_override_list(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.install_override_list = input;
-        self
+        self.install_override_list = input; self
     }
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
     /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -322,8 +314,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>Placeholder information. This field will always be empty in the current release of the service.</p>
     pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_information = input;
-        self
+        self.owner_information = input; self
     }
     /// <p>Placeholder information. This field will always be empty in the current release of the service.</p>
     pub fn get_owner_information(&self) -> &::std::option::Option<::std::string::String> {
@@ -336,8 +327,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
     pub fn set_installed_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.installed_count = input;
-        self
+        self.installed_count = input; self
     }
     /// <p>The number of patches from the patch baseline that are installed on the managed node.</p>
     pub fn get_installed_count(&self) -> &::std::option::Option<i32> {
@@ -350,8 +340,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches not specified in the patch baseline that are installed on the managed node.</p>
     pub fn set_installed_other_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.installed_other_count = input;
-        self
+        self.installed_other_count = input; self
     }
     /// <p>The number of patches not specified in the patch baseline that are installed on the managed node.</p>
     pub fn get_installed_other_count(&self) -> &::std::option::Option<i32> {
@@ -364,8 +353,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches installed by Patch Manager since the last time the managed node was rebooted.</p>
     pub fn set_installed_pending_reboot_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.installed_pending_reboot_count = input;
-        self
+        self.installed_pending_reboot_count = input; self
     }
     /// <p>The number of patches installed by Patch Manager since the last time the managed node was rebooted.</p>
     pub fn get_installed_pending_reboot_count(&self) -> &::std::option::Option<i32> {
@@ -382,8 +370,7 @@ impl InstancePatchStateBuilder {
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
     /// </note>
     pub fn set_installed_rejected_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.installed_rejected_count = input;
-        self
+        self.installed_rejected_count = input; self
     }
     /// <p>The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p><note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
@@ -398,8 +385,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches from the patch baseline that are applicable for the managed node but aren't currently installed.</p>
     pub fn set_missing_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.missing_count = input;
-        self
+        self.missing_count = input; self
     }
     /// <p>The number of patches from the patch baseline that are applicable for the managed node but aren't currently installed.</p>
     pub fn get_missing_count(&self) -> &::std::option::Option<i32> {
@@ -412,8 +398,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches from the patch baseline that were attempted to be installed during the last patching operation, but failed to install.</p>
     pub fn set_failed_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_count = input;
-        self
+        self.failed_count = input; self
     }
     /// <p>The number of patches from the patch baseline that were attempted to be installed during the last patching operation, but failed to install.</p>
     pub fn get_failed_count(&self) -> &::std::option::Option<i32> {
@@ -426,8 +411,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
     pub fn set_unreported_not_applicable_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unreported_not_applicable_count = input;
-        self
+        self.unreported_not_applicable_count = input; self
     }
     /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
     pub fn get_unreported_not_applicable_count(&self) -> &::std::option::Option<i32> {
@@ -440,8 +424,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and therefore aren't installed on the node. This number may be truncated if the list of patch names is very large. The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
     pub fn set_not_applicable_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.not_applicable_count = input;
-        self
+        self.not_applicable_count = input; self
     }
     /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and therefore aren't installed on the node. This number may be truncated if the list of patch names is very large. The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
     pub fn get_not_applicable_count(&self) -> &::std::option::Option<i32> {
@@ -455,8 +438,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The time the most recent patching operation was started on the managed node.</p>
     pub fn set_operation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.operation_start_time = input;
-        self
+        self.operation_start_time = input; self
     }
     /// <p>The time the most recent patching operation was started on the managed node.</p>
     pub fn get_operation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -470,8 +452,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The time the most recent patching operation completed on the managed node.</p>
     pub fn set_operation_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.operation_end_time = input;
-        self
+        self.operation_end_time = input; self
     }
     /// <p>The time the most recent patching operation completed on the managed node.</p>
     pub fn get_operation_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -497,8 +478,7 @@ impl InstancePatchStateBuilder {
     /// <p><code>INSTALL</code> installs missing patches.</p></li>
     /// </ul>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::PatchOperationType>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The type of patching operation that was performed: or</p>
     /// <ul>
@@ -517,8 +497,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
     pub fn set_last_no_reboot_install_operation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_no_reboot_install_operation_time = input;
-        self
+        self.last_no_reboot_install_operation_time = input; self
     }
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
     pub fn get_last_no_reboot_install_operation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -547,8 +526,7 @@ impl InstancePatchStateBuilder {
     /// <p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
     /// </ul>
     pub fn set_reboot_option(mut self, input: ::std::option::Option<crate::types::RebootOption>) -> Self {
-        self.reboot_option = input;
-        self
+        self.reboot_option = input; self
     }
     /// <p>Indicates the reboot option specified in the patch baseline.</p><note>
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
@@ -569,8 +547,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn set_critical_non_compliant_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.critical_non_compliant_count = input;
-        self
+        self.critical_non_compliant_count = input; self
     }
     /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn get_critical_non_compliant_count(&self) -> &::std::option::Option<i32> {
@@ -583,8 +560,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn set_security_non_compliant_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.security_non_compliant_count = input;
-        self
+        self.security_non_compliant_count = input; self
     }
     /// <p>The number of patches per node that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn get_security_non_compliant_count(&self) -> &::std::option::Option<i32> {
@@ -597,8 +573,7 @@ impl InstancePatchStateBuilder {
     }
     /// <p>The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn set_other_non_compliant_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.other_non_compliant_count = input;
-        self
+        self.other_non_compliant_count = input; self
     }
     /// <p>The number of patches per node that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub fn get_other_non_compliant_count(&self) -> &::std::option::Option<i32> {
@@ -613,60 +588,77 @@ impl InstancePatchStateBuilder {
     /// - [`operation_end_time`](crate::types::builders::InstancePatchStateBuilder::operation_end_time)
     /// - [`operation`](crate::types::builders::InstancePatchStateBuilder::operation)
     pub fn build(self) -> ::std::result::Result<crate::types::InstancePatchState, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InstancePatchState {
-            instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instance_id",
-                    "instance_id was not specified but it is required when building InstancePatchState",
-                )
-            })?,
-            patch_group: self.patch_group.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "patch_group",
-                    "patch_group was not specified but it is required when building InstancePatchState",
-                )
-            })?,
-            baseline_id: self.baseline_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "baseline_id",
-                    "baseline_id was not specified but it is required when building InstancePatchState",
-                )
-            })?,
-            snapshot_id: self.snapshot_id,
-            install_override_list: self.install_override_list,
-            owner_information: self.owner_information,
-            installed_count: self.installed_count.unwrap_or_default(),
-            installed_other_count: self.installed_other_count.unwrap_or_default(),
-            installed_pending_reboot_count: self.installed_pending_reboot_count,
-            installed_rejected_count: self.installed_rejected_count,
-            missing_count: self.missing_count.unwrap_or_default(),
-            failed_count: self.failed_count.unwrap_or_default(),
-            unreported_not_applicable_count: self.unreported_not_applicable_count,
-            not_applicable_count: self.not_applicable_count.unwrap_or_default(),
-            operation_start_time: self.operation_start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_start_time",
-                    "operation_start_time was not specified but it is required when building InstancePatchState",
-                )
-            })?,
-            operation_end_time: self.operation_end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_end_time",
-                    "operation_end_time was not specified but it is required when building InstancePatchState",
-                )
-            })?,
-            operation: self.operation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation",
-                    "operation was not specified but it is required when building InstancePatchState",
-                )
-            })?,
-            last_no_reboot_install_operation_time: self.last_no_reboot_install_operation_time,
-            reboot_option: self.reboot_option,
-            critical_non_compliant_count: self.critical_non_compliant_count,
-            security_non_compliant_count: self.security_non_compliant_count,
-            other_non_compliant_count: self.other_non_compliant_count,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InstancePatchState {
+                instance_id: self.instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instance_id", "instance_id was not specified but it is required when building InstancePatchState")
+                    )?
+                ,
+                patch_group: self.patch_group
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("patch_group", "patch_group was not specified but it is required when building InstancePatchState")
+                    )?
+                ,
+                baseline_id: self.baseline_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("baseline_id", "baseline_id was not specified but it is required when building InstancePatchState")
+                    )?
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                install_override_list: self.install_override_list
+                ,
+                owner_information: self.owner_information
+                ,
+                installed_count: self.installed_count
+                    .unwrap_or_default()
+                ,
+                installed_other_count: self.installed_other_count
+                    .unwrap_or_default()
+                ,
+                installed_pending_reboot_count: self.installed_pending_reboot_count
+                ,
+                installed_rejected_count: self.installed_rejected_count
+                ,
+                missing_count: self.missing_count
+                    .unwrap_or_default()
+                ,
+                failed_count: self.failed_count
+                    .unwrap_or_default()
+                ,
+                unreported_not_applicable_count: self.unreported_not_applicable_count
+                ,
+                not_applicable_count: self.not_applicable_count
+                    .unwrap_or_default()
+                ,
+                operation_start_time: self.operation_start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_start_time", "operation_start_time was not specified but it is required when building InstancePatchState")
+                    )?
+                ,
+                operation_end_time: self.operation_end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_end_time", "operation_end_time was not specified but it is required when building InstancePatchState")
+                    )?
+                ,
+                operation: self.operation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation", "operation was not specified but it is required when building InstancePatchState")
+                    )?
+                ,
+                last_no_reboot_install_operation_time: self.last_no_reboot_install_operation_time
+                ,
+                reboot_option: self.reboot_option
+                ,
+                critical_non_compliant_count: self.critical_non_compliant_count
+                ,
+                security_non_compliant_count: self.security_non_compliant_count
+                ,
+                other_non_compliant_count: self.other_non_compliant_count
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InstancePatchStateBuilder {
@@ -697,3 +689,4 @@ impl ::std::fmt::Debug for InstancePatchStateBuilder {
         formatter.finish()
     }
 }
+

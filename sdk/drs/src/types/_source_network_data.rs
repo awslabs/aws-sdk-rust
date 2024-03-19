@@ -3,7 +3,7 @@
 /// <p>Properties of Source Network related to a job event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceNetworkData {
+pub struct SourceNetworkData  {
     /// <p>Source Network ID.</p>
     pub source_network_id: ::std::option::Option<::std::string::String>,
     /// <p>VPC ID protected by the Source Network.</p>
@@ -13,21 +13,21 @@ pub struct SourceNetworkData {
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
-impl SourceNetworkData {
+impl  SourceNetworkData  {
     /// <p>Source Network ID.</p>
-    pub fn source_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_network_id(&self) -> ::std::option::Option<& str> {
         self.source_network_id.as_deref()
     }
     /// <p>VPC ID protected by the Source Network.</p>
-    pub fn source_vpc(&self) -> ::std::option::Option<&str> {
+    pub fn source_vpc(&self) -> ::std::option::Option<& str> {
         self.source_vpc.as_deref()
     }
     /// <p>ID of the recovered VPC following Source Network recovery.</p>
-    pub fn target_vpc(&self) -> ::std::option::Option<&str> {
+    pub fn target_vpc(&self) -> ::std::option::Option<& str> {
         self.target_vpc.as_deref()
     }
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl SourceNetworkDataBuilder {
     }
     /// <p>Source Network ID.</p>
     pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_network_id = input;
-        self
+        self.source_network_id = input; self
     }
     /// <p>Source Network ID.</p>
     pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SourceNetworkDataBuilder {
     }
     /// <p>VPC ID protected by the Source Network.</p>
     pub fn set_source_vpc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_vpc = input;
-        self
+        self.source_vpc = input; self
     }
     /// <p>VPC ID protected by the Source Network.</p>
     pub fn get_source_vpc(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl SourceNetworkDataBuilder {
     }
     /// <p>ID of the recovered VPC following Source Network recovery.</p>
     pub fn set_target_vpc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_vpc = input;
-        self
+        self.target_vpc = input; self
     }
     /// <p>ID of the recovered VPC following Source Network recovery.</p>
     pub fn get_target_vpc(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl SourceNetworkDataBuilder {
     }
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl SourceNetworkDataBuilder {
     /// Consumes the builder and constructs a [`SourceNetworkData`](crate::types::SourceNetworkData).
     pub fn build(self) -> crate::types::SourceNetworkData {
         crate::types::SourceNetworkData {
-            source_network_id: self.source_network_id,
-            source_vpc: self.source_vpc,
-            target_vpc: self.target_vpc,
-            stack_name: self.stack_name,
+            source_network_id: self.source_network_id
+            ,
+            source_vpc: self.source_vpc
+            ,
+            target_vpc: self.target_vpc
+            ,
+            stack_name: self.stack_name
+            ,
         }
     }
 }
+

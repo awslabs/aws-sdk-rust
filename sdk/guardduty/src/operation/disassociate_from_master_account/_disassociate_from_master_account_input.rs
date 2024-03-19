@@ -3,13 +3,13 @@
 #[deprecated(note = "This input is deprecated, use DisassociateFromAdministratorAccountRequest instead")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateFromMasterAccountInput {
+pub struct DisassociateFromMasterAccountInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateFromMasterAccountInput {
+impl  DisassociateFromMasterAccountInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DisassociateFromMasterAccountInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
     /// Consumes the builder and constructs a [`DisassociateFromMasterAccountInput`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput {
-            detector_id: self.detector_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput {
+                detector_id: self.detector_id
+                ,
+            }
+        )
     }
 }
+

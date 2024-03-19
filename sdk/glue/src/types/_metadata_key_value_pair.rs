@@ -3,19 +3,19 @@
 /// <p>A structure containing a key value pair for metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetadataKeyValuePair {
+pub struct MetadataKeyValuePair  {
     /// <p>A metadata key.</p>
     pub metadata_key: ::std::option::Option<::std::string::String>,
     /// <p>A metadata key’s corresponding value.</p>
     pub metadata_value: ::std::option::Option<::std::string::String>,
 }
-impl MetadataKeyValuePair {
+impl  MetadataKeyValuePair  {
     /// <p>A metadata key.</p>
-    pub fn metadata_key(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_key(&self) -> ::std::option::Option<& str> {
         self.metadata_key.as_deref()
     }
     /// <p>A metadata key’s corresponding value.</p>
-    pub fn metadata_value(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_value(&self) -> ::std::option::Option<& str> {
         self.metadata_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MetadataKeyValuePairBuilder {
     }
     /// <p>A metadata key.</p>
     pub fn set_metadata_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_key = input;
-        self
+        self.metadata_key = input; self
     }
     /// <p>A metadata key.</p>
     pub fn get_metadata_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MetadataKeyValuePairBuilder {
     }
     /// <p>A metadata key’s corresponding value.</p>
     pub fn set_metadata_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_value = input;
-        self
+        self.metadata_value = input; self
     }
     /// <p>A metadata key’s corresponding value.</p>
     pub fn get_metadata_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MetadataKeyValuePairBuilder {
     /// Consumes the builder and constructs a [`MetadataKeyValuePair`](crate::types::MetadataKeyValuePair).
     pub fn build(self) -> crate::types::MetadataKeyValuePair {
         crate::types::MetadataKeyValuePair {
-            metadata_key: self.metadata_key,
-            metadata_value: self.metadata_value,
+            metadata_key: self.metadata_key
+            ,
+            metadata_value: self.metadata_value
+            ,
         }
     }
 }
+

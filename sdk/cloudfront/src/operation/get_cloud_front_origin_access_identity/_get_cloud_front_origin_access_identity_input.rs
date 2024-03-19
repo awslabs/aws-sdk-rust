@@ -3,13 +3,13 @@
 /// <p>The request to get an origin access identity's information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCloudFrontOriginAccessIdentityInput {
+pub struct GetCloudFrontOriginAccessIdentityInput  {
     /// <p>The identity's ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetCloudFrontOriginAccessIdentityInput {
+impl  GetCloudFrontOriginAccessIdentityInput  {
     /// <p>The identity's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl GetCloudFrontOriginAccessIdentityInputBuilder {
     }
     /// <p>The identity's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identity's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetCloudFrontOriginAccessIdentityInput`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

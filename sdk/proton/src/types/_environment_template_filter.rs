@@ -3,22 +3,20 @@
 /// <p>A search filter for environment templates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentTemplateFilter {
+pub struct EnvironmentTemplateFilter  {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
     pub template_name: ::std::string::String,
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
     pub major_version: ::std::string::String,
 }
-impl EnvironmentTemplateFilter {
+impl  EnvironmentTemplateFilter  {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-    pub fn major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.major_version.deref()
+    pub fn major_version(&self) -> & str {
+        use std::ops::Deref; self.major_version.deref()
     }
 }
 impl EnvironmentTemplateFilter {
@@ -44,8 +42,7 @@ impl EnvironmentTemplateFilterBuilder {
     }
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl EnvironmentTemplateFilterBuilder {
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
     pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
     pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl EnvironmentTemplateFilterBuilder {
     /// - [`template_name`](crate::types::builders::EnvironmentTemplateFilterBuilder::template_name)
     /// - [`major_version`](crate::types::builders::EnvironmentTemplateFilterBuilder::major_version)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentTemplateFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentTemplateFilter {
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building EnvironmentTemplateFilter",
-                )
-            })?,
-            major_version: self.major_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "major_version",
-                    "major_version was not specified but it is required when building EnvironmentTemplateFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentTemplateFilter {
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building EnvironmentTemplateFilter")
+                    )?
+                ,
+                major_version: self.major_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("major_version", "major_version was not specified but it is required when building EnvironmentTemplateFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

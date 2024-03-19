@@ -3,15 +3,14 @@
 /// <p>Part of the provisioning properties of the environment blueprint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudFormationProperties {
+pub struct CloudFormationProperties  {
     /// <p>The template URL of the cloud formation provisioning properties of the environment blueprint.</p>
     pub template_url: ::std::string::String,
 }
-impl CloudFormationProperties {
+impl  CloudFormationProperties  {
     /// <p>The template URL of the cloud formation provisioning properties of the environment blueprint.</p>
-    pub fn template_url(&self) -> &str {
-        use std::ops::Deref;
-        self.template_url.deref()
+    pub fn template_url(&self) -> & str {
+        use std::ops::Deref; self.template_url.deref()
     }
 }
 impl CloudFormationProperties {
@@ -36,8 +35,7 @@ impl CloudFormationPropertiesBuilder {
     }
     /// <p>The template URL of the cloud formation provisioning properties of the environment blueprint.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
     }
     /// <p>The template URL of the cloud formation provisioning properties of the environment blueprint.</p>
     pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl CloudFormationPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`template_url`](crate::types::builders::CloudFormationPropertiesBuilder::template_url)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudFormationProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudFormationProperties {
-            template_url: self.template_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_url",
-                    "template_url was not specified but it is required when building CloudFormationProperties",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudFormationProperties {
+                template_url: self.template_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_url", "template_url was not specified but it is required when building CloudFormationProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

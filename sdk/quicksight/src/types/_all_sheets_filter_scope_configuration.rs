@@ -4,7 +4,8 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllSheetsFilterScopeConfiguration {}
+pub struct AllSheetsFilterScopeConfiguration  {
+}
 impl AllSheetsFilterScopeConfiguration {
     /// Creates a new builder-style object to manufacture [`AllSheetsFilterScopeConfiguration`](crate::types::AllSheetsFilterScopeConfiguration).
     pub fn builder() -> crate::types::builders::AllSheetsFilterScopeConfigurationBuilder {
@@ -15,10 +16,13 @@ impl AllSheetsFilterScopeConfiguration {
 /// A builder for [`AllSheetsFilterScopeConfiguration`](crate::types::AllSheetsFilterScopeConfiguration).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct AllSheetsFilterScopeConfigurationBuilder {}
+pub struct AllSheetsFilterScopeConfigurationBuilder {
+}
 impl AllSheetsFilterScopeConfigurationBuilder {
     /// Consumes the builder and constructs a [`AllSheetsFilterScopeConfiguration`](crate::types::AllSheetsFilterScopeConfiguration).
     pub fn build(self) -> crate::types::AllSheetsFilterScopeConfiguration {
-        crate::types::AllSheetsFilterScopeConfiguration {}
+        crate::types::AllSheetsFilterScopeConfiguration {
+        }
     }
 }
+

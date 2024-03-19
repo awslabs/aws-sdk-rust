@@ -3,13 +3,13 @@
 /// <p>Provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScoreAttributes {
+pub struct ScoreAttributes  {
     /// <p>A relative ranking for how relevant the response is to the query.</p>
     pub score_confidence: ::std::option::Option<crate::types::ScoreConfidence>,
 }
-impl ScoreAttributes {
+impl  ScoreAttributes  {
     /// <p>A relative ranking for how relevant the response is to the query.</p>
-    pub fn score_confidence(&self) -> ::std::option::Option<&crate::types::ScoreConfidence> {
+    pub fn score_confidence(&self) -> ::std::option::Option<& crate::types::ScoreConfidence> {
         self.score_confidence.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ScoreAttributesBuilder {
     }
     /// <p>A relative ranking for how relevant the response is to the query.</p>
     pub fn set_score_confidence(mut self, input: ::std::option::Option<crate::types::ScoreConfidence>) -> Self {
-        self.score_confidence = input;
-        self
+        self.score_confidence = input; self
     }
     /// <p>A relative ranking for how relevant the response is to the query.</p>
     pub fn get_score_confidence(&self) -> &::std::option::Option<crate::types::ScoreConfidence> {
@@ -44,7 +43,9 @@ impl ScoreAttributesBuilder {
     /// Consumes the builder and constructs a [`ScoreAttributes`](crate::types::ScoreAttributes).
     pub fn build(self) -> crate::types::ScoreAttributes {
         crate::types::ScoreAttributes {
-            score_confidence: self.score_confidence,
+            score_confidence: self.score_confidence
+            ,
         }
     }
 }
+

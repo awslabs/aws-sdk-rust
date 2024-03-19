@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceProfileInput {
+pub struct DeleteInstanceProfileInput  {
     /// <p>The identifier of the instance profile to delete.</p>
     pub instance_profile_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInstanceProfileInput {
+impl  DeleteInstanceProfileInput  {
     /// <p>The identifier of the instance profile to delete.</p>
-    pub fn instance_profile_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_identifier(&self) -> ::std::option::Option<& str> {
         self.instance_profile_identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteInstanceProfileInputBuilder {
     }
     /// <p>The identifier of the instance profile to delete.</p>
     pub fn set_instance_profile_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_identifier = input;
-        self
+        self.instance_profile_identifier = input; self
     }
     /// <p>The identifier of the instance profile to delete.</p>
     pub fn get_instance_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_profile_identifier
     }
     /// Consumes the builder and constructs a [`DeleteInstanceProfileInput`](crate::operation::delete_instance_profile::DeleteInstanceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_instance_profile::DeleteInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_instance_profile::DeleteInstanceProfileInput {
-            instance_profile_identifier: self.instance_profile_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance_profile::DeleteInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_instance_profile::DeleteInstanceProfileInput {
+                instance_profile_identifier: self.instance_profile_identifier
+                ,
+            }
+        )
     }
 }
+

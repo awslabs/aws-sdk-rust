@@ -3,7 +3,7 @@
 /// <p>Metadata about an Amazon Lookout for Vision project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectMetadata {
+pub struct ProjectMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
@@ -11,17 +11,17 @@ pub struct ProjectMetadata {
     /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ProjectMetadata {
+impl  ProjectMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The unix timestamp for the date and time that the project was created.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ProjectMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ProjectMetadataBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ProjectMetadataBuilder {
     }
     /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl ProjectMetadataBuilder {
     /// Consumes the builder and constructs a [`ProjectMetadata`](crate::types::ProjectMetadata).
     pub fn build(self) -> crate::types::ProjectMetadata {
         crate::types::ProjectMetadata {
-            project_arn: self.project_arn,
-            project_name: self.project_name,
-            creation_timestamp: self.creation_timestamp,
+            project_arn: self.project_arn
+            ,
+            project_name: self.project_name
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
         }
     }
 }
+

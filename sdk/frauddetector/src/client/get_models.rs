@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetModels`](crate::operation::get_models::builders::GetModelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_models::builders::GetModelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`model_id(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_model_id):<br>required: **false**<br><p>The model ID.</p><br>
     ///   - [`model_type(ModelTypeEnum)`](crate::operation::get_models::builders::GetModelsFluentBuilder::model_type) / [`set_model_type(Option<ModelTypeEnum>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_model_type):<br>required: **false**<br><p>The model type.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token for the subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_models::builders::GetModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
-    /// - On success, responds with [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput) with field(s):
+                            /// - On success, responds with [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_models::GetModelsOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
     ///   - [`models(Option<Vec::<Model>>)`](crate::operation::get_models::GetModelsOutput::models): <p>The array of models.</p>
-    /// - On failure, responds with [`SdkError<GetModelsError>`](crate::operation::get_models::GetModelsError)
+                            /// - On failure, responds with [`SdkError<GetModelsError>`](crate::operation::get_models::GetModelsError)
     pub fn get_models(&self) -> crate::operation::get_models::builders::GetModelsFluentBuilder {
-        crate::operation::get_models::builders::GetModelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_models::builders::GetModelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

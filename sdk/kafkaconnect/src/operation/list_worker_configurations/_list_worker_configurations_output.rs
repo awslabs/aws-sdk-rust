@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkerConfigurationsOutput {
+pub struct ListWorkerConfigurationsOutput  {
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of worker configuration descriptions.</p>
-    pub worker_configurations: ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>,
+    pub worker_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::WorkerConfigurationSummary>>,
     _request_id: Option<String>,
 }
-impl ListWorkerConfigurationsOutput {
+impl  ListWorkerConfigurationsOutput  {
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of worker configuration descriptions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.worker_configurations.is_none()`.
-    pub fn worker_configurations(&self) -> &[crate::types::WorkerConfigurationSummary] {
-        self.worker_configurations.as_deref().unwrap_or_default()
+    pub fn worker_configurations(&self) -> & [crate::types::WorkerConfigurationSummary] {
+        self.worker_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorkerConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorkerConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkerConfigurationsOutput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput).
     pub fn builder() -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListWorkerConfigurationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkerConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) worker_configurations: ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>,
+    pub(crate) worker_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::WorkerConfigurationSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkerConfigurationsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListWorkerConfigurationsOutputBuilder {
     }
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListWorkerConfigurationsOutputBuilder {
     /// <p>An array of worker configuration descriptions.</p>
     pub fn worker_configurations(mut self, input: crate::types::WorkerConfigurationSummary) -> Self {
         let mut v = self.worker_configurations.unwrap_or_default();
-        v.push(input);
-        self.worker_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.worker_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of worker configuration descriptions.</p>
-    pub fn set_worker_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>) -> Self {
-        self.worker_configurations = input;
-        self
+    pub fn set_worker_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkerConfigurationSummary>>) -> Self {
+        self.worker_configurations = input; self
     }
     /// <p>An array of worker configuration descriptions.</p>
-    pub fn get_worker_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>> {
+    pub fn get_worker_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkerConfigurationSummary>> {
         &self.worker_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorkerConfigurationsOutput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput {
         crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput {
-            next_token: self.next_token,
-            worker_configurations: self.worker_configurations,
+            next_token: self.next_token
+            ,
+            worker_configurations: self.worker_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIpSetInput {
+pub struct UpdateIpSetInput  {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub ip_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
@@ -15,15 +15,15 @@ pub struct UpdateIpSetInput {
     /// <p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    pub updates: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>,
+    pub updates: ::std::option::Option<::std::vec::Vec::<crate::types::IpSetUpdate>>,
 }
-impl UpdateIpSetInput {
+impl  UpdateIpSetInput  {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    pub fn ip_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn ip_set_id(&self) -> ::std::option::Option<& str> {
         self.ip_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
@@ -34,10 +34,11 @@ impl UpdateIpSetInput {
     /// <p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
-    pub fn updates(&self) -> &[crate::types::IpSetUpdate] {
-        self.updates.as_deref().unwrap_or_default()
+    pub fn updates(&self) -> & [crate::types::IpSetUpdate] {
+        self.updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateIpSetInput {
@@ -53,7 +54,7 @@ impl UpdateIpSetInput {
 pub struct UpdateIpSetInputBuilder {
     pub(crate) ip_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
-    pub(crate) updates: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>,
+    pub(crate) updates: ::std::option::Option<::std::vec::Vec::<crate::types::IpSetUpdate>>,
 }
 impl UpdateIpSetInputBuilder {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
@@ -64,8 +65,7 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub fn set_ip_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_set_id = input;
-        self
+        self.ip_set_id = input; self
     }
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,9 +99,9 @@ impl UpdateIpSetInputBuilder {
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub fn updates(mut self, input: crate::types::IpSetUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-        v.push(input);
-        self.updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -112,9 +111,8 @@ impl UpdateIpSetInputBuilder {
     /// <p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>) -> Self {
-        self.updates = input;
-        self
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpSetUpdate>>) -> Self {
+        self.updates = input; self
     }
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -124,15 +122,21 @@ impl UpdateIpSetInputBuilder {
     /// <p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpSetUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_ip_set::UpdateIpSetInput {
-            ip_set_id: self.ip_set_id,
-            change_token: self.change_token,
-            updates: self.updates,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_ip_set::UpdateIpSetInput {
+                ip_set_id: self.ip_set_id
+                ,
+                change_token: self.change_token
+                ,
+                updates: self.updates
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupInput {
+pub struct UpdateGroupInput  {
     /// The ID of the Greengrass group.
     pub group_id: ::std::option::Option<::std::string::String>,
     /// The name of the definition.
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGroupInput {
+impl  UpdateGroupInput  {
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateGroupInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// The ID of the Greengrass group.
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UpdateGroupInputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the definition.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl UpdateGroupInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
-            group_id: self.group_id,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_group::UpdateGroupInput {
+                group_id: self.group_id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

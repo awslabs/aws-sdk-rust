@@ -3,22 +3,20 @@
 /// <p>A structure for a partition index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartitionIndex {
+pub struct PartitionIndex  {
     /// <p>The keys for the partition index.</p>
-    pub keys: ::std::vec::Vec<::std::string::String>,
+    pub keys: ::std::vec::Vec::<::std::string::String>,
     /// <p>The name of the partition index.</p>
     pub index_name: ::std::string::String,
 }
-impl PartitionIndex {
+impl  PartitionIndex  {
     /// <p>The keys for the partition index.</p>
-    pub fn keys(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.keys.deref()
+    pub fn keys(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.keys.deref()
     }
     /// <p>The name of the partition index.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> & str {
+        use std::ops::Deref; self.index_name.deref()
     }
 }
 impl PartitionIndex {
@@ -32,7 +30,7 @@ impl PartitionIndex {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionIndexBuilder {
-    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }
 impl PartitionIndexBuilder {
@@ -43,17 +41,16 @@ impl PartitionIndexBuilder {
     /// <p>The keys for the partition index.</p>
     pub fn keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input.into());
-        self.keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The keys for the partition index.</p>
-    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.keys = input; self
     }
     /// <p>The keys for the partition index.</p>
-    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.keys
     }
     /// <p>The name of the partition index.</p>
@@ -64,8 +61,7 @@ impl PartitionIndexBuilder {
     }
     /// <p>The name of the partition index.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the partition index.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl PartitionIndexBuilder {
     /// - [`keys`](crate::types::builders::PartitionIndexBuilder::keys)
     /// - [`index_name`](crate::types::builders::PartitionIndexBuilder::index_name)
     pub fn build(self) -> ::std::result::Result<crate::types::PartitionIndex, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PartitionIndex {
-            keys: self.keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keys",
-                    "keys was not specified but it is required when building PartitionIndex",
-                )
-            })?,
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building PartitionIndex",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PartitionIndex {
+                keys: self.keys
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keys", "keys was not specified but it is required when building PartitionIndex")
+                    )?
+                ,
+                index_name: self.index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_name", "index_name was not specified but it is required when building PartitionIndex")
+                    )?
+                ,
+            }
+        )
     }
 }
+

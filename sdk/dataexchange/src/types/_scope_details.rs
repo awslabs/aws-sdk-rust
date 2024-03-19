@@ -3,32 +3,35 @@
 /// <p>Details about the scope of the notifications such as the affected resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScopeDetails {
+pub struct ScopeDetails  {
     /// <p>Underlying LF resources that will be affected by this notification.</p>
-    pub lake_formation_tag_policies: ::std::option::Option<::std::vec::Vec<crate::types::LakeFormationTagPolicyDetails>>,
+    pub lake_formation_tag_policies: ::std::option::Option<::std::vec::Vec::<crate::types::LakeFormationTagPolicyDetails>>,
     /// <p>Underlying Redshift resources that will be affected by this notification.</p>
-    pub redshift_data_shares: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareDetails>>,
+    pub redshift_data_shares: ::std::option::Option<::std::vec::Vec::<crate::types::RedshiftDataShareDetails>>,
     /// <p>Underlying S3 resources that will be affected by this notification.</p>
-    pub s3_data_accesses: ::std::option::Option<::std::vec::Vec<crate::types::S3DataAccessDetails>>,
+    pub s3_data_accesses: ::std::option::Option<::std::vec::Vec::<crate::types::S3DataAccessDetails>>,
 }
-impl ScopeDetails {
+impl  ScopeDetails  {
     /// <p>Underlying LF resources that will be affected by this notification.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lake_formation_tag_policies.is_none()`.
-    pub fn lake_formation_tag_policies(&self) -> &[crate::types::LakeFormationTagPolicyDetails] {
-        self.lake_formation_tag_policies.as_deref().unwrap_or_default()
+    pub fn lake_formation_tag_policies(&self) -> & [crate::types::LakeFormationTagPolicyDetails] {
+        self.lake_formation_tag_policies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Underlying Redshift resources that will be affected by this notification.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redshift_data_shares.is_none()`.
-    pub fn redshift_data_shares(&self) -> &[crate::types::RedshiftDataShareDetails] {
-        self.redshift_data_shares.as_deref().unwrap_or_default()
+    pub fn redshift_data_shares(&self) -> & [crate::types::RedshiftDataShareDetails] {
+        self.redshift_data_shares.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Underlying S3 resources that will be affected by this notification.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_data_accesses.is_none()`.
-    pub fn s3_data_accesses(&self) -> &[crate::types::S3DataAccessDetails] {
-        self.s3_data_accesses.as_deref().unwrap_or_default()
+    pub fn s3_data_accesses(&self) -> & [crate::types::S3DataAccessDetails] {
+        self.s3_data_accesses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ScopeDetails {
@@ -42,9 +45,9 @@ impl ScopeDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScopeDetailsBuilder {
-    pub(crate) lake_formation_tag_policies: ::std::option::Option<::std::vec::Vec<crate::types::LakeFormationTagPolicyDetails>>,
-    pub(crate) redshift_data_shares: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareDetails>>,
-    pub(crate) s3_data_accesses: ::std::option::Option<::std::vec::Vec<crate::types::S3DataAccessDetails>>,
+    pub(crate) lake_formation_tag_policies: ::std::option::Option<::std::vec::Vec::<crate::types::LakeFormationTagPolicyDetails>>,
+    pub(crate) redshift_data_shares: ::std::option::Option<::std::vec::Vec::<crate::types::RedshiftDataShareDetails>>,
+    pub(crate) s3_data_accesses: ::std::option::Option<::std::vec::Vec::<crate::types::S3DataAccessDetails>>,
 }
 impl ScopeDetailsBuilder {
     /// Appends an item to `lake_formation_tag_policies`.
@@ -54,20 +57,16 @@ impl ScopeDetailsBuilder {
     /// <p>Underlying LF resources that will be affected by this notification.</p>
     pub fn lake_formation_tag_policies(mut self, input: crate::types::LakeFormationTagPolicyDetails) -> Self {
         let mut v = self.lake_formation_tag_policies.unwrap_or_default();
-        v.push(input);
-        self.lake_formation_tag_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lake_formation_tag_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Underlying LF resources that will be affected by this notification.</p>
-    pub fn set_lake_formation_tag_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LakeFormationTagPolicyDetails>>,
-    ) -> Self {
-        self.lake_formation_tag_policies = input;
-        self
+    pub fn set_lake_formation_tag_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LakeFormationTagPolicyDetails>>) -> Self {
+        self.lake_formation_tag_policies = input; self
     }
     /// <p>Underlying LF resources that will be affected by this notification.</p>
-    pub fn get_lake_formation_tag_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LakeFormationTagPolicyDetails>> {
+    pub fn get_lake_formation_tag_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LakeFormationTagPolicyDetails>> {
         &self.lake_formation_tag_policies
     }
     /// Appends an item to `redshift_data_shares`.
@@ -77,17 +76,16 @@ impl ScopeDetailsBuilder {
     /// <p>Underlying Redshift resources that will be affected by this notification.</p>
     pub fn redshift_data_shares(mut self, input: crate::types::RedshiftDataShareDetails) -> Self {
         let mut v = self.redshift_data_shares.unwrap_or_default();
-        v.push(input);
-        self.redshift_data_shares = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.redshift_data_shares = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Underlying Redshift resources that will be affected by this notification.</p>
-    pub fn set_redshift_data_shares(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareDetails>>) -> Self {
-        self.redshift_data_shares = input;
-        self
+    pub fn set_redshift_data_shares(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RedshiftDataShareDetails>>) -> Self {
+        self.redshift_data_shares = input; self
     }
     /// <p>Underlying Redshift resources that will be affected by this notification.</p>
-    pub fn get_redshift_data_shares(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareDetails>> {
+    pub fn get_redshift_data_shares(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RedshiftDataShareDetails>> {
         &self.redshift_data_shares
     }
     /// Appends an item to `s3_data_accesses`.
@@ -97,25 +95,28 @@ impl ScopeDetailsBuilder {
     /// <p>Underlying S3 resources that will be affected by this notification.</p>
     pub fn s3_data_accesses(mut self, input: crate::types::S3DataAccessDetails) -> Self {
         let mut v = self.s3_data_accesses.unwrap_or_default();
-        v.push(input);
-        self.s3_data_accesses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.s3_data_accesses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Underlying S3 resources that will be affected by this notification.</p>
-    pub fn set_s3_data_accesses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3DataAccessDetails>>) -> Self {
-        self.s3_data_accesses = input;
-        self
+    pub fn set_s3_data_accesses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3DataAccessDetails>>) -> Self {
+        self.s3_data_accesses = input; self
     }
     /// <p>Underlying S3 resources that will be affected by this notification.</p>
-    pub fn get_s3_data_accesses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3DataAccessDetails>> {
+    pub fn get_s3_data_accesses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3DataAccessDetails>> {
         &self.s3_data_accesses
     }
     /// Consumes the builder and constructs a [`ScopeDetails`](crate::types::ScopeDetails).
     pub fn build(self) -> crate::types::ScopeDetails {
         crate::types::ScopeDetails {
-            lake_formation_tag_policies: self.lake_formation_tag_policies,
-            redshift_data_shares: self.redshift_data_shares,
-            s3_data_accesses: self.s3_data_accesses,
+            lake_formation_tag_policies: self.lake_formation_tag_policies
+            ,
+            redshift_data_shares: self.redshift_data_shares
+            ,
+            s3_data_accesses: self.s3_data_accesses
+            ,
         }
     }
 }
+

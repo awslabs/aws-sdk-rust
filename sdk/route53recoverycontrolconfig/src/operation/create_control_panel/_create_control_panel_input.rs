@@ -3,7 +3,7 @@
 /// <p>The details of the control panel that you're creating.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateControlPanelInput {
+pub struct CreateControlPanelInput  {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
@@ -11,23 +11,23 @@ pub struct CreateControlPanelInput {
     /// <p>The name of the control panel.</p>
     pub control_panel_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the control panel.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateControlPanelInput {
+impl  CreateControlPanelInput  {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the control panel.</p>
-    pub fn control_panel_name(&self) -> ::std::option::Option<&str> {
+    pub fn control_panel_name(&self) -> ::std::option::Option<& str> {
         self.control_panel_name.as_deref()
     }
     /// <p>The tags associated with the control panel.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -45,7 +45,7 @@ pub struct CreateControlPanelInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) control_panel_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateControlPanelInputBuilder {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
@@ -55,8 +55,7 @@ impl CreateControlPanelInputBuilder {
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateControlPanelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateControlPanelInputBuilder {
     }
     /// <p>The name of the control panel.</p>
     pub fn set_control_panel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_panel_name = input;
-        self
+        self.control_panel_name = input; self
     }
     /// <p>The name of the control panel.</p>
     pub fn get_control_panel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,29 +96,32 @@ impl CreateControlPanelInputBuilder {
     /// <p>The tags associated with the control panel.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags associated with the control panel.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the control panel.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateControlPanelInput`](crate::operation::create_control_panel::CreateControlPanelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_control_panel::CreateControlPanelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_control_panel::CreateControlPanelInput {
-            client_token: self.client_token,
-            cluster_arn: self.cluster_arn,
-            control_panel_name: self.control_panel_name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_control_panel::CreateControlPanelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_control_panel::CreateControlPanelInput {
+                client_token: self.client_token
+                ,
+                cluster_arn: self.cluster_arn
+                ,
+                control_panel_name: self.control_panel_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

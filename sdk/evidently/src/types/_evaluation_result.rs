@@ -3,7 +3,7 @@
 /// <p>This structure displays the results of one feature evaluation assignment to one user session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationResult {
+pub struct EvaluationResult  {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature being evaluated.</p>
@@ -19,35 +19,33 @@ pub struct EvaluationResult {
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub details: ::std::option::Option<::std::string::String>,
 }
-impl EvaluationResult {
+impl  EvaluationResult  {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the feature being evaluated.</p>
-    pub fn feature(&self) -> &str {
-        use std::ops::Deref;
-        self.feature.deref()
+    pub fn feature(&self) -> & str {
+        use std::ops::Deref; self.feature.deref()
     }
     /// <p>The name of the variation that was served to the user session.</p>
-    pub fn variation(&self) -> ::std::option::Option<&str> {
+    pub fn variation(&self) -> ::std::option::Option<& str> {
         self.variation.as_deref()
     }
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::VariableValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::VariableValue> {
         self.value.as_ref()
     }
     /// <p>An internal ID that represents a unique user session of the application.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> & str {
+        use std::ops::Deref; self.entity_id.deref()
     }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -78,8 +76,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +90,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The name of the feature being evaluated.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// <p>The name of the feature being evaluated.</p>
     pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +103,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The name of the variation that was served to the user session.</p>
     pub fn set_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variation = input;
-        self
+        self.variation = input; self
     }
     /// <p>The name of the variation that was served to the user session.</p>
     pub fn get_variation(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +116,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::VariableValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::VariableValue> {
@@ -136,8 +130,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>An internal ID that represents a unique user session of the application.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>An internal ID that represents a unique user session of the application.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +143,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +156,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,24 +167,30 @@ impl EvaluationResultBuilder {
     /// - [`feature`](crate::types::builders::EvaluationResultBuilder::feature)
     /// - [`entity_id`](crate::types::builders::EvaluationResultBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationResult, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationResult {
-            project: self.project,
-            feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "feature",
-                    "feature was not specified but it is required when building EvaluationResult",
-                )
-            })?,
-            variation: self.variation,
-            value: self.value,
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building EvaluationResult",
-                )
-            })?,
-            reason: self.reason,
-            details: self.details,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationResult {
+                project: self.project
+                ,
+                feature: self.feature
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("feature", "feature was not specified but it is required when building EvaluationResult")
+                    )?
+                ,
+                variation: self.variation
+                ,
+                value: self.value
+                ,
+                entity_id: self.entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id", "entity_id was not specified but it is required when building EvaluationResult")
+                    )?
+                ,
+                reason: self.reason
+                ,
+                details: self.details
+                ,
+            }
+        )
     }
 }
+

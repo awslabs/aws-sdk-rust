@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterScalableTargetInput {
+pub struct DeregisterScalableTargetInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
@@ -94,9 +94,9 @@ pub struct DeregisterScalableTargetInput {
     /// </ul>
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
 }
-impl DeregisterScalableTargetInput {
+impl  DeregisterScalableTargetInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<& crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
@@ -138,7 +138,7 @@ impl DeregisterScalableTargetInput {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -188,7 +188,7 @@ impl DeregisterScalableTargetInput {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<& crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
 }
@@ -216,8 +216,7 @@ impl DeregisterScalableTargetInputBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -307,8 +306,7 @@ impl DeregisterScalableTargetInputBuilder {
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -452,8 +450,7 @@ impl DeregisterScalableTargetInputBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -506,16 +503,17 @@ impl DeregisterScalableTargetInputBuilder {
         &self.scalable_dimension
     }
     /// Consumes the builder and constructs a [`DeregisterScalableTargetInput`](crate::operation::deregister_scalable_target::DeregisterScalableTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_scalable_target::DeregisterScalableTargetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_scalable_target::DeregisterScalableTargetInput {
-            service_namespace: self.service_namespace,
-            resource_id: self.resource_id,
-            scalable_dimension: self.scalable_dimension,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_scalable_target::DeregisterScalableTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_scalable_target::DeregisterScalableTargetInput {
+                service_namespace: self.service_namespace
+                ,
+                resource_id: self.resource_id
+                ,
+                scalable_dimension: self.scalable_dimension
+                ,
+            }
+        )
     }
 }
+

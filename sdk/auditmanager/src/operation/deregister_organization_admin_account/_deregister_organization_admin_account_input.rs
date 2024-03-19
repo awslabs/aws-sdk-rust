@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterOrganizationAdminAccountInput {
+pub struct DeregisterOrganizationAdminAccountInput  {
     /// <p>The identifier for the administrator account.</p>
     pub admin_account_id: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterOrganizationAdminAccountInput {
+impl  DeregisterOrganizationAdminAccountInput  {
     /// <p>The identifier for the administrator account.</p>
-    pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn admin_account_id(&self) -> ::std::option::Option<& str> {
         self.admin_account_id.as_deref()
     }
 }
@@ -33,24 +33,20 @@ impl DeregisterOrganizationAdminAccountInputBuilder {
     }
     /// <p>The identifier for the administrator account.</p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_account_id = input;
-        self
+        self.admin_account_id = input; self
     }
     /// <p>The identifier for the administrator account.</p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account_id
     }
     /// Consumes the builder and constructs a [`DeregisterOrganizationAdminAccountInput`](crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountInput {
-                admin_account_id: self.admin_account_id,
-            },
+                admin_account_id: self.admin_account_id
+                ,
+            }
         )
     }
 }
+

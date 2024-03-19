@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServicePrincipalNameOutput {
+pub struct GetServicePrincipalNameOutput  {
     /// <p>The service principal name that the connector uses to authenticate with Active Directory.</p>
     pub service_principal_name: ::std::option::Option<crate::types::ServicePrincipalName>,
     _request_id: Option<String>,
 }
-impl GetServicePrincipalNameOutput {
+impl  GetServicePrincipalNameOutput  {
     /// <p>The service principal name that the connector uses to authenticate with Active Directory.</p>
-    pub fn service_principal_name(&self) -> ::std::option::Option<&crate::types::ServicePrincipalName> {
+    pub fn service_principal_name(&self) -> ::std::option::Option<& crate::types::ServicePrincipalName> {
         self.service_principal_name.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServicePrincipalNameOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServicePrincipalNameOutput {
     /// Creates a new builder-style object to manufacture [`GetServicePrincipalNameOutput`](crate::operation::get_service_principal_name::GetServicePrincipalNameOutput).
     pub fn builder() -> crate::operation::get_service_principal_name::builders::GetServicePrincipalNameOutputBuilder {
@@ -40,27 +40,28 @@ impl GetServicePrincipalNameOutputBuilder {
     }
     /// <p>The service principal name that the connector uses to authenticate with Active Directory.</p>
     pub fn set_service_principal_name(mut self, input: ::std::option::Option<crate::types::ServicePrincipalName>) -> Self {
-        self.service_principal_name = input;
-        self
+        self.service_principal_name = input; self
     }
     /// <p>The service principal name that the connector uses to authenticate with Active Directory.</p>
     pub fn get_service_principal_name(&self) -> &::std::option::Option<crate::types::ServicePrincipalName> {
         &self.service_principal_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServicePrincipalNameOutput`](crate::operation::get_service_principal_name::GetServicePrincipalNameOutput).
     pub fn build(self) -> crate::operation::get_service_principal_name::GetServicePrincipalNameOutput {
         crate::operation::get_service_principal_name::GetServicePrincipalNameOutput {
-            service_principal_name: self.service_principal_name,
+            service_principal_name: self.service_principal_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

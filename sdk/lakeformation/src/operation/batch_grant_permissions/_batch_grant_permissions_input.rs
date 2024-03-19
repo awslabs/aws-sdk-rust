@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGrantPermissionsInput {
+pub struct BatchGrantPermissionsInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPermissionsRequestEntry>>,
 }
-impl BatchGrantPermissionsInput {
+impl  BatchGrantPermissionsInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::BatchPermissionsRequestEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::BatchPermissionsRequestEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGrantPermissionsInput {
@@ -32,7 +33,7 @@ impl BatchGrantPermissionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGrantPermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPermissionsRequestEntry>>,
 }
 impl BatchGrantPermissionsInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
@@ -42,8 +43,7 @@ impl BatchGrantPermissionsInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,27 +56,28 @@ impl BatchGrantPermissionsInputBuilder {
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
     pub fn entries(mut self, input: crate::types::BatchPermissionsRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPermissionsRequestEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchPermissionsRequestEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_grant_permissions::BatchGrantPermissionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_grant_permissions::BatchGrantPermissionsInput {
-            catalog_id: self.catalog_id,
-            entries: self.entries,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_grant_permissions::BatchGrantPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_grant_permissions::BatchGrantPermissionsInput {
+                catalog_id: self.catalog_id
+                ,
+                entries: self.entries
+                ,
+            }
+        )
     }
 }
+

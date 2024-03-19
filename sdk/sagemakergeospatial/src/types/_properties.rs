@@ -3,7 +3,7 @@
 /// <p>Properties associated with the Item.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Properties {
+pub struct Properties  {
     /// <p>Estimate of cloud cover.</p>
     pub eo_cloud_cover: ::std::option::Option<f32>,
     /// <p>The angle from the sensor between nadir (straight down) and the scene center. Measured in degrees (0-90).</p>
@@ -17,7 +17,7 @@ pub struct Properties {
     /// <p>Land cloud cover for Landsat Data Collection.</p>
     pub landsat_cloud_cover_land: ::std::option::Option<f32>,
 }
-impl Properties {
+impl  Properties  {
     /// <p>Estimate of cloud cover.</p>
     pub fn eo_cloud_cover(&self) -> ::std::option::Option<f32> {
         self.eo_cloud_cover
@@ -35,7 +35,7 @@ impl Properties {
         self.view_sun_elevation
     }
     /// <p>Platform property. Platform refers to the unique name of the specific platform the instrument is attached to. For satellites it is the name of the satellite, eg. landsat-8 (Landsat-8), sentinel-2a.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>Land cloud cover for Landsat Data Collection.</p>
@@ -69,8 +69,7 @@ impl PropertiesBuilder {
     }
     /// <p>Estimate of cloud cover.</p>
     pub fn set_eo_cloud_cover(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.eo_cloud_cover = input;
-        self
+        self.eo_cloud_cover = input; self
     }
     /// <p>Estimate of cloud cover.</p>
     pub fn get_eo_cloud_cover(&self) -> &::std::option::Option<f32> {
@@ -83,8 +82,7 @@ impl PropertiesBuilder {
     }
     /// <p>The angle from the sensor between nadir (straight down) and the scene center. Measured in degrees (0-90).</p>
     pub fn set_view_off_nadir(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.view_off_nadir = input;
-        self
+        self.view_off_nadir = input; self
     }
     /// <p>The angle from the sensor between nadir (straight down) and the scene center. Measured in degrees (0-90).</p>
     pub fn get_view_off_nadir(&self) -> &::std::option::Option<f32> {
@@ -97,8 +95,7 @@ impl PropertiesBuilder {
     }
     /// <p>The sun azimuth angle. From the scene center point on the ground, this is the angle between truth north and the sun. Measured clockwise in degrees (0-360).</p>
     pub fn set_view_sun_azimuth(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.view_sun_azimuth = input;
-        self
+        self.view_sun_azimuth = input; self
     }
     /// <p>The sun azimuth angle. From the scene center point on the ground, this is the angle between truth north and the sun. Measured clockwise in degrees (0-360).</p>
     pub fn get_view_sun_azimuth(&self) -> &::std::option::Option<f32> {
@@ -111,8 +108,7 @@ impl PropertiesBuilder {
     }
     /// <p>The sun elevation angle. The angle from the tangent of the scene center point to the sun. Measured from the horizon in degrees (-90-90). Negative values indicate the sun is below the horizon, e.g. sun elevation of -10° means the data was captured during <a href="https://www.timeanddate.com/astronomy/different-types-twilight.html">nautical twilight</a>.</p>
     pub fn set_view_sun_elevation(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.view_sun_elevation = input;
-        self
+        self.view_sun_elevation = input; self
     }
     /// <p>The sun elevation angle. The angle from the tangent of the scene center point to the sun. Measured from the horizon in degrees (-90-90). Negative values indicate the sun is below the horizon, e.g. sun elevation of -10° means the data was captured during <a href="https://www.timeanddate.com/astronomy/different-types-twilight.html">nautical twilight</a>.</p>
     pub fn get_view_sun_elevation(&self) -> &::std::option::Option<f32> {
@@ -125,8 +121,7 @@ impl PropertiesBuilder {
     }
     /// <p>Platform property. Platform refers to the unique name of the specific platform the instrument is attached to. For satellites it is the name of the satellite, eg. landsat-8 (Landsat-8), sentinel-2a.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>Platform property. Platform refers to the unique name of the specific platform the instrument is attached to. For satellites it is the name of the satellite, eg. landsat-8 (Landsat-8), sentinel-2a.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl PropertiesBuilder {
     }
     /// <p>Land cloud cover for Landsat Data Collection.</p>
     pub fn set_landsat_cloud_cover_land(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.landsat_cloud_cover_land = input;
-        self
+        self.landsat_cloud_cover_land = input; self
     }
     /// <p>Land cloud cover for Landsat Data Collection.</p>
     pub fn get_landsat_cloud_cover_land(&self) -> &::std::option::Option<f32> {
@@ -149,12 +143,19 @@ impl PropertiesBuilder {
     /// Consumes the builder and constructs a [`Properties`](crate::types::Properties).
     pub fn build(self) -> crate::types::Properties {
         crate::types::Properties {
-            eo_cloud_cover: self.eo_cloud_cover,
-            view_off_nadir: self.view_off_nadir,
-            view_sun_azimuth: self.view_sun_azimuth,
-            view_sun_elevation: self.view_sun_elevation,
-            platform: self.platform,
-            landsat_cloud_cover_land: self.landsat_cloud_cover_land,
+            eo_cloud_cover: self.eo_cloud_cover
+            ,
+            view_off_nadir: self.view_off_nadir
+            ,
+            view_sun_azimuth: self.view_sun_azimuth
+            ,
+            view_sun_elevation: self.view_sun_elevation
+            ,
+            platform: self.platform
+            ,
+            landsat_cloud_cover_land: self.landsat_cloud_cover_land
+            ,
         }
     }
 }
+

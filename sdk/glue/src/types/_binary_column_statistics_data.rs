@@ -3,7 +3,7 @@
 /// <p>Defines column statistics supported for bit sequence data values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BinaryColumnStatisticsData {
+pub struct BinaryColumnStatisticsData  {
     /// <p>The size of the longest bit sequence in the column.</p>
     pub maximum_length: i64,
     /// <p>The average bit sequence length in the column.</p>
@@ -11,7 +11,7 @@ pub struct BinaryColumnStatisticsData {
     /// <p>The number of null values in the column.</p>
     pub number_of_nulls: i64,
 }
-impl BinaryColumnStatisticsData {
+impl  BinaryColumnStatisticsData  {
     /// <p>The size of the longest bit sequence in the column.</p>
     pub fn maximum_length(&self) -> i64 {
         self.maximum_length
@@ -49,8 +49,7 @@ impl BinaryColumnStatisticsDataBuilder {
     }
     /// <p>The size of the longest bit sequence in the column.</p>
     pub fn set_maximum_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.maximum_length = input;
-        self
+        self.maximum_length = input; self
     }
     /// <p>The size of the longest bit sequence in the column.</p>
     pub fn get_maximum_length(&self) -> &::std::option::Option<i64> {
@@ -64,8 +63,7 @@ impl BinaryColumnStatisticsDataBuilder {
     }
     /// <p>The average bit sequence length in the column.</p>
     pub fn set_average_length(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.average_length = input;
-        self
+        self.average_length = input; self
     }
     /// <p>The average bit sequence length in the column.</p>
     pub fn get_average_length(&self) -> &::std::option::Option<f64> {
@@ -79,8 +77,7 @@ impl BinaryColumnStatisticsDataBuilder {
     }
     /// <p>The number of null values in the column.</p>
     pub fn set_number_of_nulls(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_nulls = input;
-        self
+        self.number_of_nulls = input; self
     }
     /// <p>The number of null values in the column.</p>
     pub fn get_number_of_nulls(&self) -> &::std::option::Option<i64> {
@@ -89,9 +86,16 @@ impl BinaryColumnStatisticsDataBuilder {
     /// Consumes the builder and constructs a [`BinaryColumnStatisticsData`](crate::types::BinaryColumnStatisticsData).
     pub fn build(self) -> crate::types::BinaryColumnStatisticsData {
         crate::types::BinaryColumnStatisticsData {
-            maximum_length: self.maximum_length.unwrap_or_default(),
-            average_length: self.average_length.unwrap_or_default(),
-            number_of_nulls: self.number_of_nulls.unwrap_or_default(),
+            maximum_length: self.maximum_length
+                .unwrap_or_default()
+            ,
+            average_length: self.average_length
+                .unwrap_or_default()
+            ,
+            number_of_nulls: self.number_of_nulls
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

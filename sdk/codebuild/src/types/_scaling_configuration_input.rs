@@ -3,24 +3,25 @@
 /// <p>The scaling configuration input of a compute fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalingConfigurationInput {
+pub struct ScalingConfigurationInput  {
     /// <p>The scaling type for a compute fleet.</p>
     pub scaling_type: ::std::option::Option<crate::types::FleetScalingType>,
     /// <p>A list of <code>TargetTrackingScalingConfiguration</code> objects.</p>
-    pub target_tracking_scaling_configs: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingScalingConfiguration>>,
+    pub target_tracking_scaling_configs: ::std::option::Option<::std::vec::Vec::<crate::types::TargetTrackingScalingConfiguration>>,
     /// <p>The maximum number of instances in the ﬂeet when auto-scaling.</p>
     pub max_capacity: ::std::option::Option<i32>,
 }
-impl ScalingConfigurationInput {
+impl  ScalingConfigurationInput  {
     /// <p>The scaling type for a compute fleet.</p>
-    pub fn scaling_type(&self) -> ::std::option::Option<&crate::types::FleetScalingType> {
+    pub fn scaling_type(&self) -> ::std::option::Option<& crate::types::FleetScalingType> {
         self.scaling_type.as_ref()
     }
     /// <p>A list of <code>TargetTrackingScalingConfiguration</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_tracking_scaling_configs.is_none()`.
-    pub fn target_tracking_scaling_configs(&self) -> &[crate::types::TargetTrackingScalingConfiguration] {
-        self.target_tracking_scaling_configs.as_deref().unwrap_or_default()
+    pub fn target_tracking_scaling_configs(&self) -> & [crate::types::TargetTrackingScalingConfiguration] {
+        self.target_tracking_scaling_configs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of instances in the ﬂeet when auto-scaling.</p>
     pub fn max_capacity(&self) -> ::std::option::Option<i32> {
@@ -39,7 +40,7 @@ impl ScalingConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingConfigurationInputBuilder {
     pub(crate) scaling_type: ::std::option::Option<crate::types::FleetScalingType>,
-    pub(crate) target_tracking_scaling_configs: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingScalingConfiguration>>,
+    pub(crate) target_tracking_scaling_configs: ::std::option::Option<::std::vec::Vec::<crate::types::TargetTrackingScalingConfiguration>>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
 }
 impl ScalingConfigurationInputBuilder {
@@ -50,8 +51,7 @@ impl ScalingConfigurationInputBuilder {
     }
     /// <p>The scaling type for a compute fleet.</p>
     pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::FleetScalingType>) -> Self {
-        self.scaling_type = input;
-        self
+        self.scaling_type = input; self
     }
     /// <p>The scaling type for a compute fleet.</p>
     pub fn get_scaling_type(&self) -> &::std::option::Option<crate::types::FleetScalingType> {
@@ -64,20 +64,16 @@ impl ScalingConfigurationInputBuilder {
     /// <p>A list of <code>TargetTrackingScalingConfiguration</code> objects.</p>
     pub fn target_tracking_scaling_configs(mut self, input: crate::types::TargetTrackingScalingConfiguration) -> Self {
         let mut v = self.target_tracking_scaling_configs.unwrap_or_default();
-        v.push(input);
-        self.target_tracking_scaling_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_tracking_scaling_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>TargetTrackingScalingConfiguration</code> objects.</p>
-    pub fn set_target_tracking_scaling_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingScalingConfiguration>>,
-    ) -> Self {
-        self.target_tracking_scaling_configs = input;
-        self
+    pub fn set_target_tracking_scaling_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetTrackingScalingConfiguration>>) -> Self {
+        self.target_tracking_scaling_configs = input; self
     }
     /// <p>A list of <code>TargetTrackingScalingConfiguration</code> objects.</p>
-    pub fn get_target_tracking_scaling_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingScalingConfiguration>> {
+    pub fn get_target_tracking_scaling_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetTrackingScalingConfiguration>> {
         &self.target_tracking_scaling_configs
     }
     /// <p>The maximum number of instances in the ﬂeet when auto-scaling.</p>
@@ -87,8 +83,7 @@ impl ScalingConfigurationInputBuilder {
     }
     /// <p>The maximum number of instances in the ﬂeet when auto-scaling.</p>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
     }
     /// <p>The maximum number of instances in the ﬂeet when auto-scaling.</p>
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
@@ -97,9 +92,13 @@ impl ScalingConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`ScalingConfigurationInput`](crate::types::ScalingConfigurationInput).
     pub fn build(self) -> crate::types::ScalingConfigurationInput {
         crate::types::ScalingConfigurationInput {
-            scaling_type: self.scaling_type,
-            target_tracking_scaling_configs: self.target_tracking_scaling_configs,
-            max_capacity: self.max_capacity,
+            scaling_type: self.scaling_type
+            ,
+            target_tracking_scaling_configs: self.target_tracking_scaling_configs
+            ,
+            max_capacity: self.max_capacity
+            ,
         }
     }
 }
+

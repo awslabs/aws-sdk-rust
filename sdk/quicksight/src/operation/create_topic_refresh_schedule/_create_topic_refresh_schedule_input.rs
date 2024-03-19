@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTopicRefreshScheduleInput {
+pub struct CreateTopicRefreshScheduleInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -14,25 +14,25 @@ pub struct CreateTopicRefreshScheduleInput {
     /// <p>The definition of a refresh schedule.</p>
     pub refresh_schedule: ::std::option::Option<crate::types::TopicRefreshSchedule>,
 }
-impl CreateTopicRefreshScheduleInput {
+impl  CreateTopicRefreshScheduleInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn refresh_schedule(&self) -> ::std::option::Option<&crate::types::TopicRefreshSchedule> {
+    pub fn refresh_schedule(&self) -> ::std::option::Option<& crate::types::TopicRefreshSchedule> {
         self.refresh_schedule.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl CreateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl CreateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The name of the dataset.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,26 +117,28 @@ impl CreateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::TopicRefreshSchedule>) -> Self {
-        self.refresh_schedule = input;
-        self
+        self.refresh_schedule = input; self
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn get_refresh_schedule(&self) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
         &self.refresh_schedule
     }
     /// Consumes the builder and constructs a [`CreateTopicRefreshScheduleInput`](crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput {
-            aws_account_id: self.aws_account_id,
-            topic_id: self.topic_id,
-            dataset_arn: self.dataset_arn,
-            dataset_name: self.dataset_name,
-            refresh_schedule: self.refresh_schedule,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput {
+                aws_account_id: self.aws_account_id
+                ,
+                topic_id: self.topic_id
+                ,
+                dataset_arn: self.dataset_arn
+                ,
+                dataset_name: self.dataset_name
+                ,
+                refresh_schedule: self.refresh_schedule
+                ,
+            }
+        )
     }
 }
+

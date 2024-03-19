@@ -3,7 +3,7 @@
 /// <p>A description of a single stream's edge configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEdgeAgentConfigurationsEdgeConfig {
+pub struct ListEdgeAgentConfigurationsEdgeConfig  {
     /// <p>The name of the stream.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
@@ -19,33 +19,33 @@ pub struct ListEdgeAgentConfigurationsEdgeConfig {
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
     pub edge_config: ::std::option::Option<crate::types::EdgeConfig>,
 }
-impl ListEdgeAgentConfigurationsEdgeConfig {
+impl  ListEdgeAgentConfigurationsEdgeConfig  {
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The timestamp when the stream first created the edge config.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp when the stream last updated the edge config.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The current sync status of the stream's edge configuration.</p>
-    pub fn sync_status(&self) -> ::std::option::Option<&crate::types::SyncStatus> {
+    pub fn sync_status(&self) -> ::std::option::Option<& crate::types::SyncStatus> {
         self.sync_status.as_ref()
     }
     /// <p>A description of the generated failure status.</p>
-    pub fn failed_status_details(&self) -> ::std::option::Option<&str> {
+    pub fn failed_status_details(&self) -> ::std::option::Option<& str> {
         self.failed_status_details.as_deref()
     }
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-    pub fn edge_config(&self) -> ::std::option::Option<&crate::types::EdgeConfig> {
+    pub fn edge_config(&self) -> ::std::option::Option<& crate::types::EdgeConfig> {
         self.edge_config.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl ListEdgeAgentConfigurationsEdgeConfigBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListEdgeAgentConfigurationsEdgeConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ListEdgeAgentConfigurationsEdgeConfigBuilder {
     }
     /// <p>The timestamp when the stream first created the edge config.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp when the stream first created the edge config.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +115,7 @@ impl ListEdgeAgentConfigurationsEdgeConfigBuilder {
     }
     /// <p>The timestamp when the stream last updated the edge config.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The timestamp when the stream last updated the edge config.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl ListEdgeAgentConfigurationsEdgeConfigBuilder {
     }
     /// <p>The current sync status of the stream's edge configuration.</p>
     pub fn set_sync_status(mut self, input: ::std::option::Option<crate::types::SyncStatus>) -> Self {
-        self.sync_status = input;
-        self
+        self.sync_status = input; self
     }
     /// <p>The current sync status of the stream's edge configuration.</p>
     pub fn get_sync_status(&self) -> &::std::option::Option<crate::types::SyncStatus> {
@@ -146,8 +141,7 @@ impl ListEdgeAgentConfigurationsEdgeConfigBuilder {
     }
     /// <p>A description of the generated failure status.</p>
     pub fn set_failed_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failed_status_details = input;
-        self
+        self.failed_status_details = input; self
     }
     /// <p>A description of the generated failure status.</p>
     pub fn get_failed_status_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl ListEdgeAgentConfigurationsEdgeConfigBuilder {
     }
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
     pub fn set_edge_config(mut self, input: ::std::option::Option<crate::types::EdgeConfig>) -> Self {
-        self.edge_config = input;
-        self
+        self.edge_config = input; self
     }
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
     pub fn get_edge_config(&self) -> &::std::option::Option<crate::types::EdgeConfig> {
@@ -170,13 +163,21 @@ impl ListEdgeAgentConfigurationsEdgeConfigBuilder {
     /// Consumes the builder and constructs a [`ListEdgeAgentConfigurationsEdgeConfig`](crate::types::ListEdgeAgentConfigurationsEdgeConfig).
     pub fn build(self) -> crate::types::ListEdgeAgentConfigurationsEdgeConfig {
         crate::types::ListEdgeAgentConfigurationsEdgeConfig {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            sync_status: self.sync_status,
-            failed_status_details: self.failed_status_details,
-            edge_config: self.edge_config,
+            stream_name: self.stream_name
+            ,
+            stream_arn: self.stream_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            sync_status: self.sync_status
+            ,
+            failed_status_details: self.failed_status_details
+            ,
+            edge_config: self.edge_config
+            ,
         }
     }
 }
+

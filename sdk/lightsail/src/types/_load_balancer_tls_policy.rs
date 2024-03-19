@@ -4,7 +4,7 @@
 /// <p>For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerTlsPolicy {
+pub struct LoadBalancerTlsPolicy  {
     /// <p>The name of the TLS security policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
@@ -12,14 +12,14 @@ pub struct LoadBalancerTlsPolicy {
     /// <p>The description of the TLS security policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The protocols used in a given TLS security policy.</p>
-    pub protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub protocols: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ciphers used by the TLS security policy.</p>
     /// <p>The ciphers are listed in order of preference.</p>
-    pub ciphers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ciphers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl LoadBalancerTlsPolicy {
+impl  LoadBalancerTlsPolicy  {
     /// <p>The name of the TLS security policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
@@ -27,21 +27,23 @@ impl LoadBalancerTlsPolicy {
         self.is_default
     }
     /// <p>The description of the TLS security policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The protocols used in a given TLS security policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
-    pub fn protocols(&self) -> &[::std::string::String] {
-        self.protocols.as_deref().unwrap_or_default()
+    pub fn protocols(&self) -> & [::std::string::String] {
+        self.protocols.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ciphers used by the TLS security policy.</p>
     /// <p>The ciphers are listed in order of preference.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ciphers.is_none()`.
-    pub fn ciphers(&self) -> &[::std::string::String] {
-        self.ciphers.as_deref().unwrap_or_default()
+    pub fn ciphers(&self) -> & [::std::string::String] {
+        self.ciphers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LoadBalancerTlsPolicy {
@@ -58,8 +60,8 @@ pub struct LoadBalancerTlsPolicyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ciphers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) ciphers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl LoadBalancerTlsPolicyBuilder {
     /// <p>The name of the TLS security policy.</p>
@@ -69,8 +71,7 @@ impl LoadBalancerTlsPolicyBuilder {
     }
     /// <p>The name of the TLS security policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the TLS security policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +84,7 @@ impl LoadBalancerTlsPolicyBuilder {
     }
     /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>A Boolean value that indicates whether the TLS security policy is the default.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -97,8 +97,7 @@ impl LoadBalancerTlsPolicyBuilder {
     }
     /// <p>The description of the TLS security policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the TLS security policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,17 +110,16 @@ impl LoadBalancerTlsPolicyBuilder {
     /// <p>The protocols used in a given TLS security policy.</p>
     pub fn protocols(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input.into());
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocols used in a given TLS security policy.</p>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.protocols = input; self
     }
     /// <p>The protocols used in a given TLS security policy.</p>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.protocols
     }
     /// Appends an item to `ciphers`.
@@ -132,29 +130,34 @@ impl LoadBalancerTlsPolicyBuilder {
     /// <p>The ciphers are listed in order of preference.</p>
     pub fn ciphers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ciphers.unwrap_or_default();
-        v.push(input.into());
-        self.ciphers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ciphers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ciphers used by the TLS security policy.</p>
     /// <p>The ciphers are listed in order of preference.</p>
-    pub fn set_ciphers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ciphers = input;
-        self
+    pub fn set_ciphers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ciphers = input; self
     }
     /// <p>The ciphers used by the TLS security policy.</p>
     /// <p>The ciphers are listed in order of preference.</p>
-    pub fn get_ciphers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ciphers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ciphers
     }
     /// Consumes the builder and constructs a [`LoadBalancerTlsPolicy`](crate::types::LoadBalancerTlsPolicy).
     pub fn build(self) -> crate::types::LoadBalancerTlsPolicy {
         crate::types::LoadBalancerTlsPolicy {
-            name: self.name,
-            is_default: self.is_default,
-            description: self.description,
-            protocols: self.protocols,
-            ciphers: self.ciphers,
+            name: self.name
+            ,
+            is_default: self.is_default
+            ,
+            description: self.description
+            ,
+            protocols: self.protocols
+            ,
+            ciphers: self.ciphers
+            ,
         }
     }
 }
+

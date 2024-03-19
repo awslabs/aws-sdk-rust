@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvokeScreenAutomationInput {
+pub struct InvokeScreenAutomationInput  {
     /// <p>The ID of the workbook that contains the screen automation.</p>
     pub workbook_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the app that contains the screen automation.</p>
@@ -12,45 +12,45 @@ pub struct InvokeScreenAutomationInput {
     /// <p>The ID of the automation action to be performed.</p>
     pub screen_automation_id: ::std::option::Option<::std::string::String>,
     /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
-    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
+    pub variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VariableValue>>,
     /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
     pub row_id: ::std::option::Option<::std::string::String>,
     /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl InvokeScreenAutomationInput {
+impl  InvokeScreenAutomationInput  {
     /// <p>The ID of the workbook that contains the screen automation.</p>
-    pub fn workbook_id(&self) -> ::std::option::Option<&str> {
+    pub fn workbook_id(&self) -> ::std::option::Option<& str> {
         self.workbook_id.as_deref()
     }
     /// <p>The ID of the app that contains the screen automation.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The ID of the screen that contains the screen automation.</p>
-    pub fn screen_id(&self) -> ::std::option::Option<&str> {
+    pub fn screen_id(&self) -> ::std::option::Option<& str> {
         self.screen_id.as_deref()
     }
     /// <p>The ID of the automation action to be performed.</p>
-    pub fn screen_automation_id(&self) -> ::std::option::Option<&str> {
+    pub fn screen_automation_id(&self) -> ::std::option::Option<& str> {
         self.screen_automation_id.as_deref()
     }
     /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
-    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
+    pub fn variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::VariableValue>> {
         self.variables.as_ref()
     }
     /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
-    pub fn row_id(&self) -> ::std::option::Option<&str> {
+    pub fn row_id(&self) -> ::std::option::Option<& str> {
         self.row_id.as_deref()
     }
     /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for InvokeScreenAutomationInput {
+impl  ::std::fmt::Debug for InvokeScreenAutomationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeScreenAutomationInput");
         formatter.field("workbook_id", &self.workbook_id);
@@ -78,7 +78,7 @@ pub struct InvokeScreenAutomationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) screen_id: ::std::option::Option<::std::string::String>,
     pub(crate) screen_automation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VariableValue>>,
     pub(crate) row_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
@@ -91,8 +91,7 @@ impl InvokeScreenAutomationInputBuilder {
     }
     /// <p>The ID of the workbook that contains the screen automation.</p>
     pub fn set_workbook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workbook_id = input;
-        self
+        self.workbook_id = input; self
     }
     /// <p>The ID of the workbook that contains the screen automation.</p>
     pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl InvokeScreenAutomationInputBuilder {
     }
     /// <p>The ID of the app that contains the screen automation.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The ID of the app that contains the screen automation.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,7 @@ impl InvokeScreenAutomationInputBuilder {
     }
     /// <p>The ID of the screen that contains the screen automation.</p>
     pub fn set_screen_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.screen_id = input;
-        self
+        self.screen_id = input; self
     }
     /// <p>The ID of the screen that contains the screen automation.</p>
     pub fn get_screen_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +133,7 @@ impl InvokeScreenAutomationInputBuilder {
     }
     /// <p>The ID of the automation action to be performed.</p>
     pub fn set_screen_automation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.screen_automation_id = input;
-        self
+        self.screen_automation_id = input; self
     }
     /// <p>The ID of the automation action to be performed.</p>
     pub fn get_screen_automation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,20 +146,16 @@ impl InvokeScreenAutomationInputBuilder {
     /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
     pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VariableValue) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
-    ) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VariableValue>>) -> Self {
+        self.variables = input; self
     }
     /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
-    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::VariableValue>> {
         &self.variables
     }
     /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
@@ -173,8 +165,7 @@ impl InvokeScreenAutomationInputBuilder {
     }
     /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
     pub fn set_row_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.row_id = input;
-        self
+        self.row_id = input; self
     }
     /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
     pub fn get_row_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +180,7 @@ impl InvokeScreenAutomationInputBuilder {
     /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
@@ -198,21 +188,25 @@ impl InvokeScreenAutomationInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`InvokeScreenAutomationInput`](crate::operation::invoke_screen_automation::InvokeScreenAutomationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_screen_automation::InvokeScreenAutomationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::invoke_screen_automation::InvokeScreenAutomationInput {
-            workbook_id: self.workbook_id,
-            app_id: self.app_id,
-            screen_id: self.screen_id,
-            screen_automation_id: self.screen_automation_id,
-            variables: self.variables,
-            row_id: self.row_id,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_screen_automation::InvokeScreenAutomationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationInput {
+                workbook_id: self.workbook_id
+                ,
+                app_id: self.app_id
+                ,
+                screen_id: self.screen_id
+                ,
+                screen_automation_id: self.screen_automation_id
+                ,
+                variables: self.variables
+                ,
+                row_id: self.row_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InvokeScreenAutomationInputBuilder {
@@ -228,3 +222,4 @@ impl ::std::fmt::Debug for InvokeScreenAutomationInputBuilder {
         formatter.finish()
     }
 }
+

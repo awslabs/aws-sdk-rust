@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProvisionedProductPlanOutput {
+pub struct CreateProvisionedProductPlanOutput  {
     /// <p>The name of the plan.</p>
     pub plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The plan identifier.</p>
@@ -15,33 +15,33 @@ pub struct CreateProvisionedProductPlanOutput {
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateProvisionedProductPlanOutput {
+impl  CreateProvisionedProductPlanOutput  {
     /// <p>The name of the plan.</p>
-    pub fn plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn plan_name(&self) -> ::std::option::Option<& str> {
         self.plan_name.as_deref()
     }
     /// <p>The plan identifier.</p>
-    pub fn plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn plan_id(&self) -> ::std::option::Option<& str> {
         self.plan_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(&self) -> ::std::option::Option<&str> {
+    pub fn provision_product_id(&self) -> ::std::option::Option<& str> {
         self.provision_product_id.as_deref()
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provisioned_product_name(&self) -> ::std::option::Option<&str> {
+    pub fn provisioned_product_name(&self) -> ::std::option::Option<& str> {
         self.provisioned_product_name.as_deref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateProvisionedProductPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateProvisionedProductPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisionedProductPlanOutput`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput).
     pub fn builder() -> crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanOutputBuilder {
@@ -68,8 +68,7 @@ impl CreateProvisionedProductPlanOutputBuilder {
     }
     /// <p>The name of the plan.</p>
     pub fn set_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plan_name = input;
-        self
+        self.plan_name = input; self
     }
     /// <p>The name of the plan.</p>
     pub fn get_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl CreateProvisionedProductPlanOutputBuilder {
     }
     /// <p>The plan identifier.</p>
     pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plan_id = input;
-        self
+        self.plan_id = input; self
     }
     /// <p>The plan identifier.</p>
     pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl CreateProvisionedProductPlanOutputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_provision_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provision_product_id = input;
-        self
+        self.provision_product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_provision_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl CreateProvisionedProductPlanOutputBuilder {
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn set_provisioned_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_product_name = input;
-        self
+        self.provisioned_product_name = input; self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,36 @@ impl CreateProvisionedProductPlanOutputBuilder {
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioning_artifact_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateProvisionedProductPlanOutput`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput).
     pub fn build(self) -> crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput {
         crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanOutput {
-            plan_name: self.plan_name,
-            plan_id: self.plan_id,
-            provision_product_id: self.provision_product_id,
-            provisioned_product_name: self.provisioned_product_name,
-            provisioning_artifact_id: self.provisioning_artifact_id,
+            plan_name: self.plan_name
+            ,
+            plan_id: self.plan_id
+            ,
+            provision_product_id: self.provision_product_id
+            ,
+            provisioned_product_name: self.provisioned_product_name
+            ,
+            provisioning_artifact_id: self.provisioning_artifact_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

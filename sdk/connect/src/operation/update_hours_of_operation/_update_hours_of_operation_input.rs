@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateHoursOfOperationInput {
+pub struct UpdateHoursOfOperationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the hours of operation.</p>
@@ -14,34 +14,35 @@ pub struct UpdateHoursOfOperationInput {
     /// <p>The time zone of the hours of operation.</p>
     pub time_zone: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information of the hours of operation.</p>
-    pub config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
+    pub config: ::std::option::Option<::std::vec::Vec::<crate::types::HoursOfOperationConfig>>,
 }
-impl UpdateHoursOfOperationInput {
+impl  UpdateHoursOfOperationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn hours_of_operation_id(&self) -> ::std::option::Option<& str> {
         self.hours_of_operation_id.as_deref()
     }
     /// <p>The name of the hours of operation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the hours of operation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time zone of the hours of operation.</p>
-    pub fn time_zone(&self) -> ::std::option::Option<&str> {
+    pub fn time_zone(&self) -> ::std::option::Option<& str> {
         self.time_zone.as_deref()
     }
     /// <p>Configuration information of the hours of operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config.is_none()`.
-    pub fn config(&self) -> &[crate::types::HoursOfOperationConfig] {
-        self.config.as_deref().unwrap_or_default()
+    pub fn config(&self) -> & [crate::types::HoursOfOperationConfig] {
+        self.config.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateHoursOfOperationInput {
@@ -60,7 +61,7 @@ pub struct UpdateHoursOfOperationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) time_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
+    pub(crate) config: ::std::option::Option<::std::vec::Vec::<crate::types::HoursOfOperationConfig>>,
 }
 impl UpdateHoursOfOperationInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -71,8 +72,7 @@ impl UpdateHoursOfOperationInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl UpdateHoursOfOperationInputBuilder {
     }
     /// <p>The identifier of the hours of operation.</p>
     pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hours_of_operation_id = input;
-        self
+        self.hours_of_operation_id = input; self
     }
     /// <p>The identifier of the hours of operation.</p>
     pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl UpdateHoursOfOperationInputBuilder {
     }
     /// <p>The name of the hours of operation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the hours of operation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl UpdateHoursOfOperationInputBuilder {
     }
     /// <p>The description of the hours of operation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the hours of operation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +125,7 @@ impl UpdateHoursOfOperationInputBuilder {
     }
     /// <p>The time zone of the hours of operation.</p>
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_zone = input;
-        self
+        self.time_zone = input; self
     }
     /// <p>The time zone of the hours of operation.</p>
     pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,33 +138,36 @@ impl UpdateHoursOfOperationInputBuilder {
     /// <p>Configuration information of the hours of operation.</p>
     pub fn config(mut self, input: crate::types::HoursOfOperationConfig) -> Self {
         let mut v = self.config.unwrap_or_default();
-        v.push(input);
-        self.config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration information of the hours of operation.</p>
-    pub fn set_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>) -> Self {
-        self.config = input;
-        self
+    pub fn set_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HoursOfOperationConfig>>) -> Self {
+        self.config = input; self
     }
     /// <p>Configuration information of the hours of operation.</p>
-    pub fn get_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
+    pub fn get_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HoursOfOperationConfig>> {
         &self.config
     }
     /// Consumes the builder and constructs a [`UpdateHoursOfOperationInput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput {
-            instance_id: self.instance_id,
-            hours_of_operation_id: self.hours_of_operation_id,
-            name: self.name,
-            description: self.description,
-            time_zone: self.time_zone,
-            config: self.config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput {
+                instance_id: self.instance_id
+                ,
+                hours_of_operation_id: self.hours_of_operation_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                time_zone: self.time_zone
+                ,
+                config: self.config
+                ,
+            }
+        )
     }
 }
+

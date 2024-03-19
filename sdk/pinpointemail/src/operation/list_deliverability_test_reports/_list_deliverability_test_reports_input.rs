@@ -3,16 +3,16 @@
 /// <p>A request to list all of the predictive inbox placement tests that you've performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeliverabilityTestReportsInput {
+pub struct ListDeliverabilityTestReportsInput  {
     /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl ListDeliverabilityTestReportsInput {
+impl  ListDeliverabilityTestReportsInput  {
     /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -43,8 +43,7 @@ impl ListDeliverabilityTestReportsInputBuilder {
     }
     /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl ListDeliverabilityTestReportsInputBuilder {
     /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
@@ -68,15 +66,15 @@ impl ListDeliverabilityTestReportsInputBuilder {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListDeliverabilityTestReportsInput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsInput {
-            next_token: self.next_token,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsInput {
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

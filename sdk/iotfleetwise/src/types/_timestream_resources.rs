@@ -3,22 +3,20 @@
 /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimestreamResources {
+pub struct TimestreamResources  {
     /// <p>The name of the registered Amazon Timestream database.</p>
     pub timestream_database_name: ::std::string::String,
     /// <p>The name of the registered Amazon Timestream database table.</p>
     pub timestream_table_name: ::std::string::String,
 }
-impl TimestreamResources {
+impl  TimestreamResources  {
     /// <p>The name of the registered Amazon Timestream database.</p>
-    pub fn timestream_database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.timestream_database_name.deref()
+    pub fn timestream_database_name(&self) -> & str {
+        use std::ops::Deref; self.timestream_database_name.deref()
     }
     /// <p>The name of the registered Amazon Timestream database table.</p>
-    pub fn timestream_table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.timestream_table_name.deref()
+    pub fn timestream_table_name(&self) -> & str {
+        use std::ops::Deref; self.timestream_table_name.deref()
     }
 }
 impl TimestreamResources {
@@ -44,8 +42,7 @@ impl TimestreamResourcesBuilder {
     }
     /// <p>The name of the registered Amazon Timestream database.</p>
     pub fn set_timestream_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestream_database_name = input;
-        self
+        self.timestream_database_name = input; self
     }
     /// <p>The name of the registered Amazon Timestream database.</p>
     pub fn get_timestream_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl TimestreamResourcesBuilder {
     }
     /// <p>The name of the registered Amazon Timestream database table.</p>
     pub fn set_timestream_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestream_table_name = input;
-        self
+        self.timestream_table_name = input; self
     }
     /// <p>The name of the registered Amazon Timestream database table.</p>
     pub fn get_timestream_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl TimestreamResourcesBuilder {
     /// - [`timestream_database_name`](crate::types::builders::TimestreamResourcesBuilder::timestream_database_name)
     /// - [`timestream_table_name`](crate::types::builders::TimestreamResourcesBuilder::timestream_table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::TimestreamResources, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimestreamResources {
-            timestream_database_name: self.timestream_database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestream_database_name",
-                    "timestream_database_name was not specified but it is required when building TimestreamResources",
-                )
-            })?,
-            timestream_table_name: self.timestream_table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestream_table_name",
-                    "timestream_table_name was not specified but it is required when building TimestreamResources",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimestreamResources {
+                timestream_database_name: self.timestream_database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestream_database_name", "timestream_database_name was not specified but it is required when building TimestreamResources")
+                    )?
+                ,
+                timestream_table_name: self.timestream_table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestream_table_name", "timestream_table_name was not specified but it is required when building TimestreamResources")
+                    )?
+                ,
+            }
+        )
     }
 }
+

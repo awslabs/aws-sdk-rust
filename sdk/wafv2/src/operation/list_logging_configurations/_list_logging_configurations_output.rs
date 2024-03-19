@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLoggingConfigurationsOutput {
+pub struct ListLoggingConfigurationsOutput  {
     /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfiguration>>,
+    pub logging_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LoggingConfiguration>>,
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLoggingConfigurationsOutput {
+impl  ListLoggingConfigurationsOutput  {
     /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logging_configurations.is_none()`.
-    pub fn logging_configurations(&self) -> &[crate::types::LoggingConfiguration] {
-        self.logging_configurations.as_deref().unwrap_or_default()
+    pub fn logging_configurations(&self) -> & [crate::types::LoggingConfiguration] {
+        self.logging_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLoggingConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLoggingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsOutput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput).
     pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListLoggingConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLoggingConfigurationsOutputBuilder {
-    pub(crate) logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfiguration>>,
+    pub(crate) logging_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LoggingConfiguration>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListLoggingConfigurationsOutputBuilder {
     /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn logging_configurations(mut self, input: crate::types::LoggingConfiguration) -> Self {
         let mut v = self.logging_configurations.unwrap_or_default();
-        v.push(input);
-        self.logging_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.logging_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn set_logging_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfiguration>>) -> Self {
-        self.logging_configurations = input;
-        self
+    pub fn set_logging_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoggingConfiguration>>) -> Self {
+        self.logging_configurations = input; self
     }
     /// <p>Array of logging configurations. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn get_logging_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingConfiguration>> {
+    pub fn get_logging_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoggingConfiguration>> {
         &self.logging_configurations
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
@@ -69,28 +69,30 @@ impl ListLoggingConfigurationsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLoggingConfigurationsOutput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput {
         crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput {
-            logging_configurations: self.logging_configurations,
-            next_marker: self.next_marker,
+            logging_configurations: self.logging_configurations
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterAssociatedToSchedule {
+pub struct ClusterAssociatedToSchedule  {
     /// <p></p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub schedule_association_state: ::std::option::Option<crate::types::ScheduleState>,
 }
-impl ClusterAssociatedToSchedule {
+impl  ClusterAssociatedToSchedule  {
     /// <p></p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p></p>
-    pub fn schedule_association_state(&self) -> ::std::option::Option<&crate::types::ScheduleState> {
+    pub fn schedule_association_state(&self) -> ::std::option::Option<& crate::types::ScheduleState> {
         self.schedule_association_state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ClusterAssociatedToScheduleBuilder {
     }
     /// <p></p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p></p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ClusterAssociatedToScheduleBuilder {
     }
     /// <p></p>
     pub fn set_schedule_association_state(mut self, input: ::std::option::Option<crate::types::ScheduleState>) -> Self {
-        self.schedule_association_state = input;
-        self
+        self.schedule_association_state = input; self
     }
     /// <p></p>
     pub fn get_schedule_association_state(&self) -> &::std::option::Option<crate::types::ScheduleState> {
@@ -65,8 +63,11 @@ impl ClusterAssociatedToScheduleBuilder {
     /// Consumes the builder and constructs a [`ClusterAssociatedToSchedule`](crate::types::ClusterAssociatedToSchedule).
     pub fn build(self) -> crate::types::ClusterAssociatedToSchedule {
         crate::types::ClusterAssociatedToSchedule {
-            cluster_identifier: self.cluster_identifier,
-            schedule_association_state: self.schedule_association_state,
+            cluster_identifier: self.cluster_identifier
+            ,
+            schedule_association_state: self.schedule_association_state
+            ,
         }
     }
 }
+

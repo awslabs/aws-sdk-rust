@@ -4,24 +4,23 @@
 /// <p>This data type is used within a <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_PolicyDefinition.html">PolicyDefinition</a> structure as part of a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StaticPolicyDefinitionDetail {
+pub struct StaticPolicyDefinitionDetail  {
     /// <p>A description of the static policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The content of the static policy written in the Cedar policy language.</p>
     pub statement: ::std::string::String,
 }
-impl StaticPolicyDefinitionDetail {
+impl  StaticPolicyDefinitionDetail  {
     /// <p>A description of the static policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The content of the static policy written in the Cedar policy language.</p>
-    pub fn statement(&self) -> &str {
-        use std::ops::Deref;
-        self.statement.deref()
+    pub fn statement(&self) -> & str {
+        use std::ops::Deref; self.statement.deref()
     }
 }
-impl ::std::fmt::Debug for StaticPolicyDefinitionDetail {
+impl  ::std::fmt::Debug for StaticPolicyDefinitionDetail  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StaticPolicyDefinitionDetail");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl StaticPolicyDefinitionDetailBuilder {
     }
     /// <p>A description of the static policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the static policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl StaticPolicyDefinitionDetailBuilder {
     }
     /// <p>The content of the static policy written in the Cedar policy language.</p>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// <p>The content of the static policy written in the Cedar policy language.</p>
     pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,15 +74,17 @@ impl StaticPolicyDefinitionDetailBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`statement`](crate::types::builders::StaticPolicyDefinitionDetailBuilder::statement)
     pub fn build(self) -> ::std::result::Result<crate::types::StaticPolicyDefinitionDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StaticPolicyDefinitionDetail {
-            description: self.description,
-            statement: self.statement.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statement",
-                    "statement was not specified but it is required when building StaticPolicyDefinitionDetail",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StaticPolicyDefinitionDetail {
+                description: self.description
+                ,
+                statement: self.statement
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statement", "statement was not specified but it is required when building StaticPolicyDefinitionDetail")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StaticPolicyDefinitionDetailBuilder {
@@ -96,3 +95,4 @@ impl ::std::fmt::Debug for StaticPolicyDefinitionDetailBuilder {
         formatter.finish()
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCollaborations`](crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p><br>
     ///   - [`member_status(FilterableMemberStatus)`](crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::member_status) / [`set_member_status(Option<FilterableMemberStatus>)`](crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::set_member_status):<br>required: **false**<br><p>The caller's status in a collaboration.</p><br>
-    /// - On success, responds with [`ListCollaborationsOutput`](crate::operation::list_collaborations::ListCollaborationsOutput) with field(s):
+                            /// - On success, responds with [`ListCollaborationsOutput`](crate::operation::list_collaborations::ListCollaborationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_collaborations::ListCollaborationsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`collaboration_list(Vec::<CollaborationSummary>)`](crate::operation::list_collaborations::ListCollaborationsOutput::collaboration_list): <p>The list of collaborations.</p>
-    /// - On failure, responds with [`SdkError<ListCollaborationsError>`](crate::operation::list_collaborations::ListCollaborationsError)
+                            /// - On failure, responds with [`SdkError<ListCollaborationsError>`](crate::operation::list_collaborations::ListCollaborationsError)
     pub fn list_collaborations(&self) -> crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder {
-        crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_collaborations::builders::ListCollaborationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

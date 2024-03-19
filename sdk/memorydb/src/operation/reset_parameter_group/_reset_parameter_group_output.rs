@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetParameterGroupOutput {
+pub struct ResetParameterGroupOutput  {
     /// <p>The parameter group being reset.</p>
     pub parameter_group: ::std::option::Option<crate::types::ParameterGroup>,
     _request_id: Option<String>,
 }
-impl ResetParameterGroupOutput {
+impl  ResetParameterGroupOutput  {
     /// <p>The parameter group being reset.</p>
-    pub fn parameter_group(&self) -> ::std::option::Option<&crate::types::ParameterGroup> {
+    pub fn parameter_group(&self) -> ::std::option::Option<& crate::types::ParameterGroup> {
         self.parameter_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ResetParameterGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResetParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetParameterGroupOutput`](crate::operation::reset_parameter_group::ResetParameterGroupOutput).
     pub fn builder() -> crate::operation::reset_parameter_group::builders::ResetParameterGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl ResetParameterGroupOutputBuilder {
     }
     /// <p>The parameter group being reset.</p>
     pub fn set_parameter_group(mut self, input: ::std::option::Option<crate::types::ParameterGroup>) -> Self {
-        self.parameter_group = input;
-        self
+        self.parameter_group = input; self
     }
     /// <p>The parameter group being reset.</p>
     pub fn get_parameter_group(&self) -> &::std::option::Option<crate::types::ParameterGroup> {
         &self.parameter_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResetParameterGroupOutput`](crate::operation::reset_parameter_group::ResetParameterGroupOutput).
     pub fn build(self) -> crate::operation::reset_parameter_group::ResetParameterGroupOutput {
         crate::operation::reset_parameter_group::ResetParameterGroupOutput {
-            parameter_group: self.parameter_group,
+            parameter_group: self.parameter_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

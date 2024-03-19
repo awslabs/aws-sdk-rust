@@ -3,7 +3,7 @@
 /// <p>An object containing information about the output file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEarthObservationJobOutputConfig {
+pub struct ListEarthObservationJobOutputConfig  {
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
     pub arn: ::std::string::String,
     /// <p>The names of the Earth Observation jobs in the list.</p>
@@ -17,21 +17,19 @@ pub struct ListEarthObservationJobOutputConfig {
     /// <p>The operation type for an Earth Observation job.</p>
     pub operation_type: ::std::string::String,
     /// <p>Each tag consists of a key and a value.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ListEarthObservationJobOutputConfig {
+impl  ListEarthObservationJobOutputConfig  {
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The names of the Earth Observation jobs in the list.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The duration of the session, in seconds.</p>
@@ -39,16 +37,15 @@ impl ListEarthObservationJobOutputConfig {
         self.duration_in_seconds
     }
     /// <p>The status of the list of the Earth Observation jobs.</p>
-    pub fn status(&self) -> &crate::types::EarthObservationJobStatus {
+    pub fn status(&self) -> & crate::types::EarthObservationJobStatus {
         &self.status
     }
     /// <p>The operation type for an Earth Observation job.</p>
-    pub fn operation_type(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_type.deref()
+    pub fn operation_type(&self) -> & str {
+        use std::ops::Deref; self.operation_type.deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -69,7 +66,7 @@ pub struct ListEarthObservationJobOutputConfigBuilder {
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::EarthObservationJobStatus>,
     pub(crate) operation_type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ListEarthObservationJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
@@ -80,8 +77,7 @@ impl ListEarthObservationJobOutputConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl ListEarthObservationJobOutputConfigBuilder {
     }
     /// <p>The names of the Earth Observation jobs in the list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The names of the Earth Observation jobs in the list.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl ListEarthObservationJobOutputConfigBuilder {
     }
     /// <p>The creation time.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +119,7 @@ impl ListEarthObservationJobOutputConfigBuilder {
     }
     /// <p>The duration of the session, in seconds.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// <p>The duration of the session, in seconds.</p>
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -140,8 +133,7 @@ impl ListEarthObservationJobOutputConfigBuilder {
     }
     /// <p>The status of the list of the Earth Observation jobs.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EarthObservationJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the list of the Earth Observation jobs.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EarthObservationJobStatus> {
@@ -155,8 +147,7 @@ impl ListEarthObservationJobOutputConfigBuilder {
     }
     /// <p>The operation type for an Earth Observation job.</p>
     pub fn set_operation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_type = input;
-        self
+        self.operation_type = input; self
     }
     /// <p>The operation type for an Earth Observation job.</p>
     pub fn get_operation_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,17 +160,16 @@ impl ListEarthObservationJobOutputConfigBuilder {
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListEarthObservationJobOutputConfig`](crate::types::ListEarthObservationJobOutputConfig).
@@ -191,44 +181,42 @@ impl ListEarthObservationJobOutputConfigBuilder {
     /// - [`status`](crate::types::builders::ListEarthObservationJobOutputConfigBuilder::status)
     /// - [`operation_type`](crate::types::builders::ListEarthObservationJobOutputConfigBuilder::operation_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ListEarthObservationJobOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListEarthObservationJobOutputConfig {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ListEarthObservationJobOutputConfig",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ListEarthObservationJobOutputConfig",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ListEarthObservationJobOutputConfig",
-                )
-            })?,
-            duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "duration_in_seconds",
-                    "duration_in_seconds was not specified but it is required when building ListEarthObservationJobOutputConfig",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ListEarthObservationJobOutputConfig",
-                )
-            })?,
-            operation_type: self.operation_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_type",
-                    "operation_type was not specified but it is required when building ListEarthObservationJobOutputConfig",
-                )
-            })?,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListEarthObservationJobOutputConfig {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ListEarthObservationJobOutputConfig")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ListEarthObservationJobOutputConfig")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ListEarthObservationJobOutputConfig")
+                    )?
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("duration_in_seconds", "duration_in_seconds was not specified but it is required when building ListEarthObservationJobOutputConfig")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ListEarthObservationJobOutputConfig")
+                    )?
+                ,
+                operation_type: self.operation_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_type", "operation_type was not specified but it is required when building ListEarthObservationJobOutputConfig")
+                    )?
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterInstanceInput {
+pub struct RegisterInstanceInput  {
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
@@ -101,11 +101,11 @@ pub struct RegisterInstanceInput {
     /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
     /// </dd>
     /// </dl>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl RegisterInstanceInput {
+impl  RegisterInstanceInput  {
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
@@ -123,11 +123,11 @@ impl RegisterInstanceInput {
     /// </ul><note>
     /// <p>Do not include sensitive information in <code>InstanceId</code> if the namespace is discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code> for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable by public DNS queries.</p>
     /// </note>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
@@ -208,7 +208,7 @@ impl RegisterInstanceInput {
     /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
     /// </dd>
     /// </dl>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -226,7 +226,7 @@ pub struct RegisterInstanceInputBuilder {
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl RegisterInstanceInputBuilder {
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
@@ -237,8 +237,7 @@ impl RegisterInstanceInputBuilder {
     }
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +279,7 @@ impl RegisterInstanceInputBuilder {
     /// <p>Do not include sensitive information in <code>InstanceId</code> if the namespace is discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code> for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable by public DNS queries.</p>
     /// </note>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
@@ -308,8 +306,7 @@ impl RegisterInstanceInputBuilder {
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -399,9 +396,9 @@ impl RegisterInstanceInputBuilder {
     /// </dl>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
@@ -481,9 +478,8 @@ impl RegisterInstanceInputBuilder {
     /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
     /// </dd>
     /// </dl>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
@@ -563,18 +559,23 @@ impl RegisterInstanceInputBuilder {
     /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
     /// </dd>
     /// </dl>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_instance::RegisterInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_instance::RegisterInstanceInput {
-            service_id: self.service_id,
-            instance_id: self.instance_id,
-            creator_request_id: self.creator_request_id,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_instance::RegisterInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_instance::RegisterInstanceInput {
+                service_id: self.service_id
+                ,
+                instance_id: self.instance_id
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

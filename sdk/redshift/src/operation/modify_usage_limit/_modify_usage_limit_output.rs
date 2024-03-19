@@ -3,7 +3,7 @@
 /// <p>Describes a usage limit object for a cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyUsageLimitOutput {
+pub struct ModifyUsageLimitOutput  {
     /// <p>The identifier of the usage limit.</p>
     pub usage_limit_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster with a usage limit.</p>
@@ -27,24 +27,24 @@ pub struct ModifyUsageLimitOutput {
     /// </ul>
     pub breach_action: ::std::option::Option<crate::types::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl ModifyUsageLimitOutput {
+impl  ModifyUsageLimitOutput  {
     /// <p>The identifier of the usage limit.</p>
-    pub fn usage_limit_id(&self) -> ::std::option::Option<&str> {
+    pub fn usage_limit_id(&self) -> ::std::option::Option<& str> {
         self.usage_limit_id.as_deref()
     }
     /// <p>The identifier of the cluster with a usage limit.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The Amazon Redshift feature to which the limit applies.</p>
-    pub fn feature_type(&self) -> ::std::option::Option<&crate::types::UsageLimitFeatureType> {
+    pub fn feature_type(&self) -> ::std::option::Option<& crate::types::UsageLimitFeatureType> {
         self.feature_type.as_ref()
     }
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
-    pub fn limit_type(&self) -> ::std::option::Option<&crate::types::UsageLimitLimitType> {
+    pub fn limit_type(&self) -> ::std::option::Option<& crate::types::UsageLimitLimitType> {
         self.limit_type.as_ref()
     }
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
@@ -52,7 +52,7 @@ impl ModifyUsageLimitOutput {
         self.amount
     }
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.</p>
-    pub fn period(&self) -> ::std::option::Option<&crate::types::UsageLimitPeriod> {
+    pub fn period(&self) -> ::std::option::Option<& crate::types::UsageLimitPeriod> {
         self.period.as_ref()
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are:</p>
@@ -64,21 +64,22 @@ impl ModifyUsageLimitOutput {
     /// <li>
     /// <p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
     /// </ul>
-    pub fn breach_action(&self) -> ::std::option::Option<&crate::types::UsageLimitBreachAction> {
+    pub fn breach_action(&self) -> ::std::option::Option<& crate::types::UsageLimitBreachAction> {
         self.breach_action.as_ref()
     }
     /// <p>A list of tag instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyUsageLimitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyUsageLimitOutput {
     /// Creates a new builder-style object to manufacture [`ModifyUsageLimitOutput`](crate::operation::modify_usage_limit::ModifyUsageLimitOutput).
     pub fn builder() -> crate::operation::modify_usage_limit::builders::ModifyUsageLimitOutputBuilder {
@@ -97,7 +98,7 @@ pub struct ModifyUsageLimitOutputBuilder {
     pub(crate) amount: ::std::option::Option<i64>,
     pub(crate) period: ::std::option::Option<crate::types::UsageLimitPeriod>,
     pub(crate) breach_action: ::std::option::Option<crate::types::UsageLimitBreachAction>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl ModifyUsageLimitOutputBuilder {
@@ -108,8 +109,7 @@ impl ModifyUsageLimitOutputBuilder {
     }
     /// <p>The identifier of the usage limit.</p>
     pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_limit_id = input;
-        self
+        self.usage_limit_id = input; self
     }
     /// <p>The identifier of the usage limit.</p>
     pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl ModifyUsageLimitOutputBuilder {
     }
     /// <p>The identifier of the cluster with a usage limit.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster with a usage limit.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl ModifyUsageLimitOutputBuilder {
     }
     /// <p>The Amazon Redshift feature to which the limit applies.</p>
     pub fn set_feature_type(mut self, input: ::std::option::Option<crate::types::UsageLimitFeatureType>) -> Self {
-        self.feature_type = input;
-        self
+        self.feature_type = input; self
     }
     /// <p>The Amazon Redshift feature to which the limit applies.</p>
     pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::UsageLimitFeatureType> {
@@ -150,8 +148,7 @@ impl ModifyUsageLimitOutputBuilder {
     }
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
     pub fn set_limit_type(mut self, input: ::std::option::Option<crate::types::UsageLimitLimitType>) -> Self {
-        self.limit_type = input;
-        self
+        self.limit_type = input; self
     }
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
     pub fn get_limit_type(&self) -> &::std::option::Option<crate::types::UsageLimitLimitType> {
@@ -164,8 +161,7 @@ impl ModifyUsageLimitOutputBuilder {
     }
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.amount = input;
-        self
+        self.amount = input; self
     }
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
     pub fn get_amount(&self) -> &::std::option::Option<i64> {
@@ -178,8 +174,7 @@ impl ModifyUsageLimitOutputBuilder {
     }
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.</p>
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::UsageLimitPeriod>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.</p>
     pub fn get_period(&self) -> &::std::option::Option<crate::types::UsageLimitPeriod> {
@@ -208,8 +203,7 @@ impl ModifyUsageLimitOutputBuilder {
     /// <p><b>disable</b> - To disable the feature until the next usage period begins.</p></li>
     /// </ul>
     pub fn set_breach_action(mut self, input: ::std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
-        self.breach_action = input;
-        self
+        self.breach_action = input; self
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are:</p>
     /// <ul>
@@ -230,40 +224,48 @@ impl ModifyUsageLimitOutputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyUsageLimitOutput`](crate::operation::modify_usage_limit::ModifyUsageLimitOutput).
     pub fn build(self) -> crate::operation::modify_usage_limit::ModifyUsageLimitOutput {
         crate::operation::modify_usage_limit::ModifyUsageLimitOutput {
-            usage_limit_id: self.usage_limit_id,
-            cluster_identifier: self.cluster_identifier,
-            feature_type: self.feature_type,
-            limit_type: self.limit_type,
-            amount: self.amount,
-            period: self.period,
-            breach_action: self.breach_action,
-            tags: self.tags,
+            usage_limit_id: self.usage_limit_id
+            ,
+            cluster_identifier: self.cluster_identifier
+            ,
+            feature_type: self.feature_type
+            ,
+            limit_type: self.limit_type
+            ,
+            amount: self.amount
+            ,
+            period: self.period
+            ,
+            breach_action: self.breach_action
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

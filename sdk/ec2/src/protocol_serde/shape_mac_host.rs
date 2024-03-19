@@ -33,3 +33,4 @@ pub fn de_mac_host(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
     }
     Ok(builder.build())
 }
+

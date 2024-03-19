@@ -3,7 +3,7 @@
 /// <p>Network Measurement Reports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WcdmaNmrObj {
+pub struct WcdmaNmrObj  {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub uarfcndl: i32,
     /// <p>Primary Scrambling Code.</p>
@@ -15,7 +15,7 @@ pub struct WcdmaNmrObj {
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub path_loss: ::std::option::Option<i32>,
 }
-impl WcdmaNmrObj {
+impl  WcdmaNmrObj  {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub fn uarfcndl(&self) -> i32 {
         self.uarfcndl
@@ -63,8 +63,7 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub fn set_uarfcndl(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.uarfcndl = input;
-        self
+        self.uarfcndl = input; self
     }
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub fn get_uarfcndl(&self) -> &::std::option::Option<i32> {
@@ -78,8 +77,7 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>Primary Scrambling Code.</p>
     pub fn set_psc(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.psc = input;
-        self
+        self.psc = input; self
     }
     /// <p>Primary Scrambling Code.</p>
     pub fn get_psc(&self) -> &::std::option::Option<i32> {
@@ -93,8 +91,7 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn set_utran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.utran_cid = input;
-        self
+        self.utran_cid = input; self
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn get_utran_cid(&self) -> &::std::option::Option<i32> {
@@ -107,8 +104,7 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>Received Signal Code Power (signal power) (dBm)</p>
     pub fn set_rscp(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rscp = input;
-        self
+        self.rscp = input; self
     }
     /// <p>Received Signal Code Power (signal power) (dBm)</p>
     pub fn get_rscp(&self) -> &::std::option::Option<i32> {
@@ -121,8 +117,7 @@ impl WcdmaNmrObjBuilder {
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn set_path_loss(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.path_loss = input;
-        self
+        self.path_loss = input; self
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn get_path_loss(&self) -> &::std::option::Option<i32> {
@@ -134,27 +129,29 @@ impl WcdmaNmrObjBuilder {
     /// - [`psc`](crate::types::builders::WcdmaNmrObjBuilder::psc)
     /// - [`utran_cid`](crate::types::builders::WcdmaNmrObjBuilder::utran_cid)
     pub fn build(self) -> ::std::result::Result<crate::types::WcdmaNmrObj, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WcdmaNmrObj {
-            uarfcndl: self.uarfcndl.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uarfcndl",
-                    "uarfcndl was not specified but it is required when building WcdmaNmrObj",
-                )
-            })?,
-            psc: self.psc.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "psc",
-                    "psc was not specified but it is required when building WcdmaNmrObj",
-                )
-            })?,
-            utran_cid: self.utran_cid.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "utran_cid",
-                    "utran_cid was not specified but it is required when building WcdmaNmrObj",
-                )
-            })?,
-            rscp: self.rscp,
-            path_loss: self.path_loss,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WcdmaNmrObj {
+                uarfcndl: self.uarfcndl
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uarfcndl", "uarfcndl was not specified but it is required when building WcdmaNmrObj")
+                    )?
+                ,
+                psc: self.psc
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("psc", "psc was not specified but it is required when building WcdmaNmrObj")
+                    )?
+                ,
+                utran_cid: self.utran_cid
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("utran_cid", "utran_cid was not specified but it is required when building WcdmaNmrObj")
+                    )?
+                ,
+                rscp: self.rscp
+                ,
+                path_loss: self.path_loss
+                ,
+            }
+        )
     }
 }
+

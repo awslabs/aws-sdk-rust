@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteWorldsOutput {
+pub struct BatchDeleteWorldsOutput  {
     /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
-    pub unprocessed_worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub unprocessed_worlds: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl BatchDeleteWorldsOutput {
+impl  BatchDeleteWorldsOutput  {
     /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_worlds.is_none()`.
-    pub fn unprocessed_worlds(&self) -> &[::std::string::String] {
-        self.unprocessed_worlds.as_deref().unwrap_or_default()
+    pub fn unprocessed_worlds(&self) -> & [::std::string::String] {
+        self.unprocessed_worlds.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteWorldsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDeleteWorldsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteWorldsOutput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput).
     pub fn builder() -> crate::operation::batch_delete_worlds::builders::BatchDeleteWorldsOutputBuilder {
@@ -31,7 +32,7 @@ impl BatchDeleteWorldsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteWorldsOutputBuilder {
-    pub(crate) unprocessed_worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) unprocessed_worlds: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteWorldsOutputBuilder {
@@ -42,33 +43,34 @@ impl BatchDeleteWorldsOutputBuilder {
     /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
     pub fn unprocessed_worlds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.unprocessed_worlds.unwrap_or_default();
-        v.push(input.into());
-        self.unprocessed_worlds = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.unprocessed_worlds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
-    pub fn set_unprocessed_worlds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.unprocessed_worlds = input;
-        self
+    pub fn set_unprocessed_worlds(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.unprocessed_worlds = input; self
     }
     /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
-    pub fn get_unprocessed_worlds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_unprocessed_worlds(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.unprocessed_worlds
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDeleteWorldsOutput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput).
     pub fn build(self) -> crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput {
         crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput {
-            unprocessed_worlds: self.unprocessed_worlds,
+            unprocessed_worlds: self.unprocessed_worlds
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

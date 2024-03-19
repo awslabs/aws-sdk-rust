@@ -3,13 +3,13 @@
 /// <p>A piece of data (a field in the table).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Datum {
+pub struct Datum  {
     /// <p>The value of the datum.</p>
     pub var_char_value: ::std::option::Option<::std::string::String>,
 }
-impl Datum {
+impl  Datum  {
     /// <p>The value of the datum.</p>
-    pub fn var_char_value(&self) -> ::std::option::Option<&str> {
+    pub fn var_char_value(&self) -> ::std::option::Option<& str> {
         self.var_char_value.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DatumBuilder {
     }
     /// <p>The value of the datum.</p>
     pub fn set_var_char_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.var_char_value = input;
-        self
+        self.var_char_value = input; self
     }
     /// <p>The value of the datum.</p>
     pub fn get_var_char_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl DatumBuilder {
     /// Consumes the builder and constructs a [`Datum`](crate::types::Datum).
     pub fn build(self) -> crate::types::Datum {
         crate::types::Datum {
-            var_char_value: self.var_char_value,
+            var_char_value: self.var_char_value
+            ,
         }
     }
 }
+

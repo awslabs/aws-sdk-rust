@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopPipelineExecutionInput {
+pub struct StopPipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl StopPipelineExecutionInput {
+impl  StopPipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_arn.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StopPipelineExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_arn = input;
-        self
+        self.pipeline_execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl StopPipelineExecutionInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_pipeline_execution::StopPipelineExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
-            pipeline_execution_arn: self.pipeline_execution_arn,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_pipeline_execution::StopPipelineExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
+                pipeline_execution_arn: self.pipeline_execution_arn
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

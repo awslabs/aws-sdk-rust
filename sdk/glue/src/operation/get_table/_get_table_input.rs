@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTableInput {
+pub struct GetTableInput  {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
@@ -14,25 +14,25 @@ pub struct GetTableInput {
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GetTableInput {
+impl  GetTableInput  {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The transaction ID at which to read the table contents.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn query_as_of_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn query_as_of_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.query_as_of_time.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl GetTableInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GetTableInputBuilder {
     }
     /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl GetTableInputBuilder {
     }
     /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl GetTableInputBuilder {
     }
     /// <p>The transaction ID at which to read the table contents.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The transaction ID at which to read the table contents.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl GetTableInputBuilder {
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn set_query_as_of_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.query_as_of_time = input;
-        self
+        self.query_as_of_time = input; self
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,12 +123,20 @@ impl GetTableInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetTableInput`](crate::operation::get_table::GetTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_table::GetTableInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            name: self.name,
-            transaction_id: self.transaction_id,
-            query_as_of_time: self.query_as_of_time,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_table::GetTableInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                name: self.name
+                ,
+                transaction_id: self.transaction_id
+                ,
+                query_as_of_time: self.query_as_of_time
+                ,
+            }
+        )
     }
 }
+

@@ -3,18 +3,17 @@
 /// <p>A transform operation that filters rows based on a condition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct FilterOperation {
+pub struct FilterOperation  {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     pub condition_expression: ::std::string::String,
 }
-impl FilterOperation {
+impl  FilterOperation  {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    pub fn condition_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.condition_expression.deref()
+    pub fn condition_expression(&self) -> & str {
+        use std::ops::Deref; self.condition_expression.deref()
     }
 }
-impl ::std::fmt::Debug for FilterOperation {
+impl  ::std::fmt::Debug for FilterOperation  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FilterOperation");
         formatter.field("condition_expression", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl FilterOperationBuilder {
     }
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     pub fn set_condition_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition_expression = input;
-        self
+        self.condition_expression = input; self
     }
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     pub fn get_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl FilterOperationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`condition_expression`](crate::types::builders::FilterOperationBuilder::condition_expression)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterOperation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterOperation {
-            condition_expression: self.condition_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition_expression",
-                    "condition_expression was not specified but it is required when building FilterOperation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilterOperation {
+                condition_expression: self.condition_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition_expression", "condition_expression was not specified but it is required when building FilterOperation")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for FilterOperationBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for FilterOperationBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartLifecyclePolicyPreviewInput {
+pub struct StartLifecyclePolicyPreviewInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to be evaluated.</p>
@@ -10,17 +10,17 @@ pub struct StartLifecyclePolicyPreviewInput {
     /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
     pub lifecycle_policy_text: ::std::option::Option<::std::string::String>,
 }
-impl StartLifecyclePolicyPreviewInput {
+impl  StartLifecyclePolicyPreviewInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository to be evaluated.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
-    pub fn lifecycle_policy_text(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_policy_text(&self) -> ::std::option::Option<& str> {
         self.lifecycle_policy_text.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl StartLifecyclePolicyPreviewInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StartLifecyclePolicyPreviewInputBuilder {
     }
     /// <p>The name of the repository to be evaluated.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository to be evaluated.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl StartLifecyclePolicyPreviewInputBuilder {
     }
     /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
     pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_policy_text = input;
-        self
+        self.lifecycle_policy_text = input; self
     }
     /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
     pub fn get_lifecycle_policy_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_policy_text
     }
     /// Consumes the builder and constructs a [`StartLifecyclePolicyPreviewInput`](crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            lifecycle_policy_text: self.lifecycle_policy_text,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                lifecycle_policy_text: self.lifecycle_policy_text
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetDedicatedIps`](crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pool_name(impl Into<String>)`](crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::pool_name) / [`set_pool_name(Option<String>)`](crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::set_pool_name):<br>required: **false**<br><p>The name of the IP pool that the dedicated IP address is associated with.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p><br>
     ///   - [`page_size(i32)`](crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
-    /// - On success, responds with [`GetDedicatedIpsOutput`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput) with field(s):
+                            /// - On success, responds with [`GetDedicatedIpsOutput`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput) with field(s):
     ///   - [`dedicated_ips(Option<Vec::<DedicatedIp>>)`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput::dedicated_ips): <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput::next_token): <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<GetDedicatedIpsError>`](crate::operation::get_dedicated_ips::GetDedicatedIpsError)
+                            /// - On failure, responds with [`SdkError<GetDedicatedIpsError>`](crate::operation::get_dedicated_ips::GetDedicatedIpsError)
     pub fn get_dedicated_ips(&self) -> crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder {
-        crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

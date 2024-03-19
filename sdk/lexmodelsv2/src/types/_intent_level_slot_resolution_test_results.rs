@@ -3,15 +3,14 @@
 /// <p>Indicates the success or failure of slots at the intent level.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntentLevelSlotResolutionTestResults {
+pub struct IntentLevelSlotResolutionTestResults  {
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub items: ::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>,
+    pub items: ::std::vec::Vec::<crate::types::IntentLevelSlotResolutionTestResultItem>,
 }
-impl IntentLevelSlotResolutionTestResults {
+impl  IntentLevelSlotResolutionTestResults  {
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub fn items(&self) -> &[crate::types::IntentLevelSlotResolutionTestResultItem] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::IntentLevelSlotResolutionTestResultItem] {
+        use std::ops::Deref; self.items.deref()
     }
 }
 impl IntentLevelSlotResolutionTestResults {
@@ -25,7 +24,7 @@ impl IntentLevelSlotResolutionTestResults {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentLevelSlotResolutionTestResultsBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::IntentLevelSlotResolutionTestResultItem>>,
 }
 impl IntentLevelSlotResolutionTestResultsBuilder {
     /// Appends an item to `items`.
@@ -35,32 +34,31 @@ impl IntentLevelSlotResolutionTestResultsBuilder {
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
     pub fn items(mut self, input: crate::types::IntentLevelSlotResolutionTestResultItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IntentLevelSlotResolutionTestResultItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IntentLevelSlotResolutionTestResultItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`IntentLevelSlotResolutionTestResults`](crate::types::IntentLevelSlotResolutionTestResults).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::types::builders::IntentLevelSlotResolutionTestResultsBuilder::items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::IntentLevelSlotResolutionTestResults, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IntentLevelSlotResolutionTestResults {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building IntentLevelSlotResolutionTestResults",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentLevelSlotResolutionTestResults, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::IntentLevelSlotResolutionTestResults {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building IntentLevelSlotResolutionTestResults")
+                    )?
+                ,
+            }
+        )
     }
 }
+

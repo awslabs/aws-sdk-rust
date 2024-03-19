@@ -3,7 +3,7 @@
 /// <p>A summary of information about a software package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageSummary {
+pub struct PackageSummary  {
     /// <p>The name for the target software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the default package version.</p>
@@ -13,21 +13,21 @@ pub struct PackageSummary {
     /// <p>The date that the package was last updated.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl PackageSummary {
+impl  PackageSummary  {
     /// <p>The name for the target software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The name of the default package version.</p>
-    pub fn default_version_name(&self) -> ::std::option::Option<&str> {
+    pub fn default_version_name(&self) -> ::std::option::Option<& str> {
         self.default_version_name.as_deref()
     }
     /// <p>The date that the package was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date that the package was last updated.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PackageSummaryBuilder {
     }
     /// <p>The name for the target software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name for the target software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PackageSummaryBuilder {
     }
     /// <p>The name of the default package version.</p>
     pub fn set_default_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_version_name = input;
-        self
+        self.default_version_name = input; self
     }
     /// <p>The name of the default package version.</p>
     pub fn get_default_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl PackageSummaryBuilder {
     }
     /// <p>The date that the package was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date that the package was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl PackageSummaryBuilder {
     }
     /// <p>The date that the package was last updated.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date that the package was last updated.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl PackageSummaryBuilder {
     /// Consumes the builder and constructs a [`PackageSummary`](crate::types::PackageSummary).
     pub fn build(self) -> crate::types::PackageSummary {
         crate::types::PackageSummary {
-            package_name: self.package_name,
-            default_version_name: self.default_version_name,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            package_name: self.package_name
+            ,
+            default_version_name: self.default_version_name
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

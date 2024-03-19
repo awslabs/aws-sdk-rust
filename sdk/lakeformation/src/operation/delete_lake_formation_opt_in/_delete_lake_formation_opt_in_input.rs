@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLakeFormationOptInInput {
+pub struct DeleteLakeFormationOptInInput  {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>A structure for the resource.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
 }
-impl DeleteLakeFormationOptInInput {
+impl  DeleteLakeFormationOptInInput  {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::DataLakePrincipal> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>A structure for the resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.resource.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteLakeFormationOptInInputBuilder {
     }
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
@@ -56,23 +55,22 @@ impl DeleteLakeFormationOptInInputBuilder {
     }
     /// <p>A structure for the resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>A structure for the resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
         &self.resource
     }
     /// Consumes the builder and constructs a [`DeleteLakeFormationOptInInput`](crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput {
-            principal: self.principal,
-            resource: self.resource,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput {
+                principal: self.principal
+                ,
+                resource: self.resource
+                ,
+            }
+        )
     }
 }
+

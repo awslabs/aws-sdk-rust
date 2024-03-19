@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInstancesOutput {
+pub struct ListInstancesOutput  {
     /// <p>Summary information about the instances that are associated with the specified service.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>,
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInstancesOutput {
+impl  ListInstancesOutput  {
     /// <p>Summary information about the instances that are associated with the specified service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[crate::types::InstanceSummary] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [crate::types::InstanceSummary] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
     pub fn builder() -> crate::operation::list_instances::builders::ListInstancesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstancesOutputBuilder {
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListInstancesOutputBuilder {
     /// <p>Summary information about the instances that are associated with the specified service.</p>
     pub fn instances(mut self, input: crate::types::InstanceSummary) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information about the instances that are associated with the specified service.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>) -> Self {
+        self.instances = input; self
     }
     /// <p>Summary information about the instances that are associated with the specified service.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>> {
         &self.instances
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
@@ -69,28 +69,30 @@ impl ListInstancesOutputBuilder {
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
     pub fn build(self) -> crate::operation::list_instances::ListInstancesOutput {
         crate::operation::list_instances::ListInstancesOutput {
-            instances: self.instances,
-            next_token: self.next_token,
+            instances: self.instances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

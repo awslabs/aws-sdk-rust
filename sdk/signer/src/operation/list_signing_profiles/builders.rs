@@ -5,54 +5,50 @@ pub use crate::operation::list_signing_profiles::_list_signing_profiles_input::L
 
 impl ListSigningProfilesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_signing_profiles::ListSigningProfilesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_signing_profiles();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_signing_profiles::ListSigningProfilesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_signing_profiles::ListSigningProfilesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_signing_profiles();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListSigningProfiles`.
-///
+/// 
 /// <p>Lists all available signing profiles in your AWS account. Returns only profiles with an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field is set to <code>true</code>. If additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that Signer returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSigningProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder,
+                    inner: crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-        crate::operation::list_signing_profiles::ListSigningProfilesError,
-    > for ListSigningProfilesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-            crate::operation::list_signing_profiles::ListSigningProfilesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_signing_profiles::ListSigningProfilesOutput,
+                    crate::operation::list_signing_profiles::ListSigningProfilesError,
+                > for ListSigningProfilesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_signing_profiles::ListSigningProfilesOutput,
+                        crate::operation::list_signing_profiles::ListSigningProfilesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListSigningProfilesFluentBuilder {
     /// Creates a new `ListSigningProfiles`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListSigningProfilesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_signing_profiles::ListSigningProfilesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_signing_profiles::ListSigningProfiles::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_signing_profiles::ListSigningProfiles::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-        crate::operation::list_signing_profiles::ListSigningProfilesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_signing_profiles::ListSigningProfilesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_signing_profiles::ListSigningProfilesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_signing_profiles::ListSigningProfiles::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_signing_profiles::ListSigningProfiles::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_signing_profiles::ListSigningProfilesOutput, crate::operation::list_signing_profiles::ListSigningProfilesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator {
-        crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator {
+                                crate::operation::list_signing_profiles::paginator::ListSigningProfilesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub fn include_canceled(mut self, input: bool) -> Self {
         self.inner = self.inner.include_canceled(input);
@@ -180,12 +167,13 @@ impl ListSigningProfilesFluentBuilder {
         self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>) -> Self {
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SigningProfileStatus>>) -> Self {
         self.inner = self.inner.set_statuses(input);
         self
     }
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SigningProfileStatus>> {
         self.inner.get_statuses()
     }
 }
+

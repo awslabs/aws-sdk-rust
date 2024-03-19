@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAutomationExecutionInput {
+pub struct GetAutomationExecutionInput  {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAutomationExecutionInput {
+impl  GetAutomationExecutionInput  {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
-    pub fn automation_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn automation_execution_id(&self) -> ::std::option::Option<& str> {
         self.automation_execution_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetAutomationExecutionInputBuilder {
     }
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
     pub fn set_automation_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.automation_execution_id = input;
-        self
+        self.automation_execution_id = input; self
     }
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
     pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.automation_execution_id
     }
     /// Consumes the builder and constructs a [`GetAutomationExecutionInput`](crate::operation::get_automation_execution::GetAutomationExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_automation_execution::GetAutomationExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_automation_execution::GetAutomationExecutionInput {
-            automation_execution_id: self.automation_execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_automation_execution::GetAutomationExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_automation_execution::GetAutomationExecutionInput {
+                automation_execution_id: self.automation_execution_id
+                ,
+            }
+        )
     }
 }
+

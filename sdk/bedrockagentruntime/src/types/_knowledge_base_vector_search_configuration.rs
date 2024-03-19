@@ -3,7 +3,7 @@
 /// <p>Configurations for how to carry out the search.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KnowledgeBaseVectorSearchConfiguration {
+pub struct KnowledgeBaseVectorSearchConfiguration  {
     /// <p>The number of results to return.</p><note>
     /// <p>The <code>numberOfResults</code> field is currently unsupported for <code>RetrieveAndGenerate</code>. Don't include it in this field if you are sending a <code>RetrieveAndGenerate</code> request.</p>
     /// </note>
@@ -11,7 +11,7 @@ pub struct KnowledgeBaseVectorSearchConfiguration {
     /// <p>By default, Amazon Bedrock decides a search strategy for you. If you're using an Amazon OpenSearch Serverless vector store that contains a filterable text field, you can specify whether to query the knowledge base with a <code>HYBRID</code> search using both vector embeddings and raw text, or <code>SEMANTIC</code> search using only vector embeddings. For other vector store configurations, only <code>SEMANTIC</code> search is available. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test a knowledge base</a>.</p>
     pub override_search_type: ::std::option::Option<crate::types::SearchType>,
 }
-impl KnowledgeBaseVectorSearchConfiguration {
+impl  KnowledgeBaseVectorSearchConfiguration  {
     /// <p>The number of results to return.</p><note>
     /// <p>The <code>numberOfResults</code> field is currently unsupported for <code>RetrieveAndGenerate</code>. Don't include it in this field if you are sending a <code>RetrieveAndGenerate</code> request.</p>
     /// </note>
@@ -19,7 +19,7 @@ impl KnowledgeBaseVectorSearchConfiguration {
         self.number_of_results
     }
     /// <p>By default, Amazon Bedrock decides a search strategy for you. If you're using an Amazon OpenSearch Serverless vector store that contains a filterable text field, you can specify whether to query the knowledge base with a <code>HYBRID</code> search using both vector embeddings and raw text, or <code>SEMANTIC</code> search using only vector embeddings. For other vector store configurations, only <code>SEMANTIC</code> search is available. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test a knowledge base</a>.</p>
-    pub fn override_search_type(&self) -> ::std::option::Option<&crate::types::SearchType> {
+    pub fn override_search_type(&self) -> ::std::option::Option<& crate::types::SearchType> {
         self.override_search_type.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl KnowledgeBaseVectorSearchConfigurationBuilder {
     /// <p>The <code>numberOfResults</code> field is currently unsupported for <code>RetrieveAndGenerate</code>. Don't include it in this field if you are sending a <code>RetrieveAndGenerate</code> request.</p>
     /// </note>
     pub fn set_number_of_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_results = input;
-        self
+        self.number_of_results = input; self
     }
     /// <p>The number of results to return.</p><note>
     /// <p>The <code>numberOfResults</code> field is currently unsupported for <code>RetrieveAndGenerate</code>. Don't include it in this field if you are sending a <code>RetrieveAndGenerate</code> request.</p>
@@ -65,8 +64,7 @@ impl KnowledgeBaseVectorSearchConfigurationBuilder {
     }
     /// <p>By default, Amazon Bedrock decides a search strategy for you. If you're using an Amazon OpenSearch Serverless vector store that contains a filterable text field, you can specify whether to query the knowledge base with a <code>HYBRID</code> search using both vector embeddings and raw text, or <code>SEMANTIC</code> search using only vector embeddings. For other vector store configurations, only <code>SEMANTIC</code> search is available. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test a knowledge base</a>.</p>
     pub fn set_override_search_type(mut self, input: ::std::option::Option<crate::types::SearchType>) -> Self {
-        self.override_search_type = input;
-        self
+        self.override_search_type = input; self
     }
     /// <p>By default, Amazon Bedrock decides a search strategy for you. If you're using an Amazon OpenSearch Serverless vector store that contains a filterable text field, you can specify whether to query the knowledge base with a <code>HYBRID</code> search using both vector embeddings and raw text, or <code>SEMANTIC</code> search using only vector embeddings. For other vector store configurations, only <code>SEMANTIC</code> search is available. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test a knowledge base</a>.</p>
     pub fn get_override_search_type(&self) -> &::std::option::Option<crate::types::SearchType> {
@@ -75,8 +73,12 @@ impl KnowledgeBaseVectorSearchConfigurationBuilder {
     /// Consumes the builder and constructs a [`KnowledgeBaseVectorSearchConfiguration`](crate::types::KnowledgeBaseVectorSearchConfiguration).
     pub fn build(self) -> crate::types::KnowledgeBaseVectorSearchConfiguration {
         crate::types::KnowledgeBaseVectorSearchConfiguration {
-            number_of_results: self.number_of_results.unwrap_or(5),
-            override_search_type: self.override_search_type,
+            number_of_results: self.number_of_results
+                .unwrap_or(5)
+            ,
+            override_search_type: self.override_search_type
+            ,
         }
     }
 }
+

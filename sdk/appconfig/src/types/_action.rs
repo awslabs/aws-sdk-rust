@@ -19,7 +19,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Action {
+pub struct Action  {
     /// <p>The action name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the action.</p>
@@ -29,21 +29,21 @@ pub struct Action {
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl Action {
+impl  Action  {
     /// <p>The action name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Information about the action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl ActionBuilder {
     }
     /// <p>The action name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The action name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ActionBuilder {
     }
     /// <p>Information about the action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Information about the action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl ActionBuilder {
     }
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl ActionBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,10 +119,15 @@ impl ActionBuilder {
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
-            name: self.name,
-            description: self.description,
-            uri: self.uri,
-            role_arn: self.role_arn,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            uri: self.uri
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

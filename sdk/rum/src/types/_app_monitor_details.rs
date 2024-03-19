@@ -3,7 +3,7 @@
 /// <p>A structure that contains information about the RUM app monitor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppMonitorDetails {
+pub struct AppMonitorDetails  {
     /// <p>The name of the app monitor.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the app monitor.</p>
@@ -11,17 +11,17 @@ pub struct AppMonitorDetails {
     /// <p>The version of the app monitor.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl AppMonitorDetails {
+impl  AppMonitorDetails  {
     /// <p>The name of the app monitor.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique ID of the app monitor.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version of the app monitor.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AppMonitorDetailsBuilder {
     }
     /// <p>The name of the app monitor.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the app monitor.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AppMonitorDetailsBuilder {
     }
     /// <p>The unique ID of the app monitor.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of the app monitor.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AppMonitorDetailsBuilder {
     }
     /// <p>The version of the app monitor.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the app monitor.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AppMonitorDetailsBuilder {
     /// Consumes the builder and constructs a [`AppMonitorDetails`](crate::types::AppMonitorDetails).
     pub fn build(self) -> crate::types::AppMonitorDetails {
         crate::types::AppMonitorDetails {
-            name: self.name,
-            id: self.id,
-            version: self.version,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about a Lambda function URL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionUrlConfig {
+pub struct FunctionUrlConfig  {
     /// <p>The HTTP URL endpoint for your function.</p>
     pub function_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
@@ -25,33 +25,29 @@ pub struct FunctionUrlConfig {
     /// </ul>
     pub invoke_mode: ::std::option::Option<crate::types::InvokeMode>,
 }
-impl FunctionUrlConfig {
+impl  FunctionUrlConfig  {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> &str {
-        use std::ops::Deref;
-        self.function_url.deref()
+    pub fn function_url(&self) -> & str {
+        use std::ops::Deref; self.function_url.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.function_arn.deref()
+    pub fn function_arn(&self) -> & str {
+        use std::ops::Deref; self.function_arn.deref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> &str {
-        use std::ops::Deref;
-        self.creation_time.deref()
+    pub fn creation_time(&self) -> & str {
+        use std::ops::Deref; self.creation_time.deref()
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> &str {
-        use std::ops::Deref;
-        self.last_modified_time.deref()
+    pub fn last_modified_time(&self) -> & str {
+        use std::ops::Deref; self.last_modified_time.deref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> ::std::option::Option<&crate::types::Cors> {
+    pub fn cors(&self) -> ::std::option::Option<& crate::types::Cors> {
         self.cors.as_ref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> &crate::types::FunctionUrlAuthType {
+    pub fn auth_type(&self) -> & crate::types::FunctionUrlAuthType {
         &self.auth_type
     }
     /// <p>Use one of the following options:</p>
@@ -61,7 +57,7 @@ impl FunctionUrlConfig {
     /// <li>
     /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
-    pub fn invoke_mode(&self) -> ::std::option::Option<&crate::types::InvokeMode> {
+    pub fn invoke_mode(&self) -> ::std::option::Option<& crate::types::InvokeMode> {
         self.invoke_mode.as_ref()
     }
 }
@@ -93,8 +89,7 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>The HTTP URL endpoint for your function.</p>
     pub fn set_function_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_url = input;
-        self
+        self.function_url = input; self
     }
     /// <p>The HTTP URL endpoint for your function.</p>
     pub fn get_function_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +117,7 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +131,7 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +144,7 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn set_cors(mut self, input: ::std::option::Option<crate::types::Cors>) -> Self {
-        self.cors = input;
-        self
+        self.cors = input; self
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn get_cors(&self) -> &::std::option::Option<crate::types::Cors> {
@@ -167,8 +158,7 @@ impl FunctionUrlConfigBuilder {
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::FunctionUrlAuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
@@ -193,8 +183,7 @@ impl FunctionUrlConfigBuilder {
     /// <p><code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p></li>
     /// </ul>
     pub fn set_invoke_mode(mut self, input: ::std::option::Option<crate::types::InvokeMode>) -> Self {
-        self.invoke_mode = input;
-        self
+        self.invoke_mode = input; self
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
@@ -214,39 +203,39 @@ impl FunctionUrlConfigBuilder {
     /// - [`last_modified_time`](crate::types::builders::FunctionUrlConfigBuilder::last_modified_time)
     /// - [`auth_type`](crate::types::builders::FunctionUrlConfigBuilder::auth_type)
     pub fn build(self) -> ::std::result::Result<crate::types::FunctionUrlConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FunctionUrlConfig {
-            function_url: self.function_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_url",
-                    "function_url was not specified but it is required when building FunctionUrlConfig",
-                )
-            })?,
-            function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_arn",
-                    "function_arn was not specified but it is required when building FunctionUrlConfig",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building FunctionUrlConfig",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building FunctionUrlConfig",
-                )
-            })?,
-            cors: self.cors,
-            auth_type: self.auth_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "auth_type",
-                    "auth_type was not specified but it is required when building FunctionUrlConfig",
-                )
-            })?,
-            invoke_mode: self.invoke_mode,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FunctionUrlConfig {
+                function_url: self.function_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_url", "function_url was not specified but it is required when building FunctionUrlConfig")
+                    )?
+                ,
+                function_arn: self.function_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_arn", "function_arn was not specified but it is required when building FunctionUrlConfig")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building FunctionUrlConfig")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building FunctionUrlConfig")
+                    )?
+                ,
+                cors: self.cors
+                ,
+                auth_type: self.auth_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("auth_type", "auth_type was not specified but it is required when building FunctionUrlConfig")
+                    )?
+                ,
+                invoke_mode: self.invoke_mode
+                ,
+            }
+        )
     }
 }
+

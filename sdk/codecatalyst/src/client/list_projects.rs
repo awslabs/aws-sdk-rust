@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProjects`](crate::operation::list_projects::builders::ListProjectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`space_name(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
     ///   - [`filters(ProjectListFilter)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::filters) / [`set_filters(Option<Vec::<ProjectListFilter>>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_filters):<br>required: **false**<br><p>Information about filters to apply to narrow the results returned in the list.</p><br>
-    /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
+                            /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     ///   - [`items(Option<Vec::<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::items): <p>Information about the projects.</p>
-    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
+                            /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
     pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
-        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

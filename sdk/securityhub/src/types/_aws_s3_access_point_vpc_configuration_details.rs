@@ -3,13 +3,13 @@
 /// <p>The virtual private cloud (VPC) configuration for an Amazon S3 access point.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3AccessPointVpcConfigurationDetails {
+pub struct AwsS3AccessPointVpcConfigurationDetails  {
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsS3AccessPointVpcConfigurationDetails {
+impl  AwsS3AccessPointVpcConfigurationDetails  {
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsS3AccessPointVpcConfigurationDetailsBuilder {
     }
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsS3AccessPointVpcConfigurationDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsS3AccessPointVpcConfigurationDetails`](crate::types::AwsS3AccessPointVpcConfigurationDetails).
     pub fn build(self) -> crate::types::AwsS3AccessPointVpcConfigurationDetails {
-        crate::types::AwsS3AccessPointVpcConfigurationDetails { vpc_id: self.vpc_id }
+        crate::types::AwsS3AccessPointVpcConfigurationDetails {
+            vpc_id: self.vpc_id
+            ,
+        }
     }
 }
+

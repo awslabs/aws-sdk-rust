@@ -3,7 +3,7 @@
 /// <p>Identifies a version of code that App Runner refers to within a source code repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceCodeVersion {
+pub struct SourceCodeVersion  {
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
     pub r#type: crate::types::SourceCodeVersionType,
@@ -11,17 +11,16 @@ pub struct SourceCodeVersion {
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
     pub value: ::std::string::String,
 }
-impl SourceCodeVersion {
+impl  SourceCodeVersion  {
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
-    pub fn r#type(&self) -> &crate::types::SourceCodeVersionType {
+    pub fn r#type(&self) -> & crate::types::SourceCodeVersionType {
         &self.r#type
     }
     /// <p>A source code version.</p>
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl SourceCodeVersion {
@@ -49,8 +48,7 @@ impl SourceCodeVersionBuilder {
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceCodeVersionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
@@ -67,8 +65,7 @@ impl SourceCodeVersionBuilder {
     /// <p>A source code version.</p>
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A source code version.</p>
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
@@ -80,19 +77,20 @@ impl SourceCodeVersionBuilder {
     /// - [`r#type`](crate::types::builders::SourceCodeVersionBuilder::r#type)
     /// - [`value`](crate::types::builders::SourceCodeVersionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceCodeVersion, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceCodeVersion {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SourceCodeVersion",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building SourceCodeVersion",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceCodeVersion {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SourceCodeVersion")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building SourceCodeVersion")
+                    )?
+                ,
+            }
+        )
     }
 }
+

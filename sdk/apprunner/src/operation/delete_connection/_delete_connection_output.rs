@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectionOutput {
+pub struct DeleteConnectionOutput  {
     /// <p>A description of the App Runner connection that this request just deleted.</p>
     pub connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
 }
-impl DeleteConnectionOutput {
+impl  DeleteConnectionOutput  {
     /// <p>A description of the App Runner connection that this request just deleted.</p>
-    pub fn connection(&self) -> ::std::option::Option<&crate::types::Connection> {
+    pub fn connection(&self) -> ::std::option::Option<& crate::types::Connection> {
         self.connection.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput).
     pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteConnectionOutputBuilder {
     }
     /// <p>A description of the App Runner connection that this request just deleted.</p>
     pub fn set_connection(mut self, input: ::std::option::Option<crate::types::Connection>) -> Self {
-        self.connection = input;
-        self
+        self.connection = input; self
     }
     /// <p>A description of the App Runner connection that this request just deleted.</p>
     pub fn get_connection(&self) -> &::std::option::Option<crate::types::Connection> {
         &self.connection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput).
     pub fn build(self) -> crate::operation::delete_connection::DeleteConnectionOutput {
         crate::operation::delete_connection::DeleteConnectionOutput {
-            connection: self.connection,
+            connection: self.connection
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

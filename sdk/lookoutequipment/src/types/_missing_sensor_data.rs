@@ -3,13 +3,13 @@
 /// <p>Entity that comprises aggregated information on sensors having missing data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MissingSensorData {
+pub struct MissingSensorData  {
     /// <p>Indicates the number of sensors that have atleast some data missing.</p>
     pub affected_sensor_count: i32,
     /// <p>Indicates the total number of missing values across all the sensors.</p>
     pub total_number_of_missing_values: i32,
 }
-impl MissingSensorData {
+impl  MissingSensorData  {
     /// <p>Indicates the number of sensors that have atleast some data missing.</p>
     pub fn affected_sensor_count(&self) -> i32 {
         self.affected_sensor_count
@@ -42,8 +42,7 @@ impl MissingSensorDataBuilder {
     }
     /// <p>Indicates the number of sensors that have atleast some data missing.</p>
     pub fn set_affected_sensor_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.affected_sensor_count = input;
-        self
+        self.affected_sensor_count = input; self
     }
     /// <p>Indicates the number of sensors that have atleast some data missing.</p>
     pub fn get_affected_sensor_count(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl MissingSensorDataBuilder {
     }
     /// <p>Indicates the total number of missing values across all the sensors.</p>
     pub fn set_total_number_of_missing_values(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_number_of_missing_values = input;
-        self
+        self.total_number_of_missing_values = input; self
     }
     /// <p>Indicates the total number of missing values across all the sensors.</p>
     pub fn get_total_number_of_missing_values(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl MissingSensorDataBuilder {
     /// - [`affected_sensor_count`](crate::types::builders::MissingSensorDataBuilder::affected_sensor_count)
     /// - [`total_number_of_missing_values`](crate::types::builders::MissingSensorDataBuilder::total_number_of_missing_values)
     pub fn build(self) -> ::std::result::Result<crate::types::MissingSensorData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MissingSensorData {
-            affected_sensor_count: self.affected_sensor_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "affected_sensor_count",
-                    "affected_sensor_count was not specified but it is required when building MissingSensorData",
-                )
-            })?,
-            total_number_of_missing_values: self.total_number_of_missing_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_number_of_missing_values",
-                    "total_number_of_missing_values was not specified but it is required when building MissingSensorData",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MissingSensorData {
+                affected_sensor_count: self.affected_sensor_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("affected_sensor_count", "affected_sensor_count was not specified but it is required when building MissingSensorData")
+                    )?
+                ,
+                total_number_of_missing_values: self.total_number_of_missing_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_number_of_missing_values", "total_number_of_missing_values was not specified but it is required when building MissingSensorData")
+                    )?
+                ,
+            }
+        )
     }
 }
+

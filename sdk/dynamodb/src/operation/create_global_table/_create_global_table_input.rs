@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGlobalTableInput {
+pub struct CreateGlobalTableInput  {
     /// <p>The global table name.</p>
     pub global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Regions where the global table needs to be created.</p>
-    pub replication_group: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,
+    pub replication_group: ::std::option::Option<::std::vec::Vec::<crate::types::Replica>>,
 }
-impl CreateGlobalTableInput {
+impl  CreateGlobalTableInput  {
     /// <p>The global table name.</p>
-    pub fn global_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn global_table_name(&self) -> ::std::option::Option<& str> {
         self.global_table_name.as_deref()
     }
     /// <p>The Regions where the global table needs to be created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_group.is_none()`.
-    pub fn replication_group(&self) -> &[crate::types::Replica] {
-        self.replication_group.as_deref().unwrap_or_default()
+    pub fn replication_group(&self) -> & [crate::types::Replica] {
+        self.replication_group.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateGlobalTableInput {
@@ -32,7 +33,7 @@ impl CreateGlobalTableInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGlobalTableInputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_group: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,
+    pub(crate) replication_group: ::std::option::Option<::std::vec::Vec::<crate::types::Replica>>,
 }
 impl CreateGlobalTableInputBuilder {
     /// <p>The global table name.</p>
@@ -43,8 +44,7 @@ impl CreateGlobalTableInputBuilder {
     }
     /// <p>The global table name.</p>
     pub fn set_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_table_name = input;
-        self
+        self.global_table_name = input; self
     }
     /// <p>The global table name.</p>
     pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl CreateGlobalTableInputBuilder {
     /// <p>The Regions where the global table needs to be created.</p>
     pub fn replication_group(mut self, input: crate::types::Replica) -> Self {
         let mut v = self.replication_group.unwrap_or_default();
-        v.push(input);
-        self.replication_group = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_group = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Regions where the global table needs to be created.</p>
-    pub fn set_replication_group(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>) -> Self {
-        self.replication_group = input;
-        self
+    pub fn set_replication_group(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Replica>>) -> Self {
+        self.replication_group = input; self
     }
     /// <p>The Regions where the global table needs to be created.</p>
-    pub fn get_replication_group(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Replica>> {
+    pub fn get_replication_group(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Replica>> {
         &self.replication_group
     }
     /// Consumes the builder and constructs a [`CreateGlobalTableInput`](crate::operation::create_global_table::CreateGlobalTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_global_table::CreateGlobalTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_global_table::CreateGlobalTableInput {
-            global_table_name: self.global_table_name,
-            replication_group: self.replication_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_global_table::CreateGlobalTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_global_table::CreateGlobalTableInput {
+                global_table_name: self.global_table_name
+                ,
+                replication_group: self.replication_group
+                ,
+            }
+        )
     }
 }
+

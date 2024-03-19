@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let colorimetry = unimplemented!();
 /// match colorimetry {
@@ -35,16 +35,14 @@
 /// Specifically, when `colorimetry` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Colorimetry::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Colorimetry {
     #[allow(missing_docs)] // documentation missing in model
     Bt2020,
@@ -62,76 +60,77 @@ pub enum Colorimetry {
     Xyz,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Colorimetry {
-    fn from(s: &str) -> Self {
-        match s {
-            "BT2020" => Colorimetry::Bt2020,
-            "BT2100" => Colorimetry::Bt2100,
-            "BT601" => Colorimetry::Bt601,
-            "BT709" => Colorimetry::Bt709,
-            "ST2065-1" => Colorimetry::St20651,
-            "ST2065-3" => Colorimetry::St20653,
-            "XYZ" => Colorimetry::Xyz,
-            other => Colorimetry::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BT2020" => Colorimetry::Bt2020,
+"BT2100" => Colorimetry::Bt2100,
+"BT601" => Colorimetry::Bt601,
+"BT709" => Colorimetry::Bt709,
+"ST2065-1" => Colorimetry::St20651,
+"ST2065-3" => Colorimetry::St20653,
+"XYZ" => Colorimetry::Xyz,
+other => Colorimetry::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Colorimetry {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Colorimetry::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Colorimetry::from(s))
+                    }
+                }
 impl Colorimetry {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Colorimetry::Bt2020 => "BT2020",
-            Colorimetry::Bt2100 => "BT2100",
-            Colorimetry::Bt601 => "BT601",
-            Colorimetry::Bt709 => "BT709",
-            Colorimetry::St20651 => "ST2065-1",
-            Colorimetry::St20653 => "ST2065-3",
-            Colorimetry::Xyz => "XYZ",
-            Colorimetry::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["BT2020", "BT2100", "BT601", "BT709", "ST2065-1", "ST2065-3", "XYZ"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Colorimetry::Bt2020 => "BT2020",
+    Colorimetry::Bt2100 => "BT2100",
+    Colorimetry::Bt601 => "BT601",
+    Colorimetry::Bt709 => "BT709",
+    Colorimetry::St20651 => "ST2065-1",
+    Colorimetry::St20653 => "ST2065-3",
+    Colorimetry::Xyz => "XYZ",
+    Colorimetry::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BT2020", "BT2100", "BT601", "BT709", "ST2065-1", "ST2065-3", "XYZ"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Colorimetry {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Colorimetry {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Colorimetry {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Colorimetry::Bt2020 => write!(f, "BT2020"),
-            Colorimetry::Bt2100 => write!(f, "BT2100"),
-            Colorimetry::Bt601 => write!(f, "BT601"),
-            Colorimetry::Bt709 => write!(f, "BT709"),
-            Colorimetry::St20651 => write!(f, "ST2065-1"),
-            Colorimetry::St20653 => write!(f, "ST2065-3"),
-            Colorimetry::Xyz => write!(f, "XYZ"),
-            Colorimetry::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Colorimetry::Bt2020 => write!(f, "BT2020"),
+Colorimetry::Bt2100 => write!(f, "BT2100"),
+Colorimetry::Bt601 => write!(f, "BT601"),
+Colorimetry::Bt709 => write!(f, "BT709"),
+Colorimetry::St20651 => write!(f, "ST2065-1"),
+Colorimetry::St20653 => write!(f, "ST2065-3"),
+Colorimetry::Xyz => write!(f, "XYZ"),
+Colorimetry::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorldTemplateOutput {
+pub struct DescribeWorldTemplateOutput  {
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -14,46 +14,46 @@ pub struct DescribeWorldTemplateOutput {
     /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The version of the world template that you're using.</p>
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeWorldTemplateOutput {
+impl  DescribeWorldTemplateOutput  {
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The name of the world template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The version of the world template that you're using.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWorldTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWorldTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorldTemplateOutput`](crate::operation::describe_world_template::DescribeWorldTemplateOutput).
     pub fn builder() -> crate::operation::describe_world_template::builders::DescribeWorldTemplateOutputBuilder {
@@ -70,7 +70,7 @@ pub struct DescribeWorldTemplateOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -82,8 +82,7 @@ impl DescribeWorldTemplateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl DescribeWorldTemplateOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl DescribeWorldTemplateOutputBuilder {
     }
     /// <p>The name of the world template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the world template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl DescribeWorldTemplateOutputBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -138,8 +134,7 @@ impl DescribeWorldTemplateOutputBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -152,17 +147,16 @@ impl DescribeWorldTemplateOutputBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The version of the world template that you're using.</p>
@@ -172,33 +166,40 @@ impl DescribeWorldTemplateOutputBuilder {
     }
     /// <p>The version of the world template that you're using.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the world template that you're using.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWorldTemplateOutput`](crate::operation::describe_world_template::DescribeWorldTemplateOutput).
     pub fn build(self) -> crate::operation::describe_world_template::DescribeWorldTemplateOutput {
         crate::operation::describe_world_template::DescribeWorldTemplateOutput {
-            arn: self.arn,
-            client_request_token: self.client_request_token,
-            name: self.name,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            tags: self.tags,
-            version: self.version,
+            arn: self.arn
+            ,
+            client_request_token: self.client_request_token
+            ,
+            name: self.name
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            tags: self.tags
+            ,
+            version: self.version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

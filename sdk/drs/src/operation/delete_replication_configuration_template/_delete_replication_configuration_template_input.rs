@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicationConfigurationTemplateInput {
+pub struct DeleteReplicationConfigurationTemplateInput  {
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
     pub replication_configuration_template_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReplicationConfigurationTemplateInput {
+impl  DeleteReplicationConfigurationTemplateInput  {
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-    pub fn replication_configuration_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_configuration_template_id(&self) -> ::std::option::Option<& str> {
         self.replication_configuration_template_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteReplicationConfigurationTemplateInputBuilder {
     }
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
     pub fn set_replication_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_configuration_template_id = input;
-        self
+        self.replication_configuration_template_id = input; self
     }
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
     pub fn get_replication_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_configuration_template_id
     }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigurationTemplateInput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput {
-                replication_configuration_template_id: self.replication_configuration_template_id,
-            },
+                replication_configuration_template_id: self.replication_configuration_template_id
+                ,
+            }
         )
     }
 }
+

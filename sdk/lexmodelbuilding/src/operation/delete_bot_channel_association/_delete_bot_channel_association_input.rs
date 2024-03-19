@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBotChannelAssociationInput {
+pub struct DeleteBotChannelAssociationInput  {
     /// <p>The name of the association. The name is case sensitive.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Lex bot.</p>
@@ -10,17 +10,17 @@ pub struct DeleteBotChannelAssociationInput {
     /// <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub bot_alias: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBotChannelAssociationInput {
+impl  DeleteBotChannelAssociationInput  {
     /// <p>The name of the association. The name is case sensitive.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
-    pub fn bot_alias(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias(&self) -> ::std::option::Option<& str> {
         self.bot_alias.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteBotChannelAssociationInputBuilder {
     }
     /// <p>The name of the association. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the association. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteBotChannelAssociationInputBuilder {
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteBotChannelAssociationInputBuilder {
     }
     /// <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias = input;
-        self
+        self.bot_alias = input; self
     }
     /// <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_alias
     }
     /// Consumes the builder and constructs a [`DeleteBotChannelAssociationInput`](crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationInput {
-            name: self.name,
-            bot_name: self.bot_name,
-            bot_alias: self.bot_alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationInput {
+                name: self.name
+                ,
+                bot_name: self.bot_name
+                ,
+                bot_alias: self.bot_alias
+                ,
+            }
+        )
     }
 }
+

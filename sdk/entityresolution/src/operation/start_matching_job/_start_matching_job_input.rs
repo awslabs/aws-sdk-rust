@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMatchingJobInput {
+pub struct StartMatchingJobInput  {
     /// <p>The name of the matching job to be retrieved.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
 }
-impl StartMatchingJobInput {
+impl  StartMatchingJobInput  {
     /// <p>The name of the matching job to be retrieved.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StartMatchingJobInputBuilder {
     }
     /// <p>The name of the matching job to be retrieved.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the matching job to be retrieved.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_name
     }
     /// Consumes the builder and constructs a [`StartMatchingJobInput`](crate::operation::start_matching_job::StartMatchingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_matching_job::StartMatchingJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_matching_job::StartMatchingJobInput {
-            workflow_name: self.workflow_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_matching_job::StartMatchingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_matching_job::StartMatchingJobInput {
+                workflow_name: self.workflow_name
+                ,
+            }
+        )
     }
 }
+

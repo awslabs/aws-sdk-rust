@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKxDataviewInput {
+pub struct UpdateKxDataviewInput  {
     /// <p>A unique identifier for the kdb environment, where you want to update the dataview.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
@@ -14,39 +14,40 @@ pub struct UpdateKxDataviewInput {
     /// <p>A unique identifier for the changeset.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
+    pub segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateKxDataviewInput {
+impl  UpdateKxDataviewInput  {
     /// <p>A unique identifier for the kdb environment, where you want to update the dataview.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the dataview that you want to update.</p>
-    pub fn dataview_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataview_name(&self) -> ::std::option::Option<& str> {
         self.dataview_name.as_deref()
     }
     /// <p>The description for a dataview.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for the changeset.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_configurations.is_none()`.
-    pub fn segment_configurations(&self) -> &[crate::types::KxDataviewSegmentConfiguration] {
-        self.segment_configurations.as_deref().unwrap_or_default()
+    pub fn segment_configurations(&self) -> & [crate::types::KxDataviewSegmentConfiguration] {
+        self.segment_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -66,7 +67,7 @@ pub struct UpdateKxDataviewInputBuilder {
     pub(crate) dataview_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
-    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
+    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateKxDataviewInputBuilder {
@@ -78,8 +79,7 @@ impl UpdateKxDataviewInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, where you want to update the dataview.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, where you want to update the dataview.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl UpdateKxDataviewInputBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl UpdateKxDataviewInputBuilder {
     }
     /// <p>The name of the dataview that you want to update.</p>
     pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataview_name = input;
-        self
+        self.dataview_name = input; self
     }
     /// <p>The name of the dataview that you want to update.</p>
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +120,7 @@ impl UpdateKxDataviewInputBuilder {
     }
     /// <p>The description for a dataview.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for a dataview.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +133,7 @@ impl UpdateKxDataviewInputBuilder {
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,17 +146,16 @@ impl UpdateKxDataviewInputBuilder {
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         let mut v = self.segment_configurations.unwrap_or_default();
-        v.push(input);
-        self.segment_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segment_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
-        self.segment_configurations = input;
-        self
+    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
+        self.segment_configurations = input; self
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
+    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>> {
         &self.segment_configurations
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -171,25 +166,32 @@ impl UpdateKxDataviewInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateKxDataviewInput`](crate::operation::update_kx_dataview::UpdateKxDataviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_kx_dataview::UpdateKxDataviewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_kx_dataview::UpdateKxDataviewInput {
-            environment_id: self.environment_id,
-            database_name: self.database_name,
-            dataview_name: self.dataview_name,
-            description: self.description,
-            changeset_id: self.changeset_id,
-            segment_configurations: self.segment_configurations,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_kx_dataview::UpdateKxDataviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_kx_dataview::UpdateKxDataviewInput {
+                environment_id: self.environment_id
+                ,
+                database_name: self.database_name
+                ,
+                dataview_name: self.dataview_name
+                ,
+                description: self.description
+                ,
+                changeset_id: self.changeset_id
+                ,
+                segment_configurations: self.segment_configurations
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

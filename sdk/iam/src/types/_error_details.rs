@@ -4,22 +4,20 @@
 /// <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorDetails {
+pub struct ErrorDetails  {
     /// <p>Detailed information about the reason that the operation failed.</p>
     pub message: ::std::string::String,
     /// <p>The error code associated with the operation failure.</p>
     pub code: ::std::string::String,
 }
-impl ErrorDetails {
+impl  ErrorDetails  {
     /// <p>Detailed information about the reason that the operation failed.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>The error code associated with the operation failure.</p>
-    pub fn code(&self) -> &str {
-        use std::ops::Deref;
-        self.code.deref()
+    pub fn code(&self) -> & str {
+        use std::ops::Deref; self.code.deref()
     }
 }
 impl ErrorDetails {
@@ -45,8 +43,7 @@ impl ErrorDetailsBuilder {
     }
     /// <p>Detailed information about the reason that the operation failed.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Detailed information about the reason that the operation failed.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +57,7 @@ impl ErrorDetailsBuilder {
     }
     /// <p>The error code associated with the operation failure.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code associated with the operation failure.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,19 +68,20 @@ impl ErrorDetailsBuilder {
     /// - [`message`](crate::types::builders::ErrorDetailsBuilder::message)
     /// - [`code`](crate::types::builders::ErrorDetailsBuilder::code)
     pub fn build(self) -> ::std::result::Result<crate::types::ErrorDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ErrorDetails {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ErrorDetails",
-                )
-            })?,
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building ErrorDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ErrorDetails {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ErrorDetails")
+                    )?
+                ,
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building ErrorDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

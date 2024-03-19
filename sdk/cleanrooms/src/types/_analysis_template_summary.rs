@@ -3,7 +3,7 @@
 /// <p>The metadata of the analysis template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisTemplateSummary {
+pub struct AnalysisTemplateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
     pub arn: ::std::string::String,
     /// <p>The time that the analysis template summary was created.</p>
@@ -25,52 +25,45 @@ pub struct AnalysisTemplateSummary {
     /// <p>The description of the analysis template.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl AnalysisTemplateSummary {
+impl  AnalysisTemplateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The time that the analysis template summary was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The identifier of the analysis template.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the analysis template.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The time that the analysis template summary was last updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The Amazon Resource Name (ARN) of the member who created the analysis template.</p>
-    pub fn membership_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_arn.deref()
+    pub fn membership_arn(&self) -> & str {
+        use std::ops::Deref; self.membership_arn.deref()
     }
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_id(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_id.deref()
+    pub fn membership_id(&self) -> & str {
+        use std::ops::Deref; self.membership_id.deref()
     }
     /// <p>The unique ARN for the analysis template summary’s associated collaboration.</p>
-    pub fn collaboration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_arn.deref()
+    pub fn collaboration_arn(&self) -> & str {
+        use std::ops::Deref; self.collaboration_arn.deref()
     }
     /// <p>A unique identifier for the collaboration that the analysis template summary belongs to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_id.deref()
+    pub fn collaboration_id(&self) -> & str {
+        use std::ops::Deref; self.collaboration_id.deref()
     }
     /// <p>The description of the analysis template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -105,8 +98,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +112,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The time that the analysis template summary was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time that the analysis template summary was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -135,8 +126,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The identifier of the analysis template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the analysis template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +140,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The name of the analysis template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the analysis template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +154,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The time that the analysis template summary was last updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The time that the analysis template summary was last updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,8 +168,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the member who created the analysis template.</p>
     pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_arn = input;
-        self
+        self.membership_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the member who created the analysis template.</p>
     pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +182,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +196,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The unique ARN for the analysis template summary’s associated collaboration.</p>
     pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_arn = input;
-        self
+        self.collaboration_arn = input; self
     }
     /// <p>The unique ARN for the analysis template summary’s associated collaboration.</p>
     pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +210,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>A unique identifier for the collaboration that the analysis template summary belongs to. Currently accepts collaboration ID.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>A unique identifier for the collaboration that the analysis template summary belongs to. Currently accepts collaboration ID.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +223,7 @@ impl AnalysisTemplateSummaryBuilder {
     }
     /// <p>The description of the analysis template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the analysis template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,62 +241,57 @@ impl AnalysisTemplateSummaryBuilder {
     /// - [`collaboration_arn`](crate::types::builders::AnalysisTemplateSummaryBuilder::collaboration_arn)
     /// - [`collaboration_id`](crate::types::builders::AnalysisTemplateSummaryBuilder::collaboration_id)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalysisTemplateSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalysisTemplateSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_arn",
-                    "membership_arn was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_id",
-                    "membership_id was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_arn",
-                    "collaboration_arn was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_id",
-                    "collaboration_id was not specified but it is required when building AnalysisTemplateSummary",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalysisTemplateSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                membership_arn: self.membership_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_arn", "membership_arn was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                membership_id: self.membership_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_id", "membership_id was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                collaboration_arn: self.collaboration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_arn", "collaboration_arn was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                collaboration_id: self.collaboration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_id", "collaboration_id was not specified but it is required when building AnalysisTemplateSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

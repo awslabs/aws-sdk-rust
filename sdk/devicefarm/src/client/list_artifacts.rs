@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListArtifacts`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_arn):<br>required: **true**<br><p>The run, job, suite, or test ARN.</p><br>
     ///   - [`r#type(ArtifactCategory)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::type) / [`set_type(Option<ArtifactCategory>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_type):<br>required: **true**<br><p>The artifacts' type.</p> <p>Allowed values include:</p> <ul>  <li>   <p>FILE</p></li>  <li>   <p>LOG</p></li>  <li>   <p>SCREENSHOT</p></li> </ul><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
-    /// - On success, responds with [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput) with field(s):
+                            /// - On success, responds with [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput) with field(s):
     ///   - [`artifacts(Option<Vec::<Artifact>>)`](crate::operation::list_artifacts::ListArtifactsOutput::artifacts): <p>Information about the artifacts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_artifacts::ListArtifactsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
+                            /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::operation::list_artifacts::ListArtifactsError)
     pub fn list_artifacts(&self) -> crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder {
-        crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_artifacts::builders::ListArtifactsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

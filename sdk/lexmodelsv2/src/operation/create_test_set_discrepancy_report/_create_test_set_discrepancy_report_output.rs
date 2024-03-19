@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTestSetDiscrepancyReportOutput {
+pub struct CreateTestSetDiscrepancyReportOutput  {
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
     pub test_set_discrepancy_report_id: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time for the test set discrepancy report.</p>
@@ -13,29 +13,29 @@ pub struct CreateTestSetDiscrepancyReportOutput {
     pub target: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>,
     _request_id: Option<String>,
 }
-impl CreateTestSetDiscrepancyReportOutput {
+impl  CreateTestSetDiscrepancyReportOutput  {
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
-    pub fn test_set_discrepancy_report_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_discrepancy_report_id(&self) -> ::std::option::Option<& str> {
         self.test_set_discrepancy_report_id.as_deref()
     }
     /// <p>The creation date and time for the test set discrepancy report.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The test set Id for the test set discrepancy report.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
     /// <p>The target bot for the test set discrepancy report.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::TestSetDiscrepancyReportResourceTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::TestSetDiscrepancyReportResourceTarget> {
         self.target.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTestSetDiscrepancyReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTestSetDiscrepancyReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateTestSetDiscrepancyReportOutput`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportOutput).
     pub fn builder() -> crate::operation::create_test_set_discrepancy_report::builders::CreateTestSetDiscrepancyReportOutputBuilder {
@@ -61,8 +61,7 @@ impl CreateTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
     pub fn set_test_set_discrepancy_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_discrepancy_report_id = input;
-        self
+        self.test_set_discrepancy_report_id = input; self
     }
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
     pub fn get_test_set_discrepancy_report_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl CreateTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The creation date and time for the test set discrepancy report.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time for the test set discrepancy report.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -89,8 +87,7 @@ impl CreateTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The test set Id for the test set discrepancy report.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The test set Id for the test set discrepancy report.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl CreateTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The target bot for the test set discrepancy report.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target bot for the test set discrepancy report.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget> {
         &self.target
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTestSetDiscrepancyReportOutput`](crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportOutput).
     pub fn build(self) -> crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportOutput {
         crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportOutput {
-            test_set_discrepancy_report_id: self.test_set_discrepancy_report_id,
-            creation_date_time: self.creation_date_time,
-            test_set_id: self.test_set_id,
-            target: self.target,
+            test_set_discrepancy_report_id: self.test_set_discrepancy_report_id
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            test_set_id: self.test_set_id
+            ,
+            target: self.target
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

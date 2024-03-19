@@ -3,13 +3,13 @@
 /// <p>Source configuration for a specified media capture pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceConfiguration {
+pub struct SourceConfiguration  {
     /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
     pub selected_video_streams: ::std::option::Option<crate::types::SelectedVideoStreams>,
 }
-impl SourceConfiguration {
+impl  SourceConfiguration  {
     /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
-    pub fn selected_video_streams(&self) -> ::std::option::Option<&crate::types::SelectedVideoStreams> {
+    pub fn selected_video_streams(&self) -> ::std::option::Option<& crate::types::SelectedVideoStreams> {
         self.selected_video_streams.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
     pub fn set_selected_video_streams(mut self, input: ::std::option::Option<crate::types::SelectedVideoStreams>) -> Self {
-        self.selected_video_streams = input;
-        self
+        self.selected_video_streams = input; self
     }
     /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
     pub fn get_selected_video_streams(&self) -> &::std::option::Option<crate::types::SelectedVideoStreams> {
@@ -44,7 +43,9 @@ impl SourceConfigurationBuilder {
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).
     pub fn build(self) -> crate::types::SourceConfiguration {
         crate::types::SourceConfiguration {
-            selected_video_streams: self.selected_video_streams,
+            selected_video_streams: self.selected_video_streams
+            ,
         }
     }
 }
+

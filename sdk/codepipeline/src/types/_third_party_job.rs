@@ -3,19 +3,19 @@
 /// <p>A response to a <code>PollForThirdPartyJobs</code> request returned by CodePipeline when there is a job to be worked on by a partner action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThirdPartyJob {
+pub struct ThirdPartyJob  {
     /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier used to identify the job in CodePipeline.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl ThirdPartyJob {
+impl  ThirdPartyJob  {
     /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The identifier used to identify the job in CodePipeline.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ThirdPartyJobBuilder {
     }
     /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ThirdPartyJobBuilder {
     }
     /// <p>The identifier used to identify the job in CodePipeline.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier used to identify the job in CodePipeline.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ThirdPartyJobBuilder {
     /// Consumes the builder and constructs a [`ThirdPartyJob`](crate::types::ThirdPartyJob).
     pub fn build(self) -> crate::types::ThirdPartyJob {
         crate::types::ThirdPartyJob {
-            client_id: self.client_id,
-            job_id: self.job_id,
+            client_id: self.client_id
+            ,
+            job_id: self.job_id
+            ,
         }
     }
 }
+

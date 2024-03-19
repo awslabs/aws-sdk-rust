@@ -3,7 +3,7 @@
 /// <p>Name of the step from the SSM document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemediationExecutionStep {
+pub struct RemediationExecutionStep  {
     /// <p>The details of the step.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The valid status of the step.</p>
@@ -15,25 +15,25 @@ pub struct RemediationExecutionStep {
     /// <p>The time when the step stopped.</p>
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RemediationExecutionStep {
+impl  RemediationExecutionStep  {
     /// <p>The details of the step.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The valid status of the step.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::RemediationExecutionStepState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::RemediationExecutionStepState> {
         self.state.as_ref()
     }
     /// <p>An error message if the step was interrupted during execution.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The time when the step started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the step stopped.</p>
-    pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl RemediationExecutionStepBuilder {
     }
     /// <p>The details of the step.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The details of the step.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl RemediationExecutionStepBuilder {
     }
     /// <p>The valid status of the step.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RemediationExecutionStepState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The valid status of the step.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RemediationExecutionStepState> {
@@ -90,8 +88,7 @@ impl RemediationExecutionStepBuilder {
     }
     /// <p>An error message if the step was interrupted during execution.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>An error message if the step was interrupted during execution.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl RemediationExecutionStepBuilder {
     }
     /// <p>The time when the step started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time when the step started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl RemediationExecutionStepBuilder {
     }
     /// <p>The time when the step stopped.</p>
     pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stop_time = input;
-        self
+        self.stop_time = input; self
     }
     /// <p>The time when the step stopped.</p>
     pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl RemediationExecutionStepBuilder {
     /// Consumes the builder and constructs a [`RemediationExecutionStep`](crate::types::RemediationExecutionStep).
     pub fn build(self) -> crate::types::RemediationExecutionStep {
         crate::types::RemediationExecutionStep {
-            name: self.name,
-            state: self.state,
-            error_message: self.error_message,
-            start_time: self.start_time,
-            stop_time: self.stop_time,
+            name: self.name
+            ,
+            state: self.state
+            ,
+            error_message: self.error_message
+            ,
+            start_time: self.start_time
+            ,
+            stop_time: self.stop_time
+            ,
         }
     }
 }
+

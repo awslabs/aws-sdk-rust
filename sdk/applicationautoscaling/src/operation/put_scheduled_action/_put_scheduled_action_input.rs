@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutScheduledActionInput {
+pub struct PutScheduledActionInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The schedule for this action. The following formats are supported:</p>
@@ -120,9 +120,9 @@ pub struct PutScheduledActionInput {
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub scalable_target_action: ::std::option::Option<crate::types::ScalableTargetAction>,
 }
-impl PutScheduledActionInput {
+impl  PutScheduledActionInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<& crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The schedule for this action. The following formats are supported:</p>
@@ -139,16 +139,16 @@ impl PutScheduledActionInput {
     /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<& str> {
         self.schedule.as_deref()
     }
     /// <p>Specifies the time zone used when setting a scheduled action by using an at or cron expression. If a time zone is not provided, UTC is used by default.</p>
     /// <p>Valid values are the canonical names of the IANA time zones supported by Joda-Time (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://www.joda.org/joda-time/timezones.html">https://www.joda.org/joda-time/timezones.html</a>.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target.</p>
-    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
     /// <p>The identifier of the resource associated with the scheduled action. This string consists of the resource type and unique identifier.</p>
@@ -190,7 +190,7 @@ impl PutScheduledActionInput {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -240,19 +240,19 @@ impl PutScheduledActionInput {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<& crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The date and time for this scheduled action to start, in UTC.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn scalable_target_action(&self) -> ::std::option::Option<&crate::types::ScalableTargetAction> {
+    pub fn scalable_target_action(&self) -> ::std::option::Option<& crate::types::ScalableTargetAction> {
         self.scalable_target_action.as_ref()
     }
 }
@@ -286,8 +286,7 @@ impl PutScheduledActionInputBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -326,8 +325,7 @@ impl PutScheduledActionInputBuilder {
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule for this action. The following formats are supported:</p>
     /// <ul>
@@ -355,8 +353,7 @@ impl PutScheduledActionInputBuilder {
     /// <p>Specifies the time zone used when setting a scheduled action by using an at or cron expression. If a time zone is not provided, UTC is used by default.</p>
     /// <p>Valid values are the canonical names of the IANA time zones supported by Joda-Time (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://www.joda.org/joda-time/timezones.html">https://www.joda.org/joda-time/timezones.html</a>.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>Specifies the time zone used when setting a scheduled action by using an at or cron expression. If a time zone is not provided, UTC is used by default.</p>
     /// <p>Valid values are the canonical names of the IANA time zones supported by Joda-Time (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://www.joda.org/joda-time/timezones.html">https://www.joda.org/joda-time/timezones.html</a>.</p>
@@ -371,8 +368,7 @@ impl PutScheduledActionInputBuilder {
     }
     /// <p>The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_name = input;
-        self
+        self.scheduled_action_name = input; self
     }
     /// <p>The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -462,8 +458,7 @@ impl PutScheduledActionInputBuilder {
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource associated with the scheduled action. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -607,8 +602,7 @@ impl PutScheduledActionInputBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -667,8 +661,7 @@ impl PutScheduledActionInputBuilder {
     }
     /// <p>The date and time for this scheduled action to start, in UTC.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time for this scheduled action to start, in UTC.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -681,8 +674,7 @@ impl PutScheduledActionInputBuilder {
     }
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -695,28 +687,36 @@ impl PutScheduledActionInputBuilder {
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub fn set_scalable_target_action(mut self, input: ::std::option::Option<crate::types::ScalableTargetAction>) -> Self {
-        self.scalable_target_action = input;
-        self
+        self.scalable_target_action = input; self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub fn get_scalable_target_action(&self) -> &::std::option::Option<crate::types::ScalableTargetAction> {
         &self.scalable_target_action
     }
     /// Consumes the builder and constructs a [`PutScheduledActionInput`](crate::operation::put_scheduled_action::PutScheduledActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_scheduled_action::PutScheduledActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_scheduled_action::PutScheduledActionInput {
-            service_namespace: self.service_namespace,
-            schedule: self.schedule,
-            timezone: self.timezone,
-            scheduled_action_name: self.scheduled_action_name,
-            resource_id: self.resource_id,
-            scalable_dimension: self.scalable_dimension,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            scalable_target_action: self.scalable_target_action,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_scheduled_action::PutScheduledActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_scheduled_action::PutScheduledActionInput {
+                service_namespace: self.service_namespace
+                ,
+                schedule: self.schedule
+                ,
+                timezone: self.timezone
+                ,
+                scheduled_action_name: self.scheduled_action_name
+                ,
+                resource_id: self.resource_id
+                ,
+                scalable_dimension: self.scalable_dimension
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                scalable_target_action: self.scalable_target_action
+                ,
+            }
+        )
     }
 }
+

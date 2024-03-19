@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMulticastGroupSessionInput {
+pub struct StartMulticastGroupSessionInput  {
     /// <p>The ID of the multicast group.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The LoRaWAN information used with the multicast session.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
 }
-impl StartMulticastGroupSessionInput {
+impl  StartMulticastGroupSessionInput  {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanMulticastSession> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanMulticastSession> {
         self.lo_ra_wan.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StartMulticastGroupSessionInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the multicast group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl StartMulticastGroupSessionInputBuilder {
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticastSession>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanMulticastSession> {
         &self.lo_ra_wan
     }
     /// Consumes the builder and constructs a [`StartMulticastGroupSessionInput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput {
-            id: self.id,
-            lo_ra_wan: self.lo_ra_wan,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput {
+                id: self.id
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+            }
+        )
     }
 }
+

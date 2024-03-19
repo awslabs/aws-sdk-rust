@@ -3,19 +3,19 @@
 /// <p>Details about the criteria used to sort finding results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SortCriteria {
+pub struct SortCriteria  {
     /// <p>The finding detail field by which results are sorted.</p>
     pub field: crate::types::SortField,
     /// <p>The order by which findings are sorted.</p>
     pub sort_order: crate::types::SortOrder,
 }
-impl SortCriteria {
+impl  SortCriteria  {
     /// <p>The finding detail field by which results are sorted.</p>
-    pub fn field(&self) -> &crate::types::SortField {
+    pub fn field(&self) -> & crate::types::SortField {
         &self.field
     }
     /// <p>The order by which findings are sorted.</p>
-    pub fn sort_order(&self) -> &crate::types::SortOrder {
+    pub fn sort_order(&self) -> & crate::types::SortOrder {
         &self.sort_order
     }
 }
@@ -42,8 +42,7 @@ impl SortCriteriaBuilder {
     }
     /// <p>The finding detail field by which results are sorted.</p>
     pub fn set_field(mut self, input: ::std::option::Option<crate::types::SortField>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>The finding detail field by which results are sorted.</p>
     pub fn get_field(&self) -> &::std::option::Option<crate::types::SortField> {
@@ -57,8 +56,7 @@ impl SortCriteriaBuilder {
     }
     /// <p>The order by which findings are sorted.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The order by which findings are sorted.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl SortCriteriaBuilder {
     /// - [`field`](crate::types::builders::SortCriteriaBuilder::field)
     /// - [`sort_order`](crate::types::builders::SortCriteriaBuilder::sort_order)
     pub fn build(self) -> ::std::result::Result<crate::types::SortCriteria, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SortCriteria {
-            field: self.field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field",
-                    "field was not specified but it is required when building SortCriteria",
-                )
-            })?,
-            sort_order: self.sort_order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sort_order",
-                    "sort_order was not specified but it is required when building SortCriteria",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SortCriteria {
+                field: self.field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field", "field was not specified but it is required when building SortCriteria")
+                    )?
+                ,
+                sort_order: self.sort_order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sort_order", "sort_order was not specified but it is required when building SortCriteria")
+                    )?
+                ,
+            }
+        )
     }
 }
+

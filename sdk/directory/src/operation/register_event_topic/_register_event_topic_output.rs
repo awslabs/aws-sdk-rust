@@ -3,14 +3,14 @@
 /// <p>The result of a RegisterEventTopic request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterEventTopicOutput {
+pub struct RegisterEventTopicOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for RegisterEventTopicOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterEventTopicOutput {
     /// Creates a new builder-style object to manufacture [`RegisterEventTopicOutput`](crate::operation::register_event_topic::RegisterEventTopicOutput).
     pub fn builder() -> crate::operation::register_event_topic::builders::RegisterEventTopicOutputBuilder {
@@ -26,14 +26,14 @@ pub struct RegisterEventTopicOutputBuilder {
 }
 impl RegisterEventTopicOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterEventTopicOutput`](crate::operation::register_event_topic::RegisterEventTopicOutput).
     pub fn build(self) -> crate::operation::register_event_topic::RegisterEventTopicOutput {
         crate::operation::register_event_topic::RegisterEventTopicOutput {
@@ -41,3 +41,4 @@ impl RegisterEventTopicOutputBuilder {
         }
     }
 }
+

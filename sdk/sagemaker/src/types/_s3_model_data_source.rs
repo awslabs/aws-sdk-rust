@@ -3,7 +3,7 @@
 /// <p>Specifies the S3 location of ML model data to deploy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ModelDataSource {
+pub struct S3ModelDataSource  {
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of ML model data to deploy.</p>
@@ -43,15 +43,15 @@ pub struct S3ModelDataSource {
     /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
     pub model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
 }
-impl S3ModelDataSource {
+impl  S3ModelDataSource  {
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>Specifies the type of ML model data to deploy.</p>
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix as part of the ML model data to deploy. A valid key name prefix identified by <code>S3Uri</code> always ends with a forward slash (/).</p>
     /// <p>If you choose <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML model data to deploy.</p>
-    pub fn s3_data_type(&self) -> ::std::option::Option<&crate::types::S3ModelDataType> {
+    pub fn s3_data_type(&self) -> ::std::option::Option<& crate::types::S3ModelDataType> {
         self.s3_data_type.as_ref()
     }
     /// <p>Specifies how the ML model data is prepared.</p>
@@ -83,11 +83,11 @@ impl S3ModelDataSource {
     /// <li>
     /// <p>Do not organize the model artifacts in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3 console using folders</a>. When you create a folder in S3 console, S3 creates a 0-byte object with a key set to the folder name you provide. They key of the 0-byte object ends with a slash (/) which violates SageMaker restrictions on model artifact file names, leading to model deployment failure.</p></li>
     /// </ul>
-    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::ModelCompressionType> {
+    pub fn compression_type(&self) -> ::std::option::Option<& crate::types::ModelCompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
-    pub fn model_access_config(&self) -> ::std::option::Option<&crate::types::ModelAccessConfig> {
+    pub fn model_access_config(&self) -> ::std::option::Option<& crate::types::ModelAccessConfig> {
         self.model_access_config.as_ref()
     }
 }
@@ -116,8 +116,7 @@ impl S3ModelDataSourceBuilder {
     }
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl S3ModelDataSourceBuilder {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix as part of the ML model data to deploy. A valid key name prefix identified by <code>S3Uri</code> always ends with a forward slash (/).</p>
     /// <p>If you choose <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML model data to deploy.</p>
     pub fn set_s3_data_type(mut self, input: ::std::option::Option<crate::types::S3ModelDataType>) -> Self {
-        self.s3_data_type = input;
-        self
+        self.s3_data_type = input; self
     }
     /// <p>Specifies the type of ML model data to deploy.</p>
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix as part of the ML model data to deploy. A valid key name prefix identified by <code>S3Uri</code> always ends with a forward slash (/).</p>
@@ -208,8 +206,7 @@ impl S3ModelDataSourceBuilder {
     /// <p>Do not organize the model artifacts in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3 console using folders</a>. When you create a folder in S3 console, S3 creates a 0-byte object with a key set to the folder name you provide. They key of the 0-byte object ends with a slash (/) which violates SageMaker restrictions on model artifact file names, leading to model deployment failure.</p></li>
     /// </ul>
     pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::ModelCompressionType>) -> Self {
-        self.compression_type = input;
-        self
+        self.compression_type = input; self
     }
     /// <p>Specifies how the ML model data is prepared.</p>
     /// <p>If you choose <code>Gzip</code> and choose <code>S3Object</code> as the value of <code>S3DataType</code>, <code>S3Uri</code> identifies an object that is a gzip-compressed TAR archive. SageMaker will attempt to decompress and untar the object during model deployment.</p>
@@ -250,8 +247,7 @@ impl S3ModelDataSourceBuilder {
     }
     /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
     pub fn set_model_access_config(mut self, input: ::std::option::Option<crate::types::ModelAccessConfig>) -> Self {
-        self.model_access_config = input;
-        self
+        self.model_access_config = input; self
     }
     /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
     pub fn get_model_access_config(&self) -> &::std::option::Option<crate::types::ModelAccessConfig> {
@@ -260,10 +256,15 @@ impl S3ModelDataSourceBuilder {
     /// Consumes the builder and constructs a [`S3ModelDataSource`](crate::types::S3ModelDataSource).
     pub fn build(self) -> crate::types::S3ModelDataSource {
         crate::types::S3ModelDataSource {
-            s3_uri: self.s3_uri,
-            s3_data_type: self.s3_data_type,
-            compression_type: self.compression_type,
-            model_access_config: self.model_access_config,
+            s3_uri: self.s3_uri
+            ,
+            s3_data_type: self.s3_data_type
+            ,
+            compression_type: self.compression_type
+            ,
+            model_access_config: self.model_access_config
+            ,
         }
     }
 }
+

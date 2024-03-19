@@ -3,7 +3,7 @@
 /// <p>Describes a network interface attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceNetworkInterfaceAttachment {
+pub struct InstanceNetworkInterfaceAttachment  {
     /// <p>The time stamp when the attachment initiated.</p>
     pub attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the network interface attachment.</p>
@@ -19,13 +19,13 @@ pub struct InstanceNetworkInterfaceAttachment {
     /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
     pub ena_srd_specification: ::std::option::Option<crate::types::InstanceAttachmentEnaSrdSpecification>,
 }
-impl InstanceNetworkInterfaceAttachment {
+impl  InstanceNetworkInterfaceAttachment  {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn attach_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
@@ -37,7 +37,7 @@ impl InstanceNetworkInterfaceAttachment {
         self.device_index
     }
     /// <p>The attachment state.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AttachmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AttachmentStatus> {
         self.status.as_ref()
     }
     /// <p>The index of the network card.</p>
@@ -45,7 +45,7 @@ impl InstanceNetworkInterfaceAttachment {
         self.network_card_index
     }
     /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
-    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::InstanceAttachmentEnaSrdSpecification> {
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<& crate::types::InstanceAttachmentEnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>The time stamp when the attachment initiated.</p>
     pub fn set_attach_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.attach_time = input;
-        self
+        self.attach_time = input; self
     }
     /// <p>The time stamp when the attachment initiated.</p>
     pub fn get_attach_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +89,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>The ID of the network interface attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>The ID of the network interface attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -118,8 +115,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>The index of the device on the instance for the network interface attachment.</p>
     pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.device_index = input;
-        self
+        self.device_index = input; self
     }
     /// <p>The index of the device on the instance for the network interface attachment.</p>
     pub fn get_device_index(&self) -> &::std::option::Option<i32> {
@@ -132,8 +128,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>The attachment state.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The attachment state.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AttachmentStatus> {
@@ -146,8 +141,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>The index of the network card.</p>
     pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.network_card_index = input;
-        self
+        self.network_card_index = input; self
     }
     /// <p>The index of the network card.</p>
     pub fn get_network_card_index(&self) -> &::std::option::Option<i32> {
@@ -160,8 +154,7 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     }
     /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
     pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::InstanceAttachmentEnaSrdSpecification>) -> Self {
-        self.ena_srd_specification = input;
-        self
+        self.ena_srd_specification = input; self
     }
     /// <p>Contains the ENA Express settings for the network interface that's attached to the instance.</p>
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::InstanceAttachmentEnaSrdSpecification> {
@@ -170,13 +163,21 @@ impl InstanceNetworkInterfaceAttachmentBuilder {
     /// Consumes the builder and constructs a [`InstanceNetworkInterfaceAttachment`](crate::types::InstanceNetworkInterfaceAttachment).
     pub fn build(self) -> crate::types::InstanceNetworkInterfaceAttachment {
         crate::types::InstanceNetworkInterfaceAttachment {
-            attach_time: self.attach_time,
-            attachment_id: self.attachment_id,
-            delete_on_termination: self.delete_on_termination,
-            device_index: self.device_index,
-            status: self.status,
-            network_card_index: self.network_card_index,
-            ena_srd_specification: self.ena_srd_specification,
+            attach_time: self.attach_time
+            ,
+            attachment_id: self.attachment_id
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
+            device_index: self.device_index
+            ,
+            status: self.status
+            ,
+            network_card_index: self.network_card_index
+            ,
+            ena_srd_specification: self.ena_srd_specification
+            ,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbClusterEndpointsOutput {
+pub struct DescribeDbClusterEndpointsOutput  {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    pub db_cluster_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>,
+    pub db_cluster_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterEndpoint>>,
     _request_id: Option<String>,
 }
-impl DescribeDbClusterEndpointsOutput {
+impl  DescribeDbClusterEndpointsOutput  {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_endpoints.is_none()`.
-    pub fn db_cluster_endpoints(&self) -> &[crate::types::DbClusterEndpoint] {
-        self.db_cluster_endpoints.as_deref().unwrap_or_default()
+    pub fn db_cluster_endpoints(&self) -> & [crate::types::DbClusterEndpoint] {
+        self.db_cluster_endpoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDbClusterEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDbClusterEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsOutput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput).
     pub fn builder() -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeDbClusterEndpointsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterEndpointsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>,
+    pub(crate) db_cluster_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterEndpoint>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterEndpointsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeDbClusterEndpointsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeDbClusterEndpointsOutputBuilder {
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
     pub fn db_cluster_endpoints(mut self, input: crate::types::DbClusterEndpoint) -> Self {
         let mut v = self.db_cluster_endpoints.unwrap_or_default();
-        v.push(input);
-        self.db_cluster_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.db_cluster_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    pub fn set_db_cluster_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>) -> Self {
-        self.db_cluster_endpoints = input;
-        self
+    pub fn set_db_cluster_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterEndpoint>>) -> Self {
+        self.db_cluster_endpoints = input; self
     }
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    pub fn get_db_cluster_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>> {
+    pub fn get_db_cluster_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbClusterEndpoint>> {
         &self.db_cluster_endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDbClusterEndpointsOutput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput).
     pub fn build(self) -> crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput {
         crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput {
-            marker: self.marker,
-            db_cluster_endpoints: self.db_cluster_endpoints,
+            marker: self.marker
+            ,
+            db_cluster_endpoints: self.db_cluster_endpoints
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

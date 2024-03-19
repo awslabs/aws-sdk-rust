@@ -5,23 +5,20 @@ pub use crate::operation::report_task_progress::_report_task_progress_input::Rep
 
 impl ReportTaskProgressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::report_task_progress::ReportTaskProgressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::report_task_progress::ReportTaskProgressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.report_task_progress();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::report_task_progress::ReportTaskProgressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::report_task_progress::ReportTaskProgressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.report_task_progress();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ReportTaskProgress`.
-///
+/// 
 /// <p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <code>PollForTask</code> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p>
 /// <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to <code>PollForTask</code>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p><examples>
 /// <request>
@@ -34,33 +31,32 @@ impl ReportTaskProgressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReportTaskProgressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::report_task_progress::builders::ReportTaskProgressInputBuilder,
+                    inner: crate::operation::report_task_progress::builders::ReportTaskProgressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::report_task_progress::ReportTaskProgressOutput,
-        crate::operation::report_task_progress::ReportTaskProgressError,
-    > for ReportTaskProgressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::report_task_progress::ReportTaskProgressOutput,
-            crate::operation::report_task_progress::ReportTaskProgressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::report_task_progress::ReportTaskProgressOutput,
+                    crate::operation::report_task_progress::ReportTaskProgressError,
+                > for ReportTaskProgressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::report_task_progress::ReportTaskProgressOutput,
+                        crate::operation::report_task_progress::ReportTaskProgressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ReportTaskProgressFluentBuilder {
     /// Creates a new `ReportTaskProgress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -69,53 +65,44 @@ impl ReportTaskProgressFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::report_task_progress::ReportTaskProgressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::report_task_progress::ReportTaskProgressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::report_task_progress::ReportTaskProgress::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::report_task_progress::ReportTaskProgress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::report_task_progress::ReportTaskProgressOutput,
-        crate::operation::report_task_progress::ReportTaskProgressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::report_task_progress::ReportTaskProgressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::report_task_progress::ReportTaskProgressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::report_task_progress::ReportTaskProgress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::report_task_progress::ReportTaskProgress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::report_task_progress::ReportTaskProgressOutput, crate::operation::report_task_progress::ReportTaskProgressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
@@ -140,12 +127,13 @@ impl ReportTaskProgressFluentBuilder {
         self
     }
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Field>> {
         self.inner.get_fields()
     }
 }
+

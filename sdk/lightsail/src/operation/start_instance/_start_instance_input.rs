@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartInstanceInput {
+pub struct StartInstanceInput  {
     /// <p>The name of the instance (a virtual private server) to start.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
-impl StartInstanceInput {
+impl  StartInstanceInput  {
     /// <p>The name of the instance (a virtual private server) to start.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StartInstanceInputBuilder {
     }
     /// <p>The name of the instance (a virtual private server) to start.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the instance (a virtual private server) to start.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
     /// Consumes the builder and constructs a [`StartInstanceInput`](crate::operation::start_instance::StartInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_instance::StartInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_instance::StartInstanceInput {
-            instance_name: self.instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_instance::StartInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_instance::StartInstanceInput {
+                instance_name: self.instance_name
+                ,
+            }
+        )
     }
 }
+

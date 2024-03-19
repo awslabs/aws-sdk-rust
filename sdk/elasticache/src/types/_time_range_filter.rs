@@ -3,19 +3,19 @@
 /// <p>Filters update actions from the service updates that are in available status during the time range.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeRangeFilter {
+pub struct TimeRangeFilter  {
     /// <p>The start time of the time range filter</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the time range filter</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl TimeRangeFilter {
+impl  TimeRangeFilter  {
     /// <p>The start time of the time range filter</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the time range filter</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>The start time of the time range filter</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the time range filter</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>The end time of the time range filter</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the time range filter</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl TimeRangeFilterBuilder {
     /// Consumes the builder and constructs a [`TimeRangeFilter`](crate::types::TimeRangeFilter).
     pub fn build(self) -> crate::types::TimeRangeFilter {
         crate::types::TimeRangeFilter {
-            start_time: self.start_time,
-            end_time: self.end_time,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

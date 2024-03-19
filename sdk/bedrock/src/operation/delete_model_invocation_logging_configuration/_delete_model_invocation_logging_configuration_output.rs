@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteModelInvocationLoggingConfigurationOutput {
+pub struct DeleteModelInvocationLoggingConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteModelInvocationLoggingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteModelInvocationLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelInvocationLoggingConfigurationOutput`](crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_invocation_logging_configuration::builders::DeleteModelInvocationLoggingConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_model_invocation_logging_configuration::builders::DeleteModelInvocationLoggingConfigurationOutputBuilder {
         crate::operation::delete_model_invocation_logging_configuration::builders::DeleteModelInvocationLoggingConfigurationOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteModelInvocationLoggingConfigurationOutputBuilder {
 }
 impl DeleteModelInvocationLoggingConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteModelInvocationLoggingConfigurationOutput`](crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationOutput).
     pub fn build(self) -> crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationOutput {
         crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationOutput {
@@ -41,3 +40,4 @@ impl DeleteModelInvocationLoggingConfigurationOutputBuilder {
         }
     }
 }
+

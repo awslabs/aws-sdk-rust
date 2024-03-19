@@ -3,7 +3,7 @@
 /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceRevisionOverride {
+pub struct SourceRevisionOverride  {
     /// <p>The name of the action where the override will be applied.</p>
     pub action_name: ::std::string::String,
     /// <p>The type of source revision, based on the source provider. For example, the revision type for the CodeCommit action provider is the commit ID.</p>
@@ -11,20 +11,18 @@ pub struct SourceRevisionOverride {
     /// <p>The source revision, or version of your source artifact, with the changes that you want to run in the pipeline execution.</p>
     pub revision_value: ::std::string::String,
 }
-impl SourceRevisionOverride {
+impl  SourceRevisionOverride  {
     /// <p>The name of the action where the override will be applied.</p>
-    pub fn action_name(&self) -> &str {
-        use std::ops::Deref;
-        self.action_name.deref()
+    pub fn action_name(&self) -> & str {
+        use std::ops::Deref; self.action_name.deref()
     }
     /// <p>The type of source revision, based on the source provider. For example, the revision type for the CodeCommit action provider is the commit ID.</p>
-    pub fn revision_type(&self) -> &crate::types::SourceRevisionType {
+    pub fn revision_type(&self) -> & crate::types::SourceRevisionType {
         &self.revision_type
     }
     /// <p>The source revision, or version of your source artifact, with the changes that you want to run in the pipeline execution.</p>
-    pub fn revision_value(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_value.deref()
+    pub fn revision_value(&self) -> & str {
+        use std::ops::Deref; self.revision_value.deref()
     }
 }
 impl SourceRevisionOverride {
@@ -51,8 +49,7 @@ impl SourceRevisionOverrideBuilder {
     }
     /// <p>The name of the action where the override will be applied.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The name of the action where the override will be applied.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl SourceRevisionOverrideBuilder {
     }
     /// <p>The type of source revision, based on the source provider. For example, the revision type for the CodeCommit action provider is the commit ID.</p>
     pub fn set_revision_type(mut self, input: ::std::option::Option<crate::types::SourceRevisionType>) -> Self {
-        self.revision_type = input;
-        self
+        self.revision_type = input; self
     }
     /// <p>The type of source revision, based on the source provider. For example, the revision type for the CodeCommit action provider is the commit ID.</p>
     pub fn get_revision_type(&self) -> &::std::option::Option<crate::types::SourceRevisionType> {
@@ -81,8 +77,7 @@ impl SourceRevisionOverrideBuilder {
     }
     /// <p>The source revision, or version of your source artifact, with the changes that you want to run in the pipeline execution.</p>
     pub fn set_revision_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_value = input;
-        self
+        self.revision_value = input; self
     }
     /// <p>The source revision, or version of your source artifact, with the changes that you want to run in the pipeline execution.</p>
     pub fn get_revision_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl SourceRevisionOverrideBuilder {
     /// - [`revision_type`](crate::types::builders::SourceRevisionOverrideBuilder::revision_type)
     /// - [`revision_value`](crate::types::builders::SourceRevisionOverrideBuilder::revision_value)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceRevisionOverride, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceRevisionOverride {
-            action_name: self.action_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_name",
-                    "action_name was not specified but it is required when building SourceRevisionOverride",
-                )
-            })?,
-            revision_type: self.revision_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_type",
-                    "revision_type was not specified but it is required when building SourceRevisionOverride",
-                )
-            })?,
-            revision_value: self.revision_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_value",
-                    "revision_value was not specified but it is required when building SourceRevisionOverride",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceRevisionOverride {
+                action_name: self.action_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_name", "action_name was not specified but it is required when building SourceRevisionOverride")
+                    )?
+                ,
+                revision_type: self.revision_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_type", "revision_type was not specified but it is required when building SourceRevisionOverride")
+                    )?
+                ,
+                revision_value: self.revision_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_value", "revision_value was not specified but it is required when building SourceRevisionOverride")
+                    )?
+                ,
+            }
+        )
     }
 }
+

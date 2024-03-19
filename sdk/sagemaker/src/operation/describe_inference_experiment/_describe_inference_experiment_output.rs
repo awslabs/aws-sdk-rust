@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInferenceExperimentOutput {
+pub struct DescribeInferenceExperimentOutput  {
     /// <p>The ARN of the inference experiment being described.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference experiment.</p>
@@ -46,7 +46,7 @@ pub struct DescribeInferenceExperimentOutput {
     /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
     pub endpoint_metadata: ::std::option::Option<crate::types::EndpointMetadata>,
     /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
-    pub model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfigSummary>>,
+    pub model_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVariantConfigSummary>>,
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
@@ -55,21 +55,21 @@ pub struct DescribeInferenceExperimentOutput {
     pub kms_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeInferenceExperimentOutput {
+impl  DescribeInferenceExperimentOutput  {
     /// <p>The ARN of the inference experiment being described.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the inference experiment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the inference experiment.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InferenceExperimentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::InferenceExperimentType> {
         self.r#type.as_ref()
     }
     /// <p>The duration for which the inference experiment ran or will run.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::InferenceExperimentSchedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::InferenceExperimentSchedule> {
         self.schedule.as_ref()
     }
     /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
@@ -91,61 +91,62 @@ impl DescribeInferenceExperimentOutput {
     /// <li>
     /// <p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InferenceExperimentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InferenceExperimentStatus> {
         self.status.as_ref()
     }
     /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The description of the inference experiment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp at which you created the inference experiment.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp at which the inference experiment was completed.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The timestamp at which you last modified the inference experiment.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
-    pub fn endpoint_metadata(&self) -> ::std::option::Option<&crate::types::EndpointMetadata> {
+    pub fn endpoint_metadata(&self) -> ::std::option::Option<& crate::types::EndpointMetadata> {
         self.endpoint_metadata.as_ref()
     }
     /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_variants.is_none()`.
-    pub fn model_variants(&self) -> &[crate::types::ModelVariantConfigSummary] {
-        self.model_variants.as_deref().unwrap_or_default()
+    pub fn model_variants(&self) -> & [crate::types::ModelVariantConfigSummary] {
+        self.model_variants.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
-    pub fn data_storage_config(&self) -> ::std::option::Option<&crate::types::InferenceExperimentDataStorageConfig> {
+    pub fn data_storage_config(&self) -> ::std::option::Option<& crate::types::InferenceExperimentDataStorageConfig> {
         self.data_storage_config.as_ref()
     }
     /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
-    pub fn shadow_mode_config(&self) -> ::std::option::Option<&crate::types::ShadowModeConfig> {
+    pub fn shadow_mode_config(&self) -> ::std::option::Option<& crate::types::ShadowModeConfig> {
         self.shadow_mode_config.as_ref()
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInferenceExperimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInferenceExperimentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInferenceExperimentOutput`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput).
     pub fn builder() -> crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentOutputBuilder {
@@ -169,7 +170,7 @@ pub struct DescribeInferenceExperimentOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_metadata: ::std::option::Option<crate::types::EndpointMetadata>,
-    pub(crate) model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfigSummary>>,
+    pub(crate) model_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVariantConfigSummary>>,
     pub(crate) data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     pub(crate) shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
@@ -184,8 +185,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The ARN of the inference experiment being described.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the inference experiment being described.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +199,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The name of the inference experiment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the inference experiment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +213,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The type of the inference experiment.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InferenceExperimentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the inference experiment.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InferenceExperimentType> {
@@ -228,8 +226,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The duration for which the inference experiment ran or will run.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::InferenceExperimentSchedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The duration for which the inference experiment ran or will run.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
@@ -279,8 +276,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     /// <p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
@@ -311,8 +307,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -325,8 +320,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The description of the inference experiment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the inference experiment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -339,8 +333,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The timestamp at which you created the inference experiment.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp at which you created the inference experiment.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -353,8 +346,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The timestamp at which the inference experiment was completed.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>The timestamp at which the inference experiment was completed.</p>
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -367,8 +359,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The timestamp at which you last modified the inference experiment.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp at which you last modified the inference experiment.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -381,8 +372,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -396,8 +386,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
     pub fn set_endpoint_metadata(mut self, input: ::std::option::Option<crate::types::EndpointMetadata>) -> Self {
-        self.endpoint_metadata = input;
-        self
+        self.endpoint_metadata = input; self
     }
     /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
     pub fn get_endpoint_metadata(&self) -> &::std::option::Option<crate::types::EndpointMetadata> {
@@ -410,17 +399,16 @@ impl DescribeInferenceExperimentOutputBuilder {
     /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
     pub fn model_variants(mut self, input: crate::types::ModelVariantConfigSummary) -> Self {
         let mut v = self.model_variants.unwrap_or_default();
-        v.push(input);
-        self.model_variants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.model_variants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
-    pub fn set_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfigSummary>>) -> Self {
-        self.model_variants = input;
-        self
+    pub fn set_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVariantConfigSummary>>) -> Self {
+        self.model_variants = input; self
     }
     /// <p>An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant.</p>
-    pub fn get_model_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfigSummary>> {
+    pub fn get_model_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelVariantConfigSummary>> {
         &self.model_variants
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
@@ -430,8 +418,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub fn set_data_storage_config(mut self, input: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>) -> Self {
-        self.data_storage_config = input;
-        self
+        self.data_storage_config = input; self
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub fn get_data_storage_config(&self) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
@@ -444,8 +431,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
     pub fn set_shadow_mode_config(mut self, input: ::std::option::Option<crate::types::ShadowModeConfig>) -> Self {
-        self.shadow_mode_config = input;
-        self
+        self.shadow_mode_config = input; self
     }
     /// <p>The configuration of <code>ShadowMode</code> inference experiment type, which shows the production variant that takes all the inference requests, and the shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.</p>
     pub fn get_shadow_mode_config(&self) -> &::std::option::Option<crate::types::ShadowModeConfig> {
@@ -458,42 +444,58 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInferenceExperimentOutput`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput).
     pub fn build(self) -> crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput {
         crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            schedule: self.schedule,
-            status: self.status,
-            status_reason: self.status_reason,
-            description: self.description,
-            creation_time: self.creation_time,
-            completion_time: self.completion_time,
-            last_modified_time: self.last_modified_time,
-            role_arn: self.role_arn,
-            endpoint_metadata: self.endpoint_metadata,
-            model_variants: self.model_variants,
-            data_storage_config: self.data_storage_config,
-            shadow_mode_config: self.shadow_mode_config,
-            kms_key: self.kms_key,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            schedule: self.schedule
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            description: self.description
+            ,
+            creation_time: self.creation_time
+            ,
+            completion_time: self.completion_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            role_arn: self.role_arn
+            ,
+            endpoint_metadata: self.endpoint_metadata
+            ,
+            model_variants: self.model_variants
+            ,
+            data_storage_config: self.data_storage_config
+            ,
+            shadow_mode_config: self.shadow_mode_config
+            ,
+            kms_key: self.kms_key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisablePolicyTypeInput {
+pub struct DisablePolicyTypeInput  {
     /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub root_id: ::std::option::Option<::std::string::String>,
@@ -19,10 +19,10 @@ pub struct DisablePolicyTypeInput {
     /// </ul>
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
 }
-impl DisablePolicyTypeInput {
+impl  DisablePolicyTypeInput  {
     /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
-    pub fn root_id(&self) -> ::std::option::Option<&str> {
+    pub fn root_id(&self) -> ::std::option::Option<& str> {
         self.root_id.as_deref()
     }
     /// <p>The policy type that you want to disable in this root. You can specify one of the following values:</p>
@@ -36,7 +36,7 @@ impl DisablePolicyTypeInput {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a></p></li>
     /// </ul>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
+    pub fn policy_type(&self) -> ::std::option::Option<& crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
 }
@@ -65,8 +65,7 @@ impl DisablePolicyTypeInputBuilder {
     /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub fn set_root_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_id = input;
-        self
+        self.root_id = input; self
     }
     /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
@@ -101,8 +100,7 @@ impl DisablePolicyTypeInputBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a></p></li>
     /// </ul>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The policy type that you want to disable in this root. You can specify one of the following values:</p>
     /// <ul>
@@ -119,12 +117,15 @@ impl DisablePolicyTypeInputBuilder {
         &self.policy_type
     }
     /// Consumes the builder and constructs a [`DisablePolicyTypeInput`](crate::operation::disable_policy_type::DisablePolicyTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_policy_type::DisablePolicyTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_policy_type::DisablePolicyTypeInput {
-            root_id: self.root_id,
-            policy_type: self.policy_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_policy_type::DisablePolicyTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_policy_type::DisablePolicyTypeInput {
+                root_id: self.root_id
+                ,
+                policy_type: self.policy_type
+                ,
+            }
+        )
     }
 }
+

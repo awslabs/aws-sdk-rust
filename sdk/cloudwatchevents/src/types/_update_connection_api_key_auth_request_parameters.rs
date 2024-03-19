@@ -3,23 +3,23 @@
 /// <p>Contains the API key authorization parameters to use to update the connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateConnectionApiKeyAuthRequestParameters {
+pub struct UpdateConnectionApiKeyAuthRequestParameters  {
     /// <p>The name of the API key to use for authorization.</p>
     pub api_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with teh API key to use for authorization.</p>
     pub api_key_value: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConnectionApiKeyAuthRequestParameters {
+impl  UpdateConnectionApiKeyAuthRequestParameters  {
     /// <p>The name of the API key to use for authorization.</p>
-    pub fn api_key_name(&self) -> ::std::option::Option<&str> {
+    pub fn api_key_name(&self) -> ::std::option::Option<& str> {
         self.api_key_name.as_deref()
     }
     /// <p>The value associated with teh API key to use for authorization.</p>
-    pub fn api_key_value(&self) -> ::std::option::Option<&str> {
+    pub fn api_key_value(&self) -> ::std::option::Option<& str> {
         self.api_key_value.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateConnectionApiKeyAuthRequestParameters {
+impl  ::std::fmt::Debug for UpdateConnectionApiKeyAuthRequestParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionApiKeyAuthRequestParameters");
         formatter.field("api_key_name", &self.api_key_name);
@@ -49,8 +49,7 @@ impl UpdateConnectionApiKeyAuthRequestParametersBuilder {
     }
     /// <p>The name of the API key to use for authorization.</p>
     pub fn set_api_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key_name = input;
-        self
+        self.api_key_name = input; self
     }
     /// <p>The name of the API key to use for authorization.</p>
     pub fn get_api_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateConnectionApiKeyAuthRequestParametersBuilder {
     }
     /// <p>The value associated with teh API key to use for authorization.</p>
     pub fn set_api_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key_value = input;
-        self
+        self.api_key_value = input; self
     }
     /// <p>The value associated with teh API key to use for authorization.</p>
     pub fn get_api_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl UpdateConnectionApiKeyAuthRequestParametersBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectionApiKeyAuthRequestParameters`](crate::types::UpdateConnectionApiKeyAuthRequestParameters).
     pub fn build(self) -> crate::types::UpdateConnectionApiKeyAuthRequestParameters {
         crate::types::UpdateConnectionApiKeyAuthRequestParameters {
-            api_key_name: self.api_key_name,
-            api_key_value: self.api_key_value,
+            api_key_name: self.api_key_name
+            ,
+            api_key_value: self.api_key_value
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for UpdateConnectionApiKeyAuthRequestParametersBuilder {
         formatter.finish()
     }
 }
+

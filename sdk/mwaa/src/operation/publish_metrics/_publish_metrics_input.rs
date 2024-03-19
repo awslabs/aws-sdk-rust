@@ -3,22 +3,23 @@
 #[deprecated(note = "This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishMetricsInput {
+pub struct PublishMetricsInput  {
     /// <p><b>Internal only</b>. The name of the environment.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p><b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
+    pub metric_data: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDatum>>,
 }
-impl PublishMetricsInput {
+impl  PublishMetricsInput  {
     /// <p><b>Internal only</b>. The name of the environment.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p><b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data.is_none()`.
-    pub fn metric_data(&self) -> &[crate::types::MetricDatum] {
-        self.metric_data.as_deref().unwrap_or_default()
+    pub fn metric_data(&self) -> & [crate::types::MetricDatum] {
+        self.metric_data.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PublishMetricsInput {
@@ -33,7 +34,7 @@ impl PublishMetricsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishMetricsInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
+    pub(crate) metric_data: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDatum>>,
 }
 impl PublishMetricsInputBuilder {
     /// <p><b>Internal only</b>. The name of the environment.</p>
@@ -44,8 +45,7 @@ impl PublishMetricsInputBuilder {
     }
     /// <p><b>Internal only</b>. The name of the environment.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p><b>Internal only</b>. The name of the environment.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,26 +58,28 @@ impl PublishMetricsInputBuilder {
     /// <p><b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatum) -> Self {
         let mut v = self.metric_data.unwrap_or_default();
-        v.push(input);
-        self.metric_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p><b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
-        self.metric_data = input;
-        self
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDatum>>) -> Self {
+        self.metric_data = input; self
     }
     /// <p><b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricDatum>> {
         &self.metric_data
     }
     /// Consumes the builder and constructs a [`PublishMetricsInput`](crate::operation::publish_metrics::PublishMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::publish_metrics::PublishMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::publish_metrics::PublishMetricsInput {
-            environment_name: self.environment_name,
-            metric_data: self.metric_data,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish_metrics::PublishMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::publish_metrics::PublishMetricsInput {
+                environment_name: self.environment_name
+                ,
+                metric_data: self.metric_data
+                ,
+            }
+        )
     }
 }
+

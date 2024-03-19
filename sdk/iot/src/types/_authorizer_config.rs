@@ -3,15 +3,15 @@
 /// <p>An object that specifies the authorization service for a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizerConfig {
+pub struct AuthorizerConfig  {
     /// <p>The name of the authorization service for a domain configuration.</p>
     pub default_authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
     pub allow_authorizer_override: ::std::option::Option<bool>,
 }
-impl AuthorizerConfig {
+impl  AuthorizerConfig  {
     /// <p>The name of the authorization service for a domain configuration.</p>
-    pub fn default_authorizer_name(&self) -> ::std::option::Option<&str> {
+    pub fn default_authorizer_name(&self) -> ::std::option::Option<& str> {
         self.default_authorizer_name.as_deref()
     }
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
@@ -41,8 +41,7 @@ impl AuthorizerConfigBuilder {
     }
     /// <p>The name of the authorization service for a domain configuration.</p>
     pub fn set_default_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_authorizer_name = input;
-        self
+        self.default_authorizer_name = input; self
     }
     /// <p>The name of the authorization service for a domain configuration.</p>
     pub fn get_default_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AuthorizerConfigBuilder {
     }
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
     pub fn set_allow_authorizer_override(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_authorizer_override = input;
-        self
+        self.allow_authorizer_override = input; self
     }
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
     pub fn get_allow_authorizer_override(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl AuthorizerConfigBuilder {
     /// Consumes the builder and constructs a [`AuthorizerConfig`](crate::types::AuthorizerConfig).
     pub fn build(self) -> crate::types::AuthorizerConfig {
         crate::types::AuthorizerConfig {
-            default_authorizer_name: self.default_authorizer_name,
-            allow_authorizer_override: self.allow_authorizer_override,
+            default_authorizer_name: self.default_authorizer_name
+            ,
+            allow_authorizer_override: self.allow_authorizer_override
+            ,
         }
     }
 }
+

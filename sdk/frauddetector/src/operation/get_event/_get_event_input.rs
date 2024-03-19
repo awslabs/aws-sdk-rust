@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventInput {
+pub struct GetEventInput  {
     /// <p>The ID of the event to retrieve.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type of the event to retrieve.</p>
     pub event_type_name: ::std::option::Option<::std::string::String>,
 }
-impl GetEventInput {
+impl  GetEventInput  {
     /// <p>The ID of the event to retrieve.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The event type of the event to retrieve.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetEventInputBuilder {
     }
     /// <p>The ID of the event to retrieve.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The ID of the event to retrieve.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetEventInputBuilder {
     }
     /// <p>The event type of the event to retrieve.</p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>The event type of the event to retrieve.</p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetEventInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetEventInput`](crate::operation::get_event::GetEventInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_event::GetEventInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_event::GetEventInput {
-            event_id: self.event_id,
-            event_type_name: self.event_type_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_event::GetEventInput {
+                event_id: self.event_id
+                ,
+                event_type_name: self.event_type_name
+                ,
+            }
+        )
     }
 }
+

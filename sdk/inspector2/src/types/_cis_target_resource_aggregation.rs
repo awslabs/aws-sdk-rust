@@ -3,7 +3,7 @@
 /// <p>The CIS target resource aggregation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisTargetResourceAggregation {
+pub struct CisTargetResourceAggregation  {
     /// <p>The scan ARN for the CIS target resource.</p>
     pub scan_arn: ::std::string::String,
     /// <p>The ID of the target resource.</p>
@@ -11,7 +11,7 @@ pub struct CisTargetResourceAggregation {
     /// <p>The account ID for the CIS target resource.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The tag for the target resource.</p>
-    pub target_resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub target_resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The target resource status counts.</p>
     pub status_counts: ::std::option::Option<crate::types::StatusCounts>,
     /// <p>The platform for the CIS target resource.</p>
@@ -21,40 +21,37 @@ pub struct CisTargetResourceAggregation {
     /// <p>The reason for the target resource.</p>
     pub target_status_reason: ::std::option::Option<crate::types::CisTargetStatusReason>,
 }
-impl CisTargetResourceAggregation {
+impl  CisTargetResourceAggregation  {
     /// <p>The scan ARN for the CIS target resource.</p>
-    pub fn scan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_arn.deref()
+    pub fn scan_arn(&self) -> & str {
+        use std::ops::Deref; self.scan_arn.deref()
     }
     /// <p>The ID of the target resource.</p>
-    pub fn target_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_resource_id(&self) -> ::std::option::Option<& str> {
         self.target_resource_id.as_deref()
     }
     /// <p>The account ID for the CIS target resource.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The tag for the target resource.</p>
-    pub fn target_resource_tags(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn target_resource_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.target_resource_tags.as_ref()
     }
     /// <p>The target resource status counts.</p>
-    pub fn status_counts(&self) -> ::std::option::Option<&crate::types::StatusCounts> {
+    pub fn status_counts(&self) -> ::std::option::Option<& crate::types::StatusCounts> {
         self.status_counts.as_ref()
     }
     /// <p>The platform for the CIS target resource.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The status of the target resource.</p>
-    pub fn target_status(&self) -> ::std::option::Option<&crate::types::CisTargetStatus> {
+    pub fn target_status(&self) -> ::std::option::Option<& crate::types::CisTargetStatus> {
         self.target_status.as_ref()
     }
     /// <p>The reason for the target resource.</p>
-    pub fn target_status_reason(&self) -> ::std::option::Option<&crate::types::CisTargetStatusReason> {
+    pub fn target_status_reason(&self) -> ::std::option::Option<& crate::types::CisTargetStatusReason> {
         self.target_status_reason.as_ref()
     }
 }
@@ -72,8 +69,7 @@ pub struct CisTargetResourceAggregationBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) target_resource_tags:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) target_resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) status_counts: ::std::option::Option<crate::types::StatusCounts>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) target_status: ::std::option::Option<crate::types::CisTargetStatus>,
@@ -88,8 +84,7 @@ impl CisTargetResourceAggregationBuilder {
     }
     /// <p>The scan ARN for the CIS target resource.</p>
     pub fn set_scan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_arn = input;
-        self
+        self.scan_arn = input; self
     }
     /// <p>The scan ARN for the CIS target resource.</p>
     pub fn get_scan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl CisTargetResourceAggregationBuilder {
     }
     /// <p>The ID of the target resource.</p>
     pub fn set_target_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_resource_id = input;
-        self
+        self.target_resource_id = input; self
     }
     /// <p>The ID of the target resource.</p>
     pub fn get_target_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +110,7 @@ impl CisTargetResourceAggregationBuilder {
     }
     /// <p>The account ID for the CIS target resource.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID for the CIS target resource.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,24 +121,18 @@ impl CisTargetResourceAggregationBuilder {
     /// To override the contents of this collection use [`set_target_resource_tags`](Self::set_target_resource_tags).
     ///
     /// <p>The tag for the target resource.</p>
-    pub fn target_resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn target_resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.target_resource_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.target_resource_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.target_resource_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tag for the target resource.</p>
-    pub fn set_target_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.target_resource_tags = input;
-        self
+    pub fn set_target_resource_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.target_resource_tags = input; self
     }
     /// <p>The tag for the target resource.</p>
-    pub fn get_target_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_target_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.target_resource_tags
     }
     /// <p>The target resource status counts.</p>
@@ -155,8 +142,7 @@ impl CisTargetResourceAggregationBuilder {
     }
     /// <p>The target resource status counts.</p>
     pub fn set_status_counts(mut self, input: ::std::option::Option<crate::types::StatusCounts>) -> Self {
-        self.status_counts = input;
-        self
+        self.status_counts = input; self
     }
     /// <p>The target resource status counts.</p>
     pub fn get_status_counts(&self) -> &::std::option::Option<crate::types::StatusCounts> {
@@ -169,8 +155,7 @@ impl CisTargetResourceAggregationBuilder {
     }
     /// <p>The platform for the CIS target resource.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform for the CIS target resource.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +168,7 @@ impl CisTargetResourceAggregationBuilder {
     }
     /// <p>The status of the target resource.</p>
     pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::CisTargetStatus>) -> Self {
-        self.target_status = input;
-        self
+        self.target_status = input; self
     }
     /// <p>The status of the target resource.</p>
     pub fn get_target_status(&self) -> &::std::option::Option<crate::types::CisTargetStatus> {
@@ -197,8 +181,7 @@ impl CisTargetResourceAggregationBuilder {
     }
     /// <p>The reason for the target resource.</p>
     pub fn set_target_status_reason(mut self, input: ::std::option::Option<crate::types::CisTargetStatusReason>) -> Self {
-        self.target_status_reason = input;
-        self
+        self.target_status_reason = input; self
     }
     /// <p>The reason for the target resource.</p>
     pub fn get_target_status_reason(&self) -> &::std::option::Option<crate::types::CisTargetStatusReason> {
@@ -208,20 +191,29 @@ impl CisTargetResourceAggregationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`scan_arn`](crate::types::builders::CisTargetResourceAggregationBuilder::scan_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CisTargetResourceAggregation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisTargetResourceAggregation {
-            scan_arn: self.scan_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_arn",
-                    "scan_arn was not specified but it is required when building CisTargetResourceAggregation",
-                )
-            })?,
-            target_resource_id: self.target_resource_id,
-            account_id: self.account_id,
-            target_resource_tags: self.target_resource_tags,
-            status_counts: self.status_counts,
-            platform: self.platform,
-            target_status: self.target_status,
-            target_status_reason: self.target_status_reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisTargetResourceAggregation {
+                scan_arn: self.scan_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_arn", "scan_arn was not specified but it is required when building CisTargetResourceAggregation")
+                    )?
+                ,
+                target_resource_id: self.target_resource_id
+                ,
+                account_id: self.account_id
+                ,
+                target_resource_tags: self.target_resource_tags
+                ,
+                status_counts: self.status_counts
+                ,
+                platform: self.platform
+                ,
+                target_status: self.target_status
+                ,
+                target_status_reason: self.target_status_reason
+                ,
+            }
+        )
     }
 }
+

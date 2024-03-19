@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRuleInput {
+pub struct GetRuleInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
@@ -10,17 +10,17 @@ pub struct GetRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
     pub rule_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetRuleInput {
+impl  GetRuleInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_identifier(&self) -> ::std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn listener_identifier(&self) -> ::std::option::Option<& str> {
         self.listener_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
-    pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn rule_identifier(&self) -> ::std::option::Option<& str> {
         self.rule_identifier.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetRuleInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_identifier = input;
-        self
+        self.service_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetRuleInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_identifier = input;
-        self
+        self.listener_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl GetRuleInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
     pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_identifier = input;
-        self
+        self.rule_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
     pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,10 +84,16 @@ impl GetRuleInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_rule::GetRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_rule::GetRuleInput {
-            service_identifier: self.service_identifier,
-            listener_identifier: self.listener_identifier,
-            rule_identifier: self.rule_identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_rule::GetRuleInput {
+                service_identifier: self.service_identifier
+                ,
+                listener_identifier: self.listener_identifier
+                ,
+                rule_identifier: self.rule_identifier
+                ,
+            }
+        )
     }
 }
+

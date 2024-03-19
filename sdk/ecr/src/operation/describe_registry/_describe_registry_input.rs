@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistryInput {}
+pub struct DescribeRegistryInput  {
+}
 impl DescribeRegistryInput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistryInput`](crate::operation::describe_registry::DescribeRegistryInput).
     pub fn builder() -> crate::operation::describe_registry::builders::DescribeRegistryInputBuilder {
@@ -13,12 +14,15 @@ impl DescribeRegistryInput {
 /// A builder for [`DescribeRegistryInput`](crate::operation::describe_registry::DescribeRegistryInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeRegistryInputBuilder {}
+pub struct DescribeRegistryInputBuilder {
+}
 impl DescribeRegistryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegistryInput`](crate::operation::describe_registry::DescribeRegistryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_registry::DescribeRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_registry::DescribeRegistryInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registry::DescribeRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_registry::DescribeRegistryInput {
+            }
+        )
     }
 }
+

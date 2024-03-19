@@ -3,30 +3,28 @@
 /// <p>A federation source failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FederationSourceException {
+pub struct FederationSourceException  {
     /// <p>The error code of the problem.</p>
     pub federation_source_error_code: ::std::option::Option<crate::types::FederationSourceErrorCode>,
     /// <p>The message describing the problem.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl FederationSourceException {
+impl  FederationSourceException  {
     /// <p>The error code of the problem.</p>
-    pub fn federation_source_error_code(&self) -> ::std::option::Option<&crate::types::FederationSourceErrorCode> {
+    pub fn federation_source_error_code(&self) -> ::std::option::Option<& crate::types::FederationSourceErrorCode> {
         self.federation_source_error_code.as_ref()
     }
 }
 impl FederationSourceException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for FederationSourceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "FederationSourceException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,9 +39,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::FederationSourc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for FederationSourceException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl FederationSourceException {
     /// Creates a new builder-style object to manufacture [`FederationSourceException`](crate::types::error::FederationSourceException).
@@ -68,8 +64,7 @@ impl FederationSourceExceptionBuilder {
     }
     /// <p>The error code of the problem.</p>
     pub fn set_federation_source_error_code(mut self, input: ::std::option::Option<crate::types::FederationSourceErrorCode>) -> Self {
-        self.federation_source_error_code = input;
-        self
+        self.federation_source_error_code = input; self
     }
     /// <p>The error code of the problem.</p>
     pub fn get_federation_source_error_code(&self) -> &::std::option::Option<crate::types::FederationSourceErrorCode> {
@@ -82,30 +77,32 @@ impl FederationSourceExceptionBuilder {
     }
     /// <p>The message describing the problem.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message describing the problem.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`FederationSourceException`](crate::types::error::FederationSourceException).
     pub fn build(self) -> crate::types::error::FederationSourceException {
         crate::types::error::FederationSourceException {
-            federation_source_error_code: self.federation_source_error_code,
-            message: self.message,
+            federation_source_error_code: self.federation_source_error_code
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

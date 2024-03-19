@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTableInput {
+pub struct UpdateTableInput  {
     /// <p>The name of the Timestream database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table.</p>
@@ -14,25 +14,25 @@ pub struct UpdateTableInput {
     /// <p>The schema of the table.</p>
     pub schema: ::std::option::Option<crate::types::Schema>,
 }
-impl UpdateTableInput {
+impl  UpdateTableInput  {
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the Timestream table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The retention duration of the memory store and the magnetic store.</p>
-    pub fn retention_properties(&self) -> ::std::option::Option<&crate::types::RetentionProperties> {
+    pub fn retention_properties(&self) -> ::std::option::Option<& crate::types::RetentionProperties> {
         self.retention_properties.as_ref()
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
+    pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<& crate::types::MagneticStoreWriteProperties> {
         self.magnetic_store_write_properties.as_ref()
     }
     /// <p>The schema of the table.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::Schema> {
         self.schema.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>The name of the Timestream database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the Timestream database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>The name of the Timestream table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the Timestream table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>The retention duration of the memory store and the magnetic store.</p>
     pub fn set_retention_properties(mut self, input: ::std::option::Option<crate::types::RetentionProperties>) -> Self {
-        self.retention_properties = input;
-        self
+        self.retention_properties = input; self
     }
     /// <p>The retention duration of the memory store and the magnetic store.</p>
     pub fn get_retention_properties(&self) -> &::std::option::Option<crate::types::RetentionProperties> {
@@ -105,8 +102,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub fn set_magnetic_store_write_properties(mut self, input: ::std::option::Option<crate::types::MagneticStoreWriteProperties>) -> Self {
-        self.magnetic_store_write_properties = input;
-        self
+        self.magnetic_store_write_properties = input; self
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
@@ -119,8 +115,7 @@ impl UpdateTableInputBuilder {
     }
     /// <p>The schema of the table.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema of the table.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
@@ -128,12 +123,20 @@ impl UpdateTableInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
-            database_name: self.database_name,
-            table_name: self.table_name,
-            retention_properties: self.retention_properties,
-            magnetic_store_write_properties: self.magnetic_store_write_properties,
-            schema: self.schema,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_table::UpdateTableInput {
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                retention_properties: self.retention_properties
+                ,
+                magnetic_store_write_properties: self.magnetic_store_write_properties
+                ,
+                schema: self.schema
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNodeInput {
+pub struct CreateNodeInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the network for the node.</p>
@@ -22,11 +22,11 @@ pub struct CreateNodeInput {
     /// <p>Tags to assign to the node.</p>
     /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateNodeInput {
+impl  CreateNodeInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The unique identifier of the network for the node.</p>
@@ -37,22 +37,22 @@ impl CreateNodeInput {
     /// <li>
     /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The properties of a node configuration.</p>
-    pub fn node_configuration(&self) -> ::std::option::Option<&crate::types::NodeConfiguration> {
+    pub fn node_configuration(&self) -> ::std::option::Option<& crate::types::NodeConfiguration> {
         self.node_configuration.as_ref()
     }
     /// <p>Tags to assign to the node.</p>
     /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,7 +71,7 @@ pub struct CreateNodeInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_configuration: ::std::option::Option<crate::types::NodeConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateNodeInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
@@ -82,8 +82,7 @@ impl CreateNodeInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl CreateNodeInputBuilder {
     /// <p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
@@ -134,8 +132,7 @@ impl CreateNodeInputBuilder {
     /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
@@ -150,8 +147,7 @@ impl CreateNodeInputBuilder {
     }
     /// <p>The properties of a node configuration.</p>
     pub fn set_node_configuration(mut self, input: ::std::option::Option<crate::types::NodeConfiguration>) -> Self {
-        self.node_configuration = input;
-        self
+        self.node_configuration = input; self
     }
     /// <p>The properties of a node configuration.</p>
     pub fn get_node_configuration(&self) -> &::std::option::Option<crate::types::NodeConfiguration> {
@@ -166,31 +162,38 @@ impl CreateNodeInputBuilder {
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags to assign to the node.</p>
     /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to assign to the node.</p>
     /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNodeInput`](crate::operation::create_node::CreateNodeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_node::CreateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_node::CreateNodeInput {
-            client_request_token: self.client_request_token,
-            network_id: self.network_id,
-            member_id: self.member_id,
-            node_configuration: self.node_configuration,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_node::CreateNodeInput {
+                client_request_token: self.client_request_token
+                ,
+                network_id: self.network_id
+                ,
+                member_id: self.member_id
+                ,
+                node_configuration: self.node_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

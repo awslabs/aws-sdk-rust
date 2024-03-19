@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVpcConnectorOutput {
+pub struct DeleteVpcConnectorOutput  {
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
     pub vpc_connector: ::std::option::Option<crate::types::VpcConnector>,
     _request_id: Option<String>,
 }
-impl DeleteVpcConnectorOutput {
+impl  DeleteVpcConnectorOutput  {
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
-    pub fn vpc_connector(&self) -> ::std::option::Option<&crate::types::VpcConnector> {
+    pub fn vpc_connector(&self) -> ::std::option::Option<& crate::types::VpcConnector> {
         self.vpc_connector.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteVpcConnectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteVpcConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcConnectorOutput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput).
     pub fn builder() -> crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteVpcConnectorOutputBuilder {
     }
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
     pub fn set_vpc_connector(mut self, input: ::std::option::Option<crate::types::VpcConnector>) -> Self {
-        self.vpc_connector = input;
-        self
+        self.vpc_connector = input; self
     }
     /// <p>A description of the App Runner VPC connector that this request just deleted.</p>
     pub fn get_vpc_connector(&self) -> &::std::option::Option<crate::types::VpcConnector> {
         &self.vpc_connector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteVpcConnectorOutput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput).
     pub fn build(self) -> crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput {
         crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput {
-            vpc_connector: self.vpc_connector,
+            vpc_connector: self.vpc_connector
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

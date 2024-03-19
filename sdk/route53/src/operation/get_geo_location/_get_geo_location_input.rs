@@ -3,7 +3,7 @@
 /// <p>A request for information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGeoLocationInput {
+pub struct GetGeoLocationInput  {
     /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ pub struct GetGeoLocationInput {
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
     pub subdivision_code: ::std::option::Option<::std::string::String>,
 }
-impl GetGeoLocationInput {
+impl  GetGeoLocationInput  {
     /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
     /// <li>
@@ -46,16 +46,16 @@ impl GetGeoLocationInput {
     /// <li>
     /// <p><b>SA</b>: South America</p></li>
     /// </ul>
-    pub fn continent_code(&self) -> ::std::option::Option<&str> {
+    pub fn continent_code(&self) -> ::std::option::Option<& str> {
         self.continent_code.as_deref()
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
     /// <p>Route 53 also supports the country code <b>UA</b> for Ukraine.</p>
-    pub fn country_code(&self) -> ::std::option::Option<&str> {
+    pub fn country_code(&self) -> ::std::option::Option<& str> {
         self.country_code.as_deref()
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn subdivision_code(&self) -> ::std::option::Option<&str> {
+    pub fn subdivision_code(&self) -> ::std::option::Option<& str> {
         self.subdivision_code.as_deref()
     }
 }
@@ -114,8 +114,7 @@ impl GetGeoLocationInputBuilder {
     /// <p><b>SA</b>: South America</p></li>
     /// </ul>
     pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continent_code = input;
-        self
+        self.continent_code = input; self
     }
     /// <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>
     /// <ul>
@@ -146,8 +145,7 @@ impl GetGeoLocationInputBuilder {
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
     /// <p>Route 53 also supports the country code <b>UA</b> for Ukraine.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country_code = input;
-        self
+        self.country_code = input; self
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
     /// <p>Route 53 also supports the country code <b>UA</b> for Ukraine.</p>
@@ -161,21 +159,24 @@ impl GetGeoLocationInputBuilder {
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
     pub fn set_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdivision_code = input;
-        self
+        self.subdivision_code = input; self
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
     pub fn get_subdivision_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdivision_code
     }
     /// Consumes the builder and constructs a [`GetGeoLocationInput`](crate::operation::get_geo_location::GetGeoLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_geo_location::GetGeoLocationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_geo_location::GetGeoLocationInput {
-            continent_code: self.continent_code,
-            country_code: self.country_code,
-            subdivision_code: self.subdivision_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_geo_location::GetGeoLocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_geo_location::GetGeoLocationInput {
+                continent_code: self.continent_code
+                ,
+                country_code: self.country_code
+                ,
+                subdivision_code: self.subdivision_code
+                ,
+            }
+        )
     }
 }
+

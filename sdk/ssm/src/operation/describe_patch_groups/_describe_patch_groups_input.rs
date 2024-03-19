@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePatchGroupsInput {
+pub struct DescribePatchGroupsInput  {
     /// <p>The maximum number of patch groups to return (per page).</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
@@ -15,11 +15,11 @@ pub struct DescribePatchGroupsInput {
     /// <p><b> <code>OPERATING_SYSTEM</code> </b></p>
     /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribePatchGroupsInput {
+impl  DescribePatchGroupsInput  {
     /// <p>The maximum number of patch groups to return (per page).</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -34,13 +34,14 @@ impl DescribePatchGroupsInput {
     /// <p><b> <code>OPERATING_SYSTEM</code> </b></p>
     /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::PatchOrchestratorFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::PatchOrchestratorFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -56,7 +57,7 @@ impl DescribePatchGroupsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePatchGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribePatchGroupsInputBuilder {
@@ -67,8 +68,7 @@ impl DescribePatchGroupsInputBuilder {
     }
     /// <p>The maximum number of patch groups to return (per page).</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of patch groups to return (per page).</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -90,9 +90,9 @@ impl DescribePatchGroupsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::PatchOrchestratorFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
@@ -104,9 +104,8 @@ impl DescribePatchGroupsInputBuilder {
     /// <p><b> <code>OPERATING_SYSTEM</code> </b></p>
     /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
@@ -118,7 +117,7 @@ impl DescribePatchGroupsInputBuilder {
     /// <p><b> <code>OPERATING_SYSTEM</code> </b></p>
     /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>> {
         &self.filters
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -128,22 +127,24 @@ impl DescribePatchGroupsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribePatchGroupsInput`](crate::operation::describe_patch_groups::DescribePatchGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_patch_groups::DescribePatchGroupsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_patch_groups::DescribePatchGroupsInput {
-            max_results: self.max_results,
-            filters: self.filters,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_patch_groups::DescribePatchGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_patch_groups::DescribePatchGroupsInput {
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

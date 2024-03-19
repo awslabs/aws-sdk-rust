@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRecommenderConfigurationInput {
+pub struct CreateRecommenderConfigurationInput  {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub create_recommender_configuration: ::std::option::Option<crate::types::CreateRecommenderConfigurationShape>,
 }
-impl CreateRecommenderConfigurationInput {
+impl  CreateRecommenderConfigurationInput  {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn create_recommender_configuration(&self) -> ::std::option::Option<&crate::types::CreateRecommenderConfigurationShape> {
+    pub fn create_recommender_configuration(&self) -> ::std::option::Option<& crate::types::CreateRecommenderConfigurationShape> {
         self.create_recommender_configuration.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl CreateRecommenderConfigurationInputBuilder {
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub fn set_create_recommender_configuration(mut self, input: ::std::option::Option<crate::types::CreateRecommenderConfigurationShape>) -> Self {
-        self.create_recommender_configuration = input;
-        self
+        self.create_recommender_configuration = input; self
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub fn get_create_recommender_configuration(&self) -> &::std::option::Option<crate::types::CreateRecommenderConfigurationShape> {
         &self.create_recommender_configuration
     }
     /// Consumes the builder and constructs a [`CreateRecommenderConfigurationInput`](crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput {
-            create_recommender_configuration: self.create_recommender_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput {
+                create_recommender_configuration: self.create_recommender_configuration
+                ,
+            }
+        )
     }
 }
+

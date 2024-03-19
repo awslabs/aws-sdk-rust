@@ -22,11 +22,7 @@ impl NotificationConfiguration {
     /// Tries to convert the enum instance into [`HttpsNotificationConfiguration`](crate::types::NotificationConfiguration::HttpsNotificationConfiguration), extracting the inner [`HttpsNotificationConfiguration`](crate::types::HttpsNotificationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_https_notification_configuration(&self) -> ::std::result::Result<&crate::types::HttpsNotificationConfiguration, &Self> {
-        if let NotificationConfiguration::HttpsNotificationConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let NotificationConfiguration::HttpsNotificationConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`HttpsNotificationConfiguration`](crate::types::NotificationConfiguration::HttpsNotificationConfiguration).
     pub fn is_https_notification_configuration(&self) -> bool {
@@ -35,11 +31,7 @@ impl NotificationConfiguration {
     /// Tries to convert the enum instance into [`SqsNotificationConfiguration`](crate::types::NotificationConfiguration::SqsNotificationConfiguration), extracting the inner [`SqsNotificationConfiguration`](crate::types::SqsNotificationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sqs_notification_configuration(&self) -> ::std::result::Result<&crate::types::SqsNotificationConfiguration, &Self> {
-        if let NotificationConfiguration::SqsNotificationConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let NotificationConfiguration::SqsNotificationConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SqsNotificationConfiguration`](crate::types::NotificationConfiguration::SqsNotificationConfiguration).
     pub fn is_sqs_notification_configuration(&self) -> bool {
@@ -50,3 +42,4 @@ impl NotificationConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -21,11 +21,7 @@ impl SubscribedListingItem {
     /// Tries to convert the enum instance into [`AssetListing`](crate::types::SubscribedListingItem::AssetListing), extracting the inner [`SubscribedAssetListing`](crate::types::SubscribedAssetListing).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_asset_listing(&self) -> ::std::result::Result<&crate::types::SubscribedAssetListing, &Self> {
-        if let SubscribedListingItem::AssetListing(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SubscribedListingItem::AssetListing(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AssetListing`](crate::types::SubscribedListingItem::AssetListing).
     pub fn is_asset_listing(&self) -> bool {
@@ -36,3 +32,4 @@ impl SubscribedListingItem {
         matches!(self, Self::Unknown)
     }
 }
+

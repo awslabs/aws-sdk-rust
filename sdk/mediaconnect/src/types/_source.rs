@@ -3,7 +3,7 @@
 /// The settings for the source of the flow.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     /// The type of encryption that is used on the content ingested from this source.
@@ -17,7 +17,7 @@ pub struct Source {
     /// The port that the flow will be listening on for incoming content.
     pub ingest_port: ::std::option::Option<i32>,
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub media_stream_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfiguration>>,
+    pub media_stream_source_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSourceConfiguration>>,
     /// The name of the source.
     pub name: ::std::option::Option<::std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -35,25 +35,25 @@ pub struct Source {
     /// The source configuration for cloud flows receiving a stream from a bridge.
     pub gateway_bridge_source: ::std::option::Option<crate::types::GatewayBridgeSource>,
 }
-impl Source {
+impl  Source  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn data_transfer_subscriber_fee_percent(&self) -> ::std::option::Option<i32> {
         self.data_transfer_subscriber_fee_percent
     }
     /// The type of encryption that is used on the content ingested from this source.
-    pub fn decryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
+    pub fn decryption(&self) -> ::std::option::Option<& crate::types::Encryption> {
         self.decryption.as_ref()
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
-    pub fn entitlement_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> ::std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// The IP address that the flow will be listening on for incoming content.
-    pub fn ingest_ip(&self) -> ::std::option::Option<&str> {
+    pub fn ingest_ip(&self) -> ::std::option::Option<& str> {
         self.ingest_ip.as_deref()
     }
     /// The port that the flow will be listening on for incoming content.
@@ -61,13 +61,14 @@ impl Source {
         self.ingest_port
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_stream_source_configurations.is_none()`.
-    pub fn media_stream_source_configurations(&self) -> &[crate::types::MediaStreamSourceConfiguration] {
-        self.media_stream_source_configurations.as_deref().unwrap_or_default()
+    pub fn media_stream_source_configurations(&self) -> & [crate::types::MediaStreamSourceConfiguration] {
+        self.media_stream_source_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// The name of the source.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -75,27 +76,27 @@ impl Source {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn sender_ip_address(&self) -> ::std::option::Option<& str> {
         self.sender_ip_address.as_deref()
     }
     /// The ARN of the source.
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// Attributes related to the transport stream that are used in the source.
-    pub fn transport(&self) -> ::std::option::Option<&crate::types::Transport> {
+    pub fn transport(&self) -> ::std::option::Option<& crate::types::Transport> {
         self.transport.as_ref()
     }
     /// The name of the VPC interface that is used for this source.
-    pub fn vpc_interface_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_interface_name(&self) -> ::std::option::Option<& str> {
         self.vpc_interface_name.as_deref()
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn whitelist_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn whitelist_cidr(&self) -> ::std::option::Option<& str> {
         self.whitelist_cidr.as_deref()
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn gateway_bridge_source(&self) -> ::std::option::Option<&crate::types::GatewayBridgeSource> {
+    pub fn gateway_bridge_source(&self) -> ::std::option::Option<& crate::types::GatewayBridgeSource> {
         self.gateway_bridge_source.as_ref()
     }
 }
@@ -116,7 +117,7 @@ pub struct SourceBuilder {
     pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ingest_ip: ::std::option::Option<::std::string::String>,
     pub(crate) ingest_port: ::std::option::Option<i32>,
-    pub(crate) media_stream_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfiguration>>,
+    pub(crate) media_stream_source_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSourceConfiguration>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) sender_control_port: ::std::option::Option<i32>,
     pub(crate) sender_ip_address: ::std::option::Option<::std::string::String>,
@@ -134,8 +135,7 @@ impl SourceBuilder {
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn set_data_transfer_subscriber_fee_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.data_transfer_subscriber_fee_percent = input;
-        self
+        self.data_transfer_subscriber_fee_percent = input; self
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn get_data_transfer_subscriber_fee_percent(&self) -> &::std::option::Option<i32> {
@@ -148,8 +148,7 @@ impl SourceBuilder {
     }
     /// The type of encryption that is used on the content ingested from this source.
     pub fn set_decryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
-        self.decryption = input;
-        self
+        self.decryption = input; self
     }
     /// The type of encryption that is used on the content ingested from this source.
     pub fn get_decryption(&self) -> &::std::option::Option<crate::types::Encryption> {
@@ -162,8 +161,7 @@ impl SourceBuilder {
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +174,7 @@ impl SourceBuilder {
     }
     /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
     pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entitlement_arn = input;
-        self
+        self.entitlement_arn = input; self
     }
     /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
     pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +187,7 @@ impl SourceBuilder {
     }
     /// The IP address that the flow will be listening on for incoming content.
     pub fn set_ingest_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingest_ip = input;
-        self
+        self.ingest_ip = input; self
     }
     /// The IP address that the flow will be listening on for incoming content.
     pub fn get_ingest_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +200,7 @@ impl SourceBuilder {
     }
     /// The port that the flow will be listening on for incoming content.
     pub fn set_ingest_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ingest_port = input;
-        self
+        self.ingest_port = input; self
     }
     /// The port that the flow will be listening on for incoming content.
     pub fn get_ingest_port(&self) -> &::std::option::Option<i32> {
@@ -218,20 +213,16 @@ impl SourceBuilder {
     /// The media streams that are associated with the source, and the parameters for those associations.
     pub fn media_stream_source_configurations(mut self, input: crate::types::MediaStreamSourceConfiguration) -> Self {
         let mut v = self.media_stream_source_configurations.unwrap_or_default();
-        v.push(input);
-        self.media_stream_source_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.media_stream_source_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn set_media_stream_source_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfiguration>>,
-    ) -> Self {
-        self.media_stream_source_configurations = input;
-        self
+    pub fn set_media_stream_source_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSourceConfiguration>>) -> Self {
+        self.media_stream_source_configurations = input; self
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn get_media_stream_source_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfiguration>> {
+    pub fn get_media_stream_source_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSourceConfiguration>> {
         &self.media_stream_source_configurations
     }
     /// The name of the source.
@@ -242,8 +233,7 @@ impl SourceBuilder {
     }
     /// The name of the source.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the source.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +246,7 @@ impl SourceBuilder {
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn set_sender_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sender_control_port = input;
-        self
+        self.sender_control_port = input; self
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn get_sender_control_port(&self) -> &::std::option::Option<i32> {
@@ -270,8 +259,7 @@ impl SourceBuilder {
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
     pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender_ip_address = input;
-        self
+        self.sender_ip_address = input; self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
     pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,8 +273,7 @@ impl SourceBuilder {
     }
     /// The ARN of the source.
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// The ARN of the source.
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,8 +286,7 @@ impl SourceBuilder {
     }
     /// Attributes related to the transport stream that are used in the source.
     pub fn set_transport(mut self, input: ::std::option::Option<crate::types::Transport>) -> Self {
-        self.transport = input;
-        self
+        self.transport = input; self
     }
     /// Attributes related to the transport stream that are used in the source.
     pub fn get_transport(&self) -> &::std::option::Option<crate::types::Transport> {
@@ -313,8 +299,7 @@ impl SourceBuilder {
     }
     /// The name of the VPC interface that is used for this source.
     pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_interface_name = input;
-        self
+        self.vpc_interface_name = input; self
     }
     /// The name of the VPC interface that is used for this source.
     pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -327,8 +312,7 @@ impl SourceBuilder {
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn set_whitelist_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.whitelist_cidr = input;
-        self
+        self.whitelist_cidr = input; self
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn get_whitelist_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -341,8 +325,7 @@ impl SourceBuilder {
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
     pub fn set_gateway_bridge_source(mut self, input: ::std::option::Option<crate::types::GatewayBridgeSource>) -> Self {
-        self.gateway_bridge_source = input;
-        self
+        self.gateway_bridge_source = input; self
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
     pub fn get_gateway_bridge_source(&self) -> &::std::option::Option<crate::types::GatewayBridgeSource> {
@@ -351,21 +334,37 @@ impl SourceBuilder {
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source {
-            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent,
-            decryption: self.decryption,
-            description: self.description,
-            entitlement_arn: self.entitlement_arn,
-            ingest_ip: self.ingest_ip,
-            ingest_port: self.ingest_port,
-            media_stream_source_configurations: self.media_stream_source_configurations,
-            name: self.name,
-            sender_control_port: self.sender_control_port,
-            sender_ip_address: self.sender_ip_address,
-            source_arn: self.source_arn,
-            transport: self.transport,
-            vpc_interface_name: self.vpc_interface_name,
-            whitelist_cidr: self.whitelist_cidr,
-            gateway_bridge_source: self.gateway_bridge_source,
+            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent
+            ,
+            decryption: self.decryption
+            ,
+            description: self.description
+            ,
+            entitlement_arn: self.entitlement_arn
+            ,
+            ingest_ip: self.ingest_ip
+            ,
+            ingest_port: self.ingest_port
+            ,
+            media_stream_source_configurations: self.media_stream_source_configurations
+            ,
+            name: self.name
+            ,
+            sender_control_port: self.sender_control_port
+            ,
+            sender_ip_address: self.sender_ip_address
+            ,
+            source_arn: self.source_arn
+            ,
+            transport: self.transport
+            ,
+            vpc_interface_name: self.vpc_interface_name
+            ,
+            whitelist_cidr: self.whitelist_cidr
+            ,
+            gateway_bridge_source: self.gateway_bridge_source
+            ,
         }
     }
 }
+

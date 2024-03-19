@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSchemas`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`limit(i32)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_limit):<br>required: **false**<br>(undocumented)<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p><br>
     ///   - [`registry_name(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_registry_name):<br>required: **true**<br><p>The name of the registry.</p><br>
     ///   - [`schema_name_prefix(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::schema_name_prefix) / [`set_schema_name_prefix(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_schema_name_prefix):<br>required: **false**<br><p>Specifying this limits the results to only those schema names that start with the specified prefix.</p><br>
-    /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
+                            /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schemas(Option<Vec::<SchemaSummary>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>An array of schema summaries.</p>
-    /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
+                            /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
     pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
-        crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLoadBalancerTlsCertificatesOutput {
+pub struct GetLoadBalancerTlsCertificatesOutput  {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    pub tls_certificates: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
+    pub tls_certificates: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificate>>,
     _request_id: Option<String>,
 }
-impl GetLoadBalancerTlsCertificatesOutput {
+impl  GetLoadBalancerTlsCertificatesOutput  {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_certificates.is_none()`.
-    pub fn tls_certificates(&self) -> &[crate::types::LoadBalancerTlsCertificate] {
-        self.tls_certificates.as_deref().unwrap_or_default()
+    pub fn tls_certificates(&self) -> & [crate::types::LoadBalancerTlsCertificate] {
+        self.tls_certificates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLoadBalancerTlsCertificatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLoadBalancerTlsCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsCertificatesOutput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput).
     pub fn builder() -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesOutputBuilder {
@@ -31,7 +32,7 @@ impl GetLoadBalancerTlsCertificatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoadBalancerTlsCertificatesOutputBuilder {
-    pub(crate) tls_certificates: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>,
+    pub(crate) tls_certificates: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificate>>,
     _request_id: Option<String>,
 }
 impl GetLoadBalancerTlsCertificatesOutputBuilder {
@@ -42,33 +43,34 @@ impl GetLoadBalancerTlsCertificatesOutputBuilder {
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
     pub fn tls_certificates(mut self, input: crate::types::LoadBalancerTlsCertificate) -> Self {
         let mut v = self.tls_certificates.unwrap_or_default();
-        v.push(input);
-        self.tls_certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tls_certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    pub fn set_tls_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>>) -> Self {
-        self.tls_certificates = input;
-        self
+    pub fn set_tls_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificate>>) -> Self {
+        self.tls_certificates = input; self
     }
     /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
-    pub fn get_tls_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>> {
+    pub fn get_tls_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificate>> {
         &self.tls_certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLoadBalancerTlsCertificatesOutput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput).
     pub fn build(self) -> crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput {
         crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesOutput {
-            tls_certificates: self.tls_certificates,
+            tls_certificates: self.tls_certificates
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

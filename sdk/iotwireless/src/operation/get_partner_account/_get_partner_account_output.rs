@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPartnerAccountOutput {
+pub struct GetPartnerAccountOutput  {
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>,
     /// <p>Whether the partner account is linked to the AWS account.</p>
     pub account_linked: bool,
     _request_id: Option<String>,
 }
-impl GetPartnerAccountOutput {
+impl  GetPartnerAccountOutput  {
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkAccountInfoWithFingerprint> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkAccountInfoWithFingerprint> {
         self.sidewalk.as_ref()
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>
@@ -20,10 +20,10 @@ impl GetPartnerAccountOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetPartnerAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::operation::get_partner_account::GetPartnerAccountOutput).
     pub fn builder() -> crate::operation::get_partner_account::builders::GetPartnerAccountOutputBuilder {
@@ -47,8 +47,7 @@ impl GetPartnerAccountOutputBuilder {
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>) -> Self {
-        self.sidewalk = input;
-        self
+        self.sidewalk = input; self
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint> {
@@ -61,28 +60,31 @@ impl GetPartnerAccountOutputBuilder {
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>
     pub fn set_account_linked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.account_linked = input;
-        self
+        self.account_linked = input; self
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>
     pub fn get_account_linked(&self) -> &::std::option::Option<bool> {
         &self.account_linked
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPartnerAccountOutput`](crate::operation::get_partner_account::GetPartnerAccountOutput).
     pub fn build(self) -> crate::operation::get_partner_account::GetPartnerAccountOutput {
         crate::operation::get_partner_account::GetPartnerAccountOutput {
-            sidewalk: self.sidewalk,
-            account_linked: self.account_linked.unwrap_or_default(),
+            sidewalk: self.sidewalk
+            ,
+            account_linked: self.account_linked
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

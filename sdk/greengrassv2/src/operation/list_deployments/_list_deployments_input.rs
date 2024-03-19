@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeploymentsInput {
+pub struct ListDeploymentsInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
@@ -21,9 +21,9 @@ pub struct ListDeploymentsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDeploymentsInput {
+impl  ListDeploymentsInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
@@ -34,11 +34,11 @@ impl ListDeploymentsInput {
     /// <p><code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p></li>
     /// </ul>
     /// <p>Default: <code>LATEST_ONLY</code></p>
-    pub fn history_filter(&self) -> ::std::option::Option<&crate::types::DeploymentHistoryFilter> {
+    pub fn history_filter(&self) -> ::std::option::Option<& crate::types::DeploymentHistoryFilter> {
         self.history_filter.as_ref()
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn parent_target_arn(&self) -> ::std::option::Option<& str> {
         self.parent_target_arn.as_deref()
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -46,7 +46,7 @@ impl ListDeploymentsInput {
         self.max_results
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ListDeploymentsInputBuilder {
     /// </ul>
     /// <p>Default: <code>LATEST_ONLY</code></p>
     pub fn set_history_filter(mut self, input: ::std::option::Option<crate::types::DeploymentHistoryFilter>) -> Self {
-        self.history_filter = input;
-        self
+        self.history_filter = input; self
     }
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
@@ -124,8 +122,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub fn set_parent_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_target_arn = input;
-        self
+        self.parent_target_arn = input; self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub fn get_parent_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -152,23 +148,28 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsInput {
-            target_arn: self.target_arn,
-            history_filter: self.history_filter,
-            parent_target_arn: self.parent_target_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_deployments::ListDeploymentsInput {
+                target_arn: self.target_arn
+                ,
+                history_filter: self.history_filter
+                ,
+                parent_target_arn: self.parent_target_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`Search`](crate::operation::search::builders::SearchFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search::builders::SearchFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::search::builders::SearchFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::search::builders::SearchFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain.</p><br>
     ///   - [`owning_project_identifier(impl Into<String>)`](crate::operation::search::builders::SearchFluentBuilder::owning_project_identifier) / [`set_owning_project_identifier(Option<String>)`](crate::operation::search::builders::SearchFluentBuilder::set_owning_project_identifier):<br>required: **false**<br><p>The identifier of the owning project specified for the search.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search::builders::SearchFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search::builders::SearchFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call to <code>Search</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>Search</code> to list the next set of results.</p><br>
@@ -14,12 +14,13 @@ impl super::Client {
     ///   - [`filters(FilterClause)`](crate::operation::search::builders::SearchFluentBuilder::filters) / [`set_filters(Option<FilterClause>)`](crate::operation::search::builders::SearchFluentBuilder::set_filters):<br>required: **false**<br><p>Specifies the search filters.</p><br>
     ///   - [`sort(SearchSort)`](crate::operation::search::builders::SearchFluentBuilder::sort) / [`set_sort(Option<SearchSort>)`](crate::operation::search::builders::SearchFluentBuilder::set_sort):<br>required: **false**<br><p>Specifies the way in which the search results are to be sorted.</p><br>
     ///   - [`additional_attributes(SearchOutputAdditionalAttribute)`](crate::operation::search::builders::SearchFluentBuilder::additional_attributes) / [`set_additional_attributes(Option<Vec::<SearchOutputAdditionalAttribute>>)`](crate::operation::search::builders::SearchFluentBuilder::set_additional_attributes):<br>required: **false**<br><p>Specifies additional attributes for the <code>Search</code> action.</p><br>
-    /// - On success, responds with [`SearchOutput`](crate::operation::search::SearchOutput) with field(s):
+                            /// - On success, responds with [`SearchOutput`](crate::operation::search::SearchOutput) with field(s):
     ///   - [`items(Option<Vec::<SearchInventoryResultItem>>)`](crate::operation::search::SearchOutput::items): <p>The results of the <code>Search</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search::SearchOutput::next_token): <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>Search</code> to list the next set of results.</p>
     ///   - [`total_match_count(Option<i32>)`](crate::operation::search::SearchOutput::total_match_count): <p>Total number of search results.</p>
-    /// - On failure, responds with [`SdkError<SearchError>`](crate::operation::search::SearchError)
+                            /// - On failure, responds with [`SdkError<SearchError>`](crate::operation::search::SearchError)
     pub fn search(&self) -> crate::operation::search::builders::SearchFluentBuilder {
-        crate::operation::search::builders::SearchFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search::builders::SearchFluentBuilder::new(self.handle.clone())
+                            }
 }
+

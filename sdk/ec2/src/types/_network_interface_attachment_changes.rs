@@ -3,15 +3,15 @@
 /// <p>Describes an attachment change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInterfaceAttachmentChanges {
+pub struct NetworkInterfaceAttachmentChanges  {
     /// <p>The ID of the network interface attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
 }
-impl NetworkInterfaceAttachmentChanges {
+impl  NetworkInterfaceAttachmentChanges  {
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
@@ -41,8 +41,7 @@ impl NetworkInterfaceAttachmentChangesBuilder {
     }
     /// <p>The ID of the network interface attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>The ID of the network interface attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NetworkInterfaceAttachmentChangesBuilder {
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl NetworkInterfaceAttachmentChangesBuilder {
     /// Consumes the builder and constructs a [`NetworkInterfaceAttachmentChanges`](crate::types::NetworkInterfaceAttachmentChanges).
     pub fn build(self) -> crate::types::NetworkInterfaceAttachmentChanges {
         crate::types::NetworkInterfaceAttachmentChanges {
-            attachment_id: self.attachment_id,
-            delete_on_termination: self.delete_on_termination,
+            attachment_id: self.attachment_id
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
         }
     }
 }
+

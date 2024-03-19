@@ -3,7 +3,7 @@
 /// <p>Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Hsm {
+pub struct Hsm  {
     /// <p>The Availability Zone that contains the HSM.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
@@ -21,38 +21,37 @@ pub struct Hsm {
     /// <p>A description of the HSM's state.</p>
     pub state_message: ::std::option::Option<::std::string::String>,
 }
-impl Hsm {
+impl  Hsm  {
     /// <p>The Availability Zone that contains the HSM.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
-    pub fn eni_id(&self) -> ::std::option::Option<&str> {
+    pub fn eni_id(&self) -> ::std::option::Option<& str> {
         self.eni_id.as_deref()
     }
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
-    pub fn eni_ip(&self) -> ::std::option::Option<&str> {
+    pub fn eni_ip(&self) -> ::std::option::Option<& str> {
         self.eni_ip.as_deref()
     }
     /// <p>The HSM's identifier (ID).</p>
-    pub fn hsm_id(&self) -> &str {
-        use std::ops::Deref;
-        self.hsm_id.deref()
+    pub fn hsm_id(&self) -> & str {
+        use std::ops::Deref; self.hsm_id.deref()
     }
     /// <p>The HSM's state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::HsmState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::HsmState> {
         self.state.as_ref()
     }
     /// <p>A description of the HSM's state.</p>
-    pub fn state_message(&self) -> ::std::option::Option<&str> {
+    pub fn state_message(&self) -> ::std::option::Option<& str> {
         self.state_message.as_deref()
     }
 }
@@ -84,8 +83,7 @@ impl HsmBuilder {
     }
     /// <p>The Availability Zone that contains the HSM.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone that contains the HSM.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl HsmBuilder {
     }
     /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl HsmBuilder {
     }
     /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +122,7 @@ impl HsmBuilder {
     }
     /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
     pub fn set_eni_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eni_id = input;
-        self
+        self.eni_id = input; self
     }
     /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
     pub fn get_eni_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +135,7 @@ impl HsmBuilder {
     }
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
     pub fn set_eni_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eni_ip = input;
-        self
+        self.eni_ip = input; self
     }
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
     pub fn get_eni_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +149,7 @@ impl HsmBuilder {
     }
     /// <p>The HSM's identifier (ID).</p>
     pub fn set_hsm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_id = input;
-        self
+        self.hsm_id = input; self
     }
     /// <p>The HSM's identifier (ID).</p>
     pub fn get_hsm_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +162,7 @@ impl HsmBuilder {
     }
     /// <p>The HSM's state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::HsmState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The HSM's state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::HsmState> {
@@ -183,8 +175,7 @@ impl HsmBuilder {
     }
     /// <p>A description of the HSM's state.</p>
     pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_message = input;
-        self
+        self.state_message = input; self
     }
     /// <p>A description of the HSM's state.</p>
     pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,20 +185,29 @@ impl HsmBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hsm_id`](crate::types::builders::HsmBuilder::hsm_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Hsm, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Hsm {
-            availability_zone: self.availability_zone,
-            cluster_id: self.cluster_id,
-            subnet_id: self.subnet_id,
-            eni_id: self.eni_id,
-            eni_ip: self.eni_ip,
-            hsm_id: self.hsm_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hsm_id",
-                    "hsm_id was not specified but it is required when building Hsm",
-                )
-            })?,
-            state: self.state,
-            state_message: self.state_message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Hsm {
+                availability_zone: self.availability_zone
+                ,
+                cluster_id: self.cluster_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                eni_id: self.eni_id
+                ,
+                eni_ip: self.eni_ip
+                ,
+                hsm_id: self.hsm_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hsm_id", "hsm_id was not specified but it is required when building Hsm")
+                    )?
+                ,
+                state: self.state
+                ,
+                state_message: self.state_message
+                ,
+            }
+        )
     }
 }
+

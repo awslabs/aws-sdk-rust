@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTableRestoreStatusInput {
+pub struct DescribeTableRestoreStatusInput  {
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
@@ -13,13 +13,13 @@ pub struct DescribeTableRestoreStatusInput {
     /// <p>An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTableRestoreStatusInput {
+impl  DescribeTableRestoreStatusInput  {
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
-    pub fn table_restore_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn table_restore_request_id(&self) -> ::std::option::Option<& str> {
         self.table_restore_request_id.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -27,7 +27,7 @@ impl DescribeTableRestoreStatusInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeTableRestoreStatusInputBuilder {
     }
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeTableRestoreStatusInputBuilder {
     }
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
     pub fn set_table_restore_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_restore_request_id = input;
-        self
+        self.table_restore_request_id = input; self
     }
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
     pub fn get_table_restore_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DescribeTableRestoreStatusInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -97,25 +94,26 @@ impl DescribeTableRestoreStatusInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeTableRestoreStatusInput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput {
-            cluster_identifier: self.cluster_identifier,
-            table_restore_request_id: self.table_restore_request_id,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                table_restore_request_id: self.table_restore_request_id
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

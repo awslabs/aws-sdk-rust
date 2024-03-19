@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOptOutLists`](crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`opt_out_list_names(impl Into<String>)`](crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::opt_out_list_names) / [`set_opt_out_list_names(Option<Vec::<String>>)`](crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::set_opt_out_list_names):<br>required: **false**<br><p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`DescribeOptOutListsOutput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput) with field(s):
+                            /// - On success, responds with [`DescribeOptOutListsOutput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput) with field(s):
     ///   - [`opt_out_lists(Option<Vec::<OptOutListInformation>>)`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput::opt_out_lists): <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    /// - On failure, responds with [`SdkError<DescribeOptOutListsError>`](crate::operation::describe_opt_out_lists::DescribeOptOutListsError)
+                            /// - On failure, responds with [`SdkError<DescribeOptOutListsError>`](crate::operation::describe_opt_out_lists::DescribeOptOutListsError)
     pub fn describe_opt_out_lists(&self) -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder {
-        crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

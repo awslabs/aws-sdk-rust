@@ -3,7 +3,7 @@
 /// <p>An activity that runs a Lambda function to modify the message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaActivity {
+pub struct LambdaActivity  {
     /// <p>The name of the lambda activity.</p>
     pub name: ::std::string::String,
     /// <p>The name of the Lambda function that is run on the message.</p>
@@ -14,16 +14,14 @@ pub struct LambdaActivity {
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
-impl LambdaActivity {
+impl  LambdaActivity  {
     /// <p>The name of the lambda activity.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the Lambda function that is run on the message.</p>
-    pub fn lambda_name(&self) -> &str {
-        use std::ops::Deref;
-        self.lambda_name.deref()
+    pub fn lambda_name(&self) -> & str {
+        use std::ops::Deref; self.lambda_name.deref()
     }
     /// <p>The number of messages passed to the Lambda function for processing.</p>
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
@@ -31,7 +29,7 @@ impl LambdaActivity {
         self.batch_size
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> ::std::option::Option<&str> {
+    pub fn next(&self) -> ::std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -60,8 +58,7 @@ impl LambdaActivityBuilder {
     }
     /// <p>The name of the lambda activity.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the lambda activity.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +72,7 @@ impl LambdaActivityBuilder {
     }
     /// <p>The name of the Lambda function that is run on the message.</p>
     pub fn set_lambda_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_name = input;
-        self
+        self.lambda_name = input; self
     }
     /// <p>The name of the Lambda function that is run on the message.</p>
     pub fn get_lambda_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +88,7 @@ impl LambdaActivityBuilder {
     /// <p>The number of messages passed to the Lambda function for processing.</p>
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
     }
     /// <p>The number of messages passed to the Lambda function for processing.</p>
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
@@ -107,8 +102,7 @@ impl LambdaActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,26 +114,27 @@ impl LambdaActivityBuilder {
     /// - [`lambda_name`](crate::types::builders::LambdaActivityBuilder::lambda_name)
     /// - [`batch_size`](crate::types::builders::LambdaActivityBuilder::batch_size)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaActivity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaActivity {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building LambdaActivity",
-                )
-            })?,
-            lambda_name: self.lambda_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_name",
-                    "lambda_name was not specified but it is required when building LambdaActivity",
-                )
-            })?,
-            batch_size: self.batch_size.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "batch_size",
-                    "batch_size was not specified but it is required when building LambdaActivity",
-                )
-            })?,
-            next: self.next,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaActivity {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building LambdaActivity")
+                    )?
+                ,
+                lambda_name: self.lambda_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_name", "lambda_name was not specified but it is required when building LambdaActivity")
+                    )?
+                ,
+                batch_size: self.batch_size
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("batch_size", "batch_size was not specified but it is required when building LambdaActivity")
+                    )?
+                ,
+                next: self.next
+                ,
+            }
+        )
     }
 }
+

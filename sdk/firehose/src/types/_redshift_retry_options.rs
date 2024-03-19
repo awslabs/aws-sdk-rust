@@ -3,11 +3,11 @@
 /// <p>Configures retry behavior in case Firehose is unable to deliver documents to Amazon Redshift.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftRetryOptions {
+pub struct RedshiftRetryOptions  {
     /// <p>The length of time during which Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current value.</p>
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
-impl RedshiftRetryOptions {
+impl  RedshiftRetryOptions  {
     /// <p>The length of time during which Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current value.</p>
     pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
@@ -34,8 +34,7 @@ impl RedshiftRetryOptionsBuilder {
     }
     /// <p>The length of time during which Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current value.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// <p>The length of time during which Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current value.</p>
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl RedshiftRetryOptionsBuilder {
     /// Consumes the builder and constructs a [`RedshiftRetryOptions`](crate::types::RedshiftRetryOptions).
     pub fn build(self) -> crate::types::RedshiftRetryOptions {
         crate::types::RedshiftRetryOptions {
-            duration_in_seconds: self.duration_in_seconds,
+            duration_in_seconds: self.duration_in_seconds
+            ,
         }
     }
 }
+

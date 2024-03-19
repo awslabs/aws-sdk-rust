@@ -3,7 +3,7 @@
 /// <p>The configurations for the Hive job driver.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Hive {
+pub struct Hive  {
     /// <p>The query for the Hive job run.</p>
     pub query: ::std::string::String,
     /// <p>The query file for the Hive job run.</p>
@@ -11,22 +11,21 @@ pub struct Hive {
     /// <p>The parameters for the Hive job run.</p>
     pub parameters: ::std::option::Option<::std::string::String>,
 }
-impl Hive {
+impl  Hive  {
     /// <p>The query for the Hive job run.</p>
-    pub fn query(&self) -> &str {
-        use std::ops::Deref;
-        self.query.deref()
+    pub fn query(&self) -> & str {
+        use std::ops::Deref; self.query.deref()
     }
     /// <p>The query file for the Hive job run.</p>
-    pub fn init_query_file(&self) -> ::std::option::Option<&str> {
+    pub fn init_query_file(&self) -> ::std::option::Option<& str> {
         self.init_query_file.as_deref()
     }
     /// <p>The parameters for the Hive job run.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
 }
-impl ::std::fmt::Debug for Hive {
+impl  ::std::fmt::Debug for Hive  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Hive");
         formatter.field("query", &"*** Sensitive Data Redacted ***");
@@ -59,8 +58,7 @@ impl HiveBuilder {
     }
     /// <p>The query for the Hive job run.</p>
     pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query = input;
-        self
+        self.query = input; self
     }
     /// <p>The query for the Hive job run.</p>
     pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,7 @@ impl HiveBuilder {
     }
     /// <p>The query file for the Hive job run.</p>
     pub fn set_init_query_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.init_query_file = input;
-        self
+        self.init_query_file = input; self
     }
     /// <p>The query file for the Hive job run.</p>
     pub fn get_init_query_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl HiveBuilder {
     }
     /// <p>The parameters for the Hive job run.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>The parameters for the Hive job run.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,16 +94,19 @@ impl HiveBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`query`](crate::types::builders::HiveBuilder::query)
     pub fn build(self) -> ::std::result::Result<crate::types::Hive, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Hive {
-            query: self.query.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query",
-                    "query was not specified but it is required when building Hive",
-                )
-            })?,
-            init_query_file: self.init_query_file,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Hive {
+                query: self.query
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query", "query was not specified but it is required when building Hive")
+                    )?
+                ,
+                init_query_file: self.init_query_file
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for HiveBuilder {
@@ -119,3 +118,4 @@ impl ::std::fmt::Debug for HiveBuilder {
         formatter.finish()
     }
 }
+

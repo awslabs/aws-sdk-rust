@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSnapshotsInput {
+pub struct DescribeSnapshotsInput  {
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
@@ -16,21 +16,21 @@ pub struct DescribeSnapshotsInput {
     /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
     pub show_detail: ::std::option::Option<bool>,
 }
-impl DescribeSnapshotsInput {
+impl  DescribeSnapshotsInput  {
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -68,8 +68,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +120,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -138,24 +133,30 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
     pub fn set_show_detail(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show_detail = input;
-        self
+        self.show_detail = input; self
     }
     /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
     pub fn get_show_detail(&self) -> &::std::option::Option<bool> {
         &self.show_detail
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
-            cluster_name: self.cluster_name,
-            snapshot_name: self.snapshot_name,
-            source: self.source,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            show_detail: self.show_detail,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_snapshots::DescribeSnapshotsInput {
+                cluster_name: self.cluster_name
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                source: self.source
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                show_detail: self.show_detail
+                ,
+            }
+        )
     }
 }
+

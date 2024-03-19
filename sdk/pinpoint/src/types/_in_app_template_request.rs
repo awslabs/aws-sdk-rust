@@ -3,45 +3,46 @@
 /// <p>InApp Template Request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InAppTemplateRequest {
+pub struct InAppTemplateRequest  {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub content: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageContent>>,
     /// <p>Custom config to be sent to client.</p>
-    pub custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub custom_config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The layout of the message.</p>
     pub layout: ::std::option::Option<crate::types::Layout>,
     /// <note>
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The description of the template.</p>
     pub template_description: ::std::option::Option<::std::string::String>,
 }
-impl InAppTemplateRequest {
+impl  InAppTemplateRequest  {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
-    pub fn content(&self) -> &[crate::types::InAppMessageContent] {
-        self.content.as_deref().unwrap_or_default()
+    pub fn content(&self) -> & [crate::types::InAppMessageContent] {
+        self.content.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn custom_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn custom_config(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.custom_config.as_ref()
     }
     /// <p>The layout of the message.</p>
-    pub fn layout(&self) -> ::std::option::Option<&crate::types::Layout> {
+    pub fn layout(&self) -> ::std::option::Option<& crate::types::Layout> {
         self.layout.as_ref()
     }
     /// <note>
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The description of the template.</p>
-    pub fn template_description(&self) -> ::std::option::Option<&str> {
+    pub fn template_description(&self) -> ::std::option::Option<& str> {
         self.template_description.as_deref()
     }
 }
@@ -56,10 +57,10 @@ impl InAppTemplateRequest {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InAppTemplateRequestBuilder {
-    pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
-    pub(crate) custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageContent>>,
+    pub(crate) custom_config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) layout: ::std::option::Option<crate::types::Layout>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) template_description: ::std::option::Option<::std::string::String>,
 }
 impl InAppTemplateRequestBuilder {
@@ -70,17 +71,16 @@ impl InAppTemplateRequestBuilder {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
     pub fn content(mut self, input: crate::types::InAppMessageContent) -> Self {
         let mut v = self.content.unwrap_or_default();
-        v.push(input);
-        self.content = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.content = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>) -> Self {
-        self.content = input;
-        self
+    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageContent>>) -> Self {
+        self.content = input; self
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>> {
+    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageContent>> {
         &self.content
     }
     /// Adds a key-value pair to `custom_config`.
@@ -90,20 +90,16 @@ impl InAppTemplateRequestBuilder {
     /// <p>Custom config to be sent to client.</p>
     pub fn custom_config(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.custom_config.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.custom_config = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.custom_config = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn set_custom_config(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.custom_config = input;
-        self
+    pub fn set_custom_config(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.custom_config = input; self
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn get_custom_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_custom_config(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.custom_config
     }
     /// <p>The layout of the message.</p>
@@ -113,8 +109,7 @@ impl InAppTemplateRequestBuilder {
     }
     /// <p>The layout of the message.</p>
     pub fn set_layout(mut self, input: ::std::option::Option<crate::types::Layout>) -> Self {
-        self.layout = input;
-        self
+        self.layout = input; self
     }
     /// <p>The layout of the message.</p>
     pub fn get_layout(&self) -> &::std::option::Option<crate::types::Layout> {
@@ -130,23 +125,22 @@ impl InAppTemplateRequestBuilder {
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <note>
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <note>
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The description of the template.</p>
@@ -156,8 +150,7 @@ impl InAppTemplateRequestBuilder {
     }
     /// <p>The description of the template.</p>
     pub fn set_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_description = input;
-        self
+        self.template_description = input; self
     }
     /// <p>The description of the template.</p>
     pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,11 +159,17 @@ impl InAppTemplateRequestBuilder {
     /// Consumes the builder and constructs a [`InAppTemplateRequest`](crate::types::InAppTemplateRequest).
     pub fn build(self) -> crate::types::InAppTemplateRequest {
         crate::types::InAppTemplateRequest {
-            content: self.content,
-            custom_config: self.custom_config,
-            layout: self.layout,
-            tags: self.tags,
-            template_description: self.template_description,
+            content: self.content
+            ,
+            custom_config: self.custom_config
+            ,
+            layout: self.layout
+            ,
+            tags: self.tags
+            ,
+            template_description: self.template_description
+            ,
         }
     }
 }
+

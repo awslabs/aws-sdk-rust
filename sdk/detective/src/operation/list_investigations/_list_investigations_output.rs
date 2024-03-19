@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInvestigationsOutput {
+pub struct ListInvestigationsOutput  {
     /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
-    pub investigation_details: ::std::option::Option<::std::vec::Vec<crate::types::InvestigationDetail>>,
+    pub investigation_details: ::std::option::Option<::std::vec::Vec::<crate::types::InvestigationDetail>>,
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInvestigationsOutput {
+impl  ListInvestigationsOutput  {
     /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.investigation_details.is_none()`.
-    pub fn investigation_details(&self) -> &[crate::types::InvestigationDetail] {
-        self.investigation_details.as_deref().unwrap_or_default()
+    pub fn investigation_details(&self) -> & [crate::types::InvestigationDetail] {
+        self.investigation_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInvestigationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInvestigationsOutput {
     /// Creates a new builder-style object to manufacture [`ListInvestigationsOutput`](crate::operation::list_investigations::ListInvestigationsOutput).
     pub fn builder() -> crate::operation::list_investigations::builders::ListInvestigationsOutputBuilder {
@@ -39,7 +40,7 @@ impl ListInvestigationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInvestigationsOutputBuilder {
-    pub(crate) investigation_details: ::std::option::Option<::std::vec::Vec<crate::types::InvestigationDetail>>,
+    pub(crate) investigation_details: ::std::option::Option<::std::vec::Vec::<crate::types::InvestigationDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +52,16 @@ impl ListInvestigationsOutputBuilder {
     /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
     pub fn investigation_details(mut self, input: crate::types::InvestigationDetail) -> Self {
         let mut v = self.investigation_details.unwrap_or_default();
-        v.push(input);
-        self.investigation_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.investigation_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
-    pub fn set_investigation_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InvestigationDetail>>) -> Self {
-        self.investigation_details = input;
-        self
+    pub fn set_investigation_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InvestigationDetail>>) -> Self {
+        self.investigation_details = input; self
     }
     /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
-    pub fn get_investigation_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InvestigationDetail>> {
+    pub fn get_investigation_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InvestigationDetail>> {
         &self.investigation_details
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -73,8 +73,7 @@ impl ListInvestigationsOutputBuilder {
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours.</p>
@@ -82,20 +81,23 @@ impl ListInvestigationsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInvestigationsOutput`](crate::operation::list_investigations::ListInvestigationsOutput).
     pub fn build(self) -> crate::operation::list_investigations::ListInvestigationsOutput {
         crate::operation::list_investigations::ListInvestigationsOutput {
-            investigation_details: self.investigation_details,
-            next_token: self.next_token,
+            investigation_details: self.investigation_details
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataProviderInput {
+pub struct CreateDataProviderInput  {
     /// <p>A user-friendly name for the data provider.</p>
     pub data_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>A user-friendly description of the data provider.</p>
@@ -12,30 +12,31 @@ pub struct CreateDataProviderInput {
     /// <p>The settings in JSON format for a data provider.</p>
     pub settings: ::std::option::Option<crate::types::DataProviderSettings>,
     /// <p>One or more tags to be assigned to the data provider.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDataProviderInput {
+impl  CreateDataProviderInput  {
     /// <p>A user-friendly name for the data provider.</p>
-    pub fn data_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_provider_name(&self) -> ::std::option::Option<& str> {
         self.data_provider_name.as_deref()
     }
     /// <p>A user-friendly description of the data provider.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The settings in JSON format for a data provider.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::DataProviderSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::DataProviderSettings> {
         self.settings.as_ref()
     }
     /// <p>One or more tags to be assigned to the data provider.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDataProviderInput {
@@ -53,7 +54,7 @@ pub struct CreateDataProviderInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::DataProviderSettings>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDataProviderInputBuilder {
     /// <p>A user-friendly name for the data provider.</p>
@@ -63,8 +64,7 @@ impl CreateDataProviderInputBuilder {
     }
     /// <p>A user-friendly name for the data provider.</p>
     pub fn set_data_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_name = input;
-        self
+        self.data_provider_name = input; self
     }
     /// <p>A user-friendly name for the data provider.</p>
     pub fn get_data_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl CreateDataProviderInputBuilder {
     }
     /// <p>A user-friendly description of the data provider.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-friendly description of the data provider.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl CreateDataProviderInputBuilder {
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl CreateDataProviderInputBuilder {
     }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::DataProviderSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::DataProviderSettings> {
@@ -121,30 +118,34 @@ impl CreateDataProviderInputBuilder {
     /// <p>One or more tags to be assigned to the data provider.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags to be assigned to the data provider.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more tags to be assigned to the data provider.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDataProviderInput`](crate::operation::create_data_provider::CreateDataProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_data_provider::CreateDataProviderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_data_provider::CreateDataProviderInput {
-            data_provider_name: self.data_provider_name,
-            description: self.description,
-            engine: self.engine,
-            settings: self.settings,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_data_provider::CreateDataProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_data_provider::CreateDataProviderInput {
+                data_provider_name: self.data_provider_name
+                ,
+                description: self.description
+                ,
+                engine: self.engine
+                ,
+                settings: self.settings
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

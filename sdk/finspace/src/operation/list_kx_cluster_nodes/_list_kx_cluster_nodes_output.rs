@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKxClusterNodesOutput {
+pub struct ListKxClusterNodesOutput  {
     /// <p>A list of nodes associated with the cluster.</p>
-    pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::KxNode>>,
+    pub nodes: ::std::option::Option<::std::vec::Vec::<crate::types::KxNode>>,
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListKxClusterNodesOutput {
+impl  ListKxClusterNodesOutput  {
     /// <p>A list of nodes associated with the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
-    pub fn nodes(&self) -> &[crate::types::KxNode] {
-        self.nodes.as_deref().unwrap_or_default()
+    pub fn nodes(&self) -> & [crate::types::KxNode] {
+        self.nodes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListKxClusterNodesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListKxClusterNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListKxClusterNodesOutput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput).
     pub fn builder() -> crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListKxClusterNodesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxClusterNodesOutputBuilder {
-    pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::KxNode>>,
+    pub(crate) nodes: ::std::option::Option<::std::vec::Vec::<crate::types::KxNode>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListKxClusterNodesOutputBuilder {
     /// <p>A list of nodes associated with the cluster.</p>
     pub fn nodes(mut self, input: crate::types::KxNode) -> Self {
         let mut v = self.nodes.unwrap_or_default();
-        v.push(input);
-        self.nodes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nodes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of nodes associated with the cluster.</p>
-    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxNode>>) -> Self {
-        self.nodes = input;
-        self
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxNode>>) -> Self {
+        self.nodes = input; self
     }
     /// <p>A list of nodes associated with the cluster.</p>
-    pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxNode>> {
+    pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxNode>> {
         &self.nodes
     }
     /// <p>A token that indicates where a results page should begin.</p>
@@ -69,28 +69,30 @@ impl ListKxClusterNodesOutputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListKxClusterNodesOutput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput).
     pub fn build(self) -> crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput {
         crate::operation::list_kx_cluster_nodes::ListKxClusterNodesOutput {
-            nodes: self.nodes,
-            next_token: self.next_token,
+            nodes: self.nodes
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

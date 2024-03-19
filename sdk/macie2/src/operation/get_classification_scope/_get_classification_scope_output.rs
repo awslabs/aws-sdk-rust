@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClassificationScopeOutput {
+pub struct GetClassificationScopeOutput  {
     /// <p>The unique identifier for the classification scope.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
@@ -11,25 +11,25 @@ pub struct GetClassificationScopeOutput {
     pub s3: ::std::option::Option<crate::types::S3ClassificationScope>,
     _request_id: Option<String>,
 }
-impl GetClassificationScopeOutput {
+impl  GetClassificationScopeOutput  {
     /// <p>The unique identifier for the classification scope.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3ClassificationScope> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3ClassificationScope> {
         self.s3.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetClassificationScopeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetClassificationScopeOutput {
     /// Creates a new builder-style object to manufacture [`GetClassificationScopeOutput`](crate::operation::get_classification_scope::GetClassificationScopeOutput).
     pub fn builder() -> crate::operation::get_classification_scope::builders::GetClassificationScopeOutputBuilder {
@@ -54,8 +54,7 @@ impl GetClassificationScopeOutputBuilder {
     }
     /// <p>The unique identifier for the classification scope.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the classification scope.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetClassificationScopeOutputBuilder {
     }
     /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the classification scope: automated-sensitive-data-discovery.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetClassificationScopeOutputBuilder {
     }
     /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3ClassificationScope>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>The S3 buckets that are excluded from automated sensitive data discovery.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3ClassificationScope> {
         &self.s3
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetClassificationScopeOutput`](crate::operation::get_classification_scope::GetClassificationScopeOutput).
     pub fn build(self) -> crate::operation::get_classification_scope::GetClassificationScopeOutput {
         crate::operation::get_classification_scope::GetClassificationScopeOutput {
-            id: self.id,
-            name: self.name,
-            s3: self.s3,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            s3: self.s3
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

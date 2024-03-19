@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSkillGroupInput {
+pub struct GetSkillGroupInput  {
     /// <p>The ARN of the skill group for which to get details. Required.</p>
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetSkillGroupInput {
+impl  GetSkillGroupInput  {
     /// <p>The ARN of the skill group for which to get details. Required.</p>
-    pub fn skill_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn skill_group_arn(&self) -> ::std::option::Option<& str> {
         self.skill_group_arn.as_deref()
     }
 }
@@ -33,19 +33,20 @@ impl GetSkillGroupInputBuilder {
     }
     /// <p>The ARN of the skill group for which to get details. Required.</p>
     pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_group_arn = input;
-        self
+        self.skill_group_arn = input; self
     }
     /// <p>The ARN of the skill group for which to get details. Required.</p>
     pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.skill_group_arn
     }
     /// Consumes the builder and constructs a [`GetSkillGroupInput`](crate::operation::get_skill_group::GetSkillGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_skill_group::GetSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_skill_group::GetSkillGroupInput {
-            skill_group_arn: self.skill_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_skill_group::GetSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_skill_group::GetSkillGroupInput {
+                skill_group_arn: self.skill_group_arn
+                ,
+            }
+        )
     }
 }
+

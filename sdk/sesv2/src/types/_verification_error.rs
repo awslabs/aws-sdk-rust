@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let verificationerror = unimplemented!();
 /// match verificationerror {
@@ -33,16 +33,14 @@
 /// Specifically, when `verificationerror` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VerificationError::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum VerificationError {
     #[allow(missing_docs)] // documentation missing in model
     DnsServerError,
@@ -56,70 +54,71 @@ pub enum VerificationError {
     TypeNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for VerificationError {
-    fn from(s: &str) -> Self {
-        match s {
-            "DNS_SERVER_ERROR" => VerificationError::DnsServerError,
-            "HOST_NOT_FOUND" => VerificationError::HostNotFound,
-            "INVALID_VALUE" => VerificationError::InvalidValue,
-            "SERVICE_ERROR" => VerificationError::ServiceError,
-            "TYPE_NOT_FOUND" => VerificationError::TypeNotFound,
-            other => VerificationError::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DNS_SERVER_ERROR" => VerificationError::DnsServerError,
+"HOST_NOT_FOUND" => VerificationError::HostNotFound,
+"INVALID_VALUE" => VerificationError::InvalidValue,
+"SERVICE_ERROR" => VerificationError::ServiceError,
+"TYPE_NOT_FOUND" => VerificationError::TypeNotFound,
+other => VerificationError::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for VerificationError {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(VerificationError::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(VerificationError::from(s))
+                    }
+                }
 impl VerificationError {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VerificationError::DnsServerError => "DNS_SERVER_ERROR",
-            VerificationError::HostNotFound => "HOST_NOT_FOUND",
-            VerificationError::InvalidValue => "INVALID_VALUE",
-            VerificationError::ServiceError => "SERVICE_ERROR",
-            VerificationError::TypeNotFound => "TYPE_NOT_FOUND",
-            VerificationError::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DNS_SERVER_ERROR", "HOST_NOT_FOUND", "INVALID_VALUE", "SERVICE_ERROR", "TYPE_NOT_FOUND"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VerificationError::DnsServerError => "DNS_SERVER_ERROR",
+    VerificationError::HostNotFound => "HOST_NOT_FOUND",
+    VerificationError::InvalidValue => "INVALID_VALUE",
+    VerificationError::ServiceError => "SERVICE_ERROR",
+    VerificationError::TypeNotFound => "TYPE_NOT_FOUND",
+    VerificationError::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DNS_SERVER_ERROR", "HOST_NOT_FOUND", "INVALID_VALUE", "SERVICE_ERROR", "TYPE_NOT_FOUND"]
+                }
+            }
 impl ::std::convert::AsRef<str> for VerificationError {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl VerificationError {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for VerificationError {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            VerificationError::DnsServerError => write!(f, "DNS_SERVER_ERROR"),
-            VerificationError::HostNotFound => write!(f, "HOST_NOT_FOUND"),
-            VerificationError::InvalidValue => write!(f, "INVALID_VALUE"),
-            VerificationError::ServiceError => write!(f, "SERVICE_ERROR"),
-            VerificationError::TypeNotFound => write!(f, "TYPE_NOT_FOUND"),
-            VerificationError::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                VerificationError::DnsServerError => write!(f, "DNS_SERVER_ERROR"),
+VerificationError::HostNotFound => write!(f, "HOST_NOT_FOUND"),
+VerificationError::InvalidValue => write!(f, "INVALID_VALUE"),
+VerificationError::ServiceError => write!(f, "SERVICE_ERROR"),
+VerificationError::TypeNotFound => write!(f, "TYPE_NOT_FOUND"),
+VerificationError::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,15 +3,15 @@
 /// <p>A contributor to the attack and their contribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Contributor {
+pub struct Contributor  {
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
     pub value: i64,
 }
-impl Contributor {
+impl  Contributor  {
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
@@ -41,8 +41,7 @@ impl ContributorBuilder {
     }
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ContributorBuilder {
     }
     /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,12 @@ impl ContributorBuilder {
     /// Consumes the builder and constructs a [`Contributor`](crate::types::Contributor).
     pub fn build(self) -> crate::types::Contributor {
         crate::types::Contributor {
-            name: self.name,
-            value: self.value.unwrap_or_default(),
+            name: self.name
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

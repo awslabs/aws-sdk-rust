@@ -3,13 +3,13 @@
 /// <p>A structure that describes a filter for account assignments.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccountAssignmentsFilter {
+pub struct ListAccountAssignmentsFilter  {
     /// <p>The ID number of an Amazon Web Services account that filters the results in the response.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ListAccountAssignmentsFilter {
+impl  ListAccountAssignmentsFilter  {
     /// <p>The ID number of an Amazon Web Services account that filters the results in the response.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ListAccountAssignmentsFilterBuilder {
     }
     /// <p>The ID number of an Amazon Web Services account that filters the results in the response.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID number of an Amazon Web Services account that filters the results in the response.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ListAccountAssignmentsFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ListAccountAssignmentsFilter`](crate::types::ListAccountAssignmentsFilter).
     pub fn build(self) -> crate::types::ListAccountAssignmentsFilter {
-        crate::types::ListAccountAssignmentsFilter { account_id: self.account_id }
+        crate::types::ListAccountAssignmentsFilter {
+            account_id: self.account_id
+            ,
+        }
     }
 }
+

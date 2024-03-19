@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServicePrincipalNameInput {
+pub struct GetServicePrincipalNameInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub directory_registration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub connector_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetServicePrincipalNameInput {
+impl  GetServicePrincipalNameInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
-    pub fn directory_registration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_registration_arn(&self) -> ::std::option::Option<& str> {
         self.directory_registration_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetServicePrincipalNameInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub fn set_directory_registration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_registration_arn = input;
-        self
+        self.directory_registration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub fn get_directory_registration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetServicePrincipalNameInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_arn = input;
-        self
+        self.connector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_arn
     }
     /// Consumes the builder and constructs a [`GetServicePrincipalNameInput`](crate::operation::get_service_principal_name::GetServicePrincipalNameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_principal_name::GetServicePrincipalNameInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_service_principal_name::GetServicePrincipalNameInput {
-            directory_registration_arn: self.directory_registration_arn,
-            connector_arn: self.connector_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_principal_name::GetServicePrincipalNameInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_service_principal_name::GetServicePrincipalNameInput {
+                directory_registration_arn: self.directory_registration_arn
+                ,
+                connector_arn: self.connector_arn
+                ,
+            }
+        )
     }
 }
+

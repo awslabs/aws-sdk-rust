@@ -2,43 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLogSourcesInput {
+pub struct ListLogSourcesInput  {
     /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of Regions for which log sources are displayed.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of sources for which log sources are displayed.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>,
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListLogSourcesInput {
+impl  ListLogSourcesInput  {
     /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
-    pub fn accounts(&self) -> &[::std::string::String] {
-        self.accounts.as_deref().unwrap_or_default()
+    pub fn accounts(&self) -> & [::std::string::String] {
+        self.accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of Regions for which log sources are displayed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[::std::string::String] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [::std::string::String] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of sources for which log sources are displayed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::LogSourceResource] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::LogSourceResource] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -53,9 +56,9 @@ impl ListLogSourcesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogSourcesInputBuilder {
-    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -67,17 +70,16 @@ impl ListLogSourcesInputBuilder {
     /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input.into());
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
-    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accounts = input; self
     }
     /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
-    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accounts
     }
     /// Appends an item to `regions`.
@@ -87,17 +89,16 @@ impl ListLogSourcesInputBuilder {
     /// <p>The list of Regions for which log sources are displayed.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Regions for which log sources are displayed.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>The list of Regions for which log sources are displayed.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// Appends an item to `sources`.
@@ -107,17 +108,16 @@ impl ListLogSourcesInputBuilder {
     /// <p>The list of sources for which log sources are displayed.</p>
     pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of sources for which log sources are displayed.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The list of sources for which log sources are displayed.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>> {
         &self.sources
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
@@ -127,8 +127,7 @@ impl ListLogSourcesInputBuilder {
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -141,23 +140,28 @@ impl ListLogSourcesInputBuilder {
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLogSourcesInput`](crate::operation::list_log_sources::ListLogSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_log_sources::ListLogSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_log_sources::ListLogSourcesInput {
-            accounts: self.accounts,
-            regions: self.regions,
-            sources: self.sources,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_log_sources::ListLogSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_log_sources::ListLogSourcesInput {
+                accounts: self.accounts
+                ,
+                regions: self.regions
+                ,
+                sources: self.sources
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

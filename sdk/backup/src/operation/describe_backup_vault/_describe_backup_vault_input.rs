@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBackupVaultInput {
+pub struct DescribeBackupVaultInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>This is the account ID of the specified backup vault.</p>
     pub backup_vault_account_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBackupVaultInput {
+impl  DescribeBackupVaultInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>This is the account ID of the specified backup vault.</p>
-    pub fn backup_vault_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_account_id(&self) -> ::std::option::Option<& str> {
         self.backup_vault_account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeBackupVaultInputBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl DescribeBackupVaultInputBuilder {
     }
     /// <p>This is the account ID of the specified backup vault.</p>
     pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_account_id = input;
-        self
+        self.backup_vault_account_id = input; self
     }
     /// <p>This is the account ID of the specified backup vault.</p>
     pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_account_id
     }
     /// Consumes the builder and constructs a [`DescribeBackupVaultInput`](crate::operation::describe_backup_vault::DescribeBackupVaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_backup_vault::DescribeBackupVaultInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_backup_vault::DescribeBackupVaultInput {
-            backup_vault_name: self.backup_vault_name,
-            backup_vault_account_id: self.backup_vault_account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_backup_vault::DescribeBackupVaultInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_backup_vault::DescribeBackupVaultInput {
+                backup_vault_name: self.backup_vault_name
+                ,
+                backup_vault_account_id: self.backup_vault_account_id
+                ,
+            }
+        )
     }
 }
+

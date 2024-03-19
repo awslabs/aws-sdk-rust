@@ -3,20 +3,19 @@
 /// <p>Represents a custom null value such as a zeros or other value being used as a null placeholder unique to the dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NullValueField {
+pub struct NullValueField  {
     /// <p>The value of the null placeholder.</p>
     pub value: ::std::string::String,
     /// <p>The datatype of the value.</p>
     pub datatype: ::std::option::Option<crate::types::Datatype>,
 }
-impl NullValueField {
+impl  NullValueField  {
     /// <p>The value of the null placeholder.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>The datatype of the value.</p>
-    pub fn datatype(&self) -> ::std::option::Option<&crate::types::Datatype> {
+    pub fn datatype(&self) -> ::std::option::Option<& crate::types::Datatype> {
         self.datatype.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl NullValueFieldBuilder {
     }
     /// <p>The value of the null placeholder.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the null placeholder.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl NullValueFieldBuilder {
     }
     /// <p>The datatype of the value.</p>
     pub fn set_datatype(mut self, input: ::std::option::Option<crate::types::Datatype>) -> Self {
-        self.datatype = input;
-        self
+        self.datatype = input; self
     }
     /// <p>The datatype of the value.</p>
     pub fn get_datatype(&self) -> &::std::option::Option<crate::types::Datatype> {
@@ -69,14 +66,17 @@ impl NullValueFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::NullValueFieldBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::NullValueField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NullValueField {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building NullValueField",
-                )
-            })?,
-            datatype: self.datatype,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NullValueField {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building NullValueField")
+                    )?
+                ,
+                datatype: self.datatype
+                ,
+            }
+        )
     }
 }
+

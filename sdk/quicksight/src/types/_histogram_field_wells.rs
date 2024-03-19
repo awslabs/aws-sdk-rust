@@ -3,13 +3,13 @@
 /// <p>The field well configuration of a histogram.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HistogramFieldWells {
+pub struct HistogramFieldWells  {
     /// <p>The field well configuration of a histogram.</p>
     pub histogram_aggregated_field_wells: ::std::option::Option<crate::types::HistogramAggregatedFieldWells>,
 }
-impl HistogramFieldWells {
+impl  HistogramFieldWells  {
     /// <p>The field well configuration of a histogram.</p>
-    pub fn histogram_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::HistogramAggregatedFieldWells> {
+    pub fn histogram_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::HistogramAggregatedFieldWells> {
         self.histogram_aggregated_field_wells.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl HistogramFieldWellsBuilder {
     }
     /// <p>The field well configuration of a histogram.</p>
     pub fn set_histogram_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::HistogramAggregatedFieldWells>) -> Self {
-        self.histogram_aggregated_field_wells = input;
-        self
+        self.histogram_aggregated_field_wells = input; self
     }
     /// <p>The field well configuration of a histogram.</p>
     pub fn get_histogram_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::HistogramAggregatedFieldWells> {
@@ -44,7 +43,9 @@ impl HistogramFieldWellsBuilder {
     /// Consumes the builder and constructs a [`HistogramFieldWells`](crate::types::HistogramFieldWells).
     pub fn build(self) -> crate::types::HistogramFieldWells {
         crate::types::HistogramFieldWells {
-            histogram_aggregated_field_wells: self.histogram_aggregated_field_wells,
+            histogram_aggregated_field_wells: self.histogram_aggregated_field_wells
+            ,
         }
     }
 }
+

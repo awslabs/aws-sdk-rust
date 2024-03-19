@@ -3,17 +3,16 @@
 /// <p>Information about the contact channel that Incident Manager uses to engage the contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelTargetInfo {
+pub struct ChannelTargetInfo  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub contact_channel_id: ::std::string::String,
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub retry_interval_in_minutes: ::std::option::Option<i32>,
 }
-impl ChannelTargetInfo {
+impl  ChannelTargetInfo  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_id(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_channel_id.deref()
+    pub fn contact_channel_id(&self) -> & str {
+        use std::ops::Deref; self.contact_channel_id.deref()
     }
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub fn retry_interval_in_minutes(&self) -> ::std::option::Option<i32> {
@@ -43,8 +42,7 @@ impl ChannelTargetInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_channel_id = input;
-        self
+        self.contact_channel_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ChannelTargetInfoBuilder {
     }
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub fn set_retry_interval_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retry_interval_in_minutes = input;
-        self
+        self.retry_interval_in_minutes = input; self
     }
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub fn get_retry_interval_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -68,14 +65,17 @@ impl ChannelTargetInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_channel_id`](crate::types::builders::ChannelTargetInfoBuilder::contact_channel_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ChannelTargetInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChannelTargetInfo {
-            contact_channel_id: self.contact_channel_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_channel_id",
-                    "contact_channel_id was not specified but it is required when building ChannelTargetInfo",
-                )
-            })?,
-            retry_interval_in_minutes: self.retry_interval_in_minutes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChannelTargetInfo {
+                contact_channel_id: self.contact_channel_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_channel_id", "contact_channel_id was not specified but it is required when building ChannelTargetInfo")
+                    )?
+                ,
+                retry_interval_in_minutes: self.retry_interval_in_minutes
+                ,
+            }
+        )
     }
 }
+

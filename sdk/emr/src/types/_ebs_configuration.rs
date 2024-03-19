@@ -3,18 +3,19 @@
 /// <p>The Amazon EBS configuration of a cluster instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsConfiguration {
+pub struct EbsConfiguration  {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    pub ebs_block_device_configs: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
+    pub ebs_block_device_configs: ::std::option::Option<::std::vec::Vec::<crate::types::EbsBlockDeviceConfig>>,
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     pub ebs_optimized: ::std::option::Option<bool>,
 }
-impl EbsConfiguration {
+impl  EbsConfiguration  {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ebs_block_device_configs.is_none()`.
-    pub fn ebs_block_device_configs(&self) -> &[crate::types::EbsBlockDeviceConfig] {
-        self.ebs_block_device_configs.as_deref().unwrap_or_default()
+    pub fn ebs_block_device_configs(&self) -> & [crate::types::EbsBlockDeviceConfig] {
+        self.ebs_block_device_configs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
@@ -32,7 +33,7 @@ impl EbsConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EbsConfigurationBuilder {
-    pub(crate) ebs_block_device_configs: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
+    pub(crate) ebs_block_device_configs: ::std::option::Option<::std::vec::Vec::<crate::types::EbsBlockDeviceConfig>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
 }
 impl EbsConfigurationBuilder {
@@ -43,17 +44,16 @@ impl EbsConfigurationBuilder {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
     pub fn ebs_block_device_configs(mut self, input: crate::types::EbsBlockDeviceConfig) -> Self {
         let mut v = self.ebs_block_device_configs.unwrap_or_default();
-        v.push(input);
-        self.ebs_block_device_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ebs_block_device_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    pub fn set_ebs_block_device_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>) -> Self {
-        self.ebs_block_device_configs = input;
-        self
+    pub fn set_ebs_block_device_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EbsBlockDeviceConfig>>) -> Self {
+        self.ebs_block_device_configs = input; self
     }
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    pub fn get_ebs_block_device_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>> {
+    pub fn get_ebs_block_device_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EbsBlockDeviceConfig>> {
         &self.ebs_block_device_configs
     }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
@@ -63,8 +63,7 @@ impl EbsConfigurationBuilder {
     }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_optimized = input;
-        self
+        self.ebs_optimized = input; self
     }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
@@ -73,8 +72,11 @@ impl EbsConfigurationBuilder {
     /// Consumes the builder and constructs a [`EbsConfiguration`](crate::types::EbsConfiguration).
     pub fn build(self) -> crate::types::EbsConfiguration {
         crate::types::EbsConfiguration {
-            ebs_block_device_configs: self.ebs_block_device_configs,
-            ebs_optimized: self.ebs_optimized,
+            ebs_block_device_configs: self.ebs_block_device_configs
+            ,
+            ebs_optimized: self.ebs_optimized
+            ,
         }
     }
 }
+

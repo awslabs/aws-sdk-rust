@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProactiveJoin {
+pub struct CreateProactiveJoin  {
     #[allow(missing_docs)] // documentation missing in model
     pub enabled_by_motion: bool,
 }
-impl CreateProactiveJoin {
+impl  CreateProactiveJoin  {
     #[allow(missing_docs)] // documentation missing in model
     pub fn enabled_by_motion(&self) -> bool {
         self.enabled_by_motion
@@ -34,8 +34,7 @@ impl CreateProactiveJoinBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_enabled_by_motion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled_by_motion = input;
-        self
+        self.enabled_by_motion = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_enabled_by_motion(&self) -> &::std::option::Option<bool> {
@@ -45,13 +44,15 @@ impl CreateProactiveJoinBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled_by_motion`](crate::types::builders::CreateProactiveJoinBuilder::enabled_by_motion)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateProactiveJoin, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateProactiveJoin {
-            enabled_by_motion: self.enabled_by_motion.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled_by_motion",
-                    "enabled_by_motion was not specified but it is required when building CreateProactiveJoin",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateProactiveJoin {
+                enabled_by_motion: self.enabled_by_motion
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled_by_motion", "enabled_by_motion was not specified but it is required when building CreateProactiveJoin")
+                    )?
+                ,
+            }
+        )
     }
 }
+

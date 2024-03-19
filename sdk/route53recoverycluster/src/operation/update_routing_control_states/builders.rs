@@ -5,23 +5,20 @@ pub use crate::operation::update_routing_control_states::_update_routing_control
 
 impl UpdateRoutingControlStatesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_routing_control_states();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_routing_control_states();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateRoutingControlStates`.
-///
+/// 
 /// <p>Set multiple routing control states. You can set the value for each state to be ON or OFF. When the state is ON, traffic flows to a cell. When it's OFF, traffic does not flow.</p>
 /// <p>With Route 53 ARC, you can add safety rules for routing controls, which are safeguards for routing control state updates that help prevent unexpected outcomes, like fail open traffic routing. However, there are scenarios when you might want to bypass the routing control safeguards that are enforced with safety rules that you've configured. For example, you might want to fail over quickly for disaster recovery, and one or more safety rules might be unexpectedly preventing you from updating a routing control state to reroute traffic. In a "break glass" scenario like this, you can override one or more safety rules to change a routing control state and fail over your application.</p>
 /// <p>The <code>SafetyRulesToOverride</code> property enables you override one or more safety rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
@@ -36,33 +33,32 @@ impl UpdateRoutingControlStatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_routing_control_states::builders::UpdateRoutingControlStatesInputBuilder,
+                    inner: crate::operation::update_routing_control_states::builders::UpdateRoutingControlStatesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
-        crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
-    > for UpdateRoutingControlStatesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
+                    crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
+                > for UpdateRoutingControlStatesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
+                        crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateRoutingControlStatesFluentBuilder {
     /// Creates a new `UpdateRoutingControlStates`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -71,53 +67,44 @@ impl UpdateRoutingControlStatesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_routing_control_states::UpdateRoutingControlStates::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_routing_control_states::UpdateRoutingControlStates::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
-        crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_routing_control_states::UpdateRoutingControlStates::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_routing_control_states::UpdateRoutingControlStates::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput, crate::operation::update_routing_control_states::UpdateRoutingControlStatesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `UpdateRoutingControlStateEntries`.
     ///
     /// To override the contents of this collection use [`set_update_routing_control_state_entries`](Self::set_update_routing_control_state_entries).
@@ -128,15 +115,12 @@ impl UpdateRoutingControlStatesFluentBuilder {
         self
     }
     /// <p>A set of routing control entries that you want to update.</p>
-    pub fn set_update_routing_control_state_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRoutingControlStateEntry>>,
-    ) -> Self {
+    pub fn set_update_routing_control_state_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateRoutingControlStateEntry>>) -> Self {
         self.inner = self.inner.set_update_routing_control_state_entries(input);
         self
     }
     /// <p>A set of routing control entries that you want to update.</p>
-    pub fn get_update_routing_control_state_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateRoutingControlStateEntry>> {
+    pub fn get_update_routing_control_state_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateRoutingControlStateEntry>> {
         self.inner.get_update_routing_control_state_entries()
     }
     /// Appends an item to `SafetyRulesToOverride`.
@@ -151,13 +135,14 @@ impl UpdateRoutingControlStatesFluentBuilder {
     }
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn set_safety_rules_to_override(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_safety_rules_to_override(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_safety_rules_to_override(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn get_safety_rules_to_override(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_safety_rules_to_override(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_safety_rules_to_override()
     }
 }
+

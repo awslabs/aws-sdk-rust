@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyLunaClientInput {
+pub struct ModifyLunaClientInput  {
     /// <p>The ARN of the client.</p>
     pub client_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new certificate for the client.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
 }
-impl ModifyLunaClientInput {
+impl  ModifyLunaClientInput  {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(&self) -> ::std::option::Option<&str> {
+    pub fn client_arn(&self) -> ::std::option::Option<& str> {
         self.client_arn.as_deref()
     }
     /// <p>The new certificate for the client.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ModifyLunaClientInputBuilder {
     }
     /// <p>The ARN of the client.</p>
     pub fn set_client_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_arn = input;
-        self
+        self.client_arn = input; self
     }
     /// <p>The ARN of the client.</p>
     pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl ModifyLunaClientInputBuilder {
     }
     /// <p>The new certificate for the client.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The new certificate for the client.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate
     }
     /// Consumes the builder and constructs a [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_luna_client::ModifyLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_luna_client::ModifyLunaClientInput {
-            client_arn: self.client_arn,
-            certificate: self.certificate,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_luna_client::ModifyLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_luna_client::ModifyLunaClientInput {
+                client_arn: self.client_arn
+                ,
+                certificate: self.certificate
+                ,
+            }
+        )
     }
 }
+

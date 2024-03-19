@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspaceSnapshotsInput {
+pub struct DescribeWorkspaceSnapshotsInput  {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeWorkspaceSnapshotsInput {
+impl  DescribeWorkspaceSnapshotsInput  {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeWorkspaceSnapshotsInputBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceSnapshotsInput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput {
-            workspace_id: self.workspace_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput {
+                workspace_id: self.workspace_id
+                ,
+            }
+        )
     }
 }
+

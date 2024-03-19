@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMetricSetOutput {
+pub struct CreateMetricSetOutput  {
     /// <p>The ARN of the dataset.</p>
     pub metric_set_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateMetricSetOutput {
+impl  CreateMetricSetOutput  {
     /// <p>The ARN of the dataset.</p>
-    pub fn metric_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn metric_set_arn(&self) -> ::std::option::Option<& str> {
         self.metric_set_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMetricSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMetricSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateMetricSetOutput`](crate::operation::create_metric_set::CreateMetricSetOutput).
     pub fn builder() -> crate::operation::create_metric_set::builders::CreateMetricSetOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateMetricSetOutputBuilder {
     }
     /// <p>The ARN of the dataset.</p>
     pub fn set_metric_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_set_arn = input;
-        self
+        self.metric_set_arn = input; self
     }
     /// <p>The ARN of the dataset.</p>
     pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_set_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMetricSetOutput`](crate::operation::create_metric_set::CreateMetricSetOutput).
     pub fn build(self) -> crate::operation::create_metric_set::CreateMetricSetOutput {
         crate::operation::create_metric_set::CreateMetricSetOutput {
-            metric_set_arn: self.metric_set_arn,
+            metric_set_arn: self.metric_set_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

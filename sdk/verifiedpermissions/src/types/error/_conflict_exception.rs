@@ -3,30 +3,27 @@
 /// <p>The request failed because another request to modify a resource occurred at the same.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
     /// <p>The list of resources referenced with this failed request.</p>
-    pub resources: ::std::vec::Vec<crate::types::ResourceConflict>,
+    pub resources: ::std::vec::Vec::<crate::types::ResourceConflict>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ConflictException {
+impl  ConflictException  {
     /// <p>The list of resources referenced with this failed request.</p>
-    pub fn resources(&self) -> &[crate::types::ResourceConflict] {
-        use std::ops::Deref;
-        self.resources.deref()
+    pub fn resources(&self) -> & [crate::types::ResourceConflict] {
+        use std::ops::Deref; self.resources.deref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConflictException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -40,9 +37,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ConflictExcepti
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::types::error::ConflictException).
@@ -56,7 +51,7 @@ impl ConflictException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceConflict>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConflictExceptionBuilder {
@@ -68,8 +63,7 @@ impl ConflictExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,49 +76,49 @@ impl ConflictExceptionBuilder {
     /// <p>The list of resources referenced with this failed request.</p>
     pub fn resources(mut self, input: crate::types::ResourceConflict) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resources referenced with this failed request.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceConflict>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The list of resources referenced with this failed request.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceConflict>> {
         &self.resources
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ConflictExceptionBuilder::message)
     /// - [`resources`](crate::types::error::builders::ConflictExceptionBuilder::resources)
     pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::ConflictException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ConflictException",
-                )
-            })?,
-            resources: self.resources.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resources",
-                    "resources was not specified but it is required when building ConflictException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::ConflictException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ConflictException")
+                    )?
+                ,
+                resources: self.resources
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resources", "resources was not specified but it is required when building ConflictException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

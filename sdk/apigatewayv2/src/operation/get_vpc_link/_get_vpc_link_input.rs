@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVpcLinkInput {
+pub struct GetVpcLinkInput  {
     /// <p>The ID of the VPC link.</p>
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
 }
-impl GetVpcLinkInput {
+impl  GetVpcLinkInput  {
     /// <p>The ID of the VPC link.</p>
-    pub fn vpc_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> ::std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetVpcLinkInputBuilder {
     }
     /// <p>The ID of the VPC link.</p>
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_link_id = input;
-        self
+        self.vpc_link_id = input; self
     }
     /// <p>The ID of the VPC link.</p>
     pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetVpcLinkInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetVpcLinkInput`](crate::operation::get_vpc_link::GetVpcLinkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_vpc_link::GetVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_vpc_link::GetVpcLinkInput {
-            vpc_link_id: self.vpc_link_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_vpc_link::GetVpcLinkInput {
+                vpc_link_id: self.vpc_link_id
+                ,
+            }
+        )
     }
 }
+

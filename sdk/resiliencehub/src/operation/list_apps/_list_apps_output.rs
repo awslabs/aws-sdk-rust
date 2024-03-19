@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppsOutput {
+pub struct ListAppsOutput  {
     /// <p>Summaries for the Resilience Hub application.</p>
-    pub app_summaries: ::std::vec::Vec<crate::types::AppSummary>,
+    pub app_summaries: ::std::vec::Vec::<crate::types::AppSummary>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAppsOutput {
+impl  ListAppsOutput  {
     /// <p>Summaries for the Resilience Hub application.</p>
-    pub fn app_summaries(&self) -> &[crate::types::AppSummary] {
-        use std::ops::Deref;
-        self.app_summaries.deref()
+    pub fn app_summaries(&self) -> & [crate::types::AppSummary] {
+        use std::ops::Deref; self.app_summaries.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAppsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAppsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     pub fn builder() -> crate::operation::list_apps::builders::ListAppsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAppsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppsOutputBuilder {
-    pub(crate) app_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>,
+    pub(crate) app_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AppSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAppsOutputBuilder {
     /// <p>Summaries for the Resilience Hub application.</p>
     pub fn app_summaries(mut self, input: crate::types::AppSummary) -> Self {
         let mut v = self.app_summaries.unwrap_or_default();
-        v.push(input);
-        self.app_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summaries for the Resilience Hub application.</p>
-    pub fn set_app_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>) -> Self {
-        self.app_summaries = input;
-        self
+    pub fn set_app_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppSummary>>) -> Self {
+        self.app_summaries = input; self
     }
     /// <p>Summaries for the Resilience Hub application.</p>
-    pub fn get_app_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppSummary>> {
+    pub fn get_app_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppSummary>> {
         &self.app_summaries
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
@@ -68,35 +66,37 @@ impl ListAppsOutputBuilder {
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_summaries`](crate::operation::list_apps::builders::ListAppsOutputBuilder::app_summaries)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_apps::ListAppsOutput {
-            app_summaries: self.app_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_summaries",
-                    "app_summaries was not specified but it is required when building ListAppsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_apps::ListAppsOutput {
+                app_summaries: self.app_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_summaries", "app_summaries was not specified but it is required when building ListAppsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

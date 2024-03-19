@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataSourcePermissionsOutput {
+pub struct UpdateDataSourcePermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -13,17 +13,17 @@ pub struct UpdateDataSourcePermissionsOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl UpdateDataSourcePermissionsOutput {
+impl  UpdateDataSourcePermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_arn(&self) -> ::std::option::Option<& str> {
         self.data_source_arn.as_deref()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -32,10 +32,10 @@ impl UpdateDataSourcePermissionsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateDataSourcePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDataSourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSourcePermissionsOutput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput).
     pub fn builder() -> crate::operation::update_data_source_permissions::builders::UpdateDataSourcePermissionsOutputBuilder {
@@ -61,8 +61,7 @@ impl UpdateDataSourcePermissionsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_arn = input;
-        self
+        self.data_source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdateDataSourcePermissionsOutputBuilder {
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl UpdateDataSourcePermissionsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,35 @@ impl UpdateDataSourcePermissionsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDataSourcePermissionsOutput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput).
     pub fn build(self) -> crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput {
         crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput {
-            data_source_arn: self.data_source_arn,
-            data_source_id: self.data_source_id,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            data_source_arn: self.data_source_arn
+            ,
+            data_source_id: self.data_source_id
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

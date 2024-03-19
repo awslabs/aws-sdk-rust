@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateResolverRuleOutput {
+pub struct DisassociateResolverRuleOutput  {
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
     pub resolver_rule_association: ::std::option::Option<crate::types::ResolverRuleAssociation>,
     _request_id: Option<String>,
 }
-impl DisassociateResolverRuleOutput {
+impl  DisassociateResolverRuleOutput  {
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
-    pub fn resolver_rule_association(&self) -> ::std::option::Option<&crate::types::ResolverRuleAssociation> {
+    pub fn resolver_rule_association(&self) -> ::std::option::Option<& crate::types::ResolverRuleAssociation> {
         self.resolver_rule_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateResolverRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleOutput`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput).
     pub fn builder() -> crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleOutputBuilder {
@@ -40,27 +40,28 @@ impl DisassociateResolverRuleOutputBuilder {
     }
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
     pub fn set_resolver_rule_association(mut self, input: ::std::option::Option<crate::types::ResolverRuleAssociation>) -> Self {
-        self.resolver_rule_association = input;
-        self
+        self.resolver_rule_association = input; self
     }
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
     pub fn get_resolver_rule_association(&self) -> &::std::option::Option<crate::types::ResolverRuleAssociation> {
         &self.resolver_rule_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateResolverRuleOutput`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput).
     pub fn build(self) -> crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput {
         crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput {
-            resolver_rule_association: self.resolver_rule_association,
+            resolver_rule_association: self.resolver_rule_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

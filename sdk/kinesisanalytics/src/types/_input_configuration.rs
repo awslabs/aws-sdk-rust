@@ -3,20 +3,19 @@
 /// <p>When you start your application, you provide this configuration, which identifies the input source and the point in the input source at which you want the application to start processing records.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputConfiguration {
+pub struct InputConfiguration  {
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub id: ::std::string::String,
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
     pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
-impl InputConfiguration {
+impl  InputConfiguration  {
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
-    pub fn input_starting_position_configuration(&self) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
+    pub fn input_starting_position_configuration(&self) -> ::std::option::Option<& crate::types::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl InputConfigurationBuilder {
     }
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,12 +55,8 @@ impl InputConfigurationBuilder {
         self
     }
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
-    pub fn set_input_starting_position_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
-    ) -> Self {
-        self.input_starting_position_configuration = input;
-        self
+    pub fn set_input_starting_position_configuration(mut self, input: ::std::option::Option<crate::types::InputStartingPositionConfiguration>) -> Self {
+        self.input_starting_position_configuration = input; self
     }
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
     pub fn get_input_starting_position_configuration(&self) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
@@ -72,14 +66,17 @@ impl InputConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::InputConfigurationBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::InputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputConfiguration {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building InputConfiguration",
-                )
-            })?,
-            input_starting_position_configuration: self.input_starting_position_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputConfiguration {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building InputConfiguration")
+                    )?
+                ,
+                input_starting_position_configuration: self.input_starting_position_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Caption Destination Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaptionDestinationSettings {
+pub struct CaptionDestinationSettings  {
     /// Arib Destination Settings
     pub arib_destination_settings: ::std::option::Option<crate::types::AribDestinationSettings>,
     /// Burn In Destination Settings
@@ -31,57 +31,57 @@ pub struct CaptionDestinationSettings {
     /// Webvtt Destination Settings
     pub webvtt_destination_settings: ::std::option::Option<crate::types::WebvttDestinationSettings>,
 }
-impl CaptionDestinationSettings {
+impl  CaptionDestinationSettings  {
     /// Arib Destination Settings
-    pub fn arib_destination_settings(&self) -> ::std::option::Option<&crate::types::AribDestinationSettings> {
+    pub fn arib_destination_settings(&self) -> ::std::option::Option<& crate::types::AribDestinationSettings> {
         self.arib_destination_settings.as_ref()
     }
     /// Burn In Destination Settings
-    pub fn burn_in_destination_settings(&self) -> ::std::option::Option<&crate::types::BurnInDestinationSettings> {
+    pub fn burn_in_destination_settings(&self) -> ::std::option::Option<& crate::types::BurnInDestinationSettings> {
         self.burn_in_destination_settings.as_ref()
     }
     /// Dvb Sub Destination Settings
-    pub fn dvb_sub_destination_settings(&self) -> ::std::option::Option<&crate::types::DvbSubDestinationSettings> {
+    pub fn dvb_sub_destination_settings(&self) -> ::std::option::Option<& crate::types::DvbSubDestinationSettings> {
         self.dvb_sub_destination_settings.as_ref()
     }
     /// Ebu Tt DDestination Settings
-    pub fn ebu_tt_d_destination_settings(&self) -> ::std::option::Option<&crate::types::EbuTtDDestinationSettings> {
+    pub fn ebu_tt_d_destination_settings(&self) -> ::std::option::Option<& crate::types::EbuTtDDestinationSettings> {
         self.ebu_tt_d_destination_settings.as_ref()
     }
     /// Embedded Destination Settings
-    pub fn embedded_destination_settings(&self) -> ::std::option::Option<&crate::types::EmbeddedDestinationSettings> {
+    pub fn embedded_destination_settings(&self) -> ::std::option::Option<& crate::types::EmbeddedDestinationSettings> {
         self.embedded_destination_settings.as_ref()
     }
     /// Embedded Plus Scte20 Destination Settings
-    pub fn embedded_plus_scte20_destination_settings(&self) -> ::std::option::Option<&crate::types::EmbeddedPlusScte20DestinationSettings> {
+    pub fn embedded_plus_scte20_destination_settings(&self) -> ::std::option::Option<& crate::types::EmbeddedPlusScte20DestinationSettings> {
         self.embedded_plus_scte20_destination_settings.as_ref()
     }
     /// Rtmp Caption Info Destination Settings
-    pub fn rtmp_caption_info_destination_settings(&self) -> ::std::option::Option<&crate::types::RtmpCaptionInfoDestinationSettings> {
+    pub fn rtmp_caption_info_destination_settings(&self) -> ::std::option::Option<& crate::types::RtmpCaptionInfoDestinationSettings> {
         self.rtmp_caption_info_destination_settings.as_ref()
     }
     /// Scte20 Plus Embedded Destination Settings
-    pub fn scte20_plus_embedded_destination_settings(&self) -> ::std::option::Option<&crate::types::Scte20PlusEmbeddedDestinationSettings> {
+    pub fn scte20_plus_embedded_destination_settings(&self) -> ::std::option::Option<& crate::types::Scte20PlusEmbeddedDestinationSettings> {
         self.scte20_plus_embedded_destination_settings.as_ref()
     }
     /// Scte27 Destination Settings
-    pub fn scte27_destination_settings(&self) -> ::std::option::Option<&crate::types::Scte27DestinationSettings> {
+    pub fn scte27_destination_settings(&self) -> ::std::option::Option<& crate::types::Scte27DestinationSettings> {
         self.scte27_destination_settings.as_ref()
     }
     /// Smpte Tt Destination Settings
-    pub fn smpte_tt_destination_settings(&self) -> ::std::option::Option<&crate::types::SmpteTtDestinationSettings> {
+    pub fn smpte_tt_destination_settings(&self) -> ::std::option::Option<& crate::types::SmpteTtDestinationSettings> {
         self.smpte_tt_destination_settings.as_ref()
     }
     /// Teletext Destination Settings
-    pub fn teletext_destination_settings(&self) -> ::std::option::Option<&crate::types::TeletextDestinationSettings> {
+    pub fn teletext_destination_settings(&self) -> ::std::option::Option<& crate::types::TeletextDestinationSettings> {
         self.teletext_destination_settings.as_ref()
     }
     /// Ttml Destination Settings
-    pub fn ttml_destination_settings(&self) -> ::std::option::Option<&crate::types::TtmlDestinationSettings> {
+    pub fn ttml_destination_settings(&self) -> ::std::option::Option<& crate::types::TtmlDestinationSettings> {
         self.ttml_destination_settings.as_ref()
     }
     /// Webvtt Destination Settings
-    pub fn webvtt_destination_settings(&self) -> ::std::option::Option<&crate::types::WebvttDestinationSettings> {
+    pub fn webvtt_destination_settings(&self) -> ::std::option::Option<& crate::types::WebvttDestinationSettings> {
         self.webvtt_destination_settings.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Arib Destination Settings
     pub fn set_arib_destination_settings(mut self, input: ::std::option::Option<crate::types::AribDestinationSettings>) -> Self {
-        self.arib_destination_settings = input;
-        self
+        self.arib_destination_settings = input; self
     }
     /// Arib Destination Settings
     pub fn get_arib_destination_settings(&self) -> &::std::option::Option<crate::types::AribDestinationSettings> {
@@ -132,8 +131,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Burn In Destination Settings
     pub fn set_burn_in_destination_settings(mut self, input: ::std::option::Option<crate::types::BurnInDestinationSettings>) -> Self {
-        self.burn_in_destination_settings = input;
-        self
+        self.burn_in_destination_settings = input; self
     }
     /// Burn In Destination Settings
     pub fn get_burn_in_destination_settings(&self) -> &::std::option::Option<crate::types::BurnInDestinationSettings> {
@@ -146,8 +144,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Dvb Sub Destination Settings
     pub fn set_dvb_sub_destination_settings(mut self, input: ::std::option::Option<crate::types::DvbSubDestinationSettings>) -> Self {
-        self.dvb_sub_destination_settings = input;
-        self
+        self.dvb_sub_destination_settings = input; self
     }
     /// Dvb Sub Destination Settings
     pub fn get_dvb_sub_destination_settings(&self) -> &::std::option::Option<crate::types::DvbSubDestinationSettings> {
@@ -160,8 +157,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Ebu Tt DDestination Settings
     pub fn set_ebu_tt_d_destination_settings(mut self, input: ::std::option::Option<crate::types::EbuTtDDestinationSettings>) -> Self {
-        self.ebu_tt_d_destination_settings = input;
-        self
+        self.ebu_tt_d_destination_settings = input; self
     }
     /// Ebu Tt DDestination Settings
     pub fn get_ebu_tt_d_destination_settings(&self) -> &::std::option::Option<crate::types::EbuTtDDestinationSettings> {
@@ -174,8 +170,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Embedded Destination Settings
     pub fn set_embedded_destination_settings(mut self, input: ::std::option::Option<crate::types::EmbeddedDestinationSettings>) -> Self {
-        self.embedded_destination_settings = input;
-        self
+        self.embedded_destination_settings = input; self
     }
     /// Embedded Destination Settings
     pub fn get_embedded_destination_settings(&self) -> &::std::option::Option<crate::types::EmbeddedDestinationSettings> {
@@ -187,12 +182,8 @@ impl CaptionDestinationSettingsBuilder {
         self
     }
     /// Embedded Plus Scte20 Destination Settings
-    pub fn set_embedded_plus_scte20_destination_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::EmbeddedPlusScte20DestinationSettings>,
-    ) -> Self {
-        self.embedded_plus_scte20_destination_settings = input;
-        self
+    pub fn set_embedded_plus_scte20_destination_settings(mut self, input: ::std::option::Option<crate::types::EmbeddedPlusScte20DestinationSettings>) -> Self {
+        self.embedded_plus_scte20_destination_settings = input; self
     }
     /// Embedded Plus Scte20 Destination Settings
     pub fn get_embedded_plus_scte20_destination_settings(&self) -> &::std::option::Option<crate::types::EmbeddedPlusScte20DestinationSettings> {
@@ -204,12 +195,8 @@ impl CaptionDestinationSettingsBuilder {
         self
     }
     /// Rtmp Caption Info Destination Settings
-    pub fn set_rtmp_caption_info_destination_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RtmpCaptionInfoDestinationSettings>,
-    ) -> Self {
-        self.rtmp_caption_info_destination_settings = input;
-        self
+    pub fn set_rtmp_caption_info_destination_settings(mut self, input: ::std::option::Option<crate::types::RtmpCaptionInfoDestinationSettings>) -> Self {
+        self.rtmp_caption_info_destination_settings = input; self
     }
     /// Rtmp Caption Info Destination Settings
     pub fn get_rtmp_caption_info_destination_settings(&self) -> &::std::option::Option<crate::types::RtmpCaptionInfoDestinationSettings> {
@@ -221,12 +208,8 @@ impl CaptionDestinationSettingsBuilder {
         self
     }
     /// Scte20 Plus Embedded Destination Settings
-    pub fn set_scte20_plus_embedded_destination_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Scte20PlusEmbeddedDestinationSettings>,
-    ) -> Self {
-        self.scte20_plus_embedded_destination_settings = input;
-        self
+    pub fn set_scte20_plus_embedded_destination_settings(mut self, input: ::std::option::Option<crate::types::Scte20PlusEmbeddedDestinationSettings>) -> Self {
+        self.scte20_plus_embedded_destination_settings = input; self
     }
     /// Scte20 Plus Embedded Destination Settings
     pub fn get_scte20_plus_embedded_destination_settings(&self) -> &::std::option::Option<crate::types::Scte20PlusEmbeddedDestinationSettings> {
@@ -239,8 +222,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Scte27 Destination Settings
     pub fn set_scte27_destination_settings(mut self, input: ::std::option::Option<crate::types::Scte27DestinationSettings>) -> Self {
-        self.scte27_destination_settings = input;
-        self
+        self.scte27_destination_settings = input; self
     }
     /// Scte27 Destination Settings
     pub fn get_scte27_destination_settings(&self) -> &::std::option::Option<crate::types::Scte27DestinationSettings> {
@@ -253,8 +235,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Smpte Tt Destination Settings
     pub fn set_smpte_tt_destination_settings(mut self, input: ::std::option::Option<crate::types::SmpteTtDestinationSettings>) -> Self {
-        self.smpte_tt_destination_settings = input;
-        self
+        self.smpte_tt_destination_settings = input; self
     }
     /// Smpte Tt Destination Settings
     pub fn get_smpte_tt_destination_settings(&self) -> &::std::option::Option<crate::types::SmpteTtDestinationSettings> {
@@ -267,8 +248,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Teletext Destination Settings
     pub fn set_teletext_destination_settings(mut self, input: ::std::option::Option<crate::types::TeletextDestinationSettings>) -> Self {
-        self.teletext_destination_settings = input;
-        self
+        self.teletext_destination_settings = input; self
     }
     /// Teletext Destination Settings
     pub fn get_teletext_destination_settings(&self) -> &::std::option::Option<crate::types::TeletextDestinationSettings> {
@@ -281,8 +261,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Ttml Destination Settings
     pub fn set_ttml_destination_settings(mut self, input: ::std::option::Option<crate::types::TtmlDestinationSettings>) -> Self {
-        self.ttml_destination_settings = input;
-        self
+        self.ttml_destination_settings = input; self
     }
     /// Ttml Destination Settings
     pub fn get_ttml_destination_settings(&self) -> &::std::option::Option<crate::types::TtmlDestinationSettings> {
@@ -295,8 +274,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Webvtt Destination Settings
     pub fn set_webvtt_destination_settings(mut self, input: ::std::option::Option<crate::types::WebvttDestinationSettings>) -> Self {
-        self.webvtt_destination_settings = input;
-        self
+        self.webvtt_destination_settings = input; self
     }
     /// Webvtt Destination Settings
     pub fn get_webvtt_destination_settings(&self) -> &::std::option::Option<crate::types::WebvttDestinationSettings> {
@@ -305,19 +283,33 @@ impl CaptionDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`CaptionDestinationSettings`](crate::types::CaptionDestinationSettings).
     pub fn build(self) -> crate::types::CaptionDestinationSettings {
         crate::types::CaptionDestinationSettings {
-            arib_destination_settings: self.arib_destination_settings,
-            burn_in_destination_settings: self.burn_in_destination_settings,
-            dvb_sub_destination_settings: self.dvb_sub_destination_settings,
-            ebu_tt_d_destination_settings: self.ebu_tt_d_destination_settings,
-            embedded_destination_settings: self.embedded_destination_settings,
-            embedded_plus_scte20_destination_settings: self.embedded_plus_scte20_destination_settings,
-            rtmp_caption_info_destination_settings: self.rtmp_caption_info_destination_settings,
-            scte20_plus_embedded_destination_settings: self.scte20_plus_embedded_destination_settings,
-            scte27_destination_settings: self.scte27_destination_settings,
-            smpte_tt_destination_settings: self.smpte_tt_destination_settings,
-            teletext_destination_settings: self.teletext_destination_settings,
-            ttml_destination_settings: self.ttml_destination_settings,
-            webvtt_destination_settings: self.webvtt_destination_settings,
+            arib_destination_settings: self.arib_destination_settings
+            ,
+            burn_in_destination_settings: self.burn_in_destination_settings
+            ,
+            dvb_sub_destination_settings: self.dvb_sub_destination_settings
+            ,
+            ebu_tt_d_destination_settings: self.ebu_tt_d_destination_settings
+            ,
+            embedded_destination_settings: self.embedded_destination_settings
+            ,
+            embedded_plus_scte20_destination_settings: self.embedded_plus_scte20_destination_settings
+            ,
+            rtmp_caption_info_destination_settings: self.rtmp_caption_info_destination_settings
+            ,
+            scte20_plus_embedded_destination_settings: self.scte20_plus_embedded_destination_settings
+            ,
+            scte27_destination_settings: self.scte27_destination_settings
+            ,
+            smpte_tt_destination_settings: self.smpte_tt_destination_settings
+            ,
+            teletext_destination_settings: self.teletext_destination_settings
+            ,
+            ttml_destination_settings: self.ttml_destination_settings
+            ,
+            webvtt_destination_settings: self.webvtt_destination_settings
+            ,
         }
     }
 }
+

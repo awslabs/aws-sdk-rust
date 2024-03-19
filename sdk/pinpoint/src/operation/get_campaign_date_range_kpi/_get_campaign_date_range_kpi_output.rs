@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCampaignDateRangeKpiOutput {
+pub struct GetCampaignDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
     pub campaign_date_range_kpi_response: ::std::option::Option<crate::types::CampaignDateRangeKpiResponse>,
     _request_id: Option<String>,
 }
-impl GetCampaignDateRangeKpiOutput {
+impl  GetCampaignDateRangeKpiOutput  {
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
-    pub fn campaign_date_range_kpi_response(&self) -> ::std::option::Option<&crate::types::CampaignDateRangeKpiResponse> {
+    pub fn campaign_date_range_kpi_response(&self) -> ::std::option::Option<& crate::types::CampaignDateRangeKpiResponse> {
         self.campaign_date_range_kpi_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCampaignDateRangeKpiOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCampaignDateRangeKpiOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignDateRangeKpiOutput`](crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiOutput).
     pub fn builder() -> crate::operation::get_campaign_date_range_kpi::builders::GetCampaignDateRangeKpiOutputBuilder {
@@ -41,27 +41,28 @@ impl GetCampaignDateRangeKpiOutputBuilder {
     }
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
     pub fn set_campaign_date_range_kpi_response(mut self, input: ::std::option::Option<crate::types::CampaignDateRangeKpiResponse>) -> Self {
-        self.campaign_date_range_kpi_response = input;
-        self
+        self.campaign_date_range_kpi_response = input; self
     }
     /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
     pub fn get_campaign_date_range_kpi_response(&self) -> &::std::option::Option<crate::types::CampaignDateRangeKpiResponse> {
         &self.campaign_date_range_kpi_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCampaignDateRangeKpiOutput`](crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiOutput).
     pub fn build(self) -> crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiOutput {
         crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiOutput {
-            campaign_date_range_kpi_response: self.campaign_date_range_kpi_response,
+            campaign_date_range_kpi_response: self.campaign_date_range_kpi_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

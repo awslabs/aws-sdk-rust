@@ -2,29 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnassignIpv6AddressesInput {
+pub struct UnassignIpv6AddressesInput  {
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
 }
-impl UnassignIpv6AddressesInput {
+impl  UnassignIpv6AddressesInput  {
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
-    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
-        self.ipv6_addresses.as_deref().unwrap_or_default()
+    pub fn ipv6_addresses(&self) -> & [::std::string::String] {
+        self.ipv6_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
-    pub fn ipv6_prefixes(&self) -> &[::std::string::String] {
-        self.ipv6_prefixes.as_deref().unwrap_or_default()
+    pub fn ipv6_prefixes(&self) -> & [::std::string::String] {
+        self.ipv6_prefixes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
 }
@@ -39,8 +41,8 @@ impl UnassignIpv6AddressesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnassignIpv6AddressesInputBuilder {
-    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl UnassignIpv6AddressesInputBuilder {
@@ -51,17 +53,16 @@ impl UnassignIpv6AddressesInputBuilder {
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
     pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ipv6_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ipv6_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ipv6_addresses = input;
-        self
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ipv6_addresses = input; self
     }
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ipv6_addresses
     }
     /// Appends an item to `ipv6_prefixes`.
@@ -71,17 +72,16 @@ impl UnassignIpv6AddressesInputBuilder {
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
     pub fn ipv6_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv6_prefixes.unwrap_or_default();
-        v.push(input.into());
-        self.ipv6_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ipv6_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ipv6_prefixes = input;
-        self
+    pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ipv6_prefixes = input; self
     }
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ipv6_prefixes
     }
     /// <p>The ID of the network interface.</p>
@@ -92,22 +92,24 @@ impl UnassignIpv6AddressesInputBuilder {
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_interface_id
     }
     /// Consumes the builder and constructs a [`UnassignIpv6AddressesInput`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput {
-            ipv6_addresses: self.ipv6_addresses,
-            ipv6_prefixes: self.ipv6_prefixes,
-            network_interface_id: self.network_interface_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput {
+                ipv6_addresses: self.ipv6_addresses
+                ,
+                ipv6_prefixes: self.ipv6_prefixes
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A replacement dataset is a modified version of the baseline related time series that contains only the values that you want to include in a what-if forecast. The replacement dataset must contain the forecast dimensions and item identifiers in the baseline related time series as well as at least 1 changed time series. This dataset is merged with the baseline related time series to create a transformed dataset that is used for the what-if forecast.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeSeriesReplacementsDataSource {
+pub struct TimeSeriesReplacementsDataSource  {
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
     pub s3_config: ::std::option::Option<crate::types::S3Config>,
     /// <p>Defines the fields of a dataset.</p>
@@ -13,21 +13,21 @@ pub struct TimeSeriesReplacementsDataSource {
     /// <p>The timestamp format of the replacement data.</p>
     pub timestamp_format: ::std::option::Option<::std::string::String>,
 }
-impl TimeSeriesReplacementsDataSource {
+impl  TimeSeriesReplacementsDataSource  {
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
-    pub fn s3_config(&self) -> ::std::option::Option<&crate::types::S3Config> {
+    pub fn s3_config(&self) -> ::std::option::Option<& crate::types::S3Config> {
         self.s3_config.as_ref()
     }
     /// <p>Defines the fields of a dataset.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::Schema> {
         self.schema.as_ref()
     }
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>The timestamp format of the replacement data.</p>
-    pub fn timestamp_format(&self) -> ::std::option::Option<&str> {
+    pub fn timestamp_format(&self) -> ::std::option::Option<& str> {
         self.timestamp_format.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl TimeSeriesReplacementsDataSourceBuilder {
     }
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
     pub fn set_s3_config(mut self, input: ::std::option::Option<crate::types::S3Config>) -> Self {
-        self.s3_config = input;
-        self
+        self.s3_config = input; self
     }
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
     pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
@@ -71,8 +70,7 @@ impl TimeSeriesReplacementsDataSourceBuilder {
     }
     /// <p>Defines the fields of a dataset.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>Defines the fields of a dataset.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
@@ -85,8 +83,7 @@ impl TimeSeriesReplacementsDataSourceBuilder {
     }
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl TimeSeriesReplacementsDataSourceBuilder {
     }
     /// <p>The timestamp format of the replacement data.</p>
     pub fn set_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp_format = input;
-        self
+        self.timestamp_format = input; self
     }
     /// <p>The timestamp format of the replacement data.</p>
     pub fn get_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,10 +105,15 @@ impl TimeSeriesReplacementsDataSourceBuilder {
     /// Consumes the builder and constructs a [`TimeSeriesReplacementsDataSource`](crate::types::TimeSeriesReplacementsDataSource).
     pub fn build(self) -> crate::types::TimeSeriesReplacementsDataSource {
         crate::types::TimeSeriesReplacementsDataSource {
-            s3_config: self.s3_config,
-            schema: self.schema,
-            format: self.format,
-            timestamp_format: self.timestamp_format,
+            s3_config: self.s3_config
+            ,
+            schema: self.schema
+            ,
+            format: self.format
+            ,
+            timestamp_format: self.timestamp_format
+            ,
         }
     }
 }
+

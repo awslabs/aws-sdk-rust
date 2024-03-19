@@ -3,23 +3,23 @@
 /// Configures an S3 data source location.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DataSourceConfiguration {
+pub struct S3DataSourceConfiguration  {
     /// A S3 bucket ARN
     pub bucket_arn: ::std::string::String,
     /// A list of S3 prefixes.
-    pub inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inclusion_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl S3DataSourceConfiguration {
+impl  S3DataSourceConfiguration  {
     /// A S3 bucket ARN
-    pub fn bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_arn.deref()
+    pub fn bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_arn.deref()
     }
     /// A list of S3 prefixes.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_prefixes.is_none()`.
-    pub fn inclusion_prefixes(&self) -> &[::std::string::String] {
-        self.inclusion_prefixes.as_deref().unwrap_or_default()
+    pub fn inclusion_prefixes(&self) -> & [::std::string::String] {
+        self.inclusion_prefixes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl S3DataSourceConfiguration {
@@ -34,7 +34,7 @@ impl S3DataSourceConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DataSourceConfigurationBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inclusion_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl S3DataSourceConfigurationBuilder {
     /// A S3 bucket ARN
@@ -45,8 +45,7 @@ impl S3DataSourceConfigurationBuilder {
     }
     /// A S3 bucket ARN
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// A S3 bucket ARN
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl S3DataSourceConfigurationBuilder {
     /// A list of S3 prefixes.
     pub fn inclusion_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inclusion_prefixes.unwrap_or_default();
-        v.push(input.into());
-        self.inclusion_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inclusion_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of S3 prefixes.
-    pub fn set_inclusion_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inclusion_prefixes = input;
-        self
+    pub fn set_inclusion_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inclusion_prefixes = input; self
     }
     /// A list of S3 prefixes.
-    pub fn get_inclusion_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inclusion_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inclusion_prefixes
     }
     /// Consumes the builder and constructs a [`S3DataSourceConfiguration`](crate::types::S3DataSourceConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_arn`](crate::types::builders::S3DataSourceConfigurationBuilder::bucket_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::S3DataSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3DataSourceConfiguration {
-            bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_arn",
-                    "bucket_arn was not specified but it is required when building S3DataSourceConfiguration",
-                )
-            })?,
-            inclusion_prefixes: self.inclusion_prefixes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3DataSourceConfiguration {
+                bucket_arn: self.bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_arn", "bucket_arn was not specified but it is required when building S3DataSourceConfiguration")
+                    )?
+                ,
+                inclusion_prefixes: self.inclusion_prefixes
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSegmentExportJobsOutput {
+pub struct GetSegmentExportJobsOutput  {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     pub export_jobs_response: ::std::option::Option<crate::types::ExportJobsResponse>,
     _request_id: Option<String>,
 }
-impl GetSegmentExportJobsOutput {
+impl  GetSegmentExportJobsOutput  {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
-    pub fn export_jobs_response(&self) -> ::std::option::Option<&crate::types::ExportJobsResponse> {
+    pub fn export_jobs_response(&self) -> ::std::option::Option<& crate::types::ExportJobsResponse> {
         self.export_jobs_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSegmentExportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSegmentExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetSegmentExportJobsOutput`](crate::operation::get_segment_export_jobs::GetSegmentExportJobsOutput).
     pub fn builder() -> crate::operation::get_segment_export_jobs::builders::GetSegmentExportJobsOutputBuilder {
@@ -41,27 +41,28 @@ impl GetSegmentExportJobsOutputBuilder {
     }
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     pub fn set_export_jobs_response(mut self, input: ::std::option::Option<crate::types::ExportJobsResponse>) -> Self {
-        self.export_jobs_response = input;
-        self
+        self.export_jobs_response = input; self
     }
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     pub fn get_export_jobs_response(&self) -> &::std::option::Option<crate::types::ExportJobsResponse> {
         &self.export_jobs_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSegmentExportJobsOutput`](crate::operation::get_segment_export_jobs::GetSegmentExportJobsOutput).
     pub fn build(self) -> crate::operation::get_segment_export_jobs::GetSegmentExportJobsOutput {
         crate::operation::get_segment_export_jobs::GetSegmentExportJobsOutput {
-            export_jobs_response: self.export_jobs_response,
+            export_jobs_response: self.export_jobs_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

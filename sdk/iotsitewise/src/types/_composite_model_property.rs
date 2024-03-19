@@ -3,7 +3,7 @@
 /// <p>Contains information about a composite model property on an asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositeModelProperty {
+pub struct CompositeModelProperty  {
     /// <p>The name of the property.</p>
     pub name: ::std::string::String,
     /// <p>The type of the composite model that defines this property.</p>
@@ -15,27 +15,25 @@ pub struct CompositeModelProperty {
     /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
 }
-impl CompositeModelProperty {
+impl  CompositeModelProperty  {
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of the composite model that defines this property.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>Contains asset property information.</p>
-    pub fn asset_property(&self) -> ::std::option::Option<&crate::types::Property> {
+    pub fn asset_property(&self) -> ::std::option::Option<& crate::types::Property> {
         self.asset_property.as_ref()
     }
     /// <p>The ID of the composite model that contains the property.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
@@ -65,8 +63,7 @@ impl CompositeModelPropertyBuilder {
     }
     /// <p>The name of the property.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the property.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl CompositeModelPropertyBuilder {
     }
     /// <p>The type of the composite model that defines this property.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the composite model that defines this property.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl CompositeModelPropertyBuilder {
     }
     /// <p>Contains asset property information.</p>
     pub fn set_asset_property(mut self, input: ::std::option::Option<crate::types::Property>) -> Self {
-        self.asset_property = input;
-        self
+        self.asset_property = input; self
     }
     /// <p>Contains asset property information.</p>
     pub fn get_asset_property(&self) -> &::std::option::Option<crate::types::Property> {
@@ -109,8 +104,7 @@ impl CompositeModelPropertyBuilder {
     }
     /// <p>The ID of the composite model that contains the property.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the composite model that contains the property.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +117,7 @@ impl CompositeModelPropertyBuilder {
     }
     /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,22 +128,26 @@ impl CompositeModelPropertyBuilder {
     /// - [`name`](crate::types::builders::CompositeModelPropertyBuilder::name)
     /// - [`r#type`](crate::types::builders::CompositeModelPropertyBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::CompositeModelProperty, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CompositeModelProperty {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CompositeModelProperty",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CompositeModelProperty",
-                )
-            })?,
-            asset_property: self.asset_property,
-            id: self.id,
-            external_id: self.external_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CompositeModelProperty {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CompositeModelProperty")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building CompositeModelProperty")
+                    )?
+                ,
+                asset_property: self.asset_property
+                ,
+                id: self.id
+                ,
+                external_id: self.external_id
+                ,
+            }
+        )
     }
 }
+

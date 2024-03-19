@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePhoneNumberInput {
+pub struct DescribePhoneNumberInput  {
     /// <p>A unique identifier for the phone number.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribePhoneNumberInput {
+impl  DescribePhoneNumberInput  {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribePhoneNumberInputBuilder {
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number_id
     }
     /// Consumes the builder and constructs a [`DescribePhoneNumberInput`](crate::operation::describe_phone_number::DescribePhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_phone_number::DescribePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_phone_number::DescribePhoneNumberInput {
-            phone_number_id: self.phone_number_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_phone_number::DescribePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_phone_number::DescribePhoneNumberInput {
+                phone_number_id: self.phone_number_id
+                ,
+            }
+        )
     }
 }
+

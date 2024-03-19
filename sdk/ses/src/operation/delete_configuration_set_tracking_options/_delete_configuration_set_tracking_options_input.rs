@@ -3,13 +3,13 @@
 /// <p>Represents a request to delete open and click tracking options in a configuration set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfigurationSetTrackingOptionsInput {
+pub struct DeleteConfigurationSetTrackingOptionsInput  {
     /// <p>The name of the configuration set.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConfigurationSetTrackingOptionsInput {
+impl  DeleteConfigurationSetTrackingOptionsInput  {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl DeleteConfigurationSetTrackingOptionsInputBuilder {
     }
     /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetTrackingOptionsInput`](crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput {
-                configuration_set_name: self.configuration_set_name,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+            }
         )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Provides information about a metadata model assessment exported to SQL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportSqlDetails {
+pub struct ExportSqlDetails  {
     /// <p>The Amazon S3 object key for the object containing the exported metadata model assessment.</p>
     pub s3_object_key: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the object containing the exported metadata model assessment.</p>
     pub object_url: ::std::option::Option<::std::string::String>,
 }
-impl ExportSqlDetails {
+impl  ExportSqlDetails  {
     /// <p>The Amazon S3 object key for the object containing the exported metadata model assessment.</p>
-    pub fn s3_object_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_object_key(&self) -> ::std::option::Option<& str> {
         self.s3_object_key.as_deref()
     }
     /// <p>The URL for the object containing the exported metadata model assessment.</p>
-    pub fn object_url(&self) -> ::std::option::Option<&str> {
+    pub fn object_url(&self) -> ::std::option::Option<& str> {
         self.object_url.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ExportSqlDetailsBuilder {
     }
     /// <p>The Amazon S3 object key for the object containing the exported metadata model assessment.</p>
     pub fn set_s3_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_key = input;
-        self
+        self.s3_object_key = input; self
     }
     /// <p>The Amazon S3 object key for the object containing the exported metadata model assessment.</p>
     pub fn get_s3_object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ExportSqlDetailsBuilder {
     }
     /// <p>The URL for the object containing the exported metadata model assessment.</p>
     pub fn set_object_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_url = input;
-        self
+        self.object_url = input; self
     }
     /// <p>The URL for the object containing the exported metadata model assessment.</p>
     pub fn get_object_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ExportSqlDetailsBuilder {
     /// Consumes the builder and constructs a [`ExportSqlDetails`](crate::types::ExportSqlDetails).
     pub fn build(self) -> crate::types::ExportSqlDetails {
         crate::types::ExportSqlDetails {
-            s3_object_key: self.s3_object_key,
-            object_url: self.object_url,
+            s3_object_key: self.s3_object_key
+            ,
+            object_url: self.object_url
+            ,
         }
     }
 }
+

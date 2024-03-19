@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEndpointAccessOutput {
+pub struct GetEndpointAccessOutput  {
     /// <p>The returned VPC endpoint.</p>
     pub endpoint: ::std::option::Option<crate::types::EndpointAccess>,
     _request_id: Option<String>,
 }
-impl GetEndpointAccessOutput {
+impl  GetEndpointAccessOutput  {
     /// <p>The returned VPC endpoint.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::EndpointAccess> {
+    pub fn endpoint(&self) -> ::std::option::Option<& crate::types::EndpointAccess> {
         self.endpoint.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEndpointAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`GetEndpointAccessOutput`](crate::operation::get_endpoint_access::GetEndpointAccessOutput).
     pub fn builder() -> crate::operation::get_endpoint_access::builders::GetEndpointAccessOutputBuilder {
@@ -40,27 +40,28 @@ impl GetEndpointAccessOutputBuilder {
     }
     /// <p>The returned VPC endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::EndpointAccess>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The returned VPC endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::EndpointAccess> {
         &self.endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEndpointAccessOutput`](crate::operation::get_endpoint_access::GetEndpointAccessOutput).
     pub fn build(self) -> crate::operation::get_endpoint_access::GetEndpointAccessOutput {
         crate::operation::get_endpoint_access::GetEndpointAccessOutput {
-            endpoint: self.endpoint,
+            endpoint: self.endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

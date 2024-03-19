@@ -4,13 +4,13 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrackingOptions {
+pub struct TrackingOptions  {
     /// <p>The custom subdomain that is used to redirect email recipients to the Amazon SES event tracking domain.</p>
     pub custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
-impl TrackingOptions {
+impl  TrackingOptions  {
     /// <p>The custom subdomain that is used to redirect email recipients to the Amazon SES event tracking domain.</p>
-    pub fn custom_redirect_domain(&self) -> ::std::option::Option<&str> {
+    pub fn custom_redirect_domain(&self) -> ::std::option::Option<& str> {
         self.custom_redirect_domain.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl TrackingOptionsBuilder {
     }
     /// <p>The custom subdomain that is used to redirect email recipients to the Amazon SES event tracking domain.</p>
     pub fn set_custom_redirect_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_redirect_domain = input;
-        self
+        self.custom_redirect_domain = input; self
     }
     /// <p>The custom subdomain that is used to redirect email recipients to the Amazon SES event tracking domain.</p>
     pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl TrackingOptionsBuilder {
     /// Consumes the builder and constructs a [`TrackingOptions`](crate::types::TrackingOptions).
     pub fn build(self) -> crate::types::TrackingOptions {
         crate::types::TrackingOptions {
-            custom_redirect_domain: self.custom_redirect_domain,
+            custom_redirect_domain: self.custom_redirect_domain
+            ,
         }
     }
 }
+

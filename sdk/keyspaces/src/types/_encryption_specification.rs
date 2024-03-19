@@ -11,7 +11,7 @@
 /// <p>For more information about KMS, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">KMS management service concepts</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionSpecification {
+pub struct EncryptionSpecification  {
     /// <p>The encryption option specified for the table. You can choose one of the following KMS keys (KMS keys):</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct EncryptionSpecification {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
-impl EncryptionSpecification {
+impl  EncryptionSpecification  {
     /// <p>The encryption option specified for the table. You can choose one of the following KMS keys (KMS keys):</p>
     /// <ul>
     /// <li>
@@ -35,11 +35,11 @@ impl EncryptionSpecification {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn r#type(&self) -> &crate::types::EncryptionType {
+    pub fn r#type(&self) -> & crate::types::EncryptionType {
         &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
 }
@@ -82,8 +82,7 @@ impl EncryptionSpecificationBuilder {
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The encryption option specified for the table. You can choose one of the following KMS keys (KMS keys):</p>
     /// <ul>
@@ -104,8 +103,7 @@ impl EncryptionSpecificationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,14 +113,17 @@ impl EncryptionSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::EncryptionSpecificationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EncryptionSpecification {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building EncryptionSpecification",
-                )
-            })?,
-            kms_key_identifier: self.kms_key_identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EncryptionSpecification {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building EncryptionSpecification")
+                    )?
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+            }
+        )
     }
 }
+

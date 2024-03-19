@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateQualificationWithWorkerInput {
+pub struct AssociateQualificationWithWorkerInput  {
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.</p>
@@ -12,13 +12,13 @@ pub struct AssociateQualificationWithWorkerInput {
     /// <p>Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default.</p>
     pub send_notification: ::std::option::Option<bool>,
 }
-impl AssociateQualificationWithWorkerInput {
+impl  AssociateQualificationWithWorkerInput  {
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
-    pub fn qualification_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> ::std::option::Option<& str> {
         self.qualification_type_id.as_deref()
     }
     /// <p>The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.</p>
-    pub fn worker_id(&self) -> ::std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<& str> {
         self.worker_id.as_deref()
     }
     /// <p>The value of the Qualification to assign.</p>
@@ -55,8 +55,7 @@ impl AssociateQualificationWithWorkerInputBuilder {
     }
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
     pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualification_type_id = input;
-        self
+        self.qualification_type_id = input; self
     }
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AssociateQualificationWithWorkerInputBuilder {
     }
     /// <p>The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.</p>
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.</p>
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl AssociateQualificationWithWorkerInputBuilder {
     }
     /// <p>The value of the Qualification to assign.</p>
     pub fn set_integer_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.integer_value = input;
-        self
+        self.integer_value = input; self
     }
     /// <p>The value of the Qualification to assign.</p>
     pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
@@ -98,27 +95,26 @@ impl AssociateQualificationWithWorkerInputBuilder {
     }
     /// <p>Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default.</p>
     pub fn set_send_notification(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.send_notification = input;
-        self
+        self.send_notification = input; self
     }
     /// <p>Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default.</p>
     pub fn get_send_notification(&self) -> &::std::option::Option<bool> {
         &self.send_notification
     }
     /// Consumes the builder and constructs a [`AssociateQualificationWithWorkerInput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerInput {
-                qualification_type_id: self.qualification_type_id,
-                worker_id: self.worker_id,
-                integer_value: self.integer_value,
-                send_notification: self.send_notification,
-            },
+                qualification_type_id: self.qualification_type_id
+                ,
+                worker_id: self.worker_id
+                ,
+                integer_value: self.integer_value
+                ,
+                send_notification: self.send_notification
+                ,
+            }
         )
     }
 }
+

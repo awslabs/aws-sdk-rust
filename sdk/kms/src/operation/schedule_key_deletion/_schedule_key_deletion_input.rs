@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleKeyDeletionInput {
+pub struct ScheduleKeyDeletionInput  {
     /// <p>The unique identifier of the KMS key to delete.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -19,7 +19,7 @@ pub struct ScheduleKeyDeletionInput {
     /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</p>
     pub pending_window_in_days: ::std::option::Option<i32>,
 }
-impl ScheduleKeyDeletionInput {
+impl  ScheduleKeyDeletionInput  {
     /// <p>The unique identifier of the KMS key to delete.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -30,7 +30,7 @@ impl ScheduleKeyDeletionInput {
     /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key.</p>
@@ -81,8 +81,7 @@ impl ScheduleKeyDeletionInputBuilder {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The unique identifier of the KMS key to delete.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -108,8 +107,7 @@ impl ScheduleKeyDeletionInputBuilder {
     /// <p>If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</p>
     pub fn set_pending_window_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pending_window_in_days = input;
-        self
+        self.pending_window_in_days = input; self
     }
     /// <p>The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key.</p>
     /// <p>If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
@@ -118,13 +116,15 @@ impl ScheduleKeyDeletionInputBuilder {
         &self.pending_window_in_days
     }
     /// Consumes the builder and constructs a [`ScheduleKeyDeletionInput`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput {
-            key_id: self.key_id,
-            pending_window_in_days: self.pending_window_in_days,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput {
+                key_id: self.key_id
+                ,
+                pending_window_in_days: self.pending_window_in_days
+                ,
+            }
+        )
     }
 }
+

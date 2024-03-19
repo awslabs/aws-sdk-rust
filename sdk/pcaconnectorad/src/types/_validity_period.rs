@@ -3,15 +3,15 @@
 /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate. Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in hours, days, months, or years. For more information, see Validity in RFC 5280. This value is unaffected when ValidityNotBefore is also specified. For example, if Validity is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the ValidityNotBefore value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidityPeriod {
+pub struct ValidityPeriod  {
     /// <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
     pub period_type: crate::types::ValidityPeriodType,
     /// <p>The numeric value for the validity period.</p>
     pub period: i64,
 }
-impl ValidityPeriod {
+impl  ValidityPeriod  {
     /// <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
-    pub fn period_type(&self) -> &crate::types::ValidityPeriodType {
+    pub fn period_type(&self) -> & crate::types::ValidityPeriodType {
         &self.period_type
     }
     /// <p>The numeric value for the validity period.</p>
@@ -42,8 +42,7 @@ impl ValidityPeriodBuilder {
     }
     /// <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
     pub fn set_period_type(mut self, input: ::std::option::Option<crate::types::ValidityPeriodType>) -> Self {
-        self.period_type = input;
-        self
+        self.period_type = input; self
     }
     /// <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
     pub fn get_period_type(&self) -> &::std::option::Option<crate::types::ValidityPeriodType> {
@@ -57,8 +56,7 @@ impl ValidityPeriodBuilder {
     }
     /// <p>The numeric value for the validity period.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The numeric value for the validity period.</p>
     pub fn get_period(&self) -> &::std::option::Option<i64> {
@@ -69,19 +67,20 @@ impl ValidityPeriodBuilder {
     /// - [`period_type`](crate::types::builders::ValidityPeriodBuilder::period_type)
     /// - [`period`](crate::types::builders::ValidityPeriodBuilder::period)
     pub fn build(self) -> ::std::result::Result<crate::types::ValidityPeriod, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ValidityPeriod {
-            period_type: self.period_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "period_type",
-                    "period_type was not specified but it is required when building ValidityPeriod",
-                )
-            })?,
-            period: self.period.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "period",
-                    "period was not specified but it is required when building ValidityPeriod",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ValidityPeriod {
+                period_type: self.period_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("period_type", "period_type was not specified but it is required when building ValidityPeriod")
+                    )?
+                ,
+                period: self.period
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("period", "period was not specified but it is required when building ValidityPeriod")
+                    )?
+                ,
+            }
+        )
     }
 }
+

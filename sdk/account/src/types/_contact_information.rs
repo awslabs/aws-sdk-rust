@@ -3,7 +3,7 @@
 /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ContactInformation {
+pub struct ContactInformation  {
     /// <p>The full name of the primary contact address.</p>
     pub full_name: ::std::string::String,
     /// <p>The first line of the primary contact address.</p>
@@ -29,63 +29,57 @@ pub struct ContactInformation {
     /// <p>The URL of the website associated with the primary contact information, if any.</p>
     pub website_url: ::std::option::Option<::std::string::String>,
 }
-impl ContactInformation {
+impl  ContactInformation  {
     /// <p>The full name of the primary contact address.</p>
-    pub fn full_name(&self) -> &str {
-        use std::ops::Deref;
-        self.full_name.deref()
+    pub fn full_name(&self) -> & str {
+        use std::ops::Deref; self.full_name.deref()
     }
     /// <p>The first line of the primary contact address.</p>
-    pub fn address_line1(&self) -> &str {
-        use std::ops::Deref;
-        self.address_line1.deref()
+    pub fn address_line1(&self) -> & str {
+        use std::ops::Deref; self.address_line1.deref()
     }
     /// <p>The second line of the primary contact address, if any.</p>
-    pub fn address_line2(&self) -> ::std::option::Option<&str> {
+    pub fn address_line2(&self) -> ::std::option::Option<& str> {
         self.address_line2.as_deref()
     }
     /// <p>The third line of the primary contact address, if any.</p>
-    pub fn address_line3(&self) -> ::std::option::Option<&str> {
+    pub fn address_line3(&self) -> ::std::option::Option<& str> {
         self.address_line3.as_deref()
     }
     /// <p>The city of the primary contact address.</p>
-    pub fn city(&self) -> &str {
-        use std::ops::Deref;
-        self.city.deref()
+    pub fn city(&self) -> & str {
+        use std::ops::Deref; self.city.deref()
     }
     /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
-    pub fn state_or_region(&self) -> ::std::option::Option<&str> {
+    pub fn state_or_region(&self) -> ::std::option::Option<& str> {
         self.state_or_region.as_deref()
     }
     /// <p>The district or county of the primary contact address, if any.</p>
-    pub fn district_or_county(&self) -> ::std::option::Option<&str> {
+    pub fn district_or_county(&self) -> ::std::option::Option<& str> {
         self.district_or_county.as_deref()
     }
     /// <p>The postal code of the primary contact address.</p>
-    pub fn postal_code(&self) -> &str {
-        use std::ops::Deref;
-        self.postal_code.deref()
+    pub fn postal_code(&self) -> & str {
+        use std::ops::Deref; self.postal_code.deref()
     }
     /// <p>The ISO-3166 two-letter country code for the primary contact address.</p>
-    pub fn country_code(&self) -> &str {
-        use std::ops::Deref;
-        self.country_code.deref()
+    pub fn country_code(&self) -> & str {
+        use std::ops::Deref; self.country_code.deref()
     }
     /// <p>The phone number of the primary contact information. The number will be validated and, in some countries, checked for activation.</p>
-    pub fn phone_number(&self) -> &str {
-        use std::ops::Deref;
-        self.phone_number.deref()
+    pub fn phone_number(&self) -> & str {
+        use std::ops::Deref; self.phone_number.deref()
     }
     /// <p>The name of the company associated with the primary contact information, if any.</p>
-    pub fn company_name(&self) -> ::std::option::Option<&str> {
+    pub fn company_name(&self) -> ::std::option::Option<& str> {
         self.company_name.as_deref()
     }
     /// <p>The URL of the website associated with the primary contact information, if any.</p>
-    pub fn website_url(&self) -> ::std::option::Option<&str> {
+    pub fn website_url(&self) -> ::std::option::Option<& str> {
         self.website_url.as_deref()
     }
 }
-impl ::std::fmt::Debug for ContactInformation {
+impl  ::std::fmt::Debug for ContactInformation  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ContactInformation");
         formatter.field("full_name", &"*** Sensitive Data Redacted ***");
@@ -136,8 +130,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The full name of the primary contact address.</p>
     pub fn set_full_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.full_name = input;
-        self
+        self.full_name = input; self
     }
     /// <p>The full name of the primary contact address.</p>
     pub fn get_full_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +144,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The first line of the primary contact address.</p>
     pub fn set_address_line1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_line1 = input;
-        self
+        self.address_line1 = input; self
     }
     /// <p>The first line of the primary contact address.</p>
     pub fn get_address_line1(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +157,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The second line of the primary contact address, if any.</p>
     pub fn set_address_line2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_line2 = input;
-        self
+        self.address_line2 = input; self
     }
     /// <p>The second line of the primary contact address, if any.</p>
     pub fn get_address_line2(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +170,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The third line of the primary contact address, if any.</p>
     pub fn set_address_line3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_line3 = input;
-        self
+        self.address_line3 = input; self
     }
     /// <p>The third line of the primary contact address, if any.</p>
     pub fn get_address_line3(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +184,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The city of the primary contact address.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>The city of the primary contact address.</p>
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +197,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
     pub fn set_state_or_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_or_region = input;
-        self
+        self.state_or_region = input; self
     }
     /// <p>The state or region of the primary contact address. This field is required in selected countries.</p>
     pub fn get_state_or_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +210,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The district or county of the primary contact address, if any.</p>
     pub fn set_district_or_county(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.district_or_county = input;
-        self
+        self.district_or_county = input; self
     }
     /// <p>The district or county of the primary contact address, if any.</p>
     pub fn get_district_or_county(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +224,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The postal code of the primary contact address.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code = input;
-        self
+        self.postal_code = input; self
     }
     /// <p>The postal code of the primary contact address.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +238,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The ISO-3166 two-letter country code for the primary contact address.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country_code = input;
-        self
+        self.country_code = input; self
     }
     /// <p>The ISO-3166 two-letter country code for the primary contact address.</p>
     pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,8 +252,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The phone number of the primary contact information. The number will be validated and, in some countries, checked for activation.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number of the primary contact information. The number will be validated and, in some countries, checked for activation.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,8 +265,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The name of the company associated with the primary contact information, if any.</p>
     pub fn set_company_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.company_name = input;
-        self
+        self.company_name = input; self
     }
     /// <p>The name of the company associated with the primary contact information, if any.</p>
     pub fn get_company_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,8 +278,7 @@ impl ContactInformationBuilder {
     }
     /// <p>The URL of the website associated with the primary contact information, if any.</p>
     pub fn set_website_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.website_url = input;
-        self
+        self.website_url = input; self
     }
     /// <p>The URL of the website associated with the primary contact information, if any.</p>
     pub fn get_website_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -311,50 +293,52 @@ impl ContactInformationBuilder {
     /// - [`country_code`](crate::types::builders::ContactInformationBuilder::country_code)
     /// - [`phone_number`](crate::types::builders::ContactInformationBuilder::phone_number)
     pub fn build(self) -> ::std::result::Result<crate::types::ContactInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContactInformation {
-            full_name: self.full_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "full_name",
-                    "full_name was not specified but it is required when building ContactInformation",
-                )
-            })?,
-            address_line1: self.address_line1.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "address_line1",
-                    "address_line1 was not specified but it is required when building ContactInformation",
-                )
-            })?,
-            address_line2: self.address_line2,
-            address_line3: self.address_line3,
-            city: self.city.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "city",
-                    "city was not specified but it is required when building ContactInformation",
-                )
-            })?,
-            state_or_region: self.state_or_region,
-            district_or_county: self.district_or_county,
-            postal_code: self.postal_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "postal_code",
-                    "postal_code was not specified but it is required when building ContactInformation",
-                )
-            })?,
-            country_code: self.country_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "country_code",
-                    "country_code was not specified but it is required when building ContactInformation",
-                )
-            })?,
-            phone_number: self.phone_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phone_number",
-                    "phone_number was not specified but it is required when building ContactInformation",
-                )
-            })?,
-            company_name: self.company_name,
-            website_url: self.website_url,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContactInformation {
+                full_name: self.full_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("full_name", "full_name was not specified but it is required when building ContactInformation")
+                    )?
+                ,
+                address_line1: self.address_line1
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("address_line1", "address_line1 was not specified but it is required when building ContactInformation")
+                    )?
+                ,
+                address_line2: self.address_line2
+                ,
+                address_line3: self.address_line3
+                ,
+                city: self.city
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("city", "city was not specified but it is required when building ContactInformation")
+                    )?
+                ,
+                state_or_region: self.state_or_region
+                ,
+                district_or_county: self.district_or_county
+                ,
+                postal_code: self.postal_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("postal_code", "postal_code was not specified but it is required when building ContactInformation")
+                    )?
+                ,
+                country_code: self.country_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("country_code", "country_code was not specified but it is required when building ContactInformation")
+                    )?
+                ,
+                phone_number: self.phone_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phone_number", "phone_number was not specified but it is required when building ContactInformation")
+                    )?
+                ,
+                company_name: self.company_name
+                ,
+                website_url: self.website_url
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ContactInformationBuilder {
@@ -375,3 +359,4 @@ impl ::std::fmt::Debug for ContactInformationBuilder {
         formatter.finish()
     }
 }
+

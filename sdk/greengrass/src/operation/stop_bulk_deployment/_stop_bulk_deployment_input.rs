@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopBulkDeploymentInput {
+pub struct StopBulkDeploymentInput  {
     /// The ID of the bulk deployment.
     pub bulk_deployment_id: ::std::option::Option<::std::string::String>,
 }
-impl StopBulkDeploymentInput {
+impl  StopBulkDeploymentInput  {
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn bulk_deployment_id(&self) -> ::std::option::Option<& str> {
         self.bulk_deployment_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopBulkDeploymentInputBuilder {
     }
     /// The ID of the bulk deployment.
     pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bulk_deployment_id = input;
-        self
+        self.bulk_deployment_id = input; self
     }
     /// The ID of the bulk deployment.
     pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bulk_deployment_id
     }
     /// Consumes the builder and constructs a [`StopBulkDeploymentInput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_bulk_deployment::StopBulkDeploymentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_bulk_deployment::StopBulkDeploymentInput {
-            bulk_deployment_id: self.bulk_deployment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_bulk_deployment::StopBulkDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_bulk_deployment::StopBulkDeploymentInput {
+                bulk_deployment_id: self.bulk_deployment_id
+                ,
+            }
+        )
     }
 }
+

@@ -5,25 +5,23 @@
 /// <p>Example: <code>{ "actionId": "&lt;action name&gt;", "actionType": "Action" }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ActionIdentifier {
+pub struct ActionIdentifier  {
     /// <p>The type of an action.</p>
     pub action_type: ::std::string::String,
     /// <p>The ID of an action.</p>
     pub action_id: ::std::string::String,
 }
-impl ActionIdentifier {
+impl  ActionIdentifier  {
     /// <p>The type of an action.</p>
-    pub fn action_type(&self) -> &str {
-        use std::ops::Deref;
-        self.action_type.deref()
+    pub fn action_type(&self) -> & str {
+        use std::ops::Deref; self.action_type.deref()
     }
     /// <p>The ID of an action.</p>
-    pub fn action_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_id.deref()
+    pub fn action_id(&self) -> & str {
+        use std::ops::Deref; self.action_id.deref()
     }
 }
-impl ::std::fmt::Debug for ActionIdentifier {
+impl  ::std::fmt::Debug for ActionIdentifier  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActionIdentifier");
         formatter.field("action_type", &"*** Sensitive Data Redacted ***");
@@ -54,8 +52,7 @@ impl ActionIdentifierBuilder {
     }
     /// <p>The type of an action.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The type of an action.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +66,7 @@ impl ActionIdentifierBuilder {
     }
     /// <p>The ID of an action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The ID of an action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,20 +77,20 @@ impl ActionIdentifierBuilder {
     /// - [`action_type`](crate::types::builders::ActionIdentifierBuilder::action_type)
     /// - [`action_id`](crate::types::builders::ActionIdentifierBuilder::action_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionIdentifier {
-            action_type: self.action_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_type",
-                    "action_type was not specified but it is required when building ActionIdentifier",
-                )
-            })?,
-            action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_id",
-                    "action_id was not specified but it is required when building ActionIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionIdentifier {
+                action_type: self.action_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_type", "action_type was not specified but it is required when building ActionIdentifier")
+                    )?
+                ,
+                action_id: self.action_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_id", "action_id was not specified but it is required when building ActionIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ActionIdentifierBuilder {
@@ -105,3 +101,4 @@ impl ::std::fmt::Debug for ActionIdentifierBuilder {
         formatter.finish()
     }
 }
+

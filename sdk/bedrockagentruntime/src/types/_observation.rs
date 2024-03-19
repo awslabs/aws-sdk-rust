@@ -3,7 +3,7 @@
 /// <p>Contains the result or output of an action group or knowledge base, or the response to the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Observation {
+pub struct Observation  {
     /// <p>The unique identifier of the trace.</p>
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies what kind of information the agent returns in the observation. The following values are possible.</p>
@@ -29,9 +29,9 @@ pub struct Observation {
     /// <p>Contains details about the response to reprompt the input.</p>
     pub reprompt_response: ::std::option::Option<crate::types::RepromptResponse>,
 }
-impl Observation {
+impl  Observation  {
     /// <p>The unique identifier of the trace.</p>
-    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+    pub fn trace_id(&self) -> ::std::option::Option<& str> {
         self.trace_id.as_deref()
     }
     /// <p>Specifies what kind of information the agent returns in the observation. The following values are possible.</p>
@@ -47,27 +47,27 @@ impl Observation {
     /// <li>
     /// <p><code>REPROMPT</code> – The agent prompts the user again for the same information.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>Contains the JSON-formatted string returned by the API invoked by the action group.</p>
-    pub fn action_group_invocation_output(&self) -> ::std::option::Option<&crate::types::ActionGroupInvocationOutput> {
+    pub fn action_group_invocation_output(&self) -> ::std::option::Option<& crate::types::ActionGroupInvocationOutput> {
         self.action_group_invocation_output.as_ref()
     }
     /// <p>Contains details about the results from looking up the knowledge base.</p>
-    pub fn knowledge_base_lookup_output(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseLookupOutput> {
+    pub fn knowledge_base_lookup_output(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseLookupOutput> {
         self.knowledge_base_lookup_output.as_ref()
     }
     /// <p>Contains details about the response to the user.</p>
-    pub fn final_response(&self) -> ::std::option::Option<&crate::types::FinalResponse> {
+    pub fn final_response(&self) -> ::std::option::Option<& crate::types::FinalResponse> {
         self.final_response.as_ref()
     }
     /// <p>Contains details about the response to reprompt the input.</p>
-    pub fn reprompt_response(&self) -> ::std::option::Option<&crate::types::RepromptResponse> {
+    pub fn reprompt_response(&self) -> ::std::option::Option<& crate::types::RepromptResponse> {
         self.reprompt_response.as_ref()
     }
 }
-impl ::std::fmt::Debug for Observation {
+impl  ::std::fmt::Debug for Observation  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Observation");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
@@ -105,8 +105,7 @@ impl ObservationBuilder {
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_id = input;
-        self
+        self.trace_id = input; self
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl ObservationBuilder {
     /// <p><code>REPROMPT</code> – The agent prompts the user again for the same information.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies what kind of information the agent returns in the observation. The following values are possible.</p>
     /// <ul>
@@ -169,8 +167,7 @@ impl ObservationBuilder {
     }
     /// <p>Contains the JSON-formatted string returned by the API invoked by the action group.</p>
     pub fn set_action_group_invocation_output(mut self, input: ::std::option::Option<crate::types::ActionGroupInvocationOutput>) -> Self {
-        self.action_group_invocation_output = input;
-        self
+        self.action_group_invocation_output = input; self
     }
     /// <p>Contains the JSON-formatted string returned by the API invoked by the action group.</p>
     pub fn get_action_group_invocation_output(&self) -> &::std::option::Option<crate::types::ActionGroupInvocationOutput> {
@@ -183,8 +180,7 @@ impl ObservationBuilder {
     }
     /// <p>Contains details about the results from looking up the knowledge base.</p>
     pub fn set_knowledge_base_lookup_output(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseLookupOutput>) -> Self {
-        self.knowledge_base_lookup_output = input;
-        self
+        self.knowledge_base_lookup_output = input; self
     }
     /// <p>Contains details about the results from looking up the knowledge base.</p>
     pub fn get_knowledge_base_lookup_output(&self) -> &::std::option::Option<crate::types::KnowledgeBaseLookupOutput> {
@@ -197,8 +193,7 @@ impl ObservationBuilder {
     }
     /// <p>Contains details about the response to the user.</p>
     pub fn set_final_response(mut self, input: ::std::option::Option<crate::types::FinalResponse>) -> Self {
-        self.final_response = input;
-        self
+        self.final_response = input; self
     }
     /// <p>Contains details about the response to the user.</p>
     pub fn get_final_response(&self) -> &::std::option::Option<crate::types::FinalResponse> {
@@ -211,8 +206,7 @@ impl ObservationBuilder {
     }
     /// <p>Contains details about the response to reprompt the input.</p>
     pub fn set_reprompt_response(mut self, input: ::std::option::Option<crate::types::RepromptResponse>) -> Self {
-        self.reprompt_response = input;
-        self
+        self.reprompt_response = input; self
     }
     /// <p>Contains details about the response to reprompt the input.</p>
     pub fn get_reprompt_response(&self) -> &::std::option::Option<crate::types::RepromptResponse> {
@@ -221,12 +215,18 @@ impl ObservationBuilder {
     /// Consumes the builder and constructs a [`Observation`](crate::types::Observation).
     pub fn build(self) -> crate::types::Observation {
         crate::types::Observation {
-            trace_id: self.trace_id,
-            r#type: self.r#type,
-            action_group_invocation_output: self.action_group_invocation_output,
-            knowledge_base_lookup_output: self.knowledge_base_lookup_output,
-            final_response: self.final_response,
-            reprompt_response: self.reprompt_response,
+            trace_id: self.trace_id
+            ,
+            r#type: self.r#type
+            ,
+            action_group_invocation_output: self.action_group_invocation_output
+            ,
+            knowledge_base_lookup_output: self.knowledge_base_lookup_output
+            ,
+            final_response: self.final_response
+            ,
+            reprompt_response: self.reprompt_response
+            ,
         }
     }
 }
@@ -242,3 +242,4 @@ impl ::std::fmt::Debug for ObservationBuilder {
         formatter.finish()
     }
 }
+

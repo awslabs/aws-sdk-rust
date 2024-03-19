@@ -21,11 +21,7 @@ impl SsmExternalParameter {
     /// Tries to convert the enum instance into [`DynamicPath`](crate::types::SsmExternalParameter::DynamicPath), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dynamic_path(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SsmExternalParameter::DynamicPath(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SsmExternalParameter::DynamicPath(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DynamicPath`](crate::types::SsmExternalParameter::DynamicPath).
     pub fn is_dynamic_path(&self) -> bool {
@@ -36,3 +32,4 @@ impl SsmExternalParameter {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>VPN connection options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2VpnConnectionOptionsDetails {
+pub struct AwsEc2VpnConnectionOptionsDetails  {
     /// <p>Whether the VPN connection uses static routes only.</p>
     pub static_routes_only: ::std::option::Option<bool>,
     /// <p>The VPN tunnel options.</p>
-    pub tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
+    pub tunnel_options: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
 }
-impl AwsEc2VpnConnectionOptionsDetails {
+impl  AwsEc2VpnConnectionOptionsDetails  {
     /// <p>Whether the VPN connection uses static routes only.</p>
     pub fn static_routes_only(&self) -> ::std::option::Option<bool> {
         self.static_routes_only
     }
     /// <p>The VPN tunnel options.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tunnel_options.is_none()`.
-    pub fn tunnel_options(&self) -> &[crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails] {
-        self.tunnel_options.as_deref().unwrap_or_default()
+    pub fn tunnel_options(&self) -> & [crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails] {
+        self.tunnel_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsEc2VpnConnectionOptionsDetails {
@@ -33,7 +34,7 @@ impl AwsEc2VpnConnectionOptionsDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionOptionsDetailsBuilder {
     pub(crate) static_routes_only: ::std::option::Option<bool>,
-    pub(crate) tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
+    pub(crate) tunnel_options: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
 }
 impl AwsEc2VpnConnectionOptionsDetailsBuilder {
     /// <p>Whether the VPN connection uses static routes only.</p>
@@ -43,8 +44,7 @@ impl AwsEc2VpnConnectionOptionsDetailsBuilder {
     }
     /// <p>Whether the VPN connection uses static routes only.</p>
     pub fn set_static_routes_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.static_routes_only = input;
-        self
+        self.static_routes_only = input; self
     }
     /// <p>Whether the VPN connection uses static routes only.</p>
     pub fn get_static_routes_only(&self) -> &::std::option::Option<bool> {
@@ -57,27 +57,26 @@ impl AwsEc2VpnConnectionOptionsDetailsBuilder {
     /// <p>The VPN tunnel options.</p>
     pub fn tunnel_options(mut self, input: crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails) -> Self {
         let mut v = self.tunnel_options.unwrap_or_default();
-        v.push(input);
-        self.tunnel_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tunnel_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The VPN tunnel options.</p>
-    pub fn set_tunnel_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
-    ) -> Self {
-        self.tunnel_options = input;
-        self
+    pub fn set_tunnel_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>) -> Self {
+        self.tunnel_options = input; self
     }
     /// <p>The VPN tunnel options.</p>
-    pub fn get_tunnel_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>> {
+    pub fn get_tunnel_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>> {
         &self.tunnel_options
     }
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionOptionsDetails {
         crate::types::AwsEc2VpnConnectionOptionsDetails {
-            static_routes_only: self.static_routes_only,
-            tunnel_options: self.tunnel_options,
+            static_routes_only: self.static_routes_only
+            ,
+            tunnel_options: self.tunnel_options
+            ,
         }
     }
 }
+

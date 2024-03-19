@@ -3,7 +3,7 @@
 /// <p>Details about a Kinesis data stream used as the source for a Firehose delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamSourceDescription {
+pub struct KinesisStreamSourceDescription  {
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     pub kinesis_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
@@ -11,17 +11,17 @@ pub struct KinesisStreamSourceDescription {
     /// <p>Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
     pub delivery_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl KinesisStreamSourceDescription {
+impl  KinesisStreamSourceDescription  {
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
-    pub fn kinesis_stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kinesis_stream_arn(&self) -> ::std::option::Option<& str> {
         self.kinesis_stream_arn.as_deref()
     }
     /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
-    pub fn delivery_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delivery_start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delivery_start_timestamp.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl KinesisStreamSourceDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     pub fn set_kinesis_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kinesis_stream_arn = input;
-        self
+        self.kinesis_stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Kinesis Data Streams ARN Format</a>.</p>
     pub fn get_kinesis_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl KinesisStreamSourceDescriptionBuilder {
     }
     /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role used by the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl KinesisStreamSourceDescriptionBuilder {
     }
     /// <p>Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
     pub fn set_delivery_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delivery_start_timestamp = input;
-        self
+        self.delivery_start_timestamp = input; self
     }
     /// <p>Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.</p>
     pub fn get_delivery_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl KinesisStreamSourceDescriptionBuilder {
     /// Consumes the builder and constructs a [`KinesisStreamSourceDescription`](crate::types::KinesisStreamSourceDescription).
     pub fn build(self) -> crate::types::KinesisStreamSourceDescription {
         crate::types::KinesisStreamSourceDescription {
-            kinesis_stream_arn: self.kinesis_stream_arn,
-            role_arn: self.role_arn,
-            delivery_start_timestamp: self.delivery_start_timestamp,
+            kinesis_stream_arn: self.kinesis_stream_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            delivery_start_timestamp: self.delivery_start_timestamp
+            ,
         }
     }
 }
+

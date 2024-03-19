@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOutpostResolversOutput {
+pub struct ListOutpostResolversOutput  {
     /// <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub outpost_resolvers: ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>>,
+    pub outpost_resolvers: ::std::option::Option<::std::vec::Vec::<crate::types::OutpostResolver>>,
     /// <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOutpostResolversOutput {
+impl  ListOutpostResolversOutput  {
     /// <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outpost_resolvers.is_none()`.
-    pub fn outpost_resolvers(&self) -> &[crate::types::OutpostResolver] {
-        self.outpost_resolvers.as_deref().unwrap_or_default()
+    pub fn outpost_resolvers(&self) -> & [crate::types::OutpostResolver] {
+        self.outpost_resolvers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOutpostResolversOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOutpostResolversOutput {
     /// Creates a new builder-style object to manufacture [`ListOutpostResolversOutput`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput).
     pub fn builder() -> crate::operation::list_outpost_resolvers::builders::ListOutpostResolversOutputBuilder {
@@ -37,7 +38,7 @@ impl ListOutpostResolversOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutpostResolversOutputBuilder {
-    pub(crate) outpost_resolvers: ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>>,
+    pub(crate) outpost_resolvers: ::std::option::Option<::std::vec::Vec::<crate::types::OutpostResolver>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListOutpostResolversOutputBuilder {
     /// <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     pub fn outpost_resolvers(mut self, input: crate::types::OutpostResolver) -> Self {
         let mut v = self.outpost_resolvers.unwrap_or_default();
-        v.push(input);
-        self.outpost_resolvers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outpost_resolvers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn set_outpost_resolvers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>>) -> Self {
-        self.outpost_resolvers = input;
-        self
+    pub fn set_outpost_resolvers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutpostResolver>>) -> Self {
+        self.outpost_resolvers = input; self
     }
     /// <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn get_outpost_resolvers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>> {
+    pub fn get_outpost_resolvers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutpostResolver>> {
         &self.outpost_resolvers
     }
     /// <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
@@ -69,28 +69,30 @@ impl ListOutpostResolversOutputBuilder {
     }
     /// <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOutpostResolversOutput`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput).
     pub fn build(self) -> crate::operation::list_outpost_resolvers::ListOutpostResolversOutput {
         crate::operation::list_outpost_resolvers::ListOutpostResolversOutput {
-            outpost_resolvers: self.outpost_resolvers,
-            next_token: self.next_token,
+            outpost_resolvers: self.outpost_resolvers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

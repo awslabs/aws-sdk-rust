@@ -3,19 +3,19 @@
 /// <p>The value is either a dynamic (resource) value or a static value. You must select either a dynamic value or a static value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemediationParameterValue {
+pub struct RemediationParameterValue  {
     /// <p>The value is dynamic and changes at run-time.</p>
     pub resource_value: ::std::option::Option<crate::types::ResourceValue>,
     /// <p>The value is static and does not change at run-time.</p>
     pub static_value: ::std::option::Option<crate::types::StaticValue>,
 }
-impl RemediationParameterValue {
+impl  RemediationParameterValue  {
     /// <p>The value is dynamic and changes at run-time.</p>
-    pub fn resource_value(&self) -> ::std::option::Option<&crate::types::ResourceValue> {
+    pub fn resource_value(&self) -> ::std::option::Option<& crate::types::ResourceValue> {
         self.resource_value.as_ref()
     }
     /// <p>The value is static and does not change at run-time.</p>
-    pub fn static_value(&self) -> ::std::option::Option<&crate::types::StaticValue> {
+    pub fn static_value(&self) -> ::std::option::Option<& crate::types::StaticValue> {
         self.static_value.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RemediationParameterValueBuilder {
     }
     /// <p>The value is dynamic and changes at run-time.</p>
     pub fn set_resource_value(mut self, input: ::std::option::Option<crate::types::ResourceValue>) -> Self {
-        self.resource_value = input;
-        self
+        self.resource_value = input; self
     }
     /// <p>The value is dynamic and changes at run-time.</p>
     pub fn get_resource_value(&self) -> &::std::option::Option<crate::types::ResourceValue> {
@@ -55,8 +54,7 @@ impl RemediationParameterValueBuilder {
     }
     /// <p>The value is static and does not change at run-time.</p>
     pub fn set_static_value(mut self, input: ::std::option::Option<crate::types::StaticValue>) -> Self {
-        self.static_value = input;
-        self
+        self.static_value = input; self
     }
     /// <p>The value is static and does not change at run-time.</p>
     pub fn get_static_value(&self) -> &::std::option::Option<crate::types::StaticValue> {
@@ -65,8 +63,11 @@ impl RemediationParameterValueBuilder {
     /// Consumes the builder and constructs a [`RemediationParameterValue`](crate::types::RemediationParameterValue).
     pub fn build(self) -> crate::types::RemediationParameterValue {
         crate::types::RemediationParameterValue {
-            resource_value: self.resource_value,
-            static_value: self.static_value,
+            resource_value: self.resource_value
+            ,
+            static_value: self.static_value
+            ,
         }
     }
 }
+

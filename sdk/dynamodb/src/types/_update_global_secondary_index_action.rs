@@ -3,22 +3,21 @@
 /// <p>Represents the new provisioned throughput settings to be applied to a global secondary index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGlobalSecondaryIndexAction {
+pub struct UpdateGlobalSecondaryIndexAction  {
     /// <p>The name of the global secondary index to be updated.</p>
     pub index_name: ::std::string::String,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
 }
-impl UpdateGlobalSecondaryIndexAction {
+impl  UpdateGlobalSecondaryIndexAction  {
     /// <p>The name of the global secondary index to be updated.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> & str {
+        use std::ops::Deref; self.index_name.deref()
     }
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<& crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
 }
@@ -45,8 +44,7 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
     }
     /// <p>The name of the global secondary index to be updated.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the global secondary index to be updated.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +60,7 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
-        self.provisioned_throughput = input;
-        self
+        self.provisioned_throughput = input; self
     }
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -74,14 +71,17 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::UpdateGlobalSecondaryIndexActionBuilder::index_name)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateGlobalSecondaryIndexAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateGlobalSecondaryIndexAction {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building UpdateGlobalSecondaryIndexAction",
-                )
-            })?,
-            provisioned_throughput: self.provisioned_throughput,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateGlobalSecondaryIndexAction {
+                index_name: self.index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_name", "index_name was not specified but it is required when building UpdateGlobalSecondaryIndexAction")
+                    )?
+                ,
+                provisioned_throughput: self.provisioned_throughput
+                ,
+            }
+        )
     }
 }
+

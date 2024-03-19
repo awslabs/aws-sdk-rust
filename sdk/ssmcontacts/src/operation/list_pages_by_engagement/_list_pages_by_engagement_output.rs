@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPagesByEngagementOutput {
+pub struct ListPagesByEngagementOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of engagements to contact channels.</p>
-    pub pages: ::std::vec::Vec<crate::types::Page>,
+    pub pages: ::std::vec::Vec::<crate::types::Page>,
     _request_id: Option<String>,
 }
-impl ListPagesByEngagementOutput {
+impl  ListPagesByEngagementOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of engagements to contact channels.</p>
-    pub fn pages(&self) -> &[crate::types::Page] {
-        use std::ops::Deref;
-        self.pages.deref()
+    pub fn pages(&self) -> & [crate::types::Page] {
+        use std::ops::Deref; self.pages.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPagesByEngagementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPagesByEngagementOutput {
     /// Creates a new builder-style object to manufacture [`ListPagesByEngagementOutput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput).
     pub fn builder() -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder {
@@ -37,7 +36,7 @@ impl ListPagesByEngagementOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPagesByEngagementOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
+    pub(crate) pages: ::std::option::Option<::std::vec::Vec::<crate::types::Page>>,
     _request_id: Option<String>,
 }
 impl ListPagesByEngagementOutputBuilder {
@@ -48,8 +47,7 @@ impl ListPagesByEngagementOutputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,46 +60,43 @@ impl ListPagesByEngagementOutputBuilder {
     /// <p>The list of engagements to contact channels.</p>
     pub fn pages(mut self, input: crate::types::Page) -> Self {
         let mut v = self.pages.unwrap_or_default();
-        v.push(input);
-        self.pages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of engagements to contact channels.</p>
-    pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Page>>) -> Self {
-        self.pages = input;
-        self
+    pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Page>>) -> Self {
+        self.pages = input; self
     }
     /// <p>The list of engagements to contact channels.</p>
-    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Page>> {
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Page>> {
         &self.pages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPagesByEngagementOutput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`pages`](crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder::pages)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput {
-            next_token: self.next_token,
-            pages: self.pages.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pages",
-                    "pages was not specified but it is required when building ListPagesByEngagementOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput {
+                next_token: self.next_token
+                ,
+                pages: self.pages
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pages", "pages was not specified but it is required when building ListPagesByEngagementOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

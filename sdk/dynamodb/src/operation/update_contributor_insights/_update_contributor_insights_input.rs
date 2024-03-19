@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContributorInsightsInput {
+pub struct UpdateContributorInsightsInput  {
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The global secondary index name, if applicable.</p>
@@ -10,17 +10,17 @@ pub struct UpdateContributorInsightsInput {
     /// <p>Represents the contributor insights action.</p>
     pub contributor_insights_action: ::std::option::Option<crate::types::ContributorInsightsAction>,
 }
-impl UpdateContributorInsightsInput {
+impl  UpdateContributorInsightsInput  {
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The global secondary index name, if applicable.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>Represents the contributor insights action.</p>
-    pub fn contributor_insights_action(&self) -> ::std::option::Option<&crate::types::ContributorInsightsAction> {
+    pub fn contributor_insights_action(&self) -> ::std::option::Option<& crate::types::ContributorInsightsAction> {
         self.contributor_insights_action.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateContributorInsightsInputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateContributorInsightsInputBuilder {
     }
     /// <p>The global secondary index name, if applicable.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The global secondary index name, if applicable.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdateContributorInsightsInputBuilder {
     }
     /// <p>Represents the contributor insights action.</p>
     pub fn set_contributor_insights_action(mut self, input: ::std::option::Option<crate::types::ContributorInsightsAction>) -> Self {
-        self.contributor_insights_action = input;
-        self
+        self.contributor_insights_action = input; self
     }
     /// <p>Represents the contributor insights action.</p>
     pub fn get_contributor_insights_action(&self) -> &::std::option::Option<crate::types::ContributorInsightsAction> {
         &self.contributor_insights_action
     }
     /// Consumes the builder and constructs a [`UpdateContributorInsightsInput`](crate::operation::update_contributor_insights::UpdateContributorInsightsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contributor_insights::UpdateContributorInsightsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_contributor_insights::UpdateContributorInsightsInput {
-            table_name: self.table_name,
-            index_name: self.index_name,
-            contributor_insights_action: self.contributor_insights_action,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_contributor_insights::UpdateContributorInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_contributor_insights::UpdateContributorInsightsInput {
+                table_name: self.table_name
+                ,
+                index_name: self.index_name
+                ,
+                contributor_insights_action: self.contributor_insights_action
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribePendingMaintenanceActions`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_identifier(impl Into<String>)`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::set_resource_identifier):<br>required: **false**<br><p>The ARN of a resource to return pending maintenance actions for.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::set_filters):<br>required: **false**<br><p>A filter that specifies one or more resources to return pending maintenance actions for.</p> <p>Supported filters:</p> <ul>  <li>   <p><code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list includes only pending maintenance actions for the clusters identified by these ARNs.</p></li>  <li>   <p><code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only pending maintenance actions for the DB instances identified by these ARNs.</p></li> </ul><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p><br>
-    /// - On success, responds with [`DescribePendingMaintenanceActionsOutput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput) with field(s):
+                            /// - On success, responds with [`DescribePendingMaintenanceActionsOutput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput) with field(s):
     ///   - [`pending_maintenance_actions(Option<Vec::<ResourcePendingMaintenanceActions>>)`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput::pending_maintenance_actions): <p>The maintenance actions to be applied.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribePendingMaintenanceActionsError>`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError)
-    pub fn describe_pending_maintenance_actions(
-        &self,
-    ) -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder {
-        crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribePendingMaintenanceActionsError>`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsError)
+    pub fn describe_pending_maintenance_actions(&self) -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder {
+                                crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

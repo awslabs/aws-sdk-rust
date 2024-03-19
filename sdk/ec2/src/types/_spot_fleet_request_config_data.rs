@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of a Spot Fleet request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotFleetRequestConfigData {
+pub struct SpotFleetRequestConfigData  {
     /// <p>The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot Fleet launch configuration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <dl>
     /// <dt>
@@ -51,9 +51,9 @@ pub struct SpotFleetRequestConfigData {
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
     /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
     /// </note>
-    pub launch_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>,
+    pub launch_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::SpotFleetLaunchSpecification>>,
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
+    pub launch_template_configs: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateConfig>>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
@@ -94,9 +94,9 @@ pub struct SpotFleetRequestConfigData {
     /// <p>Default: <code>units</code> (the number of instances)</p>
     pub target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
-impl SpotFleetRequestConfigData {
+impl  SpotFleetRequestConfigData  {
     /// <p>The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot Fleet launch configuration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <dl>
     /// <dt>
@@ -125,24 +125,24 @@ impl SpotFleetRequestConfigData {
     /// </dd>
     /// </dl>
     /// <p>Default: <code>lowestPrice</code></p>
-    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::AllocationStrategy> {
+    pub fn allocation_strategy(&self) -> ::std::option::Option<& crate::types::AllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
-    pub fn on_demand_allocation_strategy(&self) -> ::std::option::Option<&crate::types::OnDemandAllocationStrategy> {
+    pub fn on_demand_allocation_strategy(&self) -> ::std::option::Option<& crate::types::OnDemandAllocationStrategy> {
         self.on_demand_allocation_strategy.as_ref()
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
-    pub fn spot_maintenance_strategies(&self) -> ::std::option::Option<&crate::types::SpotMaintenanceStrategies> {
+    pub fn spot_maintenance_strategies(&self) -> ::std::option::Option<& crate::types::SpotMaintenanceStrategies> {
         self.spot_maintenance_strategies.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of your listings. This helps to avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(&self) -> ::std::option::Option<&crate::types::ExcessCapacityTerminationPolicy> {
+    pub fn excess_capacity_termination_policy(&self) -> ::std::option::Option<& crate::types::ExcessCapacityTerminationPolicy> {
         self.excess_capacity_termination_policy.as_ref()
     }
     /// <p>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</p>
@@ -154,27 +154,29 @@ impl SpotFleetRequestConfigData {
         self.on_demand_fulfilled_capacity
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
-    pub fn iam_fleet_role(&self) -> ::std::option::Option<&str> {
+    pub fn iam_fleet_role(&self) -> ::std::option::Option<& str> {
         self.iam_fleet_role.as_deref()
     }
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
     /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_specifications.is_none()`.
-    pub fn launch_specifications(&self) -> &[crate::types::SpotFleetLaunchSpecification] {
-        self.launch_specifications.as_deref().unwrap_or_default()
+    pub fn launch_specifications(&self) -> & [crate::types::SpotFleetLaunchSpecification] {
+        self.launch_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_configs.is_none()`.
-    pub fn launch_template_configs(&self) -> &[crate::types::LaunchTemplateConfig] {
-        self.launch_template_configs.as_deref().unwrap_or_default()
+    pub fn launch_template_configs(&self) -> & [crate::types::LaunchTemplateConfig] {
+        self.launch_template_configs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn spot_price(&self) -> ::std::option::Option<&str> {
+    pub fn spot_price(&self) -> ::std::option::Option<& str> {
         self.spot_price.as_deref()
     }
     /// <p>The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
@@ -188,13 +190,13 @@ impl SpotFleetRequestConfigData {
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.</p><note>
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
     /// </note>
-    pub fn on_demand_max_total_price(&self) -> ::std::option::Option<&str> {
+    pub fn on_demand_max_total_price(&self) -> ::std::option::Option<& str> {
         self.on_demand_max_total_price.as_deref()
     }
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. You can use the <code>spotMaxTotalPrice</code> parameter, the <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.</p><note>
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>spotMaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
     /// </note>
-    pub fn spot_max_total_price(&self) -> ::std::option::Option<&str> {
+    pub fn spot_max_total_price(&self) -> ::std::option::Option<& str> {
         self.spot_max_total_price.as_deref()
     }
     /// <p>Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.</p>
@@ -202,15 +204,15 @@ impl SpotFleetRequestConfigData {
         self.terminate_instances_with_expiration
     }
     /// <p>The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot Fleet.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FleetType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::FleetType> {
         self.r#type.as_ref()
     }
     /// <p>The start date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling the request immediately.</p>
-    pub fn valid_from(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn valid_from(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.valid_from.as_ref()
     }
     /// <p>The end date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel it.</p>
-    pub fn valid_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn valid_until(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>Indicates whether Spot Fleet should replace unhealthy instances.</p>
@@ -218,12 +220,12 @@ impl SpotFleetRequestConfigData {
         self.replace_unhealthy_instances
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
+    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<& crate::types::InstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
     /// <p>One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
     /// <p>With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.</p>
-    pub fn load_balancers_config(&self) -> ::std::option::Option<&crate::types::LoadBalancersConfig> {
+    pub fn load_balancers_config(&self) -> ::std::option::Option<& crate::types::LoadBalancersConfig> {
         self.load_balancers_config.as_ref()
     }
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
@@ -232,19 +234,20 @@ impl SpotFleetRequestConfigData {
         self.instance_pools_to_use_count
     }
     /// <p>Reserved.</p>
-    pub fn context(&self) -> ::std::option::Option<&str> {
+    pub fn context(&self) -> ::std::option::Option<& str> {
         self.context.as_deref()
     }
     /// <p>The unit for the target capacity. You can specify this parameter only when using attribute-based instance type selection.</p>
     /// <p>Default: <code>units</code> (the number of instances)</p>
-    pub fn target_capacity_unit_type(&self) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
+    pub fn target_capacity_unit_type(&self) -> ::std::option::Option<& crate::types::TargetCapacityUnitType> {
         self.target_capacity_unit_type.as_ref()
     }
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SpotFleetRequestConfigData {
@@ -266,8 +269,8 @@ pub struct SpotFleetRequestConfigDataBuilder {
     pub(crate) fulfilled_capacity: ::std::option::Option<f64>,
     pub(crate) on_demand_fulfilled_capacity: ::std::option::Option<f64>,
     pub(crate) iam_fleet_role: ::std::option::Option<::std::string::String>,
-    pub(crate) launch_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>,
-    pub(crate) launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
+    pub(crate) launch_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::SpotFleetLaunchSpecification>>,
+    pub(crate) launch_template_configs: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateConfig>>,
     pub(crate) spot_price: ::std::option::Option<::std::string::String>,
     pub(crate) target_capacity: ::std::option::Option<i32>,
     pub(crate) on_demand_target_capacity: ::std::option::Option<i32>,
@@ -283,7 +286,7 @@ pub struct SpotFleetRequestConfigDataBuilder {
     pub(crate) instance_pools_to_use_count: ::std::option::Option<i32>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
     pub(crate) target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
 impl SpotFleetRequestConfigDataBuilder {
     /// <p>The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot Fleet launch configuration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -347,8 +350,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// </dl>
     /// <p>Default: <code>lowestPrice</code></p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::AllocationStrategy>) -> Self {
-        self.allocation_strategy = input;
-        self
+        self.allocation_strategy = input; self
     }
     /// <p>The strategy that determines how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot Fleet launch configuration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <dl>
@@ -388,8 +390,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
     pub fn set_on_demand_allocation_strategy(mut self, input: ::std::option::Option<crate::types::OnDemandAllocationStrategy>) -> Self {
-        self.on_demand_allocation_strategy = input;
-        self
+        self.on_demand_allocation_strategy = input; self
     }
     /// <p>The order of the launch template overrides to use in fulfilling On-Demand capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order, launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet uses the priority that you assign to each Spot Fleet launch template override, launching the highest priority first. If you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
     pub fn get_on_demand_allocation_strategy(&self) -> &::std::option::Option<crate::types::OnDemandAllocationStrategy> {
@@ -402,8 +403,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
     pub fn set_spot_maintenance_strategies(mut self, input: ::std::option::Option<crate::types::SpotMaintenanceStrategies>) -> Self {
-        self.spot_maintenance_strategies = input;
-        self
+        self.spot_maintenance_strategies = input; self
     }
     /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
     pub fn get_spot_maintenance_strategies(&self) -> &::std::option::Option<crate::types::SpotMaintenanceStrategies> {
@@ -416,8 +416,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of your listings. This helps to avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of your listings. This helps to avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -432,8 +431,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(mut self, input: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>) -> Self {
-        self.excess_capacity_termination_policy = input;
-        self
+        self.excess_capacity_termination_policy = input; self
     }
     /// <p>Indicates whether running instances should be terminated if you decrease the target capacity of the Spot Fleet request below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
@@ -447,8 +445,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</p>
     pub fn set_fulfilled_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.fulfilled_capacity = input;
-        self
+        self.fulfilled_capacity = input; self
     }
     /// <p>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</p>
     pub fn get_fulfilled_capacity(&self) -> &::std::option::Option<f64> {
@@ -461,8 +458,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The number of On-Demand units fulfilled by this request compared to the set target On-Demand capacity.</p>
     pub fn set_on_demand_fulfilled_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.on_demand_fulfilled_capacity = input;
-        self
+        self.on_demand_fulfilled_capacity = input; self
     }
     /// <p>The number of On-Demand units fulfilled by this request compared to the set target On-Demand capacity.</p>
     pub fn get_on_demand_fulfilled_capacity(&self) -> &::std::option::Option<f64> {
@@ -476,8 +472,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
     pub fn set_iam_fleet_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_fleet_role = input;
-        self
+        self.iam_fleet_role = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
     pub fn get_iam_fleet_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -492,21 +487,20 @@ impl SpotFleetRequestConfigDataBuilder {
     /// </note>
     pub fn launch_specifications(mut self, input: crate::types::SpotFleetLaunchSpecification) -> Self {
         let mut v = self.launch_specifications.unwrap_or_default();
-        v.push(input);
-        self.launch_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.launch_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
     /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
     /// </note>
-    pub fn set_launch_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>) -> Self {
-        self.launch_specifications = input;
-        self
+    pub fn set_launch_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SpotFleetLaunchSpecification>>) -> Self {
+        self.launch_specifications = input; self
     }
     /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
     /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
     /// </note>
-    pub fn get_launch_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>> {
+    pub fn get_launch_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SpotFleetLaunchSpecification>> {
         &self.launch_specifications
     }
     /// Appends an item to `launch_template_configs`.
@@ -516,17 +510,16 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
     pub fn launch_template_configs(mut self, input: crate::types::LaunchTemplateConfig) -> Self {
         let mut v = self.launch_template_configs.unwrap_or_default();
-        v.push(input);
-        self.launch_template_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.launch_template_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn set_launch_template_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>) -> Self {
-        self.launch_template_configs = input;
-        self
+    pub fn set_launch_template_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateConfig>>) -> Self {
+        self.launch_template_configs = input; self
     }
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
-    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>> {
+    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateConfig>> {
         &self.launch_template_configs
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
@@ -540,8 +533,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn set_spot_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_price = input;
-        self
+        self.spot_price = input; self
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
@@ -557,8 +549,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
     pub fn set_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_capacity = input;
-        self
+        self.target_capacity = input; self
     }
     /// <p>The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
     pub fn get_target_capacity(&self) -> &::std::option::Option<i32> {
@@ -571,8 +562,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The number of On-Demand units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
     pub fn set_on_demand_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_target_capacity = input;
-        self
+        self.on_demand_target_capacity = input; self
     }
     /// <p>The number of On-Demand units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
     pub fn get_on_demand_target_capacity(&self) -> &::std::option::Option<i32> {
@@ -589,8 +579,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
     /// </note>
     pub fn set_on_demand_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.on_demand_max_total_price = input;
-        self
+        self.on_demand_max_total_price = input; self
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.</p><note>
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
@@ -609,8 +598,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>spotMaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
     /// </note>
     pub fn set_spot_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_max_total_price = input;
-        self
+        self.spot_max_total_price = input; self
     }
     /// <p>The maximum amount per hour for Spot Instances that you're willing to pay. You can use the <code>spotMaxTotalPrice</code> parameter, the <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, Spot Fleet will launch instances until it reaches the maximum amount you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity.</p><note>
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>spotMaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
@@ -625,8 +613,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.</p>
     pub fn set_terminate_instances_with_expiration(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.terminate_instances_with_expiration = input;
-        self
+        self.terminate_instances_with_expiration = input; self
     }
     /// <p>Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.</p>
     pub fn get_terminate_instances_with_expiration(&self) -> &::std::option::Option<bool> {
@@ -639,8 +626,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot Fleet.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FleetType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot Fleet.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FleetType> {
@@ -653,8 +639,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The start date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling the request immediately.</p>
     pub fn set_valid_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.valid_from = input;
-        self
+        self.valid_from = input; self
     }
     /// <p>The start date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling the request immediately.</p>
     pub fn get_valid_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -667,8 +652,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The end date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel it.</p>
     pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.valid_until = input;
-        self
+        self.valid_until = input; self
     }
     /// <p>The end date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel it.</p>
     pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -681,8 +665,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>Indicates whether Spot Fleet should replace unhealthy instances.</p>
     pub fn set_replace_unhealthy_instances(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replace_unhealthy_instances = input;
-        self
+        self.replace_unhealthy_instances = input; self
     }
     /// <p>Indicates whether Spot Fleet should replace unhealthy instances.</p>
     pub fn get_replace_unhealthy_instances(&self) -> &::std::option::Option<bool> {
@@ -695,8 +678,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
     pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
-        self.instance_interruption_behavior = input;
-        self
+        self.instance_interruption_behavior = input; self
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
     pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
@@ -711,8 +693,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
     /// <p>With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.</p>
     pub fn set_load_balancers_config(mut self, input: ::std::option::Option<crate::types::LoadBalancersConfig>) -> Self {
-        self.load_balancers_config = input;
-        self
+        self.load_balancers_config = input; self
     }
     /// <p>One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
     /// <p>With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.</p>
@@ -728,8 +709,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
     /// <p>Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that you specified.</p>
     pub fn set_instance_pools_to_use_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_pools_to_use_count = input;
-        self
+        self.instance_pools_to_use_count = input; self
     }
     /// <p>The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
     /// <p>Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that you specified.</p>
@@ -743,8 +723,7 @@ impl SpotFleetRequestConfigDataBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
     }
     /// <p>Reserved.</p>
     pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -759,8 +738,7 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>The unit for the target capacity. You can specify this parameter only when using attribute-based instance type selection.</p>
     /// <p>Default: <code>units</code> (the number of instances)</p>
     pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
-        self.target_capacity_unit_type = input;
-        self
+        self.target_capacity_unit_type = input; self
     }
     /// <p>The unit for the target capacity. You can specify this parameter only when using attribute-based instance type selection.</p>
     /// <p>Default: <code>units</code> (the number of instances)</p>
@@ -774,48 +752,74 @@ impl SpotFleetRequestConfigDataBuilder {
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`SpotFleetRequestConfigData`](crate::types::SpotFleetRequestConfigData).
     pub fn build(self) -> crate::types::SpotFleetRequestConfigData {
         crate::types::SpotFleetRequestConfigData {
-            allocation_strategy: self.allocation_strategy,
-            on_demand_allocation_strategy: self.on_demand_allocation_strategy,
-            spot_maintenance_strategies: self.spot_maintenance_strategies,
-            client_token: self.client_token,
-            excess_capacity_termination_policy: self.excess_capacity_termination_policy,
-            fulfilled_capacity: self.fulfilled_capacity,
-            on_demand_fulfilled_capacity: self.on_demand_fulfilled_capacity,
-            iam_fleet_role: self.iam_fleet_role,
-            launch_specifications: self.launch_specifications,
-            launch_template_configs: self.launch_template_configs,
-            spot_price: self.spot_price,
-            target_capacity: self.target_capacity,
-            on_demand_target_capacity: self.on_demand_target_capacity,
-            on_demand_max_total_price: self.on_demand_max_total_price,
-            spot_max_total_price: self.spot_max_total_price,
-            terminate_instances_with_expiration: self.terminate_instances_with_expiration,
-            r#type: self.r#type,
-            valid_from: self.valid_from,
-            valid_until: self.valid_until,
-            replace_unhealthy_instances: self.replace_unhealthy_instances,
-            instance_interruption_behavior: self.instance_interruption_behavior,
-            load_balancers_config: self.load_balancers_config,
-            instance_pools_to_use_count: self.instance_pools_to_use_count,
-            context: self.context,
-            target_capacity_unit_type: self.target_capacity_unit_type,
-            tag_specifications: self.tag_specifications,
+            allocation_strategy: self.allocation_strategy
+            ,
+            on_demand_allocation_strategy: self.on_demand_allocation_strategy
+            ,
+            spot_maintenance_strategies: self.spot_maintenance_strategies
+            ,
+            client_token: self.client_token
+            ,
+            excess_capacity_termination_policy: self.excess_capacity_termination_policy
+            ,
+            fulfilled_capacity: self.fulfilled_capacity
+            ,
+            on_demand_fulfilled_capacity: self.on_demand_fulfilled_capacity
+            ,
+            iam_fleet_role: self.iam_fleet_role
+            ,
+            launch_specifications: self.launch_specifications
+            ,
+            launch_template_configs: self.launch_template_configs
+            ,
+            spot_price: self.spot_price
+            ,
+            target_capacity: self.target_capacity
+            ,
+            on_demand_target_capacity: self.on_demand_target_capacity
+            ,
+            on_demand_max_total_price: self.on_demand_max_total_price
+            ,
+            spot_max_total_price: self.spot_max_total_price
+            ,
+            terminate_instances_with_expiration: self.terminate_instances_with_expiration
+            ,
+            r#type: self.r#type
+            ,
+            valid_from: self.valid_from
+            ,
+            valid_until: self.valid_until
+            ,
+            replace_unhealthy_instances: self.replace_unhealthy_instances
+            ,
+            instance_interruption_behavior: self.instance_interruption_behavior
+            ,
+            load_balancers_config: self.load_balancers_config
+            ,
+            instance_pools_to_use_count: self.instance_pools_to_use_count
+            ,
+            context: self.context
+            ,
+            target_capacity_unit_type: self.target_capacity_unit_type
+            ,
+            tag_specifications: self.tag_specifications
+            ,
         }
     }
 }
+

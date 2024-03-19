@@ -3,7 +3,7 @@
 /// <p>A collection of resources of the same type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceSetOutput {
+pub struct ResourceSetOutput  {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
     pub resource_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource set.</p>
@@ -12,32 +12,33 @@ pub struct ResourceSetOutput {
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub resource_set_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource objects.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ResourceSetOutput {
+impl  ResourceSetOutput  {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    pub fn resource_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_set_arn(&self) -> ::std::option::Option<& str> {
         self.resource_set_arn.as_deref()
     }
     /// <p>The name of the resource set.</p>
-    pub fn resource_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> ::std::option::Option<& str> {
         self.resource_set_name.as_deref()
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_set_type(&self) -> ::std::option::Option<& str> {
         self.resource_set_type.as_deref()
     }
     /// <p>A list of resource objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::Resource] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::Resource] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -55,8 +56,8 @@ pub struct ResourceSetOutputBuilder {
     pub(crate) resource_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_type: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ResourceSetOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
@@ -67,8 +68,7 @@ impl ResourceSetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
     pub fn set_resource_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_set_arn = input;
-        self
+        self.resource_set_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
     pub fn get_resource_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +82,7 @@ impl ResourceSetOutputBuilder {
     }
     /// <p>The name of the resource set.</p>
     pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_set_name = input;
-        self
+        self.resource_set_name = input; self
     }
     /// <p>The name of the resource set.</p>
     pub fn get_resource_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl ResourceSetOutputBuilder {
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub fn set_resource_set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_set_type = input;
-        self
+        self.resource_set_type = input; self
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
@@ -114,17 +112,16 @@ impl ResourceSetOutputBuilder {
     /// <p>A list of resource objects.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of resource objects.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.resources = input; self
     }
     /// <p>A list of resource objects.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.resources
     }
     /// Adds a key-value pair to `tags`.
@@ -134,27 +131,32 @@ impl ResourceSetOutputBuilder {
     /// <p>A collection of tags associated with a resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ResourceSetOutput`](crate::types::ResourceSetOutput).
     pub fn build(self) -> crate::types::ResourceSetOutput {
         crate::types::ResourceSetOutput {
-            resource_set_arn: self.resource_set_arn,
-            resource_set_name: self.resource_set_name,
-            resource_set_type: self.resource_set_type,
-            resources: self.resources,
-            tags: self.tags,
+            resource_set_arn: self.resource_set_arn
+            ,
+            resource_set_name: self.resource_set_name
+            ,
+            resource_set_type: self.resource_set_type
+            ,
+            resources: self.resources
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

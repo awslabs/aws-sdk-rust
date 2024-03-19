@@ -3,7 +3,7 @@
 /// <p>A pipeline consisting of a media capture, media concatenation, or live-streaming pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaPipeline {
+pub struct MediaPipeline  {
     /// <p>A pipeline that enables users to capture audio and video.</p>
     pub media_capture_pipeline: ::std::option::Option<crate::types::MediaCapturePipeline>,
     /// <p>The connector pipeline of the media pipeline.</p>
@@ -15,25 +15,25 @@ pub struct MediaPipeline {
     /// <p>Designates a media pipeline as a media stream pipeline.</p>
     pub media_stream_pipeline: ::std::option::Option<crate::types::MediaStreamPipeline>,
 }
-impl MediaPipeline {
+impl  MediaPipeline  {
     /// <p>A pipeline that enables users to capture audio and video.</p>
-    pub fn media_capture_pipeline(&self) -> ::std::option::Option<&crate::types::MediaCapturePipeline> {
+    pub fn media_capture_pipeline(&self) -> ::std::option::Option<& crate::types::MediaCapturePipeline> {
         self.media_capture_pipeline.as_ref()
     }
     /// <p>The connector pipeline of the media pipeline.</p>
-    pub fn media_live_connector_pipeline(&self) -> ::std::option::Option<&crate::types::MediaLiveConnectorPipeline> {
+    pub fn media_live_connector_pipeline(&self) -> ::std::option::Option<& crate::types::MediaLiveConnectorPipeline> {
         self.media_live_connector_pipeline.as_ref()
     }
     /// <p>The media concatenation pipeline in a media pipeline.</p>
-    pub fn media_concatenation_pipeline(&self) -> ::std::option::Option<&crate::types::MediaConcatenationPipeline> {
+    pub fn media_concatenation_pipeline(&self) -> ::std::option::Option<& crate::types::MediaConcatenationPipeline> {
         self.media_concatenation_pipeline.as_ref()
     }
     /// <p>The media insights pipeline of a media pipeline.</p>
-    pub fn media_insights_pipeline(&self) -> ::std::option::Option<&crate::types::MediaInsightsPipeline> {
+    pub fn media_insights_pipeline(&self) -> ::std::option::Option<& crate::types::MediaInsightsPipeline> {
         self.media_insights_pipeline.as_ref()
     }
     /// <p>Designates a media pipeline as a media stream pipeline.</p>
-    pub fn media_stream_pipeline(&self) -> ::std::option::Option<&crate::types::MediaStreamPipeline> {
+    pub fn media_stream_pipeline(&self) -> ::std::option::Option<& crate::types::MediaStreamPipeline> {
         self.media_stream_pipeline.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl MediaPipelineBuilder {
     }
     /// <p>A pipeline that enables users to capture audio and video.</p>
     pub fn set_media_capture_pipeline(mut self, input: ::std::option::Option<crate::types::MediaCapturePipeline>) -> Self {
-        self.media_capture_pipeline = input;
-        self
+        self.media_capture_pipeline = input; self
     }
     /// <p>A pipeline that enables users to capture audio and video.</p>
     pub fn get_media_capture_pipeline(&self) -> &::std::option::Option<crate::types::MediaCapturePipeline> {
@@ -76,8 +75,7 @@ impl MediaPipelineBuilder {
     }
     /// <p>The connector pipeline of the media pipeline.</p>
     pub fn set_media_live_connector_pipeline(mut self, input: ::std::option::Option<crate::types::MediaLiveConnectorPipeline>) -> Self {
-        self.media_live_connector_pipeline = input;
-        self
+        self.media_live_connector_pipeline = input; self
     }
     /// <p>The connector pipeline of the media pipeline.</p>
     pub fn get_media_live_connector_pipeline(&self) -> &::std::option::Option<crate::types::MediaLiveConnectorPipeline> {
@@ -90,8 +88,7 @@ impl MediaPipelineBuilder {
     }
     /// <p>The media concatenation pipeline in a media pipeline.</p>
     pub fn set_media_concatenation_pipeline(mut self, input: ::std::option::Option<crate::types::MediaConcatenationPipeline>) -> Self {
-        self.media_concatenation_pipeline = input;
-        self
+        self.media_concatenation_pipeline = input; self
     }
     /// <p>The media concatenation pipeline in a media pipeline.</p>
     pub fn get_media_concatenation_pipeline(&self) -> &::std::option::Option<crate::types::MediaConcatenationPipeline> {
@@ -104,8 +101,7 @@ impl MediaPipelineBuilder {
     }
     /// <p>The media insights pipeline of a media pipeline.</p>
     pub fn set_media_insights_pipeline(mut self, input: ::std::option::Option<crate::types::MediaInsightsPipeline>) -> Self {
-        self.media_insights_pipeline = input;
-        self
+        self.media_insights_pipeline = input; self
     }
     /// <p>The media insights pipeline of a media pipeline.</p>
     pub fn get_media_insights_pipeline(&self) -> &::std::option::Option<crate::types::MediaInsightsPipeline> {
@@ -118,8 +114,7 @@ impl MediaPipelineBuilder {
     }
     /// <p>Designates a media pipeline as a media stream pipeline.</p>
     pub fn set_media_stream_pipeline(mut self, input: ::std::option::Option<crate::types::MediaStreamPipeline>) -> Self {
-        self.media_stream_pipeline = input;
-        self
+        self.media_stream_pipeline = input; self
     }
     /// <p>Designates a media pipeline as a media stream pipeline.</p>
     pub fn get_media_stream_pipeline(&self) -> &::std::option::Option<crate::types::MediaStreamPipeline> {
@@ -128,11 +123,17 @@ impl MediaPipelineBuilder {
     /// Consumes the builder and constructs a [`MediaPipeline`](crate::types::MediaPipeline).
     pub fn build(self) -> crate::types::MediaPipeline {
         crate::types::MediaPipeline {
-            media_capture_pipeline: self.media_capture_pipeline,
-            media_live_connector_pipeline: self.media_live_connector_pipeline,
-            media_concatenation_pipeline: self.media_concatenation_pipeline,
-            media_insights_pipeline: self.media_insights_pipeline,
-            media_stream_pipeline: self.media_stream_pipeline,
+            media_capture_pipeline: self.media_capture_pipeline
+            ,
+            media_live_connector_pipeline: self.media_live_connector_pipeline
+            ,
+            media_concatenation_pipeline: self.media_concatenation_pipeline
+            ,
+            media_insights_pipeline: self.media_insights_pipeline
+            ,
+            media_stream_pipeline: self.media_stream_pipeline
+            ,
         }
     }
 }
+

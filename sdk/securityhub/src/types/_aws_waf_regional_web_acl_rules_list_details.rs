@@ -3,7 +3,7 @@
 /// <p>A combination of <code>ByteMatchSet</code>, <code>IPSet</code>, and/or <code>SqlInjectionMatchSet</code> objects that identify the web requests that you want to allow, block, or count.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafRegionalWebAclRulesListDetails {
+pub struct AwsWafRegionalWebAclRulesListDetails  {
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request.</p>
     pub action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>,
     /// <p>Overrides the rule evaluation result in the rule group.</p>
@@ -15,13 +15,13 @@ pub struct AwsWafRegionalWebAclRulesListDetails {
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsWafRegionalWebAclRulesListDetails {
+impl  AwsWafRegionalWebAclRulesListDetails  {
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::AwsWafRegionalWebAclRulesListActionDetails> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::AwsWafRegionalWebAclRulesListActionDetails> {
         self.action.as_ref()
     }
     /// <p>Overrides the rule evaluation result in the rule group.</p>
-    pub fn override_action(&self) -> ::std::option::Option<&crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails> {
+    pub fn override_action(&self) -> ::std::option::Option<& crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails> {
         self.override_action.as_ref()
     }
     /// <p>The order in which WAF evaluates the rules in a web ACL.</p>
@@ -29,11 +29,11 @@ impl AwsWafRegionalWebAclRulesListDetails {
         self.priority
     }
     /// <p>The ID of an WAF Regional rule to associate with a web ACL.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     }
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails> {
@@ -76,8 +75,7 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     }
     /// <p>Overrides the rule evaluation result in the rule group.</p>
     pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>) -> Self {
-        self.override_action = input;
-        self
+        self.override_action = input; self
     }
     /// <p>Overrides the rule evaluation result in the rule group.</p>
     pub fn get_override_action(&self) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails> {
@@ -90,8 +88,7 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     }
     /// <p>The order in which WAF evaluates the rules in a web ACL.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The order in which WAF evaluates the rules in a web ACL.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     }
     /// <p>The ID of an WAF Regional rule to associate with a web ACL.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The ID of an WAF Regional rule to associate with a web ACL.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     }
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListDetails`](crate::types::AwsWafRegionalWebAclRulesListDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListDetails {
         crate::types::AwsWafRegionalWebAclRulesListDetails {
-            action: self.action,
-            override_action: self.override_action,
-            priority: self.priority,
-            rule_id: self.rule_id,
-            r#type: self.r#type,
+            action: self.action
+            ,
+            override_action: self.override_action
+            ,
+            priority: self.priority
+            ,
+            rule_id: self.rule_id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

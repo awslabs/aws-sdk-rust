@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecordOutput {
+pub struct GetRecordOutput  {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-    pub record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
+    pub record: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureValue>>,
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub expires_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetRecordOutput {
+impl  GetRecordOutput  {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record.is_none()`.
-    pub fn record(&self) -> &[crate::types::FeatureValue] {
-        self.record.as_deref().unwrap_or_default()
+    pub fn record(&self) -> & [crate::types::FeatureValue] {
+        self.record.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
-    pub fn expires_at(&self) -> ::std::option::Option<&str> {
+    pub fn expires_at(&self) -> ::std::option::Option<& str> {
         self.expires_at.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRecordOutput {
     /// Creates a new builder-style object to manufacture [`GetRecordOutput`](crate::operation::get_record::GetRecordOutput).
     pub fn builder() -> crate::operation::get_record::builders::GetRecordOutputBuilder {
@@ -37,7 +38,7 @@ impl GetRecordOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordOutputBuilder {
-    pub(crate) record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
+    pub(crate) record: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureValue>>,
     pub(crate) expires_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetRecordOutputBuilder {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
     pub fn record(mut self, input: crate::types::FeatureValue) -> Self {
         let mut v = self.record.unwrap_or_default();
-        v.push(input);
-        self.record = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.record = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-    pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>) -> Self {
-        self.record = input;
-        self
+    pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureValue>>) -> Self {
+        self.record = input; self
     }
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-    pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+    pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureValue>> {
         &self.record
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
@@ -69,28 +69,30 @@ impl GetRecordOutputBuilder {
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub fn set_expires_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expires_at = input;
-        self
+        self.expires_at = input; self
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub fn get_expires_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.expires_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRecordOutput`](crate::operation::get_record::GetRecordOutput).
     pub fn build(self) -> crate::operation::get_record::GetRecordOutput {
         crate::operation::get_record::GetRecordOutput {
-            record: self.record,
-            expires_at: self.expires_at,
+            record: self.record
+            ,
+            expires_at: self.expires_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

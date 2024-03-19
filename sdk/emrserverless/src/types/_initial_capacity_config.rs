@@ -3,19 +3,19 @@
 /// <p>The initial capacity configuration per worker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InitialCapacityConfig {
+pub struct InitialCapacityConfig  {
     /// <p>The number of workers in the initial capacity configuration.</p>
     pub worker_count: i64,
     /// <p>The resource configuration of the initial capacity configuration.</p>
     pub worker_configuration: ::std::option::Option<crate::types::WorkerResourceConfig>,
 }
-impl InitialCapacityConfig {
+impl  InitialCapacityConfig  {
     /// <p>The number of workers in the initial capacity configuration.</p>
     pub fn worker_count(&self) -> i64 {
         self.worker_count
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
-    pub fn worker_configuration(&self) -> ::std::option::Option<&crate::types::WorkerResourceConfig> {
+    pub fn worker_configuration(&self) -> ::std::option::Option<& crate::types::WorkerResourceConfig> {
         self.worker_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl InitialCapacityConfigBuilder {
     }
     /// <p>The number of workers in the initial capacity configuration.</p>
     pub fn set_worker_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.worker_count = input;
-        self
+        self.worker_count = input; self
     }
     /// <p>The number of workers in the initial capacity configuration.</p>
     pub fn get_worker_count(&self) -> &::std::option::Option<i64> {
@@ -56,8 +55,7 @@ impl InitialCapacityConfigBuilder {
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
     pub fn set_worker_configuration(mut self, input: ::std::option::Option<crate::types::WorkerResourceConfig>) -> Self {
-        self.worker_configuration = input;
-        self
+        self.worker_configuration = input; self
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
     pub fn get_worker_configuration(&self) -> &::std::option::Option<crate::types::WorkerResourceConfig> {
@@ -67,14 +65,17 @@ impl InitialCapacityConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`worker_count`](crate::types::builders::InitialCapacityConfigBuilder::worker_count)
     pub fn build(self) -> ::std::result::Result<crate::types::InitialCapacityConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InitialCapacityConfig {
-            worker_count: self.worker_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "worker_count",
-                    "worker_count was not specified but it is required when building InitialCapacityConfig",
-                )
-            })?,
-            worker_configuration: self.worker_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InitialCapacityConfig {
+                worker_count: self.worker_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("worker_count", "worker_count was not specified but it is required when building InitialCapacityConfig")
+                    )?
+                ,
+                worker_configuration: self.worker_configuration
+                ,
+            }
+        )
     }
 }
+

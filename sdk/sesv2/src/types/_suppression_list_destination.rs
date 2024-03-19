@@ -3,7 +3,7 @@
 /// <p>An object that contains details about the action of suppression list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuppressionListDestination {
+pub struct SuppressionListDestination  {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
     /// <li>
@@ -13,7 +13,7 @@ pub struct SuppressionListDestination {
     /// </ul>
     pub suppression_list_import_action: crate::types::SuppressionListImportAction,
 }
-impl SuppressionListDestination {
+impl  SuppressionListDestination  {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ impl SuppressionListDestination {
     /// <li>
     /// <p>DELETE: remove the addresses from the suppression list.</p></li>
     /// </ul>
-    pub fn suppression_list_import_action(&self) -> &crate::types::SuppressionListImportAction {
+    pub fn suppression_list_import_action(&self) -> & crate::types::SuppressionListImportAction {
         &self.suppression_list_import_action
     }
 }
@@ -59,8 +59,7 @@ impl SuppressionListDestinationBuilder {
     /// <p>DELETE: remove the addresses from the suppression list.</p></li>
     /// </ul>
     pub fn set_suppression_list_import_action(mut self, input: ::std::option::Option<crate::types::SuppressionListImportAction>) -> Self {
-        self.suppression_list_import_action = input;
-        self
+        self.suppression_list_import_action = input; self
     }
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
@@ -76,13 +75,15 @@ impl SuppressionListDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`suppression_list_import_action`](crate::types::builders::SuppressionListDestinationBuilder::suppression_list_import_action)
     pub fn build(self) -> ::std::result::Result<crate::types::SuppressionListDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SuppressionListDestination {
-            suppression_list_import_action: self.suppression_list_import_action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "suppression_list_import_action",
-                    "suppression_list_import_action was not specified but it is required when building SuppressionListDestination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SuppressionListDestination {
+                suppression_list_import_action: self.suppression_list_import_action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("suppression_list_import_action", "suppression_list_import_action was not specified but it is required when building SuppressionListDestination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

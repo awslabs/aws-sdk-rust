@@ -3,13 +3,13 @@
 /// <p>DeleteLocation</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLocationInput {
+pub struct DeleteLocationInput  {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLocationInput {
+impl  DeleteLocationInput  {
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteLocationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
     /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::operation::delete_location::DeleteLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_location::DeleteLocationInput {
-            location_arn: self.location_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_location::DeleteLocationInput {
+                location_arn: self.location_arn
+                ,
+            }
+        )
     }
 }
+

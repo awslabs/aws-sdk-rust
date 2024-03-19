@@ -3,13 +3,13 @@
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerlessClientAuthentication {
+pub struct ServerlessClientAuthentication  {
     /// <p>Details for ClientAuthentication using SASL.</p>
     pub sasl: ::std::option::Option<crate::types::ServerlessSasl>,
 }
-impl ServerlessClientAuthentication {
+impl  ServerlessClientAuthentication  {
     /// <p>Details for ClientAuthentication using SASL.</p>
-    pub fn sasl(&self) -> ::std::option::Option<&crate::types::ServerlessSasl> {
+    pub fn sasl(&self) -> ::std::option::Option<& crate::types::ServerlessSasl> {
         self.sasl.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ServerlessClientAuthenticationBuilder {
     }
     /// <p>Details for ClientAuthentication using SASL.</p>
     pub fn set_sasl(mut self, input: ::std::option::Option<crate::types::ServerlessSasl>) -> Self {
-        self.sasl = input;
-        self
+        self.sasl = input; self
     }
     /// <p>Details for ClientAuthentication using SASL.</p>
     pub fn get_sasl(&self) -> &::std::option::Option<crate::types::ServerlessSasl> {
@@ -43,6 +42,10 @@ impl ServerlessClientAuthenticationBuilder {
     }
     /// Consumes the builder and constructs a [`ServerlessClientAuthentication`](crate::types::ServerlessClientAuthentication).
     pub fn build(self) -> crate::types::ServerlessClientAuthentication {
-        crate::types::ServerlessClientAuthentication { sasl: self.sasl }
+        crate::types::ServerlessClientAuthentication {
+            sasl: self.sasl
+            ,
+        }
     }
 }
+

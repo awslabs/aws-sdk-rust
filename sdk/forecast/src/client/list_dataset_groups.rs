@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatasetGroups`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of items to return in the response.</p><br>
-    /// - On success, responds with [`ListDatasetGroupsOutput`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListDatasetGroupsOutput`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput) with field(s):
     ///   - [`dataset_groups(Option<Vec::<DatasetGroupSummary>>)`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput::dataset_groups): <p>An array of objects that summarize each dataset group's properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListDatasetGroupsError>`](crate::operation::list_dataset_groups::ListDatasetGroupsError)
+                            /// - On failure, responds with [`SdkError<ListDatasetGroupsError>`](crate::operation::list_dataset_groups::ListDatasetGroupsError)
     pub fn list_dataset_groups(&self) -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder {
-        crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dataset_groups::builders::ListDatasetGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

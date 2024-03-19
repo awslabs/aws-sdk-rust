@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFlowTemplateInput {
+pub struct CreateFlowTemplateInput  {
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The namespace version in which the workflow is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub compatible_namespace_version: ::std::option::Option<i64>,
 }
-impl CreateFlowTemplateInput {
+impl  CreateFlowTemplateInput  {
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The namespace version in which the workflow is to be created.</p>
@@ -43,8 +43,7 @@ impl CreateFlowTemplateInputBuilder {
     }
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
@@ -59,8 +58,7 @@ impl CreateFlowTemplateInputBuilder {
     /// <p>The namespace version in which the workflow is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn set_compatible_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.compatible_namespace_version = input;
-        self
+        self.compatible_namespace_version = input; self
     }
     /// <p>The namespace version in which the workflow is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
@@ -68,13 +66,15 @@ impl CreateFlowTemplateInputBuilder {
         &self.compatible_namespace_version
     }
     /// Consumes the builder and constructs a [`CreateFlowTemplateInput`](crate::operation::create_flow_template::CreateFlowTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_flow_template::CreateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_flow_template::CreateFlowTemplateInput {
-            definition: self.definition,
-            compatible_namespace_version: self.compatible_namespace_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_flow_template::CreateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_flow_template::CreateFlowTemplateInput {
+                definition: self.definition
+                ,
+                compatible_namespace_version: self.compatible_namespace_version
+                ,
+            }
+        )
     }
 }
+

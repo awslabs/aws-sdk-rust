@@ -3,21 +3,22 @@
 /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommenderConfigurationsResponse {
+pub struct ListRecommenderConfigurationsResponse  {
     /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
-    pub item: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderConfigurationResponse>>,
+    pub item: ::std::option::Option<::std::vec::Vec::<crate::types::RecommenderConfigurationResponse>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListRecommenderConfigurationsResponse {
+impl  ListRecommenderConfigurationsResponse  {
     /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item.is_none()`.
-    pub fn item(&self) -> &[crate::types::RecommenderConfigurationResponse] {
-        self.item.as_deref().unwrap_or_default()
+    pub fn item(&self) -> & [crate::types::RecommenderConfigurationResponse] {
+        self.item.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl ListRecommenderConfigurationsResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommenderConfigurationsResponseBuilder {
-    pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderConfigurationResponse>>,
+    pub(crate) item: ::std::option::Option<::std::vec::Vec::<crate::types::RecommenderConfigurationResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRecommenderConfigurationsResponseBuilder {
@@ -43,17 +44,16 @@ impl ListRecommenderConfigurationsResponseBuilder {
     /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
     pub fn item(mut self, input: crate::types::RecommenderConfigurationResponse) -> Self {
         let mut v = self.item.unwrap_or_default();
-        v.push(input);
-        self.item = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.item = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
-    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderConfigurationResponse>>) -> Self {
-        self.item = input;
-        self
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommenderConfigurationResponse>>) -> Self {
+        self.item = input; self
     }
     /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
-    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommenderConfigurationResponse>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommenderConfigurationResponse>> {
         &self.item
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -63,8 +63,7 @@ impl ListRecommenderConfigurationsResponseBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl ListRecommenderConfigurationsResponseBuilder {
     /// Consumes the builder and constructs a [`ListRecommenderConfigurationsResponse`](crate::types::ListRecommenderConfigurationsResponse).
     pub fn build(self) -> crate::types::ListRecommenderConfigurationsResponse {
         crate::types::ListRecommenderConfigurationsResponse {
-            item: self.item,
-            next_token: self.next_token,
+            item: self.item
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

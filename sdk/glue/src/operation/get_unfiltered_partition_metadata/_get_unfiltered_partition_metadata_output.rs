@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUnfilteredPartitionMetadataOutput {
+pub struct GetUnfilteredPartitionMetadataOutput  {
     /// <p>A Partition object containing the partition metadata.</p>
     pub partition: ::std::option::Option<crate::types::Partition>,
     /// <p>A list of column names that the user has been granted access to.</p>
-    pub authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub is_registered_with_lake_formation: bool,
     _request_id: Option<String>,
 }
-impl GetUnfilteredPartitionMetadataOutput {
+impl  GetUnfilteredPartitionMetadataOutput  {
     /// <p>A Partition object containing the partition metadata.</p>
-    pub fn partition(&self) -> ::std::option::Option<&crate::types::Partition> {
+    pub fn partition(&self) -> ::std::option::Option<& crate::types::Partition> {
         self.partition.as_ref()
     }
     /// <p>A list of column names that the user has been granted access to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_columns.is_none()`.
-    pub fn authorized_columns(&self) -> &[::std::string::String] {
-        self.authorized_columns.as_deref().unwrap_or_default()
+    pub fn authorized_columns(&self) -> & [::std::string::String] {
+        self.authorized_columns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(&self) -> bool {
@@ -28,10 +29,10 @@ impl GetUnfilteredPartitionMetadataOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetUnfilteredPartitionMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetUnfilteredPartitionMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionMetadataOutput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput).
     pub fn builder() -> crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataOutputBuilder {
@@ -44,7 +45,7 @@ impl GetUnfilteredPartitionMetadataOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataOutputBuilder {
     pub(crate) partition: ::std::option::Option<crate::types::Partition>,
-    pub(crate) authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorized_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) is_registered_with_lake_formation: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -56,8 +57,7 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
     }
     /// <p>A Partition object containing the partition metadata.</p>
     pub fn set_partition(mut self, input: ::std::option::Option<crate::types::Partition>) -> Self {
-        self.partition = input;
-        self
+        self.partition = input; self
     }
     /// <p>A Partition object containing the partition metadata.</p>
     pub fn get_partition(&self) -> &::std::option::Option<crate::types::Partition> {
@@ -70,17 +70,16 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
     /// <p>A list of column names that the user has been granted access to.</p>
     pub fn authorized_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_columns.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of column names that the user has been granted access to.</p>
-    pub fn set_authorized_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_columns = input;
-        self
+    pub fn set_authorized_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_columns = input; self
     }
     /// <p>A list of column names that the user has been granted access to.</p>
-    pub fn get_authorized_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_columns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_columns
     }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
@@ -90,29 +89,33 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
     }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn set_is_registered_with_lake_formation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_registered_with_lake_formation = input;
-        self
+        self.is_registered_with_lake_formation = input; self
     }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn get_is_registered_with_lake_formation(&self) -> &::std::option::Option<bool> {
         &self.is_registered_with_lake_formation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetUnfilteredPartitionMetadataOutput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput).
     pub fn build(self) -> crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput {
         crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput {
-            partition: self.partition,
-            authorized_columns: self.authorized_columns,
-            is_registered_with_lake_formation: self.is_registered_with_lake_formation.unwrap_or_default(),
+            partition: self.partition
+            ,
+            authorized_columns: self.authorized_columns
+            ,
+            is_registered_with_lake_formation: self.is_registered_with_lake_formation
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBlueprintsOutput {
+pub struct ListBlueprintsOutput  {
     /// <p>List of names of blueprints in the account.</p>
-    pub blueprints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub blueprints: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A continuation token, if not all blueprint names have been returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBlueprintsOutput {
+impl  ListBlueprintsOutput  {
     /// <p>List of names of blueprints in the account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprints.is_none()`.
-    pub fn blueprints(&self) -> &[::std::string::String] {
-        self.blueprints.as_deref().unwrap_or_default()
+    pub fn blueprints(&self) -> & [::std::string::String] {
+        self.blueprints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A continuation token, if not all blueprint names have been returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBlueprintsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBlueprintsOutput {
     /// Creates a new builder-style object to manufacture [`ListBlueprintsOutput`](crate::operation::list_blueprints::ListBlueprintsOutput).
     pub fn builder() -> crate::operation::list_blueprints::builders::ListBlueprintsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListBlueprintsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBlueprintsOutputBuilder {
-    pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) blueprints: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListBlueprintsOutputBuilder {
     /// <p>List of names of blueprints in the account.</p>
     pub fn blueprints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blueprints.unwrap_or_default();
-        v.push(input.into());
-        self.blueprints = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.blueprints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of names of blueprints in the account.</p>
-    pub fn set_blueprints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.blueprints = input;
-        self
+    pub fn set_blueprints(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.blueprints = input; self
     }
     /// <p>List of names of blueprints in the account.</p>
-    pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.blueprints
     }
     /// <p>A continuation token, if not all blueprint names have been returned.</p>
@@ -69,28 +69,30 @@ impl ListBlueprintsOutputBuilder {
     }
     /// <p>A continuation token, if not all blueprint names have been returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if not all blueprint names have been returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBlueprintsOutput`](crate::operation::list_blueprints::ListBlueprintsOutput).
     pub fn build(self) -> crate::operation::list_blueprints::ListBlueprintsOutput {
         crate::operation::list_blueprints::ListBlueprintsOutput {
-            blueprints: self.blueprints,
-            next_token: self.next_token,
+            blueprints: self.blueprints
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

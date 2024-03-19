@@ -3,7 +3,7 @@
 /// <p>Defines a prepaid pricing model where the customers are charged a fixed upfront amount.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FixedUpfrontPricingTerm {
+pub struct FixedUpfrontPricingTerm  {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Defines the currency for the prices mentioned in this term.</p>
@@ -13,30 +13,31 @@ pub struct FixedUpfrontPricingTerm {
     /// <p>Fixed amount to be charged to the customer when this term is accepted.</p>
     pub price: ::std::option::Option<::std::string::String>,
     /// <p>Entitlements granted to the acceptor of fixed upfront as part of agreement execution.</p>
-    pub grants: ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>>,
+    pub grants: ::std::option::Option<::std::vec::Vec::<crate::types::GrantItem>>,
 }
-impl FixedUpfrontPricingTerm {
+impl  FixedUpfrontPricingTerm  {
     /// <p>Category of the term being updated.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Defines the currency for the prices mentioned in this term.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>Contract duration for the terms.</p>
-    pub fn duration(&self) -> ::std::option::Option<&str> {
+    pub fn duration(&self) -> ::std::option::Option<& str> {
         self.duration.as_deref()
     }
     /// <p>Fixed amount to be charged to the customer when this term is accepted.</p>
-    pub fn price(&self) -> ::std::option::Option<&str> {
+    pub fn price(&self) -> ::std::option::Option<& str> {
         self.price.as_deref()
     }
     /// <p>Entitlements granted to the acceptor of fixed upfront as part of agreement execution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grants.is_none()`.
-    pub fn grants(&self) -> &[crate::types::GrantItem] {
-        self.grants.as_deref().unwrap_or_default()
+    pub fn grants(&self) -> & [crate::types::GrantItem] {
+        self.grants.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FixedUpfrontPricingTerm {
@@ -54,7 +55,7 @@ pub struct FixedUpfrontPricingTermBuilder {
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<::std::string::String>,
     pub(crate) price: ::std::option::Option<::std::string::String>,
-    pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>>,
+    pub(crate) grants: ::std::option::Option<::std::vec::Vec::<crate::types::GrantItem>>,
 }
 impl FixedUpfrontPricingTermBuilder {
     /// <p>Category of the term being updated.</p>
@@ -64,8 +65,7 @@ impl FixedUpfrontPricingTermBuilder {
     }
     /// <p>Category of the term being updated.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl FixedUpfrontPricingTermBuilder {
     }
     /// <p>Defines the currency for the prices mentioned in this term.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>Defines the currency for the prices mentioned in this term.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl FixedUpfrontPricingTermBuilder {
     }
     /// <p>Contract duration for the terms.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>Contract duration for the terms.</p>
     pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl FixedUpfrontPricingTermBuilder {
     }
     /// <p>Fixed amount to be charged to the customer when this term is accepted.</p>
     pub fn set_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>Fixed amount to be charged to the customer when this term is accepted.</p>
     pub fn get_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,27 +117,32 @@ impl FixedUpfrontPricingTermBuilder {
     /// <p>Entitlements granted to the acceptor of fixed upfront as part of agreement execution.</p>
     pub fn grants(mut self, input: crate::types::GrantItem) -> Self {
         let mut v = self.grants.unwrap_or_default();
-        v.push(input);
-        self.grants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.grants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Entitlements granted to the acceptor of fixed upfront as part of agreement execution.</p>
-    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>>) -> Self {
-        self.grants = input;
-        self
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GrantItem>>) -> Self {
+        self.grants = input; self
     }
     /// <p>Entitlements granted to the acceptor of fixed upfront as part of agreement execution.</p>
-    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantItem>> {
+    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GrantItem>> {
         &self.grants
     }
     /// Consumes the builder and constructs a [`FixedUpfrontPricingTerm`](crate::types::FixedUpfrontPricingTerm).
     pub fn build(self) -> crate::types::FixedUpfrontPricingTerm {
         crate::types::FixedUpfrontPricingTerm {
-            r#type: self.r#type,
-            currency_code: self.currency_code,
-            duration: self.duration,
-            price: self.price,
-            grants: self.grants,
+            r#type: self.r#type
+            ,
+            currency_code: self.currency_code
+            ,
+            duration: self.duration
+            ,
+            price: self.price
+            ,
+            grants: self.grants
+            ,
         }
     }
 }
+

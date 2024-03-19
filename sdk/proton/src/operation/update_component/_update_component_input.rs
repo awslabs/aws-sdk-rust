@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateComponentInput {
+pub struct UpdateComponentInput  {
     /// <p>The name of the component to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
@@ -34,9 +34,9 @@ pub struct UpdateComponentInput {
     /// <p>The client token for the updated component.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateComponentInput {
+impl  UpdateComponentInput  {
     /// <p>The name of the component to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
@@ -52,37 +52,37 @@ impl UpdateComponentInput {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::ComponentDeploymentUpdateType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& crate::types::ComponentDeploymentUpdateType> {
         self.deployment_type.as_ref()
     }
     /// <p>An optional customer-provided description of the component.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> ::std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
-    pub fn service_spec(&self) -> ::std::option::Option<&str> {
+    pub fn service_spec(&self) -> ::std::option::Option<& str> {
         self.service_spec.as_deref()
     }
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub fn template_file(&self) -> ::std::option::Option<&str> {
+    pub fn template_file(&self) -> ::std::option::Option<& str> {
         self.template_file.as_deref()
     }
     /// <p>The client token for the updated component.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateComponentInput {
+impl  ::std::fmt::Debug for UpdateComponentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateComponentInput");
         formatter.field("name", &self.name);
@@ -125,8 +125,7 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The name of the component to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the component to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +163,7 @@ impl UpdateComponentInputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::ComponentDeploymentUpdateType>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
     /// <dl>
@@ -190,8 +188,7 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>An optional customer-provided description of the component.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional customer-provided description of the component.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +201,7 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +214,7 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
     pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_instance_name = input;
-        self
+        self.service_instance_name = input; self
     }
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
     pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +227,7 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
     pub fn set_service_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_spec = input;
-        self
+        self.service_spec = input; self
     }
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
     pub fn get_service_spec(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +244,7 @@ impl UpdateComponentInputBuilder {
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
     pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_file = input;
-        self
+        self.template_file = input; self
     }
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p><note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
@@ -266,27 +259,34 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The client token for the updated component.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token for the updated component.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_component::UpdateComponentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_component::UpdateComponentInput {
-            name: self.name,
-            deployment_type: self.deployment_type,
-            description: self.description,
-            service_name: self.service_name,
-            service_instance_name: self.service_instance_name,
-            service_spec: self.service_spec,
-            template_file: self.template_file,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_component::UpdateComponentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_component::UpdateComponentInput {
+                name: self.name
+                ,
+                deployment_type: self.deployment_type
+                ,
+                description: self.description
+                ,
+                service_name: self.service_name
+                ,
+                service_instance_name: self.service_instance_name
+                ,
+                service_spec: self.service_spec
+                ,
+                template_file: self.template_file
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateComponentInputBuilder {
@@ -303,3 +303,4 @@ impl ::std::fmt::Debug for UpdateComponentInputBuilder {
         formatter.finish()
     }
 }
+

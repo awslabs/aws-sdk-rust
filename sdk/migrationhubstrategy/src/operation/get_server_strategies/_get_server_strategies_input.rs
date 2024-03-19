@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServerStrategiesInput {
+pub struct GetServerStrategiesInput  {
     /// <p>The ID of the server.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
 }
-impl GetServerStrategiesInput {
+impl  GetServerStrategiesInput  {
     /// <p>The ID of the server.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetServerStrategiesInputBuilder {
     }
     /// <p>The ID of the server.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The ID of the server.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_server_strategies::GetServerStrategiesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_server_strategies::GetServerStrategiesInput { server_id: self.server_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_server_strategies::GetServerStrategiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_server_strategies::GetServerStrategiesInput {
+                server_id: self.server_id
+                ,
+            }
+        )
     }
 }
+

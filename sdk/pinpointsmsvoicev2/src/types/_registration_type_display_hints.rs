@@ -3,7 +3,7 @@
 /// <p>Provides help information on the registration type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationTypeDisplayHints {
+pub struct RegistrationTypeDisplayHints  {
     /// <p>The title of the display hint.</p>
     pub title: ::std::string::String,
     /// <p>A short description of the display hint.</p>
@@ -15,26 +15,25 @@ pub struct RegistrationTypeDisplayHints {
     /// <p>The link to the document the display hint is associated with.</p>
     pub documentation_link: ::std::option::Option<::std::string::String>,
 }
-impl RegistrationTypeDisplayHints {
+impl  RegistrationTypeDisplayHints  {
     /// <p>The title of the display hint.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>A short description of the display hint.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>A full description of the display hint.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>The title of the document the display hint is associated with.</p>
-    pub fn documentation_title(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_title(&self) -> ::std::option::Option<& str> {
         self.documentation_title.as_deref()
     }
     /// <p>The link to the document the display hint is associated with.</p>
-    pub fn documentation_link(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_link(&self) -> ::std::option::Option<& str> {
         self.documentation_link.as_deref()
     }
 }
@@ -64,8 +63,7 @@ impl RegistrationTypeDisplayHintsBuilder {
     }
     /// <p>The title of the display hint.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the display hint.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl RegistrationTypeDisplayHintsBuilder {
     }
     /// <p>A short description of the display hint.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>A short description of the display hint.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl RegistrationTypeDisplayHintsBuilder {
     }
     /// <p>A full description of the display hint.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>A full description of the display hint.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +102,7 @@ impl RegistrationTypeDisplayHintsBuilder {
     }
     /// <p>The title of the document the display hint is associated with.</p>
     pub fn set_documentation_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_title = input;
-        self
+        self.documentation_title = input; self
     }
     /// <p>The title of the document the display hint is associated with.</p>
     pub fn get_documentation_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +115,7 @@ impl RegistrationTypeDisplayHintsBuilder {
     }
     /// <p>The link to the document the display hint is associated with.</p>
     pub fn set_documentation_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_link = input;
-        self
+        self.documentation_link = input; self
     }
     /// <p>The link to the document the display hint is associated with.</p>
     pub fn get_documentation_link(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,17 +125,23 @@ impl RegistrationTypeDisplayHintsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`title`](crate::types::builders::RegistrationTypeDisplayHintsBuilder::title)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationTypeDisplayHints, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationTypeDisplayHints {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building RegistrationTypeDisplayHints",
-                )
-            })?,
-            short_description: self.short_description,
-            long_description: self.long_description,
-            documentation_title: self.documentation_title,
-            documentation_link: self.documentation_link,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationTypeDisplayHints {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building RegistrationTypeDisplayHints")
+                    )?
+                ,
+                short_description: self.short_description
+                ,
+                long_description: self.long_description
+                ,
+                documentation_title: self.documentation_title
+                ,
+                documentation_link: self.documentation_link
+                ,
+            }
+        )
     }
 }
+

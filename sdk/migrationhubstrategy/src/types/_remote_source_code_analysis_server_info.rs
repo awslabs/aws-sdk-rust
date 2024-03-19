@@ -3,13 +3,13 @@
 /// <p>Information about the server configured for source code analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoteSourceCodeAnalysisServerInfo {
+pub struct RemoteSourceCodeAnalysisServerInfo  {
     /// <p>The time when the remote source code server was configured.</p>
     pub remote_source_code_analysis_server_configuration_timestamp: ::std::option::Option<::std::string::String>,
 }
-impl RemoteSourceCodeAnalysisServerInfo {
+impl  RemoteSourceCodeAnalysisServerInfo  {
     /// <p>The time when the remote source code server was configured.</p>
-    pub fn remote_source_code_analysis_server_configuration_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn remote_source_code_analysis_server_configuration_timestamp(&self) -> ::std::option::Option<& str> {
         self.remote_source_code_analysis_server_configuration_timestamp.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RemoteSourceCodeAnalysisServerInfoBuilder {
     }
     /// <p>The time when the remote source code server was configured.</p>
     pub fn set_remote_source_code_analysis_server_configuration_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remote_source_code_analysis_server_configuration_timestamp = input;
-        self
+        self.remote_source_code_analysis_server_configuration_timestamp = input; self
     }
     /// <p>The time when the remote source code server was configured.</p>
     pub fn get_remote_source_code_analysis_server_configuration_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl RemoteSourceCodeAnalysisServerInfoBuilder {
     /// Consumes the builder and constructs a [`RemoteSourceCodeAnalysisServerInfo`](crate::types::RemoteSourceCodeAnalysisServerInfo).
     pub fn build(self) -> crate::types::RemoteSourceCodeAnalysisServerInfo {
         crate::types::RemoteSourceCodeAnalysisServerInfo {
-            remote_source_code_analysis_server_configuration_timestamp: self.remote_source_code_analysis_server_configuration_timestamp,
+            remote_source_code_analysis_server_configuration_timestamp: self.remote_source_code_analysis_server_configuration_timestamp
+            ,
         }
     }
 }
+

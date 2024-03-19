@@ -3,28 +3,29 @@
 /// <p>Describes the metric based observation generated based on evaluated data quality metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricBasedObservation {
+pub struct MetricBasedObservation  {
     /// <p>The name of the data quality metric used for generating the observation.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>An object of type <code>DataQualityMetricValues</code> representing the analysis of the data quality metric value.</p>
     pub metric_values: ::std::option::Option<crate::types::DataQualityMetricValues>,
     /// <p>A list of new data quality rules generated as part of the observation based on the data quality metric value.</p>
-    pub new_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub new_rules: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl MetricBasedObservation {
+impl  MetricBasedObservation  {
     /// <p>The name of the data quality metric used for generating the observation.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>An object of type <code>DataQualityMetricValues</code> representing the analysis of the data quality metric value.</p>
-    pub fn metric_values(&self) -> ::std::option::Option<&crate::types::DataQualityMetricValues> {
+    pub fn metric_values(&self) -> ::std::option::Option<& crate::types::DataQualityMetricValues> {
         self.metric_values.as_ref()
     }
     /// <p>A list of new data quality rules generated as part of the observation based on the data quality metric value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.new_rules.is_none()`.
-    pub fn new_rules(&self) -> &[::std::string::String] {
-        self.new_rules.as_deref().unwrap_or_default()
+    pub fn new_rules(&self) -> & [::std::string::String] {
+        self.new_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MetricBasedObservation {
@@ -40,7 +41,7 @@ impl MetricBasedObservation {
 pub struct MetricBasedObservationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_values: ::std::option::Option<crate::types::DataQualityMetricValues>,
-    pub(crate) new_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) new_rules: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl MetricBasedObservationBuilder {
     /// <p>The name of the data quality metric used for generating the observation.</p>
@@ -50,8 +51,7 @@ impl MetricBasedObservationBuilder {
     }
     /// <p>The name of the data quality metric used for generating the observation.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the data quality metric used for generating the observation.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl MetricBasedObservationBuilder {
     }
     /// <p>An object of type <code>DataQualityMetricValues</code> representing the analysis of the data quality metric value.</p>
     pub fn set_metric_values(mut self, input: ::std::option::Option<crate::types::DataQualityMetricValues>) -> Self {
-        self.metric_values = input;
-        self
+        self.metric_values = input; self
     }
     /// <p>An object of type <code>DataQualityMetricValues</code> representing the analysis of the data quality metric value.</p>
     pub fn get_metric_values(&self) -> &::std::option::Option<crate::types::DataQualityMetricValues> {
@@ -78,25 +77,28 @@ impl MetricBasedObservationBuilder {
     /// <p>A list of new data quality rules generated as part of the observation based on the data quality metric value.</p>
     pub fn new_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.new_rules.unwrap_or_default();
-        v.push(input.into());
-        self.new_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.new_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of new data quality rules generated as part of the observation based on the data quality metric value.</p>
-    pub fn set_new_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.new_rules = input;
-        self
+    pub fn set_new_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.new_rules = input; self
     }
     /// <p>A list of new data quality rules generated as part of the observation based on the data quality metric value.</p>
-    pub fn get_new_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_new_rules(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.new_rules
     }
     /// Consumes the builder and constructs a [`MetricBasedObservation`](crate::types::MetricBasedObservation).
     pub fn build(self) -> crate::types::MetricBasedObservation {
         crate::types::MetricBasedObservation {
-            metric_name: self.metric_name,
-            metric_values: self.metric_values,
-            new_rules: self.new_rules,
+            metric_name: self.metric_name
+            ,
+            metric_values: self.metric_values
+            ,
+            new_rules: self.new_rules
+            ,
         }
     }
 }
+

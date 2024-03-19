@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDataProviderInput {
+pub struct ModifyDataProviderInput  {
     /// <p>The identifier of the data provider. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
     pub data_provider_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data provider.</p>
@@ -22,21 +22,21 @@ pub struct ModifyDataProviderInput {
     /// <p>The settings in JSON format for a data provider.</p>
     pub settings: ::std::option::Option<crate::types::DataProviderSettings>,
 }
-impl ModifyDataProviderInput {
+impl  ModifyDataProviderInput  {
     /// <p>The identifier of the data provider. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
-    pub fn data_provider_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn data_provider_identifier(&self) -> ::std::option::Option<& str> {
         self.data_provider_identifier.as_deref()
     }
     /// <p>The name of the data provider.</p>
-    pub fn data_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_provider_name(&self) -> ::std::option::Option<& str> {
         self.data_provider_name.as_deref()
     }
     /// <p>A user-friendly description of the data provider.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code> replaces all existing data provider settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyDataProvider</code> does two things:</p>
@@ -50,7 +50,7 @@ impl ModifyDataProviderInput {
         self.exact_settings
     }
     /// <p>The settings in JSON format for a data provider.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::DataProviderSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::DataProviderSettings> {
         self.settings.as_ref()
     }
 }
@@ -81,8 +81,7 @@ impl ModifyDataProviderInputBuilder {
     }
     /// <p>The identifier of the data provider. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
     pub fn set_data_provider_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_identifier = input;
-        self
+        self.data_provider_identifier = input; self
     }
     /// <p>The identifier of the data provider. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
     pub fn get_data_provider_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl ModifyDataProviderInputBuilder {
     }
     /// <p>The name of the data provider.</p>
     pub fn set_data_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_name = input;
-        self
+        self.data_provider_name = input; self
     }
     /// <p>The name of the data provider.</p>
     pub fn get_data_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl ModifyDataProviderInputBuilder {
     }
     /// <p>A user-friendly description of the data provider.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-friendly description of the data provider.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl ModifyDataProviderInputBuilder {
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The type of database engine for the data provider. Valid values include <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +145,7 @@ impl ModifyDataProviderInputBuilder {
     /// <p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     pub fn set_exact_settings(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exact_settings = input;
-        self
+        self.exact_settings = input; self
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code> replaces all existing data provider settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyDataProvider</code> does two things:</p>
     /// <ul>
@@ -169,25 +164,30 @@ impl ModifyDataProviderInputBuilder {
     }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::DataProviderSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>The settings in JSON format for a data provider.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::DataProviderSettings> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`ModifyDataProviderInput`](crate::operation::modify_data_provider::ModifyDataProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_data_provider::ModifyDataProviderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_data_provider::ModifyDataProviderInput {
-            data_provider_identifier: self.data_provider_identifier,
-            data_provider_name: self.data_provider_name,
-            description: self.description,
-            engine: self.engine,
-            exact_settings: self.exact_settings,
-            settings: self.settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_data_provider::ModifyDataProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_data_provider::ModifyDataProviderInput {
+                data_provider_identifier: self.data_provider_identifier
+                ,
+                data_provider_name: self.data_provider_name
+                ,
+                description: self.description
+                ,
+                engine: self.engine
+                ,
+                exact_settings: self.exact_settings
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

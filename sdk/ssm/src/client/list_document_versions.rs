@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDocumentVersions`](crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::set_name):<br>required: **true**<br><p>The name of the document. You can specify an Amazon Resource Name (ARN).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`ListDocumentVersionsOutput`](crate::operation::list_document_versions::ListDocumentVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListDocumentVersionsOutput`](crate::operation::list_document_versions::ListDocumentVersionsOutput) with field(s):
     ///   - [`document_versions(Option<Vec::<DocumentVersionInfo>>)`](crate::operation::list_document_versions::ListDocumentVersionsOutput::document_versions): <p>The document versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_document_versions::ListDocumentVersionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<ListDocumentVersionsError>`](crate::operation::list_document_versions::ListDocumentVersionsError)
+                            /// - On failure, responds with [`SdkError<ListDocumentVersionsError>`](crate::operation::list_document_versions::ListDocumentVersionsError)
     pub fn list_document_versions(&self) -> crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder {
-        crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_document_versions::builders::ListDocumentVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object representing an Fargate profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FargateProfile {
+pub struct FargateProfile  {
     /// <p>The name of the Fargate profile.</p>
     pub fargate_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
@@ -15,53 +15,55 @@ pub struct FargateProfile {
     /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for any <code>Pod</code> that matches the selectors in the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub pod_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile.</p>
-    pub selectors: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>,
+    pub selectors: ::std::option::Option<::std::vec::Vec::<crate::types::FargateProfileSelector>>,
     /// <p>The current status of the Fargate profile.</p>
     pub status: ::std::option::Option<crate::types::FargateProfileStatus>,
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl FargateProfile {
+impl  FargateProfile  {
     /// <p>The name of the Fargate profile.</p>
-    pub fn fargate_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn fargate_profile_name(&self) -> ::std::option::Option<& str> {
         self.fargate_profile_name.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-    pub fn fargate_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fargate_profile_arn(&self) -> ::std::option::Option<& str> {
         self.fargate_profile_arn.as_deref()
     }
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The Unix epoch timestamp at object creation.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for any <code>Pod</code> that matches the selectors in the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn pod_execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pod_execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.pod_execution_role_arn.as_deref()
     }
     /// <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
-    pub fn subnets(&self) -> &[::std::string::String] {
-        self.subnets.as_deref().unwrap_or_default()
+    pub fn subnets(&self) -> & [::std::string::String] {
+        self.subnets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selectors.is_none()`.
-    pub fn selectors(&self) -> &[crate::types::FargateProfileSelector] {
-        self.selectors.as_deref().unwrap_or_default()
+    pub fn selectors(&self) -> & [crate::types::FargateProfileSelector] {
+        self.selectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current status of the Fargate profile.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FargateProfileStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FargateProfileStatus> {
         self.status.as_ref()
     }
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -81,10 +83,10 @@ pub struct FargateProfileBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) pod_execution_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) selectors: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) selectors: ::std::option::Option<::std::vec::Vec::<crate::types::FargateProfileSelector>>,
     pub(crate) status: ::std::option::Option<crate::types::FargateProfileStatus>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl FargateProfileBuilder {
     /// <p>The name of the Fargate profile.</p>
@@ -94,8 +96,7 @@ impl FargateProfileBuilder {
     }
     /// <p>The name of the Fargate profile.</p>
     pub fn set_fargate_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fargate_profile_name = input;
-        self
+        self.fargate_profile_name = input; self
     }
     /// <p>The name of the Fargate profile.</p>
     pub fn get_fargate_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl FargateProfileBuilder {
     }
     /// <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
     pub fn set_fargate_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fargate_profile_arn = input;
-        self
+        self.fargate_profile_arn = input; self
     }
     /// <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
     pub fn get_fargate_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl FargateProfileBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl FargateProfileBuilder {
     }
     /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,8 +148,7 @@ impl FargateProfileBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for any <code>Pod</code> that matches the selectors in the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_pod_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pod_execution_role_arn = input;
-        self
+        self.pod_execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for any <code>Pod</code> that matches the selectors in the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn get_pod_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,17 +161,16 @@ impl FargateProfileBuilder {
     /// <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnets
     }
     /// Appends an item to `selectors`.
@@ -184,17 +180,16 @@ impl FargateProfileBuilder {
     /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile.</p>
     pub fn selectors(mut self, input: crate::types::FargateProfileSelector) -> Self {
         let mut v = self.selectors.unwrap_or_default();
-        v.push(input);
-        self.selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile.</p>
-    pub fn set_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>) -> Self {
-        self.selectors = input;
-        self
+    pub fn set_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FargateProfileSelector>>) -> Self {
+        self.selectors = input; self
     }
     /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile.</p>
-    pub fn get_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>> {
+    pub fn get_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FargateProfileSelector>> {
         &self.selectors
     }
     /// <p>The current status of the Fargate profile.</p>
@@ -204,8 +199,7 @@ impl FargateProfileBuilder {
     }
     /// <p>The current status of the Fargate profile.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FargateProfileStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the Fargate profile.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FargateProfileStatus> {
@@ -218,31 +212,40 @@ impl FargateProfileBuilder {
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`FargateProfile`](crate::types::FargateProfile).
     pub fn build(self) -> crate::types::FargateProfile {
         crate::types::FargateProfile {
-            fargate_profile_name: self.fargate_profile_name,
-            fargate_profile_arn: self.fargate_profile_arn,
-            cluster_name: self.cluster_name,
-            created_at: self.created_at,
-            pod_execution_role_arn: self.pod_execution_role_arn,
-            subnets: self.subnets,
-            selectors: self.selectors,
-            status: self.status,
-            tags: self.tags,
+            fargate_profile_name: self.fargate_profile_name
+            ,
+            fargate_profile_arn: self.fargate_profile_arn
+            ,
+            cluster_name: self.cluster_name
+            ,
+            created_at: self.created_at
+            ,
+            pod_execution_role_arn: self.pod_execution_role_arn
+            ,
+            subnets: self.subnets
+            ,
+            selectors: self.selectors
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

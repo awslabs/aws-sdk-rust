@@ -3,29 +3,26 @@
 /// <p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineObject {
+pub struct PipelineObject  {
     /// <p>The ID of the object.</p>
     pub id: ::std::string::String,
     /// <p>The name of the object.</p>
     pub name: ::std::string::String,
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fields: ::std::vec::Vec<crate::types::Field>,
+    pub fields: ::std::vec::Vec::<crate::types::Field>,
 }
-impl PipelineObject {
+impl  PipelineObject  {
     /// <p>The ID of the object.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the object.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fn fields(&self) -> &[crate::types::Field] {
-        use std::ops::Deref;
-        self.fields.deref()
+    pub fn fields(&self) -> & [crate::types::Field] {
+        use std::ops::Deref; self.fields.deref()
     }
 }
 impl PipelineObject {
@@ -41,7 +38,7 @@ impl PipelineObject {
 pub struct PipelineObjectBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
 }
 impl PipelineObjectBuilder {
     /// <p>The ID of the object.</p>
@@ -52,8 +49,7 @@ impl PipelineObjectBuilder {
     }
     /// <p>The ID of the object.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the object.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl PipelineObjectBuilder {
     }
     /// <p>The name of the object.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the object.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,17 +76,16 @@ impl PipelineObjectBuilder {
     /// <p>Key-value pairs that define the properties of the object.</p>
     pub fn fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>) -> Self {
+        self.fields = input; self
     }
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Field>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`PipelineObject`](crate::types::PipelineObject).
@@ -100,25 +94,25 @@ impl PipelineObjectBuilder {
     /// - [`name`](crate::types::builders::PipelineObjectBuilder::name)
     /// - [`fields`](crate::types::builders::PipelineObjectBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::types::PipelineObject, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PipelineObject {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PipelineObject",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PipelineObject",
-                )
-            })?,
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building PipelineObject",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PipelineObject {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building PipelineObject")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PipelineObject")
+                    )?
+                ,
+                fields: self.fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fields", "fields was not specified but it is required when building PipelineObject")
+                    )?
+                ,
+            }
+        )
     }
 }
+

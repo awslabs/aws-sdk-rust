@@ -5,23 +5,20 @@ pub use crate::operation::list_resources_for_web_acl::_list_resources_for_web_ac
 
 impl ListResourcesForWebAclInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_resources_for_web_acl();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_resources_for_web_acl();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListResourcesForWebACL`.
-///
+/// 
 /// <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the specified web ACL.</p>
 /// <p>For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>.</p>
 /// <p><b>Required permissions for customer-managed IAM policies</b></p>
@@ -29,33 +26,32 @@ impl ListResourcesForWebAclInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourcesForWebACLFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder,
+                    inner: crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-        crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-    > for ListResourcesForWebACLFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
+                    crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
+                > for ListResourcesForWebACLFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
+                        crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListResourcesForWebACLFluentBuilder {
     /// Creates a new `ListResourcesForWebACL`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl ListResourcesForWebACLFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_resources_for_web_acl::ListResourcesForWebACL::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_resources_for_web_acl::ListResourcesForWebACL::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
-        crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_resources_for_web_acl::ListResourcesForWebACL::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_resources_for_web_acl::ListResourcesForWebACL::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput, crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     pub fn web_acl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.web_acl_arn(input.into());
@@ -149,3 +136,4 @@ impl ListResourcesForWebACLFluentBuilder {
         self.inner.get_resource_type()
     }
 }
+

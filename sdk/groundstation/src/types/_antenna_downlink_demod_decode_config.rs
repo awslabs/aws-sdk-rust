@@ -3,7 +3,7 @@
 /// <p>Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AntennaDownlinkDemodDecodeConfig {
+pub struct AntennaDownlinkDemodDecodeConfig  {
     /// <p>Information about the spectral <code>Config</code>.</p>
     pub spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
     /// <p>Information about the demodulation <code>Config</code>.</p>
@@ -11,17 +11,17 @@ pub struct AntennaDownlinkDemodDecodeConfig {
     /// <p>Information about the decode <code>Config</code>.</p>
     pub decode_config: ::std::option::Option<crate::types::DecodeConfig>,
 }
-impl AntennaDownlinkDemodDecodeConfig {
+impl  AntennaDownlinkDemodDecodeConfig  {
     /// <p>Information about the spectral <code>Config</code>.</p>
-    pub fn spectrum_config(&self) -> ::std::option::Option<&crate::types::SpectrumConfig> {
+    pub fn spectrum_config(&self) -> ::std::option::Option<& crate::types::SpectrumConfig> {
         self.spectrum_config.as_ref()
     }
     /// <p>Information about the demodulation <code>Config</code>.</p>
-    pub fn demodulation_config(&self) -> ::std::option::Option<&crate::types::DemodulationConfig> {
+    pub fn demodulation_config(&self) -> ::std::option::Option<& crate::types::DemodulationConfig> {
         self.demodulation_config.as_ref()
     }
     /// <p>Information about the decode <code>Config</code>.</p>
-    pub fn decode_config(&self) -> ::std::option::Option<&crate::types::DecodeConfig> {
+    pub fn decode_config(&self) -> ::std::option::Option<& crate::types::DecodeConfig> {
         self.decode_config.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
     }
     /// <p>Information about the spectral <code>Config</code>.</p>
     pub fn set_spectrum_config(mut self, input: ::std::option::Option<crate::types::SpectrumConfig>) -> Self {
-        self.spectrum_config = input;
-        self
+        self.spectrum_config = input; self
     }
     /// <p>Information about the spectral <code>Config</code>.</p>
     pub fn get_spectrum_config(&self) -> &::std::option::Option<crate::types::SpectrumConfig> {
@@ -64,8 +63,7 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
     }
     /// <p>Information about the demodulation <code>Config</code>.</p>
     pub fn set_demodulation_config(mut self, input: ::std::option::Option<crate::types::DemodulationConfig>) -> Self {
-        self.demodulation_config = input;
-        self
+        self.demodulation_config = input; self
     }
     /// <p>Information about the demodulation <code>Config</code>.</p>
     pub fn get_demodulation_config(&self) -> &::std::option::Option<crate::types::DemodulationConfig> {
@@ -79,8 +77,7 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
     }
     /// <p>Information about the decode <code>Config</code>.</p>
     pub fn set_decode_config(mut self, input: ::std::option::Option<crate::types::DecodeConfig>) -> Self {
-        self.decode_config = input;
-        self
+        self.decode_config = input; self
     }
     /// <p>Information about the decode <code>Config</code>.</p>
     pub fn get_decode_config(&self) -> &::std::option::Option<crate::types::DecodeConfig> {
@@ -89,9 +86,13 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
     /// Consumes the builder and constructs a [`AntennaDownlinkDemodDecodeConfig`](crate::types::AntennaDownlinkDemodDecodeConfig).
     pub fn build(self) -> crate::types::AntennaDownlinkDemodDecodeConfig {
         crate::types::AntennaDownlinkDemodDecodeConfig {
-            spectrum_config: self.spectrum_config,
-            demodulation_config: self.demodulation_config,
-            decode_config: self.decode_config,
+            spectrum_config: self.spectrum_config
+            ,
+            demodulation_config: self.demodulation_config
+            ,
+            decode_config: self.decode_config
+            ,
         }
     }
 }
+

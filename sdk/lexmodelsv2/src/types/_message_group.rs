@@ -3,22 +3,23 @@
 /// <p>Provides one or more messages that Amazon Lex should send to the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageGroup {
+pub struct MessageGroup  {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
     pub message: ::std::option::Option<crate::types::Message>,
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    pub variations: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub variations: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
 }
-impl MessageGroup {
+impl  MessageGroup  {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
-    pub fn message(&self) -> ::std::option::Option<&crate::types::Message> {
+    pub fn message(&self) -> ::std::option::Option<& crate::types::Message> {
         self.message.as_ref()
     }
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variations.is_none()`.
-    pub fn variations(&self) -> &[crate::types::Message] {
-        self.variations.as_deref().unwrap_or_default()
+    pub fn variations(&self) -> & [crate::types::Message] {
+        self.variations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MessageGroup {
@@ -33,7 +34,7 @@ impl MessageGroup {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageGroupBuilder {
     pub(crate) message: ::std::option::Option<crate::types::Message>,
-    pub(crate) variations: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub(crate) variations: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
 }
 impl MessageGroupBuilder {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
@@ -44,8 +45,7 @@ impl MessageGroupBuilder {
     }
     /// <p>The primary message that Amazon Lex should send to the user.</p>
     pub fn set_message(mut self, input: ::std::option::Option<crate::types::Message>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The primary message that Amazon Lex should send to the user.</p>
     pub fn get_message(&self) -> &::std::option::Option<crate::types::Message> {
@@ -58,24 +58,26 @@ impl MessageGroupBuilder {
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
     pub fn variations(mut self, input: crate::types::Message) -> Self {
         let mut v = self.variations.unwrap_or_default();
-        v.push(input);
-        self.variations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    pub fn set_variations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
-        self.variations = input;
-        self
+    pub fn set_variations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>) -> Self {
+        self.variations = input; self
     }
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    pub fn get_variations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+    pub fn get_variations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Message>> {
         &self.variations
     }
     /// Consumes the builder and constructs a [`MessageGroup`](crate::types::MessageGroup).
     pub fn build(self) -> crate::types::MessageGroup {
         crate::types::MessageGroup {
-            message: self.message,
-            variations: self.variations,
+            message: self.message
+            ,
+            variations: self.variations
+            ,
         }
     }
 }
+

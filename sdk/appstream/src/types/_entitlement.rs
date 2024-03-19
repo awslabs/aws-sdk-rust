@@ -3,7 +3,7 @@
 /// <p>Specifies an entitlement. Entitlements control access to specific applications within a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications in a stack. Entitlements don't apply to the desktop stream view application, or to applications managed by a dynamic app provider using the Dynamic Application Framework.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Entitlement {
+pub struct Entitlement  {
     /// <p>The name of the entitlement.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
@@ -13,41 +13,42 @@ pub struct Entitlement {
     /// <p>Specifies whether all or selected apps are entitled.</p>
     pub app_visibility: ::std::option::Option<crate::types::AppVisibility>,
     /// <p>The attributes of the entitlement.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementAttribute>>,
     /// <p>The time when the entitlement was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the entitlement was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Entitlement {
+impl  Entitlement  {
     /// <p>The name of the entitlement.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The description of the entitlement.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether all or selected apps are entitled.</p>
-    pub fn app_visibility(&self) -> ::std::option::Option<&crate::types::AppVisibility> {
+    pub fn app_visibility(&self) -> ::std::option::Option<& crate::types::AppVisibility> {
         self.app_visibility.as_ref()
     }
     /// <p>The attributes of the entitlement.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::EntitlementAttribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::EntitlementAttribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time when the entitlement was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time when the entitlement was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -66,7 +67,7 @@ pub struct EntitlementBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) app_visibility: ::std::option::Option<crate::types::AppVisibility>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementAttribute>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -79,8 +80,7 @@ impl EntitlementBuilder {
     }
     /// <p>The name of the entitlement.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the entitlement.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +94,7 @@ impl EntitlementBuilder {
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl EntitlementBuilder {
     }
     /// <p>The description of the entitlement.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the entitlement.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +121,7 @@ impl EntitlementBuilder {
     }
     /// <p>Specifies whether all or selected apps are entitled.</p>
     pub fn set_app_visibility(mut self, input: ::std::option::Option<crate::types::AppVisibility>) -> Self {
-        self.app_visibility = input;
-        self
+        self.app_visibility = input; self
     }
     /// <p>Specifies whether all or selected apps are entitled.</p>
     pub fn get_app_visibility(&self) -> &::std::option::Option<crate::types::AppVisibility> {
@@ -137,17 +134,16 @@ impl EntitlementBuilder {
     /// <p>The attributes of the entitlement.</p>
     pub fn attributes(mut self, input: crate::types::EntitlementAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntitlementAttribute>> {
         &self.attributes
     }
     /// <p>The time when the entitlement was created.</p>
@@ -157,8 +153,7 @@ impl EntitlementBuilder {
     }
     /// <p>The time when the entitlement was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time when the entitlement was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,8 +166,7 @@ impl EntitlementBuilder {
     }
     /// <p>The time when the entitlement was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time when the entitlement was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,13 +175,21 @@ impl EntitlementBuilder {
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).
     pub fn build(self) -> crate::types::Entitlement {
         crate::types::Entitlement {
-            name: self.name,
-            stack_name: self.stack_name,
-            description: self.description,
-            app_visibility: self.app_visibility,
-            attributes: self.attributes,
-            created_time: self.created_time,
-            last_modified_time: self.last_modified_time,
+            name: self.name
+            ,
+            stack_name: self.stack_name
+            ,
+            description: self.description
+            ,
+            app_visibility: self.app_visibility
+            ,
+            attributes: self.attributes
+            ,
+            created_time: self.created_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

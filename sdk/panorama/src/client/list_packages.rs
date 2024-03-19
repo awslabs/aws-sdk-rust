@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPackages`](crate::operation::list_packages::builders::ListPackagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of packages to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput) with field(s):
+                            /// - On success, responds with [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput) with field(s):
     ///   - [`packages(Option<Vec::<PackageListItem>>)`](crate::operation::list_packages::ListPackagesOutput::packages): <p>A list of packages.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_packages::ListPackagesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::operation::list_packages::ListPackagesError)
+                            /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::operation::list_packages::ListPackagesError)
     pub fn list_packages(&self) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {
-        crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

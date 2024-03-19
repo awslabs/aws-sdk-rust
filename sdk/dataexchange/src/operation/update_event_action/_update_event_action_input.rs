@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEventActionInput {
+pub struct UpdateEventActionInput  {
     /// <p>What occurs after a certain event.</p>
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The unique identifier for the event action.</p>
     pub event_action_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateEventActionInput {
+impl  UpdateEventActionInput  {
     /// <p>What occurs after a certain event.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_action_id(&self) -> ::std::option::Option<& str> {
         self.event_action_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateEventActionInputBuilder {
     }
     /// <p>What occurs after a certain event.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>What occurs after a certain event.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
@@ -55,20 +54,22 @@ impl UpdateEventActionInputBuilder {
     }
     /// <p>The unique identifier for the event action.</p>
     pub fn set_event_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_action_id = input;
-        self
+        self.event_action_id = input; self
     }
     /// <p>The unique identifier for the event action.</p>
     pub fn get_event_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_action_id
     }
     /// Consumes the builder and constructs a [`UpdateEventActionInput`](crate::operation::update_event_action::UpdateEventActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_event_action::UpdateEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_event_action::UpdateEventActionInput {
-            action: self.action,
-            event_action_id: self.event_action_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_event_action::UpdateEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_event_action::UpdateEventActionInput {
+                action: self.action
+                ,
+                event_action_id: self.event_action_id
+                ,
+            }
+        )
     }
 }
+

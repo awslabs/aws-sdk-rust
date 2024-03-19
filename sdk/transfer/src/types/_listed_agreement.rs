@@ -3,7 +3,7 @@
 /// <p>Describes the properties of an agreement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListedAgreement {
+pub struct ListedAgreement  {
     /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
@@ -19,33 +19,33 @@ pub struct ListedAgreement {
     /// <p>A unique identifier for the partner profile.</p>
     pub partner_profile_id: ::std::option::Option<::std::string::String>,
 }
-impl ListedAgreement {
+impl  ListedAgreement  {
     /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_id(&self) -> ::std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
     /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AgreementStatusType> {
         self.status.as_ref()
     }
     /// <p>The unique identifier for the agreement.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn local_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_profile_id(&self) -> ::std::option::Option<& str> {
         self.local_profile_id.as_deref()
     }
     /// <p>A unique identifier for the partner profile.</p>
-    pub fn partner_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn partner_profile_id(&self) -> ::std::option::Option<& str> {
         self.partner_profile_id.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl ListedAgreementBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListedAgreementBuilder {
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ListedAgreementBuilder {
     }
     /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ListedAgreementBuilder {
     }
     /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatusType> {
@@ -132,8 +128,7 @@ impl ListedAgreementBuilder {
     }
     /// <p>The unique identifier for the agreement.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The unique identifier for the agreement.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ListedAgreementBuilder {
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_profile_id = input;
-        self
+        self.local_profile_id = input; self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn get_local_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl ListedAgreementBuilder {
     }
     /// <p>A unique identifier for the partner profile.</p>
     pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner_profile_id = input;
-        self
+        self.partner_profile_id = input; self
     }
     /// <p>A unique identifier for the partner profile.</p>
     pub fn get_partner_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl ListedAgreementBuilder {
     /// Consumes the builder and constructs a [`ListedAgreement`](crate::types::ListedAgreement).
     pub fn build(self) -> crate::types::ListedAgreement {
         crate::types::ListedAgreement {
-            arn: self.arn,
-            agreement_id: self.agreement_id,
-            description: self.description,
-            status: self.status,
-            server_id: self.server_id,
-            local_profile_id: self.local_profile_id,
-            partner_profile_id: self.partner_profile_id,
+            arn: self.arn
+            ,
+            agreement_id: self.agreement_id
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            server_id: self.server_id
+            ,
+            local_profile_id: self.local_profile_id
+            ,
+            partner_profile_id: self.partner_profile_id
+            ,
         }
     }
 }
+

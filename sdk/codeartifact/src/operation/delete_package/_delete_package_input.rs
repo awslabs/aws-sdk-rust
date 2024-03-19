@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePackageInput {
+pub struct DeletePackageInput  {
     /// <p>The name of the domain that contains the package to delete.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -26,21 +26,21 @@ pub struct DeletePackageInput {
     /// <p>The name of the package to delete.</p>
     pub package: ::std::option::Option<::std::string::String>,
 }
-impl DeletePackageInput {
+impl  DeletePackageInput  {
     /// <p>The name of the domain that contains the package to delete.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository that contains the package to delete.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The format of the requested package to delete.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p>
@@ -54,11 +54,11 @@ impl DeletePackageInput {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package to delete.</p>
-    pub fn package(&self) -> ::std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<& str> {
         self.package.as_deref()
     }
 }
@@ -89,8 +89,7 @@ impl DeletePackageInputBuilder {
     }
     /// <p>The name of the domain that contains the package to delete.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the package to delete.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl DeletePackageInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl DeletePackageInputBuilder {
     }
     /// <p>The name of the repository that contains the package to delete.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The name of the repository that contains the package to delete.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +130,7 @@ impl DeletePackageInputBuilder {
     }
     /// <p>The format of the requested package to delete.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the requested package to delete.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
@@ -167,8 +163,7 @@ impl DeletePackageInputBuilder {
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -192,24 +187,30 @@ impl DeletePackageInputBuilder {
     }
     /// <p>The name of the package to delete.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// <p>The name of the package to delete.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
         &self.package
     }
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_package::DeletePackageInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            repository: self.repository,
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_package::DeletePackageInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                package: self.package
+                ,
+            }
+        )
     }
 }
+

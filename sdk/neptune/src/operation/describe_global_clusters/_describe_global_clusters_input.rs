@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGlobalClustersInput {
+pub struct DescribeGlobalClustersInput  {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -13,10 +13,10 @@ pub struct DescribeGlobalClustersInput {
     /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeGlobalClustersInput {
+impl  DescribeGlobalClustersInput  {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
@@ -26,7 +26,7 @@ impl DescribeGlobalClustersInput {
         self.max_records
     }
     /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeGlobalClustersInputBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_identifier = input;
-        self
+        self.global_cluster_identifier = input; self
     }
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
@@ -74,8 +73,7 @@ impl DescribeGlobalClustersInputBuilder {
     /// <p>Default: <code>100</code></p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
     /// <p>Default: <code>100</code></p>
@@ -90,24 +88,24 @@ impl DescribeGlobalClustersInputBuilder {
     }
     /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeGlobalClustersInput`](crate::operation::describe_global_clusters::DescribeGlobalClustersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_global_clusters::DescribeGlobalClustersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_global_clusters::DescribeGlobalClustersInput {
-            global_cluster_identifier: self.global_cluster_identifier,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_global_clusters::DescribeGlobalClustersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_global_clusters::DescribeGlobalClustersInput {
+                global_cluster_identifier: self.global_cluster_identifier
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the properties of an environment tier</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentTier {
+pub struct EnvironmentTier  {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -27,7 +27,7 @@ pub struct EnvironmentTier {
     /// </note>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl EnvironmentTier {
+impl  EnvironmentTier  {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -36,7 +36,7 @@ impl EnvironmentTier {
     /// <li>
     /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of this environment tier.</p>
@@ -47,13 +47,13 @@ impl EnvironmentTier {
     /// <li>
     /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p><note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -94,8 +94,7 @@ impl EnvironmentTierBuilder {
     /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
@@ -129,8 +128,7 @@ impl EnvironmentTierBuilder {
     /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
@@ -154,8 +152,7 @@ impl EnvironmentTierBuilder {
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p><note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
@@ -166,9 +163,13 @@ impl EnvironmentTierBuilder {
     /// Consumes the builder and constructs a [`EnvironmentTier`](crate::types::EnvironmentTier).
     pub fn build(self) -> crate::types::EnvironmentTier {
         crate::types::EnvironmentTier {
-            name: self.name,
-            r#type: self.r#type,
-            version: self.version,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

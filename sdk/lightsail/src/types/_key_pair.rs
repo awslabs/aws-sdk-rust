@@ -3,7 +3,7 @@
 /// <p>Describes an SSH key pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyPair {
+pub struct KeyPair  {
     /// <p>The friendly name of the SSH key pair.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
@@ -17,43 +17,44 @@ pub struct KeyPair {
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The RSA fingerprint of the key pair.</p>
     pub fingerprint: ::std::option::Option<::std::string::String>,
 }
-impl KeyPair {
+impl  KeyPair  {
     /// <p>The friendly name of the SSH key pair.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> ::std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the key pair was created (<code>1479816991.349</code>).</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The region name and Availability Zone where the key pair was created.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The RSA fingerprint of the key pair.</p>
-    pub fn fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn fingerprint(&self) -> ::std::option::Option<& str> {
         self.fingerprint.as_deref()
     }
 }
@@ -74,7 +75,7 @@ pub struct KeyPairBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl KeyPairBuilder {
@@ -85,8 +86,7 @@ impl KeyPairBuilder {
     }
     /// <p>The friendly name of the SSH key pair.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name of the SSH key pair.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl KeyPairBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl KeyPairBuilder {
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl KeyPairBuilder {
     }
     /// <p>The timestamp when the key pair was created (<code>1479816991.349</code>).</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the key pair was created (<code>1479816991.349</code>).</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,8 +138,7 @@ impl KeyPairBuilder {
     }
     /// <p>The region name and Availability Zone where the key pair was created.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The region name and Availability Zone where the key pair was created.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
@@ -155,8 +151,7 @@ impl KeyPairBuilder {
     }
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -169,17 +164,16 @@ impl KeyPairBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The RSA fingerprint of the key pair.</p>
@@ -189,8 +183,7 @@ impl KeyPairBuilder {
     }
     /// <p>The RSA fingerprint of the key pair.</p>
     pub fn set_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fingerprint = input;
-        self
+        self.fingerprint = input; self
     }
     /// <p>The RSA fingerprint of the key pair.</p>
     pub fn get_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,14 +192,23 @@ impl KeyPairBuilder {
     /// Consumes the builder and constructs a [`KeyPair`](crate::types::KeyPair).
     pub fn build(self) -> crate::types::KeyPair {
         crate::types::KeyPair {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            tags: self.tags,
-            fingerprint: self.fingerprint,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
+            fingerprint: self.fingerprint
+            ,
         }
     }
 }
+

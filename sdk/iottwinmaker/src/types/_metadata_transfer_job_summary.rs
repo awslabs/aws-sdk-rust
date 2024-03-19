@@ -3,7 +3,7 @@
 /// <p>The metadata transfer job summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetadataTransferJobSummary {
+pub struct MetadataTransferJobSummary  {
     /// <p>The metadata transfer job summary Id.</p>
     pub metadata_transfer_job_id: ::std::string::String,
     /// <p>The metadata transfer job summary ARN.</p>
@@ -17,31 +17,29 @@ pub struct MetadataTransferJobSummary {
     /// <p>The metadata transfer job summary progess.</p>
     pub progress: ::std::option::Option<crate::types::MetadataTransferJobProgress>,
 }
-impl MetadataTransferJobSummary {
+impl  MetadataTransferJobSummary  {
     /// <p>The metadata transfer job summary Id.</p>
-    pub fn metadata_transfer_job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_transfer_job_id.deref()
+    pub fn metadata_transfer_job_id(&self) -> & str {
+        use std::ops::Deref; self.metadata_transfer_job_id.deref()
     }
     /// <p>The metadata transfer job summary ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The metadata transfer job summary creation DateTime object.</p>
-    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date_time
     }
     /// <p>The metadata transfer job summary update DateTime object</p>
-    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date_time
     }
     /// <p>The metadata transfer job summary status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MetadataTransferJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MetadataTransferJobStatus> {
         self.status.as_ref()
     }
     /// <p>The metadata transfer job summary progess.</p>
-    pub fn progress(&self) -> ::std::option::Option<&crate::types::MetadataTransferJobProgress> {
+    pub fn progress(&self) -> ::std::option::Option<& crate::types::MetadataTransferJobProgress> {
         self.progress.as_ref()
     }
 }
@@ -72,8 +70,7 @@ impl MetadataTransferJobSummaryBuilder {
     }
     /// <p>The metadata transfer job summary Id.</p>
     pub fn set_metadata_transfer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_transfer_job_id = input;
-        self
+        self.metadata_transfer_job_id = input; self
     }
     /// <p>The metadata transfer job summary Id.</p>
     pub fn get_metadata_transfer_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl MetadataTransferJobSummaryBuilder {
     }
     /// <p>The metadata transfer job summary ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The metadata transfer job summary ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl MetadataTransferJobSummaryBuilder {
     }
     /// <p>The metadata transfer job summary creation DateTime object.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The metadata transfer job summary creation DateTime object.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,8 +112,7 @@ impl MetadataTransferJobSummaryBuilder {
     }
     /// <p>The metadata transfer job summary update DateTime object</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The metadata transfer job summary update DateTime object</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +126,7 @@ impl MetadataTransferJobSummaryBuilder {
     }
     /// <p>The metadata transfer job summary status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MetadataTransferJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The metadata transfer job summary status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MetadataTransferJobStatus> {
@@ -146,8 +139,7 @@ impl MetadataTransferJobSummaryBuilder {
     }
     /// <p>The metadata transfer job summary progess.</p>
     pub fn set_progress(mut self, input: ::std::option::Option<crate::types::MetadataTransferJobProgress>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>The metadata transfer job summary progess.</p>
     pub fn get_progress(&self) -> &::std::option::Option<crate::types::MetadataTransferJobProgress> {
@@ -160,33 +152,34 @@ impl MetadataTransferJobSummaryBuilder {
     /// - [`creation_date_time`](crate::types::builders::MetadataTransferJobSummaryBuilder::creation_date_time)
     /// - [`update_date_time`](crate::types::builders::MetadataTransferJobSummaryBuilder::update_date_time)
     pub fn build(self) -> ::std::result::Result<crate::types::MetadataTransferJobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetadataTransferJobSummary {
-            metadata_transfer_job_id: self.metadata_transfer_job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_transfer_job_id",
-                    "metadata_transfer_job_id was not specified but it is required when building MetadataTransferJobSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building MetadataTransferJobSummary",
-                )
-            })?,
-            creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date_time",
-                    "creation_date_time was not specified but it is required when building MetadataTransferJobSummary",
-                )
-            })?,
-            update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date_time",
-                    "update_date_time was not specified but it is required when building MetadataTransferJobSummary",
-                )
-            })?,
-            status: self.status,
-            progress: self.progress,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetadataTransferJobSummary {
+                metadata_transfer_job_id: self.metadata_transfer_job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_transfer_job_id", "metadata_transfer_job_id was not specified but it is required when building MetadataTransferJobSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building MetadataTransferJobSummary")
+                    )?
+                ,
+                creation_date_time: self.creation_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date_time", "creation_date_time was not specified but it is required when building MetadataTransferJobSummary")
+                    )?
+                ,
+                update_date_time: self.update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date_time", "update_date_time was not specified but it is required when building MetadataTransferJobSummary")
+                    )?
+                ,
+                status: self.status
+                ,
+                progress: self.progress
+                ,
+            }
+        )
     }
 }
+

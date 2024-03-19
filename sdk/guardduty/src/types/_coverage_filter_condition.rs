@@ -3,24 +3,26 @@
 /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageFilterCondition {
+pub struct CoverageFilterCondition  {
     /// <p>Represents an equal condition that is applied to a single field while retrieving the coverage details.</p>
-    pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub equals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Represents a not equal condition that is applied to a single field while retrieving the coverage details.</p>
-    pub not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub not_equals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CoverageFilterCondition {
+impl  CoverageFilterCondition  {
     /// <p>Represents an equal condition that is applied to a single field while retrieving the coverage details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.equals.is_none()`.
-    pub fn equals(&self) -> &[::std::string::String] {
-        self.equals.as_deref().unwrap_or_default()
+    pub fn equals(&self) -> & [::std::string::String] {
+        self.equals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Represents a not equal condition that is applied to a single field while retrieving the coverage details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_equals.is_none()`.
-    pub fn not_equals(&self) -> &[::std::string::String] {
-        self.not_equals.as_deref().unwrap_or_default()
+    pub fn not_equals(&self) -> & [::std::string::String] {
+        self.not_equals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CoverageFilterCondition {
@@ -34,8 +36,8 @@ impl CoverageFilterCondition {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageFilterConditionBuilder {
-    pub(crate) equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) equals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) not_equals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CoverageFilterConditionBuilder {
     /// Appends an item to `equals`.
@@ -45,17 +47,16 @@ impl CoverageFilterConditionBuilder {
     /// <p>Represents an equal condition that is applied to a single field while retrieving the coverage details.</p>
     pub fn equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.equals.unwrap_or_default();
-        v.push(input.into());
-        self.equals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.equals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents an equal condition that is applied to a single field while retrieving the coverage details.</p>
-    pub fn set_equals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.equals = input;
-        self
+    pub fn set_equals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.equals = input; self
     }
     /// <p>Represents an equal condition that is applied to a single field while retrieving the coverage details.</p>
-    pub fn get_equals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_equals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.equals
     }
     /// Appends an item to `not_equals`.
@@ -65,24 +66,26 @@ impl CoverageFilterConditionBuilder {
     /// <p>Represents a not equal condition that is applied to a single field while retrieving the coverage details.</p>
     pub fn not_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.not_equals.unwrap_or_default();
-        v.push(input.into());
-        self.not_equals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.not_equals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a not equal condition that is applied to a single field while retrieving the coverage details.</p>
-    pub fn set_not_equals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.not_equals = input;
-        self
+    pub fn set_not_equals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.not_equals = input; self
     }
     /// <p>Represents a not equal condition that is applied to a single field while retrieving the coverage details.</p>
-    pub fn get_not_equals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_equals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.not_equals
     }
     /// Consumes the builder and constructs a [`CoverageFilterCondition`](crate::types::CoverageFilterCondition).
     pub fn build(self) -> crate::types::CoverageFilterCondition {
         crate::types::CoverageFilterCondition {
-            equals: self.equals,
-            not_equals: self.not_equals,
+            equals: self.equals
+            ,
+            not_equals: self.not_equals
+            ,
         }
     }
 }
+

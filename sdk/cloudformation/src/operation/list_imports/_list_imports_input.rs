@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImportsInput {
+pub struct ListImportsInput  {
     /// <p>The name of the exported output value. CloudFormation returns the stack names that are importing this value.</p>
     pub export_name: ::std::option::Option<::std::string::String>,
     /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListImportsInput {
+impl  ListImportsInput  {
     /// <p>The name of the exported output value. CloudFormation returns the stack names that are importing this value.</p>
-    pub fn export_name(&self) -> ::std::option::Option<&str> {
+    pub fn export_name(&self) -> ::std::option::Option<& str> {
         self.export_name.as_deref()
     }
     /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListImportsInputBuilder {
     }
     /// <p>The name of the exported output value. CloudFormation returns the stack names that are importing this value.</p>
     pub fn set_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_name = input;
-        self
+        self.export_name = input; self
     }
     /// <p>The name of the exported output value. CloudFormation returns the stack names that are importing this value.</p>
     pub fn get_export_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ListImportsInputBuilder {
     }
     /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl ListImportsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_imports::ListImportsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_imports::ListImportsInput {
-            export_name: self.export_name,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_imports::ListImportsInput {
+                export_name: self.export_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

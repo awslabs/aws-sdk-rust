@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDatastoreOutput {
+pub struct CreateDatastoreOutput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::string::String,
     /// <p>The data store status.</p>
     pub datastore_status: crate::types::DatastoreStatus,
     _request_id: Option<String>,
 }
-impl CreateDatastoreOutput {
+impl  CreateDatastoreOutput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> &str {
-        use std::ops::Deref;
-        self.datastore_id.deref()
+    pub fn datastore_id(&self) -> & str {
+        use std::ops::Deref; self.datastore_id.deref()
     }
     /// <p>The data store status.</p>
-    pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
+    pub fn datastore_status(&self) -> & crate::types::DatastoreStatus {
         &self.datastore_status
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDatastoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatastoreOutput`](crate::operation::create_datastore::CreateDatastoreOutput).
     pub fn builder() -> crate::operation::create_datastore::builders::CreateDatastoreOutputBuilder {
@@ -49,8 +48,7 @@ impl CreateDatastoreOutputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,43 +62,41 @@ impl CreateDatastoreOutputBuilder {
     }
     /// <p>The data store status.</p>
     pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
-        self.datastore_status = input;
-        self
+        self.datastore_status = input; self
     }
     /// <p>The data store status.</p>
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
         &self.datastore_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDatastoreOutput`](crate::operation::create_datastore::CreateDatastoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`datastore_id`](crate::operation::create_datastore::builders::CreateDatastoreOutputBuilder::datastore_id)
     /// - [`datastore_status`](crate::operation::create_datastore::builders::CreateDatastoreOutputBuilder::datastore_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_datastore::CreateDatastoreOutput {
-            datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_id",
-                    "datastore_id was not specified but it is required when building CreateDatastoreOutput",
-                )
-            })?,
-            datastore_status: self.datastore_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_status",
-                    "datastore_status was not specified but it is required when building CreateDatastoreOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_datastore::CreateDatastoreOutput {
+                datastore_id: self.datastore_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_id", "datastore_id was not specified but it is required when building CreateDatastoreOutput")
+                    )?
+                ,
+                datastore_status: self.datastore_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_status", "datastore_status was not specified but it is required when building CreateDatastoreOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

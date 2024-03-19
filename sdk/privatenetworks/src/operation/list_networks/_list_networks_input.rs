@@ -2,33 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNetworksInput {
+pub struct ListNetworksInput  {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
     /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkFilterKeys, ::std::vec::Vec<::std::string::String>>>,
+    pub filters: ::std::option::Option<::std::collections::HashMap::<crate::types::NetworkFilterKeys, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The token for the next page of results.</p>
     pub start_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListNetworksInput {
+impl  ListNetworksInput  {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
     /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::NetworkFilterKeys, ::std::vec::Vec<::std::string::String>>> {
+    pub fn filters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::NetworkFilterKeys, ::std::vec::Vec::<::std::string::String>>> {
         self.filters.as_ref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn start_token(&self) -> ::std::option::Option<&str> {
+    pub fn start_token(&self) -> ::std::option::Option<& str> {
         self.start_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -47,7 +45,7 @@ impl ListNetworksInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworksInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkFilterKeys, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) filters: ::std::option::Option<::std::collections::HashMap::<crate::types::NetworkFilterKeys, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) start_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -62,11 +60,11 @@ impl ListNetworksInputBuilder {
     /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(mut self, k: crate::types::NetworkFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn filters(mut self, k: crate::types::NetworkFilterKeys, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.filters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.filters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -74,12 +72,8 @@ impl ListNetworksInputBuilder {
     /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkFilterKeys, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::NetworkFilterKeys, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -87,9 +81,7 @@ impl ListNetworksInputBuilder {
     /// <p><code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code> | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p></li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::NetworkFilterKeys, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::NetworkFilterKeys, ::std::vec::Vec::<::std::string::String>>> {
         &self.filters
     }
     /// <p>The token for the next page of results.</p>
@@ -99,8 +91,7 @@ impl ListNetworksInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_start_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_token = input;
-        self
+        self.start_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_start_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,21 +104,24 @@ impl ListNetworksInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListNetworksInput`](crate::operation::list_networks::ListNetworksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_networks::ListNetworksInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_networks::ListNetworksInput {
-            filters: self.filters,
-            start_token: self.start_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_networks::ListNetworksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_networks::ListNetworksInput {
+                filters: self.filters
+                ,
+                start_token: self.start_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

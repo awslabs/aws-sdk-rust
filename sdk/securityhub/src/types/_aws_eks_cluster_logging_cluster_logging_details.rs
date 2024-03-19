@@ -3,7 +3,7 @@
 /// <p>Details for a cluster logging configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEksClusterLoggingClusterLoggingDetails {
+pub struct AwsEksClusterLoggingClusterLoggingDetails  {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>A list of logging types. Valid values are as follows:</p>
@@ -19,9 +19,9 @@ pub struct AwsEksClusterLoggingClusterLoggingDetails {
     /// <li>
     /// <p><code>scheduler</code></p></li>
     /// </ul>
-    pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AwsEksClusterLoggingClusterLoggingDetails {
+impl  AwsEksClusterLoggingClusterLoggingDetails  {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -39,10 +39,11 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
     /// <li>
     /// <p><code>scheduler</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
-    pub fn types(&self) -> &[::std::string::String] {
-        self.types.as_deref().unwrap_or_default()
+    pub fn types(&self) -> & [::std::string::String] {
+        self.types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsEksClusterLoggingClusterLoggingDetails {
@@ -57,7 +58,7 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
@@ -67,8 +68,7 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     }
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -93,9 +93,9 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// </ul>
     pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input.into());
-        self.types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
@@ -110,9 +110,8 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// <li>
     /// <p><code>scheduler</code></p></li>
     /// </ul>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.types = input; self
     }
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
@@ -127,14 +126,17 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// <li>
     /// <p><code>scheduler</code></p></li>
     /// </ul>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.types
     }
     /// Consumes the builder and constructs a [`AwsEksClusterLoggingClusterLoggingDetails`](crate::types::AwsEksClusterLoggingClusterLoggingDetails).
     pub fn build(self) -> crate::types::AwsEksClusterLoggingClusterLoggingDetails {
         crate::types::AwsEksClusterLoggingClusterLoggingDetails {
-            enabled: self.enabled,
-            types: self.types,
+            enabled: self.enabled
+            ,
+            types: self.types
+            ,
         }
     }
 }
+

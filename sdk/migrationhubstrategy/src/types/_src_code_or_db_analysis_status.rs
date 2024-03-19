@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let srccodeordbanalysisstatus = unimplemented!();
 /// match srccodeordbanalysisstatus {
@@ -35,16 +35,14 @@
 /// Specifically, when `srccodeordbanalysisstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SrcCodeOrDbAnalysisStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SrcCodeOrDbAnalysisStatus {
     #[allow(missing_docs)] // documentation missing in model
     AnalysisFailed,
@@ -62,84 +60,77 @@ pub enum SrcCodeOrDbAnalysisStatus {
     Unconfigured,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SrcCodeOrDbAnalysisStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANALYSIS_FAILED" => SrcCodeOrDbAnalysisStatus::AnalysisFailed,
-            "ANALYSIS_PARTIAL_SUCCESS" => SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess,
-            "ANALYSIS_STARTED" => SrcCodeOrDbAnalysisStatus::AnalysisStarted,
-            "ANALYSIS_SUCCESS" => SrcCodeOrDbAnalysisStatus::AnalysisSuccess,
-            "ANALYSIS_TO_BE_SCHEDULED" => SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled,
-            "CONFIGURED" => SrcCodeOrDbAnalysisStatus::Configured,
-            "UNCONFIGURED" => SrcCodeOrDbAnalysisStatus::Unconfigured,
-            other => SrcCodeOrDbAnalysisStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ANALYSIS_FAILED" => SrcCodeOrDbAnalysisStatus::AnalysisFailed,
+"ANALYSIS_PARTIAL_SUCCESS" => SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess,
+"ANALYSIS_STARTED" => SrcCodeOrDbAnalysisStatus::AnalysisStarted,
+"ANALYSIS_SUCCESS" => SrcCodeOrDbAnalysisStatus::AnalysisSuccess,
+"ANALYSIS_TO_BE_SCHEDULED" => SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled,
+"CONFIGURED" => SrcCodeOrDbAnalysisStatus::Configured,
+"UNCONFIGURED" => SrcCodeOrDbAnalysisStatus::Unconfigured,
+other => SrcCodeOrDbAnalysisStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SrcCodeOrDbAnalysisStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SrcCodeOrDbAnalysisStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SrcCodeOrDbAnalysisStatus::from(s))
+                    }
+                }
 impl SrcCodeOrDbAnalysisStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SrcCodeOrDbAnalysisStatus::AnalysisFailed => "ANALYSIS_FAILED",
-            SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess => "ANALYSIS_PARTIAL_SUCCESS",
-            SrcCodeOrDbAnalysisStatus::AnalysisStarted => "ANALYSIS_STARTED",
-            SrcCodeOrDbAnalysisStatus::AnalysisSuccess => "ANALYSIS_SUCCESS",
-            SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled => "ANALYSIS_TO_BE_SCHEDULED",
-            SrcCodeOrDbAnalysisStatus::Configured => "CONFIGURED",
-            SrcCodeOrDbAnalysisStatus::Unconfigured => "UNCONFIGURED",
-            SrcCodeOrDbAnalysisStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANALYSIS_FAILED",
-            "ANALYSIS_PARTIAL_SUCCESS",
-            "ANALYSIS_STARTED",
-            "ANALYSIS_SUCCESS",
-            "ANALYSIS_TO_BE_SCHEDULED",
-            "CONFIGURED",
-            "UNCONFIGURED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SrcCodeOrDbAnalysisStatus::AnalysisFailed => "ANALYSIS_FAILED",
+    SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess => "ANALYSIS_PARTIAL_SUCCESS",
+    SrcCodeOrDbAnalysisStatus::AnalysisStarted => "ANALYSIS_STARTED",
+    SrcCodeOrDbAnalysisStatus::AnalysisSuccess => "ANALYSIS_SUCCESS",
+    SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled => "ANALYSIS_TO_BE_SCHEDULED",
+    SrcCodeOrDbAnalysisStatus::Configured => "CONFIGURED",
+    SrcCodeOrDbAnalysisStatus::Unconfigured => "UNCONFIGURED",
+    SrcCodeOrDbAnalysisStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANALYSIS_FAILED", "ANALYSIS_PARTIAL_SUCCESS", "ANALYSIS_STARTED", "ANALYSIS_SUCCESS", "ANALYSIS_TO_BE_SCHEDULED", "CONFIGURED", "UNCONFIGURED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SrcCodeOrDbAnalysisStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SrcCodeOrDbAnalysisStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SrcCodeOrDbAnalysisStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SrcCodeOrDbAnalysisStatus::AnalysisFailed => write!(f, "ANALYSIS_FAILED"),
-            SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess => write!(f, "ANALYSIS_PARTIAL_SUCCESS"),
-            SrcCodeOrDbAnalysisStatus::AnalysisStarted => write!(f, "ANALYSIS_STARTED"),
-            SrcCodeOrDbAnalysisStatus::AnalysisSuccess => write!(f, "ANALYSIS_SUCCESS"),
-            SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled => write!(f, "ANALYSIS_TO_BE_SCHEDULED"),
-            SrcCodeOrDbAnalysisStatus::Configured => write!(f, "CONFIGURED"),
-            SrcCodeOrDbAnalysisStatus::Unconfigured => write!(f, "UNCONFIGURED"),
-            SrcCodeOrDbAnalysisStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SrcCodeOrDbAnalysisStatus::AnalysisFailed => write!(f, "ANALYSIS_FAILED"),
+SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess => write!(f, "ANALYSIS_PARTIAL_SUCCESS"),
+SrcCodeOrDbAnalysisStatus::AnalysisStarted => write!(f, "ANALYSIS_STARTED"),
+SrcCodeOrDbAnalysisStatus::AnalysisSuccess => write!(f, "ANALYSIS_SUCCESS"),
+SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled => write!(f, "ANALYSIS_TO_BE_SCHEDULED"),
+SrcCodeOrDbAnalysisStatus::Configured => write!(f, "CONFIGURED"),
+SrcCodeOrDbAnalysisStatus::Unconfigured => write!(f, "UNCONFIGURED"),
+SrcCodeOrDbAnalysisStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

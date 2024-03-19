@@ -3,15 +3,15 @@
 /// <p>The options that are available for a single Y axis in a chart.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct YAxisOptions {
+pub struct YAxisOptions  {
     /// <p>The Y axis type to be used in the chart.</p>
     /// <p>If you choose <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost vertical axis of the chart.</p>
     pub y_axis: crate::types::SingleYAxisOption,
 }
-impl YAxisOptions {
+impl  YAxisOptions  {
     /// <p>The Y axis type to be used in the chart.</p>
     /// <p>If you choose <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost vertical axis of the chart.</p>
-    pub fn y_axis(&self) -> &crate::types::SingleYAxisOption {
+    pub fn y_axis(&self) -> & crate::types::SingleYAxisOption {
         &self.y_axis
     }
 }
@@ -39,8 +39,7 @@ impl YAxisOptionsBuilder {
     /// <p>The Y axis type to be used in the chart.</p>
     /// <p>If you choose <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost vertical axis of the chart.</p>
     pub fn set_y_axis(mut self, input: ::std::option::Option<crate::types::SingleYAxisOption>) -> Self {
-        self.y_axis = input;
-        self
+        self.y_axis = input; self
     }
     /// <p>The Y axis type to be used in the chart.</p>
     /// <p>If you choose <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost vertical axis of the chart.</p>
@@ -51,13 +50,15 @@ impl YAxisOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`y_axis`](crate::types::builders::YAxisOptionsBuilder::y_axis)
     pub fn build(self) -> ::std::result::Result<crate::types::YAxisOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::YAxisOptions {
-            y_axis: self.y_axis.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "y_axis",
-                    "y_axis was not specified but it is required when building YAxisOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::YAxisOptions {
+                y_axis: self.y_axis
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("y_axis", "y_axis was not specified but it is required when building YAxisOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

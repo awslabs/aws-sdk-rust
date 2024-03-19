@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEventsInput {
+pub struct PutEventsInput  {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutEventsRequestEntry>>,
 }
-impl PutEventsInput {
+impl  PutEventsInput  {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::PutEventsRequestEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::PutEventsRequestEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutEventsInput {
@@ -25,7 +26,7 @@ impl PutEventsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEventsInputBuilder {
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutEventsRequestEntry>>,
 }
 impl PutEventsInputBuilder {
     /// Appends an item to `entries`.
@@ -35,21 +36,26 @@ impl PutEventsInputBuilder {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     pub fn entries(mut self, input: crate::types::PutEventsRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutEventsRequestEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutEventsRequestEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`PutEventsInput`](crate::operation::put_events::PutEventsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_events::PutEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_events::PutEventsInput { entries: self.entries })
+        ::std::result::Result::Ok(
+            crate::operation::put_events::PutEventsInput {
+                entries: self.entries
+                ,
+            }
+        )
     }
 }
+

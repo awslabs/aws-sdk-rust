@@ -3,7 +3,7 @@
 /// <p>A configuration ID paired with an error message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedConfiguration {
+pub struct FailedConfiguration  {
     /// <p>The unique identifier of the configuration the failed to delete.</p>
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The integer error code associated with the error message.</p>
@@ -11,9 +11,9 @@ pub struct FailedConfiguration {
     /// <p>A descriptive message indicating why the associated configuration failed to delete.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl FailedConfiguration {
+impl  FailedConfiguration  {
     /// <p>The unique identifier of the configuration the failed to delete.</p>
-    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>The integer error code associated with the error message.</p>
@@ -21,7 +21,7 @@ impl FailedConfiguration {
         self.error_status_code
     }
     /// <p>A descriptive message indicating why the associated configuration failed to delete.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FailedConfigurationBuilder {
     }
     /// <p>The unique identifier of the configuration the failed to delete.</p>
     pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>The unique identifier of the configuration the failed to delete.</p>
     pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FailedConfigurationBuilder {
     }
     /// <p>The integer error code associated with the error message.</p>
     pub fn set_error_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.error_status_code = input;
-        self
+        self.error_status_code = input; self
     }
     /// <p>The integer error code associated with the error message.</p>
     pub fn get_error_status_code(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl FailedConfigurationBuilder {
     }
     /// <p>A descriptive message indicating why the associated configuration failed to delete.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A descriptive message indicating why the associated configuration failed to delete.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,14 @@ impl FailedConfigurationBuilder {
     /// Consumes the builder and constructs a [`FailedConfiguration`](crate::types::FailedConfiguration).
     pub fn build(self) -> crate::types::FailedConfiguration {
         crate::types::FailedConfiguration {
-            configuration_id: self.configuration_id,
-            error_status_code: self.error_status_code.unwrap_or_default(),
-            error_message: self.error_message,
+            configuration_id: self.configuration_id
+            ,
+            error_status_code: self.error_status_code
+                .unwrap_or_default()
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

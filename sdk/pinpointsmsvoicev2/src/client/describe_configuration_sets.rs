@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConfigurationSets`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`configuration_set_names(impl Into<String>)`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::configuration_set_names) / [`set_configuration_set_names(Option<Vec::<String>>)`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::set_configuration_set_names):<br>required: **false**<br><p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p><br>
     ///   - [`filters(ConfigurationSetFilter)`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::filters) / [`set_filters(Option<Vec::<ConfigurationSetFilter>>)`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::set_filters):<br>required: **false**<br><p>An array of filters to apply to the results that are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`DescribeConfigurationSetsOutput`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput) with field(s):
+                            /// - On success, responds with [`DescribeConfigurationSetsOutput`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput) with field(s):
     ///   - [`configuration_sets(Option<Vec::<ConfigurationSetInformation>>)`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput::configuration_sets): <p>An array of ConfigurationSets objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    /// - On failure, responds with [`SdkError<DescribeConfigurationSetsError>`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsError)
+                            /// - On failure, responds with [`SdkError<DescribeConfigurationSetsError>`](crate::operation::describe_configuration_sets::DescribeConfigurationSetsError)
     pub fn describe_configuration_sets(&self) -> crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder {
-        crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

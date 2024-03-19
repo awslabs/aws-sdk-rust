@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAgentStatusInput {
+pub struct CreateAgentStatusInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the status.</p>
@@ -14,23 +14,23 @@ pub struct CreateAgentStatusInput {
     /// <p>The display order of the status.</p>
     pub display_order: ::std::option::Option<i32>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateAgentStatusInput {
+impl  CreateAgentStatusInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the status.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the status.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the status.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AgentStatusState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AgentStatusState> {
         self.state.as_ref()
     }
     /// <p>The display order of the status.</p>
@@ -38,7 +38,7 @@ impl CreateAgentStatusInput {
         self.display_order
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -58,7 +58,7 @@ pub struct CreateAgentStatusInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::AgentStatusState>,
     pub(crate) display_order: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateAgentStatusInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -69,8 +69,7 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The name of the status.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the status.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The description of the status.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the status.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The state of the status.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AgentStatusState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the status.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AgentStatusState> {
@@ -127,8 +123,7 @@ impl CreateAgentStatusInputBuilder {
     }
     /// <p>The display order of the status.</p>
     pub fn set_display_order(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.display_order = input;
-        self
+        self.display_order = input; self
     }
     /// <p>The display order of the status.</p>
     pub fn get_display_order(&self) -> &::std::option::Option<i32> {
@@ -141,30 +136,36 @@ impl CreateAgentStatusInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAgentStatusInput`](crate::operation::create_agent_status::CreateAgentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_agent_status::CreateAgentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_agent_status::CreateAgentStatusInput {
-            instance_id: self.instance_id,
-            name: self.name,
-            description: self.description,
-            state: self.state,
-            display_order: self.display_order,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_agent_status::CreateAgentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_agent_status::CreateAgentStatusInput {
+                instance_id: self.instance_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                display_order: self.display_order
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

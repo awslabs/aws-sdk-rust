@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListParentsOutput {
+pub struct ListParentsOutput  {
     /// <p>A list of parents for the specified child account or OU.</p>
-    pub parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
+    pub parents: ::std::option::Option<::std::vec::Vec::<crate::types::Parent>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListParentsOutput {
+impl  ListParentsOutput  {
     /// <p>A list of parents for the specified child account or OU.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parents.is_none()`.
-    pub fn parents(&self) -> &[crate::types::Parent] {
-        self.parents.as_deref().unwrap_or_default()
+    pub fn parents(&self) -> & [crate::types::Parent] {
+        self.parents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListParentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListParentsOutput {
     /// Creates a new builder-style object to manufacture [`ListParentsOutput`](crate::operation::list_parents::ListParentsOutput).
     pub fn builder() -> crate::operation::list_parents::builders::ListParentsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListParentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParentsOutputBuilder {
-    pub(crate) parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
+    pub(crate) parents: ::std::option::Option<::std::vec::Vec::<crate::types::Parent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListParentsOutputBuilder {
     /// <p>A list of parents for the specified child account or OU.</p>
     pub fn parents(mut self, input: crate::types::Parent) -> Self {
         let mut v = self.parents.unwrap_or_default();
-        v.push(input);
-        self.parents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of parents for the specified child account or OU.</p>
-    pub fn set_parents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>) -> Self {
-        self.parents = input;
-        self
+    pub fn set_parents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parent>>) -> Self {
+        self.parents = input; self
     }
     /// <p>A list of parents for the specified child account or OU.</p>
-    pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parent>> {
+    pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parent>> {
         &self.parents
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -69,28 +69,30 @@ impl ListParentsOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListParentsOutput`](crate::operation::list_parents::ListParentsOutput).
     pub fn build(self) -> crate::operation::list_parents::ListParentsOutput {
         crate::operation::list_parents::ListParentsOutput {
-            parents: self.parents,
-            next_token: self.next_token,
+            parents: self.parents
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

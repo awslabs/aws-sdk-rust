@@ -3,13 +3,13 @@
 /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricProcessingConfig {
+pub struct MetricProcessingConfig  {
     /// <p>The compute location for the given metric property.</p>
     pub compute_location: crate::types::ComputeLocation,
 }
-impl MetricProcessingConfig {
+impl  MetricProcessingConfig  {
     /// <p>The compute location for the given metric property.</p>
-    pub fn compute_location(&self) -> &crate::types::ComputeLocation {
+    pub fn compute_location(&self) -> & crate::types::ComputeLocation {
         &self.compute_location
     }
 }
@@ -35,8 +35,7 @@ impl MetricProcessingConfigBuilder {
     }
     /// <p>The compute location for the given metric property.</p>
     pub fn set_compute_location(mut self, input: ::std::option::Option<crate::types::ComputeLocation>) -> Self {
-        self.compute_location = input;
-        self
+        self.compute_location = input; self
     }
     /// <p>The compute location for the given metric property.</p>
     pub fn get_compute_location(&self) -> &::std::option::Option<crate::types::ComputeLocation> {
@@ -46,13 +45,15 @@ impl MetricProcessingConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`compute_location`](crate::types::builders::MetricProcessingConfigBuilder::compute_location)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricProcessingConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricProcessingConfig {
-            compute_location: self.compute_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compute_location",
-                    "compute_location was not specified but it is required when building MetricProcessingConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricProcessingConfig {
+                compute_location: self.compute_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compute_location", "compute_location was not specified but it is required when building MetricProcessingConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIndexOutput {
+pub struct GetIndexOutput  {
     /// <p>The identifier of the Amazon Q application associated with the index.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q index.</p>
@@ -22,70 +22,71 @@ pub struct GetIndexOutput {
     /// <p>The storage capacity units chosen for your Amazon Q index.</p>
     pub capacity_configuration: ::std::option::Option<crate::types::IndexCapacityConfiguration>,
     /// <p>Configuration information for document attributes or metadata. Document metadata are fields associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
-    pub document_attribute_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>>,
+    pub document_attribute_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttributeConfiguration>>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
     /// <p>Provides information about the number of documents indexed.</p>
     pub index_statistics: ::std::option::Option<crate::types::IndexStatistics>,
     _request_id: Option<String>,
 }
-impl GetIndexOutput {
+impl  GetIndexOutput  {
     /// <p>The identifier of the Amazon Q application associated with the index.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q index.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The name of the Amazon Q index.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
-    pub fn index_arn(&self) -> ::std::option::Option<&str> {
+    pub fn index_arn(&self) -> ::std::option::Option<& str> {
         self.index_arn.as_deref()
     }
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IndexStatus> {
         self.status.as_ref()
     }
     /// <p>The description for the Amazon Q index.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Unix timestamp when the Amazon Q index was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the Amazon Q index was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The storage capacity units chosen for your Amazon Q index.</p>
-    pub fn capacity_configuration(&self) -> ::std::option::Option<&crate::types::IndexCapacityConfiguration> {
+    pub fn capacity_configuration(&self) -> ::std::option::Option<& crate::types::IndexCapacityConfiguration> {
         self.capacity_configuration.as_ref()
     }
     /// <p>Configuration information for document attributes or metadata. Document metadata are fields associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_attribute_configurations.is_none()`.
-    pub fn document_attribute_configurations(&self) -> &[crate::types::DocumentAttributeConfiguration] {
-        self.document_attribute_configurations.as_deref().unwrap_or_default()
+    pub fn document_attribute_configurations(&self) -> & [crate::types::DocumentAttributeConfiguration] {
+        self.document_attribute_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
     /// <p>Provides information about the number of documents indexed.</p>
-    pub fn index_statistics(&self) -> ::std::option::Option<&crate::types::IndexStatistics> {
+    pub fn index_statistics(&self) -> ::std::option::Option<& crate::types::IndexStatistics> {
         self.index_statistics.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIndexOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIndexOutput {
     /// Creates a new builder-style object to manufacture [`GetIndexOutput`](crate::operation::get_index::GetIndexOutput).
     pub fn builder() -> crate::operation::get_index::builders::GetIndexOutputBuilder {
@@ -106,7 +107,7 @@ pub struct GetIndexOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) capacity_configuration: ::std::option::Option<crate::types::IndexCapacityConfiguration>,
-    pub(crate) document_attribute_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>>,
+    pub(crate) document_attribute_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttributeConfiguration>>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,
     pub(crate) index_statistics: ::std::option::Option<crate::types::IndexStatistics>,
     _request_id: Option<String>,
@@ -119,8 +120,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The identifier of the Amazon Q application associated with the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application associated with the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +133,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The identifier of the Amazon Q index.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the Amazon Q index.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +146,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The name of the Amazon Q index.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the Amazon Q index.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +159,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_arn = input;
-        self
+        self.index_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
     pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +172,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IndexStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
@@ -189,8 +185,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The description for the Amazon Q index.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the Amazon Q index.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +198,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q index was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q index was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -217,8 +211,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q index was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q index was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -231,8 +224,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The storage capacity units chosen for your Amazon Q index.</p>
     pub fn set_capacity_configuration(mut self, input: ::std::option::Option<crate::types::IndexCapacityConfiguration>) -> Self {
-        self.capacity_configuration = input;
-        self
+        self.capacity_configuration = input; self
     }
     /// <p>The storage capacity units chosen for your Amazon Q index.</p>
     pub fn get_capacity_configuration(&self) -> &::std::option::Option<crate::types::IndexCapacityConfiguration> {
@@ -245,20 +237,16 @@ impl GetIndexOutputBuilder {
     /// <p>Configuration information for document attributes or metadata. Document metadata are fields associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
     pub fn document_attribute_configurations(mut self, input: crate::types::DocumentAttributeConfiguration) -> Self {
         let mut v = self.document_attribute_configurations.unwrap_or_default();
-        v.push(input);
-        self.document_attribute_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.document_attribute_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration information for document attributes or metadata. Document metadata are fields associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
-    pub fn set_document_attribute_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>>,
-    ) -> Self {
-        self.document_attribute_configurations = input;
-        self
+    pub fn set_document_attribute_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttributeConfiguration>>) -> Self {
+        self.document_attribute_configurations = input; self
     }
     /// <p>Configuration information for document attributes or metadata. Document metadata are fields associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
-    pub fn get_document_attribute_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>> {
+    pub fn get_document_attribute_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttributeConfiguration>> {
         &self.document_attribute_configurations
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
@@ -268,8 +256,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -282,38 +269,50 @@ impl GetIndexOutputBuilder {
     }
     /// <p>Provides information about the number of documents indexed.</p>
     pub fn set_index_statistics(mut self, input: ::std::option::Option<crate::types::IndexStatistics>) -> Self {
-        self.index_statistics = input;
-        self
+        self.index_statistics = input; self
     }
     /// <p>Provides information about the number of documents indexed.</p>
     pub fn get_index_statistics(&self) -> &::std::option::Option<crate::types::IndexStatistics> {
         &self.index_statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIndexOutput`](crate::operation::get_index::GetIndexOutput).
     pub fn build(self) -> crate::operation::get_index::GetIndexOutput {
         crate::operation::get_index::GetIndexOutput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-            display_name: self.display_name,
-            index_arn: self.index_arn,
-            status: self.status,
-            description: self.description,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            capacity_configuration: self.capacity_configuration,
-            document_attribute_configurations: self.document_attribute_configurations,
-            error: self.error,
-            index_statistics: self.index_statistics,
+            application_id: self.application_id
+            ,
+            index_id: self.index_id
+            ,
+            display_name: self.display_name
+            ,
+            index_arn: self.index_arn
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            capacity_configuration: self.capacity_configuration
+            ,
+            document_attribute_configurations: self.document_attribute_configurations
+            ,
+            error: self.error
+            ,
+            index_statistics: self.index_statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

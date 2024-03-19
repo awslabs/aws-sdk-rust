@@ -3,13 +3,13 @@
 /// <p>Represents a request to generate the CNAME records needed to set up Easy DKIM with Amazon SES. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyDomainDkimInput {
+pub struct VerifyDomainDkimInput  {
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
     pub domain: ::std::option::Option<::std::string::String>,
 }
-impl VerifyDomainDkimInput {
+impl  VerifyDomainDkimInput  {
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl VerifyDomainDkimInputBuilder {
     }
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
     /// Consumes the builder and constructs a [`VerifyDomainDkimInput`](crate::operation::verify_domain_dkim::VerifyDomainDkimInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::verify_domain_dkim::VerifyDomainDkimInput { domain: self.domain })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_domain_dkim::VerifyDomainDkimInput {
+                domain: self.domain
+                ,
+            }
+        )
     }
 }
+

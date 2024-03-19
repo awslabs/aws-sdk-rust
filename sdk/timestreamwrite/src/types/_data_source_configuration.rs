@@ -3,7 +3,7 @@
 /// <p>Defines configuration details about the data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceConfiguration {
+pub struct DataSourceConfiguration  {
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
     pub data_source_s3_configuration: ::std::option::Option<crate::types::DataSourceS3Configuration>,
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
@@ -11,17 +11,17 @@ pub struct DataSourceConfiguration {
     /// <p>This is currently CSV.</p>
     pub data_format: crate::types::BatchLoadDataFormat,
 }
-impl DataSourceConfiguration {
+impl  DataSourceConfiguration  {
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
-    pub fn data_source_s3_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceS3Configuration> {
+    pub fn data_source_s3_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceS3Configuration> {
         self.data_source_s3_configuration.as_ref()
     }
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
-    pub fn csv_configuration(&self) -> ::std::option::Option<&crate::types::CsvConfiguration> {
+    pub fn csv_configuration(&self) -> ::std::option::Option<& crate::types::CsvConfiguration> {
         self.csv_configuration.as_ref()
     }
     /// <p>This is currently CSV.</p>
-    pub fn data_format(&self) -> &crate::types::BatchLoadDataFormat {
+    pub fn data_format(&self) -> & crate::types::BatchLoadDataFormat {
         &self.data_format
     }
 }
@@ -49,8 +49,7 @@ impl DataSourceConfigurationBuilder {
     }
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
     pub fn set_data_source_s3_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceS3Configuration>) -> Self {
-        self.data_source_s3_configuration = input;
-        self
+        self.data_source_s3_configuration = input; self
     }
     /// <p>Configuration of an S3 location for a file which contains data to load.</p>
     pub fn get_data_source_s3_configuration(&self) -> &::std::option::Option<crate::types::DataSourceS3Configuration> {
@@ -63,8 +62,7 @@ impl DataSourceConfigurationBuilder {
     }
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
     pub fn set_csv_configuration(mut self, input: ::std::option::Option<crate::types::CsvConfiguration>) -> Self {
-        self.csv_configuration = input;
-        self
+        self.csv_configuration = input; self
     }
     /// <p>A delimited data format where the column separator can be a comma and the record separator is a newline character.</p>
     pub fn get_csv_configuration(&self) -> &::std::option::Option<crate::types::CsvConfiguration> {
@@ -78,8 +76,7 @@ impl DataSourceConfigurationBuilder {
     }
     /// <p>This is currently CSV.</p>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::BatchLoadDataFormat>) -> Self {
-        self.data_format = input;
-        self
+        self.data_format = input; self
     }
     /// <p>This is currently CSV.</p>
     pub fn get_data_format(&self) -> &::std::option::Option<crate::types::BatchLoadDataFormat> {
@@ -89,15 +86,19 @@ impl DataSourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_format`](crate::types::builders::DataSourceConfigurationBuilder::data_format)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSourceConfiguration {
-            data_source_s3_configuration: self.data_source_s3_configuration,
-            csv_configuration: self.csv_configuration,
-            data_format: self.data_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_format",
-                    "data_format was not specified but it is required when building DataSourceConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSourceConfiguration {
+                data_source_s3_configuration: self.data_source_s3_configuration
+                ,
+                csv_configuration: self.csv_configuration
+                ,
+                data_format: self.data_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_format", "data_format was not specified but it is required when building DataSourceConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

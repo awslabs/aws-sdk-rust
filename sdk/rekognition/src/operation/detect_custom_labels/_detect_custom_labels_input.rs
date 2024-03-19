@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectCustomLabelsInput {
+pub struct DetectCustomLabelsInput  {
     /// <p>The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.</p>
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the input image either as bytes or an S3 object.</p>
@@ -18,9 +18,9 @@ pub struct DetectCustomLabelsInput {
     /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
     pub min_confidence: ::std::option::Option<f32>,
 }
-impl DetectCustomLabelsInput {
+impl  DetectCustomLabelsInput  {
     /// <p>The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.</p>
-    pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_version_arn(&self) -> ::std::option::Option<& str> {
         self.project_version_arn.as_deref()
     }
     /// <p>Provides the input image either as bytes or an S3 object.</p>
@@ -30,7 +30,7 @@ impl DetectCustomLabelsInput {
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.</p>
-    pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
+    pub fn image(&self) -> ::std::option::Option<& crate::types::Image> {
         self.image.as_ref()
     }
     /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
@@ -67,8 +67,7 @@ impl DetectCustomLabelsInputBuilder {
     }
     /// <p>The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_version_arn = input;
-        self
+        self.project_version_arn = input; self
     }
     /// <p>The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +93,7 @@ impl DetectCustomLabelsInputBuilder {
     /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>Provides the input image either as bytes or an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations.</p>
@@ -114,8 +112,7 @@ impl DetectCustomLabelsInputBuilder {
     }
     /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -128,23 +125,26 @@ impl DetectCustomLabelsInputBuilder {
     }
     /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_confidence = input;
-        self
+        self.min_confidence = input; self
     }
     /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
     pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
         &self.min_confidence
     }
     /// Consumes the builder and constructs a [`DetectCustomLabelsInput`](crate::operation::detect_custom_labels::DetectCustomLabelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detect_custom_labels::DetectCustomLabelsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::detect_custom_labels::DetectCustomLabelsInput {
-            project_version_arn: self.project_version_arn,
-            image: self.image,
-            max_results: self.max_results,
-            min_confidence: self.min_confidence,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_custom_labels::DetectCustomLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_custom_labels::DetectCustomLabelsInput {
+                project_version_arn: self.project_version_arn
+                ,
+                image: self.image
+                ,
+                max_results: self.max_results
+                ,
+                min_confidence: self.min_confidence
+                ,
+            }
+        )
     }
 }
+

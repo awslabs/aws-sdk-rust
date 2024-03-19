@@ -3,15 +3,14 @@
 /// <p>Specifies the request's query string as an aggregate key for a rate-based rule. Each distinct string contributes to the aggregation instance. If you use just the query string as your custom key, then each string fully defines an aggregation instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateLimitQueryString {
+pub struct RateLimitQueryString  {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
+    pub text_transformations: ::std::vec::Vec::<crate::types::TextTransformation>,
 }
-impl RateLimitQueryString {
+impl  RateLimitQueryString  {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
-        use std::ops::Deref;
-        self.text_transformations.deref()
+    pub fn text_transformations(&self) -> & [crate::types::TextTransformation] {
+        use std::ops::Deref; self.text_transformations.deref()
     }
 }
 impl RateLimitQueryString {
@@ -25,7 +24,7 @@ impl RateLimitQueryString {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RateLimitQueryStringBuilder {
-    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>>,
 }
 impl RateLimitQueryStringBuilder {
     /// Appends an item to `text_transformations`.
@@ -35,30 +34,31 @@ impl RateLimitQueryStringBuilder {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
-        v.push(input);
-        self.text_transformations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_transformations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>) -> Self {
-        self.text_transformations = input;
-        self
+    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>>) -> Self {
+        self.text_transformations = input; self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
+    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>> {
         &self.text_transformations
     }
     /// Consumes the builder and constructs a [`RateLimitQueryString`](crate::types::RateLimitQueryString).
     /// This method will fail if any of the following fields are not set:
     /// - [`text_transformations`](crate::types::builders::RateLimitQueryStringBuilder::text_transformations)
     pub fn build(self) -> ::std::result::Result<crate::types::RateLimitQueryString, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RateLimitQueryString {
-            text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text_transformations",
-                    "text_transformations was not specified but it is required when building RateLimitQueryString",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RateLimitQueryString {
+                text_transformations: self.text_transformations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text_transformations", "text_transformations was not specified but it is required when building RateLimitQueryString")
+                    )?
+                ,
+            }
+        )
     }
 }
+

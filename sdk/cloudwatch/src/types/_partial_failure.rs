@@ -3,7 +3,7 @@
 /// <p>This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartialFailure {
+pub struct PartialFailure  {
     /// <p>The specified rule that could not be deleted.</p>
     pub failure_resource: ::std::option::Option<::std::string::String>,
     /// <p>The type of error.</p>
@@ -13,21 +13,21 @@ pub struct PartialFailure {
     /// <p>A description of the error.</p>
     pub failure_description: ::std::option::Option<::std::string::String>,
 }
-impl PartialFailure {
+impl  PartialFailure  {
     /// <p>The specified rule that could not be deleted.</p>
-    pub fn failure_resource(&self) -> ::std::option::Option<&str> {
+    pub fn failure_resource(&self) -> ::std::option::Option<& str> {
         self.failure_resource.as_deref()
     }
     /// <p>The type of error.</p>
-    pub fn exception_type(&self) -> ::std::option::Option<&str> {
+    pub fn exception_type(&self) -> ::std::option::Option<& str> {
         self.exception_type.as_deref()
     }
     /// <p>The code of the error.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>A description of the error.</p>
-    pub fn failure_description(&self) -> ::std::option::Option<&str> {
+    pub fn failure_description(&self) -> ::std::option::Option<& str> {
         self.failure_description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PartialFailureBuilder {
     }
     /// <p>The specified rule that could not be deleted.</p>
     pub fn set_failure_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_resource = input;
-        self
+        self.failure_resource = input; self
     }
     /// <p>The specified rule that could not be deleted.</p>
     pub fn get_failure_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PartialFailureBuilder {
     }
     /// <p>The type of error.</p>
     pub fn set_exception_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exception_type = input;
-        self
+        self.exception_type = input; self
     }
     /// <p>The type of error.</p>
     pub fn get_exception_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl PartialFailureBuilder {
     }
     /// <p>The code of the error.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The code of the error.</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl PartialFailureBuilder {
     }
     /// <p>A description of the error.</p>
     pub fn set_failure_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_description = input;
-        self
+        self.failure_description = input; self
     }
     /// <p>A description of the error.</p>
     pub fn get_failure_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl PartialFailureBuilder {
     /// Consumes the builder and constructs a [`PartialFailure`](crate::types::PartialFailure).
     pub fn build(self) -> crate::types::PartialFailure {
         crate::types::PartialFailure {
-            failure_resource: self.failure_resource,
-            exception_type: self.exception_type,
-            failure_code: self.failure_code,
-            failure_description: self.failure_description,
+            failure_resource: self.failure_resource
+            ,
+            exception_type: self.exception_type
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_description: self.failure_description
+            ,
         }
     }
 }
+

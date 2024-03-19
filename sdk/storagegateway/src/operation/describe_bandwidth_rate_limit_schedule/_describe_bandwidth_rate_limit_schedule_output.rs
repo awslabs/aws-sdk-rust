@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBandwidthRateLimitScheduleOutput {
+pub struct DescribeBandwidthRateLimitScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
-    pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec::<crate::types::BandwidthRateLimitInterval>>,
     _request_id: Option<String>,
 }
-impl DescribeBandwidthRateLimitScheduleOutput {
+impl  DescribeBandwidthRateLimitScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bandwidth_rate_limit_intervals.is_none()`.
-    pub fn bandwidth_rate_limit_intervals(&self) -> &[crate::types::BandwidthRateLimitInterval] {
-        self.bandwidth_rate_limit_intervals.as_deref().unwrap_or_default()
+    pub fn bandwidth_rate_limit_intervals(&self) -> & [crate::types::BandwidthRateLimitInterval] {
+        self.bandwidth_rate_limit_intervals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBandwidthRateLimitScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBandwidthRateLimitScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitScheduleOutput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput).
     pub fn builder() -> crate::operation::describe_bandwidth_rate_limit_schedule::builders::DescribeBandwidthRateLimitScheduleOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeBandwidthRateLimitScheduleOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitScheduleOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub(crate) bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec::<crate::types::BandwidthRateLimitInterval>>,
     _request_id: Option<String>,
 }
 impl DescribeBandwidthRateLimitScheduleOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
     /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
     pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
-        v.push(input);
-        self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
-    pub fn set_bandwidth_rate_limit_intervals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
-    ) -> Self {
-        self.bandwidth_rate_limit_intervals = input;
-        self
+    pub fn set_bandwidth_rate_limit_intervals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BandwidthRateLimitInterval>>) -> Self {
+        self.bandwidth_rate_limit_intervals = input; self
     }
     /// <p>An array that contains the bandwidth rate limit intervals for a tape or volume gateway.</p>
-    pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+    pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BandwidthRateLimitInterval>> {
         &self.bandwidth_rate_limit_intervals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBandwidthRateLimitScheduleOutput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput).
     pub fn build(self) -> crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput {
         crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput {
-            gateway_arn: self.gateway_arn,
-            bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals,
+            gateway_arn: self.gateway_arn
+            ,
+            bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

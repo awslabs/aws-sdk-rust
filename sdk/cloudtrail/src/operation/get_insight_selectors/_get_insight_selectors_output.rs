@@ -2,42 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInsightSelectorsOutput {
+pub struct GetInsightSelectorsOutput  {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
-    pub insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
+    pub insight_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>>,
     /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the destination event data store that logs Insights events.</p>
     pub insights_destination: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetInsightSelectorsOutput {
+impl  GetInsightSelectorsOutput  {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
-    pub fn trail_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trail_arn(&self) -> ::std::option::Option<& str> {
         self.trail_arn.as_deref()
     }
     /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_selectors.is_none()`.
-    pub fn insight_selectors(&self) -> &[crate::types::InsightSelector] {
-        self.insight_selectors.as_deref().unwrap_or_default()
+    pub fn insight_selectors(&self) -> & [crate::types::InsightSelector] {
+        self.insight_selectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the source event data store that enabled Insights events.</p>
-    pub fn event_data_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store_arn(&self) -> ::std::option::Option<& str> {
         self.event_data_store_arn.as_deref()
     }
     /// <p>The ARN of the destination event data store that logs Insights events.</p>
-    pub fn insights_destination(&self) -> ::std::option::Option<&str> {
+    pub fn insights_destination(&self) -> ::std::option::Option<& str> {
         self.insights_destination.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetInsightSelectorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetInsightSelectorsOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightSelectorsOutput`](crate::operation::get_insight_selectors::GetInsightSelectorsOutput).
     pub fn builder() -> crate::operation::get_insight_selectors::builders::GetInsightSelectorsOutputBuilder {
@@ -50,7 +51,7 @@ impl GetInsightSelectorsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightSelectorsOutputBuilder {
     pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
+    pub(crate) insight_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>>,
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) insights_destination: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -63,8 +64,7 @@ impl GetInsightSelectorsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trail_arn = input;
-        self
+        self.trail_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,17 +77,16 @@ impl GetInsightSelectorsOutputBuilder {
     /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         let mut v = self.insight_selectors.unwrap_or_default();
-        v.push(input);
-        self.insight_selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.insight_selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
-    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
-        self.insight_selectors = input;
-        self
+    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>>) -> Self {
+        self.insight_selectors = input; self
     }
     /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
-    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>> {
         &self.insight_selectors
     }
     /// <p>The ARN of the source event data store that enabled Insights events.</p>
@@ -97,8 +96,7 @@ impl GetInsightSelectorsOutputBuilder {
     }
     /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_store_arn = input;
-        self
+        self.event_data_store_arn = input; self
     }
     /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub fn get_event_data_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,30 +109,34 @@ impl GetInsightSelectorsOutputBuilder {
     }
     /// <p>The ARN of the destination event data store that logs Insights events.</p>
     pub fn set_insights_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insights_destination = input;
-        self
+        self.insights_destination = input; self
     }
     /// <p>The ARN of the destination event data store that logs Insights events.</p>
     pub fn get_insights_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.insights_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetInsightSelectorsOutput`](crate::operation::get_insight_selectors::GetInsightSelectorsOutput).
     pub fn build(self) -> crate::operation::get_insight_selectors::GetInsightSelectorsOutput {
         crate::operation::get_insight_selectors::GetInsightSelectorsOutput {
-            trail_arn: self.trail_arn,
-            insight_selectors: self.insight_selectors,
-            event_data_store_arn: self.event_data_store_arn,
-            insights_destination: self.insights_destination,
+            trail_arn: self.trail_arn
+            ,
+            insight_selectors: self.insight_selectors
+            ,
+            event_data_store_arn: self.event_data_store_arn
+            ,
+            insights_destination: self.insights_destination
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

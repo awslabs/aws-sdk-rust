@@ -3,22 +3,22 @@
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetArchiveRuleOutput {
+pub struct GetArchiveRuleOutput  {
     /// <p>Contains information about an archive rule.</p>
     pub archive_rule: ::std::option::Option<crate::types::ArchiveRuleSummary>,
     _request_id: Option<String>,
 }
-impl GetArchiveRuleOutput {
+impl  GetArchiveRuleOutput  {
     /// <p>Contains information about an archive rule.</p>
-    pub fn archive_rule(&self) -> ::std::option::Option<&crate::types::ArchiveRuleSummary> {
+    pub fn archive_rule(&self) -> ::std::option::Option<& crate::types::ArchiveRuleSummary> {
         self.archive_rule.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetArchiveRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetArchiveRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetArchiveRuleOutput`](crate::operation::get_archive_rule::GetArchiveRuleOutput).
     pub fn builder() -> crate::operation::get_archive_rule::builders::GetArchiveRuleOutputBuilder {
@@ -42,27 +42,28 @@ impl GetArchiveRuleOutputBuilder {
     }
     /// <p>Contains information about an archive rule.</p>
     pub fn set_archive_rule(mut self, input: ::std::option::Option<crate::types::ArchiveRuleSummary>) -> Self {
-        self.archive_rule = input;
-        self
+        self.archive_rule = input; self
     }
     /// <p>Contains information about an archive rule.</p>
     pub fn get_archive_rule(&self) -> &::std::option::Option<crate::types::ArchiveRuleSummary> {
         &self.archive_rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetArchiveRuleOutput`](crate::operation::get_archive_rule::GetArchiveRuleOutput).
     pub fn build(self) -> crate::operation::get_archive_rule::GetArchiveRuleOutput {
         crate::operation::get_archive_rule::GetArchiveRuleOutput {
-            archive_rule: self.archive_rule,
+            archive_rule: self.archive_rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

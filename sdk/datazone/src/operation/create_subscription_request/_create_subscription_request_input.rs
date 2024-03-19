@@ -2,45 +2,47 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateSubscriptionRequestInput {
+pub struct CreateSubscriptionRequestInput  {
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon DataZone principals for whom the subscription request is created.</p>
-    pub subscribed_principals: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipalInput>>,
+    pub subscribed_principals: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedPrincipalInput>>,
     /// <p></p>
-    pub subscribed_listings: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>>,
+    pub subscribed_listings: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedListingInput>>,
     /// <p>The reason for the subscription request.</p>
     pub request_reason: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateSubscriptionRequestInput {
+impl  CreateSubscriptionRequestInput  {
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The Amazon DataZone principals for whom the subscription request is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribed_principals.is_none()`.
-    pub fn subscribed_principals(&self) -> &[crate::types::SubscribedPrincipalInput] {
-        self.subscribed_principals.as_deref().unwrap_or_default()
+    pub fn subscribed_principals(&self) -> & [crate::types::SubscribedPrincipalInput] {
+        self.subscribed_principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribed_listings.is_none()`.
-    pub fn subscribed_listings(&self) -> &[crate::types::SubscribedListingInput] {
-        self.subscribed_listings.as_deref().unwrap_or_default()
+    pub fn subscribed_listings(&self) -> & [crate::types::SubscribedListingInput] {
+        self.subscribed_listings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The reason for the subscription request.</p>
-    pub fn request_reason(&self) -> ::std::option::Option<&str> {
+    pub fn request_reason(&self) -> ::std::option::Option<& str> {
         self.request_reason.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateSubscriptionRequestInput {
+impl  ::std::fmt::Debug for CreateSubscriptionRequestInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSubscriptionRequestInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -63,8 +65,8 @@ impl CreateSubscriptionRequestInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateSubscriptionRequestInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) subscribed_principals: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipalInput>>,
-    pub(crate) subscribed_listings: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>>,
+    pub(crate) subscribed_principals: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedPrincipalInput>>,
+    pub(crate) subscribed_listings: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedListingInput>>,
     pub(crate) request_reason: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -77,8 +79,7 @@ impl CreateSubscriptionRequestInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,17 +92,16 @@ impl CreateSubscriptionRequestInputBuilder {
     /// <p>The Amazon DataZone principals for whom the subscription request is created.</p>
     pub fn subscribed_principals(mut self, input: crate::types::SubscribedPrincipalInput) -> Self {
         let mut v = self.subscribed_principals.unwrap_or_default();
-        v.push(input);
-        self.subscribed_principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscribed_principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon DataZone principals for whom the subscription request is created.</p>
-    pub fn set_subscribed_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipalInput>>) -> Self {
-        self.subscribed_principals = input;
-        self
+    pub fn set_subscribed_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedPrincipalInput>>) -> Self {
+        self.subscribed_principals = input; self
     }
     /// <p>The Amazon DataZone principals for whom the subscription request is created.</p>
-    pub fn get_subscribed_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipalInput>> {
+    pub fn get_subscribed_principals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubscribedPrincipalInput>> {
         &self.subscribed_principals
     }
     /// Appends an item to `subscribed_listings`.
@@ -111,17 +111,16 @@ impl CreateSubscriptionRequestInputBuilder {
     /// <p></p>
     pub fn subscribed_listings(mut self, input: crate::types::SubscribedListingInput) -> Self {
         let mut v = self.subscribed_listings.unwrap_or_default();
-        v.push(input);
-        self.subscribed_listings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscribed_listings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_subscribed_listings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>>) -> Self {
-        self.subscribed_listings = input;
-        self
+    pub fn set_subscribed_listings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubscribedListingInput>>) -> Self {
+        self.subscribed_listings = input; self
     }
     /// <p></p>
-    pub fn get_subscribed_listings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>> {
+    pub fn get_subscribed_listings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubscribedListingInput>> {
         &self.subscribed_listings
     }
     /// <p>The reason for the subscription request.</p>
@@ -132,8 +131,7 @@ impl CreateSubscriptionRequestInputBuilder {
     }
     /// <p>The reason for the subscription request.</p>
     pub fn set_request_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_reason = input;
-        self
+        self.request_reason = input; self
     }
     /// <p>The reason for the subscription request.</p>
     pub fn get_request_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,27 +144,28 @@ impl CreateSubscriptionRequestInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateSubscriptionRequestInput`](crate::operation::create_subscription_request::CreateSubscriptionRequestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscription_request::CreateSubscriptionRequestInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_subscription_request::CreateSubscriptionRequestInput {
-            domain_identifier: self.domain_identifier,
-            subscribed_principals: self.subscribed_principals,
-            subscribed_listings: self.subscribed_listings,
-            request_reason: self.request_reason,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_subscription_request::CreateSubscriptionRequestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_subscription_request::CreateSubscriptionRequestInput {
+                domain_identifier: self.domain_identifier
+                ,
+                subscribed_principals: self.subscribed_principals
+                ,
+                subscribed_listings: self.subscribed_listings
+                ,
+                request_reason: self.request_reason
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateSubscriptionRequestInputBuilder {
@@ -180,3 +179,4 @@ impl ::std::fmt::Debug for CreateSubscriptionRequestInputBuilder {
         formatter.finish()
     }
 }
+

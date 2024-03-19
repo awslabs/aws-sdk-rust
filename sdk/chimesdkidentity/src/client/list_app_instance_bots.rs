@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppInstanceBots`](crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_instance_arn(impl Into<String>)`](crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::set_app_instance_arn):<br>required: **true**<br><p>The ARN of the <code>AppInstance</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of requests to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested bots are returned.</p><br>
-    /// - On success, responds with [`ListAppInstanceBotsOutput`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput) with field(s):
+                            /// - On success, responds with [`ListAppInstanceBotsOutput`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput::app_instance_arn): <p>The ARN of the AppInstance.</p>
     ///   - [`app_instance_bots(Option<Vec::<AppInstanceBotSummary>>)`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput::app_instance_bots): <p>The information for each requested <code>AppInstanceBot</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput::next_token): <p>The token passed by previous API calls until all requested bots are returned.</p>
-    /// - On failure, responds with [`SdkError<ListAppInstanceBotsError>`](crate::operation::list_app_instance_bots::ListAppInstanceBotsError)
+                            /// - On failure, responds with [`SdkError<ListAppInstanceBotsError>`](crate::operation::list_app_instance_bots::ListAppInstanceBotsError)
     pub fn list_app_instance_bots(&self) -> crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder {
-        crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

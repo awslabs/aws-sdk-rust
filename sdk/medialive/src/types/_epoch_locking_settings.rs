@@ -3,19 +3,19 @@
 /// Epoch Locking Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EpochLockingSettings {
+pub struct EpochLockingSettings  {
     /// Optional. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
     pub custom_epoch: ::std::option::Option<::std::string::String>,
     /// Optional. Enter a time for the jam sync. The default is midnight UTC. When epoch locking is enabled, MediaLive performs a daily jam sync on every output encode to ensure timecodes don’t diverge from the wall clock. The jam sync applies only to encodes with frame rate of 29.97 or 59.94 FPS. To override, enter a time in HH:MM:SS in UTC. Always set the MM:SS portion to 00:00.
     pub jam_sync_time: ::std::option::Option<::std::string::String>,
 }
-impl EpochLockingSettings {
+impl  EpochLockingSettings  {
     /// Optional. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
-    pub fn custom_epoch(&self) -> ::std::option::Option<&str> {
+    pub fn custom_epoch(&self) -> ::std::option::Option<& str> {
         self.custom_epoch.as_deref()
     }
     /// Optional. Enter a time for the jam sync. The default is midnight UTC. When epoch locking is enabled, MediaLive performs a daily jam sync on every output encode to ensure timecodes don’t diverge from the wall clock. The jam sync applies only to encodes with frame rate of 29.97 or 59.94 FPS. To override, enter a time in HH:MM:SS in UTC. Always set the MM:SS portion to 00:00.
-    pub fn jam_sync_time(&self) -> ::std::option::Option<&str> {
+    pub fn jam_sync_time(&self) -> ::std::option::Option<& str> {
         self.jam_sync_time.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EpochLockingSettingsBuilder {
     }
     /// Optional. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
     pub fn set_custom_epoch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_epoch = input;
-        self
+        self.custom_epoch = input; self
     }
     /// Optional. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
     pub fn get_custom_epoch(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EpochLockingSettingsBuilder {
     }
     /// Optional. Enter a time for the jam sync. The default is midnight UTC. When epoch locking is enabled, MediaLive performs a daily jam sync on every output encode to ensure timecodes don’t diverge from the wall clock. The jam sync applies only to encodes with frame rate of 29.97 or 59.94 FPS. To override, enter a time in HH:MM:SS in UTC. Always set the MM:SS portion to 00:00.
     pub fn set_jam_sync_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.jam_sync_time = input;
-        self
+        self.jam_sync_time = input; self
     }
     /// Optional. Enter a time for the jam sync. The default is midnight UTC. When epoch locking is enabled, MediaLive performs a daily jam sync on every output encode to ensure timecodes don’t diverge from the wall clock. The jam sync applies only to encodes with frame rate of 29.97 or 59.94 FPS. To override, enter a time in HH:MM:SS in UTC. Always set the MM:SS portion to 00:00.
     pub fn get_jam_sync_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl EpochLockingSettingsBuilder {
     /// Consumes the builder and constructs a [`EpochLockingSettings`](crate::types::EpochLockingSettings).
     pub fn build(self) -> crate::types::EpochLockingSettings {
         crate::types::EpochLockingSettings {
-            custom_epoch: self.custom_epoch,
-            jam_sync_time: self.jam_sync_time,
+            custom_epoch: self.custom_epoch
+            ,
+            jam_sync_time: self.jam_sync_time
+            ,
         }
     }
 }
+

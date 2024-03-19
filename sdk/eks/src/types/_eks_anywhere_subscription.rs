@@ -3,7 +3,7 @@
 /// <p>An EKS Anywhere subscription authorizing the customer to support for licensed clusters and access to EKS Anywhere Curated Packages.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EksAnywhereSubscription {
+pub struct EksAnywhereSubscription  {
     /// <p>UUID identifying a subscription.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the subscription.</p>
@@ -25,29 +25,29 @@ pub struct EksAnywhereSubscription {
     /// <p>A boolean indicating whether or not a subscription will auto renew when it expires.</p>
     pub auto_renew: bool,
     /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
-    pub license_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub license_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl EksAnywhereSubscription {
+impl  EksAnywhereSubscription  {
     /// <p>UUID identifying a subscription.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the subscription.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Unix timestamp in seconds for when the subscription was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp in seconds for when the subscription is effective.</p>
-    pub fn effective_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn effective_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.effective_date.as_ref()
     }
     /// <p>The Unix timestamp in seconds for when the subscription will expire or auto renew, depending on the auto renew configuration of the subscription object.</p>
-    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The number of licenses included in a subscription. Valid values are between 1 and 100.</p>
@@ -55,15 +55,15 @@ impl EksAnywhereSubscription {
         self.license_quantity
     }
     /// <p>The type of licenses included in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
-    pub fn license_type(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscriptionLicenseType> {
+    pub fn license_type(&self) -> ::std::option::Option<& crate::types::EksAnywhereSubscriptionLicenseType> {
         self.license_type.as_ref()
     }
     /// <p>An EksAnywhereSubscriptionTerm object.</p>
-    pub fn term(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscriptionTerm> {
+    pub fn term(&self) -> ::std::option::Option<& crate::types::EksAnywhereSubscriptionTerm> {
         self.term.as_ref()
     }
     /// <p>The status of a subscription.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>A boolean indicating whether or not a subscription will auto renew when it expires.</p>
@@ -71,13 +71,14 @@ impl EksAnywhereSubscription {
         self.auto_renew
     }
     /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_arns.is_none()`.
-    pub fn license_arns(&self) -> &[::std::string::String] {
-        self.license_arns.as_deref().unwrap_or_default()
+    pub fn license_arns(&self) -> & [::std::string::String] {
+        self.license_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -102,8 +103,8 @@ pub struct EksAnywhereSubscriptionBuilder {
     pub(crate) term: ::std::option::Option<crate::types::EksAnywhereSubscriptionTerm>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) auto_renew: ::std::option::Option<bool>,
-    pub(crate) license_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) license_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl EksAnywhereSubscriptionBuilder {
     /// <p>UUID identifying a subscription.</p>
@@ -113,8 +114,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>UUID identifying a subscription.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>UUID identifying a subscription.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the subscription.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the subscription.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>The Unix timestamp in seconds for when the subscription was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp in seconds for when the subscription was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +153,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>The Unix timestamp in seconds for when the subscription is effective.</p>
     pub fn set_effective_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.effective_date = input;
-        self
+        self.effective_date = input; self
     }
     /// <p>The Unix timestamp in seconds for when the subscription is effective.</p>
     pub fn get_effective_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +166,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>The Unix timestamp in seconds for when the subscription will expire or auto renew, depending on the auto renew configuration of the subscription object.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_date = input;
-        self
+        self.expiration_date = input; self
     }
     /// <p>The Unix timestamp in seconds for when the subscription will expire or auto renew, depending on the auto renew configuration of the subscription object.</p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,8 +179,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>The number of licenses included in a subscription. Valid values are between 1 and 100.</p>
     pub fn set_license_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.license_quantity = input;
-        self
+        self.license_quantity = input; self
     }
     /// <p>The number of licenses included in a subscription. Valid values are between 1 and 100.</p>
     pub fn get_license_quantity(&self) -> &::std::option::Option<i32> {
@@ -197,8 +192,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>The type of licenses included in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The type of licenses included in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType> {
@@ -211,8 +205,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>An EksAnywhereSubscriptionTerm object.</p>
     pub fn set_term(mut self, input: ::std::option::Option<crate::types::EksAnywhereSubscriptionTerm>) -> Self {
-        self.term = input;
-        self
+        self.term = input; self
     }
     /// <p>An EksAnywhereSubscriptionTerm object.</p>
     pub fn get_term(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionTerm> {
@@ -225,8 +218,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>The status of a subscription.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a subscription.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +231,7 @@ impl EksAnywhereSubscriptionBuilder {
     }
     /// <p>A boolean indicating whether or not a subscription will auto renew when it expires.</p>
     pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_renew = input;
-        self
+        self.auto_renew = input; self
     }
     /// <p>A boolean indicating whether or not a subscription will auto renew when it expires.</p>
     pub fn get_auto_renew(&self) -> &::std::option::Option<bool> {
@@ -253,17 +244,16 @@ impl EksAnywhereSubscriptionBuilder {
     /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
     pub fn license_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.license_arns.unwrap_or_default();
-        v.push(input.into());
-        self.license_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.license_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
-    pub fn set_license_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.license_arns = input;
-        self
+    pub fn set_license_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.license_arns = input; self
     }
     /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
-    pub fn get_license_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.license_arns
     }
     /// Adds a key-value pair to `tags`.
@@ -273,34 +263,48 @@ impl EksAnywhereSubscriptionBuilder {
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`EksAnywhereSubscription`](crate::types::EksAnywhereSubscription).
     pub fn build(self) -> crate::types::EksAnywhereSubscription {
         crate::types::EksAnywhereSubscription {
-            id: self.id,
-            arn: self.arn,
-            created_at: self.created_at,
-            effective_date: self.effective_date,
-            expiration_date: self.expiration_date,
-            license_quantity: self.license_quantity.unwrap_or_default(),
-            license_type: self.license_type,
-            term: self.term,
-            status: self.status,
-            auto_renew: self.auto_renew.unwrap_or_default(),
-            license_arns: self.license_arns,
-            tags: self.tags,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            effective_date: self.effective_date
+            ,
+            expiration_date: self.expiration_date
+            ,
+            license_quantity: self.license_quantity
+                .unwrap_or_default()
+            ,
+            license_type: self.license_type
+            ,
+            term: self.term
+            ,
+            status: self.status
+            ,
+            auto_renew: self.auto_renew
+                .unwrap_or_default()
+            ,
+            license_arns: self.license_arns
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

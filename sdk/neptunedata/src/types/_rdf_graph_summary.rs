@@ -3,7 +3,7 @@
 /// <p>The RDF graph summary API returns a read-only list of classes and predicate keys, along with counts of quads, subjects, and predicates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdfGraphSummary {
+pub struct RdfGraphSummary  {
     /// <p>The number of distinct subjects in the graph.</p>
     pub num_distinct_subjects: ::std::option::Option<i64>,
     /// <p>The number of distinct predicates in the graph.</p>
@@ -13,13 +13,13 @@ pub struct RdfGraphSummary {
     /// <p>The number of classes in the graph.</p>
     pub num_classes: ::std::option::Option<i64>,
     /// <p>A list of the classes in the graph.</p>
-    pub classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub classes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>"A list of predicates in the graph, along with the predicate counts.</p>
-    pub predicates: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>,
+    pub predicates: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>,
     /// <p>This field is only present when the request mode is <code>DETAILED</code>. It contains a list of subject structures.</p>
-    pub subject_structures: ::std::option::Option<::std::vec::Vec<crate::types::SubjectStructure>>,
+    pub subject_structures: ::std::option::Option<::std::vec::Vec::<crate::types::SubjectStructure>>,
 }
-impl RdfGraphSummary {
+impl  RdfGraphSummary  {
     /// <p>The number of distinct subjects in the graph.</p>
     pub fn num_distinct_subjects(&self) -> ::std::option::Option<i64> {
         self.num_distinct_subjects
@@ -37,22 +37,25 @@ impl RdfGraphSummary {
         self.num_classes
     }
     /// <p>A list of the classes in the graph.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classes.is_none()`.
-    pub fn classes(&self) -> &[::std::string::String] {
-        self.classes.as_deref().unwrap_or_default()
+    pub fn classes(&self) -> & [::std::string::String] {
+        self.classes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>"A list of predicates in the graph, along with the predicate counts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predicates.is_none()`.
-    pub fn predicates(&self) -> &[::std::collections::HashMap<::std::string::String, i64>] {
-        self.predicates.as_deref().unwrap_or_default()
+    pub fn predicates(&self) -> & [::std::collections::HashMap::<::std::string::String, i64>] {
+        self.predicates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This field is only present when the request mode is <code>DETAILED</code>. It contains a list of subject structures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_structures.is_none()`.
-    pub fn subject_structures(&self) -> &[crate::types::SubjectStructure] {
-        self.subject_structures.as_deref().unwrap_or_default()
+    pub fn subject_structures(&self) -> & [crate::types::SubjectStructure] {
+        self.subject_structures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RdfGraphSummary {
@@ -70,9 +73,9 @@ pub struct RdfGraphSummaryBuilder {
     pub(crate) num_distinct_predicates: ::std::option::Option<i64>,
     pub(crate) num_quads: ::std::option::Option<i64>,
     pub(crate) num_classes: ::std::option::Option<i64>,
-    pub(crate) classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) predicates: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>,
-    pub(crate) subject_structures: ::std::option::Option<::std::vec::Vec<crate::types::SubjectStructure>>,
+    pub(crate) classes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) predicates: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>,
+    pub(crate) subject_structures: ::std::option::Option<::std::vec::Vec::<crate::types::SubjectStructure>>,
 }
 impl RdfGraphSummaryBuilder {
     /// <p>The number of distinct subjects in the graph.</p>
@@ -82,8 +85,7 @@ impl RdfGraphSummaryBuilder {
     }
     /// <p>The number of distinct subjects in the graph.</p>
     pub fn set_num_distinct_subjects(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_distinct_subjects = input;
-        self
+        self.num_distinct_subjects = input; self
     }
     /// <p>The number of distinct subjects in the graph.</p>
     pub fn get_num_distinct_subjects(&self) -> &::std::option::Option<i64> {
@@ -96,8 +98,7 @@ impl RdfGraphSummaryBuilder {
     }
     /// <p>The number of distinct predicates in the graph.</p>
     pub fn set_num_distinct_predicates(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_distinct_predicates = input;
-        self
+        self.num_distinct_predicates = input; self
     }
     /// <p>The number of distinct predicates in the graph.</p>
     pub fn get_num_distinct_predicates(&self) -> &::std::option::Option<i64> {
@@ -110,8 +111,7 @@ impl RdfGraphSummaryBuilder {
     }
     /// <p>The number of quads in the graph.</p>
     pub fn set_num_quads(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_quads = input;
-        self
+        self.num_quads = input; self
     }
     /// <p>The number of quads in the graph.</p>
     pub fn get_num_quads(&self) -> &::std::option::Option<i64> {
@@ -124,8 +124,7 @@ impl RdfGraphSummaryBuilder {
     }
     /// <p>The number of classes in the graph.</p>
     pub fn set_num_classes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_classes = input;
-        self
+        self.num_classes = input; self
     }
     /// <p>The number of classes in the graph.</p>
     pub fn get_num_classes(&self) -> &::std::option::Option<i64> {
@@ -138,17 +137,16 @@ impl RdfGraphSummaryBuilder {
     /// <p>A list of the classes in the graph.</p>
     pub fn classes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.classes.unwrap_or_default();
-        v.push(input.into());
-        self.classes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.classes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the classes in the graph.</p>
-    pub fn set_classes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.classes = input;
-        self
+    pub fn set_classes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.classes = input; self
     }
     /// <p>A list of the classes in the graph.</p>
-    pub fn get_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_classes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.classes
     }
     /// Appends an item to `predicates`.
@@ -156,19 +154,18 @@ impl RdfGraphSummaryBuilder {
     /// To override the contents of this collection use [`set_predicates`](Self::set_predicates).
     ///
     /// <p>"A list of predicates in the graph, along with the predicate counts.</p>
-    pub fn predicates(mut self, input: ::std::collections::HashMap<::std::string::String, i64>) -> Self {
+    pub fn predicates(mut self, input: ::std::collections::HashMap::<::std::string::String, i64>) -> Self {
         let mut v = self.predicates.unwrap_or_default();
-        v.push(input);
-        self.predicates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.predicates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>"A list of predicates in the graph, along with the predicate counts.</p>
-    pub fn set_predicates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>) -> Self {
-        self.predicates = input;
-        self
+    pub fn set_predicates(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>) -> Self {
+        self.predicates = input; self
     }
     /// <p>"A list of predicates in the graph, along with the predicate counts.</p>
-    pub fn get_predicates(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>> {
+    pub fn get_predicates(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>> {
         &self.predicates
     }
     /// Appends an item to `subject_structures`.
@@ -178,29 +175,36 @@ impl RdfGraphSummaryBuilder {
     /// <p>This field is only present when the request mode is <code>DETAILED</code>. It contains a list of subject structures.</p>
     pub fn subject_structures(mut self, input: crate::types::SubjectStructure) -> Self {
         let mut v = self.subject_structures.unwrap_or_default();
-        v.push(input);
-        self.subject_structures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subject_structures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This field is only present when the request mode is <code>DETAILED</code>. It contains a list of subject structures.</p>
-    pub fn set_subject_structures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubjectStructure>>) -> Self {
-        self.subject_structures = input;
-        self
+    pub fn set_subject_structures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubjectStructure>>) -> Self {
+        self.subject_structures = input; self
     }
     /// <p>This field is only present when the request mode is <code>DETAILED</code>. It contains a list of subject structures.</p>
-    pub fn get_subject_structures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubjectStructure>> {
+    pub fn get_subject_structures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubjectStructure>> {
         &self.subject_structures
     }
     /// Consumes the builder and constructs a [`RdfGraphSummary`](crate::types::RdfGraphSummary).
     pub fn build(self) -> crate::types::RdfGraphSummary {
         crate::types::RdfGraphSummary {
-            num_distinct_subjects: self.num_distinct_subjects,
-            num_distinct_predicates: self.num_distinct_predicates,
-            num_quads: self.num_quads,
-            num_classes: self.num_classes,
-            classes: self.classes,
-            predicates: self.predicates,
-            subject_structures: self.subject_structures,
+            num_distinct_subjects: self.num_distinct_subjects
+            ,
+            num_distinct_predicates: self.num_distinct_predicates
+            ,
+            num_quads: self.num_quads
+            ,
+            num_classes: self.num_classes
+            ,
+            classes: self.classes
+            ,
+            predicates: self.predicates
+            ,
+            subject_structures: self.subject_structures
+            ,
         }
     }
 }
+

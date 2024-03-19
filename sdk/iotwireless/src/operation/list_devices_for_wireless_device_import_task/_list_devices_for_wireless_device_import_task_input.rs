@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDevicesForWirelessDeviceImportTaskInput {
+pub struct ListDevicesForWirelessDeviceImportTaskInput  {
     /// <p>The identifier of the import task for which wireless devices are listed.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
@@ -12,9 +12,9 @@ pub struct ListDevicesForWirelessDeviceImportTaskInput {
     /// <p>The status of the devices in the import task.</p>
     pub status: ::std::option::Option<crate::types::OnboardStatus>,
 }
-impl ListDevicesForWirelessDeviceImportTaskInput {
+impl  ListDevicesForWirelessDeviceImportTaskInput  {
     /// <p>The identifier of the import task for which wireless devices are listed.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The maximum number of results to return in this operation.</p>
@@ -22,11 +22,11 @@ impl ListDevicesForWirelessDeviceImportTaskInput {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The status of the devices in the import task.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OnboardStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OnboardStatus> {
         self.status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ListDevicesForWirelessDeviceImportTaskInputBuilder {
     }
     /// <p>The identifier of the import task for which wireless devices are listed.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the import task for which wireless devices are listed.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListDevicesForWirelessDeviceImportTaskInputBuilder {
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ListDevicesForWirelessDeviceImportTaskInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,27 +94,26 @@ impl ListDevicesForWirelessDeviceImportTaskInputBuilder {
     }
     /// <p>The status of the devices in the import task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OnboardStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the devices in the import task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OnboardStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListDevicesForWirelessDeviceImportTaskInput`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput {
-                id: self.id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                status: self.status,
-            },
+                id: self.id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

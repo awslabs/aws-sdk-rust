@@ -5,3 +5,4 @@ pub use ::aws_smithy_types::Blob;
 pub mod event_stream;
 
 pub(crate) mod sealed_enum_unknown;
+

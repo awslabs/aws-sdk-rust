@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactListInput {
+pub struct GetContactListInput  {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: ::std::option::Option<::std::string::String>,
 }
-impl GetContactListInput {
+impl  GetContactListInput  {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> ::std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetContactListInputBuilder {
     }
     /// <p>The name of the contact list.</p>
     pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_list_name = input;
-        self
+        self.contact_list_name = input; self
     }
     /// <p>The name of the contact list.</p>
     pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_list_name
     }
     /// Consumes the builder and constructs a [`GetContactListInput`](crate::operation::get_contact_list::GetContactListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_contact_list::GetContactListInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_contact_list::GetContactListInput {
-            contact_list_name: self.contact_list_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact_list::GetContactListInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_contact_list::GetContactListInput {
+                contact_list_name: self.contact_list_name
+                ,
+            }
+        )
     }
 }
+

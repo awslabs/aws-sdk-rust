@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelsInput {
+pub struct ListModelsInput  {
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::ModelSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -18,17 +18,17 @@ pub struct ListModelsInput {
     /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListModelsInput {
+impl  ListModelsInput  {
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ModelSortKey> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ModelSortKey> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::OrderKey> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::OrderKey> {
         self.sort_order.as_ref()
     }
     /// <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of models to return in the response.</p>
@@ -36,15 +36,15 @@ impl ListModelsInput {
         self.max_results
     }
     /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A filter that returns only models created before the specified time (timestamp).</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ModelSortKey>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ModelSortKey> {
@@ -89,8 +88,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::OrderKey>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::OrderKey> {
@@ -103,8 +101,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>The maximum number of models to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of models to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -131,8 +127,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +140,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>A filter that returns only models created before the specified time (timestamp).</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>A filter that returns only models created before the specified time (timestamp).</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +153,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,14 +161,24 @@ impl ListModelsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListModelsInput`](crate::operation::list_models::ListModelsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_models::ListModelsInput {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            name_contains: self.name_contains,
-            creation_time_before: self.creation_time_before,
-            creation_time_after: self.creation_time_after,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_models::ListModelsInput {
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteOpenCypherExplainQueryInput {
+pub struct ExecuteOpenCypherExplainQueryInput  {
     /// <p>The openCypher query string.</p>
     pub open_cypher_query: ::std::option::Option<::std::string::String>,
     /// <p>The openCypher query parameters.</p>
@@ -10,17 +10,17 @@ pub struct ExecuteOpenCypherExplainQueryInput {
     /// <p>The openCypher <code>explain</code> mode. Can be one of: <code>static</code>, <code>dynamic</code>, or <code>details</code>.</p>
     pub explain_mode: ::std::option::Option<crate::types::OpenCypherExplainMode>,
 }
-impl ExecuteOpenCypherExplainQueryInput {
+impl  ExecuteOpenCypherExplainQueryInput  {
     /// <p>The openCypher query string.</p>
-    pub fn open_cypher_query(&self) -> ::std::option::Option<&str> {
+    pub fn open_cypher_query(&self) -> ::std::option::Option<& str> {
         self.open_cypher_query.as_deref()
     }
     /// <p>The openCypher query parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
     /// <p>The openCypher <code>explain</code> mode. Can be one of: <code>static</code>, <code>dynamic</code>, or <code>details</code>.</p>
-    pub fn explain_mode(&self) -> ::std::option::Option<&crate::types::OpenCypherExplainMode> {
+    pub fn explain_mode(&self) -> ::std::option::Option<& crate::types::OpenCypherExplainMode> {
         self.explain_mode.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ExecuteOpenCypherExplainQueryInputBuilder {
     }
     /// <p>The openCypher query string.</p>
     pub fn set_open_cypher_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.open_cypher_query = input;
-        self
+        self.open_cypher_query = input; self
     }
     /// <p>The openCypher query string.</p>
     pub fn get_open_cypher_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ExecuteOpenCypherExplainQueryInputBuilder {
     }
     /// <p>The openCypher query parameters.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>The openCypher query parameters.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl ExecuteOpenCypherExplainQueryInputBuilder {
     }
     /// <p>The openCypher <code>explain</code> mode. Can be one of: <code>static</code>, <code>dynamic</code>, or <code>details</code>.</p>
     pub fn set_explain_mode(mut self, input: ::std::option::Option<crate::types::OpenCypherExplainMode>) -> Self {
-        self.explain_mode = input;
-        self
+        self.explain_mode = input; self
     }
     /// <p>The openCypher <code>explain</code> mode. Can be one of: <code>static</code>, <code>dynamic</code>, or <code>details</code>.</p>
     pub fn get_explain_mode(&self) -> &::std::option::Option<crate::types::OpenCypherExplainMode> {
         &self.explain_mode
     }
     /// Consumes the builder and constructs a [`ExecuteOpenCypherExplainQueryInput`](crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryInput {
-            open_cypher_query: self.open_cypher_query,
-            parameters: self.parameters,
-            explain_mode: self.explain_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryInput {
+                open_cypher_query: self.open_cypher_query
+                ,
+                parameters: self.parameters
+                ,
+                explain_mode: self.explain_mode
+                ,
+            }
+        )
     }
 }
+

@@ -3,33 +3,34 @@
 /// The environment configuration of the function.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionConfigurationEnvironment {
+pub struct FunctionConfigurationEnvironment  {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
     pub access_sysfs: ::std::option::Option<bool>,
     /// Configuration related to executing the Lambda function
     pub execution: ::std::option::Option<crate::types::FunctionExecutionConfig>,
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-    pub resource_access_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAccessPolicy>>,
+    pub resource_access_policies: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceAccessPolicy>>,
     /// Environment variables for the Lambda function's configuration.
-    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl FunctionConfigurationEnvironment {
+impl  FunctionConfigurationEnvironment  {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
     pub fn access_sysfs(&self) -> ::std::option::Option<bool> {
         self.access_sysfs
     }
     /// Configuration related to executing the Lambda function
-    pub fn execution(&self) -> ::std::option::Option<&crate::types::FunctionExecutionConfig> {
+    pub fn execution(&self) -> ::std::option::Option<& crate::types::FunctionExecutionConfig> {
         self.execution.as_ref()
     }
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_access_policies.is_none()`.
-    pub fn resource_access_policies(&self) -> &[crate::types::ResourceAccessPolicy] {
-        self.resource_access_policies.as_deref().unwrap_or_default()
+    pub fn resource_access_policies(&self) -> & [crate::types::ResourceAccessPolicy] {
+        self.resource_access_policies.as_deref()
+        .unwrap_or_default()
     }
     /// Environment variables for the Lambda function's configuration.
-    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
 }
@@ -46,8 +47,8 @@ impl FunctionConfigurationEnvironment {
 pub struct FunctionConfigurationEnvironmentBuilder {
     pub(crate) access_sysfs: ::std::option::Option<bool>,
     pub(crate) execution: ::std::option::Option<crate::types::FunctionExecutionConfig>,
-    pub(crate) resource_access_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAccessPolicy>>,
-    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) resource_access_policies: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceAccessPolicy>>,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl FunctionConfigurationEnvironmentBuilder {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
@@ -57,8 +58,7 @@ impl FunctionConfigurationEnvironmentBuilder {
     }
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
     pub fn set_access_sysfs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.access_sysfs = input;
-        self
+        self.access_sysfs = input; self
     }
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
     pub fn get_access_sysfs(&self) -> &::std::option::Option<bool> {
@@ -71,8 +71,7 @@ impl FunctionConfigurationEnvironmentBuilder {
     }
     /// Configuration related to executing the Lambda function
     pub fn set_execution(mut self, input: ::std::option::Option<crate::types::FunctionExecutionConfig>) -> Self {
-        self.execution = input;
-        self
+        self.execution = input; self
     }
     /// Configuration related to executing the Lambda function
     pub fn get_execution(&self) -> &::std::option::Option<crate::types::FunctionExecutionConfig> {
@@ -85,17 +84,16 @@ impl FunctionConfigurationEnvironmentBuilder {
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
     pub fn resource_access_policies(mut self, input: crate::types::ResourceAccessPolicy) -> Self {
         let mut v = self.resource_access_policies.unwrap_or_default();
-        v.push(input);
-        self.resource_access_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_access_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-    pub fn set_resource_access_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAccessPolicy>>) -> Self {
-        self.resource_access_policies = input;
-        self
+    pub fn set_resource_access_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceAccessPolicy>>) -> Self {
+        self.resource_access_policies = input; self
     }
     /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
-    pub fn get_resource_access_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAccessPolicy>> {
+    pub fn get_resource_access_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceAccessPolicy>> {
         &self.resource_access_policies
     }
     /// Adds a key-value pair to `variables`.
@@ -105,26 +103,30 @@ impl FunctionConfigurationEnvironmentBuilder {
     /// Environment variables for the Lambda function's configuration.
     pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// Environment variables for the Lambda function's configuration.
-    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.variables = input; self
     }
     /// Environment variables for the Lambda function's configuration.
-    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.variables
     }
     /// Consumes the builder and constructs a [`FunctionConfigurationEnvironment`](crate::types::FunctionConfigurationEnvironment).
     pub fn build(self) -> crate::types::FunctionConfigurationEnvironment {
         crate::types::FunctionConfigurationEnvironment {
-            access_sysfs: self.access_sysfs,
-            execution: self.execution,
-            resource_access_policies: self.resource_access_policies,
-            variables: self.variables,
+            access_sysfs: self.access_sysfs
+            ,
+            execution: self.execution
+            ,
+            resource_access_policies: self.resource_access_policies
+            ,
+            variables: self.variables
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The reason that the cluster changed to its current state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterStateChangeReason {
+pub struct ClusterStateChangeReason  {
     /// <p>The programmatic code for the state change reason.</p>
     pub code: ::std::option::Option<crate::types::ClusterStateChangeReasonCode>,
     /// <p>The descriptive message for the state change reason.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ClusterStateChangeReason {
+impl  ClusterStateChangeReason  {
     /// <p>The programmatic code for the state change reason.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ClusterStateChangeReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ClusterStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The descriptive message for the state change reason.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ClusterStateChangeReasonBuilder {
     }
     /// <p>The programmatic code for the state change reason.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClusterStateChangeReasonCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The programmatic code for the state change reason.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::ClusterStateChangeReasonCode> {
@@ -55,8 +54,7 @@ impl ClusterStateChangeReasonBuilder {
     }
     /// <p>The descriptive message for the state change reason.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The descriptive message for the state change reason.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ClusterStateChangeReasonBuilder {
     /// Consumes the builder and constructs a [`ClusterStateChangeReason`](crate::types::ClusterStateChangeReason).
     pub fn build(self) -> crate::types::ClusterStateChangeReason {
         crate::types::ClusterStateChangeReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

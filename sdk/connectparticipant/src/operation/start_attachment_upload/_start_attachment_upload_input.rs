@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAttachmentUploadInput {
+pub struct StartAttachmentUploadInput  {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The size of the attachment in bytes.</p>
@@ -14,9 +14,9 @@ pub struct StartAttachmentUploadInput {
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: ::std::option::Option<::std::string::String>,
 }
-impl StartAttachmentUploadInput {
+impl  StartAttachmentUploadInput  {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The size of the attachment in bytes.</p>
@@ -24,15 +24,15 @@ impl StartAttachmentUploadInput {
         self.attachment_size_in_bytes
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
-    pub fn attachment_name(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_name(&self) -> ::std::option::Option<& str> {
         self.attachment_name.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(&self) -> ::std::option::Option<&str> {
+    pub fn connection_token(&self) -> ::std::option::Option<& str> {
         self.connection_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl StartAttachmentUploadInputBuilder {
     }
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl StartAttachmentUploadInputBuilder {
     }
     /// <p>The size of the attachment in bytes.</p>
     pub fn set_attachment_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.attachment_size_in_bytes = input;
-        self
+        self.attachment_size_in_bytes = input; self
     }
     /// <p>The size of the attachment in bytes.</p>
     pub fn get_attachment_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -92,8 +90,7 @@ impl StartAttachmentUploadInputBuilder {
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
     pub fn set_attachment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_name = input;
-        self
+        self.attachment_name = input; self
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
     pub fn get_attachment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl StartAttachmentUploadInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,24 +118,28 @@ impl StartAttachmentUploadInputBuilder {
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_token = input;
-        self
+        self.connection_token = input; self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`StartAttachmentUploadInput`](crate::operation::start_attachment_upload::StartAttachmentUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_attachment_upload::StartAttachmentUploadInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_attachment_upload::StartAttachmentUploadInput {
-            content_type: self.content_type,
-            attachment_size_in_bytes: self.attachment_size_in_bytes,
-            attachment_name: self.attachment_name,
-            client_token: self.client_token,
-            connection_token: self.connection_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_attachment_upload::StartAttachmentUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_attachment_upload::StartAttachmentUploadInput {
+                content_type: self.content_type
+                ,
+                attachment_size_in_bytes: self.attachment_size_in_bytes
+                ,
+                attachment_name: self.attachment_name
+                ,
+                client_token: self.client_token
+                ,
+                connection_token: self.connection_token
+                ,
+            }
+        )
     }
 }
+

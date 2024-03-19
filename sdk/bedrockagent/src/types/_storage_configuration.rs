@@ -3,7 +3,7 @@
 /// Configures the physical storage of ingested data in a knowledge base.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageConfiguration {
+pub struct StorageConfiguration  {
     /// The storage type of a knowledge base.
     pub r#type: crate::types::KnowledgeBaseStorageType,
     /// Contains the configurations to use OpenSearch Serverless to store knowledge base data.
@@ -15,25 +15,25 @@ pub struct StorageConfiguration {
     /// Contains the configurations to use RDS to store knowledge base data.
     pub rds_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
 }
-impl StorageConfiguration {
+impl  StorageConfiguration  {
     /// The storage type of a knowledge base.
-    pub fn r#type(&self) -> &crate::types::KnowledgeBaseStorageType {
+    pub fn r#type(&self) -> & crate::types::KnowledgeBaseStorageType {
         &self.r#type
     }
     /// Contains the configurations to use OpenSearch Serverless to store knowledge base data.
-    pub fn opensearch_serverless_configuration(&self) -> ::std::option::Option<&crate::types::OpenSearchServerlessConfiguration> {
+    pub fn opensearch_serverless_configuration(&self) -> ::std::option::Option<& crate::types::OpenSearchServerlessConfiguration> {
         self.opensearch_serverless_configuration.as_ref()
     }
     /// Contains the configurations to use Pinecone to store knowledge base data.
-    pub fn pinecone_configuration(&self) -> ::std::option::Option<&crate::types::PineconeConfiguration> {
+    pub fn pinecone_configuration(&self) -> ::std::option::Option<& crate::types::PineconeConfiguration> {
         self.pinecone_configuration.as_ref()
     }
     /// Contains the configurations to use Redis Enterprise Cloud to store knowledge base data.
-    pub fn redis_enterprise_cloud_configuration(&self) -> ::std::option::Option<&crate::types::RedisEnterpriseCloudConfiguration> {
+    pub fn redis_enterprise_cloud_configuration(&self) -> ::std::option::Option<& crate::types::RedisEnterpriseCloudConfiguration> {
         self.redis_enterprise_cloud_configuration.as_ref()
     }
     /// Contains the configurations to use RDS to store knowledge base data.
-    pub fn rds_configuration(&self) -> ::std::option::Option<&crate::types::RdsConfiguration> {
+    pub fn rds_configuration(&self) -> ::std::option::Option<& crate::types::RdsConfiguration> {
         self.rds_configuration.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl StorageConfigurationBuilder {
     }
     /// The storage type of a knowledge base.
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseStorageType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// The storage type of a knowledge base.
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseStorageType> {
@@ -77,8 +76,7 @@ impl StorageConfigurationBuilder {
     }
     /// Contains the configurations to use OpenSearch Serverless to store knowledge base data.
     pub fn set_opensearch_serverless_configuration(mut self, input: ::std::option::Option<crate::types::OpenSearchServerlessConfiguration>) -> Self {
-        self.opensearch_serverless_configuration = input;
-        self
+        self.opensearch_serverless_configuration = input; self
     }
     /// Contains the configurations to use OpenSearch Serverless to store knowledge base data.
     pub fn get_opensearch_serverless_configuration(&self) -> &::std::option::Option<crate::types::OpenSearchServerlessConfiguration> {
@@ -91,8 +89,7 @@ impl StorageConfigurationBuilder {
     }
     /// Contains the configurations to use Pinecone to store knowledge base data.
     pub fn set_pinecone_configuration(mut self, input: ::std::option::Option<crate::types::PineconeConfiguration>) -> Self {
-        self.pinecone_configuration = input;
-        self
+        self.pinecone_configuration = input; self
     }
     /// Contains the configurations to use Pinecone to store knowledge base data.
     pub fn get_pinecone_configuration(&self) -> &::std::option::Option<crate::types::PineconeConfiguration> {
@@ -105,8 +102,7 @@ impl StorageConfigurationBuilder {
     }
     /// Contains the configurations to use Redis Enterprise Cloud to store knowledge base data.
     pub fn set_redis_enterprise_cloud_configuration(mut self, input: ::std::option::Option<crate::types::RedisEnterpriseCloudConfiguration>) -> Self {
-        self.redis_enterprise_cloud_configuration = input;
-        self
+        self.redis_enterprise_cloud_configuration = input; self
     }
     /// Contains the configurations to use Redis Enterprise Cloud to store knowledge base data.
     pub fn get_redis_enterprise_cloud_configuration(&self) -> &::std::option::Option<crate::types::RedisEnterpriseCloudConfiguration> {
@@ -119,8 +115,7 @@ impl StorageConfigurationBuilder {
     }
     /// Contains the configurations to use RDS to store knowledge base data.
     pub fn set_rds_configuration(mut self, input: ::std::option::Option<crate::types::RdsConfiguration>) -> Self {
-        self.rds_configuration = input;
-        self
+        self.rds_configuration = input; self
     }
     /// Contains the configurations to use RDS to store knowledge base data.
     pub fn get_rds_configuration(&self) -> &::std::option::Option<crate::types::RdsConfiguration> {
@@ -130,17 +125,23 @@ impl StorageConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::StorageConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::StorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StorageConfiguration {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building StorageConfiguration",
-                )
-            })?,
-            opensearch_serverless_configuration: self.opensearch_serverless_configuration,
-            pinecone_configuration: self.pinecone_configuration,
-            redis_enterprise_cloud_configuration: self.redis_enterprise_cloud_configuration,
-            rds_configuration: self.rds_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StorageConfiguration {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building StorageConfiguration")
+                    )?
+                ,
+                opensearch_serverless_configuration: self.opensearch_serverless_configuration
+                ,
+                pinecone_configuration: self.pinecone_configuration
+                ,
+                redis_enterprise_cloud_configuration: self.redis_enterprise_cloud_configuration
+                ,
+                rds_configuration: self.rds_configuration
+                ,
+            }
+        )
     }
 }
+

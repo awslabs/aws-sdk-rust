@@ -3,7 +3,7 @@
 /// <p>The input for the <code>ListStackResource</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStackResourcesInput {
+pub struct ListStackResourcesInput  {
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct ListStackResourcesInput {
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListStackResourcesInput {
+impl  ListStackResourcesInput  {
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
     /// <li>
@@ -25,11 +25,11 @@ impl ListStackResourcesInput {
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -70,8 +70,7 @@ impl ListStackResourcesInputBuilder {
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -91,21 +90,22 @@ impl ListStackResourcesInputBuilder {
     }
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListStackResourcesInput`](crate::operation::list_stack_resources::ListStackResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_stack_resources::ListStackResourcesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_stack_resources::ListStackResourcesInput {
-            stack_name: self.stack_name,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stack_resources::ListStackResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_stack_resources::ListStackResourcesInput {
+                stack_name: self.stack_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

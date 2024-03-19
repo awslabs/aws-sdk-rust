@@ -3,7 +3,7 @@
 /// <p>A list of overrides for a specific <code>RefreshsSchedule</code> resource that is present in the asset bundle that is imported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobRefreshScheduleOverrideParameters {
+pub struct AssetBundleImportJobRefreshScheduleOverrideParameters  {
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This structure is used together with the <code>ScheduleID</code> structure.</p>
     pub data_set_id: ::std::string::String,
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is used together with the <code>DataSetId</code> structure.</p>
@@ -11,19 +11,17 @@ pub struct AssetBundleImportJobRefreshScheduleOverrideParameters {
     /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
     pub start_after_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AssetBundleImportJobRefreshScheduleOverrideParameters {
+impl  AssetBundleImportJobRefreshScheduleOverrideParameters  {
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This structure is used together with the <code>ScheduleID</code> structure.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is used together with the <code>DataSetId</code> structure.</p>
-    pub fn schedule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.schedule_id.deref()
+    pub fn schedule_id(&self) -> & str {
+        use std::ops::Deref; self.schedule_id.deref()
     }
     /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
-    pub fn start_after_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_after_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_after_date_time.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     }
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This structure is used together with the <code>ScheduleID</code> structure.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This structure is used together with the <code>ScheduleID</code> structure.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     }
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is used together with the <code>DataSetId</code> structure.</p>
     pub fn set_schedule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_id = input;
-        self
+        self.schedule_id = input; self
     }
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is used together with the <code>DataSetId</code> structure.</p>
     pub fn get_schedule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     }
     /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
     pub fn set_start_after_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_after_date_time = input;
-        self
+        self.start_after_date_time = input; self
     }
     /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
     pub fn get_start_after_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -91,24 +86,23 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_id`](crate::types::builders::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder::data_set_id)
     /// - [`schedule_id`](crate::types::builders::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder::schedule_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters {
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building AssetBundleImportJobRefreshScheduleOverrideParameters",
-                )
-            })?,
-            schedule_id: self.schedule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schedule_id",
-                    "schedule_id was not specified but it is required when building AssetBundleImportJobRefreshScheduleOverrideParameters",
-                )
-            })?,
-            start_after_date_time: self.start_after_date_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters {
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building AssetBundleImportJobRefreshScheduleOverrideParameters")
+                    )?
+                ,
+                schedule_id: self.schedule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schedule_id", "schedule_id was not specified but it is required when building AssetBundleImportJobRefreshScheduleOverrideParameters")
+                    )?
+                ,
+                start_after_date_time: self.start_after_date_time
+                ,
+            }
+        )
     }
 }
+

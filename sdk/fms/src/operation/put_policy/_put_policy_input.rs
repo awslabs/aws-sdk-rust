@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPolicyInput {
+pub struct PutPolicyInput  {
     /// <p>The details of the Firewall Manager policy to be created.</p>
     pub policy: ::std::option::Option<crate::types::Policy>,
     /// <p>The tags to add to the Amazon Web Services resource.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutPolicyInput {
+impl  PutPolicyInput  {
     /// <p>The details of the Firewall Manager policy to be created.</p>
-    pub fn policy(&self) -> ::std::option::Option<&crate::types::Policy> {
+    pub fn policy(&self) -> ::std::option::Option<& crate::types::Policy> {
         self.policy.as_ref()
     }
     /// <p>The tags to add to the Amazon Web Services resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutPolicyInput {
@@ -32,7 +33,7 @@ impl PutPolicyInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPolicyInputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::Policy>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutPolicyInputBuilder {
     /// <p>The details of the Firewall Manager policy to be created.</p>
@@ -43,8 +44,7 @@ impl PutPolicyInputBuilder {
     }
     /// <p>The details of the Firewall Manager policy to be created.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The details of the Firewall Manager policy to be created.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::Policy> {
@@ -57,24 +57,28 @@ impl PutPolicyInputBuilder {
     /// <p>The tags to add to the Amazon Web Services resource.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to add to the Amazon Web Services resource.</p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>The tags to add to the Amazon Web Services resource.</p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutPolicyInput`](crate::operation::put_policy::PutPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_policy::PutPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_policy::PutPolicyInput {
-            policy: self.policy,
-            tag_list: self.tag_list,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_policy::PutPolicyInput {
+                policy: self.policy
+                ,
+                tag_list: self.tag_list
+                ,
+            }
+        )
     }
 }
+

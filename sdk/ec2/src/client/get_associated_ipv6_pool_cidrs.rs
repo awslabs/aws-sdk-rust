@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetAssociatedIpv6PoolCidrs`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pool_id(impl Into<String>)`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::set_pool_id):<br>required: **true**<br><p>The ID of the IPv6 address pool.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
-    /// - On success, responds with [`GetAssociatedIpv6PoolCidrsOutput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput) with field(s):
+                            /// - On success, responds with [`GetAssociatedIpv6PoolCidrsOutput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput) with field(s):
     ///   - [`ipv6_cidr_associations(Option<Vec::<Ipv6CidrAssociation>>)`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput::ipv6_cidr_associations): <p>Information about the IPv6 CIDR block associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<GetAssociatedIpv6PoolCidrsError>`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError)
-    pub fn get_associated_ipv6_pool_cidrs(
-        &self,
-    ) -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder {
-        crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetAssociatedIpv6PoolCidrsError>`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError)
+    pub fn get_associated_ipv6_pool_cidrs(&self) -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder {
+                                crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

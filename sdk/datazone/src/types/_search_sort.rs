@@ -3,20 +3,19 @@
 /// <p>The details of the way to sort search results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchSort {
+pub struct SearchSort  {
     /// <p>The attribute detail of the way to sort search results.</p>
     pub attribute: ::std::string::String,
     /// <p>The order detail of the wya to sort search results.</p>
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl SearchSort {
+impl  SearchSort  {
     /// <p>The attribute detail of the way to sort search results.</p>
-    pub fn attribute(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute.deref()
+    pub fn attribute(&self) -> & str {
+        use std::ops::Deref; self.attribute.deref()
     }
     /// <p>The order detail of the wya to sort search results.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl SearchSortBuilder {
     }
     /// <p>The attribute detail of the way to sort search results.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The attribute detail of the way to sort search results.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SearchSortBuilder {
     }
     /// <p>The order detail of the wya to sort search results.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order detail of the wya to sort search results.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -68,14 +65,17 @@ impl SearchSortBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute`](crate::types::builders::SearchSortBuilder::attribute)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchSort, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchSort {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building SearchSort",
-                )
-            })?,
-            order: self.order,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchSort {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building SearchSort")
+                    )?
+                ,
+                order: self.order
+                ,
+            }
+        )
     }
 }
+

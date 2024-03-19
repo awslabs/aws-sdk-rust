@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPermissionSetsProvisionedToAccountOutput {
+pub struct ListPermissionSetsProvisionedToAccountOutput  {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Defines the level of access that an Amazon Web Services account has.</p>
-    pub permission_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub permission_sets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListPermissionSetsProvisionedToAccountOutput {
+impl  ListPermissionSetsProvisionedToAccountOutput  {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Defines the level of access that an Amazon Web Services account has.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_sets.is_none()`.
-    pub fn permission_sets(&self) -> &[::std::string::String] {
-        self.permission_sets.as_deref().unwrap_or_default()
+    pub fn permission_sets(&self) -> & [::std::string::String] {
+        self.permission_sets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPermissionSetsProvisionedToAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPermissionSetsProvisionedToAccountOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionSetsProvisionedToAccountOutput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput).
     pub fn builder() -> crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountOutputBuilder {
@@ -38,7 +39,7 @@ impl ListPermissionSetsProvisionedToAccountOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionSetsProvisionedToAccountOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) permission_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) permission_sets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListPermissionSetsProvisionedToAccountOutputBuilder {
@@ -49,8 +50,7 @@ impl ListPermissionSetsProvisionedToAccountOutputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListPermissionSetsProvisionedToAccountOutputBuilder {
     /// <p>Defines the level of access that an Amazon Web Services account has.</p>
     pub fn permission_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permission_sets.unwrap_or_default();
-        v.push(input.into());
-        self.permission_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.permission_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the level of access that an Amazon Web Services account has.</p>
-    pub fn set_permission_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.permission_sets = input;
-        self
+    pub fn set_permission_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.permission_sets = input; self
     }
     /// <p>Defines the level of access that an Amazon Web Services account has.</p>
-    pub fn get_permission_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permission_sets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.permission_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPermissionSetsProvisionedToAccountOutput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput).
     pub fn build(self) -> crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput {
         crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput {
-            next_token: self.next_token,
-            permission_sets: self.permission_sets,
+            next_token: self.next_token
+            ,
+            permission_sets: self.permission_sets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

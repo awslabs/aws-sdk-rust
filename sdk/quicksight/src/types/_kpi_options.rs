@@ -3,7 +3,7 @@
 /// <p>The options that determine the presentation of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KpiOptions {
+pub struct KpiOptions  {
     /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
     pub progress_bar: ::std::option::Option<crate::types::ProgressBarOptions>,
     /// <p>The options that determine the presentation of trend arrows in a KPI visual.</p>
@@ -23,41 +23,41 @@ pub struct KpiOptions {
     /// <p>The options that determine the layout a KPI visual.</p>
     pub visual_layout_options: ::std::option::Option<crate::types::KpiVisualLayoutOptions>,
 }
-impl KpiOptions {
+impl  KpiOptions  {
     /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
-    pub fn progress_bar(&self) -> ::std::option::Option<&crate::types::ProgressBarOptions> {
+    pub fn progress_bar(&self) -> ::std::option::Option<& crate::types::ProgressBarOptions> {
         self.progress_bar.as_ref()
     }
     /// <p>The options that determine the presentation of trend arrows in a KPI visual.</p>
-    pub fn trend_arrows(&self) -> ::std::option::Option<&crate::types::TrendArrowOptions> {
+    pub fn trend_arrows(&self) -> ::std::option::Option<& crate::types::TrendArrowOptions> {
         self.trend_arrows.as_ref()
     }
     /// <p>The options that determine the presentation of the secondary value of a KPI visual.</p>
-    pub fn secondary_value(&self) -> ::std::option::Option<&crate::types::SecondaryValueOptions> {
+    pub fn secondary_value(&self) -> ::std::option::Option<& crate::types::SecondaryValueOptions> {
         self.secondary_value.as_ref()
     }
     /// <p>The comparison configuration of a KPI visual.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::ComparisonConfiguration> {
+    pub fn comparison(&self) -> ::std::option::Option<& crate::types::ComparisonConfiguration> {
         self.comparison.as_ref()
     }
     /// <p>The options that determine the primary value display type.</p>
-    pub fn primary_value_display_type(&self) -> ::std::option::Option<&crate::types::PrimaryValueDisplayType> {
+    pub fn primary_value_display_type(&self) -> ::std::option::Option<& crate::types::PrimaryValueDisplayType> {
         self.primary_value_display_type.as_ref()
     }
     /// <p>The options that determine the primary value font configuration.</p>
-    pub fn primary_value_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+    pub fn primary_value_font_configuration(&self) -> ::std::option::Option<& crate::types::FontConfiguration> {
         self.primary_value_font_configuration.as_ref()
     }
     /// <p>The options that determine the secondary value font configuration.</p>
-    pub fn secondary_value_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+    pub fn secondary_value_font_configuration(&self) -> ::std::option::Option<& crate::types::FontConfiguration> {
         self.secondary_value_font_configuration.as_ref()
     }
     /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
-    pub fn sparkline(&self) -> ::std::option::Option<&crate::types::KpiSparklineOptions> {
+    pub fn sparkline(&self) -> ::std::option::Option<& crate::types::KpiSparklineOptions> {
         self.sparkline.as_ref()
     }
     /// <p>The options that determine the layout a KPI visual.</p>
-    pub fn visual_layout_options(&self) -> ::std::option::Option<&crate::types::KpiVisualLayoutOptions> {
+    pub fn visual_layout_options(&self) -> ::std::option::Option<& crate::types::KpiVisualLayoutOptions> {
         self.visual_layout_options.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
     pub fn set_progress_bar(mut self, input: ::std::option::Option<crate::types::ProgressBarOptions>) -> Self {
-        self.progress_bar = input;
-        self
+        self.progress_bar = input; self
     }
     /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
     pub fn get_progress_bar(&self) -> &::std::option::Option<crate::types::ProgressBarOptions> {
@@ -104,8 +103,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The options that determine the presentation of trend arrows in a KPI visual.</p>
     pub fn set_trend_arrows(mut self, input: ::std::option::Option<crate::types::TrendArrowOptions>) -> Self {
-        self.trend_arrows = input;
-        self
+        self.trend_arrows = input; self
     }
     /// <p>The options that determine the presentation of trend arrows in a KPI visual.</p>
     pub fn get_trend_arrows(&self) -> &::std::option::Option<crate::types::TrendArrowOptions> {
@@ -118,8 +116,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The options that determine the presentation of the secondary value of a KPI visual.</p>
     pub fn set_secondary_value(mut self, input: ::std::option::Option<crate::types::SecondaryValueOptions>) -> Self {
-        self.secondary_value = input;
-        self
+        self.secondary_value = input; self
     }
     /// <p>The options that determine the presentation of the secondary value of a KPI visual.</p>
     pub fn get_secondary_value(&self) -> &::std::option::Option<crate::types::SecondaryValueOptions> {
@@ -132,8 +129,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The comparison configuration of a KPI visual.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::ComparisonConfiguration>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The comparison configuration of a KPI visual.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::ComparisonConfiguration> {
@@ -146,8 +142,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The options that determine the primary value display type.</p>
     pub fn set_primary_value_display_type(mut self, input: ::std::option::Option<crate::types::PrimaryValueDisplayType>) -> Self {
-        self.primary_value_display_type = input;
-        self
+        self.primary_value_display_type = input; self
     }
     /// <p>The options that determine the primary value display type.</p>
     pub fn get_primary_value_display_type(&self) -> &::std::option::Option<crate::types::PrimaryValueDisplayType> {
@@ -160,8 +155,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The options that determine the primary value font configuration.</p>
     pub fn set_primary_value_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
-        self.primary_value_font_configuration = input;
-        self
+        self.primary_value_font_configuration = input; self
     }
     /// <p>The options that determine the primary value font configuration.</p>
     pub fn get_primary_value_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
@@ -174,8 +168,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The options that determine the secondary value font configuration.</p>
     pub fn set_secondary_value_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
-        self.secondary_value_font_configuration = input;
-        self
+        self.secondary_value_font_configuration = input; self
     }
     /// <p>The options that determine the secondary value font configuration.</p>
     pub fn get_secondary_value_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
@@ -188,8 +181,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
     pub fn set_sparkline(mut self, input: ::std::option::Option<crate::types::KpiSparklineOptions>) -> Self {
-        self.sparkline = input;
-        self
+        self.sparkline = input; self
     }
     /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
     pub fn get_sparkline(&self) -> &::std::option::Option<crate::types::KpiSparklineOptions> {
@@ -202,8 +194,7 @@ impl KpiOptionsBuilder {
     }
     /// <p>The options that determine the layout a KPI visual.</p>
     pub fn set_visual_layout_options(mut self, input: ::std::option::Option<crate::types::KpiVisualLayoutOptions>) -> Self {
-        self.visual_layout_options = input;
-        self
+        self.visual_layout_options = input; self
     }
     /// <p>The options that determine the layout a KPI visual.</p>
     pub fn get_visual_layout_options(&self) -> &::std::option::Option<crate::types::KpiVisualLayoutOptions> {
@@ -212,15 +203,25 @@ impl KpiOptionsBuilder {
     /// Consumes the builder and constructs a [`KpiOptions`](crate::types::KpiOptions).
     pub fn build(self) -> crate::types::KpiOptions {
         crate::types::KpiOptions {
-            progress_bar: self.progress_bar,
-            trend_arrows: self.trend_arrows,
-            secondary_value: self.secondary_value,
-            comparison: self.comparison,
-            primary_value_display_type: self.primary_value_display_type,
-            primary_value_font_configuration: self.primary_value_font_configuration,
-            secondary_value_font_configuration: self.secondary_value_font_configuration,
-            sparkline: self.sparkline,
-            visual_layout_options: self.visual_layout_options,
+            progress_bar: self.progress_bar
+            ,
+            trend_arrows: self.trend_arrows
+            ,
+            secondary_value: self.secondary_value
+            ,
+            comparison: self.comparison
+            ,
+            primary_value_display_type: self.primary_value_display_type
+            ,
+            primary_value_font_configuration: self.primary_value_font_configuration
+            ,
+            secondary_value_font_configuration: self.secondary_value_font_configuration
+            ,
+            sparkline: self.sparkline
+            ,
+            visual_layout_options: self.visual_layout_options
+            ,
         }
     }
 }
+

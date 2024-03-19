@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentInput {
+pub struct GetDeploymentInput  {
     /// <p>The ID of the deployment.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDeploymentInput {
+impl  GetDeploymentInput  {
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The ID of the deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The ID of the deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_deployment::GetDeploymentInput {
-            deployment_id: self.deployment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_deployment::GetDeploymentInput {
+                deployment_id: self.deployment_id
+                ,
+            }
+        )
     }
 }
+

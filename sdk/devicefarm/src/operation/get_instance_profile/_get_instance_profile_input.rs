@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceProfileInput {
+pub struct GetInstanceProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetInstanceProfileInput {
+impl  GetInstanceProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetInstanceProfileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetInstanceProfileInput`](crate::operation::get_instance_profile::GetInstanceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_instance_profile::GetInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_instance_profile::GetInstanceProfileInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance_profile::GetInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_instance_profile::GetInstanceProfileInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

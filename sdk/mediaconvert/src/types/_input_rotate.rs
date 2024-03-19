@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inputrotate = unimplemented!();
 /// match inputrotate {
@@ -33,16 +33,14 @@
 /// Specifically, when `inputrotate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InputRotate::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use Rotate to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum InputRotate {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -56,70 +54,71 @@ pub enum InputRotate {
     Degree0,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for InputRotate {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO" => InputRotate::Auto,
-            "DEGREES_180" => InputRotate::Degrees180,
-            "DEGREES_270" => InputRotate::Degrees270,
-            "DEGREES_90" => InputRotate::Degrees90,
-            "DEGREE_0" => InputRotate::Degree0,
-            other => InputRotate::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AUTO" => InputRotate::Auto,
+"DEGREES_180" => InputRotate::Degrees180,
+"DEGREES_270" => InputRotate::Degrees270,
+"DEGREES_90" => InputRotate::Degrees90,
+"DEGREE_0" => InputRotate::Degree0,
+other => InputRotate::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for InputRotate {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(InputRotate::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(InputRotate::from(s))
+                    }
+                }
 impl InputRotate {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InputRotate::Auto => "AUTO",
-            InputRotate::Degrees180 => "DEGREES_180",
-            InputRotate::Degrees270 => "DEGREES_270",
-            InputRotate::Degrees90 => "DEGREES_90",
-            InputRotate::Degree0 => "DEGREE_0",
-            InputRotate::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "DEGREES_180", "DEGREES_270", "DEGREES_90", "DEGREE_0"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InputRotate::Auto => "AUTO",
+    InputRotate::Degrees180 => "DEGREES_180",
+    InputRotate::Degrees270 => "DEGREES_270",
+    InputRotate::Degrees90 => "DEGREES_90",
+    InputRotate::Degree0 => "DEGREE_0",
+    InputRotate::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO", "DEGREES_180", "DEGREES_270", "DEGREES_90", "DEGREE_0"]
+                }
+            }
 impl ::std::convert::AsRef<str> for InputRotate {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl InputRotate {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for InputRotate {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            InputRotate::Auto => write!(f, "AUTO"),
-            InputRotate::Degrees180 => write!(f, "DEGREES_180"),
-            InputRotate::Degrees270 => write!(f, "DEGREES_270"),
-            InputRotate::Degrees90 => write!(f, "DEGREES_90"),
-            InputRotate::Degree0 => write!(f, "DEGREE_0"),
-            InputRotate::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                InputRotate::Auto => write!(f, "AUTO"),
+InputRotate::Degrees180 => write!(f, "DEGREES_180"),
+InputRotate::Degrees270 => write!(f, "DEGREES_270"),
+InputRotate::Degrees90 => write!(f, "DEGREES_90"),
+InputRotate::Degree0 => write!(f, "DEGREE_0"),
+InputRotate::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

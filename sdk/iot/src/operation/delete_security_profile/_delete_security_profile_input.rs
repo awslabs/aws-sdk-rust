@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSecurityProfileInput {
+pub struct DeleteSecurityProfileInput  {
     /// <p>The name of the security profile to be deleted.</p>
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub expected_version: ::std::option::Option<i64>,
 }
-impl DeleteSecurityProfileInput {
+impl  DeleteSecurityProfileInput  {
     /// <p>The name of the security profile to be deleted.</p>
-    pub fn security_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> ::std::option::Option<& str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
@@ -41,8 +41,7 @@ impl DeleteSecurityProfileInputBuilder {
     }
     /// <p>The name of the security profile to be deleted.</p>
     pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_profile_name = input;
-        self
+        self.security_profile_name = input; self
     }
     /// <p>The name of the security profile to be deleted.</p>
     pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl DeleteSecurityProfileInputBuilder {
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
     }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
         &self.expected_version
     }
     /// Consumes the builder and constructs a [`DeleteSecurityProfileInput`](crate::operation::delete_security_profile::DeleteSecurityProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_security_profile::DeleteSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_security_profile::DeleteSecurityProfileInput {
-            security_profile_name: self.security_profile_name,
-            expected_version: self.expected_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_security_profile::DeleteSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_security_profile::DeleteSecurityProfileInput {
+                security_profile_name: self.security_profile_name
+                ,
+                expected_version: self.expected_version
+                ,
+            }
+        )
     }
 }
+

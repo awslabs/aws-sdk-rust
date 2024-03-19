@@ -3,7 +3,7 @@
 /// <p>Details about an WAFv2 rule group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafv2RuleGroupDetails {
+pub struct AwsWafv2RuleGroupDetails  {
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     pub capacity: ::std::option::Option<i64>,
     /// <p>A description of the rule group that helps with identification.</p>
@@ -15,45 +15,46 @@ pub struct AwsWafv2RuleGroupDetails {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafv2RulesDetails>>,
     /// <p>Specifies whether the rule group is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.</p>
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
-impl AwsWafv2RuleGroupDetails {
+impl  AwsWafv2RuleGroupDetails  {
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     pub fn capacity(&self) -> ::std::option::Option<i64> {
         self.capacity
     }
     /// <p>A description of the rule group that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for the rule group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::AwsWafv2RulesDetails] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::AwsWafv2RulesDetails] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the rule group is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.</p>
-    pub fn scope(&self) -> ::std::option::Option<&str> {
+    pub fn scope(&self) -> ::std::option::Option<& str> {
         self.scope.as_deref()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
-    pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::AwsWafv2VisibilityConfigDetails> {
+    pub fn visibility_config(&self) -> ::std::option::Option<& crate::types::AwsWafv2VisibilityConfigDetails> {
         self.visibility_config.as_ref()
     }
 }
@@ -73,7 +74,7 @@ pub struct AwsWafv2RuleGroupDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafv2RulesDetails>>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
@@ -85,8 +86,7 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     pub fn get_capacity(&self) -> &::std::option::Option<i64> {
@@ -99,8 +99,7 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     }
     /// <p>A description of the rule group that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the rule group that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     }
     /// <p>A unique identifier for the rule group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the rule group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     }
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,17 +151,16 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     /// <p>The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
     pub fn rules(mut self, input: crate::types::AwsWafv2RulesDetails) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsWafv2RulesDetails>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsWafv2RulesDetails>> {
         &self.rules
     }
     /// <p>Specifies whether the rule group is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.</p>
@@ -175,8 +170,7 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     }
     /// <p>Specifies whether the rule group is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether the rule group is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +183,7 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>) -> Self {
-        self.visibility_config = input;
-        self
+        self.visibility_config = input; self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails> {
@@ -199,14 +192,23 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsWafv2RuleGroupDetails`](crate::types::AwsWafv2RuleGroupDetails).
     pub fn build(self) -> crate::types::AwsWafv2RuleGroupDetails {
         crate::types::AwsWafv2RuleGroupDetails {
-            capacity: self.capacity,
-            description: self.description,
-            id: self.id,
-            name: self.name,
-            arn: self.arn,
-            rules: self.rules,
-            scope: self.scope,
-            visibility_config: self.visibility_config,
+            capacity: self.capacity
+            ,
+            description: self.description
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            rules: self.rules
+            ,
+            scope: self.scope
+            ,
+            visibility_config: self.visibility_config
+            ,
         }
     }
 }
+

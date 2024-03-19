@@ -3,66 +3,70 @@
 /// <p>Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotScheduleOutput {
+pub struct CreateSnapshotScheduleOutput  {
     /// <p>A list of ScheduleDefinitions.</p>
-    pub schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub schedule_definitions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A unique identifier for the schedule.</p>
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description of the schedule.</p>
     pub schedule_description: ::std::option::Option<::std::string::String>,
     /// <p>An optional set of tags describing the schedule.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p></p>
-    pub next_invocations: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub next_invocations: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     /// <p>The number of clusters associated with the schedule.</p>
     pub associated_cluster_count: ::std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-    pub associated_clusters: ::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
+    pub associated_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterAssociatedToSchedule>>,
     _request_id: Option<String>,
 }
-impl CreateSnapshotScheduleOutput {
+impl  CreateSnapshotScheduleOutput  {
     /// <p>A list of ScheduleDefinitions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_definitions.is_none()`.
-    pub fn schedule_definitions(&self) -> &[::std::string::String] {
-        self.schedule_definitions.as_deref().unwrap_or_default()
+    pub fn schedule_definitions(&self) -> & [::std::string::String] {
+        self.schedule_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique identifier for the schedule.</p>
-    pub fn schedule_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_identifier(&self) -> ::std::option::Option<& str> {
         self.schedule_identifier.as_deref()
     }
     /// <p>The description of the schedule.</p>
-    pub fn schedule_description(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_description(&self) -> ::std::option::Option<& str> {
         self.schedule_description.as_deref()
     }
     /// <p>An optional set of tags describing the schedule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next_invocations.is_none()`.
-    pub fn next_invocations(&self) -> &[::aws_smithy_types::DateTime] {
-        self.next_invocations.as_deref().unwrap_or_default()
+    pub fn next_invocations(&self) -> & [::aws_smithy_types::DateTime] {
+        self.next_invocations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of clusters associated with the schedule.</p>
     pub fn associated_cluster_count(&self) -> ::std::option::Option<i32> {
         self.associated_cluster_count
     }
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_clusters.is_none()`.
-    pub fn associated_clusters(&self) -> &[crate::types::ClusterAssociatedToSchedule] {
-        self.associated_clusters.as_deref().unwrap_or_default()
+    pub fn associated_clusters(&self) -> & [crate::types::ClusterAssociatedToSchedule] {
+        self.associated_clusters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSnapshotScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotScheduleOutput`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput).
     pub fn builder() -> crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleOutputBuilder {
@@ -74,13 +78,13 @@ impl CreateSnapshotScheduleOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotScheduleOutputBuilder {
-    pub(crate) schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) schedule_definitions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) next_invocations: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) next_invocations: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     pub(crate) associated_cluster_count: ::std::option::Option<i32>,
-    pub(crate) associated_clusters: ::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
+    pub(crate) associated_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterAssociatedToSchedule>>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotScheduleOutputBuilder {
@@ -91,17 +95,16 @@ impl CreateSnapshotScheduleOutputBuilder {
     /// <p>A list of ScheduleDefinitions.</p>
     pub fn schedule_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.schedule_definitions.unwrap_or_default();
-        v.push(input.into());
-        self.schedule_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.schedule_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ScheduleDefinitions.</p>
-    pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.schedule_definitions = input;
-        self
+    pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.schedule_definitions = input; self
     }
     /// <p>A list of ScheduleDefinitions.</p>
-    pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.schedule_definitions
     }
     /// <p>A unique identifier for the schedule.</p>
@@ -111,8 +114,7 @@ impl CreateSnapshotScheduleOutputBuilder {
     }
     /// <p>A unique identifier for the schedule.</p>
     pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_identifier = input;
-        self
+        self.schedule_identifier = input; self
     }
     /// <p>A unique identifier for the schedule.</p>
     pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +127,7 @@ impl CreateSnapshotScheduleOutputBuilder {
     }
     /// <p>The description of the schedule.</p>
     pub fn set_schedule_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_description = input;
-        self
+        self.schedule_description = input; self
     }
     /// <p>The description of the schedule.</p>
     pub fn get_schedule_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,17 +140,16 @@ impl CreateSnapshotScheduleOutputBuilder {
     /// <p>An optional set of tags describing the schedule.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional set of tags describing the schedule.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional set of tags describing the schedule.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `next_invocations`.
@@ -159,17 +159,16 @@ impl CreateSnapshotScheduleOutputBuilder {
     /// <p></p>
     pub fn next_invocations(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.next_invocations.unwrap_or_default();
-        v.push(input);
-        self.next_invocations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.next_invocations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_next_invocations(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.next_invocations = input;
-        self
+    pub fn set_next_invocations(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.next_invocations = input; self
     }
     /// <p></p>
-    pub fn get_next_invocations(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_next_invocations(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.next_invocations
     }
     /// <p>The number of clusters associated with the schedule.</p>
@@ -179,8 +178,7 @@ impl CreateSnapshotScheduleOutputBuilder {
     }
     /// <p>The number of clusters associated with the schedule.</p>
     pub fn set_associated_cluster_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.associated_cluster_count = input;
-        self
+        self.associated_cluster_count = input; self
     }
     /// <p>The number of clusters associated with the schedule.</p>
     pub fn get_associated_cluster_count(&self) -> &::std::option::Option<i32> {
@@ -193,39 +191,46 @@ impl CreateSnapshotScheduleOutputBuilder {
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
     pub fn associated_clusters(mut self, input: crate::types::ClusterAssociatedToSchedule) -> Self {
         let mut v = self.associated_clusters.unwrap_or_default();
-        v.push(input);
-        self.associated_clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-    pub fn set_associated_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>) -> Self {
-        self.associated_clusters = input;
-        self
+    pub fn set_associated_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterAssociatedToSchedule>>) -> Self {
+        self.associated_clusters = input; self
     }
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-    pub fn get_associated_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>> {
+    pub fn get_associated_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterAssociatedToSchedule>> {
         &self.associated_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSnapshotScheduleOutput`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput).
     pub fn build(self) -> crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput {
         crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput {
-            schedule_definitions: self.schedule_definitions,
-            schedule_identifier: self.schedule_identifier,
-            schedule_description: self.schedule_description,
-            tags: self.tags,
-            next_invocations: self.next_invocations,
-            associated_cluster_count: self.associated_cluster_count,
-            associated_clusters: self.associated_clusters,
+            schedule_definitions: self.schedule_definitions
+            ,
+            schedule_identifier: self.schedule_identifier
+            ,
+            schedule_description: self.schedule_description
+            ,
+            tags: self.tags
+            ,
+            next_invocations: self.next_invocations
+            ,
+            associated_cluster_count: self.associated_cluster_count
+            ,
+            associated_clusters: self.associated_clusters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

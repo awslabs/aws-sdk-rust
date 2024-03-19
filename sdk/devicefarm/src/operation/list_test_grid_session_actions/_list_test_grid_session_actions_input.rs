@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTestGridSessionActionsInput {
+pub struct ListTestGridSessionActionsInput  {
     /// <p>The ARN of the session to retrieve.</p>
     pub session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of sessions to return per response.</p>
@@ -10,9 +10,9 @@ pub struct ListTestGridSessionActionsInput {
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTestGridSessionActionsInput {
+impl  ListTestGridSessionActionsInput  {
     /// <p>The ARN of the session to retrieve.</p>
-    pub fn session_arn(&self) -> ::std::option::Option<&str> {
+    pub fn session_arn(&self) -> ::std::option::Option<& str> {
         self.session_arn.as_deref()
     }
     /// <p>The maximum number of sessions to return per response.</p>
@@ -20,7 +20,7 @@ impl ListTestGridSessionActionsInput {
         self.max_result
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListTestGridSessionActionsInputBuilder {
     }
     /// <p>The ARN of the session to retrieve.</p>
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_arn = input;
-        self
+        self.session_arn = input; self
     }
     /// <p>The ARN of the session to retrieve.</p>
     pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListTestGridSessionActionsInputBuilder {
     }
     /// <p>The maximum number of sessions to return per response.</p>
     pub fn set_max_result(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_result = input;
-        self
+        self.max_result = input; self
     }
     /// <p>The maximum number of sessions to return per response.</p>
     pub fn get_max_result(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListTestGridSessionActionsInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestGridSessionActionsInput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput {
-            session_arn: self.session_arn,
-            max_result: self.max_result,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsInput {
+                session_arn: self.session_arn
+                ,
+                max_result: self.max_result
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

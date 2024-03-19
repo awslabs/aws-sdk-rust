@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMonitoringSchedules`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`endpoint_name(impl Into<String>)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::set_endpoint_name):<br>required: **false**<br><p>Name of a specific endpoint to fetch schedules for.</p><br>
     ///   - [`sort_by(MonitoringScheduleSortKey)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::sort_by) / [`set_sort_by(Option<MonitoringScheduleSortKey>)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::set_sort_by):<br>required: **false**<br><p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::set_sort_order):<br>required: **false**<br><p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p><br>
@@ -17,11 +17,12 @@ impl super::Client {
     ///   - [`status_equals(ScheduleStatus)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::status_equals) / [`set_status_equals(Option<ScheduleStatus>)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::set_status_equals):<br>required: **false**<br><p>A filter that returns only monitoring schedules modified before a specified time.</p><br>
     ///   - [`monitoring_job_definition_name(impl Into<String>)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::monitoring_job_definition_name) / [`set_monitoring_job_definition_name(Option<String>)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::set_monitoring_job_definition_name):<br>required: **false**<br><p>Gets a list of the monitoring schedules for the specified monitoring job definition.</p><br>
     ///   - [`monitoring_type_equals(MonitoringType)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::monitoring_type_equals) / [`set_monitoring_type_equals(Option<MonitoringType>)`](crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::set_monitoring_type_equals):<br>required: **false**<br><p>A filter that returns only the monitoring schedules for the specified monitoring type.</p><br>
-    /// - On success, responds with [`ListMonitoringSchedulesOutput`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput) with field(s):
+                            /// - On success, responds with [`ListMonitoringSchedulesOutput`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput) with field(s):
     ///   - [`monitoring_schedule_summaries(Option<Vec::<MonitoringScheduleSummary>>)`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput::monitoring_schedule_summaries): <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput::next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListMonitoringSchedulesError>`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesError)
+                            /// - On failure, responds with [`SdkError<ListMonitoringSchedulesError>`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesError)
     pub fn list_monitoring_schedules(&self) -> crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder {
-        crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

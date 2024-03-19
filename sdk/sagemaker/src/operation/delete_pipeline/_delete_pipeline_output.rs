@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePipelineOutput {
+pub struct DeletePipelineOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline to delete.</p>
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeletePipelineOutput {
+impl  DeletePipelineOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline to delete.</p>
-    pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePipelineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePipelineOutput {
     /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::operation::delete_pipeline::DeletePipelineOutput).
     pub fn builder() -> crate::operation::delete_pipeline::builders::DeletePipelineOutputBuilder {
@@ -40,27 +40,28 @@ impl DeletePipelineOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline to delete.</p>
     pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_arn = input;
-        self
+        self.pipeline_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline to delete.</p>
     pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePipelineOutput`](crate::operation::delete_pipeline::DeletePipelineOutput).
     pub fn build(self) -> crate::operation::delete_pipeline::DeletePipelineOutput {
         crate::operation::delete_pipeline::DeletePipelineOutput {
-            pipeline_arn: self.pipeline_arn,
+            pipeline_arn: self.pipeline_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

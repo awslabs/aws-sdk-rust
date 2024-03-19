@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventname = unimplemented!();
 /// match eventname {
@@ -37,16 +37,14 @@
 /// Specifically, when `eventname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EventName {
     #[allow(missing_docs)] // documentation missing in model
     Joined,
@@ -68,92 +66,83 @@ pub enum EventName {
     SubscribeStopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EventName {
-    fn from(s: &str) -> Self {
-        match s {
-            "JOINED" => EventName::Joined,
-            "JOIN_ERROR" => EventName::JoinError,
-            "LEFT" => EventName::Left,
-            "PUBLISH_ERROR" => EventName::PublishError,
-            "PUBLISH_STARTED" => EventName::PublishStarted,
-            "PUBLISH_STOPPED" => EventName::PublishStopped,
-            "SUBSCRIBE_ERROR" => EventName::SubscribeError,
-            "SUBSCRIBE_STARTED" => EventName::SubscribeStarted,
-            "SUBSCRIBE_STOPPED" => EventName::SubscribeStopped,
-            other => EventName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "JOINED" => EventName::Joined,
+"JOIN_ERROR" => EventName::JoinError,
+"LEFT" => EventName::Left,
+"PUBLISH_ERROR" => EventName::PublishError,
+"PUBLISH_STARTED" => EventName::PublishStarted,
+"PUBLISH_STOPPED" => EventName::PublishStopped,
+"SUBSCRIBE_ERROR" => EventName::SubscribeError,
+"SUBSCRIBE_STARTED" => EventName::SubscribeStarted,
+"SUBSCRIBE_STOPPED" => EventName::SubscribeStopped,
+other => EventName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EventName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EventName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EventName::from(s))
+                    }
+                }
 impl EventName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventName::Joined => "JOINED",
-            EventName::JoinError => "JOIN_ERROR",
-            EventName::Left => "LEFT",
-            EventName::PublishError => "PUBLISH_ERROR",
-            EventName::PublishStarted => "PUBLISH_STARTED",
-            EventName::PublishStopped => "PUBLISH_STOPPED",
-            EventName::SubscribeError => "SUBSCRIBE_ERROR",
-            EventName::SubscribeStarted => "SUBSCRIBE_STARTED",
-            EventName::SubscribeStopped => "SUBSCRIBE_STOPPED",
-            EventName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "JOINED",
-            "JOIN_ERROR",
-            "LEFT",
-            "PUBLISH_ERROR",
-            "PUBLISH_STARTED",
-            "PUBLISH_STOPPED",
-            "SUBSCRIBE_ERROR",
-            "SUBSCRIBE_STARTED",
-            "SUBSCRIBE_STOPPED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventName::Joined => "JOINED",
+    EventName::JoinError => "JOIN_ERROR",
+    EventName::Left => "LEFT",
+    EventName::PublishError => "PUBLISH_ERROR",
+    EventName::PublishStarted => "PUBLISH_STARTED",
+    EventName::PublishStopped => "PUBLISH_STOPPED",
+    EventName::SubscribeError => "SUBSCRIBE_ERROR",
+    EventName::SubscribeStarted => "SUBSCRIBE_STARTED",
+    EventName::SubscribeStopped => "SUBSCRIBE_STOPPED",
+    EventName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["JOINED", "JOIN_ERROR", "LEFT", "PUBLISH_ERROR", "PUBLISH_STARTED", "PUBLISH_STOPPED", "SUBSCRIBE_ERROR", "SUBSCRIBE_STARTED", "SUBSCRIBE_STOPPED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EventName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EventName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EventName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EventName::Joined => write!(f, "JOINED"),
-            EventName::JoinError => write!(f, "JOIN_ERROR"),
-            EventName::Left => write!(f, "LEFT"),
-            EventName::PublishError => write!(f, "PUBLISH_ERROR"),
-            EventName::PublishStarted => write!(f, "PUBLISH_STARTED"),
-            EventName::PublishStopped => write!(f, "PUBLISH_STOPPED"),
-            EventName::SubscribeError => write!(f, "SUBSCRIBE_ERROR"),
-            EventName::SubscribeStarted => write!(f, "SUBSCRIBE_STARTED"),
-            EventName::SubscribeStopped => write!(f, "SUBSCRIBE_STOPPED"),
-            EventName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EventName::Joined => write!(f, "JOINED"),
+EventName::JoinError => write!(f, "JOIN_ERROR"),
+EventName::Left => write!(f, "LEFT"),
+EventName::PublishError => write!(f, "PUBLISH_ERROR"),
+EventName::PublishStarted => write!(f, "PUBLISH_STARTED"),
+EventName::PublishStopped => write!(f, "PUBLISH_STOPPED"),
+EventName::SubscribeError => write!(f, "SUBSCRIBE_ERROR"),
+EventName::SubscribeStarted => write!(f, "SUBSCRIBE_STARTED"),
+EventName::SubscribeStopped => write!(f, "SUBSCRIBE_STOPPED"),
+EventName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

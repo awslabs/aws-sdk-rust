@@ -3,24 +3,26 @@
 /// <p>The details of the term relations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TermRelations {
+pub struct TermRelations  {
     /// <p>The <code>isA</code> property of the term relations.</p>
-    pub is_a: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub is_a: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The classifies of the term relations.</p>
-    pub classifies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub classifies: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TermRelations {
+impl  TermRelations  {
     /// <p>The <code>isA</code> property of the term relations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.is_a.is_none()`.
-    pub fn is_a(&self) -> &[::std::string::String] {
-        self.is_a.as_deref().unwrap_or_default()
+    pub fn is_a(&self) -> & [::std::string::String] {
+        self.is_a.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The classifies of the term relations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classifies.is_none()`.
-    pub fn classifies(&self) -> &[::std::string::String] {
-        self.classifies.as_deref().unwrap_or_default()
+    pub fn classifies(&self) -> & [::std::string::String] {
+        self.classifies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TermRelations {
@@ -34,8 +36,8 @@ impl TermRelations {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TermRelationsBuilder {
-    pub(crate) is_a: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) classifies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) is_a: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) classifies: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TermRelationsBuilder {
     /// Appends an item to `is_a`.
@@ -45,17 +47,16 @@ impl TermRelationsBuilder {
     /// <p>The <code>isA</code> property of the term relations.</p>
     pub fn is_a(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.is_a.unwrap_or_default();
-        v.push(input.into());
-        self.is_a = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.is_a = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>isA</code> property of the term relations.</p>
-    pub fn set_is_a(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.is_a = input;
-        self
+    pub fn set_is_a(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.is_a = input; self
     }
     /// <p>The <code>isA</code> property of the term relations.</p>
-    pub fn get_is_a(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_is_a(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.is_a
     }
     /// Appends an item to `classifies`.
@@ -65,24 +66,26 @@ impl TermRelationsBuilder {
     /// <p>The classifies of the term relations.</p>
     pub fn classifies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.classifies.unwrap_or_default();
-        v.push(input.into());
-        self.classifies = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.classifies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The classifies of the term relations.</p>
-    pub fn set_classifies(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.classifies = input;
-        self
+    pub fn set_classifies(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.classifies = input; self
     }
     /// <p>The classifies of the term relations.</p>
-    pub fn get_classifies(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_classifies(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.classifies
     }
     /// Consumes the builder and constructs a [`TermRelations`](crate::types::TermRelations).
     pub fn build(self) -> crate::types::TermRelations {
         crate::types::TermRelations {
-            is_a: self.is_a,
-            classifies: self.classifies,
+            is_a: self.is_a
+            ,
+            classifies: self.classifies
+            ,
         }
     }
 }
+

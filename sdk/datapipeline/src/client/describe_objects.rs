@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeObjects`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pipeline_id(impl Into<String>)`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::set_pipeline_id):<br>required: **true**<br><p>The ID of the pipeline that contains the object definitions.</p><br>
     ///   - [`object_ids(impl Into<String>)`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::object_ids) / [`set_object_ids(Option<Vec::<String>>)`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::set_object_ids):<br>required: **true**<br><p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p><br>
     ///   - [`evaluate_expressions(bool)`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::evaluate_expressions) / [`set_evaluate_expressions(Option<bool>)`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::set_evaluate_expressions):<br>required: **false**<br><p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::set_marker):<br>required: **false**<br><p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`DescribeObjectsOutput`](crate::operation::describe_objects::DescribeObjectsOutput) with field(s):
+                            /// - On success, responds with [`DescribeObjectsOutput`](crate::operation::describe_objects::DescribeObjectsOutput) with field(s):
     ///   - [`pipeline_objects(Vec::<PipelineObject>)`](crate::operation::describe_objects::DescribeObjectsOutput::pipeline_objects): <p>An array of object definitions.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_objects::DescribeObjectsOutput::marker): <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     ///   - [`has_more_results(bool)`](crate::operation::describe_objects::DescribeObjectsOutput::has_more_results): <p>Indicates whether there are more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeObjectsError>`](crate::operation::describe_objects::DescribeObjectsError)
+                            /// - On failure, responds with [`SdkError<DescribeObjectsError>`](crate::operation::describe_objects::DescribeObjectsError)
     pub fn describe_objects(&self) -> crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder {
-        crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_objects::builders::DescribeObjectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

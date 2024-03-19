@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDocumentDefaultVersionInput {
+pub struct UpdateDocumentDefaultVersionInput  {
     /// <p>The name of a custom document that you want to set as the default version.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of a custom document that you want to set as the default version.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDocumentDefaultVersionInput {
+impl  UpdateDocumentDefaultVersionInput  {
     /// <p>The name of a custom document that you want to set as the default version.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of a custom document that you want to set as the default version.</p>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateDocumentDefaultVersionInputBuilder {
     }
     /// <p>The name of a custom document that you want to set as the default version.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a custom document that you want to set as the default version.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateDocumentDefaultVersionInputBuilder {
     }
     /// <p>The version of a custom document that you want to set as the default version.</p>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The version of a custom document that you want to set as the default version.</p>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_version
     }
     /// Consumes the builder and constructs a [`UpdateDocumentDefaultVersionInput`](crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput {
-            name: self.name,
-            document_version: self.document_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_document_default_version::UpdateDocumentDefaultVersionInput {
+                name: self.name
+                ,
+                document_version: self.document_version
+                ,
+            }
+        )
     }
 }
+

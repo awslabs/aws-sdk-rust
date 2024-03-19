@@ -5,23 +5,20 @@ pub use crate::operation::start_transcription_job::_start_transcription_job_inpu
 
 impl StartTranscriptionJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_transcription_job::StartTranscriptionJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_transcription_job::StartTranscriptionJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_transcription_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_transcription_job::StartTranscriptionJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_transcription_job::StartTranscriptionJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_transcription_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartTranscriptionJob`.
-///
+/// 
 /// <p>Transcribes the audio from a media file and applies any additional Request Parameters you choose to include in your request.</p>
 /// <p>To make a <code>StartTranscriptionJob</code> request, you must first upload your media file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.</p>
 /// <p>You must include the following parameters in your <code>StartTranscriptionJob</code> request:</p>
@@ -38,33 +35,32 @@ impl StartTranscriptionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTranscriptionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_transcription_job::builders::StartTranscriptionJobInputBuilder,
+                    inner: crate::operation::start_transcription_job::builders::StartTranscriptionJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_transcription_job::StartTranscriptionJobOutput,
-        crate::operation::start_transcription_job::StartTranscriptionJobError,
-    > for StartTranscriptionJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_transcription_job::StartTranscriptionJobOutput,
-            crate::operation::start_transcription_job::StartTranscriptionJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_transcription_job::StartTranscriptionJobOutput,
+                    crate::operation::start_transcription_job::StartTranscriptionJobError,
+                > for StartTranscriptionJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_transcription_job::StartTranscriptionJobOutput,
+                        crate::operation::start_transcription_job::StartTranscriptionJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartTranscriptionJobFluentBuilder {
     /// Creates a new `StartTranscriptionJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -73,53 +69,44 @@ impl StartTranscriptionJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_transcription_job::StartTranscriptionJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_transcription_job::StartTranscriptionJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_transcription_job::StartTranscriptionJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_transcription_job::StartTranscriptionJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_transcription_job::StartTranscriptionJobOutput,
-        crate::operation::start_transcription_job::StartTranscriptionJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_transcription_job::StartTranscriptionJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_transcription_job::StartTranscriptionJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_transcription_job::StartTranscriptionJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_transcription_job::StartTranscriptionJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_transcription_job::StartTranscriptionJobOutput, crate::operation::start_transcription_job::StartTranscriptionJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
     pub fn transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -369,24 +356,17 @@ impl StartTranscriptionJobFluentBuilder {
     /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
     ///
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
-    pub fn kms_encryption_context(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn kms_encryption_context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_encryption_context(k.into(), v.into());
         self
     }
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
-    pub fn set_kms_encryption_context(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_kms_encryption_context(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_kms_encryption_context(input);
         self
     }
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
-    pub fn get_kms_encryption_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_kms_encryption_context(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_kms_encryption_context()
     }
     /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary filters.</p>
@@ -519,7 +499,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
     /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
-    pub fn set_language_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>) -> Self {
+    pub fn set_language_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageCode>>) -> Self {
         self.inner = self.inner.set_language_options(input);
         self
     }
@@ -527,7 +507,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
     /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
-    pub fn get_language_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
+    pub fn get_language_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LanguageCode>> {
         self.inner.get_language_options()
     }
     /// <p>Produces subtitle files for your input media. You can specify WebVTT (*.vtt) and SubRip (*.srt) formats.</p>
@@ -556,13 +536,13 @@ impl StartTranscriptionJobFluentBuilder {
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// Adds a key-value pair to `LanguageIdSettings`.
@@ -581,10 +561,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p><code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
     /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
     /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
-    pub fn set_language_id_settings(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
-    ) -> Self {
+    pub fn set_language_id_settings(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::LanguageCode, crate::types::LanguageIdSettings>>) -> Self {
         self.inner = self.inner.set_language_id_settings(input);
         self
     }
@@ -592,9 +569,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p><code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
     /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
     /// <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code> sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
-    pub fn get_language_id_settings(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
+    pub fn get_language_id_settings(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
         self.inner.get_language_id_settings()
     }
     /// Appends an item to `ToxicityDetection`.
@@ -609,13 +584,14 @@ impl StartTranscriptionJobFluentBuilder {
     }
     /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
     /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
-    pub fn set_toxicity_detection(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>>) -> Self {
+    pub fn set_toxicity_detection(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicityDetectionSettings>>) -> Self {
         self.inner = self.inner.set_toxicity_detection(input);
         self
     }
     /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
     /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
-    pub fn get_toxicity_detection(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>> {
+    pub fn get_toxicity_detection(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ToxicityDetectionSettings>> {
         self.inner.get_toxicity_detection()
     }
 }
+

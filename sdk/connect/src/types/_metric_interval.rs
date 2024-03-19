@@ -3,7 +3,7 @@
 /// <p>The interval period with the start and end time for the metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricInterval {
+pub struct MetricInterval  {
     /// <p>The interval period provided in the API request.</p>
     pub interval: ::std::option::Option<crate::types::IntervalPeriod>,
     /// <p>The timestamp, in UNIX Epoch time format. Start time is based on the interval period selected.</p>
@@ -11,17 +11,17 @@ pub struct MetricInterval {
     /// <p>The timestamp, in UNIX Epoch time format. End time is based on the interval period selected. For example, If <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code> and <code>EndTime</code> in the API request differs by 1 day, then 48 results are returned in the response. Each result is aggregated by the 30 minutes period, with each <code>StartTime</code> and <code>EndTime</code> differing by 30 minutes.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl MetricInterval {
+impl  MetricInterval  {
     /// <p>The interval period provided in the API request.</p>
-    pub fn interval(&self) -> ::std::option::Option<&crate::types::IntervalPeriod> {
+    pub fn interval(&self) -> ::std::option::Option<& crate::types::IntervalPeriod> {
         self.interval.as_ref()
     }
     /// <p>The timestamp, in UNIX Epoch time format. Start time is based on the interval period selected.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp, in UNIX Epoch time format. End time is based on the interval period selected. For example, If <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code> and <code>EndTime</code> in the API request differs by 1 day, then 48 results are returned in the response. Each result is aggregated by the 30 minutes period, with each <code>StartTime</code> and <code>EndTime</code> differing by 30 minutes.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl MetricIntervalBuilder {
     }
     /// <p>The interval period provided in the API request.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<crate::types::IntervalPeriod>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The interval period provided in the API request.</p>
     pub fn get_interval(&self) -> &::std::option::Option<crate::types::IntervalPeriod> {
@@ -62,8 +61,7 @@ impl MetricIntervalBuilder {
     }
     /// <p>The timestamp, in UNIX Epoch time format. Start time is based on the interval period selected.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp, in UNIX Epoch time format. Start time is based on the interval period selected.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl MetricIntervalBuilder {
     }
     /// <p>The timestamp, in UNIX Epoch time format. End time is based on the interval period selected. For example, If <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code> and <code>EndTime</code> in the API request differs by 1 day, then 48 results are returned in the response. Each result is aggregated by the 30 minutes period, with each <code>StartTime</code> and <code>EndTime</code> differing by 30 minutes.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp, in UNIX Epoch time format. End time is based on the interval period selected. For example, If <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code> and <code>EndTime</code> in the API request differs by 1 day, then 48 results are returned in the response. Each result is aggregated by the 30 minutes period, with each <code>StartTime</code> and <code>EndTime</code> differing by 30 minutes.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl MetricIntervalBuilder {
     /// Consumes the builder and constructs a [`MetricInterval`](crate::types::MetricInterval).
     pub fn build(self) -> crate::types::MetricInterval {
         crate::types::MetricInterval {
-            interval: self.interval,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            interval: self.interval
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

@@ -15,7 +15,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAlarmActionErrorEntry {
+pub struct BatchAlarmActionErrorEntry  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
@@ -23,17 +23,17 @@ pub struct BatchAlarmActionErrorEntry {
     /// <p>A message that describes the error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchAlarmActionErrorEntry {
+impl  BatchAlarmActionErrorEntry  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -60,8 +60,7 @@ impl BatchAlarmActionErrorEntryBuilder {
     }
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl BatchAlarmActionErrorEntryBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -88,8 +86,7 @@ impl BatchAlarmActionErrorEntryBuilder {
     }
     /// <p>A message that describes the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A message that describes the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,9 +95,13 @@ impl BatchAlarmActionErrorEntryBuilder {
     /// Consumes the builder and constructs a [`BatchAlarmActionErrorEntry`](crate::types::BatchAlarmActionErrorEntry).
     pub fn build(self) -> crate::types::BatchAlarmActionErrorEntry {
         crate::types::BatchAlarmActionErrorEntry {
-            request_id: self.request_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            request_id: self.request_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

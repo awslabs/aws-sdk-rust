@@ -3,24 +3,23 @@
 /// <p>A validator provides a syntactic or semantic check to ensure the configuration that you want to deploy functions as intended. To validate your application configuration data, you provide a schema or an Amazon Web Services Lambda function that runs against the configuration. The configuration deployment or update can only proceed when the configuration data is valid.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Validator {
+pub struct Validator  {
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
     pub r#type: crate::types::ValidatorType,
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
     pub content: ::std::string::String,
 }
-impl Validator {
+impl  Validator  {
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
-    pub fn r#type(&self) -> &crate::types::ValidatorType {
+    pub fn r#type(&self) -> & crate::types::ValidatorType {
         &self.r#type
     }
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
-    pub fn content(&self) -> &str {
-        use std::ops::Deref;
-        self.content.deref()
+    pub fn content(&self) -> & str {
+        use std::ops::Deref; self.content.deref()
     }
 }
-impl ::std::fmt::Debug for Validator {
+impl  ::std::fmt::Debug for Validator  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Validator");
         formatter.field("r#type", &self.r#type);
@@ -51,8 +50,7 @@ impl ValidatorBuilder {
     }
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ValidatorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code></p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ValidatorType> {
@@ -66,8 +64,7 @@ impl ValidatorBuilder {
     }
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,20 +75,20 @@ impl ValidatorBuilder {
     /// - [`r#type`](crate::types::builders::ValidatorBuilder::r#type)
     /// - [`content`](crate::types::builders::ValidatorBuilder::content)
     pub fn build(self) -> ::std::result::Result<crate::types::Validator, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Validator {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Validator",
-                )
-            })?,
-            content: self.content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content",
-                    "content was not specified but it is required when building Validator",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Validator {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Validator")
+                    )?
+                ,
+                content: self.content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content", "content was not specified but it is required when building Validator")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ValidatorBuilder {
@@ -102,3 +99,4 @@ impl ::std::fmt::Debug for ValidatorBuilder {
         formatter.finish()
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrainingJobInput {
+pub struct DescribeTrainingJobInput  {
     /// <p>The name of the training job.</p>
     pub training_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTrainingJobInput {
+impl  DescribeTrainingJobInput  {
     /// <p>The name of the training job.</p>
-    pub fn training_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn training_job_name(&self) -> ::std::option::Option<& str> {
         self.training_job_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeTrainingJobInputBuilder {
     }
     /// <p>The name of the training job.</p>
     pub fn set_training_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_job_name = input;
-        self
+        self.training_job_name = input; self
     }
     /// <p>The name of the training job.</p>
     pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_job_name
     }
     /// Consumes the builder and constructs a [`DescribeTrainingJobInput`](crate::operation::describe_training_job::DescribeTrainingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_training_job::DescribeTrainingJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_training_job::DescribeTrainingJobInput {
-            training_job_name: self.training_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_training_job::DescribeTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_training_job::DescribeTrainingJobInput {
+                training_job_name: self.training_job_name
+                ,
+            }
+        )
     }
 }
+

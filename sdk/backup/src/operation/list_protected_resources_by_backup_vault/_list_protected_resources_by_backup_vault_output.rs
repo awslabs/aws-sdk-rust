@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProtectedResourcesByBackupVaultOutput {
+pub struct ListProtectedResourcesByBackupVaultOutput  {
     /// <p>These are the results returned for the request ListProtectedResourcesByBackupVault.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>>,
+    pub results: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedResource>>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListProtectedResourcesByBackupVaultOutput {
+impl  ListProtectedResourcesByBackupVaultOutput  {
     /// <p>These are the results returned for the request ListProtectedResourcesByBackupVault.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
-    pub fn results(&self) -> &[crate::types::ProtectedResource] {
-        self.results.as_deref().unwrap_or_default()
+    pub fn results(&self) -> & [crate::types::ProtectedResource] {
+        self.results.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListProtectedResourcesByBackupVaultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListProtectedResourcesByBackupVaultOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectedResourcesByBackupVaultOutput`](crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput).
     pub fn builder() -> crate::operation::list_protected_resources_by_backup_vault::builders::ListProtectedResourcesByBackupVaultOutputBuilder {
@@ -37,7 +38,7 @@ impl ListProtectedResourcesByBackupVaultOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectedResourcesByBackupVaultOutputBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListProtectedResourcesByBackupVaultOutputBuilder {
     /// <p>These are the results returned for the request ListProtectedResourcesByBackupVault.</p>
     pub fn results(mut self, input: crate::types::ProtectedResource) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These are the results returned for the request ListProtectedResourcesByBackupVault.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedResource>>) -> Self {
+        self.results = input; self
     }
     /// <p>These are the results returned for the request ListProtectedResourcesByBackupVault.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProtectedResource>> {
         &self.results
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -69,28 +69,30 @@ impl ListProtectedResourcesByBackupVaultOutputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListProtectedResourcesByBackupVaultOutput`](crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput).
     pub fn build(self) -> crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput {
         crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput {
-            results: self.results,
-            next_token: self.next_token,
+            results: self.results
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

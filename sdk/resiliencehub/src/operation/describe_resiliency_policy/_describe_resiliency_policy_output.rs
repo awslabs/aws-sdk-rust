@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResiliencyPolicyOutput {
+pub struct DescribeResiliencyPolicyOutput  {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
     pub policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     _request_id: Option<String>,
 }
-impl DescribeResiliencyPolicyOutput {
+impl  DescribeResiliencyPolicyOutput  {
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
-    pub fn policy(&self) -> ::std::option::Option<&crate::types::ResiliencyPolicy> {
+    pub fn policy(&self) -> ::std::option::Option<& crate::types::ResiliencyPolicy> {
         self.policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeResiliencyPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeResiliencyPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResiliencyPolicyOutput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput).
     pub fn builder() -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeResiliencyPolicyOutputBuilder {
     }
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResiliencyPolicy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::ResiliencyPolicy> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeResiliencyPolicyOutput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput).
     pub fn build(self) -> crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput {
         crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput {
-            policy: self.policy,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

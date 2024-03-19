@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBotAliasOutput {
+pub struct DeleteBotAliasOutput  {
     /// <p>The unique identifier of the bot alias to delete.</p>
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the bot that contains the alias to delete.</p>
@@ -11,25 +11,25 @@ pub struct DeleteBotAliasOutput {
     pub bot_alias_status: ::std::option::Option<crate::types::BotAliasStatus>,
     _request_id: Option<String>,
 }
-impl DeleteBotAliasOutput {
+impl  DeleteBotAliasOutput  {
     /// <p>The unique identifier of the bot alias to delete.</p>
-    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> ::std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The unique identifier of the bot that contains the alias to delete.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
-    pub fn bot_alias_status(&self) -> ::std::option::Option<&crate::types::BotAliasStatus> {
+    pub fn bot_alias_status(&self) -> ::std::option::Option<& crate::types::BotAliasStatus> {
         self.bot_alias_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteBotAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteBotAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotAliasOutput`](crate::operation::delete_bot_alias::DeleteBotAliasOutput).
     pub fn builder() -> crate::operation::delete_bot_alias::builders::DeleteBotAliasOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteBotAliasOutputBuilder {
     }
     /// <p>The unique identifier of the bot alias to delete.</p>
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_id = input;
-        self
+        self.bot_alias_id = input; self
     }
     /// <p>The unique identifier of the bot alias to delete.</p>
     pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteBotAliasOutputBuilder {
     }
     /// <p>The unique identifier of the bot that contains the alias to delete.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot that contains the alias to delete.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DeleteBotAliasOutputBuilder {
     }
     /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
     pub fn set_bot_alias_status(mut self, input: ::std::option::Option<crate::types::BotAliasStatus>) -> Self {
-        self.bot_alias_status = input;
-        self
+        self.bot_alias_status = input; self
     }
     /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
     pub fn get_bot_alias_status(&self) -> &::std::option::Option<crate::types::BotAliasStatus> {
         &self.bot_alias_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteBotAliasOutput`](crate::operation::delete_bot_alias::DeleteBotAliasOutput).
     pub fn build(self) -> crate::operation::delete_bot_alias::DeleteBotAliasOutput {
         crate::operation::delete_bot_alias::DeleteBotAliasOutput {
-            bot_alias_id: self.bot_alias_id,
-            bot_id: self.bot_id,
-            bot_alias_status: self.bot_alias_status,
+            bot_alias_id: self.bot_alias_id
+            ,
+            bot_id: self.bot_id
+            ,
+            bot_alias_status: self.bot_alias_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

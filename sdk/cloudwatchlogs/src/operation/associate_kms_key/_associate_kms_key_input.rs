@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateKmsKeyInput {
+pub struct AssociateKmsKeyInput  {
     /// <p>The name of the log group.</p>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
@@ -20,14 +20,14 @@ pub struct AssociateKmsKeyInput {
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
-impl AssociateKmsKeyInput {
+impl  AssociateKmsKeyInput  {
     /// <p>The name of the log group.</p>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. This must be a symmetric KMS key. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies the target for this operation. You must specify one of the following:</p>
@@ -40,7 +40,7 @@ impl AssociateKmsKeyInput {
     /// <p><code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </code></p></li>
     /// </ul>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl AssociateKmsKeyInputBuilder {
     /// <p>The name of the log group.</p>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group.</p>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
@@ -85,8 +84,7 @@ impl AssociateKmsKeyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. This must be a symmetric KMS key. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. This must be a symmetric KMS key. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl AssociateKmsKeyInputBuilder {
     /// </ul>
     /// <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>Specifies the target for this operation. You must specify one of the following:</p>
     /// <ul>
@@ -134,13 +131,17 @@ impl AssociateKmsKeyInputBuilder {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`AssociateKmsKeyInput`](crate::operation::associate_kms_key::AssociateKmsKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_kms_key::AssociateKmsKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_kms_key::AssociateKmsKeyInput {
-            log_group_name: self.log_group_name,
-            kms_key_id: self.kms_key_id,
-            resource_identifier: self.resource_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_kms_key::AssociateKmsKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_kms_key::AssociateKmsKeyInput {
+                log_group_name: self.log_group_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+            }
+        )
     }
 }
+

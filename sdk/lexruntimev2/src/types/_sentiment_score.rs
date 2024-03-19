@@ -3,7 +3,7 @@
 /// <p>The individual sentiment responses for the utterance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SentimentScore {
+pub struct SentimentScore  {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     pub positive: f64,
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
@@ -13,7 +13,7 @@ pub struct SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub mixed: f64,
 }
-impl SentimentScore {
+impl  SentimentScore  {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     pub fn positive(&self) -> f64 {
         self.positive
@@ -55,8 +55,7 @@ impl SentimentScoreBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     pub fn set_positive(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.positive = input;
-        self
+        self.positive = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     pub fn get_positive(&self) -> &::std::option::Option<f64> {
@@ -69,8 +68,7 @@ impl SentimentScoreBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
     pub fn set_negative(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.negative = input;
-        self
+        self.negative = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
     pub fn get_negative(&self) -> &::std::option::Option<f64> {
@@ -83,8 +81,7 @@ impl SentimentScoreBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
     pub fn set_neutral(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.neutral = input;
-        self
+        self.neutral = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
     pub fn get_neutral(&self) -> &::std::option::Option<f64> {
@@ -97,8 +94,7 @@ impl SentimentScoreBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub fn set_mixed(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.mixed = input;
-        self
+        self.mixed = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub fn get_mixed(&self) -> &::std::option::Option<f64> {
@@ -107,10 +103,19 @@ impl SentimentScoreBuilder {
     /// Consumes the builder and constructs a [`SentimentScore`](crate::types::SentimentScore).
     pub fn build(self) -> crate::types::SentimentScore {
         crate::types::SentimentScore {
-            positive: self.positive.unwrap_or_default(),
-            negative: self.negative.unwrap_or_default(),
-            neutral: self.neutral.unwrap_or_default(),
-            mixed: self.mixed.unwrap_or_default(),
+            positive: self.positive
+                .unwrap_or_default()
+            ,
+            negative: self.negative
+                .unwrap_or_default()
+            ,
+            neutral: self.neutral
+                .unwrap_or_default()
+            ,
+            mixed: self.mixed
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

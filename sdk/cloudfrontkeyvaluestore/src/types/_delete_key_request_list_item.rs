@@ -3,15 +3,14 @@
 /// <p>List item for keys to delete.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeyRequestListItem {
+pub struct DeleteKeyRequestListItem  {
     /// <p>The key of the key value pair to be deleted.</p>
     pub key: ::std::string::String,
 }
-impl DeleteKeyRequestListItem {
+impl  DeleteKeyRequestListItem  {
     /// <p>The key of the key value pair to be deleted.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
 }
 impl DeleteKeyRequestListItem {
@@ -36,8 +35,7 @@ impl DeleteKeyRequestListItemBuilder {
     }
     /// <p>The key of the key value pair to be deleted.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of the key value pair to be deleted.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DeleteKeyRequestListItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::DeleteKeyRequestListItemBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteKeyRequestListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteKeyRequestListItem {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building DeleteKeyRequestListItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteKeyRequestListItem {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building DeleteKeyRequestListItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

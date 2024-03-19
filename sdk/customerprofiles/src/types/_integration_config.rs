@@ -3,13 +3,13 @@
 /// <p>Configuration data for integration workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegrationConfig {
+pub struct IntegrationConfig  {
     /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
     pub appflow_integration: ::std::option::Option<crate::types::AppflowIntegration>,
 }
-impl IntegrationConfig {
+impl  IntegrationConfig  {
     /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
-    pub fn appflow_integration(&self) -> ::std::option::Option<&crate::types::AppflowIntegration> {
+    pub fn appflow_integration(&self) -> ::std::option::Option<& crate::types::AppflowIntegration> {
         self.appflow_integration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl IntegrationConfigBuilder {
     }
     /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
     pub fn set_appflow_integration(mut self, input: ::std::option::Option<crate::types::AppflowIntegration>) -> Self {
-        self.appflow_integration = input;
-        self
+        self.appflow_integration = input; self
     }
     /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
     pub fn get_appflow_integration(&self) -> &::std::option::Option<crate::types::AppflowIntegration> {
@@ -44,7 +43,9 @@ impl IntegrationConfigBuilder {
     /// Consumes the builder and constructs a [`IntegrationConfig`](crate::types::IntegrationConfig).
     pub fn build(self) -> crate::types::IntegrationConfig {
         crate::types::IntegrationConfig {
-            appflow_integration: self.appflow_integration,
+            appflow_integration: self.appflow_integration
+            ,
         }
     }
 }
+

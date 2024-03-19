@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateTokenWithIamOutput {
+pub struct CreateTokenWithIamOutput  {
     /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>Used to notify the requester that the returned token is an access token. The supported token type is <code>Bearer</code>.</p>
@@ -19,16 +19,16 @@ pub struct CreateTokenWithIamOutput {
     /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub issued_token_type: ::std::option::Option<::std::string::String>,
     /// <p>The list of scopes for which authorization is granted. The access token that is issued is limited to the scopes that are granted.</p>
-    pub scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub scope: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CreateTokenWithIamOutput {
+impl  CreateTokenWithIamOutput  {
     /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>Used to notify the requester that the returned token is an access token. The supported token type is <code>Bearer</code>.</p>
-    pub fn token_type(&self) -> ::std::option::Option<&str> {
+    pub fn token_type(&self) -> ::std::option::Option<& str> {
         self.token_type.as_deref()
     }
     /// <p>Indicates the time in seconds when an access token will expire.</p>
@@ -37,27 +37,28 @@ impl CreateTokenWithIamOutput {
     }
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
-    pub fn refresh_token(&self) -> ::std::option::Option<&str> {
+    pub fn refresh_token(&self) -> ::std::option::Option<& str> {
         self.refresh_token.as_deref()
     }
     /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token.</p>
-    pub fn id_token(&self) -> ::std::option::Option<&str> {
+    pub fn id_token(&self) -> ::std::option::Option<& str> {
         self.id_token.as_deref()
     }
     /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported:</p>
     /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
     /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
-    pub fn issued_token_type(&self) -> ::std::option::Option<&str> {
+    pub fn issued_token_type(&self) -> ::std::option::Option<& str> {
         self.issued_token_type.as_deref()
     }
     /// <p>The list of scopes for which authorization is granted. The access token that is issued is limited to the scopes that are granted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scope.is_none()`.
-    pub fn scope(&self) -> &[::std::string::String] {
-        self.scope.as_deref().unwrap_or_default()
+    pub fn scope(&self) -> & [::std::string::String] {
+        self.scope.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateTokenWithIamOutput {
+impl  ::std::fmt::Debug for CreateTokenWithIamOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTokenWithIamOutput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -72,10 +73,10 @@ impl ::std::fmt::Debug for CreateTokenWithIamOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTokenWithIamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTokenWithIamOutput {
     /// Creates a new builder-style object to manufacture [`CreateTokenWithIamOutput`](crate::operation::create_token_with_iam::CreateTokenWithIamOutput).
     pub fn builder() -> crate::operation::create_token_with_iam::builders::CreateTokenWithIamOutputBuilder {
@@ -93,7 +94,7 @@ pub struct CreateTokenWithIamOutputBuilder {
     pub(crate) refresh_token: ::std::option::Option<::std::string::String>,
     pub(crate) id_token: ::std::option::Option<::std::string::String>,
     pub(crate) issued_token_type: ::std::option::Option<::std::string::String>,
-    pub(crate) scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scope: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateTokenWithIamOutputBuilder {
@@ -104,8 +105,7 @@ impl CreateTokenWithIamOutputBuilder {
     }
     /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A bearer token to access AWS accounts and applications assigned to a user.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +118,7 @@ impl CreateTokenWithIamOutputBuilder {
     }
     /// <p>Used to notify the requester that the returned token is an access token. The supported token type is <code>Bearer</code>.</p>
     pub fn set_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_type = input;
-        self
+        self.token_type = input; self
     }
     /// <p>Used to notify the requester that the returned token is an access token. The supported token type is <code>Bearer</code>.</p>
     pub fn get_token_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl CreateTokenWithIamOutputBuilder {
     }
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     pub fn set_expires_in(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expires_in = input;
-        self
+        self.expires_in = input; self
     }
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     pub fn get_expires_in(&self) -> &::std::option::Option<i32> {
@@ -148,8 +146,7 @@ impl CreateTokenWithIamOutputBuilder {
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.refresh_token = input;
-        self
+        self.refresh_token = input; self
     }
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
@@ -163,8 +160,7 @@ impl CreateTokenWithIamOutputBuilder {
     }
     /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token.</p>
     pub fn set_id_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id_token = input;
-        self
+        self.id_token = input; self
     }
     /// <p>A JSON Web Token (JWT) that identifies the user associated with the issued access token.</p>
     pub fn get_id_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +177,7 @@ impl CreateTokenWithIamOutputBuilder {
     /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
     /// <p>* Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code></p>
     pub fn set_issued_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issued_token_type = input;
-        self
+        self.issued_token_type = input; self
     }
     /// <p>Indicates the type of tokens that are issued by IAM Identity Center. The following values are supported:</p>
     /// <p>* Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code></p>
@@ -197,38 +192,45 @@ impl CreateTokenWithIamOutputBuilder {
     /// <p>The list of scopes for which authorization is granted. The access token that is issued is limited to the scopes that are granted.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scope.unwrap_or_default();
-        v.push(input.into());
-        self.scope = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.scope = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of scopes for which authorization is granted. The access token that is issued is limited to the scopes that are granted.</p>
-    pub fn set_scope(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.scope = input;
-        self
+    pub fn set_scope(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.scope = input; self
     }
     /// <p>The list of scopes for which authorization is granted. The access token that is issued is limited to the scopes that are granted.</p>
-    pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.scope
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTokenWithIamOutput`](crate::operation::create_token_with_iam::CreateTokenWithIamOutput).
     pub fn build(self) -> crate::operation::create_token_with_iam::CreateTokenWithIamOutput {
         crate::operation::create_token_with_iam::CreateTokenWithIamOutput {
-            access_token: self.access_token,
-            token_type: self.token_type,
-            expires_in: self.expires_in.unwrap_or_default(),
-            refresh_token: self.refresh_token,
-            id_token: self.id_token,
-            issued_token_type: self.issued_token_type,
-            scope: self.scope,
+            access_token: self.access_token
+            ,
+            token_type: self.token_type
+            ,
+            expires_in: self.expires_in
+                .unwrap_or_default()
+            ,
+            refresh_token: self.refresh_token
+            ,
+            id_token: self.id_token
+            ,
+            issued_token_type: self.issued_token_type
+            ,
+            scope: self.scope
+            ,
             _request_id: self._request_id,
         }
     }
@@ -247,3 +249,4 @@ impl ::std::fmt::Debug for CreateTokenWithIamOutputBuilder {
         formatter.finish()
     }
 }
+

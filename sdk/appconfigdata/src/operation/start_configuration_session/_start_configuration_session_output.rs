@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartConfigurationSessionOutput {
+pub struct StartConfigurationSessionOutput  {
     /// <p>Token encapsulating state about the configuration session. Provide this token to the <code>GetLatestConfiguration</code> API to retrieve configuration data.</p><important>
     /// <p>This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.</p>
     /// <p>The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once. To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
@@ -10,20 +10,20 @@ pub struct StartConfigurationSessionOutput {
     pub initial_configuration_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartConfigurationSessionOutput {
+impl  StartConfigurationSessionOutput  {
     /// <p>Token encapsulating state about the configuration session. Provide this token to the <code>GetLatestConfiguration</code> API to retrieve configuration data.</p><important>
     /// <p>This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.</p>
     /// <p>The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once. To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    pub fn initial_configuration_token(&self) -> ::std::option::Option<&str> {
+    pub fn initial_configuration_token(&self) -> ::std::option::Option<& str> {
         self.initial_configuration_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartConfigurationSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartConfigurationSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartConfigurationSessionOutput`](crate::operation::start_configuration_session::StartConfigurationSessionOutput).
     pub fn builder() -> crate::operation::start_configuration_session::builders::StartConfigurationSessionOutputBuilder {
@@ -52,8 +52,7 @@ impl StartConfigurationSessionOutputBuilder {
     /// <p>The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once. To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
     pub fn set_initial_configuration_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initial_configuration_token = input;
-        self
+        self.initial_configuration_token = input; self
     }
     /// <p>Token encapsulating state about the configuration session. Provide this token to the <code>GetLatestConfiguration</code> API to retrieve configuration data.</p><important>
     /// <p>This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.</p>
@@ -63,19 +62,21 @@ impl StartConfigurationSessionOutputBuilder {
         &self.initial_configuration_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartConfigurationSessionOutput`](crate::operation::start_configuration_session::StartConfigurationSessionOutput).
     pub fn build(self) -> crate::operation::start_configuration_session::StartConfigurationSessionOutput {
         crate::operation::start_configuration_session::StartConfigurationSessionOutput {
-            initial_configuration_token: self.initial_configuration_token,
+            initial_configuration_token: self.initial_configuration_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

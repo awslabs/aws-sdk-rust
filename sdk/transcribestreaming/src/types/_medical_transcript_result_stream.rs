@@ -22,11 +22,7 @@ impl MedicalTranscriptResultStream {
     /// Tries to convert the enum instance into [`TranscriptEvent`](crate::types::MedicalTranscriptResultStream::TranscriptEvent), extracting the inner [`MedicalTranscriptEvent`](crate::types::MedicalTranscriptEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_event(&self) -> ::std::result::Result<&crate::types::MedicalTranscriptEvent, &Self> {
-        if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::types::MedicalTranscriptResultStream::TranscriptEvent).
     pub fn is_transcript_event(&self) -> bool {
@@ -37,3 +33,4 @@ impl MedicalTranscriptResultStream {
         matches!(self, Self::Unknown)
     }
 }
+

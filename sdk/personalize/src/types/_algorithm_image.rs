@@ -3,21 +3,20 @@
 /// <p>Describes an algorithm image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlgorithmImage {
+pub struct AlgorithmImage  {
     /// <p>The name of the algorithm image.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub docker_uri: ::std::string::String,
 }
-impl AlgorithmImage {
+impl  AlgorithmImage  {
     /// <p>The name of the algorithm image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    pub fn docker_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.docker_uri.deref()
+    pub fn docker_uri(&self) -> & str {
+        use std::ops::Deref; self.docker_uri.deref()
     }
 }
 impl AlgorithmImage {
@@ -42,8 +41,7 @@ impl AlgorithmImageBuilder {
     }
     /// <p>The name of the algorithm image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the algorithm image.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AlgorithmImageBuilder {
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub fn set_docker_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.docker_uri = input;
-        self
+        self.docker_uri = input; self
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub fn get_docker_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AlgorithmImageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`docker_uri`](crate::types::builders::AlgorithmImageBuilder::docker_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::AlgorithmImage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AlgorithmImage {
-            name: self.name,
-            docker_uri: self.docker_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "docker_uri",
-                    "docker_uri was not specified but it is required when building AlgorithmImage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AlgorithmImage {
+                name: self.name
+                ,
+                docker_uri: self.docker_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("docker_uri", "docker_uri was not specified but it is required when building AlgorithmImage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

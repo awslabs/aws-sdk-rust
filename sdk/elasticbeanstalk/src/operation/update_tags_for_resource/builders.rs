@@ -5,23 +5,20 @@ pub use crate::operation::update_tags_for_resource::_update_tags_for_resource_in
 
 impl UpdateTagsForResourceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_tags_for_resource();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_tags_for_resource();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateTagsForResource`.
-///
+/// 
 /// <p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.</p>
 /// <p>Elastic Beanstalk supports tagging of all of its resources. For details about resource tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging Application Resources</a>.</p>
 /// <p>If you create a custom IAM user policy to control permission to this operation, specify one of the following two virtual actions (or both) instead of the API operation name:</p>
@@ -43,33 +40,32 @@ impl UpdateTagsForResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder,
+                    inner: crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
-        crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-    > for UpdateTagsForResourceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
+                    crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
+                > for UpdateTagsForResourceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
+                        crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateTagsForResourceFluentBuilder {
     /// Creates a new `UpdateTagsForResource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -78,53 +74,44 @@ impl UpdateTagsForResourceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_tags_for_resource::UpdateTagsForResource::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_tags_for_resource::UpdateTagsForResource::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
-        crate::operation::update_tags_for_resource::UpdateTagsForResourceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_tags_for_resource::UpdateTagsForResourceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_tags_for_resource::UpdateTagsForResource::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_tags_for_resource::UpdateTagsForResource::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput, crate::operation::update_tags_for_resource::UpdateTagsForResourceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,13 +141,13 @@ impl UpdateTagsForResourceFluentBuilder {
     }
     /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn set_tags_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags_to_add(input);
         self
     }
     /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags_to_add()
     }
     /// Appends an item to `TagsToRemove`.
@@ -175,13 +162,14 @@ impl UpdateTagsForResourceFluentBuilder {
     }
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn set_tags_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_tags_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags_to_remove(input);
         self
     }
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn get_tags_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_tags_to_remove()
     }
 }
+

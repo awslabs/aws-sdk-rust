@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchSystemTemplates`](crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(SystemTemplateFilter)`](crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::filters) / [`set_filters(Option<Vec::<SystemTemplateFilter>>)`](crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::set_filters):<br>required: **false**<br><p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results. Use this when you're paginating results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
-    /// - On success, responds with [`SearchSystemTemplatesOutput`](crate::operation::search_system_templates::SearchSystemTemplatesOutput) with field(s):
+                            /// - On success, responds with [`SearchSystemTemplatesOutput`](crate::operation::search_system_templates::SearchSystemTemplatesOutput) with field(s):
     ///   - [`summaries(Option<Vec::<SystemTemplateSummary>>)`](crate::operation::search_system_templates::SearchSystemTemplatesOutput::summaries): <p>An array of objects that contain summary information about each system deployment in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_system_templates::SearchSystemTemplatesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<SearchSystemTemplatesError>`](crate::operation::search_system_templates::SearchSystemTemplatesError)
+                            /// - On failure, responds with [`SdkError<SearchSystemTemplatesError>`](crate::operation::search_system_templates::SearchSystemTemplatesError)
     #[deprecated(note = "since: 2022-08-30")]
     pub fn search_system_templates(&self) -> crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder {
-        crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_system_templates::builders::SearchSystemTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

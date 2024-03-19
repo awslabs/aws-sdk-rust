@@ -3,15 +3,14 @@
 /// <p>The object containing details about database migration preferences, when you have no particular preference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoDatabaseMigrationPreference {
+pub struct NoDatabaseMigrationPreference  {
     /// <p>The target database engine for database migration preference that you specify.</p>
-    pub target_database_engine: ::std::vec::Vec<crate::types::TargetDatabaseEngine>,
+    pub target_database_engine: ::std::vec::Vec::<crate::types::TargetDatabaseEngine>,
 }
-impl NoDatabaseMigrationPreference {
+impl  NoDatabaseMigrationPreference  {
     /// <p>The target database engine for database migration preference that you specify.</p>
-    pub fn target_database_engine(&self) -> &[crate::types::TargetDatabaseEngine] {
-        use std::ops::Deref;
-        self.target_database_engine.deref()
+    pub fn target_database_engine(&self) -> & [crate::types::TargetDatabaseEngine] {
+        use std::ops::Deref; self.target_database_engine.deref()
     }
 }
 impl NoDatabaseMigrationPreference {
@@ -25,7 +24,7 @@ impl NoDatabaseMigrationPreference {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoDatabaseMigrationPreferenceBuilder {
-    pub(crate) target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::TargetDatabaseEngine>>,
+    pub(crate) target_database_engine: ::std::option::Option<::std::vec::Vec::<crate::types::TargetDatabaseEngine>>,
 }
 impl NoDatabaseMigrationPreferenceBuilder {
     /// Appends an item to `target_database_engine`.
@@ -35,30 +34,31 @@ impl NoDatabaseMigrationPreferenceBuilder {
     /// <p>The target database engine for database migration preference that you specify.</p>
     pub fn target_database_engine(mut self, input: crate::types::TargetDatabaseEngine) -> Self {
         let mut v = self.target_database_engine.unwrap_or_default();
-        v.push(input);
-        self.target_database_engine = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_database_engine = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target database engine for database migration preference that you specify.</p>
-    pub fn set_target_database_engine(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDatabaseEngine>>) -> Self {
-        self.target_database_engine = input;
-        self
+    pub fn set_target_database_engine(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetDatabaseEngine>>) -> Self {
+        self.target_database_engine = input; self
     }
     /// <p>The target database engine for database migration preference that you specify.</p>
-    pub fn get_target_database_engine(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDatabaseEngine>> {
+    pub fn get_target_database_engine(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetDatabaseEngine>> {
         &self.target_database_engine
     }
     /// Consumes the builder and constructs a [`NoDatabaseMigrationPreference`](crate::types::NoDatabaseMigrationPreference).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_database_engine`](crate::types::builders::NoDatabaseMigrationPreferenceBuilder::target_database_engine)
     pub fn build(self) -> ::std::result::Result<crate::types::NoDatabaseMigrationPreference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NoDatabaseMigrationPreference {
-            target_database_engine: self.target_database_engine.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_database_engine",
-                    "target_database_engine was not specified but it is required when building NoDatabaseMigrationPreference",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NoDatabaseMigrationPreference {
+                target_database_engine: self.target_database_engine
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_database_engine", "target_database_engine was not specified but it is required when building NoDatabaseMigrationPreference")
+                    )?
+                ,
+            }
+        )
     }
 }
+

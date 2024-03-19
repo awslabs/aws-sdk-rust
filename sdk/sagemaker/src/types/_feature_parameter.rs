@@ -3,19 +3,19 @@
 /// <p>A key-value pair that you specify to describe the feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FeatureParameter {
+pub struct FeatureParameter  {
     /// <p>A key that must contain a value to describe the feature.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value that belongs to a key.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl FeatureParameter {
+impl  FeatureParameter  {
     /// <p>A key that must contain a value to describe the feature.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value that belongs to a key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FeatureParameterBuilder {
     }
     /// <p>A key that must contain a value to describe the feature.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>A key that must contain a value to describe the feature.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl FeatureParameterBuilder {
     }
     /// <p>The value that belongs to a key.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value that belongs to a key.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl FeatureParameterBuilder {
     /// Consumes the builder and constructs a [`FeatureParameter`](crate::types::FeatureParameter).
     pub fn build(self) -> crate::types::FeatureParameter {
         crate::types::FeatureParameter {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,48 +3,53 @@
 /// <p>A structure that defines search criteria for contacts using agent hierarchy group levels. For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentHierarchyGroups {
+pub struct AgentHierarchyGroups  {
     /// <p>The identifiers for level 1 hierarchy groups.</p>
-    pub l1_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub l1_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifiers for level 2 hierarchy groups.</p>
-    pub l2_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub l2_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifiers for level 3 hierarchy groups.</p>
-    pub l3_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub l3_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifiers for level 4 hierarchy groups.</p>
-    pub l4_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub l4_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifiers for level 5 hierarchy groups.</p>
-    pub l5_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub l5_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AgentHierarchyGroups {
+impl  AgentHierarchyGroups  {
     /// <p>The identifiers for level 1 hierarchy groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.l1_ids.is_none()`.
-    pub fn l1_ids(&self) -> &[::std::string::String] {
-        self.l1_ids.as_deref().unwrap_or_default()
+    pub fn l1_ids(&self) -> & [::std::string::String] {
+        self.l1_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifiers for level 2 hierarchy groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.l2_ids.is_none()`.
-    pub fn l2_ids(&self) -> &[::std::string::String] {
-        self.l2_ids.as_deref().unwrap_or_default()
+    pub fn l2_ids(&self) -> & [::std::string::String] {
+        self.l2_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifiers for level 3 hierarchy groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.l3_ids.is_none()`.
-    pub fn l3_ids(&self) -> &[::std::string::String] {
-        self.l3_ids.as_deref().unwrap_or_default()
+    pub fn l3_ids(&self) -> & [::std::string::String] {
+        self.l3_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifiers for level 4 hierarchy groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.l4_ids.is_none()`.
-    pub fn l4_ids(&self) -> &[::std::string::String] {
-        self.l4_ids.as_deref().unwrap_or_default()
+    pub fn l4_ids(&self) -> & [::std::string::String] {
+        self.l4_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifiers for level 5 hierarchy groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.l5_ids.is_none()`.
-    pub fn l5_ids(&self) -> &[::std::string::String] {
-        self.l5_ids.as_deref().unwrap_or_default()
+    pub fn l5_ids(&self) -> & [::std::string::String] {
+        self.l5_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AgentHierarchyGroups {
@@ -58,11 +63,11 @@ impl AgentHierarchyGroups {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentHierarchyGroupsBuilder {
-    pub(crate) l1_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) l2_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) l3_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) l4_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) l5_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) l1_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) l2_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) l3_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) l4_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) l5_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AgentHierarchyGroupsBuilder {
     /// Appends an item to `l1_ids`.
@@ -72,17 +77,16 @@ impl AgentHierarchyGroupsBuilder {
     /// <p>The identifiers for level 1 hierarchy groups.</p>
     pub fn l1_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.l1_ids.unwrap_or_default();
-        v.push(input.into());
-        self.l1_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.l1_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers for level 1 hierarchy groups.</p>
-    pub fn set_l1_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.l1_ids = input;
-        self
+    pub fn set_l1_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.l1_ids = input; self
     }
     /// <p>The identifiers for level 1 hierarchy groups.</p>
-    pub fn get_l1_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_l1_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.l1_ids
     }
     /// Appends an item to `l2_ids`.
@@ -92,17 +96,16 @@ impl AgentHierarchyGroupsBuilder {
     /// <p>The identifiers for level 2 hierarchy groups.</p>
     pub fn l2_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.l2_ids.unwrap_or_default();
-        v.push(input.into());
-        self.l2_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.l2_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers for level 2 hierarchy groups.</p>
-    pub fn set_l2_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.l2_ids = input;
-        self
+    pub fn set_l2_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.l2_ids = input; self
     }
     /// <p>The identifiers for level 2 hierarchy groups.</p>
-    pub fn get_l2_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_l2_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.l2_ids
     }
     /// Appends an item to `l3_ids`.
@@ -112,17 +115,16 @@ impl AgentHierarchyGroupsBuilder {
     /// <p>The identifiers for level 3 hierarchy groups.</p>
     pub fn l3_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.l3_ids.unwrap_or_default();
-        v.push(input.into());
-        self.l3_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.l3_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers for level 3 hierarchy groups.</p>
-    pub fn set_l3_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.l3_ids = input;
-        self
+    pub fn set_l3_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.l3_ids = input; self
     }
     /// <p>The identifiers for level 3 hierarchy groups.</p>
-    pub fn get_l3_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_l3_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.l3_ids
     }
     /// Appends an item to `l4_ids`.
@@ -132,17 +134,16 @@ impl AgentHierarchyGroupsBuilder {
     /// <p>The identifiers for level 4 hierarchy groups.</p>
     pub fn l4_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.l4_ids.unwrap_or_default();
-        v.push(input.into());
-        self.l4_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.l4_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers for level 4 hierarchy groups.</p>
-    pub fn set_l4_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.l4_ids = input;
-        self
+    pub fn set_l4_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.l4_ids = input; self
     }
     /// <p>The identifiers for level 4 hierarchy groups.</p>
-    pub fn get_l4_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_l4_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.l4_ids
     }
     /// Appends an item to `l5_ids`.
@@ -152,27 +153,32 @@ impl AgentHierarchyGroupsBuilder {
     /// <p>The identifiers for level 5 hierarchy groups.</p>
     pub fn l5_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.l5_ids.unwrap_or_default();
-        v.push(input.into());
-        self.l5_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.l5_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers for level 5 hierarchy groups.</p>
-    pub fn set_l5_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.l5_ids = input;
-        self
+    pub fn set_l5_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.l5_ids = input; self
     }
     /// <p>The identifiers for level 5 hierarchy groups.</p>
-    pub fn get_l5_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_l5_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.l5_ids
     }
     /// Consumes the builder and constructs a [`AgentHierarchyGroups`](crate::types::AgentHierarchyGroups).
     pub fn build(self) -> crate::types::AgentHierarchyGroups {
         crate::types::AgentHierarchyGroups {
-            l1_ids: self.l1_ids,
-            l2_ids: self.l2_ids,
-            l3_ids: self.l3_ids,
-            l4_ids: self.l4_ids,
-            l5_ids: self.l5_ids,
+            l1_ids: self.l1_ids
+            ,
+            l2_ids: self.l2_ids
+            ,
+            l3_ids: self.l3_ids
+            ,
+            l4_ids: self.l4_ids
+            ,
+            l5_ids: self.l5_ids
+            ,
         }
     }
 }
+

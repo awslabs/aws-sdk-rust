@@ -3,7 +3,7 @@
 /// <p>The CVSS score for a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CvssScore {
+pub struct CvssScore  {
     /// <p>The base CVSS score used for the finding.</p>
     pub base_score: f64,
     /// <p>The vector string of the CVSS score.</p>
@@ -13,25 +13,22 @@ pub struct CvssScore {
     /// <p>The source of the CVSS score.</p>
     pub source: ::std::string::String,
 }
-impl CvssScore {
+impl  CvssScore  {
     /// <p>The base CVSS score used for the finding.</p>
     pub fn base_score(&self) -> f64 {
         self.base_score
     }
     /// <p>The vector string of the CVSS score.</p>
-    pub fn scoring_vector(&self) -> &str {
-        use std::ops::Deref;
-        self.scoring_vector.deref()
+    pub fn scoring_vector(&self) -> & str {
+        use std::ops::Deref; self.scoring_vector.deref()
     }
     /// <p>The version of CVSS used for the score.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
     /// <p>The source of the CVSS score.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
 }
 impl CvssScore {
@@ -59,8 +56,7 @@ impl CvssScoreBuilder {
     }
     /// <p>The base CVSS score used for the finding.</p>
     pub fn set_base_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.base_score = input;
-        self
+        self.base_score = input; self
     }
     /// <p>The base CVSS score used for the finding.</p>
     pub fn get_base_score(&self) -> &::std::option::Option<f64> {
@@ -74,8 +70,7 @@ impl CvssScoreBuilder {
     }
     /// <p>The vector string of the CVSS score.</p>
     pub fn set_scoring_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scoring_vector = input;
-        self
+        self.scoring_vector = input; self
     }
     /// <p>The vector string of the CVSS score.</p>
     pub fn get_scoring_vector(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl CvssScoreBuilder {
     }
     /// <p>The version of CVSS used for the score.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of CVSS used for the score.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl CvssScoreBuilder {
     }
     /// <p>The source of the CVSS score.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the CVSS score.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,31 +111,30 @@ impl CvssScoreBuilder {
     /// - [`version`](crate::types::builders::CvssScoreBuilder::version)
     /// - [`source`](crate::types::builders::CvssScoreBuilder::source)
     pub fn build(self) -> ::std::result::Result<crate::types::CvssScore, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CvssScore {
-            base_score: self.base_score.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "base_score",
-                    "base_score was not specified but it is required when building CvssScore",
-                )
-            })?,
-            scoring_vector: self.scoring_vector.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scoring_vector",
-                    "scoring_vector was not specified but it is required when building CvssScore",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building CvssScore",
-                )
-            })?,
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building CvssScore",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CvssScore {
+                base_score: self.base_score
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("base_score", "base_score was not specified but it is required when building CvssScore")
+                    )?
+                ,
+                scoring_vector: self.scoring_vector
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scoring_vector", "scoring_vector was not specified but it is required when building CvssScore")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building CvssScore")
+                    )?
+                ,
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building CvssScore")
+                    )?
+                ,
+            }
+        )
     }
 }
+

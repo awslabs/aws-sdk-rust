@@ -3,15 +3,14 @@
 /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. This setting defines a CloudWatch dimension value to be published.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishMetricAction {
+pub struct PublishMetricAction  {
     /// <p></p>
-    pub dimensions: ::std::vec::Vec<crate::types::Dimension>,
+    pub dimensions: ::std::vec::Vec::<crate::types::Dimension>,
 }
-impl PublishMetricAction {
+impl  PublishMetricAction  {
     /// <p></p>
-    pub fn dimensions(&self) -> &[crate::types::Dimension] {
-        use std::ops::Deref;
-        self.dimensions.deref()
+    pub fn dimensions(&self) -> & [crate::types::Dimension] {
+        use std::ops::Deref; self.dimensions.deref()
     }
 }
 impl PublishMetricAction {
@@ -25,7 +24,7 @@ impl PublishMetricAction {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishMetricActionBuilder {
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>,
 }
 impl PublishMetricActionBuilder {
     /// Appends an item to `dimensions`.
@@ -35,30 +34,31 @@ impl PublishMetricActionBuilder {
     /// <p></p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p></p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dimension>> {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`PublishMetricAction`](crate::types::PublishMetricAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimensions`](crate::types::builders::PublishMetricActionBuilder::dimensions)
     pub fn build(self) -> ::std::result::Result<crate::types::PublishMetricAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PublishMetricAction {
-            dimensions: self.dimensions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimensions",
-                    "dimensions was not specified but it is required when building PublishMetricAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PublishMetricAction {
+                dimensions: self.dimensions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimensions", "dimensions was not specified but it is required when building PublishMetricAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

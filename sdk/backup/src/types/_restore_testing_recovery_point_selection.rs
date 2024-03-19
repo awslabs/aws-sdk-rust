@@ -3,40 +3,43 @@
 /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults(one or more). Optional: SelectionWindowDays ('30' if not specified);ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreTestingRecoveryPointSelection {
+pub struct RestoreTestingRecoveryPointSelection  {
     /// <p>Acceptable values include "LATEST_WITHIN_WINDOW" or "RANDOM_WITHIN_WINDOW"</p>
     pub algorithm: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelectionAlgorithm>,
     /// <p>Accepted values include specific ARNs or list of selectors. Defaults to empty list if not listed.</p>
-    pub exclude_vaults: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclude_vaults: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-    pub include_vaults: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub include_vaults: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>These are the types of recovery points.</p>
-    pub recovery_point_types: ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingRecoveryPointType>>,
+    pub recovery_point_types: ::std::option::Option<::std::vec::Vec::<crate::types::RestoreTestingRecoveryPointType>>,
     /// <p>Accepted values are integers from 1 to 365.</p>
     pub selection_window_days: i32,
 }
-impl RestoreTestingRecoveryPointSelection {
+impl  RestoreTestingRecoveryPointSelection  {
     /// <p>Acceptable values include "LATEST_WITHIN_WINDOW" or "RANDOM_WITHIN_WINDOW"</p>
-    pub fn algorithm(&self) -> ::std::option::Option<&crate::types::RestoreTestingRecoveryPointSelectionAlgorithm> {
+    pub fn algorithm(&self) -> ::std::option::Option<& crate::types::RestoreTestingRecoveryPointSelectionAlgorithm> {
         self.algorithm.as_ref()
     }
     /// <p>Accepted values include specific ARNs or list of selectors. Defaults to empty list if not listed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_vaults.is_none()`.
-    pub fn exclude_vaults(&self) -> &[::std::string::String] {
-        self.exclude_vaults.as_deref().unwrap_or_default()
+    pub fn exclude_vaults(&self) -> & [::std::string::String] {
+        self.exclude_vaults.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_vaults.is_none()`.
-    pub fn include_vaults(&self) -> &[::std::string::String] {
-        self.include_vaults.as_deref().unwrap_or_default()
+    pub fn include_vaults(&self) -> & [::std::string::String] {
+        self.include_vaults.as_deref()
+        .unwrap_or_default()
     }
     /// <p>These are the types of recovery points.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_point_types.is_none()`.
-    pub fn recovery_point_types(&self) -> &[crate::types::RestoreTestingRecoveryPointType] {
-        self.recovery_point_types.as_deref().unwrap_or_default()
+    pub fn recovery_point_types(&self) -> & [crate::types::RestoreTestingRecoveryPointType] {
+        self.recovery_point_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Accepted values are integers from 1 to 365.</p>
     pub fn selection_window_days(&self) -> i32 {
@@ -55,9 +58,9 @@ impl RestoreTestingRecoveryPointSelection {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreTestingRecoveryPointSelectionBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelectionAlgorithm>,
-    pub(crate) exclude_vaults: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) include_vaults: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) recovery_point_types: ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingRecoveryPointType>>,
+    pub(crate) exclude_vaults: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) include_vaults: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) recovery_point_types: ::std::option::Option<::std::vec::Vec::<crate::types::RestoreTestingRecoveryPointType>>,
     pub(crate) selection_window_days: ::std::option::Option<i32>,
 }
 impl RestoreTestingRecoveryPointSelectionBuilder {
@@ -68,8 +71,7 @@ impl RestoreTestingRecoveryPointSelectionBuilder {
     }
     /// <p>Acceptable values include "LATEST_WITHIN_WINDOW" or "RANDOM_WITHIN_WINDOW"</p>
     pub fn set_algorithm(mut self, input: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelectionAlgorithm>) -> Self {
-        self.algorithm = input;
-        self
+        self.algorithm = input; self
     }
     /// <p>Acceptable values include "LATEST_WITHIN_WINDOW" or "RANDOM_WITHIN_WINDOW"</p>
     pub fn get_algorithm(&self) -> &::std::option::Option<crate::types::RestoreTestingRecoveryPointSelectionAlgorithm> {
@@ -82,17 +84,16 @@ impl RestoreTestingRecoveryPointSelectionBuilder {
     /// <p>Accepted values include specific ARNs or list of selectors. Defaults to empty list if not listed.</p>
     pub fn exclude_vaults(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclude_vaults.unwrap_or_default();
-        v.push(input.into());
-        self.exclude_vaults = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclude_vaults = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Accepted values include specific ARNs or list of selectors. Defaults to empty list if not listed.</p>
-    pub fn set_exclude_vaults(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclude_vaults = input;
-        self
+    pub fn set_exclude_vaults(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclude_vaults = input; self
     }
     /// <p>Accepted values include specific ARNs or list of selectors. Defaults to empty list if not listed.</p>
-    pub fn get_exclude_vaults(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclude_vaults(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclude_vaults
     }
     /// Appends an item to `include_vaults`.
@@ -102,17 +103,16 @@ impl RestoreTestingRecoveryPointSelectionBuilder {
     /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
     pub fn include_vaults(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.include_vaults.unwrap_or_default();
-        v.push(input.into());
-        self.include_vaults = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.include_vaults = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-    pub fn set_include_vaults(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.include_vaults = input;
-        self
+    pub fn set_include_vaults(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.include_vaults = input; self
     }
     /// <p>Accepted values include wildcard ["*"] or by specific ARNs or ARN wilcard replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...] ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
-    pub fn get_include_vaults(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_include_vaults(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.include_vaults
     }
     /// Appends an item to `recovery_point_types`.
@@ -122,17 +122,16 @@ impl RestoreTestingRecoveryPointSelectionBuilder {
     /// <p>These are the types of recovery points.</p>
     pub fn recovery_point_types(mut self, input: crate::types::RestoreTestingRecoveryPointType) -> Self {
         let mut v = self.recovery_point_types.unwrap_or_default();
-        v.push(input);
-        self.recovery_point_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recovery_point_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These are the types of recovery points.</p>
-    pub fn set_recovery_point_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingRecoveryPointType>>) -> Self {
-        self.recovery_point_types = input;
-        self
+    pub fn set_recovery_point_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RestoreTestingRecoveryPointType>>) -> Self {
+        self.recovery_point_types = input; self
     }
     /// <p>These are the types of recovery points.</p>
-    pub fn get_recovery_point_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingRecoveryPointType>> {
+    pub fn get_recovery_point_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RestoreTestingRecoveryPointType>> {
         &self.recovery_point_types
     }
     /// <p>Accepted values are integers from 1 to 365.</p>
@@ -142,8 +141,7 @@ impl RestoreTestingRecoveryPointSelectionBuilder {
     }
     /// <p>Accepted values are integers from 1 to 365.</p>
     pub fn set_selection_window_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.selection_window_days = input;
-        self
+        self.selection_window_days = input; self
     }
     /// <p>Accepted values are integers from 1 to 365.</p>
     pub fn get_selection_window_days(&self) -> &::std::option::Option<i32> {
@@ -152,11 +150,18 @@ impl RestoreTestingRecoveryPointSelectionBuilder {
     /// Consumes the builder and constructs a [`RestoreTestingRecoveryPointSelection`](crate::types::RestoreTestingRecoveryPointSelection).
     pub fn build(self) -> crate::types::RestoreTestingRecoveryPointSelection {
         crate::types::RestoreTestingRecoveryPointSelection {
-            algorithm: self.algorithm,
-            exclude_vaults: self.exclude_vaults,
-            include_vaults: self.include_vaults,
-            recovery_point_types: self.recovery_point_types,
-            selection_window_days: self.selection_window_days.unwrap_or_default(),
+            algorithm: self.algorithm
+            ,
+            exclude_vaults: self.exclude_vaults
+            ,
+            include_vaults: self.include_vaults
+            ,
+            recovery_point_types: self.recovery_point_types
+            ,
+            selection_window_days: self.selection_window_days
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

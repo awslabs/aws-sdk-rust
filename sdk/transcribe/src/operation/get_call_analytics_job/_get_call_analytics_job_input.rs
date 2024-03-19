@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCallAnalyticsJobInput {
+pub struct GetCallAnalyticsJobInput  {
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
     pub call_analytics_job_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCallAnalyticsJobInput {
+impl  GetCallAnalyticsJobInput  {
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
-    pub fn call_analytics_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn call_analytics_job_name(&self) -> ::std::option::Option<& str> {
         self.call_analytics_job_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetCallAnalyticsJobInputBuilder {
     }
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
     pub fn set_call_analytics_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.call_analytics_job_name = input;
-        self
+        self.call_analytics_job_name = input; self
     }
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
     pub fn get_call_analytics_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.call_analytics_job_name
     }
     /// Consumes the builder and constructs a [`GetCallAnalyticsJobInput`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput {
-            call_analytics_job_name: self.call_analytics_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput {
+                call_analytics_job_name: self.call_analytics_job_name
+                ,
+            }
+        )
     }
 }
+

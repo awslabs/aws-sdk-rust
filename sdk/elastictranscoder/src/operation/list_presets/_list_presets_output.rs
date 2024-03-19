@@ -3,30 +3,31 @@
 /// <p>The <code>ListPresetsResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPresetsOutput {
+pub struct ListPresetsOutput  {
     /// <p>An array of <code>Preset</code> objects.</p>
-    pub presets: ::std::option::Option<::std::vec::Vec<crate::types::Preset>>,
+    pub presets: ::std::option::Option<::std::vec::Vec::<crate::types::Preset>>,
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPresetsOutput {
+impl  ListPresetsOutput  {
     /// <p>An array of <code>Preset</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.presets.is_none()`.
-    pub fn presets(&self) -> &[crate::types::Preset] {
-        self.presets.as_deref().unwrap_or_default()
+    pub fn presets(&self) -> & [crate::types::Preset] {
+        self.presets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPresetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPresetsOutput {
     /// Creates a new builder-style object to manufacture [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput).
     pub fn builder() -> crate::operation::list_presets::builders::ListPresetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListPresetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPresetsOutputBuilder {
-    pub(crate) presets: ::std::option::Option<::std::vec::Vec<crate::types::Preset>>,
+    pub(crate) presets: ::std::option::Option<::std::vec::Vec::<crate::types::Preset>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListPresetsOutputBuilder {
     /// <p>An array of <code>Preset</code> objects.</p>
     pub fn presets(mut self, input: crate::types::Preset) -> Self {
         let mut v = self.presets.unwrap_or_default();
-        v.push(input);
-        self.presets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.presets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>Preset</code> objects.</p>
-    pub fn set_presets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Preset>>) -> Self {
-        self.presets = input;
-        self
+    pub fn set_presets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Preset>>) -> Self {
+        self.presets = input; self
     }
     /// <p>An array of <code>Preset</code> objects.</p>
-    pub fn get_presets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Preset>> {
+    pub fn get_presets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Preset>> {
         &self.presets
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
@@ -70,28 +70,30 @@ impl ListPresetsOutputBuilder {
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput).
     pub fn build(self) -> crate::operation::list_presets::ListPresetsOutput {
         crate::operation::list_presets::ListPresetsOutput {
-            presets: self.presets,
-            next_page_token: self.next_page_token,
+            presets: self.presets
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

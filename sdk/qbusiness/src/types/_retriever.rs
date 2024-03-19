@@ -3,7 +3,7 @@
 /// <p>Summary information for the retriever used for your Amazon Q application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Retriever {
+pub struct Retriever  {
     /// <p>The identifier of the Amazon Q application using the retriever.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the retriever used by your Amazon Q application.</p>
@@ -15,25 +15,25 @@ pub struct Retriever {
     /// <p>The name of your retriever.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
-impl Retriever {
+impl  Retriever  {
     /// <p>The identifier of the Amazon Q application using the retriever.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the retriever used by your Amazon Q application.</p>
-    pub fn retriever_id(&self) -> ::std::option::Option<&str> {
+    pub fn retriever_id(&self) -> ::std::option::Option<& str> {
         self.retriever_id.as_deref()
     }
     /// <p>The type of your retriever.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RetrieverType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RetrieverType> {
         self.r#type.as_ref()
     }
     /// <p>The status of your retriever.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RetrieverStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RetrieverStatus> {
         self.status.as_ref()
     }
     /// <p>The name of your retriever.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl RetrieverBuilder {
     }
     /// <p>The identifier of the Amazon Q application using the retriever.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application using the retriever.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl RetrieverBuilder {
     }
     /// <p>The identifier of the retriever used by your Amazon Q application.</p>
     pub fn set_retriever_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retriever_id = input;
-        self
+        self.retriever_id = input; self
     }
     /// <p>The identifier of the retriever used by your Amazon Q application.</p>
     pub fn get_retriever_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl RetrieverBuilder {
     }
     /// <p>The type of your retriever.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RetrieverType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of your retriever.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RetrieverType> {
@@ -104,8 +101,7 @@ impl RetrieverBuilder {
     }
     /// <p>The status of your retriever.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RetrieverStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of your retriever.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RetrieverStatus> {
@@ -118,8 +114,7 @@ impl RetrieverBuilder {
     }
     /// <p>The name of your retriever.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of your retriever.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl RetrieverBuilder {
     /// Consumes the builder and constructs a [`Retriever`](crate::types::Retriever).
     pub fn build(self) -> crate::types::Retriever {
         crate::types::Retriever {
-            application_id: self.application_id,
-            retriever_id: self.retriever_id,
-            r#type: self.r#type,
-            status: self.status,
-            display_name: self.display_name,
+            application_id: self.application_id
+            ,
+            retriever_id: self.retriever_id
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

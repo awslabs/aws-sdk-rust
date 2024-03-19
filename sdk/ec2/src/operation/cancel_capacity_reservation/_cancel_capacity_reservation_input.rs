@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelCapacityReservationInput {
+pub struct CancelCapacityReservationInput  {
     /// <p>The ID of the Capacity Reservation to be cancelled.</p>
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl CancelCapacityReservationInput {
+impl  CancelCapacityReservationInput  {
     /// <p>The ID of the Capacity Reservation to be cancelled.</p>
-    pub fn capacity_reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_reservation_id(&self) -> ::std::option::Option<& str> {
         self.capacity_reservation_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,8 +41,7 @@ impl CancelCapacityReservationInputBuilder {
     }
     /// <p>The ID of the Capacity Reservation to be cancelled.</p>
     pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_reservation_id = input;
-        self
+        self.capacity_reservation_id = input; self
     }
     /// <p>The ID of the Capacity Reservation to be cancelled.</p>
     pub fn get_capacity_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl CancelCapacityReservationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CancelCapacityReservationInput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput {
-            capacity_reservation_id: self.capacity_reservation_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput {
+                capacity_reservation_id: self.capacity_reservation_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

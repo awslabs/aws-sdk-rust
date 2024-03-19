@@ -3,7 +3,7 @@
 /// <p>The data validation manifest created for the training dataset during model training.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrainingDataResult {
+pub struct TrainingDataResult  {
     /// <p>The training data that you supplied.</p>
     pub input: ::std::option::Option<crate::types::TrainingData>,
     /// <p>Reference to images (assets) that were actually used during training with trained model predictions.</p>
@@ -11,17 +11,17 @@ pub struct TrainingDataResult {
     /// <p>A manifest that you supplied for training, with validation results for each line.</p>
     pub validation: ::std::option::Option<crate::types::ValidationData>,
 }
-impl TrainingDataResult {
+impl  TrainingDataResult  {
     /// <p>The training data that you supplied.</p>
-    pub fn input(&self) -> ::std::option::Option<&crate::types::TrainingData> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::TrainingData> {
         self.input.as_ref()
     }
     /// <p>Reference to images (assets) that were actually used during training with trained model predictions.</p>
-    pub fn output(&self) -> ::std::option::Option<&crate::types::TrainingData> {
+    pub fn output(&self) -> ::std::option::Option<& crate::types::TrainingData> {
         self.output.as_ref()
     }
     /// <p>A manifest that you supplied for training, with validation results for each line.</p>
-    pub fn validation(&self) -> ::std::option::Option<&crate::types::ValidationData> {
+    pub fn validation(&self) -> ::std::option::Option<& crate::types::ValidationData> {
         self.validation.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl TrainingDataResultBuilder {
     }
     /// <p>The training data that you supplied.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::TrainingData>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The training data that you supplied.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::TrainingData> {
@@ -62,8 +61,7 @@ impl TrainingDataResultBuilder {
     }
     /// <p>Reference to images (assets) that were actually used during training with trained model predictions.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::TrainingData>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>Reference to images (assets) that were actually used during training with trained model predictions.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::TrainingData> {
@@ -76,8 +74,7 @@ impl TrainingDataResultBuilder {
     }
     /// <p>A manifest that you supplied for training, with validation results for each line.</p>
     pub fn set_validation(mut self, input: ::std::option::Option<crate::types::ValidationData>) -> Self {
-        self.validation = input;
-        self
+        self.validation = input; self
     }
     /// <p>A manifest that you supplied for training, with validation results for each line.</p>
     pub fn get_validation(&self) -> &::std::option::Option<crate::types::ValidationData> {
@@ -86,9 +83,13 @@ impl TrainingDataResultBuilder {
     /// Consumes the builder and constructs a [`TrainingDataResult`](crate::types::TrainingDataResult).
     pub fn build(self) -> crate::types::TrainingDataResult {
         crate::types::TrainingDataResult {
-            input: self.input,
-            output: self.output,
-            validation: self.validation,
+            input: self.input
+            ,
+            output: self.output
+            ,
+            validation: self.validation
+            ,
         }
     }
 }
+

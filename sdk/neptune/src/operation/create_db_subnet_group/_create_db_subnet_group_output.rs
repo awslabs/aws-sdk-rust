@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbSubnetGroupOutput {
+pub struct CreateDbSubnetGroupOutput  {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     pub db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     _request_id: Option<String>,
 }
-impl CreateDbSubnetGroupOutput {
+impl  CreateDbSubnetGroupOutput  {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
-    pub fn db_subnet_group(&self) -> ::std::option::Option<&crate::types::DbSubnetGroup> {
+    pub fn db_subnet_group(&self) -> ::std::option::Option<& crate::types::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDbSubnetGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupOutput`](crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput).
     pub fn builder() -> crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupOutputBuilder {
@@ -44,8 +44,7 @@ impl CreateDbSubnetGroupOutputBuilder {
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     pub fn set_db_subnet_group(mut self, input: ::std::option::Option<crate::types::DbSubnetGroup>) -> Self {
-        self.db_subnet_group = input;
-        self
+        self.db_subnet_group = input; self
     }
     /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
@@ -53,19 +52,21 @@ impl CreateDbSubnetGroupOutputBuilder {
         &self.db_subnet_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDbSubnetGroupOutput`](crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput).
     pub fn build(self) -> crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput {
         crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput {
-            db_subnet_group: self.db_subnet_group,
+            db_subnet_group: self.db_subnet_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

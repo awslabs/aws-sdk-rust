@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStandards`](crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of standards to return.</p><br>
-    /// - On success, responds with [`DescribeStandardsOutput`](crate::operation::describe_standards::DescribeStandardsOutput) with field(s):
+                            /// - On success, responds with [`DescribeStandardsOutput`](crate::operation::describe_standards::DescribeStandardsOutput) with field(s):
     ///   - [`standards(Option<Vec::<Standard>>)`](crate::operation::describe_standards::DescribeStandardsOutput::standards): <p>A list of available standards.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_standards::DescribeStandardsOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeStandardsError>`](crate::operation::describe_standards::DescribeStandardsError)
+                            /// - On failure, responds with [`SdkError<DescribeStandardsError>`](crate::operation::describe_standards::DescribeStandardsError)
     pub fn describe_standards(&self) -> crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder {
-        crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_standards::builders::DescribeStandardsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

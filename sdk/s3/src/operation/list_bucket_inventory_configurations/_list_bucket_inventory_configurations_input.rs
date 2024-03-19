@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBucketInventoryConfigurationsInput {
+pub struct ListBucketInventoryConfigurationsInput  {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
@@ -10,17 +10,17 @@ pub struct ListBucketInventoryConfigurationsInput {
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl ListBucketInventoryConfigurationsInput {
+impl  ListBucketInventoryConfigurationsInput  {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    pub fn continuation_token(&self) -> ::std::option::Option<&str> {
+    pub fn continuation_token(&self) -> ::std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListBucketInventoryConfigurationsInputBuilder {
     }
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListBucketInventoryConfigurationsInputBuilder {
     }
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continuation_token = input;
-        self
+        self.continuation_token = input; self
     }
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListBucketInventoryConfigurationsInputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`ListBucketInventoryConfigurationsInput`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsInput {
-                bucket: self.bucket,
-                continuation_token: self.continuation_token,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
+                bucket: self.bucket
+                ,
+                continuation_token: self.continuation_token
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+            }
         )
     }
 }
+

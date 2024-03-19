@@ -3,7 +3,7 @@
 /// <p>A tenant database in the DB instance. This data type is an element in the response to the <code>DescribeTenantDatabases</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TenantDatabase {
+pub struct TenantDatabase  {
     /// <p>The creation time of the tenant database.</p>
     pub tenant_database_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the DB instance that contains the tenant database.</p>
@@ -29,47 +29,47 @@ pub struct TenantDatabase {
     /// <p>Information about pending changes for a tenant database.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::TenantDatabasePendingModifiedValues>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl TenantDatabase {
+impl  TenantDatabase  {
     /// <p>The creation time of the tenant database.</p>
-    pub fn tenant_database_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn tenant_database_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.tenant_database_create_time.as_ref()
     }
     /// <p>The ID of the DB instance that contains the tenant database.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The database name of the tenant database.</p>
-    pub fn tenant_db_name(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_db_name(&self) -> ::std::option::Option<& str> {
         self.tenant_db_name.as_deref()
     }
     /// <p>The status of the tenant database.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The master username of the tenant database.</p>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance.</p>
-    pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn dbi_resource_id(&self) -> ::std::option::Option<& str> {
         self.dbi_resource_id.as_deref()
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the tenant database.</p>
-    pub fn tenant_database_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_database_resource_id(&self) -> ::std::option::Option<& str> {
         self.tenant_database_resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the tenant database.</p>
-    pub fn tenant_database_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_database_arn(&self) -> ::std::option::Option<& str> {
         self.tenant_database_arn.as_deref()
     }
     /// <p>The character set of the tenant database.</p>
-    pub fn character_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn character_set_name(&self) -> ::std::option::Option<& str> {
         self.character_set_name.as_deref()
     }
     /// <p>The <code>NCHAR</code> character set name of the tenant database.</p>
-    pub fn nchar_character_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn nchar_character_set_name(&self) -> ::std::option::Option<& str> {
         self.nchar_character_set_name.as_deref()
     }
     /// <p>Specifies whether deletion protection is enabled for the DB instance.</p>
@@ -77,14 +77,15 @@ impl TenantDatabase {
         self.deletion_protection
     }
     /// <p>Information about pending changes for a tenant database.</p>
-    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::TenantDatabasePendingModifiedValues> {
+    pub fn pending_modified_values(&self) -> ::std::option::Option<& crate::types::TenantDatabasePendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TenantDatabase {
@@ -110,7 +111,7 @@ pub struct TenantDatabaseBuilder {
     pub(crate) nchar_character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) pending_modified_values: ::std::option::Option<crate::types::TenantDatabasePendingModifiedValues>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TenantDatabaseBuilder {
     /// <p>The creation time of the tenant database.</p>
@@ -120,8 +121,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The creation time of the tenant database.</p>
     pub fn set_tenant_database_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.tenant_database_create_time = input;
-        self
+        self.tenant_database_create_time = input; self
     }
     /// <p>The creation time of the tenant database.</p>
     pub fn get_tenant_database_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -134,8 +134,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The ID of the DB instance that contains the tenant database.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The ID of the DB instance that contains the tenant database.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +147,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The database name of the tenant database.</p>
     pub fn set_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_db_name = input;
-        self
+        self.tenant_db_name = input; self
     }
     /// <p>The database name of the tenant database.</p>
     pub fn get_tenant_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +160,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The status of the tenant database.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the tenant database.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +173,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The master username of the tenant database.</p>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The master username of the tenant database.</p>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +186,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance.</p>
     pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dbi_resource_id = input;
-        self
+        self.dbi_resource_id = input; self
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance.</p>
     pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +199,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the tenant database.</p>
     pub fn set_tenant_database_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_database_resource_id = input;
-        self
+        self.tenant_database_resource_id = input; self
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the tenant database.</p>
     pub fn get_tenant_database_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +212,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the tenant database.</p>
     pub fn set_tenant_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_database_arn = input;
-        self
+        self.tenant_database_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the tenant database.</p>
     pub fn get_tenant_database_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +225,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The character set of the tenant database.</p>
     pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.character_set_name = input;
-        self
+        self.character_set_name = input; self
     }
     /// <p>The character set of the tenant database.</p>
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +238,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>The <code>NCHAR</code> character set name of the tenant database.</p>
     pub fn set_nchar_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nchar_character_set_name = input;
-        self
+        self.nchar_character_set_name = input; self
     }
     /// <p>The <code>NCHAR</code> character set name of the tenant database.</p>
     pub fn get_nchar_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +251,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>Specifies whether deletion protection is enabled for the DB instance.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Specifies whether deletion protection is enabled for the DB instance.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -274,8 +264,7 @@ impl TenantDatabaseBuilder {
     }
     /// <p>Information about pending changes for a tenant database.</p>
     pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::TenantDatabasePendingModifiedValues>) -> Self {
-        self.pending_modified_values = input;
-        self
+        self.pending_modified_values = input; self
     }
     /// <p>Information about pending changes for a tenant database.</p>
     pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::TenantDatabasePendingModifiedValues> {
@@ -288,35 +277,48 @@ impl TenantDatabaseBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`TenantDatabase`](crate::types::TenantDatabase).
     pub fn build(self) -> crate::types::TenantDatabase {
         crate::types::TenantDatabase {
-            tenant_database_create_time: self.tenant_database_create_time,
-            db_instance_identifier: self.db_instance_identifier,
-            tenant_db_name: self.tenant_db_name,
-            status: self.status,
-            master_username: self.master_username,
-            dbi_resource_id: self.dbi_resource_id,
-            tenant_database_resource_id: self.tenant_database_resource_id,
-            tenant_database_arn: self.tenant_database_arn,
-            character_set_name: self.character_set_name,
-            nchar_character_set_name: self.nchar_character_set_name,
-            deletion_protection: self.deletion_protection,
-            pending_modified_values: self.pending_modified_values,
-            tag_list: self.tag_list,
+            tenant_database_create_time: self.tenant_database_create_time
+            ,
+            db_instance_identifier: self.db_instance_identifier
+            ,
+            tenant_db_name: self.tenant_db_name
+            ,
+            status: self.status
+            ,
+            master_username: self.master_username
+            ,
+            dbi_resource_id: self.dbi_resource_id
+            ,
+            tenant_database_resource_id: self.tenant_database_resource_id
+            ,
+            tenant_database_arn: self.tenant_database_arn
+            ,
+            character_set_name: self.character_set_name
+            ,
+            nchar_character_set_name: self.nchar_character_set_name
+            ,
+            deletion_protection: self.deletion_protection
+            ,
+            pending_modified_values: self.pending_modified_values
+            ,
+            tag_list: self.tag_list
+            ,
         }
     }
 }
+

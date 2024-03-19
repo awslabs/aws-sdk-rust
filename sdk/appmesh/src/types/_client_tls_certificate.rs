@@ -22,11 +22,7 @@ impl ClientTlsCertificate {
     /// Tries to convert the enum instance into [`File`](crate::types::ClientTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::types::ListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> ::std::result::Result<&crate::types::ListenerTlsFileCertificate, &Self> {
-        if let ClientTlsCertificate::File(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ClientTlsCertificate::File(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`File`](crate::types::ClientTlsCertificate::File).
     pub fn is_file(&self) -> bool {
@@ -35,11 +31,7 @@ impl ClientTlsCertificate {
     /// Tries to convert the enum instance into [`Sds`](crate::types::ClientTlsCertificate::Sds), extracting the inner [`ListenerTlsSdsCertificate`](crate::types::ListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(&self) -> ::std::result::Result<&crate::types::ListenerTlsSdsCertificate, &Self> {
-        if let ClientTlsCertificate::Sds(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ClientTlsCertificate::Sds(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::types::ClientTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
@@ -50,3 +42,4 @@ impl ClientTlsCertificate {
         matches!(self, Self::Unknown)
     }
 }
+

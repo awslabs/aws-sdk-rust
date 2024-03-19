@@ -3,19 +3,19 @@
 /// Get Agent Version Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgentVersionInput {
+pub struct GetAgentVersionInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Numerical Agent Version.
     pub agent_version: ::std::option::Option<::std::string::String>,
 }
-impl GetAgentVersionInput {
+impl  GetAgentVersionInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Numerical Agent Version.
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetAgentVersionInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl GetAgentVersionInputBuilder {
     }
     /// Numerical Agent Version.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Numerical Agent Version.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_version
     }
     /// Consumes the builder and constructs a [`GetAgentVersionInput`](crate::operation::get_agent_version::GetAgentVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_agent_version::GetAgentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_agent_version::GetAgentVersionInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_agent_version::GetAgentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_agent_version::GetAgentVersionInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+            }
+        )
     }
 }
+

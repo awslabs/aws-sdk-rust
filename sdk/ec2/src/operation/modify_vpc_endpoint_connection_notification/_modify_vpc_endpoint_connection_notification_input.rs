@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVpcEndpointConnectionNotificationInput {
+pub struct ModifyVpcEndpointConnectionNotificationInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the notification.</p>
@@ -10,26 +10,27 @@ pub struct ModifyVpcEndpointConnectionNotificationInput {
     /// <p>The ARN for the SNS topic for the notification.</p>
     pub connection_notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub connection_events: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyVpcEndpointConnectionNotificationInput {
+impl  ModifyVpcEndpointConnectionNotificationInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the notification.</p>
-    pub fn connection_notification_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_notification_id(&self) -> ::std::option::Option<& str> {
         self.connection_notification_id.as_deref()
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
-    pub fn connection_notification_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_notification_arn(&self) -> ::std::option::Option<& str> {
         self.connection_notification_arn.as_deref()
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_events.is_none()`.
-    pub fn connection_events(&self) -> &[::std::string::String] {
-        self.connection_events.as_deref().unwrap_or_default()
+    pub fn connection_events(&self) -> & [::std::string::String] {
+        self.connection_events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyVpcEndpointConnectionNotificationInput {
@@ -46,7 +47,7 @@ pub struct ModifyVpcEndpointConnectionNotificationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) connection_notification_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_notification_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connection_events: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -56,8 +57,7 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -71,8 +71,7 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>The ID of the notification.</p>
     pub fn set_connection_notification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_notification_id = input;
-        self
+        self.connection_notification_id = input; self
     }
     /// <p>The ID of the notification.</p>
     pub fn get_connection_notification_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
     pub fn set_connection_notification_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_notification_arn = input;
-        self
+        self.connection_notification_arn = input; self
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
     pub fn get_connection_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,33 +97,32 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
     pub fn connection_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connection_events.unwrap_or_default();
-        v.push(input.into());
-        self.connection_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.connection_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn set_connection_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.connection_events = input;
-        self
+    pub fn set_connection_events(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.connection_events = input; self
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn get_connection_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connection_events(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.connection_events
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointConnectionNotificationInput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput {
-                dry_run: self.dry_run,
-                connection_notification_id: self.connection_notification_id,
-                connection_notification_arn: self.connection_notification_arn,
-                connection_events: self.connection_events,
-            },
+                dry_run: self.dry_run
+                ,
+                connection_notification_id: self.connection_notification_id
+                ,
+                connection_notification_arn: self.connection_notification_arn
+                ,
+                connection_events: self.connection_events
+                ,
+            }
         )
     }
 }
+

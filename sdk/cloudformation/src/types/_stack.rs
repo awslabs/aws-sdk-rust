@@ -3,7 +3,7 @@
 /// <p>The Stack data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Stack {
+pub struct Stack  {
     /// <p>Unique identifier of the stack.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The name associated with the stack.</p>
@@ -13,7 +13,7 @@ pub struct Stack {
     /// <p>A user-defined description associated with the stack.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Parameter</code> structures.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     /// <p>The time at which the stack was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the stack was deleted.</p>
@@ -35,17 +35,17 @@ pub struct Stack {
     /// </ul>
     pub disable_rollback: ::std::option::Option<bool>,
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The amount of time within which stack creation should complete.</p>
     pub timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The capabilities allowed in the stack.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     /// <p>A list of output structures.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Whether termination protection is enabled for the stack.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub enable_termination_protection: ::std::option::Option<bool>,
@@ -63,51 +63,52 @@ pub struct Stack {
     /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
     pub detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
-impl Stack {
+impl  Stack  {
     /// <p>Unique identifier of the stack.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The name associated with the stack.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The unique ID of the change set.</p>
-    pub fn change_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn change_set_id(&self) -> ::std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>A user-defined description associated with the stack.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>Parameter</code> structures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time at which the stack was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the stack was deleted.</p>
-    pub fn deletion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deletion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deletion_time.as_ref()
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    pub fn rollback_configuration(&self) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
+    pub fn rollback_configuration(&self) -> ::std::option::Option<& crate::types::RollbackConfiguration> {
         self.rollback_configuration.as_ref()
     }
     /// <p>Current status of the stack.</p>
-    pub fn stack_status(&self) -> ::std::option::Option<&crate::types::StackStatus> {
+    pub fn stack_status(&self) -> ::std::option::Option<& crate::types::StackStatus> {
         self.stack_status.as_ref()
     }
     /// <p>Success/failure message associated with the stack status.</p>
-    pub fn stack_status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn stack_status_reason(&self) -> ::std::option::Option<& str> {
         self.stack_status_reason.as_deref()
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
@@ -121,36 +122,40 @@ impl Stack {
         self.disable_rollback
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
-    pub fn notification_arns(&self) -> &[::std::string::String] {
-        self.notification_arns.as_deref().unwrap_or_default()
+    pub fn notification_arns(&self) -> & [::std::string::String] {
+        self.notification_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The amount of time within which stack creation should complete.</p>
     pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_in_minutes
     }
     /// <p>The capabilities allowed in the stack.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[crate::types::Capability] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [crate::types::Capability] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of output structures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::Output] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::Output] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether termination protection is enabled for the stack.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -159,16 +164,16 @@ impl Stack {
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn parent_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_id(&self) -> ::std::option::Option<& str> {
         self.parent_id.as_deref()
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn root_id(&self) -> ::std::option::Option<&str> {
+    pub fn root_id(&self) -> ::std::option::Option<& str> {
         self.root_id.as_deref()
     }
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    pub fn drift_information(&self) -> ::std::option::Option<&crate::types::StackDriftInformation> {
+    pub fn drift_information(&self) -> ::std::option::Option<& crate::types::StackDriftInformation> {
         self.drift_information.as_ref()
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
@@ -177,7 +182,7 @@ impl Stack {
         self.retain_except_on_create
     }
     /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::DetailedStatus> {
+    pub fn detailed_status(&self) -> ::std::option::Option<& crate::types::DetailedStatus> {
         self.detailed_status.as_ref()
     }
 }
@@ -196,7 +201,7 @@ pub struct StackBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deletion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -204,12 +209,12 @@ pub struct StackBuilder {
     pub(crate) stack_status: ::std::option::Option<crate::types::StackStatus>,
     pub(crate) stack_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) disable_rollback: ::std::option::Option<bool>,
-    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) enable_termination_protection: ::std::option::Option<bool>,
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) root_id: ::std::option::Option<::std::string::String>,
@@ -225,8 +230,7 @@ impl StackBuilder {
     }
     /// <p>Unique identifier of the stack.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>Unique identifier of the stack.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +244,7 @@ impl StackBuilder {
     }
     /// <p>The name associated with the stack.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name associated with the stack.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +257,7 @@ impl StackBuilder {
     }
     /// <p>The unique ID of the change set.</p>
     pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_set_id = input;
-        self
+        self.change_set_id = input; self
     }
     /// <p>The unique ID of the change set.</p>
     pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +270,7 @@ impl StackBuilder {
     }
     /// <p>A user-defined description associated with the stack.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-defined description associated with the stack.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -282,17 +283,16 @@ impl StackBuilder {
     /// <p>A list of <code>Parameter</code> structures.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Parameter</code> structures.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of <code>Parameter</code> structures.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>The time at which the stack was created.</p>
@@ -303,8 +303,7 @@ impl StackBuilder {
     }
     /// <p>The time at which the stack was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time at which the stack was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -317,8 +316,7 @@ impl StackBuilder {
     }
     /// <p>The time the stack was deleted.</p>
     pub fn set_deletion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deletion_time = input;
-        self
+        self.deletion_time = input; self
     }
     /// <p>The time the stack was deleted.</p>
     pub fn get_deletion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -331,8 +329,7 @@ impl StackBuilder {
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -345,8 +342,7 @@ impl StackBuilder {
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn set_rollback_configuration(mut self, input: ::std::option::Option<crate::types::RollbackConfiguration>) -> Self {
-        self.rollback_configuration = input;
-        self
+        self.rollback_configuration = input; self
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn get_rollback_configuration(&self) -> &::std::option::Option<crate::types::RollbackConfiguration> {
@@ -360,8 +356,7 @@ impl StackBuilder {
     }
     /// <p>Current status of the stack.</p>
     pub fn set_stack_status(mut self, input: ::std::option::Option<crate::types::StackStatus>) -> Self {
-        self.stack_status = input;
-        self
+        self.stack_status = input; self
     }
     /// <p>Current status of the stack.</p>
     pub fn get_stack_status(&self) -> &::std::option::Option<crate::types::StackStatus> {
@@ -374,8 +369,7 @@ impl StackBuilder {
     }
     /// <p>Success/failure message associated with the stack status.</p>
     pub fn set_stack_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_status_reason = input;
-        self
+        self.stack_status_reason = input; self
     }
     /// <p>Success/failure message associated with the stack status.</p>
     pub fn get_stack_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,8 +394,7 @@ impl StackBuilder {
     /// <p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn set_disable_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_rollback = input;
-        self
+        self.disable_rollback = input; self
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
@@ -420,17 +413,16 @@ impl StackBuilder {
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
     pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
-        v.push(input.into());
-        self.notification_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.notification_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_arns = input;
-        self
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.notification_arns = input; self
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.notification_arns
     }
     /// <p>The amount of time within which stack creation should complete.</p>
@@ -440,8 +432,7 @@ impl StackBuilder {
     }
     /// <p>The amount of time within which stack creation should complete.</p>
     pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_minutes = input;
-        self
+        self.timeout_in_minutes = input; self
     }
     /// <p>The amount of time within which stack creation should complete.</p>
     pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -454,17 +445,16 @@ impl StackBuilder {
     /// <p>The capabilities allowed in the stack.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The capabilities allowed in the stack.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>The capabilities allowed in the stack.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Capability>> {
         &self.capabilities
     }
     /// Appends an item to `outputs`.
@@ -474,17 +464,16 @@ impl StackBuilder {
     /// <p>A list of output structures.</p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of output structures.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>A list of output structures.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Output>> {
         &self.outputs
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
@@ -494,8 +483,7 @@ impl StackBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -508,17 +496,16 @@ impl StackBuilder {
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Whether termination protection is enabled for the stack.</p>
@@ -530,8 +517,7 @@ impl StackBuilder {
     /// <p>Whether termination protection is enabled for the stack.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_enable_termination_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_termination_protection = input;
-        self
+        self.enable_termination_protection = input; self
     }
     /// <p>Whether termination protection is enabled for the stack.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -547,8 +533,7 @@ impl StackBuilder {
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_id = input;
-        self
+        self.parent_id = input; self
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -564,8 +549,7 @@ impl StackBuilder {
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_root_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_id = input;
-        self
+        self.root_id = input; self
     }
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -579,8 +563,7 @@ impl StackBuilder {
     }
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn set_drift_information(mut self, input: ::std::option::Option<crate::types::StackDriftInformation>) -> Self {
-        self.drift_information = input;
-        self
+        self.drift_information = input; self
     }
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn get_drift_information(&self) -> &::std::option::Option<crate::types::StackDriftInformation> {
@@ -595,8 +578,7 @@ impl StackBuilder {
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.retain_except_on_create = input;
-        self
+        self.retain_except_on_create = input; self
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
@@ -610,8 +592,7 @@ impl StackBuilder {
     }
     /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_detailed_status(mut self, input: ::std::option::Option<crate::types::DetailedStatus>) -> Self {
-        self.detailed_status = input;
-        self
+        self.detailed_status = input; self
     }
     /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_detailed_status(&self) -> &::std::option::Option<crate::types::DetailedStatus> {
@@ -620,30 +601,55 @@ impl StackBuilder {
     /// Consumes the builder and constructs a [`Stack`](crate::types::Stack).
     pub fn build(self) -> crate::types::Stack {
         crate::types::Stack {
-            stack_id: self.stack_id,
-            stack_name: self.stack_name,
-            change_set_id: self.change_set_id,
-            description: self.description,
-            parameters: self.parameters,
-            creation_time: self.creation_time,
-            deletion_time: self.deletion_time,
-            last_updated_time: self.last_updated_time,
-            rollback_configuration: self.rollback_configuration,
-            stack_status: self.stack_status,
-            stack_status_reason: self.stack_status_reason,
-            disable_rollback: self.disable_rollback,
-            notification_arns: self.notification_arns,
-            timeout_in_minutes: self.timeout_in_minutes,
-            capabilities: self.capabilities,
-            outputs: self.outputs,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            enable_termination_protection: self.enable_termination_protection,
-            parent_id: self.parent_id,
-            root_id: self.root_id,
-            drift_information: self.drift_information,
-            retain_except_on_create: self.retain_except_on_create,
-            detailed_status: self.detailed_status,
+            stack_id: self.stack_id
+            ,
+            stack_name: self.stack_name
+            ,
+            change_set_id: self.change_set_id
+            ,
+            description: self.description
+            ,
+            parameters: self.parameters
+            ,
+            creation_time: self.creation_time
+            ,
+            deletion_time: self.deletion_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            rollback_configuration: self.rollback_configuration
+            ,
+            stack_status: self.stack_status
+            ,
+            stack_status_reason: self.stack_status_reason
+            ,
+            disable_rollback: self.disable_rollback
+            ,
+            notification_arns: self.notification_arns
+            ,
+            timeout_in_minutes: self.timeout_in_minutes
+            ,
+            capabilities: self.capabilities
+            ,
+            outputs: self.outputs
+            ,
+            role_arn: self.role_arn
+            ,
+            tags: self.tags
+            ,
+            enable_termination_protection: self.enable_termination_protection
+            ,
+            parent_id: self.parent_id
+            ,
+            root_id: self.root_id
+            ,
+            drift_information: self.drift_information
+            ,
+            retain_except_on_create: self.retain_except_on_create
+            ,
+            detailed_status: self.detailed_status
+            ,
         }
     }
 }
+

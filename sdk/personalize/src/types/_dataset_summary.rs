@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the properties of a dataset. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetSummary {
+pub struct DatasetSummary  {
     /// <p>The name of the dataset.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -34,13 +34,13 @@ pub struct DatasetSummary {
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DatasetSummary {
+impl  DatasetSummary  {
     /// <p>The name of the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The dataset type. One of the following values:</p>
@@ -54,7 +54,7 @@ impl DatasetSummary {
     /// <li>
     /// <p>Event-Interactions</p></li>
     /// </ul>
-    pub fn dataset_type(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_type(&self) -> ::std::option::Option<& str> {
         self.dataset_type.as_deref()
     }
     /// <p>The status of the dataset.</p>
@@ -65,15 +65,15 @@ impl DatasetSummary {
     /// <li>
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -103,8 +103,7 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The name of the dataset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the dataset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +149,7 @@ impl DatasetSummaryBuilder {
     /// <p>Event-Interactions</p></li>
     /// </ul>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
@@ -189,8 +186,7 @@ impl DatasetSummaryBuilder {
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
@@ -210,8 +206,7 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -224,8 +219,7 @@ impl DatasetSummaryBuilder {
     }
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -234,12 +228,19 @@ impl DatasetSummaryBuilder {
     /// Consumes the builder and constructs a [`DatasetSummary`](crate::types::DatasetSummary).
     pub fn build(self) -> crate::types::DatasetSummary {
         crate::types::DatasetSummary {
-            name: self.name,
-            dataset_arn: self.dataset_arn,
-            dataset_type: self.dataset_type,
-            status: self.status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            name: self.name
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            dataset_type: self.dataset_type
+            ,
+            status: self.status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Information about a template location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateLocation {
+pub struct TemplateLocation  {
     /// <p>The Amazon S3 bucket name.</p>
     pub s3_bucket: ::std::string::String,
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub s3_key: ::std::string::String,
 }
-impl TemplateLocation {
+impl  TemplateLocation  {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket.deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_key(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_key.deref()
+    pub fn s3_key(&self) -> & str {
+        use std::ops::Deref; self.s3_key.deref()
     }
 }
 impl TemplateLocation {
@@ -44,8 +42,7 @@ impl TemplateLocationBuilder {
     }
     /// <p>The Amazon S3 bucket name.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket name.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl TemplateLocationBuilder {
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl TemplateLocationBuilder {
     /// - [`s3_bucket`](crate::types::builders::TemplateLocationBuilder::s3_bucket)
     /// - [`s3_key`](crate::types::builders::TemplateLocationBuilder::s3_key)
     pub fn build(self) -> ::std::result::Result<crate::types::TemplateLocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TemplateLocation {
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building TemplateLocation",
-                )
-            })?,
-            s3_key: self.s3_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_key",
-                    "s3_key was not specified but it is required when building TemplateLocation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TemplateLocation {
+                s3_bucket: self.s3_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket", "s3_bucket was not specified but it is required when building TemplateLocation")
+                    )?
+                ,
+                s3_key: self.s3_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_key", "s3_key was not specified but it is required when building TemplateLocation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

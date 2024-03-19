@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVpnConnectionDeviceSampleConfigurationInput {
+pub struct GetVpnConnectionDeviceSampleConfigurationInput  {
     /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
@@ -12,17 +12,17 @@ pub struct GetVpnConnectionDeviceSampleConfigurationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl GetVpnConnectionDeviceSampleConfigurationInput {
+impl  GetVpnConnectionDeviceSampleConfigurationInput  {
     /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
-    pub fn vpn_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpn_connection_id.as_deref()
     }
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
-    pub fn vpn_connection_device_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_connection_device_type_id(&self) -> ::std::option::Option<& str> {
         self.vpn_connection_device_type_id.as_deref()
     }
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
-    pub fn internet_key_exchange_version(&self) -> ::std::option::Option<&str> {
+    pub fn internet_key_exchange_version(&self) -> ::std::option::Option<& str> {
         self.internet_key_exchange_version.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -32,8 +32,7 @@ impl GetVpnConnectionDeviceSampleConfigurationInput {
 }
 impl GetVpnConnectionDeviceSampleConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetVpnConnectionDeviceSampleConfigurationInput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationInputBuilder {
         crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationInputBuilder::default()
     }
 }
@@ -56,8 +55,7 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     }
     /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
     pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpn_connection_id = input;
-        self
+        self.vpn_connection_id = input; self
     }
     /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
     pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     }
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
     pub fn set_vpn_connection_device_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpn_connection_device_type_id = input;
-        self
+        self.vpn_connection_device_type_id = input; self
     }
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
     pub fn get_vpn_connection_device_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     }
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
     pub fn set_internet_key_exchange_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.internet_key_exchange_version = input;
-        self
+        self.internet_key_exchange_version = input; self
     }
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
     pub fn get_internet_key_exchange_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,27 +95,26 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetVpnConnectionDeviceSampleConfigurationInput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput {
-                vpn_connection_id: self.vpn_connection_id,
-                vpn_connection_device_type_id: self.vpn_connection_device_type_id,
-                internet_key_exchange_version: self.internet_key_exchange_version,
-                dry_run: self.dry_run,
-            },
+                vpn_connection_id: self.vpn_connection_id
+                ,
+                vpn_connection_device_type_id: self.vpn_connection_device_type_id
+                ,
+                internet_key_exchange_version: self.internet_key_exchange_version
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

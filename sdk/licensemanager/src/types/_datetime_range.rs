@@ -3,20 +3,19 @@
 /// <p>Describes a time range, in ISO8601-UTC format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatetimeRange {
+pub struct DatetimeRange  {
     /// <p>Start of the time range.</p>
     pub begin: ::std::string::String,
     /// <p>End of the time range.</p>
     pub end: ::std::option::Option<::std::string::String>,
 }
-impl DatetimeRange {
+impl  DatetimeRange  {
     /// <p>Start of the time range.</p>
-    pub fn begin(&self) -> &str {
-        use std::ops::Deref;
-        self.begin.deref()
+    pub fn begin(&self) -> & str {
+        use std::ops::Deref; self.begin.deref()
     }
     /// <p>End of the time range.</p>
-    pub fn end(&self) -> ::std::option::Option<&str> {
+    pub fn end(&self) -> ::std::option::Option<& str> {
         self.end.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl DatetimeRangeBuilder {
     }
     /// <p>Start of the time range.</p>
     pub fn set_begin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.begin = input;
-        self
+        self.begin = input; self
     }
     /// <p>Start of the time range.</p>
     pub fn get_begin(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DatetimeRangeBuilder {
     }
     /// <p>End of the time range.</p>
     pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>End of the time range.</p>
     pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl DatetimeRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`begin`](crate::types::builders::DatetimeRangeBuilder::begin)
     pub fn build(self) -> ::std::result::Result<crate::types::DatetimeRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatetimeRange {
-            begin: self.begin.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "begin",
-                    "begin was not specified but it is required when building DatetimeRange",
-                )
-            })?,
-            end: self.end,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatetimeRange {
+                begin: self.begin
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("begin", "begin was not specified but it is required when building DatetimeRange")
+                    )?
+                ,
+                end: self.end
+                ,
+            }
+        )
     }
 }
+

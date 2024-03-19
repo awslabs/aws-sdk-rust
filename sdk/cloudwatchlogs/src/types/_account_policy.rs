@@ -3,7 +3,7 @@
 /// <p>A structure that contains information about one CloudWatch Logs account policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountPolicy {
+pub struct AccountPolicy  {
     /// <p>The name of the account policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy document for this account policy.</p>
@@ -20,14 +20,14 @@ pub struct AccountPolicy {
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl AccountPolicy {
+impl  AccountPolicy  {
     /// <p>The name of the account policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy document for this account policy.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The date and time that this policy was most recently updated.</p>
@@ -35,19 +35,19 @@ impl AccountPolicy {
         self.last_updated_time
     }
     /// <p>The type of policy for this account policy.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
+    pub fn policy_type(&self) -> ::std::option::Option<& crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
     /// <p>The scope of the account policy.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>The log group selection criteria for this subscription filter policy.</p>
-    pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
+    pub fn selection_criteria(&self) -> ::std::option::Option<& str> {
         self.selection_criteria.as_deref()
     }
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl AccountPolicyBuilder {
     }
     /// <p>The name of the account policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the account policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +93,7 @@ impl AccountPolicyBuilder {
     /// <p>The policy document for this account policy.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The policy document for this account policy.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
@@ -109,8 +107,7 @@ impl AccountPolicyBuilder {
     }
     /// <p>The date and time that this policy was most recently updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time that this policy was most recently updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<i64> {
@@ -123,8 +120,7 @@ impl AccountPolicyBuilder {
     }
     /// <p>The type of policy for this account policy.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of policy for this account policy.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
@@ -137,8 +133,7 @@ impl AccountPolicyBuilder {
     }
     /// <p>The scope of the account policy.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>The scope of the account policy.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
@@ -151,8 +146,7 @@ impl AccountPolicyBuilder {
     }
     /// <p>The log group selection criteria for this subscription filter policy.</p>
     pub fn set_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_criteria = input;
-        self
+        self.selection_criteria = input; self
     }
     /// <p>The log group selection criteria for this subscription filter policy.</p>
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +159,7 @@ impl AccountPolicyBuilder {
     }
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,13 +168,21 @@ impl AccountPolicyBuilder {
     /// Consumes the builder and constructs a [`AccountPolicy`](crate::types::AccountPolicy).
     pub fn build(self) -> crate::types::AccountPolicy {
         crate::types::AccountPolicy {
-            policy_name: self.policy_name,
-            policy_document: self.policy_document,
-            last_updated_time: self.last_updated_time,
-            policy_type: self.policy_type,
-            scope: self.scope,
-            selection_criteria: self.selection_criteria,
-            account_id: self.account_id,
+            policy_name: self.policy_name
+            ,
+            policy_document: self.policy_document
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            policy_type: self.policy_type
+            ,
+            scope: self.scope
+            ,
+            selection_criteria: self.selection_criteria
+            ,
+            account_id: self.account_id
+            ,
         }
     }
 }
+

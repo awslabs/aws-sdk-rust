@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssessmentReports`](crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that's used to fetch the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder::set_max_results):<br>required: **false**<br><p>Represents the maximum number of results on a page or for an API request call.</p><br>
-    /// - On success, responds with [`ListAssessmentReportsOutput`](crate::operation::list_assessment_reports::ListAssessmentReportsOutput) with field(s):
+                            /// - On success, responds with [`ListAssessmentReportsOutput`](crate::operation::list_assessment_reports::ListAssessmentReportsOutput) with field(s):
     ///   - [`assessment_reports(Option<Vec::<AssessmentReportMetadata>>)`](crate::operation::list_assessment_reports::ListAssessmentReportsOutput::assessment_reports): <p>The list of assessment reports that the <code>ListAssessmentReports</code> API returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assessment_reports::ListAssessmentReportsOutput::next_token): <p>The pagination token that's used to fetch the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListAssessmentReportsError>`](crate::operation::list_assessment_reports::ListAssessmentReportsError)
+                            /// - On failure, responds with [`SdkError<ListAssessmentReportsError>`](crate::operation::list_assessment_reports::ListAssessmentReportsError)
     pub fn list_assessment_reports(&self) -> crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder {
-        crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_assessment_reports::builders::ListAssessmentReportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

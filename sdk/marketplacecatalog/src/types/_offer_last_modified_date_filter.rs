@@ -3,13 +3,13 @@
 /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferLastModifiedDateFilter {
+pub struct OfferLastModifiedDateFilter  {
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer with date range as input.</p>
     pub date_range: ::std::option::Option<crate::types::OfferLastModifiedDateFilterDateRange>,
 }
-impl OfferLastModifiedDateFilter {
+impl  OfferLastModifiedDateFilter  {
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer with date range as input.</p>
-    pub fn date_range(&self) -> ::std::option::Option<&crate::types::OfferLastModifiedDateFilterDateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<& crate::types::OfferLastModifiedDateFilterDateRange> {
         self.date_range.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl OfferLastModifiedDateFilterBuilder {
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer with date range as input.</p>
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::OfferLastModifiedDateFilterDateRange>) -> Self {
-        self.date_range = input;
-        self
+        self.date_range = input; self
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer with date range as input.</p>
     pub fn get_date_range(&self) -> &::std::option::Option<crate::types::OfferLastModifiedDateFilterDateRange> {
@@ -43,6 +42,10 @@ impl OfferLastModifiedDateFilterBuilder {
     }
     /// Consumes the builder and constructs a [`OfferLastModifiedDateFilter`](crate::types::OfferLastModifiedDateFilter).
     pub fn build(self) -> crate::types::OfferLastModifiedDateFilter {
-        crate::types::OfferLastModifiedDateFilter { date_range: self.date_range }
+        crate::types::OfferLastModifiedDateFilter {
+            date_range: self.date_range
+            ,
+        }
     }
 }
+

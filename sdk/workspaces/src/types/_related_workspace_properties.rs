@@ -3,7 +3,7 @@
 /// <p>Describes the related WorkSpace. The related WorkSpace could be a standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelatedWorkspaceProperties {
+pub struct RelatedWorkspaceProperties  {
     /// <p>The identifier of the related WorkSpace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region of the related WorkSpace.</p>
@@ -13,21 +13,21 @@ pub struct RelatedWorkspaceProperties {
     /// <p>Indicates the type of WorkSpace.</p>
     pub r#type: ::std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
 }
-impl RelatedWorkspaceProperties {
+impl  RelatedWorkspaceProperties  {
     /// <p>The identifier of the related WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The Region of the related WorkSpace.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Indicates the state of the WorkSpace.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::WorkspaceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::WorkspaceState> {
         self.state.as_ref()
     }
     /// <p>Indicates the type of WorkSpace.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::StandbyWorkspaceRelationshipType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::StandbyWorkspaceRelationshipType> {
         self.r#type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl RelatedWorkspacePropertiesBuilder {
     }
     /// <p>The identifier of the related WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the related WorkSpace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RelatedWorkspacePropertiesBuilder {
     }
     /// <p>The Region of the related WorkSpace.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Region of the related WorkSpace.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RelatedWorkspacePropertiesBuilder {
     }
     /// <p>Indicates the state of the WorkSpace.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates the state of the WorkSpace.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceState> {
@@ -97,8 +94,7 @@ impl RelatedWorkspacePropertiesBuilder {
     }
     /// <p>Indicates the type of WorkSpace.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::StandbyWorkspaceRelationshipType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Indicates the type of WorkSpace.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::StandbyWorkspaceRelationshipType> {
@@ -107,10 +103,15 @@ impl RelatedWorkspacePropertiesBuilder {
     /// Consumes the builder and constructs a [`RelatedWorkspaceProperties`](crate::types::RelatedWorkspaceProperties).
     pub fn build(self) -> crate::types::RelatedWorkspaceProperties {
         crate::types::RelatedWorkspaceProperties {
-            workspace_id: self.workspace_id,
-            region: self.region,
-            state: self.state,
-            r#type: self.r#type,
+            workspace_id: self.workspace_id
+            ,
+            region: self.region
+            ,
+            state: self.state
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

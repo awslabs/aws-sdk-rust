@@ -3,13 +3,13 @@
 /// <p>GetInfrastructureConfiguration request object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInfrastructureConfigurationInput {
+pub struct GetInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetInfrastructureConfigurationInput {
+impl  GetInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
-    pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl GetInfrastructureConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
     pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.infrastructure_configuration_arn = input;
-        self
+        self.infrastructure_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
     pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
     /// Consumes the builder and constructs a [`GetInfrastructureConfigurationInput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput {
-            infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput {
+                infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                ,
+            }
+        )
     }
 }
+

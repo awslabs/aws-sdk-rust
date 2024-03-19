@@ -5,54 +5,50 @@ pub use crate::operation::get_resource_share_invitations::_get_resource_share_in
 
 impl GetResourceShareInvitationsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_resource_share_invitations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_resource_share_invitations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetResourceShareInvitations`.
-///
+/// 
 /// <p>Retrieves details about invitations that you have received for resource shares.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceShareInvitationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder,
+                    inner: crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
-        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-    > for GetResourceShareInvitationsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
+                    crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
+                > for GetResourceShareInvitationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
+                        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetResourceShareInvitationsFluentBuilder {
     /// Creates a new `GetResourceShareInvitations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl GetResourceShareInvitationsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_resource_share_invitations::GetResourceShareInvitations::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_resource_share_invitations::GetResourceShareInvitations::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
-        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_resource_share_invitations::GetResourceShareInvitations::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_resource_share_invitations::GetResourceShareInvitations::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput, crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator {
-        crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator {
+                                crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `resourceShareInvitationArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_invitation_arns`](Self::set_resource_share_invitation_arns).
@@ -124,12 +111,12 @@ impl GetResourceShareInvitationsFluentBuilder {
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn set_resource_share_invitation_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resource_share_invitation_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_share_invitation_arns(input);
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
-    pub fn get_resource_share_invitation_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_invitation_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resource_share_invitation_arns()
     }
     /// Appends an item to `resourceShareArns`.
@@ -142,12 +129,12 @@ impl GetResourceShareInvitationsFluentBuilder {
         self
     }
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a></p>
-    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
     /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a></p>
-    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resource_share_arns()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -179,3 +166,4 @@ impl GetResourceShareInvitationsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

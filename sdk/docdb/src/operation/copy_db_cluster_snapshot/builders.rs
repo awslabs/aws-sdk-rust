@@ -5,56 +5,52 @@ pub use crate::operation::copy_db_cluster_snapshot::_copy_db_cluster_snapshot_in
 
 impl CopyDbClusterSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.copy_db_cluster_snapshot();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.copy_db_cluster_snapshot();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CopyDBClusterSnapshot`.
-///
+/// 
 /// <p>Copies a snapshot of a cluster.</p>
 /// <p>To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can only copy a shared DB cluster snapshot, whether encrypted or not, in the same Amazon Web Services Region.</p>
 /// <p>To cancel the copy operation after it is in progress, delete the target cluster snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in the <i>copying</i> status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyDBClusterSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder,
+                    inner: crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
-        crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-    > for CopyDBClusterSnapshotFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
-            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
+                    crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
+                > for CopyDBClusterSnapshotFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
+                        crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CopyDBClusterSnapshotFluentBuilder {
     /// Creates a new `CopyDBClusterSnapshot`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CopyDBClusterSnapshotFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshot::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshot::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
-        crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshot::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshot::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput, crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the cluster snapshot to copy. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -292,12 +279,13 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the cluster snapshot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be assigned to the cluster snapshot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

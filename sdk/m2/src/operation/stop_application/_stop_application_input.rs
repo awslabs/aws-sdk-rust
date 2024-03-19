@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopApplicationInput {
+pub struct StopApplicationInput  {
     /// <p>The unique identifier of the application you want to stop.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
     pub force_stop: ::std::option::Option<bool>,
 }
-impl StopApplicationInput {
+impl  StopApplicationInput  {
     /// <p>The unique identifier of the application you want to stop.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
@@ -41,8 +41,7 @@ impl StopApplicationInputBuilder {
     }
     /// <p>The unique identifier of the application you want to stop.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier of the application you want to stop.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl StopApplicationInputBuilder {
     }
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
     pub fn set_force_stop(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_stop = input;
-        self
+        self.force_stop = input; self
     }
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
     pub fn get_force_stop(&self) -> &::std::option::Option<bool> {
         &self.force_stop
     }
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_application::StopApplicationInput {
-            application_id: self.application_id,
-            force_stop: self.force_stop,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_application::StopApplicationInput {
+                application_id: self.application_id
+                ,
+                force_stop: self.force_stop
+                ,
+            }
+        )
     }
 }
+

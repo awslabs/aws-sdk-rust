@@ -3,22 +3,22 @@
 /// <p>Represents a mapping template used to transform a payload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetModelTemplateOutput {
+pub struct GetModelTemplateOutput  {
     /// <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
     pub value: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetModelTemplateOutput {
+impl  GetModelTemplateOutput  {
     /// <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetModelTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetModelTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetModelTemplateOutput`](crate::operation::get_model_template::GetModelTemplateOutput).
     pub fn builder() -> crate::operation::get_model_template::builders::GetModelTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl GetModelTemplateOutputBuilder {
     }
     /// <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetModelTemplateOutput`](crate::operation::get_model_template::GetModelTemplateOutput).
     pub fn build(self) -> crate::operation::get_model_template::GetModelTemplateOutput {
         crate::operation::get_model_template::GetModelTemplateOutput {
-            value: self.value,
+            value: self.value
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

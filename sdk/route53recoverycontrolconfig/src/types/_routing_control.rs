@@ -3,7 +3,7 @@
 /// <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoutingControl {
+pub struct RoutingControl  {
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing control.</p>
@@ -15,25 +15,25 @@ pub struct RoutingControl {
     /// <p>The Amazon Web Services account ID of the routing control owner.</p>
     pub owner: ::std::option::Option<::std::string::String>,
 }
-impl RoutingControl {
+impl  RoutingControl  {
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-    pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> ::std::option::Option<& str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The name of the routing control.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(&self) -> ::std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> ::std::option::Option<& str> {
         self.routing_control_arn.as_deref()
     }
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the routing control owner.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl RoutingControlBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
     pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_panel_arn = input;
-        self
+        self.control_panel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
     pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl RoutingControlBuilder {
     }
     /// <p>The name of the routing control.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the routing control.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl RoutingControlBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_control_arn = input;
-        self
+        self.routing_control_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl RoutingControlBuilder {
     }
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -118,8 +114,7 @@ impl RoutingControlBuilder {
     }
     /// <p>The Amazon Web Services account ID of the routing control owner.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The Amazon Web Services account ID of the routing control owner.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl RoutingControlBuilder {
     /// Consumes the builder and constructs a [`RoutingControl`](crate::types::RoutingControl).
     pub fn build(self) -> crate::types::RoutingControl {
         crate::types::RoutingControl {
-            control_panel_arn: self.control_panel_arn,
-            name: self.name,
-            routing_control_arn: self.routing_control_arn,
-            status: self.status,
-            owner: self.owner,
+            control_panel_arn: self.control_panel_arn
+            ,
+            name: self.name
+            ,
+            routing_control_arn: self.routing_control_arn
+            ,
+            status: self.status
+            ,
+            owner: self.owner
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies a dependency JAR or a JAR of user-defined functions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomArtifactConfigurationDescription {
+pub struct CustomArtifactConfigurationDescription  {
     /// <p><code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
     pub artifact_type: ::std::option::Option<crate::types::ArtifactType>,
     /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
@@ -11,17 +11,17 @@ pub struct CustomArtifactConfigurationDescription {
     /// <p>The parameters that are required to specify a Maven dependency.</p>
     pub maven_reference_description: ::std::option::Option<crate::types::MavenReference>,
 }
-impl CustomArtifactConfigurationDescription {
+impl  CustomArtifactConfigurationDescription  {
     /// <p><code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
-    pub fn artifact_type(&self) -> ::std::option::Option<&crate::types::ArtifactType> {
+    pub fn artifact_type(&self) -> ::std::option::Option<& crate::types::ArtifactType> {
         self.artifact_type.as_ref()
     }
     /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
-    pub fn s3_content_location_description(&self) -> ::std::option::Option<&crate::types::S3ContentLocation> {
+    pub fn s3_content_location_description(&self) -> ::std::option::Option<& crate::types::S3ContentLocation> {
         self.s3_content_location_description.as_ref()
     }
     /// <p>The parameters that are required to specify a Maven dependency.</p>
-    pub fn maven_reference_description(&self) -> ::std::option::Option<&crate::types::MavenReference> {
+    pub fn maven_reference_description(&self) -> ::std::option::Option<& crate::types::MavenReference> {
         self.maven_reference_description.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CustomArtifactConfigurationDescriptionBuilder {
     }
     /// <p><code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
     pub fn set_artifact_type(mut self, input: ::std::option::Option<crate::types::ArtifactType>) -> Self {
-        self.artifact_type = input;
-        self
+        self.artifact_type = input; self
     }
     /// <p><code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
     pub fn get_artifact_type(&self) -> &::std::option::Option<crate::types::ArtifactType> {
@@ -62,8 +61,7 @@ impl CustomArtifactConfigurationDescriptionBuilder {
     }
     /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub fn set_s3_content_location_description(mut self, input: ::std::option::Option<crate::types::S3ContentLocation>) -> Self {
-        self.s3_content_location_description = input;
-        self
+        self.s3_content_location_description = input; self
     }
     /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub fn get_s3_content_location_description(&self) -> &::std::option::Option<crate::types::S3ContentLocation> {
@@ -76,8 +74,7 @@ impl CustomArtifactConfigurationDescriptionBuilder {
     }
     /// <p>The parameters that are required to specify a Maven dependency.</p>
     pub fn set_maven_reference_description(mut self, input: ::std::option::Option<crate::types::MavenReference>) -> Self {
-        self.maven_reference_description = input;
-        self
+        self.maven_reference_description = input; self
     }
     /// <p>The parameters that are required to specify a Maven dependency.</p>
     pub fn get_maven_reference_description(&self) -> &::std::option::Option<crate::types::MavenReference> {
@@ -86,9 +83,13 @@ impl CustomArtifactConfigurationDescriptionBuilder {
     /// Consumes the builder and constructs a [`CustomArtifactConfigurationDescription`](crate::types::CustomArtifactConfigurationDescription).
     pub fn build(self) -> crate::types::CustomArtifactConfigurationDescription {
         crate::types::CustomArtifactConfigurationDescription {
-            artifact_type: self.artifact_type,
-            s3_content_location_description: self.s3_content_location_description,
-            maven_reference_description: self.maven_reference_description,
+            artifact_type: self.artifact_type
+            ,
+            s3_content_location_description: self.s3_content_location_description
+            ,
+            maven_reference_description: self.maven_reference_description
+            ,
         }
     }
 }
+

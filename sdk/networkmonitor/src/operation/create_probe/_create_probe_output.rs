@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProbeOutput {
+pub struct CreateProbeOutput  {
     /// <p>The ID of the probe for which details are returned.</p>
     pub probe_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the probe.</p>
@@ -28,34 +28,32 @@ pub struct CreateProbeOutput {
     /// <p>The time and date when the probe was last modified.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of key-value pairs assigned to the probe.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CreateProbeOutput {
+impl  CreateProbeOutput  {
     /// <p>The ID of the probe for which details are returned.</p>
-    pub fn probe_id(&self) -> ::std::option::Option<&str> {
+    pub fn probe_id(&self) -> ::std::option::Option<& str> {
         self.probe_id.as_deref()
     }
     /// <p>The ARN of the probe.</p>
-    pub fn probe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn probe_arn(&self) -> ::std::option::Option<& str> {
         self.probe_arn.as_deref()
     }
     /// <p>The ARN of the probe.</p>
-    pub fn source_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.source_arn.deref()
+    pub fn source_arn(&self) -> & str {
+        use std::ops::Deref; self.source_arn.deref()
     }
     /// <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
-    pub fn destination(&self) -> &str {
-        use std::ops::Deref;
-        self.destination.deref()
+    pub fn destination(&self) -> & str {
+        use std::ops::Deref; self.destination.deref()
     }
     /// <p>The port associated with the <code>destination</code>. This is required only if the <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn destination_port(&self) -> ::std::option::Option<i32> {
         self.destination_port
     }
     /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
-    pub fn protocol(&self) -> &crate::types::Protocol {
+    pub fn protocol(&self) -> & crate::types::Protocol {
         &self.protocol
     }
     /// <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
@@ -63,35 +61,35 @@ impl CreateProbeOutput {
         self.packet_size
     }
     /// <p>Indicates whether the IP address is <code>IPV4</code> or <code>IPV6</code>.</p>
-    pub fn address_family(&self) -> ::std::option::Option<&crate::types::AddressFamily> {
+    pub fn address_family(&self) -> ::std::option::Option<& crate::types::AddressFamily> {
         self.address_family.as_ref()
     }
     /// <p>The ID of the source VPC or subnet.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The state of the probe.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ProbeState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ProbeState> {
         self.state.as_ref()
     }
     /// <p>The time and date that the probe was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time and date when the probe was last modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>The list of key-value pairs assigned to the probe.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateProbeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateProbeOutput {
     /// Creates a new builder-style object to manufacture [`CreateProbeOutput`](crate::operation::create_probe::CreateProbeOutput).
     pub fn builder() -> crate::operation::create_probe::builders::CreateProbeOutputBuilder {
@@ -115,7 +113,7 @@ pub struct CreateProbeOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ProbeState>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateProbeOutputBuilder {
@@ -126,8 +124,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The ID of the probe for which details are returned.</p>
     pub fn set_probe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.probe_id = input;
-        self
+        self.probe_id = input; self
     }
     /// <p>The ID of the probe for which details are returned.</p>
     pub fn get_probe_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +137,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The ARN of the probe.</p>
     pub fn set_probe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.probe_arn = input;
-        self
+        self.probe_arn = input; self
     }
     /// <p>The ARN of the probe.</p>
     pub fn get_probe_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The ARN of the probe.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The ARN of the probe.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +165,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +178,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The port associated with the <code>destination</code>. This is required only if the <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.destination_port = input;
-        self
+        self.destination_port = input; self
     }
     /// <p>The port associated with the <code>destination</code>. This is required only if the <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
@@ -199,8 +192,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
@@ -213,8 +205,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
     pub fn set_packet_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.packet_size = input;
-        self
+        self.packet_size = input; self
     }
     /// <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
     pub fn get_packet_size(&self) -> &::std::option::Option<i32> {
@@ -227,8 +218,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>Indicates whether the IP address is <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
-        self.address_family = input;
-        self
+        self.address_family = input; self
     }
     /// <p>Indicates whether the IP address is <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn get_address_family(&self) -> &::std::option::Option<crate::types::AddressFamily> {
@@ -241,8 +231,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The ID of the source VPC or subnet.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the source VPC or subnet.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,8 +244,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The state of the probe.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ProbeState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the probe.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ProbeState> {
@@ -269,8 +257,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The time and date that the probe was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time and date that the probe was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -283,8 +270,7 @@ impl CreateProbeOutputBuilder {
     }
     /// <p>The time and date when the probe was last modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The time and date when the probe was last modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -297,64 +283,73 @@ impl CreateProbeOutputBuilder {
     /// <p>The list of key-value pairs assigned to the probe.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of key-value pairs assigned to the probe.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value pairs assigned to the probe.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateProbeOutput`](crate::operation::create_probe::CreateProbeOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_arn`](crate::operation::create_probe::builders::CreateProbeOutputBuilder::source_arn)
     /// - [`destination`](crate::operation::create_probe::builders::CreateProbeOutputBuilder::destination)
     /// - [`protocol`](crate::operation::create_probe::builders::CreateProbeOutputBuilder::protocol)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_probe::CreateProbeOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_probe::CreateProbeOutput {
-            probe_id: self.probe_id,
-            probe_arn: self.probe_arn,
-            source_arn: self.source_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_arn",
-                    "source_arn was not specified but it is required when building CreateProbeOutput",
-                )
-            })?,
-            destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination",
-                    "destination was not specified but it is required when building CreateProbeOutput",
-                )
-            })?,
-            destination_port: self.destination_port,
-            protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol",
-                    "protocol was not specified but it is required when building CreateProbeOutput",
-                )
-            })?,
-            packet_size: self.packet_size,
-            address_family: self.address_family,
-            vpc_id: self.vpc_id,
-            state: self.state,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_probe::CreateProbeOutput {
+                probe_id: self.probe_id
+                ,
+                probe_arn: self.probe_arn
+                ,
+                source_arn: self.source_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_arn", "source_arn was not specified but it is required when building CreateProbeOutput")
+                    )?
+                ,
+                destination: self.destination
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination", "destination was not specified but it is required when building CreateProbeOutput")
+                    )?
+                ,
+                destination_port: self.destination_port
+                ,
+                protocol: self.protocol
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocol", "protocol was not specified but it is required when building CreateProbeOutput")
+                    )?
+                ,
+                packet_size: self.packet_size
+                ,
+                address_family: self.address_family
+                ,
+                vpc_id: self.vpc_id
+                ,
+                state: self.state
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

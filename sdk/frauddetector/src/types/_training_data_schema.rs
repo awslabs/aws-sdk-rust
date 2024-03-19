@@ -3,20 +3,19 @@
 /// <p>The training data schema.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrainingDataSchema {
+pub struct TrainingDataSchema  {
     /// <p>The training data schema variables.</p>
-    pub model_variables: ::std::vec::Vec<::std::string::String>,
+    pub model_variables: ::std::vec::Vec::<::std::string::String>,
     /// <p>The label schema.</p>
     pub label_schema: ::std::option::Option<crate::types::LabelSchema>,
 }
-impl TrainingDataSchema {
+impl  TrainingDataSchema  {
     /// <p>The training data schema variables.</p>
-    pub fn model_variables(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.model_variables.deref()
+    pub fn model_variables(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.model_variables.deref()
     }
     /// <p>The label schema.</p>
-    pub fn label_schema(&self) -> ::std::option::Option<&crate::types::LabelSchema> {
+    pub fn label_schema(&self) -> ::std::option::Option<& crate::types::LabelSchema> {
         self.label_schema.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl TrainingDataSchema {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingDataSchemaBuilder {
-    pub(crate) model_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) model_variables: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) label_schema: ::std::option::Option<crate::types::LabelSchema>,
 }
 impl TrainingDataSchemaBuilder {
@@ -42,17 +41,16 @@ impl TrainingDataSchemaBuilder {
     /// <p>The training data schema variables.</p>
     pub fn model_variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.model_variables.unwrap_or_default();
-        v.push(input.into());
-        self.model_variables = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.model_variables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The training data schema variables.</p>
-    pub fn set_model_variables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.model_variables = input;
-        self
+    pub fn set_model_variables(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.model_variables = input; self
     }
     /// <p>The training data schema variables.</p>
-    pub fn get_model_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_model_variables(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.model_variables
     }
     /// <p>The label schema.</p>
@@ -62,8 +60,7 @@ impl TrainingDataSchemaBuilder {
     }
     /// <p>The label schema.</p>
     pub fn set_label_schema(mut self, input: ::std::option::Option<crate::types::LabelSchema>) -> Self {
-        self.label_schema = input;
-        self
+        self.label_schema = input; self
     }
     /// <p>The label schema.</p>
     pub fn get_label_schema(&self) -> &::std::option::Option<crate::types::LabelSchema> {
@@ -73,14 +70,17 @@ impl TrainingDataSchemaBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`model_variables`](crate::types::builders::TrainingDataSchemaBuilder::model_variables)
     pub fn build(self) -> ::std::result::Result<crate::types::TrainingDataSchema, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrainingDataSchema {
-            model_variables: self.model_variables.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_variables",
-                    "model_variables was not specified but it is required when building TrainingDataSchema",
-                )
-            })?,
-            label_schema: self.label_schema,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrainingDataSchema {
+                model_variables: self.model_variables
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_variables", "model_variables was not specified but it is required when building TrainingDataSchema")
+                    )?
+                ,
+                label_schema: self.label_schema
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRuleInput {
+pub struct UpdateRuleInput  {
     /// <p>The unique ID of the retention rule.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
@@ -16,34 +16,35 @@ pub struct UpdateRuleInput {
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
 }
-impl UpdateRuleInput {
+impl  UpdateRuleInput  {
     /// <p>The unique ID of the retention rule.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> ::std::option::Option<& crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>The retention rule description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <note>
     /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
     /// </note>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::ResourceTag] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateRuleInput {
@@ -61,7 +62,7 @@ pub struct UpdateRuleInputBuilder {
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
 }
 impl UpdateRuleInputBuilder {
     /// <p>The unique ID of the retention rule.</p>
@@ -72,8 +73,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The unique ID of the retention rule.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The unique ID of the retention rule.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
@@ -100,8 +99,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The retention rule description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The retention rule description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl UpdateRuleInputBuilder {
     /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <note>
     /// <p>This parameter is currently not supported. You can't update a retention rule's resource type after creation.</p>
@@ -136,31 +133,38 @@ impl UpdateRuleInputBuilder {
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
-            identifier: self.identifier,
-            retention_period: self.retention_period,
-            description: self.description,
-            resource_type: self.resource_type,
-            resource_tags: self.resource_tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_rule::UpdateRuleInput {
+                identifier: self.identifier
+                ,
+                retention_period: self.retention_period
+                ,
+                description: self.description
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_tags: self.resource_tags
+                ,
+            }
+        )
     }
 }
+

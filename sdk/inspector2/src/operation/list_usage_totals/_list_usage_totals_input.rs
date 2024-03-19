@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsageTotalsInput {
+pub struct ListUsageTotalsInput  {
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListUsageTotalsInput {
+impl  ListUsageTotalsInput  {
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListUsageTotalsInput {
@@ -39,7 +40,7 @@ impl ListUsageTotalsInput {
 pub struct ListUsageTotalsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListUsageTotalsInputBuilder {
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
@@ -49,8 +50,7 @@ impl ListUsageTotalsInputBuilder {
     }
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -63,8 +63,7 @@ impl ListUsageTotalsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,27 +76,30 @@ impl ListUsageTotalsInputBuilder {
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`ListUsageTotalsInput`](crate::operation::list_usage_totals::ListUsageTotalsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_usage_totals::ListUsageTotalsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_usage_totals::ListUsageTotalsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            account_ids: self.account_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_usage_totals::ListUsageTotalsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_usage_totals::ListUsageTotalsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                account_ids: self.account_ids
+                ,
+            }
+        )
     }
 }
+

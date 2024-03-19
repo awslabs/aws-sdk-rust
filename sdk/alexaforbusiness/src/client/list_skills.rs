@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSkills`](crate::operation::list_skills::builders::ListSkillsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`skill_group_arn(impl Into<String>)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::set_skill_group_arn):<br>required: **false**<br><p>The ARN of the skill group for which to list enabled skills.</p><br>
     ///   - [`enablement_type(EnablementTypeFilter)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::enablement_type) / [`set_enablement_type(Option<EnablementTypeFilter>)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::set_enablement_type):<br>required: **false**<br><p>Whether the skill is enabled under the user's account.</p><br>
     ///   - [`skill_type(SkillTypeFilter)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::skill_type) / [`set_skill_type(Option<SkillTypeFilter>)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::set_skill_type):<br>required: **false**<br><p>Whether the skill is publicly available or is a private skill.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_skills::builders::ListSkillsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
-    /// - On success, responds with [`ListSkillsOutput`](crate::operation::list_skills::ListSkillsOutput) with field(s):
+                            /// - On success, responds with [`ListSkillsOutput`](crate::operation::list_skills::ListSkillsOutput) with field(s):
     ///   - [`skill_summaries(Option<Vec::<SkillSummary>>)`](crate::operation::list_skills::ListSkillsOutput::skill_summaries): <p>The list of enabled skills requested. Required.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_skills::ListSkillsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
-    /// - On failure, responds with [`SdkError<ListSkillsError>`](crate::operation::list_skills::ListSkillsError)
+                            /// - On failure, responds with [`SdkError<ListSkillsError>`](crate::operation::list_skills::ListSkillsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn list_skills(&self) -> crate::operation::list_skills::builders::ListSkillsFluentBuilder {
-        crate::operation::list_skills::builders::ListSkillsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_skills::builders::ListSkillsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

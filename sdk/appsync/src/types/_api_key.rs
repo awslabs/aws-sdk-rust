@@ -32,7 +32,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApiKey {
+pub struct ApiKey  {
     /// <p>The API key ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the purpose of the API key.</p>
@@ -42,13 +42,13 @@ pub struct ApiKey {
     /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
     pub deletes: i64,
 }
-impl ApiKey {
+impl  ApiKey  {
     /// <p>The API key ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the purpose of the API key.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
@@ -84,8 +84,7 @@ impl ApiKeyBuilder {
     }
     /// <p>The API key ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The API key ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl ApiKeyBuilder {
     }
     /// <p>A description of the purpose of the API key.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the purpose of the API key.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl ApiKeyBuilder {
     }
     /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
     pub fn set_expires(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.expires = input;
-        self
+        self.expires = input; self
     }
     /// <p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
     pub fn get_expires(&self) -> &::std::option::Option<i64> {
@@ -126,8 +123,7 @@ impl ApiKeyBuilder {
     }
     /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
     pub fn set_deletes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.deletes = input;
-        self
+        self.deletes = input; self
     }
     /// <p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>
     pub fn get_deletes(&self) -> &::std::option::Option<i64> {
@@ -136,10 +132,17 @@ impl ApiKeyBuilder {
     /// Consumes the builder and constructs a [`ApiKey`](crate::types::ApiKey).
     pub fn build(self) -> crate::types::ApiKey {
         crate::types::ApiKey {
-            id: self.id,
-            description: self.description,
-            expires: self.expires.unwrap_or_default(),
-            deletes: self.deletes.unwrap_or_default(),
+            id: self.id
+            ,
+            description: self.description
+            ,
+            expires: self.expires
+                .unwrap_or_default()
+            ,
+            deletes: self.deletes
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

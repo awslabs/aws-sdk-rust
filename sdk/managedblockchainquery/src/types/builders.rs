@@ -44,3 +44,4 @@ pub use crate::types::_batch_get_token_balance_error_item::BatchGetTokenBalanceE
 pub use crate::types::_batch_get_token_balance_output_item::BatchGetTokenBalanceOutputItemBuilder;
 
 pub use crate::types::_batch_get_token_balance_input_item::BatchGetTokenBalanceInputItemBuilder;
+

@@ -3,19 +3,19 @@
 /// <p>The information required to update the S3 base location that holds the application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ContentBaseLocationUpdate {
+pub struct S3ContentBaseLocationUpdate  {
     /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub bucket_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>The updated S3 bucket path.</p>
     pub base_path_update: ::std::option::Option<::std::string::String>,
 }
-impl S3ContentBaseLocationUpdate {
+impl  S3ContentBaseLocationUpdate  {
     /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_arn_update(&self) -> ::std::option::Option<& str> {
         self.bucket_arn_update.as_deref()
     }
     /// <p>The updated S3 bucket path.</p>
-    pub fn base_path_update(&self) -> ::std::option::Option<&str> {
+    pub fn base_path_update(&self) -> ::std::option::Option<& str> {
         self.base_path_update.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3ContentBaseLocationUpdateBuilder {
     }
     /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn set_bucket_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn_update = input;
-        self
+        self.bucket_arn_update = input; self
     }
     /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn get_bucket_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3ContentBaseLocationUpdateBuilder {
     }
     /// <p>The updated S3 bucket path.</p>
     pub fn set_base_path_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_path_update = input;
-        self
+        self.base_path_update = input; self
     }
     /// <p>The updated S3 bucket path.</p>
     pub fn get_base_path_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3ContentBaseLocationUpdateBuilder {
     /// Consumes the builder and constructs a [`S3ContentBaseLocationUpdate`](crate::types::S3ContentBaseLocationUpdate).
     pub fn build(self) -> crate::types::S3ContentBaseLocationUpdate {
         crate::types::S3ContentBaseLocationUpdate {
-            bucket_arn_update: self.bucket_arn_update,
-            base_path_update: self.base_path_update,
+            bucket_arn_update: self.bucket_arn_update
+            ,
+            base_path_update: self.base_path_update
+            ,
         }
     }
 }
+

@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Reference {
+pub struct S3Reference  {
     /// <p>The S3 bucket name.</p>
     pub bucket: ::std::string::String,
     /// <p>The S3 key object name.</p>
@@ -13,19 +13,17 @@ pub struct S3Reference {
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
     pub object_version: ::std::option::Option<::std::string::String>,
 }
-impl S3Reference {
+impl  S3Reference  {
     /// <p>The S3 bucket name.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The S3 key object name.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
-    pub fn object_version(&self) -> ::std::option::Option<&str> {
+    pub fn object_version(&self) -> ::std::option::Option<& str> {
         self.object_version.as_deref()
     }
 }
@@ -53,8 +51,7 @@ impl S3ReferenceBuilder {
     }
     /// <p>The S3 bucket name.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The S3 bucket name.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +65,7 @@ impl S3ReferenceBuilder {
     }
     /// <p>The S3 key object name.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The S3 key object name.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +78,7 @@ impl S3ReferenceBuilder {
     }
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
     pub fn set_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_version = input;
-        self
+        self.object_version = input; self
     }
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
     pub fn get_object_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,20 +89,22 @@ impl S3ReferenceBuilder {
     /// - [`bucket`](crate::types::builders::S3ReferenceBuilder::bucket)
     /// - [`key`](crate::types::builders::S3ReferenceBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Reference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Reference {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building S3Reference",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building S3Reference",
-                )
-            })?,
-            object_version: self.object_version,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Reference {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building S3Reference")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building S3Reference")
+                    )?
+                ,
+                object_version: self.object_version
+                ,
+            }
+        )
     }
 }
+

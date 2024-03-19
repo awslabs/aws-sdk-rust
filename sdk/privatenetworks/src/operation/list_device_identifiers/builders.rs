@@ -5,55 +5,51 @@ pub use crate::operation::list_device_identifiers::_list_device_identifiers_inpu
 
 impl ListDeviceIdentifiersInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_device_identifiers();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_device_identifiers();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListDeviceIdentifiers`.
-///
+/// 
 /// <p>Lists device identifiers. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order, the status of device identifiers, or the ARN of the traffic group.</p>
 /// <p>If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of the specified filters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeviceIdentifiersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersInputBuilder,
+                    inner: crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
-        crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
-    > for ListDeviceIdentifiersFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
-            crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
+                    crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
+                > for ListDeviceIdentifiersFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
+                        crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListDeviceIdentifiersFluentBuilder {
     /// Creates a new `ListDeviceIdentifiers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl ListDeviceIdentifiersFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_device_identifiers::ListDeviceIdentifiers::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_device_identifiers::ListDeviceIdentifiers::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
-        crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_device_identifiers::ListDeviceIdentifiersError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_device_identifiers::ListDeviceIdentifiers::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_device_identifiers::ListDeviceIdentifiers::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput, crate::operation::list_device_identifiers::ListDeviceIdentifiersError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_device_identifiers::paginator::ListDeviceIdentifiersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_device_identifiers::paginator::ListDeviceIdentifiersPaginator {
-        crate::operation::list_device_identifiers::paginator::ListDeviceIdentifiersPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_device_identifiers::paginator::ListDeviceIdentifiersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_device_identifiers::paginator::ListDeviceIdentifiersPaginator {
+                                crate::operation::list_device_identifiers::paginator::ListDeviceIdentifiersPaginator::new(self.handle, self.inner)
+                            }
     /// Adds a key-value pair to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -129,7 +116,7 @@ impl ListDeviceIdentifiersFluentBuilder {
     /// <p><code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p></li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn filters(mut self, k: crate::types::DeviceIdentifierFilterKeys, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn filters(mut self, k: crate::types::DeviceIdentifierFilterKeys, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
@@ -143,10 +130,7 @@ impl ListDeviceIdentifiersFluentBuilder {
     /// <p><code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p></li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DeviceIdentifierFilterKeys, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DeviceIdentifierFilterKeys, ::std::vec::Vec::<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -160,9 +144,7 @@ impl ListDeviceIdentifiersFluentBuilder {
     /// <p><code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p></li>
     /// </ul>
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DeviceIdentifierFilterKeys, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DeviceIdentifierFilterKeys, ::std::vec::Vec::<::std::string::String>>> {
         self.inner.get_filters()
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
@@ -208,3 +190,4 @@ impl ListDeviceIdentifiersFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

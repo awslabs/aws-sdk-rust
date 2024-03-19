@@ -7,21 +7,20 @@
 /// <p>In an <code>UpdateRegexPatternSet</code> request, <code>RegexPatternSetUpdate</code> specifies whether to insert or delete a <code>RegexPatternString</code> and includes the settings for the <code>RegexPatternString</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegexPatternSetUpdate {
+pub struct RegexPatternSetUpdate  {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
     pub action: crate::types::ChangeAction,
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
     pub regex_pattern_string: ::std::string::String,
 }
-impl RegexPatternSetUpdate {
+impl  RegexPatternSetUpdate  {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-    pub fn action(&self) -> &crate::types::ChangeAction {
+    pub fn action(&self) -> & crate::types::ChangeAction {
         &self.action
     }
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
-    pub fn regex_pattern_string(&self) -> &str {
-        use std::ops::Deref;
-        self.regex_pattern_string.deref()
+    pub fn regex_pattern_string(&self) -> & str {
+        use std::ops::Deref; self.regex_pattern_string.deref()
     }
 }
 impl RegexPatternSetUpdate {
@@ -47,8 +46,7 @@ impl RegexPatternSetUpdateBuilder {
     }
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
@@ -62,8 +60,7 @@ impl RegexPatternSetUpdateBuilder {
     }
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
     pub fn set_regex_pattern_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.regex_pattern_string = input;
-        self
+        self.regex_pattern_string = input; self
     }
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
     pub fn get_regex_pattern_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,19 +71,20 @@ impl RegexPatternSetUpdateBuilder {
     /// - [`action`](crate::types::builders::RegexPatternSetUpdateBuilder::action)
     /// - [`regex_pattern_string`](crate::types::builders::RegexPatternSetUpdateBuilder::regex_pattern_string)
     pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegexPatternSetUpdate {
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building RegexPatternSetUpdate",
-                )
-            })?,
-            regex_pattern_string: self.regex_pattern_string.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "regex_pattern_string",
-                    "regex_pattern_string was not specified but it is required when building RegexPatternSetUpdate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegexPatternSetUpdate {
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building RegexPatternSetUpdate")
+                    )?
+                ,
+                regex_pattern_string: self.regex_pattern_string
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("regex_pattern_string", "regex_pattern_string was not specified but it is required when building RegexPatternSetUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

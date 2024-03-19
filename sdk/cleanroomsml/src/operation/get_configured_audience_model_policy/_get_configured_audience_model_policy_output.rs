@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfiguredAudienceModelPolicyOutput {
+pub struct GetConfiguredAudienceModelPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model.</p>
     pub configured_audience_model_arn: ::std::string::String,
     /// <p>The configured audience model policy. This is a JSON IAM resource policy.</p>
@@ -11,28 +11,25 @@ pub struct GetConfiguredAudienceModelPolicyOutput {
     pub policy_hash: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetConfiguredAudienceModelPolicyOutput {
+impl  GetConfiguredAudienceModelPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model.</p>
-    pub fn configured_audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_arn.deref()
+    pub fn configured_audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_arn.deref()
     }
     /// <p>The configured audience model policy. This is a JSON IAM resource policy.</p>
-    pub fn configured_audience_model_policy(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_policy.deref()
+    pub fn configured_audience_model_policy(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_policy.deref()
     }
     /// <p>A cryptographic hash of the contents of the policy used to prevent unexpected concurrent modification of the policy.</p>
-    pub fn policy_hash(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_hash.deref()
+    pub fn policy_hash(&self) -> & str {
+        use std::ops::Deref; self.policy_hash.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConfiguredAudienceModelPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetConfiguredAudienceModelPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetConfiguredAudienceModelPolicyOutput`](crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyOutput).
     pub fn builder() -> crate::operation::get_configured_audience_model_policy::builders::GetConfiguredAudienceModelPolicyOutputBuilder {
@@ -58,8 +55,7 @@ impl GetConfiguredAudienceModelPolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +69,7 @@ impl GetConfiguredAudienceModelPolicyOutputBuilder {
     }
     /// <p>The configured audience model policy. This is a JSON IAM resource policy.</p>
     pub fn set_configured_audience_model_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_policy = input;
-        self
+        self.configured_audience_model_policy = input; self
     }
     /// <p>The configured audience model policy. This is a JSON IAM resource policy.</p>
     pub fn get_configured_audience_model_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,55 +83,47 @@ impl GetConfiguredAudienceModelPolicyOutputBuilder {
     }
     /// <p>A cryptographic hash of the contents of the policy used to prevent unexpected concurrent modification of the policy.</p>
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_hash = input;
-        self
+        self.policy_hash = input; self
     }
     /// <p>A cryptographic hash of the contents of the policy used to prevent unexpected concurrent modification of the policy.</p>
     pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_hash
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetConfiguredAudienceModelPolicyOutput`](crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`configured_audience_model_arn`](crate::operation::get_configured_audience_model_policy::builders::GetConfiguredAudienceModelPolicyOutputBuilder::configured_audience_model_arn)
     /// - [`configured_audience_model_policy`](crate::operation::get_configured_audience_model_policy::builders::GetConfiguredAudienceModelPolicyOutputBuilder::configured_audience_model_policy)
     /// - [`policy_hash`](crate::operation::get_configured_audience_model_policy::builders::GetConfiguredAudienceModelPolicyOutputBuilder::policy_hash)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyOutput {
-                configured_audience_model_arn: self.configured_audience_model_arn.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "configured_audience_model_arn",
-                        "configured_audience_model_arn was not specified but it is required when building GetConfiguredAudienceModelPolicyOutput",
-                    )
-                })?,
-                configured_audience_model_policy: self.configured_audience_model_policy.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "configured_audience_model_policy",
-                        "configured_audience_model_policy was not specified but it is required when building GetConfiguredAudienceModelPolicyOutput",
-                    )
-                })?,
-                policy_hash: self.policy_hash.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "policy_hash",
-                        "policy_hash was not specified but it is required when building GetConfiguredAudienceModelPolicyOutput",
-                    )
-                })?,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_arn", "configured_audience_model_arn was not specified but it is required when building GetConfiguredAudienceModelPolicyOutput")
+                    )?
+                ,
+                configured_audience_model_policy: self.configured_audience_model_policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_policy", "configured_audience_model_policy was not specified but it is required when building GetConfiguredAudienceModelPolicyOutput")
+                    )?
+                ,
+                policy_hash: self.policy_hash
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_hash", "policy_hash was not specified but it is required when building GetConfiguredAudienceModelPolicyOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

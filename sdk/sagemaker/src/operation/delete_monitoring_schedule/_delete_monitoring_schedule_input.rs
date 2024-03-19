@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMonitoringScheduleInput {
+pub struct DeleteMonitoringScheduleInput  {
     /// <p>The name of the monitoring schedule to delete.</p>
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMonitoringScheduleInput {
+impl  DeleteMonitoringScheduleInput  {
     /// <p>The name of the monitoring schedule to delete.</p>
-    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_schedule_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteMonitoringScheduleInputBuilder {
     }
     /// <p>The name of the monitoring schedule to delete.</p>
     pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_schedule_name = input;
-        self
+        self.monitoring_schedule_name = input; self
     }
     /// <p>The name of the monitoring schedule to delete.</p>
     pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_schedule_name
     }
     /// Consumes the builder and constructs a [`DeleteMonitoringScheduleInput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput {
-            monitoring_schedule_name: self.monitoring_schedule_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput {
+                monitoring_schedule_name: self.monitoring_schedule_name
+                ,
+            }
+        )
     }
 }
+

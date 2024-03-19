@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendOtpMessageOutput {
+pub struct SendOtpMessageOutput  {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     pub message_response: ::std::option::Option<crate::types::MessageResponse>,
     _request_id: Option<String>,
 }
-impl SendOtpMessageOutput {
+impl  SendOtpMessageOutput  {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
-    pub fn message_response(&self) -> ::std::option::Option<&crate::types::MessageResponse> {
+    pub fn message_response(&self) -> ::std::option::Option<& crate::types::MessageResponse> {
         self.message_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SendOtpMessageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendOtpMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendOtpMessageOutput`](crate::operation::send_otp_message::SendOtpMessageOutput).
     pub fn builder() -> crate::operation::send_otp_message::builders::SendOtpMessageOutputBuilder {
@@ -41,27 +41,28 @@ impl SendOtpMessageOutputBuilder {
     }
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     pub fn set_message_response(mut self, input: ::std::option::Option<crate::types::MessageResponse>) -> Self {
-        self.message_response = input;
-        self
+        self.message_response = input; self
     }
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
     pub fn get_message_response(&self) -> &::std::option::Option<crate::types::MessageResponse> {
         &self.message_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendOtpMessageOutput`](crate::operation::send_otp_message::SendOtpMessageOutput).
     pub fn build(self) -> crate::operation::send_otp_message::SendOtpMessageOutput {
         crate::operation::send_otp_message::SendOtpMessageOutput {
-            message_response: self.message_response,
+            message_response: self.message_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

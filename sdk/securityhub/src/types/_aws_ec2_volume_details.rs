@@ -3,7 +3,7 @@
 /// <p>Details about an EC2 volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2VolumeDetails {
+pub struct AwsEc2VolumeDetails  {
     /// <p>Indicates when the volume was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub create_time: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ pub struct AwsEc2VolumeDetails {
     /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume attachments.</p>
-    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>,
+    pub attachments: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2VolumeAttachment>>,
     /// <p>The ID of the volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume type.</p>
@@ -42,14 +42,14 @@ pub struct AwsEc2VolumeDetails {
     /// <p>Indicates whether the volume was scanned or skipped.</p>
     pub volume_scan_status: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2VolumeDetails {
+impl  AwsEc2VolumeDetails  {
     /// <p>Indicates when the volume was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&str> {
+    pub fn create_time(&self) -> ::std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>The device name for the volume that is attached to the instance.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Specifies whether the volume is encrypted.</p>
@@ -61,7 +61,7 @@ impl AwsEc2VolumeDetails {
         self.size
     }
     /// <p>The snapshot from which the volume was created.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The volume state. Valid values are as follows:</p>
@@ -79,29 +79,30 @@ impl AwsEc2VolumeDetails {
     /// <li>
     /// <p><code>in-use</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The volume attachments.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
-    pub fn attachments(&self) -> &[crate::types::AwsEc2VolumeAttachment] {
-        self.attachments.as_deref().unwrap_or_default()
+    pub fn attachments(&self) -> & [crate::types::AwsEc2VolumeAttachment] {
+        self.attachments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The volume type.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>Indicates whether the volume was scanned or skipped.</p>
-    pub fn volume_scan_status(&self) -> ::std::option::Option<&str> {
+    pub fn volume_scan_status(&self) -> ::std::option::Option<& str> {
         self.volume_scan_status.as_deref()
     }
 }
@@ -123,7 +124,7 @@ pub struct AwsEc2VolumeDetailsBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2VolumeAttachment>>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_type: ::std::option::Option<::std::string::String>,
     pub(crate) volume_scan_status: ::std::option::Option<::std::string::String>,
@@ -138,8 +139,7 @@ impl AwsEc2VolumeDetailsBuilder {
     /// <p>Indicates when the volume was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>Indicates when the volume was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -153,8 +153,7 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The device name for the volume that is attached to the instance.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The device name for the volume that is attached to the instance.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +166,7 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>Specifies whether the volume is encrypted.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Specifies whether the volume is encrypted.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -181,8 +179,7 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The size of the volume, in GiBs.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the volume, in GiBs.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -195,8 +192,7 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The snapshot from which the volume was created.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The snapshot from which the volume was created.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +233,7 @@ impl AwsEc2VolumeDetailsBuilder {
     /// <p><code>in-use</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The volume state. Valid values are as follows:</p>
     /// <ul>
@@ -265,8 +260,7 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,17 +273,16 @@ impl AwsEc2VolumeDetailsBuilder {
     /// <p>The volume attachments.</p>
     pub fn attachments(mut self, input: crate::types::AwsEc2VolumeAttachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
-        v.push(input);
-        self.attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The volume attachments.</p>
-    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>) -> Self {
-        self.attachments = input;
-        self
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2VolumeAttachment>>) -> Self {
+        self.attachments = input; self
     }
     /// <p>The volume attachments.</p>
-    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2VolumeAttachment>> {
         &self.attachments
     }
     /// <p>The ID of the volume.</p>
@@ -299,8 +292,7 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The ID of the volume.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The ID of the volume.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,8 +305,7 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The volume type.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The volume type.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -327,8 +318,7 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>Indicates whether the volume was scanned or skipped.</p>
     pub fn set_volume_scan_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_scan_status = input;
-        self
+        self.volume_scan_status = input; self
     }
     /// <p>Indicates whether the volume was scanned or skipped.</p>
     pub fn get_volume_scan_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -337,17 +327,29 @@ impl AwsEc2VolumeDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2VolumeDetails`](crate::types::AwsEc2VolumeDetails).
     pub fn build(self) -> crate::types::AwsEc2VolumeDetails {
         crate::types::AwsEc2VolumeDetails {
-            create_time: self.create_time,
-            device_name: self.device_name,
-            encrypted: self.encrypted,
-            size: self.size,
-            snapshot_id: self.snapshot_id,
-            status: self.status,
-            kms_key_id: self.kms_key_id,
-            attachments: self.attachments,
-            volume_id: self.volume_id,
-            volume_type: self.volume_type,
-            volume_scan_status: self.volume_scan_status,
+            create_time: self.create_time
+            ,
+            device_name: self.device_name
+            ,
+            encrypted: self.encrypted
+            ,
+            size: self.size
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            status: self.status
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            attachments: self.attachments
+            ,
+            volume_id: self.volume_id
+            ,
+            volume_type: self.volume_type
+            ,
+            volume_scan_status: self.volume_scan_status
+            ,
         }
     }
 }
+

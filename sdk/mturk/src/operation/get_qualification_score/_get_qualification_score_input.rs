@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQualificationScoreInput {
+pub struct GetQualificationScoreInput  {
     /// <p>The ID of the QualificationType.</p>
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Worker whose Qualification is being updated.</p>
     pub worker_id: ::std::option::Option<::std::string::String>,
 }
-impl GetQualificationScoreInput {
+impl  GetQualificationScoreInput  {
     /// <p>The ID of the QualificationType.</p>
-    pub fn qualification_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> ::std::option::Option<& str> {
         self.qualification_type_id.as_deref()
     }
     /// <p>The ID of the Worker whose Qualification is being updated.</p>
-    pub fn worker_id(&self) -> ::std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<& str> {
         self.worker_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetQualificationScoreInputBuilder {
     }
     /// <p>The ID of the QualificationType.</p>
     pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualification_type_id = input;
-        self
+        self.qualification_type_id = input; self
     }
     /// <p>The ID of the QualificationType.</p>
     pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetQualificationScoreInputBuilder {
     }
     /// <p>The ID of the Worker whose Qualification is being updated.</p>
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>The ID of the Worker whose Qualification is being updated.</p>
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_id
     }
     /// Consumes the builder and constructs a [`GetQualificationScoreInput`](crate::operation::get_qualification_score::GetQualificationScoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_qualification_score::GetQualificationScoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_qualification_score::GetQualificationScoreInput {
-            qualification_type_id: self.qualification_type_id,
-            worker_id: self.worker_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_qualification_score::GetQualificationScoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_qualification_score::GetQualificationScoreInput {
+                qualification_type_id: self.qualification_type_id
+                ,
+                worker_id: self.worker_id
+                ,
+            }
+        )
     }
 }
+

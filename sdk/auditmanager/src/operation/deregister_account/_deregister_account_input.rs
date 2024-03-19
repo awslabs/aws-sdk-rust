@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterAccountInput {}
+pub struct DeregisterAccountInput  {
+}
 impl DeregisterAccountInput {
     /// Creates a new builder-style object to manufacture [`DeregisterAccountInput`](crate::operation::deregister_account::DeregisterAccountInput).
     pub fn builder() -> crate::operation::deregister_account::builders::DeregisterAccountInputBuilder {
@@ -13,12 +14,15 @@ impl DeregisterAccountInput {
 /// A builder for [`DeregisterAccountInput`](crate::operation::deregister_account::DeregisterAccountInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeregisterAccountInputBuilder {}
+pub struct DeregisterAccountInputBuilder {
+}
 impl DeregisterAccountInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterAccountInput`](crate::operation::deregister_account::DeregisterAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deregister_account::DeregisterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::deregister_account::DeregisterAccountInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_account::DeregisterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_account::DeregisterAccountInput {
+            }
+        )
     }
 }
+

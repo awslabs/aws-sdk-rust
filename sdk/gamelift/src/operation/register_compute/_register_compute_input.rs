@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RegisterComputeInput {
+pub struct RegisterComputeInput  {
     /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label for the compute resource.</p>
@@ -16,33 +16,33 @@ pub struct RegisterComputeInput {
     /// <p>The name of a custom location to associate with the compute resource being registered.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl RegisterComputeInput {
+impl  RegisterComputeInput  {
     /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A descriptive label for the compute resource.</p>
-    pub fn compute_name(&self) -> ::std::option::Option<&str> {
+    pub fn compute_name(&self) -> ::std::option::Option<& str> {
         self.compute_name.as_deref()
     }
     /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
-    pub fn certificate_path(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_path(&self) -> ::std::option::Option<& str> {
         self.certificate_path.as_deref()
     }
     /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The name of a custom location to associate with the compute resource being registered.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
-impl ::std::fmt::Debug for RegisterComputeInput {
+impl  ::std::fmt::Debug for RegisterComputeInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RegisterComputeInput");
         formatter.field("fleet_id", &self.fleet_id);
@@ -81,8 +81,7 @@ impl RegisterComputeInputBuilder {
     }
     /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl RegisterComputeInputBuilder {
     }
     /// <p>A descriptive label for the compute resource.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compute_name = input;
-        self
+        self.compute_name = input; self
     }
     /// <p>A descriptive label for the compute resource.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl RegisterComputeInputBuilder {
     }
     /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
     pub fn set_certificate_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_path = input;
-        self
+        self.certificate_path = input; self
     }
     /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
     pub fn get_certificate_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl RegisterComputeInputBuilder {
     }
     /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl RegisterComputeInputBuilder {
     }
     /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,25 +147,30 @@ impl RegisterComputeInputBuilder {
     }
     /// <p>The name of a custom location to associate with the compute resource being registered.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The name of a custom location to associate with the compute resource being registered.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     /// Consumes the builder and constructs a [`RegisterComputeInput`](crate::operation::register_compute::RegisterComputeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_compute::RegisterComputeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_compute::RegisterComputeInput {
-            fleet_id: self.fleet_id,
-            compute_name: self.compute_name,
-            certificate_path: self.certificate_path,
-            dns_name: self.dns_name,
-            ip_address: self.ip_address,
-            location: self.location,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_compute::RegisterComputeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_compute::RegisterComputeInput {
+                fleet_id: self.fleet_id
+                ,
+                compute_name: self.compute_name
+                ,
+                certificate_path: self.certificate_path
+                ,
+                dns_name: self.dns_name
+                ,
+                ip_address: self.ip_address
+                ,
+                location: self.location
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RegisterComputeInputBuilder {
@@ -185,3 +185,4 @@ impl ::std::fmt::Debug for RegisterComputeInputBuilder {
         formatter.finish()
     }
 }
+

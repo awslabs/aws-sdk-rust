@@ -3,18 +3,19 @@
 /// <p>Toxicity analysis result for one string. For more information about toxicity detection, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity detection</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ToxicLabels {
+pub struct ToxicLabels  {
     /// <p>Array of toxic content types identified in the string.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<crate::types::ToxicContent>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicContent>>,
     /// <p>Overall toxicity score for the string. Value range is zero to one, where one is the highest confidence.</p>
     pub toxicity: ::std::option::Option<f32>,
 }
-impl ToxicLabels {
+impl  ToxicLabels  {
     /// <p>Array of toxic content types identified in the string.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[crate::types::ToxicContent] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [crate::types::ToxicContent] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Overall toxicity score for the string. Value range is zero to one, where one is the highest confidence.</p>
     pub fn toxicity(&self) -> ::std::option::Option<f32> {
@@ -32,7 +33,7 @@ impl ToxicLabels {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ToxicLabelsBuilder {
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::ToxicContent>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicContent>>,
     pub(crate) toxicity: ::std::option::Option<f32>,
 }
 impl ToxicLabelsBuilder {
@@ -43,17 +44,16 @@ impl ToxicLabelsBuilder {
     /// <p>Array of toxic content types identified in the string.</p>
     pub fn labels(mut self, input: crate::types::ToxicContent) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input);
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of toxic content types identified in the string.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicContent>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicContent>>) -> Self {
+        self.labels = input; self
     }
     /// <p>Array of toxic content types identified in the string.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicContent>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ToxicContent>> {
         &self.labels
     }
     /// <p>Overall toxicity score for the string. Value range is zero to one, where one is the highest confidence.</p>
@@ -63,8 +63,7 @@ impl ToxicLabelsBuilder {
     }
     /// <p>Overall toxicity score for the string. Value range is zero to one, where one is the highest confidence.</p>
     pub fn set_toxicity(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.toxicity = input;
-        self
+        self.toxicity = input; self
     }
     /// <p>Overall toxicity score for the string. Value range is zero to one, where one is the highest confidence.</p>
     pub fn get_toxicity(&self) -> &::std::option::Option<f32> {
@@ -73,8 +72,11 @@ impl ToxicLabelsBuilder {
     /// Consumes the builder and constructs a [`ToxicLabels`](crate::types::ToxicLabels).
     pub fn build(self) -> crate::types::ToxicLabels {
         crate::types::ToxicLabels {
-            labels: self.labels,
-            toxicity: self.toxicity,
+            labels: self.labels
+            ,
+            toxicity: self.toxicity
+            ,
         }
     }
 }
+

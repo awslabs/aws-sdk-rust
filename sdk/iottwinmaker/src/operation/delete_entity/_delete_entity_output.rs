@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEntityOutput {
+pub struct DeleteEntityOutput  {
     /// <p>The current state of the deleted entity.</p>
     pub state: crate::types::State,
     _request_id: Option<String>,
 }
-impl DeleteEntityOutput {
+impl  DeleteEntityOutput  {
     /// <p>The current state of the deleted entity.</p>
-    pub fn state(&self) -> &crate::types::State {
+    pub fn state(&self) -> & crate::types::State {
         &self.state
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteEntityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteEntityOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEntityOutput`](crate::operation::delete_entity::DeleteEntityOutput).
     pub fn builder() -> crate::operation::delete_entity::builders::DeleteEntityOutputBuilder {
@@ -41,36 +41,35 @@ impl DeleteEntityOutputBuilder {
     }
     /// <p>The current state of the deleted entity.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the deleted entity.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteEntityOutput`](crate::operation::delete_entity::DeleteEntityOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::operation::delete_entity::builders::DeleteEntityOutputBuilder::state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_entity::DeleteEntityOutput {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building DeleteEntityOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_entity::DeleteEntityOutput {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building DeleteEntityOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

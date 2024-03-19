@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutProjectPolicyInput {
+pub struct PutProjectPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>A name for the policy.</p>
@@ -12,21 +12,21 @@ pub struct PutProjectPolicyInput {
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
-impl PutProjectPolicyInput {
+impl  PutProjectPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>A name for the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
-    pub fn policy_revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> ::std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PutProjectPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutProjectPolicyInputBuilder {
     }
     /// <p>A name for the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>A name for the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl PutProjectPolicyInputBuilder {
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
     pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_revision_id = input;
-        self
+        self.policy_revision_id = input; self
     }
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +96,26 @@ impl PutProjectPolicyInputBuilder {
     }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }
     /// Consumes the builder and constructs a [`PutProjectPolicyInput`](crate::operation::put_project_policy::PutProjectPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_project_policy::PutProjectPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_project_policy::PutProjectPolicyInput {
-            project_arn: self.project_arn,
-            policy_name: self.policy_name,
-            policy_revision_id: self.policy_revision_id,
-            policy_document: self.policy_document,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_project_policy::PutProjectPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_project_policy::PutProjectPolicyInput {
+                project_arn: self.project_arn
+                ,
+                policy_name: self.policy_name
+                ,
+                policy_revision_id: self.policy_revision_id
+                ,
+                policy_document: self.policy_document
+                ,
+            }
+        )
     }
 }
+

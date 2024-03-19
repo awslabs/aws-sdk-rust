@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information to connect to Confluence as your data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfluenceConfiguration {
+pub struct ConfluenceConfiguration  {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
     pub server_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
@@ -22,9 +22,9 @@ pub struct ConfluenceConfiguration {
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Confluence. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
@@ -33,63 +33,63 @@ pub struct ConfluenceConfiguration {
     /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
     pub authentication_type: ::std::option::Option<crate::types::ConfluenceAuthenticationType>,
 }
-impl ConfluenceConfiguration {
+impl  ConfluenceConfiguration  {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
-    pub fn server_url(&self) -> &str {
-        use std::ops::Deref;
-        self.server_url.deref()
+    pub fn server_url(&self) -> & str {
+        use std::ops::Deref; self.server_url.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
     /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
-    pub fn secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_arn.deref()
+    pub fn secret_arn(&self) -> & str {
+        use std::ops::Deref; self.secret_arn.deref()
     }
     /// <p>The version or the type of Confluence installation to connect to.</p>
-    pub fn version(&self) -> &crate::types::ConfluenceVersion {
+    pub fn version(&self) -> & crate::types::ConfluenceVersion {
         &self.version
     }
     /// <p>Configuration information for indexing Confluence spaces.</p>
-    pub fn space_configuration(&self) -> ::std::option::Option<&crate::types::ConfluenceSpaceConfiguration> {
+    pub fn space_configuration(&self) -> ::std::option::Option<& crate::types::ConfluenceSpaceConfiguration> {
         self.space_configuration.as_ref()
     }
     /// <p>Configuration information for indexing Confluence pages.</p>
-    pub fn page_configuration(&self) -> ::std::option::Option<&crate::types::ConfluencePageConfiguration> {
+    pub fn page_configuration(&self) -> ::std::option::Option<& crate::types::ConfluencePageConfiguration> {
         self.page_configuration.as_ref()
     }
     /// <p>Configuration information for indexing Confluence blogs.</p>
-    pub fn blog_configuration(&self) -> ::std::option::Option<&crate::types::ConfluenceBlogConfiguration> {
+    pub fn blog_configuration(&self) -> ::std::option::Option<& crate::types::ConfluenceBlogConfiguration> {
         self.blog_configuration.as_ref()
     }
     /// <p>Configuration information for indexing attachments to Confluence blogs and pages.</p>
-    pub fn attachment_configuration(&self) -> ::std::option::Option<&crate::types::ConfluenceAttachmentConfiguration> {
+    pub fn attachment_configuration(&self) -> ::std::option::Option<& crate::types::ConfluenceAttachmentConfiguration> {
         self.attachment_configuration.as_ref()
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Confluence. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
-    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
-        self.inclusion_patterns.as_deref().unwrap_or_default()
+    pub fn inclusion_patterns(&self) -> & [::std::string::String] {
+        self.inclusion_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
-    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
-        self.exclusion_patterns.as_deref().unwrap_or_default()
+    pub fn exclusion_patterns(&self) -> & [::std::string::String] {
+        self.exclusion_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
     /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
-    pub fn proxy_configuration(&self) -> ::std::option::Option<&crate::types::ProxyConfiguration> {
+    pub fn proxy_configuration(&self) -> ::std::option::Option<& crate::types::ProxyConfiguration> {
         self.proxy_configuration.as_ref()
     }
     /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::ConfluenceAuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::ConfluenceAuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
@@ -112,8 +112,8 @@ pub struct ConfluenceConfigurationBuilder {
     pub(crate) blog_configuration: ::std::option::Option<crate::types::ConfluenceBlogConfiguration>,
     pub(crate) attachment_configuration: ::std::option::Option<crate::types::ConfluenceAttachmentConfiguration>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
-    pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) exclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::ConfluenceAuthenticationType>,
 }
@@ -126,8 +126,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
     pub fn set_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_url = input;
-        self
+        self.server_url = input; self
     }
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl ConfluenceConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
     /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
     /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
@@ -159,8 +157,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>The version or the type of Confluence installation to connect to.</p>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::ConfluenceVersion>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version or the type of Confluence installation to connect to.</p>
     pub fn get_version(&self) -> &::std::option::Option<crate::types::ConfluenceVersion> {
@@ -173,8 +170,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>Configuration information for indexing Confluence spaces.</p>
     pub fn set_space_configuration(mut self, input: ::std::option::Option<crate::types::ConfluenceSpaceConfiguration>) -> Self {
-        self.space_configuration = input;
-        self
+        self.space_configuration = input; self
     }
     /// <p>Configuration information for indexing Confluence spaces.</p>
     pub fn get_space_configuration(&self) -> &::std::option::Option<crate::types::ConfluenceSpaceConfiguration> {
@@ -187,8 +183,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>Configuration information for indexing Confluence pages.</p>
     pub fn set_page_configuration(mut self, input: ::std::option::Option<crate::types::ConfluencePageConfiguration>) -> Self {
-        self.page_configuration = input;
-        self
+        self.page_configuration = input; self
     }
     /// <p>Configuration information for indexing Confluence pages.</p>
     pub fn get_page_configuration(&self) -> &::std::option::Option<crate::types::ConfluencePageConfiguration> {
@@ -201,8 +196,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>Configuration information for indexing Confluence blogs.</p>
     pub fn set_blog_configuration(mut self, input: ::std::option::Option<crate::types::ConfluenceBlogConfiguration>) -> Self {
-        self.blog_configuration = input;
-        self
+        self.blog_configuration = input; self
     }
     /// <p>Configuration information for indexing Confluence blogs.</p>
     pub fn get_blog_configuration(&self) -> &::std::option::Option<crate::types::ConfluenceBlogConfiguration> {
@@ -215,8 +209,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>Configuration information for indexing attachments to Confluence blogs and pages.</p>
     pub fn set_attachment_configuration(mut self, input: ::std::option::Option<crate::types::ConfluenceAttachmentConfiguration>) -> Self {
-        self.attachment_configuration = input;
-        self
+        self.attachment_configuration = input; self
     }
     /// <p>Configuration information for indexing attachments to Confluence blogs and pages.</p>
     pub fn get_attachment_configuration(&self) -> &::std::option::Option<crate::types::ConfluenceAttachmentConfiguration> {
@@ -229,8 +222,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Confluence. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Confluence. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
@@ -243,17 +235,16 @@ impl ConfluenceConfigurationBuilder {
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
     pub fn inclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inclusion_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.inclusion_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inclusion_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    pub fn set_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inclusion_patterns = input;
-        self
+    pub fn set_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inclusion_patterns = input; self
     }
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    pub fn get_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inclusion_patterns
     }
     /// Appends an item to `exclusion_patterns`.
@@ -263,17 +254,16 @@ impl ConfluenceConfigurationBuilder {
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
     pub fn exclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusion_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.exclusion_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclusion_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    pub fn set_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclusion_patterns = input;
-        self
+    pub fn set_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclusion_patterns = input; self
     }
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    pub fn get_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclusion_patterns
     }
     /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
@@ -289,8 +279,7 @@ impl ConfluenceConfigurationBuilder {
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
     /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
     pub fn set_proxy_configuration(mut self, input: ::std::option::Option<crate::types::ProxyConfiguration>) -> Self {
-        self.proxy_configuration = input;
-        self
+        self.proxy_configuration = input; self
     }
     /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
@@ -306,8 +295,7 @@ impl ConfluenceConfigurationBuilder {
     }
     /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::ConfluenceAuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::ConfluenceAuthenticationType> {
@@ -319,34 +307,43 @@ impl ConfluenceConfigurationBuilder {
     /// - [`secret_arn`](crate::types::builders::ConfluenceConfigurationBuilder::secret_arn)
     /// - [`version`](crate::types::builders::ConfluenceConfigurationBuilder::version)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfluenceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfluenceConfiguration {
-            server_url: self.server_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "server_url",
-                    "server_url was not specified but it is required when building ConfluenceConfiguration",
-                )
-            })?,
-            secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_arn",
-                    "secret_arn was not specified but it is required when building ConfluenceConfiguration",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building ConfluenceConfiguration",
-                )
-            })?,
-            space_configuration: self.space_configuration,
-            page_configuration: self.page_configuration,
-            blog_configuration: self.blog_configuration,
-            attachment_configuration: self.attachment_configuration,
-            vpc_configuration: self.vpc_configuration,
-            inclusion_patterns: self.inclusion_patterns,
-            exclusion_patterns: self.exclusion_patterns,
-            proxy_configuration: self.proxy_configuration,
-            authentication_type: self.authentication_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfluenceConfiguration {
+                server_url: self.server_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("server_url", "server_url was not specified but it is required when building ConfluenceConfiguration")
+                    )?
+                ,
+                secret_arn: self.secret_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_arn", "secret_arn was not specified but it is required when building ConfluenceConfiguration")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building ConfluenceConfiguration")
+                    )?
+                ,
+                space_configuration: self.space_configuration
+                ,
+                page_configuration: self.page_configuration
+                ,
+                blog_configuration: self.blog_configuration
+                ,
+                attachment_configuration: self.attachment_configuration
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                inclusion_patterns: self.inclusion_patterns
+                ,
+                exclusion_patterns: self.exclusion_patterns
+                ,
+                proxy_configuration: self.proxy_configuration
+                ,
+                authentication_type: self.authentication_type
+                ,
+            }
+        )
     }
 }
+

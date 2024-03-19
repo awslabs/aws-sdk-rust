@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKxVolumeInput {
+pub struct UpdateKxVolumeInput  {
     /// <p>A unique identifier for the kdb environment where you created the storage volume.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the volume.</p>
@@ -14,25 +14,25 @@ pub struct UpdateKxVolumeInput {
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub nas1_configuration: ::std::option::Option<crate::types::KxNas1Configuration>,
 }
-impl UpdateKxVolumeInput {
+impl  UpdateKxVolumeInput  {
     /// <p>A unique identifier for the kdb environment where you created the storage volume.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique identifier for the volume.</p>
-    pub fn volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn volume_name(&self) -> ::std::option::Option<& str> {
         self.volume_name.as_deref()
     }
     /// <p>A description of the volume.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
-    pub fn nas1_configuration(&self) -> ::std::option::Option<&crate::types::KxNas1Configuration> {
+    pub fn nas1_configuration(&self) -> ::std::option::Option<& crate::types::KxNas1Configuration> {
         self.nas1_configuration.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateKxVolumeInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment where you created the storage volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment where you created the storage volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateKxVolumeInputBuilder {
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_name = input;
-        self
+        self.volume_name = input; self
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdateKxVolumeInputBuilder {
     }
     /// <p>A description of the volume.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the volume.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl UpdateKxVolumeInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,23 +115,28 @@ impl UpdateKxVolumeInputBuilder {
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn set_nas1_configuration(mut self, input: ::std::option::Option<crate::types::KxNas1Configuration>) -> Self {
-        self.nas1_configuration = input;
-        self
+        self.nas1_configuration = input; self
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn get_nas1_configuration(&self) -> &::std::option::Option<crate::types::KxNas1Configuration> {
         &self.nas1_configuration
     }
     /// Consumes the builder and constructs a [`UpdateKxVolumeInput`](crate::operation::update_kx_volume::UpdateKxVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_kx_volume::UpdateKxVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_kx_volume::UpdateKxVolumeInput {
-            environment_id: self.environment_id,
-            volume_name: self.volume_name,
-            description: self.description,
-            client_token: self.client_token,
-            nas1_configuration: self.nas1_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_kx_volume::UpdateKxVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_kx_volume::UpdateKxVolumeInput {
+                environment_id: self.environment_id
+                ,
+                volume_name: self.volume_name
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+                nas1_configuration: self.nas1_configuration
+                ,
+            }
+        )
     }
 }
+

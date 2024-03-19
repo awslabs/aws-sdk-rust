@@ -3,7 +3,7 @@
 /// <p>Describes a filter that returns a more specific list of Amazon ECS service recommendations. Use this filter with the <code>GetECSServiceRecommendations</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsServiceRecommendationFilter {
+pub struct EcsServiceRecommendationFilter  {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification.</p>
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code.</p>
@@ -19,16 +19,16 @@ pub struct EcsServiceRecommendationFilter {
     /// <li>
     /// <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p></li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EcsServiceRecommendationFilter {
+impl  EcsServiceRecommendationFilter  {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification.</p>
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code.</p>
     /// <p>You can filter your Amazon ECS service recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::EcsServiceRecommendationFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::EcsServiceRecommendationFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
@@ -39,10 +39,11 @@ impl EcsServiceRecommendationFilter {
     /// <li>
     /// <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EcsServiceRecommendationFilter {
@@ -57,7 +58,7 @@ impl EcsServiceRecommendationFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsServiceRecommendationFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EcsServiceRecommendationFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EcsServiceRecommendationFilterBuilder {
     /// <p>The name of the filter.</p>
@@ -77,8 +78,7 @@ impl EcsServiceRecommendationFilterBuilder {
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::EcsServiceRecommendationFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification.</p>
@@ -103,9 +103,9 @@ impl EcsServiceRecommendationFilterBuilder {
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows:</p>
@@ -115,9 +115,8 @@ impl EcsServiceRecommendationFilterBuilder {
     /// <li>
     /// <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p></li>
     /// </ul>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows:</p>
@@ -127,14 +126,17 @@ impl EcsServiceRecommendationFilterBuilder {
     /// <li>
     /// <p>If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>, specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or <code>MemoryOverprovisioned</code>.</p></li>
     /// </ul>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`EcsServiceRecommendationFilter`](crate::types::EcsServiceRecommendationFilter).
     pub fn build(self) -> crate::types::EcsServiceRecommendationFilter {
         crate::types::EcsServiceRecommendationFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

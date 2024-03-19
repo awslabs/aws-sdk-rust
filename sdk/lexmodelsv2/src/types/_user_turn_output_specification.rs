@@ -3,27 +3,28 @@
 /// <p>Contains results that are output for the user turn by the test execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserTurnOutputSpecification {
+pub struct UserTurnOutputSpecification  {
     /// <p>Contains information about the intent.</p>
     pub intent: ::std::option::Option<crate::types::UserTurnIntentOutput>,
     /// <p>The contexts that are active in the turn.</p>
-    pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
     /// <p>The transcript that is output for the user turn by the test execution.</p>
     pub transcript: ::std::option::Option<::std::string::String>,
 }
-impl UserTurnOutputSpecification {
+impl  UserTurnOutputSpecification  {
     /// <p>Contains information about the intent.</p>
-    pub fn intent(&self) -> ::std::option::Option<&crate::types::UserTurnIntentOutput> {
+    pub fn intent(&self) -> ::std::option::Option<& crate::types::UserTurnIntentOutput> {
         self.intent.as_ref()
     }
     /// <p>The contexts that are active in the turn.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
-    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
-        self.active_contexts.as_deref().unwrap_or_default()
+    pub fn active_contexts(&self) -> & [crate::types::ActiveContext] {
+        self.active_contexts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The transcript that is output for the user turn by the test execution.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&str> {
+    pub fn transcript(&self) -> ::std::option::Option<& str> {
         self.transcript.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl UserTurnOutputSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserTurnOutputSpecificationBuilder {
     pub(crate) intent: ::std::option::Option<crate::types::UserTurnIntentOutput>,
-    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
     pub(crate) transcript: ::std::option::Option<::std::string::String>,
 }
 impl UserTurnOutputSpecificationBuilder {
@@ -51,8 +52,7 @@ impl UserTurnOutputSpecificationBuilder {
     }
     /// <p>Contains information about the intent.</p>
     pub fn set_intent(mut self, input: ::std::option::Option<crate::types::UserTurnIntentOutput>) -> Self {
-        self.intent = input;
-        self
+        self.intent = input; self
     }
     /// <p>Contains information about the intent.</p>
     pub fn get_intent(&self) -> &::std::option::Option<crate::types::UserTurnIntentOutput> {
@@ -65,17 +65,16 @@ impl UserTurnOutputSpecificationBuilder {
     /// <p>The contexts that are active in the turn.</p>
     pub fn active_contexts(mut self, input: crate::types::ActiveContext) -> Self {
         let mut v = self.active_contexts.unwrap_or_default();
-        v.push(input);
-        self.active_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.active_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The contexts that are active in the turn.</p>
-    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>) -> Self {
-        self.active_contexts = input;
-        self
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>) -> Self {
+        self.active_contexts = input; self
     }
     /// <p>The contexts that are active in the turn.</p>
-    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>> {
         &self.active_contexts
     }
     /// <p>The transcript that is output for the user turn by the test execution.</p>
@@ -85,8 +84,7 @@ impl UserTurnOutputSpecificationBuilder {
     }
     /// <p>The transcript that is output for the user turn by the test execution.</p>
     pub fn set_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
     }
     /// <p>The transcript that is output for the user turn by the test execution.</p>
     pub fn get_transcript(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +93,13 @@ impl UserTurnOutputSpecificationBuilder {
     /// Consumes the builder and constructs a [`UserTurnOutputSpecification`](crate::types::UserTurnOutputSpecification).
     pub fn build(self) -> crate::types::UserTurnOutputSpecification {
         crate::types::UserTurnOutputSpecification {
-            intent: self.intent,
-            active_contexts: self.active_contexts,
-            transcript: self.transcript,
+            intent: self.intent
+            ,
+            active_contexts: self.active_contexts
+            ,
+            transcript: self.transcript
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The Amazon S3 storage configuration of a hub.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HubS3StorageConfig {
+pub struct HubS3StorageConfig  {
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
     pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
-impl HubS3StorageConfig {
+impl  HubS3StorageConfig  {
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
-    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<& str> {
         self.s3_output_path.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl HubS3StorageConfigBuilder {
     }
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
     pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_output_path = input;
-        self
+        self.s3_output_path = input; self
     }
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
     pub fn get_s3_output_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl HubS3StorageConfigBuilder {
     /// Consumes the builder and constructs a [`HubS3StorageConfig`](crate::types::HubS3StorageConfig).
     pub fn build(self) -> crate::types::HubS3StorageConfig {
         crate::types::HubS3StorageConfig {
-            s3_output_path: self.s3_output_path,
+            s3_output_path: self.s3_output_path
+            ,
         }
     }
 }
+

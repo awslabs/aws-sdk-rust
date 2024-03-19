@@ -3,22 +3,23 @@
 /// <p>A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectTextFilters {
+pub struct DetectTextFilters  {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
     pub word_filter: ::std::option::Option<crate::types::DetectionFilter>,
     /// <p>A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-    pub regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
+    pub regions_of_interest: ::std::option::Option<::std::vec::Vec::<crate::types::RegionOfInterest>>,
 }
-impl DetectTextFilters {
+impl  DetectTextFilters  {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
-    pub fn word_filter(&self) -> ::std::option::Option<&crate::types::DetectionFilter> {
+    pub fn word_filter(&self) -> ::std::option::Option<& crate::types::DetectionFilter> {
         self.word_filter.as_ref()
     }
     /// <p>A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_of_interest.is_none()`.
-    pub fn regions_of_interest(&self) -> &[crate::types::RegionOfInterest] {
-        self.regions_of_interest.as_deref().unwrap_or_default()
+    pub fn regions_of_interest(&self) -> & [crate::types::RegionOfInterest] {
+        self.regions_of_interest.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DetectTextFilters {
@@ -33,7 +34,7 @@ impl DetectTextFilters {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectTextFiltersBuilder {
     pub(crate) word_filter: ::std::option::Option<crate::types::DetectionFilter>,
-    pub(crate) regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
+    pub(crate) regions_of_interest: ::std::option::Option<::std::vec::Vec::<crate::types::RegionOfInterest>>,
 }
 impl DetectTextFiltersBuilder {
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
@@ -43,8 +44,7 @@ impl DetectTextFiltersBuilder {
     }
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
     pub fn set_word_filter(mut self, input: ::std::option::Option<crate::types::DetectionFilter>) -> Self {
-        self.word_filter = input;
-        self
+        self.word_filter = input; self
     }
     /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
     pub fn get_word_filter(&self) -> &::std::option::Option<crate::types::DetectionFilter> {
@@ -57,24 +57,26 @@ impl DetectTextFiltersBuilder {
     /// <p>A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
     pub fn regions_of_interest(mut self, input: crate::types::RegionOfInterest) -> Self {
         let mut v = self.regions_of_interest.unwrap_or_default();
-        v.push(input);
-        self.regions_of_interest = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regions_of_interest = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-    pub fn set_regions_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>) -> Self {
-        self.regions_of_interest = input;
-        self
+    pub fn set_regions_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegionOfInterest>>) -> Self {
+        self.regions_of_interest = input; self
     }
     /// <p>A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
-    pub fn get_regions_of_interest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
+    pub fn get_regions_of_interest(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegionOfInterest>> {
         &self.regions_of_interest
     }
     /// Consumes the builder and constructs a [`DetectTextFilters`](crate::types::DetectTextFilters).
     pub fn build(self) -> crate::types::DetectTextFilters {
         crate::types::DetectTextFilters {
-            word_filter: self.word_filter,
-            regions_of_interest: self.regions_of_interest,
+            word_filter: self.word_filter
+            ,
+            regions_of_interest: self.regions_of_interest
+            ,
         }
     }
 }
+

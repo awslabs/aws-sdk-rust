@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTransitGatewayPrefixListReferenceInput {
+pub struct CreateTransitGatewayPrefixListReferenceInput  {
     /// <p>The ID of the transit gateway route table.</p>
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list that is used for destination matches.</p>
@@ -14,17 +14,17 @@ pub struct CreateTransitGatewayPrefixListReferenceInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl CreateTransitGatewayPrefixListReferenceInput {
+impl  CreateTransitGatewayPrefixListReferenceInput  {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the prefix list that is used for destination matches.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
@@ -38,8 +38,7 @@ impl CreateTransitGatewayPrefixListReferenceInput {
 }
 impl CreateTransitGatewayPrefixListReferenceInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPrefixListReferenceInput`](crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceInputBuilder {
         crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceInputBuilder::default()
     }
 }
@@ -63,8 +62,7 @@ impl CreateTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = input;
-        self
+        self.transit_gateway_route_table_id = input; self
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl CreateTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>The ID of the prefix list that is used for destination matches.</p>
     pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The ID of the prefix list that is used for destination matches.</p>
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl CreateTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
     pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>The ID of the attachment to which traffic is routed.</p>
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +102,7 @@ impl CreateTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
     pub fn set_blackhole(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.blackhole = input;
-        self
+        self.blackhole = input; self
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>
     pub fn get_blackhole(&self) -> &::std::option::Option<bool> {
@@ -120,28 +115,28 @@ impl CreateTransitGatewayPrefixListReferenceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayPrefixListReferenceInput`](crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput {
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-                prefix_list_id: self.prefix_list_id,
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-                blackhole: self.blackhole,
-                dry_run: self.dry_run,
-            },
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id
+                ,
+                prefix_list_id: self.prefix_list_id
+                ,
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id
+                ,
+                blackhole: self.blackhole
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

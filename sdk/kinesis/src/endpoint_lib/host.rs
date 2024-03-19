@@ -6,7 +6,11 @@
 
 use crate::endpoint_lib::diagnostic::DiagnosticCollector;
 
-pub(crate) fn is_valid_host_label(label: &str, allow_dots: bool, e: &mut DiagnosticCollector) -> bool {
+pub(crate) fn is_valid_host_label(
+    label: &str,
+    allow_dots: bool,
+    e: &mut DiagnosticCollector,
+) -> bool {
     if allow_dots {
         for part in label.split('.') {
             if !is_valid_host_label(part, false, e) {
@@ -49,7 +53,10 @@ mod test {
         assert_eq!(is_valid_host_label("a.b.c", true), true);
         assert_eq!(is_valid_host_label("a_b", true), false);
         assert_eq!(is_valid_host_label(&"a".repeat(64), false), false);
-        assert_eq!(is_valid_host_label(&format!("{}.{}", "a".repeat(63), "a".repeat(63)), true), true);
+        assert_eq!(
+            is_valid_host_label(&format!("{}.{}", "a".repeat(63), "a".repeat(63)), true),
+            true
+        );
     }
 
     #[allow(clippy::bool_assert_comparison)]
@@ -70,3 +77,4 @@ mod test {
         }
     }
 }
+

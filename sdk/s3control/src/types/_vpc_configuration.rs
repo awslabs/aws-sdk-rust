@@ -3,15 +3,14 @@
 /// <p>The virtual private cloud (VPC) configuration for an access point.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConfiguration {
+pub struct VpcConfiguration  {
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
     pub vpc_id: ::std::string::String,
 }
-impl VpcConfiguration {
+impl  VpcConfiguration  {
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
-    pub fn vpc_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vpc_id.deref()
+    pub fn vpc_id(&self) -> & str {
+        use std::ops::Deref; self.vpc_id.deref()
     }
 }
 impl VpcConfiguration {
@@ -36,8 +35,7 @@ impl VpcConfigurationBuilder {
     }
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>If this field is specified, this access point will only allow connections from the specified VPC ID.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl VpcConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`vpc_id`](crate::types::builders::VpcConfigurationBuilder::vpc_id)
     pub fn build(self) -> ::std::result::Result<crate::types::VpcConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VpcConfiguration {
-            vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vpc_id",
-                    "vpc_id was not specified but it is required when building VpcConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VpcConfiguration {
+                vpc_id: self.vpc_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_id", "vpc_id was not specified but it is required when building VpcConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

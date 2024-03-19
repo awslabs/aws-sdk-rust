@@ -3,7 +3,7 @@
 /// <p>A customized metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomizedMetricSpecification {
+pub struct CustomizedMetricSpecification  {
     /// <p>The name of the customized metric.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the customized metric.</p>
@@ -11,17 +11,17 @@ pub struct CustomizedMetricSpecification {
     /// <p>The statistic of the customized metric.</p>
     pub statistic: ::std::option::Option<crate::types::Statistic>,
 }
-impl CustomizedMetricSpecification {
+impl  CustomizedMetricSpecification  {
     /// <p>The name of the customized metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace of the customized metric.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The statistic of the customized metric.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::Statistic> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::Statistic> {
         self.statistic.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CustomizedMetricSpecificationBuilder {
     }
     /// <p>The name of the customized metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the customized metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CustomizedMetricSpecificationBuilder {
     }
     /// <p>The namespace of the customized metric.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the customized metric.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl CustomizedMetricSpecificationBuilder {
     }
     /// <p>The statistic of the customized metric.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The statistic of the customized metric.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
@@ -86,9 +83,13 @@ impl CustomizedMetricSpecificationBuilder {
     /// Consumes the builder and constructs a [`CustomizedMetricSpecification`](crate::types::CustomizedMetricSpecification).
     pub fn build(self) -> crate::types::CustomizedMetricSpecification {
         crate::types::CustomizedMetricSpecification {
-            metric_name: self.metric_name,
-            namespace: self.namespace,
-            statistic: self.statistic,
+            metric_name: self.metric_name
+            ,
+            namespace: self.namespace
+            ,
+            statistic: self.statistic
+            ,
         }
     }
 }
+

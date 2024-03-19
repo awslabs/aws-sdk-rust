@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEvaluationInput {
+pub struct CreateEvaluationInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
@@ -13,22 +13,22 @@ pub struct CreateEvaluationInput {
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
     pub evaluation_data_source_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateEvaluationInput {
+impl  CreateEvaluationInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<& str> {
         self.evaluation_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-    pub fn evaluation_name(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_name(&self) -> ::std::option::Option<& str> {
         self.evaluation_name.as_deref()
     }
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
-    pub fn evaluation_data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_data_source_id(&self) -> ::std::option::Option<& str> {
         self.evaluation_data_source_id.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl CreateEvaluationInputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
     pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_id = input;
-        self
+        self.evaluation_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
     pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl CreateEvaluationInputBuilder {
     }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
     pub fn set_evaluation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_name = input;
-        self
+        self.evaluation_name = input; self
     }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
     pub fn get_evaluation_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +86,7 @@ impl CreateEvaluationInputBuilder {
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
@@ -104,22 +101,26 @@ impl CreateEvaluationInputBuilder {
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
     pub fn set_evaluation_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_data_source_id = input;
-        self
+        self.evaluation_data_source_id = input; self
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
     pub fn get_evaluation_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_data_source_id
     }
     /// Consumes the builder and constructs a [`CreateEvaluationInput`](crate::operation::create_evaluation::CreateEvaluationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_evaluation::CreateEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_evaluation::CreateEvaluationInput {
-            evaluation_id: self.evaluation_id,
-            evaluation_name: self.evaluation_name,
-            ml_model_id: self.ml_model_id,
-            evaluation_data_source_id: self.evaluation_data_source_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_evaluation::CreateEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_evaluation::CreateEvaluationInput {
+                evaluation_id: self.evaluation_id
+                ,
+                evaluation_name: self.evaluation_name
+                ,
+                ml_model_id: self.ml_model_id
+                ,
+                evaluation_data_source_id: self.evaluation_data_source_id
+                ,
+            }
+        )
     }
 }
+

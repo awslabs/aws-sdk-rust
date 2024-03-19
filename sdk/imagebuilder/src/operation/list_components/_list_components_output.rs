@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentsOutput {
+pub struct ListComponentsOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of component semantic versions.</p><note>
@@ -19,14 +19,14 @@ pub struct ListComponentsOutput {
     /// </minor>
     /// </major></p>
     /// </note>
-    pub component_version_list: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
+    pub component_version_list: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentVersion>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListComponentsOutput {
+impl  ListComponentsOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The list of component semantic versions.</p><note>
@@ -43,21 +43,22 @@ impl ListComponentsOutput {
     /// </minor>
     /// </major></p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_version_list.is_none()`.
-    pub fn component_version_list(&self) -> &[crate::types::ComponentVersion] {
-        self.component_version_list.as_deref().unwrap_or_default()
+    pub fn component_version_list(&self) -> & [crate::types::ComponentVersion] {
+        self.component_version_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListComponentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
     pub fn builder() -> crate::operation::list_components::builders::ListComponentsOutputBuilder {
@@ -70,7 +71,7 @@ impl ListComponentsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) component_version_list: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
+    pub(crate) component_version_list: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -82,8 +83,7 @@ impl ListComponentsOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,9 +109,9 @@ impl ListComponentsOutputBuilder {
     /// </note>
     pub fn component_version_list(mut self, input: crate::types::ComponentVersion) -> Self {
         let mut v = self.component_version_list.unwrap_or_default();
-        v.push(input);
-        self.component_version_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.component_version_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of component semantic versions.</p><note>
     /// <p>The semantic version has four nodes: <major>
@@ -127,9 +127,8 @@ impl ListComponentsOutputBuilder {
     /// </minor>
     /// </major></p>
     /// </note>
-    pub fn set_component_version_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>) -> Self {
-        self.component_version_list = input;
-        self
+    pub fn set_component_version_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentVersion>>) -> Self {
+        self.component_version_list = input; self
     }
     /// <p>The list of component semantic versions.</p><note>
     /// <p>The semantic version has four nodes: <major>
@@ -145,7 +144,7 @@ impl ListComponentsOutputBuilder {
     /// </minor>
     /// </major></p>
     /// </note>
-    pub fn get_component_version_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>> {
+    pub fn get_component_version_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentVersion>> {
         &self.component_version_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -155,29 +154,32 @@ impl ListComponentsOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
     pub fn build(self) -> crate::operation::list_components::ListComponentsOutput {
         crate::operation::list_components::ListComponentsOutput {
-            request_id: self.request_id,
-            component_version_list: self.component_version_list,
-            next_token: self.next_token,
+            request_id: self.request_id
+            ,
+            component_version_list: self.component_version_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

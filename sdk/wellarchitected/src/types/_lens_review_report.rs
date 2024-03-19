@@ -3,7 +3,7 @@
 /// <p>A report of a lens review.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LensReviewReport {
+pub struct LensReviewReport  {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
@@ -16,22 +16,22 @@ pub struct LensReviewReport {
     /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
     pub base64_string: ::std::option::Option<::std::string::String>,
 }
-impl LensReviewReport {
+impl  LensReviewReport  {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
     /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
-    pub fn base64_string(&self) -> ::std::option::Option<&str> {
+    pub fn base64_string(&self) -> ::std::option::Option<& str> {
         self.base64_string.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl LensReviewReportBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -81,8 +80,7 @@ impl LensReviewReportBuilder {
     }
     /// <p>The ARN for the lens.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>The ARN for the lens.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl LensReviewReportBuilder {
     /// <p>This data can be used to create a PDF file.</p>
     /// <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
     pub fn set_base64_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base64_string = input;
-        self
+        self.base64_string = input; self
     }
     /// <p>The Base64-encoded string representation of a lens review report.</p>
     /// <p>This data can be used to create a PDF file.</p>
@@ -111,9 +108,13 @@ impl LensReviewReportBuilder {
     /// Consumes the builder and constructs a [`LensReviewReport`](crate::types::LensReviewReport).
     pub fn build(self) -> crate::types::LensReviewReport {
         crate::types::LensReviewReport {
-            lens_alias: self.lens_alias,
-            lens_arn: self.lens_arn,
-            base64_string: self.base64_string,
+            lens_alias: self.lens_alias
+            ,
+            lens_arn: self.lens_arn
+            ,
+            base64_string: self.base64_string
+            ,
         }
     }
 }
+

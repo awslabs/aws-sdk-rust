@@ -3,7 +3,7 @@
 /// Embedded Source Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmbeddedSourceSettings {
+pub struct EmbeddedSourceSettings  {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
     pub convert608_to708: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
@@ -13,13 +13,13 @@ pub struct EmbeddedSourceSettings {
     /// This field is unused and deprecated.
     pub source608_track_number: ::std::option::Option<i32>,
 }
-impl EmbeddedSourceSettings {
+impl  EmbeddedSourceSettings  {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    pub fn convert608_to708(&self) -> ::std::option::Option<&crate::types::EmbeddedConvert608To708> {
+    pub fn convert608_to708(&self) -> ::std::option::Option<& crate::types::EmbeddedConvert608To708> {
         self.convert608_to708.as_ref()
     }
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
-    pub fn scte20_detection(&self) -> ::std::option::Option<&crate::types::EmbeddedScte20Detection> {
+    pub fn scte20_detection(&self) -> ::std::option::Option<& crate::types::EmbeddedScte20Detection> {
         self.scte20_detection.as_ref()
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
@@ -55,8 +55,7 @@ impl EmbeddedSourceSettingsBuilder {
     }
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
     pub fn set_convert608_to708(mut self, input: ::std::option::Option<crate::types::EmbeddedConvert608To708>) -> Self {
-        self.convert608_to708 = input;
-        self
+        self.convert608_to708 = input; self
     }
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
     pub fn get_convert608_to708(&self) -> &::std::option::Option<crate::types::EmbeddedConvert608To708> {
@@ -69,8 +68,7 @@ impl EmbeddedSourceSettingsBuilder {
     }
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
     pub fn set_scte20_detection(mut self, input: ::std::option::Option<crate::types::EmbeddedScte20Detection>) -> Self {
-        self.scte20_detection = input;
-        self
+        self.scte20_detection = input; self
     }
     /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
     pub fn get_scte20_detection(&self) -> &::std::option::Option<crate::types::EmbeddedScte20Detection> {
@@ -83,8 +81,7 @@ impl EmbeddedSourceSettingsBuilder {
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn set_source608_channel_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.source608_channel_number = input;
-        self
+        self.source608_channel_number = input; self
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn get_source608_channel_number(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl EmbeddedSourceSettingsBuilder {
     }
     /// This field is unused and deprecated.
     pub fn set_source608_track_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.source608_track_number = input;
-        self
+        self.source608_track_number = input; self
     }
     /// This field is unused and deprecated.
     pub fn get_source608_track_number(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl EmbeddedSourceSettingsBuilder {
     /// Consumes the builder and constructs a [`EmbeddedSourceSettings`](crate::types::EmbeddedSourceSettings).
     pub fn build(self) -> crate::types::EmbeddedSourceSettings {
         crate::types::EmbeddedSourceSettings {
-            convert608_to708: self.convert608_to708,
-            scte20_detection: self.scte20_detection,
-            source608_channel_number: self.source608_channel_number,
-            source608_track_number: self.source608_track_number,
+            convert608_to708: self.convert608_to708
+            ,
+            scte20_detection: self.scte20_detection
+            ,
+            source608_channel_number: self.source608_channel_number
+            ,
+            source608_track_number: self.source608_track_number
+            ,
         }
     }
 }
+

@@ -4,19 +4,19 @@
 /// <p>When activated, Lightsail creates an Identity and Access Management (IAM) role for the specified Lightsail container service. You can use the ARN of the role to create a trust relationship between your Lightsail container service and an Amazon ECR private repository in your Amazon Web Services account. This allows your container service to pull images from Amazon ECR private repositories. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerServiceEcrImagePullerRole {
+pub struct ContainerServiceEcrImagePullerRole  {
     /// <p>A Boolean value that indicates whether the role is activated.</p>
     pub is_active: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
     pub principal_arn: ::std::option::Option<::std::string::String>,
 }
-impl ContainerServiceEcrImagePullerRole {
+impl  ContainerServiceEcrImagePullerRole  {
     /// <p>A Boolean value that indicates whether the role is activated.</p>
     pub fn is_active(&self) -> ::std::option::Option<bool> {
         self.is_active
     }
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-    pub fn principal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn principal_arn(&self) -> ::std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ContainerServiceEcrImagePullerRoleBuilder {
     }
     /// <p>A Boolean value that indicates whether the role is activated.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_active = input;
-        self
+        self.is_active = input; self
     }
     /// <p>A Boolean value that indicates whether the role is activated.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl ContainerServiceEcrImagePullerRoleBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl ContainerServiceEcrImagePullerRoleBuilder {
     /// Consumes the builder and constructs a [`ContainerServiceEcrImagePullerRole`](crate::types::ContainerServiceEcrImagePullerRole).
     pub fn build(self) -> crate::types::ContainerServiceEcrImagePullerRole {
         crate::types::ContainerServiceEcrImagePullerRole {
-            is_active: self.is_active,
-            principal_arn: self.principal_arn,
+            is_active: self.is_active
+            ,
+            principal_arn: self.principal_arn
+            ,
         }
     }
 }
+

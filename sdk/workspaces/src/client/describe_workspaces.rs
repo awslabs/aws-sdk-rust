@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWorkspaces`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workspace_ids(impl Into<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::workspace_ids) / [`set_workspace_ids(Option<Vec::<String>>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::set_workspace_ids):<br>required: **false**<br><p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p> <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p><br>
     ///   - [`directory_id(impl Into<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::set_directory_id):<br>required: **false**<br><p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p><br>
     ///   - [`user_name(impl Into<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::set_user_name):<br>required: **false**<br><p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`limit(i32)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::set_next_token):<br>required: **false**<br><p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p><br>
     ///   - [`workspace_name(impl Into<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::workspace_name) / [`set_workspace_name(Option<String>)`](crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::set_workspace_name):<br>required: **false**<br><p>The name of the user-decoupled WorkSpace.</p><br>
-    /// - On success, responds with [`DescribeWorkspacesOutput`](crate::operation::describe_workspaces::DescribeWorkspacesOutput) with field(s):
+                            /// - On success, responds with [`DescribeWorkspacesOutput`](crate::operation::describe_workspaces::DescribeWorkspacesOutput) with field(s):
     ///   - [`workspaces(Option<Vec::<Workspace>>)`](crate::operation::describe_workspaces::DescribeWorkspacesOutput::workspaces): <p>Information about the WorkSpaces.</p> <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_workspaces::DescribeWorkspacesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeWorkspacesError>`](crate::operation::describe_workspaces::DescribeWorkspacesError)
+                            /// - On failure, responds with [`SdkError<DescribeWorkspacesError>`](crate::operation::describe_workspaces::DescribeWorkspacesError)
     pub fn describe_workspaces(&self) -> crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder {
-        crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_workspaces::builders::DescribeWorkspacesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

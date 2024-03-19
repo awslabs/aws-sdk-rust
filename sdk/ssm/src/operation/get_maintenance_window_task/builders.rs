@@ -5,23 +5,20 @@ pub use crate::operation::get_maintenance_window_task::_get_maintenance_window_t
 
 impl GetMaintenanceWindowTaskInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_maintenance_window_task();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_maintenance_window_task();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetMaintenanceWindowTask`.
-///
+/// 
 /// <p>Retrieves the details of a maintenance window task.</p><note>
 /// <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl GetMaintenanceWindowTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder,
+                    inner: crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
-        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-    > for GetMaintenanceWindowTaskFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
-            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
+                    crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
+                > for GetMaintenanceWindowTaskFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
+                        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetMaintenanceWindowTaskFluentBuilder {
     /// Creates a new `GetMaintenanceWindowTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl GetMaintenanceWindowTaskFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_maintenance_window_task::GetMaintenanceWindowTask::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTask::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
-        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_maintenance_window_task::GetMaintenanceWindowTask::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTask::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput, crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The maintenance window ID that includes the task to retrieve.</p>
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
@@ -140,3 +127,4 @@ impl GetMaintenanceWindowTaskFluentBuilder {
         self.inner.get_window_task_id()
     }
 }
+

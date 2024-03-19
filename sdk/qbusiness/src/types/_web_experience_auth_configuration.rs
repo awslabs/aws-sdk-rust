@@ -21,11 +21,7 @@ impl WebExperienceAuthConfiguration {
     /// Tries to convert the enum instance into [`SamlConfiguration`](crate::types::WebExperienceAuthConfiguration::SamlConfiguration), extracting the inner [`SamlConfiguration`](crate::types::SamlConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_saml_configuration(&self) -> ::std::result::Result<&crate::types::SamlConfiguration, &Self> {
-        if let WebExperienceAuthConfiguration::SamlConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let WebExperienceAuthConfiguration::SamlConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SamlConfiguration`](crate::types::WebExperienceAuthConfiguration::SamlConfiguration).
     pub fn is_saml_configuration(&self) -> bool {
@@ -36,3 +32,4 @@ impl WebExperienceAuthConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

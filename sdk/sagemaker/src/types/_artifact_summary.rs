@@ -3,7 +3,7 @@
 /// <p>Lists a summary of the properties of an artifact. An artifact represents a URI addressable object or data. Some examples are a dataset and a model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArtifactSummary {
+pub struct ArtifactSummary  {
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
     pub artifact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the artifact.</p>
@@ -17,29 +17,29 @@ pub struct ArtifactSummary {
     /// <p>When the artifact was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ArtifactSummary {
+impl  ArtifactSummary  {
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
-    pub fn artifact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_arn(&self) -> ::std::option::Option<& str> {
         self.artifact_arn.as_deref()
     }
     /// <p>The name of the artifact.</p>
-    pub fn artifact_name(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_name(&self) -> ::std::option::Option<& str> {
         self.artifact_name.as_deref()
     }
     /// <p>The source of the artifact.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ArtifactSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ArtifactSource> {
         self.source.as_ref()
     }
     /// <p>The type of the artifact.</p>
-    pub fn artifact_type(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_type(&self) -> ::std::option::Option<& str> {
         self.artifact_type.as_deref()
     }
     /// <p>When the artifact was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the artifact was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl ArtifactSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
     pub fn set_artifact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_arn = input;
-        self
+        self.artifact_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
     pub fn get_artifact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ArtifactSummaryBuilder {
     }
     /// <p>The name of the artifact.</p>
     pub fn set_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_name = input;
-        self
+        self.artifact_name = input; self
     }
     /// <p>The name of the artifact.</p>
     pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ArtifactSummaryBuilder {
     }
     /// <p>The source of the artifact.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ArtifactSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the artifact.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ArtifactSource> {
@@ -111,8 +108,7 @@ impl ArtifactSummaryBuilder {
     }
     /// <p>The type of the artifact.</p>
     pub fn set_artifact_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_type = input;
-        self
+        self.artifact_type = input; self
     }
     /// <p>The type of the artifact.</p>
     pub fn get_artifact_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl ArtifactSummaryBuilder {
     }
     /// <p>When the artifact was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the artifact was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl ArtifactSummaryBuilder {
     }
     /// <p>When the artifact was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>When the artifact was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl ArtifactSummaryBuilder {
     /// Consumes the builder and constructs a [`ArtifactSummary`](crate::types::ArtifactSummary).
     pub fn build(self) -> crate::types::ArtifactSummary {
         crate::types::ArtifactSummary {
-            artifact_arn: self.artifact_arn,
-            artifact_name: self.artifact_name,
-            source: self.source,
-            artifact_type: self.artifact_type,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            artifact_arn: self.artifact_arn
+            ,
+            artifact_name: self.artifact_name
+            ,
+            source: self.source
+            ,
+            artifact_type: self.artifact_type
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

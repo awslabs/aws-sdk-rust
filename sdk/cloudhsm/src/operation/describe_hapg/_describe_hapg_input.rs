@@ -3,13 +3,13 @@
 /// <p>Contains the inputs for the <code>DescribeHapg</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHapgInput {
+pub struct DescribeHapgInput  {
     /// <p>The ARN of the high-availability partition group to describe.</p>
     pub hapg_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeHapgInput {
+impl  DescribeHapgInput  {
     /// <p>The ARN of the high-availability partition group to describe.</p>
-    pub fn hapg_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> ::std::option::Option<& str> {
         self.hapg_arn.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DescribeHapgInputBuilder {
     }
     /// <p>The ARN of the high-availability partition group to describe.</p>
     pub fn set_hapg_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hapg_arn = input;
-        self
+        self.hapg_arn = input; self
     }
     /// <p>The ARN of the high-availability partition group to describe.</p>
     pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hapg_arn
     }
     /// Consumes the builder and constructs a [`DescribeHapgInput`](crate::operation::describe_hapg::DescribeHapgInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_hapg::DescribeHapgInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_hapg::DescribeHapgInput { hapg_arn: self.hapg_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_hapg::DescribeHapgInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_hapg::DescribeHapgInput {
+                hapg_arn: self.hapg_arn
+                ,
+            }
+        )
     }
 }
+

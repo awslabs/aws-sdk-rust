@@ -4,33 +4,34 @@
 /// <p>With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Application {
+pub struct Application  {
     /// <p>The name of the application.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Arguments for Amazon EMR to pass to the application.</p>
-    pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub args: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Application {
+impl  Application  {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Arguments for Amazon EMR to pass to the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
-    pub fn args(&self) -> &[::std::string::String] {
-        self.args.as_deref().unwrap_or_default()
+    pub fn args(&self) -> & [::std::string::String] {
+        self.args.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-    pub fn additional_info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn additional_info(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.additional_info.as_ref()
     }
 }
@@ -47,8 +48,8 @@ impl Application {
 pub struct ApplicationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ApplicationBuilder {
     /// <p>The name of the application.</p>
@@ -58,8 +59,7 @@ impl ApplicationBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl ApplicationBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the application.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl ApplicationBuilder {
     /// <p>Arguments for Amazon EMR to pass to the application.</p>
     pub fn args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
-        v.push(input.into());
-        self.args = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.args = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Arguments for Amazon EMR to pass to the application.</p>
-    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.args = input;
-        self
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.args = input; self
     }
     /// <p>Arguments for Amazon EMR to pass to the application.</p>
-    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.args
     }
     /// Adds a key-value pair to `additional_info`.
@@ -104,35 +102,32 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_info = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_info = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.additional_info = input;
-        self
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_info = input; self
     }
     /// <p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>
-    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
-            name: self.name,
-            version: self.version,
-            args: self.args,
-            additional_info: self.additional_info,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            args: self.args
+            ,
+            additional_info: self.additional_info
+            ,
         }
     }
 }
+

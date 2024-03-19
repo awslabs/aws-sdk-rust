@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGeneratedPolicyInput {
+pub struct GetGeneratedPolicyInput  {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
@@ -12,9 +12,9 @@ pub struct GetGeneratedPolicyInput {
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub include_service_level_template: ::std::option::Option<bool>,
 }
-impl GetGeneratedPolicyInput {
+impl  GetGeneratedPolicyInput  {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
@@ -52,8 +52,7 @@ impl GetGeneratedPolicyInputBuilder {
     }
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetGeneratedPolicyInputBuilder {
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
     /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
     pub fn set_include_resource_placeholders(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_resource_placeholders = input;
-        self
+        self.include_resource_placeholders = input; self
     }
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
     /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
@@ -85,8 +83,7 @@ impl GetGeneratedPolicyInputBuilder {
     /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies.</p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub fn set_include_service_level_template(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_service_level_template = input;
-        self
+        self.include_service_level_template = input; self
     }
     /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies.</p>
     /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
@@ -94,14 +91,17 @@ impl GetGeneratedPolicyInputBuilder {
         &self.include_service_level_template
     }
     /// Consumes the builder and constructs a [`GetGeneratedPolicyInput`](crate::operation::get_generated_policy::GetGeneratedPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_generated_policy::GetGeneratedPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_generated_policy::GetGeneratedPolicyInput {
-            job_id: self.job_id,
-            include_resource_placeholders: self.include_resource_placeholders,
-            include_service_level_template: self.include_service_level_template,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_generated_policy::GetGeneratedPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_generated_policy::GetGeneratedPolicyInput {
+                job_id: self.job_id
+                ,
+                include_resource_placeholders: self.include_resource_placeholders
+                ,
+                include_service_level_template: self.include_service_level_template
+                ,
+            }
+        )
     }
 }
+

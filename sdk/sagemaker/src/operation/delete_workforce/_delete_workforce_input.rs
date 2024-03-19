@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkforceInput {
+pub struct DeleteWorkforceInput  {
     /// <p>The name of the workforce.</p>
     pub workforce_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWorkforceInput {
+impl  DeleteWorkforceInput  {
     /// <p>The name of the workforce.</p>
-    pub fn workforce_name(&self) -> ::std::option::Option<&str> {
+    pub fn workforce_name(&self) -> ::std::option::Option<& str> {
         self.workforce_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteWorkforceInputBuilder {
     }
     /// <p>The name of the workforce.</p>
     pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workforce_name = input;
-        self
+        self.workforce_name = input; self
     }
     /// <p>The name of the workforce.</p>
     pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workforce_name
     }
     /// Consumes the builder and constructs a [`DeleteWorkforceInput`](crate::operation::delete_workforce::DeleteWorkforceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_workforce::DeleteWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_workforce::DeleteWorkforceInput {
-            workforce_name: self.workforce_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_workforce::DeleteWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_workforce::DeleteWorkforceInput {
+                workforce_name: self.workforce_name
+                ,
+            }
+        )
     }
 }
+

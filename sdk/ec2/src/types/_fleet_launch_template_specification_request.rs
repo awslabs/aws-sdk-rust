@@ -4,7 +4,7 @@
 /// <p>For information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch an instance from a launch template</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetLaunchTemplateSpecificationRequest {
+pub struct FleetLaunchTemplateSpecificationRequest  {
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     pub launch_template_id: ::std::option::Option<::std::string::String>,
@@ -16,21 +16,21 @@ pub struct FleetLaunchTemplateSpecificationRequest {
     /// <p>If the value is <code>$Default</code>, Amazon EC2 uses the default version of the launch template.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl FleetLaunchTemplateSpecificationRequest {
+impl  FleetLaunchTemplateSpecificationRequest  {
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn launch_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> ::std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn launch_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> ::std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>. You must specify a value, otherwise the request fails.</p>
     /// <p>If the value is <code>$Latest</code>, Amazon EC2 uses the latest version of the launch template.</p>
     /// <p>If the value is <code>$Default</code>, Amazon EC2 uses the default version of the launch template.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl FleetLaunchTemplateSpecificationRequestBuilder {
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_template_id = input;
-        self
+        self.launch_template_id = input; self
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
@@ -76,8 +75,7 @@ impl FleetLaunchTemplateSpecificationRequestBuilder {
     /// <p>The name of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_template_name = input;
-        self
+        self.launch_template_name = input; self
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
@@ -95,8 +93,7 @@ impl FleetLaunchTemplateSpecificationRequestBuilder {
     /// <p>If the value is <code>$Latest</code>, Amazon EC2 uses the latest version of the launch template.</p>
     /// <p>If the value is <code>$Default</code>, Amazon EC2 uses the default version of the launch template.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The launch template version number, <code>$Latest</code>, or <code>$Default</code>. You must specify a value, otherwise the request fails.</p>
     /// <p>If the value is <code>$Latest</code>, Amazon EC2 uses the latest version of the launch template.</p>
@@ -107,9 +104,13 @@ impl FleetLaunchTemplateSpecificationRequestBuilder {
     /// Consumes the builder and constructs a [`FleetLaunchTemplateSpecificationRequest`](crate::types::FleetLaunchTemplateSpecificationRequest).
     pub fn build(self) -> crate::types::FleetLaunchTemplateSpecificationRequest {
         crate::types::FleetLaunchTemplateSpecificationRequest {
-            launch_template_id: self.launch_template_id,
-            launch_template_name: self.launch_template_name,
-            version: self.version,
+            launch_template_id: self.launch_template_id
+            ,
+            launch_template_name: self.launch_template_name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTokenOutput {
+pub struct CreateTokenOutput  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
@@ -13,29 +13,29 @@ pub struct CreateTokenOutput {
     pub ttl: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateTokenOutput {
+impl  CreateTokenOutput  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
-    pub fn challenge_code(&self) -> ::std::option::Option<&str> {
+    pub fn challenge_code(&self) -> ::std::option::Option<& str> {
         self.challenge_code.as_deref()
     }
     /// <p>A unique ID provided when creating a new challenge token.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The expiry time for the one-time generated token code.</p>
-    pub fn ttl(&self) -> ::std::option::Option<&str> {
+    pub fn ttl(&self) -> ::std::option::Option<& str> {
         self.ttl.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::operation::create_token::CreateTokenOutput).
     pub fn builder() -> crate::operation::create_token::builders::CreateTokenOutputBuilder {
@@ -61,8 +61,7 @@ impl CreateTokenOutputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl CreateTokenOutputBuilder {
     }
     /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
     pub fn set_challenge_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.challenge_code = input;
-        self
+        self.challenge_code = input; self
     }
     /// <p>One-time challenge code for authenticating into the Amplify Admin UI.</p>
     pub fn get_challenge_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl CreateTokenOutputBuilder {
     }
     /// <p>A unique ID provided when creating a new challenge token.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>A unique ID provided when creating a new challenge token.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl CreateTokenOutputBuilder {
     }
     /// <p>The expiry time for the one-time generated token code.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>The expiry time for the one-time generated token code.</p>
     pub fn get_ttl(&self) -> &::std::option::Option<::std::string::String> {
         &self.ttl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::operation::create_token::CreateTokenOutput).
     pub fn build(self) -> crate::operation::create_token::CreateTokenOutput {
         crate::operation::create_token::CreateTokenOutput {
-            app_id: self.app_id,
-            challenge_code: self.challenge_code,
-            session_id: self.session_id,
-            ttl: self.ttl,
+            app_id: self.app_id
+            ,
+            challenge_code: self.challenge_code
+            ,
+            session_id: self.session_id
+            ,
+            ttl: self.ttl
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpsertTableRowsOutput {
+pub struct BatchUpsertTableRowsOutput  {
     /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
-    pub rows: ::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>,
+    pub rows: ::std::collections::HashMap::<::std::string::String, crate::types::UpsertRowsResult>,
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
     pub workbook_cursor: i64,
     /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
-    pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
+    pub failed_batch_items: ::std::option::Option<::std::vec::Vec::<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
-impl BatchUpsertTableRowsOutput {
+impl  BatchUpsertTableRowsOutput  {
     /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
-    pub fn rows(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult> {
+    pub fn rows(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::UpsertRowsResult> {
         &self.rows
     }
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
@@ -21,17 +21,18 @@ impl BatchUpsertTableRowsOutput {
         self.workbook_cursor
     }
     /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batch_items.is_none()`.
-    pub fn failed_batch_items(&self) -> &[crate::types::FailedBatchItem] {
-        self.failed_batch_items.as_deref().unwrap_or_default()
+    pub fn failed_batch_items(&self) -> & [crate::types::FailedBatchItem] {
+        self.failed_batch_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchUpsertTableRowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchUpsertTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpsertTableRowsOutput`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput).
     pub fn builder() -> crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsOutputBuilder {
@@ -43,9 +44,9 @@ impl BatchUpsertTableRowsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpsertTableRowsOutputBuilder {
-    pub(crate) rows: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>>,
+    pub(crate) rows: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::UpsertRowsResult>>,
     pub(crate) workbook_cursor: ::std::option::Option<i64>,
-    pub(crate) failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
+    pub(crate) failed_batch_items: ::std::option::Option<::std::vec::Vec::<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
 impl BatchUpsertTableRowsOutputBuilder {
@@ -56,20 +57,16 @@ impl BatchUpsertTableRowsOutputBuilder {
     /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
     pub fn rows(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UpsertRowsResult) -> Self {
         let mut hash_map = self.rows.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.rows = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.rows = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
-    pub fn set_rows(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>>,
-    ) -> Self {
-        self.rows = input;
-        self
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::UpsertRowsResult>>) -> Self {
+        self.rows = input; self
     }
     /// <p>A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected.</p>
-    pub fn get_rows(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::UpsertRowsResult>> {
         &self.rows
     }
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
@@ -80,8 +77,7 @@ impl BatchUpsertTableRowsOutputBuilder {
     }
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
     pub fn set_workbook_cursor(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.workbook_cursor = input;
-        self
+        self.workbook_cursor = input; self
     }
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
     pub fn get_workbook_cursor(&self) -> &::std::option::Option<i64> {
@@ -94,45 +90,46 @@ impl BatchUpsertTableRowsOutputBuilder {
     /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
     pub fn failed_batch_items(mut self, input: crate::types::FailedBatchItem) -> Self {
         let mut v = self.failed_batch_items.unwrap_or_default();
-        v.push(input);
-        self.failed_batch_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_batch_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
-    pub fn set_failed_batch_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>) -> Self {
-        self.failed_batch_items = input;
-        self
+    pub fn set_failed_batch_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedBatchItem>>) -> Self {
+        self.failed_batch_items = input; self
     }
     /// <p>The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended.</p>
-    pub fn get_failed_batch_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
+    pub fn get_failed_batch_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedBatchItem>> {
         &self.failed_batch_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchUpsertTableRowsOutput`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rows`](crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsOutputBuilder::rows)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput {
-            rows: self.rows.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rows",
-                    "rows was not specified but it is required when building BatchUpsertTableRowsOutput",
-                )
-            })?,
-            workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-            failed_batch_items: self.failed_batch_items,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput {
+                rows: self.rows
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rows", "rows was not specified but it is required when building BatchUpsertTableRowsOutput")
+                    )?
+                ,
+                workbook_cursor: self.workbook_cursor
+                    .unwrap_or_default()
+                ,
+                failed_batch_items: self.failed_batch_items
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

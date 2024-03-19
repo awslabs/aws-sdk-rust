@@ -3,13 +3,13 @@
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeadLetterConfig {
+pub struct DeadLetterConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeadLetterConfig {
+impl  DeadLetterConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeadLetterConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl DeadLetterConfigBuilder {
     }
     /// Consumes the builder and constructs a [`DeadLetterConfig`](crate::types::DeadLetterConfig).
     pub fn build(self) -> crate::types::DeadLetterConfig {
-        crate::types::DeadLetterConfig { target_arn: self.target_arn }
+        crate::types::DeadLetterConfig {
+            target_arn: self.target_arn
+            ,
+        }
     }
 }
+

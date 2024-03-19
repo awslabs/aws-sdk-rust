@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationconfigurationreplicateddiskstagingdisktype = unimplemented!();
 /// match replicationconfigurationreplicateddiskstagingdisktype {
@@ -35,16 +35,14 @@
 /// Specifically, when `replicationconfigurationreplicateddiskstagingdisktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationConfigurationReplicatedDiskStagingDiskType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -62,78 +60,77 @@ pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO" => ReplicationConfigurationReplicatedDiskStagingDiskType::Auto,
-            "GP2" => ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2,
-            "GP3" => ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3,
-            "IO1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Io1,
-            "SC1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1,
-            "ST1" => ReplicationConfigurationReplicatedDiskStagingDiskType::St1,
-            "STANDARD" => ReplicationConfigurationReplicatedDiskStagingDiskType::Standard,
-            other => ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AUTO" => ReplicationConfigurationReplicatedDiskStagingDiskType::Auto,
+"GP2" => ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2,
+"GP3" => ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3,
+"IO1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Io1,
+"SC1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1,
+"ST1" => ReplicationConfigurationReplicatedDiskStagingDiskType::St1,
+"STANDARD" => ReplicationConfigurationReplicatedDiskStagingDiskType::Standard,
+other => ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ReplicationConfigurationReplicatedDiskStagingDiskType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ReplicationConfigurationReplicatedDiskStagingDiskType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ReplicationConfigurationReplicatedDiskStagingDiskType::from(s))
+                    }
+                }
 impl ReplicationConfigurationReplicatedDiskStagingDiskType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => "AUTO",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => "GP2",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3 => "GP3",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => "IO1",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => "SC1",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => "ST1",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => "STANDARD",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "GP2", "GP3", "IO1", "SC1", "ST1", "STANDARD"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => "AUTO",
+    ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => "GP2",
+    ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3 => "GP3",
+    ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => "IO1",
+    ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => "SC1",
+    ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => "ST1",
+    ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => "STANDARD",
+    ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO", "GP2", "GP3", "IO1", "SC1", "ST1", "STANDARD"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ReplicationConfigurationReplicatedDiskStagingDiskType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ReplicationConfigurationReplicatedDiskStagingDiskType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => write!(f, "AUTO"),
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => write!(f, "GP2"),
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3 => write!(f, "GP3"),
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => write!(f, "IO1"),
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => write!(f, "SC1"),
-            ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => write!(f, "ST1"),
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => write!(f, "STANDARD"),
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => write!(f, "AUTO"),
+ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => write!(f, "GP2"),
+ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3 => write!(f, "GP3"),
+ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => write!(f, "IO1"),
+ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => write!(f, "SC1"),
+ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => write!(f, "ST1"),
+ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => write!(f, "STANDARD"),
+ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

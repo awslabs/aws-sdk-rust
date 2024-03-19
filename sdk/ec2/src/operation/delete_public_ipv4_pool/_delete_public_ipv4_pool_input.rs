@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePublicIpv4PoolInput {
+pub struct DeletePublicIpv4PoolInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePublicIpv4PoolInput {
+impl  DeletePublicIpv4PoolInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeletePublicIpv4PoolInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,21 +54,22 @@ impl DeletePublicIpv4PoolInputBuilder {
     }
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }
     /// Consumes the builder and constructs a [`DeletePublicIpv4PoolInput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput {
-            dry_run: self.dry_run,
-            pool_id: self.pool_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput {
+                dry_run: self.dry_run
+                ,
+                pool_id: self.pool_id
+                ,
+            }
+        )
     }
 }
+

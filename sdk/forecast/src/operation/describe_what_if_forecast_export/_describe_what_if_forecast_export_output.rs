@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWhatIfForecastExportOutput {
+pub struct DescribeWhatIfForecastExportOutput  {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
     pub what_if_forecast_export_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the what-if forecast export.</p>
     pub what_if_forecast_export_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
-    pub what_if_forecast_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub what_if_forecast_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>If an error occurred, an informational message about the error.</p>
@@ -49,27 +49,28 @@ pub struct DescribeWhatIfForecastExportOutput {
     pub format: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeWhatIfForecastExportOutput {
+impl  DescribeWhatIfForecastExportOutput  {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
-    pub fn what_if_forecast_export_arn(&self) -> ::std::option::Option<&str> {
+    pub fn what_if_forecast_export_arn(&self) -> ::std::option::Option<& str> {
         self.what_if_forecast_export_arn.as_deref()
     }
     /// <p>The name of the what-if forecast export.</p>
-    pub fn what_if_forecast_export_name(&self) -> ::std::option::Option<&str> {
+    pub fn what_if_forecast_export_name(&self) -> ::std::option::Option<& str> {
         self.what_if_forecast_export_name.as_deref()
     }
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.what_if_forecast_arns.is_none()`.
-    pub fn what_if_forecast_arns(&self) -> &[::std::string::String] {
-        self.what_if_forecast_arns.as_deref().unwrap_or_default()
+    pub fn what_if_forecast_arns(&self) -> & [::std::string::String] {
+        self.what_if_forecast_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::DataDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::DataDestination> {
         self.destination.as_ref()
     }
     /// <p>If an error occurred, an informational message about the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The status of the what-if forecast. States include:</p>
@@ -85,11 +86,11 @@ impl DescribeWhatIfForecastExportOutput {
     /// </ul><note>
     /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
     /// </note>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>When the what-if forecast export was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The approximate time remaining to complete the what-if forecast export, in minutes.</p>
@@ -109,19 +110,19 @@ impl DescribeWhatIfForecastExportOutput {
     /// <li>
     /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<& str> {
         self.format.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWhatIfForecastExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWhatIfForecastExportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWhatIfForecastExportOutput`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportOutput).
     pub fn builder() -> crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportOutputBuilder {
@@ -135,7 +136,7 @@ impl DescribeWhatIfForecastExportOutput {
 pub struct DescribeWhatIfForecastExportOutputBuilder {
     pub(crate) what_if_forecast_export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) what_if_forecast_export_name: ::std::option::Option<::std::string::String>,
-    pub(crate) what_if_forecast_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) what_if_forecast_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) destination: ::std::option::Option<crate::types::DataDestination>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
@@ -153,8 +154,7 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
     pub fn set_what_if_forecast_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.what_if_forecast_export_arn = input;
-        self
+        self.what_if_forecast_export_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
     pub fn get_what_if_forecast_export_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +167,7 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The name of the what-if forecast export.</p>
     pub fn set_what_if_forecast_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.what_if_forecast_export_name = input;
-        self
+        self.what_if_forecast_export_name = input; self
     }
     /// <p>The name of the what-if forecast export.</p>
     pub fn get_what_if_forecast_export_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,17 +180,16 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
     pub fn what_if_forecast_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.what_if_forecast_arns.unwrap_or_default();
-        v.push(input.into());
-        self.what_if_forecast_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.what_if_forecast_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
-    pub fn set_what_if_forecast_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.what_if_forecast_arns = input;
-        self
+    pub fn set_what_if_forecast_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.what_if_forecast_arns = input; self
     }
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
-    pub fn get_what_if_forecast_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_what_if_forecast_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.what_if_forecast_arns
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
@@ -201,8 +199,7 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
@@ -215,8 +212,7 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +249,7 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
@@ -279,8 +274,7 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>When the what-if forecast export was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the what-if forecast export was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -293,8 +287,7 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The approximate time remaining to complete the what-if forecast export, in minutes.</p>
     pub fn set_estimated_time_remaining_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.estimated_time_remaining_in_minutes = input;
-        self
+        self.estimated_time_remaining_in_minutes = input; self
     }
     /// <p>The approximate time remaining to complete the what-if forecast export, in minutes.</p>
     pub fn get_estimated_time_remaining_in_minutes(&self) -> &::std::option::Option<i64> {
@@ -331,8 +324,7 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -357,36 +349,46 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.format
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWhatIfForecastExportOutput`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportOutput).
     pub fn build(self) -> crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportOutput {
         crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportOutput {
-            what_if_forecast_export_arn: self.what_if_forecast_export_arn,
-            what_if_forecast_export_name: self.what_if_forecast_export_name,
-            what_if_forecast_arns: self.what_if_forecast_arns,
-            destination: self.destination,
-            message: self.message,
-            status: self.status,
-            creation_time: self.creation_time,
-            estimated_time_remaining_in_minutes: self.estimated_time_remaining_in_minutes,
-            last_modification_time: self.last_modification_time,
-            format: self.format,
+            what_if_forecast_export_arn: self.what_if_forecast_export_arn
+            ,
+            what_if_forecast_export_name: self.what_if_forecast_export_name
+            ,
+            what_if_forecast_arns: self.what_if_forecast_arns
+            ,
+            destination: self.destination
+            ,
+            message: self.message
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            estimated_time_remaining_in_minutes: self.estimated_time_remaining_in_minutes
+            ,
+            last_modification_time: self.last_modification_time
+            ,
+            format: self.format
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>This structure contains the name and variation value of one variation of a feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Variation {
+pub struct Variation  {
     /// <p>The name of the variation.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value assigned to this variation.</p>
     pub value: ::std::option::Option<crate::types::VariableValue>,
 }
-impl Variation {
+impl  Variation  {
     /// <p>The name of the variation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value assigned to this variation.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::VariableValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::VariableValue> {
         self.value.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl VariationBuilder {
     }
     /// <p>The name of the variation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the variation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VariationBuilder {
     }
     /// <p>The value assigned to this variation.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::VariableValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value assigned to this variation.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::VariableValue> {
@@ -65,8 +63,11 @@ impl VariationBuilder {
     /// Consumes the builder and constructs a [`Variation`](crate::types::Variation).
     pub fn build(self) -> crate::types::Variation {
         crate::types::Variation {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

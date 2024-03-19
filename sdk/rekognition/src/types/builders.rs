@@ -292,3 +292,4 @@ pub use crate::types::_compared_source_image_face::ComparedSourceImageFaceBuilde
 pub use crate::types::_unsuccessful_face_association::UnsuccessfulFaceAssociationBuilder;
 
 pub use crate::types::_associated_face::AssociatedFaceBuilder;
+

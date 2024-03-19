@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>DescribeRuleGroupsNamespace</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRuleGroupsNamespaceOutput {
+pub struct DescribeRuleGroupsNamespaceOutput  {
     /// <p>The information about the rule groups namespace.</p>
     pub rule_groups_namespace: ::std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
     _request_id: Option<String>,
 }
-impl DescribeRuleGroupsNamespaceOutput {
+impl  DescribeRuleGroupsNamespaceOutput  {
     /// <p>The information about the rule groups namespace.</p>
-    pub fn rule_groups_namespace(&self) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceDescription> {
+    pub fn rule_groups_namespace(&self) -> ::std::option::Option<& crate::types::RuleGroupsNamespaceDescription> {
         self.rule_groups_namespace.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRuleGroupsNamespaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRuleGroupsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupsNamespaceOutput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput).
     pub fn builder() -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceOutputBuilder {
@@ -42,27 +42,28 @@ impl DescribeRuleGroupsNamespaceOutputBuilder {
     }
     /// <p>The information about the rule groups namespace.</p>
     pub fn set_rule_groups_namespace(mut self, input: ::std::option::Option<crate::types::RuleGroupsNamespaceDescription>) -> Self {
-        self.rule_groups_namespace = input;
-        self
+        self.rule_groups_namespace = input; self
     }
     /// <p>The information about the rule groups namespace.</p>
     pub fn get_rule_groups_namespace(&self) -> &::std::option::Option<crate::types::RuleGroupsNamespaceDescription> {
         &self.rule_groups_namespace
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRuleGroupsNamespaceOutput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput).
     pub fn build(self) -> crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput {
         crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput {
-            rule_groups_namespace: self.rule_groups_namespace,
+            rule_groups_namespace: self.rule_groups_namespace
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

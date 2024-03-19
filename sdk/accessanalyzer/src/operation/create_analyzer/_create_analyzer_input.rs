@@ -3,45 +3,46 @@
 /// <p>Creates an analyzer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAnalyzerInput {
+pub struct CreateAnalyzerInput  {
     /// <p>The name of the analyzer to create.</p>
     pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
-    pub archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
+    pub archive_rules: ::std::option::Option<::std::vec::Vec::<crate::types::InlineArchiveRule>>,
     /// <p>An array of key-value pairs to apply to the analyzer.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
     pub configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
 }
-impl CreateAnalyzerInput {
+impl  CreateAnalyzerInput  {
     /// <p>The name of the analyzer to create.</p>
-    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
+    pub fn analyzer_name(&self) -> ::std::option::Option<& str> {
         self.analyzer_name.as_deref()
     }
     /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.archive_rules.is_none()`.
-    pub fn archive_rules(&self) -> &[crate::types::InlineArchiveRule] {
-        self.archive_rules.as_deref().unwrap_or_default()
+    pub fn archive_rules(&self) -> & [crate::types::InlineArchiveRule] {
+        self.archive_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of key-value pairs to apply to the analyzer.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnalyzerConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::AnalyzerConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -58,8 +59,8 @@ impl CreateAnalyzerInput {
 pub struct CreateAnalyzerInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
-    pub(crate) archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) archive_rules: ::std::option::Option<::std::vec::Vec::<crate::types::InlineArchiveRule>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
 }
@@ -72,8 +73,7 @@ impl CreateAnalyzerInputBuilder {
     }
     /// <p>The name of the analyzer to create.</p>
     pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyzer_name = input;
-        self
+        self.analyzer_name = input; self
     }
     /// <p>The name of the analyzer to create.</p>
     pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +87,7 @@ impl CreateAnalyzerInputBuilder {
     }
     /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
@@ -101,17 +100,16 @@ impl CreateAnalyzerInputBuilder {
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     pub fn archive_rules(mut self, input: crate::types::InlineArchiveRule) -> Self {
         let mut v = self.archive_rules.unwrap_or_default();
-        v.push(input);
-        self.archive_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.archive_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
-    pub fn set_archive_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>) -> Self {
-        self.archive_rules = input;
-        self
+    pub fn set_archive_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InlineArchiveRule>>) -> Self {
+        self.archive_rules = input; self
     }
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
-    pub fn get_archive_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>> {
+    pub fn get_archive_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InlineArchiveRule>> {
         &self.archive_rules
     }
     /// Adds a key-value pair to `tags`.
@@ -121,17 +119,16 @@ impl CreateAnalyzerInputBuilder {
     /// <p>An array of key-value pairs to apply to the analyzer.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of key-value pairs to apply to the analyzer.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key-value pairs to apply to the analyzer.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A client token.</p>
@@ -141,8 +138,7 @@ impl CreateAnalyzerInputBuilder {
     }
     /// <p>A client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A client token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,24 +151,30 @@ impl CreateAnalyzerInputBuilder {
     }
     /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AnalyzerConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnalyzerConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateAnalyzerInput`](crate::operation::create_analyzer::CreateAnalyzerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_analyzer::CreateAnalyzerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_analyzer::CreateAnalyzerInput {
-            analyzer_name: self.analyzer_name,
-            r#type: self.r#type,
-            archive_rules: self.archive_rules,
-            tags: self.tags,
-            client_token: self.client_token,
-            configuration: self.configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_analyzer::CreateAnalyzerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_analyzer::CreateAnalyzerInput {
+                analyzer_name: self.analyzer_name
+                ,
+                r#type: self.r#type
+                ,
+                archive_rules: self.archive_rules
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

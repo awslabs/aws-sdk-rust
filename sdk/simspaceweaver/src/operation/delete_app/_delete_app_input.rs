@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAppInput {
+pub struct DeleteAppInput  {
     /// <p>The name of the simulation of the app.</p>
     pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain of the app.</p>
@@ -10,17 +10,17 @@ pub struct DeleteAppInput {
     /// <p>The name of the app.</p>
     pub app: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAppInput {
+impl  DeleteAppInput  {
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> ::std::option::Option<&str> {
+    pub fn simulation(&self) -> ::std::option::Option<& str> {
         self.simulation.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the app.</p>
-    pub fn app(&self) -> ::std::option::Option<&str> {
+    pub fn app(&self) -> ::std::option::Option<& str> {
         self.app.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteAppInputBuilder {
     }
     /// <p>The name of the simulation of the app.</p>
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
     }
     /// <p>The name of the simulation of the app.</p>
     pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteAppInputBuilder {
     }
     /// <p>The name of the domain of the app.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain of the app.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl DeleteAppInputBuilder {
     }
     /// <p>The name of the app.</p>
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app = input;
-        self
+        self.app = input; self
     }
     /// <p>The name of the app.</p>
     pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,10 +84,16 @@ impl DeleteAppInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_app::DeleteAppInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_app::DeleteAppInput {
-            simulation: self.simulation,
-            domain: self.domain,
-            app: self.app,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_app::DeleteAppInput {
+                simulation: self.simulation
+                ,
+                domain: self.domain
+                ,
+                app: self.app
+                ,
+            }
+        )
     }
 }
+

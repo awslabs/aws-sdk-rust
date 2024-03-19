@@ -3,21 +3,20 @@
 /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeltaTime {
+pub struct DeltaTime  {
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     pub offset_seconds: i32,
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
     pub time_expression: ::std::string::String,
 }
-impl DeltaTime {
+impl  DeltaTime  {
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     pub fn offset_seconds(&self) -> i32 {
         self.offset_seconds
     }
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
-    pub fn time_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.time_expression.deref()
+    pub fn time_expression(&self) -> & str {
+        use std::ops::Deref; self.time_expression.deref()
     }
 }
 impl DeltaTime {
@@ -43,8 +42,7 @@ impl DeltaTimeBuilder {
     }
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     pub fn set_offset_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset_seconds = input;
-        self
+        self.offset_seconds = input; self
     }
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     pub fn get_offset_seconds(&self) -> &::std::option::Option<i32> {
@@ -58,8 +56,7 @@ impl DeltaTimeBuilder {
     }
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
     pub fn set_time_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_expression = input;
-        self
+        self.time_expression = input; self
     }
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
     pub fn get_time_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl DeltaTimeBuilder {
     /// - [`offset_seconds`](crate::types::builders::DeltaTimeBuilder::offset_seconds)
     /// - [`time_expression`](crate::types::builders::DeltaTimeBuilder::time_expression)
     pub fn build(self) -> ::std::result::Result<crate::types::DeltaTime, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeltaTime {
-            offset_seconds: self.offset_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "offset_seconds",
-                    "offset_seconds was not specified but it is required when building DeltaTime",
-                )
-            })?,
-            time_expression: self.time_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_expression",
-                    "time_expression was not specified but it is required when building DeltaTime",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeltaTime {
+                offset_seconds: self.offset_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("offset_seconds", "offset_seconds was not specified but it is required when building DeltaTime")
+                    )?
+                ,
+                time_expression: self.time_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_expression", "time_expression was not specified but it is required when building DeltaTime")
+                    )?
+                ,
+            }
+        )
     }
 }
+

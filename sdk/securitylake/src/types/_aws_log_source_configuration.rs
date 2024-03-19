@@ -3,36 +3,35 @@
 /// <p>The Security Lake logs source configuration file describes the information needed to generate Security Lake logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsLogSourceConfiguration {
+pub struct AwsLogSourceConfiguration  {
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
-    pub regions: ::std::vec::Vec<::std::string::String>,
+    pub regions: ::std::vec::Vec::<::std::string::String>,
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub source_name: crate::types::AwsLogSourceName,
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub source_version: ::std::string::String,
 }
-impl AwsLogSourceConfiguration {
+impl  AwsLogSourceConfiguration  {
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
-    pub fn accounts(&self) -> &[::std::string::String] {
-        self.accounts.as_deref().unwrap_or_default()
+    pub fn accounts(&self) -> & [::std::string::String] {
+        self.accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
-    pub fn regions(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.regions.deref()
+    pub fn regions(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.regions.deref()
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn source_name(&self) -> &crate::types::AwsLogSourceName {
+    pub fn source_name(&self) -> & crate::types::AwsLogSourceName {
         &self.source_name
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn source_version(&self) -> &str {
-        use std::ops::Deref;
-        self.source_version.deref()
+    pub fn source_version(&self) -> & str {
+        use std::ops::Deref; self.source_version.deref()
     }
 }
 impl AwsLogSourceConfiguration {
@@ -46,8 +45,8 @@ impl AwsLogSourceConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLogSourceConfigurationBuilder {
-    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) source_name: ::std::option::Option<crate::types::AwsLogSourceName>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
 }
@@ -59,17 +58,16 @@ impl AwsLogSourceConfigurationBuilder {
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input.into());
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
-    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accounts = input; self
     }
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
-    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accounts
     }
     /// Appends an item to `regions`.
@@ -79,17 +77,16 @@ impl AwsLogSourceConfigurationBuilder {
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
@@ -100,8 +97,7 @@ impl AwsLogSourceConfigurationBuilder {
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<crate::types::AwsLogSourceName>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<crate::types::AwsLogSourceName> {
@@ -114,8 +110,7 @@ impl AwsLogSourceConfigurationBuilder {
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_version = input;
-        self
+        self.source_version = input; self
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,21 +121,25 @@ impl AwsLogSourceConfigurationBuilder {
     /// - [`regions`](crate::types::builders::AwsLogSourceConfigurationBuilder::regions)
     /// - [`source_name`](crate::types::builders::AwsLogSourceConfigurationBuilder::source_name)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsLogSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsLogSourceConfiguration {
-            accounts: self.accounts,
-            regions: self.regions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "regions",
-                    "regions was not specified but it is required when building AwsLogSourceConfiguration",
-                )
-            })?,
-            source_name: self.source_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_name",
-                    "source_name was not specified but it is required when building AwsLogSourceConfiguration",
-                )
-            })?,
-            source_version: self.source_version.unwrap_or_else(|| "latest".to_owned()),
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsLogSourceConfiguration {
+                accounts: self.accounts
+                ,
+                regions: self.regions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("regions", "regions was not specified but it is required when building AwsLogSourceConfiguration")
+                    )?
+                ,
+                source_name: self.source_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_name", "source_name was not specified but it is required when building AwsLogSourceConfiguration")
+                    )?
+                ,
+                source_version: self.source_version
+                    .unwrap_or_else(|| "latest".to_owned())
+                ,
+            }
+        )
     }
 }
+

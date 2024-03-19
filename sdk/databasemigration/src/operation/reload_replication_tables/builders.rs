@@ -5,55 +5,51 @@ pub use crate::operation::reload_replication_tables::_reload_replication_tables_
 
 impl ReloadReplicationTablesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.reload_replication_tables();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.reload_replication_tables();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ReloadReplicationTables`.
-///
+/// 
 /// <p>Reloads the target database table with the source data for a given DMS Serverless replication configuration.</p>
 /// <p>You can only use this operation with a task in the RUNNING state, otherwise the service will throw an <code>InvalidResourceStateFault</code> exception.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReloadReplicationTablesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder,
+                    inner: crate::operation::reload_replication_tables::builders::ReloadReplicationTablesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
-        crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-    > for ReloadReplicationTablesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
-            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
+                    crate::operation::reload_replication_tables::ReloadReplicationTablesError,
+                > for ReloadReplicationTablesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
+                        crate::operation::reload_replication_tables::ReloadReplicationTablesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ReloadReplicationTablesFluentBuilder {
     /// Creates a new `ReloadReplicationTables`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ReloadReplicationTablesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::reload_replication_tables::ReloadReplicationTables::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::reload_replication_tables::ReloadReplicationTables::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
-        crate::operation::reload_replication_tables::ReloadReplicationTablesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::reload_replication_tables::ReloadReplicationTablesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reload_replication_tables::ReloadReplicationTablesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::reload_replication_tables::ReloadReplicationTables::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::reload_replication_tables::ReloadReplicationTables::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::reload_replication_tables::ReloadReplicationTablesOutput, crate::operation::reload_replication_tables::ReloadReplicationTablesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
     pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_config_arn(input.into());
@@ -133,12 +120,12 @@ impl ReloadReplicationTablesFluentBuilder {
         self
     }
     /// <p>The list of tables to reload.</p>
-    pub fn set_tables_to_reload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>) -> Self {
+    pub fn set_tables_to_reload(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableToReload>>) -> Self {
         self.inner = self.inner.set_tables_to_reload(input);
         self
     }
     /// <p>The list of tables to reload.</p>
-    pub fn get_tables_to_reload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
+    pub fn get_tables_to_reload(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableToReload>> {
         self.inner.get_tables_to_reload()
     }
     /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication.</p>
@@ -156,3 +143,4 @@ impl ReloadReplicationTablesFluentBuilder {
         self.inner.get_reload_option()
     }
 }
+

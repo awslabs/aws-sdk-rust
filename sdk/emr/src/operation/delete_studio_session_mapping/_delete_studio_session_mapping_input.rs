@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStudioSessionMappingInput {
+pub struct DeleteStudioSessionMappingInput  {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
@@ -12,21 +12,21 @@ pub struct DeleteStudioSessionMappingInput {
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
 }
-impl DeleteStudioSessionMappingInput {
+impl  DeleteStudioSessionMappingInput  {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    pub fn identity_name(&self) -> ::std::option::Option<&str> {
+    pub fn identity_name(&self) -> ::std::option::Option<& str> {
         self.identity_name.as_deref()
     }
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
-    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl DeleteStudioSessionMappingInputBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteStudioSessionMappingInputBuilder {
     }
     /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DeleteStudioSessionMappingInputBuilder {
     }
     /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn set_identity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_name = input;
-        self
+        self.identity_name = input; self
     }
     /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn get_identity_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,25 +95,26 @@ impl DeleteStudioSessionMappingInputBuilder {
     }
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
-        self.identity_type = input;
-        self
+        self.identity_type = input; self
     }
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
         &self.identity_type
     }
     /// Consumes the builder and constructs a [`DeleteStudioSessionMappingInput`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput {
-            studio_id: self.studio_id,
-            identity_id: self.identity_id,
-            identity_name: self.identity_name,
-            identity_type: self.identity_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput {
+                studio_id: self.studio_id
+                ,
+                identity_id: self.identity_id
+                ,
+                identity_name: self.identity_name
+                ,
+                identity_type: self.identity_type
+                ,
+            }
+        )
     }
 }
+

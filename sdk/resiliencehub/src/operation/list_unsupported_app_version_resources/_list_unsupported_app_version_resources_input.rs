@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUnsupportedAppVersionResourcesInput {
+pub struct ListUnsupportedAppVersionResourcesInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
@@ -14,21 +14,21 @@ pub struct ListUnsupportedAppVersionResourcesInput {
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListUnsupportedAppVersionResourcesInput {
+impl  ListUnsupportedAppVersionResourcesInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> ::std::option::Option<&str> {
+    pub fn app_version(&self) -> ::std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolution_id(&self) -> ::std::option::Option<& str> {
         self.resolution_id.as_deref()
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -62,8 +62,7 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>The version of the application.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolution_id = input;
-        self
+        self.resolution_id = input; self
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn get_resolution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,28 +115,28 @@ impl ListUnsupportedAppVersionResourcesInputBuilder {
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListUnsupportedAppVersionResourcesInput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                resolution_id: self.resolution_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                resolution_id: self.resolution_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

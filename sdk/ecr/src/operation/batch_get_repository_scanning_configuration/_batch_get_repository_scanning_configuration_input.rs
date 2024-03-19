@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetRepositoryScanningConfigurationInput {
+pub struct BatchGetRepositoryScanningConfigurationInput  {
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub repository_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetRepositoryScanningConfigurationInput {
+impl  BatchGetRepositoryScanningConfigurationInput  {
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
-    pub fn repository_names(&self) -> &[::std::string::String] {
-        self.repository_names.as_deref().unwrap_or_default()
+    pub fn repository_names(&self) -> & [::std::string::String] {
+        self.repository_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetRepositoryScanningConfigurationInput {
@@ -25,7 +26,7 @@ impl BatchGetRepositoryScanningConfigurationInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetRepositoryScanningConfigurationInputBuilder {
-    pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) repository_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetRepositoryScanningConfigurationInputBuilder {
     /// Appends an item to `repository_names`.
@@ -35,30 +36,26 @@ impl BatchGetRepositoryScanningConfigurationInputBuilder {
     /// <p>One or more repository names to get the scanning configuration for.</p>
     pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.repository_names.unwrap_or_default();
-        v.push(input.into());
-        self.repository_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.repository_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.repository_names = input;
-        self
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.repository_names = input; self
     }
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.repository_names
     }
     /// Consumes the builder and constructs a [`BatchGetRepositoryScanningConfigurationInput`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput {
-                repository_names: self.repository_names,
-            },
+                repository_names: self.repository_names
+                ,
+            }
         )
     }
 }
+

@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMaintenanceWindowTargets`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`window_id(impl Into<String>)`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::window_id) / [`set_window_id(Option<String>)`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::set_window_id):<br>required: **true**<br><p>The ID of the maintenance window whose targets should be retrieved.</p><br>
     ///   - [`filters(MaintenanceWindowFilter)`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::filters) / [`set_filters(Option<Vec::<MaintenanceWindowFilter>>)`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::set_filters):<br>required: **false**<br><p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeMaintenanceWindowTargetsOutput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput) with field(s):
+                            /// - On success, responds with [`DescribeMaintenanceWindowTargetsOutput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput) with field(s):
     ///   - [`targets(Option<Vec::<MaintenanceWindowTarget>>)`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput::targets): <p>Information about the targets in the maintenance window.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowTargetsError>`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsError)
-    pub fn describe_maintenance_window_targets(
-        &self,
-    ) -> crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder {
-        crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowTargetsError>`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsError)
+    pub fn describe_maintenance_window_targets(&self) -> crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder {
+                                crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

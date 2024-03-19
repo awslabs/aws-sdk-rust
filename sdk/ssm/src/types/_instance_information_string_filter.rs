@@ -3,7 +3,7 @@
 /// <p>The filters to describe or get information about your managed nodes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceInformationStringFilter {
+pub struct InstanceInformationStringFilter  {
     /// <p>The filter key name to describe your managed nodes.</p>
     /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
@@ -22,9 +22,9 @@ pub struct InstanceInformationStringFilter {
     /// </ul>
     pub key: ::std::string::String,
     /// <p>The filter values.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl InstanceInformationStringFilter {
+impl  InstanceInformationStringFilter  {
     /// <p>The filter key name to describe your managed nodes.</p>
     /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
@@ -41,14 +41,12 @@ impl InstanceInformationStringFilter {
     /// <li>
     /// <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The filter values.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl InstanceInformationStringFilter {
@@ -63,7 +61,7 @@ impl InstanceInformationStringFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceInformationStringFilterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl InstanceInformationStringFilterBuilder {
     /// <p>The filter key name to describe your managed nodes.</p>
@@ -104,8 +102,7 @@ impl InstanceInformationStringFilterBuilder {
     /// <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The filter key name to describe your managed nodes.</p>
     /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
@@ -133,17 +130,16 @@ impl InstanceInformationStringFilterBuilder {
     /// <p>The filter values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The filter values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`InstanceInformationStringFilter`](crate::types::InstanceInformationStringFilter).
@@ -151,19 +147,20 @@ impl InstanceInformationStringFilterBuilder {
     /// - [`key`](crate::types::builders::InstanceInformationStringFilterBuilder::key)
     /// - [`values`](crate::types::builders::InstanceInformationStringFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::InstanceInformationStringFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InstanceInformationStringFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building InstanceInformationStringFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building InstanceInformationStringFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InstanceInformationStringFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building InstanceInformationStringFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building InstanceInformationStringFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

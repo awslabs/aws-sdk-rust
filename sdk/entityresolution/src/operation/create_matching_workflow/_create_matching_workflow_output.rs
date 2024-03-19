@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMatchingWorkflowOutput {
+pub struct CreateMatchingWorkflowOutput  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
@@ -10,9 +10,9 @@ pub struct CreateMatchingWorkflowOutput {
     /// <p>A description of the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub input_source_config: ::std::vec::Vec<crate::types::InputSource>,
+    pub input_source_config: ::std::vec::Vec::<crate::types::InputSource>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub output_source_config: ::std::vec::Vec<crate::types::OutputSource>,
+    pub output_source_config: ::std::vec::Vec::<crate::types::OutputSource>,
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
@@ -21,50 +21,45 @@ pub struct CreateMatchingWorkflowOutput {
     pub role_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateMatchingWorkflowOutput {
+impl  CreateMatchingWorkflowOutput  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_name.deref()
+    pub fn workflow_name(&self) -> & str {
+        use std::ops::Deref; self.workflow_name.deref()
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
-    pub fn workflow_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_arn.deref()
+    pub fn workflow_arn(&self) -> & str {
+        use std::ops::Deref; self.workflow_arn.deref()
     }
     /// <p>A description of the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn input_source_config(&self) -> &[crate::types::InputSource] {
-        use std::ops::Deref;
-        self.input_source_config.deref()
+    pub fn input_source_config(&self) -> & [crate::types::InputSource] {
+        use std::ops::Deref; self.input_source_config.deref()
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn output_source_config(&self) -> &[crate::types::OutputSource] {
-        use std::ops::Deref;
-        self.output_source_config.deref()
+    pub fn output_source_config(&self) -> & [crate::types::OutputSource] {
+        use std::ops::Deref; self.output_source_config.deref()
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
-    pub fn resolution_techniques(&self) -> ::std::option::Option<&crate::types::ResolutionTechniques> {
+    pub fn resolution_techniques(&self) -> ::std::option::Option<& crate::types::ResolutionTechniques> {
         self.resolution_techniques.as_ref()
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
-    pub fn incremental_run_config(&self) -> ::std::option::Option<&crate::types::IncrementalRunConfig> {
+    pub fn incremental_run_config(&self) -> ::std::option::Option<& crate::types::IncrementalRunConfig> {
         self.incremental_run_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMatchingWorkflowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMatchingWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`CreateMatchingWorkflowOutput`](crate::operation::create_matching_workflow::CreateMatchingWorkflowOutput).
     pub fn builder() -> crate::operation::create_matching_workflow::builders::CreateMatchingWorkflowOutputBuilder {
@@ -79,8 +74,8 @@ pub struct CreateMatchingWorkflowOutputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
-    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
+    pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::InputSource>>,
+    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::OutputSource>>,
     pub(crate) resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     pub(crate) incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -95,8 +90,7 @@ impl CreateMatchingWorkflowOutputBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl CreateMatchingWorkflowOutputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
     pub fn set_workflow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_arn = input;
-        self
+        self.workflow_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
     pub fn get_workflow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +117,7 @@ impl CreateMatchingWorkflowOutputBuilder {
     }
     /// <p>A description of the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,17 +130,16 @@ impl CreateMatchingWorkflowOutputBuilder {
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub fn input_source_config(mut self, input: crate::types::InputSource) -> Self {
         let mut v = self.input_source_config.unwrap_or_default();
-        v.push(input);
-        self.input_source_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_source_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>) -> Self {
-        self.input_source_config = input;
-        self
+    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputSource>>) -> Self {
+        self.input_source_config = input; self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSource>> {
+    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputSource>> {
         &self.input_source_config
     }
     /// Appends an item to `output_source_config`.
@@ -158,17 +149,16 @@ impl CreateMatchingWorkflowOutputBuilder {
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
     pub fn output_source_config(mut self, input: crate::types::OutputSource) -> Self {
         let mut v = self.output_source_config.unwrap_or_default();
-        v.push(input);
-        self.output_source_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_source_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>) -> Self {
-        self.output_source_config = input;
-        self
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputSource>>) -> Self {
+        self.output_source_config = input; self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputSource>> {
         &self.output_source_config
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
@@ -179,8 +169,7 @@ impl CreateMatchingWorkflowOutputBuilder {
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn set_resolution_techniques(mut self, input: ::std::option::Option<crate::types::ResolutionTechniques>) -> Self {
-        self.resolution_techniques = input;
-        self
+        self.resolution_techniques = input; self
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn get_resolution_techniques(&self) -> &::std::option::Option<crate::types::ResolutionTechniques> {
@@ -193,8 +182,7 @@ impl CreateMatchingWorkflowOutputBuilder {
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub fn set_incremental_run_config(mut self, input: ::std::option::Option<crate::types::IncrementalRunConfig>) -> Self {
-        self.incremental_run_config = input;
-        self
+        self.incremental_run_config = input; self
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
@@ -208,22 +196,21 @@ impl CreateMatchingWorkflowOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMatchingWorkflowOutput`](crate::operation::create_matching_workflow::CreateMatchingWorkflowOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_name`](crate::operation::create_matching_workflow::builders::CreateMatchingWorkflowOutputBuilder::workflow_name)
@@ -231,47 +218,43 @@ impl CreateMatchingWorkflowOutputBuilder {
     /// - [`input_source_config`](crate::operation::create_matching_workflow::builders::CreateMatchingWorkflowOutputBuilder::input_source_config)
     /// - [`output_source_config`](crate::operation::create_matching_workflow::builders::CreateMatchingWorkflowOutputBuilder::output_source_config)
     /// - [`role_arn`](crate::operation::create_matching_workflow::builders::CreateMatchingWorkflowOutputBuilder::role_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_matching_workflow::CreateMatchingWorkflowOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_matching_workflow::CreateMatchingWorkflowOutput {
-            workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_name",
-                    "workflow_name was not specified but it is required when building CreateMatchingWorkflowOutput",
-                )
-            })?,
-            workflow_arn: self.workflow_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_arn",
-                    "workflow_arn was not specified but it is required when building CreateMatchingWorkflowOutput",
-                )
-            })?,
-            description: self.description,
-            input_source_config: self.input_source_config.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_source_config",
-                    "input_source_config was not specified but it is required when building CreateMatchingWorkflowOutput",
-                )
-            })?,
-            output_source_config: self.output_source_config.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output_source_config",
-                    "output_source_config was not specified but it is required when building CreateMatchingWorkflowOutput",
-                )
-            })?,
-            resolution_techniques: self.resolution_techniques,
-            incremental_run_config: self.incremental_run_config,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building CreateMatchingWorkflowOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_matching_workflow::CreateMatchingWorkflowOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_matching_workflow::CreateMatchingWorkflowOutput {
+                workflow_name: self.workflow_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_name", "workflow_name was not specified but it is required when building CreateMatchingWorkflowOutput")
+                    )?
+                ,
+                workflow_arn: self.workflow_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_arn", "workflow_arn was not specified but it is required when building CreateMatchingWorkflowOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                input_source_config: self.input_source_config
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_source_config", "input_source_config was not specified but it is required when building CreateMatchingWorkflowOutput")
+                    )?
+                ,
+                output_source_config: self.output_source_config
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("output_source_config", "output_source_config was not specified but it is required when building CreateMatchingWorkflowOutput")
+                    )?
+                ,
+                resolution_techniques: self.resolution_techniques
+                ,
+                incremental_run_config: self.incremental_run_config
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building CreateMatchingWorkflowOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -6,22 +6,19 @@
 /// <p>For more information on how boosting document attributes work in Amazon Q, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting using document attributes</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StringAttributeBoostingConfiguration {
+pub struct StringAttributeBoostingConfiguration  {
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub boosting_level: crate::types::DocumentAttributeBoostingLevel,
     /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
-    pub attribute_value_boosting:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>,
+    pub attribute_value_boosting: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>,
 }
-impl StringAttributeBoostingConfiguration {
+impl  StringAttributeBoostingConfiguration  {
     /// <p>Specifies how much a document attribute is boosted.</p>
-    pub fn boosting_level(&self) -> &crate::types::DocumentAttributeBoostingLevel {
+    pub fn boosting_level(&self) -> & crate::types::DocumentAttributeBoostingLevel {
         &self.boosting_level
     }
     /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
-    pub fn attribute_value_boosting(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>> {
+    pub fn attribute_value_boosting(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::StringAttributeValueBoostingLevel>> {
         self.attribute_value_boosting.as_ref()
     }
 }
@@ -37,8 +34,7 @@ impl StringAttributeBoostingConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StringAttributeBoostingConfigurationBuilder {
     pub(crate) boosting_level: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>,
-    pub(crate) attribute_value_boosting:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>,
+    pub(crate) attribute_value_boosting: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>,
 }
 impl StringAttributeBoostingConfigurationBuilder {
     /// <p>Specifies how much a document attribute is boosted.</p>
@@ -49,8 +45,7 @@ impl StringAttributeBoostingConfigurationBuilder {
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub fn set_boosting_level(mut self, input: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>) -> Self {
-        self.boosting_level = input;
-        self
+        self.boosting_level = input; self
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub fn get_boosting_level(&self) -> &::std::option::Option<crate::types::DocumentAttributeBoostingLevel> {
@@ -61,44 +56,35 @@ impl StringAttributeBoostingConfigurationBuilder {
     /// To override the contents of this collection use [`set_attribute_value_boosting`](Self::set_attribute_value_boosting).
     ///
     /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
-    pub fn attribute_value_boosting(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::StringAttributeValueBoostingLevel,
-    ) -> Self {
+    pub fn attribute_value_boosting(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::StringAttributeValueBoostingLevel) -> Self {
         let mut hash_map = self.attribute_value_boosting.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.attribute_value_boosting = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.attribute_value_boosting = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
-    pub fn set_attribute_value_boosting(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>,
-    ) -> Self {
-        self.attribute_value_boosting = input;
-        self
+    pub fn set_attribute_value_boosting(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StringAttributeValueBoostingLevel>>) -> Self {
+        self.attribute_value_boosting = input; self
     }
     /// <p>Specifies specific values of a <code>STRING</code> type document attribute being boosted.</p>
-    pub fn get_attribute_value_boosting(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StringAttributeValueBoostingLevel>> {
+    pub fn get_attribute_value_boosting(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StringAttributeValueBoostingLevel>> {
         &self.attribute_value_boosting
     }
     /// Consumes the builder and constructs a [`StringAttributeBoostingConfiguration`](crate::types::StringAttributeBoostingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`boosting_level`](crate::types::builders::StringAttributeBoostingConfigurationBuilder::boosting_level)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::StringAttributeBoostingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StringAttributeBoostingConfiguration {
-            boosting_level: self.boosting_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "boosting_level",
-                    "boosting_level was not specified but it is required when building StringAttributeBoostingConfiguration",
-                )
-            })?,
-            attribute_value_boosting: self.attribute_value_boosting,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::StringAttributeBoostingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::StringAttributeBoostingConfiguration {
+                boosting_level: self.boosting_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("boosting_level", "boosting_level was not specified but it is required when building StringAttributeBoostingConfiguration")
+                    )?
+                ,
+                attribute_value_boosting: self.attribute_value_boosting
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A list of features. You must include <code>FeatureName</code> and <code>FeatureType</code>. Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FeatureDefinition {
+pub struct FeatureDefinition  {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
     /// <p>The name:</p>
     /// <ul>
@@ -28,7 +28,7 @@ pub struct FeatureDefinition {
     /// <p>Configuration for your collection.</p>
     pub collection_config: ::std::option::Option<crate::types::CollectionConfig>,
 }
-impl FeatureDefinition {
+impl  FeatureDefinition  {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
     /// <p>The name:</p>
     /// <ul>
@@ -37,11 +37,11 @@ impl FeatureDefinition {
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
-    pub fn feature_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_name(&self) -> ::std::option::Option<& str> {
         self.feature_name.as_deref()
     }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
-    pub fn feature_type(&self) -> ::std::option::Option<&crate::types::FeatureType> {
+    pub fn feature_type(&self) -> ::std::option::Option<& crate::types::FeatureType> {
         self.feature_type.as_ref()
     }
     /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
@@ -53,11 +53,11 @@ impl FeatureDefinition {
     /// <li>
     /// <p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
     /// </ul>
-    pub fn collection_type(&self) -> ::std::option::Option<&crate::types::CollectionType> {
+    pub fn collection_type(&self) -> ::std::option::Option<& crate::types::CollectionType> {
         self.collection_type.as_ref()
     }
     /// <p>Configuration for your collection.</p>
-    pub fn collection_config(&self) -> ::std::option::Option<&crate::types::CollectionConfig> {
+    pub fn collection_config(&self) -> ::std::option::Option<& crate::types::CollectionConfig> {
         self.collection_config.as_ref()
     }
 }
@@ -100,8 +100,7 @@ impl FeatureDefinitionBuilder {
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_name = input;
-        self
+        self.feature_name = input; self
     }
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
     /// <p>The name:</p>
@@ -122,8 +121,7 @@ impl FeatureDefinitionBuilder {
     }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     pub fn set_feature_type(mut self, input: ::std::option::Option<crate::types::FeatureType>) -> Self {
-        self.feature_type = input;
-        self
+        self.feature_type = input; self
     }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::FeatureType> {
@@ -152,8 +150,7 @@ impl FeatureDefinitionBuilder {
     /// <p><code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types.</p></li>
     /// </ul>
     pub fn set_collection_type(mut self, input: ::std::option::Option<crate::types::CollectionType>) -> Self {
-        self.collection_type = input;
-        self
+        self.collection_type = input; self
     }
     /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
     /// <ul>
@@ -174,8 +171,7 @@ impl FeatureDefinitionBuilder {
     }
     /// <p>Configuration for your collection.</p>
     pub fn set_collection_config(mut self, input: ::std::option::Option<crate::types::CollectionConfig>) -> Self {
-        self.collection_config = input;
-        self
+        self.collection_config = input; self
     }
     /// <p>Configuration for your collection.</p>
     pub fn get_collection_config(&self) -> &::std::option::Option<crate::types::CollectionConfig> {
@@ -184,10 +180,15 @@ impl FeatureDefinitionBuilder {
     /// Consumes the builder and constructs a [`FeatureDefinition`](crate::types::FeatureDefinition).
     pub fn build(self) -> crate::types::FeatureDefinition {
         crate::types::FeatureDefinition {
-            feature_name: self.feature_name,
-            feature_type: self.feature_type,
-            collection_type: self.collection_type,
-            collection_config: self.collection_config,
+            feature_name: self.feature_name
+            ,
+            feature_type: self.feature_type
+            ,
+            collection_type: self.collection_type
+            ,
+            collection_config: self.collection_config
+            ,
         }
     }
 }
+

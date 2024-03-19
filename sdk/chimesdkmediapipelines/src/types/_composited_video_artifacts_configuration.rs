@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration for compositing video artifacts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositedVideoArtifactsConfiguration {
+pub struct CompositedVideoArtifactsConfiguration  {
     /// <p>The layout setting, such as <code>GridView</code> in the configuration object.</p>
     pub layout: ::std::option::Option<crate::types::LayoutOption>,
     /// <p>The video resolution setting in the configuration object. Default: HD at 1280 x 720. FHD resolution: 1920 x 1080.</p>
@@ -11,17 +11,17 @@ pub struct CompositedVideoArtifactsConfiguration {
     /// <p>The <code>GridView</code> configuration setting.</p>
     pub grid_view_configuration: ::std::option::Option<crate::types::GridViewConfiguration>,
 }
-impl CompositedVideoArtifactsConfiguration {
+impl  CompositedVideoArtifactsConfiguration  {
     /// <p>The layout setting, such as <code>GridView</code> in the configuration object.</p>
-    pub fn layout(&self) -> ::std::option::Option<&crate::types::LayoutOption> {
+    pub fn layout(&self) -> ::std::option::Option<& crate::types::LayoutOption> {
         self.layout.as_ref()
     }
     /// <p>The video resolution setting in the configuration object. Default: HD at 1280 x 720. FHD resolution: 1920 x 1080.</p>
-    pub fn resolution(&self) -> ::std::option::Option<&crate::types::ResolutionOption> {
+    pub fn resolution(&self) -> ::std::option::Option<& crate::types::ResolutionOption> {
         self.resolution.as_ref()
     }
     /// <p>The <code>GridView</code> configuration setting.</p>
-    pub fn grid_view_configuration(&self) -> ::std::option::Option<&crate::types::GridViewConfiguration> {
+    pub fn grid_view_configuration(&self) -> ::std::option::Option<& crate::types::GridViewConfiguration> {
         self.grid_view_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CompositedVideoArtifactsConfigurationBuilder {
     }
     /// <p>The layout setting, such as <code>GridView</code> in the configuration object.</p>
     pub fn set_layout(mut self, input: ::std::option::Option<crate::types::LayoutOption>) -> Self {
-        self.layout = input;
-        self
+        self.layout = input; self
     }
     /// <p>The layout setting, such as <code>GridView</code> in the configuration object.</p>
     pub fn get_layout(&self) -> &::std::option::Option<crate::types::LayoutOption> {
@@ -62,8 +61,7 @@ impl CompositedVideoArtifactsConfigurationBuilder {
     }
     /// <p>The video resolution setting in the configuration object. Default: HD at 1280 x 720. FHD resolution: 1920 x 1080.</p>
     pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::ResolutionOption>) -> Self {
-        self.resolution = input;
-        self
+        self.resolution = input; self
     }
     /// <p>The video resolution setting in the configuration object. Default: HD at 1280 x 720. FHD resolution: 1920 x 1080.</p>
     pub fn get_resolution(&self) -> &::std::option::Option<crate::types::ResolutionOption> {
@@ -77,8 +75,7 @@ impl CompositedVideoArtifactsConfigurationBuilder {
     }
     /// <p>The <code>GridView</code> configuration setting.</p>
     pub fn set_grid_view_configuration(mut self, input: ::std::option::Option<crate::types::GridViewConfiguration>) -> Self {
-        self.grid_view_configuration = input;
-        self
+        self.grid_view_configuration = input; self
     }
     /// <p>The <code>GridView</code> configuration setting.</p>
     pub fn get_grid_view_configuration(&self) -> &::std::option::Option<crate::types::GridViewConfiguration> {
@@ -87,9 +84,13 @@ impl CompositedVideoArtifactsConfigurationBuilder {
     /// Consumes the builder and constructs a [`CompositedVideoArtifactsConfiguration`](crate::types::CompositedVideoArtifactsConfiguration).
     pub fn build(self) -> crate::types::CompositedVideoArtifactsConfiguration {
         crate::types::CompositedVideoArtifactsConfiguration {
-            layout: self.layout,
-            resolution: self.resolution,
-            grid_view_configuration: self.grid_view_configuration,
+            layout: self.layout
+            ,
+            resolution: self.resolution
+            ,
+            grid_view_configuration: self.grid_view_configuration
+            ,
         }
     }
 }
+

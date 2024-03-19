@@ -3,19 +3,19 @@
 /// <p>A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FollowUpPrompt {
+pub struct FollowUpPrompt  {
     /// <p>Prompts for information from the user.</p>
     pub prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub rejection_statement: ::std::option::Option<crate::types::Statement>,
 }
-impl FollowUpPrompt {
+impl  FollowUpPrompt  {
     /// <p>Prompts for information from the user.</p>
-    pub fn prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
+    pub fn prompt(&self) -> ::std::option::Option<& crate::types::Prompt> {
         self.prompt.as_ref()
     }
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
-    pub fn rejection_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn rejection_statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.rejection_statement.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl FollowUpPromptBuilder {
     }
     /// <p>Prompts for information from the user.</p>
     pub fn set_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
-        self.prompt = input;
-        self
+        self.prompt = input; self
     }
     /// <p>Prompts for information from the user.</p>
     pub fn get_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
@@ -57,8 +56,7 @@ impl FollowUpPromptBuilder {
     }
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub fn set_rejection_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
-        self.rejection_statement = input;
-        self
+        self.rejection_statement = input; self
     }
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub fn get_rejection_statement(&self) -> &::std::option::Option<crate::types::Statement> {
@@ -67,8 +65,11 @@ impl FollowUpPromptBuilder {
     /// Consumes the builder and constructs a [`FollowUpPrompt`](crate::types::FollowUpPrompt).
     pub fn build(self) -> crate::types::FollowUpPrompt {
         crate::types::FollowUpPrompt {
-            prompt: self.prompt,
-            rejection_statement: self.rejection_statement,
+            prompt: self.prompt
+            ,
+            rejection_statement: self.rejection_statement
+            ,
         }
     }
 }
+

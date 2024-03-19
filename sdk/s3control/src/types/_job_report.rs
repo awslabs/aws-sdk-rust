@@ -3,7 +3,7 @@
 /// <p>Contains the configuration parameters for a job-completion report.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobReport {
+pub struct JobReport  {
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
     /// </note>
@@ -22,15 +22,15 @@ pub struct JobReport {
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
     pub report_scope: ::std::option::Option<crate::types::JobReportScope>,
 }
-impl JobReport {
+impl  JobReport  {
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
     /// </note>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The format of the specified job-completion report.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::JobReportFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::JobReportFormat> {
         self.format.as_ref()
     }
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
@@ -43,11 +43,11 @@ impl JobReport {
     /// /report.json
     /// </job-id>
     /// </prefix></code>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
-    pub fn report_scope(&self) -> ::std::option::Option<&crate::types::JobReportScope> {
+    pub fn report_scope(&self) -> ::std::option::Option<& crate::types::JobReportScope> {
         self.report_scope.as_ref()
     }
 }
@@ -80,8 +80,7 @@ impl JobReportBuilder {
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
     /// </note>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
@@ -96,8 +95,7 @@ impl JobReportBuilder {
     }
     /// <p>The format of the specified job-completion report.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::JobReportFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the specified job-completion report.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::JobReportFormat> {
@@ -111,8 +109,7 @@ impl JobReportBuilder {
     }
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether the specified job will generate a job-completion report.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -135,8 +132,7 @@ impl JobReportBuilder {
     /// </job-id>
     /// </prefix></code>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3 stores the job-completion report at <code><prefix>
     /// /job-
@@ -154,8 +150,7 @@ impl JobReportBuilder {
     }
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
     pub fn set_report_scope(mut self, input: ::std::option::Option<crate::types::JobReportScope>) -> Self {
-        self.report_scope = input;
-        self
+        self.report_scope = input; self
     }
     /// <p>Indicates whether the job-completion report will include details of all tasks or only failed tasks.</p>
     pub fn get_report_scope(&self) -> &::std::option::Option<crate::types::JobReportScope> {
@@ -164,11 +159,18 @@ impl JobReportBuilder {
     /// Consumes the builder and constructs a [`JobReport`](crate::types::JobReport).
     pub fn build(self) -> crate::types::JobReport {
         crate::types::JobReport {
-            bucket: self.bucket,
-            format: self.format,
-            enabled: self.enabled.unwrap_or_default(),
-            prefix: self.prefix,
-            report_scope: self.report_scope,
+            bucket: self.bucket
+            ,
+            format: self.format
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            prefix: self.prefix
+            ,
+            report_scope: self.report_scope
+            ,
         }
     }
 }
+

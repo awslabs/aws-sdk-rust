@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdvertiseByoipCidrInput {
+pub struct AdvertiseByoipCidrInput  {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
@@ -23,13 +23,13 @@ pub struct AdvertiseByoipCidrInput {
     /// </note>
     pub network_border_group: ::std::option::Option<::std::string::String>,
 }
-impl AdvertiseByoipCidrInput {
+impl  AdvertiseByoipCidrInput  {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
-    pub fn asn(&self) -> ::std::option::Option<&str> {
+    pub fn asn(&self) -> ::std::option::Option<& str> {
         self.asn.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,7 +48,7 @@ impl AdvertiseByoipCidrInput {
     /// </ul><note>
     /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
     /// </note>
-    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+    pub fn network_border_group(&self) -> ::std::option::Option<& str> {
         self.network_border_group.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl AdvertiseByoipCidrInputBuilder {
     }
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl AdvertiseByoipCidrInputBuilder {
     }
     /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
     pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl AdvertiseByoipCidrInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -141,8 +138,7 @@ impl AdvertiseByoipCidrInputBuilder {
     /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
     /// </note>
     pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_border_group = input;
-        self
+        self.network_border_group = input; self
     }
     /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
     /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
@@ -160,15 +156,19 @@ impl AdvertiseByoipCidrInputBuilder {
         &self.network_border_group
     }
     /// Consumes the builder and constructs a [`AdvertiseByoipCidrInput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput {
-            cidr: self.cidr,
-            asn: self.asn,
-            dry_run: self.dry_run,
-            network_border_group: self.network_border_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput {
+                cidr: self.cidr
+                ,
+                asn: self.asn
+                ,
+                dry_run: self.dry_run
+                ,
+                network_border_group: self.network_border_group
+                ,
+            }
+        )
     }
 }
+

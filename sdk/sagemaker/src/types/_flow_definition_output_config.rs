@@ -3,21 +3,21 @@
 /// <p>Contains information about where human output will be stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlowDefinitionOutputConfig {
+pub struct FlowDefinitionOutputConfig  {
     /// <p>The Amazon S3 path where the object containing human output will be made available.</p>
     /// <p>To learn more about the format of Amazon A2I output data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.</p>
     pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl FlowDefinitionOutputConfig {
+impl  FlowDefinitionOutputConfig  {
     /// <p>The Amazon S3 path where the object containing human output will be made available.</p>
     /// <p>To learn more about the format of Amazon A2I output data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.</p>
-    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<& str> {
         self.s3_output_path.as_deref()
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl FlowDefinitionOutputConfigBuilder {
     /// <p>The Amazon S3 path where the object containing human output will be made available.</p>
     /// <p>To learn more about the format of Amazon A2I output data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.</p>
     pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_output_path = input;
-        self
+        self.s3_output_path = input; self
     }
     /// <p>The Amazon S3 path where the object containing human output will be made available.</p>
     /// <p>To learn more about the format of Amazon A2I output data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.</p>
@@ -61,8 +60,7 @@ impl FlowDefinitionOutputConfigBuilder {
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,11 @@ impl FlowDefinitionOutputConfigBuilder {
     /// Consumes the builder and constructs a [`FlowDefinitionOutputConfig`](crate::types::FlowDefinitionOutputConfig).
     pub fn build(self) -> crate::types::FlowDefinitionOutputConfig {
         crate::types::FlowDefinitionOutputConfig {
-            s3_output_path: self.s3_output_path,
-            kms_key_id: self.kms_key_id,
+            s3_output_path: self.s3_output_path
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

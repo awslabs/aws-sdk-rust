@@ -3,7 +3,7 @@
 /// <p>Object for the summarized details of the layout.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LayoutSummary {
+pub struct LayoutSummary  {
     /// <p>The unique identifier for of the layout.</p>
     pub layout_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
@@ -11,21 +11,18 @@ pub struct LayoutSummary {
     /// <p>The name of the layout.</p>
     pub name: ::std::string::String,
 }
-impl LayoutSummary {
+impl  LayoutSummary  {
     /// <p>The unique identifier for of the layout.</p>
-    pub fn layout_id(&self) -> &str {
-        use std::ops::Deref;
-        self.layout_id.deref()
+    pub fn layout_id(&self) -> & str {
+        use std::ops::Deref; self.layout_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
-    pub fn layout_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.layout_arn.deref()
+    pub fn layout_arn(&self) -> & str {
+        use std::ops::Deref; self.layout_arn.deref()
     }
     /// <p>The name of the layout.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl LayoutSummary {
@@ -52,8 +49,7 @@ impl LayoutSummaryBuilder {
     }
     /// <p>The unique identifier for of the layout.</p>
     pub fn set_layout_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layout_id = input;
-        self
+        self.layout_id = input; self
     }
     /// <p>The unique identifier for of the layout.</p>
     pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl LayoutSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
     pub fn set_layout_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layout_arn = input;
-        self
+        self.layout_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the layout.</p>
     pub fn get_layout_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl LayoutSummaryBuilder {
     }
     /// <p>The name of the layout.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the layout.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl LayoutSummaryBuilder {
     /// - [`layout_arn`](crate::types::builders::LayoutSummaryBuilder::layout_arn)
     /// - [`name`](crate::types::builders::LayoutSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::LayoutSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LayoutSummary {
-            layout_id: self.layout_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layout_id",
-                    "layout_id was not specified but it is required when building LayoutSummary",
-                )
-            })?,
-            layout_arn: self.layout_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layout_arn",
-                    "layout_arn was not specified but it is required when building LayoutSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building LayoutSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LayoutSummary {
+                layout_id: self.layout_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layout_id", "layout_id was not specified but it is required when building LayoutSummary")
+                    )?
+                ,
+                layout_arn: self.layout_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layout_arn", "layout_arn was not specified but it is required when building LayoutSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building LayoutSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

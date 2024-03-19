@@ -3,7 +3,7 @@
 /// <p>An object that represents a listener for a virtual gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualGatewayListener {
+pub struct VirtualGatewayListener  {
     /// <p>The health check information for the listener.</p>
     pub health_check: ::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy>,
     /// <p>The port mapping information for the listener.</p>
@@ -13,21 +13,21 @@ pub struct VirtualGatewayListener {
     /// <p>The connection pool information for the virtual gateway listener.</p>
     pub connection_pool: ::std::option::Option<crate::types::VirtualGatewayConnectionPool>,
 }
-impl VirtualGatewayListener {
+impl  VirtualGatewayListener  {
     /// <p>The health check information for the listener.</p>
-    pub fn health_check(&self) -> ::std::option::Option<&crate::types::VirtualGatewayHealthCheckPolicy> {
+    pub fn health_check(&self) -> ::std::option::Option<& crate::types::VirtualGatewayHealthCheckPolicy> {
         self.health_check.as_ref()
     }
     /// <p>The port mapping information for the listener.</p>
-    pub fn port_mapping(&self) -> ::std::option::Option<&crate::types::VirtualGatewayPortMapping> {
+    pub fn port_mapping(&self) -> ::std::option::Option<& crate::types::VirtualGatewayPortMapping> {
         self.port_mapping.as_ref()
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
-    pub fn tls(&self) -> ::std::option::Option<&crate::types::VirtualGatewayListenerTls> {
+    pub fn tls(&self) -> ::std::option::Option<& crate::types::VirtualGatewayListenerTls> {
         self.tls.as_ref()
     }
     /// <p>The connection pool information for the virtual gateway listener.</p>
-    pub fn connection_pool(&self) -> ::std::option::Option<&crate::types::VirtualGatewayConnectionPool> {
+    pub fn connection_pool(&self) -> ::std::option::Option<& crate::types::VirtualGatewayConnectionPool> {
         self.connection_pool.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl VirtualGatewayListenerBuilder {
     }
     /// <p>The health check information for the listener.</p>
     pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy>) -> Self {
-        self.health_check = input;
-        self
+        self.health_check = input; self
     }
     /// <p>The health check information for the listener.</p>
     pub fn get_health_check(&self) -> &::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy> {
@@ -70,8 +69,7 @@ impl VirtualGatewayListenerBuilder {
     }
     /// <p>The port mapping information for the listener.</p>
     pub fn set_port_mapping(mut self, input: ::std::option::Option<crate::types::VirtualGatewayPortMapping>) -> Self {
-        self.port_mapping = input;
-        self
+        self.port_mapping = input; self
     }
     /// <p>The port mapping information for the listener.</p>
     pub fn get_port_mapping(&self) -> &::std::option::Option<crate::types::VirtualGatewayPortMapping> {
@@ -84,8 +82,7 @@ impl VirtualGatewayListenerBuilder {
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
     pub fn set_tls(mut self, input: ::std::option::Option<crate::types::VirtualGatewayListenerTls>) -> Self {
-        self.tls = input;
-        self
+        self.tls = input; self
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
     pub fn get_tls(&self) -> &::std::option::Option<crate::types::VirtualGatewayListenerTls> {
@@ -98,8 +95,7 @@ impl VirtualGatewayListenerBuilder {
     }
     /// <p>The connection pool information for the virtual gateway listener.</p>
     pub fn set_connection_pool(mut self, input: ::std::option::Option<crate::types::VirtualGatewayConnectionPool>) -> Self {
-        self.connection_pool = input;
-        self
+        self.connection_pool = input; self
     }
     /// <p>The connection pool information for the virtual gateway listener.</p>
     pub fn get_connection_pool(&self) -> &::std::option::Option<crate::types::VirtualGatewayConnectionPool> {
@@ -108,10 +104,15 @@ impl VirtualGatewayListenerBuilder {
     /// Consumes the builder and constructs a [`VirtualGatewayListener`](crate::types::VirtualGatewayListener).
     pub fn build(self) -> crate::types::VirtualGatewayListener {
         crate::types::VirtualGatewayListener {
-            health_check: self.health_check,
-            port_mapping: self.port_mapping,
-            tls: self.tls,
-            connection_pool: self.connection_pool,
+            health_check: self.health_check
+            ,
+            port_mapping: self.port_mapping
+            ,
+            tls: self.tls
+            ,
+            connection_pool: self.connection_pool
+            ,
         }
     }
 }
+

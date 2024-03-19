@@ -5,23 +5,20 @@ pub use crate::operation::create_hit::_create_hit_input::CreateHitInputBuilder;
 
 impl CreateHitInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_hit::CreateHitOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_hit::CreateHITError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_hit();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_hit::CreateHitOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_hit::CreateHITError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_hit();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateHIT`.
-///
+/// 
 /// <p>The <code>CreateHIT</code> operation creates a new Human Intelligence Task (HIT). The new HIT is made available for Workers to find and accept on the Amazon Mechanical Turk website.</p>
 /// <p>This operation allows you to specify a new HIT by passing in values for the properties of the HIT, such as its title, reward amount and number of assignments. When you pass these values to <code>CreateHIT</code>, a new HIT is created for you, with a new <code>HITTypeID</code>. The HITTypeID can be used to create additional HITs in the future without needing to specify common parameters such as the title, description and reward amount each time.</p>
 /// <p>An alternative way to create HITs is to first generate a HITTypeID using the <code>CreateHITType</code> operation and then call the <code>CreateHITWithHITType</code> operation. This is the recommended best practice for Requesters who are creating large numbers of HITs.</p>
@@ -31,27 +28,32 @@ impl CreateHitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHITFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_hit::builders::CreateHitInputBuilder,
+                    inner: crate::operation::create_hit::builders::CreateHitInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
-impl crate::client::customize::internal::CustomizableSend<crate::operation::create_hit::CreateHitOutput, crate::operation::create_hit::CreateHITError>
-    for CreateHITFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<crate::operation::create_hit::CreateHitOutput, crate::operation::create_hit::CreateHITError>,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+impl
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_hit::CreateHitOutput,
+                    crate::operation::create_hit::CreateHITError,
+                > for CreateHITFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_hit::CreateHitOutput,
+                        crate::operation::create_hit::CreateHITError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateHITFluentBuilder {
     /// Creates a new `CreateHIT`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -60,53 +62,44 @@ impl CreateHITFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hit::CreateHitOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_hit::CreateHITError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_hit::CreateHIT::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_hit::CreateHIT::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_hit::CreateHitOutput,
-        crate::operation::create_hit::CreateHITError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_hit::CreateHitOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_hit::CreateHITError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_hit::CreateHIT::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_hit::CreateHIT::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_hit::CreateHitOutput, crate::operation::create_hit::CreateHITError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The number of times the HIT can be accepted and completed before the HIT becomes unavailable.</p>
     pub fn max_assignments(mut self, input: i32) -> Self {
         self.inner = self.inner.max_assignments(input);
@@ -269,12 +262,12 @@ impl CreateHITFluentBuilder {
         self
     }
     /// <p>Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure.</p>
-    pub fn set_qualification_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>) -> Self {
+    pub fn set_qualification_requirements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QualificationRequirement>>) -> Self {
         self.inner = self.inner.set_qualification_requirements(input);
         self
     }
     /// <p>Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure.</p>
-    pub fn get_qualification_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
+    pub fn get_qualification_requirements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QualificationRequirement>> {
         self.inner.get_qualification_requirements()
     }
     /// <p>A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.</p><note>
@@ -352,12 +345,13 @@ impl CreateHITFluentBuilder {
         self
     }
     /// <p>If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout.</p>
-    pub fn set_hit_layout_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>>) -> Self {
+    pub fn set_hit_layout_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HitLayoutParameter>>) -> Self {
         self.inner = self.inner.set_hit_layout_parameters(input);
         self
     }
     /// <p>If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout.</p>
-    pub fn get_hit_layout_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>> {
+    pub fn get_hit_layout_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HitLayoutParameter>> {
         self.inner.get_hit_layout_parameters()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information on the vulnerable package identified by a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VulnerablePackage {
+pub struct VulnerablePackage  {
     /// <p>The architecture of the vulnerable package.</p>
     pub arch: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of the vulnerable package.</p>
@@ -21,9 +21,9 @@ pub struct VulnerablePackage {
     /// <p>The version of the vulnerable package.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl VulnerablePackage {
+impl  VulnerablePackage  {
     /// <p>The architecture of the vulnerable package.</p>
-    pub fn arch(&self) -> ::std::option::Option<&str> {
+    pub fn arch(&self) -> ::std::option::Option<& str> {
         self.arch.as_deref()
     }
     /// <p>The epoch of the vulnerable package.</p>
@@ -31,27 +31,27 @@ impl VulnerablePackage {
         self.epoch
     }
     /// <p>The file path of the vulnerable package.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The name of the vulnerable package.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The package manager of the vulnerable package.</p>
-    pub fn package_manager(&self) -> ::std::option::Option<&str> {
+    pub fn package_manager(&self) -> ::std::option::Option<& str> {
         self.package_manager.as_deref()
     }
     /// <p>The release of the vulnerable package.</p>
-    pub fn release(&self) -> ::std::option::Option<&str> {
+    pub fn release(&self) -> ::std::option::Option<& str> {
         self.release.as_deref()
     }
     /// <p>The source layer hash of the vulnerable package.</p>
-    pub fn source_layer_hash(&self) -> ::std::option::Option<&str> {
+    pub fn source_layer_hash(&self) -> ::std::option::Option<& str> {
         self.source_layer_hash.as_deref()
     }
     /// <p>The version of the vulnerable package.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl VulnerablePackageBuilder {
     }
     /// <p>The architecture of the vulnerable package.</p>
     pub fn set_arch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arch = input;
-        self
+        self.arch = input; self
     }
     /// <p>The architecture of the vulnerable package.</p>
     pub fn get_arch(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl VulnerablePackageBuilder {
     }
     /// <p>The epoch of the vulnerable package.</p>
     pub fn set_epoch(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.epoch = input;
-        self
+        self.epoch = input; self
     }
     /// <p>The epoch of the vulnerable package.</p>
     pub fn get_epoch(&self) -> &::std::option::Option<i32> {
@@ -111,8 +109,7 @@ impl VulnerablePackageBuilder {
     }
     /// <p>The file path of the vulnerable package.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The file path of the vulnerable package.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl VulnerablePackageBuilder {
     }
     /// <p>The name of the vulnerable package.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the vulnerable package.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl VulnerablePackageBuilder {
     }
     /// <p>The package manager of the vulnerable package.</p>
     pub fn set_package_manager(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_manager = input;
-        self
+        self.package_manager = input; self
     }
     /// <p>The package manager of the vulnerable package.</p>
     pub fn get_package_manager(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +148,7 @@ impl VulnerablePackageBuilder {
     }
     /// <p>The release of the vulnerable package.</p>
     pub fn set_release(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release = input;
-        self
+        self.release = input; self
     }
     /// <p>The release of the vulnerable package.</p>
     pub fn get_release(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl VulnerablePackageBuilder {
     }
     /// <p>The source layer hash of the vulnerable package.</p>
     pub fn set_source_layer_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_layer_hash = input;
-        self
+        self.source_layer_hash = input; self
     }
     /// <p>The source layer hash of the vulnerable package.</p>
     pub fn get_source_layer_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl VulnerablePackageBuilder {
     }
     /// <p>The version of the vulnerable package.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the vulnerable package.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,14 +183,23 @@ impl VulnerablePackageBuilder {
     /// Consumes the builder and constructs a [`VulnerablePackage`](crate::types::VulnerablePackage).
     pub fn build(self) -> crate::types::VulnerablePackage {
         crate::types::VulnerablePackage {
-            arch: self.arch,
-            epoch: self.epoch,
-            file_path: self.file_path,
-            name: self.name,
-            package_manager: self.package_manager,
-            release: self.release,
-            source_layer_hash: self.source_layer_hash,
-            version: self.version,
+            arch: self.arch
+            ,
+            epoch: self.epoch
+            ,
+            file_path: self.file_path
+            ,
+            name: self.name
+            ,
+            package_manager: self.package_manager
+            ,
+            release: self.release
+            ,
+            source_layer_hash: self.source_layer_hash
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

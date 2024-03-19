@@ -3,13 +3,13 @@
 /// <p>Specifies the network configuration for an ECS task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkConfiguration {
+pub struct NetworkConfiguration  {
     /// <p>Specifies the Amazon VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
     pub awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
-impl NetworkConfiguration {
+impl  NetworkConfiguration  {
     /// <p>Specifies the Amazon VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
-    pub fn awsvpc_configuration(&self) -> ::std::option::Option<&crate::types::AwsVpcConfiguration> {
+    pub fn awsvpc_configuration(&self) -> ::std::option::Option<& crate::types::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl NetworkConfigurationBuilder {
     }
     /// <p>Specifies the Amazon VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
     pub fn set_awsvpc_configuration(mut self, input: ::std::option::Option<crate::types::AwsVpcConfiguration>) -> Self {
-        self.awsvpc_configuration = input;
-        self
+        self.awsvpc_configuration = input; self
     }
     /// <p>Specifies the Amazon VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
     pub fn get_awsvpc_configuration(&self) -> &::std::option::Option<crate::types::AwsVpcConfiguration> {
@@ -44,7 +43,9 @@ impl NetworkConfigurationBuilder {
     /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::types::NetworkConfiguration).
     pub fn build(self) -> crate::types::NetworkConfiguration {
         crate::types::NetworkConfiguration {
-            awsvpc_configuration: self.awsvpc_configuration,
+            awsvpc_configuration: self.awsvpc_configuration
+            ,
         }
     }
 }
+

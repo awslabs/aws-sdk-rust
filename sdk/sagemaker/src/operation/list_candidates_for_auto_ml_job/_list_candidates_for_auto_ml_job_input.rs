@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCandidatesForAutoMlJobInput {
+pub struct ListCandidatesForAutoMlJobInput  {
     /// <p>List the candidates created for the job by providing the job's name.</p>
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
     /// <p>List the candidates for the job and filter by status.</p>
@@ -18,25 +18,25 @@ pub struct ListCandidatesForAutoMlJobInput {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListCandidatesForAutoMlJobInput {
+impl  ListCandidatesForAutoMlJobInput  {
     /// <p>List the candidates created for the job by providing the job's name.</p>
-    pub fn auto_ml_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_ml_job_name(&self) -> ::std::option::Option<& str> {
         self.auto_ml_job_name.as_deref()
     }
     /// <p>List the candidates for the job and filter by status.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::CandidateStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::CandidateStatus> {
         self.status_equals.as_ref()
     }
     /// <p>List the candidates for the job and filter by candidate name.</p>
-    pub fn candidate_name_equals(&self) -> ::std::option::Option<&str> {
+    pub fn candidate_name_equals(&self) -> ::std::option::Option<& str> {
         self.candidate_name_equals.as_deref()
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::AutoMlSortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::AutoMlSortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::CandidateSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::CandidateSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>List the job's candidates up to a specified limit.</p>
@@ -44,7 +44,7 @@ impl ListCandidatesForAutoMlJobInput {
         self.max_results
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     }
     /// <p>List the candidates created for the job by providing the job's name.</p>
     pub fn set_auto_ml_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_ml_job_name = input;
-        self
+        self.auto_ml_job_name = input; self
     }
     /// <p>List the candidates created for the job by providing the job's name.</p>
     pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     }
     /// <p>List the candidates for the job and filter by status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::CandidateStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>List the candidates for the job and filter by status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::CandidateStatus> {
@@ -104,8 +102,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     }
     /// <p>List the candidates for the job and filter by candidate name.</p>
     pub fn set_candidate_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.candidate_name_equals = input;
-        self
+        self.candidate_name_equals = input; self
     }
     /// <p>List the candidates for the job and filter by candidate name.</p>
     pub fn get_candidate_name_equals(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::AutoMlSortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::AutoMlSortOrder> {
@@ -132,8 +128,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     }
     /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::CandidateSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::CandidateSortBy> {
@@ -146,8 +141,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     }
     /// <p>List the job's candidates up to a specified limit.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>List the job's candidates up to a specified limit.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -160,28 +154,32 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCandidatesForAutoMlJobInput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput {
-            auto_ml_job_name: self.auto_ml_job_name,
-            status_equals: self.status_equals,
-            candidate_name_equals: self.candidate_name_equals,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput {
+                auto_ml_job_name: self.auto_ml_job_name
+                ,
+                status_equals: self.status_equals
+                ,
+                candidate_name_equals: self.candidate_name_equals
+                ,
+                sort_order: self.sort_order
+                ,
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

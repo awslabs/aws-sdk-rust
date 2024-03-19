@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPublicAccessBlockOutput {
+pub struct GetPublicAccessBlockOutput  {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     _request_id: Option<String>,
 }
-impl GetPublicAccessBlockOutput {
+impl  GetPublicAccessBlockOutput  {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
-    pub fn public_access_block_configuration(&self) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
+    pub fn public_access_block_configuration(&self) -> ::std::option::Option<& crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPublicAccessBlockOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPublicAccessBlockOutput {
     /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockOutput`](crate::operation::get_public_access_block::GetPublicAccessBlockOutput).
     pub fn builder() -> crate::operation::get_public_access_block::builders::GetPublicAccessBlockOutputBuilder {
@@ -40,27 +40,28 @@ impl GetPublicAccessBlockOutputBuilder {
     }
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
     pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
-        self.public_access_block_configuration = input;
-        self
+        self.public_access_block_configuration = input; self
     }
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
     pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
         &self.public_access_block_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPublicAccessBlockOutput`](crate::operation::get_public_access_block::GetPublicAccessBlockOutput).
     pub fn build(self) -> crate::operation::get_public_access_block::GetPublicAccessBlockOutput {
         crate::operation::get_public_access_block::GetPublicAccessBlockOutput {
-            public_access_block_configuration: self.public_access_block_configuration,
+            public_access_block_configuration: self.public_access_block_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

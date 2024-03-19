@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSolNetworkPackageOutput {
+pub struct DeleteSolNetworkPackageOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteSolNetworkPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSolNetworkPackageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSolNetworkPackageOutput`](crate::operation::delete_sol_network_package::DeleteSolNetworkPackageOutput).
     pub fn builder() -> crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteSolNetworkPackageOutputBuilder {
 }
 impl DeleteSolNetworkPackageOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSolNetworkPackageOutput`](crate::operation::delete_sol_network_package::DeleteSolNetworkPackageOutput).
     pub fn build(self) -> crate::operation::delete_sol_network_package::DeleteSolNetworkPackageOutput {
         crate::operation::delete_sol_network_package::DeleteSolNetworkPackageOutput {
@@ -40,3 +40,4 @@ impl DeleteSolNetworkPackageOutputBuilder {
         }
     }
 }
+

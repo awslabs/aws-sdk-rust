@@ -3,15 +3,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQueueInput {
+pub struct DeleteQueueInput  {
     /// <p>The URL of the Amazon SQS queue to delete.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: ::std::option::Option<::std::string::String>,
 }
-impl DeleteQueueInput {
+impl  DeleteQueueInput  {
     /// <p>The URL of the Amazon SQS queue to delete.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<& str> {
         self.queue_url.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl DeleteQueueInputBuilder {
     /// <p>The URL of the Amazon SQS queue to delete.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// <p>The URL of the Amazon SQS queue to delete.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -49,6 +48,12 @@ impl DeleteQueueInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::operation::delete_queue::DeleteQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_queue::DeleteQueueInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_queue::DeleteQueueInput { queue_url: self.queue_url })
+        ::std::result::Result::Ok(
+            crate::operation::delete_queue::DeleteQueueInput {
+                queue_url: self.queue_url
+                ,
+            }
+        )
     }
 }
+

@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetPhoneNumberSettingsOutput {
+pub struct GetPhoneNumberSettingsOutput  {
     /// <p>The default outbound calling name for the account.</p>
     pub calling_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub calling_name_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetPhoneNumberSettingsOutput {
+impl  GetPhoneNumberSettingsOutput  {
     /// <p>The default outbound calling name for the account.</p>
-    pub fn calling_name(&self) -> ::std::option::Option<&str> {
+    pub fn calling_name(&self) -> ::std::option::Option<& str> {
         self.calling_name.as_deref()
     }
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
-    pub fn calling_name_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn calling_name_updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.calling_name_updated_timestamp.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetPhoneNumberSettingsOutput {
+impl  ::std::fmt::Debug for GetPhoneNumberSettingsOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPhoneNumberSettingsOutput");
         formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for GetPhoneNumberSettingsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetPhoneNumberSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPhoneNumberSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetPhoneNumberSettingsOutput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput).
     pub fn builder() -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsOutputBuilder {
@@ -56,8 +56,7 @@ impl GetPhoneNumberSettingsOutputBuilder {
     }
     /// <p>The default outbound calling name for the account.</p>
     pub fn set_calling_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calling_name = input;
-        self
+        self.calling_name = input; self
     }
     /// <p>The default outbound calling name for the account.</p>
     pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,27 +69,28 @@ impl GetPhoneNumberSettingsOutputBuilder {
     }
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub fn set_calling_name_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.calling_name_updated_timestamp = input;
-        self
+        self.calling_name_updated_timestamp = input; self
     }
     /// <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     pub fn get_calling_name_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.calling_name_updated_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPhoneNumberSettingsOutput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput).
     pub fn build(self) -> crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput {
         crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput {
-            calling_name: self.calling_name,
-            calling_name_updated_timestamp: self.calling_name_updated_timestamp,
+            calling_name: self.calling_name
+            ,
+            calling_name_updated_timestamp: self.calling_name_updated_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
@@ -104,3 +104,4 @@ impl ::std::fmt::Debug for GetPhoneNumberSettingsOutputBuilder {
         formatter.finish()
     }
 }
+

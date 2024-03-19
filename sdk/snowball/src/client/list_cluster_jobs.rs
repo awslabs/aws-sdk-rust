@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClusterJobs`](crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_id(impl Into<String>)`](crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::set_cluster_id):<br>required: **true**<br><p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of <code>JobListEntry</code> objects to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p><br>
-    /// - On success, responds with [`ListClusterJobsOutput`](crate::operation::list_cluster_jobs::ListClusterJobsOutput) with field(s):
+                            /// - On success, responds with [`ListClusterJobsOutput`](crate::operation::list_cluster_jobs::ListClusterJobsOutput) with field(s):
     ///   - [`job_list_entries(Option<Vec::<JobListEntry>>)`](crate::operation::list_cluster_jobs::ListClusterJobsOutput::job_list_entries): <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cluster_jobs::ListClusterJobsOutput::next_token): <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
-    /// - On failure, responds with [`SdkError<ListClusterJobsError>`](crate::operation::list_cluster_jobs::ListClusterJobsError)
+                            /// - On failure, responds with [`SdkError<ListClusterJobsError>`](crate::operation::list_cluster_jobs::ListClusterJobsError)
     pub fn list_cluster_jobs(&self) -> crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder {
-        crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_cluster_jobs::builders::ListClusterJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

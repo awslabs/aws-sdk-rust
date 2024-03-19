@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetDifferences`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`repository_name(impl Into<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository where you want to get differences.</p><br>
     ///   - [`before_commit_specifier(impl Into<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::before_commit_specifier) / [`set_before_commit_specifier(Option<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::set_before_commit_specifier):<br>required: **false**<br><p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p><br>
     ///   - [`after_commit_specifier(impl Into<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::after_commit_specifier) / [`set_after_commit_specifier(Option<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::set_after_commit_specifier):<br>required: **true**<br><p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`after_path(impl Into<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::after_path) / [`set_after_path(Option<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::set_after_path):<br>required: **false**<br><p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-zero, non-negative integer used to limit the number of returned results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_differences::builders::GetDifferencesFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
-    /// - On success, responds with [`GetDifferencesOutput`](crate::operation::get_differences::GetDifferencesOutput) with field(s):
+                            /// - On success, responds with [`GetDifferencesOutput`](crate::operation::get_differences::GetDifferencesOutput) with field(s):
     ///   - [`differences(Option<Vec::<Difference>>)`](crate::operation::get_differences::GetDifferencesOutput::differences): <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_differences::GetDifferencesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    /// - On failure, responds with [`SdkError<GetDifferencesError>`](crate::operation::get_differences::GetDifferencesError)
+                            /// - On failure, responds with [`SdkError<GetDifferencesError>`](crate::operation::get_differences::GetDifferencesError)
     pub fn get_differences(&self) -> crate::operation::get_differences::builders::GetDifferencesFluentBuilder {
-        crate::operation::get_differences::builders::GetDifferencesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_differences::builders::GetDifferencesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

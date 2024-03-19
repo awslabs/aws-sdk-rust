@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCoreDefinitionInput {
+pub struct GetCoreDefinitionInput  {
     /// The ID of the core definition.
     pub core_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl GetCoreDefinitionInput {
+impl  GetCoreDefinitionInput  {
     /// The ID of the core definition.
-    pub fn core_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_definition_id(&self) -> ::std::option::Option<& str> {
         self.core_definition_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetCoreDefinitionInputBuilder {
     }
     /// The ID of the core definition.
     pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_definition_id = input;
-        self
+        self.core_definition_id = input; self
     }
     /// The ID of the core definition.
     pub fn get_core_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_definition_id
     }
     /// Consumes the builder and constructs a [`GetCoreDefinitionInput`](crate::operation::get_core_definition::GetCoreDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_core_definition::GetCoreDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_core_definition::GetCoreDefinitionInput {
-            core_definition_id: self.core_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_core_definition::GetCoreDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_core_definition::GetCoreDefinitionInput {
+                core_definition_id: self.core_definition_id
+                ,
+            }
+        )
     }
 }
+

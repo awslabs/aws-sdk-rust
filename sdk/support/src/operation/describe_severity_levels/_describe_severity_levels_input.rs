@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSeverityLevelsInput {
+pub struct DescribeSeverityLevelsInput  {
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub language: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSeverityLevelsInput {
+impl  DescribeSeverityLevelsInput  {
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
 }
@@ -33,20 +33,20 @@ impl DescribeSeverityLevelsInputBuilder {
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }
     /// Consumes the builder and constructs a [`DescribeSeverityLevelsInput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_severity_levels::DescribeSeverityLevelsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_severity_levels::DescribeSeverityLevelsInput { language: self.language })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_severity_levels::DescribeSeverityLevelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_severity_levels::DescribeSeverityLevelsInput {
+                language: self.language
+                ,
+            }
+        )
     }
 }
+

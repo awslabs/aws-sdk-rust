@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBillingGroups`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per request.</p><br>
     ///   - [`name_prefix_filter(impl Into<String>)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::name_prefix_filter) / [`set_name_prefix_filter(Option<String>)`](crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::set_name_prefix_filter):<br>required: **false**<br><p>Limit the results to billing groups whose names have the given prefix.</p><br>
-    /// - On success, responds with [`ListBillingGroupsOutput`](crate::operation::list_billing_groups::ListBillingGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListBillingGroupsOutput`](crate::operation::list_billing_groups::ListBillingGroupsOutput) with field(s):
     ///   - [`billing_groups(Option<Vec::<GroupNameAndArn>>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::billing_groups): <p>The list of billing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_billing_groups::ListBillingGroupsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListBillingGroupsError>`](crate::operation::list_billing_groups::ListBillingGroupsError)
+                            /// - On failure, responds with [`SdkError<ListBillingGroupsError>`](crate::operation::list_billing_groups::ListBillingGroupsError)
     pub fn list_billing_groups(&self) -> crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder {
-        crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_billing_groups::builders::ListBillingGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

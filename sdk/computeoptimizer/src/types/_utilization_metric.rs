@@ -4,7 +4,7 @@
 /// <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UtilizationMetric {
+pub struct UtilizationMetric  {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
@@ -64,7 +64,7 @@ pub struct UtilizationMetric {
     /// <p>The value of the utilization metric.</p>
     pub value: f64,
 }
-impl UtilizationMetric {
+impl  UtilizationMetric  {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
@@ -116,13 +116,13 @@ impl UtilizationMetric {
     /// <li>
     /// <p><code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all network interfaces. This metric identifies the volume of outgoing traffic in terms of the number of packets on a single instance.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::MetricName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::MetricName> {
         self.name.as_ref()
     }
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::MetricStatistic> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::MetricStatistic> {
         self.statistic.as_ref()
     }
     /// <p>The value of the utilization metric.</p>
@@ -253,8 +253,7 @@ impl UtilizationMetricBuilder {
     /// <p><code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all network interfaces. This metric identifies the volume of outgoing traffic in terms of the number of packets on a single instance.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
@@ -321,8 +320,7 @@ impl UtilizationMetricBuilder {
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::MetricStatistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
@@ -337,8 +335,7 @@ impl UtilizationMetricBuilder {
     }
     /// <p>The value of the utilization metric.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the utilization metric.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -347,9 +344,14 @@ impl UtilizationMetricBuilder {
     /// Consumes the builder and constructs a [`UtilizationMetric`](crate::types::UtilizationMetric).
     pub fn build(self) -> crate::types::UtilizationMetric {
         crate::types::UtilizationMetric {
-            name: self.name,
-            statistic: self.statistic,
-            value: self.value.unwrap_or_default(),
+            name: self.name
+            ,
+            statistic: self.statistic
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

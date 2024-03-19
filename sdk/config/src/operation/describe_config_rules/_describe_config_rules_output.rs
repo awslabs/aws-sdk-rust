@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigRulesOutput {
+pub struct DescribeConfigRulesOutput  {
     /// <p>The details about your Config rules.</p>
-    pub config_rules: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRule>>,
+    pub config_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigRule>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeConfigRulesOutput {
+impl  DescribeConfigRulesOutput  {
     /// <p>The details about your Config rules.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rules.is_none()`.
-    pub fn config_rules(&self) -> &[crate::types::ConfigRule] {
-        self.config_rules.as_deref().unwrap_or_default()
+    pub fn config_rules(&self) -> & [crate::types::ConfigRule] {
+        self.config_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConfigRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConfigRulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigRulesOutput`](crate::operation::describe_config_rules::DescribeConfigRulesOutput).
     pub fn builder() -> crate::operation::describe_config_rules::builders::DescribeConfigRulesOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeConfigRulesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigRulesOutputBuilder {
-    pub(crate) config_rules: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRule>>,
+    pub(crate) config_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl DescribeConfigRulesOutputBuilder {
     /// <p>The details about your Config rules.</p>
     pub fn config_rules(mut self, input: crate::types::ConfigRule) -> Self {
         let mut v = self.config_rules.unwrap_or_default();
-        v.push(input);
-        self.config_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.config_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details about your Config rules.</p>
-    pub fn set_config_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRule>>) -> Self {
-        self.config_rules = input;
-        self
+    pub fn set_config_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigRule>>) -> Self {
+        self.config_rules = input; self
     }
     /// <p>The details about your Config rules.</p>
-    pub fn get_config_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigRule>> {
+    pub fn get_config_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigRule>> {
         &self.config_rules
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
@@ -70,28 +70,30 @@ impl DescribeConfigRulesOutputBuilder {
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConfigRulesOutput`](crate::operation::describe_config_rules::DescribeConfigRulesOutput).
     pub fn build(self) -> crate::operation::describe_config_rules::DescribeConfigRulesOutput {
         crate::operation::describe_config_rules::DescribeConfigRulesOutput {
-            config_rules: self.config_rules,
-            next_token: self.next_token,
+            config_rules: self.config_rules
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

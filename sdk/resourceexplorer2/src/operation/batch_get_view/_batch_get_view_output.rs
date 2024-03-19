@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetViewOutput {
+pub struct BatchGetViewOutput  {
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
-    pub views: ::std::option::Option<::std::vec::Vec<crate::types::View>>,
+    pub views: ::std::option::Option<::std::vec::Vec::<crate::types::View>>,
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetViewError>>,
     _request_id: Option<String>,
 }
-impl BatchGetViewOutput {
+impl  BatchGetViewOutput  {
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.views.is_none()`.
-    pub fn views(&self) -> &[crate::types::View] {
-        self.views.as_deref().unwrap_or_default()
+    pub fn views(&self) -> & [crate::types::View] {
+        self.views.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::BatchGetViewError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::BatchGetViewError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetViewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetViewOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetViewOutput`](crate::operation::batch_get_view::BatchGetViewOutput).
     pub fn builder() -> crate::operation::batch_get_view::builders::BatchGetViewOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetViewOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetViewOutputBuilder {
-    pub(crate) views: ::std::option::Option<::std::vec::Vec<crate::types::View>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>>,
+    pub(crate) views: ::std::option::Option<::std::vec::Vec::<crate::types::View>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetViewError>>,
     _request_id: Option<String>,
 }
 impl BatchGetViewOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetViewOutputBuilder {
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
     pub fn views(mut self, input: crate::types::View) -> Self {
         let mut v = self.views.unwrap_or_default();
-        v.push(input);
-        self.views = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.views = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
-    pub fn set_views(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::View>>) -> Self {
-        self.views = input;
-        self
+    pub fn set_views(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::View>>) -> Self {
+        self.views = input; self
     }
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
-    pub fn get_views(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::View>> {
+    pub fn get_views(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::View>> {
         &self.views
     }
     /// Appends an item to `errors`.
@@ -71,34 +72,36 @@ impl BatchGetViewOutputBuilder {
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
     pub fn errors(mut self, input: crate::types::BatchGetViewError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetViewError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchGetViewError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetViewOutput`](crate::operation::batch_get_view::BatchGetViewOutput).
     pub fn build(self) -> crate::operation::batch_get_view::BatchGetViewOutput {
         crate::operation::batch_get_view::BatchGetViewOutput {
-            views: self.views,
-            errors: self.errors,
+            views: self.views
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

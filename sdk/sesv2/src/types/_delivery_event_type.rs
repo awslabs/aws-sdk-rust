@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deliveryeventtype = unimplemented!();
 /// match deliveryeventtype {
@@ -34,7 +34,7 @@
 /// Specifically, when `deliveryeventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeliveryEventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -80,9 +80,7 @@
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DeliveryEventType {
     #[allow(missing_docs)] // documentation missing in model
     Complaint,
@@ -98,80 +96,74 @@ pub enum DeliveryEventType {
     UndeterminedBounce,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DeliveryEventType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLAINT" => DeliveryEventType::Complaint,
-            "DELIVERY" => DeliveryEventType::Delivery,
-            "PERMANENT_BOUNCE" => DeliveryEventType::PermanentBounce,
-            "SEND" => DeliveryEventType::Send,
-            "TRANSIENT_BOUNCE" => DeliveryEventType::TransientBounce,
-            "UNDETERMINED_BOUNCE" => DeliveryEventType::UndeterminedBounce,
-            other => DeliveryEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COMPLAINT" => DeliveryEventType::Complaint,
+"DELIVERY" => DeliveryEventType::Delivery,
+"PERMANENT_BOUNCE" => DeliveryEventType::PermanentBounce,
+"SEND" => DeliveryEventType::Send,
+"TRANSIENT_BOUNCE" => DeliveryEventType::TransientBounce,
+"UNDETERMINED_BOUNCE" => DeliveryEventType::UndeterminedBounce,
+other => DeliveryEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DeliveryEventType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DeliveryEventType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DeliveryEventType::from(s))
+                    }
+                }
 impl DeliveryEventType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeliveryEventType::Complaint => "COMPLAINT",
-            DeliveryEventType::Delivery => "DELIVERY",
-            DeliveryEventType::PermanentBounce => "PERMANENT_BOUNCE",
-            DeliveryEventType::Send => "SEND",
-            DeliveryEventType::TransientBounce => "TRANSIENT_BOUNCE",
-            DeliveryEventType::UndeterminedBounce => "UNDETERMINED_BOUNCE",
-            DeliveryEventType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLAINT",
-            "DELIVERY",
-            "PERMANENT_BOUNCE",
-            "SEND",
-            "TRANSIENT_BOUNCE",
-            "UNDETERMINED_BOUNCE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeliveryEventType::Complaint => "COMPLAINT",
+    DeliveryEventType::Delivery => "DELIVERY",
+    DeliveryEventType::PermanentBounce => "PERMANENT_BOUNCE",
+    DeliveryEventType::Send => "SEND",
+    DeliveryEventType::TransientBounce => "TRANSIENT_BOUNCE",
+    DeliveryEventType::UndeterminedBounce => "UNDETERMINED_BOUNCE",
+    DeliveryEventType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLAINT", "DELIVERY", "PERMANENT_BOUNCE", "SEND", "TRANSIENT_BOUNCE", "UNDETERMINED_BOUNCE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DeliveryEventType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DeliveryEventType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DeliveryEventType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DeliveryEventType::Complaint => write!(f, "COMPLAINT"),
-            DeliveryEventType::Delivery => write!(f, "DELIVERY"),
-            DeliveryEventType::PermanentBounce => write!(f, "PERMANENT_BOUNCE"),
-            DeliveryEventType::Send => write!(f, "SEND"),
-            DeliveryEventType::TransientBounce => write!(f, "TRANSIENT_BOUNCE"),
-            DeliveryEventType::UndeterminedBounce => write!(f, "UNDETERMINED_BOUNCE"),
-            DeliveryEventType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DeliveryEventType::Complaint => write!(f, "COMPLAINT"),
+DeliveryEventType::Delivery => write!(f, "DELIVERY"),
+DeliveryEventType::PermanentBounce => write!(f, "PERMANENT_BOUNCE"),
+DeliveryEventType::Send => write!(f, "SEND"),
+DeliveryEventType::TransientBounce => write!(f, "TRANSIENT_BOUNCE"),
+DeliveryEventType::UndeterminedBounce => write!(f, "UNDETERMINED_BOUNCE"),
+DeliveryEventType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

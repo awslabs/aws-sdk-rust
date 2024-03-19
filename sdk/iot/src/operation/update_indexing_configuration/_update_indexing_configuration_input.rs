@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIndexingConfigurationInput {
+pub struct UpdateIndexingConfigurationInput  {
     /// <p>Thing indexing configuration.</p>
     pub thing_indexing_configuration: ::std::option::Option<crate::types::ThingIndexingConfiguration>,
     /// <p>Thing group indexing configuration.</p>
     pub thing_group_indexing_configuration: ::std::option::Option<crate::types::ThingGroupIndexingConfiguration>,
 }
-impl UpdateIndexingConfigurationInput {
+impl  UpdateIndexingConfigurationInput  {
     /// <p>Thing indexing configuration.</p>
-    pub fn thing_indexing_configuration(&self) -> ::std::option::Option<&crate::types::ThingIndexingConfiguration> {
+    pub fn thing_indexing_configuration(&self) -> ::std::option::Option<& crate::types::ThingIndexingConfiguration> {
         self.thing_indexing_configuration.as_ref()
     }
     /// <p>Thing group indexing configuration.</p>
-    pub fn thing_group_indexing_configuration(&self) -> ::std::option::Option<&crate::types::ThingGroupIndexingConfiguration> {
+    pub fn thing_group_indexing_configuration(&self) -> ::std::option::Option<& crate::types::ThingGroupIndexingConfiguration> {
         self.thing_group_indexing_configuration.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateIndexingConfigurationInputBuilder {
     }
     /// <p>Thing indexing configuration.</p>
     pub fn set_thing_indexing_configuration(mut self, input: ::std::option::Option<crate::types::ThingIndexingConfiguration>) -> Self {
-        self.thing_indexing_configuration = input;
-        self
+        self.thing_indexing_configuration = input; self
     }
     /// <p>Thing indexing configuration.</p>
     pub fn get_thing_indexing_configuration(&self) -> &::std::option::Option<crate::types::ThingIndexingConfiguration> {
@@ -54,23 +53,22 @@ impl UpdateIndexingConfigurationInputBuilder {
     }
     /// <p>Thing group indexing configuration.</p>
     pub fn set_thing_group_indexing_configuration(mut self, input: ::std::option::Option<crate::types::ThingGroupIndexingConfiguration>) -> Self {
-        self.thing_group_indexing_configuration = input;
-        self
+        self.thing_group_indexing_configuration = input; self
     }
     /// <p>Thing group indexing configuration.</p>
     pub fn get_thing_group_indexing_configuration(&self) -> &::std::option::Option<crate::types::ThingGroupIndexingConfiguration> {
         &self.thing_group_indexing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateIndexingConfigurationInput`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_indexing_configuration::UpdateIndexingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_indexing_configuration::UpdateIndexingConfigurationInput {
-            thing_indexing_configuration: self.thing_indexing_configuration,
-            thing_group_indexing_configuration: self.thing_group_indexing_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_indexing_configuration::UpdateIndexingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_indexing_configuration::UpdateIndexingConfigurationInput {
+                thing_indexing_configuration: self.thing_indexing_configuration
+                ,
+                thing_group_indexing_configuration: self.thing_group_indexing_configuration
+                ,
+            }
+        )
     }
 }
+

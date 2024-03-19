@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBotReplicaInput {
+pub struct DeleteBotReplicaInput  {
     /// <p>The unique ID of the replicated bot to be deleted from the secondary region</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The secondary region of the replicated bot that will be deleted.</p>
     pub replica_region: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBotReplicaInput {
+impl  DeleteBotReplicaInput  {
     /// <p>The unique ID of the replicated bot to be deleted from the secondary region</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The secondary region of the replicated bot that will be deleted.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteBotReplicaInputBuilder {
     }
     /// <p>The unique ID of the replicated bot to be deleted from the secondary region</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique ID of the replicated bot to be deleted from the secondary region</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteBotReplicaInputBuilder {
     }
     /// <p>The secondary region of the replicated bot that will be deleted.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The secondary region of the replicated bot that will be deleted.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.replica_region
     }
     /// Consumes the builder and constructs a [`DeleteBotReplicaInput`](crate::operation::delete_bot_replica::DeleteBotReplicaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_bot_replica::DeleteBotReplicaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_bot_replica::DeleteBotReplicaInput {
-            bot_id: self.bot_id,
-            replica_region: self.replica_region,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot_replica::DeleteBotReplicaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_bot_replica::DeleteBotReplicaInput {
+                bot_id: self.bot_id
+                ,
+                replica_region: self.replica_region
+                ,
+            }
+        )
     }
 }
+

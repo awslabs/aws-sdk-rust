@@ -3,11 +3,11 @@
 /// <p>Describes the memory available to the neuron accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NeuronDeviceMemoryInfo {
+pub struct NeuronDeviceMemoryInfo  {
     /// <p>The size of the memory available to the neuron accelerator, in MiB.</p>
     pub size_in_mib: ::std::option::Option<i32>,
 }
-impl NeuronDeviceMemoryInfo {
+impl  NeuronDeviceMemoryInfo  {
     /// <p>The size of the memory available to the neuron accelerator, in MiB.</p>
     pub fn size_in_mib(&self) -> ::std::option::Option<i32> {
         self.size_in_mib
@@ -34,8 +34,7 @@ impl NeuronDeviceMemoryInfoBuilder {
     }
     /// <p>The size of the memory available to the neuron accelerator, in MiB.</p>
     pub fn set_size_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_mib = input;
-        self
+        self.size_in_mib = input; self
     }
     /// <p>The size of the memory available to the neuron accelerator, in MiB.</p>
     pub fn get_size_in_mib(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl NeuronDeviceMemoryInfoBuilder {
     /// Consumes the builder and constructs a [`NeuronDeviceMemoryInfo`](crate::types::NeuronDeviceMemoryInfo).
     pub fn build(self) -> crate::types::NeuronDeviceMemoryInfo {
         crate::types::NeuronDeviceMemoryInfo {
-            size_in_mib: self.size_in_mib,
+            size_in_mib: self.size_in_mib
+            ,
         }
     }
 }
+

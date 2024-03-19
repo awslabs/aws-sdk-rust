@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRoleCustomPermissionInput {
+pub struct UpdateRoleCustomPermissionInput  {
     /// <p>The name of the custom permission that you want to update the role with.</p>
     pub custom_permissions_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of role tht you want to update.</p>
@@ -12,21 +12,21 @@ pub struct UpdateRoleCustomPermissionInput {
     /// <p>The namespace that contains the role that you want to update.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRoleCustomPermissionInput {
+impl  UpdateRoleCustomPermissionInput  {
     /// <p>The name of the custom permission that you want to update the role with.</p>
-    pub fn custom_permissions_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_permissions_name(&self) -> ::std::option::Option<& str> {
         self.custom_permissions_name.as_deref()
     }
     /// <p>The name of role tht you want to update.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::Role> {
         self.role.as_ref()
     }
     /// <p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace that contains the role that you want to update.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateRoleCustomPermissionInputBuilder {
     }
     /// <p>The name of the custom permission that you want to update the role with.</p>
     pub fn set_custom_permissions_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_permissions_name = input;
-        self
+        self.custom_permissions_name = input; self
     }
     /// <p>The name of the custom permission that you want to update the role with.</p>
     pub fn get_custom_permissions_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateRoleCustomPermissionInputBuilder {
     }
     /// <p>The name of role tht you want to update.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The name of role tht you want to update.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
@@ -85,8 +83,7 @@ impl UpdateRoleCustomPermissionInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl UpdateRoleCustomPermissionInputBuilder {
     }
     /// <p>The namespace that contains the role that you want to update.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace that contains the role that you want to update.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`UpdateRoleCustomPermissionInput`](crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionInput {
-            custom_permissions_name: self.custom_permissions_name,
-            role: self.role,
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionInput {
+                custom_permissions_name: self.custom_permissions_name
+                ,
+                role: self.role
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

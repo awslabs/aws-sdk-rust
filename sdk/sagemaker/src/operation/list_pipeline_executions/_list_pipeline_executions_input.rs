@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPipelineExecutionsInput {
+pub struct ListPipelineExecutionsInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
@@ -18,29 +18,29 @@ pub struct ListPipelineExecutionsInput {
     /// <p>The maximum number of pipeline executions to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListPipelineExecutionsInput {
+impl  ListPipelineExecutionsInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
-    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
-    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortPipelineExecutionsBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortPipelineExecutionsBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of pipeline executions to return in the response.</p>
@@ -76,8 +76,7 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input;
-        self
+        self.created_after = input; self
     }
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +102,7 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input;
-        self
+        self.created_before = input; self
     }
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +115,7 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortPipelineExecutionsBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortPipelineExecutionsBy> {
@@ -132,8 +128,7 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>The sort order for results.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for results.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -146,8 +141,7 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,28 +154,32 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>The maximum number of pipeline executions to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of pipeline executions to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipeline_executions::ListPipelineExecutionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_pipeline_executions::ListPipelineExecutionsInput {
-            pipeline_name: self.pipeline_name,
-            created_after: self.created_after,
-            created_before: self.created_before,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pipeline_executions::ListPipelineExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_pipeline_executions::ListPipelineExecutionsInput {
+                pipeline_name: self.pipeline_name
+                ,
+                created_after: self.created_after
+                ,
+                created_before: self.created_before
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

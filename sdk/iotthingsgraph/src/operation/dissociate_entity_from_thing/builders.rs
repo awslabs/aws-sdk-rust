@@ -5,55 +5,51 @@ pub use crate::operation::dissociate_entity_from_thing::_dissociate_entity_from_
 
 impl DissociateEntityFromThingInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.dissociate_entity_from_thing();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.dissociate_entity_from_thing();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DissociateEntityFromThing`.
-///
+/// 
 /// <p>Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only one entity of a particular type can be associated with a thing.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DissociateEntityFromThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder,
+                    inner: crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
-        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-    > for DissociateEntityFromThingFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
+                    crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
+                > for DissociateEntityFromThingFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
+                        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DissociateEntityFromThingFluentBuilder {
     /// Creates a new `DissociateEntityFromThing`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DissociateEntityFromThingFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::dissociate_entity_from_thing::DissociateEntityFromThing::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThing::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
-        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::dissociate_entity_from_thing::DissociateEntityFromThing::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThing::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput, crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the thing to disassociate.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
@@ -138,3 +125,4 @@ impl DissociateEntityFromThingFluentBuilder {
         self.inner.get_entity_type()
     }
 }
+

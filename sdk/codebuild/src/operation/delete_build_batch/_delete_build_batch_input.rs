@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBuildBatchInput {
+pub struct DeleteBuildBatchInput  {
     /// <p>The identifier of the batch build to delete.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBuildBatchInput {
+impl  DeleteBuildBatchInput  {
     /// <p>The identifier of the batch build to delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteBuildBatchInputBuilder {
     }
     /// <p>The identifier of the batch build to delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the batch build to delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteBuildBatchInput`](crate::operation::delete_build_batch::DeleteBuildBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_build_batch::DeleteBuildBatchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_build_batch::DeleteBuildBatchInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_build_batch::DeleteBuildBatchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_build_batch::DeleteBuildBatchInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

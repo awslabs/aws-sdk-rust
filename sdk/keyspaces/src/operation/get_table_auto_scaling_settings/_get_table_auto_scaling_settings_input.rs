@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTableAutoScalingSettingsInput {
+pub struct GetTableAutoScalingSettingsInput  {
     /// <p>The name of the keyspace.</p>
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl GetTableAutoScalingSettingsInput {
+impl  GetTableAutoScalingSettingsInput  {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetTableAutoScalingSettingsInputBuilder {
     }
     /// <p>The name of the keyspace.</p>
     pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// <p>The name of the keyspace.</p>
     pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetTableAutoScalingSettingsInputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`GetTableAutoScalingSettingsInput`](crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsInput {
-            keyspace_name: self.keyspace_name,
-            table_name: self.table_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsInput {
+                keyspace_name: self.keyspace_name
+                ,
+                table_name: self.table_name
+                ,
+            }
+        )
     }
 }
+

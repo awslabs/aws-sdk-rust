@@ -3,13 +3,13 @@
 /// <p>A request to apply a service update</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceUpdateRequest {
+pub struct ServiceUpdateRequest  {
     /// <p>The unique ID of the service update</p>
     pub service_update_name_to_apply: ::std::option::Option<::std::string::String>,
 }
-impl ServiceUpdateRequest {
+impl  ServiceUpdateRequest  {
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name_to_apply(&self) -> ::std::option::Option<&str> {
+    pub fn service_update_name_to_apply(&self) -> ::std::option::Option<& str> {
         self.service_update_name_to_apply.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ServiceUpdateRequestBuilder {
     }
     /// <p>The unique ID of the service update</p>
     pub fn set_service_update_name_to_apply(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_update_name_to_apply = input;
-        self
+        self.service_update_name_to_apply = input; self
     }
     /// <p>The unique ID of the service update</p>
     pub fn get_service_update_name_to_apply(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ServiceUpdateRequestBuilder {
     /// Consumes the builder and constructs a [`ServiceUpdateRequest`](crate::types::ServiceUpdateRequest).
     pub fn build(self) -> crate::types::ServiceUpdateRequest {
         crate::types::ServiceUpdateRequest {
-            service_update_name_to_apply: self.service_update_name_to_apply,
+            service_update_name_to_apply: self.service_update_name_to_apply
+            ,
         }
     }
 }
+

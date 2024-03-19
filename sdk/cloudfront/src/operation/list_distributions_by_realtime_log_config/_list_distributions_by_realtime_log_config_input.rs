@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDistributionsByRealtimeLogConfigInput {
+pub struct ListDistributionsByRealtimeLogConfigInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of distributions that you want in the response.</p>
@@ -12,9 +12,9 @@ pub struct ListDistributionsByRealtimeLogConfigInput {
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
     pub realtime_log_config_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListDistributionsByRealtimeLogConfigInput {
+impl  ListDistributionsByRealtimeLogConfigInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of distributions that you want in the response.</p>
@@ -22,11 +22,11 @@ impl ListDistributionsByRealtimeLogConfigInput {
         self.max_items
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn realtime_log_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn realtime_log_config_name(&self) -> ::std::option::Option<& str> {
         self.realtime_log_config_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    pub fn realtime_log_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn realtime_log_config_arn(&self) -> ::std::option::Option<& str> {
         self.realtime_log_config_arn.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
     }
     /// <p>The maximum number of distributions that you want in the response.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of distributions that you want in the response.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn set_realtime_log_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.realtime_log_config_name = input;
-        self
+        self.realtime_log_config_name = input; self
     }
     /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn get_realtime_log_config_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,27 +93,26 @@ impl ListDistributionsByRealtimeLogConfigInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn set_realtime_log_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.realtime_log_config_arn = input;
-        self
+        self.realtime_log_config_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn get_realtime_log_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.realtime_log_config_arn
     }
     /// Consumes the builder and constructs a [`ListDistributionsByRealtimeLogConfigInput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput {
-                marker: self.marker,
-                max_items: self.max_items,
-                realtime_log_config_name: self.realtime_log_config_name,
-                realtime_log_config_arn: self.realtime_log_config_arn,
-            },
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+                realtime_log_config_name: self.realtime_log_config_name
+                ,
+                realtime_log_config_arn: self.realtime_log_config_arn
+                ,
+            }
         )
     }
 }
+

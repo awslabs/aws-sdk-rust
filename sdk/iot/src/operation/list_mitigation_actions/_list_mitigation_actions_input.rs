@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMitigationActionsInput {
+pub struct ListMitigationActionsInput  {
     /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
     pub action_type: ::std::option::Option<crate::types::MitigationActionType>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -10,9 +10,9 @@ pub struct ListMitigationActionsInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListMitigationActionsInput {
+impl  ListMitigationActionsInput  {
     /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::MitigationActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::MitigationActionType> {
         self.action_type.as_ref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -20,7 +20,7 @@ impl ListMitigationActionsInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListMitigationActionsInputBuilder {
     }
     /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::MitigationActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::MitigationActionType> {
@@ -61,8 +60,7 @@ impl ListMitigationActionsInputBuilder {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,22 +73,24 @@ impl ListMitigationActionsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMitigationActionsInput`](crate::operation::list_mitigation_actions::ListMitigationActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_mitigation_actions::ListMitigationActionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_mitigation_actions::ListMitigationActionsInput {
-            action_type: self.action_type,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_mitigation_actions::ListMitigationActionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_mitigation_actions::ListMitigationActionsInput {
+                action_type: self.action_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

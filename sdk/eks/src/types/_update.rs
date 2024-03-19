@@ -3,7 +3,7 @@
 /// <p>An object representing an asynchronous update.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Update {
+pub struct Update  {
     /// <p>A UUID that is used to track the update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the update.</p>
@@ -11,40 +11,42 @@ pub struct Update {
     /// <p>The type of the update.</p>
     pub r#type: ::std::option::Option<crate::types::UpdateType>,
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    pub params: ::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>>,
+    pub params: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateParam>>,
     /// <p>The Unix epoch timestamp at object creation.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::ErrorDetail>>,
 }
-impl Update {
+impl  Update  {
     /// <p>A UUID that is used to track the update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The current status of the update.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::UpdateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::UpdateStatus> {
         self.status.as_ref()
     }
     /// <p>The type of the update.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UpdateType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UpdateType> {
         self.r#type.as_ref()
     }
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.params.is_none()`.
-    pub fn params(&self) -> &[crate::types::UpdateParam] {
-        self.params.as_deref().unwrap_or_default()
+    pub fn params(&self) -> & [crate::types::UpdateParam] {
+        self.params.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Unix epoch timestamp at object creation.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::ErrorDetail] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::ErrorDetail] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Update {
@@ -61,9 +63,9 @@ pub struct UpdateBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::UpdateStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::UpdateType>,
-    pub(crate) params: ::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>>,
+    pub(crate) params: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateParam>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::ErrorDetail>>,
 }
 impl UpdateBuilder {
     /// <p>A UUID that is used to track the update.</p>
@@ -73,8 +75,7 @@ impl UpdateBuilder {
     }
     /// <p>A UUID that is used to track the update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A UUID that is used to track the update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +88,7 @@ impl UpdateBuilder {
     }
     /// <p>The current status of the update.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UpdateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the update.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdateStatus> {
@@ -101,8 +101,7 @@ impl UpdateBuilder {
     }
     /// <p>The type of the update.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the update.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UpdateType> {
@@ -115,17 +114,16 @@ impl UpdateBuilder {
     /// <p>A key-value map that contains the parameters associated with the update.</p>
     pub fn params(mut self, input: crate::types::UpdateParam) -> Self {
         let mut v = self.params.unwrap_or_default();
-        v.push(input);
-        self.params = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.params = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    pub fn set_params(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>>) -> Self {
-        self.params = input;
-        self
+    pub fn set_params(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateParam>>) -> Self {
+        self.params = input; self
     }
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    pub fn get_params(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>> {
+    pub fn get_params(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateParam>> {
         &self.params
     }
     /// <p>The Unix epoch timestamp at object creation.</p>
@@ -135,8 +133,7 @@ impl UpdateBuilder {
     }
     /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,28 +146,34 @@ impl UpdateBuilder {
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
     pub fn errors(mut self, input: crate::types::ErrorDetail) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ErrorDetail>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ErrorDetail>> {
         &self.errors
     }
     /// Consumes the builder and constructs a [`Update`](crate::types::Update).
     pub fn build(self) -> crate::types::Update {
         crate::types::Update {
-            id: self.id,
-            status: self.status,
-            r#type: self.r#type,
-            params: self.params,
-            created_at: self.created_at,
-            errors: self.errors,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            r#type: self.r#type
+            ,
+            params: self.params
+            ,
+            created_at: self.created_at
+            ,
+            errors: self.errors
+            ,
         }
     }
 }
+

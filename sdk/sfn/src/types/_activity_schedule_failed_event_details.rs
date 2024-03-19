@@ -3,23 +3,23 @@
 /// <p>Contains details about an activity schedule failure that occurred during an execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ActivityScheduleFailedEventDetails {
+pub struct ActivityScheduleFailedEventDetails  {
     /// <p>The error code of the failure.</p>
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: ::std::option::Option<::std::string::String>,
 }
-impl ActivityScheduleFailedEventDetails {
+impl  ActivityScheduleFailedEventDetails  {
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(&self) -> ::std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<& str> {
         self.cause.as_deref()
     }
 }
-impl ::std::fmt::Debug for ActivityScheduleFailedEventDetails {
+impl  ::std::fmt::Debug for ActivityScheduleFailedEventDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActivityScheduleFailedEventDetails");
         formatter.field("error", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl ActivityScheduleFailedEventDetailsBuilder {
     }
     /// <p>The error code of the failure.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error code of the failure.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ActivityScheduleFailedEventDetailsBuilder {
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl ActivityScheduleFailedEventDetailsBuilder {
     /// Consumes the builder and constructs a [`ActivityScheduleFailedEventDetails`](crate::types::ActivityScheduleFailedEventDetails).
     pub fn build(self) -> crate::types::ActivityScheduleFailedEventDetails {
         crate::types::ActivityScheduleFailedEventDetails {
-            error: self.error,
-            cause: self.cause,
+            error: self.error
+            ,
+            cause: self.cause
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for ActivityScheduleFailedEventDetailsBuilder {
         formatter.finish()
     }
 }
+

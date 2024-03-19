@@ -17,22 +17,20 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Spend {
+pub struct Spend  {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
     pub amount: ::std::string::String,
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.</p>
     pub unit: ::std::string::String,
 }
-impl Spend {
+impl  Spend  {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
-    pub fn amount(&self) -> &str {
-        use std::ops::Deref;
-        self.amount.deref()
+    pub fn amount(&self) -> & str {
+        use std::ops::Deref; self.amount.deref()
     }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.</p>
-    pub fn unit(&self) -> &str {
-        use std::ops::Deref;
-        self.unit.deref()
+    pub fn unit(&self) -> & str {
+        use std::ops::Deref; self.unit.deref()
     }
 }
 impl Spend {
@@ -58,8 +56,7 @@ impl SpendBuilder {
     }
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
     pub fn set_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amount = input;
-        self
+        self.amount = input; self
     }
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
     pub fn get_amount(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl SpendBuilder {
     }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,19 +81,20 @@ impl SpendBuilder {
     /// - [`amount`](crate::types::builders::SpendBuilder::amount)
     /// - [`unit`](crate::types::builders::SpendBuilder::unit)
     pub fn build(self) -> ::std::result::Result<crate::types::Spend, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Spend {
-            amount: self.amount.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "amount",
-                    "amount was not specified but it is required when building Spend",
-                )
-            })?,
-            unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unit",
-                    "unit was not specified but it is required when building Spend",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Spend {
+                amount: self.amount
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("amount", "amount was not specified but it is required when building Spend")
+                    )?
+                ,
+                unit: self.unit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unit", "unit was not specified but it is required when building Spend")
+                    )?
+                ,
+            }
+        )
     }
 }
+

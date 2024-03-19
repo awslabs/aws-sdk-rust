@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStorageLensGroupInput {
+pub struct CreateStorageLensGroupInput  {
     /// <p>The Amazon Web Services account ID that the Storage Lens group is created from and associated with.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Storage Lens group configuration.</p>
     pub storage_lens_group: ::std::option::Option<crate::types::StorageLensGroup>,
     /// <p>The Amazon Web Services resource tags that you're adding to your Storage Lens group. This parameter is optional.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateStorageLensGroupInput {
+impl  CreateStorageLensGroupInput  {
     /// <p>The Amazon Web Services account ID that the Storage Lens group is created from and associated with.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Storage Lens group configuration.</p>
-    pub fn storage_lens_group(&self) -> ::std::option::Option<&crate::types::StorageLensGroup> {
+    pub fn storage_lens_group(&self) -> ::std::option::Option<& crate::types::StorageLensGroup> {
         self.storage_lens_group.as_ref()
     }
     /// <p>The Amazon Web Services resource tags that you're adding to your Storage Lens group. This parameter is optional.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateStorageLensGroupInput {
@@ -39,7 +40,7 @@ impl CreateStorageLensGroupInput {
 pub struct CreateStorageLensGroupInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_lens_group: ::std::option::Option<crate::types::StorageLensGroup>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateStorageLensGroupInputBuilder {
     /// <p>The Amazon Web Services account ID that the Storage Lens group is created from and associated with.</p>
@@ -50,8 +51,7 @@ impl CreateStorageLensGroupInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that the Storage Lens group is created from and associated with.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID that the Storage Lens group is created from and associated with.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl CreateStorageLensGroupInputBuilder {
     }
     /// <p>The Storage Lens group configuration.</p>
     pub fn set_storage_lens_group(mut self, input: ::std::option::Option<crate::types::StorageLensGroup>) -> Self {
-        self.storage_lens_group = input;
-        self
+        self.storage_lens_group = input; self
     }
     /// <p>The Storage Lens group configuration.</p>
     pub fn get_storage_lens_group(&self) -> &::std::option::Option<crate::types::StorageLensGroup> {
@@ -79,30 +78,30 @@ impl CreateStorageLensGroupInputBuilder {
     /// <p>The Amazon Web Services resource tags that you're adding to your Storage Lens group. This parameter is optional.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services resource tags that you're adding to your Storage Lens group. This parameter is optional.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The Amazon Web Services resource tags that you're adding to your Storage Lens group. This parameter is optional.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStorageLensGroupInput`](crate::operation::create_storage_lens_group::CreateStorageLensGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_storage_lens_group::CreateStorageLensGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_storage_lens_group::CreateStorageLensGroupInput {
-            account_id: self.account_id,
-            storage_lens_group: self.storage_lens_group,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_storage_lens_group::CreateStorageLensGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_storage_lens_group::CreateStorageLensGroupInput {
+                account_id: self.account_id
+                ,
+                storage_lens_group: self.storage_lens_group
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

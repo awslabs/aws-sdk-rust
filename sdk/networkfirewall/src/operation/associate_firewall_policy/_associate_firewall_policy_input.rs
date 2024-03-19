@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateFirewallPolicyInput {
+pub struct AssociateFirewallPolicyInput  {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
@@ -16,25 +16,25 @@ pub struct AssociateFirewallPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateFirewallPolicyInput {
+impl  AssociateFirewallPolicyInput  {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
-    pub fn update_token(&self) -> ::std::option::Option<&str> {
+    pub fn update_token(&self) -> ::std::option::Option<& str> {
         self.update_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_arn.as_deref()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn firewall_name(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_name(&self) -> ::std::option::Option<& str> {
         self.firewall_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_policy_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_policy_arn.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl AssociateFirewallPolicyInputBuilder {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_token = input;
-        self
+        self.update_token = input; self
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -84,8 +83,7 @@ impl AssociateFirewallPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_arn = input;
-        self
+        self.firewall_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -101,8 +99,7 @@ impl AssociateFirewallPolicyInputBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_name = input;
-        self
+        self.firewall_name = input; self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -117,25 +114,26 @@ impl AssociateFirewallPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_policy_arn = input;
-        self
+        self.firewall_policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_policy_arn
     }
     /// Consumes the builder and constructs a [`AssociateFirewallPolicyInput`](crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput {
-            update_token: self.update_token,
-            firewall_arn: self.firewall_arn,
-            firewall_name: self.firewall_name,
-            firewall_policy_arn: self.firewall_policy_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput {
+                update_token: self.update_token
+                ,
+                firewall_arn: self.firewall_arn
+                ,
+                firewall_name: self.firewall_name
+                ,
+                firewall_policy_arn: self.firewall_policy_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchJobs`](crate::operation::search_jobs::builders::SearchJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_jobs::builders::SearchJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_jobs::builders::SearchJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_jobs::builders::SearchJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_jobs::builders::SearchJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_jobs::builders::SearchJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`filters(SearchJobsFilter)`](crate::operation::search_jobs::builders::SearchJobsFluentBuilder::filters) / [`set_filters(Option<Vec::<SearchJobsFilter>>)`](crate::operation::search_jobs::builders::SearchJobsFluentBuilder::set_filters):<br>required: **true**<br><p>The filter values to use when searching for a job.</p><br>
-    /// - On success, responds with [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput) with field(s):
+                            /// - On success, responds with [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput) with field(s):
     ///   - [`jobs(Vec::<JobSummary>)`](crate::operation::search_jobs::SearchJobsOutput::jobs): <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_jobs::SearchJobsOutput::next_token): <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
-    /// - On failure, responds with [`SdkError<SearchJobsError>`](crate::operation::search_jobs::SearchJobsError)
+                            /// - On failure, responds with [`SdkError<SearchJobsError>`](crate::operation::search_jobs::SearchJobsError)
     pub fn search_jobs(&self) -> crate::operation::search_jobs::builders::SearchJobsFluentBuilder {
-        crate::operation::search_jobs::builders::SearchJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_jobs::builders::SearchJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
+pub struct AwsEc2LaunchTemplateDataEnclaveOptionsDetails  {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
+impl  AwsEc2LaunchTemplateDataEnclaveOptionsDetails  {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl AwsEc2LaunchTemplateDataEnclaveOptionsDetailsBuilder {
     }
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl AwsEc2LaunchTemplateDataEnclaveOptionsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
-        crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails { enabled: self.enabled }
+        crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

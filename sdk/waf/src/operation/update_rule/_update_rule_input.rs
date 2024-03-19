@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRuleInput {
+pub struct UpdateRuleInput  {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
@@ -16,15 +16,15 @@ pub struct UpdateRuleInput {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub updates: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
+    pub updates: ::std::option::Option<::std::vec::Vec::<crate::types::RuleUpdate>>,
 }
-impl UpdateRuleInput {
+impl  UpdateRuleInput  {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
@@ -36,10 +36,11 @@ impl UpdateRuleInput {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
-    pub fn updates(&self) -> &[crate::types::RuleUpdate] {
-        self.updates.as_deref().unwrap_or_default()
+    pub fn updates(&self) -> & [crate::types::RuleUpdate] {
+        self.updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateRuleInput {
@@ -55,7 +56,7 @@ impl UpdateRuleInput {
 pub struct UpdateRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
-    pub(crate) updates: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
+    pub(crate) updates: ::std::option::Option<::std::vec::Vec::<crate::types::RuleUpdate>>,
 }
 impl UpdateRuleInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
@@ -66,8 +67,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +81,7 @@ impl UpdateRuleInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,9 +102,9 @@ impl UpdateRuleInputBuilder {
     /// </ul>
     pub fn updates(mut self, input: crate::types::RuleUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-        v.push(input);
-        self.updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -116,9 +115,8 @@ impl UpdateRuleInputBuilder {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
-        self.updates = input;
-        self
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleUpdate>>) -> Self {
+        self.updates = input; self
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -129,15 +127,21 @@ impl UpdateRuleInputBuilder {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
-            rule_id: self.rule_id,
-            change_token: self.change_token,
-            updates: self.updates,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_rule::UpdateRuleInput {
+                rule_id: self.rule_id
+                ,
+                change_token: self.change_token
+                ,
+                updates: self.updates
+                ,
+            }
+        )
     }
 }
+

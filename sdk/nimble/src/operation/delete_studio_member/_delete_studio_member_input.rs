@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStudioMemberInput {
+pub struct DeleteStudioMemberInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
@@ -10,17 +10,17 @@ pub struct DeleteStudioMemberInput {
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStudioMemberInput {
+impl  DeleteStudioMemberInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteStudioMemberInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteStudioMemberInputBuilder {
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DeleteStudioMemberInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`DeleteStudioMemberInput`](crate::operation::delete_studio_member::DeleteStudioMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_studio_member::DeleteStudioMemberInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_studio_member::DeleteStudioMemberInput {
-            client_token: self.client_token,
-            principal_id: self.principal_id,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_studio_member::DeleteStudioMemberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_studio_member::DeleteStudioMemberInput {
+                client_token: self.client_token
+                ,
+                principal_id: self.principal_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

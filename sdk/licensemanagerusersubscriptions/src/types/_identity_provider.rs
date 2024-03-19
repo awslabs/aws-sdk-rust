@@ -21,11 +21,7 @@ impl IdentityProvider {
     /// Tries to convert the enum instance into [`ActiveDirectoryIdentityProvider`](crate::types::IdentityProvider::ActiveDirectoryIdentityProvider), extracting the inner [`ActiveDirectoryIdentityProvider`](crate::types::ActiveDirectoryIdentityProvider).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_active_directory_identity_provider(&self) -> ::std::result::Result<&crate::types::ActiveDirectoryIdentityProvider, &Self> {
-        if let IdentityProvider::ActiveDirectoryIdentityProvider(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let IdentityProvider::ActiveDirectoryIdentityProvider(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ActiveDirectoryIdentityProvider`](crate::types::IdentityProvider::ActiveDirectoryIdentityProvider).
     pub fn is_active_directory_identity_provider(&self) -> bool {
@@ -36,3 +32,4 @@ impl IdentityProvider {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Objects that allows sorting on SaaS products based on certain fields and sorting order.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SaaSProductSort {
+pub struct SaaSProductSort  {
     /// <p>Field to sort the SaaS products by.</p>
     pub sort_by: ::std::option::Option<crate::types::SaaSProductSortBy>,
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl SaaSProductSort {
+impl  SaaSProductSort  {
     /// <p>Field to sort the SaaS products by.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SaaSProductSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SaaSProductSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SaaSProductSortBuilder {
     }
     /// <p>Field to sort the SaaS products by.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SaaSProductSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Field to sort the SaaS products by.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SaaSProductSortBy> {
@@ -55,8 +54,7 @@ impl SaaSProductSortBuilder {
     }
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -65,8 +63,11 @@ impl SaaSProductSortBuilder {
     /// Consumes the builder and constructs a [`SaaSProductSort`](crate::types::SaaSProductSort).
     pub fn build(self) -> crate::types::SaaSProductSort {
         crate::types::SaaSProductSort {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
+            sort_by: self.sort_by
+            ,
+            sort_order: self.sort_order
+            ,
         }
     }
 }
+

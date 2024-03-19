@@ -3,7 +3,7 @@
 /// <p>Usage associated with an entitlement resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntitlementUsage {
+pub struct EntitlementUsage  {
     /// <p>Entitlement usage name.</p>
     pub name: ::std::string::String,
     /// <p>Resource usage consumed.</p>
@@ -13,23 +13,21 @@ pub struct EntitlementUsage {
     /// <p>Entitlement usage unit.</p>
     pub unit: crate::types::EntitlementDataUnit,
 }
-impl EntitlementUsage {
+impl  EntitlementUsage  {
     /// <p>Entitlement usage name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Resource usage consumed.</p>
-    pub fn consumed_value(&self) -> &str {
-        use std::ops::Deref;
-        self.consumed_value.deref()
+    pub fn consumed_value(&self) -> & str {
+        use std::ops::Deref; self.consumed_value.deref()
     }
     /// <p>Maximum entitlement usage count.</p>
-    pub fn max_count(&self) -> ::std::option::Option<&str> {
+    pub fn max_count(&self) -> ::std::option::Option<& str> {
         self.max_count.as_deref()
     }
     /// <p>Entitlement usage unit.</p>
-    pub fn unit(&self) -> &crate::types::EntitlementDataUnit {
+    pub fn unit(&self) -> & crate::types::EntitlementDataUnit {
         &self.unit
     }
 }
@@ -58,8 +56,7 @@ impl EntitlementUsageBuilder {
     }
     /// <p>Entitlement usage name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Entitlement usage name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl EntitlementUsageBuilder {
     }
     /// <p>Resource usage consumed.</p>
     pub fn set_consumed_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumed_value = input;
-        self
+        self.consumed_value = input; self
     }
     /// <p>Resource usage consumed.</p>
     pub fn get_consumed_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl EntitlementUsageBuilder {
     }
     /// <p>Maximum entitlement usage count.</p>
     pub fn set_max_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_count = input;
-        self
+        self.max_count = input; self
     }
     /// <p>Maximum entitlement usage count.</p>
     pub fn get_max_count(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl EntitlementUsageBuilder {
     }
     /// <p>Entitlement usage unit.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::EntitlementDataUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Entitlement usage unit.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::EntitlementDataUnit> {
@@ -115,26 +109,27 @@ impl EntitlementUsageBuilder {
     /// - [`consumed_value`](crate::types::builders::EntitlementUsageBuilder::consumed_value)
     /// - [`unit`](crate::types::builders::EntitlementUsageBuilder::unit)
     pub fn build(self) -> ::std::result::Result<crate::types::EntitlementUsage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EntitlementUsage {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building EntitlementUsage",
-                )
-            })?,
-            consumed_value: self.consumed_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "consumed_value",
-                    "consumed_value was not specified but it is required when building EntitlementUsage",
-                )
-            })?,
-            max_count: self.max_count,
-            unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unit",
-                    "unit was not specified but it is required when building EntitlementUsage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EntitlementUsage {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building EntitlementUsage")
+                    )?
+                ,
+                consumed_value: self.consumed_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("consumed_value", "consumed_value was not specified but it is required when building EntitlementUsage")
+                    )?
+                ,
+                max_count: self.max_count
+                ,
+                unit: self.unit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unit", "unit was not specified but it is required when building EntitlementUsage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

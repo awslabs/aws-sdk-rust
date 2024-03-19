@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTransformJobOutput {
+pub struct DescribeTransformJobOutput  {
     /// <p>The name of the transform job.</p>
     pub transform_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
@@ -23,7 +23,7 @@ pub struct DescribeTransformJobOutput {
     /// <p>To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
     pub batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
     pub transform_input: ::std::option::Option<crate::types::TransformInput>,
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
@@ -56,25 +56,25 @@ pub struct DescribeTransformJobOutput {
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     _request_id: Option<String>,
 }
-impl DescribeTransformJobOutput {
+impl  DescribeTransformJobOutput  {
     /// <p>The name of the transform job.</p>
-    pub fn transform_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn transform_job_name(&self) -> ::std::option::Option<& str> {
         self.transform_job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
-    pub fn transform_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transform_job_arn(&self) -> ::std::option::Option<& str> {
         self.transform_job_arn.as_deref()
     }
     /// <p>The status of the transform job. If the transform job failed, the reason is returned in the <code>FailureReason</code> field.</p>
-    pub fn transform_job_status(&self) -> ::std::option::Option<&crate::types::TransformJobStatus> {
+    pub fn transform_job_status(&self) -> ::std::option::Option<& crate::types::TransformJobStatus> {
         self.transform_job_status.as_ref()
     }
     /// <p>If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The name of the model used in the transform job.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The maximum number of parallel requests on each instance node that can be launched in a transform job. The default value is 1.</p>
@@ -82,7 +82,7 @@ impl DescribeTransformJobOutput {
         self.max_concurrent_transforms
     }
     /// <p>The timeout and maximum number of retries for processing a transform job invocation.</p>
-    pub fn model_client_config(&self) -> ::std::option::Option<&crate::types::ModelClientConfig> {
+    pub fn model_client_config(&self) -> ::std::option::Option<& crate::types::ModelClientConfig> {
         self.model_client_config.as_ref()
     }
     /// <p>The maximum payload size, in MB, used in the transform job.</p>
@@ -91,51 +91,51 @@ impl DescribeTransformJobOutput {
     }
     /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.</p>
     /// <p>To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
-    pub fn batch_strategy(&self) -> ::std::option::Option<&crate::types::BatchStrategy> {
+    pub fn batch_strategy(&self) -> ::std::option::Option<& crate::types::BatchStrategy> {
         self.batch_strategy.as_ref()
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
-    pub fn transform_input(&self) -> ::std::option::Option<&crate::types::TransformInput> {
+    pub fn transform_input(&self) -> ::std::option::Option<& crate::types::TransformInput> {
         self.transform_input.as_ref()
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
-    pub fn transform_output(&self) -> ::std::option::Option<&crate::types::TransformOutput> {
+    pub fn transform_output(&self) -> ::std::option::Option<& crate::types::TransformOutput> {
         self.transform_output.as_ref()
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::BatchDataCaptureConfig> {
+    pub fn data_capture_config(&self) -> ::std::option::Option<& crate::types::BatchDataCaptureConfig> {
         self.data_capture_config.as_ref()
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
-    pub fn transform_resources(&self) -> ::std::option::Option<&crate::types::TransformResources> {
+    pub fn transform_resources(&self) -> ::std::option::Option<& crate::types::TransformResources> {
         self.transform_resources.as_ref()
     }
     /// <p>A timestamp that shows when the transform Job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Indicates when the transform job starts on ML instances. You are billed for the time interval between this time and the value of <code>TransformEndTime</code>.</p>
-    pub fn transform_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn transform_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.transform_start_time.as_ref()
     }
     /// <p>Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time interval between this time and the value of <code>TransformStartTime</code>.</p>
-    pub fn transform_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn transform_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.transform_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
-    pub fn labeling_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn labeling_job_arn(&self) -> ::std::option::Option<& str> {
         self.labeling_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
-    pub fn auto_ml_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn auto_ml_job_arn(&self) -> ::std::option::Option<& str> {
         self.auto_ml_job_arn.as_deref()
     }
     /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
-    pub fn data_processing(&self) -> ::std::option::Option<&crate::types::DataProcessing> {
+    pub fn data_processing(&self) -> ::std::option::Option<& crate::types::DataProcessing> {
         self.data_processing.as_ref()
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
@@ -147,15 +147,15 @@ impl DescribeTransformJobOutput {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
-    pub fn experiment_config(&self) -> ::std::option::Option<&crate::types::ExperimentConfig> {
+    pub fn experiment_config(&self) -> ::std::option::Option<& crate::types::ExperimentConfig> {
         self.experiment_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTransformJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTransformJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransformJobOutput`](crate::operation::describe_transform_job::DescribeTransformJobOutput).
     pub fn builder() -> crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder {
@@ -176,7 +176,7 @@ pub struct DescribeTransformJobOutputBuilder {
     pub(crate) model_client_config: ::std::option::Option<crate::types::ModelClientConfig>,
     pub(crate) max_payload_in_mb: ::std::option::Option<i32>,
     pub(crate) batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) transform_input: ::std::option::Option<crate::types::TransformInput>,
     pub(crate) transform_output: ::std::option::Option<crate::types::TransformOutput>,
     pub(crate) data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
@@ -199,8 +199,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The name of the transform job.</p>
     pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_job_name = input;
-        self
+        self.transform_job_name = input; self
     }
     /// <p>The name of the transform job.</p>
     pub fn get_transform_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +213,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
     pub fn set_transform_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_job_arn = input;
-        self
+        self.transform_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
     pub fn get_transform_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +227,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The status of the transform job. If the transform job failed, the reason is returned in the <code>FailureReason</code> field.</p>
     pub fn set_transform_job_status(mut self, input: ::std::option::Option<crate::types::TransformJobStatus>) -> Self {
-        self.transform_job_status = input;
-        self
+        self.transform_job_status = input; self
     }
     /// <p>The status of the transform job. If the transform job failed, the reason is returned in the <code>FailureReason</code> field.</p>
     pub fn get_transform_job_status(&self) -> &::std::option::Option<crate::types::TransformJobStatus> {
@@ -243,8 +240,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +254,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The name of the model used in the transform job.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model used in the transform job.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +267,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The maximum number of parallel requests on each instance node that can be launched in a transform job. The default value is 1.</p>
     pub fn set_max_concurrent_transforms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_concurrent_transforms = input;
-        self
+        self.max_concurrent_transforms = input; self
     }
     /// <p>The maximum number of parallel requests on each instance node that can be launched in a transform job. The default value is 1.</p>
     pub fn get_max_concurrent_transforms(&self) -> &::std::option::Option<i32> {
@@ -286,8 +280,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The timeout and maximum number of retries for processing a transform job invocation.</p>
     pub fn set_model_client_config(mut self, input: ::std::option::Option<crate::types::ModelClientConfig>) -> Self {
-        self.model_client_config = input;
-        self
+        self.model_client_config = input; self
     }
     /// <p>The timeout and maximum number of retries for processing a transform job invocation.</p>
     pub fn get_model_client_config(&self) -> &::std::option::Option<crate::types::ModelClientConfig> {
@@ -300,8 +293,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The maximum payload size, in MB, used in the transform job.</p>
     pub fn set_max_payload_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_payload_in_mb = input;
-        self
+        self.max_payload_in_mb = input; self
     }
     /// <p>The maximum payload size, in MB, used in the transform job.</p>
     pub fn get_max_payload_in_mb(&self) -> &::std::option::Option<i32> {
@@ -316,8 +308,7 @@ impl DescribeTransformJobOutputBuilder {
     /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.</p>
     /// <p>To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
     pub fn set_batch_strategy(mut self, input: ::std::option::Option<crate::types::BatchStrategy>) -> Self {
-        self.batch_strategy = input;
-        self
+        self.batch_strategy = input; self
     }
     /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.</p>
     /// <p>To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
@@ -331,20 +322,16 @@ impl DescribeTransformJobOutputBuilder {
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// <p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
@@ -355,8 +342,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
     pub fn set_transform_input(mut self, input: ::std::option::Option<crate::types::TransformInput>) -> Self {
-        self.transform_input = input;
-        self
+        self.transform_input = input; self
     }
     /// <p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
     pub fn get_transform_input(&self) -> &::std::option::Option<crate::types::TransformInput> {
@@ -369,8 +355,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
     pub fn set_transform_output(mut self, input: ::std::option::Option<crate::types::TransformOutput>) -> Self {
-        self.transform_output = input;
-        self
+        self.transform_output = input; self
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
     pub fn get_transform_output(&self) -> &::std::option::Option<crate::types::TransformOutput> {
@@ -383,8 +368,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::BatchDataCaptureConfig>) -> Self {
-        self.data_capture_config = input;
-        self
+        self.data_capture_config = input; self
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::BatchDataCaptureConfig> {
@@ -398,8 +382,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     pub fn set_transform_resources(mut self, input: ::std::option::Option<crate::types::TransformResources>) -> Self {
-        self.transform_resources = input;
-        self
+        self.transform_resources = input; self
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
     pub fn get_transform_resources(&self) -> &::std::option::Option<crate::types::TransformResources> {
@@ -413,8 +396,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>A timestamp that shows when the transform Job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that shows when the transform Job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -427,8 +409,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>Indicates when the transform job starts on ML instances. You are billed for the time interval between this time and the value of <code>TransformEndTime</code>.</p>
     pub fn set_transform_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.transform_start_time = input;
-        self
+        self.transform_start_time = input; self
     }
     /// <p>Indicates when the transform job starts on ML instances. You are billed for the time interval between this time and the value of <code>TransformEndTime</code>.</p>
     pub fn get_transform_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -441,8 +422,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time interval between this time and the value of <code>TransformStartTime</code>.</p>
     pub fn set_transform_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.transform_end_time = input;
-        self
+        self.transform_end_time = input; self
     }
     /// <p>Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time interval between this time and the value of <code>TransformStartTime</code>.</p>
     pub fn get_transform_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -455,8 +435,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
     pub fn set_labeling_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.labeling_job_arn = input;
-        self
+        self.labeling_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that created the transform or training job.</p>
     pub fn get_labeling_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -469,8 +448,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
     pub fn set_auto_ml_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_ml_job_arn = input;
-        self
+        self.auto_ml_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
     pub fn get_auto_ml_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -483,8 +461,7 @@ impl DescribeTransformJobOutputBuilder {
     }
     /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
     pub fn set_data_processing(mut self, input: ::std::option::Option<crate::types::DataProcessing>) -> Self {
-        self.data_processing = input;
-        self
+        self.data_processing = input; self
     }
     /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
     pub fn get_data_processing(&self) -> &::std::option::Option<crate::types::DataProcessing> {
@@ -513,8 +490,7 @@ impl DescribeTransformJobOutputBuilder {
     /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
     pub fn set_experiment_config(mut self, input: ::std::option::Option<crate::types::ExperimentConfig>) -> Self {
-        self.experiment_config = input;
-        self
+        self.experiment_config = input; self
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -529,39 +505,61 @@ impl DescribeTransformJobOutputBuilder {
         &self.experiment_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTransformJobOutput`](crate::operation::describe_transform_job::DescribeTransformJobOutput).
     pub fn build(self) -> crate::operation::describe_transform_job::DescribeTransformJobOutput {
         crate::operation::describe_transform_job::DescribeTransformJobOutput {
-            transform_job_name: self.transform_job_name,
-            transform_job_arn: self.transform_job_arn,
-            transform_job_status: self.transform_job_status,
-            failure_reason: self.failure_reason,
-            model_name: self.model_name,
-            max_concurrent_transforms: self.max_concurrent_transforms,
-            model_client_config: self.model_client_config,
-            max_payload_in_mb: self.max_payload_in_mb,
-            batch_strategy: self.batch_strategy,
-            environment: self.environment,
-            transform_input: self.transform_input,
-            transform_output: self.transform_output,
-            data_capture_config: self.data_capture_config,
-            transform_resources: self.transform_resources,
-            creation_time: self.creation_time,
-            transform_start_time: self.transform_start_time,
-            transform_end_time: self.transform_end_time,
-            labeling_job_arn: self.labeling_job_arn,
-            auto_ml_job_arn: self.auto_ml_job_arn,
-            data_processing: self.data_processing,
-            experiment_config: self.experiment_config,
+            transform_job_name: self.transform_job_name
+            ,
+            transform_job_arn: self.transform_job_arn
+            ,
+            transform_job_status: self.transform_job_status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            model_name: self.model_name
+            ,
+            max_concurrent_transforms: self.max_concurrent_transforms
+            ,
+            model_client_config: self.model_client_config
+            ,
+            max_payload_in_mb: self.max_payload_in_mb
+            ,
+            batch_strategy: self.batch_strategy
+            ,
+            environment: self.environment
+            ,
+            transform_input: self.transform_input
+            ,
+            transform_output: self.transform_output
+            ,
+            data_capture_config: self.data_capture_config
+            ,
+            transform_resources: self.transform_resources
+            ,
+            creation_time: self.creation_time
+            ,
+            transform_start_time: self.transform_start_time
+            ,
+            transform_end_time: self.transform_end_time
+            ,
+            labeling_job_arn: self.labeling_job_arn
+            ,
+            auto_ml_job_arn: self.auto_ml_job_arn
+            ,
+            data_processing: self.data_processing
+            ,
+            experiment_config: self.experiment_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

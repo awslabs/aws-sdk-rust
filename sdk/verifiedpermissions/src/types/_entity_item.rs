@@ -5,28 +5,29 @@
 /// <p><code>{ "identifier": { "entityType": "Photo", "entityId": "VacationPhoto94.jpg" }, "attributes": {}, "parents": [ { "entityType": "Album", "entityId": "alice_folder" } ] }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityItem {
+pub struct EntityItem  {
     /// <p>The identifier of the entity.</p>
     pub identifier: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>A list of attributes for the entity.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The parents in the hierarchy that contains the entity.</p>
-    pub parents: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
+    pub parents: ::std::option::Option<::std::vec::Vec::<crate::types::EntityIdentifier>>,
 }
-impl EntityItem {
+impl  EntityItem  {
     /// <p>The identifier of the entity.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
+    pub fn identifier(&self) -> ::std::option::Option<& crate::types::EntityIdentifier> {
         self.identifier.as_ref()
     }
     /// <p>A list of attributes for the entity.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         self.attributes.as_ref()
     }
     /// <p>The parents in the hierarchy that contains the entity.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parents.is_none()`.
-    pub fn parents(&self) -> &[crate::types::EntityIdentifier] {
-        self.parents.as_deref().unwrap_or_default()
+    pub fn parents(&self) -> & [crate::types::EntityIdentifier] {
+        self.parents.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EntityItem {
@@ -41,8 +42,8 @@ impl EntityItem {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityItemBuilder {
     pub(crate) identifier: ::std::option::Option<crate::types::EntityIdentifier>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    pub(crate) parents: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
+    pub(crate) parents: ::std::option::Option<::std::vec::Vec::<crate::types::EntityIdentifier>>,
 }
 impl EntityItemBuilder {
     /// <p>The identifier of the entity.</p>
@@ -53,8 +54,7 @@ impl EntityItemBuilder {
     }
     /// <p>The identifier of the entity.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the entity.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
@@ -67,20 +67,16 @@ impl EntityItemBuilder {
     /// <p>A list of attributes for the entity.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of attributes for the entity.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A list of attributes for the entity.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         &self.attributes
     }
     /// Appends an item to `parents`.
@@ -90,25 +86,28 @@ impl EntityItemBuilder {
     /// <p>The parents in the hierarchy that contains the entity.</p>
     pub fn parents(mut self, input: crate::types::EntityIdentifier) -> Self {
         let mut v = self.parents.unwrap_or_default();
-        v.push(input);
-        self.parents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parents in the hierarchy that contains the entity.</p>
-    pub fn set_parents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>) -> Self {
-        self.parents = input;
-        self
+    pub fn set_parents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityIdentifier>>) -> Self {
+        self.parents = input; self
     }
     /// <p>The parents in the hierarchy that contains the entity.</p>
-    pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>> {
+    pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityIdentifier>> {
         &self.parents
     }
     /// Consumes the builder and constructs a [`EntityItem`](crate::types::EntityItem).
     pub fn build(self) -> crate::types::EntityItem {
         crate::types::EntityItem {
-            identifier: self.identifier,
-            attributes: self.attributes,
-            parents: self.parents,
+            identifier: self.identifier
+            ,
+            attributes: self.attributes
+            ,
+            parents: self.parents
+            ,
         }
     }
 }
+

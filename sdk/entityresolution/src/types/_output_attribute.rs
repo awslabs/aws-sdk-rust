@@ -3,17 +3,16 @@
 /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputAttribute {
+pub struct OutputAttribute  {
     /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
     pub name: ::std::string::String,
     /// <p>Enables the ability to hash the column values in the output.</p>
     pub hashed: ::std::option::Option<bool>,
 }
-impl OutputAttribute {
+impl  OutputAttribute  {
     /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Enables the ability to hash the column values in the output.</p>
     pub fn hashed(&self) -> ::std::option::Option<bool> {
@@ -43,8 +42,7 @@ impl OutputAttributeBuilder {
     }
     /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl OutputAttributeBuilder {
     }
     /// <p>Enables the ability to hash the column values in the output.</p>
     pub fn set_hashed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hashed = input;
-        self
+        self.hashed = input; self
     }
     /// <p>Enables the ability to hash the column values in the output.</p>
     pub fn get_hashed(&self) -> &::std::option::Option<bool> {
@@ -68,14 +65,17 @@ impl OutputAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::OutputAttributeBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::OutputAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OutputAttribute {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building OutputAttribute",
-                )
-            })?,
-            hashed: self.hashed,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OutputAttribute {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building OutputAttribute")
+                    )?
+                ,
+                hashed: self.hashed
+                ,
+            }
+        )
     }
 }
+

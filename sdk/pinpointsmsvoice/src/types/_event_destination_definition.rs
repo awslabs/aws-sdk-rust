@@ -3,7 +3,7 @@
 /// An object that defines a single event destination.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventDestinationDefinition {
+pub struct EventDestinationDefinition  {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
@@ -11,13 +11,13 @@ pub struct EventDestinationDefinition {
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub matching_event_types: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>,
     /// An object that contains information about an event destination that sends data to Amazon SNS.
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
-impl EventDestinationDefinition {
+impl  EventDestinationDefinition  {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
-    pub fn cloud_watch_logs_destination(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs_destination(&self) -> ::std::option::Option<& crate::types::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
@@ -25,17 +25,18 @@ impl EventDestinationDefinition {
         self.enabled
     }
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
-    pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<& crate::types::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matching_event_types.is_none()`.
-    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
-        self.matching_event_types.as_deref().unwrap_or_default()
+    pub fn matching_event_types(&self) -> & [crate::types::EventType] {
+        self.matching_event_types.as_deref()
+        .unwrap_or_default()
     }
     /// An object that contains information about an event destination that sends data to Amazon SNS.
-    pub fn sns_destination(&self) -> ::std::option::Option<&crate::types::SnsDestination> {
+    pub fn sns_destination(&self) -> ::std::option::Option<& crate::types::SnsDestination> {
         self.sns_destination.as_ref()
     }
 }
@@ -53,7 +54,7 @@ pub struct EventDestinationDefinitionBuilder {
     pub(crate) cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
-    pub(crate) matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub(crate) matching_event_types: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>,
     pub(crate) sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
 impl EventDestinationDefinitionBuilder {
@@ -64,8 +65,7 @@ impl EventDestinationDefinitionBuilder {
     }
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
     pub fn set_cloud_watch_logs_destination(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsDestination>) -> Self {
-        self.cloud_watch_logs_destination = input;
-        self
+        self.cloud_watch_logs_destination = input; self
     }
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
     pub fn get_cloud_watch_logs_destination(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
@@ -78,8 +78,7 @@ impl EventDestinationDefinitionBuilder {
     }
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -92,8 +91,7 @@ impl EventDestinationDefinitionBuilder {
     }
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
     pub fn set_kinesis_firehose_destination(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
-        self.kinesis_firehose_destination = input;
-        self
+        self.kinesis_firehose_destination = input; self
     }
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
     pub fn get_kinesis_firehose_destination(&self) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
@@ -106,17 +104,16 @@ impl EventDestinationDefinitionBuilder {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.matching_event_types.unwrap_or_default();
-        v.push(input);
-        self.matching_event_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.matching_event_types = ::std::option::Option::Some(v);
+                        self
     }
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
-        self.matching_event_types = input;
-        self
+    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventType>>) -> Self {
+        self.matching_event_types = input; self
     }
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventType>> {
         &self.matching_event_types
     }
     /// An object that contains information about an event destination that sends data to Amazon SNS.
@@ -126,8 +123,7 @@ impl EventDestinationDefinitionBuilder {
     }
     /// An object that contains information about an event destination that sends data to Amazon SNS.
     pub fn set_sns_destination(mut self, input: ::std::option::Option<crate::types::SnsDestination>) -> Self {
-        self.sns_destination = input;
-        self
+        self.sns_destination = input; self
     }
     /// An object that contains information about an event destination that sends data to Amazon SNS.
     pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
@@ -136,11 +132,17 @@ impl EventDestinationDefinitionBuilder {
     /// Consumes the builder and constructs a [`EventDestinationDefinition`](crate::types::EventDestinationDefinition).
     pub fn build(self) -> crate::types::EventDestinationDefinition {
         crate::types::EventDestinationDefinition {
-            cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-            enabled: self.enabled,
-            kinesis_firehose_destination: self.kinesis_firehose_destination,
-            matching_event_types: self.matching_event_types,
-            sns_destination: self.sns_destination,
+            cloud_watch_logs_destination: self.cloud_watch_logs_destination
+            ,
+            enabled: self.enabled
+            ,
+            kinesis_firehose_destination: self.kinesis_firehose_destination
+            ,
+            matching_event_types: self.matching_event_types
+            ,
+            sns_destination: self.sns_destination
+            ,
         }
     }
 }
+

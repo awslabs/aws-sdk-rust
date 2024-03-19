@@ -3,7 +3,7 @@
 /// <p>Metadata about an Amazon Web Services Payment Cryptography key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeySummary {
+pub struct KeySummary  {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
     pub key_arn: ::std::string::String,
     /// <p>The state of an Amazon Web Services Payment Cryptography that is being created or deleted.</p>
@@ -17,24 +17,22 @@ pub struct KeySummary {
     /// <p>Specifies whether the key is enabled.</p>
     pub enabled: bool,
 }
-impl KeySummary {
+impl  KeySummary  {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
-    pub fn key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.key_arn.deref()
+    pub fn key_arn(&self) -> & str {
+        use std::ops::Deref; self.key_arn.deref()
     }
     /// <p>The state of an Amazon Web Services Payment Cryptography that is being created or deleted.</p>
-    pub fn key_state(&self) -> &crate::types::KeyState {
+    pub fn key_state(&self) -> & crate::types::KeyState {
         &self.key_state
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
-    pub fn key_attributes(&self) -> ::std::option::Option<&crate::types::KeyAttributes> {
+    pub fn key_attributes(&self) -> ::std::option::Option<& crate::types::KeyAttributes> {
         self.key_attributes.as_ref()
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
-    pub fn key_check_value(&self) -> &str {
-        use std::ops::Deref;
-        self.key_check_value.deref()
+    pub fn key_check_value(&self) -> & str {
+        use std::ops::Deref; self.key_check_value.deref()
     }
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub fn exportable(&self) -> bool {
@@ -72,8 +70,7 @@ impl KeySummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl KeySummaryBuilder {
     }
     /// <p>The state of an Amazon Web Services Payment Cryptography that is being created or deleted.</p>
     pub fn set_key_state(mut self, input: ::std::option::Option<crate::types::KeyState>) -> Self {
-        self.key_state = input;
-        self
+        self.key_state = input; self
     }
     /// <p>The state of an Amazon Web Services Payment Cryptography that is being created or deleted.</p>
     pub fn get_key_state(&self) -> &::std::option::Option<crate::types::KeyState> {
@@ -102,8 +98,7 @@ impl KeySummaryBuilder {
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
-        self.key_attributes = input;
-        self
+        self.key_attributes = input; self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
@@ -117,8 +112,7 @@ impl KeySummaryBuilder {
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_check_value = input;
-        self
+        self.key_check_value = input; self
     }
     /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     pub fn get_key_check_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +126,7 @@ impl KeySummaryBuilder {
     }
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub fn set_exportable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exportable = input;
-        self
+        self.exportable = input; self
     }
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub fn get_exportable(&self) -> &::std::option::Option<bool> {
@@ -147,8 +140,7 @@ impl KeySummaryBuilder {
     }
     /// <p>Specifies whether the key is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether the key is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -162,38 +154,37 @@ impl KeySummaryBuilder {
     /// - [`exportable`](crate::types::builders::KeySummaryBuilder::exportable)
     /// - [`enabled`](crate::types::builders::KeySummaryBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::KeySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeySummary {
-            key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_arn",
-                    "key_arn was not specified but it is required when building KeySummary",
-                )
-            })?,
-            key_state: self.key_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_state",
-                    "key_state was not specified but it is required when building KeySummary",
-                )
-            })?,
-            key_attributes: self.key_attributes,
-            key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_check_value",
-                    "key_check_value was not specified but it is required when building KeySummary",
-                )
-            })?,
-            exportable: self.exportable.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "exportable",
-                    "exportable was not specified but it is required when building KeySummary",
-                )
-            })?,
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building KeySummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeySummary {
+                key_arn: self.key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_arn", "key_arn was not specified but it is required when building KeySummary")
+                    )?
+                ,
+                key_state: self.key_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_state", "key_state was not specified but it is required when building KeySummary")
+                    )?
+                ,
+                key_attributes: self.key_attributes
+                ,
+                key_check_value: self.key_check_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_check_value", "key_check_value was not specified but it is required when building KeySummary")
+                    )?
+                ,
+                exportable: self.exportable
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("exportable", "exportable was not specified but it is required when building KeySummary")
+                    )?
+                ,
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building KeySummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

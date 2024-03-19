@@ -3,19 +3,19 @@
 /// <p>A map containing a priority as a key, and recovery method name as a value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryOptionType {
+pub struct RecoveryOptionType  {
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
     pub priority: i32,
     /// <p>The recovery method for a user.</p>
     pub name: crate::types::RecoveryOptionNameType,
 }
-impl RecoveryOptionType {
+impl  RecoveryOptionType  {
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
     /// <p>The recovery method for a user.</p>
-    pub fn name(&self) -> &crate::types::RecoveryOptionNameType {
+    pub fn name(&self) -> & crate::types::RecoveryOptionNameType {
         &self.name
     }
 }
@@ -42,8 +42,7 @@ impl RecoveryOptionTypeBuilder {
     }
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl RecoveryOptionTypeBuilder {
     }
     /// <p>The recovery method for a user.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::RecoveryOptionNameType>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The recovery method for a user.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::RecoveryOptionNameType> {
@@ -69,19 +67,20 @@ impl RecoveryOptionTypeBuilder {
     /// - [`priority`](crate::types::builders::RecoveryOptionTypeBuilder::priority)
     /// - [`name`](crate::types::builders::RecoveryOptionTypeBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::RecoveryOptionType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecoveryOptionType {
-            priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "priority",
-                    "priority was not specified but it is required when building RecoveryOptionType",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RecoveryOptionType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecoveryOptionType {
+                priority: self.priority
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("priority", "priority was not specified but it is required when building RecoveryOptionType")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RecoveryOptionType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,20 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchGroups`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that can be used in a subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return from this request.</p><br>
     ///   - [`namespace(impl Into<String>)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::set_namespace):<br>required: **true**<br><p>The namespace that you want to search.</p><br>
     ///   - [`filters(GroupSearchFilter)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::filters) / [`set_filters(Option<Vec::<GroupSearchFilter>>)`](crate::operation::search_groups::builders::SearchGroupsFluentBuilder::set_filters):<br>required: **true**<br><p>The structure for the search filters that you want to apply to your search.</p><br>
-    /// - On success, responds with [`SearchGroupsOutput`](crate::operation::search_groups::SearchGroupsOutput) with field(s):
+                            /// - On success, responds with [`SearchGroupsOutput`](crate::operation::search_groups::SearchGroupsOutput) with field(s):
     ///   - [`group_list(Option<Vec::<Group>>)`](crate::operation::search_groups::SearchGroupsOutput::group_list): <p>A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code> request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_groups::SearchGroupsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::search_groups::SearchGroupsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::search_groups::SearchGroupsOutput::status): <p>The HTTP status of the request.</p>
-    /// - On failure, responds with [`SdkError<SearchGroupsError>`](crate::operation::search_groups::SearchGroupsError)
+                            /// - On failure, responds with [`SdkError<SearchGroupsError>`](crate::operation::search_groups::SearchGroupsError)
     pub fn search_groups(&self) -> crate::operation::search_groups::builders::SearchGroupsFluentBuilder {
-        crate::operation::search_groups::builders::SearchGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_groups::builders::SearchGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

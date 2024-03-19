@@ -3,7 +3,7 @@
 /// Placeholder documentation for StartChannelResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartChannelOutput {
+pub struct StartChannelOutput  {
     /// The unique arn of the channel.
     pub arn: ::std::option::Option<::std::string::String>,
     /// Specification of CDI inputs for this channel
@@ -11,15 +11,15 @@ pub struct StartChannelOutput {
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub channel_class: ::std::option::Option<crate::types::ChannelClass>,
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
-    pub egress_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
+    pub egress_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelEgressEndpoint>>,
     /// Encoder Settings
     pub encoder_settings: ::std::option::Option<crate::types::EncoderSettings>,
     /// The unique id of the channel.
     pub id: ::std::option::Option<::std::string::String>,
     /// List of input attachments for channel.
-    pub input_attachments: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
+    pub input_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::InputAttachment>>,
     /// Specification of network and file inputs for this channel
     pub input_specification: ::std::option::Option<crate::types::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
@@ -29,7 +29,7 @@ pub struct StartChannelOutput {
     /// The name of the channel. (user-mutable)
     pub name: ::std::option::Option<::std::string::String>,
     /// Runtime details for the pipelines of a running channel.
-    pub pipeline_details: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>>,
+    pub pipeline_details: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineDetail>>,
     /// The number of currently healthy pipelines.
     pub pipelines_running_count: ::std::option::Option<i32>,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
@@ -37,98 +37,102 @@ pub struct StartChannelOutput {
     /// Placeholder documentation for ChannelState
     pub state: ::std::option::Option<crate::types::ChannelState>,
     /// A collection of key-value pairs.
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// Settings for VPC output
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     _request_id: Option<String>,
 }
-impl StartChannelOutput {
+impl  StartChannelOutput  {
     /// The unique arn of the channel.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Specification of CDI inputs for this channel
-    pub fn cdi_input_specification(&self) -> ::std::option::Option<&crate::types::CdiInputSpecification> {
+    pub fn cdi_input_specification(&self) -> ::std::option::Option<& crate::types::CdiInputSpecification> {
         self.cdi_input_specification.as_ref()
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    pub fn channel_class(&self) -> ::std::option::Option<&crate::types::ChannelClass> {
+    pub fn channel_class(&self) -> ::std::option::Option<& crate::types::ChannelClass> {
         self.channel_class.as_ref()
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::OutputDestination] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::OutputDestination] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// The endpoints where outgoing connections initiate from
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.egress_endpoints.is_none()`.
-    pub fn egress_endpoints(&self) -> &[crate::types::ChannelEgressEndpoint] {
-        self.egress_endpoints.as_deref().unwrap_or_default()
+    pub fn egress_endpoints(&self) -> & [crate::types::ChannelEgressEndpoint] {
+        self.egress_endpoints.as_deref()
+        .unwrap_or_default()
     }
     /// Encoder Settings
-    pub fn encoder_settings(&self) -> ::std::option::Option<&crate::types::EncoderSettings> {
+    pub fn encoder_settings(&self) -> ::std::option::Option<& crate::types::EncoderSettings> {
         self.encoder_settings.as_ref()
     }
     /// The unique id of the channel.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// List of input attachments for channel.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_attachments.is_none()`.
-    pub fn input_attachments(&self) -> &[crate::types::InputAttachment] {
-        self.input_attachments.as_deref().unwrap_or_default()
+    pub fn input_attachments(&self) -> & [crate::types::InputAttachment] {
+        self.input_attachments.as_deref()
+        .unwrap_or_default()
     }
     /// Specification of network and file inputs for this channel
-    pub fn input_specification(&self) -> ::std::option::Option<&crate::types::InputSpecification> {
+    pub fn input_specification(&self) -> ::std::option::Option<& crate::types::InputSpecification> {
         self.input_specification.as_ref()
     }
     /// The log level being written to CloudWatch Logs.
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
     /// Maintenance settings for this channel.
-    pub fn maintenance(&self) -> ::std::option::Option<&crate::types::MaintenanceStatus> {
+    pub fn maintenance(&self) -> ::std::option::Option<& crate::types::MaintenanceStatus> {
         self.maintenance.as_ref()
     }
     /// The name of the channel. (user-mutable)
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Runtime details for the pipelines of a running channel.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_details.is_none()`.
-    pub fn pipeline_details(&self) -> &[crate::types::PipelineDetail] {
-        self.pipeline_details.as_deref().unwrap_or_default()
+    pub fn pipeline_details(&self) -> & [crate::types::PipelineDetail] {
+        self.pipeline_details.as_deref()
+        .unwrap_or_default()
     }
     /// The number of currently healthy pipelines.
     pub fn pipelines_running_count(&self) -> ::std::option::Option<i32> {
         self.pipelines_running_count
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Placeholder documentation for ChannelState
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ChannelState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ChannelState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// Settings for VPC output
-    pub fn vpc(&self) -> ::std::option::Option<&crate::types::VpcOutputSettingsDescription> {
+    pub fn vpc(&self) -> ::std::option::Option<& crate::types::VpcOutputSettingsDescription> {
         self.vpc.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartChannelOutput {
     /// Creates a new builder-style object to manufacture [`StartChannelOutput`](crate::operation::start_channel::StartChannelOutput).
     pub fn builder() -> crate::operation::start_channel::builders::StartChannelOutputBuilder {
@@ -143,20 +147,20 @@ pub struct StartChannelOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
     pub(crate) channel_class: ::std::option::Option<crate::types::ChannelClass>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
-    pub(crate) egress_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDestination>>,
+    pub(crate) egress_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelEgressEndpoint>>,
     pub(crate) encoder_settings: ::std::option::Option<crate::types::EncoderSettings>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) input_attachments: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
+    pub(crate) input_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::InputAttachment>>,
     pub(crate) input_specification: ::std::option::Option<crate::types::InputSpecification>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) maintenance: ::std::option::Option<crate::types::MaintenanceStatus>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) pipeline_details: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>>,
+    pub(crate) pipeline_details: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineDetail>>,
     pub(crate) pipelines_running_count: ::std::option::Option<i32>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ChannelState>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     _request_id: Option<String>,
 }
@@ -168,8 +172,7 @@ impl StartChannelOutputBuilder {
     }
     /// The unique arn of the channel.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The unique arn of the channel.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +185,7 @@ impl StartChannelOutputBuilder {
     }
     /// Specification of CDI inputs for this channel
     pub fn set_cdi_input_specification(mut self, input: ::std::option::Option<crate::types::CdiInputSpecification>) -> Self {
-        self.cdi_input_specification = input;
-        self
+        self.cdi_input_specification = input; self
     }
     /// Specification of CDI inputs for this channel
     pub fn get_cdi_input_specification(&self) -> &::std::option::Option<crate::types::CdiInputSpecification> {
@@ -196,8 +198,7 @@ impl StartChannelOutputBuilder {
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub fn set_channel_class(mut self, input: ::std::option::Option<crate::types::ChannelClass>) -> Self {
-        self.channel_class = input;
-        self
+        self.channel_class = input; self
     }
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
     pub fn get_channel_class(&self) -> &::std::option::Option<crate::types::ChannelClass> {
@@ -210,17 +211,16 @@ impl StartChannelOutputBuilder {
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
     pub fn destinations(mut self, input: crate::types::OutputDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDestination>>) -> Self {
+        self.destinations = input; self
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputDestination>> {
         &self.destinations
     }
     /// Appends an item to `egress_endpoints`.
@@ -230,17 +230,16 @@ impl StartChannelOutputBuilder {
     /// The endpoints where outgoing connections initiate from
     pub fn egress_endpoints(mut self, input: crate::types::ChannelEgressEndpoint) -> Self {
         let mut v = self.egress_endpoints.unwrap_or_default();
-        v.push(input);
-        self.egress_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.egress_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn set_egress_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>) -> Self {
-        self.egress_endpoints = input;
-        self
+    pub fn set_egress_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelEgressEndpoint>>) -> Self {
+        self.egress_endpoints = input; self
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn get_egress_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>> {
+    pub fn get_egress_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChannelEgressEndpoint>> {
         &self.egress_endpoints
     }
     /// Encoder Settings
@@ -250,8 +249,7 @@ impl StartChannelOutputBuilder {
     }
     /// Encoder Settings
     pub fn set_encoder_settings(mut self, input: ::std::option::Option<crate::types::EncoderSettings>) -> Self {
-        self.encoder_settings = input;
-        self
+        self.encoder_settings = input; self
     }
     /// Encoder Settings
     pub fn get_encoder_settings(&self) -> &::std::option::Option<crate::types::EncoderSettings> {
@@ -264,8 +262,7 @@ impl StartChannelOutputBuilder {
     }
     /// The unique id of the channel.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The unique id of the channel.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,17 +275,16 @@ impl StartChannelOutputBuilder {
     /// List of input attachments for channel.
     pub fn input_attachments(mut self, input: crate::types::InputAttachment) -> Self {
         let mut v = self.input_attachments.unwrap_or_default();
-        v.push(input);
-        self.input_attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// List of input attachments for channel.
-    pub fn set_input_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>) -> Self {
-        self.input_attachments = input;
-        self
+    pub fn set_input_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputAttachment>>) -> Self {
+        self.input_attachments = input; self
     }
     /// List of input attachments for channel.
-    pub fn get_input_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>> {
+    pub fn get_input_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputAttachment>> {
         &self.input_attachments
     }
     /// Specification of network and file inputs for this channel
@@ -298,8 +294,7 @@ impl StartChannelOutputBuilder {
     }
     /// Specification of network and file inputs for this channel
     pub fn set_input_specification(mut self, input: ::std::option::Option<crate::types::InputSpecification>) -> Self {
-        self.input_specification = input;
-        self
+        self.input_specification = input; self
     }
     /// Specification of network and file inputs for this channel
     pub fn get_input_specification(&self) -> &::std::option::Option<crate::types::InputSpecification> {
@@ -312,8 +307,7 @@ impl StartChannelOutputBuilder {
     }
     /// The log level being written to CloudWatch Logs.
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// The log level being written to CloudWatch Logs.
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
@@ -326,8 +320,7 @@ impl StartChannelOutputBuilder {
     }
     /// Maintenance settings for this channel.
     pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::MaintenanceStatus>) -> Self {
-        self.maintenance = input;
-        self
+        self.maintenance = input; self
     }
     /// Maintenance settings for this channel.
     pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::MaintenanceStatus> {
@@ -340,8 +333,7 @@ impl StartChannelOutputBuilder {
     }
     /// The name of the channel. (user-mutable)
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the channel. (user-mutable)
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -354,17 +346,16 @@ impl StartChannelOutputBuilder {
     /// Runtime details for the pipelines of a running channel.
     pub fn pipeline_details(mut self, input: crate::types::PipelineDetail) -> Self {
         let mut v = self.pipeline_details.unwrap_or_default();
-        v.push(input);
-        self.pipeline_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pipeline_details = ::std::option::Option::Some(v);
+                        self
     }
     /// Runtime details for the pipelines of a running channel.
-    pub fn set_pipeline_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>>) -> Self {
-        self.pipeline_details = input;
-        self
+    pub fn set_pipeline_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineDetail>>) -> Self {
+        self.pipeline_details = input; self
     }
     /// Runtime details for the pipelines of a running channel.
-    pub fn get_pipeline_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>> {
+    pub fn get_pipeline_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelineDetail>> {
         &self.pipeline_details
     }
     /// The number of currently healthy pipelines.
@@ -374,8 +365,7 @@ impl StartChannelOutputBuilder {
     }
     /// The number of currently healthy pipelines.
     pub fn set_pipelines_running_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pipelines_running_count = input;
-        self
+        self.pipelines_running_count = input; self
     }
     /// The number of currently healthy pipelines.
     pub fn get_pipelines_running_count(&self) -> &::std::option::Option<i32> {
@@ -388,8 +378,7 @@ impl StartChannelOutputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -402,8 +391,7 @@ impl StartChannelOutputBuilder {
     }
     /// Placeholder documentation for ChannelState
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ChannelState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Placeholder documentation for ChannelState
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ChannelState> {
@@ -416,17 +404,16 @@ impl StartChannelOutputBuilder {
     /// A collection of key-value pairs.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Settings for VPC output
@@ -436,44 +423,62 @@ impl StartChannelOutputBuilder {
     }
     /// Settings for VPC output
     pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::VpcOutputSettingsDescription>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// Settings for VPC output
     pub fn get_vpc(&self) -> &::std::option::Option<crate::types::VpcOutputSettingsDescription> {
         &self.vpc
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartChannelOutput`](crate::operation::start_channel::StartChannelOutput).
     pub fn build(self) -> crate::operation::start_channel::StartChannelOutput {
         crate::operation::start_channel::StartChannelOutput {
-            arn: self.arn,
-            cdi_input_specification: self.cdi_input_specification,
-            channel_class: self.channel_class,
-            destinations: self.destinations,
-            egress_endpoints: self.egress_endpoints,
-            encoder_settings: self.encoder_settings,
-            id: self.id,
-            input_attachments: self.input_attachments,
-            input_specification: self.input_specification,
-            log_level: self.log_level,
-            maintenance: self.maintenance,
-            name: self.name,
-            pipeline_details: self.pipeline_details,
-            pipelines_running_count: self.pipelines_running_count,
-            role_arn: self.role_arn,
-            state: self.state,
-            tags: self.tags,
-            vpc: self.vpc,
+            arn: self.arn
+            ,
+            cdi_input_specification: self.cdi_input_specification
+            ,
+            channel_class: self.channel_class
+            ,
+            destinations: self.destinations
+            ,
+            egress_endpoints: self.egress_endpoints
+            ,
+            encoder_settings: self.encoder_settings
+            ,
+            id: self.id
+            ,
+            input_attachments: self.input_attachments
+            ,
+            input_specification: self.input_specification
+            ,
+            log_level: self.log_level
+            ,
+            maintenance: self.maintenance
+            ,
+            name: self.name
+            ,
+            pipeline_details: self.pipeline_details
+            ,
+            pipelines_running_count: self.pipelines_running_count
+            ,
+            role_arn: self.role_arn
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
+            vpc: self.vpc
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

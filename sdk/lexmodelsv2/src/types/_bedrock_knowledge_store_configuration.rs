@@ -3,15 +3,14 @@
 /// <p>Contains details about the configuration of a Amazon Bedrock knowledge base.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BedrockKnowledgeStoreConfiguration {
+pub struct BedrockKnowledgeStoreConfiguration  {
     /// <p>The ARN of the knowledge base used.</p>
     pub bedrock_knowledge_base_arn: ::std::string::String,
 }
-impl BedrockKnowledgeStoreConfiguration {
+impl  BedrockKnowledgeStoreConfiguration  {
     /// <p>The ARN of the knowledge base used.</p>
-    pub fn bedrock_knowledge_base_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bedrock_knowledge_base_arn.deref()
+    pub fn bedrock_knowledge_base_arn(&self) -> & str {
+        use std::ops::Deref; self.bedrock_knowledge_base_arn.deref()
     }
 }
 impl BedrockKnowledgeStoreConfiguration {
@@ -36,8 +35,7 @@ impl BedrockKnowledgeStoreConfigurationBuilder {
     }
     /// <p>The ARN of the knowledge base used.</p>
     pub fn set_bedrock_knowledge_base_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bedrock_knowledge_base_arn = input;
-        self
+        self.bedrock_knowledge_base_arn = input; self
     }
     /// <p>The ARN of the knowledge base used.</p>
     pub fn get_bedrock_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl BedrockKnowledgeStoreConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bedrock_knowledge_base_arn`](crate::types::builders::BedrockKnowledgeStoreConfigurationBuilder::bedrock_knowledge_base_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::BedrockKnowledgeStoreConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BedrockKnowledgeStoreConfiguration {
-            bedrock_knowledge_base_arn: self.bedrock_knowledge_base_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bedrock_knowledge_base_arn",
-                    "bedrock_knowledge_base_arn was not specified but it is required when building BedrockKnowledgeStoreConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BedrockKnowledgeStoreConfiguration {
+                bedrock_knowledge_base_arn: self.bedrock_knowledge_base_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bedrock_knowledge_base_arn", "bedrock_knowledge_base_arn was not specified but it is required when building BedrockKnowledgeStoreConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

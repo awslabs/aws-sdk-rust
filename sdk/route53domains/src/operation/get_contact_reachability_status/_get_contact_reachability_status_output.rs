@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactReachabilityStatusOutput {
+pub struct GetContactReachabilityStatusOutput  {
     /// <p>The domain name for which you requested the reachability status.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the registrant contact has responded. Values include the following:</p>
@@ -29,9 +29,9 @@ pub struct GetContactReachabilityStatusOutput {
     pub status: ::std::option::Option<crate::types::ReachabilityStatus>,
     _request_id: Option<String>,
 }
-impl GetContactReachabilityStatusOutput {
+impl  GetContactReachabilityStatusOutput  {
     /// <p>The domain name for which you requested the reachability status.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether the registrant contact has responded. Values include the following:</p>
@@ -55,15 +55,15 @@ impl GetContactReachabilityStatusOutput {
     /// <p>The time limit expired before the registrant contact responded.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReachabilityStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReachabilityStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContactReachabilityStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContactReachabilityStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusOutput`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput).
     pub fn builder() -> crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusOutputBuilder {
@@ -87,8 +87,7 @@ impl GetContactReachabilityStatusOutputBuilder {
     }
     /// <p>The domain name for which you requested the reachability status.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name for which you requested the reachability status.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl GetContactReachabilityStatusOutputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReachabilityStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Whether the registrant contact has responded. Values include the following:</p>
     /// <dl>
@@ -169,20 +167,23 @@ impl GetContactReachabilityStatusOutputBuilder {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContactReachabilityStatusOutput`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput).
     pub fn build(self) -> crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput {
         crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput {
-            domain_name: self.domain_name,
-            status: self.status,
+            domain_name: self.domain_name
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

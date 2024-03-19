@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyspaceInput {
+pub struct GetKeyspaceInput  {
     /// <p>The name of the keyspace.</p>
     pub keyspace_name: ::std::option::Option<::std::string::String>,
 }
-impl GetKeyspaceInput {
+impl  GetKeyspaceInput  {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetKeyspaceInputBuilder {
     }
     /// <p>The name of the keyspace.</p>
     pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// <p>The name of the keyspace.</p>
     pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetKeyspaceInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetKeyspaceInput`](crate::operation::get_keyspace::GetKeyspaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_keyspace::GetKeyspaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_keyspace::GetKeyspaceInput {
-            keyspace_name: self.keyspace_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_keyspace::GetKeyspaceInput {
+                keyspace_name: self.keyspace_name
+                ,
+            }
+        )
     }
 }
+

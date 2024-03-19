@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTargetGroupInput {
+pub struct DeleteTargetGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTargetGroupInput {
+impl  DeleteTargetGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> ::std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteTargetGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_group_arn = input;
-        self
+        self.target_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_group_arn
     }
     /// Consumes the builder and constructs a [`DeleteTargetGroupInput`](crate::operation::delete_target_group::DeleteTargetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_target_group::DeleteTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_target_group::DeleteTargetGroupInput {
-            target_group_arn: self.target_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_target_group::DeleteTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_target_group::DeleteTargetGroupInput {
+                target_group_arn: self.target_group_arn
+                ,
+            }
+        )
     }
 }
+

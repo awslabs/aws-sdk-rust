@@ -3,7 +3,7 @@
 /// <p>The message object that provides the message text and its type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>The content type of the message string.</p>
     pub content_type: crate::types::ContentType,
     /// <p>The text of the message.</p>
@@ -11,15 +11,14 @@ pub struct Message {
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub group_number: ::std::option::Option<i32>,
 }
-impl Message {
+impl  Message  {
     /// <p>The content type of the message string.</p>
-    pub fn content_type(&self) -> &crate::types::ContentType {
+    pub fn content_type(&self) -> & crate::types::ContentType {
         &self.content_type
     }
     /// <p>The text of the message.</p>
-    pub fn content(&self) -> &str {
-        use std::ops::Deref;
-        self.content.deref()
+    pub fn content(&self) -> & str {
+        use std::ops::Deref; self.content.deref()
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub fn group_number(&self) -> ::std::option::Option<i32> {
@@ -50,8 +49,7 @@ impl MessageBuilder {
     }
     /// <p>The content type of the message string.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content type of the message string.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
@@ -65,8 +63,7 @@ impl MessageBuilder {
     }
     /// <p>The text of the message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The text of the message.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl MessageBuilder {
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub fn set_group_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.group_number = input;
-        self
+        self.group_number = input; self
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub fn get_group_number(&self) -> &::std::option::Option<i32> {
@@ -91,20 +87,22 @@ impl MessageBuilder {
     /// - [`content_type`](crate::types::builders::MessageBuilder::content_type)
     /// - [`content`](crate::types::builders::MessageBuilder::content)
     pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Message {
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building Message",
-                )
-            })?,
-            content: self.content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content",
-                    "content was not specified but it is required when building Message",
-                )
-            })?,
-            group_number: self.group_number,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Message {
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building Message")
+                    )?
+                ,
+                content: self.content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content", "content was not specified but it is required when building Message")
+                    )?
+                ,
+                group_number: self.group_number
+                ,
+            }
+        )
     }
 }
+

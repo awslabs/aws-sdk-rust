@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReportCreationInput {}
+pub struct DescribeReportCreationInput  {
+}
 impl DescribeReportCreationInput {
     /// Creates a new builder-style object to manufacture [`DescribeReportCreationInput`](crate::operation::describe_report_creation::DescribeReportCreationInput).
     pub fn builder() -> crate::operation::describe_report_creation::builders::DescribeReportCreationInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeReportCreationInput {
 /// A builder for [`DescribeReportCreationInput`](crate::operation::describe_report_creation::DescribeReportCreationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeReportCreationInputBuilder {}
+pub struct DescribeReportCreationInputBuilder {
+}
 impl DescribeReportCreationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReportCreationInput`](crate::operation::describe_report_creation::DescribeReportCreationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_report_creation::DescribeReportCreationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_report_creation::DescribeReportCreationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_report_creation::DescribeReportCreationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_report_creation::DescribeReportCreationInput {
+            }
+        )
     }
 }
+

@@ -2,22 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelsModeratedByAppInstanceUser`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_instance_user_arn(impl Into<String>)`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::set_app_instance_user_arn):<br>required: **false**<br><p>The ARN of the user in the moderated channel.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of channels in the request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p><br>
     ///   - [`chime_bearer(impl Into<String>)`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::set_chime_bearer):<br>required: **false**<br><p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p><br>
-    /// - On success, responds with [`ListChannelsModeratedByAppInstanceUserOutput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput) with field(s):
+                            /// - On success, responds with [`ListChannelsModeratedByAppInstanceUserOutput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput) with field(s):
     ///   - [`channels(Option<Vec::<ChannelModeratedByAppInstanceUserSummary>>)`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput::channels): <p>The moderated channels in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput::next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
-    /// - On failure, responds with [`SdkError<ListChannelsModeratedByAppInstanceUserError>`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserError)
+                            /// - On failure, responds with [`SdkError<ListChannelsModeratedByAppInstanceUserError>`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserError)
     #[deprecated(note = "Replaced by ListChannelsModeratedByAppInstanceUser in the Amazon Chime SDK Messaging Namespace")]
-    pub fn list_channels_moderated_by_app_instance_user(
-        &self,
-    ) -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder {
-        crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+    pub fn list_channels_moderated_by_app_instance_user(&self) -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder {
+                                crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserFluentBuilder::new(self.handle.clone())
+                            }
 }
+

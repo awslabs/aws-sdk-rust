@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreTableInput {
+pub struct RestoreTableInput  {
     /// <p>The keyspace name of the source table.</p>
     pub source_keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source table.</p>
@@ -45,32 +45,32 @@ pub struct RestoreTableInput {
     pub point_in_time_recovery_override: ::std::option::Option<crate::types::PointInTimeRecovery>,
     /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub tags_override: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags_override: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
     /// <p>The optional Region specific settings of a multi-Regional table.</p>
-    pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
+    pub replica_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>>,
 }
-impl RestoreTableInput {
+impl  RestoreTableInput  {
     /// <p>The keyspace name of the source table.</p>
-    pub fn source_keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_keyspace_name(&self) -> ::std::option::Option<& str> {
         self.source_keyspace_name.as_deref()
     }
     /// <p>The name of the source table.</p>
-    pub fn source_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_table_name(&self) -> ::std::option::Option<& str> {
         self.source_table_name.as_deref()
     }
     /// <p>The name of the target keyspace.</p>
-    pub fn target_keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_keyspace_name(&self) -> ::std::option::Option<& str> {
         self.target_keyspace_name.as_deref()
     }
     /// <p>The name of the target table.</p>
-    pub fn target_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_table_name(&self) -> ::std::option::Option<& str> {
         self.target_table_name.as_deref()
     }
     /// <p>The restore timestamp in ISO 8601 format.</p>
-    pub fn restore_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn restore_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.restore_timestamp.as_ref()
     }
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
@@ -82,7 +82,7 @@ impl RestoreTableInput {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification_override(&self) -> ::std::option::Option<&crate::types::CapacitySpecification> {
+    pub fn capacity_specification_override(&self) -> ::std::option::Option<& crate::types::CapacitySpecification> {
         self.capacity_specification_override.as_ref()
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
@@ -94,7 +94,7 @@ impl RestoreTableInput {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification_override(&self) -> ::std::option::Option<&crate::types::EncryptionSpecification> {
+    pub fn encryption_specification_override(&self) -> ::std::option::Option<& crate::types::EncryptionSpecification> {
         self.encryption_specification_override.as_ref()
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
@@ -106,26 +106,28 @@ impl RestoreTableInput {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn point_in_time_recovery_override(&self) -> ::std::option::Option<&crate::types::PointInTimeRecovery> {
+    pub fn point_in_time_recovery_override(&self) -> ::std::option::Option<& crate::types::PointInTimeRecovery> {
         self.point_in_time_recovery_override.as_ref()
     }
     /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_override.is_none()`.
-    pub fn tags_override(&self) -> &[crate::types::Tag] {
-        self.tags_override.as_deref().unwrap_or_default()
+    pub fn tags_override(&self) -> & [crate::types::Tag] {
+        self.tags_override.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn auto_scaling_specification(&self) -> ::std::option::Option<&crate::types::AutoScalingSpecification> {
+    pub fn auto_scaling_specification(&self) -> ::std::option::Option<& crate::types::AutoScalingSpecification> {
         self.auto_scaling_specification.as_ref()
     }
     /// <p>The optional Region specific settings of a multi-Regional table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_specifications.is_none()`.
-    pub fn replica_specifications(&self) -> &[crate::types::ReplicaSpecification] {
-        self.replica_specifications.as_deref().unwrap_or_default()
+    pub fn replica_specifications(&self) -> & [crate::types::ReplicaSpecification] {
+        self.replica_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RestoreTableInput {
@@ -147,9 +149,9 @@ pub struct RestoreTableInputBuilder {
     pub(crate) capacity_specification_override: ::std::option::Option<crate::types::CapacitySpecification>,
     pub(crate) encryption_specification_override: ::std::option::Option<crate::types::EncryptionSpecification>,
     pub(crate) point_in_time_recovery_override: ::std::option::Option<crate::types::PointInTimeRecovery>,
-    pub(crate) tags_override: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags_override: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
-    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
+    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>>,
 }
 impl RestoreTableInputBuilder {
     /// <p>The keyspace name of the source table.</p>
@@ -160,8 +162,7 @@ impl RestoreTableInputBuilder {
     }
     /// <p>The keyspace name of the source table.</p>
     pub fn set_source_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_keyspace_name = input;
-        self
+        self.source_keyspace_name = input; self
     }
     /// <p>The keyspace name of the source table.</p>
     pub fn get_source_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +176,7 @@ impl RestoreTableInputBuilder {
     }
     /// <p>The name of the source table.</p>
     pub fn set_source_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_table_name = input;
-        self
+        self.source_table_name = input; self
     }
     /// <p>The name of the source table.</p>
     pub fn get_source_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +190,7 @@ impl RestoreTableInputBuilder {
     }
     /// <p>The name of the target keyspace.</p>
     pub fn set_target_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_keyspace_name = input;
-        self
+        self.target_keyspace_name = input; self
     }
     /// <p>The name of the target keyspace.</p>
     pub fn get_target_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +204,7 @@ impl RestoreTableInputBuilder {
     }
     /// <p>The name of the target table.</p>
     pub fn set_target_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_table_name = input;
-        self
+        self.target_table_name = input; self
     }
     /// <p>The name of the target table.</p>
     pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +217,7 @@ impl RestoreTableInputBuilder {
     }
     /// <p>The restore timestamp in ISO 8601 format.</p>
     pub fn set_restore_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.restore_timestamp = input;
-        self
+        self.restore_timestamp = input; self
     }
     /// <p>The restore timestamp in ISO 8601 format.</p>
     pub fn get_restore_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -249,8 +246,7 @@ impl RestoreTableInputBuilder {
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_capacity_specification_override(mut self, input: ::std::option::Option<crate::types::CapacitySpecification>) -> Self {
-        self.capacity_specification_override = input;
-        self
+        self.capacity_specification_override = input; self
     }
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
     /// <ul>
@@ -287,8 +283,7 @@ impl RestoreTableInputBuilder {
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_encryption_specification_override(mut self, input: ::std::option::Option<crate::types::EncryptionSpecification>) -> Self {
-        self.encryption_specification_override = input;
-        self
+        self.encryption_specification_override = input; self
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
@@ -325,8 +320,7 @@ impl RestoreTableInputBuilder {
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_point_in_time_recovery_override(mut self, input: ::std::option::Option<crate::types::PointInTimeRecovery>) -> Self {
-        self.point_in_time_recovery_override = input;
-        self
+        self.point_in_time_recovery_override = input; self
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
     /// <ul>
@@ -348,19 +342,18 @@ impl RestoreTableInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn tags_override(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_override.unwrap_or_default();
-        v.push(input);
-        self.tags_override = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags_override = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_tags_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags_override = input;
-        self
+    pub fn set_tags_override(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags_override = input; self
     }
     /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_tags_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags_override(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags_override
     }
     /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
@@ -372,8 +365,7 @@ impl RestoreTableInputBuilder {
     /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_auto_scaling_specification(mut self, input: ::std::option::Option<crate::types::AutoScalingSpecification>) -> Self {
-        self.auto_scaling_specification = input;
-        self
+        self.auto_scaling_specification = input; self
     }
     /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -387,35 +379,46 @@ impl RestoreTableInputBuilder {
     /// <p>The optional Region specific settings of a multi-Regional table.</p>
     pub fn replica_specifications(mut self, input: crate::types::ReplicaSpecification) -> Self {
         let mut v = self.replica_specifications.unwrap_or_default();
-        v.push(input);
-        self.replica_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replica_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The optional Region specific settings of a multi-Regional table.</p>
-    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>) -> Self {
-        self.replica_specifications = input;
-        self
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>>) -> Self {
+        self.replica_specifications = input; self
     }
     /// <p>The optional Region specific settings of a multi-Regional table.</p>
-    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>> {
         &self.replica_specifications
     }
     /// Consumes the builder and constructs a [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::restore_table::RestoreTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::restore_table::RestoreTableInput {
-            source_keyspace_name: self.source_keyspace_name,
-            source_table_name: self.source_table_name,
-            target_keyspace_name: self.target_keyspace_name,
-            target_table_name: self.target_table_name,
-            restore_timestamp: self.restore_timestamp,
-            capacity_specification_override: self.capacity_specification_override,
-            encryption_specification_override: self.encryption_specification_override,
-            point_in_time_recovery_override: self.point_in_time_recovery_override,
-            tags_override: self.tags_override,
-            auto_scaling_specification: self.auto_scaling_specification,
-            replica_specifications: self.replica_specifications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_table::RestoreTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_table::RestoreTableInput {
+                source_keyspace_name: self.source_keyspace_name
+                ,
+                source_table_name: self.source_table_name
+                ,
+                target_keyspace_name: self.target_keyspace_name
+                ,
+                target_table_name: self.target_table_name
+                ,
+                restore_timestamp: self.restore_timestamp
+                ,
+                capacity_specification_override: self.capacity_specification_override
+                ,
+                encryption_specification_override: self.encryption_specification_override
+                ,
+                point_in_time_recovery_override: self.point_in_time_recovery_override
+                ,
+                tags_override: self.tags_override
+                ,
+                auto_scaling_specification: self.auto_scaling_specification
+                ,
+                replica_specifications: self.replica_specifications
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::update_response_plan::_update_response_plan_input::Upd
 
 impl UpdateResponsePlanInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_response_plan::UpdateResponsePlanOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_response_plan::UpdateResponsePlanError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_response_plan();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_response_plan::UpdateResponsePlanOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_response_plan::UpdateResponsePlanError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_response_plan();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateResponsePlan`.
-///
+/// 
 /// <p>Updates the specified response plan.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResponsePlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder,
+                    inner: crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_response_plan::UpdateResponsePlanOutput,
-        crate::operation::update_response_plan::UpdateResponsePlanError,
-    > for UpdateResponsePlanFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_response_plan::UpdateResponsePlanOutput,
-            crate::operation::update_response_plan::UpdateResponsePlanError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_response_plan::UpdateResponsePlanOutput,
+                    crate::operation::update_response_plan::UpdateResponsePlanError,
+                > for UpdateResponsePlanFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_response_plan::UpdateResponsePlanOutput,
+                        crate::operation::update_response_plan::UpdateResponsePlanError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateResponsePlanFluentBuilder {
     /// Creates a new `UpdateResponsePlan`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateResponsePlanFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_response_plan::UpdateResponsePlanOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_response_plan::UpdateResponsePlanError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_response_plan::UpdateResponsePlan::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_response_plan::UpdateResponsePlan::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_response_plan::UpdateResponsePlanOutput,
-        crate::operation::update_response_plan::UpdateResponsePlanError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_response_plan::UpdateResponsePlanOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_response_plan::UpdateResponsePlanError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_response_plan::UpdateResponsePlan::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_response_plan::UpdateResponsePlan::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_response_plan::UpdateResponsePlanOutput, crate::operation::update_response_plan::UpdateResponsePlanError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -255,15 +242,12 @@ impl UpdateResponsePlanFluentBuilder {
         self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn set_incident_template_notification_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
-    ) -> Self {
+    pub fn set_incident_template_notification_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationTargetItem>>) -> Self {
         self.inner = self.inner.set_incident_template_notification_targets(input);
         self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn get_incident_template_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+    pub fn get_incident_template_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationTargetItem>> {
         self.inner.get_incident_template_notification_targets()
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
@@ -293,12 +277,12 @@ impl UpdateResponsePlanFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_engagements(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_engagements()
     }
     /// Appends an item to `actions`.
@@ -311,12 +295,12 @@ impl UpdateResponsePlanFluentBuilder {
         self
     }
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         self.inner.get_actions()
     }
     /// Adds a key-value pair to `incidentTemplateTags`.
@@ -324,24 +308,17 @@ impl UpdateResponsePlanFluentBuilder {
     /// To override the contents of this collection use [`set_incident_template_tags`](Self::set_incident_template_tags).
     ///
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
-    pub fn incident_template_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_template_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_template_tags(k.into(), v.into());
         self
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
-    pub fn set_incident_template_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_incident_template_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_incident_template_tags(input);
         self
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
-    pub fn get_incident_template_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_incident_template_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_incident_template_tags()
     }
     /// Appends an item to `integrations`.
@@ -354,12 +331,13 @@ impl UpdateResponsePlanFluentBuilder {
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Integration>>) -> Self {
         self.inner = self.inner.set_integrations(input);
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Integration>> {
         self.inner.get_integrations()
     }
 }
+

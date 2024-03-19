@@ -3,7 +3,7 @@
 /// <p>Metadata about the detection source that generates proactive anomalies. The anomaly is detected using analysis of the metric data  over a period of time</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalySourceMetadata {
+pub struct AnomalySourceMetadata  {
     /// <p>The source of the anomaly.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the anomaly's resource.</p>
@@ -11,17 +11,17 @@ pub struct AnomalySourceMetadata {
     /// <p>The anomaly's resource type.</p>
     pub source_resource_type: ::std::option::Option<::std::string::String>,
 }
-impl AnomalySourceMetadata {
+impl  AnomalySourceMetadata  {
     /// <p>The source of the anomaly.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The name of the anomaly's resource.</p>
-    pub fn source_resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_resource_name(&self) -> ::std::option::Option<& str> {
         self.source_resource_name.as_deref()
     }
     /// <p>The anomaly's resource type.</p>
-    pub fn source_resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_resource_type(&self) -> ::std::option::Option<& str> {
         self.source_resource_type.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AnomalySourceMetadataBuilder {
     }
     /// <p>The source of the anomaly.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the anomaly.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AnomalySourceMetadataBuilder {
     }
     /// <p>The name of the anomaly's resource.</p>
     pub fn set_source_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_resource_name = input;
-        self
+        self.source_resource_name = input; self
     }
     /// <p>The name of the anomaly's resource.</p>
     pub fn get_source_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AnomalySourceMetadataBuilder {
     }
     /// <p>The anomaly's resource type.</p>
     pub fn set_source_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_resource_type = input;
-        self
+        self.source_resource_type = input; self
     }
     /// <p>The anomaly's resource type.</p>
     pub fn get_source_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AnomalySourceMetadataBuilder {
     /// Consumes the builder and constructs a [`AnomalySourceMetadata`](crate::types::AnomalySourceMetadata).
     pub fn build(self) -> crate::types::AnomalySourceMetadata {
         crate::types::AnomalySourceMetadata {
-            source: self.source,
-            source_resource_name: self.source_resource_name,
-            source_resource_type: self.source_resource_type,
+            source: self.source
+            ,
+            source_resource_name: self.source_resource_name
+            ,
+            source_resource_type: self.source_resource_type
+            ,
         }
     }
 }
+

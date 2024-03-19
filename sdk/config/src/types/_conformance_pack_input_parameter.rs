@@ -3,22 +3,20 @@
 /// <p>Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 255 characters, and values can have a maximum length of 4096 characters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConformancePackInputParameter {
+pub struct ConformancePackInputParameter  {
     /// <p>One part of a key-value pair.</p>
     pub parameter_name: ::std::string::String,
     /// <p>Another part of the key-value pair.</p>
     pub parameter_value: ::std::string::String,
 }
-impl ConformancePackInputParameter {
+impl  ConformancePackInputParameter  {
     /// <p>One part of a key-value pair.</p>
-    pub fn parameter_name(&self) -> &str {
-        use std::ops::Deref;
-        self.parameter_name.deref()
+    pub fn parameter_name(&self) -> & str {
+        use std::ops::Deref; self.parameter_name.deref()
     }
     /// <p>Another part of the key-value pair.</p>
-    pub fn parameter_value(&self) -> &str {
-        use std::ops::Deref;
-        self.parameter_value.deref()
+    pub fn parameter_value(&self) -> & str {
+        use std::ops::Deref; self.parameter_value.deref()
     }
 }
 impl ConformancePackInputParameter {
@@ -44,8 +42,7 @@ impl ConformancePackInputParameterBuilder {
     }
     /// <p>One part of a key-value pair.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_name = input;
-        self
+        self.parameter_name = input; self
     }
     /// <p>One part of a key-value pair.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ConformancePackInputParameterBuilder {
     }
     /// <p>Another part of the key-value pair.</p>
     pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_value = input;
-        self
+        self.parameter_value = input; self
     }
     /// <p>Another part of the key-value pair.</p>
     pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ConformancePackInputParameterBuilder {
     /// - [`parameter_name`](crate::types::builders::ConformancePackInputParameterBuilder::parameter_name)
     /// - [`parameter_value`](crate::types::builders::ConformancePackInputParameterBuilder::parameter_value)
     pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackInputParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConformancePackInputParameter {
-            parameter_name: self.parameter_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_name",
-                    "parameter_name was not specified but it is required when building ConformancePackInputParameter",
-                )
-            })?,
-            parameter_value: self.parameter_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_value",
-                    "parameter_value was not specified but it is required when building ConformancePackInputParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConformancePackInputParameter {
+                parameter_name: self.parameter_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_name", "parameter_name was not specified but it is required when building ConformancePackInputParameter")
+                    )?
+                ,
+                parameter_value: self.parameter_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_value", "parameter_value was not specified but it is required when building ConformancePackInputParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

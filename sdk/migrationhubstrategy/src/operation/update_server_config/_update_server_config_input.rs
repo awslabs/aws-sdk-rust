@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServerConfigInput {
+pub struct UpdateServerConfigInput  {
     /// <p>The ID of the server.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub strategy_option: ::std::option::Option<crate::types::StrategyOption>,
 }
-impl UpdateServerConfigInput {
+impl  UpdateServerConfigInput  {
     /// <p>The ID of the server.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
-    pub fn strategy_option(&self) -> ::std::option::Option<&crate::types::StrategyOption> {
+    pub fn strategy_option(&self) -> ::std::option::Option<& crate::types::StrategyOption> {
         self.strategy_option.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateServerConfigInputBuilder {
     }
     /// <p>The ID of the server.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The ID of the server.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl UpdateServerConfigInputBuilder {
     }
     /// <p>The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn set_strategy_option(mut self, input: ::std::option::Option<crate::types::StrategyOption>) -> Self {
-        self.strategy_option = input;
-        self
+        self.strategy_option = input; self
     }
     /// <p>The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn get_strategy_option(&self) -> &::std::option::Option<crate::types::StrategyOption> {
         &self.strategy_option
     }
     /// Consumes the builder and constructs a [`UpdateServerConfigInput`](crate::operation::update_server_config::UpdateServerConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_server_config::UpdateServerConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_server_config::UpdateServerConfigInput {
-            server_id: self.server_id,
-            strategy_option: self.strategy_option,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_server_config::UpdateServerConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_server_config::UpdateServerConfigInput {
+                server_id: self.server_id
+                ,
+                strategy_option: self.strategy_option
+                ,
+            }
+        )
     }
 }
+

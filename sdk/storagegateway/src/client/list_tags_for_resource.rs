@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_marker):<br>required: **false**<br><p>An opaque string that indicates the position at which to begin returning the list of tags.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::set_limit):<br>required: **false**<br><p>Specifies that the list of tags returned be limited to the specified number of items.</p><br>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
+                            /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
     ///   - [`resource_arn(Option<String>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::marker): <p>An opaque string that indicates the position at which to stop returning the list of tags.</p>
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tags): <p>An array that contains the tags for the specified resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
+                            /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder {
-        crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// Information about a core.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Core {
+pub struct Core  {
     /// The ARN of the certificate associated with the core.
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
@@ -13,13 +13,13 @@ pub struct Core {
     /// The ARN of the thing which is the core.
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
-impl Core {
+impl  Core  {
     /// The ARN of the certificate associated with the core.
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// If true, the core's local shadow is automatically synced with the cloud.
@@ -27,7 +27,7 @@ impl Core {
         self.sync_shadow
     }
     /// The ARN of the thing which is the core.
-    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl CoreBuilder {
     }
     /// The ARN of the certificate associated with the core.
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// The ARN of the certificate associated with the core.
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl CoreBuilder {
     }
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CoreBuilder {
     }
     /// If true, the core's local shadow is automatically synced with the cloud.
     pub fn set_sync_shadow(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sync_shadow = input;
-        self
+        self.sync_shadow = input; self
     }
     /// If true, the core's local shadow is automatically synced with the cloud.
     pub fn get_sync_shadow(&self) -> &::std::option::Option<bool> {
@@ -100,8 +97,7 @@ impl CoreBuilder {
     }
     /// The ARN of the thing which is the core.
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
     }
     /// The ARN of the thing which is the core.
     pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,10 +106,15 @@ impl CoreBuilder {
     /// Consumes the builder and constructs a [`Core`](crate::types::Core).
     pub fn build(self) -> crate::types::Core {
         crate::types::Core {
-            certificate_arn: self.certificate_arn,
-            id: self.id,
-            sync_shadow: self.sync_shadow,
-            thing_arn: self.thing_arn,
+            certificate_arn: self.certificate_arn
+            ,
+            id: self.id
+            ,
+            sync_shadow: self.sync_shadow
+            ,
+            thing_arn: self.thing_arn
+            ,
         }
     }
 }
+

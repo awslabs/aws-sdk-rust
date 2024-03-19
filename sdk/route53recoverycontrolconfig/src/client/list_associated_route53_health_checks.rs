@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssociatedRoute53HealthChecks`](crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
     ///   - [`routing_control_arn(impl Into<String>)`](crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::set_routing_control_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the routing control.</p><br>
-    /// - On success, responds with [`ListAssociatedRoute53HealthChecksOutput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput) with field(s):
+                            /// - On success, responds with [`ListAssociatedRoute53HealthChecksOutput`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput) with field(s):
     ///   - [`health_check_ids(Option<Vec::<String>>)`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput::health_check_ids): <p>Identifiers for the health checks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput::next_token): <p>Next token for listing health checks.</p>
-    /// - On failure, responds with [`SdkError<ListAssociatedRoute53HealthChecksError>`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksError)
-    pub fn list_associated_route53_health_checks(
-        &self,
-    ) -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder {
-        crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAssociatedRoute53HealthChecksError>`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksError)
+    pub fn list_associated_route53_health_checks(&self) -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder {
+                                crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

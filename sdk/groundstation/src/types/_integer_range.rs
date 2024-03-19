@@ -3,13 +3,13 @@
 /// <p>An integer range that has a minimum and maximum value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerRange {
+pub struct IntegerRange  {
     /// <p>A minimum value.</p>
     pub minimum: i32,
     /// <p>A maximum value.</p>
     pub maximum: i32,
 }
-impl IntegerRange {
+impl  IntegerRange  {
     /// <p>A minimum value.</p>
     pub fn minimum(&self) -> i32 {
         self.minimum
@@ -42,8 +42,7 @@ impl IntegerRangeBuilder {
     }
     /// <p>A minimum value.</p>
     pub fn set_minimum(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum = input;
-        self
+        self.minimum = input; self
     }
     /// <p>A minimum value.</p>
     pub fn get_minimum(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl IntegerRangeBuilder {
     }
     /// <p>A maximum value.</p>
     pub fn set_maximum(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
     }
     /// <p>A maximum value.</p>
     pub fn get_maximum(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl IntegerRangeBuilder {
     /// - [`minimum`](crate::types::builders::IntegerRangeBuilder::minimum)
     /// - [`maximum`](crate::types::builders::IntegerRangeBuilder::maximum)
     pub fn build(self) -> ::std::result::Result<crate::types::IntegerRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IntegerRange {
-            minimum: self.minimum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "minimum",
-                    "minimum was not specified but it is required when building IntegerRange",
-                )
-            })?,
-            maximum: self.maximum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "maximum",
-                    "maximum was not specified but it is required when building IntegerRange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IntegerRange {
+                minimum: self.minimum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("minimum", "minimum was not specified but it is required when building IntegerRange")
+                    )?
+                ,
+                maximum: self.maximum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("maximum", "maximum was not specified but it is required when building IntegerRange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

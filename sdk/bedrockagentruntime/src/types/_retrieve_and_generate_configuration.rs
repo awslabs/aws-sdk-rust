@@ -3,19 +3,19 @@
 /// <p>Contains details about the resource being queried.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrieveAndGenerateConfiguration {
+pub struct RetrieveAndGenerateConfiguration  {
     /// <p>The type of resource that is queried by the request.</p>
     pub r#type: crate::types::RetrieveAndGenerateType,
     /// <p>Contains details about the resource being queried.</p>
     pub knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration>,
 }
-impl RetrieveAndGenerateConfiguration {
+impl  RetrieveAndGenerateConfiguration  {
     /// <p>The type of resource that is queried by the request.</p>
-    pub fn r#type(&self) -> &crate::types::RetrieveAndGenerateType {
+    pub fn r#type(&self) -> & crate::types::RetrieveAndGenerateType {
         &self.r#type
     }
     /// <p>Contains details about the resource being queried.</p>
-    pub fn knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration> {
+    pub fn knowledge_base_configuration(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration> {
         self.knowledge_base_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl RetrieveAndGenerateConfigurationBuilder {
     }
     /// <p>The type of resource that is queried by the request.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of resource that is queried by the request.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateType> {
@@ -55,12 +54,8 @@ impl RetrieveAndGenerateConfigurationBuilder {
         self
     }
     /// <p>Contains details about the resource being queried.</p>
-    pub fn set_knowledge_base_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration>,
-    ) -> Self {
-        self.knowledge_base_configuration = input;
-        self
+    pub fn set_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration>) -> Self {
+        self.knowledge_base_configuration = input; self
     }
     /// <p>Contains details about the resource being queried.</p>
     pub fn get_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration> {
@@ -70,14 +65,17 @@ impl RetrieveAndGenerateConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::RetrieveAndGenerateConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::RetrieveAndGenerateConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RetrieveAndGenerateConfiguration {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building RetrieveAndGenerateConfiguration",
-                )
-            })?,
-            knowledge_base_configuration: self.knowledge_base_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RetrieveAndGenerateConfiguration {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building RetrieveAndGenerateConfiguration")
+                    )?
+                ,
+                knowledge_base_configuration: self.knowledge_base_configuration
+                ,
+            }
+        )
     }
 }
+

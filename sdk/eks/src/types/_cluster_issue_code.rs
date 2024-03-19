@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clusterissuecode = unimplemented!();
 /// match clusterissuecode {
@@ -47,16 +47,14 @@
 /// Specifically, when `clusterissuecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClusterIssueCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ClusterIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -98,132 +96,113 @@ pub enum ClusterIssueCode {
     VpcNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ClusterIssueCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => ClusterIssueCode::AccessDenied,
-            "ClusterUnreachable" => ClusterIssueCode::ClusterUnreachable,
-            "ConfigurationConflict" => ClusterIssueCode::ConfigurationConflict,
-            "Ec2SecurityGroupNotFound" => ClusterIssueCode::Ec2SecurityGroupNotFound,
-            "Ec2ServiceNotSubscribed" => ClusterIssueCode::Ec2ServiceNotSubscribed,
-            "Ec2SubnetNotFound" => ClusterIssueCode::Ec2SubnetNotFound,
-            "IamRoleNotFound" => ClusterIssueCode::IamRoleNotFound,
-            "InsufficientFreeAddresses" => ClusterIssueCode::InsufficientFreeAddresses,
-            "InternalFailure" => ClusterIssueCode::InternalFailure,
-            "KmsGrantRevoked" => ClusterIssueCode::KmsGrantRevoked,
-            "KmsKeyDisabled" => ClusterIssueCode::KmsKeyDisabled,
-            "KmsKeyMarkedForDeletion" => ClusterIssueCode::KmsKeyMarkedForDeletion,
-            "KmsKeyNotFound" => ClusterIssueCode::KmsKeyNotFound,
-            "Other" => ClusterIssueCode::Other,
-            "ResourceLimitExceeded" => ClusterIssueCode::ResourceLimitExceeded,
-            "ResourceNotFound" => ClusterIssueCode::ResourceNotFound,
-            "StsRegionalEndpointDisabled" => ClusterIssueCode::StsRegionalEndpointDisabled,
-            "UnsupportedVersion" => ClusterIssueCode::UnsupportedVersion,
-            "VpcNotFound" => ClusterIssueCode::VpcNotFound,
-            other => ClusterIssueCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AccessDenied" => ClusterIssueCode::AccessDenied,
+"ClusterUnreachable" => ClusterIssueCode::ClusterUnreachable,
+"ConfigurationConflict" => ClusterIssueCode::ConfigurationConflict,
+"Ec2SecurityGroupNotFound" => ClusterIssueCode::Ec2SecurityGroupNotFound,
+"Ec2ServiceNotSubscribed" => ClusterIssueCode::Ec2ServiceNotSubscribed,
+"Ec2SubnetNotFound" => ClusterIssueCode::Ec2SubnetNotFound,
+"IamRoleNotFound" => ClusterIssueCode::IamRoleNotFound,
+"InsufficientFreeAddresses" => ClusterIssueCode::InsufficientFreeAddresses,
+"InternalFailure" => ClusterIssueCode::InternalFailure,
+"KmsGrantRevoked" => ClusterIssueCode::KmsGrantRevoked,
+"KmsKeyDisabled" => ClusterIssueCode::KmsKeyDisabled,
+"KmsKeyMarkedForDeletion" => ClusterIssueCode::KmsKeyMarkedForDeletion,
+"KmsKeyNotFound" => ClusterIssueCode::KmsKeyNotFound,
+"Other" => ClusterIssueCode::Other,
+"ResourceLimitExceeded" => ClusterIssueCode::ResourceLimitExceeded,
+"ResourceNotFound" => ClusterIssueCode::ResourceNotFound,
+"StsRegionalEndpointDisabled" => ClusterIssueCode::StsRegionalEndpointDisabled,
+"UnsupportedVersion" => ClusterIssueCode::UnsupportedVersion,
+"VpcNotFound" => ClusterIssueCode::VpcNotFound,
+other => ClusterIssueCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ClusterIssueCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ClusterIssueCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ClusterIssueCode::from(s))
+                    }
+                }
 impl ClusterIssueCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClusterIssueCode::AccessDenied => "AccessDenied",
-            ClusterIssueCode::ClusterUnreachable => "ClusterUnreachable",
-            ClusterIssueCode::ConfigurationConflict => "ConfigurationConflict",
-            ClusterIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
-            ClusterIssueCode::Ec2ServiceNotSubscribed => "Ec2ServiceNotSubscribed",
-            ClusterIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
-            ClusterIssueCode::IamRoleNotFound => "IamRoleNotFound",
-            ClusterIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
-            ClusterIssueCode::InternalFailure => "InternalFailure",
-            ClusterIssueCode::KmsGrantRevoked => "KmsGrantRevoked",
-            ClusterIssueCode::KmsKeyDisabled => "KmsKeyDisabled",
-            ClusterIssueCode::KmsKeyMarkedForDeletion => "KmsKeyMarkedForDeletion",
-            ClusterIssueCode::KmsKeyNotFound => "KmsKeyNotFound",
-            ClusterIssueCode::Other => "Other",
-            ClusterIssueCode::ResourceLimitExceeded => "ResourceLimitExceeded",
-            ClusterIssueCode::ResourceNotFound => "ResourceNotFound",
-            ClusterIssueCode::StsRegionalEndpointDisabled => "StsRegionalEndpointDisabled",
-            ClusterIssueCode::UnsupportedVersion => "UnsupportedVersion",
-            ClusterIssueCode::VpcNotFound => "VpcNotFound",
-            ClusterIssueCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied",
-            "ClusterUnreachable",
-            "ConfigurationConflict",
-            "Ec2SecurityGroupNotFound",
-            "Ec2ServiceNotSubscribed",
-            "Ec2SubnetNotFound",
-            "IamRoleNotFound",
-            "InsufficientFreeAddresses",
-            "InternalFailure",
-            "KmsGrantRevoked",
-            "KmsKeyDisabled",
-            "KmsKeyMarkedForDeletion",
-            "KmsKeyNotFound",
-            "Other",
-            "ResourceLimitExceeded",
-            "ResourceNotFound",
-            "StsRegionalEndpointDisabled",
-            "UnsupportedVersion",
-            "VpcNotFound",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ClusterIssueCode::AccessDenied => "AccessDenied",
+    ClusterIssueCode::ClusterUnreachable => "ClusterUnreachable",
+    ClusterIssueCode::ConfigurationConflict => "ConfigurationConflict",
+    ClusterIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
+    ClusterIssueCode::Ec2ServiceNotSubscribed => "Ec2ServiceNotSubscribed",
+    ClusterIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
+    ClusterIssueCode::IamRoleNotFound => "IamRoleNotFound",
+    ClusterIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
+    ClusterIssueCode::InternalFailure => "InternalFailure",
+    ClusterIssueCode::KmsGrantRevoked => "KmsGrantRevoked",
+    ClusterIssueCode::KmsKeyDisabled => "KmsKeyDisabled",
+    ClusterIssueCode::KmsKeyMarkedForDeletion => "KmsKeyMarkedForDeletion",
+    ClusterIssueCode::KmsKeyNotFound => "KmsKeyNotFound",
+    ClusterIssueCode::Other => "Other",
+    ClusterIssueCode::ResourceLimitExceeded => "ResourceLimitExceeded",
+    ClusterIssueCode::ResourceNotFound => "ResourceNotFound",
+    ClusterIssueCode::StsRegionalEndpointDisabled => "StsRegionalEndpointDisabled",
+    ClusterIssueCode::UnsupportedVersion => "UnsupportedVersion",
+    ClusterIssueCode::VpcNotFound => "VpcNotFound",
+    ClusterIssueCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "ClusterUnreachable", "ConfigurationConflict", "Ec2SecurityGroupNotFound", "Ec2ServiceNotSubscribed", "Ec2SubnetNotFound", "IamRoleNotFound", "InsufficientFreeAddresses", "InternalFailure", "KmsGrantRevoked", "KmsKeyDisabled", "KmsKeyMarkedForDeletion", "KmsKeyNotFound", "Other", "ResourceLimitExceeded", "ResourceNotFound", "StsRegionalEndpointDisabled", "UnsupportedVersion", "VpcNotFound"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ClusterIssueCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ClusterIssueCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ClusterIssueCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ClusterIssueCode::AccessDenied => write!(f, "AccessDenied"),
-            ClusterIssueCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
-            ClusterIssueCode::ConfigurationConflict => write!(f, "ConfigurationConflict"),
-            ClusterIssueCode::Ec2SecurityGroupNotFound => write!(f, "Ec2SecurityGroupNotFound"),
-            ClusterIssueCode::Ec2ServiceNotSubscribed => write!(f, "Ec2ServiceNotSubscribed"),
-            ClusterIssueCode::Ec2SubnetNotFound => write!(f, "Ec2SubnetNotFound"),
-            ClusterIssueCode::IamRoleNotFound => write!(f, "IamRoleNotFound"),
-            ClusterIssueCode::InsufficientFreeAddresses => write!(f, "InsufficientFreeAddresses"),
-            ClusterIssueCode::InternalFailure => write!(f, "InternalFailure"),
-            ClusterIssueCode::KmsGrantRevoked => write!(f, "KmsGrantRevoked"),
-            ClusterIssueCode::KmsKeyDisabled => write!(f, "KmsKeyDisabled"),
-            ClusterIssueCode::KmsKeyMarkedForDeletion => write!(f, "KmsKeyMarkedForDeletion"),
-            ClusterIssueCode::KmsKeyNotFound => write!(f, "KmsKeyNotFound"),
-            ClusterIssueCode::Other => write!(f, "Other"),
-            ClusterIssueCode::ResourceLimitExceeded => write!(f, "ResourceLimitExceeded"),
-            ClusterIssueCode::ResourceNotFound => write!(f, "ResourceNotFound"),
-            ClusterIssueCode::StsRegionalEndpointDisabled => write!(f, "StsRegionalEndpointDisabled"),
-            ClusterIssueCode::UnsupportedVersion => write!(f, "UnsupportedVersion"),
-            ClusterIssueCode::VpcNotFound => write!(f, "VpcNotFound"),
-            ClusterIssueCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ClusterIssueCode::AccessDenied => write!(f, "AccessDenied"),
+ClusterIssueCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
+ClusterIssueCode::ConfigurationConflict => write!(f, "ConfigurationConflict"),
+ClusterIssueCode::Ec2SecurityGroupNotFound => write!(f, "Ec2SecurityGroupNotFound"),
+ClusterIssueCode::Ec2ServiceNotSubscribed => write!(f, "Ec2ServiceNotSubscribed"),
+ClusterIssueCode::Ec2SubnetNotFound => write!(f, "Ec2SubnetNotFound"),
+ClusterIssueCode::IamRoleNotFound => write!(f, "IamRoleNotFound"),
+ClusterIssueCode::InsufficientFreeAddresses => write!(f, "InsufficientFreeAddresses"),
+ClusterIssueCode::InternalFailure => write!(f, "InternalFailure"),
+ClusterIssueCode::KmsGrantRevoked => write!(f, "KmsGrantRevoked"),
+ClusterIssueCode::KmsKeyDisabled => write!(f, "KmsKeyDisabled"),
+ClusterIssueCode::KmsKeyMarkedForDeletion => write!(f, "KmsKeyMarkedForDeletion"),
+ClusterIssueCode::KmsKeyNotFound => write!(f, "KmsKeyNotFound"),
+ClusterIssueCode::Other => write!(f, "Other"),
+ClusterIssueCode::ResourceLimitExceeded => write!(f, "ResourceLimitExceeded"),
+ClusterIssueCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+ClusterIssueCode::StsRegionalEndpointDisabled => write!(f, "StsRegionalEndpointDisabled"),
+ClusterIssueCode::UnsupportedVersion => write!(f, "UnsupportedVersion"),
+ClusterIssueCode::VpcNotFound => write!(f, "VpcNotFound"),
+ClusterIssueCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,13 +3,13 @@
 /// <p>Provides information about the output configuration for the compiled model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationJobCompiledOutputConfig {
+pub struct RecommendationJobCompiledOutputConfig  {
     /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
     pub s3_output_uri: ::std::option::Option<::std::string::String>,
 }
-impl RecommendationJobCompiledOutputConfig {
+impl  RecommendationJobCompiledOutputConfig  {
     /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
-    pub fn s3_output_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_output_uri(&self) -> ::std::option::Option<& str> {
         self.s3_output_uri.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RecommendationJobCompiledOutputConfigBuilder {
     }
     /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
     pub fn set_s3_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_output_uri = input;
-        self
+        self.s3_output_uri = input; self
     }
     /// <p>Identifies the Amazon S3 bucket where you want SageMaker to store the compiled model artifacts.</p>
     pub fn get_s3_output_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl RecommendationJobCompiledOutputConfigBuilder {
     /// Consumes the builder and constructs a [`RecommendationJobCompiledOutputConfig`](crate::types::RecommendationJobCompiledOutputConfig).
     pub fn build(self) -> crate::types::RecommendationJobCompiledOutputConfig {
         crate::types::RecommendationJobCompiledOutputConfig {
-            s3_output_uri: self.s3_output_uri,
+            s3_output_uri: self.s3_output_uri
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSessionInput {
+pub struct StartSessionInput  {
     /// <p>The managed node to connect to for the session.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -10,23 +10,23 @@ pub struct StartSessionInput {
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl StartSessionInput {
+impl  StartSessionInput  {
     /// <p>The managed node to connect to for the session.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn document_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_name(&self) -> ::std::option::Option<& str> {
         self.document_name.as_deref()
     }
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.parameters.as_ref()
     }
 }
@@ -44,7 +44,7 @@ pub struct StartSessionInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) document_name: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl StartSessionInputBuilder {
     /// <p>The managed node to connect to for the session.</p>
@@ -55,8 +55,7 @@ impl StartSessionInputBuilder {
     }
     /// <p>The managed node to connect to for the session.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The managed node to connect to for the session.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl StartSessionInputBuilder {
     }
     /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_name = input;
-        self
+        self.document_name = input; self
     }
     /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl StartSessionInputBuilder {
     }
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,35 +92,34 @@ impl StartSessionInputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
-    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_session::StartSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_session::StartSessionInput {
-            target: self.target,
-            document_name: self.document_name,
-            reason: self.reason,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_session::StartSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_session::StartSessionInput {
+                target: self.target
+                ,
+                document_name: self.document_name
+                ,
+                reason: self.reason
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

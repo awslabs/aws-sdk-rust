@@ -3,7 +3,7 @@
 /// <p>A package object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageObject {
+pub struct PackageObject  {
     /// <p>The object's name.</p>
     pub name: ::std::string::String,
     /// <p>The object's package version.</p>
@@ -11,21 +11,18 @@ pub struct PackageObject {
     /// <p>The object's patch version.</p>
     pub patch_version: ::std::string::String,
 }
-impl PackageObject {
+impl  PackageObject  {
     /// <p>The object's name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The object's package version.</p>
-    pub fn package_version(&self) -> &str {
-        use std::ops::Deref;
-        self.package_version.deref()
+    pub fn package_version(&self) -> & str {
+        use std::ops::Deref; self.package_version.deref()
     }
     /// <p>The object's patch version.</p>
-    pub fn patch_version(&self) -> &str {
-        use std::ops::Deref;
-        self.patch_version.deref()
+    pub fn patch_version(&self) -> & str {
+        use std::ops::Deref; self.patch_version.deref()
     }
 }
 impl PackageObject {
@@ -52,8 +49,7 @@ impl PackageObjectBuilder {
     }
     /// <p>The object's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The object's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl PackageObjectBuilder {
     }
     /// <p>The object's package version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>The object's package version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl PackageObjectBuilder {
     }
     /// <p>The object's patch version.</p>
     pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_version = input;
-        self
+        self.patch_version = input; self
     }
     /// <p>The object's patch version.</p>
     pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl PackageObjectBuilder {
     /// - [`package_version`](crate::types::builders::PackageObjectBuilder::package_version)
     /// - [`patch_version`](crate::types::builders::PackageObjectBuilder::patch_version)
     pub fn build(self) -> ::std::result::Result<crate::types::PackageObject, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PackageObject {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PackageObject",
-                )
-            })?,
-            package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_version",
-                    "package_version was not specified but it is required when building PackageObject",
-                )
-            })?,
-            patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "patch_version",
-                    "patch_version was not specified but it is required when building PackageObject",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PackageObject {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PackageObject")
+                    )?
+                ,
+                package_version: self.package_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_version", "package_version was not specified but it is required when building PackageObject")
+                    )?
+                ,
+                patch_version: self.patch_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("patch_version", "patch_version was not specified but it is required when building PackageObject")
+                    )?
+                ,
+            }
+        )
     }
 }
+

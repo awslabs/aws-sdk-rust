@@ -3,7 +3,7 @@
 /// Input Loss Behavior
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputLossBehavior {
+pub struct InputLossBehavior  {
     /// Documentation update needed
     pub black_frame_msec: ::std::option::Option<i32>,
     /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
@@ -15,21 +15,21 @@ pub struct InputLossBehavior {
     /// Documentation update needed
     pub repeat_frame_msec: ::std::option::Option<i32>,
 }
-impl InputLossBehavior {
+impl  InputLossBehavior  {
     /// Documentation update needed
     pub fn black_frame_msec(&self) -> ::std::option::Option<i32> {
         self.black_frame_msec
     }
     /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
-    pub fn input_loss_image_color(&self) -> ::std::option::Option<&str> {
+    pub fn input_loss_image_color(&self) -> ::std::option::Option<& str> {
         self.input_loss_image_color.as_deref()
     }
     /// When input loss image type is "slate" these fields specify the parameters for accessing the slate.
-    pub fn input_loss_image_slate(&self) -> ::std::option::Option<&crate::types::InputLocation> {
+    pub fn input_loss_image_slate(&self) -> ::std::option::Option<& crate::types::InputLocation> {
         self.input_loss_image_slate.as_ref()
     }
     /// Indicates whether to substitute a solid color or a slate into the output after input loss exceeds blackFrameMsec.
-    pub fn input_loss_image_type(&self) -> ::std::option::Option<&crate::types::InputLossImageType> {
+    pub fn input_loss_image_type(&self) -> ::std::option::Option<& crate::types::InputLossImageType> {
         self.input_loss_image_type.as_ref()
     }
     /// Documentation update needed
@@ -62,8 +62,7 @@ impl InputLossBehaviorBuilder {
     }
     /// Documentation update needed
     pub fn set_black_frame_msec(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.black_frame_msec = input;
-        self
+        self.black_frame_msec = input; self
     }
     /// Documentation update needed
     pub fn get_black_frame_msec(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl InputLossBehaviorBuilder {
     }
     /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
     pub fn set_input_loss_image_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_loss_image_color = input;
-        self
+        self.input_loss_image_color = input; self
     }
     /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
     pub fn get_input_loss_image_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl InputLossBehaviorBuilder {
     }
     /// When input loss image type is "slate" these fields specify the parameters for accessing the slate.
     pub fn set_input_loss_image_slate(mut self, input: ::std::option::Option<crate::types::InputLocation>) -> Self {
-        self.input_loss_image_slate = input;
-        self
+        self.input_loss_image_slate = input; self
     }
     /// When input loss image type is "slate" these fields specify the parameters for accessing the slate.
     pub fn get_input_loss_image_slate(&self) -> &::std::option::Option<crate::types::InputLocation> {
@@ -104,8 +101,7 @@ impl InputLossBehaviorBuilder {
     }
     /// Indicates whether to substitute a solid color or a slate into the output after input loss exceeds blackFrameMsec.
     pub fn set_input_loss_image_type(mut self, input: ::std::option::Option<crate::types::InputLossImageType>) -> Self {
-        self.input_loss_image_type = input;
-        self
+        self.input_loss_image_type = input; self
     }
     /// Indicates whether to substitute a solid color or a slate into the output after input loss exceeds blackFrameMsec.
     pub fn get_input_loss_image_type(&self) -> &::std::option::Option<crate::types::InputLossImageType> {
@@ -118,8 +114,7 @@ impl InputLossBehaviorBuilder {
     }
     /// Documentation update needed
     pub fn set_repeat_frame_msec(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.repeat_frame_msec = input;
-        self
+        self.repeat_frame_msec = input; self
     }
     /// Documentation update needed
     pub fn get_repeat_frame_msec(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl InputLossBehaviorBuilder {
     /// Consumes the builder and constructs a [`InputLossBehavior`](crate::types::InputLossBehavior).
     pub fn build(self) -> crate::types::InputLossBehavior {
         crate::types::InputLossBehavior {
-            black_frame_msec: self.black_frame_msec,
-            input_loss_image_color: self.input_loss_image_color,
-            input_loss_image_slate: self.input_loss_image_slate,
-            input_loss_image_type: self.input_loss_image_type,
-            repeat_frame_msec: self.repeat_frame_msec,
+            black_frame_msec: self.black_frame_msec
+            ,
+            input_loss_image_color: self.input_loss_image_color
+            ,
+            input_loss_image_slate: self.input_loss_image_slate
+            ,
+            input_loss_image_type: self.input_loss_image_type
+            ,
+            repeat_frame_msec: self.repeat_frame_msec
+            ,
         }
     }
 }
+

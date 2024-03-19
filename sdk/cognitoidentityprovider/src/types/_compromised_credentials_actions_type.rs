@@ -3,13 +3,13 @@
 /// <p>The compromised credentials actions type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompromisedCredentialsActionsType {
+pub struct CompromisedCredentialsActionsType  {
     /// <p>The event action.</p>
     pub event_action: crate::types::CompromisedCredentialsEventActionType,
 }
-impl CompromisedCredentialsActionsType {
+impl  CompromisedCredentialsActionsType  {
     /// <p>The event action.</p>
-    pub fn event_action(&self) -> &crate::types::CompromisedCredentialsEventActionType {
+    pub fn event_action(&self) -> & crate::types::CompromisedCredentialsEventActionType {
         &self.event_action
     }
 }
@@ -35,8 +35,7 @@ impl CompromisedCredentialsActionsTypeBuilder {
     }
     /// <p>The event action.</p>
     pub fn set_event_action(mut self, input: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>) -> Self {
-        self.event_action = input;
-        self
+        self.event_action = input; self
     }
     /// <p>The event action.</p>
     pub fn get_event_action(&self) -> &::std::option::Option<crate::types::CompromisedCredentialsEventActionType> {
@@ -46,13 +45,15 @@ impl CompromisedCredentialsActionsTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event_action`](crate::types::builders::CompromisedCredentialsActionsTypeBuilder::event_action)
     pub fn build(self) -> ::std::result::Result<crate::types::CompromisedCredentialsActionsType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CompromisedCredentialsActionsType {
-            event_action: self.event_action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_action",
-                    "event_action was not specified but it is required when building CompromisedCredentialsActionsType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CompromisedCredentialsActionsType {
+                event_action: self.event_action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_action", "event_action was not specified but it is required when building CompromisedCredentialsActionsType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lifecyclestate = unimplemented!();
 /// match lifecyclestate {
@@ -51,16 +51,14 @@
 /// Specifically, when `lifecyclestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LifecycleState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum LifecycleState {
     #[allow(missing_docs)] // documentation missing in model
     Detached,
@@ -110,148 +108,125 @@ pub enum LifecycleState {
     WarmedTerminatingWait,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for LifecycleState {
-    fn from(s: &str) -> Self {
-        match s {
-            "Detached" => LifecycleState::Detached,
-            "Detaching" => LifecycleState::Detaching,
-            "EnteringStandby" => LifecycleState::EnteringStandby,
-            "InService" => LifecycleState::InService,
-            "Pending" => LifecycleState::Pending,
-            "Pending:Proceed" => LifecycleState::PendingProceed,
-            "Pending:Wait" => LifecycleState::PendingWait,
-            "Quarantined" => LifecycleState::Quarantined,
-            "Standby" => LifecycleState::Standby,
-            "Terminated" => LifecycleState::Terminated,
-            "Terminating" => LifecycleState::Terminating,
-            "Terminating:Proceed" => LifecycleState::TerminatingProceed,
-            "Terminating:Wait" => LifecycleState::TerminatingWait,
-            "Warmed:Hibernated" => LifecycleState::WarmedHibernated,
-            "Warmed:Pending" => LifecycleState::WarmedPending,
-            "Warmed:Pending:Proceed" => LifecycleState::WarmedPendingProceed,
-            "Warmed:Pending:Wait" => LifecycleState::WarmedPendingWait,
-            "Warmed:Running" => LifecycleState::WarmedRunning,
-            "Warmed:Stopped" => LifecycleState::WarmedStopped,
-            "Warmed:Terminated" => LifecycleState::WarmedTerminated,
-            "Warmed:Terminating" => LifecycleState::WarmedTerminating,
-            "Warmed:Terminating:Proceed" => LifecycleState::WarmedTerminatingProceed,
-            "Warmed:Terminating:Wait" => LifecycleState::WarmedTerminatingWait,
-            other => LifecycleState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Detached" => LifecycleState::Detached,
+"Detaching" => LifecycleState::Detaching,
+"EnteringStandby" => LifecycleState::EnteringStandby,
+"InService" => LifecycleState::InService,
+"Pending" => LifecycleState::Pending,
+"Pending:Proceed" => LifecycleState::PendingProceed,
+"Pending:Wait" => LifecycleState::PendingWait,
+"Quarantined" => LifecycleState::Quarantined,
+"Standby" => LifecycleState::Standby,
+"Terminated" => LifecycleState::Terminated,
+"Terminating" => LifecycleState::Terminating,
+"Terminating:Proceed" => LifecycleState::TerminatingProceed,
+"Terminating:Wait" => LifecycleState::TerminatingWait,
+"Warmed:Hibernated" => LifecycleState::WarmedHibernated,
+"Warmed:Pending" => LifecycleState::WarmedPending,
+"Warmed:Pending:Proceed" => LifecycleState::WarmedPendingProceed,
+"Warmed:Pending:Wait" => LifecycleState::WarmedPendingWait,
+"Warmed:Running" => LifecycleState::WarmedRunning,
+"Warmed:Stopped" => LifecycleState::WarmedStopped,
+"Warmed:Terminated" => LifecycleState::WarmedTerminated,
+"Warmed:Terminating" => LifecycleState::WarmedTerminating,
+"Warmed:Terminating:Proceed" => LifecycleState::WarmedTerminatingProceed,
+"Warmed:Terminating:Wait" => LifecycleState::WarmedTerminatingWait,
+other => LifecycleState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for LifecycleState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(LifecycleState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(LifecycleState::from(s))
+                    }
+                }
 impl LifecycleState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LifecycleState::Detached => "Detached",
-            LifecycleState::Detaching => "Detaching",
-            LifecycleState::EnteringStandby => "EnteringStandby",
-            LifecycleState::InService => "InService",
-            LifecycleState::Pending => "Pending",
-            LifecycleState::PendingProceed => "Pending:Proceed",
-            LifecycleState::PendingWait => "Pending:Wait",
-            LifecycleState::Quarantined => "Quarantined",
-            LifecycleState::Standby => "Standby",
-            LifecycleState::Terminated => "Terminated",
-            LifecycleState::Terminating => "Terminating",
-            LifecycleState::TerminatingProceed => "Terminating:Proceed",
-            LifecycleState::TerminatingWait => "Terminating:Wait",
-            LifecycleState::WarmedHibernated => "Warmed:Hibernated",
-            LifecycleState::WarmedPending => "Warmed:Pending",
-            LifecycleState::WarmedPendingProceed => "Warmed:Pending:Proceed",
-            LifecycleState::WarmedPendingWait => "Warmed:Pending:Wait",
-            LifecycleState::WarmedRunning => "Warmed:Running",
-            LifecycleState::WarmedStopped => "Warmed:Stopped",
-            LifecycleState::WarmedTerminated => "Warmed:Terminated",
-            LifecycleState::WarmedTerminating => "Warmed:Terminating",
-            LifecycleState::WarmedTerminatingProceed => "Warmed:Terminating:Proceed",
-            LifecycleState::WarmedTerminatingWait => "Warmed:Terminating:Wait",
-            LifecycleState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Detached",
-            "Detaching",
-            "EnteringStandby",
-            "InService",
-            "Pending",
-            "Pending:Proceed",
-            "Pending:Wait",
-            "Quarantined",
-            "Standby",
-            "Terminated",
-            "Terminating",
-            "Terminating:Proceed",
-            "Terminating:Wait",
-            "Warmed:Hibernated",
-            "Warmed:Pending",
-            "Warmed:Pending:Proceed",
-            "Warmed:Pending:Wait",
-            "Warmed:Running",
-            "Warmed:Stopped",
-            "Warmed:Terminated",
-            "Warmed:Terminating",
-            "Warmed:Terminating:Proceed",
-            "Warmed:Terminating:Wait",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LifecycleState::Detached => "Detached",
+    LifecycleState::Detaching => "Detaching",
+    LifecycleState::EnteringStandby => "EnteringStandby",
+    LifecycleState::InService => "InService",
+    LifecycleState::Pending => "Pending",
+    LifecycleState::PendingProceed => "Pending:Proceed",
+    LifecycleState::PendingWait => "Pending:Wait",
+    LifecycleState::Quarantined => "Quarantined",
+    LifecycleState::Standby => "Standby",
+    LifecycleState::Terminated => "Terminated",
+    LifecycleState::Terminating => "Terminating",
+    LifecycleState::TerminatingProceed => "Terminating:Proceed",
+    LifecycleState::TerminatingWait => "Terminating:Wait",
+    LifecycleState::WarmedHibernated => "Warmed:Hibernated",
+    LifecycleState::WarmedPending => "Warmed:Pending",
+    LifecycleState::WarmedPendingProceed => "Warmed:Pending:Proceed",
+    LifecycleState::WarmedPendingWait => "Warmed:Pending:Wait",
+    LifecycleState::WarmedRunning => "Warmed:Running",
+    LifecycleState::WarmedStopped => "Warmed:Stopped",
+    LifecycleState::WarmedTerminated => "Warmed:Terminated",
+    LifecycleState::WarmedTerminating => "Warmed:Terminating",
+    LifecycleState::WarmedTerminatingProceed => "Warmed:Terminating:Proceed",
+    LifecycleState::WarmedTerminatingWait => "Warmed:Terminating:Wait",
+    LifecycleState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Detached", "Detaching", "EnteringStandby", "InService", "Pending", "Pending:Proceed", "Pending:Wait", "Quarantined", "Standby", "Terminated", "Terminating", "Terminating:Proceed", "Terminating:Wait", "Warmed:Hibernated", "Warmed:Pending", "Warmed:Pending:Proceed", "Warmed:Pending:Wait", "Warmed:Running", "Warmed:Stopped", "Warmed:Terminated", "Warmed:Terminating", "Warmed:Terminating:Proceed", "Warmed:Terminating:Wait"]
+                }
+            }
 impl ::std::convert::AsRef<str> for LifecycleState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl LifecycleState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for LifecycleState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            LifecycleState::Detached => write!(f, "Detached"),
-            LifecycleState::Detaching => write!(f, "Detaching"),
-            LifecycleState::EnteringStandby => write!(f, "EnteringStandby"),
-            LifecycleState::InService => write!(f, "InService"),
-            LifecycleState::Pending => write!(f, "Pending"),
-            LifecycleState::PendingProceed => write!(f, "Pending:Proceed"),
-            LifecycleState::PendingWait => write!(f, "Pending:Wait"),
-            LifecycleState::Quarantined => write!(f, "Quarantined"),
-            LifecycleState::Standby => write!(f, "Standby"),
-            LifecycleState::Terminated => write!(f, "Terminated"),
-            LifecycleState::Terminating => write!(f, "Terminating"),
-            LifecycleState::TerminatingProceed => write!(f, "Terminating:Proceed"),
-            LifecycleState::TerminatingWait => write!(f, "Terminating:Wait"),
-            LifecycleState::WarmedHibernated => write!(f, "Warmed:Hibernated"),
-            LifecycleState::WarmedPending => write!(f, "Warmed:Pending"),
-            LifecycleState::WarmedPendingProceed => write!(f, "Warmed:Pending:Proceed"),
-            LifecycleState::WarmedPendingWait => write!(f, "Warmed:Pending:Wait"),
-            LifecycleState::WarmedRunning => write!(f, "Warmed:Running"),
-            LifecycleState::WarmedStopped => write!(f, "Warmed:Stopped"),
-            LifecycleState::WarmedTerminated => write!(f, "Warmed:Terminated"),
-            LifecycleState::WarmedTerminating => write!(f, "Warmed:Terminating"),
-            LifecycleState::WarmedTerminatingProceed => write!(f, "Warmed:Terminating:Proceed"),
-            LifecycleState::WarmedTerminatingWait => write!(f, "Warmed:Terminating:Wait"),
-            LifecycleState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                LifecycleState::Detached => write!(f, "Detached"),
+LifecycleState::Detaching => write!(f, "Detaching"),
+LifecycleState::EnteringStandby => write!(f, "EnteringStandby"),
+LifecycleState::InService => write!(f, "InService"),
+LifecycleState::Pending => write!(f, "Pending"),
+LifecycleState::PendingProceed => write!(f, "Pending:Proceed"),
+LifecycleState::PendingWait => write!(f, "Pending:Wait"),
+LifecycleState::Quarantined => write!(f, "Quarantined"),
+LifecycleState::Standby => write!(f, "Standby"),
+LifecycleState::Terminated => write!(f, "Terminated"),
+LifecycleState::Terminating => write!(f, "Terminating"),
+LifecycleState::TerminatingProceed => write!(f, "Terminating:Proceed"),
+LifecycleState::TerminatingWait => write!(f, "Terminating:Wait"),
+LifecycleState::WarmedHibernated => write!(f, "Warmed:Hibernated"),
+LifecycleState::WarmedPending => write!(f, "Warmed:Pending"),
+LifecycleState::WarmedPendingProceed => write!(f, "Warmed:Pending:Proceed"),
+LifecycleState::WarmedPendingWait => write!(f, "Warmed:Pending:Wait"),
+LifecycleState::WarmedRunning => write!(f, "Warmed:Running"),
+LifecycleState::WarmedStopped => write!(f, "Warmed:Stopped"),
+LifecycleState::WarmedTerminated => write!(f, "Warmed:Terminated"),
+LifecycleState::WarmedTerminating => write!(f, "Warmed:Terminating"),
+LifecycleState::WarmedTerminatingProceed => write!(f, "Warmed:Terminating:Proceed"),
+LifecycleState::WarmedTerminatingWait => write!(f, "Warmed:Terminating:Wait"),
+LifecycleState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

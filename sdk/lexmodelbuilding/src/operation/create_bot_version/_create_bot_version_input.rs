@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBotVersionInput {
+pub struct CreateBotVersionInput  {
     /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
 }
-impl CreateBotVersionInput {
+impl  CreateBotVersionInput  {
     /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateBotVersionInputBuilder {
     }
     /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl CreateBotVersionInputBuilder {
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum
     }
     /// Consumes the builder and constructs a [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_bot_version::CreateBotVersionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_bot_version::CreateBotVersionInput {
-            name: self.name,
-            checksum: self.checksum,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bot_version::CreateBotVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_bot_version::CreateBotVersionInput {
+                name: self.name
+                ,
+                checksum: self.checksum
+                ,
+            }
+        )
     }
 }
+

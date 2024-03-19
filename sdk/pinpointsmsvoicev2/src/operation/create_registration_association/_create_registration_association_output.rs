@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRegistrationAssociationOutput {
+pub struct CreateRegistrationAssociationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub registration_arn: ::std::string::String,
     /// <p>The unique identifier for the registration.</p>
@@ -21,51 +21,45 @@ pub struct CreateRegistrationAssociationOutput {
     pub phone_number: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateRegistrationAssociationOutput {
+impl  CreateRegistrationAssociationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
-    pub fn registration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_arn.deref()
+    pub fn registration_arn(&self) -> & str {
+        use std::ops::Deref; self.registration_arn.deref()
     }
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_id.deref()
+    pub fn registration_id(&self) -> & str {
+        use std::ops::Deref; self.registration_id.deref()
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn registration_type(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_type.deref()
+    pub fn registration_type(&self) -> & str {
+        use std::ops::Deref; self.registration_type.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The registration type or origination identity type.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The phone number associated with the registration in E.164 format.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRegistrationAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRegistrationAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegistrationAssociationOutput`](crate::operation::create_registration_association::CreateRegistrationAssociationOutput).
     pub fn builder() -> crate::operation::create_registration_association::builders::CreateRegistrationAssociationOutputBuilder {
@@ -96,8 +90,7 @@ impl CreateRegistrationAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub fn set_registration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_arn = input;
-        self
+        self.registration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub fn get_registration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +104,7 @@ impl CreateRegistrationAssociationOutputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +118,7 @@ impl CreateRegistrationAssociationOutputBuilder {
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn set_registration_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_type = input;
-        self
+        self.registration_type = input; self
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn get_registration_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +132,7 @@ impl CreateRegistrationAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +146,7 @@ impl CreateRegistrationAssociationOutputBuilder {
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +160,7 @@ impl CreateRegistrationAssociationOutputBuilder {
     }
     /// <p>The registration type or origination identity type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The registration type or origination identity type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +173,7 @@ impl CreateRegistrationAssociationOutputBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,22 +186,21 @@ impl CreateRegistrationAssociationOutputBuilder {
     }
     /// <p>The phone number associated with the registration in E.164 format.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number associated with the registration in E.164 format.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRegistrationAssociationOutput`](crate::operation::create_registration_association::CreateRegistrationAssociationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_arn`](crate::operation::create_registration_association::builders::CreateRegistrationAssociationOutputBuilder::registration_arn)
@@ -223,52 +209,46 @@ impl CreateRegistrationAssociationOutputBuilder {
     /// - [`resource_arn`](crate::operation::create_registration_association::builders::CreateRegistrationAssociationOutputBuilder::resource_arn)
     /// - [`resource_id`](crate::operation::create_registration_association::builders::CreateRegistrationAssociationOutputBuilder::resource_id)
     /// - [`resource_type`](crate::operation::create_registration_association::builders::CreateRegistrationAssociationOutputBuilder::resource_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_registration_association::CreateRegistrationAssociationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_registration_association::CreateRegistrationAssociationOutput {
-            registration_arn: self.registration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_arn",
-                    "registration_arn was not specified but it is required when building CreateRegistrationAssociationOutput",
-                )
-            })?,
-            registration_id: self.registration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_id",
-                    "registration_id was not specified but it is required when building CreateRegistrationAssociationOutput",
-                )
-            })?,
-            registration_type: self.registration_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_type",
-                    "registration_type was not specified but it is required when building CreateRegistrationAssociationOutput",
-                )
-            })?,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building CreateRegistrationAssociationOutput",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building CreateRegistrationAssociationOutput",
-                )
-            })?,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building CreateRegistrationAssociationOutput",
-                )
-            })?,
-            iso_country_code: self.iso_country_code,
-            phone_number: self.phone_number,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_registration_association::CreateRegistrationAssociationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_registration_association::CreateRegistrationAssociationOutput {
+                registration_arn: self.registration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_arn", "registration_arn was not specified but it is required when building CreateRegistrationAssociationOutput")
+                    )?
+                ,
+                registration_id: self.registration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_id", "registration_id was not specified but it is required when building CreateRegistrationAssociationOutput")
+                    )?
+                ,
+                registration_type: self.registration_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_type", "registration_type was not specified but it is required when building CreateRegistrationAssociationOutput")
+                    )?
+                ,
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building CreateRegistrationAssociationOutput")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building CreateRegistrationAssociationOutput")
+                    )?
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building CreateRegistrationAssociationOutput")
+                    )?
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                phone_number: self.phone_number
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

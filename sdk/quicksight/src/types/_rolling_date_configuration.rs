@@ -3,24 +3,23 @@
 /// <p>The rolling date configuration of a date time filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RollingDateConfiguration {
+pub struct RollingDateConfiguration  {
     /// <p>The data set that is used in the rolling date configuration.</p>
     pub data_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The expression of the rolling date configuration.</p>
     pub expression: ::std::string::String,
 }
-impl RollingDateConfiguration {
+impl  RollingDateConfiguration  {
     /// <p>The data set that is used in the rolling date configuration.</p>
-    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_identifier(&self) -> ::std::option::Option<& str> {
         self.data_set_identifier.as_deref()
     }
     /// <p>The expression of the rolling date configuration.</p>
-    pub fn expression(&self) -> &str {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & str {
+        use std::ops::Deref; self.expression.deref()
     }
 }
-impl ::std::fmt::Debug for RollingDateConfiguration {
+impl  ::std::fmt::Debug for RollingDateConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RollingDateConfiguration");
         formatter.field("data_set_identifier", &self.data_set_identifier);
@@ -50,8 +49,7 @@ impl RollingDateConfigurationBuilder {
     }
     /// <p>The data set that is used in the rolling date configuration.</p>
     pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_identifier = input;
-        self
+        self.data_set_identifier = input; self
     }
     /// <p>The data set that is used in the rolling date configuration.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl RollingDateConfigurationBuilder {
     }
     /// <p>The expression of the rolling date configuration.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The expression of the rolling date configuration.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,15 +73,17 @@ impl RollingDateConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::RollingDateConfigurationBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::RollingDateConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RollingDateConfiguration {
-            data_set_identifier: self.data_set_identifier,
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building RollingDateConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RollingDateConfiguration {
+                data_set_identifier: self.data_set_identifier
+                ,
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building RollingDateConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RollingDateConfigurationBuilder {
@@ -95,3 +94,4 @@ impl ::std::fmt::Debug for RollingDateConfigurationBuilder {
         formatter.finish()
     }
 }
+

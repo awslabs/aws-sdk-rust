@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOrganizationConfigurationInput {
+pub struct UpdateOrganizationConfigurationInput  {
     /// <p>The ARN of the organization behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     pub auto_enable: ::std::option::Option<bool>,
 }
-impl UpdateOrganizationConfigurationInput {
+impl  UpdateOrganizationConfigurationInput  {
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
@@ -41,8 +41,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl UpdateOrganizationConfigurationInputBuilder {
     }
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
     }
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
         &self.auto_enable
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {
-                graph_arn: self.graph_arn,
-                auto_enable: self.auto_enable,
-            },
+                graph_arn: self.graph_arn
+                ,
+                auto_enable: self.auto_enable
+                ,
+            }
         )
     }
 }
+

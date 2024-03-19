@@ -3,23 +3,23 @@
 /// <p>A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssessmentFrameworkControlSet {
+pub struct CreateAssessmentFrameworkControlSet  {
     /// <p>The name of the control set.</p>
     pub name: ::std::string::String,
     /// <p>The list of controls within the control set. This doesn't contain the control set ID.</p>
-    pub controls: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
+    pub controls: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControl>>,
 }
-impl CreateAssessmentFrameworkControlSet {
+impl  CreateAssessmentFrameworkControlSet  {
     /// <p>The name of the control set.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The list of controls within the control set. This doesn't contain the control set ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.controls.is_none()`.
-    pub fn controls(&self) -> &[crate::types::CreateAssessmentFrameworkControl] {
-        self.controls.as_deref().unwrap_or_default()
+    pub fn controls(&self) -> & [crate::types::CreateAssessmentFrameworkControl] {
+        self.controls.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAssessmentFrameworkControlSet {
@@ -34,7 +34,7 @@ impl CreateAssessmentFrameworkControlSet {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkControlSetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) controls: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
+    pub(crate) controls: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl CreateAssessmentFrameworkControlSetBuilder {
     /// <p>The name of the control set.</p>
@@ -45,8 +45,7 @@ impl CreateAssessmentFrameworkControlSetBuilder {
     }
     /// <p>The name of the control set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the control set.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl CreateAssessmentFrameworkControlSetBuilder {
     /// <p>The list of controls within the control set. This doesn't contain the control set ID.</p>
     pub fn controls(mut self, input: crate::types::CreateAssessmentFrameworkControl) -> Self {
         let mut v = self.controls.unwrap_or_default();
-        v.push(input);
-        self.controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of controls within the control set. This doesn't contain the control set ID.</p>
-    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>) -> Self {
-        self.controls = input;
-        self
+    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControl>>) -> Self {
+        self.controls = input; self
     }
     /// <p>The list of controls within the control set. This doesn't contain the control set ID.</p>
-    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>> {
+    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateAssessmentFrameworkControl>> {
         &self.controls
     }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkControlSet`](crate::types::CreateAssessmentFrameworkControlSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CreateAssessmentFrameworkControlSetBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateAssessmentFrameworkControlSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateAssessmentFrameworkControlSet {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateAssessmentFrameworkControlSet",
-                )
-            })?,
-            controls: self.controls,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateAssessmentFrameworkControlSet {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreateAssessmentFrameworkControlSet")
+                    )?
+                ,
+                controls: self.controls
+                ,
+            }
+        )
     }
 }
+

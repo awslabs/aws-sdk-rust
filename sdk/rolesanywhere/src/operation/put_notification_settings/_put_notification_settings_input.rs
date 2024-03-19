@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutNotificationSettingsInput {
+pub struct PutNotificationSettingsInput  {
     /// <p>The unique identifier of the trust anchor.</p>
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
+    pub notification_settings: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationSetting>>,
 }
-impl PutNotificationSettingsInput {
+impl  PutNotificationSettingsInput  {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(&self) -> ::std::option::Option<&str> {
+    pub fn trust_anchor_id(&self) -> ::std::option::Option<& str> {
         self.trust_anchor_id.as_deref()
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_settings.is_none()`.
-    pub fn notification_settings(&self) -> &[crate::types::NotificationSetting] {
-        self.notification_settings.as_deref().unwrap_or_default()
+    pub fn notification_settings(&self) -> & [crate::types::NotificationSetting] {
+        self.notification_settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutNotificationSettingsInput {
@@ -32,7 +33,7 @@ impl PutNotificationSettingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutNotificationSettingsInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
+    pub(crate) notification_settings: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationSetting>>,
 }
 impl PutNotificationSettingsInputBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
@@ -43,8 +44,7 @@ impl PutNotificationSettingsInputBuilder {
     }
     /// <p>The unique identifier of the trust anchor.</p>
     pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_anchor_id = input;
-        self
+        self.trust_anchor_id = input; self
     }
     /// <p>The unique identifier of the trust anchor.</p>
     pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl PutNotificationSettingsInputBuilder {
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
     pub fn notification_settings(mut self, input: crate::types::NotificationSetting) -> Self {
         let mut v = self.notification_settings.unwrap_or_default();
-        v.push(input);
-        self.notification_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.notification_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn set_notification_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>) -> Self {
-        self.notification_settings = input;
-        self
+    pub fn set_notification_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationSetting>>) -> Self {
+        self.notification_settings = input; self
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn get_notification_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
+    pub fn get_notification_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationSetting>> {
         &self.notification_settings
     }
     /// Consumes the builder and constructs a [`PutNotificationSettingsInput`](crate::operation::put_notification_settings::PutNotificationSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_notification_settings::PutNotificationSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_notification_settings::PutNotificationSettingsInput {
-            trust_anchor_id: self.trust_anchor_id,
-            notification_settings: self.notification_settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_notification_settings::PutNotificationSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_notification_settings::PutNotificationSettingsInput {
+                trust_anchor_id: self.trust_anchor_id
+                ,
+                notification_settings: self.notification_settings
+                ,
+            }
+        )
     }
 }
+

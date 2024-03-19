@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkAnalyzerConfigurationInput {
+pub struct GetNetworkAnalyzerConfigurationInput  {
     /// <p>Name of the network analyzer configuration.</p>
     pub configuration_name: ::std::option::Option<::std::string::String>,
 }
-impl GetNetworkAnalyzerConfigurationInput {
+impl  GetNetworkAnalyzerConfigurationInput  {
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_name(&self) -> ::std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetNetworkAnalyzerConfigurationInputBuilder {
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_name = input;
-        self
+        self.configuration_name = input; self
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_name
     }
     /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationInput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput {
-                configuration_name: self.configuration_name,
-            },
+                configuration_name: self.configuration_name
+                ,
+            }
         )
     }
 }
+

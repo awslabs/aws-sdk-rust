@@ -3,22 +3,22 @@
 /// <p>The result structure for the update branch request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBranchOutput {
+pub struct UpdateBranchOutput  {
     /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
     pub branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,
 }
-impl UpdateBranchOutput {
+impl  UpdateBranchOutput  {
     /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
-    pub fn branch(&self) -> ::std::option::Option<&crate::types::Branch> {
+    pub fn branch(&self) -> ::std::option::Option<& crate::types::Branch> {
         self.branch.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateBranchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateBranchOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBranchOutput`](crate::operation::update_branch::UpdateBranchOutput).
     pub fn builder() -> crate::operation::update_branch::builders::UpdateBranchOutputBuilder {
@@ -42,27 +42,28 @@ impl UpdateBranchOutputBuilder {
     }
     /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<crate::types::Branch>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The branch for an Amplify app, which maps to a third-party repository branch.</p>
     pub fn get_branch(&self) -> &::std::option::Option<crate::types::Branch> {
         &self.branch
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateBranchOutput`](crate::operation::update_branch::UpdateBranchOutput).
     pub fn build(self) -> crate::operation::update_branch::UpdateBranchOutput {
         crate::operation::update_branch::UpdateBranchOutput {
-            branch: self.branch,
+            branch: self.branch
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

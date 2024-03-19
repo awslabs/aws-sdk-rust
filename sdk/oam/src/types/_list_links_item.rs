@@ -3,7 +3,7 @@
 /// <p>A structure that contains information about one of this source account's links to a monitoring account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLinksItem {
+pub struct ListLinksItem  {
     /// <p>The ARN of the link.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
@@ -11,31 +11,32 @@ pub struct ListLinksItem {
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The resource types supported by this link.</p>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ARN of the sink that this link is attached to.</p>
     pub sink_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListLinksItem {
+impl  ListLinksItem  {
     /// <p>The ARN of the link.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The resource types supported by this link.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[::std::string::String] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [::std::string::String] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the sink that this link is attached to.</p>
-    pub fn sink_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sink_arn(&self) -> ::std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
 }
@@ -53,7 +54,7 @@ pub struct ListLinksItemBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) sink_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListLinksItemBuilder {
@@ -64,8 +65,7 @@ impl ListLinksItemBuilder {
     }
     /// <p>The ARN of the link.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the link.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl ListLinksItemBuilder {
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ListLinksItemBuilder {
     }
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,17 +104,16 @@ impl ListLinksItemBuilder {
     /// <p>The resource types supported by this link.</p>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input.into());
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource types supported by this link.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The resource types supported by this link.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_types
     }
     /// <p>The ARN of the sink that this link is attached to.</p>
@@ -126,8 +123,7 @@ impl ListLinksItemBuilder {
     }
     /// <p>The ARN of the sink that this link is attached to.</p>
     pub fn set_sink_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sink_arn = input;
-        self
+        self.sink_arn = input; self
     }
     /// <p>The ARN of the sink that this link is attached to.</p>
     pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,11 +132,17 @@ impl ListLinksItemBuilder {
     /// Consumes the builder and constructs a [`ListLinksItem`](crate::types::ListLinksItem).
     pub fn build(self) -> crate::types::ListLinksItem {
         crate::types::ListLinksItem {
-            arn: self.arn,
-            id: self.id,
-            label: self.label,
-            resource_types: self.resource_types,
-            sink_arn: self.sink_arn,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            label: self.label
+            ,
+            resource_types: self.resource_types
+            ,
+            sink_arn: self.sink_arn
+            ,
         }
     }
 }
+

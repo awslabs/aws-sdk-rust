@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRoleAliasInput {
+pub struct CreateRoleAliasInput  {
     /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     pub role_alias: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN.</p>
@@ -15,15 +15,15 @@ pub struct CreateRoleAliasInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateRoleAliasInput {
+impl  CreateRoleAliasInput  {
     /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
-    pub fn role_alias(&self) -> ::std::option::Option<&str> {
+    pub fn role_alias(&self) -> ::std::option::Option<& str> {
         self.role_alias.as_deref()
     }
     /// <p>The role ARN.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
@@ -36,10 +36,11 @@ impl CreateRoleAliasInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateRoleAliasInput {
@@ -56,7 +57,7 @@ pub struct CreateRoleAliasInputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) credential_duration_seconds: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateRoleAliasInputBuilder {
     /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
@@ -67,8 +68,7 @@ impl CreateRoleAliasInputBuilder {
     }
     /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     pub fn set_role_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_alias = input;
-        self
+        self.role_alias = input; self
     }
     /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +82,7 @@ impl CreateRoleAliasInputBuilder {
     }
     /// <p>The role ARN.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The role ARN.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl CreateRoleAliasInputBuilder {
     /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
     pub fn set_credential_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.credential_duration_seconds = input;
-        self
+        self.credential_duration_seconds = input; self
     }
     /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
@@ -117,36 +115,40 @@ impl CreateRoleAliasInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the role alias.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata which can be used to manage the role alias.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRoleAliasInput`](crate::operation::create_role_alias::CreateRoleAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_role_alias::CreateRoleAliasInput {
-            role_alias: self.role_alias,
-            role_arn: self.role_arn,
-            credential_duration_seconds: self.credential_duration_seconds,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_role_alias::CreateRoleAliasInput {
+                role_alias: self.role_alias
+                ,
+                role_arn: self.role_arn
+                ,
+                credential_duration_seconds: self.credential_duration_seconds
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

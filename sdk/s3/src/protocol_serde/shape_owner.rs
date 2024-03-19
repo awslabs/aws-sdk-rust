@@ -37,20 +37,22 @@ pub fn de_owner(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
     Ok(builder.build())
 }
 
-pub fn ser_owner(
-    input: &crate::types::Owner,
-    writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+pub fn ser_owner(input: &crate::types::Owner, writer: ::aws_smithy_xml::encode::ElWriter) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_3) = &input.display_name {
         let mut inner_writer = scope.start_el("DisplayName").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(
+            var_3.as_str()
+        );
     }
     if let Some(var_4) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(
+            var_4.as_str()
+        );
     }
     scope.finish();
     Ok(())
 }
+

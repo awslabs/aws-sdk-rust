@@ -3,7 +3,7 @@
 /// <p>Determines the color that's applied to a particular data value in a column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CustomColor {
+pub struct CustomColor  {
     /// <p>The data value that the color is applied to.</p>
     pub field_value: ::std::option::Option<::std::string::String>,
     /// <p>The color that is applied to the data value.</p>
@@ -11,22 +11,21 @@ pub struct CustomColor {
     /// <p>The value of a special data value.</p>
     pub special_value: ::std::option::Option<crate::types::SpecialValue>,
 }
-impl CustomColor {
+impl  CustomColor  {
     /// <p>The data value that the color is applied to.</p>
-    pub fn field_value(&self) -> ::std::option::Option<&str> {
+    pub fn field_value(&self) -> ::std::option::Option<& str> {
         self.field_value.as_deref()
     }
     /// <p>The color that is applied to the data value.</p>
-    pub fn color(&self) -> &str {
-        use std::ops::Deref;
-        self.color.deref()
+    pub fn color(&self) -> & str {
+        use std::ops::Deref; self.color.deref()
     }
     /// <p>The value of a special data value.</p>
-    pub fn special_value(&self) -> ::std::option::Option<&crate::types::SpecialValue> {
+    pub fn special_value(&self) -> ::std::option::Option<& crate::types::SpecialValue> {
         self.special_value.as_ref()
     }
 }
-impl ::std::fmt::Debug for CustomColor {
+impl  ::std::fmt::Debug for CustomColor  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CustomColor");
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");
@@ -58,8 +57,7 @@ impl CustomColorBuilder {
     }
     /// <p>The data value that the color is applied to.</p>
     pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_value = input;
-        self
+        self.field_value = input; self
     }
     /// <p>The data value that the color is applied to.</p>
     pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,7 @@ impl CustomColorBuilder {
     }
     /// <p>The color that is applied to the data value.</p>
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>The color that is applied to the data value.</p>
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl CustomColorBuilder {
     }
     /// <p>The value of a special data value.</p>
     pub fn set_special_value(mut self, input: ::std::option::Option<crate::types::SpecialValue>) -> Self {
-        self.special_value = input;
-        self
+        self.special_value = input; self
     }
     /// <p>The value of a special data value.</p>
     pub fn get_special_value(&self) -> &::std::option::Option<crate::types::SpecialValue> {
@@ -98,16 +94,19 @@ impl CustomColorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`color`](crate::types::builders::CustomColorBuilder::color)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomColor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomColor {
-            field_value: self.field_value,
-            color: self.color.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "color",
-                    "color was not specified but it is required when building CustomColor",
-                )
-            })?,
-            special_value: self.special_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomColor {
+                field_value: self.field_value
+                ,
+                color: self.color
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("color", "color was not specified but it is required when building CustomColor")
+                    )?
+                ,
+                special_value: self.special_value
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CustomColorBuilder {
@@ -119,3 +118,4 @@ impl ::std::fmt::Debug for CustomColorBuilder {
         formatter.finish()
     }
 }
+

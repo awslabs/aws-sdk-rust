@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessPointsOutput {
+pub struct ListAccessPointsOutput  {
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    pub access_point_list: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
+    pub access_point_list: ::std::option::Option<::std::vec::Vec::<crate::types::AccessPoint>>,
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAccessPointsOutput {
+impl  ListAccessPointsOutput  {
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_point_list.is_none()`.
-    pub fn access_point_list(&self) -> &[crate::types::AccessPoint] {
-        self.access_point_list.as_deref().unwrap_or_default()
+    pub fn access_point_list(&self) -> & [crate::types::AccessPoint] {
+        self.access_point_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccessPointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccessPointsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPointsOutput`](crate::operation::list_access_points::ListAccessPointsOutput).
     pub fn builder() -> crate::operation::list_access_points::builders::ListAccessPointsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAccessPointsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPointsOutputBuilder {
-    pub(crate) access_point_list: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
+    pub(crate) access_point_list: ::std::option::Option<::std::vec::Vec::<crate::types::AccessPoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAccessPointsOutputBuilder {
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
     pub fn access_point_list(mut self, input: crate::types::AccessPoint) -> Self {
         let mut v = self.access_point_list.unwrap_or_default();
-        v.push(input);
-        self.access_point_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_point_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    pub fn set_access_point_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>) -> Self {
-        self.access_point_list = input;
-        self
+    pub fn set_access_point_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessPoint>>) -> Self {
+        self.access_point_list = input; self
     }
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    pub fn get_access_point_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
+    pub fn get_access_point_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessPoint>> {
         &self.access_point_list
     }
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
@@ -69,28 +69,30 @@ impl ListAccessPointsOutputBuilder {
     }
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccessPointsOutput`](crate::operation::list_access_points::ListAccessPointsOutput).
     pub fn build(self) -> crate::operation::list_access_points::ListAccessPointsOutput {
         crate::operation::list_access_points::ListAccessPointsOutput {
-            access_point_list: self.access_point_list,
-            next_token: self.next_token,
+            access_point_list: self.access_point_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

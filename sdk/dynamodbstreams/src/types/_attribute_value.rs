@@ -14,13 +14,13 @@ pub enum AttributeValue {
     Bool(bool),
     /// <p>An attribute of type Binary Set. For example:</p>
     /// <p><code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code></p>
-    Bs(::std::vec::Vec<::aws_smithy_types::Blob>),
+    Bs(::std::vec::Vec::<::aws_smithy_types::Blob>),
     /// <p>An attribute of type List. For example:</p>
     /// <p><code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code></p>
-    L(::std::vec::Vec<crate::types::AttributeValue>),
+    L(::std::vec::Vec::<crate::types::AttributeValue>),
     /// <p>An attribute of type Map. For example:</p>
     /// <p><code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code></p>
-    M(::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>),
+    M(::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>),
     /// <p>An attribute of type Number. For example:</p>
     /// <p><code>"N": "123.45"</code></p>
     /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
@@ -28,7 +28,7 @@ pub enum AttributeValue {
     /// <p>An attribute of type Number Set. For example:</p>
     /// <p><code>"NS": ["42.2", "-19", "7.5", "3.14"]</code></p>
     /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
-    Ns(::std::vec::Vec<::std::string::String>),
+    Ns(::std::vec::Vec::<::std::string::String>),
     /// <p>An attribute of type Null. For example:</p>
     /// <p><code>"NULL": true</code></p>
     Null(bool),
@@ -37,7 +37,7 @@ pub enum AttributeValue {
     S(::std::string::String),
     /// <p>An attribute of type String Set. For example:</p>
     /// <p><code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code></p>
-    Ss(::std::vec::Vec<::std::string::String>),
+    Ss(::std::vec::Vec::<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -52,11 +52,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`B`](crate::types::AttributeValue::B), extracting the inner [`Blob`](::aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_b(&self) -> ::std::result::Result<&::aws_smithy_types::Blob, &Self> {
-        if let AttributeValue::B(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::B(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`B`](crate::types::AttributeValue::B).
     pub fn is_b(&self) -> bool {
@@ -65,11 +61,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`Bool`](crate::types::AttributeValue::Bool), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bool(&self) -> ::std::result::Result<&bool, &Self> {
-        if let AttributeValue::Bool(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::Bool(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Bool`](crate::types::AttributeValue::Bool).
     pub fn is_bool(&self) -> bool {
@@ -77,12 +69,8 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`Bs`](crate::types::AttributeValue::Bs), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_bs(&self) -> ::std::result::Result<&::std::vec::Vec<::aws_smithy_types::Blob>, &Self> {
-        if let AttributeValue::Bs(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_bs(&self) -> ::std::result::Result<&::std::vec::Vec::<::aws_smithy_types::Blob>, &Self> {
+        if let AttributeValue::Bs(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Bs`](crate::types::AttributeValue::Bs).
     pub fn is_bs(&self) -> bool {
@@ -90,12 +78,8 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`L`](crate::types::AttributeValue::L), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_l(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::AttributeValue>, &Self> {
-        if let AttributeValue::L(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_l(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::AttributeValue>, &Self> {
+        if let AttributeValue::L(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`L`](crate::types::AttributeValue::L).
     pub fn is_l(&self) -> bool {
@@ -103,12 +87,8 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`M`](crate::types::AttributeValue::M), extracting the inner [`HashMap`](::std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_m(&self) -> ::std::result::Result<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>, &Self> {
-        if let AttributeValue::M(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_m(&self) -> ::std::result::Result<&::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>, &Self> {
+        if let AttributeValue::M(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`M`](crate::types::AttributeValue::M).
     pub fn is_m(&self) -> bool {
@@ -117,11 +97,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`N`](crate::types::AttributeValue::N), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_n(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AttributeValue::N(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::N(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`N`](crate::types::AttributeValue::N).
     pub fn is_n(&self) -> bool {
@@ -129,12 +105,8 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`Ns`](crate::types::AttributeValue::Ns), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ns(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let AttributeValue::Ns(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_ns(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let AttributeValue::Ns(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ns`](crate::types::AttributeValue::Ns).
     pub fn is_ns(&self) -> bool {
@@ -143,11 +115,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`Null`](crate::types::AttributeValue::Null), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_null(&self) -> ::std::result::Result<&bool, &Self> {
-        if let AttributeValue::Null(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::Null(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Null`](crate::types::AttributeValue::Null).
     pub fn is_null(&self) -> bool {
@@ -156,11 +124,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`S`](crate::types::AttributeValue::S), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AttributeValue::S(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::S(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S`](crate::types::AttributeValue::S).
     pub fn is_s(&self) -> bool {
@@ -168,12 +132,8 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`Ss`](crate::types::AttributeValue::Ss), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ss(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let AttributeValue::Ss(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_ss(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let AttributeValue::Ss(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ss`](crate::types::AttributeValue::Ss).
     pub fn is_ss(&self) -> bool {
@@ -184,3 +144,4 @@ impl AttributeValue {
         matches!(self, Self::Unknown)
     }
 }
+

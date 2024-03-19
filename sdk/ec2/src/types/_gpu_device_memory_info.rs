@@ -3,11 +3,11 @@
 /// <p>Describes the memory available to the GPU accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GpuDeviceMemoryInfo {
+pub struct GpuDeviceMemoryInfo  {
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
     pub size_in_mib: ::std::option::Option<i32>,
 }
-impl GpuDeviceMemoryInfo {
+impl  GpuDeviceMemoryInfo  {
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
     pub fn size_in_mib(&self) -> ::std::option::Option<i32> {
         self.size_in_mib
@@ -34,8 +34,7 @@ impl GpuDeviceMemoryInfoBuilder {
     }
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
     pub fn set_size_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_mib = input;
-        self
+        self.size_in_mib = input; self
     }
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
     pub fn get_size_in_mib(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl GpuDeviceMemoryInfoBuilder {
     /// Consumes the builder and constructs a [`GpuDeviceMemoryInfo`](crate::types::GpuDeviceMemoryInfo).
     pub fn build(self) -> crate::types::GpuDeviceMemoryInfo {
         crate::types::GpuDeviceMemoryInfo {
-            size_in_mib: self.size_in_mib,
+            size_in_mib: self.size_in_mib
+            ,
         }
     }
 }
+

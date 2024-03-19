@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectionInput {
+pub struct GetConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
     pub connection_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetConnectionInput {
+impl  GetConnectionInput  {
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetConnectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_arn
     }
     /// Consumes the builder and constructs a [`GetConnectionInput`](crate::operation::get_connection::GetConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_connection::GetConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_connection::GetConnectionInput {
-            connection_arn: self.connection_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_connection::GetConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_connection::GetConnectionInput {
+                connection_arn: self.connection_arn
+                ,
+            }
+        )
     }
 }
+

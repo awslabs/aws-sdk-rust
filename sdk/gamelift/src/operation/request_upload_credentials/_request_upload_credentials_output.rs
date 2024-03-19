@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RequestUploadCredentialsOutput {
+pub struct RequestUploadCredentialsOutput  {
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
     pub upload_credentials: ::std::option::Option<crate::types::AwsCredentials>,
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
     pub storage_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,
 }
-impl RequestUploadCredentialsOutput {
+impl  RequestUploadCredentialsOutput  {
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
-    pub fn upload_credentials(&self) -> ::std::option::Option<&crate::types::AwsCredentials> {
+    pub fn upload_credentials(&self) -> ::std::option::Option<& crate::types::AwsCredentials> {
         self.upload_credentials.as_ref()
     }
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
-    pub fn storage_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn storage_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.storage_location.as_ref()
     }
 }
-impl ::std::fmt::Debug for RequestUploadCredentialsOutput {
+impl  ::std::fmt::Debug for RequestUploadCredentialsOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RequestUploadCredentialsOutput");
         formatter.field("upload_credentials", &"*** Sensitive Data Redacted ***");
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for RequestUploadCredentialsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for RequestUploadCredentialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RequestUploadCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`RequestUploadCredentialsOutput`](crate::operation::request_upload_credentials::RequestUploadCredentialsOutput).
     pub fn builder() -> crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder {
@@ -56,8 +56,7 @@ impl RequestUploadCredentialsOutputBuilder {
     }
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
     pub fn set_upload_credentials(mut self, input: ::std::option::Option<crate::types::AwsCredentials>) -> Self {
-        self.upload_credentials = input;
-        self
+        self.upload_credentials = input; self
     }
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
     pub fn get_upload_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
@@ -70,27 +69,28 @@ impl RequestUploadCredentialsOutputBuilder {
     }
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
     pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.storage_location = input;
-        self
+        self.storage_location = input; self
     }
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
     pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.storage_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RequestUploadCredentialsOutput`](crate::operation::request_upload_credentials::RequestUploadCredentialsOutput).
     pub fn build(self) -> crate::operation::request_upload_credentials::RequestUploadCredentialsOutput {
         crate::operation::request_upload_credentials::RequestUploadCredentialsOutput {
-            upload_credentials: self.upload_credentials,
-            storage_location: self.storage_location,
+            upload_credentials: self.upload_credentials
+            ,
+            storage_location: self.storage_location
+            ,
             _request_id: self._request_id,
         }
     }
@@ -104,3 +104,4 @@ impl ::std::fmt::Debug for RequestUploadCredentialsOutputBuilder {
         formatter.finish()
     }
 }
+

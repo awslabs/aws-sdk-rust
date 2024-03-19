@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBotInput {
+pub struct UpdateBotInput  {
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
@@ -20,27 +20,27 @@ pub struct UpdateBotInput {
     /// <p>The type of the bot to be updated.</p>
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The list of bot members in the network associated with the update action.</p>
-    pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    pub bot_members: ::std::option::Option<::std::vec::Vec::<crate::types::BotMember>>,
 }
-impl UpdateBotInput {
+impl  UpdateBotInput  {
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>A description of the bot.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
-    pub fn data_privacy(&self) -> ::std::option::Option<&crate::types::DataPrivacy> {
+    pub fn data_privacy(&self) -> ::std::option::Option<& crate::types::DataPrivacy> {
         self.data_privacy.as_ref()
     }
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
@@ -50,14 +50,15 @@ impl UpdateBotInput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>The type of the bot to be updated.</p>
-    pub fn bot_type(&self) -> ::std::option::Option<&crate::types::BotType> {
+    pub fn bot_type(&self) -> ::std::option::Option<& crate::types::BotType> {
         self.bot_type.as_ref()
     }
     /// <p>The list of bot members in the network associated with the update action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_members.is_none()`.
-    pub fn bot_members(&self) -> &[crate::types::BotMember] {
-        self.bot_members.as_deref().unwrap_or_default()
+    pub fn bot_members(&self) -> & [crate::types::BotMember] {
+        self.bot_members.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateBotInput {
@@ -78,7 +79,7 @@ pub struct UpdateBotInputBuilder {
     pub(crate) data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
     pub(crate) idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     pub(crate) bot_type: ::std::option::Option<crate::types::BotType>,
-    pub(crate) bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    pub(crate) bot_members: ::std::option::Option<::std::vec::Vec::<crate::types::BotMember>>,
 }
 impl UpdateBotInputBuilder {
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
@@ -89,8 +90,7 @@ impl UpdateBotInputBuilder {
     }
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +104,7 @@ impl UpdateBotInputBuilder {
     }
     /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl UpdateBotInputBuilder {
     }
     /// <p>A description of the bot.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the bot.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl UpdateBotInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +145,7 @@ impl UpdateBotInputBuilder {
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub fn set_data_privacy(mut self, input: ::std::option::Option<crate::types::DataPrivacy>) -> Self {
-        self.data_privacy = input;
-        self
+        self.data_privacy = input; self
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
@@ -167,8 +163,7 @@ impl UpdateBotInputBuilder {
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_session_ttl_in_seconds = input;
-        self
+        self.idle_session_ttl_in_seconds = input; self
     }
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
@@ -183,8 +178,7 @@ impl UpdateBotInputBuilder {
     }
     /// <p>The type of the bot to be updated.</p>
     pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
-        self.bot_type = input;
-        self
+        self.bot_type = input; self
     }
     /// <p>The type of the bot to be updated.</p>
     pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
@@ -197,30 +191,40 @@ impl UpdateBotInputBuilder {
     /// <p>The list of bot members in the network associated with the update action.</p>
     pub fn bot_members(mut self, input: crate::types::BotMember) -> Self {
         let mut v = self.bot_members.unwrap_or_default();
-        v.push(input);
-        self.bot_members = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bot_members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of bot members in the network associated with the update action.</p>
-    pub fn set_bot_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>) -> Self {
-        self.bot_members = input;
-        self
+    pub fn set_bot_members(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BotMember>>) -> Self {
+        self.bot_members = input; self
     }
     /// <p>The list of bot members in the network associated with the update action.</p>
-    pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+    pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BotMember>> {
         &self.bot_members
     }
     /// Consumes the builder and constructs a [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_bot::UpdateBotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_bot::UpdateBotInput {
-            bot_id: self.bot_id,
-            bot_name: self.bot_name,
-            description: self.description,
-            role_arn: self.role_arn,
-            data_privacy: self.data_privacy,
-            idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-            bot_type: self.bot_type,
-            bot_members: self.bot_members,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_bot::UpdateBotInput {
+                bot_id: self.bot_id
+                ,
+                bot_name: self.bot_name
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                data_privacy: self.data_privacy
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                bot_type: self.bot_type
+                ,
+                bot_members: self.bot_members
+                ,
+            }
+        )
     }
 }
+

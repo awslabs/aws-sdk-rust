@@ -3,7 +3,8 @@
 /// <p>Contains the configuration information of the JSON format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JsonConfiguration {}
+pub struct JsonConfiguration  {
+}
 impl JsonConfiguration {
     /// Creates a new builder-style object to manufacture [`JsonConfiguration`](crate::types::JsonConfiguration).
     pub fn builder() -> crate::types::builders::JsonConfigurationBuilder {
@@ -14,10 +15,13 @@ impl JsonConfiguration {
 /// A builder for [`JsonConfiguration`](crate::types::JsonConfiguration).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct JsonConfigurationBuilder {}
+pub struct JsonConfigurationBuilder {
+}
 impl JsonConfigurationBuilder {
     /// Consumes the builder and constructs a [`JsonConfiguration`](crate::types::JsonConfiguration).
     pub fn build(self) -> crate::types::JsonConfiguration {
-        crate::types::JsonConfiguration {}
+        crate::types::JsonConfiguration {
+        }
     }
 }
+

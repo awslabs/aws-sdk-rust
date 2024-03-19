@@ -3,7 +3,7 @@
 /// <p>A request to get information about the current ApiKeys resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApiKeysInput {
+pub struct GetApiKeysInput  {
     /// <p>The current pagination position in the paged result set.</p>
     pub position: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -15,9 +15,9 @@ pub struct GetApiKeysInput {
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
     pub include_values: ::std::option::Option<bool>,
 }
-impl GetApiKeysInput {
+impl  GetApiKeysInput  {
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -25,11 +25,11 @@ impl GetApiKeysInput {
         self.limit
     }
     /// <p>The name of queried API keys.</p>
-    pub fn name_query(&self) -> ::std::option::Option<&str> {
+    pub fn name_query(&self) -> ::std::option::Option<& str> {
         self.name_query.as_deref()
     }
     /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
-    pub fn customer_id(&self) -> ::std::option::Option<&str> {
+    pub fn customer_id(&self) -> ::std::option::Option<& str> {
         self.customer_id.as_deref()
     }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
@@ -62,8 +62,7 @@ impl GetApiKeysInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GetApiKeysInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl GetApiKeysInputBuilder {
     }
     /// <p>The name of queried API keys.</p>
     pub fn set_name_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_query = input;
-        self
+        self.name_query = input; self
     }
     /// <p>The name of queried API keys.</p>
     pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl GetApiKeysInputBuilder {
     }
     /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_id = input;
-        self
+        self.customer_id = input; self
     }
     /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl GetApiKeysInputBuilder {
     }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
     pub fn set_include_values(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_values = input;
-        self
+        self.include_values = input; self
     }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
     pub fn get_include_values(&self) -> &::std::option::Option<bool> {
@@ -127,12 +122,20 @@ impl GetApiKeysInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetApiKeysInput`](crate::operation::get_api_keys::GetApiKeysInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_api_keys::GetApiKeysInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_api_keys::GetApiKeysInput {
-            position: self.position,
-            limit: self.limit,
-            name_query: self.name_query,
-            customer_id: self.customer_id,
-            include_values: self.include_values,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_api_keys::GetApiKeysInput {
+                position: self.position
+                ,
+                limit: self.limit
+                ,
+                name_query: self.name_query
+                ,
+                customer_id: self.customer_id
+                ,
+                include_values: self.include_values
+                ,
+            }
+        )
     }
 }
+

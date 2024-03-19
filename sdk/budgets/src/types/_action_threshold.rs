@@ -3,19 +3,19 @@
 /// <p>The trigger threshold of the action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionThreshold {
+pub struct ActionThreshold  {
     /// <p>The threshold of a notification.</p>
     pub action_threshold_value: f64,
     /// <p>The type of threshold for a notification.</p>
     pub action_threshold_type: crate::types::ThresholdType,
 }
-impl ActionThreshold {
+impl  ActionThreshold  {
     /// <p>The threshold of a notification.</p>
     pub fn action_threshold_value(&self) -> f64 {
         self.action_threshold_value
     }
     /// <p>The type of threshold for a notification.</p>
-    pub fn action_threshold_type(&self) -> &crate::types::ThresholdType {
+    pub fn action_threshold_type(&self) -> & crate::types::ThresholdType {
         &self.action_threshold_type
     }
 }
@@ -42,8 +42,7 @@ impl ActionThresholdBuilder {
     }
     /// <p>The threshold of a notification.</p>
     pub fn set_action_threshold_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.action_threshold_value = input;
-        self
+        self.action_threshold_value = input; self
     }
     /// <p>The threshold of a notification.</p>
     pub fn get_action_threshold_value(&self) -> &::std::option::Option<f64> {
@@ -57,8 +56,7 @@ impl ActionThresholdBuilder {
     }
     /// <p>The type of threshold for a notification.</p>
     pub fn set_action_threshold_type(mut self, input: ::std::option::Option<crate::types::ThresholdType>) -> Self {
-        self.action_threshold_type = input;
-        self
+        self.action_threshold_type = input; self
     }
     /// <p>The type of threshold for a notification.</p>
     pub fn get_action_threshold_type(&self) -> &::std::option::Option<crate::types::ThresholdType> {
@@ -68,14 +66,18 @@ impl ActionThresholdBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action_threshold_type`](crate::types::builders::ActionThresholdBuilder::action_threshold_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionThreshold, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionThreshold {
-            action_threshold_value: self.action_threshold_value.unwrap_or_default(),
-            action_threshold_type: self.action_threshold_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_threshold_type",
-                    "action_threshold_type was not specified but it is required when building ActionThreshold",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionThreshold {
+                action_threshold_value: self.action_threshold_value
+                    .unwrap_or_default()
+                ,
+                action_threshold_type: self.action_threshold_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_threshold_type", "action_threshold_type was not specified but it is required when building ActionThreshold")
+                    )?
+                ,
+            }
+        )
     }
 }
+

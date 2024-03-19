@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartPhiDetectionJobInput {
+pub struct StartPhiDetectionJobInput  {
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
@@ -18,33 +18,33 @@ pub struct StartPhiDetectionJobInput {
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
-impl StartPhiDetectionJobInput {
+impl  StartPhiDetectionJobInput  {
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<& crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The identifier of the job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The language of the input documents. All documents must be in the same language.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl StartPhiDetectionJobInputBuilder {
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input;
-        self
+        self.input_data_config = input; self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
@@ -91,8 +90,7 @@ impl StartPhiDetectionJobInputBuilder {
     }
     /// <p>Specifies where to send the output files.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input;
-        self
+        self.output_data_config = input; self
     }
     /// <p>Specifies where to send the output files.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
@@ -106,8 +104,7 @@ impl StartPhiDetectionJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl StartPhiDetectionJobInputBuilder {
     }
     /// <p>The identifier of the job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The identifier of the job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl StartPhiDetectionJobInputBuilder {
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +143,7 @@ impl StartPhiDetectionJobInputBuilder {
     }
     /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,26 +157,32 @@ impl StartPhiDetectionJobInputBuilder {
     }
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }
     /// Consumes the builder and constructs a [`StartPhiDetectionJobInput`](crate::operation::start_phi_detection_job::StartPhiDetectionJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_phi_detection_job::StartPhiDetectionJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_phi_detection_job::StartPhiDetectionJobInput {
-            input_data_config: self.input_data_config,
-            output_data_config: self.output_data_config,
-            data_access_role_arn: self.data_access_role_arn,
-            job_name: self.job_name,
-            client_request_token: self.client_request_token,
-            kms_key: self.kms_key,
-            language_code: self.language_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_phi_detection_job::StartPhiDetectionJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_phi_detection_job::StartPhiDetectionJobInput {
+                input_data_config: self.input_data_config
+                ,
+                output_data_config: self.output_data_config
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                job_name: self.job_name
+                ,
+                client_request_token: self.client_request_token
+                ,
+                kms_key: self.kms_key
+                ,
+                language_code: self.language_code
+                ,
+            }
+        )
     }
 }
+

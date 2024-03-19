@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportBackupPlanTemplateInput {
+pub struct ExportBackupPlanTemplateInput  {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
 }
-impl ExportBackupPlanTemplateInput {
+impl  ExportBackupPlanTemplateInput  {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> ::std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl ExportBackupPlanTemplateInputBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_plan_id = input;
-        self
+        self.backup_plan_id = input; self
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_plan_id
     }
     /// Consumes the builder and constructs a [`ExportBackupPlanTemplateInput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput {
-            backup_plan_id: self.backup_plan_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput {
+                backup_plan_id: self.backup_plan_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDatasetImportJobOutput {
+pub struct CreateDatasetImportJobOutput  {
     /// <p>The ARN of the dataset import job.</p>
     pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateDatasetImportJobOutput {
+impl  CreateDatasetImportJobOutput  {
     /// <p>The ARN of the dataset import job.</p>
-    pub fn dataset_import_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_import_job_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_import_job_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDatasetImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDatasetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetImportJobOutput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput).
     pub fn builder() -> crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateDatasetImportJobOutputBuilder {
     }
     /// <p>The ARN of the dataset import job.</p>
     pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_import_job_arn = input;
-        self
+        self.dataset_import_job_arn = input; self
     }
     /// <p>The ARN of the dataset import job.</p>
     pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_import_job_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDatasetImportJobOutput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput).
     pub fn build(self) -> crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput {
         crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput {
-            dataset_import_job_arn: self.dataset_import_job_arn,
+            dataset_import_job_arn: self.dataset_import_job_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

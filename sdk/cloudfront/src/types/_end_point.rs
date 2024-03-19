@@ -3,20 +3,19 @@
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data in a real-time log configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndPoint {
+pub struct EndPoint  {
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
     pub stream_type: ::std::string::String,
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub kinesis_stream_config: ::std::option::Option<crate::types::KinesisStreamConfig>,
 }
-impl EndPoint {
+impl  EndPoint  {
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
-    pub fn stream_type(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_type.deref()
+    pub fn stream_type(&self) -> & str {
+        use std::ops::Deref; self.stream_type.deref()
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn kinesis_stream_config(&self) -> ::std::option::Option<&crate::types::KinesisStreamConfig> {
+    pub fn kinesis_stream_config(&self) -> ::std::option::Option<& crate::types::KinesisStreamConfig> {
         self.kinesis_stream_config.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl EndPointBuilder {
     }
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
     pub fn set_stream_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_type = input;
-        self
+        self.stream_type = input; self
     }
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
     pub fn get_stream_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl EndPointBuilder {
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub fn set_kinesis_stream_config(mut self, input: ::std::option::Option<crate::types::KinesisStreamConfig>) -> Self {
-        self.kinesis_stream_config = input;
-        self
+        self.kinesis_stream_config = input; self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub fn get_kinesis_stream_config(&self) -> &::std::option::Option<crate::types::KinesisStreamConfig> {
@@ -68,14 +65,17 @@ impl EndPointBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_type`](crate::types::builders::EndPointBuilder::stream_type)
     pub fn build(self) -> ::std::result::Result<crate::types::EndPoint, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EndPoint {
-            stream_type: self.stream_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_type",
-                    "stream_type was not specified but it is required when building EndPoint",
-                )
-            })?,
-            kinesis_stream_config: self.kinesis_stream_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EndPoint {
+                stream_type: self.stream_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_type", "stream_type was not specified but it is required when building EndPoint")
+                    )?
+                ,
+                kinesis_stream_config: self.kinesis_stream_config
+                ,
+            }
+        )
     }
 }
+

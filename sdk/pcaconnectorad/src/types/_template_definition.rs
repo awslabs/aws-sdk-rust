@@ -24,11 +24,7 @@ impl TemplateDefinition {
     /// Tries to convert the enum instance into [`TemplateV2`](crate::types::TemplateDefinition::TemplateV2), extracting the inner [`TemplateV2`](crate::types::TemplateV2).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_template_v2(&self) -> ::std::result::Result<&crate::types::TemplateV2, &Self> {
-        if let TemplateDefinition::TemplateV2(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TemplateDefinition::TemplateV2(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TemplateV2`](crate::types::TemplateDefinition::TemplateV2).
     pub fn is_template_v2(&self) -> bool {
@@ -37,11 +33,7 @@ impl TemplateDefinition {
     /// Tries to convert the enum instance into [`TemplateV3`](crate::types::TemplateDefinition::TemplateV3), extracting the inner [`TemplateV3`](crate::types::TemplateV3).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_template_v3(&self) -> ::std::result::Result<&crate::types::TemplateV3, &Self> {
-        if let TemplateDefinition::TemplateV3(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TemplateDefinition::TemplateV3(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TemplateV3`](crate::types::TemplateDefinition::TemplateV3).
     pub fn is_template_v3(&self) -> bool {
@@ -50,11 +42,7 @@ impl TemplateDefinition {
     /// Tries to convert the enum instance into [`TemplateV4`](crate::types::TemplateDefinition::TemplateV4), extracting the inner [`TemplateV4`](crate::types::TemplateV4).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_template_v4(&self) -> ::std::result::Result<&crate::types::TemplateV4, &Self> {
-        if let TemplateDefinition::TemplateV4(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TemplateDefinition::TemplateV4(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TemplateV4`](crate::types::TemplateDefinition::TemplateV4).
     pub fn is_template_v4(&self) -> bool {
@@ -65,3 +53,4 @@ impl TemplateDefinition {
         matches!(self, Self::Unknown)
     }
 }
+

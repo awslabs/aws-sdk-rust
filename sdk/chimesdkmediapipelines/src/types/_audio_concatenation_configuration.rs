@@ -3,13 +3,13 @@
 /// <p>The audio artifact concatenation configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioConcatenationConfiguration {
+pub struct AudioConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
     pub state: crate::types::AudioArtifactsConcatenationState,
 }
-impl AudioConcatenationConfiguration {
+impl  AudioConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> &crate::types::AudioArtifactsConcatenationState {
+    pub fn state(&self) -> & crate::types::AudioArtifactsConcatenationState {
         &self.state
     }
 }
@@ -35,8 +35,7 @@ impl AudioConcatenationConfigurationBuilder {
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AudioArtifactsConcatenationState> {
@@ -46,13 +45,15 @@ impl AudioConcatenationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::AudioConcatenationConfigurationBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::AudioConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudioConcatenationConfiguration {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building AudioConcatenationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudioConcatenationConfiguration {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building AudioConcatenationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

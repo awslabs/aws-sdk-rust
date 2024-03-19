@@ -3,7 +3,7 @@
 /// Contains the configurations to use Redis Enterprise Cloud to store knowledge base data.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedisEnterpriseCloudConfiguration {
+pub struct RedisEnterpriseCloudConfiguration  {
     /// Redis enterprise cloud endpoint
     pub endpoint: ::std::string::String,
     /// Name of a redis enterprise cloud index
@@ -13,24 +13,21 @@ pub struct RedisEnterpriseCloudConfiguration {
     /// A mapping of Bedrock Knowledge Base fields to Redis Cloud field names
     pub field_mapping: ::std::option::Option<crate::types::RedisEnterpriseCloudFieldMapping>,
 }
-impl RedisEnterpriseCloudConfiguration {
+impl  RedisEnterpriseCloudConfiguration  {
     /// Redis enterprise cloud endpoint
-    pub fn endpoint(&self) -> &str {
-        use std::ops::Deref;
-        self.endpoint.deref()
+    pub fn endpoint(&self) -> & str {
+        use std::ops::Deref; self.endpoint.deref()
     }
     /// Name of a redis enterprise cloud index
-    pub fn vector_index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vector_index_name.deref()
+    pub fn vector_index_name(&self) -> & str {
+        use std::ops::Deref; self.vector_index_name.deref()
     }
     /// Arn of a SecretsManager Secret.
-    pub fn credentials_secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.credentials_secret_arn.deref()
+    pub fn credentials_secret_arn(&self) -> & str {
+        use std::ops::Deref; self.credentials_secret_arn.deref()
     }
     /// A mapping of Bedrock Knowledge Base fields to Redis Cloud field names
-    pub fn field_mapping(&self) -> ::std::option::Option<&crate::types::RedisEnterpriseCloudFieldMapping> {
+    pub fn field_mapping(&self) -> ::std::option::Option<& crate::types::RedisEnterpriseCloudFieldMapping> {
         self.field_mapping.as_ref()
     }
 }
@@ -59,8 +56,7 @@ impl RedisEnterpriseCloudConfigurationBuilder {
     }
     /// Redis enterprise cloud endpoint
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// Redis enterprise cloud endpoint
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl RedisEnterpriseCloudConfigurationBuilder {
     }
     /// Name of a redis enterprise cloud index
     pub fn set_vector_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vector_index_name = input;
-        self
+        self.vector_index_name = input; self
     }
     /// Name of a redis enterprise cloud index
     pub fn get_vector_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl RedisEnterpriseCloudConfigurationBuilder {
     }
     /// Arn of a SecretsManager Secret.
     pub fn set_credentials_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_secret_arn = input;
-        self
+        self.credentials_secret_arn = input; self
     }
     /// Arn of a SecretsManager Secret.
     pub fn get_credentials_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl RedisEnterpriseCloudConfigurationBuilder {
     }
     /// A mapping of Bedrock Knowledge Base fields to Redis Cloud field names
     pub fn set_field_mapping(mut self, input: ::std::option::Option<crate::types::RedisEnterpriseCloudFieldMapping>) -> Self {
-        self.field_mapping = input;
-        self
+        self.field_mapping = input; self
     }
     /// A mapping of Bedrock Knowledge Base fields to Redis Cloud field names
     pub fn get_field_mapping(&self) -> &::std::option::Option<crate::types::RedisEnterpriseCloudFieldMapping> {
@@ -117,26 +110,27 @@ impl RedisEnterpriseCloudConfigurationBuilder {
     /// - [`vector_index_name`](crate::types::builders::RedisEnterpriseCloudConfigurationBuilder::vector_index_name)
     /// - [`credentials_secret_arn`](crate::types::builders::RedisEnterpriseCloudConfigurationBuilder::credentials_secret_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::RedisEnterpriseCloudConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedisEnterpriseCloudConfiguration {
-            endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "endpoint",
-                    "endpoint was not specified but it is required when building RedisEnterpriseCloudConfiguration",
-                )
-            })?,
-            vector_index_name: self.vector_index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vector_index_name",
-                    "vector_index_name was not specified but it is required when building RedisEnterpriseCloudConfiguration",
-                )
-            })?,
-            credentials_secret_arn: self.credentials_secret_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "credentials_secret_arn",
-                    "credentials_secret_arn was not specified but it is required when building RedisEnterpriseCloudConfiguration",
-                )
-            })?,
-            field_mapping: self.field_mapping,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedisEnterpriseCloudConfiguration {
+                endpoint: self.endpoint
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("endpoint", "endpoint was not specified but it is required when building RedisEnterpriseCloudConfiguration")
+                    )?
+                ,
+                vector_index_name: self.vector_index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vector_index_name", "vector_index_name was not specified but it is required when building RedisEnterpriseCloudConfiguration")
+                    )?
+                ,
+                credentials_secret_arn: self.credentials_secret_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("credentials_secret_arn", "credentials_secret_arn was not specified but it is required when building RedisEnterpriseCloudConfiguration")
+                    )?
+                ,
+                field_mapping: self.field_mapping
+                ,
+            }
+        )
     }
 }
+

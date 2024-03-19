@@ -3,19 +3,19 @@
 /// <p>Not supported by Neptune.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbClusterOptionGroupStatus {
+pub struct DbClusterOptionGroupStatus  {
     /// <p>Not supported by Neptune.</p>
     pub db_cluster_option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl DbClusterOptionGroupStatus {
+impl  DbClusterOptionGroupStatus  {
     /// <p>Not supported by Neptune.</p>
-    pub fn db_cluster_option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_option_group_name(&self) -> ::std::option::Option<& str> {
         self.db_cluster_option_group_name.as_deref()
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DbClusterOptionGroupStatusBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_db_cluster_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_option_group_name = input;
-        self
+        self.db_cluster_option_group_name = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_db_cluster_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DbClusterOptionGroupStatusBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DbClusterOptionGroupStatusBuilder {
     /// Consumes the builder and constructs a [`DbClusterOptionGroupStatus`](crate::types::DbClusterOptionGroupStatus).
     pub fn build(self) -> crate::types::DbClusterOptionGroupStatus {
         crate::types::DbClusterOptionGroupStatus {
-            db_cluster_option_group_name: self.db_cluster_option_group_name,
-            status: self.status,
+            db_cluster_option_group_name: self.db_cluster_option_group_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

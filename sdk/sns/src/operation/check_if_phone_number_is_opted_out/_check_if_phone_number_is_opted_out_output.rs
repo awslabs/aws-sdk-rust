@@ -3,7 +3,7 @@
 /// <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckIfPhoneNumberIsOptedOutOutput {
+pub struct CheckIfPhoneNumberIsOptedOutOutput  {
     /// <p>Indicates whether the phone number is opted out:</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct CheckIfPhoneNumberIsOptedOutOutput {
     pub is_opted_out: bool,
     _request_id: Option<String>,
 }
-impl CheckIfPhoneNumberIsOptedOutOutput {
+impl  CheckIfPhoneNumberIsOptedOutOutput  {
     /// <p>Indicates whether the phone number is opted out:</p>
     /// <ul>
     /// <li>
@@ -27,10 +27,10 @@ impl CheckIfPhoneNumberIsOptedOutOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CheckIfPhoneNumberIsOptedOutOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CheckIfPhoneNumberIsOptedOutOutput {
     /// Creates a new builder-style object to manufacture [`CheckIfPhoneNumberIsOptedOutOutput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput).
     pub fn builder() -> crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder {
@@ -65,8 +65,7 @@ impl CheckIfPhoneNumberIsOptedOutOutputBuilder {
     /// <p><code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p></li>
     /// </ul>
     pub fn set_is_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_opted_out = input;
-        self
+        self.is_opted_out = input; self
     }
     /// <p>Indicates whether the phone number is opted out:</p>
     /// <ul>
@@ -79,19 +78,22 @@ impl CheckIfPhoneNumberIsOptedOutOutputBuilder {
         &self.is_opted_out
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CheckIfPhoneNumberIsOptedOutOutput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput).
     pub fn build(self) -> crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput {
         crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput {
-            is_opted_out: self.is_opted_out.unwrap_or_default(),
+            is_opted_out: self.is_opted_out
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

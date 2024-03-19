@@ -3,19 +3,19 @@
 /// <p>A list of failures when performing a batch grant or batch revoke operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPermissionsFailureEntry {
+pub struct BatchPermissionsFailureEntry  {
     /// <p>An identifier for an entry of the batch request.</p>
     pub request_entry: ::std::option::Option<crate::types::BatchPermissionsRequestEntry>,
     /// <p>An error message that applies to the failure of the entry.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
 }
-impl BatchPermissionsFailureEntry {
+impl  BatchPermissionsFailureEntry  {
     /// <p>An identifier for an entry of the batch request.</p>
-    pub fn request_entry(&self) -> ::std::option::Option<&crate::types::BatchPermissionsRequestEntry> {
+    pub fn request_entry(&self) -> ::std::option::Option<& crate::types::BatchPermissionsRequestEntry> {
         self.request_entry.as_ref()
     }
     /// <p>An error message that applies to the failure of the entry.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl BatchPermissionsFailureEntryBuilder {
     }
     /// <p>An identifier for an entry of the batch request.</p>
     pub fn set_request_entry(mut self, input: ::std::option::Option<crate::types::BatchPermissionsRequestEntry>) -> Self {
-        self.request_entry = input;
-        self
+        self.request_entry = input; self
     }
     /// <p>An identifier for an entry of the batch request.</p>
     pub fn get_request_entry(&self) -> &::std::option::Option<crate::types::BatchPermissionsRequestEntry> {
@@ -55,8 +54,7 @@ impl BatchPermissionsFailureEntryBuilder {
     }
     /// <p>An error message that applies to the failure of the entry.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An error message that applies to the failure of the entry.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -65,8 +63,11 @@ impl BatchPermissionsFailureEntryBuilder {
     /// Consumes the builder and constructs a [`BatchPermissionsFailureEntry`](crate::types::BatchPermissionsFailureEntry).
     pub fn build(self) -> crate::types::BatchPermissionsFailureEntry {
         crate::types::BatchPermissionsFailureEntry {
-            request_entry: self.request_entry,
-            error: self.error,
+            request_entry: self.request_entry
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

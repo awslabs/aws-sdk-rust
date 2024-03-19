@@ -3,20 +3,19 @@
 /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Alarms {
+pub struct Alarms  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
     pub alarm_role_arn: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub notification_lambda_arn: ::std::option::Option<::std::string::String>,
 }
-impl Alarms {
+impl  Alarms  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
-    pub fn alarm_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.alarm_role_arn.deref()
+    pub fn alarm_role_arn(&self) -> & str {
+        use std::ops::Deref; self.alarm_role_arn.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
-    pub fn notification_lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn notification_lambda_arn(&self) -> ::std::option::Option<& str> {
         self.notification_lambda_arn.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl AlarmsBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
     pub fn set_alarm_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_role_arn = input;
-        self
+        self.alarm_role_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
     pub fn get_alarm_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AlarmsBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub fn set_notification_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_lambda_arn = input;
-        self
+        self.notification_lambda_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub fn get_notification_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AlarmsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`alarm_role_arn`](crate::types::builders::AlarmsBuilder::alarm_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Alarms, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Alarms {
-            alarm_role_arn: self.alarm_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarm_role_arn",
-                    "alarm_role_arn was not specified but it is required when building Alarms",
-                )
-            })?,
-            notification_lambda_arn: self.notification_lambda_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Alarms {
+                alarm_role_arn: self.alarm_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarm_role_arn", "alarm_role_arn was not specified but it is required when building Alarms")
+                    )?
+                ,
+                notification_lambda_arn: self.notification_lambda_arn
+                ,
+            }
+        )
     }
 }
+

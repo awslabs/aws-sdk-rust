@@ -3,7 +3,7 @@
 /// <p>A group of signals that are defined in a hierarchical structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Branch {
+pub struct Branch  {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
     pub fully_qualified_name: ::std::string::String,
     /// <p>A brief description of the branch.</p>
@@ -13,22 +13,21 @@ pub struct Branch {
     /// <p>A comment in addition to the description.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl Branch {
+impl  Branch  {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    pub fn fully_qualified_name(&self) -> &str {
-        use std::ops::Deref;
-        self.fully_qualified_name.deref()
+    pub fn fully_qualified_name(&self) -> & str {
+        use std::ops::Deref; self.fully_qualified_name.deref()
     }
     /// <p>A brief description of the branch.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    pub fn deprecation_message(&self) -> ::std::option::Option<&str> {
+    pub fn deprecation_message(&self) -> ::std::option::Option<& str> {
         self.deprecation_message.as_deref()
     }
     /// <p>A comment in addition to the description.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl BranchBuilder {
     }
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
     pub fn set_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fully_qualified_name = input;
-        self
+        self.fully_qualified_name = input; self
     }
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
     pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl BranchBuilder {
     }
     /// <p>A brief description of the branch.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the branch.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl BranchBuilder {
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn set_deprecation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deprecation_message = input;
-        self
+        self.deprecation_message = input; self
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn get_deprecation_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl BranchBuilder {
     }
     /// <p>A comment in addition to the description.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment in addition to the description.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,16 +105,21 @@ impl BranchBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`fully_qualified_name`](crate::types::builders::BranchBuilder::fully_qualified_name)
     pub fn build(self) -> ::std::result::Result<crate::types::Branch, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Branch {
-            fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fully_qualified_name",
-                    "fully_qualified_name was not specified but it is required when building Branch",
-                )
-            })?,
-            description: self.description,
-            deprecation_message: self.deprecation_message,
-            comment: self.comment,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Branch {
+                fully_qualified_name: self.fully_qualified_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fully_qualified_name", "fully_qualified_name was not specified but it is required when building Branch")
+                    )?
+                ,
+                description: self.description
+                ,
+                deprecation_message: self.deprecation_message
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

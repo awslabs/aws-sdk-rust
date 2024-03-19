@@ -5,23 +5,20 @@ pub use crate::operation::start_matchmaking::_start_matchmaking_input::StartMatc
 
 impl StartMatchmakingInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_matchmaking::StartMatchmakingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_matchmaking::StartMatchmakingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_matchmaking();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_matchmaking::StartMatchmakingOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_matchmaking::StartMatchmakingError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_matchmaking();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartMatchmaking`.
-///
+/// 
 /// <p>Uses FlexMatch to create a game match for a group of players based on custom matchmaking rules. With games that use Amazon GameLift managed hosting, this operation also triggers Amazon GameLift to find hosting resources and start a new game session for the new match. Each matchmaking request includes information on one or more players and specifies the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch attempts to build a match that includes all players in the request, placing them in the same team and finding additional players as needed to fill the match.</p>
 /// <p>To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration, and include the players to be matched. You must also include any player attributes that are required by the matchmaking configuration's rule set. If successful, a matchmaking ticket is returned with status set to <code>QUEUED</code>.</p>
 /// <p>Track matchmaking events to respond as needed and acquire game session connection information for successfully completed matches. Ticket status updates are tracked using event notification through Amazon Simple Notification Service, which is defined in the matchmaking configuration.</p>
@@ -32,33 +29,32 @@ impl StartMatchmakingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMatchmakingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_matchmaking::builders::StartMatchmakingInputBuilder,
+                    inner: crate::operation::start_matchmaking::builders::StartMatchmakingInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_matchmaking::StartMatchmakingOutput,
-        crate::operation::start_matchmaking::StartMatchmakingError,
-    > for StartMatchmakingFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_matchmaking::StartMatchmakingOutput,
-            crate::operation::start_matchmaking::StartMatchmakingError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_matchmaking::StartMatchmakingOutput,
+                    crate::operation::start_matchmaking::StartMatchmakingError,
+                > for StartMatchmakingFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_matchmaking::StartMatchmakingOutput,
+                        crate::operation::start_matchmaking::StartMatchmakingError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartMatchmakingFluentBuilder {
     /// Creates a new `StartMatchmaking`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl StartMatchmakingFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_matchmaking::StartMatchmakingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_matchmaking::StartMatchmakingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_matchmaking::StartMatchmaking::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_matchmaking::StartMatchmaking::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_matchmaking::StartMatchmakingOutput,
-        crate::operation::start_matchmaking::StartMatchmakingError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_matchmaking::StartMatchmakingOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_matchmaking::StartMatchmakingError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_matchmaking::StartMatchmaking::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_matchmaking::StartMatchmaking::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_matchmaking::StartMatchmakingOutput, crate::operation::start_matchmaking::StartMatchmakingError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
     pub fn ticket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ticket_id(input.into());
@@ -154,13 +141,14 @@ impl StartMatchmakingFluentBuilder {
     }
     /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     /// <p>You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
-    pub fn set_players(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>) -> Self {
+    pub fn set_players(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Player>>) -> Self {
         self.inner = self.inner.set_players(input);
         self
     }
     /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
     /// <p>You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
-    pub fn get_players(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Player>> {
+    pub fn get_players(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Player>> {
         self.inner.get_players()
     }
 }
+

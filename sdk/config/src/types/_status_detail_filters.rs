@@ -3,7 +3,7 @@
 /// <p>Status filter object to filter results based on specific member account ID or status type for an organization Config rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatusDetailFilters {
+pub struct StatusDetailFilters  {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
@@ -30,9 +30,9 @@ pub struct StatusDetailFilters {
     /// </ul>
     pub member_account_rule_status: ::std::option::Option<crate::types::MemberAccountRuleStatus>,
 }
-impl StatusDetailFilters {
+impl  StatusDetailFilters  {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
@@ -57,7 +57,7 @@ impl StatusDetailFilters {
     /// <li>
     /// <p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
     /// </ul>
-    pub fn member_account_rule_status(&self) -> ::std::option::Option<&crate::types::MemberAccountRuleStatus> {
+    pub fn member_account_rule_status(&self) -> ::std::option::Option<& crate::types::MemberAccountRuleStatus> {
         self.member_account_rule_status.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl StatusDetailFiltersBuilder {
     }
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl StatusDetailFiltersBuilder {
     /// <p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
     /// </ul>
     pub fn set_member_account_rule_status(mut self, input: ::std::option::Option<crate::types::MemberAccountRuleStatus>) -> Self {
-        self.member_account_rule_status = input;
-        self
+        self.member_account_rule_status = input; self
     }
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
@@ -170,8 +168,11 @@ impl StatusDetailFiltersBuilder {
     /// Consumes the builder and constructs a [`StatusDetailFilters`](crate::types::StatusDetailFilters).
     pub fn build(self) -> crate::types::StatusDetailFilters {
         crate::types::StatusDetailFilters {
-            account_id: self.account_id,
-            member_account_rule_status: self.member_account_rule_status,
+            account_id: self.account_id
+            ,
+            member_account_rule_status: self.member_account_rule_status
+            ,
         }
     }
 }
+

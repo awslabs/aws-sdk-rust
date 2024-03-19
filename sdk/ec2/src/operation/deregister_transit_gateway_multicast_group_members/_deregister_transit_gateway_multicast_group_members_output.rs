@@ -2,27 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterTransitGatewayMulticastGroupMembersOutput {
+pub struct DeregisterTransitGatewayMulticastGroupMembersOutput  {
     /// <p>Information about the deregistered members.</p>
     pub deregistered_multicast_group_members: ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupMembers>,
     _request_id: Option<String>,
 }
-impl DeregisterTransitGatewayMulticastGroupMembersOutput {
+impl  DeregisterTransitGatewayMulticastGroupMembersOutput  {
     /// <p>Information about the deregistered members.</p>
-    pub fn deregistered_multicast_group_members(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDeregisteredGroupMembers> {
+    pub fn deregistered_multicast_group_members(&self) -> ::std::option::Option<& crate::types::TransitGatewayMulticastDeregisteredGroupMembers> {
         self.deregistered_multicast_group_members.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeregisterTransitGatewayMulticastGroupMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeregisterTransitGatewayMulticastGroupMembersOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayMulticastGroupMembersOutput`](crate::operation::deregister_transit_gateway_multicast_group_members::DeregisterTransitGatewayMulticastGroupMembersOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_transit_gateway_multicast_group_members::builders::DeregisterTransitGatewayMulticastGroupMembersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_transit_gateway_multicast_group_members::builders::DeregisterTransitGatewayMulticastGroupMembersOutputBuilder {
         crate::operation::deregister_transit_gateway_multicast_group_members::builders::DeregisterTransitGatewayMulticastGroupMembersOutputBuilder::default()
     }
 }
@@ -41,31 +39,29 @@ impl DeregisterTransitGatewayMulticastGroupMembersOutputBuilder {
         self
     }
     /// <p>Information about the deregistered members.</p>
-    pub fn set_deregistered_multicast_group_members(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupMembers>,
-    ) -> Self {
-        self.deregistered_multicast_group_members = input;
-        self
+    pub fn set_deregistered_multicast_group_members(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupMembers>) -> Self {
+        self.deregistered_multicast_group_members = input; self
     }
     /// <p>Information about the deregistered members.</p>
     pub fn get_deregistered_multicast_group_members(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupMembers> {
         &self.deregistered_multicast_group_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeregisterTransitGatewayMulticastGroupMembersOutput`](crate::operation::deregister_transit_gateway_multicast_group_members::DeregisterTransitGatewayMulticastGroupMembersOutput).
     pub fn build(self) -> crate::operation::deregister_transit_gateway_multicast_group_members::DeregisterTransitGatewayMulticastGroupMembersOutput {
         crate::operation::deregister_transit_gateway_multicast_group_members::DeregisterTransitGatewayMulticastGroupMembersOutput {
-            deregistered_multicast_group_members: self.deregistered_multicast_group_members,
+            deregistered_multicast_group_members: self.deregistered_multicast_group_members
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

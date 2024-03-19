@@ -3,9 +3,9 @@
 /// <p>Option for host instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BrokerInstanceOption {
+pub struct BrokerInstanceOption  {
     /// <p>The list of available az.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>,
     /// <p>The broker's engine type.</p>
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The broker's instance type.</p>
@@ -13,40 +13,43 @@ pub struct BrokerInstanceOption {
     /// <p>The broker's storage type.</p>
     pub storage_type: ::std::option::Option<crate::types::BrokerStorageType>,
     /// <p>The list of supported deployment modes.</p>
-    pub supported_deployment_modes: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentMode>>,
+    pub supported_deployment_modes: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentMode>>,
     /// <p>The list of supported engine versions.</p>
-    pub supported_engine_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_engine_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BrokerInstanceOption {
+impl  BrokerInstanceOption  {
     /// <p>The list of available az.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The broker's engine type.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The broker's instance type.</p>
-    pub fn host_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn host_instance_type(&self) -> ::std::option::Option<& str> {
         self.host_instance_type.as_deref()
     }
     /// <p>The broker's storage type.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::BrokerStorageType> {
+    pub fn storage_type(&self) -> ::std::option::Option<& crate::types::BrokerStorageType> {
         self.storage_type.as_ref()
     }
     /// <p>The list of supported deployment modes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_deployment_modes.is_none()`.
-    pub fn supported_deployment_modes(&self) -> &[crate::types::DeploymentMode] {
-        self.supported_deployment_modes.as_deref().unwrap_or_default()
+    pub fn supported_deployment_modes(&self) -> & [crate::types::DeploymentMode] {
+        self.supported_deployment_modes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of supported engine versions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engine_versions.is_none()`.
-    pub fn supported_engine_versions(&self) -> &[::std::string::String] {
-        self.supported_engine_versions.as_deref().unwrap_or_default()
+    pub fn supported_engine_versions(&self) -> & [::std::string::String] {
+        self.supported_engine_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BrokerInstanceOption {
@@ -60,12 +63,12 @@ impl BrokerInstanceOption {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerInstanceOptionBuilder {
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>,
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) host_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<crate::types::BrokerStorageType>,
-    pub(crate) supported_deployment_modes: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentMode>>,
-    pub(crate) supported_engine_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_deployment_modes: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentMode>>,
+    pub(crate) supported_engine_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BrokerInstanceOptionBuilder {
     /// Appends an item to `availability_zones`.
@@ -75,17 +78,16 @@ impl BrokerInstanceOptionBuilder {
     /// <p>The list of available az.</p>
     pub fn availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input);
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of available az.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>The list of available az.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
     /// <p>The broker's engine type.</p>
@@ -95,8 +97,7 @@ impl BrokerInstanceOptionBuilder {
     }
     /// <p>The broker's engine type.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The broker's engine type.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -109,8 +110,7 @@ impl BrokerInstanceOptionBuilder {
     }
     /// <p>The broker's instance type.</p>
     pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_instance_type = input;
-        self
+        self.host_instance_type = input; self
     }
     /// <p>The broker's instance type.</p>
     pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +123,7 @@ impl BrokerInstanceOptionBuilder {
     }
     /// <p>The broker's storage type.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::BrokerStorageType>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The broker's storage type.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::BrokerStorageType> {
@@ -137,17 +136,16 @@ impl BrokerInstanceOptionBuilder {
     /// <p>The list of supported deployment modes.</p>
     pub fn supported_deployment_modes(mut self, input: crate::types::DeploymentMode) -> Self {
         let mut v = self.supported_deployment_modes.unwrap_or_default();
-        v.push(input);
-        self.supported_deployment_modes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_deployment_modes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of supported deployment modes.</p>
-    pub fn set_supported_deployment_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentMode>>) -> Self {
-        self.supported_deployment_modes = input;
-        self
+    pub fn set_supported_deployment_modes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentMode>>) -> Self {
+        self.supported_deployment_modes = input; self
     }
     /// <p>The list of supported deployment modes.</p>
-    pub fn get_supported_deployment_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentMode>> {
+    pub fn get_supported_deployment_modes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeploymentMode>> {
         &self.supported_deployment_modes
     }
     /// Appends an item to `supported_engine_versions`.
@@ -157,28 +155,34 @@ impl BrokerInstanceOptionBuilder {
     /// <p>The list of supported engine versions.</p>
     pub fn supported_engine_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_engine_versions.unwrap_or_default();
-        v.push(input.into());
-        self.supported_engine_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_engine_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of supported engine versions.</p>
-    pub fn set_supported_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_engine_versions = input;
-        self
+    pub fn set_supported_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_engine_versions = input; self
     }
     /// <p>The list of supported engine versions.</p>
-    pub fn get_supported_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_engine_versions
     }
     /// Consumes the builder and constructs a [`BrokerInstanceOption`](crate::types::BrokerInstanceOption).
     pub fn build(self) -> crate::types::BrokerInstanceOption {
         crate::types::BrokerInstanceOption {
-            availability_zones: self.availability_zones,
-            engine_type: self.engine_type,
-            host_instance_type: self.host_instance_type,
-            storage_type: self.storage_type,
-            supported_deployment_modes: self.supported_deployment_modes,
-            supported_engine_versions: self.supported_engine_versions,
+            availability_zones: self.availability_zones
+            ,
+            engine_type: self.engine_type
+            ,
+            host_instance_type: self.host_instance_type
+            ,
+            storage_type: self.storage_type
+            ,
+            supported_deployment_modes: self.supported_deployment_modes
+            ,
+            supported_engine_versions: self.supported_engine_versions
+            ,
         }
     }
 }
+

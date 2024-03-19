@@ -3,29 +3,28 @@
 /// <p>The structure representing the listProfileTimesResponse.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProfileTimesOutput {
+pub struct ListProfileTimesOutput  {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
-    pub profile_times: ::std::vec::Vec<crate::types::ProfileTime>,
+    pub profile_times: ::std::vec::Vec::<crate::types::ProfileTime>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListProfileTimesOutput {
+impl  ListProfileTimesOutput  {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
-    pub fn profile_times(&self) -> &[crate::types::ProfileTime] {
-        use std::ops::Deref;
-        self.profile_times.deref()
+    pub fn profile_times(&self) -> & [crate::types::ProfileTime] {
+        use std::ops::Deref; self.profile_times.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListProfileTimesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListProfileTimesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileTimesOutput`](crate::operation::list_profile_times::ListProfileTimesOutput).
     pub fn builder() -> crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListProfileTimesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileTimesOutputBuilder {
-    pub(crate) profile_times: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>>,
+    pub(crate) profile_times: ::std::option::Option<::std::vec::Vec::<crate::types::ProfileTime>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListProfileTimesOutputBuilder {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
     pub fn profile_times(mut self, input: crate::types::ProfileTime) -> Self {
         let mut v = self.profile_times.unwrap_or_default();
-        v.push(input);
-        self.profile_times = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.profile_times = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
-    pub fn set_profile_times(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>>) -> Self {
-        self.profile_times = input;
-        self
+    pub fn set_profile_times(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProfileTime>>) -> Self {
+        self.profile_times = input; self
     }
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range.</p>
-    pub fn get_profile_times(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTime>> {
+    pub fn get_profile_times(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProfileTime>> {
         &self.profile_times
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -69,37 +67,37 @@ impl ListProfileTimesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListProfileTimesOutput`](crate::operation::list_profile_times::ListProfileTimesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`profile_times`](crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder::profile_times)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_profile_times::ListProfileTimesOutput {
-            profile_times: self.profile_times.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profile_times",
-                    "profile_times was not specified but it is required when building ListProfileTimesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_profile_times::ListProfileTimesOutput {
+                profile_times: self.profile_times
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profile_times", "profile_times was not specified but it is required when building ListProfileTimesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

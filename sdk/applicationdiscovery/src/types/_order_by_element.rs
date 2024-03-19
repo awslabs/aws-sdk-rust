@@ -3,20 +3,19 @@
 /// <p>A field and direction for ordered output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrderByElement {
+pub struct OrderByElement  {
     /// <p>The field on which to order.</p>
     pub field_name: ::std::string::String,
     /// <p>Ordering direction.</p>
     pub sort_order: ::std::option::Option<crate::types::OrderString>,
 }
-impl OrderByElement {
+impl  OrderByElement  {
     /// <p>The field on which to order.</p>
-    pub fn field_name(&self) -> &str {
-        use std::ops::Deref;
-        self.field_name.deref()
+    pub fn field_name(&self) -> & str {
+        use std::ops::Deref; self.field_name.deref()
     }
     /// <p>Ordering direction.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::OrderString> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::OrderString> {
         self.sort_order.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl OrderByElementBuilder {
     }
     /// <p>The field on which to order.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
     }
     /// <p>The field on which to order.</p>
     pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl OrderByElementBuilder {
     }
     /// <p>Ordering direction.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::OrderString>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Ordering direction.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::OrderString> {
@@ -68,14 +65,17 @@ impl OrderByElementBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_name`](crate::types::builders::OrderByElementBuilder::field_name)
     pub fn build(self) -> ::std::result::Result<crate::types::OrderByElement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OrderByElement {
-            field_name: self.field_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_name",
-                    "field_name was not specified but it is required when building OrderByElement",
-                )
-            })?,
-            sort_order: self.sort_order,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OrderByElement {
+                field_name: self.field_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_name", "field_name was not specified but it is required when building OrderByElement")
+                    )?
+                ,
+                sort_order: self.sort_order
+                ,
+            }
+        )
     }
 }
+

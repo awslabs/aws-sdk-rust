@@ -3,7 +3,7 @@
 /// <p>A key value pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutKeyInput {
+pub struct PutKeyInput  {
     /// <p>The key to put.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value to put.</p>
@@ -13,25 +13,25 @@ pub struct PutKeyInput {
     /// <p>The current version (ETag) of the Key Value Store that you are putting keys into, which you can get using DescribeKeyValueStore.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl PutKeyInput {
+impl  PutKeyInput  {
     /// <p>The key to put.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value to put.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
-    pub fn kvs_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kvs_arn(&self) -> ::std::option::Option<& str> {
         self.kvs_arn.as_deref()
     }
     /// <p>The current version (ETag) of the Key Value Store that you are putting keys into, which you can get using DescribeKeyValueStore.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
-impl ::std::fmt::Debug for PutKeyInput {
+impl  ::std::fmt::Debug for PutKeyInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutKeyInput");
         formatter.field("key", &self.key);
@@ -66,8 +66,7 @@ impl PutKeyInputBuilder {
     }
     /// <p>The key to put.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key to put.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl PutKeyInputBuilder {
     }
     /// <p>The value to put.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value to put.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl PutKeyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kvs_arn = input;
-        self
+        self.kvs_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl PutKeyInputBuilder {
     }
     /// <p>The current version (ETag) of the Key Value Store that you are putting keys into, which you can get using DescribeKeyValueStore.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The current version (ETag) of the Key Value Store that you are putting keys into, which you can get using DescribeKeyValueStore.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,12 +116,18 @@ impl PutKeyInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutKeyInput`](crate::operation::put_key::PutKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_key::PutKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_key::PutKeyInput {
-            key: self.key,
-            value: self.value,
-            kvs_arn: self.kvs_arn,
-            if_match: self.if_match,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_key::PutKeyInput {
+                key: self.key
+                ,
+                value: self.value
+                ,
+                kvs_arn: self.kvs_arn
+                ,
+                if_match: self.if_match
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutKeyInputBuilder {
@@ -138,3 +140,4 @@ impl ::std::fmt::Debug for PutKeyInputBuilder {
         formatter.finish()
     }
 }
+

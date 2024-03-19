@@ -3,7 +3,7 @@
 /// <p>The model version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelVersion {
+pub struct ModelVersion  {
     /// <p>The model ID.</p>
     pub model_id: ::std::string::String,
     /// <p>The model type.</p>
@@ -13,23 +13,21 @@ pub struct ModelVersion {
     /// <p>The model version ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl ModelVersion {
+impl  ModelVersion  {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.model_id.deref()
+    pub fn model_id(&self) -> & str {
+        use std::ops::Deref; self.model_id.deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> &crate::types::ModelTypeEnum {
+    pub fn model_type(&self) -> & crate::types::ModelTypeEnum {
         &self.model_type
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(&self) -> &str {
-        use std::ops::Deref;
-        self.model_version_number.deref()
+    pub fn model_version_number(&self) -> & str {
+        use std::ops::Deref; self.model_version_number.deref()
     }
     /// <p>The model version ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -58,8 +56,7 @@ impl ModelVersionBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl ModelVersionBuilder {
     }
     /// <p>The model type.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
     }
     /// <p>The model type.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
@@ -88,8 +84,7 @@ impl ModelVersionBuilder {
     }
     /// <p>The model version number.</p>
     pub fn set_model_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version_number = input;
-        self
+        self.model_version_number = input; self
     }
     /// <p>The model version number.</p>
     pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl ModelVersionBuilder {
     }
     /// <p>The model version ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The model version ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,26 +109,27 @@ impl ModelVersionBuilder {
     /// - [`model_type`](crate::types::builders::ModelVersionBuilder::model_type)
     /// - [`model_version_number`](crate::types::builders::ModelVersionBuilder::model_version_number)
     pub fn build(self) -> ::std::result::Result<crate::types::ModelVersion, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ModelVersion {
-            model_id: self.model_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_id",
-                    "model_id was not specified but it is required when building ModelVersion",
-                )
-            })?,
-            model_type: self.model_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_type",
-                    "model_type was not specified but it is required when building ModelVersion",
-                )
-            })?,
-            model_version_number: self.model_version_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_version_number",
-                    "model_version_number was not specified but it is required when building ModelVersion",
-                )
-            })?,
-            arn: self.arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ModelVersion {
+                model_id: self.model_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_id", "model_id was not specified but it is required when building ModelVersion")
+                    )?
+                ,
+                model_type: self.model_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_type", "model_type was not specified but it is required when building ModelVersion")
+                    )?
+                ,
+                model_version_number: self.model_version_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_version_number", "model_version_number was not specified but it is required when building ModelVersion")
+                    )?
+                ,
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

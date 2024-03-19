@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssessmentTargetInput {
+pub struct UpdateAssessmentTargetInput  {
     /// <p>The ARN of the assessment target that you want to update.</p>
     pub assessment_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assessment target that you want to update.</p>
@@ -10,17 +10,17 @@ pub struct UpdateAssessmentTargetInput {
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     pub resource_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAssessmentTargetInput {
+impl  UpdateAssessmentTargetInput  {
     /// <p>The ARN of the assessment target that you want to update.</p>
-    pub fn assessment_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_target_arn(&self) -> ::std::option::Option<& str> {
         self.assessment_target_arn.as_deref()
     }
     /// <p>The name of the assessment target that you want to update.</p>
-    pub fn assessment_target_name(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_target_name(&self) -> ::std::option::Option<& str> {
         self.assessment_target_name.as_deref()
     }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-    pub fn resource_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_arn(&self) -> ::std::option::Option<& str> {
         self.resource_group_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateAssessmentTargetInputBuilder {
     }
     /// <p>The ARN of the assessment target that you want to update.</p>
     pub fn set_assessment_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_target_arn = input;
-        self
+        self.assessment_target_arn = input; self
     }
     /// <p>The ARN of the assessment target that you want to update.</p>
     pub fn get_assessment_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateAssessmentTargetInputBuilder {
     }
     /// <p>The name of the assessment target that you want to update.</p>
     pub fn set_assessment_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_target_name = input;
-        self
+        self.assessment_target_name = input; self
     }
     /// <p>The name of the assessment target that you want to update.</p>
     pub fn get_assessment_target_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdateAssessmentTargetInputBuilder {
     }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_arn = input;
-        self
+        self.resource_group_arn = input; self
     }
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_arn
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentTargetInput`](crate::operation::update_assessment_target::UpdateAssessmentTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_assessment_target::UpdateAssessmentTargetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_assessment_target::UpdateAssessmentTargetInput {
-            assessment_target_arn: self.assessment_target_arn,
-            assessment_target_name: self.assessment_target_name,
-            resource_group_arn: self.resource_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_assessment_target::UpdateAssessmentTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_assessment_target::UpdateAssessmentTargetInput {
+                assessment_target_arn: self.assessment_target_arn
+                ,
+                assessment_target_name: self.assessment_target_name
+                ,
+                resource_group_arn: self.resource_group_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>A text box.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SheetTextBox {
+pub struct SheetTextBox  {
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
     pub sheet_text_box_id: ::std::string::String,
     /// <p>The content that is displayed in the text box.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl SheetTextBox {
+impl  SheetTextBox  {
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
-    pub fn sheet_text_box_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sheet_text_box_id.deref()
+    pub fn sheet_text_box_id(&self) -> & str {
+        use std::ops::Deref; self.sheet_text_box_id.deref()
     }
     /// <p>The content that is displayed in the text box.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl SheetTextBoxBuilder {
     }
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
     pub fn set_sheet_text_box_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sheet_text_box_id = input;
-        self
+        self.sheet_text_box_id = input; self
     }
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
     pub fn get_sheet_text_box_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SheetTextBoxBuilder {
     }
     /// <p>The content that is displayed in the text box.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content that is displayed in the text box.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl SheetTextBoxBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sheet_text_box_id`](crate::types::builders::SheetTextBoxBuilder::sheet_text_box_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SheetTextBox, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SheetTextBox {
-            sheet_text_box_id: self.sheet_text_box_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sheet_text_box_id",
-                    "sheet_text_box_id was not specified but it is required when building SheetTextBox",
-                )
-            })?,
-            content: self.content,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SheetTextBox {
+                sheet_text_box_id: self.sheet_text_box_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sheet_text_box_id", "sheet_text_box_id was not specified but it is required when building SheetTextBox")
+                    )?
+                ,
+                content: self.content
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServicePipelineProvisionedResourcesInput {
+pub struct ListServicePipelineProvisionedResourcesInput  {
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListServicePipelineProvisionedResourcesInput {
+impl  ListServicePipelineProvisionedResourcesInput  {
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListServicePipelineProvisionedResourcesInputBuilder {
     }
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl ListServicePipelineProvisionedResourcesInputBuilder {
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServicePipelineProvisionedResourcesInput`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput {
-                service_name: self.service_name,
-                next_token: self.next_token,
-            },
+                service_name: self.service_name
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

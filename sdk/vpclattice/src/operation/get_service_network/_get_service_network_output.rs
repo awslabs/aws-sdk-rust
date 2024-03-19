@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceNetworkOutput {
+pub struct GetServiceNetworkOutput  {
     /// <p>The ID of the service network.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service network.</p>
@@ -21,29 +21,29 @@ pub struct GetServiceNetworkOutput {
     pub number_of_associated_services: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl GetServiceNetworkOutput {
+impl  GetServiceNetworkOutput  {
     /// <p>The ID of the service network.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the service network.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time of the last update, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of IAM policy.</p>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
+    pub fn auth_type(&self) -> ::std::option::Option<& crate::types::AuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The number of VPCs associated with the service network.</p>
@@ -56,10 +56,10 @@ impl GetServiceNetworkOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceNetworkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServiceNetworkOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceNetworkOutput`](crate::operation::get_service_network::GetServiceNetworkOutput).
     pub fn builder() -> crate::operation::get_service_network::builders::GetServiceNetworkOutputBuilder {
@@ -89,8 +89,7 @@ impl GetServiceNetworkOutputBuilder {
     }
     /// <p>The ID of the service network.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the service network.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl GetServiceNetworkOutputBuilder {
     }
     /// <p>The name of the service network.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service network.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl GetServiceNetworkOutputBuilder {
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -131,8 +128,7 @@ impl GetServiceNetworkOutputBuilder {
     }
     /// <p>The date and time of the last update, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time of the last update, specified in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +141,7 @@ impl GetServiceNetworkOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl GetServiceNetworkOutputBuilder {
     }
     /// <p>The type of IAM policy.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The type of IAM policy.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
@@ -173,8 +167,7 @@ impl GetServiceNetworkOutputBuilder {
     }
     /// <p>The number of VPCs associated with the service network.</p>
     pub fn set_number_of_associated_vpcs(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_associated_vpcs = input;
-        self
+        self.number_of_associated_vpcs = input; self
     }
     /// <p>The number of VPCs associated with the service network.</p>
     pub fn get_number_of_associated_vpcs(&self) -> &::std::option::Option<i64> {
@@ -187,34 +180,42 @@ impl GetServiceNetworkOutputBuilder {
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn set_number_of_associated_services(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_associated_services = input;
-        self
+        self.number_of_associated_services = input; self
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn get_number_of_associated_services(&self) -> &::std::option::Option<i64> {
         &self.number_of_associated_services
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServiceNetworkOutput`](crate::operation::get_service_network::GetServiceNetworkOutput).
     pub fn build(self) -> crate::operation::get_service_network::GetServiceNetworkOutput {
         crate::operation::get_service_network::GetServiceNetworkOutput {
-            id: self.id,
-            name: self.name,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            arn: self.arn,
-            auth_type: self.auth_type,
-            number_of_associated_vpcs: self.number_of_associated_vpcs,
-            number_of_associated_services: self.number_of_associated_services,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            arn: self.arn
+            ,
+            auth_type: self.auth_type
+            ,
+            number_of_associated_vpcs: self.number_of_associated_vpcs
+            ,
+            number_of_associated_services: self.number_of_associated_services
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEnvironmentInput {
+pub struct DeleteEnvironmentInput  {
     /// <p>The name of the environment to delete.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEnvironmentInput {
+impl  DeleteEnvironmentInput  {
     /// <p>The name of the environment to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteEnvironmentInputBuilder {
     }
     /// <p>The name of the environment to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_environment::DeleteEnvironmentInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_environment::DeleteEnvironmentInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

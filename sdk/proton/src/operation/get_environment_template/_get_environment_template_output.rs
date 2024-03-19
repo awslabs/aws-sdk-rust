@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnvironmentTemplateOutput {
+pub struct GetEnvironmentTemplateOutput  {
     /// <p>The detailed data of the requested environment template.</p>
     pub environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,
 }
-impl GetEnvironmentTemplateOutput {
+impl  GetEnvironmentTemplateOutput  {
     /// <p>The detailed data of the requested environment template.</p>
-    pub fn environment_template(&self) -> ::std::option::Option<&crate::types::EnvironmentTemplate> {
+    pub fn environment_template(&self) -> ::std::option::Option<& crate::types::EnvironmentTemplate> {
         self.environment_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEnvironmentTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEnvironmentTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentTemplateOutput`](crate::operation::get_environment_template::GetEnvironmentTemplateOutput).
     pub fn builder() -> crate::operation::get_environment_template::builders::GetEnvironmentTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl GetEnvironmentTemplateOutputBuilder {
     }
     /// <p>The detailed data of the requested environment template.</p>
     pub fn set_environment_template(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplate>) -> Self {
-        self.environment_template = input;
-        self
+        self.environment_template = input; self
     }
     /// <p>The detailed data of the requested environment template.</p>
     pub fn get_environment_template(&self) -> &::std::option::Option<crate::types::EnvironmentTemplate> {
         &self.environment_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEnvironmentTemplateOutput`](crate::operation::get_environment_template::GetEnvironmentTemplateOutput).
     pub fn build(self) -> crate::operation::get_environment_template::GetEnvironmentTemplateOutput {
         crate::operation::get_environment_template::GetEnvironmentTemplateOutput {
-            environment_template: self.environment_template,
+            environment_template: self.environment_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -219,3 +219,4 @@ pub mod update_permission_set;
 
 /// Types for the `UpdateTrustedTokenIssuer` operation.
 pub mod update_trusted_token_issuer;
+

@@ -3,32 +3,31 @@
 /// <p>Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenewalSummary {
+pub struct RenewalSummary  {
     /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
     pub renewal_status: crate::types::RenewalStatus,
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different from the initial validation that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub domain_validation_options: ::std::vec::Vec<crate::types::DomainValidation>,
+    pub domain_validation_options: ::std::vec::Vec::<crate::types::DomainValidation>,
     /// <p>The reason that a renewal request was unsuccessful.</p>
     pub renewal_status_reason: ::std::option::Option<crate::types::FailureReason>,
     /// <p>The time at which the renewal summary was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl RenewalSummary {
+impl  RenewalSummary  {
     /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
-    pub fn renewal_status(&self) -> &crate::types::RenewalStatus {
+    pub fn renewal_status(&self) -> & crate::types::RenewalStatus {
         &self.renewal_status
     }
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different from the initial validation that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn domain_validation_options(&self) -> &[crate::types::DomainValidation] {
-        use std::ops::Deref;
-        self.domain_validation_options.deref()
+    pub fn domain_validation_options(&self) -> & [crate::types::DomainValidation] {
+        use std::ops::Deref; self.domain_validation_options.deref()
     }
     /// <p>The reason that a renewal request was unsuccessful.</p>
-    pub fn renewal_status_reason(&self) -> ::std::option::Option<&crate::types::FailureReason> {
+    pub fn renewal_status_reason(&self) -> ::std::option::Option<& crate::types::FailureReason> {
         self.renewal_status_reason.as_ref()
     }
     /// <p>The time at which the renewal summary was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -44,7 +43,7 @@ impl RenewalSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenewalSummaryBuilder {
     pub(crate) renewal_status: ::std::option::Option<crate::types::RenewalStatus>,
-    pub(crate) domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidation>>,
+    pub(crate) domain_validation_options: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidation>>,
     pub(crate) renewal_status_reason: ::std::option::Option<crate::types::FailureReason>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -57,8 +56,7 @@ impl RenewalSummaryBuilder {
     }
     /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
     pub fn set_renewal_status(mut self, input: ::std::option::Option<crate::types::RenewalStatus>) -> Self {
-        self.renewal_status = input;
-        self
+        self.renewal_status = input; self
     }
     /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
     pub fn get_renewal_status(&self) -> &::std::option::Option<crate::types::RenewalStatus> {
@@ -71,17 +69,16 @@ impl RenewalSummaryBuilder {
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different from the initial validation that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub fn domain_validation_options(mut self, input: crate::types::DomainValidation) -> Self {
         let mut v = self.domain_validation_options.unwrap_or_default();
-        v.push(input);
-        self.domain_validation_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_validation_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different from the initial validation that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn set_domain_validation_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidation>>) -> Self {
-        self.domain_validation_options = input;
-        self
+    pub fn set_domain_validation_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidation>>) -> Self {
+        self.domain_validation_options = input; self
     }
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different from the initial validation that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn get_domain_validation_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainValidation>> {
+    pub fn get_domain_validation_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainValidation>> {
         &self.domain_validation_options
     }
     /// <p>The reason that a renewal request was unsuccessful.</p>
@@ -91,8 +88,7 @@ impl RenewalSummaryBuilder {
     }
     /// <p>The reason that a renewal request was unsuccessful.</p>
     pub fn set_renewal_status_reason(mut self, input: ::std::option::Option<crate::types::FailureReason>) -> Self {
-        self.renewal_status_reason = input;
-        self
+        self.renewal_status_reason = input; self
     }
     /// <p>The reason that a renewal request was unsuccessful.</p>
     pub fn get_renewal_status_reason(&self) -> &::std::option::Option<crate::types::FailureReason> {
@@ -106,8 +102,7 @@ impl RenewalSummaryBuilder {
     }
     /// <p>The time at which the renewal summary was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time at which the renewal summary was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,26 +114,27 @@ impl RenewalSummaryBuilder {
     /// - [`domain_validation_options`](crate::types::builders::RenewalSummaryBuilder::domain_validation_options)
     /// - [`updated_at`](crate::types::builders::RenewalSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::RenewalSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RenewalSummary {
-            renewal_status: self.renewal_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "renewal_status",
-                    "renewal_status was not specified but it is required when building RenewalSummary",
-                )
-            })?,
-            domain_validation_options: self.domain_validation_options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_validation_options",
-                    "domain_validation_options was not specified but it is required when building RenewalSummary",
-                )
-            })?,
-            renewal_status_reason: self.renewal_status_reason,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building RenewalSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RenewalSummary {
+                renewal_status: self.renewal_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("renewal_status", "renewal_status was not specified but it is required when building RenewalSummary")
+                    )?
+                ,
+                domain_validation_options: self.domain_validation_options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_validation_options", "domain_validation_options was not specified but it is required when building RenewalSummary")
+                    )?
+                ,
+                renewal_status_reason: self.renewal_status_reason
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building RenewalSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

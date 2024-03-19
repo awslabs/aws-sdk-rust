@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTargetGroups`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`load_balancer_arn(impl Into<String>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::load_balancer_arn) / [`set_load_balancer_arn(Option<String>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::set_load_balancer_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the load balancer.</p><br>
     ///   - [`target_group_arns(impl Into<String>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::target_group_arns) / [`set_target_group_arns(Option<Vec::<String>>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::set_target_group_arns):<br>required: **false**<br><p>The Amazon Resource Names (ARN) of the target groups.</p><br>
     ///   - [`names(impl Into<String>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::set_names):<br>required: **false**<br><p>The names of the target groups.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. (You received this marker from a previous call.)</p><br>
     ///   - [`page_size(i32)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of results to return with this call.</p><br>
-    /// - On success, responds with [`DescribeTargetGroupsOutput`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput) with field(s):
+                            /// - On success, responds with [`DescribeTargetGroupsOutput`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput) with field(s):
     ///   - [`target_groups(Option<Vec::<TargetGroup>>)`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput::target_groups): <p>Information about the target groups.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    /// - On failure, responds with [`SdkError<DescribeTargetGroupsError>`](crate::operation::describe_target_groups::DescribeTargetGroupsError)
+                            /// - On failure, responds with [`SdkError<DescribeTargetGroupsError>`](crate::operation::describe_target_groups::DescribeTargetGroupsError)
     pub fn describe_target_groups(&self) -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder {
-        crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_target_groups::builders::DescribeTargetGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

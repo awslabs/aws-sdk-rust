@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JoinStorageSessionInput {
+pub struct JoinStorageSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
 }
-impl JoinStorageSessionInput {
+impl  JoinStorageSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl JoinStorageSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_arn
     }
     /// Consumes the builder and constructs a [`JoinStorageSessionInput`](crate::operation::join_storage_session::JoinStorageSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::join_storage_session::JoinStorageSessionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::join_storage_session::JoinStorageSessionInput {
-            channel_arn: self.channel_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::join_storage_session::JoinStorageSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::join_storage_session::JoinStorageSessionInput {
+                channel_arn: self.channel_arn
+                ,
+            }
+        )
     }
 }
+

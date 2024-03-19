@@ -3,30 +3,31 @@
 /// <p>Contains a response to a LookupEvents action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LookupEventsOutput {
+pub struct LookupEventsOutput  {
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl LookupEventsOutput {
+impl  LookupEventsOutput  {
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::Event] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::Event] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for LookupEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl LookupEventsOutput {
     /// Creates a new builder-style object to manufacture [`LookupEventsOutput`](crate::operation::lookup_events::LookupEventsOutput).
     pub fn builder() -> crate::operation::lookup_events::builders::LookupEventsOutputBuilder {
@@ -38,7 +39,7 @@ impl LookupEventsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LookupEventsOutputBuilder {
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl LookupEventsOutputBuilder {
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>) -> Self {
+        self.events = input; self
     }
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Event>> {
         &self.events
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
@@ -70,28 +70,30 @@ impl LookupEventsOutputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`LookupEventsOutput`](crate::operation::lookup_events::LookupEventsOutput).
     pub fn build(self) -> crate::operation::lookup_events::LookupEventsOutput {
         crate::operation::lookup_events::LookupEventsOutput {
-            events: self.events,
-            next_token: self.next_token,
+            events: self.events
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

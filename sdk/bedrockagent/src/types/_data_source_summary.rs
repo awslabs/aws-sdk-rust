@@ -3,7 +3,7 @@
 /// Summary information of a data source.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceSummary {
+pub struct DataSourceSummary  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::string::String,
     /// Identifier for a resource.
@@ -17,32 +17,29 @@ pub struct DataSourceSummary {
     /// Time Stamp.
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl DataSourceSummary {
+impl  DataSourceSummary  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// Identifier for a resource.
-    pub fn data_source_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_id.deref()
+    pub fn data_source_id(&self) -> & str {
+        use std::ops::Deref; self.data_source_id.deref()
     }
     /// Name for a resource.
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// The status of a data source.
-    pub fn status(&self) -> &crate::types::DataSourceStatus {
+    pub fn status(&self) -> & crate::types::DataSourceStatus {
         &self.status
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -73,8 +70,7 @@ impl DataSourceSummaryBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl DataSourceSummaryBuilder {
     }
     /// Identifier for a resource.
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl DataSourceSummaryBuilder {
     }
     /// Name for a resource.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name for a resource.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl DataSourceSummaryBuilder {
     }
     /// The status of a data source.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// The status of a data source.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
@@ -132,8 +125,7 @@ impl DataSourceSummaryBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +139,7 @@ impl DataSourceSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,38 +153,37 @@ impl DataSourceSummaryBuilder {
     /// - [`status`](crate::types::builders::DataSourceSummaryBuilder::status)
     /// - [`updated_at`](crate::types::builders::DataSourceSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSourceSummary {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            data_source_id: self.data_source_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_id",
-                    "data_source_id was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-            description: self.description,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building DataSourceSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSourceSummary {
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                data_source_id: self.data_source_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_id", "data_source_id was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building DataSourceSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

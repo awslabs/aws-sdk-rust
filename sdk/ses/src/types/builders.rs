@@ -80,3 +80,4 @@ pub use crate::types::_identity_mail_from_domain_attributes::IdentityMailFromDom
 pub use crate::types::_identity_dkim_attributes::IdentityDkimAttributesBuilder;
 
 pub use crate::types::_reputation_options::ReputationOptionsBuilder;
+

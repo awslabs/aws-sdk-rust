@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateUserInput {
+pub struct UpdateUserInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user.</p>
@@ -22,45 +22,45 @@ pub struct UpdateUserInput {
     /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub grant_poweruser_privileges: ::std::option::Option<crate::types::BooleanEnumType>,
 }
-impl UpdateUserInput {
+impl  UpdateUserInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The given name of the user.</p>
-    pub fn given_name(&self) -> ::std::option::Option<&str> {
+    pub fn given_name(&self) -> ::std::option::Option<& str> {
         self.given_name.as_deref()
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(&self) -> ::std::option::Option<&str> {
+    pub fn surname(&self) -> ::std::option::Option<& str> {
         self.surname.as_deref()
     }
     /// <p>The type of the user.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UserType> {
         self.r#type.as_ref()
     }
     /// <p>The amount of storage for the user.</p>
-    pub fn storage_rule(&self) -> ::std::option::Option<&crate::types::StorageRuleType> {
+    pub fn storage_rule(&self) -> ::std::option::Option<& crate::types::StorageRuleType> {
         self.storage_rule.as_ref()
     }
     /// <p>The time zone ID of the user.</p>
-    pub fn time_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn time_zone_id(&self) -> ::std::option::Option<& str> {
         self.time_zone_id.as_deref()
     }
     /// <p>The locale of the user.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::LocaleType> {
+    pub fn locale(&self) -> ::std::option::Option<& crate::types::LocaleType> {
         self.locale.as_ref()
     }
     /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
-    pub fn grant_poweruser_privileges(&self) -> ::std::option::Option<&crate::types::BooleanEnumType> {
+    pub fn grant_poweruser_privileges(&self) -> ::std::option::Option<& crate::types::BooleanEnumType> {
         self.grant_poweruser_privileges.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateUserInput {
+impl  ::std::fmt::Debug for UpdateUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -104,8 +104,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The ID of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The given name of the user.</p>
     pub fn set_given_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.given_name = input;
-        self
+        self.given_name = input; self
     }
     /// <p>The given name of the user.</p>
     pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The surname of the user.</p>
     pub fn set_surname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.surname = input;
-        self
+        self.surname = input; self
     }
     /// <p>The surname of the user.</p>
     pub fn get_surname(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The type of the user.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the user.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
@@ -175,8 +170,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The amount of storage for the user.</p>
     pub fn set_storage_rule(mut self, input: ::std::option::Option<crate::types::StorageRuleType>) -> Self {
-        self.storage_rule = input;
-        self
+        self.storage_rule = input; self
     }
     /// <p>The amount of storage for the user.</p>
     pub fn get_storage_rule(&self) -> &::std::option::Option<crate::types::StorageRuleType> {
@@ -189,8 +183,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The time zone ID of the user.</p>
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_zone_id = input;
-        self
+        self.time_zone_id = input; self
     }
     /// <p>The time zone ID of the user.</p>
     pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +196,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The locale of the user.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::LocaleType>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The locale of the user.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::LocaleType> {
@@ -217,8 +209,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub fn set_grant_poweruser_privileges(mut self, input: ::std::option::Option<crate::types::BooleanEnumType>) -> Self {
-        self.grant_poweruser_privileges = input;
-        self
+        self.grant_poweruser_privileges = input; self
     }
     /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub fn get_grant_poweruser_privileges(&self) -> &::std::option::Option<crate::types::BooleanEnumType> {
@@ -226,17 +217,28 @@ impl UpdateUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
-            authentication_token: self.authentication_token,
-            user_id: self.user_id,
-            given_name: self.given_name,
-            surname: self.surname,
-            r#type: self.r#type,
-            storage_rule: self.storage_rule,
-            time_zone_id: self.time_zone_id,
-            locale: self.locale,
-            grant_poweruser_privileges: self.grant_poweruser_privileges,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_user::UpdateUserInput {
+                authentication_token: self.authentication_token
+                ,
+                user_id: self.user_id
+                ,
+                given_name: self.given_name
+                ,
+                surname: self.surname
+                ,
+                r#type: self.r#type
+                ,
+                storage_rule: self.storage_rule
+                ,
+                time_zone_id: self.time_zone_id
+                ,
+                locale: self.locale
+                ,
+                grant_poweruser_privileges: self.grant_poweruser_privileges
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateUserInputBuilder {
@@ -254,3 +256,4 @@ impl ::std::fmt::Debug for UpdateUserInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  {
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
     pub workflow_id: ::std::string::String,
     /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
@@ -13,14 +13,13 @@ pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub control: ::std::option::Option<::std::string::String>,
 }
-impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+impl  RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  {
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> & str {
+        use std::ops::Deref; self.workflow_id.deref()
     }
     /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -28,7 +27,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
         self.decision_task_completed_event_id
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    pub fn control(&self) -> ::std::option::Option<&str> {
+    pub fn control(&self) -> ::std::option::Option<& str> {
         self.control.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     }
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     }
     /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input;
-        self
+        self.decision_task_completed_event_id = input; self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
@@ -100,8 +96,7 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control = input;
-        self
+        self.control = input; self
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,22 +105,23 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_id`](crate::types::builders::RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder::workflow_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building RequestCancelExternalWorkflowExecutionInitiatedEventAttributes",
-                )
-            })?,
-            run_id: self.run_id,
-            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-            control: self.control,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+                workflow_id: self.workflow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_id", "workflow_id was not specified but it is required when building RequestCancelExternalWorkflowExecutionInitiatedEventAttributes")
+                    )?
+                ,
+                run_id: self.run_id
+                ,
+                decision_task_completed_event_id: self.decision_task_completed_event_id
+                    .unwrap_or_default()
+                ,
+                control: self.control
+                ,
+            }
+        )
     }
 }
+

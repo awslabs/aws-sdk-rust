@@ -3,22 +3,20 @@
 /// <p>The attributes allowed or specified with a parameter object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterAttribute {
+pub struct ParameterAttribute  {
     /// <p>The field identifier.</p>
     pub key: ::std::string::String,
     /// <p>The field value, expressed as a String.</p>
     pub string_value: ::std::string::String,
 }
-impl ParameterAttribute {
+impl  ParameterAttribute  {
     /// <p>The field identifier.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> &str {
-        use std::ops::Deref;
-        self.string_value.deref()
+    pub fn string_value(&self) -> & str {
+        use std::ops::Deref; self.string_value.deref()
     }
 }
 impl ParameterAttribute {
@@ -44,8 +42,7 @@ impl ParameterAttributeBuilder {
     }
     /// <p>The field identifier.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The field identifier.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ParameterAttributeBuilder {
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ParameterAttributeBuilder {
     /// - [`key`](crate::types::builders::ParameterAttributeBuilder::key)
     /// - [`string_value`](crate::types::builders::ParameterAttributeBuilder::string_value)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParameterAttribute {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building ParameterAttribute",
-                )
-            })?,
-            string_value: self.string_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "string_value",
-                    "string_value was not specified but it is required when building ParameterAttribute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParameterAttribute {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building ParameterAttribute")
+                    )?
+                ,
+                string_value: self.string_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("string_value", "string_value was not specified but it is required when building ParameterAttribute")
+                    )?
+                ,
+            }
+        )
     }
 }
+

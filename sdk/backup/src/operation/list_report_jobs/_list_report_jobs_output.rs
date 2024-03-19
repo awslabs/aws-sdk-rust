@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReportJobsOutput {
+pub struct ListReportJobsOutput  {
     /// <p>Details about your report jobs in JSON format.</p>
-    pub report_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ReportJob>>,
+    pub report_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::ReportJob>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListReportJobsOutput {
+impl  ListReportJobsOutput  {
     /// <p>Details about your report jobs in JSON format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_jobs.is_none()`.
-    pub fn report_jobs(&self) -> &[crate::types::ReportJob] {
-        self.report_jobs.as_deref().unwrap_or_default()
+    pub fn report_jobs(&self) -> & [crate::types::ReportJob] {
+        self.report_jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListReportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListReportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReportJobsOutput`](crate::operation::list_report_jobs::ListReportJobsOutput).
     pub fn builder() -> crate::operation::list_report_jobs::builders::ListReportJobsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListReportJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReportJobsOutputBuilder {
-    pub(crate) report_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ReportJob>>,
+    pub(crate) report_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::ReportJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListReportJobsOutputBuilder {
     /// <p>Details about your report jobs in JSON format.</p>
     pub fn report_jobs(mut self, input: crate::types::ReportJob) -> Self {
         let mut v = self.report_jobs.unwrap_or_default();
-        v.push(input);
-        self.report_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.report_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about your report jobs in JSON format.</p>
-    pub fn set_report_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportJob>>) -> Self {
-        self.report_jobs = input;
-        self
+    pub fn set_report_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReportJob>>) -> Self {
+        self.report_jobs = input; self
     }
     /// <p>Details about your report jobs in JSON format.</p>
-    pub fn get_report_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportJob>> {
+    pub fn get_report_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReportJob>> {
         &self.report_jobs
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -69,28 +69,30 @@ impl ListReportJobsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListReportJobsOutput`](crate::operation::list_report_jobs::ListReportJobsOutput).
     pub fn build(self) -> crate::operation::list_report_jobs::ListReportJobsOutput {
         crate::operation::list_report_jobs::ListReportJobsOutput {
-            report_jobs: self.report_jobs,
-            next_token: self.next_token,
+            report_jobs: self.report_jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

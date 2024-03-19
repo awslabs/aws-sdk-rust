@@ -3,13 +3,13 @@
 /// <p>An object containing the name of an intent that was invoked.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvokedIntentSample {
+pub struct InvokedIntentSample  {
     /// <p>The name of an intent that was invoked.</p>
     pub intent_name: ::std::option::Option<::std::string::String>,
 }
-impl InvokedIntentSample {
+impl  InvokedIntentSample  {
     /// <p>The name of an intent that was invoked.</p>
-    pub fn intent_name(&self) -> ::std::option::Option<&str> {
+    pub fn intent_name(&self) -> ::std::option::Option<& str> {
         self.intent_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl InvokedIntentSampleBuilder {
     }
     /// <p>The name of an intent that was invoked.</p>
     pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_name = input;
-        self
+        self.intent_name = input; self
     }
     /// <p>The name of an intent that was invoked.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl InvokedIntentSampleBuilder {
     /// Consumes the builder and constructs a [`InvokedIntentSample`](crate::types::InvokedIntentSample).
     pub fn build(self) -> crate::types::InvokedIntentSample {
         crate::types::InvokedIntentSample {
-            intent_name: self.intent_name,
+            intent_name: self.intent_name
+            ,
         }
     }
 }
+

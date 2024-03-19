@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventSourceMappingInput {
+pub struct GetEventSourceMappingInput  {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
 }
-impl GetEventSourceMappingInput {
+impl  GetEventSourceMappingInput  {
     /// <p>The identifier of the event source mapping.</p>
-    pub fn uuid(&self) -> ::std::option::Option<&str> {
+    pub fn uuid(&self) -> ::std::option::Option<& str> {
         self.uuid.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetEventSourceMappingInputBuilder {
     }
     /// <p>The identifier of the event source mapping.</p>
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uuid = input;
-        self
+        self.uuid = input; self
     }
     /// <p>The identifier of the event source mapping.</p>
     pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
         &self.uuid
     }
     /// Consumes the builder and constructs a [`GetEventSourceMappingInput`](crate::operation::get_event_source_mapping::GetEventSourceMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_event_source_mapping::GetEventSourceMappingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_event_source_mapping::GetEventSourceMappingInput { uuid: self.uuid })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_event_source_mapping::GetEventSourceMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_event_source_mapping::GetEventSourceMappingInput {
+                uuid: self.uuid
+                ,
+            }
+        )
     }
 }
+

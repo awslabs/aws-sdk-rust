@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFeatureGroupOutput {
+pub struct DescribeFeatureGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>he name of the <code>FeatureGroup</code>.</p>
@@ -13,7 +13,7 @@ pub struct DescribeFeatureGroupOutput {
     /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
     pub event_time_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-    pub feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
+    pub feature_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureDefinition>>,
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when the feature group was last updated.</p>
@@ -61,40 +61,41 @@ pub struct DescribeFeatureGroupOutput {
     pub online_store_total_size_bytes: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl DescribeFeatureGroupOutput {
+impl  DescribeFeatureGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
-    pub fn feature_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn feature_group_arn(&self) -> ::std::option::Option<& str> {
         self.feature_group_arn.as_deref()
     }
     /// <p>he name of the <code>FeatureGroup</code>.</p>
-    pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> ::std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
-    pub fn record_identifier_feature_name(&self) -> ::std::option::Option<&str> {
+    pub fn record_identifier_feature_name(&self) -> ::std::option::Option<& str> {
         self.record_identifier_feature_name.as_deref()
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
     /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
-    pub fn event_time_feature_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_time_feature_name(&self) -> ::std::option::Option<& str> {
         self.event_time_feature_name.as_deref()
     }
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_definitions.is_none()`.
-    pub fn feature_definitions(&self) -> &[crate::types::FeatureDefinition] {
-        self.feature_definitions.as_deref().unwrap_or_default()
+    pub fn feature_definitions(&self) -> & [crate::types::FeatureDefinition] {
+        self.feature_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp indicating when the feature group was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
-    pub fn online_store_config(&self) -> ::std::option::Option<&crate::types::OnlineStoreConfig> {
+    pub fn online_store_config(&self) -> ::std::option::Option<& crate::types::OnlineStoreConfig> {
         self.online_store_config.as_ref()
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
@@ -110,28 +111,28 @@ impl DescribeFeatureGroupOutput {
     /// <li>
     /// <p>Encryption configuration.</p></li>
     /// </ul>
-    pub fn offline_store_config(&self) -> ::std::option::Option<&crate::types::OfflineStoreConfig> {
+    pub fn offline_store_config(&self) -> ::std::option::Option<& crate::types::OfflineStoreConfig> {
         self.offline_store_config.as_ref()
     }
     /// <p>Active throughput configuration of the feature group. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
     /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
-    pub fn throughput_config(&self) -> ::std::option::Option<&crate::types::ThroughputConfigDescription> {
+    pub fn throughput_config(&self) -> ::std::option::Option<& crate::types::ThroughputConfigDescription> {
         self.throughput_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The status of the feature group.</p>
-    pub fn feature_group_status(&self) -> ::std::option::Option<&crate::types::FeatureGroupStatus> {
+    pub fn feature_group_status(&self) -> ::std::option::Option<& crate::types::FeatureGroupStatus> {
         self.feature_group_status.as_ref()
     }
     /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code></p>
-    pub fn offline_store_status(&self) -> ::std::option::Option<&crate::types::OfflineStoreStatus> {
+    pub fn offline_store_status(&self) -> ::std::option::Option<& crate::types::OfflineStoreStatus> {
         self.offline_store_status.as_ref()
     }
     /// <p>A value indicating whether the update made to the feature group was successful.</p>
-    pub fn last_update_status(&self) -> ::std::option::Option<&crate::types::LastUpdateStatus> {
+    pub fn last_update_status(&self) -> ::std::option::Option<& crate::types::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
@@ -141,15 +142,15 @@ impl DescribeFeatureGroupOutput {
     /// <li>
     /// <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>A free form description of the feature group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The size of the <code>OnlineStore</code> in bytes.</p>
@@ -158,10 +159,10 @@ impl DescribeFeatureGroupOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFeatureGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFeatureGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureGroupOutput`](crate::operation::describe_feature_group::DescribeFeatureGroupOutput).
     pub fn builder() -> crate::operation::describe_feature_group::builders::DescribeFeatureGroupOutputBuilder {
@@ -177,7 +178,7 @@ pub struct DescribeFeatureGroupOutputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_time_feature_name: ::std::option::Option<::std::string::String>,
-    pub(crate) feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
+    pub(crate) feature_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureDefinition>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
@@ -202,8 +203,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
     pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_group_arn = input;
-        self
+        self.feature_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>.</p>
     pub fn get_feature_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +217,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>he name of the <code>FeatureGroup</code>.</p>
     pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_group_name = input;
-        self
+        self.feature_group_name = input; self
     }
     /// <p>he name of the <code>FeatureGroup</code>.</p>
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +231,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
     pub fn set_record_identifier_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_identifier_feature_name = input;
-        self
+        self.record_identifier_feature_name = input; self
     }
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
     pub fn get_record_identifier_feature_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,8 +247,7 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
     /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
     pub fn set_event_time_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_time_feature_name = input;
-        self
+        self.event_time_feature_name = input; self
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
     /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
@@ -264,17 +261,16 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
     pub fn feature_definitions(mut self, input: crate::types::FeatureDefinition) -> Self {
         let mut v = self.feature_definitions.unwrap_or_default();
-        v.push(input);
-        self.feature_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.feature_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-    pub fn set_feature_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>) -> Self {
-        self.feature_definitions = input;
-        self
+    pub fn set_feature_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureDefinition>>) -> Self {
+        self.feature_definitions = input; self
     }
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-    pub fn get_feature_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
+    pub fn get_feature_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureDefinition>> {
         &self.feature_definitions
     }
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
@@ -285,8 +281,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -299,8 +294,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>A timestamp indicating when the feature group was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>A timestamp indicating when the feature group was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -313,8 +307,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
     pub fn set_online_store_config(mut self, input: ::std::option::Option<crate::types::OnlineStoreConfig>) -> Self {
-        self.online_store_config = input;
-        self
+        self.online_store_config = input; self
     }
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
     pub fn get_online_store_config(&self) -> &::std::option::Option<crate::types::OnlineStoreConfig> {
@@ -351,8 +344,7 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <p>Encryption configuration.</p></li>
     /// </ul>
     pub fn set_offline_store_config(mut self, input: ::std::option::Option<crate::types::OfflineStoreConfig>) -> Self {
-        self.offline_store_config = input;
-        self
+        self.offline_store_config = input; self
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
@@ -379,8 +371,7 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <p>Active throughput configuration of the feature group. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
     /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
     pub fn set_throughput_config(mut self, input: ::std::option::Option<crate::types::ThroughputConfigDescription>) -> Self {
-        self.throughput_config = input;
-        self
+        self.throughput_config = input; self
     }
     /// <p>Active throughput configuration of the feature group. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
     /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
@@ -394,8 +385,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -408,8 +398,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The status of the feature group.</p>
     pub fn set_feature_group_status(mut self, input: ::std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
-        self.feature_group_status = input;
-        self
+        self.feature_group_status = input; self
     }
     /// <p>The status of the feature group.</p>
     pub fn get_feature_group_status(&self) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
@@ -422,8 +411,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code></p>
     pub fn set_offline_store_status(mut self, input: ::std::option::Option<crate::types::OfflineStoreStatus>) -> Self {
-        self.offline_store_status = input;
-        self
+        self.offline_store_status = input; self
     }
     /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code></p>
     pub fn get_offline_store_status(&self) -> &::std::option::Option<crate::types::OfflineStoreStatus> {
@@ -436,8 +424,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>A value indicating whether the update made to the feature group was successful.</p>
     pub fn set_last_update_status(mut self, input: ::std::option::Option<crate::types::LastUpdateStatus>) -> Self {
-        self.last_update_status = input;
-        self
+        self.last_update_status = input; self
     }
     /// <p>A value indicating whether the update made to the feature group was successful.</p>
     pub fn get_last_update_status(&self) -> &::std::option::Option<crate::types::LastUpdateStatus> {
@@ -462,8 +449,7 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
@@ -482,8 +468,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>A free form description of the feature group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A free form description of the feature group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -497,8 +482,7 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -511,44 +495,62 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The size of the <code>OnlineStore</code> in bytes.</p>
     pub fn set_online_store_total_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.online_store_total_size_bytes = input;
-        self
+        self.online_store_total_size_bytes = input; self
     }
     /// <p>The size of the <code>OnlineStore</code> in bytes.</p>
     pub fn get_online_store_total_size_bytes(&self) -> &::std::option::Option<i64> {
         &self.online_store_total_size_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFeatureGroupOutput`](crate::operation::describe_feature_group::DescribeFeatureGroupOutput).
     pub fn build(self) -> crate::operation::describe_feature_group::DescribeFeatureGroupOutput {
         crate::operation::describe_feature_group::DescribeFeatureGroupOutput {
-            feature_group_arn: self.feature_group_arn,
-            feature_group_name: self.feature_group_name,
-            record_identifier_feature_name: self.record_identifier_feature_name,
-            event_time_feature_name: self.event_time_feature_name,
-            feature_definitions: self.feature_definitions,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            online_store_config: self.online_store_config,
-            offline_store_config: self.offline_store_config,
-            throughput_config: self.throughput_config,
-            role_arn: self.role_arn,
-            feature_group_status: self.feature_group_status,
-            offline_store_status: self.offline_store_status,
-            last_update_status: self.last_update_status,
-            failure_reason: self.failure_reason,
-            description: self.description,
-            next_token: self.next_token,
-            online_store_total_size_bytes: self.online_store_total_size_bytes,
+            feature_group_arn: self.feature_group_arn
+            ,
+            feature_group_name: self.feature_group_name
+            ,
+            record_identifier_feature_name: self.record_identifier_feature_name
+            ,
+            event_time_feature_name: self.event_time_feature_name
+            ,
+            feature_definitions: self.feature_definitions
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            online_store_config: self.online_store_config
+            ,
+            offline_store_config: self.offline_store_config
+            ,
+            throughput_config: self.throughput_config
+            ,
+            role_arn: self.role_arn
+            ,
+            feature_group_status: self.feature_group_status
+            ,
+            offline_store_status: self.offline_store_status
+            ,
+            last_update_status: self.last_update_status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            description: self.description
+            ,
+            next_token: self.next_token
+            ,
+            online_store_total_size_bytes: self.online_store_total_size_bytes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

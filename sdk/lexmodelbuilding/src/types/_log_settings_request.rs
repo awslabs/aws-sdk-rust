@@ -3,7 +3,7 @@
 /// <p>Settings used to configure delivery mode and destination for conversation logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogSettingsRequest {
+pub struct LogSettingsRequest  {
     /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
     pub log_type: crate::types::LogType,
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
@@ -13,23 +13,22 @@ pub struct LogSettingsRequest {
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs should be delivered.</p>
     pub resource_arn: ::std::string::String,
 }
-impl LogSettingsRequest {
+impl  LogSettingsRequest  {
     /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
-    pub fn log_type(&self) -> &crate::types::LogType {
+    pub fn log_type(&self) -> & crate::types::LogType {
         &self.log_type
     }
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
-    pub fn destination(&self) -> &crate::types::Destination {
+    pub fn destination(&self) -> & crate::types::Destination {
         &self.destination
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for encrypting audio logs delivered to an S3 bucket. The key does not apply to CloudWatch Logs and is optional for S3 buckets.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs should be delivered.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
 }
 impl LogSettingsRequest {
@@ -57,8 +56,7 @@ impl LogSettingsRequestBuilder {
     }
     /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
     pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
@@ -72,8 +70,7 @@ impl LogSettingsRequestBuilder {
     }
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
@@ -86,8 +83,7 @@ impl LogSettingsRequestBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for encrypting audio logs delivered to an S3 bucket. The key does not apply to CloudWatch Logs and is optional for S3 buckets.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for encrypting audio logs delivered to an S3 bucket. The key does not apply to CloudWatch Logs and is optional for S3 buckets.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +97,7 @@ impl LogSettingsRequestBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs should be delivered.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs should be delivered.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,26 +109,27 @@ impl LogSettingsRequestBuilder {
     /// - [`destination`](crate::types::builders::LogSettingsRequestBuilder::destination)
     /// - [`resource_arn`](crate::types::builders::LogSettingsRequestBuilder::resource_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LogSettingsRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LogSettingsRequest {
-            log_type: self.log_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_type",
-                    "log_type was not specified but it is required when building LogSettingsRequest",
-                )
-            })?,
-            destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination",
-                    "destination was not specified but it is required when building LogSettingsRequest",
-                )
-            })?,
-            kms_key_arn: self.kms_key_arn,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building LogSettingsRequest",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LogSettingsRequest {
+                log_type: self.log_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_type", "log_type was not specified but it is required when building LogSettingsRequest")
+                    )?
+                ,
+                destination: self.destination
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination", "destination was not specified but it is required when building LogSettingsRequest")
+                    )?
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building LogSettingsRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The parameters for Jira.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JiraParameters {
+pub struct JiraParameters  {
     /// <p>The base URL of the Jira site.</p>
     pub site_base_url: ::std::string::String,
 }
-impl JiraParameters {
+impl  JiraParameters  {
     /// <p>The base URL of the Jira site.</p>
-    pub fn site_base_url(&self) -> &str {
-        use std::ops::Deref;
-        self.site_base_url.deref()
+    pub fn site_base_url(&self) -> & str {
+        use std::ops::Deref; self.site_base_url.deref()
     }
 }
 impl JiraParameters {
@@ -36,8 +35,7 @@ impl JiraParametersBuilder {
     }
     /// <p>The base URL of the Jira site.</p>
     pub fn set_site_base_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.site_base_url = input;
-        self
+        self.site_base_url = input; self
     }
     /// <p>The base URL of the Jira site.</p>
     pub fn get_site_base_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl JiraParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`site_base_url`](crate::types::builders::JiraParametersBuilder::site_base_url)
     pub fn build(self) -> ::std::result::Result<crate::types::JiraParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JiraParameters {
-            site_base_url: self.site_base_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "site_base_url",
-                    "site_base_url was not specified but it is required when building JiraParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JiraParameters {
+                site_base_url: self.site_base_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("site_base_url", "site_base_url was not specified but it is required when building JiraParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

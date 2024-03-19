@@ -4,13 +4,13 @@
 /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateRegistryAccessRequest {
+pub struct PrivateRegistryAccessRequest  {
     /// <p>An object to describe a request to activate or deactivate the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     pub ecr_image_puller_role: ::std::option::Option<crate::types::ContainerServiceEcrImagePullerRoleRequest>,
 }
-impl PrivateRegistryAccessRequest {
+impl  PrivateRegistryAccessRequest  {
     /// <p>An object to describe a request to activate or deactivate the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
-    pub fn ecr_image_puller_role(&self) -> ::std::option::Option<&crate::types::ContainerServiceEcrImagePullerRoleRequest> {
+    pub fn ecr_image_puller_role(&self) -> ::std::option::Option<& crate::types::ContainerServiceEcrImagePullerRoleRequest> {
         self.ecr_image_puller_role.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl PrivateRegistryAccessRequestBuilder {
     }
     /// <p>An object to describe a request to activate or deactivate the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     pub fn set_ecr_image_puller_role(mut self, input: ::std::option::Option<crate::types::ContainerServiceEcrImagePullerRoleRequest>) -> Self {
-        self.ecr_image_puller_role = input;
-        self
+        self.ecr_image_puller_role = input; self
     }
     /// <p>An object to describe a request to activate or deactivate the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p>
     pub fn get_ecr_image_puller_role(&self) -> &::std::option::Option<crate::types::ContainerServiceEcrImagePullerRoleRequest> {
@@ -45,7 +44,9 @@ impl PrivateRegistryAccessRequestBuilder {
     /// Consumes the builder and constructs a [`PrivateRegistryAccessRequest`](crate::types::PrivateRegistryAccessRequest).
     pub fn build(self) -> crate::types::PrivateRegistryAccessRequest {
         crate::types::PrivateRegistryAccessRequest {
-            ecr_image_puller_role: self.ecr_image_puller_role,
+            ecr_image_puller_role: self.ecr_image_puller_role
+            ,
         }
     }
 }
+

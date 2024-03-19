@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListScheduleGroupsInput {
+pub struct ListScheduleGroupsInput  {
     /// <p>The name prefix that you can use to return a filtered list of your schedule groups.</p>
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -10,13 +10,13 @@ pub struct ListScheduleGroupsInput {
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListScheduleGroupsInput {
+impl  ListScheduleGroupsInput  {
     /// <p>The name prefix that you can use to return a filtered list of your schedule groups.</p>
-    pub fn name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix(&self) -> ::std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -47,8 +47,7 @@ impl ListScheduleGroupsInputBuilder {
     }
     /// <p>The name prefix that you can use to return a filtered list of your schedule groups.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>The name prefix that you can use to return a filtered list of your schedule groups.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListScheduleGroupsInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl ListScheduleGroupsInputBuilder {
     }
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListScheduleGroupsInput`](crate::operation::list_schedule_groups::ListScheduleGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_schedule_groups::ListScheduleGroupsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_schedule_groups::ListScheduleGroupsInput {
-            name_prefix: self.name_prefix,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schedule_groups::ListScheduleGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_schedule_groups::ListScheduleGroupsInput {
+                name_prefix: self.name_prefix
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDataSourceRunInput {
+pub struct StartDataSourceRunInput  {
     /// <p>The identifier of the Amazon DataZone domain in which to start a data source run.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data source.</p>
@@ -10,17 +10,17 @@ pub struct StartDataSourceRunInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl StartDataSourceRunInput {
+impl  StartDataSourceRunInput  {
     /// <p>The identifier of the Amazon DataZone domain in which to start a data source run.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the data source.</p>
-    pub fn data_source_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_identifier(&self) -> ::std::option::Option<& str> {
         self.data_source_identifier.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl StartDataSourceRunInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which to start a data source run.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which to start a data source run.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl StartDataSourceRunInputBuilder {
     }
     /// <p>The identifier of the data source.</p>
     pub fn set_data_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_identifier = input;
-        self
+        self.data_source_identifier = input; self
     }
     /// <p>The identifier of the data source.</p>
     pub fn get_data_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl StartDataSourceRunInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartDataSourceRunInput`](crate::operation::start_data_source_run::StartDataSourceRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_data_source_run::StartDataSourceRunInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_data_source_run::StartDataSourceRunInput {
-            domain_identifier: self.domain_identifier,
-            data_source_identifier: self.data_source_identifier,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_data_source_run::StartDataSourceRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_data_source_run::StartDataSourceRunInput {
+                domain_identifier: self.domain_identifier
+                ,
+                data_source_identifier: self.data_source_identifier
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

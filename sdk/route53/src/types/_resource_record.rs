@@ -5,21 +5,20 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceRecord {
+pub struct ResourceRecord  {
     /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>.</p><note>
     /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
     /// </note>
     pub value: ::std::string::String,
 }
-impl ResourceRecord {
+impl  ResourceRecord  {
     /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>.</p><note>
     /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
     /// </note>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl ResourceRecord {
@@ -50,8 +49,7 @@ impl ResourceRecordBuilder {
     /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
     /// </note>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>.</p><note>
@@ -64,13 +62,15 @@ impl ResourceRecordBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::ResourceRecordBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceRecord, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceRecord {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ResourceRecord",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceRecord {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ResourceRecord")
+                    )?
+                ,
+            }
+        )
     }
 }
+

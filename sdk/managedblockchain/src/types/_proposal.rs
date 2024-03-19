@@ -4,7 +4,7 @@
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Proposal {
+pub struct Proposal  {
     /// <p>The unique identifier of the proposal.</p>
     pub proposal_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the network for which the proposal is made.</p>
@@ -43,33 +43,33 @@ pub struct Proposal {
     pub outstanding_vote_count: ::std::option::Option<i32>,
     /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl Proposal {
+impl  Proposal  {
     /// <p>The unique identifier of the proposal.</p>
-    pub fn proposal_id(&self) -> ::std::option::Option<&str> {
+    pub fn proposal_id(&self) -> ::std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
     /// <p>The unique identifier of the network for which the proposal is made.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The description of the proposal.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The actions to perform on the network if the proposal is <code>APPROVED</code>.</p>
-    pub fn actions(&self) -> ::std::option::Option<&crate::types::ProposalActions> {
+    pub fn actions(&self) -> ::std::option::Option<& crate::types::ProposalActions> {
         self.actions.as_ref()
     }
     /// <p>The unique identifier of the member that created the proposal.</p>
-    pub fn proposed_by_member_id(&self) -> ::std::option::Option<&str> {
+    pub fn proposed_by_member_id(&self) -> ::std::option::Option<& str> {
         self.proposed_by_member_id.as_deref()
     }
     /// <p>The name of the member that created the proposal.</p>
-    pub fn proposed_by_member_name(&self) -> ::std::option::Option<&str> {
+    pub fn proposed_by_member_name(&self) -> ::std::option::Option<& str> {
         self.proposed_by_member_name.as_deref()
     }
     /// <p>The status of the proposal. Values are as follows:</p>
@@ -85,15 +85,15 @@ impl Proposal {
     /// <li>
     /// <p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProposalStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ProposalStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the proposal was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out.</p>
-    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The current total of <code>YES</code> votes cast on the proposal by members.</p>
@@ -110,11 +110,11 @@ impl Proposal {
     }
     /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -141,7 +141,7 @@ pub struct ProposalBuilder {
     pub(crate) yes_vote_count: ::std::option::Option<i32>,
     pub(crate) no_vote_count: ::std::option::Option<i32>,
     pub(crate) outstanding_vote_count: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ProposalBuilder {
@@ -152,8 +152,7 @@ impl ProposalBuilder {
     }
     /// <p>The unique identifier of the proposal.</p>
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proposal_id = input;
-        self
+        self.proposal_id = input; self
     }
     /// <p>The unique identifier of the proposal.</p>
     pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +165,7 @@ impl ProposalBuilder {
     }
     /// <p>The unique identifier of the network for which the proposal is made.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p>The unique identifier of the network for which the proposal is made.</p>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +178,7 @@ impl ProposalBuilder {
     }
     /// <p>The description of the proposal.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the proposal.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +191,7 @@ impl ProposalBuilder {
     }
     /// <p>The actions to perform on the network if the proposal is <code>APPROVED</code>.</p>
     pub fn set_actions(mut self, input: ::std::option::Option<crate::types::ProposalActions>) -> Self {
-        self.actions = input;
-        self
+        self.actions = input; self
     }
     /// <p>The actions to perform on the network if the proposal is <code>APPROVED</code>.</p>
     pub fn get_actions(&self) -> &::std::option::Option<crate::types::ProposalActions> {
@@ -208,8 +204,7 @@ impl ProposalBuilder {
     }
     /// <p>The unique identifier of the member that created the proposal.</p>
     pub fn set_proposed_by_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proposed_by_member_id = input;
-        self
+        self.proposed_by_member_id = input; self
     }
     /// <p>The unique identifier of the member that created the proposal.</p>
     pub fn get_proposed_by_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +217,7 @@ impl ProposalBuilder {
     }
     /// <p>The name of the member that created the proposal.</p>
     pub fn set_proposed_by_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proposed_by_member_name = input;
-        self
+        self.proposed_by_member_name = input; self
     }
     /// <p>The name of the member that created the proposal.</p>
     pub fn get_proposed_by_member_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +254,7 @@ impl ProposalBuilder {
     /// <p><code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only one ProposalAction fails and other actions are successful.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProposalStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
@@ -286,8 +279,7 @@ impl ProposalBuilder {
     }
     /// <p>The date and time that the proposal was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time that the proposal was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -300,8 +292,7 @@ impl ProposalBuilder {
     }
     /// <p>The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_date = input;
-        self
+        self.expiration_date = input; self
     }
     /// <p>The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out.</p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -314,8 +305,7 @@ impl ProposalBuilder {
     }
     /// <p>The current total of <code>YES</code> votes cast on the proposal by members.</p>
     pub fn set_yes_vote_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.yes_vote_count = input;
-        self
+        self.yes_vote_count = input; self
     }
     /// <p>The current total of <code>YES</code> votes cast on the proposal by members.</p>
     pub fn get_yes_vote_count(&self) -> &::std::option::Option<i32> {
@@ -328,8 +318,7 @@ impl ProposalBuilder {
     }
     /// <p>The current total of <code>NO</code> votes cast on the proposal by members.</p>
     pub fn set_no_vote_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.no_vote_count = input;
-        self
+        self.no_vote_count = input; self
     }
     /// <p>The current total of <code>NO</code> votes cast on the proposal by members.</p>
     pub fn get_no_vote_count(&self) -> &::std::option::Option<i32> {
@@ -342,8 +331,7 @@ impl ProposalBuilder {
     }
     /// <p>The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes.</p>
     pub fn set_outstanding_vote_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.outstanding_vote_count = input;
-        self
+        self.outstanding_vote_count = input; self
     }
     /// <p>The number of votes remaining to be cast on the proposal by members. In other words, the number of members minus the sum of <code>YES</code> votes and <code>NO</code> votes.</p>
     pub fn get_outstanding_vote_count(&self) -> &::std::option::Option<i32> {
@@ -357,19 +345,18 @@ impl ProposalBuilder {
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags assigned to the proposal. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -379,8 +366,7 @@ impl ProposalBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -389,20 +375,35 @@ impl ProposalBuilder {
     /// Consumes the builder and constructs a [`Proposal`](crate::types::Proposal).
     pub fn build(self) -> crate::types::Proposal {
         crate::types::Proposal {
-            proposal_id: self.proposal_id,
-            network_id: self.network_id,
-            description: self.description,
-            actions: self.actions,
-            proposed_by_member_id: self.proposed_by_member_id,
-            proposed_by_member_name: self.proposed_by_member_name,
-            status: self.status,
-            creation_date: self.creation_date,
-            expiration_date: self.expiration_date,
-            yes_vote_count: self.yes_vote_count,
-            no_vote_count: self.no_vote_count,
-            outstanding_vote_count: self.outstanding_vote_count,
-            tags: self.tags,
-            arn: self.arn,
+            proposal_id: self.proposal_id
+            ,
+            network_id: self.network_id
+            ,
+            description: self.description
+            ,
+            actions: self.actions
+            ,
+            proposed_by_member_id: self.proposed_by_member_id
+            ,
+            proposed_by_member_name: self.proposed_by_member_name
+            ,
+            status: self.status
+            ,
+            creation_date: self.creation_date
+            ,
+            expiration_date: self.expiration_date
+            ,
+            yes_vote_count: self.yes_vote_count
+            ,
+            no_vote_count: self.no_vote_count
+            ,
+            outstanding_vote_count: self.outstanding_vote_count
+            ,
+            tags: self.tags
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

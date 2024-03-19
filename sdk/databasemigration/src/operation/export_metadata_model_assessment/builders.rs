@@ -5,54 +5,50 @@ pub use crate::operation::export_metadata_model_assessment::_export_metadata_mod
 
 impl ExportMetadataModelAssessmentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.export_metadata_model_assessment();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.export_metadata_model_assessment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ExportMetadataModelAssessment`.
-///
+/// 
 /// <p>Saves a copy of a database migration assessment report to your Amazon S3 bucket. DMS can save your assessment report as a comma-separated value (CSV) or a PDF file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportMetadataModelAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::export_metadata_model_assessment::builders::ExportMetadataModelAssessmentInputBuilder,
+                    inner: crate::operation::export_metadata_model_assessment::builders::ExportMetadataModelAssessmentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput,
-        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError,
-    > for ExportMetadataModelAssessmentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput,
-            crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput,
+                    crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError,
+                > for ExportMetadataModelAssessmentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput,
+                        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ExportMetadataModelAssessmentFluentBuilder {
     /// Creates a new `ExportMetadataModelAssessment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl ExportMetadataModelAssessmentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessment::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessment::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput,
-        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessment::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessment::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentOutput, crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.migration_project_identifier(input.into());
@@ -160,12 +147,13 @@ impl ExportMetadataModelAssessmentFluentBuilder {
         self
     }
     /// <p>The file format of the assessment file.</p>
-    pub fn set_assessment_report_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportType>>) -> Self {
+    pub fn set_assessment_report_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentReportType>>) -> Self {
         self.inner = self.inner.set_assessment_report_types(input);
         self
     }
     /// <p>The file format of the assessment file.</p>
-    pub fn get_assessment_report_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportType>> {
+    pub fn get_assessment_report_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentReportType>> {
         self.inner.get_assessment_report_types()
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReferences`](crate::operation::list_references::builders::ListReferencesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_references::builders::ListReferencesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`reference_store_id(impl Into<String>)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::set_reference_store_id):<br>required: **true**<br><p>The references' reference store ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of references to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(ReferenceFilter)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::filter) / [`set_filter(Option<ReferenceFilter>)`](crate::operation::list_references::builders::ListReferencesFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput) with field(s):
+                            /// - On success, responds with [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_references::ListReferencesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`references(Vec::<ReferenceListItem>)`](crate::operation::list_references::ListReferencesOutput::references): <p>A list of references.</p>
-    /// - On failure, responds with [`SdkError<ListReferencesError>`](crate::operation::list_references::ListReferencesError)
+                            /// - On failure, responds with [`SdkError<ListReferencesError>`](crate::operation::list_references::ListReferencesError)
     pub fn list_references(&self) -> crate::operation::list_references::builders::ListReferencesFluentBuilder {
-        crate::operation::list_references::builders::ListReferencesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_references::builders::ListReferencesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

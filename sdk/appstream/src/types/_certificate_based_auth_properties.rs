@@ -3,19 +3,19 @@
 /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateBasedAuthProperties {
+pub struct CertificateBasedAuthProperties  {
     /// <p>The status of the certificate-based authentication properties.</p>
     pub status: ::std::option::Option<crate::types::CertificateBasedAuthStatus>,
     /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
-impl CertificateBasedAuthProperties {
+impl  CertificateBasedAuthProperties  {
     /// <p>The status of the certificate-based authentication properties.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateBasedAuthStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CertificateBasedAuthStatus> {
         self.status.as_ref()
     }
     /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CertificateBasedAuthPropertiesBuilder {
     }
     /// <p>The status of the certificate-based authentication properties.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateBasedAuthStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the certificate-based authentication properties.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthStatus> {
@@ -55,8 +54,7 @@ impl CertificateBasedAuthPropertiesBuilder {
     }
     /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CertificateBasedAuthPropertiesBuilder {
     /// Consumes the builder and constructs a [`CertificateBasedAuthProperties`](crate::types::CertificateBasedAuthProperties).
     pub fn build(self) -> crate::types::CertificateBasedAuthProperties {
         crate::types::CertificateBasedAuthProperties {
-            status: self.status,
-            certificate_authority_arn: self.certificate_authority_arn,
+            status: self.status
+            ,
+            certificate_authority_arn: self.certificate_authority_arn
+            ,
         }
     }
 }
+

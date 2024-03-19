@@ -3,7 +3,7 @@
 /// Summary information of an ingestion job.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionJobSummary {
+pub struct IngestionJobSummary  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::string::String,
     /// Identifier for a resource.
@@ -21,40 +21,37 @@ pub struct IngestionJobSummary {
     /// The document level statistics of an ingestion job
     pub statistics: ::std::option::Option<crate::types::IngestionJobStatistics>,
 }
-impl IngestionJobSummary {
+impl  IngestionJobSummary  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// Identifier for a resource.
-    pub fn data_source_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_id.deref()
+    pub fn data_source_id(&self) -> & str {
+        use std::ops::Deref; self.data_source_id.deref()
     }
     /// Identifier for a resource.
-    pub fn ingestion_job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ingestion_job_id.deref()
+    pub fn ingestion_job_id(&self) -> & str {
+        use std::ops::Deref; self.ingestion_job_id.deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The status of an ingestion job.
-    pub fn status(&self) -> &crate::types::IngestionJobStatus {
+    pub fn status(&self) -> & crate::types::IngestionJobStatus {
         &self.status
     }
     /// Time Stamp.
-    pub fn started_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn started_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.started_at
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// The document level statistics of an ingestion job
-    pub fn statistics(&self) -> ::std::option::Option<&crate::types::IngestionJobStatistics> {
+    pub fn statistics(&self) -> ::std::option::Option<& crate::types::IngestionJobStatistics> {
         self.statistics.as_ref()
     }
 }
@@ -87,8 +84,7 @@ impl IngestionJobSummaryBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl IngestionJobSummaryBuilder {
     }
     /// Identifier for a resource.
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl IngestionJobSummaryBuilder {
     }
     /// Identifier for a resource.
     pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingestion_job_id = input;
-        self
+        self.ingestion_job_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_ingestion_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +125,7 @@ impl IngestionJobSummaryBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +139,7 @@ impl IngestionJobSummaryBuilder {
     }
     /// The status of an ingestion job.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// The status of an ingestion job.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionJobStatus> {
@@ -161,8 +153,7 @@ impl IngestionJobSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// Time Stamp.
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -176,8 +167,7 @@ impl IngestionJobSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -190,8 +180,7 @@ impl IngestionJobSummaryBuilder {
     }
     /// The document level statistics of an ingestion job
     pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::IngestionJobStatistics>) -> Self {
-        self.statistics = input;
-        self
+        self.statistics = input; self
     }
     /// The document level statistics of an ingestion job
     pub fn get_statistics(&self) -> &::std::option::Option<crate::types::IngestionJobStatistics> {
@@ -206,45 +195,44 @@ impl IngestionJobSummaryBuilder {
     /// - [`started_at`](crate::types::builders::IngestionJobSummaryBuilder::started_at)
     /// - [`updated_at`](crate::types::builders::IngestionJobSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::IngestionJobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IngestionJobSummary {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building IngestionJobSummary",
-                )
-            })?,
-            data_source_id: self.data_source_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_id",
-                    "data_source_id was not specified but it is required when building IngestionJobSummary",
-                )
-            })?,
-            ingestion_job_id: self.ingestion_job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ingestion_job_id",
-                    "ingestion_job_id was not specified but it is required when building IngestionJobSummary",
-                )
-            })?,
-            description: self.description,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building IngestionJobSummary",
-                )
-            })?,
-            started_at: self.started_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "started_at",
-                    "started_at was not specified but it is required when building IngestionJobSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building IngestionJobSummary",
-                )
-            })?,
-            statistics: self.statistics,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IngestionJobSummary {
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building IngestionJobSummary")
+                    )?
+                ,
+                data_source_id: self.data_source_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_id", "data_source_id was not specified but it is required when building IngestionJobSummary")
+                    )?
+                ,
+                ingestion_job_id: self.ingestion_job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ingestion_job_id", "ingestion_job_id was not specified but it is required when building IngestionJobSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building IngestionJobSummary")
+                    )?
+                ,
+                started_at: self.started_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("started_at", "started_at was not specified but it is required when building IngestionJobSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building IngestionJobSummary")
+                    )?
+                ,
+                statistics: self.statistics
+                ,
+            }
+        )
     }
 }
+

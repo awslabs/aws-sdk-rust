@@ -3,13 +3,13 @@
 /// <p>Contains information about an access preview.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessPreview {
+pub struct AccessPreview  {
     /// <p>The unique ID for the access preview.</p>
     pub id: ::std::string::String,
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
     pub analyzer_arn: ::std::string::String,
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-    pub configurations: ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
+    pub configurations: ::std::collections::HashMap::<::std::string::String, crate::types::Configuration>,
     /// <p>The time at which the access preview was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The status of the access preview.</p>
@@ -26,23 +26,21 @@ pub struct AccessPreview {
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     pub status_reason: ::std::option::Option<crate::types::AccessPreviewStatusReason>,
 }
-impl AccessPreview {
+impl  AccessPreview  {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
-    pub fn analyzer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_arn.deref()
+    pub fn analyzer_arn(&self) -> & str {
+        use std::ops::Deref; self.analyzer_arn.deref()
     }
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-    pub fn configurations(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::Configuration> {
+    pub fn configurations(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::Configuration> {
         &self.configurations
     }
     /// <p>The time at which the access preview was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The status of the access preview.</p>
@@ -54,12 +52,12 @@ impl AccessPreview {
     /// <li>
     /// <p><code>Failed</code> - The access preview creation has failed.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::AccessPreviewStatus {
+    pub fn status(&self) -> & crate::types::AccessPreviewStatus {
         &self.status
     }
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::AccessPreviewStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<& crate::types::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
     }
 }
@@ -76,7 +74,7 @@ impl AccessPreview {
 pub struct AccessPreviewBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
+    pub(crate) configurations: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AccessPreviewStatus>,
     pub(crate) status_reason: ::std::option::Option<crate::types::AccessPreviewStatusReason>,
@@ -90,8 +88,7 @@ impl AccessPreviewBuilder {
     }
     /// <p>The unique ID for the access preview.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID for the access preview.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl AccessPreviewBuilder {
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyzer_arn = input;
-        self
+        self.analyzer_arn = input; self
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
     pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,20 +115,16 @@ impl AccessPreviewBuilder {
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
     pub fn configurations(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Configuration) -> Self {
         let mut hash_map = self.configurations.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.configurations = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.configurations = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
-    ) -> Self {
-        self.configurations = input;
-        self
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>>) -> Self {
+        self.configurations = input; self
     }
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>> {
         &self.configurations
     }
     /// <p>The time at which the access preview was created.</p>
@@ -143,8 +135,7 @@ impl AccessPreviewBuilder {
     }
     /// <p>The time at which the access preview was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the access preview was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +165,7 @@ impl AccessPreviewBuilder {
     /// <p><code>Failed</code> - The access preview creation has failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccessPreviewStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the access preview.</p>
     /// <ul>
@@ -198,8 +188,7 @@ impl AccessPreviewBuilder {
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::AccessPreviewStatusReason>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
@@ -214,38 +203,37 @@ impl AccessPreviewBuilder {
     /// - [`created_at`](crate::types::builders::AccessPreviewBuilder::created_at)
     /// - [`status`](crate::types::builders::AccessPreviewBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessPreview, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessPreview {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AccessPreview",
-                )
-            })?,
-            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analyzer_arn",
-                    "analyzer_arn was not specified but it is required when building AccessPreview",
-                )
-            })?,
-            configurations: self.configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configurations",
-                    "configurations was not specified but it is required when building AccessPreview",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AccessPreview",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AccessPreview",
-                )
-            })?,
-            status_reason: self.status_reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessPreview {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AccessPreview")
+                    )?
+                ,
+                analyzer_arn: self.analyzer_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analyzer_arn", "analyzer_arn was not specified but it is required when building AccessPreview")
+                    )?
+                ,
+                configurations: self.configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configurations", "configurations was not specified but it is required when building AccessPreview")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AccessPreview")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AccessPreview")
+                    )?
+                ,
+                status_reason: self.status_reason
+                ,
+            }
+        )
     }
 }
+

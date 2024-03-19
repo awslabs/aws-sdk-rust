@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokeSubscriptionInput {
+pub struct RevokeSubscriptionInput  {
     /// <p>The identifier of the Amazon DataZone domain where you want to revoke a subscription.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the revoked subscription.</p>
@@ -10,13 +10,13 @@ pub struct RevokeSubscriptionInput {
     /// <p>Specifies whether permissions are retained when the subscription is revoked.</p>
     pub retain_permissions: ::std::option::Option<bool>,
 }
-impl RevokeSubscriptionInput {
+impl  RevokeSubscriptionInput  {
     /// <p>The identifier of the Amazon DataZone domain where you want to revoke a subscription.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the revoked subscription.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>Specifies whether permissions are retained when the subscription is revoked.</p>
@@ -48,8 +48,7 @@ impl RevokeSubscriptionInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain where you want to revoke a subscription.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain where you want to revoke a subscription.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RevokeSubscriptionInputBuilder {
     }
     /// <p>The identifier of the revoked subscription.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the revoked subscription.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl RevokeSubscriptionInputBuilder {
     }
     /// <p>Specifies whether permissions are retained when the subscription is revoked.</p>
     pub fn set_retain_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.retain_permissions = input;
-        self
+        self.retain_permissions = input; self
     }
     /// <p>Specifies whether permissions are retained when the subscription is revoked.</p>
     pub fn get_retain_permissions(&self) -> &::std::option::Option<bool> {
         &self.retain_permissions
     }
     /// Consumes the builder and constructs a [`RevokeSubscriptionInput`](crate::operation::revoke_subscription::RevokeSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::revoke_subscription::RevokeSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::revoke_subscription::RevokeSubscriptionInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            retain_permissions: self.retain_permissions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_subscription::RevokeSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::revoke_subscription::RevokeSubscriptionInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                retain_permissions: self.retain_permissions
+                ,
+            }
+        )
     }
 }
+

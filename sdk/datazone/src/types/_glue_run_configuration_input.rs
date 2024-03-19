@@ -3,21 +3,20 @@
 /// <p>The configuration details of the Amazon Web Services Glue data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlueRunConfigurationInput {
+pub struct GlueRunConfigurationInput  {
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub data_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub relational_filter_configurations: ::std::vec::Vec<crate::types::RelationalFilterConfiguration>,
+    pub relational_filter_configurations: ::std::vec::Vec::<crate::types::RelationalFilterConfiguration>,
 }
-impl GlueRunConfigurationInput {
+impl  GlueRunConfigurationInput  {
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn data_access_role(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role(&self) -> ::std::option::Option<& str> {
         self.data_access_role.as_deref()
     }
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn relational_filter_configurations(&self) -> &[crate::types::RelationalFilterConfiguration] {
-        use std::ops::Deref;
-        self.relational_filter_configurations.deref()
+    pub fn relational_filter_configurations(&self) -> & [crate::types::RelationalFilterConfiguration] {
+        use std::ops::Deref; self.relational_filter_configurations.deref()
     }
 }
 impl GlueRunConfigurationInput {
@@ -32,7 +31,7 @@ impl GlueRunConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlueRunConfigurationInputBuilder {
     pub(crate) data_access_role: ::std::option::Option<::std::string::String>,
-    pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
+    pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>>,
 }
 impl GlueRunConfigurationInputBuilder {
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
@@ -42,8 +41,7 @@ impl GlueRunConfigurationInputBuilder {
     }
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn set_data_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role = input;
-        self
+        self.data_access_role = input; self
     }
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn get_data_access_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,34 +54,33 @@ impl GlueRunConfigurationInputBuilder {
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn relational_filter_configurations(mut self, input: crate::types::RelationalFilterConfiguration) -> Self {
         let mut v = self.relational_filter_configurations.unwrap_or_default();
-        v.push(input);
-        self.relational_filter_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.relational_filter_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn set_relational_filter_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
-    ) -> Self {
-        self.relational_filter_configurations = input;
-        self
+    pub fn set_relational_filter_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>>) -> Self {
+        self.relational_filter_configurations = input; self
     }
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn get_relational_filter_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>> {
+    pub fn get_relational_filter_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>> {
         &self.relational_filter_configurations
     }
     /// Consumes the builder and constructs a [`GlueRunConfigurationInput`](crate::types::GlueRunConfigurationInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`relational_filter_configurations`](crate::types::builders::GlueRunConfigurationInputBuilder::relational_filter_configurations)
     pub fn build(self) -> ::std::result::Result<crate::types::GlueRunConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GlueRunConfigurationInput {
-            data_access_role: self.data_access_role,
-            relational_filter_configurations: self.relational_filter_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "relational_filter_configurations",
-                    "relational_filter_configurations was not specified but it is required when building GlueRunConfigurationInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GlueRunConfigurationInput {
+                data_access_role: self.data_access_role
+                ,
+                relational_filter_configurations: self.relational_filter_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("relational_filter_configurations", "relational_filter_configurations was not specified but it is required when building GlueRunConfigurationInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssetModelCompositeModelOutput {
+pub struct DescribeAssetModelCompositeModelOutput  {
     /// <p>The ID of the asset model, in UUID format.</p>
     pub asset_model_id: ::std::string::String,
     /// <p>The ID of a composite model on this asset model.</p>
@@ -10,7 +10,7 @@ pub struct DescribeAssetModelCompositeModelOutput {
     /// <p>The external ID of a composite model on this asset model.</p>
     pub asset_model_composite_model_external_id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the composite model listing the parent composite models.</p>
-    pub asset_model_composite_model_path: ::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>,
+    pub asset_model_composite_model_path: ::std::vec::Vec::<crate::types::AssetModelCompositeModelPathSegment>,
     /// <p>The unique, friendly name for the composite model.</p>
     pub asset_model_composite_model_name: ::std::string::String,
     /// <p>The description for the composite model.</p>
@@ -18,76 +18,69 @@ pub struct DescribeAssetModelCompositeModelOutput {
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub asset_model_composite_model_type: ::std::string::String,
     /// <p>The property definitions of the composite model.</p>
-    pub asset_model_composite_model_properties: ::std::vec::Vec<crate::types::AssetModelProperty>,
+    pub asset_model_composite_model_properties: ::std::vec::Vec::<crate::types::AssetModelProperty>,
     /// <p>Metadata for the composition relationship established by using <code>composedAssetModelId</code> in <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"> <code>CreateAssetModelCompositeModel</code> </a>. For instance, an array detailing the path of the composition relationship for this composite model.</p>
     pub composition_details: ::std::option::Option<crate::types::CompositionDetails>,
     /// <p>The list of composite model summaries for the composite model.</p>
-    pub asset_model_composite_model_summaries: ::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>,
+    pub asset_model_composite_model_summaries: ::std::vec::Vec::<crate::types::AssetModelCompositeModelSummary>,
     /// <p>The available actions for a composite model on this asset model.</p>
-    pub action_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ActionDefinition>>,
+    pub action_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::ActionDefinition>>,
     _request_id: Option<String>,
 }
-impl DescribeAssetModelCompositeModelOutput {
+impl  DescribeAssetModelCompositeModelOutput  {
     /// <p>The ID of the asset model, in UUID format.</p>
-    pub fn asset_model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_id.deref()
+    pub fn asset_model_id(&self) -> & str {
+        use std::ops::Deref; self.asset_model_id.deref()
     }
     /// <p>The ID of a composite model on this asset model.</p>
-    pub fn asset_model_composite_model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_composite_model_id.deref()
+    pub fn asset_model_composite_model_id(&self) -> & str {
+        use std::ops::Deref; self.asset_model_composite_model_id.deref()
     }
     /// <p>The external ID of a composite model on this asset model.</p>
-    pub fn asset_model_composite_model_external_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_composite_model_external_id(&self) -> ::std::option::Option<& str> {
         self.asset_model_composite_model_external_id.as_deref()
     }
     /// <p>The path to the composite model listing the parent composite models.</p>
-    pub fn asset_model_composite_model_path(&self) -> &[crate::types::AssetModelCompositeModelPathSegment] {
-        use std::ops::Deref;
-        self.asset_model_composite_model_path.deref()
+    pub fn asset_model_composite_model_path(&self) -> & [crate::types::AssetModelCompositeModelPathSegment] {
+        use std::ops::Deref; self.asset_model_composite_model_path.deref()
     }
     /// <p>The unique, friendly name for the composite model.</p>
-    pub fn asset_model_composite_model_name(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_composite_model_name.deref()
+    pub fn asset_model_composite_model_name(&self) -> & str {
+        use std::ops::Deref; self.asset_model_composite_model_name.deref()
     }
     /// <p>The description for the composite model.</p>
-    pub fn asset_model_composite_model_description(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_composite_model_description.deref()
+    pub fn asset_model_composite_model_description(&self) -> & str {
+        use std::ops::Deref; self.asset_model_composite_model_description.deref()
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
-    pub fn asset_model_composite_model_type(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_composite_model_type.deref()
+    pub fn asset_model_composite_model_type(&self) -> & str {
+        use std::ops::Deref; self.asset_model_composite_model_type.deref()
     }
     /// <p>The property definitions of the composite model.</p>
-    pub fn asset_model_composite_model_properties(&self) -> &[crate::types::AssetModelProperty] {
-        use std::ops::Deref;
-        self.asset_model_composite_model_properties.deref()
+    pub fn asset_model_composite_model_properties(&self) -> & [crate::types::AssetModelProperty] {
+        use std::ops::Deref; self.asset_model_composite_model_properties.deref()
     }
     /// <p>Metadata for the composition relationship established by using <code>composedAssetModelId</code> in <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"> <code>CreateAssetModelCompositeModel</code> </a>. For instance, an array detailing the path of the composition relationship for this composite model.</p>
-    pub fn composition_details(&self) -> ::std::option::Option<&crate::types::CompositionDetails> {
+    pub fn composition_details(&self) -> ::std::option::Option<& crate::types::CompositionDetails> {
         self.composition_details.as_ref()
     }
     /// <p>The list of composite model summaries for the composite model.</p>
-    pub fn asset_model_composite_model_summaries(&self) -> &[crate::types::AssetModelCompositeModelSummary] {
-        use std::ops::Deref;
-        self.asset_model_composite_model_summaries.deref()
+    pub fn asset_model_composite_model_summaries(&self) -> & [crate::types::AssetModelCompositeModelSummary] {
+        use std::ops::Deref; self.asset_model_composite_model_summaries.deref()
     }
     /// <p>The available actions for a composite model on this asset model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_definitions.is_none()`.
-    pub fn action_definitions(&self) -> &[crate::types::ActionDefinition] {
-        self.action_definitions.as_deref().unwrap_or_default()
+    pub fn action_definitions(&self) -> & [crate::types::ActionDefinition] {
+        self.action_definitions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssetModelCompositeModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAssetModelCompositeModelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetModelCompositeModelOutput`](crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelOutput).
     pub fn builder() -> crate::operation::describe_asset_model_composite_model::builders::DescribeAssetModelCompositeModelOutputBuilder {
@@ -102,14 +95,14 @@ pub struct DescribeAssetModelCompositeModelOutputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_external_id: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_model_composite_model_path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,
+    pub(crate) asset_model_composite_model_path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelPathSegment>>,
     pub(crate) asset_model_composite_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_description: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_type: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
+    pub(crate) asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelProperty>>,
     pub(crate) composition_details: ::std::option::Option<crate::types::CompositionDetails>,
-    pub(crate) asset_model_composite_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>>,
-    pub(crate) action_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ActionDefinition>>,
+    pub(crate) asset_model_composite_model_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelSummary>>,
+    pub(crate) action_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::ActionDefinition>>,
     _request_id: Option<String>,
 }
 impl DescribeAssetModelCompositeModelOutputBuilder {
@@ -121,8 +114,7 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     }
     /// <p>The ID of the asset model, in UUID format.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_id = input;
-        self
+        self.asset_model_id = input; self
     }
     /// <p>The ID of the asset model, in UUID format.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +128,7 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     }
     /// <p>The ID of a composite model on this asset model.</p>
     pub fn set_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_id = input;
-        self
+        self.asset_model_composite_model_id = input; self
     }
     /// <p>The ID of a composite model on this asset model.</p>
     pub fn get_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +141,7 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     }
     /// <p>The external ID of a composite model on this asset model.</p>
     pub fn set_asset_model_composite_model_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_external_id = input;
-        self
+        self.asset_model_composite_model_external_id = input; self
     }
     /// <p>The external ID of a composite model on this asset model.</p>
     pub fn get_asset_model_composite_model_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,20 +154,16 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     /// <p>The path to the composite model listing the parent composite models.</p>
     pub fn asset_model_composite_model_path(mut self, input: crate::types::AssetModelCompositeModelPathSegment) -> Self {
         let mut v = self.asset_model_composite_model_path.unwrap_or_default();
-        v.push(input);
-        self.asset_model_composite_model_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_model_composite_model_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The path to the composite model listing the parent composite models.</p>
-    pub fn set_asset_model_composite_model_path(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,
-    ) -> Self {
-        self.asset_model_composite_model_path = input;
-        self
+    pub fn set_asset_model_composite_model_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelPathSegment>>) -> Self {
+        self.asset_model_composite_model_path = input; self
     }
     /// <p>The path to the composite model listing the parent composite models.</p>
-    pub fn get_asset_model_composite_model_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>> {
+    pub fn get_asset_model_composite_model_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelPathSegment>> {
         &self.asset_model_composite_model_path
     }
     /// <p>The unique, friendly name for the composite model.</p>
@@ -188,8 +174,7 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     }
     /// <p>The unique, friendly name for the composite model.</p>
     pub fn set_asset_model_composite_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_name = input;
-        self
+        self.asset_model_composite_model_name = input; self
     }
     /// <p>The unique, friendly name for the composite model.</p>
     pub fn get_asset_model_composite_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +188,7 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     }
     /// <p>The description for the composite model.</p>
     pub fn set_asset_model_composite_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_description = input;
-        self
+        self.asset_model_composite_model_description = input; self
     }
     /// <p>The description for the composite model.</p>
     pub fn get_asset_model_composite_model_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +202,7 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn set_asset_model_composite_model_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_type = input;
-        self
+        self.asset_model_composite_model_type = input; self
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn get_asset_model_composite_model_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,20 +215,16 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     /// <p>The property definitions of the composite model.</p>
     pub fn asset_model_composite_model_properties(mut self, input: crate::types::AssetModelProperty) -> Self {
         let mut v = self.asset_model_composite_model_properties.unwrap_or_default();
-        v.push(input);
-        self.asset_model_composite_model_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_model_composite_model_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The property definitions of the composite model.</p>
-    pub fn set_asset_model_composite_model_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
-    ) -> Self {
-        self.asset_model_composite_model_properties = input;
-        self
+    pub fn set_asset_model_composite_model_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelProperty>>) -> Self {
+        self.asset_model_composite_model_properties = input; self
     }
     /// <p>The property definitions of the composite model.</p>
-    pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
+    pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelProperty>> {
         &self.asset_model_composite_model_properties
     }
     /// <p>Metadata for the composition relationship established by using <code>composedAssetModelId</code> in <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"> <code>CreateAssetModelCompositeModel</code> </a>. For instance, an array detailing the path of the composition relationship for this composite model.</p>
@@ -255,8 +234,7 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     }
     /// <p>Metadata for the composition relationship established by using <code>composedAssetModelId</code> in <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"> <code>CreateAssetModelCompositeModel</code> </a>. For instance, an array detailing the path of the composition relationship for this composite model.</p>
     pub fn set_composition_details(mut self, input: ::std::option::Option<crate::types::CompositionDetails>) -> Self {
-        self.composition_details = input;
-        self
+        self.composition_details = input; self
     }
     /// <p>Metadata for the composition relationship established by using <code>composedAssetModelId</code> in <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"> <code>CreateAssetModelCompositeModel</code> </a>. For instance, an array detailing the path of the composition relationship for this composite model.</p>
     pub fn get_composition_details(&self) -> &::std::option::Option<crate::types::CompositionDetails> {
@@ -269,22 +247,16 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     /// <p>The list of composite model summaries for the composite model.</p>
     pub fn asset_model_composite_model_summaries(mut self, input: crate::types::AssetModelCompositeModelSummary) -> Self {
         let mut v = self.asset_model_composite_model_summaries.unwrap_or_default();
-        v.push(input);
-        self.asset_model_composite_model_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_model_composite_model_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of composite model summaries for the composite model.</p>
-    pub fn set_asset_model_composite_model_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>>,
-    ) -> Self {
-        self.asset_model_composite_model_summaries = input;
-        self
+    pub fn set_asset_model_composite_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelSummary>>) -> Self {
+        self.asset_model_composite_model_summaries = input; self
     }
     /// <p>The list of composite model summaries for the composite model.</p>
-    pub fn get_asset_model_composite_model_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>> {
+    pub fn get_asset_model_composite_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelCompositeModelSummary>> {
         &self.asset_model_composite_model_summaries
     }
     /// Appends an item to `action_definitions`.
@@ -294,28 +266,27 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     /// <p>The available actions for a composite model on this asset model.</p>
     pub fn action_definitions(mut self, input: crate::types::ActionDefinition) -> Self {
         let mut v = self.action_definitions.unwrap_or_default();
-        v.push(input);
-        self.action_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.action_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The available actions for a composite model on this asset model.</p>
-    pub fn set_action_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionDefinition>>) -> Self {
-        self.action_definitions = input;
-        self
+    pub fn set_action_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionDefinition>>) -> Self {
+        self.action_definitions = input; self
     }
     /// <p>The available actions for a composite model on this asset model.</p>
-    pub fn get_action_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionDefinition>> {
+    pub fn get_action_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionDefinition>> {
         &self.action_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAssetModelCompositeModelOutput`](crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_model_id`](crate::operation::describe_asset_model_composite_model::builders::DescribeAssetModelCompositeModelOutputBuilder::asset_model_id)
@@ -326,12 +297,7 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
     /// - [`asset_model_composite_model_type`](crate::operation::describe_asset_model_composite_model::builders::DescribeAssetModelCompositeModelOutputBuilder::asset_model_composite_model_type)
     /// - [`asset_model_composite_model_properties`](crate::operation::describe_asset_model_composite_model::builders::DescribeAssetModelCompositeModelOutputBuilder::asset_model_composite_model_properties)
     /// - [`asset_model_composite_model_summaries`](crate::operation::describe_asset_model_composite_model::builders::DescribeAssetModelCompositeModelOutputBuilder::asset_model_composite_model_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_asset_model_composite_model::DescribeAssetModelCompositeModelOutput {
                 asset_model_id: self.asset_model_id
@@ -385,3 +351,4 @@ impl DescribeAssetModelCompositeModelOutputBuilder {
         )
     }
 }
+

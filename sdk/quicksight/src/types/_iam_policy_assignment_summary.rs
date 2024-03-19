@@ -3,19 +3,19 @@
 /// <p>IAM policy assignment summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamPolicyAssignmentSummary {
+pub struct IamPolicyAssignmentSummary  {
     /// <p>Assignment name.</p>
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>Assignment status.</p>
     pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
 }
-impl IamPolicyAssignmentSummary {
+impl  IamPolicyAssignmentSummary  {
     /// <p>Assignment name.</p>
-    pub fn assignment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assignment_name(&self) -> ::std::option::Option<& str> {
         self.assignment_name.as_deref()
     }
     /// <p>Assignment status.</p>
-    pub fn assignment_status(&self) -> ::std::option::Option<&crate::types::AssignmentStatus> {
+    pub fn assignment_status(&self) -> ::std::option::Option<& crate::types::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl IamPolicyAssignmentSummaryBuilder {
     }
     /// <p>Assignment name.</p>
     pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assignment_name = input;
-        self
+        self.assignment_name = input; self
     }
     /// <p>Assignment name.</p>
     pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl IamPolicyAssignmentSummaryBuilder {
     }
     /// <p>Assignment status.</p>
     pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatus>) -> Self {
-        self.assignment_status = input;
-        self
+        self.assignment_status = input; self
     }
     /// <p>Assignment status.</p>
     pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
@@ -65,8 +63,11 @@ impl IamPolicyAssignmentSummaryBuilder {
     /// Consumes the builder and constructs a [`IamPolicyAssignmentSummary`](crate::types::IamPolicyAssignmentSummary).
     pub fn build(self) -> crate::types::IamPolicyAssignmentSummary {
         crate::types::IamPolicyAssignmentSummary {
-            assignment_name: self.assignment_name,
-            assignment_status: self.assignment_status,
+            assignment_name: self.assignment_name
+            ,
+            assignment_status: self.assignment_status
+            ,
         }
     }
 }
+

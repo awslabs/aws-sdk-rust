@@ -3,15 +3,15 @@
 /// <p>The input for the DeprecateThingType operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeprecateThingTypeInput {
+pub struct DeprecateThingTypeInput  {
     /// <p>The name of the thing type to deprecate.</p>
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub undo_deprecate: ::std::option::Option<bool>,
 }
-impl DeprecateThingTypeInput {
+impl  DeprecateThingTypeInput  {
     /// <p>The name of the thing type to deprecate.</p>
-    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
@@ -42,8 +42,7 @@ impl DeprecateThingTypeInputBuilder {
     }
     /// <p>The name of the thing type to deprecate.</p>
     pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// <p>The name of the thing type to deprecate.</p>
     pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeprecateThingTypeInputBuilder {
     }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub fn set_undo_deprecate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.undo_deprecate = input;
-        self
+        self.undo_deprecate = input; self
     }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub fn get_undo_deprecate(&self) -> &::std::option::Option<bool> {
         &self.undo_deprecate
     }
     /// Consumes the builder and constructs a [`DeprecateThingTypeInput`](crate::operation::deprecate_thing_type::DeprecateThingTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deprecate_thing_type::DeprecateThingTypeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::deprecate_thing_type::DeprecateThingTypeInput {
-            thing_type_name: self.thing_type_name,
-            undo_deprecate: self.undo_deprecate,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deprecate_thing_type::DeprecateThingTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deprecate_thing_type::DeprecateThingTypeInput {
+                thing_type_name: self.thing_type_name
+                ,
+                undo_deprecate: self.undo_deprecate
+                ,
+            }
+        )
     }
 }
+

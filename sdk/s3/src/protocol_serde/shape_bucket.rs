@@ -37,3 +37,4 @@ pub fn de_bucket(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

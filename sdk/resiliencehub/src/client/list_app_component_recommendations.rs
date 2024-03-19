@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppComponentRecommendations`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`assessment_arn(impl Into<String>)`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::set_assessment_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Null, or the token from a previous call to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
-    /// - On success, responds with [`ListAppComponentRecommendationsOutput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput) with field(s):
+                            /// - On success, responds with [`ListAppComponentRecommendationsOutput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput) with field(s):
     ///   - [`component_recommendations(Vec::<ComponentRecommendation>)`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput::component_recommendations): <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListAppComponentRecommendationsError>`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError)
-    pub fn list_app_component_recommendations(
-        &self,
-    ) -> crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder {
-        crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAppComponentRecommendationsError>`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError)
+    pub fn list_app_component_recommendations(&self) -> crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder {
+                                crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

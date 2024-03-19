@@ -4,7 +4,7 @@
 /// <p>The DRA does not support automatic import or automatic export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileCacheDataRepositoryAssociation {
+pub struct FileCacheDataRepositoryAssociation  {
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p><note>
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
@@ -26,17 +26,17 @@ pub struct FileCacheDataRepositoryAssociation {
     /// </ul>
     pub data_repository_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    pub data_repository_subdirectories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub data_repository_subdirectories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
     pub nfs: ::std::option::Option<crate::types::FileCacheNfsConfiguration>,
 }
-impl FileCacheDataRepositoryAssociation {
+impl  FileCacheDataRepositoryAssociation  {
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p><note>
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
-    pub fn file_cache_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_cache_path(&self) -> ::std::option::Option<& str> {
         self.file_cache_path.as_deref()
     }
     /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
@@ -52,17 +52,18 @@ impl FileCacheDataRepositoryAssociation {
     /// <li>
     /// <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
-    pub fn data_repository_path(&self) -> ::std::option::Option<&str> {
+    pub fn data_repository_path(&self) -> ::std::option::Option<& str> {
         self.data_repository_path.as_deref()
     }
     /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_repository_subdirectories.is_none()`.
-    pub fn data_repository_subdirectories(&self) -> &[::std::string::String] {
-        self.data_repository_subdirectories.as_deref().unwrap_or_default()
+    pub fn data_repository_subdirectories(&self) -> & [::std::string::String] {
+        self.data_repository_subdirectories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
-    pub fn nfs(&self) -> ::std::option::Option<&crate::types::FileCacheNfsConfiguration> {
+    pub fn nfs(&self) -> ::std::option::Option<& crate::types::FileCacheNfsConfiguration> {
         self.nfs.as_ref()
     }
 }
@@ -79,7 +80,7 @@ impl FileCacheDataRepositoryAssociation {
 pub struct FileCacheDataRepositoryAssociationBuilder {
     pub(crate) file_cache_path: ::std::option::Option<::std::string::String>,
     pub(crate) data_repository_path: ::std::option::Option<::std::string::String>,
-    pub(crate) data_repository_subdirectories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_repository_subdirectories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) nfs: ::std::option::Option<crate::types::FileCacheNfsConfiguration>,
 }
 impl FileCacheDataRepositoryAssociationBuilder {
@@ -99,8 +100,7 @@ impl FileCacheDataRepositoryAssociationBuilder {
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
     pub fn set_file_cache_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_cache_path = input;
-        self
+        self.file_cache_path = input; self
     }
     /// <p>A path on the cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your cache files will be exported from. This cache directory can be linked to only one data repository, and no data repository other can be linked to the directory.</p><note>
@@ -142,8 +142,7 @@ impl FileCacheDataRepositoryAssociationBuilder {
     /// <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p></li>
     /// </ul>
     pub fn set_data_repository_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_repository_path = input;
-        self
+        self.data_repository_path = input; self
     }
     /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
     /// <ul>
@@ -168,17 +167,16 @@ impl FileCacheDataRepositoryAssociationBuilder {
     /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
     pub fn data_repository_subdirectories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_repository_subdirectories.unwrap_or_default();
-        v.push(input.into());
-        self.data_repository_subdirectories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.data_repository_subdirectories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    pub fn set_data_repository_subdirectories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.data_repository_subdirectories = input;
-        self
+    pub fn set_data_repository_subdirectories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.data_repository_subdirectories = input; self
     }
     /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    pub fn get_data_repository_subdirectories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_repository_subdirectories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.data_repository_subdirectories
     }
     /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
@@ -188,8 +186,7 @@ impl FileCacheDataRepositoryAssociationBuilder {
     }
     /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
     pub fn set_nfs(mut self, input: ::std::option::Option<crate::types::FileCacheNfsConfiguration>) -> Self {
-        self.nfs = input;
-        self
+        self.nfs = input; self
     }
     /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
     pub fn get_nfs(&self) -> &::std::option::Option<crate::types::FileCacheNfsConfiguration> {
@@ -198,10 +195,15 @@ impl FileCacheDataRepositoryAssociationBuilder {
     /// Consumes the builder and constructs a [`FileCacheDataRepositoryAssociation`](crate::types::FileCacheDataRepositoryAssociation).
     pub fn build(self) -> crate::types::FileCacheDataRepositoryAssociation {
         crate::types::FileCacheDataRepositoryAssociation {
-            file_cache_path: self.file_cache_path,
-            data_repository_path: self.data_repository_path,
-            data_repository_subdirectories: self.data_repository_subdirectories,
-            nfs: self.nfs,
+            file_cache_path: self.file_cache_path
+            ,
+            data_repository_path: self.data_repository_path
+            ,
+            data_repository_subdirectories: self.data_repository_subdirectories
+            ,
+            nfs: self.nfs
+            ,
         }
     }
 }
+

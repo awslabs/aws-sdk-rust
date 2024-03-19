@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetMapGlyphsInput {
+pub struct GetMapGlyphsInput  {
     /// <p>The map resource associated with the glyph ﬁle.</p>
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
@@ -44,9 +44,9 @@ pub struct GetMapGlyphsInput {
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl GetMapGlyphsInput {
+impl  GetMapGlyphsInput  {
     /// <p>The map resource associated with the glyph ﬁle.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<& str> {
         self.map_name.as_deref()
     }
     /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
@@ -82,19 +82,19 @@ impl GetMapGlyphsInput {
     /// </ul><note>
     /// <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p>
     /// </note>
-    pub fn font_stack(&self) -> ::std::option::Option<&str> {
+    pub fn font_stack(&self) -> ::std::option::Option<& str> {
         self.font_stack.as_deref()
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
-    pub fn font_unicode_range(&self) -> ::std::option::Option<&str> {
+    pub fn font_unicode_range(&self) -> ::std::option::Option<& str> {
         self.font_unicode_range.as_deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetMapGlyphsInput {
+impl  ::std::fmt::Debug for GetMapGlyphsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetMapGlyphsInput");
         formatter.field("map_name", &self.map_name);
@@ -129,8 +129,7 @@ impl GetMapGlyphsInputBuilder {
     }
     /// <p>The map resource associated with the glyph ﬁle.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The map resource associated with the glyph ﬁle.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +207,7 @@ impl GetMapGlyphsInputBuilder {
     /// <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p>
     /// </note>
     pub fn set_font_stack(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.font_stack = input;
-        self
+        self.font_stack = input; self
     }
     /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:</p>
@@ -255,8 +253,7 @@ impl GetMapGlyphsInputBuilder {
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
     pub fn set_font_unicode_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.font_unicode_range = input;
-        self
+        self.font_unicode_range = input; self
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
     pub fn get_font_unicode_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,23 +266,26 @@ impl GetMapGlyphsInputBuilder {
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetMapGlyphsInput`](crate::operation::get_map_glyphs::GetMapGlyphsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_map_glyphs::GetMapGlyphsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_map_glyphs::GetMapGlyphsInput {
-            map_name: self.map_name,
-            font_stack: self.font_stack,
-            font_unicode_range: self.font_unicode_range,
-            key: self.key,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_map_glyphs::GetMapGlyphsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_map_glyphs::GetMapGlyphsInput {
+                map_name: self.map_name
+                ,
+                font_stack: self.font_stack
+                ,
+                font_unicode_range: self.font_unicode_range
+                ,
+                key: self.key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetMapGlyphsInputBuilder {
@@ -298,3 +298,4 @@ impl ::std::fmt::Debug for GetMapGlyphsInputBuilder {
         formatter.finish()
     }
 }
+

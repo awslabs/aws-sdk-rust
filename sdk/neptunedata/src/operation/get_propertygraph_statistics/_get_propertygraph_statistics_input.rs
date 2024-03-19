@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPropertygraphStatisticsInput {}
+pub struct GetPropertygraphStatisticsInput  {
+}
 impl GetPropertygraphStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetPropertygraphStatisticsInput`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput).
     pub fn builder() -> crate::operation::get_propertygraph_statistics::builders::GetPropertygraphStatisticsInputBuilder {
@@ -13,15 +14,15 @@ impl GetPropertygraphStatisticsInput {
 /// A builder for [`GetPropertygraphStatisticsInput`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetPropertygraphStatisticsInputBuilder {}
+pub struct GetPropertygraphStatisticsInputBuilder {
+}
 impl GetPropertygraphStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetPropertygraphStatisticsInput`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput {
+            }
+        )
     }
 }
+

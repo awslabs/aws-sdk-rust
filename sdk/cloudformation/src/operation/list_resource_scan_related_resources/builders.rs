@@ -5,54 +5,50 @@ pub use crate::operation::list_resource_scan_related_resources::_list_resource_s
 
 impl ListResourceScanRelatedResourcesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_resource_scan_related_resources();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_resource_scan_related_resources();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListResourceScanRelatedResources`.
-///
+/// 
 /// <p>Lists the related resources for a list of resources from a resource scan. The response indicates whether each returned resource is already managed by CloudFormation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceScanRelatedResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesInputBuilder,
+                    inner: crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
-        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
-    > for ListResourceScanRelatedResourcesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
-            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
+                    crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
+                > for ListResourceScanRelatedResourcesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
+                        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListResourceScanRelatedResourcesFluentBuilder {
     /// Creates a new `ListResourceScanRelatedResources`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListResourceScanRelatedResourcesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResources::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResources::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
-        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResources::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResources::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput, crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_resource_scan_related_resources::paginator::ListResourceScanRelatedResourcesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_resource_scan_related_resources::paginator::ListResourceScanRelatedResourcesPaginator {
-        crate::operation::list_resource_scan_related_resources::paginator::ListResourceScanRelatedResourcesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resource_scan_related_resources::paginator::ListResourceScanRelatedResourcesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_resource_scan_related_resources::paginator::ListResourceScanRelatedResourcesPaginator {
+                                crate::operation::list_resource_scan_related_resources::paginator::ListResourceScanRelatedResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn resource_scan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_scan_id(input.into());
@@ -138,12 +125,12 @@ impl ListResourceScanRelatedResourcesFluentBuilder {
         self
     }
     /// <p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>>) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScannedResourceIdentifier>>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
     /// <p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScannedResourceIdentifier>> {
         self.inner.get_resources()
     }
     /// <p>A string that identifies the next page of resource scan results.</p>
@@ -175,3 +162,4 @@ impl ListResourceScanRelatedResourcesFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

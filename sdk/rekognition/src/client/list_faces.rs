@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFaces`](crate::operation::list_faces::builders::ListFacesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_faces::builders::ListFacesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`collection_id(impl Into<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::set_collection_id):<br>required: **true**<br><p>ID of the collection from which to list the faces.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of faces to return.</p><br>
     ///   - [`user_id(impl Into<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::set_user_id):<br>required: **false**<br><p>An array of user IDs to filter results with when listing faces in a collection.</p><br>
     ///   - [`face_ids(impl Into<String>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::face_ids) / [`set_face_ids(Option<Vec::<String>>)`](crate::operation::list_faces::builders::ListFacesFluentBuilder::set_face_ids):<br>required: **false**<br><p>An array of face IDs to filter results with when listing faces in a collection.</p><br>
-    /// - On success, responds with [`ListFacesOutput`](crate::operation::list_faces::ListFacesOutput) with field(s):
+                            /// - On success, responds with [`ListFacesOutput`](crate::operation::list_faces::ListFacesOutput) with field(s):
     ///   - [`faces(Option<Vec::<Face>>)`](crate::operation::list_faces::ListFacesOutput::faces): <p>An array of <code>Face</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_faces::ListFacesOutput::next_token): <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     ///   - [`face_model_version(Option<String>)`](crate::operation::list_faces::ListFacesOutput::face_model_version): <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    /// - On failure, responds with [`SdkError<ListFacesError>`](crate::operation::list_faces::ListFacesError)
+                            /// - On failure, responds with [`SdkError<ListFacesError>`](crate::operation::list_faces::ListFacesError)
     pub fn list_faces(&self) -> crate::operation::list_faces::builders::ListFacesFluentBuilder {
-        crate::operation::list_faces::builders::ListFacesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_faces::builders::ListFacesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataIntegrations`](crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListDataIntegrationsOutput`](crate::operation::list_data_integrations::ListDataIntegrationsOutput) with field(s):
+                            /// - On success, responds with [`ListDataIntegrationsOutput`](crate::operation::list_data_integrations::ListDataIntegrationsOutput) with field(s):
     ///   - [`data_integrations(Option<Vec::<DataIntegrationSummary>>)`](crate::operation::list_data_integrations::ListDataIntegrationsOutput::data_integrations): <p>The DataIntegrations associated with this account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_integrations::ListDataIntegrationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDataIntegrationsError>`](crate::operation::list_data_integrations::ListDataIntegrationsError)
+                            /// - On failure, responds with [`SdkError<ListDataIntegrationsError>`](crate::operation::list_data_integrations::ListDataIntegrationsError)
     pub fn list_data_integrations(&self) -> crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder {
-        crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_integrations::builders::ListDataIntegrationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComplianceStatusOutput {
+pub struct ListComplianceStatusOutput  {
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
-    pub policy_compliance_status_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicyComplianceStatus>>,
+    pub policy_compliance_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyComplianceStatus>>,
     /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListComplianceStatusOutput {
+impl  ListComplianceStatusOutput  {
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_compliance_status_list.is_none()`.
-    pub fn policy_compliance_status_list(&self) -> &[crate::types::PolicyComplianceStatus] {
-        self.policy_compliance_status_list.as_deref().unwrap_or_default()
+    pub fn policy_compliance_status_list(&self) -> & [crate::types::PolicyComplianceStatus] {
+        self.policy_compliance_status_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListComplianceStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListComplianceStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListComplianceStatusOutput`](crate::operation::list_compliance_status::ListComplianceStatusOutput).
     pub fn builder() -> crate::operation::list_compliance_status::builders::ListComplianceStatusOutputBuilder {
@@ -37,7 +38,7 @@ impl ListComplianceStatusOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComplianceStatusOutputBuilder {
-    pub(crate) policy_compliance_status_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicyComplianceStatus>>,
+    pub(crate) policy_compliance_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyComplianceStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListComplianceStatusOutputBuilder {
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
     pub fn policy_compliance_status_list(mut self, input: crate::types::PolicyComplianceStatus) -> Self {
         let mut v = self.policy_compliance_status_list.unwrap_or_default();
-        v.push(input);
-        self.policy_compliance_status_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_compliance_status_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
-    pub fn set_policy_compliance_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyComplianceStatus>>) -> Self {
-        self.policy_compliance_status_list = input;
-        self
+    pub fn set_policy_compliance_status_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyComplianceStatus>>) -> Self {
+        self.policy_compliance_status_list = input; self
     }
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
-    pub fn get_policy_compliance_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyComplianceStatus>> {
+    pub fn get_policy_compliance_status_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyComplianceStatus>> {
         &self.policy_compliance_status_list
     }
     /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
@@ -69,28 +69,30 @@ impl ListComplianceStatusOutputBuilder {
     }
     /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListComplianceStatusOutput`](crate::operation::list_compliance_status::ListComplianceStatusOutput).
     pub fn build(self) -> crate::operation::list_compliance_status::ListComplianceStatusOutput {
         crate::operation::list_compliance_status::ListComplianceStatusOutput {
-            policy_compliance_status_list: self.policy_compliance_status_list,
-            next_token: self.next_token,
+            policy_compliance_status_list: self.policy_compliance_status_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

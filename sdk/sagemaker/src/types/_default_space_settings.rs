@@ -3,33 +3,34 @@
 /// <p>A collection of settings that apply to spaces created in the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultSpaceSettings {
+pub struct DefaultSpaceSettings  {
     /// <p>The ARN of the execution role for the space.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs for the Amazon VPC that the space uses for communication.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The JupyterServer app settings.</p>
     pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     /// <p>The KernelGateway app settings.</p>
     pub kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
 }
-impl DefaultSpaceSettings {
+impl  DefaultSpaceSettings  {
     /// <p>The ARN of the execution role for the space.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>The security group IDs for the Amazon VPC that the space uses for communication.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The JupyterServer app settings.</p>
-    pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {
+    pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<& crate::types::JupyterServerAppSettings> {
         self.jupyter_server_app_settings.as_ref()
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
+    pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<& crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
 }
@@ -45,7 +46,7 @@ impl DefaultSpaceSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultSpaceSettingsBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     pub(crate) kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
 }
@@ -57,8 +58,7 @@ impl DefaultSpaceSettingsBuilder {
     }
     /// <p>The ARN of the execution role for the space.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>The ARN of the execution role for the space.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DefaultSpaceSettingsBuilder {
     /// <p>The security group IDs for the Amazon VPC that the space uses for communication.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group IDs for the Amazon VPC that the space uses for communication.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The security group IDs for the Amazon VPC that the space uses for communication.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The JupyterServer app settings.</p>
@@ -91,8 +90,7 @@ impl DefaultSpaceSettingsBuilder {
     }
     /// <p>The JupyterServer app settings.</p>
     pub fn set_jupyter_server_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterServerAppSettings>) -> Self {
-        self.jupyter_server_app_settings = input;
-        self
+        self.jupyter_server_app_settings = input; self
     }
     /// <p>The JupyterServer app settings.</p>
     pub fn get_jupyter_server_app_settings(&self) -> &::std::option::Option<crate::types::JupyterServerAppSettings> {
@@ -105,8 +103,7 @@ impl DefaultSpaceSettingsBuilder {
     }
     /// <p>The KernelGateway app settings.</p>
     pub fn set_kernel_gateway_app_settings(mut self, input: ::std::option::Option<crate::types::KernelGatewayAppSettings>) -> Self {
-        self.kernel_gateway_app_settings = input;
-        self
+        self.kernel_gateway_app_settings = input; self
     }
     /// <p>The KernelGateway app settings.</p>
     pub fn get_kernel_gateway_app_settings(&self) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
@@ -115,10 +112,15 @@ impl DefaultSpaceSettingsBuilder {
     /// Consumes the builder and constructs a [`DefaultSpaceSettings`](crate::types::DefaultSpaceSettings).
     pub fn build(self) -> crate::types::DefaultSpaceSettings {
         crate::types::DefaultSpaceSettings {
-            execution_role: self.execution_role,
-            security_groups: self.security_groups,
-            jupyter_server_app_settings: self.jupyter_server_app_settings,
-            kernel_gateway_app_settings: self.kernel_gateway_app_settings,
+            execution_role: self.execution_role
+            ,
+            security_groups: self.security_groups
+            ,
+            jupyter_server_app_settings: self.jupyter_server_app_settings
+            ,
+            kernel_gateway_app_settings: self.kernel_gateway_app_settings
+            ,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChatStreamingConfiguration {
+pub struct ChatStreamingConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
     pub streaming_endpoint_arn: ::std::string::String,
 }
-impl ChatStreamingConfiguration {
+impl  ChatStreamingConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
-    pub fn streaming_endpoint_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.streaming_endpoint_arn.deref()
+    pub fn streaming_endpoint_arn(&self) -> & str {
+        use std::ops::Deref; self.streaming_endpoint_arn.deref()
     }
 }
 impl ChatStreamingConfiguration {
@@ -36,8 +35,7 @@ impl ChatStreamingConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
     pub fn set_streaming_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.streaming_endpoint_arn = input;
-        self
+        self.streaming_endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
     pub fn get_streaming_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ChatStreamingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`streaming_endpoint_arn`](crate::types::builders::ChatStreamingConfigurationBuilder::streaming_endpoint_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ChatStreamingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChatStreamingConfiguration {
-            streaming_endpoint_arn: self.streaming_endpoint_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "streaming_endpoint_arn",
-                    "streaming_endpoint_arn was not specified but it is required when building ChatStreamingConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChatStreamingConfiguration {
+                streaming_endpoint_arn: self.streaming_endpoint_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("streaming_endpoint_arn", "streaming_endpoint_arn was not specified but it is required when building ChatStreamingConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

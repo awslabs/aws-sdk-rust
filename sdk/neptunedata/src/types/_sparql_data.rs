@@ -3,15 +3,14 @@
 /// <p>Neptune logs are converted to SPARQL quads in the graph using the Resource Description Framework (RDF) <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> language defined in the W3C RDF 1.1 N-Quads specification</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SparqlData {
+pub struct SparqlData  {
     /// <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement expressing the changed quad.</p>
     pub stmt: ::std::string::String,
 }
-impl SparqlData {
+impl  SparqlData  {
     /// <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement expressing the changed quad.</p>
-    pub fn stmt(&self) -> &str {
-        use std::ops::Deref;
-        self.stmt.deref()
+    pub fn stmt(&self) -> & str {
+        use std::ops::Deref; self.stmt.deref()
     }
 }
 impl SparqlData {
@@ -36,8 +35,7 @@ impl SparqlDataBuilder {
     }
     /// <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement expressing the changed quad.</p>
     pub fn set_stmt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stmt = input;
-        self
+        self.stmt = input; self
     }
     /// <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement expressing the changed quad.</p>
     pub fn get_stmt(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SparqlDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stmt`](crate::types::builders::SparqlDataBuilder::stmt)
     pub fn build(self) -> ::std::result::Result<crate::types::SparqlData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SparqlData {
-            stmt: self.stmt.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stmt",
-                    "stmt was not specified but it is required when building SparqlData",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SparqlData {
+                stmt: self.stmt
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stmt", "stmt was not specified but it is required when building SparqlData")
+                    )?
+                ,
+            }
+        )
     }
 }
+

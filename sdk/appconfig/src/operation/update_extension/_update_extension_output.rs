@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExtensionOutput {
+pub struct UpdateExtensionOutput  {
     /// <p>The system-generated ID of the extension.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The extension name.</p>
@@ -14,18 +14,18 @@ pub struct UpdateExtensionOutput {
     /// <p>Information about the extension.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The actions defined in the extension.</p>
-    pub actions: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
+    pub actions: ::std::option::Option<::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>>,
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Parameter>>,
     _request_id: Option<String>,
 }
-impl UpdateExtensionOutput {
+impl  UpdateExtensionOutput  {
     /// <p>The system-generated ID of the extension.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The extension name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The extension version number.</p>
@@ -33,27 +33,27 @@ impl UpdateExtensionOutput {
         self.version_number
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the extension.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>> {
+    pub fn actions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>> {
         self.actions.as_ref()
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Parameter>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::Parameter>> {
         self.parameters.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateExtensionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateExtensionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExtensionOutput`](crate::operation::update_extension::UpdateExtensionOutput).
     pub fn builder() -> crate::operation::update_extension::builders::UpdateExtensionOutputBuilder {
@@ -70,8 +70,8 @@ pub struct UpdateExtensionOutputBuilder {
     pub(crate) version_number: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
+    pub(crate) actions: ::std::option::Option<::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Parameter>>,
     _request_id: Option<String>,
 }
 impl UpdateExtensionOutputBuilder {
@@ -82,8 +82,7 @@ impl UpdateExtensionOutputBuilder {
     }
     /// <p>The system-generated ID of the extension.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The system-generated ID of the extension.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl UpdateExtensionOutputBuilder {
     }
     /// <p>The extension name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The extension name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl UpdateExtensionOutputBuilder {
     }
     /// <p>The extension version number.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The extension version number.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i32> {
@@ -124,8 +121,7 @@ impl UpdateExtensionOutputBuilder {
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl UpdateExtensionOutputBuilder {
     }
     /// <p>Information about the extension.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Information about the extension.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,24 +145,18 @@ impl UpdateExtensionOutputBuilder {
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(mut self, k: crate::types::ActionPoint, v: ::std::vec::Vec<crate::types::Action>) -> Self {
+    pub fn actions(mut self, k: crate::types::ActionPoint, v: ::std::vec::Vec::<crate::types::Action>) -> Self {
         let mut hash_map = self.actions.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.actions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.actions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>>,
-    ) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ActionPoint, ::std::vec::Vec<crate::types::Action>>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::ActionPoint, ::std::vec::Vec::<crate::types::Action>>> {
         &self.actions
     }
     /// Adds a key-value pair to `parameters`.
@@ -177,42 +166,47 @@ impl UpdateExtensionOutputBuilder {
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Parameter) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Parameter>> {
         &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateExtensionOutput`](crate::operation::update_extension::UpdateExtensionOutput).
     pub fn build(self) -> crate::operation::update_extension::UpdateExtensionOutput {
         crate::operation::update_extension::UpdateExtensionOutput {
-            id: self.id,
-            name: self.name,
-            version_number: self.version_number.unwrap_or_default(),
-            arn: self.arn,
-            description: self.description,
-            actions: self.actions,
-            parameters: self.parameters,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            actions: self.actions
+            ,
+            parameters: self.parameters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

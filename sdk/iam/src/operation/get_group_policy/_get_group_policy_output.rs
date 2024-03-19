@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>GetGroupPolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGroupPolicyOutput {
+pub struct GetGroupPolicyOutput  {
     /// <p>The group the policy is associated with.</p>
     pub group_name: ::std::string::String,
     /// <p>The name of the policy.</p>
@@ -13,29 +13,26 @@ pub struct GetGroupPolicyOutput {
     pub policy_document: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetGroupPolicyOutput {
+impl  GetGroupPolicyOutput  {
     /// <p>The group the policy is associated with.</p>
-    pub fn group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.group_name.deref()
+    pub fn group_name(&self) -> & str {
+        use std::ops::Deref; self.group_name.deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_name.deref()
+    pub fn policy_name(&self) -> & str {
+        use std::ops::Deref; self.policy_name.deref()
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn policy_document(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_document.deref()
+    pub fn policy_document(&self) -> & str {
+        use std::ops::Deref; self.policy_document.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetGroupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupPolicyOutput`](crate::operation::get_group_policy::GetGroupPolicyOutput).
     pub fn builder() -> crate::operation::get_group_policy::builders::GetGroupPolicyOutputBuilder {
@@ -61,8 +58,7 @@ impl GetGroupPolicyOutputBuilder {
     }
     /// <p>The group the policy is associated with.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The group the policy is associated with.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +72,7 @@ impl GetGroupPolicyOutputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +88,7 @@ impl GetGroupPolicyOutputBuilder {
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -102,42 +96,40 @@ impl GetGroupPolicyOutputBuilder {
         &self.policy_document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGroupPolicyOutput`](crate::operation::get_group_policy::GetGroupPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`group_name`](crate::operation::get_group_policy::builders::GetGroupPolicyOutputBuilder::group_name)
     /// - [`policy_name`](crate::operation::get_group_policy::builders::GetGroupPolicyOutputBuilder::policy_name)
     /// - [`policy_document`](crate::operation::get_group_policy::builders::GetGroupPolicyOutputBuilder::policy_document)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_group_policy::GetGroupPolicyOutput {
-            group_name: self.group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group_name",
-                    "group_name was not specified but it is required when building GetGroupPolicyOutput",
-                )
-            })?,
-            policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_name",
-                    "policy_name was not specified but it is required when building GetGroupPolicyOutput",
-                )
-            })?,
-            policy_document: self.policy_document.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_document",
-                    "policy_document was not specified but it is required when building GetGroupPolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_group_policy::GetGroupPolicyOutput {
+                group_name: self.group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group_name", "group_name was not specified but it is required when building GetGroupPolicyOutput")
+                    )?
+                ,
+                policy_name: self.policy_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_name", "policy_name was not specified but it is required when building GetGroupPolicyOutput")
+                    )?
+                ,
+                policy_document: self.policy_document
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_document", "policy_document was not specified but it is required when building GetGroupPolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNotificationsInput {
+pub struct ListNotificationsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of notifications.</p>
@@ -12,7 +12,7 @@ pub struct ListNotificationsInput {
     /// <p>The time before which you want to list notifications.</p>
     pub before_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The subjects of notifications.</p>
-    pub subjects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subjects: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The task status of notifications.</p>
     pub task_status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>The maximum number of notifications to return in a single call to <code>ListNotifications</code>. When the number of notifications to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
@@ -20,31 +20,32 @@ pub struct ListNotificationsInput {
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListNotificationsInput {
+impl  ListNotificationsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The type of notifications.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::NotificationType> {
         self.r#type.as_ref()
     }
     /// <p>The time after which you want to list notifications.</p>
-    pub fn after_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn after_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.after_timestamp.as_ref()
     }
     /// <p>The time before which you want to list notifications.</p>
-    pub fn before_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn before_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.before_timestamp.as_ref()
     }
     /// <p>The subjects of notifications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subjects.is_none()`.
-    pub fn subjects(&self) -> &[::std::string::String] {
-        self.subjects.as_deref().unwrap_or_default()
+    pub fn subjects(&self) -> & [::std::string::String] {
+        self.subjects.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The task status of notifications.</p>
-    pub fn task_status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<& crate::types::TaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>The maximum number of notifications to return in a single call to <code>ListNotifications</code>. When the number of notifications to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
@@ -52,7 +53,7 @@ impl ListNotificationsInput {
         self.max_results
     }
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -71,7 +72,7 @@ pub struct ListNotificationsInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NotificationType>,
     pub(crate) after_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) before_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) subjects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subjects: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) task_status: ::std::option::Option<crate::types::TaskStatus>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -85,8 +86,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +100,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The type of notifications.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of notifications.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
@@ -114,8 +113,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The time after which you want to list notifications.</p>
     pub fn set_after_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.after_timestamp = input;
-        self
+        self.after_timestamp = input; self
     }
     /// <p>The time after which you want to list notifications.</p>
     pub fn get_after_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,8 +126,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The time before which you want to list notifications.</p>
     pub fn set_before_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.before_timestamp = input;
-        self
+        self.before_timestamp = input; self
     }
     /// <p>The time before which you want to list notifications.</p>
     pub fn get_before_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -142,17 +139,16 @@ impl ListNotificationsInputBuilder {
     /// <p>The subjects of notifications.</p>
     pub fn subjects(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subjects.unwrap_or_default();
-        v.push(input.into());
-        self.subjects = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subjects = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subjects of notifications.</p>
-    pub fn set_subjects(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subjects = input;
-        self
+    pub fn set_subjects(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subjects = input; self
     }
     /// <p>The subjects of notifications.</p>
-    pub fn get_subjects(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subjects(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subjects
     }
     /// <p>The task status of notifications.</p>
@@ -162,8 +158,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The task status of notifications.</p>
     pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
-        self.task_status = input;
-        self
+        self.task_status = input; self
     }
     /// <p>The task status of notifications.</p>
     pub fn get_task_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
@@ -176,8 +171,7 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>The maximum number of notifications to return in a single call to <code>ListNotifications</code>. When the number of notifications to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of notifications to return in a single call to <code>ListNotifications</code>. When the number of notifications to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -190,26 +184,34 @@ impl ListNotificationsInputBuilder {
     }
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNotificationsInput`](crate::operation::list_notifications::ListNotificationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_notifications::ListNotificationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_notifications::ListNotificationsInput {
-            domain_identifier: self.domain_identifier,
-            r#type: self.r#type,
-            after_timestamp: self.after_timestamp,
-            before_timestamp: self.before_timestamp,
-            subjects: self.subjects,
-            task_status: self.task_status,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_notifications::ListNotificationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_notifications::ListNotificationsInput {
+                domain_identifier: self.domain_identifier
+                ,
+                r#type: self.r#type
+                ,
+                after_timestamp: self.after_timestamp
+                ,
+                before_timestamp: self.before_timestamp
+                ,
+                subjects: self.subjects
+                ,
+                task_status: self.task_status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

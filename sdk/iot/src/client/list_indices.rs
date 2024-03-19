@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIndices`](crate::operation::list_indices::builders::ListIndicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_indices::builders::ListIndicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_indices::builders::ListIndicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_indices::builders::ListIndicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_indices::builders::ListIndicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_indices::builders::ListIndicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListIndicesOutput`](crate::operation::list_indices::ListIndicesOutput) with field(s):
+                            /// - On success, responds with [`ListIndicesOutput`](crate::operation::list_indices::ListIndicesOutput) with field(s):
     ///   - [`index_names(Option<Vec::<String>>)`](crate::operation::list_indices::ListIndicesOutput::index_names): <p>The index names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_indices::ListIndicesOutput::next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListIndicesError>`](crate::operation::list_indices::ListIndicesError)
+                            /// - On failure, responds with [`SdkError<ListIndicesError>`](crate::operation::list_indices::ListIndicesError)
     pub fn list_indices(&self) -> crate::operation::list_indices::builders::ListIndicesFluentBuilder {
-        crate::operation::list_indices::builders::ListIndicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_indices::builders::ListIndicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

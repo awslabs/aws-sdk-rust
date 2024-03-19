@@ -3,7 +3,7 @@
 /// <p>Represents a virtual computing instance that runs game server processes and hosts game sessions. In Amazon GameLift, one or more instances make up a managed EC2 fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>A unique identifier for the fleet that the instance belongs to.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
@@ -49,23 +49,23 @@ pub struct Instance {
     /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl Instance {
+impl  Instance  {
     /// <p>A unique identifier for the fleet that the instance belongs to.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>A unique identifier for the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>IP address that is assigned to the instance.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
@@ -83,15 +83,15 @@ impl Instance {
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon Elastic Compute Cloud Instance IP Addressing</a>.)</p></li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p>Operating system that is running on this EC2 instance.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> ::std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>EC2 instance type that defines the computing resources of this instance.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Ec2InstanceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Ec2InstanceType> {
         self.r#type.as_ref()
     }
     /// <p>Current status of the instance. Possible statuses include the following:</p>
@@ -103,19 +103,19 @@ impl Instance {
     /// <li>
     /// <p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InstanceStatus> {
         self.status.as_ref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
-impl ::std::fmt::Debug for Instance {
+impl  ::std::fmt::Debug for Instance  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Instance");
         formatter.field("fleet_id", &self.fleet_id);
@@ -161,8 +161,7 @@ impl InstanceBuilder {
     }
     /// <p>A unique identifier for the fleet that the instance belongs to.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet that the instance belongs to.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +178,7 @@ impl InstanceBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -195,8 +193,7 @@ impl InstanceBuilder {
     }
     /// <p>A unique identifier for the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>A unique identifier for the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +206,7 @@ impl InstanceBuilder {
     }
     /// <p>IP address that is assigned to the instance.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>IP address that is assigned to the instance.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +247,7 @@ impl InstanceBuilder {
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
@@ -279,8 +274,7 @@ impl InstanceBuilder {
     }
     /// <p>Operating system that is running on this EC2 instance.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>Operating system that is running on this EC2 instance.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
@@ -293,8 +287,7 @@ impl InstanceBuilder {
     }
     /// <p>EC2 instance type that defines the computing resources of this instance.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>EC2 instance type that defines the computing resources of this instance.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
@@ -323,8 +316,7 @@ impl InstanceBuilder {
     /// <p><b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Current status of the instance. Possible statuses include the following:</p>
     /// <ul>
@@ -345,8 +337,7 @@ impl InstanceBuilder {
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -359,8 +350,7 @@ impl InstanceBuilder {
     }
     /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -369,16 +359,26 @@ impl InstanceBuilder {
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            fleet_id: self.fleet_id,
-            fleet_arn: self.fleet_arn,
-            instance_id: self.instance_id,
-            ip_address: self.ip_address,
-            dns_name: self.dns_name,
-            operating_system: self.operating_system,
-            r#type: self.r#type,
-            status: self.status,
-            creation_time: self.creation_time,
-            location: self.location,
+            fleet_id: self.fleet_id
+            ,
+            fleet_arn: self.fleet_arn
+            ,
+            instance_id: self.instance_id
+            ,
+            ip_address: self.ip_address
+            ,
+            dns_name: self.dns_name
+            ,
+            operating_system: self.operating_system
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            location: self.location
+            ,
         }
     }
 }
@@ -398,3 +398,4 @@ impl ::std::fmt::Debug for InstanceBuilder {
         formatter.finish()
     }
 }
+

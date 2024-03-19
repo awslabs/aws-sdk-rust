@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePracticeRunConfigurationOutput {
+pub struct DeletePracticeRunConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you deleted the practice run for.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the resource that you deleted the practice run for.</p>
@@ -11,27 +11,25 @@ pub struct DeletePracticeRunConfigurationOutput {
     pub zonal_autoshift_status: crate::types::ZonalAutoshiftStatus,
     _request_id: Option<String>,
 }
-impl DeletePracticeRunConfigurationOutput {
+impl  DeletePracticeRunConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you deleted the practice run for.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the resource that you deleted the practice run for.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The status of zonal autoshift for the resource.</p>
-    pub fn zonal_autoshift_status(&self) -> &crate::types::ZonalAutoshiftStatus {
+    pub fn zonal_autoshift_status(&self) -> & crate::types::ZonalAutoshiftStatus {
         &self.zonal_autoshift_status
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePracticeRunConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePracticeRunConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeletePracticeRunConfigurationOutput`](crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationOutput).
     pub fn builder() -> crate::operation::delete_practice_run_configuration::builders::DeletePracticeRunConfigurationOutputBuilder {
@@ -57,8 +55,7 @@ impl DeletePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you deleted the practice run for.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you deleted the practice run for.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl DeletePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The name of the resource that you deleted the practice run for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource that you deleted the practice run for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,55 +83,47 @@ impl DeletePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The status of zonal autoshift for the resource.</p>
     pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
-        self.zonal_autoshift_status = input;
-        self
+        self.zonal_autoshift_status = input; self
     }
     /// <p>The status of zonal autoshift for the resource.</p>
     pub fn get_zonal_autoshift_status(&self) -> &::std::option::Option<crate::types::ZonalAutoshiftStatus> {
         &self.zonal_autoshift_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePracticeRunConfigurationOutput`](crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::delete_practice_run_configuration::builders::DeletePracticeRunConfigurationOutputBuilder::arn)
     /// - [`name`](crate::operation::delete_practice_run_configuration::builders::DeletePracticeRunConfigurationOutputBuilder::name)
     /// - [`zonal_autoshift_status`](crate::operation::delete_practice_run_configuration::builders::DeletePracticeRunConfigurationOutputBuilder::zonal_autoshift_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationOutput {
-                arn: self.arn.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "arn",
-                        "arn was not specified but it is required when building DeletePracticeRunConfigurationOutput",
-                    )
-                })?,
-                name: self.name.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "name",
-                        "name was not specified but it is required when building DeletePracticeRunConfigurationOutput",
-                    )
-                })?,
-                zonal_autoshift_status: self.zonal_autoshift_status.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "zonal_autoshift_status",
-                        "zonal_autoshift_status was not specified but it is required when building DeletePracticeRunConfigurationOutput",
-                    )
-                })?,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DeletePracticeRunConfigurationOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DeletePracticeRunConfigurationOutput")
+                    )?
+                ,
+                zonal_autoshift_status: self.zonal_autoshift_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("zonal_autoshift_status", "zonal_autoshift_status was not specified but it is required when building DeletePracticeRunConfigurationOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

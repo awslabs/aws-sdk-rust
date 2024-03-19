@@ -5,55 +5,51 @@ pub use crate::operation::delete_aws_log_source::_delete_aws_log_source_input::D
 
 impl DeleteAwsLogSourceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_aws_log_source();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_aws_log_source();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeleteAwsLogSource`.
-///
+/// 
 /// <p>Removes a natively supported Amazon Web Service as an Amazon Security Lake source. You can remove a source for one or more Regions. When you remove the source, Security Lake stops collecting data from that source in the specified Regions and accounts, and subscribers can no longer consume new data from the source. However, subscribers can still consume data that Security Lake collected from the source before removal.</p>
 /// <p>You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted organization or standalone accounts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder,
+                    inner: crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
-        crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
-    > for DeleteAwsLogSourceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
-            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
+                    crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
+                > for DeleteAwsLogSourceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
+                        crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeleteAwsLogSourceFluentBuilder {
     /// Creates a new `DeleteAwsLogSource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DeleteAwsLogSourceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_aws_log_source::DeleteAwsLogSource::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_aws_log_source::DeleteAwsLogSource::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
-        crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_aws_log_source::DeleteAwsLogSourceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_aws_log_source::DeleteAwsLogSource::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_aws_log_source::DeleteAwsLogSource::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput, crate::operation::delete_aws_log_source::DeleteAwsLogSourceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -119,12 +106,13 @@ impl DeleteAwsLogSourceFluentBuilder {
         self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceConfiguration>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsLogSourceConfiguration>> {
         self.inner.get_sources()
     }
 }
+

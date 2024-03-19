@@ -5,7 +5,7 @@
 /// <p>You can specify the <code>ulimit</code> settings for a container in a task definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ulimit {
+pub struct Ulimit  {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     pub name: crate::types::UlimitName,
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
@@ -13,9 +13,9 @@ pub struct Ulimit {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub hard_limit: i32,
 }
-impl Ulimit {
+impl  Ulimit  {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-    pub fn name(&self) -> &crate::types::UlimitName {
+    pub fn name(&self) -> & crate::types::UlimitName {
         &self.name
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
@@ -51,8 +51,7 @@ impl UlimitBuilder {
     }
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::UlimitName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::UlimitName> {
@@ -66,8 +65,7 @@ impl UlimitBuilder {
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn set_soft_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.soft_limit = input;
-        self
+        self.soft_limit = input; self
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn get_soft_limit(&self) -> &::std::option::Option<i32> {
@@ -81,8 +79,7 @@ impl UlimitBuilder {
     }
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub fn set_hard_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hard_limit = input;
-        self
+        self.hard_limit = input; self
     }
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub fn get_hard_limit(&self) -> &::std::option::Option<i32> {
@@ -92,15 +89,21 @@ impl UlimitBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::UlimitBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Ulimit, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ulimit {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Ulimit",
-                )
-            })?,
-            soft_limit: self.soft_limit.unwrap_or_default(),
-            hard_limit: self.hard_limit.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ulimit {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Ulimit")
+                    )?
+                ,
+                soft_limit: self.soft_limit
+                    .unwrap_or_default()
+                ,
+                hard_limit: self.hard_limit
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

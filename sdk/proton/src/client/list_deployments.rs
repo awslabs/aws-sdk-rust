@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeployments`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next deployment in the array of deployment, after the list of deployment that was previously requested.</p><br>
     ///   - [`environment_name(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_environment_name):<br>required: **false**<br><p>The name of an environment for result list filtering. Proton returns deployments associated with the environment.</p><br>
     ///   - [`service_name(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_service_name):<br>required: **false**<br><p>The name of a service for result list filtering. Proton returns deployments associated with service instances of the service.</p><br>
     ///   - [`service_instance_name(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_service_instance_name):<br>required: **false**<br><p>The name of a service instance for result list filtering. Proton returns the deployments associated with the service instance.</p><br>
     ///   - [`component_name(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_component_name):<br>required: **false**<br><p>The name of a component for result list filtering. Proton returns deployments associated with that component.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of deployments to list.</p><br>
-    /// - On success, responds with [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput) with field(s):
+                            /// - On success, responds with [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployments::ListDeploymentsOutput::next_token): <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
     ///   - [`deployments(Vec::<DeploymentSummary>)`](crate::operation::list_deployments::ListDeploymentsOutput::deployments): <p>An array of deployment with summary data.</p>
-    /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
+                            /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
     pub fn list_deployments(&self) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {
-        crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

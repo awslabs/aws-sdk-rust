@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListThingsInBillingGroupOutput {
+pub struct ListThingsInBillingGroupOutput  {
     /// <p>A list of things in the billing group.</p>
-    pub things: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub things: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListThingsInBillingGroupOutput {
+impl  ListThingsInBillingGroupOutput  {
     /// <p>A list of things in the billing group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.things.is_none()`.
-    pub fn things(&self) -> &[::std::string::String] {
-        self.things.as_deref().unwrap_or_default()
+    pub fn things(&self) -> & [::std::string::String] {
+        self.things.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListThingsInBillingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListThingsInBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListThingsInBillingGroupOutput`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput).
     pub fn builder() -> crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupOutputBuilder {
@@ -37,7 +38,7 @@ impl ListThingsInBillingGroupOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingsInBillingGroupOutputBuilder {
-    pub(crate) things: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) things: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListThingsInBillingGroupOutputBuilder {
     /// <p>A list of things in the billing group.</p>
     pub fn things(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.things.unwrap_or_default();
-        v.push(input.into());
-        self.things = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.things = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of things in the billing group.</p>
-    pub fn set_things(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.things = input;
-        self
+    pub fn set_things(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.things = input; self
     }
     /// <p>A list of things in the billing group.</p>
-    pub fn get_things(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_things(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.things
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
@@ -69,28 +69,30 @@ impl ListThingsInBillingGroupOutputBuilder {
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListThingsInBillingGroupOutput`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput).
     pub fn build(self) -> crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput {
         crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput {
-            things: self.things,
-            next_token: self.next_token,
+            things: self.things
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

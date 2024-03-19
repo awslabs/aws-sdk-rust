@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMembersInput {
+pub struct CreateMembersInput  {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>,
+    pub account_details: ::std::option::Option<::std::vec::Vec::<crate::types::AccountDetail>>,
 }
-impl CreateMembersInput {
+impl  CreateMembersInput  {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_details.is_none()`.
-    pub fn account_details(&self) -> &[crate::types::AccountDetail] {
-        self.account_details.as_deref().unwrap_or_default()
+    pub fn account_details(&self) -> & [crate::types::AccountDetail] {
+        self.account_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateMembersInput {
@@ -32,7 +33,7 @@ impl CreateMembersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMembersInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) account_details: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>,
+    pub(crate) account_details: ::std::option::Option<::std::vec::Vec::<crate::types::AccountDetail>>,
 }
 impl CreateMembersInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
@@ -43,8 +44,7 @@ impl CreateMembersInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl CreateMembersInputBuilder {
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
     pub fn account_details(mut self, input: crate::types::AccountDetail) -> Self {
         let mut v = self.account_details.unwrap_or_default();
-        v.push(input);
-        self.account_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn set_account_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>>) -> Self {
-        self.account_details = input;
-        self
+    pub fn set_account_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountDetail>>) -> Self {
+        self.account_details = input; self
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn get_account_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetail>> {
+    pub fn get_account_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountDetail>> {
         &self.account_details
     }
     /// Consumes the builder and constructs a [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_members::CreateMembersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_members::CreateMembersInput {
-            detector_id: self.detector_id,
-            account_details: self.account_details,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_members::CreateMembersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_members::CreateMembersInput {
+                detector_id: self.detector_id
+                ,
+                account_details: self.account_details
+                ,
+            }
+        )
     }
 }
+

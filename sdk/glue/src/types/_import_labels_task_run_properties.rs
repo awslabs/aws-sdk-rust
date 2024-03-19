@@ -3,15 +3,15 @@
 /// <p>Specifies configuration properties for an importing labels task run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportLabelsTaskRunProperties {
+pub struct ImportLabelsTaskRunProperties  {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
     pub input_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub replace: bool,
 }
-impl ImportLabelsTaskRunProperties {
+impl  ImportLabelsTaskRunProperties  {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
-    pub fn input_s3_path(&self) -> ::std::option::Option<&str> {
+    pub fn input_s3_path(&self) -> ::std::option::Option<& str> {
         self.input_s3_path.as_deref()
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
@@ -41,8 +41,7 @@ impl ImportLabelsTaskRunPropertiesBuilder {
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
     pub fn set_input_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_s3_path = input;
-        self
+        self.input_s3_path = input; self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
     pub fn get_input_s3_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ImportLabelsTaskRunPropertiesBuilder {
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn set_replace(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replace = input;
-        self
+        self.replace = input; self
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn get_replace(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,12 @@ impl ImportLabelsTaskRunPropertiesBuilder {
     /// Consumes the builder and constructs a [`ImportLabelsTaskRunProperties`](crate::types::ImportLabelsTaskRunProperties).
     pub fn build(self) -> crate::types::ImportLabelsTaskRunProperties {
         crate::types::ImportLabelsTaskRunProperties {
-            input_s3_path: self.input_s3_path,
-            replace: self.replace.unwrap_or_default(),
+            input_s3_path: self.input_s3_path
+            ,
+            replace: self.replace
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

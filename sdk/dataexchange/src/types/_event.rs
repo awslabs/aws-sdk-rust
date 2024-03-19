@@ -3,13 +3,13 @@
 /// <p>What occurs to start an action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>What occurs to start the revision publish action.</p>
     pub revision_published: ::std::option::Option<crate::types::RevisionPublished>,
 }
-impl Event {
+impl  Event  {
     /// <p>What occurs to start the revision publish action.</p>
-    pub fn revision_published(&self) -> ::std::option::Option<&crate::types::RevisionPublished> {
+    pub fn revision_published(&self) -> ::std::option::Option<& crate::types::RevisionPublished> {
         self.revision_published.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl EventBuilder {
     }
     /// <p>What occurs to start the revision publish action.</p>
     pub fn set_revision_published(mut self, input: ::std::option::Option<crate::types::RevisionPublished>) -> Self {
-        self.revision_published = input;
-        self
+        self.revision_published = input; self
     }
     /// <p>What occurs to start the revision publish action.</p>
     pub fn get_revision_published(&self) -> &::std::option::Option<crate::types::RevisionPublished> {
@@ -44,7 +43,9 @@ impl EventBuilder {
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            revision_published: self.revision_published,
+            revision_published: self.revision_published
+            ,
         }
     }
 }
+

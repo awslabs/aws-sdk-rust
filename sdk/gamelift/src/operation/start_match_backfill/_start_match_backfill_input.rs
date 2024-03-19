@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMatchBackfillInput {
+pub struct StartMatchBackfillInput  {
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     pub ticket_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
@@ -18,19 +18,19 @@ pub struct StartMatchBackfillInput {
     /// <li>
     /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p></li>
     /// </ul>
-    pub players: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
+    pub players: ::std::option::Option<::std::vec::Vec::<crate::types::Player>>,
 }
-impl StartMatchBackfillInput {
+impl  StartMatchBackfillInput  {
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
-    pub fn ticket_id(&self) -> ::std::option::Option<&str> {
+    pub fn ticket_id(&self) -> ::std::option::Option<& str> {
         self.ticket_id.as_deref()
     }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
-    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_name(&self) -> ::std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed.</p>
-    pub fn game_session_arn(&self) -> ::std::option::Option<&str> {
+    pub fn game_session_arn(&self) -> ::std::option::Option<& str> {
         self.game_session_arn.as_deref()
     }
     /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
@@ -42,10 +42,11 @@ impl StartMatchBackfillInput {
     /// <li>
     /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.players.is_none()`.
-    pub fn players(&self) -> &[crate::types::Player] {
-        self.players.as_deref().unwrap_or_default()
+    pub fn players(&self) -> & [crate::types::Player] {
+        self.players.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartMatchBackfillInput {
@@ -62,7 +63,7 @@ pub struct StartMatchBackfillInputBuilder {
     pub(crate) ticket_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) game_session_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) players: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
+    pub(crate) players: ::std::option::Option<::std::vec::Vec::<crate::types::Player>>,
 }
 impl StartMatchBackfillInputBuilder {
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
@@ -72,8 +73,7 @@ impl StartMatchBackfillInputBuilder {
     }
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     pub fn set_ticket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ticket_id = input;
-        self
+        self.ticket_id = input; self
     }
     /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
     pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +87,7 @@ impl StartMatchBackfillInputBuilder {
     }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
     pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_name = input;
-        self
+        self.configuration_name = input; self
     }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl StartMatchBackfillInputBuilder {
     }
     /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed.</p>
     pub fn set_game_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_session_arn = input;
-        self
+        self.game_session_arn = input; self
     }
     /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed.</p>
     pub fn get_game_session_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,9 +121,9 @@ impl StartMatchBackfillInputBuilder {
     /// </ul>
     pub fn players(mut self, input: crate::types::Player) -> Self {
         let mut v = self.players.unwrap_or_default();
-        v.push(input);
-        self.players = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.players = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
     /// <p>You can include up to 199 <code>Players</code> in a <code>StartMatchBackfill</code> request.</p>
@@ -136,9 +134,8 @@ impl StartMatchBackfillInputBuilder {
     /// <li>
     /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p></li>
     /// </ul>
-    pub fn set_players(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Player>>) -> Self {
-        self.players = input;
-        self
+    pub fn set_players(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Player>>) -> Self {
+        self.players = input; self
     }
     /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
     /// <p>You can include up to 199 <code>Players</code> in a <code>StartMatchBackfill</code> request.</p>
@@ -149,19 +146,23 @@ impl StartMatchBackfillInputBuilder {
     /// <li>
     /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p></li>
     /// </ul>
-    pub fn get_players(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Player>> {
+    pub fn get_players(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Player>> {
         &self.players
     }
     /// Consumes the builder and constructs a [`StartMatchBackfillInput`](crate::operation::start_match_backfill::StartMatchBackfillInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_match_backfill::StartMatchBackfillInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_match_backfill::StartMatchBackfillInput {
-            ticket_id: self.ticket_id,
-            configuration_name: self.configuration_name,
-            game_session_arn: self.game_session_arn,
-            players: self.players,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_match_backfill::StartMatchBackfillInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_match_backfill::StartMatchBackfillInput {
+                ticket_id: self.ticket_id
+                ,
+                configuration_name: self.configuration_name
+                ,
+                game_session_arn: self.game_session_arn
+                ,
+                players: self.players
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAlarmsInput {
+pub struct GetAlarmsInput  {
     /// <p>The name of the alarm.</p>
     /// <p>Specify an alarm name to return information about a specific alarm.</p>
     pub alarm_name: ::std::option::Option<::std::string::String>,
@@ -13,20 +13,20 @@ pub struct GetAlarmsInput {
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
     pub monitored_resource_name: ::std::option::Option<::std::string::String>,
 }
-impl GetAlarmsInput {
+impl  GetAlarmsInput  {
     /// <p>The name of the alarm.</p>
     /// <p>Specify an alarm name to return information about a specific alarm.</p>
-    pub fn alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_name(&self) -> ::std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
-    pub fn monitored_resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitored_resource_name(&self) -> ::std::option::Option<& str> {
         self.monitored_resource_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl GetAlarmsInputBuilder {
     /// <p>The name of the alarm.</p>
     /// <p>Specify an alarm name to return information about a specific alarm.</p>
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The name of the alarm.</p>
     /// <p>Specify an alarm name to return information about a specific alarm.</p>
@@ -72,8 +71,7 @@ impl GetAlarmsInputBuilder {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
@@ -89,8 +87,7 @@ impl GetAlarmsInputBuilder {
     /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
     pub fn set_monitored_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitored_resource_name = input;
-        self
+        self.monitored_resource_name = input; self
     }
     /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
@@ -99,10 +96,16 @@ impl GetAlarmsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetAlarmsInput`](crate::operation::get_alarms::GetAlarmsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_alarms::GetAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_alarms::GetAlarmsInput {
-            alarm_name: self.alarm_name,
-            page_token: self.page_token,
-            monitored_resource_name: self.monitored_resource_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_alarms::GetAlarmsInput {
+                alarm_name: self.alarm_name
+                ,
+                page_token: self.page_token
+                ,
+                monitored_resource_name: self.monitored_resource_name
+                ,
+            }
+        )
     }
 }
+

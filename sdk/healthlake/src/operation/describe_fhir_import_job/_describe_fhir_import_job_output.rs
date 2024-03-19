@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFhirImportJobOutput {
+pub struct DescribeFhirImportJobOutput  {
     /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
     pub import_job_properties: ::std::option::Option<crate::types::ImportJobProperties>,
     _request_id: Option<String>,
 }
-impl DescribeFhirImportJobOutput {
+impl  DescribeFhirImportJobOutput  {
     /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
-    pub fn import_job_properties(&self) -> ::std::option::Option<&crate::types::ImportJobProperties> {
+    pub fn import_job_properties(&self) -> ::std::option::Option<& crate::types::ImportJobProperties> {
         self.import_job_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFhirImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFhirImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobOutput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput).
     pub fn builder() -> crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeFhirImportJobOutputBuilder {
     }
     /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
     pub fn set_import_job_properties(mut self, input: ::std::option::Option<crate::types::ImportJobProperties>) -> Self {
-        self.import_job_properties = input;
-        self
+        self.import_job_properties = input; self
     }
     /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
     pub fn get_import_job_properties(&self) -> &::std::option::Option<crate::types::ImportJobProperties> {
         &self.import_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFhirImportJobOutput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput).
     pub fn build(self) -> crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput {
         crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput {
-            import_job_properties: self.import_job_properties,
+            import_job_properties: self.import_job_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

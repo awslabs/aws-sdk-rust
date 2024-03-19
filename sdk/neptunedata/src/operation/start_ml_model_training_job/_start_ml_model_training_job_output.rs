@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMlModelTrainingJobOutput {
+pub struct StartMlModelTrainingJobOutput  {
     /// <p>The unique ID of the new model training job.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the new model training job.</p>
@@ -11,13 +11,13 @@ pub struct StartMlModelTrainingJobOutput {
     pub creation_time_in_millis: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl StartMlModelTrainingJobOutput {
+impl  StartMlModelTrainingJobOutput  {
     /// <p>The unique ID of the new model training job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the new model training job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The model training job creation time, in milliseconds.</p>
@@ -26,10 +26,10 @@ impl StartMlModelTrainingJobOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for StartMlModelTrainingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartMlModelTrainingJobOutput {
     /// Creates a new builder-style object to manufacture [`StartMlModelTrainingJobOutput`](crate::operation::start_ml_model_training_job::StartMlModelTrainingJobOutput).
     pub fn builder() -> crate::operation::start_ml_model_training_job::builders::StartMlModelTrainingJobOutputBuilder {
@@ -54,8 +54,7 @@ impl StartMlModelTrainingJobOutputBuilder {
     }
     /// <p>The unique ID of the new model training job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of the new model training job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl StartMlModelTrainingJobOutputBuilder {
     }
     /// <p>The ARN of the new model training job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the new model training job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl StartMlModelTrainingJobOutputBuilder {
     }
     /// <p>The model training job creation time, in milliseconds.</p>
     pub fn set_creation_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.creation_time_in_millis = input;
-        self
+        self.creation_time_in_millis = input; self
     }
     /// <p>The model training job creation time, in milliseconds.</p>
     pub fn get_creation_time_in_millis(&self) -> &::std::option::Option<i64> {
         &self.creation_time_in_millis
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartMlModelTrainingJobOutput`](crate::operation::start_ml_model_training_job::StartMlModelTrainingJobOutput).
     pub fn build(self) -> crate::operation::start_ml_model_training_job::StartMlModelTrainingJobOutput {
         crate::operation::start_ml_model_training_job::StartMlModelTrainingJobOutput {
-            id: self.id,
-            arn: self.arn,
-            creation_time_in_millis: self.creation_time_in_millis,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            creation_time_in_millis: self.creation_time_in_millis
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

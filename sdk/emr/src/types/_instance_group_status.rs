@@ -3,7 +3,7 @@
 /// <p>The details of the instance group status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceGroupStatus {
+pub struct InstanceGroupStatus  {
     /// <p>The current state of the instance group.</p>
     pub state: ::std::option::Option<crate::types::InstanceGroupState>,
     /// <p>The status change reason details for the instance group.</p>
@@ -11,17 +11,17 @@ pub struct InstanceGroupStatus {
     /// <p>The timeline of the instance group status over time.</p>
     pub timeline: ::std::option::Option<crate::types::InstanceGroupTimeline>,
 }
-impl InstanceGroupStatus {
+impl  InstanceGroupStatus  {
     /// <p>The current state of the instance group.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceGroupState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::InstanceGroupState> {
         self.state.as_ref()
     }
     /// <p>The status change reason details for the instance group.</p>
-    pub fn state_change_reason(&self) -> ::std::option::Option<&crate::types::InstanceGroupStateChangeReason> {
+    pub fn state_change_reason(&self) -> ::std::option::Option<& crate::types::InstanceGroupStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The timeline of the instance group status over time.</p>
-    pub fn timeline(&self) -> ::std::option::Option<&crate::types::InstanceGroupTimeline> {
+    pub fn timeline(&self) -> ::std::option::Option<& crate::types::InstanceGroupTimeline> {
         self.timeline.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl InstanceGroupStatusBuilder {
     }
     /// <p>The current state of the instance group.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceGroupState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the instance group.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceGroupState> {
@@ -62,8 +61,7 @@ impl InstanceGroupStatusBuilder {
     }
     /// <p>The status change reason details for the instance group.</p>
     pub fn set_state_change_reason(mut self, input: ::std::option::Option<crate::types::InstanceGroupStateChangeReason>) -> Self {
-        self.state_change_reason = input;
-        self
+        self.state_change_reason = input; self
     }
     /// <p>The status change reason details for the instance group.</p>
     pub fn get_state_change_reason(&self) -> &::std::option::Option<crate::types::InstanceGroupStateChangeReason> {
@@ -76,8 +74,7 @@ impl InstanceGroupStatusBuilder {
     }
     /// <p>The timeline of the instance group status over time.</p>
     pub fn set_timeline(mut self, input: ::std::option::Option<crate::types::InstanceGroupTimeline>) -> Self {
-        self.timeline = input;
-        self
+        self.timeline = input; self
     }
     /// <p>The timeline of the instance group status over time.</p>
     pub fn get_timeline(&self) -> &::std::option::Option<crate::types::InstanceGroupTimeline> {
@@ -86,9 +83,13 @@ impl InstanceGroupStatusBuilder {
     /// Consumes the builder and constructs a [`InstanceGroupStatus`](crate::types::InstanceGroupStatus).
     pub fn build(self) -> crate::types::InstanceGroupStatus {
         crate::types::InstanceGroupStatus {
-            state: self.state,
-            state_change_reason: self.state_change_reason,
-            timeline: self.timeline,
+            state: self.state
+            ,
+            state_change_reason: self.state_change_reason
+            ,
+            timeline: self.timeline
+            ,
         }
     }
 }
+

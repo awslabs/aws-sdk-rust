@@ -3,13 +3,13 @@
 /// <p>The weighted loss value for a quantile. This object is part of the <code>Metrics</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WeightedQuantileLoss {
+pub struct WeightedQuantileLoss  {
     /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
     pub quantile: ::std::option::Option<f64>,
     /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
     pub loss_value: ::std::option::Option<f64>,
 }
-impl WeightedQuantileLoss {
+impl  WeightedQuantileLoss  {
     /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
     pub fn quantile(&self) -> ::std::option::Option<f64> {
         self.quantile
@@ -41,8 +41,7 @@ impl WeightedQuantileLossBuilder {
     }
     /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
     pub fn set_quantile(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.quantile = input;
-        self
+        self.quantile = input; self
     }
     /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
     pub fn get_quantile(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl WeightedQuantileLossBuilder {
     }
     /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
     pub fn set_loss_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.loss_value = input;
-        self
+        self.loss_value = input; self
     }
     /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
     pub fn get_loss_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl WeightedQuantileLossBuilder {
     /// Consumes the builder and constructs a [`WeightedQuantileLoss`](crate::types::WeightedQuantileLoss).
     pub fn build(self) -> crate::types::WeightedQuantileLoss {
         crate::types::WeightedQuantileLoss {
-            quantile: self.quantile,
-            loss_value: self.loss_value,
+            quantile: self.quantile
+            ,
+            loss_value: self.loss_value
+            ,
         }
     }
 }
+

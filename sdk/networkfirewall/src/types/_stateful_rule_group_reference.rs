@@ -3,7 +3,7 @@
 /// <p>Identifier for a single stateful rule group, used in a firewall policy to refer to a rule group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatefulRuleGroupReference {
+pub struct StatefulRuleGroupReference  {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
     pub resource_arn: ::std::string::String,
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single <code>FirewallPolicy</code>. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
@@ -13,11 +13,10 @@ pub struct StatefulRuleGroupReference {
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub r#override: ::std::option::Option<crate::types::StatefulRuleGroupOverride>,
 }
-impl StatefulRuleGroupReference {
+impl  StatefulRuleGroupReference  {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single <code>FirewallPolicy</code>. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
     /// <p>Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
@@ -26,7 +25,7 @@ impl StatefulRuleGroupReference {
         self.priority
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
-    pub fn r#override(&self) -> ::std::option::Option<&crate::types::StatefulRuleGroupOverride> {
+    pub fn r#override(&self) -> ::std::option::Option<& crate::types::StatefulRuleGroupOverride> {
         self.r#override.as_ref()
     }
 }
@@ -54,8 +53,7 @@ impl StatefulRuleGroupReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl StatefulRuleGroupReferenceBuilder {
     /// <p>Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     /// <p>You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups later, number them so there's a wide range in between, for example use 100, 200, and so on.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single <code>FirewallPolicy</code>. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
     /// <p>Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
@@ -88,8 +85,7 @@ impl StatefulRuleGroupReferenceBuilder {
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub fn set_override(mut self, input: ::std::option::Option<crate::types::StatefulRuleGroupOverride>) -> Self {
-        self.r#override = input;
-        self
+        self.r#override = input; self
     }
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
     pub fn get_override(&self) -> &::std::option::Option<crate::types::StatefulRuleGroupOverride> {
@@ -99,15 +95,19 @@ impl StatefulRuleGroupReferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::StatefulRuleGroupReferenceBuilder::resource_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::StatefulRuleGroupReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StatefulRuleGroupReference {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building StatefulRuleGroupReference",
-                )
-            })?,
-            priority: self.priority,
-            r#override: self.r#override,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StatefulRuleGroupReference {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building StatefulRuleGroupReference")
+                    )?
+                ,
+                priority: self.priority
+                ,
+                r#override: self.r#override
+                ,
+            }
+        )
     }
 }
+

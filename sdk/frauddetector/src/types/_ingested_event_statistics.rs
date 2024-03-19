@@ -3,7 +3,7 @@
 /// <p>Data about the stored events.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestedEventStatistics {
+pub struct IngestedEventStatistics  {
     /// <p>The number of stored events.</p>
     pub number_of_events: ::std::option::Option<i64>,
     /// <p>The total size of the stored events.</p>
@@ -15,7 +15,7 @@ pub struct IngestedEventStatistics {
     /// <p>Timestamp of when the stored event was last updated.</p>
     pub last_updated_time: ::std::option::Option<::std::string::String>,
 }
-impl IngestedEventStatistics {
+impl  IngestedEventStatistics  {
     /// <p>The number of stored events.</p>
     pub fn number_of_events(&self) -> ::std::option::Option<i64> {
         self.number_of_events
@@ -25,15 +25,15 @@ impl IngestedEventStatistics {
         self.event_data_size_in_bytes
     }
     /// <p>The oldest stored event.</p>
-    pub fn least_recent_event(&self) -> ::std::option::Option<&str> {
+    pub fn least_recent_event(&self) -> ::std::option::Option<& str> {
         self.least_recent_event.as_deref()
     }
     /// <p>The newest stored event.</p>
-    pub fn most_recent_event(&self) -> ::std::option::Option<&str> {
+    pub fn most_recent_event(&self) -> ::std::option::Option<& str> {
         self.most_recent_event.as_deref()
     }
     /// <p>Timestamp of when the stored event was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl IngestedEventStatisticsBuilder {
     }
     /// <p>The number of stored events.</p>
     pub fn set_number_of_events(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_events = input;
-        self
+        self.number_of_events = input; self
     }
     /// <p>The number of stored events.</p>
     pub fn get_number_of_events(&self) -> &::std::option::Option<i64> {
@@ -76,8 +75,7 @@ impl IngestedEventStatisticsBuilder {
     }
     /// <p>The total size of the stored events.</p>
     pub fn set_event_data_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.event_data_size_in_bytes = input;
-        self
+        self.event_data_size_in_bytes = input; self
     }
     /// <p>The total size of the stored events.</p>
     pub fn get_event_data_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -90,8 +88,7 @@ impl IngestedEventStatisticsBuilder {
     }
     /// <p>The oldest stored event.</p>
     pub fn set_least_recent_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.least_recent_event = input;
-        self
+        self.least_recent_event = input; self
     }
     /// <p>The oldest stored event.</p>
     pub fn get_least_recent_event(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl IngestedEventStatisticsBuilder {
     }
     /// <p>The newest stored event.</p>
     pub fn set_most_recent_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.most_recent_event = input;
-        self
+        self.most_recent_event = input; self
     }
     /// <p>The newest stored event.</p>
     pub fn get_most_recent_event(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl IngestedEventStatisticsBuilder {
     }
     /// <p>Timestamp of when the stored event was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>Timestamp of when the stored event was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl IngestedEventStatisticsBuilder {
     /// Consumes the builder and constructs a [`IngestedEventStatistics`](crate::types::IngestedEventStatistics).
     pub fn build(self) -> crate::types::IngestedEventStatistics {
         crate::types::IngestedEventStatistics {
-            number_of_events: self.number_of_events,
-            event_data_size_in_bytes: self.event_data_size_in_bytes,
-            least_recent_event: self.least_recent_event,
-            most_recent_event: self.most_recent_event,
-            last_updated_time: self.last_updated_time,
+            number_of_events: self.number_of_events
+            ,
+            event_data_size_in_bytes: self.event_data_size_in_bytes
+            ,
+            least_recent_event: self.least_recent_event
+            ,
+            most_recent_event: self.most_recent_event
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

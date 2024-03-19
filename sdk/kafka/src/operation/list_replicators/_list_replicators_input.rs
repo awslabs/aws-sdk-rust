@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReplicatorsInput {
+pub struct ListReplicatorsInput  {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
@@ -10,17 +10,17 @@ pub struct ListReplicatorsInput {
     /// <p>Returns replicators starting with given name.</p>
     pub replicator_name_filter: ::std::option::Option<::std::string::String>,
 }
-impl ListReplicatorsInput {
+impl  ListReplicatorsInput  {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns replicators starting with given name.</p>
-    pub fn replicator_name_filter(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_name_filter(&self) -> ::std::option::Option<& str> {
         self.replicator_name_filter.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListReplicatorsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListReplicatorsInputBuilder {
     }
     /// <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl ListReplicatorsInputBuilder {
     }
     /// <p>Returns replicators starting with given name.</p>
     pub fn set_replicator_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_name_filter = input;
-        self
+        self.replicator_name_filter = input; self
     }
     /// <p>Returns replicators starting with given name.</p>
     pub fn get_replicator_name_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.replicator_name_filter
     }
     /// Consumes the builder and constructs a [`ListReplicatorsInput`](crate::operation::list_replicators::ListReplicatorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_replicators::ListReplicatorsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_replicators::ListReplicatorsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            replicator_name_filter: self.replicator_name_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_replicators::ListReplicatorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_replicators::ListReplicatorsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                replicator_name_filter: self.replicator_name_filter
+                ,
+            }
+        )
     }
 }
+

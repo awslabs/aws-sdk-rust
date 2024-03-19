@@ -3,7 +3,7 @@
 /// <p>The properties associated with the data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatastoreProperties {
+pub struct DatastoreProperties  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::string::String,
     /// <p>The data store name.</p>
@@ -19,35 +19,33 @@ pub struct DatastoreProperties {
     /// <p>The timestamp when the data store was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DatastoreProperties {
+impl  DatastoreProperties  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> &str {
-        use std::ops::Deref;
-        self.datastore_id.deref()
+    pub fn datastore_id(&self) -> & str {
+        use std::ops::Deref; self.datastore_id.deref()
     }
     /// <p>The data store name.</p>
-    pub fn datastore_name(&self) -> &str {
-        use std::ops::Deref;
-        self.datastore_name.deref()
+    pub fn datastore_name(&self) -> & str {
+        use std::ops::Deref; self.datastore_name.deref()
     }
     /// <p>The data store status.</p>
-    pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
+    pub fn datastore_status(&self) -> & crate::types::DatastoreStatus {
         &self.datastore_status
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
-    pub fn datastore_arn(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_arn(&self) -> ::std::option::Option<& str> {
         self.datastore_arn.as_deref()
     }
     /// <p>The timestamp when the data store was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp when the data store was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -79,8 +77,7 @@ impl DatastorePropertiesBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +91,7 @@ impl DatastorePropertiesBuilder {
     }
     /// <p>The data store name.</p>
     pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_name = input;
-        self
+        self.datastore_name = input; self
     }
     /// <p>The data store name.</p>
     pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl DatastorePropertiesBuilder {
     }
     /// <p>The data store status.</p>
     pub fn set_datastore_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
-        self.datastore_status = input;
-        self
+        self.datastore_status = input; self
     }
     /// <p>The data store status.</p>
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
@@ -123,8 +118,7 @@ impl DatastorePropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +131,7 @@ impl DatastorePropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
     pub fn set_datastore_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_arn = input;
-        self
+        self.datastore_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
     pub fn get_datastore_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +144,7 @@ impl DatastorePropertiesBuilder {
     }
     /// <p>The timestamp when the data store was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the data store was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -165,8 +157,7 @@ impl DatastorePropertiesBuilder {
     }
     /// <p>The timestamp when the data store was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp when the data store was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -178,29 +169,33 @@ impl DatastorePropertiesBuilder {
     /// - [`datastore_name`](crate::types::builders::DatastorePropertiesBuilder::datastore_name)
     /// - [`datastore_status`](crate::types::builders::DatastorePropertiesBuilder::datastore_status)
     pub fn build(self) -> ::std::result::Result<crate::types::DatastoreProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatastoreProperties {
-            datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_id",
-                    "datastore_id was not specified but it is required when building DatastoreProperties",
-                )
-            })?,
-            datastore_name: self.datastore_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_name",
-                    "datastore_name was not specified but it is required when building DatastoreProperties",
-                )
-            })?,
-            datastore_status: self.datastore_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_status",
-                    "datastore_status was not specified but it is required when building DatastoreProperties",
-                )
-            })?,
-            kms_key_arn: self.kms_key_arn,
-            datastore_arn: self.datastore_arn,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatastoreProperties {
+                datastore_id: self.datastore_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_id", "datastore_id was not specified but it is required when building DatastoreProperties")
+                    )?
+                ,
+                datastore_name: self.datastore_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_name", "datastore_name was not specified but it is required when building DatastoreProperties")
+                    )?
+                ,
+                datastore_status: self.datastore_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_status", "datastore_status was not specified but it is required when building DatastoreProperties")
+                    )?
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                datastore_arn: self.datastore_arn
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+            }
+        )
     }
 }
+

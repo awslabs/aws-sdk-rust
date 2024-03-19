@@ -3,19 +3,19 @@
 /// <p>The status of the insight.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightStatus {
+pub struct InsightStatus  {
     /// <p>The status of the resource.</p>
     pub status: ::std::option::Option<crate::types::InsightStatusValue>,
     /// <p>Explanation on the reasoning for the status of the resource.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl InsightStatus {
+impl  InsightStatus  {
     /// <p>The status of the resource.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InsightStatusValue> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InsightStatusValue> {
         self.status.as_ref()
     }
     /// <p>Explanation on the reasoning for the status of the resource.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl InsightStatusBuilder {
     }
     /// <p>The status of the resource.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InsightStatusValue>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the resource.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InsightStatusValue> {
@@ -55,8 +54,7 @@ impl InsightStatusBuilder {
     }
     /// <p>Explanation on the reasoning for the status of the resource.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Explanation on the reasoning for the status of the resource.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl InsightStatusBuilder {
     /// Consumes the builder and constructs a [`InsightStatus`](crate::types::InsightStatus).
     pub fn build(self) -> crate::types::InsightStatus {
         crate::types::InsightStatus {
-            status: self.status,
-            reason: self.reason,
+            status: self.status
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

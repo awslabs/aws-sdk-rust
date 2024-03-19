@@ -3,7 +3,7 @@
 /// <p>The primary key for a KSDS data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrimaryKey {
+pub struct PrimaryKey  {
     /// <p>A name for the Primary Key.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A positive integer value representing the offset to mark the start of the primary key in the record byte array.</p>
@@ -11,9 +11,9 @@ pub struct PrimaryKey {
     /// <p>A strictly positive integer value representing the length of the primary key.</p>
     pub length: i32,
 }
-impl PrimaryKey {
+impl  PrimaryKey  {
     /// <p>A name for the Primary Key.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A positive integer value representing the offset to mark the start of the primary key in the record byte array.</p>
@@ -48,8 +48,7 @@ impl PrimaryKeyBuilder {
     }
     /// <p>A name for the Primary Key.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the Primary Key.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PrimaryKeyBuilder {
     }
     /// <p>A positive integer value representing the offset to mark the start of the primary key in the record byte array.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
     }
     /// <p>A positive integer value representing the offset to mark the start of the primary key in the record byte array.</p>
     pub fn get_offset(&self) -> &::std::option::Option<i32> {
@@ -78,8 +76,7 @@ impl PrimaryKeyBuilder {
     }
     /// <p>A strictly positive integer value representing the length of the primary key.</p>
     pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// <p>A strictly positive integer value representing the length of the primary key.</p>
     pub fn get_length(&self) -> &::std::option::Option<i32> {
@@ -88,9 +85,15 @@ impl PrimaryKeyBuilder {
     /// Consumes the builder and constructs a [`PrimaryKey`](crate::types::PrimaryKey).
     pub fn build(self) -> crate::types::PrimaryKey {
         crate::types::PrimaryKey {
-            name: self.name,
-            offset: self.offset.unwrap_or_default(),
-            length: self.length.unwrap_or_default(),
+            name: self.name
+            ,
+            offset: self.offset
+                .unwrap_or_default()
+            ,
+            length: self.length
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the KMS encryption used with DevOps Guru.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KmsServerSideEncryptionIntegration {
+pub struct KmsServerSideEncryptionIntegration  {
     /// <p>Describes the specified KMS key.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with "alias/". If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), Amazon Web Services KMS associates the alias with an Amazon Web Services managed key and returns its KeyId and Arn in the response. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
@@ -17,7 +17,7 @@ pub struct KmsServerSideEncryptionIntegration {
     /// <p>The type of KMS key used. Customer managed keys are the KMS keys that you create. Amazon Web Services owned keys are keys that are owned and managed by DevOps Guru.</p>
     pub r#type: ::std::option::Option<crate::types::ServerSideEncryptionType>,
 }
-impl KmsServerSideEncryptionIntegration {
+impl  KmsServerSideEncryptionIntegration  {
     /// <p>Describes the specified KMS key.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with "alias/". If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), Amazon Web Services KMS associates the alias with an Amazon Web Services managed key and returns its KeyId and Arn in the response. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
@@ -25,15 +25,15 @@ impl KmsServerSideEncryptionIntegration {
     /// <p>Key ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
     /// <p>Alias name: alias/ExampleAlias</p>
     /// <p>Alias ARN: arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies if DevOps Guru is enabled for customer managed keys.</p>
-    pub fn opt_in_status(&self) -> ::std::option::Option<&crate::types::OptInStatus> {
+    pub fn opt_in_status(&self) -> ::std::option::Option<& crate::types::OptInStatus> {
         self.opt_in_status.as_ref()
     }
     /// <p>The type of KMS key used. Customer managed keys are the KMS keys that you create. Amazon Web Services owned keys are keys that are owned and managed by DevOps Guru.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionType> {
         self.r#type.as_ref()
     }
 }
@@ -72,8 +72,7 @@ impl KmsServerSideEncryptionIntegrationBuilder {
     /// <p>Alias name: alias/ExampleAlias</p>
     /// <p>Alias ARN: arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Describes the specified KMS key.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with "alias/". If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), Amazon Web Services KMS associates the alias with an Amazon Web Services managed key and returns its KeyId and Arn in the response. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -92,8 +91,7 @@ impl KmsServerSideEncryptionIntegrationBuilder {
     }
     /// <p>Specifies if DevOps Guru is enabled for customer managed keys.</p>
     pub fn set_opt_in_status(mut self, input: ::std::option::Option<crate::types::OptInStatus>) -> Self {
-        self.opt_in_status = input;
-        self
+        self.opt_in_status = input; self
     }
     /// <p>Specifies if DevOps Guru is enabled for customer managed keys.</p>
     pub fn get_opt_in_status(&self) -> &::std::option::Option<crate::types::OptInStatus> {
@@ -106,8 +104,7 @@ impl KmsServerSideEncryptionIntegrationBuilder {
     }
     /// <p>The type of KMS key used. Customer managed keys are the KMS keys that you create. Amazon Web Services owned keys are keys that are owned and managed by DevOps Guru.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of KMS key used. Customer managed keys are the KMS keys that you create. Amazon Web Services owned keys are keys that are owned and managed by DevOps Guru.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionType> {
@@ -116,9 +113,13 @@ impl KmsServerSideEncryptionIntegrationBuilder {
     /// Consumes the builder and constructs a [`KmsServerSideEncryptionIntegration`](crate::types::KmsServerSideEncryptionIntegration).
     pub fn build(self) -> crate::types::KmsServerSideEncryptionIntegration {
         crate::types::KmsServerSideEncryptionIntegration {
-            kms_key_id: self.kms_key_id,
-            opt_in_status: self.opt_in_status,
-            r#type: self.r#type,
+            kms_key_id: self.kms_key_id
+            ,
+            opt_in_status: self.opt_in_status
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

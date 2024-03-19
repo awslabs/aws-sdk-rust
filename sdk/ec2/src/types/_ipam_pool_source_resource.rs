@@ -3,7 +3,7 @@
 /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamPoolSourceResource {
+pub struct IpamPoolSourceResource  {
     /// <p>The source resource ID.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The source resource type.</p>
@@ -13,21 +13,21 @@ pub struct IpamPoolSourceResource {
     /// <p>The source resource owner.</p>
     pub resource_owner: ::std::option::Option<::std::string::String>,
 }
-impl IpamPoolSourceResource {
+impl  IpamPoolSourceResource  {
     /// <p>The source resource ID.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The source resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::IpamPoolSourceResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::IpamPoolSourceResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The source resource Region.</p>
-    pub fn resource_region(&self) -> ::std::option::Option<&str> {
+    pub fn resource_region(&self) -> ::std::option::Option<& str> {
         self.resource_region.as_deref()
     }
     /// <p>The source resource owner.</p>
-    pub fn resource_owner(&self) -> ::std::option::Option<&str> {
+    pub fn resource_owner(&self) -> ::std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl IpamPoolSourceResourceBuilder {
     }
     /// <p>The source resource ID.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The source resource ID.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl IpamPoolSourceResourceBuilder {
     }
     /// <p>The source resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::IpamPoolSourceResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The source resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::IpamPoolSourceResourceType> {
@@ -83,8 +81,7 @@ impl IpamPoolSourceResourceBuilder {
     }
     /// <p>The source resource Region.</p>
     pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_region = input;
-        self
+        self.resource_region = input; self
     }
     /// <p>The source resource Region.</p>
     pub fn get_resource_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl IpamPoolSourceResourceBuilder {
     }
     /// <p>The source resource owner.</p>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_owner = input;
-        self
+        self.resource_owner = input; self
     }
     /// <p>The source resource owner.</p>
     pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl IpamPoolSourceResourceBuilder {
     /// Consumes the builder and constructs a [`IpamPoolSourceResource`](crate::types::IpamPoolSourceResource).
     pub fn build(self) -> crate::types::IpamPoolSourceResource {
         crate::types::IpamPoolSourceResource {
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            resource_region: self.resource_region,
-            resource_owner: self.resource_owner,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_region: self.resource_region
+            ,
+            resource_owner: self.resource_owner
+            ,
         }
     }
 }
+

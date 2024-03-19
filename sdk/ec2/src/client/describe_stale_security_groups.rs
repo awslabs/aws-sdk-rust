@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStaleSecurityGroups`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p><br>
     ///   - [`vpc_id(impl Into<String>)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::set_vpc_id):<br>required: **true**<br><p>The ID of the VPC.</p><br>
-    /// - On success, responds with [`DescribeStaleSecurityGroupsOutput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput) with field(s):
+                            /// - On success, responds with [`DescribeStaleSecurityGroupsOutput`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput::next_token): <p>The token to include in another request to get the next page of items. If there are no additional items to return, the string is empty.</p>
     ///   - [`stale_security_group_set(Option<Vec::<StaleSecurityGroup>>)`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput::stale_security_group_set): <p>Information about the stale security groups.</p>
-    /// - On failure, responds with [`SdkError<DescribeStaleSecurityGroupsError>`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError)
-    pub fn describe_stale_security_groups(
-        &self,
-    ) -> crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder {
-        crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeStaleSecurityGroupsError>`](crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError)
+    pub fn describe_stale_security_groups(&self) -> crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder {
+                                crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

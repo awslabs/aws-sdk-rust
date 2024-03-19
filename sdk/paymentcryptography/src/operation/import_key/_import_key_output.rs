@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportKeyOutput {
+pub struct ImportKeyOutput  {
     /// <p>The <code>KeyARN</code> of the key material imported within Amazon Web Services Payment Cryptography.</p>
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }
-impl ImportKeyOutput {
+impl  ImportKeyOutput  {
     /// <p>The <code>KeyARN</code> of the key material imported within Amazon Web Services Payment Cryptography.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::Key> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::Key> {
         self.key.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportKeyOutput {
     /// Creates a new builder-style object to manufacture [`ImportKeyOutput`](crate::operation::import_key::ImportKeyOutput).
     pub fn builder() -> crate::operation::import_key::builders::ImportKeyOutputBuilder {
@@ -41,27 +41,28 @@ impl ImportKeyOutputBuilder {
     }
     /// <p>The <code>KeyARN</code> of the key material imported within Amazon Web Services Payment Cryptography.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::Key>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The <code>KeyARN</code> of the key material imported within Amazon Web Services Payment Cryptography.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::Key> {
         &self.key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportKeyOutput`](crate::operation::import_key::ImportKeyOutput).
     pub fn build(self) -> crate::operation::import_key::ImportKeyOutput {
         crate::operation::import_key::ImportKeyOutput {
-            key: self.key,
+            key: self.key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

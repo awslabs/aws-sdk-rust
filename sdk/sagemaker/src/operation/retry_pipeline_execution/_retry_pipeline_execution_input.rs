@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryPipelineExecutionInput {
+pub struct RetryPipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
@@ -10,17 +10,17 @@ pub struct RetryPipelineExecutionInput {
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
-impl RetryPipelineExecutionInput {
+impl  RetryPipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_arn.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
-    pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
+    pub fn parallelism_configuration(&self) -> ::std::option::Option<& crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl RetryPipelineExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_arn = input;
-        self
+        self.pipeline_execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RetryPipelineExecutionInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl RetryPipelineExecutionInputBuilder {
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
     pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
-        self.parallelism_configuration = input;
-        self
+        self.parallelism_configuration = input; self
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline.</p>
     pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         &self.parallelism_configuration
     }
     /// Consumes the builder and constructs a [`RetryPipelineExecutionInput`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput {
-            pipeline_execution_arn: self.pipeline_execution_arn,
-            client_request_token: self.client_request_token,
-            parallelism_configuration: self.parallelism_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput {
+                pipeline_execution_arn: self.pipeline_execution_arn
+                ,
+                client_request_token: self.client_request_token
+                ,
+                parallelism_configuration: self.parallelism_configuration
+                ,
+            }
+        )
     }
 }
+

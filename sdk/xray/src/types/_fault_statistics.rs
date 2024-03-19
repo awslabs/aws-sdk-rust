@@ -3,13 +3,13 @@
 /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FaultStatistics {
+pub struct FaultStatistics  {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     pub other_count: ::std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     pub total_count: ::std::option::Option<i64>,
 }
-impl FaultStatistics {
+impl  FaultStatistics  {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     pub fn other_count(&self) -> ::std::option::Option<i64> {
         self.other_count
@@ -41,8 +41,7 @@ impl FaultStatisticsBuilder {
     }
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     pub fn set_other_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.other_count = input;
-        self
+        self.other_count = input; self
     }
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     pub fn get_other_count(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl FaultStatisticsBuilder {
     }
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl FaultStatisticsBuilder {
     /// Consumes the builder and constructs a [`FaultStatistics`](crate::types::FaultStatistics).
     pub fn build(self) -> crate::types::FaultStatistics {
         crate::types::FaultStatistics {
-            other_count: self.other_count,
-            total_count: self.total_count,
+            other_count: self.other_count
+            ,
+            total_count: self.total_count
+            ,
         }
     }
 }
+

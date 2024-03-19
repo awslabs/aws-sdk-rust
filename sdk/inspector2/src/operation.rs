@@ -177,3 +177,4 @@ pub mod update_org_ec2_deep_inspection_configuration;
 
 /// Types for the `UpdateOrganizationConfiguration` operation.
 pub mod update_organization_configuration;
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDnssecOutput {
+pub struct GetDnssecOutput  {
     /// <p>A string representing the status of DNSSEC.</p>
     pub status: ::std::option::Option<crate::types::DnssecStatus>,
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    pub key_signing_keys: ::std::vec::Vec<crate::types::KeySigningKey>,
+    pub key_signing_keys: ::std::vec::Vec::<crate::types::KeySigningKey>,
     _request_id: Option<String>,
 }
-impl GetDnssecOutput {
+impl  GetDnssecOutput  {
     /// <p>A string representing the status of DNSSEC.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DnssecStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DnssecStatus> {
         self.status.as_ref()
     }
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    pub fn key_signing_keys(&self) -> &[crate::types::KeySigningKey] {
-        use std::ops::Deref;
-        self.key_signing_keys.deref()
+    pub fn key_signing_keys(&self) -> & [crate::types::KeySigningKey] {
+        use std::ops::Deref; self.key_signing_keys.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDnssecOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDnssecOutput {
     /// Creates a new builder-style object to manufacture [`GetDnssecOutput`](crate::operation::get_dnssec::GetDnssecOutput).
     pub fn builder() -> crate::operation::get_dnssec::builders::GetDnssecOutputBuilder {
@@ -37,7 +36,7 @@ impl GetDnssecOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDnssecOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DnssecStatus>,
-    pub(crate) key_signing_keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>,
+    pub(crate) key_signing_keys: ::std::option::Option<::std::vec::Vec::<crate::types::KeySigningKey>>,
     _request_id: Option<String>,
 }
 impl GetDnssecOutputBuilder {
@@ -49,8 +48,7 @@ impl GetDnssecOutputBuilder {
     }
     /// <p>A string representing the status of DNSSEC.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DnssecStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A string representing the status of DNSSEC.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DnssecStatus> {
@@ -63,41 +61,43 @@ impl GetDnssecOutputBuilder {
     /// <p>The key-signing keys (KSKs) in your account.</p>
     pub fn key_signing_keys(mut self, input: crate::types::KeySigningKey) -> Self {
         let mut v = self.key_signing_keys.unwrap_or_default();
-        v.push(input);
-        self.key_signing_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.key_signing_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    pub fn set_key_signing_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>) -> Self {
-        self.key_signing_keys = input;
-        self
+    pub fn set_key_signing_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeySigningKey>>) -> Self {
+        self.key_signing_keys = input; self
     }
     /// <p>The key-signing keys (KSKs) in your account.</p>
-    pub fn get_key_signing_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>> {
+    pub fn get_key_signing_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeySigningKey>> {
         &self.key_signing_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDnssecOutput`](crate::operation::get_dnssec::GetDnssecOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_signing_keys`](crate::operation::get_dnssec::builders::GetDnssecOutputBuilder::key_signing_keys)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_dnssec::GetDnssecOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_dnssec::GetDnssecOutput {
-            status: self.status,
-            key_signing_keys: self.key_signing_keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_signing_keys",
-                    "key_signing_keys was not specified but it is required when building GetDnssecOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_dnssec::GetDnssecOutput {
+                status: self.status
+                ,
+                key_signing_keys: self.key_signing_keys
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_signing_keys", "key_signing_keys was not specified but it is required when building GetDnssecOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

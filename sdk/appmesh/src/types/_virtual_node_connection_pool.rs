@@ -29,11 +29,7 @@ impl VirtualNodeConnectionPool {
     /// Tries to convert the enum instance into [`Grpc`](crate::types::VirtualNodeConnectionPool::Grpc), extracting the inner [`VirtualNodeGrpcConnectionPool`](crate::types::VirtualNodeGrpcConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(&self) -> ::std::result::Result<&crate::types::VirtualNodeGrpcConnectionPool, &Self> {
-        if let VirtualNodeConnectionPool::Grpc(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VirtualNodeConnectionPool::Grpc(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Grpc`](crate::types::VirtualNodeConnectionPool::Grpc).
     pub fn is_grpc(&self) -> bool {
@@ -42,11 +38,7 @@ impl VirtualNodeConnectionPool {
     /// Tries to convert the enum instance into [`Http`](crate::types::VirtualNodeConnectionPool::Http), extracting the inner [`VirtualNodeHttpConnectionPool`](crate::types::VirtualNodeHttpConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(&self) -> ::std::result::Result<&crate::types::VirtualNodeHttpConnectionPool, &Self> {
-        if let VirtualNodeConnectionPool::Http(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VirtualNodeConnectionPool::Http(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Http`](crate::types::VirtualNodeConnectionPool::Http).
     pub fn is_http(&self) -> bool {
@@ -55,11 +47,7 @@ impl VirtualNodeConnectionPool {
     /// Tries to convert the enum instance into [`Http2`](crate::types::VirtualNodeConnectionPool::Http2), extracting the inner [`VirtualNodeHttp2ConnectionPool`](crate::types::VirtualNodeHttp2ConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(&self) -> ::std::result::Result<&crate::types::VirtualNodeHttp2ConnectionPool, &Self> {
-        if let VirtualNodeConnectionPool::Http2(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VirtualNodeConnectionPool::Http2(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Http2`](crate::types::VirtualNodeConnectionPool::Http2).
     pub fn is_http2(&self) -> bool {
@@ -68,11 +56,7 @@ impl VirtualNodeConnectionPool {
     /// Tries to convert the enum instance into [`Tcp`](crate::types::VirtualNodeConnectionPool::Tcp), extracting the inner [`VirtualNodeTcpConnectionPool`](crate::types::VirtualNodeTcpConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tcp(&self) -> ::std::result::Result<&crate::types::VirtualNodeTcpConnectionPool, &Self> {
-        if let VirtualNodeConnectionPool::Tcp(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VirtualNodeConnectionPool::Tcp(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Tcp`](crate::types::VirtualNodeConnectionPool::Tcp).
     pub fn is_tcp(&self) -> bool {
@@ -83,3 +67,4 @@ impl VirtualNodeConnectionPool {
         matches!(self, Self::Unknown)
     }
 }
+

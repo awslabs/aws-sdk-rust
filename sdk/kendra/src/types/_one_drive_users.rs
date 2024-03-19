@@ -3,21 +3,22 @@
 /// <p>User accounts whose documents should be indexed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OneDriveUsers {
+pub struct OneDriveUsers  {
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
-    pub one_drive_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub one_drive_user_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
     pub one_drive_user_s3_path: ::std::option::Option<crate::types::S3Path>,
 }
-impl OneDriveUsers {
+impl  OneDriveUsers  {
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.one_drive_user_list.is_none()`.
-    pub fn one_drive_user_list(&self) -> &[::std::string::String] {
-        self.one_drive_user_list.as_deref().unwrap_or_default()
+    pub fn one_drive_user_list(&self) -> & [::std::string::String] {
+        self.one_drive_user_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
-    pub fn one_drive_user_s3_path(&self) -> ::std::option::Option<&crate::types::S3Path> {
+    pub fn one_drive_user_s3_path(&self) -> ::std::option::Option<& crate::types::S3Path> {
         self.one_drive_user_s3_path.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl OneDriveUsers {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OneDriveUsersBuilder {
-    pub(crate) one_drive_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) one_drive_user_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) one_drive_user_s3_path: ::std::option::Option<crate::types::S3Path>,
 }
 impl OneDriveUsersBuilder {
@@ -43,17 +44,16 @@ impl OneDriveUsersBuilder {
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
     pub fn one_drive_user_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.one_drive_user_list.unwrap_or_default();
-        v.push(input.into());
-        self.one_drive_user_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.one_drive_user_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
-    pub fn set_one_drive_user_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.one_drive_user_list = input;
-        self
+    pub fn set_one_drive_user_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.one_drive_user_list = input; self
     }
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
-    pub fn get_one_drive_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_one_drive_user_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.one_drive_user_list
     }
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
@@ -63,8 +63,7 @@ impl OneDriveUsersBuilder {
     }
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
     pub fn set_one_drive_user_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
-        self.one_drive_user_s3_path = input;
-        self
+        self.one_drive_user_s3_path = input; self
     }
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
     pub fn get_one_drive_user_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
@@ -73,8 +72,11 @@ impl OneDriveUsersBuilder {
     /// Consumes the builder and constructs a [`OneDriveUsers`](crate::types::OneDriveUsers).
     pub fn build(self) -> crate::types::OneDriveUsers {
         crate::types::OneDriveUsers {
-            one_drive_user_list: self.one_drive_user_list,
-            one_drive_user_s3_path: self.one_drive_user_s3_path,
+            one_drive_user_list: self.one_drive_user_list
+            ,
+            one_drive_user_s3_path: self.one_drive_user_s3_path
+            ,
         }
     }
 }
+

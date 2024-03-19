@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCommitInput {
+pub struct CreateCommitInput  {
     /// <p>The name of the repository where you create the commit.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch where you create the commit.</p>
@@ -18,35 +18,35 @@ pub struct CreateCommitInput {
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
     pub keep_empty_folders: ::std::option::Option<bool>,
     /// <p>The files to add or update in this commit.</p>
-    pub put_files: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>,
+    pub put_files: ::std::option::Option<::std::vec::Vec::<crate::types::PutFileEntry>>,
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    pub delete_files: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>,
+    pub delete_files: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteFileEntry>>,
     /// <p>The file modes to update for files in this commit.</p>
-    pub set_file_modes: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>,
+    pub set_file_modes: ::std::option::Option<::std::vec::Vec::<crate::types::SetFileModeEntry>>,
 }
-impl CreateCommitInput {
+impl  CreateCommitInput  {
     /// <p>The name of the repository where you create the commit.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch where you create the commit.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
-    pub fn parent_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_commit_id(&self) -> ::std::option::Option<& str> {
         self.parent_commit_id.as_deref()
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
-    pub fn author_name(&self) -> ::std::option::Option<&str> {
+    pub fn author_name(&self) -> ::std::option::Option<& str> {
         self.author_name.as_deref()
     }
     /// <p>The email address of the person who created the commit.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    pub fn commit_message(&self) -> ::std::option::Option<&str> {
+    pub fn commit_message(&self) -> ::std::option::Option<& str> {
         self.commit_message.as_deref()
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
@@ -54,22 +54,25 @@ impl CreateCommitInput {
         self.keep_empty_folders
     }
     /// <p>The files to add or update in this commit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.put_files.is_none()`.
-    pub fn put_files(&self) -> &[crate::types::PutFileEntry] {
-        self.put_files.as_deref().unwrap_or_default()
+    pub fn put_files(&self) -> & [crate::types::PutFileEntry] {
+        self.put_files.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_files.is_none()`.
-    pub fn delete_files(&self) -> &[crate::types::DeleteFileEntry] {
-        self.delete_files.as_deref().unwrap_or_default()
+    pub fn delete_files(&self) -> & [crate::types::DeleteFileEntry] {
+        self.delete_files.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The file modes to update for files in this commit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.set_file_modes.is_none()`.
-    pub fn set_file_modes(&self) -> &[crate::types::SetFileModeEntry] {
-        self.set_file_modes.as_deref().unwrap_or_default()
+    pub fn set_file_modes(&self) -> & [crate::types::SetFileModeEntry] {
+        self.set_file_modes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateCommitInput {
@@ -90,9 +93,9 @@ pub struct CreateCommitInputBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) commit_message: ::std::option::Option<::std::string::String>,
     pub(crate) keep_empty_folders: ::std::option::Option<bool>,
-    pub(crate) put_files: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>,
-    pub(crate) delete_files: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>,
-    pub(crate) set_file_modes: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>,
+    pub(crate) put_files: ::std::option::Option<::std::vec::Vec::<crate::types::PutFileEntry>>,
+    pub(crate) delete_files: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteFileEntry>>,
+    pub(crate) set_file_modes: ::std::option::Option<::std::vec::Vec::<crate::types::SetFileModeEntry>>,
 }
 impl CreateCommitInputBuilder {
     /// <p>The name of the repository where you create the commit.</p>
@@ -103,8 +106,7 @@ impl CreateCommitInputBuilder {
     }
     /// <p>The name of the repository where you create the commit.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository where you create the commit.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +120,7 @@ impl CreateCommitInputBuilder {
     }
     /// <p>The name of the branch where you create the commit.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the branch where you create the commit.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +133,7 @@ impl CreateCommitInputBuilder {
     }
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
     pub fn set_parent_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_commit_id = input;
-        self
+        self.parent_commit_id = input; self
     }
     /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
     pub fn get_parent_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +146,7 @@ impl CreateCommitInputBuilder {
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn set_author_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author_name = input;
-        self
+        self.author_name = input; self
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn get_author_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +159,7 @@ impl CreateCommitInputBuilder {
     }
     /// <p>The email address of the person who created the commit.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address of the person who created the commit.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +172,7 @@ impl CreateCommitInputBuilder {
     }
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
     pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_message = input;
-        self
+        self.commit_message = input; self
     }
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
     pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +185,7 @@ impl CreateCommitInputBuilder {
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
     pub fn set_keep_empty_folders(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.keep_empty_folders = input;
-        self
+        self.keep_empty_folders = input; self
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
     pub fn get_keep_empty_folders(&self) -> &::std::option::Option<bool> {
@@ -202,17 +198,16 @@ impl CreateCommitInputBuilder {
     /// <p>The files to add or update in this commit.</p>
     pub fn put_files(mut self, input: crate::types::PutFileEntry) -> Self {
         let mut v = self.put_files.unwrap_or_default();
-        v.push(input);
-        self.put_files = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.put_files = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The files to add or update in this commit.</p>
-    pub fn set_put_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>) -> Self {
-        self.put_files = input;
-        self
+    pub fn set_put_files(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutFileEntry>>) -> Self {
+        self.put_files = input; self
     }
     /// <p>The files to add or update in this commit.</p>
-    pub fn get_put_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>> {
+    pub fn get_put_files(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutFileEntry>> {
         &self.put_files
     }
     /// Appends an item to `delete_files`.
@@ -222,17 +217,16 @@ impl CreateCommitInputBuilder {
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
     pub fn delete_files(mut self, input: crate::types::DeleteFileEntry) -> Self {
         let mut v = self.delete_files.unwrap_or_default();
-        v.push(input);
-        self.delete_files = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.delete_files = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    pub fn set_delete_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>) -> Self {
-        self.delete_files = input;
-        self
+    pub fn set_delete_files(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteFileEntry>>) -> Self {
+        self.delete_files = input; self
     }
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-    pub fn get_delete_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>> {
+    pub fn get_delete_files(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeleteFileEntry>> {
         &self.delete_files
     }
     /// Appends an item to `set_file_modes`.
@@ -242,34 +236,44 @@ impl CreateCommitInputBuilder {
     /// <p>The file modes to update for files in this commit.</p>
     pub fn set_file_modes(mut self, input: crate::types::SetFileModeEntry) -> Self {
         let mut v = self.set_file_modes.unwrap_or_default();
-        v.push(input);
-        self.set_file_modes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.set_file_modes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The file modes to update for files in this commit.</p>
-    pub fn set_set_file_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>>) -> Self {
-        self.set_file_modes = input;
-        self
+    pub fn set_set_file_modes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SetFileModeEntry>>) -> Self {
+        self.set_file_modes = input; self
     }
     /// <p>The file modes to update for files in this commit.</p>
-    pub fn get_set_file_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetFileModeEntry>> {
+    pub fn get_set_file_modes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SetFileModeEntry>> {
         &self.set_file_modes
     }
     /// Consumes the builder and constructs a [`CreateCommitInput`](crate::operation::create_commit::CreateCommitInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_commit::CreateCommitInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_commit::CreateCommitInput {
-            repository_name: self.repository_name,
-            branch_name: self.branch_name,
-            parent_commit_id: self.parent_commit_id,
-            author_name: self.author_name,
-            email: self.email,
-            commit_message: self.commit_message,
-            keep_empty_folders: self.keep_empty_folders,
-            put_files: self.put_files,
-            delete_files: self.delete_files,
-            set_file_modes: self.set_file_modes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_commit::CreateCommitInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_commit::CreateCommitInput {
+                repository_name: self.repository_name
+                ,
+                branch_name: self.branch_name
+                ,
+                parent_commit_id: self.parent_commit_id
+                ,
+                author_name: self.author_name
+                ,
+                email: self.email
+                ,
+                commit_message: self.commit_message
+                ,
+                keep_empty_folders: self.keep_empty_folders
+                ,
+                put_files: self.put_files
+                ,
+                delete_files: self.delete_files
+                ,
+                set_file_modes: self.set_file_modes
+                ,
+            }
+        )
     }
 }
+

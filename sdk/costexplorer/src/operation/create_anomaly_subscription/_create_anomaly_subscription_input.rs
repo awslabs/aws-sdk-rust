@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAnomalySubscriptionInput {
+pub struct CreateAnomalySubscriptionInput  {
     /// <p>The cost anomaly subscription object that you want to create.</p>
     pub anomaly_subscription: ::std::option::Option<crate::types::AnomalySubscription>,
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
@@ -23,11 +23,11 @@ pub struct CreateAnomalySubscriptionInput {
     /// <li>
     /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
 }
-impl CreateAnomalySubscriptionInput {
+impl  CreateAnomalySubscriptionInput  {
     /// <p>The cost anomaly subscription object that you want to create.</p>
-    pub fn anomaly_subscription(&self) -> ::std::option::Option<&crate::types::AnomalySubscription> {
+    pub fn anomaly_subscription(&self) -> ::std::option::Option<& crate::types::AnomalySubscription> {
         self.anomaly_subscription.as_ref()
     }
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
@@ -48,10 +48,11 @@ impl CreateAnomalySubscriptionInput {
     /// <li>
     /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::ResourceTag] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAnomalySubscriptionInput {
@@ -66,7 +67,7 @@ impl CreateAnomalySubscriptionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnomalySubscriptionInputBuilder {
     pub(crate) anomaly_subscription: ::std::option::Option<crate::types::AnomalySubscription>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
 }
 impl CreateAnomalySubscriptionInputBuilder {
     /// <p>The cost anomaly subscription object that you want to create.</p>
@@ -77,8 +78,7 @@ impl CreateAnomalySubscriptionInputBuilder {
     }
     /// <p>The cost anomaly subscription object that you want to create.</p>
     pub fn set_anomaly_subscription(mut self, input: ::std::option::Option<crate::types::AnomalySubscription>) -> Self {
-        self.anomaly_subscription = input;
-        self
+        self.anomaly_subscription = input; self
     }
     /// <p>The cost anomaly subscription object that you want to create.</p>
     pub fn get_anomaly_subscription(&self) -> &::std::option::Option<crate::types::AnomalySubscription> {
@@ -108,9 +108,9 @@ impl CreateAnomalySubscriptionInputBuilder {
     /// </ul>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -130,9 +130,8 @@ impl CreateAnomalySubscriptionInputBuilder {
     /// <li>
     /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -152,19 +151,19 @@ impl CreateAnomalySubscriptionInputBuilder {
     /// <li>
     /// <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p></li>
     /// </ul>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// Consumes the builder and constructs a [`CreateAnomalySubscriptionInput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput {
-            anomaly_subscription: self.anomaly_subscription,
-            resource_tags: self.resource_tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput {
+                anomaly_subscription: self.anomaly_subscription
+                ,
+                resource_tags: self.resource_tags
+                ,
+            }
+        )
     }
 }
+

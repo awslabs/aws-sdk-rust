@@ -3,26 +3,25 @@
 /// <p>Filters responses returned by the <code>ListBotLocales</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotLocaleFilter {
+pub struct BotLocaleFilter  {
     /// <p>The name of the field to filter the list of bots.</p>
     pub name: crate::types::BotLocaleFilterName,
     /// <p>The value to use for filtering the list of bots.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
     pub operator: crate::types::BotLocaleFilterOperator,
 }
-impl BotLocaleFilter {
+impl  BotLocaleFilter  {
     /// <p>The name of the field to filter the list of bots.</p>
-    pub fn name(&self) -> &crate::types::BotLocaleFilterName {
+    pub fn name(&self) -> & crate::types::BotLocaleFilterName {
         &self.name
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> &crate::types::BotLocaleFilterOperator {
+    pub fn operator(&self) -> & crate::types::BotLocaleFilterOperator {
         &self.operator
     }
 }
@@ -38,7 +37,7 @@ impl BotLocaleFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotLocaleFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::BotLocaleFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operator: ::std::option::Option<crate::types::BotLocaleFilterOperator>,
 }
 impl BotLocaleFilterBuilder {
@@ -50,8 +49,7 @@ impl BotLocaleFilterBuilder {
     }
     /// <p>The name of the field to filter the list of bots.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::BotLocaleFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the field to filter the list of bots.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::BotLocaleFilterName> {
@@ -64,17 +62,16 @@ impl BotLocaleFilterBuilder {
     /// <p>The value to use for filtering the list of bots.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
@@ -85,8 +82,7 @@ impl BotLocaleFilterBuilder {
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::BotLocaleFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::BotLocaleFilterOperator> {
@@ -98,25 +94,25 @@ impl BotLocaleFilterBuilder {
     /// - [`values`](crate::types::builders::BotLocaleFilterBuilder::values)
     /// - [`operator`](crate::types::builders::BotLocaleFilterBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotLocaleFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building BotLocaleFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building BotLocaleFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building BotLocaleFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotLocaleFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building BotLocaleFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building BotLocaleFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building BotLocaleFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

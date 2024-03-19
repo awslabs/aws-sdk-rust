@@ -3,13 +3,13 @@
 /// <p>Provides face metadata such as FaceId, BoundingBox, Confidence of the input face used for search.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchedFace {
+pub struct SearchedFace  {
     /// <p>Unique identifier assigned to the face.</p>
     pub face_id: ::std::option::Option<::std::string::String>,
 }
-impl SearchedFace {
+impl  SearchedFace  {
     /// <p>Unique identifier assigned to the face.</p>
-    pub fn face_id(&self) -> ::std::option::Option<&str> {
+    pub fn face_id(&self) -> ::std::option::Option<& str> {
         self.face_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SearchedFaceBuilder {
     }
     /// <p>Unique identifier assigned to the face.</p>
     pub fn set_face_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.face_id = input;
-        self
+        self.face_id = input; self
     }
     /// <p>Unique identifier assigned to the face.</p>
     pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl SearchedFaceBuilder {
     }
     /// Consumes the builder and constructs a [`SearchedFace`](crate::types::SearchedFace).
     pub fn build(self) -> crate::types::SearchedFace {
-        crate::types::SearchedFace { face_id: self.face_id }
+        crate::types::SearchedFace {
+            face_id: self.face_id
+            ,
+        }
     }
 }
+

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DetectTargetedSentimentOutput {
+pub struct DetectTargetedSentimentOutput  {
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
+    pub entities: ::std::option::Option<::std::vec::Vec::<crate::types::TargetedSentimentEntity>>,
     _request_id: Option<String>,
 }
-impl DetectTargetedSentimentOutput {
+impl  DetectTargetedSentimentOutput  {
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
-    pub fn entities(&self) -> &[crate::types::TargetedSentimentEntity] {
-        self.entities.as_deref().unwrap_or_default()
+    pub fn entities(&self) -> & [crate::types::TargetedSentimentEntity] {
+        self.entities.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for DetectTargetedSentimentOutput {
+impl  ::std::fmt::Debug for DetectTargetedSentimentOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DetectTargetedSentimentOutput");
         formatter.field("entities", &"*** Sensitive Data Redacted ***");
@@ -24,10 +25,10 @@ impl ::std::fmt::Debug for DetectTargetedSentimentOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DetectTargetedSentimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectTargetedSentimentOutput {
     /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentOutput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput).
     pub fn builder() -> crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentOutputBuilder {
@@ -39,7 +40,7 @@ impl DetectTargetedSentimentOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DetectTargetedSentimentOutputBuilder {
-    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec::<crate::types::TargetedSentimentEntity>>,
     _request_id: Option<String>,
 }
 impl DetectTargetedSentimentOutputBuilder {
@@ -50,32 +51,32 @@ impl DetectTargetedSentimentOutputBuilder {
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
     pub fn entities(mut self, input: crate::types::TargetedSentimentEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>>) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetedSentimentEntity>>) -> Self {
+        self.entities = input; self
     }
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetedSentimentEntity>> {
         &self.entities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectTargetedSentimentOutput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput).
     pub fn build(self) -> crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput {
         crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput {
-            entities: self.entities,
+            entities: self.entities
+            ,
             _request_id: self._request_id,
         }
     }
@@ -88,3 +89,4 @@ impl ::std::fmt::Debug for DetectTargetedSentimentOutputBuilder {
         formatter.finish()
     }
 }
+

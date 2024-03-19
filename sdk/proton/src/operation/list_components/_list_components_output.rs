@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentsOutput {
+pub struct ListComponentsOutput  {
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of components with summary data.</p>
-    pub components: ::std::vec::Vec<crate::types::ComponentSummary>,
+    pub components: ::std::vec::Vec::<crate::types::ComponentSummary>,
     _request_id: Option<String>,
 }
-impl ListComponentsOutput {
+impl  ListComponentsOutput  {
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of components with summary data.</p>
-    pub fn components(&self) -> &[crate::types::ComponentSummary] {
-        use std::ops::Deref;
-        self.components.deref()
+    pub fn components(&self) -> & [crate::types::ComponentSummary] {
+        use std::ops::Deref; self.components.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListComponentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
     pub fn builder() -> crate::operation::list_components::builders::ListComponentsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListComponentsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
+    pub(crate) components: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentSummary>>,
     _request_id: Option<String>,
 }
 impl ListComponentsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListComponentsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListComponentsOutputBuilder {
     /// <p>An array of components with summary data.</p>
     pub fn components(mut self, input: crate::types::ComponentSummary) -> Self {
         let mut v = self.components.unwrap_or_default();
-        v.push(input);
-        self.components = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.components = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of components with summary data.</p>
-    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>) -> Self {
-        self.components = input;
-        self
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentSummary>>) -> Self {
+        self.components = input; self
     }
     /// <p>An array of components with summary data.</p>
-    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentSummary>> {
         &self.components
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`components`](crate::operation::list_components::builders::ListComponentsOutputBuilder::components)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_components::ListComponentsOutput {
-            next_token: self.next_token,
-            components: self.components.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "components",
-                    "components was not specified but it is required when building ListComponentsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_components::ListComponentsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_components::ListComponentsOutput {
+                next_token: self.next_token
+                ,
+                components: self.components
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("components", "components was not specified but it is required when building ListComponentsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

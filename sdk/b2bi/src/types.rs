@@ -72,3 +72,4 @@ pub mod builders;
 
 /// Error types that AWS B2B Data Interchange can respond with.
 pub mod error;
+

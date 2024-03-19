@@ -3,15 +3,14 @@
 /// <p>The properties that are applied when using Trend Micro as a flow source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrendmicroSourceProperties {
+pub struct TrendmicroSourceProperties  {
     /// <p>The object specified in the Trend Micro flow source.</p>
     pub object: ::std::string::String,
 }
-impl TrendmicroSourceProperties {
+impl  TrendmicroSourceProperties  {
     /// <p>The object specified in the Trend Micro flow source.</p>
-    pub fn object(&self) -> &str {
-        use std::ops::Deref;
-        self.object.deref()
+    pub fn object(&self) -> & str {
+        use std::ops::Deref; self.object.deref()
     }
 }
 impl TrendmicroSourceProperties {
@@ -36,8 +35,7 @@ impl TrendmicroSourcePropertiesBuilder {
     }
     /// <p>The object specified in the Trend Micro flow source.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// <p>The object specified in the Trend Micro flow source.</p>
     pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl TrendmicroSourcePropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object`](crate::types::builders::TrendmicroSourcePropertiesBuilder::object)
     pub fn build(self) -> ::std::result::Result<crate::types::TrendmicroSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrendmicroSourceProperties {
-            object: self.object.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object",
-                    "object was not specified but it is required when building TrendmicroSourceProperties",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrendmicroSourceProperties {
+                object: self.object
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object", "object was not specified but it is required when building TrendmicroSourceProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

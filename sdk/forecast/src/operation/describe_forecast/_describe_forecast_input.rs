@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeForecastInput {
+pub struct DescribeForecastInput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     pub forecast_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeForecastInput {
+impl  DescribeForecastInput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
-    pub fn forecast_arn(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_arn(&self) -> ::std::option::Option<& str> {
         self.forecast_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeForecastInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_arn = input;
-        self
+        self.forecast_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.forecast_arn
     }
     /// Consumes the builder and constructs a [`DescribeForecastInput`](crate::operation::describe_forecast::DescribeForecastInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_forecast::DescribeForecastInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_forecast::DescribeForecastInput {
-            forecast_arn: self.forecast_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_forecast::DescribeForecastInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_forecast::DescribeForecastInput {
+                forecast_arn: self.forecast_arn
+                ,
+            }
+        )
     }
 }
+

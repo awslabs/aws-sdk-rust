@@ -3,7 +3,7 @@
 /// <p>Pricing information about a Savings Plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlansPricing {
+pub struct SavingsPlansPricing  {
     /// <p>The cost of paying for the recommended Savings Plan monthly.</p>
     pub monthly_savings_plans_eligible_cost: ::std::option::Option<f64>,
     /// <p>Estimated monthly commitment for the Savings Plan.</p>
@@ -13,7 +13,7 @@ pub struct SavingsPlansPricing {
     /// <p>Estimated On-Demand cost you will pay after buying the Savings Plan.</p>
     pub estimated_on_demand_cost: ::std::option::Option<f64>,
 }
-impl SavingsPlansPricing {
+impl  SavingsPlansPricing  {
     /// <p>The cost of paying for the recommended Savings Plan monthly.</p>
     pub fn monthly_savings_plans_eligible_cost(&self) -> ::std::option::Option<f64> {
         self.monthly_savings_plans_eligible_cost
@@ -55,8 +55,7 @@ impl SavingsPlansPricingBuilder {
     }
     /// <p>The cost of paying for the recommended Savings Plan monthly.</p>
     pub fn set_monthly_savings_plans_eligible_cost(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.monthly_savings_plans_eligible_cost = input;
-        self
+        self.monthly_savings_plans_eligible_cost = input; self
     }
     /// <p>The cost of paying for the recommended Savings Plan monthly.</p>
     pub fn get_monthly_savings_plans_eligible_cost(&self) -> &::std::option::Option<f64> {
@@ -69,8 +68,7 @@ impl SavingsPlansPricingBuilder {
     }
     /// <p>Estimated monthly commitment for the Savings Plan.</p>
     pub fn set_estimated_monthly_commitment(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_monthly_commitment = input;
-        self
+        self.estimated_monthly_commitment = input; self
     }
     /// <p>Estimated monthly commitment for the Savings Plan.</p>
     pub fn get_estimated_monthly_commitment(&self) -> &::std::option::Option<f64> {
@@ -83,8 +81,7 @@ impl SavingsPlansPricingBuilder {
     }
     /// <p>Estimated savings as a percentage of your overall costs after buying the Savings Plan.</p>
     pub fn set_savings_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.savings_percentage = input;
-        self
+        self.savings_percentage = input; self
     }
     /// <p>Estimated savings as a percentage of your overall costs after buying the Savings Plan.</p>
     pub fn get_savings_percentage(&self) -> &::std::option::Option<f64> {
@@ -97,8 +94,7 @@ impl SavingsPlansPricingBuilder {
     }
     /// <p>Estimated On-Demand cost you will pay after buying the Savings Plan.</p>
     pub fn set_estimated_on_demand_cost(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_on_demand_cost = input;
-        self
+        self.estimated_on_demand_cost = input; self
     }
     /// <p>Estimated On-Demand cost you will pay after buying the Savings Plan.</p>
     pub fn get_estimated_on_demand_cost(&self) -> &::std::option::Option<f64> {
@@ -107,10 +103,15 @@ impl SavingsPlansPricingBuilder {
     /// Consumes the builder and constructs a [`SavingsPlansPricing`](crate::types::SavingsPlansPricing).
     pub fn build(self) -> crate::types::SavingsPlansPricing {
         crate::types::SavingsPlansPricing {
-            monthly_savings_plans_eligible_cost: self.monthly_savings_plans_eligible_cost,
-            estimated_monthly_commitment: self.estimated_monthly_commitment,
-            savings_percentage: self.savings_percentage,
-            estimated_on_demand_cost: self.estimated_on_demand_cost,
+            monthly_savings_plans_eligible_cost: self.monthly_savings_plans_eligible_cost
+            ,
+            estimated_monthly_commitment: self.estimated_monthly_commitment
+            ,
+            savings_percentage: self.savings_percentage
+            ,
+            estimated_on_demand_cost: self.estimated_on_demand_cost
+            ,
         }
     }
 }
+

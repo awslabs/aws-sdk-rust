@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobOutput {
+pub struct DescribeJobOutput  {
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
     pub job_metadata: ::std::option::Option<crate::types::JobMetadata>,
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    pub sub_job_metadata: ::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>>,
+    pub sub_job_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::JobMetadata>>,
     _request_id: Option<String>,
 }
-impl DescribeJobOutput {
+impl  DescribeJobOutput  {
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
-    pub fn job_metadata(&self) -> ::std::option::Option<&crate::types::JobMetadata> {
+    pub fn job_metadata(&self) -> ::std::option::Option<& crate::types::JobMetadata> {
         self.job_metadata.as_ref()
     }
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_job_metadata.is_none()`.
-    pub fn sub_job_metadata(&self) -> &[crate::types::JobMetadata] {
-        self.sub_job_metadata.as_deref().unwrap_or_default()
+    pub fn sub_job_metadata(&self) -> & [crate::types::JobMetadata] {
+        self.sub_job_metadata.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
     pub fn builder() -> crate::operation::describe_job::builders::DescribeJobOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeJobOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobOutputBuilder {
     pub(crate) job_metadata: ::std::option::Option<crate::types::JobMetadata>,
-    pub(crate) sub_job_metadata: ::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>>,
+    pub(crate) sub_job_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::JobMetadata>>,
     _request_id: Option<String>,
 }
 impl DescribeJobOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
     pub fn set_job_metadata(mut self, input: ::std::option::Option<crate::types::JobMetadata>) -> Self {
-        self.job_metadata = input;
-        self
+        self.job_metadata = input; self
     }
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
     pub fn get_job_metadata(&self) -> &::std::option::Option<crate::types::JobMetadata> {
@@ -63,34 +63,36 @@ impl DescribeJobOutputBuilder {
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
     pub fn sub_job_metadata(mut self, input: crate::types::JobMetadata) -> Self {
         let mut v = self.sub_job_metadata.unwrap_or_default();
-        v.push(input);
-        self.sub_job_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sub_job_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    pub fn set_sub_job_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>>) -> Self {
-        self.sub_job_metadata = input;
-        self
+    pub fn set_sub_job_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobMetadata>>) -> Self {
+        self.sub_job_metadata = input; self
     }
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    pub fn get_sub_job_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>> {
+    pub fn get_sub_job_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobMetadata>> {
         &self.sub_job_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
     pub fn build(self) -> crate::operation::describe_job::DescribeJobOutput {
         crate::operation::describe_job::DescribeJobOutput {
-            job_metadata: self.job_metadata,
-            sub_job_metadata: self.sub_job_metadata,
+            job_metadata: self.job_metadata
+            ,
+            sub_job_metadata: self.sub_job_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

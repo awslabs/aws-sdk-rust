@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DetectSyntaxOutput {
+pub struct DetectSyntaxOutput  {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
-    pub syntax_tokens: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
+    pub syntax_tokens: ::std::option::Option<::std::vec::Vec::<crate::types::SyntaxToken>>,
     _request_id: Option<String>,
 }
-impl DetectSyntaxOutput {
+impl  DetectSyntaxOutput  {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.syntax_tokens.is_none()`.
-    pub fn syntax_tokens(&self) -> &[crate::types::SyntaxToken] {
-        self.syntax_tokens.as_deref().unwrap_or_default()
+    pub fn syntax_tokens(&self) -> & [crate::types::SyntaxToken] {
+        self.syntax_tokens.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for DetectSyntaxOutput {
+impl  ::std::fmt::Debug for DetectSyntaxOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSyntaxOutput");
         formatter.field("syntax_tokens", &"*** Sensitive Data Redacted ***");
@@ -24,10 +25,10 @@ impl ::std::fmt::Debug for DetectSyntaxOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DetectSyntaxOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectSyntaxOutput {
     /// Creates a new builder-style object to manufacture [`DetectSyntaxOutput`](crate::operation::detect_syntax::DetectSyntaxOutput).
     pub fn builder() -> crate::operation::detect_syntax::builders::DetectSyntaxOutputBuilder {
@@ -39,7 +40,7 @@ impl DetectSyntaxOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DetectSyntaxOutputBuilder {
-    pub(crate) syntax_tokens: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
+    pub(crate) syntax_tokens: ::std::option::Option<::std::vec::Vec::<crate::types::SyntaxToken>>,
     _request_id: Option<String>,
 }
 impl DetectSyntaxOutputBuilder {
@@ -50,32 +51,32 @@ impl DetectSyntaxOutputBuilder {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
     pub fn syntax_tokens(mut self, input: crate::types::SyntaxToken) -> Self {
         let mut v = self.syntax_tokens.unwrap_or_default();
-        v.push(input);
-        self.syntax_tokens = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.syntax_tokens = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
-    pub fn set_syntax_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>) -> Self {
-        self.syntax_tokens = input;
-        self
+    pub fn set_syntax_tokens(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SyntaxToken>>) -> Self {
+        self.syntax_tokens = input; self
     }
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
-    pub fn get_syntax_tokens(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>> {
+    pub fn get_syntax_tokens(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SyntaxToken>> {
         &self.syntax_tokens
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectSyntaxOutput`](crate::operation::detect_syntax::DetectSyntaxOutput).
     pub fn build(self) -> crate::operation::detect_syntax::DetectSyntaxOutput {
         crate::operation::detect_syntax::DetectSyntaxOutput {
-            syntax_tokens: self.syntax_tokens,
+            syntax_tokens: self.syntax_tokens
+            ,
             _request_id: self._request_id,
         }
     }
@@ -88,3 +89,4 @@ impl ::std::fmt::Debug for DetectSyntaxOutputBuilder {
         formatter.finish()
     }
 }
+

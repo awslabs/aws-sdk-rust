@@ -3,7 +3,7 @@
 /// <p>The parameters for using a Step Functions state machine as a target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipeTargetStateMachineParameters {
+pub struct PipeTargetStateMachineParameters  {
     /// <p>Specify whether to invoke the Step Functions state machine synchronously or asynchronously.</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct PipeTargetStateMachineParameters {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
-impl PipeTargetStateMachineParameters {
+impl  PipeTargetStateMachineParameters  {
     /// <p>Specify whether to invoke the Step Functions state machine synchronously or asynchronously.</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ impl PipeTargetStateMachineParameters {
     /// <p><code>FIRE_AND_FORGET</code> - Invoke asynchronously. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html">StartExecution</a> in the <i>Step Functions API Reference</i>.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::PipeTargetInvocationType> {
+    pub fn invocation_type(&self) -> ::std::option::Option<& crate::types::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl PipeTargetStateMachineParametersBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::PipeTargetInvocationType>) -> Self {
-        self.invocation_type = input;
-        self
+        self.invocation_type = input; self
     }
     /// <p>Specify whether to invoke the Step Functions state machine synchronously or asynchronously.</p>
     /// <ul>
@@ -89,7 +88,9 @@ impl PipeTargetStateMachineParametersBuilder {
     /// Consumes the builder and constructs a [`PipeTargetStateMachineParameters`](crate::types::PipeTargetStateMachineParameters).
     pub fn build(self) -> crate::types::PipeTargetStateMachineParameters {
         crate::types::PipeTargetStateMachineParameters {
-            invocation_type: self.invocation_type,
+            invocation_type: self.invocation_type
+            ,
         }
     }
 }
+

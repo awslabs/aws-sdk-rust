@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListQueriesOutput {
+pub struct ListQueriesOutput  {
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
-    pub queries: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
+    pub queries: ::std::option::Option<::std::vec::Vec::<crate::types::Query>>,
     /// <p>A token you can use to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListQueriesOutput {
+impl  ListQueriesOutput  {
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queries.is_none()`.
-    pub fn queries(&self) -> &[crate::types::Query] {
-        self.queries.as_deref().unwrap_or_default()
+    pub fn queries(&self) -> & [crate::types::Query] {
+        self.queries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token you can use to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListQueriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueriesOutput`](crate::operation::list_queries::ListQueriesOutput).
     pub fn builder() -> crate::operation::list_queries::builders::ListQueriesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListQueriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueriesOutputBuilder {
-    pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
+    pub(crate) queries: ::std::option::Option<::std::vec::Vec::<crate::types::Query>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListQueriesOutputBuilder {
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
     pub fn queries(mut self, input: crate::types::Query) -> Self {
         let mut v = self.queries.unwrap_or_default();
-        v.push(input);
-        self.queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
-    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Query>>) -> Self {
-        self.queries = input;
-        self
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Query>>) -> Self {
+        self.queries = input; self
     }
     /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
-    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Query>> {
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Query>> {
         &self.queries
     }
     /// <p>A token you can use to get the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListQueriesOutputBuilder {
     }
     /// <p>A token you can use to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token you can use to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListQueriesOutput`](crate::operation::list_queries::ListQueriesOutput).
     pub fn build(self) -> crate::operation::list_queries::ListQueriesOutput {
         crate::operation::list_queries::ListQueriesOutput {
-            queries: self.queries,
-            next_token: self.next_token,
+            queries: self.queries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

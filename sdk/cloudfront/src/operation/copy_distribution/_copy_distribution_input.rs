@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyDistributionInput {
+pub struct CopyDistributionInput  {
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
     pub primary_distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
@@ -15,9 +15,9 @@ pub struct CopyDistributionInput {
     /// <p>If you omit this field, the default value is <code>True</code>.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl CopyDistributionInput {
+impl  CopyDistributionInput  {
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
-    pub fn primary_distribution_id(&self) -> ::std::option::Option<&str> {
+    pub fn primary_distribution_id(&self) -> ::std::option::Option<& str> {
         self.primary_distribution_id.as_deref()
     }
     /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
@@ -25,11 +25,11 @@ impl CopyDistributionInput {
         self.staging
     }
     /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
     /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
+    pub fn caller_reference(&self) -> ::std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
     /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
@@ -64,8 +64,7 @@ impl CopyDistributionInputBuilder {
     }
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
     pub fn set_primary_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_distribution_id = input;
-        self
+        self.primary_distribution_id = input; self
     }
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
     pub fn get_primary_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl CopyDistributionInputBuilder {
     }
     /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
     pub fn set_staging(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.staging = input;
-        self
+        self.staging = input; self
     }
     /// <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
     pub fn get_staging(&self) -> &::std::option::Option<bool> {
@@ -92,8 +90,7 @@ impl CopyDistributionInputBuilder {
     }
     /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl CopyDistributionInputBuilder {
     }
     /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
     pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.caller_reference = input;
-        self
+        self.caller_reference = input; self
     }
     /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
     pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +119,7 @@ impl CopyDistributionInputBuilder {
     /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
     /// <p>If you omit this field, the default value is <code>True</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
     /// <p>If you omit this field, the default value is <code>True</code>.</p>
@@ -132,15 +127,21 @@ impl CopyDistributionInputBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`CopyDistributionInput`](crate::operation::copy_distribution::CopyDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::copy_distribution::CopyDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::copy_distribution::CopyDistributionInput {
-            primary_distribution_id: self.primary_distribution_id,
-            staging: self.staging,
-            if_match: self.if_match,
-            caller_reference: self.caller_reference,
-            enabled: self.enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_distribution::CopyDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_distribution::CopyDistributionInput {
+                primary_distribution_id: self.primary_distribution_id
+                ,
+                staging: self.staging
+                ,
+                if_match: self.if_match
+                ,
+                caller_reference: self.caller_reference
+                ,
+                enabled: self.enabled
+                ,
+            }
+        )
     }
 }
+

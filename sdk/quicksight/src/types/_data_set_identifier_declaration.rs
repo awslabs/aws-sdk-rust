@@ -3,22 +3,20 @@
 /// <p>A data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetIdentifierDeclaration {
+pub struct DataSetIdentifierDeclaration  {
     /// <p>The identifier of the data set, typically the data set's name.</p>
     pub identifier: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
     pub data_set_arn: ::std::string::String,
 }
-impl DataSetIdentifierDeclaration {
+impl  DataSetIdentifierDeclaration  {
     /// <p>The identifier of the data set, typically the data set's name.</p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> & str {
+        use std::ops::Deref; self.identifier.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
-    pub fn data_set_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_arn.deref()
+    pub fn data_set_arn(&self) -> & str {
+        use std::ops::Deref; self.data_set_arn.deref()
     }
 }
 impl DataSetIdentifierDeclaration {
@@ -44,8 +42,7 @@ impl DataSetIdentifierDeclarationBuilder {
     }
     /// <p>The identifier of the data set, typically the data set's name.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the data set, typically the data set's name.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl DataSetIdentifierDeclarationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
     pub fn set_data_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_arn = input;
-        self
+        self.data_set_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
     pub fn get_data_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl DataSetIdentifierDeclarationBuilder {
     /// - [`identifier`](crate::types::builders::DataSetIdentifierDeclarationBuilder::identifier)
     /// - [`data_set_arn`](crate::types::builders::DataSetIdentifierDeclarationBuilder::data_set_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSetIdentifierDeclaration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSetIdentifierDeclaration {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building DataSetIdentifierDeclaration",
-                )
-            })?,
-            data_set_arn: self.data_set_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_arn",
-                    "data_set_arn was not specified but it is required when building DataSetIdentifierDeclaration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSetIdentifierDeclaration {
+                identifier: self.identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identifier", "identifier was not specified but it is required when building DataSetIdentifierDeclaration")
+                    )?
+                ,
+                data_set_arn: self.data_set_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_arn", "data_set_arn was not specified but it is required when building DataSetIdentifierDeclaration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

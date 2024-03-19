@@ -3,7 +3,7 @@
 /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchListObjectParents {
+pub struct BatchListObjectParents  {
     /// <p>The reference that identifies an object.</p>
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The pagination token.</p>
@@ -11,13 +11,13 @@ pub struct BatchListObjectParents {
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl BatchListObjectParents {
+impl  BatchListObjectParents  {
     /// <p>The reference that identifies an object.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -49,8 +49,7 @@ impl BatchListObjectParentsBuilder {
     }
     /// <p>The reference that identifies an object.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>The reference that identifies an object.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -63,8 +62,7 @@ impl BatchListObjectParentsBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl BatchListObjectParentsBuilder {
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -87,9 +84,13 @@ impl BatchListObjectParentsBuilder {
     /// Consumes the builder and constructs a [`BatchListObjectParents`](crate::types::BatchListObjectParents).
     pub fn build(self) -> crate::types::BatchListObjectParents {
         crate::types::BatchListObjectParents {
-            object_reference: self.object_reference,
-            next_token: self.next_token,
-            max_results: self.max_results,
+            object_reference: self.object_reference
+            ,
+            next_token: self.next_token
+            ,
+            max_results: self.max_results
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnabledBaselineOutput {
+pub struct GetEnabledBaselineOutput  {
     /// <p>Details of the <code>EnabledBaseline</code> resource.</p>
     pub enabled_baseline_details: ::std::option::Option<crate::types::EnabledBaselineDetails>,
     _request_id: Option<String>,
 }
-impl GetEnabledBaselineOutput {
+impl  GetEnabledBaselineOutput  {
     /// <p>Details of the <code>EnabledBaseline</code> resource.</p>
-    pub fn enabled_baseline_details(&self) -> ::std::option::Option<&crate::types::EnabledBaselineDetails> {
+    pub fn enabled_baseline_details(&self) -> ::std::option::Option<& crate::types::EnabledBaselineDetails> {
         self.enabled_baseline_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEnabledBaselineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEnabledBaselineOutput {
     /// Creates a new builder-style object to manufacture [`GetEnabledBaselineOutput`](crate::operation::get_enabled_baseline::GetEnabledBaselineOutput).
     pub fn builder() -> crate::operation::get_enabled_baseline::builders::GetEnabledBaselineOutputBuilder {
@@ -40,27 +40,28 @@ impl GetEnabledBaselineOutputBuilder {
     }
     /// <p>Details of the <code>EnabledBaseline</code> resource.</p>
     pub fn set_enabled_baseline_details(mut self, input: ::std::option::Option<crate::types::EnabledBaselineDetails>) -> Self {
-        self.enabled_baseline_details = input;
-        self
+        self.enabled_baseline_details = input; self
     }
     /// <p>Details of the <code>EnabledBaseline</code> resource.</p>
     pub fn get_enabled_baseline_details(&self) -> &::std::option::Option<crate::types::EnabledBaselineDetails> {
         &self.enabled_baseline_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEnabledBaselineOutput`](crate::operation::get_enabled_baseline::GetEnabledBaselineOutput).
     pub fn build(self) -> crate::operation::get_enabled_baseline::GetEnabledBaselineOutput {
         crate::operation::get_enabled_baseline::GetEnabledBaselineOutput {
-            enabled_baseline_details: self.enabled_baseline_details,
+            enabled_baseline_details: self.enabled_baseline_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

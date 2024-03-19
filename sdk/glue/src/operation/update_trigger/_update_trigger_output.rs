@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTriggerOutput {
+pub struct UpdateTriggerOutput  {
     /// <p>The resulting trigger definition.</p>
     pub trigger: ::std::option::Option<crate::types::Trigger>,
     _request_id: Option<String>,
 }
-impl UpdateTriggerOutput {
+impl  UpdateTriggerOutput  {
     /// <p>The resulting trigger definition.</p>
-    pub fn trigger(&self) -> ::std::option::Option<&crate::types::Trigger> {
+    pub fn trigger(&self) -> ::std::option::Option<& crate::types::Trigger> {
         self.trigger.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateTriggerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateTriggerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTriggerOutput`](crate::operation::update_trigger::UpdateTriggerOutput).
     pub fn builder() -> crate::operation::update_trigger::builders::UpdateTriggerOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateTriggerOutputBuilder {
     }
     /// <p>The resulting trigger definition.</p>
     pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::Trigger>) -> Self {
-        self.trigger = input;
-        self
+        self.trigger = input; self
     }
     /// <p>The resulting trigger definition.</p>
     pub fn get_trigger(&self) -> &::std::option::Option<crate::types::Trigger> {
         &self.trigger
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateTriggerOutput`](crate::operation::update_trigger::UpdateTriggerOutput).
     pub fn build(self) -> crate::operation::update_trigger::UpdateTriggerOutput {
         crate::operation::update_trigger::UpdateTriggerOutput {
-            trigger: self.trigger,
+            trigger: self.trigger
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

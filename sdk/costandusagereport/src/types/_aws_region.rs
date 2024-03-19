@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let awsregion = unimplemented!();
 /// match awsregion {
@@ -56,16 +56,14 @@
 /// Specifically, when `awsregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AwsRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The region of the S3 bucket that Amazon Web Services delivers the report into.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     CapeTown,
@@ -125,168 +123,140 @@ pub enum AwsRegion {
     Oregon,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AwsRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "af-south-1" => AwsRegion::CapeTown,
-            "ap-east-1" => AwsRegion::HongKong,
-            "ap-northeast-1" => AwsRegion::Tokyo,
-            "ap-northeast-2" => AwsRegion::Seoul,
-            "ap-northeast-3" => AwsRegion::Osaka,
-            "ap-south-1" => AwsRegion::Mumbai,
-            "ap-south-2" => AwsRegion::Hyderabad,
-            "ap-southeast-1" => AwsRegion::Singapore,
-            "ap-southeast-2" => AwsRegion::Sydney,
-            "ap-southeast-3" => AwsRegion::Jakarta,
-            "ca-central-1" => AwsRegion::CanadaCentral,
-            "cn-north-1" => AwsRegion::Beijing,
-            "cn-northwest-1" => AwsRegion::Ningxia,
-            "eu-central-1" => AwsRegion::Frankfurt,
-            "eu-central-2" => AwsRegion::Zurich,
-            "eu-north-1" => AwsRegion::Stockholm,
-            "eu-south-1" => AwsRegion::Milano,
-            "eu-south-2" => AwsRegion::Spain,
-            "eu-west-1" => AwsRegion::Ireland,
-            "eu-west-2" => AwsRegion::London,
-            "eu-west-3" => AwsRegion::Paris,
-            "me-central-1" => AwsRegion::Uae,
-            "me-south-1" => AwsRegion::Bahrain,
-            "sa-east-1" => AwsRegion::SaoPaulo,
-            "us-east-1" => AwsRegion::UsStandard,
-            "us-east-2" => AwsRegion::Ohio,
-            "us-west-1" => AwsRegion::NorthernCalifornia,
-            "us-west-2" => AwsRegion::Oregon,
-            other => AwsRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "af-south-1" => AwsRegion::CapeTown,
+"ap-east-1" => AwsRegion::HongKong,
+"ap-northeast-1" => AwsRegion::Tokyo,
+"ap-northeast-2" => AwsRegion::Seoul,
+"ap-northeast-3" => AwsRegion::Osaka,
+"ap-south-1" => AwsRegion::Mumbai,
+"ap-south-2" => AwsRegion::Hyderabad,
+"ap-southeast-1" => AwsRegion::Singapore,
+"ap-southeast-2" => AwsRegion::Sydney,
+"ap-southeast-3" => AwsRegion::Jakarta,
+"ca-central-1" => AwsRegion::CanadaCentral,
+"cn-north-1" => AwsRegion::Beijing,
+"cn-northwest-1" => AwsRegion::Ningxia,
+"eu-central-1" => AwsRegion::Frankfurt,
+"eu-central-2" => AwsRegion::Zurich,
+"eu-north-1" => AwsRegion::Stockholm,
+"eu-south-1" => AwsRegion::Milano,
+"eu-south-2" => AwsRegion::Spain,
+"eu-west-1" => AwsRegion::Ireland,
+"eu-west-2" => AwsRegion::London,
+"eu-west-3" => AwsRegion::Paris,
+"me-central-1" => AwsRegion::Uae,
+"me-south-1" => AwsRegion::Bahrain,
+"sa-east-1" => AwsRegion::SaoPaulo,
+"us-east-1" => AwsRegion::UsStandard,
+"us-east-2" => AwsRegion::Ohio,
+"us-west-1" => AwsRegion::NorthernCalifornia,
+"us-west-2" => AwsRegion::Oregon,
+other => AwsRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AwsRegion {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AwsRegion::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AwsRegion::from(s))
+                    }
+                }
 impl AwsRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AwsRegion::CapeTown => "af-south-1",
-            AwsRegion::HongKong => "ap-east-1",
-            AwsRegion::Tokyo => "ap-northeast-1",
-            AwsRegion::Seoul => "ap-northeast-2",
-            AwsRegion::Osaka => "ap-northeast-3",
-            AwsRegion::Mumbai => "ap-south-1",
-            AwsRegion::Hyderabad => "ap-south-2",
-            AwsRegion::Singapore => "ap-southeast-1",
-            AwsRegion::Sydney => "ap-southeast-2",
-            AwsRegion::Jakarta => "ap-southeast-3",
-            AwsRegion::CanadaCentral => "ca-central-1",
-            AwsRegion::Beijing => "cn-north-1",
-            AwsRegion::Ningxia => "cn-northwest-1",
-            AwsRegion::Frankfurt => "eu-central-1",
-            AwsRegion::Zurich => "eu-central-2",
-            AwsRegion::Stockholm => "eu-north-1",
-            AwsRegion::Milano => "eu-south-1",
-            AwsRegion::Spain => "eu-south-2",
-            AwsRegion::Ireland => "eu-west-1",
-            AwsRegion::London => "eu-west-2",
-            AwsRegion::Paris => "eu-west-3",
-            AwsRegion::Uae => "me-central-1",
-            AwsRegion::Bahrain => "me-south-1",
-            AwsRegion::SaoPaulo => "sa-east-1",
-            AwsRegion::UsStandard => "us-east-1",
-            AwsRegion::Ohio => "us-east-2",
-            AwsRegion::NorthernCalifornia => "us-west-1",
-            AwsRegion::Oregon => "us-west-2",
-            AwsRegion::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "af-south-1",
-            "ap-east-1",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-south-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ca-central-1",
-            "cn-north-1",
-            "cn-northwest-1",
-            "eu-central-1",
-            "eu-central-2",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-2",
-            "eu-west-3",
-            "me-central-1",
-            "me-south-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-1",
-            "us-west-2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AwsRegion::CapeTown => "af-south-1",
+    AwsRegion::HongKong => "ap-east-1",
+    AwsRegion::Tokyo => "ap-northeast-1",
+    AwsRegion::Seoul => "ap-northeast-2",
+    AwsRegion::Osaka => "ap-northeast-3",
+    AwsRegion::Mumbai => "ap-south-1",
+    AwsRegion::Hyderabad => "ap-south-2",
+    AwsRegion::Singapore => "ap-southeast-1",
+    AwsRegion::Sydney => "ap-southeast-2",
+    AwsRegion::Jakarta => "ap-southeast-3",
+    AwsRegion::CanadaCentral => "ca-central-1",
+    AwsRegion::Beijing => "cn-north-1",
+    AwsRegion::Ningxia => "cn-northwest-1",
+    AwsRegion::Frankfurt => "eu-central-1",
+    AwsRegion::Zurich => "eu-central-2",
+    AwsRegion::Stockholm => "eu-north-1",
+    AwsRegion::Milano => "eu-south-1",
+    AwsRegion::Spain => "eu-south-2",
+    AwsRegion::Ireland => "eu-west-1",
+    AwsRegion::London => "eu-west-2",
+    AwsRegion::Paris => "eu-west-3",
+    AwsRegion::Uae => "me-central-1",
+    AwsRegion::Bahrain => "me-south-1",
+    AwsRegion::SaoPaulo => "sa-east-1",
+    AwsRegion::UsStandard => "us-east-1",
+    AwsRegion::Ohio => "us-east-2",
+    AwsRegion::NorthernCalifornia => "us-west-1",
+    AwsRegion::Oregon => "us-west-2",
+    AwsRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AwsRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AwsRegion {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AwsRegion {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AwsRegion::CapeTown => write!(f, "af-south-1"),
-            AwsRegion::HongKong => write!(f, "ap-east-1"),
-            AwsRegion::Tokyo => write!(f, "ap-northeast-1"),
-            AwsRegion::Seoul => write!(f, "ap-northeast-2"),
-            AwsRegion::Osaka => write!(f, "ap-northeast-3"),
-            AwsRegion::Mumbai => write!(f, "ap-south-1"),
-            AwsRegion::Hyderabad => write!(f, "ap-south-2"),
-            AwsRegion::Singapore => write!(f, "ap-southeast-1"),
-            AwsRegion::Sydney => write!(f, "ap-southeast-2"),
-            AwsRegion::Jakarta => write!(f, "ap-southeast-3"),
-            AwsRegion::CanadaCentral => write!(f, "ca-central-1"),
-            AwsRegion::Beijing => write!(f, "cn-north-1"),
-            AwsRegion::Ningxia => write!(f, "cn-northwest-1"),
-            AwsRegion::Frankfurt => write!(f, "eu-central-1"),
-            AwsRegion::Zurich => write!(f, "eu-central-2"),
-            AwsRegion::Stockholm => write!(f, "eu-north-1"),
-            AwsRegion::Milano => write!(f, "eu-south-1"),
-            AwsRegion::Spain => write!(f, "eu-south-2"),
-            AwsRegion::Ireland => write!(f, "eu-west-1"),
-            AwsRegion::London => write!(f, "eu-west-2"),
-            AwsRegion::Paris => write!(f, "eu-west-3"),
-            AwsRegion::Uae => write!(f, "me-central-1"),
-            AwsRegion::Bahrain => write!(f, "me-south-1"),
-            AwsRegion::SaoPaulo => write!(f, "sa-east-1"),
-            AwsRegion::UsStandard => write!(f, "us-east-1"),
-            AwsRegion::Ohio => write!(f, "us-east-2"),
-            AwsRegion::NorthernCalifornia => write!(f, "us-west-1"),
-            AwsRegion::Oregon => write!(f, "us-west-2"),
-            AwsRegion::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AwsRegion::CapeTown => write!(f, "af-south-1"),
+AwsRegion::HongKong => write!(f, "ap-east-1"),
+AwsRegion::Tokyo => write!(f, "ap-northeast-1"),
+AwsRegion::Seoul => write!(f, "ap-northeast-2"),
+AwsRegion::Osaka => write!(f, "ap-northeast-3"),
+AwsRegion::Mumbai => write!(f, "ap-south-1"),
+AwsRegion::Hyderabad => write!(f, "ap-south-2"),
+AwsRegion::Singapore => write!(f, "ap-southeast-1"),
+AwsRegion::Sydney => write!(f, "ap-southeast-2"),
+AwsRegion::Jakarta => write!(f, "ap-southeast-3"),
+AwsRegion::CanadaCentral => write!(f, "ca-central-1"),
+AwsRegion::Beijing => write!(f, "cn-north-1"),
+AwsRegion::Ningxia => write!(f, "cn-northwest-1"),
+AwsRegion::Frankfurt => write!(f, "eu-central-1"),
+AwsRegion::Zurich => write!(f, "eu-central-2"),
+AwsRegion::Stockholm => write!(f, "eu-north-1"),
+AwsRegion::Milano => write!(f, "eu-south-1"),
+AwsRegion::Spain => write!(f, "eu-south-2"),
+AwsRegion::Ireland => write!(f, "eu-west-1"),
+AwsRegion::London => write!(f, "eu-west-2"),
+AwsRegion::Paris => write!(f, "eu-west-3"),
+AwsRegion::Uae => write!(f, "me-central-1"),
+AwsRegion::Bahrain => write!(f, "me-south-1"),
+AwsRegion::SaoPaulo => write!(f, "sa-east-1"),
+AwsRegion::UsStandard => write!(f, "us-east-1"),
+AwsRegion::Ohio => write!(f, "us-east-2"),
+AwsRegion::NorthernCalifornia => write!(f, "us-west-1"),
+AwsRegion::Oregon => write!(f, "us-west-2"),
+AwsRegion::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,13 +3,13 @@
 /// <p>The endpoint to which service requests can be submitted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceEndpoint {
+pub struct ServiceEndpoint  {
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
 }
-impl ServiceEndpoint {
+impl  ServiceEndpoint  {
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ServiceEndpointBuilder {
     }
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ServiceEndpointBuilder {
     }
     /// Consumes the builder and constructs a [`ServiceEndpoint`](crate::types::ServiceEndpoint).
     pub fn build(self) -> crate::types::ServiceEndpoint {
-        crate::types::ServiceEndpoint { endpoint: self.endpoint }
+        crate::types::ServiceEndpoint {
+            endpoint: self.endpoint
+            ,
+        }
     }
 }
+

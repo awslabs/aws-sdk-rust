@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbProxyEndpointsInput {
+pub struct DescribeDbProxyEndpointsInput  {
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.</p>
     pub db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is not currently supported.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -16,23 +16,24 @@ pub struct DescribeDbProxyEndpointsInput {
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribeDbProxyEndpointsInput {
+impl  DescribeDbProxyEndpointsInput  {
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
-    pub fn db_proxy_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_name(&self) -> ::std::option::Option<& str> {
         self.db_proxy_name.as_deref()
     }
     /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.</p>
-    pub fn db_proxy_endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_endpoint_name(&self) -> ::std::option::Option<& str> {
         self.db_proxy_endpoint_name.as_deref()
     }
     /// <p>This parameter is not currently supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -55,7 +56,7 @@ impl DescribeDbProxyEndpointsInput {
 pub struct DescribeDbProxyEndpointsInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -67,8 +68,7 @@ impl DescribeDbProxyEndpointsInputBuilder {
     }
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
     pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_proxy_name = input;
-        self
+        self.db_proxy_name = input; self
     }
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
     pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +81,7 @@ impl DescribeDbProxyEndpointsInputBuilder {
     }
     /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.</p>
     pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_proxy_endpoint_name = input;
-        self
+        self.db_proxy_endpoint_name = input; self
     }
     /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.</p>
     pub fn get_db_proxy_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,17 +94,16 @@ impl DescribeDbProxyEndpointsInputBuilder {
     /// <p>This parameter is not currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -115,8 +113,7 @@ impl DescribeDbProxyEndpointsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +130,7 @@ impl DescribeDbProxyEndpointsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -143,18 +139,21 @@ impl DescribeDbProxyEndpointsInputBuilder {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeDbProxyEndpointsInput`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput {
-            db_proxy_name: self.db_proxy_name,
-            db_proxy_endpoint_name: self.db_proxy_endpoint_name,
-            filters: self.filters,
-            marker: self.marker,
-            max_records: self.max_records,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsInput {
+                db_proxy_name: self.db_proxy_name
+                ,
+                db_proxy_endpoint_name: self.db_proxy_endpoint_name
+                ,
+                filters: self.filters
+                ,
+                marker: self.marker
+                ,
+                max_records: self.max_records
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The scene error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SceneError {
+pub struct SceneError  {
     /// <p>The SceneError code.</p>
     pub code: ::std::option::Option<crate::types::SceneErrorCode>,
     /// <p>The SceneError message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl SceneError {
+impl  SceneError  {
     /// <p>The SceneError code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::SceneErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::SceneErrorCode> {
         self.code.as_ref()
     }
     /// <p>The SceneError message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SceneErrorBuilder {
     }
     /// <p>The SceneError code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::SceneErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The SceneError code.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::SceneErrorCode> {
@@ -55,8 +54,7 @@ impl SceneErrorBuilder {
     }
     /// <p>The SceneError message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The SceneError message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SceneErrorBuilder {
     /// Consumes the builder and constructs a [`SceneError`](crate::types::SceneError).
     pub fn build(self) -> crate::types::SceneError {
         crate::types::SceneError {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

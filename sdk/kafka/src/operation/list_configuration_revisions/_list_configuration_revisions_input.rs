@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfigurationRevisionsInput {
+pub struct ListConfigurationRevisionsInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -10,9 +10,9 @@ pub struct ListConfigurationRevisionsInput {
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListConfigurationRevisionsInput {
+impl  ListConfigurationRevisionsInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -20,7 +20,7 @@ impl ListConfigurationRevisionsInput {
         self.max_results
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListConfigurationRevisionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListConfigurationRevisionsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListConfigurationRevisionsInputBuilder {
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConfigurationRevisionsInput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput {
-            arn: self.arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput {
+                arn: self.arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

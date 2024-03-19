@@ -3,17 +3,16 @@
 /// <p>The settings for container log rotation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerLogRotationConfiguration {
+pub struct ContainerLogRotationConfiguration  {
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
     pub rotation_size: ::std::string::String,
     /// <p>The number of files to keep in container after rotation.</p>
     pub max_files_to_keep: i32,
 }
-impl ContainerLogRotationConfiguration {
+impl  ContainerLogRotationConfiguration  {
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
-    pub fn rotation_size(&self) -> &str {
-        use std::ops::Deref;
-        self.rotation_size.deref()
+    pub fn rotation_size(&self) -> & str {
+        use std::ops::Deref; self.rotation_size.deref()
     }
     /// <p>The number of files to keep in container after rotation.</p>
     pub fn max_files_to_keep(&self) -> i32 {
@@ -43,8 +42,7 @@ impl ContainerLogRotationConfigurationBuilder {
     }
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
     pub fn set_rotation_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_size = input;
-        self
+        self.rotation_size = input; self
     }
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
     pub fn get_rotation_size(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ContainerLogRotationConfigurationBuilder {
     }
     /// <p>The number of files to keep in container after rotation.</p>
     pub fn set_max_files_to_keep(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_files_to_keep = input;
-        self
+        self.max_files_to_keep = input; self
     }
     /// <p>The number of files to keep in container after rotation.</p>
     pub fn get_max_files_to_keep(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl ContainerLogRotationConfigurationBuilder {
     /// - [`rotation_size`](crate::types::builders::ContainerLogRotationConfigurationBuilder::rotation_size)
     /// - [`max_files_to_keep`](crate::types::builders::ContainerLogRotationConfigurationBuilder::max_files_to_keep)
     pub fn build(self) -> ::std::result::Result<crate::types::ContainerLogRotationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContainerLogRotationConfiguration {
-            rotation_size: self.rotation_size.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rotation_size",
-                    "rotation_size was not specified but it is required when building ContainerLogRotationConfiguration",
-                )
-            })?,
-            max_files_to_keep: self.max_files_to_keep.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_files_to_keep",
-                    "max_files_to_keep was not specified but it is required when building ContainerLogRotationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContainerLogRotationConfiguration {
+                rotation_size: self.rotation_size
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rotation_size", "rotation_size was not specified but it is required when building ContainerLogRotationConfiguration")
+                    )?
+                ,
+                max_files_to_keep: self.max_files_to_keep
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_files_to_keep", "max_files_to_keep was not specified but it is required when building ContainerLogRotationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

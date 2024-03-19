@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetMapStyleDescriptorInput {
+pub struct GetMapStyleDescriptorInput  {
     /// <p>The map resource to retrieve the style descriptor from.</p>
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl GetMapStyleDescriptorInput {
+impl  GetMapStyleDescriptorInput  {
     /// <p>The map resource to retrieve the style descriptor from.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<& str> {
         self.map_name.as_deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetMapStyleDescriptorInput {
+impl  ::std::fmt::Debug for GetMapStyleDescriptorInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetMapStyleDescriptorInput");
         formatter.field("map_name", &self.map_name);
@@ -49,8 +49,7 @@ impl GetMapStyleDescriptorInputBuilder {
     }
     /// <p>The map resource to retrieve the style descriptor from.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The map resource to retrieve the style descriptor from.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,22 +62,22 @@ impl GetMapStyleDescriptorInputBuilder {
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetMapStyleDescriptorInput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput {
-            map_name: self.map_name,
-            key: self.key,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput {
+                map_name: self.map_name
+                ,
+                key: self.key
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetMapStyleDescriptorInputBuilder {
@@ -89,3 +88,4 @@ impl ::std::fmt::Debug for GetMapStyleDescriptorInputBuilder {
         formatter.finish()
     }
 }
+

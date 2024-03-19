@@ -3,22 +3,22 @@
 /// <p>A complex type that contains the response information for the disassociate request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateVpcFromHostedZoneOutput {
+pub struct DisassociateVpcFromHostedZoneOutput  {
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }
-impl DisassociateVpcFromHostedZoneOutput {
+impl  DisassociateVpcFromHostedZoneOutput  {
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
-    pub fn change_info(&self) -> ::std::option::Option<&crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> ::std::option::Option<& crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateVpcFromHostedZoneOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateVpcFromHostedZoneOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneOutput`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput).
     pub fn builder() -> crate::operation::disassociate_vpc_from_hosted_zone::builders::DisassociateVpcFromHostedZoneOutputBuilder {
@@ -42,27 +42,28 @@ impl DisassociateVpcFromHostedZoneOutputBuilder {
     }
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
     pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
-        self.change_info = input;
-        self
+        self.change_info = input; self
     }
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
     pub fn get_change_info(&self) -> &::std::option::Option<crate::types::ChangeInfo> {
         &self.change_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateVpcFromHostedZoneOutput`](crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput).
     pub fn build(self) -> crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput {
         crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput {
-            change_info: self.change_info,
+            change_info: self.change_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

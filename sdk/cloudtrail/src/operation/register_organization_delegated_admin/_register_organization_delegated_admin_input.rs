@@ -3,13 +3,13 @@
 /// <p>Specifies an organization member account ID as a CloudTrail delegated administrator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterOrganizationDelegatedAdminInput {
+pub struct RegisterOrganizationDelegatedAdminInput  {
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
     pub member_account_id: ::std::option::Option<::std::string::String>,
 }
-impl RegisterOrganizationDelegatedAdminInput {
+impl  RegisterOrganizationDelegatedAdminInput  {
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
-    pub fn member_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_account_id(&self) -> ::std::option::Option<& str> {
         self.member_account_id.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl RegisterOrganizationDelegatedAdminInputBuilder {
     }
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
     pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_account_id = input;
-        self
+        self.member_account_id = input; self
     }
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
     pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.member_account_id
     }
     /// Consumes the builder and constructs a [`RegisterOrganizationDelegatedAdminInput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput {
-                member_account_id: self.member_account_id,
-            },
+                member_account_id: self.member_account_id
+                ,
+            }
         )
     }
 }
+

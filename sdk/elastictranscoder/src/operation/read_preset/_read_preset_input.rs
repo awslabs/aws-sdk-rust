@@ -3,13 +3,13 @@
 /// <p>The <code>ReadPresetRequest</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReadPresetInput {
+pub struct ReadPresetInput  {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl ReadPresetInput {
+impl  ReadPresetInput  {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl ReadPresetInputBuilder {
     }
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl ReadPresetInputBuilder {
     }
     /// Consumes the builder and constructs a [`ReadPresetInput`](crate::operation::read_preset::ReadPresetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::read_preset::ReadPresetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::read_preset::ReadPresetInput { id: self.id })
+        ::std::result::Result::Ok(
+            crate::operation::read_preset::ReadPresetInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

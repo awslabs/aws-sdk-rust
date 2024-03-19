@@ -3,13 +3,13 @@
 /// <p>An object that represents the path to rewrite.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpGatewayRoutePathRewrite {
+pub struct HttpGatewayRoutePathRewrite  {
     /// <p>The exact path to rewrite.</p>
     pub exact: ::std::option::Option<::std::string::String>,
 }
-impl HttpGatewayRoutePathRewrite {
+impl  HttpGatewayRoutePathRewrite  {
     /// <p>The exact path to rewrite.</p>
-    pub fn exact(&self) -> ::std::option::Option<&str> {
+    pub fn exact(&self) -> ::std::option::Option<& str> {
         self.exact.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl HttpGatewayRoutePathRewriteBuilder {
     }
     /// <p>The exact path to rewrite.</p>
     pub fn set_exact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exact = input;
-        self
+        self.exact = input; self
     }
     /// <p>The exact path to rewrite.</p>
     pub fn get_exact(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl HttpGatewayRoutePathRewriteBuilder {
     }
     /// Consumes the builder and constructs a [`HttpGatewayRoutePathRewrite`](crate::types::HttpGatewayRoutePathRewrite).
     pub fn build(self) -> crate::types::HttpGatewayRoutePathRewrite {
-        crate::types::HttpGatewayRoutePathRewrite { exact: self.exact }
+        crate::types::HttpGatewayRoutePathRewrite {
+            exact: self.exact
+            ,
+        }
     }
 }
+

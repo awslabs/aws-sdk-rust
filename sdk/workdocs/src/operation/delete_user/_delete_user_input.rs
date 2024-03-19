@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserInput {
+impl  DeleteUserInput  {
     /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for DeleteUserInput {
+impl  ::std::fmt::Debug for DeleteUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -48,8 +48,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The ID of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,10 +70,14 @@ impl DeleteUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
-            authentication_token: self.authentication_token,
-            user_id: self.user_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                authentication_token: self.authentication_token
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteUserInputBuilder {
@@ -86,3 +88,4 @@ impl ::std::fmt::Debug for DeleteUserInputBuilder {
         formatter.finish()
     }
 }
+

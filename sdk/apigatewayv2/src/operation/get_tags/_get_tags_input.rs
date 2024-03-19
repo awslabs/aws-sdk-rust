@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTagsInput {
+pub struct GetTagsInput  {
     /// <p>The resource ARN for the tag.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetTagsInput {
+impl  GetTagsInput  {
     /// <p>The resource ARN for the tag.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetTagsInputBuilder {
     }
     /// <p>The resource ARN for the tag.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The resource ARN for the tag.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetTagsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_tags::GetTagsInput {
-            resource_arn: self.resource_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_tags::GetTagsInput {
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

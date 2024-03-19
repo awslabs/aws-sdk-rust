@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMonitoringExecutions`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::set_monitoring_schedule_name):<br>required: **false**<br><p>Name of a specific schedule to fetch jobs for.</p><br>
     ///   - [`endpoint_name(impl Into<String>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::set_endpoint_name):<br>required: **false**<br><p>Name of a specific endpoint to fetch jobs for.</p><br>
     ///   - [`sort_by(MonitoringExecutionSortKey)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::sort_by) / [`set_sort_by(Option<MonitoringExecutionSortKey>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p><br>
@@ -19,11 +19,12 @@ impl super::Client {
     ///   - [`status_equals(ExecutionStatus)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::status_equals) / [`set_status_equals(Option<ExecutionStatus>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::set_status_equals):<br>required: **false**<br><p>A filter that retrieves only jobs with a specific status.</p><br>
     ///   - [`monitoring_job_definition_name(impl Into<String>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::monitoring_job_definition_name) / [`set_monitoring_job_definition_name(Option<String>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::set_monitoring_job_definition_name):<br>required: **false**<br><p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p><br>
     ///   - [`monitoring_type_equals(MonitoringType)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::monitoring_type_equals) / [`set_monitoring_type_equals(Option<MonitoringType>)`](crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::set_monitoring_type_equals):<br>required: **false**<br><p>A filter that returns only the monitoring job runs of the specified monitoring type.</p><br>
-    /// - On success, responds with [`ListMonitoringExecutionsOutput`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListMonitoringExecutionsOutput`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput) with field(s):
     ///   - [`monitoring_execution_summaries(Option<Vec::<MonitoringExecutionSummary>>)`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput::monitoring_execution_summaries): <p>A JSON array in which each element is a summary for a monitoring execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput::next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListMonitoringExecutionsError>`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsError)
+                            /// - On failure, responds with [`SdkError<ListMonitoringExecutionsError>`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsError)
     pub fn list_monitoring_executions(&self) -> crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder {
-        crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHealthEventsOutput {
+pub struct ListHealthEventsOutput  {
     /// <p>A list of health events.</p>
-    pub health_events: ::std::vec::Vec<crate::types::HealthEvent>,
+    pub health_events: ::std::vec::Vec::<crate::types::HealthEvent>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListHealthEventsOutput {
+impl  ListHealthEventsOutput  {
     /// <p>A list of health events.</p>
-    pub fn health_events(&self) -> &[crate::types::HealthEvent] {
-        use std::ops::Deref;
-        self.health_events.deref()
+    pub fn health_events(&self) -> & [crate::types::HealthEvent] {
+        use std::ops::Deref; self.health_events.deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListHealthEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListHealthEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput).
     pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListHealthEventsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHealthEventsOutputBuilder {
-    pub(crate) health_events: ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>>,
+    pub(crate) health_events: ::std::option::Option<::std::vec::Vec::<crate::types::HealthEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListHealthEventsOutputBuilder {
     /// <p>A list of health events.</p>
     pub fn health_events(mut self, input: crate::types::HealthEvent) -> Self {
         let mut v = self.health_events.unwrap_or_default();
-        v.push(input);
-        self.health_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.health_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of health events.</p>
-    pub fn set_health_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>>) -> Self {
-        self.health_events = input;
-        self
+    pub fn set_health_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HealthEvent>>) -> Self {
+        self.health_events = input; self
     }
     /// <p>A list of health events.</p>
-    pub fn get_health_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>> {
+    pub fn get_health_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HealthEvent>> {
         &self.health_events
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -68,37 +66,37 @@ impl ListHealthEventsOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`health_events`](crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder::health_events)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_health_events::ListHealthEventsOutput {
-            health_events: self.health_events.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "health_events",
-                    "health_events was not specified but it is required when building ListHealthEventsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_health_events::ListHealthEventsOutput {
+                health_events: self.health_events
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("health_events", "health_events was not specified but it is required when building ListHealthEventsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

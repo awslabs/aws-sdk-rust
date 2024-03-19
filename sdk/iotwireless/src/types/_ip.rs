@@ -3,15 +3,14 @@
 /// <p>IP address used for resolving device location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ip {
+pub struct Ip  {
     /// <p>IP address information.</p>
     pub ip_address: ::std::string::String,
 }
-impl Ip {
+impl  Ip  {
     /// <p>IP address information.</p>
-    pub fn ip_address(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_address.deref()
+    pub fn ip_address(&self) -> & str {
+        use std::ops::Deref; self.ip_address.deref()
     }
 }
 impl Ip {
@@ -36,8 +35,7 @@ impl IpBuilder {
     }
     /// <p>IP address information.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>IP address information.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl IpBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_address`](crate::types::builders::IpBuilder::ip_address)
     pub fn build(self) -> ::std::result::Result<crate::types::Ip, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ip {
-            ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_address",
-                    "ip_address was not specified but it is required when building Ip",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ip {
+                ip_address: self.ip_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_address", "ip_address was not specified but it is required when building Ip")
+                    )?
+                ,
+            }
+        )
     }
 }
+

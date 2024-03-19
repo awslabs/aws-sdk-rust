@@ -4,31 +4,31 @@
 /// <p>A blocker is created because of the manual update or deletion of a service instance. The summary describes the blocker as being active or resolved.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceSyncBlockerSummary {
+pub struct ServiceSyncBlockerSummary  {
     /// <p>The name of the service that you want to get the sync blocker summary for. If given a service instance name and a service name, it will return the blockers only applying to the instance that is blocked.</p>
     /// <p>If given only a service name, it will return the blockers that apply to all of the instances. In order to get the blockers for a single instance, you will need to make two distinct calls, one to get the sync blocker summary for the service and the other to get the sync blocker for the service instance.</p>
     pub service_name: ::std::string::String,
     /// <p>The name of the service instance that you want sync your service configuration with.</p>
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The latest active blockers for the synced service.</p>
-    pub latest_blockers: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>,
+    pub latest_blockers: ::std::option::Option<::std::vec::Vec::<crate::types::SyncBlocker>>,
 }
-impl ServiceSyncBlockerSummary {
+impl  ServiceSyncBlockerSummary  {
     /// <p>The name of the service that you want to get the sync blocker summary for. If given a service instance name and a service name, it will return the blockers only applying to the instance that is blocked.</p>
     /// <p>If given only a service name, it will return the blockers that apply to all of the instances. In order to get the blockers for a single instance, you will need to make two distinct calls, one to get the sync blocker summary for the service and the other to get the sync blocker for the service instance.</p>
-    pub fn service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_name.deref()
+    pub fn service_name(&self) -> & str {
+        use std::ops::Deref; self.service_name.deref()
     }
     /// <p>The name of the service instance that you want sync your service configuration with.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> ::std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The latest active blockers for the synced service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.latest_blockers.is_none()`.
-    pub fn latest_blockers(&self) -> &[crate::types::SyncBlocker] {
-        self.latest_blockers.as_deref().unwrap_or_default()
+    pub fn latest_blockers(&self) -> & [crate::types::SyncBlocker] {
+        self.latest_blockers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ServiceSyncBlockerSummary {
@@ -44,7 +44,7 @@ impl ServiceSyncBlockerSummary {
 pub struct ServiceSyncBlockerSummaryBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,
-    pub(crate) latest_blockers: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>,
+    pub(crate) latest_blockers: ::std::option::Option<::std::vec::Vec::<crate::types::SyncBlocker>>,
 }
 impl ServiceSyncBlockerSummaryBuilder {
     /// <p>The name of the service that you want to get the sync blocker summary for. If given a service instance name and a service name, it will return the blockers only applying to the instance that is blocked.</p>
@@ -57,8 +57,7 @@ impl ServiceSyncBlockerSummaryBuilder {
     /// <p>The name of the service that you want to get the sync blocker summary for. If given a service instance name and a service name, it will return the blockers only applying to the instance that is blocked.</p>
     /// <p>If given only a service name, it will return the blockers that apply to all of the instances. In order to get the blockers for a single instance, you will need to make two distinct calls, one to get the sync blocker summary for the service and the other to get the sync blocker for the service instance.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that you want to get the sync blocker summary for. If given a service instance name and a service name, it will return the blockers only applying to the instance that is blocked.</p>
     /// <p>If given only a service name, it will return the blockers that apply to all of the instances. In order to get the blockers for a single instance, you will need to make two distinct calls, one to get the sync blocker summary for the service and the other to get the sync blocker for the service instance.</p>
@@ -72,8 +71,7 @@ impl ServiceSyncBlockerSummaryBuilder {
     }
     /// <p>The name of the service instance that you want sync your service configuration with.</p>
     pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_instance_name = input;
-        self
+        self.service_instance_name = input; self
     }
     /// <p>The name of the service instance that you want sync your service configuration with.</p>
     pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,32 +84,35 @@ impl ServiceSyncBlockerSummaryBuilder {
     /// <p>The latest active blockers for the synced service.</p>
     pub fn latest_blockers(mut self, input: crate::types::SyncBlocker) -> Self {
         let mut v = self.latest_blockers.unwrap_or_default();
-        v.push(input);
-        self.latest_blockers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.latest_blockers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The latest active blockers for the synced service.</p>
-    pub fn set_latest_blockers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>) -> Self {
-        self.latest_blockers = input;
-        self
+    pub fn set_latest_blockers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SyncBlocker>>) -> Self {
+        self.latest_blockers = input; self
     }
     /// <p>The latest active blockers for the synced service.</p>
-    pub fn get_latest_blockers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>> {
+    pub fn get_latest_blockers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SyncBlocker>> {
         &self.latest_blockers
     }
     /// Consumes the builder and constructs a [`ServiceSyncBlockerSummary`](crate::types::ServiceSyncBlockerSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_name`](crate::types::builders::ServiceSyncBlockerSummaryBuilder::service_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ServiceSyncBlockerSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ServiceSyncBlockerSummary {
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building ServiceSyncBlockerSummary",
-                )
-            })?,
-            service_instance_name: self.service_instance_name,
-            latest_blockers: self.latest_blockers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ServiceSyncBlockerSummary {
+                service_name: self.service_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_name", "service_name was not specified but it is required when building ServiceSyncBlockerSummary")
+                    )?
+                ,
+                service_instance_name: self.service_instance_name
+                ,
+                latest_blockers: self.latest_blockers
+                ,
+            }
+        )
     }
 }
+

@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchInsightsOutput {
+pub struct SearchInsightsOutput  {
     /// <p>The returned proactive insights.</p>
-    pub proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
+    pub proactive_insights: ::std::option::Option<::std::vec::Vec::<crate::types::ProactiveInsightSummary>>,
     /// <p>The returned reactive insights.</p>
-    pub reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
+    pub reactive_insights: ::std::option::Option<::std::vec::Vec::<crate::types::ReactiveInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchInsightsOutput {
+impl  SearchInsightsOutput  {
     /// <p>The returned proactive insights.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proactive_insights.is_none()`.
-    pub fn proactive_insights(&self) -> &[crate::types::ProactiveInsightSummary] {
-        self.proactive_insights.as_deref().unwrap_or_default()
+    pub fn proactive_insights(&self) -> & [crate::types::ProactiveInsightSummary] {
+        self.proactive_insights.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The returned reactive insights.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reactive_insights.is_none()`.
-    pub fn reactive_insights(&self) -> &[crate::types::ReactiveInsightSummary] {
-        self.reactive_insights.as_deref().unwrap_or_default()
+    pub fn reactive_insights(&self) -> & [crate::types::ReactiveInsightSummary] {
+        self.reactive_insights.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchInsightsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchInsightsOutput {
     /// Creates a new builder-style object to manufacture [`SearchInsightsOutput`](crate::operation::search_insights::SearchInsightsOutput).
     pub fn builder() -> crate::operation::search_insights::builders::SearchInsightsOutputBuilder {
@@ -45,8 +47,8 @@ impl SearchInsightsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchInsightsOutputBuilder {
-    pub(crate) proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
-    pub(crate) reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
+    pub(crate) proactive_insights: ::std::option::Option<::std::vec::Vec::<crate::types::ProactiveInsightSummary>>,
+    pub(crate) reactive_insights: ::std::option::Option<::std::vec::Vec::<crate::types::ReactiveInsightSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +60,16 @@ impl SearchInsightsOutputBuilder {
     /// <p>The returned proactive insights.</p>
     pub fn proactive_insights(mut self, input: crate::types::ProactiveInsightSummary) -> Self {
         let mut v = self.proactive_insights.unwrap_or_default();
-        v.push(input);
-        self.proactive_insights = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.proactive_insights = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The returned proactive insights.</p>
-    pub fn set_proactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>) -> Self {
-        self.proactive_insights = input;
-        self
+    pub fn set_proactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProactiveInsightSummary>>) -> Self {
+        self.proactive_insights = input; self
     }
     /// <p>The returned proactive insights.</p>
-    pub fn get_proactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>> {
+    pub fn get_proactive_insights(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProactiveInsightSummary>> {
         &self.proactive_insights
     }
     /// Appends an item to `reactive_insights`.
@@ -78,17 +79,16 @@ impl SearchInsightsOutputBuilder {
     /// <p>The returned reactive insights.</p>
     pub fn reactive_insights(mut self, input: crate::types::ReactiveInsightSummary) -> Self {
         let mut v = self.reactive_insights.unwrap_or_default();
-        v.push(input);
-        self.reactive_insights = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reactive_insights = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The returned reactive insights.</p>
-    pub fn set_reactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>) -> Self {
-        self.reactive_insights = input;
-        self
+    pub fn set_reactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReactiveInsightSummary>>) -> Self {
+        self.reactive_insights = input; self
     }
     /// <p>The returned reactive insights.</p>
-    pub fn get_reactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>> {
+    pub fn get_reactive_insights(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReactiveInsightSummary>> {
         &self.reactive_insights
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -98,29 +98,32 @@ impl SearchInsightsOutputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchInsightsOutput`](crate::operation::search_insights::SearchInsightsOutput).
     pub fn build(self) -> crate::operation::search_insights::SearchInsightsOutput {
         crate::operation::search_insights::SearchInsightsOutput {
-            proactive_insights: self.proactive_insights,
-            reactive_insights: self.reactive_insights,
-            next_token: self.next_token,
+            proactive_insights: self.proactive_insights
+            ,
+            reactive_insights: self.reactive_insights
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

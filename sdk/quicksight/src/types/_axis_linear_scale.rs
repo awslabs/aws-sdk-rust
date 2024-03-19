@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AxisLinearScale {
+pub struct AxisLinearScale  {
     /// <p>The step count setup of a linear axis.</p>
     pub step_count: ::std::option::Option<i32>,
     /// <p>The step size setup of a linear axis.</p>
     pub step_size: ::std::option::Option<f64>,
 }
-impl AxisLinearScale {
+impl  AxisLinearScale  {
     /// <p>The step count setup of a linear axis.</p>
     pub fn step_count(&self) -> ::std::option::Option<i32> {
         self.step_count
@@ -42,8 +42,7 @@ impl AxisLinearScaleBuilder {
     }
     /// <p>The step count setup of a linear axis.</p>
     pub fn set_step_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.step_count = input;
-        self
+        self.step_count = input; self
     }
     /// <p>The step count setup of a linear axis.</p>
     pub fn get_step_count(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl AxisLinearScaleBuilder {
     }
     /// <p>The step size setup of a linear axis.</p>
     pub fn set_step_size(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.step_size = input;
-        self
+        self.step_size = input; self
     }
     /// <p>The step size setup of a linear axis.</p>
     pub fn get_step_size(&self) -> &::std::option::Option<f64> {
@@ -66,8 +64,11 @@ impl AxisLinearScaleBuilder {
     /// Consumes the builder and constructs a [`AxisLinearScale`](crate::types::AxisLinearScale).
     pub fn build(self) -> crate::types::AxisLinearScale {
         crate::types::AxisLinearScale {
-            step_count: self.step_count,
-            step_size: self.step_size,
+            step_count: self.step_count
+            ,
+            step_size: self.step_size
+            ,
         }
     }
 }
+

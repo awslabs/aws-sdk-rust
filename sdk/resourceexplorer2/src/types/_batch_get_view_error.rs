@@ -3,22 +3,20 @@
 /// <p>A collection of error messages for any views that Amazon Web Services Resource Explorer couldn't retrieve details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetViewError {
+pub struct BatchGetViewError  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
     pub view_arn: ::std::string::String,
     /// <p>The description of the error for the specified view.</p>
     pub error_message: ::std::string::String,
 }
-impl BatchGetViewError {
+impl  BatchGetViewError  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
-    pub fn view_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.view_arn.deref()
+    pub fn view_arn(&self) -> & str {
+        use std::ops::Deref; self.view_arn.deref()
     }
     /// <p>The description of the error for the specified view.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl BatchGetViewError {
@@ -44,8 +42,7 @@ impl BatchGetViewErrorBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
     pub fn set_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view_arn = input;
-        self
+        self.view_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
     pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl BatchGetViewErrorBuilder {
     }
     /// <p>The description of the error for the specified view.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The description of the error for the specified view.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl BatchGetViewErrorBuilder {
     /// - [`view_arn`](crate::types::builders::BatchGetViewErrorBuilder::view_arn)
     /// - [`error_message`](crate::types::builders::BatchGetViewErrorBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetViewError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetViewError {
-            view_arn: self.view_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "view_arn",
-                    "view_arn was not specified but it is required when building BatchGetViewError",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchGetViewError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetViewError {
+                view_arn: self.view_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("view_arn", "view_arn was not specified but it is required when building BatchGetViewError")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchGetViewError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

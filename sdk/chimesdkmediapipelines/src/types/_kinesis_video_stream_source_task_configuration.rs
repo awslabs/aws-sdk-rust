@@ -3,7 +3,7 @@
 /// <p>The task configuration settings for the Kinesis video stream source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisVideoStreamSourceTaskConfiguration {
+pub struct KinesisVideoStreamSourceTaskConfiguration  {
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::string::String,
     /// <p>The channel ID.</p>
@@ -11,18 +11,17 @@ pub struct KinesisVideoStreamSourceTaskConfiguration {
     /// <p>The unique identifier of the fragment to begin processing.</p>
     pub fragment_number: ::std::option::Option<::std::string::String>,
 }
-impl KinesisVideoStreamSourceTaskConfiguration {
+impl  KinesisVideoStreamSourceTaskConfiguration  {
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_arn.deref()
+    pub fn stream_arn(&self) -> & str {
+        use std::ops::Deref; self.stream_arn.deref()
     }
     /// <p>The channel ID.</p>
     pub fn channel_id(&self) -> i32 {
         self.channel_id
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
-    pub fn fragment_number(&self) -> ::std::option::Option<&str> {
+    pub fn fragment_number(&self) -> ::std::option::Option<& str> {
         self.fragment_number.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl KinesisVideoStreamSourceTaskConfigurationBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl KinesisVideoStreamSourceTaskConfigurationBuilder {
     }
     /// <p>The channel ID.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// <p>The channel ID.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<i32> {
@@ -79,8 +76,7 @@ impl KinesisVideoStreamSourceTaskConfigurationBuilder {
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
     pub fn set_fragment_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fragment_number = input;
-        self
+        self.fragment_number = input; self
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
     pub fn get_fragment_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,18 +85,21 @@ impl KinesisVideoStreamSourceTaskConfigurationBuilder {
     /// Consumes the builder and constructs a [`KinesisVideoStreamSourceTaskConfiguration`](crate::types::KinesisVideoStreamSourceTaskConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_arn`](crate::types::builders::KinesisVideoStreamSourceTaskConfigurationBuilder::stream_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::KinesisVideoStreamSourceTaskConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisVideoStreamSourceTaskConfiguration {
-            stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_arn",
-                    "stream_arn was not specified but it is required when building KinesisVideoStreamSourceTaskConfiguration",
-                )
-            })?,
-            channel_id: self.channel_id.unwrap_or_default(),
-            fragment_number: self.fragment_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamSourceTaskConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::KinesisVideoStreamSourceTaskConfiguration {
+                stream_arn: self.stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_arn", "stream_arn was not specified but it is required when building KinesisVideoStreamSourceTaskConfiguration")
+                    )?
+                ,
+                channel_id: self.channel_id
+                    .unwrap_or_default()
+                ,
+                fragment_number: self.fragment_number
+                ,
+            }
+        )
     }
 }
+

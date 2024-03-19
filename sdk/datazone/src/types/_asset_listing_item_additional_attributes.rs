@@ -3,13 +3,13 @@
 /// <p>Additional attributes of an inventory asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetListingItemAdditionalAttributes {
+pub struct AssetListingItemAdditionalAttributes  {
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
     pub forms: ::std::option::Option<::std::string::String>,
 }
-impl AssetListingItemAdditionalAttributes {
+impl  AssetListingItemAdditionalAttributes  {
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
-    pub fn forms(&self) -> ::std::option::Option<&str> {
+    pub fn forms(&self) -> ::std::option::Option<& str> {
         self.forms.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AssetListingItemAdditionalAttributesBuilder {
     }
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
     pub fn set_forms(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forms = input;
-        self
+        self.forms = input; self
     }
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
     pub fn get_forms(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AssetListingItemAdditionalAttributesBuilder {
     }
     /// Consumes the builder and constructs a [`AssetListingItemAdditionalAttributes`](crate::types::AssetListingItemAdditionalAttributes).
     pub fn build(self) -> crate::types::AssetListingItemAdditionalAttributes {
-        crate::types::AssetListingItemAdditionalAttributes { forms: self.forms }
+        crate::types::AssetListingItemAdditionalAttributes {
+            forms: self.forms
+            ,
+        }
     }
 }
+

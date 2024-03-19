@@ -3,20 +3,19 @@
 /// <p>The timeseries data type represents the values of a measure over time. A time series is an array of rows of timestamps and measure values, with rows sorted in ascending order of time. A TimeSeriesDataPoint is a single data point in the time series. It represents a tuple of (time, measure value) in a time series.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeSeriesDataPoint {
+pub struct TimeSeriesDataPoint  {
     /// <p>The timestamp when the measure value was collected.</p>
     pub time: ::std::string::String,
     /// <p>The measure value for the data point.</p>
     pub value: ::std::option::Option<crate::types::Datum>,
 }
-impl TimeSeriesDataPoint {
+impl  TimeSeriesDataPoint  {
     /// <p>The timestamp when the measure value was collected.</p>
-    pub fn time(&self) -> &str {
-        use std::ops::Deref;
-        self.time.deref()
+    pub fn time(&self) -> & str {
+        use std::ops::Deref; self.time.deref()
     }
     /// <p>The measure value for the data point.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::Datum> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::Datum> {
         self.value.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl TimeSeriesDataPointBuilder {
     }
     /// <p>The timestamp when the measure value was collected.</p>
     pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The timestamp when the measure value was collected.</p>
     pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl TimeSeriesDataPointBuilder {
     }
     /// <p>The measure value for the data point.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::Datum>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The measure value for the data point.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::Datum> {
@@ -69,14 +66,17 @@ impl TimeSeriesDataPointBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`time`](crate::types::builders::TimeSeriesDataPointBuilder::time)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeSeriesDataPoint, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeSeriesDataPoint {
-            time: self.time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time",
-                    "time was not specified but it is required when building TimeSeriesDataPoint",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeSeriesDataPoint {
+                time: self.time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time", "time was not specified but it is required when building TimeSeriesDataPoint")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

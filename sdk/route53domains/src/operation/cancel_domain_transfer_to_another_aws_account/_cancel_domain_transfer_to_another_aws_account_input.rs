@@ -3,20 +3,19 @@
 /// <p>The CancelDomainTransferToAnotherAwsAccount request includes the following element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelDomainTransferToAnotherAwsAccountInput {
+pub struct CancelDomainTransferToAnotherAwsAccountInput  {
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl CancelDomainTransferToAnotherAwsAccountInput {
+impl  CancelDomainTransferToAnotherAwsAccountInput  {
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl CancelDomainTransferToAnotherAwsAccountInput {
     /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountInput`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountInput).
-    pub fn builder() -> crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountInputBuilder {
         crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountInputBuilder::default()
     }
 }
@@ -36,24 +35,20 @@ impl CancelDomainTransferToAnotherAwsAccountInputBuilder {
     }
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`CancelDomainTransferToAnotherAwsAccountInput`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountInput {
-                domain_name: self.domain_name,
-            },
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

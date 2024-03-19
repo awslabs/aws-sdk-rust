@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataSources`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter_variable(DataSourceFilterVariable)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::filter_variable) / [`set_filter_variable(Option<DataSourceFilterVariable>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::set_filter_variable):<br>required: **false**<br><p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> <ul>  <li>   <p><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p></li>  <li>   <p><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p></li>  <li>   <p><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p></li>  <li>   <p><code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p></li>  <li>   <p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li> </ul><br>
     ///   - [`eq(impl Into<String>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::eq) / [`set_eq(Option<String>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::set_eq):<br>required: **false**<br><p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p><br>
     ///   - [`gt(impl Into<String>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::gt) / [`set_gt(Option<String>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::set_gt):<br>required: **false**<br><p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p><br>
@@ -15,11 +15,12 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::set_sort_order):<br>required: **false**<br><p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p> <ul>  <li>   <p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>  <li>   <p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li> </ul> <p>Results are sorted by <code>FilterVariable</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>The ID of the page in the paginated results.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of <code>DataSource</code> to include in the result.</p><br>
-    /// - On success, responds with [`DescribeDataSourcesOutput`](crate::operation::describe_data_sources::DescribeDataSourcesOutput) with field(s):
+                            /// - On success, responds with [`DescribeDataSourcesOutput`](crate::operation::describe_data_sources::DescribeDataSourcesOutput) with field(s):
     ///   - [`results(Option<Vec::<DataSource>>)`](crate::operation::describe_data_sources::DescribeDataSourcesOutput::results): <p>A list of <code>DataSource</code> that meet the search criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_data_sources::DescribeDataSourcesOutput::next_token): <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
-    /// - On failure, responds with [`SdkError<DescribeDataSourcesError>`](crate::operation::describe_data_sources::DescribeDataSourcesError)
+                            /// - On failure, responds with [`SdkError<DescribeDataSourcesError>`](crate::operation::describe_data_sources::DescribeDataSourcesError)
     pub fn describe_data_sources(&self) -> crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder {
-        crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_data_sources::builders::DescribeDataSourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

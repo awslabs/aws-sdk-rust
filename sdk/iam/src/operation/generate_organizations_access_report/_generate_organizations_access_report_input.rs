@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateOrganizationsAccessReportInput {
+pub struct GenerateOrganizationsAccessReportInput  {
     /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path using the known structure of your organization. For example, assume that your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
     pub entity_path: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Organizations service control policy (SCP). This parameter is optional.</p>
     /// <p>This ID is used to generate information about when an account principal that is limited by the SCP attempted to access an Amazon Web Services service.</p>
     pub organizations_policy_id: ::std::option::Option<::std::string::String>,
 }
-impl GenerateOrganizationsAccessReportInput {
+impl  GenerateOrganizationsAccessReportInput  {
     /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path using the known structure of your organization. For example, assume that your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
-    pub fn entity_path(&self) -> ::std::option::Option<&str> {
+    pub fn entity_path(&self) -> ::std::option::Option<& str> {
         self.entity_path.as_deref()
     }
     /// <p>The identifier of the Organizations service control policy (SCP). This parameter is optional.</p>
     /// <p>This ID is used to generate information about when an account principal that is limited by the SCP attempted to access an Amazon Web Services service.</p>
-    pub fn organizations_policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn organizations_policy_id(&self) -> ::std::option::Option<& str> {
         self.organizations_policy_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl GenerateOrganizationsAccessReportInputBuilder {
     }
     /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path using the known structure of your organization. For example, assume that your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
     pub fn set_entity_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_path = input;
-        self
+        self.entity_path = input; self
     }
     /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path using the known structure of your organization. For example, assume that your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
     pub fn get_entity_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl GenerateOrganizationsAccessReportInputBuilder {
     /// <p>The identifier of the Organizations service control policy (SCP). This parameter is optional.</p>
     /// <p>This ID is used to generate information about when an account principal that is limited by the SCP attempted to access an Amazon Web Services service.</p>
     pub fn set_organizations_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organizations_policy_id = input;
-        self
+        self.organizations_policy_id = input; self
     }
     /// <p>The identifier of the Organizations service control policy (SCP). This parameter is optional.</p>
     /// <p>This ID is used to generate information about when an account principal that is limited by the SCP attempted to access an Amazon Web Services service.</p>
@@ -68,17 +66,15 @@ impl GenerateOrganizationsAccessReportInputBuilder {
         &self.organizations_policy_id
     }
     /// Consumes the builder and constructs a [`GenerateOrganizationsAccessReportInput`](crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput {
-                entity_path: self.entity_path,
-                organizations_policy_id: self.organizations_policy_id,
-            },
+                entity_path: self.entity_path
+                ,
+                organizations_policy_id: self.organizations_policy_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateZonalShiftOutput {
+pub struct UpdateZonalShiftOutput  {
     /// <p>The identifier of a zonal shift.</p>
     pub zonal_shift_id: ::std::string::String,
     /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
@@ -30,30 +30,27 @@ pub struct UpdateZonalShiftOutput {
     pub comment: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateZonalShiftOutput {
+impl  UpdateZonalShiftOutput  {
     /// <p>The identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(&self) -> &str {
-        use std::ops::Deref;
-        self.zonal_shift_id.deref()
+    pub fn zonal_shift_id(&self) -> & str {
+        use std::ops::Deref; self.zonal_shift_id.deref()
     }
     /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn resource_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_identifier.deref()
+    pub fn resource_identifier(&self) -> & str {
+        use std::ops::Deref; self.resource_identifier.deref()
     }
     /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
-    pub fn away_from(&self) -> &str {
-        use std::ops::Deref;
-        self.away_from.deref()
+    pub fn away_from(&self) -> & str {
+        use std::ops::Deref; self.away_from.deref()
     }
     /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time.</p>
     /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
-    pub fn expiry_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn expiry_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.expiry_time
     }
     /// <p>The time (UTC) when the zonal shift starts.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>A status for a zonal shift.</p>
@@ -66,20 +63,19 @@ impl UpdateZonalShiftOutput {
     /// <li>
     /// <p><b>CANCELED:</b> The zonal shift was canceled.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::ZonalShiftStatus {
+    pub fn status(&self) -> & crate::types::ZonalShiftStatus {
         &self.status
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
-    pub fn comment(&self) -> &str {
-        use std::ops::Deref;
-        self.comment.deref()
+    pub fn comment(&self) -> & str {
+        use std::ops::Deref; self.comment.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateZonalShiftOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateZonalShiftOutput {
     /// Creates a new builder-style object to manufacture [`UpdateZonalShiftOutput`](crate::operation::update_zonal_shift::UpdateZonalShiftOutput).
     pub fn builder() -> crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder {
@@ -109,8 +105,7 @@ impl UpdateZonalShiftOutputBuilder {
     }
     /// <p>The identifier of a zonal shift.</p>
     pub fn set_zonal_shift_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zonal_shift_id = input;
-        self
+        self.zonal_shift_id = input; self
     }
     /// <p>The identifier of a zonal shift.</p>
     pub fn get_zonal_shift_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +121,7 @@ impl UpdateZonalShiftOutputBuilder {
     /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
@@ -142,8 +136,7 @@ impl UpdateZonalShiftOutputBuilder {
     }
     /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn set_away_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.away_from = input;
-        self
+        self.away_from = input; self
     }
     /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +152,7 @@ impl UpdateZonalShiftOutputBuilder {
     /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time.</p>
     /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiry_time = input;
-        self
+        self.expiry_time = input; self
     }
     /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time.</p>
     /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
@@ -175,8 +167,7 @@ impl UpdateZonalShiftOutputBuilder {
     }
     /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +199,7 @@ impl UpdateZonalShiftOutputBuilder {
     /// <p><b>CANCELED:</b> The zonal shift was canceled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ZonalShiftStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
@@ -232,22 +222,21 @@ impl UpdateZonalShiftOutputBuilder {
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateZonalShiftOutput`](crate::operation::update_zonal_shift::UpdateZonalShiftOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`zonal_shift_id`](crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder::zonal_shift_id)
@@ -257,53 +246,47 @@ impl UpdateZonalShiftOutputBuilder {
     /// - [`start_time`](crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder::start_time)
     /// - [`status`](crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder::status)
     /// - [`comment`](crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder::comment)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_zonal_shift::UpdateZonalShiftOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_zonal_shift::UpdateZonalShiftOutput {
-            zonal_shift_id: self.zonal_shift_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "zonal_shift_id",
-                    "zonal_shift_id was not specified but it is required when building UpdateZonalShiftOutput",
-                )
-            })?,
-            resource_identifier: self.resource_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_identifier",
-                    "resource_identifier was not specified but it is required when building UpdateZonalShiftOutput",
-                )
-            })?,
-            away_from: self.away_from.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "away_from",
-                    "away_from was not specified but it is required when building UpdateZonalShiftOutput",
-                )
-            })?,
-            expiry_time: self.expiry_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expiry_time",
-                    "expiry_time was not specified but it is required when building UpdateZonalShiftOutput",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building UpdateZonalShiftOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building UpdateZonalShiftOutput",
-                )
-            })?,
-            comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comment",
-                    "comment was not specified but it is required when building UpdateZonalShiftOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_zonal_shift::UpdateZonalShiftOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_zonal_shift::UpdateZonalShiftOutput {
+                zonal_shift_id: self.zonal_shift_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("zonal_shift_id", "zonal_shift_id was not specified but it is required when building UpdateZonalShiftOutput")
+                    )?
+                ,
+                resource_identifier: self.resource_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_identifier", "resource_identifier was not specified but it is required when building UpdateZonalShiftOutput")
+                    )?
+                ,
+                away_from: self.away_from
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("away_from", "away_from was not specified but it is required when building UpdateZonalShiftOutput")
+                    )?
+                ,
+                expiry_time: self.expiry_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expiry_time", "expiry_time was not specified but it is required when building UpdateZonalShiftOutput")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building UpdateZonalShiftOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building UpdateZonalShiftOutput")
+                    )?
+                ,
+                comment: self.comment
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comment", "comment was not specified but it is required when building UpdateZonalShiftOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

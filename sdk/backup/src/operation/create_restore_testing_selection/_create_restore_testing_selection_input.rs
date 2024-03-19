@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRestoreTestingSelectionInput {
+pub struct CreateRestoreTestingSelectionInput  {
     /// <p>This is an optional unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Input the restore testing plan name that was returned from the related CreateRestoreTestingPlan request.</p>
@@ -18,13 +18,13 @@ pub struct CreateRestoreTestingSelectionInput {
     /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
     pub restore_testing_selection: ::std::option::Option<crate::types::RestoreTestingSelectionForCreate>,
 }
-impl CreateRestoreTestingSelectionInput {
+impl  CreateRestoreTestingSelectionInput  {
     /// <p>This is an optional unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>Input the restore testing plan name that was returned from the related CreateRestoreTestingPlan request.</p>
-    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<& str> {
         self.restore_testing_plan_name.as_deref()
     }
     /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
@@ -36,7 +36,7 @@ impl CreateRestoreTestingSelectionInput {
     /// </ul>
     /// <p>Each protected resource type can have one single value.</p>
     /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
-    pub fn restore_testing_selection(&self) -> ::std::option::Option<&crate::types::RestoreTestingSelectionForCreate> {
+    pub fn restore_testing_selection(&self) -> ::std::option::Option<& crate::types::RestoreTestingSelectionForCreate> {
         self.restore_testing_selection.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl CreateRestoreTestingSelectionInputBuilder {
     }
     /// <p>This is an optional unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>This is an optional unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl CreateRestoreTestingSelectionInputBuilder {
     }
     /// <p>Input the restore testing plan name that was returned from the related CreateRestoreTestingPlan request.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>Input the restore testing plan name that was returned from the related CreateRestoreTestingPlan request.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl CreateRestoreTestingSelectionInputBuilder {
     /// <p>Each protected resource type can have one single value.</p>
     /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
     pub fn set_restore_testing_selection(mut self, input: ::std::option::Option<crate::types::RestoreTestingSelectionForCreate>) -> Self {
-        self.restore_testing_selection = input;
-        self
+        self.restore_testing_selection = input; self
     }
     /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
     /// <ul>
@@ -125,16 +122,17 @@ impl CreateRestoreTestingSelectionInputBuilder {
         &self.restore_testing_selection
     }
     /// Consumes the builder and constructs a [`CreateRestoreTestingSelectionInput`](crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionInput {
-            creator_request_id: self.creator_request_id,
-            restore_testing_plan_name: self.restore_testing_plan_name,
-            restore_testing_selection: self.restore_testing_selection,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionInput {
+                creator_request_id: self.creator_request_id
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                ,
+                restore_testing_selection: self.restore_testing_selection
+                ,
+            }
+        )
     }
 }
+

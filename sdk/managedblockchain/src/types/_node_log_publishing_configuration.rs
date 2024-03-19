@@ -3,13 +3,13 @@
 /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeLogPublishingConfiguration {
+pub struct NodeLogPublishingConfiguration  {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     pub fabric: ::std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>,
 }
-impl NodeLogPublishingConfiguration {
+impl  NodeLogPublishingConfiguration  {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
-    pub fn fabric(&self) -> ::std::option::Option<&crate::types::NodeFabricLogPublishingConfiguration> {
+    pub fn fabric(&self) -> ::std::option::Option<& crate::types::NodeFabricLogPublishingConfiguration> {
         self.fabric.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl NodeLogPublishingConfigurationBuilder {
     }
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     pub fn set_fabric(mut self, input: ::std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>) -> Self {
-        self.fabric = input;
-        self
+        self.fabric = input; self
     }
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     pub fn get_fabric(&self) -> &::std::option::Option<crate::types::NodeFabricLogPublishingConfiguration> {
@@ -43,6 +42,10 @@ impl NodeLogPublishingConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`NodeLogPublishingConfiguration`](crate::types::NodeLogPublishingConfiguration).
     pub fn build(self) -> crate::types::NodeLogPublishingConfiguration {
-        crate::types::NodeLogPublishingConfiguration { fabric: self.fabric }
+        crate::types::NodeLogPublishingConfiguration {
+            fabric: self.fabric
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The pricing plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PricingPlan {
+pub struct PricingPlan  {
     /// <p>The billable entity count.</p>
     pub billable_entity_count: ::std::option::Option<i64>,
     /// <p>The pricing plan's bundle information.</p>
@@ -17,29 +17,29 @@ pub struct PricingPlan {
     /// <p>The update reason for changing a pricing plan.</p>
     pub update_reason: crate::types::UpdateReason,
 }
-impl PricingPlan {
+impl  PricingPlan  {
     /// <p>The billable entity count.</p>
     pub fn billable_entity_count(&self) -> ::std::option::Option<i64> {
         self.billable_entity_count
     }
     /// <p>The pricing plan's bundle information.</p>
-    pub fn bundle_information(&self) -> ::std::option::Option<&crate::types::BundleInformation> {
+    pub fn bundle_information(&self) -> ::std::option::Option<& crate::types::BundleInformation> {
         self.bundle_information.as_ref()
     }
     /// <p>The effective date and time of the pricing plan.</p>
-    pub fn effective_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn effective_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.effective_date_time
     }
     /// <p>The pricing mode.</p>
-    pub fn pricing_mode(&self) -> &crate::types::PricingMode {
+    pub fn pricing_mode(&self) -> & crate::types::PricingMode {
         &self.pricing_mode
     }
     /// <p>The set date and time for updating a pricing plan.</p>
-    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date_time
     }
     /// <p>The update reason for changing a pricing plan.</p>
-    pub fn update_reason(&self) -> &crate::types::UpdateReason {
+    pub fn update_reason(&self) -> & crate::types::UpdateReason {
         &self.update_reason
     }
 }
@@ -69,8 +69,7 @@ impl PricingPlanBuilder {
     }
     /// <p>The billable entity count.</p>
     pub fn set_billable_entity_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.billable_entity_count = input;
-        self
+        self.billable_entity_count = input; self
     }
     /// <p>The billable entity count.</p>
     pub fn get_billable_entity_count(&self) -> &::std::option::Option<i64> {
@@ -83,8 +82,7 @@ impl PricingPlanBuilder {
     }
     /// <p>The pricing plan's bundle information.</p>
     pub fn set_bundle_information(mut self, input: ::std::option::Option<crate::types::BundleInformation>) -> Self {
-        self.bundle_information = input;
-        self
+        self.bundle_information = input; self
     }
     /// <p>The pricing plan's bundle information.</p>
     pub fn get_bundle_information(&self) -> &::std::option::Option<crate::types::BundleInformation> {
@@ -98,8 +96,7 @@ impl PricingPlanBuilder {
     }
     /// <p>The effective date and time of the pricing plan.</p>
     pub fn set_effective_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.effective_date_time = input;
-        self
+        self.effective_date_time = input; self
     }
     /// <p>The effective date and time of the pricing plan.</p>
     pub fn get_effective_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -113,8 +110,7 @@ impl PricingPlanBuilder {
     }
     /// <p>The pricing mode.</p>
     pub fn set_pricing_mode(mut self, input: ::std::option::Option<crate::types::PricingMode>) -> Self {
-        self.pricing_mode = input;
-        self
+        self.pricing_mode = input; self
     }
     /// <p>The pricing mode.</p>
     pub fn get_pricing_mode(&self) -> &::std::option::Option<crate::types::PricingMode> {
@@ -128,8 +124,7 @@ impl PricingPlanBuilder {
     }
     /// <p>The set date and time for updating a pricing plan.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The set date and time for updating a pricing plan.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -143,8 +138,7 @@ impl PricingPlanBuilder {
     }
     /// <p>The update reason for changing a pricing plan.</p>
     pub fn set_update_reason(mut self, input: ::std::option::Option<crate::types::UpdateReason>) -> Self {
-        self.update_reason = input;
-        self
+        self.update_reason = input; self
     }
     /// <p>The update reason for changing a pricing plan.</p>
     pub fn get_update_reason(&self) -> &::std::option::Option<crate::types::UpdateReason> {
@@ -157,33 +151,34 @@ impl PricingPlanBuilder {
     /// - [`update_date_time`](crate::types::builders::PricingPlanBuilder::update_date_time)
     /// - [`update_reason`](crate::types::builders::PricingPlanBuilder::update_reason)
     pub fn build(self) -> ::std::result::Result<crate::types::PricingPlan, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PricingPlan {
-            billable_entity_count: self.billable_entity_count,
-            bundle_information: self.bundle_information,
-            effective_date_time: self.effective_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "effective_date_time",
-                    "effective_date_time was not specified but it is required when building PricingPlan",
-                )
-            })?,
-            pricing_mode: self.pricing_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pricing_mode",
-                    "pricing_mode was not specified but it is required when building PricingPlan",
-                )
-            })?,
-            update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date_time",
-                    "update_date_time was not specified but it is required when building PricingPlan",
-                )
-            })?,
-            update_reason: self.update_reason.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_reason",
-                    "update_reason was not specified but it is required when building PricingPlan",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PricingPlan {
+                billable_entity_count: self.billable_entity_count
+                ,
+                bundle_information: self.bundle_information
+                ,
+                effective_date_time: self.effective_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("effective_date_time", "effective_date_time was not specified but it is required when building PricingPlan")
+                    )?
+                ,
+                pricing_mode: self.pricing_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pricing_mode", "pricing_mode was not specified but it is required when building PricingPlan")
+                    )?
+                ,
+                update_date_time: self.update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date_time", "update_date_time was not specified but it is required when building PricingPlan")
+                    )?
+                ,
+                update_reason: self.update_reason
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_reason", "update_reason was not specified but it is required when building PricingPlan")
+                    )?
+                ,
+            }
+        )
     }
 }
+

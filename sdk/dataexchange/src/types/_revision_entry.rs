@@ -3,7 +3,7 @@
 /// <p>A revision is a container for one or more assets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevisionEntry {
+pub struct RevisionEntry  {
     /// <p>The ARN for the revision.</p>
     pub arn: ::std::string::String,
     /// <p>An optional comment about the revision.</p>
@@ -27,44 +27,41 @@ pub struct RevisionEntry {
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     pub revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RevisionEntry {
+impl  RevisionEntry  {
     /// <p>The ARN for the revision.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>An optional comment about the revision.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn finalized(&self) -> bool {
         self.finalized
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
-    pub fn source_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_id(&self) -> ::std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(&self) -> ::std::option::Option<&str> {
+    pub fn revocation_comment(&self) -> ::std::option::Option<& str> {
         self.revocation_comment.as_deref()
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
@@ -72,7 +69,7 @@ impl RevisionEntry {
         self.revoked
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-    pub fn revoked_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
 }
@@ -108,8 +105,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>The ARN for the revision.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN for the revision.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +118,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>An optional comment about the revision.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>An optional comment about the revision.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +132,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -152,8 +146,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +159,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn set_finalized(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.finalized = input;
-        self
+        self.finalized = input; self
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn get_finalized(&self) -> &::std::option::Option<bool> {
@@ -181,8 +173,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>The unique identifier for the revision.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the revision.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +186,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_id = input;
-        self
+        self.source_id = input; self
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +200,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -224,8 +213,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     pub fn set_revocation_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revocation_comment = input;
-        self
+        self.revocation_comment = input; self
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     pub fn get_revocation_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +226,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
     pub fn set_revoked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.revoked = input;
-        self
+        self.revoked = input; self
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
     pub fn get_revoked(&self) -> &::std::option::Option<bool> {
@@ -252,8 +239,7 @@ impl RevisionEntryBuilder {
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     pub fn set_revoked_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.revoked_at = input;
-        self
+        self.revoked_at = input; self
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     pub fn get_revoked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -267,43 +253,49 @@ impl RevisionEntryBuilder {
     /// - [`id`](crate::types::builders::RevisionEntryBuilder::id)
     /// - [`updated_at`](crate::types::builders::RevisionEntryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::RevisionEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RevisionEntry {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RevisionEntry",
-                )
-            })?,
-            comment: self.comment,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building RevisionEntry",
-                )
-            })?,
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building RevisionEntry",
-                )
-            })?,
-            finalized: self.finalized.unwrap_or_default(),
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RevisionEntry",
-                )
-            })?,
-            source_id: self.source_id,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building RevisionEntry",
-                )
-            })?,
-            revocation_comment: self.revocation_comment,
-            revoked: self.revoked.unwrap_or_default(),
-            revoked_at: self.revoked_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RevisionEntry {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RevisionEntry")
+                    )?
+                ,
+                comment: self.comment
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building RevisionEntry")
+                    )?
+                ,
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building RevisionEntry")
+                    )?
+                ,
+                finalized: self.finalized
+                    .unwrap_or_default()
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RevisionEntry")
+                    )?
+                ,
+                source_id: self.source_id
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building RevisionEntry")
+                    )?
+                ,
+                revocation_comment: self.revocation_comment
+                ,
+                revoked: self.revoked
+                    .unwrap_or_default()
+                ,
+                revoked_at: self.revoked_at
+                ,
+            }
+        )
     }
 }
+

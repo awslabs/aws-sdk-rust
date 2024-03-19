@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDetectorModelInput {
+pub struct DeleteDetectorModelInput  {
     /// <p>The name of the detector model to be deleted.</p>
     pub detector_model_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDetectorModelInput {
+impl  DeleteDetectorModelInput  {
     /// <p>The name of the detector model to be deleted.</p>
-    pub fn detector_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> ::std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteDetectorModelInputBuilder {
     }
     /// <p>The name of the detector model to be deleted.</p>
     pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_model_name = input;
-        self
+        self.detector_model_name = input; self
     }
     /// <p>The name of the detector model to be deleted.</p>
     pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_model_name
     }
     /// Consumes the builder and constructs a [`DeleteDetectorModelInput`](crate::operation::delete_detector_model::DeleteDetectorModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_detector_model::DeleteDetectorModelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_detector_model::DeleteDetectorModelInput {
-            detector_model_name: self.detector_model_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_detector_model::DeleteDetectorModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_detector_model::DeleteDetectorModelInput {
+                detector_model_name: self.detector_model_name
+                ,
+            }
+        )
     }
 }
+

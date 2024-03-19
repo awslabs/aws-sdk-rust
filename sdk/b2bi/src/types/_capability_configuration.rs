@@ -21,11 +21,7 @@ impl CapabilityConfiguration {
     /// Tries to convert the enum instance into [`Edi`](crate::types::CapabilityConfiguration::Edi), extracting the inner [`EdiConfiguration`](crate::types::EdiConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_edi(&self) -> ::std::result::Result<&crate::types::EdiConfiguration, &Self> {
-        if let CapabilityConfiguration::Edi(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let CapabilityConfiguration::Edi(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Edi`](crate::types::CapabilityConfiguration::Edi).
     pub fn is_edi(&self) -> bool {
@@ -36,3 +32,4 @@ impl CapabilityConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

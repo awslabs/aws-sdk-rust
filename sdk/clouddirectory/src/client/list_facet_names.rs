@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFacetNames`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`schema_arn(impl Into<String>)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::set_schema_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) to retrieve facet names from.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
-    /// - On success, responds with [`ListFacetNamesOutput`](crate::operation::list_facet_names::ListFacetNamesOutput) with field(s):
+                            /// - On success, responds with [`ListFacetNamesOutput`](crate::operation::list_facet_names::ListFacetNamesOutput) with field(s):
     ///   - [`facet_names(Option<Vec::<String>>)`](crate::operation::list_facet_names::ListFacetNamesOutput::facet_names): <p>The names of facets that exist within the schema.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_facet_names::ListFacetNamesOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListFacetNamesError>`](crate::operation::list_facet_names::ListFacetNamesError)
+                            /// - On failure, responds with [`SdkError<ListFacetNamesError>`](crate::operation::list_facet_names::ListFacetNamesError)
     pub fn list_facet_names(&self) -> crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder {
-        crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

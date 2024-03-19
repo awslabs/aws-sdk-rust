@@ -3,22 +3,22 @@
 /// <p>Contains the output of the <code>CreateHAPartitionGroup</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHapgOutput {
+pub struct CreateHapgOutput  {
     /// <p>The ARN of the high-availability partition group.</p>
     pub hapg_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateHapgOutput {
+impl  CreateHapgOutput  {
     /// <p>The ARN of the high-availability partition group.</p>
-    pub fn hapg_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> ::std::option::Option<& str> {
         self.hapg_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateHapgOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateHapgOutput {
     /// Creates a new builder-style object to manufacture [`CreateHapgOutput`](crate::operation::create_hapg::CreateHapgOutput).
     pub fn builder() -> crate::operation::create_hapg::builders::CreateHapgOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateHapgOutputBuilder {
     }
     /// <p>The ARN of the high-availability partition group.</p>
     pub fn set_hapg_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hapg_arn = input;
-        self
+        self.hapg_arn = input; self
     }
     /// <p>The ARN of the high-availability partition group.</p>
     pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hapg_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateHapgOutput`](crate::operation::create_hapg::CreateHapgOutput).
     pub fn build(self) -> crate::operation::create_hapg::CreateHapgOutput {
         crate::operation::create_hapg::CreateHapgOutput {
-            hapg_arn: self.hapg_arn,
+            hapg_arn: self.hapg_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

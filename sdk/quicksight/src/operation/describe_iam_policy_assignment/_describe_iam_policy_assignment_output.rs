@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIamPolicyAssignmentOutput {
+pub struct DescribeIamPolicyAssignmentOutput  {
     /// <p>Information describing the IAM policy assignment.</p>
     pub iam_policy_assignment: ::std::option::Option<crate::types::IamPolicyAssignment>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -11,13 +11,13 @@ pub struct DescribeIamPolicyAssignmentOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DescribeIamPolicyAssignmentOutput {
+impl  DescribeIamPolicyAssignmentOutput  {
     /// <p>Information describing the IAM policy assignment.</p>
-    pub fn iam_policy_assignment(&self) -> ::std::option::Option<&crate::types::IamPolicyAssignment> {
+    pub fn iam_policy_assignment(&self) -> ::std::option::Option<& crate::types::IamPolicyAssignment> {
         self.iam_policy_assignment.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -26,10 +26,10 @@ impl DescribeIamPolicyAssignmentOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeIamPolicyAssignmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIamPolicyAssignmentOutput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput).
     pub fn builder() -> crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeIamPolicyAssignmentOutputBuilder {
     }
     /// <p>Information describing the IAM policy assignment.</p>
     pub fn set_iam_policy_assignment(mut self, input: ::std::option::Option<crate::types::IamPolicyAssignment>) -> Self {
-        self.iam_policy_assignment = input;
-        self
+        self.iam_policy_assignment = input; self
     }
     /// <p>Information describing the IAM policy assignment.</p>
     pub fn get_iam_policy_assignment(&self) -> &::std::option::Option<crate::types::IamPolicyAssignment> {
@@ -68,8 +67,7 @@ impl DescribeIamPolicyAssignmentOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,33 @@ impl DescribeIamPolicyAssignmentOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeIamPolicyAssignmentOutput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput).
     pub fn build(self) -> crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput {
         crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput {
-            iam_policy_assignment: self.iam_policy_assignment,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            iam_policy_assignment: self.iam_policy_assignment
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

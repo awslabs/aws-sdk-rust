@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationVersionsInput {
+pub struct ListApplicationVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The total number of items to return.</p>
@@ -10,9 +10,9 @@ pub struct ListApplicationVersionsInput {
     /// <p>A token to specify where to start paginating.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListApplicationVersionsInput {
+impl  ListApplicationVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The total number of items to return.</p>
@@ -20,7 +20,7 @@ impl ListApplicationVersionsInput {
         self.max_items
     }
     /// <p>A token to specify where to start paginating.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>The total number of items to return.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The total number of items to return.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>A token to specify where to start paginating.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_application_versions::ListApplicationVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_application_versions::ListApplicationVersionsInput {
-            application_id: self.application_id,
-            max_items: self.max_items,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_application_versions::ListApplicationVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_application_versions::ListApplicationVersionsInput {
+                application_id: self.application_id
+                ,
+                max_items: self.max_items
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

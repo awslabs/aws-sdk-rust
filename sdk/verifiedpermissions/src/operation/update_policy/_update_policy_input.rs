@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePolicyInput {
+pub struct UpdatePolicyInput  {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
@@ -28,13 +28,13 @@ pub struct UpdatePolicyInput {
     /// </ul>
     pub definition: ::std::option::Option<crate::types::UpdatePolicyDefinition>,
 }
-impl UpdatePolicyInput {
+impl  UpdatePolicyInput  {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
@@ -56,7 +56,7 @@ impl UpdatePolicyInput {
     /// <li>
     /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::UpdatePolicyDefinition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::UpdatePolicyDefinition> {
         self.definition.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl UpdatePolicyInputBuilder {
     }
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl UpdatePolicyInputBuilder {
     }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +148,7 @@ impl UpdatePolicyInputBuilder {
     /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::UpdatePolicyDefinition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
@@ -176,13 +173,17 @@ impl UpdatePolicyInputBuilder {
         &self.definition
     }
     /// Consumes the builder and constructs a [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_policy::UpdatePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_policy::UpdatePolicyInput {
-            policy_store_id: self.policy_store_id,
-            policy_id: self.policy_id,
-            definition: self.definition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_policy::UpdatePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_policy::UpdatePolicyInput {
+                policy_store_id: self.policy_store_id
+                ,
+                policy_id: self.policy_id
+                ,
+                definition: self.definition
+                ,
+            }
+        )
     }
 }
+

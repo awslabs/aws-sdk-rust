@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUpdatedImageOutput {
+pub struct CreateUpdatedImageOutput  {
     /// <p>Describes an image.</p>
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>Indicates whether a new image can be created.</p>
     pub can_update_image: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl CreateUpdatedImageOutput {
+impl  CreateUpdatedImageOutput  {
     /// <p>Describes an image.</p>
-    pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
+    pub fn image(&self) -> ::std::option::Option<& crate::types::Image> {
         self.image.as_ref()
     }
     /// <p>Indicates whether a new image can be created.</p>
@@ -20,10 +20,10 @@ impl CreateUpdatedImageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateUpdatedImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateUpdatedImageOutput {
     /// Creates a new builder-style object to manufacture [`CreateUpdatedImageOutput`](crate::operation::create_updated_image::CreateUpdatedImageOutput).
     pub fn builder() -> crate::operation::create_updated_image::builders::CreateUpdatedImageOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateUpdatedImageOutputBuilder {
     }
     /// <p>Describes an image.</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>Describes an image.</p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
@@ -61,28 +60,30 @@ impl CreateUpdatedImageOutputBuilder {
     }
     /// <p>Indicates whether a new image can be created.</p>
     pub fn set_can_update_image(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_update_image = input;
-        self
+        self.can_update_image = input; self
     }
     /// <p>Indicates whether a new image can be created.</p>
     pub fn get_can_update_image(&self) -> &::std::option::Option<bool> {
         &self.can_update_image
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateUpdatedImageOutput`](crate::operation::create_updated_image::CreateUpdatedImageOutput).
     pub fn build(self) -> crate::operation::create_updated_image::CreateUpdatedImageOutput {
         crate::operation::create_updated_image::CreateUpdatedImageOutput {
-            image: self.image,
-            can_update_image: self.can_update_image,
+            image: self.image
+            ,
+            can_update_image: self.can_update_image
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

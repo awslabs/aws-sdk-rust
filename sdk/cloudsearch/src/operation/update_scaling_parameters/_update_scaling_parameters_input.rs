@@ -3,19 +3,19 @@
 /// <p>Container for the parameters to the <code><code>UpdateScalingParameters</code></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateScalingParametersInput {
+pub struct UpdateScalingParametersInput  {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     pub scaling_parameters: ::std::option::Option<crate::types::ScalingParameters>,
 }
-impl UpdateScalingParametersInput {
+impl  UpdateScalingParametersInput  {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    pub fn scaling_parameters(&self) -> ::std::option::Option<&crate::types::ScalingParameters> {
+    pub fn scaling_parameters(&self) -> ::std::option::Option<& crate::types::ScalingParameters> {
         self.scaling_parameters.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateScalingParametersInputBuilder {
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl UpdateScalingParametersInputBuilder {
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     pub fn set_scaling_parameters(mut self, input: ::std::option::Option<crate::types::ScalingParameters>) -> Self {
-        self.scaling_parameters = input;
-        self
+        self.scaling_parameters = input; self
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     pub fn get_scaling_parameters(&self) -> &::std::option::Option<crate::types::ScalingParameters> {
         &self.scaling_parameters
     }
     /// Consumes the builder and constructs a [`UpdateScalingParametersInput`](crate::operation::update_scaling_parameters::UpdateScalingParametersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_scaling_parameters::UpdateScalingParametersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_scaling_parameters::UpdateScalingParametersInput {
-            domain_name: self.domain_name,
-            scaling_parameters: self.scaling_parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_scaling_parameters::UpdateScalingParametersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_scaling_parameters::UpdateScalingParametersInput {
+                domain_name: self.domain_name
+                ,
+                scaling_parameters: self.scaling_parameters
+                ,
+            }
+        )
     }
 }
+

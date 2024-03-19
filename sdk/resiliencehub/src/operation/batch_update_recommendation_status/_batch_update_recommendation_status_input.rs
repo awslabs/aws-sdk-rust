@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateRecommendationStatusInput {
+pub struct BatchUpdateRecommendationStatusInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Defines the list of operational recommendations that need to be included or excluded.</p>
-    pub request_entries: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRecommendationStatusRequestEntry>>,
+    pub request_entries: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateRecommendationStatusRequestEntry>>,
 }
-impl BatchUpdateRecommendationStatusInput {
+impl  BatchUpdateRecommendationStatusInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>Defines the list of operational recommendations that need to be included or excluded.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.request_entries.is_none()`.
-    pub fn request_entries(&self) -> &[crate::types::UpdateRecommendationStatusRequestEntry] {
-        self.request_entries.as_deref().unwrap_or_default()
+    pub fn request_entries(&self) -> & [crate::types::UpdateRecommendationStatusRequestEntry] {
+        self.request_entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchUpdateRecommendationStatusInput {
@@ -32,7 +33,7 @@ impl BatchUpdateRecommendationStatusInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateRecommendationStatusInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) request_entries: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRecommendationStatusRequestEntry>>,
+    pub(crate) request_entries: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateRecommendationStatusRequestEntry>>,
 }
 impl BatchUpdateRecommendationStatusInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
@@ -43,8 +44,7 @@ impl BatchUpdateRecommendationStatusInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,34 +57,28 @@ impl BatchUpdateRecommendationStatusInputBuilder {
     /// <p>Defines the list of operational recommendations that need to be included or excluded.</p>
     pub fn request_entries(mut self, input: crate::types::UpdateRecommendationStatusRequestEntry) -> Self {
         let mut v = self.request_entries.unwrap_or_default();
-        v.push(input);
-        self.request_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.request_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the list of operational recommendations that need to be included or excluded.</p>
-    pub fn set_request_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRecommendationStatusRequestEntry>>,
-    ) -> Self {
-        self.request_entries = input;
-        self
+    pub fn set_request_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateRecommendationStatusRequestEntry>>) -> Self {
+        self.request_entries = input; self
     }
     /// <p>Defines the list of operational recommendations that need to be included or excluded.</p>
-    pub fn get_request_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateRecommendationStatusRequestEntry>> {
+    pub fn get_request_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateRecommendationStatusRequestEntry>> {
         &self.request_entries
     }
     /// Consumes the builder and constructs a [`BatchUpdateRecommendationStatusInput`](crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusInput {
-                app_arn: self.app_arn,
-                request_entries: self.request_entries,
-            },
+                app_arn: self.app_arn
+                ,
+                request_entries: self.request_entries
+                ,
+            }
         )
     }
 }
+

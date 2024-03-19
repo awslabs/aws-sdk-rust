@@ -3,7 +3,7 @@
 /// <p>The status of an anomaly detector run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionStatus {
+pub struct ExecutionStatus  {
     /// <p>The run's timestamp.</p>
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The run's status.</p>
@@ -11,17 +11,17 @@ pub struct ExecutionStatus {
     /// <p>The reason that the run failed, if applicable.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl ExecutionStatus {
+impl  ExecutionStatus  {
     /// <p>The run's timestamp.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<& str> {
         self.timestamp.as_deref()
     }
     /// <p>The run's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AnomalyDetectionTaskStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AnomalyDetectionTaskStatus> {
         self.status.as_ref()
     }
     /// <p>The reason that the run failed, if applicable.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ExecutionStatusBuilder {
     }
     /// <p>The run's timestamp.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The run's timestamp.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ExecutionStatusBuilder {
     }
     /// <p>The run's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AnomalyDetectionTaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The run's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AnomalyDetectionTaskStatus> {
@@ -76,8 +74,7 @@ impl ExecutionStatusBuilder {
     }
     /// <p>The reason that the run failed, if applicable.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason that the run failed, if applicable.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ExecutionStatusBuilder {
     /// Consumes the builder and constructs a [`ExecutionStatus`](crate::types::ExecutionStatus).
     pub fn build(self) -> crate::types::ExecutionStatus {
         crate::types::ExecutionStatus {
-            timestamp: self.timestamp,
-            status: self.status,
-            failure_reason: self.failure_reason,
+            timestamp: self.timestamp
+            ,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

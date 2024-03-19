@@ -3,7 +3,7 @@
 /// <p>The data of a room profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProfileData {
+pub struct ProfileData  {
     /// <p>The ARN of a room profile.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a room profile.</p>
@@ -23,13 +23,13 @@ pub struct ProfileData {
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
     pub locale: ::std::option::Option<::std::string::String>,
 }
-impl ProfileData {
+impl  ProfileData  {
     /// <p>The ARN of a room profile.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The name of a room profile.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>Retrieves if the profile data is default or not.</p>
@@ -37,27 +37,27 @@ impl ProfileData {
         self.is_default
     }
     /// <p>The address of a room profile.</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The time zone of a room profile.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The distance unit of a room profile.</p>
-    pub fn distance_unit(&self) -> ::std::option::Option<&crate::types::DistanceUnit> {
+    pub fn distance_unit(&self) -> ::std::option::Option<& crate::types::DistanceUnit> {
         self.distance_unit.as_ref()
     }
     /// <p>The temperature unit of a room profile.</p>
-    pub fn temperature_unit(&self) -> ::std::option::Option<&crate::types::TemperatureUnit> {
+    pub fn temperature_unit(&self) -> ::std::option::Option<& crate::types::TemperatureUnit> {
         self.temperature_unit.as_ref()
     }
     /// <p>The wake word of a room profile.</p>
-    pub fn wake_word(&self) -> ::std::option::Option<&crate::types::WakeWord> {
+    pub fn wake_word(&self) -> ::std::option::Option<& crate::types::WakeWord> {
         self.wake_word.as_ref()
     }
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
-    pub fn locale(&self) -> ::std::option::Option<&str> {
+    pub fn locale(&self) -> ::std::option::Option<& str> {
         self.locale.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl ProfileDataBuilder {
     }
     /// <p>The ARN of a room profile.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The ARN of a room profile.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ProfileDataBuilder {
     }
     /// <p>The name of a room profile.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>The name of a room profile.</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ProfileDataBuilder {
     }
     /// <p>Retrieves if the profile data is default or not.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Retrieves if the profile data is default or not.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -132,8 +129,7 @@ impl ProfileDataBuilder {
     }
     /// <p>The address of a room profile.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The address of a room profile.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ProfileDataBuilder {
     }
     /// <p>The time zone of a room profile.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>The time zone of a room profile.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl ProfileDataBuilder {
     }
     /// <p>The distance unit of a room profile.</p>
     pub fn set_distance_unit(mut self, input: ::std::option::Option<crate::types::DistanceUnit>) -> Self {
-        self.distance_unit = input;
-        self
+        self.distance_unit = input; self
     }
     /// <p>The distance unit of a room profile.</p>
     pub fn get_distance_unit(&self) -> &::std::option::Option<crate::types::DistanceUnit> {
@@ -174,8 +168,7 @@ impl ProfileDataBuilder {
     }
     /// <p>The temperature unit of a room profile.</p>
     pub fn set_temperature_unit(mut self, input: ::std::option::Option<crate::types::TemperatureUnit>) -> Self {
-        self.temperature_unit = input;
-        self
+        self.temperature_unit = input; self
     }
     /// <p>The temperature unit of a room profile.</p>
     pub fn get_temperature_unit(&self) -> &::std::option::Option<crate::types::TemperatureUnit> {
@@ -188,8 +181,7 @@ impl ProfileDataBuilder {
     }
     /// <p>The wake word of a room profile.</p>
     pub fn set_wake_word(mut self, input: ::std::option::Option<crate::types::WakeWord>) -> Self {
-        self.wake_word = input;
-        self
+        self.wake_word = input; self
     }
     /// <p>The wake word of a room profile.</p>
     pub fn get_wake_word(&self) -> &::std::option::Option<crate::types::WakeWord> {
@@ -202,8 +194,7 @@ impl ProfileDataBuilder {
     }
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,15 +203,25 @@ impl ProfileDataBuilder {
     /// Consumes the builder and constructs a [`ProfileData`](crate::types::ProfileData).
     pub fn build(self) -> crate::types::ProfileData {
         crate::types::ProfileData {
-            profile_arn: self.profile_arn,
-            profile_name: self.profile_name,
-            is_default: self.is_default,
-            address: self.address,
-            timezone: self.timezone,
-            distance_unit: self.distance_unit,
-            temperature_unit: self.temperature_unit,
-            wake_word: self.wake_word,
-            locale: self.locale,
+            profile_arn: self.profile_arn
+            ,
+            profile_name: self.profile_name
+            ,
+            is_default: self.is_default
+            ,
+            address: self.address
+            ,
+            timezone: self.timezone
+            ,
+            distance_unit: self.distance_unit
+            ,
+            temperature_unit: self.temperature_unit
+            ,
+            wake_word: self.wake_word
+            ,
+            locale: self.locale
+            ,
         }
     }
 }
+

@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDataProvidersOutput {
+pub struct DescribeDataProvidersOutput  {
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A description of data providers.</p>
-    pub data_providers: ::std::option::Option<::std::vec::Vec<crate::types::DataProvider>>,
+    pub data_providers: ::std::option::Option<::std::vec::Vec::<crate::types::DataProvider>>,
     _request_id: Option<String>,
 }
-impl DescribeDataProvidersOutput {
+impl  DescribeDataProvidersOutput  {
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A description of data providers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_providers.is_none()`.
-    pub fn data_providers(&self) -> &[crate::types::DataProvider] {
-        self.data_providers.as_deref().unwrap_or_default()
+    pub fn data_providers(&self) -> & [crate::types::DataProvider] {
+        self.data_providers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDataProvidersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDataProvidersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataProvidersOutput`](crate::operation::describe_data_providers::DescribeDataProvidersOutput).
     pub fn builder() -> crate::operation::describe_data_providers::builders::DescribeDataProvidersOutputBuilder {
@@ -40,7 +41,7 @@ impl DescribeDataProvidersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataProvidersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) data_providers: ::std::option::Option<::std::vec::Vec<crate::types::DataProvider>>,
+    pub(crate) data_providers: ::std::option::Option<::std::vec::Vec::<crate::types::DataProvider>>,
     _request_id: Option<String>,
 }
 impl DescribeDataProvidersOutputBuilder {
@@ -53,8 +54,7 @@ impl DescribeDataProvidersOutputBuilder {
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
@@ -68,34 +68,36 @@ impl DescribeDataProvidersOutputBuilder {
     /// <p>A description of data providers.</p>
     pub fn data_providers(mut self, input: crate::types::DataProvider) -> Self {
         let mut v = self.data_providers.unwrap_or_default();
-        v.push(input);
-        self.data_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A description of data providers.</p>
-    pub fn set_data_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataProvider>>) -> Self {
-        self.data_providers = input;
-        self
+    pub fn set_data_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataProvider>>) -> Self {
+        self.data_providers = input; self
     }
     /// <p>A description of data providers.</p>
-    pub fn get_data_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataProvider>> {
+    pub fn get_data_providers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataProvider>> {
         &self.data_providers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDataProvidersOutput`](crate::operation::describe_data_providers::DescribeDataProvidersOutput).
     pub fn build(self) -> crate::operation::describe_data_providers::DescribeDataProvidersOutput {
         crate::operation::describe_data_providers::DescribeDataProvidersOutput {
-            marker: self.marker,
-            data_providers: self.data_providers,
+            marker: self.marker
+            ,
+            data_providers: self.data_providers
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Metrics that describe the quality of the generated audience.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceQualityMetrics {
+pub struct AudienceQualityMetrics  {
     /// <p>The relevance scores of the generated audience.</p>
-    pub relevance_metrics: ::std::vec::Vec<crate::types::RelevanceMetric>,
+    pub relevance_metrics: ::std::vec::Vec::<crate::types::RelevanceMetric>,
 }
-impl AudienceQualityMetrics {
+impl  AudienceQualityMetrics  {
     /// <p>The relevance scores of the generated audience.</p>
-    pub fn relevance_metrics(&self) -> &[crate::types::RelevanceMetric] {
-        use std::ops::Deref;
-        self.relevance_metrics.deref()
+    pub fn relevance_metrics(&self) -> & [crate::types::RelevanceMetric] {
+        use std::ops::Deref; self.relevance_metrics.deref()
     }
 }
 impl AudienceQualityMetrics {
@@ -25,7 +24,7 @@ impl AudienceQualityMetrics {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudienceQualityMetricsBuilder {
-    pub(crate) relevance_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceMetric>>,
+    pub(crate) relevance_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::RelevanceMetric>>,
 }
 impl AudienceQualityMetricsBuilder {
     /// Appends an item to `relevance_metrics`.
@@ -35,30 +34,31 @@ impl AudienceQualityMetricsBuilder {
     /// <p>The relevance scores of the generated audience.</p>
     pub fn relevance_metrics(mut self, input: crate::types::RelevanceMetric) -> Self {
         let mut v = self.relevance_metrics.unwrap_or_default();
-        v.push(input);
-        self.relevance_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.relevance_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The relevance scores of the generated audience.</p>
-    pub fn set_relevance_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceMetric>>) -> Self {
-        self.relevance_metrics = input;
-        self
+    pub fn set_relevance_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelevanceMetric>>) -> Self {
+        self.relevance_metrics = input; self
     }
     /// <p>The relevance scores of the generated audience.</p>
-    pub fn get_relevance_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelevanceMetric>> {
+    pub fn get_relevance_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelevanceMetric>> {
         &self.relevance_metrics
     }
     /// Consumes the builder and constructs a [`AudienceQualityMetrics`](crate::types::AudienceQualityMetrics).
     /// This method will fail if any of the following fields are not set:
     /// - [`relevance_metrics`](crate::types::builders::AudienceQualityMetricsBuilder::relevance_metrics)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceQualityMetrics, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudienceQualityMetrics {
-            relevance_metrics: self.relevance_metrics.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "relevance_metrics",
-                    "relevance_metrics was not specified but it is required when building AudienceQualityMetrics",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudienceQualityMetrics {
+                relevance_metrics: self.relevance_metrics
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("relevance_metrics", "relevance_metrics was not specified but it is required when building AudienceQualityMetrics")
+                    )?
+                ,
+            }
+        )
     }
 }
+

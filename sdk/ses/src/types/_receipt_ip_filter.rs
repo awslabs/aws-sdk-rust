@@ -4,21 +4,20 @@
 /// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-ip-filtering-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReceiptIpFilter {
+pub struct ReceiptIpFilter  {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
     pub policy: crate::types::ReceiptFilterPolicy,
     /// <p>A single IP address or a range of IP addresses to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
     pub cidr: ::std::string::String,
 }
-impl ReceiptIpFilter {
+impl  ReceiptIpFilter  {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
-    pub fn policy(&self) -> &crate::types::ReceiptFilterPolicy {
+    pub fn policy(&self) -> & crate::types::ReceiptFilterPolicy {
         &self.policy
     }
     /// <p>A single IP address or a range of IP addresses to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
-    pub fn cidr(&self) -> &str {
-        use std::ops::Deref;
-        self.cidr.deref()
+    pub fn cidr(&self) -> & str {
+        use std::ops::Deref; self.cidr.deref()
     }
 }
 impl ReceiptIpFilter {
@@ -44,8 +43,7 @@ impl ReceiptIpFilterBuilder {
     }
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ReceiptFilterPolicy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::ReceiptFilterPolicy> {
@@ -59,8 +57,7 @@ impl ReceiptIpFilterBuilder {
     }
     /// <p>A single IP address or a range of IP addresses to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>A single IP address or a range of IP addresses to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +68,20 @@ impl ReceiptIpFilterBuilder {
     /// - [`policy`](crate::types::builders::ReceiptIpFilterBuilder::policy)
     /// - [`cidr`](crate::types::builders::ReceiptIpFilterBuilder::cidr)
     pub fn build(self) -> ::std::result::Result<crate::types::ReceiptIpFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReceiptIpFilter {
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building ReceiptIpFilter",
-                )
-            })?,
-            cidr: self.cidr.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cidr",
-                    "cidr was not specified but it is required when building ReceiptIpFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReceiptIpFilter {
+                policy: self.policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy", "policy was not specified but it is required when building ReceiptIpFilter")
+                    )?
+                ,
+                cidr: self.cidr
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cidr", "cidr was not specified but it is required when building ReceiptIpFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

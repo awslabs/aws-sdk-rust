@@ -3,7 +3,7 @@
 /// <p>Contains information about the administrator account and invitation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Administrator {
+pub struct Administrator  {
     /// <p>The ID of the account used as the administrator account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The value that is used to validate the administrator account to the member account.</p>
@@ -13,21 +13,21 @@ pub struct Administrator {
     /// <p>The timestamp when the invitation was sent.</p>
     pub invited_at: ::std::option::Option<::std::string::String>,
 }
-impl Administrator {
+impl  Administrator  {
     /// <p>The ID of the account used as the administrator account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
-    pub fn invitation_id(&self) -> ::std::option::Option<&str> {
+    pub fn invitation_id(&self) -> ::std::option::Option<& str> {
         self.invitation_id.as_deref()
     }
     /// <p>The status of the relationship between the administrator and member accounts.</p>
-    pub fn relationship_status(&self) -> ::std::option::Option<&str> {
+    pub fn relationship_status(&self) -> ::std::option::Option<& str> {
         self.relationship_status.as_deref()
     }
     /// <p>The timestamp when the invitation was sent.</p>
-    pub fn invited_at(&self) -> ::std::option::Option<&str> {
+    pub fn invited_at(&self) -> ::std::option::Option<& str> {
         self.invited_at.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AdministratorBuilder {
     }
     /// <p>The ID of the account used as the administrator account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the account used as the administrator account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AdministratorBuilder {
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invitation_id = input;
-        self
+        self.invitation_id = input; self
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AdministratorBuilder {
     }
     /// <p>The status of the relationship between the administrator and member accounts.</p>
     pub fn set_relationship_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relationship_status = input;
-        self
+        self.relationship_status = input; self
     }
     /// <p>The status of the relationship between the administrator and member accounts.</p>
     pub fn get_relationship_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AdministratorBuilder {
     }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn set_invited_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invited_at = input;
-        self
+        self.invited_at = input; self
     }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn get_invited_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl AdministratorBuilder {
     /// Consumes the builder and constructs a [`Administrator`](crate::types::Administrator).
     pub fn build(self) -> crate::types::Administrator {
         crate::types::Administrator {
-            account_id: self.account_id,
-            invitation_id: self.invitation_id,
-            relationship_status: self.relationship_status,
-            invited_at: self.invited_at,
+            account_id: self.account_id
+            ,
+            invitation_id: self.invitation_id
+            ,
+            relationship_status: self.relationship_status
+            ,
+            invited_at: self.invited_at
+            ,
         }
     }
 }
+

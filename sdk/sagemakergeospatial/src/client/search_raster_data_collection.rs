@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchRasterDataCollection`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the raster data collection.</p><br>
     ///   - [`raster_data_collection_query(RasterDataCollectionQueryWithBandFilterInput)`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::raster_data_collection_query) / [`set_raster_data_collection_query(Option<RasterDataCollectionQueryWithBandFilterInput>)`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::set_raster_data_collection_query):<br>required: **true**<br><p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p><br>
-    /// - On success, responds with [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput) with field(s):
+                            /// - On success, responds with [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput) with field(s):
     ///   - [`approximate_result_count(i32)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::approximate_result_count): <p>Approximate number of results in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     ///   - [`items(Option<Vec::<ItemSource>>)`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput::items): <p>List of items matching the Raster DataCollectionQuery.</p>
-    /// - On failure, responds with [`SdkError<SearchRasterDataCollectionError>`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionError)
-    pub fn search_raster_data_collection(
-        &self,
-    ) -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder {
-        crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<SearchRasterDataCollectionError>`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionError)
+    pub fn search_raster_data_collection(&self) -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder {
+                                crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionFluentBuilder::new(self.handle.clone())
+                            }
 }
+

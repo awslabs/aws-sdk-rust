@@ -2,30 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct StartConversationOutput {
+pub struct StartConversationOutput  {
     /// <p>Represents the stream of events from Amazon Lex V2 to your application. The events are encoded as HTTP/2 data frames.</p>
-    pub response_event_stream: crate::event_receiver::EventReceiver<
-        crate::types::StartConversationResponseEventStream,
-        crate::types::error::StartConversationResponseEventStreamError,
-    >,
+    pub response_event_stream: crate::event_receiver::EventReceiver<crate::types::StartConversationResponseEventStream, crate::types::error::StartConversationResponseEventStreamError>,
     _request_id: Option<String>,
 }
-impl StartConversationOutput {
+impl  StartConversationOutput  {
     /// <p>Represents the stream of events from Amazon Lex V2 to your application. The events are encoded as HTTP/2 data frames.</p>
-    pub fn response_event_stream(
-        &self,
-    ) -> &crate::event_receiver::EventReceiver<
-        crate::types::StartConversationResponseEventStream,
-        crate::types::error::StartConversationResponseEventStreamError,
-    > {
+    pub fn response_event_stream(&self) -> & crate::event_receiver::EventReceiver<crate::types::StartConversationResponseEventStream, crate::types::error::StartConversationResponseEventStreamError> {
         &self.response_event_stream
     }
 }
 impl ::aws_types::request_id::RequestId for StartConversationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartConversationOutput {
     /// Creates a new builder-style object to manufacture [`StartConversationOutput`](crate::operation::start_conversation::StartConversationOutput).
     pub fn builder() -> crate::operation::start_conversation::builders::StartConversationOutputBuilder {
@@ -37,73 +29,46 @@ impl StartConversationOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct StartConversationOutputBuilder {
-    pub(crate) response_event_stream: ::std::option::Option<
-        crate::event_receiver::EventReceiver<
-            crate::types::StartConversationResponseEventStream,
-            crate::types::error::StartConversationResponseEventStreamError,
-        >,
-    >,
+    pub(crate) response_event_stream: ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::StartConversationResponseEventStream, crate::types::error::StartConversationResponseEventStreamError>>,
     _request_id: Option<String>,
 }
 impl StartConversationOutputBuilder {
     /// <p>Represents the stream of events from Amazon Lex V2 to your application. The events are encoded as HTTP/2 data frames.</p>
-    pub fn response_event_stream(
-        mut self,
-        input: crate::event_receiver::EventReceiver<
-            crate::types::StartConversationResponseEventStream,
-            crate::types::error::StartConversationResponseEventStreamError,
-        >,
-    ) -> Self {
+    pub fn response_event_stream(mut self, input: crate::event_receiver::EventReceiver<crate::types::StartConversationResponseEventStream, crate::types::error::StartConversationResponseEventStreamError>) -> Self {
         self.response_event_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the stream of events from Amazon Lex V2 to your application. The events are encoded as HTTP/2 data frames.</p>
-    pub fn set_response_event_stream(
-        mut self,
-        input: ::std::option::Option<
-            crate::event_receiver::EventReceiver<
-                crate::types::StartConversationResponseEventStream,
-                crate::types::error::StartConversationResponseEventStreamError,
-            >,
-        >,
-    ) -> Self {
-        self.response_event_stream = input;
-        self
+    pub fn set_response_event_stream(mut self, input: ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::StartConversationResponseEventStream, crate::types::error::StartConversationResponseEventStreamError>>) -> Self {
+        self.response_event_stream = input; self
     }
     /// <p>Represents the stream of events from Amazon Lex V2 to your application. The events are encoded as HTTP/2 data frames.</p>
-    pub fn get_response_event_stream(
-        &self,
-    ) -> &::std::option::Option<
-        crate::event_receiver::EventReceiver<
-            crate::types::StartConversationResponseEventStream,
-            crate::types::error::StartConversationResponseEventStreamError,
-        >,
-    > {
+    pub fn get_response_event_stream(&self) -> &::std::option::Option<crate::event_receiver::EventReceiver<crate::types::StartConversationResponseEventStream, crate::types::error::StartConversationResponseEventStreamError>> {
         &self.response_event_stream
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartConversationOutput`](crate::operation::start_conversation::StartConversationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`response_event_stream`](crate::operation::start_conversation::builders::StartConversationOutputBuilder::response_event_stream)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_conversation::StartConversationOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_conversation::StartConversationOutput {
-            response_event_stream: self.response_event_stream.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "response_event_stream",
-                    "response_event_stream was not specified but it is required when building StartConversationOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_conversation::StartConversationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_conversation::StartConversationOutput {
+                response_event_stream: self.response_event_stream
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("response_event_stream", "response_event_stream was not specified but it is required when building StartConversationOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

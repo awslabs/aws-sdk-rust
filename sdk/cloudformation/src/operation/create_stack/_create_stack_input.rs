@@ -3,7 +3,7 @@
 /// <p>The input for <code>CreateStack</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStackInput {
+pub struct CreateStackInput  {
     /// <p>The name that's associated with the stack. The name must be unique in the Region in which you are creating the stack.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an alphabetical character and can't be longer than 128 characters.</p>
     /// </note>
@@ -15,7 +15,7 @@ pub struct CreateStackInput {
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
     pub template_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not both.</p>
     /// <p>Default: <code>false</code></p>
     pub disable_rollback: ::std::option::Option<bool>,
@@ -24,7 +24,7 @@ pub struct CreateStackInput {
     /// <p>The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.</p>
     pub timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
     /// <li>
@@ -68,12 +68,12 @@ pub struct CreateStackInput {
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     /// <p>The template resource types that you have permissions to work with for this create stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template resource types: <code>AWS::*</code> (for all Amazon Web Services resources), <code>Custom::*</code> (for all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular Amazon Web Services service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a specific Amazon Web Services resource).</p>
     /// <p>If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation always uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that's generated from your user credentials.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -85,7 +85,7 @@ pub struct CreateStackInput {
     /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start with <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub stack_policy_url: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to the resources created in the stack. A maximum number of 50 tags can be specified.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create a stack with the same name. You might retry <code>CreateStack</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>All events initiated by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
     /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
@@ -97,28 +97,29 @@ pub struct CreateStackInput {
     /// <p>Default: <code>false</code></p>
     pub retain_except_on_create: ::std::option::Option<bool>,
 }
-impl CreateStackInput {
+impl  CreateStackInput  {
     /// <p>The name that's associated with the stack. The name must be unique in the Region in which you are creating the stack.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an alphabetical character and can't be longer than 128 characters.</p>
     /// </note>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    pub fn template_body(&self) -> ::std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
-    pub fn template_url(&self) -> ::std::option::Option<&str> {
+    pub fn template_url(&self) -> ::std::option::Option<& str> {
         self.template_url.as_deref()
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not both.</p>
     /// <p>Default: <code>false</code></p>
@@ -126,7 +127,7 @@ impl CreateStackInput {
         self.disable_rollback
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    pub fn rollback_configuration(&self) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
+    pub fn rollback_configuration(&self) -> ::std::option::Option<& crate::types::RollbackConfiguration> {
         self.rollback_configuration.as_ref()
     }
     /// <p>The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.</p>
@@ -134,10 +135,11 @@ impl CreateStackInput {
         self.timeout_in_minutes
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
-    pub fn notification_arns(&self) -> &[::std::string::String] {
-        self.notification_arns.as_deref().unwrap_or_default()
+    pub fn notification_arns(&self) -> & [::std::string::String] {
+        self.notification_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
@@ -182,48 +184,51 @@ impl CreateStackInput {
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[crate::types::Capability] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [crate::types::Capability] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The template resource types that you have permissions to work with for this create stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template resource types: <code>AWS::*</code> (for all Amazon Web Services resources), <code>Custom::*</code> (for all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular Amazon Web Services service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a specific Amazon Web Services resource).</p>
     /// <p>If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[::std::string::String] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [::std::string::String] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation always uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that's generated from your user credentials.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
     /// <p>Default: <code>ROLLBACK</code></p>
-    pub fn on_failure(&self) -> ::std::option::Option<&crate::types::OnFailure> {
+    pub fn on_failure(&self) -> ::std::option::Option<& crate::types::OnFailure> {
         self.on_failure.as_ref()
     }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
-    pub fn stack_policy_body(&self) -> ::std::option::Option<&str> {
+    pub fn stack_policy_body(&self) -> ::std::option::Option<& str> {
         self.stack_policy_body.as_deref()
     }
     /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start with <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
-    pub fn stack_policy_url(&self) -> ::std::option::Option<&str> {
+    pub fn stack_policy_url(&self) -> ::std::option::Option<& str> {
         self.stack_policy_url.as_deref()
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to the resources created in the stack. A maximum number of 50 tags can be specified.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create a stack with the same name. You might retry <code>CreateStack</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>All events initiated by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
     /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on stacks by default.</p>
@@ -251,18 +256,18 @@ pub struct CreateStackInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_url: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     pub(crate) disable_rollback: ::std::option::Option<bool>,
     pub(crate) rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
-    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) on_failure: ::std::option::Option<crate::types::OnFailure>,
     pub(crate) stack_policy_body: ::std::option::Option<::std::string::String>,
     pub(crate) stack_policy_url: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) enable_termination_protection: ::std::option::Option<bool>,
     pub(crate) retain_except_on_create: ::std::option::Option<bool>,
@@ -280,8 +285,7 @@ impl CreateStackInputBuilder {
     /// <p>A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an alphabetical character and can't be longer than 128 characters.</p>
     /// </note>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name that's associated with the stack. The name must be unique in the Region in which you are creating the stack.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an alphabetical character and can't be longer than 128 characters.</p>
@@ -298,8 +302,7 @@ impl CreateStackInputBuilder {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
@@ -315,8 +318,7 @@ impl CreateStackInputBuilder {
     /// <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
     }
     /// <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not both.</p>
@@ -330,17 +332,16 @@ impl CreateStackInputBuilder {
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not both.</p>
@@ -352,8 +353,7 @@ impl CreateStackInputBuilder {
     /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not both.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_disable_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_rollback = input;
-        self
+        self.disable_rollback = input; self
     }
     /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed. You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not both.</p>
     /// <p>Default: <code>false</code></p>
@@ -367,8 +367,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn set_rollback_configuration(mut self, input: ::std::option::Option<crate::types::RollbackConfiguration>) -> Self {
-        self.rollback_configuration = input;
-        self
+        self.rollback_configuration = input; self
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn get_rollback_configuration(&self) -> &::std::option::Option<crate::types::RollbackConfiguration> {
@@ -381,8 +380,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.</p>
     pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_minutes = input;
-        self
+        self.timeout_in_minutes = input; self
     }
     /// <p>The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.</p>
     pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -395,17 +393,16 @@ impl CreateStackInputBuilder {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
     pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
-        v.push(input.into());
-        self.notification_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.notification_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_arns = input;
-        self
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.notification_arns = input; self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).</p>
-    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.notification_arns
     }
     /// Appends an item to `capabilities`.
@@ -457,9 +454,9 @@ impl CreateStackInputBuilder {
     /// </note>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
@@ -504,9 +501,8 @@ impl CreateStackInputBuilder {
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
@@ -551,7 +547,7 @@ impl CreateStackInputBuilder {
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Capability>> {
         &self.capabilities
     }
     /// Appends an item to `resource_types`.
@@ -564,23 +560,22 @@ impl CreateStackInputBuilder {
     /// </note>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input.into());
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The template resource types that you have permissions to work with for this create stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template resource types: <code>AWS::*</code> (for all Amazon Web Services resources), <code>Custom::*</code> (for all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular Amazon Web Services service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a specific Amazon Web Services resource).</p>
     /// <p>If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The template resource types that you have permissions to work with for this create stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template resource types: <code>AWS::*</code> (for all Amazon Web Services resources), <code>Custom::*</code> (for all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular Amazon Web Services service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a specific Amazon Web Services resource).</p>
     /// <p>If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_types
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation always uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
@@ -592,8 +587,7 @@ impl CreateStackInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation always uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that's generated from your user credentials.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation always uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that's generated from your user credentials.</p>
@@ -609,8 +603,7 @@ impl CreateStackInputBuilder {
     /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
     /// <p>Default: <code>ROLLBACK</code></p>
     pub fn set_on_failure(mut self, input: ::std::option::Option<crate::types::OnFailure>) -> Self {
-        self.on_failure = input;
-        self
+        self.on_failure = input; self
     }
     /// <p>Determines what action will be taken if stack creation fails. This must be one of: <code>DO_NOTHING</code>, <code>ROLLBACK</code>, or <code>DELETE</code>. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
     /// <p>Default: <code>ROLLBACK</code></p>
@@ -624,8 +617,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn set_stack_policy_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_policy_body = input;
-        self
+        self.stack_policy_body = input; self
     }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn get_stack_policy_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -638,8 +630,7 @@ impl CreateStackInputBuilder {
     }
     /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start with <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn set_stack_policy_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_policy_url = input;
-        self
+        self.stack_policy_url = input; self
     }
     /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start with <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn get_stack_policy_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -652,17 +643,16 @@ impl CreateStackInputBuilder {
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to the resources created in the stack. A maximum number of 50 tags can be specified.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to the resources created in the stack. A maximum number of 50 tags can be specified.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to the resources created in the stack. A maximum number of 50 tags can be specified.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create a stack with the same name. You might retry <code>CreateStack</code> requests to ensure that CloudFormation successfully received them.</p>
@@ -676,8 +666,7 @@ impl CreateStackInputBuilder {
     /// <p>All events initiated by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
     /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create a stack with the same name. You might retry <code>CreateStack</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>All events initiated by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
@@ -694,8 +683,7 @@ impl CreateStackInputBuilder {
     /// <p>Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on stacks by default.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.</p>
     pub fn set_enable_termination_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_termination_protection = input;
-        self
+        self.enable_termination_protection = input; self
     }
     /// <p>Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on stacks by default.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.</p>
@@ -711,8 +699,7 @@ impl CreateStackInputBuilder {
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.retain_except_on_create = input;
-        self
+        self.retain_except_on_create = input; self
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
@@ -721,25 +708,46 @@ impl CreateStackInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
-            stack_name: self.stack_name,
-            template_body: self.template_body,
-            template_url: self.template_url,
-            parameters: self.parameters,
-            disable_rollback: self.disable_rollback,
-            rollback_configuration: self.rollback_configuration,
-            timeout_in_minutes: self.timeout_in_minutes,
-            notification_arns: self.notification_arns,
-            capabilities: self.capabilities,
-            resource_types: self.resource_types,
-            role_arn: self.role_arn,
-            on_failure: self.on_failure,
-            stack_policy_body: self.stack_policy_body,
-            stack_policy_url: self.stack_policy_url,
-            tags: self.tags,
-            client_request_token: self.client_request_token,
-            enable_termination_protection: self.enable_termination_protection,
-            retain_except_on_create: self.retain_except_on_create,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_stack::CreateStackInput {
+                stack_name: self.stack_name
+                ,
+                template_body: self.template_body
+                ,
+                template_url: self.template_url
+                ,
+                parameters: self.parameters
+                ,
+                disable_rollback: self.disable_rollback
+                ,
+                rollback_configuration: self.rollback_configuration
+                ,
+                timeout_in_minutes: self.timeout_in_minutes
+                ,
+                notification_arns: self.notification_arns
+                ,
+                capabilities: self.capabilities
+                ,
+                resource_types: self.resource_types
+                ,
+                role_arn: self.role_arn
+                ,
+                on_failure: self.on_failure
+                ,
+                stack_policy_body: self.stack_policy_body
+                ,
+                stack_policy_url: self.stack_policy_url
+                ,
+                tags: self.tags
+                ,
+                client_request_token: self.client_request_token
+                ,
+                enable_termination_protection: self.enable_termination_protection
+                ,
+                retain_except_on_create: self.retain_except_on_create
+                ,
+            }
+        )
     }
 }
+

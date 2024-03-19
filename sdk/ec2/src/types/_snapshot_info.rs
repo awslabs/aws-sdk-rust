@@ -3,11 +3,11 @@
 /// <p>Information about a snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotInfo {
+pub struct SnapshotInfo  {
     /// <p>Description specified by the CreateSnapshotRequest that has been applied to all snapshots.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with this snapshot.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Source volume from which this snapshot was created.</p>
@@ -29,27 +29,28 @@ pub struct SnapshotInfo {
     /// <p>Reserved for future use.</p>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
 }
-impl SnapshotInfo {
+impl  SnapshotInfo  {
     /// <p>Description specified by the CreateSnapshotRequest that has been applied to all snapshots.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags associated with this snapshot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>Source volume from which this snapshot was created.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>Current state of the snapshot.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SnapshotState> {
         self.state.as_ref()
     }
     /// <p>Size of the volume from which this snapshot was created.</p>
@@ -57,27 +58,27 @@ impl SnapshotInfo {
         self.volume_size
     }
     /// <p>Time this snapshot was started. This is the same for all snapshots initiated by the same request.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Progress this snapshot has made towards completing.</p>
-    pub fn progress(&self) -> ::std::option::Option<&str> {
+    pub fn progress(&self) -> ::std::option::Option<& str> {
         self.progress.as_deref()
     }
     /// <p>Account id used when creating this snapshot.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>Snapshot id that can be used to describe this snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
-    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+    pub fn sse_type(&self) -> ::std::option::Option<& crate::types::SseType> {
         self.sse_type.as_ref()
     }
 }
@@ -93,7 +94,7 @@ impl SnapshotInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotInfoBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SnapshotState>,
@@ -113,8 +114,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Description specified by the CreateSnapshotRequest that has been applied to all snapshots.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description specified by the CreateSnapshotRequest that has been applied to all snapshots.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +127,16 @@ impl SnapshotInfoBuilder {
     /// <p>Tags associated with this snapshot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags associated with this snapshot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with this snapshot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Indicates whether the snapshot is encrypted.</p>
@@ -147,8 +146,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -161,8 +159,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Source volume from which this snapshot was created.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>Source volume from which this snapshot was created.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +172,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Current state of the snapshot.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Current state of the snapshot.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotState> {
@@ -189,8 +185,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Size of the volume from which this snapshot was created.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p>Size of the volume from which this snapshot was created.</p>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
@@ -203,8 +198,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Time this snapshot was started. This is the same for all snapshots initiated by the same request.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Time this snapshot was started. This is the same for all snapshots initiated by the same request.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -217,8 +211,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Progress this snapshot has made towards completing.</p>
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>Progress this snapshot has made towards completing.</p>
     pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +224,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Account id used when creating this snapshot.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>Account id used when creating this snapshot.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +237,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Snapshot id that can be used to describe this snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>Snapshot id that can be used to describe this snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +250,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_arn = input;
-        self
+        self.outpost_arn = input; self
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +263,7 @@ impl SnapshotInfoBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
-        self.sse_type = input;
-        self
+        self.sse_type = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
@@ -283,18 +272,31 @@ impl SnapshotInfoBuilder {
     /// Consumes the builder and constructs a [`SnapshotInfo`](crate::types::SnapshotInfo).
     pub fn build(self) -> crate::types::SnapshotInfo {
         crate::types::SnapshotInfo {
-            description: self.description,
-            tags: self.tags,
-            encrypted: self.encrypted,
-            volume_id: self.volume_id,
-            state: self.state,
-            volume_size: self.volume_size,
-            start_time: self.start_time,
-            progress: self.progress,
-            owner_id: self.owner_id,
-            snapshot_id: self.snapshot_id,
-            outpost_arn: self.outpost_arn,
-            sse_type: self.sse_type,
+            description: self.description
+            ,
+            tags: self.tags
+            ,
+            encrypted: self.encrypted
+            ,
+            volume_id: self.volume_id
+            ,
+            state: self.state
+            ,
+            volume_size: self.volume_size
+            ,
+            start_time: self.start_time
+            ,
+            progress: self.progress
+            ,
+            owner_id: self.owner_id
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            outpost_arn: self.outpost_arn
+            ,
+            sse_type: self.sse_type
+            ,
         }
     }
 }
+

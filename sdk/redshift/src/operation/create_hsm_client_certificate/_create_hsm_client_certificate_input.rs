@@ -3,22 +3,23 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHsmClientCertificateInput {
+pub struct CreateHsmClientCertificateInput  {
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateHsmClientCertificateInput {
+impl  CreateHsmClientCertificateInput  {
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
-    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.hsm_client_certificate_identifier.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateHsmClientCertificateInput {
@@ -33,7 +34,7 @@ impl CreateHsmClientCertificateInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHsmClientCertificateInputBuilder {
     pub(crate) hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateHsmClientCertificateInputBuilder {
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
@@ -44,8 +45,7 @@ impl CreateHsmClientCertificateInputBuilder {
     }
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
     pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_client_certificate_identifier = input;
-        self
+        self.hsm_client_certificate_identifier = input; self
     }
     /// <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
     pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,29 +58,28 @@ impl CreateHsmClientCertificateInputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHsmClientCertificateInput`](crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput {
-            hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput {
+                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

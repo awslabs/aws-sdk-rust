@@ -2,36 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistrationFieldDefinitionsOutput {
+pub struct DescribeRegistrationFieldDefinitionsOutput  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub registration_type: ::std::string::String,
     /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
-    pub registration_field_definitions: ::std::vec::Vec<crate::types::RegistrationFieldDefinition>,
+    pub registration_field_definitions: ::std::vec::Vec::<crate::types::RegistrationFieldDefinition>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRegistrationFieldDefinitionsOutput {
+impl  DescribeRegistrationFieldDefinitionsOutput  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn registration_type(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_type.deref()
+    pub fn registration_type(&self) -> & str {
+        use std::ops::Deref; self.registration_type.deref()
     }
     /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
-    pub fn registration_field_definitions(&self) -> &[crate::types::RegistrationFieldDefinition] {
-        use std::ops::Deref;
-        self.registration_field_definitions.deref()
+    pub fn registration_field_definitions(&self) -> & [crate::types::RegistrationFieldDefinition] {
+        use std::ops::Deref; self.registration_field_definitions.deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRegistrationFieldDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRegistrationFieldDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistrationFieldDefinitionsOutput`](crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsOutput).
     pub fn builder() -> crate::operation::describe_registration_field_definitions::builders::DescribeRegistrationFieldDefinitionsOutputBuilder {
@@ -44,7 +42,7 @@ impl DescribeRegistrationFieldDefinitionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegistrationFieldDefinitionsOutputBuilder {
     pub(crate) registration_type: ::std::option::Option<::std::string::String>,
-    pub(crate) registration_field_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFieldDefinition>>,
+    pub(crate) registration_field_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationFieldDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,8 +55,7 @@ impl DescribeRegistrationFieldDefinitionsOutputBuilder {
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn set_registration_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_type = input;
-        self
+        self.registration_type = input; self
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn get_registration_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,20 +68,16 @@ impl DescribeRegistrationFieldDefinitionsOutputBuilder {
     /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
     pub fn registration_field_definitions(mut self, input: crate::types::RegistrationFieldDefinition) -> Self {
         let mut v = self.registration_field_definitions.unwrap_or_default();
-        v.push(input);
-        self.registration_field_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.registration_field_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
-    pub fn set_registration_field_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFieldDefinition>>,
-    ) -> Self {
-        self.registration_field_definitions = input;
-        self
+    pub fn set_registration_field_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationFieldDefinition>>) -> Self {
+        self.registration_field_definitions = input; self
     }
     /// <p>An array of RegistrationFieldDefinitions objects that contain the details for the requested fields.</p>
-    pub fn get_registration_field_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationFieldDefinition>> {
+    pub fn get_registration_field_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationFieldDefinition>> {
         &self.registration_field_definitions
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -94,32 +87,26 @@ impl DescribeRegistrationFieldDefinitionsOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRegistrationFieldDefinitionsOutput`](crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_type`](crate::operation::describe_registration_field_definitions::builders::DescribeRegistrationFieldDefinitionsOutputBuilder::registration_type)
     /// - [`registration_field_definitions`](crate::operation::describe_registration_field_definitions::builders::DescribeRegistrationFieldDefinitionsOutputBuilder::registration_field_definitions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsOutput {
                 registration_type: self.registration_type
@@ -139,3 +126,4 @@ impl DescribeRegistrationFieldDefinitionsOutputBuilder {
         )
     }
 }
+

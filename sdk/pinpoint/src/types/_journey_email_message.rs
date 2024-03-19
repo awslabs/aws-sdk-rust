@@ -3,13 +3,13 @@
 /// <p>Specifies the "From" address for an email message that's sent to participants in a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JourneyEmailMessage {
+pub struct JourneyEmailMessage  {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub from_address: ::std::option::Option<::std::string::String>,
 }
-impl JourneyEmailMessage {
+impl  JourneyEmailMessage  {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
-    pub fn from_address(&self) -> ::std::option::Option<&str> {
+    pub fn from_address(&self) -> ::std::option::Option<& str> {
         self.from_address.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl JourneyEmailMessageBuilder {
     }
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub fn set_from_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_address = input;
-        self
+        self.from_address = input; self
     }
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl JourneyEmailMessageBuilder {
     /// Consumes the builder and constructs a [`JourneyEmailMessage`](crate::types::JourneyEmailMessage).
     pub fn build(self) -> crate::types::JourneyEmailMessage {
         crate::types::JourneyEmailMessage {
-            from_address: self.from_address,
+            from_address: self.from_address
+            ,
         }
     }
 }
+

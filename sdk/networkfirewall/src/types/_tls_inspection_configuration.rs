@@ -5,16 +5,17 @@
 /// <p>To use a TLS inspection configuration, you add it to a new Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect the traffic traveling through your firewalls. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TlsInspectionConfiguration {
+pub struct TlsInspectionConfiguration  {
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
-    pub server_certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
+    pub server_certificate_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificateConfiguration>>,
 }
-impl TlsInspectionConfiguration {
+impl  TlsInspectionConfiguration  {
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_certificate_configurations.is_none()`.
-    pub fn server_certificate_configurations(&self) -> &[crate::types::ServerCertificateConfiguration] {
-        self.server_certificate_configurations.as_deref().unwrap_or_default()
+    pub fn server_certificate_configurations(&self) -> & [crate::types::ServerCertificateConfiguration] {
+        self.server_certificate_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TlsInspectionConfiguration {
@@ -28,7 +29,7 @@ impl TlsInspectionConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TlsInspectionConfigurationBuilder {
-    pub(crate) server_certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
+    pub(crate) server_certificate_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificateConfiguration>>,
 }
 impl TlsInspectionConfigurationBuilder {
     /// Appends an item to `server_certificate_configurations`.
@@ -38,26 +39,24 @@ impl TlsInspectionConfigurationBuilder {
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
     pub fn server_certificate_configurations(mut self, input: crate::types::ServerCertificateConfiguration) -> Self {
         let mut v = self.server_certificate_configurations.unwrap_or_default();
-        v.push(input);
-        self.server_certificate_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.server_certificate_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
-    pub fn set_server_certificate_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
-    ) -> Self {
-        self.server_certificate_configurations = input;
-        self
+    pub fn set_server_certificate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificateConfiguration>>) -> Self {
+        self.server_certificate_configurations = input; self
     }
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
-    pub fn get_server_certificate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>> {
+    pub fn get_server_certificate_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServerCertificateConfiguration>> {
         &self.server_certificate_configurations
     }
     /// Consumes the builder and constructs a [`TlsInspectionConfiguration`](crate::types::TlsInspectionConfiguration).
     pub fn build(self) -> crate::types::TlsInspectionConfiguration {
         crate::types::TlsInspectionConfiguration {
-            server_certificate_configurations: self.server_certificate_configurations,
+            server_certificate_configurations: self.server_certificate_configurations
+            ,
         }
     }
 }
+

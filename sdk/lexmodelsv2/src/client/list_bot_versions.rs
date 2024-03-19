@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBotVersions`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::set_bot_id):<br>required: **true**<br><p>The identifier of the bot to list versions for.</p><br>
     ///   - [`sort_by(BotVersionSortBy)`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::sort_by) / [`set_sort_by(Option<BotVersionSortBy>)`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to the <code>ListBotVersion</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p><br>
-    /// - On success, responds with [`ListBotVersionsOutput`](crate::operation::list_bot_versions::ListBotVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListBotVersionsOutput`](crate::operation::list_bot_versions::ListBotVersionsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_bot_versions::ListBotVersionsOutput::bot_id): <p>The identifier of the bot to list versions for.</p>
     ///   - [`bot_version_summaries(Option<Vec::<BotVersionSummary>>)`](crate::operation::list_bot_versions::ListBotVersionsOutput::bot_version_summaries): <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bot_versions::ListBotVersionsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListBotVersionsError>`](crate::operation::list_bot_versions::ListBotVersionsError)
+                            /// - On failure, responds with [`SdkError<ListBotVersionsError>`](crate::operation::list_bot_versions::ListBotVersionsError)
     pub fn list_bot_versions(&self) -> crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder {
-        crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_bot_versions::builders::ListBotVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

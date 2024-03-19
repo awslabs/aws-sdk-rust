@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>PutRuleGroupsNamespace</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRuleGroupsNamespaceInput {
+pub struct PutRuleGroupsNamespaceInput  {
     /// <p>The ID of the workspace where you are updating the rule groups namespace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule groups namespace that you are updating.</p>
@@ -14,22 +14,22 @@ pub struct PutRuleGroupsNamespaceInput {
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl PutRuleGroupsNamespaceInput {
+impl  PutRuleGroupsNamespaceInput  {
     /// <p>The ID of the workspace where you are updating the rule groups namespace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The name of the rule groups namespace that you are updating.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new rules file to use in the namespace. A base64-encoded version of the YAML rule groups file.</p>
     /// <p>For details about the rule groups namespace structure, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html">RuleGroupsNamespaceData</a>.</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl PutRuleGroupsNamespaceInputBuilder {
     }
     /// <p>The ID of the workspace where you are updating the rule groups namespace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace where you are updating the rule groups namespace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl PutRuleGroupsNamespaceInputBuilder {
     }
     /// <p>The name of the rule groups namespace that you are updating.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule groups namespace that you are updating.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl PutRuleGroupsNamespaceInputBuilder {
     /// <p>The new rules file to use in the namespace. A base64-encoded version of the YAML rule groups file.</p>
     /// <p>For details about the rule groups namespace structure, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html">RuleGroupsNamespaceData</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The new rules file to use in the namespace. A base64-encoded version of the YAML rule groups file.</p>
     /// <p>For details about the rule groups namespace structure, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html">RuleGroupsNamespaceData</a>.</p>
@@ -105,25 +102,26 @@ impl PutRuleGroupsNamespaceInputBuilder {
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`PutRuleGroupsNamespaceInput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput {
-            workspace_id: self.workspace_id,
-            name: self.name,
-            data: self.data,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput {
+                workspace_id: self.workspace_id
+                ,
+                name: self.name
+                ,
+                data: self.data
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

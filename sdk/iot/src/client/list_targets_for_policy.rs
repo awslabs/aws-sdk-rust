@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTargetsForPolicy`](crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`policy_name(impl Into<String>)`](crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::set_policy_name):<br>required: **true**<br><p>The policy name.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::set_marker):<br>required: **false**<br><p>A marker used to get the next set of results.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput) with field(s):
+                            /// - On success, responds with [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput) with field(s):
     ///   - [`targets(Option<Vec::<String>>)`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput::targets): <p>The policy targets.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput::next_marker): <p>A marker used to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListTargetsForPolicyError>`](crate::operation::list_targets_for_policy::ListTargetsForPolicyError)
+                            /// - On failure, responds with [`SdkError<ListTargetsForPolicyError>`](crate::operation::list_targets_for_policy::ListTargetsForPolicyError)
     pub fn list_targets_for_policy(&self) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder {
-        crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::new(self.handle.clone())
+                            }
 }
+

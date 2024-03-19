@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataQualityResultsOutput {
+pub struct ListDataQualityResultsOutput  {
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
-    pub results: ::std::vec::Vec<crate::types::DataQualityResultDescription>,
+    pub results: ::std::vec::Vec::<crate::types::DataQualityResultDescription>,
     /// <p>A pagination token, if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDataQualityResultsOutput {
+impl  ListDataQualityResultsOutput  {
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
-    pub fn results(&self) -> &[crate::types::DataQualityResultDescription] {
-        use std::ops::Deref;
-        self.results.deref()
+    pub fn results(&self) -> & [crate::types::DataQualityResultDescription] {
+        use std::ops::Deref; self.results.deref()
     }
     /// <p>A pagination token, if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDataQualityResultsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDataQualityResultsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityResultsOutput`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput).
     pub fn builder() -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListDataQualityResultsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataQualityResultsOutputBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::DataQualityResultDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListDataQualityResultsOutputBuilder {
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
     pub fn results(mut self, input: crate::types::DataQualityResultDescription) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataQualityResultDescription>>) -> Self {
+        self.results = input; self
     }
     /// <p>A list of <code>DataQualityResultDescription</code> objects.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultDescription>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataQualityResultDescription>> {
         &self.results
     }
     /// <p>A pagination token, if more results are available.</p>
@@ -68,40 +66,37 @@ impl ListDataQualityResultsOutputBuilder {
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDataQualityResultsOutput`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`results`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsOutputBuilder::results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_quality_results::ListDataQualityResultsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_data_quality_results::ListDataQualityResultsOutput {
-            results: self.results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "results",
-                    "results was not specified but it is required when building ListDataQualityResultsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_quality_results::ListDataQualityResultsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_quality_results::ListDataQualityResultsOutput {
+                results: self.results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("results", "results was not specified but it is required when building ListDataQualityResultsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

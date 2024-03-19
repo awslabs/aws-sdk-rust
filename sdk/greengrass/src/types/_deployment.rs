@@ -3,7 +3,7 @@
 /// Information about a deployment.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Deployment {
+pub struct Deployment  {
     /// The time, in milliseconds since the epoch, when the deployment was created.
     pub created_at: ::std::option::Option<::std::string::String>,
     /// The ARN of the deployment.
@@ -15,25 +15,25 @@ pub struct Deployment {
     /// The ARN of the group for this deployment.
     pub group_arn: ::std::option::Option<::std::string::String>,
 }
-impl Deployment {
+impl  Deployment  {
     /// The time, in milliseconds since the epoch, when the deployment was created.
-    pub fn created_at(&self) -> ::std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The ARN of the deployment.
-    pub fn deployment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_arn(&self) -> ::std::option::Option<& str> {
         self.deployment_arn.as_deref()
     }
     /// The ID of the deployment.
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// The type of the deployment.
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& crate::types::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// The ARN of the group for this deployment.
-    pub fn group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn group_arn(&self) -> ::std::option::Option<& str> {
         self.group_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DeploymentBuilder {
     }
     /// The time, in milliseconds since the epoch, when the deployment was created.
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// The time, in milliseconds since the epoch, when the deployment was created.
     pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl DeploymentBuilder {
     }
     /// The ARN of the deployment.
     pub fn set_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_arn = input;
-        self
+        self.deployment_arn = input; self
     }
     /// The ARN of the deployment.
     pub fn get_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl DeploymentBuilder {
     }
     /// The ID of the deployment.
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// The ID of the deployment.
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl DeploymentBuilder {
     }
     /// The type of the deployment.
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// The type of the deployment.
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
@@ -118,8 +114,7 @@ impl DeploymentBuilder {
     }
     /// The ARN of the group for this deployment.
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_arn = input;
-        self
+        self.group_arn = input; self
     }
     /// The ARN of the group for this deployment.
     pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl DeploymentBuilder {
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {
         crate::types::Deployment {
-            created_at: self.created_at,
-            deployment_arn: self.deployment_arn,
-            deployment_id: self.deployment_id,
-            deployment_type: self.deployment_type,
-            group_arn: self.group_arn,
+            created_at: self.created_at
+            ,
+            deployment_arn: self.deployment_arn
+            ,
+            deployment_id: self.deployment_id
+            ,
+            deployment_type: self.deployment_type
+            ,
+            group_arn: self.group_arn
+            ,
         }
     }
 }
+

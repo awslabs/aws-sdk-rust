@@ -3,19 +3,19 @@
 /// <p>A custom header for custom request and response handling.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafv2CustomHttpHeader {
+pub struct AwsWafv2CustomHttpHeader  {
     /// <p>The name of the custom header.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the custom header.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsWafv2CustomHttpHeader {
+impl  AwsWafv2CustomHttpHeader  {
     /// <p>The name of the custom header.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the custom header.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsWafv2CustomHttpHeaderBuilder {
     }
     /// <p>The name of the custom header.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the custom header.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsWafv2CustomHttpHeaderBuilder {
     }
     /// <p>The value of the custom header.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the custom header.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsWafv2CustomHttpHeaderBuilder {
     /// Consumes the builder and constructs a [`AwsWafv2CustomHttpHeader`](crate::types::AwsWafv2CustomHttpHeader).
     pub fn build(self) -> crate::types::AwsWafv2CustomHttpHeader {
         crate::types::AwsWafv2CustomHttpHeader {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

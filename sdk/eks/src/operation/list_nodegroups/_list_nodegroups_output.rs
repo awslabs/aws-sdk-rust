@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNodegroupsOutput {
+pub struct ListNodegroupsOutput  {
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
-    pub nodegroups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub nodegroups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListNodegroupsOutput {
+impl  ListNodegroupsOutput  {
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodegroups.is_none()`.
-    pub fn nodegroups(&self) -> &[::std::string::String] {
-        self.nodegroups.as_deref().unwrap_or_default()
+    pub fn nodegroups(&self) -> & [::std::string::String] {
+        self.nodegroups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListNodegroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListNodegroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListNodegroupsOutput`](crate::operation::list_nodegroups::ListNodegroupsOutput).
     pub fn builder() -> crate::operation::list_nodegroups::builders::ListNodegroupsOutputBuilder {
@@ -41,7 +42,7 @@ impl ListNodegroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodegroupsOutputBuilder {
-    pub(crate) nodegroups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) nodegroups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl ListNodegroupsOutputBuilder {
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
     pub fn nodegroups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nodegroups.unwrap_or_default();
-        v.push(input.into());
-        self.nodegroups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.nodegroups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
-    pub fn set_nodegroups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.nodegroups = input;
-        self
+    pub fn set_nodegroups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.nodegroups = input; self
     }
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
-    pub fn get_nodegroups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodegroups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.nodegroups
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
@@ -77,8 +77,7 @@ impl ListNodegroupsOutputBuilder {
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -87,20 +86,23 @@ impl ListNodegroupsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListNodegroupsOutput`](crate::operation::list_nodegroups::ListNodegroupsOutput).
     pub fn build(self) -> crate::operation::list_nodegroups::ListNodegroupsOutput {
         crate::operation::list_nodegroups::ListNodegroupsOutput {
-            nodegroups: self.nodegroups,
-            next_token: self.next_token,
+            nodegroups: self.nodegroups
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

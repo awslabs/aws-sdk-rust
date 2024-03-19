@@ -3,19 +3,19 @@
 /// <p>Describes an endpoint for a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationalDatabaseEndpoint {
+pub struct RelationalDatabaseEndpoint  {
     /// <p>Specifies the port that the database is listening on.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies the DNS address of the database.</p>
     pub address: ::std::option::Option<::std::string::String>,
 }
-impl RelationalDatabaseEndpoint {
+impl  RelationalDatabaseEndpoint  {
     /// <p>Specifies the port that the database is listening on.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Specifies the DNS address of the database.</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<& str> {
         self.address.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RelationalDatabaseEndpointBuilder {
     }
     /// <p>Specifies the port that the database is listening on.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>Specifies the port that the database is listening on.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl RelationalDatabaseEndpointBuilder {
     }
     /// <p>Specifies the DNS address of the database.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>Specifies the DNS address of the database.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RelationalDatabaseEndpointBuilder {
     /// Consumes the builder and constructs a [`RelationalDatabaseEndpoint`](crate::types::RelationalDatabaseEndpoint).
     pub fn build(self) -> crate::types::RelationalDatabaseEndpoint {
         crate::types::RelationalDatabaseEndpoint {
-            port: self.port,
-            address: self.address,
+            port: self.port
+            ,
+            address: self.address
+            ,
         }
     }
 }
+

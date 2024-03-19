@@ -3,20 +3,19 @@
 /// <p>Overrides the document relevance properties of a custom index field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentRelevanceConfiguration {
+pub struct DocumentRelevanceConfiguration  {
     /// <p>The name of the index field.</p>
     pub name: ::std::string::String,
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub relevance: ::std::option::Option<crate::types::Relevance>,
 }
-impl DocumentRelevanceConfiguration {
+impl  DocumentRelevanceConfiguration  {
     /// <p>The name of the index field.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
-    pub fn relevance(&self) -> ::std::option::Option<&crate::types::Relevance> {
+    pub fn relevance(&self) -> ::std::option::Option<& crate::types::Relevance> {
         self.relevance.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl DocumentRelevanceConfigurationBuilder {
     }
     /// <p>The name of the index field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the index field.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl DocumentRelevanceConfigurationBuilder {
     }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub fn set_relevance(mut self, input: ::std::option::Option<crate::types::Relevance>) -> Self {
-        self.relevance = input;
-        self
+        self.relevance = input; self
     }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub fn get_relevance(&self) -> &::std::option::Option<crate::types::Relevance> {
@@ -69,14 +66,17 @@ impl DocumentRelevanceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DocumentRelevanceConfigurationBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentRelevanceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DocumentRelevanceConfiguration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DocumentRelevanceConfiguration",
-                )
-            })?,
-            relevance: self.relevance,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DocumentRelevanceConfiguration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DocumentRelevanceConfiguration")
+                    )?
+                ,
+                relevance: self.relevance
+                ,
+            }
+        )
     }
 }
+

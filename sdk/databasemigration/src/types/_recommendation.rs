@@ -5,7 +5,7 @@
 /// <p>With recommendations, you can explore different target options and compare metrics, so you can make an informed decision when you choose the migration target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Recommendation {
+pub struct Recommendation  {
     /// <p>The identifier of the source database for which Fleet Advisor provided this recommendation.</p>
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target engine. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
@@ -21,21 +21,21 @@ pub struct Recommendation {
     /// <p>The recommendation of a target engine for the specified source database.</p>
     pub data: ::std::option::Option<crate::types::RecommendationData>,
 }
-impl Recommendation {
+impl  Recommendation  {
     /// <p>The identifier of the source database for which Fleet Advisor provided this recommendation.</p>
-    pub fn database_id(&self) -> ::std::option::Option<&str> {
+    pub fn database_id(&self) -> ::std::option::Option<& str> {
         self.database_id.as_deref()
     }
     /// <p>The name of the target engine. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
-    pub fn engine_name(&self) -> ::std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<& str> {
         self.engine_name.as_deref()
     }
     /// <p>The date when Fleet Advisor created the target engine recommendation.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&str> {
+    pub fn created_date(&self) -> ::std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>The status of the target engine recommendation. Valid values include <code>"alternate"</code>, <code>"in-progress"</code>, <code>"not-viable"</code>, and <code>"recommended"</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Indicates that this target is the rightsized migration destination.</p>
@@ -43,11 +43,11 @@ impl Recommendation {
         self.preferred
     }
     /// <p>The settings in JSON format for the preferred target engine parameters. These parameters include capacity, resource utilization, and the usage type (production, development, or testing).</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::RecommendationSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::RecommendationSettings> {
         self.settings.as_ref()
     }
     /// <p>The recommendation of a target engine for the specified source database.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::RecommendationData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::RecommendationData> {
         self.data.as_ref()
     }
 }
@@ -78,8 +78,7 @@ impl RecommendationBuilder {
     }
     /// <p>The identifier of the source database for which Fleet Advisor provided this recommendation.</p>
     pub fn set_database_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_id = input;
-        self
+        self.database_id = input; self
     }
     /// <p>The identifier of the source database for which Fleet Advisor provided this recommendation.</p>
     pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl RecommendationBuilder {
     }
     /// <p>The name of the target engine. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_name = input;
-        self
+        self.engine_name = input; self
     }
     /// <p>The name of the target engine. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
     pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl RecommendationBuilder {
     }
     /// <p>The date when Fleet Advisor created the target engine recommendation.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date when Fleet Advisor created the target engine recommendation.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl RecommendationBuilder {
     }
     /// <p>The status of the target engine recommendation. Valid values include <code>"alternate"</code>, <code>"in-progress"</code>, <code>"not-viable"</code>, and <code>"recommended"</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the target engine recommendation. Valid values include <code>"alternate"</code>, <code>"in-progress"</code>, <code>"not-viable"</code>, and <code>"recommended"</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl RecommendationBuilder {
     }
     /// <p>Indicates that this target is the rightsized migration destination.</p>
     pub fn set_preferred(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preferred = input;
-        self
+        self.preferred = input; self
     }
     /// <p>Indicates that this target is the rightsized migration destination.</p>
     pub fn get_preferred(&self) -> &::std::option::Option<bool> {
@@ -148,8 +143,7 @@ impl RecommendationBuilder {
     }
     /// <p>The settings in JSON format for the preferred target engine parameters. These parameters include capacity, resource utilization, and the usage type (production, development, or testing).</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::RecommendationSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>The settings in JSON format for the preferred target engine parameters. These parameters include capacity, resource utilization, and the usage type (production, development, or testing).</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::RecommendationSettings> {
@@ -162,8 +156,7 @@ impl RecommendationBuilder {
     }
     /// <p>The recommendation of a target engine for the specified source database.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::RecommendationData>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The recommendation of a target engine for the specified source database.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::RecommendationData> {
@@ -172,13 +165,21 @@ impl RecommendationBuilder {
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            database_id: self.database_id,
-            engine_name: self.engine_name,
-            created_date: self.created_date,
-            status: self.status,
-            preferred: self.preferred,
-            settings: self.settings,
-            data: self.data,
+            database_id: self.database_id
+            ,
+            engine_name: self.engine_name
+            ,
+            created_date: self.created_date
+            ,
+            status: self.status
+            ,
+            preferred: self.preferred
+            ,
+            settings: self.settings
+            ,
+            data: self.data
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationVersionInput {
+pub struct CreateApplicationVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the new version.</p>
@@ -17,30 +17,30 @@ pub struct CreateApplicationVersionInput {
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub template_url: ::std::option::Option<::std::string::String>,
 }
-impl CreateApplicationVersionInput {
+impl  CreateApplicationVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The semantic version of the new version.</p>
-    pub fn semantic_version(&self) -> ::std::option::Option<&str> {
+    pub fn semantic_version(&self) -> ::std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn source_code_archive_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_code_archive_url(&self) -> ::std::option::Option<& str> {
         self.source_code_archive_url.as_deref()
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_code_url(&self) -> ::std::option::Option<& str> {
         self.source_code_url.as_deref()
     }
     /// <p>The raw packaged AWS SAM template of your application.</p>
-    pub fn template_body(&self) -> ::std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
-    pub fn template_url(&self) -> ::std::option::Option<&str> {
+    pub fn template_url(&self) -> ::std::option::Option<& str> {
         self.template_url.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl CreateApplicationVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl CreateApplicationVersionInputBuilder {
     }
     /// <p>The semantic version of the new version.</p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.semantic_version = input;
-        self
+        self.semantic_version = input; self
     }
     /// <p>The semantic version of the new version.</p>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl CreateApplicationVersionInputBuilder {
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
     pub fn set_source_code_archive_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_code_archive_url = input;
-        self
+        self.source_code_archive_url = input; self
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
@@ -117,8 +114,7 @@ impl CreateApplicationVersionInputBuilder {
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn set_source_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_code_url = input;
-        self
+        self.source_code_url = input; self
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn get_source_code_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl CreateApplicationVersionInputBuilder {
     }
     /// <p>The raw packaged AWS SAM template of your application.</p>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>The raw packaged AWS SAM template of your application.</p>
     pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,27 +140,30 @@ impl CreateApplicationVersionInputBuilder {
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_url
     }
     /// Consumes the builder and constructs a [`CreateApplicationVersionInput`](crate::operation::create_application_version::CreateApplicationVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_application_version::CreateApplicationVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_application_version::CreateApplicationVersionInput {
-            application_id: self.application_id,
-            semantic_version: self.semantic_version,
-            source_code_archive_url: self.source_code_archive_url,
-            source_code_url: self.source_code_url,
-            template_body: self.template_body,
-            template_url: self.template_url,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application_version::CreateApplicationVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application_version::CreateApplicationVersionInput {
+                application_id: self.application_id
+                ,
+                semantic_version: self.semantic_version
+                ,
+                source_code_archive_url: self.source_code_archive_url
+                ,
+                source_code_url: self.source_code_url
+                ,
+                template_body: self.template_body
+                ,
+                template_url: self.template_url
+                ,
+            }
+        )
     }
 }
+

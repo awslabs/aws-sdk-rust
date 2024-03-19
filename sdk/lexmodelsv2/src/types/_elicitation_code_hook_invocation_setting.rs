@@ -3,19 +3,19 @@
 /// <p>Settings that specify the dialog code hook that is called by Amazon Lex between eliciting slot values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElicitationCodeHookInvocationSetting {
+pub struct ElicitationCodeHookInvocationSetting  {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     pub enable_code_hook_invocation: bool,
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
     pub invocation_label: ::std::option::Option<::std::string::String>,
 }
-impl ElicitationCodeHookInvocationSetting {
+impl  ElicitationCodeHookInvocationSetting  {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     pub fn enable_code_hook_invocation(&self) -> bool {
         self.enable_code_hook_invocation
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn invocation_label(&self) -> ::std::option::Option<&str> {
+    pub fn invocation_label(&self) -> ::std::option::Option<& str> {
         self.invocation_label.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ElicitationCodeHookInvocationSettingBuilder {
     }
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     pub fn set_enable_code_hook_invocation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_code_hook_invocation = input;
-        self
+        self.enable_code_hook_invocation = input; self
     }
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     pub fn get_enable_code_hook_invocation(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl ElicitationCodeHookInvocationSettingBuilder {
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
     pub fn set_invocation_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invocation_label = input;
-        self
+        self.invocation_label = input; self
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
     pub fn get_invocation_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +64,18 @@ impl ElicitationCodeHookInvocationSettingBuilder {
     /// Consumes the builder and constructs a [`ElicitationCodeHookInvocationSetting`](crate::types::ElicitationCodeHookInvocationSetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`enable_code_hook_invocation`](crate::types::builders::ElicitationCodeHookInvocationSettingBuilder::enable_code_hook_invocation)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ElicitationCodeHookInvocationSetting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ElicitationCodeHookInvocationSetting {
-            enable_code_hook_invocation: self.enable_code_hook_invocation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enable_code_hook_invocation",
-                    "enable_code_hook_invocation was not specified but it is required when building ElicitationCodeHookInvocationSetting",
-                )
-            })?,
-            invocation_label: self.invocation_label,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ElicitationCodeHookInvocationSetting, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ElicitationCodeHookInvocationSetting {
+                enable_code_hook_invocation: self.enable_code_hook_invocation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enable_code_hook_invocation", "enable_code_hook_invocation was not specified but it is required when building ElicitationCodeHookInvocationSetting")
+                    )?
+                ,
+                invocation_label: self.invocation_label
+                ,
+            }
+        )
     }
 }
+

@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListComponentProvisionedResources`](crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`component_name(impl Into<String>)`](crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder::set_component_name):<br>required: **true**<br><p>The name of the component whose provisioned resources you want.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p><br>
-    /// - On success, responds with [`ListComponentProvisionedResourcesOutput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListComponentProvisionedResourcesOutput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     ///   - [`provisioned_resources(Vec::<ProvisionedResource>)`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput::provisioned_resources): <p>An array of provisioned resources for a component.</p>
-    /// - On failure, responds with [`SdkError<ListComponentProvisionedResourcesError>`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesError)
-    pub fn list_component_provisioned_resources(
-        &self,
-    ) -> crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder {
-        crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListComponentProvisionedResourcesError>`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesError)
+    pub fn list_component_provisioned_resources(&self) -> crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder {
+                                crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

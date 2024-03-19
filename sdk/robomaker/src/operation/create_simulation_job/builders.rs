@@ -5,56 +5,52 @@ pub use crate::operation::create_simulation_job::_create_simulation_job_input::C
 
 impl CreateSimulationJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_simulation_job::CreateSimulationJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_simulation_job::CreateSimulationJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_simulation_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_simulation_job::CreateSimulationJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_simulation_job::CreateSimulationJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_simulation_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateSimulationJob`.
-///
+/// 
 /// <p>Creates a simulation job.</p><note>
 /// <p>After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSimulationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_simulation_job::builders::CreateSimulationJobInputBuilder,
+                    inner: crate::operation::create_simulation_job::builders::CreateSimulationJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_simulation_job::CreateSimulationJobOutput,
-        crate::operation::create_simulation_job::CreateSimulationJobError,
-    > for CreateSimulationJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_simulation_job::CreateSimulationJobOutput,
-            crate::operation::create_simulation_job::CreateSimulationJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_simulation_job::CreateSimulationJobOutput,
+                    crate::operation::create_simulation_job::CreateSimulationJobError,
+                > for CreateSimulationJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_simulation_job::CreateSimulationJobOutput,
+                        crate::operation::create_simulation_job::CreateSimulationJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateSimulationJobFluentBuilder {
     /// Creates a new `CreateSimulationJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CreateSimulationJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_simulation_job::CreateSimulationJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_simulation_job::CreateSimulationJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_simulation_job::CreateSimulationJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_simulation_job::CreateSimulationJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_simulation_job::CreateSimulationJobOutput,
-        crate::operation::create_simulation_job::CreateSimulationJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_simulation_job::CreateSimulationJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_simulation_job::CreateSimulationJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_simulation_job::CreateSimulationJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_simulation_job::CreateSimulationJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_simulation_job::CreateSimulationJobOutput, crate::operation::create_simulation_job::CreateSimulationJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
@@ -246,12 +233,12 @@ impl CreateSimulationJobFluentBuilder {
         self
     }
     /// <p>The robot application to use in the simulation job.</p>
-    pub fn set_robot_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>) -> Self {
+    pub fn set_robot_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationConfig>>) -> Self {
         self.inner = self.inner.set_robot_applications(input);
         self
     }
     /// <p>The robot application to use in the simulation job.</p>
-    pub fn get_robot_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>> {
+    pub fn get_robot_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationConfig>> {
         self.inner.get_robot_applications()
     }
     /// Appends an item to `simulationApplications`.
@@ -264,12 +251,12 @@ impl CreateSimulationJobFluentBuilder {
         self
     }
     /// <p>The simulation application to use in the simulation job.</p>
-    pub fn set_simulation_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>) -> Self {
+    pub fn set_simulation_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationApplicationConfig>>) -> Self {
         self.inner = self.inner.set_simulation_applications(input);
         self
     }
     /// <p>The simulation application to use in the simulation job.</p>
-    pub fn get_simulation_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>> {
+    pub fn get_simulation_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SimulationApplicationConfig>> {
         self.inner.get_simulation_applications()
     }
     /// Appends an item to `dataSources`.
@@ -286,14 +273,14 @@ impl CreateSimulationJobFluentBuilder {
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
     /// </note>
-    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>>) -> Self {
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceConfig>>) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
     /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>.</p><note>
     /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.</p>
     /// </note>
-    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceConfig>> {
         self.inner.get_data_sources()
     }
     /// Adds a key-value pair to `tags`.
@@ -306,12 +293,12 @@ impl CreateSimulationJobFluentBuilder {
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID.</p>
@@ -343,3 +330,4 @@ impl CreateSimulationJobFluentBuilder {
         self.inner.get_compute()
     }
 }
+

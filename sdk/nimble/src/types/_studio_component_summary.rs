@@ -3,7 +3,7 @@
 /// <p>The studio component's summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StudioComponentSummary {
+pub struct StudioComponentSummary  {
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the studio component.</p>
@@ -23,45 +23,45 @@ pub struct StudioComponentSummary {
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
 }
-impl StudioComponentSummary {
+impl  StudioComponentSummary  {
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user ID of the user that created the studio component.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name for the studio component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn studio_component_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_component_id(&self) -> ::std::option::Option<& str> {
         self.studio_component_id.as_deref()
     }
     /// <p>The specific subtype of a studio component.</p>
-    pub fn subtype(&self) -> ::std::option::Option<&crate::types::StudioComponentSubtype> {
+    pub fn subtype(&self) -> ::std::option::Option<& crate::types::StudioComponentSubtype> {
         self.subtype.as_ref()
     }
     /// <p>The type of the studio component.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::StudioComponentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::StudioComponentType> {
         self.r#type.as_ref()
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
 }
-impl ::std::fmt::Debug for StudioComponentSummary {
+impl  ::std::fmt::Debug for StudioComponentSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StudioComponentSummary");
         formatter.field("created_at", &self.created_at);
@@ -105,8 +105,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,8 +118,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The user ID of the user that created the studio component.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The user ID of the user that created the studio component.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The name for the studio component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the studio component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The unique identifier for a studio component resource.</p>
     pub fn set_studio_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_component_id = input;
-        self
+        self.studio_component_id = input; self
     }
     /// <p>The unique identifier for a studio component resource.</p>
     pub fn get_studio_component_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +170,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The specific subtype of a studio component.</p>
     pub fn set_subtype(mut self, input: ::std::option::Option<crate::types::StudioComponentSubtype>) -> Self {
-        self.subtype = input;
-        self
+        self.subtype = input; self
     }
     /// <p>The specific subtype of a studio component.</p>
     pub fn get_subtype(&self) -> &::std::option::Option<crate::types::StudioComponentSubtype> {
@@ -189,8 +183,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The type of the studio component.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::StudioComponentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the studio component.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::StudioComponentType> {
@@ -203,8 +196,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -217,8 +209,7 @@ impl StudioComponentSummaryBuilder {
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,15 +218,24 @@ impl StudioComponentSummaryBuilder {
     /// Consumes the builder and constructs a [`StudioComponentSummary`](crate::types::StudioComponentSummary).
     pub fn build(self) -> crate::types::StudioComponentSummary {
         crate::types::StudioComponentSummary {
-            created_at: self.created_at,
-            created_by: self.created_by,
-            description: self.description,
-            name: self.name,
-            studio_component_id: self.studio_component_id,
-            subtype: self.subtype,
-            r#type: self.r#type,
-            updated_at: self.updated_at,
-            updated_by: self.updated_by,
+            created_at: self.created_at
+            ,
+            created_by: self.created_by
+            ,
+            description: self.description
+            ,
+            name: self.name
+            ,
+            studio_component_id: self.studio_component_id
+            ,
+            subtype: self.subtype
+            ,
+            r#type: self.r#type
+            ,
+            updated_at: self.updated_at
+            ,
+            updated_by: self.updated_by
+            ,
         }
     }
 }
@@ -254,3 +254,4 @@ impl ::std::fmt::Debug for StudioComponentSummaryBuilder {
         formatter.finish()
     }
 }
+

@@ -60,3 +60,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateProvisionedModelThroughput` operation.
 pub mod update_provisioned_model_throughput;
+

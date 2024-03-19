@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplatesOutput {
+pub struct ListTemplatesOutput  {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
     pub templates_response: ::std::option::Option<crate::types::TemplatesResponse>,
     _request_id: Option<String>,
 }
-impl ListTemplatesOutput {
+impl  ListTemplatesOutput  {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
-    pub fn templates_response(&self) -> ::std::option::Option<&crate::types::TemplatesResponse> {
+    pub fn templates_response(&self) -> ::std::option::Option<& crate::types::TemplatesResponse> {
         self.templates_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
     pub fn builder() -> crate::operation::list_templates::builders::ListTemplatesOutputBuilder {
@@ -41,27 +41,28 @@ impl ListTemplatesOutputBuilder {
     }
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
     pub fn set_templates_response(mut self, input: ::std::option::Option<crate::types::TemplatesResponse>) -> Self {
-        self.templates_response = input;
-        self
+        self.templates_response = input; self
     }
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
     pub fn get_templates_response(&self) -> &::std::option::Option<crate::types::TemplatesResponse> {
         &self.templates_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
     pub fn build(self) -> crate::operation::list_templates::ListTemplatesOutput {
         crate::operation::list_templates::ListTemplatesOutput {
-            templates_response: self.templates_response,
+            templates_response: self.templates_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

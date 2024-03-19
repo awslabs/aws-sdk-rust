@@ -4,33 +4,34 @@
 /// <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateDomainNameserversInput {
+pub struct UpdateDomainNameserversInput  {
     /// <p>The name of the domain that you want to change name servers for.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
     pub fi_auth_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of new name servers for the domain.</p>
-    pub nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
+    pub nameservers: ::std::option::Option<::std::vec::Vec::<crate::types::Nameserver>>,
 }
-impl UpdateDomainNameserversInput {
+impl  UpdateDomainNameserversInput  {
     /// <p>The name of the domain that you want to change name servers for.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
-    pub fn fi_auth_key(&self) -> ::std::option::Option<&str> {
+    pub fn fi_auth_key(&self) -> ::std::option::Option<& str> {
         self.fi_auth_key.as_deref()
     }
     /// <p>A list of new name servers for the domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nameservers.is_none()`.
-    pub fn nameservers(&self) -> &[crate::types::Nameserver] {
-        self.nameservers.as_deref().unwrap_or_default()
+    pub fn nameservers(&self) -> & [crate::types::Nameserver] {
+        self.nameservers.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for UpdateDomainNameserversInput {
+impl  ::std::fmt::Debug for UpdateDomainNameserversInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainNameserversInput");
         formatter.field("domain_name", &self.domain_name);
@@ -52,7 +53,7 @@ impl UpdateDomainNameserversInput {
 pub struct UpdateDomainNameserversInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) fi_auth_key: ::std::option::Option<::std::string::String>,
-    pub(crate) nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
+    pub(crate) nameservers: ::std::option::Option<::std::vec::Vec::<crate::types::Nameserver>>,
 }
 impl UpdateDomainNameserversInputBuilder {
     /// <p>The name of the domain that you want to change name servers for.</p>
@@ -63,8 +64,7 @@ impl UpdateDomainNameserversInputBuilder {
     }
     /// <p>The name of the domain that you want to change name servers for.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain that you want to change name servers for.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl UpdateDomainNameserversInputBuilder {
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
     pub fn set_fi_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fi_auth_key = input;
-        self
+        self.fi_auth_key = input; self
     }
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
@@ -94,31 +93,30 @@ impl UpdateDomainNameserversInputBuilder {
     /// <p>A list of new name servers for the domain.</p>
     pub fn nameservers(mut self, input: crate::types::Nameserver) -> Self {
         let mut v = self.nameservers.unwrap_or_default();
-        v.push(input);
-        self.nameservers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nameservers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of new name servers for the domain.</p>
-    pub fn set_nameservers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>) -> Self {
-        self.nameservers = input;
-        self
+    pub fn set_nameservers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Nameserver>>) -> Self {
+        self.nameservers = input; self
     }
     /// <p>A list of new name servers for the domain.</p>
-    pub fn get_nameservers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
+    pub fn get_nameservers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Nameserver>> {
         &self.nameservers
     }
     /// Consumes the builder and constructs a [`UpdateDomainNameserversInput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_nameservers::UpdateDomainNameserversInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_domain_nameservers::UpdateDomainNameserversInput {
-            domain_name: self.domain_name,
-            fi_auth_key: self.fi_auth_key,
-            nameservers: self.nameservers,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain_nameservers::UpdateDomainNameserversInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_domain_nameservers::UpdateDomainNameserversInput {
+                domain_name: self.domain_name
+                ,
+                fi_auth_key: self.fi_auth_key
+                ,
+                nameservers: self.nameservers
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateDomainNameserversInputBuilder {
@@ -130,3 +128,4 @@ impl ::std::fmt::Debug for UpdateDomainNameserversInputBuilder {
         formatter.finish()
     }
 }
+

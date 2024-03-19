@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeviceResources`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`managed_device_id(impl Into<String>)`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::set_managed_device_id):<br>required: **true**<br><p>The ID of the managed device that you are listing the resources of.</p><br>
     ///   - [`r#type(impl Into<String>)`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::type) / [`set_type(Option<String>)`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::set_type):<br>required: **false**<br><p>A structure used to filter the results by type of resource.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resources per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to continue to the next page of results.</p><br>
-    /// - On success, responds with [`ListDeviceResourcesOutput`](crate::operation::list_device_resources::ListDeviceResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListDeviceResourcesOutput`](crate::operation::list_device_resources::ListDeviceResourcesOutput) with field(s):
     ///   - [`resources(Option<Vec::<ResourceSummary>>)`](crate::operation::list_device_resources::ListDeviceResourcesOutput::resources): <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_resources::ListDeviceResourcesOutput::next_token): <p>A pagination token to continue to the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListDeviceResourcesError>`](crate::operation::list_device_resources::ListDeviceResourcesError)
+                            /// - On failure, responds with [`SdkError<ListDeviceResourcesError>`](crate::operation::list_device_resources::ListDeviceResourcesError)
     pub fn list_device_resources(&self) -> crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder {
-        crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_device_resources::builders::ListDeviceResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

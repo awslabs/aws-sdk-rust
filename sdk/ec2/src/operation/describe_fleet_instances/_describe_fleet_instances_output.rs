@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetInstancesOutput {
+pub struct DescribeFleetInstancesOutput  {
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    pub active_instances: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
+    pub active_instances: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveInstance>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 Fleet.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeFleetInstancesOutput {
+impl  DescribeFleetInstancesOutput  {
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_instances.is_none()`.
-    pub fn active_instances(&self) -> &[crate::types::ActiveInstance] {
-        self.active_instances.as_deref().unwrap_or_default()
+    pub fn active_instances(&self) -> & [crate::types::ActiveInstance] {
+        self.active_instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFleetInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFleetInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetInstancesOutput`](crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput).
     pub fn builder() -> crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesOutputBuilder {
@@ -43,7 +44,7 @@ impl DescribeFleetInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetInstancesOutputBuilder {
-    pub(crate) active_instances: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>,
+    pub(crate) active_instances: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl DescribeFleetInstancesOutputBuilder {
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub fn active_instances(mut self, input: crate::types::ActiveInstance) -> Self {
         let mut v = self.active_instances.unwrap_or_default();
-        v.push(input);
-        self.active_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.active_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    pub fn set_active_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>>) -> Self {
-        self.active_instances = input;
-        self
+    pub fn set_active_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveInstance>>) -> Self {
+        self.active_instances = input; self
     }
     /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
-    pub fn get_active_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>> {
+    pub fn get_active_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActiveInstance>> {
         &self.active_instances
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -76,8 +76,7 @@ impl DescribeFleetInstancesOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl DescribeFleetInstancesOutputBuilder {
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFleetInstancesOutput`](crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput).
     pub fn build(self) -> crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput {
         crate::operation::describe_fleet_instances::DescribeFleetInstancesOutput {
-            active_instances: self.active_instances,
-            next_token: self.next_token,
-            fleet_id: self.fleet_id,
+            active_instances: self.active_instances
+            ,
+            next_token: self.next_token
+            ,
+            fleet_id: self.fleet_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

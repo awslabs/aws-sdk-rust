@@ -3,7 +3,7 @@
 /// <p>Returns information about the resource being evaluated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightResourceDetail {
+pub struct InsightResourceDetail  {
     /// <p>An object containing more detail on the status of the insight resource.</p>
     pub insight_status: ::std::option::Option<crate::types::InsightStatus>,
     /// <p>The Kubernetes resource URI if applicable.</p>
@@ -11,17 +11,17 @@ pub struct InsightResourceDetail {
     /// <p>The Amazon Resource Name (ARN) if applicable.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl InsightResourceDetail {
+impl  InsightResourceDetail  {
     /// <p>An object containing more detail on the status of the insight resource.</p>
-    pub fn insight_status(&self) -> ::std::option::Option<&crate::types::InsightStatus> {
+    pub fn insight_status(&self) -> ::std::option::Option<& crate::types::InsightStatus> {
         self.insight_status.as_ref()
     }
     /// <p>The Kubernetes resource URI if applicable.</p>
-    pub fn kubernetes_resource_uri(&self) -> ::std::option::Option<&str> {
+    pub fn kubernetes_resource_uri(&self) -> ::std::option::Option<& str> {
         self.kubernetes_resource_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) if applicable.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl InsightResourceDetailBuilder {
     }
     /// <p>An object containing more detail on the status of the insight resource.</p>
     pub fn set_insight_status(mut self, input: ::std::option::Option<crate::types::InsightStatus>) -> Self {
-        self.insight_status = input;
-        self
+        self.insight_status = input; self
     }
     /// <p>An object containing more detail on the status of the insight resource.</p>
     pub fn get_insight_status(&self) -> &::std::option::Option<crate::types::InsightStatus> {
@@ -62,8 +61,7 @@ impl InsightResourceDetailBuilder {
     }
     /// <p>The Kubernetes resource URI if applicable.</p>
     pub fn set_kubernetes_resource_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kubernetes_resource_uri = input;
-        self
+        self.kubernetes_resource_uri = input; self
     }
     /// <p>The Kubernetes resource URI if applicable.</p>
     pub fn get_kubernetes_resource_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl InsightResourceDetailBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) if applicable.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) if applicable.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl InsightResourceDetailBuilder {
     /// Consumes the builder and constructs a [`InsightResourceDetail`](crate::types::InsightResourceDetail).
     pub fn build(self) -> crate::types::InsightResourceDetail {
         crate::types::InsightResourceDetail {
-            insight_status: self.insight_status,
-            kubernetes_resource_uri: self.kubernetes_resource_uri,
-            arn: self.arn,
+            insight_status: self.insight_status
+            ,
+            kubernetes_resource_uri: self.kubernetes_resource_uri
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

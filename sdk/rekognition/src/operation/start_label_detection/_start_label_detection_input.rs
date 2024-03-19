@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartLabelDetectionInput {
+pub struct StartLabelDetectionInput  {
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
     pub video: ::std::option::Option<crate::types::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
@@ -15,17 +15,17 @@ pub struct StartLabelDetectionInput {
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: ::std::option::Option<::std::string::String>,
     /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
-    pub features: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetectionFeatureName>>,
+    pub features: ::std::option::Option<::std::vec::Vec::<crate::types::LabelDetectionFeatureName>>,
     /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
     pub settings: ::std::option::Option<crate::types::LabelDetectionSettings>,
 }
-impl StartLabelDetectionInput {
+impl  StartLabelDetectionInput  {
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::Video> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::Video> {
         self.video.as_ref()
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
@@ -34,21 +34,22 @@ impl StartLabelDetectionInput {
         self.min_confidence
     }
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<& crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-    pub fn job_tag(&self) -> ::std::option::Option<&str> {
+    pub fn job_tag(&self) -> ::std::option::Option<& str> {
         self.job_tag.as_deref()
     }
     /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
-    pub fn features(&self) -> &[crate::types::LabelDetectionFeatureName] {
-        self.features.as_deref().unwrap_or_default()
+    pub fn features(&self) -> & [crate::types::LabelDetectionFeatureName] {
+        self.features.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::LabelDetectionSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::LabelDetectionSettings> {
         self.settings.as_ref()
     }
 }
@@ -68,7 +69,7 @@ pub struct StartLabelDetectionInputBuilder {
     pub(crate) min_confidence: ::std::option::Option<f32>,
     pub(crate) notification_channel: ::std::option::Option<crate::types::NotificationChannel>,
     pub(crate) job_tag: ::std::option::Option<::std::string::String>,
-    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetectionFeatureName>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec::<crate::types::LabelDetectionFeatureName>>,
     pub(crate) settings: ::std::option::Option<crate::types::LabelDetectionSettings>,
 }
 impl StartLabelDetectionInputBuilder {
@@ -80,8 +81,7 @@ impl StartLabelDetectionInputBuilder {
     }
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::Video>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
     }
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
     pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
@@ -94,8 +94,7 @@ impl StartLabelDetectionInputBuilder {
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl StartLabelDetectionInputBuilder {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_confidence = input;
-        self
+        self.min_confidence = input; self
     }
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
@@ -125,8 +123,7 @@ impl StartLabelDetectionInputBuilder {
     }
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
-        self.notification_channel = input;
-        self
+        self.notification_channel = input; self
     }
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
@@ -139,8 +136,7 @@ impl StartLabelDetectionInputBuilder {
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_tag = input;
-        self
+        self.job_tag = input; self
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,17 +149,16 @@ impl StartLabelDetectionInputBuilder {
     /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
     pub fn features(mut self, input: crate::types::LabelDetectionFeatureName) -> Self {
         let mut v = self.features.unwrap_or_default();
-        v.push(input);
-        self.features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
-    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetectionFeatureName>>) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LabelDetectionFeatureName>>) -> Self {
+        self.features = input; self
     }
     /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelDetectionFeatureName>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LabelDetectionFeatureName>> {
         &self.features
     }
     /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
@@ -173,26 +168,32 @@ impl StartLabelDetectionInputBuilder {
     }
     /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::LabelDetectionSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::LabelDetectionSettings> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`StartLabelDetectionInput`](crate::operation::start_label_detection::StartLabelDetectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_label_detection::StartLabelDetectionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_label_detection::StartLabelDetectionInput {
-            video: self.video,
-            client_request_token: self.client_request_token,
-            min_confidence: self.min_confidence,
-            notification_channel: self.notification_channel,
-            job_tag: self.job_tag,
-            features: self.features,
-            settings: self.settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_label_detection::StartLabelDetectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_label_detection::StartLabelDetectionInput {
+                video: self.video
+                ,
+                client_request_token: self.client_request_token
+                ,
+                min_confidence: self.min_confidence
+                ,
+                notification_channel: self.notification_channel
+                ,
+                job_tag: self.job_tag
+                ,
+                features: self.features
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

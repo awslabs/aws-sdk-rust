@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failurereasoncode = unimplemented!();
 /// match failurereasoncode {
@@ -38,16 +38,14 @@
 /// Specifically, when `failurereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailureReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum FailureReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     IdempotencyException,
@@ -71,96 +69,86 @@ pub enum FailureReasonCode {
     RequestThrottled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for FailureReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "IDEMPOTENCY_EXCEPTION" => FailureReasonCode::IdempotencyException,
-            "INTERNAL_ERROR" => FailureReasonCode::InternalError,
-            "INVALID_ATTRIBUTE_KEY" => FailureReasonCode::InvalidAttributeKey,
-            "INVALID_CUSTOMER_ENDPOINT" => FailureReasonCode::InvalidCustomerEndpoint,
-            "INVALID_QUEUE" => FailureReasonCode::InvalidQueue,
-            "INVALID_SYSTEM_ENDPOINT" => FailureReasonCode::InvalidSystemEndpoint,
-            "MISSING_CAMPAIGN" => FailureReasonCode::MissingCampaign,
-            "MISSING_CUSTOMER_ENDPOINT" => FailureReasonCode::MissingCustomerEndpoint,
-            "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT" => FailureReasonCode::MissingQueueIdAndSystemEndpoint,
-            "REQUEST_THROTTLED" => FailureReasonCode::RequestThrottled,
-            other => FailureReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "IDEMPOTENCY_EXCEPTION" => FailureReasonCode::IdempotencyException,
+"INTERNAL_ERROR" => FailureReasonCode::InternalError,
+"INVALID_ATTRIBUTE_KEY" => FailureReasonCode::InvalidAttributeKey,
+"INVALID_CUSTOMER_ENDPOINT" => FailureReasonCode::InvalidCustomerEndpoint,
+"INVALID_QUEUE" => FailureReasonCode::InvalidQueue,
+"INVALID_SYSTEM_ENDPOINT" => FailureReasonCode::InvalidSystemEndpoint,
+"MISSING_CAMPAIGN" => FailureReasonCode::MissingCampaign,
+"MISSING_CUSTOMER_ENDPOINT" => FailureReasonCode::MissingCustomerEndpoint,
+"MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT" => FailureReasonCode::MissingQueueIdAndSystemEndpoint,
+"REQUEST_THROTTLED" => FailureReasonCode::RequestThrottled,
+other => FailureReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for FailureReasonCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(FailureReasonCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(FailureReasonCode::from(s))
+                    }
+                }
 impl FailureReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailureReasonCode::IdempotencyException => "IDEMPOTENCY_EXCEPTION",
-            FailureReasonCode::InternalError => "INTERNAL_ERROR",
-            FailureReasonCode::InvalidAttributeKey => "INVALID_ATTRIBUTE_KEY",
-            FailureReasonCode::InvalidCustomerEndpoint => "INVALID_CUSTOMER_ENDPOINT",
-            FailureReasonCode::InvalidQueue => "INVALID_QUEUE",
-            FailureReasonCode::InvalidSystemEndpoint => "INVALID_SYSTEM_ENDPOINT",
-            FailureReasonCode::MissingCampaign => "MISSING_CAMPAIGN",
-            FailureReasonCode::MissingCustomerEndpoint => "MISSING_CUSTOMER_ENDPOINT",
-            FailureReasonCode::MissingQueueIdAndSystemEndpoint => "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT",
-            FailureReasonCode::RequestThrottled => "REQUEST_THROTTLED",
-            FailureReasonCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "IDEMPOTENCY_EXCEPTION",
-            "INTERNAL_ERROR",
-            "INVALID_ATTRIBUTE_KEY",
-            "INVALID_CUSTOMER_ENDPOINT",
-            "INVALID_QUEUE",
-            "INVALID_SYSTEM_ENDPOINT",
-            "MISSING_CAMPAIGN",
-            "MISSING_CUSTOMER_ENDPOINT",
-            "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT",
-            "REQUEST_THROTTLED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailureReasonCode::IdempotencyException => "IDEMPOTENCY_EXCEPTION",
+    FailureReasonCode::InternalError => "INTERNAL_ERROR",
+    FailureReasonCode::InvalidAttributeKey => "INVALID_ATTRIBUTE_KEY",
+    FailureReasonCode::InvalidCustomerEndpoint => "INVALID_CUSTOMER_ENDPOINT",
+    FailureReasonCode::InvalidQueue => "INVALID_QUEUE",
+    FailureReasonCode::InvalidSystemEndpoint => "INVALID_SYSTEM_ENDPOINT",
+    FailureReasonCode::MissingCampaign => "MISSING_CAMPAIGN",
+    FailureReasonCode::MissingCustomerEndpoint => "MISSING_CUSTOMER_ENDPOINT",
+    FailureReasonCode::MissingQueueIdAndSystemEndpoint => "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT",
+    FailureReasonCode::RequestThrottled => "REQUEST_THROTTLED",
+    FailureReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["IDEMPOTENCY_EXCEPTION", "INTERNAL_ERROR", "INVALID_ATTRIBUTE_KEY", "INVALID_CUSTOMER_ENDPOINT", "INVALID_QUEUE", "INVALID_SYSTEM_ENDPOINT", "MISSING_CAMPAIGN", "MISSING_CUSTOMER_ENDPOINT", "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT", "REQUEST_THROTTLED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for FailureReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl FailureReasonCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for FailureReasonCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            FailureReasonCode::IdempotencyException => write!(f, "IDEMPOTENCY_EXCEPTION"),
-            FailureReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
-            FailureReasonCode::InvalidAttributeKey => write!(f, "INVALID_ATTRIBUTE_KEY"),
-            FailureReasonCode::InvalidCustomerEndpoint => write!(f, "INVALID_CUSTOMER_ENDPOINT"),
-            FailureReasonCode::InvalidQueue => write!(f, "INVALID_QUEUE"),
-            FailureReasonCode::InvalidSystemEndpoint => write!(f, "INVALID_SYSTEM_ENDPOINT"),
-            FailureReasonCode::MissingCampaign => write!(f, "MISSING_CAMPAIGN"),
-            FailureReasonCode::MissingCustomerEndpoint => write!(f, "MISSING_CUSTOMER_ENDPOINT"),
-            FailureReasonCode::MissingQueueIdAndSystemEndpoint => write!(f, "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT"),
-            FailureReasonCode::RequestThrottled => write!(f, "REQUEST_THROTTLED"),
-            FailureReasonCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                FailureReasonCode::IdempotencyException => write!(f, "IDEMPOTENCY_EXCEPTION"),
+FailureReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+FailureReasonCode::InvalidAttributeKey => write!(f, "INVALID_ATTRIBUTE_KEY"),
+FailureReasonCode::InvalidCustomerEndpoint => write!(f, "INVALID_CUSTOMER_ENDPOINT"),
+FailureReasonCode::InvalidQueue => write!(f, "INVALID_QUEUE"),
+FailureReasonCode::InvalidSystemEndpoint => write!(f, "INVALID_SYSTEM_ENDPOINT"),
+FailureReasonCode::MissingCampaign => write!(f, "MISSING_CAMPAIGN"),
+FailureReasonCode::MissingCustomerEndpoint => write!(f, "MISSING_CUSTOMER_ENDPOINT"),
+FailureReasonCode::MissingQueueIdAndSystemEndpoint => write!(f, "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT"),
+FailureReasonCode::RequestThrottled => write!(f, "REQUEST_THROTTLED"),
+FailureReasonCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

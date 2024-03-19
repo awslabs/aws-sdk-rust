@@ -3,7 +3,7 @@
 /// <p>Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionEntity {
+pub struct EncryptionEntity  {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
     pub public_key_id: ::std::string::String,
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
@@ -11,19 +11,17 @@ pub struct EncryptionEntity {
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
     pub field_patterns: ::std::option::Option<crate::types::FieldPatterns>,
 }
-impl EncryptionEntity {
+impl  EncryptionEntity  {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
-    pub fn public_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.public_key_id.deref()
+    pub fn public_key_id(&self) -> & str {
+        use std::ops::Deref; self.public_key_id.deref()
     }
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
-    pub fn provider_id(&self) -> &str {
-        use std::ops::Deref;
-        self.provider_id.deref()
+    pub fn provider_id(&self) -> & str {
+        use std::ops::Deref; self.provider_id.deref()
     }
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
-    pub fn field_patterns(&self) -> ::std::option::Option<&crate::types::FieldPatterns> {
+    pub fn field_patterns(&self) -> ::std::option::Option<& crate::types::FieldPatterns> {
         self.field_patterns.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl EncryptionEntityBuilder {
     }
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
     pub fn set_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_key_id = input;
-        self
+        self.public_key_id = input; self
     }
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
     pub fn get_public_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl EncryptionEntityBuilder {
     }
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
     pub fn set_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_id = input;
-        self
+        self.provider_id = input; self
     }
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
     pub fn get_provider_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl EncryptionEntityBuilder {
     }
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
     pub fn set_field_patterns(mut self, input: ::std::option::Option<crate::types::FieldPatterns>) -> Self {
-        self.field_patterns = input;
-        self
+        self.field_patterns = input; self
     }
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
     pub fn get_field_patterns(&self) -> &::std::option::Option<crate::types::FieldPatterns> {
@@ -93,20 +88,22 @@ impl EncryptionEntityBuilder {
     /// - [`public_key_id`](crate::types::builders::EncryptionEntityBuilder::public_key_id)
     /// - [`provider_id`](crate::types::builders::EncryptionEntityBuilder::provider_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionEntity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EncryptionEntity {
-            public_key_id: self.public_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "public_key_id",
-                    "public_key_id was not specified but it is required when building EncryptionEntity",
-                )
-            })?,
-            provider_id: self.provider_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_id",
-                    "provider_id was not specified but it is required when building EncryptionEntity",
-                )
-            })?,
-            field_patterns: self.field_patterns,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EncryptionEntity {
+                public_key_id: self.public_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("public_key_id", "public_key_id was not specified but it is required when building EncryptionEntity")
+                    )?
+                ,
+                provider_id: self.provider_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_id", "provider_id was not specified but it is required when building EncryptionEntity")
+                    )?
+                ,
+                field_patterns: self.field_patterns
+                ,
+            }
+        )
     }
 }
+

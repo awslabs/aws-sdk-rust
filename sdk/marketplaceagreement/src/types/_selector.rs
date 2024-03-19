@@ -3,19 +3,19 @@
 /// <p>Differentiates between the mutually exclusive rate cards in the same pricing term to be selected by the buyer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Selector {
+pub struct Selector  {
     /// <p>Category of selector.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Contract duration. This field supports the ISO 8601 format.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Selector {
+impl  Selector  {
     /// <p>Category of selector.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Contract duration. This field supports the ISO 8601 format.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SelectorBuilder {
     }
     /// <p>Category of selector.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of selector.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SelectorBuilder {
     }
     /// <p>Contract duration. This field supports the ISO 8601 format.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Contract duration. This field supports the ISO 8601 format.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SelectorBuilder {
     /// Consumes the builder and constructs a [`Selector`](crate::types::Selector).
     pub fn build(self) -> crate::types::Selector {
         crate::types::Selector {
-            r#type: self.r#type,
-            value: self.value,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary information about a product view.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProductViewSummary {
+pub struct ProductViewSummary  {
     /// <p>The product view identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
@@ -27,33 +27,33 @@ pub struct ProductViewSummary {
     /// <p>The URL information to obtain support for this Product.</p>
     pub support_url: ::std::option::Option<::std::string::String>,
 }
-impl ProductViewSummary {
+impl  ProductViewSummary  {
     /// <p>The product view identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The name of the product.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>Short description of the product.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProductType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ProductType> {
         self.r#type.as_ref()
     }
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
-    pub fn distributor(&self) -> ::std::option::Option<&str> {
+    pub fn distributor(&self) -> ::std::option::Option<& str> {
         self.distributor.as_deref()
     }
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
@@ -61,15 +61,15 @@ impl ProductViewSummary {
         self.has_default_path
     }
     /// <p>The email contact information to obtain support for this Product.</p>
-    pub fn support_email(&self) -> ::std::option::Option<&str> {
+    pub fn support_email(&self) -> ::std::option::Option<& str> {
         self.support_email.as_deref()
     }
     /// <p>The description of the support for this Product.</p>
-    pub fn support_description(&self) -> ::std::option::Option<&str> {
+    pub fn support_description(&self) -> ::std::option::Option<& str> {
         self.support_description.as_deref()
     }
     /// <p>The URL information to obtain support for this Product.</p>
-    pub fn support_url(&self) -> ::std::option::Option<&str> {
+    pub fn support_url(&self) -> ::std::option::Option<& str> {
         self.support_url.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The product view identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The product view identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The name of the product.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the product.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>Short description of the product.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>Short description of the product.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +169,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProductType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProductType> {
@@ -188,8 +182,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
     pub fn set_distributor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distributor = input;
-        self
+        self.distributor = input; self
     }
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
     pub fn get_distributor(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
     pub fn set_has_default_path(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_default_path = input;
-        self
+        self.has_default_path = input; self
     }
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
     pub fn get_has_default_path(&self) -> &::std::option::Option<bool> {
@@ -216,8 +208,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The email contact information to obtain support for this Product.</p>
     pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_email = input;
-        self
+        self.support_email = input; self
     }
     /// <p>The email contact information to obtain support for this Product.</p>
     pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +221,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The description of the support for this Product.</p>
     pub fn set_support_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_description = input;
-        self
+        self.support_description = input; self
     }
     /// <p>The description of the support for this Product.</p>
     pub fn get_support_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +234,7 @@ impl ProductViewSummaryBuilder {
     }
     /// <p>The URL information to obtain support for this Product.</p>
     pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_url = input;
-        self
+        self.support_url = input; self
     }
     /// <p>The URL information to obtain support for this Product.</p>
     pub fn get_support_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,17 +243,30 @@ impl ProductViewSummaryBuilder {
     /// Consumes the builder and constructs a [`ProductViewSummary`](crate::types::ProductViewSummary).
     pub fn build(self) -> crate::types::ProductViewSummary {
         crate::types::ProductViewSummary {
-            id: self.id,
-            product_id: self.product_id,
-            name: self.name,
-            owner: self.owner,
-            short_description: self.short_description,
-            r#type: self.r#type,
-            distributor: self.distributor,
-            has_default_path: self.has_default_path.unwrap_or_default(),
-            support_email: self.support_email,
-            support_description: self.support_description,
-            support_url: self.support_url,
+            id: self.id
+            ,
+            product_id: self.product_id
+            ,
+            name: self.name
+            ,
+            owner: self.owner
+            ,
+            short_description: self.short_description
+            ,
+            r#type: self.r#type
+            ,
+            distributor: self.distributor
+            ,
+            has_default_path: self.has_default_path
+                .unwrap_or_default()
+            ,
+            support_email: self.support_email
+            ,
+            support_description: self.support_description
+            ,
+            support_url: self.support_url
+            ,
         }
     }
 }
+

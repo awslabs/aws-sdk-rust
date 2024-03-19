@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSnapshots`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::set_next_token):<br>required: **false**<br><p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p><br>
     ///   - [`namespace_name(impl Into<String>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::namespace_name) / [`set_namespace_name(Option<String>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::set_namespace_name):<br>required: **false**<br><p>The namespace from which to list all snapshots.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`owner_account(impl Into<String>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::owner_account) / [`set_owner_account(Option<String>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::set_owner_account):<br>required: **false**<br><p>The owner Amazon Web Services account of the snapshot.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::set_start_time):<br>required: **false**<br><p>The time when the creation of the snapshot was initiated.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::set_end_time):<br>required: **false**<br><p>The timestamp showing when the snapshot creation finished.</p><br>
-    /// - On success, responds with [`ListSnapshotsOutput`](crate::operation::list_snapshots::ListSnapshotsOutput) with field(s):
+                            /// - On success, responds with [`ListSnapshotsOutput`](crate::operation::list_snapshots::ListSnapshotsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_snapshots::ListSnapshotsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`snapshots(Option<Vec::<Snapshot>>)`](crate::operation::list_snapshots::ListSnapshotsOutput::snapshots): <p>All of the returned snapshot objects.</p>
-    /// - On failure, responds with [`SdkError<ListSnapshotsError>`](crate::operation::list_snapshots::ListSnapshotsError)
+                            /// - On failure, responds with [`SdkError<ListSnapshotsError>`](crate::operation::list_snapshots::ListSnapshotsError)
     pub fn list_snapshots(&self) -> crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder {
-        crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_snapshots::builders::ListSnapshotsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

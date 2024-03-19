@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMetricSetsInput {
+pub struct ListMetricSetsInput  {
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
@@ -10,9 +10,9 @@ pub struct ListMetricSetsInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListMetricSetsInput {
+impl  ListMetricSetsInput  {
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -20,7 +20,7 @@ impl ListMetricSetsInput {
         self.max_results
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListMetricSetsInputBuilder {
     }
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListMetricSetsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListMetricSetsInputBuilder {
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMetricSetsInput`](crate::operation::list_metric_sets::ListMetricSetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_metric_sets::ListMetricSetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_metric_sets::ListMetricSetsInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_metric_sets::ListMetricSetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_metric_sets::ListMetricSetsInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

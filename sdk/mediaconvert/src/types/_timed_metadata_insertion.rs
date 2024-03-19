@@ -3,16 +3,17 @@
 /// Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include this metadata, you must set ID3 metadata to Passthrough.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimedMetadataInsertion {
+pub struct TimedMetadataInsertion  {
     /// Id3Insertions contains the array of Id3Insertion instances.
-    pub id3_insertions: ::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>>,
+    pub id3_insertions: ::std::option::Option<::std::vec::Vec::<crate::types::Id3Insertion>>,
 }
-impl TimedMetadataInsertion {
+impl  TimedMetadataInsertion  {
     /// Id3Insertions contains the array of Id3Insertion instances.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id3_insertions.is_none()`.
-    pub fn id3_insertions(&self) -> &[crate::types::Id3Insertion] {
-        self.id3_insertions.as_deref().unwrap_or_default()
+    pub fn id3_insertions(&self) -> & [crate::types::Id3Insertion] {
+        self.id3_insertions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TimedMetadataInsertion {
@@ -26,7 +27,7 @@ impl TimedMetadataInsertion {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimedMetadataInsertionBuilder {
-    pub(crate) id3_insertions: ::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>>,
+    pub(crate) id3_insertions: ::std::option::Option<::std::vec::Vec::<crate::types::Id3Insertion>>,
 }
 impl TimedMetadataInsertionBuilder {
     /// Appends an item to `id3_insertions`.
@@ -36,23 +37,24 @@ impl TimedMetadataInsertionBuilder {
     /// Id3Insertions contains the array of Id3Insertion instances.
     pub fn id3_insertions(mut self, input: crate::types::Id3Insertion) -> Self {
         let mut v = self.id3_insertions.unwrap_or_default();
-        v.push(input);
-        self.id3_insertions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.id3_insertions = ::std::option::Option::Some(v);
+                        self
     }
     /// Id3Insertions contains the array of Id3Insertion instances.
-    pub fn set_id3_insertions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>>) -> Self {
-        self.id3_insertions = input;
-        self
+    pub fn set_id3_insertions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Id3Insertion>>) -> Self {
+        self.id3_insertions = input; self
     }
     /// Id3Insertions contains the array of Id3Insertion instances.
-    pub fn get_id3_insertions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>> {
+    pub fn get_id3_insertions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Id3Insertion>> {
         &self.id3_insertions
     }
     /// Consumes the builder and constructs a [`TimedMetadataInsertion`](crate::types::TimedMetadataInsertion).
     pub fn build(self) -> crate::types::TimedMetadataInsertion {
         crate::types::TimedMetadataInsertion {
-            id3_insertions: self.id3_insertions,
+            id3_insertions: self.id3_insertions
+            ,
         }
     }
 }
+

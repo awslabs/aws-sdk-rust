@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutTargetsInput {
+pub struct PutTargetsInput  {
     /// <p>The name of the rule.</p>
     pub rule: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: ::std::option::Option<::std::string::String>,
     /// <p>The targets to update or add to the rule.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
 }
-impl PutTargetsInput {
+impl  PutTargetsInput  {
     /// <p>The name of the rule.</p>
-    pub fn rule(&self) -> ::std::option::Option<&str> {
+    pub fn rule(&self) -> ::std::option::Option<& str> {
         self.rule.as_deref()
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> ::std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
     /// <p>The targets to update or add to the rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::Target] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::Target] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutTargetsInput {
@@ -39,7 +40,7 @@ impl PutTargetsInput {
 pub struct PutTargetsInputBuilder {
     pub(crate) rule: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
 }
 impl PutTargetsInputBuilder {
     /// <p>The name of the rule.</p>
@@ -50,8 +51,7 @@ impl PutTargetsInputBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>The name of the rule.</p>
     pub fn get_rule(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl PutTargetsInputBuilder {
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_name = input;
-        self
+        self.event_bus_name = input; self
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,30 @@ impl PutTargetsInputBuilder {
     /// <p>The targets to update or add to the rule.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The targets to update or add to the rule.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The targets to update or add to the rule.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.targets
     }
     /// Consumes the builder and constructs a [`PutTargetsInput`](crate::operation::put_targets::PutTargetsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_targets::PutTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_targets::PutTargetsInput {
-            rule: self.rule,
-            event_bus_name: self.event_bus_name,
-            targets: self.targets,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_targets::PutTargetsInput {
+                rule: self.rule
+                ,
+                event_bus_name: self.event_bus_name
+                ,
+                targets: self.targets
+                ,
+            }
+        )
     }
 }
+

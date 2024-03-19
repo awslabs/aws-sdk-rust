@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThingPrincipals`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
     ///   - [`thing_name(impl Into<String>)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::set_thing_name):<br>required: **true**<br><p>The name of the thing.</p><br>
-    /// - On success, responds with [`ListThingPrincipalsOutput`](crate::operation::list_thing_principals::ListThingPrincipalsOutput) with field(s):
+                            /// - On success, responds with [`ListThingPrincipalsOutput`](crate::operation::list_thing_principals::ListThingPrincipalsOutput) with field(s):
     ///   - [`principals(Option<Vec::<String>>)`](crate::operation::list_thing_principals::ListThingPrincipalsOutput::principals): <p>The principals associated with the thing.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_principals::ListThingPrincipalsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListThingPrincipalsError>`](crate::operation::list_thing_principals::ListThingPrincipalsError)
+                            /// - On failure, responds with [`SdkError<ListThingPrincipalsError>`](crate::operation::list_thing_principals::ListThingPrincipalsError)
     pub fn list_thing_principals(&self) -> crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder {
-        crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_thing_principals::builders::ListThingPrincipalsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

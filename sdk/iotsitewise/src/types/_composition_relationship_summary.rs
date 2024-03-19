@@ -3,7 +3,7 @@
 /// <p>Contains a summary of the components of the composite model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositionRelationshipSummary {
+pub struct CompositionRelationshipSummary  {
     /// <p>The ID of the asset model, in UUID format.</p>
     pub asset_model_id: ::std::string::String,
     /// <p>The ID of a composite model on this asset model.</p>
@@ -11,21 +11,18 @@ pub struct CompositionRelationshipSummary {
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub asset_model_composite_model_type: ::std::string::String,
 }
-impl CompositionRelationshipSummary {
+impl  CompositionRelationshipSummary  {
     /// <p>The ID of the asset model, in UUID format.</p>
-    pub fn asset_model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_id.deref()
+    pub fn asset_model_id(&self) -> & str {
+        use std::ops::Deref; self.asset_model_id.deref()
     }
     /// <p>The ID of a composite model on this asset model.</p>
-    pub fn asset_model_composite_model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_composite_model_id.deref()
+    pub fn asset_model_composite_model_id(&self) -> & str {
+        use std::ops::Deref; self.asset_model_composite_model_id.deref()
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
-    pub fn asset_model_composite_model_type(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_composite_model_type.deref()
+    pub fn asset_model_composite_model_type(&self) -> & str {
+        use std::ops::Deref; self.asset_model_composite_model_type.deref()
     }
 }
 impl CompositionRelationshipSummary {
@@ -52,8 +49,7 @@ impl CompositionRelationshipSummaryBuilder {
     }
     /// <p>The ID of the asset model, in UUID format.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_id = input;
-        self
+        self.asset_model_id = input; self
     }
     /// <p>The ID of the asset model, in UUID format.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl CompositionRelationshipSummaryBuilder {
     }
     /// <p>The ID of a composite model on this asset model.</p>
     pub fn set_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_id = input;
-        self
+        self.asset_model_composite_model_id = input; self
     }
     /// <p>The ID of a composite model on this asset model.</p>
     pub fn get_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl CompositionRelationshipSummaryBuilder {
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn set_asset_model_composite_model_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_type = input;
-        self
+        self.asset_model_composite_model_type = input; self
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn get_asset_model_composite_model_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl CompositionRelationshipSummaryBuilder {
     /// - [`asset_model_composite_model_id`](crate::types::builders::CompositionRelationshipSummaryBuilder::asset_model_composite_model_id)
     /// - [`asset_model_composite_model_type`](crate::types::builders::CompositionRelationshipSummaryBuilder::asset_model_composite_model_type)
     pub fn build(self) -> ::std::result::Result<crate::types::CompositionRelationshipSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CompositionRelationshipSummary {
-            asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_model_id",
-                    "asset_model_id was not specified but it is required when building CompositionRelationshipSummary",
-                )
-            })?,
-            asset_model_composite_model_id: self.asset_model_composite_model_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_model_composite_model_id",
-                    "asset_model_composite_model_id was not specified but it is required when building CompositionRelationshipSummary",
-                )
-            })?,
-            asset_model_composite_model_type: self.asset_model_composite_model_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_model_composite_model_type",
-                    "asset_model_composite_model_type was not specified but it is required when building CompositionRelationshipSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CompositionRelationshipSummary {
+                asset_model_id: self.asset_model_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_model_id", "asset_model_id was not specified but it is required when building CompositionRelationshipSummary")
+                    )?
+                ,
+                asset_model_composite_model_id: self.asset_model_composite_model_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_model_composite_model_id", "asset_model_composite_model_id was not specified but it is required when building CompositionRelationshipSummary")
+                    )?
+                ,
+                asset_model_composite_model_type: self.asset_model_composite_model_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_model_composite_model_type", "asset_model_composite_model_type was not specified but it is required when building CompositionRelationshipSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

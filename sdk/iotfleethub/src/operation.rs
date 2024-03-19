@@ -24,3 +24,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateApplication` operation.
 pub mod update_application;
+

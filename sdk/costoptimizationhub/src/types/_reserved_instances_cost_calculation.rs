@@ -3,13 +3,13 @@
 /// <p>Cost impact of the purchase recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedInstancesCostCalculation {
+pub struct ReservedInstancesCostCalculation  {
     /// <p>Pricing details of the purchase recommendation.</p>
     pub pricing: ::std::option::Option<crate::types::ReservedInstancesPricing>,
 }
-impl ReservedInstancesCostCalculation {
+impl  ReservedInstancesCostCalculation  {
     /// <p>Pricing details of the purchase recommendation.</p>
-    pub fn pricing(&self) -> ::std::option::Option<&crate::types::ReservedInstancesPricing> {
+    pub fn pricing(&self) -> ::std::option::Option<& crate::types::ReservedInstancesPricing> {
         self.pricing.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ReservedInstancesCostCalculationBuilder {
     }
     /// <p>Pricing details of the purchase recommendation.</p>
     pub fn set_pricing(mut self, input: ::std::option::Option<crate::types::ReservedInstancesPricing>) -> Self {
-        self.pricing = input;
-        self
+        self.pricing = input; self
     }
     /// <p>Pricing details of the purchase recommendation.</p>
     pub fn get_pricing(&self) -> &::std::option::Option<crate::types::ReservedInstancesPricing> {
@@ -43,6 +42,10 @@ impl ReservedInstancesCostCalculationBuilder {
     }
     /// Consumes the builder and constructs a [`ReservedInstancesCostCalculation`](crate::types::ReservedInstancesCostCalculation).
     pub fn build(self) -> crate::types::ReservedInstancesCostCalculation {
-        crate::types::ReservedInstancesCostCalculation { pricing: self.pricing }
+        crate::types::ReservedInstancesCostCalculation {
+            pricing: self.pricing
+            ,
+        }
     }
 }
+

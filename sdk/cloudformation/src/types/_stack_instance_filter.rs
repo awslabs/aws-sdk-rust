@@ -3,19 +3,19 @@
 /// <p>The filter to apply to stack instances</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackInstanceFilter {
+pub struct StackInstanceFilter  {
     /// <p>The type of filter to apply.</p>
     pub name: ::std::option::Option<crate::types::StackInstanceFilterName>,
     /// <p>The status to filter by.</p>
     pub values: ::std::option::Option<::std::string::String>,
 }
-impl StackInstanceFilter {
+impl  StackInstanceFilter  {
     /// <p>The type of filter to apply.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::StackInstanceFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::StackInstanceFilterName> {
         self.name.as_ref()
     }
     /// <p>The status to filter by.</p>
-    pub fn values(&self) -> ::std::option::Option<&str> {
+    pub fn values(&self) -> ::std::option::Option<& str> {
         self.values.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StackInstanceFilterBuilder {
     }
     /// <p>The type of filter to apply.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::StackInstanceFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of filter to apply.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::StackInstanceFilterName> {
@@ -55,8 +54,7 @@ impl StackInstanceFilterBuilder {
     }
     /// <p>The status to filter by.</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.values = input;
-        self
+        self.values = input; self
     }
     /// <p>The status to filter by.</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl StackInstanceFilterBuilder {
     /// Consumes the builder and constructs a [`StackInstanceFilter`](crate::types::StackInstanceFilter).
     pub fn build(self) -> crate::types::StackInstanceFilter {
         crate::types::StackInstanceFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

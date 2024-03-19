@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBotReplicaOutput {
+pub struct DescribeBotReplicaOutput  {
     /// <p>The unique bot ID of the replicated bot being monitored.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The region of the replicated bot being monitored.</p>
@@ -14,42 +14,43 @@ pub struct DescribeBotReplicaOutput {
     /// <p>The operational status of the replicated bot being monitored.</p>
     pub bot_replica_status: ::std::option::Option<crate::types::BotReplicaStatus>,
     /// <p>The failure reasons the bot being monitored failed to replicate.</p>
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeBotReplicaOutput {
+impl  DescribeBotReplicaOutput  {
     /// <p>The unique bot ID of the replicated bot being monitored.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The region of the replicated bot being monitored.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
     /// <p>The source region of the replicated bot being monitored.</p>
-    pub fn source_region(&self) -> ::std::option::Option<&str> {
+    pub fn source_region(&self) -> ::std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The creation date and time of the replicated bot being monitored.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The operational status of the replicated bot being monitored.</p>
-    pub fn bot_replica_status(&self) -> ::std::option::Option<&crate::types::BotReplicaStatus> {
+    pub fn bot_replica_status(&self) -> ::std::option::Option<& crate::types::BotReplicaStatus> {
         self.bot_replica_status.as_ref()
     }
     /// <p>The failure reasons the bot being monitored failed to replicate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBotReplicaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBotReplicaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotReplicaOutput`](crate::operation::describe_bot_replica::DescribeBotReplicaOutput).
     pub fn builder() -> crate::operation::describe_bot_replica::builders::DescribeBotReplicaOutputBuilder {
@@ -66,7 +67,7 @@ pub struct DescribeBotReplicaOutputBuilder {
     pub(crate) source_region: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) bot_replica_status: ::std::option::Option<crate::types::BotReplicaStatus>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeBotReplicaOutputBuilder {
@@ -77,8 +78,7 @@ impl DescribeBotReplicaOutputBuilder {
     }
     /// <p>The unique bot ID of the replicated bot being monitored.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique bot ID of the replicated bot being monitored.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +91,7 @@ impl DescribeBotReplicaOutputBuilder {
     }
     /// <p>The region of the replicated bot being monitored.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The region of the replicated bot being monitored.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl DescribeBotReplicaOutputBuilder {
     }
     /// <p>The source region of the replicated bot being monitored.</p>
     pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_region = input;
-        self
+        self.source_region = input; self
     }
     /// <p>The source region of the replicated bot being monitored.</p>
     pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl DescribeBotReplicaOutputBuilder {
     }
     /// <p>The creation date and time of the replicated bot being monitored.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time of the replicated bot being monitored.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -133,8 +130,7 @@ impl DescribeBotReplicaOutputBuilder {
     }
     /// <p>The operational status of the replicated bot being monitored.</p>
     pub fn set_bot_replica_status(mut self, input: ::std::option::Option<crate::types::BotReplicaStatus>) -> Self {
-        self.bot_replica_status = input;
-        self
+        self.bot_replica_status = input; self
     }
     /// <p>The operational status of the replicated bot being monitored.</p>
     pub fn get_bot_replica_status(&self) -> &::std::option::Option<crate::types::BotReplicaStatus> {
@@ -147,38 +143,44 @@ impl DescribeBotReplicaOutputBuilder {
     /// <p>The failure reasons the bot being monitored failed to replicate.</p>
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The failure reasons the bot being monitored failed to replicate.</p>
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// <p>The failure reasons the bot being monitored failed to replicate.</p>
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBotReplicaOutput`](crate::operation::describe_bot_replica::DescribeBotReplicaOutput).
     pub fn build(self) -> crate::operation::describe_bot_replica::DescribeBotReplicaOutput {
         crate::operation::describe_bot_replica::DescribeBotReplicaOutput {
-            bot_id: self.bot_id,
-            replica_region: self.replica_region,
-            source_region: self.source_region,
-            creation_date_time: self.creation_date_time,
-            bot_replica_status: self.bot_replica_status,
-            failure_reasons: self.failure_reasons,
+            bot_id: self.bot_id
+            ,
+            replica_region: self.replica_region
+            ,
+            source_region: self.source_region
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            bot_replica_status: self.bot_replica_status
+            ,
+            failure_reasons: self.failure_reasons
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

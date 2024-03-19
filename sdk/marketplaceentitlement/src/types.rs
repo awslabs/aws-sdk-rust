@@ -16,3 +16,4 @@ pub mod builders;
 
 /// Error types that AWS Marketplace Entitlement Service can respond with.
 pub mod error;
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchGameSessionsOutput {
+pub struct SearchGameSessionsOutput  {
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
-    pub game_sessions: ::std::option::Option<::std::vec::Vec<crate::types::GameSession>>,
+    pub game_sessions: ::std::option::Option<::std::vec::Vec::<crate::types::GameSession>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchGameSessionsOutput {
+impl  SearchGameSessionsOutput  {
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_sessions.is_none()`.
-    pub fn game_sessions(&self) -> &[crate::types::GameSession] {
-        self.game_sessions.as_deref().unwrap_or_default()
+    pub fn game_sessions(&self) -> & [crate::types::GameSession] {
+        self.game_sessions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchGameSessionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchGameSessionsOutput {
     /// Creates a new builder-style object to manufacture [`SearchGameSessionsOutput`](crate::operation::search_game_sessions::SearchGameSessionsOutput).
     pub fn builder() -> crate::operation::search_game_sessions::builders::SearchGameSessionsOutputBuilder {
@@ -37,7 +38,7 @@ impl SearchGameSessionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchGameSessionsOutputBuilder {
-    pub(crate) game_sessions: ::std::option::Option<::std::vec::Vec<crate::types::GameSession>>,
+    pub(crate) game_sessions: ::std::option::Option<::std::vec::Vec::<crate::types::GameSession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl SearchGameSessionsOutputBuilder {
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
     pub fn game_sessions(mut self, input: crate::types::GameSession) -> Self {
         let mut v = self.game_sessions.unwrap_or_default();
-        v.push(input);
-        self.game_sessions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.game_sessions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
-    pub fn set_game_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSession>>) -> Self {
-        self.game_sessions = input;
-        self
+    pub fn set_game_sessions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameSession>>) -> Self {
+        self.game_sessions = input; self
     }
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
-    pub fn get_game_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSession>> {
+    pub fn get_game_sessions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameSession>> {
         &self.game_sessions
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -69,28 +69,30 @@ impl SearchGameSessionsOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchGameSessionsOutput`](crate::operation::search_game_sessions::SearchGameSessionsOutput).
     pub fn build(self) -> crate::operation::search_game_sessions::SearchGameSessionsOutput {
         crate::operation::search_game_sessions::SearchGameSessionsOutput {
-            game_sessions: self.game_sessions,
-            next_token: self.next_token,
+            game_sessions: self.game_sessions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

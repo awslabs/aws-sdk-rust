@@ -5,23 +5,20 @@ pub use crate::operation::execute_gremlin_query::_execute_gremlin_query_input::E
 
 impl ExecuteGremlinQueryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.execute_gremlin_query();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.execute_gremlin_query();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ExecuteGremlinQuery`.
-///
+/// 
 /// <p>This commands executes a Gremlin query. Amazon Neptune is compatible with Apache TinkerPop3 and Gremlin, so you can use the Gremlin traversal language to query the graph, as described under <a href="https://tinkerpop.apache.org/docs/current/reference/#graph">The Graph</a> in the Apache TinkerPop3 documentation. More details can also be found in <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin.html">Accessing a Neptune graph with Gremlin</a>.</p>
 /// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that enables one of the following IAM actions in that cluster, depending on the query:</p>
 /// <ul>
@@ -36,33 +33,32 @@ impl ExecuteGremlinQueryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteGremlinQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::execute_gremlin_query::builders::ExecuteGremlinQueryInputBuilder,
+                    inner: crate::operation::execute_gremlin_query::builders::ExecuteGremlinQueryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput,
-        crate::operation::execute_gremlin_query::ExecuteGremlinQueryError,
-    > for ExecuteGremlinQueryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput,
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput,
+                    crate::operation::execute_gremlin_query::ExecuteGremlinQueryError,
+                > for ExecuteGremlinQueryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput,
+                        crate::operation::execute_gremlin_query::ExecuteGremlinQueryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ExecuteGremlinQueryFluentBuilder {
     /// Creates a new `ExecuteGremlinQuery`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -71,53 +67,44 @@ impl ExecuteGremlinQueryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::execute_gremlin_query::ExecuteGremlinQuery::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::execute_gremlin_query::ExecuteGremlinQuery::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput,
-        crate::operation::execute_gremlin_query::ExecuteGremlinQueryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_query::ExecuteGremlinQueryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::execute_gremlin_query::ExecuteGremlinQuery::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::execute_gremlin_query::ExecuteGremlinQuery::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput, crate::operation::execute_gremlin_query::ExecuteGremlinQueryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Using this API, you can run Gremlin queries in string format much as you can using the HTTP endpoint. The interface is compatible with whatever Gremlin version your DB cluster is using (see the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop client section</a> to determine which Gremlin releases your engine version supports).</p>
     pub fn gremlin_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gremlin_query(input.into());
@@ -147,3 +134,4 @@ impl ExecuteGremlinQueryFluentBuilder {
         self.inner.get_serializer()
     }
 }
+

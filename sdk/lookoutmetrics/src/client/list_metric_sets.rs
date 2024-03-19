@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMetricSets`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::set_anomaly_detector_arn):<br>required: **false**<br><p>The ARN of the anomaly detector containing the metrics sets to list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p><br>
-    /// - On success, responds with [`ListMetricSetsOutput`](crate::operation::list_metric_sets::ListMetricSetsOutput) with field(s):
+                            /// - On success, responds with [`ListMetricSetsOutput`](crate::operation::list_metric_sets::ListMetricSetsOutput) with field(s):
     ///   - [`metric_set_summary_list(Option<Vec::<MetricSetSummary>>)`](crate::operation::list_metric_sets::ListMetricSetsOutput::metric_set_summary_list): <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_sets::ListMetricSetsOutput::next_token): <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request.</p>
-    /// - On failure, responds with [`SdkError<ListMetricSetsError>`](crate::operation::list_metric_sets::ListMetricSetsError)
+                            /// - On failure, responds with [`SdkError<ListMetricSetsError>`](crate::operation::list_metric_sets::ListMetricSetsError)
     pub fn list_metric_sets(&self) -> crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder {
-        crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_metric_sets::builders::ListMetricSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

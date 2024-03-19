@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImportTaskInput {
+pub struct GetImportTaskInput  {
     /// <p>The unique identifier of the import task.</p>
     pub task_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetImportTaskInput {
+impl  GetImportTaskInput  {
     /// <p>The unique identifier of the import task.</p>
-    pub fn task_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn task_identifier(&self) -> ::std::option::Option<& str> {
         self.task_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetImportTaskInputBuilder {
     }
     /// <p>The unique identifier of the import task.</p>
     pub fn set_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_identifier = input;
-        self
+        self.task_identifier = input; self
     }
     /// <p>The unique identifier of the import task.</p>
     pub fn get_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_identifier
     }
     /// Consumes the builder and constructs a [`GetImportTaskInput`](crate::operation::get_import_task::GetImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_import_task::GetImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_import_task::GetImportTaskInput {
-            task_identifier: self.task_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_import_task::GetImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_import_task::GetImportTaskInput {
+                task_identifier: self.task_identifier
+                ,
+            }
+        )
     }
 }
+

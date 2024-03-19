@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectLabelsOutput {
+pub struct DetectLabelsOutput  {
     /// <p>An array of labels for the real-world objects detected.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<crate::types::Label>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
@@ -15,33 +15,34 @@ pub struct DetectLabelsOutput {
     pub image_properties: ::std::option::Option<crate::types::DetectLabelsImageProperties>,
     _request_id: Option<String>,
 }
-impl DetectLabelsOutput {
+impl  DetectLabelsOutput  {
     /// <p>An array of labels for the real-world objects detected.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[crate::types::Label] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [crate::types::Label] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
-    pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
+    pub fn orientation_correction(&self) -> ::std::option::Option<& crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
-    pub fn label_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn label_model_version(&self) -> ::std::option::Option<& str> {
         self.label_model_version.as_deref()
     }
     /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
-    pub fn image_properties(&self) -> ::std::option::Option<&crate::types::DetectLabelsImageProperties> {
+    pub fn image_properties(&self) -> ::std::option::Option<& crate::types::DetectLabelsImageProperties> {
         self.image_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectLabelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectLabelsOutput {
     /// Creates a new builder-style object to manufacture [`DetectLabelsOutput`](crate::operation::detect_labels::DetectLabelsOutput).
     pub fn builder() -> crate::operation::detect_labels::builders::DetectLabelsOutputBuilder {
@@ -53,7 +54,7 @@ impl DetectLabelsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectLabelsOutputBuilder {
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<crate::types::Label>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     pub(crate) label_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) image_properties: ::std::option::Option<crate::types::DetectLabelsImageProperties>,
@@ -67,17 +68,16 @@ impl DetectLabelsOutputBuilder {
     /// <p>An array of labels for the real-world objects detected.</p>
     pub fn labels(mut self, input: crate::types::Label) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input);
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of labels for the real-world objects detected.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Label>>) -> Self {
+        self.labels = input; self
     }
     /// <p>An array of labels for the real-world objects detected.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Label>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Label>> {
         &self.labels
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
@@ -91,8 +91,7 @@ impl DetectLabelsOutputBuilder {
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
     pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
-        self.orientation_correction = input;
-        self
+        self.orientation_correction = input; self
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
@@ -107,8 +106,7 @@ impl DetectLabelsOutputBuilder {
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     pub fn set_label_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_model_version = input;
-        self
+        self.label_model_version = input; self
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     pub fn get_label_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,30 +119,34 @@ impl DetectLabelsOutputBuilder {
     }
     /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
     pub fn set_image_properties(mut self, input: ::std::option::Option<crate::types::DetectLabelsImageProperties>) -> Self {
-        self.image_properties = input;
-        self
+        self.image_properties = input; self
     }
     /// <p>Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant colors.</p>
     pub fn get_image_properties(&self) -> &::std::option::Option<crate::types::DetectLabelsImageProperties> {
         &self.image_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectLabelsOutput`](crate::operation::detect_labels::DetectLabelsOutput).
     pub fn build(self) -> crate::operation::detect_labels::DetectLabelsOutput {
         crate::operation::detect_labels::DetectLabelsOutput {
-            labels: self.labels,
-            orientation_correction: self.orientation_correction,
-            label_model_version: self.label_model_version,
-            image_properties: self.image_properties,
+            labels: self.labels
+            ,
+            orientation_correction: self.orientation_correction
+            ,
+            label_model_version: self.label_model_version
+            ,
+            image_properties: self.image_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

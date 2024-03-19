@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConnectorsOutput {
+pub struct ListConnectorsOutput  {
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of a connector.</p>
-    pub connectors: ::std::vec::Vec<crate::types::ListedConnector>,
+    pub connectors: ::std::vec::Vec::<crate::types::ListedConnector>,
     _request_id: Option<String>,
 }
-impl ListConnectorsOutput {
+impl  ListConnectorsOutput  {
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of a connector.</p>
-    pub fn connectors(&self) -> &[crate::types::ListedConnector] {
-        use std::ops::Deref;
-        self.connectors.deref()
+    pub fn connectors(&self) -> & [crate::types::ListedConnector] {
+        use std::ops::Deref; self.connectors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConnectorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput).
     pub fn builder() -> crate::operation::list_connectors::builders::ListConnectorsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListConnectorsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) connectors: ::std::option::Option<::std::vec::Vec<crate::types::ListedConnector>>,
+    pub(crate) connectors: ::std::option::Option<::std::vec::Vec::<crate::types::ListedConnector>>,
     _request_id: Option<String>,
 }
 impl ListConnectorsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListConnectorsOutputBuilder {
     }
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListConnectorsOutputBuilder {
     /// <p>Returns an array, where each item contains the details of a connector.</p>
     pub fn connectors(mut self, input: crate::types::ListedConnector) -> Self {
         let mut v = self.connectors.unwrap_or_default();
-        v.push(input);
-        self.connectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns an array, where each item contains the details of a connector.</p>
-    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedConnector>>) -> Self {
-        self.connectors = input;
-        self
+    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedConnector>>) -> Self {
+        self.connectors = input; self
     }
     /// <p>Returns an array, where each item contains the details of a connector.</p>
-    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedConnector>> {
+    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedConnector>> {
         &self.connectors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`connectors`](crate::operation::list_connectors::builders::ListConnectorsOutputBuilder::connectors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_connectors::ListConnectorsOutput {
-            next_token: self.next_token,
-            connectors: self.connectors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connectors",
-                    "connectors was not specified but it is required when building ListConnectorsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_connectors::ListConnectorsOutput {
+                next_token: self.next_token
+                ,
+                connectors: self.connectors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connectors", "connectors was not specified but it is required when building ListConnectorsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

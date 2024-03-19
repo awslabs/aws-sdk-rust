@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelsAssociatedWithChannelFlow`](crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_flow_arn(impl Into<String>)`](crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::channel_flow_arn) / [`set_channel_flow_arn(Option<String>)`](crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::set_channel_flow_arn):<br>required: **true**<br><p>The ARN of the channel flow.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of channels that you want to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested channels are returned.</p><br>
-    /// - On success, responds with [`ListChannelsAssociatedWithChannelFlowOutput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput) with field(s):
+                            /// - On success, responds with [`ListChannelsAssociatedWithChannelFlowOutput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput) with field(s):
     ///   - [`channels(Option<Vec::<ChannelAssociatedWithFlowSummary>>)`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput::channels): <p>The information about each channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
-    /// - On failure, responds with [`SdkError<ListChannelsAssociatedWithChannelFlowError>`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowError)
-    pub fn list_channels_associated_with_channel_flow(
-        &self,
-    ) -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder {
-        crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListChannelsAssociatedWithChannelFlowError>`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowError)
+    pub fn list_channels_associated_with_channel_flow(&self) -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder {
+                                crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::new(self.handle.clone())
+                            }
 }
+

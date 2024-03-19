@@ -3,19 +3,19 @@
 /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamCidrAuthorizationContext {
+pub struct IpamCidrAuthorizationContext  {
     /// <p>The plain-text authorization message for the prefix and account.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The signed authorization message for the prefix and account.</p>
     pub signature: ::std::option::Option<::std::string::String>,
 }
-impl IpamCidrAuthorizationContext {
+impl  IpamCidrAuthorizationContext  {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn signature(&self) -> ::std::option::Option<&str> {
+    pub fn signature(&self) -> ::std::option::Option<& str> {
         self.signature.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IpamCidrAuthorizationContextBuilder {
     }
     /// <p>The plain-text authorization message for the prefix and account.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The plain-text authorization message for the prefix and account.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl IpamCidrAuthorizationContextBuilder {
     }
     /// <p>The signed authorization message for the prefix and account.</p>
     pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signature = input;
-        self
+        self.signature = input; self
     }
     /// <p>The signed authorization message for the prefix and account.</p>
     pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl IpamCidrAuthorizationContextBuilder {
     /// Consumes the builder and constructs a [`IpamCidrAuthorizationContext`](crate::types::IpamCidrAuthorizationContext).
     pub fn build(self) -> crate::types::IpamCidrAuthorizationContext {
         crate::types::IpamCidrAuthorizationContext {
-            message: self.message,
-            signature: self.signature,
+            message: self.message
+            ,
+            signature: self.signature
+            ,
         }
     }
 }
+

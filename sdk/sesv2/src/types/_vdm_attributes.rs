@@ -3,7 +3,7 @@
 /// <p>The VDM attributes that apply to your Amazon SES account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VdmAttributes {
+pub struct VdmAttributes  {
     /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct VdmAttributes {
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
     pub guardian_attributes: ::std::option::Option<crate::types::GuardianAttributes>,
 }
-impl VdmAttributes {
+impl  VdmAttributes  {
     /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -25,15 +25,15 @@ impl VdmAttributes {
     /// <li>
     /// <p><code>DISABLED</code> – Amazon SES disables VDM for your account.</p></li>
     /// </ul>
-    pub fn vdm_enabled(&self) -> &crate::types::FeatureStatus {
+    pub fn vdm_enabled(&self) -> & crate::types::FeatureStatus {
         &self.vdm_enabled
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
-    pub fn dashboard_attributes(&self) -> ::std::option::Option<&crate::types::DashboardAttributes> {
+    pub fn dashboard_attributes(&self) -> ::std::option::Option<& crate::types::DashboardAttributes> {
         self.dashboard_attributes.as_ref()
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
-    pub fn guardian_attributes(&self) -> ::std::option::Option<&crate::types::GuardianAttributes> {
+    pub fn guardian_attributes(&self) -> ::std::option::Option<& crate::types::GuardianAttributes> {
         self.guardian_attributes.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl VdmAttributesBuilder {
     /// <p><code>DISABLED</code> – Amazon SES disables VDM for your account.</p></li>
     /// </ul>
     pub fn set_vdm_enabled(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.vdm_enabled = input;
-        self
+        self.vdm_enabled = input; self
     }
     /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
     /// <ul>
@@ -93,8 +92,7 @@ impl VdmAttributesBuilder {
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
     pub fn set_dashboard_attributes(mut self, input: ::std::option::Option<crate::types::DashboardAttributes>) -> Self {
-        self.dashboard_attributes = input;
-        self
+        self.dashboard_attributes = input; self
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
     pub fn get_dashboard_attributes(&self) -> &::std::option::Option<crate::types::DashboardAttributes> {
@@ -107,8 +105,7 @@ impl VdmAttributesBuilder {
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
     pub fn set_guardian_attributes(mut self, input: ::std::option::Option<crate::types::GuardianAttributes>) -> Self {
-        self.guardian_attributes = input;
-        self
+        self.guardian_attributes = input; self
     }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
     pub fn get_guardian_attributes(&self) -> &::std::option::Option<crate::types::GuardianAttributes> {
@@ -118,15 +115,19 @@ impl VdmAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`vdm_enabled`](crate::types::builders::VdmAttributesBuilder::vdm_enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::VdmAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VdmAttributes {
-            vdm_enabled: self.vdm_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vdm_enabled",
-                    "vdm_enabled was not specified but it is required when building VdmAttributes",
-                )
-            })?,
-            dashboard_attributes: self.dashboard_attributes,
-            guardian_attributes: self.guardian_attributes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VdmAttributes {
+                vdm_enabled: self.vdm_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vdm_enabled", "vdm_enabled was not specified but it is required when building VdmAttributes")
+                    )?
+                ,
+                dashboard_attributes: self.dashboard_attributes
+                ,
+                guardian_attributes: self.guardian_attributes
+                ,
+            }
+        )
     }
 }
+

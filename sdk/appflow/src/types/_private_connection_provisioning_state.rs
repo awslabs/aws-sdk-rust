@@ -3,7 +3,7 @@
 /// <p>Specifies the private connection provisioning state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateConnectionProvisioningState {
+pub struct PrivateConnectionProvisioningState  {
     /// <p>Specifies the private connection provisioning status.</p>
     pub status: ::std::option::Option<crate::types::PrivateConnectionProvisioningStatus>,
     /// <p>Specifies the private connection provisioning failure reason.</p>
@@ -11,17 +11,17 @@ pub struct PrivateConnectionProvisioningState {
     /// <p>Specifies the private connection provisioning failure cause.</p>
     pub failure_cause: ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>,
 }
-impl PrivateConnectionProvisioningState {
+impl  PrivateConnectionProvisioningState  {
     /// <p>Specifies the private connection provisioning status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PrivateConnectionProvisioningStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PrivateConnectionProvisioningStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the private connection provisioning failure reason.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p>Specifies the private connection provisioning failure cause.</p>
-    pub fn failure_cause(&self) -> ::std::option::Option<&crate::types::PrivateConnectionProvisioningFailureCause> {
+    pub fn failure_cause(&self) -> ::std::option::Option<& crate::types::PrivateConnectionProvisioningFailureCause> {
         self.failure_cause.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PrivateConnectionProvisioningStateBuilder {
     }
     /// <p>Specifies the private connection provisioning status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PrivateConnectionProvisioningStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies the private connection provisioning status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PrivateConnectionProvisioningStatus> {
@@ -62,8 +61,7 @@ impl PrivateConnectionProvisioningStateBuilder {
     }
     /// <p>Specifies the private connection provisioning failure reason.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>Specifies the private connection provisioning failure reason.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl PrivateConnectionProvisioningStateBuilder {
     }
     /// <p>Specifies the private connection provisioning failure cause.</p>
     pub fn set_failure_cause(mut self, input: ::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause>) -> Self {
-        self.failure_cause = input;
-        self
+        self.failure_cause = input; self
     }
     /// <p>Specifies the private connection provisioning failure cause.</p>
     pub fn get_failure_cause(&self) -> &::std::option::Option<crate::types::PrivateConnectionProvisioningFailureCause> {
@@ -86,9 +83,13 @@ impl PrivateConnectionProvisioningStateBuilder {
     /// Consumes the builder and constructs a [`PrivateConnectionProvisioningState`](crate::types::PrivateConnectionProvisioningState).
     pub fn build(self) -> crate::types::PrivateConnectionProvisioningState {
         crate::types::PrivateConnectionProvisioningState {
-            status: self.status,
-            failure_message: self.failure_message,
-            failure_cause: self.failure_cause,
+            status: self.status
+            ,
+            failure_message: self.failure_message
+            ,
+            failure_cause: self.failure_cause
+            ,
         }
     }
 }
+

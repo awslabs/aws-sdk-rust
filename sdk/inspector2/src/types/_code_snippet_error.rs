@@ -3,7 +3,7 @@
 /// <p>Contains information about any errors encountered while trying to retrieve a code snippet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeSnippetError {
+pub struct CodeSnippetError  {
     /// <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
     pub finding_arn: ::std::string::String,
     /// <p>The error code for the error that prevented a code snippet from being retrieved.</p>
@@ -11,20 +11,18 @@ pub struct CodeSnippetError {
     /// <p>The error message received when Amazon Inspector failed to retrieve a code snippet.</p>
     pub error_message: ::std::string::String,
 }
-impl CodeSnippetError {
+impl  CodeSnippetError  {
     /// <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
-    pub fn finding_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.finding_arn.deref()
+    pub fn finding_arn(&self) -> & str {
+        use std::ops::Deref; self.finding_arn.deref()
     }
     /// <p>The error code for the error that prevented a code snippet from being retrieved.</p>
-    pub fn error_code(&self) -> &crate::types::CodeSnippetErrorCode {
+    pub fn error_code(&self) -> & crate::types::CodeSnippetErrorCode {
         &self.error_code
     }
     /// <p>The error message received when Amazon Inspector failed to retrieve a code snippet.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl CodeSnippetError {
@@ -51,8 +49,7 @@ impl CodeSnippetErrorBuilder {
     }
     /// <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
     pub fn set_finding_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_arn = input;
-        self
+        self.finding_arn = input; self
     }
     /// <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
     pub fn get_finding_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl CodeSnippetErrorBuilder {
     }
     /// <p>The error code for the error that prevented a code snippet from being retrieved.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::CodeSnippetErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code for the error that prevented a code snippet from being retrieved.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::CodeSnippetErrorCode> {
@@ -81,8 +77,7 @@ impl CodeSnippetErrorBuilder {
     }
     /// <p>The error message received when Amazon Inspector failed to retrieve a code snippet.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message received when Amazon Inspector failed to retrieve a code snippet.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl CodeSnippetErrorBuilder {
     /// - [`error_code`](crate::types::builders::CodeSnippetErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::CodeSnippetErrorBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeSnippetError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeSnippetError {
-            finding_arn: self.finding_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_arn",
-                    "finding_arn was not specified but it is required when building CodeSnippetError",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building CodeSnippetError",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building CodeSnippetError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeSnippetError {
+                finding_arn: self.finding_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_arn", "finding_arn was not specified but it is required when building CodeSnippetError")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building CodeSnippetError")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building CodeSnippetError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

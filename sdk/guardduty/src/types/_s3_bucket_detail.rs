@@ -3,7 +3,7 @@
 /// <p>Contains information on the S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3BucketDetail {
+pub struct S3BucketDetail  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket.</p>
@@ -15,45 +15,46 @@ pub struct S3BucketDetail {
     /// <p>The owner of the S3 bucket.</p>
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>All tags attached to the S3 bucket</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
     pub default_server_side_encryption: ::std::option::Option<crate::types::DefaultServerSideEncryption>,
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
     pub public_access: ::std::option::Option<crate::types::PublicAccess>,
 }
-impl S3BucketDetail {
+impl  S3BucketDetail  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Describes whether the bucket is a source or destination bucket.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The date and time the bucket was created at.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The owner of the S3 bucket.</p>
-    pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
+    pub fn owner(&self) -> ::std::option::Option<& crate::types::Owner> {
         self.owner.as_ref()
     }
     /// <p>All tags attached to the S3 bucket</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
-    pub fn default_server_side_encryption(&self) -> ::std::option::Option<&crate::types::DefaultServerSideEncryption> {
+    pub fn default_server_side_encryption(&self) -> ::std::option::Option<& crate::types::DefaultServerSideEncryption> {
         self.default_server_side_encryption.as_ref()
     }
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
-    pub fn public_access(&self) -> ::std::option::Option<&crate::types::PublicAccess> {
+    pub fn public_access(&self) -> ::std::option::Option<& crate::types::PublicAccess> {
         self.public_access.as_ref()
     }
 }
@@ -73,7 +74,7 @@ pub struct S3BucketDetailBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) default_server_side_encryption: ::std::option::Option<crate::types::DefaultServerSideEncryption>,
     pub(crate) public_access: ::std::option::Option<crate::types::PublicAccess>,
 }
@@ -85,8 +86,7 @@ impl S3BucketDetailBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl S3BucketDetailBuilder {
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl S3BucketDetailBuilder {
     }
     /// <p>Describes whether the bucket is a source or destination bucket.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Describes whether the bucket is a source or destination bucket.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl S3BucketDetailBuilder {
     }
     /// <p>The date and time the bucket was created at.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time the bucket was created at.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,8 +138,7 @@ impl S3BucketDetailBuilder {
     }
     /// <p>The owner of the S3 bucket.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the S3 bucket.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
@@ -155,17 +151,16 @@ impl S3BucketDetailBuilder {
     /// <p>All tags attached to the S3 bucket</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>All tags attached to the S3 bucket</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>All tags attached to the S3 bucket</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
@@ -175,8 +170,7 @@ impl S3BucketDetailBuilder {
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
     pub fn set_default_server_side_encryption(mut self, input: ::std::option::Option<crate::types::DefaultServerSideEncryption>) -> Self {
-        self.default_server_side_encryption = input;
-        self
+        self.default_server_side_encryption = input; self
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
     pub fn get_default_server_side_encryption(&self) -> &::std::option::Option<crate::types::DefaultServerSideEncryption> {
@@ -189,8 +183,7 @@ impl S3BucketDetailBuilder {
     }
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
     pub fn set_public_access(mut self, input: ::std::option::Option<crate::types::PublicAccess>) -> Self {
-        self.public_access = input;
-        self
+        self.public_access = input; self
     }
     /// <p>Describes the public access policies that apply to the S3 bucket.</p>
     pub fn get_public_access(&self) -> &::std::option::Option<crate::types::PublicAccess> {
@@ -199,14 +192,23 @@ impl S3BucketDetailBuilder {
     /// Consumes the builder and constructs a [`S3BucketDetail`](crate::types::S3BucketDetail).
     pub fn build(self) -> crate::types::S3BucketDetail {
         crate::types::S3BucketDetail {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            created_at: self.created_at,
-            owner: self.owner,
-            tags: self.tags,
-            default_server_side_encryption: self.default_server_side_encryption,
-            public_access: self.public_access,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            created_at: self.created_at
+            ,
+            owner: self.owner
+            ,
+            tags: self.tags
+            ,
+            default_server_side_encryption: self.default_server_side_encryption
+            ,
+            public_access: self.public_access
+            ,
         }
     }
 }
+

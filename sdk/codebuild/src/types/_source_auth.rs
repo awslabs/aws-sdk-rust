@@ -4,7 +4,7 @@
 /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceAuth {
+pub struct SourceAuth  {
     /// <note>
     /// <p>This data type is deprecated and is no longer accurate or used.</p>
     /// </note>
@@ -13,16 +13,16 @@ pub struct SourceAuth {
     /// <p>The resource value that applies to the specified authorization type.</p>
     pub resource: ::std::option::Option<::std::string::String>,
 }
-impl SourceAuth {
+impl  SourceAuth  {
     /// <note>
     /// <p>This data type is deprecated and is no longer accurate or used.</p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
-    pub fn r#type(&self) -> &crate::types::SourceAuthType {
+    pub fn r#type(&self) -> & crate::types::SourceAuthType {
         &self.r#type
     }
     /// <p>The resource value that applies to the specified authorization type.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl SourceAuthBuilder {
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceAuthType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <note>
     /// <p>This data type is deprecated and is no longer accurate or used.</p>
@@ -72,8 +71,7 @@ impl SourceAuthBuilder {
     }
     /// <p>The resource value that applies to the specified authorization type.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The resource value that applies to the specified authorization type.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,14 +81,17 @@ impl SourceAuthBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::SourceAuthBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceAuth, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceAuth {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SourceAuth",
-                )
-            })?,
-            resource: self.resource,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceAuth {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SourceAuth")
+                    )?
+                ,
+                resource: self.resource
+                ,
+            }
+        )
     }
 }
+

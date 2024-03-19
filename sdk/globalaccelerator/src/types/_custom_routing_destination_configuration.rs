@@ -3,15 +3,15 @@
 /// <p>For a custom routing accelerator, sets the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomRoutingDestinationConfiguration {
+pub struct CustomRoutingDestinationConfiguration  {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub from_port: i32,
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub to_port: i32,
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub protocols: ::std::vec::Vec<crate::types::CustomRoutingProtocol>,
+    pub protocols: ::std::vec::Vec::<crate::types::CustomRoutingProtocol>,
 }
-impl CustomRoutingDestinationConfiguration {
+impl  CustomRoutingDestinationConfiguration  {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn from_port(&self) -> i32 {
         self.from_port
@@ -21,9 +21,8 @@ impl CustomRoutingDestinationConfiguration {
         self.to_port
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn protocols(&self) -> &[crate::types::CustomRoutingProtocol] {
-        use std::ops::Deref;
-        self.protocols.deref()
+    pub fn protocols(&self) -> & [crate::types::CustomRoutingProtocol] {
+        use std::ops::Deref; self.protocols.deref()
     }
 }
 impl CustomRoutingDestinationConfiguration {
@@ -39,7 +38,7 @@ impl CustomRoutingDestinationConfiguration {
 pub struct CustomRoutingDestinationConfigurationBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,
-    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingProtocol>>,
 }
 impl CustomRoutingDestinationConfigurationBuilder {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
@@ -50,8 +49,7 @@ impl CustomRoutingDestinationConfigurationBuilder {
     }
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,7 @@ impl CustomRoutingDestinationConfigurationBuilder {
     }
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
@@ -79,17 +76,16 @@ impl CustomRoutingDestinationConfigurationBuilder {
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
     pub fn protocols(mut self, input: crate::types::CustomRoutingProtocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingProtocol>>) -> Self {
+        self.protocols = input; self
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingProtocol>> {
         &self.protocols
     }
     /// Consumes the builder and constructs a [`CustomRoutingDestinationConfiguration`](crate::types::CustomRoutingDestinationConfiguration).
@@ -97,28 +93,26 @@ impl CustomRoutingDestinationConfigurationBuilder {
     /// - [`from_port`](crate::types::builders::CustomRoutingDestinationConfigurationBuilder::from_port)
     /// - [`to_port`](crate::types::builders::CustomRoutingDestinationConfigurationBuilder::to_port)
     /// - [`protocols`](crate::types::builders::CustomRoutingDestinationConfigurationBuilder::protocols)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CustomRoutingDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomRoutingDestinationConfiguration {
-            from_port: self.from_port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "from_port",
-                    "from_port was not specified but it is required when building CustomRoutingDestinationConfiguration",
-                )
-            })?,
-            to_port: self.to_port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "to_port",
-                    "to_port was not specified but it is required when building CustomRoutingDestinationConfiguration",
-                )
-            })?,
-            protocols: self.protocols.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocols",
-                    "protocols was not specified but it is required when building CustomRoutingDestinationConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomRoutingDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CustomRoutingDestinationConfiguration {
+                from_port: self.from_port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("from_port", "from_port was not specified but it is required when building CustomRoutingDestinationConfiguration")
+                    )?
+                ,
+                to_port: self.to_port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("to_port", "to_port was not specified but it is required when building CustomRoutingDestinationConfiguration")
+                    )?
+                ,
+                protocols: self.protocols
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocols", "protocols was not specified but it is required when building CustomRoutingDestinationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

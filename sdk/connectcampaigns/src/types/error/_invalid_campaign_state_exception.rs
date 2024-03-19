@@ -3,7 +3,7 @@
 /// The request could not be processed because of conflict in the current state of the campaign.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidCampaignStateException {
+pub struct InvalidCampaignStateException  {
     /// State of a campaign
     pub state: crate::types::CampaignState,
     #[allow(missing_docs)] // documentation missing in model
@@ -12,26 +12,24 @@ pub struct InvalidCampaignStateException {
     pub x_amz_error_type: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl InvalidCampaignStateException {
+impl  InvalidCampaignStateException  {
     /// State of a campaign
-    pub fn state(&self) -> &crate::types::CampaignState {
+    pub fn state(&self) -> & crate::types::CampaignState {
         &self.state
     }
     /// A header that defines the error encountered while processing the request.
-    pub fn x_amz_error_type(&self) -> ::std::option::Option<&str> {
+    pub fn x_amz_error_type(&self) -> ::std::option::Option<& str> {
         self.x_amz_error_type.as_deref()
     }
 }
 impl InvalidCampaignStateException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for InvalidCampaignStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidCampaignStateException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -45,9 +43,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InvalidCampaign
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidCampaignStateException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidCampaignStateException {
     /// Creates a new builder-style object to manufacture [`InvalidCampaignStateException`](crate::types::error::InvalidCampaignStateException).
@@ -74,8 +70,7 @@ impl InvalidCampaignStateExceptionBuilder {
     }
     /// State of a campaign
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CampaignState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// State of a campaign
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CampaignState> {
@@ -89,8 +84,7 @@ impl InvalidCampaignStateExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,46 +97,45 @@ impl InvalidCampaignStateExceptionBuilder {
     }
     /// A header that defines the error encountered while processing the request.
     pub fn set_x_amz_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.x_amz_error_type = input;
-        self
+        self.x_amz_error_type = input; self
     }
     /// A header that defines the error encountered while processing the request.
     pub fn get_x_amz_error_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.x_amz_error_type
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`InvalidCampaignStateException`](crate::types::error::InvalidCampaignStateException).
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::error::builders::InvalidCampaignStateExceptionBuilder::state)
     /// - [`message`](crate::types::error::builders::InvalidCampaignStateExceptionBuilder::message)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::error::InvalidCampaignStateException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::InvalidCampaignStateException {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building InvalidCampaignStateException",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building InvalidCampaignStateException",
-                )
-            })?,
-            x_amz_error_type: self.x_amz_error_type,
-            meta: self.meta.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::error::InvalidCampaignStateException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::error::InvalidCampaignStateException {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building InvalidCampaignStateException")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building InvalidCampaignStateException")
+                    )?
+                ,
+                x_amz_error_type: self.x_amz_error_type
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

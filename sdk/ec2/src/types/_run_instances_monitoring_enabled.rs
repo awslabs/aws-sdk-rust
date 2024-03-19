@@ -3,11 +3,11 @@
 /// <p>Describes the monitoring of an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunInstancesMonitoringEnabled {
+pub struct RunInstancesMonitoringEnabled  {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl RunInstancesMonitoringEnabled {
+impl  RunInstancesMonitoringEnabled  {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -35,8 +35,7 @@ impl RunInstancesMonitoringEnabledBuilder {
     }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -44,6 +43,10 @@ impl RunInstancesMonitoringEnabledBuilder {
     }
     /// Consumes the builder and constructs a [`RunInstancesMonitoringEnabled`](crate::types::RunInstancesMonitoringEnabled).
     pub fn build(self) -> crate::types::RunInstancesMonitoringEnabled {
-        crate::types::RunInstancesMonitoringEnabled { enabled: self.enabled }
+        crate::types::RunInstancesMonitoringEnabled {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>List of each of the failed remediations with specific reasons.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedRemediationBatch {
+pub struct FailedRemediationBatch  {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Returns remediation configurations of the failed items.</p>
-    pub failed_items: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub failed_items: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>,
 }
-impl FailedRemediationBatch {
+impl  FailedRemediationBatch  {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p>Returns remediation configurations of the failed items.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_items.is_none()`.
-    pub fn failed_items(&self) -> &[crate::types::RemediationConfiguration] {
-        self.failed_items.as_deref().unwrap_or_default()
+    pub fn failed_items(&self) -> & [crate::types::RemediationConfiguration] {
+        self.failed_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FailedRemediationBatch {
@@ -33,7 +34,7 @@ impl FailedRemediationBatch {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedRemediationBatchBuilder {
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) failed_items: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub(crate) failed_items: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>,
 }
 impl FailedRemediationBatchBuilder {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
@@ -43,8 +44,7 @@ impl FailedRemediationBatchBuilder {
     }
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl FailedRemediationBatchBuilder {
     /// <p>Returns remediation configurations of the failed items.</p>
     pub fn failed_items(mut self, input: crate::types::RemediationConfiguration) -> Self {
         let mut v = self.failed_items.unwrap_or_default();
-        v.push(input);
-        self.failed_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns remediation configurations of the failed items.</p>
-    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>) -> Self {
-        self.failed_items = input;
-        self
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>) -> Self {
+        self.failed_items = input; self
     }
     /// <p>Returns remediation configurations of the failed items.</p>
-    pub fn get_failed_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>> {
         &self.failed_items
     }
     /// Consumes the builder and constructs a [`FailedRemediationBatch`](crate::types::FailedRemediationBatch).
     pub fn build(self) -> crate::types::FailedRemediationBatch {
         crate::types::FailedRemediationBatch {
-            failure_message: self.failure_message,
-            failed_items: self.failed_items,
+            failure_message: self.failure_message
+            ,
+            failed_items: self.failed_items
+            ,
         }
     }
 }
+

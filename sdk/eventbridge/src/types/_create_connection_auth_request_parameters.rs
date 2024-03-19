@@ -3,7 +3,7 @@
 /// <p>Contains the authorization parameters for the connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectionAuthRequestParameters {
+pub struct CreateConnectionAuthRequestParameters  {
     /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
     pub basic_auth_parameters: ::std::option::Option<crate::types::CreateConnectionBasicAuthRequestParameters>,
     /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
@@ -13,21 +13,21 @@ pub struct CreateConnectionAuthRequestParameters {
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
     pub invocation_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
-impl CreateConnectionAuthRequestParameters {
+impl  CreateConnectionAuthRequestParameters  {
     /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
-    pub fn basic_auth_parameters(&self) -> ::std::option::Option<&crate::types::CreateConnectionBasicAuthRequestParameters> {
+    pub fn basic_auth_parameters(&self) -> ::std::option::Option<& crate::types::CreateConnectionBasicAuthRequestParameters> {
         self.basic_auth_parameters.as_ref()
     }
     /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
-    pub fn o_auth_parameters(&self) -> ::std::option::Option<&crate::types::CreateConnectionOAuthRequestParameters> {
+    pub fn o_auth_parameters(&self) -> ::std::option::Option<& crate::types::CreateConnectionOAuthRequestParameters> {
         self.o_auth_parameters.as_ref()
     }
     /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
-    pub fn api_key_auth_parameters(&self) -> ::std::option::Option<&crate::types::CreateConnectionApiKeyAuthRequestParameters> {
+    pub fn api_key_auth_parameters(&self) -> ::std::option::Option<& crate::types::CreateConnectionApiKeyAuthRequestParameters> {
         self.api_key_auth_parameters.as_ref()
     }
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
-    pub fn invocation_http_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionHttpParameters> {
+    pub fn invocation_http_parameters(&self) -> ::std::option::Option<& crate::types::ConnectionHttpParameters> {
         self.invocation_http_parameters.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateConnectionAuthRequestParametersBuilder {
     }
     /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
     pub fn set_basic_auth_parameters(mut self, input: ::std::option::Option<crate::types::CreateConnectionBasicAuthRequestParameters>) -> Self {
-        self.basic_auth_parameters = input;
-        self
+        self.basic_auth_parameters = input; self
     }
     /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
     pub fn get_basic_auth_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionBasicAuthRequestParameters> {
@@ -69,8 +68,7 @@ impl CreateConnectionAuthRequestParametersBuilder {
     }
     /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
     pub fn set_o_auth_parameters(mut self, input: ::std::option::Option<crate::types::CreateConnectionOAuthRequestParameters>) -> Self {
-        self.o_auth_parameters = input;
-        self
+        self.o_auth_parameters = input; self
     }
     /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
     pub fn get_o_auth_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionOAuthRequestParameters> {
@@ -83,8 +81,7 @@ impl CreateConnectionAuthRequestParametersBuilder {
     }
     /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
     pub fn set_api_key_auth_parameters(mut self, input: ::std::option::Option<crate::types::CreateConnectionApiKeyAuthRequestParameters>) -> Self {
-        self.api_key_auth_parameters = input;
-        self
+        self.api_key_auth_parameters = input; self
     }
     /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
     pub fn get_api_key_auth_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionApiKeyAuthRequestParameters> {
@@ -97,8 +94,7 @@ impl CreateConnectionAuthRequestParametersBuilder {
     }
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
     pub fn set_invocation_http_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionHttpParameters>) -> Self {
-        self.invocation_http_parameters = input;
-        self
+        self.invocation_http_parameters = input; self
     }
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
     pub fn get_invocation_http_parameters(&self) -> &::std::option::Option<crate::types::ConnectionHttpParameters> {
@@ -107,10 +103,15 @@ impl CreateConnectionAuthRequestParametersBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionAuthRequestParameters`](crate::types::CreateConnectionAuthRequestParameters).
     pub fn build(self) -> crate::types::CreateConnectionAuthRequestParameters {
         crate::types::CreateConnectionAuthRequestParameters {
-            basic_auth_parameters: self.basic_auth_parameters,
-            o_auth_parameters: self.o_auth_parameters,
-            api_key_auth_parameters: self.api_key_auth_parameters,
-            invocation_http_parameters: self.invocation_http_parameters,
+            basic_auth_parameters: self.basic_auth_parameters
+            ,
+            o_auth_parameters: self.o_auth_parameters
+            ,
+            api_key_auth_parameters: self.api_key_auth_parameters
+            ,
+            invocation_http_parameters: self.invocation_http_parameters
+            ,
         }
     }
 }
+

@@ -64,3 +64,4 @@ pub mod builders;
 
 /// Error types that Amazon Interactive Video Service Chat can respond with.
 pub mod error;
+

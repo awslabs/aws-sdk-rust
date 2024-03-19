@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListArchiveRules`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`analyzer_name(impl Into<String>)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::set_analyzer_name):<br>required: **true**<br><p>The name of the analyzer to retrieve rules from.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the request.</p><br>
-    /// - On success, responds with [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput) with field(s):
+                            /// - On success, responds with [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput) with field(s):
     ///   - [`archive_rules(Vec::<ArchiveRuleSummary>)`](crate::operation::list_archive_rules::ListArchiveRulesOutput::archive_rules): <p>A list of archive rules created for the specified analyzer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_archive_rules::ListArchiveRulesOutput::next_token): <p>A token used for pagination of results returned.</p>
-    /// - On failure, responds with [`SdkError<ListArchiveRulesError>`](crate::operation::list_archive_rules::ListArchiveRulesError)
+                            /// - On failure, responds with [`SdkError<ListArchiveRulesError>`](crate::operation::list_archive_rules::ListArchiveRulesError)
     pub fn list_archive_rules(&self) -> crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder {
-        crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_archive_rules::builders::ListArchiveRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

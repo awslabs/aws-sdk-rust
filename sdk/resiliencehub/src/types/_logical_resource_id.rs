@@ -3,7 +3,7 @@
 /// <p>Defines a logical resource identifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogicalResourceId {
+pub struct LogicalResourceId  {
     /// <p>Identifier of the resource.</p>
     pub identifier: ::std::string::String,
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
@@ -17,28 +17,27 @@ pub struct LogicalResourceId {
     /// </note>
     pub eks_source_name: ::std::option::Option<::std::string::String>,
 }
-impl LogicalResourceId {
+impl  LogicalResourceId  {
     /// <p>Identifier of the resource.</p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> & str {
+        use std::ops::Deref; self.identifier.deref()
     }
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
-    pub fn logical_stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn logical_stack_name(&self) -> ::std::option::Option<& str> {
         self.logical_stack_name.as_deref()
     }
     /// <p>The name of the resource group that this resource belongs to.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the Terraform S3 state file this resource belongs to.</p>
-    pub fn terraform_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn terraform_source_name(&self) -> ::std::option::Option<& str> {
         self.terraform_source_name.as_deref()
     }
     /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
-    pub fn eks_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn eks_source_name(&self) -> ::std::option::Option<& str> {
         self.eks_source_name.as_deref()
     }
 }
@@ -68,8 +67,7 @@ impl LogicalResourceIdBuilder {
     }
     /// <p>Identifier of the resource.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>Identifier of the resource.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl LogicalResourceIdBuilder {
     }
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
     pub fn set_logical_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logical_stack_name = input;
-        self
+        self.logical_stack_name = input; self
     }
     /// <p>The name of the CloudFormation stack this resource belongs to.</p>
     pub fn get_logical_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl LogicalResourceIdBuilder {
     }
     /// <p>The name of the resource group that this resource belongs to.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group that this resource belongs to.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +106,7 @@ impl LogicalResourceIdBuilder {
     }
     /// <p>The name of the Terraform S3 state file this resource belongs to.</p>
     pub fn set_terraform_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.terraform_source_name = input;
-        self
+        self.terraform_source_name = input; self
     }
     /// <p>The name of the Terraform S3 state file this resource belongs to.</p>
     pub fn get_terraform_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +123,7 @@ impl LogicalResourceIdBuilder {
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn set_eks_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eks_source_name = input;
-        self
+        self.eks_source_name = input; self
     }
     /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
@@ -141,17 +135,23 @@ impl LogicalResourceIdBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::LogicalResourceIdBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::LogicalResourceId, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LogicalResourceId {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building LogicalResourceId",
-                )
-            })?,
-            logical_stack_name: self.logical_stack_name,
-            resource_group_name: self.resource_group_name,
-            terraform_source_name: self.terraform_source_name,
-            eks_source_name: self.eks_source_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LogicalResourceId {
+                identifier: self.identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identifier", "identifier was not specified but it is required when building LogicalResourceId")
+                    )?
+                ,
+                logical_stack_name: self.logical_stack_name
+                ,
+                resource_group_name: self.resource_group_name
+                ,
+                terraform_source_name: self.terraform_source_name
+                ,
+                eks_source_name: self.eks_source_name
+                ,
+            }
+        )
     }
 }
+

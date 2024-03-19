@@ -134,3 +134,4 @@ pub use crate::types::_collaboration_summary::CollaborationSummaryBuilder;
 pub use crate::types::_analysis_template::AnalysisTemplateBuilder;
 
 pub use crate::types::_analysis_template_summary::AnalysisTemplateSummaryBuilder;
+

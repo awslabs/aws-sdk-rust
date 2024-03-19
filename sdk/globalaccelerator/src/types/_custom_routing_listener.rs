@@ -3,24 +3,25 @@
 /// <p>A complex type for a listener for a custom routing accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomRoutingListener {
+pub struct CustomRoutingListener  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
 }
-impl CustomRoutingListener {
+impl  CustomRoutingListener  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> ::std::option::Option<&str> {
+    pub fn listener_arn(&self) -> ::std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
-    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
-        self.port_ranges.as_deref().unwrap_or_default()
+    pub fn port_ranges(&self) -> & [crate::types::PortRange] {
+        self.port_ranges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomRoutingListener {
@@ -35,7 +36,7 @@ impl CustomRoutingListener {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomRoutingListenerBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
 }
 impl CustomRoutingListenerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -45,8 +46,7 @@ impl CustomRoutingListenerBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,26 +60,28 @@ impl CustomRoutingListenerBuilder {
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
     pub fn port_ranges(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.port_ranges.unwrap_or_default();
-        v.push(input);
-        self.port_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.port_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.port_ranges = input;
-        self
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>) -> Self {
+        self.port_ranges = input; self
     }
     /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortRange>> {
         &self.port_ranges
     }
     /// Consumes the builder and constructs a [`CustomRoutingListener`](crate::types::CustomRoutingListener).
     pub fn build(self) -> crate::types::CustomRoutingListener {
         crate::types::CustomRoutingListener {
-            listener_arn: self.listener_arn,
-            port_ranges: self.port_ranges,
+            listener_arn: self.listener_arn
+            ,
+            port_ranges: self.port_ranges
+            ,
         }
     }
 }
+

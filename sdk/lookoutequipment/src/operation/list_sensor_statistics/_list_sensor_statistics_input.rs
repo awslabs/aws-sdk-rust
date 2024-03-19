@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSensorStatisticsInput {
+pub struct ListSensorStatisticsInput  {
     /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
@@ -12,13 +12,13 @@ pub struct ListSensorStatisticsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListSensorStatisticsInput {
+impl  ListSensorStatisticsInput  {
     /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
-    pub fn ingestion_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn ingestion_job_id(&self) -> ::std::option::Option<& str> {
         self.ingestion_job_id.as_deref()
     }
     /// <p>Specifies the maximum number of sensors for which to retrieve statistics.</p>
@@ -26,7 +26,7 @@ impl ListSensorStatisticsInput {
         self.max_results
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListSensorStatisticsInputBuilder {
     }
     /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset associated with the list of Sensor Statistics.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListSensorStatisticsInputBuilder {
     }
     /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
     pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingestion_job_id = input;
-        self
+        self.ingestion_job_id = input; self
     }
     /// <p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p>
     pub fn get_ingestion_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListSensorStatisticsInputBuilder {
     }
     /// <p>Specifies the maximum number of sensors for which to retrieve statistics.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of sensors for which to retrieve statistics.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,23 +94,26 @@ impl ListSensorStatisticsInputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSensorStatisticsInput`](crate::operation::list_sensor_statistics::ListSensorStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_sensor_statistics::ListSensorStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_sensor_statistics::ListSensorStatisticsInput {
-            dataset_name: self.dataset_name,
-            ingestion_job_id: self.ingestion_job_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sensor_statistics::ListSensorStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_sensor_statistics::ListSensorStatisticsInput {
+                dataset_name: self.dataset_name
+                ,
+                ingestion_job_id: self.ingestion_job_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

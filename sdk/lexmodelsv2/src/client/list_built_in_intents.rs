@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBuiltInIntents`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`locale_id(impl Into<String>)`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::locale_id) / [`set_locale_id(Option<String>)`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::set_locale_id):<br>required: **true**<br><p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p><br>
     ///   - [`sort_by(BuiltInIntentSortBy)`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::sort_by) / [`set_sort_by(Option<BuiltInIntentSortBy>)`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p><br>
-    /// - On success, responds with [`ListBuiltInIntentsOutput`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput) with field(s):
+                            /// - On success, responds with [`ListBuiltInIntentsOutput`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput) with field(s):
     ///   - [`built_in_intent_summaries(Option<Vec::<BuiltInIntentSummary>>)`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput::built_in_intent_summaries): <p>Summary information for the built-in intents that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more intents available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_built_in_intents::ListBuiltInIntentsOutput::locale_id): <p>The language and locale of the intents in the list.</p>
-    /// - On failure, responds with [`SdkError<ListBuiltInIntentsError>`](crate::operation::list_built_in_intents::ListBuiltInIntentsError)
+                            /// - On failure, responds with [`SdkError<ListBuiltInIntentsError>`](crate::operation::list_built_in_intents::ListBuiltInIntentsError)
     pub fn list_built_in_intents(&self) -> crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder {
-        crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_built_in_intents::builders::ListBuiltInIntentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

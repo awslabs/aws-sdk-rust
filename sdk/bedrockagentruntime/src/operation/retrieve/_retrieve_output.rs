@@ -2,25 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrieveOutput {
+pub struct RetrieveOutput  {
     /// <p>A list of results from querying the knowledge base.</p>
-    pub retrieval_results: ::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>,
+    pub retrieval_results: ::std::vec::Vec::<crate::types::KnowledgeBaseRetrievalResult>,
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RetrieveOutput {
+impl  RetrieveOutput  {
     /// <p>A list of results from querying the knowledge base.</p>
-    pub fn retrieval_results(&self) -> &[crate::types::KnowledgeBaseRetrievalResult] {
-        use std::ops::Deref;
-        self.retrieval_results.deref()
+    pub fn retrieval_results(&self) -> & [crate::types::KnowledgeBaseRetrievalResult] {
+        use std::ops::Deref; self.retrieval_results.deref()
     }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for RetrieveOutput {
+impl  ::std::fmt::Debug for RetrieveOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveOutput");
         formatter.field("retrieval_results", &"*** Sensitive Data Redacted ***");
@@ -30,10 +29,10 @@ impl ::std::fmt::Debug for RetrieveOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for RetrieveOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RetrieveOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput).
     pub fn builder() -> crate::operation::retrieve::builders::RetrieveOutputBuilder {
@@ -45,7 +44,7 @@ impl RetrieveOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RetrieveOutputBuilder {
-    pub(crate) retrieval_results: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>>,
+    pub(crate) retrieval_results: ::std::option::Option<::std::vec::Vec::<crate::types::KnowledgeBaseRetrievalResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +56,16 @@ impl RetrieveOutputBuilder {
     /// <p>A list of results from querying the knowledge base.</p>
     pub fn retrieval_results(mut self, input: crate::types::KnowledgeBaseRetrievalResult) -> Self {
         let mut v = self.retrieval_results.unwrap_or_default();
-        v.push(input);
-        self.retrieval_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.retrieval_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of results from querying the knowledge base.</p>
-    pub fn set_retrieval_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>>) -> Self {
-        self.retrieval_results = input;
-        self
+    pub fn set_retrieval_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KnowledgeBaseRetrievalResult>>) -> Self {
+        self.retrieval_results = input; self
     }
     /// <p>A list of results from querying the knowledge base.</p>
-    pub fn get_retrieval_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>> {
+    pub fn get_retrieval_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KnowledgeBaseRetrievalResult>> {
         &self.retrieval_results
     }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
@@ -77,36 +75,37 @@ impl RetrieveOutputBuilder {
     }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`retrieval_results`](crate::operation::retrieve::builders::RetrieveOutputBuilder::retrieval_results)
     pub fn build(self) -> ::std::result::Result<crate::operation::retrieve::RetrieveOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::retrieve::RetrieveOutput {
-            retrieval_results: self.retrieval_results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "retrieval_results",
-                    "retrieval_results was not specified but it is required when building RetrieveOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::retrieve::RetrieveOutput {
+                retrieval_results: self.retrieval_results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("retrieval_results", "retrieval_results was not specified but it is required when building RetrieveOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RetrieveOutputBuilder {
@@ -118,3 +117,4 @@ impl ::std::fmt::Debug for RetrieveOutputBuilder {
         formatter.finish()
     }
 }
+

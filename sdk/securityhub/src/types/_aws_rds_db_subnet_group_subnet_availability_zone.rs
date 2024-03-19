@@ -3,13 +3,13 @@
 /// <p>An Availability Zone for a subnet in a subnet group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbSubnetGroupSubnetAvailabilityZone {
+pub struct AwsRdsDbSubnetGroupSubnetAvailabilityZone  {
     /// <p>The name of the Availability Zone for a subnet in the subnet group.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl AwsRdsDbSubnetGroupSubnetAvailabilityZone {
+impl  AwsRdsDbSubnetGroupSubnetAvailabilityZone  {
     /// <p>The name of the Availability Zone for a subnet in the subnet group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsRdsDbSubnetGroupSubnetAvailabilityZoneBuilder {
     }
     /// <p>The name of the Availability Zone for a subnet in the subnet group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Availability Zone for a subnet in the subnet group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsRdsDbSubnetGroupSubnetAvailabilityZoneBuilder {
     }
     /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
     pub fn build(self) -> crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone {
-        crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone { name: self.name }
+        crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone {
+            name: self.name
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnnotationStoreVersionInput {
+pub struct UpdateAnnotationStoreVersionInput  {
     /// <p>The name of an annotation store.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an annotation store version.</p>
@@ -10,17 +10,17 @@ pub struct UpdateAnnotationStoreVersionInput {
     /// <p>The description of an annotation store.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAnnotationStoreVersionInput {
+impl  UpdateAnnotationStoreVersionInput  {
     /// <p>The name of an annotation store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of an annotation store version.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The description of an annotation store.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateAnnotationStoreVersionInputBuilder {
     }
     /// <p>The name of an annotation store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an annotation store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateAnnotationStoreVersionInputBuilder {
     }
     /// <p>The name of an annotation store version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The name of an annotation store version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdateAnnotationStoreVersionInputBuilder {
     }
     /// <p>The description of an annotation store.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of an annotation store.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateAnnotationStoreVersionInput`](crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionInput {
-            name: self.name,
-            version_name: self.version_name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionInput {
+                name: self.name
+                ,
+                version_name: self.version_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

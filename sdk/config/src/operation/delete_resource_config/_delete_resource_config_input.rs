@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourceConfigInput {
+pub struct DeleteResourceConfigInput  {
     /// <p>The type of the resource.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourceConfigInput {
+impl  DeleteResourceConfigInput  {
     /// <p>The type of the resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>Unique identifier of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteResourceConfigInputBuilder {
     }
     /// <p>The type of the resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteResourceConfigInputBuilder {
     }
     /// <p>Unique identifier of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Unique identifier of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`DeleteResourceConfigInput`](crate::operation::delete_resource_config::DeleteResourceConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_config::DeleteResourceConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_resource_config::DeleteResourceConfigInput {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource_config::DeleteResourceConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resource_config::DeleteResourceConfigInput {
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

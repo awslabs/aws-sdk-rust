@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RevokeTokenInput {
+pub struct RevokeTokenInput  {
     /// <p>The refresh token that you want to revoke.</p>
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The client ID for the token that you want to revoke.</p>
@@ -10,21 +10,21 @@ pub struct RevokeTokenInput {
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
     pub client_secret: ::std::option::Option<::std::string::String>,
 }
-impl RevokeTokenInput {
+impl  RevokeTokenInput  {
     /// <p>The refresh token that you want to revoke.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>The client ID for the token that you want to revoke.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<& str> {
         self.client_secret.as_deref()
     }
 }
-impl ::std::fmt::Debug for RevokeTokenInput {
+impl  ::std::fmt::Debug for RevokeTokenInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RevokeTokenInput");
         formatter.field("token", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl RevokeTokenInputBuilder {
     }
     /// <p>The refresh token that you want to revoke.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>The refresh token that you want to revoke.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl RevokeTokenInputBuilder {
     }
     /// <p>The client ID for the token that you want to revoke.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The client ID for the token that you want to revoke.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl RevokeTokenInputBuilder {
     }
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
     pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_secret = input;
-        self
+        self.client_secret = input; self
     }
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,11 +92,16 @@ impl RevokeTokenInputBuilder {
     }
     /// Consumes the builder and constructs a [`RevokeTokenInput`](crate::operation::revoke_token::RevokeTokenInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::revoke_token::RevokeTokenInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::revoke_token::RevokeTokenInput {
-            token: self.token,
-            client_id: self.client_id,
-            client_secret: self.client_secret,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::revoke_token::RevokeTokenInput {
+                token: self.token
+                ,
+                client_id: self.client_id
+                ,
+                client_secret: self.client_secret
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RevokeTokenInputBuilder {
@@ -111,3 +113,4 @@ impl ::std::fmt::Debug for RevokeTokenInputBuilder {
         formatter.finish()
     }
 }
+

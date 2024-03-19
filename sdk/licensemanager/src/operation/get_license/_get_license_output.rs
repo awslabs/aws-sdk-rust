@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLicenseOutput {
+pub struct GetLicenseOutput  {
     /// <p>License details.</p>
     pub license: ::std::option::Option<crate::types::License>,
     _request_id: Option<String>,
 }
-impl GetLicenseOutput {
+impl  GetLicenseOutput  {
     /// <p>License details.</p>
-    pub fn license(&self) -> ::std::option::Option<&crate::types::License> {
+    pub fn license(&self) -> ::std::option::Option<& crate::types::License> {
         self.license.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLicenseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLicenseOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseOutput`](crate::operation::get_license::GetLicenseOutput).
     pub fn builder() -> crate::operation::get_license::builders::GetLicenseOutputBuilder {
@@ -40,27 +40,28 @@ impl GetLicenseOutputBuilder {
     }
     /// <p>License details.</p>
     pub fn set_license(mut self, input: ::std::option::Option<crate::types::License>) -> Self {
-        self.license = input;
-        self
+        self.license = input; self
     }
     /// <p>License details.</p>
     pub fn get_license(&self) -> &::std::option::Option<crate::types::License> {
         &self.license
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLicenseOutput`](crate::operation::get_license::GetLicenseOutput).
     pub fn build(self) -> crate::operation::get_license::GetLicenseOutput {
         crate::operation::get_license::GetLicenseOutput {
-            license: self.license,
+            license: self.license
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The request would cause a service limit to exceed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceLimitExceededException {
+pub struct ServiceLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
     /// <p>Identifier of the resource affected.</p>
@@ -16,36 +16,32 @@ pub struct ServiceLimitExceededException {
     pub service_code: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ServiceLimitExceededException {
+impl  ServiceLimitExceededException  {
     /// <p>Identifier of the resource affected.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Type of the resource affected.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The unique code identifier of the service limit that is being exceeded.</p>
-    pub fn limit_code(&self) -> &str {
-        use std::ops::Deref;
-        self.limit_code.deref()
+    pub fn limit_code(&self) -> & str {
+        use std::ops::Deref; self.limit_code.deref()
     }
     /// <p>The unique code for the service of the limit that is being exceeded.</p>
-    pub fn service_code(&self) -> &str {
-        use std::ops::Deref;
-        self.service_code.deref()
+    pub fn service_code(&self) -> & str {
+        use std::ops::Deref; self.service_code.deref()
     }
 }
 impl ServiceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for ServiceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceLimitExceededException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -59,9 +55,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ServiceLimitExc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceLimitExceededException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ServiceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceLimitExceededException`](crate::types::error::ServiceLimitExceededException).
@@ -90,8 +84,7 @@ impl ServiceLimitExceededExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +97,7 @@ impl ServiceLimitExceededExceptionBuilder {
     }
     /// <p>Identifier of the resource affected.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Identifier of the resource affected.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +110,7 @@ impl ServiceLimitExceededExceptionBuilder {
     }
     /// <p>Type of the resource affected.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Type of the resource affected.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +124,7 @@ impl ServiceLimitExceededExceptionBuilder {
     }
     /// <p>The unique code identifier of the service limit that is being exceeded.</p>
     pub fn set_limit_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.limit_code = input;
-        self
+        self.limit_code = input; self
     }
     /// <p>The unique code identifier of the service limit that is being exceeded.</p>
     pub fn get_limit_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,54 +138,53 @@ impl ServiceLimitExceededExceptionBuilder {
     }
     /// <p>The unique code for the service of the limit that is being exceeded.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>The unique code for the service of the limit that is being exceeded.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ServiceLimitExceededException`](crate::types::error::ServiceLimitExceededException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ServiceLimitExceededExceptionBuilder::message)
     /// - [`limit_code`](crate::types::error::builders::ServiceLimitExceededExceptionBuilder::limit_code)
     /// - [`service_code`](crate::types::error::builders::ServiceLimitExceededExceptionBuilder::service_code)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::error::ServiceLimitExceededException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::ServiceLimitExceededException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ServiceLimitExceededException",
-                )
-            })?,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            limit_code: self.limit_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "limit_code",
-                    "limit_code was not specified but it is required when building ServiceLimitExceededException",
-                )
-            })?,
-            service_code: self.service_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_code",
-                    "service_code was not specified but it is required when building ServiceLimitExceededException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ServiceLimitExceededException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::error::ServiceLimitExceededException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ServiceLimitExceededException")
+                    )?
+                ,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
+                limit_code: self.limit_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("limit_code", "limit_code was not specified but it is required when building ServiceLimitExceededException")
+                    )?
+                ,
+                service_code: self.service_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_code", "service_code was not specified but it is required when building ServiceLimitExceededException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

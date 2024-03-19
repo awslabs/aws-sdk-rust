@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelMaintenanceWindowExecutionInput {
+pub struct CancelMaintenanceWindowExecutionInput  {
     /// <p>The ID of the maintenance window execution to stop.</p>
     pub window_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelMaintenanceWindowExecutionInput {
+impl  CancelMaintenanceWindowExecutionInput  {
     /// <p>The ID of the maintenance window execution to stop.</p>
-    pub fn window_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> ::std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl CancelMaintenanceWindowExecutionInputBuilder {
     }
     /// <p>The ID of the maintenance window execution to stop.</p>
     pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_execution_id = input;
-        self
+        self.window_execution_id = input; self
     }
     /// <p>The ID of the maintenance window execution to stop.</p>
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.window_execution_id
     }
     /// Consumes the builder and constructs a [`CancelMaintenanceWindowExecutionInput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput {
-                window_execution_id: self.window_execution_id,
-            },
+                window_execution_id: self.window_execution_id
+                ,
+            }
         )
     }
 }
+

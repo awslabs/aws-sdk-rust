@@ -3,7 +3,7 @@
 /// <p>A structure that describes an application to which a principal is assigned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationAssignmentForPrincipal {
+pub struct ApplicationAssignmentForPrincipal  {
     /// <p>The ARN of the application to which the specified principal is assigned.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the principal assigned to the application.</p>
@@ -11,17 +11,17 @@ pub struct ApplicationAssignmentForPrincipal {
     /// <p>The type of the principal assigned to the application.</p>
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
-impl ApplicationAssignmentForPrincipal {
+impl  ApplicationAssignmentForPrincipal  {
     /// <p>The ARN of the application to which the specified principal is assigned.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The unique identifier of the principal assigned to the application.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The type of the principal assigned to the application.</p>
-    pub fn principal_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> ::std::option::Option<& crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ApplicationAssignmentForPrincipalBuilder {
     }
     /// <p>The ARN of the application to which the specified principal is assigned.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The ARN of the application to which the specified principal is assigned.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ApplicationAssignmentForPrincipalBuilder {
     }
     /// <p>The unique identifier of the principal assigned to the application.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The unique identifier of the principal assigned to the application.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ApplicationAssignmentForPrincipalBuilder {
     }
     /// <p>The type of the principal assigned to the application.</p>
     pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.principal_type = input;
-        self
+        self.principal_type = input; self
     }
     /// <p>The type of the principal assigned to the application.</p>
     pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
@@ -86,9 +83,13 @@ impl ApplicationAssignmentForPrincipalBuilder {
     /// Consumes the builder and constructs a [`ApplicationAssignmentForPrincipal`](crate::types::ApplicationAssignmentForPrincipal).
     pub fn build(self) -> crate::types::ApplicationAssignmentForPrincipal {
         crate::types::ApplicationAssignmentForPrincipal {
-            application_arn: self.application_arn,
-            principal_id: self.principal_id,
-            principal_type: self.principal_type,
+            application_arn: self.application_arn
+            ,
+            principal_id: self.principal_id
+            ,
+            principal_type: self.principal_type
+            ,
         }
     }
 }
+

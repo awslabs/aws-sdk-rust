@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClientVpnEndpointInput {
+pub struct ModifyClientVpnEndpointInput  {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the server certificate to be used. The server certificate must be provisioned in Certificate Manager (ACM).</p>
@@ -34,7 +34,7 @@ pub struct ModifyClientVpnEndpointInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of one or more security groups to apply to the target network.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
@@ -48,13 +48,13 @@ pub struct ModifyClientVpnEndpointInput {
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerOptions>,
 }
-impl ModifyClientVpnEndpointInput {
+impl  ModifyClientVpnEndpointInput  {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The ARN of the server certificate to be used. The server certificate must be provisioned in Certificate Manager (ACM).</p>
-    pub fn server_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn server_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.server_certificate_arn.as_deref()
     }
     /// <p>Information about the client connection logging options.</p>
@@ -69,11 +69,11 @@ impl ModifyClientVpnEndpointInput {
     /// <li>
     /// <p>Client connection termination time</p></li>
     /// </ul>
-    pub fn connection_log_options(&self) -> ::std::option::Option<&crate::types::ConnectionLogOptions> {
+    pub fn connection_log_options(&self) -> ::std::option::Option<& crate::types::ConnectionLogOptions> {
         self.connection_log_options.as_ref()
     }
     /// <p>Information about the DNS servers to be used by Client VPN connections. A Client VPN endpoint can have up to two DNS servers.</p>
-    pub fn dns_servers(&self) -> ::std::option::Option<&crate::types::DnsServersOptionsModifyStructure> {
+    pub fn dns_servers(&self) -> ::std::option::Option<& crate::types::DnsServersOptionsModifyStructure> {
         self.dns_servers.as_ref()
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
@@ -83,7 +83,7 @@ impl ModifyClientVpnEndpointInput {
         self.vpn_port
     }
     /// <p>A brief description of the Client VPN endpoint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the VPN is split-tunnel.</p>
@@ -96,21 +96,22 @@ impl ModifyClientVpnEndpointInput {
         self.dry_run
     }
     /// <p>The IDs of one or more security groups to apply to the target network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    pub fn self_service_portal(&self) -> ::std::option::Option<&crate::types::SelfServicePortal> {
+    pub fn self_service_portal(&self) -> ::std::option::Option<& crate::types::SelfServicePortal> {
         self.self_service_portal.as_ref()
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
-    pub fn client_connect_options(&self) -> ::std::option::Option<&crate::types::ClientConnectOptions> {
+    pub fn client_connect_options(&self) -> ::std::option::Option<& crate::types::ClientConnectOptions> {
         self.client_connect_options.as_ref()
     }
     /// <p>The maximum VPN session duration time in hours.</p>
@@ -120,7 +121,7 @@ impl ModifyClientVpnEndpointInput {
         self.session_timeout_hours
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
-    pub fn client_login_banner_options(&self) -> ::std::option::Option<&crate::types::ClientLoginBannerOptions> {
+    pub fn client_login_banner_options(&self) -> ::std::option::Option<& crate::types::ClientLoginBannerOptions> {
         self.client_login_banner_options.as_ref()
     }
 }
@@ -143,7 +144,7 @@ pub struct ModifyClientVpnEndpointInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) split_tunnel: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) self_service_portal: ::std::option::Option<crate::types::SelfServicePortal>,
     pub(crate) client_connect_options: ::std::option::Option<crate::types::ClientConnectOptions>,
@@ -159,8 +160,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>The ID of the Client VPN endpoint to modify.</p>
     pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+        self.client_vpn_endpoint_id = input; self
     }
     /// <p>The ID of the Client VPN endpoint to modify.</p>
     pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +173,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>The ARN of the server certificate to be used. The server certificate must be provisioned in Certificate Manager (ACM).</p>
     pub fn set_server_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_certificate_arn = input;
-        self
+        self.server_certificate_arn = input; self
     }
     /// <p>The ARN of the server certificate to be used. The server certificate must be provisioned in Certificate Manager (ACM).</p>
     pub fn get_server_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +208,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     /// <p>Client connection termination time</p></li>
     /// </ul>
     pub fn set_connection_log_options(mut self, input: ::std::option::Option<crate::types::ConnectionLogOptions>) -> Self {
-        self.connection_log_options = input;
-        self
+        self.connection_log_options = input; self
     }
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
@@ -234,8 +232,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>Information about the DNS servers to be used by Client VPN connections. A Client VPN endpoint can have up to two DNS servers.</p>
     pub fn set_dns_servers(mut self, input: ::std::option::Option<crate::types::DnsServersOptionsModifyStructure>) -> Self {
-        self.dns_servers = input;
-        self
+        self.dns_servers = input; self
     }
     /// <p>Information about the DNS servers to be used by Client VPN connections. A Client VPN endpoint can have up to two DNS servers.</p>
     pub fn get_dns_servers(&self) -> &::std::option::Option<crate::types::DnsServersOptionsModifyStructure> {
@@ -252,8 +249,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
     /// <p>Default Value: <code>443</code></p>
     pub fn set_vpn_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vpn_port = input;
-        self
+        self.vpn_port = input; self
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
     /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
@@ -268,8 +264,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>A brief description of the Client VPN endpoint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the Client VPN endpoint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,8 +279,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     /// <p>Indicates whether the VPN is split-tunnel.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
     pub fn set_split_tunnel(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.split_tunnel = input;
-        self
+        self.split_tunnel = input; self
     }
     /// <p>Indicates whether the VPN is split-tunnel.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
@@ -299,8 +293,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -313,17 +306,16 @@ impl ModifyClientVpnEndpointInputBuilder {
     /// <p>The IDs of one or more security groups to apply to the target network.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of one or more security groups to apply to the target network.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The IDs of one or more security groups to apply to the target network.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
@@ -333,8 +325,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -347,8 +338,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
     pub fn set_self_service_portal(mut self, input: ::std::option::Option<crate::types::SelfServicePortal>) -> Self {
-        self.self_service_portal = input;
-        self
+        self.self_service_portal = input; self
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
     pub fn get_self_service_portal(&self) -> &::std::option::Option<crate::types::SelfServicePortal> {
@@ -361,8 +351,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
     pub fn set_client_connect_options(mut self, input: ::std::option::Option<crate::types::ClientConnectOptions>) -> Self {
-        self.client_connect_options = input;
-        self
+        self.client_connect_options = input; self
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
     pub fn get_client_connect_options(&self) -> &::std::option::Option<crate::types::ClientConnectOptions> {
@@ -379,8 +368,7 @@ impl ModifyClientVpnEndpointInputBuilder {
     /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
     /// <p>Default value: <code>24</code></p>
     pub fn set_session_timeout_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_timeout_hours = input;
-        self
+        self.session_timeout_hours = input; self
     }
     /// <p>The maximum VPN session duration time in hours.</p>
     /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
@@ -395,35 +383,46 @@ impl ModifyClientVpnEndpointInputBuilder {
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub fn set_client_login_banner_options(mut self, input: ::std::option::Option<crate::types::ClientLoginBannerOptions>) -> Self {
-        self.client_login_banner_options = input;
-        self
+        self.client_login_banner_options = input; self
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     pub fn get_client_login_banner_options(&self) -> &::std::option::Option<crate::types::ClientLoginBannerOptions> {
         &self.client_login_banner_options
     }
     /// Consumes the builder and constructs a [`ModifyClientVpnEndpointInput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            server_certificate_arn: self.server_certificate_arn,
-            connection_log_options: self.connection_log_options,
-            dns_servers: self.dns_servers,
-            vpn_port: self.vpn_port,
-            description: self.description,
-            split_tunnel: self.split_tunnel,
-            dry_run: self.dry_run,
-            security_group_ids: self.security_group_ids,
-            vpc_id: self.vpc_id,
-            self_service_portal: self.self_service_portal,
-            client_connect_options: self.client_connect_options,
-            session_timeout_hours: self.session_timeout_hours,
-            client_login_banner_options: self.client_login_banner_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput {
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id
+                ,
+                server_certificate_arn: self.server_certificate_arn
+                ,
+                connection_log_options: self.connection_log_options
+                ,
+                dns_servers: self.dns_servers
+                ,
+                vpn_port: self.vpn_port
+                ,
+                description: self.description
+                ,
+                split_tunnel: self.split_tunnel
+                ,
+                dry_run: self.dry_run
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                vpc_id: self.vpc_id
+                ,
+                self_service_portal: self.self_service_portal
+                ,
+                client_connect_options: self.client_connect_options
+                ,
+                session_timeout_hours: self.session_timeout_hours
+                ,
+                client_login_banner_options: self.client_login_banner_options
+                ,
+            }
+        )
     }
 }
+

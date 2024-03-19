@@ -3,7 +3,7 @@
 /// <p>A structure that contains input information for a canary run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CanaryRunConfigInput {
+pub struct CanaryRunConfigInput  {
     /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
     /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
     pub timeout_in_seconds: ::std::option::Option<i32>,
@@ -17,9 +17,9 @@ pub struct CanaryRunConfigInput {
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CanaryRunConfigInput {
+impl  CanaryRunConfigInput  {
     /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
     /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
     pub fn timeout_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -39,7 +39,7 @@ impl CanaryRunConfigInput {
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
 }
@@ -57,7 +57,7 @@ pub struct CanaryRunConfigInputBuilder {
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) memory_in_mb: ::std::option::Option<i32>,
     pub(crate) active_tracing: ::std::option::Option<bool>,
-    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CanaryRunConfigInputBuilder {
     /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
@@ -69,8 +69,7 @@ impl CanaryRunConfigInputBuilder {
     /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
     /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
     }
     /// <p>How long the canary is allowed to run before it must stop. You can't set this time to be longer than the frequency of the runs of this canary.</p>
     /// <p>If you omit this field, the frequency of the canary is used as this value, up to a maximum of 14 minutes.</p>
@@ -84,8 +83,7 @@ impl CanaryRunConfigInputBuilder {
     }
     /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
     pub fn set_memory_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_in_mb = input;
-        self
+        self.memory_in_mb = input; self
     }
     /// <p>The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of 64.</p>
     pub fn get_memory_in_mb(&self) -> &::std::option::Option<i32> {
@@ -100,8 +98,7 @@ impl CanaryRunConfigInputBuilder {
     /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p>
     /// <p>You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code> or later for their canary runtime.</p>
     pub fn set_active_tracing(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active_tracing = input;
-        self
+        self.active_tracing = input; self
     }
     /// <p>Specifies whether this canary is to use active X-Ray tracing when it runs. Active tracing enables this canary run to be displayed in the ServiceLens and X-Ray service maps even if the canary does not hit an endpoint that has X-Ray tracing enabled. Using X-Ray tracing incurs charges. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_tracing.html"> Canaries and X-Ray tracing</a>.</p>
     /// <p>You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code> or later for their canary runtime.</p>
@@ -117,43 +114,40 @@ impl CanaryRunConfigInputBuilder {
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    pub fn environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    pub fn set_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment_variables = input;
-        self
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment_variables = input; self
     }
     /// <p>Specifies the keys and values to use for any environment variables used in the canary script. Use the following format:</p>
     /// <p>{ "key1" : "value1", "key2" : "value2", ...}</p>
     /// <p>Keys must start with a letter and be at least two characters. The total size of your environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment variables as the keys for your environment variables. For more information about reserved keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime"> Runtime environment variables</a>.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
-    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     /// Consumes the builder and constructs a [`CanaryRunConfigInput`](crate::types::CanaryRunConfigInput).
     pub fn build(self) -> crate::types::CanaryRunConfigInput {
         crate::types::CanaryRunConfigInput {
-            timeout_in_seconds: self.timeout_in_seconds,
-            memory_in_mb: self.memory_in_mb,
-            active_tracing: self.active_tracing,
-            environment_variables: self.environment_variables,
+            timeout_in_seconds: self.timeout_in_seconds
+            ,
+            memory_in_mb: self.memory_in_mb
+            ,
+            active_tracing: self.active_tracing
+            ,
+            environment_variables: self.environment_variables
+            ,
         }
     }
 }
+

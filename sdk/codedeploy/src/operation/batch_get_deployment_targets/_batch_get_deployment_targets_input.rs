@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDeploymentTargetsInput {
+pub struct BatchGetDeploymentTargetsInput  {
     /// <p>The unique ID of a deployment.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
@@ -19,11 +19,11 @@ pub struct BatchGetDeploymentTargetsInput {
     /// <li>
     /// <p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
-    pub target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetDeploymentTargetsInput {
+impl  BatchGetDeploymentTargetsInput  {
     /// <p>The unique ID of a deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
@@ -40,10 +40,11 @@ impl BatchGetDeploymentTargetsInput {
     /// <li>
     /// <p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ids.is_none()`.
-    pub fn target_ids(&self) -> &[::std::string::String] {
-        self.target_ids.as_deref().unwrap_or_default()
+    pub fn target_ids(&self) -> & [::std::string::String] {
+        self.target_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetDeploymentTargetsInput {
@@ -58,7 +59,7 @@ impl BatchGetDeploymentTargetsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetDeploymentTargetsInputBuilder {
     /// <p>The unique ID of a deployment.</p>
@@ -69,8 +70,7 @@ impl BatchGetDeploymentTargetsInputBuilder {
     }
     /// <p>The unique ID of a deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The unique ID of a deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,9 +96,9 @@ impl BatchGetDeploymentTargetsInputBuilder {
     /// </ul>
     pub fn target_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_ids.unwrap_or_default();
-        v.push(input.into());
-        self.target_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
@@ -114,9 +114,8 @@ impl BatchGetDeploymentTargetsInputBuilder {
     /// <li>
     /// <p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
-    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_ids = input;
-        self
+    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_ids = input; self
     }
     /// <p>The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
@@ -132,19 +131,19 @@ impl BatchGetDeploymentTargetsInputBuilder {
     /// <li>
     /// <p>For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>.</p></li>
     /// </ul>
-    pub fn get_target_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_ids
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentTargetsInput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput {
-            deployment_id: self.deployment_id,
-            target_ids: self.target_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput {
+                deployment_id: self.deployment_id
+                ,
+                target_ids: self.target_ids
+                ,
+            }
+        )
     }
 }
+

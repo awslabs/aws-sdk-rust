@@ -2,38 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIntentStageMetricsOutput {
+pub struct ListIntentStageMetricsOutput  {
     /// <p>The identifier for the bot for which you retrieved intent stage metrics.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The results for the intent stage metrics.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>>,
+    pub results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsIntentStageResult>>,
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListIntentStageMetricsOutput {
+impl  ListIntentStageMetricsOutput  {
     /// <p>The identifier for the bot for which you retrieved intent stage metrics.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The results for the intent stage metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
-    pub fn results(&self) -> &[crate::types::AnalyticsIntentStageResult] {
-        self.results.as_deref().unwrap_or_default()
+    pub fn results(&self) -> & [crate::types::AnalyticsIntentStageResult] {
+        self.results.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIntentStageMetricsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIntentStageMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntentStageMetricsOutput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput).
     pub fn builder() -> crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsOutputBuilder {
@@ -46,7 +47,7 @@ impl ListIntentStageMetricsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntentStageMetricsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsIntentStageResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,8 +59,7 @@ impl ListIntentStageMetricsOutputBuilder {
     }
     /// <p>The identifier for the bot for which you retrieved intent stage metrics.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier for the bot for which you retrieved intent stage metrics.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,17 +72,16 @@ impl ListIntentStageMetricsOutputBuilder {
     /// <p>The results for the intent stage metrics.</p>
     pub fn results(mut self, input: crate::types::AnalyticsIntentStageResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The results for the intent stage metrics.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsIntentStageResult>>) -> Self {
+        self.results = input; self
     }
     /// <p>The results for the intent stage metrics.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsIntentStageResult>> {
         &self.results
     }
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
@@ -94,8 +93,7 @@ impl ListIntentStageMetricsOutputBuilder {
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
@@ -103,21 +101,25 @@ impl ListIntentStageMetricsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIntentStageMetricsOutput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput).
     pub fn build(self) -> crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput {
         crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput {
-            bot_id: self.bot_id,
-            results: self.results,
-            next_token: self.next_token,
+            bot_id: self.bot_id
+            ,
+            results: self.results
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

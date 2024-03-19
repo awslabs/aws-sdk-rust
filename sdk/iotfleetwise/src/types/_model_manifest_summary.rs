@@ -3,7 +3,7 @@
 /// <p>Information about a vehicle model (model manifest). You can use the API operation to return this information about multiple vehicle models.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelManifestSummary {
+pub struct ModelManifestSummary  {
     /// <p>The name of the vehicle model.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
@@ -19,33 +19,33 @@ pub struct ModelManifestSummary {
     /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
 }
-impl ModelManifestSummary {
+impl  ModelManifestSummary  {
     /// <p>The name of the vehicle model.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
-    pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
+    pub fn signal_catalog_arn(&self) -> ::std::option::Option<& str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>A brief description of the vehicle model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ManifestStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ManifestStatus> {
         self.status.as_ref()
     }
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modification_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
 }
@@ -76,8 +76,7 @@ impl ModelManifestSummaryBuilder {
     }
     /// <p>The name of the vehicle model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the vehicle model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ModelManifestSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ModelManifestSummaryBuilder {
     }
     /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signal_catalog_arn = input;
-        self
+        self.signal_catalog_arn = input; self
     }
     /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ModelManifestSummaryBuilder {
     }
     /// <p>A brief description of the vehicle model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the vehicle model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ModelManifestSummaryBuilder {
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManifestStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManifestStatus> {
@@ -147,8 +142,7 @@ impl ModelManifestSummaryBuilder {
     }
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,8 +156,7 @@ impl ModelManifestSummaryBuilder {
     }
     /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,24 +167,30 @@ impl ModelManifestSummaryBuilder {
     /// - [`creation_time`](crate::types::builders::ModelManifestSummaryBuilder::creation_time)
     /// - [`last_modification_time`](crate::types::builders::ModelManifestSummaryBuilder::last_modification_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ModelManifestSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ModelManifestSummary {
-            name: self.name,
-            arn: self.arn,
-            signal_catalog_arn: self.signal_catalog_arn,
-            description: self.description,
-            status: self.status,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ModelManifestSummary",
-                )
-            })?,
-            last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modification_time",
-                    "last_modification_time was not specified but it is required when building ModelManifestSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ModelManifestSummary {
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                signal_catalog_arn: self.signal_catalog_arn
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ModelManifestSummary")
+                    )?
+                ,
+                last_modification_time: self.last_modification_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modification_time", "last_modification_time was not specified but it is required when building ModelManifestSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

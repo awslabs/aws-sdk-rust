@@ -5,23 +5,20 @@ pub use crate::operation::create_layer::_create_layer_input::CreateLayerInputBui
 
 impl CreateLayerInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_layer::CreateLayerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_layer::CreateLayerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_layer();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_layer::CreateLayerOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_layer::CreateLayerError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_layer();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateLayer`.
-///
+/// 
 /// <p>Creates a layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to Create a Layer</a>.</p><note>
 /// <p>You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so you can call <b>CreateLayer</b> as many times as you like for that layer type.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl CreateLayerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLayerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_layer::builders::CreateLayerInputBuilder,
+                    inner: crate::operation::create_layer::builders::CreateLayerInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_layer::CreateLayerOutput,
-        crate::operation::create_layer::CreateLayerError,
-    > for CreateLayerFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_layer::CreateLayerOutput,
-            crate::operation::create_layer::CreateLayerError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_layer::CreateLayerOutput,
+                    crate::operation::create_layer::CreateLayerError,
+                > for CreateLayerFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_layer::CreateLayerOutput,
+                        crate::operation::create_layer::CreateLayerError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateLayerFluentBuilder {
     /// Creates a new `CreateLayer`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl CreateLayerFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_layer::CreateLayerOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_layer::CreateLayerError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_layer::CreateLayer::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_layer::CreateLayer::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_layer::CreateLayerOutput,
-        crate::operation::create_layer::CreateLayerError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_layer::CreateLayerOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_layer::CreateLayerError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_layer::CreateLayer::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_layer::CreateLayer::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_layer::CreateLayerOutput, crate::operation::create_layer::CreateLayerError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The layer stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -182,16 +169,13 @@ impl CreateLayerFluentBuilder {
     }
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::LayerAttributesKeys, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::LayerAttributesKeys, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
@@ -246,12 +230,12 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn set_custom_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_custom_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_custom_security_group_ids(input);
         self
     }
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn get_custom_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_custom_security_group_ids()
     }
     /// Appends an item to `Packages`.
@@ -264,12 +248,12 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
-    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_packages(input);
         self
     }
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
-    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_packages()
     }
     /// Appends an item to `VolumeConfigurations`.
@@ -282,12 +266,12 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>) -> Self {
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeConfiguration>>) -> Self {
         self.inner = self.inner.set_volume_configurations(input);
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VolumeConfiguration>> {
         self.inner.get_volume_configurations()
     }
     /// <p>Whether to disable auto healing for the layer.</p>
@@ -395,3 +379,4 @@ impl CreateLayerFluentBuilder {
         self.inner.get_lifecycle_event_configuration()
     }
 }
+

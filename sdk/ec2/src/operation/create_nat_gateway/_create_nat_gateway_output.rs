@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNatGatewayOutput {
+pub struct CreateNatGatewayOutput  {
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the NAT gateway.</p>
     pub nat_gateway: ::std::option::Option<crate::types::NatGateway>,
     _request_id: Option<String>,
 }
-impl CreateNatGatewayOutput {
+impl  CreateNatGatewayOutput  {
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Information about the NAT gateway.</p>
-    pub fn nat_gateway(&self) -> ::std::option::Option<&crate::types::NatGateway> {
+    pub fn nat_gateway(&self) -> ::std::option::Option<& crate::types::NatGateway> {
         self.nat_gateway.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateNatGatewayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateNatGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateNatGatewayOutput`](crate::operation::create_nat_gateway::CreateNatGatewayOutput).
     pub fn builder() -> crate::operation::create_nat_gateway::builders::CreateNatGatewayOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateNatGatewayOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateNatGatewayOutputBuilder {
     }
     /// <p>Information about the NAT gateway.</p>
     pub fn set_nat_gateway(mut self, input: ::std::option::Option<crate::types::NatGateway>) -> Self {
-        self.nat_gateway = input;
-        self
+        self.nat_gateway = input; self
     }
     /// <p>Information about the NAT gateway.</p>
     pub fn get_nat_gateway(&self) -> &::std::option::Option<crate::types::NatGateway> {
         &self.nat_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateNatGatewayOutput`](crate::operation::create_nat_gateway::CreateNatGatewayOutput).
     pub fn build(self) -> crate::operation::create_nat_gateway::CreateNatGatewayOutput {
         crate::operation::create_nat_gateway::CreateNatGatewayOutput {
-            client_token: self.client_token,
-            nat_gateway: self.nat_gateway,
+            client_token: self.client_token
+            ,
+            nat_gateway: self.nat_gateway
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

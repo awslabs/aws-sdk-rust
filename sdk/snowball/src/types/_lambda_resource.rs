@@ -3,22 +3,23 @@
 /// <p>Identifies</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaResource {
+pub struct LambdaResource  {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
     pub lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-    pub event_triggers: ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>>,
+    pub event_triggers: ::std::option::Option<::std::vec::Vec::<crate::types::EventTriggerDefinition>>,
 }
-impl LambdaResource {
+impl  LambdaResource  {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
-    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_arn.as_deref()
     }
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_triggers.is_none()`.
-    pub fn event_triggers(&self) -> &[crate::types::EventTriggerDefinition] {
-        self.event_triggers.as_deref().unwrap_or_default()
+    pub fn event_triggers(&self) -> & [crate::types::EventTriggerDefinition] {
+        self.event_triggers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LambdaResource {
@@ -33,7 +34,7 @@ impl LambdaResource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaResourceBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) event_triggers: ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>>,
+    pub(crate) event_triggers: ::std::option::Option<::std::vec::Vec::<crate::types::EventTriggerDefinition>>,
 }
 impl LambdaResourceBuilder {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
@@ -43,8 +44,7 @@ impl LambdaResourceBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl LambdaResourceBuilder {
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
     pub fn event_triggers(mut self, input: crate::types::EventTriggerDefinition) -> Self {
         let mut v = self.event_triggers.unwrap_or_default();
-        v.push(input);
-        self.event_triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-    pub fn set_event_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>>) -> Self {
-        self.event_triggers = input;
-        self
+    pub fn set_event_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventTriggerDefinition>>) -> Self {
+        self.event_triggers = input; self
     }
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-    pub fn get_event_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>> {
+    pub fn get_event_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventTriggerDefinition>> {
         &self.event_triggers
     }
     /// Consumes the builder and constructs a [`LambdaResource`](crate::types::LambdaResource).
     pub fn build(self) -> crate::types::LambdaResource {
         crate::types::LambdaResource {
-            lambda_arn: self.lambda_arn,
-            event_triggers: self.event_triggers,
+            lambda_arn: self.lambda_arn
+            ,
+            event_triggers: self.event_triggers
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetChannelInput {
+pub struct BatchGetChannelInput  {
     /// <p>Array of ARNs, one per channel.</p>
-    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetChannelInput {
+impl  BatchGetChannelInput  {
     /// <p>Array of ARNs, one per channel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
-    pub fn arns(&self) -> &[::std::string::String] {
-        self.arns.as_deref().unwrap_or_default()
+    pub fn arns(&self) -> & [::std::string::String] {
+        self.arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetChannelInput {
@@ -25,7 +26,7 @@ impl BatchGetChannelInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetChannelInputBuilder {
-    pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetChannelInputBuilder {
     /// Appends an item to `arns`.
@@ -35,23 +36,26 @@ impl BatchGetChannelInputBuilder {
     /// <p>Array of ARNs, one per channel.</p>
     pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of ARNs, one per channel.</p>
-    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// <p>Array of ARNs, one per channel.</p>
-    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.arns
     }
     /// Consumes the builder and constructs a [`BatchGetChannelInput`](crate::operation::batch_get_channel::BatchGetChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_channel::BatchGetChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_channel::BatchGetChannelInput { arns: self.arns })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_channel::BatchGetChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_channel::BatchGetChannelInput {
+                arns: self.arns
+                ,
+            }
+        )
     }
 }
+

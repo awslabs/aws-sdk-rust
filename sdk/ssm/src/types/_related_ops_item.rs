@@ -3,15 +3,14 @@
 /// <p>An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelatedOpsItem {
+pub struct RelatedOpsItem  {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
     pub ops_item_id: ::std::string::String,
 }
-impl RelatedOpsItem {
+impl  RelatedOpsItem  {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
-    pub fn ops_item_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ops_item_id.deref()
+    pub fn ops_item_id(&self) -> & str {
+        use std::ops::Deref; self.ops_item_id.deref()
     }
 }
 impl RelatedOpsItem {
@@ -36,8 +35,7 @@ impl RelatedOpsItemBuilder {
     }
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
     pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
     }
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
     pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl RelatedOpsItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ops_item_id`](crate::types::builders::RelatedOpsItemBuilder::ops_item_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RelatedOpsItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RelatedOpsItem {
-            ops_item_id: self.ops_item_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ops_item_id",
-                    "ops_item_id was not specified but it is required when building RelatedOpsItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RelatedOpsItem {
+                ops_item_id: self.ops_item_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ops_item_id", "ops_item_id was not specified but it is required when building RelatedOpsItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

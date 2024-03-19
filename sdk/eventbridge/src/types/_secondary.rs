@@ -3,15 +3,14 @@
 /// <p>The secondary Region that processes events when failover is triggered or replication is enabled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Secondary {
+pub struct Secondary  {
     /// <p>Defines the secondary Region.</p>
     pub route: ::std::string::String,
 }
-impl Secondary {
+impl  Secondary  {
     /// <p>Defines the secondary Region.</p>
-    pub fn route(&self) -> &str {
-        use std::ops::Deref;
-        self.route.deref()
+    pub fn route(&self) -> & str {
+        use std::ops::Deref; self.route.deref()
     }
 }
 impl Secondary {
@@ -36,8 +35,7 @@ impl SecondaryBuilder {
     }
     /// <p>Defines the secondary Region.</p>
     pub fn set_route(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route = input;
-        self
+        self.route = input; self
     }
     /// <p>Defines the secondary Region.</p>
     pub fn get_route(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SecondaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`route`](crate::types::builders::SecondaryBuilder::route)
     pub fn build(self) -> ::std::result::Result<crate::types::Secondary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Secondary {
-            route: self.route.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "route",
-                    "route was not specified but it is required when building Secondary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Secondary {
+                route: self.route
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("route", "route was not specified but it is required when building Secondary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

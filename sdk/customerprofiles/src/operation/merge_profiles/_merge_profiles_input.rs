@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MergeProfilesInput {
+pub struct MergeProfilesInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the profile to be taken.</p>
     pub main_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    pub profile_ids_to_be_merged: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub profile_ids_to_be_merged: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
     pub field_source_profile_ids: ::std::option::Option<crate::types::FieldSourceProfileIds>,
 }
-impl MergeProfilesInput {
+impl  MergeProfilesInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The identifier of the profile to be taken.</p>
-    pub fn main_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn main_profile_id(&self) -> ::std::option::Option<& str> {
         self.main_profile_id.as_deref()
     }
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_ids_to_be_merged.is_none()`.
-    pub fn profile_ids_to_be_merged(&self) -> &[::std::string::String] {
-        self.profile_ids_to_be_merged.as_deref().unwrap_or_default()
+    pub fn profile_ids_to_be_merged(&self) -> & [::std::string::String] {
+        self.profile_ids_to_be_merged.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
-    pub fn field_source_profile_ids(&self) -> ::std::option::Option<&crate::types::FieldSourceProfileIds> {
+    pub fn field_source_profile_ids(&self) -> ::std::option::Option<& crate::types::FieldSourceProfileIds> {
         self.field_source_profile_ids.as_ref()
     }
 }
@@ -45,7 +46,7 @@ impl MergeProfilesInput {
 pub struct MergeProfilesInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) main_profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) profile_ids_to_be_merged: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) profile_ids_to_be_merged: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) field_source_profile_ids: ::std::option::Option<crate::types::FieldSourceProfileIds>,
 }
 impl MergeProfilesInputBuilder {
@@ -57,8 +58,7 @@ impl MergeProfilesInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl MergeProfilesInputBuilder {
     }
     /// <p>The identifier of the profile to be taken.</p>
     pub fn set_main_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.main_profile_id = input;
-        self
+        self.main_profile_id = input; self
     }
     /// <p>The identifier of the profile to be taken.</p>
     pub fn get_main_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl MergeProfilesInputBuilder {
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
     pub fn profile_ids_to_be_merged(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.profile_ids_to_be_merged.unwrap_or_default();
-        v.push(input.into());
-        self.profile_ids_to_be_merged = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.profile_ids_to_be_merged = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    pub fn set_profile_ids_to_be_merged(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.profile_ids_to_be_merged = input;
-        self
+    pub fn set_profile_ids_to_be_merged(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.profile_ids_to_be_merged = input; self
     }
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    pub fn get_profile_ids_to_be_merged(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_ids_to_be_merged(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.profile_ids_to_be_merged
     }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
@@ -106,22 +104,26 @@ impl MergeProfilesInputBuilder {
     }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
     pub fn set_field_source_profile_ids(mut self, input: ::std::option::Option<crate::types::FieldSourceProfileIds>) -> Self {
-        self.field_source_profile_ids = input;
-        self
+        self.field_source_profile_ids = input; self
     }
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
     pub fn get_field_source_profile_ids(&self) -> &::std::option::Option<crate::types::FieldSourceProfileIds> {
         &self.field_source_profile_ids
     }
     /// Consumes the builder and constructs a [`MergeProfilesInput`](crate::operation::merge_profiles::MergeProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::merge_profiles::MergeProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::merge_profiles::MergeProfilesInput {
-            domain_name: self.domain_name,
-            main_profile_id: self.main_profile_id,
-            profile_ids_to_be_merged: self.profile_ids_to_be_merged,
-            field_source_profile_ids: self.field_source_profile_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::merge_profiles::MergeProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::merge_profiles::MergeProfilesInput {
+                domain_name: self.domain_name
+                ,
+                main_profile_id: self.main_profile_id
+                ,
+                profile_ids_to_be_merged: self.profile_ids_to_be_merged
+                ,
+                field_source_profile_ids: self.field_source_profile_ids
+                ,
+            }
+        )
     }
 }
+

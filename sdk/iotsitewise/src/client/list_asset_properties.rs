@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssetProperties`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`asset_id(impl Into<String>)`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::set_asset_id):<br>required: **true**<br><p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p><br>
     ///   - [`filter(ListAssetPropertiesFilter)`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::filter) / [`set_filter(Option<ListAssetPropertiesFilter>)`](crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the requested list of asset properties. You can choose one of the following options:</p> <ul>  <li>   <p><code>ALL</code> – The list includes all asset properties for a given asset model ID.</p></li>  <li>   <p><code>BASE</code> – The list includes only base asset properties for a given asset model ID.</p></li> </ul> <p>Default: <code>BASE</code></p><br>
-    /// - On success, responds with [`ListAssetPropertiesOutput`](crate::operation::list_asset_properties::ListAssetPropertiesOutput) with field(s):
+                            /// - On success, responds with [`ListAssetPropertiesOutput`](crate::operation::list_asset_properties::ListAssetPropertiesOutput) with field(s):
     ///   - [`asset_property_summaries(Vec::<AssetPropertySummary>)`](crate::operation::list_asset_properties::ListAssetPropertiesOutput::asset_property_summaries): <p>A list that summarizes the properties associated with the specified asset.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_asset_properties::ListAssetPropertiesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListAssetPropertiesError>`](crate::operation::list_asset_properties::ListAssetPropertiesError)
+                            /// - On failure, responds with [`SdkError<ListAssetPropertiesError>`](crate::operation::list_asset_properties::ListAssetPropertiesError)
     pub fn list_asset_properties(&self) -> crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder {
-        crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_asset_properties::builders::ListAssetPropertiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

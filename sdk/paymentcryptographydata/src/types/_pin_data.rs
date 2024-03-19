@@ -22,11 +22,7 @@ impl PinData {
     /// Tries to convert the enum instance into [`PinOffset`](crate::types::PinData::PinOffset), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_pin_offset(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let PinData::PinOffset(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinData::PinOffset(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PinOffset`](crate::types::PinData::PinOffset).
     pub fn is_pin_offset(&self) -> bool {
@@ -35,11 +31,7 @@ impl PinData {
     /// Tries to convert the enum instance into [`VerificationValue`](crate::types::PinData::VerificationValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_verification_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let PinData::VerificationValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinData::VerificationValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`VerificationValue`](crate::types::PinData::VerificationValue).
     pub fn is_verification_value(&self) -> bool {
@@ -50,3 +42,4 @@ impl PinData {
         matches!(self, Self::Unknown)
     }
 }
+

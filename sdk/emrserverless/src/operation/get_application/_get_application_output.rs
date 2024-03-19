@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>The output displays information about the specified application.</p>
     pub application: ::std::option::Option<crate::types::Application>,
     _request_id: Option<String>,
 }
-impl GetApplicationOutput {
+impl  GetApplicationOutput  {
     /// <p>The output displays information about the specified application.</p>
-    pub fn application(&self) -> ::std::option::Option<&crate::types::Application> {
+    pub fn application(&self) -> ::std::option::Option<& crate::types::Application> {
         self.application.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn builder() -> crate::operation::get_application::builders::GetApplicationOutputBuilder {
@@ -41,27 +41,28 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The output displays information about the specified application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<crate::types::Application>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The output displays information about the specified application.</p>
     pub fn get_application(&self) -> &::std::option::Option<crate::types::Application> {
         &self.application
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn build(self) -> crate::operation::get_application::GetApplicationOutput {
         crate::operation::get_application::GetApplicationOutput {
-            application: self.application,
+            application: self.application
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

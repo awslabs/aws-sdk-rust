@@ -3,29 +3,27 @@
 /// <p>The GetEntitlementsRequest contains parameters for the GetEntitlements operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEntitlementsInput {
+pub struct GetEntitlementsInput  {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub filter: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
+    pub filter: ::std::option::Option<::std::collections::HashMap::<crate::types::GetEntitlementFilterName, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetEntitlementsInput {
+impl  GetEntitlementsInput  {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
+    pub fn product_code(&self) -> ::std::option::Option<& str> {
         self.product_code.as_deref()
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {
+    pub fn filter(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::GetEntitlementFilterName, ::std::vec::Vec::<::std::string::String>>> {
         self.filter.as_ref()
     }
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
@@ -45,8 +43,7 @@ impl GetEntitlementsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEntitlementsInputBuilder {
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
-    pub(crate) filter:
-        ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap::<crate::types::GetEntitlementFilterName, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -59,8 +56,7 @@ impl GetEntitlementsInputBuilder {
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,24 +67,18 @@ impl GetEntitlementsInputBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn filter(mut self, k: crate::types::GetEntitlementFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn filter(mut self, k: crate::types::GetEntitlementFilterName, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.filter = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.filter = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::GetEntitlementFilterName, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.filter = input; self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::GetEntitlementFilterName, ::std::vec::Vec::<::std::string::String>>> {
         &self.filter
     }
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
@@ -98,8 +88,7 @@ impl GetEntitlementsInputBuilder {
     }
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,22 +101,26 @@ impl GetEntitlementsInputBuilder {
     }
     /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetEntitlementsInput`](crate::operation::get_entitlements::GetEntitlementsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_entitlements::GetEntitlementsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_entitlements::GetEntitlementsInput {
-            product_code: self.product_code,
-            filter: self.filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_entitlements::GetEntitlementsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_entitlements::GetEntitlementsInput {
+                product_code: self.product_code
+                ,
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

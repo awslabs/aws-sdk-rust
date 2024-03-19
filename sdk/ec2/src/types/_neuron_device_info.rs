@@ -3,7 +3,7 @@
 /// <p>Describes the neuron accelerators for the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NeuronDeviceInfo {
+pub struct NeuronDeviceInfo  {
     /// <p>The number of neuron accelerators for the instance type.</p>
     pub count: ::std::option::Option<i32>,
     /// <p>The name of the neuron accelerator.</p>
@@ -13,21 +13,21 @@ pub struct NeuronDeviceInfo {
     /// <p>Describes the memory available to each neuron accelerator.</p>
     pub memory_info: ::std::option::Option<crate::types::NeuronDeviceMemoryInfo>,
 }
-impl NeuronDeviceInfo {
+impl  NeuronDeviceInfo  {
     /// <p>The number of neuron accelerators for the instance type.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The name of the neuron accelerator.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Describes the cores available to each neuron accelerator.</p>
-    pub fn core_info(&self) -> ::std::option::Option<&crate::types::NeuronDeviceCoreInfo> {
+    pub fn core_info(&self) -> ::std::option::Option<& crate::types::NeuronDeviceCoreInfo> {
         self.core_info.as_ref()
     }
     /// <p>Describes the memory available to each neuron accelerator.</p>
-    pub fn memory_info(&self) -> ::std::option::Option<&crate::types::NeuronDeviceMemoryInfo> {
+    pub fn memory_info(&self) -> ::std::option::Option<& crate::types::NeuronDeviceMemoryInfo> {
         self.memory_info.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl NeuronDeviceInfoBuilder {
     }
     /// <p>The number of neuron accelerators for the instance type.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of neuron accelerators for the instance type.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl NeuronDeviceInfoBuilder {
     }
     /// <p>The name of the neuron accelerator.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the neuron accelerator.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl NeuronDeviceInfoBuilder {
     }
     /// <p>Describes the cores available to each neuron accelerator.</p>
     pub fn set_core_info(mut self, input: ::std::option::Option<crate::types::NeuronDeviceCoreInfo>) -> Self {
-        self.core_info = input;
-        self
+        self.core_info = input; self
     }
     /// <p>Describes the cores available to each neuron accelerator.</p>
     pub fn get_core_info(&self) -> &::std::option::Option<crate::types::NeuronDeviceCoreInfo> {
@@ -97,8 +94,7 @@ impl NeuronDeviceInfoBuilder {
     }
     /// <p>Describes the memory available to each neuron accelerator.</p>
     pub fn set_memory_info(mut self, input: ::std::option::Option<crate::types::NeuronDeviceMemoryInfo>) -> Self {
-        self.memory_info = input;
-        self
+        self.memory_info = input; self
     }
     /// <p>Describes the memory available to each neuron accelerator.</p>
     pub fn get_memory_info(&self) -> &::std::option::Option<crate::types::NeuronDeviceMemoryInfo> {
@@ -107,10 +103,15 @@ impl NeuronDeviceInfoBuilder {
     /// Consumes the builder and constructs a [`NeuronDeviceInfo`](crate::types::NeuronDeviceInfo).
     pub fn build(self) -> crate::types::NeuronDeviceInfo {
         crate::types::NeuronDeviceInfo {
-            count: self.count,
-            name: self.name,
-            core_info: self.core_info,
-            memory_info: self.memory_info,
+            count: self.count
+            ,
+            name: self.name
+            ,
+            core_info: self.core_info
+            ,
+            memory_info: self.memory_info
+            ,
         }
     }
 }
+

@@ -2,19 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMediaPipelineKinesisVideoStreamPools`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to return the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
-    /// - On success, responds with [`ListMediaPipelineKinesisVideoStreamPoolsOutput`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput) with field(s):
+                            /// - On success, responds with [`ListMediaPipelineKinesisVideoStreamPoolsOutput`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput) with field(s):
     ///   - [`kinesis_video_stream_pools(Option<Vec::<KinesisVideoStreamPoolSummary>>)`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput::kinesis_video_stream_pools): <p>The list of video stream pools.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput::next_token): <p>The token used to return the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListMediaPipelineKinesisVideoStreamPoolsError>`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError)
-    pub fn list_media_pipeline_kinesis_video_stream_pools(
-        &self,
-    ) -> crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder {
-        crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListMediaPipelineKinesisVideoStreamPoolsError>`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError)
+    pub fn list_media_pipeline_kinesis_video_stream_pools(&self) -> crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder {
+                                crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

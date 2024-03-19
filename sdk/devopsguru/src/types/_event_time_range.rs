@@ -3,19 +3,19 @@
 /// <p>The time range during which an Amazon Web Services event occurred. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventTimeRange {
+pub struct EventTimeRange  {
     /// <p>The time when the event started.</p>
     pub from_time: ::aws_smithy_types::DateTime,
     /// <p>The time when the event ended.</p>
     pub to_time: ::aws_smithy_types::DateTime,
 }
-impl EventTimeRange {
+impl  EventTimeRange  {
     /// <p>The time when the event started.</p>
-    pub fn from_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn from_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.from_time
     }
     /// <p>The time when the event ended.</p>
-    pub fn to_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn to_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.to_time
     }
 }
@@ -42,8 +42,7 @@ impl EventTimeRangeBuilder {
     }
     /// <p>The time when the event started.</p>
     pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.from_time = input;
-        self
+        self.from_time = input; self
     }
     /// <p>The time when the event started.</p>
     pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -57,8 +56,7 @@ impl EventTimeRangeBuilder {
     }
     /// <p>The time when the event ended.</p>
     pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.to_time = input;
-        self
+        self.to_time = input; self
     }
     /// <p>The time when the event ended.</p>
     pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,19 +67,20 @@ impl EventTimeRangeBuilder {
     /// - [`from_time`](crate::types::builders::EventTimeRangeBuilder::from_time)
     /// - [`to_time`](crate::types::builders::EventTimeRangeBuilder::to_time)
     pub fn build(self) -> ::std::result::Result<crate::types::EventTimeRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventTimeRange {
-            from_time: self.from_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "from_time",
-                    "from_time was not specified but it is required when building EventTimeRange",
-                )
-            })?,
-            to_time: self.to_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "to_time",
-                    "to_time was not specified but it is required when building EventTimeRange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventTimeRange {
+                from_time: self.from_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("from_time", "from_time was not specified but it is required when building EventTimeRange")
+                    )?
+                ,
+                to_time: self.to_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("to_time", "to_time was not specified but it is required when building EventTimeRange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

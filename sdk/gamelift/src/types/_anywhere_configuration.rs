@@ -3,13 +3,13 @@
 /// <p>Amazon GameLift Anywhere configuration options for your Anywhere fleets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnywhereConfiguration {
+pub struct AnywhereConfiguration  {
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
     pub cost: ::std::option::Option<::std::string::String>,
 }
-impl AnywhereConfiguration {
+impl  AnywhereConfiguration  {
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
-    pub fn cost(&self) -> ::std::option::Option<&str> {
+    pub fn cost(&self) -> ::std::option::Option<& str> {
         self.cost.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl AnywhereConfigurationBuilder {
     }
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
     pub fn set_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cost = input;
-        self
+        self.cost = input; self
     }
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
     pub fn get_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,10 @@ impl AnywhereConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`AnywhereConfiguration`](crate::types::AnywhereConfiguration).
     pub fn build(self) -> crate::types::AnywhereConfiguration {
-        crate::types::AnywhereConfiguration { cost: self.cost }
+        crate::types::AnywhereConfiguration {
+            cost: self.cost
+            ,
+        }
     }
 }
+

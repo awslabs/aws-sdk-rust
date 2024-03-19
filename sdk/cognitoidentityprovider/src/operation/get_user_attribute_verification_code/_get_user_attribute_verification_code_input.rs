@@ -3,7 +3,7 @@
 /// <p>Represents the request to get user attribute verification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetUserAttributeVerificationCodeInput {
+pub struct GetUserAttributeVerificationCodeInput  {
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
@@ -21,15 +21,15 @@ pub struct GetUserAttributeVerificationCodeInput {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub client_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl GetUserAttributeVerificationCodeInput {
+impl  GetUserAttributeVerificationCodeInput  {
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -45,11 +45,11 @@ impl GetUserAttributeVerificationCodeInput {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn client_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.client_metadata.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetUserAttributeVerificationCodeInput {
+impl  ::std::fmt::Debug for GetUserAttributeVerificationCodeInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserAttributeVerificationCodeInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -71,7 +71,7 @@ impl GetUserAttributeVerificationCodeInput {
 pub struct GetUserAttributeVerificationCodeInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
-    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) client_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl GetUserAttributeVerificationCodeInputBuilder {
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
@@ -82,8 +82,7 @@ impl GetUserAttributeVerificationCodeInputBuilder {
     }
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl GetUserAttributeVerificationCodeInputBuilder {
     }
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,15 +119,11 @@ impl GetUserAttributeVerificationCodeInputBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.client_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.client_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.client_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -144,12 +138,8 @@ impl GetUserAttributeVerificationCodeInputBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_client_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.client_metadata = input;
-        self
+    pub fn set_client_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.client_metadata = input; self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -164,22 +154,20 @@ impl GetUserAttributeVerificationCodeInputBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`GetUserAttributeVerificationCodeInput`](crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeInput {
-                access_token: self.access_token,
-                attribute_name: self.attribute_name,
-                client_metadata: self.client_metadata,
-            },
+                access_token: self.access_token
+                ,
+                attribute_name: self.attribute_name
+                ,
+                client_metadata: self.client_metadata
+                ,
+            }
         )
     }
 }
@@ -192,3 +180,4 @@ impl ::std::fmt::Debug for GetUserAttributeVerificationCodeInputBuilder {
         formatter.finish()
     }
 }
+

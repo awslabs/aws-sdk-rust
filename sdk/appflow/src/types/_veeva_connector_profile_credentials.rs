@@ -3,25 +3,23 @@
 /// <p>The connector-specific profile credentials required when using Veeva.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct VeevaConnectorProfileCredentials {
+pub struct VeevaConnectorProfileCredentials  {
     /// <p>The name of the user.</p>
     pub username: ::std::string::String,
     /// <p>The password that corresponds to the user name.</p>
     pub password: ::std::string::String,
 }
-impl VeevaConnectorProfileCredentials {
+impl  VeevaConnectorProfileCredentials  {
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> & str {
+        use std::ops::Deref; self.username.deref()
     }
     /// <p>The password that corresponds to the user name.</p>
-    pub fn password(&self) -> &str {
-        use std::ops::Deref;
-        self.password.deref()
+    pub fn password(&self) -> & str {
+        use std::ops::Deref; self.password.deref()
     }
 }
-impl ::std::fmt::Debug for VeevaConnectorProfileCredentials {
+impl  ::std::fmt::Debug for VeevaConnectorProfileCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VeevaConnectorProfileCredentials");
         formatter.field("username", &self.username);
@@ -52,8 +50,7 @@ impl VeevaConnectorProfileCredentialsBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The name of the user.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl VeevaConnectorProfileCredentialsBuilder {
     }
     /// <p>The password that corresponds to the user name.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password that corresponds to the user name.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl VeevaConnectorProfileCredentialsBuilder {
     /// - [`username`](crate::types::builders::VeevaConnectorProfileCredentialsBuilder::username)
     /// - [`password`](crate::types::builders::VeevaConnectorProfileCredentialsBuilder::password)
     pub fn build(self) -> ::std::result::Result<crate::types::VeevaConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VeevaConnectorProfileCredentials {
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building VeevaConnectorProfileCredentials",
-                )
-            })?,
-            password: self.password.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "password",
-                    "password was not specified but it is required when building VeevaConnectorProfileCredentials",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VeevaConnectorProfileCredentials {
+                username: self.username
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("username", "username was not specified but it is required when building VeevaConnectorProfileCredentials")
+                    )?
+                ,
+                password: self.password
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("password", "password was not specified but it is required when building VeevaConnectorProfileCredentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for VeevaConnectorProfileCredentialsBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for VeevaConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

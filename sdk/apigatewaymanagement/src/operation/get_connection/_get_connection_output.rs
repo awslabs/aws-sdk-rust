@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectionOutput {
+pub struct GetConnectionOutput  {
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
     pub connected_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     #[allow(missing_docs)] // documentation missing in model
@@ -11,25 +11,25 @@ pub struct GetConnectionOutput {
     pub last_active_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetConnectionOutput {
+impl  GetConnectionOutput  {
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
-    pub fn connected_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn connected_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.connected_at.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn identity(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn identity(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.identity.as_ref()
     }
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
-    pub fn last_active_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_active_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_active_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetConnectionOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput).
     pub fn builder() -> crate::operation::get_connection::builders::GetConnectionOutputBuilder {
@@ -54,8 +54,7 @@ impl GetConnectionOutputBuilder {
     }
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
     pub fn set_connected_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.connected_at = input;
-        self
+        self.connected_at = input; self
     }
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
     pub fn get_connected_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -68,8 +67,7 @@ impl GetConnectionOutputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_identity(&self) -> &::std::option::Option<crate::types::Identity> {
@@ -82,29 +80,32 @@ impl GetConnectionOutputBuilder {
     }
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
     pub fn set_last_active_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_active_at = input;
-        self
+        self.last_active_at = input; self
     }
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
     pub fn get_last_active_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_active_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput).
     pub fn build(self) -> crate::operation::get_connection::GetConnectionOutput {
         crate::operation::get_connection::GetConnectionOutput {
-            connected_at: self.connected_at,
-            identity: self.identity,
-            last_active_at: self.last_active_at,
+            connected_at: self.connected_at
+            ,
+            identity: self.identity
+            ,
+            last_active_at: self.last_active_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

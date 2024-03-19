@@ -3,7 +3,7 @@
 /// <p>Describes the point at which the application reads from the streaming source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputStartingPositionConfiguration {
+pub struct InputStartingPositionConfiguration  {
     /// <p>The starting position on the stream.</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct InputStartingPositionConfiguration {
     /// </ul>
     pub input_starting_position: ::std::option::Option<crate::types::InputStartingPosition>,
 }
-impl InputStartingPositionConfiguration {
+impl  InputStartingPositionConfiguration  {
     /// <p>The starting position on the stream.</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ impl InputStartingPositionConfiguration {
     /// <li>
     /// <p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
     /// </ul>
-    pub fn input_starting_position(&self) -> ::std::option::Option<&crate::types::InputStartingPosition> {
+    pub fn input_starting_position(&self) -> ::std::option::Option<& crate::types::InputStartingPosition> {
         self.input_starting_position.as_ref()
     }
 }
@@ -66,8 +66,7 @@ impl InputStartingPositionConfigurationBuilder {
     /// <p><code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p></li>
     /// </ul>
     pub fn set_input_starting_position(mut self, input: ::std::option::Option<crate::types::InputStartingPosition>) -> Self {
-        self.input_starting_position = input;
-        self
+        self.input_starting_position = input; self
     }
     /// <p>The starting position on the stream.</p>
     /// <ul>
@@ -84,7 +83,9 @@ impl InputStartingPositionConfigurationBuilder {
     /// Consumes the builder and constructs a [`InputStartingPositionConfiguration`](crate::types::InputStartingPositionConfiguration).
     pub fn build(self) -> crate::types::InputStartingPositionConfiguration {
         crate::types::InputStartingPositionConfiguration {
-            input_starting_position: self.input_starting_position,
+            input_starting_position: self.input_starting_position
+            ,
         }
     }
 }
+

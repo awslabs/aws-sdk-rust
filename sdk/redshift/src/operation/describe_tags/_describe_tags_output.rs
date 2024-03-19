@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTagsOutput {
+pub struct DescribeTagsOutput  {
     /// <p>A list of tags with their associated resources.</p>
-    pub tagged_resources: ::std::option::Option<::std::vec::Vec<crate::types::TaggedResource>>,
+    pub tagged_resources: ::std::option::Option<::std::vec::Vec::<crate::types::TaggedResource>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTagsOutput {
+impl  DescribeTagsOutput  {
     /// <p>A list of tags with their associated resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tagged_resources.is_none()`.
-    pub fn tagged_resources(&self) -> &[crate::types::TaggedResource] {
-        self.tagged_resources.as_deref().unwrap_or_default()
+    pub fn tagged_resources(&self) -> & [crate::types::TaggedResource] {
+        self.tagged_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
     pub fn builder() -> crate::operation::describe_tags::builders::DescribeTagsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeTagsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagsOutputBuilder {
-    pub(crate) tagged_resources: ::std::option::Option<::std::vec::Vec<crate::types::TaggedResource>>,
+    pub(crate) tagged_resources: ::std::option::Option<::std::vec::Vec::<crate::types::TaggedResource>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl DescribeTagsOutputBuilder {
     /// <p>A list of tags with their associated resources.</p>
     pub fn tagged_resources(mut self, input: crate::types::TaggedResource) -> Self {
         let mut v = self.tagged_resources.unwrap_or_default();
-        v.push(input);
-        self.tagged_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tagged_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags with their associated resources.</p>
-    pub fn set_tagged_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaggedResource>>) -> Self {
-        self.tagged_resources = input;
-        self
+    pub fn set_tagged_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaggedResource>>) -> Self {
+        self.tagged_resources = input; self
     }
     /// <p>A list of tags with their associated resources.</p>
-    pub fn get_tagged_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaggedResource>> {
+    pub fn get_tagged_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaggedResource>> {
         &self.tagged_resources
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
@@ -70,28 +70,30 @@ impl DescribeTagsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
     pub fn build(self) -> crate::operation::describe_tags::DescribeTagsOutput {
         crate::operation::describe_tags::DescribeTagsOutput {
-            tagged_resources: self.tagged_resources,
-            marker: self.marker,
+            tagged_resources: self.tagged_resources
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

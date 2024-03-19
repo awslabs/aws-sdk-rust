@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePricingPlanInput {
+pub struct UpdatePricingPlanInput  {
     /// <p>The pricing mode.</p>
     pub pricing_mode: ::std::option::Option<crate::types::PricingMode>,
     /// <p>The bundle names.</p>
-    pub bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bundle_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdatePricingPlanInput {
+impl  UpdatePricingPlanInput  {
     /// <p>The pricing mode.</p>
-    pub fn pricing_mode(&self) -> ::std::option::Option<&crate::types::PricingMode> {
+    pub fn pricing_mode(&self) -> ::std::option::Option<& crate::types::PricingMode> {
         self.pricing_mode.as_ref()
     }
     /// <p>The bundle names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_names.is_none()`.
-    pub fn bundle_names(&self) -> &[::std::string::String] {
-        self.bundle_names.as_deref().unwrap_or_default()
+    pub fn bundle_names(&self) -> & [::std::string::String] {
+        self.bundle_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdatePricingPlanInput {
@@ -32,7 +33,7 @@ impl UpdatePricingPlanInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePricingPlanInputBuilder {
     pub(crate) pricing_mode: ::std::option::Option<crate::types::PricingMode>,
-    pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdatePricingPlanInputBuilder {
     /// <p>The pricing mode.</p>
@@ -43,8 +44,7 @@ impl UpdatePricingPlanInputBuilder {
     }
     /// <p>The pricing mode.</p>
     pub fn set_pricing_mode(mut self, input: ::std::option::Option<crate::types::PricingMode>) -> Self {
-        self.pricing_mode = input;
-        self
+        self.pricing_mode = input; self
     }
     /// <p>The pricing mode.</p>
     pub fn get_pricing_mode(&self) -> &::std::option::Option<crate::types::PricingMode> {
@@ -57,26 +57,28 @@ impl UpdatePricingPlanInputBuilder {
     /// <p>The bundle names.</p>
     pub fn bundle_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bundle_names.unwrap_or_default();
-        v.push(input.into());
-        self.bundle_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bundle_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The bundle names.</p>
-    pub fn set_bundle_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bundle_names = input;
-        self
+    pub fn set_bundle_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bundle_names = input; self
     }
     /// <p>The bundle names.</p>
-    pub fn get_bundle_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bundle_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bundle_names
     }
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_pricing_plan::UpdatePricingPlanInput {
-            pricing_mode: self.pricing_mode,
-            bundle_names: self.bundle_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_pricing_plan::UpdatePricingPlanInput {
+                pricing_mode: self.pricing_mode
+                ,
+                bundle_names: self.bundle_names
+                ,
+            }
+        )
     }
 }
+

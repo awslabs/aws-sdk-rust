@@ -3,35 +3,36 @@
 /// <p>A request to begin the verification process for an email identity (an email address or domain).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEmailIdentityInput {
+pub struct CreateEmailIdentityInput  {
     /// <p>The email address or domain to verify.</p>
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
     pub dkim_signing_attributes: ::std::option::Option<crate::types::DkimSigningAttributes>,
     /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateEmailIdentityInput {
+impl  CreateEmailIdentityInput  {
     /// <p>The email address or domain to verify.</p>
-    pub fn email_identity(&self) -> ::std::option::Option<&str> {
+    pub fn email_identity(&self) -> ::std::option::Option<& str> {
         self.email_identity.as_deref()
     }
     /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
-    pub fn dkim_signing_attributes(&self) -> ::std::option::Option<&crate::types::DkimSigningAttributes> {
+    pub fn dkim_signing_attributes(&self) -> ::std::option::Option<& crate::types::DkimSigningAttributes> {
         self.dkim_signing_attributes.as_ref()
     }
     /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
@@ -47,7 +48,7 @@ impl CreateEmailIdentityInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEmailIdentityInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) dkim_signing_attributes: ::std::option::Option<crate::types::DkimSigningAttributes>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
@@ -60,8 +61,7 @@ impl CreateEmailIdentityInputBuilder {
     }
     /// <p>The email address or domain to verify.</p>
     pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_identity = input;
-        self
+        self.email_identity = input; self
     }
     /// <p>The email address or domain to verify.</p>
     pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,17 +74,16 @@ impl CreateEmailIdentityInputBuilder {
     /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
@@ -96,8 +95,7 @@ impl CreateEmailIdentityInputBuilder {
     /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
     pub fn set_dkim_signing_attributes(mut self, input: ::std::option::Option<crate::types::DkimSigningAttributes>) -> Self {
-        self.dkim_signing_attributes = input;
-        self
+        self.dkim_signing_attributes = input; self
     }
     /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
@@ -111,23 +109,26 @@ impl CreateEmailIdentityInputBuilder {
     }
     /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`CreateEmailIdentityInput`](crate::operation::create_email_identity::CreateEmailIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_email_identity::CreateEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_email_identity::CreateEmailIdentityInput {
-            email_identity: self.email_identity,
-            tags: self.tags,
-            dkim_signing_attributes: self.dkim_signing_attributes,
-            configuration_set_name: self.configuration_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_email_identity::CreateEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_email_identity::CreateEmailIdentityInput {
+                email_identity: self.email_identity
+                ,
+                tags: self.tags
+                ,
+                dkim_signing_attributes: self.dkim_signing_attributes
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+            }
+        )
     }
 }
+

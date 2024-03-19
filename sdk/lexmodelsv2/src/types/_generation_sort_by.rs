@@ -3,7 +3,7 @@
 /// <p>Specifies the attribute and method by which to sort the generation request information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerationSortBy {
+pub struct GenerationSortBy  {
     /// <p>The attribute by which to sort the generation request information. You can sort by the following attributes.</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct GenerationSortBy {
     /// <p>The order by which to sort the generation request information.</p>
     pub order: crate::types::SortOrder,
 }
-impl GenerationSortBy {
+impl  GenerationSortBy  {
     /// <p>The attribute by which to sort the generation request information. You can sort by the following attributes.</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl GenerationSortBy {
     /// <li>
     /// <p><code>lastUpdatedTime</code> – The time at which the generation request was last updated.</p></li>
     /// </ul>
-    pub fn attribute(&self) -> &crate::types::GenerationSortByAttribute {
+    pub fn attribute(&self) -> & crate::types::GenerationSortByAttribute {
         &self.attribute
     }
     /// <p>The order by which to sort the generation request information.</p>
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -66,8 +66,7 @@ impl GenerationSortByBuilder {
     /// <p><code>lastUpdatedTime</code> – The time at which the generation request was last updated.</p></li>
     /// </ul>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::GenerationSortByAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The attribute by which to sort the generation request information. You can sort by the following attributes.</p>
     /// <ul>
@@ -87,8 +86,7 @@ impl GenerationSortByBuilder {
     }
     /// <p>The order by which to sort the generation request information.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order by which to sort the generation request information.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -99,19 +97,20 @@ impl GenerationSortByBuilder {
     /// - [`attribute`](crate::types::builders::GenerationSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::GenerationSortByBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::GenerationSortBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GenerationSortBy {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building GenerationSortBy",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building GenerationSortBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GenerationSortBy {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building GenerationSortBy")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building GenerationSortBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

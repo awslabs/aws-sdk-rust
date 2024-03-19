@@ -3,13 +3,13 @@
 /// <p>A managed policy that is attached to the IAM group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsIamGroupPolicy {
+pub struct AwsIamGroupPolicy  {
     /// <p>The name of the policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
-impl AwsIamGroupPolicy {
+impl  AwsIamGroupPolicy  {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsIamGroupPolicyBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsIamGroupPolicyBuilder {
     /// Consumes the builder and constructs a [`AwsIamGroupPolicy`](crate::types::AwsIamGroupPolicy).
     pub fn build(self) -> crate::types::AwsIamGroupPolicy {
         crate::types::AwsIamGroupPolicy {
-            policy_name: self.policy_name,
+            policy_name: self.policy_name
+            ,
         }
     }
 }
+

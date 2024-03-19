@@ -3,7 +3,7 @@
 /// <p>Sends message data to an IoT Analytics channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotAnalyticsAction {
+pub struct IotAnalyticsAction  {
     /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IoT Analytics channel to which message data will be sent.</p>
@@ -14,13 +14,13 @@ pub struct IotAnalyticsAction {
     /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl IotAnalyticsAction {
+impl  IotAnalyticsAction  {
     /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The name of the IoT Analytics channel to which message data will be sent.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
@@ -29,7 +29,7 @@ impl IotAnalyticsAction {
         self.batch_mode
     }
     /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl IotAnalyticsActionBuilder {
     }
     /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl IotAnalyticsActionBuilder {
     }
     /// <p>The name of the IoT Analytics channel to which message data will be sent.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the IoT Analytics channel to which message data will be sent.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl IotAnalyticsActionBuilder {
     /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html"> <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array can't have more than 100 messages.</p>
     pub fn set_batch_mode(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.batch_mode = input;
-        self
+        self.batch_mode = input; self
     }
     /// <p>Whether to process the action as a batch. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html"> <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array can't have more than 100 messages.</p>
@@ -102,8 +99,7 @@ impl IotAnalyticsActionBuilder {
     }
     /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,10 +108,15 @@ impl IotAnalyticsActionBuilder {
     /// Consumes the builder and constructs a [`IotAnalyticsAction`](crate::types::IotAnalyticsAction).
     pub fn build(self) -> crate::types::IotAnalyticsAction {
         crate::types::IotAnalyticsAction {
-            channel_arn: self.channel_arn,
-            channel_name: self.channel_name,
-            batch_mode: self.batch_mode,
-            role_arn: self.role_arn,
+            channel_arn: self.channel_arn
+            ,
+            channel_name: self.channel_name
+            ,
+            batch_mode: self.batch_mode
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

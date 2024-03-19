@@ -12,3 +12,4 @@ pub mod register_client;
 
 /// Types for the `StartDeviceAuthorization` operation.
 pub mod start_device_authorization;
+

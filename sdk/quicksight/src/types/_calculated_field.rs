@@ -3,7 +3,7 @@
 /// <p>The calculated field of an analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CalculatedField {
+pub struct CalculatedField  {
     /// <p>The data set that is used in this calculated field.</p>
     pub data_set_identifier: ::std::string::String,
     /// <p>The name of the calculated field.</p>
@@ -11,24 +11,21 @@ pub struct CalculatedField {
     /// <p>The expression of the calculated field.</p>
     pub expression: ::std::string::String,
 }
-impl CalculatedField {
+impl  CalculatedField  {
     /// <p>The data set that is used in this calculated field.</p>
-    pub fn data_set_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_identifier.deref()
+    pub fn data_set_identifier(&self) -> & str {
+        use std::ops::Deref; self.data_set_identifier.deref()
     }
     /// <p>The name of the calculated field.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The expression of the calculated field.</p>
-    pub fn expression(&self) -> &str {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & str {
+        use std::ops::Deref; self.expression.deref()
     }
 }
-impl ::std::fmt::Debug for CalculatedField {
+impl  ::std::fmt::Debug for CalculatedField  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedField");
         formatter.field("data_set_identifier", &self.data_set_identifier);
@@ -61,8 +58,7 @@ impl CalculatedFieldBuilder {
     }
     /// <p>The data set that is used in this calculated field.</p>
     pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_identifier = input;
-        self
+        self.data_set_identifier = input; self
     }
     /// <p>The data set that is used in this calculated field.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +72,7 @@ impl CalculatedFieldBuilder {
     }
     /// <p>The name of the calculated field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the calculated field.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +86,7 @@ impl CalculatedFieldBuilder {
     }
     /// <p>The expression of the calculated field.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The expression of the calculated field.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,26 +98,25 @@ impl CalculatedFieldBuilder {
     /// - [`name`](crate::types::builders::CalculatedFieldBuilder::name)
     /// - [`expression`](crate::types::builders::CalculatedFieldBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::CalculatedField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CalculatedField {
-            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_identifier",
-                    "data_set_identifier was not specified but it is required when building CalculatedField",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CalculatedField",
-                )
-            })?,
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building CalculatedField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CalculatedField {
+                data_set_identifier: self.data_set_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_identifier", "data_set_identifier was not specified but it is required when building CalculatedField")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CalculatedField")
+                    )?
+                ,
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building CalculatedField")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CalculatedFieldBuilder {
@@ -135,3 +128,4 @@ impl ::std::fmt::Debug for CalculatedFieldBuilder {
         formatter.finish()
     }
 }
+

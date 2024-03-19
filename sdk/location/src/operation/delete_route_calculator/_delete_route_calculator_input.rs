@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRouteCalculatorInput {
+pub struct DeleteRouteCalculatorInput  {
     /// <p>The name of the route calculator resource to be deleted.</p>
     pub calculator_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRouteCalculatorInput {
+impl  DeleteRouteCalculatorInput  {
     /// <p>The name of the route calculator resource to be deleted.</p>
-    pub fn calculator_name(&self) -> ::std::option::Option<&str> {
+    pub fn calculator_name(&self) -> ::std::option::Option<& str> {
         self.calculator_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteRouteCalculatorInputBuilder {
     }
     /// <p>The name of the route calculator resource to be deleted.</p>
     pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calculator_name = input;
-        self
+        self.calculator_name = input; self
     }
     /// <p>The name of the route calculator resource to be deleted.</p>
     pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculator_name
     }
     /// Consumes the builder and constructs a [`DeleteRouteCalculatorInput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_route_calculator::DeleteRouteCalculatorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_route_calculator::DeleteRouteCalculatorInput {
-            calculator_name: self.calculator_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_route_calculator::DeleteRouteCalculatorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_route_calculator::DeleteRouteCalculatorInput {
+                calculator_name: self.calculator_name
+                ,
+            }
+        )
     }
 }
+

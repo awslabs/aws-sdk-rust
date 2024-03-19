@@ -4,9 +4,9 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomDocumentEnrichmentConfiguration {
+pub struct CustomDocumentEnrichmentConfiguration  {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra.</p>
-    pub inline_configurations: ::std::option::Option<::std::vec::Vec<crate::types::InlineCustomDocumentEnrichmentConfiguration>>,
+    pub inline_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::InlineCustomDocumentEnrichmentConfiguration>>,
     /// <p>Configuration information for invoking a Lambda function in Lambda on the original or raw documents before extracting their metadata and text. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
     pub pre_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,
     /// <p>Configuration information for invoking a Lambda function in Lambda on the structured documents with their metadata and text extracted. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
@@ -14,23 +14,24 @@ pub struct CustomDocumentEnrichmentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CustomDocumentEnrichmentConfiguration {
+impl  CustomDocumentEnrichmentConfiguration  {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inline_configurations.is_none()`.
-    pub fn inline_configurations(&self) -> &[crate::types::InlineCustomDocumentEnrichmentConfiguration] {
-        self.inline_configurations.as_deref().unwrap_or_default()
+    pub fn inline_configurations(&self) -> & [crate::types::InlineCustomDocumentEnrichmentConfiguration] {
+        self.inline_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration information for invoking a Lambda function in Lambda on the original or raw documents before extracting their metadata and text. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
-    pub fn pre_extraction_hook_configuration(&self) -> ::std::option::Option<&crate::types::HookConfiguration> {
+    pub fn pre_extraction_hook_configuration(&self) -> ::std::option::Option<& crate::types::HookConfiguration> {
         self.pre_extraction_hook_configuration.as_ref()
     }
     /// <p>Configuration information for invoking a Lambda function in Lambda on the structured documents with their metadata and text extracted. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
-    pub fn post_extraction_hook_configuration(&self) -> ::std::option::Option<&crate::types::HookConfiguration> {
+    pub fn post_extraction_hook_configuration(&self) -> ::std::option::Option<& crate::types::HookConfiguration> {
         self.post_extraction_hook_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl CustomDocumentEnrichmentConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomDocumentEnrichmentConfigurationBuilder {
-    pub(crate) inline_configurations: ::std::option::Option<::std::vec::Vec<crate::types::InlineCustomDocumentEnrichmentConfiguration>>,
+    pub(crate) inline_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::InlineCustomDocumentEnrichmentConfiguration>>,
     pub(crate) pre_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,
     pub(crate) post_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -58,20 +59,16 @@ impl CustomDocumentEnrichmentConfigurationBuilder {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra.</p>
     pub fn inline_configurations(mut self, input: crate::types::InlineCustomDocumentEnrichmentConfiguration) -> Self {
         let mut v = self.inline_configurations.unwrap_or_default();
-        v.push(input);
-        self.inline_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inline_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra.</p>
-    pub fn set_inline_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InlineCustomDocumentEnrichmentConfiguration>>,
-    ) -> Self {
-        self.inline_configurations = input;
-        self
+    pub fn set_inline_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InlineCustomDocumentEnrichmentConfiguration>>) -> Self {
+        self.inline_configurations = input; self
     }
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra.</p>
-    pub fn get_inline_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InlineCustomDocumentEnrichmentConfiguration>> {
+    pub fn get_inline_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InlineCustomDocumentEnrichmentConfiguration>> {
         &self.inline_configurations
     }
     /// <p>Configuration information for invoking a Lambda function in Lambda on the original or raw documents before extracting their metadata and text. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
@@ -81,8 +78,7 @@ impl CustomDocumentEnrichmentConfigurationBuilder {
     }
     /// <p>Configuration information for invoking a Lambda function in Lambda on the original or raw documents before extracting their metadata and text. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
     pub fn set_pre_extraction_hook_configuration(mut self, input: ::std::option::Option<crate::types::HookConfiguration>) -> Self {
-        self.pre_extraction_hook_configuration = input;
-        self
+        self.pre_extraction_hook_configuration = input; self
     }
     /// <p>Configuration information for invoking a Lambda function in Lambda on the original or raw documents before extracting their metadata and text. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
     pub fn get_pre_extraction_hook_configuration(&self) -> &::std::option::Option<crate::types::HookConfiguration> {
@@ -95,8 +91,7 @@ impl CustomDocumentEnrichmentConfigurationBuilder {
     }
     /// <p>Configuration information for invoking a Lambda function in Lambda on the structured documents with their metadata and text extracted. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
     pub fn set_post_extraction_hook_configuration(mut self, input: ::std::option::Option<crate::types::HookConfiguration>) -> Self {
-        self.post_extraction_hook_configuration = input;
-        self
+        self.post_extraction_hook_configuration = input; self
     }
     /// <p>Configuration information for invoking a Lambda function in Lambda on the structured documents with their metadata and text extracted. You can use a Lambda function to apply advanced logic for creating, modifying, or deleting document metadata and content. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced data manipulation</a>.</p>
     pub fn get_post_extraction_hook_configuration(&self) -> &::std::option::Option<crate::types::HookConfiguration> {
@@ -109,8 +104,7 @@ impl CustomDocumentEnrichmentConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,10 +113,15 @@ impl CustomDocumentEnrichmentConfigurationBuilder {
     /// Consumes the builder and constructs a [`CustomDocumentEnrichmentConfiguration`](crate::types::CustomDocumentEnrichmentConfiguration).
     pub fn build(self) -> crate::types::CustomDocumentEnrichmentConfiguration {
         crate::types::CustomDocumentEnrichmentConfiguration {
-            inline_configurations: self.inline_configurations,
-            pre_extraction_hook_configuration: self.pre_extraction_hook_configuration,
-            post_extraction_hook_configuration: self.post_extraction_hook_configuration,
-            role_arn: self.role_arn,
+            inline_configurations: self.inline_configurations
+            ,
+            pre_extraction_hook_configuration: self.pre_extraction_hook_configuration
+            ,
+            post_extraction_hook_configuration: self.post_extraction_hook_configuration
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

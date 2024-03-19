@@ -3,7 +3,7 @@
 /// <p>Details of a provisioned service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceCatalogProvisionedProductDetails {
+pub struct ServiceCatalogProvisionedProductDetails  {
     /// <p>The ID of the provisioned product.</p>
     pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the product.</p>
@@ -21,9 +21,9 @@ pub struct ServiceCatalogProvisionedProductDetails {
     /// </ul>
     pub provisioned_product_status_message: ::std::option::Option<::std::string::String>,
 }
-impl ServiceCatalogProvisionedProductDetails {
+impl  ServiceCatalogProvisionedProductDetails  {
     /// <p>The ID of the provisioned product.</p>
-    pub fn provisioned_product_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioned_product_id(&self) -> ::std::option::Option<& str> {
         self.provisioned_product_id.as_deref()
     }
     /// <p>The current status of the product.</p>
@@ -39,7 +39,7 @@ impl ServiceCatalogProvisionedProductDetails {
     /// <li>
     /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p></li>
     /// </ul>
-    pub fn provisioned_product_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn provisioned_product_status_message(&self) -> ::std::option::Option<& str> {
         self.provisioned_product_status_message.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl ServiceCatalogProvisionedProductDetailsBuilder {
     }
     /// <p>The ID of the provisioned product.</p>
     pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_product_id = input;
-        self
+        self.provisioned_product_id = input; self
     }
     /// <p>The ID of the provisioned product.</p>
     pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ServiceCatalogProvisionedProductDetailsBuilder {
     /// <p><code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p></li>
     /// </ul>
     pub fn set_provisioned_product_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_product_status_message = input;
-        self
+        self.provisioned_product_status_message = input; self
     }
     /// <p>The current status of the product.</p>
     /// <ul>
@@ -125,8 +123,11 @@ impl ServiceCatalogProvisionedProductDetailsBuilder {
     /// Consumes the builder and constructs a [`ServiceCatalogProvisionedProductDetails`](crate::types::ServiceCatalogProvisionedProductDetails).
     pub fn build(self) -> crate::types::ServiceCatalogProvisionedProductDetails {
         crate::types::ServiceCatalogProvisionedProductDetails {
-            provisioned_product_id: self.provisioned_product_id,
-            provisioned_product_status_message: self.provisioned_product_status_message,
+            provisioned_product_id: self.provisioned_product_id
+            ,
+            provisioned_product_status_message: self.provisioned_product_status_message
+            ,
         }
     }
 }
+

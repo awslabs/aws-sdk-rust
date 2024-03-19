@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTraceGraph`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`trace_ids(impl Into<String>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::trace_ids) / [`set_trace_ids(Option<Vec::<String>>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::set_trace_ids):<br>required: **true**<br><p>Trace IDs of requests for which to generate a service graph.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
-    /// - On success, responds with [`GetTraceGraphOutput`](crate::operation::get_trace_graph::GetTraceGraphOutput) with field(s):
+                            /// - On success, responds with [`GetTraceGraphOutput`](crate::operation::get_trace_graph::GetTraceGraphOutput) with field(s):
     ///   - [`services(Option<Vec::<Service>>)`](crate::operation::get_trace_graph::GetTraceGraphOutput::services): <p>The services that have processed one of the specified requests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_trace_graph::GetTraceGraphOutput::next_token): <p>Pagination token.</p>
-    /// - On failure, responds with [`SdkError<GetTraceGraphError>`](crate::operation::get_trace_graph::GetTraceGraphError)
+                            /// - On failure, responds with [`SdkError<GetTraceGraphError>`](crate::operation::get_trace_graph::GetTraceGraphError)
     pub fn get_trace_graph(&self) -> crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder {
-        crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::new(self.handle.clone())
+                            }
 }
+

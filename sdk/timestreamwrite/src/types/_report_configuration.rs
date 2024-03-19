@@ -3,13 +3,13 @@
 /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportConfiguration {
+pub struct ReportConfiguration  {
     /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
     pub report_s3_configuration: ::std::option::Option<crate::types::ReportS3Configuration>,
 }
-impl ReportConfiguration {
+impl  ReportConfiguration  {
     /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
-    pub fn report_s3_configuration(&self) -> ::std::option::Option<&crate::types::ReportS3Configuration> {
+    pub fn report_s3_configuration(&self) -> ::std::option::Option<& crate::types::ReportS3Configuration> {
         self.report_s3_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ReportConfigurationBuilder {
     }
     /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
     pub fn set_report_s3_configuration(mut self, input: ::std::option::Option<crate::types::ReportS3Configuration>) -> Self {
-        self.report_s3_configuration = input;
-        self
+        self.report_s3_configuration = input; self
     }
     /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
     pub fn get_report_s3_configuration(&self) -> &::std::option::Option<crate::types::ReportS3Configuration> {
@@ -44,7 +43,9 @@ impl ReportConfigurationBuilder {
     /// Consumes the builder and constructs a [`ReportConfiguration`](crate::types::ReportConfiguration).
     pub fn build(self) -> crate::types::ReportConfiguration {
         crate::types::ReportConfiguration {
-            report_s3_configuration: self.report_s3_configuration,
+            report_s3_configuration: self.report_s3_configuration
+            ,
         }
     }
 }
+

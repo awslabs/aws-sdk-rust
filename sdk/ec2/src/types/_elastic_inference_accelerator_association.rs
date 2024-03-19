@@ -3,7 +3,7 @@
 /// <p>Describes the association between an instance and an elastic inference accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticInferenceAcceleratorAssociation {
+pub struct ElasticInferenceAcceleratorAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the elastic inference accelerator.</p>
     pub elastic_inference_accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the association.</p>
@@ -13,21 +13,21 @@ pub struct ElasticInferenceAcceleratorAssociation {
     /// <p>The time at which the elastic inference accelerator is associated with an instance.</p>
     pub elastic_inference_accelerator_association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ElasticInferenceAcceleratorAssociation {
+impl  ElasticInferenceAcceleratorAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the elastic inference accelerator.</p>
-    pub fn elastic_inference_accelerator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_inference_accelerator_arn(&self) -> ::std::option::Option<& str> {
         self.elastic_inference_accelerator_arn.as_deref()
     }
     /// <p>The ID of the association.</p>
-    pub fn elastic_inference_accelerator_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_inference_accelerator_association_id(&self) -> ::std::option::Option<& str> {
         self.elastic_inference_accelerator_association_id.as_deref()
     }
     /// <p>The state of the elastic inference accelerator.</p>
-    pub fn elastic_inference_accelerator_association_state(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_inference_accelerator_association_state(&self) -> ::std::option::Option<& str> {
         self.elastic_inference_accelerator_association_state.as_deref()
     }
     /// <p>The time at which the elastic inference accelerator is associated with an instance.</p>
-    pub fn elastic_inference_accelerator_association_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn elastic_inference_accelerator_association_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.elastic_inference_accelerator_association_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ElasticInferenceAcceleratorAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the elastic inference accelerator.</p>
     pub fn set_elastic_inference_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_inference_accelerator_arn = input;
-        self
+        self.elastic_inference_accelerator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the elastic inference accelerator.</p>
     pub fn get_elastic_inference_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ElasticInferenceAcceleratorAssociationBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_elastic_inference_accelerator_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_inference_accelerator_association_id = input;
-        self
+        self.elastic_inference_accelerator_association_id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_elastic_inference_accelerator_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ElasticInferenceAcceleratorAssociationBuilder {
     }
     /// <p>The state of the elastic inference accelerator.</p>
     pub fn set_elastic_inference_accelerator_association_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_inference_accelerator_association_state = input;
-        self
+        self.elastic_inference_accelerator_association_state = input; self
     }
     /// <p>The state of the elastic inference accelerator.</p>
     pub fn get_elastic_inference_accelerator_association_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ElasticInferenceAcceleratorAssociationBuilder {
     }
     /// <p>The time at which the elastic inference accelerator is associated with an instance.</p>
     pub fn set_elastic_inference_accelerator_association_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.elastic_inference_accelerator_association_time = input;
-        self
+        self.elastic_inference_accelerator_association_time = input; self
     }
     /// <p>The time at which the elastic inference accelerator is associated with an instance.</p>
     pub fn get_elastic_inference_accelerator_association_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl ElasticInferenceAcceleratorAssociationBuilder {
     /// Consumes the builder and constructs a [`ElasticInferenceAcceleratorAssociation`](crate::types::ElasticInferenceAcceleratorAssociation).
     pub fn build(self) -> crate::types::ElasticInferenceAcceleratorAssociation {
         crate::types::ElasticInferenceAcceleratorAssociation {
-            elastic_inference_accelerator_arn: self.elastic_inference_accelerator_arn,
-            elastic_inference_accelerator_association_id: self.elastic_inference_accelerator_association_id,
-            elastic_inference_accelerator_association_state: self.elastic_inference_accelerator_association_state,
-            elastic_inference_accelerator_association_time: self.elastic_inference_accelerator_association_time,
+            elastic_inference_accelerator_arn: self.elastic_inference_accelerator_arn
+            ,
+            elastic_inference_accelerator_association_id: self.elastic_inference_accelerator_association_id
+            ,
+            elastic_inference_accelerator_association_state: self.elastic_inference_accelerator_association_state
+            ,
+            elastic_inference_accelerator_association_time: self.elastic_inference_accelerator_association_time
+            ,
         }
     }
 }
+

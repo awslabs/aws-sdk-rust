@@ -39,7 +39,7 @@
 /// </dl>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>A resource property name. For example, <code>TrainingJobName</code>. For valid property names, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>. You must specify a valid property for the resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean binary operator that is used to evaluate the filter. The operator field contains one of the following values:</p>
@@ -135,9 +135,9 @@ pub struct Filter {
     /// <p>A value used with <code>Name</code> and <code>Operator</code> to determine which resources satisfy the filter's condition. For numerical properties, <code>Value</code> must be an integer or floating-point decimal. For timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>A resource property name. For example, <code>TrainingJobName</code>. For valid property names, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>. You must specify a valid property for the resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A Boolean binary operator that is used to evaluate the filter. The operator field contains one of the following values:</p>
@@ -229,11 +229,11 @@ impl Filter {
     /// <p>A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the <code>SearchExpression</code>, the result is the following error message: "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"</p>
     /// </dd>
     /// </dl>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
+    pub fn operator(&self) -> ::std::option::Option<& crate::types::Operator> {
         self.operator.as_ref()
     }
     /// <p>A value used with <code>Name</code> and <code>Operator</code> to determine which resources satisfy the filter's condition. For numerical properties, <code>Value</code> must be an integer or floating-point decimal. For timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -261,8 +261,7 @@ impl FilterBuilder {
     }
     /// <p>A resource property name. For example, <code>TrainingJobName</code>. For valid property names, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>. You must specify a valid property for the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A resource property name. For example, <code>TrainingJobName</code>. For valid property names, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>. You must specify a valid property for the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -451,8 +450,7 @@ impl FilterBuilder {
     /// </dd>
     /// </dl>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>A Boolean binary operator that is used to evaluate the filter. The operator field contains one of the following values:</p>
     /// <dl>
@@ -553,8 +551,7 @@ impl FilterBuilder {
     }
     /// <p>A value used with <code>Name</code> and <code>Operator</code> to determine which resources satisfy the filter's condition. For numerical properties, <code>Value</code> must be an integer or floating-point decimal. For timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A value used with <code>Name</code> and <code>Operator</code> to determine which resources satisfy the filter's condition. For numerical properties, <code>Value</code> must be an integer or floating-point decimal. For timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -563,9 +560,13 @@ impl FilterBuilder {
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            name: self.name,
-            operator: self.operator,
-            value: self.value,
+            name: self.name
+            ,
+            operator: self.operator
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

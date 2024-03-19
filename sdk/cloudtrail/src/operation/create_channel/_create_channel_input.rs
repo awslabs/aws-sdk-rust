@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateChannelInput {
+pub struct CreateChannelInput  {
     /// <p>The name of the channel.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partner or external event source. You cannot change this name after you create the channel. A maximum of one channel is allowed per source.</p>
     /// <p>A source can be either <code>Custom</code> for all valid non-Amazon Web Services events, or the name of a partner event source. For information about the source names for available partners, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store-integration.html#cloudtrail-lake-partner-information">Additional information about integration partners</a> in the CloudTrail User Guide.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>One or more event data stores to which events arriving through a channel will be logged.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>,
     /// <p>A list of tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateChannelInput {
+impl  CreateChannelInput  {
     /// <p>The name of the channel.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the partner or external event source. You cannot change this name after you create the channel. A maximum of one channel is allowed per source.</p>
     /// <p>A source can be either <code>Custom</code> for all valid non-Amazon Web Services events, or the name of a partner event source. For information about the source names for available partners, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store-integration.html#cloudtrail-lake-partner-information">Additional information about integration partners</a> in the CloudTrail User Guide.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>One or more event data stores to which events arriving through a channel will be logged.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::Destination] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::Destination] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateChannelInput {
@@ -49,8 +51,8 @@ impl CreateChannelInput {
 pub struct CreateChannelInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateChannelInputBuilder {
     /// <p>The name of the channel.</p>
@@ -61,8 +63,7 @@ impl CreateChannelInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the channel.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +79,7 @@ impl CreateChannelInputBuilder {
     /// <p>The name of the partner or external event source. You cannot change this name after you create the channel. A maximum of one channel is allowed per source.</p>
     /// <p>A source can be either <code>Custom</code> for all valid non-Amazon Web Services events, or the name of a partner event source. For information about the source names for available partners, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store-integration.html#cloudtrail-lake-partner-information">Additional information about integration partners</a> in the CloudTrail User Guide.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The name of the partner or external event source. You cannot change this name after you create the channel. A maximum of one channel is allowed per source.</p>
     /// <p>A source can be either <code>Custom</code> for all valid non-Amazon Web Services events, or the name of a partner event source. For information about the source names for available partners, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store-integration.html#cloudtrail-lake-partner-information">Additional information about integration partners</a> in the CloudTrail User Guide.</p>
@@ -93,17 +93,16 @@ impl CreateChannelInputBuilder {
     /// <p>One or more event data stores to which events arriving through a channel will be logged.</p>
     pub fn destinations(mut self, input: crate::types::Destination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more event data stores to which events arriving through a channel will be logged.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>One or more event data stores to which events arriving through a channel will be logged.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Destination>> {
         &self.destinations
     }
     /// Appends an item to `tags`.
@@ -113,28 +112,32 @@ impl CreateChannelInputBuilder {
     /// <p>A list of tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
-            name: self.name,
-            source: self.source,
-            destinations: self.destinations,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_channel::CreateChannelInput {
+                name: self.name
+                ,
+                source: self.source
+                ,
+                destinations: self.destinations
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

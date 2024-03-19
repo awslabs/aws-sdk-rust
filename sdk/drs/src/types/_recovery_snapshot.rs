@@ -3,7 +3,7 @@
 /// <p>A snapshot of a Source Server used during recovery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoverySnapshot {
+pub struct RecoverySnapshot  {
     /// <p>The ID of the Recovery Snapshot.</p>
     pub snapshot_id: ::std::string::String,
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
@@ -13,33 +13,31 @@ pub struct RecoverySnapshot {
     /// <p>The actual timestamp that the snapshot was taken.</p>
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>A list of EBS snapshots.</p>
-    pub ebs_snapshots: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ebs_snapshots: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RecoverySnapshot {
+impl  RecoverySnapshot  {
     /// <p>The ID of the Recovery Snapshot.</p>
-    pub fn snapshot_id(&self) -> &str {
-        use std::ops::Deref;
-        self.snapshot_id.deref()
+    pub fn snapshot_id(&self) -> & str {
+        use std::ops::Deref; self.snapshot_id.deref()
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> & str {
+        use std::ops::Deref; self.source_server_id.deref()
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
-    pub fn expected_timestamp(&self) -> &str {
-        use std::ops::Deref;
-        self.expected_timestamp.deref()
+    pub fn expected_timestamp(&self) -> & str {
+        use std::ops::Deref; self.expected_timestamp.deref()
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<& str> {
         self.timestamp.as_deref()
     }
     /// <p>A list of EBS snapshots.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ebs_snapshots.is_none()`.
-    pub fn ebs_snapshots(&self) -> &[::std::string::String] {
-        self.ebs_snapshots.as_deref().unwrap_or_default()
+    pub fn ebs_snapshots(&self) -> & [::std::string::String] {
+        self.ebs_snapshots.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RecoverySnapshot {
@@ -57,7 +55,7 @@ pub struct RecoverySnapshotBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) expected_timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,
-    pub(crate) ebs_snapshots: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ebs_snapshots: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RecoverySnapshotBuilder {
     /// <p>The ID of the Recovery Snapshot.</p>
@@ -68,8 +66,7 @@ impl RecoverySnapshotBuilder {
     }
     /// <p>The ID of the Recovery Snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the Recovery Snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +80,7 @@ impl RecoverySnapshotBuilder {
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +94,7 @@ impl RecoverySnapshotBuilder {
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
     pub fn set_expected_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_timestamp = input;
-        self
+        self.expected_timestamp = input; self
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
     pub fn get_expected_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +107,7 @@ impl RecoverySnapshotBuilder {
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,17 +120,16 @@ impl RecoverySnapshotBuilder {
     /// <p>A list of EBS snapshots.</p>
     pub fn ebs_snapshots(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ebs_snapshots.unwrap_or_default();
-        v.push(input.into());
-        self.ebs_snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ebs_snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of EBS snapshots.</p>
-    pub fn set_ebs_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ebs_snapshots = input;
-        self
+    pub fn set_ebs_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ebs_snapshots = input; self
     }
     /// <p>A list of EBS snapshots.</p>
-    pub fn get_ebs_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ebs_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ebs_snapshots
     }
     /// Consumes the builder and constructs a [`RecoverySnapshot`](crate::types::RecoverySnapshot).
@@ -145,27 +138,29 @@ impl RecoverySnapshotBuilder {
     /// - [`source_server_id`](crate::types::builders::RecoverySnapshotBuilder::source_server_id)
     /// - [`expected_timestamp`](crate::types::builders::RecoverySnapshotBuilder::expected_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::RecoverySnapshot, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecoverySnapshot {
-            snapshot_id: self.snapshot_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "snapshot_id",
-                    "snapshot_id was not specified but it is required when building RecoverySnapshot",
-                )
-            })?,
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building RecoverySnapshot",
-                )
-            })?,
-            expected_timestamp: self.expected_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expected_timestamp",
-                    "expected_timestamp was not specified but it is required when building RecoverySnapshot",
-                )
-            })?,
-            timestamp: self.timestamp,
-            ebs_snapshots: self.ebs_snapshots,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecoverySnapshot {
+                snapshot_id: self.snapshot_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("snapshot_id", "snapshot_id was not specified but it is required when building RecoverySnapshot")
+                    )?
+                ,
+                source_server_id: self.source_server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_server_id", "source_server_id was not specified but it is required when building RecoverySnapshot")
+                    )?
+                ,
+                expected_timestamp: self.expected_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expected_timestamp", "expected_timestamp was not specified but it is required when building RecoverySnapshot")
+                    )?
+                ,
+                timestamp: self.timestamp
+                ,
+                ebs_snapshots: self.ebs_snapshots
+                ,
+            }
+        )
     }
 }
+

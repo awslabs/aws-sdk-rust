@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListContacts`](crate::operation::list_contacts::builders::ListContactsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of contacts returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p><br>
     ///   - [`status_list(ContactStatus)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::status_list) / [`set_status_list(Option<Vec::<ContactStatus>>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_status_list):<br>required: **true**<br><p>Status of a contact reservation.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`ground_station(impl Into<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::ground_station) / [`set_ground_station(Option<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_ground_station):<br>required: **false**<br><p>Name of a ground station.</p><br>
     ///   - [`satellite_arn(impl Into<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::satellite_arn) / [`set_satellite_arn(Option<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_satellite_arn):<br>required: **false**<br><p>ARN of a satellite.</p><br>
     ///   - [`mission_profile_arn(impl Into<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::mission_profile_arn) / [`set_mission_profile_arn(Option<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_mission_profile_arn):<br>required: **false**<br><p>ARN of a mission profile.</p><br>
-    /// - On success, responds with [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput) with field(s):
+                            /// - On success, responds with [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_contacts::ListContactsOutput::next_token): <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
     ///   - [`contact_list(Option<Vec::<ContactData>>)`](crate::operation::list_contacts::ListContactsOutput::contact_list): <p>List of contacts.</p>
-    /// - On failure, responds with [`SdkError<ListContactsError>`](crate::operation::list_contacts::ListContactsError)
+                            /// - On failure, responds with [`SdkError<ListContactsError>`](crate::operation::list_contacts::ListContactsError)
     pub fn list_contacts(&self) -> crate::operation::list_contacts::builders::ListContactsFluentBuilder {
-        crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

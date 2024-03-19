@@ -3,18 +3,17 @@
 /// <p>The connector-specific profile credentials required when using Trend Micro.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TrendmicroConnectorProfileCredentials {
+pub struct TrendmicroConnectorProfileCredentials  {
     /// <p>The Secret Access Key portion of the credentials.</p>
     pub api_secret_key: ::std::string::String,
 }
-impl TrendmicroConnectorProfileCredentials {
+impl  TrendmicroConnectorProfileCredentials  {
     /// <p>The Secret Access Key portion of the credentials.</p>
-    pub fn api_secret_key(&self) -> &str {
-        use std::ops::Deref;
-        self.api_secret_key.deref()
+    pub fn api_secret_key(&self) -> & str {
+        use std::ops::Deref; self.api_secret_key.deref()
     }
 }
-impl ::std::fmt::Debug for TrendmicroConnectorProfileCredentials {
+impl  ::std::fmt::Debug for TrendmicroConnectorProfileCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TrendmicroConnectorProfileCredentials");
         formatter.field("api_secret_key", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl TrendmicroConnectorProfileCredentialsBuilder {
     }
     /// <p>The Secret Access Key portion of the credentials.</p>
     pub fn set_api_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_secret_key = input;
-        self
+        self.api_secret_key = input; self
     }
     /// <p>The Secret Access Key portion of the credentials.</p>
     pub fn get_api_secret_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -53,17 +51,16 @@ impl TrendmicroConnectorProfileCredentialsBuilder {
     /// Consumes the builder and constructs a [`TrendmicroConnectorProfileCredentials`](crate::types::TrendmicroConnectorProfileCredentials).
     /// This method will fail if any of the following fields are not set:
     /// - [`api_secret_key`](crate::types::builders::TrendmicroConnectorProfileCredentialsBuilder::api_secret_key)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::TrendmicroConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrendmicroConnectorProfileCredentials {
-            api_secret_key: self.api_secret_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "api_secret_key",
-                    "api_secret_key was not specified but it is required when building TrendmicroConnectorProfileCredentials",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::TrendmicroConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::TrendmicroConnectorProfileCredentials {
+                api_secret_key: self.api_secret_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_secret_key", "api_secret_key was not specified but it is required when building TrendmicroConnectorProfileCredentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TrendmicroConnectorProfileCredentialsBuilder {
@@ -73,3 +70,4 @@ impl ::std::fmt::Debug for TrendmicroConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

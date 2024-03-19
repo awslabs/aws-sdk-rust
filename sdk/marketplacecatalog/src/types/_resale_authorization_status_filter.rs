@@ -3,16 +3,17 @@
 /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResaleAuthorizationStatusFilter {
+pub struct ResaleAuthorizationStatusFilter  {
     /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization with list input.</p>
-    pub value_list: ::std::option::Option<::std::vec::Vec<crate::types::ResaleAuthorizationStatusString>>,
+    pub value_list: ::std::option::Option<::std::vec::Vec::<crate::types::ResaleAuthorizationStatusString>>,
 }
-impl ResaleAuthorizationStatusFilter {
+impl  ResaleAuthorizationStatusFilter  {
     /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization with list input.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
-    pub fn value_list(&self) -> &[crate::types::ResaleAuthorizationStatusString] {
-        self.value_list.as_deref().unwrap_or_default()
+    pub fn value_list(&self) -> & [crate::types::ResaleAuthorizationStatusString] {
+        self.value_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResaleAuthorizationStatusFilter {
@@ -26,7 +27,7 @@ impl ResaleAuthorizationStatusFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResaleAuthorizationStatusFilterBuilder {
-    pub(crate) value_list: ::std::option::Option<::std::vec::Vec<crate::types::ResaleAuthorizationStatusString>>,
+    pub(crate) value_list: ::std::option::Option<::std::vec::Vec::<crate::types::ResaleAuthorizationStatusString>>,
 }
 impl ResaleAuthorizationStatusFilterBuilder {
     /// Appends an item to `value_list`.
@@ -36,21 +37,24 @@ impl ResaleAuthorizationStatusFilterBuilder {
     /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization with list input.</p>
     pub fn value_list(mut self, input: crate::types::ResaleAuthorizationStatusString) -> Self {
         let mut v = self.value_list.unwrap_or_default();
-        v.push(input);
-        self.value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization with list input.</p>
-    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResaleAuthorizationStatusString>>) -> Self {
-        self.value_list = input;
-        self
+    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResaleAuthorizationStatusString>>) -> Self {
+        self.value_list = input; self
     }
     /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization with list input.</p>
-    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResaleAuthorizationStatusString>> {
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResaleAuthorizationStatusString>> {
         &self.value_list
     }
     /// Consumes the builder and constructs a [`ResaleAuthorizationStatusFilter`](crate::types::ResaleAuthorizationStatusFilter).
     pub fn build(self) -> crate::types::ResaleAuthorizationStatusFilter {
-        crate::types::ResaleAuthorizationStatusFilter { value_list: self.value_list }
+        crate::types::ResaleAuthorizationStatusFilter {
+            value_list: self.value_list
+            ,
+        }
     }
 }
+

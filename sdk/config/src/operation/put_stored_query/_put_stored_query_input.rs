@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutStoredQueryInput {
+pub struct PutStoredQueryInput  {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p><note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
     pub stored_query: ::std::option::Option<crate::types::StoredQuery>,
     /// <p>A list of <code>Tags</code> object.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutStoredQueryInput {
+impl  PutStoredQueryInput  {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p><note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
-    pub fn stored_query(&self) -> ::std::option::Option<&crate::types::StoredQuery> {
+    pub fn stored_query(&self) -> ::std::option::Option<& crate::types::StoredQuery> {
         self.stored_query.as_ref()
     }
     /// <p>A list of <code>Tags</code> object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutStoredQueryInput {
@@ -36,7 +37,7 @@ impl PutStoredQueryInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutStoredQueryInputBuilder {
     pub(crate) stored_query: ::std::option::Option<crate::types::StoredQuery>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutStoredQueryInputBuilder {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p><note>
@@ -51,8 +52,7 @@ impl PutStoredQueryInputBuilder {
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
     pub fn set_stored_query(mut self, input: ::std::option::Option<crate::types::StoredQuery>) -> Self {
-        self.stored_query = input;
-        self
+        self.stored_query = input; self
     }
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p><note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
@@ -67,26 +67,28 @@ impl PutStoredQueryInputBuilder {
     /// <p>A list of <code>Tags</code> object.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Tags</code> object.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <code>Tags</code> object.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutStoredQueryInput`](crate::operation::put_stored_query::PutStoredQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_stored_query::PutStoredQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_stored_query::PutStoredQueryInput {
-            stored_query: self.stored_query,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_stored_query::PutStoredQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_stored_query::PutStoredQueryInput {
+                stored_query: self.stored_query
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

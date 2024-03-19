@@ -3,7 +3,7 @@
 /// <p>Describes a rule associated with a transit gateway policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayPolicyRule {
+pub struct TransitGatewayPolicyRule  {
     /// <p>The source CIDR block for the transit gateway policy rule.</p>
     pub source_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
@@ -17,29 +17,29 @@ pub struct TransitGatewayPolicyRule {
     /// <p>The meta data tags used for the transit gateway policy rule.</p>
     pub meta_data: ::std::option::Option<crate::types::TransitGatewayPolicyRuleMetaData>,
 }
-impl TransitGatewayPolicyRule {
+impl  TransitGatewayPolicyRule  {
     /// <p>The source CIDR block for the transit gateway policy rule.</p>
-    pub fn source_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn source_cidr_block(&self) -> ::std::option::Option<& str> {
         self.source_cidr_block.as_deref()
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
-    pub fn source_port_range(&self) -> ::std::option::Option<&str> {
+    pub fn source_port_range(&self) -> ::std::option::Option<& str> {
         self.source_port_range.as_deref()
     }
     /// <p>The destination CIDR block for the transit gateway policy rule.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
-    pub fn destination_port_range(&self) -> ::std::option::Option<&str> {
+    pub fn destination_port_range(&self) -> ::std::option::Option<& str> {
         self.destination_port_range.as_deref()
     }
     /// <p>The protocol used by the transit gateway policy rule.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The meta data tags used for the transit gateway policy rule.</p>
-    pub fn meta_data(&self) -> ::std::option::Option<&crate::types::TransitGatewayPolicyRuleMetaData> {
+    pub fn meta_data(&self) -> ::std::option::Option<& crate::types::TransitGatewayPolicyRuleMetaData> {
         self.meta_data.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl TransitGatewayPolicyRuleBuilder {
     }
     /// <p>The source CIDR block for the transit gateway policy rule.</p>
     pub fn set_source_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_cidr_block = input;
-        self
+        self.source_cidr_block = input; self
     }
     /// <p>The source CIDR block for the transit gateway policy rule.</p>
     pub fn get_source_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl TransitGatewayPolicyRuleBuilder {
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
     pub fn set_source_port_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_port_range = input;
-        self
+        self.source_port_range = input; self
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
     pub fn get_source_port_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl TransitGatewayPolicyRuleBuilder {
     }
     /// <p>The destination CIDR block for the transit gateway policy rule.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>The destination CIDR block for the transit gateway policy rule.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl TransitGatewayPolicyRuleBuilder {
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
     pub fn set_destination_port_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_port_range = input;
-        self
+        self.destination_port_range = input; self
     }
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
     pub fn get_destination_port_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl TransitGatewayPolicyRuleBuilder {
     }
     /// <p>The protocol used by the transit gateway policy rule.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol used by the transit gateway policy rule.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl TransitGatewayPolicyRuleBuilder {
     }
     /// <p>The meta data tags used for the transit gateway policy rule.</p>
     pub fn set_meta_data(mut self, input: ::std::option::Option<crate::types::TransitGatewayPolicyRuleMetaData>) -> Self {
-        self.meta_data = input;
-        self
+        self.meta_data = input; self
     }
     /// <p>The meta data tags used for the transit gateway policy rule.</p>
     pub fn get_meta_data(&self) -> &::std::option::Option<crate::types::TransitGatewayPolicyRuleMetaData> {
@@ -149,12 +143,19 @@ impl TransitGatewayPolicyRuleBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayPolicyRule`](crate::types::TransitGatewayPolicyRule).
     pub fn build(self) -> crate::types::TransitGatewayPolicyRule {
         crate::types::TransitGatewayPolicyRule {
-            source_cidr_block: self.source_cidr_block,
-            source_port_range: self.source_port_range,
-            destination_cidr_block: self.destination_cidr_block,
-            destination_port_range: self.destination_port_range,
-            protocol: self.protocol,
-            meta_data: self.meta_data,
+            source_cidr_block: self.source_cidr_block
+            ,
+            source_port_range: self.source_port_range
+            ,
+            destination_cidr_block: self.destination_cidr_block
+            ,
+            destination_port_range: self.destination_port_range
+            ,
+            protocol: self.protocol
+            ,
+            meta_data: self.meta_data
+            ,
         }
     }
 }
+

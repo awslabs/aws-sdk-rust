@@ -3,13 +3,13 @@
 /// <p>Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainDeliverabilityCampaignInput {
+pub struct GetDomainDeliverabilityCampaignInput  {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
     pub campaign_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDomainDeliverabilityCampaignInput {
+impl  GetDomainDeliverabilityCampaignInput  {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
-    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl GetDomainDeliverabilityCampaignInputBuilder {
     }
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_id = input;
-        self
+        self.campaign_id = input; self
     }
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
     pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.campaign_id
     }
     /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignInput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput {
-                campaign_id: self.campaign_id,
-            },
+                campaign_id: self.campaign_id
+                ,
+            }
         )
     }
 }
+

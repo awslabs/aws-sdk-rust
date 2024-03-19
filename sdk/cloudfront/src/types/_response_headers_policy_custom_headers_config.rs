@@ -3,22 +3,23 @@
 /// <p>A list of HTTP response header names and their values. CloudFront includes these headers in HTTP responses that it sends for requests that match a cache behavior that's associated with this response headers policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyCustomHeadersConfig {
+pub struct ResponseHeadersPolicyCustomHeadersConfig  {
     /// <p>The number of HTTP response headers in the list.</p>
     pub quantity: i32,
     /// <p>The list of HTTP response headers and their values.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicyCustomHeader>>,
 }
-impl ResponseHeadersPolicyCustomHeadersConfig {
+impl  ResponseHeadersPolicyCustomHeadersConfig  {
     /// <p>The number of HTTP response headers in the list.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The list of HTTP response headers and their values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::ResponseHeadersPolicyCustomHeader] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::ResponseHeadersPolicyCustomHeader] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResponseHeadersPolicyCustomHeadersConfig {
@@ -33,7 +34,7 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeadersConfigBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicyCustomHeader>>,
 }
 impl ResponseHeadersPolicyCustomHeadersConfigBuilder {
     /// <p>The number of HTTP response headers in the list.</p>
@@ -44,8 +45,7 @@ impl ResponseHeadersPolicyCustomHeadersConfigBuilder {
     }
     /// <p>The number of HTTP response headers in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of HTTP response headers in the list.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -58,33 +58,33 @@ impl ResponseHeadersPolicyCustomHeadersConfigBuilder {
     /// <p>The list of HTTP response headers and their values.</p>
     pub fn items(mut self, input: crate::types::ResponseHeadersPolicyCustomHeader) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of HTTP response headers and their values.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicyCustomHeader>>) -> Self {
+        self.items = input; self
     }
     /// <p>The list of HTTP response headers and their values.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyCustomHeader>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicyCustomHeader>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyCustomHeadersConfig`](crate::types::ResponseHeadersPolicyCustomHeadersConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::ResponseHeadersPolicyCustomHeadersConfigBuilder::quantity)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCustomHeadersConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyCustomHeadersConfig {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building ResponseHeadersPolicyCustomHeadersConfig",
-                )
-            })?,
-            items: self.items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCustomHeadersConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyCustomHeadersConfig {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building ResponseHeadersPolicyCustomHeadersConfig")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

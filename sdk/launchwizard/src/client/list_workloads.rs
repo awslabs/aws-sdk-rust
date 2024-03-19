@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkloads`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p><br>
-    /// - On success, responds with [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput) with field(s):
     ///   - [`workloads(Option<Vec::<WorkloadDataSummary>>)`](crate::operation::list_workloads::ListWorkloadsOutput::workloads): <p>Information about the workloads.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workloads::ListWorkloadsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
+                            /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
     pub fn list_workloads(&self) -> crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder {
-        crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

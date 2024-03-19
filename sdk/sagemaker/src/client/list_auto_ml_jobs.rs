@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAutoMLJobs`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Request a list of jobs, using a filter for time.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>Request a list of jobs, using a filter for time.</p><br>
     ///   - [`last_modified_time_after(DateTime)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::set_last_modified_time_after):<br>required: **false**<br><p>Request a list of jobs, using a filter for time.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`sort_by(AutoMlSortBy)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::sort_by) / [`set_sort_by(Option<AutoMlSortBy>)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The parameter by which to sort the results. The default is <code>Name</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>Request a list of jobs up to a specified limit.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p><br>
-    /// - On success, responds with [`ListAutoMlJobsOutput`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput) with field(s):
+                            /// - On success, responds with [`ListAutoMlJobsOutput`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput) with field(s):
     ///   - [`auto_ml_job_summaries(Option<Vec::<AutoMlJobSummary>>)`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput::auto_ml_job_summaries): <p>Returns a summary list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListAutoMLJobsError>`](crate::operation::list_auto_ml_jobs::ListAutoMLJobsError)
+                            /// - On failure, responds with [`SdkError<ListAutoMLJobsError>`](crate::operation::list_auto_ml_jobs::ListAutoMLJobsError)
     pub fn list_auto_ml_jobs(&self) -> crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder {
-        crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_auto_ml_jobs::builders::ListAutoMLJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

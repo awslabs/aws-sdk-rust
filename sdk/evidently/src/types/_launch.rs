@@ -3,7 +3,7 @@
 /// <p>This structure contains the configuration details of one Evidently launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Launch {
+pub struct Launch  {
     /// <p>The ARN of the launch.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the launch.</p>
@@ -23,9 +23,9 @@ pub struct Launch {
     /// <p>A structure that contains information about the start and end times of the launch.</p>
     pub execution: ::std::option::Option<crate::types::LaunchExecution>,
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroup>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchGroup>>,
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-    pub metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>>,
+    pub metric_monitors: ::std::option::Option<::std::vec::Vec::<crate::types::MetricMonitor>>,
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>The type of launch.</p>
@@ -33,73 +33,73 @@ pub struct Launch {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub scheduled_splits_definition: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Launch {
+impl  Launch  {
     /// <p>The ARN of the launch.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the launch.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name or ARN of the project that contains the launch.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The current state of the launch.</p>
-    pub fn status(&self) -> &crate::types::LaunchStatus {
+    pub fn status(&self) -> & crate::types::LaunchStatus {
         &self.status
     }
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The description of the launch.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the launch is created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The date and time that the launch was most recently updated.</p>
-    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
     /// <p>A structure that contains information about the start and end times of the launch.</p>
-    pub fn execution(&self) -> ::std::option::Option<&crate::types::LaunchExecution> {
+    pub fn execution(&self) -> ::std::option::Option<& crate::types::LaunchExecution> {
         self.execution.as_ref()
     }
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::LaunchGroup] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::LaunchGroup] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_monitors.is_none()`.
-    pub fn metric_monitors(&self) -> &[crate::types::MetricMonitor] {
-        self.metric_monitors.as_deref().unwrap_or_default()
+    pub fn metric_monitors(&self) -> & [crate::types::MetricMonitor] {
+        self.metric_monitors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
+    pub fn randomization_salt(&self) -> ::std::option::Option<& str> {
         self.randomization_salt.as_deref()
     }
     /// <p>The type of launch.</p>
-    pub fn r#type(&self) -> &crate::types::LaunchType {
+    pub fn r#type(&self) -> & crate::types::LaunchType {
         &self.r#type
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
-    pub fn scheduled_splits_definition(&self) -> ::std::option::Option<&crate::types::ScheduledSplitsLaunchDefinition> {
+    pub fn scheduled_splits_definition(&self) -> ::std::option::Option<& crate::types::ScheduledSplitsLaunchDefinition> {
         self.scheduled_splits_definition.as_ref()
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -123,12 +123,12 @@ pub struct LaunchBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) execution: ::std::option::Option<crate::types::LaunchExecution>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroup>>,
-    pub(crate) metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchGroup>>,
+    pub(crate) metric_monitors: ::std::option::Option<::std::vec::Vec::<crate::types::MetricMonitor>>,
     pub(crate) randomization_salt: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::LaunchType>,
     pub(crate) scheduled_splits_definition: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl LaunchBuilder {
     /// <p>The ARN of the launch.</p>
@@ -139,8 +139,7 @@ impl LaunchBuilder {
     }
     /// <p>The ARN of the launch.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the launch.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +153,7 @@ impl LaunchBuilder {
     }
     /// <p>The name of the launch.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the launch.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +166,7 @@ impl LaunchBuilder {
     }
     /// <p>The name or ARN of the project that contains the launch.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that contains the launch.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +180,7 @@ impl LaunchBuilder {
     }
     /// <p>The current state of the launch.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LaunchStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the launch.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
@@ -197,8 +193,7 @@ impl LaunchBuilder {
     }
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +206,7 @@ impl LaunchBuilder {
     }
     /// <p>The description of the launch.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the launch.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +220,7 @@ impl LaunchBuilder {
     }
     /// <p>The date and time that the launch is created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time that the launch is created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -241,8 +234,7 @@ impl LaunchBuilder {
     }
     /// <p>The date and time that the launch was most recently updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time that the launch was most recently updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -255,8 +247,7 @@ impl LaunchBuilder {
     }
     /// <p>A structure that contains information about the start and end times of the launch.</p>
     pub fn set_execution(mut self, input: ::std::option::Option<crate::types::LaunchExecution>) -> Self {
-        self.execution = input;
-        self
+        self.execution = input; self
     }
     /// <p>A structure that contains information about the start and end times of the launch.</p>
     pub fn get_execution(&self) -> &::std::option::Option<crate::types::LaunchExecution> {
@@ -269,17 +260,16 @@ impl LaunchBuilder {
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
     pub fn groups(mut self, input: crate::types::LaunchGroup) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroup>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchGroup>>) -> Self {
+        self.groups = input; self
     }
     /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchGroup>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchGroup>> {
         &self.groups
     }
     /// Appends an item to `metric_monitors`.
@@ -289,17 +279,16 @@ impl LaunchBuilder {
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
     pub fn metric_monitors(mut self, input: crate::types::MetricMonitor) -> Self {
         let mut v = self.metric_monitors.unwrap_or_default();
-        v.push(input);
-        self.metric_monitors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_monitors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-    pub fn set_metric_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>>) -> Self {
-        self.metric_monitors = input;
-        self
+    pub fn set_metric_monitors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricMonitor>>) -> Self {
+        self.metric_monitors = input; self
     }
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-    pub fn get_metric_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>> {
+    pub fn get_metric_monitors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricMonitor>> {
         &self.metric_monitors
     }
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
@@ -309,8 +298,7 @@ impl LaunchBuilder {
     }
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.randomization_salt = input;
-        self
+        self.randomization_salt = input; self
     }
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
@@ -324,8 +312,7 @@ impl LaunchBuilder {
     }
     /// <p>The type of launch.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of launch.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
@@ -338,8 +325,7 @@ impl LaunchBuilder {
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn set_scheduled_splits_definition(mut self, input: ::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition>) -> Self {
-        self.scheduled_splits_definition = input;
-        self
+        self.scheduled_splits_definition = input; self
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn get_scheduled_splits_definition(&self) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition> {
@@ -352,17 +338,16 @@ impl LaunchBuilder {
     /// <p>The list of tag keys and values associated with this launch.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Launch`](crate::types::Launch).
@@ -374,52 +359,58 @@ impl LaunchBuilder {
     /// - [`last_updated_time`](crate::types::builders::LaunchBuilder::last_updated_time)
     /// - [`r#type`](crate::types::builders::LaunchBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Launch, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Launch {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Launch",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Launch",
-                )
-            })?,
-            project: self.project,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Launch",
-                )
-            })?,
-            status_reason: self.status_reason,
-            description: self.description,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building Launch",
-                )
-            })?,
-            last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_time",
-                    "last_updated_time was not specified but it is required when building Launch",
-                )
-            })?,
-            execution: self.execution,
-            groups: self.groups,
-            metric_monitors: self.metric_monitors,
-            randomization_salt: self.randomization_salt,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Launch",
-                )
-            })?,
-            scheduled_splits_definition: self.scheduled_splits_definition,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Launch {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Launch")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Launch")
+                    )?
+                ,
+                project: self.project
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Launch")
+                    )?
+                ,
+                status_reason: self.status_reason
+                ,
+                description: self.description
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building Launch")
+                    )?
+                ,
+                last_updated_time: self.last_updated_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_time", "last_updated_time was not specified but it is required when building Launch")
+                    )?
+                ,
+                execution: self.execution
+                ,
+                groups: self.groups
+                ,
+                metric_monitors: self.metric_monitors
+                ,
+                randomization_salt: self.randomization_salt
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Launch")
+                    )?
+                ,
+                scheduled_splits_definition: self.scheduled_splits_definition
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

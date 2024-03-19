@@ -4,7 +4,7 @@
 /// <p>WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <code>Rule</code> statement <code>RegexPatternSetReferenceStatement</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegexPatternSet {
+pub struct RegexPatternSet  {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -14,30 +14,31 @@ pub struct RegexPatternSet {
     /// <p>A description of the set that helps with identification.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The regular expression patterns in the set.</p>
-    pub regular_expression_list: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
+    pub regular_expression_list: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>,
 }
-impl RegexPatternSet {
+impl  RegexPatternSet  {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A description of the set that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The regular expression patterns in the set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regular_expression_list.is_none()`.
-    pub fn regular_expression_list(&self) -> &[crate::types::Regex] {
-        self.regular_expression_list.as_deref().unwrap_or_default()
+    pub fn regular_expression_list(&self) -> & [crate::types::Regex] {
+        self.regular_expression_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegexPatternSet {
@@ -55,7 +56,7 @@ pub struct RegexPatternSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) regular_expression_list: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
+    pub(crate) regular_expression_list: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>,
 }
 impl RegexPatternSetBuilder {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -65,8 +66,7 @@ impl RegexPatternSetBuilder {
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl RegexPatternSetBuilder {
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl RegexPatternSetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl RegexPatternSetBuilder {
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,27 +118,32 @@ impl RegexPatternSetBuilder {
     /// <p>The regular expression patterns in the set.</p>
     pub fn regular_expression_list(mut self, input: crate::types::Regex) -> Self {
         let mut v = self.regular_expression_list.unwrap_or_default();
-        v.push(input);
-        self.regular_expression_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regular_expression_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The regular expression patterns in the set.</p>
-    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
-        self.regular_expression_list = input;
-        self
+    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Regex>>) -> Self {
+        self.regular_expression_list = input; self
     }
     /// <p>The regular expression patterns in the set.</p>
-    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
+    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Regex>> {
         &self.regular_expression_list
     }
     /// Consumes the builder and constructs a [`RegexPatternSet`](crate::types::RegexPatternSet).
     pub fn build(self) -> crate::types::RegexPatternSet {
         crate::types::RegexPatternSet {
-            name: self.name,
-            id: self.id,
-            arn: self.arn,
-            description: self.description,
-            regular_expression_list: self.regular_expression_list,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            regular_expression_list: self.regular_expression_list
+            ,
         }
     }
 }
+

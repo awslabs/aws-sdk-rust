@@ -3,19 +3,19 @@
 /// <p>Describes how results of the Select job are serialized.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputSerialization {
+pub struct OutputSerialization  {
     /// <p>Describes the serialization of CSV-encoded Select results.</p>
     pub csv: ::std::option::Option<crate::types::CsvOutput>,
     /// <p>Specifies JSON as request's output serialization format.</p>
     pub json: ::std::option::Option<crate::types::JsonOutput>,
 }
-impl OutputSerialization {
+impl  OutputSerialization  {
     /// <p>Describes the serialization of CSV-encoded Select results.</p>
-    pub fn csv(&self) -> ::std::option::Option<&crate::types::CsvOutput> {
+    pub fn csv(&self) -> ::std::option::Option<& crate::types::CsvOutput> {
         self.csv.as_ref()
     }
     /// <p>Specifies JSON as request's output serialization format.</p>
-    pub fn json(&self) -> ::std::option::Option<&crate::types::JsonOutput> {
+    pub fn json(&self) -> ::std::option::Option<& crate::types::JsonOutput> {
         self.json.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl OutputSerializationBuilder {
     }
     /// <p>Describes the serialization of CSV-encoded Select results.</p>
     pub fn set_csv(mut self, input: ::std::option::Option<crate::types::CsvOutput>) -> Self {
-        self.csv = input;
-        self
+        self.csv = input; self
     }
     /// <p>Describes the serialization of CSV-encoded Select results.</p>
     pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvOutput> {
@@ -55,8 +54,7 @@ impl OutputSerializationBuilder {
     }
     /// <p>Specifies JSON as request's output serialization format.</p>
     pub fn set_json(mut self, input: ::std::option::Option<crate::types::JsonOutput>) -> Self {
-        self.json = input;
-        self
+        self.json = input; self
     }
     /// <p>Specifies JSON as request's output serialization format.</p>
     pub fn get_json(&self) -> &::std::option::Option<crate::types::JsonOutput> {
@@ -65,8 +63,11 @@ impl OutputSerializationBuilder {
     /// Consumes the builder and constructs a [`OutputSerialization`](crate::types::OutputSerialization).
     pub fn build(self) -> crate::types::OutputSerialization {
         crate::types::OutputSerialization {
-            csv: self.csv,
-            json: self.json,
+            csv: self.csv
+            ,
+            json: self.json
+            ,
         }
     }
 }
+

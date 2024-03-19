@@ -24,11 +24,7 @@ impl HeaderMatchType {
     /// Tries to convert the enum instance into [`Contains`](crate::types::HeaderMatchType::Contains), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contains(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let HeaderMatchType::Contains(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let HeaderMatchType::Contains(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Contains`](crate::types::HeaderMatchType::Contains).
     pub fn is_contains(&self) -> bool {
@@ -37,11 +33,7 @@ impl HeaderMatchType {
     /// Tries to convert the enum instance into [`Exact`](crate::types::HeaderMatchType::Exact), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let HeaderMatchType::Exact(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let HeaderMatchType::Exact(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Exact`](crate::types::HeaderMatchType::Exact).
     pub fn is_exact(&self) -> bool {
@@ -50,11 +42,7 @@ impl HeaderMatchType {
     /// Tries to convert the enum instance into [`Prefix`](crate::types::HeaderMatchType::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let HeaderMatchType::Prefix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let HeaderMatchType::Prefix(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::types::HeaderMatchType::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -65,3 +53,4 @@ impl HeaderMatchType {
         matches!(self, Self::Unknown)
     }
 }
+

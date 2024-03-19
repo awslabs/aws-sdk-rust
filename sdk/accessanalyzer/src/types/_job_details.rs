@@ -3,7 +3,7 @@
 /// <p>Contains details about the policy generation request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobDetails {
+pub struct JobDetails  {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub job_id: ::std::string::String,
     /// <p>The status of the job request.</p>
@@ -15,26 +15,25 @@ pub struct JobDetails {
     /// <p>The job error for the policy generation request.</p>
     pub job_error: ::std::option::Option<crate::types::JobError>,
 }
-impl JobDetails {
+impl  JobDetails  {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The status of the job request.</p>
-    pub fn status(&self) -> &crate::types::JobStatus {
+    pub fn status(&self) -> & crate::types::JobStatus {
         &self.status
     }
     /// <p>A timestamp of when the job was started.</p>
-    pub fn started_on(&self) -> &::aws_smithy_types::DateTime {
+    pub fn started_on(&self) -> & ::aws_smithy_types::DateTime {
         &self.started_on
     }
     /// <p>A timestamp of when the job was completed.</p>
-    pub fn completed_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The job error for the policy generation request.</p>
-    pub fn job_error(&self) -> ::std::option::Option<&crate::types::JobError> {
+    pub fn job_error(&self) -> ::std::option::Option<& crate::types::JobError> {
         self.job_error.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl JobDetailsBuilder {
     }
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl JobDetailsBuilder {
     }
     /// <p>The status of the job request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the job request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -94,8 +91,7 @@ impl JobDetailsBuilder {
     }
     /// <p>A timestamp of when the job was started.</p>
     pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_on = input;
-        self
+        self.started_on = input; self
     }
     /// <p>A timestamp of when the job was started.</p>
     pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -108,8 +104,7 @@ impl JobDetailsBuilder {
     }
     /// <p>A timestamp of when the job was completed.</p>
     pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_on = input;
-        self
+        self.completed_on = input; self
     }
     /// <p>A timestamp of when the job was completed.</p>
     pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,8 +117,7 @@ impl JobDetailsBuilder {
     }
     /// <p>The job error for the policy generation request.</p>
     pub fn set_job_error(mut self, input: ::std::option::Option<crate::types::JobError>) -> Self {
-        self.job_error = input;
-        self
+        self.job_error = input; self
     }
     /// <p>The job error for the policy generation request.</p>
     pub fn get_job_error(&self) -> &::std::option::Option<crate::types::JobError> {
@@ -135,27 +129,29 @@ impl JobDetailsBuilder {
     /// - [`status`](crate::types::builders::JobDetailsBuilder::status)
     /// - [`started_on`](crate::types::builders::JobDetailsBuilder::started_on)
     pub fn build(self) -> ::std::result::Result<crate::types::JobDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobDetails {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building JobDetails",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building JobDetails",
-                )
-            })?,
-            started_on: self.started_on.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "started_on",
-                    "started_on was not specified but it is required when building JobDetails",
-                )
-            })?,
-            completed_on: self.completed_on,
-            job_error: self.job_error,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobDetails {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building JobDetails")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building JobDetails")
+                    )?
+                ,
+                started_on: self.started_on
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("started_on", "started_on was not specified but it is required when building JobDetails")
+                    )?
+                ,
+                completed_on: self.completed_on
+                ,
+                job_error: self.job_error
+                ,
+            }
+        )
     }
 }
+

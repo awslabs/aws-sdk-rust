@@ -3,15 +3,14 @@
 /// <p>The users that belong to a group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberUser {
+pub struct MemberUser  {
     /// <p>The identifier of the user you want to map to a group.</p>
     pub user_id: ::std::string::String,
 }
-impl MemberUser {
+impl  MemberUser  {
     /// <p>The identifier of the user you want to map to a group.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> & str {
+        use std::ops::Deref; self.user_id.deref()
     }
 }
 impl MemberUser {
@@ -36,8 +35,7 @@ impl MemberUserBuilder {
     }
     /// <p>The identifier of the user you want to map to a group.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user you want to map to a group.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl MemberUserBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_id`](crate::types::builders::MemberUserBuilder::user_id)
     pub fn build(self) -> ::std::result::Result<crate::types::MemberUser, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MemberUser {
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building MemberUser",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MemberUser {
+                user_id: self.user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "user_id was not specified but it is required when building MemberUser")
+                    )?
+                ,
+            }
+        )
     }
 }
+

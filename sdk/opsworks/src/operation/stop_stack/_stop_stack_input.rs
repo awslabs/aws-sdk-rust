@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopStackInput {
+pub struct StopStackInput  {
     /// <p>The stack ID.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
 }
-impl StopStackInput {
+impl  StopStackInput  {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl StopStackInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ID.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl StopStackInputBuilder {
     }
     /// Consumes the builder and constructs a [`StopStackInput`](crate::operation::stop_stack::StopStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_stack::StopStackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_stack::StopStackInput { stack_id: self.stack_id })
+        ::std::result::Result::Ok(
+            crate::operation::stop_stack::StopStackInput {
+                stack_id: self.stack_id
+                ,
+            }
+        )
     }
 }
+

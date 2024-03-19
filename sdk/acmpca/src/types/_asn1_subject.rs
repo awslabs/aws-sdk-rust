@@ -3,7 +3,7 @@
 /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Asn1Subject {
+pub struct Asn1Subject  {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
@@ -37,74 +37,75 @@ pub struct Asn1Subject {
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
-    pub custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>,
+    pub custom_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAttribute>>,
 }
-impl Asn1Subject {
+impl  Asn1Subject  {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
-    pub fn organization(&self) -> ::std::option::Option<&str> {
+    pub fn organization(&self) -> ::std::option::Option<& str> {
         self.organization.as_deref()
     }
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
-    pub fn organizational_unit(&self) -> ::std::option::Option<&str> {
+    pub fn organizational_unit(&self) -> ::std::option::Option<& str> {
         self.organizational_unit.as_deref()
     }
     /// <p>Disambiguating information for the certificate subject.</p>
-    pub fn distinguished_name_qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn distinguished_name_qualifier(&self) -> ::std::option::Option<& str> {
         self.distinguished_name_qualifier.as_deref()
     }
     /// <p>State in which the subject of the certificate is located.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit.</p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
-    pub fn common_name(&self) -> ::std::option::Option<&str> {
+    pub fn common_name(&self) -> ::std::option::Option<& str> {
         self.common_name.as_deref()
     }
     /// <p>The certificate serial number.</p>
-    pub fn serial_number(&self) -> ::std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
-    pub fn locality(&self) -> ::std::option::Option<&str> {
+    pub fn locality(&self) -> ::std::option::Option<& str> {
         self.locality.as_deref()
     }
     /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
-    pub fn surname(&self) -> ::std::option::Option<&str> {
+    pub fn surname(&self) -> ::std::option::Option<& str> {
         self.surname.as_deref()
     }
     /// <p>First name.</p>
-    pub fn given_name(&self) -> ::std::option::Option<&str> {
+    pub fn given_name(&self) -> ::std::option::Option<& str> {
         self.given_name.as_deref()
     }
     /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
-    pub fn initials(&self) -> ::std::option::Option<&str> {
+    pub fn initials(&self) -> ::std::option::Option<& str> {
         self.initials.as_deref()
     }
     /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
-    pub fn pseudonym(&self) -> ::std::option::Option<&str> {
+    pub fn pseudonym(&self) -> ::std::option::Option<& str> {
         self.pseudonym.as_deref()
     }
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
-    pub fn generation_qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn generation_qualifier(&self) -> ::std::option::Option<& str> {
         self.generation_qualifier.as_deref()
     }
     /// <p></p>
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_attributes.is_none()`.
-    pub fn custom_attributes(&self) -> &[crate::types::CustomAttribute] {
-        self.custom_attributes.as_deref().unwrap_or_default()
+    pub fn custom_attributes(&self) -> & [crate::types::CustomAttribute] {
+        self.custom_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Asn1Subject {
@@ -132,7 +133,7 @@ pub struct Asn1SubjectBuilder {
     pub(crate) initials: ::std::option::Option<::std::string::String>,
     pub(crate) pseudonym: ::std::option::Option<::std::string::String>,
     pub(crate) generation_qualifier: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>,
+    pub(crate) custom_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAttribute>>,
 }
 impl Asn1SubjectBuilder {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
@@ -142,8 +143,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +156,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
     pub fn set_organization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization = input;
-        self
+        self.organization = input; self
     }
     /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
     pub fn get_organization(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +169,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
     pub fn set_organizational_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organizational_unit = input;
-        self
+        self.organizational_unit = input; self
     }
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
     pub fn get_organizational_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +182,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>Disambiguating information for the certificate subject.</p>
     pub fn set_distinguished_name_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distinguished_name_qualifier = input;
-        self
+        self.distinguished_name_qualifier = input; self
     }
     /// <p>Disambiguating information for the certificate subject.</p>
     pub fn get_distinguished_name_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +195,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>State in which the subject of the certificate is located.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>State in which the subject of the certificate is located.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +210,7 @@ impl Asn1SubjectBuilder {
     /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit.</p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
     pub fn set_common_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.common_name = input;
-        self
+        self.common_name = input; self
     }
     /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit.</p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
@@ -229,8 +224,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>The certificate serial number.</p>
     pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>The certificate serial number.</p>
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +237,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
     pub fn set_locality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locality = input;
-        self
+        self.locality = input; self
     }
     /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
     pub fn get_locality(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +250,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +263,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
     pub fn set_surname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.surname = input;
-        self
+        self.surname = input; self
     }
     /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
     pub fn get_surname(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,8 +276,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>First name.</p>
     pub fn set_given_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.given_name = input;
-        self
+        self.given_name = input; self
     }
     /// <p>First name.</p>
     pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,8 +289,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
     pub fn set_initials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initials = input;
-        self
+        self.initials = input; self
     }
     /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
     pub fn get_initials(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,8 +302,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
     pub fn set_pseudonym(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pseudonym = input;
-        self
+        self.pseudonym = input; self
     }
     /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
     pub fn get_pseudonym(&self) -> &::std::option::Option<::std::string::String> {
@@ -327,8 +315,7 @@ impl Asn1SubjectBuilder {
     }
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
     pub fn set_generation_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_qualifier = input;
-        self
+        self.generation_qualifier = input; self
     }
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
     pub fn get_generation_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -344,43 +331,58 @@ impl Asn1SubjectBuilder {
     /// </note>
     pub fn custom_attributes(mut self, input: crate::types::CustomAttribute) -> Self {
         let mut v = self.custom_attributes.unwrap_or_default();
-        v.push(input);
-        self.custom_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
-    pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>) -> Self {
-        self.custom_attributes = input;
-        self
+    pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAttribute>>) -> Self {
+        self.custom_attributes = input; self
     }
     /// <p></p>
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
-    pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>> {
+    pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomAttribute>> {
         &self.custom_attributes
     }
     /// Consumes the builder and constructs a [`Asn1Subject`](crate::types::Asn1Subject).
     pub fn build(self) -> crate::types::Asn1Subject {
         crate::types::Asn1Subject {
-            country: self.country,
-            organization: self.organization,
-            organizational_unit: self.organizational_unit,
-            distinguished_name_qualifier: self.distinguished_name_qualifier,
-            state: self.state,
-            common_name: self.common_name,
-            serial_number: self.serial_number,
-            locality: self.locality,
-            title: self.title,
-            surname: self.surname,
-            given_name: self.given_name,
-            initials: self.initials,
-            pseudonym: self.pseudonym,
-            generation_qualifier: self.generation_qualifier,
-            custom_attributes: self.custom_attributes,
+            country: self.country
+            ,
+            organization: self.organization
+            ,
+            organizational_unit: self.organizational_unit
+            ,
+            distinguished_name_qualifier: self.distinguished_name_qualifier
+            ,
+            state: self.state
+            ,
+            common_name: self.common_name
+            ,
+            serial_number: self.serial_number
+            ,
+            locality: self.locality
+            ,
+            title: self.title
+            ,
+            surname: self.surname
+            ,
+            given_name: self.given_name
+            ,
+            initials: self.initials
+            ,
+            pseudonym: self.pseudonym
+            ,
+            generation_qualifier: self.generation_qualifier
+            ,
+            custom_attributes: self.custom_attributes
+            ,
         }
     }
 }
+

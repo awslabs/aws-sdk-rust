@@ -5,13 +5,13 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionConfiguration {
+pub struct EncryptionConfiguration  {
     /// <p>Specifies the ID of the customer managed KMS key that's stored in Key Management Service (KMS) for the destination bucket. This ID is either the Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key. Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub replica_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl EncryptionConfiguration {
+impl  EncryptionConfiguration  {
     /// <p>Specifies the ID of the customer managed KMS key that's stored in Key Management Service (KMS) for the destination bucket. This ID is either the Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key. Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub fn replica_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn replica_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.replica_kms_key_id.as_deref()
     }
 }
@@ -36,8 +36,7 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>Specifies the ID of the customer managed KMS key that's stored in Key Management Service (KMS) for the destination bucket. This ID is either the Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key. Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn set_replica_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_kms_key_id = input;
-        self
+        self.replica_kms_key_id = input; self
     }
     /// <p>Specifies the ID of the customer managed KMS key that's stored in Key Management Service (KMS) for the destination bucket. This ID is either the Amazon Resource Name (ARN) for the KMS key or the alias ARN for the KMS key. Amazon S3 uses this KMS key to encrypt replica objects. Amazon S3 supports only symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">Symmetric encryption KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn get_replica_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,7 +45,9 @@ impl EncryptionConfigurationBuilder {
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
         crate::types::EncryptionConfiguration {
-            replica_kms_key_id: self.replica_kms_key_id,
+            replica_kms_key_id: self.replica_kms_key_id
+            ,
         }
     }
 }
+

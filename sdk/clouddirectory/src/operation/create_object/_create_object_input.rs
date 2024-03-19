@@ -2,41 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateObjectInput {
+pub struct CreateObjectInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    pub schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
+    pub schema_facets: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaFacet>>,
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub object_attribute_list: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of link that is used to attach this object to a parent.</p>
     pub link_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateObjectInput {
+impl  CreateObjectInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_facets.is_none()`.
-    pub fn schema_facets(&self) -> &[crate::types::SchemaFacet] {
-        self.schema_facets.as_deref().unwrap_or_default()
+    pub fn schema_facets(&self) -> & [crate::types::SchemaFacet] {
+        self.schema_facets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_attribute_list.is_none()`.
-    pub fn object_attribute_list(&self) -> &[crate::types::AttributeKeyAndValue] {
-        self.object_attribute_list.as_deref().unwrap_or_default()
+    pub fn object_attribute_list(&self) -> & [crate::types::AttributeKeyAndValue] {
+        self.object_attribute_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
-    pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn parent_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The name of link that is used to attach this object to a parent.</p>
-    pub fn link_name(&self) -> ::std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<& str> {
         self.link_name.as_deref()
     }
 }
@@ -52,8 +54,8 @@ impl CreateObjectInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateObjectInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
-    pub(crate) object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) schema_facets: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaFacet>>,
+    pub(crate) object_attribute_list: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>,
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) link_name: ::std::option::Option<::std::string::String>,
 }
@@ -66,8 +68,7 @@ impl CreateObjectInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl CreateObjectInputBuilder {
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facets(mut self, input: crate::types::SchemaFacet) -> Self {
         let mut v = self.schema_facets.unwrap_or_default();
-        v.push(input);
-        self.schema_facets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schema_facets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>) -> Self {
-        self.schema_facets = input;
-        self
+    pub fn set_schema_facets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaFacet>>) -> Self {
+        self.schema_facets = input; self
     }
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    pub fn get_schema_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+    pub fn get_schema_facets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaFacet>> {
         &self.schema_facets
     }
     /// Appends an item to `object_attribute_list`.
@@ -100,17 +100,16 @@ impl CreateObjectInputBuilder {
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
     pub fn object_attribute_list(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.object_attribute_list.unwrap_or_default();
-        v.push(input);
-        self.object_attribute_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.object_attribute_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    pub fn set_object_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
-        self.object_attribute_list = input;
-        self
+    pub fn set_object_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>) -> Self {
+        self.object_attribute_list = input; self
     }
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    pub fn get_object_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_object_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>> {
         &self.object_attribute_list
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
@@ -120,8 +119,7 @@ impl CreateObjectInputBuilder {
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.parent_reference = input;
-        self
+        self.parent_reference = input; self
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -134,23 +132,28 @@ impl CreateObjectInputBuilder {
     }
     /// <p>The name of link that is used to attach this object to a parent.</p>
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link_name = input;
-        self
+        self.link_name = input; self
     }
     /// <p>The name of link that is used to attach this object to a parent.</p>
     pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.link_name
     }
     /// Consumes the builder and constructs a [`CreateObjectInput`](crate::operation::create_object::CreateObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_object::CreateObjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_object::CreateObjectInput {
-            directory_arn: self.directory_arn,
-            schema_facets: self.schema_facets,
-            object_attribute_list: self.object_attribute_list,
-            parent_reference: self.parent_reference,
-            link_name: self.link_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_object::CreateObjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_object::CreateObjectInput {
+                directory_arn: self.directory_arn
+                ,
+                schema_facets: self.schema_facets
+                ,
+                object_attribute_list: self.object_attribute_list
+                ,
+                parent_reference: self.parent_reference
+                ,
+                link_name: self.link_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartPipelineReprocessingInput {
+pub struct StartPipelineReprocessingInput  {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
@@ -15,24 +15,24 @@ pub struct StartPipelineReprocessingInput {
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
     pub channel_messages: ::std::option::Option<crate::types::ChannelMessages>,
 }
-impl StartPipelineReprocessingInput {
+impl  StartPipelineReprocessingInput  {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn channel_messages(&self) -> ::std::option::Option<&crate::types::ChannelMessages> {
+    pub fn channel_messages(&self) -> ::std::option::Option<& crate::types::ChannelMessages> {
         self.channel_messages.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl StartPipelineReprocessingInputBuilder {
     }
     /// <p>The name of the pipeline on which to start reprocessing.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline on which to start reprocessing.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl StartPipelineReprocessingInputBuilder {
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
@@ -94,8 +92,7 @@ impl StartPipelineReprocessingInputBuilder {
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
@@ -111,8 +108,7 @@ impl StartPipelineReprocessingInputBuilder {
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
     pub fn set_channel_messages(mut self, input: ::std::option::Option<crate::types::ChannelMessages>) -> Self {
-        self.channel_messages = input;
-        self
+        self.channel_messages = input; self
     }
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
@@ -120,17 +116,19 @@ impl StartPipelineReprocessingInputBuilder {
         &self.channel_messages
     }
     /// Consumes the builder and constructs a [`StartPipelineReprocessingInput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput {
-            pipeline_name: self.pipeline_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            channel_messages: self.channel_messages,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput {
+                pipeline_name: self.pipeline_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                channel_messages: self.channel_messages
+                ,
+            }
+        )
     }
 }
+

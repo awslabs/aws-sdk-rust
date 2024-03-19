@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisconnectSourceServerInput {
+pub struct DisconnectSourceServerInput  {
     /// <p>The ID of the Source Server to disconnect.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
 }
-impl DisconnectSourceServerInput {
+impl  DisconnectSourceServerInput  {
     /// <p>The ID of the Source Server to disconnect.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DisconnectSourceServerInputBuilder {
     }
     /// <p>The ID of the Source Server to disconnect.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of the Source Server to disconnect.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_server_id
     }
     /// Consumes the builder and constructs a [`DisconnectSourceServerInput`](crate::operation::disconnect_source_server::DisconnectSourceServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disconnect_source_server::DisconnectSourceServerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disconnect_source_server::DisconnectSourceServerInput {
-            source_server_id: self.source_server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disconnect_source_server::DisconnectSourceServerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disconnect_source_server::DisconnectSourceServerInput {
+                source_server_id: self.source_server_id
+                ,
+            }
+        )
     }
 }
+

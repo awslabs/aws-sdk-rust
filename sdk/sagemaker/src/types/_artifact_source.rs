@@ -3,22 +3,23 @@
 /// <p>A structure describing the source of an artifact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArtifactSource {
+pub struct ArtifactSource  {
     /// <p>The URI of the source.</p>
     pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>A list of source types.</p>
-    pub source_types: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
+    pub source_types: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactSourceType>>,
 }
-impl ArtifactSource {
+impl  ArtifactSource  {
     /// <p>The URI of the source.</p>
-    pub fn source_uri(&self) -> ::std::option::Option<&str> {
+    pub fn source_uri(&self) -> ::std::option::Option<& str> {
         self.source_uri.as_deref()
     }
     /// <p>A list of source types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_types.is_none()`.
-    pub fn source_types(&self) -> &[crate::types::ArtifactSourceType] {
-        self.source_types.as_deref().unwrap_or_default()
+    pub fn source_types(&self) -> & [crate::types::ArtifactSourceType] {
+        self.source_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ArtifactSource {
@@ -33,7 +34,7 @@ impl ArtifactSource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactSourceBuilder {
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) source_types: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
+    pub(crate) source_types: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactSourceType>>,
 }
 impl ArtifactSourceBuilder {
     /// <p>The URI of the source.</p>
@@ -44,8 +45,7 @@ impl ArtifactSourceBuilder {
     }
     /// <p>The URI of the source.</p>
     pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_uri = input;
-        self
+        self.source_uri = input; self
     }
     /// <p>The URI of the source.</p>
     pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,24 +58,26 @@ impl ArtifactSourceBuilder {
     /// <p>A list of source types.</p>
     pub fn source_types(mut self, input: crate::types::ArtifactSourceType) -> Self {
         let mut v = self.source_types.unwrap_or_default();
-        v.push(input);
-        self.source_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of source types.</p>
-    pub fn set_source_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>) -> Self {
-        self.source_types = input;
-        self
+    pub fn set_source_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactSourceType>>) -> Self {
+        self.source_types = input; self
     }
     /// <p>A list of source types.</p>
-    pub fn get_source_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>> {
+    pub fn get_source_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ArtifactSourceType>> {
         &self.source_types
     }
     /// Consumes the builder and constructs a [`ArtifactSource`](crate::types::ArtifactSource).
     pub fn build(self) -> crate::types::ArtifactSource {
         crate::types::ArtifactSource {
-            source_uri: self.source_uri,
-            source_types: self.source_types,
+            source_uri: self.source_uri
+            ,
+            source_types: self.source_types
+            ,
         }
     }
 }
+

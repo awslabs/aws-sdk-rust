@@ -3,7 +3,7 @@
 /// <p>The configuration information of the grouping of Wisdom users.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GroupingConfiguration {
+pub struct GroupingConfiguration  {
     /// <p>The criteria used for grouping Wisdom users.</p>
     /// <p>The following is the list of supported criteria values.</p>
     /// <ul>
@@ -16,16 +16,16 @@ pub struct GroupingConfiguration {
     /// <li>
     /// <p>When setting <code>criteria</code> to <code>RoutingProfileArn</code>, you need to provide a list of ARNs of <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon Connect routing profiles</a> as values of this parameter.</p></li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GroupingConfiguration {
+impl  GroupingConfiguration  {
     /// <p>The criteria used for grouping Wisdom users.</p>
     /// <p>The following is the list of supported criteria values.</p>
     /// <ul>
     /// <li>
     /// <p><code>RoutingProfileArn</code>: Grouping the users by their <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon Connect routing profile ARN</a>. User should have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html">SearchRoutingProfile</a> and <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a> permissions when setting criteria to this value.</p></li>
     /// </ul>
-    pub fn criteria(&self) -> ::std::option::Option<&str> {
+    pub fn criteria(&self) -> ::std::option::Option<& str> {
         self.criteria.as_deref()
     }
     /// <p>The list of values that define different groups of Wisdom users.</p>
@@ -33,13 +33,14 @@ impl GroupingConfiguration {
     /// <li>
     /// <p>When setting <code>criteria</code> to <code>RoutingProfileArn</code>, you need to provide a list of ARNs of <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon Connect routing profiles</a> as values of this parameter.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for GroupingConfiguration {
+impl  ::std::fmt::Debug for GroupingConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GroupingConfiguration");
         formatter.field("criteria", &"*** Sensitive Data Redacted ***");
@@ -59,7 +60,7 @@ impl GroupingConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GroupingConfigurationBuilder {
     pub(crate) criteria: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GroupingConfigurationBuilder {
     /// <p>The criteria used for grouping Wisdom users.</p>
@@ -79,8 +80,7 @@ impl GroupingConfigurationBuilder {
     /// <p><code>RoutingProfileArn</code>: Grouping the users by their <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon Connect routing profile ARN</a>. User should have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html">SearchRoutingProfile</a> and <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a> permissions when setting criteria to this value.</p></li>
     /// </ul>
     pub fn set_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.criteria = input;
-        self
+        self.criteria = input; self
     }
     /// <p>The criteria used for grouping Wisdom users.</p>
     /// <p>The following is the list of supported criteria values.</p>
@@ -102,32 +102,33 @@ impl GroupingConfigurationBuilder {
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of values that define different groups of Wisdom users.</p>
     /// <ul>
     /// <li>
     /// <p>When setting <code>criteria</code> to <code>RoutingProfileArn</code>, you need to provide a list of ARNs of <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon Connect routing profiles</a> as values of this parameter.</p></li>
     /// </ul>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The list of values that define different groups of Wisdom users.</p>
     /// <ul>
     /// <li>
     /// <p>When setting <code>criteria</code> to <code>RoutingProfileArn</code>, you need to provide a list of ARNs of <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon Connect routing profiles</a> as values of this parameter.</p></li>
     /// </ul>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`GroupingConfiguration`](crate::types::GroupingConfiguration).
     pub fn build(self) -> crate::types::GroupingConfiguration {
         crate::types::GroupingConfiguration {
-            criteria: self.criteria,
-            values: self.values,
+            criteria: self.criteria
+            ,
+            values: self.values
+            ,
         }
     }
 }
@@ -139,3 +140,4 @@ impl ::std::fmt::Debug for GroupingConfigurationBuilder {
         formatter.finish()
     }
 }
+

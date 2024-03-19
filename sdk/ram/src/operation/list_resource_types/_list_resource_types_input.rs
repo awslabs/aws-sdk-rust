@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceTypesInput {
+pub struct ListResourceTypesInput  {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -19,9 +19,9 @@ pub struct ListResourceTypesInput {
     /// <p>The default value is <code>ALL</code>.</p>
     pub resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
 }
-impl ListResourceTypesInput {
+impl  ListResourceTypesInput  {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -38,7 +38,7 @@ impl ListResourceTypesInput {
     /// <p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScopeFilter> {
+    pub fn resource_region_scope(&self) -> ::std::option::Option<& crate::types::ResourceRegionScopeFilter> {
         self.resource_region_scope.as_ref()
     }
 }
@@ -65,8 +65,7 @@ impl ListResourceTypesInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl ListResourceTypesInputBuilder {
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -111,8 +109,7 @@ impl ListResourceTypesInputBuilder {
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
-        self.resource_region_scope = input;
-        self
+        self.resource_region_scope = input; self
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
@@ -128,13 +125,17 @@ impl ListResourceTypesInputBuilder {
         &self.resource_region_scope
     }
     /// Consumes the builder and constructs a [`ListResourceTypesInput`](crate::operation::list_resource_types::ListResourceTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resource_types::ListResourceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_resource_types::ListResourceTypesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            resource_region_scope: self.resource_region_scope,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_types::ListResourceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resource_types::ListResourceTypesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                resource_region_scope: self.resource_region_scope
+                ,
+            }
+        )
     }
 }
+

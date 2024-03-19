@@ -3,7 +3,7 @@
 /// <p>A DNS alias that is associated with the file system. You can use a DNS alias to access a file system using user-defined DNS names, in addition to the default DNS name that Amazon FSx assigns to the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">DNS aliases</a> in the <i>FSx for Windows File Server User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Alias {
+pub struct Alias  {
     /// <p>The name of the DNS alias. The alias name has to meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -32,7 +32,7 @@ pub struct Alias {
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::AliasLifecycle>,
 }
-impl Alias {
+impl  Alias  {
     /// <p>The name of the DNS alias. The alias name has to meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -45,7 +45,7 @@ impl Alias {
     /// <p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Describes the state of the DNS alias.</p>
@@ -61,7 +61,7 @@ impl Alias {
     /// <li>
     /// <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from the file system.</p></li>
     /// </ul>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::AliasLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::AliasLifecycle> {
         self.lifecycle.as_ref()
     }
 }
@@ -109,8 +109,7 @@ impl AliasBuilder {
     /// </ul>
     /// <p>For DNS names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the DNS alias. The alias name has to meet the following requirements:</p>
     /// <ul>
@@ -158,8 +157,7 @@ impl AliasBuilder {
     /// <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from the file system.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::AliasLifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>Describes the state of the DNS alias.</p>
     /// <ul>
@@ -180,8 +178,11 @@ impl AliasBuilder {
     /// Consumes the builder and constructs a [`Alias`](crate::types::Alias).
     pub fn build(self) -> crate::types::Alias {
         crate::types::Alias {
-            name: self.name,
-            lifecycle: self.lifecycle,
+            name: self.name
+            ,
+            lifecycle: self.lifecycle
+            ,
         }
     }
 }
+

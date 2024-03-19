@@ -3,19 +3,19 @@
 /// <p>A structure that represents a data aggregation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataAggregation {
+pub struct DataAggregation  {
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub dataset_row_date_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     /// <p>The column name for the default date.</p>
     pub default_date_column_name: ::std::option::Option<::std::string::String>,
 }
-impl DataAggregation {
+impl  DataAggregation  {
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn dataset_row_date_granularity(&self) -> ::std::option::Option<&crate::types::TopicTimeGranularity> {
+    pub fn dataset_row_date_granularity(&self) -> ::std::option::Option<& crate::types::TopicTimeGranularity> {
         self.dataset_row_date_granularity.as_ref()
     }
     /// <p>The column name for the default date.</p>
-    pub fn default_date_column_name(&self) -> ::std::option::Option<&str> {
+    pub fn default_date_column_name(&self) -> ::std::option::Option<& str> {
         self.default_date_column_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DataAggregationBuilder {
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn set_dataset_row_date_granularity(mut self, input: ::std::option::Option<crate::types::TopicTimeGranularity>) -> Self {
-        self.dataset_row_date_granularity = input;
-        self
+        self.dataset_row_date_granularity = input; self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn get_dataset_row_date_granularity(&self) -> &::std::option::Option<crate::types::TopicTimeGranularity> {
@@ -55,8 +54,7 @@ impl DataAggregationBuilder {
     }
     /// <p>The column name for the default date.</p>
     pub fn set_default_date_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_date_column_name = input;
-        self
+        self.default_date_column_name = input; self
     }
     /// <p>The column name for the default date.</p>
     pub fn get_default_date_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DataAggregationBuilder {
     /// Consumes the builder and constructs a [`DataAggregation`](crate::types::DataAggregation).
     pub fn build(self) -> crate::types::DataAggregation {
         crate::types::DataAggregation {
-            dataset_row_date_granularity: self.dataset_row_date_granularity,
-            default_date_column_name: self.default_date_column_name,
+            dataset_row_date_granularity: self.dataset_row_date_granularity
+            ,
+            default_date_column_name: self.default_date_column_name
+            ,
         }
     }
 }
+

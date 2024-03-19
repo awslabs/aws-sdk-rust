@@ -3,19 +3,19 @@
 /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate. Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see Validity in RFC 5280. This value is unaffected when ValidityNotBefore is also specified. For example, if Validity is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the ValidityNotBefore value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateValidity {
+pub struct CertificateValidity  {
     /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate. Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see Validity in RFC 5280. This value is unaffected when ValidityNotBefore is also specified. For example, if Validity is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the ValidityNotBefore value.</p>
     pub validity_period: ::std::option::Option<crate::types::ValidityPeriod>,
     /// <p>Renewal period is the period of time before certificate expiration when a new certificate will be requested.</p>
     pub renewal_period: ::std::option::Option<crate::types::ValidityPeriod>,
 }
-impl CertificateValidity {
+impl  CertificateValidity  {
     /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate. Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see Validity in RFC 5280. This value is unaffected when ValidityNotBefore is also specified. For example, if Validity is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the ValidityNotBefore value.</p>
-    pub fn validity_period(&self) -> ::std::option::Option<&crate::types::ValidityPeriod> {
+    pub fn validity_period(&self) -> ::std::option::Option<& crate::types::ValidityPeriod> {
         self.validity_period.as_ref()
     }
     /// <p>Renewal period is the period of time before certificate expiration when a new certificate will be requested.</p>
-    pub fn renewal_period(&self) -> ::std::option::Option<&crate::types::ValidityPeriod> {
+    pub fn renewal_period(&self) -> ::std::option::Option<& crate::types::ValidityPeriod> {
         self.renewal_period.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl CertificateValidityBuilder {
     }
     /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate. Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see Validity in RFC 5280. This value is unaffected when ValidityNotBefore is also specified. For example, if Validity is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the ValidityNotBefore value.</p>
     pub fn set_validity_period(mut self, input: ::std::option::Option<crate::types::ValidityPeriod>) -> Self {
-        self.validity_period = input;
-        self
+        self.validity_period = input; self
     }
     /// <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate. Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see Validity in RFC 5280. This value is unaffected when ValidityNotBefore is also specified. For example, if Validity is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the ValidityNotBefore value.</p>
     pub fn get_validity_period(&self) -> &::std::option::Option<crate::types::ValidityPeriod> {
@@ -57,8 +56,7 @@ impl CertificateValidityBuilder {
     }
     /// <p>Renewal period is the period of time before certificate expiration when a new certificate will be requested.</p>
     pub fn set_renewal_period(mut self, input: ::std::option::Option<crate::types::ValidityPeriod>) -> Self {
-        self.renewal_period = input;
-        self
+        self.renewal_period = input; self
     }
     /// <p>Renewal period is the period of time before certificate expiration when a new certificate will be requested.</p>
     pub fn get_renewal_period(&self) -> &::std::option::Option<crate::types::ValidityPeriod> {
@@ -67,8 +65,11 @@ impl CertificateValidityBuilder {
     /// Consumes the builder and constructs a [`CertificateValidity`](crate::types::CertificateValidity).
     pub fn build(self) -> crate::types::CertificateValidity {
         crate::types::CertificateValidity {
-            validity_period: self.validity_period,
-            renewal_period: self.renewal_period,
+            validity_period: self.validity_period
+            ,
+            renewal_period: self.renewal_period
+            ,
         }
     }
 }
+

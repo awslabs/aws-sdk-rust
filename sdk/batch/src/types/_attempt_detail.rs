@@ -3,7 +3,7 @@
 /// <p>An object that represents a job attempt.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttemptDetail {
+pub struct AttemptDetail  {
     /// <p>The details for the container in this job attempt.</p>
     pub container: ::std::option::Option<crate::types::AttemptContainerDetail>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
@@ -13,9 +13,9 @@ pub struct AttemptDetail {
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
-impl AttemptDetail {
+impl  AttemptDetail  {
     /// <p>The details for the container in this job attempt.</p>
-    pub fn container(&self) -> ::std::option::Option<&crate::types::AttemptContainerDetail> {
+    pub fn container(&self) -> ::std::option::Option<& crate::types::AttemptContainerDetail> {
         self.container.as_ref()
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
@@ -27,7 +27,7 @@ impl AttemptDetail {
         self.stopped_at
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AttemptDetailBuilder {
     }
     /// <p>The details for the container in this job attempt.</p>
     pub fn set_container(mut self, input: ::std::option::Option<crate::types::AttemptContainerDetail>) -> Self {
-        self.container = input;
-        self
+        self.container = input; self
     }
     /// <p>The details for the container in this job attempt.</p>
     pub fn get_container(&self) -> &::std::option::Option<crate::types::AttemptContainerDetail> {
@@ -69,8 +68,7 @@ impl AttemptDetailBuilder {
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
     pub fn get_started_at(&self) -> &::std::option::Option<i64> {
@@ -83,8 +81,7 @@ impl AttemptDetailBuilder {
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
     pub fn set_stopped_at(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.stopped_at = input;
-        self
+        self.stopped_at = input; self
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
     pub fn get_stopped_at(&self) -> &::std::option::Option<i64> {
@@ -97,8 +94,7 @@ impl AttemptDetailBuilder {
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl AttemptDetailBuilder {
     /// Consumes the builder and constructs a [`AttemptDetail`](crate::types::AttemptDetail).
     pub fn build(self) -> crate::types::AttemptDetail {
         crate::types::AttemptDetail {
-            container: self.container,
-            started_at: self.started_at,
-            stopped_at: self.stopped_at,
-            status_reason: self.status_reason,
+            container: self.container
+            ,
+            started_at: self.started_at
+            ,
+            stopped_at: self.stopped_at
+            ,
+            status_reason: self.status_reason
+            ,
         }
     }
 }
+

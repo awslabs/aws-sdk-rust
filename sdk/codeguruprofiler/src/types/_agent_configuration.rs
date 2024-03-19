@@ -3,7 +3,7 @@
 /// <p>The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for how long to return profiling data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentConfiguration {
+pub struct AgentConfiguration  {
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
     pub should_profile: bool,
     /// <p>How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period.</p>
@@ -21,9 +21,9 @@ pub struct AgentConfiguration {
     /// <li>
     /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
-    pub agent_parameters: ::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>>,
+    pub agent_parameters: ::std::option::Option<::std::collections::HashMap::<crate::types::AgentParameterField, ::std::string::String>>,
 }
-impl AgentConfiguration {
+impl  AgentConfiguration  {
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
     pub fn should_profile(&self) -> bool {
         self.should_profile
@@ -45,7 +45,7 @@ impl AgentConfiguration {
     /// <li>
     /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
-    pub fn agent_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>> {
+    pub fn agent_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::AgentParameterField, ::std::string::String>> {
         self.agent_parameters.as_ref()
     }
 }
@@ -62,7 +62,7 @@ impl AgentConfiguration {
 pub struct AgentConfigurationBuilder {
     pub(crate) should_profile: ::std::option::Option<bool>,
     pub(crate) period_in_seconds: ::std::option::Option<i32>,
-    pub(crate) agent_parameters: ::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>>,
+    pub(crate) agent_parameters: ::std::option::Option<::std::collections::HashMap::<crate::types::AgentParameterField, ::std::string::String>>,
 }
 impl AgentConfigurationBuilder {
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
@@ -73,8 +73,7 @@ impl AgentConfigurationBuilder {
     }
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
     pub fn set_should_profile(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.should_profile = input;
-        self
+        self.should_profile = input; self
     }
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
     pub fn get_should_profile(&self) -> &::std::option::Option<bool> {
@@ -88,8 +87,7 @@ impl AgentConfigurationBuilder {
     }
     /// <p>How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period.</p>
     pub fn set_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period_in_seconds = input;
-        self
+        self.period_in_seconds = input; self
     }
     /// <p>How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period.</p>
     pub fn get_period_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -114,9 +112,9 @@ impl AgentConfigurationBuilder {
     /// </ul>
     pub fn agent_parameters(mut self, k: crate::types::AgentParameterField, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.agent_parameters.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.agent_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.agent_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Parameters used by the profiler. The valid parameters are:</p>
     /// <ul>
@@ -131,12 +129,8 @@ impl AgentConfigurationBuilder {
     /// <li>
     /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
-    pub fn set_agent_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>>,
-    ) -> Self {
-        self.agent_parameters = input;
-        self
+    pub fn set_agent_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::AgentParameterField, ::std::string::String>>) -> Self {
+        self.agent_parameters = input; self
     }
     /// <p>Parameters used by the profiler. The valid parameters are:</p>
     /// <ul>
@@ -151,9 +145,7 @@ impl AgentConfigurationBuilder {
     /// <li>
     /// <p><code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples.</p></li>
     /// </ul>
-    pub fn get_agent_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>> {
+    pub fn get_agent_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::AgentParameterField, ::std::string::String>> {
         &self.agent_parameters
     }
     /// Consumes the builder and constructs a [`AgentConfiguration`](crate::types::AgentConfiguration).
@@ -161,20 +153,22 @@ impl AgentConfigurationBuilder {
     /// - [`should_profile`](crate::types::builders::AgentConfigurationBuilder::should_profile)
     /// - [`period_in_seconds`](crate::types::builders::AgentConfigurationBuilder::period_in_seconds)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentConfiguration {
-            should_profile: self.should_profile.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "should_profile",
-                    "should_profile was not specified but it is required when building AgentConfiguration",
-                )
-            })?,
-            period_in_seconds: self.period_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "period_in_seconds",
-                    "period_in_seconds was not specified but it is required when building AgentConfiguration",
-                )
-            })?,
-            agent_parameters: self.agent_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentConfiguration {
+                should_profile: self.should_profile
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("should_profile", "should_profile was not specified but it is required when building AgentConfiguration")
+                    )?
+                ,
+                period_in_seconds: self.period_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("period_in_seconds", "period_in_seconds was not specified but it is required when building AgentConfiguration")
+                    )?
+                ,
+                agent_parameters: self.agent_parameters
+                ,
+            }
+        )
     }
 }
+

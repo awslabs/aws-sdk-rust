@@ -3,20 +3,19 @@
 /// <p>The applied image configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageConfiguration {
+pub struct ImageConfiguration  {
     /// <p>The image URI.</p>
     pub image_uri: ::std::string::String,
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
     pub resolved_image_digest: ::std::option::Option<::std::string::String>,
 }
-impl ImageConfiguration {
+impl  ImageConfiguration  {
     /// <p>The image URI.</p>
-    pub fn image_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.image_uri.deref()
+    pub fn image_uri(&self) -> & str {
+        use std::ops::Deref; self.image_uri.deref()
     }
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
-    pub fn resolved_image_digest(&self) -> ::std::option::Option<&str> {
+    pub fn resolved_image_digest(&self) -> ::std::option::Option<& str> {
         self.resolved_image_digest.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ImageConfigurationBuilder {
     }
     /// <p>The image URI.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_uri = input;
-        self
+        self.image_uri = input; self
     }
     /// <p>The image URI.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ImageConfigurationBuilder {
     }
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
     pub fn set_resolved_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolved_image_digest = input;
-        self
+        self.resolved_image_digest = input; self
     }
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
     pub fn get_resolved_image_digest(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ImageConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`image_uri`](crate::types::builders::ImageConfigurationBuilder::image_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::ImageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImageConfiguration {
-            image_uri: self.image_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image_uri",
-                    "image_uri was not specified but it is required when building ImageConfiguration",
-                )
-            })?,
-            resolved_image_digest: self.resolved_image_digest,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImageConfiguration {
+                image_uri: self.image_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image_uri", "image_uri was not specified but it is required when building ImageConfiguration")
+                    )?
+                ,
+                resolved_image_digest: self.resolved_image_digest
+                ,
+            }
+        )
     }
 }
+

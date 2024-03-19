@@ -5,23 +5,20 @@ pub use crate::operation::distribute_dataset_entries::_distribute_dataset_entrie
 
 impl DistributeDatasetEntriesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.distribute_dataset_entries();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.distribute_dataset_entries();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DistributeDatasetEntries`.
-///
+/// 
 /// <note>
 /// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
 /// </note>
@@ -32,33 +29,32 @@ impl DistributeDatasetEntriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DistributeDatasetEntriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder,
+                    inner: crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
-        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-    > for DistributeDatasetEntriesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
+                    crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
+                > for DistributeDatasetEntriesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
+                        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DistributeDatasetEntriesFluentBuilder {
     /// Creates a new `DistributeDatasetEntries`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl DistributeDatasetEntriesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::distribute_dataset_entries::DistributeDatasetEntries::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::distribute_dataset_entries::DistributeDatasetEntries::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
-        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::distribute_dataset_entries::DistributeDatasetEntries::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::distribute_dataset_entries::DistributeDatasetEntries::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput, crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `Datasets`.
     ///
     /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
@@ -124,12 +111,13 @@ impl DistributeDatasetEntriesFluentBuilder {
         self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
-    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>>) -> Self {
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DistributeDataset>>) -> Self {
         self.inner = self.inner.set_datasets(input);
         self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.</p>
-    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DistributeDataset>> {
         self.inner.get_datasets()
     }
 }
+

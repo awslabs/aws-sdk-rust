@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStartViewerSessionRevocationInput {
+pub struct BatchStartViewerSessionRevocationInput  {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub viewer_sessions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
+    pub viewer_sessions: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
 }
-impl BatchStartViewerSessionRevocationInput {
+impl  BatchStartViewerSessionRevocationInput  {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.viewer_sessions.is_none()`.
-    pub fn viewer_sessions(&self) -> &[crate::types::BatchStartViewerSessionRevocationViewerSession] {
-        self.viewer_sessions.as_deref().unwrap_or_default()
+    pub fn viewer_sessions(&self) -> & [crate::types::BatchStartViewerSessionRevocationViewerSession] {
+        self.viewer_sessions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchStartViewerSessionRevocationInput {
@@ -25,7 +26,7 @@ impl BatchStartViewerSessionRevocationInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationInputBuilder {
-    pub(crate) viewer_sessions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
+    pub(crate) viewer_sessions: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
 }
 impl BatchStartViewerSessionRevocationInputBuilder {
     /// Appends an item to `viewer_sessions`.
@@ -35,33 +36,26 @@ impl BatchStartViewerSessionRevocationInputBuilder {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
     pub fn viewer_sessions(mut self, input: crate::types::BatchStartViewerSessionRevocationViewerSession) -> Self {
         let mut v = self.viewer_sessions.unwrap_or_default();
-        v.push(input);
-        self.viewer_sessions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.viewer_sessions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn set_viewer_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
-    ) -> Self {
-        self.viewer_sessions = input;
-        self
+    pub fn set_viewer_sessions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchStartViewerSessionRevocationViewerSession>>) -> Self {
+        self.viewer_sessions = input; self
     }
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn get_viewer_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>> {
+    pub fn get_viewer_sessions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchStartViewerSessionRevocationViewerSession>> {
         &self.viewer_sessions
     }
     /// Consumes the builder and constructs a [`BatchStartViewerSessionRevocationInput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput {
-                viewer_sessions: self.viewer_sessions,
-            },
+                viewer_sessions: self.viewer_sessions
+                ,
+            }
         )
     }
 }
+

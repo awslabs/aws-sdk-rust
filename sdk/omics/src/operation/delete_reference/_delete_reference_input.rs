@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReferenceInput {
+pub struct DeleteReferenceInput  {
     /// <p>The reference's ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The reference's store ID.</p>
     pub reference_store_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReferenceInput {
+impl  DeleteReferenceInput  {
     /// <p>The reference's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_store_id(&self) -> ::std::option::Option<& str> {
         self.reference_store_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteReferenceInputBuilder {
     }
     /// <p>The reference's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The reference's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteReferenceInputBuilder {
     }
     /// <p>The reference's store ID.</p>
     pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_store_id = input;
-        self
+        self.reference_store_id = input; self
     }
     /// <p>The reference's store ID.</p>
     pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reference_store_id
     }
     /// Consumes the builder and constructs a [`DeleteReferenceInput`](crate::operation::delete_reference::DeleteReferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_reference::DeleteReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_reference::DeleteReferenceInput {
-            id: self.id,
-            reference_store_id: self.reference_store_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_reference::DeleteReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_reference::DeleteReferenceInput {
+                id: self.id
+                ,
+                reference_store_id: self.reference_store_id
+                ,
+            }
+        )
     }
 }
+

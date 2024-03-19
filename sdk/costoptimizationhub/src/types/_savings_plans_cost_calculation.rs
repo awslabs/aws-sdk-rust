@@ -3,13 +3,13 @@
 /// <p>Cost impact of the purchase recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlansCostCalculation {
+pub struct SavingsPlansCostCalculation  {
     /// <p>Pricing details of the purchase recommendation.</p>
     pub pricing: ::std::option::Option<crate::types::SavingsPlansPricing>,
 }
-impl SavingsPlansCostCalculation {
+impl  SavingsPlansCostCalculation  {
     /// <p>Pricing details of the purchase recommendation.</p>
-    pub fn pricing(&self) -> ::std::option::Option<&crate::types::SavingsPlansPricing> {
+    pub fn pricing(&self) -> ::std::option::Option<& crate::types::SavingsPlansPricing> {
         self.pricing.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SavingsPlansCostCalculationBuilder {
     }
     /// <p>Pricing details of the purchase recommendation.</p>
     pub fn set_pricing(mut self, input: ::std::option::Option<crate::types::SavingsPlansPricing>) -> Self {
-        self.pricing = input;
-        self
+        self.pricing = input; self
     }
     /// <p>Pricing details of the purchase recommendation.</p>
     pub fn get_pricing(&self) -> &::std::option::Option<crate::types::SavingsPlansPricing> {
@@ -43,6 +42,10 @@ impl SavingsPlansCostCalculationBuilder {
     }
     /// Consumes the builder and constructs a [`SavingsPlansCostCalculation`](crate::types::SavingsPlansCostCalculation).
     pub fn build(self) -> crate::types::SavingsPlansCostCalculation {
-        crate::types::SavingsPlansCostCalculation { pricing: self.pricing }
+        crate::types::SavingsPlansCostCalculation {
+            pricing: self.pricing
+            ,
+        }
     }
 }
+

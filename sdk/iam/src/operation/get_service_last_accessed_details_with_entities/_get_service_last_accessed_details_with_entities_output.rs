@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
+pub struct GetServiceLastAccessedDetailsWithEntitiesOutput  {
     /// <p>The status of the job.</p>
     pub job_status: crate::types::JobStatusType,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
@@ -11,7 +11,7 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     pub job_completion_date: ::aws_smithy_types::DateTime,
     /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
-    pub entity_details_list: ::std::vec::Vec<crate::types::EntityDetails>,
+    pub entity_details_list: ::std::vec::Vec::<crate::types::EntityDetails>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -20,47 +20,45 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
     _request_id: Option<String>,
 }
-impl GetServiceLastAccessedDetailsWithEntitiesOutput {
+impl  GetServiceLastAccessedDetailsWithEntitiesOutput  {
     /// <p>The status of the job.</p>
-    pub fn job_status(&self) -> &crate::types::JobStatusType {
+    pub fn job_status(&self) -> & crate::types::JobStatusType {
         &self.job_status
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
-    pub fn job_creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn job_creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.job_creation_date
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
-    pub fn job_completion_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn job_completion_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.job_completion_date
     }
     /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
-    pub fn entity_details_list(&self) -> &[crate::types::EntityDetails] {
-        use std::ops::Deref;
-        self.entity_details_list.deref()
+    pub fn entity_details_list(&self) -> & [crate::types::EntityDetails] {
+        use std::ops::Deref; self.entity_details_list.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>An object that contains details about the reason the operation failed.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceLastAccessedDetailsWithEntitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServiceLastAccessedDetailsWithEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
+    pub fn builder() -> crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
         crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder::default()
     }
 }
@@ -72,7 +70,7 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatusType>,
     pub(crate) job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) entity_details_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityDetails>>,
+    pub(crate) entity_details_list: ::std::option::Option<::std::vec::Vec::<crate::types::EntityDetails>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,
@@ -87,8 +85,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     }
     /// <p>The status of the job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatusType>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatusType> {
@@ -102,8 +99,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     pub fn set_job_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.job_creation_date = input;
-        self
+        self.job_creation_date = input; self
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     pub fn get_job_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,8 +115,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     pub fn set_job_completion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.job_completion_date = input;
-        self
+        self.job_completion_date = input; self
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
@@ -134,17 +129,16 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
     pub fn entity_details_list(mut self, input: crate::types::EntityDetails) -> Self {
         let mut v = self.entity_details_list.unwrap_or_default();
-        v.push(input);
-        self.entity_details_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entity_details_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
-    pub fn set_entity_details_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityDetails>>) -> Self {
-        self.entity_details_list = input;
-        self
+    pub fn set_entity_details_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityDetails>>) -> Self {
+        self.entity_details_list = input; self
     }
     /// <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
-    pub fn get_entity_details_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityDetails>> {
+    pub fn get_entity_details_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityDetails>> {
         &self.entity_details_list
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -154,8 +148,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -168,8 +161,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,65 +174,60 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     }
     /// <p>An object that contains details about the reason the operation failed.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An object that contains details about the reason the operation failed.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
         &self.error
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_status`](crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder::job_status)
     /// - [`job_creation_date`](crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder::job_creation_date)
     /// - [`job_completion_date`](crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder::job_completion_date)
     /// - [`entity_details_list`](crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder::entity_details_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput {
-                job_status: self.job_status.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "job_status",
-                        "job_status was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput",
-                    )
-                })?,
-                job_creation_date: self.job_creation_date.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "job_creation_date",
-                        "job_creation_date was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput",
-                    )
-                })?,
-                job_completion_date: self.job_completion_date.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "job_completion_date",
-                        "job_completion_date was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput",
-                    )
-                })?,
-                entity_details_list: self.entity_details_list.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "entity_details_list",
-                        "entity_details_list was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput",
-                    )
-                })?,
-                is_truncated: self.is_truncated.unwrap_or_default(),
-                marker: self.marker,
-                error: self.error,
+                job_status: self.job_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_status", "job_status was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput")
+                    )?
+                ,
+                job_creation_date: self.job_creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_creation_date", "job_creation_date was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput")
+                    )?
+                ,
+                job_completion_date: self.job_completion_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_completion_date", "job_completion_date was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput")
+                    )?
+                ,
+                entity_details_list: self.entity_details_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_details_list", "entity_details_list was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput")
+                    )?
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
+                error: self.error
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

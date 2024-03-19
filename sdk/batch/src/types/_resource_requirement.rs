@@ -3,7 +3,7 @@
 /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceRequirement {
+pub struct ResourceRequirement  {
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
     /// <dl>
     /// <dt>
@@ -166,7 +166,7 @@ pub struct ResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ResourceType>,
 }
-impl ResourceRequirement {
+impl  ResourceRequirement  {
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
     /// <dl>
     /// <dt>
@@ -325,11 +325,11 @@ impl ResourceRequirement {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.r#type.as_ref()
     }
 }
@@ -670,8 +670,7 @@ impl ResourceRequirementBuilder {
     /// </dd>
     /// </dl>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
     /// <dl>
@@ -842,8 +841,7 @@ impl ResourceRequirementBuilder {
     }
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -852,8 +850,11 @@ impl ResourceRequirementBuilder {
     /// Consumes the builder and constructs a [`ResourceRequirement`](crate::types::ResourceRequirement).
     pub fn build(self) -> crate::types::ResourceRequirement {
         crate::types::ResourceRequirement {
-            value: self.value,
-            r#type: self.r#type,
+            value: self.value
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

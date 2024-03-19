@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLaunchConfigurationInput {
+pub struct GetLaunchConfigurationInput  {
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
 }
-impl GetLaunchConfigurationInput {
+impl  GetLaunchConfigurationInput  {
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetLaunchConfigurationInputBuilder {
     }
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_server_id
     }
     /// Consumes the builder and constructs a [`GetLaunchConfigurationInput`](crate::operation::get_launch_configuration::GetLaunchConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_launch_configuration::GetLaunchConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_launch_configuration::GetLaunchConfigurationInput {
-            source_server_id: self.source_server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_launch_configuration::GetLaunchConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_launch_configuration::GetLaunchConfigurationInput {
+                source_server_id: self.source_server_id
+                ,
+            }
+        )
     }
 }
+

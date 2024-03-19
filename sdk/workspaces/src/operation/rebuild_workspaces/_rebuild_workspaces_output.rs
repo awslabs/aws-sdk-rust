@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebuildWorkspacesOutput {
+pub struct RebuildWorkspacesOutput  {
     /// <p>Information about the WorkSpace that could not be rebuilt.</p>
-    pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
+    pub failed_requests: ::std::option::Option<::std::vec::Vec::<crate::types::FailedWorkspaceChangeRequest>>,
     _request_id: Option<String>,
 }
-impl RebuildWorkspacesOutput {
+impl  RebuildWorkspacesOutput  {
     /// <p>Information about the WorkSpace that could not be rebuilt.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
-    pub fn failed_requests(&self) -> &[crate::types::FailedWorkspaceChangeRequest] {
-        self.failed_requests.as_deref().unwrap_or_default()
+    pub fn failed_requests(&self) -> & [crate::types::FailedWorkspaceChangeRequest] {
+        self.failed_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for RebuildWorkspacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RebuildWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`RebuildWorkspacesOutput`](crate::operation::rebuild_workspaces::RebuildWorkspacesOutput).
     pub fn builder() -> crate::operation::rebuild_workspaces::builders::RebuildWorkspacesOutputBuilder {
@@ -31,7 +32,7 @@ impl RebuildWorkspacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebuildWorkspacesOutputBuilder {
-    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
+    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec::<crate::types::FailedWorkspaceChangeRequest>>,
     _request_id: Option<String>,
 }
 impl RebuildWorkspacesOutputBuilder {
@@ -42,33 +43,34 @@ impl RebuildWorkspacesOutputBuilder {
     /// <p>Information about the WorkSpace that could not be rebuilt.</p>
     pub fn failed_requests(mut self, input: crate::types::FailedWorkspaceChangeRequest) -> Self {
         let mut v = self.failed_requests.unwrap_or_default();
-        v.push(input);
-        self.failed_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the WorkSpace that could not be rebuilt.</p>
-    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>) -> Self {
-        self.failed_requests = input;
-        self
+    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedWorkspaceChangeRequest>>) -> Self {
+        self.failed_requests = input; self
     }
     /// <p>Information about the WorkSpace that could not be rebuilt.</p>
-    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>> {
+    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedWorkspaceChangeRequest>> {
         &self.failed_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RebuildWorkspacesOutput`](crate::operation::rebuild_workspaces::RebuildWorkspacesOutput).
     pub fn build(self) -> crate::operation::rebuild_workspaces::RebuildWorkspacesOutput {
         crate::operation::rebuild_workspaces::RebuildWorkspacesOutput {
-            failed_requests: self.failed_requests,
+            failed_requests: self.failed_requests
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

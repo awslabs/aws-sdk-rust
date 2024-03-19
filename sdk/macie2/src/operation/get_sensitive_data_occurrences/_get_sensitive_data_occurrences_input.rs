@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSensitiveDataOccurrencesInput {
+pub struct GetSensitiveDataOccurrencesInput  {
     /// <p>The unique identifier for the finding.</p>
     pub finding_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSensitiveDataOccurrencesInput {
+impl  GetSensitiveDataOccurrencesInput  {
     /// <p>The unique identifier for the finding.</p>
-    pub fn finding_id(&self) -> ::std::option::Option<&str> {
+    pub fn finding_id(&self) -> ::std::option::Option<& str> {
         self.finding_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetSensitiveDataOccurrencesInputBuilder {
     }
     /// <p>The unique identifier for the finding.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>The unique identifier for the finding.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.finding_id
     }
     /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesInput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput { finding_id: self.finding_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput {
+                finding_id: self.finding_id
+                ,
+            }
+        )
     }
 }
+

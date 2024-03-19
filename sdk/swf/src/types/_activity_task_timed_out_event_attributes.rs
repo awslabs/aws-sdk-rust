@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ActivityTaskTimedOut</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivityTaskTimedOutEventAttributes {
+pub struct ActivityTaskTimedOutEventAttributes  {
     /// <p>The type of the timeout that caused this event.</p>
     pub timeout_type: crate::types::ActivityTaskTimeoutType,
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -13,9 +13,9 @@ pub struct ActivityTaskTimedOutEventAttributes {
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
     pub details: ::std::option::Option<::std::string::String>,
 }
-impl ActivityTaskTimedOutEventAttributes {
+impl  ActivityTaskTimedOutEventAttributes  {
     /// <p>The type of the timeout that caused this event.</p>
-    pub fn timeout_type(&self) -> &crate::types::ActivityTaskTimeoutType {
+    pub fn timeout_type(&self) -> & crate::types::ActivityTaskTimeoutType {
         &self.timeout_type
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -27,7 +27,7 @@ impl ActivityTaskTimedOutEventAttributes {
         self.started_event_id
     }
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
     }
     /// <p>The type of the timeout that caused this event.</p>
     pub fn set_timeout_type(mut self, input: ::std::option::Option<crate::types::ActivityTaskTimeoutType>) -> Self {
-        self.timeout_type = input;
-        self
+        self.timeout_type = input; self
     }
     /// <p>The type of the timeout that caused this event.</p>
     pub fn get_timeout_type(&self) -> &::std::option::Option<crate::types::ActivityTaskTimeoutType> {
@@ -71,8 +70,7 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_event_id = input;
-        self
+        self.scheduled_event_id = input; self
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
@@ -86,8 +84,7 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
@@ -100,8 +97,7 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
     }
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,16 +107,23 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timeout_type`](crate::types::builders::ActivityTaskTimedOutEventAttributesBuilder::timeout_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ActivityTaskTimedOutEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActivityTaskTimedOutEventAttributes {
-            timeout_type: self.timeout_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timeout_type",
-                    "timeout_type was not specified but it is required when building ActivityTaskTimedOutEventAttributes",
-                )
-            })?,
-            scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
-            started_event_id: self.started_event_id.unwrap_or_default(),
-            details: self.details,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActivityTaskTimedOutEventAttributes {
+                timeout_type: self.timeout_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timeout_type", "timeout_type was not specified but it is required when building ActivityTaskTimedOutEventAttributes")
+                    )?
+                ,
+                scheduled_event_id: self.scheduled_event_id
+                    .unwrap_or_default()
+                ,
+                started_event_id: self.started_event_id
+                    .unwrap_or_default()
+                ,
+                details: self.details
+                ,
+            }
+        )
     }
 }
+

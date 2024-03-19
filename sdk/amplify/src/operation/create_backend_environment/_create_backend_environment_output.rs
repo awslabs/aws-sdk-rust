@@ -3,22 +3,22 @@
 /// <p>The result structure for the create backend environment request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBackendEnvironmentOutput {
+pub struct CreateBackendEnvironmentOutput  {
     /// <p>Describes the backend environment for an Amplify app.</p>
     pub backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
     _request_id: Option<String>,
 }
-impl CreateBackendEnvironmentOutput {
+impl  CreateBackendEnvironmentOutput  {
     /// <p>Describes the backend environment for an Amplify app.</p>
-    pub fn backend_environment(&self) -> ::std::option::Option<&crate::types::BackendEnvironment> {
+    pub fn backend_environment(&self) -> ::std::option::Option<& crate::types::BackendEnvironment> {
         self.backend_environment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBackendEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBackendEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendEnvironmentOutput`](crate::operation::create_backend_environment::CreateBackendEnvironmentOutput).
     pub fn builder() -> crate::operation::create_backend_environment::builders::CreateBackendEnvironmentOutputBuilder {
@@ -42,27 +42,28 @@ impl CreateBackendEnvironmentOutputBuilder {
     }
     /// <p>Describes the backend environment for an Amplify app.</p>
     pub fn set_backend_environment(mut self, input: ::std::option::Option<crate::types::BackendEnvironment>) -> Self {
-        self.backend_environment = input;
-        self
+        self.backend_environment = input; self
     }
     /// <p>Describes the backend environment for an Amplify app.</p>
     pub fn get_backend_environment(&self) -> &::std::option::Option<crate::types::BackendEnvironment> {
         &self.backend_environment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBackendEnvironmentOutput`](crate::operation::create_backend_environment::CreateBackendEnvironmentOutput).
     pub fn build(self) -> crate::operation::create_backend_environment::CreateBackendEnvironmentOutput {
         crate::operation::create_backend_environment::CreateBackendEnvironmentOutput {
-            backend_environment: self.backend_environment,
+            backend_environment: self.backend_environment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

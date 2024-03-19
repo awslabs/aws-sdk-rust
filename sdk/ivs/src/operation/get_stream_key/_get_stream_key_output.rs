@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStreamKeyOutput {
+pub struct GetStreamKeyOutput  {
     #[allow(missing_docs)] // documentation missing in model
     pub stream_key: ::std::option::Option<crate::types::StreamKey>,
     _request_id: Option<String>,
 }
-impl GetStreamKeyOutput {
+impl  GetStreamKeyOutput  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn stream_key(&self) -> ::std::option::Option<&crate::types::StreamKey> {
+    pub fn stream_key(&self) -> ::std::option::Option<& crate::types::StreamKey> {
         self.stream_key.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetStreamKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamKeyOutput`](crate::operation::get_stream_key::GetStreamKeyOutput).
     pub fn builder() -> crate::operation::get_stream_key::builders::GetStreamKeyOutputBuilder {
@@ -40,27 +40,28 @@ impl GetStreamKeyOutputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_stream_key(mut self, input: ::std::option::Option<crate::types::StreamKey>) -> Self {
-        self.stream_key = input;
-        self
+        self.stream_key = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_stream_key(&self) -> &::std::option::Option<crate::types::StreamKey> {
         &self.stream_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetStreamKeyOutput`](crate::operation::get_stream_key::GetStreamKeyOutput).
     pub fn build(self) -> crate::operation::get_stream_key::GetStreamKeyOutput {
         crate::operation::get_stream_key::GetStreamKeyOutput {
-            stream_key: self.stream_key,
+            stream_key: self.stream_key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

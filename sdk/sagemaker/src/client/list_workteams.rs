@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkteams`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sort_by(ListWorkteamsSortByOptions)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::sort_by) / [`set_sort_by(Option<ListWorkteamsSortByOptions>)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field to sort results by. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Ascending</code>.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::set_name_contains):<br>required: **false**<br><p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of work teams to return in each page of the response.</p><br>
-    /// - On success, responds with [`ListWorkteamsOutput`](crate::operation::list_workteams::ListWorkteamsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkteamsOutput`](crate::operation::list_workteams::ListWorkteamsOutput) with field(s):
     ///   - [`workteams(Option<Vec::<Workteam>>)`](crate::operation::list_workteams::ListWorkteamsOutput::workteams): <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workteams::ListWorkteamsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of work teams, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListWorkteamsError>`](crate::operation::list_workteams::ListWorkteamsError)
+                            /// - On failure, responds with [`SdkError<ListWorkteamsError>`](crate::operation::list_workteams::ListWorkteamsError)
     pub fn list_workteams(&self) -> crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder {
-        crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workteams::builders::ListWorkteamsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

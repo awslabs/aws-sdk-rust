@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHsmClientCertificateInput {
+pub struct DeleteHsmClientCertificateInput  {
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHsmClientCertificateInput {
+impl  DeleteHsmClientCertificateInput  {
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
-    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.hsm_client_certificate_identifier.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteHsmClientCertificateInputBuilder {
     }
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
     pub fn set_hsm_client_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_client_certificate_identifier = input;
-        self
+        self.hsm_client_certificate_identifier = input; self
     }
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
     pub fn get_hsm_client_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_client_certificate_identifier
     }
     /// Consumes the builder and constructs a [`DeleteHsmClientCertificateInput`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput {
-            hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput {
+                hsm_client_certificate_identifier: self.hsm_client_certificate_identifier
+                ,
+            }
+        )
     }
 }
+

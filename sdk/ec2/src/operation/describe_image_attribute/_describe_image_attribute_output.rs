@@ -3,15 +3,15 @@
 /// <p>Describes an image attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImageAttributeOutput {
+pub struct DescribeImageAttributeOutput  {
     /// <p>The block device mapping entries.</p>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>,
     /// <p>The ID of the AMI.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The launch permissions.</p>
-    pub launch_permissions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
+    pub launch_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>,
     /// <p>The product codes.</p>
-    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub product_codes: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>,
     /// <p>A description for the AMI.</p>
     pub description: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The kernel ID.</p>
@@ -34,73 +34,76 @@ pub struct DescribeImageAttributeOutput {
     pub imds_support: ::std::option::Option<crate::types::AttributeValue>,
     _request_id: Option<String>,
 }
-impl DescribeImageAttributeOutput {
+impl  DescribeImageAttributeOutput  {
     /// <p>The block device mapping entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
+    pub fn block_device_mappings(&self) -> & [crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The launch permissions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_permissions.is_none()`.
-    pub fn launch_permissions(&self) -> &[crate::types::LaunchPermission] {
-        self.launch_permissions.as_deref().unwrap_or_default()
+    pub fn launch_permissions(&self) -> & [crate::types::LaunchPermission] {
+        self.launch_permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The product codes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
-    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
-        self.product_codes.as_deref().unwrap_or_default()
+    pub fn product_codes(&self) -> & [crate::types::ProductCode] {
+        self.product_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A description for the AMI.</p>
-    pub fn description(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn description(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.description.as_ref()
     }
     /// <p>The kernel ID.</p>
-    pub fn kernel_id(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn kernel_id(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.kernel_id.as_ref()
     }
     /// <p>The RAM disk ID.</p>
-    pub fn ramdisk_id(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn ramdisk_id(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.ramdisk_id.as_ref()
     }
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-    pub fn sriov_net_support(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn sriov_net_support(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.sriov_net_support.as_ref()
     }
     /// <p>The boot mode.</p>
-    pub fn boot_mode(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn boot_mode(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.boot_mode.as_ref()
     }
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
-    pub fn tpm_support(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn tpm_support(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.tpm_support.as_ref()
     }
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn uefi_data(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn uefi_data(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.uefi_data.as_ref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
-    pub fn last_launched_time(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn last_launched_time(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.last_launched_time.as_ref()
     }
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn imds_support(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+    pub fn imds_support(&self) -> ::std::option::Option<& crate::types::AttributeValue> {
         self.imds_support.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeImageAttributeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeImageAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageAttributeOutput`](crate::operation::describe_image_attribute::DescribeImageAttributeOutput).
     pub fn builder() -> crate::operation::describe_image_attribute::builders::DescribeImageAttributeOutputBuilder {
@@ -112,10 +115,10 @@ impl DescribeImageAttributeOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageAttributeOutputBuilder {
-    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) launch_permissions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
-    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub(crate) launch_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>,
     pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) kernel_id: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) ramdisk_id: ::std::option::Option<crate::types::AttributeValue>,
@@ -135,17 +138,16 @@ impl DescribeImageAttributeOutputBuilder {
     /// <p>The block device mapping entries.</p>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.block_device_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The block device mapping entries.</p>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
-        self.block_device_mappings = input;
-        self
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>) -> Self {
+        self.block_device_mappings = input; self
     }
     /// <p>The block device mapping entries.</p>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>The ID of the AMI.</p>
@@ -155,8 +157,7 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>The ID of the AMI.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The ID of the AMI.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,17 +170,16 @@ impl DescribeImageAttributeOutputBuilder {
     /// <p>The launch permissions.</p>
     pub fn launch_permissions(mut self, input: crate::types::LaunchPermission) -> Self {
         let mut v = self.launch_permissions.unwrap_or_default();
-        v.push(input);
-        self.launch_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.launch_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The launch permissions.</p>
-    pub fn set_launch_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>) -> Self {
-        self.launch_permissions = input;
-        self
+    pub fn set_launch_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>>) -> Self {
+        self.launch_permissions = input; self
     }
     /// <p>The launch permissions.</p>
-    pub fn get_launch_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>> {
+    pub fn get_launch_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchPermission>> {
         &self.launch_permissions
     }
     /// Appends an item to `product_codes`.
@@ -189,17 +189,16 @@ impl DescribeImageAttributeOutputBuilder {
     /// <p>The product codes.</p>
     pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
-        v.push(input);
-        self.product_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.product_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The product codes.</p>
-    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
-        self.product_codes = input;
-        self
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>) -> Self {
+        self.product_codes = input; self
     }
     /// <p>The product codes.</p>
-    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>> {
         &self.product_codes
     }
     /// <p>A description for the AMI.</p>
@@ -209,8 +208,7 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>A description for the AMI.</p>
     pub fn set_description(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the AMI.</p>
     pub fn get_description(&self) -> &::std::option::Option<crate::types::AttributeValue> {
@@ -223,8 +221,7 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>The kernel ID.</p>
     pub fn set_kernel_id(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.kernel_id = input;
-        self
+        self.kernel_id = input; self
     }
     /// <p>The kernel ID.</p>
     pub fn get_kernel_id(&self) -> &::std::option::Option<crate::types::AttributeValue> {
@@ -237,8 +234,7 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>The RAM disk ID.</p>
     pub fn set_ramdisk_id(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.ramdisk_id = input;
-        self
+        self.ramdisk_id = input; self
     }
     /// <p>The RAM disk ID.</p>
     pub fn get_ramdisk_id(&self) -> &::std::option::Option<crate::types::AttributeValue> {
@@ -251,8 +247,7 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn set_sriov_net_support(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.sriov_net_support = input;
-        self
+        self.sriov_net_support = input; self
     }
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn get_sriov_net_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
@@ -265,8 +260,7 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>The boot mode.</p>
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.boot_mode = input;
-        self
+        self.boot_mode = input; self
     }
     /// <p>The boot mode.</p>
     pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::AttributeValue> {
@@ -279,8 +273,7 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
     pub fn set_tpm_support(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.tpm_support = input;
-        self
+        self.tpm_support = input; self
     }
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
     pub fn get_tpm_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
@@ -293,8 +286,7 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_uefi_data(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.uefi_data = input;
-        self
+        self.uefi_data = input; self
     }
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_uefi_data(&self) -> &::std::option::Option<crate::types::AttributeValue> {
@@ -311,8 +303,7 @@ impl DescribeImageAttributeOutputBuilder {
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub fn set_last_launched_time(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.last_launched_time = input;
-        self
+        self.last_launched_time = input; self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
@@ -327,39 +318,52 @@ impl DescribeImageAttributeOutputBuilder {
     }
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_imds_support(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.imds_support = input;
-        self
+        self.imds_support = input; self
     }
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         &self.imds_support
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeImageAttributeOutput`](crate::operation::describe_image_attribute::DescribeImageAttributeOutput).
     pub fn build(self) -> crate::operation::describe_image_attribute::DescribeImageAttributeOutput {
         crate::operation::describe_image_attribute::DescribeImageAttributeOutput {
-            block_device_mappings: self.block_device_mappings,
-            image_id: self.image_id,
-            launch_permissions: self.launch_permissions,
-            product_codes: self.product_codes,
-            description: self.description,
-            kernel_id: self.kernel_id,
-            ramdisk_id: self.ramdisk_id,
-            sriov_net_support: self.sriov_net_support,
-            boot_mode: self.boot_mode,
-            tpm_support: self.tpm_support,
-            uefi_data: self.uefi_data,
-            last_launched_time: self.last_launched_time,
-            imds_support: self.imds_support,
+            block_device_mappings: self.block_device_mappings
+            ,
+            image_id: self.image_id
+            ,
+            launch_permissions: self.launch_permissions
+            ,
+            product_codes: self.product_codes
+            ,
+            description: self.description
+            ,
+            kernel_id: self.kernel_id
+            ,
+            ramdisk_id: self.ramdisk_id
+            ,
+            sriov_net_support: self.sriov_net_support
+            ,
+            boot_mode: self.boot_mode
+            ,
+            tpm_support: self.tpm_support
+            ,
+            uefi_data: self.uefi_data
+            ,
+            last_launched_time: self.last_launched_time
+            ,
+            imds_support: self.imds_support
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

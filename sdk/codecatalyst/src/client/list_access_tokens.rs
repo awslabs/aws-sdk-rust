@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccessTokens`](crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p><br>
-    /// - On success, responds with [`ListAccessTokensOutput`](crate::operation::list_access_tokens::ListAccessTokensOutput) with field(s):
+                            /// - On success, responds with [`ListAccessTokensOutput`](crate::operation::list_access_tokens::ListAccessTokensOutput) with field(s):
     ///   - [`items(Vec::<AccessTokenSummary>)`](crate::operation::list_access_tokens::ListAccessTokensOutput::items): <p>A list of personal access tokens (PATs) associated with the calling user identity.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_tokens::ListAccessTokensOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    /// - On failure, responds with [`SdkError<ListAccessTokensError>`](crate::operation::list_access_tokens::ListAccessTokensError)
+                            /// - On failure, responds with [`SdkError<ListAccessTokensError>`](crate::operation::list_access_tokens::ListAccessTokensError)
     pub fn list_access_tokens(&self) -> crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder {
-        crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_access_tokens::builders::ListAccessTokensFluentBuilder::new(self.handle.clone())
+                            }
 }
+

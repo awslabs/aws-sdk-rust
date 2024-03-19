@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceInstanceInput {
+pub struct GetDeviceInstanceInput  {
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetDeviceInstanceInput {
+impl  GetDeviceInstanceInput  {
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetDeviceInstanceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetDeviceInstanceInput`](crate::operation::get_device_instance::GetDeviceInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_device_instance::GetDeviceInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_device_instance::GetDeviceInstanceInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_device_instance::GetDeviceInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_device_instance::GetDeviceInstanceInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

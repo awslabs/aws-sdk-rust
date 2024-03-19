@@ -3,27 +3,28 @@
 /// <p>Describes the starting parameters for an Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunConfiguration {
+pub struct RunConfiguration  {
     /// <p>Describes the starting parameters for a Managed Service for Apache Flink application.</p>
     pub flink_run_configuration: ::std::option::Option<crate::types::FlinkRunConfiguration>,
     /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
-    pub sql_run_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SqlRunConfiguration>>,
+    pub sql_run_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SqlRunConfiguration>>,
     /// <p>Describes the restore behavior of a restarting application.</p>
     pub application_restore_configuration: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
 }
-impl RunConfiguration {
+impl  RunConfiguration  {
     /// <p>Describes the starting parameters for a Managed Service for Apache Flink application.</p>
-    pub fn flink_run_configuration(&self) -> ::std::option::Option<&crate::types::FlinkRunConfiguration> {
+    pub fn flink_run_configuration(&self) -> ::std::option::Option<& crate::types::FlinkRunConfiguration> {
         self.flink_run_configuration.as_ref()
     }
     /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sql_run_configurations.is_none()`.
-    pub fn sql_run_configurations(&self) -> &[crate::types::SqlRunConfiguration] {
-        self.sql_run_configurations.as_deref().unwrap_or_default()
+    pub fn sql_run_configurations(&self) -> & [crate::types::SqlRunConfiguration] {
+        self.sql_run_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Describes the restore behavior of a restarting application.</p>
-    pub fn application_restore_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationRestoreConfiguration> {
+    pub fn application_restore_configuration(&self) -> ::std::option::Option<& crate::types::ApplicationRestoreConfiguration> {
         self.application_restore_configuration.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl RunConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunConfigurationBuilder {
     pub(crate) flink_run_configuration: ::std::option::Option<crate::types::FlinkRunConfiguration>,
-    pub(crate) sql_run_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SqlRunConfiguration>>,
+    pub(crate) sql_run_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SqlRunConfiguration>>,
     pub(crate) application_restore_configuration: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,
 }
 impl RunConfigurationBuilder {
@@ -50,8 +51,7 @@ impl RunConfigurationBuilder {
     }
     /// <p>Describes the starting parameters for a Managed Service for Apache Flink application.</p>
     pub fn set_flink_run_configuration(mut self, input: ::std::option::Option<crate::types::FlinkRunConfiguration>) -> Self {
-        self.flink_run_configuration = input;
-        self
+        self.flink_run_configuration = input; self
     }
     /// <p>Describes the starting parameters for a Managed Service for Apache Flink application.</p>
     pub fn get_flink_run_configuration(&self) -> &::std::option::Option<crate::types::FlinkRunConfiguration> {
@@ -64,17 +64,16 @@ impl RunConfigurationBuilder {
     /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
     pub fn sql_run_configurations(mut self, input: crate::types::SqlRunConfiguration) -> Self {
         let mut v = self.sql_run_configurations.unwrap_or_default();
-        v.push(input);
-        self.sql_run_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sql_run_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
-    pub fn set_sql_run_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlRunConfiguration>>) -> Self {
-        self.sql_run_configurations = input;
-        self
+    pub fn set_sql_run_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SqlRunConfiguration>>) -> Self {
+        self.sql_run_configurations = input; self
     }
     /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
-    pub fn get_sql_run_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlRunConfiguration>> {
+    pub fn get_sql_run_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SqlRunConfiguration>> {
         &self.sql_run_configurations
     }
     /// <p>Describes the restore behavior of a restarting application.</p>
@@ -84,8 +83,7 @@ impl RunConfigurationBuilder {
     }
     /// <p>Describes the restore behavior of a restarting application.</p>
     pub fn set_application_restore_configuration(mut self, input: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>) -> Self {
-        self.application_restore_configuration = input;
-        self
+        self.application_restore_configuration = input; self
     }
     /// <p>Describes the restore behavior of a restarting application.</p>
     pub fn get_application_restore_configuration(&self) -> &::std::option::Option<crate::types::ApplicationRestoreConfiguration> {
@@ -94,9 +92,13 @@ impl RunConfigurationBuilder {
     /// Consumes the builder and constructs a [`RunConfiguration`](crate::types::RunConfiguration).
     pub fn build(self) -> crate::types::RunConfiguration {
         crate::types::RunConfiguration {
-            flink_run_configuration: self.flink_run_configuration,
-            sql_run_configurations: self.sql_run_configurations,
-            application_restore_configuration: self.application_restore_configuration,
+            flink_run_configuration: self.flink_run_configuration
+            ,
+            sql_run_configurations: self.sql_run_configurations
+            ,
+            application_restore_configuration: self.application_restore_configuration
+            ,
         }
     }
 }
+

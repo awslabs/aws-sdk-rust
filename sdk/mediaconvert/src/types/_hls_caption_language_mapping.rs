@@ -3,7 +3,7 @@
 /// Caption Language Mapping
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsCaptionLanguageMapping {
+pub struct HlsCaptionLanguageMapping  {
     /// Caption channel.
     pub caption_channel: ::std::option::Option<i32>,
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
@@ -13,21 +13,21 @@ pub struct HlsCaptionLanguageMapping {
     /// Caption language description.
     pub language_description: ::std::option::Option<::std::string::String>,
 }
-impl HlsCaptionLanguageMapping {
+impl  HlsCaptionLanguageMapping  {
     /// Caption channel.
     pub fn caption_channel(&self) -> ::std::option::Option<i32> {
         self.caption_channel
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
-    pub fn custom_language_code(&self) -> ::std::option::Option<&str> {
+    pub fn custom_language_code(&self) -> ::std::option::Option<& str> {
         self.custom_language_code.as_deref()
     }
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// Caption language description.
-    pub fn language_description(&self) -> ::std::option::Option<&str> {
+    pub fn language_description(&self) -> ::std::option::Option<& str> {
         self.language_description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl HlsCaptionLanguageMappingBuilder {
     }
     /// Caption channel.
     pub fn set_caption_channel(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.caption_channel = input;
-        self
+        self.caption_channel = input; self
     }
     /// Caption channel.
     pub fn get_caption_channel(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl HlsCaptionLanguageMappingBuilder {
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub fn set_custom_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_language_code = input;
-        self
+        self.custom_language_code = input; self
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub fn get_custom_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl HlsCaptionLanguageMappingBuilder {
     }
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -97,8 +94,7 @@ impl HlsCaptionLanguageMappingBuilder {
     }
     /// Caption language description.
     pub fn set_language_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_description = input;
-        self
+        self.language_description = input; self
     }
     /// Caption language description.
     pub fn get_language_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl HlsCaptionLanguageMappingBuilder {
     /// Consumes the builder and constructs a [`HlsCaptionLanguageMapping`](crate::types::HlsCaptionLanguageMapping).
     pub fn build(self) -> crate::types::HlsCaptionLanguageMapping {
         crate::types::HlsCaptionLanguageMapping {
-            caption_channel: self.caption_channel,
-            custom_language_code: self.custom_language_code,
-            language_code: self.language_code,
-            language_description: self.language_description,
+            caption_channel: self.caption_channel
+            ,
+            custom_language_code: self.custom_language_code
+            ,
+            language_code: self.language_code
+            ,
+            language_description: self.language_description
+            ,
         }
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::transact_get_items::_transact_get_items_input::Transac
 
 impl TransactGetItemsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::transact_get_items::TransactGetItemsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::transact_get_items::TransactGetItemsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.transact_get_items();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::transact_get_items::TransactGetItemsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::transact_get_items::TransactGetItemsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.transact_get_items();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `TransactGetItems`.
-///
+/// 
 /// <p><code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or more tables (but not from indexes) in a single account and Region. A <code>TransactGetItems</code> call can contain up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that specifies an item to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code> cannot retrieve items from tables in more than one Amazon Web Services account or Region. The aggregate size of the items in the transaction cannot exceed 4 MB.</p>
 /// <p>DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following is true:</p>
 /// <ul>
@@ -37,33 +34,32 @@ impl TransactGetItemsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TransactGetItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::transact_get_items::builders::TransactGetItemsInputBuilder,
+                    inner: crate::operation::transact_get_items::builders::TransactGetItemsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::transact_get_items::TransactGetItemsOutput,
-        crate::operation::transact_get_items::TransactGetItemsError,
-    > for TransactGetItemsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::transact_get_items::TransactGetItemsOutput,
-            crate::operation::transact_get_items::TransactGetItemsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::transact_get_items::TransactGetItemsOutput,
+                    crate::operation::transact_get_items::TransactGetItemsError,
+                > for TransactGetItemsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::transact_get_items::TransactGetItemsOutput,
+                        crate::operation::transact_get_items::TransactGetItemsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl TransactGetItemsFluentBuilder {
     /// Creates a new `TransactGetItems`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -72,53 +68,44 @@ impl TransactGetItemsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::transact_get_items::TransactGetItemsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::transact_get_items::TransactGetItemsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::transact_get_items::TransactGetItems::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::transact_get_items::TransactGetItems::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::transact_get_items::TransactGetItemsOutput,
-        crate::operation::transact_get_items::TransactGetItemsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::transact_get_items::TransactGetItemsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::transact_get_items::TransactGetItemsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::transact_get_items::TransactGetItems::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::transact_get_items::TransactGetItems::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::transact_get_items::TransactGetItemsOutput, crate::operation::transact_get_items::TransactGetItemsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `TransactItems`.
     ///
     /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).
@@ -129,12 +116,12 @@ impl TransactGetItemsFluentBuilder {
         self
     }
     /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
-    pub fn set_transact_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransactGetItem>>) -> Self {
+    pub fn set_transact_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransactGetItem>>) -> Self {
         self.inner = self.inner.set_transact_items(input);
         self
     }
     /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
-    pub fn get_transact_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactGetItem>> {
+    pub fn get_transact_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransactGetItem>> {
         self.inner.get_transact_items()
     }
     /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
@@ -152,3 +139,4 @@ impl TransactGetItemsFluentBuilder {
         self.inner.get_return_consumed_capacity()
     }
 }
+

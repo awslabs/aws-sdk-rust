@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkspaceConfigurationInput {
+pub struct UpdateWorkspaceConfigurationInput  {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workspace to update.</p>
@@ -12,19 +12,19 @@ pub struct UpdateWorkspaceConfigurationInput {
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a> operation.</p>
     pub grafana_version: ::std::option::Option<::std::string::String>,
 }
-impl UpdateWorkspaceConfigurationInput {
+impl  UpdateWorkspaceConfigurationInput  {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&str> {
+    pub fn configuration(&self) -> ::std::option::Option<& str> {
         self.configuration.as_deref()
     }
     /// <p>The ID of the workspace to update.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>Specifies the version of Grafana to support in the workspace. If not specified, keeps the current version of the workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a> operation.</p>
-    pub fn grafana_version(&self) -> ::std::option::Option<&str> {
+    pub fn grafana_version(&self) -> ::std::option::Option<& str> {
         self.grafana_version.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     }
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     }
     /// <p>The ID of the workspace to update.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to update.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a> operation.</p>
     pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grafana_version = input;
-        self
+        self.grafana_version = input; self
     }
     /// <p>Specifies the version of Grafana to support in the workspace. If not specified, keeps the current version of the workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
@@ -95,16 +92,17 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         &self.grafana_version
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationInput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput {
-            configuration: self.configuration,
-            workspace_id: self.workspace_id,
-            grafana_version: self.grafana_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput {
+                configuration: self.configuration
+                ,
+                workspace_id: self.workspace_id
+                ,
+                grafana_version: self.grafana_version
+                ,
+            }
+        )
     }
 }
+

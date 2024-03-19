@@ -3,13 +3,13 @@
 /// <p>An object representing a filter on a <code>DescribeImages</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImagesFilter {
+pub struct DescribeImagesFilter  {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
     pub tag_status: ::std::option::Option<crate::types::TagStatus>,
 }
-impl DescribeImagesFilter {
+impl  DescribeImagesFilter  {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
-    pub fn tag_status(&self) -> ::std::option::Option<&crate::types::TagStatus> {
+    pub fn tag_status(&self) -> ::std::option::Option<& crate::types::TagStatus> {
         self.tag_status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DescribeImagesFilterBuilder {
     }
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
     pub fn set_tag_status(mut self, input: ::std::option::Option<crate::types::TagStatus>) -> Self {
-        self.tag_status = input;
-        self
+        self.tag_status = input; self
     }
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
     pub fn get_tag_status(&self) -> &::std::option::Option<crate::types::TagStatus> {
@@ -43,6 +42,10 @@ impl DescribeImagesFilterBuilder {
     }
     /// Consumes the builder and constructs a [`DescribeImagesFilter`](crate::types::DescribeImagesFilter).
     pub fn build(self) -> crate::types::DescribeImagesFilter {
-        crate::types::DescribeImagesFilter { tag_status: self.tag_status }
+        crate::types::DescribeImagesFilter {
+            tag_status: self.tag_status
+            ,
+        }
     }
 }
+

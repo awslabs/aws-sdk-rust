@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStreamProcessorInput {
+pub struct DescribeStreamProcessorInput  {
     /// <p>Name of the stream processor for which you want information.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStreamProcessorInput {
+impl  DescribeStreamProcessorInput  {
     /// <p>Name of the stream processor for which you want information.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeStreamProcessorInputBuilder {
     }
     /// <p>Name of the stream processor for which you want information.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the stream processor for which you want information.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DescribeStreamProcessorInput`](crate::operation::describe_stream_processor::DescribeStreamProcessorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stream_processor::DescribeStreamProcessorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_stream_processor::DescribeStreamProcessorInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stream_processor::DescribeStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_stream_processor::DescribeStreamProcessorInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

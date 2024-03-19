@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPolicyInput {
+pub struct CreateAccessPolicyInput  {
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     pub access_policy_identity: ::std::option::Option<crate::types::Identity>,
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
@@ -12,27 +12,27 @@ pub struct CreateAccessPolicyInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateAccessPolicyInput {
+impl  CreateAccessPolicyInput  {
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
-    pub fn access_policy_identity(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn access_policy_identity(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.access_policy_identity.as_ref()
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    pub fn access_policy_resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn access_policy_resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.access_policy_resource.as_ref()
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    pub fn access_policy_permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn access_policy_permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.access_policy_permission.as_ref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -51,7 +51,7 @@ pub struct CreateAccessPolicyInputBuilder {
     pub(crate) access_policy_resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) access_policy_permission: ::std::option::Option<crate::types::Permission>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateAccessPolicyInputBuilder {
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
@@ -62,8 +62,7 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     pub fn set_access_policy_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.access_policy_identity = input;
-        self
+        self.access_policy_identity = input; self
     }
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     pub fn get_access_policy_identity(&self) -> &::std::option::Option<crate::types::Identity> {
@@ -77,8 +76,7 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
     pub fn set_access_policy_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.access_policy_resource = input;
-        self
+        self.access_policy_resource = input; self
     }
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
     pub fn get_access_policy_resource(&self) -> &::std::option::Option<crate::types::Resource> {
@@ -92,8 +90,7 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn set_access_policy_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.access_policy_permission = input;
-        self
+        self.access_policy_permission = input; self
     }
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn get_access_policy_permission(&self) -> &::std::option::Option<crate::types::Permission> {
@@ -106,8 +103,7 @@ impl CreateAccessPolicyInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,30 +116,34 @@ impl CreateAccessPolicyInputBuilder {
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAccessPolicyInput`](crate::operation::create_access_policy::CreateAccessPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_access_policy::CreateAccessPolicyInput {
-            access_policy_identity: self.access_policy_identity,
-            access_policy_resource: self.access_policy_resource,
-            access_policy_permission: self.access_policy_permission,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_access_policy::CreateAccessPolicyInput {
+                access_policy_identity: self.access_policy_identity
+                ,
+                access_policy_resource: self.access_policy_resource
+                ,
+                access_policy_permission: self.access_policy_permission
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

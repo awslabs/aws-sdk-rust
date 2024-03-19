@@ -3,7 +3,8 @@
 /// <p>Used to remove the chat channel from an incident record or response plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmptyChatChannel {}
+pub struct EmptyChatChannel  {
+}
 impl EmptyChatChannel {
     /// Creates a new builder-style object to manufacture [`EmptyChatChannel`](crate::types::EmptyChatChannel).
     pub fn builder() -> crate::types::builders::EmptyChatChannelBuilder {
@@ -14,10 +15,13 @@ impl EmptyChatChannel {
 /// A builder for [`EmptyChatChannel`](crate::types::EmptyChatChannel).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct EmptyChatChannelBuilder {}
+pub struct EmptyChatChannelBuilder {
+}
 impl EmptyChatChannelBuilder {
     /// Consumes the builder and constructs a [`EmptyChatChannel`](crate::types::EmptyChatChannel).
     pub fn build(self) -> crate::types::EmptyChatChannel {
-        crate::types::EmptyChatChannel {}
+        crate::types::EmptyChatChannel {
+        }
     }
 }
+

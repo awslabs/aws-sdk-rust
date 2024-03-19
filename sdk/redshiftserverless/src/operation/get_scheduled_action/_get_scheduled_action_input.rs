@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetScheduledActionInput {
+pub struct GetScheduledActionInput  {
     /// <p>The name of the scheduled action.</p>
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
 }
-impl GetScheduledActionInput {
+impl  GetScheduledActionInput  {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetScheduledActionInputBuilder {
     }
     /// <p>The name of the scheduled action.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_name = input;
-        self
+        self.scheduled_action_name = input; self
     }
     /// <p>The name of the scheduled action.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_action_name
     }
     /// Consumes the builder and constructs a [`GetScheduledActionInput`](crate::operation::get_scheduled_action::GetScheduledActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_scheduled_action::GetScheduledActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_scheduled_action::GetScheduledActionInput {
-            scheduled_action_name: self.scheduled_action_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scheduled_action::GetScheduledActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_scheduled_action::GetScheduledActionInput {
+                scheduled_action_name: self.scheduled_action_name
+                ,
+            }
+        )
     }
 }
+

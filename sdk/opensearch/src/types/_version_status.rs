@@ -3,20 +3,19 @@
 /// <p>The status of the the OpenSearch or Elasticsearch version options for the specified Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersionStatus {
+pub struct VersionStatus  {
     /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
     pub options: ::std::string::String,
     /// <p>The status of the version options for the specified domain.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl VersionStatus {
+impl  VersionStatus  {
     /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
-    pub fn options(&self) -> &str {
-        use std::ops::Deref;
-        self.options.deref()
+    pub fn options(&self) -> & str {
+        use std::ops::Deref; self.options.deref()
     }
     /// <p>The status of the version options for the specified domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl VersionStatusBuilder {
     }
     /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The OpenSearch or Elasticsearch version for the specified domain.</p>
     pub fn get_options(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl VersionStatusBuilder {
     }
     /// <p>The status of the version options for the specified domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the version options for the specified domain.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -69,14 +66,17 @@ impl VersionStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::VersionStatusBuilder::options)
     pub fn build(self) -> ::std::result::Result<crate::types::VersionStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VersionStatus {
-            options: self.options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "options",
-                    "options was not specified but it is required when building VersionStatus",
-                )
-            })?,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VersionStatus {
+                options: self.options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("options", "options was not specified but it is required when building VersionStatus")
+                    )?
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

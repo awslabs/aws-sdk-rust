@@ -3,13 +3,13 @@
 /// <p>Container for the parameters to the <code>DeleteOutboundConnection</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOutboundConnectionInput {
+pub struct DeleteOutboundConnectionInput  {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteOutboundConnectionInput {
+impl  DeleteOutboundConnectionInput  {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteOutboundConnectionInputBuilder {
     }
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }
     /// Consumes the builder and constructs a [`DeleteOutboundConnectionInput`](crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput {
-            connection_id: self.connection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_outbound_connection::DeleteOutboundConnectionInput {
+                connection_id: self.connection_id
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobFilter {
+pub struct JobFilter  {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type (for example, <code>Ec2Instance</code>).</p>
     /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g, <code>Complete</code>).</p>
@@ -17,13 +17,13 @@ pub struct JobFilter {
     /// <li>
     /// <p>Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you specify the <code>name</code> parameter as <code>JobStatus</code>.</p></li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl JobFilter {
+impl  JobFilter  {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type (for example, <code>Ec2Instance</code>).</p>
     /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g, <code>Complete</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::JobFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::JobFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
@@ -34,10 +34,11 @@ impl JobFilter {
     /// <li>
     /// <p>Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you specify the <code>name</code> parameter as <code>JobStatus</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl JobFilter {
@@ -52,7 +53,7 @@ impl JobFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::JobFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl JobFilterBuilder {
     /// <p>The name of the filter.</p>
@@ -66,8 +67,7 @@ impl JobFilterBuilder {
     /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type (for example, <code>Ec2Instance</code>).</p>
     /// <p>Specify <code>JobStatus</code> to return export jobs with a specific status (e.g, <code>Complete</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::JobFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>ResourceType</code> to return export jobs of a specific resource type (for example, <code>Ec2Instance</code>).</p>
@@ -89,9 +89,9 @@ impl JobFilterBuilder {
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter:</p>
@@ -101,9 +101,8 @@ impl JobFilterBuilder {
     /// <li>
     /// <p>Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you specify the <code>name</code> parameter as <code>JobStatus</code>.</p></li>
     /// </ul>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter:</p>
@@ -113,14 +112,17 @@ impl JobFilterBuilder {
     /// <li>
     /// <p>Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you specify the <code>name</code> parameter as <code>JobStatus</code>.</p></li>
     /// </ul>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`JobFilter`](crate::types::JobFilter).
     pub fn build(self) -> crate::types::JobFilter {
         crate::types::JobFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

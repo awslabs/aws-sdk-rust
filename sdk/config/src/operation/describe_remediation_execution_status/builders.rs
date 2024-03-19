@@ -5,54 +5,50 @@ pub use crate::operation::describe_remediation_execution_status::_describe_remed
 
 impl DescribeRemediationExecutionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_remediation_execution_status();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_remediation_execution_status();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeRemediationExecutionStatus`.
-///
+/// 
 /// <p>Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed. When you specify the limit and the next token, you receive a paginated response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRemediationExecutionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder,
+                    inner: crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
-        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
-    > for DescribeRemediationExecutionStatusFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
-            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
+                    crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
+                > for DescribeRemediationExecutionStatusFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
+                        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeRemediationExecutionStatusFluentBuilder {
     /// Creates a new `DescribeRemediationExecutionStatus`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatus::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatus::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
-        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatus::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatus::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput, crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator {
-        crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator {
+                                crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A list of Config rule names.</p>
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());
@@ -138,12 +125,12 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
         self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>>) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceKey>> {
         self.inner.get_resource_keys()
     }
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
@@ -175,3 +162,4 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

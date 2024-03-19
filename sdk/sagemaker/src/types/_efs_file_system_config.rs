@@ -3,19 +3,19 @@
 /// <p>The settings for assigning a custom Amazon EFS file system to a user profile or space for an Amazon SageMaker Domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EfsFileSystemConfig {
+pub struct EfsFileSystemConfig  {
     /// <p>The ID of your Amazon EFS file system.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the file system directory that is accessible in Amazon SageMaker Studio. Permitted users can access only this directory and below.</p>
     pub file_system_path: ::std::option::Option<::std::string::String>,
 }
-impl EfsFileSystemConfig {
+impl  EfsFileSystemConfig  {
     /// <p>The ID of your Amazon EFS file system.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The path to the file system directory that is accessible in Amazon SageMaker Studio. Permitted users can access only this directory and below.</p>
-    pub fn file_system_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_path(&self) -> ::std::option::Option<& str> {
         self.file_system_path.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl EfsFileSystemConfigBuilder {
     }
     /// <p>The ID of your Amazon EFS file system.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of your Amazon EFS file system.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl EfsFileSystemConfigBuilder {
     }
     /// <p>The path to the file system directory that is accessible in Amazon SageMaker Studio. Permitted users can access only this directory and below.</p>
     pub fn set_file_system_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_path = input;
-        self
+        self.file_system_path = input; self
     }
     /// <p>The path to the file system directory that is accessible in Amazon SageMaker Studio. Permitted users can access only this directory and below.</p>
     pub fn get_file_system_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl EfsFileSystemConfigBuilder {
     /// Consumes the builder and constructs a [`EfsFileSystemConfig`](crate::types::EfsFileSystemConfig).
     pub fn build(self) -> crate::types::EfsFileSystemConfig {
         crate::types::EfsFileSystemConfig {
-            file_system_id: self.file_system_id,
-            file_system_path: self.file_system_path,
+            file_system_id: self.file_system_id
+            ,
+            file_system_path: self.file_system_path
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about the hours of operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HoursOfOperationConfig {
+pub struct HoursOfOperationConfig  {
     /// <p>The day that the hours of operation applies to.</p>
     pub day: crate::types::HoursOfOperationDays,
     /// <p>The start time that your contact center opens.</p>
@@ -11,17 +11,17 @@ pub struct HoursOfOperationConfig {
     /// <p>The end time that your contact center closes.</p>
     pub end_time: ::std::option::Option<crate::types::HoursOfOperationTimeSlice>,
 }
-impl HoursOfOperationConfig {
+impl  HoursOfOperationConfig  {
     /// <p>The day that the hours of operation applies to.</p>
-    pub fn day(&self) -> &crate::types::HoursOfOperationDays {
+    pub fn day(&self) -> & crate::types::HoursOfOperationDays {
         &self.day
     }
     /// <p>The start time that your contact center opens.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&crate::types::HoursOfOperationTimeSlice> {
+    pub fn start_time(&self) -> ::std::option::Option<& crate::types::HoursOfOperationTimeSlice> {
         self.start_time.as_ref()
     }
     /// <p>The end time that your contact center closes.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&crate::types::HoursOfOperationTimeSlice> {
+    pub fn end_time(&self) -> ::std::option::Option<& crate::types::HoursOfOperationTimeSlice> {
         self.end_time.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl HoursOfOperationConfigBuilder {
     }
     /// <p>The day that the hours of operation applies to.</p>
     pub fn set_day(mut self, input: ::std::option::Option<crate::types::HoursOfOperationDays>) -> Self {
-        self.day = input;
-        self
+        self.day = input; self
     }
     /// <p>The day that the hours of operation applies to.</p>
     pub fn get_day(&self) -> &::std::option::Option<crate::types::HoursOfOperationDays> {
@@ -64,8 +63,7 @@ impl HoursOfOperationConfigBuilder {
     }
     /// <p>The start time that your contact center opens.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<crate::types::HoursOfOperationTimeSlice>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time that your contact center opens.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<crate::types::HoursOfOperationTimeSlice> {
@@ -79,8 +77,7 @@ impl HoursOfOperationConfigBuilder {
     }
     /// <p>The end time that your contact center closes.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<crate::types::HoursOfOperationTimeSlice>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time that your contact center closes.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<crate::types::HoursOfOperationTimeSlice> {
@@ -90,15 +87,19 @@ impl HoursOfOperationConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`day`](crate::types::builders::HoursOfOperationConfigBuilder::day)
     pub fn build(self) -> ::std::result::Result<crate::types::HoursOfOperationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HoursOfOperationConfig {
-            day: self.day.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "day",
-                    "day was not specified but it is required when building HoursOfOperationConfig",
-                )
-            })?,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HoursOfOperationConfig {
+                day: self.day
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("day", "day was not specified but it is required when building HoursOfOperationConfig")
+                    )?
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

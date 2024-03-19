@@ -3,7 +3,7 @@
 /// <p>Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. To fetch additional details such as subnets, IAM roles, security groups, and tags for the Studio, use the <code>DescribeStudio</code> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StudioSummary {
+pub struct StudioSummary  {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EMR Studio.</p>
@@ -19,33 +19,33 @@ pub struct StudioSummary {
     /// <p>The time when the Amazon EMR Studio was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl StudioSummary {
+impl  StudioSummary  {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>The name of the Amazon EMR Studio.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
-    pub fn auth_mode(&self) -> ::std::option::Option<&crate::types::AuthMode> {
+    pub fn auth_mode(&self) -> ::std::option::Option<& crate::types::AuthMode> {
         self.auth_mode.as_ref()
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl StudioSummaryBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl StudioSummaryBuilder {
     }
     /// <p>The name of the Amazon EMR Studio.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon EMR Studio.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl StudioSummaryBuilder {
     }
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl StudioSummaryBuilder {
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl StudioSummaryBuilder {
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl StudioSummaryBuilder {
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     pub fn set_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
-        self.auth_mode = input;
-        self
+        self.auth_mode = input; self
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     pub fn get_auth_mode(&self) -> &::std::option::Option<crate::types::AuthMode> {
@@ -160,8 +154,7 @@ impl StudioSummaryBuilder {
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl StudioSummaryBuilder {
     /// Consumes the builder and constructs a [`StudioSummary`](crate::types::StudioSummary).
     pub fn build(self) -> crate::types::StudioSummary {
         crate::types::StudioSummary {
-            studio_id: self.studio_id,
-            name: self.name,
-            vpc_id: self.vpc_id,
-            description: self.description,
-            url: self.url,
-            auth_mode: self.auth_mode,
-            creation_time: self.creation_time,
+            studio_id: self.studio_id
+            ,
+            name: self.name
+            ,
+            vpc_id: self.vpc_id
+            ,
+            description: self.description
+            ,
+            url: self.url
+            ,
+            auth_mode: self.auth_mode
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

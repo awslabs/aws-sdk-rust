@@ -3,7 +3,7 @@
 /// <p>A data set is an AWS resource with one or more revisions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetEntry {
+pub struct DataSetEntry  {
     /// <p>The ARN for the data set.</p>
     pub arn: ::std::string::String,
     /// <p>The type of asset that is added to a data set.</p>
@@ -25,49 +25,45 @@ pub struct DataSetEntry {
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl DataSetEntry {
+impl  DataSetEntry  {
     /// <p>The ARN for the data set.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> &crate::types::AssetType {
+    pub fn asset_type(&self) -> & crate::types::AssetType {
         &self.asset_type
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The description for the data set.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>The unique identifier for the data set.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-    pub fn origin(&self) -> &crate::types::Origin {
+    pub fn origin(&self) -> & crate::types::Origin {
         &self.origin
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-    pub fn origin_details(&self) -> ::std::option::Option<&crate::types::OriginDetails> {
+    pub fn origin_details(&self) -> ::std::option::Option<& crate::types::OriginDetails> {
         self.origin_details.as_ref()
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
-    pub fn source_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_id(&self) -> ::std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -102,8 +98,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>The ARN for the data set.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN for the data set.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn set_asset_type(mut self, input: ::std::option::Option<crate::types::AssetType>) -> Self {
-        self.asset_type = input;
-        self
+        self.asset_type = input; self
     }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn get_asset_type(&self) -> &::std::option::Option<crate::types::AssetType> {
@@ -132,8 +126,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -147,8 +140,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>The description for the data set.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the data set.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +154,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>The unique identifier for the data set.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the data set.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +168,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>The name of the data set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data set.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +182,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::Origin>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::Origin> {
@@ -206,8 +195,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
     pub fn set_origin_details(mut self, input: ::std::option::Option<crate::types::OriginDetails>) -> Self {
-        self.origin_details = input;
-        self
+        self.origin_details = input; self
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
     pub fn get_origin_details(&self) -> &::std::option::Option<crate::types::OriginDetails> {
@@ -220,8 +208,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_id = input;
-        self
+        self.source_id = input; self
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +222,7 @@ impl DataSetEntryBuilder {
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -253,57 +239,54 @@ impl DataSetEntryBuilder {
     /// - [`origin`](crate::types::builders::DataSetEntryBuilder::origin)
     /// - [`updated_at`](crate::types::builders::DataSetEntryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSetEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSetEntry {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DataSetEntry",
-                )
-            })?,
-            asset_type: self.asset_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_type",
-                    "asset_type was not specified but it is required when building DataSetEntry",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building DataSetEntry",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building DataSetEntry",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DataSetEntry",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DataSetEntry",
-                )
-            })?,
-            origin: self.origin.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "origin",
-                    "origin was not specified but it is required when building DataSetEntry",
-                )
-            })?,
-            origin_details: self.origin_details,
-            source_id: self.source_id,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building DataSetEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSetEntry {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DataSetEntry")
+                    )?
+                ,
+                asset_type: self.asset_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_type", "asset_type was not specified but it is required when building DataSetEntry")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building DataSetEntry")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building DataSetEntry")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DataSetEntry")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DataSetEntry")
+                    )?
+                ,
+                origin: self.origin
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("origin", "origin was not specified but it is required when building DataSetEntry")
+                    )?
+                ,
+                origin_details: self.origin_details
+                ,
+                source_id: self.source_id
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building DataSetEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

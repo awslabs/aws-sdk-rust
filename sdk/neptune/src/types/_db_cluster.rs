@@ -4,11 +4,11 @@
 /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbCluster {
+pub struct DbCluster  {
     /// <p><code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
@@ -45,7 +45,7 @@ pub struct DbCluster {
     /// <p>Not supported by Neptune.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    pub db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterOptionGroupStatus>>,
+    pub db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterOptionGroupStatus>>,
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -53,11 +53,11 @@ pub struct DbCluster {
     /// <p>Not supported by Neptune.</p>
     pub replication_source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB cluster.</p>
-    pub read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub read_replica_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Provides the list of instances that make up the DB cluster.</p>
-    pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
+    pub db_cluster_members: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterMember>>,
     /// <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
-    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::VpcSecurityGroupMembership>>,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB cluster is encrypted.</p>
@@ -69,7 +69,7 @@ pub struct DbCluster {
     /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon services on your behalf.</p>
-    pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
+    pub associated_roles: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterRole>>,
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
@@ -79,7 +79,7 @@ pub struct DbCluster {
     /// <p><i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i></p>
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
-    pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
     /// <p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
@@ -98,60 +98,61 @@ pub struct DbCluster {
     /// <p>The storage type associated with the DB cluster.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
 }
-impl DbCluster {
+impl  DbCluster  {
     /// <p><code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn character_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn character_set_name(&self) -> ::std::option::Option<& str> {
         self.character_set_name.as_deref()
     }
     /// <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
-    pub fn db_cluster_parameter_group(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_parameter_group(&self) -> ::std::option::Option<& str> {
         self.db_cluster_parameter_group.as_deref()
     }
     /// <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
-    pub fn db_subnet_group(&self) -> ::std::option::Option<&str> {
+    pub fn db_subnet_group(&self) -> ::std::option::Option<& str> {
         self.db_subnet_group.as_deref()
     }
     /// <p>Specifies the current state of this DB cluster.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Specifies the progress of the operation as a percentage.</p>
-    pub fn percent_progress(&self) -> ::std::option::Option<&str> {
+    pub fn percent_progress(&self) -> ::std::option::Option<& str> {
         self.percent_progress.as_deref()
     }
     /// <p>Specifies the earliest time to which a database can be restored with point-in-time restore.</p>
-    pub fn earliest_restorable_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn earliest_restorable_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.earliest_restorable_time.as_ref()
     }
     /// <p>Specifies the connection endpoint for the primary instance of the DB cluster.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Read Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Neptune distributes the connection requests among the Read Replicas in the DB cluster. This functionality can help balance your read workload across multiple Read Replicas in your DB cluster.</p>
     /// <p>If a failover occurs, and the Read Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Read Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
-    pub fn reader_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn reader_endpoint(&self) -> ::std::option::Option<& str> {
         self.reader_endpoint.as_deref()
     }
     /// <p>Specifies whether the DB cluster has instances in multiple Availability Zones.</p>
@@ -159,15 +160,15 @@ impl DbCluster {
         self.multi_az
     }
     /// <p>Provides the name of the database engine to be used for this DB cluster.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>Indicates the database engine version.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-    pub fn latest_restorable_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_restorable_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
@@ -175,47 +176,51 @@ impl DbCluster {
         self.port
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>Not supported by Neptune.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_option_group_memberships.is_none()`.
-    pub fn db_cluster_option_group_memberships(&self) -> &[crate::types::DbClusterOptionGroupStatus] {
-        self.db_cluster_option_group_memberships.as_deref().unwrap_or_default()
+    pub fn db_cluster_option_group_memberships(&self) -> & [crate::types::DbClusterOptionGroupStatus] {
+        self.db_cluster_option_group_memberships.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn replication_source_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_source_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_source_identifier.as_deref()
     }
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_identifiers.is_none()`.
-    pub fn read_replica_identifiers(&self) -> &[::std::string::String] {
-        self.read_replica_identifiers.as_deref().unwrap_or_default()
+    pub fn read_replica_identifiers(&self) -> & [::std::string::String] {
+        self.read_replica_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides the list of instances that make up the DB cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_members.is_none()`.
-    pub fn db_cluster_members(&self) -> &[crate::types::DbClusterMember] {
-        self.db_cluster_members.as_deref().unwrap_or_default()
+    pub fn db_cluster_members(&self) -> & [crate::types::DbClusterMember] {
+        self.db_cluster_members.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
-    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
-        self.vpc_security_groups.as_deref().unwrap_or_default()
+    pub fn vpc_security_groups(&self) -> & [crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>Specifies whether the DB cluster is encrypted.</p>
@@ -223,33 +228,34 @@ impl DbCluster {
         self.storage_encrypted
     }
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.</p>
-    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<& str> {
         self.db_cluster_resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
-    pub fn db_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.db_cluster_arn.as_deref()
     }
     /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon services on your behalf.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
-    pub fn associated_roles(&self) -> &[crate::types::DbClusterRole] {
-        self.associated_roles.as_deref().unwrap_or_default()
+    pub fn associated_roles(&self) -> & [crate::types::DbClusterRole] {
+        self.associated_roles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
-    pub fn clone_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn clone_group_id(&self) -> ::std::option::Option<& str> {
         self.clone_group_id.as_deref()
     }
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    pub fn cluster_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cluster_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p><i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i></p>
@@ -257,13 +263,14 @@ impl DbCluster {
         self.copy_tags_to_snapshot
     }
     /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
-    pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
-        self.enabled_cloudwatch_logs_exports.as_deref().unwrap_or_default()
+    pub fn enabled_cloudwatch_logs_exports(&self) -> & [::std::string::String] {
+        self.enabled_cloudwatch_logs_exports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
-    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::ClusterPendingModifiedValues> {
+    pub fn pending_modified_values(&self) -> ::std::option::Option<& crate::types::ClusterPendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
     /// <p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
@@ -275,24 +282,24 @@ impl DbCluster {
         self.cross_account_clone
     }
     /// <p>Time at which the DB cluster will be automatically restarted.</p>
-    pub fn automatic_restart_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn automatic_restart_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.automatic_restart_time.as_ref()
     }
     /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfigurationInfo> {
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<& crate::types::ServerlessV2ScalingConfigurationInfo> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
-    pub fn io_optimized_next_allowed_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn io_optimized_next_allowed_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.io_optimized_next_allowed_modification_time.as_ref()
     }
     /// <p>The storage type associated with the DB cluster.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
 }
@@ -308,7 +315,7 @@ impl DbCluster {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterBuilder {
     pub(crate) allocated_storage: ::std::option::Option<i32>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
     pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -326,24 +333,24 @@ pub struct DbClusterBuilder {
     pub(crate) latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) master_username: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterOptionGroupStatus>>,
+    pub(crate) db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterOptionGroupStatus>>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) replication_source_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
-    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub(crate) read_replica_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) db_cluster_members: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterMember>>,
+    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::VpcSecurityGroupMembership>>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
+    pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterRole>>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) clone_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
-    pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) cross_account_clone: ::std::option::Option<bool>,
@@ -361,8 +368,7 @@ impl DbClusterBuilder {
     }
     /// <p><code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p><code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -375,17 +381,16 @@ impl DbClusterBuilder {
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
@@ -395,8 +400,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.backup_retention_period = input;
-        self
+        self.backup_retention_period = input; self
     }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
@@ -409,8 +413,7 @@ impl DbClusterBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.character_set_name = input;
-        self
+        self.character_set_name = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -423,8 +426,7 @@ impl DbClusterBuilder {
     }
     /// <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -437,8 +439,7 @@ impl DbClusterBuilder {
     }
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -451,8 +452,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
     pub fn set_db_cluster_parameter_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_parameter_group = input;
-        self
+        self.db_cluster_parameter_group = input; self
     }
     /// <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
     pub fn get_db_cluster_parameter_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -465,8 +465,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
     pub fn set_db_subnet_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_subnet_group = input;
-        self
+        self.db_subnet_group = input; self
     }
     /// <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
     pub fn get_db_subnet_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -479,8 +478,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the current state of this DB cluster.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies the current state of this DB cluster.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -493,8 +491,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the progress of the operation as a percentage.</p>
     pub fn set_percent_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.percent_progress = input;
-        self
+        self.percent_progress = input; self
     }
     /// <p>Specifies the progress of the operation as a percentage.</p>
     pub fn get_percent_progress(&self) -> &::std::option::Option<::std::string::String> {
@@ -507,8 +504,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the earliest time to which a database can be restored with point-in-time restore.</p>
     pub fn set_earliest_restorable_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.earliest_restorable_time = input;
-        self
+        self.earliest_restorable_time = input; self
     }
     /// <p>Specifies the earliest time to which a database can be restored with point-in-time restore.</p>
     pub fn get_earliest_restorable_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -521,8 +517,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the connection endpoint for the primary instance of the DB cluster.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>Specifies the connection endpoint for the primary instance of the DB cluster.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -537,8 +532,7 @@ impl DbClusterBuilder {
     /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Read Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Neptune distributes the connection requests among the Read Replicas in the DB cluster. This functionality can help balance your read workload across multiple Read Replicas in your DB cluster.</p>
     /// <p>If a failover occurs, and the Read Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Read Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
     pub fn set_reader_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reader_endpoint = input;
-        self
+        self.reader_endpoint = input; self
     }
     /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Read Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Neptune distributes the connection requests among the Read Replicas in the DB cluster. This functionality can help balance your read workload across multiple Read Replicas in your DB cluster.</p>
     /// <p>If a failover occurs, and the Read Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Read Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -552,8 +546,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies whether the DB cluster has instances in multiple Availability Zones.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Specifies whether the DB cluster has instances in multiple Availability Zones.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -566,8 +559,7 @@ impl DbClusterBuilder {
     }
     /// <p>Provides the name of the database engine to be used for this DB cluster.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>Provides the name of the database engine to be used for this DB cluster.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -580,8 +572,7 @@ impl DbClusterBuilder {
     }
     /// <p>Indicates the database engine version.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>Indicates the database engine version.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -594,8 +585,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn set_latest_restorable_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_restorable_time = input;
-        self
+        self.latest_restorable_time = input; self
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn get_latest_restorable_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -608,8 +598,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -622,8 +611,7 @@ impl DbClusterBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -636,20 +624,16 @@ impl DbClusterBuilder {
     /// <p>Not supported by Neptune.</p>
     pub fn db_cluster_option_group_memberships(mut self, input: crate::types::DbClusterOptionGroupStatus) -> Self {
         let mut v = self.db_cluster_option_group_memberships.unwrap_or_default();
-        v.push(input);
-        self.db_cluster_option_group_memberships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.db_cluster_option_group_memberships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn set_db_cluster_option_group_memberships(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterOptionGroupStatus>>,
-    ) -> Self {
-        self.db_cluster_option_group_memberships = input;
-        self
+    pub fn set_db_cluster_option_group_memberships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterOptionGroupStatus>>) -> Self {
+        self.db_cluster_option_group_memberships = input; self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn get_db_cluster_option_group_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterOptionGroupStatus>> {
+    pub fn get_db_cluster_option_group_memberships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbClusterOptionGroupStatus>> {
         &self.db_cluster_option_group_memberships
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
@@ -659,8 +643,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -673,8 +656,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -687,8 +669,7 @@ impl DbClusterBuilder {
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_replication_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_source_identifier = input;
-        self
+        self.replication_source_identifier = input; self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn get_replication_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -701,17 +682,16 @@ impl DbClusterBuilder {
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB cluster.</p>
     pub fn read_replica_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.read_replica_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.read_replica_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.read_replica_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB cluster.</p>
-    pub fn set_read_replica_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.read_replica_identifiers = input;
-        self
+    pub fn set_read_replica_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.read_replica_identifiers = input; self
     }
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB cluster.</p>
-    pub fn get_read_replica_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_read_replica_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.read_replica_identifiers
     }
     /// Appends an item to `db_cluster_members`.
@@ -721,17 +701,16 @@ impl DbClusterBuilder {
     /// <p>Provides the list of instances that make up the DB cluster.</p>
     pub fn db_cluster_members(mut self, input: crate::types::DbClusterMember) -> Self {
         let mut v = self.db_cluster_members.unwrap_or_default();
-        v.push(input);
-        self.db_cluster_members = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.db_cluster_members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides the list of instances that make up the DB cluster.</p>
-    pub fn set_db_cluster_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>) -> Self {
-        self.db_cluster_members = input;
-        self
+    pub fn set_db_cluster_members(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterMember>>) -> Self {
+        self.db_cluster_members = input; self
     }
     /// <p>Provides the list of instances that make up the DB cluster.</p>
-    pub fn get_db_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>> {
+    pub fn get_db_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbClusterMember>> {
         &self.db_cluster_members
     }
     /// Appends an item to `vpc_security_groups`.
@@ -741,17 +720,16 @@ impl DbClusterBuilder {
     /// <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
     pub fn vpc_security_groups(mut self, input: crate::types::VpcSecurityGroupMembership) -> Self {
         let mut v = self.vpc_security_groups.unwrap_or_default();
-        v.push(input);
-        self.vpc_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
-    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>) -> Self {
-        self.vpc_security_groups = input;
-        self
+    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcSecurityGroupMembership>>) -> Self {
+        self.vpc_security_groups = input; self
     }
     /// <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
-    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcSecurityGroupMembership>> {
         &self.vpc_security_groups
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
@@ -761,8 +739,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -775,8 +752,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies whether the DB cluster is encrypted.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_encrypted = input;
-        self
+        self.storage_encrypted = input; self
     }
     /// <p>Specifies whether the DB cluster is encrypted.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
@@ -789,8 +765,7 @@ impl DbClusterBuilder {
     }
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -803,8 +778,7 @@ impl DbClusterBuilder {
     }
     /// <p>The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.</p>
     pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_resource_id = input;
-        self
+        self.db_cluster_resource_id = input; self
     }
     /// <p>The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.</p>
     pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -817,8 +791,7 @@ impl DbClusterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
     pub fn set_db_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_arn = input;
-        self
+        self.db_cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
     pub fn get_db_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -831,17 +804,16 @@ impl DbClusterBuilder {
     /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon services on your behalf.</p>
     pub fn associated_roles(mut self, input: crate::types::DbClusterRole) -> Self {
         let mut v = self.associated_roles.unwrap_or_default();
-        v.push(input);
-        self.associated_roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon services on your behalf.</p>
-    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>) -> Self {
-        self.associated_roles = input;
-        self
+    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterRole>>) -> Self {
+        self.associated_roles = input; self
     }
     /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon services on your behalf.</p>
-    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>> {
+    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbClusterRole>> {
         &self.associated_roles
     }
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
@@ -851,8 +823,7 @@ impl DbClusterBuilder {
     }
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.iam_database_authentication_enabled = input;
-        self
+        self.iam_database_authentication_enabled = input; self
     }
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
@@ -865,8 +836,7 @@ impl DbClusterBuilder {
     }
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
     pub fn set_clone_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.clone_group_id = input;
-        self
+        self.clone_group_id = input; self
     }
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
     pub fn get_clone_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -879,8 +849,7 @@ impl DbClusterBuilder {
     }
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn set_cluster_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.cluster_create_time = input;
-        self
+        self.cluster_create_time = input; self
     }
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn get_cluster_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -893,8 +862,7 @@ impl DbClusterBuilder {
     }
     /// <p><i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i></p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_snapshot = input;
-        self
+        self.copy_tags_to_snapshot = input; self
     }
     /// <p><i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i></p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
@@ -907,17 +875,16 @@ impl DbClusterBuilder {
     /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn enabled_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_cloudwatch_logs_exports.unwrap_or_default();
-        v.push(input.into());
-        self.enabled_cloudwatch_logs_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enabled_cloudwatch_logs_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
-    pub fn set_enabled_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enabled_cloudwatch_logs_exports = input;
-        self
+    pub fn set_enabled_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enabled_cloudwatch_logs_exports = input; self
     }
     /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
-    pub fn get_enabled_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enabled_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enabled_cloudwatch_logs_exports
     }
     /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
@@ -927,8 +894,7 @@ impl DbClusterBuilder {
     }
     /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
     pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::ClusterPendingModifiedValues>) -> Self {
-        self.pending_modified_values = input;
-        self
+        self.pending_modified_values = input; self
     }
     /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
     pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::ClusterPendingModifiedValues> {
@@ -941,8 +907,7 @@ impl DbClusterBuilder {
     }
     /// <p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -955,8 +920,7 @@ impl DbClusterBuilder {
     }
     /// <p>If set to <code>true</code>, the DB cluster can be cloned across accounts.</p>
     pub fn set_cross_account_clone(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cross_account_clone = input;
-        self
+        self.cross_account_clone = input; self
     }
     /// <p>If set to <code>true</code>, the DB cluster can be cloned across accounts.</p>
     pub fn get_cross_account_clone(&self) -> &::std::option::Option<bool> {
@@ -969,8 +933,7 @@ impl DbClusterBuilder {
     }
     /// <p>Time at which the DB cluster will be automatically restarted.</p>
     pub fn set_automatic_restart_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.automatic_restart_time = input;
-        self
+        self.automatic_restart_time = input; self
     }
     /// <p>Time at which the DB cluster will be automatically restarted.</p>
     pub fn get_automatic_restart_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -984,12 +947,8 @@ impl DbClusterBuilder {
     }
     /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
-    ) -> Self {
-        self.serverless_v2_scaling_configuration = input;
-        self
+    pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>) -> Self {
+        self.serverless_v2_scaling_configuration = input; self
     }
     /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
@@ -1003,8 +962,7 @@ impl DbClusterBuilder {
     }
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_identifier = input;
-        self
+        self.global_cluster_identifier = input; self
     }
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -1017,8 +975,7 @@ impl DbClusterBuilder {
     }
     /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
     pub fn set_io_optimized_next_allowed_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.io_optimized_next_allowed_modification_time = input;
-        self
+        self.io_optimized_next_allowed_modification_time = input; self
     }
     /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
     pub fn get_io_optimized_next_allowed_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -1031,8 +988,7 @@ impl DbClusterBuilder {
     }
     /// <p>The storage type associated with the DB cluster.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The storage type associated with the DB cluster.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -1041,51 +997,97 @@ impl DbClusterBuilder {
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
-            allocated_storage: self.allocated_storage,
-            availability_zones: self.availability_zones,
-            backup_retention_period: self.backup_retention_period,
-            character_set_name: self.character_set_name,
-            database_name: self.database_name,
-            db_cluster_identifier: self.db_cluster_identifier,
-            db_cluster_parameter_group: self.db_cluster_parameter_group,
-            db_subnet_group: self.db_subnet_group,
-            status: self.status,
-            percent_progress: self.percent_progress,
-            earliest_restorable_time: self.earliest_restorable_time,
-            endpoint: self.endpoint,
-            reader_endpoint: self.reader_endpoint,
-            multi_az: self.multi_az,
-            engine: self.engine,
-            engine_version: self.engine_version,
-            latest_restorable_time: self.latest_restorable_time,
-            port: self.port,
-            master_username: self.master_username,
-            db_cluster_option_group_memberships: self.db_cluster_option_group_memberships,
-            preferred_backup_window: self.preferred_backup_window,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            replication_source_identifier: self.replication_source_identifier,
-            read_replica_identifiers: self.read_replica_identifiers,
-            db_cluster_members: self.db_cluster_members,
-            vpc_security_groups: self.vpc_security_groups,
-            hosted_zone_id: self.hosted_zone_id,
-            storage_encrypted: self.storage_encrypted,
-            kms_key_id: self.kms_key_id,
-            db_cluster_resource_id: self.db_cluster_resource_id,
-            db_cluster_arn: self.db_cluster_arn,
-            associated_roles: self.associated_roles,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
-            clone_group_id: self.clone_group_id,
-            cluster_create_time: self.cluster_create_time,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
-            enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
-            pending_modified_values: self.pending_modified_values,
-            deletion_protection: self.deletion_protection,
-            cross_account_clone: self.cross_account_clone,
-            automatic_restart_time: self.automatic_restart_time,
-            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
-            global_cluster_identifier: self.global_cluster_identifier,
-            io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
-            storage_type: self.storage_type,
+            allocated_storage: self.allocated_storage
+            ,
+            availability_zones: self.availability_zones
+            ,
+            backup_retention_period: self.backup_retention_period
+            ,
+            character_set_name: self.character_set_name
+            ,
+            database_name: self.database_name
+            ,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            db_cluster_parameter_group: self.db_cluster_parameter_group
+            ,
+            db_subnet_group: self.db_subnet_group
+            ,
+            status: self.status
+            ,
+            percent_progress: self.percent_progress
+            ,
+            earliest_restorable_time: self.earliest_restorable_time
+            ,
+            endpoint: self.endpoint
+            ,
+            reader_endpoint: self.reader_endpoint
+            ,
+            multi_az: self.multi_az
+            ,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            latest_restorable_time: self.latest_restorable_time
+            ,
+            port: self.port
+            ,
+            master_username: self.master_username
+            ,
+            db_cluster_option_group_memberships: self.db_cluster_option_group_memberships
+            ,
+            preferred_backup_window: self.preferred_backup_window
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            replication_source_identifier: self.replication_source_identifier
+            ,
+            read_replica_identifiers: self.read_replica_identifiers
+            ,
+            db_cluster_members: self.db_cluster_members
+            ,
+            vpc_security_groups: self.vpc_security_groups
+            ,
+            hosted_zone_id: self.hosted_zone_id
+            ,
+            storage_encrypted: self.storage_encrypted
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            db_cluster_resource_id: self.db_cluster_resource_id
+            ,
+            db_cluster_arn: self.db_cluster_arn
+            ,
+            associated_roles: self.associated_roles
+            ,
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled
+            ,
+            clone_group_id: self.clone_group_id
+            ,
+            cluster_create_time: self.cluster_create_time
+            ,
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot
+            ,
+            enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports
+            ,
+            pending_modified_values: self.pending_modified_values
+            ,
+            deletion_protection: self.deletion_protection
+            ,
+            cross_account_clone: self.cross_account_clone
+            ,
+            automatic_restart_time: self.automatic_restart_time
+            ,
+            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration
+            ,
+            global_cluster_identifier: self.global_cluster_identifier
+            ,
+            io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time
+            ,
+            storage_type: self.storage_type
+            ,
         }
     }
 }
+

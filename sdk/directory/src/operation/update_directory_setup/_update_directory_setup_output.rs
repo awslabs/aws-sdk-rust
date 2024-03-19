@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDirectorySetupOutput {
+pub struct UpdateDirectorySetupOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateDirectorySetupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDirectorySetupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectorySetupOutput`](crate::operation::update_directory_setup::UpdateDirectorySetupOutput).
     pub fn builder() -> crate::operation::update_directory_setup::builders::UpdateDirectorySetupOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateDirectorySetupOutputBuilder {
 }
 impl UpdateDirectorySetupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDirectorySetupOutput`](crate::operation::update_directory_setup::UpdateDirectorySetupOutput).
     pub fn build(self) -> crate::operation::update_directory_setup::UpdateDirectorySetupOutput {
         crate::operation::update_directory_setup::UpdateDirectorySetupOutput {
@@ -40,3 +40,4 @@ impl UpdateDirectorySetupOutputBuilder {
         }
     }
 }
+

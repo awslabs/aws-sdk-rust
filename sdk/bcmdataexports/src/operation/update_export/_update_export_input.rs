@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExportInput {
+pub struct UpdateExportInput  {
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub export_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name and query details for the export.</p>
     pub export: ::std::option::Option<crate::types::Export>,
 }
-impl UpdateExportInput {
+impl  UpdateExportInput  {
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
-    pub fn export_arn(&self) -> ::std::option::Option<&str> {
+    pub fn export_arn(&self) -> ::std::option::Option<& str> {
         self.export_arn.as_deref()
     }
     /// <p>The name and query details for the export.</p>
-    pub fn export(&self) -> ::std::option::Option<&crate::types::Export> {
+    pub fn export(&self) -> ::std::option::Option<& crate::types::Export> {
         self.export.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateExportInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub fn set_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_arn = input;
-        self
+        self.export_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub fn get_export_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl UpdateExportInputBuilder {
     }
     /// <p>The name and query details for the export.</p>
     pub fn set_export(mut self, input: ::std::option::Option<crate::types::Export>) -> Self {
-        self.export = input;
-        self
+        self.export = input; self
     }
     /// <p>The name and query details for the export.</p>
     pub fn get_export(&self) -> &::std::option::Option<crate::types::Export> {
         &self.export
     }
     /// Consumes the builder and constructs a [`UpdateExportInput`](crate::operation::update_export::UpdateExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_export::UpdateExportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_export::UpdateExportInput {
-            export_arn: self.export_arn,
-            export: self.export,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_export::UpdateExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_export::UpdateExportInput {
+                export_arn: self.export_arn
+                ,
+                export: self.export
+                ,
+            }
+        )
     }
 }
+

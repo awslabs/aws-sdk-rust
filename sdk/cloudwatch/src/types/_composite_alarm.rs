@@ -3,11 +3,11 @@
 /// <p>The details about a composite alarm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositeAlarm {
+pub struct CompositeAlarm  {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
     pub actions_enabled: ::std::option::Option<bool>,
     /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub alarm_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub alarm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
@@ -19,9 +19,9 @@ pub struct CompositeAlarm {
     /// <p>The rule that this alarm uses to evaluate its alarm state.</p>
     pub alarm_rule: ::std::option::Option<::std::string::String>,
     /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub insufficient_data_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ok_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An explanation for the alarm state, in text format.</p>
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>An explanation for the alarm state, in JSON format.</p>
@@ -47,79 +47,82 @@ pub struct CompositeAlarm {
     /// </important>
     pub actions_suppressor_extension_period: ::std::option::Option<i32>,
 }
-impl CompositeAlarm {
+impl  CompositeAlarm  {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
     pub fn actions_enabled(&self) -> ::std::option::Option<bool> {
         self.actions_enabled
     }
     /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
-    pub fn alarm_actions(&self) -> &[::std::string::String] {
-        self.alarm_actions.as_deref().unwrap_or_default()
+    pub fn alarm_actions(&self) -> & [::std::string::String] {
+        self.alarm_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    pub fn alarm_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_arn(&self) -> ::std::option::Option<& str> {
         self.alarm_arn.as_deref()
     }
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub fn alarm_configuration_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn alarm_configuration_updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.alarm_configuration_updated_timestamp.as_ref()
     }
     /// <p>The description of the alarm.</p>
-    pub fn alarm_description(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_description(&self) -> ::std::option::Option<& str> {
         self.alarm_description.as_deref()
     }
     /// <p>The name of the alarm.</p>
-    pub fn alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_name(&self) -> ::std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The rule that this alarm uses to evaluate its alarm state.</p>
-    pub fn alarm_rule(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_rule(&self) -> ::std::option::Option<& str> {
         self.alarm_rule.as_deref()
     }
     /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insufficient_data_actions.is_none()`.
-    pub fn insufficient_data_actions(&self) -> &[::std::string::String] {
-        self.insufficient_data_actions.as_deref().unwrap_or_default()
+    pub fn insufficient_data_actions(&self) -> & [::std::string::String] {
+        self.insufficient_data_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ok_actions.is_none()`.
-    pub fn ok_actions(&self) -> &[::std::string::String] {
-        self.ok_actions.as_deref().unwrap_or_default()
+    pub fn ok_actions(&self) -> & [::std::string::String] {
+        self.ok_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An explanation for the alarm state, in text format.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>An explanation for the alarm state, in JSON format.</p>
-    pub fn state_reason_data(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason_data(&self) -> ::std::option::Option<& str> {
         self.state_reason_data.as_deref()
     }
     /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
-    pub fn state_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn state_updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.state_updated_timestamp.as_ref()
     }
     /// <p>The state value for the alarm.</p>
-    pub fn state_value(&self) -> ::std::option::Option<&crate::types::StateValue> {
+    pub fn state_value(&self) -> ::std::option::Option<& crate::types::StateValue> {
         self.state_value.as_ref()
     }
     /// <p>The timestamp of the last change to the alarm's <code>StateValue</code>.</p>
-    pub fn state_transitioned_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn state_transitioned_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.state_transitioned_timestamp.as_ref()
     }
     /// <p>When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions.</p>
-    pub fn actions_suppressed_by(&self) -> ::std::option::Option<&crate::types::ActionsSuppressedBy> {
+    pub fn actions_suppressed_by(&self) -> ::std::option::Option<& crate::types::ActionsSuppressedBy> {
         self.actions_suppressed_by.as_ref()
     }
     /// <p>Captures the reason for action suppression.</p>
-    pub fn actions_suppressed_reason(&self) -> ::std::option::Option<&str> {
+    pub fn actions_suppressed_reason(&self) -> ::std::option::Option<& str> {
         self.actions_suppressed_reason.as_deref()
     }
     /// <p>Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm.</p>
-    pub fn actions_suppressor(&self) -> ::std::option::Option<&str> {
+    pub fn actions_suppressor(&self) -> ::std::option::Option<& str> {
         self.actions_suppressor.as_deref()
     }
     /// <p>The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions.</p><important>
@@ -147,14 +150,14 @@ impl CompositeAlarm {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompositeAlarmBuilder {
     pub(crate) actions_enabled: ::std::option::Option<bool>,
-    pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) alarm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_configuration_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) alarm_description: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_rule: ::std::option::Option<::std::string::String>,
-    pub(crate) insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) insufficient_data_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) ok_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
     pub(crate) state_reason_data: ::std::option::Option<::std::string::String>,
     pub(crate) state_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -174,8 +177,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
     pub fn set_actions_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.actions_enabled = input;
-        self
+        self.actions_enabled = input; self
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
     pub fn get_actions_enabled(&self) -> &::std::option::Option<bool> {
@@ -188,17 +190,16 @@ impl CompositeAlarmBuilder {
     /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub fn alarm_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_actions.unwrap_or_default();
-        v.push(input.into());
-        self.alarm_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alarm_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alarm_actions = input;
-        self
+    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alarm_actions = input; self
     }
     /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alarm_actions
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
@@ -208,8 +209,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn set_alarm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_arn = input;
-        self
+        self.alarm_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn get_alarm_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +222,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>The time stamp of the last update to the alarm configuration.</p>
     pub fn set_alarm_configuration_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.alarm_configuration_updated_timestamp = input;
-        self
+        self.alarm_configuration_updated_timestamp = input; self
     }
     /// <p>The time stamp of the last update to the alarm configuration.</p>
     pub fn get_alarm_configuration_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +235,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>The description of the alarm.</p>
     pub fn set_alarm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_description = input;
-        self
+        self.alarm_description = input; self
     }
     /// <p>The description of the alarm.</p>
     pub fn get_alarm_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +248,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>The name of the alarm.</p>
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The name of the alarm.</p>
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,8 +261,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>The rule that this alarm uses to evaluate its alarm state.</p>
     pub fn set_alarm_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_rule = input;
-        self
+        self.alarm_rule = input; self
     }
     /// <p>The rule that this alarm uses to evaluate its alarm state.</p>
     pub fn get_alarm_rule(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,17 +274,16 @@ impl CompositeAlarmBuilder {
     /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub fn insufficient_data_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.insufficient_data_actions.unwrap_or_default();
-        v.push(input.into());
-        self.insufficient_data_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.insufficient_data_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn set_insufficient_data_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.insufficient_data_actions = input;
-        self
+    pub fn set_insufficient_data_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.insufficient_data_actions = input; self
     }
     /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.insufficient_data_actions
     }
     /// Appends an item to `ok_actions`.
@@ -298,17 +293,16 @@ impl CompositeAlarmBuilder {
     /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub fn ok_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ok_actions.unwrap_or_default();
-        v.push(input.into());
-        self.ok_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ok_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn set_ok_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ok_actions = input;
-        self
+    pub fn set_ok_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ok_actions = input; self
     }
     /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn get_ok_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ok_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ok_actions
     }
     /// <p>An explanation for the alarm state, in text format.</p>
@@ -318,8 +312,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>An explanation for the alarm state, in text format.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>An explanation for the alarm state, in text format.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -332,8 +325,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>An explanation for the alarm state, in JSON format.</p>
     pub fn set_state_reason_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason_data = input;
-        self
+        self.state_reason_data = input; self
     }
     /// <p>An explanation for the alarm state, in JSON format.</p>
     pub fn get_state_reason_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -346,8 +338,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
     pub fn set_state_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.state_updated_timestamp = input;
-        self
+        self.state_updated_timestamp = input; self
     }
     /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
     pub fn get_state_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -360,8 +351,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>The state value for the alarm.</p>
     pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::StateValue>) -> Self {
-        self.state_value = input;
-        self
+        self.state_value = input; self
     }
     /// <p>The state value for the alarm.</p>
     pub fn get_state_value(&self) -> &::std::option::Option<crate::types::StateValue> {
@@ -374,8 +364,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>The timestamp of the last change to the alarm's <code>StateValue</code>.</p>
     pub fn set_state_transitioned_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.state_transitioned_timestamp = input;
-        self
+        self.state_transitioned_timestamp = input; self
     }
     /// <p>The timestamp of the last change to the alarm's <code>StateValue</code>.</p>
     pub fn get_state_transitioned_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -388,8 +377,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions.</p>
     pub fn set_actions_suppressed_by(mut self, input: ::std::option::Option<crate::types::ActionsSuppressedBy>) -> Self {
-        self.actions_suppressed_by = input;
-        self
+        self.actions_suppressed_by = input; self
     }
     /// <p>When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions.</p>
     pub fn get_actions_suppressed_by(&self) -> &::std::option::Option<crate::types::ActionsSuppressedBy> {
@@ -402,8 +390,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>Captures the reason for action suppression.</p>
     pub fn set_actions_suppressed_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.actions_suppressed_reason = input;
-        self
+        self.actions_suppressed_reason = input; self
     }
     /// <p>Captures the reason for action suppression.</p>
     pub fn get_actions_suppressed_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -416,8 +403,7 @@ impl CompositeAlarmBuilder {
     }
     /// <p>Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm.</p>
     pub fn set_actions_suppressor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.actions_suppressor = input;
-        self
+        self.actions_suppressor = input; self
     }
     /// <p>Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm.</p>
     pub fn get_actions_suppressor(&self) -> &::std::option::Option<::std::string::String> {
@@ -434,8 +420,7 @@ impl CompositeAlarmBuilder {
     /// <p><code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.</p>
     /// </important>
     pub fn set_actions_suppressor_wait_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.actions_suppressor_wait_period = input;
-        self
+        self.actions_suppressor_wait_period = input; self
     }
     /// <p>The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions.</p><important>
     /// <p><code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.</p>
@@ -454,8 +439,7 @@ impl CompositeAlarmBuilder {
     /// <p><code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.</p>
     /// </important>
     pub fn set_actions_suppressor_extension_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.actions_suppressor_extension_period = input;
-        self
+        self.actions_suppressor_extension_period = input; self
     }
     /// <p>The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions.</p><important>
     /// <p><code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.</p>
@@ -466,25 +450,45 @@ impl CompositeAlarmBuilder {
     /// Consumes the builder and constructs a [`CompositeAlarm`](crate::types::CompositeAlarm).
     pub fn build(self) -> crate::types::CompositeAlarm {
         crate::types::CompositeAlarm {
-            actions_enabled: self.actions_enabled,
-            alarm_actions: self.alarm_actions,
-            alarm_arn: self.alarm_arn,
-            alarm_configuration_updated_timestamp: self.alarm_configuration_updated_timestamp,
-            alarm_description: self.alarm_description,
-            alarm_name: self.alarm_name,
-            alarm_rule: self.alarm_rule,
-            insufficient_data_actions: self.insufficient_data_actions,
-            ok_actions: self.ok_actions,
-            state_reason: self.state_reason,
-            state_reason_data: self.state_reason_data,
-            state_updated_timestamp: self.state_updated_timestamp,
-            state_value: self.state_value,
-            state_transitioned_timestamp: self.state_transitioned_timestamp,
-            actions_suppressed_by: self.actions_suppressed_by,
-            actions_suppressed_reason: self.actions_suppressed_reason,
-            actions_suppressor: self.actions_suppressor,
-            actions_suppressor_wait_period: self.actions_suppressor_wait_period,
-            actions_suppressor_extension_period: self.actions_suppressor_extension_period,
+            actions_enabled: self.actions_enabled
+            ,
+            alarm_actions: self.alarm_actions
+            ,
+            alarm_arn: self.alarm_arn
+            ,
+            alarm_configuration_updated_timestamp: self.alarm_configuration_updated_timestamp
+            ,
+            alarm_description: self.alarm_description
+            ,
+            alarm_name: self.alarm_name
+            ,
+            alarm_rule: self.alarm_rule
+            ,
+            insufficient_data_actions: self.insufficient_data_actions
+            ,
+            ok_actions: self.ok_actions
+            ,
+            state_reason: self.state_reason
+            ,
+            state_reason_data: self.state_reason_data
+            ,
+            state_updated_timestamp: self.state_updated_timestamp
+            ,
+            state_value: self.state_value
+            ,
+            state_transitioned_timestamp: self.state_transitioned_timestamp
+            ,
+            actions_suppressed_by: self.actions_suppressed_by
+            ,
+            actions_suppressed_reason: self.actions_suppressed_reason
+            ,
+            actions_suppressor: self.actions_suppressor
+            ,
+            actions_suppressor_wait_period: self.actions_suppressor_wait_period
+            ,
+            actions_suppressor_extension_period: self.actions_suppressor_extension_period
+            ,
         }
     }
 }
+

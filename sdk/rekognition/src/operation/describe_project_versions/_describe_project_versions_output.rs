@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProjectVersionsOutput {
+pub struct DescribeProjectVersionsOutput  {
     /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
-    pub project_version_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
+    pub project_version_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectVersionDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeProjectVersionsOutput {
+impl  DescribeProjectVersionsOutput  {
     /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_version_descriptions.is_none()`.
-    pub fn project_version_descriptions(&self) -> &[crate::types::ProjectVersionDescription] {
-        self.project_version_descriptions.as_deref().unwrap_or_default()
+    pub fn project_version_descriptions(&self) -> & [crate::types::ProjectVersionDescription] {
+        self.project_version_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProjectVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeProjectVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectVersionsOutput`](crate::operation::describe_project_versions::DescribeProjectVersionsOutput).
     pub fn builder() -> crate::operation::describe_project_versions::builders::DescribeProjectVersionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeProjectVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectVersionsOutputBuilder {
-    pub(crate) project_version_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
+    pub(crate) project_version_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectVersionDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl DescribeProjectVersionsOutputBuilder {
     /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
     pub fn project_version_descriptions(mut self, input: crate::types::ProjectVersionDescription) -> Self {
         let mut v = self.project_version_descriptions.unwrap_or_default();
-        v.push(input);
-        self.project_version_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.project_version_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
-    pub fn set_project_version_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
-    ) -> Self {
-        self.project_version_descriptions = input;
-        self
+    pub fn set_project_version_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectVersionDescription>>) -> Self {
+        self.project_version_descriptions = input; self
     }
     /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
-    pub fn get_project_version_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>> {
+    pub fn get_project_version_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectVersionDescription>> {
         &self.project_version_descriptions
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
@@ -72,28 +69,30 @@ impl DescribeProjectVersionsOutputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeProjectVersionsOutput`](crate::operation::describe_project_versions::DescribeProjectVersionsOutput).
     pub fn build(self) -> crate::operation::describe_project_versions::DescribeProjectVersionsOutput {
         crate::operation::describe_project_versions::DescribeProjectVersionsOutput {
-            project_version_descriptions: self.project_version_descriptions,
-            next_token: self.next_token,
+            project_version_descriptions: self.project_version_descriptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

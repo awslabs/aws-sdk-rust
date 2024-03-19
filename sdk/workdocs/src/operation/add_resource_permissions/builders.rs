@@ -5,54 +5,50 @@ pub use crate::operation::add_resource_permissions::_add_resource_permissions_in
 
 impl AddResourcePermissionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_resource_permissions::AddResourcePermissionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.add_resource_permissions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::add_resource_permissions::AddResourcePermissionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.add_resource_permissions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AddResourcePermissions`.
-///
+/// 
 /// <p>Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddResourcePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder,
+                    inner: crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
-        crate::operation::add_resource_permissions::AddResourcePermissionsError,
-    > for AddResourcePermissionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
-            crate::operation::add_resource_permissions::AddResourcePermissionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
+                    crate::operation::add_resource_permissions::AddResourcePermissionsError,
+                > for AddResourcePermissionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
+                        crate::operation::add_resource_permissions::AddResourcePermissionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AddResourcePermissionsFluentBuilder {
     /// Creates a new `AddResourcePermissions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl AddResourcePermissionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::add_resource_permissions::AddResourcePermissionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::add_resource_permissions::AddResourcePermissions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::add_resource_permissions::AddResourcePermissions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
-        crate::operation::add_resource_permissions::AddResourcePermissionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::add_resource_permissions::AddResourcePermissionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_resource_permissions::AddResourcePermissionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::add_resource_permissions::AddResourcePermissions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::add_resource_permissions::AddResourcePermissions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::add_resource_permissions::AddResourcePermissionsOutput, crate::operation::add_resource_permissions::AddResourcePermissionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
@@ -146,12 +133,12 @@ impl AddResourcePermissionsFluentBuilder {
         self
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SharePrincipal>>) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SharePrincipal>> {
         self.inner.get_principals()
     }
     /// <p>The notification options.</p>
@@ -169,3 +156,4 @@ impl AddResourcePermissionsFluentBuilder {
         self.inner.get_notification_options()
     }
 }
+

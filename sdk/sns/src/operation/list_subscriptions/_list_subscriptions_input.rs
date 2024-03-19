@@ -3,13 +3,13 @@
 /// <p>Input for ListSubscriptions action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSubscriptionsInput {
+pub struct ListSubscriptionsInput  {
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListSubscriptionsInput {
+impl  ListSubscriptionsInput  {
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl ListSubscriptionsInputBuilder {
     }
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSubscriptionsInput`](crate::operation::list_subscriptions::ListSubscriptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_subscriptions::ListSubscriptionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_subscriptions::ListSubscriptionsInput { next_token: self.next_token })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_subscriptions::ListSubscriptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_subscriptions::ListSubscriptionsInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

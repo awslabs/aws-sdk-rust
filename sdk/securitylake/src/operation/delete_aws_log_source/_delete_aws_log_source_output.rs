@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAwsLogSourceOutput {
+pub struct DeleteAwsLogSourceOutput  {
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-    pub failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failed: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DeleteAwsLogSourceOutput {
+impl  DeleteAwsLogSourceOutput  {
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
-    pub fn failed(&self) -> &[::std::string::String] {
-        self.failed.as_deref().unwrap_or_default()
+    pub fn failed(&self) -> & [::std::string::String] {
+        self.failed.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAwsLogSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAwsLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAwsLogSourceOutput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput).
     pub fn builder() -> crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceOutputBuilder {
@@ -31,7 +32,7 @@ impl DeleteAwsLogSourceOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceOutputBuilder {
-    pub(crate) failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failed: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeleteAwsLogSourceOutputBuilder {
@@ -42,33 +43,34 @@ impl DeleteAwsLogSourceOutputBuilder {
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
     pub fn failed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failed.unwrap_or_default();
-        v.push(input.into());
-        self.failed = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failed = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failed = input;
-        self
+    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failed = input; self
     }
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failed
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAwsLogSourceOutput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput).
     pub fn build(self) -> crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput {
         crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput {
-            failed: self.failed,
+            failed: self.failed
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

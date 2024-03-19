@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`Search`](crate::operation::search::builders::SearchFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search::builders::SearchFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource(ResourceType)`](crate::operation::search::builders::SearchFluentBuilder::resource) / [`set_resource(Option<ResourceType>)`](crate::operation::search::builders::SearchFluentBuilder::set_resource):<br>required: **true**<br><p>The name of the SageMaker resource to search for.</p><br>
     ///   - [`search_expression(SearchExpression)`](crate::operation::search::builders::SearchFluentBuilder::search_expression) / [`set_search_expression(Option<SearchExpression>)`](crate::operation::search::builders::SearchFluentBuilder::set_search_expression):<br>required: **false**<br><p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p><br>
     ///   - [`sort_by(impl Into<String>)`](crate::operation::search::builders::SearchFluentBuilder::sort_by) / [`set_sort_by(Option<String>)`](crate::operation::search::builders::SearchFluentBuilder::set_sort_by):<br>required: **false**<br><p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::search::builders::SearchFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search::builders::SearchFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`cross_account_filter_option(CrossAccountFilterOption)`](crate::operation::search::builders::SearchFluentBuilder::cross_account_filter_option) / [`set_cross_account_filter_option(Option<CrossAccountFilterOption>)`](crate::operation::search::builders::SearchFluentBuilder::set_cross_account_filter_option):<br>required: **false**<br><p>A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000.</p><br>
     ///   - [`visibility_conditions(VisibilityConditions)`](crate::operation::search::builders::SearchFluentBuilder::visibility_conditions) / [`set_visibility_conditions(Option<Vec::<VisibilityConditions>>)`](crate::operation::search::builders::SearchFluentBuilder::set_visibility_conditions):<br>required: **false**<br><p>Limits the results of your search request to the resources that you can access.</p><br>
-    /// - On success, responds with [`SearchOutput`](crate::operation::search::SearchOutput) with field(s):
+                            /// - On success, responds with [`SearchOutput`](crate::operation::search::SearchOutput) with field(s):
     ///   - [`results(Option<Vec::<SearchRecord>>)`](crate::operation::search::SearchOutput::results): <p>A list of <code>SearchRecord</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search::SearchOutput::next_token): <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
-    /// - On failure, responds with [`SdkError<SearchError>`](crate::operation::search::SearchError)
+                            /// - On failure, responds with [`SdkError<SearchError>`](crate::operation::search::SearchError)
     pub fn search(&self) -> crate::operation::search::builders::SearchFluentBuilder {
-        crate::operation::search::builders::SearchFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search::builders::SearchFluentBuilder::new(self.handle.clone())
+                            }
 }
+

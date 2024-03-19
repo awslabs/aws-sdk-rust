@@ -3,28 +3,29 @@
 /// <p>An issue related to an add-on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddonIssue {
+pub struct AddonIssue  {
     /// <p>A code that describes the type of issue.</p>
     pub code: ::std::option::Option<crate::types::AddonIssueCode>,
     /// <p>A message that provides details about the issue and what might cause it.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The resource IDs of the issue.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AddonIssue {
+impl  AddonIssue  {
     /// <p>A code that describes the type of issue.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::AddonIssueCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::AddonIssueCode> {
         self.code.as_ref()
     }
     /// <p>A message that provides details about the issue and what might cause it.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The resource IDs of the issue.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[::std::string::String] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [::std::string::String] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddonIssue {
@@ -40,7 +41,7 @@ impl AddonIssue {
 pub struct AddonIssueBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AddonIssueCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AddonIssueBuilder {
     /// <p>A code that describes the type of issue.</p>
@@ -50,8 +51,7 @@ impl AddonIssueBuilder {
     }
     /// <p>A code that describes the type of issue.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::AddonIssueCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>A code that describes the type of issue.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::AddonIssueCode> {
@@ -64,8 +64,7 @@ impl AddonIssueBuilder {
     }
     /// <p>A message that provides details about the issue and what might cause it.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message that provides details about the issue and what might cause it.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl AddonIssueBuilder {
     /// <p>The resource IDs of the issue.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource IDs of the issue.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>The resource IDs of the issue.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`AddonIssue`](crate::types::AddonIssue).
     pub fn build(self) -> crate::types::AddonIssue {
         crate::types::AddonIssue {
-            code: self.code,
-            message: self.message,
-            resource_ids: self.resource_ids,
+            code: self.code
+            ,
+            message: self.message
+            ,
+            resource_ids: self.resource_ids
+            ,
         }
     }
 }
+

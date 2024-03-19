@@ -3,7 +3,7 @@
 /// <p>Error info for scram secret associate/disassociate failure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedScramSecret {
+pub struct UnprocessedScramSecret  {
     /// <p>Error code for associate/disassociate failure.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>Error message for associate/disassociate failure.</p>
@@ -11,17 +11,17 @@ pub struct UnprocessedScramSecret {
     /// <p>AWS Secrets Manager secret ARN.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
-impl UnprocessedScramSecret {
+impl  UnprocessedScramSecret  {
     /// <p>Error code for associate/disassociate failure.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>Error message for associate/disassociate failure.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>AWS Secrets Manager secret ARN.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UnprocessedScramSecretBuilder {
     }
     /// <p>Error code for associate/disassociate failure.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Error code for associate/disassociate failure.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UnprocessedScramSecretBuilder {
     }
     /// <p>Error message for associate/disassociate failure.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Error message for associate/disassociate failure.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl UnprocessedScramSecretBuilder {
     }
     /// <p>AWS Secrets Manager secret ARN.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>AWS Secrets Manager secret ARN.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl UnprocessedScramSecretBuilder {
     /// Consumes the builder and constructs a [`UnprocessedScramSecret`](crate::types::UnprocessedScramSecret).
     pub fn build(self) -> crate::types::UnprocessedScramSecret {
         crate::types::UnprocessedScramSecret {
-            error_code: self.error_code,
-            error_message: self.error_message,
-            secret_arn: self.secret_arn,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
+            secret_arn: self.secret_arn
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyInstanceEventWindowOutput {
+pub struct ModifyInstanceEventWindowOutput  {
     /// <p>Information about the event window.</p>
     pub instance_event_window: ::std::option::Option<crate::types::InstanceEventWindow>,
     _request_id: Option<String>,
 }
-impl ModifyInstanceEventWindowOutput {
+impl  ModifyInstanceEventWindowOutput  {
     /// <p>Information about the event window.</p>
-    pub fn instance_event_window(&self) -> ::std::option::Option<&crate::types::InstanceEventWindow> {
+    pub fn instance_event_window(&self) -> ::std::option::Option<& crate::types::InstanceEventWindow> {
         self.instance_event_window.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyInstanceEventWindowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyInstanceEventWindowOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceEventWindowOutput`](crate::operation::modify_instance_event_window::ModifyInstanceEventWindowOutput).
     pub fn builder() -> crate::operation::modify_instance_event_window::builders::ModifyInstanceEventWindowOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyInstanceEventWindowOutputBuilder {
     }
     /// <p>Information about the event window.</p>
     pub fn set_instance_event_window(mut self, input: ::std::option::Option<crate::types::InstanceEventWindow>) -> Self {
-        self.instance_event_window = input;
-        self
+        self.instance_event_window = input; self
     }
     /// <p>Information about the event window.</p>
     pub fn get_instance_event_window(&self) -> &::std::option::Option<crate::types::InstanceEventWindow> {
         &self.instance_event_window
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyInstanceEventWindowOutput`](crate::operation::modify_instance_event_window::ModifyInstanceEventWindowOutput).
     pub fn build(self) -> crate::operation::modify_instance_event_window::ModifyInstanceEventWindowOutput {
         crate::operation::modify_instance_event_window::ModifyInstanceEventWindowOutput {
-            instance_event_window: self.instance_event_window,
+            instance_event_window: self.instance_event_window
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

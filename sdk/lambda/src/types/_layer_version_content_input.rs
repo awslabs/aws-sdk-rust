@@ -3,7 +3,7 @@
 /// <p>A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct LayerVersionContentInput {
+pub struct LayerVersionContentInput  {
     /// <p>The Amazon S3 bucket of the layer archive.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 key of the layer archive.</p>
@@ -13,25 +13,25 @@ pub struct LayerVersionContentInput {
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl LayerVersionContentInput {
+impl  LayerVersionContentInput  {
     /// <p>The Amazon S3 bucket of the layer archive.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key of the layer archive.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
-    pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
+    pub fn s3_object_version(&self) -> ::std::option::Option<& str> {
         self.s3_object_version.as_deref()
     }
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
-    pub fn zip_file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn zip_file(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
 }
-impl ::std::fmt::Debug for LayerVersionContentInput {
+impl  ::std::fmt::Debug for LayerVersionContentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LayerVersionContentInput");
         formatter.field("s3_bucket", &self.s3_bucket);
@@ -65,8 +65,7 @@ impl LayerVersionContentInputBuilder {
     }
     /// <p>The Amazon S3 bucket of the layer archive.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket of the layer archive.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl LayerVersionContentInputBuilder {
     }
     /// <p>The Amazon S3 key of the layer archive.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The Amazon S3 key of the layer archive.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl LayerVersionContentInputBuilder {
     }
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
     pub fn set_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_version = input;
-        self
+        self.s3_object_version = input; self
     }
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl LayerVersionContentInputBuilder {
     }
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub fn set_zip_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.zip_file = input;
-        self
+        self.zip_file = input; self
     }
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub fn get_zip_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -117,10 +113,14 @@ impl LayerVersionContentInputBuilder {
     /// Consumes the builder and constructs a [`LayerVersionContentInput`](crate::types::LayerVersionContentInput).
     pub fn build(self) -> crate::types::LayerVersionContentInput {
         crate::types::LayerVersionContentInput {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
-            s3_object_version: self.s3_object_version,
-            zip_file: self.zip_file,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
+            s3_object_version: self.s3_object_version
+            ,
+            zip_file: self.zip_file
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for LayerVersionContentInputBuilder {
         formatter.finish()
     }
 }
+

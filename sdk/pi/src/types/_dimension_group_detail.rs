@@ -3,22 +3,23 @@
 /// <p>Information about dimensions within a dimension group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionGroupDetail {
+pub struct DimensionGroupDetail  {
     /// <p>The name of the dimension group.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions within a dimension group.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionDetail>>,
 }
-impl DimensionGroupDetail {
+impl  DimensionGroupDetail  {
     /// <p>The name of the dimension group.</p>
-    pub fn group(&self) -> ::std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The dimensions within a dimension group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[crate::types::DimensionDetail] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [crate::types::DimensionDetail] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DimensionGroupDetail {
@@ -33,7 +34,7 @@ impl DimensionGroupDetail {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionGroupDetailBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionDetail>>,
 }
 impl DimensionGroupDetailBuilder {
     /// <p>The name of the dimension group.</p>
@@ -43,8 +44,7 @@ impl DimensionGroupDetailBuilder {
     }
     /// <p>The name of the dimension group.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The name of the dimension group.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl DimensionGroupDetailBuilder {
     /// <p>The dimensions within a dimension group.</p>
     pub fn dimensions(mut self, input: crate::types::DimensionDetail) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The dimensions within a dimension group.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionDetail>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>The dimensions within a dimension group.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionDetail>> {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`DimensionGroupDetail`](crate::types::DimensionGroupDetail).
     pub fn build(self) -> crate::types::DimensionGroupDetail {
         crate::types::DimensionGroupDetail {
-            group: self.group,
-            dimensions: self.dimensions,
+            group: self.group
+            ,
+            dimensions: self.dimensions
+            ,
         }
     }
 }
+

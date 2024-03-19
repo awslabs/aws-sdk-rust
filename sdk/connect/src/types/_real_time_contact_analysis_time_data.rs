@@ -21,11 +21,7 @@ impl RealTimeContactAnalysisTimeData {
     /// Tries to convert the enum instance into [`AbsoluteTime`](crate::types::RealTimeContactAnalysisTimeData::AbsoluteTime), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_absolute_time(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
-        if let RealTimeContactAnalysisTimeData::AbsoluteTime(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RealTimeContactAnalysisTimeData::AbsoluteTime(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AbsoluteTime`](crate::types::RealTimeContactAnalysisTimeData::AbsoluteTime).
     pub fn is_absolute_time(&self) -> bool {
@@ -36,3 +32,4 @@ impl RealTimeContactAnalysisTimeData {
         matches!(self, Self::Unknown)
     }
 }
+

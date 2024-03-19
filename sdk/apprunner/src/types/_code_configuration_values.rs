@@ -3,7 +3,7 @@
 /// <p>Describes the basic configuration needed for building and running an App Runner service. This type doesn't support the full set of possible configuration options. Fur full configuration capabilities, use a <code>apprunner.yaml</code> file in the source code repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CodeConfigurationValues {
+pub struct CodeConfigurationValues  {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
     pub runtime: crate::types::Runtime,
     /// <p>The command App Runner runs to build your application.</p>
@@ -14,7 +14,7 @@ pub struct CodeConfigurationValues {
     /// <p>Default: <code>8080</code></p>
     pub port: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub runtime_environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
     /// <li>
@@ -23,28 +23,28 @@ pub struct CodeConfigurationValues {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CodeConfigurationValues {
+impl  CodeConfigurationValues  {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
-    pub fn runtime(&self) -> &crate::types::Runtime {
+    pub fn runtime(&self) -> & crate::types::Runtime {
         &self.runtime
     }
     /// <p>The command App Runner runs to build your application.</p>
-    pub fn build_command(&self) -> ::std::option::Option<&str> {
+    pub fn build_command(&self) -> ::std::option::Option<& str> {
         self.build_command.as_deref()
     }
     /// <p>The command App Runner runs to start your application.</p>
-    pub fn start_command(&self) -> ::std::option::Option<&str> {
+    pub fn start_command(&self) -> ::std::option::Option<& str> {
         self.start_command.as_deref()
     }
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code></p>
-    pub fn port(&self) -> ::std::option::Option<&str> {
+    pub fn port(&self) -> ::std::option::Option<& str> {
         self.port.as_deref()
     }
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn runtime_environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn runtime_environment_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.runtime_environment_variables.as_ref()
     }
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
@@ -55,11 +55,11 @@ impl CodeConfigurationValues {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub fn runtime_environment_secrets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn runtime_environment_secrets(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.runtime_environment_secrets.as_ref()
     }
 }
-impl ::std::fmt::Debug for CodeConfigurationValues {
+impl  ::std::fmt::Debug for CodeConfigurationValues  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CodeConfigurationValues");
         formatter.field("runtime", &self.runtime);
@@ -86,8 +86,8 @@ pub struct CodeConfigurationValuesBuilder {
     pub(crate) build_command: ::std::option::Option<::std::string::String>,
     pub(crate) start_command: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<::std::string::String>,
-    pub(crate) runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) runtime_environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CodeConfigurationValuesBuilder {
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
@@ -98,8 +98,7 @@ impl CodeConfigurationValuesBuilder {
     }
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
-        self.runtime = input;
-        self
+        self.runtime = input; self
     }
     /// <p>A runtime environment type for building and running an App Runner service. It represents a programming language runtime.</p>
     pub fn get_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
@@ -112,8 +111,7 @@ impl CodeConfigurationValuesBuilder {
     }
     /// <p>The command App Runner runs to build your application.</p>
     pub fn set_build_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.build_command = input;
-        self
+        self.build_command = input; self
     }
     /// <p>The command App Runner runs to build your application.</p>
     pub fn get_build_command(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl CodeConfigurationValuesBuilder {
     }
     /// <p>The command App Runner runs to start your application.</p>
     pub fn set_start_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_command = input;
-        self
+        self.start_command = input; self
     }
     /// <p>The command App Runner runs to start your application.</p>
     pub fn get_start_command(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl CodeConfigurationValuesBuilder {
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code></p>
     pub fn set_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code></p>
@@ -155,28 +151,18 @@ impl CodeConfigurationValuesBuilder {
     /// To override the contents of this collection use [`set_runtime_environment_variables`](Self::set_runtime_environment_variables).
     ///
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn runtime_environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_environment_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.runtime_environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.runtime_environment_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.runtime_environment_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn set_runtime_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.runtime_environment_variables = input;
-        self
+    pub fn set_runtime_environment_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.runtime_environment_variables = input; self
     }
     /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn get_runtime_environment_variables(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_runtime_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.runtime_environment_variables
     }
     /// Adds a key-value pair to `runtime_environment_secrets`.
@@ -191,15 +177,11 @@ impl CodeConfigurationValuesBuilder {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub fn runtime_environment_secrets(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_environment_secrets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.runtime_environment_secrets.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.runtime_environment_secrets = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.runtime_environment_secrets = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
@@ -209,12 +191,8 @@ impl CodeConfigurationValuesBuilder {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_runtime_environment_secrets(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.runtime_environment_secrets = input;
-        self
+    pub fn set_runtime_environment_secrets(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.runtime_environment_secrets = input; self
     }
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
@@ -224,28 +202,32 @@ impl CodeConfigurationValuesBuilder {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_runtime_environment_secrets(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_runtime_environment_secrets(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.runtime_environment_secrets
     }
     /// Consumes the builder and constructs a [`CodeConfigurationValues`](crate::types::CodeConfigurationValues).
     /// This method will fail if any of the following fields are not set:
     /// - [`runtime`](crate::types::builders::CodeConfigurationValuesBuilder::runtime)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeConfigurationValues, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeConfigurationValues {
-            runtime: self.runtime.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "runtime",
-                    "runtime was not specified but it is required when building CodeConfigurationValues",
-                )
-            })?,
-            build_command: self.build_command,
-            start_command: self.start_command,
-            port: self.port,
-            runtime_environment_variables: self.runtime_environment_variables,
-            runtime_environment_secrets: self.runtime_environment_secrets,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeConfigurationValues {
+                runtime: self.runtime
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("runtime", "runtime was not specified but it is required when building CodeConfigurationValues")
+                    )?
+                ,
+                build_command: self.build_command
+                ,
+                start_command: self.start_command
+                ,
+                port: self.port
+                ,
+                runtime_environment_variables: self.runtime_environment_variables
+                ,
+                runtime_environment_secrets: self.runtime_environment_secrets
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CodeConfigurationValuesBuilder {
@@ -260,3 +242,4 @@ impl ::std::fmt::Debug for CodeConfigurationValuesBuilder {
         formatter.finish()
     }
 }
+

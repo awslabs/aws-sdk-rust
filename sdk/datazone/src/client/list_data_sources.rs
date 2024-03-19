@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSources`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain in which to list the data sources.</p><br>
     ///   - [`project_identifier(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::project_identifier) / [`set_project_identifier(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_project_identifier):<br>required: **true**<br><p>The identifier of the project in which to list data sources.</p><br>
     ///   - [`environment_identifier(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_environment_identifier):<br>required: **false**<br><p>The identifier of the environment in which to list the data sources.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_name):<br>required: **false**<br><p>The name of the data source.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of data sources is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of data sources, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSources</code> to list the next set of data sources.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of data sources to return in a single call to <code>ListDataSources</code>. When the number of data sources to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListDataSources</code> to list the next set of data sources.</p><br>
-    /// - On success, responds with [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput) with field(s):
+                            /// - On success, responds with [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput) with field(s):
     ///   - [`items(Vec::<DataSourceSummary>)`](crate::operation::list_data_sources::ListDataSourcesOutput::items): <p>The results of the <code>ListDataSources</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sources::ListDataSourcesOutput::next_token): <p>When the number of data sources is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of data sources, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSources</code> to list the next set of data sources.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
+                            /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
     pub fn list_data_sources(&self) -> crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder {
-        crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

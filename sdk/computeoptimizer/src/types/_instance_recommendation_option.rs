@@ -3,13 +3,13 @@
 /// <p>Describes a recommendation option for an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceRecommendationOption {
+pub struct InstanceRecommendationOption  {
     /// <p>The instance type of the instance recommendation.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
+    pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::UtilizationMetric>>,
     /// <p>Describes the configuration differences between the current instance and the recommended instance type. You should consider the configuration differences before migrating your workloads from the current instance to the recommended instance type. The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type guide for Windows</a> provide general guidance for getting started with an instance migration.</p>
     /// <p>Platform differences include:</p>
     /// <ul>
@@ -26,7 +26,7 @@ pub struct InstanceRecommendationOption {
     /// <li>
     /// <p><b> <code>Architecture</code> </b> — The CPU architecture between the recommended instance type and the current instance is different. For example, the recommended instance type might use an Arm CPU architecture and the current instance type might use a different one, such as x86. Before migrating, you should consider recompiling the software on your instance for the new architecture. Alternatively, you might switch to an Amazon Machine Image (AMI) that supports the new architecture. For more information about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p></li>
     /// </ul>
-    pub platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
+    pub platform_differences: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDifference>>,
     /// <p>The performance risk of the instance recommendation option.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
@@ -44,18 +44,19 @@ pub struct InstanceRecommendationOption {
     /// <p>An object that describes the savings opportunity for the instance recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
     pub savings_opportunity_after_discounts: ::std::option::Option<crate::types::InstanceSavingsOpportunityAfterDiscounts>,
 }
-impl InstanceRecommendationOption {
+impl  InstanceRecommendationOption  {
     /// <p>The instance type of the instance recommendation.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_utilization_metrics.is_none()`.
-    pub fn projected_utilization_metrics(&self) -> &[crate::types::UtilizationMetric] {
-        self.projected_utilization_metrics.as_deref().unwrap_or_default()
+    pub fn projected_utilization_metrics(&self) -> & [crate::types::UtilizationMetric] {
+        self.projected_utilization_metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Describes the configuration differences between the current instance and the recommended instance type. You should consider the configuration differences before migrating your workloads from the current instance to the recommended instance type. The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type guide for Windows</a> provide general guidance for getting started with an instance migration.</p>
     /// <p>Platform differences include:</p>
@@ -73,10 +74,11 @@ impl InstanceRecommendationOption {
     /// <li>
     /// <p><b> <code>Architecture</code> </b> — The CPU architecture between the recommended instance type and the current instance is different. For example, the recommended instance type might use an Arm CPU architecture and the current instance type might use a different one, such as x86. Before migrating, you should consider recompiling the software on your instance for the new architecture. Alternatively, you might switch to an Amazon Machine Image (AMI) that supports the new architecture. For more information about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_differences.is_none()`.
-    pub fn platform_differences(&self) -> &[crate::types::PlatformDifference] {
-        self.platform_differences.as_deref().unwrap_or_default()
+    pub fn platform_differences(&self) -> & [crate::types::PlatformDifference] {
+        self.platform_differences.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The performance risk of the instance recommendation option.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
@@ -90,20 +92,20 @@ impl InstanceRecommendationOption {
         self.rank
     }
     /// <p>An object that describes the savings opportunity for the instance recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
+    pub fn savings_opportunity(&self) -> ::std::option::Option<& crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
-    pub fn migration_effort(&self) -> ::std::option::Option<&crate::types::MigrationEffort> {
+    pub fn migration_effort(&self) -> ::std::option::Option<& crate::types::MigrationEffort> {
         self.migration_effort.as_ref()
     }
     /// <p>Describes the GPU accelerator settings for the recommended instance type.</p>
-    pub fn instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
+    pub fn instance_gpu_info(&self) -> ::std::option::Option<& crate::types::GpuInfo> {
         self.instance_gpu_info.as_ref()
     }
     /// <p>An object that describes the savings opportunity for the instance recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
-    pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<&crate::types::InstanceSavingsOpportunityAfterDiscounts> {
+    pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<& crate::types::InstanceSavingsOpportunityAfterDiscounts> {
         self.savings_opportunity_after_discounts.as_ref()
     }
 }
@@ -119,8 +121,8 @@ impl InstanceRecommendationOption {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceRecommendationOptionBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
-    pub(crate) platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
+    pub(crate) projected_utilization_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::UtilizationMetric>>,
+    pub(crate) platform_differences: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDifference>>,
     pub(crate) performance_risk: ::std::option::Option<f64>,
     pub(crate) rank: ::std::option::Option<i32>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
@@ -136,8 +138,7 @@ impl InstanceRecommendationOptionBuilder {
     }
     /// <p>The instance type of the instance recommendation.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type of the instance recommendation.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,21 +153,20 @@ impl InstanceRecommendationOptionBuilder {
     /// </note>
     pub fn projected_utilization_metrics(mut self, input: crate::types::UtilizationMetric) -> Self {
         let mut v = self.projected_utilization_metrics.unwrap_or_default();
-        v.push(input);
-        self.projected_utilization_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.projected_utilization_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    pub fn set_projected_utilization_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>) -> Self {
-        self.projected_utilization_metrics = input;
-        self
+    pub fn set_projected_utilization_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UtilizationMetric>>) -> Self {
+        self.projected_utilization_metrics = input; self
     }
     /// <p>An array of objects that describe the projected utilization metrics of the instance recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    pub fn get_projected_utilization_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>> {
+    pub fn get_projected_utilization_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UtilizationMetric>> {
         &self.projected_utilization_metrics
     }
     /// Appends an item to `platform_differences`.
@@ -191,9 +191,9 @@ impl InstanceRecommendationOptionBuilder {
     /// </ul>
     pub fn platform_differences(mut self, input: crate::types::PlatformDifference) -> Self {
         let mut v = self.platform_differences.unwrap_or_default();
-        v.push(input);
-        self.platform_differences = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.platform_differences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the configuration differences between the current instance and the recommended instance type. You should consider the configuration differences before migrating your workloads from the current instance to the recommended instance type. The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type guide for Windows</a> provide general guidance for getting started with an instance migration.</p>
     /// <p>Platform differences include:</p>
@@ -211,9 +211,8 @@ impl InstanceRecommendationOptionBuilder {
     /// <li>
     /// <p><b> <code>Architecture</code> </b> — The CPU architecture between the recommended instance type and the current instance is different. For example, the recommended instance type might use an Arm CPU architecture and the current instance type might use a different one, such as x86. Before migrating, you should consider recompiling the software on your instance for the new architecture. Alternatively, you might switch to an Amazon Machine Image (AMI) that supports the new architecture. For more information about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p></li>
     /// </ul>
-    pub fn set_platform_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>) -> Self {
-        self.platform_differences = input;
-        self
+    pub fn set_platform_differences(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDifference>>) -> Self {
+        self.platform_differences = input; self
     }
     /// <p>Describes the configuration differences between the current instance and the recommended instance type. You should consider the configuration differences before migrating your workloads from the current instance to the recommended instance type. The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change the instance type guide for Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-resize.html">Change the instance type guide for Windows</a> provide general guidance for getting started with an instance migration.</p>
     /// <p>Platform differences include:</p>
@@ -231,7 +230,7 @@ impl InstanceRecommendationOptionBuilder {
     /// <li>
     /// <p><b> <code>Architecture</code> </b> — The CPU architecture between the recommended instance type and the current instance is different. For example, the recommended instance type might use an Arm CPU architecture and the current instance type might use a different one, such as x86. Before migrating, you should consider recompiling the software on your instance for the new architecture. Alternatively, you might switch to an Amazon Machine Image (AMI) that supports the new architecture. For more information about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p></li>
     /// </ul>
-    pub fn get_platform_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>> {
+    pub fn get_platform_differences(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlatformDifference>> {
         &self.platform_differences
     }
     /// <p>The performance risk of the instance recommendation option.</p>
@@ -245,8 +244,7 @@ impl InstanceRecommendationOptionBuilder {
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
     pub fn set_performance_risk(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.performance_risk = input;
-        self
+        self.performance_risk = input; self
     }
     /// <p>The performance risk of the instance recommendation option.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
@@ -263,8 +261,7 @@ impl InstanceRecommendationOptionBuilder {
     /// <p>The rank of the instance recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rank = input;
-        self
+        self.rank = input; self
     }
     /// <p>The rank of the instance recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
@@ -278,8 +275,7 @@ impl InstanceRecommendationOptionBuilder {
     }
     /// <p>An object that describes the savings opportunity for the instance recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn set_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
-        self.savings_opportunity = input;
-        self
+        self.savings_opportunity = input; self
     }
     /// <p>An object that describes the savings opportunity for the instance recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
@@ -294,8 +290,7 @@ impl InstanceRecommendationOptionBuilder {
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub fn set_migration_effort(mut self, input: ::std::option::Option<crate::types::MigrationEffort>) -> Self {
-        self.migration_effort = input;
-        self
+        self.migration_effort = input; self
     }
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
@@ -309,8 +304,7 @@ impl InstanceRecommendationOptionBuilder {
     }
     /// <p>Describes the GPU accelerator settings for the recommended instance type.</p>
     pub fn set_instance_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
-        self.instance_gpu_info = input;
-        self
+        self.instance_gpu_info = input; self
     }
     /// <p>Describes the GPU accelerator settings for the recommended instance type.</p>
     pub fn get_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
@@ -322,12 +316,8 @@ impl InstanceRecommendationOptionBuilder {
         self
     }
     /// <p>An object that describes the savings opportunity for the instance recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
-    pub fn set_savings_opportunity_after_discounts(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceSavingsOpportunityAfterDiscounts>,
-    ) -> Self {
-        self.savings_opportunity_after_discounts = input;
-        self
+    pub fn set_savings_opportunity_after_discounts(mut self, input: ::std::option::Option<crate::types::InstanceSavingsOpportunityAfterDiscounts>) -> Self {
+        self.savings_opportunity_after_discounts = input; self
     }
     /// <p>An object that describes the savings opportunity for the instance recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage.</p>
     pub fn get_savings_opportunity_after_discounts(&self) -> &::std::option::Option<crate::types::InstanceSavingsOpportunityAfterDiscounts> {
@@ -336,15 +326,27 @@ impl InstanceRecommendationOptionBuilder {
     /// Consumes the builder and constructs a [`InstanceRecommendationOption`](crate::types::InstanceRecommendationOption).
     pub fn build(self) -> crate::types::InstanceRecommendationOption {
         crate::types::InstanceRecommendationOption {
-            instance_type: self.instance_type,
-            projected_utilization_metrics: self.projected_utilization_metrics,
-            platform_differences: self.platform_differences,
-            performance_risk: self.performance_risk.unwrap_or_default(),
-            rank: self.rank.unwrap_or_default(),
-            savings_opportunity: self.savings_opportunity,
-            migration_effort: self.migration_effort,
-            instance_gpu_info: self.instance_gpu_info,
-            savings_opportunity_after_discounts: self.savings_opportunity_after_discounts,
+            instance_type: self.instance_type
+            ,
+            projected_utilization_metrics: self.projected_utilization_metrics
+            ,
+            platform_differences: self.platform_differences
+            ,
+            performance_risk: self.performance_risk
+                .unwrap_or_default()
+            ,
+            rank: self.rank
+                .unwrap_or_default()
+            ,
+            savings_opportunity: self.savings_opportunity
+            ,
+            migration_effort: self.migration_effort
+            ,
+            instance_gpu_info: self.instance_gpu_info
+            ,
+            savings_opportunity_after_discounts: self.savings_opportunity_after_discounts
+            ,
         }
     }
 }
+

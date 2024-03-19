@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainInput {
+pub struct DescribeDomainInput  {
     /// <p>The identifier of the domain that you are describing.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDomainInput {
+impl  DescribeDomainInput  {
     /// <p>The identifier of the domain that you are describing.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeDomainInputBuilder {
     }
     /// <p>The identifier of the domain that you are describing.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that you are describing.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
     /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::operation::describe_domain::DescribeDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_domain::DescribeDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_domain::DescribeDomainInput { domain_id: self.domain_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_domain::DescribeDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_domain::DescribeDomainInput {
+                domain_id: self.domain_id
+                ,
+            }
+        )
     }
 }
+

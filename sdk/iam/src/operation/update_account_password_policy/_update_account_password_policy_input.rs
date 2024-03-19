@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountPasswordPolicyInput {
+pub struct UpdateAccountPasswordPolicyInput  {
     /// <p>The minimum number of characters allowed in an IAM user password.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>6</code>.</p>
     pub minimum_password_length: ::std::option::Option<i32>,
@@ -34,7 +34,7 @@ pub struct UpdateAccountPasswordPolicyInput {
     /// </note>
     pub hard_expiry: ::std::option::Option<bool>,
 }
-impl UpdateAccountPasswordPolicyInput {
+impl  UpdateAccountPasswordPolicyInput  {
     /// <p>The minimum number of characters allowed in an IAM user password.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>6</code>.</p>
     pub fn minimum_password_length(&self) -> ::std::option::Option<i32> {
@@ -115,8 +115,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>The minimum number of characters allowed in an IAM user password.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>6</code>.</p>
     pub fn set_minimum_password_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_password_length = input;
-        self
+        self.minimum_password_length = input; self
     }
     /// <p>The minimum number of characters allowed in an IAM user password.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>6</code>.</p>
@@ -134,8 +133,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
     pub fn set_require_symbols(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_symbols = input;
-        self
+        self.require_symbols = input; self
     }
     /// <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>
     /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
@@ -152,8 +150,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one numeric character.</p>
     pub fn set_require_numbers(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_numbers = input;
-        self
+        self.require_numbers = input; self
     }
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one numeric character.</p>
@@ -169,8 +166,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one uppercase character.</p>
     pub fn set_require_uppercase_characters(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_uppercase_characters = input;
-        self
+        self.require_uppercase_characters = input; self
     }
     /// <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one uppercase character.</p>
@@ -186,8 +182,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one lowercase character.</p>
     pub fn set_require_lowercase_characters(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_lowercase_characters = input;
-        self
+        self.require_lowercase_characters = input; self
     }
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one lowercase character.</p>
@@ -203,8 +198,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users in the account do not automatically have permissions to change their own password.</p>
     pub fn set_allow_users_to_change_password(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_users_to_change_password = input;
-        self
+        self.allow_users_to_change_password = input; self
     }
     /// <p>Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users in the account do not automatically have permissions to change their own password.</p>
@@ -220,8 +214,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>The number of days that an IAM user password is valid.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM user passwords never expire.</p>
     pub fn set_max_password_age(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_password_age = input;
-        self
+        self.max_password_age = input; self
     }
     /// <p>The number of days that an IAM user password is valid.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM user passwords never expire.</p>
@@ -237,8 +230,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM users are not prevented from reusing previous passwords.</p>
     pub fn set_password_reuse_prevention(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.password_reuse_prevention = input;
-        self
+        self.password_reuse_prevention = input; self
     }
     /// <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM users are not prevented from reusing previous passwords.</p>
@@ -258,8 +250,7 @@ impl UpdateAccountPasswordPolicyInputBuilder {
     /// <p>In the Amazon Web Services Management Console, the custom password policy option <b>Allow users to change their own password</b> gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
     /// </note>
     pub fn set_hard_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hard_expiry = input;
-        self
+        self.hard_expiry = input; self
     }
     /// <p>Prevents IAM users who are accessing the account via the Amazon Web Services Management Console from setting a new console password after their password has expired. The IAM user cannot access the console until an administrator resets the password.</p>
     /// <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users can change their passwords after they expire and continue to sign in as the user.</p><note>
@@ -269,22 +260,29 @@ impl UpdateAccountPasswordPolicyInputBuilder {
         &self.hard_expiry
     }
     /// Consumes the builder and constructs a [`UpdateAccountPasswordPolicyInput`](crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyInput {
-            minimum_password_length: self.minimum_password_length,
-            require_symbols: self.require_symbols,
-            require_numbers: self.require_numbers,
-            require_uppercase_characters: self.require_uppercase_characters,
-            require_lowercase_characters: self.require_lowercase_characters,
-            allow_users_to_change_password: self.allow_users_to_change_password,
-            max_password_age: self.max_password_age,
-            password_reuse_prevention: self.password_reuse_prevention,
-            hard_expiry: self.hard_expiry,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyInput {
+                minimum_password_length: self.minimum_password_length
+                ,
+                require_symbols: self.require_symbols
+                ,
+                require_numbers: self.require_numbers
+                ,
+                require_uppercase_characters: self.require_uppercase_characters
+                ,
+                require_lowercase_characters: self.require_lowercase_characters
+                ,
+                allow_users_to_change_password: self.allow_users_to_change_password
+                ,
+                max_password_age: self.max_password_age
+                ,
+                password_reuse_prevention: self.password_reuse_prevention
+                ,
+                hard_expiry: self.hard_expiry
+                ,
+            }
+        )
     }
 }
+

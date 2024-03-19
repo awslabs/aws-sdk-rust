@@ -4,22 +4,23 @@
 /// <p>For more information about Code Editor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/code-editor.html">Get started with Code Editor in Amazon SageMaker</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeEditorAppSettings {
+pub struct CodeEditorAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>The Amazon Resource Name (ARN) of the Code Editor application lifecycle configuration.</p>
-    pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CodeEditorAppSettings {
+impl  CodeEditorAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> ::std::option::Option<& crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Code Editor application lifecycle configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_config_arns.is_none()`.
-    pub fn lifecycle_config_arns(&self) -> &[::std::string::String] {
-        self.lifecycle_config_arns.as_deref().unwrap_or_default()
+    pub fn lifecycle_config_arns(&self) -> & [::std::string::String] {
+        self.lifecycle_config_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CodeEditorAppSettings {
@@ -34,7 +35,7 @@ impl CodeEditorAppSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeEditorAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CodeEditorAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -44,8 +45,7 @@ impl CodeEditorAppSettingsBuilder {
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
-        self.default_resource_spec = input;
-        self
+        self.default_resource_spec = input; self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
@@ -58,24 +58,26 @@ impl CodeEditorAppSettingsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Code Editor application lifecycle configuration.</p>
     pub fn lifecycle_config_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lifecycle_config_arns.unwrap_or_default();
-        v.push(input.into());
-        self.lifecycle_config_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lifecycle_config_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Code Editor application lifecycle configuration.</p>
-    pub fn set_lifecycle_config_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lifecycle_config_arns = input;
-        self
+    pub fn set_lifecycle_config_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lifecycle_config_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Code Editor application lifecycle configuration.</p>
-    pub fn get_lifecycle_config_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lifecycle_config_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lifecycle_config_arns
     }
     /// Consumes the builder and constructs a [`CodeEditorAppSettings`](crate::types::CodeEditorAppSettings).
     pub fn build(self) -> crate::types::CodeEditorAppSettings {
         crate::types::CodeEditorAppSettings {
-            default_resource_spec: self.default_resource_spec,
-            lifecycle_config_arns: self.lifecycle_config_arns,
+            default_resource_spec: self.default_resource_spec
+            ,
+            lifecycle_config_arns: self.lifecycle_config_arns
+            ,
         }
     }
 }
+

@@ -5,7 +5,8 @@
 /// <p>JSON specification: <code>"QueryString": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryString {}
+pub struct QueryString  {
+}
 impl QueryString {
     /// Creates a new builder-style object to manufacture [`QueryString`](crate::types::QueryString).
     pub fn builder() -> crate::types::builders::QueryStringBuilder {
@@ -16,10 +17,13 @@ impl QueryString {
 /// A builder for [`QueryString`](crate::types::QueryString).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct QueryStringBuilder {}
+pub struct QueryStringBuilder {
+}
 impl QueryStringBuilder {
     /// Consumes the builder and constructs a [`QueryString`](crate::types::QueryString).
     pub fn build(self) -> crate::types::QueryString {
-        crate::types::QueryString {}
+        crate::types::QueryString {
+        }
     }
 }
+

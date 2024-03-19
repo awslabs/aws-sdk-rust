@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationPresignedUrlInput {
+pub struct CreateApplicationPresignedUrlInput  {
     /// <p>The name of the application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
@@ -10,13 +10,13 @@ pub struct CreateApplicationPresignedUrlInput {
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
     pub session_expiration_duration_in_seconds: ::std::option::Option<i64>,
 }
-impl CreateApplicationPresignedUrlInput {
+impl  CreateApplicationPresignedUrlInput  {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
-    pub fn url_type(&self) -> ::std::option::Option<&crate::types::UrlType> {
+    pub fn url_type(&self) -> ::std::option::Option<& crate::types::UrlType> {
         self.url_type.as_ref()
     }
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
@@ -48,8 +48,7 @@ impl CreateApplicationPresignedUrlInputBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateApplicationPresignedUrlInputBuilder {
     }
     /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
     pub fn set_url_type(mut self, input: ::std::option::Option<crate::types::UrlType>) -> Self {
-        self.url_type = input;
-        self
+        self.url_type = input; self
     }
     /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>.</p>
     pub fn get_url_type(&self) -> &::std::option::Option<crate::types::UrlType> {
@@ -77,24 +75,24 @@ impl CreateApplicationPresignedUrlInputBuilder {
     }
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
     pub fn set_session_expiration_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.session_expiration_duration_in_seconds = input;
-        self
+        self.session_expiration_duration_in_seconds = input; self
     }
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
     pub fn get_session_expiration_duration_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.session_expiration_duration_in_seconds
     }
     /// Consumes the builder and constructs a [`CreateApplicationPresignedUrlInput`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput {
-            application_name: self.application_name,
-            url_type: self.url_type,
-            session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlInput {
+                application_name: self.application_name
+                ,
+                url_type: self.url_type
+                ,
+                session_expiration_duration_in_seconds: self.session_expiration_duration_in_seconds
+                ,
+            }
+        )
     }
 }
+

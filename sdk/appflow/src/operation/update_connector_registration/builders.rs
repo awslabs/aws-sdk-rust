@@ -5,23 +5,20 @@ pub use crate::operation::update_connector_registration::_update_connector_regis
 
 impl UpdateConnectorRegistrationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_connector_registration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_connector_registration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateConnectorRegistration`.
-///
+/// 
 /// <p>Updates a custom connector that you've previously registered. This operation updates the connector with one of the following:</p>
 /// <ul>
 /// <li>
@@ -32,33 +29,32 @@ impl UpdateConnectorRegistrationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorRegistrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationInputBuilder,
+                    inner: crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
-        crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-    > for UpdateConnectorRegistrationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
-            crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
+                    crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
+                > for UpdateConnectorRegistrationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
+                        crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateConnectorRegistrationFluentBuilder {
     /// Creates a new `UpdateConnectorRegistration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl UpdateConnectorRegistrationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_connector_registration::UpdateConnectorRegistration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_connector_registration::UpdateConnectorRegistration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
-        crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connector_registration::UpdateConnectorRegistrationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_connector_registration::UpdateConnectorRegistration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_connector_registration::UpdateConnectorRegistration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput, crate::operation::update_connector_registration::UpdateConnectorRegistrationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
     pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_label(input.into());
@@ -177,3 +164,4 @@ impl UpdateConnectorRegistrationFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

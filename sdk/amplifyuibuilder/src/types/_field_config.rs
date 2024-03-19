@@ -3,7 +3,7 @@
 /// <p>Describes the configuration information for a field in a table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldConfig {
+pub struct FieldConfig  {
     /// <p>The label for the field.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the field position.</p>
@@ -13,15 +13,15 @@ pub struct FieldConfig {
     /// <p>Describes the configuration for the default input value to display for a field.</p>
     pub input_type: ::std::option::Option<crate::types::FieldInputConfig>,
     /// <p>The validations to perform on the value in the field.</p>
-    pub validations: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>,
+    pub validations: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValidationConfiguration>>,
 }
-impl FieldConfig {
+impl  FieldConfig  {
     /// <p>The label for the field.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>Specifies the field position.</p>
-    pub fn position(&self) -> ::std::option::Option<&crate::types::FieldPosition> {
+    pub fn position(&self) -> ::std::option::Option<& crate::types::FieldPosition> {
         self.position.as_ref()
     }
     /// <p>Specifies whether to hide a field.</p>
@@ -29,14 +29,15 @@ impl FieldConfig {
         self.excluded
     }
     /// <p>Describes the configuration for the default input value to display for a field.</p>
-    pub fn input_type(&self) -> ::std::option::Option<&crate::types::FieldInputConfig> {
+    pub fn input_type(&self) -> ::std::option::Option<& crate::types::FieldInputConfig> {
         self.input_type.as_ref()
     }
     /// <p>The validations to perform on the value in the field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validations.is_none()`.
-    pub fn validations(&self) -> &[crate::types::FieldValidationConfiguration] {
-        self.validations.as_deref().unwrap_or_default()
+    pub fn validations(&self) -> & [crate::types::FieldValidationConfiguration] {
+        self.validations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FieldConfig {
@@ -54,7 +55,7 @@ pub struct FieldConfigBuilder {
     pub(crate) position: ::std::option::Option<crate::types::FieldPosition>,
     pub(crate) excluded: ::std::option::Option<bool>,
     pub(crate) input_type: ::std::option::Option<crate::types::FieldInputConfig>,
-    pub(crate) validations: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>,
+    pub(crate) validations: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValidationConfiguration>>,
 }
 impl FieldConfigBuilder {
     /// <p>The label for the field.</p>
@@ -64,8 +65,7 @@ impl FieldConfigBuilder {
     }
     /// <p>The label for the field.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The label for the field.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl FieldConfigBuilder {
     }
     /// <p>Specifies the field position.</p>
     pub fn set_position(mut self, input: ::std::option::Option<crate::types::FieldPosition>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>Specifies the field position.</p>
     pub fn get_position(&self) -> &::std::option::Option<crate::types::FieldPosition> {
@@ -92,8 +91,7 @@ impl FieldConfigBuilder {
     }
     /// <p>Specifies whether to hide a field.</p>
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.excluded = input;
-        self
+        self.excluded = input; self
     }
     /// <p>Specifies whether to hide a field.</p>
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {
@@ -106,8 +104,7 @@ impl FieldConfigBuilder {
     }
     /// <p>Describes the configuration for the default input value to display for a field.</p>
     pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::FieldInputConfig>) -> Self {
-        self.input_type = input;
-        self
+        self.input_type = input; self
     }
     /// <p>Describes the configuration for the default input value to display for a field.</p>
     pub fn get_input_type(&self) -> &::std::option::Option<crate::types::FieldInputConfig> {
@@ -120,27 +117,32 @@ impl FieldConfigBuilder {
     /// <p>The validations to perform on the value in the field.</p>
     pub fn validations(mut self, input: crate::types::FieldValidationConfiguration) -> Self {
         let mut v = self.validations.unwrap_or_default();
-        v.push(input);
-        self.validations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The validations to perform on the value in the field.</p>
-    pub fn set_validations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>>) -> Self {
-        self.validations = input;
-        self
+    pub fn set_validations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValidationConfiguration>>) -> Self {
+        self.validations = input; self
     }
     /// <p>The validations to perform on the value in the field.</p>
-    pub fn get_validations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValidationConfiguration>> {
+    pub fn get_validations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldValidationConfiguration>> {
         &self.validations
     }
     /// Consumes the builder and constructs a [`FieldConfig`](crate::types::FieldConfig).
     pub fn build(self) -> crate::types::FieldConfig {
         crate::types::FieldConfig {
-            label: self.label,
-            position: self.position,
-            excluded: self.excluded,
-            input_type: self.input_type,
-            validations: self.validations,
+            label: self.label
+            ,
+            position: self.position
+            ,
+            excluded: self.excluded
+            ,
+            input_type: self.input_type
+            ,
+            validations: self.validations
+            ,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>An object containing <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdMappingWorkflowInputSource {
+pub struct IdMappingWorkflowInputSource  {
     /// <p>An Gluetable ARN for the input source table.</p>
     pub input_source_arn: ::std::string::String,
     /// <p>The name of the schema to be retrieved.</p>
     pub schema_name: ::std::string::String,
 }
-impl IdMappingWorkflowInputSource {
+impl  IdMappingWorkflowInputSource  {
     /// <p>An Gluetable ARN for the input source table.</p>
-    pub fn input_source_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.input_source_arn.deref()
+    pub fn input_source_arn(&self) -> & str {
+        use std::ops::Deref; self.input_source_arn.deref()
     }
     /// <p>The name of the schema to be retrieved.</p>
-    pub fn schema_name(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_name.deref()
+    pub fn schema_name(&self) -> & str {
+        use std::ops::Deref; self.schema_name.deref()
     }
 }
 impl IdMappingWorkflowInputSource {
@@ -44,8 +42,7 @@ impl IdMappingWorkflowInputSourceBuilder {
     }
     /// <p>An Gluetable ARN for the input source table.</p>
     pub fn set_input_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_source_arn = input;
-        self
+        self.input_source_arn = input; self
     }
     /// <p>An Gluetable ARN for the input source table.</p>
     pub fn get_input_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl IdMappingWorkflowInputSourceBuilder {
     }
     /// <p>The name of the schema to be retrieved.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema to be retrieved.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl IdMappingWorkflowInputSourceBuilder {
     /// - [`input_source_arn`](crate::types::builders::IdMappingWorkflowInputSourceBuilder::input_source_arn)
     /// - [`schema_name`](crate::types::builders::IdMappingWorkflowInputSourceBuilder::schema_name)
     pub fn build(self) -> ::std::result::Result<crate::types::IdMappingWorkflowInputSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IdMappingWorkflowInputSource {
-            input_source_arn: self.input_source_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_source_arn",
-                    "input_source_arn was not specified but it is required when building IdMappingWorkflowInputSource",
-                )
-            })?,
-            schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_name",
-                    "schema_name was not specified but it is required when building IdMappingWorkflowInputSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IdMappingWorkflowInputSource {
+                input_source_arn: self.input_source_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_source_arn", "input_source_arn was not specified but it is required when building IdMappingWorkflowInputSource")
+                    )?
+                ,
+                schema_name: self.schema_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_name", "schema_name was not specified but it is required when building IdMappingWorkflowInputSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

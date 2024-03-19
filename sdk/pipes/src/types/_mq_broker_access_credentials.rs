@@ -21,11 +21,7 @@ impl MqBrokerAccessCredentials {
     /// Tries to convert the enum instance into [`BasicAuth`](crate::types::MqBrokerAccessCredentials::BasicAuth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_basic_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let MqBrokerAccessCredentials::BasicAuth(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MqBrokerAccessCredentials::BasicAuth(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`BasicAuth`](crate::types::MqBrokerAccessCredentials::BasicAuth).
     pub fn is_basic_auth(&self) -> bool {
@@ -36,3 +32,4 @@ impl MqBrokerAccessCredentials {
         matches!(self, Self::Unknown)
     }
 }
+

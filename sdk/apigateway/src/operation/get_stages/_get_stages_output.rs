@@ -3,24 +3,25 @@
 /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStagesOutput {
+pub struct GetStagesOutput  {
     /// <p>The current page of elements from this collection.</p>
-    pub item: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
+    pub item: ::std::option::Option<::std::vec::Vec::<crate::types::Stage>>,
     _request_id: Option<String>,
 }
-impl GetStagesOutput {
+impl  GetStagesOutput  {
     /// <p>The current page of elements from this collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item.is_none()`.
-    pub fn item(&self) -> &[crate::types::Stage] {
-        self.item.as_deref().unwrap_or_default()
+    pub fn item(&self) -> & [crate::types::Stage] {
+        self.item.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetStagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetStagesOutput {
     /// Creates a new builder-style object to manufacture [`GetStagesOutput`](crate::operation::get_stages::GetStagesOutput).
     pub fn builder() -> crate::operation::get_stages::builders::GetStagesOutputBuilder {
@@ -32,7 +33,7 @@ impl GetStagesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStagesOutputBuilder {
-    pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
+    pub(crate) item: ::std::option::Option<::std::vec::Vec::<crate::types::Stage>>,
     _request_id: Option<String>,
 }
 impl GetStagesOutputBuilder {
@@ -43,33 +44,34 @@ impl GetStagesOutputBuilder {
     /// <p>The current page of elements from this collection.</p>
     pub fn item(mut self, input: crate::types::Stage) -> Self {
         let mut v = self.item.unwrap_or_default();
-        v.push(input);
-        self.item = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.item = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>) -> Self {
-        self.item = input;
-        self
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Stage>>) -> Self {
+        self.item = input; self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Stage>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Stage>> {
         &self.item
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetStagesOutput`](crate::operation::get_stages::GetStagesOutput).
     pub fn build(self) -> crate::operation::get_stages::GetStagesOutput {
         crate::operation::get_stages::GetStagesOutput {
-            item: self.item,
+            item: self.item
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

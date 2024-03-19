@@ -174,3 +174,4 @@ pub mod update_user_access_logging_settings;
 
 /// Types for the `UpdateUserSettings` operation.
 pub mod update_user_settings;
+

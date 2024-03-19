@@ -3,19 +3,19 @@
 /// <p>Provides details for an Identity and Access Management (IAM) instance profile, which is a container for an IAM role for your instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
+pub struct AwsEc2LaunchTemplateDataIamInstanceProfileDetails  {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the instance profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
+impl  AwsEc2LaunchTemplateDataIamInstanceProfileDetails  {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the instance profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEc2LaunchTemplateDataIamInstanceProfileDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsEc2LaunchTemplateDataIamInstanceProfileDetailsBuilder {
     }
     /// <p>The name of the instance profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the instance profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEc2LaunchTemplateDataIamInstanceProfileDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataIamInstanceProfileDetails`](crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
         crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
-            arn: self.arn,
-            name: self.name,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

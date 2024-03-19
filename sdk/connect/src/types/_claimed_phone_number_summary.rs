@@ -3,7 +3,7 @@
 /// <p>Information about a phone number that has been claimed to your Amazon Connect instance or traffic distribution group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClaimedPhoneNumberSummary {
+pub struct ClaimedPhoneNumberSummary  {
     /// <p>A unique identifier for the phone number.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
@@ -21,7 +21,7 @@ pub struct ClaimedPhoneNumberSummary {
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The status of the phone number.</p>
     /// <ul>
     /// <li>
@@ -37,41 +37,41 @@ pub struct ClaimedPhoneNumberSummary {
     /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
     pub source_phone_number_arn: ::std::option::Option<::std::string::String>,
 }
-impl ClaimedPhoneNumberSummary {
+impl  ClaimedPhoneNumberSummary  {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    pub fn phone_number_arn(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_arn(&self) -> ::std::option::Option<& str> {
         self.phone_number_arn.as_deref()
     }
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_code(&self) -> ::std::option::Option<&crate::types::PhoneNumberCountryCode> {
+    pub fn phone_number_country_code(&self) -> ::std::option::Option<& crate::types::PhoneNumberCountryCode> {
         self.phone_number_country_code.as_ref()
     }
     /// <p>The type of phone number.</p>
-    pub fn phone_number_type(&self) -> ::std::option::Option<&crate::types::PhoneNumberType> {
+    pub fn phone_number_type(&self) -> ::std::option::Option<& crate::types::PhoneNumberType> {
         self.phone_number_type.as_ref()
     }
     /// <p>The description of the phone number.</p>
-    pub fn phone_number_description(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_description(&self) -> ::std::option::Option<& str> {
         self.phone_number_description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The status of the phone number.</p>
@@ -85,11 +85,11 @@ impl ClaimedPhoneNumberSummary {
     /// </ul><note>
     /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails.</p>
     /// </note>
-    pub fn phone_number_status(&self) -> ::std::option::Option<&crate::types::PhoneNumberStatus> {
+    pub fn phone_number_status(&self) -> ::std::option::Option<& crate::types::PhoneNumberStatus> {
         self.phone_number_status.as_ref()
     }
     /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
-    pub fn source_phone_number_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_phone_number_arn(&self) -> ::std::option::Option<& str> {
         self.source_phone_number_arn.as_deref()
     }
 }
@@ -112,7 +112,7 @@ pub struct ClaimedPhoneNumberSummaryBuilder {
     pub(crate) phone_number_description: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) phone_number_status: ::std::option::Option<crate::types::PhoneNumberStatus>,
     pub(crate) source_phone_number_arn: ::std::option::Option<::std::string::String>,
 }
@@ -124,8 +124,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +137,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn set_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_arn = input;
-        self
+        self.phone_number_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn get_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +163,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>The ISO country code.</p>
     pub fn set_phone_number_country_code(mut self, input: ::std::option::Option<crate::types::PhoneNumberCountryCode>) -> Self {
-        self.phone_number_country_code = input;
-        self
+        self.phone_number_country_code = input; self
     }
     /// <p>The ISO country code.</p>
     pub fn get_phone_number_country_code(&self) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
@@ -180,8 +176,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>The type of phone number.</p>
     pub fn set_phone_number_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
-        self.phone_number_type = input;
-        self
+        self.phone_number_type = input; self
     }
     /// <p>The type of phone number.</p>
     pub fn get_phone_number_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
@@ -194,8 +189,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>The description of the phone number.</p>
     pub fn set_phone_number_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_description = input;
-        self
+        self.phone_number_description = input; self
     }
     /// <p>The description of the phone number.</p>
     pub fn get_phone_number_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +202,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +215,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,17 +228,16 @@ impl ClaimedPhoneNumberSummaryBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The status of the phone number.</p>
@@ -276,8 +267,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails.</p>
     /// </note>
     pub fn set_phone_number_status(mut self, input: ::std::option::Option<crate::types::PhoneNumberStatus>) -> Self {
-        self.phone_number_status = input;
-        self
+        self.phone_number_status = input; self
     }
     /// <p>The status of the phone number.</p>
     /// <ul>
@@ -300,8 +290,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
     }
     /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
     pub fn set_source_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_phone_number_arn = input;
-        self
+        self.source_phone_number_arn = input; self
     }
     /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
     pub fn get_source_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -310,17 +299,29 @@ impl ClaimedPhoneNumberSummaryBuilder {
     /// Consumes the builder and constructs a [`ClaimedPhoneNumberSummary`](crate::types::ClaimedPhoneNumberSummary).
     pub fn build(self) -> crate::types::ClaimedPhoneNumberSummary {
         crate::types::ClaimedPhoneNumberSummary {
-            phone_number_id: self.phone_number_id,
-            phone_number_arn: self.phone_number_arn,
-            phone_number: self.phone_number,
-            phone_number_country_code: self.phone_number_country_code,
-            phone_number_type: self.phone_number_type,
-            phone_number_description: self.phone_number_description,
-            target_arn: self.target_arn,
-            instance_id: self.instance_id,
-            tags: self.tags,
-            phone_number_status: self.phone_number_status,
-            source_phone_number_arn: self.source_phone_number_arn,
+            phone_number_id: self.phone_number_id
+            ,
+            phone_number_arn: self.phone_number_arn
+            ,
+            phone_number: self.phone_number
+            ,
+            phone_number_country_code: self.phone_number_country_code
+            ,
+            phone_number_type: self.phone_number_type
+            ,
+            phone_number_description: self.phone_number_description
+            ,
+            target_arn: self.target_arn
+            ,
+            instance_id: self.instance_id
+            ,
+            tags: self.tags
+            ,
+            phone_number_status: self.phone_number_status
+            ,
+            source_phone_number_arn: self.source_phone_number_arn
+            ,
         }
     }
 }
+

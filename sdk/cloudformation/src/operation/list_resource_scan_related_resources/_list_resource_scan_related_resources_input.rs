@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceScanRelatedResourcesInput {
+pub struct ListResourceScanRelatedResourcesInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub resource_scan_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::ScannedResourceIdentifier>>,
     /// <p>A string that identifies the next page of resource scan results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanRelatedResources</code> API action will return up to 100 results in each response. The maximum value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListResourceScanRelatedResourcesInput {
+impl  ListResourceScanRelatedResourcesInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-    pub fn resource_scan_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_scan_id(&self) -> ::std::option::Option<& str> {
         self.resource_scan_id.as_deref()
     }
     /// <p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::ScannedResourceIdentifier] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::ScannedResourceIdentifier] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that identifies the next page of resource scan results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanRelatedResources</code> API action will return up to 100 results in each response. The maximum value is 100.</p>
@@ -44,7 +45,7 @@ impl ListResourceScanRelatedResourcesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceScanRelatedResourcesInputBuilder {
     pub(crate) resource_scan_id: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::ScannedResourceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl ListResourceScanRelatedResourcesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn set_resource_scan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_scan_id = input;
-        self
+        self.resource_scan_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn get_resource_scan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl ListResourceScanRelatedResourcesInputBuilder {
     /// <p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p>
     pub fn resources(mut self, input: crate::types::ScannedResourceIdentifier) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScannedResourceIdentifier>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScannedResourceIdentifier>> {
         &self.resources
     }
     /// <p>A string that identifies the next page of resource scan results.</p>
@@ -91,8 +90,7 @@ impl ListResourceScanRelatedResourcesInputBuilder {
     }
     /// <p>A string that identifies the next page of resource scan results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that identifies the next page of resource scan results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,27 +103,26 @@ impl ListResourceScanRelatedResourcesInputBuilder {
     }
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanRelatedResources</code> API action will return up to 100 results in each response. The maximum value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanRelatedResources</code> API action will return up to 100 results in each response. The maximum value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListResourceScanRelatedResourcesInput`](crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesInput {
-                resource_scan_id: self.resource_scan_id,
-                resources: self.resources,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                resource_scan_id: self.resource_scan_id
+                ,
+                resources: self.resources
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

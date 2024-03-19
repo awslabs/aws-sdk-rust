@@ -3,19 +3,19 @@
 /// <p>The constraints associated with a string attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StringAttributeConstraintsType {
+pub struct StringAttributeConstraintsType  {
     /// <p>The minimum length.</p>
     pub min_length: ::std::option::Option<::std::string::String>,
     /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub max_length: ::std::option::Option<::std::string::String>,
 }
-impl StringAttributeConstraintsType {
+impl  StringAttributeConstraintsType  {
     /// <p>The minimum length.</p>
-    pub fn min_length(&self) -> ::std::option::Option<&str> {
+    pub fn min_length(&self) -> ::std::option::Option<& str> {
         self.min_length.as_deref()
     }
     /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
-    pub fn max_length(&self) -> ::std::option::Option<&str> {
+    pub fn max_length(&self) -> ::std::option::Option<& str> {
         self.max_length.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StringAttributeConstraintsTypeBuilder {
     }
     /// <p>The minimum length.</p>
     pub fn set_min_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.min_length = input;
-        self
+        self.min_length = input; self
     }
     /// <p>The minimum length.</p>
     pub fn get_min_length(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl StringAttributeConstraintsTypeBuilder {
     }
     /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn set_max_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_length = input;
-        self
+        self.max_length = input; self
     }
     /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn get_max_length(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl StringAttributeConstraintsTypeBuilder {
     /// Consumes the builder and constructs a [`StringAttributeConstraintsType`](crate::types::StringAttributeConstraintsType).
     pub fn build(self) -> crate::types::StringAttributeConstraintsType {
         crate::types::StringAttributeConstraintsType {
-            min_length: self.min_length,
-            max_length: self.max_length,
+            min_length: self.min_length
+            ,
+            max_length: self.max_length
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes the private IP addresses assigned to a network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssignedPrivateIpAddress {
+pub struct AssignedPrivateIpAddress  {
     /// <p>The private IP address assigned to the network interface.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
-impl AssignedPrivateIpAddress {
+impl  AssignedPrivateIpAddress  {
     /// <p>The private IP address assigned to the network interface.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AssignedPrivateIpAddressBuilder {
     }
     /// <p>The private IP address assigned to the network interface.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
+        self.private_ip_address = input; self
     }
     /// <p>The private IP address assigned to the network interface.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AssignedPrivateIpAddressBuilder {
     /// Consumes the builder and constructs a [`AssignedPrivateIpAddress`](crate::types::AssignedPrivateIpAddress).
     pub fn build(self) -> crate::types::AssignedPrivateIpAddress {
         crate::types::AssignedPrivateIpAddress {
-            private_ip_address: self.private_ip_address,
+            private_ip_address: self.private_ip_address
+            ,
         }
     }
 }
+

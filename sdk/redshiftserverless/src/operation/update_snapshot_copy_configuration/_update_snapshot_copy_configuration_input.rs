@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSnapshotCopyConfigurationInput {
+pub struct UpdateSnapshotCopyConfigurationInput  {
     /// <p>The ID of the snapshot copy configuration to update.</p>
     pub snapshot_copy_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The new retention period of how long to keep a snapshot in the destination Amazon Web Services Region.</p>
     pub snapshot_retention_period: ::std::option::Option<i32>,
 }
-impl UpdateSnapshotCopyConfigurationInput {
+impl  UpdateSnapshotCopyConfigurationInput  {
     /// <p>The ID of the snapshot copy configuration to update.</p>
-    pub fn snapshot_copy_configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_copy_configuration_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_copy_configuration_id.as_deref()
     }
     /// <p>The new retention period of how long to keep a snapshot in the destination Amazon Web Services Region.</p>
@@ -41,8 +41,7 @@ impl UpdateSnapshotCopyConfigurationInputBuilder {
     }
     /// <p>The ID of the snapshot copy configuration to update.</p>
     pub fn set_snapshot_copy_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_copy_configuration_id = input;
-        self
+        self.snapshot_copy_configuration_id = input; self
     }
     /// <p>The ID of the snapshot copy configuration to update.</p>
     pub fn get_snapshot_copy_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl UpdateSnapshotCopyConfigurationInputBuilder {
     }
     /// <p>The new retention period of how long to keep a snapshot in the destination Amazon Web Services Region.</p>
     pub fn set_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_period = input;
-        self
+        self.snapshot_retention_period = input; self
     }
     /// <p>The new retention period of how long to keep a snapshot in the destination Amazon Web Services Region.</p>
     pub fn get_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
         &self.snapshot_retention_period
     }
     /// Consumes the builder and constructs a [`UpdateSnapshotCopyConfigurationInput`](crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationInput {
-                snapshot_copy_configuration_id: self.snapshot_copy_configuration_id,
-                snapshot_retention_period: self.snapshot_retention_period,
-            },
+                snapshot_copy_configuration_id: self.snapshot_copy_configuration_id
+                ,
+                snapshot_retention_period: self.snapshot_retention_period
+                ,
+            }
         )
     }
 }
+

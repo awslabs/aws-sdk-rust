@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>Identifies the Application Auto Scaling scalable target from which to remove tags.</p>
     /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UntagResourceInput {
+impl  UntagResourceInput  {
     /// <p>Identifies the Application Auto Scaling scalable target from which to remove tags.</p>
     /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UntagResourceInput {
@@ -36,7 +37,7 @@ impl UntagResourceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UntagResourceInputBuilder {
     /// <p>Identifies the Application Auto Scaling scalable target from which to remove tags.</p>
@@ -51,8 +52,7 @@ impl UntagResourceInputBuilder {
     /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Identifies the Application Auto Scaling scalable target from which to remove tags.</p>
     /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code></p>
@@ -67,26 +67,28 @@ impl UntagResourceInputBuilder {
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
-            resource_arn: self.resource_arn,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::untag_resource::UntagResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

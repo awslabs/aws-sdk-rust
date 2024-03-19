@@ -3,7 +3,7 @@
 /// <p>Information about a quota increase request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceQuotaIncreaseRequestInTemplate {
+pub struct ServiceQuotaIncreaseRequestInTemplate  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the service name.</p>
@@ -21,21 +21,21 @@ pub struct ServiceQuotaIncreaseRequestInTemplate {
     /// <p>Indicates whether the quota is global.</p>
     pub global_quota: bool,
 }
-impl ServiceQuotaIncreaseRequestInTemplate {
+impl  ServiceQuotaIncreaseRequestInTemplate  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>Specifies the service name.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>Specifies the quota name.</p>
-    pub fn quota_name(&self) -> ::std::option::Option<&str> {
+    pub fn quota_name(&self) -> ::std::option::Option<& str> {
         self.quota_name.as_deref()
     }
     /// <p>The new, increased value of the quota.</p>
@@ -43,11 +43,11 @@ impl ServiceQuotaIncreaseRequestInTemplate {
         self.desired_value
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The unit of measurement.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>Indicates whether the quota is global.</p>
@@ -83,8 +83,7 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     }
     /// <p>Specifies the service name.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>Specifies the service name.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     }
     /// <p>Specifies the quota name.</p>
     pub fn set_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_name = input;
-        self
+        self.quota_name = input; self
     }
     /// <p>Specifies the quota name.</p>
     pub fn get_quota_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     }
     /// <p>The new, increased value of the quota.</p>
     pub fn set_desired_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.desired_value = input;
-        self
+        self.desired_value = input; self
     }
     /// <p>The new, increased value of the quota.</p>
     pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
@@ -153,8 +148,7 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     }
     /// <p>The unit of measurement.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of measurement.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     }
     /// <p>Indicates whether the quota is global.</p>
     pub fn set_global_quota(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.global_quota = input;
-        self
+        self.global_quota = input; self
     }
     /// <p>Indicates whether the quota is global.</p>
     pub fn get_global_quota(&self) -> &::std::option::Option<bool> {
@@ -191,14 +183,24 @@ impl ServiceQuotaIncreaseRequestInTemplateBuilder {
     /// Consumes the builder and constructs a [`ServiceQuotaIncreaseRequestInTemplate`](crate::types::ServiceQuotaIncreaseRequestInTemplate).
     pub fn build(self) -> crate::types::ServiceQuotaIncreaseRequestInTemplate {
         crate::types::ServiceQuotaIncreaseRequestInTemplate {
-            service_code: self.service_code,
-            service_name: self.service_name,
-            quota_code: self.quota_code,
-            quota_name: self.quota_name,
-            desired_value: self.desired_value,
-            aws_region: self.aws_region,
-            unit: self.unit,
-            global_quota: self.global_quota.unwrap_or_default(),
+            service_code: self.service_code
+            ,
+            service_name: self.service_name
+            ,
+            quota_code: self.quota_code
+            ,
+            quota_name: self.quota_name
+            ,
+            desired_value: self.desired_value
+            ,
+            aws_region: self.aws_region
+            ,
+            unit: self.unit
+            ,
+            global_quota: self.global_quota
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

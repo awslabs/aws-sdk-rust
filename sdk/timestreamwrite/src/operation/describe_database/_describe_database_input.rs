@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatabaseInput {
+pub struct DescribeDatabaseInput  {
     /// <p>The name of the Timestream database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDatabaseInput {
+impl  DescribeDatabaseInput  {
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeDatabaseInputBuilder {
     }
     /// <p>The name of the Timestream database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the Timestream database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
     /// Consumes the builder and constructs a [`DescribeDatabaseInput`](crate::operation::describe_database::DescribeDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_database::DescribeDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_database::DescribeDatabaseInput {
-            database_name: self.database_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_database::DescribeDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_database::DescribeDatabaseInput {
+                database_name: self.database_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the optimized EBS performance for supported instance types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsOptimizedInfo {
+pub struct EbsOptimizedInfo  {
     /// <p>The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
     pub baseline_bandwidth_in_mbps: ::std::option::Option<i32>,
     /// <p>The baseline throughput performance for an EBS-optimized instance type, in MB/s.</p>
@@ -17,7 +17,7 @@ pub struct EbsOptimizedInfo {
     /// <p>The maximum input/output storage operations per second for an EBS-optimized instance type.</p>
     pub maximum_iops: ::std::option::Option<i32>,
 }
-impl EbsOptimizedInfo {
+impl  EbsOptimizedInfo  {
     /// <p>The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
     pub fn baseline_bandwidth_in_mbps(&self) -> ::std::option::Option<i32> {
         self.baseline_bandwidth_in_mbps
@@ -69,8 +69,7 @@ impl EbsOptimizedInfoBuilder {
     }
     /// <p>The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
     pub fn set_baseline_bandwidth_in_mbps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.baseline_bandwidth_in_mbps = input;
-        self
+        self.baseline_bandwidth_in_mbps = input; self
     }
     /// <p>The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
     pub fn get_baseline_bandwidth_in_mbps(&self) -> &::std::option::Option<i32> {
@@ -83,8 +82,7 @@ impl EbsOptimizedInfoBuilder {
     }
     /// <p>The baseline throughput performance for an EBS-optimized instance type, in MB/s.</p>
     pub fn set_baseline_throughput_in_m_bps(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.baseline_throughput_in_m_bps = input;
-        self
+        self.baseline_throughput_in_m_bps = input; self
     }
     /// <p>The baseline throughput performance for an EBS-optimized instance type, in MB/s.</p>
     pub fn get_baseline_throughput_in_m_bps(&self) -> &::std::option::Option<f64> {
@@ -97,8 +95,7 @@ impl EbsOptimizedInfoBuilder {
     }
     /// <p>The baseline input/output storage operations per seconds for an EBS-optimized instance type.</p>
     pub fn set_baseline_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.baseline_iops = input;
-        self
+        self.baseline_iops = input; self
     }
     /// <p>The baseline input/output storage operations per seconds for an EBS-optimized instance type.</p>
     pub fn get_baseline_iops(&self) -> &::std::option::Option<i32> {
@@ -111,8 +108,7 @@ impl EbsOptimizedInfoBuilder {
     }
     /// <p>The maximum bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
     pub fn set_maximum_bandwidth_in_mbps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_bandwidth_in_mbps = input;
-        self
+        self.maximum_bandwidth_in_mbps = input; self
     }
     /// <p>The maximum bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
     pub fn get_maximum_bandwidth_in_mbps(&self) -> &::std::option::Option<i32> {
@@ -125,8 +121,7 @@ impl EbsOptimizedInfoBuilder {
     }
     /// <p>The maximum throughput performance for an EBS-optimized instance type, in MB/s.</p>
     pub fn set_maximum_throughput_in_m_bps(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.maximum_throughput_in_m_bps = input;
-        self
+        self.maximum_throughput_in_m_bps = input; self
     }
     /// <p>The maximum throughput performance for an EBS-optimized instance type, in MB/s.</p>
     pub fn get_maximum_throughput_in_m_bps(&self) -> &::std::option::Option<f64> {
@@ -139,8 +134,7 @@ impl EbsOptimizedInfoBuilder {
     }
     /// <p>The maximum input/output storage operations per second for an EBS-optimized instance type.</p>
     pub fn set_maximum_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_iops = input;
-        self
+        self.maximum_iops = input; self
     }
     /// <p>The maximum input/output storage operations per second for an EBS-optimized instance type.</p>
     pub fn get_maximum_iops(&self) -> &::std::option::Option<i32> {
@@ -149,12 +143,19 @@ impl EbsOptimizedInfoBuilder {
     /// Consumes the builder and constructs a [`EbsOptimizedInfo`](crate::types::EbsOptimizedInfo).
     pub fn build(self) -> crate::types::EbsOptimizedInfo {
         crate::types::EbsOptimizedInfo {
-            baseline_bandwidth_in_mbps: self.baseline_bandwidth_in_mbps,
-            baseline_throughput_in_m_bps: self.baseline_throughput_in_m_bps,
-            baseline_iops: self.baseline_iops,
-            maximum_bandwidth_in_mbps: self.maximum_bandwidth_in_mbps,
-            maximum_throughput_in_m_bps: self.maximum_throughput_in_m_bps,
-            maximum_iops: self.maximum_iops,
+            baseline_bandwidth_in_mbps: self.baseline_bandwidth_in_mbps
+            ,
+            baseline_throughput_in_m_bps: self.baseline_throughput_in_m_bps
+            ,
+            baseline_iops: self.baseline_iops
+            ,
+            maximum_bandwidth_in_mbps: self.maximum_bandwidth_in_mbps
+            ,
+            maximum_throughput_in_m_bps: self.maximum_throughput_in_m_bps
+            ,
+            maximum_iops: self.maximum_iops
+            ,
         }
     }
 }
+

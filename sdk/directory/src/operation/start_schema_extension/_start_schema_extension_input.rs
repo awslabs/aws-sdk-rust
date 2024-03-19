@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSchemaExtensionInput {
+pub struct StartSchemaExtensionInput  {
     /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
@@ -12,9 +12,9 @@ pub struct StartSchemaExtensionInput {
     /// <p>A description of the schema extension.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl StartSchemaExtensionInput {
+impl  StartSchemaExtensionInput  {
     /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
@@ -22,11 +22,11 @@ impl StartSchemaExtensionInput {
         self.create_snapshot_before_schema_extension
     }
     /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
-    pub fn ldif_content(&self) -> ::std::option::Option<&str> {
+    pub fn ldif_content(&self) -> ::std::option::Option<& str> {
         self.ldif_content.as_deref()
     }
     /// <p>A description of the schema extension.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl StartSchemaExtensionInputBuilder {
     }
     /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartSchemaExtensionInputBuilder {
     }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
     pub fn set_create_snapshot_before_schema_extension(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_snapshot_before_schema_extension = input;
-        self
+        self.create_snapshot_before_schema_extension = input; self
     }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
     pub fn get_create_snapshot_before_schema_extension(&self) -> &::std::option::Option<bool> {
@@ -85,8 +83,7 @@ impl StartSchemaExtensionInputBuilder {
     }
     /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
     pub fn set_ldif_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ldif_content = input;
-        self
+        self.ldif_content = input; self
     }
     /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
     pub fn get_ldif_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,23 +97,26 @@ impl StartSchemaExtensionInputBuilder {
     }
     /// <p>A description of the schema extension.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the schema extension.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`StartSchemaExtensionInput`](crate::operation::start_schema_extension::StartSchemaExtensionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_schema_extension::StartSchemaExtensionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_schema_extension::StartSchemaExtensionInput {
-            directory_id: self.directory_id,
-            create_snapshot_before_schema_extension: self.create_snapshot_before_schema_extension,
-            ldif_content: self.ldif_content,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_schema_extension::StartSchemaExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_schema_extension::StartSchemaExtensionInput {
+                directory_id: self.directory_id
+                ,
+                create_snapshot_before_schema_extension: self.create_snapshot_before_schema_extension
+                ,
+                ldif_content: self.ldif_content
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMetricAttributions`](crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::set_dataset_group_arn):<br>required: **false**<br><p>The metric attributions' dataset group Amazon Resource Name (ARN).</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of metric attributions to return in one page of results.</p><br>
-    /// - On success, responds with [`ListMetricAttributionsOutput`](crate::operation::list_metric_attributions::ListMetricAttributionsOutput) with field(s):
+                            /// - On success, responds with [`ListMetricAttributionsOutput`](crate::operation::list_metric_attributions::ListMetricAttributionsOutput) with field(s):
     ///   - [`metric_attributions(Option<Vec::<MetricAttributionSummary>>)`](crate::operation::list_metric_attributions::ListMetricAttributionsOutput::metric_attributions): <p>The list of metric attributions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_attributions::ListMetricAttributionsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListMetricAttributionsError>`](crate::operation::list_metric_attributions::ListMetricAttributionsError)
+                            /// - On failure, responds with [`SdkError<ListMetricAttributionsError>`](crate::operation::list_metric_attributions::ListMetricAttributionsError)
     pub fn list_metric_attributions(&self) -> crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder {
-        crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_metric_attributions::builders::ListMetricAttributionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,18 +3,17 @@
 /// <p>Contains the output of SetLoadBalancerPoliciesForBackendServer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetLoadBalancerPoliciesForBackendServerOutput {
+pub struct SetLoadBalancerPoliciesForBackendServerOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for SetLoadBalancerPoliciesForBackendServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetLoadBalancerPoliciesForBackendServerOutput {
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput).
-    pub fn builder() -> crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerOutputBuilder {
         crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerOutputBuilder::default()
     }
 }
@@ -27,14 +26,14 @@ pub struct SetLoadBalancerPoliciesForBackendServerOutputBuilder {
 }
 impl SetLoadBalancerPoliciesForBackendServerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput).
     pub fn build(self) -> crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput {
         crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput {
@@ -42,3 +41,4 @@ impl SetLoadBalancerPoliciesForBackendServerOutputBuilder {
         }
     }
 }
+

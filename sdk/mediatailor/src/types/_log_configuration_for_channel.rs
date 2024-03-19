@@ -3,16 +3,17 @@
 /// <p>The log configuration for the channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogConfigurationForChannel {
+pub struct LogConfigurationForChannel  {
     /// <p>The log types.</p>
-    pub log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
+    pub log_types: ::std::option::Option<::std::vec::Vec::<crate::types::LogType>>,
 }
-impl LogConfigurationForChannel {
+impl  LogConfigurationForChannel  {
     /// <p>The log types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types.is_none()`.
-    pub fn log_types(&self) -> &[crate::types::LogType] {
-        self.log_types.as_deref().unwrap_or_default()
+    pub fn log_types(&self) -> & [crate::types::LogType] {
+        self.log_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LogConfigurationForChannel {
@@ -26,7 +27,7 @@ impl LogConfigurationForChannel {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogConfigurationForChannelBuilder {
-    pub(crate) log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
+    pub(crate) log_types: ::std::option::Option<::std::vec::Vec::<crate::types::LogType>>,
 }
 impl LogConfigurationForChannelBuilder {
     /// Appends an item to `log_types`.
@@ -36,21 +37,24 @@ impl LogConfigurationForChannelBuilder {
     /// <p>The log types.</p>
     pub fn log_types(mut self, input: crate::types::LogType) -> Self {
         let mut v = self.log_types.unwrap_or_default();
-        v.push(input);
-        self.log_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The log types.</p>
-    pub fn set_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>) -> Self {
-        self.log_types = input;
-        self
+    pub fn set_log_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogType>>) -> Self {
+        self.log_types = input; self
     }
     /// <p>The log types.</p>
-    pub fn get_log_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogType>> {
+    pub fn get_log_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogType>> {
         &self.log_types
     }
     /// Consumes the builder and constructs a [`LogConfigurationForChannel`](crate::types::LogConfigurationForChannel).
     pub fn build(self) -> crate::types::LogConfigurationForChannel {
-        crate::types::LogConfigurationForChannel { log_types: self.log_types }
+        crate::types::LogConfigurationForChannel {
+            log_types: self.log_types
+            ,
+        }
     }
 }
+

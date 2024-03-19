@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetModelCustomizationJobInput {
+pub struct GetModelCustomizationJobInput  {
     /// <p>Identifier for the customization job.</p>
     pub job_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetModelCustomizationJobInput {
+impl  GetModelCustomizationJobInput  {
     /// <p>Identifier for the customization job.</p>
-    pub fn job_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn job_identifier(&self) -> ::std::option::Option<& str> {
         self.job_identifier.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetModelCustomizationJobInputBuilder {
     }
     /// <p>Identifier for the customization job.</p>
     pub fn set_job_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_identifier = input;
-        self
+        self.job_identifier = input; self
     }
     /// <p>Identifier for the customization job.</p>
     pub fn get_job_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_identifier
     }
     /// Consumes the builder and constructs a [`GetModelCustomizationJobInput`](crate::operation::get_model_customization_job::GetModelCustomizationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_model_customization_job::GetModelCustomizationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_model_customization_job::GetModelCustomizationJobInput {
-            job_identifier: self.job_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_model_customization_job::GetModelCustomizationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_model_customization_job::GetModelCustomizationJobInput {
+                job_identifier: self.job_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutApplicationAccessScopeInput {
+pub struct PutApplicationAccessScopeInput  {
     /// <p>Specifies the name of the access scope to be associated with the specified targets.</p>
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an array list of ARNs that represent the authorized targets for this access scope.</p>
-    pub authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the ARN of the application with the access scope with the targets to add or update.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
 }
-impl PutApplicationAccessScopeInput {
+impl  PutApplicationAccessScopeInput  {
     /// <p>Specifies the name of the access scope to be associated with the specified targets.</p>
-    pub fn scope(&self) -> ::std::option::Option<&str> {
+    pub fn scope(&self) -> ::std::option::Option<& str> {
         self.scope.as_deref()
     }
     /// <p>Specifies an array list of ARNs that represent the authorized targets for this access scope.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_targets.is_none()`.
-    pub fn authorized_targets(&self) -> &[::std::string::String] {
-        self.authorized_targets.as_deref().unwrap_or_default()
+    pub fn authorized_targets(&self) -> & [::std::string::String] {
+        self.authorized_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the ARN of the application with the access scope with the targets to add or update.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl PutApplicationAccessScopeInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutApplicationAccessScopeInputBuilder {
     pub(crate) scope: ::std::option::Option<::std::string::String>,
-    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutApplicationAccessScopeInputBuilder {
@@ -50,8 +51,7 @@ impl PutApplicationAccessScopeInputBuilder {
     }
     /// <p>Specifies the name of the access scope to be associated with the specified targets.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies the name of the access scope to be associated with the specified targets.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl PutApplicationAccessScopeInputBuilder {
     /// <p>Specifies an array list of ARNs that represent the authorized targets for this access scope.</p>
     pub fn authorized_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_targets.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies an array list of ARNs that represent the authorized targets for this access scope.</p>
-    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_targets = input;
-        self
+    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_targets = input; self
     }
     /// <p>Specifies an array list of ARNs that represent the authorized targets for this access scope.</p>
-    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_targets
     }
     /// <p>Specifies the ARN of the application with the access scope with the targets to add or update.</p>
@@ -85,24 +84,24 @@ impl PutApplicationAccessScopeInputBuilder {
     }
     /// <p>Specifies the ARN of the application with the access scope with the targets to add or update.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>Specifies the ARN of the application with the access scope with the targets to add or update.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
     /// Consumes the builder and constructs a [`PutApplicationAccessScopeInput`](crate::operation::put_application_access_scope::PutApplicationAccessScopeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_application_access_scope::PutApplicationAccessScopeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_application_access_scope::PutApplicationAccessScopeInput {
-            scope: self.scope,
-            authorized_targets: self.authorized_targets,
-            application_arn: self.application_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_application_access_scope::PutApplicationAccessScopeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_application_access_scope::PutApplicationAccessScopeInput {
+                scope: self.scope
+                ,
+                authorized_targets: self.authorized_targets
+                ,
+                application_arn: self.application_arn
+                ,
+            }
+        )
     }
 }
+

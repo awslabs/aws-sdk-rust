@@ -3,7 +3,7 @@
 /// <p>Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <code>DescribeRulesPackages</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RulesPackage {
+pub struct RulesPackage  {
     /// <p>The ARN of the rules package.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the rules package.</p>
@@ -15,29 +15,25 @@ pub struct RulesPackage {
     /// <p>The description of the rules package.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl RulesPackage {
+impl  RulesPackage  {
     /// <p>The ARN of the rules package.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the rules package.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The version ID of the rules package.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
     /// <p>The provider of the rules package.</p>
-    pub fn provider(&self) -> &str {
-        use std::ops::Deref;
-        self.provider.deref()
+    pub fn provider(&self) -> & str {
+        use std::ops::Deref; self.provider.deref()
     }
     /// <p>The description of the rules package.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -67,8 +63,7 @@ impl RulesPackageBuilder {
     }
     /// <p>The ARN of the rules package.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the rules package.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl RulesPackageBuilder {
     }
     /// <p>The name of the rules package.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rules package.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl RulesPackageBuilder {
     }
     /// <p>The version ID of the rules package.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version ID of the rules package.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl RulesPackageBuilder {
     }
     /// <p>The provider of the rules package.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of the rules package.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +118,7 @@ impl RulesPackageBuilder {
     }
     /// <p>The description of the rules package.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the rules package.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,32 +131,32 @@ impl RulesPackageBuilder {
     /// - [`version`](crate::types::builders::RulesPackageBuilder::version)
     /// - [`provider`](crate::types::builders::RulesPackageBuilder::provider)
     pub fn build(self) -> ::std::result::Result<crate::types::RulesPackage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RulesPackage {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RulesPackage",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RulesPackage",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building RulesPackage",
-                )
-            })?,
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building RulesPackage",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RulesPackage {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RulesPackage")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RulesPackage")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building RulesPackage")
+                    )?
+                ,
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building RulesPackage")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

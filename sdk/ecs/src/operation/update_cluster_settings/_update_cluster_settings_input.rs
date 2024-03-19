@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClusterSettingsInput {
+pub struct UpdateClusterSettingsInput  {
     /// <p>The name of the cluster to modify the settings for.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p><important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    pub settings: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,
+    pub settings: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSetting>>,
 }
-impl UpdateClusterSettingsInput {
+impl  UpdateClusterSettingsInput  {
     /// <p>The name of the cluster to modify the settings for.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p><important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
-    pub fn settings(&self) -> &[crate::types::ClusterSetting] {
-        self.settings.as_deref().unwrap_or_default()
+    pub fn settings(&self) -> & [crate::types::ClusterSetting] {
+        self.settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateClusterSettingsInput {
@@ -36,7 +37,7 @@ impl UpdateClusterSettingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterSettingsInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
-    pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,
+    pub(crate) settings: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSetting>>,
 }
 impl UpdateClusterSettingsInputBuilder {
     /// <p>The name of the cluster to modify the settings for.</p>
@@ -47,8 +48,7 @@ impl UpdateClusterSettingsInputBuilder {
     }
     /// <p>The name of the cluster to modify the settings for.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The name of the cluster to modify the settings for.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,31 +63,32 @@ impl UpdateClusterSettingsInputBuilder {
     /// </important>
     pub fn settings(mut self, input: crate::types::ClusterSetting) -> Self {
         let mut v = self.settings.unwrap_or_default();
-        v.push(input);
-        self.settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p><important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSetting>>) -> Self {
+        self.settings = input; self
     }
     /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p><important>
     /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
     /// </important>
-    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterSetting>> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`UpdateClusterSettingsInput`](crate::operation::update_cluster_settings::UpdateClusterSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_cluster_settings::UpdateClusterSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_cluster_settings::UpdateClusterSettingsInput {
-            cluster: self.cluster,
-            settings: self.settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cluster_settings::UpdateClusterSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_cluster_settings::UpdateClusterSettingsInput {
+                cluster: self.cluster
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMaintenanceWindowExecutionTaskInvocationInput {
+pub struct GetMaintenanceWindowExecutionTaskInvocationInput  {
     /// <p>The ID of the maintenance window execution for which the task is a part.</p>
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
@@ -10,26 +10,24 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationInput {
     /// <p>The invocation ID to retrieve.</p>
     pub invocation_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMaintenanceWindowExecutionTaskInvocationInput {
+impl  GetMaintenanceWindowExecutionTaskInvocationInput  {
     /// <p>The ID of the maintenance window execution for which the task is a part.</p>
-    pub fn window_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> ::std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The invocation ID to retrieve.</p>
-    pub fn invocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn invocation_id(&self) -> ::std::option::Option<& str> {
         self.invocation_id.as_deref()
     }
 }
 impl GetMaintenanceWindowExecutionTaskInvocationInput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionTaskInvocationInput`](crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationInput).
-    pub fn builder(
-    ) -> crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
-        crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
+        crate::operation::get_maintenance_window_execution_task_invocation::builders::GetMaintenanceWindowExecutionTaskInvocationInputBuilder::default()
     }
 }
 
@@ -50,8 +48,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
     }
     /// <p>The ID of the maintenance window execution for which the task is a part.</p>
     pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_execution_id = input;
-        self
+        self.window_execution_id = input; self
     }
     /// <p>The ID of the maintenance window execution for which the task is a part.</p>
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
     }
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,26 +76,24 @@ impl GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
     }
     /// <p>The invocation ID to retrieve.</p>
     pub fn set_invocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invocation_id = input;
-        self
+        self.invocation_id = input; self
     }
     /// <p>The invocation ID to retrieve.</p>
     pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.invocation_id
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskInvocationInput`](crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationInput {
-                window_execution_id: self.window_execution_id,
-                task_id: self.task_id,
-                invocation_id: self.invocation_id,
-            },
+                window_execution_id: self.window_execution_id
+                ,
+                task_id: self.task_id
+                ,
+                invocation_id: self.invocation_id
+                ,
+            }
         )
     }
 }
+

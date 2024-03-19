@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSubscriptionFilters`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::set_log_group_name):<br>required: **true**<br><p>The name of the log group.</p><br>
     ///   - [`filter_name_prefix(impl Into<String>)`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::filter_name_prefix) / [`set_filter_name_prefix(Option<String>)`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::set_filter_name_prefix):<br>required: **false**<br><p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p><br>
-    /// - On success, responds with [`DescribeSubscriptionFiltersOutput`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput) with field(s):
+                            /// - On success, responds with [`DescribeSubscriptionFiltersOutput`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput) with field(s):
     ///   - [`subscription_filters(Option<Vec::<SubscriptionFilter>>)`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput::subscription_filters): <p>The subscription filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    /// - On failure, responds with [`SdkError<DescribeSubscriptionFiltersError>`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError)
-    pub fn describe_subscription_filters(
-        &self,
-    ) -> crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder {
-        crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeSubscriptionFiltersError>`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError)
+    pub fn describe_subscription_filters(&self) -> crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder {
+                                crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a directional edge in a directed acyclic graph (DAG).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeGenEdge {
+pub struct CodeGenEdge  {
     /// <p>The ID of the node at which the edge starts.</p>
     pub source: ::std::string::String,
     /// <p>The ID of the node at which the edge ends.</p>
@@ -11,19 +11,17 @@ pub struct CodeGenEdge {
     /// <p>The target of the edge.</p>
     pub target_parameter: ::std::option::Option<::std::string::String>,
 }
-impl CodeGenEdge {
+impl  CodeGenEdge  {
     /// <p>The ID of the node at which the edge starts.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
     /// <p>The ID of the node at which the edge ends.</p>
-    pub fn target(&self) -> &str {
-        use std::ops::Deref;
-        self.target.deref()
+    pub fn target(&self) -> & str {
+        use std::ops::Deref; self.target.deref()
     }
     /// <p>The target of the edge.</p>
-    pub fn target_parameter(&self) -> ::std::option::Option<&str> {
+    pub fn target_parameter(&self) -> ::std::option::Option<& str> {
         self.target_parameter.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl CodeGenEdgeBuilder {
     }
     /// <p>The ID of the node at which the edge starts.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The ID of the node at which the edge starts.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl CodeGenEdgeBuilder {
     }
     /// <p>The ID of the node at which the edge ends.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The ID of the node at which the edge ends.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl CodeGenEdgeBuilder {
     }
     /// <p>The target of the edge.</p>
     pub fn set_target_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_parameter = input;
-        self
+        self.target_parameter = input; self
     }
     /// <p>The target of the edge.</p>
     pub fn get_target_parameter(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl CodeGenEdgeBuilder {
     /// - [`source`](crate::types::builders::CodeGenEdgeBuilder::source)
     /// - [`target`](crate::types::builders::CodeGenEdgeBuilder::target)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeGenEdge, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeGenEdge {
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building CodeGenEdge",
-                )
-            })?,
-            target: self.target.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target",
-                    "target was not specified but it is required when building CodeGenEdge",
-                )
-            })?,
-            target_parameter: self.target_parameter,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeGenEdge {
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building CodeGenEdge")
+                    )?
+                ,
+                target: self.target
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target", "target was not specified but it is required when building CodeGenEdge")
+                    )?
+                ,
+                target_parameter: self.target_parameter
+                ,
+            }
+        )
     }
 }
+

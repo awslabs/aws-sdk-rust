@@ -3,19 +3,19 @@
 /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventsEndpointRoutingConfigFailoverConfigDetails {
+pub struct AwsEventsEndpointRoutingConfigFailoverConfigDetails  {
     /// <p>The main Region of the endpoint.</p>
     pub primary: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails>,
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
     pub secondary: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails>,
 }
-impl AwsEventsEndpointRoutingConfigFailoverConfigDetails {
+impl  AwsEventsEndpointRoutingConfigFailoverConfigDetails  {
     /// <p>The main Region of the endpoint.</p>
-    pub fn primary(&self) -> ::std::option::Option<&crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails> {
+    pub fn primary(&self) -> ::std::option::Option<& crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails> {
         self.primary.as_ref()
     }
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
-    pub fn secondary(&self) -> ::std::option::Option<&crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails> {
+    pub fn secondary(&self) -> ::std::option::Option<& crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails> {
         self.secondary.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEventsEndpointRoutingConfigFailoverConfigDetailsBuilder {
     }
     /// <p>The main Region of the endpoint.</p>
     pub fn set_primary(mut self, input: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails>) -> Self {
-        self.primary = input;
-        self
+        self.primary = input; self
     }
     /// <p>The main Region of the endpoint.</p>
     pub fn get_primary(&self) -> &::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails> {
@@ -55,8 +54,7 @@ impl AwsEventsEndpointRoutingConfigFailoverConfigDetailsBuilder {
     }
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
     pub fn set_secondary(mut self, input: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails>) -> Self {
-        self.secondary = input;
-        self
+        self.secondary = input; self
     }
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
     pub fn get_secondary(&self) -> &::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails> {
@@ -65,8 +63,11 @@ impl AwsEventsEndpointRoutingConfigFailoverConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEventsEndpointRoutingConfigFailoverConfigDetails`](crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails).
     pub fn build(self) -> crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails {
         crate::types::AwsEventsEndpointRoutingConfigFailoverConfigDetails {
-            primary: self.primary,
-            secondary: self.secondary,
+            primary: self.primary
+            ,
+            secondary: self.secondary
+            ,
         }
     }
 }
+

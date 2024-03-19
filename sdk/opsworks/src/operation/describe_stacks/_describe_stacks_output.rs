@@ -3,24 +3,25 @@
 /// <p>Contains the response to a <code>DescribeStacks</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStacksOutput {
+pub struct DescribeStacksOutput  {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-    pub stacks: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>,
+    pub stacks: ::std::option::Option<::std::vec::Vec::<crate::types::Stack>>,
     _request_id: Option<String>,
 }
-impl DescribeStacksOutput {
+impl  DescribeStacksOutput  {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stacks.is_none()`.
-    pub fn stacks(&self) -> &[crate::types::Stack] {
-        self.stacks.as_deref().unwrap_or_default()
+    pub fn stacks(&self) -> & [crate::types::Stack] {
+        self.stacks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStacksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStacksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStacksOutput`](crate::operation::describe_stacks::DescribeStacksOutput).
     pub fn builder() -> crate::operation::describe_stacks::builders::DescribeStacksOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeStacksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStacksOutputBuilder {
-    pub(crate) stacks: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>,
+    pub(crate) stacks: ::std::option::Option<::std::vec::Vec::<crate::types::Stack>>,
     _request_id: Option<String>,
 }
 impl DescribeStacksOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeStacksOutputBuilder {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     pub fn stacks(mut self, input: crate::types::Stack) -> Self {
         let mut v = self.stacks.unwrap_or_default();
-        v.push(input);
-        self.stacks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stacks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-    pub fn set_stacks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>) -> Self {
-        self.stacks = input;
-        self
+    pub fn set_stacks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Stack>>) -> Self {
+        self.stacks = input; self
     }
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-    pub fn get_stacks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Stack>> {
+    pub fn get_stacks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Stack>> {
         &self.stacks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStacksOutput`](crate::operation::describe_stacks::DescribeStacksOutput).
     pub fn build(self) -> crate::operation::describe_stacks::DescribeStacksOutput {
         crate::operation::describe_stacks::DescribeStacksOutput {
-            stacks: self.stacks,
+            stacks: self.stacks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

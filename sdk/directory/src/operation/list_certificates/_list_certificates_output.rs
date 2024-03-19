@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCertificatesOutput {
+pub struct ListCertificatesOutput  {
     /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    pub certificates_info: ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>>,
+    pub certificates_info: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateInfo>>,
     _request_id: Option<String>,
 }
-impl ListCertificatesOutput {
+impl  ListCertificatesOutput  {
     /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates_info.is_none()`.
-    pub fn certificates_info(&self) -> &[crate::types::CertificateInfo] {
-        self.certificates_info.as_deref().unwrap_or_default()
+    pub fn certificates_info(&self) -> & [crate::types::CertificateInfo] {
+        self.certificates_info.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCertificatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
     pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListCertificatesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCertificatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) certificates_info: ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>>,
+    pub(crate) certificates_info: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateInfo>>,
     _request_id: Option<String>,
 }
 impl ListCertificatesOutputBuilder {
@@ -49,8 +50,7 @@ impl ListCertificatesOutputBuilder {
     }
     /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListCertificatesOutputBuilder {
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
     pub fn certificates_info(mut self, input: crate::types::CertificateInfo) -> Self {
         let mut v = self.certificates_info.unwrap_or_default();
-        v.push(input);
-        self.certificates_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    pub fn set_certificates_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>>) -> Self {
-        self.certificates_info = input;
-        self
+    pub fn set_certificates_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateInfo>>) -> Self {
+        self.certificates_info = input; self
     }
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    pub fn get_certificates_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateInfo>> {
+    pub fn get_certificates_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateInfo>> {
         &self.certificates_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
     pub fn build(self) -> crate::operation::list_certificates::ListCertificatesOutput {
         crate::operation::list_certificates::ListCertificatesOutput {
-            next_token: self.next_token,
-            certificates_info: self.certificates_info,
+            next_token: self.next_token
+            ,
+            certificates_info: self.certificates_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

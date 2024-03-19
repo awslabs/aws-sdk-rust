@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetBotChannelAssociations`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_name(impl Into<String>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::bot_name) / [`set_bot_name(Option<String>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::set_bot_name):<br>required: **true**<br><p>The name of the Amazon Lex bot in the association.</p><br>
     ///   - [`bot_alias(impl Into<String>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::bot_alias) / [`set_bot_alias(Option<String>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::set_bot_alias):<br>required: **true**<br><p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of associations to return in the response. The default is 50.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::set_name_contains):<br>required: **false**<br><p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p><br>
-    /// - On success, responds with [`GetBotChannelAssociationsOutput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput) with field(s):
+                            /// - On success, responds with [`GetBotChannelAssociationsOutput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput) with field(s):
     ///   - [`bot_channel_associations(Option<Vec::<BotChannelAssociation>>)`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput::bot_channel_associations): <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput::next_token): <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.</p>
-    /// - On failure, responds with [`SdkError<GetBotChannelAssociationsError>`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError)
+                            /// - On failure, responds with [`SdkError<GetBotChannelAssociationsError>`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsError)
     pub fn get_bot_channel_associations(&self) -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder {
-        crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

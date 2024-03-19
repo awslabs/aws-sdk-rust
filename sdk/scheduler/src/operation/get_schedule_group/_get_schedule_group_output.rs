@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetScheduleGroupOutput {
+pub struct GetScheduleGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schedule group.</p>
@@ -15,33 +15,33 @@ pub struct GetScheduleGroupOutput {
     pub last_modification_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetScheduleGroupOutput {
+impl  GetScheduleGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the schedule group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the state of the schedule group.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduleGroupState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ScheduleGroupState> {
         self.state.as_ref()
     }
     /// <p>The time at which the schedule group was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time at which the schedule group was last modified.</p>
-    pub fn last_modification_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_date.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetScheduleGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetScheduleGroupOutput`](crate::operation::get_schedule_group::GetScheduleGroupOutput).
     pub fn builder() -> crate::operation::get_schedule_group::builders::GetScheduleGroupOutputBuilder {
@@ -68,8 +68,7 @@ impl GetScheduleGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl GetScheduleGroupOutputBuilder {
     }
     /// <p>The name of the schedule group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the schedule group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl GetScheduleGroupOutputBuilder {
     }
     /// <p>Specifies the state of the schedule group.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduleGroupState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Specifies the state of the schedule group.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduleGroupState> {
@@ -110,8 +107,7 @@ impl GetScheduleGroupOutputBuilder {
     }
     /// <p>The time at which the schedule group was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The time at which the schedule group was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,31 +120,36 @@ impl GetScheduleGroupOutputBuilder {
     }
     /// <p>The time at which the schedule group was last modified.</p>
     pub fn set_last_modification_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_date = input;
-        self
+        self.last_modification_date = input; self
     }
     /// <p>The time at which the schedule group was last modified.</p>
     pub fn get_last_modification_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetScheduleGroupOutput`](crate::operation::get_schedule_group::GetScheduleGroupOutput).
     pub fn build(self) -> crate::operation::get_schedule_group::GetScheduleGroupOutput {
         crate::operation::get_schedule_group::GetScheduleGroupOutput {
-            arn: self.arn,
-            name: self.name,
-            state: self.state,
-            creation_date: self.creation_date,
-            last_modification_date: self.last_modification_date,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modification_date: self.last_modification_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

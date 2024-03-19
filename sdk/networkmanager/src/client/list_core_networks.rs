@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCoreNetworks`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`ListCoreNetworksOutput`](crate::operation::list_core_networks::ListCoreNetworksOutput) with field(s):
+                            /// - On success, responds with [`ListCoreNetworksOutput`](crate::operation::list_core_networks::ListCoreNetworksOutput) with field(s):
     ///   - [`core_networks(Option<Vec::<CoreNetworkSummary>>)`](crate::operation::list_core_networks::ListCoreNetworksOutput::core_networks): <p>Describes the list of core networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_networks::ListCoreNetworksOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListCoreNetworksError>`](crate::operation::list_core_networks::ListCoreNetworksError)
+                            /// - On failure, responds with [`SdkError<ListCoreNetworksError>`](crate::operation::list_core_networks::ListCoreNetworksError)
     pub fn list_core_networks(&self) -> crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder {
-        crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

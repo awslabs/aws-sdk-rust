@@ -3,9 +3,9 @@
 /// <p>A summary of a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationSummary {
+pub struct RecommendationSummary  {
     /// <p>An array of objects that describe a recommendation summary.</p>
-    pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
+    pub summaries: ::std::option::Option<::std::vec::Vec::<crate::types::Summary>>,
     /// <p>The resource type that the recommendation summary applies to.</p>
     pub recommendation_resource_type: ::std::option::Option<crate::types::RecommendationSourceType>,
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
@@ -15,36 +15,38 @@ pub struct RecommendationSummary {
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     pub current_performance_risk_ratings: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
     /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
-    pub inferred_workload_savings: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
+    pub inferred_workload_savings: ::std::option::Option<::std::vec::Vec::<crate::types::InferredWorkloadSaving>>,
 }
-impl RecommendationSummary {
+impl  RecommendationSummary  {
     /// <p>An array of objects that describe a recommendation summary.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
-    pub fn summaries(&self) -> &[crate::types::Summary] {
-        self.summaries.as_deref().unwrap_or_default()
+    pub fn summaries(&self) -> & [crate::types::Summary] {
+        self.summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
-    pub fn recommendation_resource_type(&self) -> ::std::option::Option<&crate::types::RecommendationSourceType> {
+    pub fn recommendation_resource_type(&self) -> ::std::option::Option<& crate::types::RecommendationSourceType> {
         self.recommendation_resource_type.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
+    pub fn savings_opportunity(&self) -> ::std::option::Option<& crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
-    pub fn current_performance_risk_ratings(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRiskRatings> {
+    pub fn current_performance_risk_ratings(&self) -> ::std::option::Option<& crate::types::CurrentPerformanceRiskRatings> {
         self.current_performance_risk_ratings.as_ref()
     }
     /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_savings.is_none()`.
-    pub fn inferred_workload_savings(&self) -> &[crate::types::InferredWorkloadSaving] {
-        self.inferred_workload_savings.as_deref().unwrap_or_default()
+    pub fn inferred_workload_savings(&self) -> & [crate::types::InferredWorkloadSaving] {
+        self.inferred_workload_savings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RecommendationSummary {
@@ -58,12 +60,12 @@ impl RecommendationSummary {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationSummaryBuilder {
-    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec::<crate::types::Summary>>,
     pub(crate) recommendation_resource_type: ::std::option::Option<crate::types::RecommendationSourceType>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     pub(crate) current_performance_risk_ratings: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
-    pub(crate) inferred_workload_savings: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
+    pub(crate) inferred_workload_savings: ::std::option::Option<::std::vec::Vec::<crate::types::InferredWorkloadSaving>>,
 }
 impl RecommendationSummaryBuilder {
     /// Appends an item to `summaries`.
@@ -73,17 +75,16 @@ impl RecommendationSummaryBuilder {
     /// <p>An array of objects that describe a recommendation summary.</p>
     pub fn summaries(mut self, input: crate::types::Summary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
-        v.push(input);
-        self.summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe a recommendation summary.</p>
-    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>) -> Self {
-        self.summaries = input;
-        self
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Summary>>) -> Self {
+        self.summaries = input; self
     }
     /// <p>An array of objects that describe a recommendation summary.</p>
-    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Summary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Summary>> {
         &self.summaries
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
@@ -93,8 +94,7 @@ impl RecommendationSummaryBuilder {
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
     pub fn set_recommendation_resource_type(mut self, input: ::std::option::Option<crate::types::RecommendationSourceType>) -> Self {
-        self.recommendation_resource_type = input;
-        self
+        self.recommendation_resource_type = input; self
     }
     /// <p>The resource type that the recommendation summary applies to.</p>
     pub fn get_recommendation_resource_type(&self) -> &::std::option::Option<crate::types::RecommendationSourceType> {
@@ -107,8 +107,7 @@ impl RecommendationSummaryBuilder {
     }
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl RecommendationSummaryBuilder {
     }
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn set_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
-        self.savings_opportunity = input;
-        self
+        self.savings_opportunity = input; self
     }
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
@@ -135,8 +133,7 @@ impl RecommendationSummaryBuilder {
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     pub fn set_current_performance_risk_ratings(mut self, input: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>) -> Self {
-        self.current_performance_risk_ratings = input;
-        self
+        self.current_performance_risk_ratings = input; self
     }
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
     pub fn get_current_performance_risk_ratings(&self) -> &::std::option::Option<crate::types::CurrentPerformanceRiskRatings> {
@@ -149,28 +146,34 @@ impl RecommendationSummaryBuilder {
     /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
     pub fn inferred_workload_savings(mut self, input: crate::types::InferredWorkloadSaving) -> Self {
         let mut v = self.inferred_workload_savings.unwrap_or_default();
-        v.push(input);
-        self.inferred_workload_savings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inferred_workload_savings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
-    pub fn set_inferred_workload_savings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>) -> Self {
-        self.inferred_workload_savings = input;
-        self
+    pub fn set_inferred_workload_savings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InferredWorkloadSaving>>) -> Self {
+        self.inferred_workload_savings = input; self
     }
     /// <p>An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the instances that run inferred workload types.</p>
-    pub fn get_inferred_workload_savings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>> {
+    pub fn get_inferred_workload_savings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InferredWorkloadSaving>> {
         &self.inferred_workload_savings
     }
     /// Consumes the builder and constructs a [`RecommendationSummary`](crate::types::RecommendationSummary).
     pub fn build(self) -> crate::types::RecommendationSummary {
         crate::types::RecommendationSummary {
-            summaries: self.summaries,
-            recommendation_resource_type: self.recommendation_resource_type,
-            account_id: self.account_id,
-            savings_opportunity: self.savings_opportunity,
-            current_performance_risk_ratings: self.current_performance_risk_ratings,
-            inferred_workload_savings: self.inferred_workload_savings,
+            summaries: self.summaries
+            ,
+            recommendation_resource_type: self.recommendation_resource_type
+            ,
+            account_id: self.account_id
+            ,
+            savings_opportunity: self.savings_opportunity
+            ,
+            current_performance_risk_ratings: self.current_performance_risk_ratings
+            ,
+            inferred_workload_savings: self.inferred_workload_savings
+            ,
         }
     }
 }
+

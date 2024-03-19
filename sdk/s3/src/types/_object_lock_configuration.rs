@@ -3,19 +3,19 @@
 /// <p>The container element for Object Lock configuration parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObjectLockConfiguration {
+pub struct ObjectLockConfiguration  {
     /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket.</p>
     pub object_lock_enabled: ::std::option::Option<crate::types::ObjectLockEnabled>,
     /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub rule: ::std::option::Option<crate::types::ObjectLockRule>,
 }
-impl ObjectLockConfiguration {
+impl  ObjectLockConfiguration  {
     /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket.</p>
-    pub fn object_lock_enabled(&self) -> ::std::option::Option<&crate::types::ObjectLockEnabled> {
+    pub fn object_lock_enabled(&self) -> ::std::option::Option<& crate::types::ObjectLockEnabled> {
         self.object_lock_enabled.as_ref()
     }
     /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::ObjectLockRule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::ObjectLockRule> {
         self.rule.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ObjectLockConfigurationBuilder {
     }
     /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket.</p>
     pub fn set_object_lock_enabled(mut self, input: ::std::option::Option<crate::types::ObjectLockEnabled>) -> Self {
-        self.object_lock_enabled = input;
-        self
+        self.object_lock_enabled = input; self
     }
     /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket.</p>
     pub fn get_object_lock_enabled(&self) -> &::std::option::Option<crate::types::ObjectLockEnabled> {
@@ -55,8 +54,7 @@ impl ObjectLockConfigurationBuilder {
     }
     /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::ObjectLockRule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::ObjectLockRule> {
@@ -65,8 +63,11 @@ impl ObjectLockConfigurationBuilder {
     /// Consumes the builder and constructs a [`ObjectLockConfiguration`](crate::types::ObjectLockConfiguration).
     pub fn build(self) -> crate::types::ObjectLockConfiguration {
         crate::types::ObjectLockConfiguration {
-            object_lock_enabled: self.object_lock_enabled,
-            rule: self.rule,
+            object_lock_enabled: self.object_lock_enabled
+            ,
+            rule: self.rule
+            ,
         }
     }
 }
+

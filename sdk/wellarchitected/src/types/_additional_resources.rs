@@ -4,22 +4,23 @@
 /// <p>This field does not apply to Amazon Web Services official lenses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdditionalResources {
+pub struct AdditionalResources  {
     /// <p>Type of additional resource for a custom lens.</p>
     pub r#type: ::std::option::Option<crate::types::AdditionalResourceType>,
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
-    pub content: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>>,
+    pub content: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceContent>>,
 }
-impl AdditionalResources {
+impl  AdditionalResources  {
     /// <p>Type of additional resource for a custom lens.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AdditionalResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AdditionalResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
-    pub fn content(&self) -> &[crate::types::ChoiceContent] {
-        self.content.as_deref().unwrap_or_default()
+    pub fn content(&self) -> & [crate::types::ChoiceContent] {
+        self.content.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AdditionalResources {
@@ -34,7 +35,7 @@ impl AdditionalResources {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdditionalResourcesBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AdditionalResourceType>,
-    pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>>,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceContent>>,
 }
 impl AdditionalResourcesBuilder {
     /// <p>Type of additional resource for a custom lens.</p>
@@ -44,8 +45,7 @@ impl AdditionalResourcesBuilder {
     }
     /// <p>Type of additional resource for a custom lens.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AdditionalResourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of additional resource for a custom lens.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AdditionalResourceType> {
@@ -58,24 +58,26 @@ impl AdditionalResourcesBuilder {
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
     pub fn content(mut self, input: crate::types::ChoiceContent) -> Self {
         let mut v = self.content.unwrap_or_default();
-        v.push(input);
-        self.content = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.content = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
-    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>>) -> Self {
-        self.content = input;
-        self
+    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceContent>>) -> Self {
+        self.content = input; self
     }
     /// <p>The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.</p>
-    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceContent>> {
+    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChoiceContent>> {
         &self.content
     }
     /// Consumes the builder and constructs a [`AdditionalResources`](crate::types::AdditionalResources).
     pub fn build(self) -> crate::types::AdditionalResources {
         crate::types::AdditionalResources {
-            r#type: self.r#type,
-            content: self.content,
+            r#type: self.r#type
+            ,
+            content: self.content
+            ,
         }
     }
 }
+

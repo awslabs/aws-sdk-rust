@@ -3,7 +3,7 @@
 /// <p>Information about the minimum number of healthy instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MinimumHealthyHosts {
+pub struct MinimumHealthyHosts  {
     /// <p>The minimum healthy instance type:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct MinimumHealthyHosts {
     /// <p>The minimum healthy instance value.</p>
     pub value: i32,
 }
-impl MinimumHealthyHosts {
+impl  MinimumHealthyHosts  {
     /// <p>The minimum healthy instance type:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ impl MinimumHealthyHosts {
     /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MinimumHealthyHostsType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MinimumHealthyHostsType> {
         self.r#type.as_ref()
     }
     /// <p>The minimum healthy instance value.</p>
@@ -81,8 +81,7 @@ impl MinimumHealthyHostsBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MinimumHealthyHostsType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The minimum healthy instance type:</p>
     /// <ul>
@@ -105,8 +104,7 @@ impl MinimumHealthyHostsBuilder {
     }
     /// <p>The minimum healthy instance value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The minimum healthy instance value.</p>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
@@ -115,8 +113,12 @@ impl MinimumHealthyHostsBuilder {
     /// Consumes the builder and constructs a [`MinimumHealthyHosts`](crate::types::MinimumHealthyHosts).
     pub fn build(self) -> crate::types::MinimumHealthyHosts {
         crate::types::MinimumHealthyHosts {
-            r#type: self.r#type,
-            value: self.value.unwrap_or_default(),
+            r#type: self.r#type
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

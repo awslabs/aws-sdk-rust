@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProbeInput {
+pub struct CreateProbeInput  {
     /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the details of an individual probe for a monitor.</p>
@@ -10,23 +10,23 @@ pub struct CreateProbeInput {
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value pairs created and assigned to the probe.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateProbeInput {
+impl  CreateProbeInput  {
     /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>Describes the details of an individual probe for a monitor.</p>
-    pub fn probe(&self) -> ::std::option::Option<&crate::types::ProbeInput> {
+    pub fn probe(&self) -> ::std::option::Option<& crate::types::ProbeInput> {
         self.probe.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The list of key-value pairs created and assigned to the probe.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -44,7 +44,7 @@ pub struct CreateProbeInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) probe: ::std::option::Option<crate::types::ProbeInput>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateProbeInputBuilder {
     /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
@@ -55,8 +55,7 @@ impl CreateProbeInputBuilder {
     }
     /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateProbeInputBuilder {
     }
     /// <p>Describes the details of an individual probe for a monitor.</p>
     pub fn set_probe(mut self, input: ::std::option::Option<crate::types::ProbeInput>) -> Self {
-        self.probe = input;
-        self
+        self.probe = input; self
     }
     /// <p>Describes the details of an individual probe for a monitor.</p>
     pub fn get_probe(&self) -> &::std::option::Option<crate::types::ProbeInput> {
@@ -84,8 +82,7 @@ impl CreateProbeInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,26 +95,32 @@ impl CreateProbeInputBuilder {
     /// <p>The list of key-value pairs created and assigned to the probe.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of key-value pairs created and assigned to the probe.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value pairs created and assigned to the probe.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProbeInput`](crate::operation::create_probe::CreateProbeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_probe::CreateProbeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_probe::CreateProbeInput {
-            monitor_name: self.monitor_name,
-            probe: self.probe,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_probe::CreateProbeInput {
+                monitor_name: self.monitor_name
+                ,
+                probe: self.probe
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

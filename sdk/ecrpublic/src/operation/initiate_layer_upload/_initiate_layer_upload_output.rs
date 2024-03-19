@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InitiateLayerUploadOutput {
+pub struct InitiateLayerUploadOutput  {
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
     pub part_size: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl InitiateLayerUploadOutput {
+impl  InitiateLayerUploadOutput  {
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
@@ -20,10 +20,10 @@ impl InitiateLayerUploadOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for InitiateLayerUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InitiateLayerUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateLayerUploadOutput`](crate::operation::initiate_layer_upload::InitiateLayerUploadOutput).
     pub fn builder() -> crate::operation::initiate_layer_upload::builders::InitiateLayerUploadOutputBuilder {
@@ -47,8 +47,7 @@ impl InitiateLayerUploadOutputBuilder {
     }
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl InitiateLayerUploadOutputBuilder {
     }
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
     pub fn set_part_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.part_size = input;
-        self
+        self.part_size = input; self
     }
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
     pub fn get_part_size(&self) -> &::std::option::Option<i64> {
         &self.part_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InitiateLayerUploadOutput`](crate::operation::initiate_layer_upload::InitiateLayerUploadOutput).
     pub fn build(self) -> crate::operation::initiate_layer_upload::InitiateLayerUploadOutput {
         crate::operation::initiate_layer_upload::InitiateLayerUploadOutput {
-            upload_id: self.upload_id,
-            part_size: self.part_size,
+            upload_id: self.upload_id
+            ,
+            part_size: self.part_size
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

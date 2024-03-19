@@ -3,26 +3,25 @@
 /// <p>Filters the response from the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntentFilter {
+pub struct IntentFilter  {
     /// <p>The name of the field to use for the filter.</p>
     pub name: crate::types::IntentFilterName,
     /// <p>The value to use for the filter.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
     pub operator: crate::types::IntentFilterOperator,
 }
-impl IntentFilter {
+impl  IntentFilter  {
     /// <p>The name of the field to use for the filter.</p>
-    pub fn name(&self) -> &crate::types::IntentFilterName {
+    pub fn name(&self) -> & crate::types::IntentFilterName {
         &self.name
     }
     /// <p>The value to use for the filter.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> &crate::types::IntentFilterOperator {
+    pub fn operator(&self) -> & crate::types::IntentFilterOperator {
         &self.operator
     }
 }
@@ -38,7 +37,7 @@ impl IntentFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::IntentFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operator: ::std::option::Option<crate::types::IntentFilterOperator>,
 }
 impl IntentFilterBuilder {
@@ -50,8 +49,7 @@ impl IntentFilterBuilder {
     }
     /// <p>The name of the field to use for the filter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::IntentFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the field to use for the filter.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::IntentFilterName> {
@@ -64,17 +62,16 @@ impl IntentFilterBuilder {
     /// <p>The value to use for the filter.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value to use for the filter.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value to use for the filter.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
@@ -85,8 +82,7 @@ impl IntentFilterBuilder {
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::IntentFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::IntentFilterOperator> {
@@ -98,25 +94,25 @@ impl IntentFilterBuilder {
     /// - [`values`](crate::types::builders::IntentFilterBuilder::values)
     /// - [`operator`](crate::types::builders::IntentFilterBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::IntentFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IntentFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building IntentFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building IntentFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building IntentFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IntentFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building IntentFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building IntentFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building IntentFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

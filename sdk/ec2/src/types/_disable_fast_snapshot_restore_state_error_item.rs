@@ -3,19 +3,19 @@
 /// <p>Contains information about an error that occurred when disabling fast snapshot restores.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableFastSnapshotRestoreStateErrorItem {
+pub struct DisableFastSnapshotRestoreStateErrorItem  {
     /// <p>The Availability Zone.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The error.</p>
     pub error: ::std::option::Option<crate::types::DisableFastSnapshotRestoreStateError>,
 }
-impl DisableFastSnapshotRestoreStateErrorItem {
+impl  DisableFastSnapshotRestoreStateErrorItem  {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::DisableFastSnapshotRestoreStateError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::DisableFastSnapshotRestoreStateError> {
         self.error.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DisableFastSnapshotRestoreStateErrorItemBuilder {
     }
     /// <p>The Availability Zone.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DisableFastSnapshotRestoreStateErrorItemBuilder {
     }
     /// <p>The error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::DisableFastSnapshotRestoreStateError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::DisableFastSnapshotRestoreStateError> {
@@ -65,8 +63,11 @@ impl DisableFastSnapshotRestoreStateErrorItemBuilder {
     /// Consumes the builder and constructs a [`DisableFastSnapshotRestoreStateErrorItem`](crate::types::DisableFastSnapshotRestoreStateErrorItem).
     pub fn build(self) -> crate::types::DisableFastSnapshotRestoreStateErrorItem {
         crate::types::DisableFastSnapshotRestoreStateErrorItem {
-            availability_zone: self.availability_zone,
-            error: self.error,
+            availability_zone: self.availability_zone
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

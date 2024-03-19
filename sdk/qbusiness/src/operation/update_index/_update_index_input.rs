@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIndexInput {
+pub struct UpdateIndexInput  {
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q index.</p>
@@ -14,34 +14,35 @@ pub struct UpdateIndexInput {
     /// <p>The storage capacity units you want to provision for your Amazon Q index. You can add and remove capacity to fit your usage needs.</p>
     pub capacity_configuration: ::std::option::Option<crate::types::IndexCapacityConfiguration>,
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
-    pub document_attribute_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>>,
+    pub document_attribute_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttributeConfiguration>>,
 }
-impl UpdateIndexInput {
+impl  UpdateIndexInput  {
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q index.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The name of the Amazon Q index.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the Amazon Q index.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The storage capacity units you want to provision for your Amazon Q index. You can add and remove capacity to fit your usage needs.</p>
-    pub fn capacity_configuration(&self) -> ::std::option::Option<&crate::types::IndexCapacityConfiguration> {
+    pub fn capacity_configuration(&self) -> ::std::option::Option<& crate::types::IndexCapacityConfiguration> {
         self.capacity_configuration.as_ref()
     }
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_attribute_configurations.is_none()`.
-    pub fn document_attribute_configurations(&self) -> &[crate::types::DocumentAttributeConfiguration] {
-        self.document_attribute_configurations.as_deref().unwrap_or_default()
+    pub fn document_attribute_configurations(&self) -> & [crate::types::DocumentAttributeConfiguration] {
+        self.document_attribute_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateIndexInput {
@@ -60,7 +61,7 @@ pub struct UpdateIndexInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_configuration: ::std::option::Option<crate::types::IndexCapacityConfiguration>,
-    pub(crate) document_attribute_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>>,
+    pub(crate) document_attribute_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttributeConfiguration>>,
 }
 impl UpdateIndexInputBuilder {
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
@@ -71,8 +72,7 @@ impl UpdateIndexInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl UpdateIndexInputBuilder {
     }
     /// <p>The identifier of the Amazon Q index.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the Amazon Q index.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl UpdateIndexInputBuilder {
     }
     /// <p>The name of the Amazon Q index.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the Amazon Q index.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl UpdateIndexInputBuilder {
     }
     /// <p>The description of the Amazon Q index.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Amazon Q index.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +125,7 @@ impl UpdateIndexInputBuilder {
     }
     /// <p>The storage capacity units you want to provision for your Amazon Q index. You can add and remove capacity to fit your usage needs.</p>
     pub fn set_capacity_configuration(mut self, input: ::std::option::Option<crate::types::IndexCapacityConfiguration>) -> Self {
-        self.capacity_configuration = input;
-        self
+        self.capacity_configuration = input; self
     }
     /// <p>The storage capacity units you want to provision for your Amazon Q index. You can add and remove capacity to fit your usage needs.</p>
     pub fn get_capacity_configuration(&self) -> &::std::option::Option<crate::types::IndexCapacityConfiguration> {
@@ -142,31 +138,36 @@ impl UpdateIndexInputBuilder {
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
     pub fn document_attribute_configurations(mut self, input: crate::types::DocumentAttributeConfiguration) -> Self {
         let mut v = self.document_attribute_configurations.unwrap_or_default();
-        v.push(input);
-        self.document_attribute_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.document_attribute_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
-    pub fn set_document_attribute_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>>,
-    ) -> Self {
-        self.document_attribute_configurations = input;
-        self
+    pub fn set_document_attribute_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttributeConfiguration>>) -> Self {
+        self.document_attribute_configurations = input; self
     }
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
-    pub fn get_document_attribute_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>> {
+    pub fn get_document_attribute_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttributeConfiguration>> {
         &self.document_attribute_configurations
     }
     /// Consumes the builder and constructs a [`UpdateIndexInput`](crate::operation::update_index::UpdateIndexInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_index::UpdateIndexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_index::UpdateIndexInput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-            display_name: self.display_name,
-            description: self.description,
-            capacity_configuration: self.capacity_configuration,
-            document_attribute_configurations: self.document_attribute_configurations,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_index::UpdateIndexInput {
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                capacity_configuration: self.capacity_configuration
+                ,
+                document_attribute_configurations: self.document_attribute_configurations
+                ,
+            }
+        )
     }
 }
+

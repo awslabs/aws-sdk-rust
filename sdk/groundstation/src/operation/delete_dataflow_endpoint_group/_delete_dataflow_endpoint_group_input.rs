@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDataflowEndpointGroupInput {
+pub struct DeleteDataflowEndpointGroupInput  {
     /// <p>UUID of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDataflowEndpointGroupInput {
+impl  DeleteDataflowEndpointGroupInput  {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_id(&self) -> ::std::option::Option<& str> {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteDataflowEndpointGroupInputBuilder {
     }
     /// <p>UUID of a dataflow endpoint group.</p>
     pub fn set_dataflow_endpoint_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataflow_endpoint_group_id = input;
-        self
+        self.dataflow_endpoint_group_id = input; self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
     pub fn get_dataflow_endpoint_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataflow_endpoint_group_id
     }
     /// Consumes the builder and constructs a [`DeleteDataflowEndpointGroupInput`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput {
-            dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput {
+                dataflow_endpoint_group_id: self.dataflow_endpoint_group_id
+                ,
+            }
+        )
     }
 }
+

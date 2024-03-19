@@ -4,19 +4,19 @@
 /// <p>For example, if it's the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CalculatedSpend {
+pub struct CalculatedSpend  {
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you used.</p>
     pub actual_spend: ::std::option::Option<crate::types::Spend>,
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you're forecasted to use.</p>
     pub forecasted_spend: ::std::option::Option<crate::types::Spend>,
 }
-impl CalculatedSpend {
+impl  CalculatedSpend  {
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you used.</p>
-    pub fn actual_spend(&self) -> ::std::option::Option<&crate::types::Spend> {
+    pub fn actual_spend(&self) -> ::std::option::Option<& crate::types::Spend> {
         self.actual_spend.as_ref()
     }
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you're forecasted to use.</p>
-    pub fn forecasted_spend(&self) -> ::std::option::Option<&crate::types::Spend> {
+    pub fn forecasted_spend(&self) -> ::std::option::Option<& crate::types::Spend> {
         self.forecasted_spend.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl CalculatedSpendBuilder {
     }
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you used.</p>
     pub fn set_actual_spend(mut self, input: ::std::option::Option<crate::types::Spend>) -> Self {
-        self.actual_spend = input;
-        self
+        self.actual_spend = input; self
     }
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you used.</p>
     pub fn get_actual_spend(&self) -> &::std::option::Option<crate::types::Spend> {
@@ -57,8 +56,7 @@ impl CalculatedSpendBuilder {
     }
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you're forecasted to use.</p>
     pub fn set_forecasted_spend(mut self, input: ::std::option::Option<crate::types::Spend>) -> Self {
-        self.forecasted_spend = input;
-        self
+        self.forecasted_spend = input; self
     }
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you're forecasted to use.</p>
     pub fn get_forecasted_spend(&self) -> &::std::option::Option<crate::types::Spend> {
@@ -67,8 +65,11 @@ impl CalculatedSpendBuilder {
     /// Consumes the builder and constructs a [`CalculatedSpend`](crate::types::CalculatedSpend).
     pub fn build(self) -> crate::types::CalculatedSpend {
         crate::types::CalculatedSpend {
-            actual_spend: self.actual_spend,
-            forecasted_spend: self.forecasted_spend,
+            actual_spend: self.actual_spend
+            ,
+            forecasted_spend: self.forecasted_spend
+            ,
         }
     }
 }
+

@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListContactFlowsInput {
+pub struct ListContactFlowsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of flow.</p>
-    pub contact_flow_types: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>>,
+    pub contact_flow_types: ::std::option::Option<::std::vec::Vec::<crate::types::ContactFlowType>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListContactFlowsInput {
+impl  ListContactFlowsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The type of flow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_flow_types.is_none()`.
-    pub fn contact_flow_types(&self) -> &[crate::types::ContactFlowType] {
-        self.contact_flow_types.as_deref().unwrap_or_default()
+    pub fn contact_flow_types(&self) -> & [crate::types::ContactFlowType] {
+        self.contact_flow_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
@@ -44,7 +45,7 @@ impl ListContactFlowsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactFlowsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) contact_flow_types: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>>,
+    pub(crate) contact_flow_types: ::std::option::Option<::std::vec::Vec::<crate::types::ContactFlowType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl ListContactFlowsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl ListContactFlowsInputBuilder {
     /// <p>The type of flow.</p>
     pub fn contact_flow_types(mut self, input: crate::types::ContactFlowType) -> Self {
         let mut v = self.contact_flow_types.unwrap_or_default();
-        v.push(input);
-        self.contact_flow_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.contact_flow_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of flow.</p>
-    pub fn set_contact_flow_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>>) -> Self {
-        self.contact_flow_types = input;
-        self
+    pub fn set_contact_flow_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContactFlowType>>) -> Self {
+        self.contact_flow_types = input; self
     }
     /// <p>The type of flow.</p>
-    pub fn get_contact_flow_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>> {
+    pub fn get_contact_flow_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContactFlowType>> {
         &self.contact_flow_types
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -91,8 +90,7 @@ impl ListContactFlowsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,22 +103,26 @@ impl ListContactFlowsInputBuilder {
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page. The default MaxResult size is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListContactFlowsInput`](crate::operation::list_contact_flows::ListContactFlowsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_contact_flows::ListContactFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_contact_flows::ListContactFlowsInput {
-            instance_id: self.instance_id,
-            contact_flow_types: self.contact_flow_types,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_contact_flows::ListContactFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_contact_flows::ListContactFlowsInput {
+                instance_id: self.instance_id
+                ,
+                contact_flow_types: self.contact_flow_types
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

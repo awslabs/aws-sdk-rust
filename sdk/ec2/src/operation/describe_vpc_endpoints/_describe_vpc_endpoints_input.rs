@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcEndpointsInput {
+pub struct DescribeVpcEndpointsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the VPC endpoints.</p>
-    pub vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -15,10 +15,10 @@ pub struct DescribeVpcEndpointsInput {
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -32,23 +32,24 @@ pub struct DescribeVpcEndpointsInput {
     /// <li>
     /// <p><code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
     /// <p>Constraint: If the value is greater than 1,000, we return only 1,000 items.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeVpcEndpointsInput {
+impl  DescribeVpcEndpointsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoint_ids.is_none()`.
-    pub fn vpc_endpoint_ids(&self) -> &[::std::string::String] {
-        self.vpc_endpoint_ids.as_deref().unwrap_or_default()
+    pub fn vpc_endpoint_ids(&self) -> & [::std::string::String] {
+        self.vpc_endpoint_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -58,10 +59,10 @@ impl DescribeVpcEndpointsInput {
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -75,10 +76,11 @@ impl DescribeVpcEndpointsInput {
     /// <li>
     /// <p><code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
     /// <p>Constraint: If the value is greater than 1,000, we return only 1,000 items.</p>
@@ -86,7 +88,7 @@ impl DescribeVpcEndpointsInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -102,8 +104,8 @@ impl DescribeVpcEndpointsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -115,8 +117,7 @@ impl DescribeVpcEndpointsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -129,17 +130,16 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <p>The IDs of the VPC endpoints.</p>
     pub fn vpc_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_endpoint_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_endpoint_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_endpoint_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_endpoint_ids = input;
-        self
+    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_endpoint_ids = input; self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_endpoint_ids
     }
     /// Appends an item to `filters`.
@@ -154,10 +154,10 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -173,9 +173,9 @@ impl DescribeVpcEndpointsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -185,10 +185,10 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -202,9 +202,8 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <li>
     /// <p><code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -214,10 +213,10 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <p><code>service-name</code> - The name of the service.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -231,7 +230,7 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <li>
     /// <p><code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -243,8 +242,7 @@ impl DescribeVpcEndpointsInputBuilder {
     /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
     /// <p>Constraint: If the value is greater than 1,000, we return only 1,000 items.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
     /// <p>Constraint: If the value is greater than 1,000, we return only 1,000 items.</p>
@@ -258,24 +256,28 @@ impl DescribeVpcEndpointsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a prior call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsInput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput {
-            dry_run: self.dry_run,
-            vpc_endpoint_ids: self.vpc_endpoint_ids,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput {
+                dry_run: self.dry_run
+                ,
+                vpc_endpoint_ids: self.vpc_endpoint_ids
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The search criteria to be used to search tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceTagsSearchCriteria {
+pub struct ResourceTagsSearchCriteria  {
     /// <p>The search criteria to be used to return tags.</p>
     pub tag_search_condition: ::std::option::Option<crate::types::TagSearchCondition>,
 }
-impl ResourceTagsSearchCriteria {
+impl  ResourceTagsSearchCriteria  {
     /// <p>The search criteria to be used to return tags.</p>
-    pub fn tag_search_condition(&self) -> ::std::option::Option<&crate::types::TagSearchCondition> {
+    pub fn tag_search_condition(&self) -> ::std::option::Option<& crate::types::TagSearchCondition> {
         self.tag_search_condition.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ResourceTagsSearchCriteriaBuilder {
     }
     /// <p>The search criteria to be used to return tags.</p>
     pub fn set_tag_search_condition(mut self, input: ::std::option::Option<crate::types::TagSearchCondition>) -> Self {
-        self.tag_search_condition = input;
-        self
+        self.tag_search_condition = input; self
     }
     /// <p>The search criteria to be used to return tags.</p>
     pub fn get_tag_search_condition(&self) -> &::std::option::Option<crate::types::TagSearchCondition> {
@@ -44,7 +43,9 @@ impl ResourceTagsSearchCriteriaBuilder {
     /// Consumes the builder and constructs a [`ResourceTagsSearchCriteria`](crate::types::ResourceTagsSearchCriteria).
     pub fn build(self) -> crate::types::ResourceTagsSearchCriteria {
         crate::types::ResourceTagsSearchCriteria {
-            tag_search_condition: self.tag_search_condition,
+            tag_search_condition: self.tag_search_condition
+            ,
         }
     }
 }
+

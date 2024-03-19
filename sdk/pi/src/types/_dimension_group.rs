@@ -15,7 +15,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionGroup {
+pub struct DimensionGroup  {
     /// <p>The name of the dimension group. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -142,11 +142,11 @@ pub struct DimensionGroup {
     /// <li>
     /// <p><code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p></li>
     /// </ul>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DimensionGroup {
+impl  DimensionGroup  {
     /// <p>The name of the dimension group. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -196,9 +196,8 @@ impl DimensionGroup {
     /// <li>
     /// <p><code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p></li>
     /// </ul>
-    pub fn group(&self) -> &str {
-        use std::ops::Deref;
-        self.group.deref()
+    pub fn group(&self) -> & str {
+        use std::ops::Deref; self.group.deref()
     }
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
@@ -276,10 +275,11 @@ impl DimensionGroup {
     /// <li>
     /// <p><code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[::std::string::String] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [::std::string::String] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -298,7 +298,7 @@ impl DimensionGroup {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionGroupBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl DimensionGroupBuilder {
@@ -406,8 +406,7 @@ impl DimensionGroupBuilder {
     /// <p><code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p></li>
     /// </ul>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The name of the dimension group. Valid values are as follows:</p>
     /// <ul>
@@ -543,9 +542,9 @@ impl DimensionGroupBuilder {
     /// </ul>
     pub fn dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input.into());
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
@@ -623,9 +622,8 @@ impl DimensionGroupBuilder {
     /// <li>
     /// <p><code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p></li>
     /// </ul>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
@@ -703,7 +701,7 @@ impl DimensionGroupBuilder {
     /// <li>
     /// <p><code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p></li>
     /// </ul>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dimensions
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
@@ -713,8 +711,7 @@ impl DimensionGroupBuilder {
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -724,15 +721,19 @@ impl DimensionGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`group`](crate::types::builders::DimensionGroupBuilder::group)
     pub fn build(self) -> ::std::result::Result<crate::types::DimensionGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DimensionGroup {
-            group: self.group.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group",
-                    "group was not specified but it is required when building DimensionGroup",
-                )
-            })?,
-            dimensions: self.dimensions,
-            limit: self.limit,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DimensionGroup {
+                group: self.group
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group", "group was not specified but it is required when building DimensionGroup")
+                    )?
+                ,
+                dimensions: self.dimensions
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

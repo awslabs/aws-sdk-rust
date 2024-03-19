@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSimulationApplicationsInput {
+pub struct ListSimulationApplicationsInput  {
     /// <p>The version qualifier of the simulation application.</p>
     pub version_qualifier: ::std::option::Option<::std::string::String>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
@@ -11,15 +11,15 @@ pub struct ListSimulationApplicationsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
 }
-impl ListSimulationApplicationsInput {
+impl  ListSimulationApplicationsInput  {
     /// <p>The version qualifier of the simulation application.</p>
-    pub fn version_qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn version_qualifier(&self) -> ::std::option::Option<& str> {
         self.version_qualifier.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -28,10 +28,11 @@ impl ListSimulationApplicationsInput {
     }
     /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListSimulationApplicationsInput {
@@ -48,7 +49,7 @@ pub struct ListSimulationApplicationsInputBuilder {
     pub(crate) version_qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
 }
 impl ListSimulationApplicationsInputBuilder {
     /// <p>The version qualifier of the simulation application.</p>
@@ -58,8 +59,7 @@ impl ListSimulationApplicationsInputBuilder {
     }
     /// <p>The version qualifier of the simulation application.</p>
     pub fn set_version_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_qualifier = input;
-        self
+        self.version_qualifier = input; self
     }
     /// <p>The version qualifier of the simulation application.</p>
     pub fn get_version_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl ListSimulationApplicationsInputBuilder {
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl ListSimulationApplicationsInputBuilder {
     }
     /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -101,33 +99,34 @@ impl ListSimulationApplicationsInputBuilder {
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListSimulationApplicationsInput`](crate::operation::list_simulation_applications::ListSimulationApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_simulation_applications::ListSimulationApplicationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_simulation_applications::ListSimulationApplicationsInput {
-            version_qualifier: self.version_qualifier,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_simulation_applications::ListSimulationApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_simulation_applications::ListSimulationApplicationsInput {
+                version_qualifier: self.version_qualifier
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

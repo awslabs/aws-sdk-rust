@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterLogEventsInput {
+pub struct FilterLogEventsInput  {
     /// <p>The name of the log group to search.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
@@ -13,7 +13,7 @@ pub struct FilterLogEventsInput {
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results to only logs from the log streams in this list.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    pub log_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_stream_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     pub log_stream_name_prefix: ::std::option::Option<::std::string::String>,
@@ -30,37 +30,36 @@ pub struct FilterLogEventsInput {
     pub limit: ::std::option::Option<i32>,
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
     pub interleaved: ::std::option::Option<bool>,
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
     pub unmask: ::std::option::Option<bool>,
 }
-impl FilterLogEventsInput {
+impl  FilterLogEventsInput  {
     /// <p>The name of the log group to search.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
-    pub fn log_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_identifier(&self) -> ::std::option::Option<& str> {
         self.log_group_identifier.as_deref()
     }
     /// <p>Filters the results to only logs from the log streams in this list.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_stream_names.is_none()`.
-    pub fn log_stream_names(&self) -> &[::std::string::String] {
-        self.log_stream_names.as_deref().unwrap_or_default()
+    pub fn log_stream_names(&self) -> & [::std::string::String] {
+        self.log_stream_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    pub fn log_stream_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_name_prefix(&self) -> ::std::option::Option<& str> {
         self.log_stream_name_prefix.as_deref()
     }
     /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
@@ -73,11 +72,11 @@ impl FilterLogEventsInput {
     }
     /// <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
     /// <p>If not provided, all the events are matched.</p>
-    pub fn filter_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn filter_pattern(&self) -> ::std::option::Option<& str> {
         self.filter_pattern.as_deref()
     }
     /// <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of events to return. The default is 10,000 events.</p>
@@ -86,9 +85,7 @@ impl FilterLogEventsInput {
     }
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
     pub fn interleaved(&self) -> ::std::option::Option<bool> {
         self.interleaved
     }
@@ -111,7 +108,7 @@ impl FilterLogEventsInput {
 pub struct FilterLogEventsInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) log_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_stream_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) log_stream_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<i64>,
     pub(crate) end_time: ::std::option::Option<i64>,
@@ -133,8 +130,7 @@ impl FilterLogEventsInputBuilder {
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group to search.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
@@ -153,8 +149,7 @@ impl FilterLogEventsInputBuilder {
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
     pub fn set_log_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_identifier = input;
-        self
+        self.log_group_identifier = input; self
     }
     /// <p>Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
@@ -170,19 +165,18 @@ impl FilterLogEventsInputBuilder {
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     pub fn log_stream_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_stream_names.unwrap_or_default();
-        v.push(input.into());
-        self.log_stream_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_stream_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the results to only logs from the log streams in this list.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    pub fn set_log_stream_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_stream_names = input;
-        self
+    pub fn set_log_stream_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_stream_names = input; self
     }
     /// <p>Filters the results to only logs from the log streams in this list.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
-    pub fn get_log_stream_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_stream_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_stream_names
     }
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
@@ -194,8 +188,7 @@ impl FilterLogEventsInputBuilder {
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     pub fn set_log_stream_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream_name_prefix = input;
-        self
+        self.log_stream_name_prefix = input; self
     }
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
@@ -209,8 +202,7 @@ impl FilterLogEventsInputBuilder {
     }
     /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
@@ -223,8 +215,7 @@ impl FilterLogEventsInputBuilder {
     }
     /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<i64> {
@@ -239,8 +230,7 @@ impl FilterLogEventsInputBuilder {
     /// <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
     /// <p>If not provided, all the events are matched.</p>
     pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_pattern = input;
-        self
+        self.filter_pattern = input; self
     }
     /// <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
     /// <p>If not provided, all the events are matched.</p>
@@ -254,8 +244,7 @@ impl FilterLogEventsInputBuilder {
     }
     /// <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of events to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +257,7 @@ impl FilterLogEventsInputBuilder {
     }
     /// <p>The maximum number of events to return. The default is 10,000 events.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of events to return. The default is 10,000 events.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -277,27 +265,20 @@ impl FilterLogEventsInputBuilder {
     }
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
     pub fn interleaved(mut self, input: bool) -> Self {
         self.interleaved = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
     pub fn set_interleaved(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.interleaved = input;
-        self
+        self.interleaved = input; self
     }
     /// <p>If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
     /// <p><b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
     pub fn get_interleaved(&self) -> &::std::option::Option<bool> {
         &self.interleaved
     }
@@ -310,8 +291,7 @@ impl FilterLogEventsInputBuilder {
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
     pub fn set_unmask(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.unmask = input;
-        self
+        self.unmask = input; self
     }
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
@@ -319,21 +299,33 @@ impl FilterLogEventsInputBuilder {
         &self.unmask
     }
     /// Consumes the builder and constructs a [`FilterLogEventsInput`](crate::operation::filter_log_events::FilterLogEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::filter_log_events::FilterLogEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::filter_log_events::FilterLogEventsInput {
-            log_group_name: self.log_group_name,
-            log_group_identifier: self.log_group_identifier,
-            log_stream_names: self.log_stream_names,
-            log_stream_name_prefix: self.log_stream_name_prefix,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            filter_pattern: self.filter_pattern,
-            next_token: self.next_token,
-            limit: self.limit,
-            interleaved: self.interleaved,
-            unmask: self.unmask,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::filter_log_events::FilterLogEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::filter_log_events::FilterLogEventsInput {
+                log_group_name: self.log_group_name
+                ,
+                log_group_identifier: self.log_group_identifier
+                ,
+                log_stream_names: self.log_stream_names
+                ,
+                log_stream_name_prefix: self.log_stream_name_prefix
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                filter_pattern: self.filter_pattern
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+                interleaved: self.interleaved
+                ,
+                unmask: self.unmask
+                ,
+            }
+        )
     }
 }
+

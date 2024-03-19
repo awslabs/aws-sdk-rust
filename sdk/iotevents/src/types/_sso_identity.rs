@@ -3,20 +3,19 @@
 /// <p>Contains information about your identity source in AWS Single Sign-On. For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS Single Sign-On User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SsoIdentity {
+pub struct SsoIdentity  {
     /// <p>The ID of the AWS SSO identity store.</p>
     pub identity_store_id: ::std::string::String,
     /// <p>The user ID.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl SsoIdentity {
+impl  SsoIdentity  {
     /// <p>The ID of the AWS SSO identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    pub fn identity_store_id(&self) -> & str {
+        use std::ops::Deref; self.identity_store_id.deref()
     }
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl SsoIdentityBuilder {
     }
     /// <p>The ID of the AWS SSO identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The ID of the AWS SSO identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SsoIdentityBuilder {
     }
     /// <p>The user ID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user ID.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl SsoIdentityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identity_store_id`](crate::types::builders::SsoIdentityBuilder::identity_store_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SsoIdentity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SsoIdentity {
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building SsoIdentity",
-                )
-            })?,
-            user_id: self.user_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SsoIdentity {
+                identity_store_id: self.identity_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identity_store_id", "identity_store_id was not specified but it is required when building SsoIdentity")
+                    )?
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

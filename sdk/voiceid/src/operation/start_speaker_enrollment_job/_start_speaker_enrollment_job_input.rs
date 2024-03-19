@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartSpeakerEnrollmentJobInput {
+pub struct StartSpeakerEnrollmentJobInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A name for your speaker enrollment job.</p>
@@ -18,37 +18,37 @@ pub struct StartSpeakerEnrollmentJobInput {
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
 }
-impl StartSpeakerEnrollmentJobInput {
+impl  StartSpeakerEnrollmentJobInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A name for your speaker enrollment job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
-    pub fn enrollment_config(&self) -> ::std::option::Option<&crate::types::EnrollmentConfig> {
+    pub fn enrollment_config(&self) -> ::std::option::Option<& crate::types::EnrollmentConfig> {
         self.enrollment_config.as_ref()
     }
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<& crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
 }
-impl ::std::fmt::Debug for StartSpeakerEnrollmentJobInput {
+impl  ::std::fmt::Debug for StartSpeakerEnrollmentJobInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartSpeakerEnrollmentJobInput");
         formatter.field("client_token", &self.client_token);
@@ -88,8 +88,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     }
     /// <p>A name for your speaker enrollment job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>A name for your speaker enrollment job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     }
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     }
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
     pub fn set_enrollment_config(mut self, input: ::std::option::Option<crate::types::EnrollmentConfig>) -> Self {
-        self.enrollment_config = input;
-        self
+        self.enrollment_config = input; self
     }
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
     pub fn get_enrollment_config(&self) -> &::std::option::Option<crate::types::EnrollmentConfig> {
@@ -161,8 +156,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     }
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
     pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input;
-        self
+        self.input_data_config = input; self
     }
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
@@ -176,29 +170,32 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input;
-        self
+        self.output_data_config = input; self
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         &self.output_data_config
     }
     /// Consumes the builder and constructs a [`StartSpeakerEnrollmentJobInput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput {
-            client_token: self.client_token,
-            job_name: self.job_name,
-            domain_id: self.domain_id,
-            data_access_role_arn: self.data_access_role_arn,
-            enrollment_config: self.enrollment_config,
-            input_data_config: self.input_data_config,
-            output_data_config: self.output_data_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput {
+                client_token: self.client_token
+                ,
+                job_name: self.job_name
+                ,
+                domain_id: self.domain_id
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                enrollment_config: self.enrollment_config
+                ,
+                input_data_config: self.input_data_config
+                ,
+                output_data_config: self.output_data_config
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartSpeakerEnrollmentJobInputBuilder {
@@ -214,3 +211,4 @@ impl ::std::fmt::Debug for StartSpeakerEnrollmentJobInputBuilder {
         formatter.finish()
     }
 }
+

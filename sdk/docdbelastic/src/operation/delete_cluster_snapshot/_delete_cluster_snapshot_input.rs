@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterSnapshotInput {
+pub struct DeleteClusterSnapshotInput  {
     /// <p>The ARN identifier of the elastic cluster snapshot that is to be deleted.</p>
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteClusterSnapshotInput {
+impl  DeleteClusterSnapshotInput  {
     /// <p>The ARN identifier of the elastic cluster snapshot that is to be deleted.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteClusterSnapshotInputBuilder {
     }
     /// <p>The ARN identifier of the elastic cluster snapshot that is to be deleted.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>The ARN identifier of the elastic cluster snapshot that is to be deleted.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_arn
     }
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
-            snapshot_arn: self.snapshot_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
+                snapshot_arn: self.snapshot_arn
+                ,
+            }
+        )
     }
 }
+

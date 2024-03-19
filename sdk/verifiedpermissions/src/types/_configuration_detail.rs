@@ -23,11 +23,7 @@ impl ConfigurationDetail {
     /// Tries to convert the enum instance into [`CognitoUserPoolConfiguration`](crate::types::ConfigurationDetail::CognitoUserPoolConfiguration), extracting the inner [`CognitoUserPoolConfigurationDetail`](crate::types::CognitoUserPoolConfigurationDetail).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cognito_user_pool_configuration(&self) -> ::std::result::Result<&crate::types::CognitoUserPoolConfigurationDetail, &Self> {
-        if let ConfigurationDetail::CognitoUserPoolConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ConfigurationDetail::CognitoUserPoolConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CognitoUserPoolConfiguration`](crate::types::ConfigurationDetail::CognitoUserPoolConfiguration).
     pub fn is_cognito_user_pool_configuration(&self) -> bool {
@@ -38,3 +34,4 @@ impl ConfigurationDetail {
         matches!(self, Self::Unknown)
     }
 }
+

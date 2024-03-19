@@ -3,7 +3,7 @@
 /// <p>The parameters that you can use to configure a <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateScheduledAction.html">scheduled action</a> to create a snapshot. For more information about creating a scheduled action, see <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_CreateScheduledAction.html">CreateScheduledAction</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotScheduleActionParameters {
+pub struct CreateSnapshotScheduleActionParameters  {
     /// <p>The name of the namespace for which you want to configure a scheduled action to create a snapshot.</p>
     pub namespace_name: ::std::string::String,
     /// <p>A string prefix that is attached to the name of the snapshot created by the scheduled action. The final name of the snapshot is the string prefix appended by the date and time of when the snapshot was created.</p>
@@ -11,28 +11,27 @@ pub struct CreateSnapshotScheduleActionParameters {
     /// <p>The retention period of the snapshot created by the scheduled action.</p>
     pub retention_period: ::std::option::Option<i32>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateSnapshotScheduleActionParameters {
+impl  CreateSnapshotScheduleActionParameters  {
     /// <p>The name of the namespace for which you want to configure a scheduled action to create a snapshot.</p>
-    pub fn namespace_name(&self) -> &str {
-        use std::ops::Deref;
-        self.namespace_name.deref()
+    pub fn namespace_name(&self) -> & str {
+        use std::ops::Deref; self.namespace_name.deref()
     }
     /// <p>A string prefix that is attached to the name of the snapshot created by the scheduled action. The final name of the snapshot is the string prefix appended by the date and time of when the snapshot was created.</p>
-    pub fn snapshot_name_prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.snapshot_name_prefix.deref()
+    pub fn snapshot_name_prefix(&self) -> & str {
+        use std::ops::Deref; self.snapshot_name_prefix.deref()
     }
     /// <p>The retention period of the snapshot created by the scheduled action.</p>
     pub fn retention_period(&self) -> ::std::option::Option<i32> {
         self.retention_period
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSnapshotScheduleActionParameters {
@@ -49,7 +48,7 @@ pub struct CreateSnapshotScheduleActionParametersBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateSnapshotScheduleActionParametersBuilder {
     /// <p>The name of the namespace for which you want to configure a scheduled action to create a snapshot.</p>
@@ -60,8 +59,7 @@ impl CreateSnapshotScheduleActionParametersBuilder {
     }
     /// <p>The name of the namespace for which you want to configure a scheduled action to create a snapshot.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the namespace for which you want to configure a scheduled action to create a snapshot.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl CreateSnapshotScheduleActionParametersBuilder {
     }
     /// <p>A string prefix that is attached to the name of the snapshot created by the scheduled action. The final name of the snapshot is the string prefix appended by the date and time of when the snapshot was created.</p>
     pub fn set_snapshot_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name_prefix = input;
-        self
+        self.snapshot_name_prefix = input; self
     }
     /// <p>A string prefix that is attached to the name of the snapshot created by the scheduled action. The final name of the snapshot is the string prefix appended by the date and time of when the snapshot was created.</p>
     pub fn get_snapshot_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +86,7 @@ impl CreateSnapshotScheduleActionParametersBuilder {
     }
     /// <p>The retention period of the snapshot created by the scheduled action.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>The retention period of the snapshot created by the scheduled action.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
@@ -103,41 +99,41 @@ impl CreateSnapshotScheduleActionParametersBuilder {
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSnapshotScheduleActionParameters`](crate::types::CreateSnapshotScheduleActionParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace_name`](crate::types::builders::CreateSnapshotScheduleActionParametersBuilder::namespace_name)
     /// - [`snapshot_name_prefix`](crate::types::builders::CreateSnapshotScheduleActionParametersBuilder::snapshot_name_prefix)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CreateSnapshotScheduleActionParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateSnapshotScheduleActionParameters {
-            namespace_name: self.namespace_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespace_name",
-                    "namespace_name was not specified but it is required when building CreateSnapshotScheduleActionParameters",
-                )
-            })?,
-            snapshot_name_prefix: self.snapshot_name_prefix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "snapshot_name_prefix",
-                    "snapshot_name_prefix was not specified but it is required when building CreateSnapshotScheduleActionParameters",
-                )
-            })?,
-            retention_period: self.retention_period,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateSnapshotScheduleActionParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CreateSnapshotScheduleActionParameters {
+                namespace_name: self.namespace_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("namespace_name", "namespace_name was not specified but it is required when building CreateSnapshotScheduleActionParameters")
+                    )?
+                ,
+                snapshot_name_prefix: self.snapshot_name_prefix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("snapshot_name_prefix", "snapshot_name_prefix was not specified but it is required when building CreateSnapshotScheduleActionParameters")
+                    )?
+                ,
+                retention_period: self.retention_period
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

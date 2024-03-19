@@ -5,7 +5,7 @@
 /// <p>A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling <code>ClaimGameServer</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GameServer {
+pub struct GameServer  {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier for the game server group where the game server is located.</p>
@@ -35,33 +35,33 @@ pub struct GameServer {
     /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
     pub last_health_check_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GameServer {
+impl  GameServer  {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> ::std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>The ARN identifier for the game server group where the game server is located.</p>
-    pub fn game_server_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_arn(&self) -> ::std::option::Option<& str> {
         self.game_server_group_arn.as_deref()
     }
     /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an Amazon Web Services account.</p>
-    pub fn game_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_id(&self) -> ::std::option::Option<& str> {
         self.game_server_id.as_deref()
     }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The port and IP address that must be used to establish a client connection to the game server.</p>
-    pub fn connection_info(&self) -> ::std::option::Option<&str> {
+    pub fn connection_info(&self) -> ::std::option::Option<& str> {
         self.connection_info.as_deref()
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
-    pub fn game_server_data(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_data(&self) -> ::std::option::Option<& str> {
         self.game_server_data.as_deref()
     }
     /// <p>Indicates when an available game server has been reserved for gameplay but has not yet started hosting a game. Once it is claimed, the game server remains in <code>CLAIMED</code> status for a maximum of one minute. During this time, game clients connect to the game server to start the game and trigger the game server to update its utilization status. After one minute, the game server claim status reverts to null.</p>
-    pub fn claim_status(&self) -> ::std::option::Option<&crate::types::GameServerClaimStatus> {
+    pub fn claim_status(&self) -> ::std::option::Option<& crate::types::GameServerClaimStatus> {
         self.claim_status.as_ref()
     }
     /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
@@ -71,19 +71,19 @@ impl GameServer {
     /// <li>
     /// <p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
     /// </ul>
-    pub fn utilization_status(&self) -> ::std::option::Option<&crate::types::GameServerUtilizationStatus> {
+    pub fn utilization_status(&self) -> ::std::option::Option<& crate::types::GameServerUtilizationStatus> {
         self.utilization_status.as_ref()
     }
     /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn registration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn registration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.registration_time.as_ref()
     }
     /// <p>Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
-    pub fn last_claim_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_claim_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_claim_time.as_ref()
     }
     /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
-    pub fn last_health_check_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_health_check_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_health_check_time.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl GameServerBuilder {
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_name = input;
-        self
+        self.game_server_group_name = input; self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl GameServerBuilder {
     }
     /// <p>The ARN identifier for the game server group where the game server is located.</p>
     pub fn set_game_server_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_arn = input;
-        self
+        self.game_server_group_arn = input; self
     }
     /// <p>The ARN identifier for the game server group where the game server is located.</p>
     pub fn get_game_server_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl GameServerBuilder {
     }
     /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an Amazon Web Services account.</p>
     pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_id = input;
-        self
+        self.game_server_id = input; self
     }
     /// <p>A custom string that uniquely identifies the game server. Game server IDs are developer-defined and are unique across all game server groups in an Amazon Web Services account.</p>
     pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl GameServerBuilder {
     }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl GameServerBuilder {
     }
     /// <p>The port and IP address that must be used to establish a client connection to the game server.</p>
     pub fn set_connection_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_info = input;
-        self
+        self.connection_info = input; self
     }
     /// <p>The port and IP address that must be used to establish a client connection to the game server.</p>
     pub fn get_connection_info(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +183,7 @@ impl GameServerBuilder {
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     pub fn set_game_server_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_data = input;
-        self
+        self.game_server_data = input; self
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers.</p>
     pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +196,7 @@ impl GameServerBuilder {
     }
     /// <p>Indicates when an available game server has been reserved for gameplay but has not yet started hosting a game. Once it is claimed, the game server remains in <code>CLAIMED</code> status for a maximum of one minute. During this time, game clients connect to the game server to start the game and trigger the game server to update its utilization status. After one minute, the game server claim status reverts to null.</p>
     pub fn set_claim_status(mut self, input: ::std::option::Option<crate::types::GameServerClaimStatus>) -> Self {
-        self.claim_status = input;
-        self
+        self.claim_status = input; self
     }
     /// <p>Indicates when an available game server has been reserved for gameplay but has not yet started hosting a game. Once it is claimed, the game server remains in <code>CLAIMED</code> status for a maximum of one minute. During this time, game clients connect to the game server to start the game and trigger the game server to update its utilization status. After one minute, the game server claim status reverts to null.</p>
     pub fn get_claim_status(&self) -> &::std::option::Option<crate::types::GameServerClaimStatus> {
@@ -228,8 +221,7 @@ impl GameServerBuilder {
     /// <p><code>UTILIZED</code> - The game server is currently hosting a game session with players.</p></li>
     /// </ul>
     pub fn set_utilization_status(mut self, input: ::std::option::Option<crate::types::GameServerUtilizationStatus>) -> Self {
-        self.utilization_status = input;
-        self
+        self.utilization_status = input; self
     }
     /// <p>Indicates whether the game server is currently available for new games or is busy. Possible statuses include:</p>
     /// <ul>
@@ -248,8 +240,7 @@ impl GameServerBuilder {
     }
     /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_registration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.registration_time = input;
-        self
+        self.registration_time = input; self
     }
     /// <p>Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn get_registration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -262,8 +253,7 @@ impl GameServerBuilder {
     }
     /// <p>Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
     pub fn set_last_claim_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_claim_time = input;
-        self
+        self.last_claim_time = input; self
     }
     /// <p>Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game server's status should revert to null.</p>
     pub fn get_last_claim_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -276,8 +266,7 @@ impl GameServerBuilder {
     }
     /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
     pub fn set_last_health_check_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_health_check_time = input;
-        self
+        self.last_health_check_time = input; self
     }
     /// <p>Timestamp that indicates the last time the game server was updated with health status. The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server update specifies a health check value.</p>
     pub fn get_last_health_check_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -286,17 +275,29 @@ impl GameServerBuilder {
     /// Consumes the builder and constructs a [`GameServer`](crate::types::GameServer).
     pub fn build(self) -> crate::types::GameServer {
         crate::types::GameServer {
-            game_server_group_name: self.game_server_group_name,
-            game_server_group_arn: self.game_server_group_arn,
-            game_server_id: self.game_server_id,
-            instance_id: self.instance_id,
-            connection_info: self.connection_info,
-            game_server_data: self.game_server_data,
-            claim_status: self.claim_status,
-            utilization_status: self.utilization_status,
-            registration_time: self.registration_time,
-            last_claim_time: self.last_claim_time,
-            last_health_check_time: self.last_health_check_time,
+            game_server_group_name: self.game_server_group_name
+            ,
+            game_server_group_arn: self.game_server_group_arn
+            ,
+            game_server_id: self.game_server_id
+            ,
+            instance_id: self.instance_id
+            ,
+            connection_info: self.connection_info
+            ,
+            game_server_data: self.game_server_data
+            ,
+            claim_status: self.claim_status
+            ,
+            utilization_status: self.utilization_status
+            ,
+            registration_time: self.registration_time
+            ,
+            last_claim_time: self.last_claim_time
+            ,
+            last_health_check_time: self.last_health_check_time
+            ,
         }
     }
 }
+

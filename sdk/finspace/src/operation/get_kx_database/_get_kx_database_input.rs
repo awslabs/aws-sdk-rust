@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKxDatabaseInput {
+pub struct GetKxDatabaseInput  {
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the kdb database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
 }
-impl GetKxDatabaseInput {
+impl  GetKxDatabaseInput  {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetKxDatabaseInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetKxDatabaseInputBuilder {
     }
     /// <p>The name of the kdb database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the kdb database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
     /// Consumes the builder and constructs a [`GetKxDatabaseInput`](crate::operation::get_kx_database::GetKxDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_kx_database::GetKxDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_kx_database::GetKxDatabaseInput {
-            environment_id: self.environment_id,
-            database_name: self.database_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_kx_database::GetKxDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_kx_database::GetKxDatabaseInput {
+                environment_id: self.environment_id
+                ,
+                database_name: self.database_name
+                ,
+            }
+        )
     }
 }
+

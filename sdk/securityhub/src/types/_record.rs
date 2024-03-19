@@ -3,15 +3,15 @@
 /// <p>An occurrence of sensitive data in an Apache Avro object container or an Apache Parquet file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Record {
+pub struct Record  {
     /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If the field name is longer than 20 characters, it is truncated. If the path is longer than 250 characters, it is truncated.</p>
     pub json_path: ::std::option::Option<::std::string::String>,
     /// <p>The record index, starting from 0, for the record that contains the data.</p>
     pub record_index: ::std::option::Option<i64>,
 }
-impl Record {
+impl  Record  {
     /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If the field name is longer than 20 characters, it is truncated. If the path is longer than 250 characters, it is truncated.</p>
-    pub fn json_path(&self) -> ::std::option::Option<&str> {
+    pub fn json_path(&self) -> ::std::option::Option<& str> {
         self.json_path.as_deref()
     }
     /// <p>The record index, starting from 0, for the record that contains the data.</p>
@@ -41,8 +41,7 @@ impl RecordBuilder {
     }
     /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If the field name is longer than 20 characters, it is truncated. If the path is longer than 250 characters, it is truncated.</p>
     pub fn set_json_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.json_path = input;
-        self
+        self.json_path = input; self
     }
     /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If the field name is longer than 20 characters, it is truncated. If the path is longer than 250 characters, it is truncated.</p>
     pub fn get_json_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RecordBuilder {
     }
     /// <p>The record index, starting from 0, for the record that contains the data.</p>
     pub fn set_record_index(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.record_index = input;
-        self
+        self.record_index = input; self
     }
     /// <p>The record index, starting from 0, for the record that contains the data.</p>
     pub fn get_record_index(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl RecordBuilder {
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {
         crate::types::Record {
-            json_path: self.json_path,
-            record_index: self.record_index,
+            json_path: self.json_path
+            ,
+            record_index: self.record_index
+            ,
         }
     }
 }
+

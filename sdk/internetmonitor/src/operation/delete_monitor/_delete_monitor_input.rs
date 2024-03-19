@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMonitorInput {
+pub struct DeleteMonitorInput  {
     /// <p>The name of the monitor to delete.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMonitorInput {
+impl  DeleteMonitorInput  {
     /// <p>The name of the monitor to delete.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteMonitorInputBuilder {
     }
     /// <p>The name of the monitor to delete.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor to delete.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }
     /// Consumes the builder and constructs a [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_monitor::DeleteMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_monitor::DeleteMonitorInput {
-            monitor_name: self.monitor_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_monitor::DeleteMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_monitor::DeleteMonitorInput {
+                monitor_name: self.monitor_name
+                ,
+            }
+        )
     }
 }
+

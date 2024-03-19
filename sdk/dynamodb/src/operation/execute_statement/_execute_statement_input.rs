@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteStatementInput {
+pub struct ExecuteStatementInput  {
     /// <p>The PartiQL statement representing the operation to run.</p>
     pub statement: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the PartiQL statement, if any.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeValue>>,
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub consistent_read: ::std::option::Option<bool>,
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
@@ -28,23 +28,24 @@ pub struct ExecuteStatementInput {
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
     pub return_values_on_condition_check_failure: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
-impl ExecuteStatementInput {
+impl  ExecuteStatementInput  {
     /// <p>The PartiQL statement representing the operation to run.</p>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
+    pub fn statement(&self) -> ::std::option::Option<& str> {
         self.statement.as_deref()
     }
     /// <p>The parameters for the PartiQL statement, if any.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::AttributeValue] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::AttributeValue] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn consistent_read(&self) -> ::std::option::Option<bool> {
         self.consistent_read
     }
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -57,7 +58,7 @@ impl ExecuteStatementInput {
     /// <li>
     /// <p><code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p></li>
     /// </ul>
-    pub fn return_consumed_capacity(&self) -> ::std::option::Option<&crate::types::ReturnConsumedCapacity> {
+    pub fn return_consumed_capacity(&self) -> ::std::option::Option<& crate::types::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
     /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation.</p>
@@ -66,7 +67,7 @@ impl ExecuteStatementInput {
     }
     /// <p>An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed a condition check.</p>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
-    pub fn return_values_on_condition_check_failure(&self) -> ::std::option::Option<&crate::types::ReturnValuesOnConditionCheckFailure> {
+    pub fn return_values_on_condition_check_failure(&self) -> ::std::option::Option<& crate::types::ReturnValuesOnConditionCheckFailure> {
         self.return_values_on_condition_check_failure.as_ref()
     }
 }
@@ -82,7 +83,7 @@ impl ExecuteStatementInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteStatementInputBuilder {
     pub(crate) statement: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeValue>>,
     pub(crate) consistent_read: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
@@ -98,8 +99,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The PartiQL statement representing the operation to run.</p>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// <p>The PartiQL statement representing the operation to run.</p>
     pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,17 +112,16 @@ impl ExecuteStatementInputBuilder {
     /// <p>The parameters for the PartiQL statement, if any.</p>
     pub fn parameters(mut self, input: crate::types::AttributeValue) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameters for the PartiQL statement, if any.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeValue>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters for the PartiQL statement, if any.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeValue>> {
         &self.parameters
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
@@ -132,8 +131,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn set_consistent_read(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.consistent_read = input;
-        self
+        self.consistent_read = input; self
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn get_consistent_read(&self) -> &::std::option::Option<bool> {
@@ -146,8 +144,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +175,7 @@ impl ExecuteStatementInputBuilder {
     /// <p><code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p></li>
     /// </ul>
     pub fn set_return_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
-        self.return_consumed_capacity = input;
-        self
+        self.return_consumed_capacity = input; self
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -201,8 +197,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -216,12 +211,8 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed a condition check.</p>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
-    pub fn set_return_values_on_condition_check_failure(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
-    ) -> Self {
-        self.return_values_on_condition_check_failure = input;
-        self
+    pub fn set_return_values_on_condition_check_failure(mut self, input: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>) -> Self {
+        self.return_values_on_condition_check_failure = input; self
     }
     /// <p>An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed a condition check.</p>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
@@ -229,17 +220,25 @@ impl ExecuteStatementInputBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::execute_statement::ExecuteStatementInput {
-            statement: self.statement,
-            parameters: self.parameters,
-            consistent_read: self.consistent_read,
-            next_token: self.next_token,
-            return_consumed_capacity: self.return_consumed_capacity,
-            limit: self.limit,
-            return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_statement::ExecuteStatementInput {
+                statement: self.statement
+                ,
+                parameters: self.parameters
+                ,
+                consistent_read: self.consistent_read
+                ,
+                next_token: self.next_token
+                ,
+                return_consumed_capacity: self.return_consumed_capacity
+                ,
+                limit: self.limit
+                ,
+                return_values_on_condition_check_failure: self.return_values_on_condition_check_failure
+                ,
+            }
+        )
     }
 }
+

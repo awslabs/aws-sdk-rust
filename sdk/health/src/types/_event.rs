@@ -11,7 +11,7 @@
 /// <p>You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
@@ -45,47 +45,47 @@ pub struct Event {
     /// </ul>
     pub event_scope_code: ::std::option::Option<crate::types::EventScopeCode>,
 }
-impl Event {
+impl  Event  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
-    pub fn event_type_code(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_code(&self) -> ::std::option::Option<& str> {
         self.event_type_code.as_deref()
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn event_type_category(&self) -> ::std::option::Option<&crate::types::EventTypeCategory> {
+    pub fn event_type_category(&self) -> ::std::option::Option<& crate::types::EventTypeCategory> {
         self.event_type_category.as_ref()
     }
     /// <p>The Amazon Web Services Region name of the event.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Amazon Web Services Availability Zone of the event. For example, us-east-1a.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The date and time that the event began.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time that the event ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The most recent date and time that the event was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::EventStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::EventStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
@@ -97,7 +97,7 @@ impl Event {
     /// <li>
     /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p></li>
     /// </ul>
-    pub fn event_scope_code(&self) -> ::std::option::Option<&crate::types::EventScopeCode> {
+    pub fn event_scope_code(&self) -> ::std::option::Option<& crate::types::EventScopeCode> {
         self.event_scope_code.as_ref()
     }
 }
@@ -136,8 +136,7 @@ impl EventBuilder {
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -152,8 +151,7 @@ impl EventBuilder {
     }
     /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +164,7 @@ impl EventBuilder {
     }
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub fn set_event_type_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type_code = input;
-        self
+        self.event_type_code = input; self
     }
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub fn get_event_type_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +177,7 @@ impl EventBuilder {
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn set_event_type_category(mut self, input: ::std::option::Option<crate::types::EventTypeCategory>) -> Self {
-        self.event_type_category = input;
-        self
+        self.event_type_category = input; self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn get_event_type_category(&self) -> &::std::option::Option<crate::types::EventTypeCategory> {
@@ -194,8 +190,7 @@ impl EventBuilder {
     }
     /// <p>The Amazon Web Services Region name of the event.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region name of the event.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +203,7 @@ impl EventBuilder {
     }
     /// <p>The Amazon Web Services Availability Zone of the event. For example, us-east-1a.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Amazon Web Services Availability Zone of the event. For example, us-east-1a.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +216,7 @@ impl EventBuilder {
     }
     /// <p>The date and time that the event began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time that the event began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +229,7 @@ impl EventBuilder {
     }
     /// <p>The date and time that the event ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time that the event ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -250,8 +242,7 @@ impl EventBuilder {
     }
     /// <p>The most recent date and time that the event was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The most recent date and time that the event was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -264,8 +255,7 @@ impl EventBuilder {
     }
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::EventStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::EventStatusCode> {
@@ -294,8 +284,7 @@ impl EventBuilder {
     /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p></li>
     /// </ul>
     pub fn set_event_scope_code(mut self, input: ::std::option::Option<crate::types::EventScopeCode>) -> Self {
-        self.event_scope_code = input;
-        self
+        self.event_scope_code = input; self
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
@@ -312,17 +301,29 @@ impl EventBuilder {
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            arn: self.arn,
-            service: self.service,
-            event_type_code: self.event_type_code,
-            event_type_category: self.event_type_category,
-            region: self.region,
-            availability_zone: self.availability_zone,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            last_updated_time: self.last_updated_time,
-            status_code: self.status_code,
-            event_scope_code: self.event_scope_code,
+            arn: self.arn
+            ,
+            service: self.service
+            ,
+            event_type_code: self.event_type_code
+            ,
+            event_type_category: self.event_type_category
+            ,
+            region: self.region
+            ,
+            availability_zone: self.availability_zone
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            status_code: self.status_code
+            ,
+            event_scope_code: self.event_scope_code
+            ,
         }
     }
 }
+

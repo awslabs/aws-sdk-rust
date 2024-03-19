@@ -23,7 +23,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WafInvalidParameterException {
+pub struct WafInvalidParameterException  {
     #[allow(missing_docs)] // documentation missing in model
     pub field: ::std::option::Option<crate::types::ParameterExceptionField>,
     #[allow(missing_docs)] // documentation missing in model
@@ -34,31 +34,29 @@ pub struct WafInvalidParameterException {
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl WafInvalidParameterException {
+impl  WafInvalidParameterException  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn field(&self) -> ::std::option::Option<&crate::types::ParameterExceptionField> {
+    pub fn field(&self) -> ::std::option::Option<& crate::types::ParameterExceptionField> {
         self.field.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn parameter(&self) -> ::std::option::Option<&str> {
+    pub fn parameter(&self) -> ::std::option::Option<& str> {
         self.parameter.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::ParameterExceptionReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::ParameterExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl WafInvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for WafInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "WafInvalidParameterException [WAFInvalidParameterException]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -73,9 +71,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::WafInvalidParam
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidParameterException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl WafInvalidParameterException {
     /// Creates a new builder-style object to manufacture [`WafInvalidParameterException`](crate::types::error::WafInvalidParameterException).
@@ -102,8 +98,7 @@ impl WafInvalidParameterExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_field(mut self, input: ::std::option::Option<crate::types::ParameterExceptionField>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_field(&self) -> &::std::option::Option<crate::types::ParameterExceptionField> {
@@ -116,8 +111,7 @@ impl WafInvalidParameterExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter = input;
-        self
+        self.parameter = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_parameter(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +124,7 @@ impl WafInvalidParameterExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ParameterExceptionReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ParameterExceptionReason> {
@@ -144,32 +137,36 @@ impl WafInvalidParameterExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`WafInvalidParameterException`](crate::types::error::WafInvalidParameterException).
     pub fn build(self) -> crate::types::error::WafInvalidParameterException {
         crate::types::error::WafInvalidParameterException {
-            field: self.field,
-            parameter: self.parameter,
-            reason: self.reason,
-            message: self.message,
+            field: self.field
+            ,
+            parameter: self.parameter
+            ,
+            reason: self.reason
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

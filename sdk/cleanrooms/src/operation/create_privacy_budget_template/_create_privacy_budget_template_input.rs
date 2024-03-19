@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePrivacyBudgetTemplateInput {
+pub struct CreatePrivacyBudgetTemplateInput  {
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is created in the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>How often the privacy budget refreshes.</p><important>
@@ -14,29 +14,29 @@ pub struct CreatePrivacyBudgetTemplateInput {
     /// <p>Specifies your parameters for the privacy budget template.</p>
     pub parameters: ::std::option::Option<crate::types::PrivacyBudgetTemplateParametersInput>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreatePrivacyBudgetTemplateInput {
+impl  CreatePrivacyBudgetTemplateInput  {
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is created in the collaboration that this membership belongs to. Accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>How often the privacy budget refreshes.</p><important>
     /// <p>If you plan to regularly bring new data into the collaboration, you can use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queries across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
-    pub fn auto_refresh(&self) -> ::std::option::Option<&crate::types::PrivacyBudgetTemplateAutoRefresh> {
+    pub fn auto_refresh(&self) -> ::std::option::Option<& crate::types::PrivacyBudgetTemplateAutoRefresh> {
         self.auto_refresh.as_ref()
     }
     /// <p>Specifies the type of the privacy budget template.</p>
-    pub fn privacy_budget_type(&self) -> ::std::option::Option<&crate::types::PrivacyBudgetType> {
+    pub fn privacy_budget_type(&self) -> ::std::option::Option<& crate::types::PrivacyBudgetType> {
         self.privacy_budget_type.as_ref()
     }
     /// <p>Specifies your parameters for the privacy budget template.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&crate::types::PrivacyBudgetTemplateParametersInput> {
+    pub fn parameters(&self) -> ::std::option::Option<& crate::types::PrivacyBudgetTemplateParametersInput> {
         self.parameters.as_ref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -55,7 +55,7 @@ pub struct CreatePrivacyBudgetTemplateInputBuilder {
     pub(crate) auto_refresh: ::std::option::Option<crate::types::PrivacyBudgetTemplateAutoRefresh>,
     pub(crate) privacy_budget_type: ::std::option::Option<crate::types::PrivacyBudgetType>,
     pub(crate) parameters: ::std::option::Option<crate::types::PrivacyBudgetTemplateParametersInput>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreatePrivacyBudgetTemplateInputBuilder {
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is created in the collaboration that this membership belongs to. Accepts a membership ID.</p>
@@ -66,8 +66,7 @@ impl CreatePrivacyBudgetTemplateInputBuilder {
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is created in the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is created in the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl CreatePrivacyBudgetTemplateInputBuilder {
     /// <p>If you plan to regularly bring new data into the collaboration, you can use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queries across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
     /// </important>
     pub fn set_auto_refresh(mut self, input: ::std::option::Option<crate::types::PrivacyBudgetTemplateAutoRefresh>) -> Self {
-        self.auto_refresh = input;
-        self
+        self.auto_refresh = input; self
     }
     /// <p>How often the privacy budget refreshes.</p><important>
     /// <p>If you plan to regularly bring new data into the collaboration, you can use <code>CALENDAR_MONTH</code> to automatically get a new privacy budget for the collaboration every calendar month. Choosing this option allows arbitrary amounts of information to be revealed about rows of the data when repeatedly queries across refreshes. Avoid choosing this if the same rows will be repeatedly queried between privacy budget refreshes.</p>
@@ -102,8 +100,7 @@ impl CreatePrivacyBudgetTemplateInputBuilder {
     }
     /// <p>Specifies the type of the privacy budget template.</p>
     pub fn set_privacy_budget_type(mut self, input: ::std::option::Option<crate::types::PrivacyBudgetType>) -> Self {
-        self.privacy_budget_type = input;
-        self
+        self.privacy_budget_type = input; self
     }
     /// <p>Specifies the type of the privacy budget template.</p>
     pub fn get_privacy_budget_type(&self) -> &::std::option::Option<crate::types::PrivacyBudgetType> {
@@ -117,8 +114,7 @@ impl CreatePrivacyBudgetTemplateInputBuilder {
     }
     /// <p>Specifies your parameters for the privacy budget template.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::PrivacyBudgetTemplateParametersInput>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>Specifies your parameters for the privacy budget template.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::PrivacyBudgetTemplateParametersInput> {
@@ -131,32 +127,34 @@ impl CreatePrivacyBudgetTemplateInputBuilder {
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePrivacyBudgetTemplateInput`](crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateInput {
-            membership_identifier: self.membership_identifier,
-            auto_refresh: self.auto_refresh,
-            privacy_budget_type: self.privacy_budget_type,
-            parameters: self.parameters,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateInput {
+                membership_identifier: self.membership_identifier
+                ,
+                auto_refresh: self.auto_refresh
+                ,
+                privacy_budget_type: self.privacy_budget_type
+                ,
+                parameters: self.parameters
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

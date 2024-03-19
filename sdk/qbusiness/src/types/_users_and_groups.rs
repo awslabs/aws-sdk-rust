@@ -3,24 +3,26 @@
 /// <p>Provides information about users and groups associated with a topic control rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsersAndGroups {
+pub struct UsersAndGroups  {
     /// <p>The user ids associated with a topic control rule.</p>
-    pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The user groups associated with a topic control rule.</p>
-    pub user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UsersAndGroups {
+impl  UsersAndGroups  {
     /// <p>The user ids associated with a topic control rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
-    pub fn user_ids(&self) -> &[::std::string::String] {
-        self.user_ids.as_deref().unwrap_or_default()
+    pub fn user_ids(&self) -> & [::std::string::String] {
+        self.user_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user groups associated with a topic control rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
-    pub fn user_groups(&self) -> &[::std::string::String] {
-        self.user_groups.as_deref().unwrap_or_default()
+    pub fn user_groups(&self) -> & [::std::string::String] {
+        self.user_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UsersAndGroups {
@@ -34,8 +36,8 @@ impl UsersAndGroups {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsersAndGroupsBuilder {
-    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) user_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UsersAndGroupsBuilder {
     /// Appends an item to `user_ids`.
@@ -45,17 +47,16 @@ impl UsersAndGroupsBuilder {
     /// <p>The user ids associated with a topic control rule.</p>
     pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user ids associated with a topic control rule.</p>
-    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_ids = input;
-        self
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_ids = input; self
     }
     /// <p>The user ids associated with a topic control rule.</p>
-    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_ids
     }
     /// Appends an item to `user_groups`.
@@ -65,24 +66,26 @@ impl UsersAndGroupsBuilder {
     /// <p>The user groups associated with a topic control rule.</p>
     pub fn user_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_groups.unwrap_or_default();
-        v.push(input.into());
-        self.user_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user groups associated with a topic control rule.</p>
-    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_groups = input;
-        self
+    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_groups = input; self
     }
     /// <p>The user groups associated with a topic control rule.</p>
-    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_groups
     }
     /// Consumes the builder and constructs a [`UsersAndGroups`](crate::types::UsersAndGroups).
     pub fn build(self) -> crate::types::UsersAndGroups {
         crate::types::UsersAndGroups {
-            user_ids: self.user_ids,
-            user_groups: self.user_groups,
+            user_ids: self.user_ids
+            ,
+            user_groups: self.user_groups
+            ,
         }
     }
 }
+

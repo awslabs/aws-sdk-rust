@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateFilterInput {
+pub struct CreateFilterInput  {
     /// <p>The name of the filter to create.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
@@ -10,29 +10,30 @@ pub struct CreateFilterInput {
     /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub filter_expression: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the filter.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateFilterInput {
+impl  CreateFilterInput  {
     /// <p>The name of the filter to create.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
-    pub fn filter_expression(&self) -> ::std::option::Option<&str> {
+    pub fn filter_expression(&self) -> ::std::option::Option<& str> {
         self.filter_expression.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateFilterInput {
+impl  ::std::fmt::Debug for CreateFilterInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFilterInput");
         formatter.field("name", &self.name);
@@ -56,7 +57,7 @@ pub struct CreateFilterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateFilterInputBuilder {
     /// <p>The name of the filter to create.</p>
@@ -67,8 +68,7 @@ impl CreateFilterInputBuilder {
     }
     /// <p>The name of the filter to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +82,7 @@ impl CreateFilterInputBuilder {
     }
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl CreateFilterInputBuilder {
     }
     /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_expression = input;
-        self
+        self.filter_expression = input; self
     }
     /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,29 +109,32 @@ impl CreateFilterInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the filter.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the filter.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the filter.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_filter::CreateFilterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_filter::CreateFilterInput {
-            name: self.name,
-            dataset_group_arn: self.dataset_group_arn,
-            filter_expression: self.filter_expression,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_filter::CreateFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_filter::CreateFilterInput {
+                name: self.name
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                filter_expression: self.filter_expression
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateFilterInputBuilder {
@@ -146,3 +147,4 @@ impl ::std::fmt::Debug for CreateFilterInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizeSecurityGroupIngressOutput {
+pub struct AuthorizeSecurityGroupIngressOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: ::std::option::Option<bool>,
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
-    pub security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
+    pub security_group_rules: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityGroupRule>>,
     _request_id: Option<String>,
 }
-impl AuthorizeSecurityGroupIngressOutput {
+impl  AuthorizeSecurityGroupIngressOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_rules.is_none()`.
-    pub fn security_group_rules(&self) -> &[crate::types::SecurityGroupRule] {
-        self.security_group_rules.as_deref().unwrap_or_default()
+    pub fn security_group_rules(&self) -> & [crate::types::SecurityGroupRule] {
+        self.security_group_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for AuthorizeSecurityGroupIngressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AuthorizeSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeSecurityGroupIngressOutput`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput).
     pub fn builder() -> crate::operation::authorize_security_group_ingress::builders::AuthorizeSecurityGroupIngressOutputBuilder {
@@ -38,7 +39,7 @@ impl AuthorizeSecurityGroupIngressOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupIngressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
-    pub(crate) security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
+    pub(crate) security_group_rules: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityGroupRule>>,
     _request_id: Option<String>,
 }
 impl AuthorizeSecurityGroupIngressOutputBuilder {
@@ -49,8 +50,7 @@ impl AuthorizeSecurityGroupIngressOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#return = input;
-        self
+        self.r#return = input; self
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub fn get_return(&self) -> &::std::option::Option<bool> {
@@ -63,34 +63,36 @@ impl AuthorizeSecurityGroupIngressOutputBuilder {
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
     pub fn security_group_rules(mut self, input: crate::types::SecurityGroupRule) -> Self {
         let mut v = self.security_group_rules.unwrap_or_default();
-        v.push(input);
-        self.security_group_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.security_group_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
-    pub fn set_security_group_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>) -> Self {
-        self.security_group_rules = input;
-        self
+    pub fn set_security_group_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityGroupRule>>) -> Self {
+        self.security_group_rules = input; self
     }
     /// <p>Information about the inbound (ingress) security group rules that were added.</p>
-    pub fn get_security_group_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>> {
+    pub fn get_security_group_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SecurityGroupRule>> {
         &self.security_group_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AuthorizeSecurityGroupIngressOutput`](crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput).
     pub fn build(self) -> crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput {
         crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput {
-            r#return: self.r#return,
-            security_group_rules: self.security_group_rules,
+            r#return: self.r#return
+            ,
+            security_group_rules: self.security_group_rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

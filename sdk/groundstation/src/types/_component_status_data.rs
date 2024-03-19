@@ -3,7 +3,7 @@
 /// <p>Data on the status of agent components.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentStatusData {
+pub struct ComponentStatusData  {
     /// <p>The Component type.</p>
     pub component_type: ::std::string::String,
     /// <p>Capability ARN of the component.</p>
@@ -19,19 +19,17 @@ pub struct ComponentStatusData {
     /// <p>Dataflow UUID associated with the component.</p>
     pub dataflow_id: ::std::string::String,
 }
-impl ComponentStatusData {
+impl  ComponentStatusData  {
     /// <p>The Component type.</p>
-    pub fn component_type(&self) -> &str {
-        use std::ops::Deref;
-        self.component_type.deref()
+    pub fn component_type(&self) -> & str {
+        use std::ops::Deref; self.component_type.deref()
     }
     /// <p>Capability ARN of the component.</p>
-    pub fn capability_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.capability_arn.deref()
+    pub fn capability_arn(&self) -> & str {
+        use std::ops::Deref; self.capability_arn.deref()
     }
     /// <p>Component status.</p>
-    pub fn status(&self) -> &crate::types::AgentStatus {
+    pub fn status(&self) -> & crate::types::AgentStatus {
         &self.status
     }
     /// <p>Bytes sent by the component.</p>
@@ -47,9 +45,8 @@ impl ComponentStatusData {
         self.packets_dropped
     }
     /// <p>Dataflow UUID associated with the component.</p>
-    pub fn dataflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.dataflow_id.deref()
+    pub fn dataflow_id(&self) -> & str {
+        use std::ops::Deref; self.dataflow_id.deref()
     }
 }
 impl ComponentStatusData {
@@ -80,8 +77,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>The Component type.</p>
     pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type = input;
-        self
+        self.component_type = input; self
     }
     /// <p>The Component type.</p>
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Capability ARN of the component.</p>
     pub fn set_capability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capability_arn = input;
-        self
+        self.capability_arn = input; self
     }
     /// <p>Capability ARN of the component.</p>
     pub fn get_capability_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Component status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Component status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
@@ -124,8 +118,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Bytes sent by the component.</p>
     pub fn set_bytes_sent(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_sent = input;
-        self
+        self.bytes_sent = input; self
     }
     /// <p>Bytes sent by the component.</p>
     pub fn get_bytes_sent(&self) -> &::std::option::Option<i64> {
@@ -138,8 +131,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Bytes received by the component.</p>
     pub fn set_bytes_received(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_received = input;
-        self
+        self.bytes_received = input; self
     }
     /// <p>Bytes received by the component.</p>
     pub fn get_bytes_received(&self) -> &::std::option::Option<i64> {
@@ -152,8 +144,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Packets dropped by component.</p>
     pub fn set_packets_dropped(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.packets_dropped = input;
-        self
+        self.packets_dropped = input; self
     }
     /// <p>Packets dropped by component.</p>
     pub fn get_packets_dropped(&self) -> &::std::option::Option<i64> {
@@ -167,8 +158,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Dataflow UUID associated with the component.</p>
     pub fn set_dataflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataflow_id = input;
-        self
+        self.dataflow_id = input; self
     }
     /// <p>Dataflow UUID associated with the component.</p>
     pub fn get_dataflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,34 +171,36 @@ impl ComponentStatusDataBuilder {
     /// - [`status`](crate::types::builders::ComponentStatusDataBuilder::status)
     /// - [`dataflow_id`](crate::types::builders::ComponentStatusDataBuilder::dataflow_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ComponentStatusData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ComponentStatusData {
-            component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_type",
-                    "component_type was not specified but it is required when building ComponentStatusData",
-                )
-            })?,
-            capability_arn: self.capability_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capability_arn",
-                    "capability_arn was not specified but it is required when building ComponentStatusData",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ComponentStatusData",
-                )
-            })?,
-            bytes_sent: self.bytes_sent,
-            bytes_received: self.bytes_received,
-            packets_dropped: self.packets_dropped,
-            dataflow_id: self.dataflow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dataflow_id",
-                    "dataflow_id was not specified but it is required when building ComponentStatusData",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ComponentStatusData {
+                component_type: self.component_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_type", "component_type was not specified but it is required when building ComponentStatusData")
+                    )?
+                ,
+                capability_arn: self.capability_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capability_arn", "capability_arn was not specified but it is required when building ComponentStatusData")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ComponentStatusData")
+                    )?
+                ,
+                bytes_sent: self.bytes_sent
+                ,
+                bytes_received: self.bytes_received
+                ,
+                packets_dropped: self.packets_dropped
+                ,
+                dataflow_id: self.dataflow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dataflow_id", "dataflow_id was not specified but it is required when building ComponentStatusData")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,21 +3,21 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueueUrlInput {
+pub struct GetQueueUrlInput  {
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
     pub queue_owner_aws_account_id: ::std::option::Option<::std::string::String>,
 }
-impl GetQueueUrlInput {
+impl  GetQueueUrlInput  {
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_name(&self) -> ::std::option::Option<&str> {
+    pub fn queue_name(&self) -> ::std::option::Option<& str> {
         self.queue_name.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
-    pub fn queue_owner_aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn queue_owner_aws_account_id(&self) -> ::std::option::Option<& str> {
         self.queue_owner_aws_account_id.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl GetQueueUrlInputBuilder {
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_name = input;
-        self
+        self.queue_name = input; self
     }
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -61,8 +60,7 @@ impl GetQueueUrlInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
     pub fn set_queue_owner_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_owner_aws_account_id = input;
-        self
+        self.queue_owner_aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
     pub fn get_queue_owner_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,9 +68,14 @@ impl GetQueueUrlInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetQueueUrlInput`](crate::operation::get_queue_url::GetQueueUrlInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_queue_url::GetQueueUrlInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_queue_url::GetQueueUrlInput {
-            queue_name: self.queue_name,
-            queue_owner_aws_account_id: self.queue_owner_aws_account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_queue_url::GetQueueUrlInput {
+                queue_name: self.queue_name
+                ,
+                queue_owner_aws_account_id: self.queue_owner_aws_account_id
+                ,
+            }
+        )
     }
 }
+

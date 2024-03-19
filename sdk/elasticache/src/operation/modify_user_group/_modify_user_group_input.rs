@@ -2,30 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyUserGroupInput {
+pub struct ModifyUserGroupInput  {
     /// <p>The ID of the user group.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of user IDs to add to the user group.</p>
-    pub user_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_ids_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of user IDs to remove from the user group.</p>
-    pub user_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_ids_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyUserGroupInput {
+impl  ModifyUserGroupInput  {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_group_id(&self) -> ::std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>The list of user IDs to add to the user group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids_to_add.is_none()`.
-    pub fn user_ids_to_add(&self) -> &[::std::string::String] {
-        self.user_ids_to_add.as_deref().unwrap_or_default()
+    pub fn user_ids_to_add(&self) -> & [::std::string::String] {
+        self.user_ids_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of user IDs to remove from the user group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids_to_remove.is_none()`.
-    pub fn user_ids_to_remove(&self) -> &[::std::string::String] {
-        self.user_ids_to_remove.as_deref().unwrap_or_default()
+    pub fn user_ids_to_remove(&self) -> & [::std::string::String] {
+        self.user_ids_to_remove.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyUserGroupInput {
@@ -40,8 +42,8 @@ impl ModifyUserGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyUserGroupInputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) user_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_ids_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) user_ids_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyUserGroupInputBuilder {
     /// <p>The ID of the user group.</p>
@@ -52,8 +54,7 @@ impl ModifyUserGroupInputBuilder {
     }
     /// <p>The ID of the user group.</p>
     pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_group_id = input;
-        self
+        self.user_group_id = input; self
     }
     /// <p>The ID of the user group.</p>
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +67,16 @@ impl ModifyUserGroupInputBuilder {
     /// <p>The list of user IDs to add to the user group.</p>
     pub fn user_ids_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_ids_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of user IDs to add to the user group.</p>
-    pub fn set_user_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_ids_to_add = input;
-        self
+    pub fn set_user_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_ids_to_add = input; self
     }
     /// <p>The list of user IDs to add to the user group.</p>
-    pub fn get_user_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_ids_to_add
     }
     /// Appends an item to `user_ids_to_remove`.
@@ -86,27 +86,30 @@ impl ModifyUserGroupInputBuilder {
     /// <p>The list of user IDs to remove from the user group.</p>
     pub fn user_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_ids_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of user IDs to remove from the user group.</p>
-    pub fn set_user_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_ids_to_remove = input;
-        self
+    pub fn set_user_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_ids_to_remove = input; self
     }
     /// <p>The list of user IDs to remove from the user group.</p>
-    pub fn get_user_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_ids_to_remove
     }
     /// Consumes the builder and constructs a [`ModifyUserGroupInput`](crate::operation::modify_user_group::ModifyUserGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_user_group::ModifyUserGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_user_group::ModifyUserGroupInput {
-            user_group_id: self.user_group_id,
-            user_ids_to_add: self.user_ids_to_add,
-            user_ids_to_remove: self.user_ids_to_remove,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_user_group::ModifyUserGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_user_group::ModifyUserGroupInput {
+                user_group_id: self.user_group_id
+                ,
+                user_ids_to_add: self.user_ids_to_add
+                ,
+                user_ids_to_remove: self.user_ids_to_remove
+                ,
+            }
+        )
     }
 }
+

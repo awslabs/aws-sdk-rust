@@ -3,19 +3,19 @@
 /// <p>The standard that you want to enable.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StandardsSubscriptionRequest {
+pub struct StandardsSubscriptionRequest  {
     /// <p>The ARN of the standard that you want to enable. To view the list of available standards and their ARNs, use the <code>DescribeStandards</code> operation.</p>
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>A key-value pair of input for the standard.</p>
-    pub standards_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub standards_input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StandardsSubscriptionRequest {
+impl  StandardsSubscriptionRequest  {
     /// <p>The ARN of the standard that you want to enable. To view the list of available standards and their ARNs, use the <code>DescribeStandards</code> operation.</p>
-    pub fn standards_arn(&self) -> ::std::option::Option<&str> {
+    pub fn standards_arn(&self) -> ::std::option::Option<& str> {
         self.standards_arn.as_deref()
     }
     /// <p>A key-value pair of input for the standard.</p>
-    pub fn standards_input(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn standards_input(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.standards_input.as_ref()
     }
 }
@@ -31,7 +31,7 @@ impl StandardsSubscriptionRequest {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StandardsSubscriptionRequestBuilder {
     pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) standards_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) standards_input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StandardsSubscriptionRequestBuilder {
     /// <p>The ARN of the standard that you want to enable. To view the list of available standards and their ARNs, use the <code>DescribeStandards</code> operation.</p>
@@ -42,8 +42,7 @@ impl StandardsSubscriptionRequestBuilder {
     }
     /// <p>The ARN of the standard that you want to enable. To view the list of available standards and their ARNs, use the <code>DescribeStandards</code> operation.</p>
     pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.standards_arn = input;
-        self
+        self.standards_arn = input; self
     }
     /// <p>The ARN of the standard that you want to enable. To view the list of available standards and their ARNs, use the <code>DescribeStandards</code> operation.</p>
     pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,33 +53,28 @@ impl StandardsSubscriptionRequestBuilder {
     /// To override the contents of this collection use [`set_standards_input`](Self::set_standards_input).
     ///
     /// <p>A key-value pair of input for the standard.</p>
-    pub fn standards_input(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_input(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.standards_input.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.standards_input = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.standards_input = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key-value pair of input for the standard.</p>
-    pub fn set_standards_input(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.standards_input = input;
-        self
+    pub fn set_standards_input(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.standards_input = input; self
     }
     /// <p>A key-value pair of input for the standard.</p>
-    pub fn get_standards_input(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_standards_input(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.standards_input
     }
     /// Consumes the builder and constructs a [`StandardsSubscriptionRequest`](crate::types::StandardsSubscriptionRequest).
     pub fn build(self) -> crate::types::StandardsSubscriptionRequest {
         crate::types::StandardsSubscriptionRequest {
-            standards_arn: self.standards_arn,
-            standards_input: self.standards_input,
+            standards_arn: self.standards_arn
+            ,
+            standards_input: self.standards_input
+            ,
         }
     }
 }
+

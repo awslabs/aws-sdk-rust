@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListResourceScans`](crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder::set_next_token):<br>required: **false**<br><p>A string that identifies the next page of resource scan results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder::set_max_results):<br>required: **false**<br><p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. The default value is 10. The maximum value is 100.</p><br>
-    /// - On success, responds with [`ListResourceScansOutput`](crate::operation::list_resource_scans::ListResourceScansOutput) with field(s):
+                            /// - On success, responds with [`ListResourceScansOutput`](crate::operation::list_resource_scans::ListResourceScansOutput) with field(s):
     ///   - [`resource_scan_summaries(Option<Vec::<ResourceScanSummary>>)`](crate::operation::list_resource_scans::ListResourceScansOutput::resource_scan_summaries): <p>The list of scans returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_scans::ListResourceScansOutput::next_token): <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResourceScans</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
-    /// - On failure, responds with [`SdkError<ListResourceScansError>`](crate::operation::list_resource_scans::ListResourceScansError)
+                            /// - On failure, responds with [`SdkError<ListResourceScansError>`](crate::operation::list_resource_scans::ListResourceScansError)
     pub fn list_resource_scans(&self) -> crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder {
-        crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_resource_scans::builders::ListResourceScansFluentBuilder::new(self.handle.clone())
+                            }
 }
+

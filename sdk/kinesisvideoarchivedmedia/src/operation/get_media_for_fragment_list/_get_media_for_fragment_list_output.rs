@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetMediaForFragmentListOutput {
+pub struct GetMediaForFragmentListOutput  {
     /// <p>The content type of the requested media.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags:</p>
@@ -26,9 +26,9 @@ pub struct GetMediaForFragmentListOutput {
     pub payload: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
-impl GetMediaForFragmentListOutput {
+impl  GetMediaForFragmentListOutput  {
     /// <p>The content type of the requested media.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags:</p>
@@ -49,15 +49,15 @@ impl GetMediaForFragmentListOutput {
     /// <li>
     /// <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p></li>
     /// </ul>
-    pub fn payload(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn payload(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.payload
     }
 }
 impl ::aws_types::request_id::RequestId for GetMediaForFragmentListOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMediaForFragmentListOutput {
     /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListOutput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput).
     pub fn builder() -> crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListOutputBuilder {
@@ -81,8 +81,7 @@ impl GetMediaForFragmentListOutputBuilder {
     }
     /// <p>The content type of the requested media.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content type of the requested media.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl GetMediaForFragmentListOutputBuilder {
     /// <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p></li>
     /// </ul>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags:</p>
     /// <ul>
@@ -154,20 +152,24 @@ impl GetMediaForFragmentListOutputBuilder {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMediaForFragmentListOutput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput).
     pub fn build(self) -> crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput {
         crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput {
-            content_type: self.content_type,
-            payload: self.payload.unwrap_or_default(),
+            content_type: self.content_type
+            ,
+            payload: self.payload
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

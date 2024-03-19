@@ -5,55 +5,51 @@ pub use crate::operation::deregister_rds_db_instance::_deregister_rds_db_instanc
 
 impl DeregisterRdsDbInstanceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.deregister_rds_db_instance();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.deregister_rds_db_instance();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeregisterRdsDbInstance`.
-///
+/// 
 /// <p>Deregisters an Amazon RDS instance.</p>
 /// <p><b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterRdsDbInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder,
+                    inner: crate::operation::deregister_rds_db_instance::builders::DeregisterRdsDbInstanceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
-        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-    > for DeregisterRdsDbInstanceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
+                    crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
+                > for DeregisterRdsDbInstanceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
+                        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeregisterRdsDbInstanceFluentBuilder {
     /// Creates a new `DeregisterRdsDbInstance`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DeregisterRdsDbInstanceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstance::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstance::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
-        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstance::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstance::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput, crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon RDS instance's ARN.</p>
     pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rds_db_instance_arn(input.into());
@@ -124,3 +111,4 @@ impl DeregisterRdsDbInstanceFluentBuilder {
         self.inner.get_rds_db_instance_arn()
     }
 }
+

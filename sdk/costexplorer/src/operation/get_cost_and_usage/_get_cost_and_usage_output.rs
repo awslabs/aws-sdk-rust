@@ -2,46 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCostAndUsageOutput {
+pub struct GetCostAndUsageOutput  {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    pub group_definitions: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
+    pub group_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::GroupDefinition>>,
     /// <p>The time period that's covered by the results in the response.</p>
-    pub results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>>,
+    pub results_by_time: ::std::option::Option<::std::vec::Vec::<crate::types::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub dimension_value_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
+    pub dimension_value_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionValuesWithAttributes>>,
     _request_id: Option<String>,
 }
-impl GetCostAndUsageOutput {
+impl  GetCostAndUsageOutput  {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_definitions.is_none()`.
-    pub fn group_definitions(&self) -> &[crate::types::GroupDefinition] {
-        self.group_definitions.as_deref().unwrap_or_default()
+    pub fn group_definitions(&self) -> & [crate::types::GroupDefinition] {
+        self.group_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time period that's covered by the results in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results_by_time.is_none()`.
-    pub fn results_by_time(&self) -> &[crate::types::ResultByTime] {
-        self.results_by_time.as_deref().unwrap_or_default()
+    pub fn results_by_time(&self) -> & [crate::types::ResultByTime] {
+        self.results_by_time.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_value_attributes.is_none()`.
-    pub fn dimension_value_attributes(&self) -> &[crate::types::DimensionValuesWithAttributes] {
-        self.dimension_value_attributes.as_deref().unwrap_or_default()
+    pub fn dimension_value_attributes(&self) -> & [crate::types::DimensionValuesWithAttributes] {
+        self.dimension_value_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCostAndUsageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCostAndUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetCostAndUsageOutput`](crate::operation::get_cost_and_usage::GetCostAndUsageOutput).
     pub fn builder() -> crate::operation::get_cost_and_usage::builders::GetCostAndUsageOutputBuilder {
@@ -54,9 +57,9 @@ impl GetCostAndUsageOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostAndUsageOutputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
-    pub(crate) group_definitions: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
-    pub(crate) results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>>,
-    pub(crate) dimension_value_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
+    pub(crate) group_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::GroupDefinition>>,
+    pub(crate) results_by_time: ::std::option::Option<::std::vec::Vec::<crate::types::ResultByTime>>,
+    pub(crate) dimension_value_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionValuesWithAttributes>>,
     _request_id: Option<String>,
 }
 impl GetCostAndUsageOutputBuilder {
@@ -67,8 +70,7 @@ impl GetCostAndUsageOutputBuilder {
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,17 +83,16 @@ impl GetCostAndUsageOutputBuilder {
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
     pub fn group_definitions(mut self, input: crate::types::GroupDefinition) -> Self {
         let mut v = self.group_definitions.unwrap_or_default();
-        v.push(input);
-        self.group_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    pub fn set_group_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
-        self.group_definitions = input;
-        self
+    pub fn set_group_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupDefinition>>) -> Self {
+        self.group_definitions = input; self
     }
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    pub fn get_group_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupDefinition>> {
         &self.group_definitions
     }
     /// Appends an item to `results_by_time`.
@@ -101,17 +102,16 @@ impl GetCostAndUsageOutputBuilder {
     /// <p>The time period that's covered by the results in the response.</p>
     pub fn results_by_time(mut self, input: crate::types::ResultByTime) -> Self {
         let mut v = self.results_by_time.unwrap_or_default();
-        v.push(input);
-        self.results_by_time = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results_by_time = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The time period that's covered by the results in the response.</p>
-    pub fn set_results_by_time(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>>) -> Self {
-        self.results_by_time = input;
-        self
+    pub fn set_results_by_time(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResultByTime>>) -> Self {
+        self.results_by_time = input; self
     }
     /// <p>The time period that's covered by the results in the response.</p>
-    pub fn get_results_by_time(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultByTime>> {
+    pub fn get_results_by_time(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResultByTime>> {
         &self.results_by_time
     }
     /// Appends an item to `dimension_value_attributes`.
@@ -121,39 +121,40 @@ impl GetCostAndUsageOutputBuilder {
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
     pub fn dimension_value_attributes(mut self, input: crate::types::DimensionValuesWithAttributes) -> Self {
         let mut v = self.dimension_value_attributes.unwrap_or_default();
-        v.push(input);
-        self.dimension_value_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimension_value_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub fn set_dimension_value_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
-    ) -> Self {
-        self.dimension_value_attributes = input;
-        self
+    pub fn set_dimension_value_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionValuesWithAttributes>>) -> Self {
+        self.dimension_value_attributes = input; self
     }
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub fn get_dimension_value_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>> {
+    pub fn get_dimension_value_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionValuesWithAttributes>> {
         &self.dimension_value_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCostAndUsageOutput`](crate::operation::get_cost_and_usage::GetCostAndUsageOutput).
     pub fn build(self) -> crate::operation::get_cost_and_usage::GetCostAndUsageOutput {
         crate::operation::get_cost_and_usage::GetCostAndUsageOutput {
-            next_page_token: self.next_page_token,
-            group_definitions: self.group_definitions,
-            results_by_time: self.results_by_time,
-            dimension_value_attributes: self.dimension_value_attributes,
+            next_page_token: self.next_page_token
+            ,
+            group_definitions: self.group_definitions
+            ,
+            results_by_time: self.results_by_time
+            ,
+            dimension_value_attributes: self.dimension_value_attributes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>OperationSummary includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OperationSummary {
+pub struct OperationSummary  {
     /// <p>Identifier returned to track the requested action.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the requested operation in the system.</p>
@@ -34,29 +34,29 @@ pub struct OperationSummary {
     /// <p>The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).</p>
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl OperationSummary {
+impl  OperationSummary  {
     /// <p>Identifier returned to track the requested action.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn operation_id(&self) -> ::std::option::Option<& str> {
         self.operation_id.as_deref()
     }
     /// <p>The current status of the requested operation in the system.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>Type of the action requested.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OperationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OperationType> {
         self.r#type.as_ref()
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn submitted_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submitted_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
     }
     /// <p>Name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Message about the operation.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Automatically checks whether there are no outstanding operations on domains that need customer attention.</p>
@@ -73,11 +73,11 @@ impl OperationSummary {
     /// <li>
     /// <p><code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p></li>
     /// </ul>
-    pub fn status_flag(&self) -> ::std::option::Option<&crate::types::StatusFlag> {
+    pub fn status_flag(&self) -> ::std::option::Option<& crate::types::StatusFlag> {
         self.status_flag.as_ref()
     }
     /// <p>The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
 }
@@ -109,8 +109,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>Identifier returned to track the requested action.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>Identifier returned to track the requested action.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +122,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>The current status of the requested operation in the system.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the requested operation in the system.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
@@ -137,8 +135,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>Type of the action requested.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of the action requested.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::OperationType> {
@@ -151,8 +148,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>The date when the request was submitted.</p>
     pub fn set_submitted_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submitted_date = input;
-        self
+        self.submitted_date = input; self
     }
     /// <p>The date when the request was submitted.</p>
     pub fn get_submitted_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -165,8 +161,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>Name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +174,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>Message about the operation.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Message about the operation.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +213,7 @@ impl OperationSummaryBuilder {
     /// <p><code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p></li>
     /// </ul>
     pub fn set_status_flag(mut self, input: ::std::option::Option<crate::types::StatusFlag>) -> Self {
-        self.status_flag = input;
-        self
+        self.status_flag = input; self
     }
     /// <p>Automatically checks whether there are no outstanding operations on domains that need customer attention.</p>
     /// <p>Valid values are:</p>
@@ -246,8 +239,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -256,14 +248,23 @@ impl OperationSummaryBuilder {
     /// Consumes the builder and constructs a [`OperationSummary`](crate::types::OperationSummary).
     pub fn build(self) -> crate::types::OperationSummary {
         crate::types::OperationSummary {
-            operation_id: self.operation_id,
-            status: self.status,
-            r#type: self.r#type,
-            submitted_date: self.submitted_date,
-            domain_name: self.domain_name,
-            message: self.message,
-            status_flag: self.status_flag,
-            last_updated_date: self.last_updated_date,
+            operation_id: self.operation_id
+            ,
+            status: self.status
+            ,
+            r#type: self.r#type
+            ,
+            submitted_date: self.submitted_date
+            ,
+            domain_name: self.domain_name
+            ,
+            message: self.message
+            ,
+            status_flag: self.status_flag
+            ,
+            last_updated_date: self.last_updated_date
+            ,
         }
     }
 }
+

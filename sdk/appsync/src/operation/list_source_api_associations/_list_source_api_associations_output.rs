@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSourceApiAssociationsOutput {
+pub struct ListSourceApiAssociationsOutput  {
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
-    pub source_api_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>>,
+    pub source_api_association_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::SourceApiAssociationSummary>>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSourceApiAssociationsOutput {
+impl  ListSourceApiAssociationsOutput  {
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_api_association_summaries.is_none()`.
-    pub fn source_api_association_summaries(&self) -> &[crate::types::SourceApiAssociationSummary] {
-        self.source_api_association_summaries.as_deref().unwrap_or_default()
+    pub fn source_api_association_summaries(&self) -> & [crate::types::SourceApiAssociationSummary] {
+        self.source_api_association_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSourceApiAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSourceApiAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceApiAssociationsOutput`](crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput).
     pub fn builder() -> crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSourceApiAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceApiAssociationsOutputBuilder {
-    pub(crate) source_api_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>>,
+    pub(crate) source_api_association_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::SourceApiAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListSourceApiAssociationsOutputBuilder {
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
     pub fn source_api_association_summaries(mut self, input: crate::types::SourceApiAssociationSummary) -> Self {
         let mut v = self.source_api_association_summaries.unwrap_or_default();
-        v.push(input);
-        self.source_api_association_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_api_association_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
-    pub fn set_source_api_association_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>>,
-    ) -> Self {
-        self.source_api_association_summaries = input;
-        self
+    pub fn set_source_api_association_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceApiAssociationSummary>>) -> Self {
+        self.source_api_association_summaries = input; self
     }
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
-    pub fn get_source_api_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>> {
+    pub fn get_source_api_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceApiAssociationSummary>> {
         &self.source_api_association_summaries
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
@@ -72,28 +69,30 @@ impl ListSourceApiAssociationsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSourceApiAssociationsOutput`](crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput).
     pub fn build(self) -> crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput {
         crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput {
-            source_api_association_summaries: self.source_api_association_summaries,
-            next_token: self.next_token,
+            source_api_association_summaries: self.source_api_association_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupCertificateConfigurationOutput {
+pub struct UpdateGroupCertificateConfigurationOutput  {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
     pub certificate_authority_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     /// The amount of time remaining before the certificate expires, in milliseconds.
@@ -11,25 +11,25 @@ pub struct UpdateGroupCertificateConfigurationOutput {
     pub group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateGroupCertificateConfigurationOutput {
+impl  UpdateGroupCertificateConfigurationOutput  {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
-    pub fn certificate_authority_expiry_in_milliseconds(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_expiry_in_milliseconds(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_expiry_in_milliseconds.as_deref()
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn certificate_expiry_in_milliseconds(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_expiry_in_milliseconds(&self) -> ::std::option::Option<& str> {
         self.certificate_expiry_in_milliseconds.as_deref()
     }
     /// The ID of the group certificate configuration.
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateGroupCertificateConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateGroupCertificateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupCertificateConfigurationOutput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput).
     pub fn builder() -> crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationOutputBuilder {
@@ -54,8 +54,7 @@ impl UpdateGroupCertificateConfigurationOutputBuilder {
     }
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
     pub fn set_certificate_authority_expiry_in_milliseconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_expiry_in_milliseconds = input;
-        self
+        self.certificate_authority_expiry_in_milliseconds = input; self
     }
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
     pub fn get_certificate_authority_expiry_in_milliseconds(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl UpdateGroupCertificateConfigurationOutputBuilder {
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
     pub fn set_certificate_expiry_in_milliseconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_expiry_in_milliseconds = input;
-        self
+        self.certificate_expiry_in_milliseconds = input; self
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
     pub fn get_certificate_expiry_in_milliseconds(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl UpdateGroupCertificateConfigurationOutputBuilder {
     }
     /// The ID of the group certificate configuration.
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// The ID of the group certificate configuration.
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateGroupCertificateConfigurationOutput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput).
     pub fn build(self) -> crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput {
         crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput {
-            certificate_authority_expiry_in_milliseconds: self.certificate_authority_expiry_in_milliseconds,
-            certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds,
-            group_id: self.group_id,
+            certificate_authority_expiry_in_milliseconds: self.certificate_authority_expiry_in_milliseconds
+            ,
+            certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds
+            ,
+            group_id: self.group_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

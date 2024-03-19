@@ -2,20 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAggregateComplianceByConformancePacks`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::set_configuration_aggregator_name):<br>required: **true**<br><p>The name of the configuration aggregator.</p><br>
     ///   - [`filters(AggregateConformancePackComplianceFilters)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::filters) / [`set_filters(Option<AggregateConformancePackComplianceFilters>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::set_filters):<br>required: **false**<br><p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`DescribeAggregateComplianceByConformancePacksOutput`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksOutput) with field(s):
+                            /// - On success, responds with [`DescribeAggregateComplianceByConformancePacksOutput`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksOutput) with field(s):
     ///   - [`aggregate_compliance_by_conformance_packs(Option<Vec::<AggregateComplianceByConformancePack>>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksOutput::aggregate_compliance_by_conformance_packs): <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<DescribeAggregateComplianceByConformancePacksError>`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError)
-    pub fn describe_aggregate_compliance_by_conformance_packs(
-        &self,
-    ) -> crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder
-    {
-        crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeAggregateComplianceByConformancePacksError>`](crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError)
+    pub fn describe_aggregate_compliance_by_conformance_packs(&self) -> crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder {
+                                crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

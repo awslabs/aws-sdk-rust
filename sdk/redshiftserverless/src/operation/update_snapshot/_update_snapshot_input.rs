@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSnapshotInput {
+pub struct UpdateSnapshotInput  {
     /// <p>The name of the snapshot.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The new retention period of the snapshot.</p>
     pub retention_period: ::std::option::Option<i32>,
 }
-impl UpdateSnapshotInput {
+impl  UpdateSnapshotInput  {
     /// <p>The name of the snapshot.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The new retention period of the snapshot.</p>
@@ -41,8 +41,7 @@ impl UpdateSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of the snapshot.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl UpdateSnapshotInputBuilder {
     }
     /// <p>The new retention period of the snapshot.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>The new retention period of the snapshot.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
         &self.retention_period
     }
     /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_snapshot::UpdateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_snapshot::UpdateSnapshotInput {
-            snapshot_name: self.snapshot_name,
-            retention_period: self.retention_period,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_snapshot::UpdateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_snapshot::UpdateSnapshotInput {
+                snapshot_name: self.snapshot_name
+                ,
+                retention_period: self.retention_period
+                ,
+            }
+        )
     }
 }
+

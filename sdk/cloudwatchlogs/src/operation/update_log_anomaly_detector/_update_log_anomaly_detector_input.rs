@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLogAnomalyDetectorInput {
+pub struct UpdateLogAnomalyDetectorInput  {
     /// <p>The ARN of the anomaly detector that you want to update.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how often the anomaly detector runs and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then setting <code>evaluationFrequency</code> to <code>FIFTEEN_MIN</code> might be appropriate.</p>
@@ -14,17 +14,17 @@ pub struct UpdateLogAnomalyDetectorInput {
     /// <p>Use this parameter to pause or restart the anomaly detector.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl UpdateLogAnomalyDetectorInput {
+impl  UpdateLogAnomalyDetectorInput  {
     /// <p>The ARN of the anomaly detector that you want to update.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>Specifies how often the anomaly detector runs and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then setting <code>evaluationFrequency</code> to <code>FIFTEEN_MIN</code> might be appropriate.</p>
-    pub fn evaluation_frequency(&self) -> ::std::option::Option<&crate::types::EvaluationFrequency> {
+    pub fn evaluation_frequency(&self) -> ::std::option::Option<& crate::types::EvaluationFrequency> {
         self.evaluation_frequency.as_ref()
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    pub fn filter_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn filter_pattern(&self) -> ::std::option::Option<& str> {
         self.filter_pattern.as_deref()
     }
     /// <p>The number of days to use as the life cycle of anomalies. After this time, anomalies are automatically baselined and the anomaly detector model will treat new occurrences of similar event as normal. Therefore, if you do not correct the cause of an anomaly during this time, it will be considered normal going forward and will not be detected.</p>
@@ -62,8 +62,7 @@ impl UpdateLogAnomalyDetectorInputBuilder {
     }
     /// <p>The ARN of the anomaly detector that you want to update.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The ARN of the anomaly detector that you want to update.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateLogAnomalyDetectorInputBuilder {
     }
     /// <p>Specifies how often the anomaly detector runs and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then setting <code>evaluationFrequency</code> to <code>FIFTEEN_MIN</code> might be appropriate.</p>
     pub fn set_evaluation_frequency(mut self, input: ::std::option::Option<crate::types::EvaluationFrequency>) -> Self {
-        self.evaluation_frequency = input;
-        self
+        self.evaluation_frequency = input; self
     }
     /// <p>Specifies how often the anomaly detector runs and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then setting <code>evaluationFrequency</code> to <code>FIFTEEN_MIN</code> might be appropriate.</p>
     pub fn get_evaluation_frequency(&self) -> &::std::option::Option<crate::types::EvaluationFrequency> {
@@ -90,8 +88,7 @@ impl UpdateLogAnomalyDetectorInputBuilder {
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_pattern = input;
-        self
+        self.filter_pattern = input; self
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl UpdateLogAnomalyDetectorInputBuilder {
     }
     /// <p>The number of days to use as the life cycle of anomalies. After this time, anomalies are automatically baselined and the anomaly detector model will treat new occurrences of similar event as normal. Therefore, if you do not correct the cause of an anomaly during this time, it will be considered normal going forward and will not be detected.</p>
     pub fn set_anomaly_visibility_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.anomaly_visibility_time = input;
-        self
+        self.anomaly_visibility_time = input; self
     }
     /// <p>The number of days to use as the life cycle of anomalies. After this time, anomalies are automatically baselined and the anomaly detector model will treat new occurrences of similar event as normal. Therefore, if you do not correct the cause of an anomaly during this time, it will be considered normal going forward and will not be detected.</p>
     pub fn get_anomaly_visibility_time(&self) -> &::std::option::Option<i64> {
@@ -119,26 +115,28 @@ impl UpdateLogAnomalyDetectorInputBuilder {
     }
     /// <p>Use this parameter to pause or restart the anomaly detector.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Use this parameter to pause or restart the anomaly detector.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateLogAnomalyDetectorInput`](crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            evaluation_frequency: self.evaluation_frequency,
-            filter_pattern: self.filter_pattern,
-            anomaly_visibility_time: self.anomaly_visibility_time,
-            enabled: self.enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                evaluation_frequency: self.evaluation_frequency
+                ,
+                filter_pattern: self.filter_pattern
+                ,
+                anomaly_visibility_time: self.anomaly_visibility_time
+                ,
+                enabled: self.enabled
+                ,
+            }
+        )
     }
 }
+

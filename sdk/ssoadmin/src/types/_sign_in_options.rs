@@ -3,7 +3,7 @@
 /// <p>A structure that describes the sign-in options for an application portal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignInOptions {
+pub struct SignInOptions  {
     /// <p>This determines how IAM Identity Center navigates the user to the target application. It can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct SignInOptions {
     /// <p>The URL that accepts authentication requests for an application. This is a required parameter if the <code>Origin</code> parameter is <code>APPLICATION</code>.</p>
     pub application_url: ::std::option::Option<::std::string::String>,
 }
-impl SignInOptions {
+impl  SignInOptions  {
     /// <p>This determines how IAM Identity Center navigates the user to the target application. It can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl SignInOptions {
     /// <li>
     /// <p><code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p></li>
     /// </ul>
-    pub fn origin(&self) -> &crate::types::SignInOrigin {
+    pub fn origin(&self) -> & crate::types::SignInOrigin {
         &self.origin
     }
     /// <p>The URL that accepts authentication requests for an application. This is a required parameter if the <code>Origin</code> parameter is <code>APPLICATION</code>.</p>
-    pub fn application_url(&self) -> ::std::option::Option<&str> {
+    pub fn application_url(&self) -> ::std::option::Option<& str> {
         self.application_url.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl SignInOptionsBuilder {
     /// <p><code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated authentication to sign the customer directly into a SAML-based application.</p></li>
     /// </ul>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::SignInOrigin>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>This determines how IAM Identity Center navigates the user to the target application. It can be one of the following values:</p>
     /// <ul>
@@ -86,8 +85,7 @@ impl SignInOptionsBuilder {
     }
     /// <p>The URL that accepts authentication requests for an application. This is a required parameter if the <code>Origin</code> parameter is <code>APPLICATION</code>.</p>
     pub fn set_application_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_url = input;
-        self
+        self.application_url = input; self
     }
     /// <p>The URL that accepts authentication requests for an application. This is a required parameter if the <code>Origin</code> parameter is <code>APPLICATION</code>.</p>
     pub fn get_application_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,14 +95,17 @@ impl SignInOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`origin`](crate::types::builders::SignInOptionsBuilder::origin)
     pub fn build(self) -> ::std::result::Result<crate::types::SignInOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SignInOptions {
-            origin: self.origin.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "origin",
-                    "origin was not specified but it is required when building SignInOptions",
-                )
-            })?,
-            application_url: self.application_url,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SignInOptions {
+                origin: self.origin
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("origin", "origin was not specified but it is required when building SignInOptions")
+                    )?
+                ,
+                application_url: self.application_url
+                ,
+            }
+        )
     }
 }
+

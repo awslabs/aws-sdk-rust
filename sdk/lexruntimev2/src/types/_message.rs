@@ -3,7 +3,7 @@
 /// <p>Container for text that is returned to the customer..</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Message {
+pub struct Message  {
     /// <p>The text of the message.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of response.</p>
@@ -12,22 +12,22 @@ pub struct Message {
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
-impl Message {
+impl  Message  {
     /// <p>The text of the message.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>Indicates the type of response.</p>
-    pub fn content_type(&self) -> &crate::types::MessageContentType {
+    pub fn content_type(&self) -> & crate::types::MessageContentType {
         &self.content_type
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-    pub fn image_response_card(&self) -> ::std::option::Option<&crate::types::ImageResponseCard> {
+    pub fn image_response_card(&self) -> ::std::option::Option<& crate::types::ImageResponseCard> {
         self.image_response_card.as_ref()
     }
 }
-impl ::std::fmt::Debug for Message {
+impl  ::std::fmt::Debug for Message  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Message");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -59,8 +59,7 @@ impl MessageBuilder {
     }
     /// <p>The text of the message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The text of the message.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl MessageBuilder {
     }
     /// <p>Indicates the type of response.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::MessageContentType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Indicates the type of response.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::MessageContentType> {
@@ -90,8 +88,7 @@ impl MessageBuilder {
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn set_image_response_card(mut self, input: ::std::option::Option<crate::types::ImageResponseCard>) -> Self {
-        self.image_response_card = input;
-        self
+        self.image_response_card = input; self
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
@@ -102,16 +99,19 @@ impl MessageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`content_type`](crate::types::builders::MessageBuilder::content_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Message {
-            content: self.content,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building Message",
-                )
-            })?,
-            image_response_card: self.image_response_card,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Message {
+                content: self.content
+                ,
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building Message")
+                    )?
+                ,
+                image_response_card: self.image_response_card
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for MessageBuilder {
@@ -123,3 +123,4 @@ impl ::std::fmt::Debug for MessageBuilder {
         formatter.finish()
     }
 }
+

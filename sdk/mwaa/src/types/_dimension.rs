@@ -4,22 +4,20 @@
 #[deprecated(note = "This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dimension {
+pub struct Dimension  {
     /// <p><b>Internal only</b>. The name of the dimension.</p>
     pub name: ::std::string::String,
     /// <p><b>Internal only</b>. The value of the dimension.</p>
     pub value: ::std::string::String,
 }
-impl Dimension {
+impl  Dimension  {
     /// <p><b>Internal only</b>. The name of the dimension.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p><b>Internal only</b>. The value of the dimension.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Dimension {
@@ -45,8 +43,7 @@ impl DimensionBuilder {
     }
     /// <p><b>Internal only</b>. The name of the dimension.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p><b>Internal only</b>. The name of the dimension.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +57,7 @@ impl DimensionBuilder {
     }
     /// <p><b>Internal only</b>. The value of the dimension.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p><b>Internal only</b>. The value of the dimension.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,19 +68,20 @@ impl DimensionBuilder {
     /// - [`name`](crate::types::builders::DimensionBuilder::name)
     /// - [`value`](crate::types::builders::DimensionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Dimension, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Dimension {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Dimension",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Dimension",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Dimension {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Dimension")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Dimension")
+                    )?
+                ,
+            }
+        )
     }
 }
+

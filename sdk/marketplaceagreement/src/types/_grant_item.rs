@@ -3,15 +3,15 @@
 /// <p>Entitlements granted to the acceptor of fixed upfront as part of agreement execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrantItem {
+pub struct GrantItem  {
     /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub dimension_key: ::std::option::Option<::std::string::String>,
     /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
     pub max_quantity: i32,
 }
-impl GrantItem {
+impl  GrantItem  {
     /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
-    pub fn dimension_key(&self) -> ::std::option::Option<&str> {
+    pub fn dimension_key(&self) -> ::std::option::Option<& str> {
         self.dimension_key.as_deref()
     }
     /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
@@ -41,8 +41,7 @@ impl GrantItemBuilder {
     }
     /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub fn set_dimension_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_key = input;
-        self
+        self.dimension_key = input; self
     }
     /// <p>Unique dimension key defined in the product document. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub fn get_dimension_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GrantItemBuilder {
     }
     /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
     pub fn set_max_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_quantity = input;
-        self
+        self.max_quantity = input; self
     }
     /// <p>Maximum amount of capacity that the buyer can be entitled to the given dimension of the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to use an unlimited amount of the given dimension.</p>
     pub fn get_max_quantity(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl GrantItemBuilder {
     /// Consumes the builder and constructs a [`GrantItem`](crate::types::GrantItem).
     pub fn build(self) -> crate::types::GrantItem {
         crate::types::GrantItem {
-            dimension_key: self.dimension_key,
-            max_quantity: self.max_quantity.unwrap_or(1),
+            dimension_key: self.dimension_key
+            ,
+            max_quantity: self.max_quantity
+                .unwrap_or(1)
+            ,
         }
     }
 }
+

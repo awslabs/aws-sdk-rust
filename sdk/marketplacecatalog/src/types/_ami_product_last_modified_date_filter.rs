@@ -3,13 +3,13 @@
 /// <p>Object that allows filtering based on the last modified date of AMI products.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmiProductLastModifiedDateFilter {
+pub struct AmiProductLastModifiedDateFilter  {
     /// <p>Dates between which the AMI product was last modified.</p>
     pub date_range: ::std::option::Option<crate::types::AmiProductLastModifiedDateFilterDateRange>,
 }
-impl AmiProductLastModifiedDateFilter {
+impl  AmiProductLastModifiedDateFilter  {
     /// <p>Dates between which the AMI product was last modified.</p>
-    pub fn date_range(&self) -> ::std::option::Option<&crate::types::AmiProductLastModifiedDateFilterDateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<& crate::types::AmiProductLastModifiedDateFilterDateRange> {
         self.date_range.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AmiProductLastModifiedDateFilterBuilder {
     }
     /// <p>Dates between which the AMI product was last modified.</p>
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::AmiProductLastModifiedDateFilterDateRange>) -> Self {
-        self.date_range = input;
-        self
+        self.date_range = input; self
     }
     /// <p>Dates between which the AMI product was last modified.</p>
     pub fn get_date_range(&self) -> &::std::option::Option<crate::types::AmiProductLastModifiedDateFilterDateRange> {
@@ -43,6 +42,10 @@ impl AmiProductLastModifiedDateFilterBuilder {
     }
     /// Consumes the builder and constructs a [`AmiProductLastModifiedDateFilter`](crate::types::AmiProductLastModifiedDateFilter).
     pub fn build(self) -> crate::types::AmiProductLastModifiedDateFilter {
-        crate::types::AmiProductLastModifiedDateFilter { date_range: self.date_range }
+        crate::types::AmiProductLastModifiedDateFilter {
+            date_range: self.date_range
+            ,
+        }
     }
 }
+

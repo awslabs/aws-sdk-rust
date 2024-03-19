@@ -3,23 +3,22 @@
 /// <p>A list of remediation actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PossibleRemediationAction {
+pub struct PossibleRemediationAction  {
     /// <p>A description of the list of remediation actions.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ordered list of remediation actions.</p>
-    pub ordered_remediation_actions: ::std::vec::Vec<crate::types::RemediationActionWithOrder>,
+    pub ordered_remediation_actions: ::std::vec::Vec::<crate::types::RemediationActionWithOrder>,
     /// <p>Information about whether an action is taken by default.</p>
     pub is_default_action: bool,
 }
-impl PossibleRemediationAction {
+impl  PossibleRemediationAction  {
     /// <p>A description of the list of remediation actions.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ordered list of remediation actions.</p>
-    pub fn ordered_remediation_actions(&self) -> &[crate::types::RemediationActionWithOrder] {
-        use std::ops::Deref;
-        self.ordered_remediation_actions.deref()
+    pub fn ordered_remediation_actions(&self) -> & [crate::types::RemediationActionWithOrder] {
+        use std::ops::Deref; self.ordered_remediation_actions.deref()
     }
     /// <p>Information about whether an action is taken by default.</p>
     pub fn is_default_action(&self) -> bool {
@@ -38,7 +37,7 @@ impl PossibleRemediationAction {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PossibleRemediationActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) ordered_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,
+    pub(crate) ordered_remediation_actions: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationActionWithOrder>>,
     pub(crate) is_default_action: ::std::option::Option<bool>,
 }
 impl PossibleRemediationActionBuilder {
@@ -49,8 +48,7 @@ impl PossibleRemediationActionBuilder {
     }
     /// <p>A description of the list of remediation actions.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the list of remediation actions.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,20 +61,16 @@ impl PossibleRemediationActionBuilder {
     /// <p>The ordered list of remediation actions.</p>
     pub fn ordered_remediation_actions(mut self, input: crate::types::RemediationActionWithOrder) -> Self {
         let mut v = self.ordered_remediation_actions.unwrap_or_default();
-        v.push(input);
-        self.ordered_remediation_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ordered_remediation_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ordered list of remediation actions.</p>
-    pub fn set_ordered_remediation_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,
-    ) -> Self {
-        self.ordered_remediation_actions = input;
-        self
+    pub fn set_ordered_remediation_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationActionWithOrder>>) -> Self {
+        self.ordered_remediation_actions = input; self
     }
     /// <p>The ordered list of remediation actions.</p>
-    pub fn get_ordered_remediation_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>> {
+    pub fn get_ordered_remediation_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationActionWithOrder>> {
         &self.ordered_remediation_actions
     }
     /// <p>Information about whether an action is taken by default.</p>
@@ -86,8 +80,7 @@ impl PossibleRemediationActionBuilder {
     }
     /// <p>Information about whether an action is taken by default.</p>
     pub fn set_is_default_action(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default_action = input;
-        self
+        self.is_default_action = input; self
     }
     /// <p>Information about whether an action is taken by default.</p>
     pub fn get_is_default_action(&self) -> &::std::option::Option<bool> {
@@ -97,15 +90,20 @@ impl PossibleRemediationActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ordered_remediation_actions`](crate::types::builders::PossibleRemediationActionBuilder::ordered_remediation_actions)
     pub fn build(self) -> ::std::result::Result<crate::types::PossibleRemediationAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PossibleRemediationAction {
-            description: self.description,
-            ordered_remediation_actions: self.ordered_remediation_actions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ordered_remediation_actions",
-                    "ordered_remediation_actions was not specified but it is required when building PossibleRemediationAction",
-                )
-            })?,
-            is_default_action: self.is_default_action.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::PossibleRemediationAction {
+                description: self.description
+                ,
+                ordered_remediation_actions: self.ordered_remediation_actions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ordered_remediation_actions", "ordered_remediation_actions was not specified but it is required when building PossibleRemediationAction")
+                    )?
+                ,
+                is_default_action: self.is_default_action
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

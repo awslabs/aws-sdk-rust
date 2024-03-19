@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGremlinQueryStatusOutput {
+pub struct GetGremlinQueryStatusOutput  {
     /// <p>The ID of the query for which status is being returned.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The Gremlin query string.</p>
@@ -11,25 +11,25 @@ pub struct GetGremlinQueryStatusOutput {
     pub query_eval_stats: ::std::option::Option<crate::types::QueryEvalStats>,
     _request_id: Option<String>,
 }
-impl GetGremlinQueryStatusOutput {
+impl  GetGremlinQueryStatusOutput  {
     /// <p>The ID of the query for which status is being returned.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>The Gremlin query string.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The evaluation status of the Gremlin query.</p>
-    pub fn query_eval_stats(&self) -> ::std::option::Option<&crate::types::QueryEvalStats> {
+    pub fn query_eval_stats(&self) -> ::std::option::Option<& crate::types::QueryEvalStats> {
         self.query_eval_stats.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetGremlinQueryStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGremlinQueryStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetGremlinQueryStatusOutput`](crate::operation::get_gremlin_query_status::GetGremlinQueryStatusOutput).
     pub fn builder() -> crate::operation::get_gremlin_query_status::builders::GetGremlinQueryStatusOutputBuilder {
@@ -54,8 +54,7 @@ impl GetGremlinQueryStatusOutputBuilder {
     }
     /// <p>The ID of the query for which status is being returned.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The ID of the query for which status is being returned.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetGremlinQueryStatusOutputBuilder {
     }
     /// <p>The Gremlin query string.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The Gremlin query string.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetGremlinQueryStatusOutputBuilder {
     }
     /// <p>The evaluation status of the Gremlin query.</p>
     pub fn set_query_eval_stats(mut self, input: ::std::option::Option<crate::types::QueryEvalStats>) -> Self {
-        self.query_eval_stats = input;
-        self
+        self.query_eval_stats = input; self
     }
     /// <p>The evaluation status of the Gremlin query.</p>
     pub fn get_query_eval_stats(&self) -> &::std::option::Option<crate::types::QueryEvalStats> {
         &self.query_eval_stats
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGremlinQueryStatusOutput`](crate::operation::get_gremlin_query_status::GetGremlinQueryStatusOutput).
     pub fn build(self) -> crate::operation::get_gremlin_query_status::GetGremlinQueryStatusOutput {
         crate::operation::get_gremlin_query_status::GetGremlinQueryStatusOutput {
-            query_id: self.query_id,
-            query_string: self.query_string,
-            query_eval_stats: self.query_eval_stats,
+            query_id: self.query_id
+            ,
+            query_string: self.query_string
+            ,
+            query_eval_stats: self.query_eval_stats
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

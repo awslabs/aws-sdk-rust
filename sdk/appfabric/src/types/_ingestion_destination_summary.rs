@@ -3,15 +3,14 @@
 /// <p>Contains a summary of an ingestion destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionDestinationSummary {
+pub struct IngestionDestinationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
     pub arn: ::std::string::String,
 }
-impl IngestionDestinationSummary {
+impl  IngestionDestinationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl IngestionDestinationSummary {
@@ -36,8 +35,7 @@ impl IngestionDestinationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl IngestionDestinationSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::IngestionDestinationSummaryBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::IngestionDestinationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IngestionDestinationSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building IngestionDestinationSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IngestionDestinationSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IngestionDestinationSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

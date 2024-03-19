@@ -3,24 +3,22 @@
 /// <p>A structure that contains the settings for a keyword match task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeywordMatchConfiguration {
+pub struct KeywordMatchConfiguration  {
     /// <p>The name of the keyword match rule.</p>
     pub rule_name: ::std::string::String,
     /// <p>The keywords or phrases that you want to match.</p>
-    pub keywords: ::std::vec::Vec<::std::string::String>,
+    pub keywords: ::std::vec::Vec::<::std::string::String>,
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
     pub negate: bool,
 }
-impl KeywordMatchConfiguration {
+impl  KeywordMatchConfiguration  {
     /// <p>The name of the keyword match rule.</p>
-    pub fn rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_name.deref()
+    pub fn rule_name(&self) -> & str {
+        use std::ops::Deref; self.rule_name.deref()
     }
     /// <p>The keywords or phrases that you want to match.</p>
-    pub fn keywords(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.keywords.deref()
+    pub fn keywords(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.keywords.deref()
     }
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
     pub fn negate(&self) -> bool {
@@ -39,7 +37,7 @@ impl KeywordMatchConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeywordMatchConfigurationBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) keywords: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) negate: ::std::option::Option<bool>,
 }
 impl KeywordMatchConfigurationBuilder {
@@ -51,8 +49,7 @@ impl KeywordMatchConfigurationBuilder {
     }
     /// <p>The name of the keyword match rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the keyword match rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +62,16 @@ impl KeywordMatchConfigurationBuilder {
     /// <p>The keywords or phrases that you want to match.</p>
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keywords.unwrap_or_default();
-        v.push(input.into());
-        self.keywords = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.keywords = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The keywords or phrases that you want to match.</p>
-    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.keywords = input;
-        self
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.keywords = input; self
     }
     /// <p>The keywords or phrases that you want to match.</p>
-    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.keywords
     }
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
@@ -85,8 +81,7 @@ impl KeywordMatchConfigurationBuilder {
     }
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
     pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.negate = input;
-        self
+        self.negate = input; self
     }
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
     pub fn get_negate(&self) -> &::std::option::Option<bool> {
@@ -97,20 +92,23 @@ impl KeywordMatchConfigurationBuilder {
     /// - [`rule_name`](crate::types::builders::KeywordMatchConfigurationBuilder::rule_name)
     /// - [`keywords`](crate::types::builders::KeywordMatchConfigurationBuilder::keywords)
     pub fn build(self) -> ::std::result::Result<crate::types::KeywordMatchConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeywordMatchConfiguration {
-            rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_name",
-                    "rule_name was not specified but it is required when building KeywordMatchConfiguration",
-                )
-            })?,
-            keywords: self.keywords.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keywords",
-                    "keywords was not specified but it is required when building KeywordMatchConfiguration",
-                )
-            })?,
-            negate: self.negate.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeywordMatchConfiguration {
+                rule_name: self.rule_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_name", "rule_name was not specified but it is required when building KeywordMatchConfiguration")
+                    )?
+                ,
+                keywords: self.keywords
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keywords", "keywords was not specified but it is required when building KeywordMatchConfiguration")
+                    )?
+                ,
+                negate: self.negate
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

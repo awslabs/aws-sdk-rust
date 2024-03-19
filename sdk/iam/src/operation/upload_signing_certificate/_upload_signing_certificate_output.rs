@@ -3,22 +3,22 @@
 /// <p>Contains the response to a successful <code>UploadSigningCertificate</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UploadSigningCertificateOutput {
+pub struct UploadSigningCertificateOutput  {
     /// <p>Information about the certificate.</p>
     pub certificate: ::std::option::Option<crate::types::SigningCertificate>,
     _request_id: Option<String>,
 }
-impl UploadSigningCertificateOutput {
+impl  UploadSigningCertificateOutput  {
     /// <p>Information about the certificate.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&crate::types::SigningCertificate> {
+    pub fn certificate(&self) -> ::std::option::Option<& crate::types::SigningCertificate> {
         self.certificate.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UploadSigningCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UploadSigningCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UploadSigningCertificateOutput`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput).
     pub fn builder() -> crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder {
@@ -42,27 +42,28 @@ impl UploadSigningCertificateOutputBuilder {
     }
     /// <p>Information about the certificate.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::SigningCertificate>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>Information about the certificate.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<crate::types::SigningCertificate> {
         &self.certificate
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UploadSigningCertificateOutput`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput).
     pub fn build(self) -> crate::operation::upload_signing_certificate::UploadSigningCertificateOutput {
         crate::operation::upload_signing_certificate::UploadSigningCertificateOutput {
-            certificate: self.certificate,
+            certificate: self.certificate
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

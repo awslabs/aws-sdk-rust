@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let voiceconnectorawsregion = unimplemented!();
 /// match voiceconnectorawsregion {
@@ -38,16 +38,14 @@
 /// Specifically, when `voiceconnectorawsregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VoiceConnectorAwsRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum VoiceConnectorAwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
@@ -71,96 +69,86 @@ pub enum VoiceConnectorAwsRegion {
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for VoiceConnectorAwsRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "ap-northeast-1" => VoiceConnectorAwsRegion::ApNortheast1,
-            "ap-northeast-2" => VoiceConnectorAwsRegion::ApNortheast2,
-            "ap-southeast-1" => VoiceConnectorAwsRegion::ApSoutheast1,
-            "ap-southeast-2" => VoiceConnectorAwsRegion::ApSoutheast2,
-            "ca-central-1" => VoiceConnectorAwsRegion::CaCentral1,
-            "eu-central-1" => VoiceConnectorAwsRegion::EuCentral1,
-            "eu-west-1" => VoiceConnectorAwsRegion::EuWest1,
-            "eu-west-2" => VoiceConnectorAwsRegion::EuWest2,
-            "us-east-1" => VoiceConnectorAwsRegion::UsEast1,
-            "us-west-2" => VoiceConnectorAwsRegion::UsWest2,
-            other => VoiceConnectorAwsRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ap-northeast-1" => VoiceConnectorAwsRegion::ApNortheast1,
+"ap-northeast-2" => VoiceConnectorAwsRegion::ApNortheast2,
+"ap-southeast-1" => VoiceConnectorAwsRegion::ApSoutheast1,
+"ap-southeast-2" => VoiceConnectorAwsRegion::ApSoutheast2,
+"ca-central-1" => VoiceConnectorAwsRegion::CaCentral1,
+"eu-central-1" => VoiceConnectorAwsRegion::EuCentral1,
+"eu-west-1" => VoiceConnectorAwsRegion::EuWest1,
+"eu-west-2" => VoiceConnectorAwsRegion::EuWest2,
+"us-east-1" => VoiceConnectorAwsRegion::UsEast1,
+"us-west-2" => VoiceConnectorAwsRegion::UsWest2,
+other => VoiceConnectorAwsRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for VoiceConnectorAwsRegion {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(VoiceConnectorAwsRegion::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(VoiceConnectorAwsRegion::from(s))
+                    }
+                }
 impl VoiceConnectorAwsRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VoiceConnectorAwsRegion::ApNortheast1 => "ap-northeast-1",
-            VoiceConnectorAwsRegion::ApNortheast2 => "ap-northeast-2",
-            VoiceConnectorAwsRegion::ApSoutheast1 => "ap-southeast-1",
-            VoiceConnectorAwsRegion::ApSoutheast2 => "ap-southeast-2",
-            VoiceConnectorAwsRegion::CaCentral1 => "ca-central-1",
-            VoiceConnectorAwsRegion::EuCentral1 => "eu-central-1",
-            VoiceConnectorAwsRegion::EuWest1 => "eu-west-1",
-            VoiceConnectorAwsRegion::EuWest2 => "eu-west-2",
-            VoiceConnectorAwsRegion::UsEast1 => "us-east-1",
-            VoiceConnectorAwsRegion::UsWest2 => "us-west-2",
-            VoiceConnectorAwsRegion::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ca-central-1",
-            "eu-central-1",
-            "eu-west-1",
-            "eu-west-2",
-            "us-east-1",
-            "us-west-2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VoiceConnectorAwsRegion::ApNortheast1 => "ap-northeast-1",
+    VoiceConnectorAwsRegion::ApNortheast2 => "ap-northeast-2",
+    VoiceConnectorAwsRegion::ApSoutheast1 => "ap-southeast-1",
+    VoiceConnectorAwsRegion::ApSoutheast2 => "ap-southeast-2",
+    VoiceConnectorAwsRegion::CaCentral1 => "ca-central-1",
+    VoiceConnectorAwsRegion::EuCentral1 => "eu-central-1",
+    VoiceConnectorAwsRegion::EuWest1 => "eu-west-1",
+    VoiceConnectorAwsRegion::EuWest2 => "eu-west-2",
+    VoiceConnectorAwsRegion::UsEast1 => "us-east-1",
+    VoiceConnectorAwsRegion::UsWest2 => "us-west-2",
+    VoiceConnectorAwsRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "us-east-1", "us-west-2"]
+                }
+            }
 impl ::std::convert::AsRef<str> for VoiceConnectorAwsRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl VoiceConnectorAwsRegion {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for VoiceConnectorAwsRegion {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            VoiceConnectorAwsRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
-            VoiceConnectorAwsRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
-            VoiceConnectorAwsRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
-            VoiceConnectorAwsRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
-            VoiceConnectorAwsRegion::CaCentral1 => write!(f, "ca-central-1"),
-            VoiceConnectorAwsRegion::EuCentral1 => write!(f, "eu-central-1"),
-            VoiceConnectorAwsRegion::EuWest1 => write!(f, "eu-west-1"),
-            VoiceConnectorAwsRegion::EuWest2 => write!(f, "eu-west-2"),
-            VoiceConnectorAwsRegion::UsEast1 => write!(f, "us-east-1"),
-            VoiceConnectorAwsRegion::UsWest2 => write!(f, "us-west-2"),
-            VoiceConnectorAwsRegion::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                VoiceConnectorAwsRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+VoiceConnectorAwsRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
+VoiceConnectorAwsRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+VoiceConnectorAwsRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+VoiceConnectorAwsRegion::CaCentral1 => write!(f, "ca-central-1"),
+VoiceConnectorAwsRegion::EuCentral1 => write!(f, "eu-central-1"),
+VoiceConnectorAwsRegion::EuWest1 => write!(f, "eu-west-1"),
+VoiceConnectorAwsRegion::EuWest2 => write!(f, "eu-west-2"),
+VoiceConnectorAwsRegion::UsEast1 => write!(f, "us-east-1"),
+VoiceConnectorAwsRegion::UsWest2 => write!(f, "us-west-2"),
+VoiceConnectorAwsRegion::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

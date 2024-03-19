@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBackupVaultLockConfigurationInput {
+pub struct DeleteBackupVaultLockConfigurationInput  {
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBackupVaultLockConfigurationInput {
+impl  DeleteBackupVaultLockConfigurationInput  {
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteBackupVaultLockConfigurationInputBuilder {
     }
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
     /// Consumes the builder and constructs a [`DeleteBackupVaultLockConfigurationInput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput {
-                backup_vault_name: self.backup_vault_name,
-            },
+                backup_vault_name: self.backup_vault_name
+                ,
+            }
         )
     }
 }
+

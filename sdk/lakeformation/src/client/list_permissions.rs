@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPermissions`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p><br>
     ///   - [`principal(DataLakePrincipal)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::principal) / [`set_principal(Option<DataLakePrincipal>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_principal):<br>required: **false**<br><p>Specifies a principal to filter the permissions returned.</p><br>
     ///   - [`resource_type(DataLakeResourceType)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::resource_type) / [`set_resource_type(Option<DataLakeResourceType>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_resource_type):<br>required: **false**<br><p>Specifies a resource type to filter the permissions returned.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is not the first call to retrieve this list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`include_related(impl Into<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::include_related) / [`set_include_related(Option<String>)`](crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::set_include_related):<br>required: **false**<br><p>Indicates that related permissions should be included in the results.</p><br>
-    /// - On success, responds with [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput) with field(s):
+                            /// - On success, responds with [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput) with field(s):
     ///   - [`principal_resource_permissions(Option<Vec::<PrincipalResourcePermissions>>)`](crate::operation::list_permissions::ListPermissionsOutput::principal_resource_permissions): <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permissions::ListPermissionsOutput::next_token): <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::operation::list_permissions::ListPermissionsError)
+                            /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::operation::list_permissions::ListPermissionsError)
     pub fn list_permissions(&self) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
-        crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

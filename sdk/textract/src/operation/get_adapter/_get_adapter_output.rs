@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAdapterOutput {
+pub struct GetAdapterOutput  {
     /// <p>A string identifying the adapter that information has been retrieved for.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the requested adapter.</p>
@@ -12,50 +12,51 @@ pub struct GetAdapterOutput {
     /// <p>The description for the requested adapter.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of the targeted feature types for the requested adapter.</p>
-    pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
+    pub feature_types: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>,
     /// <p>Binary value indicating if the adapter is being automatically updated or not.</p>
     pub auto_update: ::std::option::Option<crate::types::AutoUpdate>,
     /// <p>A set of tags (key-value pairs) associated with the adapter that has been retrieved.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetAdapterOutput {
+impl  GetAdapterOutput  {
     /// <p>A string identifying the adapter that information has been retrieved for.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
     /// <p>The name of the requested adapter.</p>
-    pub fn adapter_name(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_name(&self) -> ::std::option::Option<& str> {
         self.adapter_name.as_deref()
     }
     /// <p>The date and time the requested adapter was created at.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description for the requested adapter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>List of the targeted feature types for the requested adapter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
-    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
-        self.feature_types.as_deref().unwrap_or_default()
+    pub fn feature_types(&self) -> & [crate::types::FeatureType] {
+        self.feature_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Binary value indicating if the adapter is being automatically updated or not.</p>
-    pub fn auto_update(&self) -> ::std::option::Option<&crate::types::AutoUpdate> {
+    pub fn auto_update(&self) -> ::std::option::Option<& crate::types::AutoUpdate> {
         self.auto_update.as_ref()
     }
     /// <p>A set of tags (key-value pairs) associated with the adapter that has been retrieved.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAdapterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAdapterOutput {
     /// Creates a new builder-style object to manufacture [`GetAdapterOutput`](crate::operation::get_adapter::GetAdapterOutput).
     pub fn builder() -> crate::operation::get_adapter::builders::GetAdapterOutputBuilder {
@@ -71,9 +72,9 @@ pub struct GetAdapterOutputBuilder {
     pub(crate) adapter_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
+    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>,
     pub(crate) auto_update: ::std::option::Option<crate::types::AutoUpdate>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetAdapterOutputBuilder {
@@ -84,8 +85,7 @@ impl GetAdapterOutputBuilder {
     }
     /// <p>A string identifying the adapter that information has been retrieved for.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A string identifying the adapter that information has been retrieved for.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl GetAdapterOutputBuilder {
     }
     /// <p>The name of the requested adapter.</p>
     pub fn set_adapter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_name = input;
-        self
+        self.adapter_name = input; self
     }
     /// <p>The name of the requested adapter.</p>
     pub fn get_adapter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl GetAdapterOutputBuilder {
     }
     /// <p>The date and time the requested adapter was created at.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time the requested adapter was created at.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -126,8 +124,7 @@ impl GetAdapterOutputBuilder {
     }
     /// <p>The description for the requested adapter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the requested adapter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,17 +137,16 @@ impl GetAdapterOutputBuilder {
     /// <p>List of the targeted feature types for the requested adapter.</p>
     pub fn feature_types(mut self, input: crate::types::FeatureType) -> Self {
         let mut v = self.feature_types.unwrap_or_default();
-        v.push(input);
-        self.feature_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.feature_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the targeted feature types for the requested adapter.</p>
-    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
-        self.feature_types = input;
-        self
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>) -> Self {
+        self.feature_types = input; self
     }
     /// <p>List of the targeted feature types for the requested adapter.</p>
-    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>> {
         &self.feature_types
     }
     /// <p>Binary value indicating if the adapter is being automatically updated or not.</p>
@@ -160,8 +156,7 @@ impl GetAdapterOutputBuilder {
     }
     /// <p>Binary value indicating if the adapter is being automatically updated or not.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<crate::types::AutoUpdate>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>Binary value indicating if the adapter is being automatically updated or not.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::AutoUpdate> {
@@ -174,39 +169,46 @@ impl GetAdapterOutputBuilder {
     /// <p>A set of tags (key-value pairs) associated with the adapter that has been retrieved.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of tags (key-value pairs) associated with the adapter that has been retrieved.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of tags (key-value pairs) associated with the adapter that has been retrieved.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAdapterOutput`](crate::operation::get_adapter::GetAdapterOutput).
     pub fn build(self) -> crate::operation::get_adapter::GetAdapterOutput {
         crate::operation::get_adapter::GetAdapterOutput {
-            adapter_id: self.adapter_id,
-            adapter_name: self.adapter_name,
-            creation_time: self.creation_time,
-            description: self.description,
-            feature_types: self.feature_types,
-            auto_update: self.auto_update,
-            tags: self.tags,
+            adapter_id: self.adapter_id
+            ,
+            adapter_name: self.adapter_name
+            ,
+            creation_time: self.creation_time
+            ,
+            description: self.description
+            ,
+            feature_types: self.feature_types
+            ,
+            auto_update: self.auto_update
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

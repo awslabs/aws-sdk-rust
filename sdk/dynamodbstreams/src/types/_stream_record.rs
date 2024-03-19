@@ -3,15 +3,15 @@
 /// <p>A description of a single data modification that was performed on an item in a DynamoDB table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamRecord {
+pub struct StreamRecord  {
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
     pub approximate_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
-    pub keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
-    pub new_image: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub new_image: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
-    pub old_image: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub old_image: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The sequence number of the stream record.</p>
     pub sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The size of the stream record, in bytes.</p>
@@ -29,25 +29,25 @@ pub struct StreamRecord {
     /// </ul>
     pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
 }
-impl StreamRecord {
+impl  StreamRecord  {
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
-    pub fn approximate_creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn approximate_creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.approximate_creation_date_time.as_ref()
     }
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
-    pub fn keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn keys(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         self.keys.as_ref()
     }
     /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
-    pub fn new_image(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn new_image(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         self.new_image.as_ref()
     }
     /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
-    pub fn old_image(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn old_image(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         self.old_image.as_ref()
     }
     /// <p>The sequence number of the stream record.</p>
-    pub fn sequence_number(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_number(&self) -> ::std::option::Option<& str> {
         self.sequence_number.as_deref()
     }
     /// <p>The size of the stream record, in bytes.</p>
@@ -65,7 +65,7 @@ impl StreamRecord {
     /// <li>
     /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p></li>
     /// </ul>
-    pub fn stream_view_type(&self) -> ::std::option::Option<&crate::types::StreamViewType> {
+    pub fn stream_view_type(&self) -> ::std::option::Option<& crate::types::StreamViewType> {
         self.stream_view_type.as_ref()
     }
 }
@@ -81,9 +81,9 @@ impl StreamRecord {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamRecordBuilder {
     pub(crate) approximate_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    pub(crate) new_image: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    pub(crate) old_image: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub(crate) keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
+    pub(crate) new_image: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
+    pub(crate) old_image: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
     pub(crate) sequence_number: ::std::option::Option<::std::string::String>,
     pub(crate) size_bytes: ::std::option::Option<i64>,
     pub(crate) stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
@@ -96,8 +96,7 @@ impl StreamRecordBuilder {
     }
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
     pub fn set_approximate_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.approximate_creation_date_time = input;
-        self
+        self.approximate_creation_date_time = input; self
     }
     /// <p>The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded down to the closest second.</p>
     pub fn get_approximate_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,20 +109,16 @@ impl StreamRecordBuilder {
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
     pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.keys.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.keys = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.keys = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.keys = input; self
     }
     /// <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
-    pub fn get_keys(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         &self.keys
     }
     /// Adds a key-value pair to `new_image`.
@@ -133,20 +128,16 @@ impl StreamRecordBuilder {
     /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
     pub fn new_image(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.new_image.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.new_image = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.new_image = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
-    pub fn set_new_image(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    ) -> Self {
-        self.new_image = input;
-        self
+    pub fn set_new_image(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.new_image = input; self
     }
     /// <p>The item in the DynamoDB table as it appeared after it was modified.</p>
-    pub fn get_new_image(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn get_new_image(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         &self.new_image
     }
     /// Adds a key-value pair to `old_image`.
@@ -156,20 +147,16 @@ impl StreamRecordBuilder {
     /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
     pub fn old_image(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.old_image.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.old_image = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.old_image = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
-    pub fn set_old_image(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    ) -> Self {
-        self.old_image = input;
-        self
+    pub fn set_old_image(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.old_image = input; self
     }
     /// <p>The item in the DynamoDB table as it appeared before it was modified.</p>
-    pub fn get_old_image(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn get_old_image(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         &self.old_image
     }
     /// <p>The sequence number of the stream record.</p>
@@ -179,8 +166,7 @@ impl StreamRecordBuilder {
     }
     /// <p>The sequence number of the stream record.</p>
     pub fn set_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_number = input;
-        self
+        self.sequence_number = input; self
     }
     /// <p>The sequence number of the stream record.</p>
     pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +179,7 @@ impl StreamRecordBuilder {
     }
     /// <p>The size of the stream record, in bytes.</p>
     pub fn set_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_bytes = input;
-        self
+        self.size_bytes = input; self
     }
     /// <p>The size of the stream record, in bytes.</p>
     pub fn get_size_bytes(&self) -> &::std::option::Option<i64> {
@@ -227,8 +212,7 @@ impl StreamRecordBuilder {
     /// <p><code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p></li>
     /// </ul>
     pub fn set_stream_view_type(mut self, input: ::std::option::Option<crate::types::StreamViewType>) -> Self {
-        self.stream_view_type = input;
-        self
+        self.stream_view_type = input; self
     }
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
@@ -247,13 +231,21 @@ impl StreamRecordBuilder {
     /// Consumes the builder and constructs a [`StreamRecord`](crate::types::StreamRecord).
     pub fn build(self) -> crate::types::StreamRecord {
         crate::types::StreamRecord {
-            approximate_creation_date_time: self.approximate_creation_date_time,
-            keys: self.keys,
-            new_image: self.new_image,
-            old_image: self.old_image,
-            sequence_number: self.sequence_number,
-            size_bytes: self.size_bytes,
-            stream_view_type: self.stream_view_type,
+            approximate_creation_date_time: self.approximate_creation_date_time
+            ,
+            keys: self.keys
+            ,
+            new_image: self.new_image
+            ,
+            old_image: self.old_image
+            ,
+            sequence_number: self.sequence_number
+            ,
+            size_bytes: self.size_bytes
+            ,
+            stream_view_type: self.stream_view_type
+            ,
         }
     }
 }
+

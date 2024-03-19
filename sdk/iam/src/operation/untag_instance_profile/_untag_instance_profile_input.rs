@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagInstanceProfileInput {
+pub struct UntagInstanceProfileInput  {
     /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UntagInstanceProfileInput {
+impl  UntagInstanceProfileInput  {
     /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> ::std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UntagInstanceProfileInput {
@@ -34,7 +35,7 @@ impl UntagInstanceProfileInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagInstanceProfileInputBuilder {
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UntagInstanceProfileInputBuilder {
     /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
@@ -47,8 +48,7 @@ impl UntagInstanceProfileInputBuilder {
     /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_name = input;
-        self
+        self.instance_profile_name = input; self
     }
     /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -62,27 +62,28 @@ impl UntagInstanceProfileInputBuilder {
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagInstanceProfileInput`](crate::operation::untag_instance_profile::UntagInstanceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::untag_instance_profile::UntagInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::untag_instance_profile::UntagInstanceProfileInput {
-            instance_profile_name: self.instance_profile_name,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_instance_profile::UntagInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::untag_instance_profile::UntagInstanceProfileInput {
+                instance_profile_name: self.instance_profile_name
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

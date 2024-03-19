@@ -3,32 +3,35 @@
 /// <p>The field options for a pivot table visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableFieldOptions {
+pub struct PivotTableFieldOptions  {
     /// <p>The selected field options for the pivot table field options.</p>
-    pub selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>>,
+    pub selected_field_options: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableFieldOption>>,
     /// <p>The data path options for the pivot table field options.</p>
-    pub data_path_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>>,
+    pub data_path_options: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableDataPathOption>>,
     /// <p>The collapse state options for the pivot table field options.</p>
-    pub collapse_state_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldCollapseStateOption>>,
+    pub collapse_state_options: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableFieldCollapseStateOption>>,
 }
-impl PivotTableFieldOptions {
+impl  PivotTableFieldOptions  {
     /// <p>The selected field options for the pivot table field options.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_field_options.is_none()`.
-    pub fn selected_field_options(&self) -> &[crate::types::PivotTableFieldOption] {
-        self.selected_field_options.as_deref().unwrap_or_default()
+    pub fn selected_field_options(&self) -> & [crate::types::PivotTableFieldOption] {
+        self.selected_field_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The data path options for the pivot table field options.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_path_options.is_none()`.
-    pub fn data_path_options(&self) -> &[crate::types::PivotTableDataPathOption] {
-        self.data_path_options.as_deref().unwrap_or_default()
+    pub fn data_path_options(&self) -> & [crate::types::PivotTableDataPathOption] {
+        self.data_path_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The collapse state options for the pivot table field options.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collapse_state_options.is_none()`.
-    pub fn collapse_state_options(&self) -> &[crate::types::PivotTableFieldCollapseStateOption] {
-        self.collapse_state_options.as_deref().unwrap_or_default()
+    pub fn collapse_state_options(&self) -> & [crate::types::PivotTableFieldCollapseStateOption] {
+        self.collapse_state_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PivotTableFieldOptions {
@@ -42,9 +45,9 @@ impl PivotTableFieldOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableFieldOptionsBuilder {
-    pub(crate) selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>>,
-    pub(crate) data_path_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>>,
-    pub(crate) collapse_state_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldCollapseStateOption>>,
+    pub(crate) selected_field_options: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableFieldOption>>,
+    pub(crate) data_path_options: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableDataPathOption>>,
+    pub(crate) collapse_state_options: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableFieldCollapseStateOption>>,
 }
 impl PivotTableFieldOptionsBuilder {
     /// Appends an item to `selected_field_options`.
@@ -54,17 +57,16 @@ impl PivotTableFieldOptionsBuilder {
     /// <p>The selected field options for the pivot table field options.</p>
     pub fn selected_field_options(mut self, input: crate::types::PivotTableFieldOption) -> Self {
         let mut v = self.selected_field_options.unwrap_or_default();
-        v.push(input);
-        self.selected_field_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.selected_field_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The selected field options for the pivot table field options.</p>
-    pub fn set_selected_field_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>>) -> Self {
-        self.selected_field_options = input;
-        self
+    pub fn set_selected_field_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableFieldOption>>) -> Self {
+        self.selected_field_options = input; self
     }
     /// <p>The selected field options for the pivot table field options.</p>
-    pub fn get_selected_field_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>> {
+    pub fn get_selected_field_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PivotTableFieldOption>> {
         &self.selected_field_options
     }
     /// Appends an item to `data_path_options`.
@@ -74,17 +76,16 @@ impl PivotTableFieldOptionsBuilder {
     /// <p>The data path options for the pivot table field options.</p>
     pub fn data_path_options(mut self, input: crate::types::PivotTableDataPathOption) -> Self {
         let mut v = self.data_path_options.unwrap_or_default();
-        v.push(input);
-        self.data_path_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_path_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data path options for the pivot table field options.</p>
-    pub fn set_data_path_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>>) -> Self {
-        self.data_path_options = input;
-        self
+    pub fn set_data_path_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableDataPathOption>>) -> Self {
+        self.data_path_options = input; self
     }
     /// <p>The data path options for the pivot table field options.</p>
-    pub fn get_data_path_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>> {
+    pub fn get_data_path_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PivotTableDataPathOption>> {
         &self.data_path_options
     }
     /// Appends an item to `collapse_state_options`.
@@ -94,28 +95,28 @@ impl PivotTableFieldOptionsBuilder {
     /// <p>The collapse state options for the pivot table field options.</p>
     pub fn collapse_state_options(mut self, input: crate::types::PivotTableFieldCollapseStateOption) -> Self {
         let mut v = self.collapse_state_options.unwrap_or_default();
-        v.push(input);
-        self.collapse_state_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collapse_state_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The collapse state options for the pivot table field options.</p>
-    pub fn set_collapse_state_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldCollapseStateOption>>,
-    ) -> Self {
-        self.collapse_state_options = input;
-        self
+    pub fn set_collapse_state_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PivotTableFieldCollapseStateOption>>) -> Self {
+        self.collapse_state_options = input; self
     }
     /// <p>The collapse state options for the pivot table field options.</p>
-    pub fn get_collapse_state_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldCollapseStateOption>> {
+    pub fn get_collapse_state_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PivotTableFieldCollapseStateOption>> {
         &self.collapse_state_options
     }
     /// Consumes the builder and constructs a [`PivotTableFieldOptions`](crate::types::PivotTableFieldOptions).
     pub fn build(self) -> crate::types::PivotTableFieldOptions {
         crate::types::PivotTableFieldOptions {
-            selected_field_options: self.selected_field_options,
-            data_path_options: self.data_path_options,
-            collapse_state_options: self.collapse_state_options,
+            selected_field_options: self.selected_field_options
+            ,
+            data_path_options: self.data_path_options
+            ,
+            collapse_state_options: self.collapse_state_options
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAuditSuppressionInput {
+pub struct DeleteAuditSuppressionInput  {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
 }
-impl DeleteAuditSuppressionInput {
+impl  DeleteAuditSuppressionInput  {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn check_name(&self) -> ::std::option::Option<&str> {
+    pub fn check_name(&self) -> ::std::option::Option<& str> {
         self.check_name.as_deref()
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::ResourceIdentifier> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& crate::types::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAuditSuppressionInputBuilder {
     }
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn set_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_name = input;
-        self
+        self.check_name = input; self
     }
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteAuditSuppressionInputBuilder {
     }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`DeleteAuditSuppressionInput`](crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput {
-            check_name: self.check_name,
-            resource_identifier: self.resource_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput {
+                check_name: self.check_name
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+            }
+        )
     }
 }
+

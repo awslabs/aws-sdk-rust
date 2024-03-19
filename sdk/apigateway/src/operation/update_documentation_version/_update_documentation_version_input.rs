@@ -3,28 +3,29 @@
 /// <p>Updates an existing documentation version of an API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDocumentationVersionInput {
+pub struct UpdateDocumentationVersionInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier of the to-be-updated documentation version.</p>
     pub documentation_version: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub patch_operations: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>,
 }
-impl UpdateDocumentationVersionInput {
+impl  UpdateDocumentationVersionInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The version identifier of the to-be-updated documentation version.</p>
-    pub fn documentation_version(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_version(&self) -> ::std::option::Option<& str> {
         self.documentation_version.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
-    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
-        self.patch_operations.as_deref().unwrap_or_default()
+    pub fn patch_operations(&self) -> & [crate::types::PatchOperation] {
+        self.patch_operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateDocumentationVersionInput {
@@ -40,7 +41,7 @@ impl UpdateDocumentationVersionInput {
 pub struct UpdateDocumentationVersionInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_version: ::std::option::Option<::std::string::String>,
-    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>,
 }
 impl UpdateDocumentationVersionInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -51,8 +52,7 @@ impl UpdateDocumentationVersionInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +66,7 @@ impl UpdateDocumentationVersionInputBuilder {
     }
     /// <p>The version identifier of the to-be-updated documentation version.</p>
     pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_version = input;
-        self
+        self.documentation_version = input; self
     }
     /// <p>The version identifier of the to-be-updated documentation version.</p>
     pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,30 +79,30 @@ impl UpdateDocumentationVersionInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-        v.push(input);
-        self.patch_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.patch_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
-        self.patch_operations = input;
-        self
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>) -> Self {
+        self.patch_operations = input; self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>> {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateDocumentationVersionInput`](crate::operation::update_documentation_version::UpdateDocumentationVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_documentation_version::UpdateDocumentationVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_documentation_version::UpdateDocumentationVersionInput {
-            rest_api_id: self.rest_api_id,
-            documentation_version: self.documentation_version,
-            patch_operations: self.patch_operations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_documentation_version::UpdateDocumentationVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_documentation_version::UpdateDocumentationVersionInput {
+                rest_api_id: self.rest_api_id
+                ,
+                documentation_version: self.documentation_version
+                ,
+                patch_operations: self.patch_operations
+                ,
+            }
+        )
     }
 }
+

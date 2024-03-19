@@ -3,22 +3,22 @@
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingOutput {
+pub struct GetFindingOutput  {
     /// <p>A <code>finding</code> object that contains finding details.</p>
     pub finding: ::std::option::Option<crate::types::Finding>,
     _request_id: Option<String>,
 }
-impl GetFindingOutput {
+impl  GetFindingOutput  {
     /// <p>A <code>finding</code> object that contains finding details.</p>
-    pub fn finding(&self) -> ::std::option::Option<&crate::types::Finding> {
+    pub fn finding(&self) -> ::std::option::Option<& crate::types::Finding> {
         self.finding.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFindingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFindingOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingOutput`](crate::operation::get_finding::GetFindingOutput).
     pub fn builder() -> crate::operation::get_finding::builders::GetFindingOutputBuilder {
@@ -41,27 +41,28 @@ impl GetFindingOutputBuilder {
     }
     /// <p>A <code>finding</code> object that contains finding details.</p>
     pub fn set_finding(mut self, input: ::std::option::Option<crate::types::Finding>) -> Self {
-        self.finding = input;
-        self
+        self.finding = input; self
     }
     /// <p>A <code>finding</code> object that contains finding details.</p>
     pub fn get_finding(&self) -> &::std::option::Option<crate::types::Finding> {
         &self.finding
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFindingOutput`](crate::operation::get_finding::GetFindingOutput).
     pub fn build(self) -> crate::operation::get_finding::GetFindingOutput {
         crate::operation::get_finding::GetFindingOutput {
-            finding: self.finding,
+            finding: self.finding
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

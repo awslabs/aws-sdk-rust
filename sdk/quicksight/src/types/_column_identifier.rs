@@ -3,22 +3,20 @@
 /// <p>A column of a data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnIdentifier {
+pub struct ColumnIdentifier  {
     /// <p>The data set that the column belongs to.</p>
     pub data_set_identifier: ::std::string::String,
     /// <p>The name of the column.</p>
     pub column_name: ::std::string::String,
 }
-impl ColumnIdentifier {
+impl  ColumnIdentifier  {
     /// <p>The data set that the column belongs to.</p>
-    pub fn data_set_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_identifier.deref()
+    pub fn data_set_identifier(&self) -> & str {
+        use std::ops::Deref; self.data_set_identifier.deref()
     }
     /// <p>The name of the column.</p>
-    pub fn column_name(&self) -> &str {
-        use std::ops::Deref;
-        self.column_name.deref()
+    pub fn column_name(&self) -> & str {
+        use std::ops::Deref; self.column_name.deref()
     }
 }
 impl ColumnIdentifier {
@@ -44,8 +42,7 @@ impl ColumnIdentifierBuilder {
     }
     /// <p>The data set that the column belongs to.</p>
     pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_identifier = input;
-        self
+        self.data_set_identifier = input; self
     }
     /// <p>The data set that the column belongs to.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ColumnIdentifierBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ColumnIdentifierBuilder {
     /// - [`data_set_identifier`](crate::types::builders::ColumnIdentifierBuilder::data_set_identifier)
     /// - [`column_name`](crate::types::builders::ColumnIdentifierBuilder::column_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ColumnIdentifier {
-            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_identifier",
-                    "data_set_identifier was not specified but it is required when building ColumnIdentifier",
-                )
-            })?,
-            column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_name",
-                    "column_name was not specified but it is required when building ColumnIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ColumnIdentifier {
+                data_set_identifier: self.data_set_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_identifier", "data_set_identifier was not specified but it is required when building ColumnIdentifier")
+                    )?
+                ,
+                column_name: self.column_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_name", "column_name was not specified but it is required when building ColumnIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

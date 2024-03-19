@@ -3,16 +3,17 @@
 /// <p>Contains details about the results from looking up the knowledge base.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KnowledgeBaseLookupOutput {
+pub struct KnowledgeBaseLookupOutput  {
     /// <p>Contains metadata about the sources cited for the generated response.</p>
-    pub retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
+    pub retrieved_references: ::std::option::Option<::std::vec::Vec::<crate::types::RetrievedReference>>,
 }
-impl KnowledgeBaseLookupOutput {
+impl  KnowledgeBaseLookupOutput  {
     /// <p>Contains metadata about the sources cited for the generated response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retrieved_references.is_none()`.
-    pub fn retrieved_references(&self) -> &[crate::types::RetrievedReference] {
-        self.retrieved_references.as_deref().unwrap_or_default()
+    pub fn retrieved_references(&self) -> & [crate::types::RetrievedReference] {
+        self.retrieved_references.as_deref()
+        .unwrap_or_default()
     }
 }
 impl KnowledgeBaseLookupOutput {
@@ -26,7 +27,7 @@ impl KnowledgeBaseLookupOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KnowledgeBaseLookupOutputBuilder {
-    pub(crate) retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
+    pub(crate) retrieved_references: ::std::option::Option<::std::vec::Vec::<crate::types::RetrievedReference>>,
 }
 impl KnowledgeBaseLookupOutputBuilder {
     /// Appends an item to `retrieved_references`.
@@ -36,23 +37,24 @@ impl KnowledgeBaseLookupOutputBuilder {
     /// <p>Contains metadata about the sources cited for the generated response.</p>
     pub fn retrieved_references(mut self, input: crate::types::RetrievedReference) -> Self {
         let mut v = self.retrieved_references.unwrap_or_default();
-        v.push(input);
-        self.retrieved_references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.retrieved_references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains metadata about the sources cited for the generated response.</p>
-    pub fn set_retrieved_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>) -> Self {
-        self.retrieved_references = input;
-        self
+    pub fn set_retrieved_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RetrievedReference>>) -> Self {
+        self.retrieved_references = input; self
     }
     /// <p>Contains metadata about the sources cited for the generated response.</p>
-    pub fn get_retrieved_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>> {
+    pub fn get_retrieved_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RetrievedReference>> {
         &self.retrieved_references
     }
     /// Consumes the builder and constructs a [`KnowledgeBaseLookupOutput`](crate::types::KnowledgeBaseLookupOutput).
     pub fn build(self) -> crate::types::KnowledgeBaseLookupOutput {
         crate::types::KnowledgeBaseLookupOutput {
-            retrieved_references: self.retrieved_references,
+            retrieved_references: self.retrieved_references
+            ,
         }
     }
 }
+

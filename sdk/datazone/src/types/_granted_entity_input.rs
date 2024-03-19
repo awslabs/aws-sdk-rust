@@ -21,11 +21,7 @@ impl GrantedEntityInput {
     /// Tries to convert the enum instance into [`Listing`](crate::types::GrantedEntityInput::Listing), extracting the inner [`ListingRevisionInput`](crate::types::ListingRevisionInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_listing(&self) -> ::std::result::Result<&crate::types::ListingRevisionInput, &Self> {
-        if let GrantedEntityInput::Listing(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let GrantedEntityInput::Listing(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Listing`](crate::types::GrantedEntityInput::Listing).
     pub fn is_listing(&self) -> bool {
@@ -36,3 +32,4 @@ impl GrantedEntityInput {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEndpointInput {
+pub struct DeleteEndpointInput  {
     /// <p>The ID of the endpoint.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Outposts.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEndpointInput {
+impl  DeleteEndpointInput  {
     /// <p>The ID of the endpoint.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The ID of the Outposts.</p>
-    pub fn outpost_id(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_id(&self) -> ::std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteEndpointInputBuilder {
     }
     /// <p>The ID of the endpoint.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>The ID of the endpoint.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteEndpointInputBuilder {
     }
     /// <p>The ID of the Outposts.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_id = input;
-        self
+        self.outpost_id = input; self
     }
     /// <p>The ID of the Outposts.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_id
     }
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_endpoint::DeleteEndpointInput {
-            endpoint_id: self.endpoint_id,
-            outpost_id: self.outpost_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_endpoint::DeleteEndpointInput {
+                endpoint_id: self.endpoint_id
+                ,
+                outpost_id: self.outpost_id
+                ,
+            }
+        )
     }
 }
+

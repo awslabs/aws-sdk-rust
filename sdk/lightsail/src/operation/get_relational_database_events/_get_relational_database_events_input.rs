@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseEventsInput {
+pub struct GetRelationalDatabaseEventsInput  {
     /// <p>The name of the database from which to get events.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
@@ -13,9 +13,9 @@ pub struct GetRelationalDatabaseEventsInput {
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetRelationalDatabaseEventsInput {
+impl  GetRelationalDatabaseEventsInput  {
     /// <p>The name of the database from which to get events.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
@@ -26,7 +26,7 @@ impl GetRelationalDatabaseEventsInput {
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl GetRelationalDatabaseEventsInputBuilder {
     }
     /// <p>The name of the database from which to get events.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of the database from which to get events.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl GetRelationalDatabaseEventsInputBuilder {
     /// <p>Default: <code>60</code></p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_minutes = input;
-        self
+        self.duration_in_minutes = input; self
     }
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
     /// <p>Default: <code>60</code></p>
@@ -90,8 +88,7 @@ impl GetRelationalDatabaseEventsInputBuilder {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
@@ -99,16 +96,17 @@ impl GetRelationalDatabaseEventsInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseEventsInput`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput {
-            relational_database_name: self.relational_database_name,
-            duration_in_minutes: self.duration_in_minutes,
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput {
+                relational_database_name: self.relational_database_name
+                ,
+                duration_in_minutes: self.duration_in_minutes
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

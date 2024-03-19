@@ -3,19 +3,19 @@
 /// <p>The CIS date filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisDateFilter {
+pub struct CisDateFilter  {
     /// <p>The CIS date filter's earliest scan start time.</p>
     pub earliest_scan_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The CIS date filter's latest scan start time.</p>
     pub latest_scan_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CisDateFilter {
+impl  CisDateFilter  {
     /// <p>The CIS date filter's earliest scan start time.</p>
-    pub fn earliest_scan_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn earliest_scan_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.earliest_scan_start_time.as_ref()
     }
     /// <p>The CIS date filter's latest scan start time.</p>
-    pub fn latest_scan_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_scan_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_scan_start_time.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CisDateFilterBuilder {
     }
     /// <p>The CIS date filter's earliest scan start time.</p>
     pub fn set_earliest_scan_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.earliest_scan_start_time = input;
-        self
+        self.earliest_scan_start_time = input; self
     }
     /// <p>The CIS date filter's earliest scan start time.</p>
     pub fn get_earliest_scan_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl CisDateFilterBuilder {
     }
     /// <p>The CIS date filter's latest scan start time.</p>
     pub fn set_latest_scan_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_scan_start_time = input;
-        self
+        self.latest_scan_start_time = input; self
     }
     /// <p>The CIS date filter's latest scan start time.</p>
     pub fn get_latest_scan_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl CisDateFilterBuilder {
     /// Consumes the builder and constructs a [`CisDateFilter`](crate::types::CisDateFilter).
     pub fn build(self) -> crate::types::CisDateFilter {
         crate::types::CisDateFilter {
-            earliest_scan_start_time: self.earliest_scan_start_time,
-            latest_scan_start_time: self.latest_scan_start_time,
+            earliest_scan_start_time: self.earliest_scan_start_time
+            ,
+            latest_scan_start_time: self.latest_scan_start_time
+            ,
         }
     }
 }
+

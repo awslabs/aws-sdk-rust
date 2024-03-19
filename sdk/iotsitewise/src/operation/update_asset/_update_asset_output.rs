@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssetOutput {
+pub struct UpdateAssetOutput  {
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub asset_status: ::std::option::Option<crate::types::AssetStatus>,
     _request_id: Option<String>,
 }
-impl UpdateAssetOutput {
+impl  UpdateAssetOutput  {
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn asset_status(&self) -> ::std::option::Option<&crate::types::AssetStatus> {
+    pub fn asset_status(&self) -> ::std::option::Option<& crate::types::AssetStatus> {
         self.asset_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAssetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAssetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssetOutput`](crate::operation::update_asset::UpdateAssetOutput).
     pub fn builder() -> crate::operation::update_asset::builders::UpdateAssetOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateAssetOutputBuilder {
     }
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub fn set_asset_status(mut self, input: ::std::option::Option<crate::types::AssetStatus>) -> Self {
-        self.asset_status = input;
-        self
+        self.asset_status = input; self
     }
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub fn get_asset_status(&self) -> &::std::option::Option<crate::types::AssetStatus> {
         &self.asset_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAssetOutput`](crate::operation::update_asset::UpdateAssetOutput).
     pub fn build(self) -> crate::operation::update_asset::UpdateAssetOutput {
         crate::operation::update_asset::UpdateAssetOutput {
-            asset_status: self.asset_status,
+            asset_status: self.asset_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

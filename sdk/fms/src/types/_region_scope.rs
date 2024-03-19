@@ -3,18 +3,19 @@
 /// <p>Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can manage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegionScope {
+pub struct RegionScope  {
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
     pub all_regions_enabled: bool,
 }
-impl RegionScope {
+impl  RegionScope  {
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[::std::string::String] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [::std::string::String] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
     pub fn all_regions_enabled(&self) -> bool {
@@ -32,7 +33,7 @@ impl RegionScope {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionScopeBuilder {
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) all_regions_enabled: ::std::option::Option<bool>,
 }
 impl RegionScopeBuilder {
@@ -43,17 +44,16 @@ impl RegionScopeBuilder {
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
@@ -63,8 +63,7 @@ impl RegionScopeBuilder {
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
     pub fn set_all_regions_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.all_regions_enabled = input;
-        self
+        self.all_regions_enabled = input; self
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
     pub fn get_all_regions_enabled(&self) -> &::std::option::Option<bool> {
@@ -73,8 +72,12 @@ impl RegionScopeBuilder {
     /// Consumes the builder and constructs a [`RegionScope`](crate::types::RegionScope).
     pub fn build(self) -> crate::types::RegionScope {
         crate::types::RegionScope {
-            regions: self.regions,
-            all_regions_enabled: self.all_regions_enabled.unwrap_or_default(),
+            regions: self.regions
+            ,
+            all_regions_enabled: self.all_regions_enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

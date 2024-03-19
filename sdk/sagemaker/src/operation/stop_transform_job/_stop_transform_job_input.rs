@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopTransformJobInput {
+pub struct StopTransformJobInput  {
     /// <p>The name of the batch transform job to stop.</p>
     pub transform_job_name: ::std::option::Option<::std::string::String>,
 }
-impl StopTransformJobInput {
+impl  StopTransformJobInput  {
     /// <p>The name of the batch transform job to stop.</p>
-    pub fn transform_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn transform_job_name(&self) -> ::std::option::Option<& str> {
         self.transform_job_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StopTransformJobInputBuilder {
     }
     /// <p>The name of the batch transform job to stop.</p>
     pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_job_name = input;
-        self
+        self.transform_job_name = input; self
     }
     /// <p>The name of the batch transform job to stop.</p>
     pub fn get_transform_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.transform_job_name
     }
     /// Consumes the builder and constructs a [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_transform_job::StopTransformJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_transform_job::StopTransformJobInput {
-            transform_job_name: self.transform_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_transform_job::StopTransformJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_transform_job::StopTransformJobInput {
+                transform_job_name: self.transform_job_name
+                ,
+            }
+        )
     }
 }
+

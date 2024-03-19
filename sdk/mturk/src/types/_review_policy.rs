@@ -3,23 +3,23 @@
 /// <p>HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReviewPolicy {
+pub struct ReviewPolicy  {
     /// <p>Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01</p>
     pub policy_name: ::std::string::String,
     /// <p>Name of the parameter from the Review policy.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyParameter>>,
 }
-impl ReviewPolicy {
+impl  ReviewPolicy  {
     /// <p>Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01</p>
-    pub fn policy_name(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_name.deref()
+    pub fn policy_name(&self) -> & str {
+        use std::ops::Deref; self.policy_name.deref()
     }
     /// <p>Name of the parameter from the Review policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::PolicyParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::PolicyParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReviewPolicy {
@@ -34,7 +34,7 @@ impl ReviewPolicy {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReviewPolicyBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyParameter>>,
 }
 impl ReviewPolicyBuilder {
     /// <p>Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01</p>
@@ -45,8 +45,7 @@ impl ReviewPolicyBuilder {
     }
     /// <p>Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl ReviewPolicyBuilder {
     /// <p>Name of the parameter from the Review policy.</p>
     pub fn parameters(mut self, input: crate::types::PolicyParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Name of the parameter from the Review policy.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Name of the parameter from the Review policy.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ReviewPolicy`](crate::types::ReviewPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_name`](crate::types::builders::ReviewPolicyBuilder::policy_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ReviewPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReviewPolicy {
-            policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_name",
-                    "policy_name was not specified but it is required when building ReviewPolicy",
-                )
-            })?,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReviewPolicy {
+                policy_name: self.policy_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_name", "policy_name was not specified but it is required when building ReviewPolicy")
+                    )?
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStreamingImageInput {
+pub struct GetStreamingImageInput  {
     /// <p>The streaming image ID.</p>
     pub streaming_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl GetStreamingImageInput {
+impl  GetStreamingImageInput  {
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn streaming_image_id(&self) -> ::std::option::Option<& str> {
         self.streaming_image_id.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetStreamingImageInputBuilder {
     }
     /// <p>The streaming image ID.</p>
     pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.streaming_image_id = input;
-        self
+        self.streaming_image_id = input; self
     }
     /// <p>The streaming image ID.</p>
     pub fn get_streaming_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetStreamingImageInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_streaming_image::GetStreamingImageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_streaming_image::GetStreamingImageInput {
-            streaming_image_id: self.streaming_image_id,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_streaming_image::GetStreamingImageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_streaming_image::GetStreamingImageInput {
+                streaming_image_id: self.streaming_image_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

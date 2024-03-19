@@ -3,7 +3,7 @@
 /// <p>Describes the parameters of a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationalDatabaseParameter {
+pub struct RelationalDatabaseParameter  {
     /// <p>Specifies the valid range of values for the parameter.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when parameter updates are applied.</p>
@@ -22,26 +22,26 @@ pub struct RelationalDatabaseParameter {
     /// <p>Specifies the value of the parameter.</p>
     pub parameter_value: ::std::option::Option<::std::string::String>,
 }
-impl RelationalDatabaseParameter {
+impl  RelationalDatabaseParameter  {
     /// <p>Specifies the valid range of values for the parameter.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_values(&self) -> ::std::option::Option<& str> {
         self.allowed_values.as_deref()
     }
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
-    pub fn apply_method(&self) -> ::std::option::Option<&str> {
+    pub fn apply_method(&self) -> ::std::option::Option<& str> {
         self.apply_method.as_deref()
     }
     /// <p>Specifies the engine-specific parameter type.</p>
-    pub fn apply_type(&self) -> ::std::option::Option<&str> {
+    pub fn apply_type(&self) -> ::std::option::Option<& str> {
         self.apply_type.as_deref()
     }
     /// <p>Specifies the valid data type for the parameter.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<& str> {
         self.data_type.as_deref()
     }
     /// <p>Provides a description of the parameter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
@@ -49,11 +49,11 @@ impl RelationalDatabaseParameter {
         self.is_modifiable
     }
     /// <p>Specifies the name of the parameter.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
     /// <p>Specifies the value of the parameter.</p>
-    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_value(&self) -> ::std::option::Option<& str> {
         self.parameter_value.as_deref()
     }
 }
@@ -85,8 +85,7 @@ impl RelationalDatabaseParameterBuilder {
     }
     /// <p>Specifies the valid range of values for the parameter.</p>
     pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allowed_values = input;
-        self
+        self.allowed_values = input; self
     }
     /// <p>Specifies the valid range of values for the parameter.</p>
     pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl RelationalDatabaseParameterBuilder {
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
     pub fn set_apply_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.apply_method = input;
-        self
+        self.apply_method = input; self
     }
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
@@ -116,8 +114,7 @@ impl RelationalDatabaseParameterBuilder {
     }
     /// <p>Specifies the engine-specific parameter type.</p>
     pub fn set_apply_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.apply_type = input;
-        self
+        self.apply_type = input; self
     }
     /// <p>Specifies the engine-specific parameter type.</p>
     pub fn get_apply_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +127,7 @@ impl RelationalDatabaseParameterBuilder {
     }
     /// <p>Specifies the valid data type for the parameter.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>Specifies the valid data type for the parameter.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +140,7 @@ impl RelationalDatabaseParameterBuilder {
     }
     /// <p>Provides a description of the parameter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Provides a description of the parameter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +153,7 @@ impl RelationalDatabaseParameterBuilder {
     }
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
     pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_modifiable = input;
-        self
+        self.is_modifiable = input; self
     }
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
     pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
@@ -172,8 +166,7 @@ impl RelationalDatabaseParameterBuilder {
     }
     /// <p>Specifies the name of the parameter.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_name = input;
-        self
+        self.parameter_name = input; self
     }
     /// <p>Specifies the name of the parameter.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +179,7 @@ impl RelationalDatabaseParameterBuilder {
     }
     /// <p>Specifies the value of the parameter.</p>
     pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_value = input;
-        self
+        self.parameter_value = input; self
     }
     /// <p>Specifies the value of the parameter.</p>
     pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,14 +188,23 @@ impl RelationalDatabaseParameterBuilder {
     /// Consumes the builder and constructs a [`RelationalDatabaseParameter`](crate::types::RelationalDatabaseParameter).
     pub fn build(self) -> crate::types::RelationalDatabaseParameter {
         crate::types::RelationalDatabaseParameter {
-            allowed_values: self.allowed_values,
-            apply_method: self.apply_method,
-            apply_type: self.apply_type,
-            data_type: self.data_type,
-            description: self.description,
-            is_modifiable: self.is_modifiable,
-            parameter_name: self.parameter_name,
-            parameter_value: self.parameter_value,
+            allowed_values: self.allowed_values
+            ,
+            apply_method: self.apply_method
+            ,
+            apply_type: self.apply_type
+            ,
+            data_type: self.data_type
+            ,
+            description: self.description
+            ,
+            is_modifiable: self.is_modifiable
+            ,
+            parameter_name: self.parameter_name
+            ,
+            parameter_value: self.parameter_value
+            ,
         }
     }
 }
+

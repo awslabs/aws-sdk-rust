@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterSnapshotMessage {
+pub struct DeleteClusterSnapshotMessage  {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,15 @@ pub struct DeleteClusterSnapshotMessage {
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteClusterSnapshotMessage {
+impl  DeleteClusterSnapshotMessage  {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
-    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_cluster_identifier.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteClusterSnapshotMessageBuilder {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
@@ -65,8 +64,7 @@ impl DeleteClusterSnapshotMessageBuilder {
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_cluster_identifier = input;
-        self
+        self.snapshot_cluster_identifier = input; self
     }
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
@@ -76,8 +74,11 @@ impl DeleteClusterSnapshotMessageBuilder {
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotMessage`](crate::types::DeleteClusterSnapshotMessage).
     pub fn build(self) -> crate::types::DeleteClusterSnapshotMessage {
         crate::types::DeleteClusterSnapshotMessage {
-            snapshot_identifier: self.snapshot_identifier,
-            snapshot_cluster_identifier: self.snapshot_cluster_identifier,
+            snapshot_identifier: self.snapshot_identifier
+            ,
+            snapshot_cluster_identifier: self.snapshot_cluster_identifier
+            ,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Information about an SSL server certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Certificate {
+pub struct Certificate  {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
     pub is_default: ::std::option::Option<bool>,
 }
-impl Certificate {
+impl  Certificate  {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
@@ -41,8 +41,7 @@ impl CertificateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CertificateBuilder {
     }
     /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl CertificateBuilder {
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {
         crate::types::Certificate {
-            certificate_arn: self.certificate_arn,
-            is_default: self.is_default,
+            certificate_arn: self.certificate_arn
+            ,
+            is_default: self.is_default
+            ,
         }
     }
 }
+

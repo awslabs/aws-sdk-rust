@@ -3,16 +3,17 @@
 /// <p>The lifecycle configuration for the objects in the S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketBucketLifecycleConfigurationDetails {
+pub struct AwsS3BucketBucketLifecycleConfigurationDetails  {
     /// <p>The lifecycle rules.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>,
 }
-impl AwsS3BucketBucketLifecycleConfigurationDetails {
+impl  AwsS3BucketBucketLifecycleConfigurationDetails  {
     /// <p>The lifecycle rules.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationDetails {
@@ -26,7 +27,7 @@ impl AwsS3BucketBucketLifecycleConfigurationDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationDetailsBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationDetailsBuilder {
     /// Appends an item to `rules`.
@@ -36,24 +37,24 @@ impl AwsS3BucketBucketLifecycleConfigurationDetailsBuilder {
     /// <p>The lifecycle rules.</p>
     pub fn rules(mut self, input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The lifecycle rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The lifecycle rules.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationDetails {
-        crate::types::AwsS3BucketBucketLifecycleConfigurationDetails { rules: self.rules }
+        crate::types::AwsS3BucketBucketLifecycleConfigurationDetails {
+            rules: self.rules
+            ,
+        }
     }
 }
+

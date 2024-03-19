@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRetentionSettingsInput {
+pub struct PutRetentionSettingsInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The retention settings.</p>
     pub retention_settings: ::std::option::Option<crate::types::RetentionSettings>,
 }
-impl PutRetentionSettingsInput {
+impl  PutRetentionSettingsInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The retention settings.</p>
-    pub fn retention_settings(&self) -> ::std::option::Option<&crate::types::RetentionSettings> {
+    pub fn retention_settings(&self) -> ::std::option::Option<& crate::types::RetentionSettings> {
         self.retention_settings.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PutRetentionSettingsInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl PutRetentionSettingsInputBuilder {
     }
     /// <p>The retention settings.</p>
     pub fn set_retention_settings(mut self, input: ::std::option::Option<crate::types::RetentionSettings>) -> Self {
-        self.retention_settings = input;
-        self
+        self.retention_settings = input; self
     }
     /// <p>The retention settings.</p>
     pub fn get_retention_settings(&self) -> &::std::option::Option<crate::types::RetentionSettings> {
         &self.retention_settings
     }
     /// Consumes the builder and constructs a [`PutRetentionSettingsInput`](crate::operation::put_retention_settings::PutRetentionSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_retention_settings::PutRetentionSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_retention_settings::PutRetentionSettingsInput {
-            account_id: self.account_id,
-            retention_settings: self.retention_settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_retention_settings::PutRetentionSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_retention_settings::PutRetentionSettingsInput {
+                account_id: self.account_id
+                ,
+                retention_settings: self.retention_settings
+                ,
+            }
+        )
     }
 }
+

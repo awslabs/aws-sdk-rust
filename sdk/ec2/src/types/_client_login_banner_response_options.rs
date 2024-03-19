@@ -3,21 +3,21 @@
 /// <p>Current state of options for customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientLoginBannerResponseOptions {
+pub struct ClientLoginBannerResponseOptions  {
     /// <p>Current state of text banner feature.</p>
     /// <p>Valid values: <code>true | false</code></p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established. UTF-8 encoded characters only. Maximum of 1400 characters.</p>
     pub banner_text: ::std::option::Option<::std::string::String>,
 }
-impl ClientLoginBannerResponseOptions {
+impl  ClientLoginBannerResponseOptions  {
     /// <p>Current state of text banner feature.</p>
     /// <p>Valid values: <code>true | false</code></p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established. UTF-8 encoded characters only. Maximum of 1400 characters.</p>
-    pub fn banner_text(&self) -> ::std::option::Option<&str> {
+    pub fn banner_text(&self) -> ::std::option::Option<& str> {
         self.banner_text.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl ClientLoginBannerResponseOptionsBuilder {
     /// <p>Current state of text banner feature.</p>
     /// <p>Valid values: <code>true | false</code></p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Current state of text banner feature.</p>
     /// <p>Valid values: <code>true | false</code></p>
@@ -60,8 +59,7 @@ impl ClientLoginBannerResponseOptionsBuilder {
     }
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established. UTF-8 encoded characters only. Maximum of 1400 characters.</p>
     pub fn set_banner_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.banner_text = input;
-        self
+        self.banner_text = input; self
     }
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established. UTF-8 encoded characters only. Maximum of 1400 characters.</p>
     pub fn get_banner_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,11 @@ impl ClientLoginBannerResponseOptionsBuilder {
     /// Consumes the builder and constructs a [`ClientLoginBannerResponseOptions`](crate::types::ClientLoginBannerResponseOptions).
     pub fn build(self) -> crate::types::ClientLoginBannerResponseOptions {
         crate::types::ClientLoginBannerResponseOptions {
-            enabled: self.enabled,
-            banner_text: self.banner_text,
+            enabled: self.enabled
+            ,
+            banner_text: self.banner_text
+            ,
         }
     }
 }
+

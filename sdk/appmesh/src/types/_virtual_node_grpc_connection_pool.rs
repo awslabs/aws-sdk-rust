@@ -3,11 +3,11 @@
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualNodeGrpcConnectionPool {
+pub struct VirtualNodeGrpcConnectionPool  {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub max_requests: i32,
 }
-impl VirtualNodeGrpcConnectionPool {
+impl  VirtualNodeGrpcConnectionPool  {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
@@ -35,8 +35,7 @@ impl VirtualNodeGrpcConnectionPoolBuilder {
     }
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn set_max_requests(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_requests = input;
-        self
+        self.max_requests = input; self
     }
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn get_max_requests(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl VirtualNodeGrpcConnectionPoolBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`max_requests`](crate::types::builders::VirtualNodeGrpcConnectionPoolBuilder::max_requests)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeGrpcConnectionPool, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualNodeGrpcConnectionPool {
-            max_requests: self.max_requests.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_requests",
-                    "max_requests was not specified but it is required when building VirtualNodeGrpcConnectionPool",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualNodeGrpcConnectionPool {
+                max_requests: self.max_requests
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_requests", "max_requests was not specified but it is required when building VirtualNodeGrpcConnectionPool")
+                    )?
+                ,
+            }
+        )
     }
 }
+

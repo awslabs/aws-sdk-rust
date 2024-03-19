@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRealtimeLogConfigsInput {
+pub struct ListRealtimeLogConfigsInput  {
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
     pub max_items: ::std::option::Option<i32>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListRealtimeLogConfigsInput {
+impl  ListRealtimeLogConfigsInput  {
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ListRealtimeLogConfigsInputBuilder {
     }
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -54,23 +53,22 @@ impl ListRealtimeLogConfigsInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListRealtimeLogConfigsInput`](crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsInput {
-            max_items: self.max_items,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsInput {
+                max_items: self.max_items
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

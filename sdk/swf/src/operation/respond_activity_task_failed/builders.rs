@@ -5,23 +5,20 @@ pub use crate::operation::respond_activity_task_failed::_respond_activity_task_f
 
 impl RespondActivityTaskFailedInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.respond_activity_task_failed();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.respond_activity_task_failed();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RespondActivityTaskFailed`.
-///
+/// 
 /// <p>Used by workers to tell the service that the <code>ActivityTask</code> identified by the <code>taskToken</code> has failed with <code>reason</code> (if specified). The <code>reason</code> and <code>details</code> appear in the <code>ActivityTaskFailed</code> event added to the workflow history.</p>
 /// <p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to <code>RespondActivityTaskCompleted</code>, <code>RespondActivityTaskCanceled</code>, RespondActivityTaskFailed, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a>.</p>
 /// <p><b>Access Control</b></p>
@@ -38,33 +35,32 @@ impl RespondActivityTaskFailedInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RespondActivityTaskFailedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedInputBuilder,
+                    inner: crate::operation::respond_activity_task_failed::builders::RespondActivityTaskFailedInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
-        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
-    > for RespondActivityTaskFailedFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
-            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
+                    crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
+                > for RespondActivityTaskFailedFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
+                        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RespondActivityTaskFailedFluentBuilder {
     /// Creates a new `RespondActivityTaskFailed`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -73,53 +69,44 @@ impl RespondActivityTaskFailedFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::respond_activity_task_failed::RespondActivityTaskFailed::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::respond_activity_task_failed::RespondActivityTaskFailed::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
-        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::respond_activity_task_failed::RespondActivityTaskFailed::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::respond_activity_task_failed::RespondActivityTaskFailed::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput, crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p><important>
     /// <p><code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
@@ -169,3 +156,4 @@ impl RespondActivityTaskFailedFluentBuilder {
         self.inner.get_details()
     }
 }
+

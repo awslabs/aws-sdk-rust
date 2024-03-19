@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDetectorVersionStatusInput {
+pub struct UpdateDetectorVersionStatusInput  {
     /// <p>The detector ID.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version ID.</p>
@@ -11,18 +11,18 @@ pub struct UpdateDetectorVersionStatusInput {
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
     pub status: ::std::option::Option<crate::types::DetectorVersionStatus>,
 }
-impl UpdateDetectorVersionStatusInput {
+impl  UpdateDetectorVersionStatusInput  {
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> ::std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
     /// <p>The new status.</p>
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DetectorVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DetectorVersionStatus> {
         self.status.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl UpdateDetectorVersionStatusInputBuilder {
     }
     /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector ID.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl UpdateDetectorVersionStatusInputBuilder {
     }
     /// <p>The detector version ID.</p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_version_id = input;
-        self
+        self.detector_version_id = input; self
     }
     /// <p>The detector version ID.</p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl UpdateDetectorVersionStatusInputBuilder {
     /// <p>The new status.</p>
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectorVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The new status.</p>
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></p>
@@ -91,16 +88,17 @@ impl UpdateDetectorVersionStatusInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateDetectorVersionStatusInput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput {
-            detector_id: self.detector_id,
-            detector_version_id: self.detector_version_id,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput {
+                detector_id: self.detector_id
+                ,
+                detector_version_id: self.detector_version_id
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

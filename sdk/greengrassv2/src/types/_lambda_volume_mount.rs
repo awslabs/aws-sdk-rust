@@ -3,7 +3,7 @@
 /// <p>Contains information about a volume that Linux processes in a container can access. When you define a volume, the IoT Greengrass Core software mounts the source files to the destination inside the container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaVolumeMount {
+pub struct LambdaVolumeMount  {
     /// <p>The path to the physical volume in the file system.</p>
     pub source_path: ::std::string::String,
     /// <p>The path to the logical volume in the file system.</p>
@@ -15,20 +15,18 @@ pub struct LambdaVolumeMount {
     /// <p>Default: <code>false</code></p>
     pub add_group_owner: ::std::option::Option<bool>,
 }
-impl LambdaVolumeMount {
+impl  LambdaVolumeMount  {
     /// <p>The path to the physical volume in the file system.</p>
-    pub fn source_path(&self) -> &str {
-        use std::ops::Deref;
-        self.source_path.deref()
+    pub fn source_path(&self) -> & str {
+        use std::ops::Deref; self.source_path.deref()
     }
     /// <p>The path to the logical volume in the file system.</p>
-    pub fn destination_path(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_path.deref()
+    pub fn destination_path(&self) -> & str {
+        use std::ops::Deref; self.destination_path.deref()
     }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code></p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::LambdaFilesystemPermission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::LambdaFilesystemPermission> {
         self.permission.as_ref()
     }
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
@@ -62,8 +60,7 @@ impl LambdaVolumeMountBuilder {
     }
     /// <p>The path to the physical volume in the file system.</p>
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_path = input;
-        self
+        self.source_path = input; self
     }
     /// <p>The path to the physical volume in the file system.</p>
     pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +74,7 @@ impl LambdaVolumeMountBuilder {
     }
     /// <p>The path to the logical volume in the file system.</p>
     pub fn set_destination_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_path = input;
-        self
+        self.destination_path = input; self
     }
     /// <p>The path to the logical volume in the file system.</p>
     pub fn get_destination_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +89,7 @@ impl LambdaVolumeMountBuilder {
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code></p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::LambdaFilesystemPermission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code></p>
@@ -110,8 +105,7 @@ impl LambdaVolumeMountBuilder {
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_add_group_owner(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.add_group_owner = input;
-        self
+        self.add_group_owner = input; self
     }
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code></p>
@@ -123,21 +117,24 @@ impl LambdaVolumeMountBuilder {
     /// - [`source_path`](crate::types::builders::LambdaVolumeMountBuilder::source_path)
     /// - [`destination_path`](crate::types::builders::LambdaVolumeMountBuilder::destination_path)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaVolumeMount, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaVolumeMount {
-            source_path: self.source_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_path",
-                    "source_path was not specified but it is required when building LambdaVolumeMount",
-                )
-            })?,
-            destination_path: self.destination_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_path",
-                    "destination_path was not specified but it is required when building LambdaVolumeMount",
-                )
-            })?,
-            permission: self.permission,
-            add_group_owner: self.add_group_owner,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaVolumeMount {
+                source_path: self.source_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_path", "source_path was not specified but it is required when building LambdaVolumeMount")
+                    )?
+                ,
+                destination_path: self.destination_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_path", "destination_path was not specified but it is required when building LambdaVolumeMount")
+                    )?
+                ,
+                permission: self.permission
+                ,
+                add_group_owner: self.add_group_owner
+                ,
+            }
+        )
     }
 }
+

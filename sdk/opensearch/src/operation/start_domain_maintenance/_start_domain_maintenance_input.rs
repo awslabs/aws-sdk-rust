@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>StartDomainMaintenance</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDomainMaintenanceInput {
+pub struct StartDomainMaintenanceInput  {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action.</p>
@@ -11,17 +11,17 @@ pub struct StartDomainMaintenanceInput {
     /// <p>The ID of the data node.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
 }
-impl StartDomainMaintenanceInput {
+impl  StartDomainMaintenanceInput  {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the action.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::MaintenanceType> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::MaintenanceType> {
         self.action.as_ref()
     }
     /// <p>The ID of the data node.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl StartDomainMaintenanceInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl StartDomainMaintenanceInputBuilder {
     }
     /// <p>The name of the action.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::MaintenanceType>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The name of the action.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::MaintenanceType> {
@@ -78,24 +76,24 @@ impl StartDomainMaintenanceInputBuilder {
     }
     /// <p>The ID of the data node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>The ID of the data node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`StartDomainMaintenanceInput`](crate::operation::start_domain_maintenance::StartDomainMaintenanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_domain_maintenance::StartDomainMaintenanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_domain_maintenance::StartDomainMaintenanceInput {
-            domain_name: self.domain_name,
-            action: self.action,
-            node_id: self.node_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_domain_maintenance::StartDomainMaintenanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_domain_maintenance::StartDomainMaintenanceInput {
+                domain_name: self.domain_name
+                ,
+                action: self.action
+                ,
+                node_id: self.node_id
+                ,
+            }
+        )
     }
 }
+

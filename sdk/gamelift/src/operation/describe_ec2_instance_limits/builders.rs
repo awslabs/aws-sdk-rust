@@ -5,23 +5,20 @@ pub use crate::operation::describe_ec2_instance_limits::_describe_ec2_instance_l
 
 impl DescribeEc2InstanceLimitsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_ec2_instance_limits();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_ec2_instance_limits();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeEC2InstanceLimits`.
-///
+/// 
 /// <p>Retrieves the instance limits and current utilization for an Amazon Web Services Region or location. Instance limits control the number of instances, per instance type, per location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>. The information returned includes the maximum number of instances allowed and your account's current usage across all fleets. This information can affect your ability to scale your Amazon GameLift fleets. You can request a limit increase for your account by using the <b>Service limits</b> page in the Amazon GameLift console.</p>
 /// <p>Instance limits differ based on whether the instances are deployed in a fleet's home Region or in a remote location. For remote locations, limits also differ based on the combination of home Region and remote location. All requests must specify an Amazon Web Services Region (either explicitly or as your default settings). To get the limit for a remote location, you must also specify the location. For example, the following requests all return different results:</p>
 /// <ul>
@@ -45,33 +42,32 @@ impl DescribeEc2InstanceLimitsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEC2InstanceLimitsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder,
+                    inner: crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
-        crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-    > for DescribeEC2InstanceLimitsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
-            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
+                    crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
+                > for DescribeEC2InstanceLimitsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
+                        crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeEC2InstanceLimitsFluentBuilder {
     /// Creates a new `DescribeEC2InstanceLimits`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -80,53 +76,44 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimits::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimits::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
-        crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimits::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimits::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput, crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
     pub fn ec2_instance_type(mut self, input: crate::types::Ec2InstanceType) -> Self {
         self.inner = self.inner.ec2_instance_type(input);
@@ -156,3 +143,4 @@ impl DescribeEC2InstanceLimitsFluentBuilder {
         self.inner.get_location()
     }
 }
+

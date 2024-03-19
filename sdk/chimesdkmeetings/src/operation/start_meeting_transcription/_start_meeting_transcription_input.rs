@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMeetingTranscriptionInput {
+pub struct StartMeetingTranscriptionInput  {
     /// <p>The unique ID of the meeting being transcribed.</p>
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
     pub transcription_configuration: ::std::option::Option<crate::types::TranscriptionConfiguration>,
 }
-impl StartMeetingTranscriptionInput {
+impl  StartMeetingTranscriptionInput  {
     /// <p>The unique ID of the meeting being transcribed.</p>
-    pub fn meeting_id(&self) -> ::std::option::Option<&str> {
+    pub fn meeting_id(&self) -> ::std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    pub fn transcription_configuration(&self) -> ::std::option::Option<&crate::types::TranscriptionConfiguration> {
+    pub fn transcription_configuration(&self) -> ::std::option::Option<& crate::types::TranscriptionConfiguration> {
         self.transcription_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StartMeetingTranscriptionInputBuilder {
     }
     /// <p>The unique ID of the meeting being transcribed.</p>
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// <p>The unique ID of the meeting being transcribed.</p>
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl StartMeetingTranscriptionInputBuilder {
     }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
     pub fn set_transcription_configuration(mut self, input: ::std::option::Option<crate::types::TranscriptionConfiguration>) -> Self {
-        self.transcription_configuration = input;
-        self
+        self.transcription_configuration = input; self
     }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
     pub fn get_transcription_configuration(&self) -> &::std::option::Option<crate::types::TranscriptionConfiguration> {
         &self.transcription_configuration
     }
     /// Consumes the builder and constructs a [`StartMeetingTranscriptionInput`](crate::operation::start_meeting_transcription::StartMeetingTranscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_meeting_transcription::StartMeetingTranscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_meeting_transcription::StartMeetingTranscriptionInput {
-            meeting_id: self.meeting_id,
-            transcription_configuration: self.transcription_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_meeting_transcription::StartMeetingTranscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_meeting_transcription::StartMeetingTranscriptionInput {
+                meeting_id: self.meeting_id
+                ,
+                transcription_configuration: self.transcription_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJobs`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(DescribeJobsRequestFilters)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::filters) / [`set_filters(Option<DescribeJobsRequestFilters>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_filters):<br>required: **false**<br><p>Request to describe Job log filters.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>Request to describe job log items by max results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Request to describe job log items by next token.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_account_id):<br>required: **false**<br><p>Request to describe job log items by Account ID.</p><br>
-    /// - On success, responds with [`DescribeJobsOutput`](crate::operation::describe_jobs::DescribeJobsOutput) with field(s):
+                            /// - On success, responds with [`DescribeJobsOutput`](crate::operation::describe_jobs::DescribeJobsOutput) with field(s):
     ///   - [`items(Option<Vec::<Job>>)`](crate::operation::describe_jobs::DescribeJobsOutput::items): <p>Request to describe Job log items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_jobs::DescribeJobsOutput::next_token): <p>Request to describe Job response by next token.</p>
-    /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::operation::describe_jobs::DescribeJobsError)
+                            /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::operation::describe_jobs::DescribeJobsError)
     pub fn describe_jobs(&self) -> crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder {
-        crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

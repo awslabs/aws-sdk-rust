@@ -3,7 +3,7 @@
 /// <p>The details of a provisioned resource of this Amazon DataZone environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The provider of a provisioned resource of this Amazon DataZone environment.</p>
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>The name of a provisioned resource of this Amazon DataZone environment.</p>
@@ -13,24 +13,22 @@ pub struct Resource {
     /// <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
     pub r#type: ::std::string::String,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The provider of a provisioned resource of this Amazon DataZone environment.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
+    pub fn provider(&self) -> ::std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>The name of a provisioned resource of this Amazon DataZone environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of a provisioned resource of this Amazon DataZone environment.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
 }
 impl Resource {
@@ -57,8 +55,7 @@ impl ResourceBuilder {
     }
     /// <p>The provider of a provisioned resource of this Amazon DataZone environment.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of a provisioned resource of this Amazon DataZone environment.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +68,7 @@ impl ResourceBuilder {
     }
     /// <p>The name of a provisioned resource of this Amazon DataZone environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a provisioned resource of this Amazon DataZone environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +82,7 @@ impl ResourceBuilder {
     }
     /// <p>The value of a provisioned resource of this Amazon DataZone environment.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a provisioned resource of this Amazon DataZone environment.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +96,7 @@ impl ResourceBuilder {
     }
     /// <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,21 +107,24 @@ impl ResourceBuilder {
     /// - [`value`](crate::types::builders::ResourceBuilder::value)
     /// - [`r#type`](crate::types::builders::ResourceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Resource {
-            provider: self.provider,
-            name: self.name,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Resource",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Resource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Resource {
+                provider: self.provider
+                ,
+                name: self.name
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Resource")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Resource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

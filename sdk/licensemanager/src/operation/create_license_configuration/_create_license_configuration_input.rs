@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLicenseConfigurationInput {
+pub struct CreateLicenseConfigurationInput  {
     /// <p>Name of the license configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the license configuration.</p>
@@ -25,25 +25,25 @@ pub struct CreateLicenseConfigurationInput {
     /// <p><code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code></p></li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub license_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub license_rules: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Tags to add to the license configuration.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub disassociate_when_not_found: ::std::option::Option<bool>,
     /// <p>Product information.</p>
-    pub product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
+    pub product_information_list: ::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>>,
 }
-impl CreateLicenseConfigurationInput {
+impl  CreateLicenseConfigurationInput  {
     /// <p>Name of the license configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description of the license configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Dimension used to track the license inventory.</p>
-    pub fn license_counting_type(&self) -> ::std::option::Option<&crate::types::LicenseCountingType> {
+    pub fn license_counting_type(&self) -> ::std::option::Option<& crate::types::LicenseCountingType> {
         self.license_counting_type.as_ref()
     }
     /// <p>Number of licenses managed by the license configuration.</p>
@@ -66,26 +66,29 @@ impl CreateLicenseConfigurationInput {
     /// <p><code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code></p></li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_rules.is_none()`.
-    pub fn license_rules(&self) -> &[::std::string::String] {
-        self.license_rules.as_deref().unwrap_or_default()
+    pub fn license_rules(&self) -> & [::std::string::String] {
+        self.license_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags to add to the license configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn disassociate_when_not_found(&self) -> ::std::option::Option<bool> {
         self.disassociate_when_not_found
     }
     /// <p>Product information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_information_list.is_none()`.
-    pub fn product_information_list(&self) -> &[crate::types::ProductInformation] {
-        self.product_information_list.as_deref().unwrap_or_default()
+    pub fn product_information_list(&self) -> & [crate::types::ProductInformation] {
+        self.product_information_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateLicenseConfigurationInput {
@@ -104,10 +107,10 @@ pub struct CreateLicenseConfigurationInputBuilder {
     pub(crate) license_counting_type: ::std::option::Option<crate::types::LicenseCountingType>,
     pub(crate) license_count: ::std::option::Option<i64>,
     pub(crate) license_count_hard_limit: ::std::option::Option<bool>,
-    pub(crate) license_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) license_rules: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) disassociate_when_not_found: ::std::option::Option<bool>,
-    pub(crate) product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
+    pub(crate) product_information_list: ::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>>,
 }
 impl CreateLicenseConfigurationInputBuilder {
     /// <p>Name of the license configuration.</p>
@@ -118,8 +121,7 @@ impl CreateLicenseConfigurationInputBuilder {
     }
     /// <p>Name of the license configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the license configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +134,7 @@ impl CreateLicenseConfigurationInputBuilder {
     }
     /// <p>Description of the license configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the license configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +148,7 @@ impl CreateLicenseConfigurationInputBuilder {
     }
     /// <p>Dimension used to track the license inventory.</p>
     pub fn set_license_counting_type(mut self, input: ::std::option::Option<crate::types::LicenseCountingType>) -> Self {
-        self.license_counting_type = input;
-        self
+        self.license_counting_type = input; self
     }
     /// <p>Dimension used to track the license inventory.</p>
     pub fn get_license_counting_type(&self) -> &::std::option::Option<crate::types::LicenseCountingType> {
@@ -161,8 +161,7 @@ impl CreateLicenseConfigurationInputBuilder {
     }
     /// <p>Number of licenses managed by the license configuration.</p>
     pub fn set_license_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.license_count = input;
-        self
+        self.license_count = input; self
     }
     /// <p>Number of licenses managed by the license configuration.</p>
     pub fn get_license_count(&self) -> &::std::option::Option<i64> {
@@ -175,8 +174,7 @@ impl CreateLicenseConfigurationInputBuilder {
     }
     /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
     pub fn set_license_count_hard_limit(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.license_count_hard_limit = input;
-        self
+        self.license_count_hard_limit = input; self
     }
     /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
     pub fn get_license_count_hard_limit(&self) -> &::std::option::Option<bool> {
@@ -200,9 +198,9 @@ impl CreateLicenseConfigurationInputBuilder {
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
     pub fn license_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.license_rules.unwrap_or_default();
-        v.push(input.into());
-        self.license_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.license_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
     /// <ul>
@@ -216,9 +214,8 @@ impl CreateLicenseConfigurationInputBuilder {
     /// <p><code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code></p></li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub fn set_license_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.license_rules = input;
-        self
+    pub fn set_license_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.license_rules = input; self
     }
     /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
     /// <ul>
@@ -232,7 +229,7 @@ impl CreateLicenseConfigurationInputBuilder {
     /// <p><code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code></p></li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub fn get_license_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_rules(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.license_rules
     }
     /// Appends an item to `tags`.
@@ -242,17 +239,16 @@ impl CreateLicenseConfigurationInputBuilder {
     /// <p>Tags to add to the license configuration.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to add to the license configuration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to add to the license configuration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -262,8 +258,7 @@ impl CreateLicenseConfigurationInputBuilder {
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn set_disassociate_when_not_found(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disassociate_when_not_found = input;
-        self
+        self.disassociate_when_not_found = input; self
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
@@ -276,36 +271,42 @@ impl CreateLicenseConfigurationInputBuilder {
     /// <p>Product information.</p>
     pub fn product_information_list(mut self, input: crate::types::ProductInformation) -> Self {
         let mut v = self.product_information_list.unwrap_or_default();
-        v.push(input);
-        self.product_information_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.product_information_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Product information.</p>
-    pub fn set_product_information_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>) -> Self {
-        self.product_information_list = input;
-        self
+    pub fn set_product_information_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>>) -> Self {
+        self.product_information_list = input; self
     }
     /// <p>Product information.</p>
-    pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
+    pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>> {
         &self.product_information_list
     }
     /// Consumes the builder and constructs a [`CreateLicenseConfigurationInput`](crate::operation::create_license_configuration::CreateLicenseConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_license_configuration::CreateLicenseConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_license_configuration::CreateLicenseConfigurationInput {
-            name: self.name,
-            description: self.description,
-            license_counting_type: self.license_counting_type,
-            license_count: self.license_count,
-            license_count_hard_limit: self.license_count_hard_limit,
-            license_rules: self.license_rules,
-            tags: self.tags,
-            disassociate_when_not_found: self.disassociate_when_not_found,
-            product_information_list: self.product_information_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_license_configuration::CreateLicenseConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_license_configuration::CreateLicenseConfigurationInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                license_counting_type: self.license_counting_type
+                ,
+                license_count: self.license_count
+                ,
+                license_count_hard_limit: self.license_count_hard_limit
+                ,
+                license_rules: self.license_rules
+                ,
+                tags: self.tags
+                ,
+                disassociate_when_not_found: self.disassociate_when_not_found
+                ,
+                product_information_list: self.product_information_list
+                ,
+            }
+        )
     }
 }
+

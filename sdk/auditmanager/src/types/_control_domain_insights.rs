@@ -4,7 +4,7 @@
 /// <p>Control domain insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlDomainInsights {
+pub struct ControlDomainInsights  {
     /// <p>The name of the control domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the control domain.</p>
@@ -18,13 +18,13 @@ pub struct ControlDomainInsights {
     /// <p>The time when the control domain insights were last updated.</p>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ControlDomainInsights {
+impl  ControlDomainInsights  {
     /// <p>The name of the control domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the control domain.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date.</p>
@@ -36,11 +36,11 @@ impl ControlDomainInsights {
         self.total_controls_count
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain.</p>
-    pub fn evidence_insights(&self) -> ::std::option::Option<&crate::types::EvidenceInsights> {
+    pub fn evidence_insights(&self) -> ::std::option::Option<& crate::types::EvidenceInsights> {
         self.evidence_insights.as_ref()
     }
     /// <p>The time when the control domain insights were last updated.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl ControlDomainInsightsBuilder {
     }
     /// <p>The name of the control domain.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the control domain.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl ControlDomainInsightsBuilder {
     }
     /// <p>The unique identifier for the control domain.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the control domain.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl ControlDomainInsightsBuilder {
     }
     /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date.</p>
     pub fn set_controls_count_by_noncompliant_evidence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.controls_count_by_noncompliant_evidence = input;
-        self
+        self.controls_count_by_noncompliant_evidence = input; self
     }
     /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date.</p>
     pub fn get_controls_count_by_noncompliant_evidence(&self) -> &::std::option::Option<i32> {
@@ -112,8 +109,7 @@ impl ControlDomainInsightsBuilder {
     }
     /// <p>The total number of controls in the control domain.</p>
     pub fn set_total_controls_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_controls_count = input;
-        self
+        self.total_controls_count = input; self
     }
     /// <p>The total number of controls in the control domain.</p>
     pub fn get_total_controls_count(&self) -> &::std::option::Option<i32> {
@@ -126,8 +122,7 @@ impl ControlDomainInsightsBuilder {
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain.</p>
     pub fn set_evidence_insights(mut self, input: ::std::option::Option<crate::types::EvidenceInsights>) -> Self {
-        self.evidence_insights = input;
-        self
+        self.evidence_insights = input; self
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain.</p>
     pub fn get_evidence_insights(&self) -> &::std::option::Option<crate::types::EvidenceInsights> {
@@ -140,8 +135,7 @@ impl ControlDomainInsightsBuilder {
     }
     /// <p>The time when the control domain insights were last updated.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>The time when the control domain insights were last updated.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,12 +144,19 @@ impl ControlDomainInsightsBuilder {
     /// Consumes the builder and constructs a [`ControlDomainInsights`](crate::types::ControlDomainInsights).
     pub fn build(self) -> crate::types::ControlDomainInsights {
         crate::types::ControlDomainInsights {
-            name: self.name,
-            id: self.id,
-            controls_count_by_noncompliant_evidence: self.controls_count_by_noncompliant_evidence,
-            total_controls_count: self.total_controls_count,
-            evidence_insights: self.evidence_insights,
-            last_updated: self.last_updated,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            controls_count_by_noncompliant_evidence: self.controls_count_by_noncompliant_evidence
+            ,
+            total_controls_count: self.total_controls_count
+            ,
+            evidence_insights: self.evidence_insights
+            ,
+            last_updated: self.last_updated
+            ,
         }
     }
 }
+

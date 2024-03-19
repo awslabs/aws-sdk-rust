@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeploymentsOutput {
+pub struct ListDeploymentsOutput  {
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of deployment with summary data.</p>
-    pub deployments: ::std::vec::Vec<crate::types::DeploymentSummary>,
+    pub deployments: ::std::vec::Vec::<crate::types::DeploymentSummary>,
     _request_id: Option<String>,
 }
-impl ListDeploymentsOutput {
+impl  ListDeploymentsOutput  {
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of deployment with summary data.</p>
-    pub fn deployments(&self) -> &[crate::types::DeploymentSummary] {
-        use std::ops::Deref;
-        self.deployments.deref()
+    pub fn deployments(&self) -> & [crate::types::DeploymentSummary] {
+        use std::ops::Deref; self.deployments.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDeploymentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
     pub fn builder() -> crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListDeploymentsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>,
+    pub(crate) deployments: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentSummary>>,
     _request_id: Option<String>,
 }
 impl ListDeploymentsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListDeploymentsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the current requested list of deployment.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListDeploymentsOutputBuilder {
     /// <p>An array of deployment with summary data.</p>
     pub fn deployments(mut self, input: crate::types::DeploymentSummary) -> Self {
         let mut v = self.deployments.unwrap_or_default();
-        v.push(input);
-        self.deployments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.deployments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of deployment with summary data.</p>
-    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>) -> Self {
-        self.deployments = input;
-        self
+    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentSummary>>) -> Self {
+        self.deployments = input; self
     }
     /// <p>An array of deployment with summary data.</p>
-    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
+    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeploymentSummary>> {
         &self.deployments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`deployments`](crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder::deployments)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsOutput {
-            next_token: self.next_token,
-            deployments: self.deployments.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployments",
-                    "deployments was not specified but it is required when building ListDeploymentsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_deployments::ListDeploymentsOutput {
+                next_token: self.next_token
+                ,
+                deployments: self.deployments
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployments", "deployments was not specified but it is required when building ListDeploymentsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

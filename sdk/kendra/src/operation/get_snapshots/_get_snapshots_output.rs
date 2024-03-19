@@ -2,44 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSnapshotsOutput {
+pub struct GetSnapshotsOutput  {
     /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
     pub snap_shot_time_filter: ::std::option::Option<crate::types::TimeRange>,
     /// <p>The column headers for the search metrics data.</p>
-    pub snapshots_data_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshots_data_header: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
-    pub snapshots_data: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub snapshots_data: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSnapshotsOutput {
+impl  GetSnapshotsOutput  {
     /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
-    pub fn snap_shot_time_filter(&self) -> ::std::option::Option<&crate::types::TimeRange> {
+    pub fn snap_shot_time_filter(&self) -> ::std::option::Option<& crate::types::TimeRange> {
         self.snap_shot_time_filter.as_ref()
     }
     /// <p>The column headers for the search metrics data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots_data_header.is_none()`.
-    pub fn snapshots_data_header(&self) -> &[::std::string::String] {
-        self.snapshots_data_header.as_deref().unwrap_or_default()
+    pub fn snapshots_data_header(&self) -> & [::std::string::String] {
+        self.snapshots_data_header.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots_data.is_none()`.
-    pub fn snapshots_data(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        self.snapshots_data.as_deref().unwrap_or_default()
+    pub fn snapshots_data(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        self.snapshots_data.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotsOutput`](crate::operation::get_snapshots::GetSnapshotsOutput).
     pub fn builder() -> crate::operation::get_snapshots::builders::GetSnapshotsOutputBuilder {
@@ -52,8 +54,8 @@ impl GetSnapshotsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSnapshotsOutputBuilder {
     pub(crate) snap_shot_time_filter: ::std::option::Option<crate::types::TimeRange>,
-    pub(crate) snapshots_data_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) snapshots_data: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) snapshots_data_header: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) snapshots_data: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -65,8 +67,7 @@ impl GetSnapshotsOutputBuilder {
     }
     /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
     pub fn set_snap_shot_time_filter(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
-        self.snap_shot_time_filter = input;
-        self
+        self.snap_shot_time_filter = input; self
     }
     /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
     pub fn get_snap_shot_time_filter(&self) -> &::std::option::Option<crate::types::TimeRange> {
@@ -79,17 +80,16 @@ impl GetSnapshotsOutputBuilder {
     /// <p>The column headers for the search metrics data.</p>
     pub fn snapshots_data_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshots_data_header.unwrap_or_default();
-        v.push(input.into());
-        self.snapshots_data_header = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshots_data_header = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The column headers for the search metrics data.</p>
-    pub fn set_snapshots_data_header(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshots_data_header = input;
-        self
+    pub fn set_snapshots_data_header(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshots_data_header = input; self
     }
     /// <p>The column headers for the search metrics data.</p>
-    pub fn get_snapshots_data_header(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshots_data_header(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshots_data_header
     }
     /// Appends an item to `snapshots_data`.
@@ -97,19 +97,18 @@ impl GetSnapshotsOutputBuilder {
     /// To override the contents of this collection use [`set_snapshots_data`](Self::set_snapshots_data).
     ///
     /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
-    pub fn snapshots_data(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn snapshots_data(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.snapshots_data.unwrap_or_default();
-        v.push(input);
-        self.snapshots_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.snapshots_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
-    pub fn set_snapshots_data(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.snapshots_data = input;
-        self
+    pub fn set_snapshots_data(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.snapshots_data = input; self
     }
     /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
-    pub fn get_snapshots_data(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_snapshots_data(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.snapshots_data
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
@@ -119,30 +118,34 @@ impl GetSnapshotsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSnapshotsOutput`](crate::operation::get_snapshots::GetSnapshotsOutput).
     pub fn build(self) -> crate::operation::get_snapshots::GetSnapshotsOutput {
         crate::operation::get_snapshots::GetSnapshotsOutput {
-            snap_shot_time_filter: self.snap_shot_time_filter,
-            snapshots_data_header: self.snapshots_data_header,
-            snapshots_data: self.snapshots_data,
-            next_token: self.next_token,
+            snap_shot_time_filter: self.snap_shot_time_filter
+            ,
+            snapshots_data_header: self.snapshots_data_header
+            ,
+            snapshots_data: self.snapshots_data
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

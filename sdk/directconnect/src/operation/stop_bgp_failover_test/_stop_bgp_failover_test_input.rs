@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopBgpFailoverTestInput {
+pub struct StopBgpFailoverTestInput  {
     /// <p>The ID of the virtual interface you no longer want to test.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
 }
-impl StopBgpFailoverTestInput {
+impl  StopBgpFailoverTestInput  {
     /// <p>The ID of the virtual interface you no longer want to test.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopBgpFailoverTestInputBuilder {
     }
     /// <p>The ID of the virtual interface you no longer want to test.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface you no longer want to test.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_interface_id
     }
     /// Consumes the builder and constructs a [`StopBgpFailoverTestInput`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput {
-            virtual_interface_id: self.virtual_interface_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput {
+                virtual_interface_id: self.virtual_interface_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The URL operation that opens a link to another webpage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomActionUrlOperation {
+pub struct CustomActionUrlOperation  {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
     pub url_template: ::std::string::String,
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
@@ -18,11 +18,10 @@ pub struct CustomActionUrlOperation {
     /// </ul>
     pub url_target: crate::types::UrlTargetConfiguration,
 }
-impl CustomActionUrlOperation {
+impl  CustomActionUrlOperation  {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
-    pub fn url_template(&self) -> &str {
-        use std::ops::Deref;
-        self.url_template.deref()
+    pub fn url_template(&self) -> & str {
+        use std::ops::Deref; self.url_template.deref()
     }
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -34,7 +33,7 @@ impl CustomActionUrlOperation {
     /// <li>
     /// <p><code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p></li>
     /// </ul>
-    pub fn url_target(&self) -> &crate::types::UrlTargetConfiguration {
+    pub fn url_target(&self) -> & crate::types::UrlTargetConfiguration {
         &self.url_target
     }
 }
@@ -61,8 +60,7 @@ impl CustomActionUrlOperationBuilder {
     }
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
     pub fn set_url_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url_template = input;
-        self
+        self.url_template = input; self
     }
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
     pub fn get_url_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl CustomActionUrlOperationBuilder {
     /// <p><code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p></li>
     /// </ul>
     pub fn set_url_target(mut self, input: ::std::option::Option<crate::types::UrlTargetConfiguration>) -> Self {
-        self.url_target = input;
-        self
+        self.url_target = input; self
     }
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -115,19 +112,20 @@ impl CustomActionUrlOperationBuilder {
     /// - [`url_template`](crate::types::builders::CustomActionUrlOperationBuilder::url_template)
     /// - [`url_target`](crate::types::builders::CustomActionUrlOperationBuilder::url_target)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomActionUrlOperation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomActionUrlOperation {
-            url_template: self.url_template.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "url_template",
-                    "url_template was not specified but it is required when building CustomActionUrlOperation",
-                )
-            })?,
-            url_target: self.url_target.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "url_target",
-                    "url_target was not specified but it is required when building CustomActionUrlOperation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomActionUrlOperation {
+                url_template: self.url_template
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("url_template", "url_template was not specified but it is required when building CustomActionUrlOperation")
+                    )?
+                ,
+                url_target: self.url_target
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("url_target", "url_target was not specified but it is required when building CustomActionUrlOperation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

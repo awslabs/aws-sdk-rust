@@ -3,19 +3,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataProductItem {
+pub struct DataProductItem  {
     /// <p></p>
     pub item_id: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub domain_id: ::std::option::Option<::std::string::String>,
 }
-impl DataProductItem {
+impl  DataProductItem  {
     /// <p></p>
-    pub fn item_id(&self) -> ::std::option::Option<&str> {
+    pub fn item_id(&self) -> ::std::option::Option<& str> {
         self.item_id.as_deref()
     }
     /// <p></p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DataProductItemBuilder {
     }
     /// <p></p>
     pub fn set_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.item_id = input;
-        self
+        self.item_id = input; self
     }
     /// <p></p>
     pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DataProductItemBuilder {
     }
     /// <p></p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p></p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DataProductItemBuilder {
     /// Consumes the builder and constructs a [`DataProductItem`](crate::types::DataProductItem).
     pub fn build(self) -> crate::types::DataProductItem {
         crate::types::DataProductItem {
-            item_id: self.item_id,
-            domain_id: self.domain_id,
+            item_id: self.item_id
+            ,
+            domain_id: self.domain_id
+            ,
         }
     }
 }
+

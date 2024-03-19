@@ -3,7 +3,7 @@
 /// <p>Provides details of Amazon Security Lake object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeResource {
+pub struct DataLakeResource  {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub data_lake_arn: ::std::string::String,
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
@@ -21,39 +21,37 @@ pub struct DataLakeResource {
     /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
     pub update_status: ::std::option::Option<crate::types::DataLakeUpdateStatus>,
 }
-impl DataLakeResource {
+impl  DataLakeResource  {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn data_lake_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_lake_arn.deref()
+    pub fn data_lake_arn(&self) -> & str {
+        use std::ops::Deref; self.data_lake_arn.deref()
     }
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
-    pub fn s3_bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeEncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::DataLakeEncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeLifecycleConfiguration> {
+    pub fn lifecycle_configuration(&self) -> ::std::option::Option<& crate::types::DataLakeLifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    pub fn replication_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeReplicationConfiguration> {
+    pub fn replication_configuration(&self) -> ::std::option::Option<& crate::types::DataLakeReplicationConfiguration> {
         self.replication_configuration.as_ref()
     }
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
-    pub fn create_status(&self) -> ::std::option::Option<&crate::types::DataLakeStatus> {
+    pub fn create_status(&self) -> ::std::option::Option<& crate::types::DataLakeStatus> {
         self.create_status.as_ref()
     }
     /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
-    pub fn update_status(&self) -> ::std::option::Option<&crate::types::DataLakeUpdateStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<& crate::types::DataLakeUpdateStatus> {
         self.update_status.as_ref()
     }
 }
@@ -86,8 +84,7 @@ impl DataLakeResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub fn set_data_lake_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_lake_arn = input;
-        self
+        self.data_lake_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub fn get_data_lake_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +98,7 @@ impl DataLakeResourceBuilder {
     }
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +111,7 @@ impl DataLakeResourceBuilder {
     }
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
     pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_arn = input;
-        self
+        self.s3_bucket_arn = input; self
     }
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
     pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +124,7 @@ impl DataLakeResourceBuilder {
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::DataLakeEncryptionConfiguration> {
@@ -143,8 +137,7 @@ impl DataLakeResourceBuilder {
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
     pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>) -> Self {
-        self.lifecycle_configuration = input;
-        self
+        self.lifecycle_configuration = input; self
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::DataLakeLifecycleConfiguration> {
@@ -157,8 +150,7 @@ impl DataLakeResourceBuilder {
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
     pub fn set_replication_configuration(mut self, input: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>) -> Self {
-        self.replication_configuration = input;
-        self
+        self.replication_configuration = input; self
     }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
     pub fn get_replication_configuration(&self) -> &::std::option::Option<crate::types::DataLakeReplicationConfiguration> {
@@ -171,8 +163,7 @@ impl DataLakeResourceBuilder {
     }
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
     pub fn set_create_status(mut self, input: ::std::option::Option<crate::types::DataLakeStatus>) -> Self {
-        self.create_status = input;
-        self
+        self.create_status = input; self
     }
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
     pub fn get_create_status(&self) -> &::std::option::Option<crate::types::DataLakeStatus> {
@@ -185,8 +176,7 @@ impl DataLakeResourceBuilder {
     }
     /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::DataLakeUpdateStatus>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::DataLakeUpdateStatus> {
@@ -197,25 +187,32 @@ impl DataLakeResourceBuilder {
     /// - [`data_lake_arn`](crate::types::builders::DataLakeResourceBuilder::data_lake_arn)
     /// - [`region`](crate::types::builders::DataLakeResourceBuilder::region)
     pub fn build(self) -> ::std::result::Result<crate::types::DataLakeResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataLakeResource {
-            data_lake_arn: self.data_lake_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_lake_arn",
-                    "data_lake_arn was not specified but it is required when building DataLakeResource",
-                )
-            })?,
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building DataLakeResource",
-                )
-            })?,
-            s3_bucket_arn: self.s3_bucket_arn,
-            encryption_configuration: self.encryption_configuration,
-            lifecycle_configuration: self.lifecycle_configuration,
-            replication_configuration: self.replication_configuration,
-            create_status: self.create_status,
-            update_status: self.update_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataLakeResource {
+                data_lake_arn: self.data_lake_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_lake_arn", "data_lake_arn was not specified but it is required when building DataLakeResource")
+                    )?
+                ,
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building DataLakeResource")
+                    )?
+                ,
+                s3_bucket_arn: self.s3_bucket_arn
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+                lifecycle_configuration: self.lifecycle_configuration
+                ,
+                replication_configuration: self.replication_configuration
+                ,
+                create_status: self.create_status
+                ,
+                update_status: self.update_status
+                ,
+            }
+        )
     }
 }
+

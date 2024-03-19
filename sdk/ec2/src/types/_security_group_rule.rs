@@ -3,7 +3,7 @@
 /// <p>Describes a security group rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityGroupRule {
+pub struct SecurityGroupRule  {
     /// <p>The ID of the security group rule.</p>
     pub security_group_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
@@ -30,19 +30,19 @@ pub struct SecurityGroupRule {
     /// <p>The security group rule description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags applied to the security group rule.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl SecurityGroupRule {
+impl  SecurityGroupRule  {
     /// <p>The ID of the security group rule.</p>
-    pub fn security_group_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_group_rule_id(&self) -> ::std::option::Option<& str> {
         self.security_group_rule_id.as_deref()
     }
     /// <p>The ID of the security group.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the security group.</p>
-    pub fn group_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_owner_id(&self) -> ::std::option::Option<& str> {
         self.group_owner_id.as_deref()
     }
     /// <p>Indicates whether the security group rule is an outbound rule.</p>
@@ -51,7 +51,7 @@ impl SecurityGroupRule {
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
-    pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn ip_protocol(&self) -> ::std::option::Option<& str> {
         self.ip_protocol.as_deref()
     }
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
@@ -63,30 +63,31 @@ impl SecurityGroupRule {
         self.to_port
     }
     /// <p>The IPv4 CIDR range.</p>
-    pub fn cidr_ipv4(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_ipv4(&self) -> ::std::option::Option<& str> {
         self.cidr_ipv4.as_deref()
     }
     /// <p>The IPv6 CIDR range.</p>
-    pub fn cidr_ipv6(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_ipv6(&self) -> ::std::option::Option<& str> {
         self.cidr_ipv6.as_deref()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>Describes the security group that is referenced in the rule.</p>
-    pub fn referenced_group_info(&self) -> ::std::option::Option<&crate::types::ReferencedSecurityGroup> {
+    pub fn referenced_group_info(&self) -> ::std::option::Option<& crate::types::ReferencedSecurityGroup> {
         self.referenced_group_info.as_ref()
     }
     /// <p>The security group rule description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags applied to the security group rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SecurityGroupRule {
@@ -112,7 +113,7 @@ pub struct SecurityGroupRuleBuilder {
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) referenced_group_info: ::std::option::Option<crate::types::ReferencedSecurityGroup>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl SecurityGroupRuleBuilder {
     /// <p>The ID of the security group rule.</p>
@@ -122,8 +123,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>The ID of the security group rule.</p>
     pub fn set_security_group_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_group_rule_id = input;
-        self
+        self.security_group_rule_id = input; self
     }
     /// <p>The ID of the security group rule.</p>
     pub fn get_security_group_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +136,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>The ID of the security group.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The ID of the security group.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +149,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the security group.</p>
     pub fn set_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_owner_id = input;
-        self
+        self.group_owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the security group.</p>
     pub fn get_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +162,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>Indicates whether the security group rule is an outbound rule.</p>
     pub fn set_is_egress(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_egress = input;
-        self
+        self.is_egress = input; self
     }
     /// <p>Indicates whether the security group rule is an outbound rule.</p>
     pub fn get_is_egress(&self) -> &::std::option::Option<bool> {
@@ -180,8 +177,7 @@ impl SecurityGroupRuleBuilder {
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_protocol = input;
-        self
+        self.ip_protocol = input; self
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
     /// <p>Use <code>-1</code> to specify all protocols.</p>
@@ -195,8 +191,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
@@ -209,8 +204,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
@@ -223,8 +217,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>The IPv4 CIDR range.</p>
     pub fn set_cidr_ipv4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_ipv4 = input;
-        self
+        self.cidr_ipv4 = input; self
     }
     /// <p>The IPv4 CIDR range.</p>
     pub fn get_cidr_ipv4(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +230,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>The IPv6 CIDR range.</p>
     pub fn set_cidr_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_ipv6 = input;
-        self
+        self.cidr_ipv6 = input; self
     }
     /// <p>The IPv6 CIDR range.</p>
     pub fn get_cidr_ipv6(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +243,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +256,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>Describes the security group that is referenced in the rule.</p>
     pub fn set_referenced_group_info(mut self, input: ::std::option::Option<crate::types::ReferencedSecurityGroup>) -> Self {
-        self.referenced_group_info = input;
-        self
+        self.referenced_group_info = input; self
     }
     /// <p>Describes the security group that is referenced in the rule.</p>
     pub fn get_referenced_group_info(&self) -> &::std::option::Option<crate::types::ReferencedSecurityGroup> {
@@ -279,8 +269,7 @@ impl SecurityGroupRuleBuilder {
     }
     /// <p>The security group rule description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The security group rule description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,35 +282,48 @@ impl SecurityGroupRuleBuilder {
     /// <p>The tags applied to the security group rule.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags applied to the security group rule.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags applied to the security group rule.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SecurityGroupRule`](crate::types::SecurityGroupRule).
     pub fn build(self) -> crate::types::SecurityGroupRule {
         crate::types::SecurityGroupRule {
-            security_group_rule_id: self.security_group_rule_id,
-            group_id: self.group_id,
-            group_owner_id: self.group_owner_id,
-            is_egress: self.is_egress,
-            ip_protocol: self.ip_protocol,
-            from_port: self.from_port,
-            to_port: self.to_port,
-            cidr_ipv4: self.cidr_ipv4,
-            cidr_ipv6: self.cidr_ipv6,
-            prefix_list_id: self.prefix_list_id,
-            referenced_group_info: self.referenced_group_info,
-            description: self.description,
-            tags: self.tags,
+            security_group_rule_id: self.security_group_rule_id
+            ,
+            group_id: self.group_id
+            ,
+            group_owner_id: self.group_owner_id
+            ,
+            is_egress: self.is_egress
+            ,
+            ip_protocol: self.ip_protocol
+            ,
+            from_port: self.from_port
+            ,
+            to_port: self.to_port
+            ,
+            cidr_ipv4: self.cidr_ipv4
+            ,
+            cidr_ipv6: self.cidr_ipv6
+            ,
+            prefix_list_id: self.prefix_list_id
+            ,
+            referenced_group_info: self.referenced_group_info
+            ,
+            description: self.description
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

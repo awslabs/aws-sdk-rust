@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbInstanceInput {
+pub struct DeleteDbInstanceInput  {
     /// <p>The id of the DB instance.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbInstanceInput {
+impl  DeleteDbInstanceInput  {
     /// <p>The id of the DB instance.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteDbInstanceInputBuilder {
     }
     /// <p>The id of the DB instance.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The id of the DB instance.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput { identifier: self.identifier })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_instance::DeleteDbInstanceInput {
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

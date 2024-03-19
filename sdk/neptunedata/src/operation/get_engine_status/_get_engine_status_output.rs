@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEngineStatusOutput {
+pub struct GetEngineStatusOutput  {
     /// <p>Set to <code>healthy</code> if the instance is not experiencing problems. If the instance is recovering from a crash or from being rebooted and there are active transactions running from the latest server shutdown, status is set to <code>recovery</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Set to the UTC time at which the current server process started.</p>
@@ -20,52 +20,52 @@ pub struct GetEngineStatusOutput {
     /// <p>Contains information about the openCypher query language available on your cluster. Specifically, it contains a version field that specifies the current operCypher version being used by the engine.</p>
     pub opencypher: ::std::option::Option<crate::types::QueryLanguageVersion>,
     /// <p>Contains Lab Mode settings being used by the engine.</p>
-    pub lab_mode: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub lab_mode: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>If there are transactions being rolled back, this field is set to the number of such transactions. If there are none, the field doesn't appear at all.</p>
     pub rolling_back_trx_count: ::std::option::Option<i32>,
     /// <p>Set to the start time of the earliest transaction being rolled back. If no transactions are being rolled back, the field doesn't appear at all.</p>
     pub rolling_back_trx_earliest_start_time: ::std::option::Option<::std::string::String>,
     /// <p>Contains status information about the features enabled on your DB cluster.</p>
-    pub features: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    pub features: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>>,
     /// <p>Contains information about the current settings on your DB cluster. For example, contains the current cluster query timeout setting (<code>clusterQueryTimeoutInMs</code>).</p>
-    pub settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub settings: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetEngineStatusOutput {
+impl  GetEngineStatusOutput  {
     /// <p>Set to <code>healthy</code> if the instance is not experiencing problems. If the instance is recovering from a crash or from being rebooted and there are active transactions running from the latest server shutdown, status is set to <code>recovery</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Set to the UTC time at which the current server process started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>Set to the Neptune engine version running on your DB cluster. If this engine version has been manually patched since it was released, the version number is prefixed by <code>Patch-</code>.</p>
-    pub fn db_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn db_engine_version(&self) -> ::std::option::Option<& str> {
         self.db_engine_version.as_deref()
     }
     /// <p>Set to <code>reader</code> if the instance is a read-replica, or to <code>writer</code> if the instance is the primary instance.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>Set to <code>enabled</code> if the DFE engine is fully enabled, or to <code>viaQueryHint</code> (the default) if the DFE engine is only used with queries that have the <code>useDFE</code> query hint set to <code>true</code>.</p>
-    pub fn dfe_query_engine(&self) -> ::std::option::Option<&str> {
+    pub fn dfe_query_engine(&self) -> ::std::option::Option<& str> {
         self.dfe_query_engine.as_deref()
     }
     /// <p>Contains information about the Gremlin query language available on your cluster. Specifically, it contains a version field that specifies the current TinkerPop version being used by the engine.</p>
-    pub fn gremlin(&self) -> ::std::option::Option<&crate::types::QueryLanguageVersion> {
+    pub fn gremlin(&self) -> ::std::option::Option<& crate::types::QueryLanguageVersion> {
         self.gremlin.as_ref()
     }
     /// <p>Contains information about the SPARQL query language available on your cluster. Specifically, it contains a version field that specifies the current SPARQL version being used by the engine.</p>
-    pub fn sparql(&self) -> ::std::option::Option<&crate::types::QueryLanguageVersion> {
+    pub fn sparql(&self) -> ::std::option::Option<& crate::types::QueryLanguageVersion> {
         self.sparql.as_ref()
     }
     /// <p>Contains information about the openCypher query language available on your cluster. Specifically, it contains a version field that specifies the current operCypher version being used by the engine.</p>
-    pub fn opencypher(&self) -> ::std::option::Option<&crate::types::QueryLanguageVersion> {
+    pub fn opencypher(&self) -> ::std::option::Option<& crate::types::QueryLanguageVersion> {
         self.opencypher.as_ref()
     }
     /// <p>Contains Lab Mode settings being used by the engine.</p>
-    pub fn lab_mode(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn lab_mode(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.lab_mode.as_ref()
     }
     /// <p>If there are transactions being rolled back, this field is set to the number of such transactions. If there are none, the field doesn't appear at all.</p>
@@ -73,23 +73,23 @@ impl GetEngineStatusOutput {
         self.rolling_back_trx_count
     }
     /// <p>Set to the start time of the earliest transaction being rolled back. If no transactions are being rolled back, the field doesn't appear at all.</p>
-    pub fn rolling_back_trx_earliest_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn rolling_back_trx_earliest_start_time(&self) -> ::std::option::Option<& str> {
         self.rolling_back_trx_earliest_start_time.as_deref()
     }
     /// <p>Contains status information about the features enabled on your DB cluster.</p>
-    pub fn features(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+    pub fn features(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>> {
         self.features.as_ref()
     }
     /// <p>Contains information about the current settings on your DB cluster. For example, contains the current cluster query timeout setting (<code>clusterQueryTimeoutInMs</code>).</p>
-    pub fn settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn settings(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEngineStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEngineStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetEngineStatusOutput`](crate::operation::get_engine_status::GetEngineStatusOutput).
     pub fn builder() -> crate::operation::get_engine_status::builders::GetEngineStatusOutputBuilder {
@@ -109,11 +109,11 @@ pub struct GetEngineStatusOutputBuilder {
     pub(crate) gremlin: ::std::option::Option<crate::types::QueryLanguageVersion>,
     pub(crate) sparql: ::std::option::Option<crate::types::QueryLanguageVersion>,
     pub(crate) opencypher: ::std::option::Option<crate::types::QueryLanguageVersion>,
-    pub(crate) lab_mode: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) lab_mode: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) rolling_back_trx_count: ::std::option::Option<i32>,
     pub(crate) rolling_back_trx_earliest_start_time: ::std::option::Option<::std::string::String>,
-    pub(crate) features: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
-    pub(crate) settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) features: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>>,
+    pub(crate) settings: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEngineStatusOutputBuilder {
@@ -124,8 +124,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Set to <code>healthy</code> if the instance is not experiencing problems. If the instance is recovering from a crash or from being rebooted and there are active transactions running from the latest server shutdown, status is set to <code>recovery</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Set to <code>healthy</code> if the instance is not experiencing problems. If the instance is recovering from a crash or from being rebooted and there are active transactions running from the latest server shutdown, status is set to <code>recovery</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +137,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Set to the UTC time at which the current server process started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Set to the UTC time at which the current server process started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Set to the Neptune engine version running on your DB cluster. If this engine version has been manually patched since it was released, the version number is prefixed by <code>Patch-</code>.</p>
     pub fn set_db_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_engine_version = input;
-        self
+        self.db_engine_version = input; self
     }
     /// <p>Set to the Neptune engine version running on your DB cluster. If this engine version has been manually patched since it was released, the version number is prefixed by <code>Patch-</code>.</p>
     pub fn get_db_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +163,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Set to <code>reader</code> if the instance is a read-replica, or to <code>writer</code> if the instance is the primary instance.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>Set to <code>reader</code> if the instance is a read-replica, or to <code>writer</code> if the instance is the primary instance.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +176,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Set to <code>enabled</code> if the DFE engine is fully enabled, or to <code>viaQueryHint</code> (the default) if the DFE engine is only used with queries that have the <code>useDFE</code> query hint set to <code>true</code>.</p>
     pub fn set_dfe_query_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dfe_query_engine = input;
-        self
+        self.dfe_query_engine = input; self
     }
     /// <p>Set to <code>enabled</code> if the DFE engine is fully enabled, or to <code>viaQueryHint</code> (the default) if the DFE engine is only used with queries that have the <code>useDFE</code> query hint set to <code>true</code>.</p>
     pub fn get_dfe_query_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Contains information about the Gremlin query language available on your cluster. Specifically, it contains a version field that specifies the current TinkerPop version being used by the engine.</p>
     pub fn set_gremlin(mut self, input: ::std::option::Option<crate::types::QueryLanguageVersion>) -> Self {
-        self.gremlin = input;
-        self
+        self.gremlin = input; self
     }
     /// <p>Contains information about the Gremlin query language available on your cluster. Specifically, it contains a version field that specifies the current TinkerPop version being used by the engine.</p>
     pub fn get_gremlin(&self) -> &::std::option::Option<crate::types::QueryLanguageVersion> {
@@ -208,8 +202,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Contains information about the SPARQL query language available on your cluster. Specifically, it contains a version field that specifies the current SPARQL version being used by the engine.</p>
     pub fn set_sparql(mut self, input: ::std::option::Option<crate::types::QueryLanguageVersion>) -> Self {
-        self.sparql = input;
-        self
+        self.sparql = input; self
     }
     /// <p>Contains information about the SPARQL query language available on your cluster. Specifically, it contains a version field that specifies the current SPARQL version being used by the engine.</p>
     pub fn get_sparql(&self) -> &::std::option::Option<crate::types::QueryLanguageVersion> {
@@ -222,8 +215,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Contains information about the openCypher query language available on your cluster. Specifically, it contains a version field that specifies the current operCypher version being used by the engine.</p>
     pub fn set_opencypher(mut self, input: ::std::option::Option<crate::types::QueryLanguageVersion>) -> Self {
-        self.opencypher = input;
-        self
+        self.opencypher = input; self
     }
     /// <p>Contains information about the openCypher query language available on your cluster. Specifically, it contains a version field that specifies the current operCypher version being used by the engine.</p>
     pub fn get_opencypher(&self) -> &::std::option::Option<crate::types::QueryLanguageVersion> {
@@ -236,17 +228,16 @@ impl GetEngineStatusOutputBuilder {
     /// <p>Contains Lab Mode settings being used by the engine.</p>
     pub fn lab_mode(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.lab_mode.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.lab_mode = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.lab_mode = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Contains Lab Mode settings being used by the engine.</p>
-    pub fn set_lab_mode(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.lab_mode = input;
-        self
+    pub fn set_lab_mode(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.lab_mode = input; self
     }
     /// <p>Contains Lab Mode settings being used by the engine.</p>
-    pub fn get_lab_mode(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_lab_mode(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.lab_mode
     }
     /// <p>If there are transactions being rolled back, this field is set to the number of such transactions. If there are none, the field doesn't appear at all.</p>
@@ -256,8 +247,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>If there are transactions being rolled back, this field is set to the number of such transactions. If there are none, the field doesn't appear at all.</p>
     pub fn set_rolling_back_trx_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rolling_back_trx_count = input;
-        self
+        self.rolling_back_trx_count = input; self
     }
     /// <p>If there are transactions being rolled back, this field is set to the number of such transactions. If there are none, the field doesn't appear at all.</p>
     pub fn get_rolling_back_trx_count(&self) -> &::std::option::Option<i32> {
@@ -270,8 +260,7 @@ impl GetEngineStatusOutputBuilder {
     }
     /// <p>Set to the start time of the earliest transaction being rolled back. If no transactions are being rolled back, the field doesn't appear at all.</p>
     pub fn set_rolling_back_trx_earliest_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rolling_back_trx_earliest_start_time = input;
-        self
+        self.rolling_back_trx_earliest_start_time = input; self
     }
     /// <p>Set to the start time of the earliest transaction being rolled back. If no transactions are being rolled back, the field doesn't appear at all.</p>
     pub fn get_rolling_back_trx_earliest_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,20 +273,16 @@ impl GetEngineStatusOutputBuilder {
     /// <p>Contains status information about the features enabled on your DB cluster.</p>
     pub fn features(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
         let mut hash_map = self.features.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.features = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.features = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Contains status information about the features enabled on your DB cluster.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
-    ) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>>) -> Self {
+        self.features = input; self
     }
     /// <p>Contains status information about the features enabled on your DB cluster.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>> {
         &self.features
     }
     /// Adds a key-value pair to `settings`.
@@ -307,45 +292,58 @@ impl GetEngineStatusOutputBuilder {
     /// <p>Contains information about the current settings on your DB cluster. For example, contains the current cluster query timeout setting (<code>clusterQueryTimeoutInMs</code>).</p>
     pub fn settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.settings.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.settings = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.settings = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Contains information about the current settings on your DB cluster. For example, contains the current cluster query timeout setting (<code>clusterQueryTimeoutInMs</code>).</p>
-    pub fn set_settings(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.settings = input; self
     }
     /// <p>Contains information about the current settings on your DB cluster. For example, contains the current cluster query timeout setting (<code>clusterQueryTimeoutInMs</code>).</p>
-    pub fn get_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_settings(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEngineStatusOutput`](crate::operation::get_engine_status::GetEngineStatusOutput).
     pub fn build(self) -> crate::operation::get_engine_status::GetEngineStatusOutput {
         crate::operation::get_engine_status::GetEngineStatusOutput {
-            status: self.status,
-            start_time: self.start_time,
-            db_engine_version: self.db_engine_version,
-            role: self.role,
-            dfe_query_engine: self.dfe_query_engine,
-            gremlin: self.gremlin,
-            sparql: self.sparql,
-            opencypher: self.opencypher,
-            lab_mode: self.lab_mode,
-            rolling_back_trx_count: self.rolling_back_trx_count,
-            rolling_back_trx_earliest_start_time: self.rolling_back_trx_earliest_start_time,
-            features: self.features,
-            settings: self.settings,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
+            db_engine_version: self.db_engine_version
+            ,
+            role: self.role
+            ,
+            dfe_query_engine: self.dfe_query_engine
+            ,
+            gremlin: self.gremlin
+            ,
+            sparql: self.sparql
+            ,
+            opencypher: self.opencypher
+            ,
+            lab_mode: self.lab_mode
+            ,
+            rolling_back_trx_count: self.rolling_back_trx_count
+            ,
+            rolling_back_trx_earliest_start_time: self.rolling_back_trx_earliest_start_time
+            ,
+            features: self.features
+            ,
+            settings: self.settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>An endpoint (Amazon Web Services resource) that is listed in a cross-account attachment and can be added to an accelerator by specified principals, that are also listed in the attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrossAccountResource {
+pub struct CrossAccountResource  {
     /// <p>The endpoint ID for the endpoint that is listed in a cross-account attachment and can be added to an accelerator by specified principals.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
     pub attachment_arn: ::std::option::Option<::std::string::String>,
 }
-impl CrossAccountResource {
+impl  CrossAccountResource  {
     /// <p>The endpoint ID for the endpoint that is listed in a cross-account attachment and can be added to an accelerator by specified principals.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
-    pub fn attachment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_arn(&self) -> ::std::option::Option<& str> {
         self.attachment_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CrossAccountResourceBuilder {
     }
     /// <p>The endpoint ID for the endpoint that is listed in a cross-account attachment and can be added to an accelerator by specified principals.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>The endpoint ID for the endpoint that is listed in a cross-account attachment and can be added to an accelerator by specified principals.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CrossAccountResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
     pub fn set_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_arn = input;
-        self
+        self.attachment_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
     pub fn get_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CrossAccountResourceBuilder {
     /// Consumes the builder and constructs a [`CrossAccountResource`](crate::types::CrossAccountResource).
     pub fn build(self) -> crate::types::CrossAccountResource {
         crate::types::CrossAccountResource {
-            endpoint_id: self.endpoint_id,
-            attachment_arn: self.attachment_arn,
+            endpoint_id: self.endpoint_id
+            ,
+            attachment_arn: self.attachment_arn
+            ,
         }
     }
 }
+

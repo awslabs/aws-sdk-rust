@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplicationInstanceNodeInstances`](crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_instance_id(impl Into<String>)`](crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::application_instance_id) / [`set_application_instance_id(Option<String>)`](crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::set_application_instance_id):<br>required: **true**<br><p>The node instances' application instance ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of node instances to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListApplicationInstanceNodeInstancesOutput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationInstanceNodeInstancesOutput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput) with field(s):
     ///   - [`node_instances(Option<Vec::<NodeInstance>>)`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput::node_instances): <p>A list of node instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationInstanceNodeInstancesError>`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError)
-    pub fn list_application_instance_node_instances(
-        &self,
-    ) -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder {
-        crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListApplicationInstanceNodeInstancesError>`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError)
+    pub fn list_application_instance_node_instances(&self) -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder {
+                                crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

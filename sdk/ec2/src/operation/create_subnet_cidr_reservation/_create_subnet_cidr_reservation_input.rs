@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSubnetCidrReservationInput {
+pub struct CreateSubnetCidrReservationInput  {
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
@@ -20,15 +20,15 @@ pub struct CreateSubnetCidrReservationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
-impl CreateSubnetCidrReservationInput {
+impl  CreateSubnetCidrReservationInput  {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>The type of reservation. The reservation type determines how the reserved IP addresses are assigned to resources.</p>
@@ -38,11 +38,11 @@ impl CreateSubnetCidrReservationInput {
     /// <li>
     /// <p><code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p></li>
     /// </ul>
-    pub fn reservation_type(&self) -> ::std::option::Option<&crate::types::SubnetCidrReservationType> {
+    pub fn reservation_type(&self) -> ::std::option::Option<& crate::types::SubnetCidrReservationType> {
         self.reservation_type.as_ref()
     }
     /// <p>The description to assign to the subnet CIDR reservation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -50,10 +50,11 @@ impl CreateSubnetCidrReservationInput {
         self.dry_run
     }
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSubnetCidrReservationInput {
@@ -72,7 +73,7 @@ pub struct CreateSubnetCidrReservationInputBuilder {
     pub(crate) reservation_type: ::std::option::Option<crate::types::SubnetCidrReservationType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
 impl CreateSubnetCidrReservationInputBuilder {
     /// <p>The ID of the subnet.</p>
@@ -83,8 +84,7 @@ impl CreateSubnetCidrReservationInputBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl CreateSubnetCidrReservationInputBuilder {
     }
     /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl CreateSubnetCidrReservationInputBuilder {
     /// <p><code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p></li>
     /// </ul>
     pub fn set_reservation_type(mut self, input: ::std::option::Option<crate::types::SubnetCidrReservationType>) -> Self {
-        self.reservation_type = input;
-        self
+        self.reservation_type = input; self
     }
     /// <p>The type of reservation. The reservation type determines how the reserved IP addresses are assigned to resources.</p>
     /// <ul>
@@ -145,8 +143,7 @@ impl CreateSubnetCidrReservationInputBuilder {
     }
     /// <p>The description to assign to the subnet CIDR reservation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to assign to the subnet CIDR reservation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +156,7 @@ impl CreateSubnetCidrReservationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -173,33 +169,36 @@ impl CreateSubnetCidrReservationInputBuilder {
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateSubnetCidrReservationInput`](crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput {
-            subnet_id: self.subnet_id,
-            cidr: self.cidr,
-            reservation_type: self.reservation_type,
-            description: self.description,
-            dry_run: self.dry_run,
-            tag_specifications: self.tag_specifications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationInput {
+                subnet_id: self.subnet_id
+                ,
+                cidr: self.cidr
+                ,
+                reservation_type: self.reservation_type
+                ,
+                description: self.description
+                ,
+                dry_run: self.dry_run
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
+        )
     }
 }
+

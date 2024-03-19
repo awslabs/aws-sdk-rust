@@ -5,23 +5,20 @@ pub use crate::operation::put_conformance_pack::_put_conformance_pack_input::Put
 
 impl PutConformancePackInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_conformance_pack::PutConformancePackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_conformance_pack::PutConformancePackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_conformance_pack();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_conformance_pack::PutConformancePackOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_conformance_pack::PutConformancePackError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_conformance_pack();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutConformancePack`.
-///
+/// 
 /// <p>Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across an organization. For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
 /// <p>This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service-linked role is created only when the role does not exist in your account.</p><note>
 /// <p>You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code> or <code>TemplateSSMDocumentDetails</code>.</p>
@@ -29,33 +26,32 @@ impl PutConformancePackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConformancePackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_conformance_pack::builders::PutConformancePackInputBuilder,
+                    inner: crate::operation::put_conformance_pack::builders::PutConformancePackInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_conformance_pack::PutConformancePackOutput,
-        crate::operation::put_conformance_pack::PutConformancePackError,
-    > for PutConformancePackFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_conformance_pack::PutConformancePackOutput,
-            crate::operation::put_conformance_pack::PutConformancePackError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_conformance_pack::PutConformancePackOutput,
+                    crate::operation::put_conformance_pack::PutConformancePackError,
+                > for PutConformancePackFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_conformance_pack::PutConformancePackOutput,
+                        crate::operation::put_conformance_pack::PutConformancePackError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutConformancePackFluentBuilder {
     /// Creates a new `PutConformancePack`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl PutConformancePackFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_conformance_pack::PutConformancePackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_conformance_pack::PutConformancePackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_conformance_pack::PutConformancePack::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_conformance_pack::PutConformancePack::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_conformance_pack::PutConformancePackOutput,
-        crate::operation::put_conformance_pack::PutConformancePackError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_conformance_pack::PutConformancePackOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_conformance_pack::PutConformancePackError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_conformance_pack::PutConformancePack::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_conformance_pack::PutConformancePack::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_conformance_pack::PutConformancePackOutput, crate::operation::put_conformance_pack::PutConformancePackError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique name of the conformance pack you want to deploy.</p>
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conformance_pack_name(input.into());
@@ -215,15 +202,12 @@ impl PutConformancePackFluentBuilder {
         self
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn set_conformance_pack_input_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
-    ) -> Self {
+    pub fn set_conformance_pack_input_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackInputParameter>>) -> Self {
         self.inner = self.inner.set_conformance_pack_input_parameters(input);
         self
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
+    pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackInputParameter>> {
         self.inner.get_conformance_pack_input_parameters()
     }
     /// <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
@@ -241,3 +225,4 @@ impl PutConformancePackFluentBuilder {
         self.inner.get_template_ssm_document_details()
     }
 }
+

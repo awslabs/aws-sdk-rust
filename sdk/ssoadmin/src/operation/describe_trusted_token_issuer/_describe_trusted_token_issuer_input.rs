@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustedTokenIssuerInput {
+pub struct DescribeTrustedTokenIssuerInput  {
     /// <p>Specifies the ARN of the trusted token issuer configuration that you want details about.</p>
     pub trusted_token_issuer_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTrustedTokenIssuerInput {
+impl  DescribeTrustedTokenIssuerInput  {
     /// <p>Specifies the ARN of the trusted token issuer configuration that you want details about.</p>
-    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<& str> {
         self.trusted_token_issuer_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeTrustedTokenIssuerInputBuilder {
     }
     /// <p>Specifies the ARN of the trusted token issuer configuration that you want details about.</p>
     pub fn set_trusted_token_issuer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trusted_token_issuer_arn = input;
-        self
+        self.trusted_token_issuer_arn = input; self
     }
     /// <p>Specifies the ARN of the trusted token issuer configuration that you want details about.</p>
     pub fn get_trusted_token_issuer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trusted_token_issuer_arn
     }
     /// Consumes the builder and constructs a [`DescribeTrustedTokenIssuerInput`](crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerInput {
-            trusted_token_issuer_arn: self.trusted_token_issuer_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerInput {
+                trusted_token_issuer_arn: self.trusted_token_issuer_arn
+                ,
+            }
+        )
     }
 }
+

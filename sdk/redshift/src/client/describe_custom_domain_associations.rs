@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCustomDomainAssociations`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`custom_domain_name(impl Into<String>)`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::custom_domain_name) / [`set_custom_domain_name(Option<String>)`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::set_custom_domain_name):<br>required: **false**<br><p>The custom domain name for the custom domain association.</p><br>
     ///   - [`custom_domain_certificate_arn(impl Into<String>)`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::custom_domain_certificate_arn) / [`set_custom_domain_certificate_arn(Option<String>)`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::set_custom_domain_certificate_arn):<br>required: **false**<br><p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum records setting for the associated custom domain.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the custom domain association.</p><br>
-    /// - On success, responds with [`DescribeCustomDomainAssociationsOutput`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeCustomDomainAssociationsOutput`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput::marker): <p>The marker for the custom domain association.</p>
     ///   - [`associations(Option<Vec::<Association>>)`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput::associations): <p>The associations for the custom domain.</p>
-    /// - On failure, responds with [`SdkError<DescribeCustomDomainAssociationsError>`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError)
-    pub fn describe_custom_domain_associations(
-        &self,
-    ) -> crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder {
-        crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeCustomDomainAssociationsError>`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsError)
+    pub fn describe_custom_domain_associations(&self) -> crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder {
+                                crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

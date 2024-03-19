@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLicenseVersionsInput {
+pub struct ListLicenseVersionsInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>Token for the next set of results.</p>
@@ -10,13 +10,13 @@ pub struct ListLicenseVersionsInput {
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListLicenseVersionsInput {
+impl  ListLicenseVersionsInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_arn(&self) -> ::std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -48,8 +48,7 @@ impl ListLicenseVersionsInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListLicenseVersionsInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl ListLicenseVersionsInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLicenseVersionsInput`](crate::operation::list_license_versions::ListLicenseVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_license_versions::ListLicenseVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_license_versions::ListLicenseVersionsInput {
-            license_arn: self.license_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_license_versions::ListLicenseVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_license_versions::ListLicenseVersionsInput {
+                license_arn: self.license_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

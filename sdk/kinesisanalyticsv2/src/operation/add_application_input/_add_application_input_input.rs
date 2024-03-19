@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationInputInput {
+pub struct AddApplicationInputInput  {
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
@@ -10,9 +10,9 @@ pub struct AddApplicationInputInput {
     /// <p>The <code>Input</code> to add.</p>
     pub input: ::std::option::Option<crate::types::Input>,
 }
-impl AddApplicationInputInput {
+impl  AddApplicationInputInput  {
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
@@ -20,7 +20,7 @@ impl AddApplicationInputInput {
         self.current_application_version_id
     }
     /// <p>The <code>Input</code> to add.</p>
-    pub fn input(&self) -> ::std::option::Option<&crate::types::Input> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::Input> {
         self.input.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AddApplicationInputInputBuilder {
     }
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AddApplicationInputInputBuilder {
     }
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -78,22 +76,24 @@ impl AddApplicationInputInputBuilder {
     }
     /// <p>The <code>Input</code> to add.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The <code>Input</code> to add.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
         &self.input
     }
     /// Consumes the builder and constructs a [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_application_input::AddApplicationInputInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::add_application_input::AddApplicationInputInput {
-            application_name: self.application_name,
-            current_application_version_id: self.current_application_version_id,
-            input: self.input,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_application_input::AddApplicationInputInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_application_input::AddApplicationInputInput {
+                application_name: self.application_name
+                ,
+                current_application_version_id: self.current_application_version_id
+                ,
+                input: self.input
+                ,
+            }
+        )
     }
 }
+

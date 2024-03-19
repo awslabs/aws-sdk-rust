@@ -3,7 +3,7 @@
 /// <p>Contains a subset of the possible runtime environment attributes. Used in the environment list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentSummary {
+pub struct EnvironmentSummary  {
     /// <p>The name of the runtime environment.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
@@ -21,42 +21,37 @@ pub struct EnvironmentSummary {
     /// <p>The timestamp when the runtime environment was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
 }
-impl EnvironmentSummary {
+impl  EnvironmentSummary  {
     /// <p>The name of the runtime environment.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
-    pub fn environment_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_arn.deref()
+    pub fn environment_arn(&self) -> & str {
+        use std::ops::Deref; self.environment_arn.deref()
     }
     /// <p>The unique identifier of a particular runtime environment.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> & str {
+        use std::ops::Deref; self.environment_id.deref()
     }
     /// <p>The instance type of the runtime environment.</p>
-    pub fn instance_type(&self) -> &str {
-        use std::ops::Deref;
-        self.instance_type.deref()
+    pub fn instance_type(&self) -> & str {
+        use std::ops::Deref; self.instance_type.deref()
     }
     /// <p>The status of the runtime environment</p>
-    pub fn status(&self) -> &crate::types::EnvironmentLifecycle {
+    pub fn status(&self) -> & crate::types::EnvironmentLifecycle {
         &self.status
     }
     /// <p>The target platform for the runtime environment.</p>
-    pub fn engine_type(&self) -> &crate::types::EngineType {
+    pub fn engine_type(&self) -> & crate::types::EngineType {
         &self.engine_type
     }
     /// <p>The version of the runtime engine.</p>
-    pub fn engine_version(&self) -> &str {
-        use std::ops::Deref;
-        self.engine_version.deref()
+    pub fn engine_version(&self) -> & str {
+        use std::ops::Deref; self.engine_version.deref()
     }
     /// <p>The timestamp when the runtime environment was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
 }
@@ -89,8 +84,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The name of the runtime environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the runtime environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
     pub fn set_environment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_arn = input;
-        self
+        self.environment_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a particular runtime environment.</p>
     pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +112,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The unique identifier of a particular runtime environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of a particular runtime environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +126,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The instance type of the runtime environment.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type of the runtime environment.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +140,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The status of the runtime environment</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentLifecycle>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the runtime environment</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycle> {
@@ -164,8 +154,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The target platform for the runtime environment.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The target platform for the runtime environment.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -179,8 +168,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The version of the runtime engine.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the runtime engine.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +182,7 @@ impl EnvironmentSummaryBuilder {
     }
     /// <p>The timestamp when the runtime environment was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp when the runtime environment was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -212,55 +199,50 @@ impl EnvironmentSummaryBuilder {
     /// - [`engine_version`](crate::types::builders::EnvironmentSummaryBuilder::engine_version)
     /// - [`creation_time`](crate::types::builders::EnvironmentSummaryBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            environment_arn: self.environment_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_arn",
-                    "environment_arn was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instance_type",
-                    "instance_type was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engine_type",
-                    "engine_type was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            engine_version: self.engine_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engine_version",
-                    "engine_version was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building EnvironmentSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                environment_arn: self.environment_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_arn", "environment_arn was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                environment_id: self.environment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_id", "environment_id was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                instance_type: self.instance_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instance_type", "instance_type was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                engine_type: self.engine_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engine_type", "engine_type was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                engine_version: self.engine_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engine_version", "engine_version was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building EnvironmentSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

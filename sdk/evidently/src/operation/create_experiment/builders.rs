@@ -5,23 +5,20 @@ pub use crate::operation::create_experiment::_create_experiment_input::CreateExp
 
 impl CreateExperimentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_experiment::CreateExperimentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_experiment();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_experiment::CreateExperimentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_experiment::CreateExperimentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_experiment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateExperiment`.
-///
+/// 
 /// <p>Creates an Evidently <i>experiment</i>. Before you create an experiment, you must create the feature to use for the experiment.</p>
 /// <p>An experiment helps you make feature design decisions based on evidence and data. An experiment can test as many as five variations at once. Evidently collects experiment data and analyzes it by statistical methods, and provides clear recommendations about which variations perform better.</p>
 /// <p>You can optionally specify a <code>segment</code> to have the experiment consider only certain audience types in the experiment, such as using only user sessions from a certain location or who use a certain internet browser.</p>
@@ -29,33 +26,32 @@ impl CreateExperimentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_experiment::builders::CreateExperimentInputBuilder,
+                    inner: crate::operation::create_experiment::builders::CreateExperimentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_experiment::CreateExperimentOutput,
-        crate::operation::create_experiment::CreateExperimentError,
-    > for CreateExperimentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_experiment::CreateExperimentOutput,
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_experiment::CreateExperimentOutput,
+                    crate::operation::create_experiment::CreateExperimentError,
+                > for CreateExperimentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_experiment::CreateExperimentOutput,
+                        crate::operation::create_experiment::CreateExperimentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateExperimentFluentBuilder {
     /// Creates a new `CreateExperiment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl CreateExperimentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_experiment::CreateExperimentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_experiment::CreateExperiment::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_experiment::CreateExperiment::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_experiment::CreateExperimentOutput,
-        crate::operation::create_experiment::CreateExperimentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_experiment::CreateExperimentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_experiment::CreateExperimentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_experiment::CreateExperiment::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_experiment::CreateExperiment::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_experiment::CreateExperimentOutput, crate::operation::create_experiment::CreateExperimentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
@@ -163,12 +150,12 @@ impl CreateExperimentFluentBuilder {
         self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>) -> Self {
+    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>>) -> Self {
         self.inner = self.inner.set_treatments(input);
         self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
+    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TreatmentConfig>> {
         self.inner.get_treatments()
     }
     /// Appends an item to `metricGoals`.
@@ -181,12 +168,12 @@ impl CreateExperimentFluentBuilder {
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>) -> Self {
+    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>>) -> Self {
         self.inner = self.inner.set_metric_goals(input);
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
+    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricGoalConfig>> {
         self.inner.get_metric_goals()
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
@@ -266,7 +253,7 @@ impl CreateExperimentFluentBuilder {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -275,7 +262,8 @@ impl CreateExperimentFluentBuilder {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }
+

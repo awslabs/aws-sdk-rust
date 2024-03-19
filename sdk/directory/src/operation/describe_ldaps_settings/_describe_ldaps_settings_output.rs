@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLdapsSettingsOutput {
+pub struct DescribeLdapsSettingsOutput  {
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
-    pub ldaps_settings_info: ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>,
+    pub ldaps_settings_info: ::std::option::Option<::std::vec::Vec::<crate::types::LdapsSettingInfo>>,
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeLdapsSettingsOutput {
+impl  DescribeLdapsSettingsOutput  {
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ldaps_settings_info.is_none()`.
-    pub fn ldaps_settings_info(&self) -> &[crate::types::LdapsSettingInfo] {
-        self.ldaps_settings_info.as_deref().unwrap_or_default()
+    pub fn ldaps_settings_info(&self) -> & [crate::types::LdapsSettingInfo] {
+        self.ldaps_settings_info.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLdapsSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLdapsSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLdapsSettingsOutput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput).
     pub fn builder() -> crate::operation::describe_ldaps_settings::builders::DescribeLdapsSettingsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeLdapsSettingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLdapsSettingsOutputBuilder {
-    pub(crate) ldaps_settings_info: ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>,
+    pub(crate) ldaps_settings_info: ::std::option::Option<::std::vec::Vec::<crate::types::LdapsSettingInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeLdapsSettingsOutputBuilder {
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
     pub fn ldaps_settings_info(mut self, input: crate::types::LdapsSettingInfo) -> Self {
         let mut v = self.ldaps_settings_info.unwrap_or_default();
-        v.push(input);
-        self.ldaps_settings_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ldaps_settings_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
-    pub fn set_ldaps_settings_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>) -> Self {
-        self.ldaps_settings_info = input;
-        self
+    pub fn set_ldaps_settings_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LdapsSettingInfo>>) -> Self {
+        self.ldaps_settings_info = input; self
     }
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
-    pub fn get_ldaps_settings_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>> {
+    pub fn get_ldaps_settings_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LdapsSettingInfo>> {
         &self.ldaps_settings_info
     }
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
@@ -69,28 +69,30 @@ impl DescribeLdapsSettingsOutputBuilder {
     }
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLdapsSettingsOutput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput).
     pub fn build(self) -> crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput {
         crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput {
-            ldaps_settings_info: self.ldaps_settings_info,
-            next_token: self.next_token,
+            ldaps_settings_info: self.ldaps_settings_info
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

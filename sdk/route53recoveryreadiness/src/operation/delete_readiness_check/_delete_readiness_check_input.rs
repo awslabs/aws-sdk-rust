@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReadinessCheckInput {
+pub struct DeleteReadinessCheckInput  {
     /// <p>Name of a readiness check.</p>
     pub readiness_check_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReadinessCheckInput {
+impl  DeleteReadinessCheckInput  {
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> ::std::option::Option<&str> {
+    pub fn readiness_check_name(&self) -> ::std::option::Option<& str> {
         self.readiness_check_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteReadinessCheckInputBuilder {
     }
     /// <p>Name of a readiness check.</p>
     pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.readiness_check_name = input;
-        self
+        self.readiness_check_name = input; self
     }
     /// <p>Name of a readiness check.</p>
     pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.readiness_check_name
     }
     /// Consumes the builder and constructs a [`DeleteReadinessCheckInput`](crate::operation::delete_readiness_check::DeleteReadinessCheckInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_readiness_check::DeleteReadinessCheckInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_readiness_check::DeleteReadinessCheckInput {
-            readiness_check_name: self.readiness_check_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_readiness_check::DeleteReadinessCheckInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_readiness_check::DeleteReadinessCheckInput {
+                readiness_check_name: self.readiness_check_name
+                ,
+            }
+        )
     }
 }
+

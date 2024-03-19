@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSizeConstraintSetInput {
+pub struct GetSizeConstraintSetInput  {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub size_constraint_set_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSizeConstraintSetInput {
+impl  GetSizeConstraintSetInput  {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn size_constraint_set_id(&self) -> ::std::option::Option<& str> {
         self.size_constraint_set_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetSizeConstraintSetInputBuilder {
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn set_size_constraint_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.size_constraint_set_id = input;
-        self
+        self.size_constraint_set_id = input; self
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn get_size_constraint_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.size_constraint_set_id
     }
     /// Consumes the builder and constructs a [`GetSizeConstraintSetInput`](crate::operation::get_size_constraint_set::GetSizeConstraintSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_size_constraint_set::GetSizeConstraintSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_size_constraint_set::GetSizeConstraintSetInput {
-            size_constraint_set_id: self.size_constraint_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_size_constraint_set::GetSizeConstraintSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_size_constraint_set::GetSizeConstraintSetInput {
+                size_constraint_set_id: self.size_constraint_set_id
+                ,
+            }
+        )
     }
 }
+

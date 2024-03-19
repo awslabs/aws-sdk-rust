@@ -5,23 +5,20 @@ pub use crate::operation::poll_for_decision_task::_poll_for_decision_task_input:
 
 impl PollForDecisionTaskInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.poll_for_decision_task();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.poll_for_decision_task();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PollForDecisionTask`.
-///
+/// 
 /// <p>Used by deciders to get a <code>DecisionTask</code> from the specified decision <code>taskList</code>. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p>
 /// <p>This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.</p><important>
 /// <p>Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).</p>
@@ -42,33 +39,32 @@ impl PollForDecisionTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PollForDecisionTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder,
+                    inner: crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
-        crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-    > for PollForDecisionTaskFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
-            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
+                    crate::operation::poll_for_decision_task::PollForDecisionTaskError,
+                > for PollForDecisionTaskFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
+                        crate::operation::poll_for_decision_task::PollForDecisionTaskError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PollForDecisionTaskFluentBuilder {
     /// Creates a new `PollForDecisionTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -77,59 +73,50 @@ impl PollForDecisionTaskFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::poll_for_decision_task::PollForDecisionTask::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::poll_for_decision_task::PollForDecisionTask::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
-        crate::operation::poll_for_decision_task::PollForDecisionTaskError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::poll_for_decision_task::PollForDecisionTaskError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::poll_for_decision_task::PollForDecisionTask::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::poll_for_decision_task::PollForDecisionTask::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::poll_for_decision_task::PollForDecisionTaskOutput, crate::operation::poll_for_decision_task::PollForDecisionTaskError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator {
-        crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator {
+                                crate::operation::poll_for_decision_task::paginator::PollForDecisionTaskPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the domain containing the task lists to poll.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -244,3 +231,4 @@ impl PollForDecisionTaskFluentBuilder {
         self.inner.get_start_at_previous_started_event()
     }
 }
+

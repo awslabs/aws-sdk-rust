@@ -2,19 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVpcEndpointServicePermissionsOutput {
+pub struct ModifyVpcEndpointServicePermissionsOutput  {
     /// <p>Information about the added principals.</p>
-    pub added_principals: ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>,
+    pub added_principals: ::std::option::Option<::std::vec::Vec::<crate::types::AddedPrincipal>>,
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl ModifyVpcEndpointServicePermissionsOutput {
+impl  ModifyVpcEndpointServicePermissionsOutput  {
     /// <p>Information about the added principals.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.added_principals.is_none()`.
-    pub fn added_principals(&self) -> &[crate::types::AddedPrincipal] {
-        self.added_principals.as_deref().unwrap_or_default()
+    pub fn added_principals(&self) -> & [crate::types::AddedPrincipal] {
+        self.added_principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn return_value(&self) -> ::std::option::Option<bool> {
@@ -22,10 +23,10 @@ impl ModifyVpcEndpointServicePermissionsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyVpcEndpointServicePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyVpcEndpointServicePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePermissionsOutput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput).
     pub fn builder() -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ModifyVpcEndpointServicePermissionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePermissionsOutputBuilder {
-    pub(crate) added_principals: ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>,
+    pub(crate) added_principals: ::std::option::Option<::std::vec::Vec::<crate::types::AddedPrincipal>>,
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
     /// <p>Information about the added principals.</p>
     pub fn added_principals(mut self, input: crate::types::AddedPrincipal) -> Self {
         let mut v = self.added_principals.unwrap_or_default();
-        v.push(input);
-        self.added_principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.added_principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the added principals.</p>
-    pub fn set_added_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>>) -> Self {
-        self.added_principals = input;
-        self
+    pub fn set_added_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddedPrincipal>>) -> Self {
+        self.added_principals = input; self
     }
     /// <p>Information about the added principals.</p>
-    pub fn get_added_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddedPrincipal>> {
+    pub fn get_added_principals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddedPrincipal>> {
         &self.added_principals
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
@@ -69,28 +69,30 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn set_return_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.return_value = input;
-        self
+        self.return_value = input; self
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn get_return_value(&self) -> &::std::option::Option<bool> {
         &self.return_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePermissionsOutput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput).
     pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput {
         crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput {
-            added_principals: self.added_principals,
-            return_value: self.return_value,
+            added_principals: self.added_principals
+            ,
+            return_value: self.return_value
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

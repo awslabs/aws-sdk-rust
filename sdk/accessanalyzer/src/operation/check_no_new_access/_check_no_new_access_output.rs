@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckNoNewAccessOutput {
+pub struct CheckNoNewAccessOutput  {
     /// <p>The result of the check for new access. If the result is <code>PASS</code>, no new access is allowed by the updated policy. If the result is <code>FAIL</code>, the updated policy might allow new access.</p>
     pub result: ::std::option::Option<crate::types::CheckNoNewAccessResult>,
     /// <p>The message indicating whether the updated policy allows new access.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A description of the reasoning of the result.</p>
-    pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::ReasonSummary>>,
+    pub reasons: ::std::option::Option<::std::vec::Vec::<crate::types::ReasonSummary>>,
     _request_id: Option<String>,
 }
-impl CheckNoNewAccessOutput {
+impl  CheckNoNewAccessOutput  {
     /// <p>The result of the check for new access. If the result is <code>PASS</code>, no new access is allowed by the updated policy. If the result is <code>FAIL</code>, the updated policy might allow new access.</p>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::CheckNoNewAccessResult> {
+    pub fn result(&self) -> ::std::option::Option<& crate::types::CheckNoNewAccessResult> {
         self.result.as_ref()
     }
     /// <p>The message indicating whether the updated policy allows new access.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>A description of the reasoning of the result.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
-    pub fn reasons(&self) -> &[crate::types::ReasonSummary] {
-        self.reasons.as_deref().unwrap_or_default()
+    pub fn reasons(&self) -> & [crate::types::ReasonSummary] {
+        self.reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CheckNoNewAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CheckNoNewAccessOutput {
     /// Creates a new builder-style object to manufacture [`CheckNoNewAccessOutput`](crate::operation::check_no_new_access::CheckNoNewAccessOutput).
     pub fn builder() -> crate::operation::check_no_new_access::builders::CheckNoNewAccessOutputBuilder {
@@ -45,7 +46,7 @@ impl CheckNoNewAccessOutput {
 pub struct CheckNoNewAccessOutputBuilder {
     pub(crate) result: ::std::option::Option<crate::types::CheckNoNewAccessResult>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::ReasonSummary>>,
+    pub(crate) reasons: ::std::option::Option<::std::vec::Vec::<crate::types::ReasonSummary>>,
     _request_id: Option<String>,
 }
 impl CheckNoNewAccessOutputBuilder {
@@ -56,8 +57,7 @@ impl CheckNoNewAccessOutputBuilder {
     }
     /// <p>The result of the check for new access. If the result is <code>PASS</code>, no new access is allowed by the updated policy. If the result is <code>FAIL</code>, the updated policy might allow new access.</p>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::CheckNoNewAccessResult>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The result of the check for new access. If the result is <code>PASS</code>, no new access is allowed by the updated policy. If the result is <code>FAIL</code>, the updated policy might allow new access.</p>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::CheckNoNewAccessResult> {
@@ -70,8 +70,7 @@ impl CheckNoNewAccessOutputBuilder {
     }
     /// <p>The message indicating whether the updated policy allows new access.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message indicating whether the updated policy allows new access.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,35 +83,38 @@ impl CheckNoNewAccessOutputBuilder {
     /// <p>A description of the reasoning of the result.</p>
     pub fn reasons(mut self, input: crate::types::ReasonSummary) -> Self {
         let mut v = self.reasons.unwrap_or_default();
-        v.push(input);
-        self.reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A description of the reasoning of the result.</p>
-    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReasonSummary>>) -> Self {
-        self.reasons = input;
-        self
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReasonSummary>>) -> Self {
+        self.reasons = input; self
     }
     /// <p>A description of the reasoning of the result.</p>
-    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReasonSummary>> {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReasonSummary>> {
         &self.reasons
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CheckNoNewAccessOutput`](crate::operation::check_no_new_access::CheckNoNewAccessOutput).
     pub fn build(self) -> crate::operation::check_no_new_access::CheckNoNewAccessOutput {
         crate::operation::check_no_new_access::CheckNoNewAccessOutput {
-            result: self.result,
-            message: self.message,
-            reasons: self.reasons,
+            result: self.result
+            ,
+            message: self.message
+            ,
+            reasons: self.reasons
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>An object that contains the ID and revision number of a workflow or system that is part of a deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DependencyRevision {
+pub struct DependencyRevision  {
     /// <p>The ID of the workflow or system.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The revision number of the workflow or system.</p>
     pub revision_number: ::std::option::Option<i64>,
 }
-impl DependencyRevision {
+impl  DependencyRevision  {
     /// <p>The ID of the workflow or system.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision number of the workflow or system.</p>
@@ -41,8 +41,7 @@ impl DependencyRevisionBuilder {
     }
     /// <p>The ID of the workflow or system.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the workflow or system.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DependencyRevisionBuilder {
     }
     /// <p>The revision number of the workflow or system.</p>
     pub fn set_revision_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision_number = input;
-        self
+        self.revision_number = input; self
     }
     /// <p>The revision number of the workflow or system.</p>
     pub fn get_revision_number(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl DependencyRevisionBuilder {
     /// Consumes the builder and constructs a [`DependencyRevision`](crate::types::DependencyRevision).
     pub fn build(self) -> crate::types::DependencyRevision {
         crate::types::DependencyRevision {
-            id: self.id,
-            revision_number: self.revision_number,
+            id: self.id
+            ,
+            revision_number: self.revision_number
+            ,
         }
     }
 }
+

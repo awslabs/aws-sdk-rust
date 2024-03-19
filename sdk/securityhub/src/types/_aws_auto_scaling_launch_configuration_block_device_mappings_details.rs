@@ -3,7 +3,7 @@
 /// <p>A block device for the instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails  {
     /// <p>The device name that is exposed to the EC2 instance. For example, <code>/dev/sdh</code> or <code>xvdh</code>.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
@@ -15,13 +15,13 @@ pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
     /// <p>You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
     pub virtual_name: ::std::option::Option<::std::string::String>,
 }
-impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+impl  AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails  {
     /// <p>The device name that is exposed to the EC2 instance. For example, <code>/dev/sdh</code> or <code>xvdh</code>.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
-    pub fn ebs(&self) -> ::std::option::Option<&crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails> {
+    pub fn ebs(&self) -> ::std::option::Option<& crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails> {
         self.ebs.as_ref()
     }
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
@@ -31,7 +31,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
     }
     /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
     /// <p>You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
-    pub fn virtual_name(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_name(&self) -> ::std::option::Option<& str> {
         self.virtual_name.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
     }
     /// <p>The device name that is exposed to the EC2 instance. For example, <code>/dev/sdh</code> or <code>xvdh</code>.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The device name that is exposed to the EC2 instance. For example, <code>/dev/sdh</code> or <code>xvdh</code>.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
     }
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
     pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails>) -> Self {
-        self.ebs = input;
-        self
+        self.ebs = input; self
     }
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
     pub fn get_ebs(&self) -> &::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails> {
@@ -89,8 +87,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
     /// <p>If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.&gt;</p>
     pub fn set_no_device(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_device = input;
-        self
+        self.no_device = input; self
     }
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
     /// <p>If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.&gt;</p>
@@ -106,8 +103,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
     /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
     /// <p>You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
     pub fn set_virtual_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_name = input;
-        self
+        self.virtual_name = input; self
     }
     /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
     /// <p>You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
@@ -117,10 +113,15 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
         crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
-            device_name: self.device_name,
-            ebs: self.ebs,
-            no_device: self.no_device,
-            virtual_name: self.virtual_name,
+            device_name: self.device_name
+            ,
+            ebs: self.ebs
+            ,
+            no_device: self.no_device
+            ,
+            virtual_name: self.virtual_name
+            ,
         }
     }
 }
+

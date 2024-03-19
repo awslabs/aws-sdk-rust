@@ -3,7 +3,7 @@
 /// <p>Describes a configuration revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationRevision {
+pub struct ConfigurationRevision  {
     /// <p>The time when the configuration revision was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the configuration revision.</p>
@@ -11,13 +11,13 @@ pub struct ConfigurationRevision {
     /// <p>The revision number.</p>
     pub revision: ::std::option::Option<i64>,
 }
-impl ConfigurationRevision {
+impl  ConfigurationRevision  {
     /// <p>The time when the configuration revision was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration revision.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The revision number.</p>
@@ -49,8 +49,7 @@ impl ConfigurationRevisionBuilder {
     }
     /// <p>The time when the configuration revision was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the configuration revision was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -63,8 +62,7 @@ impl ConfigurationRevisionBuilder {
     }
     /// <p>The description of the configuration revision.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configuration revision.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl ConfigurationRevisionBuilder {
     }
     /// <p>The revision number.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision number.</p>
     pub fn get_revision(&self) -> &::std::option::Option<i64> {
@@ -88,9 +85,13 @@ impl ConfigurationRevisionBuilder {
     /// Consumes the builder and constructs a [`ConfigurationRevision`](crate::types::ConfigurationRevision).
     pub fn build(self) -> crate::types::ConfigurationRevision {
         crate::types::ConfigurationRevision {
-            creation_time: self.creation_time,
-            description: self.description,
-            revision: self.revision,
+            creation_time: self.creation_time
+            ,
+            description: self.description
+            ,
+            revision: self.revision
+            ,
         }
     }
 }
+

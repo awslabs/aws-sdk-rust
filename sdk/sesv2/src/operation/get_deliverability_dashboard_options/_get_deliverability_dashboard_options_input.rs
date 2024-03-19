@@ -4,7 +4,8 @@
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeliverabilityDashboardOptionsInput {}
+pub struct GetDeliverabilityDashboardOptionsInput  {
+}
 impl GetDeliverabilityDashboardOptionsInput {
     /// Creates a new builder-style object to manufacture [`GetDeliverabilityDashboardOptionsInput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput).
     pub fn builder() -> crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsInputBuilder {
@@ -15,15 +16,15 @@ impl GetDeliverabilityDashboardOptionsInput {
 /// A builder for [`GetDeliverabilityDashboardOptionsInput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetDeliverabilityDashboardOptionsInputBuilder {}
+pub struct GetDeliverabilityDashboardOptionsInputBuilder {
+}
 impl GetDeliverabilityDashboardOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetDeliverabilityDashboardOptionsInput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput {
+            }
+        )
     }
 }
+

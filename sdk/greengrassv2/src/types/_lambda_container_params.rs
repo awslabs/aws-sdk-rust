@@ -3,7 +3,7 @@
 /// <p>Contains information about a container in which Lambda functions run on Greengrass core devices.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaContainerParams {
+pub struct LambdaContainerParams  {
     /// <p>The memory size of the container, expressed in kilobytes.</p>
     /// <p>Default: <code>16384</code> (16 MB)</p>
     pub memory_size_in_kb: ::std::option::Option<i32>,
@@ -11,11 +11,11 @@ pub struct LambdaContainerParams {
     /// <p>Default: <code>false</code></p>
     pub mount_ro_sysfs: ::std::option::Option<bool>,
     /// <p>The list of volumes that the container can access.</p>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaVolumeMount>>,
     /// <p>The list of system devices that the container can access.</p>
-    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>>,
+    pub devices: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaDeviceMount>>,
 }
-impl LambdaContainerParams {
+impl  LambdaContainerParams  {
     /// <p>The memory size of the container, expressed in kilobytes.</p>
     /// <p>Default: <code>16384</code> (16 MB)</p>
     pub fn memory_size_in_kb(&self) -> ::std::option::Option<i32> {
@@ -27,16 +27,18 @@ impl LambdaContainerParams {
         self.mount_ro_sysfs
     }
     /// <p>The list of volumes that the container can access.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
-    pub fn volumes(&self) -> &[crate::types::LambdaVolumeMount] {
-        self.volumes.as_deref().unwrap_or_default()
+    pub fn volumes(&self) -> & [crate::types::LambdaVolumeMount] {
+        self.volumes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of system devices that the container can access.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
-    pub fn devices(&self) -> &[crate::types::LambdaDeviceMount] {
-        self.devices.as_deref().unwrap_or_default()
+    pub fn devices(&self) -> & [crate::types::LambdaDeviceMount] {
+        self.devices.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LambdaContainerParams {
@@ -52,8 +54,8 @@ impl LambdaContainerParams {
 pub struct LambdaContainerParamsBuilder {
     pub(crate) memory_size_in_kb: ::std::option::Option<i32>,
     pub(crate) mount_ro_sysfs: ::std::option::Option<bool>,
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>>,
-    pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaVolumeMount>>,
+    pub(crate) devices: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaDeviceMount>>,
 }
 impl LambdaContainerParamsBuilder {
     /// <p>The memory size of the container, expressed in kilobytes.</p>
@@ -65,8 +67,7 @@ impl LambdaContainerParamsBuilder {
     /// <p>The memory size of the container, expressed in kilobytes.</p>
     /// <p>Default: <code>16384</code> (16 MB)</p>
     pub fn set_memory_size_in_kb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_size_in_kb = input;
-        self
+        self.memory_size_in_kb = input; self
     }
     /// <p>The memory size of the container, expressed in kilobytes.</p>
     /// <p>Default: <code>16384</code> (16 MB)</p>
@@ -82,8 +83,7 @@ impl LambdaContainerParamsBuilder {
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_mount_ro_sysfs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.mount_ro_sysfs = input;
-        self
+        self.mount_ro_sysfs = input; self
     }
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
     /// <p>Default: <code>false</code></p>
@@ -97,17 +97,16 @@ impl LambdaContainerParamsBuilder {
     /// <p>The list of volumes that the container can access.</p>
     pub fn volumes(mut self, input: crate::types::LambdaVolumeMount) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of volumes that the container can access.</p>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>>) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaVolumeMount>>) -> Self {
+        self.volumes = input; self
     }
     /// <p>The list of volumes that the container can access.</p>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LambdaVolumeMount>> {
         &self.volumes
     }
     /// Appends an item to `devices`.
@@ -117,26 +116,30 @@ impl LambdaContainerParamsBuilder {
     /// <p>The list of system devices that the container can access.</p>
     pub fn devices(mut self, input: crate::types::LambdaDeviceMount) -> Self {
         let mut v = self.devices.unwrap_or_default();
-        v.push(input);
-        self.devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of system devices that the container can access.</p>
-    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>>) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaDeviceMount>>) -> Self {
+        self.devices = input; self
     }
     /// <p>The list of system devices that the container can access.</p>
-    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LambdaDeviceMount>> {
         &self.devices
     }
     /// Consumes the builder and constructs a [`LambdaContainerParams`](crate::types::LambdaContainerParams).
     pub fn build(self) -> crate::types::LambdaContainerParams {
         crate::types::LambdaContainerParams {
-            memory_size_in_kb: self.memory_size_in_kb,
-            mount_ro_sysfs: self.mount_ro_sysfs,
-            volumes: self.volumes,
-            devices: self.devices,
+            memory_size_in_kb: self.memory_size_in_kb
+            ,
+            mount_ro_sysfs: self.mount_ro_sysfs
+            ,
+            volumes: self.volumes
+            ,
+            devices: self.devices
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A request for the resource record sets that are associated with a specified hosted zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceRecordSetsInput {
+pub struct ListResourceRecordSetsInput  {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
@@ -35,13 +35,13 @@ pub struct ListResourceRecordSetsInput {
     /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListResourceRecordSetsInput {
+impl  ListResourceRecordSetsInput  {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
-    pub fn start_record_name(&self) -> ::std::option::Option<&str> {
+    pub fn start_record_name(&self) -> ::std::option::Option<& str> {
         self.start_record_name.as_deref()
     }
     /// <p>The type of resource record set to begin the record listing from.</p>
@@ -65,11 +65,11 @@ impl ListResourceRecordSetsInput {
     /// <p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
-    pub fn start_record_type(&self) -> ::std::option::Option<&crate::types::RrType> {
+    pub fn start_record_type(&self) -> ::std::option::Option<& crate::types::RrType> {
         self.start_record_type.as_ref()
     }
     /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
-    pub fn start_record_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn start_record_identifier(&self) -> ::std::option::Option<& str> {
         self.start_record_identifier.as_deref()
     }
     /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</p>
@@ -103,8 +103,7 @@ impl ListResourceRecordSetsInputBuilder {
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl ListResourceRecordSetsInputBuilder {
     }
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
     pub fn set_start_record_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_record_name = input;
-        self
+        self.start_record_name = input; self
     }
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
     pub fn get_start_record_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +169,7 @@ impl ListResourceRecordSetsInputBuilder {
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
     pub fn set_start_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
-        self.start_record_type = input;
-        self
+        self.start_record_type = input; self
     }
     /// <p>The type of resource record set to begin the record listing from.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
@@ -205,8 +202,7 @@ impl ListResourceRecordSetsInputBuilder {
     }
     /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
     pub fn set_start_record_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_record_identifier = input;
-        self
+        self.start_record_identifier = input; self
     }
     /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
     pub fn get_start_record_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,26 +215,28 @@ impl ListResourceRecordSetsInputBuilder {
     }
     /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListResourceRecordSetsInput`](crate::operation::list_resource_record_sets::ListResourceRecordSetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resource_record_sets::ListResourceRecordSetsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_resource_record_sets::ListResourceRecordSetsInput {
-            hosted_zone_id: self.hosted_zone_id,
-            start_record_name: self.start_record_name,
-            start_record_type: self.start_record_type,
-            start_record_identifier: self.start_record_identifier,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_record_sets::ListResourceRecordSetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resource_record_sets::ListResourceRecordSetsInput {
+                hosted_zone_id: self.hosted_zone_id
+                ,
+                start_record_name: self.start_record_name
+                ,
+                start_record_type: self.start_record_type
+                ,
+                start_record_identifier: self.start_record_identifier
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

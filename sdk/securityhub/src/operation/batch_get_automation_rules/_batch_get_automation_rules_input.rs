@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetAutomationRulesInput {
+pub struct BatchGetAutomationRulesInput  {
     /// <p>A list of rule ARNs to get details for.</p>
-    pub automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub automation_rules_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetAutomationRulesInput {
+impl  BatchGetAutomationRulesInput  {
     /// <p>A list of rule ARNs to get details for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automation_rules_arns.is_none()`.
-    pub fn automation_rules_arns(&self) -> &[::std::string::String] {
-        self.automation_rules_arns.as_deref().unwrap_or_default()
+    pub fn automation_rules_arns(&self) -> & [::std::string::String] {
+        self.automation_rules_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetAutomationRulesInput {
@@ -25,7 +26,7 @@ impl BatchGetAutomationRulesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAutomationRulesInputBuilder {
-    pub(crate) automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) automation_rules_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetAutomationRulesInputBuilder {
     /// Appends an item to `automation_rules_arns`.
@@ -35,28 +36,26 @@ impl BatchGetAutomationRulesInputBuilder {
     /// <p>A list of rule ARNs to get details for.</p>
     pub fn automation_rules_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.automation_rules_arns.unwrap_or_default();
-        v.push(input.into());
-        self.automation_rules_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.automation_rules_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of rule ARNs to get details for.</p>
-    pub fn set_automation_rules_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.automation_rules_arns = input;
-        self
+    pub fn set_automation_rules_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.automation_rules_arns = input; self
     }
     /// <p>A list of rule ARNs to get details for.</p>
-    pub fn get_automation_rules_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_automation_rules_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.automation_rules_arns
     }
     /// Consumes the builder and constructs a [`BatchGetAutomationRulesInput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput {
-            automation_rules_arns: self.automation_rules_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput {
+                automation_rules_arns: self.automation_rules_arns
+                ,
+            }
+        )
     }
 }
+

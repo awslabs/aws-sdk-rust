@@ -3,7 +3,7 @@
 /// <p>The protected query summary for the objects listed by the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectedQuerySummary {
+pub struct ProtectedQuerySummary  {
     /// <p>The unique ID of the protected query.</p>
     pub id: ::std::string::String,
     /// <p>The unique ID for the membership that initiated the protected query.</p>
@@ -15,28 +15,25 @@ pub struct ProtectedQuerySummary {
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
     pub status: crate::types::ProtectedQueryStatus,
 }
-impl ProtectedQuerySummary {
+impl  ProtectedQuerySummary  {
     /// <p>The unique ID of the protected query.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The unique ID for the membership that initiated the protected query.</p>
-    pub fn membership_id(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_id.deref()
+    pub fn membership_id(&self) -> & str {
+        use std::ops::Deref; self.membership_id.deref()
     }
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
-    pub fn membership_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_arn.deref()
+    pub fn membership_arn(&self) -> & str {
+        use std::ops::Deref; self.membership_arn.deref()
     }
     /// <p>The time the protected query was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
-    pub fn status(&self) -> &crate::types::ProtectedQueryStatus {
+    pub fn status(&self) -> & crate::types::ProtectedQueryStatus {
         &self.status
     }
 }
@@ -66,8 +63,7 @@ impl ProtectedQuerySummaryBuilder {
     }
     /// <p>The unique ID of the protected query.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of the protected query.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl ProtectedQuerySummaryBuilder {
     }
     /// <p>The unique ID for the membership that initiated the protected query.</p>
     pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// <p>The unique ID for the membership that initiated the protected query.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl ProtectedQuerySummaryBuilder {
     }
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
     pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_arn = input;
-        self
+        self.membership_arn = input; self
     }
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
     pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +105,7 @@ impl ProtectedQuerySummaryBuilder {
     }
     /// <p>The time the protected query was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time the protected query was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -126,8 +119,7 @@ impl ProtectedQuerySummaryBuilder {
     }
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProtectedQueryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProtectedQueryStatus> {
@@ -141,37 +133,35 @@ impl ProtectedQuerySummaryBuilder {
     /// - [`create_time`](crate::types::builders::ProtectedQuerySummaryBuilder::create_time)
     /// - [`status`](crate::types::builders::ProtectedQuerySummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQuerySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProtectedQuerySummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ProtectedQuerySummary",
-                )
-            })?,
-            membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_id",
-                    "membership_id was not specified but it is required when building ProtectedQuerySummary",
-                )
-            })?,
-            membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_arn",
-                    "membership_arn was not specified but it is required when building ProtectedQuerySummary",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building ProtectedQuerySummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ProtectedQuerySummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProtectedQuerySummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ProtectedQuerySummary")
+                    )?
+                ,
+                membership_id: self.membership_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_id", "membership_id was not specified but it is required when building ProtectedQuerySummary")
+                    )?
+                ,
+                membership_arn: self.membership_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_arn", "membership_arn was not specified but it is required when building ProtectedQuerySummary")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building ProtectedQuerySummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ProtectedQuerySummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

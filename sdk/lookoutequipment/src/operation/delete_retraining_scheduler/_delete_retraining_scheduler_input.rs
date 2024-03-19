@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRetrainingSchedulerInput {
+pub struct DeleteRetrainingSchedulerInput  {
     /// <p>The name of the model whose retraining scheduler you want to delete.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRetrainingSchedulerInput {
+impl  DeleteRetrainingSchedulerInput  {
     /// <p>The name of the model whose retraining scheduler you want to delete.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteRetrainingSchedulerInputBuilder {
     }
     /// <p>The name of the model whose retraining scheduler you want to delete.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model whose retraining scheduler you want to delete.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
     /// Consumes the builder and constructs a [`DeleteRetrainingSchedulerInput`](crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerInput { model_name: self.model_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerInput {
+                model_name: self.model_name
+                ,
+            }
+        )
     }
 }
+

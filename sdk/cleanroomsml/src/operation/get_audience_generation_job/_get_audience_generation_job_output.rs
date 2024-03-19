@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAudienceGenerationJobOutput {
+pub struct GetAudienceGenerationJobOutput  {
     /// <p>The time at which the audience generation job was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the audience generation job was updated.</p>
@@ -30,47 +30,44 @@ pub struct GetAudienceGenerationJobOutput {
     /// <p>The AWS account that started this audience generation job.</p>
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The tags that are associated to this audience generation job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetAudienceGenerationJobOutput {
+impl  GetAudienceGenerationJobOutput  {
     /// <p>The time at which the audience generation job was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the audience generation job was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-    pub fn audience_generation_job_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.audience_generation_job_arn.deref()
+    pub fn audience_generation_job_arn(&self) -> & str {
+        use std::ops::Deref; self.audience_generation_job_arn.deref()
     }
     /// <p>The name of the audience generation job.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the audience generation job.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the audience generation job.</p>
-    pub fn status(&self) -> &crate::types::AudienceGenerationJobStatus {
+    pub fn status(&self) -> & crate::types::AudienceGenerationJobStatus {
         &self.status
     }
     /// <p>Details about the status of the audience generation job.</p>
-    pub fn status_details(&self) -> ::std::option::Option<&crate::types::StatusDetails> {
+    pub fn status_details(&self) -> ::std::option::Option<& crate::types::StatusDetails> {
         self.status_details.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model used for this audience generation job.</p>
-    pub fn configured_audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_arn.deref()
+    pub fn configured_audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_arn.deref()
     }
     /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job.</p>
-    pub fn seed_audience(&self) -> ::std::option::Option<&crate::types::AudienceGenerationJobDataSource> {
+    pub fn seed_audience(&self) -> ::std::option::Option<& crate::types::AudienceGenerationJobDataSource> {
         self.seed_audience.as_ref()
     }
     /// <p>Configure whether the seed users are included in the output audience. By default, Clean Rooms ML removes seed users from the output audience. If you specify <code>TRUE</code>, the seed users will appear first in the output. Clean Rooms ML does not explicitly reveal whether a user was in the seed, but the recipient of the audience will know that the first <code>minimumSeedSize</code> count of users are from the seed.</p>
@@ -78,27 +75,27 @@ impl GetAudienceGenerationJobOutput {
         self.include_seed_in_output
     }
     /// <p>The identifier of the collaboration that this audience generation job is associated with.</p>
-    pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> ::std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
     /// <p>The relevance scores for different audience sizes.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&crate::types::AudienceQualityMetrics> {
+    pub fn metrics(&self) -> ::std::option::Option<& crate::types::AudienceQualityMetrics> {
         self.metrics.as_ref()
     }
     /// <p>The AWS account that started this audience generation job.</p>
-    pub fn started_by(&self) -> ::std::option::Option<&str> {
+    pub fn started_by(&self) -> ::std::option::Option<& str> {
         self.started_by.as_deref()
     }
     /// <p>The tags that are associated to this audience generation job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAudienceGenerationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAudienceGenerationJobOutput {
     /// Creates a new builder-style object to manufacture [`GetAudienceGenerationJobOutput`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput).
     pub fn builder() -> crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobOutputBuilder {
@@ -123,7 +120,7 @@ pub struct GetAudienceGenerationJobOutputBuilder {
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
     pub(crate) metrics: ::std::option::Option<crate::types::AudienceQualityMetrics>,
     pub(crate) started_by: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetAudienceGenerationJobOutputBuilder {
@@ -135,8 +132,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The time at which the audience generation job was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the audience generation job was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,8 +146,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The most recent time at which the audience generation job was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the audience generation job was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -165,8 +160,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
     pub fn set_audience_generation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_generation_job_arn = input;
-        self
+        self.audience_generation_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
     pub fn get_audience_generation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +174,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The name of the audience generation job.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the audience generation job.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +187,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The description of the audience generation job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the audience generation job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The status of the audience generation job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AudienceGenerationJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the audience generation job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AudienceGenerationJobStatus> {
@@ -223,8 +214,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>Details about the status of the audience generation job.</p>
     pub fn set_status_details(mut self, input: ::std::option::Option<crate::types::StatusDetails>) -> Self {
-        self.status_details = input;
-        self
+        self.status_details = input; self
     }
     /// <p>Details about the status of the audience generation job.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<crate::types::StatusDetails> {
@@ -238,8 +228,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model used for this audience generation job.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model used for this audience generation job.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +241,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job.</p>
     pub fn set_seed_audience(mut self, input: ::std::option::Option<crate::types::AudienceGenerationJobDataSource>) -> Self {
-        self.seed_audience = input;
-        self
+        self.seed_audience = input; self
     }
     /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job.</p>
     pub fn get_seed_audience(&self) -> &::std::option::Option<crate::types::AudienceGenerationJobDataSource> {
@@ -266,8 +254,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>Configure whether the seed users are included in the output audience. By default, Clean Rooms ML removes seed users from the output audience. If you specify <code>TRUE</code>, the seed users will appear first in the output. Clean Rooms ML does not explicitly reveal whether a user was in the seed, but the recipient of the audience will know that the first <code>minimumSeedSize</code> count of users are from the seed.</p>
     pub fn set_include_seed_in_output(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_seed_in_output = input;
-        self
+        self.include_seed_in_output = input; self
     }
     /// <p>Configure whether the seed users are included in the output audience. By default, Clean Rooms ML removes seed users from the output audience. If you specify <code>TRUE</code>, the seed users will appear first in the output. Clean Rooms ML does not explicitly reveal whether a user was in the seed, but the recipient of the audience will know that the first <code>minimumSeedSize</code> count of users are from the seed.</p>
     pub fn get_include_seed_in_output(&self) -> &::std::option::Option<bool> {
@@ -280,8 +267,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The identifier of the collaboration that this audience generation job is associated with.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>The identifier of the collaboration that this audience generation job is associated with.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +280,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The relevance scores for different audience sizes.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::AudienceQualityMetrics>) -> Self {
-        self.metrics = input;
-        self
+        self.metrics = input; self
     }
     /// <p>The relevance scores for different audience sizes.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::AudienceQualityMetrics> {
@@ -308,8 +293,7 @@ impl GetAudienceGenerationJobOutputBuilder {
     }
     /// <p>The AWS account that started this audience generation job.</p>
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.started_by = input;
-        self
+        self.started_by = input; self
     }
     /// <p>The AWS account that started this audience generation job.</p>
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -322,28 +306,27 @@ impl GetAudienceGenerationJobOutputBuilder {
     /// <p>The tags that are associated to this audience generation job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that are associated to this audience generation job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that are associated to this audience generation job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAudienceGenerationJobOutput`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`create_time`](crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobOutputBuilder::create_time)
@@ -352,58 +335,58 @@ impl GetAudienceGenerationJobOutputBuilder {
     /// - [`name`](crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobOutputBuilder::name)
     /// - [`status`](crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobOutputBuilder::status)
     /// - [`configured_audience_model_arn`](crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobOutputBuilder::configured_audience_model_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building GetAudienceGenerationJobOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building GetAudienceGenerationJobOutput",
-                )
-            })?,
-            audience_generation_job_arn: self.audience_generation_job_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_generation_job_arn",
-                    "audience_generation_job_arn was not specified but it is required when building GetAudienceGenerationJobOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetAudienceGenerationJobOutput",
-                )
-            })?,
-            description: self.description,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetAudienceGenerationJobOutput",
-                )
-            })?,
-            status_details: self.status_details,
-            configured_audience_model_arn: self.configured_audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_audience_model_arn",
-                    "configured_audience_model_arn was not specified but it is required when building GetAudienceGenerationJobOutput",
-                )
-            })?,
-            seed_audience: self.seed_audience,
-            include_seed_in_output: self.include_seed_in_output,
-            collaboration_id: self.collaboration_id,
-            metrics: self.metrics,
-            started_by: self.started_by,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_audience_generation_job::GetAudienceGenerationJobOutput {
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building GetAudienceGenerationJobOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building GetAudienceGenerationJobOutput")
+                    )?
+                ,
+                audience_generation_job_arn: self.audience_generation_job_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_generation_job_arn", "audience_generation_job_arn was not specified but it is required when building GetAudienceGenerationJobOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetAudienceGenerationJobOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetAudienceGenerationJobOutput")
+                    )?
+                ,
+                status_details: self.status_details
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_arn", "configured_audience_model_arn was not specified but it is required when building GetAudienceGenerationJobOutput")
+                    )?
+                ,
+                seed_audience: self.seed_audience
+                ,
+                include_seed_in_output: self.include_seed_in_output
+                ,
+                collaboration_id: self.collaboration_id
+                ,
+                metrics: self.metrics
+                ,
+                started_by: self.started_by
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

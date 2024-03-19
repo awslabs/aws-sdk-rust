@@ -3,7 +3,7 @@
 /// <p>Information about a project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectSummary {
+pub struct ProjectSummary  {
     /// <p>The name of the project in the space.</p>
     pub name: ::std::string::String,
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
@@ -11,18 +11,17 @@ pub struct ProjectSummary {
     /// <p>The description of the project.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ProjectSummary {
+impl  ProjectSummary  {
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The description of the project.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the project.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl ProjectSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ProjectSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProjectSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ProjectSummary",
-                )
-            })?,
-            display_name: self.display_name,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProjectSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ProjectSummary")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -44,3 +44,4 @@ pub use crate::types::_vault_lock_policy::VaultLockPolicyBuilder;
 pub use crate::types::_job_parameters::JobParametersBuilder;
 
 pub use crate::types::_inventory_retrieval_job_input::InventoryRetrievalJobInputBuilder;
+

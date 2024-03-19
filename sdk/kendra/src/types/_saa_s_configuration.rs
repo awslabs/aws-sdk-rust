@@ -3,22 +3,20 @@
 /// <p>Provides the configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SaaSConfiguration {
+pub struct SaaSConfiguration  {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub organization_name: ::std::string::String,
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
     pub host_url: ::std::string::String,
 }
-impl SaaSConfiguration {
+impl  SaaSConfiguration  {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
-    pub fn organization_name(&self) -> &str {
-        use std::ops::Deref;
-        self.organization_name.deref()
+    pub fn organization_name(&self) -> & str {
+        use std::ops::Deref; self.organization_name.deref()
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
-    pub fn host_url(&self) -> &str {
-        use std::ops::Deref;
-        self.host_url.deref()
+    pub fn host_url(&self) -> & str {
+        use std::ops::Deref; self.host_url.deref()
     }
 }
 impl SaaSConfiguration {
@@ -44,8 +42,7 @@ impl SaaSConfigurationBuilder {
     }
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub fn set_organization_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_name = input;
-        self
+        self.organization_name = input; self
     }
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl SaaSConfigurationBuilder {
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
     pub fn set_host_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_url = input;
-        self
+        self.host_url = input; self
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
     pub fn get_host_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl SaaSConfigurationBuilder {
     /// - [`organization_name`](crate::types::builders::SaaSConfigurationBuilder::organization_name)
     /// - [`host_url`](crate::types::builders::SaaSConfigurationBuilder::host_url)
     pub fn build(self) -> ::std::result::Result<crate::types::SaaSConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SaaSConfiguration {
-            organization_name: self.organization_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "organization_name",
-                    "organization_name was not specified but it is required when building SaaSConfiguration",
-                )
-            })?,
-            host_url: self.host_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host_url",
-                    "host_url was not specified but it is required when building SaaSConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SaaSConfiguration {
+                organization_name: self.organization_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("organization_name", "organization_name was not specified but it is required when building SaaSConfiguration")
+                    )?
+                ,
+                host_url: self.host_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host_url", "host_url was not specified but it is required when building SaaSConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

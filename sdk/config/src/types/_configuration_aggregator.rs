@@ -3,13 +3,13 @@
 /// <p>The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationAggregator {
+pub struct ConfigurationAggregator  {
     /// <p>The name of the aggregator.</p>
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the aggregator.</p>
     pub configuration_aggregator_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of source accounts and regions to be aggregated.</p>
-    pub account_aggregation_sources: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>,
+    pub account_aggregation_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAggregationSource>>,
     /// <p>Provides an organization and list of regions to be aggregated.</p>
     pub organization_aggregation_source: ::std::option::Option<crate::types::OrganizationAggregationSource>,
     /// <p>The time stamp when the configuration aggregator was created.</p>
@@ -19,35 +19,36 @@ pub struct ConfigurationAggregator {
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
 }
-impl ConfigurationAggregator {
+impl  ConfigurationAggregator  {
     /// <p>The name of the aggregator.</p>
-    pub fn configuration_aggregator_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_aggregator_name(&self) -> ::std::option::Option<& str> {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the aggregator.</p>
-    pub fn configuration_aggregator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_aggregator_arn(&self) -> ::std::option::Option<& str> {
         self.configuration_aggregator_arn.as_deref()
     }
     /// <p>Provides a list of source accounts and regions to be aggregated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_aggregation_sources.is_none()`.
-    pub fn account_aggregation_sources(&self) -> &[crate::types::AccountAggregationSource] {
-        self.account_aggregation_sources.as_deref().unwrap_or_default()
+    pub fn account_aggregation_sources(&self) -> & [crate::types::AccountAggregationSource] {
+        self.account_aggregation_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides an organization and list of regions to be aggregated.</p>
-    pub fn organization_aggregation_source(&self) -> ::std::option::Option<&crate::types::OrganizationAggregationSource> {
+    pub fn organization_aggregation_source(&self) -> ::std::option::Option<& crate::types::OrganizationAggregationSource> {
         self.organization_aggregation_source.as_ref()
     }
     /// <p>The time stamp when the configuration aggregator was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time of the last update.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
 }
@@ -64,7 +65,7 @@ impl ConfigurationAggregator {
 pub struct ConfigurationAggregatorBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_aggregator_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) account_aggregation_sources: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>,
+    pub(crate) account_aggregation_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAggregationSource>>,
     pub(crate) organization_aggregation_source: ::std::option::Option<crate::types::OrganizationAggregationSource>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -78,8 +79,7 @@ impl ConfigurationAggregatorBuilder {
     }
     /// <p>The name of the aggregator.</p>
     pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_aggregator_name = input;
-        self
+        self.configuration_aggregator_name = input; self
     }
     /// <p>The name of the aggregator.</p>
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl ConfigurationAggregatorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the aggregator.</p>
     pub fn set_configuration_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_aggregator_arn = input;
-        self
+        self.configuration_aggregator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the aggregator.</p>
     pub fn get_configuration_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,17 +105,16 @@ impl ConfigurationAggregatorBuilder {
     /// <p>Provides a list of source accounts and regions to be aggregated.</p>
     pub fn account_aggregation_sources(mut self, input: crate::types::AccountAggregationSource) -> Self {
         let mut v = self.account_aggregation_sources.unwrap_or_default();
-        v.push(input);
-        self.account_aggregation_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_aggregation_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides a list of source accounts and regions to be aggregated.</p>
-    pub fn set_account_aggregation_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>) -> Self {
-        self.account_aggregation_sources = input;
-        self
+    pub fn set_account_aggregation_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAggregationSource>>) -> Self {
+        self.account_aggregation_sources = input; self
     }
     /// <p>Provides a list of source accounts and regions to be aggregated.</p>
-    pub fn get_account_aggregation_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>> {
+    pub fn get_account_aggregation_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountAggregationSource>> {
         &self.account_aggregation_sources
     }
     /// <p>Provides an organization and list of regions to be aggregated.</p>
@@ -126,8 +124,7 @@ impl ConfigurationAggregatorBuilder {
     }
     /// <p>Provides an organization and list of regions to be aggregated.</p>
     pub fn set_organization_aggregation_source(mut self, input: ::std::option::Option<crate::types::OrganizationAggregationSource>) -> Self {
-        self.organization_aggregation_source = input;
-        self
+        self.organization_aggregation_source = input; self
     }
     /// <p>Provides an organization and list of regions to be aggregated.</p>
     pub fn get_organization_aggregation_source(&self) -> &::std::option::Option<crate::types::OrganizationAggregationSource> {
@@ -140,8 +137,7 @@ impl ConfigurationAggregatorBuilder {
     }
     /// <p>The time stamp when the configuration aggregator was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time stamp when the configuration aggregator was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -154,8 +150,7 @@ impl ConfigurationAggregatorBuilder {
     }
     /// <p>The time of the last update.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time of the last update.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +163,7 @@ impl ConfigurationAggregatorBuilder {
     }
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,13 +172,21 @@ impl ConfigurationAggregatorBuilder {
     /// Consumes the builder and constructs a [`ConfigurationAggregator`](crate::types::ConfigurationAggregator).
     pub fn build(self) -> crate::types::ConfigurationAggregator {
         crate::types::ConfigurationAggregator {
-            configuration_aggregator_name: self.configuration_aggregator_name,
-            configuration_aggregator_arn: self.configuration_aggregator_arn,
-            account_aggregation_sources: self.account_aggregation_sources,
-            organization_aggregation_source: self.organization_aggregation_source,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            created_by: self.created_by,
+            configuration_aggregator_name: self.configuration_aggregator_name
+            ,
+            configuration_aggregator_arn: self.configuration_aggregator_arn
+            ,
+            account_aggregation_sources: self.account_aggregation_sources
+            ,
+            organization_aggregation_source: self.organization_aggregation_source
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            created_by: self.created_by
+            ,
         }
     }
 }
+

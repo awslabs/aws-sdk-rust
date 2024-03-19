@@ -3,7 +3,7 @@
 /// <p>The log delivery configurations being modified</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PendingLogDeliveryConfiguration {
+pub struct PendingLogDeliveryConfiguration  {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
     pub log_type: ::std::option::Option<crate::types::LogType>,
     /// <p>Returns the destination type, either CloudWatch Logs or Kinesis Data Firehose.</p>
@@ -13,21 +13,21 @@ pub struct PendingLogDeliveryConfiguration {
     /// <p>Returns the log format, either JSON or TEXT</p>
     pub log_format: ::std::option::Option<crate::types::LogFormat>,
 }
-impl PendingLogDeliveryConfiguration {
+impl  PendingLogDeliveryConfiguration  {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
-    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
+    pub fn log_type(&self) -> ::std::option::Option<& crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>Returns the destination type, either CloudWatch Logs or Kinesis Data Firehose.</p>
-    pub fn destination_type(&self) -> ::std::option::Option<&crate::types::DestinationType> {
+    pub fn destination_type(&self) -> ::std::option::Option<& crate::types::DestinationType> {
         self.destination_type.as_ref()
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
-    pub fn destination_details(&self) -> ::std::option::Option<&crate::types::DestinationDetails> {
+    pub fn destination_details(&self) -> ::std::option::Option<& crate::types::DestinationDetails> {
         self.destination_details.as_ref()
     }
     /// <p>Returns the log format, either JSON or TEXT</p>
-    pub fn log_format(&self) -> ::std::option::Option<&crate::types::LogFormat> {
+    pub fn log_format(&self) -> ::std::option::Option<& crate::types::LogFormat> {
         self.log_format.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PendingLogDeliveryConfigurationBuilder {
     }
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
     pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
@@ -69,8 +68,7 @@ impl PendingLogDeliveryConfigurationBuilder {
     }
     /// <p>Returns the destination type, either CloudWatch Logs or Kinesis Data Firehose.</p>
     pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
-        self.destination_type = input;
-        self
+        self.destination_type = input; self
     }
     /// <p>Returns the destination type, either CloudWatch Logs or Kinesis Data Firehose.</p>
     pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
@@ -83,8 +81,7 @@ impl PendingLogDeliveryConfigurationBuilder {
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
     pub fn set_destination_details(mut self, input: ::std::option::Option<crate::types::DestinationDetails>) -> Self {
-        self.destination_details = input;
-        self
+        self.destination_details = input; self
     }
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
     pub fn get_destination_details(&self) -> &::std::option::Option<crate::types::DestinationDetails> {
@@ -97,8 +94,7 @@ impl PendingLogDeliveryConfigurationBuilder {
     }
     /// <p>Returns the log format, either JSON or TEXT</p>
     pub fn set_log_format(mut self, input: ::std::option::Option<crate::types::LogFormat>) -> Self {
-        self.log_format = input;
-        self
+        self.log_format = input; self
     }
     /// <p>Returns the log format, either JSON or TEXT</p>
     pub fn get_log_format(&self) -> &::std::option::Option<crate::types::LogFormat> {
@@ -107,10 +103,15 @@ impl PendingLogDeliveryConfigurationBuilder {
     /// Consumes the builder and constructs a [`PendingLogDeliveryConfiguration`](crate::types::PendingLogDeliveryConfiguration).
     pub fn build(self) -> crate::types::PendingLogDeliveryConfiguration {
         crate::types::PendingLogDeliveryConfiguration {
-            log_type: self.log_type,
-            destination_type: self.destination_type,
-            destination_details: self.destination_details,
-            log_format: self.log_format,
+            log_type: self.log_type
+            ,
+            destination_type: self.destination_type
+            ,
+            destination_details: self.destination_details
+            ,
+            log_format: self.log_format
+            ,
         }
     }
 }
+

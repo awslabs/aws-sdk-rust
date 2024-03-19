@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBulkImportJobs`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p><br>
     ///   - [`filter(ListBulkImportJobsFilter)`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::filter) / [`set_filter(Option<ListBulkImportJobsFilter>)`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::set_filter):<br>required: **false**<br><p>You can use a filter to select the bulk import jobs that you want to retrieve.</p><br>
-    /// - On success, responds with [`ListBulkImportJobsOutput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListBulkImportJobsOutput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput) with field(s):
     ///   - [`job_summaries(Vec::<JobSummary>)`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput::job_summaries): <p>One or more job summaries to list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListBulkImportJobsError>`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsError)
+                            /// - On failure, responds with [`SdkError<ListBulkImportJobsError>`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsError)
     pub fn list_bulk_import_jobs(&self) -> crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder {
-        crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,17 +3,17 @@
 /// <p>Contains input information for a media analysis job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaAnalysisInput {
+pub struct MediaAnalysisInput  {
     /// <p>Provides the S3 bucket name and object name.</p>
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.</p>
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
-impl MediaAnalysisInput {
+impl  MediaAnalysisInput  {
     /// <p>Provides the S3 bucket name and object name.</p>
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.</p>
-    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<& crate::types::S3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl MediaAnalysisInputBuilder {
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.</p>
     pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
-        self.s3_object = input;
-        self
+        self.s3_object = input; self
     }
     /// <p>Provides the S3 bucket name and object name.</p>
     /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
@@ -54,6 +53,10 @@ impl MediaAnalysisInputBuilder {
     }
     /// Consumes the builder and constructs a [`MediaAnalysisInput`](crate::types::MediaAnalysisInput).
     pub fn build(self) -> crate::types::MediaAnalysisInput {
-        crate::types::MediaAnalysisInput { s3_object: self.s3_object }
+        crate::types::MediaAnalysisInput {
+            s3_object: self.s3_object
+            ,
+        }
     }
 }
+

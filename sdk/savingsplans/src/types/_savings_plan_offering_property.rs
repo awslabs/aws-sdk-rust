@@ -3,19 +3,19 @@
 /// <p>Information about a property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlanOfferingProperty {
+pub struct SavingsPlanOfferingProperty  {
     /// <p>The property name.</p>
     pub name: ::std::option::Option<crate::types::SavingsPlanOfferingPropertyKey>,
     /// <p>The property value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl SavingsPlanOfferingProperty {
+impl  SavingsPlanOfferingProperty  {
     /// <p>The property name.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SavingsPlanOfferingPropertyKey> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::SavingsPlanOfferingPropertyKey> {
         self.name.as_ref()
     }
     /// <p>The property value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SavingsPlanOfferingPropertyBuilder {
     }
     /// <p>The property name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::SavingsPlanOfferingPropertyKey>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The property name.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::SavingsPlanOfferingPropertyKey> {
@@ -55,8 +54,7 @@ impl SavingsPlanOfferingPropertyBuilder {
     }
     /// <p>The property value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The property value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SavingsPlanOfferingPropertyBuilder {
     /// Consumes the builder and constructs a [`SavingsPlanOfferingProperty`](crate::types::SavingsPlanOfferingProperty).
     pub fn build(self) -> crate::types::SavingsPlanOfferingProperty {
         crate::types::SavingsPlanOfferingProperty {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

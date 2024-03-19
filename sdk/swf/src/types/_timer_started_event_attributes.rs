@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>TimerStarted</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimerStartedEventAttributes {
+pub struct TimerStartedEventAttributes  {
     /// <p>The unique ID of the timer that was started.</p>
     pub timer_id: ::std::string::String,
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
@@ -14,21 +14,19 @@ pub struct TimerStartedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub decision_task_completed_event_id: i64,
 }
-impl TimerStartedEventAttributes {
+impl  TimerStartedEventAttributes  {
     /// <p>The unique ID of the timer that was started.</p>
-    pub fn timer_id(&self) -> &str {
-        use std::ops::Deref;
-        self.timer_id.deref()
+    pub fn timer_id(&self) -> & str {
+        use std::ops::Deref; self.timer_id.deref()
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    pub fn control(&self) -> ::std::option::Option<&str> {
+    pub fn control(&self) -> ::std::option::Option<& str> {
         self.control.as_deref()
     }
     /// <p>The duration of time after which the timer fires.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub fn start_to_fire_timeout(&self) -> &str {
-        use std::ops::Deref;
-        self.start_to_fire_timeout.deref()
+    pub fn start_to_fire_timeout(&self) -> & str {
+        use std::ops::Deref; self.start_to_fire_timeout.deref()
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
@@ -60,8 +58,7 @@ impl TimerStartedEventAttributesBuilder {
     }
     /// <p>The unique ID of the timer that was started.</p>
     pub fn set_timer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timer_id = input;
-        self
+        self.timer_id = input; self
     }
     /// <p>The unique ID of the timer that was started.</p>
     pub fn get_timer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +71,7 @@ impl TimerStartedEventAttributesBuilder {
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control = input;
-        self
+        self.control = input; self
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +87,7 @@ impl TimerStartedEventAttributesBuilder {
     /// <p>The duration of time after which the timer fires.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
     pub fn set_start_to_fire_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_to_fire_timeout = input;
-        self
+        self.start_to_fire_timeout = input; self
     }
     /// <p>The duration of time after which the timer fires.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
@@ -107,8 +102,7 @@ impl TimerStartedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input;
-        self
+        self.decision_task_completed_event_id = input; self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
@@ -119,21 +113,25 @@ impl TimerStartedEventAttributesBuilder {
     /// - [`timer_id`](crate::types::builders::TimerStartedEventAttributesBuilder::timer_id)
     /// - [`start_to_fire_timeout`](crate::types::builders::TimerStartedEventAttributesBuilder::start_to_fire_timeout)
     pub fn build(self) -> ::std::result::Result<crate::types::TimerStartedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimerStartedEventAttributes {
-            timer_id: self.timer_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timer_id",
-                    "timer_id was not specified but it is required when building TimerStartedEventAttributes",
-                )
-            })?,
-            control: self.control,
-            start_to_fire_timeout: self.start_to_fire_timeout.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_to_fire_timeout",
-                    "start_to_fire_timeout was not specified but it is required when building TimerStartedEventAttributes",
-                )
-            })?,
-            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimerStartedEventAttributes {
+                timer_id: self.timer_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timer_id", "timer_id was not specified but it is required when building TimerStartedEventAttributes")
+                    )?
+                ,
+                control: self.control
+                ,
+                start_to_fire_timeout: self.start_to_fire_timeout
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_to_fire_timeout", "start_to_fire_timeout was not specified but it is required when building TimerStartedEventAttributes")
+                    )?
+                ,
+                decision_task_completed_event_id: self.decision_task_completed_event_id
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

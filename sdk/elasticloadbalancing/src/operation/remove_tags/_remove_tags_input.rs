@@ -3,24 +3,26 @@
 /// <p>Contains the parameters for RemoveTags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTagsInput {
+pub struct RemoveTagsInput  {
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-    pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub load_balancer_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of tag keys to remove.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagKeyOnly>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagKeyOnly>>,
 }
-impl RemoveTagsInput {
+impl  RemoveTagsInput  {
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_names.is_none()`.
-    pub fn load_balancer_names(&self) -> &[::std::string::String] {
-        self.load_balancer_names.as_deref().unwrap_or_default()
+    pub fn load_balancer_names(&self) -> & [::std::string::String] {
+        self.load_balancer_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of tag keys to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagKeyOnly] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagKeyOnly] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RemoveTagsInput {
@@ -34,8 +36,8 @@ impl RemoveTagsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsInputBuilder {
-    pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagKeyOnly>>,
+    pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagKeyOnly>>,
 }
 impl RemoveTagsInputBuilder {
     /// Appends an item to `load_balancer_names`.
@@ -45,17 +47,16 @@ impl RemoveTagsInputBuilder {
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
     pub fn load_balancer_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
-        v.push(input.into());
-        self.load_balancer_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.load_balancer_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-    pub fn set_load_balancer_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.load_balancer_names = input;
-        self
+    pub fn set_load_balancer_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.load_balancer_names = input; self
     }
     /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-    pub fn get_load_balancer_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_load_balancer_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.load_balancer_names
     }
     /// Appends an item to `tags`.
@@ -65,24 +66,28 @@ impl RemoveTagsInputBuilder {
     /// <p>The list of tag keys to remove.</p>
     pub fn tags(mut self, input: crate::types::TagKeyOnly) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tag keys to remove.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagKeyOnly>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagKeyOnly>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tag keys to remove.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagKeyOnly>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagKeyOnly>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_tags::RemoveTagsInput {
-            load_balancer_names: self.load_balancer_names,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::remove_tags::RemoveTagsInput {
+                load_balancer_names: self.load_balancer_names
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

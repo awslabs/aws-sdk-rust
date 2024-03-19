@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRateBasedRuleManagedKeysOutput {
+pub struct GetRateBasedRuleManagedKeysOutput  {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
-    pub managed_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub managed_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A null value and not currently used.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetRateBasedRuleManagedKeysOutput {
+impl  GetRateBasedRuleManagedKeysOutput  {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_keys.is_none()`.
-    pub fn managed_keys(&self) -> &[::std::string::String] {
-        self.managed_keys.as_deref().unwrap_or_default()
+    pub fn managed_keys(&self) -> & [::std::string::String] {
+        self.managed_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A null value and not currently used.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRateBasedRuleManagedKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRateBasedRuleManagedKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysOutput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput).
     pub fn builder() -> crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysOutputBuilder {
@@ -37,7 +38,7 @@ impl GetRateBasedRuleManagedKeysOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysOutputBuilder {
-    pub(crate) managed_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) managed_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetRateBasedRuleManagedKeysOutputBuilder {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
     pub fn managed_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.managed_keys.unwrap_or_default();
-        v.push(input.into());
-        self.managed_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.managed_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
-    pub fn set_managed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.managed_keys = input;
-        self
+    pub fn set_managed_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.managed_keys = input; self
     }
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
-    pub fn get_managed_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_managed_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.managed_keys
     }
     /// <p>A null value and not currently used.</p>
@@ -69,28 +69,30 @@ impl GetRateBasedRuleManagedKeysOutputBuilder {
     }
     /// <p>A null value and not currently used.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>A null value and not currently used.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRateBasedRuleManagedKeysOutput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput).
     pub fn build(self) -> crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput {
         crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput {
-            managed_keys: self.managed_keys,
-            next_marker: self.next_marker,
+            managed_keys: self.managed_keys
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

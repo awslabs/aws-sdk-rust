@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGeneratedPolicyOutput {
+pub struct GetGeneratedPolicyOutput  {
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
     pub job_details: ::std::option::Option<crate::types::JobDetails>,
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
     pub generated_policy_result: ::std::option::Option<crate::types::GeneratedPolicyResult>,
     _request_id: Option<String>,
 }
-impl GetGeneratedPolicyOutput {
+impl  GetGeneratedPolicyOutput  {
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
-    pub fn job_details(&self) -> ::std::option::Option<&crate::types::JobDetails> {
+    pub fn job_details(&self) -> ::std::option::Option<& crate::types::JobDetails> {
         self.job_details.as_ref()
     }
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
-    pub fn generated_policy_result(&self) -> ::std::option::Option<&crate::types::GeneratedPolicyResult> {
+    pub fn generated_policy_result(&self) -> ::std::option::Option<& crate::types::GeneratedPolicyResult> {
         self.generated_policy_result.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetGeneratedPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGeneratedPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetGeneratedPolicyOutput`](crate::operation::get_generated_policy::GetGeneratedPolicyOutput).
     pub fn builder() -> crate::operation::get_generated_policy::builders::GetGeneratedPolicyOutputBuilder {
@@ -48,8 +48,7 @@ impl GetGeneratedPolicyOutputBuilder {
     }
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
     pub fn set_job_details(mut self, input: ::std::option::Option<crate::types::JobDetails>) -> Self {
-        self.job_details = input;
-        self
+        self.job_details = input; self
     }
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
     pub fn get_job_details(&self) -> &::std::option::Option<crate::types::JobDetails> {
@@ -63,28 +62,30 @@ impl GetGeneratedPolicyOutputBuilder {
     }
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
     pub fn set_generated_policy_result(mut self, input: ::std::option::Option<crate::types::GeneratedPolicyResult>) -> Self {
-        self.generated_policy_result = input;
-        self
+        self.generated_policy_result = input; self
     }
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
     pub fn get_generated_policy_result(&self) -> &::std::option::Option<crate::types::GeneratedPolicyResult> {
         &self.generated_policy_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGeneratedPolicyOutput`](crate::operation::get_generated_policy::GetGeneratedPolicyOutput).
     pub fn build(self) -> crate::operation::get_generated_policy::GetGeneratedPolicyOutput {
         crate::operation::get_generated_policy::GetGeneratedPolicyOutput {
-            job_details: self.job_details,
-            generated_policy_result: self.generated_policy_result,
+            job_details: self.job_details
+            ,
+            generated_policy_result: self.generated_policy_result
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

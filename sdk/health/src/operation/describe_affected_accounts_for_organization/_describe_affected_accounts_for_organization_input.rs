@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAffectedAccountsForOrganizationInput {
+pub struct DescribeAffectedAccountsForOrganizationInput  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
@@ -12,15 +12,15 @@ pub struct DescribeAffectedAccountsForOrganizationInput {
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeAffectedAccountsForOrganizationInput {
+impl  DescribeAffectedAccountsForOrganizationInput  {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
-    pub fn event_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_arn(&self) -> ::std::option::Option<& str> {
         self.event_arn.as_deref()
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -56,8 +56,7 @@ impl DescribeAffectedAccountsForOrganizationInputBuilder {
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
     pub fn set_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -72,8 +71,7 @@ impl DescribeAffectedAccountsForOrganizationInputBuilder {
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,26 +84,24 @@ impl DescribeAffectedAccountsForOrganizationInputBuilder {
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationInput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput {
-                event_arn: self.event_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                event_arn: self.event_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

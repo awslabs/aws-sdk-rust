@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClusters`](crate::operation::list_clusters::builders::ListClustersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p> <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of elastic cluster snapshot results to receive in the response.</p><br>
-    /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
+                            /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
     ///   - [`clusters(Option<Vec::<ClusterInList>>)`](crate::operation::list_clusters::ListClustersOutput::clusters): <p>A list of Amazon DocumentDB elastic clusters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p> <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
-    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
+                            /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
     pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppImageConfigs`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::set_name_contains):<br>required: **false**<br><p>A filter that returns only AppImageConfigs whose name contains the specified string.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`modified_time_after(DateTime)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::modified_time_after) / [`set_modified_time_after(Option<DateTime>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::set_modified_time_after):<br>required: **false**<br><p>A filter that returns only AppImageConfigs modified on or after the specified time.</p><br>
     ///   - [`sort_by(AppImageConfigSortKey)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::sort_by) / [`set_sort_by(Option<AppImageConfigSortKey>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The property used to sort results. The default value is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>Descending</code>.</p><br>
-    /// - On success, responds with [`ListAppImageConfigsOutput`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput) with field(s):
+                            /// - On success, responds with [`ListAppImageConfigsOutput`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput::next_token): <p>A token for getting the next set of AppImageConfigs, if there are any.</p>
     ///   - [`app_image_configs(Option<Vec::<AppImageConfigDetails>>)`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput::app_image_configs): <p>A list of AppImageConfigs and their properties.</p>
-    /// - On failure, responds with [`SdkError<ListAppImageConfigsError>`](crate::operation::list_app_image_configs::ListAppImageConfigsError)
+                            /// - On failure, responds with [`SdkError<ListAppImageConfigsError>`](crate::operation::list_app_image_configs::ListAppImageConfigsError)
     pub fn list_app_image_configs(&self) -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder {
-        crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_app_image_configs::builders::ListAppImageConfigsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScalingActivitiesInput {
+pub struct DescribeScalingActivitiesInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scaling activity. This string consists of the resource type and unique identifier.</p>
@@ -101,9 +101,9 @@ pub struct DescribeScalingActivitiesInput {
     /// <p>Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not scaled activities are activities that aren't completed or started for various reasons, such as preventing infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.</p>
     pub include_not_scaled_activities: ::std::option::Option<bool>,
 }
-impl DescribeScalingActivitiesInput {
+impl  DescribeScalingActivitiesInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<& crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The identifier of the resource associated with the scaling activity. This string consists of the resource type and unique identifier.</p>
@@ -145,7 +145,7 @@ impl DescribeScalingActivitiesInput {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
@@ -195,7 +195,7 @@ impl DescribeScalingActivitiesInput {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<& crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
@@ -204,7 +204,7 @@ impl DescribeScalingActivitiesInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not scaled activities are activities that aren't completed or started for various reasons, such as preventing infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.</p>
@@ -239,8 +239,7 @@ impl DescribeScalingActivitiesInputBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -329,8 +328,7 @@ impl DescribeScalingActivitiesInputBuilder {
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource associated with the scaling activity. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -473,8 +471,7 @@ impl DescribeScalingActivitiesInputBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property. If you specify a scalable dimension, you must also specify a resource ID.</p>
     /// <ul>
@@ -535,8 +532,7 @@ impl DescribeScalingActivitiesInputBuilder {
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
     /// <p>If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code> value in a subsequent call. If this parameter is not used, the operation returns up to 50 results and a <code>NextToken</code> value, if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
     /// <p>If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code> value in a subsequent call. If this parameter is not used, the operation returns up to 50 results and a <code>NextToken</code> value, if applicable.</p>
@@ -550,8 +546,7 @@ impl DescribeScalingActivitiesInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -564,27 +559,30 @@ impl DescribeScalingActivitiesInputBuilder {
     }
     /// <p>Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not scaled activities are activities that aren't completed or started for various reasons, such as preventing infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.</p>
     pub fn set_include_not_scaled_activities(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_not_scaled_activities = input;
-        self
+        self.include_not_scaled_activities = input; self
     }
     /// <p>Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not scaled activities are activities that aren't completed or started for various reasons, such as preventing infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.</p>
     pub fn get_include_not_scaled_activities(&self) -> &::std::option::Option<bool> {
         &self.include_not_scaled_activities
     }
     /// Consumes the builder and constructs a [`DescribeScalingActivitiesInput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput {
-            service_namespace: self.service_namespace,
-            resource_id: self.resource_id,
-            scalable_dimension: self.scalable_dimension,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            include_not_scaled_activities: self.include_not_scaled_activities,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesInput {
+                service_namespace: self.service_namespace
+                ,
+                resource_id: self.resource_id
+                ,
+                scalable_dimension: self.scalable_dimension
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                include_not_scaled_activities: self.include_not_scaled_activities
+                ,
+            }
+        )
     }
 }
+

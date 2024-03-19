@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCertificateAuthorityInput {
+pub struct UpdateCertificateAuthorityInput  {
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
@@ -23,10 +23,10 @@ pub struct UpdateCertificateAuthorityInput {
     /// <p>Status of your private CA.</p>
     pub status: ::std::option::Option<crate::types::CertificateAuthorityStatus>,
 }
-impl UpdateCertificateAuthorityInput {
+impl  UpdateCertificateAuthorityInput  {
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p><note>
@@ -42,11 +42,11 @@ impl UpdateCertificateAuthorityInput {
     /// <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p></li>
     /// </ul>
     /// </note>
-    pub fn revocation_configuration(&self) -> ::std::option::Option<&crate::types::RevocationConfiguration> {
+    pub fn revocation_configuration(&self) -> ::std::option::Option<& crate::types::RevocationConfiguration> {
         self.revocation_configuration.as_ref()
     }
     /// <p>Status of your private CA.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateAuthorityStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CertificateAuthorityStatus> {
         self.status.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl UpdateCertificateAuthorityInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code></p>
@@ -115,8 +114,7 @@ impl UpdateCertificateAuthorityInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_revocation_configuration(mut self, input: ::std::option::Option<crate::types::RevocationConfiguration>) -> Self {
-        self.revocation_configuration = input;
-        self
+        self.revocation_configuration = input; self
     }
     /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p><note>
     /// <p>The following requirements apply to revocation configurations.</p>
@@ -141,24 +139,24 @@ impl UpdateCertificateAuthorityInputBuilder {
     }
     /// <p>Status of your private CA.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateAuthorityStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of your private CA.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateAuthorityStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateCertificateAuthorityInput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput {
-            certificate_authority_arn: self.certificate_authority_arn,
-            revocation_configuration: self.revocation_configuration,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityInput {
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+                revocation_configuration: self.revocation_configuration
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

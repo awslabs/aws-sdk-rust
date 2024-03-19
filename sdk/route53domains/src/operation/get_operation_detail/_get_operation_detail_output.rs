@@ -3,7 +3,7 @@
 /// <p>The GetOperationDetail response includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOperationDetailOutput {
+pub struct GetOperationDetailOutput  {
     /// <p>The identifier for the operation.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the requested operation in the system.</p>
@@ -34,33 +34,33 @@ pub struct GetOperationDetailOutput {
     pub status_flag: ::std::option::Option<crate::types::StatusFlag>,
     _request_id: Option<String>,
 }
-impl GetOperationDetailOutput {
+impl  GetOperationDetailOutput  {
     /// <p>The identifier for the operation.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn operation_id(&self) -> ::std::option::Option<& str> {
         self.operation_id.as_deref()
     }
     /// <p>The current status of the requested operation in the system.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>Detailed information on the status including possible errors.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The name of a domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The type of operation that was requested.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OperationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::OperationType> {
         self.r#type.as_ref()
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn submitted_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submitted_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
     }
     /// <p>The date when the operation was last updated.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>Lists any outstanding operations that require customer action. Valid values are:</p>
@@ -76,15 +76,15 @@ impl GetOperationDetailOutput {
     /// <li>
     /// <p><code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p></li>
     /// </ul>
-    pub fn status_flag(&self) -> ::std::option::Option<&crate::types::StatusFlag> {
+    pub fn status_flag(&self) -> ::std::option::Option<& crate::types::StatusFlag> {
         self.status_flag.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOperationDetailOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetOperationDetailOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationDetailOutput`](crate::operation::get_operation_detail::GetOperationDetailOutput).
     pub fn builder() -> crate::operation::get_operation_detail::builders::GetOperationDetailOutputBuilder {
@@ -114,8 +114,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The identifier for the operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>The identifier for the operation.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The current status of the requested operation in the system.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the requested operation in the system.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
@@ -142,8 +140,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>Detailed information on the status including possible errors.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Detailed information on the status including possible errors.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +153,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The name of a domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of a domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +166,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The type of operation that was requested.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of operation that was requested.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::OperationType> {
@@ -184,8 +179,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The date when the request was submitted.</p>
     pub fn set_submitted_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submitted_date = input;
-        self
+        self.submitted_date = input; self
     }
     /// <p>The date when the request was submitted.</p>
     pub fn get_submitted_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -198,8 +192,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The date when the operation was last updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date when the operation was last updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +229,7 @@ impl GetOperationDetailOutputBuilder {
     /// <p><code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p></li>
     /// </ul>
     pub fn set_status_flag(mut self, input: ::std::option::Option<crate::types::StatusFlag>) -> Self {
-        self.status_flag = input;
-        self
+        self.status_flag = input; self
     }
     /// <p>Lists any outstanding operations that require customer action. Valid values are:</p>
     /// <ul>
@@ -256,26 +248,35 @@ impl GetOperationDetailOutputBuilder {
         &self.status_flag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetOperationDetailOutput`](crate::operation::get_operation_detail::GetOperationDetailOutput).
     pub fn build(self) -> crate::operation::get_operation_detail::GetOperationDetailOutput {
         crate::operation::get_operation_detail::GetOperationDetailOutput {
-            operation_id: self.operation_id,
-            status: self.status,
-            message: self.message,
-            domain_name: self.domain_name,
-            r#type: self.r#type,
-            submitted_date: self.submitted_date,
-            last_updated_date: self.last_updated_date,
-            status_flag: self.status_flag,
+            operation_id: self.operation_id
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
+            domain_name: self.domain_name
+            ,
+            r#type: self.r#type
+            ,
+            submitted_date: self.submitted_date
+            ,
+            last_updated_date: self.last_updated_date
+            ,
+            status_flag: self.status_flag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

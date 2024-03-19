@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListScheduledQueriesOutput {
+pub struct ListScheduledQueriesOutput  {
     /// <p>A list of scheduled queries.</p>
-    pub scheduled_queries: ::std::vec::Vec<crate::types::ScheduledQuery>,
+    pub scheduled_queries: ::std::vec::Vec::<crate::types::ScheduledQuery>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListScheduledQueriesOutput {
+impl  ListScheduledQueriesOutput  {
     /// <p>A list of scheduled queries.</p>
-    pub fn scheduled_queries(&self) -> &[crate::types::ScheduledQuery] {
-        use std::ops::Deref;
-        self.scheduled_queries.deref()
+    pub fn scheduled_queries(&self) -> & [crate::types::ScheduledQuery] {
+        use std::ops::Deref; self.scheduled_queries.deref()
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListScheduledQueriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListScheduledQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduledQueriesOutput`](crate::operation::list_scheduled_queries::ListScheduledQueriesOutput).
     pub fn builder() -> crate::operation::list_scheduled_queries::builders::ListScheduledQueriesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListScheduledQueriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduledQueriesOutputBuilder {
-    pub(crate) scheduled_queries: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>>,
+    pub(crate) scheduled_queries: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledQuery>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListScheduledQueriesOutputBuilder {
     /// <p>A list of scheduled queries.</p>
     pub fn scheduled_queries(mut self, input: crate::types::ScheduledQuery) -> Self {
         let mut v = self.scheduled_queries.unwrap_or_default();
-        v.push(input);
-        self.scheduled_queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scheduled_queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of scheduled queries.</p>
-    pub fn set_scheduled_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>>) -> Self {
-        self.scheduled_queries = input;
-        self
+    pub fn set_scheduled_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledQuery>>) -> Self {
+        self.scheduled_queries = input; self
     }
     /// <p>A list of scheduled queries.</p>
-    pub fn get_scheduled_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuery>> {
+    pub fn get_scheduled_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduledQuery>> {
         &self.scheduled_queries
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
@@ -68,38 +66,37 @@ impl ListScheduledQueriesOutputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListScheduledQueriesOutput`](crate::operation::list_scheduled_queries::ListScheduledQueriesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`scheduled_queries`](crate::operation::list_scheduled_queries::builders::ListScheduledQueriesOutputBuilder::scheduled_queries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_scheduled_queries::ListScheduledQueriesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_scheduled_queries::ListScheduledQueriesOutput {
-            scheduled_queries: self.scheduled_queries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scheduled_queries",
-                    "scheduled_queries was not specified but it is required when building ListScheduledQueriesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_scheduled_queries::ListScheduledQueriesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_scheduled_queries::ListScheduledQueriesOutput {
+                scheduled_queries: self.scheduled_queries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scheduled_queries", "scheduled_queries was not specified but it is required when building ListScheduledQueriesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

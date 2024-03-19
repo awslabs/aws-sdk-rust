@@ -3,15 +3,14 @@
 /// <p>The custom narrative options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomNarrativeOptions {
+pub struct CustomNarrativeOptions  {
     /// <p>The string input of custom narrative.</p>
     pub narrative: ::std::string::String,
 }
-impl CustomNarrativeOptions {
+impl  CustomNarrativeOptions  {
     /// <p>The string input of custom narrative.</p>
-    pub fn narrative(&self) -> &str {
-        use std::ops::Deref;
-        self.narrative.deref()
+    pub fn narrative(&self) -> & str {
+        use std::ops::Deref; self.narrative.deref()
     }
 }
 impl CustomNarrativeOptions {
@@ -36,8 +35,7 @@ impl CustomNarrativeOptionsBuilder {
     }
     /// <p>The string input of custom narrative.</p>
     pub fn set_narrative(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.narrative = input;
-        self
+        self.narrative = input; self
     }
     /// <p>The string input of custom narrative.</p>
     pub fn get_narrative(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl CustomNarrativeOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`narrative`](crate::types::builders::CustomNarrativeOptionsBuilder::narrative)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomNarrativeOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomNarrativeOptions {
-            narrative: self.narrative.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "narrative",
-                    "narrative was not specified but it is required when building CustomNarrativeOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomNarrativeOptions {
+                narrative: self.narrative
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("narrative", "narrative was not specified but it is required when building CustomNarrativeOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

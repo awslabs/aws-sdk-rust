@@ -3,15 +3,14 @@
 /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaConnectorProvisioningConfig {
+pub struct LambdaConnectorProvisioningConfig  {
     /// <p>Lambda ARN of the connector being registered.</p>
     pub lambda_arn: ::std::string::String,
 }
-impl LambdaConnectorProvisioningConfig {
+impl  LambdaConnectorProvisioningConfig  {
     /// <p>Lambda ARN of the connector being registered.</p>
-    pub fn lambda_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.lambda_arn.deref()
+    pub fn lambda_arn(&self) -> & str {
+        use std::ops::Deref; self.lambda_arn.deref()
     }
 }
 impl LambdaConnectorProvisioningConfig {
@@ -36,8 +35,7 @@ impl LambdaConnectorProvisioningConfigBuilder {
     }
     /// <p>Lambda ARN of the connector being registered.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
     }
     /// <p>Lambda ARN of the connector being registered.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl LambdaConnectorProvisioningConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_arn`](crate::types::builders::LambdaConnectorProvisioningConfigBuilder::lambda_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaConnectorProvisioningConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaConnectorProvisioningConfig {
-            lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_arn",
-                    "lambda_arn was not specified but it is required when building LambdaConnectorProvisioningConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaConnectorProvisioningConfig {
+                lambda_arn: self.lambda_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_arn", "lambda_arn was not specified but it is required when building LambdaConnectorProvisioningConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

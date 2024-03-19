@@ -3,15 +3,14 @@
 /// <p>Details on the criteria used to define the filter for a vulnerability search.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchVulnerabilitiesFilterCriteria {
+pub struct SearchVulnerabilitiesFilterCriteria  {
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub vulnerability_ids: ::std::vec::Vec<::std::string::String>,
+    pub vulnerability_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl SearchVulnerabilitiesFilterCriteria {
+impl  SearchVulnerabilitiesFilterCriteria  {
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn vulnerability_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.vulnerability_ids.deref()
+    pub fn vulnerability_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.vulnerability_ids.deref()
     }
 }
 impl SearchVulnerabilitiesFilterCriteria {
@@ -25,7 +24,7 @@ impl SearchVulnerabilitiesFilterCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesFilterCriteriaBuilder {
-    pub(crate) vulnerability_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vulnerability_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SearchVulnerabilitiesFilterCriteriaBuilder {
     /// Appends an item to `vulnerability_ids`.
@@ -35,30 +34,31 @@ impl SearchVulnerabilitiesFilterCriteriaBuilder {
     /// <p>The IDs for specific vulnerabilities.</p>
     pub fn vulnerability_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vulnerability_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vulnerability_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vulnerability_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn set_vulnerability_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vulnerability_ids = input;
-        self
+    pub fn set_vulnerability_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vulnerability_ids = input; self
     }
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn get_vulnerability_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vulnerability_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vulnerability_ids
     }
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesFilterCriteria`](crate::types::SearchVulnerabilitiesFilterCriteria).
     /// This method will fail if any of the following fields are not set:
     /// - [`vulnerability_ids`](crate::types::builders::SearchVulnerabilitiesFilterCriteriaBuilder::vulnerability_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchVulnerabilitiesFilterCriteria, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchVulnerabilitiesFilterCriteria {
-            vulnerability_ids: self.vulnerability_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vulnerability_ids",
-                    "vulnerability_ids was not specified but it is required when building SearchVulnerabilitiesFilterCriteria",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchVulnerabilitiesFilterCriteria {
+                vulnerability_ids: self.vulnerability_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vulnerability_ids", "vulnerability_ids was not specified but it is required when building SearchVulnerabilitiesFilterCriteria")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchImageSets`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`datastore_id(impl Into<String>)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The identifier of the data store where the image sets reside.</p><br>
     ///   - [`search_criteria(SearchCriteria)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::search_criteria) / [`set_search_criteria(Option<SearchCriteria>)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::set_search_criteria):<br>required: **false**<br><p>The search criteria that filters by applying a maximum of 1 item to <code>SearchByAttribute</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that can be returned in a search.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p><br>
-    /// - On success, responds with [`SearchImageSetsOutput`](crate::operation::search_image_sets::SearchImageSetsOutput) with field(s):
+                            /// - On success, responds with [`SearchImageSetsOutput`](crate::operation::search_image_sets::SearchImageSetsOutput) with field(s):
     ///   - [`image_sets_metadata_summaries(Vec::<ImageSetsMetadataSummary>)`](crate::operation::search_image_sets::SearchImageSetsOutput::image_sets_metadata_summaries): <p>The model containing the image set results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_image_sets::SearchImageSetsOutput::next_token): <p>The token for pagination results.</p>
-    /// - On failure, responds with [`SdkError<SearchImageSetsError>`](crate::operation::search_image_sets::SearchImageSetsError)
+                            /// - On failure, responds with [`SdkError<SearchImageSetsError>`](crate::operation::search_image_sets::SearchImageSetsError)
     pub fn search_image_sets(&self) -> crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder {
-        crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

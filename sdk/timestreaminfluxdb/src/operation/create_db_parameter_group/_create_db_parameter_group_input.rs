@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbParameterGroupInput {
+pub struct CreateDbParameterGroupInput  {
     /// <p>The name of the DB parameter group. The name must be unique per customer and per region.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the DB parameter group.</p>
@@ -10,23 +10,23 @@ pub struct CreateDbParameterGroupInput {
     /// <p>A list of the parameters that comprise the DB parameter group.</p>
     pub parameters: ::std::option::Option<crate::types::Parameters>,
     /// <p>A list of key-value pairs to associate with the DB parameter group.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateDbParameterGroupInput {
+impl  CreateDbParameterGroupInput  {
     /// <p>The name of the DB parameter group. The name must be unique per customer and per region.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the DB parameter group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of the parameters that comprise the DB parameter group.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
+    pub fn parameters(&self) -> ::std::option::Option<& crate::types::Parameters> {
         self.parameters.as_ref()
     }
     /// <p>A list of key-value pairs to associate with the DB parameter group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -44,7 +44,7 @@ pub struct CreateDbParameterGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<crate::types::Parameters>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group. The name must be unique per customer and per region.</p>
@@ -55,8 +55,7 @@ impl CreateDbParameterGroupInputBuilder {
     }
     /// <p>The name of the DB parameter group. The name must be unique per customer and per region.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the DB parameter group. The name must be unique per customer and per region.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CreateDbParameterGroupInputBuilder {
     }
     /// <p>A description of the DB parameter group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the DB parameter group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CreateDbParameterGroupInputBuilder {
     }
     /// <p>A list of the parameters that comprise the DB parameter group.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>A list of the parameters that comprise the DB parameter group.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
@@ -97,31 +94,32 @@ impl CreateDbParameterGroupInputBuilder {
     /// <p>A list of key-value pairs to associate with the DB parameter group.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs to associate with the DB parameter group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to associate with the DB parameter group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbParameterGroupInput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_parameter_group::CreateDbParameterGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_db_parameter_group::CreateDbParameterGroupInput {
-            name: self.name,
-            description: self.description,
-            parameters: self.parameters,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_db_parameter_group::CreateDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_db_parameter_group::CreateDbParameterGroupInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

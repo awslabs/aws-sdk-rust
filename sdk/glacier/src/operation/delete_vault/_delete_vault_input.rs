@@ -3,27 +3,27 @@
 /// <p>Provides options for deleting a vault from Amazon S3 Glacier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVaultInput {
+pub struct DeleteVaultInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
     pub vault_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVaultInput {
+impl  DeleteVaultInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<& str> {
         self.vault_name.as_deref()
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for DeleteVaultInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl DeleteVaultInput {
     /// Creates a new builder-style object to manufacture [`DeleteVaultInput`](crate::operation::delete_vault::DeleteVaultInput).
     pub fn builder() -> crate::operation::delete_vault::builders::DeleteVaultInputBuilder {
@@ -47,8 +47,7 @@ impl DeleteVaultInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteVaultInputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vault_name = input;
-        self
+        self.vault_name = input; self
     }
     /// <p>The name of the vault.</p>
     pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,9 +69,14 @@ impl DeleteVaultInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteVaultInput`](crate::operation::delete_vault::DeleteVaultInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_vault::DeleteVaultInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_vault::DeleteVaultInput {
-            account_id: self.account_id,
-            vault_name: self.vault_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_vault::DeleteVaultInput {
+                account_id: self.account_id
+                ,
+                vault_name: self.vault_name
+                ,
+            }
+        )
     }
 }
+

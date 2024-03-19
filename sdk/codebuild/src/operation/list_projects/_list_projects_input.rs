@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProjectsInput {
+pub struct ListProjectsInput  {
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -26,7 +26,7 @@ pub struct ListProjectsInput {
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListProjectsInput {
+impl  ListProjectsInput  {
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ impl ListProjectsInput {
     /// <p><code>NAME</code>: List based on each build project's name.</p></li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ProjectSortByType> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ProjectSortByType> {
         self.sort_by.as_ref()
     }
     /// <p>The order in which to list build projects. Valid values include:</p>
@@ -48,11 +48,11 @@ impl ListProjectsInput {
     /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl ListProjectsInputBuilder {
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ProjectSortByType>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The criterion to be used to list build project names. Valid values include:</p>
     /// <ul>
@@ -134,8 +133,7 @@ impl ListProjectsInputBuilder {
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The order in which to list build projects. Valid values include:</p>
     /// <ul>
@@ -155,21 +153,24 @@ impl ListProjectsInputBuilder {
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsInput {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_projects::ListProjectsInput {
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

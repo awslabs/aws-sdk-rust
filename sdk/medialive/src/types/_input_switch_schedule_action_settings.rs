@@ -3,28 +3,29 @@
 /// Settings for the "switch input" action: to switch from ingesting one input to ingesting another input.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputSwitchScheduleActionSettings {
+pub struct InputSwitchScheduleActionSettings  {
     /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
     pub input_attachment_name_reference: ::std::option::Option<::std::string::String>,
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
     pub input_clipping_settings: ::std::option::Option<crate::types::InputClippingSettings>,
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
-    pub url_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub url_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl InputSwitchScheduleActionSettings {
+impl  InputSwitchScheduleActionSettings  {
     /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
-    pub fn input_attachment_name_reference(&self) -> ::std::option::Option<&str> {
+    pub fn input_attachment_name_reference(&self) -> ::std::option::Option<& str> {
         self.input_attachment_name_reference.as_deref()
     }
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
-    pub fn input_clipping_settings(&self) -> ::std::option::Option<&crate::types::InputClippingSettings> {
+    pub fn input_clipping_settings(&self) -> ::std::option::Option<& crate::types::InputClippingSettings> {
         self.input_clipping_settings.as_ref()
     }
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.url_path.is_none()`.
-    pub fn url_path(&self) -> &[::std::string::String] {
-        self.url_path.as_deref().unwrap_or_default()
+    pub fn url_path(&self) -> & [::std::string::String] {
+        self.url_path.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InputSwitchScheduleActionSettings {
@@ -40,7 +41,7 @@ impl InputSwitchScheduleActionSettings {
 pub struct InputSwitchScheduleActionSettingsBuilder {
     pub(crate) input_attachment_name_reference: ::std::option::Option<::std::string::String>,
     pub(crate) input_clipping_settings: ::std::option::Option<crate::types::InputClippingSettings>,
-    pub(crate) url_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) url_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl InputSwitchScheduleActionSettingsBuilder {
     /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
@@ -51,8 +52,7 @@ impl InputSwitchScheduleActionSettingsBuilder {
     }
     /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
     pub fn set_input_attachment_name_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_attachment_name_reference = input;
-        self
+        self.input_attachment_name_reference = input; self
     }
     /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
     pub fn get_input_attachment_name_reference(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl InputSwitchScheduleActionSettingsBuilder {
     }
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
     pub fn set_input_clipping_settings(mut self, input: ::std::option::Option<crate::types::InputClippingSettings>) -> Self {
-        self.input_clipping_settings = input;
-        self
+        self.input_clipping_settings = input; self
     }
     /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
     pub fn get_input_clipping_settings(&self) -> &::std::option::Option<crate::types::InputClippingSettings> {
@@ -79,25 +78,28 @@ impl InputSwitchScheduleActionSettingsBuilder {
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
     pub fn url_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.url_path.unwrap_or_default();
-        v.push(input.into());
-        self.url_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.url_path = ::std::option::Option::Some(v);
+                        self
     }
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
-    pub fn set_url_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.url_path = input;
-        self
+    pub fn set_url_path(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.url_path = input; self
     }
     /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
-    pub fn get_url_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_url_path(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.url_path
     }
     /// Consumes the builder and constructs a [`InputSwitchScheduleActionSettings`](crate::types::InputSwitchScheduleActionSettings).
     pub fn build(self) -> crate::types::InputSwitchScheduleActionSettings {
         crate::types::InputSwitchScheduleActionSettings {
-            input_attachment_name_reference: self.input_attachment_name_reference,
-            input_clipping_settings: self.input_clipping_settings,
-            url_path: self.url_path,
+            input_attachment_name_reference: self.input_attachment_name_reference
+            ,
+            input_clipping_settings: self.input_clipping_settings
+            ,
+            url_path: self.url_path
+            ,
         }
     }
 }
+

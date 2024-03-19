@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>CreateDeployment</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDeploymentInput {
+pub struct CreateDeploymentInput  {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment group.</p>
@@ -42,26 +42,26 @@ pub struct CreateDeploymentInput {
     /// </note>
     pub override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
-impl CreateDeploymentInput {
+impl  CreateDeploymentInput  {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the deployment group.</p>
-    pub fn deployment_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_group_name(&self) -> ::std::option::Option<& str> {
         self.deployment_group_name.as_deref()
     }
     /// <p>The type and location of the revision to deploy.</p>
-    pub fn revision(&self) -> ::std::option::Option<&crate::types::RevisionLocation> {
+    pub fn revision(&self) -> ::std::option::Option<& crate::types::RevisionLocation> {
         self.revision.as_ref()
     }
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
-    pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_config_name(&self) -> ::std::option::Option<& str> {
         self.deployment_config_name.as_deref()
     }
     /// <p>A comment about the deployment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.</p>
@@ -72,11 +72,11 @@ impl CreateDeploymentInput {
         self.ignore_application_stop_failures
     }
     /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
-    pub fn target_instances(&self) -> ::std::option::Option<&crate::types::TargetInstances> {
+    pub fn target_instances(&self) -> ::std::option::Option<& crate::types::TargetInstances> {
         self.target_instances.as_ref()
     }
     /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
-    pub fn auto_rollback_configuration(&self) -> ::std::option::Option<&crate::types::AutoRollbackConfiguration> {
+    pub fn auto_rollback_configuration(&self) -> ::std::option::Option<& crate::types::AutoRollbackConfiguration> {
         self.auto_rollback_configuration.as_ref()
     }
     /// <p>Indicates whether to deploy to all instances or only to instances that are not running the latest application revision.</p>
@@ -93,13 +93,13 @@ impl CreateDeploymentInput {
     /// <li>
     /// <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
     /// </ul>
-    pub fn file_exists_behavior(&self) -> ::std::option::Option<&crate::types::FileExistsBehavior> {
+    pub fn file_exists_behavior(&self) -> ::std::option::Option<& crate::types::FileExistsBehavior> {
         self.file_exists_behavior.as_ref()
     }
     /// <p>Allows you to specify information about alarms associated with a deployment. The alarm configuration that you specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm configuration if you have set up alarms at the deployment group level that are causing deployment failures. In this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated by the previous, failed, deployment.</p><note>
     /// <p>If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM permission when calling <code>CreateDeployment</code>.</p>
     /// </note>
-    pub fn override_alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
+    pub fn override_alarm_configuration(&self) -> ::std::option::Option<& crate::types::AlarmConfiguration> {
         self.override_alarm_configuration.as_ref()
     }
 }
@@ -135,8 +135,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +148,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The name of the deployment group.</p>
     pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_group_name = input;
-        self
+        self.deployment_group_name = input; self
     }
     /// <p>The name of the deployment group.</p>
     pub fn get_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +161,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The type and location of the revision to deploy.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<crate::types::RevisionLocation>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The type and location of the revision to deploy.</p>
     pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
@@ -179,8 +176,7 @@ impl CreateDeploymentInputBuilder {
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_config_name = input;
-        self
+        self.deployment_config_name = input; self
     }
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
@@ -194,8 +190,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>A comment about the deployment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A comment about the deployment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +209,7 @@ impl CreateDeploymentInputBuilder {
     /// <p>During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail.</p>
     /// <p>If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored.</p>
     pub fn set_ignore_application_stop_failures(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_application_stop_failures = input;
-        self
+        self.ignore_application_stop_failures = input; self
     }
     /// <p>If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>.</p>
     /// <p>If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.</p>
@@ -231,8 +225,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
     pub fn set_target_instances(mut self, input: ::std::option::Option<crate::types::TargetInstances>) -> Self {
-        self.target_instances = input;
-        self
+        self.target_instances = input; self
     }
     /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
     pub fn get_target_instances(&self) -> &::std::option::Option<crate::types::TargetInstances> {
@@ -245,8 +238,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
     pub fn set_auto_rollback_configuration(mut self, input: ::std::option::Option<crate::types::AutoRollbackConfiguration>) -> Self {
-        self.auto_rollback_configuration = input;
-        self
+        self.auto_rollback_configuration = input; self
     }
     /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
     pub fn get_auto_rollback_configuration(&self) -> &::std::option::Option<crate::types::AutoRollbackConfiguration> {
@@ -259,8 +251,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>Indicates whether to deploy to all instances or only to instances that are not running the latest application revision.</p>
     pub fn set_update_outdated_instances_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.update_outdated_instances_only = input;
-        self
+        self.update_outdated_instances_only = input; self
     }
     /// <p>Indicates whether to deploy to all instances or only to instances that are not running the latest application revision.</p>
     pub fn get_update_outdated_instances_only(&self) -> &::std::option::Option<bool> {
@@ -291,8 +282,7 @@ impl CreateDeploymentInputBuilder {
     /// <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
     /// </ul>
     pub fn set_file_exists_behavior(mut self, input: ::std::option::Option<crate::types::FileExistsBehavior>) -> Self {
-        self.file_exists_behavior = input;
-        self
+        self.file_exists_behavior = input; self
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
@@ -318,8 +308,7 @@ impl CreateDeploymentInputBuilder {
     /// <p>If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM permission when calling <code>CreateDeployment</code>.</p>
     /// </note>
     pub fn set_override_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
-        self.override_alarm_configuration = input;
-        self
+        self.override_alarm_configuration = input; self
     }
     /// <p>Allows you to specify information about alarms associated with a deployment. The alarm configuration that you specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm configuration if you have set up alarms at the deployment group level that are causing deployment failures. In this case, you would call <code>CreateDeployment</code> to create a new deployment that uses a previous application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated by the previous, failed, deployment.</p><note>
     /// <p>If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM permission when calling <code>CreateDeployment</code>.</p>
@@ -328,21 +317,33 @@ impl CreateDeploymentInputBuilder {
         &self.override_alarm_configuration
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
-            application_name: self.application_name,
-            deployment_group_name: self.deployment_group_name,
-            revision: self.revision,
-            deployment_config_name: self.deployment_config_name,
-            description: self.description,
-            ignore_application_stop_failures: self.ignore_application_stop_failures,
-            target_instances: self.target_instances,
-            auto_rollback_configuration: self.auto_rollback_configuration,
-            update_outdated_instances_only: self.update_outdated_instances_only,
-            file_exists_behavior: self.file_exists_behavior,
-            override_alarm_configuration: self.override_alarm_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_deployment::CreateDeploymentInput {
+                application_name: self.application_name
+                ,
+                deployment_group_name: self.deployment_group_name
+                ,
+                revision: self.revision
+                ,
+                deployment_config_name: self.deployment_config_name
+                ,
+                description: self.description
+                ,
+                ignore_application_stop_failures: self.ignore_application_stop_failures
+                ,
+                target_instances: self.target_instances
+                ,
+                auto_rollback_configuration: self.auto_rollback_configuration
+                ,
+                update_outdated_instances_only: self.update_outdated_instances_only
+                ,
+                file_exists_behavior: self.file_exists_behavior
+                ,
+                override_alarm_configuration: self.override_alarm_configuration
+                ,
+            }
+        )
     }
 }
+

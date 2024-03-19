@@ -3,7 +3,7 @@
 /// <p>A response that contains the results of a finding aggregation by image layer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageLayerAggregationResponse {
+pub struct ImageLayerAggregationResponse  {
     /// <p>The repository the layer resides in.</p>
     pub repository: ::std::string::String,
     /// <p>The resource ID of the container image layer.</p>
@@ -15,29 +15,25 @@ pub struct ImageLayerAggregationResponse {
     /// <p>An object that represents the count of matched findings per severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
-impl ImageLayerAggregationResponse {
+impl  ImageLayerAggregationResponse  {
     /// <p>The repository the layer resides in.</p>
-    pub fn repository(&self) -> &str {
-        use std::ops::Deref;
-        self.repository.deref()
+    pub fn repository(&self) -> & str {
+        use std::ops::Deref; self.repository.deref()
     }
     /// <p>The resource ID of the container image layer.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The layer hash.</p>
-    pub fn layer_hash(&self) -> &str {
-        use std::ops::Deref;
-        self.layer_hash.deref()
+    pub fn layer_hash(&self) -> & str {
+        use std::ops::Deref; self.layer_hash.deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>An object that represents the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -67,8 +63,7 @@ impl ImageLayerAggregationResponseBuilder {
     }
     /// <p>The repository the layer resides in.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The repository the layer resides in.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ImageLayerAggregationResponseBuilder {
     }
     /// <p>The resource ID of the container image layer.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID of the container image layer.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl ImageLayerAggregationResponseBuilder {
     }
     /// <p>The layer hash.</p>
     pub fn set_layer_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_hash = input;
-        self
+        self.layer_hash = input; self
     }
     /// <p>The layer hash.</p>
     pub fn get_layer_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl ImageLayerAggregationResponseBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +118,7 @@ impl ImageLayerAggregationResponseBuilder {
     }
     /// <p>An object that represents the count of matched findings per severity.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>An object that represents the count of matched findings per severity.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -140,32 +131,32 @@ impl ImageLayerAggregationResponseBuilder {
     /// - [`layer_hash`](crate::types::builders::ImageLayerAggregationResponseBuilder::layer_hash)
     /// - [`account_id`](crate::types::builders::ImageLayerAggregationResponseBuilder::account_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ImageLayerAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImageLayerAggregationResponse {
-            repository: self.repository.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository",
-                    "repository was not specified but it is required when building ImageLayerAggregationResponse",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building ImageLayerAggregationResponse",
-                )
-            })?,
-            layer_hash: self.layer_hash.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layer_hash",
-                    "layer_hash was not specified but it is required when building ImageLayerAggregationResponse",
-                )
-            })?,
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building ImageLayerAggregationResponse",
-                )
-            })?,
-            severity_counts: self.severity_counts,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImageLayerAggregationResponse {
+                repository: self.repository
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository", "repository was not specified but it is required when building ImageLayerAggregationResponse")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building ImageLayerAggregationResponse")
+                    )?
+                ,
+                layer_hash: self.layer_hash
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layer_hash", "layer_hash was not specified but it is required when building ImageLayerAggregationResponse")
+                    )?
+                ,
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building ImageLayerAggregationResponse")
+                    )?
+                ,
+                severity_counts: self.severity_counts
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPipelineExecutionsOutput {
+pub struct ListPipelineExecutionsOutput  {
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty.</p>
-    pub pipeline_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
+    pub pipeline_execution_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineExecutionSummary>>,
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPipelineExecutionsOutput {
+impl  ListPipelineExecutionsOutput  {
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_execution_summaries.is_none()`.
-    pub fn pipeline_execution_summaries(&self) -> &[crate::types::PipelineExecutionSummary] {
-        self.pipeline_execution_summaries.as_deref().unwrap_or_default()
+    pub fn pipeline_execution_summaries(&self) -> & [crate::types::PipelineExecutionSummary] {
+        self.pipeline_execution_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPipelineExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPipelineExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionsOutput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput).
     pub fn builder() -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListPipelineExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsOutputBuilder {
-    pub(crate) pipeline_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
+    pub(crate) pipeline_execution_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineExecutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListPipelineExecutionsOutputBuilder {
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty.</p>
     pub fn pipeline_execution_summaries(mut self, input: crate::types::PipelineExecutionSummary) -> Self {
         let mut v = self.pipeline_execution_summaries.unwrap_or_default();
-        v.push(input);
-        self.pipeline_execution_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pipeline_execution_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty.</p>
-    pub fn set_pipeline_execution_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>) -> Self {
-        self.pipeline_execution_summaries = input;
-        self
+    pub fn set_pipeline_execution_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineExecutionSummary>>) -> Self {
+        self.pipeline_execution_summaries = input; self
     }
     /// <p>Contains a sorted list of pipeline execution summary objects matching the specified filters. Each run summary includes the Amazon Resource Name (ARN) of the pipeline execution, the run date, and the status. This list can be empty.</p>
-    pub fn get_pipeline_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>> {
+    pub fn get_pipeline_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelineExecutionSummary>> {
         &self.pipeline_execution_summaries
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
@@ -69,28 +69,30 @@ impl ListPipelineExecutionsOutputBuilder {
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPipelineExecutionsOutput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput).
     pub fn build(self) -> crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput {
         crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput {
-            pipeline_execution_summaries: self.pipeline_execution_summaries,
-            next_token: self.next_token,
+            pipeline_execution_summaries: self.pipeline_execution_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

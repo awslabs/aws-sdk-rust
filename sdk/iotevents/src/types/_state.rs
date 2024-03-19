@@ -3,7 +3,7 @@
 /// <p>Information that defines a state of a detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct State {
+pub struct State  {
     /// <p>The name of the state.</p>
     pub state_name: ::std::string::String,
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
@@ -13,22 +13,21 @@ pub struct State {
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
     pub on_exit: ::std::option::Option<crate::types::OnExitLifecycle>,
 }
-impl State {
+impl  State  {
     /// <p>The name of the state.</p>
-    pub fn state_name(&self) -> &str {
-        use std::ops::Deref;
-        self.state_name.deref()
+    pub fn state_name(&self) -> & str {
+        use std::ops::Deref; self.state_name.deref()
     }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
-    pub fn on_input(&self) -> ::std::option::Option<&crate::types::OnInputLifecycle> {
+    pub fn on_input(&self) -> ::std::option::Option<& crate::types::OnInputLifecycle> {
         self.on_input.as_ref()
     }
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
-    pub fn on_enter(&self) -> ::std::option::Option<&crate::types::OnEnterLifecycle> {
+    pub fn on_enter(&self) -> ::std::option::Option<& crate::types::OnEnterLifecycle> {
         self.on_enter.as_ref()
     }
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn on_exit(&self) -> ::std::option::Option<&crate::types::OnExitLifecycle> {
+    pub fn on_exit(&self) -> ::std::option::Option<& crate::types::OnExitLifecycle> {
         self.on_exit.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl StateBuilder {
     }
     /// <p>The name of the state.</p>
     pub fn set_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_name = input;
-        self
+        self.state_name = input; self
     }
     /// <p>The name of the state.</p>
     pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl StateBuilder {
     }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
     pub fn set_on_input(mut self, input: ::std::option::Option<crate::types::OnInputLifecycle>) -> Self {
-        self.on_input = input;
-        self
+        self.on_input = input; self
     }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
     pub fn get_on_input(&self) -> &::std::option::Option<crate::types::OnInputLifecycle> {
@@ -85,8 +82,7 @@ impl StateBuilder {
     }
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
     pub fn set_on_enter(mut self, input: ::std::option::Option<crate::types::OnEnterLifecycle>) -> Self {
-        self.on_enter = input;
-        self
+        self.on_enter = input; self
     }
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
     pub fn get_on_enter(&self) -> &::std::option::Option<crate::types::OnEnterLifecycle> {
@@ -99,8 +95,7 @@ impl StateBuilder {
     }
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
     pub fn set_on_exit(mut self, input: ::std::option::Option<crate::types::OnExitLifecycle>) -> Self {
-        self.on_exit = input;
-        self
+        self.on_exit = input; self
     }
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
     pub fn get_on_exit(&self) -> &::std::option::Option<crate::types::OnExitLifecycle> {
@@ -110,16 +105,21 @@ impl StateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state_name`](crate::types::builders::StateBuilder::state_name)
     pub fn build(self) -> ::std::result::Result<crate::types::State, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::State {
-            state_name: self.state_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_name",
-                    "state_name was not specified but it is required when building State",
-                )
-            })?,
-            on_input: self.on_input,
-            on_enter: self.on_enter,
-            on_exit: self.on_exit,
-        })
+        ::std::result::Result::Ok(
+            crate::types::State {
+                state_name: self.state_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_name", "state_name was not specified but it is required when building State")
+                    )?
+                ,
+                on_input: self.on_input
+                ,
+                on_enter: self.on_enter
+                ,
+                on_exit: self.on_exit
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateAddressInput {
+pub struct DisassociateAddressInput  {
     /// <p>The association ID. This parameter is required.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated.</p>
@@ -10,13 +10,13 @@ pub struct DisassociateAddressInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DisassociateAddressInput {
+impl  DisassociateAddressInput  {
     /// <p>The association ID. This parameter is required.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>Deprecated.</p>
-    pub fn public_ip(&self) -> ::std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<& str> {
         self.public_ip.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -47,8 +47,7 @@ impl DisassociateAddressInputBuilder {
     }
     /// <p>The association ID. This parameter is required.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The association ID. This parameter is required.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DisassociateAddressInputBuilder {
     }
     /// <p>Deprecated.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip = input;
-        self
+        self.public_ip = input; self
     }
     /// <p>Deprecated.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl DisassociateAddressInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisassociateAddressInput`](crate::operation::disassociate_address::DisassociateAddressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_address::DisassociateAddressInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_address::DisassociateAddressInput {
-            association_id: self.association_id,
-            public_ip: self.public_ip,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_address::DisassociateAddressInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_address::DisassociateAddressInput {
+                association_id: self.association_id
+                ,
+                public_ip: self.public_ip
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

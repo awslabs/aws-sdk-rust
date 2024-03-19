@@ -88,7 +88,9 @@ impl IdempotencyTokenProvider {
     }
 
     pub fn fixed(token: &'static str) -> Self {
-        Self { inner: Inner::Static(token) }
+        Self {
+            inner: Inner::Static(token),
+        }
     }
 }
 
@@ -100,3 +102,4 @@ impl Clone for IdempotencyTokenProvider {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAvailabilityConfigurationInput {
+pub struct CreateAvailabilityConfigurationInput  {
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
@@ -14,25 +14,25 @@ pub struct CreateAvailabilityConfigurationInput {
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     pub lambda_provider: ::std::option::Option<crate::types::LambdaAvailabilityProvider>,
 }
-impl CreateAvailabilityConfigurationInput {
+impl  CreateAvailabilityConfigurationInput  {
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The domain to which the provider applies.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
-    pub fn ews_provider(&self) -> ::std::option::Option<&crate::types::EwsAvailabilityProvider> {
+    pub fn ews_provider(&self) -> ::std::option::Option<& crate::types::EwsAvailabilityProvider> {
         self.ews_provider.as_ref()
     }
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
-    pub fn lambda_provider(&self) -> ::std::option::Option<&crate::types::LambdaAvailabilityProvider> {
+    pub fn lambda_provider(&self) -> ::std::option::Option<& crate::types::LambdaAvailabilityProvider> {
         self.lambda_provider.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl CreateAvailabilityConfigurationInputBuilder {
     }
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>An idempotent token that ensures that an API request is executed only once.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CreateAvailabilityConfigurationInputBuilder {
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl CreateAvailabilityConfigurationInputBuilder {
     }
     /// <p>The domain to which the provider applies.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain to which the provider applies.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl CreateAvailabilityConfigurationInputBuilder {
     }
     /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     pub fn set_ews_provider(mut self, input: ::std::option::Option<crate::types::EwsAvailabilityProvider>) -> Self {
-        self.ews_provider = input;
-        self
+        self.ews_provider = input; self
     }
     /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     pub fn get_ews_provider(&self) -> &::std::option::Option<crate::types::EwsAvailabilityProvider> {
@@ -119,28 +115,28 @@ impl CreateAvailabilityConfigurationInputBuilder {
     }
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     pub fn set_lambda_provider(mut self, input: ::std::option::Option<crate::types::LambdaAvailabilityProvider>) -> Self {
-        self.lambda_provider = input;
-        self
+        self.lambda_provider = input; self
     }
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     pub fn get_lambda_provider(&self) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
         &self.lambda_provider
     }
     /// Consumes the builder and constructs a [`CreateAvailabilityConfigurationInput`](crate::operation::create_availability_configuration::CreateAvailabilityConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_availability_configuration::CreateAvailabilityConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_availability_configuration::CreateAvailabilityConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_availability_configuration::CreateAvailabilityConfigurationInput {
-                client_token: self.client_token,
-                organization_id: self.organization_id,
-                domain_name: self.domain_name,
-                ews_provider: self.ews_provider,
-                lambda_provider: self.lambda_provider,
-            },
+                client_token: self.client_token
+                ,
+                organization_id: self.organization_id
+                ,
+                domain_name: self.domain_name
+                ,
+                ews_provider: self.ews_provider
+                ,
+                lambda_provider: self.lambda_provider
+                ,
+            }
         )
     }
 }
+

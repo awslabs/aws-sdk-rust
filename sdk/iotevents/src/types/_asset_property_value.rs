@@ -12,7 +12,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetPropertyValue {
+pub struct AssetPropertyValue  {
     /// <p>The value to send to an asset property.</p>
     pub value: ::std::option::Option<crate::types::AssetPropertyVariant>,
     /// <p>The timestamp associated with the asset property value. The default is the current event time.</p>
@@ -20,17 +20,17 @@ pub struct AssetPropertyValue {
     /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
     pub quality: ::std::option::Option<::std::string::String>,
 }
-impl AssetPropertyValue {
+impl  AssetPropertyValue  {
     /// <p>The value to send to an asset property.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::AssetPropertyVariant> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::AssetPropertyVariant> {
         self.value.as_ref()
     }
     /// <p>The timestamp associated with the asset property value. The default is the current event time.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&crate::types::AssetPropertyTimestamp> {
+    pub fn timestamp(&self) -> ::std::option::Option<& crate::types::AssetPropertyTimestamp> {
         self.timestamp.as_ref()
     }
     /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-    pub fn quality(&self) -> ::std::option::Option<&str> {
+    pub fn quality(&self) -> ::std::option::Option<& str> {
         self.quality.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl AssetPropertyValueBuilder {
     }
     /// <p>The value to send to an asset property.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::AssetPropertyVariant>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value to send to an asset property.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::AssetPropertyVariant> {
@@ -71,8 +70,7 @@ impl AssetPropertyValueBuilder {
     }
     /// <p>The timestamp associated with the asset property value. The default is the current event time.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::AssetPropertyTimestamp>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp associated with the asset property value. The default is the current event time.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::AssetPropertyTimestamp> {
@@ -85,8 +83,7 @@ impl AssetPropertyValueBuilder {
     }
     /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
     pub fn set_quality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quality = input;
-        self
+        self.quality = input; self
     }
     /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
     pub fn get_quality(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,13 @@ impl AssetPropertyValueBuilder {
     /// Consumes the builder and constructs a [`AssetPropertyValue`](crate::types::AssetPropertyValue).
     pub fn build(self) -> crate::types::AssetPropertyValue {
         crate::types::AssetPropertyValue {
-            value: self.value,
-            timestamp: self.timestamp,
-            quality: self.quality,
+            value: self.value
+            ,
+            timestamp: self.timestamp
+            ,
+            quality: self.quality
+            ,
         }
     }
 }
+

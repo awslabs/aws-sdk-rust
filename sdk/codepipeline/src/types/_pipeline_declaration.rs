@@ -3,7 +3,7 @@
 /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineDeclaration {
+pub struct PipelineDeclaration  {
     /// <p>The name of the pipeline.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
@@ -15,9 +15,9 @@ pub struct PipelineDeclaration {
     /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
-    pub artifact_stores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>>,
+    pub artifact_stores: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ArtifactStore>>,
     /// <p>The stage in which to perform the action.</p>
-    pub stages: ::std::vec::Vec<crate::types::StageDeclaration>,
+    pub stages: ::std::vec::Vec::<crate::types::StageDeclaration>,
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
     pub version: ::std::option::Option<i32>,
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
@@ -35,46 +35,43 @@ pub struct PipelineDeclaration {
     /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
     /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>,
+    pub variables: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineVariableDeclaration>>,
     /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
-    pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>>,
+    pub triggers: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineTriggerDeclaration>>,
 }
-impl PipelineDeclaration {
+impl  PipelineDeclaration  {
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p><note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
-    pub fn artifact_store(&self) -> ::std::option::Option<&crate::types::ArtifactStore> {
+    pub fn artifact_store(&self) -> ::std::option::Option<& crate::types::ArtifactStore> {
         self.artifact_store.as_ref()
     }
     /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
-    pub fn artifact_stores(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>> {
+    pub fn artifact_stores(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ArtifactStore>> {
         self.artifact_stores.as_ref()
     }
     /// <p>The stage in which to perform the action.</p>
-    pub fn stages(&self) -> &[crate::types::StageDeclaration] {
-        use std::ops::Deref;
-        self.stages.deref()
+    pub fn stages(&self) -> & [crate::types::StageDeclaration] {
+        use std::ops::Deref; self.stages.deref()
     }
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
     pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
-    pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
+    pub fn execution_mode(&self) -> ::std::option::Option<& crate::types::ExecutionMode> {
         self.execution_mode.as_ref()
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
@@ -88,22 +85,24 @@ impl PipelineDeclaration {
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
     /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
-    pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
+    pub fn pipeline_type(&self) -> ::std::option::Option<& crate::types::PipelineType> {
         self.pipeline_type.as_ref()
     }
     /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
-    pub fn variables(&self) -> &[crate::types::PipelineVariableDeclaration] {
-        self.variables.as_deref().unwrap_or_default()
+    pub fn variables(&self) -> & [crate::types::PipelineVariableDeclaration] {
+        self.variables.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
-    pub fn triggers(&self) -> &[crate::types::PipelineTriggerDeclaration] {
-        self.triggers.as_deref().unwrap_or_default()
+    pub fn triggers(&self) -> & [crate::types::PipelineTriggerDeclaration] {
+        self.triggers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PipelineDeclaration {
@@ -120,13 +119,13 @@ pub struct PipelineDeclarationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_store: ::std::option::Option<crate::types::ArtifactStore>,
-    pub(crate) artifact_stores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>>,
-    pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::StageDeclaration>>,
+    pub(crate) artifact_stores: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ArtifactStore>>,
+    pub(crate) stages: ::std::option::Option<::std::vec::Vec::<crate::types::StageDeclaration>>,
     pub(crate) version: ::std::option::Option<i32>,
     pub(crate) execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
     pub(crate) pipeline_type: ::std::option::Option<crate::types::PipelineType>,
-    pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>,
-    pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>>,
+    pub(crate) variables: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineVariableDeclaration>>,
+    pub(crate) triggers: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineTriggerDeclaration>>,
 }
 impl PipelineDeclarationBuilder {
     /// <p>The name of the pipeline.</p>
@@ -137,8 +136,7 @@ impl PipelineDeclarationBuilder {
     }
     /// <p>The name of the pipeline.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the pipeline.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl PipelineDeclarationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +167,7 @@ impl PipelineDeclarationBuilder {
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
     pub fn set_artifact_store(mut self, input: ::std::option::Option<crate::types::ArtifactStore>) -> Self {
-        self.artifact_store = input;
-        self
+        self.artifact_store = input; self
     }
     /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p><note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
@@ -188,24 +184,20 @@ impl PipelineDeclarationBuilder {
     /// </note>
     pub fn artifact_stores(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ArtifactStore) -> Self {
         let mut hash_map = self.artifact_stores.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.artifact_stores = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.artifact_stores = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
-    pub fn set_artifact_stores(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>>,
-    ) -> Self {
-        self.artifact_stores = input;
-        self
+    pub fn set_artifact_stores(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ArtifactStore>>) -> Self {
+        self.artifact_stores = input; self
     }
     /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p><note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
-    pub fn get_artifact_stores(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>> {
+    pub fn get_artifact_stores(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ArtifactStore>> {
         &self.artifact_stores
     }
     /// Appends an item to `stages`.
@@ -215,17 +207,16 @@ impl PipelineDeclarationBuilder {
     /// <p>The stage in which to perform the action.</p>
     pub fn stages(mut self, input: crate::types::StageDeclaration) -> Self {
         let mut v = self.stages.unwrap_or_default();
-        v.push(input);
-        self.stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The stage in which to perform the action.</p>
-    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageDeclaration>>) -> Self {
-        self.stages = input;
-        self
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StageDeclaration>>) -> Self {
+        self.stages = input; self
     }
     /// <p>The stage in which to perform the action.</p>
-    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageDeclaration>> {
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StageDeclaration>> {
         &self.stages
     }
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
@@ -235,8 +226,7 @@ impl PipelineDeclarationBuilder {
     }
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -249,8 +239,7 @@ impl PipelineDeclarationBuilder {
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub fn set_execution_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
-        self.execution_mode = input;
-        self
+        self.execution_mode = input; self
     }
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
@@ -283,8 +272,7 @@ impl PipelineDeclarationBuilder {
     /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
     /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
-        self.pipeline_type = input;
-        self
+        self.pipeline_type = input; self
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
@@ -307,17 +295,16 @@ impl PipelineDeclarationBuilder {
     /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
     pub fn variables(mut self, input: crate::types::PipelineVariableDeclaration) -> Self {
         let mut v = self.variables.unwrap_or_default();
-        v.push(input);
-        self.variables = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineVariableDeclaration>>) -> Self {
+        self.variables = input; self
     }
     /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelineVariableDeclaration>> {
         &self.variables
     }
     /// Appends an item to `triggers`.
@@ -329,21 +316,20 @@ impl PipelineDeclarationBuilder {
     /// </note>
     pub fn triggers(mut self, input: crate::types::PipelineTriggerDeclaration) -> Self {
         let mut v = self.triggers.unwrap_or_default();
-        v.push(input);
-        self.triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
-    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>>) -> Self {
-        self.triggers = input;
-        self
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineTriggerDeclaration>>) -> Self {
+        self.triggers = input; self
     }
     /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
-    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelineTriggerDeclaration>> {
         &self.triggers
     }
     /// Consumes the builder and constructs a [`PipelineDeclaration`](crate::types::PipelineDeclaration).
@@ -352,32 +338,39 @@ impl PipelineDeclarationBuilder {
     /// - [`role_arn`](crate::types::builders::PipelineDeclarationBuilder::role_arn)
     /// - [`stages`](crate::types::builders::PipelineDeclarationBuilder::stages)
     pub fn build(self) -> ::std::result::Result<crate::types::PipelineDeclaration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PipelineDeclaration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PipelineDeclaration",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building PipelineDeclaration",
-                )
-            })?,
-            artifact_store: self.artifact_store,
-            artifact_stores: self.artifact_stores,
-            stages: self.stages.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stages",
-                    "stages was not specified but it is required when building PipelineDeclaration",
-                )
-            })?,
-            version: self.version,
-            execution_mode: self.execution_mode,
-            pipeline_type: self.pipeline_type,
-            variables: self.variables,
-            triggers: self.triggers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PipelineDeclaration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PipelineDeclaration")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building PipelineDeclaration")
+                    )?
+                ,
+                artifact_store: self.artifact_store
+                ,
+                artifact_stores: self.artifact_stores
+                ,
+                stages: self.stages
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stages", "stages was not specified but it is required when building PipelineDeclaration")
+                    )?
+                ,
+                version: self.version
+                ,
+                execution_mode: self.execution_mode
+                ,
+                pipeline_type: self.pipeline_type
+                ,
+                variables: self.variables
+                ,
+                triggers: self.triggers
+                ,
+            }
+        )
     }
 }
+

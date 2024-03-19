@@ -3,25 +3,23 @@
 /// <p>The shape containing the requested deployment parameter name and secretString.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeploymentParameterInput {
+pub struct DeploymentParameterInput  {
     /// <p>The desired name of the deployment parameter. This is the identifier on which deployment parameters are keyed for a given buyer and product. If this name matches an existing deployment parameter, this request will update the existing resource.</p>
     pub name: ::std::string::String,
     /// <p>The text to encrypt and store in the secret.</p>
     pub secret_string: ::std::string::String,
 }
-impl DeploymentParameterInput {
+impl  DeploymentParameterInput  {
     /// <p>The desired name of the deployment parameter. This is the identifier on which deployment parameters are keyed for a given buyer and product. If this name matches an existing deployment parameter, this request will update the existing resource.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The text to encrypt and store in the secret.</p>
-    pub fn secret_string(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_string.deref()
+    pub fn secret_string(&self) -> & str {
+        use std::ops::Deref; self.secret_string.deref()
     }
 }
-impl ::std::fmt::Debug for DeploymentParameterInput {
+impl  ::std::fmt::Debug for DeploymentParameterInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeploymentParameterInput");
         formatter.field("name", &self.name);
@@ -52,8 +50,7 @@ impl DeploymentParameterInputBuilder {
     }
     /// <p>The desired name of the deployment parameter. This is the identifier on which deployment parameters are keyed for a given buyer and product. If this name matches an existing deployment parameter, this request will update the existing resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The desired name of the deployment parameter. This is the identifier on which deployment parameters are keyed for a given buyer and product. If this name matches an existing deployment parameter, this request will update the existing resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl DeploymentParameterInputBuilder {
     }
     /// <p>The text to encrypt and store in the secret.</p>
     pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_string = input;
-        self
+        self.secret_string = input; self
     }
     /// <p>The text to encrypt and store in the secret.</p>
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl DeploymentParameterInputBuilder {
     /// - [`name`](crate::types::builders::DeploymentParameterInputBuilder::name)
     /// - [`secret_string`](crate::types::builders::DeploymentParameterInputBuilder::secret_string)
     pub fn build(self) -> ::std::result::Result<crate::types::DeploymentParameterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeploymentParameterInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DeploymentParameterInput",
-                )
-            })?,
-            secret_string: self.secret_string.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_string",
-                    "secret_string was not specified but it is required when building DeploymentParameterInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeploymentParameterInput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DeploymentParameterInput")
+                    )?
+                ,
+                secret_string: self.secret_string
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_string", "secret_string was not specified but it is required when building DeploymentParameterInput")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeploymentParameterInputBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for DeploymentParameterInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartObjectOutput {
+pub struct StartObjectOutput  {
     /// Upload Id for a given upload.
     pub upload_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl StartObjectOutput {
+impl  StartObjectOutput  {
     /// Upload Id for a given upload.
-    pub fn upload_id(&self) -> &str {
-        use std::ops::Deref;
-        self.upload_id.deref()
+    pub fn upload_id(&self) -> & str {
+        use std::ops::Deref; self.upload_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartObjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartObjectOutput {
     /// Creates a new builder-style object to manufacture [`StartObjectOutput`](crate::operation::start_object::StartObjectOutput).
     pub fn builder() -> crate::operation::start_object::builders::StartObjectOutputBuilder {
@@ -42,34 +41,35 @@ impl StartObjectOutputBuilder {
     }
     /// Upload Id for a given upload.
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// Upload Id for a given upload.
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartObjectOutput`](crate::operation::start_object::StartObjectOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`upload_id`](crate::operation::start_object::builders::StartObjectOutputBuilder::upload_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_object::StartObjectOutput {
-            upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upload_id",
-                    "upload_id was not specified but it is required when building StartObjectOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_object::StartObjectOutput {
+                upload_id: self.upload_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upload_id", "upload_id was not specified but it is required when building StartObjectOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

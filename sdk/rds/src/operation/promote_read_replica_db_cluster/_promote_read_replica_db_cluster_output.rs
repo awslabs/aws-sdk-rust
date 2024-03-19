@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PromoteReadReplicaDbClusterOutput {
+pub struct PromoteReadReplicaDbClusterOutput  {
     /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
     /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
@@ -11,21 +11,21 @@ pub struct PromoteReadReplicaDbClusterOutput {
     pub db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
 }
-impl PromoteReadReplicaDbClusterOutput {
+impl  PromoteReadReplicaDbClusterOutput  {
     /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
     /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
     /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn db_cluster(&self) -> ::std::option::Option<&crate::types::DbCluster> {
+    pub fn db_cluster(&self) -> ::std::option::Option<& crate::types::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PromoteReadReplicaDbClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PromoteReadReplicaDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterOutput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput).
     pub fn builder() -> crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterOutputBuilder {
@@ -56,8 +56,7 @@ impl PromoteReadReplicaDbClusterOutputBuilder {
     /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_db_cluster(mut self, input: ::std::option::Option<crate::types::DbCluster>) -> Self {
-        self.db_cluster = input;
-        self
+        self.db_cluster = input; self
     }
     /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
     /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
@@ -68,19 +67,21 @@ impl PromoteReadReplicaDbClusterOutputBuilder {
         &self.db_cluster
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PromoteReadReplicaDbClusterOutput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput).
     pub fn build(self) -> crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput {
         crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput {
-            db_cluster: self.db_cluster,
+            db_cluster: self.db_cluster
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

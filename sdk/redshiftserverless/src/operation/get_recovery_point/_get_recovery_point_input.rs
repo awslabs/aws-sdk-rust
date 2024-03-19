@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecoveryPointInput {
+pub struct GetRecoveryPointInput  {
     /// <p>The unique identifier of the recovery point to return information for.</p>
     pub recovery_point_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRecoveryPointInput {
+impl  GetRecoveryPointInput  {
     /// <p>The unique identifier of the recovery point to return information for.</p>
-    pub fn recovery_point_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_id(&self) -> ::std::option::Option<& str> {
         self.recovery_point_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetRecoveryPointInputBuilder {
     }
     /// <p>The unique identifier of the recovery point to return information for.</p>
     pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_id = input;
-        self
+        self.recovery_point_id = input; self
     }
     /// <p>The unique identifier of the recovery point to return information for.</p>
     pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_point_id
     }
     /// Consumes the builder and constructs a [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_recovery_point::GetRecoveryPointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_recovery_point::GetRecoveryPointInput {
-            recovery_point_id: self.recovery_point_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recovery_point::GetRecoveryPointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_recovery_point::GetRecoveryPointInput {
+                recovery_point_id: self.recovery_point_id
+                ,
+            }
+        )
     }
 }
+

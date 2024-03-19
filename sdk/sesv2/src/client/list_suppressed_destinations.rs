@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSuppressedDestinations`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`reasons(SuppressionListReason)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::reasons) / [`set_reasons(Option<Vec::<SuppressionListReason>>)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::set_reasons):<br>required: **false**<br><p>The factors that caused the email address to be added to .</p><br>
     ///   - [`start_date(DateTime)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::start_date) / [`set_start_date(Option<DateTime>)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::set_start_date):<br>required: **false**<br><p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p><br>
     ///   - [`end_date(DateTime)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::end_date) / [`set_end_date(Option<DateTime>)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::set_end_date):<br>required: **false**<br><p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
-    /// - On success, responds with [`ListSuppressedDestinationsOutput`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput) with field(s):
+                            /// - On success, responds with [`ListSuppressedDestinationsOutput`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput) with field(s):
     ///   - [`suppressed_destination_summaries(Option<Vec::<SuppressedDestinationSummary>>)`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput::suppressed_destination_summaries): <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput::next_token): <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<ListSuppressedDestinationsError>`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError)
+                            /// - On failure, responds with [`SdkError<ListSuppressedDestinationsError>`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError)
     pub fn list_suppressed_destinations(&self) -> crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder {
-        crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

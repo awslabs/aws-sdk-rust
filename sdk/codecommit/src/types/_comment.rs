@@ -3,7 +3,7 @@
 /// <p>Returns information about a specific comment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Comment {
+pub struct Comment  {
     /// <p>The system-generated comment ID.</p>
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>The content of the comment.</p>
@@ -21,33 +21,33 @@ pub struct Comment {
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    pub caller_reactions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub caller_reactions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub reaction_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub reaction_counts: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i32>>,
 }
-impl Comment {
+impl  Comment  {
     /// <p>The system-generated comment ID.</p>
-    pub fn comment_id(&self) -> ::std::option::Option<&str> {
+    pub fn comment_id(&self) -> ::std::option::Option<& str> {
         self.comment_id.as_deref()
     }
     /// <p>The content of the comment.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
-    pub fn in_reply_to(&self) -> ::std::option::Option<&str> {
+    pub fn in_reply_to(&self) -> ::std::option::Option<& str> {
         self.in_reply_to.as_deref()
     }
     /// <p>The date and time the comment was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
-    pub fn author_arn(&self) -> ::std::option::Option<&str> {
+    pub fn author_arn(&self) -> ::std::option::Option<& str> {
         self.author_arn.as_deref()
     }
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
@@ -55,17 +55,18 @@ impl Comment {
         self.deleted
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caller_reactions.is_none()`.
-    pub fn caller_reactions(&self) -> &[::std::string::String] {
-        self.caller_reactions.as_deref().unwrap_or_default()
+    pub fn caller_reactions(&self) -> & [::std::string::String] {
+        self.caller_reactions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub fn reaction_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn reaction_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, i32>> {
         self.reaction_counts.as_ref()
     }
 }
@@ -88,8 +89,8 @@ pub struct CommentBuilder {
     pub(crate) author_arn: ::std::option::Option<::std::string::String>,
     pub(crate) deleted: ::std::option::Option<bool>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) caller_reactions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) reaction_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) caller_reactions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) reaction_counts: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i32>>,
 }
 impl CommentBuilder {
     /// <p>The system-generated comment ID.</p>
@@ -99,8 +100,7 @@ impl CommentBuilder {
     }
     /// <p>The system-generated comment ID.</p>
     pub fn set_comment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment_id = input;
-        self
+        self.comment_id = input; self
     }
     /// <p>The system-generated comment ID.</p>
     pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +113,7 @@ impl CommentBuilder {
     }
     /// <p>The content of the comment.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of the comment.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl CommentBuilder {
     }
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
     pub fn set_in_reply_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.in_reply_to = input;
-        self
+        self.in_reply_to = input; self
     }
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
     pub fn get_in_reply_to(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl CommentBuilder {
     }
     /// <p>The date and time the comment was created, in timestamp format.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time the comment was created, in timestamp format.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +152,7 @@ impl CommentBuilder {
     }
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +165,7 @@ impl CommentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
     pub fn set_author_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author_arn = input;
-        self
+        self.author_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
     pub fn get_author_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +178,7 @@ impl CommentBuilder {
     }
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
     pub fn set_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deleted = input;
-        self
+        self.deleted = input; self
     }
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
     pub fn get_deleted(&self) -> &::std::option::Option<bool> {
@@ -197,8 +191,7 @@ impl CommentBuilder {
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,17 +204,16 @@ impl CommentBuilder {
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
     pub fn caller_reactions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.caller_reactions.unwrap_or_default();
-        v.push(input.into());
-        self.caller_reactions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.caller_reactions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    pub fn set_caller_reactions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.caller_reactions = input;
-        self
+    pub fn set_caller_reactions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.caller_reactions = input; self
     }
     /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
-    pub fn get_caller_reactions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_caller_reactions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.caller_reactions
     }
     /// Adds a key-value pair to `reaction_counts`.
@@ -231,32 +223,43 @@ impl CommentBuilder {
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
     pub fn reaction_counts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.reaction_counts.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.reaction_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.reaction_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub fn set_reaction_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
-        self.reaction_counts = input;
-        self
+    pub fn set_reaction_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i32>>) -> Self {
+        self.reaction_counts = input; self
     }
     /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
-    pub fn get_reaction_counts(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn get_reaction_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, i32>> {
         &self.reaction_counts
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
     pub fn build(self) -> crate::types::Comment {
         crate::types::Comment {
-            comment_id: self.comment_id,
-            content: self.content,
-            in_reply_to: self.in_reply_to,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
-            author_arn: self.author_arn,
-            deleted: self.deleted.unwrap_or_default(),
-            client_request_token: self.client_request_token,
-            caller_reactions: self.caller_reactions,
-            reaction_counts: self.reaction_counts,
+            comment_id: self.comment_id
+            ,
+            content: self.content
+            ,
+            in_reply_to: self.in_reply_to
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            author_arn: self.author_arn
+            ,
+            deleted: self.deleted
+                .unwrap_or_default()
+            ,
+            client_request_token: self.client_request_token
+            ,
+            caller_reactions: self.caller_reactions
+            ,
+            reaction_counts: self.reaction_counts
+            ,
         }
     }
 }
+

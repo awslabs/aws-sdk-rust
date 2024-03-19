@@ -3,7 +3,7 @@
 /// <p>Describes the basic information about a form.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FormSummary {
+pub struct FormSummary  {
     /// <p>The unique ID for the app associated with the form summary.</p>
     pub app_id: ::std::string::String,
     /// <p>The form's data source type.</p>
@@ -17,34 +17,30 @@ pub struct FormSummary {
     /// <p>The name of the form.</p>
     pub name: ::std::string::String,
 }
-impl FormSummary {
+impl  FormSummary  {
     /// <p>The unique ID for the app associated with the form summary.</p>
-    pub fn app_id(&self) -> &str {
-        use std::ops::Deref;
-        self.app_id.deref()
+    pub fn app_id(&self) -> & str {
+        use std::ops::Deref; self.app_id.deref()
     }
     /// <p>The form's data source type.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::FormDataTypeConfig> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::FormDataTypeConfig> {
         self.data_type.as_ref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> & str {
+        use std::ops::Deref; self.environment_name.deref()
     }
     /// <p>The type of operation to perform on the form.</p>
-    pub fn form_action_type(&self) -> &crate::types::FormActionType {
+    pub fn form_action_type(&self) -> & crate::types::FormActionType {
         &self.form_action_type
     }
     /// <p>The ID of the form.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the form.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl FormSummary {
@@ -74,8 +70,7 @@ impl FormSummaryBuilder {
     }
     /// <p>The unique ID for the app associated with the form summary.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for the app associated with the form summary.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl FormSummaryBuilder {
     }
     /// <p>The form's data source type.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::FormDataTypeConfig>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The form's data source type.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::FormDataTypeConfig> {
@@ -104,8 +98,7 @@ impl FormSummaryBuilder {
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +112,7 @@ impl FormSummaryBuilder {
     }
     /// <p>The type of operation to perform on the form.</p>
     pub fn set_form_action_type(mut self, input: ::std::option::Option<crate::types::FormActionType>) -> Self {
-        self.form_action_type = input;
-        self
+        self.form_action_type = input; self
     }
     /// <p>The type of operation to perform on the form.</p>
     pub fn get_form_action_type(&self) -> &::std::option::Option<crate::types::FormActionType> {
@@ -134,8 +126,7 @@ impl FormSummaryBuilder {
     }
     /// <p>The ID of the form.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the form.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +140,7 @@ impl FormSummaryBuilder {
     }
     /// <p>The name of the form.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the form.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,38 +154,37 @@ impl FormSummaryBuilder {
     /// - [`id`](crate::types::builders::FormSummaryBuilder::id)
     /// - [`name`](crate::types::builders::FormSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::FormSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FormSummary {
-            app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_id",
-                    "app_id was not specified but it is required when building FormSummary",
-                )
-            })?,
-            data_type: self.data_type,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building FormSummary",
-                )
-            })?,
-            form_action_type: self.form_action_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "form_action_type",
-                    "form_action_type was not specified but it is required when building FormSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FormSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building FormSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FormSummary {
+                app_id: self.app_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_id", "app_id was not specified but it is required when building FormSummary")
+                    )?
+                ,
+                data_type: self.data_type
+                ,
+                environment_name: self.environment_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_name", "environment_name was not specified but it is required when building FormSummary")
+                    )?
+                ,
+                form_action_type: self.form_action_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("form_action_type", "form_action_type was not specified but it is required when building FormSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FormSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building FormSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

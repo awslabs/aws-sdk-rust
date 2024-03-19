@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopChannelInput {
+pub struct StopChannelInput  {
     /// <p>The name of the channel.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
 }
-impl StopChannelInput {
+impl  StopChannelInput  {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl StopChannelInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the channel.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl StopChannelInputBuilder {
     }
     /// Consumes the builder and constructs a [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_channel::StopChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_channel::StopChannelInput {
-            channel_name: self.channel_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::stop_channel::StopChannelInput {
+                channel_name: self.channel_name
+                ,
+            }
+        )
     }
 }
+

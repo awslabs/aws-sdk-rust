@@ -4,11 +4,11 @@
 /// <p>The key/value pairs used to tag a file during the execution of a workflow step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagStepDetails {
+pub struct TagStepDetails  {
     /// <p>The name of the step, used as an identifier.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li>
@@ -18,16 +18,17 @@ pub struct TagStepDetails {
     /// </ul>
     pub source_file_location: ::std::option::Option<::std::string::String>,
 }
-impl TagStepDetails {
+impl  TagStepDetails  {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::S3Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::S3Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
@@ -36,7 +37,7 @@ impl TagStepDetails {
     /// <li>
     /// <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
-    pub fn source_file_location(&self) -> ::std::option::Option<&str> {
+    pub fn source_file_location(&self) -> ::std::option::Option<& str> {
         self.source_file_location.as_deref()
     }
 }
@@ -52,7 +53,7 @@ impl TagStepDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagStepDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
     pub(crate) source_file_location: ::std::option::Option<::std::string::String>,
 }
 impl TagStepDetailsBuilder {
@@ -63,8 +64,7 @@ impl TagStepDetailsBuilder {
     }
     /// <p>The name of the step, used as an identifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step, used as an identifier.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,17 +77,16 @@ impl TagStepDetailsBuilder {
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
     pub fn tags(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>> {
         &self.tags
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
@@ -109,8 +108,7 @@ impl TagStepDetailsBuilder {
     /// <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
     pub fn set_source_file_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_file_location = input;
-        self
+        self.source_file_location = input; self
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
@@ -125,9 +123,13 @@ impl TagStepDetailsBuilder {
     /// Consumes the builder and constructs a [`TagStepDetails`](crate::types::TagStepDetails).
     pub fn build(self) -> crate::types::TagStepDetails {
         crate::types::TagStepDetails {
-            name: self.name,
-            tags: self.tags,
-            source_file_location: self.source_file_location,
+            name: self.name
+            ,
+            tags: self.tags
+            ,
+            source_file_location: self.source_file_location
+            ,
         }
     }
 }
+

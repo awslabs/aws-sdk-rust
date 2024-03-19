@@ -3,23 +3,22 @@
 /// <p>A complex type containing tags for the specified resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForResourcesOutput {
+pub struct ListTagsForResourcesOutput  {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub resource_tag_sets: ::std::vec::Vec<crate::types::ResourceTagSet>,
+    pub resource_tag_sets: ::std::vec::Vec::<crate::types::ResourceTagSet>,
     _request_id: Option<String>,
 }
-impl ListTagsForResourcesOutput {
+impl  ListTagsForResourcesOutput  {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub fn resource_tag_sets(&self) -> &[crate::types::ResourceTagSet] {
-        use std::ops::Deref;
-        self.resource_tag_sets.deref()
+    pub fn resource_tag_sets(&self) -> & [crate::types::ResourceTagSet] {
+        use std::ops::Deref; self.resource_tag_sets.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTagsForResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTagsForResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourcesOutput`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput).
     pub fn builder() -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder {
@@ -31,7 +30,7 @@ impl ListTagsForResourcesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForResourcesOutputBuilder {
-    pub(crate) resource_tag_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>,
+    pub(crate) resource_tag_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTagSet>>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourcesOutputBuilder {
@@ -42,43 +41,41 @@ impl ListTagsForResourcesOutputBuilder {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
     pub fn resource_tag_sets(mut self, input: crate::types::ResourceTagSet) -> Self {
         let mut v = self.resource_tag_sets.unwrap_or_default();
-        v.push(input);
-        self.resource_tag_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tag_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub fn set_resource_tag_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>) -> Self {
-        self.resource_tag_sets = input;
-        self
+    pub fn set_resource_tag_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTagSet>>) -> Self {
+        self.resource_tag_sets = input; self
     }
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub fn get_resource_tag_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>> {
+    pub fn get_resource_tag_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTagSet>> {
         &self.resource_tag_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTagsForResourcesOutput`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_tag_sets`](crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder::resource_tag_sets)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_resources::ListTagsForResourcesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_tags_for_resources::ListTagsForResourcesOutput {
-            resource_tag_sets: self.resource_tag_sets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_tag_sets",
-                    "resource_tag_sets was not specified but it is required when building ListTagsForResourcesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags_for_resources::ListTagsForResourcesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_tags_for_resources::ListTagsForResourcesOutput {
+                resource_tag_sets: self.resource_tag_sets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_tag_sets", "resource_tag_sets was not specified but it is required when building ListTagsForResourcesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

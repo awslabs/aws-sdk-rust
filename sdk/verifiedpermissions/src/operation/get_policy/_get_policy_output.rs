@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// <p>The ID of the policy store that contains the policy that you want information about.</p>
     pub policy_store_id: ::std::string::String,
     /// <p>The unique ID of the policy that you want information about.</p>
@@ -21,47 +21,45 @@ pub struct GetPolicyOutput {
     pub last_updated_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl GetPolicyOutput {
+impl  GetPolicyOutput  {
     /// <p>The ID of the policy store that contains the policy that you want information about.</p>
-    pub fn policy_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_store_id.deref()
+    pub fn policy_store_id(&self) -> & str {
+        use std::ops::Deref; self.policy_store_id.deref()
     }
     /// <p>The unique ID of the policy that you want information about.</p>
-    pub fn policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_id.deref()
+    pub fn policy_id(&self) -> & str {
+        use std::ops::Deref; self.policy_id.deref()
     }
     /// <p>The type of the policy.</p>
-    pub fn policy_type(&self) -> &crate::types::PolicyType {
+    pub fn policy_type(&self) -> & crate::types::PolicyType {
         &self.policy_type
     }
     /// <p>The principal specified in the policy's scope. This element isn't included in the response when <code>Principal</code> isn't present in the policy content.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::EntityIdentifier> {
         self.principal.as_ref()
     }
     /// <p>The resource specified in the policy's scope. This element isn't included in the response when <code>Resource</code> isn't present in the policy content.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::EntityIdentifier> {
         self.resource.as_ref()
     }
     /// <p>The definition of the requested policy.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinitionDetail> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::PolicyDefinitionDetail> {
         self.definition.as_ref()
     }
     /// <p>The date and time that the policy was originally created.</p>
-    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_date
     }
     /// <p>The date and time that the policy was last updated.</p>
-    pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_date
     }
 }
 impl ::aws_types::request_id::RequestId for GetPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
     pub fn builder() -> crate::operation::get_policy::builders::GetPolicyOutputBuilder {
@@ -92,8 +90,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The ID of the policy store that contains the policy that you want information about.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>The ID of the policy store that contains the policy that you want information about.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The unique ID of the policy that you want information about.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The unique ID of the policy that you want information about.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +118,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The type of the policy.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of the policy.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
@@ -136,8 +131,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The principal specified in the policy's scope. This element isn't included in the response when <code>Principal</code> isn't present in the policy content.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The principal specified in the policy's scope. This element isn't included in the response when <code>Principal</code> isn't present in the policy content.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
@@ -150,8 +144,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The resource specified in the policy's scope. This element isn't included in the response when <code>Resource</code> isn't present in the policy content.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The resource specified in the policy's scope. This element isn't included in the response when <code>Resource</code> isn't present in the policy content.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
@@ -165,8 +158,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The definition of the requested policy.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinitionDetail>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The definition of the requested policy.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinitionDetail> {
@@ -180,8 +172,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The date and time that the policy was originally created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time that the policy was originally created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,22 +186,21 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The date and time that the policy was last updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date and time that the policy was last updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_store_id`](crate::operation::get_policy::builders::GetPolicyOutputBuilder::policy_store_id)
@@ -219,41 +209,42 @@ impl GetPolicyOutputBuilder {
     /// - [`created_date`](crate::operation::get_policy::builders::GetPolicyOutputBuilder::created_date)
     /// - [`last_updated_date`](crate::operation::get_policy::builders::GetPolicyOutputBuilder::last_updated_date)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_policy::GetPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_policy::GetPolicyOutput {
-            policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_store_id",
-                    "policy_store_id was not specified but it is required when building GetPolicyOutput",
-                )
-            })?,
-            policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_id",
-                    "policy_id was not specified but it is required when building GetPolicyOutput",
-                )
-            })?,
-            policy_type: self.policy_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_type",
-                    "policy_type was not specified but it is required when building GetPolicyOutput",
-                )
-            })?,
-            principal: self.principal,
-            resource: self.resource,
-            definition: self.definition,
-            created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_date",
-                    "created_date was not specified but it is required when building GetPolicyOutput",
-                )
-            })?,
-            last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_date",
-                    "last_updated_date was not specified but it is required when building GetPolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_policy::GetPolicyOutput {
+                policy_store_id: self.policy_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_store_id", "policy_store_id was not specified but it is required when building GetPolicyOutput")
+                    )?
+                ,
+                policy_id: self.policy_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_id", "policy_id was not specified but it is required when building GetPolicyOutput")
+                    )?
+                ,
+                policy_type: self.policy_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_type", "policy_type was not specified but it is required when building GetPolicyOutput")
+                    )?
+                ,
+                principal: self.principal
+                ,
+                resource: self.resource
+                ,
+                definition: self.definition
+                ,
+                created_date: self.created_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_date", "created_date was not specified but it is required when building GetPolicyOutput")
+                    )?
+                ,
+                last_updated_date: self.last_updated_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_date", "last_updated_date was not specified but it is required when building GetPolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

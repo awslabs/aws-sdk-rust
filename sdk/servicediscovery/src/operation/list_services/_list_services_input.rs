@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServicesInput {
+pub struct ListServicesInput  {
     /// <p>For the first <code>ListServices</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
     /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
@@ -12,14 +12,14 @@ pub struct ListServicesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceFilter>>,
 }
-impl ListServicesInput {
+impl  ListServicesInput  {
     /// <p>For the first <code>ListServices</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
     /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
@@ -28,10 +28,11 @@ impl ListServicesInput {
     }
     /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ServiceFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ServiceFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListServicesInput {
@@ -47,7 +48,7 @@ impl ListServicesInput {
 pub struct ListServicesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceFilter>>,
 }
 impl ListServicesInputBuilder {
     /// <p>For the first <code>ListServices</code> request, omit this value.</p>
@@ -63,8 +64,7 @@ impl ListServicesInputBuilder {
     /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For the first <code>ListServices</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
@@ -80,8 +80,7 @@ impl ListServicesInputBuilder {
     }
     /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -95,29 +94,32 @@ impl ListServicesInputBuilder {
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn filters(mut self, input: crate::types::ServiceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_services::ListServicesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_services::ListServicesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

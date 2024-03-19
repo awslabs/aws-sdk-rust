@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRelationalDatabaseFromSnapshotInput {
+pub struct CreateRelationalDatabaseFromSnapshotInput  {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -45,9 +45,9 @@ pub struct CreateRelationalDatabaseFromSnapshotInput {
     pub use_latest_restorable_time: ::std::option::Option<bool>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateRelationalDatabaseFromSnapshotInput {
+impl  CreateRelationalDatabaseFromSnapshotInput  {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -56,12 +56,12 @@ impl CreateRelationalDatabaseFromSnapshotInput {
     /// <li>
     /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
@@ -69,17 +69,17 @@ impl CreateRelationalDatabaseFromSnapshotInput {
         self.publicly_accessible
     }
     /// <p>The name of the database snapshot from which to create your new database.</p>
-    pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_snapshot_name.as_deref()
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
     /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
-    pub fn relational_database_bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_bundle_id(&self) -> ::std::option::Option<& str> {
         self.relational_database_bundle_id.as_deref()
     }
     /// <p>The name of the source database.</p>
-    pub fn source_relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_relational_database_name(&self) -> ::std::option::Option<& str> {
         self.source_relational_database_name.as_deref()
     }
     /// <p>The date and time to restore your database from.</p>
@@ -95,7 +95,7 @@ impl CreateRelationalDatabaseFromSnapshotInput {
     /// <p>Specified in the Unix time format.</p>
     /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
-    pub fn restore_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn restore_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.restore_time.as_ref()
     }
     /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time.</p>
@@ -106,10 +106,11 @@ impl CreateRelationalDatabaseFromSnapshotInput {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateRelationalDatabaseFromSnapshotInput {
@@ -131,7 +132,7 @@ pub struct CreateRelationalDatabaseFromSnapshotInputBuilder {
     pub(crate) source_relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) restore_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) use_latest_restorable_time: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The name to use for your new Lightsail database resource.</p>
@@ -156,8 +157,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
@@ -179,8 +179,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
@@ -194,8 +193,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -208,8 +206,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     }
     /// <p>The name of the database snapshot from which to create your new database.</p>
     pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_snapshot_name = input;
-        self
+        self.relational_database_snapshot_name = input; self
     }
     /// <p>The name of the database snapshot from which to create your new database.</p>
     pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +223,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
     /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
     pub fn set_relational_database_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_bundle_id = input;
-        self
+        self.relational_database_bundle_id = input; self
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
@@ -242,8 +238,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     }
     /// <p>The name of the source database.</p>
     pub fn set_source_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_relational_database_name = input;
-        self
+        self.source_relational_database_name = input; self
     }
     /// <p>The name of the source database.</p>
     pub fn get_source_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +275,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub fn set_restore_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.restore_time = input;
-        self
+        self.restore_time = input; self
     }
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
@@ -310,8 +304,7 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>Default: <code>false</code></p>
     /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
     pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_latest_restorable_time = input;
-        self
+        self.use_latest_restorable_time = input; self
     }
     /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time.</p>
     /// <p>Default: <code>false</code></p>
@@ -327,40 +320,44 @@ impl CreateRelationalDatabaseFromSnapshotInputBuilder {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRelationalDatabaseFromSnapshotInput`](crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput {
-                relational_database_name: self.relational_database_name,
-                availability_zone: self.availability_zone,
-                publicly_accessible: self.publicly_accessible,
-                relational_database_snapshot_name: self.relational_database_snapshot_name,
-                relational_database_bundle_id: self.relational_database_bundle_id,
-                source_relational_database_name: self.source_relational_database_name,
-                restore_time: self.restore_time,
-                use_latest_restorable_time: self.use_latest_restorable_time,
-                tags: self.tags,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+                availability_zone: self.availability_zone
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                relational_database_snapshot_name: self.relational_database_snapshot_name
+                ,
+                relational_database_bundle_id: self.relational_database_bundle_id
+                ,
+                source_relational_database_name: self.source_relational_database_name
+                ,
+                restore_time: self.restore_time
+                ,
+                use_latest_restorable_time: self.use_latest_restorable_time
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a repository sync attempt for a repository with a sync configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositorySyncAttempt {
+pub struct RepositorySyncAttempt  {
     /// <p>The start time of a specific sync attempt.</p>
     pub started_at: ::aws_smithy_types::DateTime,
     /// <p>The status of a specific sync attempt. The following are valid statuses:</p>
@@ -21,11 +21,11 @@ pub struct RepositorySyncAttempt {
     /// </ul>
     pub status: crate::types::RepositorySyncStatus,
     /// <p>The events associated with a specific sync attempt.</p>
-    pub events: ::std::vec::Vec<crate::types::RepositorySyncEvent>,
+    pub events: ::std::vec::Vec::<crate::types::RepositorySyncEvent>,
 }
-impl RepositorySyncAttempt {
+impl  RepositorySyncAttempt  {
     /// <p>The start time of a specific sync attempt.</p>
-    pub fn started_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn started_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.started_at
     }
     /// <p>The status of a specific sync attempt. The following are valid statuses:</p>
@@ -41,13 +41,12 @@ impl RepositorySyncAttempt {
     /// <li>
     /// <p>QUEUED - The repository sync attempt didn't execute and was queued.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::RepositorySyncStatus {
+    pub fn status(&self) -> & crate::types::RepositorySyncStatus {
         &self.status
     }
     /// <p>The events associated with a specific sync attempt.</p>
-    pub fn events(&self) -> &[crate::types::RepositorySyncEvent] {
-        use std::ops::Deref;
-        self.events.deref()
+    pub fn events(&self) -> & [crate::types::RepositorySyncEvent] {
+        use std::ops::Deref; self.events.deref()
     }
 }
 impl RepositorySyncAttempt {
@@ -63,7 +62,7 @@ impl RepositorySyncAttempt {
 pub struct RepositorySyncAttemptBuilder {
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::RepositorySyncStatus>,
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::RepositorySyncEvent>>,
 }
 impl RepositorySyncAttemptBuilder {
     /// <p>The start time of a specific sync attempt.</p>
@@ -74,8 +73,7 @@ impl RepositorySyncAttemptBuilder {
     }
     /// <p>The start time of a specific sync attempt.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The start time of a specific sync attempt.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -113,8 +111,7 @@ impl RepositorySyncAttemptBuilder {
     /// <p>QUEUED - The repository sync attempt didn't execute and was queued.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RepositorySyncStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a specific sync attempt. The following are valid statuses:</p>
     /// <ul>
@@ -139,17 +136,16 @@ impl RepositorySyncAttemptBuilder {
     /// <p>The events associated with a specific sync attempt.</p>
     pub fn events(mut self, input: crate::types::RepositorySyncEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The events associated with a specific sync attempt.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositorySyncEvent>>) -> Self {
+        self.events = input; self
     }
     /// <p>The events associated with a specific sync attempt.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositorySyncEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`RepositorySyncAttempt`](crate::types::RepositorySyncAttempt).
@@ -158,25 +154,25 @@ impl RepositorySyncAttemptBuilder {
     /// - [`status`](crate::types::builders::RepositorySyncAttemptBuilder::status)
     /// - [`events`](crate::types::builders::RepositorySyncAttemptBuilder::events)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncAttempt, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RepositorySyncAttempt {
-            started_at: self.started_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "started_at",
-                    "started_at was not specified but it is required when building RepositorySyncAttempt",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building RepositorySyncAttempt",
-                )
-            })?,
-            events: self.events.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "events",
-                    "events was not specified but it is required when building RepositorySyncAttempt",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RepositorySyncAttempt {
+                started_at: self.started_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("started_at", "started_at was not specified but it is required when building RepositorySyncAttempt")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building RepositorySyncAttempt")
+                    )?
+                ,
+                events: self.events
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("events", "events was not specified but it is required when building RepositorySyncAttempt")
+                    )?
+                ,
+            }
+        )
     }
 }
+

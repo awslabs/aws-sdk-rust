@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pardotconnectoroperator = unimplemented!();
 /// match pardotconnectoroperator {
@@ -42,16 +42,14 @@
 /// Specifically, when `pardotconnectoroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PardotConnectorOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum PardotConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -83,112 +81,98 @@ pub enum PardotConnectorOperator {
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for PardotConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => PardotConnectorOperator::Addition,
-            "DIVISION" => PardotConnectorOperator::Division,
-            "EQUAL_TO" => PardotConnectorOperator::EqualTo,
-            "MASK_ALL" => PardotConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => PardotConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => PardotConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => PardotConnectorOperator::Multiplication,
-            "NO_OP" => PardotConnectorOperator::NoOp,
-            "PROJECTION" => PardotConnectorOperator::Projection,
-            "SUBTRACTION" => PardotConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => PardotConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => PardotConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => PardotConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => PardotConnectorOperator::ValidateNumeric,
-            other => PardotConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADDITION" => PardotConnectorOperator::Addition,
+"DIVISION" => PardotConnectorOperator::Division,
+"EQUAL_TO" => PardotConnectorOperator::EqualTo,
+"MASK_ALL" => PardotConnectorOperator::MaskAll,
+"MASK_FIRST_N" => PardotConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => PardotConnectorOperator::MaskLastN,
+"MULTIPLICATION" => PardotConnectorOperator::Multiplication,
+"NO_OP" => PardotConnectorOperator::NoOp,
+"PROJECTION" => PardotConnectorOperator::Projection,
+"SUBTRACTION" => PardotConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => PardotConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => PardotConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => PardotConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => PardotConnectorOperator::ValidateNumeric,
+other => PardotConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for PardotConnectorOperator {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(PardotConnectorOperator::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(PardotConnectorOperator::from(s))
+                    }
+                }
 impl PardotConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PardotConnectorOperator::Addition => "ADDITION",
-            PardotConnectorOperator::Division => "DIVISION",
-            PardotConnectorOperator::EqualTo => "EQUAL_TO",
-            PardotConnectorOperator::MaskAll => "MASK_ALL",
-            PardotConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            PardotConnectorOperator::MaskLastN => "MASK_LAST_N",
-            PardotConnectorOperator::Multiplication => "MULTIPLICATION",
-            PardotConnectorOperator::NoOp => "NO_OP",
-            PardotConnectorOperator::Projection => "PROJECTION",
-            PardotConnectorOperator::Subtraction => "SUBTRACTION",
-            PardotConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            PardotConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            PardotConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            PardotConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            PardotConnectorOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "DIVISION",
-            "EQUAL_TO",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PardotConnectorOperator::Addition => "ADDITION",
+    PardotConnectorOperator::Division => "DIVISION",
+    PardotConnectorOperator::EqualTo => "EQUAL_TO",
+    PardotConnectorOperator::MaskAll => "MASK_ALL",
+    PardotConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    PardotConnectorOperator::MaskLastN => "MASK_LAST_N",
+    PardotConnectorOperator::Multiplication => "MULTIPLICATION",
+    PardotConnectorOperator::NoOp => "NO_OP",
+    PardotConnectorOperator::Projection => "PROJECTION",
+    PardotConnectorOperator::Subtraction => "SUBTRACTION",
+    PardotConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    PardotConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    PardotConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    PardotConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    PardotConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl ::std::convert::AsRef<str> for PardotConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl PardotConnectorOperator {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for PardotConnectorOperator {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            PardotConnectorOperator::Addition => write!(f, "ADDITION"),
-            PardotConnectorOperator::Division => write!(f, "DIVISION"),
-            PardotConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
-            PardotConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
-            PardotConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
-            PardotConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
-            PardotConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
-            PardotConnectorOperator::NoOp => write!(f, "NO_OP"),
-            PardotConnectorOperator::Projection => write!(f, "PROJECTION"),
-            PardotConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
-            PardotConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
-            PardotConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
-            PardotConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
-            PardotConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            PardotConnectorOperator::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                PardotConnectorOperator::Addition => write!(f, "ADDITION"),
+PardotConnectorOperator::Division => write!(f, "DIVISION"),
+PardotConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+PardotConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+PardotConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+PardotConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+PardotConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+PardotConnectorOperator::NoOp => write!(f, "NO_OP"),
+PardotConnectorOperator::Projection => write!(f, "PROJECTION"),
+PardotConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+PardotConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+PardotConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+PardotConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+PardotConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+PardotConnectorOperator::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,15 +3,14 @@
 /// <p>Information for the results of the intent classification test.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntentClassificationTestResults {
+pub struct IntentClassificationTestResults  {
     /// <p>A list of the results for the intent classification test.</p>
-    pub items: ::std::vec::Vec<crate::types::IntentClassificationTestResultItem>,
+    pub items: ::std::vec::Vec::<crate::types::IntentClassificationTestResultItem>,
 }
-impl IntentClassificationTestResults {
+impl  IntentClassificationTestResults  {
     /// <p>A list of the results for the intent classification test.</p>
-    pub fn items(&self) -> &[crate::types::IntentClassificationTestResultItem] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::IntentClassificationTestResultItem] {
+        use std::ops::Deref; self.items.deref()
     }
 }
 impl IntentClassificationTestResults {
@@ -25,7 +24,7 @@ impl IntentClassificationTestResults {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentClassificationTestResultsBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::IntentClassificationTestResultItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::IntentClassificationTestResultItem>>,
 }
 impl IntentClassificationTestResultsBuilder {
     /// Appends an item to `items`.
@@ -35,30 +34,31 @@ impl IntentClassificationTestResultsBuilder {
     /// <p>A list of the results for the intent classification test.</p>
     pub fn items(mut self, input: crate::types::IntentClassificationTestResultItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the results for the intent classification test.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentClassificationTestResultItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IntentClassificationTestResultItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>A list of the results for the intent classification test.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentClassificationTestResultItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IntentClassificationTestResultItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`IntentClassificationTestResults`](crate::types::IntentClassificationTestResults).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::types::builders::IntentClassificationTestResultsBuilder::items)
     pub fn build(self) -> ::std::result::Result<crate::types::IntentClassificationTestResults, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IntentClassificationTestResults {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building IntentClassificationTestResults",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IntentClassificationTestResults {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building IntentClassificationTestResults")
+                    )?
+                ,
+            }
+        )
     }
 }
+

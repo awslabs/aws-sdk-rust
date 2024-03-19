@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBundleAssociationsOutput {
+pub struct DescribeBundleAssociationsOutput  {
     /// <p>List of information about the specified associations.</p>
-    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::BundleResourceAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec::<crate::types::BundleResourceAssociation>>,
     _request_id: Option<String>,
 }
-impl DescribeBundleAssociationsOutput {
+impl  DescribeBundleAssociationsOutput  {
     /// <p>List of information about the specified associations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
-    pub fn associations(&self) -> &[crate::types::BundleResourceAssociation] {
-        self.associations.as_deref().unwrap_or_default()
+    pub fn associations(&self) -> & [crate::types::BundleResourceAssociation] {
+        self.associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBundleAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBundleAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBundleAssociationsOutput`](crate::operation::describe_bundle_associations::DescribeBundleAssociationsOutput).
     pub fn builder() -> crate::operation::describe_bundle_associations::builders::DescribeBundleAssociationsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeBundleAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBundleAssociationsOutputBuilder {
-    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::BundleResourceAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec::<crate::types::BundleResourceAssociation>>,
     _request_id: Option<String>,
 }
 impl DescribeBundleAssociationsOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeBundleAssociationsOutputBuilder {
     /// <p>List of information about the specified associations.</p>
     pub fn associations(mut self, input: crate::types::BundleResourceAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
-        v.push(input);
-        self.associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of information about the specified associations.</p>
-    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BundleResourceAssociation>>) -> Self {
-        self.associations = input;
-        self
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BundleResourceAssociation>>) -> Self {
+        self.associations = input; self
     }
     /// <p>List of information about the specified associations.</p>
-    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleResourceAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BundleResourceAssociation>> {
         &self.associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBundleAssociationsOutput`](crate::operation::describe_bundle_associations::DescribeBundleAssociationsOutput).
     pub fn build(self) -> crate::operation::describe_bundle_associations::DescribeBundleAssociationsOutput {
         crate::operation::describe_bundle_associations::DescribeBundleAssociationsOutput {
-            associations: self.associations,
+            associations: self.associations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

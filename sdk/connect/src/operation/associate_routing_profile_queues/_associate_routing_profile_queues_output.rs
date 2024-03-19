@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateRoutingProfileQueuesOutput {
+pub struct AssociateRoutingProfileQueuesOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AssociateRoutingProfileQueuesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateRoutingProfileQueuesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateRoutingProfileQueuesOutput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput).
     pub fn builder() -> crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesOutputBuilder {
@@ -25,14 +25,14 @@ pub struct AssociateRoutingProfileQueuesOutputBuilder {
 }
 impl AssociateRoutingProfileQueuesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateRoutingProfileQueuesOutput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput).
     pub fn build(self) -> crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput {
         crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput {
@@ -40,3 +40,4 @@ impl AssociateRoutingProfileQueuesOutputBuilder {
         }
     }
 }
+

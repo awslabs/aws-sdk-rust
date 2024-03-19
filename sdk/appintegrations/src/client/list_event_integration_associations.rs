@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEventIntegrationAssociations`](crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`event_integration_name(impl Into<String>)`](crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::event_integration_name) / [`set_event_integration_name(Option<String>)`](crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::set_event_integration_name):<br>required: **true**<br><p>The name of the event integration.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListEventIntegrationAssociationsOutput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListEventIntegrationAssociationsOutput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput) with field(s):
     ///   - [`event_integration_associations(Option<Vec::<EventIntegrationAssociation>>)`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput::event_integration_associations): <p>The event integration associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListEventIntegrationAssociationsError>`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsError)
-    pub fn list_event_integration_associations(
-        &self,
-    ) -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder {
-        crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListEventIntegrationAssociationsError>`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsError)
+    pub fn list_event_integration_associations(&self) -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder {
+                                crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

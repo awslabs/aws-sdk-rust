@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCustomMetricOutput {
+pub struct DescribeCustomMetricOutput  {
     /// <p>The name of the custom metric.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the custom metric.</p>
@@ -19,39 +19,39 @@ pub struct DescribeCustomMetricOutput {
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeCustomMetricOutput {
+impl  DescribeCustomMetricOutput  {
     /// <p>The name of the custom metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the custom metric.</p>
-    pub fn metric_arn(&self) -> ::std::option::Option<&str> {
+    pub fn metric_arn(&self) -> ::std::option::Option<& str> {
         self.metric_arn.as_deref()
     }
     /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
-    pub fn metric_type(&self) -> ::std::option::Option<&crate::types::CustomMetricType> {
+    pub fn metric_type(&self) -> ::std::option::Option<& crate::types::CustomMetricType> {
         self.metric_type.as_ref()
     }
     /// <p>Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The creation date of the custom metric in milliseconds since epoch.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The time the custom metric was last modified in milliseconds since epoch.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCustomMetricOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCustomMetricOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomMetricOutput`](crate::operation::describe_custom_metric::DescribeCustomMetricOutput).
     pub fn builder() -> crate::operation::describe_custom_metric::builders::DescribeCustomMetricOutputBuilder {
@@ -79,8 +79,7 @@ impl DescribeCustomMetricOutputBuilder {
     }
     /// <p>The name of the custom metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the custom metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl DescribeCustomMetricOutputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the custom metric.</p>
     pub fn set_metric_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_arn = input;
-        self
+        self.metric_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the custom metric.</p>
     pub fn get_metric_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl DescribeCustomMetricOutputBuilder {
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
     pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::CustomMetricType>) -> Self {
-        self.metric_type = input;
-        self
+        self.metric_type = input; self
     }
     /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
@@ -127,8 +124,7 @@ impl DescribeCustomMetricOutputBuilder {
     }
     /// <p>Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +137,7 @@ impl DescribeCustomMetricOutputBuilder {
     }
     /// <p>The creation date of the custom metric in milliseconds since epoch.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date of the custom metric in milliseconds since epoch.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,32 +150,38 @@ impl DescribeCustomMetricOutputBuilder {
     }
     /// <p>The time the custom metric was last modified in milliseconds since epoch.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The time the custom metric was last modified in milliseconds since epoch.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCustomMetricOutput`](crate::operation::describe_custom_metric::DescribeCustomMetricOutput).
     pub fn build(self) -> crate::operation::describe_custom_metric::DescribeCustomMetricOutput {
         crate::operation::describe_custom_metric::DescribeCustomMetricOutput {
-            metric_name: self.metric_name,
-            metric_arn: self.metric_arn,
-            metric_type: self.metric_type,
-            display_name: self.display_name,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            metric_name: self.metric_name
+            ,
+            metric_arn: self.metric_arn
+            ,
+            metric_type: self.metric_type
+            ,
+            display_name: self.display_name
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

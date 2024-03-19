@@ -3,28 +3,29 @@
 /// <p>Contains information about a computer account in a directory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Computer {
+pub struct Computer  {
     /// <p>The identifier of the computer.</p>
     pub computer_id: ::std::option::Option<::std::string::String>,
     /// <p>The computer name.</p>
     pub computer_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    pub computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub computer_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
-impl Computer {
+impl  Computer  {
     /// <p>The identifier of the computer.</p>
-    pub fn computer_id(&self) -> ::std::option::Option<&str> {
+    pub fn computer_id(&self) -> ::std::option::Option<& str> {
         self.computer_id.as_deref()
     }
     /// <p>The computer name.</p>
-    pub fn computer_name(&self) -> ::std::option::Option<&str> {
+    pub fn computer_name(&self) -> ::std::option::Option<& str> {
         self.computer_name.as_deref()
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.computer_attributes.is_none()`.
-    pub fn computer_attributes(&self) -> &[crate::types::Attribute] {
-        self.computer_attributes.as_deref().unwrap_or_default()
+    pub fn computer_attributes(&self) -> & [crate::types::Attribute] {
+        self.computer_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Computer {
@@ -40,7 +41,7 @@ impl Computer {
 pub struct ComputerBuilder {
     pub(crate) computer_id: ::std::option::Option<::std::string::String>,
     pub(crate) computer_name: ::std::option::Option<::std::string::String>,
-    pub(crate) computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) computer_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
 impl ComputerBuilder {
     /// <p>The identifier of the computer.</p>
@@ -50,8 +51,7 @@ impl ComputerBuilder {
     }
     /// <p>The identifier of the computer.</p>
     pub fn set_computer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.computer_id = input;
-        self
+        self.computer_id = input; self
     }
     /// <p>The identifier of the computer.</p>
     pub fn get_computer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl ComputerBuilder {
     }
     /// <p>The computer name.</p>
     pub fn set_computer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.computer_name = input;
-        self
+        self.computer_name = input; self
     }
     /// <p>The computer name.</p>
     pub fn get_computer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl ComputerBuilder {
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
     pub fn computer_attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.computer_attributes.unwrap_or_default();
-        v.push(input);
-        self.computer_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.computer_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    pub fn set_computer_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.computer_attributes = input;
-        self
+    pub fn set_computer_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.computer_attributes = input; self
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    pub fn get_computer_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_computer_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.computer_attributes
     }
     /// Consumes the builder and constructs a [`Computer`](crate::types::Computer).
     pub fn build(self) -> crate::types::Computer {
         crate::types::Computer {
-            computer_id: self.computer_id,
-            computer_name: self.computer_name,
-            computer_attributes: self.computer_attributes,
+            computer_id: self.computer_id
+            ,
+            computer_name: self.computer_name
+            ,
+            computer_attributes: self.computer_attributes
+            ,
         }
     }
 }
+

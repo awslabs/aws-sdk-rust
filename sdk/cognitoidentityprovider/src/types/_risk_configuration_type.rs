@@ -3,7 +3,7 @@
 /// <p>The risk configuration type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RiskConfigurationType {
+pub struct RiskConfigurationType  {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID.</p>
@@ -17,41 +17,38 @@ pub struct RiskConfigurationType {
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RiskConfigurationType {
+impl  RiskConfigurationType  {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The app client ID.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The compromised credentials risk configuration object, including the <code>EventFilter</code> and the <code>EventAction</code>.</p>
-    pub fn compromised_credentials_risk_configuration(&self) -> ::std::option::Option<&crate::types::CompromisedCredentialsRiskConfigurationType> {
+    pub fn compromised_credentials_risk_configuration(&self) -> ::std::option::Option<& crate::types::CompromisedCredentialsRiskConfigurationType> {
         self.compromised_credentials_risk_configuration.as_ref()
     }
     /// <p>The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and <code>Actions</code> to take if there is an account takeover.</p>
-    pub fn account_takeover_risk_configuration(&self) -> ::std::option::Option<&crate::types::AccountTakeoverRiskConfigurationType> {
+    pub fn account_takeover_risk_configuration(&self) -> ::std::option::Option<& crate::types::AccountTakeoverRiskConfigurationType> {
         self.account_takeover_risk_configuration.as_ref()
     }
     /// <p>The configuration to override the risk decision.</p>
-    pub fn risk_exception_configuration(&self) -> ::std::option::Option<&crate::types::RiskExceptionConfigurationType> {
+    pub fn risk_exception_configuration(&self) -> ::std::option::Option<& crate::types::RiskExceptionConfigurationType> {
         self.risk_exception_configuration.as_ref()
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for RiskConfigurationType {
+impl  ::std::fmt::Debug for RiskConfigurationType  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RiskConfigurationType");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "compromised_credentials_risk_configuration",
-            &self.compromised_credentials_risk_configuration,
-        );
+        formatter.field("compromised_credentials_risk_configuration", &self.compromised_credentials_risk_configuration);
         formatter.field("account_takeover_risk_configuration", &self.account_takeover_risk_configuration);
         formatter.field("risk_exception_configuration", &self.risk_exception_configuration);
         formatter.field("last_modified_date", &self.last_modified_date);
@@ -84,8 +81,7 @@ impl RiskConfigurationTypeBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +94,7 @@ impl RiskConfigurationTypeBuilder {
     }
     /// <p>The app client ID.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The app client ID.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,17 +106,11 @@ impl RiskConfigurationTypeBuilder {
         self
     }
     /// <p>The compromised credentials risk configuration object, including the <code>EventFilter</code> and the <code>EventAction</code>.</p>
-    pub fn set_compromised_credentials_risk_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
-    ) -> Self {
-        self.compromised_credentials_risk_configuration = input;
-        self
+    pub fn set_compromised_credentials_risk_configuration(mut self, input: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>) -> Self {
+        self.compromised_credentials_risk_configuration = input; self
     }
     /// <p>The compromised credentials risk configuration object, including the <code>EventFilter</code> and the <code>EventAction</code>.</p>
-    pub fn get_compromised_credentials_risk_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType> {
+    pub fn get_compromised_credentials_risk_configuration(&self) -> &::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType> {
         &self.compromised_credentials_risk_configuration
     }
     /// <p>The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and <code>Actions</code> to take if there is an account takeover.</p>
@@ -130,12 +119,8 @@ impl RiskConfigurationTypeBuilder {
         self
     }
     /// <p>The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and <code>Actions</code> to take if there is an account takeover.</p>
-    pub fn set_account_takeover_risk_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
-    ) -> Self {
-        self.account_takeover_risk_configuration = input;
-        self
+    pub fn set_account_takeover_risk_configuration(mut self, input: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>) -> Self {
+        self.account_takeover_risk_configuration = input; self
     }
     /// <p>The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and <code>Actions</code> to take if there is an account takeover.</p>
     pub fn get_account_takeover_risk_configuration(&self) -> &::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType> {
@@ -148,8 +133,7 @@ impl RiskConfigurationTypeBuilder {
     }
     /// <p>The configuration to override the risk decision.</p>
     pub fn set_risk_exception_configuration(mut self, input: ::std::option::Option<crate::types::RiskExceptionConfigurationType>) -> Self {
-        self.risk_exception_configuration = input;
-        self
+        self.risk_exception_configuration = input; self
     }
     /// <p>The configuration to override the risk decision.</p>
     pub fn get_risk_exception_configuration(&self) -> &::std::option::Option<crate::types::RiskExceptionConfigurationType> {
@@ -162,8 +146,7 @@ impl RiskConfigurationTypeBuilder {
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -172,12 +155,18 @@ impl RiskConfigurationTypeBuilder {
     /// Consumes the builder and constructs a [`RiskConfigurationType`](crate::types::RiskConfigurationType).
     pub fn build(self) -> crate::types::RiskConfigurationType {
         crate::types::RiskConfigurationType {
-            user_pool_id: self.user_pool_id,
-            client_id: self.client_id,
-            compromised_credentials_risk_configuration: self.compromised_credentials_risk_configuration,
-            account_takeover_risk_configuration: self.account_takeover_risk_configuration,
-            risk_exception_configuration: self.risk_exception_configuration,
-            last_modified_date: self.last_modified_date,
+            user_pool_id: self.user_pool_id
+            ,
+            client_id: self.client_id
+            ,
+            compromised_credentials_risk_configuration: self.compromised_credentials_risk_configuration
+            ,
+            account_takeover_risk_configuration: self.account_takeover_risk_configuration
+            ,
+            risk_exception_configuration: self.risk_exception_configuration
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
@@ -186,13 +175,11 @@ impl ::std::fmt::Debug for RiskConfigurationTypeBuilder {
         let mut formatter = f.debug_struct("RiskConfigurationTypeBuilder");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "compromised_credentials_risk_configuration",
-            &self.compromised_credentials_risk_configuration,
-        );
+        formatter.field("compromised_credentials_risk_configuration", &self.compromised_credentials_risk_configuration);
         formatter.field("account_takeover_risk_configuration", &self.account_takeover_risk_configuration);
         formatter.field("risk_exception_configuration", &self.risk_exception_configuration);
         formatter.field("last_modified_date", &self.last_modified_date);
         formatter.finish()
     }
 }
+

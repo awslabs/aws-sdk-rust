@@ -3,13 +3,13 @@
 /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ToolchainSource {
+pub struct ToolchainSource  {
     /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
     pub s3: ::std::option::Option<crate::types::S3Location>,
 }
-impl ToolchainSource {
+impl  ToolchainSource  {
     /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.s3.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl ToolchainSourceBuilder {
     }
     /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -44,6 +43,10 @@ impl ToolchainSourceBuilder {
     }
     /// Consumes the builder and constructs a [`ToolchainSource`](crate::types::ToolchainSource).
     pub fn build(self) -> crate::types::ToolchainSource {
-        crate::types::ToolchainSource { s3: self.s3 }
+        crate::types::ToolchainSource {
+            s3: self.s3
+            ,
+        }
     }
 }
+

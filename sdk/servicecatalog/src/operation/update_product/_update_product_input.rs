@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProductInput {
+pub struct UpdateProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -28,9 +28,9 @@ pub struct UpdateProductInput {
     /// <p>The updated support URL for the product.</p>
     pub support_url: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add to the product.</p>
-    pub add_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub add_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The tags to remove from the product.</p>
-    pub remove_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
     /// <li>
@@ -40,7 +40,7 @@ pub struct UpdateProductInput {
     /// </ul>
     pub source_connection: ::std::option::Option<crate::types::SourceConnection>,
 }
-impl UpdateProductInput {
+impl  UpdateProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -48,52 +48,54 @@ impl UpdateProductInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The updated product name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated owner of the product.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The updated description of the product.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated distributor of the product.</p>
-    pub fn distributor(&self) -> ::std::option::Option<&str> {
+    pub fn distributor(&self) -> ::std::option::Option<& str> {
         self.distributor.as_deref()
     }
     /// <p>The updated support description for the product.</p>
-    pub fn support_description(&self) -> ::std::option::Option<&str> {
+    pub fn support_description(&self) -> ::std::option::Option<& str> {
         self.support_description.as_deref()
     }
     /// <p>The updated support email for the product.</p>
-    pub fn support_email(&self) -> ::std::option::Option<&str> {
+    pub fn support_email(&self) -> ::std::option::Option<& str> {
         self.support_email.as_deref()
     }
     /// <p>The updated support URL for the product.</p>
-    pub fn support_url(&self) -> ::std::option::Option<&str> {
+    pub fn support_url(&self) -> ::std::option::Option<& str> {
         self.support_url.as_deref()
     }
     /// <p>The tags to add to the product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_tags.is_none()`.
-    pub fn add_tags(&self) -> &[crate::types::Tag] {
-        self.add_tags.as_deref().unwrap_or_default()
+    pub fn add_tags(&self) -> & [crate::types::Tag] {
+        self.add_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to remove from the product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_tags.is_none()`.
-    pub fn remove_tags(&self) -> &[::std::string::String] {
-        self.remove_tags.as_deref().unwrap_or_default()
+    pub fn remove_tags(&self) -> & [::std::string::String] {
+        self.remove_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
@@ -102,7 +104,7 @@ impl UpdateProductInput {
     /// <li>
     /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
-    pub fn source_connection(&self) -> ::std::option::Option<&crate::types::SourceConnection> {
+    pub fn source_connection(&self) -> ::std::option::Option<& crate::types::SourceConnection> {
         self.source_connection.as_ref()
     }
 }
@@ -126,8 +128,8 @@ pub struct UpdateProductInputBuilder {
     pub(crate) support_description: ::std::option::Option<::std::string::String>,
     pub(crate) support_email: ::std::option::Option<::std::string::String>,
     pub(crate) support_url: ::std::option::Option<::std::string::String>,
-    pub(crate) add_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) remove_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) remove_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) source_connection: ::std::option::Option<crate::types::SourceConnection>,
 }
 impl UpdateProductInputBuilder {
@@ -150,8 +152,7 @@ impl UpdateProductInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -171,8 +172,7 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +185,7 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The updated product name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The updated product name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +198,7 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The updated owner of the product.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The updated owner of the product.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +211,7 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The updated description of the product.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description of the product.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +224,7 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The updated distributor of the product.</p>
     pub fn set_distributor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distributor = input;
-        self
+        self.distributor = input; self
     }
     /// <p>The updated distributor of the product.</p>
     pub fn get_distributor(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +237,7 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The updated support description for the product.</p>
     pub fn set_support_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_description = input;
-        self
+        self.support_description = input; self
     }
     /// <p>The updated support description for the product.</p>
     pub fn get_support_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,8 +250,7 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The updated support email for the product.</p>
     pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_email = input;
-        self
+        self.support_email = input; self
     }
     /// <p>The updated support email for the product.</p>
     pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,8 +263,7 @@ impl UpdateProductInputBuilder {
     }
     /// <p>The updated support URL for the product.</p>
     pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_url = input;
-        self
+        self.support_url = input; self
     }
     /// <p>The updated support URL for the product.</p>
     pub fn get_support_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -283,17 +276,16 @@ impl UpdateProductInputBuilder {
     /// <p>The tags to add to the product.</p>
     pub fn add_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.add_tags.unwrap_or_default();
-        v.push(input);
-        self.add_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to add to the product.</p>
-    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.add_tags = input;
-        self
+    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.add_tags = input; self
     }
     /// <p>The tags to add to the product.</p>
-    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.add_tags
     }
     /// Appends an item to `remove_tags`.
@@ -303,17 +295,16 @@ impl UpdateProductInputBuilder {
     /// <p>The tags to remove from the product.</p>
     pub fn remove_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_tags.unwrap_or_default();
-        v.push(input.into());
-        self.remove_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to remove from the product.</p>
-    pub fn set_remove_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_tags = input;
-        self
+    pub fn set_remove_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_tags = input; self
     }
     /// <p>The tags to remove from the product.</p>
-    pub fn get_remove_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_tags
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
@@ -335,8 +326,7 @@ impl UpdateProductInputBuilder {
     /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
     pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnection>) -> Self {
-        self.source_connection = input;
-        self
+        self.source_connection = input; self
     }
     /// <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
@@ -349,22 +339,35 @@ impl UpdateProductInputBuilder {
         &self.source_connection
     }
     /// Consumes the builder and constructs a [`UpdateProductInput`](crate::operation::update_product::UpdateProductInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_product::UpdateProductInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_product::UpdateProductInput {
-            accept_language: self.accept_language,
-            id: self.id,
-            name: self.name,
-            owner: self.owner,
-            description: self.description,
-            distributor: self.distributor,
-            support_description: self.support_description,
-            support_email: self.support_email,
-            support_url: self.support_url,
-            add_tags: self.add_tags,
-            remove_tags: self.remove_tags,
-            source_connection: self.source_connection,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_product::UpdateProductInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_product::UpdateProductInput {
+                accept_language: self.accept_language
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                owner: self.owner
+                ,
+                description: self.description
+                ,
+                distributor: self.distributor
+                ,
+                support_description: self.support_description
+                ,
+                support_email: self.support_email
+                ,
+                support_url: self.support_url
+                ,
+                add_tags: self.add_tags
+                ,
+                remove_tags: self.remove_tags
+                ,
+                source_connection: self.source_connection
+                ,
+            }
+        )
     }
 }
+

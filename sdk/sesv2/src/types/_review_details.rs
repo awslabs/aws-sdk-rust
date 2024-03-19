@@ -3,7 +3,7 @@
 /// <p>An object that contains information about your account details review.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReviewDetails {
+pub struct ReviewDetails  {
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct ReviewDetails {
     /// <p>The associated support center case ID (if any).</p>
     pub case_id: ::std::option::Option<::std::string::String>,
 }
-impl ReviewDetails {
+impl  ReviewDetails  {
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -31,11 +31,11 @@ impl ReviewDetails {
     /// <li>
     /// <p><code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReviewStatus> {
         self.status.as_ref()
     }
     /// <p>The associated support center case ID (if any).</p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<& str> {
         self.case_id.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl ReviewDetailsBuilder {
     /// <p><code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
@@ -105,8 +104,7 @@ impl ReviewDetailsBuilder {
     }
     /// <p>The associated support center case ID (if any).</p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>The associated support center case ID (if any).</p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,11 @@ impl ReviewDetailsBuilder {
     /// Consumes the builder and constructs a [`ReviewDetails`](crate::types::ReviewDetails).
     pub fn build(self) -> crate::types::ReviewDetails {
         crate::types::ReviewDetails {
-            status: self.status,
-            case_id: self.case_id,
+            status: self.status
+            ,
+            case_id: self.case_id
+            ,
         }
     }
 }
+

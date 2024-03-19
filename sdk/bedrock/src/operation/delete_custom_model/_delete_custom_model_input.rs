@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomModelInput {
+pub struct DeleteCustomModelInput  {
     /// <p>Name of the model to delete.</p>
     pub model_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCustomModelInput {
+impl  DeleteCustomModelInput  {
     /// <p>Name of the model to delete.</p>
-    pub fn model_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn model_identifier(&self) -> ::std::option::Option<& str> {
         self.model_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteCustomModelInputBuilder {
     }
     /// <p>Name of the model to delete.</p>
     pub fn set_model_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_identifier = input;
-        self
+        self.model_identifier = input; self
     }
     /// <p>Name of the model to delete.</p>
     pub fn get_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_identifier
     }
     /// Consumes the builder and constructs a [`DeleteCustomModelInput`](crate::operation::delete_custom_model::DeleteCustomModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_model::DeleteCustomModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_custom_model::DeleteCustomModelInput {
-            model_identifier: self.model_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_model::DeleteCustomModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_custom_model::DeleteCustomModelInput {
+                model_identifier: self.model_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a conversion task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversionTask {
+pub struct ConversionTask  {
     /// <p>The ID of the conversion task.</p>
     pub conversion_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.</p>
@@ -17,38 +17,39 @@ pub struct ConversionTask {
     /// <p>The status message related to the conversion task.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the task.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ConversionTask {
+impl  ConversionTask  {
     /// <p>The ID of the conversion task.</p>
-    pub fn conversion_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversion_task_id(&self) -> ::std::option::Option<& str> {
         self.conversion_task_id.as_deref()
     }
     /// <p>The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&str> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& str> {
         self.expiration_time.as_deref()
     }
     /// <p>If the task is for importing an instance, this contains information about the import instance task.</p>
-    pub fn import_instance(&self) -> ::std::option::Option<&crate::types::ImportInstanceTaskDetails> {
+    pub fn import_instance(&self) -> ::std::option::Option<& crate::types::ImportInstanceTaskDetails> {
         self.import_instance.as_ref()
     }
     /// <p>If the task is for importing a volume, this contains information about the import volume task.</p>
-    pub fn import_volume(&self) -> ::std::option::Option<&crate::types::ImportVolumeTaskDetails> {
+    pub fn import_volume(&self) -> ::std::option::Option<& crate::types::ImportVolumeTaskDetails> {
         self.import_volume.as_ref()
     }
     /// <p>The state of the conversion task.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ConversionTaskState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ConversionTaskState> {
         self.state.as_ref()
     }
     /// <p>The status message related to the conversion task.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Any tags assigned to the task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConversionTask {
@@ -68,7 +69,7 @@ pub struct ConversionTaskBuilder {
     pub(crate) import_volume: ::std::option::Option<crate::types::ImportVolumeTaskDetails>,
     pub(crate) state: ::std::option::Option<crate::types::ConversionTaskState>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ConversionTaskBuilder {
     /// <p>The ID of the conversion task.</p>
@@ -78,8 +79,7 @@ impl ConversionTaskBuilder {
     }
     /// <p>The ID of the conversion task.</p>
     pub fn set_conversion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversion_task_id = input;
-        self
+        self.conversion_task_id = input; self
     }
     /// <p>The ID of the conversion task.</p>
     pub fn get_conversion_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl ConversionTaskBuilder {
     }
     /// <p>The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expiration_time = input;
-        self
+        self.expiration_time = input; self
     }
     /// <p>The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl ConversionTaskBuilder {
     }
     /// <p>If the task is for importing an instance, this contains information about the import instance task.</p>
     pub fn set_import_instance(mut self, input: ::std::option::Option<crate::types::ImportInstanceTaskDetails>) -> Self {
-        self.import_instance = input;
-        self
+        self.import_instance = input; self
     }
     /// <p>If the task is for importing an instance, this contains information about the import instance task.</p>
     pub fn get_import_instance(&self) -> &::std::option::Option<crate::types::ImportInstanceTaskDetails> {
@@ -120,8 +118,7 @@ impl ConversionTaskBuilder {
     }
     /// <p>If the task is for importing a volume, this contains information about the import volume task.</p>
     pub fn set_import_volume(mut self, input: ::std::option::Option<crate::types::ImportVolumeTaskDetails>) -> Self {
-        self.import_volume = input;
-        self
+        self.import_volume = input; self
     }
     /// <p>If the task is for importing a volume, this contains information about the import volume task.</p>
     pub fn get_import_volume(&self) -> &::std::option::Option<crate::types::ImportVolumeTaskDetails> {
@@ -134,8 +131,7 @@ impl ConversionTaskBuilder {
     }
     /// <p>The state of the conversion task.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConversionTaskState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the conversion task.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ConversionTaskState> {
@@ -148,8 +144,7 @@ impl ConversionTaskBuilder {
     }
     /// <p>The status message related to the conversion task.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message related to the conversion task.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,29 +157,36 @@ impl ConversionTaskBuilder {
     /// <p>Any tags assigned to the task.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the task.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the task.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ConversionTask`](crate::types::ConversionTask).
     pub fn build(self) -> crate::types::ConversionTask {
         crate::types::ConversionTask {
-            conversion_task_id: self.conversion_task_id,
-            expiration_time: self.expiration_time,
-            import_instance: self.import_instance,
-            import_volume: self.import_volume,
-            state: self.state,
-            status_message: self.status_message,
-            tags: self.tags,
+            conversion_task_id: self.conversion_task_id
+            ,
+            expiration_time: self.expiration_time
+            ,
+            import_instance: self.import_instance
+            ,
+            import_volume: self.import_volume
+            ,
+            state: self.state
+            ,
+            status_message: self.status_message
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

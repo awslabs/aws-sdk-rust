@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataSetOutput {
+pub struct CreateDataSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -17,25 +17,25 @@ pub struct CreateDataSetOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl CreateDataSetOutput {
+impl  CreateDataSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-    pub fn ingestion_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ingestion_arn(&self) -> ::std::option::Option<& str> {
         self.ingestion_arn.as_deref()
     }
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
-    pub fn ingestion_id(&self) -> ::std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> ::std::option::Option<& str> {
         self.ingestion_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -44,10 +44,10 @@ impl CreateDataSetOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDataSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDataSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetOutput`](crate::operation::create_data_set::CreateDataSetOutput).
     pub fn builder() -> crate::operation::create_data_set::builders::CreateDataSetOutputBuilder {
@@ -75,8 +75,7 @@ impl CreateDataSetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl CreateDataSetOutputBuilder {
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl CreateDataSetOutputBuilder {
     }
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub fn set_ingestion_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingestion_arn = input;
-        self
+        self.ingestion_arn = input; self
     }
     /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub fn get_ingestion_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl CreateDataSetOutputBuilder {
     }
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub fn set_ingestion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingestion_id = input;
-        self
+        self.ingestion_id = input; self
     }
     /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub fn get_ingestion_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl CreateDataSetOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,39 @@ impl CreateDataSetOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDataSetOutput`](crate::operation::create_data_set::CreateDataSetOutput).
     pub fn build(self) -> crate::operation::create_data_set::CreateDataSetOutput {
         crate::operation::create_data_set::CreateDataSetOutput {
-            arn: self.arn,
-            data_set_id: self.data_set_id,
-            ingestion_arn: self.ingestion_arn,
-            ingestion_id: self.ingestion_id,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            arn: self.arn
+            ,
+            data_set_id: self.data_set_id
+            ,
+            ingestion_arn: self.ingestion_arn
+            ,
+            ingestion_id: self.ingestion_id
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,32 +3,33 @@
 /// <p>DescribeTapesOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTapesOutput {
+pub struct DescribeTapesOutput  {
     /// <p>An array of virtual tape descriptions.</p>
-    pub tapes: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>,
+    pub tapes: ::std::option::Option<::std::vec::Vec::<crate::types::Tape>>,
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTapesOutput {
+impl  DescribeTapesOutput  {
     /// <p>An array of virtual tape descriptions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tapes.is_none()`.
-    pub fn tapes(&self) -> &[crate::types::Tape] {
-        self.tapes.as_deref().unwrap_or_default()
+    pub fn tapes(&self) -> & [crate::types::Tape] {
+        self.tapes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTapesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTapesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTapesOutput`](crate::operation::describe_tapes::DescribeTapesOutput).
     pub fn builder() -> crate::operation::describe_tapes::builders::DescribeTapesOutputBuilder {
@@ -40,7 +41,7 @@ impl DescribeTapesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTapesOutputBuilder {
-    pub(crate) tapes: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>,
+    pub(crate) tapes: ::std::option::Option<::std::vec::Vec::<crate::types::Tape>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +53,16 @@ impl DescribeTapesOutputBuilder {
     /// <p>An array of virtual tape descriptions.</p>
     pub fn tapes(mut self, input: crate::types::Tape) -> Self {
         let mut v = self.tapes.unwrap_or_default();
-        v.push(input);
-        self.tapes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tapes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of virtual tape descriptions.</p>
-    pub fn set_tapes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>) -> Self {
-        self.tapes = input;
-        self
+    pub fn set_tapes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tape>>) -> Self {
+        self.tapes = input; self
     }
     /// <p>An array of virtual tape descriptions.</p>
-    pub fn get_tapes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tape>> {
+    pub fn get_tapes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tape>> {
         &self.tapes
     }
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
@@ -74,8 +74,7 @@ impl DescribeTapesOutputBuilder {
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
@@ -83,20 +82,23 @@ impl DescribeTapesOutputBuilder {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTapesOutput`](crate::operation::describe_tapes::DescribeTapesOutput).
     pub fn build(self) -> crate::operation::describe_tapes::DescribeTapesOutput {
         crate::operation::describe_tapes::DescribeTapesOutput {
-            tapes: self.tapes,
-            marker: self.marker,
+            tapes: self.tapes
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBotVersionReplicasInput {
+pub struct ListBotVersionReplicasInput  {
     /// <p>The request for the unique ID in the list of replicated bots.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The request for the region used in the list of replicated bots.</p>
@@ -14,13 +14,13 @@ pub struct ListBotVersionReplicasInput {
     /// <p>The requested sort category for the list of replicated bots.</p>
     pub sort_by: ::std::option::Option<crate::types::BotVersionReplicaSortBy>,
 }
-impl ListBotVersionReplicasInput {
+impl  ListBotVersionReplicasInput  {
     /// <p>The request for the unique ID in the list of replicated bots.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The request for the region used in the list of replicated bots.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
     /// <p>The maximum results given in the list of replicated bots.</p>
@@ -28,11 +28,11 @@ impl ListBotVersionReplicasInput {
         self.max_results
     }
     /// <p>The next token given in the list of replicated bots.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The requested sort category for the list of replicated bots.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::BotVersionReplicaSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::BotVersionReplicaSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl ListBotVersionReplicasInputBuilder {
     }
     /// <p>The request for the unique ID in the list of replicated bots.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The request for the unique ID in the list of replicated bots.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListBotVersionReplicasInputBuilder {
     }
     /// <p>The request for the region used in the list of replicated bots.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The request for the region used in the list of replicated bots.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ListBotVersionReplicasInputBuilder {
     }
     /// <p>The maximum results given in the list of replicated bots.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum results given in the list of replicated bots.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -105,8 +102,7 @@ impl ListBotVersionReplicasInputBuilder {
     }
     /// <p>The next token given in the list of replicated bots.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next token given in the list of replicated bots.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,26 +115,28 @@ impl ListBotVersionReplicasInputBuilder {
     }
     /// <p>The requested sort category for the list of replicated bots.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::BotVersionReplicaSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The requested sort category for the list of replicated bots.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::BotVersionReplicaSortBy> {
         &self.sort_by
     }
     /// Consumes the builder and constructs a [`ListBotVersionReplicasInput`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bot_version_replicas::ListBotVersionReplicasInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_bot_version_replicas::ListBotVersionReplicasInput {
-            bot_id: self.bot_id,
-            replica_region: self.replica_region,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            sort_by: self.sort_by,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bot_version_replicas::ListBotVersionReplicasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_bot_version_replicas::ListBotVersionReplicasInput {
+                bot_id: self.bot_id
+                ,
+                replica_region: self.replica_region
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+            }
+        )
     }
 }
+

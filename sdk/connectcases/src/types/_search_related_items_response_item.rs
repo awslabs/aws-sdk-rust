@@ -3,7 +3,7 @@
 /// <p>A list of items that represent RelatedItems.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchRelatedItemsResponseItem {
+pub struct SearchRelatedItemsResponseItem  {
     /// <p>Unique identifier of a related item.</p>
     pub related_item_id: ::std::string::String,
     /// <p>Type of a related item.</p>
@@ -13,34 +13,33 @@ pub struct SearchRelatedItemsResponseItem {
     /// <p>Represents the content of a particular type of related item.</p>
     pub content: ::std::option::Option<crate::types::RelatedItemContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>Represents the creator of the related item.</p>
     pub performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
-impl SearchRelatedItemsResponseItem {
+impl  SearchRelatedItemsResponseItem  {
     /// <p>Unique identifier of a related item.</p>
-    pub fn related_item_id(&self) -> &str {
-        use std::ops::Deref;
-        self.related_item_id.deref()
+    pub fn related_item_id(&self) -> & str {
+        use std::ops::Deref; self.related_item_id.deref()
     }
     /// <p>Type of a related item.</p>
-    pub fn r#type(&self) -> &crate::types::RelatedItemType {
+    pub fn r#type(&self) -> & crate::types::RelatedItemType {
         &self.r#type
     }
     /// <p>Time at which a related item was associated with a case.</p>
-    pub fn association_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn association_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.association_time
     }
     /// <p>Represents the content of a particular type of related item.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::RelatedItemContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::RelatedItemContent> {
         self.content.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
     /// <p>Represents the creator of the related item.</p>
-    pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
+    pub fn performed_by(&self) -> ::std::option::Option<& crate::types::UserUnion> {
         self.performed_by.as_ref()
     }
 }
@@ -59,7 +58,7 @@ pub struct SearchRelatedItemsResponseItemBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RelatedItemType>,
     pub(crate) association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) content: ::std::option::Option<crate::types::RelatedItemContent>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     pub(crate) performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl SearchRelatedItemsResponseItemBuilder {
@@ -71,8 +70,7 @@ impl SearchRelatedItemsResponseItemBuilder {
     }
     /// <p>Unique identifier of a related item.</p>
     pub fn set_related_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.related_item_id = input;
-        self
+        self.related_item_id = input; self
     }
     /// <p>Unique identifier of a related item.</p>
     pub fn get_related_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl SearchRelatedItemsResponseItemBuilder {
     }
     /// <p>Type of a related item.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RelatedItemType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of a related item.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RelatedItemType> {
@@ -101,8 +98,7 @@ impl SearchRelatedItemsResponseItemBuilder {
     }
     /// <p>Time at which a related item was associated with a case.</p>
     pub fn set_association_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.association_time = input;
-        self
+        self.association_time = input; self
     }
     /// <p>Time at which a related item was associated with a case.</p>
     pub fn get_association_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -116,8 +112,7 @@ impl SearchRelatedItemsResponseItemBuilder {
     }
     /// <p>Represents the content of a particular type of related item.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::RelatedItemContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Represents the content of a particular type of related item.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::RelatedItemContent> {
@@ -130,22 +125,16 @@ impl SearchRelatedItemsResponseItemBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     /// <p>Represents the creator of the related item.</p>
@@ -155,8 +144,7 @@ impl SearchRelatedItemsResponseItemBuilder {
     }
     /// <p>Represents the creator of the related item.</p>
     pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
-        self.performed_by = input;
-        self
+        self.performed_by = input; self
     }
     /// <p>Represents the creator of the related item.</p>
     pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
@@ -168,28 +156,31 @@ impl SearchRelatedItemsResponseItemBuilder {
     /// - [`r#type`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::r#type)
     /// - [`association_time`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::association_time)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchRelatedItemsResponseItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchRelatedItemsResponseItem {
-            related_item_id: self.related_item_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "related_item_id",
-                    "related_item_id was not specified but it is required when building SearchRelatedItemsResponseItem",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SearchRelatedItemsResponseItem",
-                )
-            })?,
-            association_time: self.association_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "association_time",
-                    "association_time was not specified but it is required when building SearchRelatedItemsResponseItem",
-                )
-            })?,
-            content: self.content,
-            tags: self.tags,
-            performed_by: self.performed_by,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchRelatedItemsResponseItem {
+                related_item_id: self.related_item_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("related_item_id", "related_item_id was not specified but it is required when building SearchRelatedItemsResponseItem")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SearchRelatedItemsResponseItem")
+                    )?
+                ,
+                association_time: self.association_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("association_time", "association_time was not specified but it is required when building SearchRelatedItemsResponseItem")
+                    )?
+                ,
+                content: self.content
+                ,
+                tags: self.tags
+                ,
+                performed_by: self.performed_by
+                ,
+            }
+        )
     }
 }
+

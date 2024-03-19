@@ -3,7 +3,7 @@
 /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CognitoOptions {
+pub struct CognitoOptions  {
     /// <p>Specifies the option to enable Cognito for Kibana authentication.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
@@ -13,21 +13,21 @@ pub struct CognitoOptions {
     /// <p>Specifies the role ARN that provides Elasticsearch permissions for accessing Cognito resources.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CognitoOptions {
+impl  CognitoOptions  {
     /// <p>Specifies the option to enable Cognito for Kibana authentication.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>Specifies the role ARN that provides Elasticsearch permissions for accessing Cognito resources.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CognitoOptionsBuilder {
     }
     /// <p>Specifies the option to enable Cognito for Kibana authentication.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies the option to enable Cognito for Kibana authentication.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl CognitoOptionsBuilder {
     }
     /// <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CognitoOptionsBuilder {
     }
     /// <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl CognitoOptionsBuilder {
     }
     /// <p>Specifies the role ARN that provides Elasticsearch permissions for accessing Cognito resources.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>Specifies the role ARN that provides Elasticsearch permissions for accessing Cognito resources.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl CognitoOptionsBuilder {
     /// Consumes the builder and constructs a [`CognitoOptions`](crate::types::CognitoOptions).
     pub fn build(self) -> crate::types::CognitoOptions {
         crate::types::CognitoOptions {
-            enabled: self.enabled,
-            user_pool_id: self.user_pool_id,
-            identity_pool_id: self.identity_pool_id,
-            role_arn: self.role_arn,
+            enabled: self.enabled
+            ,
+            user_pool_id: self.user_pool_id
+            ,
+            identity_pool_id: self.identity_pool_id
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

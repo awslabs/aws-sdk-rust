@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePlatformVersionInput {
+pub struct DescribePlatformVersionInput  {
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribePlatformVersionInput {
+impl  DescribePlatformVersionInput  {
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
 }
@@ -33,22 +33,20 @@ impl DescribePlatformVersionInputBuilder {
     }
     /// <p>The ARN of the platform version.</p>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_arn = input;
-        self
+        self.platform_arn = input; self
     }
     /// <p>The ARN of the platform version.</p>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_arn
     }
     /// Consumes the builder and constructs a [`DescribePlatformVersionInput`](crate::operation::describe_platform_version::DescribePlatformVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_platform_version::DescribePlatformVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_platform_version::DescribePlatformVersionInput {
-            platform_arn: self.platform_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_platform_version::DescribePlatformVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_platform_version::DescribePlatformVersionInput {
+                platform_arn: self.platform_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Specifies the configuration to use for the brokers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationInfo {
+pub struct ConfigurationInfo  {
     /// <p>ARN of the configuration to use.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the configuration to use.</p>
     pub revision: ::std::option::Option<i64>,
 }
-impl ConfigurationInfo {
+impl  ConfigurationInfo  {
     /// <p>ARN of the configuration to use.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The revision of the configuration to use.</p>
@@ -42,8 +42,7 @@ impl ConfigurationInfoBuilder {
     }
     /// <p>ARN of the configuration to use.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the configuration to use.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl ConfigurationInfoBuilder {
     }
     /// <p>The revision of the configuration to use.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of the configuration to use.</p>
     pub fn get_revision(&self) -> &::std::option::Option<i64> {
@@ -67,8 +65,11 @@ impl ConfigurationInfoBuilder {
     /// Consumes the builder and constructs a [`ConfigurationInfo`](crate::types::ConfigurationInfo).
     pub fn build(self) -> crate::types::ConfigurationInfo {
         crate::types::ConfigurationInfo {
-            arn: self.arn,
-            revision: self.revision,
+            arn: self.arn
+            ,
+            revision: self.revision
+            ,
         }
     }
 }
+

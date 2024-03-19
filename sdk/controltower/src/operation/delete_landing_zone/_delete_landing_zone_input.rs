@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLandingZoneInput {
+pub struct DeleteLandingZoneInput  {
     /// <p>The unique identifier of the landing zone.</p>
     pub landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLandingZoneInput {
+impl  DeleteLandingZoneInput  {
     /// <p>The unique identifier of the landing zone.</p>
-    pub fn landing_zone_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn landing_zone_identifier(&self) -> ::std::option::Option<& str> {
         self.landing_zone_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteLandingZoneInputBuilder {
     }
     /// <p>The unique identifier of the landing zone.</p>
     pub fn set_landing_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.landing_zone_identifier = input;
-        self
+        self.landing_zone_identifier = input; self
     }
     /// <p>The unique identifier of the landing zone.</p>
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.landing_zone_identifier
     }
     /// Consumes the builder and constructs a [`DeleteLandingZoneInput`](crate::operation::delete_landing_zone::DeleteLandingZoneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_landing_zone::DeleteLandingZoneInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_landing_zone::DeleteLandingZoneInput {
-            landing_zone_identifier: self.landing_zone_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_landing_zone::DeleteLandingZoneInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_landing_zone::DeleteLandingZoneInput {
+                landing_zone_identifier: self.landing_zone_identifier
+                ,
+            }
+        )
     }
 }
+

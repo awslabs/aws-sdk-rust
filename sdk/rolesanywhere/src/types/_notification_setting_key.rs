@@ -3,19 +3,19 @@
 /// <p>A notification setting key to reset. A notification setting key includes the event and the channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationSettingKey {
+pub struct NotificationSettingKey  {
     /// <p>The notification setting event to reset.</p>
     pub event: crate::types::NotificationEvent,
     /// <p>The specified channel of notification.</p>
     pub channel: ::std::option::Option<crate::types::NotificationChannel>,
 }
-impl NotificationSettingKey {
+impl  NotificationSettingKey  {
     /// <p>The notification setting event to reset.</p>
-    pub fn event(&self) -> &crate::types::NotificationEvent {
+    pub fn event(&self) -> & crate::types::NotificationEvent {
         &self.event
     }
     /// <p>The specified channel of notification.</p>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn channel(&self) -> ::std::option::Option<& crate::types::NotificationChannel> {
         self.channel.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl NotificationSettingKeyBuilder {
     }
     /// <p>The notification setting event to reset.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::NotificationEvent>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>The notification setting event to reset.</p>
     pub fn get_event(&self) -> &::std::option::Option<crate::types::NotificationEvent> {
@@ -56,8 +55,7 @@ impl NotificationSettingKeyBuilder {
     }
     /// <p>The specified channel of notification.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>The specified channel of notification.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
@@ -67,14 +65,17 @@ impl NotificationSettingKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event`](crate::types::builders::NotificationSettingKeyBuilder::event)
     pub fn build(self) -> ::std::result::Result<crate::types::NotificationSettingKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NotificationSettingKey {
-            event: self.event.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event",
-                    "event was not specified but it is required when building NotificationSettingKey",
-                )
-            })?,
-            channel: self.channel,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NotificationSettingKey {
+                event: self.event
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event", "event was not specified but it is required when building NotificationSettingKey")
+                    )?
+                ,
+                channel: self.channel
+                ,
+            }
+        )
     }
 }
+

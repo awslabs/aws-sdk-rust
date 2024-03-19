@@ -3,7 +3,7 @@
 /// <p>Describes a bundle task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BundleTask {
+pub struct BundleTask  {
     /// <p>The ID of the bundle task.</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>If the task fails, a description of the error.</p>
@@ -21,37 +21,37 @@ pub struct BundleTask {
     /// <p>The time of the most recent update for the task.</p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl BundleTask {
+impl  BundleTask  {
     /// <p>The ID of the bundle task.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>If the task fails, a description of the error.</p>
-    pub fn bundle_task_error(&self) -> ::std::option::Option<&crate::types::BundleTaskError> {
+    pub fn bundle_task_error(&self) -> ::std::option::Option<& crate::types::BundleTaskError> {
         self.bundle_task_error.as_ref()
     }
     /// <p>The ID of the instance associated with this bundle task.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The level of task completion, as a percent (for example, 20%).</p>
-    pub fn progress(&self) -> ::std::option::Option<&str> {
+    pub fn progress(&self) -> ::std::option::Option<& str> {
         self.progress.as_deref()
     }
     /// <p>The time this task started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The state of the task.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::BundleTaskState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::BundleTaskState> {
         self.state.as_ref()
     }
     /// <p>The Amazon S3 storage locations.</p>
-    pub fn storage(&self) -> ::std::option::Option<&crate::types::Storage> {
+    pub fn storage(&self) -> ::std::option::Option<& crate::types::Storage> {
         self.storage.as_ref()
     }
     /// <p>The time of the most recent update for the task.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl BundleTaskBuilder {
     }
     /// <p>The ID of the bundle task.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The ID of the bundle task.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl BundleTaskBuilder {
     }
     /// <p>If the task fails, a description of the error.</p>
     pub fn set_bundle_task_error(mut self, input: ::std::option::Option<crate::types::BundleTaskError>) -> Self {
-        self.bundle_task_error = input;
-        self
+        self.bundle_task_error = input; self
     }
     /// <p>If the task fails, a description of the error.</p>
     pub fn get_bundle_task_error(&self) -> &::std::option::Option<crate::types::BundleTaskError> {
@@ -111,8 +109,7 @@ impl BundleTaskBuilder {
     }
     /// <p>The ID of the instance associated with this bundle task.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance associated with this bundle task.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl BundleTaskBuilder {
     }
     /// <p>The level of task completion, as a percent (for example, 20%).</p>
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>The level of task completion, as a percent (for example, 20%).</p>
     pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl BundleTaskBuilder {
     }
     /// <p>The time this task started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time this task started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -153,8 +148,7 @@ impl BundleTaskBuilder {
     }
     /// <p>The state of the task.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::BundleTaskState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the task.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::BundleTaskState> {
@@ -167,8 +161,7 @@ impl BundleTaskBuilder {
     }
     /// <p>The Amazon S3 storage locations.</p>
     pub fn set_storage(mut self, input: ::std::option::Option<crate::types::Storage>) -> Self {
-        self.storage = input;
-        self
+        self.storage = input; self
     }
     /// <p>The Amazon S3 storage locations.</p>
     pub fn get_storage(&self) -> &::std::option::Option<crate::types::Storage> {
@@ -181,8 +174,7 @@ impl BundleTaskBuilder {
     }
     /// <p>The time of the most recent update for the task.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The time of the most recent update for the task.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,14 +183,23 @@ impl BundleTaskBuilder {
     /// Consumes the builder and constructs a [`BundleTask`](crate::types::BundleTask).
     pub fn build(self) -> crate::types::BundleTask {
         crate::types::BundleTask {
-            bundle_id: self.bundle_id,
-            bundle_task_error: self.bundle_task_error,
-            instance_id: self.instance_id,
-            progress: self.progress,
-            start_time: self.start_time,
-            state: self.state,
-            storage: self.storage,
-            update_time: self.update_time,
+            bundle_id: self.bundle_id
+            ,
+            bundle_task_error: self.bundle_task_error
+            ,
+            instance_id: self.instance_id
+            ,
+            progress: self.progress
+            ,
+            start_time: self.start_time
+            ,
+            state: self.state
+            ,
+            storage: self.storage
+            ,
+            update_time: self.update_time
+            ,
         }
     }
 }
+

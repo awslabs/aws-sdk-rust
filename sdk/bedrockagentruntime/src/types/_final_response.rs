@@ -3,17 +3,17 @@
 /// <p>Contains details about the response to the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct FinalResponse {
+pub struct FinalResponse  {
     /// <p>The text in the response to the user.</p>
     pub text: ::std::option::Option<::std::string::String>,
 }
-impl FinalResponse {
+impl  FinalResponse  {
     /// <p>The text in the response to the user.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
-impl ::std::fmt::Debug for FinalResponse {
+impl  ::std::fmt::Debug for FinalResponse  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FinalResponse");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl FinalResponseBuilder {
     }
     /// <p>The text in the response to the user.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text in the response to the user.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,7 +49,10 @@ impl FinalResponseBuilder {
     }
     /// Consumes the builder and constructs a [`FinalResponse`](crate::types::FinalResponse).
     pub fn build(self) -> crate::types::FinalResponse {
-        crate::types::FinalResponse { text: self.text }
+        crate::types::FinalResponse {
+            text: self.text
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for FinalResponseBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for FinalResponseBuilder {
         formatter.finish()
     }
 }
+

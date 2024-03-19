@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetExportJobInput {
+pub struct DescribeDatasetExportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
     pub dataset_export_job_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDatasetExportJobInput {
+impl  DescribeDatasetExportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
-    pub fn dataset_export_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_export_job_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_export_job_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeDatasetExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
     pub fn set_dataset_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_export_job_arn = input;
-        self
+        self.dataset_export_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
     pub fn get_dataset_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_export_job_arn
     }
     /// Consumes the builder and constructs a [`DescribeDatasetExportJobInput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput {
-            dataset_export_job_arn: self.dataset_export_job_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput {
+                dataset_export_job_arn: self.dataset_export_job_arn
+                ,
+            }
+        )
     }
 }
+

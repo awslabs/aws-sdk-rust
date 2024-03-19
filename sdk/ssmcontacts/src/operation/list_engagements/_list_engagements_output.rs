@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEngagementsOutput {
+pub struct ListEngagementsOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub engagements: ::std::vec::Vec<crate::types::Engagement>,
+    pub engagements: ::std::vec::Vec::<crate::types::Engagement>,
     _request_id: Option<String>,
 }
-impl ListEngagementsOutput {
+impl  ListEngagementsOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub fn engagements(&self) -> &[crate::types::Engagement] {
-        use std::ops::Deref;
-        self.engagements.deref()
+    pub fn engagements(&self) -> & [crate::types::Engagement] {
+        use std::ops::Deref; self.engagements.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEngagementsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEngagementsOutput {
     /// Creates a new builder-style object to manufacture [`ListEngagementsOutput`](crate::operation::list_engagements::ListEngagementsOutput).
     pub fn builder() -> crate::operation::list_engagements::builders::ListEngagementsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListEngagementsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEngagementsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) engagements: ::std::option::Option<::std::vec::Vec<crate::types::Engagement>>,
+    pub(crate) engagements: ::std::option::Option<::std::vec::Vec::<crate::types::Engagement>>,
     _request_id: Option<String>,
 }
 impl ListEngagementsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListEngagementsOutputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListEngagementsOutputBuilder {
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
     pub fn engagements(mut self, input: crate::types::Engagement) -> Self {
         let mut v = self.engagements.unwrap_or_default();
-        v.push(input);
-        self.engagements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.engagements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Engagement>>) -> Self {
-        self.engagements = input;
-        self
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Engagement>>) -> Self {
+        self.engagements = input; self
     }
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Engagement>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Engagement>> {
         &self.engagements
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEngagementsOutput`](crate::operation::list_engagements::ListEngagementsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`engagements`](crate::operation::list_engagements::builders::ListEngagementsOutputBuilder::engagements)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_engagements::ListEngagementsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_engagements::ListEngagementsOutput {
-            next_token: self.next_token,
-            engagements: self.engagements.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engagements",
-                    "engagements was not specified but it is required when building ListEngagementsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_engagements::ListEngagementsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_engagements::ListEngagementsOutput {
+                next_token: self.next_token
+                ,
+                engagements: self.engagements
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engagements", "engagements was not specified but it is required when building ListEngagementsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

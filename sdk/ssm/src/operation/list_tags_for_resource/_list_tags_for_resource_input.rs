@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>Returns a list of tags for a specific resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     /// <p>The resource ID for which you want to see a list of tags.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl ListTagsForResourceInput {
+impl  ListTagsForResourceInput  {
     /// <p>Returns a list of tags for a specific resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceTypeForTagging> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceTypeForTagging> {
         self.resource_type.as_ref()
     }
     /// <p>The resource ID for which you want to see a list of tags.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>Returns a list of tags for a specific resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Returns a list of tags for a specific resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeForTagging> {
@@ -56,21 +55,22 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>The resource ID for which you want to see a list of tags.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID for which you want to see a list of tags.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceInput {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_tags_for_resource::ListTagsForResourceInput {
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

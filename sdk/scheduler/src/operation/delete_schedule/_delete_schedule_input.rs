@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteScheduleInput {
+pub struct DeleteScheduleInput  {
     /// <p>The name of the schedule to delete.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schedule group associated with this schedule. If you omit this, the default schedule group is used.</p>
@@ -10,17 +10,17 @@ pub struct DeleteScheduleInput {
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteScheduleInput {
+impl  DeleteScheduleInput  {
     /// <p>The name of the schedule to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the schedule group associated with this schedule. If you omit this, the default schedule group is used.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteScheduleInputBuilder {
     }
     /// <p>The name of the schedule to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the schedule to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteScheduleInputBuilder {
     }
     /// <p>The name of the schedule group associated with this schedule. If you omit this, the default schedule group is used.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the schedule group associated with this schedule. If you omit this, the default schedule group is used.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl DeleteScheduleInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteScheduleInput`](crate::operation::delete_schedule::DeleteScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_schedule::DeleteScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_schedule::DeleteScheduleInput {
-            name: self.name,
-            group_name: self.group_name,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_schedule::DeleteScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_schedule::DeleteScheduleInput {
+                name: self.name
+                ,
+                group_name: self.group_name
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

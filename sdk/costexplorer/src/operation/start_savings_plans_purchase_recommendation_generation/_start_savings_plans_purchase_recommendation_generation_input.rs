@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSavingsPlansPurchaseRecommendationGenerationInput {}
+pub struct StartSavingsPlansPurchaseRecommendationGenerationInput  {
+}
 impl StartSavingsPlansPurchaseRecommendationGenerationInput {
     /// Creates a new builder-style object to manufacture [`StartSavingsPlansPurchaseRecommendationGenerationInput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput).
-    pub fn builder() -> crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationInputBuilder{
+    pub fn builder() -> crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationInputBuilder {
         crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationInputBuilder::default()
     }
 }
@@ -13,17 +14,15 @@ impl StartSavingsPlansPurchaseRecommendationGenerationInput {
 /// A builder for [`StartSavingsPlansPurchaseRecommendationGenerationInput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct StartSavingsPlansPurchaseRecommendationGenerationInputBuilder {}
+pub struct StartSavingsPlansPurchaseRecommendationGenerationInputBuilder {
+}
 impl StartSavingsPlansPurchaseRecommendationGenerationInputBuilder {
     /// Consumes the builder and constructs a [`StartSavingsPlansPurchaseRecommendationGenerationInput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput {},
+            crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput {
+            }
         )
     }
 }
+

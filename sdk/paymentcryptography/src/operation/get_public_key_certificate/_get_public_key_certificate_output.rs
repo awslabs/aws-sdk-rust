@@ -2,26 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetPublicKeyCertificateOutput {
+pub struct GetPublicKeyCertificateOutput  {
     /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
     pub key_certificate: ::std::string::String,
     /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     pub key_certificate_chain: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetPublicKeyCertificateOutput {
+impl  GetPublicKeyCertificateOutput  {
     /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
-    pub fn key_certificate(&self) -> &str {
-        use std::ops::Deref;
-        self.key_certificate.deref()
+    pub fn key_certificate(&self) -> & str {
+        use std::ops::Deref; self.key_certificate.deref()
     }
     /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
-    pub fn key_certificate_chain(&self) -> &str {
-        use std::ops::Deref;
-        self.key_certificate_chain.deref()
+    pub fn key_certificate_chain(&self) -> & str {
+        use std::ops::Deref; self.key_certificate_chain.deref()
     }
 }
-impl ::std::fmt::Debug for GetPublicKeyCertificateOutput {
+impl  ::std::fmt::Debug for GetPublicKeyCertificateOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPublicKeyCertificateOutput");
         formatter.field("key_certificate", &"*** Sensitive Data Redacted ***");
@@ -31,10 +29,10 @@ impl ::std::fmt::Debug for GetPublicKeyCertificateOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetPublicKeyCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPublicKeyCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetPublicKeyCertificateOutput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput).
     pub fn builder() -> crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateOutputBuilder {
@@ -59,8 +57,7 @@ impl GetPublicKeyCertificateOutputBuilder {
     }
     /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
     pub fn set_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_certificate = input;
-        self
+        self.key_certificate = input; self
     }
     /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
     pub fn get_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,47 +71,41 @@ impl GetPublicKeyCertificateOutputBuilder {
     }
     /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     pub fn set_key_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_certificate_chain = input;
-        self
+        self.key_certificate_chain = input; self
     }
     /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     pub fn get_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_certificate_chain
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPublicKeyCertificateOutput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_certificate`](crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateOutputBuilder::key_certificate)
     /// - [`key_certificate_chain`](crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateOutputBuilder::key_certificate_chain)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput {
-            key_certificate: self.key_certificate.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_certificate",
-                    "key_certificate was not specified but it is required when building GetPublicKeyCertificateOutput",
-                )
-            })?,
-            key_certificate_chain: self.key_certificate_chain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_certificate_chain",
-                    "key_certificate_chain was not specified but it is required when building GetPublicKeyCertificateOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput {
+                key_certificate: self.key_certificate
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_certificate", "key_certificate was not specified but it is required when building GetPublicKeyCertificateOutput")
+                    )?
+                ,
+                key_certificate_chain: self.key_certificate_chain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_certificate_chain", "key_certificate_chain was not specified but it is required when building GetPublicKeyCertificateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetPublicKeyCertificateOutputBuilder {
@@ -126,3 +117,4 @@ impl ::std::fmt::Debug for GetPublicKeyCertificateOutputBuilder {
         formatter.finish()
     }
 }
+

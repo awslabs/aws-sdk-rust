@@ -3,19 +3,19 @@
 /// <p>Information about scoring strategy for an evaluation form.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationFormScoringStrategy {
+pub struct EvaluationFormScoringStrategy  {
     /// <p>The scoring mode of the evaluation form.</p>
     pub mode: crate::types::EvaluationFormScoringMode,
     /// <p>The scoring status of the evaluation form.</p>
     pub status: crate::types::EvaluationFormScoringStatus,
 }
-impl EvaluationFormScoringStrategy {
+impl  EvaluationFormScoringStrategy  {
     /// <p>The scoring mode of the evaluation form.</p>
-    pub fn mode(&self) -> &crate::types::EvaluationFormScoringMode {
+    pub fn mode(&self) -> & crate::types::EvaluationFormScoringMode {
         &self.mode
     }
     /// <p>The scoring status of the evaluation form.</p>
-    pub fn status(&self) -> &crate::types::EvaluationFormScoringStatus {
+    pub fn status(&self) -> & crate::types::EvaluationFormScoringStatus {
         &self.status
     }
 }
@@ -42,8 +42,7 @@ impl EvaluationFormScoringStrategyBuilder {
     }
     /// <p>The scoring mode of the evaluation form.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::EvaluationFormScoringMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The scoring mode of the evaluation form.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringMode> {
@@ -57,8 +56,7 @@ impl EvaluationFormScoringStrategyBuilder {
     }
     /// <p>The scoring status of the evaluation form.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EvaluationFormScoringStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The scoring status of the evaluation form.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStatus> {
@@ -69,19 +67,20 @@ impl EvaluationFormScoringStrategyBuilder {
     /// - [`mode`](crate::types::builders::EvaluationFormScoringStrategyBuilder::mode)
     /// - [`status`](crate::types::builders::EvaluationFormScoringStrategyBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormScoringStrategy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationFormScoringStrategy {
-            mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mode",
-                    "mode was not specified but it is required when building EvaluationFormScoringStrategy",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building EvaluationFormScoringStrategy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationFormScoringStrategy {
+                mode: self.mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mode", "mode was not specified but it is required when building EvaluationFormScoringStrategy")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building EvaluationFormScoringStrategy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

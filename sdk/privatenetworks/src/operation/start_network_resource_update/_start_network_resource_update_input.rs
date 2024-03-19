@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartNetworkResourceUpdateInput {
+pub struct StartNetworkResourceUpdateInput  {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub network_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The update type.</p>
@@ -35,9 +35,9 @@ pub struct StartNetworkResourceUpdateInput {
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     pub commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
 }
-impl StartNetworkResourceUpdateInput {
+impl  StartNetworkResourceUpdateInput  {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_resource_arn(&self) -> ::std::option::Option<& str> {
         self.network_resource_arn.as_deref()
     }
     /// <p>The update type.</p>
@@ -49,15 +49,15 @@ impl StartNetworkResourceUpdateInput {
     /// <li>
     /// <p><code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p></li>
     /// </ul>
-    pub fn update_type(&self) -> ::std::option::Option<&crate::types::UpdateType> {
+    pub fn update_type(&self) -> ::std::option::Option<& crate::types::UpdateType> {
         self.update_type.as_ref()
     }
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
-    pub fn shipping_address(&self) -> ::std::option::Option<&crate::types::Address> {
+    pub fn shipping_address(&self) -> ::std::option::Option<& crate::types::Address> {
         self.shipping_address.as_ref()
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
-    pub fn return_reason(&self) -> ::std::option::Option<&str> {
+    pub fn return_reason(&self) -> ::std::option::Option<& str> {
         self.return_reason.as_deref()
     }
     /// <p>Use this action to extend and automatically renew the commitment period for the radio unit. You can do the following:</p>
@@ -74,7 +74,7 @@ impl StartNetworkResourceUpdateInput {
     /// <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p></li>
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
-    pub fn commitment_configuration(&self) -> ::std::option::Option<&crate::types::CommitmentConfiguration> {
+    pub fn commitment_configuration(&self) -> ::std::option::Option<& crate::types::CommitmentConfiguration> {
         self.commitment_configuration.as_ref()
     }
 }
@@ -104,8 +104,7 @@ impl StartNetworkResourceUpdateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub fn set_network_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_resource_arn = input;
-        self
+        self.network_resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub fn get_network_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl StartNetworkResourceUpdateInputBuilder {
     /// <p><code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p></li>
     /// </ul>
     pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
-        self.update_type = input;
-        self
+        self.update_type = input; self
     }
     /// <p>The update type.</p>
     /// <ul>
@@ -157,8 +155,7 @@ impl StartNetworkResourceUpdateInputBuilder {
     }
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
     pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
-        self.shipping_address = input;
-        self
+        self.shipping_address = input; self
     }
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
     pub fn get_shipping_address(&self) -> &::std::option::Option<crate::types::Address> {
@@ -171,8 +168,7 @@ impl StartNetworkResourceUpdateInputBuilder {
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
     pub fn set_return_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.return_reason = input;
-        self
+        self.return_reason = input; self
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
     pub fn get_return_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +207,7 @@ impl StartNetworkResourceUpdateInputBuilder {
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     pub fn set_commitment_configuration(mut self, input: ::std::option::Option<crate::types::CommitmentConfiguration>) -> Self {
-        self.commitment_configuration = input;
-        self
+        self.commitment_configuration = input; self
     }
     /// <p>Use this action to extend and automatically renew the commitment period for the radio unit. You can do the following:</p>
     /// <ul>
@@ -232,18 +227,21 @@ impl StartNetworkResourceUpdateInputBuilder {
         &self.commitment_configuration
     }
     /// Consumes the builder and constructs a [`StartNetworkResourceUpdateInput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput {
-            network_resource_arn: self.network_resource_arn,
-            update_type: self.update_type,
-            shipping_address: self.shipping_address,
-            return_reason: self.return_reason,
-            commitment_configuration: self.commitment_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput {
+                network_resource_arn: self.network_resource_arn
+                ,
+                update_type: self.update_type
+                ,
+                shipping_address: self.shipping_address
+                ,
+                return_reason: self.return_reason
+                ,
+                commitment_configuration: self.commitment_configuration
+                ,
+            }
+        )
     }
 }
+

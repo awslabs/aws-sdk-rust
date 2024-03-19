@@ -12,11 +12,11 @@
 /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllowedMethods {
+pub struct AllowedMethods  {
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
     pub quantity: i32,
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
-    pub items: ::std::vec::Vec<crate::types::Method>,
+    pub items: ::std::vec::Vec::<crate::types::Method>,
     /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
     /// <ul>
     /// <li>
@@ -27,15 +27,14 @@ pub struct AllowedMethods {
     /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.</p>
     pub cached_methods: ::std::option::Option<crate::types::CachedMethods>,
 }
-impl AllowedMethods {
+impl  AllowedMethods  {
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
-    pub fn items(&self) -> &[crate::types::Method] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::Method] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
     /// <ul>
@@ -45,7 +44,7 @@ impl AllowedMethods {
     /// <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p></li>
     /// </ul>
     /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.</p>
-    pub fn cached_methods(&self) -> ::std::option::Option<&crate::types::CachedMethods> {
+    pub fn cached_methods(&self) -> ::std::option::Option<& crate::types::CachedMethods> {
         self.cached_methods.as_ref()
     }
 }
@@ -61,7 +60,7 @@ impl AllowedMethods {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedMethodsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::Method>>,
     pub(crate) cached_methods: ::std::option::Option<crate::types::CachedMethods>,
 }
 impl AllowedMethodsBuilder {
@@ -73,8 +72,7 @@ impl AllowedMethodsBuilder {
     }
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -87,17 +85,16 @@ impl AllowedMethodsBuilder {
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
     pub fn items(mut self, input: crate::types::Method) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Method>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Method>>) -> Self {
+        self.items = input; self
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Method>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Method>> {
         &self.items
     }
     /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
@@ -121,8 +118,7 @@ impl AllowedMethodsBuilder {
     /// </ul>
     /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.</p>
     pub fn set_cached_methods(mut self, input: ::std::option::Option<crate::types::CachedMethods>) -> Self {
-        self.cached_methods = input;
-        self
+        self.cached_methods = input; self
     }
     /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
     /// <ul>
@@ -140,20 +136,22 @@ impl AllowedMethodsBuilder {
     /// - [`quantity`](crate::types::builders::AllowedMethodsBuilder::quantity)
     /// - [`items`](crate::types::builders::AllowedMethodsBuilder::items)
     pub fn build(self) -> ::std::result::Result<crate::types::AllowedMethods, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AllowedMethods {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building AllowedMethods",
-                )
-            })?,
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building AllowedMethods",
-                )
-            })?,
-            cached_methods: self.cached_methods,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AllowedMethods {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building AllowedMethods")
+                    )?
+                ,
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building AllowedMethods")
+                    )?
+                ,
+                cached_methods: self.cached_methods
+                ,
+            }
+        )
     }
 }
+

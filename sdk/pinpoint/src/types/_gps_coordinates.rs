@@ -3,13 +3,13 @@
 /// <p>Specifies the GPS coordinates of a location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GpsCoordinates {
+pub struct GpsCoordinates  {
     /// <p>The latitude coordinate of the location.</p>
     pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude coordinate of the location.</p>
     pub longitude: ::std::option::Option<f64>,
 }
-impl GpsCoordinates {
+impl  GpsCoordinates  {
     /// <p>The latitude coordinate of the location.</p>
     pub fn latitude(&self) -> ::std::option::Option<f64> {
         self.latitude
@@ -42,8 +42,7 @@ impl GpsCoordinatesBuilder {
     }
     /// <p>The latitude coordinate of the location.</p>
     pub fn set_latitude(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.latitude = input;
-        self
+        self.latitude = input; self
     }
     /// <p>The latitude coordinate of the location.</p>
     pub fn get_latitude(&self) -> &::std::option::Option<f64> {
@@ -57,8 +56,7 @@ impl GpsCoordinatesBuilder {
     }
     /// <p>The longitude coordinate of the location.</p>
     pub fn set_longitude(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.longitude = input;
-        self
+        self.longitude = input; self
     }
     /// <p>The longitude coordinate of the location.</p>
     pub fn get_longitude(&self) -> &::std::option::Option<f64> {
@@ -67,8 +65,11 @@ impl GpsCoordinatesBuilder {
     /// Consumes the builder and constructs a [`GpsCoordinates`](crate::types::GpsCoordinates).
     pub fn build(self) -> crate::types::GpsCoordinates {
         crate::types::GpsCoordinates {
-            latitude: self.latitude,
-            longitude: self.longitude,
+            latitude: self.latitude
+            ,
+            longitude: self.longitude
+            ,
         }
     }
 }
+

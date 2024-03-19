@@ -3,26 +3,25 @@
 /// <p>Represents action metadata added to an Action dataset using the <code>PutActions</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing actions individually</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Action {
+pub struct Action  {
     /// <p>The ID associated with the action.</p>
     pub action_id: ::std::string::String,
     /// <p>A string map of action-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"value": "100"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Actions dataset. In the previous example, the <code>value</code> matches the 'VALUE' field defined in the Actions schema. For categorical string data, to include multiple categories for a single action, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Deluxe|Premium\"</code>.</p>
     pub properties: ::std::option::Option<::std::string::String>,
 }
-impl Action {
+impl  Action  {
     /// <p>The ID associated with the action.</p>
-    pub fn action_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_id.deref()
+    pub fn action_id(&self) -> & str {
+        use std::ops::Deref; self.action_id.deref()
     }
     /// <p>A string map of action-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"value": "100"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Actions dataset. In the previous example, the <code>value</code> matches the 'VALUE' field defined in the Actions schema. For categorical string data, to include multiple categories for a single action, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Deluxe|Premium\"</code>.</p>
-    pub fn properties(&self) -> ::std::option::Option<&str> {
+    pub fn properties(&self) -> ::std::option::Option<& str> {
         self.properties.as_deref()
     }
 }
-impl ::std::fmt::Debug for Action {
+impl  ::std::fmt::Debug for Action  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Action");
         formatter.field("action_id", &self.action_id);
@@ -53,8 +52,7 @@ impl ActionBuilder {
     }
     /// <p>The ID associated with the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The ID associated with the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +67,7 @@ impl ActionBuilder {
     /// <p>A string map of action-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"value": "100"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Actions dataset. In the previous example, the <code>value</code> matches the 'VALUE' field defined in the Actions schema. For categorical string data, to include multiple categories for a single action, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Deluxe|Premium\"</code>.</p>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.properties = input;
-        self
+        self.properties = input; self
     }
     /// <p>A string map of action-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"value": "100"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Actions dataset. In the previous example, the <code>value</code> matches the 'VALUE' field defined in the Actions schema. For categorical string data, to include multiple categories for a single action, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Deluxe|Premium\"</code>.</p>
@@ -81,15 +78,17 @@ impl ActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action_id`](crate::types::builders::ActionBuilder::action_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Action, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Action {
-            action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_id",
-                    "action_id was not specified but it is required when building Action",
-                )
-            })?,
-            properties: self.properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Action {
+                action_id: self.action_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_id", "action_id was not specified but it is required when building Action")
+                    )?
+                ,
+                properties: self.properties
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ActionBuilder {
@@ -100,3 +99,4 @@ impl ::std::fmt::Debug for ActionBuilder {
         formatter.finish()
     }
 }
+

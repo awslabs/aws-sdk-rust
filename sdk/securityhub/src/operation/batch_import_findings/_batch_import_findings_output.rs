@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchImportFindingsOutput {
+pub struct BatchImportFindingsOutput  {
     /// <p>The number of findings that failed to import.</p>
     pub failed_count: ::std::option::Option<i32>,
     /// <p>The number of findings that were successfully imported.</p>
     pub success_count: ::std::option::Option<i32>,
     /// <p>The list of findings that failed to import.</p>
-    pub failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>,
+    pub failed_findings: ::std::option::Option<::std::vec::Vec::<crate::types::ImportFindingsError>>,
     _request_id: Option<String>,
 }
-impl BatchImportFindingsOutput {
+impl  BatchImportFindingsOutput  {
     /// <p>The number of findings that failed to import.</p>
     pub fn failed_count(&self) -> ::std::option::Option<i32> {
         self.failed_count
@@ -21,17 +21,18 @@ impl BatchImportFindingsOutput {
         self.success_count
     }
     /// <p>The list of findings that failed to import.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_findings.is_none()`.
-    pub fn failed_findings(&self) -> &[crate::types::ImportFindingsError] {
-        self.failed_findings.as_deref().unwrap_or_default()
+    pub fn failed_findings(&self) -> & [crate::types::ImportFindingsError] {
+        self.failed_findings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchImportFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchImportFindingsOutput {
     /// Creates a new builder-style object to manufacture [`BatchImportFindingsOutput`](crate::operation::batch_import_findings::BatchImportFindingsOutput).
     pub fn builder() -> crate::operation::batch_import_findings::builders::BatchImportFindingsOutputBuilder {
@@ -45,7 +46,7 @@ impl BatchImportFindingsOutput {
 pub struct BatchImportFindingsOutputBuilder {
     pub(crate) failed_count: ::std::option::Option<i32>,
     pub(crate) success_count: ::std::option::Option<i32>,
-    pub(crate) failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>,
+    pub(crate) failed_findings: ::std::option::Option<::std::vec::Vec::<crate::types::ImportFindingsError>>,
     _request_id: Option<String>,
 }
 impl BatchImportFindingsOutputBuilder {
@@ -57,8 +58,7 @@ impl BatchImportFindingsOutputBuilder {
     }
     /// <p>The number of findings that failed to import.</p>
     pub fn set_failed_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_count = input;
-        self
+        self.failed_count = input; self
     }
     /// <p>The number of findings that failed to import.</p>
     pub fn get_failed_count(&self) -> &::std::option::Option<i32> {
@@ -72,8 +72,7 @@ impl BatchImportFindingsOutputBuilder {
     }
     /// <p>The number of findings that were successfully imported.</p>
     pub fn set_success_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.success_count = input;
-        self
+        self.success_count = input; self
     }
     /// <p>The number of findings that were successfully imported.</p>
     pub fn get_success_count(&self) -> &::std::option::Option<i32> {
@@ -86,35 +85,38 @@ impl BatchImportFindingsOutputBuilder {
     /// <p>The list of findings that failed to import.</p>
     pub fn failed_findings(mut self, input: crate::types::ImportFindingsError) -> Self {
         let mut v = self.failed_findings.unwrap_or_default();
-        v.push(input);
-        self.failed_findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of findings that failed to import.</p>
-    pub fn set_failed_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>) -> Self {
-        self.failed_findings = input;
-        self
+    pub fn set_failed_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImportFindingsError>>) -> Self {
+        self.failed_findings = input; self
     }
     /// <p>The list of findings that failed to import.</p>
-    pub fn get_failed_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>> {
+    pub fn get_failed_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImportFindingsError>> {
         &self.failed_findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchImportFindingsOutput`](crate::operation::batch_import_findings::BatchImportFindingsOutput).
     pub fn build(self) -> crate::operation::batch_import_findings::BatchImportFindingsOutput {
         crate::operation::batch_import_findings::BatchImportFindingsOutput {
-            failed_count: self.failed_count,
-            success_count: self.success_count,
-            failed_findings: self.failed_findings,
+            failed_count: self.failed_count
+            ,
+            success_count: self.success_count
+            ,
+            failed_findings: self.failed_findings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

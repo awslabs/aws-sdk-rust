@@ -22,11 +22,7 @@ impl DataReference {
     /// Tries to convert the enum instance into [`ContentReference`](crate::types::DataReference::ContentReference), extracting the inner [`ContentReference`](crate::types::ContentReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_content_reference(&self) -> ::std::result::Result<&crate::types::ContentReference, &Self> {
-        if let DataReference::ContentReference(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataReference::ContentReference(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ContentReference`](crate::types::DataReference::ContentReference).
     pub fn is_content_reference(&self) -> bool {
@@ -35,11 +31,7 @@ impl DataReference {
     /// Tries to convert the enum instance into [`GenerativeReference`](crate::types::DataReference::GenerativeReference), extracting the inner [`GenerativeReference`](crate::types::GenerativeReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_generative_reference(&self) -> ::std::result::Result<&crate::types::GenerativeReference, &Self> {
-        if let DataReference::GenerativeReference(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataReference::GenerativeReference(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GenerativeReference`](crate::types::DataReference::GenerativeReference).
     pub fn is_generative_reference(&self) -> bool {
@@ -50,3 +42,4 @@ impl DataReference {
         matches!(self, Self::Unknown)
     }
 }
+

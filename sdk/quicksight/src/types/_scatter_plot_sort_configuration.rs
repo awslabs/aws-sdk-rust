@@ -3,13 +3,13 @@
 /// <p>The sort configuration of a scatter plot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScatterPlotSortConfiguration {
+pub struct ScatterPlotSortConfiguration  {
     /// <p>The limit configuration of the visual display for an axis.</p>
     pub scatter_plot_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
-impl ScatterPlotSortConfiguration {
+impl  ScatterPlotSortConfiguration  {
     /// <p>The limit configuration of the visual display for an axis.</p>
-    pub fn scatter_plot_limit_configuration(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn scatter_plot_limit_configuration(&self) -> ::std::option::Option<& crate::types::ItemsLimitConfiguration> {
         self.scatter_plot_limit_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ScatterPlotSortConfigurationBuilder {
     }
     /// <p>The limit configuration of the visual display for an axis.</p>
     pub fn set_scatter_plot_limit_configuration(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
-        self.scatter_plot_limit_configuration = input;
-        self
+        self.scatter_plot_limit_configuration = input; self
     }
     /// <p>The limit configuration of the visual display for an axis.</p>
     pub fn get_scatter_plot_limit_configuration(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
@@ -44,7 +43,9 @@ impl ScatterPlotSortConfigurationBuilder {
     /// Consumes the builder and constructs a [`ScatterPlotSortConfiguration`](crate::types::ScatterPlotSortConfiguration).
     pub fn build(self) -> crate::types::ScatterPlotSortConfiguration {
         crate::types::ScatterPlotSortConfiguration {
-            scatter_plot_limit_configuration: self.scatter_plot_limit_configuration,
+            scatter_plot_limit_configuration: self.scatter_plot_limit_configuration
+            ,
         }
     }
 }
+

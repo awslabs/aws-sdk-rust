@@ -3,7 +3,7 @@
 /// <p>Contains metadata like FaceId, UserID, and Reasons, for a face that was unsuccessfully associated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnsuccessfulFaceAssociation {
+pub struct UnsuccessfulFaceAssociation  {
     /// <p>A unique identifier assigned to the face.</p>
     pub face_id: ::std::option::Option<::std::string::String>,
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
@@ -11,15 +11,15 @@ pub struct UnsuccessfulFaceAssociation {
     /// <p>Match confidence with the UserID, provides information regarding if a face association was unsuccessful because it didn't meet UserMatchThreshold.</p>
     pub confidence: ::std::option::Option<f32>,
     /// <p>The reason why the association was unsuccessful.</p>
-    pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>,
+    pub reasons: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulFaceAssociationReason>>,
 }
-impl UnsuccessfulFaceAssociation {
+impl  UnsuccessfulFaceAssociation  {
     /// <p>A unique identifier assigned to the face.</p>
-    pub fn face_id(&self) -> ::std::option::Option<&str> {
+    pub fn face_id(&self) -> ::std::option::Option<& str> {
         self.face_id.as_deref()
     }
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Match confidence with the UserID, provides information regarding if a face association was unsuccessful because it didn't meet UserMatchThreshold.</p>
@@ -27,10 +27,11 @@ impl UnsuccessfulFaceAssociation {
         self.confidence
     }
     /// <p>The reason why the association was unsuccessful.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
-    pub fn reasons(&self) -> &[crate::types::UnsuccessfulFaceAssociationReason] {
-        self.reasons.as_deref().unwrap_or_default()
+    pub fn reasons(&self) -> & [crate::types::UnsuccessfulFaceAssociationReason] {
+        self.reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UnsuccessfulFaceAssociation {
@@ -47,7 +48,7 @@ pub struct UnsuccessfulFaceAssociationBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) confidence: ::std::option::Option<f32>,
-    pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>,
+    pub(crate) reasons: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulFaceAssociationReason>>,
 }
 impl UnsuccessfulFaceAssociationBuilder {
     /// <p>A unique identifier assigned to the face.</p>
@@ -57,8 +58,7 @@ impl UnsuccessfulFaceAssociationBuilder {
     }
     /// <p>A unique identifier assigned to the face.</p>
     pub fn set_face_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.face_id = input;
-        self
+        self.face_id = input; self
     }
     /// <p>A unique identifier assigned to the face.</p>
     pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl UnsuccessfulFaceAssociationBuilder {
     }
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl UnsuccessfulFaceAssociationBuilder {
     }
     /// <p>Match confidence with the UserID, provides information regarding if a face association was unsuccessful because it didn't meet UserMatchThreshold.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>Match confidence with the UserID, provides information regarding if a face association was unsuccessful because it didn't meet UserMatchThreshold.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -99,26 +97,30 @@ impl UnsuccessfulFaceAssociationBuilder {
     /// <p>The reason why the association was unsuccessful.</p>
     pub fn reasons(mut self, input: crate::types::UnsuccessfulFaceAssociationReason) -> Self {
         let mut v = self.reasons.unwrap_or_default();
-        v.push(input);
-        self.reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reason why the association was unsuccessful.</p>
-    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>) -> Self {
-        self.reasons = input;
-        self
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulFaceAssociationReason>>) -> Self {
+        self.reasons = input; self
     }
     /// <p>The reason why the association was unsuccessful.</p>
-    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>> {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulFaceAssociationReason>> {
         &self.reasons
     }
     /// Consumes the builder and constructs a [`UnsuccessfulFaceAssociation`](crate::types::UnsuccessfulFaceAssociation).
     pub fn build(self) -> crate::types::UnsuccessfulFaceAssociation {
         crate::types::UnsuccessfulFaceAssociation {
-            face_id: self.face_id,
-            user_id: self.user_id,
-            confidence: self.confidence,
-            reasons: self.reasons,
+            face_id: self.face_id
+            ,
+            user_id: self.user_id
+            ,
+            confidence: self.confidence
+            ,
+            reasons: self.reasons
+            ,
         }
     }
 }
+

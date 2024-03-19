@@ -3,7 +3,7 @@
 /// <p>A wrapper object holding the Amazon API Gateway proxy summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApiGatewayProxySummary {
+pub struct ApiGatewayProxySummary  {
     /// <p>The endpoint URL of the API Gateway proxy.</p>
     pub proxy_url: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the API Gateway for the proxy.</p>
@@ -19,33 +19,33 @@ pub struct ApiGatewayProxySummary {
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>.</p>
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
-impl ApiGatewayProxySummary {
+impl  ApiGatewayProxySummary  {
     /// <p>The endpoint URL of the API Gateway proxy.</p>
-    pub fn proxy_url(&self) -> ::std::option::Option<&str> {
+    pub fn proxy_url(&self) -> ::std::option::Option<& str> {
         self.proxy_url.as_deref()
     }
     /// <p>The resource ID of the API Gateway for the proxy.</p>
-    pub fn api_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_gateway_id(&self) -> ::std::option::Option<& str> {
         self.api_gateway_id.as_deref()
     }
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy.</p>
-    pub fn vpc_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> ::std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy.</p>
-    pub fn nlb_arn(&self) -> ::std::option::Option<&str> {
+    pub fn nlb_arn(&self) -> ::std::option::Option<& str> {
         self.nlb_arn.as_deref()
     }
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy.</p>
-    pub fn nlb_name(&self) -> ::std::option::Option<&str> {
+    pub fn nlb_name(&self) -> ::std::option::Option<& str> {
         self.nlb_name.as_deref()
     }
     /// <p>The type of API Gateway endpoint created.</p>
-    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::ApiGatewayEndpointType> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<& crate::types::ApiGatewayEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl ApiGatewayProxySummaryBuilder {
     }
     /// <p>The endpoint URL of the API Gateway proxy.</p>
     pub fn set_proxy_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proxy_url = input;
-        self
+        self.proxy_url = input; self
     }
     /// <p>The endpoint URL of the API Gateway proxy.</p>
     pub fn get_proxy_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ApiGatewayProxySummaryBuilder {
     }
     /// <p>The resource ID of the API Gateway for the proxy.</p>
     pub fn set_api_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_gateway_id = input;
-        self
+        self.api_gateway_id = input; self
     }
     /// <p>The resource ID of the API Gateway for the proxy.</p>
     pub fn get_api_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ApiGatewayProxySummaryBuilder {
     }
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy.</p>
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_link_id = input;
-        self
+        self.vpc_link_id = input; self
     }
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy.</p>
     pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ApiGatewayProxySummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy.</p>
     pub fn set_nlb_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nlb_arn = input;
-        self
+        self.nlb_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy.</p>
     pub fn get_nlb_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ApiGatewayProxySummaryBuilder {
     }
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy.</p>
     pub fn set_nlb_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nlb_name = input;
-        self
+        self.nlb_name = input; self
     }
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy.</p>
     pub fn get_nlb_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ApiGatewayProxySummaryBuilder {
     }
     /// <p>The type of API Gateway endpoint created.</p>
     pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::ApiGatewayEndpointType>) -> Self {
-        self.endpoint_type = input;
-        self
+        self.endpoint_type = input; self
     }
     /// <p>The type of API Gateway endpoint created.</p>
     pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::ApiGatewayEndpointType> {
@@ -160,8 +154,7 @@ impl ApiGatewayProxySummaryBuilder {
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>.</p>
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl ApiGatewayProxySummaryBuilder {
     /// Consumes the builder and constructs a [`ApiGatewayProxySummary`](crate::types::ApiGatewayProxySummary).
     pub fn build(self) -> crate::types::ApiGatewayProxySummary {
         crate::types::ApiGatewayProxySummary {
-            proxy_url: self.proxy_url,
-            api_gateway_id: self.api_gateway_id,
-            vpc_link_id: self.vpc_link_id,
-            nlb_arn: self.nlb_arn,
-            nlb_name: self.nlb_name,
-            endpoint_type: self.endpoint_type,
-            stage_name: self.stage_name,
+            proxy_url: self.proxy_url
+            ,
+            api_gateway_id: self.api_gateway_id
+            ,
+            vpc_link_id: self.vpc_link_id
+            ,
+            nlb_arn: self.nlb_arn
+            ,
+            nlb_name: self.nlb_name
+            ,
+            endpoint_type: self.endpoint_type
+            ,
+            stage_name: self.stage_name
+            ,
         }
     }
 }
+

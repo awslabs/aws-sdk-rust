@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTrafficMirrorSessionOutput {
+pub struct ModifyTrafficMirrorSessionOutput  {
     /// <p>Information about the Traffic Mirror session.</p>
     pub traffic_mirror_session: ::std::option::Option<crate::types::TrafficMirrorSession>,
     _request_id: Option<String>,
 }
-impl ModifyTrafficMirrorSessionOutput {
+impl  ModifyTrafficMirrorSessionOutput  {
     /// <p>Information about the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session(&self) -> ::std::option::Option<&crate::types::TrafficMirrorSession> {
+    pub fn traffic_mirror_session(&self) -> ::std::option::Option<& crate::types::TrafficMirrorSession> {
         self.traffic_mirror_session.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyTrafficMirrorSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyTrafficMirrorSessionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTrafficMirrorSessionOutput`](crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput).
     pub fn builder() -> crate::operation::modify_traffic_mirror_session::builders::ModifyTrafficMirrorSessionOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyTrafficMirrorSessionOutputBuilder {
     }
     /// <p>Information about the Traffic Mirror session.</p>
     pub fn set_traffic_mirror_session(mut self, input: ::std::option::Option<crate::types::TrafficMirrorSession>) -> Self {
-        self.traffic_mirror_session = input;
-        self
+        self.traffic_mirror_session = input; self
     }
     /// <p>Information about the Traffic Mirror session.</p>
     pub fn get_traffic_mirror_session(&self) -> &::std::option::Option<crate::types::TrafficMirrorSession> {
         &self.traffic_mirror_session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyTrafficMirrorSessionOutput`](crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput).
     pub fn build(self) -> crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput {
         crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput {
-            traffic_mirror_session: self.traffic_mirror_session,
+            traffic_mirror_session: self.traffic_mirror_session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

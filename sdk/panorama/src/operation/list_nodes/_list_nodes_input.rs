@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNodesInput {
+pub struct ListNodesInput  {
     /// <p>Search for nodes by category.</p>
     pub category: ::std::option::Option<crate::types::NodeCategory>,
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
@@ -18,29 +18,29 @@ pub struct ListNodesInput {
     /// <p>The maximum number of nodes to return in one page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListNodesInput {
+impl  ListNodesInput  {
     /// <p>Search for nodes by category.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::NodeCategory> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::NodeCategory> {
         self.category.as_ref()
     }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>Search for nodes by name.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>Search for nodes by version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>Search for nodes by patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
+    pub fn patch_version(&self) -> ::std::option::Option<& str> {
         self.patch_version.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of nodes to return in one page of results.</p>
@@ -75,8 +75,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>Search for nodes by category.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::NodeCategory>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>Search for nodes by category.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::NodeCategory> {
@@ -89,8 +88,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>Search for nodes by name.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>Search for nodes by name.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>Search for nodes by version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>Search for nodes by version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>Search for nodes by patch version.</p>
     pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_version = input;
-        self
+        self.patch_version = input; self
     }
     /// <p>Search for nodes by patch version.</p>
     pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +140,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +153,7 @@ impl ListNodesInputBuilder {
     }
     /// <p>The maximum number of nodes to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of nodes to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -168,14 +161,24 @@ impl ListNodesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_nodes::ListNodesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_nodes::ListNodesInput {
-            category: self.category,
-            owner_account: self.owner_account,
-            package_name: self.package_name,
-            package_version: self.package_version,
-            patch_version: self.patch_version,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_nodes::ListNodesInput {
+                category: self.category
+                ,
+                owner_account: self.owner_account
+                ,
+                package_name: self.package_name
+                ,
+                package_version: self.package_version
+                ,
+                patch_version: self.patch_version
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

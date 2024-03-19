@@ -3,7 +3,7 @@
 /// <p>Information about an environment variable that is available to builds for the build project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
+pub struct AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails  {
     /// <p>The name of the environment variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of environment variable.</p>
@@ -11,17 +11,17 @@ pub struct AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
     /// <p>The value of the environment variable.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
+impl  AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails  {
     /// <p>The name of the environment variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of environment variable.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The value of the environment variable.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
     }
     /// <p>The name of the environment variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
     }
     /// <p>The type of environment variable.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of environment variable.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
     }
     /// <p>The value of the environment variable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the environment variable.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
         crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
-            name: self.name,
-            r#type: self.r#type,
-            value: self.value,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

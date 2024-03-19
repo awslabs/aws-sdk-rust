@@ -3,19 +3,19 @@
 /// <p>Defines the per unit rates for each individual product dimension.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateCardItem {
+pub struct RateCardItem  {
     /// <p>Dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub dimension_key: ::std::option::Option<::std::string::String>,
     /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
     pub price: ::std::option::Option<::std::string::String>,
 }
-impl RateCardItem {
+impl  RateCardItem  {
     /// <p>Dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
-    pub fn dimension_key(&self) -> ::std::option::Option<&str> {
+    pub fn dimension_key(&self) -> ::std::option::Option<& str> {
         self.dimension_key.as_deref()
     }
     /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
-    pub fn price(&self) -> ::std::option::Option<&str> {
+    pub fn price(&self) -> ::std::option::Option<& str> {
         self.price.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RateCardItemBuilder {
     }
     /// <p>Dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub fn set_dimension_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_key = input;
-        self
+        self.dimension_key = input; self
     }
     /// <p>Dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub fn get_dimension_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RateCardItemBuilder {
     }
     /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
     pub fn set_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
     pub fn get_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RateCardItemBuilder {
     /// Consumes the builder and constructs a [`RateCardItem`](crate::types::RateCardItem).
     pub fn build(self) -> crate::types::RateCardItem {
         crate::types::RateCardItem {
-            dimension_key: self.dimension_key,
-            price: self.price,
+            dimension_key: self.dimension_key
+            ,
+            price: self.price
+            ,
         }
     }
 }
+

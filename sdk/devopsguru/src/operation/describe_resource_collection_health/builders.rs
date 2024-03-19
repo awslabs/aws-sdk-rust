@@ -5,54 +5,50 @@ pub use crate::operation::describe_resource_collection_health::_describe_resourc
 
 impl DescribeResourceCollectionHealthInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_resource_collection_health();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_resource_collection_health();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeResourceCollectionHealth`.
-///
+/// 
 /// <p>Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for all closed insights in resource collections in your account. You specify the type of Amazon Web Services resources collection. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeResourceCollectionHealthFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder,
+                    inner: crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
-        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
-    > for DescribeResourceCollectionHealthFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
-            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
+                    crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
+                > for DescribeResourceCollectionHealthFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
+                        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeResourceCollectionHealthFluentBuilder {
     /// Creates a new `DescribeResourceCollectionHealth`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribeResourceCollectionHealthFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput,
-        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthOutput, crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator {
-        crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator {
+                                crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
     pub fn resource_collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
         self.inner = self.inner.resource_collection_type(input);
@@ -143,3 +130,4 @@ impl DescribeResourceCollectionHealthFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

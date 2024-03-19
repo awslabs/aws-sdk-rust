@@ -3,20 +3,18 @@
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEmailIdentityConfigurationSetAttributesOutput {
+pub struct PutEmailIdentityConfigurationSetAttributesOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for PutEmailIdentityConfigurationSetAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutEmailIdentityConfigurationSetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesOutputBuilder {
-        crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesOutputBuilder {
+        crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesOutputBuilder::default()
     }
 }
 
@@ -28,14 +26,14 @@ pub struct PutEmailIdentityConfigurationSetAttributesOutputBuilder {
 }
 impl PutEmailIdentityConfigurationSetAttributesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput).
     pub fn build(self) -> crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput {
         crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput {
@@ -43,3 +41,4 @@ impl PutEmailIdentityConfigurationSetAttributesOutputBuilder {
         }
     }
 }
+

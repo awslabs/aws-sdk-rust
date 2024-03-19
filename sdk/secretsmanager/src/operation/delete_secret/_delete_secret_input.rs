@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSecretInput {
+pub struct DeleteSecretInput  {
     /// <p>The ARN or name of the secret to delete.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
@@ -15,10 +15,10 @@ pub struct DeleteSecretInput {
     /// </important>
     pub force_delete_without_recovery: ::std::option::Option<bool>,
 }
-impl DeleteSecretInput {
+impl  DeleteSecretInput  {
     /// <p>The ARN or name of the secret to delete.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
     /// <p>The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then by default Secrets Manager uses a 30 day recovery window.</p>
@@ -60,8 +60,7 @@ impl DeleteSecretInputBuilder {
     /// <p>The ARN or name of the secret to delete.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ARN or name of the secret to delete.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -75,8 +74,7 @@ impl DeleteSecretInputBuilder {
     }
     /// <p>The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then by default Secrets Manager uses a 30 day recovery window.</p>
     pub fn set_recovery_window_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.recovery_window_in_days = input;
-        self
+        self.recovery_window_in_days = input; self
     }
     /// <p>The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then by default Secrets Manager uses a 30 day recovery window.</p>
     pub fn get_recovery_window_in_days(&self) -> &::std::option::Option<i64> {
@@ -97,8 +95,7 @@ impl DeleteSecretInputBuilder {
     /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>
     /// </important>
     pub fn set_force_delete_without_recovery(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete_without_recovery = input;
-        self
+        self.force_delete_without_recovery = input; self
     }
     /// <p>Specifies whether to delete the secret without any recovery window. You can't use both this parameter and <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets Manager uses a 30 day recovery window.</p>
     /// <p>Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with the same name, use appropriate back off and retry logic.</p>
@@ -109,13 +106,17 @@ impl DeleteSecretInputBuilder {
         &self.force_delete_without_recovery
     }
     /// Consumes the builder and constructs a [`DeleteSecretInput`](crate::operation::delete_secret::DeleteSecretInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_secret::DeleteSecretInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_secret::DeleteSecretInput {
-            secret_id: self.secret_id,
-            recovery_window_in_days: self.recovery_window_in_days,
-            force_delete_without_recovery: self.force_delete_without_recovery,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_secret::DeleteSecretInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_secret::DeleteSecretInput {
+                secret_id: self.secret_id
+                ,
+                recovery_window_in_days: self.recovery_window_in_days
+                ,
+                force_delete_without_recovery: self.force_delete_without_recovery
+                ,
+            }
+        )
     }
 }
+

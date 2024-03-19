@@ -3,9 +3,9 @@
 /// <p>Returns information about a provisioned cluster operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterOperationV2Provisioned {
+pub struct ClusterOperationV2Provisioned  {
     /// <p>Steps completed during the operation.</p>
-    pub operation_steps: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationStep>>,
+    pub operation_steps: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterOperationStep>>,
     /// <p>Information about cluster attributes before a cluster is updated.</p>
     pub source_cluster_info: ::std::option::Option<crate::types::MutableClusterInfo>,
     /// <p>Information about cluster attributes after a cluster is updated.</p>
@@ -13,23 +13,24 @@ pub struct ClusterOperationV2Provisioned {
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfo>,
 }
-impl ClusterOperationV2Provisioned {
+impl  ClusterOperationV2Provisioned  {
     /// <p>Steps completed during the operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operation_steps.is_none()`.
-    pub fn operation_steps(&self) -> &[crate::types::ClusterOperationStep] {
-        self.operation_steps.as_deref().unwrap_or_default()
+    pub fn operation_steps(&self) -> & [crate::types::ClusterOperationStep] {
+        self.operation_steps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about cluster attributes before a cluster is updated.</p>
-    pub fn source_cluster_info(&self) -> ::std::option::Option<&crate::types::MutableClusterInfo> {
+    pub fn source_cluster_info(&self) -> ::std::option::Option<& crate::types::MutableClusterInfo> {
         self.source_cluster_info.as_ref()
     }
     /// <p>Information about cluster attributes after a cluster is updated.</p>
-    pub fn target_cluster_info(&self) -> ::std::option::Option<&crate::types::MutableClusterInfo> {
+    pub fn target_cluster_info(&self) -> ::std::option::Option<& crate::types::MutableClusterInfo> {
         self.target_cluster_info.as_ref()
     }
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
-    pub fn vpc_connection_info(&self) -> ::std::option::Option<&crate::types::VpcConnectionInfo> {
+    pub fn vpc_connection_info(&self) -> ::std::option::Option<& crate::types::VpcConnectionInfo> {
         self.vpc_connection_info.as_ref()
     }
 }
@@ -44,7 +45,7 @@ impl ClusterOperationV2Provisioned {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterOperationV2ProvisionedBuilder {
-    pub(crate) operation_steps: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationStep>>,
+    pub(crate) operation_steps: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterOperationStep>>,
     pub(crate) source_cluster_info: ::std::option::Option<crate::types::MutableClusterInfo>,
     pub(crate) target_cluster_info: ::std::option::Option<crate::types::MutableClusterInfo>,
     pub(crate) vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfo>,
@@ -57,17 +58,16 @@ impl ClusterOperationV2ProvisionedBuilder {
     /// <p>Steps completed during the operation.</p>
     pub fn operation_steps(mut self, input: crate::types::ClusterOperationStep) -> Self {
         let mut v = self.operation_steps.unwrap_or_default();
-        v.push(input);
-        self.operation_steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operation_steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Steps completed during the operation.</p>
-    pub fn set_operation_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationStep>>) -> Self {
-        self.operation_steps = input;
-        self
+    pub fn set_operation_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterOperationStep>>) -> Self {
+        self.operation_steps = input; self
     }
     /// <p>Steps completed during the operation.</p>
-    pub fn get_operation_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationStep>> {
+    pub fn get_operation_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterOperationStep>> {
         &self.operation_steps
     }
     /// <p>Information about cluster attributes before a cluster is updated.</p>
@@ -77,8 +77,7 @@ impl ClusterOperationV2ProvisionedBuilder {
     }
     /// <p>Information about cluster attributes before a cluster is updated.</p>
     pub fn set_source_cluster_info(mut self, input: ::std::option::Option<crate::types::MutableClusterInfo>) -> Self {
-        self.source_cluster_info = input;
-        self
+        self.source_cluster_info = input; self
     }
     /// <p>Information about cluster attributes before a cluster is updated.</p>
     pub fn get_source_cluster_info(&self) -> &::std::option::Option<crate::types::MutableClusterInfo> {
@@ -91,8 +90,7 @@ impl ClusterOperationV2ProvisionedBuilder {
     }
     /// <p>Information about cluster attributes after a cluster is updated.</p>
     pub fn set_target_cluster_info(mut self, input: ::std::option::Option<crate::types::MutableClusterInfo>) -> Self {
-        self.target_cluster_info = input;
-        self
+        self.target_cluster_info = input; self
     }
     /// <p>Information about cluster attributes after a cluster is updated.</p>
     pub fn get_target_cluster_info(&self) -> &::std::option::Option<crate::types::MutableClusterInfo> {
@@ -105,8 +103,7 @@ impl ClusterOperationV2ProvisionedBuilder {
     }
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub fn set_vpc_connection_info(mut self, input: ::std::option::Option<crate::types::VpcConnectionInfo>) -> Self {
-        self.vpc_connection_info = input;
-        self
+        self.vpc_connection_info = input; self
     }
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub fn get_vpc_connection_info(&self) -> &::std::option::Option<crate::types::VpcConnectionInfo> {
@@ -115,10 +112,15 @@ impl ClusterOperationV2ProvisionedBuilder {
     /// Consumes the builder and constructs a [`ClusterOperationV2Provisioned`](crate::types::ClusterOperationV2Provisioned).
     pub fn build(self) -> crate::types::ClusterOperationV2Provisioned {
         crate::types::ClusterOperationV2Provisioned {
-            operation_steps: self.operation_steps,
-            source_cluster_info: self.source_cluster_info,
-            target_cluster_info: self.target_cluster_info,
-            vpc_connection_info: self.vpc_connection_info,
+            operation_steps: self.operation_steps
+            ,
+            source_cluster_info: self.source_cluster_info
+            ,
+            target_cluster_info: self.target_cluster_info
+            ,
+            vpc_connection_info: self.vpc_connection_info
+            ,
         }
     }
 }
+

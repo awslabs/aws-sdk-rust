@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreDbInstanceFromS3Input {
+pub struct RestoreDbInstanceFromS3Input  {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -64,9 +64,9 @@ pub struct RestoreDbInstanceFromS3Input {
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
-    pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub db_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of VPC security groups to associate with this DB instance.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code></p>
@@ -132,7 +132,7 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
@@ -200,9 +200,9 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
+    pub processor_features: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessorFeature>>,
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     pub use_default_processor_features: ::std::option::Option<bool>,
     /// <p>Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
@@ -241,9 +241,9 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
 }
-impl RestoreDbInstanceFromS3Input {
+impl  RestoreDbInstanceFromS3Input  {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
-    pub fn db_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -257,7 +257,7 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
@@ -268,12 +268,12 @@ impl RestoreDbInstanceFromS3Input {
     }
     /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid Values: <code>mysql</code></p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The name for the master user.</p>
@@ -286,7 +286,7 @@ impl RestoreDbInstanceFromS3Input {
     /// <li>
     /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The password for the master user.</p>
@@ -312,33 +312,35 @@ impl RestoreDbInstanceFromS3Input {
     /// <li>
     /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
-    pub fn db_security_groups(&self) -> &[::std::string::String] {
-        self.db_security_groups.as_deref().unwrap_or_default()
+    pub fn db_security_groups(&self) -> & [::std::string::String] {
+        self.db_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of VPC security groups to associate with this DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code></p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
-    pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -355,12 +357,12 @@ impl RestoreDbInstanceFromS3Input {
     /// <li>
     /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-    pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. For more information, see <code>CreateDBInstance</code>.</p>
@@ -379,7 +381,7 @@ impl RestoreDbInstanceFromS3Input {
     /// <li>
     /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The port number on which the database accepts connections.</p>
@@ -394,7 +396,7 @@ impl RestoreDbInstanceFromS3Input {
         self.multi_az
     }
     /// <p>The version number of the database engine to use. Choose the latest minor version of your database engine. For information about engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Specifies whether to automatically apply minor engine upgrades to the DB instance during the maintenance window. By default, minor engine upgrades are not applied automatically.</p>
@@ -402,7 +404,7 @@ impl RestoreDbInstanceFromS3Input {
         self.auto_minor_version_upgrade
     }
     /// <p>The license model for this DB instance. Use <code>general-public-license</code>.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -410,7 +412,7 @@ impl RestoreDbInstanceFromS3Input {
         self.iops
     }
     /// <p>The name of the option group to associate with this DB instance. If this argument is omitted, the default option group for the specified engine is used.</p>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
@@ -421,16 +423,17 @@ impl RestoreDbInstanceFromS3Input {
         self.publicly_accessible
     }
     /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code></p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>Specifies whether the new DB instance is encrypted or not.</p>
@@ -440,7 +443,7 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -456,7 +459,7 @@ impl RestoreDbInstanceFromS3Input {
     }
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-    pub fn monitoring_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_role_arn(&self) -> ::std::option::Option<& str> {
         self.monitoring_role_arn.as_deref()
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
@@ -466,25 +469,25 @@ impl RestoreDbInstanceFromS3Input {
     }
     /// <p>The name of the engine of your source database.</p>
     /// <p>Valid Values: <code>mysql</code></p>
-    pub fn source_engine(&self) -> ::std::option::Option<&str> {
+    pub fn source_engine(&self) -> ::std::option::Option<& str> {
         self.source_engine.as_deref()
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.6 and 5.7 are supported.</p>
     /// <p>Example: <code>5.6.40</code></p>
-    pub fn source_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn source_engine_version(&self) -> ::std::option::Option<& str> {
         self.source_engine_version.as_deref()
     }
     /// <p>The name of your Amazon S3 bucket that contains your database backup file.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The prefix of your Amazon S3 bucket.</p>
-    pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
-    pub fn s3_ingestion_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn s3_ingestion_role_arn(&self) -> ::std::option::Option<& str> {
         self.s3_ingestion_role_arn.as_deref()
     }
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
@@ -495,7 +498,7 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.performance_insights_kms_key_id.as_deref()
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
@@ -523,16 +526,18 @@ impl RestoreDbInstanceFromS3Input {
         self.performance_insights_retention_period
     }
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
-    pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
-        self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
+    pub fn enable_cloudwatch_logs_exports(&self) -> & [::std::string::String] {
+        self.enable_cloudwatch_logs_exports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processor_features.is_none()`.
-    pub fn processor_features(&self) -> &[crate::types::ProcessorFeature] {
-        self.processor_features.as_deref().unwrap_or_default()
+    pub fn processor_features(&self) -> & [crate::types::ProcessorFeature] {
+        self.processor_features.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     pub fn use_default_processor_features(&self) -> ::std::option::Option<bool> {
@@ -557,7 +562,7 @@ impl RestoreDbInstanceFromS3Input {
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
+    pub fn network_type(&self) -> ::std::option::Option<& str> {
         self.network_type.as_deref()
     }
     /// <p>Specifies the storage throughput value for the DB instance.</p>
@@ -580,7 +585,7 @@ impl RestoreDbInstanceFromS3Input {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.master_user_secret_kms_key_id.as_deref()
     }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
@@ -606,8 +611,8 @@ pub struct RestoreDbInstanceFromS3InputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) master_username: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
-    pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
@@ -622,7 +627,7 @@ pub struct RestoreDbInstanceFromS3InputBuilder {
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -638,8 +643,8 @@ pub struct RestoreDbInstanceFromS3InputBuilder {
     pub(crate) enable_performance_insights: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
-    pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
+    pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) processor_features: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessorFeature>>,
     pub(crate) use_default_processor_features: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) max_allocated_storage: ::std::option::Option<i32>,
@@ -657,8 +662,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_name = input;
-        self
+        self.db_name = input; self
     }
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -692,8 +696,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -720,8 +723,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p><note>
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
@@ -739,8 +741,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_class = input;
-        self
+        self.db_instance_class = input; self
     }
     /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.</p>
@@ -757,8 +758,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid Values: <code>mysql</code></p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid Values: <code>mysql</code></p>
@@ -790,8 +790,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The name for the master user.</p>
     /// <p>Constraints:</p>
@@ -857,8 +856,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>The password for the master user.</p>
     /// <p>Constraints:</p>
@@ -894,19 +892,18 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Default: The default DB security group for the database engine.</p>
     pub fn db_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.db_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.db_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.db_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
-    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.db_security_groups = input;
-        self
+    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.db_security_groups = input; self
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
-    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.db_security_groups
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -916,17 +913,16 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>A list of VPC security groups to associate with this DB instance.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VPC security groups to associate with this DB instance.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>A list of VPC security groups to associate with this DB instance.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -942,8 +938,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Example: <code>us-east-1d</code></p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
@@ -963,8 +958,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_subnet_group_name = input;
-        self
+        self.db_subnet_group_name = input; self
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
@@ -1005,8 +999,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
@@ -1034,8 +1027,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_name = input;
-        self
+        self.db_parameter_group_name = input; self
     }
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
@@ -1049,8 +1041,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. For more information, see <code>CreateDBInstance</code>.</p>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.backup_retention_period = input;
-        self
+        self.backup_retention_period = input; self
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. For more information, see <code>CreateDBInstance</code>.</p>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
@@ -1085,8 +1076,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>The time range each day during which automated backups are created if automated backups are enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
@@ -1116,8 +1106,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Valid Values: <code>1150</code>-<code>65535</code></p>
     /// <p>Default: <code>3306</code></p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Type: Integer</p>
@@ -1133,8 +1122,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. If the DB instance is a Multi-AZ deployment, you can't set the <code>AvailabilityZone</code> parameter.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. If the DB instance is a Multi-AZ deployment, you can't set the <code>AvailabilityZone</code> parameter.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -1147,8 +1135,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The version number of the database engine to use. Choose the latest minor version of your database engine. For information about engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version number of the database engine to use. Choose the latest minor version of your database engine. For information about engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -1161,8 +1148,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>Specifies whether to automatically apply minor engine upgrades to the DB instance during the maintenance window. By default, minor engine upgrades are not applied automatically.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>Specifies whether to automatically apply minor engine upgrades to the DB instance during the maintenance window. By default, minor engine upgrades are not applied automatically.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -1175,8 +1161,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The license model for this DB instance. Use <code>general-public-license</code>.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>The license model for this DB instance. Use <code>general-public-license</code>.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -1189,8 +1174,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
@@ -1203,8 +1187,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The name of the option group to associate with this DB instance. If this argument is omitted, the default option group for the specified engine is used.</p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_name = input;
-        self
+        self.option_group_name = input; self
     }
     /// <p>The name of the option group to associate with this DB instance. If this argument is omitted, the default option group for the specified engine is used.</p>
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -1223,8 +1206,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
     /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
@@ -1240,17 +1222,16 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -1266,8 +1247,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>gp2</code></p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
@@ -1283,8 +1263,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>Specifies whether the new DB instance is encrypted or not.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_encrypted = input;
-        self
+        self.storage_encrypted = input; self
     }
     /// <p>Specifies whether the new DB instance is encrypted or not.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
@@ -1301,8 +1280,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
@@ -1317,8 +1295,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>Specifies whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_snapshot = input;
-        self
+        self.copy_tags_to_snapshot = input; self
     }
     /// <p>Specifies whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
@@ -1337,8 +1314,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Valid Values: 0, 1, 5, 10, 15, 30, 60</p>
     /// <p>Default: <code>0</code></p>
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.monitoring_interval = input;
-        self
+        self.monitoring_interval = input; self
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
@@ -1356,8 +1332,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     pub fn set_monitoring_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_role_arn = input;
-        self
+        self.monitoring_role_arn = input; self
     }
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -1373,8 +1348,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_iam_database_authentication = input;
-        self
+        self.enable_iam_database_authentication = input; self
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -1391,8 +1365,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name of the engine of your source database.</p>
     /// <p>Valid Values: <code>mysql</code></p>
     pub fn set_source_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_engine = input;
-        self
+        self.source_engine = input; self
     }
     /// <p>The name of the engine of your source database.</p>
     /// <p>Valid Values: <code>mysql</code></p>
@@ -1411,8 +1384,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>MySQL versions 5.6 and 5.7 are supported.</p>
     /// <p>Example: <code>5.6.40</code></p>
     pub fn set_source_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_engine_version = input;
-        self
+        self.source_engine_version = input; self
     }
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.6 and 5.7 are supported.</p>
@@ -1428,8 +1400,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The name of your Amazon S3 bucket that contains your database backup file.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The name of your Amazon S3 bucket that contains your database backup file.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -1442,8 +1413,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The prefix of your Amazon S3 bucket.</p>
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_prefix = input;
-        self
+        self.s3_prefix = input; self
     }
     /// <p>The prefix of your Amazon S3 bucket.</p>
     pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -1457,8 +1427,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
     pub fn set_s3_ingestion_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_ingestion_role_arn = input;
-        self
+        self.s3_ingestion_role_arn = input; self
     }
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
     pub fn get_s3_ingestion_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1473,8 +1442,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_performance_insights = input;
-        self
+        self.enable_performance_insights = input; self
     }
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1492,8 +1460,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.performance_insights_kms_key_id = input;
-        self
+        self.performance_insights_kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -1548,8 +1515,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.performance_insights_retention_period = input;
-        self
+        self.performance_insights_retention_period = input; self
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
@@ -1582,17 +1548,16 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-        v.push(input.into());
-        self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enable_cloudwatch_logs_exports = input;
-        self
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enable_cloudwatch_logs_exports = input; self
     }
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
     /// Appends an item to `processor_features`.
@@ -1602,17 +1567,16 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     pub fn processor_features(mut self, input: crate::types::ProcessorFeature) -> Self {
         let mut v = self.processor_features.unwrap_or_default();
-        v.push(input);
-        self.processor_features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.processor_features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>) -> Self {
-        self.processor_features = input;
-        self
+    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessorFeature>>) -> Self {
+        self.processor_features = input; self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
+    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProcessorFeature>> {
         &self.processor_features
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
@@ -1622,8 +1586,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     pub fn set_use_default_processor_features(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_default_processor_features = input;
-        self
+        self.use_default_processor_features = input; self
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     pub fn get_use_default_processor_features(&self) -> &::std::option::Option<bool> {
@@ -1636,8 +1599,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -1652,8 +1614,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_max_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_allocated_storage = input;
-        self
+        self.max_allocated_storage = input; self
     }
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1685,8 +1646,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid Values:</p>
@@ -1710,8 +1670,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Specifies the storage throughput value for the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
     pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_throughput = input;
-        self
+        self.storage_throughput = input; self
     }
     /// <p>Specifies the storage throughput value for the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
@@ -1737,8 +1696,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manage_master_user_password = input;
-        self
+        self.manage_master_user_password = input; self
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -1765,8 +1723,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub fn set_master_user_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_secret_kms_key_id = input;
-        self
+        self.master_user_secret_kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
@@ -1783,70 +1740,116 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dedicated_log_volume = input;
-        self
+        self.dedicated_log_volume = input; self
     }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
     /// Consumes the builder and constructs a [`RestoreDbInstanceFromS3Input`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input {
-            db_name: self.db_name,
-            db_instance_identifier: self.db_instance_identifier,
-            allocated_storage: self.allocated_storage,
-            db_instance_class: self.db_instance_class,
-            engine: self.engine,
-            master_username: self.master_username,
-            master_user_password: self.master_user_password,
-            db_security_groups: self.db_security_groups,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            availability_zone: self.availability_zone,
-            db_subnet_group_name: self.db_subnet_group_name,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            db_parameter_group_name: self.db_parameter_group_name,
-            backup_retention_period: self.backup_retention_period,
-            preferred_backup_window: self.preferred_backup_window,
-            port: self.port,
-            multi_az: self.multi_az,
-            engine_version: self.engine_version,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            license_model: self.license_model,
-            iops: self.iops,
-            option_group_name: self.option_group_name,
-            publicly_accessible: self.publicly_accessible,
-            tags: self.tags,
-            storage_type: self.storage_type,
-            storage_encrypted: self.storage_encrypted,
-            kms_key_id: self.kms_key_id,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
-            monitoring_interval: self.monitoring_interval,
-            monitoring_role_arn: self.monitoring_role_arn,
-            enable_iam_database_authentication: self.enable_iam_database_authentication,
-            source_engine: self.source_engine,
-            source_engine_version: self.source_engine_version,
-            s3_bucket_name: self.s3_bucket_name,
-            s3_prefix: self.s3_prefix,
-            s3_ingestion_role_arn: self.s3_ingestion_role_arn,
-            enable_performance_insights: self.enable_performance_insights,
-            performance_insights_kms_key_id: self.performance_insights_kms_key_id,
-            performance_insights_retention_period: self.performance_insights_retention_period,
-            enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
-            processor_features: self.processor_features,
-            use_default_processor_features: self.use_default_processor_features,
-            deletion_protection: self.deletion_protection,
-            max_allocated_storage: self.max_allocated_storage,
-            network_type: self.network_type,
-            storage_throughput: self.storage_throughput,
-            manage_master_user_password: self.manage_master_user_password,
-            master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
-            dedicated_log_volume: self.dedicated_log_volume,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input {
+                db_name: self.db_name
+                ,
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                allocated_storage: self.allocated_storage
+                ,
+                db_instance_class: self.db_instance_class
+                ,
+                engine: self.engine
+                ,
+                master_username: self.master_username
+                ,
+                master_user_password: self.master_user_password
+                ,
+                db_security_groups: self.db_security_groups
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                availability_zone: self.availability_zone
+                ,
+                db_subnet_group_name: self.db_subnet_group_name
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                db_parameter_group_name: self.db_parameter_group_name
+                ,
+                backup_retention_period: self.backup_retention_period
+                ,
+                preferred_backup_window: self.preferred_backup_window
+                ,
+                port: self.port
+                ,
+                multi_az: self.multi_az
+                ,
+                engine_version: self.engine_version
+                ,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade
+                ,
+                license_model: self.license_model
+                ,
+                iops: self.iops
+                ,
+                option_group_name: self.option_group_name
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                tags: self.tags
+                ,
+                storage_type: self.storage_type
+                ,
+                storage_encrypted: self.storage_encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                copy_tags_to_snapshot: self.copy_tags_to_snapshot
+                ,
+                monitoring_interval: self.monitoring_interval
+                ,
+                monitoring_role_arn: self.monitoring_role_arn
+                ,
+                enable_iam_database_authentication: self.enable_iam_database_authentication
+                ,
+                source_engine: self.source_engine
+                ,
+                source_engine_version: self.source_engine_version
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                s3_prefix: self.s3_prefix
+                ,
+                s3_ingestion_role_arn: self.s3_ingestion_role_arn
+                ,
+                enable_performance_insights: self.enable_performance_insights
+                ,
+                performance_insights_kms_key_id: self.performance_insights_kms_key_id
+                ,
+                performance_insights_retention_period: self.performance_insights_retention_period
+                ,
+                enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports
+                ,
+                processor_features: self.processor_features
+                ,
+                use_default_processor_features: self.use_default_processor_features
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+                max_allocated_storage: self.max_allocated_storage
+                ,
+                network_type: self.network_type
+                ,
+                storage_throughput: self.storage_throughput
+                ,
+                manage_master_user_password: self.manage_master_user_password
+                ,
+                master_user_secret_kms_key_id: self.master_user_secret_kms_key_id
+                ,
+                dedicated_log_volume: self.dedicated_log_volume
+                ,
+            }
+        )
     }
 }
+

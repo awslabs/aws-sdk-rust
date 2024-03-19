@@ -3,7 +3,7 @@
 /// <p>Represents a request to add or update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutIdentityPolicyInput {
+pub struct PutIdentityPolicyInput  {
     /// <p>The identity to which that the policy applies. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
     pub identity: ::std::option::Option<::std::string::String>,
@@ -14,20 +14,20 @@ pub struct PutIdentityPolicyInput {
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutIdentityPolicyInput {
+impl  PutIdentityPolicyInput  {
     /// <p>The identity to which that the policy applies. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl PutIdentityPolicyInputBuilder {
     /// <p>The identity to which that the policy applies. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>The identity to which that the policy applies. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
@@ -75,8 +74,7 @@ impl PutIdentityPolicyInputBuilder {
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
@@ -93,8 +91,7 @@ impl PutIdentityPolicyInputBuilder {
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
@@ -102,13 +99,17 @@ impl PutIdentityPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutIdentityPolicyInput`](crate::operation::put_identity_policy::PutIdentityPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_identity_policy::PutIdentityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_identity_policy::PutIdentityPolicyInput {
-            identity: self.identity,
-            policy_name: self.policy_name,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_identity_policy::PutIdentityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_identity_policy::PutIdentityPolicyInput {
+                identity: self.identity
+                ,
+                policy_name: self.policy_name
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

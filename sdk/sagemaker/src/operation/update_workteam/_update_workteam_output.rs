@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkteamOutput {
+pub struct UpdateWorkteamOutput  {
     /// <p>A <code>Workteam</code> object that describes the updated work team.</p>
     pub workteam: ::std::option::Option<crate::types::Workteam>,
     _request_id: Option<String>,
 }
-impl UpdateWorkteamOutput {
+impl  UpdateWorkteamOutput  {
     /// <p>A <code>Workteam</code> object that describes the updated work team.</p>
-    pub fn workteam(&self) -> ::std::option::Option<&crate::types::Workteam> {
+    pub fn workteam(&self) -> ::std::option::Option<& crate::types::Workteam> {
         self.workteam.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateWorkteamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateWorkteamOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkteamOutput`](crate::operation::update_workteam::UpdateWorkteamOutput).
     pub fn builder() -> crate::operation::update_workteam::builders::UpdateWorkteamOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateWorkteamOutputBuilder {
     }
     /// <p>A <code>Workteam</code> object that describes the updated work team.</p>
     pub fn set_workteam(mut self, input: ::std::option::Option<crate::types::Workteam>) -> Self {
-        self.workteam = input;
-        self
+        self.workteam = input; self
     }
     /// <p>A <code>Workteam</code> object that describes the updated work team.</p>
     pub fn get_workteam(&self) -> &::std::option::Option<crate::types::Workteam> {
         &self.workteam
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateWorkteamOutput`](crate::operation::update_workteam::UpdateWorkteamOutput).
     pub fn build(self) -> crate::operation::update_workteam::UpdateWorkteamOutput {
         crate::operation::update_workteam::UpdateWorkteamOutput {
-            workteam: self.workteam,
+            workteam: self.workteam
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateDeploymentInput {
+pub struct CreateDeploymentInput  {
     /// <p>The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
@@ -10,25 +10,25 @@ pub struct CreateDeploymentInput {
     /// <p>The name of the deployment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The settings specified for the deployment. For more information on the specifications required for creating a deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub specifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl CreateDeploymentInput {
+impl  CreateDeploymentInput  {
     /// <p>The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
-    pub fn deployment_pattern_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_pattern_name(&self) -> ::std::option::Option<& str> {
         self.deployment_pattern_name.as_deref()
     }
     /// <p>The name of the deployment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The settings specified for the deployment. For more information on the specifications required for creating a deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub fn specifications(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn specifications(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.specifications.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,7 +36,7 @@ impl CreateDeploymentInput {
         self.dry_run
     }
 }
-impl ::std::fmt::Debug for CreateDeploymentInput {
+impl  ::std::fmt::Debug for CreateDeploymentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeploymentInput");
         formatter.field("workload_name", &self.workload_name);
@@ -61,7 +61,7 @@ pub struct CreateDeploymentInputBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_pattern_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) specifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateDeploymentInputBuilder {
@@ -73,8 +73,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub fn set_deployment_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_pattern_name = input;
-        self
+        self.deployment_pattern_name = input; self
     }
     /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub fn get_deployment_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The name of the deployment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the deployment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,26 +112,18 @@ impl CreateDeploymentInputBuilder {
     /// To override the contents of this collection use [`set_specifications`](Self::set_specifications).
     ///
     /// <p>The settings specified for the deployment. For more information on the specifications required for creating a deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub fn specifications(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn specifications(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.specifications.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.specifications = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.specifications = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The settings specified for the deployment. For more information on the specifications required for creating a deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub fn set_specifications(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.specifications = input;
-        self
+    pub fn set_specifications(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.specifications = input; self
     }
     /// <p>The settings specified for the deployment. For more information on the specifications required for creating a deployment, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload specifications</a>.</p>
-    pub fn get_specifications(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_specifications(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -144,24 +133,28 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
-            workload_name: self.workload_name,
-            deployment_pattern_name: self.deployment_pattern_name,
-            name: self.name,
-            specifications: self.specifications,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_deployment::CreateDeploymentInput {
+                workload_name: self.workload_name
+                ,
+                deployment_pattern_name: self.deployment_pattern_name
+                ,
+                name: self.name
+                ,
+                specifications: self.specifications
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateDeploymentInputBuilder {
@@ -175,3 +168,4 @@ impl ::std::fmt::Debug for CreateDeploymentInputBuilder {
         formatter.finish()
     }
 }
+

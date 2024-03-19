@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceEndpointInput {
+pub struct GetServiceEndpointInput  {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
     pub service_type: ::std::option::Option<crate::types::WirelessGatewayServiceType>,
 }
-impl GetServiceEndpointInput {
+impl  GetServiceEndpointInput  {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&crate::types::WirelessGatewayServiceType> {
+    pub fn service_type(&self) -> ::std::option::Option<& crate::types::WirelessGatewayServiceType> {
         self.service_type.as_ref()
     }
 }
@@ -33,20 +33,20 @@ impl GetServiceEndpointInputBuilder {
     }
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::WirelessGatewayServiceType>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::WirelessGatewayServiceType> {
         &self.service_type
     }
     /// Consumes the builder and constructs a [`GetServiceEndpointInput`](crate::operation::get_service_endpoint::GetServiceEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_service_endpoint::GetServiceEndpointInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_service_endpoint::GetServiceEndpointInput {
-            service_type: self.service_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_endpoint::GetServiceEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_service_endpoint::GetServiceEndpointInput {
+                service_type: self.service_type
+                ,
+            }
+        )
     }
 }
+

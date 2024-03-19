@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateModelManifestOutput {
+pub struct UpdateModelManifestOutput  {
     /// <p>The name of the updated vehicle model.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle model.</p>
     pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateModelManifestOutput {
+impl  UpdateModelManifestOutput  {
     /// <p>The name of the updated vehicle model.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle model.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateModelManifestOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateModelManifestOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelManifestOutput`](crate::operation::update_model_manifest::UpdateModelManifestOutput).
     pub fn builder() -> crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder {
@@ -50,8 +48,7 @@ impl UpdateModelManifestOutputBuilder {
     }
     /// <p>The name of the updated vehicle model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the updated vehicle model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,44 +62,41 @@ impl UpdateModelManifestOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle model.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle model.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateModelManifestOutput`](crate::operation::update_model_manifest::UpdateModelManifestOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder::name)
     /// - [`arn`](crate::operation::update_model_manifest::builders::UpdateModelManifestOutputBuilder::arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_model_manifest::UpdateModelManifestOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_model_manifest::UpdateModelManifestOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateModelManifestOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building UpdateModelManifestOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model_manifest::UpdateModelManifestOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_model_manifest::UpdateModelManifestOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdateModelManifestOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building UpdateModelManifestOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

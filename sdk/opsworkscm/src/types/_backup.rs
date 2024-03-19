@@ -3,7 +3,7 @@
 /// <p>Describes a single backup.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Backup {
+pub struct Backup  {
     /// <p>The ARN of the backup.</p>
     pub backup_arn: ::std::option::Option<::std::string::String>,
     /// <p>The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code></p>
@@ -39,7 +39,7 @@ pub struct Backup {
     /// <p>The Amazon S3 URL of the backup's log file.</p>
     pub s3_log_url: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs that are obtained from the server when the backup is created.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the server from which the backup was made.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The service role ARN that is obtained from the server when the backup is created.</p>
@@ -49,63 +49,63 @@ pub struct Backup {
     /// <p>An informational message about backup status.</p>
     pub status_description: ::std::option::Option<::std::string::String>,
     /// <p>The subnet IDs that are obtained from the server when the backup is created.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
     pub tools_version: ::std::option::Option<::std::string::String>,
     /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
-impl Backup {
+impl  Backup  {
     /// <p>The ARN of the backup.</p>
-    pub fn backup_arn(&self) -> ::std::option::Option<&str> {
+    pub fn backup_arn(&self) -> ::std::option::Option<& str> {
         self.backup_arn.as_deref()
     }
     /// <p>The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code></p>
-    pub fn backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_id(&self) -> ::std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>The backup type. Valid values are <code>automated</code> or <code>manual</code>.</p>
-    pub fn backup_type(&self) -> ::std::option::Option<&crate::types::BackupType> {
+    pub fn backup_type(&self) -> ::std::option::Option<& crate::types::BackupType> {
         self.backup_type.as_ref()
     }
     /// <p>The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code></p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A user-provided description for a manual backup. This field is empty for automated backups.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The engine type that is obtained from the server when the backup is created.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The engine model that is obtained from the server when the backup is created.</p>
-    pub fn engine_model(&self) -> ::std::option::Option<&str> {
+    pub fn engine_model(&self) -> ::std::option::Option<& str> {
         self.engine_model.as_deref()
     }
     /// <p>The engine version that is obtained from the server when the backup is created.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup.</p>
-    pub fn instance_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_arn(&self) -> ::std::option::Option<& str> {
         self.instance_profile_arn.as_deref()
     }
     /// <p>The instance type that is obtained from the server when the backup is created.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The key pair that is obtained from the server when the backup is created.</p>
-    pub fn key_pair(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair(&self) -> ::std::option::Option<& str> {
         self.key_pair.as_deref()
     }
     /// <p>The preferred backup period that is obtained from the server when the backup is created.</p>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The preferred maintenance period that is obtained from the server when the backup is created.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>This field is deprecated and is no longer used.</p>
@@ -115,47 +115,49 @@ impl Backup {
     }
     /// <p>This field is deprecated and is no longer used.</p>
     #[deprecated]
-    pub fn s3_data_url(&self) -> ::std::option::Option<&str> {
+    pub fn s3_data_url(&self) -> ::std::option::Option<& str> {
         self.s3_data_url.as_deref()
     }
     /// <p>The Amazon S3 URL of the backup's log file.</p>
-    pub fn s3_log_url(&self) -> ::std::option::Option<&str> {
+    pub fn s3_log_url(&self) -> ::std::option::Option<& str> {
         self.s3_log_url.as_deref()
     }
     /// <p>The security group IDs that are obtained from the server when the backup is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the server from which the backup was made.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The service role ARN that is obtained from the server when the backup is created.</p>
-    pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>The status of a backup while in progress.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BackupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BackupStatus> {
         self.status.as_ref()
     }
     /// <p>An informational message about backup status.</p>
-    pub fn status_description(&self) -> ::std::option::Option<&str> {
+    pub fn status_description(&self) -> ::std::option::Option<& str> {
         self.status_description.as_deref()
     }
     /// <p>The subnet IDs that are obtained from the server when the backup is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
-    pub fn tools_version(&self) -> ::std::option::Option<&str> {
+    pub fn tools_version(&self) -> ::std::option::Option<& str> {
         self.tools_version.as_deref()
     }
     /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
 }
@@ -186,12 +188,12 @@ pub struct BackupBuilder {
     pub(crate) s3_data_size: ::std::option::Option<i32>,
     pub(crate) s3_data_url: ::std::option::Option<::std::string::String>,
     pub(crate) s3_log_url: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::BackupStatus>,
     pub(crate) status_description: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) tools_version: ::std::option::Option<::std::string::String>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
 }
@@ -203,8 +205,7 @@ impl BackupBuilder {
     }
     /// <p>The ARN of the backup.</p>
     pub fn set_backup_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_arn = input;
-        self
+        self.backup_arn = input; self
     }
     /// <p>The ARN of the backup.</p>
     pub fn get_backup_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +218,7 @@ impl BackupBuilder {
     }
     /// <p>The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code></p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// <p>The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code></p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +231,7 @@ impl BackupBuilder {
     }
     /// <p>The backup type. Valid values are <code>automated</code> or <code>manual</code>.</p>
     pub fn set_backup_type(mut self, input: ::std::option::Option<crate::types::BackupType>) -> Self {
-        self.backup_type = input;
-        self
+        self.backup_type = input; self
     }
     /// <p>The backup type. Valid values are <code>automated</code> or <code>manual</code>.</p>
     pub fn get_backup_type(&self) -> &::std::option::Option<crate::types::BackupType> {
@@ -245,8 +244,7 @@ impl BackupBuilder {
     }
     /// <p>The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code></p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code></p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -259,8 +257,7 @@ impl BackupBuilder {
     }
     /// <p>A user-provided description for a manual backup. This field is empty for automated backups.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-provided description for a manual backup. This field is empty for automated backups.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +270,7 @@ impl BackupBuilder {
     }
     /// <p>The engine type that is obtained from the server when the backup is created.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The engine type that is obtained from the server when the backup is created.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +283,7 @@ impl BackupBuilder {
     }
     /// <p>The engine model that is obtained from the server when the backup is created.</p>
     pub fn set_engine_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_model = input;
-        self
+        self.engine_model = input; self
     }
     /// <p>The engine model that is obtained from the server when the backup is created.</p>
     pub fn get_engine_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +296,7 @@ impl BackupBuilder {
     }
     /// <p>The engine version that is obtained from the server when the backup is created.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The engine version that is obtained from the server when the backup is created.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,8 +309,7 @@ impl BackupBuilder {
     }
     /// <p>The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup.</p>
     pub fn set_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_arn = input;
-        self
+        self.instance_profile_arn = input; self
     }
     /// <p>The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored, you are not required to provide the InstanceProfileArn again if you restore a backup.</p>
     pub fn get_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -329,8 +322,7 @@ impl BackupBuilder {
     }
     /// <p>The instance type that is obtained from the server when the backup is created.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type that is obtained from the server when the backup is created.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -343,8 +335,7 @@ impl BackupBuilder {
     }
     /// <p>The key pair that is obtained from the server when the backup is created.</p>
     pub fn set_key_pair(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair = input;
-        self
+        self.key_pair = input; self
     }
     /// <p>The key pair that is obtained from the server when the backup is created.</p>
     pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
@@ -357,8 +348,7 @@ impl BackupBuilder {
     }
     /// <p>The preferred backup period that is obtained from the server when the backup is created.</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>The preferred backup period that is obtained from the server when the backup is created.</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -371,8 +361,7 @@ impl BackupBuilder {
     }
     /// <p>The preferred maintenance period that is obtained from the server when the backup is created.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The preferred maintenance period that is obtained from the server when the backup is created.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -387,8 +376,7 @@ impl BackupBuilder {
     /// <p>This field is deprecated and is no longer used.</p>
     #[deprecated]
     pub fn set_s3_data_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.s3_data_size = input;
-        self
+        self.s3_data_size = input; self
     }
     /// <p>This field is deprecated and is no longer used.</p>
     #[deprecated]
@@ -404,8 +392,7 @@ impl BackupBuilder {
     /// <p>This field is deprecated and is no longer used.</p>
     #[deprecated]
     pub fn set_s3_data_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_data_url = input;
-        self
+        self.s3_data_url = input; self
     }
     /// <p>This field is deprecated and is no longer used.</p>
     #[deprecated]
@@ -419,8 +406,7 @@ impl BackupBuilder {
     }
     /// <p>The Amazon S3 URL of the backup's log file.</p>
     pub fn set_s3_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_log_url = input;
-        self
+        self.s3_log_url = input; self
     }
     /// <p>The Amazon S3 URL of the backup's log file.</p>
     pub fn get_s3_log_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -433,17 +419,16 @@ impl BackupBuilder {
     /// <p>The security group IDs that are obtained from the server when the backup is created.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group IDs that are obtained from the server when the backup is created.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The security group IDs that are obtained from the server when the backup is created.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The name of the server from which the backup was made.</p>
@@ -453,8 +438,7 @@ impl BackupBuilder {
     }
     /// <p>The name of the server from which the backup was made.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server from which the backup was made.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -467,8 +451,7 @@ impl BackupBuilder {
     }
     /// <p>The service role ARN that is obtained from the server when the backup is created.</p>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role_arn = input;
-        self
+        self.service_role_arn = input; self
     }
     /// <p>The service role ARN that is obtained from the server when the backup is created.</p>
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -481,8 +464,7 @@ impl BackupBuilder {
     }
     /// <p>The status of a backup while in progress.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BackupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a backup while in progress.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BackupStatus> {
@@ -495,8 +477,7 @@ impl BackupBuilder {
     }
     /// <p>An informational message about backup status.</p>
     pub fn set_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_description = input;
-        self
+        self.status_description = input; self
     }
     /// <p>An informational message about backup status.</p>
     pub fn get_status_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -509,17 +490,16 @@ impl BackupBuilder {
     /// <p>The subnet IDs that are obtained from the server when the backup is created.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnet IDs that are obtained from the server when the backup is created.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The subnet IDs that are obtained from the server when the backup is created.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
@@ -529,8 +509,7 @@ impl BackupBuilder {
     }
     /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
     pub fn set_tools_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tools_version = input;
-        self
+        self.tools_version = input; self
     }
     /// <p>The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.</p>
     pub fn get_tools_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -543,8 +522,7 @@ impl BackupBuilder {
     }
     /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The IAM user ARN of the requester for manual backups. This field is empty for automated backups.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -553,30 +531,55 @@ impl BackupBuilder {
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
     pub fn build(self) -> crate::types::Backup {
         crate::types::Backup {
-            backup_arn: self.backup_arn,
-            backup_id: self.backup_id,
-            backup_type: self.backup_type,
-            created_at: self.created_at,
-            description: self.description,
-            engine: self.engine,
-            engine_model: self.engine_model,
-            engine_version: self.engine_version,
-            instance_profile_arn: self.instance_profile_arn,
-            instance_type: self.instance_type,
-            key_pair: self.key_pair,
-            preferred_backup_window: self.preferred_backup_window,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            s3_data_size: self.s3_data_size,
-            s3_data_url: self.s3_data_url,
-            s3_log_url: self.s3_log_url,
-            security_group_ids: self.security_group_ids,
-            server_name: self.server_name,
-            service_role_arn: self.service_role_arn,
-            status: self.status,
-            status_description: self.status_description,
-            subnet_ids: self.subnet_ids,
-            tools_version: self.tools_version,
-            user_arn: self.user_arn,
+            backup_arn: self.backup_arn
+            ,
+            backup_id: self.backup_id
+            ,
+            backup_type: self.backup_type
+            ,
+            created_at: self.created_at
+            ,
+            description: self.description
+            ,
+            engine: self.engine
+            ,
+            engine_model: self.engine_model
+            ,
+            engine_version: self.engine_version
+            ,
+            instance_profile_arn: self.instance_profile_arn
+            ,
+            instance_type: self.instance_type
+            ,
+            key_pair: self.key_pair
+            ,
+            preferred_backup_window: self.preferred_backup_window
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            s3_data_size: self.s3_data_size
+            ,
+            s3_data_url: self.s3_data_url
+            ,
+            s3_log_url: self.s3_log_url
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            server_name: self.server_name
+            ,
+            service_role_arn: self.service_role_arn
+            ,
+            status: self.status
+            ,
+            status_description: self.status_description
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            tools_version: self.tools_version
+            ,
+            user_arn: self.user_arn
+            ,
         }
     }
 }
+

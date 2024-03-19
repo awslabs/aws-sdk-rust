@@ -3,22 +3,22 @@
 /// <p>CreateAgentResponse</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAgentOutput {
+pub struct CreateAgentOutput  {
     /// <p>The ARN of the agent that you just activated. Use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.</p>
     pub agent_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateAgentOutput {
+impl  CreateAgentOutput  {
     /// <p>The ARN of the agent that you just activated. Use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.</p>
-    pub fn agent_arn(&self) -> ::std::option::Option<&str> {
+    pub fn agent_arn(&self) -> ::std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAgentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAgentOutput {
     /// Creates a new builder-style object to manufacture [`CreateAgentOutput`](crate::operation::create_agent::CreateAgentOutput).
     pub fn builder() -> crate::operation::create_agent::builders::CreateAgentOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateAgentOutputBuilder {
     }
     /// <p>The ARN of the agent that you just activated. Use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.</p>
     pub fn set_agent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_arn = input;
-        self
+        self.agent_arn = input; self
     }
     /// <p>The ARN of the agent that you just activated. Use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation to return a list of agents in your Amazon Web Services account and Amazon Web Services Region.</p>
     pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAgentOutput`](crate::operation::create_agent::CreateAgentOutput).
     pub fn build(self) -> crate::operation::create_agent::CreateAgentOutput {
         crate::operation::create_agent::CreateAgentOutput {
-            agent_arn: self.agent_arn,
+            agent_arn: self.agent_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

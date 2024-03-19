@@ -5,54 +5,50 @@ pub use crate::operation::stream_journal_to_kinesis::_stream_journal_to_kinesis_
 
 impl StreamJournalToKinesisInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.stream_journal_to_kinesis();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.stream_journal_to_kinesis();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StreamJournalToKinesis`.
-///
+/// 
 /// <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is committed to the ledger's journal and delivers the data to a specified Amazon Kinesis Data Streams resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StreamJournalToKinesisFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisInputBuilder,
+                    inner: crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
-        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
-    > for StreamJournalToKinesisFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
-            crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
+                    crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
+                > for StreamJournalToKinesisFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
+                        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StreamJournalToKinesisFluentBuilder {
     /// Creates a new `StreamJournalToKinesis`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl StreamJournalToKinesisFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::stream_journal_to_kinesis::StreamJournalToKinesis::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesis::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
-        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::stream_journal_to_kinesis::StreamJournalToKinesis::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesis::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput, crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the ledger.</p>
     pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ledger_name(input.into());
@@ -149,17 +136,12 @@ impl StreamJournalToKinesisFluentBuilder {
         self
     }
     /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.inner.get_tags()
     }
     /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
@@ -231,3 +213,4 @@ impl StreamJournalToKinesisFluentBuilder {
         self.inner.get_stream_name()
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeployments`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_application_id):<br>required: **true**<br><p>The application ID.</p><br>
     ///   - [`environment_id(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_environment_id):<br>required: **true**<br><p>The environment ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p><br>
-    /// - On success, responds with [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput) with field(s):
+                            /// - On success, responds with [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput) with field(s):
     ///   - [`items(Option<Vec::<DeploymentSummary>>)`](crate::operation::list_deployments::ListDeploymentsOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployments::ListDeploymentsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
+                            /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::operation::list_deployments::ListDeploymentsError)
     pub fn list_deployments(&self) -> crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder {
-        crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_deployments::builders::ListDeploymentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

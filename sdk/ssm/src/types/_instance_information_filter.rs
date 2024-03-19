@@ -4,21 +4,20 @@
 /// <p>Use this operation instead of the <code>DescribeInstanceInformationRequest$InstanceInformationFilterList</code> method. The <code>InstanceInformationFilterList</code> method is a legacy method and doesn't support tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceInformationFilter {
+pub struct InstanceInformationFilter  {
     /// <p>The name of the filter.</p>
     pub key: crate::types::InstanceInformationFilterKey,
     /// <p>The filter values.</p>
-    pub value_set: ::std::vec::Vec<::std::string::String>,
+    pub value_set: ::std::vec::Vec::<::std::string::String>,
 }
-impl InstanceInformationFilter {
+impl  InstanceInformationFilter  {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> &crate::types::InstanceInformationFilterKey {
+    pub fn key(&self) -> & crate::types::InstanceInformationFilterKey {
         &self.key
     }
     /// <p>The filter values.</p>
-    pub fn value_set(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.value_set.deref()
+    pub fn value_set(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.value_set.deref()
     }
 }
 impl InstanceInformationFilter {
@@ -33,7 +32,7 @@ impl InstanceInformationFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceInformationFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::InstanceInformationFilterKey>,
-    pub(crate) value_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) value_set: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl InstanceInformationFilterBuilder {
     /// <p>The name of the filter.</p>
@@ -44,8 +43,7 @@ impl InstanceInformationFilterBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::InstanceInformationFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the filter.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::InstanceInformationFilterKey> {
@@ -58,17 +56,16 @@ impl InstanceInformationFilterBuilder {
     /// <p>The filter values.</p>
     pub fn value_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value_set.unwrap_or_default();
-        v.push(input.into());
-        self.value_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter values.</p>
-    pub fn set_value_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.value_set = input;
-        self
+    pub fn set_value_set(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.value_set = input; self
     }
     /// <p>The filter values.</p>
-    pub fn get_value_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_value_set(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.value_set
     }
     /// Consumes the builder and constructs a [`InstanceInformationFilter`](crate::types::InstanceInformationFilter).
@@ -76,19 +73,20 @@ impl InstanceInformationFilterBuilder {
     /// - [`key`](crate::types::builders::InstanceInformationFilterBuilder::key)
     /// - [`value_set`](crate::types::builders::InstanceInformationFilterBuilder::value_set)
     pub fn build(self) -> ::std::result::Result<crate::types::InstanceInformationFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InstanceInformationFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building InstanceInformationFilter",
-                )
-            })?,
-            value_set: self.value_set.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value_set",
-                    "value_set was not specified but it is required when building InstanceInformationFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InstanceInformationFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building InstanceInformationFilter")
+                    )?
+                ,
+                value_set: self.value_set
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value_set", "value_set was not specified but it is required when building InstanceInformationFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

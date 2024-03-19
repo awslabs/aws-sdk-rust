@@ -3,17 +3,17 @@
 /// <p>Contains the JSON-formatted string returned by the API invoked by the action group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ActionGroupInvocationOutput {
+pub struct ActionGroupInvocationOutput  {
     /// <p>The JSON-formatted string returned by the API invoked by the action group.</p>
     pub text: ::std::option::Option<::std::string::String>,
 }
-impl ActionGroupInvocationOutput {
+impl  ActionGroupInvocationOutput  {
     /// <p>The JSON-formatted string returned by the API invoked by the action group.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
-impl ::std::fmt::Debug for ActionGroupInvocationOutput {
+impl  ::std::fmt::Debug for ActionGroupInvocationOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActionGroupInvocationOutput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl ActionGroupInvocationOutputBuilder {
     }
     /// <p>The JSON-formatted string returned by the API invoked by the action group.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The JSON-formatted string returned by the API invoked by the action group.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,7 +49,10 @@ impl ActionGroupInvocationOutputBuilder {
     }
     /// Consumes the builder and constructs a [`ActionGroupInvocationOutput`](crate::types::ActionGroupInvocationOutput).
     pub fn build(self) -> crate::types::ActionGroupInvocationOutput {
-        crate::types::ActionGroupInvocationOutput { text: self.text }
+        crate::types::ActionGroupInvocationOutput {
+            text: self.text
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for ActionGroupInvocationOutputBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for ActionGroupInvocationOutputBuilder {
         formatter.finish()
     }
 }
+

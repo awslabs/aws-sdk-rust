@@ -3,35 +3,32 @@
 /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Join {
+pub struct Join  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>Specifies the type of join to be performed on the datasets.</p>
     pub join_type: crate::types::JoinType,
     /// <p>A list of the two columns to be joined.</p>
-    pub columns: ::std::vec::Vec<crate::types::JoinColumn>,
+    pub columns: ::std::vec::Vec::<crate::types::JoinColumn>,
 }
-impl Join {
+impl  Join  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
-    pub fn join_type(&self) -> &crate::types::JoinType {
+    pub fn join_type(&self) -> & crate::types::JoinType {
         &self.join_type
     }
     /// <p>A list of the two columns to be joined.</p>
-    pub fn columns(&self) -> &[crate::types::JoinColumn] {
-        use std::ops::Deref;
-        self.columns.deref()
+    pub fn columns(&self) -> & [crate::types::JoinColumn] {
+        use std::ops::Deref; self.columns.deref()
     }
 }
 impl Join {
@@ -46,9 +43,9 @@ impl Join {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JoinBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) join_type: ::std::option::Option<crate::types::JoinType>,
-    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::JoinColumn>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec::<crate::types::JoinColumn>>,
 }
 impl JoinBuilder {
     /// <p>The name of the transform node.</p>
@@ -59,8 +56,7 @@ impl JoinBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +69,16 @@ impl JoinBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
@@ -94,8 +89,7 @@ impl JoinBuilder {
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
     pub fn set_join_type(mut self, input: ::std::option::Option<crate::types::JoinType>) -> Self {
-        self.join_type = input;
-        self
+        self.join_type = input; self
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
     pub fn get_join_type(&self) -> &::std::option::Option<crate::types::JoinType> {
@@ -108,17 +102,16 @@ impl JoinBuilder {
     /// <p>A list of the two columns to be joined.</p>
     pub fn columns(mut self, input: crate::types::JoinColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the two columns to be joined.</p>
-    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JoinColumn>>) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JoinColumn>>) -> Self {
+        self.columns = input; self
     }
     /// <p>A list of the two columns to be joined.</p>
-    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JoinColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JoinColumn>> {
         &self.columns
     }
     /// Consumes the builder and constructs a [`Join`](crate::types::Join).
@@ -128,31 +121,30 @@ impl JoinBuilder {
     /// - [`join_type`](crate::types::builders::JoinBuilder::join_type)
     /// - [`columns`](crate::types::builders::JoinBuilder::columns)
     pub fn build(self) -> ::std::result::Result<crate::types::Join, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Join {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Join",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building Join",
-                )
-            })?,
-            join_type: self.join_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "join_type",
-                    "join_type was not specified but it is required when building Join",
-                )
-            })?,
-            columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "columns",
-                    "columns was not specified but it is required when building Join",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Join {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Join")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building Join")
+                    )?
+                ,
+                join_type: self.join_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("join_type", "join_type was not specified but it is required when building Join")
+                    )?
+                ,
+                columns: self.columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("columns", "columns was not specified but it is required when building Join")
+                    )?
+                ,
+            }
+        )
     }
 }
+

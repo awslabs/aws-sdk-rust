@@ -3,7 +3,7 @@
 /// <p>Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredefinedMetricSpecification {
+pub struct PredefinedMetricSpecification  {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
     /// <li>
@@ -39,7 +39,7 @@ pub struct PredefinedMetricSpecification {
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub resource_label: ::std::option::Option<::std::string::String>,
 }
-impl PredefinedMetricSpecification {
+impl  PredefinedMetricSpecification  {
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
     /// <li>
@@ -51,7 +51,7 @@ impl PredefinedMetricSpecification {
     /// <li>
     /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
     /// </ul>
-    pub fn predefined_metric_type(&self) -> ::std::option::Option<&crate::types::MetricType> {
+    pub fn predefined_metric_type(&self) -> ::std::option::Option<& crate::types::MetricType> {
         self.predefined_metric_type.as_ref()
     }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
@@ -75,7 +75,7 @@ impl PredefinedMetricSpecification {
     /// </target-group-name></p></li>
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn resource_label(&self) -> ::std::option::Option<&str> {
+    pub fn resource_label(&self) -> ::std::option::Option<& str> {
         self.resource_label.as_deref()
     }
 }
@@ -122,8 +122,7 @@ impl PredefinedMetricSpecificationBuilder {
     /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
     /// </ul>
     pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
-        self.predefined_metric_type = input;
-        self
+        self.predefined_metric_type = input; self
     }
     /// <p>The metric type. The following predefined metrics are available:</p>
     /// <ul>
@@ -186,8 +185,7 @@ impl PredefinedMetricSpecificationBuilder {
     /// </ul>
     /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn set_resource_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_label = input;
-        self
+        self.resource_label = input; self
     }
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -216,8 +214,11 @@ impl PredefinedMetricSpecificationBuilder {
     /// Consumes the builder and constructs a [`PredefinedMetricSpecification`](crate::types::PredefinedMetricSpecification).
     pub fn build(self) -> crate::types::PredefinedMetricSpecification {
         crate::types::PredefinedMetricSpecification {
-            predefined_metric_type: self.predefined_metric_type,
-            resource_label: self.resource_label,
+            predefined_metric_type: self.predefined_metric_type
+            ,
+            resource_label: self.resource_label
+            ,
         }
     }
 }
+

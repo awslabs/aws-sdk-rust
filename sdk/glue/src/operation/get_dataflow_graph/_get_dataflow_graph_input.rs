@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataflowGraphInput {
+pub struct GetDataflowGraphInput  {
     /// <p>The Python script to transform.</p>
     pub python_script: ::std::option::Option<::std::string::String>,
 }
-impl GetDataflowGraphInput {
+impl  GetDataflowGraphInput  {
     /// <p>The Python script to transform.</p>
-    pub fn python_script(&self) -> ::std::option::Option<&str> {
+    pub fn python_script(&self) -> ::std::option::Option<& str> {
         self.python_script.as_deref()
     }
 }
@@ -33,19 +33,20 @@ impl GetDataflowGraphInputBuilder {
     }
     /// <p>The Python script to transform.</p>
     pub fn set_python_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.python_script = input;
-        self
+        self.python_script = input; self
     }
     /// <p>The Python script to transform.</p>
     pub fn get_python_script(&self) -> &::std::option::Option<::std::string::String> {
         &self.python_script
     }
     /// Consumes the builder and constructs a [`GetDataflowGraphInput`](crate::operation::get_dataflow_graph::GetDataflowGraphInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_dataflow_graph::GetDataflowGraphInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_dataflow_graph::GetDataflowGraphInput {
-            python_script: self.python_script,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dataflow_graph::GetDataflowGraphInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_dataflow_graph::GetDataflowGraphInput {
+                python_script: self.python_script
+                ,
+            }
+        )
     }
 }
+

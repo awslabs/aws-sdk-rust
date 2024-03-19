@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVersionsByFunctionInput {
+pub struct ListVersionsByFunctionInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -20,7 +20,7 @@ pub struct ListVersionsByFunctionInput {
     /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListVersionsByFunctionInput {
+impl  ListVersionsByFunctionInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -32,11 +32,11 @@ impl ListVersionsByFunctionInput {
     /// <p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
@@ -88,8 +88,7 @@ impl ListVersionsByFunctionInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -112,8 +111,7 @@ impl ListVersionsByFunctionInputBuilder {
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,24 +124,24 @@ impl ListVersionsByFunctionInputBuilder {
     }
     /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListVersionsByFunctionInput`](crate::operation::list_versions_by_function::ListVersionsByFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_versions_by_function::ListVersionsByFunctionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_versions_by_function::ListVersionsByFunctionInput {
-            function_name: self.function_name,
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_versions_by_function::ListVersionsByFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_versions_by_function::ListVersionsByFunctionInput {
+                function_name: self.function_name
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

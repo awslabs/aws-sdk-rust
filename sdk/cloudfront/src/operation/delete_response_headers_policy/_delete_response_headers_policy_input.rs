@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResponseHeadersPolicyInput {
+pub struct DeleteResponseHeadersPolicyInput  {
     /// <p>The identifier for the response headers policy that you are deleting.</p>
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DeleteResponseHeadersPolicyInput {
     /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResponseHeadersPolicyInput {
+impl  DeleteResponseHeadersPolicyInput  {
     /// <p>The identifier for the response headers policy that you are deleting.</p>
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version of the response headers policy that you are deleting.</p>
     /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteResponseHeadersPolicyInputBuilder {
     /// <p>The identifier for the response headers policy that you are deleting.</p>
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the response headers policy that you are deleting.</p>
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
@@ -64,8 +63,7 @@ impl DeleteResponseHeadersPolicyInputBuilder {
     /// <p>The version of the response headers policy that you are deleting.</p>
     /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The version of the response headers policy that you are deleting.</p>
     /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -73,15 +71,15 @@ impl DeleteResponseHeadersPolicyInputBuilder {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteResponseHeadersPolicyInput`](crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyInput {
-            id: self.id,
-            if_match: self.if_match,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyInput {
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
+        )
     }
 }
+

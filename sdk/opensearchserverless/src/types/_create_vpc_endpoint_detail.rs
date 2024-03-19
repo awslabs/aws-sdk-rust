@@ -3,7 +3,7 @@
 /// <p>Creation details for an OpenSearch Serverless-managed interface endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon OpenSearch Serverless using an interface endpoint</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcEndpointDetail {
+pub struct CreateVpcEndpointDetail  {
     /// <p>The unique identifier of the endpoint.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint.</p>
@@ -11,17 +11,17 @@ pub struct CreateVpcEndpointDetail {
     /// <p>The current status in the endpoint creation process.</p>
     pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
-impl CreateVpcEndpointDetail {
+impl  CreateVpcEndpointDetail  {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status in the endpoint creation process.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcEndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateVpcEndpointDetailBuilder {
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CreateVpcEndpointDetailBuilder {
     }
     /// <p>The name of the endpoint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the endpoint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl CreateVpcEndpointDetailBuilder {
     }
     /// <p>The current status in the endpoint creation process.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcEndpointStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status in the endpoint creation process.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcEndpointStatus> {
@@ -86,9 +83,13 @@ impl CreateVpcEndpointDetailBuilder {
     /// Consumes the builder and constructs a [`CreateVpcEndpointDetail`](crate::types::CreateVpcEndpointDetail).
     pub fn build(self) -> crate::types::CreateVpcEndpointDetail {
         crate::types::CreateVpcEndpointDetail {
-            id: self.id,
-            name: self.name,
-            status: self.status,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

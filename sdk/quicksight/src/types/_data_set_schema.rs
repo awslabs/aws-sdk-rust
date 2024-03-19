@@ -3,16 +3,17 @@
 /// <p>Dataset schema.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetSchema {
+pub struct DataSetSchema  {
     /// <p>A structure containing the list of column schemas.</p>
-    pub column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>,
+    pub column_schema_list: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnSchema>>,
 }
-impl DataSetSchema {
+impl  DataSetSchema  {
     /// <p>A structure containing the list of column schemas.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_schema_list.is_none()`.
-    pub fn column_schema_list(&self) -> &[crate::types::ColumnSchema] {
-        self.column_schema_list.as_deref().unwrap_or_default()
+    pub fn column_schema_list(&self) -> & [crate::types::ColumnSchema] {
+        self.column_schema_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DataSetSchema {
@@ -26,7 +27,7 @@ impl DataSetSchema {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetSchemaBuilder {
-    pub(crate) column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>,
+    pub(crate) column_schema_list: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnSchema>>,
 }
 impl DataSetSchemaBuilder {
     /// Appends an item to `column_schema_list`.
@@ -36,23 +37,24 @@ impl DataSetSchemaBuilder {
     /// <p>A structure containing the list of column schemas.</p>
     pub fn column_schema_list(mut self, input: crate::types::ColumnSchema) -> Self {
         let mut v = self.column_schema_list.unwrap_or_default();
-        v.push(input);
-        self.column_schema_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_schema_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure containing the list of column schemas.</p>
-    pub fn set_column_schema_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>) -> Self {
-        self.column_schema_list = input;
-        self
+    pub fn set_column_schema_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnSchema>>) -> Self {
+        self.column_schema_list = input; self
     }
     /// <p>A structure containing the list of column schemas.</p>
-    pub fn get_column_schema_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>> {
+    pub fn get_column_schema_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnSchema>> {
         &self.column_schema_list
     }
     /// Consumes the builder and constructs a [`DataSetSchema`](crate::types::DataSetSchema).
     pub fn build(self) -> crate::types::DataSetSchema {
         crate::types::DataSetSchema {
-            column_schema_list: self.column_schema_list,
+            column_schema_list: self.column_schema_list
+            ,
         }
     }
 }
+

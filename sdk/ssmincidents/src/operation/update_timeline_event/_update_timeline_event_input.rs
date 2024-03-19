@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTimelineEventInput {
+pub struct UpdateTimelineEventInput  {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
@@ -18,40 +18,41 @@ pub struct UpdateTimelineEventInput {
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p><important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
+    pub event_references: ::std::option::Option<::std::vec::Vec::<crate::types::EventReference>>,
 }
-impl UpdateTimelineEventInput {
+impl  UpdateTimelineEventInput  {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
+    pub fn incident_record_arn(&self) -> ::std::option::Option<& str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The timestamp for when the event occurred.</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&str> {
+    pub fn event_type(&self) -> ::std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>A short description of the event.</p>
-    pub fn event_data(&self) -> ::std::option::Option<&str> {
+    pub fn event_data(&self) -> ::std::option::Option<& str> {
         self.event_data.as_deref()
     }
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p><important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_references.is_none()`.
-    pub fn event_references(&self) -> &[crate::types::EventReference] {
-        self.event_references.as_deref().unwrap_or_default()
+    pub fn event_references(&self) -> & [crate::types::EventReference] {
+        self.event_references.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateTimelineEventInput {
@@ -71,7 +72,7 @@ pub struct UpdateTimelineEventInputBuilder {
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
     pub(crate) event_data: ::std::option::Option<::std::string::String>,
-    pub(crate) event_references: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>,
+    pub(crate) event_references: ::std::option::Option<::std::vec::Vec::<crate::types::EventReference>>,
 }
 impl UpdateTimelineEventInputBuilder {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
@@ -81,8 +82,7 @@ impl UpdateTimelineEventInputBuilder {
     }
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +96,7 @@ impl UpdateTimelineEventInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incident_record_arn = input;
-        self
+        self.incident_record_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl UpdateTimelineEventInputBuilder {
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl UpdateTimelineEventInputBuilder {
     }
     /// <p>The timestamp for when the event occurred.</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input;
-        self
+        self.event_time = input; self
     }
     /// <p>The timestamp for when the event occurred.</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +136,7 @@ impl UpdateTimelineEventInputBuilder {
     }
     /// <p>The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl UpdateTimelineEventInputBuilder {
     }
     /// <p>A short description of the event.</p>
     pub fn set_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data = input;
-        self
+        self.event_data = input; self
     }
     /// <p>A short description of the event.</p>
     pub fn get_event_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,36 +164,42 @@ impl UpdateTimelineEventInputBuilder {
     /// </important>
     pub fn event_references(mut self, input: crate::types::EventReference) -> Self {
         let mut v = self.event_references.unwrap_or_default();
-        v.push(input);
-        self.event_references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p><important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventReference>>) -> Self {
-        self.event_references = input;
-        self
+    pub fn set_event_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventReference>>) -> Self {
+        self.event_references = input; self
     }
     /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p><important>
     /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventReference>> {
+    pub fn get_event_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventReference>> {
         &self.event_references
     }
     /// Consumes the builder and constructs a [`UpdateTimelineEventInput`](crate::operation::update_timeline_event::UpdateTimelineEventInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_timeline_event::UpdateTimelineEventInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_timeline_event::UpdateTimelineEventInput {
-            client_token: self.client_token,
-            incident_record_arn: self.incident_record_arn,
-            event_id: self.event_id,
-            event_time: self.event_time,
-            event_type: self.event_type,
-            event_data: self.event_data,
-            event_references: self.event_references,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_timeline_event::UpdateTimelineEventInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_timeline_event::UpdateTimelineEventInput {
+                client_token: self.client_token
+                ,
+                incident_record_arn: self.incident_record_arn
+                ,
+                event_id: self.event_id
+                ,
+                event_time: self.event_time
+                ,
+                event_type: self.event_type
+                ,
+                event_data: self.event_data
+                ,
+                event_references: self.event_references
+                ,
+            }
+        )
     }
 }
+

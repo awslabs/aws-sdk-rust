@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSegmentOutput {
+pub struct DeleteSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     pub segment_response: ::std::option::Option<crate::types::SegmentResponse>,
     _request_id: Option<String>,
 }
-impl DeleteSegmentOutput {
+impl  DeleteSegmentOutput  {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
-    pub fn segment_response(&self) -> ::std::option::Option<&crate::types::SegmentResponse> {
+    pub fn segment_response(&self) -> ::std::option::Option<& crate::types::SegmentResponse> {
         self.segment_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSegmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSegmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSegmentOutput`](crate::operation::delete_segment::DeleteSegmentOutput).
     pub fn builder() -> crate::operation::delete_segment::builders::DeleteSegmentOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteSegmentOutputBuilder {
     }
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     pub fn set_segment_response(mut self, input: ::std::option::Option<crate::types::SegmentResponse>) -> Self {
-        self.segment_response = input;
-        self
+        self.segment_response = input; self
     }
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
     pub fn get_segment_response(&self) -> &::std::option::Option<crate::types::SegmentResponse> {
         &self.segment_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSegmentOutput`](crate::operation::delete_segment::DeleteSegmentOutput).
     pub fn build(self) -> crate::operation::delete_segment::DeleteSegmentOutput {
         crate::operation::delete_segment::DeleteSegmentOutput {
-            segment_response: self.segment_response,
+            segment_response: self.segment_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

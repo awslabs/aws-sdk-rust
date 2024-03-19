@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomLineItems`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`billing_period(impl Into<String>)`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::billing_period) / [`set_billing_period(Option<String>)`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::set_billing_period):<br>required: **false**<br><p>The preferred billing period to get custom line items (FFLIs).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of billing groups to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p><br>
     ///   - [`filters(ListCustomLineItemsFilter)`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::filters) / [`set_filters(Option<ListCustomLineItemsFilter>)`](crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::set_filters):<br>required: **false**<br><p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p><br>
-    /// - On success, responds with [`ListCustomLineItemsOutput`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomLineItemsOutput`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput) with field(s):
     ///   - [`custom_line_items(Option<Vec::<CustomLineItemListElement>>)`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput::custom_line_items): <p>A list of <code>FreeFormLineItemListElements</code> received.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput::next_token): <p>The pagination token that's used on subsequent calls to get custom line items (FFLIs).</p>
-    /// - On failure, responds with [`SdkError<ListCustomLineItemsError>`](crate::operation::list_custom_line_items::ListCustomLineItemsError)
+                            /// - On failure, responds with [`SdkError<ListCustomLineItemsError>`](crate::operation::list_custom_line_items::ListCustomLineItemsError)
     pub fn list_custom_line_items(&self) -> crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder {
-        crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_custom_line_items::builders::ListCustomLineItemsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

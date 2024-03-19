@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTasksOutput {
+pub struct DescribeTasksOutput  {
     /// <p>The list of tasks.</p>
-    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec::<crate::types::Task>>,
     /// <p>Any failures associated with the call.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
-impl DescribeTasksOutput {
+impl  DescribeTasksOutput  {
     /// <p>The list of tasks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
-    pub fn tasks(&self) -> &[crate::types::Task] {
-        self.tasks.as_deref().unwrap_or_default()
+    pub fn tasks(&self) -> & [crate::types::Task] {
+        self.tasks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::Failure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::Failure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTasksOutput`](crate::operation::describe_tasks::DescribeTasksOutput).
     pub fn builder() -> crate::operation::describe_tasks::builders::DescribeTasksOutputBuilder {
@@ -39,8 +41,8 @@ impl DescribeTasksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTasksOutputBuilder {
-    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec::<crate::types::Task>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
 impl DescribeTasksOutputBuilder {
@@ -51,17 +53,16 @@ impl DescribeTasksOutputBuilder {
     /// <p>The list of tasks.</p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input);
-        self.tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tasks.</p>
-    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Task>>) -> Self {
+        self.tasks = input; self
     }
     /// <p>The list of tasks.</p>
-    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Task>> {
         &self.tasks
     }
     /// Appends an item to `failures`.
@@ -71,34 +72,36 @@ impl DescribeTasksOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Failure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTasksOutput`](crate::operation::describe_tasks::DescribeTasksOutput).
     pub fn build(self) -> crate::operation::describe_tasks::DescribeTasksOutput {
         crate::operation::describe_tasks::DescribeTasksOutput {
-            tasks: self.tasks,
-            failures: self.failures,
+            tasks: self.tasks
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

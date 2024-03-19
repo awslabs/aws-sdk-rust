@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveBridgeSourceInput {
+pub struct RemoveBridgeSourceInput  {
     /// The ARN of the bridge that you want to update.
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The name of the bridge source that you want to remove.
     pub source_name: ::std::option::Option<::std::string::String>,
 }
-impl RemoveBridgeSourceInput {
+impl  RemoveBridgeSourceInput  {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
     /// The name of the bridge source that you want to remove.
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RemoveBridgeSourceInputBuilder {
     }
     /// The ARN of the bridge that you want to update.
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
     }
     /// The ARN of the bridge that you want to update.
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl RemoveBridgeSourceInputBuilder {
     }
     /// The name of the bridge source that you want to remove.
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// The name of the bridge source that you want to remove.
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_name
     }
     /// Consumes the builder and constructs a [`RemoveBridgeSourceInput`](crate::operation::remove_bridge_source::RemoveBridgeSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_bridge_source::RemoveBridgeSourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::remove_bridge_source::RemoveBridgeSourceInput {
-            bridge_arn: self.bridge_arn,
-            source_name: self.source_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_bridge_source::RemoveBridgeSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_bridge_source::RemoveBridgeSourceInput {
+                bridge_arn: self.bridge_arn
+                ,
+                source_name: self.source_name
+                ,
+            }
+        )
     }
 }
+

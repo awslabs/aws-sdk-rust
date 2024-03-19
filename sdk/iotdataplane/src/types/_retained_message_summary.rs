@@ -3,7 +3,7 @@
 /// <p>Information about a single retained message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetainedMessageSummary {
+pub struct RetainedMessageSummary  {
     /// <p>The topic name to which the retained message was published.</p>
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The size of the retained message's payload in bytes.</p>
@@ -13,9 +13,9 @@ pub struct RetainedMessageSummary {
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub last_modified_time: i64,
 }
-impl RetainedMessageSummary {
+impl  RetainedMessageSummary  {
     /// <p>The topic name to which the retained message was published.</p>
-    pub fn topic(&self) -> ::std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<& str> {
         self.topic.as_deref()
     }
     /// <p>The size of the retained message's payload in bytes.</p>
@@ -55,8 +55,7 @@ impl RetainedMessageSummaryBuilder {
     }
     /// <p>The topic name to which the retained message was published.</p>
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// <p>The topic name to which the retained message was published.</p>
     pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RetainedMessageSummaryBuilder {
     }
     /// <p>The size of the retained message's payload in bytes.</p>
     pub fn set_payload_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.payload_size = input;
-        self
+        self.payload_size = input; self
     }
     /// <p>The size of the retained message's payload in bytes.</p>
     pub fn get_payload_size(&self) -> &::std::option::Option<i64> {
@@ -83,8 +81,7 @@ impl RetainedMessageSummaryBuilder {
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     pub fn set_qos(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.qos = input;
-        self
+        self.qos = input; self
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     pub fn get_qos(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl RetainedMessageSummaryBuilder {
     }
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
@@ -107,10 +103,18 @@ impl RetainedMessageSummaryBuilder {
     /// Consumes the builder and constructs a [`RetainedMessageSummary`](crate::types::RetainedMessageSummary).
     pub fn build(self) -> crate::types::RetainedMessageSummary {
         crate::types::RetainedMessageSummary {
-            topic: self.topic,
-            payload_size: self.payload_size.unwrap_or_default(),
-            qos: self.qos.unwrap_or_default(),
-            last_modified_time: self.last_modified_time.unwrap_or_default(),
+            topic: self.topic
+            ,
+            payload_size: self.payload_size
+                .unwrap_or_default()
+            ,
+            qos: self.qos
+                .unwrap_or_default()
+            ,
+            last_modified_time: self.last_modified_time
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

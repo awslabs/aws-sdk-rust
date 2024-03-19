@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopColumnStatisticsTaskRunInput {
+pub struct StopColumnStatisticsTaskRunInput  {
     /// <p>The name of the database where the table resides.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl StopColumnStatisticsTaskRunInput {
+impl  StopColumnStatisticsTaskRunInput  {
     /// <p>The name of the database where the table resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StopColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>The name of the database where the table resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database where the table resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl StopColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`StopColumnStatisticsTaskRunInput`](crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunInput {
-            database_name: self.database_name,
-            table_name: self.table_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_column_statistics_task_run::StopColumnStatisticsTaskRunInput {
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePartnerEventSourceInput {
+pub struct CreatePartnerEventSourceInput  {
     /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
     pub account: ::std::option::Option<::std::string::String>,
 }
-impl CreatePartnerEventSourceInput {
+impl  CreatePartnerEventSourceInput  {
     /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreatePartnerEventSourceInputBuilder {
     }
     /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CreatePartnerEventSourceInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
     /// Consumes the builder and constructs a [`CreatePartnerEventSourceInput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_partner_event_source::CreatePartnerEventSourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_partner_event_source::CreatePartnerEventSourceInput {
-            name: self.name,
-            account: self.account,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_partner_event_source::CreatePartnerEventSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_partner_event_source::CreatePartnerEventSourceInput {
+                name: self.name
+                ,
+                account: self.account
+                ,
+            }
+        )
     }
 }
+

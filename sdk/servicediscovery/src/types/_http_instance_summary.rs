@@ -3,7 +3,7 @@
 /// <p>In a response to a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpInstanceSummary {
+pub struct HttpInstanceSummary  {
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p><code></code> <code></code> <code></code></p>
@@ -14,28 +14,28 @@ pub struct HttpInstanceSummary {
     /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
     pub health_status: ::std::option::Option<crate::types::HealthStatus>,
     /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl HttpInstanceSummary {
+impl  HttpInstanceSummary  {
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p><code></code> <code></code> <code></code></p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
-    pub fn health_status(&self) -> ::std::option::Option<&crate::types::HealthStatus> {
+    pub fn health_status(&self) -> ::std::option::Option<& crate::types::HealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -54,7 +54,7 @@ pub struct HttpInstanceSummaryBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<crate::types::HealthStatus>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl HttpInstanceSummaryBuilder {
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
@@ -64,8 +64,7 @@ impl HttpInstanceSummaryBuilder {
     }
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl HttpInstanceSummaryBuilder {
     /// <p><code></code> <code></code> <code></code></p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p><code></code> <code></code> <code></code></p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
@@ -95,8 +93,7 @@ impl HttpInstanceSummaryBuilder {
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +106,7 @@ impl HttpInstanceSummaryBuilder {
     }
     /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
     pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::HealthStatus>) -> Self {
-        self.health_status = input;
-        self
+        self.health_status = input; self
     }
     /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
     pub fn get_health_status(&self) -> &::std::option::Option<crate::types::HealthStatus> {
@@ -123,27 +119,32 @@ impl HttpInstanceSummaryBuilder {
     /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`HttpInstanceSummary`](crate::types::HttpInstanceSummary).
     pub fn build(self) -> crate::types::HttpInstanceSummary {
         crate::types::HttpInstanceSummary {
-            instance_id: self.instance_id,
-            namespace_name: self.namespace_name,
-            service_name: self.service_name,
-            health_status: self.health_status,
-            attributes: self.attributes,
+            instance_id: self.instance_id
+            ,
+            namespace_name: self.namespace_name
+            ,
+            service_name: self.service_name
+            ,
+            health_status: self.health_status
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

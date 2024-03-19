@@ -4,19 +4,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EfsFileLocation {
+pub struct EfsFileLocation  {
     /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The pathname for the folder being used by a workflow.</p>
     pub path: ::std::option::Option<::std::string::String>,
 }
-impl EfsFileLocation {
+impl  EfsFileLocation  {
     /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The pathname for the folder being used by a workflow.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl EfsFileLocationBuilder {
     }
     /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl EfsFileLocationBuilder {
     }
     /// <p>The pathname for the folder being used by a workflow.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The pathname for the folder being used by a workflow.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl EfsFileLocationBuilder {
     /// Consumes the builder and constructs a [`EfsFileLocation`](crate::types::EfsFileLocation).
     pub fn build(self) -> crate::types::EfsFileLocation {
         crate::types::EfsFileLocation {
-            file_system_id: self.file_system_id,
-            path: self.path,
+            file_system_id: self.file_system_id
+            ,
+            path: self.path
+            ,
         }
     }
 }
+

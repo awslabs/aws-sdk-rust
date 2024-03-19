@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHsmConfigurationInput {
+pub struct DeleteHsmConfigurationInput  {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHsmConfigurationInput {
+impl  DeleteHsmConfigurationInput  {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<& str> {
         self.hsm_configuration_identifier.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteHsmConfigurationInputBuilder {
     }
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     pub fn set_hsm_configuration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_configuration_identifier = input;
-        self
+        self.hsm_configuration_identifier = input; self
     }
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     pub fn get_hsm_configuration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_configuration_identifier
     }
     /// Consumes the builder and constructs a [`DeleteHsmConfigurationInput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput {
-            hsm_configuration_identifier: self.hsm_configuration_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput {
+                hsm_configuration_identifier: self.hsm_configuration_identifier
+                ,
+            }
+        )
     }
 }
+

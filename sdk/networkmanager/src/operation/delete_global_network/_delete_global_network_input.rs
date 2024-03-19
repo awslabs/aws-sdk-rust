@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGlobalNetworkInput {
+pub struct DeleteGlobalNetworkInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGlobalNetworkInput {
+impl  DeleteGlobalNetworkInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteGlobalNetworkInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_network_id
     }
     /// Consumes the builder and constructs a [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_global_network::DeleteGlobalNetworkInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_global_network::DeleteGlobalNetworkInput {
-            global_network_id: self.global_network_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_global_network::DeleteGlobalNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_global_network::DeleteGlobalNetworkInput {
+                global_network_id: self.global_network_id
+                ,
+            }
+        )
     }
 }
+

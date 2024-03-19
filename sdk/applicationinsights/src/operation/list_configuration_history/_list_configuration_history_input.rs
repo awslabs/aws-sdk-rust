@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfigurationHistoryInput {
+pub struct ListConfigurationHistoryInput  {
     /// <p>Resource group to which the application belongs.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the event.</p>
@@ -18,21 +18,21 @@ pub struct ListConfigurationHistoryInput {
     /// <p>The AWS account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ListConfigurationHistoryInput {
+impl  ListConfigurationHistoryInput  {
     /// <p>Resource group to which the application belongs.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The start time of the event.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the event.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-    pub fn event_status(&self) -> ::std::option::Option<&crate::types::ConfigurationEventStatus> {
+    pub fn event_status(&self) -> ::std::option::Option<& crate::types::ConfigurationEventStatus> {
         self.event_status.as_ref()
     }
     /// <p>The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results.</p>
@@ -40,11 +40,11 @@ impl ListConfigurationHistoryInput {
         self.max_results
     }
     /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The AWS account ID for the resource group owner.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl ListConfigurationHistoryInputBuilder {
     }
     /// <p>Resource group to which the application belongs.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>Resource group to which the application belongs.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ListConfigurationHistoryInputBuilder {
     }
     /// <p>The start time of the event.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the event.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,8 +101,7 @@ impl ListConfigurationHistoryInputBuilder {
     }
     /// <p>The end time of the event.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the event.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,8 +114,7 @@ impl ListConfigurationHistoryInputBuilder {
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
     pub fn set_event_status(mut self, input: ::std::option::Option<crate::types::ConfigurationEventStatus>) -> Self {
-        self.event_status = input;
-        self
+        self.event_status = input; self
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
     pub fn get_event_status(&self) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
@@ -131,8 +127,7 @@ impl ListConfigurationHistoryInputBuilder {
     }
     /// <p>The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -145,8 +140,7 @@ impl ListConfigurationHistoryInputBuilder {
     }
     /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,28 +153,32 @@ impl ListConfigurationHistoryInputBuilder {
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListConfigurationHistoryInput`](crate::operation::list_configuration_history::ListConfigurationHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_configuration_history::ListConfigurationHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_configuration_history::ListConfigurationHistoryInput {
-            resource_group_name: self.resource_group_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            event_status: self.event_status,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_configuration_history::ListConfigurationHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_configuration_history::ListConfigurationHistoryInput {
+                resource_group_name: self.resource_group_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                event_status: self.event_status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

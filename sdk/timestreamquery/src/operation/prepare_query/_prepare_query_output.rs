@@ -2,33 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PrepareQueryOutput {
+pub struct PrepareQueryOutput  {
     /// <p>The query string that you want prepare.</p>
     pub query_string: ::std::string::String,
     /// <p>A list of SELECT clause columns of the submitted query string.</p>
-    pub columns: ::std::vec::Vec<crate::types::SelectColumn>,
+    pub columns: ::std::vec::Vec::<crate::types::SelectColumn>,
     /// <p>A list of parameters used in the submitted query string.</p>
-    pub parameters: ::std::vec::Vec<crate::types::ParameterMapping>,
+    pub parameters: ::std::vec::Vec::<crate::types::ParameterMapping>,
     _request_id: Option<String>,
 }
-impl PrepareQueryOutput {
+impl  PrepareQueryOutput  {
     /// <p>The query string that you want prepare.</p>
-    pub fn query_string(&self) -> &str {
-        use std::ops::Deref;
-        self.query_string.deref()
+    pub fn query_string(&self) -> & str {
+        use std::ops::Deref; self.query_string.deref()
     }
     /// <p>A list of SELECT clause columns of the submitted query string.</p>
-    pub fn columns(&self) -> &[crate::types::SelectColumn] {
-        use std::ops::Deref;
-        self.columns.deref()
+    pub fn columns(&self) -> & [crate::types::SelectColumn] {
+        use std::ops::Deref; self.columns.deref()
     }
     /// <p>A list of parameters used in the submitted query string.</p>
-    pub fn parameters(&self) -> &[crate::types::ParameterMapping] {
-        use std::ops::Deref;
-        self.parameters.deref()
+    pub fn parameters(&self) -> & [crate::types::ParameterMapping] {
+        use std::ops::Deref; self.parameters.deref()
     }
 }
-impl ::std::fmt::Debug for PrepareQueryOutput {
+impl  ::std::fmt::Debug for PrepareQueryOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PrepareQueryOutput");
         formatter.field("query_string", &"*** Sensitive Data Redacted ***");
@@ -39,10 +36,10 @@ impl ::std::fmt::Debug for PrepareQueryOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for PrepareQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PrepareQueryOutput {
     /// Creates a new builder-style object to manufacture [`PrepareQueryOutput`](crate::operation::prepare_query::PrepareQueryOutput).
     pub fn builder() -> crate::operation::prepare_query::builders::PrepareQueryOutputBuilder {
@@ -55,8 +52,8 @@ impl PrepareQueryOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PrepareQueryOutputBuilder {
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
-    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec::<crate::types::SelectColumn>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterMapping>>,
     _request_id: Option<String>,
 }
 impl PrepareQueryOutputBuilder {
@@ -68,8 +65,7 @@ impl PrepareQueryOutputBuilder {
     }
     /// <p>The query string that you want prepare.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The query string that you want prepare.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,17 +78,16 @@ impl PrepareQueryOutputBuilder {
     /// <p>A list of SELECT clause columns of the submitted query string.</p>
     pub fn columns(mut self, input: crate::types::SelectColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of SELECT clause columns of the submitted query string.</p>
-    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>>) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SelectColumn>>) -> Self {
+        self.columns = input; self
     }
     /// <p>A list of SELECT clause columns of the submitted query string.</p>
-    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SelectColumn>> {
         &self.columns
     }
     /// Appends an item to `parameters`.
@@ -102,57 +97,53 @@ impl PrepareQueryOutputBuilder {
     /// <p>A list of parameters used in the submitted query string.</p>
     pub fn parameters(mut self, input: crate::types::ParameterMapping) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of parameters used in the submitted query string.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterMapping>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of parameters used in the submitted query string.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterMapping>> {
         &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PrepareQueryOutput`](crate::operation::prepare_query::PrepareQueryOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`query_string`](crate::operation::prepare_query::builders::PrepareQueryOutputBuilder::query_string)
     /// - [`columns`](crate::operation::prepare_query::builders::PrepareQueryOutputBuilder::columns)
     /// - [`parameters`](crate::operation::prepare_query::builders::PrepareQueryOutputBuilder::parameters)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::prepare_query::PrepareQueryOutput {
-            query_string: self.query_string.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_string",
-                    "query_string was not specified but it is required when building PrepareQueryOutput",
-                )
-            })?,
-            columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "columns",
-                    "columns was not specified but it is required when building PrepareQueryOutput",
-                )
-            })?,
-            parameters: self.parameters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameters",
-                    "parameters was not specified but it is required when building PrepareQueryOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::prepare_query::PrepareQueryOutput {
+                query_string: self.query_string
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query_string", "query_string was not specified but it is required when building PrepareQueryOutput")
+                    )?
+                ,
+                columns: self.columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("columns", "columns was not specified but it is required when building PrepareQueryOutput")
+                    )?
+                ,
+                parameters: self.parameters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameters", "parameters was not specified but it is required when building PrepareQueryOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PrepareQueryOutputBuilder {
@@ -165,3 +156,4 @@ impl ::std::fmt::Debug for PrepareQueryOutputBuilder {
         formatter.finish()
     }
 }
+

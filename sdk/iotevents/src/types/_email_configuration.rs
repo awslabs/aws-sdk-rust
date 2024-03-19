@@ -3,7 +3,7 @@
 /// <p>Contains the configuration information of email notifications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmailConfiguration {
+pub struct EmailConfiguration  {
     /// <p>The email address that sends emails.</p><important>
     /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the email address that sends emails in Amazon SES</a>.</p>
     /// </important>
@@ -15,22 +15,21 @@ pub struct EmailConfiguration {
     /// </important>
     pub recipients: ::std::option::Option<crate::types::EmailRecipients>,
 }
-impl EmailConfiguration {
+impl  EmailConfiguration  {
     /// <p>The email address that sends emails.</p><important>
     /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the email address that sends emails in Amazon SES</a>.</p>
     /// </important>
-    pub fn from(&self) -> &str {
-        use std::ops::Deref;
-        self.from.deref()
+    pub fn from(&self) -> & str {
+        use std::ops::Deref; self.from.deref()
     }
     /// <p>Contains the subject and message of an email.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::EmailContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::EmailContent> {
         self.content.as_ref()
     }
     /// <p>Contains the information of one or more recipients who receive the emails.</p><important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
     /// </important>
-    pub fn recipients(&self) -> ::std::option::Option<&crate::types::EmailRecipients> {
+    pub fn recipients(&self) -> ::std::option::Option<& crate::types::EmailRecipients> {
         self.recipients.as_ref()
     }
 }
@@ -62,8 +61,7 @@ impl EmailConfigurationBuilder {
     /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the email address that sends emails in Amazon SES</a>.</p>
     /// </important>
     pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>The email address that sends emails.</p><important>
     /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the email address that sends emails in Amazon SES</a>.</p>
@@ -78,8 +76,7 @@ impl EmailConfigurationBuilder {
     }
     /// <p>Contains the subject and message of an email.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Contains the subject and message of an email.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
@@ -97,8 +94,7 @@ impl EmailConfigurationBuilder {
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
     /// </important>
     pub fn set_recipients(mut self, input: ::std::option::Option<crate::types::EmailRecipients>) -> Self {
-        self.recipients = input;
-        self
+        self.recipients = input; self
     }
     /// <p>Contains the information of one or more recipients who receive the emails.</p><important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
@@ -110,15 +106,19 @@ impl EmailConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`from`](crate::types::builders::EmailConfigurationBuilder::from)
     pub fn build(self) -> ::std::result::Result<crate::types::EmailConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EmailConfiguration {
-            from: self.from.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "from",
-                    "from was not specified but it is required when building EmailConfiguration",
-                )
-            })?,
-            content: self.content,
-            recipients: self.recipients,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EmailConfiguration {
+                from: self.from
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("from", "from was not specified but it is required when building EmailConfiguration")
+                    )?
+                ,
+                content: self.content
+                ,
+                recipients: self.recipients
+                ,
+            }
+        )
     }
 }
+

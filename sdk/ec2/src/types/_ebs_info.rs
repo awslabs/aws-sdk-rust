@@ -3,7 +3,7 @@
 /// <p>Describes the Amazon EBS features supported by the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsInfo {
+pub struct EbsInfo  {
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
     pub ebs_optimized_support: ::std::option::Option<crate::types::EbsOptimizedSupport>,
     /// <p>Indicates whether Amazon EBS encryption is supported.</p>
@@ -13,21 +13,21 @@ pub struct EbsInfo {
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
     pub nvme_support: ::std::option::Option<crate::types::EbsNvmeSupport>,
 }
-impl EbsInfo {
+impl  EbsInfo  {
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
-    pub fn ebs_optimized_support(&self) -> ::std::option::Option<&crate::types::EbsOptimizedSupport> {
+    pub fn ebs_optimized_support(&self) -> ::std::option::Option<& crate::types::EbsOptimizedSupport> {
         self.ebs_optimized_support.as_ref()
     }
     /// <p>Indicates whether Amazon EBS encryption is supported.</p>
-    pub fn encryption_support(&self) -> ::std::option::Option<&crate::types::EbsEncryptionSupport> {
+    pub fn encryption_support(&self) -> ::std::option::Option<& crate::types::EbsEncryptionSupport> {
         self.encryption_support.as_ref()
     }
     /// <p>Describes the optimized EBS performance for the instance type.</p>
-    pub fn ebs_optimized_info(&self) -> ::std::option::Option<&crate::types::EbsOptimizedInfo> {
+    pub fn ebs_optimized_info(&self) -> ::std::option::Option<& crate::types::EbsOptimizedInfo> {
         self.ebs_optimized_info.as_ref()
     }
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-    pub fn nvme_support(&self) -> ::std::option::Option<&crate::types::EbsNvmeSupport> {
+    pub fn nvme_support(&self) -> ::std::option::Option<& crate::types::EbsNvmeSupport> {
         self.nvme_support.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl EbsInfoBuilder {
     }
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_ebs_optimized_support(mut self, input: ::std::option::Option<crate::types::EbsOptimizedSupport>) -> Self {
-        self.ebs_optimized_support = input;
-        self
+        self.ebs_optimized_support = input; self
     }
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_ebs_optimized_support(&self) -> &::std::option::Option<crate::types::EbsOptimizedSupport> {
@@ -69,8 +68,7 @@ impl EbsInfoBuilder {
     }
     /// <p>Indicates whether Amazon EBS encryption is supported.</p>
     pub fn set_encryption_support(mut self, input: ::std::option::Option<crate::types::EbsEncryptionSupport>) -> Self {
-        self.encryption_support = input;
-        self
+        self.encryption_support = input; self
     }
     /// <p>Indicates whether Amazon EBS encryption is supported.</p>
     pub fn get_encryption_support(&self) -> &::std::option::Option<crate::types::EbsEncryptionSupport> {
@@ -83,8 +81,7 @@ impl EbsInfoBuilder {
     }
     /// <p>Describes the optimized EBS performance for the instance type.</p>
     pub fn set_ebs_optimized_info(mut self, input: ::std::option::Option<crate::types::EbsOptimizedInfo>) -> Self {
-        self.ebs_optimized_info = input;
-        self
+        self.ebs_optimized_info = input; self
     }
     /// <p>Describes the optimized EBS performance for the instance type.</p>
     pub fn get_ebs_optimized_info(&self) -> &::std::option::Option<crate::types::EbsOptimizedInfo> {
@@ -97,8 +94,7 @@ impl EbsInfoBuilder {
     }
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
     pub fn set_nvme_support(mut self, input: ::std::option::Option<crate::types::EbsNvmeSupport>) -> Self {
-        self.nvme_support = input;
-        self
+        self.nvme_support = input; self
     }
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
     pub fn get_nvme_support(&self) -> &::std::option::Option<crate::types::EbsNvmeSupport> {
@@ -107,10 +103,15 @@ impl EbsInfoBuilder {
     /// Consumes the builder and constructs a [`EbsInfo`](crate::types::EbsInfo).
     pub fn build(self) -> crate::types::EbsInfo {
         crate::types::EbsInfo {
-            ebs_optimized_support: self.ebs_optimized_support,
-            encryption_support: self.encryption_support,
-            ebs_optimized_info: self.ebs_optimized_info,
-            nvme_support: self.nvme_support,
+            ebs_optimized_support: self.ebs_optimized_support
+            ,
+            encryption_support: self.encryption_support
+            ,
+            ebs_optimized_info: self.ebs_optimized_info
+            ,
+            nvme_support: self.nvme_support
+            ,
         }
     }
 }
+

@@ -5,55 +5,51 @@ pub use crate::operation::get_face_liveness_session_results::_get_face_liveness_
 
 impl GetFaceLivenessSessionResultsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_face_liveness_session_results();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_face_liveness_session_results();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetFaceLivenessSessionResults`.
-///
+/// 
 /// <p>Retrieves the results of a specific Face Liveness session. It requires the <code>sessionId</code> as input, which was created using <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness confidence score, a reference image that includes a face bounding box, and audit images that also contain face bounding boxes. The Face Liveness confidence score ranges from 0 to 100.</p>
 /// <p>The number of audit images returned by <code>GetFaceLivenessSessionResults</code> is defined by the <code>AuditImagesLimit</code> paramater when calling <code>CreateFaceLivenessSession</code>. Reference images are always returned when possible.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFaceLivenessSessionResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder,
+                    inner: crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-    > for GetFaceLivenessSessionResultsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
-            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
+                    crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
+                > for GetFaceLivenessSessionResultsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
+                        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetFaceLivenessSessionResultsFluentBuilder {
     /// Creates a new `GetFaceLivenessSessionResults`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResults::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResults::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResults::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResults::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput, crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -124,3 +111,4 @@ impl GetFaceLivenessSessionResultsFluentBuilder {
         self.inner.get_session_id()
     }
 }
+

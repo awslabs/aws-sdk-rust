@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PreviewPrivacyImpactInput {
+pub struct PreviewPrivacyImpactInput  {
     /// <p>A unique identifier for one of your memberships for a collaboration. Accepts a membership ID.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the desired epsilon and noise parameters to preview.</p>
     pub parameters: ::std::option::Option<crate::types::PreviewPrivacyImpactParametersInput>,
 }
-impl PreviewPrivacyImpactInput {
+impl  PreviewPrivacyImpactInput  {
     /// <p>A unique identifier for one of your memberships for a collaboration. Accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>Specifies the desired epsilon and noise parameters to preview.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&crate::types::PreviewPrivacyImpactParametersInput> {
+    pub fn parameters(&self) -> ::std::option::Option<& crate::types::PreviewPrivacyImpactParametersInput> {
         self.parameters.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PreviewPrivacyImpactInputBuilder {
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. Accepts a membership ID.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. Accepts a membership ID.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl PreviewPrivacyImpactInputBuilder {
     }
     /// <p>Specifies the desired epsilon and noise parameters to preview.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::PreviewPrivacyImpactParametersInput>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>Specifies the desired epsilon and noise parameters to preview.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::PreviewPrivacyImpactParametersInput> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`PreviewPrivacyImpactInput`](crate::operation::preview_privacy_impact::PreviewPrivacyImpactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::preview_privacy_impact::PreviewPrivacyImpactInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::preview_privacy_impact::PreviewPrivacyImpactInput {
-            membership_identifier: self.membership_identifier,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::preview_privacy_impact::PreviewPrivacyImpactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::preview_privacy_impact::PreviewPrivacyImpactInput {
+                membership_identifier: self.membership_identifier
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

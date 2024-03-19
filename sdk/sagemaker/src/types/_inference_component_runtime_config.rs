@@ -3,11 +3,11 @@
 /// <p>Runtime settings for a model that is deployed with an inference component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceComponentRuntimeConfig {
+pub struct InferenceComponentRuntimeConfig  {
     /// <p>The number of runtime copies of the model container to deploy with the inference component. Each copy can serve inference requests.</p>
     pub copy_count: ::std::option::Option<i32>,
 }
-impl InferenceComponentRuntimeConfig {
+impl  InferenceComponentRuntimeConfig  {
     /// <p>The number of runtime copies of the model container to deploy with the inference component. Each copy can serve inference requests.</p>
     pub fn copy_count(&self) -> ::std::option::Option<i32> {
         self.copy_count
@@ -35,8 +35,7 @@ impl InferenceComponentRuntimeConfigBuilder {
     }
     /// <p>The number of runtime copies of the model container to deploy with the inference component. Each copy can serve inference requests.</p>
     pub fn set_copy_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.copy_count = input;
-        self
+        self.copy_count = input; self
     }
     /// <p>The number of runtime copies of the model container to deploy with the inference component. Each copy can serve inference requests.</p>
     pub fn get_copy_count(&self) -> &::std::option::Option<i32> {
@@ -44,6 +43,10 @@ impl InferenceComponentRuntimeConfigBuilder {
     }
     /// Consumes the builder and constructs a [`InferenceComponentRuntimeConfig`](crate::types::InferenceComponentRuntimeConfig).
     pub fn build(self) -> crate::types::InferenceComponentRuntimeConfig {
-        crate::types::InferenceComponentRuntimeConfig { copy_count: self.copy_count }
+        crate::types::InferenceComponentRuntimeConfig {
+            copy_count: self.copy_count
+            ,
+        }
     }
 }
+

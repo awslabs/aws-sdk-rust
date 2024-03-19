@@ -2,3 +2,4 @@
 
 /// Error types that AWS SSO OIDC can respond with.
 pub mod error;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFolderPermissionsOutput {
+pub struct UpdateFolderPermissionsOutput  {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
@@ -10,40 +10,41 @@ pub struct UpdateFolderPermissionsOutput {
     /// <p>The ID of the folder.</p>
     pub folder_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the permissions for the folder.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateFolderPermissionsOutput {
+impl  UpdateFolderPermissionsOutput  {
     /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>Information about the permissions for the folder.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::ResourcePermission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFolderPermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateFolderPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFolderPermissionsOutput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput).
     pub fn builder() -> crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsOutputBuilder {
@@ -58,7 +59,7 @@ pub struct UpdateFolderPermissionsOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -70,8 +71,7 @@ impl UpdateFolderPermissionsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -84,8 +84,7 @@ impl UpdateFolderPermissionsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl UpdateFolderPermissionsOutputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,17 +110,16 @@ impl UpdateFolderPermissionsOutputBuilder {
     /// <p>Information about the permissions for the folder.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the permissions for the folder.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>Information about the permissions for the folder.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -132,31 +129,37 @@ impl UpdateFolderPermissionsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateFolderPermissionsOutput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput).
     pub fn build(self) -> crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput {
         crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput {
-            status: self.status.unwrap_or_default(),
-            arn: self.arn,
-            folder_id: self.folder_id,
-            permissions: self.permissions,
-            request_id: self.request_id,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            arn: self.arn
+            ,
+            folder_id: self.folder_id
+            ,
+            permissions: self.permissions
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

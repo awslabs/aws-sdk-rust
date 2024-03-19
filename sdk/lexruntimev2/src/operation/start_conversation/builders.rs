@@ -5,23 +5,20 @@ pub use crate::operation::start_conversation::_start_conversation_input::StartCo
 
 impl StartConversationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_conversation::StartConversationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_conversation::StartConversationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_conversation();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_conversation::StartConversationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_conversation::StartConversationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_conversation();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartConversation`.
-///
+/// 
 /// <p>Starts an HTTP/2 bidirectional event stream that enables you to send audio, text, or DTMF input in real time. After your application starts a conversation, users send input to Amazon Lex V2 as a stream of events. Amazon Lex V2 processes the incoming events and responds with streaming text or audio events.</p>
 /// <p>Audio input must be in the following format: <code>audio/lpcm sample-rate=8000 sample-size-bits=16 channel-count=1; is-big-endian=false</code>.</p>
 /// <p>If the optional post-fulfillment response is specified, the messages are returned as follows. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_PostFulfillmentStatusSpecification.html">PostFulfillmentStatusSpecification</a>.</p>
@@ -48,33 +45,32 @@ impl StartConversationInputBuilder {
 #[derive(::std::fmt::Debug)]
 pub struct StartConversationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_conversation::builders::StartConversationInputBuilder,
+                    inner: crate::operation::start_conversation::builders::StartConversationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_conversation::StartConversationOutput,
-        crate::operation::start_conversation::StartConversationError,
-    > for StartConversationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_conversation::StartConversationOutput,
-            crate::operation::start_conversation::StartConversationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_conversation::StartConversationOutput,
+                    crate::operation::start_conversation::StartConversationError,
+                > for StartConversationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_conversation::StartConversationOutput,
+                        crate::operation::start_conversation::StartConversationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartConversationFluentBuilder {
     /// Creates a new `StartConversation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -83,53 +79,44 @@ impl StartConversationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_conversation::StartConversationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_conversation::StartConversationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_conversation::StartConversation::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_conversation::StartConversation::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_conversation::StartConversationOutput,
-        crate::operation::start_conversation::StartConversationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_conversation::StartConversationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_conversation::StartConversationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_conversation::StartConversation::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_conversation::StartConversation::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_conversation::StartConversationOutput, crate::operation::start_conversation::StartConversationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the bot to process the request.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -201,38 +188,18 @@ impl StartConversationFluentBuilder {
         self.inner.get_conversation_mode()
     }
     /// <p>Represents the stream of events to Amazon Lex V2 from your application. The events are encoded as HTTP/2 data frames.</p>
-    pub fn request_event_stream(
-        mut self,
-        input: ::aws_smithy_http::event_stream::EventStreamSender<
-            crate::types::StartConversationRequestEventStream,
-            crate::types::error::StartConversationRequestEventStreamError,
-        >,
-    ) -> Self {
+    pub fn request_event_stream(mut self, input: ::aws_smithy_http::event_stream::EventStreamSender<crate::types::StartConversationRequestEventStream, crate::types::error::StartConversationRequestEventStreamError>) -> Self {
         self.inner = self.inner.request_event_stream(input);
         self
     }
     /// <p>Represents the stream of events to Amazon Lex V2 from your application. The events are encoded as HTTP/2 data frames.</p>
-    pub fn set_request_event_stream(
-        mut self,
-        input: ::std::option::Option<
-            ::aws_smithy_http::event_stream::EventStreamSender<
-                crate::types::StartConversationRequestEventStream,
-                crate::types::error::StartConversationRequestEventStreamError,
-            >,
-        >,
-    ) -> Self {
+    pub fn set_request_event_stream(mut self, input: ::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::StartConversationRequestEventStream, crate::types::error::StartConversationRequestEventStreamError>>) -> Self {
         self.inner = self.inner.set_request_event_stream(input);
         self
     }
     /// <p>Represents the stream of events to Amazon Lex V2 from your application. The events are encoded as HTTP/2 data frames.</p>
-    pub fn get_request_event_stream(
-        &self,
-    ) -> &::std::option::Option<
-        ::aws_smithy_http::event_stream::EventStreamSender<
-            crate::types::StartConversationRequestEventStream,
-            crate::types::error::StartConversationRequestEventStreamError,
-        >,
-    > {
+    pub fn get_request_event_stream(&self) -> &::std::option::Option<::aws_smithy_http::event_stream::EventStreamSender<crate::types::StartConversationRequestEventStream, crate::types::error::StartConversationRequestEventStreamError>> {
         self.inner.get_request_event_stream()
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>A trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustStore {
+pub struct TrustStore  {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub associated_portal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ARN of the trust store.</p>
     pub trust_store_arn: ::std::string::String,
 }
-impl TrustStore {
+impl  TrustStore  {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_portal_arns.is_none()`.
-    pub fn associated_portal_arns(&self) -> &[::std::string::String] {
-        self.associated_portal_arns.as_deref().unwrap_or_default()
+    pub fn associated_portal_arns(&self) -> & [::std::string::String] {
+        self.associated_portal_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.trust_store_arn.deref()
+    pub fn trust_store_arn(&self) -> & str {
+        use std::ops::Deref; self.trust_store_arn.deref()
     }
 }
 impl TrustStore {
@@ -33,7 +33,7 @@ impl TrustStore {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrustStoreBuilder {
-    pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
 }
 impl TrustStoreBuilder {
@@ -44,17 +44,16 @@ impl TrustStoreBuilder {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
     pub fn associated_portal_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_portal_arns.unwrap_or_default();
-        v.push(input.into());
-        self.associated_portal_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_portal_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    pub fn set_associated_portal_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.associated_portal_arns = input;
-        self
+    pub fn set_associated_portal_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.associated_portal_arns = input; self
     }
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    pub fn get_associated_portal_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_portal_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.associated_portal_arns
     }
     /// <p>The ARN of the trust store.</p>
@@ -65,8 +64,7 @@ impl TrustStoreBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The ARN of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,14 +74,17 @@ impl TrustStoreBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`trust_store_arn`](crate::types::builders::TrustStoreBuilder::trust_store_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::TrustStore, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrustStore {
-            associated_portal_arns: self.associated_portal_arns,
-            trust_store_arn: self.trust_store_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "trust_store_arn",
-                    "trust_store_arn was not specified but it is required when building TrustStore",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrustStore {
+                associated_portal_arns: self.associated_portal_arns
+                ,
+                trust_store_arn: self.trust_store_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("trust_store_arn", "trust_store_arn was not specified but it is required when building TrustStore")
+                    )?
+                ,
+            }
+        )
     }
 }
+

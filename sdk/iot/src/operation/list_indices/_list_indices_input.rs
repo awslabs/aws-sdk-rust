@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIndicesInput {
+pub struct ListIndicesInput  {
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListIndicesInput {
+impl  ListIndicesInput  {
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -40,8 +40,7 @@ impl ListIndicesInputBuilder {
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,8 +53,7 @@ impl ListIndicesInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -63,9 +61,14 @@ impl ListIndicesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListIndicesInput`](crate::operation::list_indices::ListIndicesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_indices::ListIndicesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_indices::ListIndicesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_indices::ListIndicesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

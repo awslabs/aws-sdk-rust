@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExperimentTemplateInput {
+pub struct DeleteExperimentTemplateInput  {
     /// <p>The ID of the experiment template.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteExperimentTemplateInput {
+impl  DeleteExperimentTemplateInput  {
     /// <p>The ID of the experiment template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteExperimentTemplateInputBuilder {
     }
     /// <p>The ID of the experiment template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the experiment template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteExperimentTemplateInput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_experiment_template::DeleteExperimentTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_experiment_template::DeleteExperimentTemplateInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_experiment_template::DeleteExperimentTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_experiment_template::DeleteExperimentTemplateInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

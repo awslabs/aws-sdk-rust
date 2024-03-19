@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePackageInput {
+pub struct DeletePackageInput  {
     /// <p>The package's ID.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     pub force_delete: ::std::option::Option<bool>,
 }
-impl DeletePackageInput {
+impl  DeletePackageInput  {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
@@ -41,8 +41,7 @@ impl DeletePackageInputBuilder {
     }
     /// <p>The package's ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The package's ID.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeletePackageInputBuilder {
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_package::DeletePackageInput {
-            package_id: self.package_id,
-            force_delete: self.force_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_package::DeletePackageInput {
+                package_id: self.package_id
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

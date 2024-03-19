@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateBuildOutput {
+pub struct CreateBuildOutput  {
     /// <p>The newly created build resource, including a unique build IDs and status.</p>
     ///
     /// _Note: This member has been renamed from `build`._
@@ -13,23 +13,23 @@ pub struct CreateBuildOutput {
     pub storage_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,
 }
-impl CreateBuildOutput {
+impl  CreateBuildOutput  {
     /// <p>The newly created build resource, including a unique build IDs and status.</p>
     ///
     /// _Note: This member has been renamed from `build`._
-    pub fn build_value(&self) -> ::std::option::Option<&crate::types::Build> {
+    pub fn build_value(&self) -> ::std::option::Option<& crate::types::Build> {
         self.build_value.as_ref()
     }
     /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
-    pub fn upload_credentials(&self) -> ::std::option::Option<&crate::types::AwsCredentials> {
+    pub fn upload_credentials(&self) -> ::std::option::Option<& crate::types::AwsCredentials> {
         self.upload_credentials.as_ref()
     }
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
-    pub fn storage_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn storage_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.storage_location.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateBuildOutput {
+impl  ::std::fmt::Debug for CreateBuildOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBuildOutput");
         formatter.field("build_value", &self.build_value);
@@ -40,10 +40,10 @@ impl ::std::fmt::Debug for CreateBuildOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBuildOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBuildOutput {
     /// Creates a new builder-style object to manufacture [`CreateBuildOutput`](crate::operation::create_build::CreateBuildOutput).
     pub fn builder() -> crate::operation::create_build::builders::CreateBuildOutputBuilder {
@@ -68,8 +68,7 @@ impl CreateBuildOutputBuilder {
     }
     /// <p>The newly created build resource, including a unique build IDs and status.</p>
     pub fn set_build(mut self, input: ::std::option::Option<crate::types::Build>) -> Self {
-        self.build_value = input;
-        self
+        self.build_value = input; self
     }
     /// <p>The newly created build resource, including a unique build IDs and status.</p>
     pub fn get_build(&self) -> &::std::option::Option<crate::types::Build> {
@@ -82,8 +81,7 @@ impl CreateBuildOutputBuilder {
     }
     /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
     pub fn set_upload_credentials(mut self, input: ::std::option::Option<crate::types::AwsCredentials>) -> Self {
-        self.upload_credentials = input;
-        self
+        self.upload_credentials = input; self
     }
     /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
     pub fn get_upload_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
@@ -96,28 +94,30 @@ impl CreateBuildOutputBuilder {
     }
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
     pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.storage_location = input;
-        self
+        self.storage_location = input; self
     }
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
     pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.storage_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBuildOutput`](crate::operation::create_build::CreateBuildOutput).
     pub fn build(self) -> crate::operation::create_build::CreateBuildOutput {
         crate::operation::create_build::CreateBuildOutput {
-            build_value: self.build_value,
-            upload_credentials: self.upload_credentials,
-            storage_location: self.storage_location,
+            build_value: self.build_value
+            ,
+            upload_credentials: self.upload_credentials
+            ,
+            storage_location: self.storage_location
+            ,
             _request_id: self._request_id,
         }
     }
@@ -132,3 +132,4 @@ impl ::std::fmt::Debug for CreateBuildOutputBuilder {
         formatter.finish()
     }
 }
+

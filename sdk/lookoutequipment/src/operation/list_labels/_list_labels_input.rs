@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLabelsInput {
+pub struct ListLabelsInput  {
     /// <p>Returns the name of the label group.</p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns all the labels with a end time equal to or later than the start time given.</p>
@@ -18,29 +18,29 @@ pub struct ListLabelsInput {
     /// <p>Specifies the maximum number of labels to list.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListLabelsInput {
+impl  ListLabelsInput  {
     /// <p>Returns the name of the label group.</p>
-    pub fn label_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_name(&self) -> ::std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p>Returns all the labels with a end time equal to or later than the start time given.</p>
-    pub fn interval_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn interval_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.interval_start_time.as_ref()
     }
     /// <p>Returns all labels with a start time earlier than the end time given.</p>
-    pub fn interval_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn interval_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.interval_end_time.as_ref()
     }
     /// <p>Returns labels with a particular fault code.</p>
-    pub fn fault_code(&self) -> ::std::option::Option<&str> {
+    pub fn fault_code(&self) -> ::std::option::Option<& str> {
         self.fault_code.as_deref()
     }
     /// <p>Lists the labels that pertain to a particular piece of equipment.</p>
-    pub fn equipment(&self) -> ::std::option::Option<&str> {
+    pub fn equipment(&self) -> ::std::option::Option<& str> {
         self.equipment.as_deref()
     }
     /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the maximum number of labels to list.</p>
@@ -76,8 +76,7 @@ impl ListLabelsInputBuilder {
     }
     /// <p>Returns the name of the label group.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_group_name = input;
-        self
+        self.label_group_name = input; self
     }
     /// <p>Returns the name of the label group.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListLabelsInputBuilder {
     }
     /// <p>Returns all the labels with a end time equal to or later than the start time given.</p>
     pub fn set_interval_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.interval_start_time = input;
-        self
+        self.interval_start_time = input; self
     }
     /// <p>Returns all the labels with a end time equal to or later than the start time given.</p>
     pub fn get_interval_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +102,7 @@ impl ListLabelsInputBuilder {
     }
     /// <p>Returns all labels with a start time earlier than the end time given.</p>
     pub fn set_interval_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.interval_end_time = input;
-        self
+        self.interval_end_time = input; self
     }
     /// <p>Returns all labels with a start time earlier than the end time given.</p>
     pub fn get_interval_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +115,7 @@ impl ListLabelsInputBuilder {
     }
     /// <p>Returns labels with a particular fault code.</p>
     pub fn set_fault_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fault_code = input;
-        self
+        self.fault_code = input; self
     }
     /// <p>Returns labels with a particular fault code.</p>
     pub fn get_fault_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ListLabelsInputBuilder {
     }
     /// <p>Lists the labels that pertain to a particular piece of equipment.</p>
     pub fn set_equipment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.equipment = input;
-        self
+        self.equipment = input; self
     }
     /// <p>Lists the labels that pertain to a particular piece of equipment.</p>
     pub fn get_equipment(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ListLabelsInputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token indicating where to continue the listing of label groups.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl ListLabelsInputBuilder {
     }
     /// <p>Specifies the maximum number of labels to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of labels to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -169,14 +162,24 @@ impl ListLabelsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListLabelsInput`](crate::operation::list_labels::ListLabelsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_labels::ListLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_labels::ListLabelsInput {
-            label_group_name: self.label_group_name,
-            interval_start_time: self.interval_start_time,
-            interval_end_time: self.interval_end_time,
-            fault_code: self.fault_code,
-            equipment: self.equipment,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_labels::ListLabelsInput {
+                label_group_name: self.label_group_name
+                ,
+                interval_start_time: self.interval_start_time
+                ,
+                interval_end_time: self.interval_end_time
+                ,
+                fault_code: self.fault_code
+                ,
+                equipment: self.equipment
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about an ingestion.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ingestion {
+pub struct Ingestion  {
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the ingestion.</p>
@@ -21,41 +21,37 @@ pub struct Ingestion {
     /// <p>The type of the ingestion.</p>
     pub ingestion_type: crate::types::IngestionType,
 }
-impl Ingestion {
+impl  Ingestion  {
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the ingestion.</p>
-    pub fn app_bundle_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_bundle_arn.deref()
+    pub fn app_bundle_arn(&self) -> & str {
+        use std::ops::Deref; self.app_bundle_arn.deref()
     }
     /// <p>The name of the application.</p>
-    pub fn app(&self) -> &str {
-        use std::ops::Deref;
-        self.app.deref()
+    pub fn app(&self) -> & str {
+        use std::ops::Deref; self.app.deref()
     }
     /// <p>The ID of the application tenant.</p>
-    pub fn tenant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.tenant_id.deref()
+    pub fn tenant_id(&self) -> & str {
+        use std::ops::Deref; self.tenant_id.deref()
     }
     /// <p>The timestamp of when the ingestion was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when the ingestion was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The status of the ingestion.</p>
-    pub fn state(&self) -> &crate::types::IngestionState {
+    pub fn state(&self) -> & crate::types::IngestionState {
         &self.state
     }
     /// <p>The type of the ingestion.</p>
-    pub fn ingestion_type(&self) -> &crate::types::IngestionType {
+    pub fn ingestion_type(&self) -> & crate::types::IngestionType {
         &self.ingestion_type
     }
 }
@@ -88,8 +84,7 @@ impl IngestionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl IngestionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the ingestion.</p>
     pub fn set_app_bundle_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_bundle_arn = input;
-        self
+        self.app_bundle_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the ingestion.</p>
     pub fn get_app_bundle_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl IngestionBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app = input;
-        self
+        self.app = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +126,7 @@ impl IngestionBuilder {
     }
     /// <p>The ID of the application tenant.</p>
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_id = input;
-        self
+        self.tenant_id = input; self
     }
     /// <p>The ID of the application tenant.</p>
     pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +140,7 @@ impl IngestionBuilder {
     }
     /// <p>The timestamp of when the ingestion was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the ingestion was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -163,8 +154,7 @@ impl IngestionBuilder {
     }
     /// <p>The timestamp of when the ingestion was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the ingestion was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -178,8 +168,7 @@ impl IngestionBuilder {
     }
     /// <p>The status of the ingestion.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IngestionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status of the ingestion.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IngestionState> {
@@ -193,8 +182,7 @@ impl IngestionBuilder {
     }
     /// <p>The type of the ingestion.</p>
     pub fn set_ingestion_type(mut self, input: ::std::option::Option<crate::types::IngestionType>) -> Self {
-        self.ingestion_type = input;
-        self
+        self.ingestion_type = input; self
     }
     /// <p>The type of the ingestion.</p>
     pub fn get_ingestion_type(&self) -> &::std::option::Option<crate::types::IngestionType> {
@@ -211,55 +199,50 @@ impl IngestionBuilder {
     /// - [`state`](crate::types::builders::IngestionBuilder::state)
     /// - [`ingestion_type`](crate::types::builders::IngestionBuilder::ingestion_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Ingestion, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ingestion {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Ingestion",
-                )
-            })?,
-            app_bundle_arn: self.app_bundle_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_bundle_arn",
-                    "app_bundle_arn was not specified but it is required when building Ingestion",
-                )
-            })?,
-            app: self.app.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app",
-                    "app was not specified but it is required when building Ingestion",
-                )
-            })?,
-            tenant_id: self.tenant_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tenant_id",
-                    "tenant_id was not specified but it is required when building Ingestion",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building Ingestion",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building Ingestion",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building Ingestion",
-                )
-            })?,
-            ingestion_type: self.ingestion_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ingestion_type",
-                    "ingestion_type was not specified but it is required when building Ingestion",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ingestion {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Ingestion")
+                    )?
+                ,
+                app_bundle_arn: self.app_bundle_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_bundle_arn", "app_bundle_arn was not specified but it is required when building Ingestion")
+                    )?
+                ,
+                app: self.app
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app", "app was not specified but it is required when building Ingestion")
+                    )?
+                ,
+                tenant_id: self.tenant_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tenant_id", "tenant_id was not specified but it is required when building Ingestion")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building Ingestion")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building Ingestion")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building Ingestion")
+                    )?
+                ,
+                ingestion_type: self.ingestion_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ingestion_type", "ingestion_type was not specified but it is required when building Ingestion")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>Describes the action for an experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentAction {
+pub struct ExperimentAction  {
     /// <p>The ID of the action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The description for the action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the action.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The targets for the action.</p>
-    pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub targets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The name of the action that must be completed before this action starts.</p>
-    pub start_after: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub start_after: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The state of the action.</p>
     pub state: ::std::option::Option<crate::types::ExperimentActionState>,
     /// <p>The time that the action started.</p>
@@ -21,39 +21,40 @@ pub struct ExperimentAction {
     /// <p>The time that the action ended.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ExperimentAction {
+impl  ExperimentAction  {
     /// <p>The ID of the action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The description for the action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameters for the action.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The targets for the action.</p>
-    pub fn targets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn targets(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before this action starts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.start_after.is_none()`.
-    pub fn start_after(&self) -> &[::std::string::String] {
-        self.start_after.as_deref().unwrap_or_default()
+    pub fn start_after(&self) -> & [::std::string::String] {
+        self.start_after.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The state of the action.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ExperimentActionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ExperimentActionState> {
         self.state.as_ref()
     }
     /// <p>The time that the action started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the action ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -70,9 +71,9 @@ impl ExperimentAction {
 pub struct ExperimentActionBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) start_after: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) targets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) start_after: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::ExperimentActionState>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -85,8 +86,7 @@ impl ExperimentActionBuilder {
     }
     /// <p>The ID of the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The ID of the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl ExperimentActionBuilder {
     }
     /// <p>The description for the action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +112,16 @@ impl ExperimentActionBuilder {
     /// <p>The parameters for the action.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The parameters for the action.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters for the action.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Adds a key-value pair to `targets`.
@@ -133,17 +131,16 @@ impl ExperimentActionBuilder {
     /// <p>The targets for the action.</p>
     pub fn targets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.targets.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.targets = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.targets = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The targets for the action.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The targets for the action.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.targets
     }
     /// Appends an item to `start_after`.
@@ -153,17 +150,16 @@ impl ExperimentActionBuilder {
     /// <p>The name of the action that must be completed before this action starts.</p>
     pub fn start_after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.start_after.unwrap_or_default();
-        v.push(input.into());
-        self.start_after = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.start_after = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the action that must be completed before this action starts.</p>
-    pub fn set_start_after(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.start_after = input;
-        self
+    pub fn set_start_after(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.start_after = input; self
     }
     /// <p>The name of the action that must be completed before this action starts.</p>
-    pub fn get_start_after(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_start_after(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.start_after
     }
     /// <p>The state of the action.</p>
@@ -173,8 +169,7 @@ impl ExperimentActionBuilder {
     }
     /// <p>The state of the action.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ExperimentActionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the action.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ExperimentActionState> {
@@ -187,8 +182,7 @@ impl ExperimentActionBuilder {
     }
     /// <p>The time that the action started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time that the action started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -201,8 +195,7 @@ impl ExperimentActionBuilder {
     }
     /// <p>The time that the action ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time that the action ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -211,14 +204,23 @@ impl ExperimentActionBuilder {
     /// Consumes the builder and constructs a [`ExperimentAction`](crate::types::ExperimentAction).
     pub fn build(self) -> crate::types::ExperimentAction {
         crate::types::ExperimentAction {
-            action_id: self.action_id,
-            description: self.description,
-            parameters: self.parameters,
-            targets: self.targets,
-            start_after: self.start_after,
-            state: self.state,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            action_id: self.action_id
+            ,
+            description: self.description
+            ,
+            parameters: self.parameters
+            ,
+            targets: self.targets
+            ,
+            start_after: self.start_after
+            ,
+            state: self.state
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

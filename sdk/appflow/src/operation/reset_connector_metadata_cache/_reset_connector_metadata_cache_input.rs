@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetConnectorMetadataCacheInput {
+pub struct ResetConnectorMetadataCacheInput  {
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
     /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
@@ -21,32 +21,32 @@ pub struct ResetConnectorMetadataCacheInput {
     /// <p>To look up the API version that you specified in a connector profile, use the DescribeConnectorProfiles action.</p>
     pub api_version: ::std::option::Option<::std::string::String>,
 }
-impl ResetConnectorMetadataCacheInput {
+impl  ResetConnectorMetadataCacheInput  {
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
     /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
-    pub fn connector_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn connector_profile_name(&self) -> ::std::option::Option<& str> {
         self.connector_profile_name.as_deref()
     }
     /// <p>The type of connector to reset cached metadata for.</p>
     /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
-    pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
+    pub fn connector_type(&self) -> ::std::option::Option<& crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>Use this parameter if you want to reset cached metadata about the details for an individual entity.</p>
     /// <p>If you don't include this parameter in your request, Amazon AppFlow only resets cached metadata about entity names, not entity details.</p>
-    pub fn connector_entity_name(&self) -> ::std::option::Option<&str> {
+    pub fn connector_entity_name(&self) -> ::std::option::Option<& str> {
         self.connector_entity_name.as_deref()
     }
     /// <p>Use this parameter only if you’re resetting the cached metadata about a nested entity. Only some connectors support nested entities. A nested entity is one that has another entity as a parent. To use this parameter, specify the name of the parent entity.</p>
     /// <p>To look up the parent-child relationship of entities, you can send a ListConnectorEntities request that omits the entitiesPath parameter. Amazon AppFlow will return a list of top-level entities. For each one, it indicates whether the entity has nested entities. Then, in a subsequent ListConnectorEntities request, you can specify a parent entity name for the entitiesPath parameter. Amazon AppFlow will return a list of the child entities for that parent.</p>
-    pub fn entities_path(&self) -> ::std::option::Option<&str> {
+    pub fn entities_path(&self) -> ::std::option::Option<& str> {
         self.entities_path.as_deref()
     }
     /// <p>The API version that you specified in the connector profile that you’re resetting cached metadata for. You must use this parameter only if the connector supports multiple API versions or if the connector type is CustomConnector.</p>
     /// <p>To look up how many versions a connector supports, use the DescribeConnectors action. In the response, find the value that Amazon AppFlow returns for the connectorVersion parameter.</p>
     /// <p>To look up the connector type, use the DescribeConnectorProfiles action. In the response, find the value that Amazon AppFlow returns for the connectorType parameter.</p>
     /// <p>To look up the API version that you specified in a connector profile, use the DescribeConnectorProfiles action.</p>
-    pub fn api_version(&self) -> ::std::option::Option<&str> {
+    pub fn api_version(&self) -> ::std::option::Option<& str> {
         self.api_version.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl ResetConnectorMetadataCacheInputBuilder {
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
     /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_profile_name = input;
-        self
+        self.connector_profile_name = input; self
     }
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
     /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
@@ -94,8 +93,7 @@ impl ResetConnectorMetadataCacheInputBuilder {
     /// <p>The type of connector to reset cached metadata for.</p>
     /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
-        self.connector_type = input;
-        self
+        self.connector_type = input; self
     }
     /// <p>The type of connector to reset cached metadata for.</p>
     /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request.</p>
@@ -111,8 +109,7 @@ impl ResetConnectorMetadataCacheInputBuilder {
     /// <p>Use this parameter if you want to reset cached metadata about the details for an individual entity.</p>
     /// <p>If you don't include this parameter in your request, Amazon AppFlow only resets cached metadata about entity names, not entity details.</p>
     pub fn set_connector_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_entity_name = input;
-        self
+        self.connector_entity_name = input; self
     }
     /// <p>Use this parameter if you want to reset cached metadata about the details for an individual entity.</p>
     /// <p>If you don't include this parameter in your request, Amazon AppFlow only resets cached metadata about entity names, not entity details.</p>
@@ -128,8 +125,7 @@ impl ResetConnectorMetadataCacheInputBuilder {
     /// <p>Use this parameter only if you’re resetting the cached metadata about a nested entity. Only some connectors support nested entities. A nested entity is one that has another entity as a parent. To use this parameter, specify the name of the parent entity.</p>
     /// <p>To look up the parent-child relationship of entities, you can send a ListConnectorEntities request that omits the entitiesPath parameter. Amazon AppFlow will return a list of top-level entities. For each one, it indicates whether the entity has nested entities. Then, in a subsequent ListConnectorEntities request, you can specify a parent entity name for the entitiesPath parameter. Amazon AppFlow will return a list of the child entities for that parent.</p>
     pub fn set_entities_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entities_path = input;
-        self
+        self.entities_path = input; self
     }
     /// <p>Use this parameter only if you’re resetting the cached metadata about a nested entity. Only some connectors support nested entities. A nested entity is one that has another entity as a parent. To use this parameter, specify the name of the parent entity.</p>
     /// <p>To look up the parent-child relationship of entities, you can send a ListConnectorEntities request that omits the entitiesPath parameter. Amazon AppFlow will return a list of top-level entities. For each one, it indicates whether the entity has nested entities. Then, in a subsequent ListConnectorEntities request, you can specify a parent entity name for the entitiesPath parameter. Amazon AppFlow will return a list of the child entities for that parent.</p>
@@ -149,8 +145,7 @@ impl ResetConnectorMetadataCacheInputBuilder {
     /// <p>To look up the connector type, use the DescribeConnectorProfiles action. In the response, find the value that Amazon AppFlow returns for the connectorType parameter.</p>
     /// <p>To look up the API version that you specified in a connector profile, use the DescribeConnectorProfiles action.</p>
     pub fn set_api_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_version = input;
-        self
+        self.api_version = input; self
     }
     /// <p>The API version that you specified in the connector profile that you’re resetting cached metadata for. You must use this parameter only if the connector supports multiple API versions or if the connector type is CustomConnector.</p>
     /// <p>To look up how many versions a connector supports, use the DescribeConnectors action. In the response, find the value that Amazon AppFlow returns for the connectorVersion parameter.</p>
@@ -160,18 +155,21 @@ impl ResetConnectorMetadataCacheInputBuilder {
         &self.api_version
     }
     /// Consumes the builder and constructs a [`ResetConnectorMetadataCacheInput`](crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheInput {
-            connector_profile_name: self.connector_profile_name,
-            connector_type: self.connector_type,
-            connector_entity_name: self.connector_entity_name,
-            entities_path: self.entities_path,
-            api_version: self.api_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheInput {
+                connector_profile_name: self.connector_profile_name
+                ,
+                connector_type: self.connector_type
+                ,
+                connector_entity_name: self.connector_entity_name
+                ,
+                entities_path: self.entities_path
+                ,
+                api_version: self.api_version
+                ,
+            }
+        )
     }
 }
+

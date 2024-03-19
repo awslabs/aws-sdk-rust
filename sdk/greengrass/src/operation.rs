@@ -276,3 +276,4 @@ pub mod update_subscription_definition;
 
 /// Types for the `UpdateThingRuntimeConfiguration` operation.
 pub mod update_thing_runtime_configuration;
+

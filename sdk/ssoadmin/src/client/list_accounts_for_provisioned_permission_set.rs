@@ -2,22 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccountsForProvisionedPermissionSet`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_arn(impl Into<String>)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::instance_arn) / [`set_instance_arn(Option<String>)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::set_instance_arn):<br>required: **true**<br><p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p><br>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::set_permission_set_arn):<br>required: **true**<br><p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p><br>
     ///   - [`provisioning_status(ProvisioningStatus)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::provisioning_status) / [`set_provisioning_status(Option<ProvisioningStatus>)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::set_provisioning_status):<br>required: **false**<br><p>The permission set provisioning status for an Amazon Web Services account.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to display for the <code>PermissionSet</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p><br>
-    /// - On success, responds with [`ListAccountsForProvisionedPermissionSetOutput`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput) with field(s):
+                            /// - On success, responds with [`ListAccountsForProvisionedPermissionSetOutput`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput) with field(s):
     ///   - [`account_ids(Option<Vec::<String>>)`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput::account_ids): <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    /// - On failure, responds with [`SdkError<ListAccountsForProvisionedPermissionSetError>`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError)
-    pub fn list_accounts_for_provisioned_permission_set(
-        &self,
-    ) -> crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder {
-        crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListAccountsForProvisionedPermissionSetError>`](crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError)
+    pub fn list_accounts_for_provisioned_permission_set(&self) -> crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder {
+                                crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetFluentBuilder::new(self.handle.clone())
+                            }
 }
+

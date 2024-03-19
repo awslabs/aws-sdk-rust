@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAggregationAuthorizationInput {
+pub struct DeleteAggregationAuthorizationInput  {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub authorized_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
     pub authorized_aws_region: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAggregationAuthorizationInput {
+impl  DeleteAggregationAuthorizationInput  {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn authorized_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn authorized_account_id(&self) -> ::std::option::Option<& str> {
         self.authorized_account_id.as_deref()
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn authorized_aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn authorized_aws_region(&self) -> ::std::option::Option<& str> {
         self.authorized_aws_region.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAggregationAuthorizationInputBuilder {
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub fn set_authorized_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorized_account_id = input;
-        self
+        self.authorized_account_id = input; self
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub fn get_authorized_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteAggregationAuthorizationInputBuilder {
     }
     /// <p>The region authorized to collect aggregated data.</p>
     pub fn set_authorized_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorized_aws_region = input;
-        self
+        self.authorized_aws_region = input; self
     }
     /// <p>The region authorized to collect aggregated data.</p>
     pub fn get_authorized_aws_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorized_aws_region
     }
     /// Consumes the builder and constructs a [`DeleteAggregationAuthorizationInput`](crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput {
-            authorized_account_id: self.authorized_account_id,
-            authorized_aws_region: self.authorized_aws_region,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput {
+                authorized_account_id: self.authorized_account_id
+                ,
+                authorized_aws_region: self.authorized_aws_region
+                ,
+            }
+        )
     }
 }
+

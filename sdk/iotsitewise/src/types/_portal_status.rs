@@ -3,19 +3,19 @@
 /// <p>Contains information about the current status of a portal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortalStatus {
+pub struct PortalStatus  {
     /// <p>The current state of the portal.</p>
     pub state: crate::types::PortalState,
     /// <p>Contains associated error information, if any.</p>
     pub error: ::std::option::Option<crate::types::MonitorErrorDetails>,
 }
-impl PortalStatus {
+impl  PortalStatus  {
     /// <p>The current state of the portal.</p>
-    pub fn state(&self) -> &crate::types::PortalState {
+    pub fn state(&self) -> & crate::types::PortalState {
         &self.state
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::MonitorErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::MonitorErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl PortalStatusBuilder {
     }
     /// <p>The current state of the portal.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PortalState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the portal.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PortalState> {
@@ -56,8 +55,7 @@ impl PortalStatusBuilder {
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::MonitorErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::MonitorErrorDetails> {
@@ -67,14 +65,17 @@ impl PortalStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::PortalStatusBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::PortalStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PortalStatus {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building PortalStatus",
-                )
-            })?,
-            error: self.error,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PortalStatus {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building PortalStatus")
+                    )?
+                ,
+                error: self.error
+                ,
+            }
+        )
     }
 }
+

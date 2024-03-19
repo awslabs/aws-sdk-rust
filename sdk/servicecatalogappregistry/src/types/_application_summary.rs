@@ -3,7 +3,7 @@
 /// <p>Summary of a Amazon Web Services Service Catalog AppRegistry application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The identifier of the application.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
@@ -17,29 +17,29 @@ pub struct ApplicationSummary {
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ApplicationSummary {
+impl  ApplicationSummary  {
     /// <p>The identifier of the application.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The identifier of the application.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the application.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The description of the application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl ApplicationSummaryBuilder {
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {
         crate::types::ApplicationSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
         }
     }
 }
+

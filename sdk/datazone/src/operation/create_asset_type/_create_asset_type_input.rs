@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAssetTypeInput {
+pub struct CreateAssetTypeInput  {
     /// <p>The unique identifier of the Amazon DataZone domain where the custom asset type is being created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the custom asset type.</p>
@@ -10,33 +10,33 @@ pub struct CreateAssetTypeInput {
     /// <p>The descripton of the custom asset type.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata forms that are to be attached to the custom asset type.</p>
-    pub forms_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormEntryInput>>,
+    pub forms_input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FormEntryInput>>,
     /// <p>The identifier of the Amazon DataZone project that is to own the custom asset type.</p>
     pub owning_project_identifier: ::std::option::Option<::std::string::String>,
 }
-impl CreateAssetTypeInput {
+impl  CreateAssetTypeInput  {
     /// <p>The unique identifier of the Amazon DataZone domain where the custom asset type is being created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The name of the custom asset type.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The descripton of the custom asset type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The metadata forms that are to be attached to the custom asset type.</p>
-    pub fn forms_input(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FormEntryInput>> {
+    pub fn forms_input(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::FormEntryInput>> {
         self.forms_input.as_ref()
     }
     /// <p>The identifier of the Amazon DataZone project that is to own the custom asset type.</p>
-    pub fn owning_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn owning_project_identifier(&self) -> ::std::option::Option<& str> {
         self.owning_project_identifier.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateAssetTypeInput {
+impl  ::std::fmt::Debug for CreateAssetTypeInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAssetTypeInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -61,7 +61,7 @@ pub struct CreateAssetTypeInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) forms_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormEntryInput>>,
+    pub(crate) forms_input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FormEntryInput>>,
     pub(crate) owning_project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateAssetTypeInputBuilder {
@@ -73,8 +73,7 @@ impl CreateAssetTypeInputBuilder {
     }
     /// <p>The unique identifier of the Amazon DataZone domain where the custom asset type is being created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The unique identifier of the Amazon DataZone domain where the custom asset type is being created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl CreateAssetTypeInputBuilder {
     }
     /// <p>The name of the custom asset type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the custom asset type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl CreateAssetTypeInputBuilder {
     }
     /// <p>The descripton of the custom asset type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The descripton of the custom asset type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,20 +113,16 @@ impl CreateAssetTypeInputBuilder {
     /// <p>The metadata forms that are to be attached to the custom asset type.</p>
     pub fn forms_input(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FormEntryInput) -> Self {
         let mut hash_map = self.forms_input.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.forms_input = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.forms_input = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The metadata forms that are to be attached to the custom asset type.</p>
-    pub fn set_forms_input(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormEntryInput>>,
-    ) -> Self {
-        self.forms_input = input;
-        self
+    pub fn set_forms_input(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FormEntryInput>>) -> Self {
+        self.forms_input = input; self
     }
     /// <p>The metadata forms that are to be attached to the custom asset type.</p>
-    pub fn get_forms_input(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormEntryInput>> {
+    pub fn get_forms_input(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FormEntryInput>> {
         &self.forms_input
     }
     /// <p>The identifier of the Amazon DataZone project that is to own the custom asset type.</p>
@@ -140,24 +133,28 @@ impl CreateAssetTypeInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone project that is to own the custom asset type.</p>
     pub fn set_owning_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_identifier = input;
-        self
+        self.owning_project_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone project that is to own the custom asset type.</p>
     pub fn get_owning_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.owning_project_identifier
     }
     /// Consumes the builder and constructs a [`CreateAssetTypeInput`](crate::operation::create_asset_type::CreateAssetTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_asset_type::CreateAssetTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_asset_type::CreateAssetTypeInput {
-            domain_identifier: self.domain_identifier,
-            name: self.name,
-            description: self.description,
-            forms_input: self.forms_input,
-            owning_project_identifier: self.owning_project_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset_type::CreateAssetTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_asset_type::CreateAssetTypeInput {
+                domain_identifier: self.domain_identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                forms_input: self.forms_input
+                ,
+                owning_project_identifier: self.owning_project_identifier
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAssetTypeInputBuilder {
@@ -171,3 +168,4 @@ impl ::std::fmt::Debug for CreateAssetTypeInputBuilder {
         formatter.finish()
     }
 }
+

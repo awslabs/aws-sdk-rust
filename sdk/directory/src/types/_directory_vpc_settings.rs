@@ -3,22 +3,20 @@
 /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectoryVpcSettings {
+pub struct DirectoryVpcSettings  {
     /// <p>The identifier of the VPC in which to create the directory.</p>
     pub vpc_id: ::std::string::String,
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
+    pub subnet_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl DirectoryVpcSettings {
+impl  DirectoryVpcSettings  {
     /// <p>The identifier of the VPC in which to create the directory.</p>
-    pub fn vpc_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vpc_id.deref()
+    pub fn vpc_id(&self) -> & str {
+        use std::ops::Deref; self.vpc_id.deref()
     }
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.subnet_ids.deref()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.subnet_ids.deref()
     }
 }
 impl DirectoryVpcSettings {
@@ -33,7 +31,7 @@ impl DirectoryVpcSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectoryVpcSettingsBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DirectoryVpcSettingsBuilder {
     /// <p>The identifier of the VPC in which to create the directory.</p>
@@ -44,8 +42,7 @@ impl DirectoryVpcSettingsBuilder {
     }
     /// <p>The identifier of the VPC in which to create the directory.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The identifier of the VPC in which to create the directory.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl DirectoryVpcSettingsBuilder {
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`DirectoryVpcSettings`](crate::types::DirectoryVpcSettings).
@@ -76,19 +72,20 @@ impl DirectoryVpcSettingsBuilder {
     /// - [`vpc_id`](crate::types::builders::DirectoryVpcSettingsBuilder::vpc_id)
     /// - [`subnet_ids`](crate::types::builders::DirectoryVpcSettingsBuilder::subnet_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::DirectoryVpcSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DirectoryVpcSettings {
-            vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vpc_id",
-                    "vpc_id was not specified but it is required when building DirectoryVpcSettings",
-                )
-            })?,
-            subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnet_ids",
-                    "subnet_ids was not specified but it is required when building DirectoryVpcSettings",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DirectoryVpcSettings {
+                vpc_id: self.vpc_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_id", "vpc_id was not specified but it is required when building DirectoryVpcSettings")
+                    )?
+                ,
+                subnet_ids: self.subnet_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnet_ids", "subnet_ids was not specified but it is required when building DirectoryVpcSettings")
+                    )?
+                ,
+            }
+        )
     }
 }
+

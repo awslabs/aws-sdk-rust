@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCallAnalyticsJobsInput {
+pub struct ListCallAnalyticsJobsInput  {
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all Call Analytics jobs are returned.</p>
     pub status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
     /// <p>Returns only the Call Analytics jobs that contain the specified string. The search is not case sensitive.</p>
@@ -12,17 +12,17 @@ pub struct ListCallAnalyticsJobsInput {
     /// <p>The maximum number of Call Analytics jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListCallAnalyticsJobsInput {
+impl  ListCallAnalyticsJobsInput  {
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all Call Analytics jobs are returned.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CallAnalyticsJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CallAnalyticsJobStatus> {
         self.status.as_ref()
     }
     /// <p>Returns only the Call Analytics jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn job_name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn job_name_contains(&self) -> ::std::option::Option<& str> {
         self.job_name_contains.as_deref()
     }
     /// <p>If your <code>ListCallAnalyticsJobs</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of Call Analytics jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
@@ -54,8 +54,7 @@ impl ListCallAnalyticsJobsInputBuilder {
     }
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all Call Analytics jobs are returned.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all Call Analytics jobs are returned.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobStatus> {
@@ -68,8 +67,7 @@ impl ListCallAnalyticsJobsInputBuilder {
     }
     /// <p>Returns only the Call Analytics jobs that contain the specified string. The search is not case sensitive.</p>
     pub fn set_job_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name_contains = input;
-        self
+        self.job_name_contains = input; self
     }
     /// <p>Returns only the Call Analytics jobs that contain the specified string. The search is not case sensitive.</p>
     pub fn get_job_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl ListCallAnalyticsJobsInputBuilder {
     }
     /// <p>If your <code>ListCallAnalyticsJobs</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If your <code>ListCallAnalyticsJobs</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,23 +93,26 @@ impl ListCallAnalyticsJobsInputBuilder {
     }
     /// <p>The maximum number of Call Analytics jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of Call Analytics jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCallAnalyticsJobsInput`](crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput {
-            status: self.status,
-            job_name_contains: self.job_name_contains,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobsInput {
+                status: self.status
+                ,
+                job_name_contains: self.job_name_contains
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

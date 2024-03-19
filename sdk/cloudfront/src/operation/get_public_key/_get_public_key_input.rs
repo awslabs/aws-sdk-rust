@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPublicKeyInput {
+pub struct GetPublicKeyInput  {
     /// <p>The identifier of the public key you are getting.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetPublicKeyInput {
+impl  GetPublicKeyInput  {
     /// <p>The identifier of the public key you are getting.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetPublicKeyInputBuilder {
     }
     /// <p>The identifier of the public key you are getting.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the public key you are getting.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetPublicKeyInput`](crate::operation::get_public_key::GetPublicKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_public_key::GetPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_public_key::GetPublicKeyInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_public_key::GetPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_public_key::GetPublicKeyInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

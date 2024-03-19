@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyGroupConfigOutput {
+pub struct GetKeyGroupConfigOutput  {
     /// <p>The key group configuration.</p>
     pub key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
     /// <p>The identifier for this version of the key group.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetKeyGroupConfigOutput {
+impl  GetKeyGroupConfigOutput  {
     /// <p>The key group configuration.</p>
-    pub fn key_group_config(&self) -> ::std::option::Option<&crate::types::KeyGroupConfig> {
+    pub fn key_group_config(&self) -> ::std::option::Option<& crate::types::KeyGroupConfig> {
         self.key_group_config.as_ref()
     }
     /// <p>The identifier for this version of the key group.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetKeyGroupConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetKeyGroupConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyGroupConfigOutput`](crate::operation::get_key_group_config::GetKeyGroupConfigOutput).
     pub fn builder() -> crate::operation::get_key_group_config::builders::GetKeyGroupConfigOutputBuilder {
@@ -47,8 +47,7 @@ impl GetKeyGroupConfigOutputBuilder {
     }
     /// <p>The key group configuration.</p>
     pub fn set_key_group_config(mut self, input: ::std::option::Option<crate::types::KeyGroupConfig>) -> Self {
-        self.key_group_config = input;
-        self
+        self.key_group_config = input; self
     }
     /// <p>The key group configuration.</p>
     pub fn get_key_group_config(&self) -> &::std::option::Option<crate::types::KeyGroupConfig> {
@@ -61,28 +60,30 @@ impl GetKeyGroupConfigOutputBuilder {
     }
     /// <p>The identifier for this version of the key group.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The identifier for this version of the key group.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetKeyGroupConfigOutput`](crate::operation::get_key_group_config::GetKeyGroupConfigOutput).
     pub fn build(self) -> crate::operation::get_key_group_config::GetKeyGroupConfigOutput {
         crate::operation::get_key_group_config::GetKeyGroupConfigOutput {
-            key_group_config: self.key_group_config,
-            e_tag: self.e_tag,
+            key_group_config: self.key_group_config
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

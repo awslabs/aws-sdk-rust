@@ -3,9 +3,9 @@
 /// <p>A summary of the request sent by using <code>SearchPlaceIndexForPosition</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SearchPlaceIndexForPositionSummary {
+pub struct SearchPlaceIndexForPositionSummary  {
     /// <p>The position specified in the request.</p>
-    pub position: ::std::vec::Vec<f64>,
+    pub position: ::std::vec::Vec::<f64>,
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code></p>
     pub max_results: ::std::option::Option<i32>,
@@ -23,11 +23,10 @@ pub struct SearchPlaceIndexForPositionSummary {
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     pub language: ::std::option::Option<::std::string::String>,
 }
-impl SearchPlaceIndexForPositionSummary {
+impl  SearchPlaceIndexForPositionSummary  {
     /// <p>The position specified in the request.</p>
-    pub fn position(&self) -> &[f64] {
-        use std::ops::Deref;
-        self.position.deref()
+    pub fn position(&self) -> & [f64] {
+        use std::ops::Deref; self.position.deref()
     }
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code></p>
@@ -44,16 +43,15 @@ impl SearchPlaceIndexForPositionSummary {
     /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source.deref()
+    pub fn data_source(&self) -> & str {
+        use std::ops::Deref; self.data_source.deref()
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
 }
-impl ::std::fmt::Debug for SearchPlaceIndexForPositionSummary {
+impl  ::std::fmt::Debug for SearchPlaceIndexForPositionSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForPositionSummary");
         formatter.field("position", &"*** Sensitive Data Redacted ***");
@@ -74,7 +72,7 @@ impl SearchPlaceIndexForPositionSummary {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SearchPlaceIndexForPositionSummaryBuilder {
-    pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) position: ::std::option::Option<::std::vec::Vec::<f64>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) data_source: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
@@ -87,17 +85,16 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     /// <p>The position specified in the request.</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
-        v.push(input);
-        self.position = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.position = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The position specified in the request.</p>
-    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.position = input;
-        self
+    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.position = input; self
     }
     /// <p>The position specified in the request.</p>
-    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.position
     }
     /// <p>Contains the optional result count limit that is specified in the request.</p>
@@ -109,8 +106,7 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code></p>
@@ -143,8 +139,7 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
@@ -166,8 +161,7 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,22 +172,24 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     /// - [`position`](crate::types::builders::SearchPlaceIndexForPositionSummaryBuilder::position)
     /// - [`data_source`](crate::types::builders::SearchPlaceIndexForPositionSummaryBuilder::data_source)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchPlaceIndexForPositionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchPlaceIndexForPositionSummary {
-            position: self.position.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "position",
-                    "position was not specified but it is required when building SearchPlaceIndexForPositionSummary",
-                )
-            })?,
-            max_results: self.max_results,
-            data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source",
-                    "data_source was not specified but it is required when building SearchPlaceIndexForPositionSummary",
-                )
-            })?,
-            language: self.language,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchPlaceIndexForPositionSummary {
+                position: self.position
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("position", "position was not specified but it is required when building SearchPlaceIndexForPositionSummary")
+                    )?
+                ,
+                max_results: self.max_results
+                ,
+                data_source: self.data_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source", "data_source was not specified but it is required when building SearchPlaceIndexForPositionSummary")
+                    )?
+                ,
+                language: self.language
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SearchPlaceIndexForPositionSummaryBuilder {
@@ -206,3 +202,4 @@ impl ::std::fmt::Debug for SearchPlaceIndexForPositionSummaryBuilder {
         formatter.finish()
     }
 }
+

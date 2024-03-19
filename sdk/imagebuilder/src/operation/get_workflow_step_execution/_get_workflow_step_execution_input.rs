@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowStepExecutionInput {
+pub struct GetWorkflowStepExecutionInput  {
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
     pub step_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl GetWorkflowStepExecutionInput {
+impl  GetWorkflowStepExecutionInput  {
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
-    pub fn step_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_execution_id(&self) -> ::std::option::Option<& str> {
         self.step_execution_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetWorkflowStepExecutionInputBuilder {
     }
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
     pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_execution_id = input;
-        self
+        self.step_execution_id = input; self
     }
     /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_execution_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowStepExecutionInput`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput {
-            step_execution_id: self.step_execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionInput {
+                step_execution_id: self.step_execution_id
+                ,
+            }
+        )
     }
 }
+

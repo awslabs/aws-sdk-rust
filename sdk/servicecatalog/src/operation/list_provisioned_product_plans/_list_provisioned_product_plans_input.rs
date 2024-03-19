@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProvisionedProductPlansInput {
+pub struct ListProvisionedProductPlansInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -20,7 +20,7 @@ pub struct ListProvisionedProductPlansInput {
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub access_level_filter: ::std::option::Option<crate::types::AccessLevelFilter>,
 }
-impl ListProvisionedProductPlansInput {
+impl  ListProvisionedProductPlansInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -28,11 +28,11 @@ impl ListProvisionedProductPlansInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(&self) -> ::std::option::Option<&str> {
+    pub fn provision_product_id(&self) -> ::std::option::Option<& str> {
         self.provision_product_id.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -40,11 +40,11 @@ impl ListProvisionedProductPlansInput {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn access_level_filter(&self) -> ::std::option::Option<&crate::types::AccessLevelFilter> {
+    pub fn access_level_filter(&self) -> ::std::option::Option<& crate::types::AccessLevelFilter> {
         self.access_level_filter.as_ref()
     }
 }
@@ -85,8 +85,7 @@ impl ListProvisionedProductPlansInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -105,8 +104,7 @@ impl ListProvisionedProductPlansInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_provision_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provision_product_id = input;
-        self
+        self.provision_product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_provision_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl ListProvisionedProductPlansInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -133,8 +130,7 @@ impl ListProvisionedProductPlansInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,26 +143,28 @@ impl ListProvisionedProductPlansInputBuilder {
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub fn set_access_level_filter(mut self, input: ::std::option::Option<crate::types::AccessLevelFilter>) -> Self {
-        self.access_level_filter = input;
-        self
+        self.access_level_filter = input; self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
     pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
         &self.access_level_filter
     }
     /// Consumes the builder and constructs a [`ListProvisionedProductPlansInput`](crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansInput {
-            accept_language: self.accept_language,
-            provision_product_id: self.provision_product_id,
-            page_size: self.page_size,
-            page_token: self.page_token,
-            access_level_filter: self.access_level_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansInput {
+                accept_language: self.accept_language
+                ,
+                provision_product_id: self.provision_product_id
+                ,
+                page_size: self.page_size
+                ,
+                page_token: self.page_token
+                ,
+                access_level_filter: self.access_level_filter
+                ,
+            }
+        )
     }
 }
+

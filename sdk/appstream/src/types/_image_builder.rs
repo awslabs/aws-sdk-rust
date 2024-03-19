@@ -3,7 +3,7 @@
 /// <p>Describes a virtual machine that is used to create an image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageBuilder {
+pub struct ImageBuilder  {
     /// <p>The name of the image builder.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the image builder.</p>
@@ -104,35 +104,35 @@ pub struct ImageBuilder {
     /// <p>Describes the network details of the fleet or image builder instance.</p>
     pub network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>The image builder errors.</p>
-    pub image_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    pub image_builder_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>,
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
 }
-impl ImageBuilder {
+impl  ImageBuilder  {
     /// <p>The name of the image builder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN for the image builder.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the image from which this builder was created.</p>
-    pub fn image_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_arn(&self) -> ::std::option::Option<& str> {
         self.image_arn.as_deref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The image builder name to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The VPC configuration of the image builder.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>The instance type for the image builder. The following instance types are available:</p>
@@ -204,28 +204,28 @@ impl ImageBuilder {
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The operating system platform of the image builder.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformType> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::PlatformType> {
         self.platform.as_ref()
     }
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The state of the image builder.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ImageBuilderState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ImageBuilderState> {
         self.state.as_ref()
     }
     /// <p>The reason why the last state change occurred.</p>
-    pub fn state_change_reason(&self) -> ::std::option::Option<&crate::types::ImageBuilderStateChangeReason> {
+    pub fn state_change_reason(&self) -> ::std::option::Option<& crate::types::ImageBuilderStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The time stamp when the image builder was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
@@ -233,28 +233,30 @@ impl ImageBuilder {
         self.enable_default_internet_access
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
-    pub fn domain_join_info(&self) -> ::std::option::Option<&crate::types::DomainJoinInfo> {
+    pub fn domain_join_info(&self) -> ::std::option::Option<& crate::types::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
-    pub fn network_access_configuration(&self) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
+    pub fn network_access_configuration(&self) -> ::std::option::Option<& crate::types::NetworkAccessConfiguration> {
         self.network_access_configuration.as_ref()
     }
     /// <p>The image builder errors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_builder_errors.is_none()`.
-    pub fn image_builder_errors(&self) -> &[crate::types::ResourceError] {
-        self.image_builder_errors.as_deref().unwrap_or_default()
+    pub fn image_builder_errors(&self) -> & [crate::types::ResourceError] {
+        self.image_builder_errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
-    pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn appstream_agent_version(&self) -> ::std::option::Option<& str> {
         self.appstream_agent_version.as_deref()
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
-    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
-        self.access_endpoints.as_deref().unwrap_or_default()
+    pub fn access_endpoints(&self) -> & [crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImageBuilder {
@@ -283,9 +285,9 @@ pub struct ImageBuilderBuilder {
     pub(crate) enable_default_internet_access: ::std::option::Option<bool>,
     pub(crate) domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
     pub(crate) network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
-    pub(crate) image_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    pub(crate) image_builder_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
-    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
 }
 impl ImageBuilderBuilder {
     /// <p>The name of the image builder.</p>
@@ -296,8 +298,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The name of the image builder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the image builder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -310,8 +311,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The ARN for the image builder.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN for the image builder.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -324,8 +324,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The ARN of the image from which this builder was created.</p>
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_arn = input;
-        self
+        self.image_arn = input; self
     }
     /// <p>The ARN of the image from which this builder was created.</p>
     pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -338,8 +337,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The description to display.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to display.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -352,8 +350,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The image builder name to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The image builder name to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -366,8 +363,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The VPC configuration of the image builder.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The VPC configuration of the image builder.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -516,8 +512,7 @@ impl ImageBuilderBuilder {
     /// <p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type for the image builder. The following instance types are available:</p>
     /// <ul>
@@ -598,8 +593,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The operating system platform of the image builder.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The operating system platform of the image builder.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
@@ -614,8 +608,7 @@ impl ImageBuilderBuilder {
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -629,8 +622,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The state of the image builder.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ImageBuilderState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the image builder.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ImageBuilderState> {
@@ -643,8 +635,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The reason why the last state change occurred.</p>
     pub fn set_state_change_reason(mut self, input: ::std::option::Option<crate::types::ImageBuilderStateChangeReason>) -> Self {
-        self.state_change_reason = input;
-        self
+        self.state_change_reason = input; self
     }
     /// <p>The reason why the last state change occurred.</p>
     pub fn get_state_change_reason(&self) -> &::std::option::Option<crate::types::ImageBuilderStateChangeReason> {
@@ -657,8 +648,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The time stamp when the image builder was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time stamp when the image builder was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -671,8 +661,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_default_internet_access = input;
-        self
+        self.enable_default_internet_access = input; self
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
@@ -685,8 +674,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
     pub fn set_domain_join_info(mut self, input: ::std::option::Option<crate::types::DomainJoinInfo>) -> Self {
-        self.domain_join_info = input;
-        self
+        self.domain_join_info = input; self
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
     pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
@@ -699,8 +687,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
     pub fn set_network_access_configuration(mut self, input: ::std::option::Option<crate::types::NetworkAccessConfiguration>) -> Self {
-        self.network_access_configuration = input;
-        self
+        self.network_access_configuration = input; self
     }
     /// <p>Describes the network details of the fleet or image builder instance.</p>
     pub fn get_network_access_configuration(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
@@ -713,17 +700,16 @@ impl ImageBuilderBuilder {
     /// <p>The image builder errors.</p>
     pub fn image_builder_errors(mut self, input: crate::types::ResourceError) -> Self {
         let mut v = self.image_builder_errors.unwrap_or_default();
-        v.push(input);
-        self.image_builder_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_builder_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The image builder errors.</p>
-    pub fn set_image_builder_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>) -> Self {
-        self.image_builder_errors = input;
-        self
+    pub fn set_image_builder_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>) -> Self {
+        self.image_builder_errors = input; self
     }
     /// <p>The image builder errors.</p>
-    pub fn get_image_builder_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
+    pub fn get_image_builder_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>> {
         &self.image_builder_errors
     }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
@@ -733,8 +719,7 @@ impl ImageBuilderBuilder {
     }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.appstream_agent_version = input;
-        self
+        self.appstream_agent_version = input; self
     }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -747,40 +732,58 @@ impl ImageBuilderBuilder {
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     pub fn access_endpoints(mut self, input: crate::types::AccessEndpoint) -> Self {
         let mut v = self.access_endpoints.unwrap_or_default();
-        v.push(input);
-        self.access_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
-        self.access_endpoints = input;
-        self
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>) -> Self {
+        self.access_endpoints = input; self
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`ImageBuilder`](crate::types::ImageBuilder).
     pub fn build(self) -> crate::types::ImageBuilder {
         crate::types::ImageBuilder {
-            name: self.name,
-            arn: self.arn,
-            image_arn: self.image_arn,
-            description: self.description,
-            display_name: self.display_name,
-            vpc_config: self.vpc_config,
-            instance_type: self.instance_type,
-            platform: self.platform,
-            iam_role_arn: self.iam_role_arn,
-            state: self.state,
-            state_change_reason: self.state_change_reason,
-            created_time: self.created_time,
-            enable_default_internet_access: self.enable_default_internet_access,
-            domain_join_info: self.domain_join_info,
-            network_access_configuration: self.network_access_configuration,
-            image_builder_errors: self.image_builder_errors,
-            appstream_agent_version: self.appstream_agent_version,
-            access_endpoints: self.access_endpoints,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            image_arn: self.image_arn
+            ,
+            description: self.description
+            ,
+            display_name: self.display_name
+            ,
+            vpc_config: self.vpc_config
+            ,
+            instance_type: self.instance_type
+            ,
+            platform: self.platform
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
+            state: self.state
+            ,
+            state_change_reason: self.state_change_reason
+            ,
+            created_time: self.created_time
+            ,
+            enable_default_internet_access: self.enable_default_internet_access
+            ,
+            domain_join_info: self.domain_join_info
+            ,
+            network_access_configuration: self.network_access_configuration
+            ,
+            image_builder_errors: self.image_builder_errors
+            ,
+            appstream_agent_version: self.appstream_agent_version
+            ,
+            access_endpoints: self.access_endpoints
+            ,
         }
     }
 }
+

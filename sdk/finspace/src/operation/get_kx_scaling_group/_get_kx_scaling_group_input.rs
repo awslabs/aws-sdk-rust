@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKxScalingGroupInput {
+pub struct GetKxScalingGroupInput  {
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub scaling_group_name: ::std::option::Option<::std::string::String>,
 }
-impl GetKxScalingGroupInput {
+impl  GetKxScalingGroupInput  {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
-    pub fn scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.scaling_group_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetKxScalingGroupInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetKxScalingGroupInputBuilder {
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scaling_group_name = input;
-        self
+        self.scaling_group_name = input; self
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scaling_group_name
     }
     /// Consumes the builder and constructs a [`GetKxScalingGroupInput`](crate::operation::get_kx_scaling_group::GetKxScalingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_kx_scaling_group::GetKxScalingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_kx_scaling_group::GetKxScalingGroupInput {
-            environment_id: self.environment_id,
-            scaling_group_name: self.scaling_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_kx_scaling_group::GetKxScalingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupInput {
+                environment_id: self.environment_id
+                ,
+                scaling_group_name: self.scaling_group_name
+                ,
+            }
+        )
     }
 }
+

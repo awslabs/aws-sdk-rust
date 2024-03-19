@@ -3,13 +3,13 @@
 /// <p>The configuration of the placeholder options in a text control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextControlPlaceholderOptions {
+pub struct TextControlPlaceholderOptions  {
     /// <p>The visibility configuration of the placeholder options in a text control.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl TextControlPlaceholderOptions {
+impl  TextControlPlaceholderOptions  {
     /// <p>The visibility configuration of the placeholder options in a text control.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TextControlPlaceholderOptionsBuilder {
     }
     /// <p>The visibility configuration of the placeholder options in a text control.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility configuration of the placeholder options in a text control.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -43,6 +42,10 @@ impl TextControlPlaceholderOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`TextControlPlaceholderOptions`](crate::types::TextControlPlaceholderOptions).
     pub fn build(self) -> crate::types::TextControlPlaceholderOptions {
-        crate::types::TextControlPlaceholderOptions { visibility: self.visibility }
+        crate::types::TextControlPlaceholderOptions {
+            visibility: self.visibility
+            ,
+        }
     }
 }
+

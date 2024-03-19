@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSnomedctInferenceJobOutput {
+pub struct DescribeSnomedctInferenceJobOutput  {
     /// <p>Provides information about a detection job.</p>
     pub comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
-impl DescribeSnomedctInferenceJobOutput {
+impl  DescribeSnomedctInferenceJobOutput  {
     /// <p>Provides information about a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(&self) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> ::std::option::Option<& crate::types::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSnomedctInferenceJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSnomedctInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobOutput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput).
     pub fn builder() -> crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobOutputBuilder {
@@ -39,31 +39,29 @@ impl DescribeSnomedctInferenceJobOutputBuilder {
         self
     }
     /// <p>Provides information about a detection job.</p>
-    pub fn set_comprehend_medical_async_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
-    ) -> Self {
-        self.comprehend_medical_async_job_properties = input;
-        self
+    pub fn set_comprehend_medical_async_job_properties(mut self, input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>) -> Self {
+        self.comprehend_medical_async_job_properties = input; self
     }
     /// <p>Provides information about a detection job.</p>
     pub fn get_comprehend_medical_async_job_properties(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
         &self.comprehend_medical_async_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobOutput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput).
     pub fn build(self) -> crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput {
         crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput {
-            comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties,
+            comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

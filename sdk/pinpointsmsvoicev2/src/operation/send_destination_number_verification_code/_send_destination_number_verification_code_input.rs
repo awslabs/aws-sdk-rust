@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendDestinationNumberVerificationCodeInput {
+pub struct SendDestinationNumberVerificationCodeInput  {
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub verified_destination_number_id: ::std::option::Option<::std::string::String>,
     /// <p>Choose to send the verification code as an SMS or voice message.</p>
@@ -14,40 +14,37 @@ pub struct SendDestinationNumberVerificationCodeInput {
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
-    pub destination_country_parameters:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
+    pub destination_country_parameters: ::std::option::Option<::std::collections::HashMap::<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
 }
-impl SendDestinationNumberVerificationCodeInput {
+impl  SendDestinationNumberVerificationCodeInput  {
     /// <p>The unique identifier for the verified destination phone number.</p>
-    pub fn verified_destination_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_destination_number_id(&self) -> ::std::option::Option<& str> {
         self.verified_destination_number_id.as_deref()
     }
     /// <p>Choose to send the verification code as an SMS or voice message.</p>
-    pub fn verification_channel(&self) -> ::std::option::Option<&crate::types::VerificationChannel> {
+    pub fn verification_channel(&self) -> ::std::option::Option<& crate::types::VerificationChannel> {
         self.verification_channel.as_ref()
     }
     /// <p>Choose the language to use for the message.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+    pub fn origination_identity(&self) -> ::std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn context(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.context.as_ref()
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
-    pub fn destination_country_parameters(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>> {
+    pub fn destination_country_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DestinationCountryParameterKey, ::std::string::String>> {
         self.destination_country_parameters.as_ref()
     }
 }
@@ -67,9 +64,8 @@ pub struct SendDestinationNumberVerificationCodeInputBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) destination_country_parameters:
-        ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) destination_country_parameters: ::std::option::Option<::std::collections::HashMap::<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
 }
 impl SendDestinationNumberVerificationCodeInputBuilder {
     /// <p>The unique identifier for the verified destination phone number.</p>
@@ -80,8 +76,7 @@ impl SendDestinationNumberVerificationCodeInputBuilder {
     }
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub fn set_verified_destination_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_destination_number_id = input;
-        self
+        self.verified_destination_number_id = input; self
     }
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub fn get_verified_destination_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl SendDestinationNumberVerificationCodeInputBuilder {
     }
     /// <p>Choose to send the verification code as an SMS or voice message.</p>
     pub fn set_verification_channel(mut self, input: ::std::option::Option<crate::types::VerificationChannel>) -> Self {
-        self.verification_channel = input;
-        self
+        self.verification_channel = input; self
     }
     /// <p>Choose to send the verification code as an SMS or voice message.</p>
     pub fn get_verification_channel(&self) -> &::std::option::Option<crate::types::VerificationChannel> {
@@ -109,8 +103,7 @@ impl SendDestinationNumberVerificationCodeInputBuilder {
     }
     /// <p>Choose the language to use for the message.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>Choose the language to use for the message.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -123,8 +116,7 @@ impl SendDestinationNumberVerificationCodeInputBuilder {
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
     pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origination_identity = input;
-        self
+        self.origination_identity = input; self
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +129,7 @@ impl SendDestinationNumberVerificationCodeInputBuilder {
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,17 +142,16 @@ impl SendDestinationNumberVerificationCodeInputBuilder {
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.context = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.context = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.context = input;
-        self
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.context = input; self
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.context
     }
     /// Adds a key-value pair to `destination_country_parameters`.
@@ -169,47 +159,40 @@ impl SendDestinationNumberVerificationCodeInputBuilder {
     /// To override the contents of this collection use [`set_destination_country_parameters`](Self::set_destination_country_parameters).
     ///
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
-    pub fn destination_country_parameters(
-        mut self,
-        k: crate::types::DestinationCountryParameterKey,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_country_parameters(mut self, k: crate::types::DestinationCountryParameterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.destination_country_parameters.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.destination_country_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.destination_country_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
-    pub fn set_destination_country_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>>,
-    ) -> Self {
-        self.destination_country_parameters = input;
-        self
+    pub fn set_destination_country_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DestinationCountryParameterKey, ::std::string::String>>) -> Self {
+        self.destination_country_parameters = input; self
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>.</p>
-    pub fn get_destination_country_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DestinationCountryParameterKey, ::std::string::String>> {
+    pub fn get_destination_country_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DestinationCountryParameterKey, ::std::string::String>> {
         &self.destination_country_parameters
     }
     /// Consumes the builder and constructs a [`SendDestinationNumberVerificationCodeInput`](crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeInput {
-                verified_destination_number_id: self.verified_destination_number_id,
-                verification_channel: self.verification_channel,
-                language_code: self.language_code,
-                origination_identity: self.origination_identity,
-                configuration_set_name: self.configuration_set_name,
-                context: self.context,
-                destination_country_parameters: self.destination_country_parameters,
-            },
+                verified_destination_number_id: self.verified_destination_number_id
+                ,
+                verification_channel: self.verification_channel
+                ,
+                language_code: self.language_code
+                ,
+                origination_identity: self.origination_identity
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                context: self.context
+                ,
+                destination_country_parameters: self.destination_country_parameters
+                ,
+            }
         )
     }
 }
+

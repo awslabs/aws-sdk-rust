@@ -2,36 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsersOutput {
+pub struct ListUsersOutput  {
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
     pub server_id: ::std::string::String,
     /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub users: ::std::vec::Vec<crate::types::ListedUser>,
+    pub users: ::std::vec::Vec::<crate::types::ListedUser>,
     _request_id: Option<String>,
 }
-impl ListUsersOutput {
+impl  ListUsersOutput  {
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
-    pub fn server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.server_id.deref()
+    pub fn server_id(&self) -> & str {
+        use std::ops::Deref; self.server_id.deref()
     }
     /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn users(&self) -> &[crate::types::ListedUser] {
-        use std::ops::Deref;
-        self.users.deref()
+    pub fn users(&self) -> & [crate::types::ListedUser] {
+        use std::ops::Deref; self.users.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUsersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
     pub fn builder() -> crate::operation::list_users::builders::ListUsersOutputBuilder {
@@ -45,7 +43,7 @@ impl ListUsersOutput {
 pub struct ListUsersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
-    pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::ListedUser>>,
+    pub(crate) users: ::std::option::Option<::std::vec::Vec::<crate::types::ListedUser>>,
     _request_id: Option<String>,
 }
 impl ListUsersOutputBuilder {
@@ -56,8 +54,7 @@ impl ListUsersOutputBuilder {
     }
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +68,7 @@ impl ListUsersOutputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,48 +81,49 @@ impl ListUsersOutputBuilder {
     /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
     pub fn users(mut self, input: crate::types::ListedUser) -> Self {
         let mut v = self.users.unwrap_or_default();
-        v.push(input);
-        self.users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedUser>>) -> Self {
-        self.users = input;
-        self
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedUser>>) -> Self {
+        self.users = input; self
     }
     /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedUser>> {
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedUser>> {
         &self.users
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`server_id`](crate::operation::list_users::builders::ListUsersOutputBuilder::server_id)
     /// - [`users`](crate::operation::list_users::builders::ListUsersOutputBuilder::users)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_users::ListUsersOutput {
-            next_token: self.next_token,
-            server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "server_id",
-                    "server_id was not specified but it is required when building ListUsersOutput",
-                )
-            })?,
-            users: self.users.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "users",
-                    "users was not specified but it is required when building ListUsersOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_users::ListUsersOutput {
+                next_token: self.next_token
+                ,
+                server_id: self.server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("server_id", "server_id was not specified but it is required when building ListUsersOutput")
+                    )?
+                ,
+                users: self.users
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("users", "users was not specified but it is required when building ListUsersOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

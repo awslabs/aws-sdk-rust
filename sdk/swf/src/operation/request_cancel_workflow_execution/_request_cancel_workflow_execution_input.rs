@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestCancelWorkflowExecutionInput {
+pub struct RequestCancelWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The workflowId of the workflow execution to cancel.</p>
@@ -10,17 +10,17 @@ pub struct RequestCancelWorkflowExecutionInput {
     /// <p>The runId of the workflow execution to cancel.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
 }
-impl RequestCancelWorkflowExecutionInput {
+impl  RequestCancelWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflowId of the workflow execution to cancel.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The runId of the workflow execution to cancel.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RequestCancelWorkflowExecutionInputBuilder {
     }
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RequestCancelWorkflowExecutionInputBuilder {
     }
     /// <p>The workflowId of the workflow execution to cancel.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The workflowId of the workflow execution to cancel.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl RequestCancelWorkflowExecutionInputBuilder {
     }
     /// <p>The runId of the workflow execution to cancel.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The runId of the workflow execution to cancel.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionInput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput {
-            domain: self.domain,
-            workflow_id: self.workflow_id,
-            run_id: self.run_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput {
+                domain: self.domain
+                ,
+                workflow_id: self.workflow_id
+                ,
+                run_id: self.run_id
+                ,
+            }
+        )
     }
 }
+

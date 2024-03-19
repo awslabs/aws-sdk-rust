@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCustomerMetadataInput {}
+pub struct DescribeCustomerMetadataInput  {
+}
 impl DescribeCustomerMetadataInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataInput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput).
     pub fn builder() -> crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeCustomerMetadataInput {
 /// A builder for [`DescribeCustomerMetadataInput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeCustomerMetadataInputBuilder {}
+pub struct DescribeCustomerMetadataInputBuilder {
+}
 impl DescribeCustomerMetadataInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomerMetadataInput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput {
+            }
+        )
     }
 }
+

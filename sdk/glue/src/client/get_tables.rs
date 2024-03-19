@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTables`](crate::operation::get_tables::builders::GetTablesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_tables::builders::GetTablesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::set_database_name):<br>required: **true**<br><p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p><br>
     ///   - [`expression(impl Into<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::expression) / [`set_expression(Option<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::set_expression):<br>required: **false**<br><p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of tables to return in a single response.</p><br>
     ///   - [`transaction_id(impl Into<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::set_transaction_id):<br>required: **false**<br><p>The transaction ID at which to read the table contents.</p><br>
     ///   - [`query_as_of_time(DateTime)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::query_as_of_time) / [`set_query_as_of_time(Option<DateTime>)`](crate::operation::get_tables::builders::GetTablesFluentBuilder::set_query_as_of_time):<br>required: **false**<br><p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p><br>
-    /// - On success, responds with [`GetTablesOutput`](crate::operation::get_tables::GetTablesOutput) with field(s):
+                            /// - On success, responds with [`GetTablesOutput`](crate::operation::get_tables::GetTablesOutput) with field(s):
     ///   - [`table_list(Option<Vec::<Table>>)`](crate::operation::get_tables::GetTablesOutput::table_list): <p>A list of the requested <code>Table</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_tables::GetTablesOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
-    /// - On failure, responds with [`SdkError<GetTablesError>`](crate::operation::get_tables::GetTablesError)
+                            /// - On failure, responds with [`SdkError<GetTablesError>`](crate::operation::get_tables::GetTablesError)
     pub fn get_tables(&self) -> crate::operation::get_tables::builders::GetTablesFluentBuilder {
-        crate::operation::get_tables::builders::GetTablesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_tables::builders::GetTablesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

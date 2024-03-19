@@ -3,7 +3,7 @@
 /// <p>The details for a server host key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribedHostKey {
+pub struct DescribedHostKey  {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
     pub arn: ::std::string::String,
     /// <p>A unique identifier for the host key.</p>
@@ -29,24 +29,23 @@ pub struct DescribedHostKey {
     /// <p>The date on which the host key was added to the server.</p>
     pub date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl DescribedHostKey {
+impl  DescribedHostKey  {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A unique identifier for the host key.</p>
-    pub fn host_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_key_id(&self) -> ::std::option::Option<& str> {
         self.host_key_id.as_deref()
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
-    pub fn host_key_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn host_key_fingerprint(&self) -> ::std::option::Option<& str> {
         self.host_key_fingerprint.as_deref()
     }
     /// <p>The text description for this host key.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
@@ -62,18 +61,19 @@ impl DescribedHostKey {
     /// <li>
     /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The date on which the host key was added to the server.</p>
-    pub fn date_imported(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_imported(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_imported.as_ref()
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribedHostKey {
@@ -93,7 +93,7 @@ pub struct DescribedHostKeyBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl DescribedHostKeyBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
@@ -104,8 +104,7 @@ impl DescribedHostKeyBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl DescribedHostKeyBuilder {
     }
     /// <p>A unique identifier for the host key.</p>
     pub fn set_host_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_key_id = input;
-        self
+        self.host_key_id = input; self
     }
     /// <p>A unique identifier for the host key.</p>
     pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl DescribedHostKeyBuilder {
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
     pub fn set_host_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_key_fingerprint = input;
-        self
+        self.host_key_fingerprint = input; self
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
     pub fn get_host_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl DescribedHostKeyBuilder {
     }
     /// <p>The text description for this host key.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The text description for this host key.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +180,7 @@ impl DescribedHostKeyBuilder {
     /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
@@ -210,8 +205,7 @@ impl DescribedHostKeyBuilder {
     }
     /// <p>The date on which the host key was added to the server.</p>
     pub fn set_date_imported(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_imported = input;
-        self
+        self.date_imported = input; self
     }
     /// <p>The date on which the host key was added to the server.</p>
     pub fn get_date_imported(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -224,36 +218,43 @@ impl DescribedHostKeyBuilder {
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedHostKey`](crate::types::DescribedHostKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedHostKeyBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DescribedHostKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DescribedHostKey {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DescribedHostKey",
-                )
-            })?,
-            host_key_id: self.host_key_id,
-            host_key_fingerprint: self.host_key_fingerprint,
-            description: self.description,
-            r#type: self.r#type,
-            date_imported: self.date_imported,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DescribedHostKey {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DescribedHostKey")
+                    )?
+                ,
+                host_key_id: self.host_key_id
+                ,
+                host_key_fingerprint: self.host_key_fingerprint
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                date_imported: self.date_imported
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

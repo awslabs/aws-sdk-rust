@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartChangeRequestExecutionInput {
+pub struct StartChangeRequestExecutionInput  {
     /// <p>The date and time specified in the change request to run the Automation runbooks.</p><note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
@@ -12,7 +12,7 @@ pub struct StartChangeRequestExecutionInput {
     /// <p>The version of the change template document to run during the runbook workflow.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
     pub change_request_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
@@ -25,7 +25,7 @@ pub struct StartChangeRequestExecutionInput {
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p><note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
+    pub runbooks: ::std::option::Option<::std::vec::Vec::<crate::types::Runbook>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li>
@@ -33,37 +33,37 @@ pub struct StartChangeRequestExecutionInput {
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
     pub scheduled_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
     pub change_details: ::std::option::Option<::std::string::String>,
 }
-impl StartChangeRequestExecutionInput {
+impl  StartChangeRequestExecutionInput  {
     /// <p>The date and time specified in the change request to run the Automation runbooks.</p><note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn scheduled_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scheduled_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scheduled_time.as_ref()
     }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
-    pub fn document_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_name(&self) -> ::std::option::Option<& str> {
         self.document_name.as_deref()
     }
     /// <p>The version of the change template document to run during the runbook workflow.</p>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
-    pub fn change_request_name(&self) -> ::std::option::Option<&str> {
+    pub fn change_request_name(&self) -> ::std::option::Option<& str> {
         self.change_request_name.as_deref()
     }
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
@@ -76,10 +76,11 @@ impl StartChangeRequestExecutionInput {
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p><note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runbooks.is_none()`.
-    pub fn runbooks(&self) -> &[crate::types::Runbook] {
-        self.runbooks.as_deref().unwrap_or_default()
+    pub fn runbooks(&self) -> & [crate::types::Runbook] {
+        self.runbooks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -88,17 +89,18 @@ impl StartChangeRequestExecutionInput {
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
-    pub fn scheduled_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scheduled_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scheduled_end_time.as_ref()
     }
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
-    pub fn change_details(&self) -> ::std::option::Option<&str> {
+    pub fn change_details(&self) -> ::std::option::Option<& str> {
         self.change_details.as_deref()
     }
 }
@@ -116,12 +118,12 @@ pub struct StartChangeRequestExecutionInputBuilder {
     pub(crate) scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) document_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) change_request_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) auto_approve: ::std::option::Option<bool>,
-    pub(crate) runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) runbooks: ::std::option::Option<::std::vec::Vec::<crate::types::Runbook>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) scheduled_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) change_details: ::std::option::Option<::std::string::String>,
 }
@@ -137,8 +139,7 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
     pub fn set_scheduled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scheduled_time = input;
-        self
+        self.scheduled_time = input; self
     }
     /// <p>The date and time specified in the change request to run the Automation runbooks.</p><note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
@@ -154,8 +155,7 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_name = input;
-        self
+        self.document_name = input; self
     }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +168,7 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>The version of the change template document to run during the runbook workflow.</p>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The version of the change template document to run during the runbook workflow.</p>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,24 +179,18 @@ impl StartChangeRequestExecutionInputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
-    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.parameters
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
@@ -207,8 +200,7 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
     pub fn set_change_request_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_request_name = input;
-        self
+        self.change_request_name = input; self
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
     pub fn get_change_request_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +213,7 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +232,7 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
     /// </note>
     pub fn set_auto_approve(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_approve = input;
-        self
+        self.auto_approve = input; self
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p><note>
@@ -260,21 +250,20 @@ impl StartChangeRequestExecutionInputBuilder {
     /// </note>
     pub fn runbooks(mut self, input: crate::types::Runbook) -> Self {
         let mut v = self.runbooks.unwrap_or_default();
-        v.push(input);
-        self.runbooks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.runbooks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p><note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn set_runbooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>) -> Self {
-        self.runbooks = input;
-        self
+    pub fn set_runbooks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Runbook>>) -> Self {
+        self.runbooks = input; self
     }
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p><note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn get_runbooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Runbook>> {
+    pub fn get_runbooks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Runbook>> {
         &self.runbooks
     }
     /// Appends an item to `tags`.
@@ -290,9 +279,9 @@ impl StartChangeRequestExecutionInputBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -301,9 +290,8 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -312,7 +300,7 @@ impl StartChangeRequestExecutionInputBuilder {
     /// <li>
     /// <p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
@@ -322,8 +310,7 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
     pub fn set_scheduled_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scheduled_end_time = input;
-        self
+        self.scheduled_end_time = input; self
     }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
     pub fn get_scheduled_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -336,32 +323,40 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
     pub fn set_change_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_details = input;
-        self
+        self.change_details = input; self
     }
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
     pub fn get_change_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_details
     }
     /// Consumes the builder and constructs a [`StartChangeRequestExecutionInput`](crate::operation::start_change_request_execution::StartChangeRequestExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_change_request_execution::StartChangeRequestExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_change_request_execution::StartChangeRequestExecutionInput {
-            scheduled_time: self.scheduled_time,
-            document_name: self.document_name,
-            document_version: self.document_version,
-            parameters: self.parameters,
-            change_request_name: self.change_request_name,
-            client_token: self.client_token,
-            auto_approve: self.auto_approve,
-            runbooks: self.runbooks,
-            tags: self.tags,
-            scheduled_end_time: self.scheduled_end_time,
-            change_details: self.change_details,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_change_request_execution::StartChangeRequestExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_change_request_execution::StartChangeRequestExecutionInput {
+                scheduled_time: self.scheduled_time
+                ,
+                document_name: self.document_name
+                ,
+                document_version: self.document_version
+                ,
+                parameters: self.parameters
+                ,
+                change_request_name: self.change_request_name
+                ,
+                client_token: self.client_token
+                ,
+                auto_approve: self.auto_approve
+                ,
+                runbooks: self.runbooks
+                ,
+                tags: self.tags
+                ,
+                scheduled_end_time: self.scheduled_end_time
+                ,
+                change_details: self.change_details
+                ,
+            }
+        )
     }
 }
+

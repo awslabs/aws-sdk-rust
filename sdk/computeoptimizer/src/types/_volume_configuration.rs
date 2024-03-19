@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of an Amazon Elastic Block Store (Amazon EBS) volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeConfiguration {
+pub struct VolumeConfiguration  {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
     pub volume_type: ::std::option::Option<::std::string::String>,
@@ -20,10 +20,10 @@ pub struct VolumeConfiguration {
     /// <p>Contains the image used to boot the instance during launch.</p>
     pub root_volume: ::std::option::Option<bool>,
 }
-impl VolumeConfiguration {
+impl  VolumeConfiguration  {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>The size of the volume, in GiB.</p>
@@ -80,8 +80,7 @@ impl VolumeConfigurationBuilder {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
@@ -95,8 +94,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
@@ -109,8 +107,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>The baseline IOPS of the volume.</p>
     pub fn set_volume_baseline_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_baseline_iops = input;
-        self
+        self.volume_baseline_iops = input; self
     }
     /// <p>The baseline IOPS of the volume.</p>
     pub fn get_volume_baseline_iops(&self) -> &::std::option::Option<i32> {
@@ -123,8 +120,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>The burst IOPS of the volume.</p>
     pub fn set_volume_burst_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_burst_iops = input;
-        self
+        self.volume_burst_iops = input; self
     }
     /// <p>The burst IOPS of the volume.</p>
     pub fn get_volume_burst_iops(&self) -> &::std::option::Option<i32> {
@@ -137,8 +133,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>The baseline throughput of the volume.</p>
     pub fn set_volume_baseline_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_baseline_throughput = input;
-        self
+        self.volume_baseline_throughput = input; self
     }
     /// <p>The baseline throughput of the volume.</p>
     pub fn get_volume_baseline_throughput(&self) -> &::std::option::Option<i32> {
@@ -151,8 +146,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>The burst throughput of the volume.</p>
     pub fn set_volume_burst_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_burst_throughput = input;
-        self
+        self.volume_burst_throughput = input; self
     }
     /// <p>The burst throughput of the volume.</p>
     pub fn get_volume_burst_throughput(&self) -> &::std::option::Option<i32> {
@@ -165,8 +159,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>Contains the image used to boot the instance during launch.</p>
     pub fn set_root_volume(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.root_volume = input;
-        self
+        self.root_volume = input; self
     }
     /// <p>Contains the image used to boot the instance during launch.</p>
     pub fn get_root_volume(&self) -> &::std::option::Option<bool> {
@@ -175,13 +168,26 @@ impl VolumeConfigurationBuilder {
     /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::types::VolumeConfiguration).
     pub fn build(self) -> crate::types::VolumeConfiguration {
         crate::types::VolumeConfiguration {
-            volume_type: self.volume_type,
-            volume_size: self.volume_size.unwrap_or_default(),
-            volume_baseline_iops: self.volume_baseline_iops.unwrap_or_default(),
-            volume_burst_iops: self.volume_burst_iops.unwrap_or_default(),
-            volume_baseline_throughput: self.volume_baseline_throughput.unwrap_or_default(),
-            volume_burst_throughput: self.volume_burst_throughput.unwrap_or_default(),
-            root_volume: self.root_volume,
+            volume_type: self.volume_type
+            ,
+            volume_size: self.volume_size
+                .unwrap_or_default()
+            ,
+            volume_baseline_iops: self.volume_baseline_iops
+                .unwrap_or_default()
+            ,
+            volume_burst_iops: self.volume_burst_iops
+                .unwrap_or_default()
+            ,
+            volume_baseline_throughput: self.volume_baseline_throughput
+                .unwrap_or_default()
+            ,
+            volume_burst_throughput: self.volume_burst_throughput
+                .unwrap_or_default()
+            ,
+            root_volume: self.root_volume
+            ,
         }
     }
 }
+

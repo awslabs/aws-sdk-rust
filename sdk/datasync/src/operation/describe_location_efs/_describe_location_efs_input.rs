@@ -3,13 +3,13 @@
 /// <p>DescribeLocationEfsRequest</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLocationEfsInput {
+pub struct DescribeLocationEfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLocationEfsInput {
+impl  DescribeLocationEfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DescribeLocationEfsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
     /// Consumes the builder and constructs a [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_location_efs::DescribeLocationEfsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_location_efs::DescribeLocationEfsInput {
-            location_arn: self.location_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_location_efs::DescribeLocationEfsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_location_efs::DescribeLocationEfsInput {
+                location_arn: self.location_arn
+                ,
+            }
+        )
     }
 }
+

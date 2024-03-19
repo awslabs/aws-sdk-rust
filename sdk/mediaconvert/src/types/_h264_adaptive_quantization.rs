@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let h264adaptivequantization = unimplemented!();
 /// match h264adaptivequantization {
@@ -35,16 +35,14 @@
 /// Specifically, when `h264adaptivequantization` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H264AdaptiveQuantization::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum H264AdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -62,76 +60,77 @@ pub enum H264AdaptiveQuantization {
     Off,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for H264AdaptiveQuantization {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO" => H264AdaptiveQuantization::Auto,
-            "HIGH" => H264AdaptiveQuantization::High,
-            "HIGHER" => H264AdaptiveQuantization::Higher,
-            "LOW" => H264AdaptiveQuantization::Low,
-            "MAX" => H264AdaptiveQuantization::Max,
-            "MEDIUM" => H264AdaptiveQuantization::Medium,
-            "OFF" => H264AdaptiveQuantization::Off,
-            other => H264AdaptiveQuantization::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AUTO" => H264AdaptiveQuantization::Auto,
+"HIGH" => H264AdaptiveQuantization::High,
+"HIGHER" => H264AdaptiveQuantization::Higher,
+"LOW" => H264AdaptiveQuantization::Low,
+"MAX" => H264AdaptiveQuantization::Max,
+"MEDIUM" => H264AdaptiveQuantization::Medium,
+"OFF" => H264AdaptiveQuantization::Off,
+other => H264AdaptiveQuantization::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for H264AdaptiveQuantization {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(H264AdaptiveQuantization::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(H264AdaptiveQuantization::from(s))
+                    }
+                }
 impl H264AdaptiveQuantization {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            H264AdaptiveQuantization::Auto => "AUTO",
-            H264AdaptiveQuantization::High => "HIGH",
-            H264AdaptiveQuantization::Higher => "HIGHER",
-            H264AdaptiveQuantization::Low => "LOW",
-            H264AdaptiveQuantization::Max => "MAX",
-            H264AdaptiveQuantization::Medium => "MEDIUM",
-            H264AdaptiveQuantization::Off => "OFF",
-            H264AdaptiveQuantization::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    H264AdaptiveQuantization::Auto => "AUTO",
+    H264AdaptiveQuantization::High => "HIGH",
+    H264AdaptiveQuantization::Higher => "HIGHER",
+    H264AdaptiveQuantization::Low => "LOW",
+    H264AdaptiveQuantization::Max => "MAX",
+    H264AdaptiveQuantization::Medium => "MEDIUM",
+    H264AdaptiveQuantization::Off => "OFF",
+    H264AdaptiveQuantization::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
+                }
+            }
 impl ::std::convert::AsRef<str> for H264AdaptiveQuantization {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl H264AdaptiveQuantization {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for H264AdaptiveQuantization {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            H264AdaptiveQuantization::Auto => write!(f, "AUTO"),
-            H264AdaptiveQuantization::High => write!(f, "HIGH"),
-            H264AdaptiveQuantization::Higher => write!(f, "HIGHER"),
-            H264AdaptiveQuantization::Low => write!(f, "LOW"),
-            H264AdaptiveQuantization::Max => write!(f, "MAX"),
-            H264AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
-            H264AdaptiveQuantization::Off => write!(f, "OFF"),
-            H264AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                H264AdaptiveQuantization::Auto => write!(f, "AUTO"),
+H264AdaptiveQuantization::High => write!(f, "HIGH"),
+H264AdaptiveQuantization::Higher => write!(f, "HIGHER"),
+H264AdaptiveQuantization::Low => write!(f, "LOW"),
+H264AdaptiveQuantization::Max => write!(f, "MAX"),
+H264AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
+H264AdaptiveQuantization::Off => write!(f, "OFF"),
+H264AdaptiveQuantization::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

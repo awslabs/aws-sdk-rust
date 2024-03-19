@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPolicyInput {
+pub struct GetPolicyInput  {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct GetPolicyInput {
     /// <p>Specify a version or alias to get the policy for that resource.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
 }
-impl GetPolicyInput {
+impl  GetPolicyInput  {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -30,11 +30,11 @@ impl GetPolicyInput {
     /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>Specify a version or alias to get the policy for that resource.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn qualifier(&self) -> ::std::option::Option<& str> {
         self.qualifier.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl GetPolicyInputBuilder {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -105,8 +104,7 @@ impl GetPolicyInputBuilder {
     }
     /// <p>Specify a version or alias to get the policy for that resource.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>Specify a version or alias to get the policy for that resource.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,9 +112,14 @@ impl GetPolicyInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_policy::GetPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_policy::GetPolicyInput {
-            function_name: self.function_name,
-            qualifier: self.qualifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_policy::GetPolicyInput {
+                function_name: self.function_name
+                ,
+                qualifier: self.qualifier
+                ,
+            }
+        )
     }
 }
+

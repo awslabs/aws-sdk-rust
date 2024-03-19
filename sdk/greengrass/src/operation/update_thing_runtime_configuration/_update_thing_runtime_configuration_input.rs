@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateThingRuntimeConfigurationInput {
+pub struct UpdateThingRuntimeConfigurationInput  {
     /// Configuration for telemetry service.
     pub telemetry_configuration: ::std::option::Option<crate::types::TelemetryConfigurationUpdate>,
     /// The thing name.
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateThingRuntimeConfigurationInput {
+impl  UpdateThingRuntimeConfigurationInput  {
     /// Configuration for telemetry service.
-    pub fn telemetry_configuration(&self) -> ::std::option::Option<&crate::types::TelemetryConfigurationUpdate> {
+    pub fn telemetry_configuration(&self) -> ::std::option::Option<& crate::types::TelemetryConfigurationUpdate> {
         self.telemetry_configuration.as_ref()
     }
     /// The thing name.
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateThingRuntimeConfigurationInputBuilder {
     }
     /// Configuration for telemetry service.
     pub fn set_telemetry_configuration(mut self, input: ::std::option::Option<crate::types::TelemetryConfigurationUpdate>) -> Self {
-        self.telemetry_configuration = input;
-        self
+        self.telemetry_configuration = input; self
     }
     /// Configuration for telemetry service.
     pub fn get_telemetry_configuration(&self) -> &::std::option::Option<crate::types::TelemetryConfigurationUpdate> {
@@ -55,25 +54,22 @@ impl UpdateThingRuntimeConfigurationInputBuilder {
     }
     /// The thing name.
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// The thing name.
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
     /// Consumes the builder and constructs a [`UpdateThingRuntimeConfigurationInput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput {
-                telemetry_configuration: self.telemetry_configuration,
-                thing_name: self.thing_name,
-            },
+                telemetry_configuration: self.telemetry_configuration
+                ,
+                thing_name: self.thing_name
+                ,
+            }
         )
     }
 }
+

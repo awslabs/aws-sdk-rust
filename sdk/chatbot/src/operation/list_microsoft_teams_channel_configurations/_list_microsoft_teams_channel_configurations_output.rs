@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMicrosoftTeamsChannelConfigurationsOutput {
+pub struct ListMicrosoftTeamsChannelConfigurationsOutput  {
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of AWS Chatbot channel configurations for Microsoft Teams.
-    pub team_channel_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TeamsChannelConfiguration>>,
+    pub team_channel_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TeamsChannelConfiguration>>,
     _request_id: Option<String>,
 }
-impl ListMicrosoftTeamsChannelConfigurationsOutput {
+impl  ListMicrosoftTeamsChannelConfigurationsOutput  {
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of AWS Chatbot channel configurations for Microsoft Teams.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.team_channel_configurations.is_none()`.
-    pub fn team_channel_configurations(&self) -> &[crate::types::TeamsChannelConfiguration] {
-        self.team_channel_configurations.as_deref().unwrap_or_default()
+    pub fn team_channel_configurations(&self) -> & [crate::types::TeamsChannelConfiguration] {
+        self.team_channel_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMicrosoftTeamsChannelConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMicrosoftTeamsChannelConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListMicrosoftTeamsChannelConfigurationsOutput`](crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_microsoft_teams_channel_configurations::builders::ListMicrosoftTeamsChannelConfigurationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_microsoft_teams_channel_configurations::builders::ListMicrosoftTeamsChannelConfigurationsOutputBuilder {
         crate::operation::list_microsoft_teams_channel_configurations::builders::ListMicrosoftTeamsChannelConfigurationsOutputBuilder::default()
     }
 }
@@ -39,7 +39,7 @@ impl ListMicrosoftTeamsChannelConfigurationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMicrosoftTeamsChannelConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) team_channel_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TeamsChannelConfiguration>>,
+    pub(crate) team_channel_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TeamsChannelConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListMicrosoftTeamsChannelConfigurationsOutputBuilder {
@@ -50,8 +50,7 @@ impl ListMicrosoftTeamsChannelConfigurationsOutputBuilder {
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +63,36 @@ impl ListMicrosoftTeamsChannelConfigurationsOutputBuilder {
     /// A list of AWS Chatbot channel configurations for Microsoft Teams.
     pub fn team_channel_configurations(mut self, input: crate::types::TeamsChannelConfiguration) -> Self {
         let mut v = self.team_channel_configurations.unwrap_or_default();
-        v.push(input);
-        self.team_channel_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.team_channel_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of AWS Chatbot channel configurations for Microsoft Teams.
-    pub fn set_team_channel_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TeamsChannelConfiguration>>) -> Self {
-        self.team_channel_configurations = input;
-        self
+    pub fn set_team_channel_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TeamsChannelConfiguration>>) -> Self {
+        self.team_channel_configurations = input; self
     }
     /// A list of AWS Chatbot channel configurations for Microsoft Teams.
-    pub fn get_team_channel_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TeamsChannelConfiguration>> {
+    pub fn get_team_channel_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TeamsChannelConfiguration>> {
         &self.team_channel_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMicrosoftTeamsChannelConfigurationsOutput`](crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsOutput {
         crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsOutput {
-            next_token: self.next_token,
-            team_channel_configurations: self.team_channel_configurations,
+            next_token: self.next_token
+            ,
+            team_channel_configurations: self.team_channel_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

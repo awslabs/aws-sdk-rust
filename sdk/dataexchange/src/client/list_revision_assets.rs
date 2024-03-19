@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRevisionAssets`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`data_set_id(impl Into<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results returned by a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`revision_id(impl Into<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::set_revision_id):<br>required: **true**<br><p>The unique identifier for a revision.</p><br>
-    /// - On success, responds with [`ListRevisionAssetsOutput`](crate::operation::list_revision_assets::ListRevisionAssetsOutput) with field(s):
+                            /// - On success, responds with [`ListRevisionAssetsOutput`](crate::operation::list_revision_assets::ListRevisionAssetsOutput) with field(s):
     ///   - [`assets(Option<Vec::<AssetEntry>>)`](crate::operation::list_revision_assets::ListRevisionAssetsOutput::assets): <p>The asset objects listed by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_revision_assets::ListRevisionAssetsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListRevisionAssetsError>`](crate::operation::list_revision_assets::ListRevisionAssetsError)
+                            /// - On failure, responds with [`SdkError<ListRevisionAssetsError>`](crate::operation::list_revision_assets::ListRevisionAssetsError)
     pub fn list_revision_assets(&self) -> crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder {
-        crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_revision_assets::builders::ListRevisionAssetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

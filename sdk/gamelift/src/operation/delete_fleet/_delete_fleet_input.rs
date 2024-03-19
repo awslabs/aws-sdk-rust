@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetInput {
+pub struct DeleteFleetInput  {
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFleetInput {
+impl  DeleteFleetInput  {
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteFleetInputBuilder {
     }
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteFleetInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::operation::delete_fleet::DeleteFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet::DeleteFleetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_fleet::DeleteFleetInput { fleet_id: self.fleet_id })
+        ::std::result::Result::Ok(
+            crate::operation::delete_fleet::DeleteFleetInput {
+                fleet_id: self.fleet_id
+                ,
+            }
+        )
     }
 }
+

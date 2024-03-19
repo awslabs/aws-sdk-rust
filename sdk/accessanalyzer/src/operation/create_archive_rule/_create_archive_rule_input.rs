@@ -3,31 +3,31 @@
 /// <p>Creates an archive rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateArchiveRuleInput {
+pub struct CreateArchiveRuleInput  {
     /// <p>The name of the created analyzer.</p>
     pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule to create.</p>
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria for the rule.</p>
-    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
+    pub filter: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Criterion>>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateArchiveRuleInput {
+impl  CreateArchiveRuleInput  {
     /// <p>The name of the created analyzer.</p>
-    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
+    pub fn analyzer_name(&self) -> ::std::option::Option<& str> {
         self.analyzer_name.as_deref()
     }
     /// <p>The name of the rule to create.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The criteria for the rule.</p>
-    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
+    pub fn filter(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::Criterion>> {
         self.filter.as_ref()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -44,7 +44,7 @@ impl CreateArchiveRuleInput {
 pub struct CreateArchiveRuleInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Criterion>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateArchiveRuleInputBuilder {
@@ -56,8 +56,7 @@ impl CreateArchiveRuleInputBuilder {
     }
     /// <p>The name of the created analyzer.</p>
     pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyzer_name = input;
-        self
+        self.analyzer_name = input; self
     }
     /// <p>The name of the created analyzer.</p>
     pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl CreateArchiveRuleInputBuilder {
     }
     /// <p>The name of the rule to create.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the rule to create.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +83,16 @@ impl CreateArchiveRuleInputBuilder {
     /// <p>The criteria for the rule.</p>
     pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.filter = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.filter = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The criteria for the rule.</p>
-    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Criterion>>) -> Self {
+        self.filter = input; self
     }
     /// <p>The criteria for the rule.</p>
-    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Criterion>> {
         &self.filter
     }
     /// <p>A client token.</p>
@@ -105,22 +102,26 @@ impl CreateArchiveRuleInputBuilder {
     }
     /// <p>A client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A client token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateArchiveRuleInput`](crate::operation::create_archive_rule::CreateArchiveRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_archive_rule::CreateArchiveRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_archive_rule::CreateArchiveRuleInput {
-            analyzer_name: self.analyzer_name,
-            rule_name: self.rule_name,
-            filter: self.filter,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_archive_rule::CreateArchiveRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_archive_rule::CreateArchiveRuleInput {
+                analyzer_name: self.analyzer_name
+                ,
+                rule_name: self.rule_name
+                ,
+                filter: self.filter
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

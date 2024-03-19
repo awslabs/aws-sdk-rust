@@ -3,7 +3,7 @@
 /// <p>Encloses a receipt handle and an identifier for it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMessageBatchRequestEntry {
+pub struct DeleteMessageBatchRequestEntry  {
     /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
@@ -12,19 +12,17 @@ pub struct DeleteMessageBatchRequestEntry {
     /// <p>A receipt handle.</p>
     pub receipt_handle: ::std::string::String,
 }
-impl DeleteMessageBatchRequestEntry {
+impl  DeleteMessageBatchRequestEntry  {
     /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>A receipt handle.</p>
-    pub fn receipt_handle(&self) -> &str {
-        use std::ops::Deref;
-        self.receipt_handle.deref()
+    pub fn receipt_handle(&self) -> & str {
+        use std::ops::Deref; self.receipt_handle.deref()
     }
 }
 impl DeleteMessageBatchRequestEntry {
@@ -56,8 +54,7 @@ impl DeleteMessageBatchRequestEntryBuilder {
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for this particular receipt handle. This is used to communicate the result.</p><note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
@@ -74,8 +71,7 @@ impl DeleteMessageBatchRequestEntryBuilder {
     }
     /// <p>A receipt handle.</p>
     pub fn set_receipt_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.receipt_handle = input;
-        self
+        self.receipt_handle = input; self
     }
     /// <p>A receipt handle.</p>
     pub fn get_receipt_handle(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,19 +82,20 @@ impl DeleteMessageBatchRequestEntryBuilder {
     /// - [`id`](crate::types::builders::DeleteMessageBatchRequestEntryBuilder::id)
     /// - [`receipt_handle`](crate::types::builders::DeleteMessageBatchRequestEntryBuilder::receipt_handle)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteMessageBatchRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteMessageBatchRequestEntry {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DeleteMessageBatchRequestEntry",
-                )
-            })?,
-            receipt_handle: self.receipt_handle.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "receipt_handle",
-                    "receipt_handle was not specified but it is required when building DeleteMessageBatchRequestEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteMessageBatchRequestEntry {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DeleteMessageBatchRequestEntry")
+                    )?
+                ,
+                receipt_handle: self.receipt_handle
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("receipt_handle", "receipt_handle was not specified but it is required when building DeleteMessageBatchRequestEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

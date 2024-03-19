@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCACertificates`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`page_size(i32)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::set_page_size):<br>required: **false**<br><p>The result page size.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
     ///   - [`ascending_order(bool)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::set_ascending_order):<br>required: **false**<br><p>Determines the order of the results.</p><br>
     ///   - [`template_name(impl Into<String>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::set_template_name):<br>required: **false**<br><p>The name of the provisioning template.</p><br>
-    /// - On success, responds with [`ListCaCertificatesOutput`](crate::operation::list_ca_certificates::ListCaCertificatesOutput) with field(s):
+                            /// - On success, responds with [`ListCaCertificatesOutput`](crate::operation::list_ca_certificates::ListCaCertificatesOutput) with field(s):
     ///   - [`certificates(Option<Vec::<CaCertificate>>)`](crate::operation::list_ca_certificates::ListCaCertificatesOutput::certificates): <p>The CA certificates registered in your Amazon Web Services account.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_ca_certificates::ListCaCertificatesOutput::next_marker): <p>The current position within the list of CA certificates.</p>
-    /// - On failure, responds with [`SdkError<ListCACertificatesError>`](crate::operation::list_ca_certificates::ListCACertificatesError)
+                            /// - On failure, responds with [`SdkError<ListCACertificatesError>`](crate::operation::list_ca_certificates::ListCACertificatesError)
     pub fn list_ca_certificates(&self) -> crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder {
-        crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_ca_certificates::builders::ListCACertificatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

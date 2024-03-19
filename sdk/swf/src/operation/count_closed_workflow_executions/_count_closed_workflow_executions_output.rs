@@ -3,14 +3,14 @@
 /// <p>Contains the count of workflow executions returned from <code>CountOpenWorkflowExecutions</code> or <code>CountClosedWorkflowExecutions</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CountClosedWorkflowExecutionsOutput {
+pub struct CountClosedWorkflowExecutionsOutput  {
     /// <p>The number of workflow executions.</p>
     pub count: i32,
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub truncated: bool,
     _request_id: Option<String>,
 }
-impl CountClosedWorkflowExecutionsOutput {
+impl  CountClosedWorkflowExecutionsOutput  {
     /// <p>The number of workflow executions.</p>
     pub fn count(&self) -> i32 {
         self.count
@@ -21,10 +21,10 @@ impl CountClosedWorkflowExecutionsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CountClosedWorkflowExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CountClosedWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsOutput`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput).
     pub fn builder() -> crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsOutputBuilder {
@@ -49,8 +49,7 @@ impl CountClosedWorkflowExecutionsOutputBuilder {
     }
     /// <p>The number of workflow executions.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of workflow executions.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -63,28 +62,32 @@ impl CountClosedWorkflowExecutionsOutputBuilder {
     }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.truncated = input;
-        self
+        self.truncated = input; self
     }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub fn get_truncated(&self) -> &::std::option::Option<bool> {
         &self.truncated
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CountClosedWorkflowExecutionsOutput`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput).
     pub fn build(self) -> crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput {
         crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput {
-            count: self.count.unwrap_or_default(),
-            truncated: self.truncated.unwrap_or_default(),
+            count: self.count
+                .unwrap_or_default()
+            ,
+            truncated: self.truncated
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

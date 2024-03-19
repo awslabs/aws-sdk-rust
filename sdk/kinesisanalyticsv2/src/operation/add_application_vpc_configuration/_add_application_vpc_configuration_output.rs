@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationVpcConfigurationOutput {
+pub struct AddApplicationVpcConfigurationOutput  {
     /// <p>The ARN of the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
@@ -11,9 +11,9 @@ pub struct AddApplicationVpcConfigurationOutput {
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
     _request_id: Option<String>,
 }
-impl AddApplicationVpcConfigurationOutput {
+impl  AddApplicationVpcConfigurationOutput  {
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
@@ -21,15 +21,15 @@ impl AddApplicationVpcConfigurationOutput {
         self.application_version_id
     }
     /// <p>The parameters of the new VPC configuration.</p>
-    pub fn vpc_configuration_description(&self) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
+    pub fn vpc_configuration_description(&self) -> ::std::option::Option<& crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AddApplicationVpcConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddApplicationVpcConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationOutput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput).
     pub fn builder() -> crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationOutputBuilder {
@@ -54,8 +54,7 @@ impl AddApplicationVpcConfigurationOutputBuilder {
     }
     /// <p>The ARN of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The ARN of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl AddApplicationVpcConfigurationOutputBuilder {
     }
     /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -82,29 +80,32 @@ impl AddApplicationVpcConfigurationOutputBuilder {
     }
     /// <p>The parameters of the new VPC configuration.</p>
     pub fn set_vpc_configuration_description(mut self, input: ::std::option::Option<crate::types::VpcConfigurationDescription>) -> Self {
-        self.vpc_configuration_description = input;
-        self
+        self.vpc_configuration_description = input; self
     }
     /// <p>The parameters of the new VPC configuration.</p>
     pub fn get_vpc_configuration_description(&self) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
         &self.vpc_configuration_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddApplicationVpcConfigurationOutput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput).
     pub fn build(self) -> crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput {
         crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput {
-            application_arn: self.application_arn,
-            application_version_id: self.application_version_id,
-            vpc_configuration_description: self.vpc_configuration_description,
+            application_arn: self.application_arn
+            ,
+            application_version_id: self.application_version_id
+            ,
+            vpc_configuration_description: self.vpc_configuration_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

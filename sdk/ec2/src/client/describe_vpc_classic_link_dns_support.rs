@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVpcClassicLinkDnsSupport`](crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p><br>
     ///   - [`vpc_ids(impl Into<String>)`](crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::vpc_ids) / [`set_vpc_ids(Option<Vec::<String>>)`](crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::set_vpc_ids):<br>required: **false**<br><p>The IDs of the VPCs.</p><br>
-    /// - On success, responds with [`DescribeVpcClassicLinkDnsSupportOutput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput) with field(s):
+                            /// - On success, responds with [`DescribeVpcClassicLinkDnsSupportOutput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     ///   - [`vpcs(Option<Vec::<ClassicLinkDnsSupport>>)`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportOutput::vpcs): <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-    /// - On failure, responds with [`SdkError<DescribeVpcClassicLinkDnsSupportError>`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportError)
-    pub fn describe_vpc_classic_link_dns_support(
-        &self,
-    ) -> crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder {
-        crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeVpcClassicLinkDnsSupportError>`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportError)
+    pub fn describe_vpc_classic_link_dns_support(&self) -> crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder {
+                                crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportFluentBuilder::new(self.handle.clone())
+                            }
 }
+

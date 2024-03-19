@@ -3,22 +3,23 @@
 /// <p>The dimension filter, containing DimensionName and DimensionValueList.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionFilter {
+pub struct DimensionFilter  {
     /// <p>The name of the dimension to filter on.</p>
     pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    pub dimension_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dimension_value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DimensionFilter {
+impl  DimensionFilter  {
     /// <p>The name of the dimension to filter on.</p>
-    pub fn dimension_name(&self) -> ::std::option::Option<&str> {
+    pub fn dimension_name(&self) -> ::std::option::Option<& str> {
         self.dimension_name.as_deref()
     }
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_value_list.is_none()`.
-    pub fn dimension_value_list(&self) -> &[::std::string::String] {
-        self.dimension_value_list.as_deref().unwrap_or_default()
+    pub fn dimension_value_list(&self) -> & [::std::string::String] {
+        self.dimension_value_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DimensionFilter {
@@ -33,7 +34,7 @@ impl DimensionFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionFilterBuilder {
     pub(crate) dimension_name: ::std::option::Option<::std::string::String>,
-    pub(crate) dimension_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dimension_value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DimensionFilterBuilder {
     /// <p>The name of the dimension to filter on.</p>
@@ -43,8 +44,7 @@ impl DimensionFilterBuilder {
     }
     /// <p>The name of the dimension to filter on.</p>
     pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_name = input;
-        self
+        self.dimension_name = input; self
     }
     /// <p>The name of the dimension to filter on.</p>
     pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl DimensionFilterBuilder {
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
     pub fn dimension_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimension_value_list.unwrap_or_default();
-        v.push(input.into());
-        self.dimension_value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dimension_value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    pub fn set_dimension_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dimension_value_list = input;
-        self
+    pub fn set_dimension_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dimension_value_list = input; self
     }
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    pub fn get_dimension_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimension_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dimension_value_list
     }
     /// Consumes the builder and constructs a [`DimensionFilter`](crate::types::DimensionFilter).
     pub fn build(self) -> crate::types::DimensionFilter {
         crate::types::DimensionFilter {
-            dimension_name: self.dimension_name,
-            dimension_value_list: self.dimension_value_list,
+            dimension_name: self.dimension_name
+            ,
+            dimension_value_list: self.dimension_value_list
+            ,
         }
     }
 }
+

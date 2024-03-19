@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBuckets`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`criteria(impl Into<String>, BucketCriteriaAdditionalProperties)`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::criteria) / [`set_criteria(Option<HashMap::<String, BucketCriteriaAdditionalProperties>>)`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::set_criteria):<br>required: **false**<br><p>The criteria to use to filter the query results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of the response. The default value is 50.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
     ///   - [`sort_criteria(BucketSortCriteria)`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<BucketSortCriteria>)`](crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>The criteria to use to sort the query results.</p><br>
-    /// - On success, responds with [`DescribeBucketsOutput`](crate::operation::describe_buckets::DescribeBucketsOutput) with field(s):
+                            /// - On success, responds with [`DescribeBucketsOutput`](crate::operation::describe_buckets::DescribeBucketsOutput) with field(s):
     ///   - [`buckets(Option<Vec::<BucketMetadata>>)`](crate::operation::describe_buckets::DescribeBucketsOutput::buckets): <p>An array of objects, one for each bucket that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_buckets::DescribeBucketsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<DescribeBucketsError>`](crate::operation::describe_buckets::DescribeBucketsError)
+                            /// - On failure, responds with [`SdkError<DescribeBucketsError>`](crate::operation::describe_buckets::DescribeBucketsError)
     pub fn describe_buckets(&self) -> crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder {
-        crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_buckets::builders::DescribeBucketsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

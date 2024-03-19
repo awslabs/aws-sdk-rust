@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSubscribedWorkteamsInput {
+pub struct ListSubscribedWorkteamsInput  {
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
@@ -10,13 +10,13 @@ pub struct ListSubscribedWorkteamsInput {
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListSubscribedWorkteamsInput {
+impl  ListSubscribedWorkteamsInput  {
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of work teams to return in each page of the response.</p>
@@ -47,8 +47,7 @@ impl ListSubscribedWorkteamsInputBuilder {
     }
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListSubscribedWorkteamsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,24 +73,24 @@ impl ListSubscribedWorkteamsInputBuilder {
     }
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSubscribedWorkteamsInput`](crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput {
-            name_contains: self.name_contains,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsInput {
+                name_contains: self.name_contains
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

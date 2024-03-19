@@ -3,9 +3,9 @@
 /// <p>Describes the status of a SSL/TLS certificate renewal managed by Amazon Lightsail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenewalSummary {
+pub struct RenewalSummary  {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>,
+    pub domain_validation_records: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationRecord>>,
     /// <p>The renewal status of the certificate.</p>
     /// <p>The following renewal status are possible:</p>
     /// <ul>
@@ -24,12 +24,13 @@ pub struct RenewalSummary {
     /// <p>The timestamp when the certificate was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RenewalSummary {
+impl  RenewalSummary  {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_records.is_none()`.
-    pub fn domain_validation_records(&self) -> &[crate::types::DomainValidationRecord] {
-        self.domain_validation_records.as_deref().unwrap_or_default()
+    pub fn domain_validation_records(&self) -> & [crate::types::DomainValidationRecord] {
+        self.domain_validation_records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The renewal status of the certificate.</p>
     /// <p>The following renewal status are possible:</p>
@@ -43,15 +44,15 @@ impl RenewalSummary {
     /// <li>
     /// <p><b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p></li>
     /// </ul>
-    pub fn renewal_status(&self) -> ::std::option::Option<&crate::types::RenewalStatus> {
+    pub fn renewal_status(&self) -> ::std::option::Option<& crate::types::RenewalStatus> {
         self.renewal_status.as_ref()
     }
     /// <p>The reason for the renewal status of the certificate.</p>
-    pub fn renewal_status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn renewal_status_reason(&self) -> ::std::option::Option<& str> {
         self.renewal_status_reason.as_deref()
     }
     /// <p>The timestamp when the certificate was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -66,7 +67,7 @@ impl RenewalSummary {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenewalSummaryBuilder {
-    pub(crate) domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>,
+    pub(crate) domain_validation_records: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationRecord>>,
     pub(crate) renewal_status: ::std::option::Option<crate::types::RenewalStatus>,
     pub(crate) renewal_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -79,17 +80,16 @@ impl RenewalSummaryBuilder {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
     pub fn domain_validation_records(mut self, input: crate::types::DomainValidationRecord) -> Self {
         let mut v = self.domain_validation_records.unwrap_or_default();
-        v.push(input);
-        self.domain_validation_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_validation_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn set_domain_validation_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>) -> Self {
-        self.domain_validation_records = input;
-        self
+    pub fn set_domain_validation_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationRecord>>) -> Self {
+        self.domain_validation_records = input; self
     }
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn get_domain_validation_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>> {
+    pub fn get_domain_validation_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationRecord>> {
         &self.domain_validation_records
     }
     /// <p>The renewal status of the certificate.</p>
@@ -121,8 +121,7 @@ impl RenewalSummaryBuilder {
     /// <p><b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p></li>
     /// </ul>
     pub fn set_renewal_status(mut self, input: ::std::option::Option<crate::types::RenewalStatus>) -> Self {
-        self.renewal_status = input;
-        self
+        self.renewal_status = input; self
     }
     /// <p>The renewal status of the certificate.</p>
     /// <p>The following renewal status are possible:</p>
@@ -146,8 +145,7 @@ impl RenewalSummaryBuilder {
     }
     /// <p>The reason for the renewal status of the certificate.</p>
     pub fn set_renewal_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.renewal_status_reason = input;
-        self
+        self.renewal_status_reason = input; self
     }
     /// <p>The reason for the renewal status of the certificate.</p>
     pub fn get_renewal_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +158,7 @@ impl RenewalSummaryBuilder {
     }
     /// <p>The timestamp when the certificate was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp when the certificate was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,10 +167,15 @@ impl RenewalSummaryBuilder {
     /// Consumes the builder and constructs a [`RenewalSummary`](crate::types::RenewalSummary).
     pub fn build(self) -> crate::types::RenewalSummary {
         crate::types::RenewalSummary {
-            domain_validation_records: self.domain_validation_records,
-            renewal_status: self.renewal_status,
-            renewal_status_reason: self.renewal_status_reason,
-            updated_at: self.updated_at,
+            domain_validation_records: self.domain_validation_records
+            ,
+            renewal_status: self.renewal_status
+            ,
+            renewal_status_reason: self.renewal_status_reason
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

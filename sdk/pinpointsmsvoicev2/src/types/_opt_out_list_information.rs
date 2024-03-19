@@ -3,7 +3,7 @@
 /// <p>The information for all OptOutList in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptOutListInformation {
+pub struct OptOutListInformation  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     pub opt_out_list_arn: ::std::string::String,
     /// <p>The name of the OptOutList.</p>
@@ -11,19 +11,17 @@ pub struct OptOutListInformation {
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
 }
-impl OptOutListInformation {
+impl  OptOutListInformation  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    pub fn opt_out_list_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.opt_out_list_arn.deref()
+    pub fn opt_out_list_arn(&self) -> & str {
+        use std::ops::Deref; self.opt_out_list_arn.deref()
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> &str {
-        use std::ops::Deref;
-        self.opt_out_list_name.deref()
+    pub fn opt_out_list_name(&self) -> & str {
+        use std::ops::Deref; self.opt_out_list_name.deref()
     }
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_timestamp
     }
 }
@@ -51,8 +49,7 @@ impl OptOutListInformationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     pub fn set_opt_out_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_arn = input;
-        self
+        self.opt_out_list_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     pub fn get_opt_out_list_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl OptOutListInformationBuilder {
     }
     /// <p>The name of the OptOutList.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_name = input;
-        self
+        self.opt_out_list_name = input; self
     }
     /// <p>The name of the OptOutList.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl OptOutListInformationBuilder {
     }
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -94,25 +89,25 @@ impl OptOutListInformationBuilder {
     /// - [`opt_out_list_name`](crate::types::builders::OptOutListInformationBuilder::opt_out_list_name)
     /// - [`created_timestamp`](crate::types::builders::OptOutListInformationBuilder::created_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::OptOutListInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OptOutListInformation {
-            opt_out_list_arn: self.opt_out_list_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "opt_out_list_arn",
-                    "opt_out_list_arn was not specified but it is required when building OptOutListInformation",
-                )
-            })?,
-            opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "opt_out_list_name",
-                    "opt_out_list_name was not specified but it is required when building OptOutListInformation",
-                )
-            })?,
-            created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_timestamp",
-                    "created_timestamp was not specified but it is required when building OptOutListInformation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OptOutListInformation {
+                opt_out_list_arn: self.opt_out_list_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("opt_out_list_arn", "opt_out_list_arn was not specified but it is required when building OptOutListInformation")
+                    )?
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("opt_out_list_name", "opt_out_list_name was not specified but it is required when building OptOutListInformation")
+                    )?
+                ,
+                created_timestamp: self.created_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_timestamp", "created_timestamp was not specified but it is required when building OptOutListInformation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

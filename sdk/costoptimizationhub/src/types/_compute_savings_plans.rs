@@ -3,19 +3,19 @@
 /// <p>The Compute Savings Plans recommendation details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComputeSavingsPlans {
+pub struct ComputeSavingsPlans  {
     /// <p>Configuration details of the Compute Savings Plans to purchase.</p>
     pub configuration: ::std::option::Option<crate::types::ComputeSavingsPlansConfiguration>,
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub cost_calculation: ::std::option::Option<crate::types::SavingsPlansCostCalculation>,
 }
-impl ComputeSavingsPlans {
+impl  ComputeSavingsPlans  {
     /// <p>Configuration details of the Compute Savings Plans to purchase.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ComputeSavingsPlansConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ComputeSavingsPlansConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
-    pub fn cost_calculation(&self) -> ::std::option::Option<&crate::types::SavingsPlansCostCalculation> {
+    pub fn cost_calculation(&self) -> ::std::option::Option<& crate::types::SavingsPlansCostCalculation> {
         self.cost_calculation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ComputeSavingsPlansBuilder {
     }
     /// <p>Configuration details of the Compute Savings Plans to purchase.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ComputeSavingsPlansConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Configuration details of the Compute Savings Plans to purchase.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ComputeSavingsPlansConfiguration> {
@@ -55,8 +54,7 @@ impl ComputeSavingsPlansBuilder {
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub fn set_cost_calculation(mut self, input: ::std::option::Option<crate::types::SavingsPlansCostCalculation>) -> Self {
-        self.cost_calculation = input;
-        self
+        self.cost_calculation = input; self
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub fn get_cost_calculation(&self) -> &::std::option::Option<crate::types::SavingsPlansCostCalculation> {
@@ -65,8 +63,11 @@ impl ComputeSavingsPlansBuilder {
     /// Consumes the builder and constructs a [`ComputeSavingsPlans`](crate::types::ComputeSavingsPlans).
     pub fn build(self) -> crate::types::ComputeSavingsPlans {
         crate::types::ComputeSavingsPlans {
-            configuration: self.configuration,
-            cost_calculation: self.cost_calculation,
+            configuration: self.configuration
+            ,
+            cost_calculation: self.cost_calculation
+            ,
         }
     }
 }
+

@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachLoadBalancerTlsCertificateOutput {
+pub struct AttachLoadBalancerTlsCertificateOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
     _request_id: Option<String>,
 }
-impl AttachLoadBalancerTlsCertificateOutput {
+impl  AttachLoadBalancerTlsCertificateOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
-    pub fn operations(&self) -> &[crate::types::Operation] {
-        self.operations.as_deref().unwrap_or_default()
+    pub fn operations(&self) -> & [crate::types::Operation] {
+        self.operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for AttachLoadBalancerTlsCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AttachLoadBalancerTlsCertificateOutput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTlsCertificateOutput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput).
     pub fn builder() -> crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateOutputBuilder {
@@ -33,7 +34,7 @@ impl AttachLoadBalancerTlsCertificateOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerTlsCertificateOutputBuilder {
-    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
     _request_id: Option<String>,
 }
 impl AttachLoadBalancerTlsCertificateOutputBuilder {
@@ -45,35 +46,36 @@ impl AttachLoadBalancerTlsCertificateOutputBuilder {
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>) -> Self {
+        self.operations = input; self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
-    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Operation>> {
         &self.operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AttachLoadBalancerTlsCertificateOutput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput).
     pub fn build(self) -> crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput {
         crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput {
-            operations: self.operations,
+            operations: self.operations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The network field that contains a list of network metrics that are associated with the current instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkResourceUtilization {
+pub struct NetworkResourceUtilization  {
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps).</p>
     pub network_in_bytes_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The network outbound throughput utilization measured in Bytes per second (Bps).</p>
@@ -13,21 +13,21 @@ pub struct NetworkResourceUtilization {
     /// <p>The network outbound packets that are measured in packets per second.</p>
     pub network_packets_out_per_second: ::std::option::Option<::std::string::String>,
 }
-impl NetworkResourceUtilization {
+impl  NetworkResourceUtilization  {
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps).</p>
-    pub fn network_in_bytes_per_second(&self) -> ::std::option::Option<&str> {
+    pub fn network_in_bytes_per_second(&self) -> ::std::option::Option<& str> {
         self.network_in_bytes_per_second.as_deref()
     }
     /// <p>The network outbound throughput utilization measured in Bytes per second (Bps).</p>
-    pub fn network_out_bytes_per_second(&self) -> ::std::option::Option<&str> {
+    pub fn network_out_bytes_per_second(&self) -> ::std::option::Option<& str> {
         self.network_out_bytes_per_second.as_deref()
     }
     /// <p>The network inbound packets that are measured in packets per second.</p>
-    pub fn network_packets_in_per_second(&self) -> ::std::option::Option<&str> {
+    pub fn network_packets_in_per_second(&self) -> ::std::option::Option<& str> {
         self.network_packets_in_per_second.as_deref()
     }
     /// <p>The network outbound packets that are measured in packets per second.</p>
-    pub fn network_packets_out_per_second(&self) -> ::std::option::Option<&str> {
+    pub fn network_packets_out_per_second(&self) -> ::std::option::Option<& str> {
         self.network_packets_out_per_second.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl NetworkResourceUtilizationBuilder {
     }
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps).</p>
     pub fn set_network_in_bytes_per_second(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_in_bytes_per_second = input;
-        self
+        self.network_in_bytes_per_second = input; self
     }
     /// <p>The network inbound throughput utilization measured in Bytes per second (Bps).</p>
     pub fn get_network_in_bytes_per_second(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl NetworkResourceUtilizationBuilder {
     }
     /// <p>The network outbound throughput utilization measured in Bytes per second (Bps).</p>
     pub fn set_network_out_bytes_per_second(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_out_bytes_per_second = input;
-        self
+        self.network_out_bytes_per_second = input; self
     }
     /// <p>The network outbound throughput utilization measured in Bytes per second (Bps).</p>
     pub fn get_network_out_bytes_per_second(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl NetworkResourceUtilizationBuilder {
     }
     /// <p>The network inbound packets that are measured in packets per second.</p>
     pub fn set_network_packets_in_per_second(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_packets_in_per_second = input;
-        self
+        self.network_packets_in_per_second = input; self
     }
     /// <p>The network inbound packets that are measured in packets per second.</p>
     pub fn get_network_packets_in_per_second(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl NetworkResourceUtilizationBuilder {
     }
     /// <p>The network outbound packets that are measured in packets per second.</p>
     pub fn set_network_packets_out_per_second(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_packets_out_per_second = input;
-        self
+        self.network_packets_out_per_second = input; self
     }
     /// <p>The network outbound packets that are measured in packets per second.</p>
     pub fn get_network_packets_out_per_second(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl NetworkResourceUtilizationBuilder {
     /// Consumes the builder and constructs a [`NetworkResourceUtilization`](crate::types::NetworkResourceUtilization).
     pub fn build(self) -> crate::types::NetworkResourceUtilization {
         crate::types::NetworkResourceUtilization {
-            network_in_bytes_per_second: self.network_in_bytes_per_second,
-            network_out_bytes_per_second: self.network_out_bytes_per_second,
-            network_packets_in_per_second: self.network_packets_in_per_second,
-            network_packets_out_per_second: self.network_packets_out_per_second,
+            network_in_bytes_per_second: self.network_in_bytes_per_second
+            ,
+            network_out_bytes_per_second: self.network_out_bytes_per_second
+            ,
+            network_packets_in_per_second: self.network_packets_in_per_second
+            ,
+            network_packets_out_per_second: self.network_packets_out_per_second
+            ,
         }
     }
 }
+

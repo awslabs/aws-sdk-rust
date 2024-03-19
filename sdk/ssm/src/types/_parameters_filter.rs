@@ -3,21 +3,20 @@
 /// <p>This data type is deprecated. Instead, use <code>ParameterStringFilter</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParametersFilter {
+pub struct ParametersFilter  {
     /// <p>The name of the filter.</p>
     pub key: crate::types::ParametersFilterKey,
     /// <p>The filter values.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl ParametersFilter {
+impl  ParametersFilter  {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> &crate::types::ParametersFilterKey {
+    pub fn key(&self) -> & crate::types::ParametersFilterKey {
         &self.key
     }
     /// <p>The filter values.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl ParametersFilter {
@@ -32,7 +31,7 @@ impl ParametersFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParametersFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ParametersFilterKey>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ParametersFilterBuilder {
     /// <p>The name of the filter.</p>
@@ -43,8 +42,7 @@ impl ParametersFilterBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::ParametersFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the filter.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::ParametersFilterKey> {
@@ -57,17 +55,16 @@ impl ParametersFilterBuilder {
     /// <p>The filter values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The filter values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`ParametersFilter`](crate::types::ParametersFilter).
@@ -75,19 +72,20 @@ impl ParametersFilterBuilder {
     /// - [`key`](crate::types::builders::ParametersFilterBuilder::key)
     /// - [`values`](crate::types::builders::ParametersFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::ParametersFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParametersFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building ParametersFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building ParametersFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParametersFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building ParametersFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building ParametersFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

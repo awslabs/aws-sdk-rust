@@ -3,19 +3,19 @@
 /// <p>Describes the experiment options for an experiment template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTemplateExperimentOptions {
+pub struct ExperimentTemplateExperimentOptions  {
     /// <p>The account targeting setting for an experiment template.</p>
     pub account_targeting: ::std::option::Option<crate::types::AccountTargeting>,
     /// <p>The empty target resolution mode for an experiment template.</p>
     pub empty_target_resolution_mode: ::std::option::Option<crate::types::EmptyTargetResolutionMode>,
 }
-impl ExperimentTemplateExperimentOptions {
+impl  ExperimentTemplateExperimentOptions  {
     /// <p>The account targeting setting for an experiment template.</p>
-    pub fn account_targeting(&self) -> ::std::option::Option<&crate::types::AccountTargeting> {
+    pub fn account_targeting(&self) -> ::std::option::Option<& crate::types::AccountTargeting> {
         self.account_targeting.as_ref()
     }
     /// <p>The empty target resolution mode for an experiment template.</p>
-    pub fn empty_target_resolution_mode(&self) -> ::std::option::Option<&crate::types::EmptyTargetResolutionMode> {
+    pub fn empty_target_resolution_mode(&self) -> ::std::option::Option<& crate::types::EmptyTargetResolutionMode> {
         self.empty_target_resolution_mode.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ExperimentTemplateExperimentOptionsBuilder {
     }
     /// <p>The account targeting setting for an experiment template.</p>
     pub fn set_account_targeting(mut self, input: ::std::option::Option<crate::types::AccountTargeting>) -> Self {
-        self.account_targeting = input;
-        self
+        self.account_targeting = input; self
     }
     /// <p>The account targeting setting for an experiment template.</p>
     pub fn get_account_targeting(&self) -> &::std::option::Option<crate::types::AccountTargeting> {
@@ -55,8 +54,7 @@ impl ExperimentTemplateExperimentOptionsBuilder {
     }
     /// <p>The empty target resolution mode for an experiment template.</p>
     pub fn set_empty_target_resolution_mode(mut self, input: ::std::option::Option<crate::types::EmptyTargetResolutionMode>) -> Self {
-        self.empty_target_resolution_mode = input;
-        self
+        self.empty_target_resolution_mode = input; self
     }
     /// <p>The empty target resolution mode for an experiment template.</p>
     pub fn get_empty_target_resolution_mode(&self) -> &::std::option::Option<crate::types::EmptyTargetResolutionMode> {
@@ -65,8 +63,11 @@ impl ExperimentTemplateExperimentOptionsBuilder {
     /// Consumes the builder and constructs a [`ExperimentTemplateExperimentOptions`](crate::types::ExperimentTemplateExperimentOptions).
     pub fn build(self) -> crate::types::ExperimentTemplateExperimentOptions {
         crate::types::ExperimentTemplateExperimentOptions {
-            account_targeting: self.account_targeting,
-            empty_target_resolution_mode: self.empty_target_resolution_mode,
+            account_targeting: self.account_targeting
+            ,
+            empty_target_resolution_mode: self.empty_target_resolution_mode
+            ,
         }
     }
 }
+

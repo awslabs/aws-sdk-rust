@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMediaInsightsPipelineStatusInput {
+pub struct UpdateMediaInsightsPipelineStatusInput  {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The requested status of the media insights pipeline.</p>
     pub update_status: ::std::option::Option<crate::types::MediaPipelineStatusUpdate>,
 }
-impl UpdateMediaInsightsPipelineStatusInput {
+impl  UpdateMediaInsightsPipelineStatusInput  {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The requested status of the media insights pipeline.</p>
-    pub fn update_status(&self) -> ::std::option::Option<&crate::types::MediaPipelineStatusUpdate> {
+    pub fn update_status(&self) -> ::std::option::Option<& crate::types::MediaPipelineStatusUpdate> {
         self.update_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateMediaInsightsPipelineStatusInputBuilder {
     }
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl UpdateMediaInsightsPipelineStatusInputBuilder {
     }
     /// <p>The requested status of the media insights pipeline.</p>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::MediaPipelineStatusUpdate>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>The requested status of the media insights pipeline.</p>
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::MediaPipelineStatusUpdate> {
         &self.update_status
     }
     /// Consumes the builder and constructs a [`UpdateMediaInsightsPipelineStatusInput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput {
-                identifier: self.identifier,
-                update_status: self.update_status,
-            },
+                identifier: self.identifier
+                ,
+                update_status: self.update_status
+                ,
+            }
         )
     }
 }
+

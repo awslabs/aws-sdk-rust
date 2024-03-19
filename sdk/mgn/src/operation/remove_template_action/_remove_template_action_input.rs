@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTemplateActionInput {
+pub struct RemoveTemplateActionInput  {
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
     pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action ID to remove.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveTemplateActionInput {
+impl  RemoveTemplateActionInput  {
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<& str> {
         self.launch_configuration_template_id.as_deref()
     }
     /// <p>Template post migration custom action ID to remove.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RemoveTemplateActionInputBuilder {
     }
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
     pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_configuration_template_id = input;
-        self
+        self.launch_configuration_template_id = input; self
     }
     /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
     pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl RemoveTemplateActionInputBuilder {
     }
     /// <p>Template post migration custom action ID to remove.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>Template post migration custom action ID to remove.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_id
     }
     /// Consumes the builder and constructs a [`RemoveTemplateActionInput`](crate::operation::remove_template_action::RemoveTemplateActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_template_action::RemoveTemplateActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::remove_template_action::RemoveTemplateActionInput {
-            launch_configuration_template_id: self.launch_configuration_template_id,
-            action_id: self.action_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_template_action::RemoveTemplateActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_template_action::RemoveTemplateActionInput {
+                launch_configuration_template_id: self.launch_configuration_template_id
+                ,
+                action_id: self.action_id
+                ,
+            }
+        )
     }
 }
+

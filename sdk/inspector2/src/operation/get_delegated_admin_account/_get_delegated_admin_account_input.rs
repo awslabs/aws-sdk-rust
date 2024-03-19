@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDelegatedAdminAccountInput {}
+pub struct GetDelegatedAdminAccountInput  {
+}
 impl GetDelegatedAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`GetDelegatedAdminAccountInput`](crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountInput).
     pub fn builder() -> crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountInputBuilder {
@@ -13,15 +14,15 @@ impl GetDelegatedAdminAccountInput {
 /// A builder for [`GetDelegatedAdminAccountInput`](crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetDelegatedAdminAccountInputBuilder {}
+pub struct GetDelegatedAdminAccountInputBuilder {
+}
 impl GetDelegatedAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetDelegatedAdminAccountInput`](crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountInput {
+            }
+        )
     }
 }
+

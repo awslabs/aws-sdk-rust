@@ -3,7 +3,7 @@
 /// <p>LTE object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LteNmrObj {
+pub struct LteNmrObj  {
     /// <p>Physical cell ID.</p>
     pub pci: i32,
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
@@ -15,7 +15,7 @@ pub struct LteNmrObj {
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub rsrq: ::std::option::Option<f32>,
 }
-impl LteNmrObj {
+impl  LteNmrObj  {
     /// <p>Physical cell ID.</p>
     pub fn pci(&self) -> i32 {
         self.pci
@@ -63,8 +63,7 @@ impl LteNmrObjBuilder {
     }
     /// <p>Physical cell ID.</p>
     pub fn set_pci(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pci = input;
-        self
+        self.pci = input; self
     }
     /// <p>Physical cell ID.</p>
     pub fn get_pci(&self) -> &::std::option::Option<i32> {
@@ -78,8 +77,7 @@ impl LteNmrObjBuilder {
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
     pub fn set_earfcn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.earfcn = input;
-        self
+        self.earfcn = input; self
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
     pub fn get_earfcn(&self) -> &::std::option::Option<i32> {
@@ -93,8 +91,7 @@ impl LteNmrObjBuilder {
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
     pub fn set_eutran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.eutran_cid = input;
-        self
+        self.eutran_cid = input; self
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
     pub fn get_eutran_cid(&self) -> &::std::option::Option<i32> {
@@ -107,8 +104,7 @@ impl LteNmrObjBuilder {
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn set_rsrp(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rsrp = input;
-        self
+        self.rsrp = input; self
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn get_rsrp(&self) -> &::std::option::Option<i32> {
@@ -121,8 +117,7 @@ impl LteNmrObjBuilder {
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn set_rsrq(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.rsrq = input;
-        self
+        self.rsrq = input; self
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn get_rsrq(&self) -> &::std::option::Option<f32> {
@@ -134,27 +129,29 @@ impl LteNmrObjBuilder {
     /// - [`earfcn`](crate::types::builders::LteNmrObjBuilder::earfcn)
     /// - [`eutran_cid`](crate::types::builders::LteNmrObjBuilder::eutran_cid)
     pub fn build(self) -> ::std::result::Result<crate::types::LteNmrObj, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LteNmrObj {
-            pci: self.pci.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pci",
-                    "pci was not specified but it is required when building LteNmrObj",
-                )
-            })?,
-            earfcn: self.earfcn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "earfcn",
-                    "earfcn was not specified but it is required when building LteNmrObj",
-                )
-            })?,
-            eutran_cid: self.eutran_cid.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "eutran_cid",
-                    "eutran_cid was not specified but it is required when building LteNmrObj",
-                )
-            })?,
-            rsrp: self.rsrp,
-            rsrq: self.rsrq,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LteNmrObj {
+                pci: self.pci
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pci", "pci was not specified but it is required when building LteNmrObj")
+                    )?
+                ,
+                earfcn: self.earfcn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("earfcn", "earfcn was not specified but it is required when building LteNmrObj")
+                    )?
+                ,
+                eutran_cid: self.eutran_cid
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("eutran_cid", "eutran_cid was not specified but it is required when building LteNmrObj")
+                    )?
+                ,
+                rsrp: self.rsrp
+                ,
+                rsrq: self.rsrq
+                ,
+            }
+        )
     }
 }
+

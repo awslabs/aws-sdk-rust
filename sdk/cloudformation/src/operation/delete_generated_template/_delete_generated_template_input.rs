@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGeneratedTemplateInput {
+pub struct DeleteGeneratedTemplateInput  {
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub generated_template_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGeneratedTemplateInput {
+impl  DeleteGeneratedTemplateInput  {
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-    pub fn generated_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_name(&self) -> ::std::option::Option<& str> {
         self.generated_template_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteGeneratedTemplateInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub fn set_generated_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_name = input;
-        self
+        self.generated_template_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub fn get_generated_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.generated_template_name
     }
     /// Consumes the builder and constructs a [`DeleteGeneratedTemplateInput`](crate::operation::delete_generated_template::DeleteGeneratedTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_generated_template::DeleteGeneratedTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_generated_template::DeleteGeneratedTemplateInput {
-            generated_template_name: self.generated_template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_generated_template::DeleteGeneratedTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_generated_template::DeleteGeneratedTemplateInput {
+                generated_template_name: self.generated_template_name
+                ,
+            }
+        )
     }
 }
+

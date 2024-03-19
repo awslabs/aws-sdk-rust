@@ -3,45 +3,46 @@
 /// <p>The state of the user's session with Amazon Lex V2.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SessionState {
+pub struct SessionState  {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
     pub intent: ::std::option::Option<crate::types::Intent>,
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-    pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-    pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub session_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A unique identifier for a specific request.</p>
     pub originating_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
     pub runtime_hints: ::std::option::Option<crate::types::RuntimeHints>,
 }
-impl SessionState {
+impl  SessionState  {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
-    pub fn dialog_action(&self) -> ::std::option::Option<&crate::types::DialogAction> {
+    pub fn dialog_action(&self) -> ::std::option::Option<& crate::types::DialogAction> {
         self.dialog_action.as_ref()
     }
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
-    pub fn intent(&self) -> ::std::option::Option<&crate::types::Intent> {
+    pub fn intent(&self) -> ::std::option::Option<& crate::types::Intent> {
         self.intent.as_ref()
     }
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
-    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
-        self.active_contexts.as_deref().unwrap_or_default()
+    pub fn active_contexts(&self) -> & [crate::types::ActiveContext] {
+        self.active_contexts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-    pub fn session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn session_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.session_attributes.as_ref()
     }
     /// <p>A unique identifier for a specific request.</p>
-    pub fn originating_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn originating_request_id(&self) -> ::std::option::Option<& str> {
         self.originating_request_id.as_deref()
     }
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
-    pub fn runtime_hints(&self) -> ::std::option::Option<&crate::types::RuntimeHints> {
+    pub fn runtime_hints(&self) -> ::std::option::Option<& crate::types::RuntimeHints> {
         self.runtime_hints.as_ref()
     }
 }
@@ -58,8 +59,8 @@ impl SessionState {
 pub struct SessionStateBuilder {
     pub(crate) dialog_action: ::std::option::Option<crate::types::DialogAction>,
     pub(crate) intent: ::std::option::Option<crate::types::Intent>,
-    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
-    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
+    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) originating_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_hints: ::std::option::Option<crate::types::RuntimeHints>,
 }
@@ -71,8 +72,7 @@ impl SessionStateBuilder {
     }
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
     pub fn set_dialog_action(mut self, input: ::std::option::Option<crate::types::DialogAction>) -> Self {
-        self.dialog_action = input;
-        self
+        self.dialog_action = input; self
     }
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
     pub fn get_dialog_action(&self) -> &::std::option::Option<crate::types::DialogAction> {
@@ -85,8 +85,7 @@ impl SessionStateBuilder {
     }
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
     pub fn set_intent(mut self, input: ::std::option::Option<crate::types::Intent>) -> Self {
-        self.intent = input;
-        self
+        self.intent = input; self
     }
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
     pub fn get_intent(&self) -> &::std::option::Option<crate::types::Intent> {
@@ -99,17 +98,16 @@ impl SessionStateBuilder {
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
     pub fn active_contexts(mut self, input: crate::types::ActiveContext) -> Self {
         let mut v = self.active_contexts.unwrap_or_default();
-        v.push(input);
-        self.active_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.active_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>) -> Self {
-        self.active_contexts = input;
-        self
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>) -> Self {
+        self.active_contexts = input; self
     }
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>> {
         &self.active_contexts
     }
     /// Adds a key-value pair to `session_attributes`.
@@ -117,26 +115,18 @@ impl SessionStateBuilder {
     /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
     ///
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-    pub fn session_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.session_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.session_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.session_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-    pub fn set_session_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.session_attributes = input;
-        self
+    pub fn set_session_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.session_attributes = input; self
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.session_attributes
     }
     /// <p>A unique identifier for a specific request.</p>
@@ -146,8 +136,7 @@ impl SessionStateBuilder {
     }
     /// <p>A unique identifier for a specific request.</p>
     pub fn set_originating_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.originating_request_id = input;
-        self
+        self.originating_request_id = input; self
     }
     /// <p>A unique identifier for a specific request.</p>
     pub fn get_originating_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +149,7 @@ impl SessionStateBuilder {
     }
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
     pub fn set_runtime_hints(mut self, input: ::std::option::Option<crate::types::RuntimeHints>) -> Self {
-        self.runtime_hints = input;
-        self
+        self.runtime_hints = input; self
     }
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
     pub fn get_runtime_hints(&self) -> &::std::option::Option<crate::types::RuntimeHints> {
@@ -170,12 +158,19 @@ impl SessionStateBuilder {
     /// Consumes the builder and constructs a [`SessionState`](crate::types::SessionState).
     pub fn build(self) -> crate::types::SessionState {
         crate::types::SessionState {
-            dialog_action: self.dialog_action,
-            intent: self.intent,
-            active_contexts: self.active_contexts,
-            session_attributes: self.session_attributes,
-            originating_request_id: self.originating_request_id,
-            runtime_hints: self.runtime_hints,
+            dialog_action: self.dialog_action
+            ,
+            intent: self.intent
+            ,
+            active_contexts: self.active_contexts
+            ,
+            session_attributes: self.session_attributes
+            ,
+            originating_request_id: self.originating_request_id
+            ,
+            runtime_hints: self.runtime_hints
+            ,
         }
     }
 }
+

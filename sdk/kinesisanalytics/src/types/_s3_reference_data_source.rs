@@ -4,7 +4,7 @@
 /// <p>An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation to trigger reloading of data into your application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ReferenceDataSource {
+pub struct S3ReferenceDataSource  {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub bucket_arn: ::std::string::String,
     /// <p>Object key name containing reference data.</p>
@@ -12,21 +12,18 @@ pub struct S3ReferenceDataSource {
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
     pub reference_role_arn: ::std::string::String,
 }
-impl S3ReferenceDataSource {
+impl  S3ReferenceDataSource  {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_arn.deref()
+    pub fn bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_arn.deref()
     }
     /// <p>Object key name containing reference data.</p>
-    pub fn file_key(&self) -> &str {
-        use std::ops::Deref;
-        self.file_key.deref()
+    pub fn file_key(&self) -> & str {
+        use std::ops::Deref; self.file_key.deref()
     }
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
-    pub fn reference_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.reference_role_arn.deref()
+    pub fn reference_role_arn(&self) -> & str {
+        use std::ops::Deref; self.reference_role_arn.deref()
     }
 }
 impl S3ReferenceDataSource {
@@ -53,8 +50,7 @@ impl S3ReferenceDataSourceBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +64,7 @@ impl S3ReferenceDataSourceBuilder {
     }
     /// <p>Object key name containing reference data.</p>
     pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_key = input;
-        self
+        self.file_key = input; self
     }
     /// <p>Object key name containing reference data.</p>
     pub fn get_file_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +78,7 @@ impl S3ReferenceDataSourceBuilder {
     }
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
     pub fn set_reference_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_role_arn = input;
-        self
+        self.reference_role_arn = input; self
     }
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
     pub fn get_reference_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,25 +90,25 @@ impl S3ReferenceDataSourceBuilder {
     /// - [`file_key`](crate::types::builders::S3ReferenceDataSourceBuilder::file_key)
     /// - [`reference_role_arn`](crate::types::builders::S3ReferenceDataSourceBuilder::reference_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::S3ReferenceDataSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3ReferenceDataSource {
-            bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_arn",
-                    "bucket_arn was not specified but it is required when building S3ReferenceDataSource",
-                )
-            })?,
-            file_key: self.file_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_key",
-                    "file_key was not specified but it is required when building S3ReferenceDataSource",
-                )
-            })?,
-            reference_role_arn: self.reference_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reference_role_arn",
-                    "reference_role_arn was not specified but it is required when building S3ReferenceDataSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3ReferenceDataSource {
+                bucket_arn: self.bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_arn", "bucket_arn was not specified but it is required when building S3ReferenceDataSource")
+                    )?
+                ,
+                file_key: self.file_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_key", "file_key was not specified but it is required when building S3ReferenceDataSource")
+                    )?
+                ,
+                reference_role_arn: self.reference_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reference_role_arn", "reference_role_arn was not specified but it is required when building S3ReferenceDataSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

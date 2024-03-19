@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetUserAccessTasksInput {
+pub struct BatchGetUserAccessTasksInput  {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tasks IDs to use for the request.</p>
-    pub task_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub task_id_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetUserAccessTasksInput {
+impl  BatchGetUserAccessTasksInput  {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn app_bundle_identifier(&self) -> ::std::option::Option<& str> {
         self.app_bundle_identifier.as_deref()
     }
     /// <p>The tasks IDs to use for the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_id_list.is_none()`.
-    pub fn task_id_list(&self) -> &[::std::string::String] {
-        self.task_id_list.as_deref().unwrap_or_default()
+    pub fn task_id_list(&self) -> & [::std::string::String] {
+        self.task_id_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetUserAccessTasksInput {
@@ -32,7 +33,7 @@ impl BatchGetUserAccessTasksInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetUserAccessTasksInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) task_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) task_id_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetUserAccessTasksInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
@@ -43,8 +44,7 @@ impl BatchGetUserAccessTasksInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_bundle_identifier = input;
-        self
+        self.app_bundle_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl BatchGetUserAccessTasksInputBuilder {
     /// <p>The tasks IDs to use for the request.</p>
     pub fn task_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.task_id_list.unwrap_or_default();
-        v.push(input.into());
-        self.task_id_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.task_id_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tasks IDs to use for the request.</p>
-    pub fn set_task_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.task_id_list = input;
-        self
+    pub fn set_task_id_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.task_id_list = input; self
     }
     /// <p>The tasks IDs to use for the request.</p>
-    pub fn get_task_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_task_id_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.task_id_list
     }
     /// Consumes the builder and constructs a [`BatchGetUserAccessTasksInput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput {
-            app_bundle_identifier: self.app_bundle_identifier,
-            task_id_list: self.task_id_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksInput {
+                app_bundle_identifier: self.app_bundle_identifier
+                ,
+                task_id_list: self.task_id_list
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortMapping {
+pub struct PortMapping  {
     /// <p>The port used for the port mapping.</p>
     pub port: i32,
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub protocol: crate::types::PortProtocol,
 }
-impl PortMapping {
+impl  PortMapping  {
     /// <p>The port used for the port mapping.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    pub fn protocol(&self) -> &crate::types::PortProtocol {
+    pub fn protocol(&self) -> & crate::types::PortProtocol {
         &self.protocol
     }
 }
@@ -42,8 +42,7 @@ impl PortMappingBuilder {
     }
     /// <p>The port used for the port mapping.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port used for the port mapping.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl PortMappingBuilder {
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::PortProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::PortProtocol> {
@@ -69,19 +67,20 @@ impl PortMappingBuilder {
     /// - [`port`](crate::types::builders::PortMappingBuilder::port)
     /// - [`protocol`](crate::types::builders::PortMappingBuilder::protocol)
     pub fn build(self) -> ::std::result::Result<crate::types::PortMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PortMapping {
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building PortMapping",
-                )
-            })?,
-            protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol",
-                    "protocol was not specified but it is required when building PortMapping",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PortMapping {
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building PortMapping")
+                    )?
+                ,
+                protocol: self.protocol
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocol", "protocol was not specified but it is required when building PortMapping")
+                    )?
+                ,
+            }
+        )
     }
 }
+

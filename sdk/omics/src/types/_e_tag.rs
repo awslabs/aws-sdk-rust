@@ -3,7 +3,7 @@
 /// <p>The entity tag (ETag) is a hash of the object representing its semantic content.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ETag {
+pub struct ETag  {
     /// <p>The algorithm used to calculate the read set’s ETag(s).</p>
     pub algorithm: ::std::option::Option<crate::types::ETagAlgorithm>,
     /// <p>The ETag hash calculated on Source1 of the read set.</p>
@@ -11,17 +11,17 @@ pub struct ETag {
     /// <p>The ETag hash calculated on Source2 of the read set.</p>
     pub source2: ::std::option::Option<::std::string::String>,
 }
-impl ETag {
+impl  ETag  {
     /// <p>The algorithm used to calculate the read set’s ETag(s).</p>
-    pub fn algorithm(&self) -> ::std::option::Option<&crate::types::ETagAlgorithm> {
+    pub fn algorithm(&self) -> ::std::option::Option<& crate::types::ETagAlgorithm> {
         self.algorithm.as_ref()
     }
     /// <p>The ETag hash calculated on Source1 of the read set.</p>
-    pub fn source1(&self) -> ::std::option::Option<&str> {
+    pub fn source1(&self) -> ::std::option::Option<& str> {
         self.source1.as_deref()
     }
     /// <p>The ETag hash calculated on Source2 of the read set.</p>
-    pub fn source2(&self) -> ::std::option::Option<&str> {
+    pub fn source2(&self) -> ::std::option::Option<& str> {
         self.source2.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ETagBuilder {
     }
     /// <p>The algorithm used to calculate the read set’s ETag(s).</p>
     pub fn set_algorithm(mut self, input: ::std::option::Option<crate::types::ETagAlgorithm>) -> Self {
-        self.algorithm = input;
-        self
+        self.algorithm = input; self
     }
     /// <p>The algorithm used to calculate the read set’s ETag(s).</p>
     pub fn get_algorithm(&self) -> &::std::option::Option<crate::types::ETagAlgorithm> {
@@ -62,8 +61,7 @@ impl ETagBuilder {
     }
     /// <p>The ETag hash calculated on Source1 of the read set.</p>
     pub fn set_source1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source1 = input;
-        self
+        self.source1 = input; self
     }
     /// <p>The ETag hash calculated on Source1 of the read set.</p>
     pub fn get_source1(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ETagBuilder {
     }
     /// <p>The ETag hash calculated on Source2 of the read set.</p>
     pub fn set_source2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source2 = input;
-        self
+        self.source2 = input; self
     }
     /// <p>The ETag hash calculated on Source2 of the read set.</p>
     pub fn get_source2(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ETagBuilder {
     /// Consumes the builder and constructs a [`ETag`](crate::types::ETag).
     pub fn build(self) -> crate::types::ETag {
         crate::types::ETag {
-            algorithm: self.algorithm,
-            source1: self.source1,
-            source2: self.source2,
+            algorithm: self.algorithm
+            ,
+            source1: self.source1
+            ,
+            source2: self.source2
+            ,
         }
     }
 }
+

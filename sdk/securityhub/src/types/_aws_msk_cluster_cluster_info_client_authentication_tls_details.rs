@@ -3,18 +3,19 @@
 /// <p>Provides details for client authentication using TLS.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsMskClusterClusterInfoClientAuthenticationTlsDetails {
+pub struct AwsMskClusterClusterInfoClientAuthenticationTlsDetails  {
     /// <p>List of Amazon Web Services Private CA Amazon Resource Names (ARNs). Amazon Web Services Private CA enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA.</p>
-    pub certificate_authority_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub certificate_authority_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether TLS authentication is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl AwsMskClusterClusterInfoClientAuthenticationTlsDetails {
+impl  AwsMskClusterClusterInfoClientAuthenticationTlsDetails  {
     /// <p>List of Amazon Web Services Private CA Amazon Resource Names (ARNs). Amazon Web Services Private CA enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_authority_arn_list.is_none()`.
-    pub fn certificate_authority_arn_list(&self) -> &[::std::string::String] {
-        self.certificate_authority_arn_list.as_deref().unwrap_or_default()
+    pub fn certificate_authority_arn_list(&self) -> & [::std::string::String] {
+        self.certificate_authority_arn_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether TLS authentication is enabled or not.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
@@ -32,7 +33,7 @@ impl AwsMskClusterClusterInfoClientAuthenticationTlsDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsMskClusterClusterInfoClientAuthenticationTlsDetailsBuilder {
-    pub(crate) certificate_authority_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_authority_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl AwsMskClusterClusterInfoClientAuthenticationTlsDetailsBuilder {
@@ -43,17 +44,16 @@ impl AwsMskClusterClusterInfoClientAuthenticationTlsDetailsBuilder {
     /// <p>List of Amazon Web Services Private CA Amazon Resource Names (ARNs). Amazon Web Services Private CA enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA.</p>
     pub fn certificate_authority_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_authority_arn_list.unwrap_or_default();
-        v.push(input.into());
-        self.certificate_authority_arn_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.certificate_authority_arn_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of Amazon Web Services Private CA Amazon Resource Names (ARNs). Amazon Web Services Private CA enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA.</p>
-    pub fn set_certificate_authority_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.certificate_authority_arn_list = input;
-        self
+    pub fn set_certificate_authority_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.certificate_authority_arn_list = input; self
     }
     /// <p>List of Amazon Web Services Private CA Amazon Resource Names (ARNs). Amazon Web Services Private CA enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA.</p>
-    pub fn get_certificate_authority_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_authority_arn_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.certificate_authority_arn_list
     }
     /// <p>Indicates whether TLS authentication is enabled or not.</p>
@@ -63,8 +63,7 @@ impl AwsMskClusterClusterInfoClientAuthenticationTlsDetailsBuilder {
     }
     /// <p>Indicates whether TLS authentication is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether TLS authentication is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -73,8 +72,11 @@ impl AwsMskClusterClusterInfoClientAuthenticationTlsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsMskClusterClusterInfoClientAuthenticationTlsDetails`](crate::types::AwsMskClusterClusterInfoClientAuthenticationTlsDetails).
     pub fn build(self) -> crate::types::AwsMskClusterClusterInfoClientAuthenticationTlsDetails {
         crate::types::AwsMskClusterClusterInfoClientAuthenticationTlsDetails {
-            certificate_authority_arn_list: self.certificate_authority_arn_list,
-            enabled: self.enabled,
+            certificate_authority_arn_list: self.certificate_authority_arn_list
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

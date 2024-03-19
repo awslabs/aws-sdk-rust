@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDirectoryConfigsInput {
+pub struct DescribeDirectoryConfigsInput  {
     /// <p>The directory names.</p>
-    pub directory_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub directory_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum size of each page of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDirectoryConfigsInput {
+impl  DescribeDirectoryConfigsInput  {
     /// <p>The directory names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_names.is_none()`.
-    pub fn directory_names(&self) -> &[::std::string::String] {
-        self.directory_names.as_deref().unwrap_or_default()
+    pub fn directory_names(&self) -> & [::std::string::String] {
+        self.directory_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl DescribeDirectoryConfigsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectoryConfigsInputBuilder {
-    pub(crate) directory_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) directory_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl DescribeDirectoryConfigsInputBuilder {
     /// <p>The directory names.</p>
     pub fn directory_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.directory_names.unwrap_or_default();
-        v.push(input.into());
-        self.directory_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.directory_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The directory names.</p>
-    pub fn set_directory_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.directory_names = input;
-        self
+    pub fn set_directory_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.directory_names = input; self
     }
     /// <p>The directory names.</p>
-    pub fn get_directory_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_directory_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.directory_names
     }
     /// <p>The maximum size of each page of results.</p>
@@ -69,8 +69,7 @@ impl DescribeDirectoryConfigsInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,24 +82,24 @@ impl DescribeDirectoryConfigsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDirectoryConfigsInput`](crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput {
-            directory_names: self.directory_names,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_directory_configs::DescribeDirectoryConfigsInput {
+                directory_names: self.directory_names
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

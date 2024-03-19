@@ -3,13 +3,13 @@
 /// <p>An object that specifies the TLS configuration for a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TlsConfig {
+pub struct TlsConfig  {
     /// <p>The security policy for a domain configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
     pub security_policy: ::std::option::Option<::std::string::String>,
 }
-impl TlsConfig {
+impl  TlsConfig  {
     /// <p>The security policy for a domain configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
-    pub fn security_policy(&self) -> ::std::option::Option<&str> {
+    pub fn security_policy(&self) -> ::std::option::Option<& str> {
         self.security_policy.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TlsConfigBuilder {
     }
     /// <p>The security policy for a domain configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
     pub fn set_security_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_policy = input;
-        self
+        self.security_policy = input; self
     }
     /// <p>The security policy for a domain configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html#tls-policy-table">Security policies </a> in the <i>Amazon Web Services IoT Core developer guide</i>.</p>
     pub fn get_security_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl TlsConfigBuilder {
     /// Consumes the builder and constructs a [`TlsConfig`](crate::types::TlsConfig).
     pub fn build(self) -> crate::types::TlsConfig {
         crate::types::TlsConfig {
-            security_policy: self.security_policy,
+            security_policy: self.security_policy
+            ,
         }
     }
 }
+

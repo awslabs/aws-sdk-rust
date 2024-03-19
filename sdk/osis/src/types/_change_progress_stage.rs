@@ -3,7 +3,7 @@
 /// <p>Progress details for a specific stage of a pipeline configuration change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeProgressStage {
+pub struct ChangeProgressStage  {
     /// <p>The name of the stage.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the stage that the change is in.</p>
@@ -13,21 +13,21 @@ pub struct ChangeProgressStage {
     /// <p>The most recent updated timestamp of the stage.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ChangeProgressStage {
+impl  ChangeProgressStage  {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the stage that the change is in.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ChangeProgressStageStatuses> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ChangeProgressStageStatuses> {
         self.status.as_ref()
     }
     /// <p>A description of the stage.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The most recent updated timestamp of the stage.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ChangeProgressStageBuilder {
     }
     /// <p>The name of the stage.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the stage.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ChangeProgressStageBuilder {
     }
     /// <p>The current status of the stage that the change is in.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeProgressStageStatuses>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the stage that the change is in.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeProgressStageStatuses> {
@@ -83,8 +81,7 @@ impl ChangeProgressStageBuilder {
     }
     /// <p>A description of the stage.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the stage.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ChangeProgressStageBuilder {
     }
     /// <p>The most recent updated timestamp of the stage.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The most recent updated timestamp of the stage.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl ChangeProgressStageBuilder {
     /// Consumes the builder and constructs a [`ChangeProgressStage`](crate::types::ChangeProgressStage).
     pub fn build(self) -> crate::types::ChangeProgressStage {
         crate::types::ChangeProgressStage {
-            name: self.name,
-            status: self.status,
-            description: self.description,
-            last_updated_at: self.last_updated_at,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
+            last_updated_at: self.last_updated_at
+            ,
         }
     }
 }
+

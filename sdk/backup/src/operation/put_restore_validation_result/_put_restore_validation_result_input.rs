@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRestoreValidationResultInput {
+pub struct PutRestoreValidationResultInput  {
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub restore_job_id: ::std::option::Option<::std::string::String>,
     /// <p>This is the status of your restore validation.</p>
@@ -10,17 +10,17 @@ pub struct PutRestoreValidationResultInput {
     /// <p>This is an optional message string you can input to describe the validation status for the restore test validation.</p>
     pub validation_status_message: ::std::option::Option<::std::string::String>,
 }
-impl PutRestoreValidationResultInput {
+impl  PutRestoreValidationResultInput  {
     /// <p>This is a unique identifier of a restore job within Backup.</p>
-    pub fn restore_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn restore_job_id(&self) -> ::std::option::Option<& str> {
         self.restore_job_id.as_deref()
     }
     /// <p>This is the status of your restore validation.</p>
-    pub fn validation_status(&self) -> ::std::option::Option<&crate::types::RestoreValidationStatus> {
+    pub fn validation_status(&self) -> ::std::option::Option<& crate::types::RestoreValidationStatus> {
         self.validation_status.as_ref()
     }
     /// <p>This is an optional message string you can input to describe the validation status for the restore test validation.</p>
-    pub fn validation_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn validation_status_message(&self) -> ::std::option::Option<& str> {
         self.validation_status_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PutRestoreValidationResultInputBuilder {
     }
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub fn set_restore_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_job_id = input;
-        self
+        self.restore_job_id = input; self
     }
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub fn get_restore_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutRestoreValidationResultInputBuilder {
     }
     /// <p>This is the status of your restore validation.</p>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::RestoreValidationStatus>) -> Self {
-        self.validation_status = input;
-        self
+        self.validation_status = input; self
     }
     /// <p>This is the status of your restore validation.</p>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::RestoreValidationStatus> {
@@ -77,24 +75,24 @@ impl PutRestoreValidationResultInputBuilder {
     }
     /// <p>This is an optional message string you can input to describe the validation status for the restore test validation.</p>
     pub fn set_validation_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.validation_status_message = input;
-        self
+        self.validation_status_message = input; self
     }
     /// <p>This is an optional message string you can input to describe the validation status for the restore test validation.</p>
     pub fn get_validation_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.validation_status_message
     }
     /// Consumes the builder and constructs a [`PutRestoreValidationResultInput`](crate::operation::put_restore_validation_result::PutRestoreValidationResultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_restore_validation_result::PutRestoreValidationResultInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_restore_validation_result::PutRestoreValidationResultInput {
-            restore_job_id: self.restore_job_id,
-            validation_status: self.validation_status,
-            validation_status_message: self.validation_status_message,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_restore_validation_result::PutRestoreValidationResultInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_restore_validation_result::PutRestoreValidationResultInput {
+                restore_job_id: self.restore_job_id
+                ,
+                validation_status: self.validation_status
+                ,
+                validation_status_message: self.validation_status_message
+                ,
+            }
+        )
     }
 }
+

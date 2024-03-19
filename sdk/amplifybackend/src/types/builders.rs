@@ -66,3 +66,4 @@ pub use crate::types::_create_backend_auth_identity_pool_config::CreateBackendAu
 pub use crate::types::_create_backend_storage_resource_config::CreateBackendStorageResourceConfigBuilder;
 
 pub use crate::types::_resource_config::ResourceConfigBuilder;
+

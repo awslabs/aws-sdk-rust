@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssistantAssociations`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`assistant_id(impl Into<String>)`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::assistant_id) / [`set_assistant_id(Option<String>)`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::set_assistant_id):<br>required: **true**<br><p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
-    /// - On success, responds with [`ListAssistantAssociationsOutput`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListAssistantAssociationsOutput`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput) with field(s):
     ///   - [`assistant_association_summaries(Vec::<AssistantAssociationSummary>)`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput::assistant_association_summaries): <p>Summary information about assistant associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListAssistantAssociationsError>`](crate::operation::list_assistant_associations::ListAssistantAssociationsError)
+                            /// - On failure, responds with [`SdkError<ListAssistantAssociationsError>`](crate::operation::list_assistant_associations::ListAssistantAssociationsError)
     pub fn list_assistant_associations(&self) -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder {
-        crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_assistant_associations::builders::ListAssistantAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

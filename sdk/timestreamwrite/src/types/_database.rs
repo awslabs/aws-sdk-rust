@@ -3,7 +3,7 @@
 /// <p>A top-level container for a table. Databases and tables are the fundamental management concepts in Amazon Timestream. All tables in a database are encrypted with the same KMS key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Database {
+pub struct Database  {
     /// <p>The Amazon Resource Name that uniquely identifies this database.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream database.</p>
@@ -17,13 +17,13 @@ pub struct Database {
     /// <p>The last time that this database was updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Database {
+impl  Database  {
     /// <p>The Amazon Resource Name that uniquely identifies this database.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The total number of tables found within a Timestream database.</p>
@@ -31,15 +31,15 @@ impl Database {
         self.table_count
     }
     /// <p>The identifier of the KMS key used to encrypt the data stored in the database.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The time when the database was created, calculated from the Unix epoch time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time that this database was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DatabaseBuilder {
     }
     /// <p>The Amazon Resource Name that uniquely identifies this database.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name that uniquely identifies this database.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DatabaseBuilder {
     }
     /// <p>The name of the Timestream database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the Timestream database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DatabaseBuilder {
     }
     /// <p>The total number of tables found within a Timestream database.</p>
     pub fn set_table_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.table_count = input;
-        self
+        self.table_count = input; self
     }
     /// <p>The total number of tables found within a Timestream database.</p>
     pub fn get_table_count(&self) -> &::std::option::Option<i64> {
@@ -111,8 +108,7 @@ impl DatabaseBuilder {
     }
     /// <p>The identifier of the KMS key used to encrypt the data stored in the database.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of the KMS key used to encrypt the data stored in the database.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl DatabaseBuilder {
     }
     /// <p>The time when the database was created, calculated from the Unix epoch time.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the database was created, calculated from the Unix epoch time.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl DatabaseBuilder {
     }
     /// <p>The last time that this database was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The last time that this database was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,20 @@ impl DatabaseBuilder {
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     pub fn build(self) -> crate::types::Database {
         crate::types::Database {
-            arn: self.arn,
-            database_name: self.database_name,
-            table_count: self.table_count.unwrap_or_default(),
-            kms_key_id: self.kms_key_id,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
+            arn: self.arn
+            ,
+            database_name: self.database_name
+            ,
+            table_count: self.table_count
+                .unwrap_or_default()
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

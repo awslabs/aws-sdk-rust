@@ -3,13 +3,13 @@
 /// <p>The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeValue {
+pub struct AttributeValue  {
     /// <p>The specific value of an <code>attributeName</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AttributeValue {
+impl  AttributeValue  {
     /// <p>The specific value of an <code>attributeName</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AttributeValueBuilder {
     }
     /// <p>The specific value of an <code>attributeName</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The specific value of an <code>attributeName</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AttributeValueBuilder {
     }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).
     pub fn build(self) -> crate::types::AttributeValue {
-        crate::types::AttributeValue { value: self.value }
+        crate::types::AttributeValue {
+            value: self.value
+            ,
+        }
     }
 }
+

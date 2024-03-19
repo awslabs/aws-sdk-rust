@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLicenseConversionTaskInput {
+pub struct GetLicenseConversionTaskInput  {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
     pub license_conversion_task_id: ::std::option::Option<::std::string::String>,
 }
-impl GetLicenseConversionTaskInput {
+impl  GetLicenseConversionTaskInput  {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
-    pub fn license_conversion_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn license_conversion_task_id(&self) -> ::std::option::Option<& str> {
         self.license_conversion_task_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetLicenseConversionTaskInputBuilder {
     }
     /// <p>ID of the license type conversion task to retrieve information on.</p>
     pub fn set_license_conversion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_conversion_task_id = input;
-        self
+        self.license_conversion_task_id = input; self
     }
     /// <p>ID of the license type conversion task to retrieve information on.</p>
     pub fn get_license_conversion_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_conversion_task_id
     }
     /// Consumes the builder and constructs a [`GetLicenseConversionTaskInput`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput {
-            license_conversion_task_id: self.license_conversion_task_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput {
+                license_conversion_task_id: self.license_conversion_task_id
+                ,
+            }
+        )
     }
 }
+

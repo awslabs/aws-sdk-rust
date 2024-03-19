@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum FilterClause {
     /// <p>The 'and' search filter clause in Amazon DataZone.</p>
-    And(::std::vec::Vec<crate::types::FilterClause>),
+    And(::std::vec::Vec::<crate::types::FilterClause>),
     /// <p>A search filter in Amazon DataZone.</p>
     Filter(crate::types::Filter),
     /// <p>The 'or' search filter clause in Amazon DataZone.</p>
-    Or(::std::vec::Vec<crate::types::FilterClause>),
+    Or(::std::vec::Vec::<crate::types::FilterClause>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,12 +23,8 @@ pub enum FilterClause {
 impl FilterClause {
     /// Tries to convert the enum instance into [`And`](crate::types::FilterClause::And), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::FilterClause>, &Self> {
-        if let FilterClause::And(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_and(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::FilterClause>, &Self> {
+        if let FilterClause::And(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`And`](crate::types::FilterClause::And).
     pub fn is_and(&self) -> bool {
@@ -37,11 +33,7 @@ impl FilterClause {
     /// Tries to convert the enum instance into [`Filter`](crate::types::FilterClause::Filter), extracting the inner [`Filter`](crate::types::Filter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_filter(&self) -> ::std::result::Result<&crate::types::Filter, &Self> {
-        if let FilterClause::Filter(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FilterClause::Filter(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Filter`](crate::types::FilterClause::Filter).
     pub fn is_filter(&self) -> bool {
@@ -49,12 +41,8 @@ impl FilterClause {
     }
     /// Tries to convert the enum instance into [`Or`](crate::types::FilterClause::Or), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_or(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::FilterClause>, &Self> {
-        if let FilterClause::Or(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_or(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::FilterClause>, &Self> {
+        if let FilterClause::Or(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Or`](crate::types::FilterClause::Or).
     pub fn is_or(&self) -> bool {
@@ -65,3 +53,4 @@ impl FilterClause {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetReportsInput {
+pub struct BatchGetReportsInput  {
     /// <p>An array of ARNs that identify the <code>Report</code> objects to return.</p>
-    pub report_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub report_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetReportsInput {
+impl  BatchGetReportsInput  {
     /// <p>An array of ARNs that identify the <code>Report</code> objects to return.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_arns.is_none()`.
-    pub fn report_arns(&self) -> &[::std::string::String] {
-        self.report_arns.as_deref().unwrap_or_default()
+    pub fn report_arns(&self) -> & [::std::string::String] {
+        self.report_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetReportsInput {
@@ -25,7 +26,7 @@ impl BatchGetReportsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetReportsInputBuilder {
-    pub(crate) report_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) report_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetReportsInputBuilder {
     /// Appends an item to `report_arns`.
@@ -35,25 +36,26 @@ impl BatchGetReportsInputBuilder {
     /// <p>An array of ARNs that identify the <code>Report</code> objects to return.</p>
     pub fn report_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.report_arns.unwrap_or_default();
-        v.push(input.into());
-        self.report_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.report_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of ARNs that identify the <code>Report</code> objects to return.</p>
-    pub fn set_report_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.report_arns = input;
-        self
+    pub fn set_report_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.report_arns = input; self
     }
     /// <p>An array of ARNs that identify the <code>Report</code> objects to return.</p>
-    pub fn get_report_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_report_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.report_arns
     }
     /// Consumes the builder and constructs a [`BatchGetReportsInput`](crate::operation::batch_get_reports::BatchGetReportsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_reports::BatchGetReportsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_reports::BatchGetReportsInput {
-            report_arns: self.report_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_reports::BatchGetReportsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_reports::BatchGetReportsInput {
+                report_arns: self.report_arns
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>A structure that describes details for authentication that uses IAM.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamAuthenticationMethod {
+pub struct IamAuthenticationMethod  {
     /// <p>An IAM policy document in JSON.</p>
     pub actor_policy: ::aws_smithy_types::Document,
 }
-impl IamAuthenticationMethod {
+impl  IamAuthenticationMethod  {
     /// <p>An IAM policy document in JSON.</p>
-    pub fn actor_policy(&self) -> &::aws_smithy_types::Document {
+    pub fn actor_policy(&self) -> & ::aws_smithy_types::Document {
         &self.actor_policy
     }
 }
@@ -35,8 +35,7 @@ impl IamAuthenticationMethodBuilder {
     }
     /// <p>An IAM policy document in JSON.</p>
     pub fn set_actor_policy(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.actor_policy = input;
-        self
+        self.actor_policy = input; self
     }
     /// <p>An IAM policy document in JSON.</p>
     pub fn get_actor_policy(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -46,13 +45,15 @@ impl IamAuthenticationMethodBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`actor_policy`](crate::types::builders::IamAuthenticationMethodBuilder::actor_policy)
     pub fn build(self) -> ::std::result::Result<crate::types::IamAuthenticationMethod, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IamAuthenticationMethod {
-            actor_policy: self.actor_policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "actor_policy",
-                    "actor_policy was not specified but it is required when building IamAuthenticationMethod",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IamAuthenticationMethod {
+                actor_policy: self.actor_policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("actor_policy", "actor_policy was not specified but it is required when building IamAuthenticationMethod")
+                    )?
+                ,
+            }
+        )
     }
 }
+

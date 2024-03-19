@@ -3,7 +3,7 @@
 /// <p>The Amazon Resource Name (ARN) and other details of the Amazon CloudWatch Logs log group that Amazon Route&nbsp;53 is publishing logs to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLogsLogGroupArnConfigDetails {
+pub struct CloudWatchLogsLogGroupArnConfigDetails  {
     /// <p>The ARN of the CloudWatch Logs log group that Route&nbsp;53 is publishing logs to.</p>
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
@@ -11,17 +11,17 @@ pub struct CloudWatchLogsLogGroupArnConfigDetails {
     /// <p>The ID for a DNS query logging configuration.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl CloudWatchLogsLogGroupArnConfigDetails {
+impl  CloudWatchLogsLogGroupArnConfigDetails  {
     /// <p>The ARN of the CloudWatch Logs log group that Route&nbsp;53 is publishing logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The ID for a DNS query logging configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CloudWatchLogsLogGroupArnConfigDetailsBuilder {
     }
     /// <p>The ARN of the CloudWatch Logs log group that Route&nbsp;53 is publishing logs to.</p>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_log_group_arn = input;
-        self
+        self.cloud_watch_logs_log_group_arn = input; self
     }
     /// <p>The ARN of the CloudWatch Logs log group that Route&nbsp;53 is publishing logs to.</p>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CloudWatchLogsLogGroupArnConfigDetailsBuilder {
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl CloudWatchLogsLogGroupArnConfigDetailsBuilder {
     }
     /// <p>The ID for a DNS query logging configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID for a DNS query logging configuration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl CloudWatchLogsLogGroupArnConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`CloudWatchLogsLogGroupArnConfigDetails`](crate::types::CloudWatchLogsLogGroupArnConfigDetails).
     pub fn build(self) -> crate::types::CloudWatchLogsLogGroupArnConfigDetails {
         crate::types::CloudWatchLogsLogGroupArnConfigDetails {
-            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
-            hosted_zone_id: self.hosted_zone_id,
-            id: self.id,
+            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn
+            ,
+            hosted_zone_id: self.hosted_zone_id
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

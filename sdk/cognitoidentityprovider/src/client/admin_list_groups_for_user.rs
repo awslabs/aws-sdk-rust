@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`AdminListGroupsForUser`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`username(impl Into<String>)`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::set_username):<br>required: **true**<br><p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p><br>
     ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool.</p><br>
     ///   - [`limit(i32)`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::set_limit):<br>required: **false**<br><p>The limit of the request to list groups.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
-    /// - On success, responds with [`AdminListGroupsForUserOutput`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput) with field(s):
+                            /// - On success, responds with [`AdminListGroupsForUserOutput`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput) with field(s):
     ///   - [`groups(Option<Vec::<GroupType>>)`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput::groups): <p>The groups that the user belongs to.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<AdminListGroupsForUserError>`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError)
+                            /// - On failure, responds with [`SdkError<AdminListGroupsForUserError>`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError)
     pub fn admin_list_groups_for_user(&self) -> crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder {
-        crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserFluentBuilder::new(self.handle.clone())
+                            }
 }
+

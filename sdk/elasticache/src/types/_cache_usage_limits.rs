@@ -3,19 +3,19 @@
 /// <p>The usage limits for storage and ElastiCache Processing Units for the cache.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CacheUsageLimits {
+pub struct CacheUsageLimits  {
     /// <p>The maximum data storage limit in the cache, expressed in Gigabytes.</p>
     pub data_storage: ::std::option::Option<crate::types::DataStorage>,
     /// <p>The configuration for the number of ElastiCache Processing Units (ECPU) the cache can consume per second.</p>
     pub ecpu_per_second: ::std::option::Option<crate::types::EcpuPerSecond>,
 }
-impl CacheUsageLimits {
+impl  CacheUsageLimits  {
     /// <p>The maximum data storage limit in the cache, expressed in Gigabytes.</p>
-    pub fn data_storage(&self) -> ::std::option::Option<&crate::types::DataStorage> {
+    pub fn data_storage(&self) -> ::std::option::Option<& crate::types::DataStorage> {
         self.data_storage.as_ref()
     }
     /// <p>The configuration for the number of ElastiCache Processing Units (ECPU) the cache can consume per second.</p>
-    pub fn ecpu_per_second(&self) -> ::std::option::Option<&crate::types::EcpuPerSecond> {
+    pub fn ecpu_per_second(&self) -> ::std::option::Option<& crate::types::EcpuPerSecond> {
         self.ecpu_per_second.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CacheUsageLimitsBuilder {
     }
     /// <p>The maximum data storage limit in the cache, expressed in Gigabytes.</p>
     pub fn set_data_storage(mut self, input: ::std::option::Option<crate::types::DataStorage>) -> Self {
-        self.data_storage = input;
-        self
+        self.data_storage = input; self
     }
     /// <p>The maximum data storage limit in the cache, expressed in Gigabytes.</p>
     pub fn get_data_storage(&self) -> &::std::option::Option<crate::types::DataStorage> {
@@ -55,8 +54,7 @@ impl CacheUsageLimitsBuilder {
     }
     /// <p>The configuration for the number of ElastiCache Processing Units (ECPU) the cache can consume per second.</p>
     pub fn set_ecpu_per_second(mut self, input: ::std::option::Option<crate::types::EcpuPerSecond>) -> Self {
-        self.ecpu_per_second = input;
-        self
+        self.ecpu_per_second = input; self
     }
     /// <p>The configuration for the number of ElastiCache Processing Units (ECPU) the cache can consume per second.</p>
     pub fn get_ecpu_per_second(&self) -> &::std::option::Option<crate::types::EcpuPerSecond> {
@@ -65,8 +63,11 @@ impl CacheUsageLimitsBuilder {
     /// Consumes the builder and constructs a [`CacheUsageLimits`](crate::types::CacheUsageLimits).
     pub fn build(self) -> crate::types::CacheUsageLimits {
         crate::types::CacheUsageLimits {
-            data_storage: self.data_storage,
-            ecpu_per_second: self.ecpu_per_second,
+            data_storage: self.data_storage
+            ,
+            ecpu_per_second: self.ecpu_per_second
+            ,
         }
     }
 }
+

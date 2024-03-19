@@ -3,19 +3,19 @@
 /// <p>Describes a fleet error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetError {
+pub struct FleetError  {
     /// <p>The error code.</p>
     pub error_code: ::std::option::Option<crate::types::FleetErrorCode>,
     /// <p>The error message.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl FleetError {
+impl  FleetError  {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::FleetErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::FleetErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FleetErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::FleetErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::FleetErrorCode> {
@@ -55,8 +54,7 @@ impl FleetErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl FleetErrorBuilder {
     /// Consumes the builder and constructs a [`FleetError`](crate::types::FleetError).
     pub fn build(self) -> crate::types::FleetError {
         crate::types::FleetError {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

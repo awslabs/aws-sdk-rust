@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClusters`](crate::operation::list_clusters::builders::ListClustersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_clusters::builders::ListClustersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
-    /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
+                            /// - On success, responds with [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput) with field(s):
     ///   - [`clusters(Option<Vec::<Cluster>>)`](crate::operation::list_clusters::ListClustersOutput::clusters): <p>An array of the clusters in an account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters::ListClustersOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
+                            /// - On failure, responds with [`SdkError<ListClustersError>`](crate::operation::list_clusters::ListClustersError)
     pub fn list_clusters(&self) -> crate::operation::list_clusters::builders::ListClustersFluentBuilder {
-        crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_clusters::builders::ListClustersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

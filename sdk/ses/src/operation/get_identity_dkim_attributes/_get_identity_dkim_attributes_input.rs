@@ -3,16 +3,17 @@
 /// <p>Represents a request for the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this request also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published. For more information about Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdentityDkimAttributesInput {
+pub struct GetIdentityDkimAttributesInput  {
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-    pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub identities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetIdentityDkimAttributesInput {
+impl  GetIdentityDkimAttributesInput  {
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identities.is_none()`.
-    pub fn identities(&self) -> &[::std::string::String] {
-        self.identities.as_deref().unwrap_or_default()
+    pub fn identities(&self) -> & [::std::string::String] {
+        self.identities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetIdentityDkimAttributesInput {
@@ -26,7 +27,7 @@ impl GetIdentityDkimAttributesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesInputBuilder {
-    pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) identities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetIdentityDkimAttributesInputBuilder {
     /// Appends an item to `identities`.
@@ -36,26 +37,26 @@ impl GetIdentityDkimAttributesInputBuilder {
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
     pub fn identities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identities.unwrap_or_default();
-        v.push(input.into());
-        self.identities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.identities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.identities = input;
-        self
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.identities = input; self
     }
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.identities
     }
     /// Consumes the builder and constructs a [`GetIdentityDkimAttributesInput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput { identities: self.identities })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput {
+                identities: self.identities
+                ,
+            }
+        )
     }
 }
+

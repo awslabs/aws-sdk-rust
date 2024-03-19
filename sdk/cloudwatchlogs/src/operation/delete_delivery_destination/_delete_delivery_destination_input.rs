@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeliveryDestinationInput {
+pub struct DeleteDeliveryDestinationInput  {
     /// <p>The name of the delivery destination that you want to delete. You can find a list of delivery destionation names by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html">DescribeDeliveryDestinations</a> operation.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDeliveryDestinationInput {
+impl  DeleteDeliveryDestinationInput  {
     /// <p>The name of the delivery destination that you want to delete. You can find a list of delivery destionation names by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html">DescribeDeliveryDestinations</a> operation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteDeliveryDestinationInputBuilder {
     }
     /// <p>The name of the delivery destination that you want to delete. You can find a list of delivery destionation names by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html">DescribeDeliveryDestinations</a> operation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the delivery destination that you want to delete. You can find a list of delivery destionation names by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveryDestinations.html">DescribeDeliveryDestinations</a> operation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteDeliveryDestinationInput`](crate::operation::delete_delivery_destination::DeleteDeliveryDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_delivery_destination::DeleteDeliveryDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_delivery_destination::DeleteDeliveryDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

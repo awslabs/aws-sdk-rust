@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSubnetGroupsOutput {
+pub struct DescribeSubnetGroupsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
-    pub subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>>,
+    pub subnet_groups: ::std::option::Option<::std::vec::Vec::<crate::types::SubnetGroup>>,
     _request_id: Option<String>,
 }
-impl DescribeSubnetGroupsOutput {
+impl  DescribeSubnetGroupsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_groups.is_none()`.
-    pub fn subnet_groups(&self) -> &[crate::types::SubnetGroup] {
-        self.subnet_groups.as_deref().unwrap_or_default()
+    pub fn subnet_groups(&self) -> & [crate::types::SubnetGroup] {
+        self.subnet_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSubnetGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSubnetGroupsOutput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput).
     pub fn builder() -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeSubnetGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubnetGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>>,
+    pub(crate) subnet_groups: ::std::option::Option<::std::vec::Vec::<crate::types::SubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeSubnetGroupsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeSubnetGroupsOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeSubnetGroupsOutputBuilder {
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
     pub fn subnet_groups(mut self, input: crate::types::SubnetGroup) -> Self {
         let mut v = self.subnet_groups.unwrap_or_default();
-        v.push(input);
-        self.subnet_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subnet_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
-    pub fn set_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>>) -> Self {
-        self.subnet_groups = input;
-        self
+    pub fn set_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubnetGroup>>) -> Self {
+        self.subnet_groups = input; self
     }
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
-    pub fn get_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>> {
+    pub fn get_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubnetGroup>> {
         &self.subnet_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSubnetGroupsOutput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput).
     pub fn build(self) -> crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput {
         crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput {
-            next_token: self.next_token,
-            subnet_groups: self.subnet_groups,
+            next_token: self.next_token
+            ,
+            subnet_groups: self.subnet_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

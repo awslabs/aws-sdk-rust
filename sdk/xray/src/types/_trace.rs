@@ -3,7 +3,7 @@
 /// <p>A collection of segment documents with matching trace IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Trace {
+pub struct Trace  {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
@@ -11,11 +11,11 @@ pub struct Trace {
     /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     pub limit_exceeded: ::std::option::Option<bool>,
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-    pub segments: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>,
+    pub segments: ::std::option::Option<::std::vec::Vec::<crate::types::Segment>>,
 }
-impl Trace {
+impl  Trace  {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
@@ -27,10 +27,11 @@ impl Trace {
         self.limit_exceeded
     }
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segments.is_none()`.
-    pub fn segments(&self) -> &[crate::types::Segment] {
-        self.segments.as_deref().unwrap_or_default()
+    pub fn segments(&self) -> & [crate::types::Segment] {
+        self.segments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Trace {
@@ -47,7 +48,7 @@ pub struct TraceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<f64>,
     pub(crate) limit_exceeded: ::std::option::Option<bool>,
-    pub(crate) segments: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>,
+    pub(crate) segments: ::std::option::Option<::std::vec::Vec::<crate::types::Segment>>,
 }
 impl TraceBuilder {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
@@ -57,8 +58,7 @@ impl TraceBuilder {
     }
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl TraceBuilder {
     }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub fn get_duration(&self) -> &::std::option::Option<f64> {
@@ -85,8 +84,7 @@ impl TraceBuilder {
     }
     /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     pub fn set_limit_exceeded(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.limit_exceeded = input;
-        self
+        self.limit_exceeded = input; self
     }
     /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     pub fn get_limit_exceeded(&self) -> &::std::option::Option<bool> {
@@ -99,26 +97,30 @@ impl TraceBuilder {
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
     pub fn segments(mut self, input: crate::types::Segment) -> Self {
         let mut v = self.segments.unwrap_or_default();
-        v.push(input);
-        self.segments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>) -> Self {
-        self.segments = input;
-        self
+    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Segment>>) -> Self {
+        self.segments = input; self
     }
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Segment>> {
+    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Segment>> {
         &self.segments
     }
     /// Consumes the builder and constructs a [`Trace`](crate::types::Trace).
     pub fn build(self) -> crate::types::Trace {
         crate::types::Trace {
-            id: self.id,
-            duration: self.duration,
-            limit_exceeded: self.limit_exceeded,
-            segments: self.segments,
+            id: self.id
+            ,
+            duration: self.duration
+            ,
+            limit_exceeded: self.limit_exceeded
+            ,
+            segments: self.segments
+            ,
         }
     }
 }
+

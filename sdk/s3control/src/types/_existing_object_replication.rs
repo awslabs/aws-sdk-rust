@@ -5,13 +5,13 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExistingObjectReplication {
+pub struct ExistingObjectReplication  {
     /// <p>Specifies whether Amazon S3 replicates existing source bucket objects.</p>
     pub status: crate::types::ExistingObjectReplicationStatus,
 }
-impl ExistingObjectReplication {
+impl  ExistingObjectReplication  {
     /// <p>Specifies whether Amazon S3 replicates existing source bucket objects.</p>
-    pub fn status(&self) -> &crate::types::ExistingObjectReplicationStatus {
+    pub fn status(&self) -> & crate::types::ExistingObjectReplicationStatus {
         &self.status
     }
 }
@@ -37,8 +37,7 @@ impl ExistingObjectReplicationBuilder {
     }
     /// <p>Specifies whether Amazon S3 replicates existing source bucket objects.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExistingObjectReplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether Amazon S3 replicates existing source bucket objects.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExistingObjectReplicationStatus> {
@@ -48,13 +47,15 @@ impl ExistingObjectReplicationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::ExistingObjectReplicationBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ExistingObjectReplication, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExistingObjectReplication {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ExistingObjectReplication",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExistingObjectReplication {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ExistingObjectReplication")
+                    )?
+                ,
+            }
+        )
     }
 }
+

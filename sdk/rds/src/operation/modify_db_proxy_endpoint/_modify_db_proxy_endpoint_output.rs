@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbProxyEndpointOutput {
+pub struct ModifyDbProxyEndpointOutput  {
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
     pub db_proxy_endpoint: ::std::option::Option<crate::types::DbProxyEndpoint>,
     _request_id: Option<String>,
 }
-impl ModifyDbProxyEndpointOutput {
+impl  ModifyDbProxyEndpointOutput  {
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
-    pub fn db_proxy_endpoint(&self) -> ::std::option::Option<&crate::types::DbProxyEndpoint> {
+    pub fn db_proxy_endpoint(&self) -> ::std::option::Option<& crate::types::DbProxyEndpoint> {
         self.db_proxy_endpoint.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyDbProxyEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyDbProxyEndpointOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbProxyEndpointOutput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput).
     pub fn builder() -> crate::operation::modify_db_proxy_endpoint::builders::ModifyDbProxyEndpointOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyDbProxyEndpointOutputBuilder {
     }
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
     pub fn set_db_proxy_endpoint(mut self, input: ::std::option::Option<crate::types::DbProxyEndpoint>) -> Self {
-        self.db_proxy_endpoint = input;
-        self
+        self.db_proxy_endpoint = input; self
     }
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
     pub fn get_db_proxy_endpoint(&self) -> &::std::option::Option<crate::types::DbProxyEndpoint> {
         &self.db_proxy_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyDbProxyEndpointOutput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput).
     pub fn build(self) -> crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput {
         crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput {
-            db_proxy_endpoint: self.db_proxy_endpoint,
+            db_proxy_endpoint: self.db_proxy_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteScheduledAuditInput {
+pub struct DeleteScheduledAuditInput  {
     /// <p>The name of the scheduled audit you want to delete.</p>
     pub scheduled_audit_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteScheduledAuditInput {
+impl  DeleteScheduledAuditInput  {
     /// <p>The name of the scheduled audit you want to delete.</p>
-    pub fn scheduled_audit_name(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_audit_name(&self) -> ::std::option::Option<& str> {
         self.scheduled_audit_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteScheduledAuditInputBuilder {
     }
     /// <p>The name of the scheduled audit you want to delete.</p>
     pub fn set_scheduled_audit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_audit_name = input;
-        self
+        self.scheduled_audit_name = input; self
     }
     /// <p>The name of the scheduled audit you want to delete.</p>
     pub fn get_scheduled_audit_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_audit_name
     }
     /// Consumes the builder and constructs a [`DeleteScheduledAuditInput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput {
-            scheduled_audit_name: self.scheduled_audit_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput {
+                scheduled_audit_name: self.scheduled_audit_name
+                ,
+            }
+        )
     }
 }
+

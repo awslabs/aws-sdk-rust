@@ -3,22 +3,23 @@
 /// <p>Object that describes which renditions should be recorded for a stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenditionConfiguration {
+pub struct RenditionConfiguration  {
     /// <p>Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.</p>
     pub rendition_selection: ::std::option::Option<crate::types::RenditionConfigurationRenditionSelection>,
     /// <p>Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.</p>
-    pub renditions: ::std::option::Option<::std::vec::Vec<crate::types::RenditionConfigurationRendition>>,
+    pub renditions: ::std::option::Option<::std::vec::Vec::<crate::types::RenditionConfigurationRendition>>,
 }
-impl RenditionConfiguration {
+impl  RenditionConfiguration  {
     /// <p>Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.</p>
-    pub fn rendition_selection(&self) -> ::std::option::Option<&crate::types::RenditionConfigurationRenditionSelection> {
+    pub fn rendition_selection(&self) -> ::std::option::Option<& crate::types::RenditionConfigurationRenditionSelection> {
         self.rendition_selection.as_ref()
     }
     /// <p>Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.renditions.is_none()`.
-    pub fn renditions(&self) -> &[crate::types::RenditionConfigurationRendition] {
-        self.renditions.as_deref().unwrap_or_default()
+    pub fn renditions(&self) -> & [crate::types::RenditionConfigurationRendition] {
+        self.renditions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RenditionConfiguration {
@@ -33,7 +34,7 @@ impl RenditionConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenditionConfigurationBuilder {
     pub(crate) rendition_selection: ::std::option::Option<crate::types::RenditionConfigurationRenditionSelection>,
-    pub(crate) renditions: ::std::option::Option<::std::vec::Vec<crate::types::RenditionConfigurationRendition>>,
+    pub(crate) renditions: ::std::option::Option<::std::vec::Vec::<crate::types::RenditionConfigurationRendition>>,
 }
 impl RenditionConfigurationBuilder {
     /// <p>Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.</p>
@@ -43,8 +44,7 @@ impl RenditionConfigurationBuilder {
     }
     /// <p>Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.</p>
     pub fn set_rendition_selection(mut self, input: ::std::option::Option<crate::types::RenditionConfigurationRenditionSelection>) -> Self {
-        self.rendition_selection = input;
-        self
+        self.rendition_selection = input; self
     }
     /// <p>Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.</p>
     pub fn get_rendition_selection(&self) -> &::std::option::Option<crate::types::RenditionConfigurationRenditionSelection> {
@@ -57,24 +57,26 @@ impl RenditionConfigurationBuilder {
     /// <p>Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.</p>
     pub fn renditions(mut self, input: crate::types::RenditionConfigurationRendition) -> Self {
         let mut v = self.renditions.unwrap_or_default();
-        v.push(input);
-        self.renditions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.renditions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.</p>
-    pub fn set_renditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RenditionConfigurationRendition>>) -> Self {
-        self.renditions = input;
-        self
+    pub fn set_renditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RenditionConfigurationRendition>>) -> Self {
+        self.renditions = input; self
     }
     /// <p>Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.</p>
-    pub fn get_renditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RenditionConfigurationRendition>> {
+    pub fn get_renditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RenditionConfigurationRendition>> {
         &self.renditions
     }
     /// Consumes the builder and constructs a [`RenditionConfiguration`](crate::types::RenditionConfiguration).
     pub fn build(self) -> crate::types::RenditionConfiguration {
         crate::types::RenditionConfiguration {
-            rendition_selection: self.rendition_selection,
-            renditions: self.renditions,
+            rendition_selection: self.rendition_selection
+            ,
+            renditions: self.renditions
+            ,
         }
     }
 }
+

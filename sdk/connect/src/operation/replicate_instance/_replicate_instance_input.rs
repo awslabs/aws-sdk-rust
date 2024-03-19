@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ReplicateInstanceInput {
+pub struct ReplicateInstanceInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
@@ -12,25 +12,25 @@ pub struct ReplicateInstanceInput {
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
     pub replica_alias: ::std::option::Option<::std::string::String>,
 }
-impl ReplicateInstanceInput {
+impl  ReplicateInstanceInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
-    pub fn replica_region(&self) -> ::std::option::Option<&str> {
+    pub fn replica_region(&self) -> ::std::option::Option<& str> {
         self.replica_region.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
-    pub fn replica_alias(&self) -> ::std::option::Option<&str> {
+    pub fn replica_alias(&self) -> ::std::option::Option<& str> {
         self.replica_alias.as_deref()
     }
 }
-impl ::std::fmt::Debug for ReplicateInstanceInput {
+impl  ::std::fmt::Debug for ReplicateInstanceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicateInstanceInput");
         formatter.field("instance_id", &self.instance_id);
@@ -65,8 +65,7 @@ impl ReplicateInstanceInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl ReplicateInstanceInputBuilder {
     }
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
     pub fn set_replica_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_region = input;
-        self
+        self.replica_region = input; self
     }
     /// <p>The Amazon Web Services Region where to replicate the Amazon Connect instance.</p>
     pub fn get_replica_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl ReplicateInstanceInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,23 +106,26 @@ impl ReplicateInstanceInputBuilder {
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
     pub fn set_replica_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_alias = input;
-        self
+        self.replica_alias = input; self
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
     pub fn get_replica_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.replica_alias
     }
     /// Consumes the builder and constructs a [`ReplicateInstanceInput`](crate::operation::replicate_instance::ReplicateInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::replicate_instance::ReplicateInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::replicate_instance::ReplicateInstanceInput {
-            instance_id: self.instance_id,
-            replica_region: self.replica_region,
-            client_token: self.client_token,
-            replica_alias: self.replica_alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::replicate_instance::ReplicateInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::replicate_instance::ReplicateInstanceInput {
+                instance_id: self.instance_id
+                ,
+                replica_region: self.replica_region
+                ,
+                client_token: self.client_token
+                ,
+                replica_alias: self.replica_alias
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ReplicateInstanceInputBuilder {
@@ -138,3 +138,4 @@ impl ::std::fmt::Debug for ReplicateInstanceInputBuilder {
         formatter.finish()
     }
 }
+

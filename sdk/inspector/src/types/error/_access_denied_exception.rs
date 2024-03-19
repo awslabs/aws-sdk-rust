@@ -3,7 +3,7 @@
 /// <p>You do not have required permissions to access the requested resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     /// <p>Details of the exception error.</p>
     pub message: ::std::string::String,
     /// <p>Code that indicates the type of error that is generated.</p>
@@ -12,9 +12,9 @@ pub struct AccessDeniedException {
     pub can_retry: bool,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl AccessDeniedException {
+impl  AccessDeniedException  {
     /// <p>Code that indicates the type of error that is generated.</p>
-    pub fn error_code(&self) -> &crate::types::AccessDeniedErrorCode {
+    pub fn error_code(&self) -> & crate::types::AccessDeniedErrorCode {
         &self.error_code
     }
     /// <p>You can immediately retry your request.</p>
@@ -24,14 +24,12 @@ impl AccessDeniedException {
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "AccessDeniedException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -45,9 +43,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::AccessDeniedExc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AccessDeniedException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::types::error::AccessDeniedException).
@@ -74,8 +70,7 @@ impl AccessDeniedExceptionBuilder {
     }
     /// <p>Details of the exception error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Details of the exception error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl AccessDeniedExceptionBuilder {
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::AccessDeniedErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::AccessDeniedErrorCode> {
@@ -104,50 +98,49 @@ impl AccessDeniedExceptionBuilder {
     }
     /// <p>You can immediately retry your request.</p>
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_retry = input;
-        self
+        self.can_retry = input; self
     }
     /// <p>You can immediately retry your request.</p>
     pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
         &self.can_retry
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`AccessDeniedException`](crate::types::error::AccessDeniedException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::AccessDeniedExceptionBuilder::message)
     /// - [`error_code`](crate::types::error::builders::AccessDeniedExceptionBuilder::error_code)
     /// - [`can_retry`](crate::types::error::builders::AccessDeniedExceptionBuilder::can_retry)
     pub fn build(self) -> ::std::result::Result<crate::types::error::AccessDeniedException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::AccessDeniedException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building AccessDeniedException",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building AccessDeniedException",
-                )
-            })?,
-            can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "can_retry",
-                    "can_retry was not specified but it is required when building AccessDeniedException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::AccessDeniedException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building AccessDeniedException")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building AccessDeniedException")
+                    )?
+                ,
+                can_retry: self.can_retry
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("can_retry", "can_retry was not specified but it is required when building AccessDeniedException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

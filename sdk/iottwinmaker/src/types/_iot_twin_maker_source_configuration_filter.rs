@@ -22,11 +22,7 @@ impl IotTwinMakerSourceConfigurationFilter {
     /// Tries to convert the enum instance into [`FilterByComponentType`](crate::types::IotTwinMakerSourceConfigurationFilter::FilterByComponentType), extracting the inner [`FilterByComponentType`](crate::types::FilterByComponentType).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_filter_by_component_type(&self) -> ::std::result::Result<&crate::types::FilterByComponentType, &Self> {
-        if let IotTwinMakerSourceConfigurationFilter::FilterByComponentType(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let IotTwinMakerSourceConfigurationFilter::FilterByComponentType(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FilterByComponentType`](crate::types::IotTwinMakerSourceConfigurationFilter::FilterByComponentType).
     pub fn is_filter_by_component_type(&self) -> bool {
@@ -35,11 +31,7 @@ impl IotTwinMakerSourceConfigurationFilter {
     /// Tries to convert the enum instance into [`FilterByEntity`](crate::types::IotTwinMakerSourceConfigurationFilter::FilterByEntity), extracting the inner [`FilterByEntity`](crate::types::FilterByEntity).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_filter_by_entity(&self) -> ::std::result::Result<&crate::types::FilterByEntity, &Self> {
-        if let IotTwinMakerSourceConfigurationFilter::FilterByEntity(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let IotTwinMakerSourceConfigurationFilter::FilterByEntity(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FilterByEntity`](crate::types::IotTwinMakerSourceConfigurationFilter::FilterByEntity).
     pub fn is_filter_by_entity(&self) -> bool {
@@ -50,3 +42,4 @@ impl IotTwinMakerSourceConfigurationFilter {
         matches!(self, Self::Unknown)
     }
 }
+

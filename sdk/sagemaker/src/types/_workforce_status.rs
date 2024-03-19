@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let workforcestatus = unimplemented!();
 /// match workforcestatus {
@@ -33,16 +33,14 @@
 /// Specifically, when `workforcestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorkforceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum WorkforceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -56,70 +54,71 @@ pub enum WorkforceStatus {
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for WorkforceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => WorkforceStatus::Active,
-            "Deleting" => WorkforceStatus::Deleting,
-            "Failed" => WorkforceStatus::Failed,
-            "Initializing" => WorkforceStatus::Initializing,
-            "Updating" => WorkforceStatus::Updating,
-            other => WorkforceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Active" => WorkforceStatus::Active,
+"Deleting" => WorkforceStatus::Deleting,
+"Failed" => WorkforceStatus::Failed,
+"Initializing" => WorkforceStatus::Initializing,
+"Updating" => WorkforceStatus::Updating,
+other => WorkforceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for WorkforceStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(WorkforceStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(WorkforceStatus::from(s))
+                    }
+                }
 impl WorkforceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorkforceStatus::Active => "Active",
-            WorkforceStatus::Deleting => "Deleting",
-            WorkforceStatus::Failed => "Failed",
-            WorkforceStatus::Initializing => "Initializing",
-            WorkforceStatus::Updating => "Updating",
-            WorkforceStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Active", "Deleting", "Failed", "Initializing", "Updating"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorkforceStatus::Active => "Active",
+    WorkforceStatus::Deleting => "Deleting",
+    WorkforceStatus::Failed => "Failed",
+    WorkforceStatus::Initializing => "Initializing",
+    WorkforceStatus::Updating => "Updating",
+    WorkforceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Deleting", "Failed", "Initializing", "Updating"]
+                }
+            }
 impl ::std::convert::AsRef<str> for WorkforceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl WorkforceStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for WorkforceStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            WorkforceStatus::Active => write!(f, "Active"),
-            WorkforceStatus::Deleting => write!(f, "Deleting"),
-            WorkforceStatus::Failed => write!(f, "Failed"),
-            WorkforceStatus::Initializing => write!(f, "Initializing"),
-            WorkforceStatus::Updating => write!(f, "Updating"),
-            WorkforceStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                WorkforceStatus::Active => write!(f, "Active"),
+WorkforceStatus::Deleting => write!(f, "Deleting"),
+WorkforceStatus::Failed => write!(f, "Failed"),
+WorkforceStatus::Initializing => write!(f, "Initializing"),
+WorkforceStatus::Updating => write!(f, "Updating"),
+WorkforceStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

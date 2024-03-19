@@ -3,13 +3,13 @@
 /// <p>A user object that contains the metadata and attributes for a specified user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct User {
+pub struct User  {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a user in the identity store.</p>
     pub user_id: ::std::string::String,
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
+    pub external_ids: ::std::option::Option<::std::vec::Vec::<crate::types::ExternalId>>,
     /// <p>An object containing the name of the user.</p>
     pub name: ::std::option::Option<crate::types::Name>,
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
@@ -19,11 +19,11 @@ pub struct User {
     /// <p>A string containing a URL that might be associated with the user.</p>
     pub profile_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub emails: ::std::option::Option<::std::vec::Vec<crate::types::Email>>,
+    pub emails: ::std::option::Option<::std::vec::Vec::<crate::types::Email>>,
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
+    pub addresses: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>,
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
+    pub phone_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumber>>,
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub user_type: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
@@ -37,83 +37,85 @@ pub struct User {
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::string::String,
 }
-impl User {
+impl  User  {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> & str {
+        use std::ops::Deref; self.user_id.deref()
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_ids.is_none()`.
-    pub fn external_ids(&self) -> &[crate::types::ExternalId] {
-        self.external_ids.as_deref().unwrap_or_default()
+    pub fn external_ids(&self) -> & [crate::types::ExternalId] {
+        self.external_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object containing the name of the user.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::Name> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::Name> {
         self.name.as_ref()
     }
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A string containing an alternate name for the user.</p>
-    pub fn nick_name(&self) -> ::std::option::Option<&str> {
+    pub fn nick_name(&self) -> ::std::option::Option<& str> {
         self.nick_name.as_deref()
     }
     /// <p>A string containing a URL that might be associated with the user.</p>
-    pub fn profile_url(&self) -> ::std::option::Option<&str> {
+    pub fn profile_url(&self) -> ::std::option::Option<& str> {
         self.profile_url.as_deref()
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emails.is_none()`.
-    pub fn emails(&self) -> &[crate::types::Email] {
-        self.emails.as_deref().unwrap_or_default()
+    pub fn emails(&self) -> & [crate::types::Email] {
+        self.emails.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
-    pub fn addresses(&self) -> &[crate::types::Address] {
-        self.addresses.as_deref().unwrap_or_default()
+    pub fn addresses(&self) -> & [crate::types::Address] {
+        self.addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
-    pub fn phone_numbers(&self) -> &[crate::types::PhoneNumber] {
-        self.phone_numbers.as_deref().unwrap_or_default()
+    pub fn phone_numbers(&self) -> & [crate::types::PhoneNumber] {
+        self.phone_numbers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
-    pub fn user_type(&self) -> ::std::option::Option<&str> {
+    pub fn user_type(&self) -> ::std::option::Option<& str> {
         self.user_type.as_deref()
     }
     /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
-    pub fn preferred_language(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_language(&self) -> ::std::option::Option<& str> {
         self.preferred_language.as_deref()
     }
     /// <p>A string containing the geographical region or location of the user.</p>
-    pub fn locale(&self) -> ::std::option::Option<&str> {
+    pub fn locale(&self) -> ::std::option::Option<& str> {
         self.locale.as_deref()
     }
     /// <p>A string containing the time zone of the user.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    pub fn identity_store_id(&self) -> & str {
+        use std::ops::Deref; self.identity_store_id.deref()
     }
 }
-impl ::std::fmt::Debug for User {
+impl  ::std::fmt::Debug for User  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -148,14 +150,14 @@ impl User {
 pub struct UserBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
+    pub(crate) external_ids: ::std::option::Option<::std::vec::Vec::<crate::types::ExternalId>>,
     pub(crate) name: ::std::option::Option<crate::types::Name>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) nick_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_url: ::std::option::Option<::std::string::String>,
-    pub(crate) emails: ::std::option::Option<::std::vec::Vec<crate::types::Email>>,
-    pub(crate) addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
-    pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
+    pub(crate) emails: ::std::option::Option<::std::vec::Vec::<crate::types::Email>>,
+    pub(crate) addresses: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>,
+    pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumber>>,
     pub(crate) user_type: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_language: ::std::option::Option<::std::string::String>,
@@ -171,8 +173,7 @@ impl UserBuilder {
     }
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +187,7 @@ impl UserBuilder {
     }
     /// <p>The identifier for a user in the identity store.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier for a user in the identity store.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,17 +200,16 @@ impl UserBuilder {
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     pub fn external_ids(mut self, input: crate::types::ExternalId) -> Self {
         let mut v = self.external_ids.unwrap_or_default();
-        v.push(input);
-        self.external_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.external_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn set_external_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>) -> Self {
-        self.external_ids = input;
-        self
+    pub fn set_external_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExternalId>>) -> Self {
+        self.external_ids = input; self
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn get_external_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalId>> {
+    pub fn get_external_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExternalId>> {
         &self.external_ids
     }
     /// <p>An object containing the name of the user.</p>
@@ -220,8 +219,7 @@ impl UserBuilder {
     }
     /// <p>An object containing the name of the user.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::Name>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An object containing the name of the user.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::Name> {
@@ -234,8 +232,7 @@ impl UserBuilder {
     }
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A string containing the name of the user that is formatted for display when the user is referenced. For example, "John Doe."</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +245,7 @@ impl UserBuilder {
     }
     /// <p>A string containing an alternate name for the user.</p>
     pub fn set_nick_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nick_name = input;
-        self
+        self.nick_name = input; self
     }
     /// <p>A string containing an alternate name for the user.</p>
     pub fn get_nick_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,8 +258,7 @@ impl UserBuilder {
     }
     /// <p>A string containing a URL that might be associated with the user.</p>
     pub fn set_profile_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_url = input;
-        self
+        self.profile_url = input; self
     }
     /// <p>A string containing a URL that might be associated with the user.</p>
     pub fn get_profile_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,17 +271,16 @@ impl UserBuilder {
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
     pub fn emails(mut self, input: crate::types::Email) -> Self {
         let mut v = self.emails.unwrap_or_default();
-        v.push(input);
-        self.emails = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.emails = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub fn set_emails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Email>>) -> Self {
-        self.emails = input;
-        self
+    pub fn set_emails(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Email>>) -> Self {
+        self.emails = input; self
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub fn get_emails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Email>> {
+    pub fn get_emails(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Email>> {
         &self.emails
     }
     /// Appends an item to `addresses`.
@@ -296,17 +290,16 @@ impl UserBuilder {
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
     pub fn addresses(mut self, input: crate::types::Address) -> Self {
         let mut v = self.addresses.unwrap_or_default();
-        v.push(input);
-        self.addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>) -> Self {
-        self.addresses = input;
-        self
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Address>>) -> Self {
+        self.addresses = input; self
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Address>> {
         &self.addresses
     }
     /// Appends an item to `phone_numbers`.
@@ -316,17 +309,16 @@ impl UserBuilder {
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
     pub fn phone_numbers(mut self, input: crate::types::PhoneNumber) -> Self {
         let mut v = self.phone_numbers.unwrap_or_default();
-        v.push(input);
-        self.phone_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phone_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
-        self.phone_numbers = input;
-        self
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumber>>) -> Self {
+        self.phone_numbers = input; self
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumber>> {
         &self.phone_numbers
     }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
@@ -336,8 +328,7 @@ impl UserBuilder {
     }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn set_user_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn get_user_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,8 +341,7 @@ impl UserBuilder {
     }
     /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -364,8 +354,7 @@ impl UserBuilder {
     }
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
     pub fn set_preferred_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_language = input;
-        self
+        self.preferred_language = input; self
     }
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
     pub fn get_preferred_language(&self) -> &::std::option::Option<::std::string::String> {
@@ -378,8 +367,7 @@ impl UserBuilder {
     }
     /// <p>A string containing the geographical region or location of the user.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>A string containing the geographical region or location of the user.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
@@ -392,8 +380,7 @@ impl UserBuilder {
     }
     /// <p>A string containing the time zone of the user.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>A string containing the time zone of the user.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -407,8 +394,7 @@ impl UserBuilder {
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -419,34 +405,48 @@ impl UserBuilder {
     /// - [`user_id`](crate::types::builders::UserBuilder::user_id)
     /// - [`identity_store_id`](crate::types::builders::UserBuilder::identity_store_id)
     pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::User {
-            user_name: self.user_name,
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building User",
-                )
-            })?,
-            external_ids: self.external_ids,
-            name: self.name,
-            display_name: self.display_name,
-            nick_name: self.nick_name,
-            profile_url: self.profile_url,
-            emails: self.emails,
-            addresses: self.addresses,
-            phone_numbers: self.phone_numbers,
-            user_type: self.user_type,
-            title: self.title,
-            preferred_language: self.preferred_language,
-            locale: self.locale,
-            timezone: self.timezone,
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building User",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::User {
+                user_name: self.user_name
+                ,
+                user_id: self.user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "user_id was not specified but it is required when building User")
+                    )?
+                ,
+                external_ids: self.external_ids
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                nick_name: self.nick_name
+                ,
+                profile_url: self.profile_url
+                ,
+                emails: self.emails
+                ,
+                addresses: self.addresses
+                ,
+                phone_numbers: self.phone_numbers
+                ,
+                user_type: self.user_type
+                ,
+                title: self.title
+                ,
+                preferred_language: self.preferred_language
+                ,
+                locale: self.locale
+                ,
+                timezone: self.timezone
+                ,
+                identity_store_id: self.identity_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identity_store_id", "identity_store_id was not specified but it is required when building User")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UserBuilder {
@@ -471,3 +471,4 @@ impl ::std::fmt::Debug for UserBuilder {
         formatter.finish()
     }
 }
+

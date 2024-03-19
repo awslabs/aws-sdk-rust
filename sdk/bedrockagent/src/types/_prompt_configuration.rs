@@ -3,7 +3,7 @@
 /// BasePromptConfiguration per Prompt Type.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PromptConfiguration {
+pub struct PromptConfiguration  {
     /// Prompt Type.
     pub prompt_type: ::std::option::Option<crate::types::PromptType>,
     /// Creation Mode for Prompt Configuration.
@@ -17,29 +17,29 @@ pub struct PromptConfiguration {
     /// Creation Mode for Prompt Configuration.
     pub parser_mode: ::std::option::Option<crate::types::CreationMode>,
 }
-impl PromptConfiguration {
+impl  PromptConfiguration  {
     /// Prompt Type.
-    pub fn prompt_type(&self) -> ::std::option::Option<&crate::types::PromptType> {
+    pub fn prompt_type(&self) -> ::std::option::Option<& crate::types::PromptType> {
         self.prompt_type.as_ref()
     }
     /// Creation Mode for Prompt Configuration.
-    pub fn prompt_creation_mode(&self) -> ::std::option::Option<&crate::types::CreationMode> {
+    pub fn prompt_creation_mode(&self) -> ::std::option::Option<& crate::types::CreationMode> {
         self.prompt_creation_mode.as_ref()
     }
     /// Prompt State.
-    pub fn prompt_state(&self) -> ::std::option::Option<&crate::types::PromptState> {
+    pub fn prompt_state(&self) -> ::std::option::Option<& crate::types::PromptState> {
         self.prompt_state.as_ref()
     }
     /// Base Prompt Template.
-    pub fn base_prompt_template(&self) -> ::std::option::Option<&str> {
+    pub fn base_prompt_template(&self) -> ::std::option::Option<& str> {
         self.base_prompt_template.as_deref()
     }
     /// Configuration for inference in prompt configuration
-    pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::InferenceConfiguration> {
+    pub fn inference_configuration(&self) -> ::std::option::Option<& crate::types::InferenceConfiguration> {
         self.inference_configuration.as_ref()
     }
     /// Creation Mode for Prompt Configuration.
-    pub fn parser_mode(&self) -> ::std::option::Option<&crate::types::CreationMode> {
+    pub fn parser_mode(&self) -> ::std::option::Option<& crate::types::CreationMode> {
         self.parser_mode.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl PromptConfigurationBuilder {
     }
     /// Prompt Type.
     pub fn set_prompt_type(mut self, input: ::std::option::Option<crate::types::PromptType>) -> Self {
-        self.prompt_type = input;
-        self
+        self.prompt_type = input; self
     }
     /// Prompt Type.
     pub fn get_prompt_type(&self) -> &::std::option::Option<crate::types::PromptType> {
@@ -83,8 +82,7 @@ impl PromptConfigurationBuilder {
     }
     /// Creation Mode for Prompt Configuration.
     pub fn set_prompt_creation_mode(mut self, input: ::std::option::Option<crate::types::CreationMode>) -> Self {
-        self.prompt_creation_mode = input;
-        self
+        self.prompt_creation_mode = input; self
     }
     /// Creation Mode for Prompt Configuration.
     pub fn get_prompt_creation_mode(&self) -> &::std::option::Option<crate::types::CreationMode> {
@@ -97,8 +95,7 @@ impl PromptConfigurationBuilder {
     }
     /// Prompt State.
     pub fn set_prompt_state(mut self, input: ::std::option::Option<crate::types::PromptState>) -> Self {
-        self.prompt_state = input;
-        self
+        self.prompt_state = input; self
     }
     /// Prompt State.
     pub fn get_prompt_state(&self) -> &::std::option::Option<crate::types::PromptState> {
@@ -111,8 +108,7 @@ impl PromptConfigurationBuilder {
     }
     /// Base Prompt Template.
     pub fn set_base_prompt_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_prompt_template = input;
-        self
+        self.base_prompt_template = input; self
     }
     /// Base Prompt Template.
     pub fn get_base_prompt_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl PromptConfigurationBuilder {
     }
     /// Configuration for inference in prompt configuration
     pub fn set_inference_configuration(mut self, input: ::std::option::Option<crate::types::InferenceConfiguration>) -> Self {
-        self.inference_configuration = input;
-        self
+        self.inference_configuration = input; self
     }
     /// Configuration for inference in prompt configuration
     pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::InferenceConfiguration> {
@@ -139,8 +134,7 @@ impl PromptConfigurationBuilder {
     }
     /// Creation Mode for Prompt Configuration.
     pub fn set_parser_mode(mut self, input: ::std::option::Option<crate::types::CreationMode>) -> Self {
-        self.parser_mode = input;
-        self
+        self.parser_mode = input; self
     }
     /// Creation Mode for Prompt Configuration.
     pub fn get_parser_mode(&self) -> &::std::option::Option<crate::types::CreationMode> {
@@ -149,12 +143,19 @@ impl PromptConfigurationBuilder {
     /// Consumes the builder and constructs a [`PromptConfiguration`](crate::types::PromptConfiguration).
     pub fn build(self) -> crate::types::PromptConfiguration {
         crate::types::PromptConfiguration {
-            prompt_type: self.prompt_type,
-            prompt_creation_mode: self.prompt_creation_mode,
-            prompt_state: self.prompt_state,
-            base_prompt_template: self.base_prompt_template,
-            inference_configuration: self.inference_configuration,
-            parser_mode: self.parser_mode,
+            prompt_type: self.prompt_type
+            ,
+            prompt_creation_mode: self.prompt_creation_mode
+            ,
+            prompt_state: self.prompt_state
+            ,
+            base_prompt_template: self.base_prompt_template
+            ,
+            inference_configuration: self.inference_configuration
+            ,
+            parser_mode: self.parser_mode
+            ,
         }
     }
 }
+

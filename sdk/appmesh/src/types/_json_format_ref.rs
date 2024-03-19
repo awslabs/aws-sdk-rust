@@ -3,22 +3,20 @@
 /// <p>An object that represents the key value pairs for the JSON.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JsonFormatRef {
+pub struct JsonFormatRef  {
     /// <p>The specified key for the JSON.</p>
     pub key: ::std::string::String,
     /// <p>The specified value for the JSON.</p>
     pub value: ::std::string::String,
 }
-impl JsonFormatRef {
+impl  JsonFormatRef  {
     /// <p>The specified key for the JSON.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The specified value for the JSON.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl JsonFormatRef {
@@ -44,8 +42,7 @@ impl JsonFormatRefBuilder {
     }
     /// <p>The specified key for the JSON.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The specified key for the JSON.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl JsonFormatRefBuilder {
     }
     /// <p>The specified value for the JSON.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The specified value for the JSON.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl JsonFormatRefBuilder {
     /// - [`key`](crate::types::builders::JsonFormatRefBuilder::key)
     /// - [`value`](crate::types::builders::JsonFormatRefBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::JsonFormatRef, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JsonFormatRef {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building JsonFormatRef",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building JsonFormatRef",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JsonFormatRef {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building JsonFormatRef")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building JsonFormatRef")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteModelPackageInput {
+pub struct DeleteModelPackageInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub model_package_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteModelPackageInput {
+impl  DeleteModelPackageInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn model_package_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_name(&self) -> ::std::option::Option<& str> {
         self.model_package_name.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl DeleteModelPackageInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub fn set_model_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_name = input;
-        self
+        self.model_package_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -47,12 +46,13 @@ impl DeleteModelPackageInputBuilder {
         &self.model_package_name
     }
     /// Consumes the builder and constructs a [`DeleteModelPackageInput`](crate::operation::delete_model_package::DeleteModelPackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_model_package::DeleteModelPackageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_model_package::DeleteModelPackageInput {
-            model_package_name: self.model_package_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model_package::DeleteModelPackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_model_package::DeleteModelPackageInput {
+                model_package_name: self.model_package_name
+                ,
+            }
+        )
     }
 }
+

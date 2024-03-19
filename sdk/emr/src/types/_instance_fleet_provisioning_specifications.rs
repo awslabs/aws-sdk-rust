@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceFleetProvisioningSpecifications {
+pub struct InstanceFleetProvisioningSpecifications  {
     /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
     pub spot_specification: ::std::option::Option<crate::types::SpotProvisioningSpecification>,
     /// <p>The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy.</p><note>
@@ -13,15 +13,15 @@ pub struct InstanceFleetProvisioningSpecifications {
     /// </note>
     pub on_demand_specification: ::std::option::Option<crate::types::OnDemandProvisioningSpecification>,
 }
-impl InstanceFleetProvisioningSpecifications {
+impl  InstanceFleetProvisioningSpecifications  {
     /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
-    pub fn spot_specification(&self) -> ::std::option::Option<&crate::types::SpotProvisioningSpecification> {
+    pub fn spot_specification(&self) -> ::std::option::Option<& crate::types::SpotProvisioningSpecification> {
         self.spot_specification.as_ref()
     }
     /// <p>The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy.</p><note>
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p>
     /// </note>
-    pub fn on_demand_specification(&self) -> ::std::option::Option<&crate::types::OnDemandProvisioningSpecification> {
+    pub fn on_demand_specification(&self) -> ::std::option::Option<& crate::types::OnDemandProvisioningSpecification> {
         self.on_demand_specification.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl InstanceFleetProvisioningSpecificationsBuilder {
     }
     /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
     pub fn set_spot_specification(mut self, input: ::std::option::Option<crate::types::SpotProvisioningSpecification>) -> Self {
-        self.spot_specification = input;
-        self
+        self.spot_specification = input; self
     }
     /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
     pub fn get_spot_specification(&self) -> &::std::option::Option<crate::types::SpotProvisioningSpecification> {
@@ -65,8 +64,7 @@ impl InstanceFleetProvisioningSpecificationsBuilder {
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p>
     /// </note>
     pub fn set_on_demand_specification(mut self, input: ::std::option::Option<crate::types::OnDemandProvisioningSpecification>) -> Self {
-        self.on_demand_specification = input;
-        self
+        self.on_demand_specification = input; self
     }
     /// <p>The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy.</p><note>
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p>
@@ -77,8 +75,11 @@ impl InstanceFleetProvisioningSpecificationsBuilder {
     /// Consumes the builder and constructs a [`InstanceFleetProvisioningSpecifications`](crate::types::InstanceFleetProvisioningSpecifications).
     pub fn build(self) -> crate::types::InstanceFleetProvisioningSpecifications {
         crate::types::InstanceFleetProvisioningSpecifications {
-            spot_specification: self.spot_specification,
-            on_demand_specification: self.on_demand_specification,
+            spot_specification: self.spot_specification
+            ,
+            on_demand_specification: self.on_demand_specification
+            ,
         }
     }
 }
+

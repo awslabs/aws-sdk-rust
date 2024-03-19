@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutOutcomeInput {
+pub struct PutOutcomeInput  {
     /// <p>The name of the outcome.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The outcome description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutOutcomeInput {
+impl  PutOutcomeInput  {
     /// <p>The name of the outcome.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The outcome description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutOutcomeInput {
@@ -39,7 +40,7 @@ impl PutOutcomeInput {
 pub struct PutOutcomeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutOutcomeInputBuilder {
     /// <p>The name of the outcome.</p>
@@ -50,8 +51,7 @@ impl PutOutcomeInputBuilder {
     }
     /// <p>The name of the outcome.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the outcome.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl PutOutcomeInputBuilder {
     }
     /// <p>The outcome description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The outcome description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,30 @@ impl PutOutcomeInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutOutcomeInput`](crate::operation::put_outcome::PutOutcomeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_outcome::PutOutcomeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_outcome::PutOutcomeInput {
-            name: self.name,
-            description: self.description,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_outcome::PutOutcomeInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

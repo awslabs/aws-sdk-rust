@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchEvaluateGeofencesOutput {
+pub struct BatchEvaluateGeofencesOutput  {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchEvaluateGeofencesError>,
     _request_id: Option<String>,
 }
-impl BatchEvaluateGeofencesOutput {
+impl  BatchEvaluateGeofencesOutput  {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub fn errors(&self) -> &[crate::types::BatchEvaluateGeofencesError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchEvaluateGeofencesError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchEvaluateGeofencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchEvaluateGeofencesOutput {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesOutput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput).
     pub fn builder() -> crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesOutputBuilder {
@@ -30,7 +29,7 @@ impl BatchEvaluateGeofencesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchEvaluateGeofencesError>>,
     _request_id: Option<String>,
 }
 impl BatchEvaluateGeofencesOutputBuilder {
@@ -41,45 +40,41 @@ impl BatchEvaluateGeofencesOutputBuilder {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
     pub fn errors(mut self, input: crate::types::BatchEvaluateGeofencesError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchEvaluateGeofencesError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchEvaluateGeofencesError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesOutput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput {
-            errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "errors",
-                    "errors was not specified but it is required when building BatchEvaluateGeofencesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput {
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchEvaluateGeofencesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

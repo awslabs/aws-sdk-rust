@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBackupJobsInput {
+pub struct ListBackupJobsInput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
@@ -73,9 +73,9 @@ pub struct ListBackupJobsInput {
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub by_message_category: ::std::option::Option<::std::string::String>,
 }
-impl ListBackupJobsInput {
+impl  ListBackupJobsInput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -83,7 +83,7 @@ impl ListBackupJobsInput {
         self.max_results
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn by_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn by_resource_arn(&self) -> ::std::option::Option<& str> {
         self.by_resource_arn.as_deref()
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
@@ -91,19 +91,19 @@ impl ListBackupJobsInput {
     /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
     /// <p>GET /backup-jobs/?state=COMPLETED</p>
     /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
-    pub fn by_state(&self) -> ::std::option::Option<&crate::types::BackupJobState> {
+    pub fn by_state(&self) -> ::std::option::Option<& crate::types::BackupJobState> {
         self.by_state.as_ref()
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn by_backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn by_backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.by_backup_vault_name.as_deref()
     }
     /// <p>Returns only backup jobs that were created before the specified date.</p>
-    pub fn by_created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_created_before.as_ref()
     }
     /// <p>Returns only backup jobs that were created after the specified date.</p>
-    pub fn by_created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_created_after.as_ref()
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
@@ -141,24 +141,24 @@ impl ListBackupJobsInput {
     /// <li>
     /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
-    pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn by_resource_type(&self) -> ::std::option::Option<& str> {
         self.by_resource_type.as_deref()
     }
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
-    pub fn by_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn by_account_id(&self) -> ::std::option::Option<& str> {
         self.by_account_id.as_deref()
     }
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_complete_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_complete_after.as_ref()
     }
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_complete_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_complete_before.as_ref()
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn by_parent_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn by_parent_job_id(&self) -> ::std::option::Option<& str> {
         self.by_parent_job_id.as_deref()
     }
     /// <p>This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value you input.</p>
@@ -166,7 +166,7 @@ impl ListBackupJobsInput {
     /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a></p>
     /// <p>The wildcard () returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
-    pub fn by_message_category(&self) -> ::std::option::Option<&str> {
+    pub fn by_message_category(&self) -> ::std::option::Option<& str> {
         self.by_message_category.as_deref()
     }
 }
@@ -203,8 +203,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +216,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -231,8 +229,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn set_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_resource_arn = input;
-        self
+        self.by_resource_arn = input; self
     }
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn get_by_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +250,7 @@ impl ListBackupJobsInputBuilder {
     /// <p>GET /backup-jobs/?state=COMPLETED</p>
     /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub fn set_by_state(mut self, input: ::std::option::Option<crate::types::BackupJobState>) -> Self {
-        self.by_state = input;
-        self
+        self.by_state = input; self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
     /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
@@ -271,8 +267,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_by_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_backup_vault_name = input;
-        self
+        self.by_backup_vault_name = input; self
     }
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_by_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,8 +280,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>Returns only backup jobs that were created before the specified date.</p>
     pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_created_before = input;
-        self
+        self.by_created_before = input; self
     }
     /// <p>Returns only backup jobs that were created before the specified date.</p>
     pub fn get_by_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -299,8 +293,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>Returns only backup jobs that were created after the specified date.</p>
     pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_created_after = input;
-        self
+        self.by_created_after = input; self
     }
     /// <p>Returns only backup jobs that were created after the specified date.</p>
     pub fn get_by_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -381,8 +374,7 @@ impl ListBackupJobsInputBuilder {
     /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_resource_type = input;
-        self
+        self.by_resource_type = input; self
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
@@ -431,8 +423,7 @@ impl ListBackupJobsInputBuilder {
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     pub fn set_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_account_id = input;
-        self
+        self.by_account_id = input; self
     }
     /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
     /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
@@ -446,8 +437,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn set_by_complete_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_complete_after = input;
-        self
+        self.by_complete_after = input; self
     }
     /// <p>Returns only backup jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn get_by_complete_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -460,8 +450,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn set_by_complete_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_complete_before = input;
-        self
+        self.by_complete_before = input; self
     }
     /// <p>Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn get_by_complete_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -474,8 +463,7 @@ impl ListBackupJobsInputBuilder {
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     pub fn set_by_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_parent_job_id = input;
-        self
+        self.by_parent_job_id = input; self
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -496,8 +484,7 @@ impl ListBackupJobsInputBuilder {
     /// <p>The wildcard () returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_by_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_message_category = input;
-        self
+        self.by_message_category = input; self
     }
     /// <p>This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value you input.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>.</p>
@@ -508,23 +495,37 @@ impl ListBackupJobsInputBuilder {
         &self.by_message_category
     }
     /// Consumes the builder and constructs a [`ListBackupJobsInput`](crate::operation::list_backup_jobs::ListBackupJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_backup_jobs::ListBackupJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_backup_jobs::ListBackupJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            by_resource_arn: self.by_resource_arn,
-            by_state: self.by_state,
-            by_backup_vault_name: self.by_backup_vault_name,
-            by_created_before: self.by_created_before,
-            by_created_after: self.by_created_after,
-            by_resource_type: self.by_resource_type,
-            by_account_id: self.by_account_id,
-            by_complete_after: self.by_complete_after,
-            by_complete_before: self.by_complete_before,
-            by_parent_job_id: self.by_parent_job_id,
-            by_message_category: self.by_message_category,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_backup_jobs::ListBackupJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_backup_jobs::ListBackupJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                by_resource_arn: self.by_resource_arn
+                ,
+                by_state: self.by_state
+                ,
+                by_backup_vault_name: self.by_backup_vault_name
+                ,
+                by_created_before: self.by_created_before
+                ,
+                by_created_after: self.by_created_after
+                ,
+                by_resource_type: self.by_resource_type
+                ,
+                by_account_id: self.by_account_id
+                ,
+                by_complete_after: self.by_complete_after
+                ,
+                by_complete_before: self.by_complete_before
+                ,
+                by_parent_job_id: self.by_parent_job_id
+                ,
+                by_message_category: self.by_message_category
+                ,
+            }
+        )
     }
 }
+

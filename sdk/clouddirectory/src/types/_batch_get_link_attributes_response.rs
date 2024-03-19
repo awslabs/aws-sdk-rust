@@ -3,16 +3,17 @@
 /// <p>Represents the output of a <code>GetLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetLinkAttributesResponse {
+pub struct BatchGetLinkAttributesResponse  {
     /// <p>The attributes that are associated with the typed link.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>,
 }
-impl BatchGetLinkAttributesResponse {
+impl  BatchGetLinkAttributesResponse  {
     /// <p>The attributes that are associated with the typed link.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::AttributeKeyAndValue] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::AttributeKeyAndValue] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetLinkAttributesResponse {
@@ -26,7 +27,7 @@ impl BatchGetLinkAttributesResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetLinkAttributesResponseBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>,
 }
 impl BatchGetLinkAttributesResponseBuilder {
     /// Appends an item to `attributes`.
@@ -36,21 +37,24 @@ impl BatchGetLinkAttributesResponseBuilder {
     /// <p>The attributes that are associated with the typed link.</p>
     pub fn attributes(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`BatchGetLinkAttributesResponse`](crate::types::BatchGetLinkAttributesResponse).
     pub fn build(self) -> crate::types::BatchGetLinkAttributesResponse {
-        crate::types::BatchGetLinkAttributesResponse { attributes: self.attributes }
+        crate::types::BatchGetLinkAttributesResponse {
+            attributes: self.attributes
+            ,
+        }
     }
 }
+

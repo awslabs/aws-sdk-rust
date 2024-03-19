@@ -3,19 +3,19 @@
 /// <p>The input for the <code>DeleteChangeSet</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteChangeSetInput {
+pub struct DeleteChangeSetInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteChangeSetInput {
+impl  DeleteChangeSetInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
-    pub fn change_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn change_set_name(&self) -> ::std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteChangeSetInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
     pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_set_name = input;
-        self
+        self.change_set_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
     pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteChangeSetInputBuilder {
     }
     /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }
     /// Consumes the builder and constructs a [`DeleteChangeSetInput`](crate::operation::delete_change_set::DeleteChangeSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_change_set::DeleteChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_change_set::DeleteChangeSetInput {
-            change_set_name: self.change_set_name,
-            stack_name: self.stack_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_change_set::DeleteChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_change_set::DeleteChangeSetInput {
+                change_set_name: self.change_set_name
+                ,
+                stack_name: self.stack_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEksAnywhereSubscriptionOutput {
+pub struct DescribeEksAnywhereSubscriptionOutput  {
     /// <p>The full description of the subscription.</p>
     pub subscription: ::std::option::Option<crate::types::EksAnywhereSubscription>,
     _request_id: Option<String>,
 }
-impl DescribeEksAnywhereSubscriptionOutput {
+impl  DescribeEksAnywhereSubscriptionOutput  {
     /// <p>The full description of the subscription.</p>
-    pub fn subscription(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscription> {
+    pub fn subscription(&self) -> ::std::option::Option<& crate::types::EksAnywhereSubscription> {
         self.subscription.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEksAnywhereSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEksAnywhereSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEksAnywhereSubscriptionOutput`](crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionOutput).
     pub fn builder() -> crate::operation::describe_eks_anywhere_subscription::builders::DescribeEksAnywhereSubscriptionOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeEksAnywhereSubscriptionOutputBuilder {
     }
     /// <p>The full description of the subscription.</p>
     pub fn set_subscription(mut self, input: ::std::option::Option<crate::types::EksAnywhereSubscription>) -> Self {
-        self.subscription = input;
-        self
+        self.subscription = input; self
     }
     /// <p>The full description of the subscription.</p>
     pub fn get_subscription(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscription> {
         &self.subscription
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEksAnywhereSubscriptionOutput`](crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionOutput).
     pub fn build(self) -> crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionOutput {
         crate::operation::describe_eks_anywhere_subscription::DescribeEksAnywhereSubscriptionOutput {
-            subscription: self.subscription,
+            subscription: self.subscription
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

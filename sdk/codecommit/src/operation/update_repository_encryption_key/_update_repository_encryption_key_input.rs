@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRepositoryEncryptionKeyInput {
+pub struct UpdateRepositoryEncryptionKeyInput  {
     /// <p>The name of the repository for which you want to update the KMS encryption key used to encrypt and decrypt the repository.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for keyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRepositoryEncryptionKeyInput {
+impl  UpdateRepositoryEncryptionKeyInput  {
     /// <p>The name of the repository for which you want to update the KMS encryption key used to encrypt and decrypt the repository.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for keyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateRepositoryEncryptionKeyInputBuilder {
     }
     /// <p>The name of the repository for which you want to update the KMS encryption key used to encrypt and decrypt the repository.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository for which you want to update the KMS encryption key used to encrypt and decrypt the repository.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateRepositoryEncryptionKeyInputBuilder {
     }
     /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for keyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for keyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryEncryptionKeyInput`](crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyInput {
-            repository_name: self.repository_name,
-            kms_key_id: self.kms_key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyInput {
+                repository_name: self.repository_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
+        )
     }
 }
+

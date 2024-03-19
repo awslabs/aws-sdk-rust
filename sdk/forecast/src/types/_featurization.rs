@@ -14,23 +14,23 @@
 /// <p><code>}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Featurization {
+pub struct Featurization  {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
     pub attribute_name: ::std::string::String,
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    pub featurization_pipeline: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
+    pub featurization_pipeline: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturizationMethod>>,
 }
-impl Featurization {
+impl  Featurization  {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    pub fn attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_name.deref()
+    pub fn attribute_name(&self) -> & str {
+        use std::ops::Deref; self.attribute_name.deref()
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featurization_pipeline.is_none()`.
-    pub fn featurization_pipeline(&self) -> &[crate::types::FeaturizationMethod] {
-        self.featurization_pipeline.as_deref().unwrap_or_default()
+    pub fn featurization_pipeline(&self) -> & [crate::types::FeaturizationMethod] {
+        self.featurization_pipeline.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Featurization {
@@ -45,7 +45,7 @@ impl Featurization {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturizationBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
-    pub(crate) featurization_pipeline: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
+    pub(crate) featurization_pipeline: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturizationMethod>>,
 }
 impl FeaturizationBuilder {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
@@ -56,8 +56,7 @@ impl FeaturizationBuilder {
     }
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,31 +69,33 @@ impl FeaturizationBuilder {
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
     pub fn featurization_pipeline(mut self, input: crate::types::FeaturizationMethod) -> Self {
         let mut v = self.featurization_pipeline.unwrap_or_default();
-        v.push(input);
-        self.featurization_pipeline = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.featurization_pipeline = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    pub fn set_featurization_pipeline(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>) -> Self {
-        self.featurization_pipeline = input;
-        self
+    pub fn set_featurization_pipeline(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturizationMethod>>) -> Self {
+        self.featurization_pipeline = input; self
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    pub fn get_featurization_pipeline(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>> {
+    pub fn get_featurization_pipeline(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeaturizationMethod>> {
         &self.featurization_pipeline
     }
     /// Consumes the builder and constructs a [`Featurization`](crate::types::Featurization).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_name`](crate::types::builders::FeaturizationBuilder::attribute_name)
     pub fn build(self) -> ::std::result::Result<crate::types::Featurization, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Featurization {
-            attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_name",
-                    "attribute_name was not specified but it is required when building Featurization",
-                )
-            })?,
-            featurization_pipeline: self.featurization_pipeline,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Featurization {
+                attribute_name: self.attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_name", "attribute_name was not specified but it is required when building Featurization")
+                    )?
+                ,
+                featurization_pipeline: self.featurization_pipeline
+                ,
+            }
+        )
     }
 }
+

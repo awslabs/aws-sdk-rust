@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutExternalModelInput {
+pub struct PutExternalModelInput  {
     /// <p>The model endpoints name.</p>
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The source of the model.</p>
@@ -16,38 +16,39 @@ pub struct PutExternalModelInput {
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
     pub model_endpoint_status: ::std::option::Option<crate::types::ModelEndpointStatus>,
     /// <p>A collection of key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutExternalModelInput {
+impl  PutExternalModelInput  {
     /// <p>The model endpoints name.</p>
-    pub fn model_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn model_endpoint(&self) -> ::std::option::Option<& str> {
         self.model_endpoint.as_deref()
     }
     /// <p>The source of the model.</p>
-    pub fn model_source(&self) -> ::std::option::Option<&crate::types::ModelSource> {
+    pub fn model_source(&self) -> ::std::option::Option<& crate::types::ModelSource> {
         self.model_source.as_ref()
     }
     /// <p>The IAM role used to invoke the model endpoint.</p>
-    pub fn invoke_model_endpoint_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn invoke_model_endpoint_role_arn(&self) -> ::std::option::Option<& str> {
         self.invoke_model_endpoint_role_arn.as_deref()
     }
     /// <p>The model endpoint input configuration.</p>
-    pub fn input_configuration(&self) -> ::std::option::Option<&crate::types::ModelInputConfiguration> {
+    pub fn input_configuration(&self) -> ::std::option::Option<& crate::types::ModelInputConfiguration> {
         self.input_configuration.as_ref()
     }
     /// <p>The model endpoint output configuration.</p>
-    pub fn output_configuration(&self) -> ::std::option::Option<&crate::types::ModelOutputConfiguration> {
+    pub fn output_configuration(&self) -> ::std::option::Option<& crate::types::ModelOutputConfiguration> {
         self.output_configuration.as_ref()
     }
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
-    pub fn model_endpoint_status(&self) -> ::std::option::Option<&crate::types::ModelEndpointStatus> {
+    pub fn model_endpoint_status(&self) -> ::std::option::Option<& crate::types::ModelEndpointStatus> {
         self.model_endpoint_status.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutExternalModelInput {
@@ -67,7 +68,7 @@ pub struct PutExternalModelInputBuilder {
     pub(crate) input_configuration: ::std::option::Option<crate::types::ModelInputConfiguration>,
     pub(crate) output_configuration: ::std::option::Option<crate::types::ModelOutputConfiguration>,
     pub(crate) model_endpoint_status: ::std::option::Option<crate::types::ModelEndpointStatus>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutExternalModelInputBuilder {
     /// <p>The model endpoints name.</p>
@@ -78,8 +79,7 @@ impl PutExternalModelInputBuilder {
     }
     /// <p>The model endpoints name.</p>
     pub fn set_model_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_endpoint = input;
-        self
+        self.model_endpoint = input; self
     }
     /// <p>The model endpoints name.</p>
     pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl PutExternalModelInputBuilder {
     }
     /// <p>The source of the model.</p>
     pub fn set_model_source(mut self, input: ::std::option::Option<crate::types::ModelSource>) -> Self {
-        self.model_source = input;
-        self
+        self.model_source = input; self
     }
     /// <p>The source of the model.</p>
     pub fn get_model_source(&self) -> &::std::option::Option<crate::types::ModelSource> {
@@ -108,8 +107,7 @@ impl PutExternalModelInputBuilder {
     }
     /// <p>The IAM role used to invoke the model endpoint.</p>
     pub fn set_invoke_model_endpoint_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invoke_model_endpoint_role_arn = input;
-        self
+        self.invoke_model_endpoint_role_arn = input; self
     }
     /// <p>The IAM role used to invoke the model endpoint.</p>
     pub fn get_invoke_model_endpoint_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +121,7 @@ impl PutExternalModelInputBuilder {
     }
     /// <p>The model endpoint input configuration.</p>
     pub fn set_input_configuration(mut self, input: ::std::option::Option<crate::types::ModelInputConfiguration>) -> Self {
-        self.input_configuration = input;
-        self
+        self.input_configuration = input; self
     }
     /// <p>The model endpoint input configuration.</p>
     pub fn get_input_configuration(&self) -> &::std::option::Option<crate::types::ModelInputConfiguration> {
@@ -138,8 +135,7 @@ impl PutExternalModelInputBuilder {
     }
     /// <p>The model endpoint output configuration.</p>
     pub fn set_output_configuration(mut self, input: ::std::option::Option<crate::types::ModelOutputConfiguration>) -> Self {
-        self.output_configuration = input;
-        self
+        self.output_configuration = input; self
     }
     /// <p>The model endpoint output configuration.</p>
     pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::ModelOutputConfiguration> {
@@ -153,8 +149,7 @@ impl PutExternalModelInputBuilder {
     }
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
     pub fn set_model_endpoint_status(mut self, input: ::std::option::Option<crate::types::ModelEndpointStatus>) -> Self {
-        self.model_endpoint_status = input;
-        self
+        self.model_endpoint_status = input; self
     }
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
     pub fn get_model_endpoint_status(&self) -> &::std::option::Option<crate::types::ModelEndpointStatus> {
@@ -167,31 +162,38 @@ impl PutExternalModelInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutExternalModelInput`](crate::operation::put_external_model::PutExternalModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_external_model::PutExternalModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_external_model::PutExternalModelInput {
-            model_endpoint: self.model_endpoint,
-            model_source: self.model_source,
-            invoke_model_endpoint_role_arn: self.invoke_model_endpoint_role_arn,
-            input_configuration: self.input_configuration,
-            output_configuration: self.output_configuration,
-            model_endpoint_status: self.model_endpoint_status,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_external_model::PutExternalModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_external_model::PutExternalModelInput {
+                model_endpoint: self.model_endpoint
+                ,
+                model_source: self.model_source
+                ,
+                invoke_model_endpoint_role_arn: self.invoke_model_endpoint_role_arn
+                ,
+                input_configuration: self.input_configuration
+                ,
+                output_configuration: self.output_configuration
+                ,
+                model_endpoint_status: self.model_endpoint_status
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

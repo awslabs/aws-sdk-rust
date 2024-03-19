@@ -3,19 +3,19 @@
 /// <p>Describes software.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Software {
+pub struct Software  {
     /// <p>The name of the software component.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the software component.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl Software {
+impl  Software  {
     /// <p>The name of the software component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the software component.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SoftwareBuilder {
     }
     /// <p>The name of the software component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the software component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SoftwareBuilder {
     }
     /// <p>The version of the software component.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the software component.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SoftwareBuilder {
     /// Consumes the builder and constructs a [`Software`](crate::types::Software).
     pub fn build(self) -> crate::types::Software {
         crate::types::Software {
-            name: self.name,
-            version: self.version,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

@@ -5,55 +5,51 @@ pub use crate::operation::allow_custom_routing_traffic::_allow_custom_routing_tr
 
 impl AllowCustomRoutingTrafficInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.allow_custom_routing_traffic();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.allow_custom_routing_traffic();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AllowCustomRoutingTraffic`.
-///
+/// 
 /// <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet endpoint that can receive traffic for a custom routing accelerator. You can allow traffic to all destinations in the subnet endpoint, or allow traffic to a specified list of destination IP addresses and ports in the subnet. Note that you cannot specify IP addresses or ports outside of the range that you configured for the endpoint group.</p>
 /// <p>After you make changes, you can verify that the updates are complete by checking the status of your accelerator: the status changes from IN_PROGRESS to DEPLOYED.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllowCustomRoutingTrafficFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder,
+                    inner: crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
-        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-    > for AllowCustomRoutingTrafficFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
+                    crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
+                > for AllowCustomRoutingTrafficFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
+                        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AllowCustomRoutingTrafficFluentBuilder {
     /// Creates a new `AllowCustomRoutingTraffic`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl AllowCustomRoutingTrafficFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTraffic::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTraffic::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
-        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTraffic::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTraffic::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput, crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
@@ -149,13 +136,13 @@ impl AllowCustomRoutingTrafficFluentBuilder {
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p><code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_destination_addresses(input);
         self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p><code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_destination_addresses()
     }
     /// Appends an item to `DestinationPorts`.
@@ -168,12 +155,12 @@ impl AllowCustomRoutingTrafficFluentBuilder {
         self
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
         self.inner = self.inner.set_destination_ports(input);
         self
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         self.inner.get_destination_ports()
     }
     /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE.</p>
@@ -200,3 +187,4 @@ impl AllowCustomRoutingTrafficFluentBuilder {
         self.inner.get_allow_all_traffic_to_endpoint()
     }
 }
+

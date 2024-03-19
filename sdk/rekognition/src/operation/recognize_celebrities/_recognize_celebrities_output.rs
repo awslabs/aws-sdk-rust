@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecognizeCelebritiesOutput {
+pub struct RecognizeCelebritiesOutput  {
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
-    pub celebrity_faces: ::std::option::Option<::std::vec::Vec<crate::types::Celebrity>>,
+    pub celebrity_faces: ::std::option::Option<::std::vec::Vec::<crate::types::Celebrity>>,
     /// <p>Details about each unrecognized face in the image.</p>
-    pub unrecognized_faces: ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>,
+    pub unrecognized_faces: ::std::option::Option<::std::vec::Vec::<crate::types::ComparedFace>>,
     /// <note>
     /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
     /// </note>
@@ -16,18 +16,20 @@ pub struct RecognizeCelebritiesOutput {
     pub orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     _request_id: Option<String>,
 }
-impl RecognizeCelebritiesOutput {
+impl  RecognizeCelebritiesOutput  {
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.celebrity_faces.is_none()`.
-    pub fn celebrity_faces(&self) -> &[crate::types::Celebrity] {
-        self.celebrity_faces.as_deref().unwrap_or_default()
+    pub fn celebrity_faces(&self) -> & [crate::types::Celebrity] {
+        self.celebrity_faces.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details about each unrecognized face in the image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unrecognized_faces.is_none()`.
-    pub fn unrecognized_faces(&self) -> &[crate::types::ComparedFace] {
-        self.unrecognized_faces.as_deref().unwrap_or_default()
+    pub fn unrecognized_faces(&self) -> & [crate::types::ComparedFace] {
+        self.unrecognized_faces.as_deref()
+        .unwrap_or_default()
     }
     /// <note>
     /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
@@ -35,15 +37,15 @@ impl RecognizeCelebritiesOutput {
     /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected.</p><note>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// </note>
-    pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
+    pub fn orientation_correction(&self) -> ::std::option::Option<& crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RecognizeCelebritiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RecognizeCelebritiesOutput {
     /// Creates a new builder-style object to manufacture [`RecognizeCelebritiesOutput`](crate::operation::recognize_celebrities::RecognizeCelebritiesOutput).
     pub fn builder() -> crate::operation::recognize_celebrities::builders::RecognizeCelebritiesOutputBuilder {
@@ -55,8 +57,8 @@ impl RecognizeCelebritiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecognizeCelebritiesOutputBuilder {
-    pub(crate) celebrity_faces: ::std::option::Option<::std::vec::Vec<crate::types::Celebrity>>,
-    pub(crate) unrecognized_faces: ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>,
+    pub(crate) celebrity_faces: ::std::option::Option<::std::vec::Vec::<crate::types::Celebrity>>,
+    pub(crate) unrecognized_faces: ::std::option::Option<::std::vec::Vec::<crate::types::ComparedFace>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     _request_id: Option<String>,
 }
@@ -68,17 +70,16 @@ impl RecognizeCelebritiesOutputBuilder {
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
     pub fn celebrity_faces(mut self, input: crate::types::Celebrity) -> Self {
         let mut v = self.celebrity_faces.unwrap_or_default();
-        v.push(input);
-        self.celebrity_faces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.celebrity_faces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
-    pub fn set_celebrity_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Celebrity>>) -> Self {
-        self.celebrity_faces = input;
-        self
+    pub fn set_celebrity_faces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Celebrity>>) -> Self {
+        self.celebrity_faces = input; self
     }
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
-    pub fn get_celebrity_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Celebrity>> {
+    pub fn get_celebrity_faces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Celebrity>> {
         &self.celebrity_faces
     }
     /// Appends an item to `unrecognized_faces`.
@@ -88,17 +89,16 @@ impl RecognizeCelebritiesOutputBuilder {
     /// <p>Details about each unrecognized face in the image.</p>
     pub fn unrecognized_faces(mut self, input: crate::types::ComparedFace) -> Self {
         let mut v = self.unrecognized_faces.unwrap_or_default();
-        v.push(input);
-        self.unrecognized_faces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unrecognized_faces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about each unrecognized face in the image.</p>
-    pub fn set_unrecognized_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>>) -> Self {
-        self.unrecognized_faces = input;
-        self
+    pub fn set_unrecognized_faces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComparedFace>>) -> Self {
+        self.unrecognized_faces = input; self
     }
     /// <p>Details about each unrecognized face in the image.</p>
-    pub fn get_unrecognized_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>> {
+    pub fn get_unrecognized_faces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComparedFace>> {
         &self.unrecognized_faces
     }
     /// <note>
@@ -118,8 +118,7 @@ impl RecognizeCelebritiesOutputBuilder {
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// </note>
     pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
-        self.orientation_correction = input;
-        self
+        self.orientation_correction = input; self
     }
     /// <note>
     /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
@@ -131,21 +130,25 @@ impl RecognizeCelebritiesOutputBuilder {
         &self.orientation_correction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RecognizeCelebritiesOutput`](crate::operation::recognize_celebrities::RecognizeCelebritiesOutput).
     pub fn build(self) -> crate::operation::recognize_celebrities::RecognizeCelebritiesOutput {
         crate::operation::recognize_celebrities::RecognizeCelebritiesOutput {
-            celebrity_faces: self.celebrity_faces,
-            unrecognized_faces: self.unrecognized_faces,
-            orientation_correction: self.orientation_correction,
+            celebrity_faces: self.celebrity_faces
+            ,
+            unrecognized_faces: self.unrecognized_faces
+            ,
+            orientation_correction: self.orientation_correction
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

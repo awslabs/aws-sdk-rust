@@ -33,11 +33,7 @@ impl ReplicationRuleFilter {
     /// Tries to convert the enum instance into [`And`](crate::types::ReplicationRuleFilter::And), extracting the inner [`ReplicationRuleAndOperator`](crate::types::ReplicationRuleAndOperator).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> ::std::result::Result<&crate::types::ReplicationRuleAndOperator, &Self> {
-        if let ReplicationRuleFilter::And(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ReplicationRuleFilter::And(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`And`](crate::types::ReplicationRuleFilter::And).
     pub fn is_and(&self) -> bool {
@@ -46,11 +42,7 @@ impl ReplicationRuleFilter {
     /// Tries to convert the enum instance into [`Prefix`](crate::types::ReplicationRuleFilter::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ReplicationRuleFilter::Prefix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ReplicationRuleFilter::Prefix(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::types::ReplicationRuleFilter::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -59,11 +51,7 @@ impl ReplicationRuleFilter {
     /// Tries to convert the enum instance into [`Tag`](crate::types::ReplicationRuleFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> ::std::result::Result<&crate::types::Tag, &Self> {
-        if let ReplicationRuleFilter::Tag(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ReplicationRuleFilter::Tag(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Tag`](crate::types::ReplicationRuleFilter::Tag).
     pub fn is_tag(&self) -> bool {
@@ -74,3 +62,4 @@ impl ReplicationRuleFilter {
         matches!(self, Self::Unknown)
     }
 }
+

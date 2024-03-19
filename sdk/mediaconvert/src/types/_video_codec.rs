@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let videocodec = unimplemented!();
 /// match videocodec {
@@ -41,16 +41,14 @@
 /// Specifically, when `videocodec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VideoCodec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Type of video codec
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum VideoCodec {
     #[allow(missing_docs)] // documentation missing in model
     Av1,
@@ -80,108 +78,95 @@ pub enum VideoCodec {
     Xavc,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for VideoCodec {
-    fn from(s: &str) -> Self {
-        match s {
-            "AV1" => VideoCodec::Av1,
-            "AVC_INTRA" => VideoCodec::AvcIntra,
-            "FRAME_CAPTURE" => VideoCodec::FrameCapture,
-            "H_264" => VideoCodec::H264,
-            "H_265" => VideoCodec::H265,
-            "MPEG2" => VideoCodec::Mpeg2,
-            "PASSTHROUGH" => VideoCodec::Passthrough,
-            "PRORES" => VideoCodec::Prores,
-            "UNCOMPRESSED" => VideoCodec::Uncompressed,
-            "VC3" => VideoCodec::Vc3,
-            "VP8" => VideoCodec::Vp8,
-            "VP9" => VideoCodec::Vp9,
-            "XAVC" => VideoCodec::Xavc,
-            other => VideoCodec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AV1" => VideoCodec::Av1,
+"AVC_INTRA" => VideoCodec::AvcIntra,
+"FRAME_CAPTURE" => VideoCodec::FrameCapture,
+"H_264" => VideoCodec::H264,
+"H_265" => VideoCodec::H265,
+"MPEG2" => VideoCodec::Mpeg2,
+"PASSTHROUGH" => VideoCodec::Passthrough,
+"PRORES" => VideoCodec::Prores,
+"UNCOMPRESSED" => VideoCodec::Uncompressed,
+"VC3" => VideoCodec::Vc3,
+"VP8" => VideoCodec::Vp8,
+"VP9" => VideoCodec::Vp9,
+"XAVC" => VideoCodec::Xavc,
+other => VideoCodec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for VideoCodec {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(VideoCodec::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(VideoCodec::from(s))
+                    }
+                }
 impl VideoCodec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VideoCodec::Av1 => "AV1",
-            VideoCodec::AvcIntra => "AVC_INTRA",
-            VideoCodec::FrameCapture => "FRAME_CAPTURE",
-            VideoCodec::H264 => "H_264",
-            VideoCodec::H265 => "H_265",
-            VideoCodec::Mpeg2 => "MPEG2",
-            VideoCodec::Passthrough => "PASSTHROUGH",
-            VideoCodec::Prores => "PRORES",
-            VideoCodec::Uncompressed => "UNCOMPRESSED",
-            VideoCodec::Vc3 => "VC3",
-            VideoCodec::Vp8 => "VP8",
-            VideoCodec::Vp9 => "VP9",
-            VideoCodec::Xavc => "XAVC",
-            VideoCodec::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AV1",
-            "AVC_INTRA",
-            "FRAME_CAPTURE",
-            "H_264",
-            "H_265",
-            "MPEG2",
-            "PASSTHROUGH",
-            "PRORES",
-            "UNCOMPRESSED",
-            "VC3",
-            "VP8",
-            "VP9",
-            "XAVC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VideoCodec::Av1 => "AV1",
+    VideoCodec::AvcIntra => "AVC_INTRA",
+    VideoCodec::FrameCapture => "FRAME_CAPTURE",
+    VideoCodec::H264 => "H_264",
+    VideoCodec::H265 => "H_265",
+    VideoCodec::Mpeg2 => "MPEG2",
+    VideoCodec::Passthrough => "PASSTHROUGH",
+    VideoCodec::Prores => "PRORES",
+    VideoCodec::Uncompressed => "UNCOMPRESSED",
+    VideoCodec::Vc3 => "VC3",
+    VideoCodec::Vp8 => "VP8",
+    VideoCodec::Vp9 => "VP9",
+    VideoCodec::Xavc => "XAVC",
+    VideoCodec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AV1", "AVC_INTRA", "FRAME_CAPTURE", "H_264", "H_265", "MPEG2", "PASSTHROUGH", "PRORES", "UNCOMPRESSED", "VC3", "VP8", "VP9", "XAVC"]
+                }
+            }
 impl ::std::convert::AsRef<str> for VideoCodec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl VideoCodec {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for VideoCodec {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            VideoCodec::Av1 => write!(f, "AV1"),
-            VideoCodec::AvcIntra => write!(f, "AVC_INTRA"),
-            VideoCodec::FrameCapture => write!(f, "FRAME_CAPTURE"),
-            VideoCodec::H264 => write!(f, "H_264"),
-            VideoCodec::H265 => write!(f, "H_265"),
-            VideoCodec::Mpeg2 => write!(f, "MPEG2"),
-            VideoCodec::Passthrough => write!(f, "PASSTHROUGH"),
-            VideoCodec::Prores => write!(f, "PRORES"),
-            VideoCodec::Uncompressed => write!(f, "UNCOMPRESSED"),
-            VideoCodec::Vc3 => write!(f, "VC3"),
-            VideoCodec::Vp8 => write!(f, "VP8"),
-            VideoCodec::Vp9 => write!(f, "VP9"),
-            VideoCodec::Xavc => write!(f, "XAVC"),
-            VideoCodec::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                VideoCodec::Av1 => write!(f, "AV1"),
+VideoCodec::AvcIntra => write!(f, "AVC_INTRA"),
+VideoCodec::FrameCapture => write!(f, "FRAME_CAPTURE"),
+VideoCodec::H264 => write!(f, "H_264"),
+VideoCodec::H265 => write!(f, "H_265"),
+VideoCodec::Mpeg2 => write!(f, "MPEG2"),
+VideoCodec::Passthrough => write!(f, "PASSTHROUGH"),
+VideoCodec::Prores => write!(f, "PRORES"),
+VideoCodec::Uncompressed => write!(f, "UNCOMPRESSED"),
+VideoCodec::Vc3 => write!(f, "VC3"),
+VideoCodec::Vp8 => write!(f, "VP8"),
+VideoCodec::Vp9 => write!(f, "VP9"),
+VideoCodec::Xavc => write!(f, "XAVC"),
+VideoCodec::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

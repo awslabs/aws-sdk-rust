@@ -5,55 +5,51 @@ pub use crate::operation::stop_discovery_job::_stop_discovery_job_input::StopDis
 
 impl StopDiscoveryJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::stop_discovery_job::StopDiscoveryJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.stop_discovery_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::stop_discovery_job::StopDiscoveryJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.stop_discovery_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StopDiscoveryJob`.
-///
+/// 
 /// <p>Stops a running DataSync discovery job.</p>
 /// <p>You can stop a discovery job anytime. A job that's stopped before it's scheduled to end likely will provide you some information about your on-premises storage system resources. To get recommendations for a stopped job, you must use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_GenerateRecommendations.html">GenerateRecommendations</a> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDiscoveryJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder,
+                    inner: crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
-        crate::operation::stop_discovery_job::StopDiscoveryJobError,
-    > for StopDiscoveryJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
-            crate::operation::stop_discovery_job::StopDiscoveryJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
+                    crate::operation::stop_discovery_job::StopDiscoveryJobError,
+                > for StopDiscoveryJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
+                        crate::operation::stop_discovery_job::StopDiscoveryJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StopDiscoveryJobFluentBuilder {
     /// Creates a new `StopDiscoveryJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl StopDiscoveryJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::stop_discovery_job::StopDiscoveryJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::stop_discovery_job::StopDiscoveryJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::stop_discovery_job::StopDiscoveryJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::stop_discovery_job::StopDiscoveryJobOutput,
-        crate::operation::stop_discovery_job::StopDiscoveryJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::stop_discovery_job::StopDiscoveryJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_discovery_job::StopDiscoveryJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::stop_discovery_job::StopDiscoveryJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::stop_discovery_job::StopDiscoveryJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::stop_discovery_job::StopDiscoveryJobOutput, crate::operation::stop_discovery_job::StopDiscoveryJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discovery_job_arn(input.into());
@@ -124,3 +111,4 @@ impl StopDiscoveryJobFluentBuilder {
         self.inner.get_discovery_job_arn()
     }
 }
+

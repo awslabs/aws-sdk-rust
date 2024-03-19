@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRedshiftIdcApplicationInput {
+pub struct DeleteRedshiftIdcApplicationInput  {
     /// <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
     pub redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRedshiftIdcApplicationInput {
+impl  DeleteRedshiftIdcApplicationInput  {
     /// <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
-    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<& str> {
         self.redshift_idc_application_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteRedshiftIdcApplicationInputBuilder {
     }
     /// <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
     pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redshift_idc_application_arn = input;
-        self
+        self.redshift_idc_application_arn = input; self
     }
     /// <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
     pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.redshift_idc_application_arn
     }
     /// Consumes the builder and constructs a [`DeleteRedshiftIdcApplicationInput`](crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationInput {
-            redshift_idc_application_arn: self.redshift_idc_application_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationInput {
+                redshift_idc_application_arn: self.redshift_idc_application_arn
+                ,
+            }
+        )
     }
 }
+

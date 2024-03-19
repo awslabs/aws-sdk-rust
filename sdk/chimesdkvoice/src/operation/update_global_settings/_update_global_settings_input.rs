@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGlobalSettingsInput {
+pub struct UpdateGlobalSettingsInput  {
     /// <p>The Voice Connector settings.</p>
     pub voice_connector: ::std::option::Option<crate::types::VoiceConnectorSettings>,
 }
-impl UpdateGlobalSettingsInput {
+impl  UpdateGlobalSettingsInput  {
     /// <p>The Voice Connector settings.</p>
-    pub fn voice_connector(&self) -> ::std::option::Option<&crate::types::VoiceConnectorSettings> {
+    pub fn voice_connector(&self) -> ::std::option::Option<& crate::types::VoiceConnectorSettings> {
         self.voice_connector.as_ref()
     }
 }
@@ -33,20 +33,20 @@ impl UpdateGlobalSettingsInputBuilder {
     }
     /// <p>The Voice Connector settings.</p>
     pub fn set_voice_connector(mut self, input: ::std::option::Option<crate::types::VoiceConnectorSettings>) -> Self {
-        self.voice_connector = input;
-        self
+        self.voice_connector = input; self
     }
     /// <p>The Voice Connector settings.</p>
     pub fn get_voice_connector(&self) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
         &self.voice_connector
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_global_settings::UpdateGlobalSettingsInput {
-            voice_connector: self.voice_connector,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_global_settings::UpdateGlobalSettingsInput {
+                voice_connector: self.voice_connector
+                ,
+            }
+        )
     }
 }
+

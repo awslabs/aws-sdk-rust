@@ -3,13 +3,13 @@
 /// <p>Represents the request to delete the specified remote access session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRemoteAccessSessionInput {
+pub struct DeleteRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRemoteAccessSessionInput {
+impl  DeleteRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteRemoteAccessSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteRemoteAccessSessionInput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

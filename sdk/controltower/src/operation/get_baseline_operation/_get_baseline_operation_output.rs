@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBaselineOperationOutput {
+pub struct GetBaselineOperationOutput  {
     /// <p>A <code>baselineOperation</code> object that shows information about the specified operation ID.</p>
     pub baseline_operation: ::std::option::Option<crate::types::BaselineOperation>,
     _request_id: Option<String>,
 }
-impl GetBaselineOperationOutput {
+impl  GetBaselineOperationOutput  {
     /// <p>A <code>baselineOperation</code> object that shows information about the specified operation ID.</p>
-    pub fn baseline_operation(&self) -> ::std::option::Option<&crate::types::BaselineOperation> {
+    pub fn baseline_operation(&self) -> ::std::option::Option<& crate::types::BaselineOperation> {
         self.baseline_operation.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBaselineOperationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBaselineOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetBaselineOperationOutput`](crate::operation::get_baseline_operation::GetBaselineOperationOutput).
     pub fn builder() -> crate::operation::get_baseline_operation::builders::GetBaselineOperationOutputBuilder {
@@ -41,27 +41,28 @@ impl GetBaselineOperationOutputBuilder {
     }
     /// <p>A <code>baselineOperation</code> object that shows information about the specified operation ID.</p>
     pub fn set_baseline_operation(mut self, input: ::std::option::Option<crate::types::BaselineOperation>) -> Self {
-        self.baseline_operation = input;
-        self
+        self.baseline_operation = input; self
     }
     /// <p>A <code>baselineOperation</code> object that shows information about the specified operation ID.</p>
     pub fn get_baseline_operation(&self) -> &::std::option::Option<crate::types::BaselineOperation> {
         &self.baseline_operation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBaselineOperationOutput`](crate::operation::get_baseline_operation::GetBaselineOperationOutput).
     pub fn build(self) -> crate::operation::get_baseline_operation::GetBaselineOperationOutput {
         crate::operation::get_baseline_operation::GetBaselineOperationOutput {
-            baseline_operation: self.baseline_operation,
+            baseline_operation: self.baseline_operation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLicenseUsageInput {
+pub struct GetLicenseUsageInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub license_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetLicenseUsageInput {
+impl  GetLicenseUsageInput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_arn(&self) -> ::std::option::Option<& str> {
         self.license_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetLicenseUsageInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_arn
     }
     /// Consumes the builder and constructs a [`GetLicenseUsageInput`](crate::operation::get_license_usage::GetLicenseUsageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_license_usage::GetLicenseUsageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_license_usage::GetLicenseUsageInput {
-            license_arn: self.license_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_license_usage::GetLicenseUsageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_license_usage::GetLicenseUsageInput {
+                license_arn: self.license_arn
+                ,
+            }
+        )
     }
 }
+

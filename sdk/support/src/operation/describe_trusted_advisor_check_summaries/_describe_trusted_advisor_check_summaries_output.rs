@@ -3,23 +3,22 @@
 /// <p>The summaries of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckSummaries</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckSummariesOutput {
+pub struct DescribeTrustedAdvisorCheckSummariesOutput  {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
-    pub summaries: ::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>,
+    pub summaries: ::std::vec::Vec::<crate::types::TrustedAdvisorCheckSummary>,
     _request_id: Option<String>,
 }
-impl DescribeTrustedAdvisorCheckSummariesOutput {
+impl  DescribeTrustedAdvisorCheckSummariesOutput  {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
-    pub fn summaries(&self) -> &[crate::types::TrustedAdvisorCheckSummary] {
-        use std::ops::Deref;
-        self.summaries.deref()
+    pub fn summaries(&self) -> & [crate::types::TrustedAdvisorCheckSummary] {
+        use std::ops::Deref; self.summaries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrustedAdvisorCheckSummariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTrustedAdvisorCheckSummariesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput).
     pub fn builder() -> crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesOutputBuilder {
@@ -31,7 +30,7 @@ impl DescribeTrustedAdvisorCheckSummariesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesOutputBuilder {
-    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TrustedAdvisorCheckSummary>>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckSummariesOutputBuilder {
@@ -42,47 +41,41 @@ impl DescribeTrustedAdvisorCheckSummariesOutputBuilder {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
     pub fn summaries(mut self, input: crate::types::TrustedAdvisorCheckSummary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
-        v.push(input);
-        self.summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
-    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>) -> Self {
-        self.summaries = input;
-        self
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrustedAdvisorCheckSummary>>) -> Self {
+        self.summaries = input; self
     }
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
-    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrustedAdvisorCheckSummary>> {
         &self.summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`summaries`](crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesOutputBuilder::summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput {
-                summaries: self.summaries.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "summaries",
-                        "summaries was not specified but it is required when building DescribeTrustedAdvisorCheckSummariesOutput",
-                    )
-                })?,
+                summaries: self.summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("summaries", "summaries was not specified but it is required when building DescribeTrustedAdvisorCheckSummariesOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

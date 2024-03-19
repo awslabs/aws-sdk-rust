@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTransformerInput {
+pub struct UpdateTransformerInput  {
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub transformer_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify a new name for the transformer, if you want to update it.</p>
@@ -18,33 +18,33 @@ pub struct UpdateTransformerInput {
     /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
     pub sample_document: ::std::option::Option<::std::string::String>,
 }
-impl UpdateTransformerInput {
+impl  UpdateTransformerInput  {
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
-    pub fn transformer_id(&self) -> ::std::option::Option<&str> {
+    pub fn transformer_id(&self) -> ::std::option::Option<& str> {
         self.transformer_id.as_deref()
     }
     /// <p>Specify a new name for the transformer, if you want to update it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
+    pub fn file_format(&self) -> ::std::option::Option<& crate::types::FileFormat> {
         self.file_format.as_ref()
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
-    pub fn mapping_template(&self) -> ::std::option::Option<&str> {
+    pub fn mapping_template(&self) -> ::std::option::Option<& str> {
         self.mapping_template.as_deref()
     }
     /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TransformerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TransformerStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    pub fn edi_type(&self) -> ::std::option::Option<&crate::types::EdiType> {
+    pub fn edi_type(&self) -> ::std::option::Option<& crate::types::EdiType> {
         self.edi_type.as_ref()
     }
     /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
-    pub fn sample_document(&self) -> ::std::option::Option<&str> {
+    pub fn sample_document(&self) -> ::std::option::Option<& str> {
         self.sample_document.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl UpdateTransformerInputBuilder {
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn set_transformer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformer_id = input;
-        self
+        self.transformer_id = input; self
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn get_transformer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl UpdateTransformerInputBuilder {
     }
     /// <p>Specify a new name for the transformer, if you want to update it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specify a new name for the transformer, if you want to update it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl UpdateTransformerInputBuilder {
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
-        self.file_format = input;
-        self
+        self.file_format = input; self
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
@@ -118,8 +115,7 @@ impl UpdateTransformerInputBuilder {
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub fn set_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mapping_template = input;
-        self
+        self.mapping_template = input; self
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub fn get_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl UpdateTransformerInputBuilder {
     }
     /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TransformerStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies the transformer's status. You can update the state of the transformer, from <code>active</code> to <code>inactive</code>, or <code>inactive</code> to <code>active</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TransformerStatus> {
@@ -146,8 +141,7 @@ impl UpdateTransformerInputBuilder {
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn set_edi_type(mut self, input: ::std::option::Option<crate::types::EdiType>) -> Self {
-        self.edi_type = input;
-        self
+        self.edi_type = input; self
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn get_edi_type(&self) -> &::std::option::Option<crate::types::EdiType> {
@@ -160,25 +154,32 @@ impl UpdateTransformerInputBuilder {
     }
     /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
     pub fn set_sample_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_document = input;
-        self
+        self.sample_document = input; self
     }
     /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
     pub fn get_sample_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_document
     }
     /// Consumes the builder and constructs a [`UpdateTransformerInput`](crate::operation::update_transformer::UpdateTransformerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_transformer::UpdateTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_transformer::UpdateTransformerInput {
-            transformer_id: self.transformer_id,
-            name: self.name,
-            file_format: self.file_format,
-            mapping_template: self.mapping_template,
-            status: self.status,
-            edi_type: self.edi_type,
-            sample_document: self.sample_document,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_transformer::UpdateTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_transformer::UpdateTransformerInput {
+                transformer_id: self.transformer_id
+                ,
+                name: self.name
+                ,
+                file_format: self.file_format
+                ,
+                mapping_template: self.mapping_template
+                ,
+                status: self.status
+                ,
+                edi_type: self.edi_type
+                ,
+                sample_document: self.sample_document
+                ,
+            }
+        )
     }
 }
+

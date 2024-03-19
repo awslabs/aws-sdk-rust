@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let compliancetype = unimplemented!();
 /// match compliancetype {
@@ -32,16 +32,14 @@
 /// Specifically, when `compliancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComplianceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ComplianceType {
     #[allow(missing_docs)] // documentation missing in model
     Compliant,
@@ -53,67 +51,68 @@ pub enum ComplianceType {
     NotApplicable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ComplianceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLIANT" => ComplianceType::Compliant,
-            "INSUFFICIENT_DATA" => ComplianceType::InsufficientData,
-            "NON_COMPLIANT" => ComplianceType::NonCompliant,
-            "NOT_APPLICABLE" => ComplianceType::NotApplicable,
-            other => ComplianceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COMPLIANT" => ComplianceType::Compliant,
+"INSUFFICIENT_DATA" => ComplianceType::InsufficientData,
+"NON_COMPLIANT" => ComplianceType::NonCompliant,
+"NOT_APPLICABLE" => ComplianceType::NotApplicable,
+other => ComplianceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ComplianceType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ComplianceType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ComplianceType::from(s))
+                    }
+                }
 impl ComplianceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComplianceType::Compliant => "COMPLIANT",
-            ComplianceType::InsufficientData => "INSUFFICIENT_DATA",
-            ComplianceType::NonCompliant => "NON_COMPLIANT",
-            ComplianceType::NotApplicable => "NOT_APPLICABLE",
-            ComplianceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT", "NOT_APPLICABLE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComplianceType::Compliant => "COMPLIANT",
+    ComplianceType::InsufficientData => "INSUFFICIENT_DATA",
+    ComplianceType::NonCompliant => "NON_COMPLIANT",
+    ComplianceType::NotApplicable => "NOT_APPLICABLE",
+    ComplianceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT", "NOT_APPLICABLE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ComplianceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ComplianceType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ComplianceType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ComplianceType::Compliant => write!(f, "COMPLIANT"),
-            ComplianceType::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
-            ComplianceType::NonCompliant => write!(f, "NON_COMPLIANT"),
-            ComplianceType::NotApplicable => write!(f, "NOT_APPLICABLE"),
-            ComplianceType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ComplianceType::Compliant => write!(f, "COMPLIANT"),
+ComplianceType::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
+ComplianceType::NonCompliant => write!(f, "NON_COMPLIANT"),
+ComplianceType::NotApplicable => write!(f, "NOT_APPLICABLE"),
+ComplianceType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

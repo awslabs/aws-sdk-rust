@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConferencePreferenceInput {}
+pub struct GetConferencePreferenceInput  {
+}
 impl GetConferencePreferenceInput {
     /// Creates a new builder-style object to manufacture [`GetConferencePreferenceInput`](crate::operation::get_conference_preference::GetConferencePreferenceInput).
     pub fn builder() -> crate::operation::get_conference_preference::builders::GetConferencePreferenceInputBuilder {
@@ -13,15 +14,15 @@ impl GetConferencePreferenceInput {
 /// A builder for [`GetConferencePreferenceInput`](crate::operation::get_conference_preference::GetConferencePreferenceInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetConferencePreferenceInputBuilder {}
+pub struct GetConferencePreferenceInputBuilder {
+}
 impl GetConferencePreferenceInputBuilder {
     /// Consumes the builder and constructs a [`GetConferencePreferenceInput`](crate::operation::get_conference_preference::GetConferencePreferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_conference_preference::GetConferencePreferenceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_conference_preference::GetConferencePreferenceInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_conference_preference::GetConferencePreferenceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_conference_preference::GetConferencePreferenceInput {
+            }
+        )
     }
 }
+

@@ -5,7 +5,8 @@
 /// <p>JSON specification: <code>"None": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoneAction {}
+pub struct NoneAction  {
+}
 impl NoneAction {
     /// Creates a new builder-style object to manufacture [`NoneAction`](crate::types::NoneAction).
     pub fn builder() -> crate::types::builders::NoneActionBuilder {
@@ -16,10 +17,13 @@ impl NoneAction {
 /// A builder for [`NoneAction`](crate::types::NoneAction).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct NoneActionBuilder {}
+pub struct NoneActionBuilder {
+}
 impl NoneActionBuilder {
     /// Consumes the builder and constructs a [`NoneAction`](crate::types::NoneAction).
     pub fn build(self) -> crate::types::NoneAction {
-        crate::types::NoneAction {}
+        crate::types::NoneAction {
+        }
     }
 }
+

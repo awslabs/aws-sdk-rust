@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppBundlesOutput {
+pub struct ListAppBundlesOutput  {
     /// <p>Contains a list of app bundle summaries.</p>
-    pub app_bundle_summary_list: ::std::vec::Vec<crate::types::AppBundleSummary>,
+    pub app_bundle_summary_list: ::std::vec::Vec::<crate::types::AppBundleSummary>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAppBundlesOutput {
+impl  ListAppBundlesOutput  {
     /// <p>Contains a list of app bundle summaries.</p>
-    pub fn app_bundle_summary_list(&self) -> &[crate::types::AppBundleSummary] {
-        use std::ops::Deref;
-        self.app_bundle_summary_list.deref()
+    pub fn app_bundle_summary_list(&self) -> & [crate::types::AppBundleSummary] {
+        use std::ops::Deref; self.app_bundle_summary_list.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAppBundlesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAppBundlesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppBundlesOutput`](crate::operation::list_app_bundles::ListAppBundlesOutput).
     pub fn builder() -> crate::operation::list_app_bundles::builders::ListAppBundlesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAppBundlesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppBundlesOutputBuilder {
-    pub(crate) app_bundle_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>,
+    pub(crate) app_bundle_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::AppBundleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAppBundlesOutputBuilder {
     /// <p>Contains a list of app bundle summaries.</p>
     pub fn app_bundle_summary_list(mut self, input: crate::types::AppBundleSummary) -> Self {
         let mut v = self.app_bundle_summary_list.unwrap_or_default();
-        v.push(input);
-        self.app_bundle_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_bundle_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of app bundle summaries.</p>
-    pub fn set_app_bundle_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>>) -> Self {
-        self.app_bundle_summary_list = input;
-        self
+    pub fn set_app_bundle_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppBundleSummary>>) -> Self {
+        self.app_bundle_summary_list = input; self
     }
     /// <p>Contains a list of app bundle summaries.</p>
-    pub fn get_app_bundle_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBundleSummary>> {
+    pub fn get_app_bundle_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppBundleSummary>> {
         &self.app_bundle_summary_list
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
@@ -68,37 +66,37 @@ impl ListAppBundlesOutputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAppBundlesOutput`](crate::operation::list_app_bundles::ListAppBundlesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_bundle_summary_list`](crate::operation::list_app_bundles::builders::ListAppBundlesOutputBuilder::app_bundle_summary_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_app_bundles::ListAppBundlesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_app_bundles::ListAppBundlesOutput {
-            app_bundle_summary_list: self.app_bundle_summary_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_bundle_summary_list",
-                    "app_bundle_summary_list was not specified but it is required when building ListAppBundlesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_app_bundles::ListAppBundlesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_app_bundles::ListAppBundlesOutput {
+                app_bundle_summary_list: self.app_bundle_summary_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_bundle_summary_list", "app_bundle_summary_list was not specified but it is required when building ListAppBundlesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

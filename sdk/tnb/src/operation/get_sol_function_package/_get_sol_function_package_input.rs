@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolFunctionPackageInput {
+pub struct GetSolFunctionPackageInput  {
     /// <p>ID of the function package.</p>
     pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSolFunctionPackageInput {
+impl  GetSolFunctionPackageInput  {
     /// <p>ID of the function package.</p>
-    pub fn vnf_pkg_id(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_pkg_id(&self) -> ::std::option::Option<& str> {
         self.vnf_pkg_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetSolFunctionPackageInputBuilder {
     }
     /// <p>ID of the function package.</p>
     pub fn set_vnf_pkg_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_pkg_id = input;
-        self
+        self.vnf_pkg_id = input; self
     }
     /// <p>ID of the function package.</p>
     pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vnf_pkg_id
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageInput`](crate::operation::get_sol_function_package::GetSolFunctionPackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sol_function_package::GetSolFunctionPackageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_sol_function_package::GetSolFunctionPackageInput { vnf_pkg_id: self.vnf_pkg_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_function_package::GetSolFunctionPackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sol_function_package::GetSolFunctionPackageInput {
+                vnf_pkg_id: self.vnf_pkg_id
+                ,
+            }
+        )
     }
 }
+

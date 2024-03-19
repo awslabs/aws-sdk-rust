@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHomeRegionControlInput {
+pub struct DeleteHomeRegionControlInput  {
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
     pub control_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHomeRegionControlInput {
+impl  DeleteHomeRegionControlInput  {
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
-    pub fn control_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_id(&self) -> ::std::option::Option<& str> {
         self.control_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteHomeRegionControlInputBuilder {
     }
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_id = input;
-        self
+        self.control_id = input; self
     }
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
     pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_id
     }
     /// Consumes the builder and constructs a [`DeleteHomeRegionControlInput`](crate::operation::delete_home_region_control::DeleteHomeRegionControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_home_region_control::DeleteHomeRegionControlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_home_region_control::DeleteHomeRegionControlInput { control_id: self.control_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_home_region_control::DeleteHomeRegionControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlInput {
+                control_id: self.control_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifySnapshotCopyRetentionPeriodOutput {
+pub struct ModifySnapshotCopyRetentionPeriodOutput  {
     /// <p>Describes a cluster.</p>
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }
-impl ModifySnapshotCopyRetentionPeriodOutput {
+impl  ModifySnapshotCopyRetentionPeriodOutput  {
     /// <p>Describes a cluster.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&crate::types::Cluster> {
+    pub fn cluster(&self) -> ::std::option::Option<& crate::types::Cluster> {
         self.cluster.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifySnapshotCopyRetentionPeriodOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifySnapshotCopyRetentionPeriodOutput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotCopyRetentionPeriodOutput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput).
     pub fn builder() -> crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifySnapshotCopyRetentionPeriodOutputBuilder {
     }
     /// <p>Describes a cluster.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<crate::types::Cluster>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>Describes a cluster.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<crate::types::Cluster> {
         &self.cluster
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifySnapshotCopyRetentionPeriodOutput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput).
     pub fn build(self) -> crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput {
         crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput {
-            cluster: self.cluster,
+            cluster: self.cluster
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

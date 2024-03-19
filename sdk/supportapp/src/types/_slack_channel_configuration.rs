@@ -3,7 +3,7 @@
 /// <p>The configuration for a Slack channel that you added for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlackChannelConfiguration {
+pub struct SlackChannelConfiguration  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub team_id: ::std::string::String,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
@@ -21,19 +21,17 @@ pub struct SlackChannelConfiguration {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub channel_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl SlackChannelConfiguration {
+impl  SlackChannelConfiguration  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> &str {
-        use std::ops::Deref;
-        self.team_id.deref()
+    pub fn team_id(&self) -> & str {
+        use std::ops::Deref; self.team_id.deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_id.deref()
+    pub fn channel_id(&self) -> & str {
+        use std::ops::Deref; self.channel_id.deref()
     }
     /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -49,11 +47,11 @@ impl SlackChannelConfiguration {
         self.notify_on_resolve_case
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
-    pub fn notify_on_case_severity(&self) -> ::std::option::Option<&crate::types::NotificationSeverityLevel> {
+    pub fn notify_on_case_severity(&self) -> ::std::option::Option<& crate::types::NotificationSeverityLevel> {
         self.notify_on_case_severity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn channel_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_role_arn(&self) -> ::std::option::Option<& str> {
         self.channel_role_arn.as_deref()
     }
 }
@@ -86,8 +84,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +98,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +111,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +124,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
     pub fn set_notify_on_create_or_reopen_case(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.notify_on_create_or_reopen_case = input;
-        self
+        self.notify_on_create_or_reopen_case = input; self
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
     pub fn get_notify_on_create_or_reopen_case(&self) -> &::std::option::Option<bool> {
@@ -143,8 +137,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
     pub fn set_notify_on_add_correspondence_to_case(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.notify_on_add_correspondence_to_case = input;
-        self
+        self.notify_on_add_correspondence_to_case = input; self
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
     pub fn get_notify_on_add_correspondence_to_case(&self) -> &::std::option::Option<bool> {
@@ -157,8 +150,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     pub fn set_notify_on_resolve_case(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.notify_on_resolve_case = input;
-        self
+        self.notify_on_resolve_case = input; self
     }
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     pub fn get_notify_on_resolve_case(&self) -> &::std::option::Option<bool> {
@@ -171,8 +163,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     pub fn set_notify_on_case_severity(mut self, input: ::std::option::Option<crate::types::NotificationSeverityLevel>) -> Self {
-        self.notify_on_case_severity = input;
-        self
+        self.notify_on_case_severity = input; self
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     pub fn get_notify_on_case_severity(&self) -> &::std::option::Option<crate::types::NotificationSeverityLevel> {
@@ -185,8 +176,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn set_channel_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_role_arn = input;
-        self
+        self.channel_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn get_channel_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,25 +187,32 @@ impl SlackChannelConfigurationBuilder {
     /// - [`team_id`](crate::types::builders::SlackChannelConfigurationBuilder::team_id)
     /// - [`channel_id`](crate::types::builders::SlackChannelConfigurationBuilder::channel_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SlackChannelConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlackChannelConfiguration {
-            team_id: self.team_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "team_id",
-                    "team_id was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            channel_id: self.channel_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel_id",
-                    "channel_id was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            channel_name: self.channel_name,
-            notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case,
-            notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case,
-            notify_on_resolve_case: self.notify_on_resolve_case,
-            notify_on_case_severity: self.notify_on_case_severity,
-            channel_role_arn: self.channel_role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlackChannelConfiguration {
+                team_id: self.team_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("team_id", "team_id was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                channel_id: self.channel_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel_id", "channel_id was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                channel_name: self.channel_name
+                ,
+                notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case
+                ,
+                notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case
+                ,
+                notify_on_resolve_case: self.notify_on_resolve_case
+                ,
+                notify_on_case_severity: self.notify_on_case_severity
+                ,
+                channel_role_arn: self.channel_role_arn
+                ,
+            }
+        )
     }
 }
+

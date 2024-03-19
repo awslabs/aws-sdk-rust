@@ -4,7 +4,7 @@
 /// <p>Each route contains the Amazon S3 bucket name and the Amazon Web Services Region that the bucket is located in. The route also includes the <code>TrafficDialPercentage</code> value, which shows whether the bucket and Region are active (indicated by a value of <code>100</code>) or passive (indicated by a value of <code>0</code>).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiRegionAccessPointRoute {
+pub struct MultiRegionAccessPointRoute  {
     /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
@@ -16,13 +16,13 @@ pub struct MultiRegionAccessPointRoute {
     /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
     pub traffic_dial_percentage: i32,
 }
-impl MultiRegionAccessPointRoute {
+impl  MultiRegionAccessPointRoute  {
     /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The traffic state for the specified bucket or Amazon Web Services Region.</p>
@@ -57,8 +57,7 @@ impl MultiRegionAccessPointRouteBuilder {
     }
     /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl MultiRegionAccessPointRouteBuilder {
     }
     /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl MultiRegionAccessPointRouteBuilder {
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
     /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
     pub fn set_traffic_dial_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.traffic_dial_percentage = input;
-        self
+        self.traffic_dial_percentage = input; self
     }
     /// <p>The traffic state for the specified bucket or Amazon Web Services Region.</p>
     /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region.</p>
@@ -109,15 +106,19 @@ impl MultiRegionAccessPointRouteBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`traffic_dial_percentage`](crate::types::builders::MultiRegionAccessPointRouteBuilder::traffic_dial_percentage)
     pub fn build(self) -> ::std::result::Result<crate::types::MultiRegionAccessPointRoute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MultiRegionAccessPointRoute {
-            bucket: self.bucket,
-            region: self.region,
-            traffic_dial_percentage: self.traffic_dial_percentage.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "traffic_dial_percentage",
-                    "traffic_dial_percentage was not specified but it is required when building MultiRegionAccessPointRoute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MultiRegionAccessPointRoute {
+                bucket: self.bucket
+                ,
+                region: self.region
+                ,
+                traffic_dial_percentage: self.traffic_dial_percentage
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("traffic_dial_percentage", "traffic_dial_percentage was not specified but it is required when building MultiRegionAccessPointRoute")
+                    )?
+                ,
+            }
+        )
     }
 }
+

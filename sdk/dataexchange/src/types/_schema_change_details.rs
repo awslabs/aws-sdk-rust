@@ -3,7 +3,7 @@
 /// <p>Object encompassing information about a schema change to a single, particular field, a notification can have up to 100 of these.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaChangeDetails {
+pub struct SchemaChangeDetails  {
     /// <p>Name of the changing field. This value can be up to 255 characters long.</p>
     pub name: ::std::string::String,
     /// <p>Is the field being added, removed, or modified?</p>
@@ -11,18 +11,17 @@ pub struct SchemaChangeDetails {
     /// <p>Description of what's changing about this field. This value can be up to 512 characters long.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl SchemaChangeDetails {
+impl  SchemaChangeDetails  {
     /// <p>Name of the changing field. This value can be up to 255 characters long.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Is the field being added, removed, or modified?</p>
-    pub fn r#type(&self) -> &crate::types::SchemaChangeType {
+    pub fn r#type(&self) -> & crate::types::SchemaChangeType {
         &self.r#type
     }
     /// <p>Description of what's changing about this field. This value can be up to 512 characters long.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl SchemaChangeDetailsBuilder {
     }
     /// <p>Name of the changing field. This value can be up to 255 characters long.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the changing field. This value can be up to 255 characters long.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl SchemaChangeDetailsBuilder {
     }
     /// <p>Is the field being added, removed, or modified?</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SchemaChangeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Is the field being added, removed, or modified?</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SchemaChangeType> {
@@ -79,8 +76,7 @@ impl SchemaChangeDetailsBuilder {
     }
     /// <p>Description of what's changing about this field. This value can be up to 512 characters long.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of what's changing about this field. This value can be up to 512 characters long.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl SchemaChangeDetailsBuilder {
     /// - [`name`](crate::types::builders::SchemaChangeDetailsBuilder::name)
     /// - [`r#type`](crate::types::builders::SchemaChangeDetailsBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaChangeDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SchemaChangeDetails {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SchemaChangeDetails",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SchemaChangeDetails",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SchemaChangeDetails {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SchemaChangeDetails")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SchemaChangeDetails")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

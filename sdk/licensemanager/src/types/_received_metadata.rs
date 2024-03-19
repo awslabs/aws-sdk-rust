@@ -3,28 +3,29 @@
 /// <p>Metadata associated with received licenses and grants.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReceivedMetadata {
+pub struct ReceivedMetadata  {
     /// <p>Received status.</p>
     pub received_status: ::std::option::Option<crate::types::ReceivedStatus>,
     /// <p>Received status reason.</p>
     pub received_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Allowed operations.</p>
-    pub allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub allowed_operations: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedOperation>>,
 }
-impl ReceivedMetadata {
+impl  ReceivedMetadata  {
     /// <p>Received status.</p>
-    pub fn received_status(&self) -> ::std::option::Option<&crate::types::ReceivedStatus> {
+    pub fn received_status(&self) -> ::std::option::Option<& crate::types::ReceivedStatus> {
         self.received_status.as_ref()
     }
     /// <p>Received status reason.</p>
-    pub fn received_status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn received_status_reason(&self) -> ::std::option::Option<& str> {
         self.received_status_reason.as_deref()
     }
     /// <p>Allowed operations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_operations.is_none()`.
-    pub fn allowed_operations(&self) -> &[crate::types::AllowedOperation] {
-        self.allowed_operations.as_deref().unwrap_or_default()
+    pub fn allowed_operations(&self) -> & [crate::types::AllowedOperation] {
+        self.allowed_operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReceivedMetadata {
@@ -40,7 +41,7 @@ impl ReceivedMetadata {
 pub struct ReceivedMetadataBuilder {
     pub(crate) received_status: ::std::option::Option<crate::types::ReceivedStatus>,
     pub(crate) received_status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub(crate) allowed_operations: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedOperation>>,
 }
 impl ReceivedMetadataBuilder {
     /// <p>Received status.</p>
@@ -50,8 +51,7 @@ impl ReceivedMetadataBuilder {
     }
     /// <p>Received status.</p>
     pub fn set_received_status(mut self, input: ::std::option::Option<crate::types::ReceivedStatus>) -> Self {
-        self.received_status = input;
-        self
+        self.received_status = input; self
     }
     /// <p>Received status.</p>
     pub fn get_received_status(&self) -> &::std::option::Option<crate::types::ReceivedStatus> {
@@ -64,8 +64,7 @@ impl ReceivedMetadataBuilder {
     }
     /// <p>Received status reason.</p>
     pub fn set_received_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.received_status_reason = input;
-        self
+        self.received_status_reason = input; self
     }
     /// <p>Received status reason.</p>
     pub fn get_received_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl ReceivedMetadataBuilder {
     /// <p>Allowed operations.</p>
     pub fn allowed_operations(mut self, input: crate::types::AllowedOperation) -> Self {
         let mut v = self.allowed_operations.unwrap_or_default();
-        v.push(input);
-        self.allowed_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.allowed_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Allowed operations.</p>
-    pub fn set_allowed_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>) -> Self {
-        self.allowed_operations = input;
-        self
+    pub fn set_allowed_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedOperation>>) -> Self {
+        self.allowed_operations = input; self
     }
     /// <p>Allowed operations.</p>
-    pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+    pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AllowedOperation>> {
         &self.allowed_operations
     }
     /// Consumes the builder and constructs a [`ReceivedMetadata`](crate::types::ReceivedMetadata).
     pub fn build(self) -> crate::types::ReceivedMetadata {
         crate::types::ReceivedMetadata {
-            received_status: self.received_status,
-            received_status_reason: self.received_status_reason,
-            allowed_operations: self.allowed_operations,
+            received_status: self.received_status
+            ,
+            received_status_reason: self.received_status_reason
+            ,
+            allowed_operations: self.allowed_operations
+            ,
         }
     }
 }
+

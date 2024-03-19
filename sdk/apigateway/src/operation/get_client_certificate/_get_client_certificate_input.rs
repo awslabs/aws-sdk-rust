@@ -3,13 +3,13 @@
 /// <p>A request to get information about the current ClientCertificate resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClientCertificateInput {
+pub struct GetClientCertificateInput  {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
 }
-impl GetClientCertificateInput {
+impl  GetClientCertificateInput  {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
-    pub fn client_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_certificate_id(&self) -> ::std::option::Option<& str> {
         self.client_certificate_id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl GetClientCertificateInputBuilder {
     }
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
     pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_certificate_id = input;
-        self
+        self.client_certificate_id = input; self
     }
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
     pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_certificate_id
     }
     /// Consumes the builder and constructs a [`GetClientCertificateInput`](crate::operation::get_client_certificate::GetClientCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_client_certificate::GetClientCertificateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_client_certificate::GetClientCertificateInput {
-            client_certificate_id: self.client_certificate_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_client_certificate::GetClientCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_client_certificate::GetClientCertificateInput {
+                client_certificate_id: self.client_certificate_id
+                ,
+            }
+        )
     }
 }
+

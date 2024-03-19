@@ -3,7 +3,7 @@
 /// <p>A structure that describes updated configuration settings for a trusted token issuer that supports OpenID Connect (OIDC) and JSON Web Tokens (JWTs).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OidcJwtUpdateConfiguration {
+pub struct OidcJwtUpdateConfiguration  {
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub claim_attribute_path: ::std::option::Option<::std::string::String>,
     /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
@@ -11,17 +11,17 @@ pub struct OidcJwtUpdateConfiguration {
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
     pub jwks_retrieval_option: ::std::option::Option<crate::types::JwksRetrievalOption>,
 }
-impl OidcJwtUpdateConfiguration {
+impl  OidcJwtUpdateConfiguration  {
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
-    pub fn claim_attribute_path(&self) -> ::std::option::Option<&str> {
+    pub fn claim_attribute_path(&self) -> ::std::option::Option<& str> {
         self.claim_attribute_path.as_deref()
     }
     /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
-    pub fn identity_store_attribute_path(&self) -> ::std::option::Option<&str> {
+    pub fn identity_store_attribute_path(&self) -> ::std::option::Option<& str> {
         self.identity_store_attribute_path.as_deref()
     }
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
-    pub fn jwks_retrieval_option(&self) -> ::std::option::Option<&crate::types::JwksRetrievalOption> {
+    pub fn jwks_retrieval_option(&self) -> ::std::option::Option<& crate::types::JwksRetrievalOption> {
         self.jwks_retrieval_option.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl OidcJwtUpdateConfigurationBuilder {
     }
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub fn set_claim_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.claim_attribute_path = input;
-        self
+        self.claim_attribute_path = input; self
     }
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub fn get_claim_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl OidcJwtUpdateConfigurationBuilder {
     }
     /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub fn set_identity_store_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_attribute_path = input;
-        self
+        self.identity_store_attribute_path = input; self
     }
     /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub fn get_identity_store_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl OidcJwtUpdateConfigurationBuilder {
     }
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
     pub fn set_jwks_retrieval_option(mut self, input: ::std::option::Option<crate::types::JwksRetrievalOption>) -> Self {
-        self.jwks_retrieval_option = input;
-        self
+        self.jwks_retrieval_option = input; self
     }
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
     pub fn get_jwks_retrieval_option(&self) -> &::std::option::Option<crate::types::JwksRetrievalOption> {
@@ -86,9 +83,13 @@ impl OidcJwtUpdateConfigurationBuilder {
     /// Consumes the builder and constructs a [`OidcJwtUpdateConfiguration`](crate::types::OidcJwtUpdateConfiguration).
     pub fn build(self) -> crate::types::OidcJwtUpdateConfiguration {
         crate::types::OidcJwtUpdateConfiguration {
-            claim_attribute_path: self.claim_attribute_path,
-            identity_store_attribute_path: self.identity_store_attribute_path,
-            jwks_retrieval_option: self.jwks_retrieval_option,
+            claim_attribute_path: self.claim_attribute_path
+            ,
+            identity_store_attribute_path: self.identity_store_attribute_path
+            ,
+            jwks_retrieval_option: self.jwks_retrieval_option
+            ,
         }
     }
 }
+

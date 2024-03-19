@@ -3,13 +3,13 @@
 /// List of account configuration parameters to update.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountConfigurationInput {
+pub struct UpdateAccountConfigurationInput  {
     /// Placeholder documentation for AccountConfiguration
     pub account_configuration: ::std::option::Option<crate::types::AccountConfiguration>,
 }
-impl UpdateAccountConfigurationInput {
+impl  UpdateAccountConfigurationInput  {
     /// Placeholder documentation for AccountConfiguration
-    pub fn account_configuration(&self) -> ::std::option::Option<&crate::types::AccountConfiguration> {
+    pub fn account_configuration(&self) -> ::std::option::Option<& crate::types::AccountConfiguration> {
         self.account_configuration.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl UpdateAccountConfigurationInputBuilder {
     }
     /// Placeholder documentation for AccountConfiguration
     pub fn set_account_configuration(mut self, input: ::std::option::Option<crate::types::AccountConfiguration>) -> Self {
-        self.account_configuration = input;
-        self
+        self.account_configuration = input; self
     }
     /// Placeholder documentation for AccountConfiguration
     pub fn get_account_configuration(&self) -> &::std::option::Option<crate::types::AccountConfiguration> {
         &self.account_configuration
     }
     /// Consumes the builder and constructs a [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_configuration::UpdateAccountConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
-            account_configuration: self.account_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_account_configuration::UpdateAccountConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
+                account_configuration: self.account_configuration
+                ,
+            }
+        )
     }
 }
+

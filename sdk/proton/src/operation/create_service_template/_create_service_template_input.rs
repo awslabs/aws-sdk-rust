@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateServiceTemplateInput {
+pub struct CreateServiceTemplateInput  {
     /// <p>The name of the service template.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template as displayed in the developer interface.</p>
@@ -15,38 +15,39 @@ pub struct CreateServiceTemplateInput {
     pub pipeline_provisioning: ::std::option::Option<crate::types::Provisioning>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateServiceTemplateInput {
+impl  CreateServiceTemplateInput  {
     /// <p>The name of the service template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the service template as displayed in the developer interface.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description of the service template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
-    pub fn encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key(&self) -> ::std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
-    pub fn pipeline_provisioning(&self) -> ::std::option::Option<&crate::types::Provisioning> {
+    pub fn pipeline_provisioning(&self) -> ::std::option::Option<& crate::types::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateServiceTemplateInput {
+impl  ::std::fmt::Debug for CreateServiceTemplateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceTemplateInput");
         formatter.field("name", &self.name);
@@ -74,7 +75,7 @@ pub struct CreateServiceTemplateInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_provisioning: ::std::option::Option<crate::types::Provisioning>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateServiceTemplateInputBuilder {
     /// <p>The name of the service template.</p>
@@ -85,8 +86,7 @@ impl CreateServiceTemplateInputBuilder {
     }
     /// <p>The name of the service template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl CreateServiceTemplateInputBuilder {
     }
     /// <p>The name of the service template as displayed in the developer interface.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the service template as displayed in the developer interface.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl CreateServiceTemplateInputBuilder {
     }
     /// <p>A description of the service template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the service template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl CreateServiceTemplateInputBuilder {
     }
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key = input;
-        self
+        self.encryption_key = input; self
     }
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl CreateServiceTemplateInputBuilder {
     }
     /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_pipeline_provisioning(mut self, input: ::std::option::Option<crate::types::Provisioning>) -> Self {
-        self.pipeline_provisioning = input;
-        self
+        self.pipeline_provisioning = input; self
     }
     /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
     pub fn get_pipeline_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
@@ -156,34 +152,38 @@ impl CreateServiceTemplateInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceTemplateInput`](crate::operation::create_service_template::CreateServiceTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_service_template::CreateServiceTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_service_template::CreateServiceTemplateInput {
-            name: self.name,
-            display_name: self.display_name,
-            description: self.description,
-            encryption_key: self.encryption_key,
-            pipeline_provisioning: self.pipeline_provisioning,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_service_template::CreateServiceTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_service_template::CreateServiceTemplateInput {
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                encryption_key: self.encryption_key
+                ,
+                pipeline_provisioning: self.pipeline_provisioning
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateServiceTemplateInputBuilder {
@@ -198,3 +198,4 @@ impl ::std::fmt::Debug for CreateServiceTemplateInputBuilder {
         formatter.finish()
     }
 }
+

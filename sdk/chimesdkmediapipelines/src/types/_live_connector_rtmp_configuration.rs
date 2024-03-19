@@ -3,7 +3,7 @@
 /// <p>The media pipeline's RTMP configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct LiveConnectorRtmpConfiguration {
+pub struct LiveConnectorRtmpConfiguration  {
     /// <p>The URL of the RTMP configuration.</p>
     pub url: ::std::string::String,
     /// <p>The audio channels set for the RTMP configuration</p>
@@ -11,22 +11,21 @@ pub struct LiveConnectorRtmpConfiguration {
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
     pub audio_sample_rate: ::std::option::Option<::std::string::String>,
 }
-impl LiveConnectorRtmpConfiguration {
+impl  LiveConnectorRtmpConfiguration  {
     /// <p>The URL of the RTMP configuration.</p>
-    pub fn url(&self) -> &str {
-        use std::ops::Deref;
-        self.url.deref()
+    pub fn url(&self) -> & str {
+        use std::ops::Deref; self.url.deref()
     }
     /// <p>The audio channels set for the RTMP configuration</p>
-    pub fn audio_channels(&self) -> ::std::option::Option<&crate::types::AudioChannelsOption> {
+    pub fn audio_channels(&self) -> ::std::option::Option<& crate::types::AudioChannelsOption> {
         self.audio_channels.as_ref()
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
-    pub fn audio_sample_rate(&self) -> ::std::option::Option<&str> {
+    pub fn audio_sample_rate(&self) -> ::std::option::Option<& str> {
         self.audio_sample_rate.as_deref()
     }
 }
-impl ::std::fmt::Debug for LiveConnectorRtmpConfiguration {
+impl  ::std::fmt::Debug for LiveConnectorRtmpConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LiveConnectorRtmpConfiguration");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
@@ -59,8 +58,7 @@ impl LiveConnectorRtmpConfigurationBuilder {
     }
     /// <p>The URL of the RTMP configuration.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL of the RTMP configuration.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,7 @@ impl LiveConnectorRtmpConfigurationBuilder {
     }
     /// <p>The audio channels set for the RTMP configuration</p>
     pub fn set_audio_channels(mut self, input: ::std::option::Option<crate::types::AudioChannelsOption>) -> Self {
-        self.audio_channels = input;
-        self
+        self.audio_channels = input; self
     }
     /// <p>The audio channels set for the RTMP configuration</p>
     pub fn get_audio_channels(&self) -> &::std::option::Option<crate::types::AudioChannelsOption> {
@@ -87,8 +84,7 @@ impl LiveConnectorRtmpConfigurationBuilder {
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
     pub fn set_audio_sample_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audio_sample_rate = input;
-        self
+        self.audio_sample_rate = input; self
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
     pub fn get_audio_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,16 +94,19 @@ impl LiveConnectorRtmpConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`url`](crate::types::builders::LiveConnectorRtmpConfigurationBuilder::url)
     pub fn build(self) -> ::std::result::Result<crate::types::LiveConnectorRtmpConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LiveConnectorRtmpConfiguration {
-            url: self.url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "url",
-                    "url was not specified but it is required when building LiveConnectorRtmpConfiguration",
-                )
-            })?,
-            audio_channels: self.audio_channels,
-            audio_sample_rate: self.audio_sample_rate,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LiveConnectorRtmpConfiguration {
+                url: self.url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("url", "url was not specified but it is required when building LiveConnectorRtmpConfiguration")
+                    )?
+                ,
+                audio_channels: self.audio_channels
+                ,
+                audio_sample_rate: self.audio_sample_rate
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for LiveConnectorRtmpConfigurationBuilder {
@@ -119,3 +118,4 @@ impl ::std::fmt::Debug for LiveConnectorRtmpConfigurationBuilder {
         formatter.finish()
     }
 }
+

@@ -3,47 +3,49 @@
 /// <p>A cross-account attachment in Global Accelerator. A cross-account attachment specifies the <i>principals</i> who have permission to add to accelerators in their own account the resources in your account that you also list in the attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attachment {
+pub struct Attachment  {
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment.</p>
     pub attachment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cross-account attachment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The principals included in the cross-account attachment.</p>
-    pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The resources included in the cross-account attachment.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     /// <p>The date and time that the cross-account attachment was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the cross-account attachment was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Attachment {
+impl  Attachment  {
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment.</p>
-    pub fn attachment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_arn(&self) -> ::std::option::Option<& str> {
         self.attachment_arn.as_deref()
     }
     /// <p>The name of the cross-account attachment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The principals included in the cross-account attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
-    pub fn principals(&self) -> &[::std::string::String] {
-        self.principals.as_deref().unwrap_or_default()
+    pub fn principals(&self) -> & [::std::string::String] {
+        self.principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resources included in the cross-account attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::Resource] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::Resource] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time that the cross-account attachment was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The date and time that the cross-account attachment was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -60,8 +62,8 @@ impl Attachment {
 pub struct AttachmentBuilder {
     pub(crate) attachment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -73,8 +75,7 @@ impl AttachmentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment.</p>
     pub fn set_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_arn = input;
-        self
+        self.attachment_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cross-account attachment.</p>
     pub fn get_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +88,7 @@ impl AttachmentBuilder {
     }
     /// <p>The name of the cross-account attachment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the cross-account attachment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,17 +101,16 @@ impl AttachmentBuilder {
     /// <p>The principals included in the cross-account attachment.</p>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
-        v.push(input.into());
-        self.principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The principals included in the cross-account attachment.</p>
-    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.principals = input;
-        self
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.principals = input; self
     }
     /// <p>The principals included in the cross-account attachment.</p>
-    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.principals
     }
     /// Appends an item to `resources`.
@@ -121,17 +120,16 @@ impl AttachmentBuilder {
     /// <p>The resources included in the cross-account attachment.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources included in the cross-account attachment.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The resources included in the cross-account attachment.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.resources
     }
     /// <p>The date and time that the cross-account attachment was last modified.</p>
@@ -141,8 +139,7 @@ impl AttachmentBuilder {
     }
     /// <p>The date and time that the cross-account attachment was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time that the cross-account attachment was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +152,7 @@ impl AttachmentBuilder {
     }
     /// <p>The date and time that the cross-account attachment was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time that the cross-account attachment was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -165,12 +161,19 @@ impl AttachmentBuilder {
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {
         crate::types::Attachment {
-            attachment_arn: self.attachment_arn,
-            name: self.name,
-            principals: self.principals,
-            resources: self.resources,
-            last_modified_time: self.last_modified_time,
-            created_time: self.created_time,
+            attachment_arn: self.attachment_arn
+            ,
+            name: self.name
+            ,
+            principals: self.principals
+            ,
+            resources: self.resources
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            created_time: self.created_time
+            ,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Defines one of the values for a slot type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SampleValue {
+pub struct SampleValue  {
     /// <p>The value that can be used for a slot type.</p>
     pub value: ::std::string::String,
 }
-impl SampleValue {
+impl  SampleValue  {
     /// <p>The value that can be used for a slot type.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl SampleValue {
@@ -36,8 +35,7 @@ impl SampleValueBuilder {
     }
     /// <p>The value that can be used for a slot type.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value that can be used for a slot type.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SampleValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::SampleValueBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::SampleValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SampleValue {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building SampleValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SampleValue {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building SampleValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

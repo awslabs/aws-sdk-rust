@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReportInput {
+pub struct GetReportInput  {
     /// <p>Unique resource ID for the report resource.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>Version for the report resource.</p>
@@ -10,9 +10,9 @@ pub struct GetReportInput {
     /// <p>Unique download token provided by GetTermForReport API.</p>
     pub term_token: ::std::option::Option<::std::string::String>,
 }
-impl GetReportInput {
+impl  GetReportInput  {
     /// <p>Unique resource ID for the report resource.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>Version for the report resource.</p>
@@ -20,7 +20,7 @@ impl GetReportInput {
         self.report_version
     }
     /// <p>Unique download token provided by GetTermForReport API.</p>
-    pub fn term_token(&self) -> ::std::option::Option<&str> {
+    pub fn term_token(&self) -> ::std::option::Option<& str> {
         self.term_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetReportInputBuilder {
     }
     /// <p>Unique resource ID for the report resource.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>Unique resource ID for the report resource.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetReportInputBuilder {
     }
     /// <p>Version for the report resource.</p>
     pub fn set_report_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.report_version = input;
-        self
+        self.report_version = input; self
     }
     /// <p>Version for the report resource.</p>
     pub fn get_report_version(&self) -> &::std::option::Option<i64> {
@@ -77,8 +75,7 @@ impl GetReportInputBuilder {
     }
     /// <p>Unique download token provided by GetTermForReport API.</p>
     pub fn set_term_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.term_token = input;
-        self
+        self.term_token = input; self
     }
     /// <p>Unique download token provided by GetTermForReport API.</p>
     pub fn get_term_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,10 +83,16 @@ impl GetReportInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetReportInput`](crate::operation::get_report::GetReportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_report::GetReportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_report::GetReportInput {
-            report_id: self.report_id,
-            report_version: self.report_version,
-            term_token: self.term_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_report::GetReportInput {
+                report_id: self.report_id
+                ,
+                report_version: self.report_version
+                ,
+                term_token: self.term_token
+                ,
+            }
+        )
     }
 }
+

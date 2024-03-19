@@ -3,16 +3,17 @@
 /// <p>Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictorExecutionDetails {
+pub struct PredictorExecutionDetails  {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    pub predictor_executions: ::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>>,
+    pub predictor_executions: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorExecution>>,
 }
-impl PredictorExecutionDetails {
+impl  PredictorExecutionDetails  {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predictor_executions.is_none()`.
-    pub fn predictor_executions(&self) -> &[crate::types::PredictorExecution] {
-        self.predictor_executions.as_deref().unwrap_or_default()
+    pub fn predictor_executions(&self) -> & [crate::types::PredictorExecution] {
+        self.predictor_executions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PredictorExecutionDetails {
@@ -26,7 +27,7 @@ impl PredictorExecutionDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictorExecutionDetailsBuilder {
-    pub(crate) predictor_executions: ::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>>,
+    pub(crate) predictor_executions: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorExecution>>,
 }
 impl PredictorExecutionDetailsBuilder {
     /// Appends an item to `predictor_executions`.
@@ -36,23 +37,24 @@ impl PredictorExecutionDetailsBuilder {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub fn predictor_executions(mut self, input: crate::types::PredictorExecution) -> Self {
         let mut v = self.predictor_executions.unwrap_or_default();
-        v.push(input);
-        self.predictor_executions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.predictor_executions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    pub fn set_predictor_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>>) -> Self {
-        self.predictor_executions = input;
-        self
+    pub fn set_predictor_executions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorExecution>>) -> Self {
+        self.predictor_executions = input; self
     }
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    pub fn get_predictor_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>> {
+    pub fn get_predictor_executions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PredictorExecution>> {
         &self.predictor_executions
     }
     /// Consumes the builder and constructs a [`PredictorExecutionDetails`](crate::types::PredictorExecutionDetails).
     pub fn build(self) -> crate::types::PredictorExecutionDetails {
         crate::types::PredictorExecutionDetails {
-            predictor_executions: self.predictor_executions,
+            predictor_executions: self.predictor_executions
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterContainerInstanceInput {
+pub struct RegisterContainerInstanceInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
@@ -10,15 +10,15 @@ pub struct RegisterContainerInstanceInput {
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
     pub instance_identity_document_signature: ::std::option::Option<::std::string::String>,
     /// <p>The resources available on the instance.</p>
-    pub total_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub total_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
     pub version_info: ::std::option::Option<crate::types::VersionInfo>,
     /// <p>The ARN of the container instance (if it was previously registered).</p>
     pub container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The container instance attributes that this container instance supports.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    pub platform_devices: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>,
+    pub platform_devices: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDevice>>,
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
@@ -37,46 +37,49 @@ pub struct RegisterContainerInstanceInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl RegisterContainerInstanceInput {
+impl  RegisterContainerInstanceInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
-    pub fn instance_identity_document(&self) -> ::std::option::Option<&str> {
+    pub fn instance_identity_document(&self) -> ::std::option::Option<& str> {
         self.instance_identity_document.as_deref()
     }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
-    pub fn instance_identity_document_signature(&self) -> ::std::option::Option<&str> {
+    pub fn instance_identity_document_signature(&self) -> ::std::option::Option<& str> {
         self.instance_identity_document_signature.as_deref()
     }
     /// <p>The resources available on the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.total_resources.is_none()`.
-    pub fn total_resources(&self) -> &[crate::types::Resource] {
-        self.total_resources.as_deref().unwrap_or_default()
+    pub fn total_resources(&self) -> & [crate::types::Resource] {
+        self.total_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
-    pub fn version_info(&self) -> ::std::option::Option<&crate::types::VersionInfo> {
+    pub fn version_info(&self) -> ::std::option::Option<& crate::types::VersionInfo> {
         self.version_info.as_ref()
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
-    pub fn container_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn container_instance_arn(&self) -> ::std::option::Option<& str> {
         self.container_instance_arn.as_deref()
     }
     /// <p>The container instance attributes that this container instance supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_devices.is_none()`.
-    pub fn platform_devices(&self) -> &[crate::types::PlatformDevice] {
-        self.platform_devices.as_deref().unwrap_or_default()
+    pub fn platform_devices(&self) -> & [crate::types::PlatformDevice] {
+        self.platform_devices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -96,10 +99,11 @@ impl RegisterContainerInstanceInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegisterContainerInstanceInput {
@@ -116,12 +120,12 @@ pub struct RegisterContainerInstanceInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) instance_identity_document: ::std::option::Option<::std::string::String>,
     pub(crate) instance_identity_document_signature: ::std::option::Option<::std::string::String>,
-    pub(crate) total_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) total_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     pub(crate) version_info: ::std::option::Option<crate::types::VersionInfo>,
     pub(crate) container_instance_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    pub(crate) platform_devices: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
+    pub(crate) platform_devices: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDevice>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl RegisterContainerInstanceInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -131,8 +135,7 @@ impl RegisterContainerInstanceInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +148,7 @@ impl RegisterContainerInstanceInputBuilder {
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
     pub fn set_instance_identity_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_identity_document = input;
-        self
+        self.instance_identity_document = input; self
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
     pub fn get_instance_identity_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +161,7 @@ impl RegisterContainerInstanceInputBuilder {
     }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
     pub fn set_instance_identity_document_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_identity_document_signature = input;
-        self
+        self.instance_identity_document_signature = input; self
     }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
     pub fn get_instance_identity_document_signature(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,17 +174,16 @@ impl RegisterContainerInstanceInputBuilder {
     /// <p>The resources available on the instance.</p>
     pub fn total_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.total_resources.unwrap_or_default();
-        v.push(input);
-        self.total_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.total_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources available on the instance.</p>
-    pub fn set_total_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.total_resources = input;
-        self
+    pub fn set_total_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.total_resources = input; self
     }
     /// <p>The resources available on the instance.</p>
-    pub fn get_total_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_total_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.total_resources
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
@@ -193,8 +193,7 @@ impl RegisterContainerInstanceInputBuilder {
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
     pub fn set_version_info(mut self, input: ::std::option::Option<crate::types::VersionInfo>) -> Self {
-        self.version_info = input;
-        self
+        self.version_info = input; self
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
     pub fn get_version_info(&self) -> &::std::option::Option<crate::types::VersionInfo> {
@@ -207,8 +206,7 @@ impl RegisterContainerInstanceInputBuilder {
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
     pub fn set_container_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_instance_arn = input;
-        self
+        self.container_instance_arn = input; self
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
     pub fn get_container_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,17 +219,16 @@ impl RegisterContainerInstanceInputBuilder {
     /// <p>The container instance attributes that this container instance supports.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container instance attributes that this container instance supports.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The container instance attributes that this container instance supports.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// Appends an item to `platform_devices`.
@@ -241,17 +238,16 @@ impl RegisterContainerInstanceInputBuilder {
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
     pub fn platform_devices(mut self, input: crate::types::PlatformDevice) -> Self {
         let mut v = self.platform_devices.unwrap_or_default();
-        v.push(input);
-        self.platform_devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.platform_devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    pub fn set_platform_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>) -> Self {
-        self.platform_devices = input;
-        self
+    pub fn set_platform_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformDevice>>) -> Self {
+        self.platform_devices = input; self
     }
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    pub fn get_platform_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>> {
+    pub fn get_platform_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlatformDevice>> {
         &self.platform_devices
     }
     /// Appends an item to `tags`.
@@ -278,9 +274,9 @@ impl RegisterContainerInstanceInputBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -300,9 +296,8 @@ impl RegisterContainerInstanceInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -322,26 +317,33 @@ impl RegisterContainerInstanceInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RegisterContainerInstanceInput`](crate::operation::register_container_instance::RegisterContainerInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_container_instance::RegisterContainerInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::register_container_instance::RegisterContainerInstanceInput {
-            cluster: self.cluster,
-            instance_identity_document: self.instance_identity_document,
-            instance_identity_document_signature: self.instance_identity_document_signature,
-            total_resources: self.total_resources,
-            version_info: self.version_info,
-            container_instance_arn: self.container_instance_arn,
-            attributes: self.attributes,
-            platform_devices: self.platform_devices,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_container_instance::RegisterContainerInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_container_instance::RegisterContainerInstanceInput {
+                cluster: self.cluster
+                ,
+                instance_identity_document: self.instance_identity_document
+                ,
+                instance_identity_document_signature: self.instance_identity_document_signature
+                ,
+                total_resources: self.total_resources
+                ,
+                version_info: self.version_info
+                ,
+                container_instance_arn: self.container_instance_arn
+                ,
+                attributes: self.attributes
+                ,
+                platform_devices: self.platform_devices
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

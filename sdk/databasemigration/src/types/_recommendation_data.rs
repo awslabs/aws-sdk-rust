@@ -3,13 +3,13 @@
 /// <p>Provides information about the target engine for the specified source database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationData {
+pub struct RecommendationData  {
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
     pub rds_engine: ::std::option::Option<crate::types::RdsRecommendation>,
 }
-impl RecommendationData {
+impl  RecommendationData  {
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
-    pub fn rds_engine(&self) -> ::std::option::Option<&crate::types::RdsRecommendation> {
+    pub fn rds_engine(&self) -> ::std::option::Option<& crate::types::RdsRecommendation> {
         self.rds_engine.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl RecommendationDataBuilder {
     }
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
     pub fn set_rds_engine(mut self, input: ::std::option::Option<crate::types::RdsRecommendation>) -> Self {
-        self.rds_engine = input;
-        self
+        self.rds_engine = input; self
     }
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
     pub fn get_rds_engine(&self) -> &::std::option::Option<crate::types::RdsRecommendation> {
@@ -43,6 +42,10 @@ impl RecommendationDataBuilder {
     }
     /// Consumes the builder and constructs a [`RecommendationData`](crate::types::RecommendationData).
     pub fn build(self) -> crate::types::RecommendationData {
-        crate::types::RecommendationData { rds_engine: self.rds_engine }
+        crate::types::RecommendationData {
+            rds_engine: self.rds_engine
+            ,
+        }
     }
 }
+

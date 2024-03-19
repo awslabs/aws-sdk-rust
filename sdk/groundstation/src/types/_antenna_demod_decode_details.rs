@@ -3,13 +3,13 @@
 /// <p>Details about an antenna demod decode <code>Config</code> used in a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AntennaDemodDecodeDetails {
+pub struct AntennaDemodDecodeDetails  {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
     pub output_node: ::std::option::Option<::std::string::String>,
 }
-impl AntennaDemodDecodeDetails {
+impl  AntennaDemodDecodeDetails  {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
-    pub fn output_node(&self) -> ::std::option::Option<&str> {
+    pub fn output_node(&self) -> ::std::option::Option<& str> {
         self.output_node.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AntennaDemodDecodeDetailsBuilder {
     }
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
     pub fn set_output_node(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_node = input;
-        self
+        self.output_node = input; self
     }
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
     pub fn get_output_node(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AntennaDemodDecodeDetailsBuilder {
     /// Consumes the builder and constructs a [`AntennaDemodDecodeDetails`](crate::types::AntennaDemodDecodeDetails).
     pub fn build(self) -> crate::types::AntennaDemodDecodeDetails {
         crate::types::AntennaDemodDecodeDetails {
-            output_node: self.output_node,
+            output_node: self.output_node
+            ,
         }
     }
 }
+

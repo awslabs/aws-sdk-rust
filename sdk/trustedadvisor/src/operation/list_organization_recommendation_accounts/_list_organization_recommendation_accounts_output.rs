@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOrganizationRecommendationAccountsOutput {
+pub struct ListOrganizationRecommendationAccountsOutput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The account recommendations lifecycles that are applicable to the Recommendation</p>
-    pub account_recommendation_lifecycle_summaries: ::std::vec::Vec<crate::types::AccountRecommendationLifecycleSummary>,
+    pub account_recommendation_lifecycle_summaries: ::std::vec::Vec::<crate::types::AccountRecommendationLifecycleSummary>,
     _request_id: Option<String>,
 }
-impl ListOrganizationRecommendationAccountsOutput {
+impl  ListOrganizationRecommendationAccountsOutput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The account recommendations lifecycles that are applicable to the Recommendation</p>
-    pub fn account_recommendation_lifecycle_summaries(&self) -> &[crate::types::AccountRecommendationLifecycleSummary] {
-        use std::ops::Deref;
-        self.account_recommendation_lifecycle_summaries.deref()
+    pub fn account_recommendation_lifecycle_summaries(&self) -> & [crate::types::AccountRecommendationLifecycleSummary] {
+        use std::ops::Deref; self.account_recommendation_lifecycle_summaries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOrganizationRecommendationAccountsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOrganizationRecommendationAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationRecommendationAccountsOutput`](crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsOutput).
     pub fn builder() -> crate::operation::list_organization_recommendation_accounts::builders::ListOrganizationRecommendationAccountsOutputBuilder {
@@ -37,8 +36,7 @@ impl ListOrganizationRecommendationAccountsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationRecommendationAccountsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) account_recommendation_lifecycle_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountRecommendationLifecycleSummary>>,
+    pub(crate) account_recommendation_lifecycle_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AccountRecommendationLifecycleSummary>>,
     _request_id: Option<String>,
 }
 impl ListOrganizationRecommendationAccountsOutputBuilder {
@@ -49,8 +47,7 @@ impl ListOrganizationRecommendationAccountsOutputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,42 +60,31 @@ impl ListOrganizationRecommendationAccountsOutputBuilder {
     /// <p>The account recommendations lifecycles that are applicable to the Recommendation</p>
     pub fn account_recommendation_lifecycle_summaries(mut self, input: crate::types::AccountRecommendationLifecycleSummary) -> Self {
         let mut v = self.account_recommendation_lifecycle_summaries.unwrap_or_default();
-        v.push(input);
-        self.account_recommendation_lifecycle_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_recommendation_lifecycle_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The account recommendations lifecycles that are applicable to the Recommendation</p>
-    pub fn set_account_recommendation_lifecycle_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountRecommendationLifecycleSummary>>,
-    ) -> Self {
-        self.account_recommendation_lifecycle_summaries = input;
-        self
+    pub fn set_account_recommendation_lifecycle_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountRecommendationLifecycleSummary>>) -> Self {
+        self.account_recommendation_lifecycle_summaries = input; self
     }
     /// <p>The account recommendations lifecycles that are applicable to the Recommendation</p>
-    pub fn get_account_recommendation_lifecycle_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountRecommendationLifecycleSummary>> {
+    pub fn get_account_recommendation_lifecycle_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountRecommendationLifecycleSummary>> {
         &self.account_recommendation_lifecycle_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOrganizationRecommendationAccountsOutput`](crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`account_recommendation_lifecycle_summaries`](crate::operation::list_organization_recommendation_accounts::builders::ListOrganizationRecommendationAccountsOutputBuilder::account_recommendation_lifecycle_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsOutput {
                 next_token: self.next_token
@@ -113,3 +99,4 @@ impl ListOrganizationRecommendationAccountsOutputBuilder {
         )
     }
 }
+

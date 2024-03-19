@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListFleetsInput {
+pub struct ListFleetsInput  {
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of paginated compute fleets returned per response. Use <code>nextToken</code> to iterate pages in the list of returned compute fleets.</p>
@@ -28,9 +28,9 @@ pub struct ListFleetsInput {
     /// <p>Use <code>sortOrder</code> to specify in what order to list the compute fleet names based on the preceding criteria.</p>
     pub sort_by: ::std::option::Option<crate::types::FleetSortByType>,
 }
-impl ListFleetsInput {
+impl  ListFleetsInput  {
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of paginated compute fleets returned per response. Use <code>nextToken</code> to iterate pages in the list of returned compute fleets.</p>
@@ -45,7 +45,7 @@ impl ListFleetsInput {
     /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list compute fleet names.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>The criterion to be used to list compute fleet names. Valid values include:</p>
@@ -58,11 +58,11 @@ impl ListFleetsInput {
     /// <p><code>NAME</code>: List based on each compute fleet's name.</p></li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the compute fleet names based on the preceding criteria.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::FleetSortByType> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::FleetSortByType> {
         self.sort_by.as_ref()
     }
 }
-impl ::std::fmt::Debug for ListFleetsInput {
+impl  ::std::fmt::Debug for ListFleetsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListFleetsInput");
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
@@ -96,8 +96,7 @@ impl ListFleetsInputBuilder {
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl ListFleetsInputBuilder {
     }
     /// <p>The maximum number of paginated compute fleets returned per response. Use <code>nextToken</code> to iterate pages in the list of returned compute fleets.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of paginated compute fleets returned per response. Use <code>nextToken</code> to iterate pages in the list of returned compute fleets.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -138,8 +136,7 @@ impl ListFleetsInputBuilder {
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list compute fleet names.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The order in which to list compute fleets. Valid values include:</p>
     /// <ul>
@@ -177,8 +174,7 @@ impl ListFleetsInputBuilder {
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the compute fleet names based on the preceding criteria.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::FleetSortByType>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The criterion to be used to list compute fleet names. Valid values include:</p>
     /// <ul>
@@ -195,12 +191,18 @@ impl ListFleetsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListFleetsInput`](crate::operation::list_fleets::ListFleetsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_fleets::ListFleetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_fleets::ListFleetsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_fleets::ListFleetsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                sort_order: self.sort_order
+                ,
+                sort_by: self.sort_by
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListFleetsInputBuilder {
@@ -213,3 +215,4 @@ impl ::std::fmt::Debug for ListFleetsInputBuilder {
         formatter.finish()
     }
 }
+

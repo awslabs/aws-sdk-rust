@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnomaliesInput {
+pub struct ListAnomaliesInput  {
     /// <p>Use this to optionally limit the results to only the anomalies found by a certain anomaly detector.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>You can specify this parameter if you want to the operation to return only anomalies that are currently either suppressed or unsuppressed.</p>
@@ -12,13 +12,13 @@ pub struct ListAnomaliesInput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAnomaliesInput {
+impl  ListAnomaliesInput  {
     /// <p>Use this to optionally limit the results to only the anomalies found by a certain anomaly detector.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>You can specify this parameter if you want to the operation to return only anomalies that are currently either suppressed or unsuppressed.</p>
-    pub fn suppression_state(&self) -> ::std::option::Option<&crate::types::SuppressionState> {
+    pub fn suppression_state(&self) -> ::std::option::Option<& crate::types::SuppressionState> {
         self.suppression_state.as_ref()
     }
     /// <p>The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.</p>
@@ -26,7 +26,7 @@ impl ListAnomaliesInput {
         self.limit
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListAnomaliesInputBuilder {
     }
     /// <p>Use this to optionally limit the results to only the anomalies found by a certain anomaly detector.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>Use this to optionally limit the results to only the anomalies found by a certain anomaly detector.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListAnomaliesInputBuilder {
     }
     /// <p>You can specify this parameter if you want to the operation to return only anomalies that are currently either suppressed or unsuppressed.</p>
     pub fn set_suppression_state(mut self, input: ::std::option::Option<crate::types::SuppressionState>) -> Self {
-        self.suppression_state = input;
-        self
+        self.suppression_state = input; self
     }
     /// <p>You can specify this parameter if you want to the operation to return only anomalies that are currently either suppressed or unsuppressed.</p>
     pub fn get_suppression_state(&self) -> &::std::option::Option<crate::types::SuppressionState> {
@@ -82,8 +80,7 @@ impl ListAnomaliesInputBuilder {
     }
     /// <p>The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -96,22 +93,26 @@ impl ListAnomaliesInputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAnomaliesInput`](crate::operation::list_anomalies::ListAnomaliesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_anomalies::ListAnomaliesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_anomalies::ListAnomaliesInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            suppression_state: self.suppression_state,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_anomalies::ListAnomaliesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_anomalies::ListAnomaliesInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                suppression_state: self.suppression_state
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

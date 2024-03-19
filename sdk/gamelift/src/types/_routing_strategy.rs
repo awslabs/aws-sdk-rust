@@ -5,7 +5,7 @@
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoutingStrategy {
+pub struct RoutingStrategy  {
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
@@ -20,7 +20,7 @@ pub struct RoutingStrategy {
     /// <p>The message text to be used with a terminal routing strategy.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl RoutingStrategy {
+impl  RoutingStrategy  {
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
@@ -29,15 +29,15 @@ impl RoutingStrategy {
     /// <li>
     /// <p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RoutingStrategyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RoutingStrategyType> {
         self.r#type.as_ref()
     }
     /// <p>A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The message text to be used with a terminal routing strategy.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl RoutingStrategyBuilder {
     /// <p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RoutingStrategyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
@@ -99,8 +98,7 @@ impl RoutingStrategyBuilder {
     }
     /// <p>A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl RoutingStrategyBuilder {
     }
     /// <p>The message text to be used with a terminal routing strategy.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message text to be used with a terminal routing strategy.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,9 +120,13 @@ impl RoutingStrategyBuilder {
     /// Consumes the builder and constructs a [`RoutingStrategy`](crate::types::RoutingStrategy).
     pub fn build(self) -> crate::types::RoutingStrategy {
         crate::types::RoutingStrategy {
-            r#type: self.r#type,
-            fleet_id: self.fleet_id,
-            message: self.message,
+            r#type: self.r#type
+            ,
+            fleet_id: self.fleet_id
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

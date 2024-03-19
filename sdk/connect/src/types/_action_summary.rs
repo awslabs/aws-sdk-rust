@@ -3,13 +3,13 @@
 /// <p>Information about an action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionSummary {
+pub struct ActionSummary  {
     /// <p>The action type.</p>
     pub action_type: crate::types::ActionType,
 }
-impl ActionSummary {
+impl  ActionSummary  {
     /// <p>The action type.</p>
-    pub fn action_type(&self) -> &crate::types::ActionType {
+    pub fn action_type(&self) -> & crate::types::ActionType {
         &self.action_type
     }
 }
@@ -35,8 +35,7 @@ impl ActionSummaryBuilder {
     }
     /// <p>The action type.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The action type.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
@@ -46,13 +45,15 @@ impl ActionSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action_type`](crate::types::builders::ActionSummaryBuilder::action_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionSummary {
-            action_type: self.action_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_type",
-                    "action_type was not specified but it is required when building ActionSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionSummary {
+                action_type: self.action_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_type", "action_type was not specified but it is required when building ActionSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPositionEstimateInput {
+pub struct GetPositionEstimateInput  {
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub wi_fi_access_points: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
+    pub wi_fi_access_points: ::std::option::Option<::std::vec::Vec::<crate::types::WiFiAccessPoint>>,
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
     pub cell_towers: ::std::option::Option<crate::types::CellTowers>,
     /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
@@ -14,27 +14,28 @@ pub struct GetPositionEstimateInput {
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GetPositionEstimateInput {
+impl  GetPositionEstimateInput  {
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wi_fi_access_points.is_none()`.
-    pub fn wi_fi_access_points(&self) -> &[crate::types::WiFiAccessPoint] {
-        self.wi_fi_access_points.as_deref().unwrap_or_default()
+    pub fn wi_fi_access_points(&self) -> & [crate::types::WiFiAccessPoint] {
+        self.wi_fi_access_points.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
-    pub fn cell_towers(&self) -> ::std::option::Option<&crate::types::CellTowers> {
+    pub fn cell_towers(&self) -> ::std::option::Option<& crate::types::CellTowers> {
         self.cell_towers.as_ref()
     }
     /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
-    pub fn ip(&self) -> ::std::option::Option<&crate::types::Ip> {
+    pub fn ip(&self) -> ::std::option::Option<& crate::types::Ip> {
         self.ip.as_ref()
     }
     /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
-    pub fn gnss(&self) -> ::std::option::Option<&crate::types::Gnss> {
+    pub fn gnss(&self) -> ::std::option::Option<& crate::types::Gnss> {
         self.gnss.as_ref()
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -49,7 +50,7 @@ impl GetPositionEstimateInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPositionEstimateInputBuilder {
-    pub(crate) wi_fi_access_points: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
+    pub(crate) wi_fi_access_points: ::std::option::Option<::std::vec::Vec::<crate::types::WiFiAccessPoint>>,
     pub(crate) cell_towers: ::std::option::Option<crate::types::CellTowers>,
     pub(crate) ip: ::std::option::Option<crate::types::Ip>,
     pub(crate) gnss: ::std::option::Option<crate::types::Gnss>,
@@ -63,17 +64,16 @@ impl GetPositionEstimateInputBuilder {
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
     pub fn wi_fi_access_points(mut self, input: crate::types::WiFiAccessPoint) -> Self {
         let mut v = self.wi_fi_access_points.unwrap_or_default();
-        v.push(input);
-        self.wi_fi_access_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.wi_fi_access_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub fn set_wi_fi_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>) -> Self {
-        self.wi_fi_access_points = input;
-        self
+    pub fn set_wi_fi_access_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WiFiAccessPoint>>) -> Self {
+        self.wi_fi_access_points = input; self
     }
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub fn get_wi_fi_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>> {
+    pub fn get_wi_fi_access_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WiFiAccessPoint>> {
         &self.wi_fi_access_points
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
@@ -83,8 +83,7 @@ impl GetPositionEstimateInputBuilder {
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
     pub fn set_cell_towers(mut self, input: ::std::option::Option<crate::types::CellTowers>) -> Self {
-        self.cell_towers = input;
-        self
+        self.cell_towers = input; self
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
     pub fn get_cell_towers(&self) -> &::std::option::Option<crate::types::CellTowers> {
@@ -97,8 +96,7 @@ impl GetPositionEstimateInputBuilder {
     }
     /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
     pub fn set_ip(mut self, input: ::std::option::Option<crate::types::Ip>) -> Self {
-        self.ip = input;
-        self
+        self.ip = input; self
     }
     /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
     pub fn get_ip(&self) -> &::std::option::Option<crate::types::Ip> {
@@ -111,8 +109,7 @@ impl GetPositionEstimateInputBuilder {
     }
     /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
     pub fn set_gnss(mut self, input: ::std::option::Option<crate::types::Gnss>) -> Self {
-        self.gnss = input;
-        self
+        self.gnss = input; self
     }
     /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
     pub fn get_gnss(&self) -> &::std::option::Option<crate::types::Gnss> {
@@ -125,24 +122,28 @@ impl GetPositionEstimateInputBuilder {
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
     /// Consumes the builder and constructs a [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_position_estimate::GetPositionEstimateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_position_estimate::GetPositionEstimateInput {
-            wi_fi_access_points: self.wi_fi_access_points,
-            cell_towers: self.cell_towers,
-            ip: self.ip,
-            gnss: self.gnss,
-            timestamp: self.timestamp,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_position_estimate::GetPositionEstimateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_position_estimate::GetPositionEstimateInput {
+                wi_fi_access_points: self.wi_fi_access_points
+                ,
+                cell_towers: self.cell_towers
+                ,
+                ip: self.ip
+                ,
+                gnss: self.gnss
+                ,
+                timestamp: self.timestamp
+                ,
+            }
+        )
     }
 }
+

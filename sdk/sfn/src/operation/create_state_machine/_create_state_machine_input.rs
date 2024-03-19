@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateStateMachineInput {
+pub struct CreateStateMachineInput  {
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -32,7 +32,7 @@ pub struct CreateStateMachineInput {
     /// <p>Tags to be added when creating a state machine.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
@@ -40,7 +40,7 @@ pub struct CreateStateMachineInput {
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
 }
-impl CreateStateMachineInput {
+impl  CreateStateMachineInput  {
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -56,37 +56,38 @@ impl CreateStateMachineInput {
     /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub fn definition(&self) -> ::std::option::Option<&str> {
+    pub fn definition(&self) -> ::std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::StateMachineType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::StateMachineType> {
         self.r#type.as_ref()
     }
     /// <p>Defines what execution history events are logged and where they are logged.</p><note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<& crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Tags to be added when creating a state machine.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(&self) -> ::std::option::Option<&crate::types::TracingConfiguration> {
+    pub fn tracing_configuration(&self) -> ::std::option::Option<& crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
@@ -94,11 +95,11 @@ impl CreateStateMachineInput {
         self.publish
     }
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
-    pub fn version_description(&self) -> ::std::option::Option<&str> {
+    pub fn version_description(&self) -> ::std::option::Option<& str> {
         self.version_description.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateStateMachineInput {
+impl  ::std::fmt::Debug for CreateStateMachineInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStateMachineInput");
         formatter.field("name", &self.name);
@@ -129,7 +130,7 @@ pub struct CreateStateMachineInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::StateMachineType>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     pub(crate) publish: ::std::option::Option<bool>,
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
@@ -171,8 +172,7 @@ impl CreateStateMachineInputBuilder {
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -200,8 +200,7 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +214,7 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +227,7 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::StateMachineType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::StateMachineType> {
@@ -247,8 +244,7 @@ impl CreateStateMachineInputBuilder {
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input;
-        self
+        self.logging_configuration = input; self
     }
     /// <p>Defines what execution history events are logged and where they are logged.</p><note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
@@ -265,21 +261,20 @@ impl CreateStateMachineInputBuilder {
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to be added when creating a state machine.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to be added when creating a state machine.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
@@ -289,8 +284,7 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn set_tracing_configuration(mut self, input: ::std::option::Option<crate::types::TracingConfiguration>) -> Self {
-        self.tracing_configuration = input;
-        self
+        self.tracing_configuration = input; self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn get_tracing_configuration(&self) -> &::std::option::Option<crate::types::TracingConfiguration> {
@@ -303,8 +297,7 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
     pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publish = input;
-        self
+        self.publish = input; self
     }
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
     pub fn get_publish(&self) -> &::std::option::Option<bool> {
@@ -317,29 +310,36 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
     pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_description = input;
-        self
+        self.version_description = input; self
     }
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
     pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_description
     }
     /// Consumes the builder and constructs a [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_state_machine::CreateStateMachineInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_state_machine::CreateStateMachineInput {
-            name: self.name,
-            definition: self.definition,
-            role_arn: self.role_arn,
-            r#type: self.r#type,
-            logging_configuration: self.logging_configuration,
-            tags: self.tags,
-            tracing_configuration: self.tracing_configuration,
-            publish: self.publish,
-            version_description: self.version_description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_state_machine::CreateStateMachineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_state_machine::CreateStateMachineInput {
+                name: self.name
+                ,
+                definition: self.definition
+                ,
+                role_arn: self.role_arn
+                ,
+                r#type: self.r#type
+                ,
+                logging_configuration: self.logging_configuration
+                ,
+                tags: self.tags
+                ,
+                tracing_configuration: self.tracing_configuration
+                ,
+                publish: self.publish
+                ,
+                version_description: self.version_description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateStateMachineInputBuilder {
@@ -357,3 +357,4 @@ impl ::std::fmt::Debug for CreateStateMachineInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UndeprecateDomainInput {
+pub struct UndeprecateDomainInput  {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UndeprecateDomainInput {
+impl  UndeprecateDomainInput  {
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl UndeprecateDomainInputBuilder {
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`UndeprecateDomainInput`](crate::operation::undeprecate_domain::UndeprecateDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::undeprecate_domain::UndeprecateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::undeprecate_domain::UndeprecateDomainInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::undeprecate_domain::UndeprecateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::undeprecate_domain::UndeprecateDomainInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

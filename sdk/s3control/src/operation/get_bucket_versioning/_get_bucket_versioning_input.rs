@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketVersioningInput {
+pub struct GetBucketVersioningInput  {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
 }
-impl GetBucketVersioningInput {
+impl  GetBucketVersioningInput  {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetBucketVersioningInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetBucketVersioningInputBuilder {
     }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
     /// Consumes the builder and constructs a [`GetBucketVersioningInput`](crate::operation::get_bucket_versioning::GetBucketVersioningInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_versioning::GetBucketVersioningInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_bucket_versioning::GetBucketVersioningInput {
-            account_id: self.account_id,
-            bucket: self.bucket,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_versioning::GetBucketVersioningInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_bucket_versioning::GetBucketVersioningInput {
+                account_id: self.account_id
+                ,
+                bucket: self.bucket
+                ,
+            }
+        )
     }
 }
+

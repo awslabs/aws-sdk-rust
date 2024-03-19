@@ -3,7 +3,7 @@
 /// <p>Information about a conflicting query used across different sets of featured results. When you create a featured results set, you must check that the queries are unique per featured results set for each index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConflictingItem {
+pub struct ConflictingItem  {
     /// <p>The text of the conflicting query.</p>
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>The name for the set of featured results that the conflicting query belongs to.</p>
@@ -11,17 +11,17 @@ pub struct ConflictingItem {
     /// <p>The identifier of the set of featured results that the conflicting query belongs to.</p>
     pub set_id: ::std::option::Option<::std::string::String>,
 }
-impl ConflictingItem {
+impl  ConflictingItem  {
     /// <p>The text of the conflicting query.</p>
-    pub fn query_text(&self) -> ::std::option::Option<&str> {
+    pub fn query_text(&self) -> ::std::option::Option<& str> {
         self.query_text.as_deref()
     }
     /// <p>The name for the set of featured results that the conflicting query belongs to.</p>
-    pub fn set_name(&self) -> ::std::option::Option<&str> {
+    pub fn set_name(&self) -> ::std::option::Option<& str> {
         self.set_name.as_deref()
     }
     /// <p>The identifier of the set of featured results that the conflicting query belongs to.</p>
-    pub fn set_id(&self) -> ::std::option::Option<&str> {
+    pub fn set_id(&self) -> ::std::option::Option<& str> {
         self.set_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ConflictingItemBuilder {
     }
     /// <p>The text of the conflicting query.</p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_text = input;
-        self
+        self.query_text = input; self
     }
     /// <p>The text of the conflicting query.</p>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ConflictingItemBuilder {
     }
     /// <p>The name for the set of featured results that the conflicting query belongs to.</p>
     pub fn set_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.set_name = input;
-        self
+        self.set_name = input; self
     }
     /// <p>The name for the set of featured results that the conflicting query belongs to.</p>
     pub fn get_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ConflictingItemBuilder {
     }
     /// <p>The identifier of the set of featured results that the conflicting query belongs to.</p>
     pub fn set_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.set_id = input;
-        self
+        self.set_id = input; self
     }
     /// <p>The identifier of the set of featured results that the conflicting query belongs to.</p>
     pub fn get_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ConflictingItemBuilder {
     /// Consumes the builder and constructs a [`ConflictingItem`](crate::types::ConflictingItem).
     pub fn build(self) -> crate::types::ConflictingItem {
         crate::types::ConflictingItem {
-            query_text: self.query_text,
-            set_name: self.set_name,
-            set_id: self.set_id,
+            query_text: self.query_text
+            ,
+            set_name: self.set_name
+            ,
+            set_id: self.set_id
+            ,
         }
     }
 }
+

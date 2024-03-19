@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventsOutput {
+pub struct DescribeEventsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The events described.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
     _request_id: Option<String>,
 }
-impl DescribeEventsOutput {
+impl  DescribeEventsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The events described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::Event] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::Event] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput).
     pub fn builder() -> crate::operation::describe_events::builders::DescribeEventsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeEventsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
     _request_id: Option<String>,
 }
 impl DescribeEventsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeEventsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeEventsOutputBuilder {
     /// <p>The events described.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The events described.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>) -> Self {
+        self.events = input; self
     }
     /// <p>The events described.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Event>> {
         &self.events
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput).
     pub fn build(self) -> crate::operation::describe_events::DescribeEventsOutput {
         crate::operation::describe_events::DescribeEventsOutput {
-            marker: self.marker,
-            events: self.events,
+            marker: self.marker
+            ,
+            events: self.events
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkSiteInput {
+pub struct GetNetworkSiteInput  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub network_site_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetNetworkSiteInput {
+impl  GetNetworkSiteInput  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_site_arn(&self) -> ::std::option::Option<& str> {
         self.network_site_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetNetworkSiteInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_site_arn = input;
-        self
+        self.network_site_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_site_arn
     }
     /// Consumes the builder and constructs a [`GetNetworkSiteInput`](crate::operation::get_network_site::GetNetworkSiteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_network_site::GetNetworkSiteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_network_site::GetNetworkSiteInput {
-            network_site_arn: self.network_site_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_network_site::GetNetworkSiteInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_network_site::GetNetworkSiteInput {
+                network_site_arn: self.network_site_arn
+                ,
+            }
+        )
     }
 }
+

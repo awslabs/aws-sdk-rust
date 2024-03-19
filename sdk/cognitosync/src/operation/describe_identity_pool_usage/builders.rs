@@ -5,23 +5,20 @@ pub use crate::operation::describe_identity_pool_usage::_describe_identity_pool_
 
 impl DescribeIdentityPoolUsageInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_identity_pool_usage();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_identity_pool_usage();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeIdentityPoolUsage`.
-///
+/// 
 /// <p>Gets usage details (for example, data storage) about a particular identity pool.</p>
 /// <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p><examples>
 /// <example>
@@ -48,33 +45,32 @@ impl DescribeIdentityPoolUsageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIdentityPoolUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageInputBuilder,
+                    inner: crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
-        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-    > for DescribeIdentityPoolUsageFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
-            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
+                    crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
+                > for DescribeIdentityPoolUsageFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
+                        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeIdentityPoolUsageFluentBuilder {
     /// Creates a new `DescribeIdentityPoolUsage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -83,53 +79,44 @@ impl DescribeIdentityPoolUsageFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsage::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsage::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
-        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsage::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsage::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput, crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
@@ -145,3 +132,4 @@ impl DescribeIdentityPoolUsageFluentBuilder {
         self.inner.get_identity_pool_id()
     }
 }
+

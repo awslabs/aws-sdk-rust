@@ -3,70 +3,77 @@
 /// <p>A list of overrides that modify the asset bundle resource configuration before the resource is imported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobOverrideParameters {
+pub struct AssetBundleImportJobOverrideParameters  {
     /// <p>An optional structure that configures resource ID overrides to be applied within the import job.</p>
     pub resource_id_override_configuration: ::std::option::Option<crate::types::AssetBundleImportJobResourceIdOverrideConfiguration>,
     /// <p>A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    pub vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>>,
+    pub vpc_connections: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>>,
     /// <p>A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is imported.</p>
-    pub refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>>,
+    pub refresh_schedules: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>>,
     /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>,
+    pub data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>,
     /// <p>A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideParameters>>,
+    pub data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverrideParameters>>,
     /// <p>A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideParameters>>,
+    pub themes: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverrideParameters>>,
     /// <p>A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideParameters>>,
+    pub analyses: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverrideParameters>>,
     /// <p>A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideParameters>>,
+    pub dashboards: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverrideParameters>>,
 }
-impl AssetBundleImportJobOverrideParameters {
+impl  AssetBundleImportJobOverrideParameters  {
     /// <p>An optional structure that configures resource ID overrides to be applied within the import job.</p>
-    pub fn resource_id_override_configuration(&self) -> ::std::option::Option<&crate::types::AssetBundleImportJobResourceIdOverrideConfiguration> {
+    pub fn resource_id_override_configuration(&self) -> ::std::option::Option<& crate::types::AssetBundleImportJobResourceIdOverrideConfiguration> {
         self.resource_id_override_configuration.as_ref()
     }
     /// <p>A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_connections.is_none()`.
-    pub fn vpc_connections(&self) -> &[crate::types::AssetBundleImportJobVpcConnectionOverrideParameters] {
-        self.vpc_connections.as_deref().unwrap_or_default()
+    pub fn vpc_connections(&self) -> & [crate::types::AssetBundleImportJobVpcConnectionOverrideParameters] {
+        self.vpc_connections.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.refresh_schedules.is_none()`.
-    pub fn refresh_schedules(&self) -> &[crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters] {
-        self.refresh_schedules.as_deref().unwrap_or_default()
+    pub fn refresh_schedules(&self) -> & [crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters] {
+        self.refresh_schedules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
-    pub fn data_sources(&self) -> &[crate::types::AssetBundleImportJobDataSourceOverrideParameters] {
-        self.data_sources.as_deref().unwrap_or_default()
+    pub fn data_sources(&self) -> & [crate::types::AssetBundleImportJobDataSourceOverrideParameters] {
+        self.data_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
-    pub fn data_sets(&self) -> &[crate::types::AssetBundleImportJobDataSetOverrideParameters] {
-        self.data_sets.as_deref().unwrap_or_default()
+    pub fn data_sets(&self) -> & [crate::types::AssetBundleImportJobDataSetOverrideParameters] {
+        self.data_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.themes.is_none()`.
-    pub fn themes(&self) -> &[crate::types::AssetBundleImportJobThemeOverrideParameters] {
-        self.themes.as_deref().unwrap_or_default()
+    pub fn themes(&self) -> & [crate::types::AssetBundleImportJobThemeOverrideParameters] {
+        self.themes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analyses.is_none()`.
-    pub fn analyses(&self) -> &[crate::types::AssetBundleImportJobAnalysisOverrideParameters] {
-        self.analyses.as_deref().unwrap_or_default()
+    pub fn analyses(&self) -> & [crate::types::AssetBundleImportJobAnalysisOverrideParameters] {
+        self.analyses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboards.is_none()`.
-    pub fn dashboards(&self) -> &[crate::types::AssetBundleImportJobDashboardOverrideParameters] {
-        self.dashboards.as_deref().unwrap_or_default()
+    pub fn dashboards(&self) -> & [crate::types::AssetBundleImportJobDashboardOverrideParameters] {
+        self.dashboards.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssetBundleImportJobOverrideParameters {
@@ -81,13 +88,13 @@ impl AssetBundleImportJobOverrideParameters {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobOverrideParametersBuilder {
     pub(crate) resource_id_override_configuration: ::std::option::Option<crate::types::AssetBundleImportJobResourceIdOverrideConfiguration>,
-    pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>>,
-    pub(crate) refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>>,
-    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>,
-    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideParameters>>,
-    pub(crate) themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideParameters>>,
-    pub(crate) analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideParameters>>,
-    pub(crate) dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideParameters>>,
+    pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>>,
+    pub(crate) refresh_schedules: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>>,
+    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>,
+    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverrideParameters>>,
+    pub(crate) themes: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverrideParameters>>,
+    pub(crate) analyses: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverrideParameters>>,
+    pub(crate) dashboards: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverrideParameters>>,
 }
 impl AssetBundleImportJobOverrideParametersBuilder {
     /// <p>An optional structure that configures resource ID overrides to be applied within the import job.</p>
@@ -96,17 +103,11 @@ impl AssetBundleImportJobOverrideParametersBuilder {
         self
     }
     /// <p>An optional structure that configures resource ID overrides to be applied within the import job.</p>
-    pub fn set_resource_id_override_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetBundleImportJobResourceIdOverrideConfiguration>,
-    ) -> Self {
-        self.resource_id_override_configuration = input;
-        self
+    pub fn set_resource_id_override_configuration(mut self, input: ::std::option::Option<crate::types::AssetBundleImportJobResourceIdOverrideConfiguration>) -> Self {
+        self.resource_id_override_configuration = input; self
     }
     /// <p>An optional structure that configures resource ID overrides to be applied within the import job.</p>
-    pub fn get_resource_id_override_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssetBundleImportJobResourceIdOverrideConfiguration> {
+    pub fn get_resource_id_override_configuration(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobResourceIdOverrideConfiguration> {
         &self.resource_id_override_configuration
     }
     /// Appends an item to `vpc_connections`.
@@ -116,20 +117,16 @@ impl AssetBundleImportJobOverrideParametersBuilder {
     /// <p>A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
     pub fn vpc_connections(mut self, input: crate::types::AssetBundleImportJobVpcConnectionOverrideParameters) -> Self {
         let mut v = self.vpc_connections.unwrap_or_default();
-        v.push(input);
-        self.vpc_connections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_connections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_vpc_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>>,
-    ) -> Self {
-        self.vpc_connections = input;
-        self
+    pub fn set_vpc_connections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>>) -> Self {
+        self.vpc_connections = input; self
     }
     /// <p>A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_vpc_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>> {
+    pub fn get_vpc_connections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>> {
         &self.vpc_connections
     }
     /// Appends an item to `refresh_schedules`.
@@ -139,22 +136,16 @@ impl AssetBundleImportJobOverrideParametersBuilder {
     /// <p>A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is imported.</p>
     pub fn refresh_schedules(mut self, input: crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters) -> Self {
         let mut v = self.refresh_schedules.unwrap_or_default();
-        v.push(input);
-        self.refresh_schedules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.refresh_schedules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_refresh_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>>,
-    ) -> Self {
-        self.refresh_schedules = input;
-        self
+    pub fn set_refresh_schedules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>>) -> Self {
+        self.refresh_schedules = input; self
     }
     /// <p>A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_refresh_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>> {
+    pub fn get_refresh_schedules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>> {
         &self.refresh_schedules
     }
     /// Appends an item to `data_sources`.
@@ -164,20 +155,16 @@ impl AssetBundleImportJobOverrideParametersBuilder {
     /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
     pub fn data_sources(mut self, input: crate::types::AssetBundleImportJobDataSourceOverrideParameters) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>,
-    ) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>) -> Self {
+        self.data_sources = input; self
     }
     /// <p>A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideParameters>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverrideParameters>> {
         &self.data_sources
     }
     /// Appends an item to `data_sets`.
@@ -187,20 +174,16 @@ impl AssetBundleImportJobOverrideParametersBuilder {
     /// <p>A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
     pub fn data_sets(mut self, input: crate::types::AssetBundleImportJobDataSetOverrideParameters) -> Self {
         let mut v = self.data_sets.unwrap_or_default();
-        v.push(input);
-        self.data_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_data_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideParameters>>,
-    ) -> Self {
-        self.data_sets = input;
-        self
+    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverrideParameters>>) -> Self {
+        self.data_sets = input; self
     }
     /// <p>A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideParameters>> {
+    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverrideParameters>> {
         &self.data_sets
     }
     /// Appends an item to `themes`.
@@ -210,17 +193,16 @@ impl AssetBundleImportJobOverrideParametersBuilder {
     /// <p>A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
     pub fn themes(mut self, input: crate::types::AssetBundleImportJobThemeOverrideParameters) -> Self {
         let mut v = self.themes.unwrap_or_default();
-        v.push(input);
-        self.themes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.themes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_themes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideParameters>>) -> Self {
-        self.themes = input;
-        self
+    pub fn set_themes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverrideParameters>>) -> Self {
+        self.themes = input; self
     }
     /// <p>A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_themes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideParameters>> {
+    pub fn get_themes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverrideParameters>> {
         &self.themes
     }
     /// Appends an item to `analyses`.
@@ -230,20 +212,16 @@ impl AssetBundleImportJobOverrideParametersBuilder {
     /// <p>A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
     pub fn analyses(mut self, input: crate::types::AssetBundleImportJobAnalysisOverrideParameters) -> Self {
         let mut v = self.analyses.unwrap_or_default();
-        v.push(input);
-        self.analyses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analyses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_analyses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideParameters>>,
-    ) -> Self {
-        self.analyses = input;
-        self
+    pub fn set_analyses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverrideParameters>>) -> Self {
+        self.analyses = input; self
     }
     /// <p>A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_analyses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideParameters>> {
+    pub fn get_analyses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverrideParameters>> {
         &self.analyses
     }
     /// Appends an item to `dashboards`.
@@ -253,33 +231,38 @@ impl AssetBundleImportJobOverrideParametersBuilder {
     /// <p>A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
     pub fn dashboards(mut self, input: crate::types::AssetBundleImportJobDashboardOverrideParameters) -> Self {
         let mut v = self.dashboards.unwrap_or_default();
-        v.push(input);
-        self.dashboards = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dashboards = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_dashboards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideParameters>>,
-    ) -> Self {
-        self.dashboards = input;
-        self
+    pub fn set_dashboards(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverrideParameters>>) -> Self {
+        self.dashboards = input; self
     }
     /// <p>A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideParameters>> {
+    pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverrideParameters>> {
         &self.dashboards
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobOverrideParameters`](crate::types::AssetBundleImportJobOverrideParameters).
     pub fn build(self) -> crate::types::AssetBundleImportJobOverrideParameters {
         crate::types::AssetBundleImportJobOverrideParameters {
-            resource_id_override_configuration: self.resource_id_override_configuration,
-            vpc_connections: self.vpc_connections,
-            refresh_schedules: self.refresh_schedules,
-            data_sources: self.data_sources,
-            data_sets: self.data_sets,
-            themes: self.themes,
-            analyses: self.analyses,
-            dashboards: self.dashboards,
+            resource_id_override_configuration: self.resource_id_override_configuration
+            ,
+            vpc_connections: self.vpc_connections
+            ,
+            refresh_schedules: self.refresh_schedules
+            ,
+            data_sources: self.data_sources
+            ,
+            data_sets: self.data_sets
+            ,
+            themes: self.themes
+            ,
+            analyses: self.analyses
+            ,
+            dashboards: self.dashboards
+            ,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportTerminologyOutput {
+pub struct ImportTerminologyOutput  {
     /// <p>The properties of the custom terminology being imported.</p>
     pub terminology_properties: ::std::option::Option<crate::types::TerminologyProperties>,
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
     pub auxiliary_data_location: ::std::option::Option<crate::types::TerminologyDataLocation>,
     _request_id: Option<String>,
 }
-impl ImportTerminologyOutput {
+impl  ImportTerminologyOutput  {
     /// <p>The properties of the custom terminology being imported.</p>
-    pub fn terminology_properties(&self) -> ::std::option::Option<&crate::types::TerminologyProperties> {
+    pub fn terminology_properties(&self) -> ::std::option::Option<& crate::types::TerminologyProperties> {
         self.terminology_properties.as_ref()
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-    pub fn auxiliary_data_location(&self) -> ::std::option::Option<&crate::types::TerminologyDataLocation> {
+    pub fn auxiliary_data_location(&self) -> ::std::option::Option<& crate::types::TerminologyDataLocation> {
         self.auxiliary_data_location.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportTerminologyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportTerminologyOutput {
     /// Creates a new builder-style object to manufacture [`ImportTerminologyOutput`](crate::operation::import_terminology::ImportTerminologyOutput).
     pub fn builder() -> crate::operation::import_terminology::builders::ImportTerminologyOutputBuilder {
@@ -47,8 +47,7 @@ impl ImportTerminologyOutputBuilder {
     }
     /// <p>The properties of the custom terminology being imported.</p>
     pub fn set_terminology_properties(mut self, input: ::std::option::Option<crate::types::TerminologyProperties>) -> Self {
-        self.terminology_properties = input;
-        self
+        self.terminology_properties = input; self
     }
     /// <p>The properties of the custom terminology being imported.</p>
     pub fn get_terminology_properties(&self) -> &::std::option::Option<crate::types::TerminologyProperties> {
@@ -61,28 +60,30 @@ impl ImportTerminologyOutputBuilder {
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
     pub fn set_auxiliary_data_location(mut self, input: ::std::option::Option<crate::types::TerminologyDataLocation>) -> Self {
-        self.auxiliary_data_location = input;
-        self
+        self.auxiliary_data_location = input; self
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
     pub fn get_auxiliary_data_location(&self) -> &::std::option::Option<crate::types::TerminologyDataLocation> {
         &self.auxiliary_data_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportTerminologyOutput`](crate::operation::import_terminology::ImportTerminologyOutput).
     pub fn build(self) -> crate::operation::import_terminology::ImportTerminologyOutput {
         crate::operation::import_terminology::ImportTerminologyOutput {
-            terminology_properties: self.terminology_properties,
-            auxiliary_data_location: self.auxiliary_data_location,
+            terminology_properties: self.terminology_properties
+            ,
+            auxiliary_data_location: self.auxiliary_data_location
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

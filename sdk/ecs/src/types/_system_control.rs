@@ -21,7 +21,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SystemControl {
+pub struct SystemControl  {
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
@@ -30,16 +30,16 @@ pub struct SystemControl {
     /// <p>All of these values are supported by Fargate.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl SystemControl {
+impl  SystemControl  {
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
     /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
     /// <p>All of these values are supported by Fargate.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl SystemControlBuilder {
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl SystemControlBuilder {
     /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
@@ -98,8 +96,11 @@ impl SystemControlBuilder {
     /// Consumes the builder and constructs a [`SystemControl`](crate::types::SystemControl).
     pub fn build(self) -> crate::types::SystemControl {
         crate::types::SystemControl {
-            namespace: self.namespace,
-            value: self.value,
+            namespace: self.namespace
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

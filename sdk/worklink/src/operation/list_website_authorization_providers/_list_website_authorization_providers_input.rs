@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWebsiteAuthorizationProvidersInput {
+pub struct ListWebsiteAuthorizationProvidersInput  {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -10,13 +10,13 @@ pub struct ListWebsiteAuthorizationProvidersInput {
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListWebsiteAuthorizationProvidersInput {
+impl  ListWebsiteAuthorizationProvidersInput  {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be included in the next page.</p>
@@ -48,8 +48,7 @@ impl ListWebsiteAuthorizationProvidersInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The ARN of the fleet.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListWebsiteAuthorizationProvidersInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListWebsiteAuthorizationProvidersInputBuilder {
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWebsiteAuthorizationProvidersInput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersInput {
-                fleet_arn: self.fleet_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                fleet_arn: self.fleet_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

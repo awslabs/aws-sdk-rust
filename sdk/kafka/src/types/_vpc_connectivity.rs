@@ -3,13 +3,13 @@
 /// VPC connectivity access control for brokers.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnectivity {
+pub struct VpcConnectivity  {
     /// <p>Includes all client authentication information for VPC connectivity.</p>
     pub client_authentication: ::std::option::Option<crate::types::VpcConnectivityClientAuthentication>,
 }
-impl VpcConnectivity {
+impl  VpcConnectivity  {
     /// <p>Includes all client authentication information for VPC connectivity.</p>
-    pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::VpcConnectivityClientAuthentication> {
+    pub fn client_authentication(&self) -> ::std::option::Option<& crate::types::VpcConnectivityClientAuthentication> {
         self.client_authentication.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl VpcConnectivityBuilder {
     }
     /// <p>Includes all client authentication information for VPC connectivity.</p>
     pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::VpcConnectivityClientAuthentication>) -> Self {
-        self.client_authentication = input;
-        self
+        self.client_authentication = input; self
     }
     /// <p>Includes all client authentication information for VPC connectivity.</p>
     pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::VpcConnectivityClientAuthentication> {
@@ -44,7 +43,9 @@ impl VpcConnectivityBuilder {
     /// Consumes the builder and constructs a [`VpcConnectivity`](crate::types::VpcConnectivity).
     pub fn build(self) -> crate::types::VpcConnectivity {
         crate::types::VpcConnectivity {
-            client_authentication: self.client_authentication,
+            client_authentication: self.client_authentication
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The input for the DetachThingPrincipal operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachThingPrincipalInput {
+pub struct DetachThingPrincipalInput  {
     /// <p>The name of the thing.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     pub principal: ::std::option::Option<::std::string::String>,
 }
-impl DetachThingPrincipalInput {
+impl  DetachThingPrincipalInput  {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DetachThingPrincipalInputBuilder {
     }
     /// <p>The name of the thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl DetachThingPrincipalInputBuilder {
     }
     /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal
     }
     /// Consumes the builder and constructs a [`DetachThingPrincipalInput`](crate::operation::detach_thing_principal::DetachThingPrincipalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_thing_principal::DetachThingPrincipalInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::detach_thing_principal::DetachThingPrincipalInput {
-            thing_name: self.thing_name,
-            principal: self.principal,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_thing_principal::DetachThingPrincipalInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_thing_principal::DetachThingPrincipalInput {
+                thing_name: self.thing_name
+                ,
+                principal: self.principal
+                ,
+            }
+        )
     }
 }
+

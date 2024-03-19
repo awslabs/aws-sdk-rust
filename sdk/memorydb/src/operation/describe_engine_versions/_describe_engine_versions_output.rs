@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEngineVersionsOutput {
+pub struct DescribeEngineVersionsOutput  {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
-    pub engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>>,
+    pub engine_versions: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersionInfo>>,
     _request_id: Option<String>,
 }
-impl DescribeEngineVersionsOutput {
+impl  DescribeEngineVersionsOutput  {
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_versions.is_none()`.
-    pub fn engine_versions(&self) -> &[crate::types::EngineVersionInfo] {
-        self.engine_versions.as_deref().unwrap_or_default()
+    pub fn engine_versions(&self) -> & [crate::types::EngineVersionInfo] {
+        self.engine_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEngineVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineVersionsOutput`](crate::operation::describe_engine_versions::DescribeEngineVersionsOutput).
     pub fn builder() -> crate::operation::describe_engine_versions::builders::DescribeEngineVersionsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeEngineVersionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>>,
+    pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersionInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeEngineVersionsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeEngineVersionsOutputBuilder {
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeEngineVersionsOutputBuilder {
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
     pub fn engine_versions(mut self, input: crate::types::EngineVersionInfo) -> Self {
         let mut v = self.engine_versions.unwrap_or_default();
-        v.push(input);
-        self.engine_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.engine_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
-    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>>) -> Self {
-        self.engine_versions = input;
-        self
+    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EngineVersionInfo>>) -> Self {
+        self.engine_versions = input; self
     }
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
-    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>> {
+    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EngineVersionInfo>> {
         &self.engine_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEngineVersionsOutput`](crate::operation::describe_engine_versions::DescribeEngineVersionsOutput).
     pub fn build(self) -> crate::operation::describe_engine_versions::DescribeEngineVersionsOutput {
         crate::operation::describe_engine_versions::DescribeEngineVersionsOutput {
-            next_token: self.next_token,
-            engine_versions: self.engine_versions,
+            next_token: self.next_token
+            ,
+            engine_versions: self.engine_versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

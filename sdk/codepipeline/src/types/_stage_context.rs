@@ -3,13 +3,13 @@
 /// <p>Represents information about a stage to a job worker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StageContext {
+pub struct StageContext  {
     /// <p>The name of the stage.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl StageContext {
+impl  StageContext  {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl StageContextBuilder {
     }
     /// <p>The name of the stage.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the stage.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl StageContextBuilder {
     }
     /// Consumes the builder and constructs a [`StageContext`](crate::types::StageContext).
     pub fn build(self) -> crate::types::StageContext {
-        crate::types::StageContext { name: self.name }
+        crate::types::StageContext {
+            name: self.name
+            ,
+        }
     }
 }
+

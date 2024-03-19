@@ -4,15 +4,15 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation">Estimated monthly savings and savings opportunities</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EstimatedMonthlySavings {
+pub struct EstimatedMonthlySavings  {
     /// <p>The currency of the estimated monthly savings.</p>
     pub currency: ::std::option::Option<crate::types::Currency>,
     /// <p>The value of the estimated monthly savings.</p>
     pub value: f64,
 }
-impl EstimatedMonthlySavings {
+impl  EstimatedMonthlySavings  {
     /// <p>The currency of the estimated monthly savings.</p>
-    pub fn currency(&self) -> ::std::option::Option<&crate::types::Currency> {
+    pub fn currency(&self) -> ::std::option::Option<& crate::types::Currency> {
         self.currency.as_ref()
     }
     /// <p>The value of the estimated monthly savings.</p>
@@ -42,8 +42,7 @@ impl EstimatedMonthlySavingsBuilder {
     }
     /// <p>The currency of the estimated monthly savings.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<crate::types::Currency>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>The currency of the estimated monthly savings.</p>
     pub fn get_currency(&self) -> &::std::option::Option<crate::types::Currency> {
@@ -56,8 +55,7 @@ impl EstimatedMonthlySavingsBuilder {
     }
     /// <p>The value of the estimated monthly savings.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the estimated monthly savings.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -66,8 +64,12 @@ impl EstimatedMonthlySavingsBuilder {
     /// Consumes the builder and constructs a [`EstimatedMonthlySavings`](crate::types::EstimatedMonthlySavings).
     pub fn build(self) -> crate::types::EstimatedMonthlySavings {
         crate::types::EstimatedMonthlySavings {
-            currency: self.currency,
-            value: self.value.unwrap_or_default(),
+            currency: self.currency
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

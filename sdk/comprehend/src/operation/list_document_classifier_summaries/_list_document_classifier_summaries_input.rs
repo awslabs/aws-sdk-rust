@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDocumentClassifierSummariesInput {
+pub struct ListDocumentClassifierSummariesInput  {
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return on each page. The default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDocumentClassifierSummariesInput {
+impl  ListDocumentClassifierSummariesInput  {
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return on each page. The default is 100.</p>
@@ -40,8 +40,7 @@ impl ListDocumentClassifierSummariesInputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,25 +53,22 @@ impl ListDocumentClassifierSummariesInputBuilder {
     }
     /// <p>The maximum number of results to return on each page. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return on each page. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDocumentClassifierSummariesInput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

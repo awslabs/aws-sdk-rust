@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlarmsInput {
+pub struct DescribeAlarmsInput  {
     /// <p>The names of the alarms to retrieve information about.</p>
-    pub alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub alarm_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
     pub alarm_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
     /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
     /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
-    pub alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
+    pub alarm_types: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmType>>,
     /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p><note>
     /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
@@ -31,46 +31,48 @@ pub struct DescribeAlarmsInput {
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAlarmsInput {
+impl  DescribeAlarmsInput  {
     /// <p>The names of the alarms to retrieve information about.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_names.is_none()`.
-    pub fn alarm_names(&self) -> &[::std::string::String] {
-        self.alarm_names.as_deref().unwrap_or_default()
+    pub fn alarm_names(&self) -> & [::std::string::String] {
+        self.alarm_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
-    pub fn alarm_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_name_prefix(&self) -> ::std::option::Option<& str> {
         self.alarm_name_prefix.as_deref()
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
     /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
     /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_types.is_none()`.
-    pub fn alarm_types(&self) -> &[crate::types::AlarmType] {
-        self.alarm_types.as_deref().unwrap_or_default()
+    pub fn alarm_types(&self) -> & [crate::types::AlarmType] {
+        self.alarm_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p><note>
     /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
-    pub fn children_of_alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn children_of_alarm_name(&self) -> ::std::option::Option<& str> {
         self.children_of_alarm_name.as_deref()
     }
     /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p><note>
     /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
-    pub fn parents_of_alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn parents_of_alarm_name(&self) -> ::std::option::Option<& str> {
         self.parents_of_alarm_name.as_deref()
     }
     /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
-    pub fn state_value(&self) -> ::std::option::Option<&crate::types::StateValue> {
+    pub fn state_value(&self) -> ::std::option::Option<& crate::types::StateValue> {
         self.state_value.as_ref()
     }
     /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
-    pub fn action_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn action_prefix(&self) -> ::std::option::Option<& str> {
         self.action_prefix.as_deref()
     }
     /// <p>The maximum number of alarm descriptions to retrieve.</p>
@@ -78,7 +80,7 @@ impl DescribeAlarmsInput {
         self.max_records
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -93,9 +95,9 @@ impl DescribeAlarmsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmsInputBuilder {
-    pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) alarm_name_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
+    pub(crate) alarm_types: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmType>>,
     pub(crate) children_of_alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) parents_of_alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) state_value: ::std::option::Option<crate::types::StateValue>,
@@ -111,17 +113,16 @@ impl DescribeAlarmsInputBuilder {
     /// <p>The names of the alarms to retrieve information about.</p>
     pub fn alarm_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_names.unwrap_or_default();
-        v.push(input.into());
-        self.alarm_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alarm_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the alarms to retrieve information about.</p>
-    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alarm_names = input;
-        self
+    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alarm_names = input; self
     }
     /// <p>The names of the alarms to retrieve information about.</p>
-    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alarm_names
     }
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
@@ -133,8 +134,7 @@ impl DescribeAlarmsInputBuilder {
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
     pub fn set_alarm_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name_prefix = input;
-        self
+        self.alarm_name_prefix = input; self
     }
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
@@ -150,21 +150,20 @@ impl DescribeAlarmsInputBuilder {
     /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub fn alarm_types(mut self, input: crate::types::AlarmType) -> Self {
         let mut v = self.alarm_types.unwrap_or_default();
-        v.push(input);
-        self.alarm_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarm_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
     /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
     /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
-    pub fn set_alarm_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>) -> Self {
-        self.alarm_types = input;
-        self
+    pub fn set_alarm_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmType>>) -> Self {
+        self.alarm_types = input; self
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
     /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
     /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
-    pub fn get_alarm_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
+    pub fn get_alarm_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmType>> {
         &self.alarm_types
     }
     /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
@@ -180,8 +179,7 @@ impl DescribeAlarmsInputBuilder {
     /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
     pub fn set_children_of_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.children_of_alarm_name = input;
-        self
+        self.children_of_alarm_name = input; self
     }
     /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p><note>
@@ -203,8 +201,7 @@ impl DescribeAlarmsInputBuilder {
     /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
     pub fn set_parents_of_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parents_of_alarm_name = input;
-        self
+        self.parents_of_alarm_name = input; self
     }
     /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p><note>
@@ -220,8 +217,7 @@ impl DescribeAlarmsInputBuilder {
     }
     /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
     pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::StateValue>) -> Self {
-        self.state_value = input;
-        self
+        self.state_value = input; self
     }
     /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
     pub fn get_state_value(&self) -> &::std::option::Option<crate::types::StateValue> {
@@ -234,8 +230,7 @@ impl DescribeAlarmsInputBuilder {
     }
     /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
     pub fn set_action_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_prefix = input;
-        self
+        self.action_prefix = input; self
     }
     /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
     pub fn get_action_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +243,7 @@ impl DescribeAlarmsInputBuilder {
     }
     /// <p>The maximum number of alarm descriptions to retrieve.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of alarm descriptions to retrieve.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -262,27 +256,36 @@ impl DescribeAlarmsInputBuilder {
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAlarmsInput`](crate::operation::describe_alarms::DescribeAlarmsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_alarms::DescribeAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_alarms::DescribeAlarmsInput {
-            alarm_names: self.alarm_names,
-            alarm_name_prefix: self.alarm_name_prefix,
-            alarm_types: self.alarm_types,
-            children_of_alarm_name: self.children_of_alarm_name,
-            parents_of_alarm_name: self.parents_of_alarm_name,
-            state_value: self.state_value,
-            action_prefix: self.action_prefix,
-            max_records: self.max_records,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_alarms::DescribeAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_alarms::DescribeAlarmsInput {
+                alarm_names: self.alarm_names
+                ,
+                alarm_name_prefix: self.alarm_name_prefix
+                ,
+                alarm_types: self.alarm_types
+                ,
+                children_of_alarm_name: self.children_of_alarm_name
+                ,
+                parents_of_alarm_name: self.parents_of_alarm_name
+                ,
+                state_value: self.state_value
+                ,
+                action_prefix: self.action_prefix
+                ,
+                max_records: self.max_records
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

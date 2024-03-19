@@ -3,7 +3,7 @@
 /// <p>Describes the details of the flow run, including the timestamp, status, and message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionDetails {
+pub struct ExecutionDetails  {
     /// <p>Describes the details of the most recent flow run.</p>
     pub most_recent_execution_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time of the most recent flow run.</p>
@@ -11,17 +11,17 @@ pub struct ExecutionDetails {
     /// <p>Specifies the status of the most recent flow run.</p>
     pub most_recent_execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
 }
-impl ExecutionDetails {
+impl  ExecutionDetails  {
     /// <p>Describes the details of the most recent flow run.</p>
-    pub fn most_recent_execution_message(&self) -> ::std::option::Option<&str> {
+    pub fn most_recent_execution_message(&self) -> ::std::option::Option<& str> {
         self.most_recent_execution_message.as_deref()
     }
     /// <p>Specifies the time of the most recent flow run.</p>
-    pub fn most_recent_execution_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn most_recent_execution_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.most_recent_execution_time.as_ref()
     }
     /// <p>Specifies the status of the most recent flow run.</p>
-    pub fn most_recent_execution_status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn most_recent_execution_status(&self) -> ::std::option::Option<& crate::types::ExecutionStatus> {
         self.most_recent_execution_status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ExecutionDetailsBuilder {
     }
     /// <p>Describes the details of the most recent flow run.</p>
     pub fn set_most_recent_execution_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.most_recent_execution_message = input;
-        self
+        self.most_recent_execution_message = input; self
     }
     /// <p>Describes the details of the most recent flow run.</p>
     pub fn get_most_recent_execution_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ExecutionDetailsBuilder {
     }
     /// <p>Specifies the time of the most recent flow run.</p>
     pub fn set_most_recent_execution_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.most_recent_execution_time = input;
-        self
+        self.most_recent_execution_time = input; self
     }
     /// <p>Specifies the time of the most recent flow run.</p>
     pub fn get_most_recent_execution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl ExecutionDetailsBuilder {
     }
     /// <p>Specifies the status of the most recent flow run.</p>
     pub fn set_most_recent_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.most_recent_execution_status = input;
-        self
+        self.most_recent_execution_status = input; self
     }
     /// <p>Specifies the status of the most recent flow run.</p>
     pub fn get_most_recent_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
@@ -86,9 +83,13 @@ impl ExecutionDetailsBuilder {
     /// Consumes the builder and constructs a [`ExecutionDetails`](crate::types::ExecutionDetails).
     pub fn build(self) -> crate::types::ExecutionDetails {
         crate::types::ExecutionDetails {
-            most_recent_execution_message: self.most_recent_execution_message,
-            most_recent_execution_time: self.most_recent_execution_time,
-            most_recent_execution_status: self.most_recent_execution_status,
+            most_recent_execution_message: self.most_recent_execution_message
+            ,
+            most_recent_execution_time: self.most_recent_execution_time
+            ,
+            most_recent_execution_status: self.most_recent_execution_status
+            ,
         }
     }
 }
+

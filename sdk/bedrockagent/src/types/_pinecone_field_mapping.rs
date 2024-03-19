@@ -3,22 +3,20 @@
 /// A mapping of Bedrock Knowledge Base fields to Pinecone field names
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PineconeFieldMapping {
+pub struct PineconeFieldMapping  {
     /// Name of the field
     pub text_field: ::std::string::String,
     /// Name of the field
     pub metadata_field: ::std::string::String,
 }
-impl PineconeFieldMapping {
+impl  PineconeFieldMapping  {
     /// Name of the field
-    pub fn text_field(&self) -> &str {
-        use std::ops::Deref;
-        self.text_field.deref()
+    pub fn text_field(&self) -> & str {
+        use std::ops::Deref; self.text_field.deref()
     }
     /// Name of the field
-    pub fn metadata_field(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_field.deref()
+    pub fn metadata_field(&self) -> & str {
+        use std::ops::Deref; self.metadata_field.deref()
     }
 }
 impl PineconeFieldMapping {
@@ -44,8 +42,7 @@ impl PineconeFieldMappingBuilder {
     }
     /// Name of the field
     pub fn set_text_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_field = input;
-        self
+        self.text_field = input; self
     }
     /// Name of the field
     pub fn get_text_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl PineconeFieldMappingBuilder {
     }
     /// Name of the field
     pub fn set_metadata_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_field = input;
-        self
+        self.metadata_field = input; self
     }
     /// Name of the field
     pub fn get_metadata_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl PineconeFieldMappingBuilder {
     /// - [`text_field`](crate::types::builders::PineconeFieldMappingBuilder::text_field)
     /// - [`metadata_field`](crate::types::builders::PineconeFieldMappingBuilder::metadata_field)
     pub fn build(self) -> ::std::result::Result<crate::types::PineconeFieldMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PineconeFieldMapping {
-            text_field: self.text_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text_field",
-                    "text_field was not specified but it is required when building PineconeFieldMapping",
-                )
-            })?,
-            metadata_field: self.metadata_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_field",
-                    "metadata_field was not specified but it is required when building PineconeFieldMapping",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PineconeFieldMapping {
+                text_field: self.text_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text_field", "text_field was not specified but it is required when building PineconeFieldMapping")
+                    )?
+                ,
+                metadata_field: self.metadata_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_field", "metadata_field was not specified but it is required when building PineconeFieldMapping")
+                    )?
+                ,
+            }
+        )
     }
 }
+

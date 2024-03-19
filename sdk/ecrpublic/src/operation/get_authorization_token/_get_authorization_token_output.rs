@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAuthorizationTokenOutput {
+pub struct GetAuthorizationTokenOutput  {
     /// <p>An authorization token data object that corresponds to a public registry.</p>
     pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }
-impl GetAuthorizationTokenOutput {
+impl  GetAuthorizationTokenOutput  {
     /// <p>An authorization token data object that corresponds to a public registry.</p>
-    pub fn authorization_data(&self) -> ::std::option::Option<&crate::types::AuthorizationData> {
+    pub fn authorization_data(&self) -> ::std::option::Option<& crate::types::AuthorizationData> {
         self.authorization_data.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAuthorizationTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAuthorizationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
     pub fn builder() -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder {
@@ -40,27 +40,28 @@ impl GetAuthorizationTokenOutputBuilder {
     }
     /// <p>An authorization token data object that corresponds to a public registry.</p>
     pub fn set_authorization_data(mut self, input: ::std::option::Option<crate::types::AuthorizationData>) -> Self {
-        self.authorization_data = input;
-        self
+        self.authorization_data = input; self
     }
     /// <p>An authorization token data object that corresponds to a public registry.</p>
     pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
         &self.authorization_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
     pub fn build(self) -> crate::operation::get_authorization_token::GetAuthorizationTokenOutput {
         crate::operation::get_authorization_token::GetAuthorizationTokenOutput {
-            authorization_data: self.authorization_data,
+            authorization_data: self.authorization_data
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

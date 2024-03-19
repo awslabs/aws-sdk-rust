@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRemediationExceptionsOutput {
+pub struct DeleteRemediationExceptionsOutput  {
     /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
-    pub failed_batches: ::std::option::Option<::std::vec::Vec<crate::types::FailedDeleteRemediationExceptionsBatch>>,
+    pub failed_batches: ::std::option::Option<::std::vec::Vec::<crate::types::FailedDeleteRemediationExceptionsBatch>>,
     _request_id: Option<String>,
 }
-impl DeleteRemediationExceptionsOutput {
+impl  DeleteRemediationExceptionsOutput  {
     /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batches.is_none()`.
-    pub fn failed_batches(&self) -> &[crate::types::FailedDeleteRemediationExceptionsBatch] {
-        self.failed_batches.as_deref().unwrap_or_default()
+    pub fn failed_batches(&self) -> & [crate::types::FailedDeleteRemediationExceptionsBatch] {
+        self.failed_batches.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteRemediationExceptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteRemediationExceptionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRemediationExceptionsOutput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsOutput).
     pub fn builder() -> crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsOutputBuilder {
@@ -31,7 +32,7 @@ impl DeleteRemediationExceptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRemediationExceptionsOutputBuilder {
-    pub(crate) failed_batches: ::std::option::Option<::std::vec::Vec<crate::types::FailedDeleteRemediationExceptionsBatch>>,
+    pub(crate) failed_batches: ::std::option::Option<::std::vec::Vec::<crate::types::FailedDeleteRemediationExceptionsBatch>>,
     _request_id: Option<String>,
 }
 impl DeleteRemediationExceptionsOutputBuilder {
@@ -42,33 +43,34 @@ impl DeleteRemediationExceptionsOutputBuilder {
     /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
     pub fn failed_batches(mut self, input: crate::types::FailedDeleteRemediationExceptionsBatch) -> Self {
         let mut v = self.failed_batches.unwrap_or_default();
-        v.push(input);
-        self.failed_batches = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_batches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
-    pub fn set_failed_batches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedDeleteRemediationExceptionsBatch>>) -> Self {
-        self.failed_batches = input;
-        self
+    pub fn set_failed_batches(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedDeleteRemediationExceptionsBatch>>) -> Self {
+        self.failed_batches = input; self
     }
     /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
-    pub fn get_failed_batches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedDeleteRemediationExceptionsBatch>> {
+    pub fn get_failed_batches(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedDeleteRemediationExceptionsBatch>> {
         &self.failed_batches
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteRemediationExceptionsOutput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsOutput).
     pub fn build(self) -> crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsOutput {
         crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsOutput {
-            failed_batches: self.failed_batches,
+            failed_batches: self.failed_batches
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

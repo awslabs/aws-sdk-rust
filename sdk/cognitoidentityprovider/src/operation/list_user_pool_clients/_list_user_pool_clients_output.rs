@@ -3,30 +3,31 @@
 /// <p>Represents the response from the server that lists user pool clients.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUserPoolClientsOutput {
+pub struct ListUserPoolClientsOutput  {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
-    pub user_pool_clients: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
+    pub user_pool_clients: ::std::option::Option<::std::vec::Vec::<crate::types::UserPoolClientDescription>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListUserPoolClientsOutput {
+impl  ListUserPoolClientsOutput  {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_pool_clients.is_none()`.
-    pub fn user_pool_clients(&self) -> &[crate::types::UserPoolClientDescription] {
-        self.user_pool_clients.as_deref().unwrap_or_default()
+    pub fn user_pool_clients(&self) -> & [crate::types::UserPoolClientDescription] {
+        self.user_pool_clients.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUserPoolClientsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUserPoolClientsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserPoolClientsOutput`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput).
     pub fn builder() -> crate::operation::list_user_pool_clients::builders::ListUserPoolClientsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListUserPoolClientsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserPoolClientsOutputBuilder {
-    pub(crate) user_pool_clients: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
+    pub(crate) user_pool_clients: ::std::option::Option<::std::vec::Vec::<crate::types::UserPoolClientDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListUserPoolClientsOutputBuilder {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
     pub fn user_pool_clients(mut self, input: crate::types::UserPoolClientDescription) -> Self {
         let mut v = self.user_pool_clients.unwrap_or_default();
-        v.push(input);
-        self.user_pool_clients = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_pool_clients = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user pool clients in the response that lists user pool clients.</p>
-    pub fn set_user_pool_clients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>) -> Self {
-        self.user_pool_clients = input;
-        self
+    pub fn set_user_pool_clients(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserPoolClientDescription>>) -> Self {
+        self.user_pool_clients = input; self
     }
     /// <p>The user pool clients in the response that lists user pool clients.</p>
-    pub fn get_user_pool_clients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>> {
+    pub fn get_user_pool_clients(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserPoolClientDescription>> {
         &self.user_pool_clients
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -70,28 +70,30 @@ impl ListUserPoolClientsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUserPoolClientsOutput`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput).
     pub fn build(self) -> crate::operation::list_user_pool_clients::ListUserPoolClientsOutput {
         crate::operation::list_user_pool_clients::ListUserPoolClientsOutput {
-            user_pool_clients: self.user_pool_clients,
-            next_token: self.next_token,
+            user_pool_clients: self.user_pool_clients
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

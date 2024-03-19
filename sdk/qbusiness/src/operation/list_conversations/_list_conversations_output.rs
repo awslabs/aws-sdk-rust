@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConversationsOutput {
+pub struct ListConversationsOutput  {
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
-    pub conversations: ::std::option::Option<::std::vec::Vec<crate::types::Conversation>>,
+    pub conversations: ::std::option::Option<::std::vec::Vec::<crate::types::Conversation>>,
     _request_id: Option<String>,
 }
-impl ListConversationsOutput {
+impl  ListConversationsOutput  {
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conversations.is_none()`.
-    pub fn conversations(&self) -> &[crate::types::Conversation] {
-        self.conversations.as_deref().unwrap_or_default()
+    pub fn conversations(&self) -> & [crate::types::Conversation] {
+        self.conversations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConversationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConversationsOutput {
     /// Creates a new builder-style object to manufacture [`ListConversationsOutput`](crate::operation::list_conversations::ListConversationsOutput).
     pub fn builder() -> crate::operation::list_conversations::builders::ListConversationsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListConversationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConversationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) conversations: ::std::option::Option<::std::vec::Vec<crate::types::Conversation>>,
+    pub(crate) conversations: ::std::option::Option<::std::vec::Vec::<crate::types::Conversation>>,
     _request_id: Option<String>,
 }
 impl ListConversationsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListConversationsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListConversationsOutputBuilder {
     /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
     pub fn conversations(mut self, input: crate::types::Conversation) -> Self {
         let mut v = self.conversations.unwrap_or_default();
-        v.push(input);
-        self.conversations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conversations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
-    pub fn set_conversations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Conversation>>) -> Self {
-        self.conversations = input;
-        self
+    pub fn set_conversations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Conversation>>) -> Self {
+        self.conversations = input; self
     }
     /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
-    pub fn get_conversations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Conversation>> {
+    pub fn get_conversations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Conversation>> {
         &self.conversations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConversationsOutput`](crate::operation::list_conversations::ListConversationsOutput).
     pub fn build(self) -> crate::operation::list_conversations::ListConversationsOutput {
         crate::operation::list_conversations::ListConversationsOutput {
-            next_token: self.next_token,
-            conversations: self.conversations,
+            next_token: self.next_token
+            ,
+            conversations: self.conversations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

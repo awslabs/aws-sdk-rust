@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetLocationAttributesOutput {
+pub struct DescribeFleetLocationAttributesOutput  {
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
@@ -10,38 +10,39 @@ pub struct DescribeFleetLocationAttributesOutput {
     /// </region></code>.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>Location-specific information on the requested fleet's remote locations.</p>
-    pub location_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
+    pub location_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::LocationAttributes>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeFleetLocationAttributesOutput {
+impl  DescribeFleetLocationAttributesOutput  {
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>Location-specific information on the requested fleet's remote locations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_attributes.is_none()`.
-    pub fn location_attributes(&self) -> &[crate::types::LocationAttributes] {
-        self.location_attributes.as_deref().unwrap_or_default()
+    pub fn location_attributes(&self) -> & [crate::types::LocationAttributes] {
+        self.location_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFleetLocationAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFleetLocationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationAttributesOutput`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput).
     pub fn builder() -> crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesOutputBuilder {
@@ -55,7 +56,7 @@ impl DescribeFleetLocationAttributesOutput {
 pub struct DescribeFleetLocationAttributesOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) location_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
+    pub(crate) location_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::LocationAttributes>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -67,8 +68,7 @@ impl DescribeFleetLocationAttributesOutputBuilder {
     }
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl DescribeFleetLocationAttributesOutputBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -101,17 +100,16 @@ impl DescribeFleetLocationAttributesOutputBuilder {
     /// <p>Location-specific information on the requested fleet's remote locations.</p>
     pub fn location_attributes(mut self, input: crate::types::LocationAttributes) -> Self {
         let mut v = self.location_attributes.unwrap_or_default();
-        v.push(input);
-        self.location_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.location_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Location-specific information on the requested fleet's remote locations.</p>
-    pub fn set_location_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>) -> Self {
-        self.location_attributes = input;
-        self
+    pub fn set_location_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LocationAttributes>>) -> Self {
+        self.location_attributes = input; self
     }
     /// <p>Location-specific information on the requested fleet's remote locations.</p>
-    pub fn get_location_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>> {
+    pub fn get_location_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LocationAttributes>> {
         &self.location_attributes
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -121,30 +119,34 @@ impl DescribeFleetLocationAttributesOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFleetLocationAttributesOutput`](crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput).
     pub fn build(self) -> crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput {
         crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput {
-            fleet_id: self.fleet_id,
-            fleet_arn: self.fleet_arn,
-            location_attributes: self.location_attributes,
-            next_token: self.next_token,
+            fleet_id: self.fleet_id
+            ,
+            fleet_arn: self.fleet_arn
+            ,
+            location_attributes: self.location_attributes
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

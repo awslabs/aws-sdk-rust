@@ -3,15 +3,14 @@
 /// <p>The definition of the input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDefinition {
+pub struct InputDefinition  {
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input.</p>
-    pub attributes: ::std::vec::Vec<crate::types::Attribute>,
+    pub attributes: ::std::vec::Vec::<crate::types::Attribute>,
 }
-impl InputDefinition {
+impl  InputDefinition  {
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input.</p>
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        use std::ops::Deref;
-        self.attributes.deref()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        use std::ops::Deref; self.attributes.deref()
     }
 }
 impl InputDefinition {
@@ -25,7 +24,7 @@ impl InputDefinition {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDefinitionBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
 impl InputDefinitionBuilder {
     /// Appends an item to `attributes`.
@@ -35,30 +34,31 @@ impl InputDefinitionBuilder {
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`InputDefinition`](crate::types::InputDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`attributes`](crate::types::builders::InputDefinitionBuilder::attributes)
     pub fn build(self) -> ::std::result::Result<crate::types::InputDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputDefinition {
-            attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attributes",
-                    "attributes was not specified but it is required when building InputDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputDefinition {
+                attributes: self.attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attributes", "attributes was not specified but it is required when building InputDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,72 +3,80 @@
 /// <p>The resource filter criteria for a Software bill of materials (SBOM) report.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceFilterCriteria {
+pub struct ResourceFilterCriteria  {
     /// <p>The account IDs used as resource filter criteria.</p>
-    pub account_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
+    pub account_id: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
     /// <p>The resource IDs used as resource filter criteria.</p>
-    pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
+    pub resource_id: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
     /// <p>The resource types used as resource filter criteria.</p>
-    pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
+    pub resource_type: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
     /// <p>The ECR repository names used as resource filter criteria.</p>
-    pub ecr_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
+    pub ecr_repository_name: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
     /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
-    pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
+    pub lambda_function_name: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
     /// <p>The ECR image tags used as resource filter criteria.</p>
-    pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
+    pub ecr_image_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
     /// <p>The EC2 instance tags used as resource filter criteria.</p>
-    pub ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
+    pub ec2_instance_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapFilter>>,
     /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
-    pub lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
+    pub lambda_function_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapFilter>>,
 }
-impl ResourceFilterCriteria {
+impl  ResourceFilterCriteria  {
     /// <p>The account IDs used as resource filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_id.is_none()`.
-    pub fn account_id(&self) -> &[crate::types::ResourceStringFilter] {
-        self.account_id.as_deref().unwrap_or_default()
+    pub fn account_id(&self) -> & [crate::types::ResourceStringFilter] {
+        self.account_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resource IDs used as resource filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_id.is_none()`.
-    pub fn resource_id(&self) -> &[crate::types::ResourceStringFilter] {
-        self.resource_id.as_deref().unwrap_or_default()
+    pub fn resource_id(&self) -> & [crate::types::ResourceStringFilter] {
+        self.resource_id.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resource types used as resource filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
-    pub fn resource_type(&self) -> &[crate::types::ResourceStringFilter] {
-        self.resource_type.as_deref().unwrap_or_default()
+    pub fn resource_type(&self) -> & [crate::types::ResourceStringFilter] {
+        self.resource_type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ECR repository names used as resource filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_repository_name.is_none()`.
-    pub fn ecr_repository_name(&self) -> &[crate::types::ResourceStringFilter] {
-        self.ecr_repository_name.as_deref().unwrap_or_default()
+    pub fn ecr_repository_name(&self) -> & [crate::types::ResourceStringFilter] {
+        self.ecr_repository_name.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_name.is_none()`.
-    pub fn lambda_function_name(&self) -> &[crate::types::ResourceStringFilter] {
-        self.lambda_function_name.as_deref().unwrap_or_default()
+    pub fn lambda_function_name(&self) -> & [crate::types::ResourceStringFilter] {
+        self.lambda_function_name.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ECR image tags used as resource filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_tags.is_none()`.
-    pub fn ecr_image_tags(&self) -> &[crate::types::ResourceStringFilter] {
-        self.ecr_image_tags.as_deref().unwrap_or_default()
+    pub fn ecr_image_tags(&self) -> & [crate::types::ResourceStringFilter] {
+        self.ecr_image_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The EC2 instance tags used as resource filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_tags.is_none()`.
-    pub fn ec2_instance_tags(&self) -> &[crate::types::ResourceMapFilter] {
-        self.ec2_instance_tags.as_deref().unwrap_or_default()
+    pub fn ec2_instance_tags(&self) -> & [crate::types::ResourceMapFilter] {
+        self.ec2_instance_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_tags.is_none()`.
-    pub fn lambda_function_tags(&self) -> &[crate::types::ResourceMapFilter] {
-        self.lambda_function_tags.as_deref().unwrap_or_default()
+    pub fn lambda_function_tags(&self) -> & [crate::types::ResourceMapFilter] {
+        self.lambda_function_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResourceFilterCriteria {
@@ -82,14 +90,14 @@ impl ResourceFilterCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceFilterCriteriaBuilder {
-    pub(crate) account_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    pub(crate) resource_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    pub(crate) resource_type: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    pub(crate) ecr_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    pub(crate) lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    pub(crate) ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    pub(crate) ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
-    pub(crate) lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
+    pub(crate) account_id: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
+    pub(crate) resource_id: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
+    pub(crate) resource_type: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
+    pub(crate) ecr_repository_name: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
+    pub(crate) lambda_function_name: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
+    pub(crate) ecr_image_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>,
+    pub(crate) ec2_instance_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapFilter>>,
+    pub(crate) lambda_function_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapFilter>>,
 }
 impl ResourceFilterCriteriaBuilder {
     /// Appends an item to `account_id`.
@@ -99,17 +107,16 @@ impl ResourceFilterCriteriaBuilder {
     /// <p>The account IDs used as resource filter criteria.</p>
     pub fn account_id(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.account_id.unwrap_or_default();
-        v.push(input);
-        self.account_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The account IDs used as resource filter criteria.</p>
-    pub fn set_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
-        self.account_id = input;
-        self
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>) -> Self {
+        self.account_id = input; self
     }
     /// <p>The account IDs used as resource filter criteria.</p>
-    pub fn get_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>> {
         &self.account_id
     }
     /// Appends an item to `resource_id`.
@@ -119,17 +126,16 @@ impl ResourceFilterCriteriaBuilder {
     /// <p>The resource IDs used as resource filter criteria.</p>
     pub fn resource_id(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.resource_id.unwrap_or_default();
-        v.push(input);
-        self.resource_id = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_id = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource IDs used as resource filter criteria.</p>
-    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
-        self.resource_id = input;
-        self
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>) -> Self {
+        self.resource_id = input; self
     }
     /// <p>The resource IDs used as resource filter criteria.</p>
-    pub fn get_resource_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>> {
         &self.resource_id
     }
     /// Appends an item to `resource_type`.
@@ -139,17 +145,16 @@ impl ResourceFilterCriteriaBuilder {
     /// <p>The resource types used as resource filter criteria.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.resource_type.unwrap_or_default();
-        v.push(input);
-        self.resource_type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource types used as resource filter criteria.</p>
-    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The resource types used as resource filter criteria.</p>
-    pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>> {
         &self.resource_type
     }
     /// Appends an item to `ecr_repository_name`.
@@ -159,17 +164,16 @@ impl ResourceFilterCriteriaBuilder {
     /// <p>The ECR repository names used as resource filter criteria.</p>
     pub fn ecr_repository_name(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.ecr_repository_name.unwrap_or_default();
-        v.push(input);
-        self.ecr_repository_name = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecr_repository_name = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ECR repository names used as resource filter criteria.</p>
-    pub fn set_ecr_repository_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
-        self.ecr_repository_name = input;
-        self
+    pub fn set_ecr_repository_name(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>) -> Self {
+        self.ecr_repository_name = input; self
     }
     /// <p>The ECR repository names used as resource filter criteria.</p>
-    pub fn get_ecr_repository_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+    pub fn get_ecr_repository_name(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>> {
         &self.ecr_repository_name
     }
     /// Appends an item to `lambda_function_name`.
@@ -179,17 +183,16 @@ impl ResourceFilterCriteriaBuilder {
     /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
     pub fn lambda_function_name(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.lambda_function_name.unwrap_or_default();
-        v.push(input);
-        self.lambda_function_name = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lambda_function_name = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
-    pub fn set_lambda_function_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
-        self.lambda_function_name = input;
-        self
+    pub fn set_lambda_function_name(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>) -> Self {
+        self.lambda_function_name = input; self
     }
     /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
-    pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+    pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>> {
         &self.lambda_function_name
     }
     /// Appends an item to `ecr_image_tags`.
@@ -199,17 +202,16 @@ impl ResourceFilterCriteriaBuilder {
     /// <p>The ECR image tags used as resource filter criteria.</p>
     pub fn ecr_image_tags(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.ecr_image_tags.unwrap_or_default();
-        v.push(input);
-        self.ecr_image_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ecr_image_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ECR image tags used as resource filter criteria.</p>
-    pub fn set_ecr_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
-        self.ecr_image_tags = input;
-        self
+    pub fn set_ecr_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>>) -> Self {
+        self.ecr_image_tags = input; self
     }
     /// <p>The ECR image tags used as resource filter criteria.</p>
-    pub fn get_ecr_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
+    pub fn get_ecr_image_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceStringFilter>> {
         &self.ecr_image_tags
     }
     /// Appends an item to `ec2_instance_tags`.
@@ -219,17 +221,16 @@ impl ResourceFilterCriteriaBuilder {
     /// <p>The EC2 instance tags used as resource filter criteria.</p>
     pub fn ec2_instance_tags(mut self, input: crate::types::ResourceMapFilter) -> Self {
         let mut v = self.ec2_instance_tags.unwrap_or_default();
-        v.push(input);
-        self.ec2_instance_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ec2_instance_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EC2 instance tags used as resource filter criteria.</p>
-    pub fn set_ec2_instance_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>) -> Self {
-        self.ec2_instance_tags = input;
-        self
+    pub fn set_ec2_instance_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapFilter>>) -> Self {
+        self.ec2_instance_tags = input; self
     }
     /// <p>The EC2 instance tags used as resource filter criteria.</p>
-    pub fn get_ec2_instance_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>> {
+    pub fn get_ec2_instance_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapFilter>> {
         &self.ec2_instance_tags
     }
     /// Appends an item to `lambda_function_tags`.
@@ -239,30 +240,38 @@ impl ResourceFilterCriteriaBuilder {
     /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
     pub fn lambda_function_tags(mut self, input: crate::types::ResourceMapFilter) -> Self {
         let mut v = self.lambda_function_tags.unwrap_or_default();
-        v.push(input);
-        self.lambda_function_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lambda_function_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
-    pub fn set_lambda_function_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>) -> Self {
-        self.lambda_function_tags = input;
-        self
+    pub fn set_lambda_function_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapFilter>>) -> Self {
+        self.lambda_function_tags = input; self
     }
     /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
-    pub fn get_lambda_function_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>> {
+    pub fn get_lambda_function_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceMapFilter>> {
         &self.lambda_function_tags
     }
     /// Consumes the builder and constructs a [`ResourceFilterCriteria`](crate::types::ResourceFilterCriteria).
     pub fn build(self) -> crate::types::ResourceFilterCriteria {
         crate::types::ResourceFilterCriteria {
-            account_id: self.account_id,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            ecr_repository_name: self.ecr_repository_name,
-            lambda_function_name: self.lambda_function_name,
-            ecr_image_tags: self.ecr_image_tags,
-            ec2_instance_tags: self.ec2_instance_tags,
-            lambda_function_tags: self.lambda_function_tags,
+            account_id: self.account_id
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            ecr_repository_name: self.ecr_repository_name
+            ,
+            lambda_function_name: self.lambda_function_name
+            ,
+            ecr_image_tags: self.ecr_image_tags
+            ,
+            ec2_instance_tags: self.ec2_instance_tags
+            ,
+            lambda_function_tags: self.lambda_function_tags
+            ,
         }
     }
 }
+

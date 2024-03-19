@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListScripts`](crate::operation::list_scripts::builders::ListScriptsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_scripts::builders::ListScriptsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`limit(i32)`](crate::operation::list_scripts::builders::ListScriptsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_scripts::builders::ListScriptsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_scripts::builders::ListScriptsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scripts::builders::ListScriptsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, don't specify a value.</p><br>
-    /// - On success, responds with [`ListScriptsOutput`](crate::operation::list_scripts::ListScriptsOutput) with field(s):
+                            /// - On success, responds with [`ListScriptsOutput`](crate::operation::list_scripts::ListScriptsOutput) with field(s):
     ///   - [`scripts(Option<Vec::<Script>>)`](crate::operation::list_scripts::ListScriptsOutput::scripts): <p>A set of properties describing the requested script.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scripts::ListScriptsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    /// - On failure, responds with [`SdkError<ListScriptsError>`](crate::operation::list_scripts::ListScriptsError)
+                            /// - On failure, responds with [`SdkError<ListScriptsError>`](crate::operation::list_scripts::ListScriptsError)
     pub fn list_scripts(&self) -> crate::operation::list_scripts::builders::ListScriptsFluentBuilder {
-        crate::operation::list_scripts::builders::ListScriptsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_scripts::builders::ListScriptsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

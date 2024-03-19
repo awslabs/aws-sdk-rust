@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceInput {
+pub struct CreateServiceInput  {
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
@@ -10,7 +10,7 @@ pub struct CreateServiceInput {
     /// <p>The runtime configuration of instances (scaling units) of your service.</p>
     pub instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
@@ -24,45 +24,46 @@ pub struct CreateServiceInput {
     /// <p>The observability configuration of your service.</p>
     pub observability_configuration: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
 }
-impl CreateServiceInput {
+impl  CreateServiceInput  {
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
-    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
+    pub fn source_configuration(&self) -> ::std::option::Option<& crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>The runtime configuration of instances (scaling units) of your service.</p>
-    pub fn instance_configuration(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
+    pub fn instance_configuration(&self) -> ::std::option::Option<& crate::types::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
-    pub fn health_check_configuration(&self) -> ::std::option::Option<&crate::types::HealthCheckConfiguration> {
+    pub fn health_check_configuration(&self) -> ::std::option::Option<& crate::types::HealthCheckConfiguration> {
         self.health_check_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code></p>
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code></p>
-    pub fn auto_scaling_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The observability configuration of your service.</p>
-    pub fn observability_configuration(&self) -> ::std::option::Option<&crate::types::ServiceObservabilityConfiguration> {
+    pub fn observability_configuration(&self) -> ::std::option::Option<& crate::types::ServiceObservabilityConfiguration> {
         self.observability_configuration.as_ref()
     }
 }
@@ -80,7 +81,7 @@ pub struct CreateServiceInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     pub(crate) instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) health_check_configuration: ::std::option::Option<crate::types::HealthCheckConfiguration>,
     pub(crate) auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
@@ -96,8 +97,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +111,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
     pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
-        self.source_configuration = input;
-        self
+        self.source_configuration = input; self
     }
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
     pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
@@ -125,8 +124,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The runtime configuration of instances (scaling units) of your service.</p>
     pub fn set_instance_configuration(mut self, input: ::std::option::Option<crate::types::InstanceConfiguration>) -> Self {
-        self.instance_configuration = input;
-        self
+        self.instance_configuration = input; self
     }
     /// <p>The runtime configuration of instances (scaling units) of your service.</p>
     pub fn get_instance_configuration(&self) -> &::std::option::Option<crate::types::InstanceConfiguration> {
@@ -139,17 +137,16 @@ impl CreateServiceInputBuilder {
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
@@ -159,8 +156,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -173,8 +169,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub fn set_health_check_configuration(mut self, input: ::std::option::Option<crate::types::HealthCheckConfiguration>) -> Self {
-        self.health_check_configuration = input;
-        self
+        self.health_check_configuration = input; self
     }
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub fn get_health_check_configuration(&self) -> &::std::option::Option<crate::types::HealthCheckConfiguration> {
@@ -191,8 +186,7 @@ impl CreateServiceInputBuilder {
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code></p>
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code></p>
     pub fn set_auto_scaling_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_configuration_arn = input;
-        self
+        self.auto_scaling_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code></p>
@@ -207,8 +201,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -221,27 +214,36 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The observability configuration of your service.</p>
     pub fn set_observability_configuration(mut self, input: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>) -> Self {
-        self.observability_configuration = input;
-        self
+        self.observability_configuration = input; self
     }
     /// <p>The observability configuration of your service.</p>
     pub fn get_observability_configuration(&self) -> &::std::option::Option<crate::types::ServiceObservabilityConfiguration> {
         &self.observability_configuration
     }
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
-            service_name: self.service_name,
-            source_configuration: self.source_configuration,
-            instance_configuration: self.instance_configuration,
-            tags: self.tags,
-            encryption_configuration: self.encryption_configuration,
-            health_check_configuration: self.health_check_configuration,
-            auto_scaling_configuration_arn: self.auto_scaling_configuration_arn,
-            network_configuration: self.network_configuration,
-            observability_configuration: self.observability_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_service::CreateServiceInput {
+                service_name: self.service_name
+                ,
+                source_configuration: self.source_configuration
+                ,
+                instance_configuration: self.instance_configuration
+                ,
+                tags: self.tags
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+                health_check_configuration: self.health_check_configuration
+                ,
+                auto_scaling_configuration_arn: self.auto_scaling_configuration_arn
+                ,
+                network_configuration: self.network_configuration
+                ,
+                observability_configuration: self.observability_configuration
+                ,
+            }
+        )
     }
 }
+

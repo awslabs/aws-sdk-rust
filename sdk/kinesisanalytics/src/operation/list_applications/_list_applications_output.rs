@@ -3,18 +3,17 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>List of <code>ApplicationSummary</code> objects.</p>
-    pub application_summaries: ::std::vec::Vec<crate::types::ApplicationSummary>,
+    pub application_summaries: ::std::vec::Vec::<crate::types::ApplicationSummary>,
     /// <p>Returns true if there are more applications to retrieve.</p>
     pub has_more_applications: bool,
     _request_id: Option<String>,
 }
-impl ListApplicationsOutput {
+impl  ListApplicationsOutput  {
     /// <p>List of <code>ApplicationSummary</code> objects.</p>
-    pub fn application_summaries(&self) -> &[crate::types::ApplicationSummary] {
-        use std::ops::Deref;
-        self.application_summaries.deref()
+    pub fn application_summaries(&self) -> & [crate::types::ApplicationSummary] {
+        use std::ops::Deref; self.application_summaries.deref()
     }
     /// <p>Returns true if there are more applications to retrieve.</p>
     pub fn has_more_applications(&self) -> bool {
@@ -22,10 +21,10 @@ impl ListApplicationsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListApplicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
     pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListApplicationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsOutputBuilder {
-    pub(crate) application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
+    pub(crate) application_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationSummary>>,
     pub(crate) has_more_applications: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListApplicationsOutputBuilder {
     /// <p>List of <code>ApplicationSummary</code> objects.</p>
     pub fn application_summaries(mut self, input: crate::types::ApplicationSummary) -> Self {
         let mut v = self.application_summaries.unwrap_or_default();
-        v.push(input);
-        self.application_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of <code>ApplicationSummary</code> objects.</p>
-    pub fn set_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>) -> Self {
-        self.application_summaries = input;
-        self
+    pub fn set_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationSummary>>) -> Self {
+        self.application_summaries = input; self
     }
     /// <p>List of <code>ApplicationSummary</code> objects.</p>
-    pub fn get_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
+    pub fn get_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationSummary>> {
         &self.application_summaries
     }
     /// <p>Returns true if there are more applications to retrieve.</p>
@@ -70,43 +68,41 @@ impl ListApplicationsOutputBuilder {
     }
     /// <p>Returns true if there are more applications to retrieve.</p>
     pub fn set_has_more_applications(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_more_applications = input;
-        self
+        self.has_more_applications = input; self
     }
     /// <p>Returns true if there are more applications to retrieve.</p>
     pub fn get_has_more_applications(&self) -> &::std::option::Option<bool> {
         &self.has_more_applications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_summaries`](crate::operation::list_applications::builders::ListApplicationsOutputBuilder::application_summaries)
     /// - [`has_more_applications`](crate::operation::list_applications::builders::ListApplicationsOutputBuilder::has_more_applications)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsOutput {
-            application_summaries: self.application_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_summaries",
-                    "application_summaries was not specified but it is required when building ListApplicationsOutput",
-                )
-            })?,
-            has_more_applications: self.has_more_applications.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "has_more_applications",
-                    "has_more_applications was not specified but it is required when building ListApplicationsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_applications::ListApplicationsOutput {
+                application_summaries: self.application_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_summaries", "application_summaries was not specified but it is required when building ListApplicationsOutput")
+                    )?
+                ,
+                has_more_applications: self.has_more_applications
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("has_more_applications", "has_more_applications was not specified but it is required when building ListApplicationsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

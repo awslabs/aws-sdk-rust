@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRegistryScanningConfigurationInput {}
+pub struct GetRegistryScanningConfigurationInput  {
+}
 impl GetRegistryScanningConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetRegistryScanningConfigurationInput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput).
     pub fn builder() -> crate::operation::get_registry_scanning_configuration::builders::GetRegistryScanningConfigurationInputBuilder {
@@ -13,15 +14,15 @@ impl GetRegistryScanningConfigurationInput {
 /// A builder for [`GetRegistryScanningConfigurationInput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetRegistryScanningConfigurationInputBuilder {}
+pub struct GetRegistryScanningConfigurationInputBuilder {
+}
 impl GetRegistryScanningConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetRegistryScanningConfigurationInput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput {
+            }
+        )
     }
 }
+

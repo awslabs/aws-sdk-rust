@@ -3,19 +3,19 @@
 /// <p>A value that indicates the AMI information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomDbEngineVersionAmi {
+pub struct CustomDbEngineVersionAmi  {
     /// <p>A value that indicates the ID of the AMI.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates the status of a custom engine version (CEV).</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl CustomDbEngineVersionAmi {
+impl  CustomDbEngineVersionAmi  {
     /// <p>A value that indicates the ID of the AMI.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>A value that indicates the status of a custom engine version (CEV).</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CustomDbEngineVersionAmiBuilder {
     }
     /// <p>A value that indicates the ID of the AMI.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>A value that indicates the ID of the AMI.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CustomDbEngineVersionAmiBuilder {
     }
     /// <p>A value that indicates the status of a custom engine version (CEV).</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A value that indicates the status of a custom engine version (CEV).</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CustomDbEngineVersionAmiBuilder {
     /// Consumes the builder and constructs a [`CustomDbEngineVersionAmi`](crate::types::CustomDbEngineVersionAmi).
     pub fn build(self) -> crate::types::CustomDbEngineVersionAmi {
         crate::types::CustomDbEngineVersionAmi {
-            image_id: self.image_id,
-            status: self.status,
+            image_id: self.image_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

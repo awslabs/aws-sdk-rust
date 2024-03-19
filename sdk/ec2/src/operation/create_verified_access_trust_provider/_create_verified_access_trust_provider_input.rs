@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVerifiedAccessTrustProviderInput {
+pub struct CreateVerifiedAccessTrustProviderInput  {
     /// <p>The type of trust provider.</p>
     pub trust_provider_type: ::std::option::Option<crate::types::TrustProviderType>,
     /// <p>The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.</p>
@@ -18,7 +18,7 @@ pub struct CreateVerifiedAccessTrustProviderInput {
     /// <p>A description for the Verified Access trust provider.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the Verified Access trust provider.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -26,43 +26,44 @@ pub struct CreateVerifiedAccessTrustProviderInput {
     /// <p>The options for server side encryption.</p>
     pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
 }
-impl CreateVerifiedAccessTrustProviderInput {
+impl  CreateVerifiedAccessTrustProviderInput  {
     /// <p>The type of trust provider.</p>
-    pub fn trust_provider_type(&self) -> ::std::option::Option<&crate::types::TrustProviderType> {
+    pub fn trust_provider_type(&self) -> ::std::option::Option<& crate::types::TrustProviderType> {
         self.trust_provider_type.as_ref()
     }
     /// <p>The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.</p>
-    pub fn user_trust_provider_type(&self) -> ::std::option::Option<&crate::types::UserTrustProviderType> {
+    pub fn user_trust_provider_type(&self) -> ::std::option::Option<& crate::types::UserTrustProviderType> {
         self.user_trust_provider_type.as_ref()
     }
     /// <p>The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
-    pub fn device_trust_provider_type(&self) -> ::std::option::Option<&crate::types::DeviceTrustProviderType> {
+    pub fn device_trust_provider_type(&self) -> ::std::option::Option<& crate::types::DeviceTrustProviderType> {
         self.device_trust_provider_type.as_ref()
     }
     /// <p>The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the provider type is <code>user</code>.</p>
-    pub fn oidc_options(&self) -> ::std::option::Option<&crate::types::CreateVerifiedAccessTrustProviderOidcOptions> {
+    pub fn oidc_options(&self) -> ::std::option::Option<& crate::types::CreateVerifiedAccessTrustProviderOidcOptions> {
         self.oidc_options.as_ref()
     }
     /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
-    pub fn device_options(&self) -> ::std::option::Option<&crate::types::CreateVerifiedAccessTrustProviderDeviceOptions> {
+    pub fn device_options(&self) -> ::std::option::Option<& crate::types::CreateVerifiedAccessTrustProviderDeviceOptions> {
         self.device_options.as_ref()
     }
     /// <p>The identifier to be used when working with policy rules.</p>
-    pub fn policy_reference_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_reference_name(&self) -> ::std::option::Option<& str> {
         self.policy_reference_name.as_deref()
     }
     /// <p>A description for the Verified Access trust provider.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags to assign to the Verified Access trust provider.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -70,7 +71,7 @@ impl CreateVerifiedAccessTrustProviderInput {
         self.dry_run
     }
     /// <p>The options for server side encryption.</p>
-    pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationRequest> {
+    pub fn sse_specification(&self) -> ::std::option::Option<& crate::types::VerifiedAccessSseSpecificationRequest> {
         self.sse_specification.as_ref()
     }
 }
@@ -92,7 +93,7 @@ pub struct CreateVerifiedAccessTrustProviderInputBuilder {
     pub(crate) device_options: ::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderDeviceOptions>,
     pub(crate) policy_reference_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
@@ -106,8 +107,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>The type of trust provider.</p>
     pub fn set_trust_provider_type(mut self, input: ::std::option::Option<crate::types::TrustProviderType>) -> Self {
-        self.trust_provider_type = input;
-        self
+        self.trust_provider_type = input; self
     }
     /// <p>The type of trust provider.</p>
     pub fn get_trust_provider_type(&self) -> &::std::option::Option<crate::types::TrustProviderType> {
@@ -120,8 +120,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.</p>
     pub fn set_user_trust_provider_type(mut self, input: ::std::option::Option<crate::types::UserTrustProviderType>) -> Self {
-        self.user_trust_provider_type = input;
-        self
+        self.user_trust_provider_type = input; self
     }
     /// <p>The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.</p>
     pub fn get_user_trust_provider_type(&self) -> &::std::option::Option<crate::types::UserTrustProviderType> {
@@ -134,8 +133,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
     pub fn set_device_trust_provider_type(mut self, input: ::std::option::Option<crate::types::DeviceTrustProviderType>) -> Self {
-        self.device_trust_provider_type = input;
-        self
+        self.device_trust_provider_type = input; self
     }
     /// <p>The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
     pub fn get_device_trust_provider_type(&self) -> &::std::option::Option<crate::types::DeviceTrustProviderType> {
@@ -148,8 +146,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the provider type is <code>user</code>.</p>
     pub fn set_oidc_options(mut self, input: ::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderOidcOptions>) -> Self {
-        self.oidc_options = input;
-        self
+        self.oidc_options = input; self
     }
     /// <p>The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the provider type is <code>user</code>.</p>
     pub fn get_oidc_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderOidcOptions> {
@@ -162,8 +159,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
     pub fn set_device_options(mut self, input: ::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderDeviceOptions>) -> Self {
-        self.device_options = input;
-        self
+        self.device_options = input; self
     }
     /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
     pub fn get_device_options(&self) -> &::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderDeviceOptions> {
@@ -177,8 +173,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>The identifier to be used when working with policy rules.</p>
     pub fn set_policy_reference_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_reference_name = input;
-        self
+        self.policy_reference_name = input; self
     }
     /// <p>The identifier to be used when working with policy rules.</p>
     pub fn get_policy_reference_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +186,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>A description for the Verified Access trust provider.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the Verified Access trust provider.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,17 +199,16 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     /// <p>The tags to assign to the Verified Access trust provider.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the Verified Access trust provider.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to assign to the Verified Access trust provider.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -225,8 +218,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +231,7 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -253,34 +244,40 @@ impl CreateVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>The options for server side encryption.</p>
     pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>) -> Self {
-        self.sse_specification = input;
-        self
+        self.sse_specification = input; self
     }
     /// <p>The options for server side encryption.</p>
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
         &self.sse_specification
     }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessTrustProviderInput`](crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderInput {
-                trust_provider_type: self.trust_provider_type,
-                user_trust_provider_type: self.user_trust_provider_type,
-                device_trust_provider_type: self.device_trust_provider_type,
-                oidc_options: self.oidc_options,
-                device_options: self.device_options,
-                policy_reference_name: self.policy_reference_name,
-                description: self.description,
-                tag_specifications: self.tag_specifications,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-                sse_specification: self.sse_specification,
-            },
+                trust_provider_type: self.trust_provider_type
+                ,
+                user_trust_provider_type: self.user_trust_provider_type
+                ,
+                device_trust_provider_type: self.device_trust_provider_type
+                ,
+                oidc_options: self.oidc_options
+                ,
+                device_options: self.device_options
+                ,
+                policy_reference_name: self.policy_reference_name
+                ,
+                description: self.description
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                client_token: self.client_token
+                ,
+                dry_run: self.dry_run
+                ,
+                sse_specification: self.sse_specification
+                ,
+            }
         )
     }
 }
+

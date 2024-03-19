@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbSubnetGroupInput {
+pub struct ModifyDbSubnetGroupInput  {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
@@ -11,24 +11,25 @@ pub struct ModifyDbSubnetGroupInput {
     /// <p>The description for the DB subnet group.</p>
     pub db_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 subnet IDs for the DB subnet group.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyDbSubnetGroupInput {
+impl  ModifyDbSubnetGroupInput  {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
-    pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The description for the DB subnet group.</p>
-    pub fn db_subnet_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn db_subnet_group_description(&self) -> ::std::option::Option<& str> {
         self.db_subnet_group_description.as_deref()
     }
     /// <p>The EC2 subnet IDs for the DB subnet group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyDbSubnetGroupInput {
@@ -44,7 +45,7 @@ impl ModifyDbSubnetGroupInput {
 pub struct ModifyDbSubnetGroupInputBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_description: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyDbSubnetGroupInputBuilder {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
@@ -59,8 +60,7 @@ impl ModifyDbSubnetGroupInputBuilder {
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_subnet_group_name = input;
-        self
+        self.db_subnet_group_name = input; self
     }
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -75,8 +75,7 @@ impl ModifyDbSubnetGroupInputBuilder {
     }
     /// <p>The description for the DB subnet group.</p>
     pub fn set_db_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_subnet_group_description = input;
-        self
+        self.db_subnet_group_description = input; self
     }
     /// <p>The description for the DB subnet group.</p>
     pub fn get_db_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,28 +88,30 @@ impl ModifyDbSubnetGroupInputBuilder {
     /// <p>The EC2 subnet IDs for the DB subnet group.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EC2 subnet IDs for the DB subnet group.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The EC2 subnet IDs for the DB subnet group.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`ModifyDbSubnetGroupInput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput {
-            db_subnet_group_name: self.db_subnet_group_name,
-            db_subnet_group_description: self.db_subnet_group_description,
-            subnet_ids: self.subnet_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput {
+                db_subnet_group_name: self.db_subnet_group_name
+                ,
+                db_subnet_group_description: self.db_subnet_group_description
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+            }
+        )
     }
 }
+

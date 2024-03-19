@@ -3,33 +3,34 @@
 /// <p>Describes the properties of the associated host.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatedHost {
+pub struct AssociatedHost  {
     /// <p>The name of the host.</p>
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP addresses of the associated host.</p>
-    pub ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressMember>>,
+    pub ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressMember>>,
     /// <p>The version of the operating system.</p>
     pub os_version: ::std::option::Option<::std::string::String>,
 }
-impl AssociatedHost {
+impl  AssociatedHost  {
     /// <p>The name of the host.</p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The ID of the Amazon EC2 instance.</p>
-    pub fn ec2_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> ::std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>The IP addresses of the associated host.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
-    pub fn ip_addresses(&self) -> &[crate::types::IpAddressMember] {
-        self.ip_addresses.as_deref().unwrap_or_default()
+    pub fn ip_addresses(&self) -> & [crate::types::IpAddressMember] {
+        self.ip_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The version of the operating system.</p>
-    pub fn os_version(&self) -> ::std::option::Option<&str> {
+    pub fn os_version(&self) -> ::std::option::Option<& str> {
         self.os_version.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl AssociatedHost {
 pub struct AssociatedHostBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressMember>>,
+    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressMember>>,
     pub(crate) os_version: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedHostBuilder {
@@ -57,8 +58,7 @@ impl AssociatedHostBuilder {
     }
     /// <p>The name of the host.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The name of the host.</p>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl AssociatedHostBuilder {
     }
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_instance_id = input;
-        self
+        self.ec2_instance_id = input; self
     }
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl AssociatedHostBuilder {
     /// <p>The IP addresses of the associated host.</p>
     pub fn ip_addresses(mut self, input: crate::types::IpAddressMember) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-        v.push(input);
-        self.ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IP addresses of the associated host.</p>
-    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressMember>>) -> Self {
-        self.ip_addresses = input;
-        self
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpAddressMember>>) -> Self {
+        self.ip_addresses = input; self
     }
     /// <p>The IP addresses of the associated host.</p>
-    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressMember>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpAddressMember>> {
         &self.ip_addresses
     }
     /// <p>The version of the operating system.</p>
@@ -105,8 +103,7 @@ impl AssociatedHostBuilder {
     }
     /// <p>The version of the operating system.</p>
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.os_version = input;
-        self
+        self.os_version = input; self
     }
     /// <p>The version of the operating system.</p>
     pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,10 +112,15 @@ impl AssociatedHostBuilder {
     /// Consumes the builder and constructs a [`AssociatedHost`](crate::types::AssociatedHost).
     pub fn build(self) -> crate::types::AssociatedHost {
         crate::types::AssociatedHost {
-            hostname: self.hostname,
-            ec2_instance_id: self.ec2_instance_id,
-            ip_addresses: self.ip_addresses,
-            os_version: self.os_version,
+            hostname: self.hostname
+            ,
+            ec2_instance_id: self.ec2_instance_id
+            ,
+            ip_addresses: self.ip_addresses
+            ,
+            os_version: self.os_version
+            ,
         }
     }
 }
+

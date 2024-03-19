@@ -15,7 +15,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountInfo {
+pub struct AccountInfo  {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The edition of your Amazon QuickSight account.</p>
@@ -29,29 +29,29 @@ pub struct AccountInfo {
     /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
     pub iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
-impl AccountInfo {
+impl  AccountInfo  {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
-    pub fn account_name(&self) -> ::std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The edition of your Amazon QuickSight account.</p>
-    pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
+    pub fn edition(&self) -> ::std::option::Option<& crate::types::Edition> {
         self.edition.as_ref()
     }
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
-    pub fn notification_email(&self) -> ::std::option::Option<&str> {
+    pub fn notification_email(&self) -> ::std::option::Option<& str> {
         self.notification_email.as_deref()
     }
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& str> {
         self.authentication_type.as_deref()
     }
     /// <p>The status of your account subscription.</p>
-    pub fn account_subscription_status(&self) -> ::std::option::Option<&str> {
+    pub fn account_subscription_status(&self) -> ::std::option::Option<& str> {
         self.account_subscription_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
-    pub fn iam_identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_identity_center_instance_arn(&self) -> ::std::option::Option<& str> {
         self.iam_identity_center_instance_arn.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl AccountInfoBuilder {
     }
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_name = input;
-        self
+        self.account_name = input; self
     }
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl AccountInfoBuilder {
     }
     /// <p>The edition of your Amazon QuickSight account.</p>
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
-        self.edition = input;
-        self
+        self.edition = input; self
     }
     /// <p>The edition of your Amazon QuickSight account.</p>
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
@@ -109,8 +107,7 @@ impl AccountInfoBuilder {
     }
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub fn set_notification_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_email = input;
-        self
+        self.notification_email = input; self
     }
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl AccountInfoBuilder {
     }
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl AccountInfoBuilder {
     }
     /// <p>The status of your account subscription.</p>
     pub fn set_account_subscription_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_subscription_status = input;
-        self
+        self.account_subscription_status = input; self
     }
     /// <p>The status of your account subscription.</p>
     pub fn get_account_subscription_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +146,7 @@ impl AccountInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
     pub fn set_iam_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_identity_center_instance_arn = input;
-        self
+        self.iam_identity_center_instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
     pub fn get_iam_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,12 +155,19 @@ impl AccountInfoBuilder {
     /// Consumes the builder and constructs a [`AccountInfo`](crate::types::AccountInfo).
     pub fn build(self) -> crate::types::AccountInfo {
         crate::types::AccountInfo {
-            account_name: self.account_name,
-            edition: self.edition,
-            notification_email: self.notification_email,
-            authentication_type: self.authentication_type,
-            account_subscription_status: self.account_subscription_status,
-            iam_identity_center_instance_arn: self.iam_identity_center_instance_arn,
+            account_name: self.account_name
+            ,
+            edition: self.edition
+            ,
+            notification_email: self.notification_email
+            ,
+            authentication_type: self.authentication_type
+            ,
+            account_subscription_status: self.account_subscription_status
+            ,
+            iam_identity_center_instance_arn: self.iam_identity_center_instance_arn
+            ,
         }
     }
 }
+

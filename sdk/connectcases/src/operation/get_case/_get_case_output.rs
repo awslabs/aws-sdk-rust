@@ -2,42 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCaseOutput {
+pub struct GetCaseOutput  {
     /// <p>A list of detailed field information.</p>
-    pub fields: ::std::vec::Vec<crate::types::FieldValue>,
+    pub fields: ::std::vec::Vec::<crate::types::FieldValue>,
     /// <p>A unique identifier of a template.</p>
     pub template_id: ::std::string::String,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
-impl GetCaseOutput {
+impl  GetCaseOutput  {
     /// <p>A list of detailed field information.</p>
-    pub fn fields(&self) -> &[crate::types::FieldValue] {
-        use std::ops::Deref;
-        self.fields.deref()
+    pub fn fields(&self) -> & [crate::types::FieldValue] {
+        use std::ops::Deref; self.fields.deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.template_id.deref()
+    pub fn template_id(&self) -> & str {
+        use std::ops::Deref; self.template_id.deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCaseOutput {
     /// Creates a new builder-style object to manufacture [`GetCaseOutput`](crate::operation::get_case::GetCaseOutput).
     pub fn builder() -> crate::operation::get_case::builders::GetCaseOutputBuilder {
@@ -49,10 +47,10 @@ impl GetCaseOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCaseOutputBuilder {
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetCaseOutputBuilder {
@@ -63,17 +61,16 @@ impl GetCaseOutputBuilder {
     /// <p>A list of detailed field information.</p>
     pub fn fields(mut self, input: crate::types::FieldValue) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of detailed field information.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>>) -> Self {
+        self.fields = input; self
     }
     /// <p>A list of detailed field information.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>> {
         &self.fields
     }
     /// <p>A unique identifier of a template.</p>
@@ -84,8 +81,7 @@ impl GetCaseOutputBuilder {
     }
     /// <p>A unique identifier of a template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>A unique identifier of a template.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +94,7 @@ impl GetCaseOutputBuilder {
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,54 +107,51 @@ impl GetCaseOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCaseOutput`](crate::operation::get_case::GetCaseOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::operation::get_case::builders::GetCaseOutputBuilder::fields)
     /// - [`template_id`](crate::operation::get_case::builders::GetCaseOutputBuilder::template_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_case::GetCaseOutput {
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building GetCaseOutput",
-                )
-            })?,
-            template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_id",
-                    "template_id was not specified but it is required when building GetCaseOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_case::GetCaseOutput {
+                fields: self.fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fields", "fields was not specified but it is required when building GetCaseOutput")
+                    )?
+                ,
+                template_id: self.template_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_id", "template_id was not specified but it is required when building GetCaseOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

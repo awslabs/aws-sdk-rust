@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessControlRulesInput {
+pub struct ListAccessControlRulesInput  {
     /// <p>The identifier for the organization.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
-impl ListAccessControlRulesInput {
+impl  ListAccessControlRulesInput  {
     /// <p>The identifier for the organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl ListAccessControlRulesInputBuilder {
     }
     /// <p>The identifier for the organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
     /// Consumes the builder and constructs a [`ListAccessControlRulesInput`](crate::operation::list_access_control_rules::ListAccessControlRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_access_control_rules::ListAccessControlRulesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_access_control_rules::ListAccessControlRulesInput {
-            organization_id: self.organization_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_control_rules::ListAccessControlRulesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_access_control_rules::ListAccessControlRulesInput {
+                organization_id: self.organization_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCaseAuditEventsOutput {
+pub struct GetCaseAuditEventsOutput  {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of case audits where each represents a particular edit of the case.</p>
-    pub audit_events: ::std::vec::Vec<::std::option::Option<crate::types::AuditEvent>>,
+    pub audit_events: ::std::vec::Vec::<::std::option::Option<crate::types::AuditEvent>>,
     _request_id: Option<String>,
 }
-impl GetCaseAuditEventsOutput {
+impl  GetCaseAuditEventsOutput  {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of case audits where each represents a particular edit of the case.</p>
-    pub fn audit_events(&self) -> &[::std::option::Option<crate::types::AuditEvent>] {
-        use std::ops::Deref;
-        self.audit_events.deref()
+    pub fn audit_events(&self) -> & [::std::option::Option<crate::types::AuditEvent>] {
+        use std::ops::Deref; self.audit_events.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCaseAuditEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCaseAuditEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetCaseAuditEventsOutput`](crate::operation::get_case_audit_events::GetCaseAuditEventsOutput).
     pub fn builder() -> crate::operation::get_case_audit_events::builders::GetCaseAuditEventsOutputBuilder {
@@ -37,7 +36,7 @@ impl GetCaseAuditEventsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCaseAuditEventsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) audit_events: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::AuditEvent>>>,
+    pub(crate) audit_events: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::AuditEvent>>>,
     _request_id: Option<String>,
 }
 impl GetCaseAuditEventsOutputBuilder {
@@ -48,8 +47,7 @@ impl GetCaseAuditEventsOutputBuilder {
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl GetCaseAuditEventsOutputBuilder {
     /// <p>A list of case audits where each represents a particular edit of the case.</p>
     pub fn audit_events(mut self, input: ::std::option::Option<crate::types::AuditEvent>) -> Self {
         let mut v = self.audit_events.unwrap_or_default();
-        v.push(input);
-        self.audit_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.audit_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of case audits where each represents a particular edit of the case.</p>
-    pub fn set_audit_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::AuditEvent>>>) -> Self {
-        self.audit_events = input;
-        self
+    pub fn set_audit_events(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::AuditEvent>>>) -> Self {
+        self.audit_events = input; self
     }
     /// <p>A list of case audits where each represents a particular edit of the case.</p>
-    pub fn get_audit_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::AuditEvent>>> {
+    pub fn get_audit_events(&self) -> &::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::AuditEvent>>> {
         &self.audit_events
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCaseAuditEventsOutput`](crate::operation::get_case_audit_events::GetCaseAuditEventsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`audit_events`](crate::operation::get_case_audit_events::builders::GetCaseAuditEventsOutputBuilder::audit_events)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_case_audit_events::GetCaseAuditEventsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_case_audit_events::GetCaseAuditEventsOutput {
-            next_token: self.next_token,
-            audit_events: self.audit_events.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audit_events",
-                    "audit_events was not specified but it is required when building GetCaseAuditEventsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_case_audit_events::GetCaseAuditEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_case_audit_events::GetCaseAuditEventsOutput {
+                next_token: self.next_token
+                ,
+                audit_events: self.audit_events
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audit_events", "audit_events was not specified but it is required when building GetCaseAuditEventsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

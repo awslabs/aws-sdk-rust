@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorDetails {
+pub struct ErrorDetails  {
     #[allow(missing_docs)] // documentation missing in model
     pub error_type: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl ErrorDetails {
+impl  ErrorDetails  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_type(&self) -> ::std::option::Option<&str> {
+    pub fn error_type(&self) -> ::std::option::Option<& str> {
         self.error_type.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ErrorDetailsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_type = input;
-        self
+        self.error_type = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,8 +53,7 @@ impl ErrorDetailsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,11 @@ impl ErrorDetailsBuilder {
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {
         crate::types::ErrorDetails {
-            error_type: self.error_type,
-            error_message: self.error_message,
+            error_type: self.error_type
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

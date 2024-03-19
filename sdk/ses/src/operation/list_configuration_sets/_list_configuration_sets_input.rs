@@ -3,15 +3,15 @@
 /// <p>Represents a request to list the configuration sets associated with your Amazon Web Services account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfigurationSetsInput {
+pub struct ListConfigurationSetsInput  {
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of configuration sets to return.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListConfigurationSetsInput {
+impl  ListConfigurationSetsInput  {
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of configuration sets to return.</p>
@@ -41,8 +41,7 @@ impl ListConfigurationSetsInputBuilder {
     }
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl ListConfigurationSetsInputBuilder {
     }
     /// <p>The number of configuration sets to return.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The number of configuration sets to return.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::operation::list_configuration_sets::ListConfigurationSetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_configuration_sets::ListConfigurationSetsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_configuration_sets::ListConfigurationSetsInput {
-            next_token: self.next_token,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_configuration_sets::ListConfigurationSetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_configuration_sets::ListConfigurationSetsInput {
+                next_token: self.next_token
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

@@ -3,9 +3,9 @@
 /// <p>Contains information about Amazon Web Services Fargate details associated with an Amazon ECS cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FargateDetails {
+pub struct FargateDetails  {
     /// <p>Runtime coverage issues identified for the resource running on Amazon Web Services Fargate.</p>
-    pub issues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub issues: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
     /// <li>
@@ -17,12 +17,13 @@ pub struct FargateDetails {
     /// </note>
     pub management_type: ::std::option::Option<crate::types::ManagementType>,
 }
-impl FargateDetails {
+impl  FargateDetails  {
     /// <p>Runtime coverage issues identified for the resource running on Amazon Web Services Fargate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues.is_none()`.
-    pub fn issues(&self) -> &[::std::string::String] {
-        self.issues.as_deref().unwrap_or_default()
+    pub fn issues(&self) -> & [::std::string::String] {
+        self.issues.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
@@ -33,7 +34,7 @@ impl FargateDetails {
     /// </ul><note>
     /// <p>The <code>MANUAL</code> status doesn't apply to the Amazon Web Services Fargate (Amazon ECS only) woprkloads.</p>
     /// </note>
-    pub fn management_type(&self) -> ::std::option::Option<&crate::types::ManagementType> {
+    pub fn management_type(&self) -> ::std::option::Option<& crate::types::ManagementType> {
         self.management_type.as_ref()
     }
 }
@@ -48,7 +49,7 @@ impl FargateDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FargateDetailsBuilder {
-    pub(crate) issues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) issues: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) management_type: ::std::option::Option<crate::types::ManagementType>,
 }
 impl FargateDetailsBuilder {
@@ -59,17 +60,16 @@ impl FargateDetailsBuilder {
     /// <p>Runtime coverage issues identified for the resource running on Amazon Web Services Fargate.</p>
     pub fn issues(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.issues.unwrap_or_default();
-        v.push(input.into());
-        self.issues = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.issues = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Runtime coverage issues identified for the resource running on Amazon Web Services Fargate.</p>
-    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.issues = input;
-        self
+    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.issues = input; self
     }
     /// <p>Runtime coverage issues identified for the resource running on Amazon Web Services Fargate.</p>
-    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.issues
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
@@ -95,8 +95,7 @@ impl FargateDetailsBuilder {
     /// <p>The <code>MANUAL</code> status doesn't apply to the Amazon Web Services Fargate (Amazon ECS only) woprkloads.</p>
     /// </note>
     pub fn set_management_type(mut self, input: ::std::option::Option<crate::types::ManagementType>) -> Self {
-        self.management_type = input;
-        self
+        self.management_type = input; self
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
@@ -113,8 +112,11 @@ impl FargateDetailsBuilder {
     /// Consumes the builder and constructs a [`FargateDetails`](crate::types::FargateDetails).
     pub fn build(self) -> crate::types::FargateDetails {
         crate::types::FargateDetails {
-            issues: self.issues,
-            management_type: self.management_type,
+            issues: self.issues
+            ,
+            management_type: self.management_type
+            ,
         }
     }
 }
+

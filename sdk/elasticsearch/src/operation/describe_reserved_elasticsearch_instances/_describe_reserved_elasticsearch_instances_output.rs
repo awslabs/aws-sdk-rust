@@ -3,30 +3,31 @@
 /// <p>Container for results from <code>DescribeReservedElasticsearchInstances</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedElasticsearchInstancesOutput {
+pub struct DescribeReservedElasticsearchInstancesOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of reserved Elasticsearch instances.</p>
-    pub reserved_elasticsearch_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,
+    pub reserved_elasticsearch_instances: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedElasticsearchInstance>>,
     _request_id: Option<String>,
 }
-impl DescribeReservedElasticsearchInstancesOutput {
+impl  DescribeReservedElasticsearchInstancesOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of reserved Elasticsearch instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_elasticsearch_instances.is_none()`.
-    pub fn reserved_elasticsearch_instances(&self) -> &[crate::types::ReservedElasticsearchInstance] {
-        self.reserved_elasticsearch_instances.as_deref().unwrap_or_default()
+    pub fn reserved_elasticsearch_instances(&self) -> & [crate::types::ReservedElasticsearchInstance] {
+        self.reserved_elasticsearch_instances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReservedElasticsearchInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReservedElasticsearchInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesOutput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput).
     pub fn builder() -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReservedElasticsearchInstancesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_elasticsearch_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,
+    pub(crate) reserved_elasticsearch_instances: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedElasticsearchInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedElasticsearchInstancesOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReservedElasticsearchInstancesOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,37 +64,36 @@ impl DescribeReservedElasticsearchInstancesOutputBuilder {
     /// <p>List of reserved Elasticsearch instances.</p>
     pub fn reserved_elasticsearch_instances(mut self, input: crate::types::ReservedElasticsearchInstance) -> Self {
         let mut v = self.reserved_elasticsearch_instances.unwrap_or_default();
-        v.push(input);
-        self.reserved_elasticsearch_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reserved_elasticsearch_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of reserved Elasticsearch instances.</p>
-    pub fn set_reserved_elasticsearch_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,
-    ) -> Self {
-        self.reserved_elasticsearch_instances = input;
-        self
+    pub fn set_reserved_elasticsearch_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedElasticsearchInstance>>) -> Self {
+        self.reserved_elasticsearch_instances = input; self
     }
     /// <p>List of reserved Elasticsearch instances.</p>
-    pub fn get_reserved_elasticsearch_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>> {
+    pub fn get_reserved_elasticsearch_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservedElasticsearchInstance>> {
         &self.reserved_elasticsearch_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstancesOutput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput).
     pub fn build(self) -> crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput {
         crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput {
-            next_token: self.next_token,
-            reserved_elasticsearch_instances: self.reserved_elasticsearch_instances,
+            next_token: self.next_token
+            ,
+            reserved_elasticsearch_instances: self.reserved_elasticsearch_instances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

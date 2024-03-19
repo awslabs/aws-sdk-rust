@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRuleGroupsNamespaces`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace containing the rule groups namespaces.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::set_name):<br>required: **false**<br><p>Use this parameter to filter the rule groups namespaces that are returned. Only the namespaces with names that begin with the value that you specify are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. You receive this token from a previous call, and use it to get the next page of results. The other parameters must be the same as the initial call.</p> <p>For example, if your initial request has <code>maxResults</code> of 10, and there are 12 rule groups namespaces to return, then your initial request will return 10 and a <code>nextToken</code>. Using the next token in a subsequent call will return the remaining 2 namespaces.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return. The default is 100.</p><br>
-    /// - On success, responds with [`ListRuleGroupsNamespacesOutput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput) with field(s):
+                            /// - On success, responds with [`ListRuleGroupsNamespacesOutput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput) with field(s):
     ///   - [`rule_groups_namespaces(Vec::<RuleGroupsNamespaceSummary>)`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput::rule_groups_namespaces): <p>The returned list of rule groups namespaces.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput::next_token): <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListRuleGroupsNamespaces</code> request to retrieve those results.</p>
-    /// - On failure, responds with [`SdkError<ListRuleGroupsNamespacesError>`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError)
+                            /// - On failure, responds with [`SdkError<ListRuleGroupsNamespacesError>`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError)
     pub fn list_rule_groups_namespaces(&self) -> crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder {
-        crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

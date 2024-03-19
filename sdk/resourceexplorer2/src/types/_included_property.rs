@@ -3,7 +3,7 @@
 /// <p>Information about an additional property that describes a resource, that you can optionally include in the view. This lets you view that property in search results, and filter your search results based on the value of the property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncludedProperty {
+pub struct IncludedProperty  {
     /// <p>The name of the property that is included in this view.</p>
     /// <p>You can specify the following property names for this field:</p>
     /// <ul>
@@ -12,16 +12,15 @@ pub struct IncludedProperty {
     /// </ul>
     pub name: ::std::string::String,
 }
-impl IncludedProperty {
+impl  IncludedProperty  {
     /// <p>The name of the property that is included in this view.</p>
     /// <p>You can specify the following property names for this field:</p>
     /// <ul>
     /// <li>
     /// <p><code>Tags</code></p></li>
     /// </ul>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl IncludedProperty {
@@ -56,8 +55,7 @@ impl IncludedPropertyBuilder {
     /// <p><code>Tags</code></p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the property that is included in this view.</p>
     /// <p>You can specify the following property names for this field:</p>
@@ -72,13 +70,15 @@ impl IncludedPropertyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::IncludedPropertyBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::IncludedProperty, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IncludedProperty {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building IncludedProperty",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IncludedProperty {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building IncludedProperty")
+                    )?
+                ,
+            }
+        )
     }
 }
+

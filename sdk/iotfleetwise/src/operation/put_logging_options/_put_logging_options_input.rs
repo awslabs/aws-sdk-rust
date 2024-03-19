@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLoggingOptionsInput {
+pub struct PutLoggingOptionsInput  {
     /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
     pub cloud_watch_log_delivery: ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
 }
-impl PutLoggingOptionsInput {
+impl  PutLoggingOptionsInput  {
     /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_log_delivery(&self) -> ::std::option::Option<&crate::types::CloudWatchLogDeliveryOptions> {
+    pub fn cloud_watch_log_delivery(&self) -> ::std::option::Option<& crate::types::CloudWatchLogDeliveryOptions> {
         self.cloud_watch_log_delivery.as_ref()
     }
 }
@@ -34,19 +34,20 @@ impl PutLoggingOptionsInputBuilder {
     }
     /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
     pub fn set_cloud_watch_log_delivery(mut self, input: ::std::option::Option<crate::types::CloudWatchLogDeliveryOptions>) -> Self {
-        self.cloud_watch_log_delivery = input;
-        self
+        self.cloud_watch_log_delivery = input; self
     }
     /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
     pub fn get_cloud_watch_log_delivery(&self) -> &::std::option::Option<crate::types::CloudWatchLogDeliveryOptions> {
         &self.cloud_watch_log_delivery
     }
     /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_logging_options::PutLoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_logging_options::PutLoggingOptionsInput {
-            cloud_watch_log_delivery: self.cloud_watch_log_delivery,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_logging_options::PutLoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_logging_options::PutLoggingOptionsInput {
+                cloud_watch_log_delivery: self.cloud_watch_log_delivery
+                ,
+            }
+        )
     }
 }
+

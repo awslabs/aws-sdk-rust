@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCapabilityInput {
+pub struct CreateCapabilityInput  {
     /// <p>Specifies the name of the capability, used to identify it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of the capability. Currently, only <code>edi</code> is supported.</p>
@@ -10,40 +10,42 @@ pub struct CreateCapabilityInput {
     /// <p>Specifies a structure that contains the details for a capability.</p>
     pub configuration: ::std::option::Option<crate::types::CapabilityConfiguration>,
     /// <p>Specifies one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
-    pub instructions_documents: ::std::option::Option<::std::vec::Vec<crate::types::S3Location>>,
+    pub instructions_documents: ::std::option::Option<::std::vec::Vec::<crate::types::S3Location>>,
     /// <p>Reserved for future use.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateCapabilityInput {
+impl  CreateCapabilityInput  {
     /// <p>Specifies the name of the capability, used to identify it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the type of the capability. Currently, only <code>edi</code> is supported.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CapabilityType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::CapabilityType> {
         self.r#type.as_ref()
     }
     /// <p>Specifies a structure that contains the details for a capability.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::CapabilityConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::CapabilityConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Specifies one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instructions_documents.is_none()`.
-    pub fn instructions_documents(&self) -> &[crate::types::S3Location] {
-        self.instructions_documents.as_deref().unwrap_or_default()
+    pub fn instructions_documents(&self) -> & [crate::types::S3Location] {
+        self.instructions_documents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Reserved for future use.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateCapabilityInput {
@@ -60,9 +62,9 @@ pub struct CreateCapabilityInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::CapabilityType>,
     pub(crate) configuration: ::std::option::Option<crate::types::CapabilityConfiguration>,
-    pub(crate) instructions_documents: ::std::option::Option<::std::vec::Vec<crate::types::S3Location>>,
+    pub(crate) instructions_documents: ::std::option::Option<::std::vec::Vec::<crate::types::S3Location>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateCapabilityInputBuilder {
     /// <p>Specifies the name of the capability, used to identify it.</p>
@@ -73,8 +75,7 @@ impl CreateCapabilityInputBuilder {
     }
     /// <p>Specifies the name of the capability, used to identify it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the capability, used to identify it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +89,7 @@ impl CreateCapabilityInputBuilder {
     }
     /// <p>Specifies the type of the capability. Currently, only <code>edi</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CapabilityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the type of the capability. Currently, only <code>edi</code> is supported.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CapabilityType> {
@@ -103,8 +103,7 @@ impl CreateCapabilityInputBuilder {
     }
     /// <p>Specifies a structure that contains the details for a capability.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CapabilityConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Specifies a structure that contains the details for a capability.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CapabilityConfiguration> {
@@ -117,17 +116,16 @@ impl CreateCapabilityInputBuilder {
     /// <p>Specifies one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
     pub fn instructions_documents(mut self, input: crate::types::S3Location) -> Self {
         let mut v = self.instructions_documents.unwrap_or_default();
-        v.push(input);
-        self.instructions_documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instructions_documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
-    pub fn set_instructions_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Location>>) -> Self {
-        self.instructions_documents = input;
-        self
+    pub fn set_instructions_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Location>>) -> Self {
+        self.instructions_documents = input; self
     }
     /// <p>Specifies one or more locations in Amazon S3, each specifying an EDI document that can be used with this capability. Each item contains the name of the bucket and the key, to identify the document's location.</p>
-    pub fn get_instructions_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Location>> {
+    pub fn get_instructions_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Location>> {
         &self.instructions_documents
     }
     /// <p>Reserved for future use.</p>
@@ -137,8 +135,7 @@ impl CreateCapabilityInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,30 +148,36 @@ impl CreateCapabilityInputBuilder {
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCapabilityInput`](crate::operation::create_capability::CreateCapabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_capability::CreateCapabilityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_capability::CreateCapabilityInput {
-            name: self.name,
-            r#type: self.r#type,
-            configuration: self.configuration,
-            instructions_documents: self.instructions_documents,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_capability::CreateCapabilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_capability::CreateCapabilityInput {
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                configuration: self.configuration
+                ,
+                instructions_documents: self.instructions_documents
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

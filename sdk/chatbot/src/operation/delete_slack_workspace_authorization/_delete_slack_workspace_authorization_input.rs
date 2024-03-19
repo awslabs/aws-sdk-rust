@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlackWorkspaceAuthorizationInput {
+pub struct DeleteSlackWorkspaceAuthorizationInput  {
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub slack_team_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSlackWorkspaceAuthorizationInput {
+impl  DeleteSlackWorkspaceAuthorizationInput  {
     /// The ID of the Slack workspace authorized with AWS Chatbot.
-    pub fn slack_team_id(&self) -> ::std::option::Option<&str> {
+    pub fn slack_team_id(&self) -> ::std::option::Option<& str> {
         self.slack_team_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteSlackWorkspaceAuthorizationInputBuilder {
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn set_slack_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_team_id = input;
-        self
+        self.slack_team_id = input; self
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn get_slack_team_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.slack_team_id
     }
     /// Consumes the builder and constructs a [`DeleteSlackWorkspaceAuthorizationInput`](crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationInput {
-                slack_team_id: self.slack_team_id,
-            },
+                slack_team_id: self.slack_team_id
+                ,
+            }
         )
     }
 }
+

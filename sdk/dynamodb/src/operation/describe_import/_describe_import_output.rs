@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImportOutput {
+pub struct DescribeImportOutput  {
     /// <p>Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered.</p>
     pub import_table_description: ::std::option::Option<crate::types::ImportTableDescription>,
     _request_id: Option<String>,
 }
-impl DescribeImportOutput {
+impl  DescribeImportOutput  {
     /// <p>Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered.</p>
-    pub fn import_table_description(&self) -> ::std::option::Option<&crate::types::ImportTableDescription> {
+    pub fn import_table_description(&self) -> ::std::option::Option<& crate::types::ImportTableDescription> {
         self.import_table_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeImportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeImportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImportOutput`](crate::operation::describe_import::DescribeImportOutput).
     pub fn builder() -> crate::operation::describe_import::builders::DescribeImportOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeImportOutputBuilder {
     }
     /// <p>Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered.</p>
     pub fn set_import_table_description(mut self, input: ::std::option::Option<crate::types::ImportTableDescription>) -> Self {
-        self.import_table_description = input;
-        self
+        self.import_table_description = input; self
     }
     /// <p>Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered.</p>
     pub fn get_import_table_description(&self) -> &::std::option::Option<crate::types::ImportTableDescription> {
         &self.import_table_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeImportOutput`](crate::operation::describe_import::DescribeImportOutput).
     pub fn build(self) -> crate::operation::describe_import::DescribeImportOutput {
         crate::operation::describe_import::DescribeImportOutput {
-            import_table_description: self.import_table_description,
+            import_table_description: self.import_table_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

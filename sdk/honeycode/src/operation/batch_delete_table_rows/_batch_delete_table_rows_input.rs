@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteTableRowsInput {
+pub struct BatchDeleteTableRowsInput  {
     /// <p>The ID of the workbook where the rows are being deleted.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub workbook_id: ::std::option::Option<::std::string::String>,
@@ -11,32 +11,33 @@ pub struct BatchDeleteTableRowsInput {
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of row ids to delete from the table. You need to specify at least one row id in this list.</p>
     /// <p>Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table.</p>
-    pub row_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub row_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl BatchDeleteTableRowsInput {
+impl  BatchDeleteTableRowsInput  {
     /// <p>The ID of the workbook where the rows are being deleted.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
-    pub fn workbook_id(&self) -> ::std::option::Option<&str> {
+    pub fn workbook_id(&self) -> ::std::option::Option<& str> {
         self.workbook_id.as_deref()
     }
     /// <p>The ID of the table where the rows are being deleted.</p>
     /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
-    pub fn table_id(&self) -> ::std::option::Option<&str> {
+    pub fn table_id(&self) -> ::std::option::Option<& str> {
         self.table_id.as_deref()
     }
     /// <p>The list of row ids to delete from the table. You need to specify at least one row id in this list.</p>
     /// <p>Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_ids.is_none()`.
-    pub fn row_ids(&self) -> &[::std::string::String] {
-        self.row_ids.as_deref().unwrap_or_default()
+    pub fn row_ids(&self) -> & [::std::string::String] {
+        self.row_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -53,7 +54,7 @@ impl BatchDeleteTableRowsInput {
 pub struct BatchDeleteTableRowsInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
-    pub(crate) row_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) row_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteTableRowsInputBuilder {
@@ -67,8 +68,7 @@ impl BatchDeleteTableRowsInputBuilder {
     /// <p>The ID of the workbook where the rows are being deleted.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn set_workbook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workbook_id = input;
-        self
+        self.workbook_id = input; self
     }
     /// <p>The ID of the workbook where the rows are being deleted.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
@@ -85,8 +85,7 @@ impl BatchDeleteTableRowsInputBuilder {
     /// <p>The ID of the table where the rows are being deleted.</p>
     /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_id = input;
-        self
+        self.table_id = input; self
     }
     /// <p>The ID of the table where the rows are being deleted.</p>
     /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
@@ -101,19 +100,18 @@ impl BatchDeleteTableRowsInputBuilder {
     /// <p>Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table.</p>
     pub fn row_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.row_ids.unwrap_or_default();
-        v.push(input.into());
-        self.row_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.row_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of row ids to delete from the table. You need to specify at least one row id in this list.</p>
     /// <p>Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table.</p>
-    pub fn set_row_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.row_ids = input;
-        self
+    pub fn set_row_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.row_ids = input; self
     }
     /// <p>The list of row ids to delete from the table. You need to specify at least one row id in this list.</p>
     /// <p>Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table.</p>
-    pub fn get_row_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_row_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.row_ids
     }
     /// <p>The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
@@ -125,8 +123,7 @@ impl BatchDeleteTableRowsInputBuilder {
     /// <p>The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
@@ -134,15 +131,19 @@ impl BatchDeleteTableRowsInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`BatchDeleteTableRowsInput`](crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput {
-            workbook_id: self.workbook_id,
-            table_id: self.table_id,
-            row_ids: self.row_ids,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_table_rows::BatchDeleteTableRowsInput {
+                workbook_id: self.workbook_id
+                ,
+                table_id: self.table_id
+                ,
+                row_ids: self.row_ids
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

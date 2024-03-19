@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBrokerOutput {
+pub struct UpdateBrokerOutput  {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
@@ -22,7 +22,7 @@ pub struct UpdateBrokerOutput {
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
     pub data_replication_metadata: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
     /// <p>Describes whether this broker is a part of a data replication pair.</p>
@@ -33,9 +33,9 @@ pub struct UpdateBrokerOutput {
     pub pending_data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     _request_id: Option<String>,
 }
-impl UpdateBrokerOutput {
+impl  UpdateBrokerOutput  {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn authentication_strategy(&self) -> ::std::option::Option<&crate::types::AuthenticationStrategy> {
+    pub fn authentication_strategy(&self) -> ::std::option::Option<& crate::types::AuthenticationStrategy> {
         self.authentication_strategy.as_ref()
     }
     /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
@@ -43,61 +43,62 @@ impl UpdateBrokerOutput {
         self.auto_minor_version_upgrade
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>The ID of the updated configuration.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ConfigurationId> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ConfigurationId> {
         self.configuration.as_ref()
     }
     /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    pub fn host_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn host_instance_type(&self) -> ::std::option::Option<& str> {
         self.host_instance_type.as_deref()
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn ldap_server_metadata(&self) -> ::std::option::Option<&crate::types::LdapServerMetadataOutput> {
+    pub fn ldap_server_metadata(&self) -> ::std::option::Option<& crate::types::LdapServerMetadataOutput> {
         self.ldap_server_metadata.as_ref()
     }
     /// <p>The list of information about logs to be enabled for the specified broker.</p>
-    pub fn logs(&self) -> ::std::option::Option<&crate::types::Logs> {
+    pub fn logs(&self) -> ::std::option::Option<& crate::types::Logs> {
         self.logs.as_ref()
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn maintenance_window_start_time(&self) -> ::std::option::Option<&crate::types::WeeklyStartTime> {
+    pub fn maintenance_window_start_time(&self) -> ::std::option::Option<& crate::types::WeeklyStartTime> {
         self.maintenance_window_start_time.as_ref()
     }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
-    pub fn data_replication_metadata(&self) -> ::std::option::Option<&crate::types::DataReplicationMetadataOutput> {
+    pub fn data_replication_metadata(&self) -> ::std::option::Option<& crate::types::DataReplicationMetadataOutput> {
         self.data_replication_metadata.as_ref()
     }
     /// <p>Describes whether this broker is a part of a data replication pair.</p>
-    pub fn data_replication_mode(&self) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+    pub fn data_replication_mode(&self) -> ::std::option::Option<& crate::types::DataReplicationMode> {
         self.data_replication_mode.as_ref()
     }
     /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
-    pub fn pending_data_replication_metadata(&self) -> ::std::option::Option<&crate::types::DataReplicationMetadataOutput> {
+    pub fn pending_data_replication_metadata(&self) -> ::std::option::Option<& crate::types::DataReplicationMetadataOutput> {
         self.pending_data_replication_metadata.as_ref()
     }
     /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
-    pub fn pending_data_replication_mode(&self) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+    pub fn pending_data_replication_mode(&self) -> ::std::option::Option<& crate::types::DataReplicationMode> {
         self.pending_data_replication_mode.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateBrokerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateBrokerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerOutput`](crate::operation::update_broker::UpdateBrokerOutput).
     pub fn builder() -> crate::operation::update_broker::builders::UpdateBrokerOutputBuilder {
@@ -118,7 +119,7 @@ pub struct UpdateBrokerOutputBuilder {
     pub(crate) ldap_server_metadata: ::std::option::Option<crate::types::LdapServerMetadataOutput>,
     pub(crate) logs: ::std::option::Option<crate::types::Logs>,
     pub(crate) maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) data_replication_metadata: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
     pub(crate) data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     pub(crate) pending_data_replication_metadata: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
@@ -133,8 +134,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn set_authentication_strategy(mut self, input: ::std::option::Option<crate::types::AuthenticationStrategy>) -> Self {
-        self.authentication_strategy = input;
-        self
+        self.authentication_strategy = input; self
     }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn get_authentication_strategy(&self) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
@@ -147,8 +147,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -161,8 +160,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +173,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>The ID of the updated configuration.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ConfigurationId>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The ID of the updated configuration.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ConfigurationId> {
@@ -189,8 +186,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +199,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
     pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_instance_type = input;
-        self
+        self.host_instance_type = input; self
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
     pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +212,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn set_ldap_server_metadata(mut self, input: ::std::option::Option<crate::types::LdapServerMetadataOutput>) -> Self {
-        self.ldap_server_metadata = input;
-        self
+        self.ldap_server_metadata = input; self
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn get_ldap_server_metadata(&self) -> &::std::option::Option<crate::types::LdapServerMetadataOutput> {
@@ -231,8 +225,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>The list of information about logs to be enabled for the specified broker.</p>
     pub fn set_logs(mut self, input: ::std::option::Option<crate::types::Logs>) -> Self {
-        self.logs = input;
-        self
+        self.logs = input; self
     }
     /// <p>The list of information about logs to be enabled for the specified broker.</p>
     pub fn get_logs(&self) -> &::std::option::Option<crate::types::Logs> {
@@ -245,8 +238,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub fn set_maintenance_window_start_time(mut self, input: ::std::option::Option<crate::types::WeeklyStartTime>) -> Self {
-        self.maintenance_window_start_time = input;
-        self
+        self.maintenance_window_start_time = input; self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub fn get_maintenance_window_start_time(&self) -> &::std::option::Option<crate::types::WeeklyStartTime> {
@@ -259,17 +251,16 @@ impl UpdateBrokerOutputBuilder {
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
@@ -279,8 +270,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
     pub fn set_data_replication_metadata(mut self, input: ::std::option::Option<crate::types::DataReplicationMetadataOutput>) -> Self {
-        self.data_replication_metadata = input;
-        self
+        self.data_replication_metadata = input; self
     }
     /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
     pub fn get_data_replication_metadata(&self) -> &::std::option::Option<crate::types::DataReplicationMetadataOutput> {
@@ -293,8 +283,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>Describes whether this broker is a part of a data replication pair.</p>
     pub fn set_data_replication_mode(mut self, input: ::std::option::Option<crate::types::DataReplicationMode>) -> Self {
-        self.data_replication_mode = input;
-        self
+        self.data_replication_mode = input; self
     }
     /// <p>Describes whether this broker is a part of a data replication pair.</p>
     pub fn get_data_replication_mode(&self) -> &::std::option::Option<crate::types::DataReplicationMode> {
@@ -307,8 +296,7 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
     pub fn set_pending_data_replication_metadata(mut self, input: ::std::option::Option<crate::types::DataReplicationMetadataOutput>) -> Self {
-        self.pending_data_replication_metadata = input;
-        self
+        self.pending_data_replication_metadata = input; self
     }
     /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
     pub fn get_pending_data_replication_metadata(&self) -> &::std::option::Option<crate::types::DataReplicationMetadataOutput> {
@@ -321,40 +309,54 @@ impl UpdateBrokerOutputBuilder {
     }
     /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
     pub fn set_pending_data_replication_mode(mut self, input: ::std::option::Option<crate::types::DataReplicationMode>) -> Self {
-        self.pending_data_replication_mode = input;
-        self
+        self.pending_data_replication_mode = input; self
     }
     /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
     pub fn get_pending_data_replication_mode(&self) -> &::std::option::Option<crate::types::DataReplicationMode> {
         &self.pending_data_replication_mode
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateBrokerOutput`](crate::operation::update_broker::UpdateBrokerOutput).
     pub fn build(self) -> crate::operation::update_broker::UpdateBrokerOutput {
         crate::operation::update_broker::UpdateBrokerOutput {
-            authentication_strategy: self.authentication_strategy,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            broker_id: self.broker_id,
-            configuration: self.configuration,
-            engine_version: self.engine_version,
-            host_instance_type: self.host_instance_type,
-            ldap_server_metadata: self.ldap_server_metadata,
-            logs: self.logs,
-            maintenance_window_start_time: self.maintenance_window_start_time,
-            security_groups: self.security_groups,
-            data_replication_metadata: self.data_replication_metadata,
-            data_replication_mode: self.data_replication_mode,
-            pending_data_replication_metadata: self.pending_data_replication_metadata,
-            pending_data_replication_mode: self.pending_data_replication_mode,
+            authentication_strategy: self.authentication_strategy
+            ,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade
+            ,
+            broker_id: self.broker_id
+            ,
+            configuration: self.configuration
+            ,
+            engine_version: self.engine_version
+            ,
+            host_instance_type: self.host_instance_type
+            ,
+            ldap_server_metadata: self.ldap_server_metadata
+            ,
+            logs: self.logs
+            ,
+            maintenance_window_start_time: self.maintenance_window_start_time
+            ,
+            security_groups: self.security_groups
+            ,
+            data_replication_metadata: self.data_replication_metadata
+            ,
+            data_replication_mode: self.data_replication_mode
+            ,
+            pending_data_replication_metadata: self.pending_data_replication_metadata
+            ,
+            pending_data_replication_mode: self.pending_data_replication_mode
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

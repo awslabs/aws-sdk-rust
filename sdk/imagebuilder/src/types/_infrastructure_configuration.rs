@@ -3,7 +3,7 @@
 /// <p>Details of the infrastructure configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InfrastructureConfiguration {
+pub struct InfrastructureConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the infrastructure configuration.</p>
@@ -11,11 +11,11 @@ pub struct InfrastructureConfiguration {
     /// <p>The description of the infrastructure configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs of the infrastructure configuration.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The subnet ID of the infrastructure configuration.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
@@ -33,51 +33,53 @@ pub struct InfrastructureConfiguration {
     /// <p>The date on which the infrastructure configuration was last updated.</p>
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl InfrastructureConfiguration {
+impl  InfrastructureConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the infrastructure configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the infrastructure configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
-    pub fn instance_types(&self) -> &[::std::string::String] {
-        self.instance_types.as_deref().unwrap_or_default()
+    pub fn instance_types(&self) -> & [::std::string::String] {
+        self.instance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
-    pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> ::std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The security group IDs of the infrastructure configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The subnet ID of the infrastructure configuration.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
-    pub fn logging(&self) -> ::std::option::Option<&crate::types::Logging> {
+    pub fn logging(&self) -> ::std::option::Option<& crate::types::Logging> {
         self.logging.as_ref()
     }
     /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
-    pub fn key_pair(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair(&self) -> ::std::option::Option<& str> {
         self.key_pair.as_deref()
     }
     /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
@@ -87,27 +89,27 @@ impl InfrastructureConfiguration {
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The date on which the infrastructure configuration was created.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which the infrastructure configuration was last updated.</p>
-    pub fn date_updated(&self) -> ::std::option::Option<&str> {
+    pub fn date_updated(&self) -> ::std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn resource_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
-    pub fn instance_metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
+    pub fn instance_metadata_options(&self) -> ::std::option::Option<& crate::types::InstanceMetadataOptions> {
         self.instance_metadata_options.as_ref()
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -125,9 +127,9 @@ pub struct InfrastructureConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
     pub(crate) key_pair: ::std::option::Option<::std::string::String>,
@@ -135,9 +137,9 @@ pub struct InfrastructureConfigurationBuilder {
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
     pub(crate) date_updated: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl InfrastructureConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
@@ -147,8 +149,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +162,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The name of the infrastructure configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the infrastructure configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +175,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The description of the infrastructure configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the infrastructure configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,17 +188,16 @@ impl InfrastructureConfigurationBuilder {
     /// <p>The instance types of the infrastructure configuration.</p>
     pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
-        v.push(input.into());
-        self.instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_types = input;
-        self
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_types = input; self
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_types
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
@@ -209,8 +207,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_name = input;
-        self
+        self.instance_profile_name = input; self
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,17 +220,16 @@ impl InfrastructureConfigurationBuilder {
     /// <p>The security group IDs of the infrastructure configuration.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group IDs of the infrastructure configuration.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The security group IDs of the infrastructure configuration.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The subnet ID of the infrastructure configuration.</p>
@@ -243,8 +239,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The subnet ID of the infrastructure configuration.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The subnet ID of the infrastructure configuration.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +252,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::Logging>) -> Self {
-        self.logging = input;
-        self
+        self.logging = input; self
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
@@ -271,8 +265,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
     pub fn set_key_pair(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair = input;
-        self
+        self.key_pair = input; self
     }
     /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
     pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,8 +278,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
     pub fn set_terminate_instance_on_failure(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.terminate_instance_on_failure = input;
-        self
+        self.terminate_instance_on_failure = input; self
     }
     /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
     pub fn get_terminate_instance_on_failure(&self) -> &::std::option::Option<bool> {
@@ -303,8 +295,7 @@ impl InfrastructureConfigurationBuilder {
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
@@ -319,8 +310,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The date on which the infrastructure configuration was created.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date on which the infrastructure configuration was created.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -333,8 +323,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The date on which the infrastructure configuration was last updated.</p>
     pub fn set_date_updated(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_updated = input;
-        self
+        self.date_updated = input; self
     }
     /// <p>The date on which the infrastructure configuration was last updated.</p>
     pub fn get_date_updated(&self) -> &::std::option::Option<::std::string::String> {
@@ -347,20 +336,16 @@ impl InfrastructureConfigurationBuilder {
     /// <p>The tags attached to the resource created by Image Builder.</p>
     pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.resource_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.resource_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.resource_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.resource_tags
     }
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
@@ -370,8 +355,7 @@ impl InfrastructureConfigurationBuilder {
     }
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
     pub fn set_instance_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptions>) -> Self {
-        self.instance_metadata_options = input;
-        self
+        self.instance_metadata_options = input; self
     }
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
     pub fn get_instance_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
@@ -384,38 +368,54 @@ impl InfrastructureConfigurationBuilder {
     /// <p>The tags of the infrastructure configuration.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`InfrastructureConfiguration`](crate::types::InfrastructureConfiguration).
     pub fn build(self) -> crate::types::InfrastructureConfiguration {
         crate::types::InfrastructureConfiguration {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            instance_types: self.instance_types,
-            instance_profile_name: self.instance_profile_name,
-            security_group_ids: self.security_group_ids,
-            subnet_id: self.subnet_id,
-            logging: self.logging,
-            key_pair: self.key_pair,
-            terminate_instance_on_failure: self.terminate_instance_on_failure,
-            sns_topic_arn: self.sns_topic_arn,
-            date_created: self.date_created,
-            date_updated: self.date_updated,
-            resource_tags: self.resource_tags,
-            instance_metadata_options: self.instance_metadata_options,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            instance_types: self.instance_types
+            ,
+            instance_profile_name: self.instance_profile_name
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            subnet_id: self.subnet_id
+            ,
+            logging: self.logging
+            ,
+            key_pair: self.key_pair
+            ,
+            terminate_instance_on_failure: self.terminate_instance_on_failure
+            ,
+            sns_topic_arn: self.sns_topic_arn
+            ,
+            date_created: self.date_created
+            ,
+            date_updated: self.date_updated
+            ,
+            resource_tags: self.resource_tags
+            ,
+            instance_metadata_options: self.instance_metadata_options
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

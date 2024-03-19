@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTenantDatabasesInput {
+pub struct DescribeTenantDatabasesInput  {
     /// <p>The user-supplied DB instance identifier, which must match the identifier of an existing instance owned by the Amazon Web Services account. This parameter isn't case-sensitive.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied tenant database name, which must match the name of an existing tenant database on the specified DB instance owned by your Amazon Web Services account. This parameter isn’t case-sensitive.</p>
@@ -17,19 +17,19 @@ pub struct DescribeTenantDatabasesInput {
     /// <li>
     /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribeTenantDatabasesInput {
+impl  DescribeTenantDatabasesInput  {
     /// <p>The user-supplied DB instance identifier, which must match the identifier of an existing instance owned by the Amazon Web Services account. This parameter isn't case-sensitive.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The user-supplied tenant database name, which must match the name of an existing tenant database on the specified DB instance owned by your Amazon Web Services account. This parameter isn’t case-sensitive.</p>
-    pub fn tenant_db_name(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_db_name(&self) -> ::std::option::Option<& str> {
         self.tenant_db_name.as_deref()
     }
     /// <p>A filter that specifies one or more database tenants to describe.</p>
@@ -42,13 +42,14 @@ impl DescribeTenantDatabasesInput {
     /// <li>
     /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
@@ -69,7 +70,7 @@ impl DescribeTenantDatabasesInput {
 pub struct DescribeTenantDatabasesInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_db_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -81,8 +82,7 @@ impl DescribeTenantDatabasesInputBuilder {
     }
     /// <p>The user-supplied DB instance identifier, which must match the identifier of an existing instance owned by the Amazon Web Services account. This parameter isn't case-sensitive.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The user-supplied DB instance identifier, which must match the identifier of an existing instance owned by the Amazon Web Services account. This parameter isn't case-sensitive.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +95,7 @@ impl DescribeTenantDatabasesInputBuilder {
     }
     /// <p>The user-supplied tenant database name, which must match the name of an existing tenant database on the specified DB instance owned by your Amazon Web Services account. This parameter isn’t case-sensitive.</p>
     pub fn set_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_db_name = input;
-        self
+        self.tenant_db_name = input; self
     }
     /// <p>The user-supplied tenant database name, which must match the name of an existing tenant database on the specified DB instance owned by your Amazon Web Services account. This parameter isn’t case-sensitive.</p>
     pub fn get_tenant_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,9 +117,9 @@ impl DescribeTenantDatabasesInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A filter that specifies one or more database tenants to describe.</p>
     /// <p>Supported filters:</p>
@@ -132,9 +131,8 @@ impl DescribeTenantDatabasesInputBuilder {
     /// <li>
     /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A filter that specifies one or more database tenants to describe.</p>
     /// <p>Supported filters:</p>
@@ -146,7 +144,7 @@ impl DescribeTenantDatabasesInputBuilder {
     /// <li>
     /// <p><code>dbi-resource-id</code> - DB instance resource identifiers. The results list only includes information about the tenants contained within the DB instances identified by these resource identifiers.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -156,8 +154,7 @@ impl DescribeTenantDatabasesInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,26 +167,28 @@ impl DescribeTenantDatabasesInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeTenantDatabasesInput`](crate::operation::describe_tenant_databases::DescribeTenantDatabasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tenant_databases::DescribeTenantDatabasesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_tenant_databases::DescribeTenantDatabasesInput {
-            db_instance_identifier: self.db_instance_identifier,
-            tenant_db_name: self.tenant_db_name,
-            filters: self.filters,
-            marker: self.marker,
-            max_records: self.max_records,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tenant_databases::DescribeTenantDatabasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_tenant_databases::DescribeTenantDatabasesInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                tenant_db_name: self.tenant_db_name
+                ,
+                filters: self.filters
+                ,
+                marker: self.marker
+                ,
+                max_records: self.max_records
+                ,
+            }
+        )
     }
 }
+

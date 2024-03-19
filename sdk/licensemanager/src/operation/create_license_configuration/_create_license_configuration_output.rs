@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLicenseConfigurationOutput {
+pub struct CreateLicenseConfigurationOutput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateLicenseConfigurationOutput {
+impl  CreateLicenseConfigurationOutput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLicenseConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationOutput`](crate::operation::create_license_configuration::CreateLicenseConfigurationOutput).
     pub fn builder() -> crate::operation::create_license_configuration::builders::CreateLicenseConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateLicenseConfigurationOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_configuration_arn = input;
-        self
+        self.license_configuration_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_configuration_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLicenseConfigurationOutput`](crate::operation::create_license_configuration::CreateLicenseConfigurationOutput).
     pub fn build(self) -> crate::operation::create_license_configuration::CreateLicenseConfigurationOutput {
         crate::operation::create_license_configuration::CreateLicenseConfigurationOutput {
-            license_configuration_arn: self.license_configuration_arn,
+            license_configuration_arn: self.license_configuration_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

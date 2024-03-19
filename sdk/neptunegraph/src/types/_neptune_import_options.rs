@@ -3,7 +3,7 @@
 /// <p>Options for how to import Neptune data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NeptuneImportOptions {
+pub struct NeptuneImportOptions  {
     /// <p>The path to an S3 bucket from which to import data.</p>
     pub s3_export_path: ::std::string::String,
     /// <p>The KMS key to use to encrypt data in the S3 bucket where the graph data is exported</p>
@@ -13,16 +13,14 @@ pub struct NeptuneImportOptions {
     /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.</p>
     pub preserve_edge_ids: ::std::option::Option<bool>,
 }
-impl NeptuneImportOptions {
+impl  NeptuneImportOptions  {
     /// <p>The path to an S3 bucket from which to import data.</p>
-    pub fn s3_export_path(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_export_path.deref()
+    pub fn s3_export_path(&self) -> & str {
+        use std::ops::Deref; self.s3_export_path.deref()
     }
     /// <p>The KMS key to use to encrypt data in the S3 bucket where the graph data is exported</p>
-    pub fn s3_export_kms_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_export_kms_key_id.deref()
+    pub fn s3_export_kms_key_id(&self) -> & str {
+        use std::ops::Deref; self.s3_export_kms_key_id.deref()
     }
     /// <p>Neptune Analytics supports label-less vertices and no labels are assigned unless one is explicitly provided. Neptune assigns default labels when none is explicitly provided. When importing the data into Neptune Analytics, the default vertex labels can be omitted by setting <i>preserveDefaultVertexLabels</i> to false. Note that if the vertex only has default labels, and has no other properties or edges, then the vertex will effectively not get imported into Neptune Analytics when preserveDefaultVertexLabels is set to false.</p>
     pub fn preserve_default_vertex_labels(&self) -> ::std::option::Option<bool> {
@@ -58,8 +56,7 @@ impl NeptuneImportOptionsBuilder {
     }
     /// <p>The path to an S3 bucket from which to import data.</p>
     pub fn set_s3_export_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_export_path = input;
-        self
+        self.s3_export_path = input; self
     }
     /// <p>The path to an S3 bucket from which to import data.</p>
     pub fn get_s3_export_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl NeptuneImportOptionsBuilder {
     }
     /// <p>The KMS key to use to encrypt data in the S3 bucket where the graph data is exported</p>
     pub fn set_s3_export_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_export_kms_key_id = input;
-        self
+        self.s3_export_kms_key_id = input; self
     }
     /// <p>The KMS key to use to encrypt data in the S3 bucket where the graph data is exported</p>
     pub fn get_s3_export_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl NeptuneImportOptionsBuilder {
     }
     /// <p>Neptune Analytics supports label-less vertices and no labels are assigned unless one is explicitly provided. Neptune assigns default labels when none is explicitly provided. When importing the data into Neptune Analytics, the default vertex labels can be omitted by setting <i>preserveDefaultVertexLabels</i> to false. Note that if the vertex only has default labels, and has no other properties or edges, then the vertex will effectively not get imported into Neptune Analytics when preserveDefaultVertexLabels is set to false.</p>
     pub fn set_preserve_default_vertex_labels(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preserve_default_vertex_labels = input;
-        self
+        self.preserve_default_vertex_labels = input; self
     }
     /// <p>Neptune Analytics supports label-less vertices and no labels are assigned unless one is explicitly provided. Neptune assigns default labels when none is explicitly provided. When importing the data into Neptune Analytics, the default vertex labels can be omitted by setting <i>preserveDefaultVertexLabels</i> to false. Note that if the vertex only has default labels, and has no other properties or edges, then the vertex will effectively not get imported into Neptune Analytics when preserveDefaultVertexLabels is set to false.</p>
     pub fn get_preserve_default_vertex_labels(&self) -> &::std::option::Option<bool> {
@@ -101,8 +96,7 @@ impl NeptuneImportOptionsBuilder {
     }
     /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.</p>
     pub fn set_preserve_edge_ids(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preserve_edge_ids = input;
-        self
+        self.preserve_edge_ids = input; self
     }
     /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.</p>
     pub fn get_preserve_edge_ids(&self) -> &::std::option::Option<bool> {
@@ -113,21 +107,24 @@ impl NeptuneImportOptionsBuilder {
     /// - [`s3_export_path`](crate::types::builders::NeptuneImportOptionsBuilder::s3_export_path)
     /// - [`s3_export_kms_key_id`](crate::types::builders::NeptuneImportOptionsBuilder::s3_export_kms_key_id)
     pub fn build(self) -> ::std::result::Result<crate::types::NeptuneImportOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NeptuneImportOptions {
-            s3_export_path: self.s3_export_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_export_path",
-                    "s3_export_path was not specified but it is required when building NeptuneImportOptions",
-                )
-            })?,
-            s3_export_kms_key_id: self.s3_export_kms_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_export_kms_key_id",
-                    "s3_export_kms_key_id was not specified but it is required when building NeptuneImportOptions",
-                )
-            })?,
-            preserve_default_vertex_labels: self.preserve_default_vertex_labels,
-            preserve_edge_ids: self.preserve_edge_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NeptuneImportOptions {
+                s3_export_path: self.s3_export_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_export_path", "s3_export_path was not specified but it is required when building NeptuneImportOptions")
+                    )?
+                ,
+                s3_export_kms_key_id: self.s3_export_kms_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_export_kms_key_id", "s3_export_kms_key_id was not specified but it is required when building NeptuneImportOptions")
+                    )?
+                ,
+                preserve_default_vertex_labels: self.preserve_default_vertex_labels
+                ,
+                preserve_edge_ids: self.preserve_edge_ids
+                ,
+            }
+        )
     }
 }
+

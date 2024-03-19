@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateContainerServiceDeploymentOutput {
+pub struct CreateContainerServiceDeploymentOutput  {
     /// <p>An object that describes a container service.</p>
     pub container_service: ::std::option::Option<crate::types::ContainerService>,
     _request_id: Option<String>,
 }
-impl CreateContainerServiceDeploymentOutput {
+impl  CreateContainerServiceDeploymentOutput  {
     /// <p>An object that describes a container service.</p>
-    pub fn container_service(&self) -> ::std::option::Option<&crate::types::ContainerService> {
+    pub fn container_service(&self) -> ::std::option::Option<& crate::types::ContainerService> {
         self.container_service.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateContainerServiceDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateContainerServiceDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateContainerServiceDeploymentOutput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput).
     pub fn builder() -> crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateContainerServiceDeploymentOutputBuilder {
     }
     /// <p>An object that describes a container service.</p>
     pub fn set_container_service(mut self, input: ::std::option::Option<crate::types::ContainerService>) -> Self {
-        self.container_service = input;
-        self
+        self.container_service = input; self
     }
     /// <p>An object that describes a container service.</p>
     pub fn get_container_service(&self) -> &::std::option::Option<crate::types::ContainerService> {
         &self.container_service
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateContainerServiceDeploymentOutput`](crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput).
     pub fn build(self) -> crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput {
         crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentOutput {
-            container_service: self.container_service,
+            container_service: self.container_service
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object containing the results for a session metric you requested.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsSessionMetricResult {
+pub struct AnalyticsSessionMetricResult  {
     /// <p>The metric that you requested.</p>
     /// <ul>
     /// <li>
@@ -35,7 +35,7 @@ pub struct AnalyticsSessionMetricResult {
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub value: ::std::option::Option<f64>,
 }
-impl AnalyticsSessionMetricResult {
+impl  AnalyticsSessionMetricResult  {
     /// <p>The metric that you requested.</p>
     /// <ul>
     /// <li>
@@ -53,7 +53,7 @@ impl AnalyticsSessionMetricResult {
     /// <li>
     /// <p><code>Concurrency</code> – The number of sessions occurring in the same period of time.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsSessionMetricName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AnalyticsSessionMetricName> {
         self.name.as_ref()
     }
     /// <p>The summary statistic that you requested to calculate.</p>
@@ -65,7 +65,7 @@ impl AnalyticsSessionMetricResult {
     /// <li>
     /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::AnalyticsMetricStatistic> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::AnalyticsMetricStatistic> {
         self.statistic.as_ref()
     }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
@@ -128,8 +128,7 @@ impl AnalyticsSessionMetricResultBuilder {
     /// <p><code>Concurrency</code> – The number of sessions occurring in the same period of time.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsSessionMetricName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The metric that you requested.</p>
     /// <ul>
@@ -174,8 +173,7 @@ impl AnalyticsSessionMetricResultBuilder {
     /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The summary statistic that you requested to calculate.</p>
     /// <ul>
@@ -196,8 +194,7 @@ impl AnalyticsSessionMetricResultBuilder {
     }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -206,9 +203,13 @@ impl AnalyticsSessionMetricResultBuilder {
     /// Consumes the builder and constructs a [`AnalyticsSessionMetricResult`](crate::types::AnalyticsSessionMetricResult).
     pub fn build(self) -> crate::types::AnalyticsSessionMetricResult {
         crate::types::AnalyticsSessionMetricResult {
-            name: self.name,
-            statistic: self.statistic,
-            value: self.value,
+            name: self.name
+            ,
+            statistic: self.statistic
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

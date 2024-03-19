@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGroupsOlderThanOrderingId`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p><br>
     ///   - [`data_source_id(impl Into<String>)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::data_source_id) / [`set_data_source_id(Option<String>)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::set_data_source_id):<br>required: **false**<br><p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p><br>
     ///   - [`ordering_id(i64)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::ordering_id) / [`set_ordering_id(Option<i64>)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::set_ordering_id):<br>required: **true**<br><p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier.</p><br>
-    /// - On success, responds with [`ListGroupsOlderThanOrderingIdOutput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput) with field(s):
+                            /// - On success, responds with [`ListGroupsOlderThanOrderingIdOutput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput) with field(s):
     ///   - [`groups_summaries(Option<Vec::<GroupSummary>>)`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput::groups_summaries): <p>Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier.</p>
-    /// - On failure, responds with [`SdkError<ListGroupsOlderThanOrderingIdError>`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdError)
-    pub fn list_groups_older_than_ordering_id(
-        &self,
-    ) -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder {
-        crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListGroupsOlderThanOrderingIdError>`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdError)
+    pub fn list_groups_older_than_ordering_id(&self) -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder {
+                                crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdFluentBuilder::new(self.handle.clone())
+                            }
 }
+

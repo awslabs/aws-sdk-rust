@@ -3,7 +3,7 @@
 /// <p>The parameters for using a Lambda function as a target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipeTargetLambdaFunctionParameters {
+pub struct PipeTargetLambdaFunctionParameters  {
     /// <p>Specify whether to invoke the function synchronously or asynchronously.</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct PipeTargetLambdaFunctionParameters {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
-impl PipeTargetLambdaFunctionParameters {
+impl  PipeTargetLambdaFunctionParameters  {
     /// <p>Specify whether to invoke the function synchronously or asynchronously.</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ impl PipeTargetLambdaFunctionParameters {
     /// <p><code>FIRE_AND_FORGET</code> - Invoke asynchronously. This corresponds to the <code>Event</code> option in the <code>InvocationType</code> parameter for the Lambda <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a> API.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::PipeTargetInvocationType> {
+    pub fn invocation_type(&self) -> ::std::option::Option<& crate::types::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl PipeTargetLambdaFunctionParametersBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::PipeTargetInvocationType>) -> Self {
-        self.invocation_type = input;
-        self
+        self.invocation_type = input; self
     }
     /// <p>Specify whether to invoke the function synchronously or asynchronously.</p>
     /// <ul>
@@ -79,7 +78,9 @@ impl PipeTargetLambdaFunctionParametersBuilder {
     /// Consumes the builder and constructs a [`PipeTargetLambdaFunctionParameters`](crate::types::PipeTargetLambdaFunctionParameters).
     pub fn build(self) -> crate::types::PipeTargetLambdaFunctionParameters {
         crate::types::PipeTargetLambdaFunctionParameters {
-            invocation_type: self.invocation_type,
+            invocation_type: self.invocation_type
+            ,
         }
     }
 }
+

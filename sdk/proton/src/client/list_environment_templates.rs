@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEnvironmentTemplates`](crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of environment templates to list.</p><br>
-    /// - On success, responds with [`ListEnvironmentTemplatesOutput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListEnvironmentTemplatesOutput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput::next_token): <p>A token that indicates the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
     ///   - [`templates(Vec::<EnvironmentTemplateSummary>)`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput::templates): <p>An array of environment templates with detail data.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentTemplatesError>`](crate::operation::list_environment_templates::ListEnvironmentTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListEnvironmentTemplatesError>`](crate::operation::list_environment_templates::ListEnvironmentTemplatesError)
     pub fn list_environment_templates(&self) -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder {
-        crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

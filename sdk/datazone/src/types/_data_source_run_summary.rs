@@ -3,7 +3,7 @@
 /// <p>The details of a data source run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceRunSummary {
+pub struct DataSourceRunSummary  {
     /// <p>The identifier of the data source run.</p>
     pub id: ::std::string::String,
     /// <p>The identifier of the data source of the data source run.</p>
@@ -27,52 +27,49 @@ pub struct DataSourceRunSummary {
     /// <p>The timestamp of when a data source run was stopped.</p>
     pub stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DataSourceRunSummary {
+impl  DataSourceRunSummary  {
     /// <p>The identifier of the data source run.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The identifier of the data source of the data source run.</p>
-    pub fn data_source_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_id.deref()
+    pub fn data_source_id(&self) -> & str {
+        use std::ops::Deref; self.data_source_id.deref()
     }
     /// <p>The type of the data source run.</p>
-    pub fn r#type(&self) -> &crate::types::DataSourceRunType {
+    pub fn r#type(&self) -> & crate::types::DataSourceRunType {
         &self.r#type
     }
     /// <p>The status of the data source run.</p>
-    pub fn status(&self) -> &crate::types::DataSourceRunStatus {
+    pub fn status(&self) -> & crate::types::DataSourceRunStatus {
         &self.status
     }
     /// <p>The project ID of the data source run.</p>
-    pub fn project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.project_id.deref()
+    pub fn project_id(&self) -> & str {
+        use std::ops::Deref; self.project_id.deref()
     }
     /// <p>The asset statistics from the data source run.</p>
-    pub fn run_statistics_for_assets(&self) -> ::std::option::Option<&crate::types::RunStatisticsForAssets> {
+    pub fn run_statistics_for_assets(&self) -> ::std::option::Option<& crate::types::RunStatisticsForAssets> {
         self.run_statistics_for_assets.as_ref()
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&crate::types::DataSourceErrorMessage> {
+    pub fn error_message(&self) -> ::std::option::Option<& crate::types::DataSourceErrorMessage> {
         self.error_message.as_ref()
     }
     /// <p>The timestamp of when a data source run was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when a data source run was updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The timestamp of when a data source run was started.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The timestamp of when a data source run was stopped.</p>
-    pub fn stopped_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stopped_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stopped_at.as_ref()
     }
 }
@@ -108,8 +105,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The identifier of the data source run.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the data source run.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +119,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The identifier of the data source of the data source run.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source of the data source run.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +133,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The type of the data source run.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceRunType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the data source run.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceRunType> {
@@ -153,8 +147,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The status of the data source run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceRunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the data source run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceRunStatus> {
@@ -168,8 +161,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The project ID of the data source run.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The project ID of the data source run.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +174,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The asset statistics from the data source run.</p>
     pub fn set_run_statistics_for_assets(mut self, input: ::std::option::Option<crate::types::RunStatisticsForAssets>) -> Self {
-        self.run_statistics_for_assets = input;
-        self
+        self.run_statistics_for_assets = input; self
     }
     /// <p>The asset statistics from the data source run.</p>
     pub fn get_run_statistics_for_assets(&self) -> &::std::option::Option<crate::types::RunStatisticsForAssets> {
@@ -196,8 +187,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<crate::types::DataSourceErrorMessage>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<crate::types::DataSourceErrorMessage> {
@@ -211,8 +201,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The timestamp of when a data source run was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when a data source run was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -226,8 +215,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The timestamp of when a data source run was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when a data source run was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -240,8 +228,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The timestamp of when a data source run was started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The timestamp of when a data source run was started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -254,8 +241,7 @@ impl DataSourceRunSummaryBuilder {
     }
     /// <p>The timestamp of when a data source run was stopped.</p>
     pub fn set_stopped_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stopped_at = input;
-        self
+        self.stopped_at = input; self
     }
     /// <p>The timestamp of when a data source run was stopped.</p>
     pub fn get_stopped_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -271,53 +257,53 @@ impl DataSourceRunSummaryBuilder {
     /// - [`created_at`](crate::types::builders::DataSourceRunSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::DataSourceRunSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceRunSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSourceRunSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DataSourceRunSummary",
-                )
-            })?,
-            data_source_id: self.data_source_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_id",
-                    "data_source_id was not specified but it is required when building DataSourceRunSummary",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building DataSourceRunSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DataSourceRunSummary",
-                )
-            })?,
-            project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_id",
-                    "project_id was not specified but it is required when building DataSourceRunSummary",
-                )
-            })?,
-            run_statistics_for_assets: self.run_statistics_for_assets,
-            error_message: self.error_message,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building DataSourceRunSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building DataSourceRunSummary",
-                )
-            })?,
-            started_at: self.started_at,
-            stopped_at: self.stopped_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSourceRunSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DataSourceRunSummary")
+                    )?
+                ,
+                data_source_id: self.data_source_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_id", "data_source_id was not specified but it is required when building DataSourceRunSummary")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building DataSourceRunSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DataSourceRunSummary")
+                    )?
+                ,
+                project_id: self.project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_id", "project_id was not specified but it is required when building DataSourceRunSummary")
+                    )?
+                ,
+                run_statistics_for_assets: self.run_statistics_for_assets
+                ,
+                error_message: self.error_message
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building DataSourceRunSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building DataSourceRunSummary")
+                    )?
+                ,
+                started_at: self.started_at
+                ,
+                stopped_at: self.stopped_at
+                ,
+            }
+        )
     }
 }
+

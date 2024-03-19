@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLicenseRecommendationsOutput {
+pub struct GetLicenseRecommendationsOutput  {
     /// <p>The token to use to advance to the next page of license recommendations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe license recommendations.</p>
-    pub license_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendation>>,
+    pub license_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
-impl GetLicenseRecommendationsOutput {
+impl  GetLicenseRecommendationsOutput  {
     /// <p>The token to use to advance to the next page of license recommendations.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe license recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_recommendations.is_none()`.
-    pub fn license_recommendations(&self) -> &[crate::types::LicenseRecommendation] {
-        self.license_recommendations.as_deref().unwrap_or_default()
+    pub fn license_recommendations(&self) -> & [crate::types::LicenseRecommendation] {
+        self.license_recommendations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects that describe errors of the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::GetRecommendationError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::GetRecommendationError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLicenseRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLicenseRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseRecommendationsOutput`](crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput).
     pub fn builder() -> crate::operation::get_license_recommendations::builders::GetLicenseRecommendationsOutputBuilder {
@@ -46,8 +48,8 @@ impl GetLicenseRecommendationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLicenseRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) license_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendation>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
+    pub(crate) license_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseRecommendation>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
 impl GetLicenseRecommendationsOutputBuilder {
@@ -58,8 +60,7 @@ impl GetLicenseRecommendationsOutputBuilder {
     }
     /// <p>The token to use to advance to the next page of license recommendations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to advance to the next page of license recommendations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,17 +73,16 @@ impl GetLicenseRecommendationsOutputBuilder {
     /// <p>An array of objects that describe license recommendations.</p>
     pub fn license_recommendations(mut self, input: crate::types::LicenseRecommendation) -> Self {
         let mut v = self.license_recommendations.unwrap_or_default();
-        v.push(input);
-        self.license_recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.license_recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe license recommendations.</p>
-    pub fn set_license_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendation>>) -> Self {
-        self.license_recommendations = input;
-        self
+    pub fn set_license_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseRecommendation>>) -> Self {
+        self.license_recommendations = input; self
     }
     /// <p>An array of objects that describe license recommendations.</p>
-    pub fn get_license_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendation>> {
+    pub fn get_license_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LicenseRecommendation>> {
         &self.license_recommendations
     }
     /// Appends an item to `errors`.
@@ -92,35 +92,38 @@ impl GetLicenseRecommendationsOutputBuilder {
     /// <p>An array of objects that describe errors of the request.</p>
     pub fn errors(mut self, input: crate::types::GetRecommendationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe errors of the request.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GetRecommendationError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>An array of objects that describe errors of the request.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GetRecommendationError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLicenseRecommendationsOutput`](crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput).
     pub fn build(self) -> crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput {
         crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput {
-            next_token: self.next_token,
-            license_recommendations: self.license_recommendations,
-            errors: self.errors,
+            next_token: self.next_token
+            ,
+            license_recommendations: self.license_recommendations
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

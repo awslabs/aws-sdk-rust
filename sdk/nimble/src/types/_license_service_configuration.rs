@@ -3,17 +3,17 @@
 /// <p>The configuration for a license service that is associated with a studio resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct LicenseServiceConfiguration {
+pub struct LicenseServiceConfiguration  {
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
 }
-impl LicenseServiceConfiguration {
+impl  LicenseServiceConfiguration  {
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
-impl ::std::fmt::Debug for LicenseServiceConfiguration {
+impl  ::std::fmt::Debug for LicenseServiceConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LicenseServiceConfiguration");
         formatter.field("endpoint", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl LicenseServiceConfigurationBuilder {
     }
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,7 +49,10 @@ impl LicenseServiceConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`LicenseServiceConfiguration`](crate::types::LicenseServiceConfiguration).
     pub fn build(self) -> crate::types::LicenseServiceConfiguration {
-        crate::types::LicenseServiceConfiguration { endpoint: self.endpoint }
+        crate::types::LicenseServiceConfiguration {
+            endpoint: self.endpoint
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for LicenseServiceConfigurationBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for LicenseServiceConfigurationBuilder {
         formatter.finish()
     }
 }
+

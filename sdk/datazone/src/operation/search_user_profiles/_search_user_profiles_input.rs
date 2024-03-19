@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SearchUserProfilesInput {
+pub struct SearchUserProfilesInput  {
     /// <p>The identifier of the Amazon DataZone domain in which you want to search user profiles.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p>
@@ -14,17 +14,17 @@ pub struct SearchUserProfilesInput {
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl SearchUserProfilesInput {
+impl  SearchUserProfilesInput  {
     /// <p>The identifier of the Amazon DataZone domain in which you want to search user profiles.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p>
-    pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserSearchType> {
+    pub fn user_type(&self) -> ::std::option::Option<& crate::types::UserSearchType> {
         self.user_type.as_ref()
     }
     /// <p>Specifies the text for which to search.</p>
-    pub fn search_text(&self) -> ::std::option::Option<&str> {
+    pub fn search_text(&self) -> ::std::option::Option<& str> {
         self.search_text.as_deref()
     }
     /// <p>The maximum number of results to return in a single call to <code>SearchUserProfiles</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p>
@@ -32,11 +32,11 @@ impl SearchUserProfilesInput {
         self.max_results
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for SearchUserProfilesInput {
+impl  ::std::fmt::Debug for SearchUserProfilesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchUserProfilesInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -73,8 +73,7 @@ impl SearchUserProfilesInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which you want to search user profiles.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which you want to search user profiles.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl SearchUserProfilesInputBuilder {
     }
     /// <p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p>
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserSearchType>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// <p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p>
     pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserSearchType> {
@@ -102,8 +100,7 @@ impl SearchUserProfilesInputBuilder {
     }
     /// <p>Specifies the text for which to search.</p>
     pub fn set_search_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_text = input;
-        self
+        self.search_text = input; self
     }
     /// <p>Specifies the text for which to search.</p>
     pub fn get_search_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +113,7 @@ impl SearchUserProfilesInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call to <code>SearchUserProfiles</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call to <code>SearchUserProfiles</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -130,25 +126,28 @@ impl SearchUserProfilesInputBuilder {
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchUserProfiles</code> to list the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`SearchUserProfilesInput`](crate::operation::search_user_profiles::SearchUserProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_user_profiles::SearchUserProfilesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::search_user_profiles::SearchUserProfilesInput {
-            domain_identifier: self.domain_identifier,
-            user_type: self.user_type,
-            search_text: self.search_text,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_user_profiles::SearchUserProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_user_profiles::SearchUserProfilesInput {
+                domain_identifier: self.domain_identifier
+                ,
+                user_type: self.user_type
+                ,
+                search_text: self.search_text
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SearchUserProfilesInputBuilder {
@@ -162,3 +161,4 @@ impl ::std::fmt::Debug for SearchUserProfilesInputBuilder {
         formatter.finish()
     }
 }
+

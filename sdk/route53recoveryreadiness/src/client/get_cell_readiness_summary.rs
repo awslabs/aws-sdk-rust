@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCellReadinessSummary`](crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cell_name(impl Into<String>)`](crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::set_cell_name):<br>required: **true**<br><p>The name of the cell.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
-    /// - On success, responds with [`GetCellReadinessSummaryOutput`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput) with field(s):
+                            /// - On success, responds with [`GetCellReadinessSummaryOutput`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput::readiness): <p>The readiness at a cell level.</p>
     ///   - [`readiness_checks(Option<Vec::<ReadinessCheckSummary>>)`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput::readiness_checks): <p>Summaries for the readiness checks that make up the cell.</p>
-    /// - On failure, responds with [`SdkError<GetCellReadinessSummaryError>`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError)
+                            /// - On failure, responds with [`SdkError<GetCellReadinessSummaryError>`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError)
     pub fn get_cell_readiness_summary(&self) -> crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder {
-        crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

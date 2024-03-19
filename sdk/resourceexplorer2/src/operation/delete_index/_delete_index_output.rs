@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIndexOutput {
+pub struct DeleteIndexOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p><note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
@@ -13,27 +13,27 @@ pub struct DeleteIndexOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DeleteIndexOutput {
+impl  DeleteIndexOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p><note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Indicates the current state of the index.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::IndexState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::IndexState> {
         self.state.as_ref()
     }
     /// <p>The date and time when you last updated this index.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteIndexOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteIndexOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIndexOutput`](crate::operation::delete_index::DeleteIndexOutput).
     pub fn builder() -> crate::operation::delete_index::builders::DeleteIndexOutputBuilder {
@@ -62,8 +62,7 @@ impl DeleteIndexOutputBuilder {
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p><note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
@@ -78,8 +77,7 @@ impl DeleteIndexOutputBuilder {
     }
     /// <p>Indicates the current state of the index.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IndexState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates the current state of the index.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IndexState> {
@@ -92,29 +90,32 @@ impl DeleteIndexOutputBuilder {
     }
     /// <p>The date and time when you last updated this index.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time when you last updated this index.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteIndexOutput`](crate::operation::delete_index::DeleteIndexOutput).
     pub fn build(self) -> crate::operation::delete_index::DeleteIndexOutput {
         crate::operation::delete_index::DeleteIndexOutput {
-            arn: self.arn,
-            state: self.state,
-            last_updated_at: self.last_updated_at,
+            arn: self.arn
+            ,
+            state: self.state
+            ,
+            last_updated_at: self.last_updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEventDataStoreInput {
+pub struct GetEventDataStoreInput  {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
 }
-impl GetEventDataStoreInput {
+impl  GetEventDataStoreInput  {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
-    pub fn event_data_store(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store(&self) -> ::std::option::Option<& str> {
         self.event_data_store.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetEventDataStoreInputBuilder {
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_store = input;
-        self
+        self.event_data_store = input; self
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_data_store
     }
     /// Consumes the builder and constructs a [`GetEventDataStoreInput`](crate::operation::get_event_data_store::GetEventDataStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_event_data_store::GetEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_event_data_store::GetEventDataStoreInput {
-            event_data_store: self.event_data_store,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_event_data_store::GetEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_event_data_store::GetEventDataStoreInput {
+                event_data_store: self.event_data_store
+                ,
+            }
+        )
     }
 }
+

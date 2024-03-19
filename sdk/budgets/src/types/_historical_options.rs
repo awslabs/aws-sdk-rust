@@ -3,7 +3,7 @@
 /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HistoricalOptions {
+pub struct HistoricalOptions  {
     /// <p>The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code> granularity of the budget:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ pub struct HistoricalOptions {
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
     pub look_back_available_periods: ::std::option::Option<i32>,
 }
-impl HistoricalOptions {
+impl  HistoricalOptions  {
     /// <p>The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code> granularity of the budget:</p>
     /// <ul>
     /// <li>
@@ -86,8 +86,7 @@ impl HistoricalOptionsBuilder {
     /// <p>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</p></li>
     /// </ul>
     pub fn set_budget_adjustment_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.budget_adjustment_period = input;
-        self
+        self.budget_adjustment_period = input; self
     }
     /// <p>The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code> granularity of the budget:</p>
     /// <ul>
@@ -114,8 +113,7 @@ impl HistoricalOptionsBuilder {
     /// <p>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters, but your account had no cost data in the first quarter, then only the last three quarters are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code> returns <code>3</code>.</p>
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
     pub fn set_look_back_available_periods(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.look_back_available_periods = input;
-        self
+        self.look_back_available_periods = input; self
     }
     /// <p>The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code> are included in the calculation of your current <code>BudgetLimit</code>. If the first budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that budget period isn’t included in the average that determines your budget limit.</p>
     /// <p>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters, but your account had no cost data in the first quarter, then only the last three quarters are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code> returns <code>3</code>.</p>
@@ -127,14 +125,17 @@ impl HistoricalOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`budget_adjustment_period`](crate::types::builders::HistoricalOptionsBuilder::budget_adjustment_period)
     pub fn build(self) -> ::std::result::Result<crate::types::HistoricalOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HistoricalOptions {
-            budget_adjustment_period: self.budget_adjustment_period.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "budget_adjustment_period",
-                    "budget_adjustment_period was not specified but it is required when building HistoricalOptions",
-                )
-            })?,
-            look_back_available_periods: self.look_back_available_periods,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HistoricalOptions {
+                budget_adjustment_period: self.budget_adjustment_period
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("budget_adjustment_period", "budget_adjustment_period was not specified but it is required when building HistoricalOptions")
+                    )?
+                ,
+                look_back_available_periods: self.look_back_available_periods
+                ,
+            }
+        )
     }
 }
+

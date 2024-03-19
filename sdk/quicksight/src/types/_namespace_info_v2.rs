@@ -3,7 +3,7 @@
 /// <p>The error type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NamespaceInfoV2 {
+pub struct NamespaceInfoV2  {
     /// <p>The name of the error.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace ARN.</p>
@@ -17,29 +17,29 @@ pub struct NamespaceInfoV2 {
     /// <p>An error that occurred when the namespace was created.</p>
     pub namespace_error: ::std::option::Option<crate::types::NamespaceError>,
 }
-impl NamespaceInfoV2 {
+impl  NamespaceInfoV2  {
     /// <p>The name of the error.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The namespace ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The namespace Amazon Web Services Region.</p>
-    pub fn capacity_region(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_region(&self) -> ::std::option::Option<& str> {
         self.capacity_region.as_deref()
     }
     /// <p>The creation status of a namespace that is not yet completely created.</p>
-    pub fn creation_status(&self) -> ::std::option::Option<&crate::types::NamespaceStatus> {
+    pub fn creation_status(&self) -> ::std::option::Option<& crate::types::NamespaceStatus> {
         self.creation_status.as_ref()
     }
     /// <p>The identity store used for the namespace.</p>
-    pub fn identity_store(&self) -> ::std::option::Option<&crate::types::IdentityStore> {
+    pub fn identity_store(&self) -> ::std::option::Option<& crate::types::IdentityStore> {
         self.identity_store.as_ref()
     }
     /// <p>An error that occurred when the namespace was created.</p>
-    pub fn namespace_error(&self) -> ::std::option::Option<&crate::types::NamespaceError> {
+    pub fn namespace_error(&self) -> ::std::option::Option<& crate::types::NamespaceError> {
         self.namespace_error.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl NamespaceInfoV2Builder {
     }
     /// <p>The name of the error.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the error.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl NamespaceInfoV2Builder {
     }
     /// <p>The namespace ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The namespace ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl NamespaceInfoV2Builder {
     }
     /// <p>The namespace Amazon Web Services Region.</p>
     pub fn set_capacity_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_region = input;
-        self
+        self.capacity_region = input; self
     }
     /// <p>The namespace Amazon Web Services Region.</p>
     pub fn get_capacity_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl NamespaceInfoV2Builder {
     }
     /// <p>The creation status of a namespace that is not yet completely created.</p>
     pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::NamespaceStatus>) -> Self {
-        self.creation_status = input;
-        self
+        self.creation_status = input; self
     }
     /// <p>The creation status of a namespace that is not yet completely created.</p>
     pub fn get_creation_status(&self) -> &::std::option::Option<crate::types::NamespaceStatus> {
@@ -125,8 +121,7 @@ impl NamespaceInfoV2Builder {
     }
     /// <p>The identity store used for the namespace.</p>
     pub fn set_identity_store(mut self, input: ::std::option::Option<crate::types::IdentityStore>) -> Self {
-        self.identity_store = input;
-        self
+        self.identity_store = input; self
     }
     /// <p>The identity store used for the namespace.</p>
     pub fn get_identity_store(&self) -> &::std::option::Option<crate::types::IdentityStore> {
@@ -139,8 +134,7 @@ impl NamespaceInfoV2Builder {
     }
     /// <p>An error that occurred when the namespace was created.</p>
     pub fn set_namespace_error(mut self, input: ::std::option::Option<crate::types::NamespaceError>) -> Self {
-        self.namespace_error = input;
-        self
+        self.namespace_error = input; self
     }
     /// <p>An error that occurred when the namespace was created.</p>
     pub fn get_namespace_error(&self) -> &::std::option::Option<crate::types::NamespaceError> {
@@ -149,12 +143,19 @@ impl NamespaceInfoV2Builder {
     /// Consumes the builder and constructs a [`NamespaceInfoV2`](crate::types::NamespaceInfoV2).
     pub fn build(self) -> crate::types::NamespaceInfoV2 {
         crate::types::NamespaceInfoV2 {
-            name: self.name,
-            arn: self.arn,
-            capacity_region: self.capacity_region,
-            creation_status: self.creation_status,
-            identity_store: self.identity_store,
-            namespace_error: self.namespace_error,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            capacity_region: self.capacity_region
+            ,
+            creation_status: self.creation_status
+            ,
+            identity_store: self.identity_store
+            ,
+            namespace_error: self.namespace_error
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDataSourceSyncJobInput {
+pub struct StopDataSourceSyncJobInput  {
     /// <p>The identifier of the data source connector.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
@@ -10,17 +10,17 @@ pub struct StopDataSourceSyncJobInput {
     /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
 }
-impl StopDataSourceSyncJobInput {
+impl  StopDataSourceSyncJobInput  {
     /// <p>The identifier of the data source connector.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl StopDataSourceSyncJobInputBuilder {
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl StopDataSourceSyncJobInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl StopDataSourceSyncJobInputBuilder {
     }
     /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`StopDataSourceSyncJobInput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput {
-            data_source_id: self.data_source_id,
-            application_id: self.application_id,
-            index_id: self.index_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput {
+                data_source_id: self.data_source_id
+                ,
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+            }
+        )
     }
 }
+

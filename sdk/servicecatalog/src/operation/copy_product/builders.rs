@@ -5,56 +5,52 @@ pub use crate::operation::copy_product::_copy_product_input::CopyProductInputBui
 
 impl CopyProductInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::copy_product::CopyProductOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::copy_product::CopyProductError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.copy_product();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::copy_product::CopyProductOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::copy_product::CopyProductError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.copy_product();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CopyProduct`.
-///
+/// 
 /// <p>Copies the specified source product to the specified target product or a new product.</p>
 /// <p>You can copy a product to the same account or another account. You can copy a product to the same Region or another Region. If you copy a product to another account, you must first share the product in a portfolio using <code>CreatePortfolioShare</code>.</p>
 /// <p>This operation is performed asynchronously. To track the progress of the operation, use <code>DescribeCopyProductStatus</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::copy_product::builders::CopyProductInputBuilder,
+                    inner: crate::operation::copy_product::builders::CopyProductInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::copy_product::CopyProductOutput,
-        crate::operation::copy_product::CopyProductError,
-    > for CopyProductFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::copy_product::CopyProductOutput,
-            crate::operation::copy_product::CopyProductError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::copy_product::CopyProductOutput,
+                    crate::operation::copy_product::CopyProductError,
+                > for CopyProductFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::copy_product::CopyProductOutput,
+                        crate::operation::copy_product::CopyProductError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CopyProductFluentBuilder {
     /// Creates a new `CopyProduct`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CopyProductFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_product::CopyProductOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::copy_product::CopyProductError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::copy_product::CopyProduct::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::copy_product::CopyProduct::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::copy_product::CopyProductOutput,
-        crate::operation::copy_product::CopyProductError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::copy_product::CopyProductOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_product::CopyProductError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::copy_product::CopyProduct::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::copy_product::CopyProduct::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::copy_product::CopyProductOutput, crate::operation::copy_product::CopyProductError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -189,28 +176,17 @@ impl CopyProductFluentBuilder {
     /// To override the contents of this collection use [`set_source_provisioning_artifact_identifiers`](Self::set_source_provisioning_artifact_identifiers).
     ///
     /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
-    pub fn source_provisioning_artifact_identifiers(
-        mut self,
-        input: ::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>,
-    ) -> Self {
+    pub fn source_provisioning_artifact_identifiers(mut self, input: ::std::collections::HashMap::<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>) -> Self {
         self.inner = self.inner.source_provisioning_artifact_identifiers(input);
         self
     }
     /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
-    pub fn set_source_provisioning_artifact_identifiers(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>>,
-        >,
-    ) -> Self {
+    pub fn set_source_provisioning_artifact_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>>>) -> Self {
         self.inner = self.inner.set_source_provisioning_artifact_identifiers(input);
         self
     }
     /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
-    pub fn get_source_provisioning_artifact_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>>>
-    {
+    pub fn get_source_provisioning_artifact_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>>> {
         self.inner.get_source_provisioning_artifact_identifiers()
     }
     /// Appends an item to `CopyOptions`.
@@ -223,12 +199,12 @@ impl CopyProductFluentBuilder {
         self
     }
     /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
-    pub fn set_copy_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CopyOption>>) -> Self {
+    pub fn set_copy_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CopyOption>>) -> Self {
         self.inner = self.inner.set_copy_options(input);
         self
     }
     /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
-    pub fn get_copy_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyOption>> {
+    pub fn get_copy_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CopyOption>> {
         self.inner.get_copy_options()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
@@ -246,3 +222,4 @@ impl CopyProductFluentBuilder {
         self.inner.get_idempotency_token()
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePortalOutput {
+pub struct DeletePortalOutput  {
     /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub portal_status: ::std::option::Option<crate::types::PortalStatus>,
     _request_id: Option<String>,
 }
-impl DeletePortalOutput {
+impl  DeletePortalOutput  {
     /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-    pub fn portal_status(&self) -> ::std::option::Option<&crate::types::PortalStatus> {
+    pub fn portal_status(&self) -> ::std::option::Option<& crate::types::PortalStatus> {
         self.portal_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePortalOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePortalOutput {
     /// Creates a new builder-style object to manufacture [`DeletePortalOutput`](crate::operation::delete_portal::DeletePortalOutput).
     pub fn builder() -> crate::operation::delete_portal::builders::DeletePortalOutputBuilder {
@@ -41,27 +41,28 @@ impl DeletePortalOutputBuilder {
     }
     /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub fn set_portal_status(mut self, input: ::std::option::Option<crate::types::PortalStatus>) -> Self {
-        self.portal_status = input;
-        self
+        self.portal_status = input; self
     }
     /// <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     pub fn get_portal_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
         &self.portal_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePortalOutput`](crate::operation::delete_portal::DeletePortalOutput).
     pub fn build(self) -> crate::operation::delete_portal::DeletePortalOutput {
         crate::operation::delete_portal::DeletePortalOutput {
-            portal_status: self.portal_status,
+            portal_status: self.portal_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

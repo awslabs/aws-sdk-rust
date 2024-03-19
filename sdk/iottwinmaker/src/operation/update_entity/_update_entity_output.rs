@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEntityOutput {
+pub struct UpdateEntityOutput  {
     /// <p>The date and time when the entity was last updated.</p>
     pub update_date_time: ::aws_smithy_types::DateTime,
     /// <p>The current state of the entity update.</p>
     pub state: crate::types::State,
     _request_id: Option<String>,
 }
-impl UpdateEntityOutput {
+impl  UpdateEntityOutput  {
     /// <p>The date and time when the entity was last updated.</p>
-    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date_time
     }
     /// <p>The current state of the entity update.</p>
-    pub fn state(&self) -> &crate::types::State {
+    pub fn state(&self) -> & crate::types::State {
         &self.state
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateEntityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateEntityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEntityOutput`](crate::operation::update_entity::UpdateEntityOutput).
     pub fn builder() -> crate::operation::update_entity::builders::UpdateEntityOutputBuilder {
@@ -48,8 +48,7 @@ impl UpdateEntityOutputBuilder {
     }
     /// <p>The date and time when the entity was last updated.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The date and time when the entity was last updated.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -63,43 +62,41 @@ impl UpdateEntityOutputBuilder {
     }
     /// <p>The current state of the entity update.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the entity update.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateEntityOutput`](crate::operation::update_entity::UpdateEntityOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`update_date_time`](crate::operation::update_entity::builders::UpdateEntityOutputBuilder::update_date_time)
     /// - [`state`](crate::operation::update_entity::builders::UpdateEntityOutputBuilder::state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_entity::UpdateEntityOutput {
-            update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date_time",
-                    "update_date_time was not specified but it is required when building UpdateEntityOutput",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building UpdateEntityOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_entity::UpdateEntityOutput {
+                update_date_time: self.update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date_time", "update_date_time was not specified but it is required when building UpdateEntityOutput")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building UpdateEntityOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,24 +3,26 @@
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultRow {
+pub struct ResultRow  {
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-    pub grouped_bys: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
+    pub grouped_bys: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRowValue>>,
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRowValue>>,
 }
-impl ResultRow {
+impl  ResultRow  {
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouped_bys.is_none()`.
-    pub fn grouped_bys(&self) -> &[crate::types::ResultRowValue] {
-        self.grouped_bys.as_deref().unwrap_or_default()
+    pub fn grouped_bys(&self) -> & [crate::types::ResultRowValue] {
+        self.grouped_bys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[crate::types::ResultRowValue] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [crate::types::ResultRowValue] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResultRow {
@@ -34,8 +36,8 @@ impl ResultRow {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultRowBuilder {
-    pub(crate) grouped_bys: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
+    pub(crate) grouped_bys: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRowValue>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRowValue>>,
 }
 impl ResultRowBuilder {
     /// Appends an item to `grouped_bys`.
@@ -45,17 +47,16 @@ impl ResultRowBuilder {
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
     pub fn grouped_bys(mut self, input: crate::types::ResultRowValue) -> Self {
         let mut v = self.grouped_bys.unwrap_or_default();
-        v.push(input);
-        self.grouped_bys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.grouped_bys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-    pub fn set_grouped_bys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>) -> Self {
-        self.grouped_bys = input;
-        self
+    pub fn set_grouped_bys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRowValue>>) -> Self {
+        self.grouped_bys = input; self
     }
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-    pub fn get_grouped_bys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>> {
+    pub fn get_grouped_bys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResultRowValue>> {
         &self.grouped_bys
     }
     /// Appends an item to `values`.
@@ -65,24 +66,26 @@ impl ResultRowBuilder {
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
     pub fn values(mut self, input: crate::types::ResultRowValue) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRowValue>>) -> Self {
+        self.values = input; self
     }
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResultRowValue>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`ResultRow`](crate::types::ResultRow).
     pub fn build(self) -> crate::types::ResultRow {
         crate::types::ResultRow {
-            grouped_bys: self.grouped_bys,
-            values: self.values,
+            grouped_bys: self.grouped_bys
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

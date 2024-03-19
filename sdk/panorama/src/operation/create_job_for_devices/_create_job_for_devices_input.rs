@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateJobForDevicesInput {
+pub struct CreateJobForDevicesInput  {
     /// <p>ID of target device.</p>
-    pub device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub device_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Configuration settings for a software update job.</p>
     pub device_job_config: ::std::option::Option<crate::types::DeviceJobConfig>,
     /// <p>The type of job to run.</p>
     pub job_type: ::std::option::Option<crate::types::JobType>,
 }
-impl CreateJobForDevicesInput {
+impl  CreateJobForDevicesInput  {
     /// <p>ID of target device.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_ids.is_none()`.
-    pub fn device_ids(&self) -> &[::std::string::String] {
-        self.device_ids.as_deref().unwrap_or_default()
+    pub fn device_ids(&self) -> & [::std::string::String] {
+        self.device_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration settings for a software update job.</p>
-    pub fn device_job_config(&self) -> ::std::option::Option<&crate::types::DeviceJobConfig> {
+    pub fn device_job_config(&self) -> ::std::option::Option<& crate::types::DeviceJobConfig> {
         self.device_job_config.as_ref()
     }
     /// <p>The type of job to run.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
 }
@@ -37,7 +38,7 @@ impl CreateJobForDevicesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobForDevicesInputBuilder {
-    pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) device_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) device_job_config: ::std::option::Option<crate::types::DeviceJobConfig>,
     pub(crate) job_type: ::std::option::Option<crate::types::JobType>,
 }
@@ -49,17 +50,16 @@ impl CreateJobForDevicesInputBuilder {
     /// <p>ID of target device.</p>
     pub fn device_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.device_ids.unwrap_or_default();
-        v.push(input.into());
-        self.device_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.device_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>ID of target device.</p>
-    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.device_ids = input;
-        self
+    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.device_ids = input; self
     }
     /// <p>ID of target device.</p>
-    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.device_ids
     }
     /// <p>Configuration settings for a software update job.</p>
@@ -69,8 +69,7 @@ impl CreateJobForDevicesInputBuilder {
     }
     /// <p>Configuration settings for a software update job.</p>
     pub fn set_device_job_config(mut self, input: ::std::option::Option<crate::types::DeviceJobConfig>) -> Self {
-        self.device_job_config = input;
-        self
+        self.device_job_config = input; self
     }
     /// <p>Configuration settings for a software update job.</p>
     pub fn get_device_job_config(&self) -> &::std::option::Option<crate::types::DeviceJobConfig> {
@@ -84,22 +83,24 @@ impl CreateJobForDevicesInputBuilder {
     }
     /// <p>The type of job to run.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>The type of job to run.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
         &self.job_type
     }
     /// Consumes the builder and constructs a [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_job_for_devices::CreateJobForDevicesInput {
-            device_ids: self.device_ids,
-            device_job_config: self.device_job_config,
-            job_type: self.job_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_job_for_devices::CreateJobForDevicesInput {
+                device_ids: self.device_ids
+                ,
+                device_job_config: self.device_job_config
+                ,
+                job_type: self.job_type
+                ,
+            }
+        )
     }
 }
+

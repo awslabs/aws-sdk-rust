@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let maximumexecutionfrequency = unimplemented!();
 /// match maximumexecutionfrequency {
@@ -33,16 +33,14 @@
 /// Specifically, when `maximumexecutionfrequency` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MaximumExecutionFrequency::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum MaximumExecutionFrequency {
     #[allow(missing_docs)] // documentation missing in model
     OneHour,
@@ -56,70 +54,71 @@ pub enum MaximumExecutionFrequency {
     TwentyFourHours,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for MaximumExecutionFrequency {
-    fn from(s: &str) -> Self {
-        match s {
-            "One_Hour" => MaximumExecutionFrequency::OneHour,
-            "Six_Hours" => MaximumExecutionFrequency::SixHours,
-            "Three_Hours" => MaximumExecutionFrequency::ThreeHours,
-            "Twelve_Hours" => MaximumExecutionFrequency::TwelveHours,
-            "TwentyFour_Hours" => MaximumExecutionFrequency::TwentyFourHours,
-            other => MaximumExecutionFrequency::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "One_Hour" => MaximumExecutionFrequency::OneHour,
+"Six_Hours" => MaximumExecutionFrequency::SixHours,
+"Three_Hours" => MaximumExecutionFrequency::ThreeHours,
+"Twelve_Hours" => MaximumExecutionFrequency::TwelveHours,
+"TwentyFour_Hours" => MaximumExecutionFrequency::TwentyFourHours,
+other => MaximumExecutionFrequency::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for MaximumExecutionFrequency {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(MaximumExecutionFrequency::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(MaximumExecutionFrequency::from(s))
+                    }
+                }
 impl MaximumExecutionFrequency {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MaximumExecutionFrequency::OneHour => "One_Hour",
-            MaximumExecutionFrequency::SixHours => "Six_Hours",
-            MaximumExecutionFrequency::ThreeHours => "Three_Hours",
-            MaximumExecutionFrequency::TwelveHours => "Twelve_Hours",
-            MaximumExecutionFrequency::TwentyFourHours => "TwentyFour_Hours",
-            MaximumExecutionFrequency::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["One_Hour", "Six_Hours", "Three_Hours", "Twelve_Hours", "TwentyFour_Hours"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MaximumExecutionFrequency::OneHour => "One_Hour",
+    MaximumExecutionFrequency::SixHours => "Six_Hours",
+    MaximumExecutionFrequency::ThreeHours => "Three_Hours",
+    MaximumExecutionFrequency::TwelveHours => "Twelve_Hours",
+    MaximumExecutionFrequency::TwentyFourHours => "TwentyFour_Hours",
+    MaximumExecutionFrequency::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["One_Hour", "Six_Hours", "Three_Hours", "Twelve_Hours", "TwentyFour_Hours"]
+                }
+            }
 impl ::std::convert::AsRef<str> for MaximumExecutionFrequency {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl MaximumExecutionFrequency {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for MaximumExecutionFrequency {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            MaximumExecutionFrequency::OneHour => write!(f, "One_Hour"),
-            MaximumExecutionFrequency::SixHours => write!(f, "Six_Hours"),
-            MaximumExecutionFrequency::ThreeHours => write!(f, "Three_Hours"),
-            MaximumExecutionFrequency::TwelveHours => write!(f, "Twelve_Hours"),
-            MaximumExecutionFrequency::TwentyFourHours => write!(f, "TwentyFour_Hours"),
-            MaximumExecutionFrequency::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                MaximumExecutionFrequency::OneHour => write!(f, "One_Hour"),
+MaximumExecutionFrequency::SixHours => write!(f, "Six_Hours"),
+MaximumExecutionFrequency::ThreeHours => write!(f, "Three_Hours"),
+MaximumExecutionFrequency::TwelveHours => write!(f, "Twelve_Hours"),
+MaximumExecutionFrequency::TwentyFourHours => write!(f, "TwentyFour_Hours"),
+MaximumExecutionFrequency::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

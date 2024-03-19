@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDeviceInput {
+pub struct DescribeDeviceInput  {
     /// <p>The device's ID.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDeviceInput {
+impl  DescribeDeviceInput  {
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeDeviceInputBuilder {
     }
     /// <p>The device's ID.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The device's ID.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput { device_id: self.device_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_device::DescribeDeviceInput {
+                device_id: self.device_id
+                ,
+            }
+        )
     }
 }
+

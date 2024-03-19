@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAttacksOutput {
+pub struct ListAttacksOutput  {
     /// <p>The attack information for the specified time range.</p>
-    pub attack_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>>,
+    pub attack_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AttackSummary>>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request.</p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAttacksOutput {
+impl  ListAttacksOutput  {
     /// <p>The attack information for the specified time range.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_summaries.is_none()`.
-    pub fn attack_summaries(&self) -> &[crate::types::AttackSummary] {
-        self.attack_summaries.as_deref().unwrap_or_default()
+    pub fn attack_summaries(&self) -> & [crate::types::AttackSummary] {
+        self.attack_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request.</p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAttacksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAttacksOutput {
     /// Creates a new builder-style object to manufacture [`ListAttacksOutput`](crate::operation::list_attacks::ListAttacksOutput).
     pub fn builder() -> crate::operation::list_attacks::builders::ListAttacksOutputBuilder {
@@ -41,7 +42,7 @@ impl ListAttacksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttacksOutputBuilder {
-    pub(crate) attack_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>>,
+    pub(crate) attack_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AttackSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl ListAttacksOutputBuilder {
     /// <p>The attack information for the specified time range.</p>
     pub fn attack_summaries(mut self, input: crate::types::AttackSummary) -> Self {
         let mut v = self.attack_summaries.unwrap_or_default();
-        v.push(input);
-        self.attack_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attack_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attack information for the specified time range.</p>
-    pub fn set_attack_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>>) -> Self {
-        self.attack_summaries = input;
-        self
+    pub fn set_attack_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttackSummary>>) -> Self {
+        self.attack_summaries = input; self
     }
     /// <p>The attack information for the specified time range.</p>
-    pub fn get_attack_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackSummary>> {
+    pub fn get_attack_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttackSummary>> {
         &self.attack_summaries
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request.</p>
@@ -77,8 +77,7 @@ impl ListAttacksOutputBuilder {
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request.</p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
@@ -87,20 +86,23 @@ impl ListAttacksOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAttacksOutput`](crate::operation::list_attacks::ListAttacksOutput).
     pub fn build(self) -> crate::operation::list_attacks::ListAttacksOutput {
         crate::operation::list_attacks::ListAttacksOutput {
-            attack_summaries: self.attack_summaries,
-            next_token: self.next_token,
+            attack_summaries: self.attack_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

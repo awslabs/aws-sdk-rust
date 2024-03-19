@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScalingPlanResourcesInput {
+pub struct DescribeScalingPlanResourcesInput  {
     /// <p>The name of the scaling plan.</p>
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
@@ -12,9 +12,9 @@ pub struct DescribeScalingPlanResourcesInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeScalingPlanResourcesInput {
+impl  DescribeScalingPlanResourcesInput  {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scaling_plan_name(&self) -> ::std::option::Option<& str> {
         self.scaling_plan_name.as_deref()
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
@@ -26,7 +26,7 @@ impl DescribeScalingPlanResourcesInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeScalingPlanResourcesInputBuilder {
     }
     /// <p>The name of the scaling plan.</p>
     pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scaling_plan_name = input;
-        self
+        self.scaling_plan_name = input; self
     }
     /// <p>The name of the scaling plan.</p>
     pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DescribeScalingPlanResourcesInputBuilder {
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scaling_plan_version = input;
-        self
+        self.scaling_plan_version = input; self
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
@@ -84,8 +82,7 @@ impl DescribeScalingPlanResourcesInputBuilder {
     }
     /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,25 +95,26 @@ impl DescribeScalingPlanResourcesInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeScalingPlanResourcesInput`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput {
-            scaling_plan_name: self.scaling_plan_name,
-            scaling_plan_version: self.scaling_plan_version,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput {
+                scaling_plan_name: self.scaling_plan_name
+                ,
+                scaling_plan_version: self.scaling_plan_version
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

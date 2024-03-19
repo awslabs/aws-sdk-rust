@@ -3,11 +3,11 @@
 /// <p>Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FastLaunchSnapshotConfiguration {
+pub struct FastLaunchSnapshotConfiguration  {
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
     pub target_resource_count: ::std::option::Option<i32>,
 }
-impl FastLaunchSnapshotConfiguration {
+impl  FastLaunchSnapshotConfiguration  {
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
     pub fn target_resource_count(&self) -> ::std::option::Option<i32> {
         self.target_resource_count
@@ -34,8 +34,7 @@ impl FastLaunchSnapshotConfigurationBuilder {
     }
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
     pub fn set_target_resource_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_resource_count = input;
-        self
+        self.target_resource_count = input; self
     }
     /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
     pub fn get_target_resource_count(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl FastLaunchSnapshotConfigurationBuilder {
     /// Consumes the builder and constructs a [`FastLaunchSnapshotConfiguration`](crate::types::FastLaunchSnapshotConfiguration).
     pub fn build(self) -> crate::types::FastLaunchSnapshotConfiguration {
         crate::types::FastLaunchSnapshotConfiguration {
-            target_resource_count: self.target_resource_count,
+            target_resource_count: self.target_resource_count
+            ,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::register_task_with_maintenance_window::_register_task_
 
 impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.register_task_with_maintenance_window();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.register_task_with_maintenance_window();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RegisterTaskWithMaintenanceWindow`.
-///
+/// 
 /// <p>Adds a new task to a maintenance window.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTaskWithMaintenanceWindowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder,
+                    inner: crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
-        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
-    > for RegisterTaskWithMaintenanceWindowFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
-            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
+                    crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
+                > for RegisterTaskWithMaintenanceWindowFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
+                        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// Creates a new `RegisterTaskWithMaintenanceWindow`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindow::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindow::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
-        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindow::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindow::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput, crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the maintenance window the task should be added to.</p>
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
@@ -156,7 +143,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// ,
     /// <window-target-id-2></window-target-id-2>
     /// </window-target-id-1></code></p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -173,7 +160,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// ,
     /// <window-target-id-2></window-target-id-2>
     /// </window-target-id-1></code></p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         self.inner.get_targets()
     }
     /// <p>The ARN of the task to run.</p>
@@ -228,30 +215,21 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     /// <p>The parameters that should be passed to the task when it is run.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    pub fn task_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MaintenanceWindowTaskParameterValueExpression,
-    ) -> Self {
+    pub fn task_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MaintenanceWindowTaskParameterValueExpression) -> Self {
         self.inner = self.inner.task_parameters(k.into(), v);
         self
     }
     /// <p>The parameters that should be passed to the task when it is run.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    pub fn set_task_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
-    ) -> Self {
+    pub fn set_task_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>) -> Self {
         self.inner = self.inner.set_task_parameters(input);
         self
     }
     /// <p>The parameters that should be passed to the task when it is run.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    pub fn get_task_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
+    pub fn get_task_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
         self.inner.get_task_parameters()
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p>
@@ -458,3 +436,4 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
         self.inner.get_alarm_configuration()
     }
 }
+

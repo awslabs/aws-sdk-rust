@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGroupInput {
+pub struct DeleteGroupInput  {
     /// <p>The identifier of the application in which the group mapping belongs.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index you want to delete the group from.</p>
@@ -13,22 +13,22 @@ pub struct DeleteGroupInput {
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGroupInput {
+impl  DeleteGroupInput  {
     /// <p>The identifier of the application in which the group mapping belongs.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the index you want to delete the group from.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The name of the group you want to delete.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The identifier of the data source linked to the group</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl DeleteGroupInputBuilder {
     }
     /// <p>The identifier of the application in which the group mapping belongs.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application in which the group mapping belongs.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl DeleteGroupInputBuilder {
     }
     /// <p>The identifier of the index you want to delete the group from.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index you want to delete the group from.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl DeleteGroupInputBuilder {
     }
     /// <p>The name of the group you want to delete.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group you want to delete.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl DeleteGroupInputBuilder {
     /// <p>The identifier of the data source linked to the group</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source linked to the group</p>
     /// <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
@@ -113,11 +109,18 @@ impl DeleteGroupInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_group::DeleteGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_group::DeleteGroupInput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-            group_name: self.group_name,
-            data_source_id: self.data_source_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_group::DeleteGroupInput {
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+                group_name: self.group_name
+                ,
+                data_source_id: self.data_source_id
+                ,
+            }
+        )
     }
 }
+

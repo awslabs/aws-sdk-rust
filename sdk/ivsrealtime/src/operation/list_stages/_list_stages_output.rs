@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStagesOutput {
+pub struct ListStagesOutput  {
     /// <p>List of the matching stages (summary information only).</p>
-    pub stages: ::std::vec::Vec<crate::types::StageSummary>,
+    pub stages: ::std::vec::Vec::<crate::types::StageSummary>,
     /// <p>If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStagesOutput {
+impl  ListStagesOutput  {
     /// <p>List of the matching stages (summary information only).</p>
-    pub fn stages(&self) -> &[crate::types::StageSummary] {
-        use std::ops::Deref;
-        self.stages.deref()
+    pub fn stages(&self) -> & [crate::types::StageSummary] {
+        use std::ops::Deref; self.stages.deref()
     }
     /// <p>If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStagesOutput {
     /// Creates a new builder-style object to manufacture [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput).
     pub fn builder() -> crate::operation::list_stages::builders::ListStagesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListStagesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStagesOutputBuilder {
-    pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::StageSummary>>,
+    pub(crate) stages: ::std::option::Option<::std::vec::Vec::<crate::types::StageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListStagesOutputBuilder {
     /// <p>List of the matching stages (summary information only).</p>
     pub fn stages(mut self, input: crate::types::StageSummary) -> Self {
         let mut v = self.stages.unwrap_or_default();
-        v.push(input);
-        self.stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the matching stages (summary information only).</p>
-    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageSummary>>) -> Self {
-        self.stages = input;
-        self
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StageSummary>>) -> Self {
+        self.stages = input; self
     }
     /// <p>List of the matching stages (summary information only).</p>
-    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageSummary>> {
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StageSummary>> {
         &self.stages
     }
     /// <p>If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,35 +66,37 @@ impl ListStagesOutputBuilder {
     }
     /// <p>If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`stages`](crate::operation::list_stages::builders::ListStagesOutputBuilder::stages)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_stages::ListStagesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_stages::ListStagesOutput {
-            stages: self.stages.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stages",
-                    "stages was not specified but it is required when building ListStagesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_stages::ListStagesOutput {
+                stages: self.stages
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stages", "stages was not specified but it is required when building ListStagesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>The UpdateUserPoolDomain response output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserPoolDomainOutput {
+pub struct UpdateUserPoolDomainOutput  {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
     pub cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateUserPoolDomainOutput {
+impl  UpdateUserPoolDomainOutput  {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
-    pub fn cloud_front_domain(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_front_domain(&self) -> ::std::option::Option<& str> {
         self.cloud_front_domain.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateUserPoolDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateUserPoolDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolDomainOutput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput).
     pub fn builder() -> crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateUserPoolDomainOutputBuilder {
     }
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
     pub fn set_cloud_front_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_front_domain = input;
-        self
+        self.cloud_front_domain = input; self
     }
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
     pub fn get_cloud_front_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_front_domain
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateUserPoolDomainOutput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput).
     pub fn build(self) -> crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput {
         crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput {
-            cloud_front_domain: self.cloud_front_domain,
+            cloud_front_domain: self.cloud_front_domain
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

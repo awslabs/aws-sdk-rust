@@ -5,56 +5,52 @@ pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_s
 
 impl ListPreviewRotationShiftsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_preview_rotation_shifts();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_preview_rotation_shifts();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListPreviewRotationShifts`.
-///
+/// 
 /// <p>Returns a list of shifts based on rotation configuration parameters.</p><note>
 /// <p>The Incident Manager primarily uses this operation to populate the <b>Preview</b> calendar. It is not typically run by end users.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPreviewRotationShiftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder,
+                    inner: crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
-        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-    > for ListPreviewRotationShiftsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
+                    crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
+                > for ListPreviewRotationShiftsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
+                        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListPreviewRotationShiftsFluentBuilder {
     /// Creates a new `ListPreviewRotationShifts`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,59 +59,50 @@ impl ListPreviewRotationShiftsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_preview_rotation_shifts::ListPreviewRotationShifts::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShifts::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
-        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_preview_rotation_shifts::ListPreviewRotationShifts::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShifts::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput, crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator {
-        crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator {
+                                crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The date and time a rotation would begin. The first shift is calculated from this date and time.</p>
     pub fn rotation_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.rotation_start_time(input);
@@ -168,12 +155,12 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self
     }
     /// <p>The contacts that would be assigned to a rotation.</p>
-    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_members(input);
         self
     }
     /// <p>The contacts that would be assigned to a rotation.</p>
-    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_members()
     }
     /// <p>The time zone the rotation’s activity would be based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul".</p>
@@ -214,12 +201,12 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self
     }
     /// <p>Information about changes that would be made in a rotation override.</p>
-    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>>) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PreviewOverride>>) -> Self {
         self.inner = self.inner.set_overrides(input);
         self
     }
     /// <p>Information about changes that would be made in a rotation override.</p>
-    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreviewOverride>> {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PreviewOverride>> {
         self.inner.get_overrides()
     }
     /// <p>A token to start the list. This token is used to get the next set of results.</p>
@@ -251,3 +238,4 @@ impl ListPreviewRotationShiftsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

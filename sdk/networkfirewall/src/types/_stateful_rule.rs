@@ -3,7 +3,7 @@
 /// <p>A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatefulRule {
+pub struct StatefulRule  {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
     /// <p>The actions for a stateful rule are defined as follows:</p>
     /// <ul>
@@ -19,9 +19,9 @@ pub struct StatefulRule {
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.</p>
     pub header: ::std::option::Option<crate::types::Header>,
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
-    pub rule_options: ::std::vec::Vec<crate::types::RuleOption>,
+    pub rule_options: ::std::vec::Vec::<crate::types::RuleOption>,
 }
-impl StatefulRule {
+impl  StatefulRule  {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
     /// <p>The actions for a stateful rule are defined as follows:</p>
     /// <ul>
@@ -33,17 +33,16 @@ impl StatefulRule {
     /// <p><b>ALERT</b> - Sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>.</p>
     /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
     /// </ul>
-    pub fn action(&self) -> &crate::types::StatefulAction {
+    pub fn action(&self) -> & crate::types::StatefulAction {
         &self.action
     }
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.</p>
-    pub fn header(&self) -> ::std::option::Option<&crate::types::Header> {
+    pub fn header(&self) -> ::std::option::Option<& crate::types::Header> {
         self.header.as_ref()
     }
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
-    pub fn rule_options(&self) -> &[crate::types::RuleOption] {
-        use std::ops::Deref;
-        self.rule_options.deref()
+    pub fn rule_options(&self) -> & [crate::types::RuleOption] {
+        use std::ops::Deref; self.rule_options.deref()
     }
 }
 impl StatefulRule {
@@ -59,7 +58,7 @@ impl StatefulRule {
 pub struct StatefulRuleBuilder {
     pub(crate) action: ::std::option::Option<crate::types::StatefulAction>,
     pub(crate) header: ::std::option::Option<crate::types::Header>,
-    pub(crate) rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
+    pub(crate) rule_options: ::std::option::Option<::std::vec::Vec::<crate::types::RuleOption>>,
 }
 impl StatefulRuleBuilder {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
@@ -90,8 +89,7 @@ impl StatefulRuleBuilder {
     /// <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::StatefulAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow.</p>
     /// <p>The actions for a stateful rule are defined as follows:</p>
@@ -115,8 +113,7 @@ impl StatefulRuleBuilder {
     }
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.</p>
     pub fn set_header(mut self, input: ::std::option::Option<crate::types::Header>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.</p>
     pub fn get_header(&self) -> &::std::option::Option<crate::types::Header> {
@@ -129,17 +126,16 @@ impl StatefulRuleBuilder {
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
     pub fn rule_options(mut self, input: crate::types::RuleOption) -> Self {
         let mut v = self.rule_options.unwrap_or_default();
-        v.push(input);
-        self.rule_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rule_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
-    pub fn set_rule_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>) -> Self {
-        self.rule_options = input;
-        self
+    pub fn set_rule_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleOption>>) -> Self {
+        self.rule_options = input; self
     }
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
-    pub fn get_rule_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleOption>> {
+    pub fn get_rule_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleOption>> {
         &self.rule_options
     }
     /// Consumes the builder and constructs a [`StatefulRule`](crate::types::StatefulRule).
@@ -147,20 +143,22 @@ impl StatefulRuleBuilder {
     /// - [`action`](crate::types::builders::StatefulRuleBuilder::action)
     /// - [`rule_options`](crate::types::builders::StatefulRuleBuilder::rule_options)
     pub fn build(self) -> ::std::result::Result<crate::types::StatefulRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StatefulRule {
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building StatefulRule",
-                )
-            })?,
-            header: self.header,
-            rule_options: self.rule_options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_options",
-                    "rule_options was not specified but it is required when building StatefulRule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StatefulRule {
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building StatefulRule")
+                    )?
+                ,
+                header: self.header
+                ,
+                rule_options: self.rule_options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_options", "rule_options was not specified but it is required when building StatefulRule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

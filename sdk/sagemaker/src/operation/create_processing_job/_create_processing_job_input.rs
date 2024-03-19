@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProcessingJobInput {
+pub struct CreateProcessingJobInput  {
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
-    pub processing_inputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
+    pub processing_inputs: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingInput>>,
     /// <p>Output configuration for the processing job.</p>
     pub processing_output_config: ::std::option::Option<crate::types::ProcessingOutputConfig>,
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
@@ -16,13 +16,13 @@ pub struct CreateProcessingJobInput {
     /// <p>Configures the processing job to run a specified Docker container image.</p>
     pub app_specification: ::std::option::Option<crate::types::AppSpecification>,
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
     pub network_config: ::std::option::Option<crate::types::NetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
     /// <li>
@@ -34,50 +34,52 @@ pub struct CreateProcessingJobInput {
     /// </ul>
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
 }
-impl CreateProcessingJobInput {
+impl  CreateProcessingJobInput  {
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_inputs.is_none()`.
-    pub fn processing_inputs(&self) -> &[crate::types::ProcessingInput] {
-        self.processing_inputs.as_deref().unwrap_or_default()
+    pub fn processing_inputs(&self) -> & [crate::types::ProcessingInput] {
+        self.processing_inputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Output configuration for the processing job.</p>
-    pub fn processing_output_config(&self) -> ::std::option::Option<&crate::types::ProcessingOutputConfig> {
+    pub fn processing_output_config(&self) -> ::std::option::Option<& crate::types::ProcessingOutputConfig> {
         self.processing_output_config.as_ref()
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn processing_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn processing_job_name(&self) -> ::std::option::Option<& str> {
         self.processing_job_name.as_deref()
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    pub fn processing_resources(&self) -> ::std::option::Option<&crate::types::ProcessingResources> {
+    pub fn processing_resources(&self) -> ::std::option::Option<& crate::types::ProcessingResources> {
         self.processing_resources.as_ref()
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
-    pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::ProcessingStoppingCondition> {
+    pub fn stopping_condition(&self) -> ::std::option::Option<& crate::types::ProcessingStoppingCondition> {
         self.stopping_condition.as_ref()
     }
     /// <p>Configures the processing job to run a specified Docker container image.</p>
-    pub fn app_specification(&self) -> ::std::option::Option<&crate::types::AppSpecification> {
+    pub fn app_specification(&self) -> ::std::option::Option<& crate::types::AppSpecification> {
         self.app_specification.as_ref()
     }
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
-    pub fn network_config(&self) -> ::std::option::Option<&crate::types::NetworkConfig> {
+    pub fn network_config(&self) -> ::std::option::Option<& crate::types::NetworkConfig> {
         self.network_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -88,7 +90,7 @@ impl CreateProcessingJobInput {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
-    pub fn experiment_config(&self) -> ::std::option::Option<&crate::types::ExperimentConfig> {
+    pub fn experiment_config(&self) -> ::std::option::Option<& crate::types::ExperimentConfig> {
         self.experiment_config.as_ref()
     }
 }
@@ -103,16 +105,16 @@ impl CreateProcessingJobInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProcessingJobInputBuilder {
-    pub(crate) processing_inputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
+    pub(crate) processing_inputs: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingInput>>,
     pub(crate) processing_output_config: ::std::option::Option<crate::types::ProcessingOutputConfig>,
     pub(crate) processing_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) processing_resources: ::std::option::Option<crate::types::ProcessingResources>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::ProcessingStoppingCondition>,
     pub(crate) app_specification: ::std::option::Option<crate::types::AppSpecification>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) network_config: ::std::option::Option<crate::types::NetworkConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
 }
 impl CreateProcessingJobInputBuilder {
@@ -123,17 +125,16 @@ impl CreateProcessingJobInputBuilder {
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
     pub fn processing_inputs(mut self, input: crate::types::ProcessingInput) -> Self {
         let mut v = self.processing_inputs.unwrap_or_default();
-        v.push(input);
-        self.processing_inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.processing_inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
-    pub fn set_processing_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>) -> Self {
-        self.processing_inputs = input;
-        self
+    pub fn set_processing_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingInput>>) -> Self {
+        self.processing_inputs = input; self
     }
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
-    pub fn get_processing_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>> {
+    pub fn get_processing_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProcessingInput>> {
         &self.processing_inputs
     }
     /// <p>Output configuration for the processing job.</p>
@@ -143,8 +144,7 @@ impl CreateProcessingJobInputBuilder {
     }
     /// <p>Output configuration for the processing job.</p>
     pub fn set_processing_output_config(mut self, input: ::std::option::Option<crate::types::ProcessingOutputConfig>) -> Self {
-        self.processing_output_config = input;
-        self
+        self.processing_output_config = input; self
     }
     /// <p>Output configuration for the processing job.</p>
     pub fn get_processing_output_config(&self) -> &::std::option::Option<crate::types::ProcessingOutputConfig> {
@@ -158,8 +158,7 @@ impl CreateProcessingJobInputBuilder {
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn set_processing_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.processing_job_name = input;
-        self
+        self.processing_job_name = input; self
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn get_processing_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +172,7 @@ impl CreateProcessingJobInputBuilder {
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
     pub fn set_processing_resources(mut self, input: ::std::option::Option<crate::types::ProcessingResources>) -> Self {
-        self.processing_resources = input;
-        self
+        self.processing_resources = input; self
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
     pub fn get_processing_resources(&self) -> &::std::option::Option<crate::types::ProcessingResources> {
@@ -187,8 +185,7 @@ impl CreateProcessingJobInputBuilder {
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
     pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::ProcessingStoppingCondition>) -> Self {
-        self.stopping_condition = input;
-        self
+        self.stopping_condition = input; self
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::ProcessingStoppingCondition> {
@@ -202,8 +199,7 @@ impl CreateProcessingJobInputBuilder {
     }
     /// <p>Configures the processing job to run a specified Docker container image.</p>
     pub fn set_app_specification(mut self, input: ::std::option::Option<crate::types::AppSpecification>) -> Self {
-        self.app_specification = input;
-        self
+        self.app_specification = input; self
     }
     /// <p>Configures the processing job to run a specified Docker container image.</p>
     pub fn get_app_specification(&self) -> &::std::option::Option<crate::types::AppSpecification> {
@@ -216,20 +212,16 @@ impl CreateProcessingJobInputBuilder {
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
@@ -239,8 +231,7 @@ impl CreateProcessingJobInputBuilder {
     }
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
     pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::NetworkConfig>) -> Self {
-        self.network_config = input;
-        self
+        self.network_config = input; self
     }
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
     pub fn get_network_config(&self) -> &::std::option::Option<crate::types::NetworkConfig> {
@@ -254,8 +245,7 @@ impl CreateProcessingJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,17 +258,16 @@ impl CreateProcessingJobInputBuilder {
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
@@ -304,8 +293,7 @@ impl CreateProcessingJobInputBuilder {
     /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
     pub fn set_experiment_config(mut self, input: ::std::option::Option<crate::types::ExperimentConfig>) -> Self {
-        self.experiment_config = input;
-        self
+        self.experiment_config = input; self
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -320,22 +308,33 @@ impl CreateProcessingJobInputBuilder {
         &self.experiment_config
     }
     /// Consumes the builder and constructs a [`CreateProcessingJobInput`](crate::operation::create_processing_job::CreateProcessingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_processing_job::CreateProcessingJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_processing_job::CreateProcessingJobInput {
-            processing_inputs: self.processing_inputs,
-            processing_output_config: self.processing_output_config,
-            processing_job_name: self.processing_job_name,
-            processing_resources: self.processing_resources,
-            stopping_condition: self.stopping_condition,
-            app_specification: self.app_specification,
-            environment: self.environment,
-            network_config: self.network_config,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            experiment_config: self.experiment_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_processing_job::CreateProcessingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_processing_job::CreateProcessingJobInput {
+                processing_inputs: self.processing_inputs
+                ,
+                processing_output_config: self.processing_output_config
+                ,
+                processing_job_name: self.processing_job_name
+                ,
+                processing_resources: self.processing_resources
+                ,
+                stopping_condition: self.stopping_condition
+                ,
+                app_specification: self.app_specification
+                ,
+                environment: self.environment
+                ,
+                network_config: self.network_config
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                experiment_config: self.experiment_config
+                ,
+            }
+        )
     }
 }
+

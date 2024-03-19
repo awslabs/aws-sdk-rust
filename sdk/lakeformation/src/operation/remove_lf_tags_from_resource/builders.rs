@@ -5,54 +5,50 @@ pub use crate::operation::remove_lf_tags_from_resource::_remove_lf_tags_from_res
 
 impl RemoveLfTagsFromResourceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.remove_lf_tags_from_resource();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.remove_lf_tags_from_resource();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RemoveLFTagsFromResource`.
-///
+/// 
 /// <p>Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code> to specify column input.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveLFTagsFromResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder,
+                    inner: crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-        crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-    > for RemoveLFTagsFromResourceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
+                    crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
+                > for RemoveLFTagsFromResourceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
+                        crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RemoveLFTagsFromResourceFluentBuilder {
     /// Creates a new `RemoveLFTagsFromResource`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput,
-        crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceOutput, crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResourceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -146,12 +133,13 @@ impl RemoveLFTagsFromResourceFluentBuilder {
         self
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>) -> Self {
         self.inner = self.inner.set_lf_tags(input);
         self
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>> {
         self.inner.get_lf_tags()
     }
 }
+

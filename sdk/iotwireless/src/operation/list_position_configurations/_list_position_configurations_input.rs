@@ -3,7 +3,7 @@
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPositionConfigurationsInput {
+pub struct ListPositionConfigurationsInput  {
     /// <p>Resource type for which position configurations are listed.</p>
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
     /// <p>The maximum number of results to return in this operation.</p>
@@ -11,9 +11,9 @@ pub struct ListPositionConfigurationsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPositionConfigurationsInput {
+impl  ListPositionConfigurationsInput  {
     /// <p>Resource type for which position configurations are listed.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::PositionResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::PositionResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The maximum number of results to return in this operation.</p>
@@ -21,7 +21,7 @@ impl ListPositionConfigurationsInput {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListPositionConfigurationsInputBuilder {
     }
     /// <p>Resource type for which position configurations are listed.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Resource type for which position configurations are listed.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
@@ -62,8 +61,7 @@ impl ListPositionConfigurationsInputBuilder {
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListPositionConfigurationsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPositionConfigurationsInput`](crate::operation::list_position_configurations::ListPositionConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_position_configurations::ListPositionConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_position_configurations::ListPositionConfigurationsInput {
-            resource_type: self.resource_type,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_position_configurations::ListPositionConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_position_configurations::ListPositionConfigurationsInput {
+                resource_type: self.resource_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

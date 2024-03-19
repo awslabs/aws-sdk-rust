@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataIntegrationAssociations`](crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`data_integration_identifier(impl Into<String>)`](crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::data_integration_identifier) / [`set_data_integration_identifier(Option<String>)`](crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::set_data_integration_identifier):<br>required: **true**<br><p>A unique identifier for the DataIntegration.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListDataIntegrationAssociationsOutput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListDataIntegrationAssociationsOutput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput) with field(s):
     ///   - [`data_integration_associations(Option<Vec::<DataIntegrationAssociationSummary>>)`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput::data_integration_associations): <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDataIntegrationAssociationsError>`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError)
-    pub fn list_data_integration_associations(
-        &self,
-    ) -> crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder {
-        crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDataIntegrationAssociationsError>`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError)
+    pub fn list_data_integration_associations(&self) -> crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder {
+                                crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

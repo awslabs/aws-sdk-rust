@@ -3,30 +3,28 @@
 /// <p>Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditMitigationActionsTaskTarget {
+pub struct AuditMitigationActionsTaskTarget  {
     /// <p>If the task will apply a mitigation action to findings from a specific audit, this value uniquely identifies the audit.</p>
     pub audit_task_id: ::std::option::Option<::std::string::String>,
     /// <p>If the task will apply a mitigation action to one or more listed findings, this value uniquely identifies those findings.</p>
-    pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub finding_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies a filter in the form of an audit check and set of reason codes that identify the findings from the audit to which the audit mitigation actions task apply.</p>
-    pub audit_check_to_reason_code_filter:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub audit_check_to_reason_code_filter: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl AuditMitigationActionsTaskTarget {
+impl  AuditMitigationActionsTaskTarget  {
     /// <p>If the task will apply a mitigation action to findings from a specific audit, this value uniquely identifies the audit.</p>
-    pub fn audit_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn audit_task_id(&self) -> ::std::option::Option<& str> {
         self.audit_task_id.as_deref()
     }
     /// <p>If the task will apply a mitigation action to one or more listed findings, this value uniquely identifies those findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_ids.is_none()`.
-    pub fn finding_ids(&self) -> &[::std::string::String] {
-        self.finding_ids.as_deref().unwrap_or_default()
+    pub fn finding_ids(&self) -> & [::std::string::String] {
+        self.finding_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies a filter in the form of an audit check and set of reason codes that identify the findings from the audit to which the audit mitigation actions task apply.</p>
-    pub fn audit_check_to_reason_code_filter(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn audit_check_to_reason_code_filter(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.audit_check_to_reason_code_filter.as_ref()
     }
 }
@@ -42,9 +40,8 @@ impl AuditMitigationActionsTaskTarget {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditMitigationActionsTaskTargetBuilder {
     pub(crate) audit_task_id: ::std::option::Option<::std::string::String>,
-    pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) audit_check_to_reason_code_filter:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) audit_check_to_reason_code_filter: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl AuditMitigationActionsTaskTargetBuilder {
     /// <p>If the task will apply a mitigation action to findings from a specific audit, this value uniquely identifies the audit.</p>
@@ -54,8 +51,7 @@ impl AuditMitigationActionsTaskTargetBuilder {
     }
     /// <p>If the task will apply a mitigation action to findings from a specific audit, this value uniquely identifies the audit.</p>
     pub fn set_audit_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audit_task_id = input;
-        self
+        self.audit_task_id = input; self
     }
     /// <p>If the task will apply a mitigation action to findings from a specific audit, this value uniquely identifies the audit.</p>
     pub fn get_audit_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,17 +64,16 @@ impl AuditMitigationActionsTaskTargetBuilder {
     /// <p>If the task will apply a mitigation action to one or more listed findings, this value uniquely identifies those findings.</p>
     pub fn finding_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_ids.unwrap_or_default();
-        v.push(input.into());
-        self.finding_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the task will apply a mitigation action to one or more listed findings, this value uniquely identifies those findings.</p>
-    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.finding_ids = input;
-        self
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.finding_ids = input; self
     }
     /// <p>If the task will apply a mitigation action to one or more listed findings, this value uniquely identifies those findings.</p>
-    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.finding_ids
     }
     /// Adds a key-value pair to `audit_check_to_reason_code_filter`.
@@ -86,36 +81,30 @@ impl AuditMitigationActionsTaskTargetBuilder {
     /// To override the contents of this collection use [`set_audit_check_to_reason_code_filter`](Self::set_audit_check_to_reason_code_filter).
     ///
     /// <p>Specifies a filter in the form of an audit check and set of reason codes that identify the findings from the audit to which the audit mitigation actions task apply.</p>
-    pub fn audit_check_to_reason_code_filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn audit_check_to_reason_code_filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.audit_check_to_reason_code_filter.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.audit_check_to_reason_code_filter = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.audit_check_to_reason_code_filter = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies a filter in the form of an audit check and set of reason codes that identify the findings from the audit to which the audit mitigation actions task apply.</p>
-    pub fn set_audit_check_to_reason_code_filter(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.audit_check_to_reason_code_filter = input;
-        self
+    pub fn set_audit_check_to_reason_code_filter(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.audit_check_to_reason_code_filter = input; self
     }
     /// <p>Specifies a filter in the form of an audit check and set of reason codes that identify the findings from the audit to which the audit mitigation actions task apply.</p>
-    pub fn get_audit_check_to_reason_code_filter(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_audit_check_to_reason_code_filter(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.audit_check_to_reason_code_filter
     }
     /// Consumes the builder and constructs a [`AuditMitigationActionsTaskTarget`](crate::types::AuditMitigationActionsTaskTarget).
     pub fn build(self) -> crate::types::AuditMitigationActionsTaskTarget {
         crate::types::AuditMitigationActionsTaskTarget {
-            audit_task_id: self.audit_task_id,
-            finding_ids: self.finding_ids,
-            audit_check_to_reason_code_filter: self.audit_check_to_reason_code_filter,
+            audit_task_id: self.audit_task_id
+            ,
+            finding_ids: self.finding_ids
+            ,
+            audit_check_to_reason_code_filter: self.audit_check_to_reason_code_filter
+            ,
         }
     }
 }
+

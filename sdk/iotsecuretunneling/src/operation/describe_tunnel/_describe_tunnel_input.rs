@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTunnelInput {
+pub struct DescribeTunnelInput  {
     /// <p>The tunnel to describe.</p>
     pub tunnel_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTunnelInput {
+impl  DescribeTunnelInput  {
     /// <p>The tunnel to describe.</p>
-    pub fn tunnel_id(&self) -> ::std::option::Option<&str> {
+    pub fn tunnel_id(&self) -> ::std::option::Option<& str> {
         self.tunnel_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeTunnelInputBuilder {
     }
     /// <p>The tunnel to describe.</p>
     pub fn set_tunnel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tunnel_id = input;
-        self
+        self.tunnel_id = input; self
     }
     /// <p>The tunnel to describe.</p>
     pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.tunnel_id
     }
     /// Consumes the builder and constructs a [`DescribeTunnelInput`](crate::operation::describe_tunnel::DescribeTunnelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_tunnel::DescribeTunnelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_tunnel::DescribeTunnelInput { tunnel_id: self.tunnel_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tunnel::DescribeTunnelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_tunnel::DescribeTunnelInput {
+                tunnel_id: self.tunnel_id
+                ,
+            }
+        )
     }
 }
+

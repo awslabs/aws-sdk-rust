@@ -3,19 +3,19 @@
 /// A Microsoft Smooth Streaming (MSS) manifest configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MssManifest {
+pub struct MssManifest  {
     /// An optional string to include in the name of the manifest.
     pub manifest_name: ::std::option::Option<::std::string::String>,
     /// A StreamSelection configuration.
     pub stream_selection: ::std::option::Option<crate::types::StreamSelection>,
 }
-impl MssManifest {
+impl  MssManifest  {
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(&self) -> ::std::option::Option<&str> {
+    pub fn manifest_name(&self) -> ::std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// A StreamSelection configuration.
-    pub fn stream_selection(&self) -> ::std::option::Option<&crate::types::StreamSelection> {
+    pub fn stream_selection(&self) -> ::std::option::Option<& crate::types::StreamSelection> {
         self.stream_selection.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl MssManifestBuilder {
     }
     /// An optional string to include in the name of the manifest.
     pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_name = input;
-        self
+        self.manifest_name = input; self
     }
     /// An optional string to include in the name of the manifest.
     pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MssManifestBuilder {
     }
     /// A StreamSelection configuration.
     pub fn set_stream_selection(mut self, input: ::std::option::Option<crate::types::StreamSelection>) -> Self {
-        self.stream_selection = input;
-        self
+        self.stream_selection = input; self
     }
     /// A StreamSelection configuration.
     pub fn get_stream_selection(&self) -> &::std::option::Option<crate::types::StreamSelection> {
@@ -65,8 +63,11 @@ impl MssManifestBuilder {
     /// Consumes the builder and constructs a [`MssManifest`](crate::types::MssManifest).
     pub fn build(self) -> crate::types::MssManifest {
         crate::types::MssManifest {
-            manifest_name: self.manifest_name,
-            stream_selection: self.stream_selection,
+            manifest_name: self.manifest_name
+            ,
+            stream_selection: self.stream_selection
+            ,
         }
     }
 }
+

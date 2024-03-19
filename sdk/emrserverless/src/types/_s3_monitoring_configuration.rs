@@ -3,19 +3,19 @@
 /// <p>The Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3MonitoringConfiguration {
+pub struct S3MonitoringConfiguration  {
     /// <p>The Amazon S3 destination URI for log publishing.</p>
     pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl S3MonitoringConfiguration {
+impl  S3MonitoringConfiguration  {
     /// <p>The Amazon S3 destination URI for log publishing.</p>
-    pub fn log_uri(&self) -> ::std::option::Option<&str> {
+    pub fn log_uri(&self) -> ::std::option::Option<& str> {
         self.log_uri.as_deref()
     }
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3MonitoringConfigurationBuilder {
     }
     /// <p>The Amazon S3 destination URI for log publishing.</p>
     pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_uri = input;
-        self
+        self.log_uri = input; self
     }
     /// <p>The Amazon S3 destination URI for log publishing.</p>
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3MonitoringConfigurationBuilder {
     }
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3MonitoringConfigurationBuilder {
     /// Consumes the builder and constructs a [`S3MonitoringConfiguration`](crate::types::S3MonitoringConfiguration).
     pub fn build(self) -> crate::types::S3MonitoringConfiguration {
         crate::types::S3MonitoringConfiguration {
-            log_uri: self.log_uri,
-            encryption_key_arn: self.encryption_key_arn,
+            log_uri: self.log_uri
+            ,
+            encryption_key_arn: self.encryption_key_arn
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImagePolicyInput {
+pub struct GetImagePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
     pub image_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetImagePolicyInput {
+impl  GetImagePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
-    pub fn image_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_arn(&self) -> ::std::option::Option<& str> {
         self.image_arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetImagePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_arn = input;
-        self
+        self.image_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
     pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_arn
     }
     /// Consumes the builder and constructs a [`GetImagePolicyInput`](crate::operation::get_image_policy::GetImagePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_image_policy::GetImagePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_image_policy::GetImagePolicyInput { image_arn: self.image_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_policy::GetImagePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_image_policy::GetImagePolicyInput {
+                image_arn: self.image_arn
+                ,
+            }
+        )
     }
 }
+

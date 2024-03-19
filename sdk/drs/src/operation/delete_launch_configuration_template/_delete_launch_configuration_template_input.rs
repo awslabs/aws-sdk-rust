@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLaunchConfigurationTemplateInput {
+pub struct DeleteLaunchConfigurationTemplateInput  {
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
     pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLaunchConfigurationTemplateInput {
+impl  DeleteLaunchConfigurationTemplateInput  {
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<& str> {
         self.launch_configuration_template_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
     pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_configuration_template_id = input;
-        self
+        self.launch_configuration_template_id = input; self
     }
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
     pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_configuration_template_id
     }
     /// Consumes the builder and constructs a [`DeleteLaunchConfigurationTemplateInput`](crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput {
-                launch_configuration_template_id: self.launch_configuration_template_id,
-            },
+                launch_configuration_template_id: self.launch_configuration_template_id
+                ,
+            }
         )
     }
 }
+

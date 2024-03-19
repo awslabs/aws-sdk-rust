@@ -3,22 +3,22 @@
 /// <p>The output for a <code>EstimateTemplateCost</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EstimateTemplateCostOutput {
+pub struct EstimateTemplateCostOutput  {
     /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl EstimateTemplateCostOutput {
+impl  EstimateTemplateCostOutput  {
     /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for EstimateTemplateCostOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EstimateTemplateCostOutput {
     /// Creates a new builder-style object to manufacture [`EstimateTemplateCostOutput`](crate::operation::estimate_template_cost::EstimateTemplateCostOutput).
     pub fn builder() -> crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder {
@@ -41,27 +41,28 @@ impl EstimateTemplateCostOutputBuilder {
     }
     /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EstimateTemplateCostOutput`](crate::operation::estimate_template_cost::EstimateTemplateCostOutput).
     pub fn build(self) -> crate::operation::estimate_template_cost::EstimateTemplateCostOutput {
         crate::operation::estimate_template_cost::EstimateTemplateCostOutput {
-            url: self.url,
+            url: self.url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

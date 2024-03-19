@@ -3,19 +3,19 @@
 /// <p>Describes which features are activated for the detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsGuardDutyDetectorFeaturesDetails {
+pub struct AwsGuardDutyDetectorFeaturesDetails  {
     /// <p>Indicates the name of the feature that is activated for the detector.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the feature that is activated for the detector.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsGuardDutyDetectorFeaturesDetails {
+impl  AwsGuardDutyDetectorFeaturesDetails  {
     /// <p>Indicates the name of the feature that is activated for the detector.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates the status of the feature that is activated for the detector.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsGuardDutyDetectorFeaturesDetailsBuilder {
     }
     /// <p>Indicates the name of the feature that is activated for the detector.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Indicates the name of the feature that is activated for the detector.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsGuardDutyDetectorFeaturesDetailsBuilder {
     }
     /// <p>Indicates the status of the feature that is activated for the detector.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the status of the feature that is activated for the detector.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsGuardDutyDetectorFeaturesDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorFeaturesDetails`](crate::types::AwsGuardDutyDetectorFeaturesDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorFeaturesDetails {
         crate::types::AwsGuardDutyDetectorFeaturesDetails {
-            name: self.name,
-            status: self.status,
+            name: self.name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

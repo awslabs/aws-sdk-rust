@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLocations`](crate::operation::list_locations::builders::ListLocationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_locations::builders::ListLocationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_locations::builders::ListLocationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_locations::builders::ListLocationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of locations to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_locations::builders::ListLocationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_locations::builders::ListLocationsFluentBuilder::set_next_token):<br>required: **false**<br><p>An opaque string that indicates the position at which to begin the next list of locations.</p><br>
     ///   - [`filters(LocationFilter)`](crate::operation::list_locations::builders::ListLocationsFluentBuilder::filters) / [`set_filters(Option<Vec::<LocationFilter>>)`](crate::operation::list_locations::builders::ListLocationsFluentBuilder::set_filters):<br>required: **false**<br><p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p><br>
-    /// - On success, responds with [`ListLocationsOutput`](crate::operation::list_locations::ListLocationsOutput) with field(s):
+                            /// - On success, responds with [`ListLocationsOutput`](crate::operation::list_locations::ListLocationsOutput) with field(s):
     ///   - [`locations(Option<Vec::<LocationListEntry>>)`](crate::operation::list_locations::ListLocationsOutput::locations): <p>An array that contains a list of locations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_locations::ListLocationsOutput::next_token): <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
-    /// - On failure, responds with [`SdkError<ListLocationsError>`](crate::operation::list_locations::ListLocationsError)
+                            /// - On failure, responds with [`SdkError<ListLocationsError>`](crate::operation::list_locations::ListLocationsError)
     pub fn list_locations(&self) -> crate::operation::list_locations::builders::ListLocationsFluentBuilder {
-        crate::operation::list_locations::builders::ListLocationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_locations::builders::ListLocationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

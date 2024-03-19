@@ -3,7 +3,7 @@
 /// <p>Information about the provisioned throughput for the table or for a global secondary index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDynamoDbTableProvisionedThroughput {
+pub struct AwsDynamoDbTableProvisionedThroughput  {
     /// <p>Indicates when the provisioned throughput was last decreased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub last_decrease_date_time: ::std::option::Option<::std::string::String>,
@@ -17,15 +17,15 @@ pub struct AwsDynamoDbTableProvisionedThroughput {
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub write_capacity_units: ::std::option::Option<i32>,
 }
-impl AwsDynamoDbTableProvisionedThroughput {
+impl  AwsDynamoDbTableProvisionedThroughput  {
     /// <p>Indicates when the provisioned throughput was last decreased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_decrease_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_decrease_date_time(&self) -> ::std::option::Option<& str> {
         self.last_decrease_date_time.as_deref()
     }
     /// <p>Indicates when the provisioned throughput was last increased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_increase_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_increase_date_time(&self) -> ::std::option::Option<& str> {
         self.last_increase_date_time.as_deref()
     }
     /// <p>The number of times during the current UTC calendar day that the provisioned throughput was decreased.</p>
@@ -68,8 +68,7 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     /// <p>Indicates when the provisioned throughput was last decreased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_last_decrease_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_decrease_date_time = input;
-        self
+        self.last_decrease_date_time = input; self
     }
     /// <p>Indicates when the provisioned throughput was last decreased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -85,8 +84,7 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     /// <p>Indicates when the provisioned throughput was last increased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_last_increase_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_increase_date_time = input;
-        self
+        self.last_increase_date_time = input; self
     }
     /// <p>Indicates when the provisioned throughput was last increased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -100,8 +98,7 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     }
     /// <p>The number of times during the current UTC calendar day that the provisioned throughput was decreased.</p>
     pub fn set_number_of_decreases_today(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_decreases_today = input;
-        self
+        self.number_of_decreases_today = input; self
     }
     /// <p>The number of times during the current UTC calendar day that the provisioned throughput was decreased.</p>
     pub fn get_number_of_decreases_today(&self) -> &::std::option::Option<i32> {
@@ -114,8 +111,7 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn get_read_capacity_units(&self) -> &::std::option::Option<i32> {
@@ -128,8 +124,7 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.write_capacity_units = input;
-        self
+        self.write_capacity_units = input; self
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn get_write_capacity_units(&self) -> &::std::option::Option<i32> {
@@ -138,11 +133,17 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughput`](crate::types::AwsDynamoDbTableProvisionedThroughput).
     pub fn build(self) -> crate::types::AwsDynamoDbTableProvisionedThroughput {
         crate::types::AwsDynamoDbTableProvisionedThroughput {
-            last_decrease_date_time: self.last_decrease_date_time,
-            last_increase_date_time: self.last_increase_date_time,
-            number_of_decreases_today: self.number_of_decreases_today,
-            read_capacity_units: self.read_capacity_units,
-            write_capacity_units: self.write_capacity_units,
+            last_decrease_date_time: self.last_decrease_date_time
+            ,
+            last_increase_date_time: self.last_increase_date_time
+            ,
+            number_of_decreases_today: self.number_of_decreases_today
+            ,
+            read_capacity_units: self.read_capacity_units
+            ,
+            write_capacity_units: self.write_capacity_units
+            ,
         }
     }
 }
+

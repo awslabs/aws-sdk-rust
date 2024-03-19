@@ -3,7 +3,7 @@
 /// <p>Represents a Amazon Web Services Service Catalog AppRegistry attribute group that is rich metadata which describes an application and its components.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeGroup {
+pub struct AttributeGroup  {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
@@ -17,35 +17,35 @@ pub struct AttributeGroup {
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl AttributeGroup {
+impl  AttributeGroup  {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the attribute group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the attribute group that the user provides.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -66,7 +66,7 @@ pub struct AttributeGroupBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl AttributeGroupBuilder {
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
@@ -76,8 +76,7 @@ impl AttributeGroupBuilder {
     }
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The globally unique attribute group identifier of the attribute group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl AttributeGroupBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl AttributeGroupBuilder {
     }
     /// <p>The name of the attribute group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl AttributeGroupBuilder {
     }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl AttributeGroupBuilder {
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl AttributeGroupBuilder {
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,29 +154,36 @@ impl AttributeGroupBuilder {
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AttributeGroup`](crate::types::AttributeGroup).
     pub fn build(self) -> crate::types::AttributeGroup {
         crate::types::AttributeGroup {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
-            tags: self.tags,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

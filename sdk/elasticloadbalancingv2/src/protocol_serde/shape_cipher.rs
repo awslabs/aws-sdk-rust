@@ -38,3 +38,4 @@ pub fn de_cipher(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

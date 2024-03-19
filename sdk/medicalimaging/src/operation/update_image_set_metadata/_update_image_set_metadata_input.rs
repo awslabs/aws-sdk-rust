@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateImageSetMetadataInput {
+pub struct UpdateImageSetMetadataInput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The image set identifier.</p>
@@ -12,21 +12,21 @@ pub struct UpdateImageSetMetadataInput {
     /// <p>Update image set metadata updates.</p>
     pub update_image_set_metadata_updates: ::std::option::Option<crate::types::MetadataUpdates>,
 }
-impl UpdateImageSetMetadataInput {
+impl  UpdateImageSetMetadataInput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_set_id(&self) -> ::std::option::Option<& str> {
         self.image_set_id.as_deref()
     }
     /// <p>The latest image set version identifier.</p>
-    pub fn latest_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn latest_version_id(&self) -> ::std::option::Option<& str> {
         self.latest_version_id.as_deref()
     }
     /// <p>Update image set metadata updates.</p>
-    pub fn update_image_set_metadata_updates(&self) -> ::std::option::Option<&crate::types::MetadataUpdates> {
+    pub fn update_image_set_metadata_updates(&self) -> ::std::option::Option<& crate::types::MetadataUpdates> {
         self.update_image_set_metadata_updates.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateImageSetMetadataInputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateImageSetMetadataInputBuilder {
     }
     /// <p>The image set identifier.</p>
     pub fn set_image_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_set_id = input;
-        self
+        self.image_set_id = input; self
     }
     /// <p>The image set identifier.</p>
     pub fn get_image_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateImageSetMetadataInputBuilder {
     }
     /// <p>The latest image set version identifier.</p>
     pub fn set_latest_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_version_id = input;
-        self
+        self.latest_version_id = input; self
     }
     /// <p>The latest image set version identifier.</p>
     pub fn get_latest_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl UpdateImageSetMetadataInputBuilder {
     }
     /// <p>Update image set metadata updates.</p>
     pub fn set_update_image_set_metadata_updates(mut self, input: ::std::option::Option<crate::types::MetadataUpdates>) -> Self {
-        self.update_image_set_metadata_updates = input;
-        self
+        self.update_image_set_metadata_updates = input; self
     }
     /// <p>Update image set metadata updates.</p>
     pub fn get_update_image_set_metadata_updates(&self) -> &::std::option::Option<crate::types::MetadataUpdates> {
         &self.update_image_set_metadata_updates
     }
     /// Consumes the builder and constructs a [`UpdateImageSetMetadataInput`](crate::operation::update_image_set_metadata::UpdateImageSetMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_image_set_metadata::UpdateImageSetMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_image_set_metadata::UpdateImageSetMetadataInput {
-            datastore_id: self.datastore_id,
-            image_set_id: self.image_set_id,
-            latest_version_id: self.latest_version_id,
-            update_image_set_metadata_updates: self.update_image_set_metadata_updates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_image_set_metadata::UpdateImageSetMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_image_set_metadata::UpdateImageSetMetadataInput {
+                datastore_id: self.datastore_id
+                ,
+                image_set_id: self.image_set_id
+                ,
+                latest_version_id: self.latest_version_id
+                ,
+                update_image_set_metadata_updates: self.update_image_set_metadata_updates
+                ,
+            }
+        )
     }
 }
+

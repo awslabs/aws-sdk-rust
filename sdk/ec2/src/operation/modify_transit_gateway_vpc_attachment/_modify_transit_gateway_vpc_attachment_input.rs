@@ -2,37 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTransitGatewayVpcAttachmentInput {
+pub struct ModifyTransitGatewayVpcAttachmentInput  {
     /// <p>The ID of the attachment.</p>
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
-    pub add_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub add_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IDs of one or more subnets to remove.</p>
-    pub remove_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The new VPC attachment options.</p>
     pub options: ::std::option::Option<crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl ModifyTransitGatewayVpcAttachmentInput {
+impl  ModifyTransitGatewayVpcAttachmentInput  {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_subnet_ids.is_none()`.
-    pub fn add_subnet_ids(&self) -> &[::std::string::String] {
-        self.add_subnet_ids.as_deref().unwrap_or_default()
+    pub fn add_subnet_ids(&self) -> & [::std::string::String] {
+        self.add_subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IDs of one or more subnets to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_subnet_ids.is_none()`.
-    pub fn remove_subnet_ids(&self) -> &[::std::string::String] {
-        self.remove_subnet_ids.as_deref().unwrap_or_default()
+    pub fn remove_subnet_ids(&self) -> & [::std::string::String] {
+        self.remove_subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The new VPC attachment options.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions> {
         self.options.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -52,8 +54,8 @@ impl ModifyTransitGatewayVpcAttachmentInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTransitGatewayVpcAttachmentInputBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) add_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) remove_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) remove_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) options: ::std::option::Option<crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -66,8 +68,7 @@ impl ModifyTransitGatewayVpcAttachmentInputBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>The ID of the attachment.</p>
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl ModifyTransitGatewayVpcAttachmentInputBuilder {
     /// <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
     pub fn add_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.add_subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.add_subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
-    pub fn set_add_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.add_subnet_ids = input;
-        self
+    pub fn set_add_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.add_subnet_ids = input; self
     }
     /// <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
-    pub fn get_add_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.add_subnet_ids
     }
     /// Appends an item to `remove_subnet_ids`.
@@ -100,17 +100,16 @@ impl ModifyTransitGatewayVpcAttachmentInputBuilder {
     /// <p>The IDs of one or more subnets to remove.</p>
     pub fn remove_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.remove_subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of one or more subnets to remove.</p>
-    pub fn set_remove_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_subnet_ids = input;
-        self
+    pub fn set_remove_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_subnet_ids = input; self
     }
     /// <p>The IDs of one or more subnets to remove.</p>
-    pub fn get_remove_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_subnet_ids
     }
     /// <p>The new VPC attachment options.</p>
@@ -120,8 +119,7 @@ impl ModifyTransitGatewayVpcAttachmentInputBuilder {
     }
     /// <p>The new VPC attachment options.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The new VPC attachment options.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions> {
@@ -134,28 +132,28 @@ impl ModifyTransitGatewayVpcAttachmentInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayVpcAttachmentInput`](crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentInput {
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-                add_subnet_ids: self.add_subnet_ids,
-                remove_subnet_ids: self.remove_subnet_ids,
-                options: self.options,
-                dry_run: self.dry_run,
-            },
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id
+                ,
+                add_subnet_ids: self.add_subnet_ids
+                ,
+                remove_subnet_ids: self.remove_subnet_ids
+                ,
+                options: self.options
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

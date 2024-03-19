@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListViolationEvents`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`start_time(DateTime)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::set_start_time):<br>required: **true**<br><p>The start time for the alerts to be listed.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::set_end_time):<br>required: **true**<br><p>The end time for the alerts to be listed.</p><br>
     ///   - [`thing_name(impl Into<String>)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::set_thing_name):<br>required: **false**<br><p>A filter to limit results to those alerts caused by the specified thing.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`verification_state(VerificationState)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::verification_state) / [`set_verification_state(Option<VerificationState>)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::set_verification_state):<br>required: **false**<br><p>The verification state of the violation (detect alarm).</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListViolationEventsOutput`](crate::operation::list_violation_events::ListViolationEventsOutput) with field(s):
+                            /// - On success, responds with [`ListViolationEventsOutput`](crate::operation::list_violation_events::ListViolationEventsOutput) with field(s):
     ///   - [`violation_events(Option<Vec::<ViolationEvent>>)`](crate::operation::list_violation_events::ListViolationEventsOutput::violation_events): <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_violation_events::ListViolationEventsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListViolationEventsError>`](crate::operation::list_violation_events::ListViolationEventsError)
+                            /// - On failure, responds with [`SdkError<ListViolationEventsError>`](crate::operation::list_violation_events::ListViolationEventsError)
     pub fn list_violation_events(&self) -> crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder {
-        crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

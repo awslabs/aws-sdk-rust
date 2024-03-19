@@ -3,19 +3,19 @@
 /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrefixLevelStorageMetrics {
+pub struct PrefixLevelStorageMetrics  {
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
     pub is_enabled: bool,
     /// <p></p>
     pub selection_criteria: ::std::option::Option<crate::types::SelectionCriteria>,
 }
-impl PrefixLevelStorageMetrics {
+impl  PrefixLevelStorageMetrics  {
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
     pub fn is_enabled(&self) -> bool {
         self.is_enabled
     }
     /// <p></p>
-    pub fn selection_criteria(&self) -> ::std::option::Option<&crate::types::SelectionCriteria> {
+    pub fn selection_criteria(&self) -> ::std::option::Option<& crate::types::SelectionCriteria> {
         self.selection_criteria.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PrefixLevelStorageMetricsBuilder {
     }
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_enabled = input;
-        self
+        self.is_enabled = input; self
     }
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
     pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl PrefixLevelStorageMetricsBuilder {
     }
     /// <p></p>
     pub fn set_selection_criteria(mut self, input: ::std::option::Option<crate::types::SelectionCriteria>) -> Self {
-        self.selection_criteria = input;
-        self
+        self.selection_criteria = input; self
     }
     /// <p></p>
     pub fn get_selection_criteria(&self) -> &::std::option::Option<crate::types::SelectionCriteria> {
@@ -65,8 +63,12 @@ impl PrefixLevelStorageMetricsBuilder {
     /// Consumes the builder and constructs a [`PrefixLevelStorageMetrics`](crate::types::PrefixLevelStorageMetrics).
     pub fn build(self) -> crate::types::PrefixLevelStorageMetrics {
         crate::types::PrefixLevelStorageMetrics {
-            is_enabled: self.is_enabled.unwrap_or_default(),
-            selection_criteria: self.selection_criteria,
+            is_enabled: self.is_enabled
+                .unwrap_or_default()
+            ,
+            selection_criteria: self.selection_criteria
+            ,
         }
     }
 }
+

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterDataLakeDelegatedAdministratorInput {}
+pub struct DeregisterDataLakeDelegatedAdministratorInput  {
+}
 impl DeregisterDataLakeDelegatedAdministratorInput {
     /// Creates a new builder-style object to manufacture [`DeregisterDataLakeDelegatedAdministratorInput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput).
-    pub fn builder() -> crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorInputBuilder {
         crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DeregisterDataLakeDelegatedAdministratorInput {
 /// A builder for [`DeregisterDataLakeDelegatedAdministratorInput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeregisterDataLakeDelegatedAdministratorInputBuilder {}
+pub struct DeregisterDataLakeDelegatedAdministratorInputBuilder {
+}
 impl DeregisterDataLakeDelegatedAdministratorInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterDataLakeDelegatedAdministratorInput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput {
+            }
+        )
     }
 }
+

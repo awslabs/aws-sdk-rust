@@ -3,15 +3,15 @@
 /// <p>Information about instance capacity usage for a Capacity Reservation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityAllocation {
+pub struct CapacityAllocation  {
     /// <p>The usage type. <code>used</code> indicates that the instance capacity is in use by instances that are running in the Capacity Reservation.</p>
     pub allocation_type: ::std::option::Option<crate::types::AllocationType>,
     /// <p>The amount of instance capacity associated with the usage. For example a value of <code>4</code> indicates that instance capacity for 4 instances is currently in use.</p>
     pub count: ::std::option::Option<i32>,
 }
-impl CapacityAllocation {
+impl  CapacityAllocation  {
     /// <p>The usage type. <code>used</code> indicates that the instance capacity is in use by instances that are running in the Capacity Reservation.</p>
-    pub fn allocation_type(&self) -> ::std::option::Option<&crate::types::AllocationType> {
+    pub fn allocation_type(&self) -> ::std::option::Option<& crate::types::AllocationType> {
         self.allocation_type.as_ref()
     }
     /// <p>The amount of instance capacity associated with the usage. For example a value of <code>4</code> indicates that instance capacity for 4 instances is currently in use.</p>
@@ -41,8 +41,7 @@ impl CapacityAllocationBuilder {
     }
     /// <p>The usage type. <code>used</code> indicates that the instance capacity is in use by instances that are running in the Capacity Reservation.</p>
     pub fn set_allocation_type(mut self, input: ::std::option::Option<crate::types::AllocationType>) -> Self {
-        self.allocation_type = input;
-        self
+        self.allocation_type = input; self
     }
     /// <p>The usage type. <code>used</code> indicates that the instance capacity is in use by instances that are running in the Capacity Reservation.</p>
     pub fn get_allocation_type(&self) -> &::std::option::Option<crate::types::AllocationType> {
@@ -55,8 +54,7 @@ impl CapacityAllocationBuilder {
     }
     /// <p>The amount of instance capacity associated with the usage. For example a value of <code>4</code> indicates that instance capacity for 4 instances is currently in use.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The amount of instance capacity associated with the usage. For example a value of <code>4</code> indicates that instance capacity for 4 instances is currently in use.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl CapacityAllocationBuilder {
     /// Consumes the builder and constructs a [`CapacityAllocation`](crate::types::CapacityAllocation).
     pub fn build(self) -> crate::types::CapacityAllocation {
         crate::types::CapacityAllocation {
-            allocation_type: self.allocation_type,
-            count: self.count,
+            allocation_type: self.allocation_type
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

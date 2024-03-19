@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAvailablePatchesInput {
+pub struct DescribeAvailablePatchesInput  {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p><b>Windows Server</b></p>
     /// <p>Supported keys for Windows Server managed node patches include the following:</p>
@@ -68,13 +68,13 @@ pub struct DescribeAvailablePatchesInput {
     /// <p><b> <code>BUGZILLA_ID</code> </b></p>
     /// <p>Sample values: <code>1463241</code></p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>>,
     /// <p>The maximum number of patches to return (per page).</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAvailablePatchesInput {
+impl  DescribeAvailablePatchesInput  {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p><b>Windows Server</b></p>
     /// <p>Supported keys for Windows Server managed node patches include the following:</p>
@@ -140,17 +140,18 @@ impl DescribeAvailablePatchesInput {
     /// <p><b> <code>BUGZILLA_ID</code> </b></p>
     /// <p>Sample values: <code>1463241</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::PatchOrchestratorFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::PatchOrchestratorFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -165,7 +166,7 @@ impl DescribeAvailablePatchesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAvailablePatchesInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -241,9 +242,9 @@ impl DescribeAvailablePatchesInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::PatchOrchestratorFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p><b>Windows Server</b></p>
@@ -310,9 +311,8 @@ impl DescribeAvailablePatchesInputBuilder {
     /// <p><b> <code>BUGZILLA_ID</code> </b></p>
     /// <p>Sample values: <code>1463241</code></p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p><b>Windows Server</b></p>
@@ -379,7 +379,7 @@ impl DescribeAvailablePatchesInputBuilder {
     /// <p><b> <code>BUGZILLA_ID</code> </b></p>
     /// <p>Sample values: <code>1463241</code></p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchOrchestratorFilter>> {
         &self.filters
     }
     /// <p>The maximum number of patches to return (per page).</p>
@@ -389,8 +389,7 @@ impl DescribeAvailablePatchesInputBuilder {
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -403,24 +402,24 @@ impl DescribeAvailablePatchesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAvailablePatchesInput`](crate::operation::describe_available_patches::DescribeAvailablePatchesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_available_patches::DescribeAvailablePatchesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_available_patches::DescribeAvailablePatchesInput {
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_available_patches::DescribeAvailablePatchesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_available_patches::DescribeAvailablePatchesInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

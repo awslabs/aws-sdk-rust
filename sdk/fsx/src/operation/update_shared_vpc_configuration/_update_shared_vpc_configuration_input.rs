@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSharedVpcConfigurationInput {
+pub struct UpdateSharedVpcConfigurationInput  {
     /// <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file systems in shared subnets. Set to <code>true</code> to enable or <code>false</code> to disable.</p>
     pub enable_fsx_route_table_updates_from_participant_accounts: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSharedVpcConfigurationInput {
+impl  UpdateSharedVpcConfigurationInput  {
     /// <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file systems in shared subnets. Set to <code>true</code> to enable or <code>false</code> to disable.</p>
-    pub fn enable_fsx_route_table_updates_from_participant_accounts(&self) -> ::std::option::Option<&str> {
+    pub fn enable_fsx_route_table_updates_from_participant_accounts(&self) -> ::std::option::Option<& str> {
         self.enable_fsx_route_table_updates_from_participant_accounts.as_deref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateSharedVpcConfigurationInputBuilder {
     }
     /// <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file systems in shared subnets. Set to <code>true</code> to enable or <code>false</code> to disable.</p>
     pub fn set_enable_fsx_route_table_updates_from_participant_accounts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enable_fsx_route_table_updates_from_participant_accounts = input;
-        self
+        self.enable_fsx_route_table_updates_from_participant_accounts = input; self
     }
     /// <p>Specifies whether participant accounts can create FSx for ONTAP Multi-AZ file systems in shared subnets. Set to <code>true</code> to enable or <code>false</code> to disable.</p>
     pub fn get_enable_fsx_route_table_updates_from_participant_accounts(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,23 +53,22 @@ impl UpdateSharedVpcConfigurationInputBuilder {
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpdateSharedVpcConfigurationInput`](crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationInput {
-            enable_fsx_route_table_updates_from_participant_accounts: self.enable_fsx_route_table_updates_from_participant_accounts,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationInput {
+                enable_fsx_route_table_updates_from_participant_accounts: self.enable_fsx_route_table_updates_from_participant_accounts
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

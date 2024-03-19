@@ -3,7 +3,7 @@
 /// <p>The option that specifies individual data values for labels.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DataPathLabelType {
+pub struct DataPathLabelType  {
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual value of the field that is labeled.</p>
@@ -11,21 +11,21 @@ pub struct DataPathLabelType {
     /// <p>The visibility of the data label.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl DataPathLabelType {
+impl  DataPathLabelType  {
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The actual value of the field that is labeled.</p>
-    pub fn field_value(&self) -> ::std::option::Option<&str> {
+    pub fn field_value(&self) -> ::std::option::Option<& str> {
         self.field_value.as_deref()
     }
     /// <p>The visibility of the data label.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
-impl ::std::fmt::Debug for DataPathLabelType {
+impl  ::std::fmt::Debug for DataPathLabelType  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataPathLabelType");
         formatter.field("field_id", &self.field_id);
@@ -57,8 +57,7 @@ impl DataPathLabelTypeBuilder {
     }
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DataPathLabelTypeBuilder {
     }
     /// <p>The actual value of the field that is labeled.</p>
     pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_value = input;
-        self
+        self.field_value = input; self
     }
     /// <p>The actual value of the field that is labeled.</p>
     pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DataPathLabelTypeBuilder {
     }
     /// <p>The visibility of the data label.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of the data label.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -95,9 +92,12 @@ impl DataPathLabelTypeBuilder {
     /// Consumes the builder and constructs a [`DataPathLabelType`](crate::types::DataPathLabelType).
     pub fn build(self) -> crate::types::DataPathLabelType {
         crate::types::DataPathLabelType {
-            field_id: self.field_id,
-            field_value: self.field_value,
-            visibility: self.visibility,
+            field_id: self.field_id
+            ,
+            field_value: self.field_value
+            ,
+            visibility: self.visibility
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for DataPathLabelTypeBuilder {
         formatter.finish()
     }
 }
+

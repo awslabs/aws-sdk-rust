@@ -3,7 +3,7 @@
 /// <p>The environment template version data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EnvironmentTemplateVersion {
+pub struct EnvironmentTemplateVersion  {
     /// <p>The name of the version of an environment template.</p>
     pub template_name: ::std::string::String,
     /// <p>The latest major version that's associated with the version of an environment template.</p>
@@ -27,57 +27,53 @@ pub struct EnvironmentTemplateVersion {
     /// <p>The schema of the version of an environment template.</p>
     pub schema: ::std::option::Option<::std::string::String>,
 }
-impl EnvironmentTemplateVersion {
+impl  EnvironmentTemplateVersion  {
     /// <p>The name of the version of an environment template.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>The latest major version that's associated with the version of an environment template.</p>
-    pub fn major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.major_version.deref()
+    pub fn major_version(&self) -> & str {
+        use std::ops::Deref; self.major_version.deref()
     }
     /// <p>The minor version of an environment template.</p>
-    pub fn minor_version(&self) -> &str {
-        use std::ops::Deref;
-        self.minor_version.deref()
+    pub fn minor_version(&self) -> & str {
+        use std::ops::Deref; self.minor_version.deref()
     }
     /// <p>The recommended minor version of the environment template.</p>
-    pub fn recommended_minor_version(&self) -> ::std::option::Option<&str> {
+    pub fn recommended_minor_version(&self) -> ::std::option::Option<& str> {
         self.recommended_minor_version.as_deref()
     }
     /// <p>The status of the version of an environment template.</p>
-    pub fn status(&self) -> &crate::types::TemplateVersionStatus {
+    pub fn status(&self) -> & crate::types::TemplateVersionStatus {
         &self.status
     }
     /// <p>The status message of the version of an environment template.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>A description of the minor version of an environment template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The time when the version of an environment template was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time when the version of an environment template was last modified.</p>
-    pub fn last_modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_at
     }
     /// <p>The schema of the version of an environment template.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
 }
-impl ::std::fmt::Debug for EnvironmentTemplateVersion {
+impl  ::std::fmt::Debug for EnvironmentTemplateVersion  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentTemplateVersion");
         formatter.field("template_name", &self.template_name);
@@ -126,8 +122,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The name of the version of an environment template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the version of an environment template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The latest major version that's associated with the version of an environment template.</p>
     pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>The latest major version that's associated with the version of an environment template.</p>
     pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +150,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The minor version of an environment template.</p>
     pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.minor_version = input;
-        self
+        self.minor_version = input; self
     }
     /// <p>The minor version of an environment template.</p>
     pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +163,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The recommended minor version of the environment template.</p>
     pub fn set_recommended_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommended_minor_version = input;
-        self
+        self.recommended_minor_version = input; self
     }
     /// <p>The recommended minor version of the environment template.</p>
     pub fn get_recommended_minor_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +177,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The status of the version of an environment template.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the version of an environment template.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateVersionStatus> {
@@ -199,8 +190,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The status message of the version of an environment template.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message of the version of an environment template.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +203,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>A description of the minor version of an environment template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the minor version of an environment template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,8 +217,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the version of an environment template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +231,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The time when the version of an environment template was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the version of an environment template was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -258,8 +245,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The time when the version of an environment template was last modified.</p>
     pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_at = input;
-        self
+        self.last_modified_at = input; self
     }
     /// <p>The time when the version of an environment template was last modified.</p>
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -272,8 +258,7 @@ impl EnvironmentTemplateVersionBuilder {
     }
     /// <p>The schema of the version of an environment template.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema of the version of an environment template.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -289,54 +274,53 @@ impl EnvironmentTemplateVersionBuilder {
     /// - [`created_at`](crate::types::builders::EnvironmentTemplateVersionBuilder::created_at)
     /// - [`last_modified_at`](crate::types::builders::EnvironmentTemplateVersionBuilder::last_modified_at)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentTemplateVersion, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentTemplateVersion {
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building EnvironmentTemplateVersion",
-                )
-            })?,
-            major_version: self.major_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "major_version",
-                    "major_version was not specified but it is required when building EnvironmentTemplateVersion",
-                )
-            })?,
-            minor_version: self.minor_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "minor_version",
-                    "minor_version was not specified but it is required when building EnvironmentTemplateVersion",
-                )
-            })?,
-            recommended_minor_version: self.recommended_minor_version,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building EnvironmentTemplateVersion",
-                )
-            })?,
-            status_message: self.status_message,
-            description: self.description,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building EnvironmentTemplateVersion",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building EnvironmentTemplateVersion",
-                )
-            })?,
-            last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_at",
-                    "last_modified_at was not specified but it is required when building EnvironmentTemplateVersion",
-                )
-            })?,
-            schema: self.schema,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentTemplateVersion {
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building EnvironmentTemplateVersion")
+                    )?
+                ,
+                major_version: self.major_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("major_version", "major_version was not specified but it is required when building EnvironmentTemplateVersion")
+                    )?
+                ,
+                minor_version: self.minor_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("minor_version", "minor_version was not specified but it is required when building EnvironmentTemplateVersion")
+                    )?
+                ,
+                recommended_minor_version: self.recommended_minor_version
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building EnvironmentTemplateVersion")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+                description: self.description
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building EnvironmentTemplateVersion")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building EnvironmentTemplateVersion")
+                    )?
+                ,
+                last_modified_at: self.last_modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_at", "last_modified_at was not specified but it is required when building EnvironmentTemplateVersion")
+                    )?
+                ,
+                schema: self.schema
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EnvironmentTemplateVersionBuilder {
@@ -356,3 +340,4 @@ impl ::std::fmt::Debug for EnvironmentTemplateVersionBuilder {
         formatter.finish()
     }
 }
+

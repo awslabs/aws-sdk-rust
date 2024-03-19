@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClientAuthenticationSettingsInput {
+pub struct DescribeClientAuthenticationSettingsInput  {
     /// <p>The identifier of the directory for which to retrieve information.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
@@ -12,17 +12,17 @@ pub struct DescribeClientAuthenticationSettingsInput {
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeClientAuthenticationSettingsInput {
+impl  DescribeClientAuthenticationSettingsInput  {
     /// <p>The identifier of the directory for which to retrieve information.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
@@ -55,8 +55,7 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
     }
     /// <p>The identifier of the directory for which to retrieve information.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory for which to retrieve information.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
     }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
@@ -83,8 +81,7 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
     }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,27 +94,26 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeClientAuthenticationSettingsInput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput {
-                directory_id: self.directory_id,
-                r#type: self.r#type,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
+                directory_id: self.directory_id
+                ,
+                r#type: self.r#type
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

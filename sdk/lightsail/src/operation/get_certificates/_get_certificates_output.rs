@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCertificatesOutput {
+pub struct GetCertificatesOutput  {
     /// <p>An object that describes certificates.</p>
-    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
+    pub certificates: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateSummary>>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetCertificatesOutput {
+impl  GetCertificatesOutput  {
     /// <p>An object that describes certificates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
-    pub fn certificates(&self) -> &[crate::types::CertificateSummary] {
-        self.certificates.as_deref().unwrap_or_default()
+    pub fn certificates(&self) -> & [crate::types::CertificateSummary] {
+        self.certificates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCertificatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificatesOutput`](crate::operation::get_certificates::GetCertificatesOutput).
     pub fn builder() -> crate::operation::get_certificates::builders::GetCertificatesOutputBuilder {
@@ -37,7 +38,7 @@ impl GetCertificatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCertificatesOutputBuilder {
-    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetCertificatesOutputBuilder {
     /// <p>An object that describes certificates.</p>
     pub fn certificates(mut self, input: crate::types::CertificateSummary) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that describes certificates.</p>
-    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateSummary>>) -> Self {
+        self.certificates = input; self
     }
     /// <p>An object that describes certificates.</p>
-    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateSummary>> {
         &self.certificates
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -69,28 +69,30 @@ impl GetCertificatesOutputBuilder {
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCertificatesOutput`](crate::operation::get_certificates::GetCertificatesOutput).
     pub fn build(self) -> crate::operation::get_certificates::GetCertificatesOutput {
         crate::operation::get_certificates::GetCertificatesOutput {
-            certificates: self.certificates,
-            next_page_token: self.next_page_token,
+            certificates: self.certificates
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

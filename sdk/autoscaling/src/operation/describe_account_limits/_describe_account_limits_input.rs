@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountLimitsInput {}
+pub struct DescribeAccountLimitsInput  {
+}
 impl DescribeAccountLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
     pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsInputBuilder {
@@ -13,13 +14,15 @@ impl DescribeAccountLimitsInput {
 /// A builder for [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeAccountLimitsInputBuilder {}
+pub struct DescribeAccountLimitsInputBuilder {
+}
 impl DescribeAccountLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_account_limits::DescribeAccountLimitsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_account_limits::DescribeAccountLimitsInput {
+            }
+        )
     }
 }
+

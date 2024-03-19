@@ -3,13 +3,13 @@
 /// <p>Configuration for specifying the position in the topics to start replicating from.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationStartingPosition {
+pub struct ReplicationStartingPosition  {
     /// <p>The type of replication starting position.</p>
     pub r#type: ::std::option::Option<crate::types::ReplicationStartingPositionType>,
 }
-impl ReplicationStartingPosition {
+impl  ReplicationStartingPosition  {
     /// <p>The type of replication starting position.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ReplicationStartingPositionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ReplicationStartingPositionType> {
         self.r#type.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ReplicationStartingPositionBuilder {
     }
     /// <p>The type of replication starting position.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReplicationStartingPositionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of replication starting position.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ReplicationStartingPositionType> {
@@ -43,6 +42,10 @@ impl ReplicationStartingPositionBuilder {
     }
     /// Consumes the builder and constructs a [`ReplicationStartingPosition`](crate::types::ReplicationStartingPosition).
     pub fn build(self) -> crate::types::ReplicationStartingPosition {
-        crate::types::ReplicationStartingPosition { r#type: self.r#type }
+        crate::types::ReplicationStartingPosition {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

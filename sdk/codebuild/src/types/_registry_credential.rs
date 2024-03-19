@@ -10,7 +10,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with Secrets Manager Sample for CodeBuild</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistryCredential {
+pub struct RegistryCredential  {
     /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p><note>
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
@@ -18,16 +18,15 @@ pub struct RegistryCredential {
     /// <p>The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager.</p>
     pub credential_provider: crate::types::CredentialProviderType,
 }
-impl RegistryCredential {
+impl  RegistryCredential  {
     /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p><note>
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
-    pub fn credential(&self) -> &str {
-        use std::ops::Deref;
-        self.credential.deref()
+    pub fn credential(&self) -> & str {
+        use std::ops::Deref; self.credential.deref()
     }
     /// <p>The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager.</p>
-    pub fn credential_provider(&self) -> &crate::types::CredentialProviderType {
+    pub fn credential_provider(&self) -> & crate::types::CredentialProviderType {
         &self.credential_provider
     }
 }
@@ -58,8 +57,7 @@ impl RegistryCredentialBuilder {
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
     pub fn set_credential(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credential = input;
-        self
+        self.credential = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager.</p><note>
     /// <p>The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
@@ -75,8 +73,7 @@ impl RegistryCredentialBuilder {
     }
     /// <p>The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager.</p>
     pub fn set_credential_provider(mut self, input: ::std::option::Option<crate::types::CredentialProviderType>) -> Self {
-        self.credential_provider = input;
-        self
+        self.credential_provider = input; self
     }
     /// <p>The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager.</p>
     pub fn get_credential_provider(&self) -> &::std::option::Option<crate::types::CredentialProviderType> {
@@ -87,19 +84,20 @@ impl RegistryCredentialBuilder {
     /// - [`credential`](crate::types::builders::RegistryCredentialBuilder::credential)
     /// - [`credential_provider`](crate::types::builders::RegistryCredentialBuilder::credential_provider)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistryCredential, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistryCredential {
-            credential: self.credential.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "credential",
-                    "credential was not specified but it is required when building RegistryCredential",
-                )
-            })?,
-            credential_provider: self.credential_provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "credential_provider",
-                    "credential_provider was not specified but it is required when building RegistryCredential",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistryCredential {
+                credential: self.credential
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("credential", "credential was not specified but it is required when building RegistryCredential")
+                    )?
+                ,
+                credential_provider: self.credential_provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("credential_provider", "credential_provider was not specified but it is required when building RegistryCredential")
+                    )?
+                ,
+            }
+        )
     }
 }
+

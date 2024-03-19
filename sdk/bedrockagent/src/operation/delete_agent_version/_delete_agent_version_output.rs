@@ -3,7 +3,7 @@
 /// Delete Agent Version Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAgentVersionOutput {
+pub struct DeleteAgentVersionOutput  {
     /// Identifier for a resource.
     pub agent_id: ::std::string::String,
     /// Numerical Agent Version.
@@ -12,27 +12,25 @@ pub struct DeleteAgentVersionOutput {
     pub agent_status: crate::types::AgentStatus,
     _request_id: Option<String>,
 }
-impl DeleteAgentVersionOutput {
+impl  DeleteAgentVersionOutput  {
     /// Identifier for a resource.
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// Numerical Agent Version.
-    pub fn agent_version(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_version.deref()
+    pub fn agent_version(&self) -> & str {
+        use std::ops::Deref; self.agent_version.deref()
     }
     /// Schema Type for Action APIs.
-    pub fn agent_status(&self) -> &crate::types::AgentStatus {
+    pub fn agent_status(&self) -> & crate::types::AgentStatus {
         &self.agent_status
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAgentVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAgentVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAgentVersionOutput`](crate::operation::delete_agent_version::DeleteAgentVersionOutput).
     pub fn builder() -> crate::operation::delete_agent_version::builders::DeleteAgentVersionOutputBuilder {
@@ -58,8 +56,7 @@ impl DeleteAgentVersionOutputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl DeleteAgentVersionOutputBuilder {
     }
     /// Numerical Agent Version.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Numerical Agent Version.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,51 +84,47 @@ impl DeleteAgentVersionOutputBuilder {
     }
     /// Schema Type for Action APIs.
     pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.agent_status = input;
-        self
+        self.agent_status = input; self
     }
     /// Schema Type for Action APIs.
     pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
         &self.agent_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAgentVersionOutput`](crate::operation::delete_agent_version::DeleteAgentVersionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::operation::delete_agent_version::builders::DeleteAgentVersionOutputBuilder::agent_id)
     /// - [`agent_version`](crate::operation::delete_agent_version::builders::DeleteAgentVersionOutputBuilder::agent_version)
     /// - [`agent_status`](crate::operation::delete_agent_version::builders::DeleteAgentVersionOutputBuilder::agent_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_agent_version::DeleteAgentVersionOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_agent_version::DeleteAgentVersionOutput {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building DeleteAgentVersionOutput",
-                )
-            })?,
-            agent_version: self.agent_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_version",
-                    "agent_version was not specified but it is required when building DeleteAgentVersionOutput",
-                )
-            })?,
-            agent_status: self.agent_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_status",
-                    "agent_status was not specified but it is required when building DeleteAgentVersionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_agent_version::DeleteAgentVersionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_agent_version::DeleteAgentVersionOutput {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building DeleteAgentVersionOutput")
+                    )?
+                ,
+                agent_version: self.agent_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_version", "agent_version was not specified but it is required when building DeleteAgentVersionOutput")
+                    )?
+                ,
+                agent_status: self.agent_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_status", "agent_status was not specified but it is required when building DeleteAgentVersionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

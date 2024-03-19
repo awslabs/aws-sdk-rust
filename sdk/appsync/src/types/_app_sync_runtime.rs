@@ -3,21 +3,20 @@
 /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppSyncRuntime {
+pub struct AppSyncRuntime  {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
     pub name: crate::types::RuntimeName,
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
     pub runtime_version: ::std::string::String,
 }
-impl AppSyncRuntime {
+impl  AppSyncRuntime  {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
-    pub fn name(&self) -> &crate::types::RuntimeName {
+    pub fn name(&self) -> & crate::types::RuntimeName {
         &self.name
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-    pub fn runtime_version(&self) -> &str {
-        use std::ops::Deref;
-        self.runtime_version.deref()
+    pub fn runtime_version(&self) -> & str {
+        use std::ops::Deref; self.runtime_version.deref()
     }
 }
 impl AppSyncRuntime {
@@ -43,8 +42,7 @@ impl AppSyncRuntimeBuilder {
     }
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::RuntimeName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::RuntimeName> {
@@ -58,8 +56,7 @@ impl AppSyncRuntimeBuilder {
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
     pub fn set_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.runtime_version = input;
-        self
+        self.runtime_version = input; self
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
     pub fn get_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl AppSyncRuntimeBuilder {
     /// - [`name`](crate::types::builders::AppSyncRuntimeBuilder::name)
     /// - [`runtime_version`](crate::types::builders::AppSyncRuntimeBuilder::runtime_version)
     pub fn build(self) -> ::std::result::Result<crate::types::AppSyncRuntime, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppSyncRuntime {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AppSyncRuntime",
-                )
-            })?,
-            runtime_version: self.runtime_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "runtime_version",
-                    "runtime_version was not specified but it is required when building AppSyncRuntime",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppSyncRuntime {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AppSyncRuntime")
+                    )?
+                ,
+                runtime_version: self.runtime_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("runtime_version", "runtime_version was not specified but it is required when building AppSyncRuntime")
+                    )?
+                ,
+            }
+        )
     }
 }
+

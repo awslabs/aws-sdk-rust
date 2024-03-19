@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAuditFindingsInput {
+pub struct ListAuditFindingsInput  {
     /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>A filter to limit results to the findings for the specified audit check.</p>
@@ -20,17 +20,17 @@ pub struct ListAuditFindingsInput {
     /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
     pub list_suppressed_findings: ::std::option::Option<bool>,
 }
-impl ListAuditFindingsInput {
+impl  ListAuditFindingsInput  {
     /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>A filter to limit results to the findings for the specified audit check.</p>
-    pub fn check_name(&self) -> ::std::option::Option<&str> {
+    pub fn check_name(&self) -> ::std::option::Option<& str> {
         self.check_name.as_deref()
     }
     /// <p>Information identifying the noncompliant resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::ResourceIdentifier> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& crate::types::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -38,15 +38,15 @@ impl ListAuditFindingsInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
@@ -82,8 +82,7 @@ impl ListAuditFindingsInputBuilder {
     }
     /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl ListAuditFindingsInputBuilder {
     }
     /// <p>A filter to limit results to the findings for the specified audit check.</p>
     pub fn set_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_name = input;
-        self
+        self.check_name = input; self
     }
     /// <p>A filter to limit results to the findings for the specified audit check.</p>
     pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl ListAuditFindingsInputBuilder {
     }
     /// <p>Information identifying the noncompliant resource.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>Information identifying the noncompliant resource.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
@@ -124,8 +121,7 @@ impl ListAuditFindingsInputBuilder {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -138,8 +134,7 @@ impl ListAuditFindingsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +147,7 @@ impl ListAuditFindingsInputBuilder {
     }
     /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -166,8 +160,7 @@ impl ListAuditFindingsInputBuilder {
     }
     /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,26 +173,34 @@ impl ListAuditFindingsInputBuilder {
     }
     /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
     pub fn set_list_suppressed_findings(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.list_suppressed_findings = input;
-        self
+        self.list_suppressed_findings = input; self
     }
     /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
     pub fn get_list_suppressed_findings(&self) -> &::std::option::Option<bool> {
         &self.list_suppressed_findings
     }
     /// Consumes the builder and constructs a [`ListAuditFindingsInput`](crate::operation::list_audit_findings::ListAuditFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_audit_findings::ListAuditFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_audit_findings::ListAuditFindingsInput {
-            task_id: self.task_id,
-            check_name: self.check_name,
-            resource_identifier: self.resource_identifier,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            list_suppressed_findings: self.list_suppressed_findings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_audit_findings::ListAuditFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_audit_findings::ListAuditFindingsInput {
+                task_id: self.task_id
+                ,
+                check_name: self.check_name
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                list_suppressed_findings: self.list_suppressed_findings
+                ,
+            }
+        )
     }
 }
+

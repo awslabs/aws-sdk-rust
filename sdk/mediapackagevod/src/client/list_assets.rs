@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssets`](crate::operation::list_assets::builders::ListAssetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_max_results):<br>required: **false**<br>Upper bound on number of records to return.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_next_token):<br>required: **false**<br>A token used to resume pagination from the end of a previous request.<br>
     ///   - [`packaging_group_id(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::packaging_group_id) / [`set_packaging_group_id(Option<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_packaging_group_id):<br>required: **false**<br>Returns Assets associated with the specified PackagingGroup.<br>
-    /// - On success, responds with [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput) with field(s):
+                            /// - On success, responds with [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput) with field(s):
     ///   - [`assets(Option<Vec::<AssetShallow>>)`](crate::operation::list_assets::ListAssetsOutput::assets): A list of MediaPackage VOD Asset resources.
     ///   - [`next_token(Option<String>)`](crate::operation::list_assets::ListAssetsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::operation::list_assets::ListAssetsError)
+                            /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::operation::list_assets::ListAssetsError)
     pub fn list_assets(&self) -> crate::operation::list_assets::builders::ListAssetsFluentBuilder {
-        crate::operation::list_assets::builders::ListAssetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_assets::builders::ListAssetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, provides the bucket name and object key name that stores the reference data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ReferenceDataSourceDescription {
+pub struct S3ReferenceDataSourceDescription  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub bucket_arn: ::std::string::String,
     /// <p>Amazon S3 object key name.</p>
@@ -13,21 +13,19 @@ pub struct S3ReferenceDataSourceDescription {
     /// </note>
     pub reference_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl S3ReferenceDataSourceDescription {
+impl  S3ReferenceDataSourceDescription  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_arn.deref()
+    pub fn bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_arn.deref()
     }
     /// <p>Amazon S3 object key name.</p>
-    pub fn file_key(&self) -> &str {
-        use std::ops::Deref;
-        self.file_key.deref()
+    pub fn file_key(&self) -> & str {
+        use std::ops::Deref; self.file_key.deref()
     }
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    pub fn reference_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn reference_role_arn(&self) -> ::std::option::Option<& str> {
         self.reference_role_arn.as_deref()
     }
 }
@@ -55,8 +53,7 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +67,7 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     }
     /// <p>Amazon S3 object key name.</p>
     pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_key = input;
-        self
+        self.file_key = input; self
     }
     /// <p>Amazon S3 object key name.</p>
     pub fn get_file_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn set_reference_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_role_arn = input;
-        self
+        self.reference_role_arn = input; self
     }
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf to populate the in-application reference table.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
@@ -102,20 +97,22 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     /// - [`bucket_arn`](crate::types::builders::S3ReferenceDataSourceDescriptionBuilder::bucket_arn)
     /// - [`file_key`](crate::types::builders::S3ReferenceDataSourceDescriptionBuilder::file_key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3ReferenceDataSourceDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3ReferenceDataSourceDescription {
-            bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_arn",
-                    "bucket_arn was not specified but it is required when building S3ReferenceDataSourceDescription",
-                )
-            })?,
-            file_key: self.file_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_key",
-                    "file_key was not specified but it is required when building S3ReferenceDataSourceDescription",
-                )
-            })?,
-            reference_role_arn: self.reference_role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3ReferenceDataSourceDescription {
+                bucket_arn: self.bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_arn", "bucket_arn was not specified but it is required when building S3ReferenceDataSourceDescription")
+                    )?
+                ,
+                file_key: self.file_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_key", "file_key was not specified but it is required when building S3ReferenceDataSourceDescription")
+                    )?
+                ,
+                reference_role_arn: self.reference_role_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyInstanceEventWindowInput {
+pub struct ModifyInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The name of the event window.</p>
@@ -10,7 +10,7 @@ pub struct ModifyInstanceEventWindowInput {
     /// <p>The ID of the event window.</p>
     pub instance_event_window_id: ::std::option::Option<::std::string::String>,
     /// <p>The time ranges of the event window.</p>
-    pub time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
+    pub time_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEventWindowTimeRangeRequest>>,
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -30,24 +30,25 @@ pub struct ModifyInstanceEventWindowInput {
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
 }
-impl ModifyInstanceEventWindowInput {
+impl  ModifyInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The name of the event window.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_event_window_id(&self) -> ::std::option::Option<& str> {
         self.instance_event_window_id.as_deref()
     }
     /// <p>The time ranges of the event window.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_ranges.is_none()`.
-    pub fn time_ranges(&self) -> &[crate::types::InstanceEventWindowTimeRangeRequest] {
-        self.time_ranges.as_deref().unwrap_or_default()
+    pub fn time_ranges(&self) -> & [crate::types::InstanceEventWindowTimeRangeRequest] {
+        self.time_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
@@ -66,7 +67,7 @@ impl ModifyInstanceEventWindowInput {
     /// <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
-    pub fn cron_expression(&self) -> ::std::option::Option<&str> {
+    pub fn cron_expression(&self) -> ::std::option::Option<& str> {
         self.cron_expression.as_deref()
     }
 }
@@ -84,7 +85,7 @@ pub struct ModifyInstanceEventWindowInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_event_window_id: ::std::option::Option<::std::string::String>,
-    pub(crate) time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
+    pub(crate) time_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEventWindowTimeRangeRequest>>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
 }
 impl ModifyInstanceEventWindowInputBuilder {
@@ -95,8 +96,7 @@ impl ModifyInstanceEventWindowInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -109,8 +109,7 @@ impl ModifyInstanceEventWindowInputBuilder {
     }
     /// <p>The name of the event window.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event window.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl ModifyInstanceEventWindowInputBuilder {
     }
     /// <p>The ID of the event window.</p>
     pub fn set_instance_event_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_event_window_id = input;
-        self
+        self.instance_event_window_id = input; self
     }
     /// <p>The ID of the event window.</p>
     pub fn get_instance_event_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,17 +136,16 @@ impl ModifyInstanceEventWindowInputBuilder {
     /// <p>The time ranges of the event window.</p>
     pub fn time_ranges(mut self, input: crate::types::InstanceEventWindowTimeRangeRequest) -> Self {
         let mut v = self.time_ranges.unwrap_or_default();
-        v.push(input);
-        self.time_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.time_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The time ranges of the event window.</p>
-    pub fn set_time_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>) -> Self {
-        self.time_ranges = input;
-        self
+    pub fn set_time_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEventWindowTimeRangeRequest>>) -> Self {
+        self.time_ranges = input; self
     }
     /// <p>The time ranges of the event window.</p>
-    pub fn get_time_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>> {
+    pub fn get_time_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceEventWindowTimeRangeRequest>> {
         &self.time_ranges
     }
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
@@ -190,8 +187,7 @@ impl ModifyInstanceEventWindowInputBuilder {
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cron_expression = input;
-        self
+        self.cron_expression = input; self
     }
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
@@ -214,18 +210,21 @@ impl ModifyInstanceEventWindowInputBuilder {
         &self.cron_expression
     }
     /// Consumes the builder and constructs a [`ModifyInstanceEventWindowInput`](crate::operation::modify_instance_event_window::ModifyInstanceEventWindowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_event_window::ModifyInstanceEventWindowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_instance_event_window::ModifyInstanceEventWindowInput {
-            dry_run: self.dry_run,
-            name: self.name,
-            instance_event_window_id: self.instance_event_window_id,
-            time_ranges: self.time_ranges,
-            cron_expression: self.cron_expression,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_event_window::ModifyInstanceEventWindowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_instance_event_window::ModifyInstanceEventWindowInput {
+                dry_run: self.dry_run
+                ,
+                name: self.name
+                ,
+                instance_event_window_id: self.instance_event_window_id
+                ,
+                time_ranges: self.time_ranges
+                ,
+                cron_expression: self.cron_expression
+                ,
+            }
+        )
     }
 }
+

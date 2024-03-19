@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelParameterVersionInput {
+pub struct LabelParameterVersionInput  {
     /// <p>The parameter name on which you want to attach one or more labels.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
@@ -10,13 +10,13 @@ pub struct LabelParameterVersionInput {
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
     pub parameter_version: ::std::option::Option<i64>,
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl LabelParameterVersionInput {
+impl  LabelParameterVersionInput  {
     /// <p>The parameter name on which you want to attach one or more labels.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
@@ -24,10 +24,11 @@ impl LabelParameterVersionInput {
         self.parameter_version
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[::std::string::String] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [::std::string::String] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LabelParameterVersionInput {
@@ -43,7 +44,7 @@ impl LabelParameterVersionInput {
 pub struct LabelParameterVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_version: ::std::option::Option<i64>,
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl LabelParameterVersionInputBuilder {
     /// <p>The parameter name on which you want to attach one or more labels.</p><note>
@@ -58,8 +59,7 @@ impl LabelParameterVersionInputBuilder {
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The parameter name on which you want to attach one or more labels.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
@@ -74,8 +74,7 @@ impl LabelParameterVersionInputBuilder {
     }
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
     pub fn set_parameter_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.parameter_version = input;
-        self
+        self.parameter_version = input; self
     }
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
     pub fn get_parameter_version(&self) -> &::std::option::Option<i64> {
@@ -88,28 +87,30 @@ impl LabelParameterVersionInputBuilder {
     /// <p>One or more labels to attach to the specified parameter version.</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// Consumes the builder and constructs a [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::label_parameter_version::LabelParameterVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::label_parameter_version::LabelParameterVersionInput {
-            name: self.name,
-            parameter_version: self.parameter_version,
-            labels: self.labels,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::label_parameter_version::LabelParameterVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::label_parameter_version::LabelParameterVersionInput {
+                name: self.name
+                ,
+                parameter_version: self.parameter_version
+                ,
+                labels: self.labels
+                ,
+            }
+        )
     }
 }
+

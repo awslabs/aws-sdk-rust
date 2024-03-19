@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ResetPasswordInput {
+pub struct ResetPasswordInput  {
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user for whom the password is reset.</p>
@@ -10,21 +10,21 @@ pub struct ResetPasswordInput {
     /// <p>The new password for the user.</p>
     pub password: ::std::option::Option<::std::string::String>,
 }
-impl ResetPasswordInput {
+impl  ResetPasswordInput  {
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the user for whom the password is reset.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The new password for the user.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl ::std::fmt::Debug for ResetPasswordInput {
+impl  ::std::fmt::Debug for ResetPasswordInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResetPasswordInput");
         formatter.field("organization_id", &self.organization_id);
@@ -57,8 +57,7 @@ impl ResetPasswordInputBuilder {
     }
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl ResetPasswordInputBuilder {
     }
     /// <p>The identifier of the user for whom the password is reset.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user for whom the password is reset.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,22 +85,24 @@ impl ResetPasswordInputBuilder {
     }
     /// <p>The new password for the user.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The new password for the user.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
     /// Consumes the builder and constructs a [`ResetPasswordInput`](crate::operation::reset_password::ResetPasswordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_password::ResetPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reset_password::ResetPasswordInput {
-            organization_id: self.organization_id,
-            user_id: self.user_id,
-            password: self.password,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_password::ResetPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_password::ResetPasswordInput {
+                organization_id: self.organization_id
+                ,
+                user_id: self.user_id
+                ,
+                password: self.password
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ResetPasswordInputBuilder {
@@ -114,3 +114,4 @@ impl ::std::fmt::Debug for ResetPasswordInputBuilder {
         formatter.finish()
     }
 }
+

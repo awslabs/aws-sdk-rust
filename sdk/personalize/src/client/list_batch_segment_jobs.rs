@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBatchSegmentJobs`](crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`solution_version_arn(impl Into<String>)`](crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::set_solution_version_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of batch segment job results to return in each page. The default value is 100.</p><br>
-    /// - On success, responds with [`ListBatchSegmentJobsOutput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput) with field(s):
+                            /// - On success, responds with [`ListBatchSegmentJobsOutput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput) with field(s):
     ///   - [`batch_segment_jobs(Option<Vec::<BatchSegmentJobSummary>>)`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput::batch_segment_jobs): <p>A list containing information on each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListBatchSegmentJobsError>`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsError)
+                            /// - On failure, responds with [`SdkError<ListBatchSegmentJobsError>`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsError)
     pub fn list_batch_segment_jobs(&self) -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder {
-        crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

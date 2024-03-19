@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateMacOutput {
+pub struct GenerateMacOutput  {
     /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
     /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
     pub mac: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -12,26 +12,26 @@ pub struct GenerateMacOutput {
     pub key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GenerateMacOutput {
+impl  GenerateMacOutput  {
     /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
     /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
-    pub fn mac(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn mac(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.mac.as_ref()
     }
     /// <p>The MAC algorithm that was used to generate the HMAC.</p>
-    pub fn mac_algorithm(&self) -> ::std::option::Option<&crate::types::MacAlgorithmSpec> {
+    pub fn mac_algorithm(&self) -> ::std::option::Option<& crate::types::MacAlgorithmSpec> {
         self.mac_algorithm.as_ref()
     }
     /// <p>The HMAC KMS key used in the operation.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GenerateMacOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GenerateMacOutput {
     /// Creates a new builder-style object to manufacture [`GenerateMacOutput`](crate::operation::generate_mac::GenerateMacOutput).
     pub fn builder() -> crate::operation::generate_mac::builders::GenerateMacOutputBuilder {
@@ -58,8 +58,7 @@ impl GenerateMacOutputBuilder {
     /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
     /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
     pub fn set_mac(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.mac = input;
-        self
+        self.mac = input; self
     }
     /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
     /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
@@ -73,8 +72,7 @@ impl GenerateMacOutputBuilder {
     }
     /// <p>The MAC algorithm that was used to generate the HMAC.</p>
     pub fn set_mac_algorithm(mut self, input: ::std::option::Option<crate::types::MacAlgorithmSpec>) -> Self {
-        self.mac_algorithm = input;
-        self
+        self.mac_algorithm = input; self
     }
     /// <p>The MAC algorithm that was used to generate the HMAC.</p>
     pub fn get_mac_algorithm(&self) -> &::std::option::Option<crate::types::MacAlgorithmSpec> {
@@ -87,29 +85,32 @@ impl GenerateMacOutputBuilder {
     }
     /// <p>The HMAC KMS key used in the operation.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The HMAC KMS key used in the operation.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GenerateMacOutput`](crate::operation::generate_mac::GenerateMacOutput).
     pub fn build(self) -> crate::operation::generate_mac::GenerateMacOutput {
         crate::operation::generate_mac::GenerateMacOutput {
-            mac: self.mac,
-            mac_algorithm: self.mac_algorithm,
-            key_id: self.key_id,
+            mac: self.mac
+            ,
+            mac_algorithm: self.mac_algorithm
+            ,
+            key_id: self.key_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

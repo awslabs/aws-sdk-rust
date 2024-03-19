@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAggregatedUtterancesInput {
+pub struct ListAggregatedUtterancesInput  {
     /// <p>The unique identifier of the bot associated with this request.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
@@ -16,49 +16,50 @@ pub struct ListAggregatedUtterancesInput {
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
     pub sort_by: ::std::option::Option<crate::types::AggregatedUtterancesSortBy>,
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::AggregatedUtterancesFilter>>,
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAggregatedUtterancesInput {
+impl  ListAggregatedUtterancesInput  {
     /// <p>The unique identifier of the bot associated with this request.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
-    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> ::std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
-    pub fn aggregation_duration(&self) -> ::std::option::Option<&crate::types::UtteranceAggregationDuration> {
+    pub fn aggregation_duration(&self) -> ::std::option::Option<& crate::types::UtteranceAggregationDuration> {
         self.aggregation_duration.as_ref()
     }
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::AggregatedUtterancesSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::AggregatedUtterancesSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::AggregatedUtterancesFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::AggregatedUtterancesFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -79,7 +80,7 @@ pub struct ListAggregatedUtterancesInputBuilder {
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation_duration: ::std::option::Option<crate::types::UtteranceAggregationDuration>,
     pub(crate) sort_by: ::std::option::Option<crate::types::AggregatedUtterancesSortBy>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::AggregatedUtterancesFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -92,8 +93,7 @@ impl ListAggregatedUtterancesInputBuilder {
     }
     /// <p>The unique identifier of the bot associated with this request.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot associated with this request.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl ListAggregatedUtterancesInputBuilder {
     }
     /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_id = input;
-        self
+        self.bot_alias_id = input; self
     }
     /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
     pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl ListAggregatedUtterancesInputBuilder {
     }
     /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl ListAggregatedUtterancesInputBuilder {
     }
     /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +147,7 @@ impl ListAggregatedUtterancesInputBuilder {
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
     pub fn set_aggregation_duration(mut self, input: ::std::option::Option<crate::types::UtteranceAggregationDuration>) -> Self {
-        self.aggregation_duration = input;
-        self
+        self.aggregation_duration = input; self
     }
     /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
     pub fn get_aggregation_duration(&self) -> &::std::option::Option<crate::types::UtteranceAggregationDuration> {
@@ -164,8 +160,7 @@ impl ListAggregatedUtterancesInputBuilder {
     }
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesSortBy> {
@@ -178,17 +173,16 @@ impl ListAggregatedUtterancesInputBuilder {
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub fn filters(mut self, input: crate::types::AggregatedUtterancesFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AggregatedUtterancesFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AggregatedUtterancesFilter>> {
         &self.filters
     }
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
@@ -198,8 +192,7 @@ impl ListAggregatedUtterancesInputBuilder {
     }
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -212,30 +205,36 @@ impl ListAggregatedUtterancesInputBuilder {
     }
     /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAggregatedUtterancesInput`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput {
-            bot_id: self.bot_id,
-            bot_alias_id: self.bot_alias_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            aggregation_duration: self.aggregation_duration,
-            sort_by: self.sort_by,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput {
+                bot_id: self.bot_id
+                ,
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                aggregation_duration: self.aggregation_duration
+                ,
+                sort_by: self.sort_by
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

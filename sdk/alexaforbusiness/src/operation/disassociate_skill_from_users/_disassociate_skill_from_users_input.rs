@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateSkillFromUsersInput {
+pub struct DisassociateSkillFromUsersInput  {
     /// <p>The private skill ID you want to make unavailable for enrolled users.</p>
     pub skill_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateSkillFromUsersInput {
+impl  DisassociateSkillFromUsersInput  {
     /// <p>The private skill ID you want to make unavailable for enrolled users.</p>
-    pub fn skill_id(&self) -> ::std::option::Option<&str> {
+    pub fn skill_id(&self) -> ::std::option::Option<& str> {
         self.skill_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DisassociateSkillFromUsersInputBuilder {
     }
     /// <p>The private skill ID you want to make unavailable for enrolled users.</p>
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_id = input;
-        self
+        self.skill_id = input; self
     }
     /// <p>The private skill ID you want to make unavailable for enrolled users.</p>
     pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.skill_id
     }
     /// Consumes the builder and constructs a [`DisassociateSkillFromUsersInput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput { skill_id: self.skill_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput {
+                skill_id: self.skill_id
+                ,
+            }
+        )
     }
 }
+

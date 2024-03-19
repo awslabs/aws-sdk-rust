@@ -3,66 +3,71 @@
 /// A request to update an input.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInputInput {
+pub struct UpdateInputInput  {
     /// Destination settings for PUSH type inputs.
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::InputDestinationRequest>>,
     /// Settings for the devices.
-    pub input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>>,
+    pub input_devices: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceRequest>>,
     /// Unique ID of the input.
     pub input_id: ::std::option::Option<::std::string::String>,
     /// A list of security groups referenced by IDs to attach to the input.
-    pub input_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub input_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub media_connect_flows: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
+    pub media_connect_flows: ::std::option::Option<::std::vec::Vec::<crate::types::MediaConnectFlowRequest>>,
     /// Name of the input.
     pub name: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::InputSourceRequest>>,
 }
-impl UpdateInputInput {
+impl  UpdateInputInput  {
     /// Destination settings for PUSH type inputs.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::InputDestinationRequest] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::InputDestinationRequest] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// Settings for the devices.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_devices.is_none()`.
-    pub fn input_devices(&self) -> &[crate::types::InputDeviceRequest] {
-        self.input_devices.as_deref().unwrap_or_default()
+    pub fn input_devices(&self) -> & [crate::types::InputDeviceRequest] {
+        self.input_devices.as_deref()
+        .unwrap_or_default()
     }
     /// Unique ID of the input.
-    pub fn input_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_id(&self) -> ::std::option::Option<& str> {
         self.input_id.as_deref()
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_security_groups.is_none()`.
-    pub fn input_security_groups(&self) -> &[::std::string::String] {
-        self.input_security_groups.as_deref().unwrap_or_default()
+    pub fn input_security_groups(&self) -> & [::std::string::String] {
+        self.input_security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_connect_flows.is_none()`.
-    pub fn media_connect_flows(&self) -> &[crate::types::MediaConnectFlowRequest] {
-        self.media_connect_flows.as_deref().unwrap_or_default()
+    pub fn media_connect_flows(&self) -> & [crate::types::MediaConnectFlowRequest] {
+        self.media_connect_flows.as_deref()
+        .unwrap_or_default()
     }
     /// Name of the input.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::InputSourceRequest] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::InputSourceRequest] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateInputInput {
@@ -76,14 +81,14 @@ impl UpdateInputInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInputInputBuilder {
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
-    pub(crate) input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::InputDestinationRequest>>,
+    pub(crate) input_devices: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceRequest>>,
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
-    pub(crate) input_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) media_connect_flows: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
+    pub(crate) input_security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) media_connect_flows: ::std::option::Option<::std::vec::Vec::<crate::types::MediaConnectFlowRequest>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::InputSourceRequest>>,
 }
 impl UpdateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -93,17 +98,16 @@ impl UpdateInputInputBuilder {
     /// Destination settings for PUSH type inputs.
     pub fn destinations(mut self, input: crate::types::InputDestinationRequest) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// Destination settings for PUSH type inputs.
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputDestinationRequest>>) -> Self {
+        self.destinations = input; self
     }
     /// Destination settings for PUSH type inputs.
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputDestinationRequest>> {
         &self.destinations
     }
     /// Appends an item to `input_devices`.
@@ -113,17 +117,16 @@ impl UpdateInputInputBuilder {
     /// Settings for the devices.
     pub fn input_devices(mut self, input: crate::types::InputDeviceRequest) -> Self {
         let mut v = self.input_devices.unwrap_or_default();
-        v.push(input);
-        self.input_devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_devices = ::std::option::Option::Some(v);
+                        self
     }
     /// Settings for the devices.
-    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>>) -> Self {
-        self.input_devices = input;
-        self
+    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceRequest>>) -> Self {
+        self.input_devices = input; self
     }
     /// Settings for the devices.
-    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>> {
+    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceRequest>> {
         &self.input_devices
     }
     /// Unique ID of the input.
@@ -134,8 +137,7 @@ impl UpdateInputInputBuilder {
     }
     /// Unique ID of the input.
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_id = input;
-        self
+        self.input_id = input; self
     }
     /// Unique ID of the input.
     pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,17 +150,16 @@ impl UpdateInputInputBuilder {
     /// A list of security groups referenced by IDs to attach to the input.
     pub fn input_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.input_security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.input_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.input_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn set_input_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.input_security_groups = input;
-        self
+    pub fn set_input_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.input_security_groups = input; self
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn get_input_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_input_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.input_security_groups
     }
     /// Appends an item to `media_connect_flows`.
@@ -168,17 +169,16 @@ impl UpdateInputInputBuilder {
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     pub fn media_connect_flows(mut self, input: crate::types::MediaConnectFlowRequest) -> Self {
         let mut v = self.media_connect_flows.unwrap_or_default();
-        v.push(input);
-        self.media_connect_flows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.media_connect_flows = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub fn set_media_connect_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>) -> Self {
-        self.media_connect_flows = input;
-        self
+    pub fn set_media_connect_flows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaConnectFlowRequest>>) -> Self {
+        self.media_connect_flows = input; self
     }
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub fn get_media_connect_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>> {
+    pub fn get_media_connect_flows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaConnectFlowRequest>> {
         &self.media_connect_flows
     }
     /// Name of the input.
@@ -188,8 +188,7 @@ impl UpdateInputInputBuilder {
     }
     /// Name of the input.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name of the input.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +201,7 @@ impl UpdateInputInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,30 +214,40 @@ impl UpdateInputInputBuilder {
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub fn sources(mut self, input: crate::types::InputSourceRequest) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputSourceRequest>>) -> Self {
+        self.sources = input; self
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputSourceRequest>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_input::UpdateInputInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_input::UpdateInputInput {
-            destinations: self.destinations,
-            input_devices: self.input_devices,
-            input_id: self.input_id,
-            input_security_groups: self.input_security_groups,
-            media_connect_flows: self.media_connect_flows,
-            name: self.name,
-            role_arn: self.role_arn,
-            sources: self.sources,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_input::UpdateInputInput {
+                destinations: self.destinations
+                ,
+                input_devices: self.input_devices
+                ,
+                input_id: self.input_id
+                ,
+                input_security_groups: self.input_security_groups
+                ,
+                media_connect_flows: self.media_connect_flows
+                ,
+                name: self.name
+                ,
+                role_arn: self.role_arn
+                ,
+                sources: self.sources
+                ,
+            }
+        )
     }
 }
+

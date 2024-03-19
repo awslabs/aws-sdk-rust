@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExportOutput {
+pub struct DeleteExportOutput  {
     /// <p>The unique identifier of the deleted export.</p>
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     _request_id: Option<String>,
 }
-impl DeleteExportOutput {
+impl  DeleteExportOutput  {
     /// <p>The unique identifier of the deleted export.</p>
-    pub fn export_id(&self) -> ::std::option::Option<&str> {
+    pub fn export_id(&self) -> ::std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
-    pub fn export_status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
+    pub fn export_status(&self) -> ::std::option::Option<& crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteExportOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExportOutput`](crate::operation::delete_export::DeleteExportOutput).
     pub fn builder() -> crate::operation::delete_export::builders::DeleteExportOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteExportOutputBuilder {
     }
     /// <p>The unique identifier of the deleted export.</p>
     pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// <p>The unique identifier of the deleted export.</p>
     pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteExportOutputBuilder {
     }
     /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
     pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
-        self.export_status = input;
-        self
+        self.export_status = input; self
     }
     /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
     pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
         &self.export_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteExportOutput`](crate::operation::delete_export::DeleteExportOutput).
     pub fn build(self) -> crate::operation::delete_export::DeleteExportOutput {
         crate::operation::delete_export::DeleteExportOutput {
-            export_id: self.export_id,
-            export_status: self.export_status,
+            export_id: self.export_id
+            ,
+            export_status: self.export_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

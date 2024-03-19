@@ -3,7 +3,7 @@
 /// <p>Describes a NAT gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NatGateway {
+pub struct NatGateway  {
     /// <p>The date and time the NAT gateway was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
@@ -27,7 +27,7 @@ pub struct NatGateway {
     /// </ul>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub nat_gateway_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::NatGatewayAddress>>,
     /// <p>The ID of the NAT gateway.</p>
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
@@ -51,21 +51,21 @@ pub struct NatGateway {
     /// <p>The ID of the VPC in which the NAT gateway is located.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the NAT gateway.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
     pub connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
 }
-impl NatGateway {
+impl  NatGateway  {
     /// <p>The date and time the NAT gateway was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
-    pub fn delete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delete_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delete_time.as_ref()
     }
     /// <p>If the NAT gateway could not be created, specifies the error code for the failure. (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p>
@@ -83,21 +83,22 @@ impl NatGateway {
     /// <li>
     /// <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p></li>
     /// </ul>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_addresses.is_none()`.
-    pub fn nat_gateway_addresses(&self) -> &[crate::types::NatGatewayAddress] {
-        self.nat_gateway_addresses.as_deref().unwrap_or_default()
+    pub fn nat_gateway_addresses(&self) -> & [crate::types::NatGatewayAddress] {
+        self.nat_gateway_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn nat_gateway_id(&self) -> ::std::option::Option<& str> {
         self.nat_gateway_id.as_deref()
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
-    pub fn provisioned_bandwidth(&self) -> ::std::option::Option<&crate::types::ProvisionedBandwidth> {
+    pub fn provisioned_bandwidth(&self) -> ::std::option::Option<& crate::types::ProvisionedBandwidth> {
         self.provisioned_bandwidth.as_ref()
     }
     /// <p>The state of the NAT gateway.</p>
@@ -113,25 +114,26 @@ impl NatGateway {
     /// <li>
     /// <p><code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::NatGatewayState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::NatGatewayState> {
         self.state.as_ref()
     }
     /// <p>The ID of the subnet in which the NAT gateway is located.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the VPC in which the NAT gateway is located.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The tags for the NAT gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
-    pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
+    pub fn connectivity_type(&self) -> ::std::option::Option<& crate::types::ConnectivityType> {
         self.connectivity_type.as_ref()
     }
 }
@@ -150,13 +152,13 @@ pub struct NatGatewayBuilder {
     pub(crate) delete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub(crate) nat_gateway_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::NatGatewayAddress>>,
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_bandwidth: ::std::option::Option<crate::types::ProvisionedBandwidth>,
     pub(crate) state: ::std::option::Option<crate::types::NatGatewayState>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
 }
 impl NatGatewayBuilder {
@@ -167,8 +169,7 @@ impl NatGatewayBuilder {
     }
     /// <p>The date and time the NAT gateway was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The date and time the NAT gateway was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +182,7 @@ impl NatGatewayBuilder {
     }
     /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
     pub fn set_delete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delete_time = input;
-        self
+        self.delete_time = input; self
     }
     /// <p>The date and time the NAT gateway was deleted, if applicable.</p>
     pub fn get_delete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,8 +195,7 @@ impl NatGatewayBuilder {
     }
     /// <p>If the NAT gateway could not be created, specifies the error code for the failure. (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>If the NAT gateway could not be created, specifies the error code for the failure. (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +236,7 @@ impl NatGatewayBuilder {
     /// <p>For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."</p></li>
     /// </ul>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the error code.</p>
     /// <ul>
@@ -265,17 +263,16 @@ impl NatGatewayBuilder {
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
     pub fn nat_gateway_addresses(mut self, input: crate::types::NatGatewayAddress) -> Self {
         let mut v = self.nat_gateway_addresses.unwrap_or_default();
-        v.push(input);
-        self.nat_gateway_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nat_gateway_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub fn set_nat_gateway_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>) -> Self {
-        self.nat_gateway_addresses = input;
-        self
+    pub fn set_nat_gateway_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NatGatewayAddress>>) -> Self {
+        self.nat_gateway_addresses = input; self
     }
     /// <p>Information about the IP addresses and network interface associated with the NAT gateway.</p>
-    pub fn get_nat_gateway_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
+    pub fn get_nat_gateway_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NatGatewayAddress>> {
         &self.nat_gateway_addresses
     }
     /// <p>The ID of the NAT gateway.</p>
@@ -285,8 +282,7 @@ impl NatGatewayBuilder {
     }
     /// <p>The ID of the NAT gateway.</p>
     pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nat_gateway_id = input;
-        self
+        self.nat_gateway_id = input; self
     }
     /// <p>The ID of the NAT gateway.</p>
     pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,8 +295,7 @@ impl NatGatewayBuilder {
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     pub fn set_provisioned_bandwidth(mut self, input: ::std::option::Option<crate::types::ProvisionedBandwidth>) -> Self {
-        self.provisioned_bandwidth = input;
-        self
+        self.provisioned_bandwidth = input; self
     }
     /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     pub fn get_provisioned_bandwidth(&self) -> &::std::option::Option<crate::types::ProvisionedBandwidth> {
@@ -337,8 +332,7 @@ impl NatGatewayBuilder {
     /// <p><code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::NatGatewayState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the NAT gateway.</p>
     /// <ul>
@@ -363,8 +357,7 @@ impl NatGatewayBuilder {
     }
     /// <p>The ID of the subnet in which the NAT gateway is located.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet in which the NAT gateway is located.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -377,8 +370,7 @@ impl NatGatewayBuilder {
     }
     /// <p>The ID of the VPC in which the NAT gateway is located.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC in which the NAT gateway is located.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -391,17 +383,16 @@ impl NatGatewayBuilder {
     /// <p>The tags for the NAT gateway.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the NAT gateway.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the NAT gateway.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
@@ -411,8 +402,7 @@ impl NatGatewayBuilder {
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
     pub fn set_connectivity_type(mut self, input: ::std::option::Option<crate::types::ConnectivityType>) -> Self {
-        self.connectivity_type = input;
-        self
+        self.connectivity_type = input; self
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
     pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
@@ -421,18 +411,31 @@ impl NatGatewayBuilder {
     /// Consumes the builder and constructs a [`NatGateway`](crate::types::NatGateway).
     pub fn build(self) -> crate::types::NatGateway {
         crate::types::NatGateway {
-            create_time: self.create_time,
-            delete_time: self.delete_time,
-            failure_code: self.failure_code,
-            failure_message: self.failure_message,
-            nat_gateway_addresses: self.nat_gateway_addresses,
-            nat_gateway_id: self.nat_gateway_id,
-            provisioned_bandwidth: self.provisioned_bandwidth,
-            state: self.state,
-            subnet_id: self.subnet_id,
-            vpc_id: self.vpc_id,
-            tags: self.tags,
-            connectivity_type: self.connectivity_type,
+            create_time: self.create_time
+            ,
+            delete_time: self.delete_time
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_message: self.failure_message
+            ,
+            nat_gateway_addresses: self.nat_gateway_addresses
+            ,
+            nat_gateway_id: self.nat_gateway_id
+            ,
+            provisioned_bandwidth: self.provisioned_bandwidth
+            ,
+            state: self.state
+            ,
+            subnet_id: self.subnet_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            tags: self.tags
+            ,
+            connectivity_type: self.connectivity_type
+            ,
         }
     }
 }
+

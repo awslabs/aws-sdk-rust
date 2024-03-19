@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetResourceLogLevelInput {
+pub struct ResetResourceLogLevelInput  {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
-impl ResetResourceLogLevelInput {
+impl  ResetResourceLogLevelInput  {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResetResourceLogLevelInputBuilder {
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl ResetResourceLogLevelInputBuilder {
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResetResourceLogLevelInput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_resource_log_level::ResetResourceLogLevelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::reset_resource_log_level::ResetResourceLogLevelInput {
-            resource_identifier: self.resource_identifier,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_resource_log_level::ResetResourceLogLevelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_resource_log_level::ResetResourceLogLevelInput {
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

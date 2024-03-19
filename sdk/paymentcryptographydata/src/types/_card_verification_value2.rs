@@ -3,15 +3,14 @@
 /// <p>Card data parameters that are required to verify Card Verification Value (CVV2) for the payment card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CardVerificationValue2 {
+pub struct CardVerificationValue2  {
     /// <p>The expiry date of a payment card.</p>
     pub card_expiry_date: ::std::string::String,
 }
-impl CardVerificationValue2 {
+impl  CardVerificationValue2  {
     /// <p>The expiry date of a payment card.</p>
-    pub fn card_expiry_date(&self) -> &str {
-        use std::ops::Deref;
-        self.card_expiry_date.deref()
+    pub fn card_expiry_date(&self) -> & str {
+        use std::ops::Deref; self.card_expiry_date.deref()
     }
 }
 impl CardVerificationValue2 {
@@ -36,8 +35,7 @@ impl CardVerificationValue2Builder {
     }
     /// <p>The expiry date of a payment card.</p>
     pub fn set_card_expiry_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.card_expiry_date = input;
-        self
+        self.card_expiry_date = input; self
     }
     /// <p>The expiry date of a payment card.</p>
     pub fn get_card_expiry_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl CardVerificationValue2Builder {
     /// This method will fail if any of the following fields are not set:
     /// - [`card_expiry_date`](crate::types::builders::CardVerificationValue2Builder::card_expiry_date)
     pub fn build(self) -> ::std::result::Result<crate::types::CardVerificationValue2, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CardVerificationValue2 {
-            card_expiry_date: self.card_expiry_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "card_expiry_date",
-                    "card_expiry_date was not specified but it is required when building CardVerificationValue2",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CardVerificationValue2 {
+                card_expiry_date: self.card_expiry_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("card_expiry_date", "card_expiry_date was not specified but it is required when building CardVerificationValue2")
+                    )?
+                ,
+            }
+        )
     }
 }
+

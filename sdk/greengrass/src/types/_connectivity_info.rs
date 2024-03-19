@@ -3,7 +3,7 @@
 /// Information about a Greengrass core's connectivity.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectivityInfo {
+pub struct ConnectivityInfo  {
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
     pub host_address: ::std::option::Option<::std::string::String>,
     /// The ID of the connectivity information.
@@ -13,17 +13,17 @@ pub struct ConnectivityInfo {
     /// The port of the Greengrass core. Usually 8883.
     pub port_number: ::std::option::Option<i32>,
 }
-impl ConnectivityInfo {
+impl  ConnectivityInfo  {
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
-    pub fn host_address(&self) -> ::std::option::Option<&str> {
+    pub fn host_address(&self) -> ::std::option::Option<& str> {
         self.host_address.as_deref()
     }
     /// The ID of the connectivity information.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Metadata for this endpoint.
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// The port of the Greengrass core. Usually 8883.
@@ -55,8 +55,7 @@ impl ConnectivityInfoBuilder {
     }
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
     pub fn set_host_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_address = input;
-        self
+        self.host_address = input; self
     }
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
     pub fn get_host_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ConnectivityInfoBuilder {
     }
     /// The ID of the connectivity information.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the connectivity information.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ConnectivityInfoBuilder {
     }
     /// Metadata for this endpoint.
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// Metadata for this endpoint.
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ConnectivityInfoBuilder {
     }
     /// The port of the Greengrass core. Usually 8883.
     pub fn set_port_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port_number = input;
-        self
+        self.port_number = input; self
     }
     /// The port of the Greengrass core. Usually 8883.
     pub fn get_port_number(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl ConnectivityInfoBuilder {
     /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::types::ConnectivityInfo).
     pub fn build(self) -> crate::types::ConnectivityInfo {
         crate::types::ConnectivityInfo {
-            host_address: self.host_address,
-            id: self.id,
-            metadata: self.metadata,
-            port_number: self.port_number,
+            host_address: self.host_address
+            ,
+            id: self.id
+            ,
+            metadata: self.metadata
+            ,
+            port_number: self.port_number
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEntitiesInput {
+pub struct ListEntitiesInput  {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filter_list: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub sort: ::std::option::Option<crate::types::Sort>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
@@ -22,27 +22,28 @@ pub struct ListEntitiesInput {
     /// <p>A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.</p>
     pub entity_type_sort: ::std::option::Option<crate::types::EntityTypeSort>,
 }
-impl ListEntitiesInput {
+impl  ListEntitiesInput  {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<& str> {
         self.catalog.as_deref()
     }
     /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn entity_type(&self) -> ::std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_list.is_none()`.
-    pub fn filter_list(&self) -> &[crate::types::Filter] {
-        self.filter_list.as_deref().unwrap_or_default()
+    pub fn filter_list(&self) -> & [crate::types::Filter] {
+        self.filter_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::Sort> {
         self.sort.as_ref()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
@@ -50,15 +51,15 @@ impl ListEntitiesInput {
         self.max_results
     }
     /// <p>Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the <code>SHARED</code> parameter.</p>
-    pub fn ownership_type(&self) -> ::std::option::Option<&crate::types::OwnershipType> {
+    pub fn ownership_type(&self) -> ::std::option::Option<& crate::types::OwnershipType> {
         self.ownership_type.as_ref()
     }
     /// <p>A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter entities.</p>
-    pub fn entity_type_filters(&self) -> ::std::option::Option<&crate::types::EntityTypeFilters> {
+    pub fn entity_type_filters(&self) -> ::std::option::Option<& crate::types::EntityTypeFilters> {
         self.entity_type_filters.as_ref()
     }
     /// <p>A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.</p>
-    pub fn entity_type_sort(&self) -> ::std::option::Option<&crate::types::EntityTypeSort> {
+    pub fn entity_type_sort(&self) -> ::std::option::Option<& crate::types::EntityTypeSort> {
         self.entity_type_sort.as_ref()
     }
 }
@@ -75,7 +76,7 @@ impl ListEntitiesInput {
 pub struct ListEntitiesInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
-    pub(crate) filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filter_list: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) sort: ::std::option::Option<crate::types::Sort>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,8 +93,7 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,17 +120,16 @@ impl ListEntitiesInputBuilder {
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
     pub fn filter_list(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filter_list.unwrap_or_default();
-        v.push(input);
-        self.filter_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub fn set_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filter_list = input;
-        self
+    pub fn set_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filter_list = input; self
     }
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    pub fn get_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filter_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filter_list
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
@@ -141,8 +139,7 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
@@ -155,8 +152,7 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +165,7 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -183,8 +178,7 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the <code>SHARED</code> parameter.</p>
     pub fn set_ownership_type(mut self, input: ::std::option::Option<crate::types::OwnershipType>) -> Self {
-        self.ownership_type = input;
-        self
+        self.ownership_type = input; self
     }
     /// <p>Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the <code>SHARED</code> parameter.</p>
     pub fn get_ownership_type(&self) -> &::std::option::Option<crate::types::OwnershipType> {
@@ -197,8 +191,7 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter entities.</p>
     pub fn set_entity_type_filters(mut self, input: ::std::option::Option<crate::types::EntityTypeFilters>) -> Self {
-        self.entity_type_filters = input;
-        self
+        self.entity_type_filters = input; self
     }
     /// <p>A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter entities.</p>
     pub fn get_entity_type_filters(&self) -> &::std::option::Option<crate::types::EntityTypeFilters> {
@@ -211,27 +204,36 @@ impl ListEntitiesInputBuilder {
     }
     /// <p>A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.</p>
     pub fn set_entity_type_sort(mut self, input: ::std::option::Option<crate::types::EntityTypeSort>) -> Self {
-        self.entity_type_sort = input;
-        self
+        self.entity_type_sort = input; self
     }
     /// <p>A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.</p>
     pub fn get_entity_type_sort(&self) -> &::std::option::Option<crate::types::EntityTypeSort> {
         &self.entity_type_sort
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_entities::ListEntitiesInput {
-            catalog: self.catalog,
-            entity_type: self.entity_type,
-            filter_list: self.filter_list,
-            sort: self.sort,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            ownership_type: self.ownership_type,
-            entity_type_filters: self.entity_type_filters,
-            entity_type_sort: self.entity_type_sort,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_entities::ListEntitiesInput {
+                catalog: self.catalog
+                ,
+                entity_type: self.entity_type
+                ,
+                filter_list: self.filter_list
+                ,
+                sort: self.sort
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                ownership_type: self.ownership_type
+                ,
+                entity_type_filters: self.entity_type_filters
+                ,
+                entity_type_sort: self.entity_type_sort
+                ,
+            }
+        )
     }
 }
+

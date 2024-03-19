@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResolverConfigsInput {
+pub struct ListResolverConfigsInput  {
     /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
@@ -10,7 +10,7 @@ pub struct ListResolverConfigsInput {
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListResolverConfigsInput {
+impl  ListResolverConfigsInput  {
     /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -18,7 +18,7 @@ impl ListResolverConfigsInput {
     /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl ListResolverConfigsInputBuilder {
     }
     /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl ListResolverConfigsInputBuilder {
     /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
@@ -72,13 +70,15 @@ impl ListResolverConfigsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListResolverConfigsInput`](crate::operation::list_resolver_configs::ListResolverConfigsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resolver_configs::ListResolverConfigsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_resolver_configs::ListResolverConfigsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resolver_configs::ListResolverConfigsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resolver_configs::ListResolverConfigsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRecommendations`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that are returned per call. The default is 100.</p><br>
     ///   - [`code_review_arn(impl Into<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::code_review_arn) / [`set_code_review_arn(Option<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_code_review_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p><br>
-    /// - On success, responds with [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput) with field(s):
+                            /// - On success, responds with [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput) with field(s):
     ///   - [`recommendation_summaries(Option<Vec::<RecommendationSummary>>)`](crate::operation::list_recommendations::ListRecommendationsOutput::recommendation_summaries): <p>List of recommendations for the requested code review.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommendations::ListRecommendationsOutput::next_token): <p>Pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
+                            /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
     pub fn list_recommendations(&self) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
-        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

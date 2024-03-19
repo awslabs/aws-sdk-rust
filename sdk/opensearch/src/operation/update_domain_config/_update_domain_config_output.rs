@@ -3,7 +3,7 @@
 /// <p>The results of an <code>UpdateDomain</code> request. Contains the status of the domain being updated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainConfigOutput {
+pub struct UpdateDomainConfigOutput  {
     /// <p>The status of the updated domain.</p>
     pub domain_config: ::std::option::Option<crate::types::DomainConfig>,
     /// <p>Results of the dry run performed in the update domain request.</p>
@@ -12,25 +12,25 @@ pub struct UpdateDomainConfigOutput {
     pub dry_run_progress_status: ::std::option::Option<crate::types::DryRunProgressStatus>,
     _request_id: Option<String>,
 }
-impl UpdateDomainConfigOutput {
+impl  UpdateDomainConfigOutput  {
     /// <p>The status of the updated domain.</p>
-    pub fn domain_config(&self) -> ::std::option::Option<&crate::types::DomainConfig> {
+    pub fn domain_config(&self) -> ::std::option::Option<& crate::types::DomainConfig> {
         self.domain_config.as_ref()
     }
     /// <p>Results of the dry run performed in the update domain request.</p>
-    pub fn dry_run_results(&self) -> ::std::option::Option<&crate::types::DryRunResults> {
+    pub fn dry_run_results(&self) -> ::std::option::Option<& crate::types::DryRunResults> {
         self.dry_run_results.as_ref()
     }
     /// <p>The status of the dry run being performed on the domain, if any.</p>
-    pub fn dry_run_progress_status(&self) -> ::std::option::Option<&crate::types::DryRunProgressStatus> {
+    pub fn dry_run_progress_status(&self) -> ::std::option::Option<& crate::types::DryRunProgressStatus> {
         self.dry_run_progress_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateDomainConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateDomainConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigOutput`](crate::operation::update_domain_config::UpdateDomainConfigOutput).
     pub fn builder() -> crate::operation::update_domain_config::builders::UpdateDomainConfigOutputBuilder {
@@ -56,8 +56,7 @@ impl UpdateDomainConfigOutputBuilder {
     }
     /// <p>The status of the updated domain.</p>
     pub fn set_domain_config(mut self, input: ::std::option::Option<crate::types::DomainConfig>) -> Self {
-        self.domain_config = input;
-        self
+        self.domain_config = input; self
     }
     /// <p>The status of the updated domain.</p>
     pub fn get_domain_config(&self) -> &::std::option::Option<crate::types::DomainConfig> {
@@ -70,8 +69,7 @@ impl UpdateDomainConfigOutputBuilder {
     }
     /// <p>Results of the dry run performed in the update domain request.</p>
     pub fn set_dry_run_results(mut self, input: ::std::option::Option<crate::types::DryRunResults>) -> Self {
-        self.dry_run_results = input;
-        self
+        self.dry_run_results = input; self
     }
     /// <p>Results of the dry run performed in the update domain request.</p>
     pub fn get_dry_run_results(&self) -> &::std::option::Option<crate::types::DryRunResults> {
@@ -84,29 +82,32 @@ impl UpdateDomainConfigOutputBuilder {
     }
     /// <p>The status of the dry run being performed on the domain, if any.</p>
     pub fn set_dry_run_progress_status(mut self, input: ::std::option::Option<crate::types::DryRunProgressStatus>) -> Self {
-        self.dry_run_progress_status = input;
-        self
+        self.dry_run_progress_status = input; self
     }
     /// <p>The status of the dry run being performed on the domain, if any.</p>
     pub fn get_dry_run_progress_status(&self) -> &::std::option::Option<crate::types::DryRunProgressStatus> {
         &self.dry_run_progress_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateDomainConfigOutput`](crate::operation::update_domain_config::UpdateDomainConfigOutput).
     pub fn build(self) -> crate::operation::update_domain_config::UpdateDomainConfigOutput {
         crate::operation::update_domain_config::UpdateDomainConfigOutput {
-            domain_config: self.domain_config,
-            dry_run_results: self.dry_run_results,
-            dry_run_progress_status: self.dry_run_progress_status,
+            domain_config: self.domain_config
+            ,
+            dry_run_results: self.dry_run_results
+            ,
+            dry_run_progress_status: self.dry_run_progress_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

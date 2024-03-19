@@ -3,22 +3,23 @@
 /// <p>Provides text and information about where to highlight the query suggestion text.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuggestionTextWithHighlights {
+pub struct SuggestionTextWithHighlights  {
     /// <p>The query suggestion text to display to the user.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
-    pub highlights: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>,
+    pub highlights: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestionHighlight>>,
 }
-impl SuggestionTextWithHighlights {
+impl  SuggestionTextWithHighlights  {
     /// <p>The query suggestion text to display to the user.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.highlights.is_none()`.
-    pub fn highlights(&self) -> &[crate::types::SuggestionHighlight] {
-        self.highlights.as_deref().unwrap_or_default()
+    pub fn highlights(&self) -> & [crate::types::SuggestionHighlight] {
+        self.highlights.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SuggestionTextWithHighlights {
@@ -33,7 +34,7 @@ impl SuggestionTextWithHighlights {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggestionTextWithHighlightsBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
-    pub(crate) highlights: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>,
+    pub(crate) highlights: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestionHighlight>>,
 }
 impl SuggestionTextWithHighlightsBuilder {
     /// <p>The query suggestion text to display to the user.</p>
@@ -43,8 +44,7 @@ impl SuggestionTextWithHighlightsBuilder {
     }
     /// <p>The query suggestion text to display to the user.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The query suggestion text to display to the user.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl SuggestionTextWithHighlightsBuilder {
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
     pub fn highlights(mut self, input: crate::types::SuggestionHighlight) -> Self {
         let mut v = self.highlights.unwrap_or_default();
-        v.push(input);
-        self.highlights = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.highlights = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
-    pub fn set_highlights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>) -> Self {
-        self.highlights = input;
-        self
+    pub fn set_highlights(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestionHighlight>>) -> Self {
+        self.highlights = input; self
     }
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
-    pub fn get_highlights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>> {
+    pub fn get_highlights(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuggestionHighlight>> {
         &self.highlights
     }
     /// Consumes the builder and constructs a [`SuggestionTextWithHighlights`](crate::types::SuggestionTextWithHighlights).
     pub fn build(self) -> crate::types::SuggestionTextWithHighlights {
         crate::types::SuggestionTextWithHighlights {
-            text: self.text,
-            highlights: self.highlights,
+            text: self.text
+            ,
+            highlights: self.highlights
+            ,
         }
     }
 }
+

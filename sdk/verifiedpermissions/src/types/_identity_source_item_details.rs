@@ -5,10 +5,10 @@
 #[deprecated(note = "This shape has been replaced by ConfigurationItem")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentitySourceItemDetails {
+pub struct IdentitySourceItemDetails  {
     /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.clientIds")]
-    pub client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub client_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.userPoolArn")]
     pub user_pool_arn: ::std::option::Option<::std::string::String>,
@@ -21,29 +21,30 @@ pub struct IdentitySourceItemDetails {
     #[deprecated(note = "This attribute has been replaced by configuration")]
     pub open_id_issuer: ::std::option::Option<crate::types::OpenIdIssuer>,
 }
-impl IdentitySourceItemDetails {
+impl  IdentitySourceItemDetails  {
     /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_ids.is_none()`.
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.clientIds")]
-    pub fn client_ids(&self) -> &[::std::string::String] {
-        self.client_ids.as_deref().unwrap_or_default()
+    pub fn client_ids(&self) -> & [::std::string::String] {
+        self.client_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.userPoolArn")]
-    pub fn user_pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_arn(&self) -> ::std::option::Option<& str> {
         self.user_pool_arn.as_deref()
     }
     /// <p>The well-known URL that points to this user pool's OIDC discovery endpoint. This is a URL string in the following format. This URL replaces the placeholders for both the Amazon Web Services Region and the user pool identifier with those appropriate for this user pool.</p>
     /// <p><code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code></p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.issuer")]
-    pub fn discovery_url(&self) -> ::std::option::Option<&str> {
+    pub fn discovery_url(&self) -> ::std::option::Option<& str> {
         self.discovery_url.as_deref()
     }
     /// <p>A string that identifies the type of OIDC service represented by this identity source.</p>
     /// <p>At this time, the only valid value is <code>cognito</code>.</p>
     #[deprecated(note = "This attribute has been replaced by configuration")]
-    pub fn open_id_issuer(&self) -> ::std::option::Option<&crate::types::OpenIdIssuer> {
+    pub fn open_id_issuer(&self) -> ::std::option::Option<& crate::types::OpenIdIssuer> {
         self.open_id_issuer.as_ref()
     }
 }
@@ -58,7 +59,7 @@ impl IdentitySourceItemDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentitySourceItemDetailsBuilder {
-    pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) client_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) discovery_url: ::std::option::Option<::std::string::String>,
     pub(crate) open_id_issuer: ::std::option::Option<crate::types::OpenIdIssuer>,
@@ -72,19 +73,18 @@ impl IdentitySourceItemDetailsBuilder {
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.clientIds")]
     pub fn client_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_ids.unwrap_or_default();
-        v.push(input.into());
-        self.client_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.client_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.clientIds")]
-    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.client_ids = input;
-        self
+    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.client_ids = input; self
     }
     /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.clientIds")]
-    pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.client_ids
     }
     /// <p>The Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
@@ -96,8 +96,7 @@ impl IdentitySourceItemDetailsBuilder {
     /// <p>The Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.userPoolArn")]
     pub fn set_user_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_arn = input;
-        self
+        self.user_pool_arn = input; self
     }
     /// <p>The Amazon Cognito user pool whose identities are accessible to this Verified Permissions policy store.</p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.userPoolArn")]
@@ -115,8 +114,7 @@ impl IdentitySourceItemDetailsBuilder {
     /// <p><code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code></p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.issuer")]
     pub fn set_discovery_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discovery_url = input;
-        self
+        self.discovery_url = input; self
     }
     /// <p>The well-known URL that points to this user pool's OIDC discovery endpoint. This is a URL string in the following format. This URL replaces the placeholders for both the Amazon Web Services Region and the user pool identifier with those appropriate for this user pool.</p>
     /// <p><code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code></p>
@@ -135,8 +133,7 @@ impl IdentitySourceItemDetailsBuilder {
     /// <p>At this time, the only valid value is <code>cognito</code>.</p>
     #[deprecated(note = "This attribute has been replaced by configuration")]
     pub fn set_open_id_issuer(mut self, input: ::std::option::Option<crate::types::OpenIdIssuer>) -> Self {
-        self.open_id_issuer = input;
-        self
+        self.open_id_issuer = input; self
     }
     /// <p>A string that identifies the type of OIDC service represented by this identity source.</p>
     /// <p>At this time, the only valid value is <code>cognito</code>.</p>
@@ -147,10 +144,15 @@ impl IdentitySourceItemDetailsBuilder {
     /// Consumes the builder and constructs a [`IdentitySourceItemDetails`](crate::types::IdentitySourceItemDetails).
     pub fn build(self) -> crate::types::IdentitySourceItemDetails {
         crate::types::IdentitySourceItemDetails {
-            client_ids: self.client_ids,
-            user_pool_arn: self.user_pool_arn,
-            discovery_url: self.discovery_url,
-            open_id_issuer: self.open_id_issuer,
+            client_ids: self.client_ids
+            ,
+            user_pool_arn: self.user_pool_arn
+            ,
+            discovery_url: self.discovery_url
+            ,
+            open_id_issuer: self.open_id_issuer
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Account level Launch Configuration Template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct LaunchConfigurationTemplate {
+pub struct LaunchConfigurationTemplate  {
     /// <p>ID of the Launch Configuration Template.</p>
     pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the Launch Configuration Template.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Tags of the Launch Configuration Template.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Launch disposition.</p>
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
@@ -27,25 +27,25 @@ pub struct LaunchConfigurationTemplate {
     /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
     pub launch_into_source_instance: ::std::option::Option<bool>,
 }
-impl LaunchConfigurationTemplate {
+impl  LaunchConfigurationTemplate  {
     /// <p>ID of the Launch Configuration Template.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<& str> {
         self.launch_configuration_template_id.as_deref()
     }
     /// <p>ARN of the Launch Configuration Template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Tags of the Launch Configuration Template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Launch disposition.</p>
-    pub fn launch_disposition(&self) -> ::std::option::Option<&crate::types::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> ::std::option::Option<& crate::types::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<& crate::types::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy private IP.</p>
@@ -57,11 +57,11 @@ impl LaunchConfigurationTemplate {
         self.copy_tags
     }
     /// <p>Licensing.</p>
-    pub fn licensing(&self) -> ::std::option::Option<&crate::types::Licensing> {
+    pub fn licensing(&self) -> ::std::option::Option<& crate::types::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
-    pub fn export_bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn export_bucket_arn(&self) -> ::std::option::Option<& str> {
         self.export_bucket_arn.as_deref()
     }
     /// <p>Post-launch actions activated.</p>
@@ -73,7 +73,7 @@ impl LaunchConfigurationTemplate {
         self.launch_into_source_instance
     }
 }
-impl ::std::fmt::Debug for LaunchConfigurationTemplate {
+impl  ::std::fmt::Debug for LaunchConfigurationTemplate  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchConfigurationTemplate");
         formatter.field("launch_configuration_template_id", &self.launch_configuration_template_id);
@@ -103,7 +103,7 @@ impl LaunchConfigurationTemplate {
 pub struct LaunchConfigurationTemplateBuilder {
     pub(crate) launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     pub(crate) target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     pub(crate) copy_private_ip: ::std::option::Option<bool>,
@@ -121,8 +121,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>ID of the Launch Configuration Template.</p>
     pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_configuration_template_id = input;
-        self
+        self.launch_configuration_template_id = input; self
     }
     /// <p>ID of the Launch Configuration Template.</p>
     pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>ARN of the Launch Configuration Template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the Launch Configuration Template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,17 +147,16 @@ impl LaunchConfigurationTemplateBuilder {
     /// <p>Tags of the Launch Configuration Template.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags of the Launch Configuration Template.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags of the Launch Configuration Template.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Launch disposition.</p>
@@ -169,8 +166,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>Launch disposition.</p>
     pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
-        self.launch_disposition = input;
-        self
+        self.launch_disposition = input; self
     }
     /// <p>Launch disposition.</p>
     pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
@@ -182,12 +178,8 @@ impl LaunchConfigurationTemplateBuilder {
         self
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn set_target_instance_type_right_sizing_method(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
-    ) -> Self {
-        self.target_instance_type_right_sizing_method = input;
-        self
+    pub fn set_target_instance_type_right_sizing_method(mut self, input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>) -> Self {
+        self.target_instance_type_right_sizing_method = input; self
     }
     /// <p>Target instance type right-sizing method.</p>
     pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
@@ -200,8 +192,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>Copy private IP.</p>
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_private_ip = input;
-        self
+        self.copy_private_ip = input; self
     }
     /// <p>Copy private IP.</p>
     pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
@@ -214,8 +205,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>Copy tags.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags = input;
-        self
+        self.copy_tags = input; self
     }
     /// <p>Copy tags.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
@@ -228,8 +218,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>Licensing.</p>
     pub fn set_licensing(mut self, input: ::std::option::Option<crate::types::Licensing>) -> Self {
-        self.licensing = input;
-        self
+        self.licensing = input; self
     }
     /// <p>Licensing.</p>
     pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
@@ -242,8 +231,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub fn set_export_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_bucket_arn = input;
-        self
+        self.export_bucket_arn = input; self
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub fn get_export_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +244,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>Post-launch actions activated.</p>
     pub fn set_post_launch_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.post_launch_enabled = input;
-        self
+        self.post_launch_enabled = input; self
     }
     /// <p>Post-launch actions activated.</p>
     pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
@@ -270,8 +257,7 @@ impl LaunchConfigurationTemplateBuilder {
     }
     /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
     pub fn set_launch_into_source_instance(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.launch_into_source_instance = input;
-        self
+        self.launch_into_source_instance = input; self
     }
     /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
     pub fn get_launch_into_source_instance(&self) -> &::std::option::Option<bool> {
@@ -280,17 +266,28 @@ impl LaunchConfigurationTemplateBuilder {
     /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::types::LaunchConfigurationTemplate).
     pub fn build(self) -> crate::types::LaunchConfigurationTemplate {
         crate::types::LaunchConfigurationTemplate {
-            launch_configuration_template_id: self.launch_configuration_template_id,
-            arn: self.arn,
-            tags: self.tags,
-            launch_disposition: self.launch_disposition,
-            target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
-            copy_private_ip: self.copy_private_ip,
-            copy_tags: self.copy_tags,
-            licensing: self.licensing,
-            export_bucket_arn: self.export_bucket_arn,
-            post_launch_enabled: self.post_launch_enabled,
-            launch_into_source_instance: self.launch_into_source_instance,
+            launch_configuration_template_id: self.launch_configuration_template_id
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
+            launch_disposition: self.launch_disposition
+            ,
+            target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+            ,
+            copy_private_ip: self.copy_private_ip
+            ,
+            copy_tags: self.copy_tags
+            ,
+            licensing: self.licensing
+            ,
+            export_bucket_arn: self.export_bucket_arn
+            ,
+            post_launch_enabled: self.post_launch_enabled
+            ,
+            launch_into_source_instance: self.launch_into_source_instance
+            ,
         }
     }
 }
@@ -311,3 +308,4 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplateBuilder {
         formatter.finish()
     }
 }
+

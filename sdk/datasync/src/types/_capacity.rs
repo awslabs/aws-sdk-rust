@@ -3,7 +3,7 @@
 /// <p>The storage capacity of an on-premises storage system resource (for example, a volume).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Capacity {
+pub struct Capacity  {
     /// <p>The amount of space that's being used in a storage system resource.</p>
     pub used: ::std::option::Option<i64>,
     /// <p>The total amount of space available in a storage system resource.</p>
@@ -13,7 +13,7 @@ pub struct Capacity {
     /// <p>The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).</p>
     pub cluster_cloud_storage_used: ::std::option::Option<i64>,
 }
-impl Capacity {
+impl  Capacity  {
     /// <p>The amount of space that's being used in a storage system resource.</p>
     pub fn used(&self) -> ::std::option::Option<i64> {
         self.used
@@ -55,8 +55,7 @@ impl CapacityBuilder {
     }
     /// <p>The amount of space that's being used in a storage system resource.</p>
     pub fn set_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.used = input;
-        self
+        self.used = input; self
     }
     /// <p>The amount of space that's being used in a storage system resource.</p>
     pub fn get_used(&self) -> &::std::option::Option<i64> {
@@ -69,8 +68,7 @@ impl CapacityBuilder {
     }
     /// <p>The total amount of space available in a storage system resource.</p>
     pub fn set_provisioned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.provisioned = input;
-        self
+        self.provisioned = input; self
     }
     /// <p>The total amount of space available in a storage system resource.</p>
     pub fn get_provisioned(&self) -> &::std::option::Option<i64> {
@@ -83,8 +81,7 @@ impl CapacityBuilder {
     }
     /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
     pub fn set_logical_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.logical_used = input;
-        self
+        self.logical_used = input; self
     }
     /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
     pub fn get_logical_used(&self) -> &::std::option::Option<i64> {
@@ -97,8 +94,7 @@ impl CapacityBuilder {
     }
     /// <p>The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).</p>
     pub fn set_cluster_cloud_storage_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.cluster_cloud_storage_used = input;
-        self
+        self.cluster_cloud_storage_used = input; self
     }
     /// <p>The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).</p>
     pub fn get_cluster_cloud_storage_used(&self) -> &::std::option::Option<i64> {
@@ -107,10 +103,15 @@ impl CapacityBuilder {
     /// Consumes the builder and constructs a [`Capacity`](crate::types::Capacity).
     pub fn build(self) -> crate::types::Capacity {
         crate::types::Capacity {
-            used: self.used,
-            provisioned: self.provisioned,
-            logical_used: self.logical_used,
-            cluster_cloud_storage_used: self.cluster_cloud_storage_used,
+            used: self.used
+            ,
+            provisioned: self.provisioned
+            ,
+            logical_used: self.logical_used
+            ,
+            cluster_cloud_storage_used: self.cluster_cloud_storage_used
+            ,
         }
     }
 }
+

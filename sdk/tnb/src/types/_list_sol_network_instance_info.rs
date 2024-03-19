@@ -4,7 +4,7 @@
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSolNetworkInstanceInfo {
+pub struct ListSolNetworkInstanceInfo  {
     /// <p>ID of the network instance.</p>
     pub id: ::std::string::String,
     /// <p>Network instance ARN.</p>
@@ -22,43 +22,37 @@ pub struct ListSolNetworkInstanceInfo {
     /// <p>The metadata of the network instance.</p>
     pub metadata: ::std::option::Option<crate::types::ListSolNetworkInstanceMetadata>,
 }
-impl ListSolNetworkInstanceInfo {
+impl  ListSolNetworkInstanceInfo  {
     /// <p>ID of the network instance.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Network instance ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Human-readable name of the network instance.</p>
-    pub fn ns_instance_name(&self) -> &str {
-        use std::ops::Deref;
-        self.ns_instance_name.deref()
+    pub fn ns_instance_name(&self) -> & str {
+        use std::ops::Deref; self.ns_instance_name.deref()
     }
     /// <p>Human-readable description of the network instance.</p>
-    pub fn ns_instance_description(&self) -> &str {
-        use std::ops::Deref;
-        self.ns_instance_description.deref()
+    pub fn ns_instance_description(&self) -> & str {
+        use std::ops::Deref; self.ns_instance_description.deref()
     }
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_id(&self) -> &str {
-        use std::ops::Deref;
-        self.nsd_id.deref()
+    pub fn nsd_id(&self) -> & str {
+        use std::ops::Deref; self.nsd_id.deref()
     }
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_info_id(&self) -> &str {
-        use std::ops::Deref;
-        self.nsd_info_id.deref()
+    pub fn nsd_info_id(&self) -> & str {
+        use std::ops::Deref; self.nsd_info_id.deref()
     }
     /// <p>The state of the network instance.</p>
-    pub fn ns_state(&self) -> &crate::types::NsState {
+    pub fn ns_state(&self) -> & crate::types::NsState {
         &self.ns_state
     }
     /// <p>The metadata of the network instance.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ListSolNetworkInstanceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ListSolNetworkInstanceMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -91,8 +85,7 @@ impl ListSolNetworkInstanceInfoBuilder {
     }
     /// <p>ID of the network instance.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>ID of the network instance.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +99,7 @@ impl ListSolNetworkInstanceInfoBuilder {
     }
     /// <p>Network instance ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Network instance ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +113,7 @@ impl ListSolNetworkInstanceInfoBuilder {
     }
     /// <p>Human-readable name of the network instance.</p>
     pub fn set_ns_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_instance_name = input;
-        self
+        self.ns_instance_name = input; self
     }
     /// <p>Human-readable name of the network instance.</p>
     pub fn get_ns_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +127,7 @@ impl ListSolNetworkInstanceInfoBuilder {
     }
     /// <p>Human-readable description of the network instance.</p>
     pub fn set_ns_instance_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_instance_description = input;
-        self
+        self.ns_instance_description = input; self
     }
     /// <p>Human-readable description of the network instance.</p>
     pub fn get_ns_instance_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +141,7 @@ impl ListSolNetworkInstanceInfoBuilder {
     }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn set_nsd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_id = input;
-        self
+        self.nsd_id = input; self
     }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +155,7 @@ impl ListSolNetworkInstanceInfoBuilder {
     }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn set_nsd_info_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_info_id = input;
-        self
+        self.nsd_info_id = input; self
     }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +169,7 @@ impl ListSolNetworkInstanceInfoBuilder {
     }
     /// <p>The state of the network instance.</p>
     pub fn set_ns_state(mut self, input: ::std::option::Option<crate::types::NsState>) -> Self {
-        self.ns_state = input;
-        self
+        self.ns_state = input; self
     }
     /// <p>The state of the network instance.</p>
     pub fn get_ns_state(&self) -> &::std::option::Option<crate::types::NsState> {
@@ -196,8 +183,7 @@ impl ListSolNetworkInstanceInfoBuilder {
     }
     /// <p>The metadata of the network instance.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ListSolNetworkInstanceMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of the network instance.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ListSolNetworkInstanceMetadata> {
@@ -213,50 +199,47 @@ impl ListSolNetworkInstanceInfoBuilder {
     /// - [`nsd_info_id`](crate::types::builders::ListSolNetworkInstanceInfoBuilder::nsd_info_id)
     /// - [`ns_state`](crate::types::builders::ListSolNetworkInstanceInfoBuilder::ns_state)
     pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkInstanceInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListSolNetworkInstanceInfo {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ListSolNetworkInstanceInfo",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ListSolNetworkInstanceInfo",
-                )
-            })?,
-            ns_instance_name: self.ns_instance_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ns_instance_name",
-                    "ns_instance_name was not specified but it is required when building ListSolNetworkInstanceInfo",
-                )
-            })?,
-            ns_instance_description: self.ns_instance_description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ns_instance_description",
-                    "ns_instance_description was not specified but it is required when building ListSolNetworkInstanceInfo",
-                )
-            })?,
-            nsd_id: self.nsd_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_id",
-                    "nsd_id was not specified but it is required when building ListSolNetworkInstanceInfo",
-                )
-            })?,
-            nsd_info_id: self.nsd_info_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_info_id",
-                    "nsd_info_id was not specified but it is required when building ListSolNetworkInstanceInfo",
-                )
-            })?,
-            ns_state: self.ns_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ns_state",
-                    "ns_state was not specified but it is required when building ListSolNetworkInstanceInfo",
-                )
-            })?,
-            metadata: self.metadata,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListSolNetworkInstanceInfo {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ListSolNetworkInstanceInfo")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ListSolNetworkInstanceInfo")
+                    )?
+                ,
+                ns_instance_name: self.ns_instance_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ns_instance_name", "ns_instance_name was not specified but it is required when building ListSolNetworkInstanceInfo")
+                    )?
+                ,
+                ns_instance_description: self.ns_instance_description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ns_instance_description", "ns_instance_description was not specified but it is required when building ListSolNetworkInstanceInfo")
+                    )?
+                ,
+                nsd_id: self.nsd_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_id", "nsd_id was not specified but it is required when building ListSolNetworkInstanceInfo")
+                    )?
+                ,
+                nsd_info_id: self.nsd_info_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_info_id", "nsd_info_id was not specified but it is required when building ListSolNetworkInstanceInfo")
+                    )?
+                ,
+                ns_state: self.ns_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ns_state", "ns_state was not specified but it is required when building ListSolNetworkInstanceInfo")
+                    )?
+                ,
+                metadata: self.metadata
+                ,
+            }
+        )
     }
 }
+

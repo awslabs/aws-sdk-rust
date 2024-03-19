@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccessPointInput {
+pub struct DeleteAccessPointInput  {
     /// <p>The ID of the access point that you want to delete.</p>
     pub access_point_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAccessPointInput {
+impl  DeleteAccessPointInput  {
     /// <p>The ID of the access point that you want to delete.</p>
-    pub fn access_point_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_point_id(&self) -> ::std::option::Option<& str> {
         self.access_point_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteAccessPointInputBuilder {
     }
     /// <p>The ID of the access point that you want to delete.</p>
     pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_point_id = input;
-        self
+        self.access_point_id = input; self
     }
     /// <p>The ID of the access point that you want to delete.</p>
     pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_point_id
     }
     /// Consumes the builder and constructs a [`DeleteAccessPointInput`](crate::operation::delete_access_point::DeleteAccessPointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_access_point::DeleteAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_access_point::DeleteAccessPointInput {
-            access_point_id: self.access_point_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_access_point::DeleteAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_access_point::DeleteAccessPointInput {
+                access_point_id: self.access_point_id
+                ,
+            }
+        )
     }
 }
+

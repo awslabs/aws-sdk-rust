@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
+pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutput  {
     /// <p>Information about the task invocation results per invocation.</p>
-    pub window_execution_task_invocation_identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>>,
+    pub window_execution_task_invocation_identities: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
+impl  DescribeMaintenanceWindowExecutionTaskInvocationsOutput  {
     /// <p>Information about the task invocation results per invocation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.window_execution_task_invocation_identities.is_none()`.
-    pub fn window_execution_task_invocation_identities(&self) -> &[crate::types::MaintenanceWindowExecutionTaskInvocationIdentity] {
-        self.window_execution_task_invocation_identities.as_deref().unwrap_or_default()
+    pub fn window_execution_task_invocation_identities(&self) -> & [crate::types::MaintenanceWindowExecutionTaskInvocationIdentity] {
+        self.window_execution_task_invocation_identities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsOutput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder {
         crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder::default()
     }
 }
@@ -38,8 +38,7 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder {
-    pub(crate) window_execution_task_invocation_identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>>,
+    pub(crate) window_execution_task_invocation_identities: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +50,16 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder {
     /// <p>Information about the task invocation results per invocation.</p>
     pub fn window_execution_task_invocation_identities(mut self, input: crate::types::MaintenanceWindowExecutionTaskInvocationIdentity) -> Self {
         let mut v = self.window_execution_task_invocation_identities.unwrap_or_default();
-        v.push(input);
-        self.window_execution_task_invocation_identities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.window_execution_task_invocation_identities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the task invocation results per invocation.</p>
-    pub fn set_window_execution_task_invocation_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>>,
-    ) -> Self {
-        self.window_execution_task_invocation_identities = input;
-        self
+    pub fn set_window_execution_task_invocation_identities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>>) -> Self {
+        self.window_execution_task_invocation_identities = input; self
     }
     /// <p>Information about the task invocation results per invocation.</p>
-    pub fn get_window_execution_task_invocation_identities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>> {
+    pub fn get_window_execution_task_invocation_identities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>> {
         &self.window_execution_task_invocation_identities
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -76,30 +69,30 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
+    pub fn build(self) -> crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
         crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsOutput {
-            window_execution_task_invocation_identities: self.window_execution_task_invocation_identities,
-            next_token: self.next_token,
+            window_execution_task_invocation_identities: self.window_execution_task_invocation_identities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

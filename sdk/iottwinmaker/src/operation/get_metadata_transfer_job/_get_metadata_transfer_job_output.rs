@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetadataTransferJobOutput {
+pub struct GetMetadataTransferJobOutput  {
     /// <p>The metadata transfer job Id.</p>
     pub metadata_transfer_job_id: ::std::string::String,
     /// <p>The metadata transfer job ARN.</p>
@@ -10,7 +10,7 @@ pub struct GetMetadataTransferJobOutput {
     /// <p>The metadata transfer job description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata transfer job's sources.</p>
-    pub sources: ::std::vec::Vec<crate::types::SourceConfiguration>,
+    pub sources: ::std::vec::Vec::<crate::types::SourceConfiguration>,
     /// <p>The metadata transfer job's destination.</p>
     pub destination: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>The metadata transfer job's role.</p>
@@ -27,61 +27,57 @@ pub struct GetMetadataTransferJobOutput {
     pub progress: ::std::option::Option<crate::types::MetadataTransferJobProgress>,
     _request_id: Option<String>,
 }
-impl GetMetadataTransferJobOutput {
+impl  GetMetadataTransferJobOutput  {
     /// <p>The metadata transfer job Id.</p>
-    pub fn metadata_transfer_job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_transfer_job_id.deref()
+    pub fn metadata_transfer_job_id(&self) -> & str {
+        use std::ops::Deref; self.metadata_transfer_job_id.deref()
     }
     /// <p>The metadata transfer job ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The metadata transfer job description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The metadata transfer job's sources.</p>
-    pub fn sources(&self) -> &[crate::types::SourceConfiguration] {
-        use std::ops::Deref;
-        self.sources.deref()
+    pub fn sources(&self) -> & [crate::types::SourceConfiguration] {
+        use std::ops::Deref; self.sources.deref()
     }
     /// <p>The metadata transfer job's destination.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::DestinationConfiguration> {
         self.destination.as_ref()
     }
     /// <p>The metadata transfer job's role.</p>
-    pub fn metadata_transfer_job_role(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_transfer_job_role.deref()
+    pub fn metadata_transfer_job_role(&self) -> & str {
+        use std::ops::Deref; self.metadata_transfer_job_role.deref()
     }
     /// <p>The metadata transfer job's report URL.</p>
-    pub fn report_url(&self) -> ::std::option::Option<&str> {
+    pub fn report_url(&self) -> ::std::option::Option<& str> {
         self.report_url.as_deref()
     }
     /// <p>The metadata transfer job's creation DateTime property.</p>
-    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date_time
     }
     /// <p>The metadata transfer job's update DateTime property.</p>
-    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date_time
     }
     /// <p>The metadata transfer job's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MetadataTransferJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MetadataTransferJobStatus> {
         self.status.as_ref()
     }
     /// <p>The metadata transfer job's progress.</p>
-    pub fn progress(&self) -> ::std::option::Option<&crate::types::MetadataTransferJobProgress> {
+    pub fn progress(&self) -> ::std::option::Option<& crate::types::MetadataTransferJobProgress> {
         self.progress.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMetadataTransferJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMetadataTransferJobOutput {
     /// Creates a new builder-style object to manufacture [`GetMetadataTransferJobOutput`](crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput).
     pub fn builder() -> crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder {
@@ -96,7 +92,7 @@ pub struct GetMetadataTransferJobOutputBuilder {
     pub(crate) metadata_transfer_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::SourceConfiguration>>,
     pub(crate) destination: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) metadata_transfer_job_role: ::std::option::Option<::std::string::String>,
     pub(crate) report_url: ::std::option::Option<::std::string::String>,
@@ -115,8 +111,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn set_metadata_transfer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_transfer_job_id = input;
-        self
+        self.metadata_transfer_job_id = input; self
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn get_metadata_transfer_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +125,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The metadata transfer job ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +138,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The metadata transfer job description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,17 +151,16 @@ impl GetMetadataTransferJobOutputBuilder {
     /// <p>The metadata transfer job's sources.</p>
     pub fn sources(mut self, input: crate::types::SourceConfiguration) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata transfer job's sources.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceConfiguration>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The metadata transfer job's sources.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceConfiguration>> {
         &self.sources
     }
     /// <p>The metadata transfer job's destination.</p>
@@ -179,8 +171,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's destination.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The metadata transfer job's destination.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
@@ -194,8 +185,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's role.</p>
     pub fn set_metadata_transfer_job_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_transfer_job_role = input;
-        self
+        self.metadata_transfer_job_role = input; self
     }
     /// <p>The metadata transfer job's role.</p>
     pub fn get_metadata_transfer_job_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +198,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's report URL.</p>
     pub fn set_report_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_url = input;
-        self
+        self.report_url = input; self
     }
     /// <p>The metadata transfer job's report URL.</p>
     pub fn get_report_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +212,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's creation DateTime property.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The metadata transfer job's creation DateTime property.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -238,8 +226,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's update DateTime property.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The metadata transfer job's update DateTime property.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -253,8 +240,7 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MetadataTransferJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The metadata transfer job's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MetadataTransferJobStatus> {
@@ -267,22 +253,21 @@ impl GetMetadataTransferJobOutputBuilder {
     }
     /// <p>The metadata transfer job's progress.</p>
     pub fn set_progress(mut self, input: ::std::option::Option<crate::types::MetadataTransferJobProgress>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>The metadata transfer job's progress.</p>
     pub fn get_progress(&self) -> &::std::option::Option<crate::types::MetadataTransferJobProgress> {
         &self.progress
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMetadataTransferJobOutput`](crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata_transfer_job_id`](crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder::metadata_transfer_job_id)
@@ -291,55 +276,52 @@ impl GetMetadataTransferJobOutputBuilder {
     /// - [`metadata_transfer_job_role`](crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder::metadata_transfer_job_role)
     /// - [`creation_date_time`](crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder::creation_date_time)
     /// - [`update_date_time`](crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder::update_date_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput {
-            metadata_transfer_job_id: self.metadata_transfer_job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_transfer_job_id",
-                    "metadata_transfer_job_id was not specified but it is required when building GetMetadataTransferJobOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetMetadataTransferJobOutput",
-                )
-            })?,
-            description: self.description,
-            sources: self.sources.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sources",
-                    "sources was not specified but it is required when building GetMetadataTransferJobOutput",
-                )
-            })?,
-            destination: self.destination,
-            metadata_transfer_job_role: self.metadata_transfer_job_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_transfer_job_role",
-                    "metadata_transfer_job_role was not specified but it is required when building GetMetadataTransferJobOutput",
-                )
-            })?,
-            report_url: self.report_url,
-            creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date_time",
-                    "creation_date_time was not specified but it is required when building GetMetadataTransferJobOutput",
-                )
-            })?,
-            update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date_time",
-                    "update_date_time was not specified but it is required when building GetMetadataTransferJobOutput",
-                )
-            })?,
-            status: self.status,
-            progress: self.progress,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput {
+                metadata_transfer_job_id: self.metadata_transfer_job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_transfer_job_id", "metadata_transfer_job_id was not specified but it is required when building GetMetadataTransferJobOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetMetadataTransferJobOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                sources: self.sources
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sources", "sources was not specified but it is required when building GetMetadataTransferJobOutput")
+                    )?
+                ,
+                destination: self.destination
+                ,
+                metadata_transfer_job_role: self.metadata_transfer_job_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_transfer_job_role", "metadata_transfer_job_role was not specified but it is required when building GetMetadataTransferJobOutput")
+                    )?
+                ,
+                report_url: self.report_url
+                ,
+                creation_date_time: self.creation_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date_time", "creation_date_time was not specified but it is required when building GetMetadataTransferJobOutput")
+                    )?
+                ,
+                update_date_time: self.update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date_time", "update_date_time was not specified but it is required when building GetMetadataTransferJobOutput")
+                    )?
+                ,
+                status: self.status
+                ,
+                progress: self.progress
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

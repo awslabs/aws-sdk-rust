@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetGraphInput {
+pub struct ResetGraphInput  {
     /// <p>ID of the graph to reset.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a final graph snapshot is created before the graph data is deleted. If set to <code>true</code>, no graph snapshot is created. If set to <code>false</code>, a graph snapshot is created before the data is deleted.</p>
     pub skip_snapshot: ::std::option::Option<bool>,
 }
-impl ResetGraphInput {
+impl  ResetGraphInput  {
     /// <p>ID of the graph to reset.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>Determines whether a final graph snapshot is created before the graph data is deleted. If set to <code>true</code>, no graph snapshot is created. If set to <code>false</code>, a graph snapshot is created before the data is deleted.</p>
@@ -41,8 +41,7 @@ impl ResetGraphInputBuilder {
     }
     /// <p>ID of the graph to reset.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>ID of the graph to reset.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ResetGraphInputBuilder {
     }
     /// <p>Determines whether a final graph snapshot is created before the graph data is deleted. If set to <code>true</code>, no graph snapshot is created. If set to <code>false</code>, a graph snapshot is created before the data is deleted.</p>
     pub fn set_skip_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_snapshot = input;
-        self
+        self.skip_snapshot = input; self
     }
     /// <p>Determines whether a final graph snapshot is created before the graph data is deleted. If set to <code>true</code>, no graph snapshot is created. If set to <code>false</code>, a graph snapshot is created before the data is deleted.</p>
     pub fn get_skip_snapshot(&self) -> &::std::option::Option<bool> {
@@ -65,9 +63,14 @@ impl ResetGraphInputBuilder {
     }
     /// Consumes the builder and constructs a [`ResetGraphInput`](crate::operation::reset_graph::ResetGraphInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::reset_graph::ResetGraphInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reset_graph::ResetGraphInput {
-            graph_identifier: self.graph_identifier,
-            skip_snapshot: self.skip_snapshot,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::reset_graph::ResetGraphInput {
+                graph_identifier: self.graph_identifier
+                ,
+                skip_snapshot: self.skip_snapshot
+                ,
+            }
+        )
     }
 }
+

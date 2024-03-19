@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMonitoringScheduleInput {
+pub struct StartMonitoringScheduleInput  {
     /// <p>The name of the schedule to start.</p>
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
 }
-impl StartMonitoringScheduleInput {
+impl  StartMonitoringScheduleInput  {
     /// <p>The name of the schedule to start.</p>
-    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_schedule_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl StartMonitoringScheduleInputBuilder {
     }
     /// <p>The name of the schedule to start.</p>
     pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_schedule_name = input;
-        self
+        self.monitoring_schedule_name = input; self
     }
     /// <p>The name of the schedule to start.</p>
     pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_schedule_name
     }
     /// Consumes the builder and constructs a [`StartMonitoringScheduleInput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput {
-            monitoring_schedule_name: self.monitoring_schedule_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput {
+                monitoring_schedule_name: self.monitoring_schedule_name
+                ,
+            }
+        )
     }
 }
+

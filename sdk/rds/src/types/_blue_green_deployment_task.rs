@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlueGreenDeploymentTask {
+pub struct BlueGreenDeploymentTask  {
     /// <p>The name of the blue/green deployment task.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the blue/green deployment task.</p>
@@ -21,9 +21,9 @@ pub struct BlueGreenDeploymentTask {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl BlueGreenDeploymentTask {
+impl  BlueGreenDeploymentTask  {
     /// <p>The name of the blue/green deployment task.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the blue/green deployment task.</p>
@@ -38,7 +38,7 @@ impl BlueGreenDeploymentTask {
     /// <li>
     /// <p><code>FAILED</code> - Deployment of the resource failed.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl BlueGreenDeploymentTaskBuilder {
     }
     /// <p>The name of the blue/green deployment task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the blue/green deployment task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl BlueGreenDeploymentTaskBuilder {
     /// <p><code>FAILED</code> - Deployment of the resource failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the blue/green deployment task.</p>
     /// <p>Valid Values:</p>
@@ -121,8 +119,11 @@ impl BlueGreenDeploymentTaskBuilder {
     /// Consumes the builder and constructs a [`BlueGreenDeploymentTask`](crate::types::BlueGreenDeploymentTask).
     pub fn build(self) -> crate::types::BlueGreenDeploymentTask {
         crate::types::BlueGreenDeploymentTask {
-            name: self.name,
-            status: self.status,
+            name: self.name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object with details the status of an Amazon Web Services account within your Amazon Inspector environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountState {
+pub struct AccountState  {
     /// <p>The Amazon Web Services account ID.</p>
     pub account_id: ::std::string::String,
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
@@ -11,18 +11,17 @@ pub struct AccountState {
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub resource_state: ::std::option::Option<crate::types::ResourceState>,
 }
-impl AccountState {
+impl  AccountState  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
-    pub fn resource_state(&self) -> ::std::option::Option<&crate::types::ResourceState> {
+    pub fn resource_state(&self) -> ::std::option::Option<& crate::types::ResourceState> {
         self.resource_state.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl AccountStateBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl AccountStateBuilder {
     }
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
@@ -80,8 +77,7 @@ impl AccountStateBuilder {
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn set_resource_state(mut self, input: ::std::option::Option<crate::types::ResourceState>) -> Self {
-        self.resource_state = input;
-        self
+        self.resource_state = input; self
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn get_resource_state(&self) -> &::std::option::Option<crate::types::ResourceState> {
@@ -91,15 +87,19 @@ impl AccountStateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`account_id`](crate::types::builders::AccountStateBuilder::account_id)
     pub fn build(self) -> ::std::result::Result<crate::types::AccountState, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccountState {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building AccountState",
-                )
-            })?,
-            state: self.state,
-            resource_state: self.resource_state,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccountState {
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building AccountState")
+                    )?
+                ,
+                state: self.state
+                ,
+                resource_state: self.resource_state
+                ,
+            }
+        )
     }
 }
+

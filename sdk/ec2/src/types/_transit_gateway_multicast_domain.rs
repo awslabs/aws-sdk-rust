@@ -3,7 +3,7 @@
 /// <p>Describes the transit gateway multicast domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayMulticastDomain {
+pub struct TransitGatewayMulticastDomain  {
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
@@ -19,42 +19,43 @@ pub struct TransitGatewayMulticastDomain {
     /// <p>The time the transit gateway multicast domain was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags for the transit gateway multicast domain.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl TransitGatewayMulticastDomain {
+impl  TransitGatewayMulticastDomain  {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_multicast_domain_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_multicast_domain_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_multicast_domain_arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The options for the transit gateway multicast domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::TransitGatewayMulticastDomainOptions> {
         self.options.as_ref()
     }
     /// <p>The state of the transit gateway multicast domain.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastDomainState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayMulticastDomainState> {
         self.state.as_ref()
     }
     /// <p>The time the transit gateway multicast domain was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The tags for the transit gateway multicast domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TransitGatewayMulticastDomain {
@@ -75,7 +76,7 @@ pub struct TransitGatewayMulticastDomainBuilder {
     pub(crate) options: ::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions>,
     pub(crate) state: ::std::option::Option<crate::types::TransitGatewayMulticastDomainState>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TransitGatewayMulticastDomainBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
@@ -85,8 +86,7 @@ impl TransitGatewayMulticastDomainBuilder {
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_multicast_domain_id = input;
-        self
+        self.transit_gateway_multicast_domain_id = input; self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl TransitGatewayMulticastDomainBuilder {
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_id = input;
-        self
+        self.transit_gateway_id = input; self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl TransitGatewayMulticastDomainBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
     pub fn set_transit_gateway_multicast_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_multicast_domain_arn = input;
-        self
+        self.transit_gateway_multicast_domain_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
     pub fn get_transit_gateway_multicast_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl TransitGatewayMulticastDomainBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl TransitGatewayMulticastDomainBuilder {
     }
     /// <p>The options for the transit gateway multicast domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The options for the transit gateway multicast domain.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions> {
@@ -155,8 +151,7 @@ impl TransitGatewayMulticastDomainBuilder {
     }
     /// <p>The state of the transit gateway multicast domain.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulticastDomainState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the transit gateway multicast domain.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastDomainState> {
@@ -169,8 +164,7 @@ impl TransitGatewayMulticastDomainBuilder {
     }
     /// <p>The time the transit gateway multicast domain was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the transit gateway multicast domain was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,30 +177,38 @@ impl TransitGatewayMulticastDomainBuilder {
     /// <p>The tags for the transit gateway multicast domain.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the transit gateway multicast domain.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the transit gateway multicast domain.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGatewayMulticastDomain`](crate::types::TransitGatewayMulticastDomain).
     pub fn build(self) -> crate::types::TransitGatewayMulticastDomain {
         crate::types::TransitGatewayMulticastDomain {
-            transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id,
-            transit_gateway_id: self.transit_gateway_id,
-            transit_gateway_multicast_domain_arn: self.transit_gateway_multicast_domain_arn,
-            owner_id: self.owner_id,
-            options: self.options,
-            state: self.state,
-            creation_time: self.creation_time,
-            tags: self.tags,
+            transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id
+            ,
+            transit_gateway_id: self.transit_gateway_id
+            ,
+            transit_gateway_multicast_domain_arn: self.transit_gateway_multicast_domain_arn
+            ,
+            owner_id: self.owner_id
+            ,
+            options: self.options
+            ,
+            state: self.state
+            ,
+            creation_time: self.creation_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

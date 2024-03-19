@@ -3,30 +3,31 @@
 /// <p>Contains the output of the <code>ListHsms</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHsmsOutput {
+pub struct ListHsmsOutput  {
     /// <p>The list of ARNs that identify the HSMs.</p>
-    pub hsm_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hsm_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListHsmsOutput {
+impl  ListHsmsOutput  {
     /// <p>The list of ARNs that identify the HSMs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hsm_list.is_none()`.
-    pub fn hsm_list(&self) -> &[::std::string::String] {
-        self.hsm_list.as_deref().unwrap_or_default()
+    pub fn hsm_list(&self) -> & [::std::string::String] {
+        self.hsm_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListHsmsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListHsmsOutput {
     /// Creates a new builder-style object to manufacture [`ListHsmsOutput`](crate::operation::list_hsms::ListHsmsOutput).
     pub fn builder() -> crate::operation::list_hsms::builders::ListHsmsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListHsmsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHsmsOutputBuilder {
-    pub(crate) hsm_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hsm_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListHsmsOutputBuilder {
     /// <p>The list of ARNs that identify the HSMs.</p>
     pub fn hsm_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hsm_list.unwrap_or_default();
-        v.push(input.into());
-        self.hsm_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hsm_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of ARNs that identify the HSMs.</p>
-    pub fn set_hsm_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hsm_list = input;
-        self
+    pub fn set_hsm_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hsm_list = input; self
     }
     /// <p>The list of ARNs that identify the HSMs.</p>
-    pub fn get_hsm_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hsm_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hsm_list
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
@@ -70,28 +70,30 @@ impl ListHsmsOutputBuilder {
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListHsmsOutput`](crate::operation::list_hsms::ListHsmsOutput).
     pub fn build(self) -> crate::operation::list_hsms::ListHsmsOutput {
         crate::operation::list_hsms::ListHsmsOutput {
-            hsm_list: self.hsm_list,
-            next_token: self.next_token,
+            hsm_list: self.hsm_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

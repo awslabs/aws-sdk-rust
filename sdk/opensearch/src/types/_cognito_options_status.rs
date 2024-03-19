@@ -3,19 +3,19 @@
 /// <p>The status of the Cognito options for the specified domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CognitoOptionsStatus {
+pub struct CognitoOptionsStatus  {
     /// <p>Cognito options for the specified domain.</p>
     pub options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p>The status of the Cognito options for the specified domain.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl CognitoOptionsStatus {
+impl  CognitoOptionsStatus  {
     /// <p>Cognito options for the specified domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::CognitoOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::CognitoOptions> {
         self.options.as_ref()
     }
     /// <p>The status of the Cognito options for the specified domain.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl CognitoOptionsStatusBuilder {
     }
     /// <p>Cognito options for the specified domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::CognitoOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Cognito options for the specified domain.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CognitoOptions> {
@@ -57,8 +56,7 @@ impl CognitoOptionsStatusBuilder {
     }
     /// <p>The status of the Cognito options for the specified domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Cognito options for the specified domain.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -67,8 +65,11 @@ impl CognitoOptionsStatusBuilder {
     /// Consumes the builder and constructs a [`CognitoOptionsStatus`](crate::types::CognitoOptionsStatus).
     pub fn build(self) -> crate::types::CognitoOptionsStatus {
         crate::types::CognitoOptionsStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDataSourcesInput {
+pub struct DescribeDataSourcesInput  {
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
     /// <li>
@@ -54,7 +54,7 @@ pub struct DescribeDataSourcesInput {
     /// <p>The maximum number of <code>DataSource</code> to include in the result.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeDataSourcesInput {
+impl  DescribeDataSourcesInput  {
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
     /// <li>
@@ -68,31 +68,31 @@ impl DescribeDataSourcesInput {
     /// <li>
     /// <p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
     /// </ul>
-    pub fn filter_variable(&self) -> ::std::option::Option<&crate::types::DataSourceFilterVariable> {
+    pub fn filter_variable(&self) -> ::std::option::Option<& crate::types::DataSourceFilterVariable> {
         self.filter_variable.as_ref()
     }
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    pub fn eq(&self) -> ::std::option::Option<&str> {
+    pub fn eq(&self) -> ::std::option::Option<& str> {
         self.eq.as_deref()
     }
     /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    pub fn gt(&self) -> ::std::option::Option<&str> {
+    pub fn gt(&self) -> ::std::option::Option<& str> {
         self.gt.as_deref()
     }
     /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    pub fn lt(&self) -> ::std::option::Option<&str> {
+    pub fn lt(&self) -> ::std::option::Option<& str> {
         self.lt.as_deref()
     }
     /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.</p>
-    pub fn ge(&self) -> ::std::option::Option<&str> {
+    pub fn ge(&self) -> ::std::option::Option<& str> {
         self.ge.as_deref()
     }
     /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    pub fn le(&self) -> ::std::option::Option<&str> {
+    pub fn le(&self) -> ::std::option::Option<& str> {
         self.le.as_deref()
     }
     /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    pub fn ne(&self) -> ::std::option::Option<&str> {
+    pub fn ne(&self) -> ::std::option::Option<& str> {
         self.ne.as_deref()
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
@@ -105,7 +105,7 @@ impl DescribeDataSourcesInput {
     /// <li>
     /// <p>2014-09-09-Holiday</p></li>
     /// </ul>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
@@ -116,11 +116,11 @@ impl DescribeDataSourcesInput {
     /// <p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The ID of the page in the paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of <code>DataSource</code> to include in the result.</p>
@@ -183,8 +183,7 @@ impl DescribeDataSourcesInputBuilder {
     /// <p><code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p></li>
     /// </ul>
     pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::DataSourceFilterVariable>) -> Self {
-        self.filter_variable = input;
-        self
+        self.filter_variable = input; self
     }
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
     /// <ul>
@@ -209,8 +208,7 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn set_eq(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eq = input;
-        self
+        self.eq = input; self
     }
     /// <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
     pub fn get_eq(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +221,7 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn set_gt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gt = input;
-        self
+        self.gt = input; self
     }
     /// <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
     pub fn get_gt(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +234,7 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn set_lt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lt = input;
-        self
+        self.lt = input; self
     }
     /// <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
     pub fn get_lt(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +247,7 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.</p>
     pub fn set_ge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ge = input;
-        self
+        self.ge = input; self
     }
     /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.</p>
     pub fn get_ge(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +260,7 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub fn set_le(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.le = input;
-        self
+        self.le = input; self
     }
     /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
     pub fn get_le(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,8 +273,7 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub fn set_ne(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ne = input;
-        self
+        self.ne = input; self
     }
     /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
     pub fn get_ne(&self) -> &::std::option::Option<::std::string::String> {
@@ -311,8 +304,7 @@ impl DescribeDataSourcesInputBuilder {
     /// <p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
     /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
@@ -348,8 +340,7 @@ impl DescribeDataSourcesInputBuilder {
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
     /// <ul>
@@ -369,8 +360,7 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>The ID of the page in the paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The ID of the page in the paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -383,30 +373,40 @@ impl DescribeDataSourcesInputBuilder {
     }
     /// <p>The maximum number of <code>DataSource</code> to include in the result.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of <code>DataSource</code> to include in the result.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeDataSourcesInput`](crate::operation::describe_data_sources::DescribeDataSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_data_sources::DescribeDataSourcesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_data_sources::DescribeDataSourcesInput {
-            filter_variable: self.filter_variable,
-            eq: self.eq,
-            gt: self.gt,
-            lt: self.lt,
-            ge: self.ge,
-            le: self.le,
-            ne: self.ne,
-            prefix: self.prefix,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_data_sources::DescribeDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_data_sources::DescribeDataSourcesInput {
+                filter_variable: self.filter_variable
+                ,
+                eq: self.eq
+                ,
+                gt: self.gt
+                ,
+                lt: self.lt
+                ,
+                ge: self.ge
+                ,
+                le: self.le
+                ,
+                ne: self.ne
+                ,
+                prefix: self.prefix
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

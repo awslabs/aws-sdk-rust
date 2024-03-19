@@ -3,7 +3,7 @@
 /// <p>Resiliency score of each scoring component. For more information about scoring component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/calculate-score.html">Calculating resiliency score</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScoringComponentResiliencyScore {
+pub struct ScoringComponentResiliencyScore  {
     /// <p>Resiliency score of your application.</p>
     pub score: f64,
     /// <p>Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code> is 20 points, it indicates the maximum possible score you can achieve for your application when you run a new assessment after implementing all the Resilience Hub recommendations.</p>
@@ -15,7 +15,7 @@ pub struct ScoringComponentResiliencyScore {
     /// <p>For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.</p>
     pub excluded_count: i64,
 }
-impl ScoringComponentResiliencyScore {
+impl  ScoringComponentResiliencyScore  {
     /// <p>Resiliency score of your application.</p>
     pub fn score(&self) -> f64 {
         self.score
@@ -59,8 +59,7 @@ impl ScoringComponentResiliencyScoreBuilder {
     }
     /// <p>Resiliency score of your application.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>Resiliency score of your application.</p>
     pub fn get_score(&self) -> &::std::option::Option<f64> {
@@ -73,8 +72,7 @@ impl ScoringComponentResiliencyScoreBuilder {
     }
     /// <p>Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code> is 20 points, it indicates the maximum possible score you can achieve for your application when you run a new assessment after implementing all the Resilience Hub recommendations.</p>
     pub fn set_possible_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.possible_score = input;
-        self
+        self.possible_score = input; self
     }
     /// <p>Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code> is 20 points, it indicates the maximum possible score you can achieve for your application when you run a new assessment after implementing all the Resilience Hub recommendations.</p>
     pub fn get_possible_score(&self) -> &::std::option::Option<f64> {
@@ -89,8 +87,7 @@ impl ScoringComponentResiliencyScoreBuilder {
     /// <p>Number of issues that must be resolved to obtain the maximum possible score for the scoring component. For SOPs, alarms, and FIS experiments, these are the number of recommendations that must be implemented. For compliance, it is the number of Application Components that has breached the resiliency policy.</p>
     /// <p>For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 5, it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible score.</p>
     pub fn set_outstanding_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.outstanding_count = input;
-        self
+        self.outstanding_count = input; self
     }
     /// <p>Number of issues that must be resolved to obtain the maximum possible score for the scoring component. For SOPs, alarms, and FIS experiments, these are the number of recommendations that must be implemented. For compliance, it is the number of Application Components that has breached the resiliency policy.</p>
     /// <p>For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 5, it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible score.</p>
@@ -106,8 +103,7 @@ impl ScoringComponentResiliencyScoreBuilder {
     /// <p>Number of recommendations that were excluded from the assessment.</p>
     /// <p>For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.</p>
     pub fn set_excluded_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.excluded_count = input;
-        self
+        self.excluded_count = input; self
     }
     /// <p>Number of recommendations that were excluded from the assessment.</p>
     /// <p>For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.</p>
@@ -117,10 +113,19 @@ impl ScoringComponentResiliencyScoreBuilder {
     /// Consumes the builder and constructs a [`ScoringComponentResiliencyScore`](crate::types::ScoringComponentResiliencyScore).
     pub fn build(self) -> crate::types::ScoringComponentResiliencyScore {
         crate::types::ScoringComponentResiliencyScore {
-            score: self.score.unwrap_or_default(),
-            possible_score: self.possible_score.unwrap_or_default(),
-            outstanding_count: self.outstanding_count.unwrap_or_default(),
-            excluded_count: self.excluded_count.unwrap_or_default(),
+            score: self.score
+                .unwrap_or_default()
+            ,
+            possible_score: self.possible_score
+                .unwrap_or_default()
+            ,
+            outstanding_count: self.outstanding_count
+                .unwrap_or_default()
+            ,
+            excluded_count: self.excluded_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

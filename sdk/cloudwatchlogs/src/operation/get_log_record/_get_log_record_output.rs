@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLogRecordOutput {
+pub struct GetLogRecordOutput  {
     /// <p>The requested log event, as a JSON string.</p>
-    pub log_record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub log_record: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetLogRecordOutput {
+impl  GetLogRecordOutput  {
     /// <p>The requested log event, as a JSON string.</p>
-    pub fn log_record(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn log_record(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.log_record.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLogRecordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLogRecordOutput {
     /// Creates a new builder-style object to manufacture [`GetLogRecordOutput`](crate::operation::get_log_record::GetLogRecordOutput).
     pub fn builder() -> crate::operation::get_log_record::builders::GetLogRecordOutputBuilder {
@@ -29,7 +29,7 @@ impl GetLogRecordOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLogRecordOutputBuilder {
-    pub(crate) log_record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) log_record: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetLogRecordOutputBuilder {
@@ -40,33 +40,34 @@ impl GetLogRecordOutputBuilder {
     /// <p>The requested log event, as a JSON string.</p>
     pub fn log_record(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.log_record.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.log_record = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.log_record = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The requested log event, as a JSON string.</p>
-    pub fn set_log_record(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.log_record = input;
-        self
+    pub fn set_log_record(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.log_record = input; self
     }
     /// <p>The requested log event, as a JSON string.</p>
-    pub fn get_log_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_log_record(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.log_record
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLogRecordOutput`](crate::operation::get_log_record::GetLogRecordOutput).
     pub fn build(self) -> crate::operation::get_log_record::GetLogRecordOutput {
         crate::operation::get_log_record::GetLogRecordOutput {
-            log_record: self.log_record,
+            log_record: self.log_record
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

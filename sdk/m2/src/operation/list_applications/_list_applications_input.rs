@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationsInput {
+pub struct ListApplicationsInput  {
     /// <p>A pagination token to control the number of applications displayed in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of applications to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The names of the applications.</p>
-    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
-impl ListApplicationsInput {
+impl  ListApplicationsInput  {
     /// <p>A pagination token to control the number of applications displayed in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of applications to return.</p>
@@ -22,13 +22,14 @@ impl ListApplicationsInput {
         self.max_results
     }
     /// <p>The names of the applications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
-    pub fn names(&self) -> &[::std::string::String] {
-        self.names.as_deref().unwrap_or_default()
+    pub fn names(&self) -> & [::std::string::String] {
+        self.names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl ListApplicationsInput {
 pub struct ListApplicationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationsInputBuilder {
@@ -56,8 +57,7 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>A pagination token to control the number of applications displayed in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token to control the number of applications displayed in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>The maximum number of applications to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of applications to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -84,17 +83,16 @@ impl ListApplicationsInputBuilder {
     /// <p>The names of the applications.</p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the applications.</p>
-    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>The names of the applications.</p>
-    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.names
     }
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
@@ -104,22 +102,26 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            names: self.names,
-            environment_id: self.environment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_applications::ListApplicationsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                names: self.names
+                ,
+                environment_id: self.environment_id
+                ,
+            }
+        )
     }
 }
+

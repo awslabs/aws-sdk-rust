@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInferenceComponentRuntimeConfigInput {
+pub struct UpdateInferenceComponentRuntimeConfigInput  {
     /// <p>The name of the inference component to update.</p>
     pub inference_component_name: ::std::option::Option<::std::string::String>,
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub desired_runtime_config: ::std::option::Option<crate::types::InferenceComponentRuntimeConfig>,
 }
-impl UpdateInferenceComponentRuntimeConfigInput {
+impl  UpdateInferenceComponentRuntimeConfigInput  {
     /// <p>The name of the inference component to update.</p>
-    pub fn inference_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_component_name(&self) -> ::std::option::Option<& str> {
         self.inference_component_name.as_deref()
     }
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
-    pub fn desired_runtime_config(&self) -> ::std::option::Option<&crate::types::InferenceComponentRuntimeConfig> {
+    pub fn desired_runtime_config(&self) -> ::std::option::Option<& crate::types::InferenceComponentRuntimeConfig> {
         self.desired_runtime_config.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateInferenceComponentRuntimeConfigInputBuilder {
     }
     /// <p>The name of the inference component to update.</p>
     pub fn set_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_component_name = input;
-        self
+        self.inference_component_name = input; self
     }
     /// <p>The name of the inference component to update.</p>
     pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl UpdateInferenceComponentRuntimeConfigInputBuilder {
     }
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub fn set_desired_runtime_config(mut self, input: ::std::option::Option<crate::types::InferenceComponentRuntimeConfig>) -> Self {
-        self.desired_runtime_config = input;
-        self
+        self.desired_runtime_config = input; self
     }
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub fn get_desired_runtime_config(&self) -> &::std::option::Option<crate::types::InferenceComponentRuntimeConfig> {
         &self.desired_runtime_config
     }
     /// Consumes the builder and constructs a [`UpdateInferenceComponentRuntimeConfigInput`](crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigInput {
-                inference_component_name: self.inference_component_name,
-                desired_runtime_config: self.desired_runtime_config,
-            },
+                inference_component_name: self.inference_component_name
+                ,
+                desired_runtime_config: self.desired_runtime_config
+                ,
+            }
         )
     }
 }
+

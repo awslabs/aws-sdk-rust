@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDevEndpointInput {
+pub struct GetDevEndpointInput  {
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
-impl GetDevEndpointInput {
+impl  GetDevEndpointInput  {
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetDevEndpointInputBuilder {
     }
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_name
     }
     /// Consumes the builder and constructs a [`GetDevEndpointInput`](crate::operation::get_dev_endpoint::GetDevEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_dev_endpoint::GetDevEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_dev_endpoint::GetDevEndpointInput {
-            endpoint_name: self.endpoint_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dev_endpoint::GetDevEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_dev_endpoint::GetDevEndpointInput {
+                endpoint_name: self.endpoint_name
+                ,
+            }
+        )
     }
 }
+

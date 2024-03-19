@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateJobShipmentStateInput {
+pub struct UpdateJobShipmentStateInput  {
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of a device when it is being shipped.</p>
@@ -10,15 +10,15 @@ pub struct UpdateJobShipmentStateInput {
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     pub shipment_state: ::std::option::Option<crate::types::ShipmentState>,
 }
-impl UpdateJobShipmentStateInput {
+impl  UpdateJobShipmentStateInput  {
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The state of a device when it is being shipped.</p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
-    pub fn shipment_state(&self) -> ::std::option::Option<&crate::types::ShipmentState> {
+    pub fn shipment_state(&self) -> ::std::option::Option<& crate::types::ShipmentState> {
         self.shipment_state.as_ref()
     }
 }
@@ -45,8 +45,7 @@ impl UpdateJobShipmentStateInputBuilder {
     }
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl UpdateJobShipmentStateInputBuilder {
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
     pub fn set_shipment_state(mut self, input: ::std::option::Option<crate::types::ShipmentState>) -> Self {
-        self.shipment_state = input;
-        self
+        self.shipment_state = input; self
     }
     /// <p>The state of a device when it is being shipped.</p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
@@ -74,15 +72,15 @@ impl UpdateJobShipmentStateInputBuilder {
         &self.shipment_state
     }
     /// Consumes the builder and constructs a [`UpdateJobShipmentStateInput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput {
-            job_id: self.job_id,
-            shipment_state: self.shipment_state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput {
+                job_id: self.job_id
+                ,
+                shipment_state: self.shipment_state
+                ,
+            }
+        )
     }
 }
+

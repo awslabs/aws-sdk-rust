@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct QueryInput {
+pub struct QueryInput  {
     /// <p>The query to be run by Timestream.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive string of up to 64 ASCII characters specified when a <code>Query</code> request is made. Providing a <code>ClientToken</code> makes the call to <code>Query</code> <i>idempotent</i>. This means that running the same query repeatedly will produce the same result. In other words, making multiple identical <code>Query</code> requests has the same effect as making a single request. When using <code>ClientToken</code> in a query, note the following:</p>
@@ -45,9 +45,9 @@ pub struct QueryInput {
     /// <p>If the row size is large (e.g. a row has many columns), Timestream may return fewer rows to keep the response size from exceeding the 1 MB limit. If <code>MaxRows</code> is not provided, Timestream will send the necessary number of rows to meet the 1 MB limit.</p>
     pub max_rows: ::std::option::Option<i32>,
 }
-impl QueryInput {
+impl  QueryInput  {
     /// <p>The query to be run by Timestream.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>Unique, case-sensitive string of up to 64 ASCII characters specified when a <code>Query</code> request is made. Providing a <code>ClientToken</code> makes the call to <code>Query</code> <i>idempotent</i>. This means that running the same query repeatedly will produce the same result. In other words, making multiple identical <code>Query</code> requests has the same effect as making a single request. When using <code>ClientToken</code> in a query, note the following:</p>
@@ -61,7 +61,7 @@ impl QueryInput {
     /// <li>
     /// <p>After 4 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
     /// </ul>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A pagination token used to return a set of results. When the <code>Query</code> API is invoked using <code>NextToken</code>, that particular invocation is assumed to be a subsequent invocation of a prior call to <code>Query</code>, and a result set is returned. However, if the <code>Query</code> invocation only contains the <code>ClientToken</code>, that invocation of <code>Query</code> is assumed to be a new query run.</p>
@@ -80,7 +80,7 @@ impl QueryInput {
     /// <li>
     /// <p>If the IAM principal of the query initiator and the result reader are not the same and/or the query initiator and the result reader do not have the same query string in the query requests, the query will fail with an <code>Invalid pagination token</code> error.</p></li>
     /// </ul>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of rows to be returned in the <code>Query</code> output. The initial run of <code>Query</code> with a <code>MaxRows</code> value specified will return the result set of the query in two cases:</p>
@@ -96,7 +96,7 @@ impl QueryInput {
         self.max_rows
     }
 }
-impl ::std::fmt::Debug for QueryInput {
+impl  ::std::fmt::Debug for QueryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("QueryInput");
         formatter.field("query_string", &"*** Sensitive Data Redacted ***");
@@ -131,8 +131,7 @@ impl QueryInputBuilder {
     }
     /// <p>The query to be run by Timestream.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The query to be run by Timestream.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +164,7 @@ impl QueryInputBuilder {
     /// <p>After 4 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
     /// </ul>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive string of up to 64 ASCII characters specified when a <code>Query</code> request is made. Providing a <code>ClientToken</code> makes the call to <code>Query</code> <i>idempotent</i>. This means that running the same query repeatedly will produce the same result. In other words, making multiple identical <code>Query</code> requests has the same effect as making a single request. When using <code>ClientToken</code> in a query, note the following:</p>
     /// <ul>
@@ -219,8 +217,7 @@ impl QueryInputBuilder {
     /// <p>If the IAM principal of the query initiator and the result reader are not the same and/or the query initiator and the result reader do not have the same query string in the query requests, the query will fail with an <code>Invalid pagination token</code> error.</p></li>
     /// </ul>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token used to return a set of results. When the <code>Query</code> API is invoked using <code>NextToken</code>, that particular invocation is assumed to be a subsequent invocation of a prior call to <code>Query</code>, and a result set is returned. However, if the <code>Query</code> invocation only contains the <code>ClientToken</code>, that invocation of <code>Query</code> is assumed to be a new query run.</p>
     /// <p>Note the following when using NextToken in a query:</p>
@@ -264,8 +261,7 @@ impl QueryInputBuilder {
     /// <p>Otherwise, the initial invocation of <code>Query</code> only returns a <code>NextToken</code>, which can then be used in subsequent calls to fetch the result set. To resume pagination, provide the <code>NextToken</code> value in the subsequent command.</p>
     /// <p>If the row size is large (e.g. a row has many columns), Timestream may return fewer rows to keep the response size from exceeding the 1 MB limit. If <code>MaxRows</code> is not provided, Timestream will send the necessary number of rows to meet the 1 MB limit.</p>
     pub fn set_max_rows(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_rows = input;
-        self
+        self.max_rows = input; self
     }
     /// <p>The total number of rows to be returned in the <code>Query</code> output. The initial run of <code>Query</code> with a <code>MaxRows</code> value specified will return the result set of the query in two cases:</p>
     /// <ul>
@@ -281,12 +277,18 @@ impl QueryInputBuilder {
     }
     /// Consumes the builder and constructs a [`QueryInput`](crate::operation::query::QueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::query::QueryInput {
-            query_string: self.query_string,
-            client_token: self.client_token,
-            next_token: self.next_token,
-            max_rows: self.max_rows,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::query::QueryInput {
+                query_string: self.query_string
+                ,
+                client_token: self.client_token
+                ,
+                next_token: self.next_token
+                ,
+                max_rows: self.max_rows
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for QueryInputBuilder {
@@ -299,3 +301,4 @@ impl ::std::fmt::Debug for QueryInputBuilder {
         formatter.finish()
     }
 }
+

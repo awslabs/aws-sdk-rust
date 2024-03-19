@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let detectorfeatureresult = unimplemented!();
 /// match detectorfeatureresult {
@@ -38,16 +38,14 @@
 /// Specifically, when `detectorfeatureresult` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DetectorFeatureResult::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DetectorFeatureResult {
     #[allow(missing_docs)] // documentation missing in model
     CloudTrail,
@@ -71,96 +69,86 @@ pub enum DetectorFeatureResult {
     S3DataEvents,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DetectorFeatureResult {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLOUD_TRAIL" => DetectorFeatureResult::CloudTrail,
-            "DNS_LOGS" => DetectorFeatureResult::DnsLogs,
-            "EBS_MALWARE_PROTECTION" => DetectorFeatureResult::EbsMalwareProtection,
-            "EKS_AUDIT_LOGS" => DetectorFeatureResult::EksAuditLogs,
-            "EKS_RUNTIME_MONITORING" => DetectorFeatureResult::EksRuntimeMonitoring,
-            "FLOW_LOGS" => DetectorFeatureResult::FlowLogs,
-            "LAMBDA_NETWORK_LOGS" => DetectorFeatureResult::LambdaNetworkLogs,
-            "RDS_LOGIN_EVENTS" => DetectorFeatureResult::RdsLoginEvents,
-            "RUNTIME_MONITORING" => DetectorFeatureResult::RuntimeMonitoring,
-            "S3_DATA_EVENTS" => DetectorFeatureResult::S3DataEvents,
-            other => DetectorFeatureResult::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CLOUD_TRAIL" => DetectorFeatureResult::CloudTrail,
+"DNS_LOGS" => DetectorFeatureResult::DnsLogs,
+"EBS_MALWARE_PROTECTION" => DetectorFeatureResult::EbsMalwareProtection,
+"EKS_AUDIT_LOGS" => DetectorFeatureResult::EksAuditLogs,
+"EKS_RUNTIME_MONITORING" => DetectorFeatureResult::EksRuntimeMonitoring,
+"FLOW_LOGS" => DetectorFeatureResult::FlowLogs,
+"LAMBDA_NETWORK_LOGS" => DetectorFeatureResult::LambdaNetworkLogs,
+"RDS_LOGIN_EVENTS" => DetectorFeatureResult::RdsLoginEvents,
+"RUNTIME_MONITORING" => DetectorFeatureResult::RuntimeMonitoring,
+"S3_DATA_EVENTS" => DetectorFeatureResult::S3DataEvents,
+other => DetectorFeatureResult::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DetectorFeatureResult {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DetectorFeatureResult::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DetectorFeatureResult::from(s))
+                    }
+                }
 impl DetectorFeatureResult {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DetectorFeatureResult::CloudTrail => "CLOUD_TRAIL",
-            DetectorFeatureResult::DnsLogs => "DNS_LOGS",
-            DetectorFeatureResult::EbsMalwareProtection => "EBS_MALWARE_PROTECTION",
-            DetectorFeatureResult::EksAuditLogs => "EKS_AUDIT_LOGS",
-            DetectorFeatureResult::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
-            DetectorFeatureResult::FlowLogs => "FLOW_LOGS",
-            DetectorFeatureResult::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
-            DetectorFeatureResult::RdsLoginEvents => "RDS_LOGIN_EVENTS",
-            DetectorFeatureResult::RuntimeMonitoring => "RUNTIME_MONITORING",
-            DetectorFeatureResult::S3DataEvents => "S3_DATA_EVENTS",
-            DetectorFeatureResult::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLOUD_TRAIL",
-            "DNS_LOGS",
-            "EBS_MALWARE_PROTECTION",
-            "EKS_AUDIT_LOGS",
-            "EKS_RUNTIME_MONITORING",
-            "FLOW_LOGS",
-            "LAMBDA_NETWORK_LOGS",
-            "RDS_LOGIN_EVENTS",
-            "RUNTIME_MONITORING",
-            "S3_DATA_EVENTS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DetectorFeatureResult::CloudTrail => "CLOUD_TRAIL",
+    DetectorFeatureResult::DnsLogs => "DNS_LOGS",
+    DetectorFeatureResult::EbsMalwareProtection => "EBS_MALWARE_PROTECTION",
+    DetectorFeatureResult::EksAuditLogs => "EKS_AUDIT_LOGS",
+    DetectorFeatureResult::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
+    DetectorFeatureResult::FlowLogs => "FLOW_LOGS",
+    DetectorFeatureResult::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
+    DetectorFeatureResult::RdsLoginEvents => "RDS_LOGIN_EVENTS",
+    DetectorFeatureResult::RuntimeMonitoring => "RUNTIME_MONITORING",
+    DetectorFeatureResult::S3DataEvents => "S3_DATA_EVENTS",
+    DetectorFeatureResult::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLOUD_TRAIL", "DNS_LOGS", "EBS_MALWARE_PROTECTION", "EKS_AUDIT_LOGS", "EKS_RUNTIME_MONITORING", "FLOW_LOGS", "LAMBDA_NETWORK_LOGS", "RDS_LOGIN_EVENTS", "RUNTIME_MONITORING", "S3_DATA_EVENTS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DetectorFeatureResult {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DetectorFeatureResult {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DetectorFeatureResult {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DetectorFeatureResult::CloudTrail => write!(f, "CLOUD_TRAIL"),
-            DetectorFeatureResult::DnsLogs => write!(f, "DNS_LOGS"),
-            DetectorFeatureResult::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
-            DetectorFeatureResult::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
-            DetectorFeatureResult::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
-            DetectorFeatureResult::FlowLogs => write!(f, "FLOW_LOGS"),
-            DetectorFeatureResult::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
-            DetectorFeatureResult::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
-            DetectorFeatureResult::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
-            DetectorFeatureResult::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
-            DetectorFeatureResult::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DetectorFeatureResult::CloudTrail => write!(f, "CLOUD_TRAIL"),
+DetectorFeatureResult::DnsLogs => write!(f, "DNS_LOGS"),
+DetectorFeatureResult::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
+DetectorFeatureResult::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
+DetectorFeatureResult::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
+DetectorFeatureResult::FlowLogs => write!(f, "FLOW_LOGS"),
+DetectorFeatureResult::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
+DetectorFeatureResult::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
+DetectorFeatureResult::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
+DetectorFeatureResult::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
+DetectorFeatureResult::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

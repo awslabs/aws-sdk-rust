@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSubscriptionOutput {
+pub struct CreateSubscriptionOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for CreateSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionOutput`](crate::operation::create_subscription::CreateSubscriptionOutput).
     pub fn builder() -> crate::operation::create_subscription::builders::CreateSubscriptionOutputBuilder {
@@ -25,14 +25,14 @@ pub struct CreateSubscriptionOutputBuilder {
 }
 impl CreateSubscriptionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSubscriptionOutput`](crate::operation::create_subscription::CreateSubscriptionOutput).
     pub fn build(self) -> crate::operation::create_subscription::CreateSubscriptionOutput {
         crate::operation::create_subscription::CreateSubscriptionOutput {
@@ -40,3 +40,4 @@ impl CreateSubscriptionOutputBuilder {
         }
     }
 }
+

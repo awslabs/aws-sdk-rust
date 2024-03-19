@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateRuleInput {
+pub struct CreateRuleInput  {
     /// <p>The rule ID.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector ID for the rule's parent detector.</p>
@@ -14,45 +14,47 @@ pub struct CreateRuleInput {
     /// <p>The language of the rule.</p>
     pub language: ::std::option::Option<crate::types::Language>,
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
-    pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub outcomes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A collection of key and value pairs.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateRuleInput {
+impl  CreateRuleInput  {
     /// <p>The rule ID.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The detector ID for the rule's parent detector.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The rule description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The rule expression.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The language of the rule.</p>
-    pub fn language(&self) -> ::std::option::Option<&crate::types::Language> {
+    pub fn language(&self) -> ::std::option::Option<& crate::types::Language> {
         self.language.as_ref()
     }
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
-    pub fn outcomes(&self) -> &[::std::string::String] {
-        self.outcomes.as_deref().unwrap_or_default()
+    pub fn outcomes(&self) -> & [::std::string::String] {
+        self.outcomes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A collection of key and value pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateRuleInput {
+impl  ::std::fmt::Debug for CreateRuleInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRuleInput");
         formatter.field("rule_id", &self.rule_id);
@@ -81,8 +83,8 @@ pub struct CreateRuleInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<crate::types::Language>,
-    pub(crate) outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) outcomes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateRuleInputBuilder {
     /// <p>The rule ID.</p>
@@ -93,8 +95,7 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The rule ID.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The rule ID.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The detector ID for the rule's parent detector.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector ID for the rule's parent detector.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The rule description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The rule description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +136,7 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The rule expression.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The rule expression.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The language of the rule.</p>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The language of the rule.</p>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::Language> {
@@ -166,17 +163,16 @@ impl CreateRuleInputBuilder {
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
     pub fn outcomes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
-        v.push(input.into());
-        self.outcomes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.outcomes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
-    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.outcomes = input;
-        self
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.outcomes = input; self
     }
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
-    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.outcomes
     }
     /// Appends an item to `tags`.
@@ -186,30 +182,38 @@ impl CreateRuleInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
-            rule_id: self.rule_id,
-            detector_id: self.detector_id,
-            description: self.description,
-            expression: self.expression,
-            language: self.language,
-            outcomes: self.outcomes,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_rule::CreateRuleInput {
+                rule_id: self.rule_id
+                ,
+                detector_id: self.detector_id
+                ,
+                description: self.description
+                ,
+                expression: self.expression
+                ,
+                language: self.language
+                ,
+                outcomes: self.outcomes
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateRuleInputBuilder {
@@ -225,3 +229,4 @@ impl ::std::fmt::Debug for CreateRuleInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Statistics about the Identity Resolution Job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobStats {
+pub struct JobStats  {
     /// <p>The number of profiles reviewed.</p>
     pub number_of_profiles_reviewed: i64,
     /// <p>The number of matches found.</p>
@@ -11,7 +11,7 @@ pub struct JobStats {
     /// <p>The number of merges completed.</p>
     pub number_of_merges_done: i64,
 }
-impl JobStats {
+impl  JobStats  {
     /// <p>The number of profiles reviewed.</p>
     pub fn number_of_profiles_reviewed(&self) -> i64 {
         self.number_of_profiles_reviewed
@@ -48,8 +48,7 @@ impl JobStatsBuilder {
     }
     /// <p>The number of profiles reviewed.</p>
     pub fn set_number_of_profiles_reviewed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_profiles_reviewed = input;
-        self
+        self.number_of_profiles_reviewed = input; self
     }
     /// <p>The number of profiles reviewed.</p>
     pub fn get_number_of_profiles_reviewed(&self) -> &::std::option::Option<i64> {
@@ -62,8 +61,7 @@ impl JobStatsBuilder {
     }
     /// <p>The number of matches found.</p>
     pub fn set_number_of_matches_found(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_matches_found = input;
-        self
+        self.number_of_matches_found = input; self
     }
     /// <p>The number of matches found.</p>
     pub fn get_number_of_matches_found(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl JobStatsBuilder {
     }
     /// <p>The number of merges completed.</p>
     pub fn set_number_of_merges_done(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_merges_done = input;
-        self
+        self.number_of_merges_done = input; self
     }
     /// <p>The number of merges completed.</p>
     pub fn get_number_of_merges_done(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,16 @@ impl JobStatsBuilder {
     /// Consumes the builder and constructs a [`JobStats`](crate::types::JobStats).
     pub fn build(self) -> crate::types::JobStats {
         crate::types::JobStats {
-            number_of_profiles_reviewed: self.number_of_profiles_reviewed.unwrap_or_default(),
-            number_of_matches_found: self.number_of_matches_found.unwrap_or_default(),
-            number_of_merges_done: self.number_of_merges_done.unwrap_or_default(),
+            number_of_profiles_reviewed: self.number_of_profiles_reviewed
+                .unwrap_or_default()
+            ,
+            number_of_matches_found: self.number_of_matches_found
+                .unwrap_or_default()
+            ,
+            number_of_merges_done: self.number_of_merges_done
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

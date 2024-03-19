@@ -3,7 +3,7 @@
 /// <p>Describes a domain where you are storing recordsets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Domain {
+pub struct Domain  {
     /// <p>The name of the domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the domain recordset (<code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
@@ -17,51 +17,53 @@ pub struct Domain {
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
-    pub domain_entries: ::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>>,
+    pub domain_entries: ::std::option::Option<::std::vec::Vec::<crate::types::DomainEntry>>,
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
     pub registered_domain_delegation_info: ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>,
 }
-impl Domain {
+impl  Domain  {
     /// <p>The name of the domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain recordset (<code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> ::std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The date when the domain recordset was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_entries.is_none()`.
-    pub fn domain_entries(&self) -> &[crate::types::DomainEntry] {
-        self.domain_entries.as_deref().unwrap_or_default()
+    pub fn domain_entries(&self) -> & [crate::types::DomainEntry] {
+        self.domain_entries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
-    pub fn registered_domain_delegation_info(&self) -> ::std::option::Option<&crate::types::RegisteredDomainDelegationInfo> {
+    pub fn registered_domain_delegation_info(&self) -> ::std::option::Option<& crate::types::RegisteredDomainDelegationInfo> {
         self.registered_domain_delegation_info.as_ref()
     }
 }
@@ -82,8 +84,8 @@ pub struct DomainBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) domain_entries: ::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) domain_entries: ::std::option::Option<::std::vec::Vec::<crate::types::DomainEntry>>,
     pub(crate) registered_domain_delegation_info: ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>,
 }
 impl DomainBuilder {
@@ -94,8 +96,7 @@ impl DomainBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl DomainBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the domain recordset (<code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain recordset (<code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl DomainBuilder {
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl DomainBuilder {
     }
     /// <p>The date when the domain recordset was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date when the domain recordset was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,8 +148,7 @@ impl DomainBuilder {
     }
     /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
@@ -164,8 +161,7 @@ impl DomainBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -178,17 +174,16 @@ impl DomainBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `domain_entries`.
@@ -198,17 +193,16 @@ impl DomainBuilder {
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
     pub fn domain_entries(mut self, input: crate::types::DomainEntry) -> Self {
         let mut v = self.domain_entries.unwrap_or_default();
-        v.push(input);
-        self.domain_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
-    pub fn set_domain_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>>) -> Self {
-        self.domain_entries = input;
-        self
+    pub fn set_domain_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainEntry>>) -> Self {
+        self.domain_entries = input; self
     }
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
-    pub fn get_domain_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>> {
+    pub fn get_domain_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainEntry>> {
         &self.domain_entries
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
@@ -218,8 +212,7 @@ impl DomainBuilder {
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
     pub fn set_registered_domain_delegation_info(mut self, input: ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>) -> Self {
-        self.registered_domain_delegation_info = input;
-        self
+        self.registered_domain_delegation_info = input; self
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
     pub fn get_registered_domain_delegation_info(&self) -> &::std::option::Option<crate::types::RegisteredDomainDelegationInfo> {
@@ -228,15 +221,25 @@ impl DomainBuilder {
     /// Consumes the builder and constructs a [`Domain`](crate::types::Domain).
     pub fn build(self) -> crate::types::Domain {
         crate::types::Domain {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            tags: self.tags,
-            domain_entries: self.domain_entries,
-            registered_domain_delegation_info: self.registered_domain_delegation_info,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
+            domain_entries: self.domain_entries
+            ,
+            registered_domain_delegation_info: self.registered_domain_delegation_info
+            ,
         }
     }
 }
+

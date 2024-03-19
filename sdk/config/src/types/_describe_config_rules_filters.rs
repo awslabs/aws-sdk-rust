@@ -3,13 +3,13 @@
 /// <p>Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigRulesFilters {
+pub struct DescribeConfigRulesFilters  {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
-impl DescribeConfigRulesFilters {
+impl  DescribeConfigRulesFilters  {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
+    pub fn evaluation_mode(&self) -> ::std::option::Option<& crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DescribeConfigRulesFiltersBuilder {
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn set_evaluation_mode(mut self, input: ::std::option::Option<crate::types::EvaluationMode>) -> Self {
-        self.evaluation_mode = input;
-        self
+        self.evaluation_mode = input; self
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
@@ -44,7 +43,9 @@ impl DescribeConfigRulesFiltersBuilder {
     /// Consumes the builder and constructs a [`DescribeConfigRulesFilters`](crate::types::DescribeConfigRulesFilters).
     pub fn build(self) -> crate::types::DescribeConfigRulesFilters {
         crate::types::DescribeConfigRulesFilters {
-            evaluation_mode: self.evaluation_mode,
+            evaluation_mode: self.evaluation_mode
+            ,
         }
     }
 }
+

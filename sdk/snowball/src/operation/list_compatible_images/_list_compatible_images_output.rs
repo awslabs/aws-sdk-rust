@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCompatibleImagesOutput {
+pub struct ListCompatibleImagesOutput  {
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
-    pub compatible_images: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>,
+    pub compatible_images: ::std::option::Option<::std::vec::Vec::<crate::types::CompatibleImage>>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCompatibleImagesOutput {
+impl  ListCompatibleImagesOutput  {
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_images.is_none()`.
-    pub fn compatible_images(&self) -> &[crate::types::CompatibleImage] {
-        self.compatible_images.as_deref().unwrap_or_default()
+    pub fn compatible_images(&self) -> & [crate::types::CompatibleImage] {
+        self.compatible_images.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCompatibleImagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCompatibleImagesOutput {
     /// Creates a new builder-style object to manufacture [`ListCompatibleImagesOutput`](crate::operation::list_compatible_images::ListCompatibleImagesOutput).
     pub fn builder() -> crate::operation::list_compatible_images::builders::ListCompatibleImagesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCompatibleImagesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCompatibleImagesOutputBuilder {
-    pub(crate) compatible_images: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>,
+    pub(crate) compatible_images: ::std::option::Option<::std::vec::Vec::<crate::types::CompatibleImage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCompatibleImagesOutputBuilder {
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
     pub fn compatible_images(mut self, input: crate::types::CompatibleImage) -> Self {
         let mut v = self.compatible_images.unwrap_or_default();
-        v.push(input);
-        self.compatible_images = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compatible_images = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
-    pub fn set_compatible_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>) -> Self {
-        self.compatible_images = input;
-        self
+    pub fn set_compatible_images(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CompatibleImage>>) -> Self {
+        self.compatible_images = input; self
     }
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
-    pub fn get_compatible_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>> {
+    pub fn get_compatible_images(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CompatibleImage>> {
         &self.compatible_images
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
@@ -69,28 +69,30 @@ impl ListCompatibleImagesOutputBuilder {
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCompatibleImagesOutput`](crate::operation::list_compatible_images::ListCompatibleImagesOutput).
     pub fn build(self) -> crate::operation::list_compatible_images::ListCompatibleImagesOutput {
         crate::operation::list_compatible_images::ListCompatibleImagesOutput {
-            compatible_images: self.compatible_images,
-            next_token: self.next_token,
+            compatible_images: self.compatible_images
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

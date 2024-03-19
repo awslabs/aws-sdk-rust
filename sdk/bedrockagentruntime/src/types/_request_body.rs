@@ -3,13 +3,13 @@
 /// <p>The parameters in the request body for the Lambda input event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestBody {
+pub struct RequestBody  {
     /// <p>The content in the request body.</p>
-    pub content: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Parameter>>>,
+    pub content: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::Parameter>>>,
 }
-impl RequestBody {
+impl  RequestBody  {
     /// <p>The content in the request body.</p>
-    pub fn content(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Parameter>>> {
+    pub fn content(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::Parameter>>> {
         self.content.as_ref()
     }
 }
@@ -24,7 +24,7 @@ impl RequestBody {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestBodyBuilder {
-    pub(crate) content: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Parameter>>>,
+    pub(crate) content: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::Parameter>>>,
 }
 impl RequestBodyBuilder {
     /// Adds a key-value pair to `content`.
@@ -32,28 +32,26 @@ impl RequestBodyBuilder {
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
     /// <p>The content in the request body.</p>
-    pub fn content(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::Parameter>) -> Self {
+    pub fn content(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<crate::types::Parameter>) -> Self {
         let mut hash_map = self.content.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.content = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.content = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The content in the request body.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Parameter>>>,
-    ) -> Self {
-        self.content = input;
-        self
+    pub fn set_content(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::Parameter>>>) -> Self {
+        self.content = input; self
     }
     /// <p>The content in the request body.</p>
-    pub fn get_content(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::Parameter>>> {
+    pub fn get_content(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::Parameter>>> {
         &self.content
     }
     /// Consumes the builder and constructs a [`RequestBody`](crate::types::RequestBody).
     pub fn build(self) -> crate::types::RequestBody {
-        crate::types::RequestBody { content: self.content }
+        crate::types::RequestBody {
+            content: self.content
+            ,
+        }
     }
 }
+

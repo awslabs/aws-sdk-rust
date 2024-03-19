@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcerecordsetregion = unimplemented!();
 /// match resourcerecordsetregion {
@@ -59,16 +59,14 @@
 /// Specifically, when `resourcerecordsetregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceRecordSetRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     AfSouth1,
@@ -134,180 +132,149 @@ pub enum ResourceRecordSetRegion {
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ResourceRecordSetRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "af-south-1" => ResourceRecordSetRegion::AfSouth1,
-            "ap-east-1" => ResourceRecordSetRegion::ApEast1,
-            "ap-northeast-1" => ResourceRecordSetRegion::ApNortheast1,
-            "ap-northeast-2" => ResourceRecordSetRegion::ApNortheast2,
-            "ap-northeast-3" => ResourceRecordSetRegion::ApNortheast3,
-            "ap-south-1" => ResourceRecordSetRegion::ApSouth1,
-            "ap-south-2" => ResourceRecordSetRegion::ApSouth2,
-            "ap-southeast-1" => ResourceRecordSetRegion::ApSoutheast1,
-            "ap-southeast-2" => ResourceRecordSetRegion::ApSoutheast2,
-            "ap-southeast-3" => ResourceRecordSetRegion::ApSoutheast3,
-            "ap-southeast-4" => ResourceRecordSetRegion::ApSoutheast4,
-            "ca-central-1" => ResourceRecordSetRegion::CaCentral1,
-            "ca-west-1" => ResourceRecordSetRegion::CaWest1,
-            "cn-north-1" => ResourceRecordSetRegion::CnNorth1,
-            "cn-northwest-1" => ResourceRecordSetRegion::CnNorthwest1,
-            "eu-central-1" => ResourceRecordSetRegion::EuCentral1,
-            "eu-central-2" => ResourceRecordSetRegion::EuCentral2,
-            "eu-north-1" => ResourceRecordSetRegion::EuNorth1,
-            "eu-south-1" => ResourceRecordSetRegion::EuSouth1,
-            "eu-south-2" => ResourceRecordSetRegion::EuSouth2,
-            "eu-west-1" => ResourceRecordSetRegion::EuWest1,
-            "eu-west-2" => ResourceRecordSetRegion::EuWest2,
-            "eu-west-3" => ResourceRecordSetRegion::EuWest3,
-            "il-central-1" => ResourceRecordSetRegion::IlCentral1,
-            "me-central-1" => ResourceRecordSetRegion::MeCentral1,
-            "me-south-1" => ResourceRecordSetRegion::MeSouth1,
-            "sa-east-1" => ResourceRecordSetRegion::SaEast1,
-            "us-east-1" => ResourceRecordSetRegion::UsEast1,
-            "us-east-2" => ResourceRecordSetRegion::UsEast2,
-            "us-west-1" => ResourceRecordSetRegion::UsWest1,
-            "us-west-2" => ResourceRecordSetRegion::UsWest2,
-            other => ResourceRecordSetRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "af-south-1" => ResourceRecordSetRegion::AfSouth1,
+"ap-east-1" => ResourceRecordSetRegion::ApEast1,
+"ap-northeast-1" => ResourceRecordSetRegion::ApNortheast1,
+"ap-northeast-2" => ResourceRecordSetRegion::ApNortheast2,
+"ap-northeast-3" => ResourceRecordSetRegion::ApNortheast3,
+"ap-south-1" => ResourceRecordSetRegion::ApSouth1,
+"ap-south-2" => ResourceRecordSetRegion::ApSouth2,
+"ap-southeast-1" => ResourceRecordSetRegion::ApSoutheast1,
+"ap-southeast-2" => ResourceRecordSetRegion::ApSoutheast2,
+"ap-southeast-3" => ResourceRecordSetRegion::ApSoutheast3,
+"ap-southeast-4" => ResourceRecordSetRegion::ApSoutheast4,
+"ca-central-1" => ResourceRecordSetRegion::CaCentral1,
+"ca-west-1" => ResourceRecordSetRegion::CaWest1,
+"cn-north-1" => ResourceRecordSetRegion::CnNorth1,
+"cn-northwest-1" => ResourceRecordSetRegion::CnNorthwest1,
+"eu-central-1" => ResourceRecordSetRegion::EuCentral1,
+"eu-central-2" => ResourceRecordSetRegion::EuCentral2,
+"eu-north-1" => ResourceRecordSetRegion::EuNorth1,
+"eu-south-1" => ResourceRecordSetRegion::EuSouth1,
+"eu-south-2" => ResourceRecordSetRegion::EuSouth2,
+"eu-west-1" => ResourceRecordSetRegion::EuWest1,
+"eu-west-2" => ResourceRecordSetRegion::EuWest2,
+"eu-west-3" => ResourceRecordSetRegion::EuWest3,
+"il-central-1" => ResourceRecordSetRegion::IlCentral1,
+"me-central-1" => ResourceRecordSetRegion::MeCentral1,
+"me-south-1" => ResourceRecordSetRegion::MeSouth1,
+"sa-east-1" => ResourceRecordSetRegion::SaEast1,
+"us-east-1" => ResourceRecordSetRegion::UsEast1,
+"us-east-2" => ResourceRecordSetRegion::UsEast2,
+"us-west-1" => ResourceRecordSetRegion::UsWest1,
+"us-west-2" => ResourceRecordSetRegion::UsWest2,
+other => ResourceRecordSetRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ResourceRecordSetRegion {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ResourceRecordSetRegion::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ResourceRecordSetRegion::from(s))
+                    }
+                }
 impl ResourceRecordSetRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceRecordSetRegion::AfSouth1 => "af-south-1",
-            ResourceRecordSetRegion::ApEast1 => "ap-east-1",
-            ResourceRecordSetRegion::ApNortheast1 => "ap-northeast-1",
-            ResourceRecordSetRegion::ApNortheast2 => "ap-northeast-2",
-            ResourceRecordSetRegion::ApNortheast3 => "ap-northeast-3",
-            ResourceRecordSetRegion::ApSouth1 => "ap-south-1",
-            ResourceRecordSetRegion::ApSouth2 => "ap-south-2",
-            ResourceRecordSetRegion::ApSoutheast1 => "ap-southeast-1",
-            ResourceRecordSetRegion::ApSoutheast2 => "ap-southeast-2",
-            ResourceRecordSetRegion::ApSoutheast3 => "ap-southeast-3",
-            ResourceRecordSetRegion::ApSoutheast4 => "ap-southeast-4",
-            ResourceRecordSetRegion::CaCentral1 => "ca-central-1",
-            ResourceRecordSetRegion::CaWest1 => "ca-west-1",
-            ResourceRecordSetRegion::CnNorth1 => "cn-north-1",
-            ResourceRecordSetRegion::CnNorthwest1 => "cn-northwest-1",
-            ResourceRecordSetRegion::EuCentral1 => "eu-central-1",
-            ResourceRecordSetRegion::EuCentral2 => "eu-central-2",
-            ResourceRecordSetRegion::EuNorth1 => "eu-north-1",
-            ResourceRecordSetRegion::EuSouth1 => "eu-south-1",
-            ResourceRecordSetRegion::EuSouth2 => "eu-south-2",
-            ResourceRecordSetRegion::EuWest1 => "eu-west-1",
-            ResourceRecordSetRegion::EuWest2 => "eu-west-2",
-            ResourceRecordSetRegion::EuWest3 => "eu-west-3",
-            ResourceRecordSetRegion::IlCentral1 => "il-central-1",
-            ResourceRecordSetRegion::MeCentral1 => "me-central-1",
-            ResourceRecordSetRegion::MeSouth1 => "me-south-1",
-            ResourceRecordSetRegion::SaEast1 => "sa-east-1",
-            ResourceRecordSetRegion::UsEast1 => "us-east-1",
-            ResourceRecordSetRegion::UsEast2 => "us-east-2",
-            ResourceRecordSetRegion::UsWest1 => "us-west-1",
-            ResourceRecordSetRegion::UsWest2 => "us-west-2",
-            ResourceRecordSetRegion::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "af-south-1",
-            "ap-east-1",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-south-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ap-southeast-4",
-            "ca-central-1",
-            "ca-west-1",
-            "cn-north-1",
-            "cn-northwest-1",
-            "eu-central-1",
-            "eu-central-2",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-2",
-            "eu-west-3",
-            "il-central-1",
-            "me-central-1",
-            "me-south-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-1",
-            "us-west-2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceRecordSetRegion::AfSouth1 => "af-south-1",
+    ResourceRecordSetRegion::ApEast1 => "ap-east-1",
+    ResourceRecordSetRegion::ApNortheast1 => "ap-northeast-1",
+    ResourceRecordSetRegion::ApNortheast2 => "ap-northeast-2",
+    ResourceRecordSetRegion::ApNortheast3 => "ap-northeast-3",
+    ResourceRecordSetRegion::ApSouth1 => "ap-south-1",
+    ResourceRecordSetRegion::ApSouth2 => "ap-south-2",
+    ResourceRecordSetRegion::ApSoutheast1 => "ap-southeast-1",
+    ResourceRecordSetRegion::ApSoutheast2 => "ap-southeast-2",
+    ResourceRecordSetRegion::ApSoutheast3 => "ap-southeast-3",
+    ResourceRecordSetRegion::ApSoutheast4 => "ap-southeast-4",
+    ResourceRecordSetRegion::CaCentral1 => "ca-central-1",
+    ResourceRecordSetRegion::CaWest1 => "ca-west-1",
+    ResourceRecordSetRegion::CnNorth1 => "cn-north-1",
+    ResourceRecordSetRegion::CnNorthwest1 => "cn-northwest-1",
+    ResourceRecordSetRegion::EuCentral1 => "eu-central-1",
+    ResourceRecordSetRegion::EuCentral2 => "eu-central-2",
+    ResourceRecordSetRegion::EuNorth1 => "eu-north-1",
+    ResourceRecordSetRegion::EuSouth1 => "eu-south-1",
+    ResourceRecordSetRegion::EuSouth2 => "eu-south-2",
+    ResourceRecordSetRegion::EuWest1 => "eu-west-1",
+    ResourceRecordSetRegion::EuWest2 => "eu-west-2",
+    ResourceRecordSetRegion::EuWest3 => "eu-west-3",
+    ResourceRecordSetRegion::IlCentral1 => "il-central-1",
+    ResourceRecordSetRegion::MeCentral1 => "me-central-1",
+    ResourceRecordSetRegion::MeSouth1 => "me-south-1",
+    ResourceRecordSetRegion::SaEast1 => "sa-east-1",
+    ResourceRecordSetRegion::UsEast1 => "us-east-1",
+    ResourceRecordSetRegion::UsEast2 => "us-east-2",
+    ResourceRecordSetRegion::UsWest1 => "us-west-1",
+    ResourceRecordSetRegion::UsWest2 => "us-west-2",
+    ResourceRecordSetRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "ca-west-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "il-central-1", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ResourceRecordSetRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ResourceRecordSetRegion {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ResourceRecordSetRegion {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ResourceRecordSetRegion::AfSouth1 => write!(f, "af-south-1"),
-            ResourceRecordSetRegion::ApEast1 => write!(f, "ap-east-1"),
-            ResourceRecordSetRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
-            ResourceRecordSetRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
-            ResourceRecordSetRegion::ApNortheast3 => write!(f, "ap-northeast-3"),
-            ResourceRecordSetRegion::ApSouth1 => write!(f, "ap-south-1"),
-            ResourceRecordSetRegion::ApSouth2 => write!(f, "ap-south-2"),
-            ResourceRecordSetRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
-            ResourceRecordSetRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
-            ResourceRecordSetRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
-            ResourceRecordSetRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
-            ResourceRecordSetRegion::CaCentral1 => write!(f, "ca-central-1"),
-            ResourceRecordSetRegion::CaWest1 => write!(f, "ca-west-1"),
-            ResourceRecordSetRegion::CnNorth1 => write!(f, "cn-north-1"),
-            ResourceRecordSetRegion::CnNorthwest1 => write!(f, "cn-northwest-1"),
-            ResourceRecordSetRegion::EuCentral1 => write!(f, "eu-central-1"),
-            ResourceRecordSetRegion::EuCentral2 => write!(f, "eu-central-2"),
-            ResourceRecordSetRegion::EuNorth1 => write!(f, "eu-north-1"),
-            ResourceRecordSetRegion::EuSouth1 => write!(f, "eu-south-1"),
-            ResourceRecordSetRegion::EuSouth2 => write!(f, "eu-south-2"),
-            ResourceRecordSetRegion::EuWest1 => write!(f, "eu-west-1"),
-            ResourceRecordSetRegion::EuWest2 => write!(f, "eu-west-2"),
-            ResourceRecordSetRegion::EuWest3 => write!(f, "eu-west-3"),
-            ResourceRecordSetRegion::IlCentral1 => write!(f, "il-central-1"),
-            ResourceRecordSetRegion::MeCentral1 => write!(f, "me-central-1"),
-            ResourceRecordSetRegion::MeSouth1 => write!(f, "me-south-1"),
-            ResourceRecordSetRegion::SaEast1 => write!(f, "sa-east-1"),
-            ResourceRecordSetRegion::UsEast1 => write!(f, "us-east-1"),
-            ResourceRecordSetRegion::UsEast2 => write!(f, "us-east-2"),
-            ResourceRecordSetRegion::UsWest1 => write!(f, "us-west-1"),
-            ResourceRecordSetRegion::UsWest2 => write!(f, "us-west-2"),
-            ResourceRecordSetRegion::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ResourceRecordSetRegion::AfSouth1 => write!(f, "af-south-1"),
+ResourceRecordSetRegion::ApEast1 => write!(f, "ap-east-1"),
+ResourceRecordSetRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+ResourceRecordSetRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
+ResourceRecordSetRegion::ApNortheast3 => write!(f, "ap-northeast-3"),
+ResourceRecordSetRegion::ApSouth1 => write!(f, "ap-south-1"),
+ResourceRecordSetRegion::ApSouth2 => write!(f, "ap-south-2"),
+ResourceRecordSetRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+ResourceRecordSetRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+ResourceRecordSetRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
+ResourceRecordSetRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
+ResourceRecordSetRegion::CaCentral1 => write!(f, "ca-central-1"),
+ResourceRecordSetRegion::CaWest1 => write!(f, "ca-west-1"),
+ResourceRecordSetRegion::CnNorth1 => write!(f, "cn-north-1"),
+ResourceRecordSetRegion::CnNorthwest1 => write!(f, "cn-northwest-1"),
+ResourceRecordSetRegion::EuCentral1 => write!(f, "eu-central-1"),
+ResourceRecordSetRegion::EuCentral2 => write!(f, "eu-central-2"),
+ResourceRecordSetRegion::EuNorth1 => write!(f, "eu-north-1"),
+ResourceRecordSetRegion::EuSouth1 => write!(f, "eu-south-1"),
+ResourceRecordSetRegion::EuSouth2 => write!(f, "eu-south-2"),
+ResourceRecordSetRegion::EuWest1 => write!(f, "eu-west-1"),
+ResourceRecordSetRegion::EuWest2 => write!(f, "eu-west-2"),
+ResourceRecordSetRegion::EuWest3 => write!(f, "eu-west-3"),
+ResourceRecordSetRegion::IlCentral1 => write!(f, "il-central-1"),
+ResourceRecordSetRegion::MeCentral1 => write!(f, "me-central-1"),
+ResourceRecordSetRegion::MeSouth1 => write!(f, "me-south-1"),
+ResourceRecordSetRegion::SaEast1 => write!(f, "sa-east-1"),
+ResourceRecordSetRegion::UsEast1 => write!(f, "us-east-1"),
+ResourceRecordSetRegion::UsEast2 => write!(f, "us-east-2"),
+ResourceRecordSetRegion::UsWest1 => write!(f, "us-west-1"),
+ResourceRecordSetRegion::UsWest2 => write!(f, "us-west-2"),
+ResourceRecordSetRegion::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

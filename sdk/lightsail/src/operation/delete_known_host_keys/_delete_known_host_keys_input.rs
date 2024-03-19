@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKnownHostKeysInput {
+pub struct DeleteKnownHostKeysInput  {
     /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteKnownHostKeysInput {
+impl  DeleteKnownHostKeysInput  {
     /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteKnownHostKeysInputBuilder {
     }
     /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
     /// Consumes the builder and constructs a [`DeleteKnownHostKeysInput`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput {
-            instance_name: self.instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput {
+                instance_name: self.instance_name
+                ,
+            }
+        )
     }
 }
+

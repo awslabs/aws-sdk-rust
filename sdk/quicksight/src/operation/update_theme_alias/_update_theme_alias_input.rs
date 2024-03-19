@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateThemeAliasInput {
+pub struct UpdateThemeAliasInput  {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the theme.</p>
@@ -12,17 +12,17 @@ pub struct UpdateThemeAliasInput {
     /// <p>The version number of the theme that the alias should reference.</p>
     pub theme_version_number: ::std::option::Option<i64>,
 }
-impl UpdateThemeAliasInput {
+impl  UpdateThemeAliasInput  {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the theme.</p>
-    pub fn theme_id(&self) -> ::std::option::Option<&str> {
+    pub fn theme_id(&self) -> ::std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The name of the theme alias that you want to update.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The version number of the theme that the alias should reference.</p>
@@ -55,8 +55,7 @@ impl UpdateThemeAliasInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateThemeAliasInputBuilder {
     }
     /// <p>The ID for the theme.</p>
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.theme_id = input;
-        self
+        self.theme_id = input; self
     }
     /// <p>The ID for the theme.</p>
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateThemeAliasInputBuilder {
     }
     /// <p>The name of the theme alias that you want to update.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>The name of the theme alias that you want to update.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,22 +97,26 @@ impl UpdateThemeAliasInputBuilder {
     }
     /// <p>The version number of the theme that the alias should reference.</p>
     pub fn set_theme_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.theme_version_number = input;
-        self
+        self.theme_version_number = input; self
     }
     /// <p>The version number of the theme that the alias should reference.</p>
     pub fn get_theme_version_number(&self) -> &::std::option::Option<i64> {
         &self.theme_version_number
     }
     /// Consumes the builder and constructs a [`UpdateThemeAliasInput`](crate::operation::update_theme_alias::UpdateThemeAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_theme_alias::UpdateThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_theme_alias::UpdateThemeAliasInput {
-            aws_account_id: self.aws_account_id,
-            theme_id: self.theme_id,
-            alias_name: self.alias_name,
-            theme_version_number: self.theme_version_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_theme_alias::UpdateThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_theme_alias::UpdateThemeAliasInput {
+                aws_account_id: self.aws_account_id
+                ,
+                theme_id: self.theme_id
+                ,
+                alias_name: self.alias_name
+                ,
+                theme_version_number: self.theme_version_number
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTemplateInput {
+pub struct CreateTemplateInput  {
     /// <p>The name of the migration workflow template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the migration workflow template.</p>
@@ -12,27 +12,27 @@ pub struct CreateTemplateInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://smithy.io/2.0/spec/behavior-traits.html#idempotencytoken-trait">Idempotency</a> in the Smithy documentation.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add to the migration workflow template.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateTemplateInput {
+impl  CreateTemplateInput  {
     /// <p>The name of the migration workflow template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>A description of the migration workflow template.</p>
-    pub fn template_description(&self) -> ::std::option::Option<&str> {
+    pub fn template_description(&self) -> ::std::option::Option<& str> {
         self.template_description.as_deref()
     }
     /// <p>The source of the migration workflow template.</p>
-    pub fn template_source(&self) -> ::std::option::Option<&crate::types::TemplateSource> {
+    pub fn template_source(&self) -> ::std::option::Option<& crate::types::TemplateSource> {
         self.template_source.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://smithy.io/2.0/spec/behavior-traits.html#idempotencytoken-trait">Idempotency</a> in the Smithy documentation.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags to add to the migration workflow template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -51,7 +51,7 @@ pub struct CreateTemplateInputBuilder {
     pub(crate) template_description: ::std::option::Option<::std::string::String>,
     pub(crate) template_source: ::std::option::Option<crate::types::TemplateSource>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateTemplateInputBuilder {
     /// <p>The name of the migration workflow template.</p>
@@ -62,8 +62,7 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>The name of the migration workflow template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the migration workflow template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>A description of the migration workflow template.</p>
     pub fn set_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_description = input;
-        self
+        self.template_description = input; self
     }
     /// <p>A description of the migration workflow template.</p>
     pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>The source of the migration workflow template.</p>
     pub fn set_template_source(mut self, input: ::std::option::Option<crate::types::TemplateSource>) -> Self {
-        self.template_source = input;
-        self
+        self.template_source = input; self
     }
     /// <p>The source of the migration workflow template.</p>
     pub fn get_template_source(&self) -> &::std::option::Option<crate::types::TemplateSource> {
@@ -105,8 +102,7 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://smithy.io/2.0/spec/behavior-traits.html#idempotencytoken-trait">Idempotency</a> in the Smithy documentation.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://smithy.io/2.0/spec/behavior-traits.html#idempotencytoken-trait">Idempotency</a> in the Smithy documentation.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,29 +115,34 @@ impl CreateTemplateInputBuilder {
     /// <p>The tags to add to the migration workflow template.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to add to the migration workflow template.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to add to the migration workflow template.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput {
-            template_name: self.template_name,
-            template_description: self.template_description,
-            template_source: self.template_source,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_template::CreateTemplateInput {
+                template_name: self.template_name
+                ,
+                template_description: self.template_description
+                ,
+                template_source: self.template_source
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

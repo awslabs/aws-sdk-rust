@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetListingInput {
+pub struct GetListingInput  {
     /// <p></p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -10,17 +10,17 @@ pub struct GetListingInput {
     /// <p></p>
     pub listing_revision: ::std::option::Option<::std::string::String>,
 }
-impl GetListingInput {
+impl  GetListingInput  {
     /// <p></p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p></p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p></p>
-    pub fn listing_revision(&self) -> ::std::option::Option<&str> {
+    pub fn listing_revision(&self) -> ::std::option::Option<& str> {
         self.listing_revision.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetListingInputBuilder {
     }
     /// <p></p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p></p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetListingInputBuilder {
     }
     /// <p></p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p></p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetListingInputBuilder {
     }
     /// <p></p>
     pub fn set_listing_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_revision = input;
-        self
+        self.listing_revision = input; self
     }
     /// <p></p>
     pub fn get_listing_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,10 +83,16 @@ impl GetListingInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetListingInput`](crate::operation::get_listing::GetListingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_listing::GetListingInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            listing_revision: self.listing_revision,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_listing::GetListingInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                listing_revision: self.listing_revision
+                ,
+            }
+        )
     }
 }
+

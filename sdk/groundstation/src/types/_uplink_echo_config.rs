@@ -4,21 +4,20 @@
 /// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UplinkEchoConfig {
+pub struct UplinkEchoConfig  {
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
     pub enabled: bool,
     /// <p>ARN of an uplink <code>Config</code>.</p>
     pub antenna_uplink_config_arn: ::std::string::String,
 }
-impl UplinkEchoConfig {
+impl  UplinkEchoConfig  {
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>ARN of an uplink <code>Config</code>.</p>
-    pub fn antenna_uplink_config_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.antenna_uplink_config_arn.deref()
+    pub fn antenna_uplink_config_arn(&self) -> & str {
+        use std::ops::Deref; self.antenna_uplink_config_arn.deref()
     }
 }
 impl UplinkEchoConfig {
@@ -44,8 +43,7 @@ impl UplinkEchoConfigBuilder {
     }
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -59,8 +57,7 @@ impl UplinkEchoConfigBuilder {
     }
     /// <p>ARN of an uplink <code>Config</code>.</p>
     pub fn set_antenna_uplink_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.antenna_uplink_config_arn = input;
-        self
+        self.antenna_uplink_config_arn = input; self
     }
     /// <p>ARN of an uplink <code>Config</code>.</p>
     pub fn get_antenna_uplink_config_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +68,20 @@ impl UplinkEchoConfigBuilder {
     /// - [`enabled`](crate::types::builders::UplinkEchoConfigBuilder::enabled)
     /// - [`antenna_uplink_config_arn`](crate::types::builders::UplinkEchoConfigBuilder::antenna_uplink_config_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::UplinkEchoConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UplinkEchoConfig {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building UplinkEchoConfig",
-                )
-            })?,
-            antenna_uplink_config_arn: self.antenna_uplink_config_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "antenna_uplink_config_arn",
-                    "antenna_uplink_config_arn was not specified but it is required when building UplinkEchoConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UplinkEchoConfig {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building UplinkEchoConfig")
+                    )?
+                ,
+                antenna_uplink_config_arn: self.antenna_uplink_config_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("antenna_uplink_config_arn", "antenna_uplink_config_arn was not specified but it is required when building UplinkEchoConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

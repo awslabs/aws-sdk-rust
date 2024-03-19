@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventIntegrationOutput {
+pub struct CreateEventIntegrationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
     pub event_integration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateEventIntegrationOutput {
+impl  CreateEventIntegrationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
-    pub fn event_integration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_integration_arn(&self) -> ::std::option::Option<& str> {
         self.event_integration_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEventIntegrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateEventIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventIntegrationOutput`](crate::operation::create_event_integration::CreateEventIntegrationOutput).
     pub fn builder() -> crate::operation::create_event_integration::builders::CreateEventIntegrationOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateEventIntegrationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
     pub fn set_event_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_integration_arn = input;
-        self
+        self.event_integration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
     pub fn get_event_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_integration_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateEventIntegrationOutput`](crate::operation::create_event_integration::CreateEventIntegrationOutput).
     pub fn build(self) -> crate::operation::create_event_integration::CreateEventIntegrationOutput {
         crate::operation::create_event_integration::CreateEventIntegrationOutput {
-            event_integration_arn: self.event_integration_arn,
+            event_integration_arn: self.event_integration_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

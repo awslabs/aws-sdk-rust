@@ -5,19 +5,19 @@
 /// <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyGroup {
+pub struct PolicyGroup  {
     /// <p>The name (friendly name, not ARN) identifying the group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl PolicyGroup {
+impl  PolicyGroup  {
     /// <p>The name (friendly name, not ARN) identifying the group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl PolicyGroupBuilder {
     }
     /// <p>The name (friendly name, not ARN) identifying the group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name (friendly name, not ARN) identifying the group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl PolicyGroupBuilder {
     }
     /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl PolicyGroupBuilder {
     /// Consumes the builder and constructs a [`PolicyGroup`](crate::types::PolicyGroup).
     pub fn build(self) -> crate::types::PolicyGroup {
         crate::types::PolicyGroup {
-            group_name: self.group_name,
-            group_id: self.group_id,
+            group_name: self.group_name
+            ,
+            group_id: self.group_id
+            ,
         }
     }
 }
+

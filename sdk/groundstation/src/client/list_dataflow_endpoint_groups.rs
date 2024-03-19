@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataflowEndpointGroups`](crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of dataflow endpoint groups returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p><br>
-    /// - On success, responds with [`ListDataflowEndpointGroupsOutput`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListDataflowEndpointGroupsOutput`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput::next_token): <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
     ///   - [`dataflow_endpoint_group_list(Option<Vec::<DataflowEndpointListItem>>)`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput::dataflow_endpoint_group_list): <p>A list of dataflow endpoint groups.</p>
-    /// - On failure, responds with [`SdkError<ListDataflowEndpointGroupsError>`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError)
-    pub fn list_dataflow_endpoint_groups(
-        &self,
-    ) -> crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder {
-        crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDataflowEndpointGroupsError>`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsError)
+    pub fn list_dataflow_endpoint_groups(&self) -> crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder {
+                                crate::operation::list_dataflow_endpoint_groups::builders::ListDataflowEndpointGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

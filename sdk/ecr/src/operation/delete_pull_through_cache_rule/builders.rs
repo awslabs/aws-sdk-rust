@@ -5,54 +5,50 @@ pub use crate::operation::delete_pull_through_cache_rule::_delete_pull_through_c
 
 impl DeletePullThroughCacheRuleInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_pull_through_cache_rule();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_pull_through_cache_rule();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeletePullThroughCacheRule`.
-///
+/// 
 /// <p>Deletes a pull through cache rule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePullThroughCacheRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder,
+                    inner: crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
-        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-    > for DeletePullThroughCacheRuleFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
+                    crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
+                > for DeletePullThroughCacheRuleFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
+                        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeletePullThroughCacheRuleFluentBuilder {
     /// Creates a new `DeletePullThroughCacheRule`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl DeletePullThroughCacheRuleFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRule::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRule::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput,
-        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRule::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRule::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput, crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
     pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ecr_repository_prefix(input.into());
@@ -137,3 +124,4 @@ impl DeletePullThroughCacheRuleFluentBuilder {
         self.inner.get_registry_id()
     }
 }
+

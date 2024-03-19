@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEntities`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace.</p><br>
     ///   - [`filters(ListEntitiesFilter)`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::filters) / [`set_filters(Option<Vec::<ListEntitiesFilter>>)`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::set_filters):<br>required: **false**<br><p>A list of objects that filter the request.</p><note>  <p>Only one object is accepted as a valid input.</p> </note><br>
     ///   - [`max_results(i32)`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p> <p>Valid Range: Minimum value of 1. Maximum value of 250.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_entities::builders::ListEntitiesFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results.</p><br>
-    /// - On success, responds with [`ListEntitiesOutput`](crate::operation::list_entities::ListEntitiesOutput) with field(s):
+                            /// - On success, responds with [`ListEntitiesOutput`](crate::operation::list_entities::ListEntitiesOutput) with field(s):
     ///   - [`entity_summaries(Option<Vec::<EntitySummary>>)`](crate::operation::list_entities::ListEntitiesOutput::entity_summaries): <p>A list of objects that contain information about the entities.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entities::ListEntitiesOutput::next_token): <p>The string that specifies the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListEntitiesError>`](crate::operation::list_entities::ListEntitiesError)
+                            /// - On failure, responds with [`SdkError<ListEntitiesError>`](crate::operation::list_entities::ListEntitiesError)
     pub fn list_entities(&self) -> crate::operation::list_entities::builders::ListEntitiesFluentBuilder {
-        crate::operation::list_entities::builders::ListEntitiesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_entities::builders::ListEntitiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

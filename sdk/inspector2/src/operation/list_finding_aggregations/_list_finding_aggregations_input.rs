@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFindingAggregationsInput {
+pub struct ListFindingAggregationsInput  {
     /// <p>The type of the aggregation request.</p>
     pub aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -10,17 +10,17 @@ pub struct ListFindingAggregationsInput {
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
     pub aggregation_request: ::std::option::Option<crate::types::AggregationRequest>,
 }
-impl ListFindingAggregationsInput {
+impl  ListFindingAggregationsInput  {
     /// <p>The type of the aggregation request.</p>
-    pub fn aggregation_type(&self) -> ::std::option::Option<&crate::types::AggregationType> {
+    pub fn aggregation_type(&self) -> ::std::option::Option<& crate::types::AggregationType> {
         self.aggregation_type.as_ref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
@@ -28,13 +28,14 @@ impl ListFindingAggregationsInput {
         self.max_results
     }
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[crate::types::StringFilter] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [crate::types::StringFilter] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
-    pub fn aggregation_request(&self) -> ::std::option::Option<&crate::types::AggregationRequest> {
+    pub fn aggregation_request(&self) -> ::std::option::Option<& crate::types::AggregationRequest> {
         self.aggregation_request.as_ref()
     }
 }
@@ -52,7 +53,7 @@ pub struct ListFindingAggregationsInputBuilder {
     pub(crate) aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     pub(crate) aggregation_request: ::std::option::Option<crate::types::AggregationRequest>,
 }
 impl ListFindingAggregationsInputBuilder {
@@ -64,8 +65,7 @@ impl ListFindingAggregationsInputBuilder {
     }
     /// <p>The type of the aggregation request.</p>
     pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
-        self.aggregation_type = input;
-        self
+        self.aggregation_type = input; self
     }
     /// <p>The type of the aggregation request.</p>
     pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
@@ -78,8 +78,7 @@ impl ListFindingAggregationsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ListFindingAggregationsInputBuilder {
     }
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -106,17 +104,16 @@ impl ListFindingAggregationsInputBuilder {
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
     pub fn account_ids(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input);
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.account_ids
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
@@ -126,26 +123,28 @@ impl ListFindingAggregationsInputBuilder {
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
     pub fn set_aggregation_request(mut self, input: ::std::option::Option<crate::types::AggregationRequest>) -> Self {
-        self.aggregation_request = input;
-        self
+        self.aggregation_request = input; self
     }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
     pub fn get_aggregation_request(&self) -> &::std::option::Option<crate::types::AggregationRequest> {
         &self.aggregation_request
     }
     /// Consumes the builder and constructs a [`ListFindingAggregationsInput`](crate::operation::list_finding_aggregations::ListFindingAggregationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_finding_aggregations::ListFindingAggregationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_finding_aggregations::ListFindingAggregationsInput {
-            aggregation_type: self.aggregation_type,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            account_ids: self.account_ids,
-            aggregation_request: self.aggregation_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_finding_aggregations::ListFindingAggregationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_finding_aggregations::ListFindingAggregationsInput {
+                aggregation_type: self.aggregation_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                account_ids: self.account_ids
+                ,
+                aggregation_request: self.aggregation_request
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The event filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventFilter {
+pub struct EventFilter  {
     /// <p>The source of the events.</p>
     pub source: ::std::string::String,
 }
-impl EventFilter {
+impl  EventFilter  {
     /// <p>The source of the events.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
 }
 impl EventFilter {
@@ -36,8 +35,7 @@ impl EventFilterBuilder {
     }
     /// <p>The source of the events.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the events.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl EventFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::EventFilterBuilder::source)
     pub fn build(self) -> ::std::result::Result<crate::types::EventFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventFilter {
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building EventFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventFilter {
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building EventFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

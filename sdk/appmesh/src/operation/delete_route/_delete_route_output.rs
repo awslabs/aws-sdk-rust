@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRouteOutput {
+pub struct DeleteRouteOutput  {
     /// <p>The route that was deleted.</p>
     pub route: ::std::option::Option<crate::types::RouteData>,
     _request_id: Option<String>,
 }
-impl DeleteRouteOutput {
+impl  DeleteRouteOutput  {
     /// <p>The route that was deleted.</p>
-    pub fn route(&self) -> ::std::option::Option<&crate::types::RouteData> {
+    pub fn route(&self) -> ::std::option::Option<& crate::types::RouteData> {
         self.route.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteRouteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteOutput`](crate::operation::delete_route::DeleteRouteOutput).
     pub fn builder() -> crate::operation::delete_route::builders::DeleteRouteOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteRouteOutputBuilder {
     }
     /// <p>The route that was deleted.</p>
     pub fn set_route(mut self, input: ::std::option::Option<crate::types::RouteData>) -> Self {
-        self.route = input;
-        self
+        self.route = input; self
     }
     /// <p>The route that was deleted.</p>
     pub fn get_route(&self) -> &::std::option::Option<crate::types::RouteData> {
         &self.route
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteRouteOutput`](crate::operation::delete_route::DeleteRouteOutput).
     pub fn build(self) -> crate::operation::delete_route::DeleteRouteOutput {
         crate::operation::delete_route::DeleteRouteOutput {
-            route: self.route,
+            route: self.route
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

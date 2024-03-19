@@ -3,15 +3,14 @@
 /// <p>Contains <code>ToxicityCategories</code>, which is a required parameter if you want to enable toxicity detection (<code>ToxicityDetection</code>) in your transcription request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ToxicityDetectionSettings {
+pub struct ToxicityDetectionSettings  {
     /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    pub toxicity_categories: ::std::vec::Vec<crate::types::ToxicityCategory>,
+    pub toxicity_categories: ::std::vec::Vec::<crate::types::ToxicityCategory>,
 }
-impl ToxicityDetectionSettings {
+impl  ToxicityDetectionSettings  {
     /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    pub fn toxicity_categories(&self) -> &[crate::types::ToxicityCategory] {
-        use std::ops::Deref;
-        self.toxicity_categories.deref()
+    pub fn toxicity_categories(&self) -> & [crate::types::ToxicityCategory] {
+        use std::ops::Deref; self.toxicity_categories.deref()
     }
 }
 impl ToxicityDetectionSettings {
@@ -25,7 +24,7 @@ impl ToxicityDetectionSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ToxicityDetectionSettingsBuilder {
-    pub(crate) toxicity_categories: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>,
+    pub(crate) toxicity_categories: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicityCategory>>,
 }
 impl ToxicityDetectionSettingsBuilder {
     /// Appends an item to `toxicity_categories`.
@@ -35,30 +34,31 @@ impl ToxicityDetectionSettingsBuilder {
     /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
     pub fn toxicity_categories(mut self, input: crate::types::ToxicityCategory) -> Self {
         let mut v = self.toxicity_categories.unwrap_or_default();
-        v.push(input);
-        self.toxicity_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.toxicity_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    pub fn set_toxicity_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>) -> Self {
-        self.toxicity_categories = input;
-        self
+    pub fn set_toxicity_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicityCategory>>) -> Self {
+        self.toxicity_categories = input; self
     }
     /// <p>If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    pub fn get_toxicity_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>> {
+    pub fn get_toxicity_categories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ToxicityCategory>> {
         &self.toxicity_categories
     }
     /// Consumes the builder and constructs a [`ToxicityDetectionSettings`](crate::types::ToxicityDetectionSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`toxicity_categories`](crate::types::builders::ToxicityDetectionSettingsBuilder::toxicity_categories)
     pub fn build(self) -> ::std::result::Result<crate::types::ToxicityDetectionSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ToxicityDetectionSettings {
-            toxicity_categories: self.toxicity_categories.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "toxicity_categories",
-                    "toxicity_categories was not specified but it is required when building ToxicityDetectionSettings",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ToxicityDetectionSettings {
+                toxicity_categories: self.toxicity_categories
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("toxicity_categories", "toxicity_categories was not specified but it is required when building ToxicityDetectionSettings")
+                    )?
+                ,
+            }
+        )
     }
 }
+

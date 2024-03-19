@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTaskSetInput {
+pub struct DeleteTaskSetInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
@@ -12,17 +12,17 @@ pub struct DeleteTaskSetInput {
     /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl DeleteTaskSetInput {
+impl  DeleteTaskSetInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
-    pub fn task_set(&self) -> ::std::option::Option<&str> {
+    pub fn task_set(&self) -> ::std::option::Option<& str> {
         self.task_set.as_deref()
     }
     /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
@@ -55,8 +55,7 @@ impl DeleteTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DeleteTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DeleteTaskSetInputBuilder {
     }
     /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
     pub fn set_task_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_set = input;
-        self
+        self.task_set = input; self
     }
     /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
     pub fn get_task_set(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +96,26 @@ impl DeleteTaskSetInputBuilder {
     }
     /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`DeleteTaskSetInput`](crate::operation::delete_task_set::DeleteTaskSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_task_set::DeleteTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_task_set::DeleteTaskSetInput {
-            cluster: self.cluster,
-            service: self.service,
-            task_set: self.task_set,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_task_set::DeleteTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_task_set::DeleteTaskSetInput {
+                cluster: self.cluster
+                ,
+                service: self.service
+                ,
+                task_set: self.task_set
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

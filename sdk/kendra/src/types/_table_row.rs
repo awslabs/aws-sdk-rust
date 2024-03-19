@@ -3,16 +3,17 @@
 /// <p>Information about a row in a table excerpt.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableRow {
+pub struct TableRow  {
     /// <p>A list of table cells in a row.</p>
-    pub cells: ::std::option::Option<::std::vec::Vec<crate::types::TableCell>>,
+    pub cells: ::std::option::Option<::std::vec::Vec::<crate::types::TableCell>>,
 }
-impl TableRow {
+impl  TableRow  {
     /// <p>A list of table cells in a row.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
-    pub fn cells(&self) -> &[crate::types::TableCell] {
-        self.cells.as_deref().unwrap_or_default()
+    pub fn cells(&self) -> & [crate::types::TableCell] {
+        self.cells.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TableRow {
@@ -26,7 +27,7 @@ impl TableRow {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableRowBuilder {
-    pub(crate) cells: ::std::option::Option<::std::vec::Vec<crate::types::TableCell>>,
+    pub(crate) cells: ::std::option::Option<::std::vec::Vec::<crate::types::TableCell>>,
 }
 impl TableRowBuilder {
     /// Appends an item to `cells`.
@@ -36,21 +37,24 @@ impl TableRowBuilder {
     /// <p>A list of table cells in a row.</p>
     pub fn cells(mut self, input: crate::types::TableCell) -> Self {
         let mut v = self.cells.unwrap_or_default();
-        v.push(input);
-        self.cells = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cells = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of table cells in a row.</p>
-    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableCell>>) -> Self {
-        self.cells = input;
-        self
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableCell>>) -> Self {
+        self.cells = input; self
     }
     /// <p>A list of table cells in a row.</p>
-    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableCell>> {
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableCell>> {
         &self.cells
     }
     /// Consumes the builder and constructs a [`TableRow`](crate::types::TableRow).
     pub fn build(self) -> crate::types::TableRow {
-        crate::types::TableRow { cells: self.cells }
+        crate::types::TableRow {
+            cells: self.cells
+            ,
+        }
     }
 }
+

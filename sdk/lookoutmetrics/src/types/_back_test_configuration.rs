@@ -3,11 +3,11 @@
 /// <p>Settings for backtest mode.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackTestConfiguration {
+pub struct BackTestConfiguration  {
     /// <p>Run a backtest instead of monitoring new data.</p>
     pub run_back_test_mode: bool,
 }
-impl BackTestConfiguration {
+impl  BackTestConfiguration  {
     /// <p>Run a backtest instead of monitoring new data.</p>
     pub fn run_back_test_mode(&self) -> bool {
         self.run_back_test_mode
@@ -35,8 +35,7 @@ impl BackTestConfigurationBuilder {
     }
     /// <p>Run a backtest instead of monitoring new data.</p>
     pub fn set_run_back_test_mode(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.run_back_test_mode = input;
-        self
+        self.run_back_test_mode = input; self
     }
     /// <p>Run a backtest instead of monitoring new data.</p>
     pub fn get_run_back_test_mode(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl BackTestConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`run_back_test_mode`](crate::types::builders::BackTestConfigurationBuilder::run_back_test_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::BackTestConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BackTestConfiguration {
-            run_back_test_mode: self.run_back_test_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "run_back_test_mode",
-                    "run_back_test_mode was not specified but it is required when building BackTestConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BackTestConfiguration {
+                run_back_test_mode: self.run_back_test_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("run_back_test_mode", "run_back_test_mode was not specified but it is required when building BackTestConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

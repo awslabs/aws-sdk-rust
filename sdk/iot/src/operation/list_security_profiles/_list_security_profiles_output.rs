@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSecurityProfilesOutput {
+pub struct ListSecurityProfilesOutput  {
     /// <p>A list of security profile identifiers (names and ARNs).</p>
-    pub security_profile_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>>,
+    pub security_profile_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityProfileIdentifier>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSecurityProfilesOutput {
+impl  ListSecurityProfilesOutput  {
     /// <p>A list of security profile identifiers (names and ARNs).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_profile_identifiers.is_none()`.
-    pub fn security_profile_identifiers(&self) -> &[crate::types::SecurityProfileIdentifier] {
-        self.security_profile_identifiers.as_deref().unwrap_or_default()
+    pub fn security_profile_identifiers(&self) -> & [crate::types::SecurityProfileIdentifier] {
+        self.security_profile_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSecurityProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSecurityProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesOutput`](crate::operation::list_security_profiles::ListSecurityProfilesOutput).
     pub fn builder() -> crate::operation::list_security_profiles::builders::ListSecurityProfilesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSecurityProfilesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesOutputBuilder {
-    pub(crate) security_profile_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>>,
+    pub(crate) security_profile_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityProfileIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListSecurityProfilesOutputBuilder {
     /// <p>A list of security profile identifiers (names and ARNs).</p>
     pub fn security_profile_identifiers(mut self, input: crate::types::SecurityProfileIdentifier) -> Self {
         let mut v = self.security_profile_identifiers.unwrap_or_default();
-        v.push(input);
-        self.security_profile_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.security_profile_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security profile identifiers (names and ARNs).</p>
-    pub fn set_security_profile_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>>,
-    ) -> Self {
-        self.security_profile_identifiers = input;
-        self
+    pub fn set_security_profile_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityProfileIdentifier>>) -> Self {
+        self.security_profile_identifiers = input; self
     }
     /// <p>A list of security profile identifiers (names and ARNs).</p>
-    pub fn get_security_profile_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>> {
+    pub fn get_security_profile_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SecurityProfileIdentifier>> {
         &self.security_profile_identifiers
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -72,28 +69,30 @@ impl ListSecurityProfilesOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSecurityProfilesOutput`](crate::operation::list_security_profiles::ListSecurityProfilesOutput).
     pub fn build(self) -> crate::operation::list_security_profiles::ListSecurityProfilesOutput {
         crate::operation::list_security_profiles::ListSecurityProfilesOutput {
-            security_profile_identifiers: self.security_profile_identifiers,
-            next_token: self.next_token,
+            security_profile_identifiers: self.security_profile_identifiers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

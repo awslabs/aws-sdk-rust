@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRuleGroupOutput {
+pub struct CreateRuleGroupOutput  {
     /// <p>An empty <code>RuleGroup</code>.</p>
     pub rule_group: ::std::option::Option<crate::types::RuleGroup>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateRuleGroupOutput {
+impl  CreateRuleGroupOutput  {
     /// <p>An empty <code>RuleGroup</code>.</p>
-    pub fn rule_group(&self) -> ::std::option::Option<&crate::types::RuleGroup> {
+    pub fn rule_group(&self) -> ::std::option::Option<& crate::types::RuleGroup> {
         self.rule_group.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRuleGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
     pub fn builder() -> crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateRuleGroupOutputBuilder {
     }
     /// <p>An empty <code>RuleGroup</code>.</p>
     pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroup>) -> Self {
-        self.rule_group = input;
-        self
+        self.rule_group = input; self
     }
     /// <p>An empty <code>RuleGroup</code>.</p>
     pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
@@ -61,28 +60,30 @@ impl CreateRuleGroupOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
     pub fn build(self) -> crate::operation::create_rule_group::CreateRuleGroupOutput {
         crate::operation::create_rule_group::CreateRuleGroupOutput {
-            rule_group: self.rule_group,
-            change_token: self.change_token,
+            rule_group: self.rule_group
+            ,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

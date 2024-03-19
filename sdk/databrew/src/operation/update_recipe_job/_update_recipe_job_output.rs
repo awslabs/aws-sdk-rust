@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRecipeJobOutput {
+pub struct UpdateRecipeJobOutput  {
     /// <p>The name of the job that you updated.</p>
     pub name: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateRecipeJobOutput {
+impl  UpdateRecipeJobOutput  {
     /// <p>The name of the job that you updated.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRecipeJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRecipeJobOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRecipeJobOutput`](crate::operation::update_recipe_job::UpdateRecipeJobOutput).
     pub fn builder() -> crate::operation::update_recipe_job::builders::UpdateRecipeJobOutputBuilder {
@@ -42,36 +41,35 @@ impl UpdateRecipeJobOutputBuilder {
     }
     /// <p>The name of the job that you updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the job that you updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRecipeJobOutput`](crate::operation::update_recipe_job::UpdateRecipeJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::update_recipe_job::builders::UpdateRecipeJobOutputBuilder::name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_recipe_job::UpdateRecipeJobOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_recipe_job::UpdateRecipeJobOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateRecipeJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_recipe_job::UpdateRecipeJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_recipe_job::UpdateRecipeJobOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdateRecipeJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

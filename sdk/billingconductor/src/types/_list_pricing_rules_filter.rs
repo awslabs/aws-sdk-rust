@@ -3,16 +3,17 @@
 /// <p>The filter that specifies criteria that the pricing rules returned by the <code>ListPricingRules</code> API will adhere to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPricingRulesFilter {
+pub struct ListPricingRulesFilter  {
     /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
-    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListPricingRulesFilter {
+impl  ListPricingRulesFilter  {
     /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
-    pub fn arns(&self) -> &[::std::string::String] {
-        self.arns.as_deref().unwrap_or_default()
+    pub fn arns(&self) -> & [::std::string::String] {
+        self.arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListPricingRulesFilter {
@@ -26,7 +27,7 @@ impl ListPricingRulesFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingRulesFilterBuilder {
-    pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListPricingRulesFilterBuilder {
     /// Appends an item to `arns`.
@@ -36,21 +37,24 @@ impl ListPricingRulesFilterBuilder {
     /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
     pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
-    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
-    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.arns
     }
     /// Consumes the builder and constructs a [`ListPricingRulesFilter`](crate::types::ListPricingRulesFilter).
     pub fn build(self) -> crate::types::ListPricingRulesFilter {
-        crate::types::ListPricingRulesFilter { arns: self.arns }
+        crate::types::ListPricingRulesFilter {
+            arns: self.arns
+            ,
+        }
     }
 }
+

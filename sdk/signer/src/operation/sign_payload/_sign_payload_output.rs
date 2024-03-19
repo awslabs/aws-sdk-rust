@@ -2,40 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignPayloadOutput {
+pub struct SignPayloadOutput  {
     /// <p>Unique identifier of the signing job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the job owner.</p>
     pub job_owner: ::std::option::Option<::std::string::String>,
     /// <p>Information including the signing profile ARN and the signing job ID.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A cryptographic signature.</p>
     pub signature: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
-impl SignPayloadOutput {
+impl  SignPayloadOutput  {
     /// <p>Unique identifier of the signing job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The AWS account ID of the job owner.</p>
-    pub fn job_owner(&self) -> ::std::option::Option<&str> {
+    pub fn job_owner(&self) -> ::std::option::Option<& str> {
         self.job_owner.as_deref()
     }
     /// <p>Information including the signing profile ARN and the signing job ID.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>A cryptographic signature.</p>
-    pub fn signature(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn signature(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.signature.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SignPayloadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SignPayloadOutput {
     /// Creates a new builder-style object to manufacture [`SignPayloadOutput`](crate::operation::sign_payload::SignPayloadOutput).
     pub fn builder() -> crate::operation::sign_payload::builders::SignPayloadOutputBuilder {
@@ -49,7 +49,7 @@ impl SignPayloadOutput {
 pub struct SignPayloadOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_owner: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) signature: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
@@ -61,8 +61,7 @@ impl SignPayloadOutputBuilder {
     }
     /// <p>Unique identifier of the signing job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Unique identifier of the signing job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl SignPayloadOutputBuilder {
     }
     /// <p>The AWS account ID of the job owner.</p>
     pub fn set_job_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_owner = input;
-        self
+        self.job_owner = input; self
     }
     /// <p>The AWS account ID of the job owner.</p>
     pub fn get_job_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,17 +87,16 @@ impl SignPayloadOutputBuilder {
     /// <p>Information including the signing profile ARN and the signing job ID.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Information including the signing profile ARN and the signing job ID.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>Information including the signing profile ARN and the signing job ID.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>A cryptographic signature.</p>
@@ -109,30 +106,34 @@ impl SignPayloadOutputBuilder {
     }
     /// <p>A cryptographic signature.</p>
     pub fn set_signature(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.signature = input;
-        self
+        self.signature = input; self
     }
     /// <p>A cryptographic signature.</p>
     pub fn get_signature(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.signature
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SignPayloadOutput`](crate::operation::sign_payload::SignPayloadOutput).
     pub fn build(self) -> crate::operation::sign_payload::SignPayloadOutput {
         crate::operation::sign_payload::SignPayloadOutput {
-            job_id: self.job_id,
-            job_owner: self.job_owner,
-            metadata: self.metadata,
-            signature: self.signature,
+            job_id: self.job_id
+            ,
+            job_owner: self.job_owner
+            ,
+            metadata: self.metadata
+            ,
+            signature: self.signature
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

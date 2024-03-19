@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemporaryGluePartitionCredentialsOutput {
+pub struct GetTemporaryGluePartitionCredentialsOutput  {
     /// <p>The access key ID for the temporary credentials.</p>
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret key for the temporary credentials.</p>
@@ -13,29 +13,29 @@ pub struct GetTemporaryGluePartitionCredentialsOutput {
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetTemporaryGluePartitionCredentialsOutput {
+impl  GetTemporaryGluePartitionCredentialsOutput  {
     /// <p>The access key ID for the temporary credentials.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The secret key for the temporary credentials.</p>
-    pub fn secret_access_key(&self) -> ::std::option::Option<&str> {
+    pub fn secret_access_key(&self) -> ::std::option::Option<& str> {
         self.secret_access_key.as_deref()
     }
     /// <p>The session token for the temporary credentials.</p>
-    pub fn session_token(&self) -> ::std::option::Option<&str> {
+    pub fn session_token(&self) -> ::std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>The date and time when the temporary credentials expire.</p>
-    pub fn expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTemporaryGluePartitionCredentialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTemporaryGluePartitionCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetTemporaryGluePartitionCredentialsOutput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput).
     pub fn builder() -> crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsOutputBuilder {
@@ -61,8 +61,7 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
     }
     /// <p>The access key ID for the temporary credentials.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The access key ID for the temporary credentials.</p>
     pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
     }
     /// <p>The secret key for the temporary credentials.</p>
     pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_access_key = input;
-        self
+        self.secret_access_key = input; self
     }
     /// <p>The secret key for the temporary credentials.</p>
     pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
     }
     /// <p>The session token for the temporary credentials.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>The session token for the temporary credentials.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl GetTemporaryGluePartitionCredentialsOutputBuilder {
     }
     /// <p>The date and time when the temporary credentials expire.</p>
     pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration = input;
-        self
+        self.expiration = input; self
     }
     /// <p>The date and time when the temporary credentials expire.</p>
     pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTemporaryGluePartitionCredentialsOutput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput).
     pub fn build(self) -> crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput {
         crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput {
-            access_key_id: self.access_key_id,
-            secret_access_key: self.secret_access_key,
-            session_token: self.session_token,
-            expiration: self.expiration,
+            access_key_id: self.access_key_id
+            ,
+            secret_access_key: self.secret_access_key
+            ,
+            session_token: self.session_token
+            ,
+            expiration: self.expiration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Contains logging options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoggingOptions {
+pub struct LoggingOptions  {
     /// <p>The IoT SiteWise logging verbosity level.</p>
     pub level: crate::types::LoggingLevel,
 }
-impl LoggingOptions {
+impl  LoggingOptions  {
     /// <p>The IoT SiteWise logging verbosity level.</p>
-    pub fn level(&self) -> &crate::types::LoggingLevel {
+    pub fn level(&self) -> & crate::types::LoggingLevel {
         &self.level
     }
 }
@@ -35,8 +35,7 @@ impl LoggingOptionsBuilder {
     }
     /// <p>The IoT SiteWise logging verbosity level.</p>
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::LoggingLevel>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>The IoT SiteWise logging verbosity level.</p>
     pub fn get_level(&self) -> &::std::option::Option<crate::types::LoggingLevel> {
@@ -46,13 +45,15 @@ impl LoggingOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`level`](crate::types::builders::LoggingOptionsBuilder::level)
     pub fn build(self) -> ::std::result::Result<crate::types::LoggingOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LoggingOptions {
-            level: self.level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "level",
-                    "level was not specified but it is required when building LoggingOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LoggingOptions {
+                level: self.level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("level", "level was not specified but it is required when building LoggingOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

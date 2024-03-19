@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVirtualMachines`](crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`hypervisor_arn(impl Into<String>)`](crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::set_hypervisor_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of virtual machines to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p><br>
-    /// - On success, responds with [`ListVirtualMachinesOutput`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput) with field(s):
+                            /// - On success, responds with [`ListVirtualMachinesOutput`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput) with field(s):
     ///   - [`virtual_machines(Option<Vec::<VirtualMachine>>)`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput::virtual_machines): <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    /// - On failure, responds with [`SdkError<ListVirtualMachinesError>`](crate::operation::list_virtual_machines::ListVirtualMachinesError)
+                            /// - On failure, responds with [`SdkError<ListVirtualMachinesError>`](crate::operation::list_virtual_machines::ListVirtualMachinesError)
     pub fn list_virtual_machines(&self) -> crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder {
-        crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_virtual_machines::builders::ListVirtualMachinesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

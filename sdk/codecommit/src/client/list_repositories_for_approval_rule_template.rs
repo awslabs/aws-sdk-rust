@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRepositoriesForApprovalRuleTemplate`](crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`approval_rule_template_name(impl Into<String>)`](crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::approval_rule_template_name) / [`set_approval_rule_template_name(Option<String>)`](crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::set_approval_rule_template_name):<br>required: **true**<br><p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-zero, non-negative integer used to limit the number of returned results.</p><br>
-    /// - On success, responds with [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput) with field(s):
+                            /// - On success, responds with [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput) with field(s):
     ///   - [`repository_names(Option<Vec::<String>>)`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput::repository_names): <p>A list of repository names that are associated with the specified approval rule template.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
-    /// - On failure, responds with [`SdkError<ListRepositoriesForApprovalRuleTemplateError>`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError)
-    pub fn list_repositories_for_approval_rule_template(
-        &self,
-    ) -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder {
-        crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListRepositoriesForApprovalRuleTemplateError>`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError)
+    pub fn list_repositories_for_approval_rule_template(&self) -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder {
+                                crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateFluentBuilder::new(self.handle.clone())
+                            }
 }
+

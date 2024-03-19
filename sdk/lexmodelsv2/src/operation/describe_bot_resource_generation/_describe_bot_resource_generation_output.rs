@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBotResourceGenerationOutput {
+pub struct DescribeBotResourceGenerationOutput  {
     /// <p>The unique identifier of the bot for which the generation request was made.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot for which the generation request was made.</p>
@@ -12,7 +12,7 @@ pub struct DescribeBotResourceGenerationOutput {
     /// <p>The generation ID for which to return the generation details.</p>
     pub generation_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of reasons why the generation of bot resources through natural language description failed.</p>
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the generation request.</p>
     pub generation_status: ::std::option::Option<crate::types::GenerationStatus>,
     /// <p>The prompt used in the generation request.</p>
@@ -27,59 +27,60 @@ pub struct DescribeBotResourceGenerationOutput {
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeBotResourceGenerationOutput {
+impl  DescribeBotResourceGenerationOutput  {
     /// <p>The unique identifier of the bot for which the generation request was made.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot for which the generation request was made.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale of the bot for which the generation request was made.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The generation ID for which to return the generation details.</p>
-    pub fn generation_id(&self) -> ::std::option::Option<&str> {
+    pub fn generation_id(&self) -> ::std::option::Option<& str> {
         self.generation_id.as_deref()
     }
     /// <p>A list of reasons why the generation of bot resources through natural language description failed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the generation request.</p>
-    pub fn generation_status(&self) -> ::std::option::Option<&crate::types::GenerationStatus> {
+    pub fn generation_status(&self) -> ::std::option::Option<& crate::types::GenerationStatus> {
         self.generation_status.as_ref()
     }
     /// <p>The prompt used in the generation request.</p>
-    pub fn generation_input_prompt(&self) -> ::std::option::Option<&str> {
+    pub fn generation_input_prompt(&self) -> ::std::option::Option<& str> {
         self.generation_input_prompt.as_deref()
     }
     /// <p>The Amazon S3 location of the generated bot locale configuration.</p>
-    pub fn generated_bot_locale_url(&self) -> ::std::option::Option<&str> {
+    pub fn generated_bot_locale_url(&self) -> ::std::option::Option<& str> {
         self.generated_bot_locale_url.as_deref()
     }
     /// <p>The date and time at which the item was generated.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The ARN of the model used to generate the bot resources.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The date and time at which the generated item was updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBotResourceGenerationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBotResourceGenerationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBotResourceGenerationOutput`](crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput).
     pub fn builder() -> crate::operation::describe_bot_resource_generation::builders::DescribeBotResourceGenerationOutputBuilder {
@@ -95,7 +96,7 @@ pub struct DescribeBotResourceGenerationOutputBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) generation_status: ::std::option::Option<crate::types::GenerationStatus>,
     pub(crate) generation_input_prompt: ::std::option::Option<::std::string::String>,
     pub(crate) generated_bot_locale_url: ::std::option::Option<::std::string::String>,
@@ -112,8 +113,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The unique identifier of the bot for which the generation request was made.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot for which the generation request was made.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +126,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The version of the bot for which the generation request was made.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot for which the generation request was made.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +139,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The locale of the bot for which the generation request was made.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The locale of the bot for which the generation request was made.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +152,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The generation ID for which to return the generation details.</p>
     pub fn set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_id = input;
-        self
+        self.generation_id = input; self
     }
     /// <p>The generation ID for which to return the generation details.</p>
     pub fn get_generation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,17 +165,16 @@ impl DescribeBotResourceGenerationOutputBuilder {
     /// <p>A list of reasons why the generation of bot resources through natural language description failed.</p>
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of reasons why the generation of bot resources through natural language description failed.</p>
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// <p>A list of reasons why the generation of bot resources through natural language description failed.</p>
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     /// <p>The status of the generation request.</p>
@@ -188,8 +184,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The status of the generation request.</p>
     pub fn set_generation_status(mut self, input: ::std::option::Option<crate::types::GenerationStatus>) -> Self {
-        self.generation_status = input;
-        self
+        self.generation_status = input; self
     }
     /// <p>The status of the generation request.</p>
     pub fn get_generation_status(&self) -> &::std::option::Option<crate::types::GenerationStatus> {
@@ -202,8 +197,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The prompt used in the generation request.</p>
     pub fn set_generation_input_prompt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_input_prompt = input;
-        self
+        self.generation_input_prompt = input; self
     }
     /// <p>The prompt used in the generation request.</p>
     pub fn get_generation_input_prompt(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +210,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The Amazon S3 location of the generated bot locale configuration.</p>
     pub fn set_generated_bot_locale_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_bot_locale_url = input;
-        self
+        self.generated_bot_locale_url = input; self
     }
     /// <p>The Amazon S3 location of the generated bot locale configuration.</p>
     pub fn get_generated_bot_locale_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +223,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The date and time at which the item was generated.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time at which the item was generated.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -244,8 +236,7 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The ARN of the model used to generate the bot resources.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The ARN of the model used to generate the bot resources.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,37 +249,48 @@ impl DescribeBotResourceGenerationOutputBuilder {
     }
     /// <p>The date and time at which the generated item was updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time at which the generated item was updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBotResourceGenerationOutput`](crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput).
     pub fn build(self) -> crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput {
         crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            generation_id: self.generation_id,
-            failure_reasons: self.failure_reasons,
-            generation_status: self.generation_status,
-            generation_input_prompt: self.generation_input_prompt,
-            generated_bot_locale_url: self.generated_bot_locale_url,
-            creation_date_time: self.creation_date_time,
-            model_arn: self.model_arn,
-            last_updated_date_time: self.last_updated_date_time,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            generation_id: self.generation_id
+            ,
+            failure_reasons: self.failure_reasons
+            ,
+            generation_status: self.generation_status
+            ,
+            generation_input_prompt: self.generation_input_prompt
+            ,
+            generated_bot_locale_url: self.generated_bot_locale_url
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            model_arn: self.model_arn
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

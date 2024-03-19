@@ -3,15 +3,15 @@
 /// <p>Contains details about a Map Run that was redriven.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MapRunRedrivenEventDetails {
+pub struct MapRunRedrivenEventDetails  {
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
     pub map_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of times the Map Run has been redriven at this point in the execution's history including this event. The redrive count for a redriven Map Run is always greater than 0.</p>
     pub redrive_count: ::std::option::Option<i32>,
 }
-impl MapRunRedrivenEventDetails {
+impl  MapRunRedrivenEventDetails  {
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
-    pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> ::std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The number of times the Map Run has been redriven at this point in the execution's history including this event. The redrive count for a redriven Map Run is always greater than 0.</p>
@@ -41,8 +41,7 @@ impl MapRunRedrivenEventDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
     pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_run_arn = input;
-        self
+        self.map_run_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
     pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MapRunRedrivenEventDetailsBuilder {
     }
     /// <p>The number of times the Map Run has been redriven at this point in the execution's history including this event. The redrive count for a redriven Map Run is always greater than 0.</p>
     pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.redrive_count = input;
-        self
+        self.redrive_count = input; self
     }
     /// <p>The number of times the Map Run has been redriven at this point in the execution's history including this event. The redrive count for a redriven Map Run is always greater than 0.</p>
     pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl MapRunRedrivenEventDetailsBuilder {
     /// Consumes the builder and constructs a [`MapRunRedrivenEventDetails`](crate::types::MapRunRedrivenEventDetails).
     pub fn build(self) -> crate::types::MapRunRedrivenEventDetails {
         crate::types::MapRunRedrivenEventDetails {
-            map_run_arn: self.map_run_arn,
-            redrive_count: self.redrive_count,
+            map_run_arn: self.map_run_arn
+            ,
+            redrive_count: self.redrive_count
+            ,
         }
     }
 }
+

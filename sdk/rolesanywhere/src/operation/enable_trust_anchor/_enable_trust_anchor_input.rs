@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableTrustAnchorInput {
+pub struct EnableTrustAnchorInput  {
     /// <p>The unique identifier of the trust anchor.</p>
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
 }
-impl EnableTrustAnchorInput {
+impl  EnableTrustAnchorInput  {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(&self) -> ::std::option::Option<&str> {
+    pub fn trust_anchor_id(&self) -> ::std::option::Option<& str> {
         self.trust_anchor_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl EnableTrustAnchorInputBuilder {
     }
     /// <p>The unique identifier of the trust anchor.</p>
     pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_anchor_id = input;
-        self
+        self.trust_anchor_id = input; self
     }
     /// <p>The unique identifier of the trust anchor.</p>
     pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.trust_anchor_id
     }
     /// Consumes the builder and constructs a [`EnableTrustAnchorInput`](crate::operation::enable_trust_anchor::EnableTrustAnchorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_trust_anchor::EnableTrustAnchorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_trust_anchor::EnableTrustAnchorInput {
-            trust_anchor_id: self.trust_anchor_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_trust_anchor::EnableTrustAnchorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_trust_anchor::EnableTrustAnchorInput {
+                trust_anchor_id: self.trust_anchor_id
+                ,
+            }
+        )
     }
 }
+

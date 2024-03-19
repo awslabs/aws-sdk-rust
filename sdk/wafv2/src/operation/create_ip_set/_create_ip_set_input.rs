@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIpSetInput {
+pub struct CreateIpSetInput  {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -42,13 +42,13 @@ pub struct CreateIpSetInput {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateIpSetInput {
+impl  CreateIpSetInput  {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -59,15 +59,15 @@ impl CreateIpSetInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>A description of the IP set that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>.</p>
-    pub fn ip_address_version(&self) -> ::std::option::Option<&crate::types::IpAddressVersion> {
+    pub fn ip_address_version(&self) -> ::std::option::Option<& crate::types::IpAddressVersion> {
         self.ip_address_version.as_ref()
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
@@ -94,16 +94,18 @@ impl CreateIpSetInput {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
-    pub fn addresses(&self) -> &[::std::string::String] {
-        self.addresses.as_deref().unwrap_or_default()
+    pub fn addresses(&self) -> & [::std::string::String] {
+        self.addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateIpSetInput {
@@ -121,8 +123,8 @@ pub struct CreateIpSetInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_version: ::std::option::Option<crate::types::IpAddressVersion>,
-    pub(crate) addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateIpSetInputBuilder {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -133,8 +135,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +163,7 @@ impl CreateIpSetInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -183,8 +183,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>A description of the IP set that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the IP set that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +197,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn set_ip_address_version(mut self, input: ::std::option::Option<crate::types::IpAddressVersion>) -> Self {
-        self.ip_address_version = input;
-        self
+        self.ip_address_version = input; self
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn get_ip_address_version(&self) -> &::std::option::Option<crate::types::IpAddressVersion> {
@@ -235,9 +233,9 @@ impl CreateIpSetInputBuilder {
     /// </ul>
     pub fn addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.addresses.unwrap_or_default();
-        v.push(input.into());
-        self.addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
     /// <p>Example address strings:</p>
@@ -263,9 +261,8 @@ impl CreateIpSetInputBuilder {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.addresses = input;
-        self
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.addresses = input; self
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
     /// <p>Example address strings:</p>
@@ -291,7 +288,7 @@ impl CreateIpSetInputBuilder {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.addresses
     }
     /// Appends an item to `tags`.
@@ -301,28 +298,36 @@ impl CreateIpSetInputBuilder {
     /// <p>An array of key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_ip_set::CreateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_ip_set::CreateIpSetInput {
-            name: self.name,
-            scope: self.scope,
-            description: self.description,
-            ip_address_version: self.ip_address_version,
-            addresses: self.addresses,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_ip_set::CreateIpSetInput {
+                name: self.name
+                ,
+                scope: self.scope
+                ,
+                description: self.description
+                ,
+                ip_address_version: self.ip_address_version
+                ,
+                addresses: self.addresses
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

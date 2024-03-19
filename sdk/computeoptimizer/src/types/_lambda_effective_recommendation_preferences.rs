@@ -3,13 +3,13 @@
 /// <p>Describes the effective recommendation preferences for Lambda functions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaEffectiveRecommendationPreferences {
+pub struct LambdaEffectiveRecommendationPreferences  {
     /// <p>Describes the savings estimation mode applied for calculating savings opportunity for Lambda functions.</p>
     pub savings_estimation_mode: ::std::option::Option<crate::types::LambdaSavingsEstimationMode>,
 }
-impl LambdaEffectiveRecommendationPreferences {
+impl  LambdaEffectiveRecommendationPreferences  {
     /// <p>Describes the savings estimation mode applied for calculating savings opportunity for Lambda functions.</p>
-    pub fn savings_estimation_mode(&self) -> ::std::option::Option<&crate::types::LambdaSavingsEstimationMode> {
+    pub fn savings_estimation_mode(&self) -> ::std::option::Option<& crate::types::LambdaSavingsEstimationMode> {
         self.savings_estimation_mode.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LambdaEffectiveRecommendationPreferencesBuilder {
     }
     /// <p>Describes the savings estimation mode applied for calculating savings opportunity for Lambda functions.</p>
     pub fn set_savings_estimation_mode(mut self, input: ::std::option::Option<crate::types::LambdaSavingsEstimationMode>) -> Self {
-        self.savings_estimation_mode = input;
-        self
+        self.savings_estimation_mode = input; self
     }
     /// <p>Describes the savings estimation mode applied for calculating savings opportunity for Lambda functions.</p>
     pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::LambdaSavingsEstimationMode> {
@@ -44,7 +43,9 @@ impl LambdaEffectiveRecommendationPreferencesBuilder {
     /// Consumes the builder and constructs a [`LambdaEffectiveRecommendationPreferences`](crate::types::LambdaEffectiveRecommendationPreferences).
     pub fn build(self) -> crate::types::LambdaEffectiveRecommendationPreferences {
         crate::types::LambdaEffectiveRecommendationPreferences {
-            savings_estimation_mode: self.savings_estimation_mode,
+            savings_estimation_mode: self.savings_estimation_mode
+            ,
         }
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p>A collection of authorization information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthInfo {
+pub struct AuthInfo  {
     /// <p>The type of action for which the principal is being authorized.</p>
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
-    pub resources: ::std::vec::Vec<::std::string::String>,
+    pub resources: ::std::vec::Vec::<::std::string::String>,
 }
-impl AuthInfo {
+impl  AuthInfo  {
     /// <p>The type of action for which the principal is being authorized.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
-    pub fn resources(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.resources.deref()
+    pub fn resources(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.resources.deref()
     }
 }
 impl AuthInfo {
@@ -32,7 +31,7 @@ impl AuthInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthInfoBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AuthInfoBuilder {
     /// <p>The type of action for which the principal is being authorized.</p>
@@ -42,8 +41,7 @@ impl AuthInfoBuilder {
     }
     /// <p>The type of action for which the principal is being authorized.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The type of action for which the principal is being authorized.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
@@ -56,31 +54,33 @@ impl AuthInfoBuilder {
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`AuthInfo`](crate::types::AuthInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`resources`](crate::types::builders::AuthInfoBuilder::resources)
     pub fn build(self) -> ::std::result::Result<crate::types::AuthInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuthInfo {
-            action_type: self.action_type,
-            resources: self.resources.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resources",
-                    "resources was not specified but it is required when building AuthInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuthInfo {
+                action_type: self.action_type
+                ,
+                resources: self.resources
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resources", "resources was not specified but it is required when building AuthInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

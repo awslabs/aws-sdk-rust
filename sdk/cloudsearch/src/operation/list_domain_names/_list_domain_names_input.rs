@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainNamesInput {}
+pub struct ListDomainNamesInput  {
+}
 impl ListDomainNamesInput {
     /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
     pub fn builder() -> crate::operation::list_domain_names::builders::ListDomainNamesInputBuilder {
@@ -13,12 +14,15 @@ impl ListDomainNamesInput {
 /// A builder for [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ListDomainNamesInputBuilder {}
+pub struct ListDomainNamesInputBuilder {
+}
 impl ListDomainNamesInputBuilder {
     /// Consumes the builder and constructs a [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_domain_names::ListDomainNamesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_domain_names::ListDomainNamesInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domain_names::ListDomainNamesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_domain_names::ListDomainNamesInput {
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ipaddressstatus = unimplemented!();
 /// match ipaddressstatus {
@@ -40,16 +40,14 @@
 /// Specifically, when `ipaddressstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpAddressStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum IpAddressStatus {
     #[allow(missing_docs)] // documentation missing in model
     Attached,
@@ -77,104 +75,92 @@ pub enum IpAddressStatus {
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for IpAddressStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ATTACHED" => IpAddressStatus::Attached,
-            "ATTACHING" => IpAddressStatus::Attaching,
-            "CREATING" => IpAddressStatus::Creating,
-            "DELETE_FAILED_FAS_EXPIRED" => IpAddressStatus::DeleteFailedFasExpired,
-            "DELETING" => IpAddressStatus::Deleting,
-            "DETACHING" => IpAddressStatus::Detaching,
-            "FAILED_CREATION" => IpAddressStatus::FailedCreation,
-            "FAILED_RESOURCE_GONE" => IpAddressStatus::FailedResourceGone,
-            "REMAP_ATTACHING" => IpAddressStatus::RemapAttaching,
-            "REMAP_DETACHING" => IpAddressStatus::RemapDetaching,
-            "UPDATE_FAILED" => IpAddressStatus::UpdateFailed,
-            "UPDATING" => IpAddressStatus::Updating,
-            other => IpAddressStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ATTACHED" => IpAddressStatus::Attached,
+"ATTACHING" => IpAddressStatus::Attaching,
+"CREATING" => IpAddressStatus::Creating,
+"DELETE_FAILED_FAS_EXPIRED" => IpAddressStatus::DeleteFailedFasExpired,
+"DELETING" => IpAddressStatus::Deleting,
+"DETACHING" => IpAddressStatus::Detaching,
+"FAILED_CREATION" => IpAddressStatus::FailedCreation,
+"FAILED_RESOURCE_GONE" => IpAddressStatus::FailedResourceGone,
+"REMAP_ATTACHING" => IpAddressStatus::RemapAttaching,
+"REMAP_DETACHING" => IpAddressStatus::RemapDetaching,
+"UPDATE_FAILED" => IpAddressStatus::UpdateFailed,
+"UPDATING" => IpAddressStatus::Updating,
+other => IpAddressStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for IpAddressStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(IpAddressStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(IpAddressStatus::from(s))
+                    }
+                }
 impl IpAddressStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IpAddressStatus::Attached => "ATTACHED",
-            IpAddressStatus::Attaching => "ATTACHING",
-            IpAddressStatus::Creating => "CREATING",
-            IpAddressStatus::DeleteFailedFasExpired => "DELETE_FAILED_FAS_EXPIRED",
-            IpAddressStatus::Deleting => "DELETING",
-            IpAddressStatus::Detaching => "DETACHING",
-            IpAddressStatus::FailedCreation => "FAILED_CREATION",
-            IpAddressStatus::FailedResourceGone => "FAILED_RESOURCE_GONE",
-            IpAddressStatus::RemapAttaching => "REMAP_ATTACHING",
-            IpAddressStatus::RemapDetaching => "REMAP_DETACHING",
-            IpAddressStatus::UpdateFailed => "UPDATE_FAILED",
-            IpAddressStatus::Updating => "UPDATING",
-            IpAddressStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ATTACHED",
-            "ATTACHING",
-            "CREATING",
-            "DELETE_FAILED_FAS_EXPIRED",
-            "DELETING",
-            "DETACHING",
-            "FAILED_CREATION",
-            "FAILED_RESOURCE_GONE",
-            "REMAP_ATTACHING",
-            "REMAP_DETACHING",
-            "UPDATE_FAILED",
-            "UPDATING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IpAddressStatus::Attached => "ATTACHED",
+    IpAddressStatus::Attaching => "ATTACHING",
+    IpAddressStatus::Creating => "CREATING",
+    IpAddressStatus::DeleteFailedFasExpired => "DELETE_FAILED_FAS_EXPIRED",
+    IpAddressStatus::Deleting => "DELETING",
+    IpAddressStatus::Detaching => "DETACHING",
+    IpAddressStatus::FailedCreation => "FAILED_CREATION",
+    IpAddressStatus::FailedResourceGone => "FAILED_RESOURCE_GONE",
+    IpAddressStatus::RemapAttaching => "REMAP_ATTACHING",
+    IpAddressStatus::RemapDetaching => "REMAP_DETACHING",
+    IpAddressStatus::UpdateFailed => "UPDATE_FAILED",
+    IpAddressStatus::Updating => "UPDATING",
+    IpAddressStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ATTACHED", "ATTACHING", "CREATING", "DELETE_FAILED_FAS_EXPIRED", "DELETING", "DETACHING", "FAILED_CREATION", "FAILED_RESOURCE_GONE", "REMAP_ATTACHING", "REMAP_DETACHING", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for IpAddressStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl IpAddressStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for IpAddressStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            IpAddressStatus::Attached => write!(f, "ATTACHED"),
-            IpAddressStatus::Attaching => write!(f, "ATTACHING"),
-            IpAddressStatus::Creating => write!(f, "CREATING"),
-            IpAddressStatus::DeleteFailedFasExpired => write!(f, "DELETE_FAILED_FAS_EXPIRED"),
-            IpAddressStatus::Deleting => write!(f, "DELETING"),
-            IpAddressStatus::Detaching => write!(f, "DETACHING"),
-            IpAddressStatus::FailedCreation => write!(f, "FAILED_CREATION"),
-            IpAddressStatus::FailedResourceGone => write!(f, "FAILED_RESOURCE_GONE"),
-            IpAddressStatus::RemapAttaching => write!(f, "REMAP_ATTACHING"),
-            IpAddressStatus::RemapDetaching => write!(f, "REMAP_DETACHING"),
-            IpAddressStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            IpAddressStatus::Updating => write!(f, "UPDATING"),
-            IpAddressStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                IpAddressStatus::Attached => write!(f, "ATTACHED"),
+IpAddressStatus::Attaching => write!(f, "ATTACHING"),
+IpAddressStatus::Creating => write!(f, "CREATING"),
+IpAddressStatus::DeleteFailedFasExpired => write!(f, "DELETE_FAILED_FAS_EXPIRED"),
+IpAddressStatus::Deleting => write!(f, "DELETING"),
+IpAddressStatus::Detaching => write!(f, "DETACHING"),
+IpAddressStatus::FailedCreation => write!(f, "FAILED_CREATION"),
+IpAddressStatus::FailedResourceGone => write!(f, "FAILED_RESOURCE_GONE"),
+IpAddressStatus::RemapAttaching => write!(f, "REMAP_ATTACHING"),
+IpAddressStatus::RemapDetaching => write!(f, "REMAP_DETACHING"),
+IpAddressStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+IpAddressStatus::Updating => write!(f, "UPDATING"),
+IpAddressStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -5,23 +5,20 @@ pub use crate::operation::put_role_permissions_boundary::_put_role_permissions_b
 
 impl PutRolePermissionsBoundaryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_role_permissions_boundary();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_role_permissions_boundary();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutRolePermissionsBoundary`.
-///
+/// 
 /// <p>Adds or updates the policy that is specified as the IAM role's permissions boundary. You can use an Amazon Web Services managed policy or a customer managed policy to set the boundary for a role. Use the boundary to control the maximum permissions that the role can have. Setting a permissions boundary is an advanced feature that can affect the permissions for the role.</p>
 /// <p>You cannot set the boundary for a service-linked role.</p><important>
 /// <p>Policies used as permissions boundaries do not provide permissions. You must also attach a permissions policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the IAM User Guide.</p>
@@ -29,33 +26,32 @@ impl PutRolePermissionsBoundaryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRolePermissionsBoundaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_role_permissions_boundary::builders::PutRolePermissionsBoundaryInputBuilder,
+                    inner: crate::operation::put_role_permissions_boundary::builders::PutRolePermissionsBoundaryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
-        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
-    > for PutRolePermissionsBoundaryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
-            crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
+                    crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
+                > for PutRolePermissionsBoundaryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
+                        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutRolePermissionsBoundaryFluentBuilder {
     /// Creates a new `PutRolePermissionsBoundary`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl PutRolePermissionsBoundaryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundary::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundary::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
-        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundary::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundary::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput, crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the permissions boundary.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
@@ -146,3 +133,4 @@ impl PutRolePermissionsBoundaryFluentBuilder {
         self.inner.get_permissions_boundary()
     }
 }
+

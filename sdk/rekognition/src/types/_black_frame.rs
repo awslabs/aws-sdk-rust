@@ -3,7 +3,7 @@
 /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. As videos can come from multiple sources, formats, and time periods, they may contain different standards and varying noise levels for black frames that need to be accounted for. For more information, see <code>StartSegmentDetection</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlackFrame {
+pub struct BlackFrame  {
     /// <p>A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range.</p>
     /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
     /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video. You can lower this threshold to be more strict on black levels.</p>
@@ -12,7 +12,7 @@ pub struct BlackFrame {
     /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
     pub min_coverage_percentage: ::std::option::Option<f32>,
 }
-impl BlackFrame {
+impl  BlackFrame  {
     /// <p>A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range.</p>
     /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
     /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video. You can lower this threshold to be more strict on black levels.</p>
@@ -51,8 +51,7 @@ impl BlackFrameBuilder {
     /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
     /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video. You can lower this threshold to be more strict on black levels.</p>
     pub fn set_max_pixel_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.max_pixel_threshold = input;
-        self
+        self.max_pixel_threshold = input; self
     }
     /// <p>A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video, luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range.</p>
     /// <p>For example, for a full range video with BlackPixelThreshold = 0.1, max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
@@ -69,8 +68,7 @@ impl BlackFrameBuilder {
     /// <p>The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix.</p>
     /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
     pub fn set_min_coverage_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_coverage_percentage = input;
-        self
+        self.min_coverage_percentage = input; self
     }
     /// <p>The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered a black frame. Luminance is calculated using the BT.709 matrix.</p>
     /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more noise on the black frame.</p>
@@ -80,8 +78,11 @@ impl BlackFrameBuilder {
     /// Consumes the builder and constructs a [`BlackFrame`](crate::types::BlackFrame).
     pub fn build(self) -> crate::types::BlackFrame {
         crate::types::BlackFrame {
-            max_pixel_threshold: self.max_pixel_threshold,
-            min_coverage_percentage: self.min_coverage_percentage,
+            max_pixel_threshold: self.max_pixel_threshold
+            ,
+            min_coverage_percentage: self.min_coverage_percentage
+            ,
         }
     }
 }
+

@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListQuerySuggestionsBlockLists`](crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index for a list of all block lists that exist for that index.</p> <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of block lists to return.</p><br>
-    /// - On success, responds with [`ListQuerySuggestionsBlockListsOutput`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput) with field(s):
+                            /// - On success, responds with [`ListQuerySuggestionsBlockListsOutput`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput) with field(s):
     ///   - [`block_list_summary_items(Option<Vec::<QuerySuggestionsBlockListSummary>>)`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput::block_list_summary_items): <p>Summary items for a block list.</p> <p>This includes summary items on the block list ID, block list name, when the block list was created, when the block list was last updated, and the count of block words/phrases in the block list.</p> <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of block lists.</p>
-    /// - On failure, responds with [`SdkError<ListQuerySuggestionsBlockListsError>`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError)
-    pub fn list_query_suggestions_block_lists(
-        &self,
-    ) -> crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder {
-        crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListQuerySuggestionsBlockListsError>`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError)
+    pub fn list_query_suggestions_block_lists(&self) -> crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder {
+                                crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

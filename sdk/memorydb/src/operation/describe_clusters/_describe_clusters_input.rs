@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClustersInput {
+pub struct DescribeClustersInput  {
     /// <p>The name of the cluster</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -12,9 +12,9 @@ pub struct DescribeClustersInput {
     /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
     pub show_shard_details: ::std::option::Option<bool>,
 }
-impl DescribeClustersInput {
+impl  DescribeClustersInput  {
     /// <p>The name of the cluster</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -22,7 +22,7 @@ impl DescribeClustersInput {
         self.max_results
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
@@ -54,8 +54,7 @@ impl DescribeClustersInputBuilder {
     }
     /// <p>The name of the cluster</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DescribeClustersInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl DescribeClustersInputBuilder {
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,22 +93,26 @@ impl DescribeClustersInputBuilder {
     }
     /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
     pub fn set_show_shard_details(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show_shard_details = input;
-        self
+        self.show_shard_details = input; self
     }
     /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
     pub fn get_show_shard_details(&self) -> &::std::option::Option<bool> {
         &self.show_shard_details
     }
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_clusters::DescribeClustersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_clusters::DescribeClustersInput {
-            cluster_name: self.cluster_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            show_shard_details: self.show_shard_details,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_clusters::DescribeClustersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_clusters::DescribeClustersInput {
+                cluster_name: self.cluster_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                show_shard_details: self.show_shard_details
+                ,
+            }
+        )
     }
 }
+

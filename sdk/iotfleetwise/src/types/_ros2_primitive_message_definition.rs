@@ -3,7 +3,7 @@
 /// <p>Represents a ROS 2 compliant primitive type message of the complex data structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ros2PrimitiveMessageDefinition {
+pub struct Ros2PrimitiveMessageDefinition  {
     /// <p>The primitive type (integer, floating point, boolean, etc.) for the ROS 2 primitive message definition.</p>
     pub primitive_type: crate::types::Ros2PrimitiveType,
     /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
@@ -13,9 +13,9 @@ pub struct Ros2PrimitiveMessageDefinition {
     /// <p>An optional attribute specifying the upper bound for <code>STRING</code> and <code>WSTRING</code>.</p>
     pub upper_bound: ::std::option::Option<i64>,
 }
-impl Ros2PrimitiveMessageDefinition {
+impl  Ros2PrimitiveMessageDefinition  {
     /// <p>The primitive type (integer, floating point, boolean, etc.) for the ROS 2 primitive message definition.</p>
-    pub fn primitive_type(&self) -> &crate::types::Ros2PrimitiveType {
+    pub fn primitive_type(&self) -> & crate::types::Ros2PrimitiveType {
         &self.primitive_type
     }
     /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
@@ -56,8 +56,7 @@ impl Ros2PrimitiveMessageDefinitionBuilder {
     }
     /// <p>The primitive type (integer, floating point, boolean, etc.) for the ROS 2 primitive message definition.</p>
     pub fn set_primitive_type(mut self, input: ::std::option::Option<crate::types::Ros2PrimitiveType>) -> Self {
-        self.primitive_type = input;
-        self
+        self.primitive_type = input; self
     }
     /// <p>The primitive type (integer, floating point, boolean, etc.) for the ROS 2 primitive message definition.</p>
     pub fn get_primitive_type(&self) -> &::std::option::Option<crate::types::Ros2PrimitiveType> {
@@ -70,8 +69,7 @@ impl Ros2PrimitiveMessageDefinitionBuilder {
     }
     /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
     }
     /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
     pub fn get_offset(&self) -> &::std::option::Option<f64> {
@@ -84,8 +82,7 @@ impl Ros2PrimitiveMessageDefinitionBuilder {
     }
     /// <p>A multiplier used to decode the message.</p>
     pub fn set_scaling(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.scaling = input;
-        self
+        self.scaling = input; self
     }
     /// <p>A multiplier used to decode the message.</p>
     pub fn get_scaling(&self) -> &::std::option::Option<f64> {
@@ -98,8 +95,7 @@ impl Ros2PrimitiveMessageDefinitionBuilder {
     }
     /// <p>An optional attribute specifying the upper bound for <code>STRING</code> and <code>WSTRING</code>.</p>
     pub fn set_upper_bound(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
     }
     /// <p>An optional attribute specifying the upper bound for <code>STRING</code> and <code>WSTRING</code>.</p>
     pub fn get_upper_bound(&self) -> &::std::option::Option<i64> {
@@ -109,16 +105,21 @@ impl Ros2PrimitiveMessageDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`primitive_type`](crate::types::builders::Ros2PrimitiveMessageDefinitionBuilder::primitive_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Ros2PrimitiveMessageDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ros2PrimitiveMessageDefinition {
-            primitive_type: self.primitive_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "primitive_type",
-                    "primitive_type was not specified but it is required when building Ros2PrimitiveMessageDefinition",
-                )
-            })?,
-            offset: self.offset,
-            scaling: self.scaling,
-            upper_bound: self.upper_bound,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ros2PrimitiveMessageDefinition {
+                primitive_type: self.primitive_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("primitive_type", "primitive_type was not specified but it is required when building Ros2PrimitiveMessageDefinition")
+                    )?
+                ,
+                offset: self.offset
+                ,
+                scaling: self.scaling
+                ,
+                upper_bound: self.upper_bound
+                ,
+            }
+        )
     }
 }
+

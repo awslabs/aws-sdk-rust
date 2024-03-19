@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkspacesOutput {
+pub struct ListWorkspacesOutput  {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub workspaces: ::std::vec::Vec<crate::types::WorkspaceSummary>,
+    pub workspaces: ::std::vec::Vec::<crate::types::WorkspaceSummary>,
     /// <p>The token to use when requesting the next set of workspaces.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListWorkspacesOutput {
+impl  ListWorkspacesOutput  {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn workspaces(&self) -> &[crate::types::WorkspaceSummary] {
-        use std::ops::Deref;
-        self.workspaces.deref()
+    pub fn workspaces(&self) -> & [crate::types::WorkspaceSummary] {
+        use std::ops::Deref; self.workspaces.deref()
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorkspacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
     pub fn builder() -> crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListWorkspacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkspacesOutputBuilder {
-    pub(crate) workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
+    pub(crate) workspaces: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListWorkspacesOutputBuilder {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
     pub fn workspaces(mut self, input: crate::types::WorkspaceSummary) -> Self {
         let mut v = self.workspaces.unwrap_or_default();
-        v.push(input);
-        self.workspaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workspaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn set_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>) -> Self {
-        self.workspaces = input;
-        self
+    pub fn set_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceSummary>>) -> Self {
+        self.workspaces = input; self
     }
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn get_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
+    pub fn get_workspaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceSummary>> {
         &self.workspaces
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
@@ -68,37 +66,37 @@ impl ListWorkspacesOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`workspaces`](crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder::workspaces)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_workspaces::ListWorkspacesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_workspaces::ListWorkspacesOutput {
-            workspaces: self.workspaces.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspaces",
-                    "workspaces was not specified but it is required when building ListWorkspacesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workspaces::ListWorkspacesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_workspaces::ListWorkspacesOutput {
+                workspaces: self.workspaces
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspaces", "workspaces was not specified but it is required when building ListWorkspacesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

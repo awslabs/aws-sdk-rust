@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUserInput {
+pub struct GetUserInput  {
     /// <p>The unique identifier of the user to get data for.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl GetUserInput {
+impl  GetUserInput  {
     /// <p>The unique identifier of the user to get data for.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetUserInputBuilder {
     }
     /// <p>The unique identifier of the user to get data for.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier of the user to get data for.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_user::GetUserInput { user_id: self.user_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_user::GetUserInput {
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

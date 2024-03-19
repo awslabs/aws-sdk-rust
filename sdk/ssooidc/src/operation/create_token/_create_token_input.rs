@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateTokenInput {
+pub struct CreateTokenInput  {
     /// <p>The unique identifier string for the client or application. This value comes from the result of the <code>RegisterClient</code> API.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
@@ -20,51 +20,52 @@ pub struct CreateTokenInput {
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
-    pub scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub scope: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
     pub redirect_uri: ::std::option::Option<::std::string::String>,
 }
-impl CreateTokenInput {
+impl  CreateTokenInput  {
     /// <p>The unique identifier string for the client or application. This value comes from the result of the <code>RegisterClient</code> API.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<& str> {
         self.client_secret.as_deref()
     }
     /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
     /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
     /// <p>* Refresh Token - <code>refresh_token</code></p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
-    pub fn grant_type(&self) -> ::std::option::Option<&str> {
+    pub fn grant_type(&self) -> ::std::option::Option<& str> {
         self.grant_type.as_deref()
     }
     /// <p>Used only when calling this API for the Device Code grant type. This short-term code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
-    pub fn device_code(&self) -> ::std::option::Option<&str> {
+    pub fn device_code(&self) -> ::std::option::Option<& str> {
         self.device_code.as_deref()
     }
     /// <p>Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify this authorization request. This grant type is currently unsupported for the <code>CreateToken</code> API.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term tokens, such as the access token, that might expire.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
-    pub fn refresh_token(&self) -> ::std::option::Option<&str> {
+    pub fn refresh_token(&self) -> ::std::option::Option<& str> {
         self.refresh_token.as_deref()
     }
     /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scope.is_none()`.
-    pub fn scope(&self) -> &[::std::string::String] {
-        self.scope.as_deref().unwrap_or_default()
+    pub fn scope(&self) -> & [::std::string::String] {
+        self.scope.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
-    pub fn redirect_uri(&self) -> ::std::option::Option<&str> {
+    pub fn redirect_uri(&self) -> ::std::option::Option<& str> {
         self.redirect_uri.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateTokenInput {
+impl  ::std::fmt::Debug for CreateTokenInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTokenInput");
         formatter.field("client_id", &self.client_id);
@@ -95,7 +96,7 @@ pub struct CreateTokenInputBuilder {
     pub(crate) device_code: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) refresh_token: ::std::option::Option<::std::string::String>,
-    pub(crate) scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scope: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) redirect_uri: ::std::option::Option<::std::string::String>,
 }
 impl CreateTokenInputBuilder {
@@ -107,8 +108,7 @@ impl CreateTokenInputBuilder {
     }
     /// <p>The unique identifier string for the client or application. This value comes from the result of the <code>RegisterClient</code> API.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The unique identifier string for the client or application. This value comes from the result of the <code>RegisterClient</code> API.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl CreateTokenInputBuilder {
     }
     /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_secret = input;
-        self
+        self.client_secret = input; self
     }
     /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl CreateTokenInputBuilder {
     /// <p>* Refresh Token - <code>refresh_token</code></p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub fn set_grant_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_type = input;
-        self
+        self.grant_type = input; self
     }
     /// <p>Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values, depending on the grant type that you want:</p>
     /// <p>* Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code></p>
@@ -160,8 +158,7 @@ impl CreateTokenInputBuilder {
     }
     /// <p>Used only when calling this API for the Device Code grant type. This short-term code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
     pub fn set_device_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_code = input;
-        self
+        self.device_code = input; self
     }
     /// <p>Used only when calling this API for the Device Code grant type. This short-term code is used to identify this authorization request. This comes from the result of the <code>StartDeviceAuthorization</code> API.</p>
     pub fn get_device_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +171,7 @@ impl CreateTokenInputBuilder {
     }
     /// <p>Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify this authorization request. This grant type is currently unsupported for the <code>CreateToken</code> API.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify this authorization request. This grant type is currently unsupported for the <code>CreateToken</code> API.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +186,7 @@ impl CreateTokenInputBuilder {
     /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term tokens, such as the access token, that might expire.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.refresh_token = input;
-        self
+        self.refresh_token = input; self
     }
     /// <p>Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term tokens, such as the access token, that might expire.</p>
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
@@ -205,17 +200,16 @@ impl CreateTokenInputBuilder {
     /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scope.unwrap_or_default();
-        v.push(input.into());
-        self.scope = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.scope = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
-    pub fn set_scope(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.scope = input;
-        self
+    pub fn set_scope(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.scope = input; self
     }
     /// <p>The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured for the client during the call to <code>RegisterClient</code>.</p>
-    pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.scope
     }
     /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
@@ -225,8 +219,7 @@ impl CreateTokenInputBuilder {
     }
     /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
     pub fn set_redirect_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redirect_uri = input;
-        self
+        self.redirect_uri = input; self
     }
     /// <p>Used only when calling this API for the Authorization Code grant type. This value specifies the location of the client or application that has registered to receive the authorization code.</p>
     pub fn get_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,16 +227,26 @@ impl CreateTokenInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_token::CreateTokenInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_token::CreateTokenInput {
-            client_id: self.client_id,
-            client_secret: self.client_secret,
-            grant_type: self.grant_type,
-            device_code: self.device_code,
-            code: self.code,
-            refresh_token: self.refresh_token,
-            scope: self.scope,
-            redirect_uri: self.redirect_uri,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_token::CreateTokenInput {
+                client_id: self.client_id
+                ,
+                client_secret: self.client_secret
+                ,
+                grant_type: self.grant_type
+                ,
+                device_code: self.device_code
+                ,
+                code: self.code
+                ,
+                refresh_token: self.refresh_token
+                ,
+                scope: self.scope
+                ,
+                redirect_uri: self.redirect_uri
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateTokenInputBuilder {
@@ -260,3 +263,4 @@ impl ::std::fmt::Debug for CreateTokenInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the parameter to filter on.</p>
     pub key: ::std::string::String,
     /// <p>The value to match.</p>
@@ -11,19 +11,17 @@ pub struct Filter {
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
     pub condition: crate::types::FilterConditionString,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The name of the parameter to filter on.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value to match.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
-    pub fn condition(&self) -> &crate::types::FilterConditionString {
+    pub fn condition(&self) -> & crate::types::FilterConditionString {
         &self.condition
     }
 }
@@ -51,8 +49,7 @@ impl FilterBuilder {
     }
     /// <p>The name of the parameter to filter on.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the parameter to filter on.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl FilterBuilder {
     }
     /// <p>The value to match.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value to match.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl FilterBuilder {
     }
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterConditionString>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::FilterConditionString> {
@@ -94,25 +89,25 @@ impl FilterBuilder {
     /// - [`value`](crate::types::builders::FilterBuilder::value)
     /// - [`condition`](crate::types::builders::FilterBuilder::condition)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building Filter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Filter",
-                )
-            })?,
-            condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition",
-                    "condition was not specified but it is required when building Filter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Filter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Filter")
+                    )?
+                ,
+                condition: self.condition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition", "condition was not specified but it is required when building Filter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

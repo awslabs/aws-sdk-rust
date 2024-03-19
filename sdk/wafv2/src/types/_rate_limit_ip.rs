@@ -5,7 +5,8 @@
 /// <p>JSON specification: <code>"RateLimitIP": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateLimitIp {}
+pub struct RateLimitIp  {
+}
 impl RateLimitIp {
     /// Creates a new builder-style object to manufacture [`RateLimitIp`](crate::types::RateLimitIp).
     pub fn builder() -> crate::types::builders::RateLimitIpBuilder {
@@ -16,10 +17,13 @@ impl RateLimitIp {
 /// A builder for [`RateLimitIp`](crate::types::RateLimitIp).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct RateLimitIpBuilder {}
+pub struct RateLimitIpBuilder {
+}
 impl RateLimitIpBuilder {
     /// Consumes the builder and constructs a [`RateLimitIp`](crate::types::RateLimitIp).
     pub fn build(self) -> crate::types::RateLimitIp {
-        crate::types::RateLimitIp {}
+        crate::types::RateLimitIp {
+        }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSpaceInput {
+pub struct UpdateSpaceInput  {
     /// <p>The name of the space.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the space.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSpaceInput {
+impl  UpdateSpaceInput  {
     /// <p>The name of the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the space.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The description of the space.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the space.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl UpdateSpaceInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_space::UpdateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_space::UpdateSpaceInput {
-            name: self.name,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_space::UpdateSpaceInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

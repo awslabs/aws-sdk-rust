@@ -3,13 +3,13 @@
 /// <p>Information about an HTTP URL destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpUrlDestinationSummary {
+pub struct HttpUrlDestinationSummary  {
     /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
     pub confirmation_url: ::std::option::Option<::std::string::String>,
 }
-impl HttpUrlDestinationSummary {
+impl  HttpUrlDestinationSummary  {
     /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
-    pub fn confirmation_url(&self) -> ::std::option::Option<&str> {
+    pub fn confirmation_url(&self) -> ::std::option::Option<& str> {
         self.confirmation_url.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl HttpUrlDestinationSummaryBuilder {
     }
     /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
     pub fn set_confirmation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.confirmation_url = input;
-        self
+        self.confirmation_url = input; self
     }
     /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
     pub fn get_confirmation_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl HttpUrlDestinationSummaryBuilder {
     /// Consumes the builder and constructs a [`HttpUrlDestinationSummary`](crate::types::HttpUrlDestinationSummary).
     pub fn build(self) -> crate::types::HttpUrlDestinationSummary {
         crate::types::HttpUrlDestinationSummary {
-            confirmation_url: self.confirmation_url,
+            confirmation_url: self.confirmation_url
+            ,
         }
     }
 }
+

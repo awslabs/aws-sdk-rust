@@ -3,24 +3,25 @@
 /// <p>Describes the hardware for the instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceHardware {
+pub struct InstanceHardware  {
     /// <p>The number of vCPUs the instance has.</p>
     pub cpu_count: ::std::option::Option<i32>,
     /// <p>The disks attached to the instance.</p>
-    pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
+    pub disks: ::std::option::Option<::std::vec::Vec::<crate::types::Disk>>,
     /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub ram_size_in_gb: ::std::option::Option<f32>,
 }
-impl InstanceHardware {
+impl  InstanceHardware  {
     /// <p>The number of vCPUs the instance has.</p>
     pub fn cpu_count(&self) -> ::std::option::Option<i32> {
         self.cpu_count
     }
     /// <p>The disks attached to the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disks.is_none()`.
-    pub fn disks(&self) -> &[crate::types::Disk] {
-        self.disks.as_deref().unwrap_or_default()
+    pub fn disks(&self) -> & [crate::types::Disk] {
+        self.disks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub fn ram_size_in_gb(&self) -> ::std::option::Option<f32> {
@@ -39,7 +40,7 @@ impl InstanceHardware {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceHardwareBuilder {
     pub(crate) cpu_count: ::std::option::Option<i32>,
-    pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
+    pub(crate) disks: ::std::option::Option<::std::vec::Vec::<crate::types::Disk>>,
     pub(crate) ram_size_in_gb: ::std::option::Option<f32>,
 }
 impl InstanceHardwareBuilder {
@@ -50,8 +51,7 @@ impl InstanceHardwareBuilder {
     }
     /// <p>The number of vCPUs the instance has.</p>
     pub fn set_cpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cpu_count = input;
-        self
+        self.cpu_count = input; self
     }
     /// <p>The number of vCPUs the instance has.</p>
     pub fn get_cpu_count(&self) -> &::std::option::Option<i32> {
@@ -64,17 +64,16 @@ impl InstanceHardwareBuilder {
     /// <p>The disks attached to the instance.</p>
     pub fn disks(mut self, input: crate::types::Disk) -> Self {
         let mut v = self.disks.unwrap_or_default();
-        v.push(input);
-        self.disks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.disks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The disks attached to the instance.</p>
-    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>) -> Self {
-        self.disks = input;
-        self
+    pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Disk>>) -> Self {
+        self.disks = input; self
     }
     /// <p>The disks attached to the instance.</p>
-    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Disk>> {
         &self.disks
     }
     /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
@@ -84,8 +83,7 @@ impl InstanceHardwareBuilder {
     }
     /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.ram_size_in_gb = input;
-        self
+        self.ram_size_in_gb = input; self
     }
     /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
@@ -94,9 +92,13 @@ impl InstanceHardwareBuilder {
     /// Consumes the builder and constructs a [`InstanceHardware`](crate::types::InstanceHardware).
     pub fn build(self) -> crate::types::InstanceHardware {
         crate::types::InstanceHardware {
-            cpu_count: self.cpu_count,
-            disks: self.disks,
-            ram_size_in_gb: self.ram_size_in_gb,
+            cpu_count: self.cpu_count
+            ,
+            disks: self.disks
+            ,
+            ram_size_in_gb: self.ram_size_in_gb
+            ,
         }
     }
 }
+

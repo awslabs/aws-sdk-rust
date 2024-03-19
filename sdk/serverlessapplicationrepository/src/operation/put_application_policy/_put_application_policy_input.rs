@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutApplicationPolicyInput {
+pub struct PutApplicationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of policy statements applied to the application.</p>
-    pub statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    pub statements: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPolicyStatement>>,
 }
-impl PutApplicationPolicyInput {
+impl  PutApplicationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>An array of policy statements applied to the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statements.is_none()`.
-    pub fn statements(&self) -> &[crate::types::ApplicationPolicyStatement] {
-        self.statements.as_deref().unwrap_or_default()
+    pub fn statements(&self) -> & [crate::types::ApplicationPolicyStatement] {
+        self.statements.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutApplicationPolicyInput {
@@ -32,7 +33,7 @@ impl PutApplicationPolicyInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutApplicationPolicyInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    pub(crate) statements: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPolicyStatement>>,
 }
 impl PutApplicationPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -43,8 +44,7 @@ impl PutApplicationPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl PutApplicationPolicyInputBuilder {
     /// <p>An array of policy statements applied to the application.</p>
     pub fn statements(mut self, input: crate::types::ApplicationPolicyStatement) -> Self {
         let mut v = self.statements.unwrap_or_default();
-        v.push(input);
-        self.statements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>) -> Self {
-        self.statements = input;
-        self
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPolicyStatement>>) -> Self {
+        self.statements = input; self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPolicyStatement>> {
         &self.statements
     }
     /// Consumes the builder and constructs a [`PutApplicationPolicyInput`](crate::operation::put_application_policy::PutApplicationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_application_policy::PutApplicationPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_application_policy::PutApplicationPolicyInput {
-            application_id: self.application_id,
-            statements: self.statements,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_application_policy::PutApplicationPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_application_policy::PutApplicationPolicyInput {
+                application_id: self.application_id
+                ,
+                statements: self.statements
+                ,
+            }
+        )
     }
 }
+

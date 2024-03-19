@@ -6,7 +6,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicy {
+pub struct ResponseHeadersPolicy  {
     /// <p>The identifier for the response headers policy.</p>
     pub id: ::std::string::String,
     /// <p>The date and time when the response headers policy was last modified.</p>
@@ -14,18 +14,17 @@ pub struct ResponseHeadersPolicy {
     /// <p>A response headers policy configuration.</p>
     pub response_headers_policy_config: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
 }
-impl ResponseHeadersPolicy {
+impl  ResponseHeadersPolicy  {
     /// <p>The identifier for the response headers policy.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The date and time when the response headers policy was last modified.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>A response headers policy configuration.</p>
-    pub fn response_headers_policy_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyConfig> {
+    pub fn response_headers_policy_config(&self) -> ::std::option::Option<& crate::types::ResponseHeadersPolicyConfig> {
         self.response_headers_policy_config.as_ref()
     }
 }
@@ -53,8 +52,7 @@ impl ResponseHeadersPolicyBuilder {
     }
     /// <p>The identifier for the response headers policy.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the response headers policy.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +66,7 @@ impl ResponseHeadersPolicyBuilder {
     }
     /// <p>The date and time when the response headers policy was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time when the response headers policy was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +80,7 @@ impl ResponseHeadersPolicyBuilder {
     }
     /// <p>A response headers policy configuration.</p>
     pub fn set_response_headers_policy_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>) -> Self {
-        self.response_headers_policy_config = input;
-        self
+        self.response_headers_policy_config = input; self
     }
     /// <p>A response headers policy configuration.</p>
     pub fn get_response_headers_policy_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
@@ -95,20 +91,22 @@ impl ResponseHeadersPolicyBuilder {
     /// - [`id`](crate::types::builders::ResponseHeadersPolicyBuilder::id)
     /// - [`last_modified_time`](crate::types::builders::ResponseHeadersPolicyBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicy {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ResponseHeadersPolicy",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building ResponseHeadersPolicy",
-                )
-            })?,
-            response_headers_policy_config: self.response_headers_policy_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicy {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ResponseHeadersPolicy")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building ResponseHeadersPolicy")
+                    )?
+                ,
+                response_headers_policy_config: self.response_headers_policy_config
+                ,
+            }
+        )
     }
 }
+

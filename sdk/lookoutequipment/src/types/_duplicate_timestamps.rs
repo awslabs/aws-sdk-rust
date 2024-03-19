@@ -3,11 +3,11 @@
 /// <p>Entity that comprises information abount duplicate timestamps in the dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DuplicateTimestamps {
+pub struct DuplicateTimestamps  {
     /// <p>Indicates the total number of duplicate timestamps.</p>
     pub total_number_of_duplicate_timestamps: i32,
 }
-impl DuplicateTimestamps {
+impl  DuplicateTimestamps  {
     /// <p>Indicates the total number of duplicate timestamps.</p>
     pub fn total_number_of_duplicate_timestamps(&self) -> i32 {
         self.total_number_of_duplicate_timestamps
@@ -35,8 +35,7 @@ impl DuplicateTimestampsBuilder {
     }
     /// <p>Indicates the total number of duplicate timestamps.</p>
     pub fn set_total_number_of_duplicate_timestamps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_number_of_duplicate_timestamps = input;
-        self
+        self.total_number_of_duplicate_timestamps = input; self
     }
     /// <p>Indicates the total number of duplicate timestamps.</p>
     pub fn get_total_number_of_duplicate_timestamps(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl DuplicateTimestampsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`total_number_of_duplicate_timestamps`](crate::types::builders::DuplicateTimestampsBuilder::total_number_of_duplicate_timestamps)
     pub fn build(self) -> ::std::result::Result<crate::types::DuplicateTimestamps, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DuplicateTimestamps {
-            total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_number_of_duplicate_timestamps",
-                    "total_number_of_duplicate_timestamps was not specified but it is required when building DuplicateTimestamps",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DuplicateTimestamps {
+                total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_number_of_duplicate_timestamps", "total_number_of_duplicate_timestamps was not specified but it is required when building DuplicateTimestamps")
+                    )?
+                ,
+            }
+        )
     }
 }
+

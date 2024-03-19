@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreFromSnapshotInput {
+pub struct RestoreFromSnapshotInput  {
     /// <p>The name of the namespace to restore the snapshot to.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup used to restore the snapshot.</p>
@@ -19,26 +19,26 @@ pub struct RestoreFromSnapshotInput {
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
     pub admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl RestoreFromSnapshotInput {
+impl  RestoreFromSnapshotInput  {
     /// <p>The name of the namespace to restore the snapshot to.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the workgroup used to restore the snapshot.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
     /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
@@ -46,7 +46,7 @@ impl RestoreFromSnapshotInput {
         self.manage_admin_password
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
-    pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.admin_password_secret_kms_key_id.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl RestoreFromSnapshotInputBuilder {
     }
     /// <p>The name of the namespace to restore the snapshot to.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the namespace to restore the snapshot to.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl RestoreFromSnapshotInputBuilder {
     }
     /// <p>The name of the workgroup used to restore the snapshot.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The name of the workgroup used to restore the snapshot.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl RestoreFromSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl RestoreFromSnapshotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
     /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
     /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
@@ -138,8 +134,7 @@ impl RestoreFromSnapshotInputBuilder {
     }
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +147,7 @@ impl RestoreFromSnapshotInputBuilder {
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
     pub fn set_manage_admin_password(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manage_admin_password = input;
-        self
+        self.manage_admin_password = input; self
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
     pub fn get_manage_admin_password(&self) -> &::std::option::Option<bool> {
@@ -166,26 +160,32 @@ impl RestoreFromSnapshotInputBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
     pub fn set_admin_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_password_secret_kms_key_id = input;
-        self
+        self.admin_password_secret_kms_key_id = input; self
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
     pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_password_secret_kms_key_id
     }
     /// Consumes the builder and constructs a [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
-            namespace_name: self.namespace_name,
-            workgroup_name: self.workgroup_name,
-            snapshot_name: self.snapshot_name,
-            snapshot_arn: self.snapshot_arn,
-            owner_account: self.owner_account,
-            manage_admin_password: self.manage_admin_password,
-            admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
+                namespace_name: self.namespace_name
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                snapshot_arn: self.snapshot_arn
+                ,
+                owner_account: self.owner_account
+                ,
+                manage_admin_password: self.manage_admin_password
+                ,
+                admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id
+                ,
+            }
+        )
     }
 }
+

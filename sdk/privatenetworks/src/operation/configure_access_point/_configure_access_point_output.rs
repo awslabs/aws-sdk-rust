@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigureAccessPointOutput {
+pub struct ConfigureAccessPointOutput  {
     /// <p>Information about the network resource.</p>
     pub access_point: ::std::option::Option<crate::types::NetworkResource>,
     _request_id: Option<String>,
 }
-impl ConfigureAccessPointOutput {
+impl  ConfigureAccessPointOutput  {
     /// <p>Information about the network resource.</p>
-    pub fn access_point(&self) -> ::std::option::Option<&crate::types::NetworkResource> {
+    pub fn access_point(&self) -> ::std::option::Option<& crate::types::NetworkResource> {
         self.access_point.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ConfigureAccessPointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ConfigureAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureAccessPointOutput`](crate::operation::configure_access_point::ConfigureAccessPointOutput).
     pub fn builder() -> crate::operation::configure_access_point::builders::ConfigureAccessPointOutputBuilder {
@@ -41,27 +41,28 @@ impl ConfigureAccessPointOutputBuilder {
     }
     /// <p>Information about the network resource.</p>
     pub fn set_access_point(mut self, input: ::std::option::Option<crate::types::NetworkResource>) -> Self {
-        self.access_point = input;
-        self
+        self.access_point = input; self
     }
     /// <p>Information about the network resource.</p>
     pub fn get_access_point(&self) -> &::std::option::Option<crate::types::NetworkResource> {
         &self.access_point
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ConfigureAccessPointOutput`](crate::operation::configure_access_point::ConfigureAccessPointOutput).
     pub fn build(self) -> crate::operation::configure_access_point::ConfigureAccessPointOutput {
         crate::operation::configure_access_point::ConfigureAccessPointOutput {
-            access_point: self.access_point,
+            access_point: self.access_point
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

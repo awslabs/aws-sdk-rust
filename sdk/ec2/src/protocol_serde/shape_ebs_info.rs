@@ -62,3 +62,4 @@ pub fn de_ebs_info(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
     }
     Ok(builder.build())
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains custom model training parameters. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-custom-models.html">Custom models in Neptune ML</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomModelTrainingParameters {
+pub struct CustomModelTrainingParameters  {
     /// <p>The path to the Amazon S3 location where the Python module implementing your model is located. This must point to a valid existing Amazon S3 location that contains, at a minimum, a training script, a transform script, and a <code>model-hpo-configuration.json</code> file.</p>
     pub source_s3_directory_path: ::std::string::String,
     /// <p>The name of the entry point in your module of a script that performs model training and takes hyperparameters as command-line arguments, including fixed hyperparameters. The default is <code>training.py</code>.</p>
@@ -11,18 +11,17 @@ pub struct CustomModelTrainingParameters {
     /// <p>The name of the entry point in your module of a script that should be run after the best model from the hyperparameter search has been identified, to compute the model artifacts necessary for model deployment. It should be able to run with no command-line arguments.The default is <code>transform.py</code>.</p>
     pub transform_entry_point_script: ::std::option::Option<::std::string::String>,
 }
-impl CustomModelTrainingParameters {
+impl  CustomModelTrainingParameters  {
     /// <p>The path to the Amazon S3 location where the Python module implementing your model is located. This must point to a valid existing Amazon S3 location that contains, at a minimum, a training script, a transform script, and a <code>model-hpo-configuration.json</code> file.</p>
-    pub fn source_s3_directory_path(&self) -> &str {
-        use std::ops::Deref;
-        self.source_s3_directory_path.deref()
+    pub fn source_s3_directory_path(&self) -> & str {
+        use std::ops::Deref; self.source_s3_directory_path.deref()
     }
     /// <p>The name of the entry point in your module of a script that performs model training and takes hyperparameters as command-line arguments, including fixed hyperparameters. The default is <code>training.py</code>.</p>
-    pub fn training_entry_point_script(&self) -> ::std::option::Option<&str> {
+    pub fn training_entry_point_script(&self) -> ::std::option::Option<& str> {
         self.training_entry_point_script.as_deref()
     }
     /// <p>The name of the entry point in your module of a script that should be run after the best model from the hyperparameter search has been identified, to compute the model artifacts necessary for model deployment. It should be able to run with no command-line arguments.The default is <code>transform.py</code>.</p>
-    pub fn transform_entry_point_script(&self) -> ::std::option::Option<&str> {
+    pub fn transform_entry_point_script(&self) -> ::std::option::Option<& str> {
         self.transform_entry_point_script.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl CustomModelTrainingParametersBuilder {
     }
     /// <p>The path to the Amazon S3 location where the Python module implementing your model is located. This must point to a valid existing Amazon S3 location that contains, at a minimum, a training script, a transform script, and a <code>model-hpo-configuration.json</code> file.</p>
     pub fn set_source_s3_directory_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_s3_directory_path = input;
-        self
+        self.source_s3_directory_path = input; self
     }
     /// <p>The path to the Amazon S3 location where the Python module implementing your model is located. This must point to a valid existing Amazon S3 location that contains, at a minimum, a training script, a transform script, and a <code>model-hpo-configuration.json</code> file.</p>
     pub fn get_source_s3_directory_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl CustomModelTrainingParametersBuilder {
     }
     /// <p>The name of the entry point in your module of a script that performs model training and takes hyperparameters as command-line arguments, including fixed hyperparameters. The default is <code>training.py</code>.</p>
     pub fn set_training_entry_point_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_entry_point_script = input;
-        self
+        self.training_entry_point_script = input; self
     }
     /// <p>The name of the entry point in your module of a script that performs model training and takes hyperparameters as command-line arguments, including fixed hyperparameters. The default is <code>training.py</code>.</p>
     pub fn get_training_entry_point_script(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl CustomModelTrainingParametersBuilder {
     }
     /// <p>The name of the entry point in your module of a script that should be run after the best model from the hyperparameter search has been identified, to compute the model artifacts necessary for model deployment. It should be able to run with no command-line arguments.The default is <code>transform.py</code>.</p>
     pub fn set_transform_entry_point_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_entry_point_script = input;
-        self
+        self.transform_entry_point_script = input; self
     }
     /// <p>The name of the entry point in your module of a script that should be run after the best model from the hyperparameter search has been identified, to compute the model artifacts necessary for model deployment. It should be able to run with no command-line arguments.The default is <code>transform.py</code>.</p>
     pub fn get_transform_entry_point_script(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl CustomModelTrainingParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_s3_directory_path`](crate::types::builders::CustomModelTrainingParametersBuilder::source_s3_directory_path)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomModelTrainingParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomModelTrainingParameters {
-            source_s3_directory_path: self.source_s3_directory_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_s3_directory_path",
-                    "source_s3_directory_path was not specified but it is required when building CustomModelTrainingParameters",
-                )
-            })?,
-            training_entry_point_script: self.training_entry_point_script,
-            transform_entry_point_script: self.transform_entry_point_script,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomModelTrainingParameters {
+                source_s3_directory_path: self.source_s3_directory_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_s3_directory_path", "source_s3_directory_path was not specified but it is required when building CustomModelTrainingParameters")
+                    )?
+                ,
+                training_entry_point_script: self.training_entry_point_script
+                ,
+                transform_entry_point_script: self.transform_entry_point_script
+                ,
+            }
+        )
     }
 }
+

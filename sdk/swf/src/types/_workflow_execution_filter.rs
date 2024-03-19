@@ -3,15 +3,14 @@
 /// <p>Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowExecutionFilter {
+pub struct WorkflowExecutionFilter  {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     pub workflow_id: ::std::string::String,
 }
-impl WorkflowExecutionFilter {
+impl  WorkflowExecutionFilter  {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> & str {
+        use std::ops::Deref; self.workflow_id.deref()
     }
 }
 impl WorkflowExecutionFilter {
@@ -36,8 +35,7 @@ impl WorkflowExecutionFilterBuilder {
     }
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl WorkflowExecutionFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_id`](crate::types::builders::WorkflowExecutionFilterBuilder::workflow_id)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowExecutionFilter {
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building WorkflowExecutionFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkflowExecutionFilter {
+                workflow_id: self.workflow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_id", "workflow_id was not specified but it is required when building WorkflowExecutionFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

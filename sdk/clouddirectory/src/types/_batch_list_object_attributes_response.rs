@@ -3,21 +3,22 @@
 /// <p>Represents the output of a <code>ListObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchListObjectAttributesResponse {
+pub struct BatchListObjectAttributesResponse  {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl BatchListObjectAttributesResponse {
+impl  BatchListObjectAttributesResponse  {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::AttributeKeyAndValue] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::AttributeKeyAndValue] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl BatchListObjectAttributesResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListObjectAttributesResponseBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListObjectAttributesResponseBuilder {
@@ -43,17 +44,16 @@ impl BatchListObjectAttributesResponseBuilder {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
     pub fn attributes(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>> {
         &self.attributes
     }
     /// <p>The pagination token.</p>
@@ -63,8 +63,7 @@ impl BatchListObjectAttributesResponseBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl BatchListObjectAttributesResponseBuilder {
     /// Consumes the builder and constructs a [`BatchListObjectAttributesResponse`](crate::types::BatchListObjectAttributesResponse).
     pub fn build(self) -> crate::types::BatchListObjectAttributesResponse {
         crate::types::BatchListObjectAttributesResponse {
-            attributes: self.attributes,
-            next_token: self.next_token,
+            attributes: self.attributes
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), specifies the recipe that best optimized the specified metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoMlResult {
+pub struct AutoMlResult  {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
     pub best_recipe_arn: ::std::option::Option<::std::string::String>,
 }
-impl AutoMlResult {
+impl  AutoMlResult  {
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
-    pub fn best_recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn best_recipe_arn(&self) -> ::std::option::Option<& str> {
         self.best_recipe_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AutoMlResultBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
     pub fn set_best_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.best_recipe_arn = input;
-        self
+        self.best_recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
     pub fn get_best_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AutoMlResultBuilder {
     /// Consumes the builder and constructs a [`AutoMlResult`](crate::types::AutoMlResult).
     pub fn build(self) -> crate::types::AutoMlResult {
         crate::types::AutoMlResult {
-            best_recipe_arn: self.best_recipe_arn,
+            best_recipe_arn: self.best_recipe_arn
+            ,
         }
     }
 }
+

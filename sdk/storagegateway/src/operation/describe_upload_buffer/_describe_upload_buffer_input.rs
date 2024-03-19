@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUploadBufferInput {
+pub struct DescribeUploadBufferInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeUploadBufferInput {
+impl  DescribeUploadBufferInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeUploadBufferInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`DescribeUploadBufferInput`](crate::operation::describe_upload_buffer::DescribeUploadBufferInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_upload_buffer::DescribeUploadBufferInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_upload_buffer::DescribeUploadBufferInput {
-            gateway_arn: self.gateway_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_upload_buffer::DescribeUploadBufferInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_upload_buffer::DescribeUploadBufferInput {
+                gateway_arn: self.gateway_arn
+                ,
+            }
+        )
     }
 }
+

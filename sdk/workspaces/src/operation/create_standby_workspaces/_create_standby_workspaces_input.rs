@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStandbyWorkspacesInput {
+pub struct CreateStandbyWorkspacesInput  {
     /// <p>The Region of the primary WorkSpace.</p>
     pub primary_region: ::std::option::Option<::std::string::String>,
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub standby_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>,
+    pub standby_workspaces: ::std::option::Option<::std::vec::Vec::<crate::types::StandbyWorkspace>>,
 }
-impl CreateStandbyWorkspacesInput {
+impl  CreateStandbyWorkspacesInput  {
     /// <p>The Region of the primary WorkSpace.</p>
-    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+    pub fn primary_region(&self) -> ::std::option::Option<& str> {
         self.primary_region.as_deref()
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standby_workspaces.is_none()`.
-    pub fn standby_workspaces(&self) -> &[crate::types::StandbyWorkspace] {
-        self.standby_workspaces.as_deref().unwrap_or_default()
+    pub fn standby_workspaces(&self) -> & [crate::types::StandbyWorkspace] {
+        self.standby_workspaces.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateStandbyWorkspacesInput {
@@ -32,7 +33,7 @@ impl CreateStandbyWorkspacesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesInputBuilder {
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
-    pub(crate) standby_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>,
+    pub(crate) standby_workspaces: ::std::option::Option<::std::vec::Vec::<crate::types::StandbyWorkspace>>,
 }
 impl CreateStandbyWorkspacesInputBuilder {
     /// <p>The Region of the primary WorkSpace.</p>
@@ -43,8 +44,7 @@ impl CreateStandbyWorkspacesInputBuilder {
     }
     /// <p>The Region of the primary WorkSpace.</p>
     pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_region = input;
-        self
+        self.primary_region = input; self
     }
     /// <p>The Region of the primary WorkSpace.</p>
     pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl CreateStandbyWorkspacesInputBuilder {
     /// <p>Information about the standby WorkSpace to be created.</p>
     pub fn standby_workspaces(mut self, input: crate::types::StandbyWorkspace) -> Self {
         let mut v = self.standby_workspaces.unwrap_or_default();
-        v.push(input);
-        self.standby_workspaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.standby_workspaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn set_standby_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>) -> Self {
-        self.standby_workspaces = input;
-        self
+    pub fn set_standby_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StandbyWorkspace>>) -> Self {
+        self.standby_workspaces = input; self
     }
     /// <p>Information about the standby WorkSpace to be created.</p>
-    pub fn get_standby_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>> {
+    pub fn get_standby_workspaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StandbyWorkspace>> {
         &self.standby_workspaces
     }
     /// Consumes the builder and constructs a [`CreateStandbyWorkspacesInput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput {
-            primary_region: self.primary_region,
-            standby_workspaces: self.standby_workspaces,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput {
+                primary_region: self.primary_region
+                ,
+                standby_workspaces: self.standby_workspaces
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDashStreamingSessionUrlInput {
+pub struct GetDashStreamingSessionUrlInput  {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
@@ -44,15 +44,15 @@ pub struct GetDashStreamingSessionUrlInput {
     /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
     pub max_manifest_fragment_results: ::std::option::Option<i64>,
 }
-impl GetDashStreamingSessionUrlInput {
+impl  GetDashStreamingSessionUrlInput  {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
@@ -69,22 +69,22 @@ impl GetDashStreamingSessionUrlInput {
     /// </ul>
     /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
-    pub fn playback_mode(&self) -> ::std::option::Option<&crate::types::DashPlaybackMode> {
+    pub fn playback_mode(&self) -> ::std::option::Option<& crate::types::DashPlaybackMode> {
         self.playback_mode.as_ref()
     }
     /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.</p>
-    pub fn display_fragment_timestamp(&self) -> ::std::option::Option<&crate::types::DashDisplayFragmentTimestamp> {
+    pub fn display_fragment_timestamp(&self) -> ::std::option::Option<& crate::types::DashDisplayFragmentTimestamp> {
         self.display_fragment_timestamp.as_ref()
     }
     /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>.</p>
-    pub fn display_fragment_number(&self) -> ::std::option::Option<&crate::types::DashDisplayFragmentNumber> {
+    pub fn display_fragment_number(&self) -> ::std::option::Option<& crate::types::DashDisplayFragmentNumber> {
         self.display_fragment_number.as_ref()
     }
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
     /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
-    pub fn dash_fragment_selector(&self) -> ::std::option::Option<&crate::types::DashFragmentSelector> {
+    pub fn dash_fragment_selector(&self) -> ::std::option::Option<& crate::types::DashFragmentSelector> {
         self.dash_fragment_selector.as_ref()
     }
     /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
@@ -132,8 +132,7 @@ impl GetDashStreamingSessionUrlInputBuilder {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -149,8 +148,7 @@ impl GetDashStreamingSessionUrlInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -190,8 +188,7 @@ impl GetDashStreamingSessionUrlInputBuilder {
     /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
     pub fn set_playback_mode(mut self, input: ::std::option::Option<crate::types::DashPlaybackMode>) -> Self {
-        self.playback_mode = input;
-        self
+        self.playback_mode = input; self
     }
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
@@ -219,8 +216,7 @@ impl GetDashStreamingSessionUrlInputBuilder {
     /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.</p>
     pub fn set_display_fragment_timestamp(mut self, input: ::std::option::Option<crate::types::DashDisplayFragmentTimestamp>) -> Self {
-        self.display_fragment_timestamp = input;
-        self
+        self.display_fragment_timestamp = input; self
     }
     /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.</p>
@@ -236,8 +232,7 @@ impl GetDashStreamingSessionUrlInputBuilder {
     /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>.</p>
     pub fn set_display_fragment_number(mut self, input: ::std::option::Option<crate::types::DashDisplayFragmentNumber>) -> Self {
-        self.display_fragment_number = input;
-        self
+        self.display_fragment_number = input; self
     }
     /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>.</p>
@@ -253,8 +248,7 @@ impl GetDashStreamingSessionUrlInputBuilder {
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
     /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
     pub fn set_dash_fragment_selector(mut self, input: ::std::option::Option<crate::types::DashFragmentSelector>) -> Self {
-        self.dash_fragment_selector = input;
-        self
+        self.dash_fragment_selector = input; self
     }
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
     /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
@@ -272,8 +266,7 @@ impl GetDashStreamingSessionUrlInputBuilder {
     /// <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
     pub fn set_expires(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expires = input;
-        self
+        self.expires = input; self
     }
     /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
     /// <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p>
@@ -296,8 +289,7 @@ impl GetDashStreamingSessionUrlInputBuilder {
     /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.</p>
     /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
     pub fn set_max_manifest_fragment_results(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_manifest_fragment_results = input;
-        self
+        self.max_manifest_fragment_results = input; self
     }
     /// <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p>
     /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
@@ -308,21 +300,27 @@ impl GetDashStreamingSessionUrlInputBuilder {
         &self.max_manifest_fragment_results
     }
     /// Consumes the builder and constructs a [`GetDashStreamingSessionUrlInput`](crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlInput {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            playback_mode: self.playback_mode,
-            display_fragment_timestamp: self.display_fragment_timestamp,
-            display_fragment_number: self.display_fragment_number,
-            dash_fragment_selector: self.dash_fragment_selector,
-            expires: self.expires,
-            max_manifest_fragment_results: self.max_manifest_fragment_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlInput {
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                playback_mode: self.playback_mode
+                ,
+                display_fragment_timestamp: self.display_fragment_timestamp
+                ,
+                display_fragment_number: self.display_fragment_number
+                ,
+                dash_fragment_selector: self.dash_fragment_selector
+                ,
+                expires: self.expires
+                ,
+                max_manifest_fragment_results: self.max_manifest_fragment_results
+                ,
+            }
+        )
     }
 }
+

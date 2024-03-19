@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeContainerInstancesOutput {
+pub struct DescribeContainerInstancesOutput  {
     /// <p>The list of container instances.</p>
-    pub container_instances: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
+    pub container_instances: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerInstance>>,
     /// <p>Any failures associated with the call.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
-impl DescribeContainerInstancesOutput {
+impl  DescribeContainerInstancesOutput  {
     /// <p>The list of container instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_instances.is_none()`.
-    pub fn container_instances(&self) -> &[crate::types::ContainerInstance] {
-        self.container_instances.as_deref().unwrap_or_default()
+    pub fn container_instances(&self) -> & [crate::types::ContainerInstance] {
+        self.container_instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::Failure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::Failure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeContainerInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeContainerInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContainerInstancesOutput`](crate::operation::describe_container_instances::DescribeContainerInstancesOutput).
     pub fn builder() -> crate::operation::describe_container_instances::builders::DescribeContainerInstancesOutputBuilder {
@@ -39,8 +41,8 @@ impl DescribeContainerInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContainerInstancesOutputBuilder {
-    pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub(crate) container_instances: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerInstance>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
 impl DescribeContainerInstancesOutputBuilder {
@@ -51,17 +53,16 @@ impl DescribeContainerInstancesOutputBuilder {
     /// <p>The list of container instances.</p>
     pub fn container_instances(mut self, input: crate::types::ContainerInstance) -> Self {
         let mut v = self.container_instances.unwrap_or_default();
-        v.push(input);
-        self.container_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.container_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of container instances.</p>
-    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>) -> Self {
-        self.container_instances = input;
-        self
+    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerInstance>>) -> Self {
+        self.container_instances = input; self
     }
     /// <p>The list of container instances.</p>
-    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>> {
+    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContainerInstance>> {
         &self.container_instances
     }
     /// Appends an item to `failures`.
@@ -71,34 +72,36 @@ impl DescribeContainerInstancesOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Failure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeContainerInstancesOutput`](crate::operation::describe_container_instances::DescribeContainerInstancesOutput).
     pub fn build(self) -> crate::operation::describe_container_instances::DescribeContainerInstancesOutput {
         crate::operation::describe_container_instances::DescribeContainerInstancesOutput {
-            container_instances: self.container_instances,
-            failures: self.failures,
+            container_instances: self.container_instances
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGremlinQueriesOutput {
+pub struct ListGremlinQueriesOutput  {
     /// <p>The number of queries that have been accepted but not yet completed, including queries in the queue.</p>
     pub accepted_query_count: ::std::option::Option<i32>,
     /// <p>The number of Gremlin queries currently running.</p>
     pub running_query_count: ::std::option::Option<i32>,
     /// <p>A list of the current queries.</p>
-    pub queries: ::std::option::Option<::std::vec::Vec<crate::types::GremlinQueryStatus>>,
+    pub queries: ::std::option::Option<::std::vec::Vec::<crate::types::GremlinQueryStatus>>,
     _request_id: Option<String>,
 }
-impl ListGremlinQueriesOutput {
+impl  ListGremlinQueriesOutput  {
     /// <p>The number of queries that have been accepted but not yet completed, including queries in the queue.</p>
     pub fn accepted_query_count(&self) -> ::std::option::Option<i32> {
         self.accepted_query_count
@@ -21,17 +21,18 @@ impl ListGremlinQueriesOutput {
         self.running_query_count
     }
     /// <p>A list of the current queries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queries.is_none()`.
-    pub fn queries(&self) -> &[crate::types::GremlinQueryStatus] {
-        self.queries.as_deref().unwrap_or_default()
+    pub fn queries(&self) -> & [crate::types::GremlinQueryStatus] {
+        self.queries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListGremlinQueriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListGremlinQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListGremlinQueriesOutput`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput).
     pub fn builder() -> crate::operation::list_gremlin_queries::builders::ListGremlinQueriesOutputBuilder {
@@ -45,7 +46,7 @@ impl ListGremlinQueriesOutput {
 pub struct ListGremlinQueriesOutputBuilder {
     pub(crate) accepted_query_count: ::std::option::Option<i32>,
     pub(crate) running_query_count: ::std::option::Option<i32>,
-    pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::GremlinQueryStatus>>,
+    pub(crate) queries: ::std::option::Option<::std::vec::Vec::<crate::types::GremlinQueryStatus>>,
     _request_id: Option<String>,
 }
 impl ListGremlinQueriesOutputBuilder {
@@ -56,8 +57,7 @@ impl ListGremlinQueriesOutputBuilder {
     }
     /// <p>The number of queries that have been accepted but not yet completed, including queries in the queue.</p>
     pub fn set_accepted_query_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.accepted_query_count = input;
-        self
+        self.accepted_query_count = input; self
     }
     /// <p>The number of queries that have been accepted but not yet completed, including queries in the queue.</p>
     pub fn get_accepted_query_count(&self) -> &::std::option::Option<i32> {
@@ -70,8 +70,7 @@ impl ListGremlinQueriesOutputBuilder {
     }
     /// <p>The number of Gremlin queries currently running.</p>
     pub fn set_running_query_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.running_query_count = input;
-        self
+        self.running_query_count = input; self
     }
     /// <p>The number of Gremlin queries currently running.</p>
     pub fn get_running_query_count(&self) -> &::std::option::Option<i32> {
@@ -84,35 +83,38 @@ impl ListGremlinQueriesOutputBuilder {
     /// <p>A list of the current queries.</p>
     pub fn queries(mut self, input: crate::types::GremlinQueryStatus) -> Self {
         let mut v = self.queries.unwrap_or_default();
-        v.push(input);
-        self.queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the current queries.</p>
-    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GremlinQueryStatus>>) -> Self {
-        self.queries = input;
-        self
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GremlinQueryStatus>>) -> Self {
+        self.queries = input; self
     }
     /// <p>A list of the current queries.</p>
-    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GremlinQueryStatus>> {
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GremlinQueryStatus>> {
         &self.queries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListGremlinQueriesOutput`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput).
     pub fn build(self) -> crate::operation::list_gremlin_queries::ListGremlinQueriesOutput {
         crate::operation::list_gremlin_queries::ListGremlinQueriesOutput {
-            accepted_query_count: self.accepted_query_count,
-            running_query_count: self.running_query_count,
-            queries: self.queries,
+            accepted_query_count: self.accepted_query_count
+            ,
+            running_query_count: self.running_query_count
+            ,
+            queries: self.queries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

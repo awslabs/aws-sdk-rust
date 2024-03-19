@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendCommandOutput {
+pub struct SendCommandOutput  {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     pub command: ::std::option::Option<crate::types::Command>,
     _request_id: Option<String>,
 }
-impl SendCommandOutput {
+impl  SendCommandOutput  {
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
-    pub fn command(&self) -> ::std::option::Option<&crate::types::Command> {
+    pub fn command(&self) -> ::std::option::Option<& crate::types::Command> {
         self.command.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SendCommandOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendCommandOutput {
     /// Creates a new builder-style object to manufacture [`SendCommandOutput`](crate::operation::send_command::SendCommandOutput).
     pub fn builder() -> crate::operation::send_command::builders::SendCommandOutputBuilder {
@@ -40,27 +40,28 @@ impl SendCommandOutputBuilder {
     }
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     pub fn set_command(mut self, input: ::std::option::Option<crate::types::Command>) -> Self {
-        self.command = input;
-        self
+        self.command = input; self
     }
     /// <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
     pub fn get_command(&self) -> &::std::option::Option<crate::types::Command> {
         &self.command
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendCommandOutput`](crate::operation::send_command::SendCommandOutput).
     pub fn build(self) -> crate::operation::send_command::SendCommandOutput {
         crate::operation::send_command::SendCommandOutput {
-            command: self.command,
+            command: self.command
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

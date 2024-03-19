@@ -3,7 +3,7 @@
 /// <p>The summary metadata that describes an analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisSummary {
+pub struct AnalysisSummary  {
     /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
@@ -17,29 +17,29 @@ pub struct AnalysisSummary {
     /// <p>The time that the analysis was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AnalysisSummary {
+impl  AnalysisSummary  {
     /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
-    pub fn analysis_id(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_id(&self) -> ::std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The last known status for the analysis.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The time that the analysis was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that the analysis was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl AnalysisSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl AnalysisSummaryBuilder {
     }
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_id = input;
-        self
+        self.analysis_id = input; self
     }
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl AnalysisSummaryBuilder {
     }
     /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl AnalysisSummaryBuilder {
     }
     /// <p>The last known status for the analysis.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The last known status for the analysis.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -125,8 +121,7 @@ impl AnalysisSummaryBuilder {
     }
     /// <p>The time that the analysis was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the analysis was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl AnalysisSummaryBuilder {
     }
     /// <p>The time that the analysis was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time that the analysis was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl AnalysisSummaryBuilder {
     /// Consumes the builder and constructs a [`AnalysisSummary`](crate::types::AnalysisSummary).
     pub fn build(self) -> crate::types::AnalysisSummary {
         crate::types::AnalysisSummary {
-            arn: self.arn,
-            analysis_id: self.analysis_id,
-            name: self.name,
-            status: self.status,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            arn: self.arn
+            ,
+            analysis_id: self.analysis_id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

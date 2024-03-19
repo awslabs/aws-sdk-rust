@@ -3,36 +3,34 @@
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkUnitsOutput {
+pub struct GetWorkUnitsOutput  {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the plan query operation.</p>
     pub query_id: ::std::string::String,
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    pub work_unit_ranges: ::std::vec::Vec<crate::types::WorkUnitRange>,
+    pub work_unit_ranges: ::std::vec::Vec::<crate::types::WorkUnitRange>,
     _request_id: Option<String>,
 }
-impl GetWorkUnitsOutput {
+impl  GetWorkUnitsOutput  {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the plan query operation.</p>
-    pub fn query_id(&self) -> &str {
-        use std::ops::Deref;
-        self.query_id.deref()
+    pub fn query_id(&self) -> & str {
+        use std::ops::Deref; self.query_id.deref()
     }
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    pub fn work_unit_ranges(&self) -> &[crate::types::WorkUnitRange] {
-        use std::ops::Deref;
-        self.work_unit_ranges.deref()
+    pub fn work_unit_ranges(&self) -> & [crate::types::WorkUnitRange] {
+        use std::ops::Deref; self.work_unit_ranges.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWorkUnitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWorkUnitsOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkUnitsOutput`](crate::operation::get_work_units::GetWorkUnitsOutput).
     pub fn builder() -> crate::operation::get_work_units::builders::GetWorkUnitsOutputBuilder {
@@ -46,7 +44,7 @@ impl GetWorkUnitsOutput {
 pub struct GetWorkUnitsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
-    pub(crate) work_unit_ranges: ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>,
+    pub(crate) work_unit_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::WorkUnitRange>>,
     _request_id: Option<String>,
 }
 impl GetWorkUnitsOutputBuilder {
@@ -57,8 +55,7 @@ impl GetWorkUnitsOutputBuilder {
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl GetWorkUnitsOutputBuilder {
     }
     /// <p>The ID of the plan query operation.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The ID of the plan query operation.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,50 +82,49 @@ impl GetWorkUnitsOutputBuilder {
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
     pub fn work_unit_ranges(mut self, input: crate::types::WorkUnitRange) -> Self {
         let mut v = self.work_unit_ranges.unwrap_or_default();
-        v.push(input);
-        self.work_unit_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.work_unit_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    pub fn set_work_unit_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>) -> Self {
-        self.work_unit_ranges = input;
-        self
+    pub fn set_work_unit_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkUnitRange>>) -> Self {
+        self.work_unit_ranges = input; self
     }
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    pub fn get_work_unit_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>> {
+    pub fn get_work_unit_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkUnitRange>> {
         &self.work_unit_ranges
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWorkUnitsOutput`](crate::operation::get_work_units::GetWorkUnitsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`query_id`](crate::operation::get_work_units::builders::GetWorkUnitsOutputBuilder::query_id)
     /// - [`work_unit_ranges`](crate::operation::get_work_units::builders::GetWorkUnitsOutputBuilder::work_unit_ranges)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_work_units::GetWorkUnitsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_work_units::GetWorkUnitsOutput {
-            next_token: self.next_token,
-            query_id: self.query_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_id",
-                    "query_id was not specified but it is required when building GetWorkUnitsOutput",
-                )
-            })?,
-            work_unit_ranges: self.work_unit_ranges.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "work_unit_ranges",
-                    "work_unit_ranges was not specified but it is required when building GetWorkUnitsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_work_units::GetWorkUnitsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_work_units::GetWorkUnitsOutput {
+                next_token: self.next_token
+                ,
+                query_id: self.query_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query_id", "query_id was not specified but it is required when building GetWorkUnitsOutput")
+                    )?
+                ,
+                work_unit_ranges: self.work_unit_ranges
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("work_unit_ranges", "work_unit_ranges was not specified but it is required when building GetWorkUnitsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

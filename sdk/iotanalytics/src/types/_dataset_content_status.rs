@@ -3,19 +3,19 @@
 /// <p>The state of the dataset contents and the reason they are in this state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetContentStatus {
+pub struct DatasetContentStatus  {
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
     pub state: ::std::option::Option<crate::types::DatasetContentState>,
     /// <p>The reason the dataset contents are in this state.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl DatasetContentStatus {
+impl  DatasetContentStatus  {
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::DatasetContentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::DatasetContentState> {
         self.state.as_ref()
     }
     /// <p>The reason the dataset contents are in this state.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DatasetContentStatusBuilder {
     }
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DatasetContentState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DatasetContentState> {
@@ -55,8 +54,7 @@ impl DatasetContentStatusBuilder {
     }
     /// <p>The reason the dataset contents are in this state.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason the dataset contents are in this state.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DatasetContentStatusBuilder {
     /// Consumes the builder and constructs a [`DatasetContentStatus`](crate::types::DatasetContentStatus).
     pub fn build(self) -> crate::types::DatasetContentStatus {
         crate::types::DatasetContentStatus {
-            state: self.state,
-            reason: self.reason,
+            state: self.state
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

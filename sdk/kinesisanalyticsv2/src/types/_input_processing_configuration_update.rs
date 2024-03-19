@@ -3,13 +3,13 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, describes updates to an <code>InputProcessingConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputProcessingConfigurationUpdate {
+pub struct InputProcessingConfigurationUpdate  {
     /// <p>Provides update information for an <code>InputLambdaProcessor</code>.</p>
     pub input_lambda_processor_update: ::std::option::Option<crate::types::InputLambdaProcessorUpdate>,
 }
-impl InputProcessingConfigurationUpdate {
+impl  InputProcessingConfigurationUpdate  {
     /// <p>Provides update information for an <code>InputLambdaProcessor</code>.</p>
-    pub fn input_lambda_processor_update(&self) -> ::std::option::Option<&crate::types::InputLambdaProcessorUpdate> {
+    pub fn input_lambda_processor_update(&self) -> ::std::option::Option<& crate::types::InputLambdaProcessorUpdate> {
         self.input_lambda_processor_update.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl InputProcessingConfigurationUpdateBuilder {
     }
     /// <p>Provides update information for an <code>InputLambdaProcessor</code>.</p>
     pub fn set_input_lambda_processor_update(mut self, input: ::std::option::Option<crate::types::InputLambdaProcessorUpdate>) -> Self {
-        self.input_lambda_processor_update = input;
-        self
+        self.input_lambda_processor_update = input; self
     }
     /// <p>Provides update information for an <code>InputLambdaProcessor</code>.</p>
     pub fn get_input_lambda_processor_update(&self) -> &::std::option::Option<crate::types::InputLambdaProcessorUpdate> {
@@ -45,7 +44,9 @@ impl InputProcessingConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`InputProcessingConfigurationUpdate`](crate::types::InputProcessingConfigurationUpdate).
     pub fn build(self) -> crate::types::InputProcessingConfigurationUpdate {
         crate::types::InputProcessingConfigurationUpdate {
-            input_lambda_processor_update: self.input_lambda_processor_update,
+            input_lambda_processor_update: self.input_lambda_processor_update
+            ,
         }
     }
 }
+

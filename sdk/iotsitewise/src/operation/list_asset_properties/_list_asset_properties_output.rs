@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssetPropertiesOutput {
+pub struct ListAssetPropertiesOutput  {
     /// <p>A list that summarizes the properties associated with the specified asset.</p>
-    pub asset_property_summaries: ::std::vec::Vec<crate::types::AssetPropertySummary>,
+    pub asset_property_summaries: ::std::vec::Vec::<crate::types::AssetPropertySummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAssetPropertiesOutput {
+impl  ListAssetPropertiesOutput  {
     /// <p>A list that summarizes the properties associated with the specified asset.</p>
-    pub fn asset_property_summaries(&self) -> &[crate::types::AssetPropertySummary] {
-        use std::ops::Deref;
-        self.asset_property_summaries.deref()
+    pub fn asset_property_summaries(&self) -> & [crate::types::AssetPropertySummary] {
+        use std::ops::Deref; self.asset_property_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAssetPropertiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAssetPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetPropertiesOutput`](crate::operation::list_asset_properties::ListAssetPropertiesOutput).
     pub fn builder() -> crate::operation::list_asset_properties::builders::ListAssetPropertiesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAssetPropertiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetPropertiesOutputBuilder {
-    pub(crate) asset_property_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertySummary>>,
+    pub(crate) asset_property_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAssetPropertiesOutputBuilder {
     /// <p>A list that summarizes the properties associated with the specified asset.</p>
     pub fn asset_property_summaries(mut self, input: crate::types::AssetPropertySummary) -> Self {
         let mut v = self.asset_property_summaries.unwrap_or_default();
-        v.push(input);
-        self.asset_property_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_property_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that summarizes the properties associated with the specified asset.</p>
-    pub fn set_asset_property_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertySummary>>) -> Self {
-        self.asset_property_summaries = input;
-        self
+    pub fn set_asset_property_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertySummary>>) -> Self {
+        self.asset_property_summaries = input; self
     }
     /// <p>A list that summarizes the properties associated with the specified asset.</p>
-    pub fn get_asset_property_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertySummary>> {
+    pub fn get_asset_property_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertySummary>> {
         &self.asset_property_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -68,38 +66,37 @@ impl ListAssetPropertiesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAssetPropertiesOutput`](crate::operation::list_asset_properties::ListAssetPropertiesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_property_summaries`](crate::operation::list_asset_properties::builders::ListAssetPropertiesOutputBuilder::asset_property_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_asset_properties::ListAssetPropertiesOutput {
-            asset_property_summaries: self.asset_property_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_property_summaries",
-                    "asset_property_summaries was not specified but it is required when building ListAssetPropertiesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_asset_properties::ListAssetPropertiesOutput {
+                asset_property_summaries: self.asset_property_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_property_summaries", "asset_property_summaries was not specified but it is required when building ListAssetPropertiesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListImageVersions`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only versions created on or after the specified time.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only versions created on or before the specified time.</p><br>
     ///   - [`image_name(impl Into<String>)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::image_name) / [`set_image_name(Option<String>)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::set_image_name):<br>required: **true**<br><p>The name of the image to list the versions of.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p><br>
     ///   - [`sort_by(ImageVersionSortBy)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::sort_by) / [`set_sort_by(Option<ImageVersionSortBy>)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p><br>
     ///   - [`sort_order(ImageVersionSortOrder)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::sort_order) / [`set_sort_order(Option<ImageVersionSortOrder>)`](crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>DESCENDING</code>.</p><br>
-    /// - On success, responds with [`ListImageVersionsOutput`](crate::operation::list_image_versions::ListImageVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListImageVersionsOutput`](crate::operation::list_image_versions::ListImageVersionsOutput) with field(s):
     ///   - [`image_versions(Option<Vec::<ImageVersion>>)`](crate::operation::list_image_versions::ListImageVersionsOutput::image_versions): <p>A list of versions and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_versions::ListImageVersionsOutput::next_token): <p>A token for getting the next set of versions, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListImageVersionsError>`](crate::operation::list_image_versions::ListImageVersionsError)
+                            /// - On failure, responds with [`SdkError<ListImageVersionsError>`](crate::operation::list_image_versions::ListImageVersionsError)
     pub fn list_image_versions(&self) -> crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder {
-        crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_image_versions::builders::ListImageVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

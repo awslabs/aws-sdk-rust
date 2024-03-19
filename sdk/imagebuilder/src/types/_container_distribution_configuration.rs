@@ -3,27 +3,28 @@
 /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerDistributionConfiguration {
+pub struct ContainerDistributionConfiguration  {
     /// <p>The description of the container distribution configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    pub container_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub container_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The destination repository for the container distribution configuration.</p>
     pub target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
 }
-impl ContainerDistributionConfiguration {
+impl  ContainerDistributionConfiguration  {
     /// <p>The description of the container distribution configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_tags.is_none()`.
-    pub fn container_tags(&self) -> &[::std::string::String] {
-        self.container_tags.as_deref().unwrap_or_default()
+    pub fn container_tags(&self) -> & [::std::string::String] {
+        self.container_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The destination repository for the container distribution configuration.</p>
-    pub fn target_repository(&self) -> ::std::option::Option<&crate::types::TargetContainerRepository> {
+    pub fn target_repository(&self) -> ::std::option::Option<& crate::types::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl ContainerDistributionConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerDistributionConfigurationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) container_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) container_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
 }
 impl ContainerDistributionConfigurationBuilder {
@@ -50,8 +51,7 @@ impl ContainerDistributionConfigurationBuilder {
     }
     /// <p>The description of the container distribution configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the container distribution configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl ContainerDistributionConfigurationBuilder {
     /// <p>Tags that are attached to the container distribution configuration.</p>
     pub fn container_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_tags.unwrap_or_default();
-        v.push(input.into());
-        self.container_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.container_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    pub fn set_container_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.container_tags = input;
-        self
+    pub fn set_container_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.container_tags = input; self
     }
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    pub fn get_container_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.container_tags
     }
     /// <p>The destination repository for the container distribution configuration.</p>
@@ -85,8 +84,7 @@ impl ContainerDistributionConfigurationBuilder {
     }
     /// <p>The destination repository for the container distribution configuration.</p>
     pub fn set_target_repository(mut self, input: ::std::option::Option<crate::types::TargetContainerRepository>) -> Self {
-        self.target_repository = input;
-        self
+        self.target_repository = input; self
     }
     /// <p>The destination repository for the container distribution configuration.</p>
     pub fn get_target_repository(&self) -> &::std::option::Option<crate::types::TargetContainerRepository> {
@@ -95,9 +93,13 @@ impl ContainerDistributionConfigurationBuilder {
     /// Consumes the builder and constructs a [`ContainerDistributionConfiguration`](crate::types::ContainerDistributionConfiguration).
     pub fn build(self) -> crate::types::ContainerDistributionConfiguration {
         crate::types::ContainerDistributionConfiguration {
-            description: self.description,
-            container_tags: self.container_tags,
-            target_repository: self.target_repository,
+            description: self.description
+            ,
+            container_tags: self.container_tags
+            ,
+            target_repository: self.target_repository
+            ,
         }
     }
 }
+

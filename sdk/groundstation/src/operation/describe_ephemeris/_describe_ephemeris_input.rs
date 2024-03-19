@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEphemerisInput {
+pub struct DescribeEphemerisInput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEphemerisInput {
+impl  DescribeEphemerisInput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> ::std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeEphemerisInputBuilder {
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ephemeris_id = input;
-        self
+        self.ephemeris_id = input; self
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ephemeris_id
     }
     /// Consumes the builder and constructs a [`DescribeEphemerisInput`](crate::operation::describe_ephemeris::DescribeEphemerisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_ephemeris::DescribeEphemerisInput {
-            ephemeris_id: self.ephemeris_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_ephemeris::DescribeEphemerisInput {
+                ephemeris_id: self.ephemeris_id
+                ,
+            }
+        )
     }
 }
+

@@ -10,7 +10,7 @@ pub enum DocumentAttributeValue {
     /// <p>A long integer value.</p>
     LongValue(i64),
     /// <p>A list of strings.</p>
-    StringListValue(::std::vec::Vec<::std::string::String>),
+    StringListValue(::std::vec::Vec::<::std::string::String>),
     /// <p>A string.</p>
     StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -27,11 +27,7 @@ impl DocumentAttributeValue {
     /// Tries to convert the enum instance into [`DateValue`](crate::types::DocumentAttributeValue::DateValue), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_date_value(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
-        if let DocumentAttributeValue::DateValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentAttributeValue::DateValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DateValue`](crate::types::DocumentAttributeValue::DateValue).
     pub fn is_date_value(&self) -> bool {
@@ -40,11 +36,7 @@ impl DocumentAttributeValue {
     /// Tries to convert the enum instance into [`LongValue`](crate::types::DocumentAttributeValue::LongValue), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long_value(&self) -> ::std::result::Result<&i64, &Self> {
-        if let DocumentAttributeValue::LongValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentAttributeValue::LongValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`LongValue`](crate::types::DocumentAttributeValue::LongValue).
     pub fn is_long_value(&self) -> bool {
@@ -52,12 +44,8 @@ impl DocumentAttributeValue {
     }
     /// Tries to convert the enum instance into [`StringListValue`](crate::types::DocumentAttributeValue::StringListValue), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_list_value(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let DocumentAttributeValue::StringListValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_string_list_value(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let DocumentAttributeValue::StringListValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringListValue`](crate::types::DocumentAttributeValue::StringListValue).
     pub fn is_string_list_value(&self) -> bool {
@@ -66,11 +54,7 @@ impl DocumentAttributeValue {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::DocumentAttributeValue::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let DocumentAttributeValue::StringValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentAttributeValue::StringValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::types::DocumentAttributeValue::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -81,3 +65,4 @@ impl DocumentAttributeValue {
         matches!(self, Self::Unknown)
     }
 }
+

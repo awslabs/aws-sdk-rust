@@ -3,7 +3,7 @@
 /// <p>The details of the published asset for which the subscription grant is created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubscribedAssetListing {
+pub struct SubscribedAssetListing  {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
@@ -13,30 +13,31 @@ pub struct SubscribedAssetListing {
     /// <p>The forms attached to the published asset for which the subscription grant is created.</p>
     pub forms: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms attached to the published asset for which the subscription grant is created.</p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<crate::types::DetailedGlossaryTerm>>,
 }
-impl SubscribedAssetListing {
+impl  SubscribedAssetListing  {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
-    pub fn entity_revision(&self) -> ::std::option::Option<&str> {
+    pub fn entity_revision(&self) -> ::std::option::Option<& str> {
         self.entity_revision.as_deref()
     }
     /// <p>The type of the published asset for which the subscription grant is created.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn entity_type(&self) -> ::std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The forms attached to the published asset for which the subscription grant is created.</p>
-    pub fn forms(&self) -> ::std::option::Option<&str> {
+    pub fn forms(&self) -> ::std::option::Option<& str> {
         self.forms.as_deref()
     }
     /// <p>The glossary terms attached to the published asset for which the subscription grant is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [crate::types::DetailedGlossaryTerm] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SubscribedAssetListing {
@@ -54,7 +55,7 @@ pub struct SubscribedAssetListingBuilder {
     pub(crate) entity_revision: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,
     pub(crate) forms: ::std::option::Option<::std::string::String>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<crate::types::DetailedGlossaryTerm>>,
 }
 impl SubscribedAssetListingBuilder {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
@@ -64,8 +65,7 @@ impl SubscribedAssetListingBuilder {
     }
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl SubscribedAssetListingBuilder {
     }
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
     pub fn set_entity_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_revision = input;
-        self
+        self.entity_revision = input; self
     }
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
     pub fn get_entity_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl SubscribedAssetListingBuilder {
     }
     /// <p>The type of the published asset for which the subscription grant is created.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The type of the published asset for which the subscription grant is created.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl SubscribedAssetListingBuilder {
     }
     /// <p>The forms attached to the published asset for which the subscription grant is created.</p>
     pub fn set_forms(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forms = input;
-        self
+        self.forms = input; self
     }
     /// <p>The forms attached to the published asset for which the subscription grant is created.</p>
     pub fn get_forms(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,27 +117,32 @@ impl SubscribedAssetListingBuilder {
     /// <p>The glossary terms attached to the published asset for which the subscription grant is created.</p>
     pub fn glossary_terms(mut self, input: crate::types::DetailedGlossaryTerm) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input);
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The glossary terms attached to the published asset for which the subscription grant is created.</p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DetailedGlossaryTerm>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p>The glossary terms attached to the published asset for which the subscription grant is created.</p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DetailedGlossaryTerm>> {
         &self.glossary_terms
     }
     /// Consumes the builder and constructs a [`SubscribedAssetListing`](crate::types::SubscribedAssetListing).
     pub fn build(self) -> crate::types::SubscribedAssetListing {
         crate::types::SubscribedAssetListing {
-            entity_id: self.entity_id,
-            entity_revision: self.entity_revision,
-            entity_type: self.entity_type,
-            forms: self.forms,
-            glossary_terms: self.glossary_terms,
+            entity_id: self.entity_id
+            ,
+            entity_revision: self.entity_revision
+            ,
+            entity_type: self.entity_type
+            ,
+            forms: self.forms
+            ,
+            glossary_terms: self.glossary_terms
+            ,
         }
     }
 }
+

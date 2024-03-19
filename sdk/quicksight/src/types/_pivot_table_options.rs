@@ -3,7 +3,7 @@
 /// <p>The table options for a pivot table visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableOptions {
+pub struct PivotTableOptions  {
     /// <p>The metric placement (row, column) options.</p>
     pub metric_placement: ::std::option::Option<crate::types::PivotTableMetricPlacement>,
     /// <p>The visibility of the single metric options.</p>
@@ -37,45 +37,45 @@ pub struct PivotTableOptions {
     /// <p>The default cell width of the pivot table.</p>
     pub default_cell_width: ::std::option::Option<::std::string::String>,
 }
-impl PivotTableOptions {
+impl  PivotTableOptions  {
     /// <p>The metric placement (row, column) options.</p>
-    pub fn metric_placement(&self) -> ::std::option::Option<&crate::types::PivotTableMetricPlacement> {
+    pub fn metric_placement(&self) -> ::std::option::Option<& crate::types::PivotTableMetricPlacement> {
         self.metric_placement.as_ref()
     }
     /// <p>The visibility of the single metric options.</p>
-    pub fn single_metric_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn single_metric_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.single_metric_visibility.as_ref()
     }
     /// <p>The visibility of the column names.</p>
-    pub fn column_names_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn column_names_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.column_names_visibility.as_ref()
     }
     /// <p>Determines the visibility of the pivot table.</p>
-    pub fn toggle_buttons_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn toggle_buttons_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.toggle_buttons_visibility.as_ref()
     }
     /// <p>The table cell style of the column header.</p>
-    pub fn column_header_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn column_header_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.column_header_style.as_ref()
     }
     /// <p>The table cell style of the row headers.</p>
-    pub fn row_header_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn row_header_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.row_header_style.as_ref()
     }
     /// <p>The table cell style of cells.</p>
-    pub fn cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn cell_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.cell_style.as_ref()
     }
     /// <p>The table cell style of row field names.</p>
-    pub fn row_field_names_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn row_field_names_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.row_field_names_style.as_ref()
     }
     /// <p>The row alternate color options (widget status, row alternate colors).</p>
-    pub fn row_alternate_color_options(&self) -> ::std::option::Option<&crate::types::RowAlternateColorOptions> {
+    pub fn row_alternate_color_options(&self) -> ::std::option::Option<& crate::types::RowAlternateColorOptions> {
         self.row_alternate_color_options.as_ref()
     }
     /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
-    pub fn collapsed_row_dimensions_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn collapsed_row_dimensions_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.collapsed_row_dimensions_visibility.as_ref()
     }
     /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
@@ -85,15 +85,15 @@ impl PivotTableOptions {
     /// <li>
     /// <p><code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p></li>
     /// </ul>
-    pub fn rows_layout(&self) -> ::std::option::Option<&crate::types::PivotTableRowsLayout> {
+    pub fn rows_layout(&self) -> ::std::option::Option<& crate::types::PivotTableRowsLayout> {
         self.rows_layout.as_ref()
     }
     /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
-    pub fn rows_label_options(&self) -> ::std::option::Option<&crate::types::PivotTableRowsLabelOptions> {
+    pub fn rows_label_options(&self) -> ::std::option::Option<& crate::types::PivotTableRowsLabelOptions> {
         self.rows_label_options.as_ref()
     }
     /// <p>The default cell width of the pivot table.</p>
-    pub fn default_cell_width(&self) -> ::std::option::Option<&str> {
+    pub fn default_cell_width(&self) -> ::std::option::Option<& str> {
         self.default_cell_width.as_deref()
     }
 }
@@ -130,8 +130,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The metric placement (row, column) options.</p>
     pub fn set_metric_placement(mut self, input: ::std::option::Option<crate::types::PivotTableMetricPlacement>) -> Self {
-        self.metric_placement = input;
-        self
+        self.metric_placement = input; self
     }
     /// <p>The metric placement (row, column) options.</p>
     pub fn get_metric_placement(&self) -> &::std::option::Option<crate::types::PivotTableMetricPlacement> {
@@ -144,8 +143,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The visibility of the single metric options.</p>
     pub fn set_single_metric_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.single_metric_visibility = input;
-        self
+        self.single_metric_visibility = input; self
     }
     /// <p>The visibility of the single metric options.</p>
     pub fn get_single_metric_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -158,8 +156,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The visibility of the column names.</p>
     pub fn set_column_names_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.column_names_visibility = input;
-        self
+        self.column_names_visibility = input; self
     }
     /// <p>The visibility of the column names.</p>
     pub fn get_column_names_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -172,8 +169,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>Determines the visibility of the pivot table.</p>
     pub fn set_toggle_buttons_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.toggle_buttons_visibility = input;
-        self
+        self.toggle_buttons_visibility = input; self
     }
     /// <p>Determines the visibility of the pivot table.</p>
     pub fn get_toggle_buttons_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -186,8 +182,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The table cell style of the column header.</p>
     pub fn set_column_header_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
-        self.column_header_style = input;
-        self
+        self.column_header_style = input; self
     }
     /// <p>The table cell style of the column header.</p>
     pub fn get_column_header_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
@@ -200,8 +195,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The table cell style of the row headers.</p>
     pub fn set_row_header_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
-        self.row_header_style = input;
-        self
+        self.row_header_style = input; self
     }
     /// <p>The table cell style of the row headers.</p>
     pub fn get_row_header_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
@@ -214,8 +208,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The table cell style of cells.</p>
     pub fn set_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
-        self.cell_style = input;
-        self
+        self.cell_style = input; self
     }
     /// <p>The table cell style of cells.</p>
     pub fn get_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
@@ -228,8 +221,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The table cell style of row field names.</p>
     pub fn set_row_field_names_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
-        self.row_field_names_style = input;
-        self
+        self.row_field_names_style = input; self
     }
     /// <p>The table cell style of row field names.</p>
     pub fn get_row_field_names_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
@@ -242,8 +234,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The row alternate color options (widget status, row alternate colors).</p>
     pub fn set_row_alternate_color_options(mut self, input: ::std::option::Option<crate::types::RowAlternateColorOptions>) -> Self {
-        self.row_alternate_color_options = input;
-        self
+        self.row_alternate_color_options = input; self
     }
     /// <p>The row alternate color options (widget status, row alternate colors).</p>
     pub fn get_row_alternate_color_options(&self) -> &::std::option::Option<crate::types::RowAlternateColorOptions> {
@@ -256,8 +247,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
     pub fn set_collapsed_row_dimensions_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.collapsed_row_dimensions_visibility = input;
-        self
+        self.collapsed_row_dimensions_visibility = input; self
     }
     /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
     pub fn get_collapsed_row_dimensions_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -282,8 +272,7 @@ impl PivotTableOptionsBuilder {
     /// <p><code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p></li>
     /// </ul>
     pub fn set_rows_layout(mut self, input: ::std::option::Option<crate::types::PivotTableRowsLayout>) -> Self {
-        self.rows_layout = input;
-        self
+        self.rows_layout = input; self
     }
     /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
     /// <ul>
@@ -302,8 +291,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
     pub fn set_rows_label_options(mut self, input: ::std::option::Option<crate::types::PivotTableRowsLabelOptions>) -> Self {
-        self.rows_label_options = input;
-        self
+        self.rows_label_options = input; self
     }
     /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
     pub fn get_rows_label_options(&self) -> &::std::option::Option<crate::types::PivotTableRowsLabelOptions> {
@@ -316,8 +304,7 @@ impl PivotTableOptionsBuilder {
     }
     /// <p>The default cell width of the pivot table.</p>
     pub fn set_default_cell_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_cell_width = input;
-        self
+        self.default_cell_width = input; self
     }
     /// <p>The default cell width of the pivot table.</p>
     pub fn get_default_cell_width(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,19 +313,33 @@ impl PivotTableOptionsBuilder {
     /// Consumes the builder and constructs a [`PivotTableOptions`](crate::types::PivotTableOptions).
     pub fn build(self) -> crate::types::PivotTableOptions {
         crate::types::PivotTableOptions {
-            metric_placement: self.metric_placement,
-            single_metric_visibility: self.single_metric_visibility,
-            column_names_visibility: self.column_names_visibility,
-            toggle_buttons_visibility: self.toggle_buttons_visibility,
-            column_header_style: self.column_header_style,
-            row_header_style: self.row_header_style,
-            cell_style: self.cell_style,
-            row_field_names_style: self.row_field_names_style,
-            row_alternate_color_options: self.row_alternate_color_options,
-            collapsed_row_dimensions_visibility: self.collapsed_row_dimensions_visibility,
-            rows_layout: self.rows_layout,
-            rows_label_options: self.rows_label_options,
-            default_cell_width: self.default_cell_width,
+            metric_placement: self.metric_placement
+            ,
+            single_metric_visibility: self.single_metric_visibility
+            ,
+            column_names_visibility: self.column_names_visibility
+            ,
+            toggle_buttons_visibility: self.toggle_buttons_visibility
+            ,
+            column_header_style: self.column_header_style
+            ,
+            row_header_style: self.row_header_style
+            ,
+            cell_style: self.cell_style
+            ,
+            row_field_names_style: self.row_field_names_style
+            ,
+            row_alternate_color_options: self.row_alternate_color_options
+            ,
+            collapsed_row_dimensions_visibility: self.collapsed_row_dimensions_visibility
+            ,
+            rows_layout: self.rows_layout
+            ,
+            rows_label_options: self.rows_label_options
+            ,
+            default_cell_width: self.default_cell_width
+            ,
         }
     }
 }
+

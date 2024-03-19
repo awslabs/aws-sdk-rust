@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKnowledgeBaseTemplateUriInput {
+pub struct UpdateKnowledgeBaseTemplateUriInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The template URI to update.</p>
     pub template_uri: ::std::option::Option<::std::string::String>,
 }
-impl UpdateKnowledgeBaseTemplateUriInput {
+impl  UpdateKnowledgeBaseTemplateUriInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The template URI to update.</p>
-    pub fn template_uri(&self) -> ::std::option::Option<&str> {
+    pub fn template_uri(&self) -> ::std::option::Option<& str> {
         self.template_uri.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateKnowledgeBaseTemplateUriInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl UpdateKnowledgeBaseTemplateUriInputBuilder {
     }
     /// <p>The template URI to update.</p>
     pub fn set_template_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_uri = input;
-        self
+        self.template_uri = input; self
     }
     /// <p>The template URI to update.</p>
     pub fn get_template_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_uri
     }
     /// Consumes the builder and constructs a [`UpdateKnowledgeBaseTemplateUriInput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput {
-                knowledge_base_id: self.knowledge_base_id,
-                template_uri: self.template_uri,
-            },
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                template_uri: self.template_uri
+                ,
+            }
         )
     }
 }
+

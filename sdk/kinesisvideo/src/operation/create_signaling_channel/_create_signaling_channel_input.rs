@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSignalingChannelInput {
+pub struct CreateSignalingChannelInput  {
     /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.</p>
@@ -10,26 +10,27 @@ pub struct CreateSignalingChannelInput {
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateSignalingChannelInput {
+impl  CreateSignalingChannelInput  {
     /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.</p>
-    pub fn channel_type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
+    pub fn channel_type(&self) -> ::std::option::Option<& crate::types::ChannelType> {
         self.channel_type.as_ref()
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn single_master_configuration(&self) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
+    pub fn single_master_configuration(&self) -> ::std::option::Option<& crate::types::SingleMasterConfiguration> {
         self.single_master_configuration.as_ref()
     }
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSignalingChannelInput {
@@ -46,7 +47,7 @@ pub struct CreateSignalingChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,
     pub(crate) single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateSignalingChannelInputBuilder {
     /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
@@ -57,8 +58,7 @@ impl CreateSignalingChannelInputBuilder {
     }
     /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl CreateSignalingChannelInputBuilder {
     }
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.</p>
     pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
-        self.channel_type = input;
-        self
+        self.channel_type = input; self
     }
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.</p>
     pub fn get_channel_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
@@ -85,8 +84,7 @@ impl CreateSignalingChannelInputBuilder {
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
-        self.single_master_configuration = input;
-        self
+        self.single_master_configuration = input; self
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
@@ -99,31 +97,32 @@ impl CreateSignalingChannelInputBuilder {
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSignalingChannelInput`](crate::operation::create_signaling_channel::CreateSignalingChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_signaling_channel::CreateSignalingChannelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_signaling_channel::CreateSignalingChannelInput {
-            channel_name: self.channel_name,
-            channel_type: self.channel_type,
-            single_master_configuration: self.single_master_configuration,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_signaling_channel::CreateSignalingChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_signaling_channel::CreateSignalingChannelInput {
+                channel_name: self.channel_name
+                ,
+                channel_type: self.channel_type
+                ,
+                single_master_configuration: self.single_master_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the Amazon S3 bucket where you saved your unsigned code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Source {
+pub struct S3Source  {
     /// <p>Name of the S3 bucket.</p>
     pub bucket_name: ::std::string::String,
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
@@ -11,21 +11,18 @@ pub struct S3Source {
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
     pub version: ::std::string::String,
 }
-impl S3Source {
+impl  S3Source  {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
 }
 impl S3Source {
@@ -52,8 +49,7 @@ impl S3SourceBuilder {
     }
     /// <p>Name of the S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>Name of the S3 bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl S3SourceBuilder {
     }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl S3SourceBuilder {
     }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl S3SourceBuilder {
     /// - [`key`](crate::types::builders::S3SourceBuilder::key)
     /// - [`version`](crate::types::builders::S3SourceBuilder::version)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Source, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Source {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3Source",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building S3Source",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building S3Source",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Source {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3Source")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building S3Source")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building S3Source")
+                    )?
+                ,
+            }
+        )
     }
 }
+

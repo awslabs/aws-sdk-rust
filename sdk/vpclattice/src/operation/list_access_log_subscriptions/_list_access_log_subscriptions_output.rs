@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessLogSubscriptionsOutput {
+pub struct ListAccessLogSubscriptionsOutput  {
     /// <p>The access log subscriptions.</p>
-    pub items: ::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>,
+    pub items: ::std::vec::Vec::<crate::types::AccessLogSubscriptionSummary>,
     /// <p>A pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAccessLogSubscriptionsOutput {
+impl  ListAccessLogSubscriptionsOutput  {
     /// <p>The access log subscriptions.</p>
-    pub fn items(&self) -> &[crate::types::AccessLogSubscriptionSummary] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::AccessLogSubscriptionSummary] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>A pagination token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccessLogSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccessLogSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput).
     pub fn builder() -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAccessLogSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessLogSubscriptionsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::AccessLogSubscriptionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAccessLogSubscriptionsOutputBuilder {
     /// <p>The access log subscriptions.</p>
     pub fn items(mut self, input: crate::types::AccessLogSubscriptionSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The access log subscriptions.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessLogSubscriptionSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>The access log subscriptions.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessLogSubscriptionSummary>> {
         &self.items
     }
     /// <p>A pagination token for the next page of results.</p>
@@ -68,40 +66,37 @@ impl ListAccessLogSubscriptionsOutputBuilder {
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder::items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ListAccessLogSubscriptionsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ListAccessLogSubscriptionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

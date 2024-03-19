@@ -3,13 +3,13 @@
 /// <p>Contains a timestamp with optional nanosecond granularity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeInNanos {
+pub struct TimeInNanos  {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     pub time_in_seconds: i64,
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub offset_in_nanos: ::std::option::Option<i32>,
 }
-impl TimeInNanos {
+impl  TimeInNanos  {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     pub fn time_in_seconds(&self) -> i64 {
         self.time_in_seconds
@@ -42,8 +42,7 @@ impl TimeInNanosBuilder {
     }
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     pub fn set_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.time_in_seconds = input;
-        self
+        self.time_in_seconds = input; self
     }
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     pub fn get_time_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -56,8 +55,7 @@ impl TimeInNanosBuilder {
     }
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub fn set_offset_in_nanos(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset_in_nanos = input;
-        self
+        self.offset_in_nanos = input; self
     }
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub fn get_offset_in_nanos(&self) -> &::std::option::Option<i32> {
@@ -67,14 +65,17 @@ impl TimeInNanosBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`time_in_seconds`](crate::types::builders::TimeInNanosBuilder::time_in_seconds)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeInNanos, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeInNanos {
-            time_in_seconds: self.time_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_in_seconds",
-                    "time_in_seconds was not specified but it is required when building TimeInNanos",
-                )
-            })?,
-            offset_in_nanos: self.offset_in_nanos,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeInNanos {
+                time_in_seconds: self.time_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_in_seconds", "time_in_seconds was not specified but it is required when building TimeInNanos")
+                    )?
+                ,
+                offset_in_nanos: self.offset_in_nanos
+                ,
+            }
+        )
     }
 }
+

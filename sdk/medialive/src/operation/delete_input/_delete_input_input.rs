@@ -3,13 +3,13 @@
 /// Placeholder documentation for DeleteInputRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInputInput {
+pub struct DeleteInputInput  {
     /// Unique ID of the input
     pub input_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInputInput {
+impl  DeleteInputInput  {
     /// Unique ID of the input
-    pub fn input_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_id(&self) -> ::std::option::Option<& str> {
         self.input_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl DeleteInputInputBuilder {
     }
     /// Unique ID of the input
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_id = input;
-        self
+        self.input_id = input; self
     }
     /// Unique ID of the input
     pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl DeleteInputInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteInputInput`](crate::operation::delete_input::DeleteInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_input::DeleteInputInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_input::DeleteInputInput { input_id: self.input_id })
+        ::std::result::Result::Ok(
+            crate::operation::delete_input::DeleteInputInput {
+                input_id: self.input_id
+                ,
+            }
+        )
     }
 }
+

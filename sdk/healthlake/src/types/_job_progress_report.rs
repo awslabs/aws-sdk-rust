@@ -3,7 +3,7 @@
 /// <p>The progress report of an import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobProgressReport {
+pub struct JobProgressReport  {
     /// <p>The number of files scanned from input S3 bucket.</p>
     pub total_number_of_scanned_files: ::std::option::Option<i64>,
     /// <p>The size (in MB) of the files scanned from the input S3 bucket.</p>
@@ -21,7 +21,7 @@ pub struct JobProgressReport {
     /// <p>The throughput (in MB/sec) of the import job.</p>
     pub throughput: ::std::option::Option<f64>,
 }
-impl JobProgressReport {
+impl  JobProgressReport  {
     /// <p>The number of files scanned from input S3 bucket.</p>
     pub fn total_number_of_scanned_files(&self) -> ::std::option::Option<i64> {
         self.total_number_of_scanned_files
@@ -83,8 +83,7 @@ impl JobProgressReportBuilder {
     }
     /// <p>The number of files scanned from input S3 bucket.</p>
     pub fn set_total_number_of_scanned_files(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_number_of_scanned_files = input;
-        self
+        self.total_number_of_scanned_files = input; self
     }
     /// <p>The number of files scanned from input S3 bucket.</p>
     pub fn get_total_number_of_scanned_files(&self) -> &::std::option::Option<i64> {
@@ -97,8 +96,7 @@ impl JobProgressReportBuilder {
     }
     /// <p>The size (in MB) of the files scanned from the input S3 bucket.</p>
     pub fn set_total_size_of_scanned_files_in_mb(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total_size_of_scanned_files_in_mb = input;
-        self
+        self.total_size_of_scanned_files_in_mb = input; self
     }
     /// <p>The size (in MB) of the files scanned from the input S3 bucket.</p>
     pub fn get_total_size_of_scanned_files_in_mb(&self) -> &::std::option::Option<f64> {
@@ -111,8 +109,7 @@ impl JobProgressReportBuilder {
     }
     /// <p>The number of files imported so far.</p>
     pub fn set_total_number_of_imported_files(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_number_of_imported_files = input;
-        self
+        self.total_number_of_imported_files = input; self
     }
     /// <p>The number of files imported so far.</p>
     pub fn get_total_number_of_imported_files(&self) -> &::std::option::Option<i64> {
@@ -125,8 +122,7 @@ impl JobProgressReportBuilder {
     }
     /// <p>The number of resources scanned from the input S3 bucket.</p>
     pub fn set_total_number_of_resources_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_number_of_resources_scanned = input;
-        self
+        self.total_number_of_resources_scanned = input; self
     }
     /// <p>The number of resources scanned from the input S3 bucket.</p>
     pub fn get_total_number_of_resources_scanned(&self) -> &::std::option::Option<i64> {
@@ -139,8 +135,7 @@ impl JobProgressReportBuilder {
     }
     /// <p>The number of resources imported so far.</p>
     pub fn set_total_number_of_resources_imported(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_number_of_resources_imported = input;
-        self
+        self.total_number_of_resources_imported = input; self
     }
     /// <p>The number of resources imported so far.</p>
     pub fn get_total_number_of_resources_imported(&self) -> &::std::option::Option<i64> {
@@ -153,8 +148,7 @@ impl JobProgressReportBuilder {
     }
     /// <p>The number of resources that failed due to customer error.</p>
     pub fn set_total_number_of_resources_with_customer_error(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_number_of_resources_with_customer_error = input;
-        self
+        self.total_number_of_resources_with_customer_error = input; self
     }
     /// <p>The number of resources that failed due to customer error.</p>
     pub fn get_total_number_of_resources_with_customer_error(&self) -> &::std::option::Option<i64> {
@@ -167,8 +161,7 @@ impl JobProgressReportBuilder {
     }
     /// <p>The number of files that failed to be read from the input S3 bucket due to customer error.</p>
     pub fn set_total_number_of_files_read_with_customer_error(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_number_of_files_read_with_customer_error = input;
-        self
+        self.total_number_of_files_read_with_customer_error = input; self
     }
     /// <p>The number of files that failed to be read from the input S3 bucket due to customer error.</p>
     pub fn get_total_number_of_files_read_with_customer_error(&self) -> &::std::option::Option<i64> {
@@ -181,8 +174,7 @@ impl JobProgressReportBuilder {
     }
     /// <p>The throughput (in MB/sec) of the import job.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// <p>The throughput (in MB/sec) of the import job.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<f64> {
@@ -191,14 +183,23 @@ impl JobProgressReportBuilder {
     /// Consumes the builder and constructs a [`JobProgressReport`](crate::types::JobProgressReport).
     pub fn build(self) -> crate::types::JobProgressReport {
         crate::types::JobProgressReport {
-            total_number_of_scanned_files: self.total_number_of_scanned_files,
-            total_size_of_scanned_files_in_mb: self.total_size_of_scanned_files_in_mb,
-            total_number_of_imported_files: self.total_number_of_imported_files,
-            total_number_of_resources_scanned: self.total_number_of_resources_scanned,
-            total_number_of_resources_imported: self.total_number_of_resources_imported,
-            total_number_of_resources_with_customer_error: self.total_number_of_resources_with_customer_error,
-            total_number_of_files_read_with_customer_error: self.total_number_of_files_read_with_customer_error,
-            throughput: self.throughput,
+            total_number_of_scanned_files: self.total_number_of_scanned_files
+            ,
+            total_size_of_scanned_files_in_mb: self.total_size_of_scanned_files_in_mb
+            ,
+            total_number_of_imported_files: self.total_number_of_imported_files
+            ,
+            total_number_of_resources_scanned: self.total_number_of_resources_scanned
+            ,
+            total_number_of_resources_imported: self.total_number_of_resources_imported
+            ,
+            total_number_of_resources_with_customer_error: self.total_number_of_resources_with_customer_error
+            ,
+            total_number_of_files_read_with_customer_error: self.total_number_of_files_read_with_customer_error
+            ,
+            throughput: self.throughput
+            ,
         }
     }
 }
+

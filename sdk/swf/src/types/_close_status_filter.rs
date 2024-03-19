@@ -3,13 +3,13 @@
 /// <p>Used to filter the closed workflow executions in visibility APIs by their close status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloseStatusFilter {
+pub struct CloseStatusFilter  {
     /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub status: crate::types::CloseStatus,
 }
-impl CloseStatusFilter {
+impl  CloseStatusFilter  {
     /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
-    pub fn status(&self) -> &crate::types::CloseStatus {
+    pub fn status(&self) -> & crate::types::CloseStatus {
         &self.status
     }
 }
@@ -35,8 +35,7 @@ impl CloseStatusFilterBuilder {
     }
     /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CloseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CloseStatus> {
@@ -46,13 +45,15 @@ impl CloseStatusFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::CloseStatusFilterBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::CloseStatusFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloseStatusFilter {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building CloseStatusFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloseStatusFilter {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building CloseStatusFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -57,3 +57,4 @@ pub mod update_table;
 
 /// Types for the `WriteRecords` operation.
 pub mod write_records;
+

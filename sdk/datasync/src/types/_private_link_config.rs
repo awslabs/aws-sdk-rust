@@ -3,36 +3,38 @@
 /// <p>Specifies how your DataSync agent connects to Amazon Web Services using a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">virtual private cloud (VPC) service endpoint</a>. An agent that uses a VPC endpoint isn't accessible over the public internet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateLinkConfig {
+pub struct PrivateLinkConfig  {
     /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub private_link_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
-    pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC endpoint. You can only specify one ARN.</p>
-    pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PrivateLinkConfig {
+impl  PrivateLinkConfig  {
     /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
-    pub fn private_link_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn private_link_endpoint(&self) -> ::std::option::Option<& str> {
         self.private_link_endpoint.as_deref()
     }
     /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
-    pub fn subnet_arns(&self) -> &[::std::string::String] {
-        self.subnet_arns.as_deref().unwrap_or_default()
+    pub fn subnet_arns(&self) -> & [::std::string::String] {
+        self.subnet_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC endpoint. You can only specify one ARN.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
-    pub fn security_group_arns(&self) -> &[::std::string::String] {
-        self.security_group_arns.as_deref().unwrap_or_default()
+    pub fn security_group_arns(&self) -> & [::std::string::String] {
+        self.security_group_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PrivateLinkConfig {
@@ -48,8 +50,8 @@ impl PrivateLinkConfig {
 pub struct PrivateLinkConfigBuilder {
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_link_endpoint: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PrivateLinkConfigBuilder {
     /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
@@ -59,8 +61,7 @@ impl PrivateLinkConfigBuilder {
     }
     /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +74,7 @@ impl PrivateLinkConfigBuilder {
     }
     /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub fn set_private_link_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_link_endpoint = input;
-        self
+        self.private_link_endpoint = input; self
     }
     /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub fn get_private_link_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +87,16 @@ impl PrivateLinkConfigBuilder {
     /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
     pub fn subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_arns.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
-    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_arns = input;
-        self
+    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_arns = input; self
     }
     /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
-    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_arns
     }
     /// Appends an item to `security_group_arns`.
@@ -107,26 +106,30 @@ impl PrivateLinkConfigBuilder {
     /// <p>Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC endpoint. You can only specify one ARN.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC endpoint. You can only specify one ARN.</p>
-    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_arns = input;
-        self
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_arns = input; self
     }
     /// <p>Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC endpoint. You can only specify one ARN.</p>
-    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_arns
     }
     /// Consumes the builder and constructs a [`PrivateLinkConfig`](crate::types::PrivateLinkConfig).
     pub fn build(self) -> crate::types::PrivateLinkConfig {
         crate::types::PrivateLinkConfig {
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            private_link_endpoint: self.private_link_endpoint,
-            subnet_arns: self.subnet_arns,
-            security_group_arns: self.security_group_arns,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
+            private_link_endpoint: self.private_link_endpoint
+            ,
+            subnet_arns: self.subnet_arns
+            ,
+            security_group_arns: self.security_group_arns
+            ,
         }
     }
 }
+

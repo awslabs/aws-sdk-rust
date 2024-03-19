@@ -2,31 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteRumMetricDefinitionsOutput {
+pub struct BatchDeleteRumMetricDefinitionsOutput  {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchDeleteRumMetricDefinitionsError>,
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    pub metric_definition_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub metric_definition_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl BatchDeleteRumMetricDefinitionsOutput {
+impl  BatchDeleteRumMetricDefinitionsOutput  {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn errors(&self) -> &[crate::types::BatchDeleteRumMetricDefinitionsError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchDeleteRumMetricDefinitionsError] {
+        use std::ops::Deref; self.errors.deref()
     }
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_definition_ids.is_none()`.
-    pub fn metric_definition_ids(&self) -> &[::std::string::String] {
-        self.metric_definition_ids.as_deref().unwrap_or_default()
+    pub fn metric_definition_ids(&self) -> & [::std::string::String] {
+        self.metric_definition_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteRumMetricDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDeleteRumMetricDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsOutput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput).
     pub fn builder() -> crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder {
@@ -38,8 +38,8 @@ impl BatchDeleteRumMetricDefinitionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>,
-    pub(crate) metric_definition_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteRumMetricDefinitionsError>>,
+    pub(crate) metric_definition_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteRumMetricDefinitionsOutputBuilder {
@@ -50,17 +50,16 @@ impl BatchDeleteRumMetricDefinitionsOutputBuilder {
     /// <p>An array of error objects, if the operation caused any errors.</p>
     pub fn errors(mut self, input: crate::types::BatchDeleteRumMetricDefinitionsError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteRumMetricDefinitionsError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchDeleteRumMetricDefinitionsError>> {
         &self.errors
     }
     /// Appends an item to `metric_definition_ids`.
@@ -70,48 +69,43 @@ impl BatchDeleteRumMetricDefinitionsOutputBuilder {
     /// <p>The IDs of the metric definitions that were deleted.</p>
     pub fn metric_definition_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_definition_ids.unwrap_or_default();
-        v.push(input.into());
-        self.metric_definition_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.metric_definition_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    pub fn set_metric_definition_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.metric_definition_ids = input;
-        self
+    pub fn set_metric_definition_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.metric_definition_ids = input; self
     }
     /// <p>The IDs of the metric definitions that were deleted.</p>
-    pub fn get_metric_definition_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_definition_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.metric_definition_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsOutput`](crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput {
-                errors: self.errors.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "errors",
-                        "errors was not specified but it is required when building BatchDeleteRumMetricDefinitionsOutput",
-                    )
-                })?,
-                metric_definition_ids: self.metric_definition_ids,
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchDeleteRumMetricDefinitionsOutput")
+                    )?
+                ,
+                metric_definition_ids: self.metric_definition_ids
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

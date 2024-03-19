@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateThirdPartyFirewallInput {
+pub struct AssociateThirdPartyFirewallInput  {
     /// <p>The name of the third-party firewall vendor.</p>
     pub third_party_firewall: ::std::option::Option<crate::types::ThirdPartyFirewall>,
 }
-impl AssociateThirdPartyFirewallInput {
+impl  AssociateThirdPartyFirewallInput  {
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn third_party_firewall(&self) -> ::std::option::Option<&crate::types::ThirdPartyFirewall> {
+    pub fn third_party_firewall(&self) -> ::std::option::Option<& crate::types::ThirdPartyFirewall> {
         self.third_party_firewall.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl AssociateThirdPartyFirewallInputBuilder {
     }
     /// <p>The name of the third-party firewall vendor.</p>
     pub fn set_third_party_firewall(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewall>) -> Self {
-        self.third_party_firewall = input;
-        self
+        self.third_party_firewall = input; self
     }
     /// <p>The name of the third-party firewall vendor.</p>
     pub fn get_third_party_firewall(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
         &self.third_party_firewall
     }
     /// Consumes the builder and constructs a [`AssociateThirdPartyFirewallInput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput {
-            third_party_firewall: self.third_party_firewall,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput {
+                third_party_firewall: self.third_party_firewall
+                ,
+            }
+        )
     }
 }
+

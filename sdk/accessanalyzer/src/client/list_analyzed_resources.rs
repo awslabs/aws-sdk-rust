@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnalyzedResources`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`analyzer_arn(impl Into<String>)`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::set_analyzer_arn):<br>required: **true**<br><p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p><br>
     ///   - [`resource_type(ResourceType)`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::set_resource_type):<br>required: **false**<br><p>The type of resource.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
-    /// - On success, responds with [`ListAnalyzedResourcesOutput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListAnalyzedResourcesOutput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput) with field(s):
     ///   - [`analyzed_resources(Vec::<AnalyzedResourceSummary>)`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput::analyzed_resources): <p>A list of resources that were analyzed.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput::next_token): <p>A token used for pagination of results returned.</p>
-    /// - On failure, responds with [`SdkError<ListAnalyzedResourcesError>`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesError)
+                            /// - On failure, responds with [`SdkError<ListAnalyzedResourcesError>`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesError)
     pub fn list_analyzed_resources(&self) -> crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder {
-        crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

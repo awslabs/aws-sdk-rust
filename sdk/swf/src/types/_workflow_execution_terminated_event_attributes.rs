@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>WorkflowExecutionTerminated</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowExecutionTerminatedEventAttributes {
+pub struct WorkflowExecutionTerminatedEventAttributes  {
     /// <p>The reason provided for the termination.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The details provided for the termination.</p>
@@ -22,13 +22,13 @@ pub struct WorkflowExecutionTerminatedEventAttributes {
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
     pub cause: ::std::option::Option<crate::types::WorkflowExecutionTerminatedCause>,
 }
-impl WorkflowExecutionTerminatedEventAttributes {
+impl  WorkflowExecutionTerminatedEventAttributes  {
     /// <p>The reason provided for the termination.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The details provided for the termination.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
@@ -41,11 +41,11 @@ impl WorkflowExecutionTerminatedEventAttributes {
     /// <li>
     /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
-    pub fn child_policy(&self) -> &crate::types::ChildPolicy {
+    pub fn child_policy(&self) -> & crate::types::ChildPolicy {
         &self.child_policy
     }
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
-    pub fn cause(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionTerminatedCause> {
+    pub fn cause(&self) -> ::std::option::Option<& crate::types::WorkflowExecutionTerminatedCause> {
         self.cause.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     }
     /// <p>The reason provided for the termination.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason provided for the termination.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     }
     /// <p>The details provided for the termination.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>The details provided for the termination.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
-        self.child_policy = input;
-        self
+        self.child_policy = input; self
     }
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
@@ -143,8 +140,7 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     }
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
     pub fn set_cause(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionTerminatedCause>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
     pub fn get_cause(&self) -> &::std::option::Option<crate::types::WorkflowExecutionTerminatedCause> {
@@ -153,19 +149,22 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`WorkflowExecutionTerminatedEventAttributes`](crate::types::WorkflowExecutionTerminatedEventAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`child_policy`](crate::types::builders::WorkflowExecutionTerminatedEventAttributesBuilder::child_policy)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::WorkflowExecutionTerminatedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowExecutionTerminatedEventAttributes {
-            reason: self.reason,
-            details: self.details,
-            child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "child_policy",
-                    "child_policy was not specified but it is required when building WorkflowExecutionTerminatedEventAttributes",
-                )
-            })?,
-            cause: self.cause,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionTerminatedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::WorkflowExecutionTerminatedEventAttributes {
+                reason: self.reason
+                ,
+                details: self.details
+                ,
+                child_policy: self.child_policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("child_policy", "child_policy was not specified but it is required when building WorkflowExecutionTerminatedEventAttributes")
+                    )?
+                ,
+                cause: self.cause
+                ,
+            }
+        )
     }
 }
+

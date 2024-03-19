@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePublishingDestinationOutput {
+pub struct CreatePublishingDestinationOutput  {
     /// <p>The ID of the publishing destination that is created.</p>
     pub destination_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePublishingDestinationOutput {
+impl  CreatePublishingDestinationOutput  {
     /// <p>The ID of the publishing destination that is created.</p>
-    pub fn destination_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_id(&self) -> ::std::option::Option<& str> {
         self.destination_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePublishingDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePublishingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreatePublishingDestinationOutput`](crate::operation::create_publishing_destination::CreatePublishingDestinationOutput).
     pub fn builder() -> crate::operation::create_publishing_destination::builders::CreatePublishingDestinationOutputBuilder {
@@ -41,27 +41,28 @@ impl CreatePublishingDestinationOutputBuilder {
     }
     /// <p>The ID of the publishing destination that is created.</p>
     pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_id = input;
-        self
+        self.destination_id = input; self
     }
     /// <p>The ID of the publishing destination that is created.</p>
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePublishingDestinationOutput`](crate::operation::create_publishing_destination::CreatePublishingDestinationOutput).
     pub fn build(self) -> crate::operation::create_publishing_destination::CreatePublishingDestinationOutput {
         crate::operation::create_publishing_destination::CreatePublishingDestinationOutput {
-            destination_id: self.destination_id,
+            destination_id: self.destination_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

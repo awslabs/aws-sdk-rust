@@ -3,7 +3,7 @@
 /// <p>Provides details of the Redis engine version</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EngineVersionInfo {
+pub struct EngineVersionInfo  {
     /// <p>The engine version</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The patched engine version</p>
@@ -11,17 +11,17 @@ pub struct EngineVersionInfo {
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
     pub parameter_group_family: ::std::option::Option<::std::string::String>,
 }
-impl EngineVersionInfo {
+impl  EngineVersionInfo  {
     /// <p>The engine version</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The patched engine version</p>
-    pub fn engine_patch_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_patch_version(&self) -> ::std::option::Option<& str> {
         self.engine_patch_version.as_deref()
     }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
-    pub fn parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.parameter_group_family.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl EngineVersionInfoBuilder {
     }
     /// <p>The engine version</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The engine version</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl EngineVersionInfoBuilder {
     }
     /// <p>The patched engine version</p>
     pub fn set_engine_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_patch_version = input;
-        self
+        self.engine_patch_version = input; self
     }
     /// <p>The patched engine version</p>
     pub fn get_engine_patch_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl EngineVersionInfoBuilder {
     }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
     pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_family = input;
-        self
+        self.parameter_group_family = input; self
     }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
     pub fn get_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl EngineVersionInfoBuilder {
     /// Consumes the builder and constructs a [`EngineVersionInfo`](crate::types::EngineVersionInfo).
     pub fn build(self) -> crate::types::EngineVersionInfo {
         crate::types::EngineVersionInfo {
-            engine_version: self.engine_version,
-            engine_patch_version: self.engine_patch_version,
-            parameter_group_family: self.parameter_group_family,
+            engine_version: self.engine_version
+            ,
+            engine_patch_version: self.engine_patch_version
+            ,
+            parameter_group_family: self.parameter_group_family
+            ,
         }
     }
 }
+

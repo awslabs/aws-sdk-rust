@@ -5,124 +5,103 @@ pub use crate::operation::get_aggregate_discovered_resource_counts::_get_aggrega
 
 impl GetAggregateDiscoveredResourceCountsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_aggregate_discovered_resource_counts();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_aggregate_discovered_resource_counts();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetAggregateDiscoveredResourceCounts`.
-///
+/// 
 /// <p>Returns the resource counts across accounts and regions that are present in your Config aggregator. You can request the resource counts by providing filters and GroupByKey.</p>
 /// <p>For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the count of resources in account ID 12345678910 and region us-east-1. If the input contains ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAggregateDiscoveredResourceCountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsInputBuilder,
+                    inner: crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput,
-        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError,
-    > for GetAggregateDiscoveredResourceCountsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput,
-            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput,
+                    crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError,
+                > for GetAggregateDiscoveredResourceCountsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput,
+                        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetAggregateDiscoveredResourceCountsFluentBuilder {
     /// Creates a new `GetAggregateDiscoveredResourceCounts`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the GetAggregateDiscoveredResourceCounts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCounts::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCounts::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput,
-        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCounts::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCounts::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput, crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator {
-        crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator {
+                                crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the configuration aggregator.</p>
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
@@ -194,3 +173,4 @@ impl GetAggregateDiscoveredResourceCountsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

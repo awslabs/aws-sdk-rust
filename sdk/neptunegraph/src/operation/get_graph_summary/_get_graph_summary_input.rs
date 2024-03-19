@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGraphSummaryInput {
+pub struct GetGraphSummaryInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The summary mode can take one of two values: <code>basic</code> (the default), and <code>detailed</code>.</p>
     pub mode: ::std::option::Option<crate::types::GraphSummaryMode>,
 }
-impl GetGraphSummaryInput {
+impl  GetGraphSummaryInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>The summary mode can take one of two values: <code>basic</code> (the default), and <code>detailed</code>.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::GraphSummaryMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::GraphSummaryMode> {
         self.mode.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetGraphSummaryInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl GetGraphSummaryInputBuilder {
     }
     /// <p>The summary mode can take one of two values: <code>basic</code> (the default), and <code>detailed</code>.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::GraphSummaryMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The summary mode can take one of two values: <code>basic</code> (the default), and <code>detailed</code>.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::GraphSummaryMode> {
         &self.mode
     }
     /// Consumes the builder and constructs a [`GetGraphSummaryInput`](crate::operation::get_graph_summary::GetGraphSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_graph_summary::GetGraphSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_graph_summary::GetGraphSummaryInput {
-            graph_identifier: self.graph_identifier,
-            mode: self.mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_graph_summary::GetGraphSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_graph_summary::GetGraphSummaryInput {
+                graph_identifier: self.graph_identifier
+                ,
+                mode: self.mode
+                ,
+            }
+        )
     }
 }
+

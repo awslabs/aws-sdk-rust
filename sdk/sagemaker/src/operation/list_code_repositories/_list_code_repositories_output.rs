@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCodeRepositoriesOutput {
+pub struct ListCodeRepositoriesOutput  {
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
     /// <li>
@@ -16,12 +16,12 @@ pub struct ListCodeRepositoriesOutput {
     /// <li>
     /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
-    pub code_repository_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
+    pub code_repository_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepositorySummary>>,
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCodeRepositoriesOutput {
+impl  ListCodeRepositoriesOutput  {
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
     /// <li>
@@ -35,21 +35,22 @@ impl ListCodeRepositoriesOutput {
     /// <li>
     /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repository_summary_list.is_none()`.
-    pub fn code_repository_summary_list(&self) -> &[crate::types::CodeRepositorySummary] {
-        self.code_repository_summary_list.as_deref().unwrap_or_default()
+    pub fn code_repository_summary_list(&self) -> & [crate::types::CodeRepositorySummary] {
+        self.code_repository_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCodeRepositoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCodeRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListCodeRepositoriesOutput`](crate::operation::list_code_repositories::ListCodeRepositoriesOutput).
     pub fn builder() -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesOutputBuilder {
@@ -61,7 +62,7 @@ impl ListCodeRepositoriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCodeRepositoriesOutputBuilder {
-    pub(crate) code_repository_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
+    pub(crate) code_repository_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepositorySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -85,9 +86,9 @@ impl ListCodeRepositoriesOutputBuilder {
     /// </ul>
     pub fn code_repository_summary_list(mut self, input: crate::types::CodeRepositorySummary) -> Self {
         let mut v = self.code_repository_summary_list.unwrap_or_default();
-        v.push(input);
-        self.code_repository_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_repository_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
@@ -102,9 +103,8 @@ impl ListCodeRepositoriesOutputBuilder {
     /// <li>
     /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
-    pub fn set_code_repository_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>) -> Self {
-        self.code_repository_summary_list = input;
-        self
+    pub fn set_code_repository_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepositorySummary>>) -> Self {
+        self.code_repository_summary_list = input; self
     }
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
@@ -119,7 +119,7 @@ impl ListCodeRepositoriesOutputBuilder {
     /// <li>
     /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
-    pub fn get_code_repository_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>> {
+    pub fn get_code_repository_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeRepositorySummary>> {
         &self.code_repository_summary_list
     }
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
@@ -129,28 +129,30 @@ impl ListCodeRepositoriesOutputBuilder {
     }
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCodeRepositoriesOutput`](crate::operation::list_code_repositories::ListCodeRepositoriesOutput).
     pub fn build(self) -> crate::operation::list_code_repositories::ListCodeRepositoriesOutput {
         crate::operation::list_code_repositories::ListCodeRepositoriesOutput {
-            code_repository_summary_list: self.code_repository_summary_list,
-            next_token: self.next_token,
+            code_repository_summary_list: self.code_repository_summary_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

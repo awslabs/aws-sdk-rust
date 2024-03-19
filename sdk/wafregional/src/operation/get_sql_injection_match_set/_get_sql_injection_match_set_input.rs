@@ -3,13 +3,13 @@
 /// <p>A request to get a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSqlInjectionMatchSetInput {
+pub struct GetSqlInjectionMatchSetInput  {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSqlInjectionMatchSetInput {
+impl  GetSqlInjectionMatchSetInput  {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn sql_injection_match_set_id(&self) -> ::std::option::Option<& str> {
         self.sql_injection_match_set_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl GetSqlInjectionMatchSetInputBuilder {
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql_injection_match_set_id = input;
-        self
+        self.sql_injection_match_set_id = input; self
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sql_injection_match_set_id
     }
     /// Consumes the builder and constructs a [`GetSqlInjectionMatchSetInput`](crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput {
-            sql_injection_match_set_id: self.sql_injection_match_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput {
+                sql_injection_match_set_id: self.sql_injection_match_set_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisFirehoseOutputUpdate {
+pub struct KinesisFirehoseOutputUpdate  {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream to write to.</p>
     pub resource_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn_update: ::std::option::Option<::std::string::String>,
 }
-impl KinesisFirehoseOutputUpdate {
+impl  KinesisFirehoseOutputUpdate  {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream to write to.</p>
-    pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn_update(&self) -> ::std::option::Option<& str> {
         self.resource_arn_update.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
-    pub fn role_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn_update(&self) -> ::std::option::Option<& str> {
         self.role_arn_update.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl KinesisFirehoseOutputUpdateBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream to write to.</p>
     pub fn set_resource_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn_update = input;
-        self
+        self.resource_arn_update = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream to write to.</p>
     pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl KinesisFirehoseOutputUpdateBuilder {
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn set_role_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn_update = input;
-        self
+        self.role_arn_update = input; self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn get_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl KinesisFirehoseOutputUpdateBuilder {
     /// Consumes the builder and constructs a [`KinesisFirehoseOutputUpdate`](crate::types::KinesisFirehoseOutputUpdate).
     pub fn build(self) -> crate::types::KinesisFirehoseOutputUpdate {
         crate::types::KinesisFirehoseOutputUpdate {
-            resource_arn_update: self.resource_arn_update,
-            role_arn_update: self.role_arn_update,
+            resource_arn_update: self.resource_arn_update
+            ,
+            role_arn_update: self.role_arn_update
+            ,
         }
     }
 }
+

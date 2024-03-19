@@ -3,7 +3,7 @@
 /// <p>Defines a resource that is not supported by Resilience Hub.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnsupportedResource {
+pub struct UnsupportedResource  {
     /// <p>Logical resource identifier for the unsupported resource.</p>
     pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     /// <p>Physical resource identifier for the unsupported resource.</p>
@@ -13,22 +13,21 @@ pub struct UnsupportedResource {
     /// <p>The status of the unsupported resource.</p>
     pub unsupported_resource_status: ::std::option::Option<::std::string::String>,
 }
-impl UnsupportedResource {
+impl  UnsupportedResource  {
     /// <p>Logical resource identifier for the unsupported resource.</p>
-    pub fn logical_resource_id(&self) -> ::std::option::Option<&crate::types::LogicalResourceId> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<& crate::types::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
     /// <p>Physical resource identifier for the unsupported resource.</p>
-    pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> ::std::option::Option<& crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The status of the unsupported resource.</p>
-    pub fn unsupported_resource_status(&self) -> ::std::option::Option<&str> {
+    pub fn unsupported_resource_status(&self) -> ::std::option::Option<& str> {
         self.unsupported_resource_status.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl UnsupportedResourceBuilder {
     }
     /// <p>Logical resource identifier for the unsupported resource.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
-        self.logical_resource_id = input;
-        self
+        self.logical_resource_id = input; self
     }
     /// <p>Logical resource identifier for the unsupported resource.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
@@ -72,8 +70,7 @@ impl UnsupportedResourceBuilder {
     }
     /// <p>Physical resource identifier for the unsupported resource.</p>
     pub fn set_physical_resource_id(mut self, input: ::std::option::Option<crate::types::PhysicalResourceId>) -> Self {
-        self.physical_resource_id = input;
-        self
+        self.physical_resource_id = input; self
     }
     /// <p>Physical resource identifier for the unsupported resource.</p>
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<crate::types::PhysicalResourceId> {
@@ -87,8 +84,7 @@ impl UnsupportedResourceBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +97,7 @@ impl UnsupportedResourceBuilder {
     }
     /// <p>The status of the unsupported resource.</p>
     pub fn set_unsupported_resource_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unsupported_resource_status = input;
-        self
+        self.unsupported_resource_status = input; self
     }
     /// <p>The status of the unsupported resource.</p>
     pub fn get_unsupported_resource_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,16 +107,21 @@ impl UnsupportedResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::UnsupportedResourceBuilder::resource_type)
     pub fn build(self) -> ::std::result::Result<crate::types::UnsupportedResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UnsupportedResource {
-            logical_resource_id: self.logical_resource_id,
-            physical_resource_id: self.physical_resource_id,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building UnsupportedResource",
-                )
-            })?,
-            unsupported_resource_status: self.unsupported_resource_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UnsupportedResource {
+                logical_resource_id: self.logical_resource_id
+                ,
+                physical_resource_id: self.physical_resource_id
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building UnsupportedResource")
+                    )?
+                ,
+                unsupported_resource_status: self.unsupported_resource_status
+                ,
+            }
+        )
     }
 }
+

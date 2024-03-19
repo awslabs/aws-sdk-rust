@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKxClusterDatabasesInput {
+pub struct UpdateKxClusterDatabasesInput  {
     /// <p>The unique identifier of a kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique name for the cluster that you want to modify.</p>
@@ -10,31 +10,32 @@ pub struct UpdateKxClusterDatabasesInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The structure of databases mounted on the cluster.</p>
-    pub databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
+    pub databases: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>>,
     /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::KxDeploymentConfiguration>,
 }
-impl UpdateKxClusterDatabasesInput {
+impl  UpdateKxClusterDatabasesInput  {
     /// <p>The unique identifier of a kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique name for the cluster that you want to modify.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The structure of databases mounted on the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.databases.is_none()`.
-    pub fn databases(&self) -> &[crate::types::KxDatabaseConfiguration] {
-        self.databases.as_deref().unwrap_or_default()
+    pub fn databases(&self) -> & [crate::types::KxDatabaseConfiguration] {
+        self.databases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
-    pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::KxDeploymentConfiguration> {
+    pub fn deployment_configuration(&self) -> ::std::option::Option<& crate::types::KxDeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
 }
@@ -52,7 +53,7 @@ pub struct UpdateKxClusterDatabasesInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
+    pub(crate) databases: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>>,
     pub(crate) deployment_configuration: ::std::option::Option<crate::types::KxDeploymentConfiguration>,
 }
 impl UpdateKxClusterDatabasesInputBuilder {
@@ -64,8 +65,7 @@ impl UpdateKxClusterDatabasesInputBuilder {
     }
     /// <p>The unique identifier of a kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of a kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl UpdateKxClusterDatabasesInputBuilder {
     }
     /// <p>A unique name for the cluster that you want to modify.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>A unique name for the cluster that you want to modify.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl UpdateKxClusterDatabasesInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,17 +105,16 @@ impl UpdateKxClusterDatabasesInputBuilder {
     /// <p>The structure of databases mounted on the cluster.</p>
     pub fn databases(mut self, input: crate::types::KxDatabaseConfiguration) -> Self {
         let mut v = self.databases.unwrap_or_default();
-        v.push(input);
-        self.databases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.databases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The structure of databases mounted on the cluster.</p>
-    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>) -> Self {
-        self.databases = input;
-        self
+    pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>>) -> Self {
+        self.databases = input; self
     }
     /// <p>The structure of databases mounted on the cluster.</p>
-    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
+    pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseConfiguration>> {
         &self.databases
     }
     /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
@@ -127,26 +124,28 @@ impl UpdateKxClusterDatabasesInputBuilder {
     }
     /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::KxDeploymentConfiguration>) -> Self {
-        self.deployment_configuration = input;
-        self
+        self.deployment_configuration = input; self
     }
     /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::KxDeploymentConfiguration> {
         &self.deployment_configuration
     }
     /// Consumes the builder and constructs a [`UpdateKxClusterDatabasesInput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput {
-            environment_id: self.environment_id,
-            cluster_name: self.cluster_name,
-            client_token: self.client_token,
-            databases: self.databases,
-            deployment_configuration: self.deployment_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput {
+                environment_id: self.environment_id
+                ,
+                cluster_name: self.cluster_name
+                ,
+                client_token: self.client_token
+                ,
+                databases: self.databases
+                ,
+                deployment_configuration: self.deployment_configuration
+                ,
+            }
+        )
     }
 }
+

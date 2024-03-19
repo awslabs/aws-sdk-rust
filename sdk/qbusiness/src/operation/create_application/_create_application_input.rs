@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>A name for the Amazon Q application.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
@@ -12,41 +12,42 @@ pub struct CreateApplicationInput {
     /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>A name for the Amazon Q application.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A description for the Amazon Q application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>An option to allow end users to upload files directly during chat.</p>
-    pub fn attachments_configuration(&self) -> ::std::option::Option<&crate::types::AttachmentsConfiguration> {
+    pub fn attachments_configuration(&self) -> ::std::option::Option<& crate::types::AttachmentsConfiguration> {
         self.attachments_configuration.as_ref()
     }
 }
@@ -65,7 +66,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
@@ -78,8 +79,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A name for the Amazon Q application.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A name for the Amazon Q application.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +106,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A description for the Amazon Q application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the Amazon Q application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -135,17 +132,16 @@ impl CreateApplicationInputBuilder {
     /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
@@ -155,8 +151,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,25 +164,32 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub fn set_attachments_configuration(mut self, input: ::std::option::Option<crate::types::AttachmentsConfiguration>) -> Self {
-        self.attachments_configuration = input;
-        self
+        self.attachments_configuration = input; self
     }
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub fn get_attachments_configuration(&self) -> &::std::option::Option<crate::types::AttachmentsConfiguration> {
         &self.attachments_configuration
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            display_name: self.display_name,
-            role_arn: self.role_arn,
-            description: self.description,
-            encryption_configuration: self.encryption_configuration,
-            tags: self.tags,
-            client_token: self.client_token,
-            attachments_configuration: self.attachments_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                display_name: self.display_name
+                ,
+                role_arn: self.role_arn
+                ,
+                description: self.description
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+                attachments_configuration: self.attachments_configuration
+                ,
+            }
+        )
     }
 }
+

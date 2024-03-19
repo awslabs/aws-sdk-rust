@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateGroupAccessControlEntryOutput {
+pub struct GetTemplateGroupAccessControlEntryOutput  {
     /// <p>An access control entry allows or denies an Active Directory group from enrolling and/or autoenrolling with a template.</p>
     pub access_control_entry: ::std::option::Option<crate::types::AccessControlEntry>,
     _request_id: Option<String>,
 }
-impl GetTemplateGroupAccessControlEntryOutput {
+impl  GetTemplateGroupAccessControlEntryOutput  {
     /// <p>An access control entry allows or denies an Active Directory group from enrolling and/or autoenrolling with a template.</p>
-    pub fn access_control_entry(&self) -> ::std::option::Option<&crate::types::AccessControlEntry> {
+    pub fn access_control_entry(&self) -> ::std::option::Option<& crate::types::AccessControlEntry> {
         self.access_control_entry.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTemplateGroupAccessControlEntryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTemplateGroupAccessControlEntryOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateGroupAccessControlEntryOutput`](crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryOutput).
     pub fn builder() -> crate::operation::get_template_group_access_control_entry::builders::GetTemplateGroupAccessControlEntryOutputBuilder {
@@ -40,27 +40,28 @@ impl GetTemplateGroupAccessControlEntryOutputBuilder {
     }
     /// <p>An access control entry allows or denies an Active Directory group from enrolling and/or autoenrolling with a template.</p>
     pub fn set_access_control_entry(mut self, input: ::std::option::Option<crate::types::AccessControlEntry>) -> Self {
-        self.access_control_entry = input;
-        self
+        self.access_control_entry = input; self
     }
     /// <p>An access control entry allows or denies an Active Directory group from enrolling and/or autoenrolling with a template.</p>
     pub fn get_access_control_entry(&self) -> &::std::option::Option<crate::types::AccessControlEntry> {
         &self.access_control_entry
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTemplateGroupAccessControlEntryOutput`](crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryOutput).
     pub fn build(self) -> crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryOutput {
         crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryOutput {
-            access_control_entry: self.access_control_entry,
+            access_control_entry: self.access_control_entry
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

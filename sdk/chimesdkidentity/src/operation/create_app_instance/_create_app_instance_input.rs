@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAppInstanceInput {
+pub struct CreateAppInstanceInput  {
     /// <p>The name of the <code>AppInstance</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
@@ -10,29 +10,30 @@ pub struct CreateAppInstanceInput {
     /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateAppInstanceInput {
+impl  CreateAppInstanceInput  {
     /// <p>The name of the <code>AppInstance</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateAppInstanceInput {
+impl  ::std::fmt::Debug for CreateAppInstanceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -56,7 +57,7 @@ pub struct CreateAppInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateAppInstanceInputBuilder {
     /// <p>The name of the <code>AppInstance</code>.</p>
@@ -67,8 +68,7 @@ impl CreateAppInstanceInputBuilder {
     }
     /// <p>The name of the <code>AppInstance</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>AppInstance</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +81,7 @@ impl CreateAppInstanceInputBuilder {
     }
     /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl CreateAppInstanceInputBuilder {
     }
     /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,29 +108,32 @@ impl CreateAppInstanceInputBuilder {
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAppInstanceInput`](crate::operation::create_app_instance::CreateAppInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_app_instance::CreateAppInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_app_instance::CreateAppInstanceInput {
-            name: self.name,
-            metadata: self.metadata,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app_instance::CreateAppInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_app_instance::CreateAppInstanceInput {
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAppInstanceInputBuilder {
@@ -145,3 +146,4 @@ impl ::std::fmt::Debug for CreateAppInstanceInputBuilder {
         formatter.finish()
     }
 }
+

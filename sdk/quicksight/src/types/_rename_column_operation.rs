@@ -3,22 +3,20 @@
 /// <p>A transform operation that renames a column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenameColumnOperation {
+pub struct RenameColumnOperation  {
     /// <p>The name of the column to be renamed.</p>
     pub column_name: ::std::string::String,
     /// <p>The new name for the column.</p>
     pub new_column_name: ::std::string::String,
 }
-impl RenameColumnOperation {
+impl  RenameColumnOperation  {
     /// <p>The name of the column to be renamed.</p>
-    pub fn column_name(&self) -> &str {
-        use std::ops::Deref;
-        self.column_name.deref()
+    pub fn column_name(&self) -> & str {
+        use std::ops::Deref; self.column_name.deref()
     }
     /// <p>The new name for the column.</p>
-    pub fn new_column_name(&self) -> &str {
-        use std::ops::Deref;
-        self.new_column_name.deref()
+    pub fn new_column_name(&self) -> & str {
+        use std::ops::Deref; self.new_column_name.deref()
     }
 }
 impl RenameColumnOperation {
@@ -44,8 +42,7 @@ impl RenameColumnOperationBuilder {
     }
     /// <p>The name of the column to be renamed.</p>
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>The name of the column to be renamed.</p>
     pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl RenameColumnOperationBuilder {
     }
     /// <p>The new name for the column.</p>
     pub fn set_new_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_column_name = input;
-        self
+        self.new_column_name = input; self
     }
     /// <p>The new name for the column.</p>
     pub fn get_new_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl RenameColumnOperationBuilder {
     /// - [`column_name`](crate::types::builders::RenameColumnOperationBuilder::column_name)
     /// - [`new_column_name`](crate::types::builders::RenameColumnOperationBuilder::new_column_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RenameColumnOperation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RenameColumnOperation {
-            column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_name",
-                    "column_name was not specified but it is required when building RenameColumnOperation",
-                )
-            })?,
-            new_column_name: self.new_column_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "new_column_name",
-                    "new_column_name was not specified but it is required when building RenameColumnOperation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RenameColumnOperation {
+                column_name: self.column_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_name", "column_name was not specified but it is required when building RenameColumnOperation")
+                    )?
+                ,
+                new_column_name: self.new_column_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("new_column_name", "new_column_name was not specified but it is required when building RenameColumnOperation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

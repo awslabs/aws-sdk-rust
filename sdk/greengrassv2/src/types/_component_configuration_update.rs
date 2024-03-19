@@ -3,22 +3,23 @@
 /// <p>Contains information about a deployment's update to a component's configuration on Greengrass core devices. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentConfigurationUpdate {
+pub struct ComponentConfigurationUpdate  {
     /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub merge: ::std::option::Option<::std::string::String>,
     /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub reset: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reset: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ComponentConfigurationUpdate {
+impl  ComponentConfigurationUpdate  {
     /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn merge(&self) -> ::std::option::Option<&str> {
+    pub fn merge(&self) -> ::std::option::Option<& str> {
         self.merge.as_deref()
     }
     /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reset.is_none()`.
-    pub fn reset(&self) -> &[::std::string::String] {
-        self.reset.as_deref().unwrap_or_default()
+    pub fn reset(&self) -> & [::std::string::String] {
+        self.reset.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ComponentConfigurationUpdate {
@@ -33,7 +34,7 @@ impl ComponentConfigurationUpdate {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentConfigurationUpdateBuilder {
     pub(crate) merge: ::std::option::Option<::std::string::String>,
-    pub(crate) reset: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reset: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ComponentConfigurationUpdateBuilder {
     /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
@@ -43,8 +44,7 @@ impl ComponentConfigurationUpdateBuilder {
     }
     /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn set_merge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.merge = input;
-        self
+        self.merge = input; self
     }
     /// <p>A serialized JSON string that contains the configuration object to merge to target devices. The core device merges this configuration with the component's existing configuration. If this is the first time a component deploys on a device, the core device merges this configuration with the component's default configuration. This means that the core device keeps it's existing configuration for keys and values that you don't specify in this object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn get_merge(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ComponentConfigurationUpdateBuilder {
     /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn reset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reset.unwrap_or_default();
-        v.push(input.into());
-        self.reset = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reset = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_reset(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reset = input;
-        self
+    pub fn set_reset(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.reset = input; self
     }
     /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON pointers to specify each node to reset. JSON pointers start with a forward slash (<code>/</code>) and use forward slashes to separate the key for each level in the object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn get_reset(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reset(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.reset
     }
     /// Consumes the builder and constructs a [`ComponentConfigurationUpdate`](crate::types::ComponentConfigurationUpdate).
     pub fn build(self) -> crate::types::ComponentConfigurationUpdate {
         crate::types::ComponentConfigurationUpdate {
-            merge: self.merge,
-            reset: self.reset,
+            merge: self.merge
+            ,
+            reset: self.reset
+            ,
         }
     }
 }
+

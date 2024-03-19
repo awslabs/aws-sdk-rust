@@ -3,24 +3,26 @@
 /// <p>Describes a resource statement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceStatement {
+pub struct ResourceStatement  {
     /// <p>The resources.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The resource types.</p>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ResourceStatement {
+impl  ResourceStatement  {
     /// <p>The resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[::std::string::String] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [::std::string::String] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resource types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[::std::string::String] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [::std::string::String] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResourceStatement {
@@ -34,8 +36,8 @@ impl ResourceStatement {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceStatementBuilder {
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ResourceStatementBuilder {
     /// Appends an item to `resources`.
@@ -45,17 +47,16 @@ impl ResourceStatementBuilder {
     /// <p>The resources.</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The resources.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resources
     }
     /// Appends an item to `resource_types`.
@@ -65,24 +66,26 @@ impl ResourceStatementBuilder {
     /// <p>The resource types.</p>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input.into());
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource types.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The resource types.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_types
     }
     /// Consumes the builder and constructs a [`ResourceStatement`](crate::types::ResourceStatement).
     pub fn build(self) -> crate::types::ResourceStatement {
         crate::types::ResourceStatement {
-            resources: self.resources,
-            resource_types: self.resource_types,
+            resources: self.resources
+            ,
+            resource_types: self.resource_types
+            ,
         }
     }
 }
+

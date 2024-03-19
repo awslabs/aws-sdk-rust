@@ -3,13 +3,13 @@
 /// <p>An object that represents types of timeouts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TcpTimeout {
+pub struct TcpTimeout  {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub idle: ::std::option::Option<crate::types::Duration>,
 }
-impl TcpTimeout {
+impl  TcpTimeout  {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
-    pub fn idle(&self) -> ::std::option::Option<&crate::types::Duration> {
+    pub fn idle(&self) -> ::std::option::Option<& crate::types::Duration> {
         self.idle.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TcpTimeoutBuilder {
     }
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub fn set_idle(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
-        self.idle = input;
-        self
+        self.idle = input; self
     }
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub fn get_idle(&self) -> &::std::option::Option<crate::types::Duration> {
@@ -43,6 +42,10 @@ impl TcpTimeoutBuilder {
     }
     /// Consumes the builder and constructs a [`TcpTimeout`](crate::types::TcpTimeout).
     pub fn build(self) -> crate::types::TcpTimeout {
-        crate::types::TcpTimeout { idle: self.idle }
+        crate::types::TcpTimeout {
+            idle: self.idle
+            ,
+        }
     }
 }
+

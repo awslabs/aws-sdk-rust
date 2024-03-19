@@ -3,7 +3,7 @@
 /// <p>An event that is related to the server, such as the start of maintenance or backup.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerEvent {
+pub struct ServerEvent  {
     /// <p>The time when the event occurred.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the server on or for which the event occurred.</p>
@@ -13,21 +13,21 @@ pub struct ServerEvent {
     /// <p>The Amazon S3 URL of the event's log file.</p>
     pub log_url: ::std::option::Option<::std::string::String>,
 }
-impl ServerEvent {
+impl  ServerEvent  {
     /// <p>The time when the event occurred.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The name of the server on or for which the event occurred.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>A human-readable informational or status message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The Amazon S3 URL of the event's log file.</p>
-    pub fn log_url(&self) -> ::std::option::Option<&str> {
+    pub fn log_url(&self) -> ::std::option::Option<& str> {
         self.log_url.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ServerEventBuilder {
     }
     /// <p>The time when the event occurred.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the event occurred.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,8 +68,7 @@ impl ServerEventBuilder {
     }
     /// <p>The name of the server on or for which the event occurred.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server on or for which the event occurred.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ServerEventBuilder {
     }
     /// <p>A human-readable informational or status message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A human-readable informational or status message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ServerEventBuilder {
     }
     /// <p>The Amazon S3 URL of the event's log file.</p>
     pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_url = input;
-        self
+        self.log_url = input; self
     }
     /// <p>The Amazon S3 URL of the event's log file.</p>
     pub fn get_log_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ServerEventBuilder {
     /// Consumes the builder and constructs a [`ServerEvent`](crate::types::ServerEvent).
     pub fn build(self) -> crate::types::ServerEvent {
         crate::types::ServerEvent {
-            created_at: self.created_at,
-            server_name: self.server_name,
-            message: self.message,
-            log_url: self.log_url,
+            created_at: self.created_at
+            ,
+            server_name: self.server_name
+            ,
+            message: self.message
+            ,
+            log_url: self.log_url
+            ,
         }
     }
 }
+

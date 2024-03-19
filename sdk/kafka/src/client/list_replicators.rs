@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReplicators`](crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p><br>
     ///   - [`replicator_name_filter(impl Into<String>)`](crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::replicator_name_filter) / [`set_replicator_name_filter(Option<String>)`](crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::set_replicator_name_filter):<br>required: **false**<br><p>Returns replicators starting with given name.</p><br>
-    /// - On success, responds with [`ListReplicatorsOutput`](crate::operation::list_replicators::ListReplicatorsOutput) with field(s):
+                            /// - On success, responds with [`ListReplicatorsOutput`](crate::operation::list_replicators::ListReplicatorsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_replicators::ListReplicatorsOutput::next_token): <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
     ///   - [`replicators(Option<Vec::<ReplicatorSummary>>)`](crate::operation::list_replicators::ListReplicatorsOutput::replicators): <p>List containing information of each of the replicators in the account.</p>
-    /// - On failure, responds with [`SdkError<ListReplicatorsError>`](crate::operation::list_replicators::ListReplicatorsError)
+                            /// - On failure, responds with [`SdkError<ListReplicatorsError>`](crate::operation::list_replicators::ListReplicatorsError)
     pub fn list_replicators(&self) -> crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder {
-        crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_replicators::builders::ListReplicatorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

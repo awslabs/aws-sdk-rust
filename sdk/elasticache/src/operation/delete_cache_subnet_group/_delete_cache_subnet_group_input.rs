@@ -3,15 +3,15 @@
 /// <p>Represents the input of a <code>DeleteCacheSubnetGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCacheSubnetGroupInput {
+pub struct DeleteCacheSubnetGroupInput  {
     /// <p>The name of the cache subnet group to delete.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCacheSubnetGroupInput {
+impl  DeleteCacheSubnetGroupInput  {
     /// <p>The name of the cache subnet group to delete.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
-    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_subnet_group_name.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl DeleteCacheSubnetGroupInputBuilder {
     /// <p>The name of the cache subnet group to delete.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_subnet_group_name = input;
-        self
+        self.cache_subnet_group_name = input; self
     }
     /// <p>The name of the cache subnet group to delete.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
@@ -48,14 +47,13 @@ impl DeleteCacheSubnetGroupInputBuilder {
         &self.cache_subnet_group_name
     }
     /// Consumes the builder and constructs a [`DeleteCacheSubnetGroupInput`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput {
-            cache_subnet_group_name: self.cache_subnet_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput {
+                cache_subnet_group_name: self.cache_subnet_group_name
+                ,
+            }
+        )
     }
 }
+

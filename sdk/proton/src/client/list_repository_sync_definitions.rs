@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRepositorySyncDefinitions`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`repository_name(impl Into<String>)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::set_repository_name):<br>required: **true**<br><p>The repository name.</p><br>
     ///   - [`repository_provider(RepositoryProvider)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::repository_provider) / [`set_repository_provider(Option<RepositoryProvider>)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::set_repository_provider):<br>required: **true**<br><p>The repository provider.</p><br>
     ///   - [`sync_type(SyncType)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::sync_type) / [`set_sync_type(Option<SyncType>)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::set_sync_type):<br>required: **true**<br><p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p><br>
-    /// - On success, responds with [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput) with field(s):
+                            /// - On success, responds with [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput::next_token): <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
     ///   - [`sync_definitions(Vec::<RepositorySyncDefinition>)`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput::sync_definitions): <p>An array of repository sync definitions.</p>
-    /// - On failure, responds with [`SdkError<ListRepositorySyncDefinitionsError>`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError)
-    pub fn list_repository_sync_definitions(
-        &self,
-    ) -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder {
-        crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListRepositorySyncDefinitionsError>`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError)
+    pub fn list_repository_sync_definitions(&self) -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder {
+                                crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

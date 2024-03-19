@@ -5,23 +5,20 @@ pub use crate::operation::put_organization_conformance_pack::_put_organization_c
 
 impl PutOrganizationConformancePackInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_organization_conformance_pack();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_organization_conformance_pack();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutOrganizationConformancePack`.
-///
+/// 
 /// <p>Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how many organization conformance packs and how many Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
 /// <p>Only a management account and a delegated administrator can call this API. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated administrators.</p>
 /// <p>This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the <code>EnableAWSServiceAccess</code> action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.</p><note>
@@ -32,33 +29,32 @@ impl PutOrganizationConformancePackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutOrganizationConformancePackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackInputBuilder,
+                    inner: crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput,
-        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
-    > for PutOrganizationConformancePackFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput,
-            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput,
+                    crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
+                > for PutOrganizationConformancePackFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput,
+                        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutOrganizationConformancePackFluentBuilder {
     /// Creates a new `PutOrganizationConformancePack`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl PutOrganizationConformancePackFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_organization_conformance_pack::PutOrganizationConformancePack::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePack::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput,
-        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_organization_conformance_pack::PutOrganizationConformancePack::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_organization_conformance_pack::PutOrganizationConformancePack::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput, crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Name of the organization conformance pack you want to create.</p>
     pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_conformance_pack_name(input.into());
@@ -212,15 +199,12 @@ impl PutOrganizationConformancePackFluentBuilder {
         self
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn set_conformance_pack_input_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
-    ) -> Self {
+    pub fn set_conformance_pack_input_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackInputParameter>>) -> Self {
         self.inner = self.inner.set_conformance_pack_input_parameters(input);
         self
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
+    pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackInputParameter>> {
         self.inner.get_conformance_pack_input_parameters()
     }
     /// Appends an item to `ExcludedAccounts`.
@@ -233,12 +217,13 @@ impl PutOrganizationConformancePackFluentBuilder {
         self
     }
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
-    pub fn set_excluded_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_excluded_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_excluded_accounts(input);
         self
     }
     /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
-    pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_excluded_accounts()
     }
 }
+

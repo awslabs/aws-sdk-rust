@@ -3,7 +3,7 @@
 /// <p>The properties of the custom terminology.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminologyProperties {
+pub struct TerminologyProperties  {
     /// <p>The name of the custom terminology.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the custom terminology properties.</p>
@@ -13,7 +13,7 @@ pub struct TerminologyProperties {
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    pub target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_language_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The encryption key for the custom terminology.</p>
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
     /// <p>The size of the file used when importing a custom terminology.</p>
@@ -47,31 +47,32 @@ pub struct TerminologyProperties {
     /// <p>The format of the custom terminology input file.</p>
     pub format: ::std::option::Option<crate::types::TerminologyDataFormat>,
 }
-impl TerminologyProperties {
+impl  TerminologyProperties  {
     /// <p>The name of the custom terminology.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the custom terminology properties.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the custom terminology.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
-    pub fn source_language_code(&self) -> ::std::option::Option<&str> {
+    pub fn source_language_code(&self) -> ::std::option::Option<& str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_language_codes.is_none()`.
-    pub fn target_language_codes(&self) -> &[::std::string::String] {
-        self.target_language_codes.as_deref().unwrap_or_default()
+    pub fn target_language_codes(&self) -> & [::std::string::String] {
+        self.target_language_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The encryption key for the custom terminology.</p>
-    pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::EncryptionKey> {
+    pub fn encryption_key(&self) -> ::std::option::Option<& crate::types::EncryptionKey> {
         self.encryption_key.as_ref()
     }
     /// <p>The size of the file used when importing a custom terminology.</p>
@@ -83,11 +84,11 @@ impl TerminologyProperties {
         self.term_count
     }
     /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
@@ -105,11 +106,11 @@ impl TerminologyProperties {
     /// <p>Any language in the terminology resource can be the source language.</p>
     /// </dd>
     /// </dl>
-    pub fn directionality(&self) -> ::std::option::Option<&crate::types::Directionality> {
+    pub fn directionality(&self) -> ::std::option::Option<& crate::types::Directionality> {
         self.directionality.as_ref()
     }
     /// <p>Additional information from Amazon Translate about the terminology resource.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
@@ -117,7 +118,7 @@ impl TerminologyProperties {
         self.skipped_term_count
     }
     /// <p>The format of the custom terminology input file.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::TerminologyDataFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::TerminologyDataFormat> {
         self.format.as_ref()
     }
 }
@@ -136,7 +137,7 @@ pub struct TerminologyPropertiesBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_language_code: ::std::option::Option<::std::string::String>,
-    pub(crate) target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_language_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
     pub(crate) size_bytes: ::std::option::Option<i32>,
     pub(crate) term_count: ::std::option::Option<i32>,
@@ -155,8 +156,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The name of the custom terminology.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the custom terminology.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +169,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The description of the custom terminology properties.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the custom terminology properties.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +182,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom terminology.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom terminology.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +195,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
     pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_language_code = input;
-        self
+        self.source_language_code = input; self
     }
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
     pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,17 +208,16 @@ impl TerminologyPropertiesBuilder {
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
     pub fn target_language_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_language_codes.unwrap_or_default();
-        v.push(input.into());
-        self.target_language_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_language_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_language_codes = input;
-        self
+    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_language_codes = input; self
     }
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_language_codes
     }
     /// <p>The encryption key for the custom terminology.</p>
@@ -231,8 +227,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The encryption key for the custom terminology.</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
-        self.encryption_key = input;
-        self
+        self.encryption_key = input; self
     }
     /// <p>The encryption key for the custom terminology.</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
@@ -245,8 +240,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The size of the file used when importing a custom terminology.</p>
     pub fn set_size_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_bytes = input;
-        self
+        self.size_bytes = input; self
     }
     /// <p>The size of the file used when importing a custom terminology.</p>
     pub fn get_size_bytes(&self) -> &::std::option::Option<i32> {
@@ -259,8 +253,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The number of terms included in the custom terminology.</p>
     pub fn set_term_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.term_count = input;
-        self
+        self.term_count = input; self
     }
     /// <p>The number of terms included in the custom terminology.</p>
     pub fn get_term_count(&self) -> &::std::option::Option<i32> {
@@ -273,8 +266,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -287,8 +279,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -329,8 +320,7 @@ impl TerminologyPropertiesBuilder {
     /// </dd>
     /// </dl>
     pub fn set_directionality(mut self, input: ::std::option::Option<crate::types::Directionality>) -> Self {
-        self.directionality = input;
-        self
+        self.directionality = input; self
     }
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
@@ -357,8 +347,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>Additional information from Amazon Translate about the terminology resource.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Additional information from Amazon Translate about the terminology resource.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -371,8 +360,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
     pub fn set_skipped_term_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.skipped_term_count = input;
-        self
+        self.skipped_term_count = input; self
     }
     /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
     pub fn get_skipped_term_count(&self) -> &::std::option::Option<i32> {
@@ -385,8 +373,7 @@ impl TerminologyPropertiesBuilder {
     }
     /// <p>The format of the custom terminology input file.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::TerminologyDataFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the custom terminology input file.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::TerminologyDataFormat> {
@@ -395,20 +382,35 @@ impl TerminologyPropertiesBuilder {
     /// Consumes the builder and constructs a [`TerminologyProperties`](crate::types::TerminologyProperties).
     pub fn build(self) -> crate::types::TerminologyProperties {
         crate::types::TerminologyProperties {
-            name: self.name,
-            description: self.description,
-            arn: self.arn,
-            source_language_code: self.source_language_code,
-            target_language_codes: self.target_language_codes,
-            encryption_key: self.encryption_key,
-            size_bytes: self.size_bytes,
-            term_count: self.term_count,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            directionality: self.directionality,
-            message: self.message,
-            skipped_term_count: self.skipped_term_count,
-            format: self.format,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            arn: self.arn
+            ,
+            source_language_code: self.source_language_code
+            ,
+            target_language_codes: self.target_language_codes
+            ,
+            encryption_key: self.encryption_key
+            ,
+            size_bytes: self.size_bytes
+            ,
+            term_count: self.term_count
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            directionality: self.directionality
+            ,
+            message: self.message
+            ,
+            skipped_term_count: self.skipped_term_count
+            ,
+            format: self.format
+            ,
         }
     }
 }
+

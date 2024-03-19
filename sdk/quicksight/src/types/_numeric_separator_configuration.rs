@@ -3,19 +3,19 @@
 /// <p>The options that determine the numeric separator configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumericSeparatorConfiguration {
+pub struct NumericSeparatorConfiguration  {
     /// <p>Determines the decimal separator.</p>
     pub decimal_separator: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     /// <p>The options that determine the thousands separator configuration.</p>
     pub thousands_separator: ::std::option::Option<crate::types::ThousandSeparatorOptions>,
 }
-impl NumericSeparatorConfiguration {
+impl  NumericSeparatorConfiguration  {
     /// <p>Determines the decimal separator.</p>
-    pub fn decimal_separator(&self) -> ::std::option::Option<&crate::types::NumericSeparatorSymbol> {
+    pub fn decimal_separator(&self) -> ::std::option::Option<& crate::types::NumericSeparatorSymbol> {
         self.decimal_separator.as_ref()
     }
     /// <p>The options that determine the thousands separator configuration.</p>
-    pub fn thousands_separator(&self) -> ::std::option::Option<&crate::types::ThousandSeparatorOptions> {
+    pub fn thousands_separator(&self) -> ::std::option::Option<& crate::types::ThousandSeparatorOptions> {
         self.thousands_separator.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl NumericSeparatorConfigurationBuilder {
     }
     /// <p>Determines the decimal separator.</p>
     pub fn set_decimal_separator(mut self, input: ::std::option::Option<crate::types::NumericSeparatorSymbol>) -> Self {
-        self.decimal_separator = input;
-        self
+        self.decimal_separator = input; self
     }
     /// <p>Determines the decimal separator.</p>
     pub fn get_decimal_separator(&self) -> &::std::option::Option<crate::types::NumericSeparatorSymbol> {
@@ -55,8 +54,7 @@ impl NumericSeparatorConfigurationBuilder {
     }
     /// <p>The options that determine the thousands separator configuration.</p>
     pub fn set_thousands_separator(mut self, input: ::std::option::Option<crate::types::ThousandSeparatorOptions>) -> Self {
-        self.thousands_separator = input;
-        self
+        self.thousands_separator = input; self
     }
     /// <p>The options that determine the thousands separator configuration.</p>
     pub fn get_thousands_separator(&self) -> &::std::option::Option<crate::types::ThousandSeparatorOptions> {
@@ -65,8 +63,11 @@ impl NumericSeparatorConfigurationBuilder {
     /// Consumes the builder and constructs a [`NumericSeparatorConfiguration`](crate::types::NumericSeparatorConfiguration).
     pub fn build(self) -> crate::types::NumericSeparatorConfiguration {
         crate::types::NumericSeparatorConfiguration {
-            decimal_separator: self.decimal_separator,
-            thousands_separator: self.thousands_separator,
+            decimal_separator: self.decimal_separator
+            ,
+            thousands_separator: self.thousands_separator
+            ,
         }
     }
 }
+

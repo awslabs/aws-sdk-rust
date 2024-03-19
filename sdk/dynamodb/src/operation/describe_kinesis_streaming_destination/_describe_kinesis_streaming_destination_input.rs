@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeKinesisStreamingDestinationInput {
+pub struct DescribeKinesisStreamingDestinationInput  {
     /// <p>The name of the table being described.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeKinesisStreamingDestinationInput {
+impl  DescribeKinesisStreamingDestinationInput  {
     /// <p>The name of the table being described.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeKinesisStreamingDestinationInputBuilder {
     }
     /// <p>The name of the table being described.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table being described.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`DescribeKinesisStreamingDestinationInput`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationInput { table_name: self.table_name },
+            crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationInput {
+                table_name: self.table_name
+                ,
+            }
         )
     }
 }
+

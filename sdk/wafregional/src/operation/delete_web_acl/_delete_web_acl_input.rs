@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWebAclInput {
+pub struct DeleteWebAclInput  {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWebAclInput {
+impl  DeleteWebAclInput  {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_id(&self) -> ::std::option::Option<& str> {
         self.web_acl_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteWebAclInputBuilder {
     }
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_id = input;
-        self
+        self.web_acl_id = input; self
     }
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteWebAclInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`DeleteWebAclInput`](crate::operation::delete_web_acl::DeleteWebAclInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_web_acl::DeleteWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_web_acl::DeleteWebAclInput {
-            web_acl_id: self.web_acl_id,
-            change_token: self.change_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_web_acl::DeleteWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_web_acl::DeleteWebAclInput {
+                web_acl_id: self.web_acl_id
+                ,
+                change_token: self.change_token
+                ,
+            }
+        )
     }
 }
+

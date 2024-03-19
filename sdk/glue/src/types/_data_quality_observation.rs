@@ -3,19 +3,19 @@
 /// <p>Describes the observation generated after evaluating the rules and analyzers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityObservation {
+pub struct DataQualityObservation  {
     /// <p>A description of the data quality observation.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object of type <code>MetricBasedObservation</code> representing the observation that is based on evaluated data quality metrics.</p>
     pub metric_based_observation: ::std::option::Option<crate::types::MetricBasedObservation>,
 }
-impl DataQualityObservation {
+impl  DataQualityObservation  {
     /// <p>A description of the data quality observation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An object of type <code>MetricBasedObservation</code> representing the observation that is based on evaluated data quality metrics.</p>
-    pub fn metric_based_observation(&self) -> ::std::option::Option<&crate::types::MetricBasedObservation> {
+    pub fn metric_based_observation(&self) -> ::std::option::Option<& crate::types::MetricBasedObservation> {
         self.metric_based_observation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DataQualityObservationBuilder {
     }
     /// <p>A description of the data quality observation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the data quality observation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DataQualityObservationBuilder {
     }
     /// <p>An object of type <code>MetricBasedObservation</code> representing the observation that is based on evaluated data quality metrics.</p>
     pub fn set_metric_based_observation(mut self, input: ::std::option::Option<crate::types::MetricBasedObservation>) -> Self {
-        self.metric_based_observation = input;
-        self
+        self.metric_based_observation = input; self
     }
     /// <p>An object of type <code>MetricBasedObservation</code> representing the observation that is based on evaluated data quality metrics.</p>
     pub fn get_metric_based_observation(&self) -> &::std::option::Option<crate::types::MetricBasedObservation> {
@@ -65,8 +63,11 @@ impl DataQualityObservationBuilder {
     /// Consumes the builder and constructs a [`DataQualityObservation`](crate::types::DataQualityObservation).
     pub fn build(self) -> crate::types::DataQualityObservation {
         crate::types::DataQualityObservation {
-            description: self.description,
-            metric_based_observation: self.metric_based_observation,
+            description: self.description
+            ,
+            metric_based_observation: self.metric_based_observation
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdatePolicyTemplateInput {
+pub struct UpdatePolicyTemplateInput  {
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy template that you want to update.</p>
@@ -28,17 +28,17 @@ pub struct UpdatePolicyTemplateInput {
     /// </ul>
     pub statement: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePolicyTemplateInput {
+impl  UpdatePolicyTemplateInput  {
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
-    pub fn policy_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_template_id(&self) -> ::std::option::Option<& str> {
         self.policy_template_id.as_deref()
     }
     /// <p>Specifies a new description to apply to the policy template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
@@ -58,11 +58,11 @@ impl UpdatePolicyTemplateInput {
     /// <li>
     /// <p>The <code>resource</code> referenced by the policy template.</p></li>
     /// </ul>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
+    pub fn statement(&self) -> ::std::option::Option<& str> {
         self.statement.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdatePolicyTemplateInput {
+impl  ::std::fmt::Debug for UpdatePolicyTemplateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePolicyTemplateInput");
         formatter.field("policy_store_id", &self.policy_store_id);
@@ -97,8 +97,7 @@ impl UpdatePolicyTemplateInputBuilder {
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl UpdatePolicyTemplateInputBuilder {
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
     pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_template_id = input;
-        self
+        self.policy_template_id = input; self
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
     pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl UpdatePolicyTemplateInputBuilder {
     }
     /// <p>Specifies a new description to apply to the policy template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies a new description to apply to the policy template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +170,7 @@ impl UpdatePolicyTemplateInputBuilder {
     /// <p>The <code>resource</code> referenced by the policy template.</p></li>
     /// </ul>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
@@ -197,16 +193,19 @@ impl UpdatePolicyTemplateInputBuilder {
         &self.statement
     }
     /// Consumes the builder and constructs a [`UpdatePolicyTemplateInput`](crate::operation::update_policy_template::UpdatePolicyTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_policy_template::UpdatePolicyTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_policy_template::UpdatePolicyTemplateInput {
-            policy_store_id: self.policy_store_id,
-            policy_template_id: self.policy_template_id,
-            description: self.description,
-            statement: self.statement,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_policy_template::UpdatePolicyTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_policy_template::UpdatePolicyTemplateInput {
+                policy_store_id: self.policy_store_id
+                ,
+                policy_template_id: self.policy_template_id
+                ,
+                description: self.description
+                ,
+                statement: self.statement
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdatePolicyTemplateInputBuilder {
@@ -219,3 +218,4 @@ impl ::std::fmt::Debug for UpdatePolicyTemplateInputBuilder {
         formatter.finish()
     }
 }
+

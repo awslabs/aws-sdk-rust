@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInferenceRecommendationsJobOutput {
+pub struct DescribeInferenceRecommendationsJobOutput  {
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job description that you provided when you initiated the job.</p>
@@ -28,78 +28,80 @@ pub struct DescribeInferenceRecommendationsJobOutput {
     /// <p>The stopping conditions that you provided when you initiated the job.</p>
     pub stopping_conditions: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
     /// <p>The recommendations made by Inference Recommender.</p>
-    pub inference_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendation>>,
+    pub inference_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceRecommendation>>,
     /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
-    pub endpoint_performances: ::std::option::Option<::std::vec::Vec<crate::types::EndpointPerformance>>,
+    pub endpoint_performances: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointPerformance>>,
     _request_id: Option<String>,
 }
-impl DescribeInferenceRecommendationsJobOutput {
+impl  DescribeInferenceRecommendationsJobOutput  {
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The job description that you provided when you initiated the job.</p>
-    pub fn job_description(&self) -> ::std::option::Option<&str> {
+    pub fn job_description(&self) -> ::std::option::Option<& str> {
         self.job_description.as_deref()
     }
     /// <p>The job type that you provided when you initiated the job.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::RecommendationJobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::RecommendationJobType> {
         self.job_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role you provided when you initiated the job.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The status of the job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RecommendationJobStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp that shows when the job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the job completed.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>If the job fails, provides information why the job failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Returns information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
-    pub fn input_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobInputConfig> {
+    pub fn input_config(&self) -> ::std::option::Option<& crate::types::RecommendationJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>The stopping conditions that you provided when you initiated the job.</p>
-    pub fn stopping_conditions(&self) -> ::std::option::Option<&crate::types::RecommendationJobStoppingConditions> {
+    pub fn stopping_conditions(&self) -> ::std::option::Option<& crate::types::RecommendationJobStoppingConditions> {
         self.stopping_conditions.as_ref()
     }
     /// <p>The recommendations made by Inference Recommender.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_recommendations.is_none()`.
-    pub fn inference_recommendations(&self) -> &[crate::types::InferenceRecommendation] {
-        self.inference_recommendations.as_deref().unwrap_or_default()
+    pub fn inference_recommendations(&self) -> & [crate::types::InferenceRecommendation] {
+        self.inference_recommendations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_performances.is_none()`.
-    pub fn endpoint_performances(&self) -> &[crate::types::EndpointPerformance] {
-        self.endpoint_performances.as_deref().unwrap_or_default()
+    pub fn endpoint_performances(&self) -> & [crate::types::EndpointPerformance] {
+        self.endpoint_performances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInferenceRecommendationsJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInferenceRecommendationsJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInferenceRecommendationsJobOutput`](crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobOutput).
     pub fn builder() -> crate::operation::describe_inference_recommendations_job::builders::DescribeInferenceRecommendationsJobOutputBuilder {
@@ -123,8 +125,8 @@ pub struct DescribeInferenceRecommendationsJobOutputBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) input_config: ::std::option::Option<crate::types::RecommendationJobInputConfig>,
     pub(crate) stopping_conditions: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>,
-    pub(crate) inference_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendation>>,
-    pub(crate) endpoint_performances: ::std::option::Option<::std::vec::Vec<crate::types::EndpointPerformance>>,
+    pub(crate) inference_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceRecommendation>>,
+    pub(crate) endpoint_performances: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointPerformance>>,
     _request_id: Option<String>,
 }
 impl DescribeInferenceRecommendationsJobOutputBuilder {
@@ -136,8 +138,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +151,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>The job description that you provided when you initiated the job.</p>
     pub fn set_job_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_description = input;
-        self
+        self.job_description = input; self
     }
     /// <p>The job description that you provided when you initiated the job.</p>
     pub fn get_job_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +165,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>The job type that you provided when you initiated the job.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::RecommendationJobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>The job type that you provided when you initiated the job.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::RecommendationJobType> {
@@ -180,8 +179,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +193,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role you provided when you initiated the job.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role you provided when you initiated the job.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +207,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>The status of the job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationJobStatus> {
@@ -225,8 +221,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>A timestamp that shows when the job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that shows when the job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -239,8 +234,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>A timestamp that shows when the job completed.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>A timestamp that shows when the job completed.</p>
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -254,8 +248,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -268,8 +261,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>If the job fails, provides information why the job failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If the job fails, provides information why the job failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -283,8 +275,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>Returns information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
     pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::RecommendationJobInputConfig>) -> Self {
-        self.input_config = input;
-        self
+        self.input_config = input; self
     }
     /// <p>Returns information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations you provided when you initiated the job.</p>
     pub fn get_input_config(&self) -> &::std::option::Option<crate::types::RecommendationJobInputConfig> {
@@ -297,8 +288,7 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     }
     /// <p>The stopping conditions that you provided when you initiated the job.</p>
     pub fn set_stopping_conditions(mut self, input: ::std::option::Option<crate::types::RecommendationJobStoppingConditions>) -> Self {
-        self.stopping_conditions = input;
-        self
+        self.stopping_conditions = input; self
     }
     /// <p>The stopping conditions that you provided when you initiated the job.</p>
     pub fn get_stopping_conditions(&self) -> &::std::option::Option<crate::types::RecommendationJobStoppingConditions> {
@@ -311,17 +301,16 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     /// <p>The recommendations made by Inference Recommender.</p>
     pub fn inference_recommendations(mut self, input: crate::types::InferenceRecommendation) -> Self {
         let mut v = self.inference_recommendations.unwrap_or_default();
-        v.push(input);
-        self.inference_recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inference_recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recommendations made by Inference Recommender.</p>
-    pub fn set_inference_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendation>>) -> Self {
-        self.inference_recommendations = input;
-        self
+    pub fn set_inference_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceRecommendation>>) -> Self {
+        self.inference_recommendations = input; self
     }
     /// <p>The recommendations made by Inference Recommender.</p>
-    pub fn get_inference_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendation>> {
+    pub fn get_inference_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InferenceRecommendation>> {
         &self.inference_recommendations
     }
     /// Appends an item to `endpoint_performances`.
@@ -331,46 +320,60 @@ impl DescribeInferenceRecommendationsJobOutputBuilder {
     /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
     pub fn endpoint_performances(mut self, input: crate::types::EndpointPerformance) -> Self {
         let mut v = self.endpoint_performances.unwrap_or_default();
-        v.push(input);
-        self.endpoint_performances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoint_performances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
-    pub fn set_endpoint_performances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointPerformance>>) -> Self {
-        self.endpoint_performances = input;
-        self
+    pub fn set_endpoint_performances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointPerformance>>) -> Self {
+        self.endpoint_performances = input; self
     }
     /// <p>The performance results from running an Inference Recommender job on an existing endpoint.</p>
-    pub fn get_endpoint_performances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointPerformance>> {
+    pub fn get_endpoint_performances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EndpointPerformance>> {
         &self.endpoint_performances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInferenceRecommendationsJobOutput`](crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobOutput).
     pub fn build(self) -> crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobOutput {
         crate::operation::describe_inference_recommendations_job::DescribeInferenceRecommendationsJobOutput {
-            job_name: self.job_name,
-            job_description: self.job_description,
-            job_type: self.job_type,
-            job_arn: self.job_arn,
-            role_arn: self.role_arn,
-            status: self.status,
-            creation_time: self.creation_time,
-            completion_time: self.completion_time,
-            last_modified_time: self.last_modified_time,
-            failure_reason: self.failure_reason,
-            input_config: self.input_config,
-            stopping_conditions: self.stopping_conditions,
-            inference_recommendations: self.inference_recommendations,
-            endpoint_performances: self.endpoint_performances,
+            job_name: self.job_name
+            ,
+            job_description: self.job_description
+            ,
+            job_type: self.job_type
+            ,
+            job_arn: self.job_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            completion_time: self.completion_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            input_config: self.input_config
+            ,
+            stopping_conditions: self.stopping_conditions
+            ,
+            inference_recommendations: self.inference_recommendations
+            ,
+            endpoint_performances: self.endpoint_performances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

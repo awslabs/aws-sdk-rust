@@ -3,7 +3,7 @@
 /// <p>A summary of information about an existing Amazon QuickSight folder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FolderSummary {
+pub struct FolderSummary  {
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
@@ -19,33 +19,33 @@ pub struct FolderSummary {
     /// <p>The sharing scope of the folder.</p>
     pub sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
-impl FolderSummary {
+impl  FolderSummary  {
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The display name of the folder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of folder.</p>
-    pub fn folder_type(&self) -> ::std::option::Option<&crate::types::FolderType> {
+    pub fn folder_type(&self) -> ::std::option::Option<& crate::types::FolderType> {
         self.folder_type.as_ref()
     }
     /// <p>The time that the folder was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that the folder was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The sharing scope of the folder.</p>
-    pub fn sharing_model(&self) -> ::std::option::Option<&crate::types::SharingModel> {
+    pub fn sharing_model(&self) -> ::std::option::Option<& crate::types::SharingModel> {
         self.sharing_model.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The display name of the folder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name of the folder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The type of folder.</p>
     pub fn set_folder_type(mut self, input: ::std::option::Option<crate::types::FolderType>) -> Self {
-        self.folder_type = input;
-        self
+        self.folder_type = input; self
     }
     /// <p>The type of folder.</p>
     pub fn get_folder_type(&self) -> &::std::option::Option<crate::types::FolderType> {
@@ -132,8 +128,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The time that the folder was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the folder was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The time that the folder was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time that the folder was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl FolderSummaryBuilder {
     }
     /// <p>The sharing scope of the folder.</p>
     pub fn set_sharing_model(mut self, input: ::std::option::Option<crate::types::SharingModel>) -> Self {
-        self.sharing_model = input;
-        self
+        self.sharing_model = input; self
     }
     /// <p>The sharing scope of the folder.</p>
     pub fn get_sharing_model(&self) -> &::std::option::Option<crate::types::SharingModel> {
@@ -170,13 +163,21 @@ impl FolderSummaryBuilder {
     /// Consumes the builder and constructs a [`FolderSummary`](crate::types::FolderSummary).
     pub fn build(self) -> crate::types::FolderSummary {
         crate::types::FolderSummary {
-            arn: self.arn,
-            folder_id: self.folder_id,
-            name: self.name,
-            folder_type: self.folder_type,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            sharing_model: self.sharing_model,
+            arn: self.arn
+            ,
+            folder_id: self.folder_id
+            ,
+            name: self.name
+            ,
+            folder_type: self.folder_type
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            sharing_model: self.sharing_model
+            ,
         }
     }
 }
+

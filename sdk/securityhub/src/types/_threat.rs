@@ -3,7 +3,7 @@
 /// <p>Provides information about the threat detected in a security finding and the file paths that were affected by the threat.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Threat {
+pub struct Threat  {
     /// <p>The name of the threat.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the threat.</p>
@@ -11,15 +11,15 @@ pub struct Threat {
     /// <p>This total number of items in which the threat has been detected.</p>
     pub item_count: ::std::option::Option<i32>,
     /// <p>Provides information about the file paths that were affected by the threat.</p>
-    pub file_paths: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>,
+    pub file_paths: ::std::option::Option<::std::vec::Vec::<crate::types::FilePaths>>,
 }
-impl Threat {
+impl  Threat  {
     /// <p>The name of the threat.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The severity of the threat.</p>
-    pub fn severity(&self) -> ::std::option::Option<&str> {
+    pub fn severity(&self) -> ::std::option::Option<& str> {
         self.severity.as_deref()
     }
     /// <p>This total number of items in which the threat has been detected.</p>
@@ -27,10 +27,11 @@ impl Threat {
         self.item_count
     }
     /// <p>Provides information about the file paths that were affected by the threat.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_paths.is_none()`.
-    pub fn file_paths(&self) -> &[crate::types::FilePaths] {
-        self.file_paths.as_deref().unwrap_or_default()
+    pub fn file_paths(&self) -> & [crate::types::FilePaths] {
+        self.file_paths.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Threat {
@@ -47,7 +48,7 @@ pub struct ThreatBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<::std::string::String>,
     pub(crate) item_count: ::std::option::Option<i32>,
-    pub(crate) file_paths: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>,
+    pub(crate) file_paths: ::std::option::Option<::std::vec::Vec::<crate::types::FilePaths>>,
 }
 impl ThreatBuilder {
     /// <p>The name of the threat.</p>
@@ -57,8 +58,7 @@ impl ThreatBuilder {
     }
     /// <p>The name of the threat.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the threat.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ThreatBuilder {
     }
     /// <p>The severity of the threat.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The severity of the threat.</p>
     pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ThreatBuilder {
     }
     /// <p>This total number of items in which the threat has been detected.</p>
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// <p>This total number of items in which the threat has been detected.</p>
     pub fn get_item_count(&self) -> &::std::option::Option<i32> {
@@ -99,26 +97,30 @@ impl ThreatBuilder {
     /// <p>Provides information about the file paths that were affected by the threat.</p>
     pub fn file_paths(mut self, input: crate::types::FilePaths) -> Self {
         let mut v = self.file_paths.unwrap_or_default();
-        v.push(input);
-        self.file_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.file_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information about the file paths that were affected by the threat.</p>
-    pub fn set_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>) -> Self {
-        self.file_paths = input;
-        self
+    pub fn set_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilePaths>>) -> Self {
+        self.file_paths = input; self
     }
     /// <p>Provides information about the file paths that were affected by the threat.</p>
-    pub fn get_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilePaths>> {
+    pub fn get_file_paths(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilePaths>> {
         &self.file_paths
     }
     /// Consumes the builder and constructs a [`Threat`](crate::types::Threat).
     pub fn build(self) -> crate::types::Threat {
         crate::types::Threat {
-            name: self.name,
-            severity: self.severity,
-            item_count: self.item_count,
-            file_paths: self.file_paths,
+            name: self.name
+            ,
+            severity: self.severity
+            ,
+            item_count: self.item_count
+            ,
+            file_paths: self.file_paths
+            ,
         }
     }
 }
+

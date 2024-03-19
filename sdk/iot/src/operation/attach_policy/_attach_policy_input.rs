@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachPolicyInput {
+pub struct AttachPolicyInput  {
     /// <p>The name of the policy to attach.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
     pub target: ::std::option::Option<::std::string::String>,
 }
-impl AttachPolicyInput {
+impl  AttachPolicyInput  {
     /// <p>The name of the policy to attach.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AttachPolicyInputBuilder {
     }
     /// <p>The name of the policy to attach.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy to attach.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl AttachPolicyInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }
     /// Consumes the builder and constructs a [`AttachPolicyInput`](crate::operation::attach_policy::AttachPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::attach_policy::AttachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::attach_policy::AttachPolicyInput {
-            policy_name: self.policy_name,
-            target: self.target,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_policy::AttachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::attach_policy::AttachPolicyInput {
+                policy_name: self.policy_name
+                ,
+                target: self.target
+                ,
+            }
+        )
     }
 }
+

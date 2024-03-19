@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEngineStatusInput {}
+pub struct GetEngineStatusInput  {
+}
 impl GetEngineStatusInput {
     /// Creates a new builder-style object to manufacture [`GetEngineStatusInput`](crate::operation::get_engine_status::GetEngineStatusInput).
     pub fn builder() -> crate::operation::get_engine_status::builders::GetEngineStatusInputBuilder {
@@ -13,12 +14,15 @@ impl GetEngineStatusInput {
 /// A builder for [`GetEngineStatusInput`](crate::operation::get_engine_status::GetEngineStatusInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetEngineStatusInputBuilder {}
+pub struct GetEngineStatusInputBuilder {
+}
 impl GetEngineStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetEngineStatusInput`](crate::operation::get_engine_status::GetEngineStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_engine_status::GetEngineStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_engine_status::GetEngineStatusInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_engine_status::GetEngineStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_engine_status::GetEngineStatusInput {
+            }
+        )
     }
 }
+

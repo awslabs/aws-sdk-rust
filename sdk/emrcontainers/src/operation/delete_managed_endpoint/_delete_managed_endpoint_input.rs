@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteManagedEndpointInput {
+pub struct DeleteManagedEndpointInput  {
     /// <p>The ID of the managed endpoint.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the endpoint's virtual cluster.</p>
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteManagedEndpointInput {
+impl  DeleteManagedEndpointInput  {
     /// <p>The ID of the managed endpoint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    pub fn virtual_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> ::std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteManagedEndpointInputBuilder {
     }
     /// <p>The ID of the managed endpoint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the managed endpoint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteManagedEndpointInputBuilder {
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
     pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_cluster_id = input;
-        self
+        self.virtual_cluster_id = input; self
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
     pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_cluster_id
     }
     /// Consumes the builder and constructs a [`DeleteManagedEndpointInput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput {
-            id: self.id,
-            virtual_cluster_id: self.virtual_cluster_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput {
+                id: self.id
+                ,
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
+            }
+        )
     }
 }
+

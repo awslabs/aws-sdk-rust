@@ -3,7 +3,7 @@
 /// <p>Information about the automation option based on a rule category for a single select question.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SingleSelectQuestionRuleCategoryAutomation {
+pub struct SingleSelectQuestionRuleCategoryAutomation  {
     /// <p>The category name, as defined in Rules.</p>
     pub category: ::std::string::String,
     /// <p>The condition to apply for the automation option. If the condition is <code>PRESENT</code>, then the option is applied when the contact data includes the category. Similarly, if the condition is <code>NOT_PRESENT</code>, then the option is applied when the contact data does not include the category.</p>
@@ -11,20 +11,18 @@ pub struct SingleSelectQuestionRuleCategoryAutomation {
     /// <p>The identifier of the answer option.</p>
     pub option_ref_id: ::std::string::String,
 }
-impl SingleSelectQuestionRuleCategoryAutomation {
+impl  SingleSelectQuestionRuleCategoryAutomation  {
     /// <p>The category name, as defined in Rules.</p>
-    pub fn category(&self) -> &str {
-        use std::ops::Deref;
-        self.category.deref()
+    pub fn category(&self) -> & str {
+        use std::ops::Deref; self.category.deref()
     }
     /// <p>The condition to apply for the automation option. If the condition is <code>PRESENT</code>, then the option is applied when the contact data includes the category. Similarly, if the condition is <code>NOT_PRESENT</code>, then the option is applied when the contact data does not include the category.</p>
-    pub fn condition(&self) -> &crate::types::SingleSelectQuestionRuleCategoryAutomationCondition {
+    pub fn condition(&self) -> & crate::types::SingleSelectQuestionRuleCategoryAutomationCondition {
         &self.condition
     }
     /// <p>The identifier of the answer option.</p>
-    pub fn option_ref_id(&self) -> &str {
-        use std::ops::Deref;
-        self.option_ref_id.deref()
+    pub fn option_ref_id(&self) -> & str {
+        use std::ops::Deref; self.option_ref_id.deref()
     }
 }
 impl SingleSelectQuestionRuleCategoryAutomation {
@@ -51,8 +49,7 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
     }
     /// <p>The category name, as defined in Rules.</p>
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category name, as defined in Rules.</p>
     pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
     }
     /// <p>The condition to apply for the automation option. If the condition is <code>PRESENT</code>, then the option is applied when the contact data includes the category. Similarly, if the condition is <code>NOT_PRESENT</code>, then the option is applied when the contact data does not include the category.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::SingleSelectQuestionRuleCategoryAutomationCondition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The condition to apply for the automation option. If the condition is <code>PRESENT</code>, then the option is applied when the contact data includes the category. Similarly, if the condition is <code>NOT_PRESENT</code>, then the option is applied when the contact data does not include the category.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::SingleSelectQuestionRuleCategoryAutomationCondition> {
@@ -81,8 +77,7 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
     }
     /// <p>The identifier of the answer option.</p>
     pub fn set_option_ref_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_ref_id = input;
-        self
+        self.option_ref_id = input; self
     }
     /// <p>The identifier of the answer option.</p>
     pub fn get_option_ref_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,28 +88,26 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
     /// - [`category`](crate::types::builders::SingleSelectQuestionRuleCategoryAutomationBuilder::category)
     /// - [`condition`](crate::types::builders::SingleSelectQuestionRuleCategoryAutomationBuilder::condition)
     /// - [`option_ref_id`](crate::types::builders::SingleSelectQuestionRuleCategoryAutomationBuilder::option_ref_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::SingleSelectQuestionRuleCategoryAutomation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SingleSelectQuestionRuleCategoryAutomation {
-            category: self.category.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "category",
-                    "category was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation",
-                )
-            })?,
-            condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition",
-                    "condition was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation",
-                )
-            })?,
-            option_ref_id: self.option_ref_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "option_ref_id",
-                    "option_ref_id was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::SingleSelectQuestionRuleCategoryAutomation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::SingleSelectQuestionRuleCategoryAutomation {
+                category: self.category
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("category", "category was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation")
+                    )?
+                ,
+                condition: self.condition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition", "condition was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation")
+                    )?
+                ,
+                option_ref_id: self.option_ref_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("option_ref_id", "option_ref_id was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

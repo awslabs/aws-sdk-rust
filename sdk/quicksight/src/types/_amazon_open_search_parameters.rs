@@ -3,15 +3,14 @@
 /// <p>The parameters for OpenSearch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmazonOpenSearchParameters {
+pub struct AmazonOpenSearchParameters  {
     /// <p>The OpenSearch domain.</p>
     pub domain: ::std::string::String,
 }
-impl AmazonOpenSearchParameters {
+impl  AmazonOpenSearchParameters  {
     /// <p>The OpenSearch domain.</p>
-    pub fn domain(&self) -> &str {
-        use std::ops::Deref;
-        self.domain.deref()
+    pub fn domain(&self) -> & str {
+        use std::ops::Deref; self.domain.deref()
     }
 }
 impl AmazonOpenSearchParameters {
@@ -36,8 +35,7 @@ impl AmazonOpenSearchParametersBuilder {
     }
     /// <p>The OpenSearch domain.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The OpenSearch domain.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AmazonOpenSearchParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`domain`](crate::types::builders::AmazonOpenSearchParametersBuilder::domain)
     pub fn build(self) -> ::std::result::Result<crate::types::AmazonOpenSearchParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AmazonOpenSearchParameters {
-            domain: self.domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain",
-                    "domain was not specified but it is required when building AmazonOpenSearchParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AmazonOpenSearchParameters {
+                domain: self.domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain", "domain was not specified but it is required when building AmazonOpenSearchParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

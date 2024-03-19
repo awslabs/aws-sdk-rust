@@ -3,7 +3,7 @@
 /// <p>Reserved for future use.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbClusterStatusInfo {
+pub struct DbClusterStatusInfo  {
     /// <p>Reserved for future use.</p>
     pub status_type: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
@@ -13,9 +13,9 @@ pub struct DbClusterStatusInfo {
     /// <p>Reserved for future use.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DbClusterStatusInfo {
+impl  DbClusterStatusInfo  {
     /// <p>Reserved for future use.</p>
-    pub fn status_type(&self) -> ::std::option::Option<&str> {
+    pub fn status_type(&self) -> ::std::option::Option<& str> {
         self.status_type.as_deref()
     }
     /// <p>Reserved for future use.</p>
@@ -23,11 +23,11 @@ impl DbClusterStatusInfo {
         self.normal
     }
     /// <p>Reserved for future use.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DbClusterStatusInfoBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_status_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_type = input;
-        self
+        self.status_type = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_status_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DbClusterStatusInfoBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_normal(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.normal = input;
-        self
+        self.normal = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_normal(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl DbClusterStatusInfoBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl DbClusterStatusInfoBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl DbClusterStatusInfoBuilder {
     /// Consumes the builder and constructs a [`DbClusterStatusInfo`](crate::types::DbClusterStatusInfo).
     pub fn build(self) -> crate::types::DbClusterStatusInfo {
         crate::types::DbClusterStatusInfo {
-            status_type: self.status_type,
-            normal: self.normal,
-            status: self.status,
-            message: self.message,
+            status_type: self.status_type
+            ,
+            normal: self.normal
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranslateDocumentOutput {
+pub struct TranslateDocumentOutput  {
     /// <p>The document containing the translated content. The document format matches the source document format.</p>
     pub translated_document: ::std::option::Option<crate::types::TranslatedDocument>,
     /// <p>The language code of the source document.</p>
@@ -10,7 +10,7 @@ pub struct TranslateDocumentOutput {
     /// <p>The language code of the translated document.</p>
     pub target_language_code: ::std::string::String,
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
-    pub applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
+    pub applied_terminologies: ::std::option::Option<::std::vec::Vec::<crate::types::AppliedTerminology>>,
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
     /// <li>
@@ -23,26 +23,25 @@ pub struct TranslateDocumentOutput {
     pub applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
 }
-impl TranslateDocumentOutput {
+impl  TranslateDocumentOutput  {
     /// <p>The document containing the translated content. The document format matches the source document format.</p>
-    pub fn translated_document(&self) -> ::std::option::Option<&crate::types::TranslatedDocument> {
+    pub fn translated_document(&self) -> ::std::option::Option<& crate::types::TranslatedDocument> {
         self.translated_document.as_ref()
     }
     /// <p>The language code of the source document.</p>
-    pub fn source_language_code(&self) -> &str {
-        use std::ops::Deref;
-        self.source_language_code.deref()
+    pub fn source_language_code(&self) -> & str {
+        use std::ops::Deref; self.source_language_code.deref()
     }
     /// <p>The language code of the translated document.</p>
-    pub fn target_language_code(&self) -> &str {
-        use std::ops::Deref;
-        self.target_language_code.deref()
+    pub fn target_language_code(&self) -> & str {
+        use std::ops::Deref; self.target_language_code.deref()
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applied_terminologies.is_none()`.
-    pub fn applied_terminologies(&self) -> &[crate::types::AppliedTerminology] {
-        self.applied_terminologies.as_deref().unwrap_or_default()
+    pub fn applied_terminologies(&self) -> & [crate::types::AppliedTerminology] {
+        self.applied_terminologies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
@@ -53,15 +52,15 @@ impl TranslateDocumentOutput {
     /// <li>
     /// <p>Profanity: masks profane words and phrases in the translation output.</p></li>
     /// </ul>
-    pub fn applied_settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
+    pub fn applied_settings(&self) -> ::std::option::Option<& crate::types::TranslationSettings> {
         self.applied_settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for TranslateDocumentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TranslateDocumentOutput {
     /// Creates a new builder-style object to manufacture [`TranslateDocumentOutput`](crate::operation::translate_document::TranslateDocumentOutput).
     pub fn builder() -> crate::operation::translate_document::builders::TranslateDocumentOutputBuilder {
@@ -76,7 +75,7 @@ pub struct TranslateDocumentOutputBuilder {
     pub(crate) translated_document: ::std::option::Option<crate::types::TranslatedDocument>,
     pub(crate) source_language_code: ::std::option::Option<::std::string::String>,
     pub(crate) target_language_code: ::std::option::Option<::std::string::String>,
-    pub(crate) applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
+    pub(crate) applied_terminologies: ::std::option::Option<::std::vec::Vec::<crate::types::AppliedTerminology>>,
     pub(crate) applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
 }
@@ -89,8 +88,7 @@ impl TranslateDocumentOutputBuilder {
     }
     /// <p>The document containing the translated content. The document format matches the source document format.</p>
     pub fn set_translated_document(mut self, input: ::std::option::Option<crate::types::TranslatedDocument>) -> Self {
-        self.translated_document = input;
-        self
+        self.translated_document = input; self
     }
     /// <p>The document containing the translated content. The document format matches the source document format.</p>
     pub fn get_translated_document(&self) -> &::std::option::Option<crate::types::TranslatedDocument> {
@@ -104,8 +102,7 @@ impl TranslateDocumentOutputBuilder {
     }
     /// <p>The language code of the source document.</p>
     pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_language_code = input;
-        self
+        self.source_language_code = input; self
     }
     /// <p>The language code of the source document.</p>
     pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl TranslateDocumentOutputBuilder {
     }
     /// <p>The language code of the translated document.</p>
     pub fn set_target_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_language_code = input;
-        self
+        self.target_language_code = input; self
     }
     /// <p>The language code of the translated document.</p>
     pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,17 +129,16 @@ impl TranslateDocumentOutputBuilder {
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
     pub fn applied_terminologies(mut self, input: crate::types::AppliedTerminology) -> Self {
         let mut v = self.applied_terminologies.unwrap_or_default();
-        v.push(input);
-        self.applied_terminologies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applied_terminologies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
-    pub fn set_applied_terminologies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>) -> Self {
-        self.applied_terminologies = input;
-        self
+    pub fn set_applied_terminologies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppliedTerminology>>) -> Self {
+        self.applied_terminologies = input; self
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
-    pub fn get_applied_terminologies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>> {
+    pub fn get_applied_terminologies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppliedTerminology>> {
         &self.applied_terminologies
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
@@ -169,8 +164,7 @@ impl TranslateDocumentOutputBuilder {
     /// <p>Profanity: masks profane words and phrases in the translation output.</p></li>
     /// </ul>
     pub fn set_applied_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
-        self.applied_settings = input;
-        self
+        self.applied_settings = input; self
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
@@ -185,38 +179,40 @@ impl TranslateDocumentOutputBuilder {
         &self.applied_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TranslateDocumentOutput`](crate::operation::translate_document::TranslateDocumentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_language_code`](crate::operation::translate_document::builders::TranslateDocumentOutputBuilder::source_language_code)
     /// - [`target_language_code`](crate::operation::translate_document::builders::TranslateDocumentOutputBuilder::target_language_code)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::translate_document::TranslateDocumentOutput {
-            translated_document: self.translated_document,
-            source_language_code: self.source_language_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_language_code",
-                    "source_language_code was not specified but it is required when building TranslateDocumentOutput",
-                )
-            })?,
-            target_language_code: self.target_language_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_language_code",
-                    "target_language_code was not specified but it is required when building TranslateDocumentOutput",
-                )
-            })?,
-            applied_terminologies: self.applied_terminologies,
-            applied_settings: self.applied_settings,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::translate_document::TranslateDocumentOutput {
+                translated_document: self.translated_document
+                ,
+                source_language_code: self.source_language_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_language_code", "source_language_code was not specified but it is required when building TranslateDocumentOutput")
+                    )?
+                ,
+                target_language_code: self.target_language_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_language_code", "target_language_code was not specified but it is required when building TranslateDocumentOutput")
+                    )?
+                ,
+                applied_terminologies: self.applied_terminologies
+                ,
+                applied_settings: self.applied_settings
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

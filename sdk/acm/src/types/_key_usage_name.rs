@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keyusagename = unimplemented!();
 /// match keyusagename {
@@ -39,16 +39,14 @@
 /// Specifically, when `keyusagename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeyUsageName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum KeyUsageName {
     #[allow(missing_docs)] // documentation missing in model
     Any,
@@ -74,100 +72,89 @@ pub enum KeyUsageName {
     NonRepudation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for KeyUsageName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANY" => KeyUsageName::Any,
-            "CERTIFICATE_SIGNING" => KeyUsageName::CertificateSigning,
-            "CRL_SIGNING" => KeyUsageName::CrlSigning,
-            "CUSTOM" => KeyUsageName::Custom,
-            "DATA_ENCIPHERMENT" => KeyUsageName::DataEncipherment,
-            "DECIPHER_ONLY" => KeyUsageName::DecipherOnly,
-            "DIGITAL_SIGNATURE" => KeyUsageName::DigitalSignature,
-            "ENCIPHER_ONLY" => KeyUsageName::EnchiperOnly,
-            "KEY_AGREEMENT" => KeyUsageName::KeyAgreement,
-            "KEY_ENCIPHERMENT" => KeyUsageName::KeyEncipherment,
-            "NON_REPUDIATION" => KeyUsageName::NonRepudation,
-            other => KeyUsageName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ANY" => KeyUsageName::Any,
+"CERTIFICATE_SIGNING" => KeyUsageName::CertificateSigning,
+"CRL_SIGNING" => KeyUsageName::CrlSigning,
+"CUSTOM" => KeyUsageName::Custom,
+"DATA_ENCIPHERMENT" => KeyUsageName::DataEncipherment,
+"DECIPHER_ONLY" => KeyUsageName::DecipherOnly,
+"DIGITAL_SIGNATURE" => KeyUsageName::DigitalSignature,
+"ENCIPHER_ONLY" => KeyUsageName::EnchiperOnly,
+"KEY_AGREEMENT" => KeyUsageName::KeyAgreement,
+"KEY_ENCIPHERMENT" => KeyUsageName::KeyEncipherment,
+"NON_REPUDIATION" => KeyUsageName::NonRepudation,
+other => KeyUsageName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for KeyUsageName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(KeyUsageName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(KeyUsageName::from(s))
+                    }
+                }
 impl KeyUsageName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyUsageName::Any => "ANY",
-            KeyUsageName::CertificateSigning => "CERTIFICATE_SIGNING",
-            KeyUsageName::CrlSigning => "CRL_SIGNING",
-            KeyUsageName::Custom => "CUSTOM",
-            KeyUsageName::DataEncipherment => "DATA_ENCIPHERMENT",
-            KeyUsageName::DecipherOnly => "DECIPHER_ONLY",
-            KeyUsageName::DigitalSignature => "DIGITAL_SIGNATURE",
-            KeyUsageName::EnchiperOnly => "ENCIPHER_ONLY",
-            KeyUsageName::KeyAgreement => "KEY_AGREEMENT",
-            KeyUsageName::KeyEncipherment => "KEY_ENCIPHERMENT",
-            KeyUsageName::NonRepudation => "NON_REPUDIATION",
-            KeyUsageName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANY",
-            "CERTIFICATE_SIGNING",
-            "CRL_SIGNING",
-            "CUSTOM",
-            "DATA_ENCIPHERMENT",
-            "DECIPHER_ONLY",
-            "DIGITAL_SIGNATURE",
-            "ENCIPHER_ONLY",
-            "KEY_AGREEMENT",
-            "KEY_ENCIPHERMENT",
-            "NON_REPUDIATION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeyUsageName::Any => "ANY",
+    KeyUsageName::CertificateSigning => "CERTIFICATE_SIGNING",
+    KeyUsageName::CrlSigning => "CRL_SIGNING",
+    KeyUsageName::Custom => "CUSTOM",
+    KeyUsageName::DataEncipherment => "DATA_ENCIPHERMENT",
+    KeyUsageName::DecipherOnly => "DECIPHER_ONLY",
+    KeyUsageName::DigitalSignature => "DIGITAL_SIGNATURE",
+    KeyUsageName::EnchiperOnly => "ENCIPHER_ONLY",
+    KeyUsageName::KeyAgreement => "KEY_AGREEMENT",
+    KeyUsageName::KeyEncipherment => "KEY_ENCIPHERMENT",
+    KeyUsageName::NonRepudation => "NON_REPUDIATION",
+    KeyUsageName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANY", "CERTIFICATE_SIGNING", "CRL_SIGNING", "CUSTOM", "DATA_ENCIPHERMENT", "DECIPHER_ONLY", "DIGITAL_SIGNATURE", "ENCIPHER_ONLY", "KEY_AGREEMENT", "KEY_ENCIPHERMENT", "NON_REPUDIATION"]
+                }
+            }
 impl ::std::convert::AsRef<str> for KeyUsageName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl KeyUsageName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for KeyUsageName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            KeyUsageName::Any => write!(f, "ANY"),
-            KeyUsageName::CertificateSigning => write!(f, "CERTIFICATE_SIGNING"),
-            KeyUsageName::CrlSigning => write!(f, "CRL_SIGNING"),
-            KeyUsageName::Custom => write!(f, "CUSTOM"),
-            KeyUsageName::DataEncipherment => write!(f, "DATA_ENCIPHERMENT"),
-            KeyUsageName::DecipherOnly => write!(f, "DECIPHER_ONLY"),
-            KeyUsageName::DigitalSignature => write!(f, "DIGITAL_SIGNATURE"),
-            KeyUsageName::EnchiperOnly => write!(f, "ENCIPHER_ONLY"),
-            KeyUsageName::KeyAgreement => write!(f, "KEY_AGREEMENT"),
-            KeyUsageName::KeyEncipherment => write!(f, "KEY_ENCIPHERMENT"),
-            KeyUsageName::NonRepudation => write!(f, "NON_REPUDIATION"),
-            KeyUsageName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                KeyUsageName::Any => write!(f, "ANY"),
+KeyUsageName::CertificateSigning => write!(f, "CERTIFICATE_SIGNING"),
+KeyUsageName::CrlSigning => write!(f, "CRL_SIGNING"),
+KeyUsageName::Custom => write!(f, "CUSTOM"),
+KeyUsageName::DataEncipherment => write!(f, "DATA_ENCIPHERMENT"),
+KeyUsageName::DecipherOnly => write!(f, "DECIPHER_ONLY"),
+KeyUsageName::DigitalSignature => write!(f, "DIGITAL_SIGNATURE"),
+KeyUsageName::EnchiperOnly => write!(f, "ENCIPHER_ONLY"),
+KeyUsageName::KeyAgreement => write!(f, "KEY_AGREEMENT"),
+KeyUsageName::KeyEncipherment => write!(f, "KEY_ENCIPHERMENT"),
+KeyUsageName::NonRepudation => write!(f, "NON_REPUDIATION"),
+KeyUsageName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,17 +3,17 @@
 /// <p>Specifies a filter expression.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterExpression {
+pub struct FilterExpression  {
     /// <p>The type of operation to perform in the expression.</p>
     pub operation: crate::types::FilterOperation,
     /// <p>Whether the expression is to be negated.</p>
     pub negated: ::std::option::Option<bool>,
     /// <p>A list of filter values.</p>
-    pub values: ::std::vec::Vec<crate::types::FilterValue>,
+    pub values: ::std::vec::Vec::<crate::types::FilterValue>,
 }
-impl FilterExpression {
+impl  FilterExpression  {
     /// <p>The type of operation to perform in the expression.</p>
-    pub fn operation(&self) -> &crate::types::FilterOperation {
+    pub fn operation(&self) -> & crate::types::FilterOperation {
         &self.operation
     }
     /// <p>Whether the expression is to be negated.</p>
@@ -21,9 +21,8 @@ impl FilterExpression {
         self.negated
     }
     /// <p>A list of filter values.</p>
-    pub fn values(&self) -> &[crate::types::FilterValue] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [crate::types::FilterValue] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl FilterExpression {
@@ -39,7 +38,7 @@ impl FilterExpression {
 pub struct FilterExpressionBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::FilterOperation>,
     pub(crate) negated: ::std::option::Option<bool>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::FilterValue>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<crate::types::FilterValue>>,
 }
 impl FilterExpressionBuilder {
     /// <p>The type of operation to perform in the expression.</p>
@@ -50,8 +49,7 @@ impl FilterExpressionBuilder {
     }
     /// <p>The type of operation to perform in the expression.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::FilterOperation>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The type of operation to perform in the expression.</p>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::FilterOperation> {
@@ -64,8 +62,7 @@ impl FilterExpressionBuilder {
     }
     /// <p>Whether the expression is to be negated.</p>
     pub fn set_negated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.negated = input;
-        self
+        self.negated = input; self
     }
     /// <p>Whether the expression is to be negated.</p>
     pub fn get_negated(&self) -> &::std::option::Option<bool> {
@@ -78,17 +75,16 @@ impl FilterExpressionBuilder {
     /// <p>A list of filter values.</p>
     pub fn values(mut self, input: crate::types::FilterValue) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of filter values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterValue>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterValue>>) -> Self {
+        self.values = input; self
     }
     /// <p>A list of filter values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterValue>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterValue>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).
@@ -96,20 +92,22 @@ impl FilterExpressionBuilder {
     /// - [`operation`](crate::types::builders::FilterExpressionBuilder::operation)
     /// - [`values`](crate::types::builders::FilterExpressionBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterExpression, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterExpression {
-            operation: self.operation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation",
-                    "operation was not specified but it is required when building FilterExpression",
-                )
-            })?,
-            negated: self.negated,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building FilterExpression",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilterExpression {
+                operation: self.operation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation", "operation was not specified but it is required when building FilterExpression")
+                    )?
+                ,
+                negated: self.negated
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building FilterExpression")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The specification of an agent turn.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentTurnSpecification {
+pub struct AgentTurnSpecification  {
     /// <p>The agent prompt for the agent turn in a test set.</p>
     pub agent_prompt: ::std::string::String,
 }
-impl AgentTurnSpecification {
+impl  AgentTurnSpecification  {
     /// <p>The agent prompt for the agent turn in a test set.</p>
-    pub fn agent_prompt(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_prompt.deref()
+    pub fn agent_prompt(&self) -> & str {
+        use std::ops::Deref; self.agent_prompt.deref()
     }
 }
 impl AgentTurnSpecification {
@@ -36,8 +35,7 @@ impl AgentTurnSpecificationBuilder {
     }
     /// <p>The agent prompt for the agent turn in a test set.</p>
     pub fn set_agent_prompt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_prompt = input;
-        self
+        self.agent_prompt = input; self
     }
     /// <p>The agent prompt for the agent turn in a test set.</p>
     pub fn get_agent_prompt(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AgentTurnSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_prompt`](crate::types::builders::AgentTurnSpecificationBuilder::agent_prompt)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentTurnSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentTurnSpecification {
-            agent_prompt: self.agent_prompt.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_prompt",
-                    "agent_prompt was not specified but it is required when building AgentTurnSpecification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentTurnSpecification {
+                agent_prompt: self.agent_prompt
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_prompt", "agent_prompt was not specified but it is required when building AgentTurnSpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The deployment summary of the enabled control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnablementStatusSummary {
+pub struct EnablementStatusSummary  {
     /// <p>The deployment status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct EnablementStatusSummary {
     /// <p>The last operation identifier for the enabled control.</p>
     pub last_operation_identifier: ::std::option::Option<::std::string::String>,
 }
-impl EnablementStatusSummary {
+impl  EnablementStatusSummary  {
     /// <p>The deployment status of the enabled control.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -29,11 +29,11 @@ impl EnablementStatusSummary {
     /// <li>
     /// <p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnablementStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EnablementStatus> {
         self.status.as_ref()
     }
     /// <p>The last operation identifier for the enabled control.</p>
-    pub fn last_operation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn last_operation_identifier(&self) -> ::std::option::Option<& str> {
         self.last_operation_identifier.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl EnablementStatusSummaryBuilder {
     /// <p><code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnablementStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The deployment status of the enabled control.</p>
     /// <p>Valid values:</p>
@@ -100,8 +99,7 @@ impl EnablementStatusSummaryBuilder {
     }
     /// <p>The last operation identifier for the enabled control.</p>
     pub fn set_last_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_operation_identifier = input;
-        self
+        self.last_operation_identifier = input; self
     }
     /// <p>The last operation identifier for the enabled control.</p>
     pub fn get_last_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,11 @@ impl EnablementStatusSummaryBuilder {
     /// Consumes the builder and constructs a [`EnablementStatusSummary`](crate::types::EnablementStatusSummary).
     pub fn build(self) -> crate::types::EnablementStatusSummary {
         crate::types::EnablementStatusSummary {
-            status: self.status,
-            last_operation_identifier: self.last_operation_identifier,
+            status: self.status
+            ,
+            last_operation_identifier: self.last_operation_identifier
+            ,
         }
     }
 }
+

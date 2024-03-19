@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWirelessDeviceImportTaskInput {
+pub struct DeleteWirelessDeviceImportTaskInput  {
     /// <p>The unique identifier of the import task to be deleted.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWirelessDeviceImportTaskInput {
+impl  DeleteWirelessDeviceImportTaskInput  {
     /// <p>The unique identifier of the import task to be deleted.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteWirelessDeviceImportTaskInputBuilder {
     }
     /// <p>The unique identifier of the import task to be deleted.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the import task to be deleted.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteWirelessDeviceImportTaskInput`](crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

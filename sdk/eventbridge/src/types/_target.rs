@@ -4,7 +4,7 @@
 /// <p>If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Target {
+pub struct Target  {
     /// <p>The ID of the target within the specified rule. Use this ID to reference the target when updating the rule. We recommend using a memorable and unique string.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
@@ -44,79 +44,77 @@ pub struct Target {
     /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
     pub app_sync_parameters: ::std::option::Option<crate::types::AppSyncParameters>,
 }
-impl Target {
+impl  Target  {
     /// <p>The ID of the target within the specified rule. Use this ID to reference the target when updating the rule. We recommend using a memorable and unique string.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
-    pub fn input_path(&self) -> ::std::option::Option<&str> {
+    pub fn input_path(&self) -> ::std::option::Option<& str> {
         self.input_path.as_deref()
     }
     /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
-    pub fn input_transformer(&self) -> ::std::option::Option<&crate::types::InputTransformer> {
+    pub fn input_transformer(&self) -> ::std::option::Option<& crate::types::InputTransformer> {
         self.input_transformer.as_ref()
     }
     /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
-    pub fn kinesis_parameters(&self) -> ::std::option::Option<&crate::types::KinesisParameters> {
+    pub fn kinesis_parameters(&self) -> ::std::option::Option<& crate::types::KinesisParameters> {
         self.kinesis_parameters.as_ref()
     }
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
-    pub fn run_command_parameters(&self) -> ::std::option::Option<&crate::types::RunCommandParameters> {
+    pub fn run_command_parameters(&self) -> ::std::option::Option<& crate::types::RunCommandParameters> {
         self.run_command_parameters.as_ref()
     }
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
-    pub fn ecs_parameters(&self) -> ::std::option::Option<&crate::types::EcsParameters> {
+    pub fn ecs_parameters(&self) -> ::std::option::Option<& crate::types::EcsParameters> {
         self.ecs_parameters.as_ref()
     }
     /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
-    pub fn batch_parameters(&self) -> ::std::option::Option<&crate::types::BatchParameters> {
+    pub fn batch_parameters(&self) -> ::std::option::Option<& crate::types::BatchParameters> {
         self.batch_parameters.as_ref()
     }
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
     /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
-    pub fn sqs_parameters(&self) -> ::std::option::Option<&crate::types::SqsParameters> {
+    pub fn sqs_parameters(&self) -> ::std::option::Option<& crate::types::SqsParameters> {
         self.sqs_parameters.as_ref()
     }
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    pub fn http_parameters(&self) -> ::std::option::Option<&crate::types::HttpParameters> {
+    pub fn http_parameters(&self) -> ::std::option::Option<& crate::types::HttpParameters> {
         self.http_parameters.as_ref()
     }
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
-    pub fn redshift_data_parameters(&self) -> ::std::option::Option<&crate::types::RedshiftDataParameters> {
+    pub fn redshift_data_parameters(&self) -> ::std::option::Option<& crate::types::RedshiftDataParameters> {
         self.redshift_data_parameters.as_ref()
     }
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
-    pub fn sage_maker_pipeline_parameters(&self) -> ::std::option::Option<&crate::types::SageMakerPipelineParameters> {
+    pub fn sage_maker_pipeline_parameters(&self) -> ::std::option::Option<& crate::types::SageMakerPipelineParameters> {
         self.sage_maker_pipeline_parameters.as_ref()
     }
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
-    pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> ::std::option::Option<& crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
-    pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
+    pub fn retry_policy(&self) -> ::std::option::Option<& crate::types::RetryPolicy> {
         self.retry_policy.as_ref()
     }
     /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
-    pub fn app_sync_parameters(&self) -> ::std::option::Option<&crate::types::AppSyncParameters> {
+    pub fn app_sync_parameters(&self) -> ::std::option::Option<& crate::types::AppSyncParameters> {
         self.app_sync_parameters.as_ref()
     }
 }
@@ -158,8 +156,7 @@ impl TargetBuilder {
     }
     /// <p>The ID of the target within the specified rule. Use this ID to reference the target when updating the rule. We recommend using a memorable and unique string.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the target within the specified rule. Use this ID to reference the target when updating the rule. We recommend using a memorable and unique string.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +170,7 @@ impl TargetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +183,7 @@ impl TargetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +196,7 @@ impl TargetBuilder {
     }
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +209,7 @@ impl TargetBuilder {
     }
     /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     pub fn set_input_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_path = input;
-        self
+        self.input_path = input; self
     }
     /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     pub fn get_input_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +222,7 @@ impl TargetBuilder {
     }
     /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
     pub fn set_input_transformer(mut self, input: ::std::option::Option<crate::types::InputTransformer>) -> Self {
-        self.input_transformer = input;
-        self
+        self.input_transformer = input; self
     }
     /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
     pub fn get_input_transformer(&self) -> &::std::option::Option<crate::types::InputTransformer> {
@@ -243,8 +235,7 @@ impl TargetBuilder {
     }
     /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
     pub fn set_kinesis_parameters(mut self, input: ::std::option::Option<crate::types::KinesisParameters>) -> Self {
-        self.kinesis_parameters = input;
-        self
+        self.kinesis_parameters = input; self
     }
     /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
     pub fn get_kinesis_parameters(&self) -> &::std::option::Option<crate::types::KinesisParameters> {
@@ -257,8 +248,7 @@ impl TargetBuilder {
     }
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
     pub fn set_run_command_parameters(mut self, input: ::std::option::Option<crate::types::RunCommandParameters>) -> Self {
-        self.run_command_parameters = input;
-        self
+        self.run_command_parameters = input; self
     }
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
     pub fn get_run_command_parameters(&self) -> &::std::option::Option<crate::types::RunCommandParameters> {
@@ -271,8 +261,7 @@ impl TargetBuilder {
     }
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     pub fn set_ecs_parameters(mut self, input: ::std::option::Option<crate::types::EcsParameters>) -> Self {
-        self.ecs_parameters = input;
-        self
+        self.ecs_parameters = input; self
     }
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     pub fn get_ecs_parameters(&self) -> &::std::option::Option<crate::types::EcsParameters> {
@@ -285,8 +274,7 @@ impl TargetBuilder {
     }
     /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_batch_parameters(mut self, input: ::std::option::Option<crate::types::BatchParameters>) -> Self {
-        self.batch_parameters = input;
-        self
+        self.batch_parameters = input; self
     }
     /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub fn get_batch_parameters(&self) -> &::std::option::Option<crate::types::BatchParameters> {
@@ -301,8 +289,7 @@ impl TargetBuilder {
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
     /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     pub fn set_sqs_parameters(mut self, input: ::std::option::Option<crate::types::SqsParameters>) -> Self {
-        self.sqs_parameters = input;
-        self
+        self.sqs_parameters = input; self
     }
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
     /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
@@ -318,8 +305,7 @@ impl TargetBuilder {
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     pub fn set_http_parameters(mut self, input: ::std::option::Option<crate::types::HttpParameters>) -> Self {
-        self.http_parameters = input;
-        self
+        self.http_parameters = input; self
     }
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
@@ -335,8 +321,7 @@ impl TargetBuilder {
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
     pub fn set_redshift_data_parameters(mut self, input: ::std::option::Option<crate::types::RedshiftDataParameters>) -> Self {
-        self.redshift_data_parameters = input;
-        self
+        self.redshift_data_parameters = input; self
     }
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
@@ -352,8 +337,7 @@ impl TargetBuilder {
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     pub fn set_sage_maker_pipeline_parameters(mut self, input: ::std::option::Option<crate::types::SageMakerPipelineParameters>) -> Self {
-        self.sage_maker_pipeline_parameters = input;
-        self
+        self.sage_maker_pipeline_parameters = input; self
     }
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
@@ -367,8 +351,7 @@ impl TargetBuilder {
     }
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
     pub fn set_dead_letter_config(mut self, input: ::std::option::Option<crate::types::DeadLetterConfig>) -> Self {
-        self.dead_letter_config = input;
-        self
+        self.dead_letter_config = input; self
     }
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
     pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
@@ -381,8 +364,7 @@ impl TargetBuilder {
     }
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
     pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::RetryPolicy>) -> Self {
-        self.retry_policy = input;
-        self
+        self.retry_policy = input; self
     }
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
@@ -395,8 +377,7 @@ impl TargetBuilder {
     }
     /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
     pub fn set_app_sync_parameters(mut self, input: ::std::option::Option<crate::types::AppSyncParameters>) -> Self {
-        self.app_sync_parameters = input;
-        self
+        self.app_sync_parameters = input; self
     }
     /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
     pub fn get_app_sync_parameters(&self) -> &::std::option::Option<crate::types::AppSyncParameters> {
@@ -407,31 +388,50 @@ impl TargetBuilder {
     /// - [`id`](crate::types::builders::TargetBuilder::id)
     /// - [`arn`](crate::types::builders::TargetBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Target {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Target")
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Target",
-                )
-            })?,
-            role_arn: self.role_arn,
-            input: self.input,
-            input_path: self.input_path,
-            input_transformer: self.input_transformer,
-            kinesis_parameters: self.kinesis_parameters,
-            run_command_parameters: self.run_command_parameters,
-            ecs_parameters: self.ecs_parameters,
-            batch_parameters: self.batch_parameters,
-            sqs_parameters: self.sqs_parameters,
-            http_parameters: self.http_parameters,
-            redshift_data_parameters: self.redshift_data_parameters,
-            sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
-            dead_letter_config: self.dead_letter_config,
-            retry_policy: self.retry_policy,
-            app_sync_parameters: self.app_sync_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Target {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Target")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Target")
+                    )?
+                ,
+                role_arn: self.role_arn
+                ,
+                input: self.input
+                ,
+                input_path: self.input_path
+                ,
+                input_transformer: self.input_transformer
+                ,
+                kinesis_parameters: self.kinesis_parameters
+                ,
+                run_command_parameters: self.run_command_parameters
+                ,
+                ecs_parameters: self.ecs_parameters
+                ,
+                batch_parameters: self.batch_parameters
+                ,
+                sqs_parameters: self.sqs_parameters
+                ,
+                http_parameters: self.http_parameters
+                ,
+                redshift_data_parameters: self.redshift_data_parameters
+                ,
+                sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                retry_policy: self.retry_policy
+                ,
+                app_sync_parameters: self.app_sync_parameters
+                ,
+            }
+        )
     }
 }
+

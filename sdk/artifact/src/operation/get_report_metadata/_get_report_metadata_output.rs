@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReportMetadataOutput {
+pub struct GetReportMetadataOutput  {
     /// <p>Report resource detail.</p>
     pub report_details: ::std::option::Option<crate::types::ReportDetail>,
     _request_id: Option<String>,
 }
-impl GetReportMetadataOutput {
+impl  GetReportMetadataOutput  {
     /// <p>Report resource detail.</p>
-    pub fn report_details(&self) -> ::std::option::Option<&crate::types::ReportDetail> {
+    pub fn report_details(&self) -> ::std::option::Option<& crate::types::ReportDetail> {
         self.report_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReportMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReportMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetReportMetadataOutput`](crate::operation::get_report_metadata::GetReportMetadataOutput).
     pub fn builder() -> crate::operation::get_report_metadata::builders::GetReportMetadataOutputBuilder {
@@ -40,27 +40,28 @@ impl GetReportMetadataOutputBuilder {
     }
     /// <p>Report resource detail.</p>
     pub fn set_report_details(mut self, input: ::std::option::Option<crate::types::ReportDetail>) -> Self {
-        self.report_details = input;
-        self
+        self.report_details = input; self
     }
     /// <p>Report resource detail.</p>
     pub fn get_report_details(&self) -> &::std::option::Option<crate::types::ReportDetail> {
         &self.report_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReportMetadataOutput`](crate::operation::get_report_metadata::GetReportMetadataOutput).
     pub fn build(self) -> crate::operation::get_report_metadata::GetReportMetadataOutput {
         crate::operation::get_report_metadata::GetReportMetadataOutput {
-            report_details: self.report_details,
+            report_details: self.report_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

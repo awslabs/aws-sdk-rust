@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSizeConstraintSetInput {
+pub struct UpdateSizeConstraintSetInput  {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub size_constraint_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
@@ -16,15 +16,15 @@ pub struct UpdateSizeConstraintSetInput {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub updates: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>>,
+    pub updates: ::std::option::Option<::std::vec::Vec::<crate::types::SizeConstraintSetUpdate>>,
 }
-impl UpdateSizeConstraintSetInput {
+impl  UpdateSizeConstraintSetInput  {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn size_constraint_set_id(&self) -> ::std::option::Option<& str> {
         self.size_constraint_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
@@ -36,10 +36,11 @@ impl UpdateSizeConstraintSetInput {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
-    pub fn updates(&self) -> &[crate::types::SizeConstraintSetUpdate] {
-        self.updates.as_deref().unwrap_or_default()
+    pub fn updates(&self) -> & [crate::types::SizeConstraintSetUpdate] {
+        self.updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateSizeConstraintSetInput {
@@ -55,7 +56,7 @@ impl UpdateSizeConstraintSetInput {
 pub struct UpdateSizeConstraintSetInputBuilder {
     pub(crate) size_constraint_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
-    pub(crate) updates: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>>,
+    pub(crate) updates: ::std::option::Option<::std::vec::Vec::<crate::types::SizeConstraintSetUpdate>>,
 }
 impl UpdateSizeConstraintSetInputBuilder {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
@@ -66,8 +67,7 @@ impl UpdateSizeConstraintSetInputBuilder {
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn set_size_constraint_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.size_constraint_set_id = input;
-        self
+        self.size_constraint_set_id = input; self
     }
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn get_size_constraint_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +81,7 @@ impl UpdateSizeConstraintSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,9 +102,9 @@ impl UpdateSizeConstraintSetInputBuilder {
     /// </ul>
     pub fn updates(mut self, input: crate::types::SizeConstraintSetUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-        v.push(input);
-        self.updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -116,9 +115,8 @@ impl UpdateSizeConstraintSetInputBuilder {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>>) -> Self {
-        self.updates = input;
-        self
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SizeConstraintSetUpdate>>) -> Self {
+        self.updates = input; self
     }
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -129,20 +127,21 @@ impl UpdateSizeConstraintSetInputBuilder {
     /// <li>
     /// <p><code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code></p></li>
     /// </ul>
-    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SizeConstraintSetUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateSizeConstraintSetInput`](crate::operation::update_size_constraint_set::UpdateSizeConstraintSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_size_constraint_set::UpdateSizeConstraintSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_size_constraint_set::UpdateSizeConstraintSetInput {
-            size_constraint_set_id: self.size_constraint_set_id,
-            change_token: self.change_token,
-            updates: self.updates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_size_constraint_set::UpdateSizeConstraintSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_size_constraint_set::UpdateSizeConstraintSetInput {
+                size_constraint_set_id: self.size_constraint_set_id
+                ,
+                change_token: self.change_token
+                ,
+                updates: self.updates
+                ,
+            }
+        )
     }
 }
+

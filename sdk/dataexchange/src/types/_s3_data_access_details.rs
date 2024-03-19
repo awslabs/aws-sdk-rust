@@ -3,24 +3,26 @@
 /// <p>Extra details specific to the affected scope in this S3 Data Access data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DataAccessDetails {
+pub struct S3DataAccessDetails  {
     /// <p>A list of the key prefixes affected by this notification. This can have up to 50 entries.</p>
-    pub key_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub key_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of the keys affected by this notification. This can have up to 50 entries.</p>
-    pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl S3DataAccessDetails {
+impl  S3DataAccessDetails  {
     /// <p>A list of the key prefixes affected by this notification. This can have up to 50 entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_prefixes.is_none()`.
-    pub fn key_prefixes(&self) -> &[::std::string::String] {
-        self.key_prefixes.as_deref().unwrap_or_default()
+    pub fn key_prefixes(&self) -> & [::std::string::String] {
+        self.key_prefixes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the keys affected by this notification. This can have up to 50 entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
-    pub fn keys(&self) -> &[::std::string::String] {
-        self.keys.as_deref().unwrap_or_default()
+    pub fn keys(&self) -> & [::std::string::String] {
+        self.keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl S3DataAccessDetails {
@@ -34,8 +36,8 @@ impl S3DataAccessDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DataAccessDetailsBuilder {
-    pub(crate) key_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) key_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl S3DataAccessDetailsBuilder {
     /// Appends an item to `key_prefixes`.
@@ -45,17 +47,16 @@ impl S3DataAccessDetailsBuilder {
     /// <p>A list of the key prefixes affected by this notification. This can have up to 50 entries.</p>
     pub fn key_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.key_prefixes.unwrap_or_default();
-        v.push(input.into());
-        self.key_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.key_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the key prefixes affected by this notification. This can have up to 50 entries.</p>
-    pub fn set_key_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.key_prefixes = input;
-        self
+    pub fn set_key_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.key_prefixes = input; self
     }
     /// <p>A list of the key prefixes affected by this notification. This can have up to 50 entries.</p>
-    pub fn get_key_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_key_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.key_prefixes
     }
     /// Appends an item to `keys`.
@@ -65,24 +66,26 @@ impl S3DataAccessDetailsBuilder {
     /// <p>A list of the keys affected by this notification. This can have up to 50 entries.</p>
     pub fn keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input.into());
-        self.keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the keys affected by this notification. This can have up to 50 entries.</p>
-    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.keys = input; self
     }
     /// <p>A list of the keys affected by this notification. This can have up to 50 entries.</p>
-    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.keys
     }
     /// Consumes the builder and constructs a [`S3DataAccessDetails`](crate::types::S3DataAccessDetails).
     pub fn build(self) -> crate::types::S3DataAccessDetails {
         crate::types::S3DataAccessDetails {
-            key_prefixes: self.key_prefixes,
-            keys: self.keys,
+            key_prefixes: self.key_prefixes
+            ,
+            keys: self.keys
+            ,
         }
     }
 }
+

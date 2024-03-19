@@ -3,19 +3,19 @@
 /// <p>The action engine, or executor, related to the supported integration model used to create and update the action type. The available executor types are <code>Lambda</code> and <code>JobWorker</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutorConfiguration {
+pub struct ExecutorConfiguration  {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
     pub lambda_executor_configuration: ::std::option::Option<crate::types::LambdaExecutorConfiguration>,
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
     pub job_worker_executor_configuration: ::std::option::Option<crate::types::JobWorkerExecutorConfiguration>,
 }
-impl ExecutorConfiguration {
+impl  ExecutorConfiguration  {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
-    pub fn lambda_executor_configuration(&self) -> ::std::option::Option<&crate::types::LambdaExecutorConfiguration> {
+    pub fn lambda_executor_configuration(&self) -> ::std::option::Option<& crate::types::LambdaExecutorConfiguration> {
         self.lambda_executor_configuration.as_ref()
     }
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-    pub fn job_worker_executor_configuration(&self) -> ::std::option::Option<&crate::types::JobWorkerExecutorConfiguration> {
+    pub fn job_worker_executor_configuration(&self) -> ::std::option::Option<& crate::types::JobWorkerExecutorConfiguration> {
         self.job_worker_executor_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ExecutorConfigurationBuilder {
     }
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
     pub fn set_lambda_executor_configuration(mut self, input: ::std::option::Option<crate::types::LambdaExecutorConfiguration>) -> Self {
-        self.lambda_executor_configuration = input;
-        self
+        self.lambda_executor_configuration = input; self
     }
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
     pub fn get_lambda_executor_configuration(&self) -> &::std::option::Option<crate::types::LambdaExecutorConfiguration> {
@@ -55,8 +54,7 @@ impl ExecutorConfigurationBuilder {
     }
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
     pub fn set_job_worker_executor_configuration(mut self, input: ::std::option::Option<crate::types::JobWorkerExecutorConfiguration>) -> Self {
-        self.job_worker_executor_configuration = input;
-        self
+        self.job_worker_executor_configuration = input; self
     }
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
     pub fn get_job_worker_executor_configuration(&self) -> &::std::option::Option<crate::types::JobWorkerExecutorConfiguration> {
@@ -65,8 +63,11 @@ impl ExecutorConfigurationBuilder {
     /// Consumes the builder and constructs a [`ExecutorConfiguration`](crate::types::ExecutorConfiguration).
     pub fn build(self) -> crate::types::ExecutorConfiguration {
         crate::types::ExecutorConfiguration {
-            lambda_executor_configuration: self.lambda_executor_configuration,
-            job_worker_executor_configuration: self.job_worker_executor_configuration,
+            lambda_executor_configuration: self.lambda_executor_configuration
+            ,
+            job_worker_executor_configuration: self.job_worker_executor_configuration
+            ,
         }
     }
 }
+

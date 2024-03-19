@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessdeniedfordependencyexceptionreason = unimplemented!();
 /// match accessdeniedfordependencyexceptionreason {
@@ -29,75 +29,72 @@
 /// Specifically, when `accessdeniedfordependencyexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessDeniedForDependencyExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AccessDeniedForDependencyExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedDuringCreateServiceLinkedRole,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AccessDeniedForDependencyExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE" => AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole,
-            other => AccessDeniedForDependencyExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE" => AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole,
+other => AccessDeniedForDependencyExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AccessDeniedForDependencyExceptionReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AccessDeniedForDependencyExceptionReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AccessDeniedForDependencyExceptionReason::from(s))
+                    }
+                }
 impl AccessDeniedForDependencyExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE",
-            AccessDeniedForDependencyExceptionReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE",
+    AccessDeniedForDependencyExceptionReason::Unknown(value) => value.as_str()
 }
-impl ::std::convert::AsRef<str> for AccessDeniedForDependencyExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-impl AccessDeniedForDependencyExceptionReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
-impl ::std::fmt::Display for AccessDeniedForDependencyExceptionReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => {
-                write!(f, "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE")
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"]
+                }
             }
-            AccessDeniedForDependencyExceptionReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+impl ::std::convert::AsRef<str> for AccessDeniedForDependencyExceptionReason {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+impl AccessDeniedForDependencyExceptionReason {
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
+impl ::std::fmt::Display for AccessDeniedForDependencyExceptionReason {
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => write!(f, "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"),
+AccessDeniedForDependencyExceptionReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

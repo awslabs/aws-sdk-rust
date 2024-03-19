@@ -3,7 +3,7 @@
 /// <p>The summary of the user-based subscription products for a user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProductUserSummary {
+pub struct ProductUserSummary  {
     /// <p>The user name from the identity provider of the user.</p>
     pub username: ::std::string::String,
     /// <p>The name of the user-based subscription product.</p>
@@ -21,40 +21,37 @@ pub struct ProductUserSummary {
     /// <p>The end date of a subscription.</p>
     pub subscription_end_date: ::std::option::Option<::std::string::String>,
 }
-impl ProductUserSummary {
+impl  ProductUserSummary  {
     /// <p>The user name from the identity provider of the user.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> & str {
+        use std::ops::Deref; self.username.deref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> &str {
-        use std::ops::Deref;
-        self.product.deref()
+    pub fn product(&self) -> & str {
+        use std::ops::Deref; self.product.deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The status of a product for a user.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The status message for a product for a user.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The start date of a subscription.</p>
-    pub fn subscription_start_date(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_start_date(&self) -> ::std::option::Option<& str> {
         self.subscription_start_date.as_deref()
     }
     /// <p>The end date of a subscription.</p>
-    pub fn subscription_end_date(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_end_date(&self) -> ::std::option::Option<& str> {
         self.subscription_end_date.as_deref()
     }
 }
@@ -87,8 +84,7 @@ impl ProductUserSummaryBuilder {
     }
     /// <p>The user name from the identity provider of the user.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user name from the identity provider of the user.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl ProductUserSummaryBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl ProductUserSummaryBuilder {
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
-        self.identity_provider = input;
-        self
+        self.identity_provider = input; self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
@@ -132,8 +126,7 @@ impl ProductUserSummaryBuilder {
     }
     /// <p>The status of a product for a user.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a product for a user.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +139,7 @@ impl ProductUserSummaryBuilder {
     }
     /// <p>The status message for a product for a user.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message for a product for a user.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +152,7 @@ impl ProductUserSummaryBuilder {
     }
     /// <p>The domain name of the user.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain name of the user.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +165,7 @@ impl ProductUserSummaryBuilder {
     }
     /// <p>The start date of a subscription.</p>
     pub fn set_subscription_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_start_date = input;
-        self
+        self.subscription_start_date = input; self
     }
     /// <p>The start date of a subscription.</p>
     pub fn get_subscription_start_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +178,7 @@ impl ProductUserSummaryBuilder {
     }
     /// <p>The end date of a subscription.</p>
     pub fn set_subscription_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_end_date = input;
-        self
+        self.subscription_end_date = input; self
     }
     /// <p>The end date of a subscription.</p>
     pub fn get_subscription_end_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,30 +190,35 @@ impl ProductUserSummaryBuilder {
     /// - [`product`](crate::types::builders::ProductUserSummaryBuilder::product)
     /// - [`status`](crate::types::builders::ProductUserSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ProductUserSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProductUserSummary {
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building ProductUserSummary",
-                )
-            })?,
-            product: self.product.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "product",
-                    "product was not specified but it is required when building ProductUserSummary",
-                )
-            })?,
-            identity_provider: self.identity_provider,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ProductUserSummary",
-                )
-            })?,
-            status_message: self.status_message,
-            domain: self.domain,
-            subscription_start_date: self.subscription_start_date,
-            subscription_end_date: self.subscription_end_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProductUserSummary {
+                username: self.username
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("username", "username was not specified but it is required when building ProductUserSummary")
+                    )?
+                ,
+                product: self.product
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("product", "product was not specified but it is required when building ProductUserSummary")
+                    )?
+                ,
+                identity_provider: self.identity_provider
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ProductUserSummary")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+                domain: self.domain
+                ,
+                subscription_start_date: self.subscription_start_date
+                ,
+                subscription_end_date: self.subscription_end_date
+                ,
+            }
+        )
     }
 }
+

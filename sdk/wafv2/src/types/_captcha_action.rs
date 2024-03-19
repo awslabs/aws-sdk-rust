@@ -20,15 +20,15 @@
 /// <p>This action option is available for rules. It isn't available for web ACL default actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaptchaAction {
+pub struct CaptchaAction  {
     /// <p>Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that the request's token is valid and unexpired.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     pub custom_request_handling: ::std::option::Option<crate::types::CustomRequestHandling>,
 }
-impl CaptchaAction {
+impl  CaptchaAction  {
     /// <p>Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that the request's token is valid and unexpired.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn custom_request_handling(&self) -> ::std::option::Option<&crate::types::CustomRequestHandling> {
+    pub fn custom_request_handling(&self) -> ::std::option::Option<& crate::types::CustomRequestHandling> {
         self.custom_request_handling.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CaptchaActionBuilder {
     /// <p>Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that the request's token is valid and unexpired.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_custom_request_handling(mut self, input: ::std::option::Option<crate::types::CustomRequestHandling>) -> Self {
-        self.custom_request_handling = input;
-        self
+        self.custom_request_handling = input; self
     }
     /// <p>Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that the request's token is valid and unexpired.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
@@ -66,7 +65,9 @@ impl CaptchaActionBuilder {
     /// Consumes the builder and constructs a [`CaptchaAction`](crate::types::CaptchaAction).
     pub fn build(self) -> crate::types::CaptchaAction {
         crate::types::CaptchaAction {
-            custom_request_handling: self.custom_request_handling,
+            custom_request_handling: self.custom_request_handling
+            ,
         }
     }
 }
+

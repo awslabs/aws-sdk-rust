@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFleets`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p><note>  <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note><br>
     ///   - [`max_results(i32)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_max_results):<br>required: **false**<br><p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable.</p><br>
     ///   - [`filters(Filter)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_filters):<br>required: **false**<br><p>Optional filters to limit results.</p> <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p><br>
-    /// - On success, responds with [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput) with field(s):
+                            /// - On success, responds with [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput) with field(s):
     ///   - [`fleet_details(Option<Vec::<Fleet>>)`](crate::operation::list_fleets::ListFleetsOutput::fleet_details): <p>A list of fleet details meeting the request criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fleets::ListFleetsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
-    /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::operation::list_fleets::ListFleetsError)
-    #[deprecated(
-        note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
-    )]
+                            /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::operation::list_fleets::ListFleetsError)
+    #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     pub fn list_fleets(&self) -> crate::operation::list_fleets::builders::ListFleetsFluentBuilder {
-        crate::operation::list_fleets::builders::ListFleetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_fleets::builders::ListFleetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

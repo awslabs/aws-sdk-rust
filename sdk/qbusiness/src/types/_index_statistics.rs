@@ -3,13 +3,13 @@
 /// <p>Provides information about the number of documents in an index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IndexStatistics {
+pub struct IndexStatistics  {
     /// <p>The number of documents indexed.</p>
     pub text_document_statistics: ::std::option::Option<crate::types::TextDocumentStatistics>,
 }
-impl IndexStatistics {
+impl  IndexStatistics  {
     /// <p>The number of documents indexed.</p>
-    pub fn text_document_statistics(&self) -> ::std::option::Option<&crate::types::TextDocumentStatistics> {
+    pub fn text_document_statistics(&self) -> ::std::option::Option<& crate::types::TextDocumentStatistics> {
         self.text_document_statistics.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl IndexStatisticsBuilder {
     }
     /// <p>The number of documents indexed.</p>
     pub fn set_text_document_statistics(mut self, input: ::std::option::Option<crate::types::TextDocumentStatistics>) -> Self {
-        self.text_document_statistics = input;
-        self
+        self.text_document_statistics = input; self
     }
     /// <p>The number of documents indexed.</p>
     pub fn get_text_document_statistics(&self) -> &::std::option::Option<crate::types::TextDocumentStatistics> {
@@ -44,7 +43,9 @@ impl IndexStatisticsBuilder {
     /// Consumes the builder and constructs a [`IndexStatistics`](crate::types::IndexStatistics).
     pub fn build(self) -> crate::types::IndexStatistics {
         crate::types::IndexStatistics {
-            text_document_statistics: self.text_document_statistics,
+            text_document_statistics: self.text_document_statistics
+            ,
         }
     }
 }
+

@@ -3,18 +3,19 @@
 /// <p>Waves list filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWavesRequestFilters {
+pub struct ListWavesRequestFilters  {
     /// <p>Filter waves list by wave ID.</p>
-    pub wave_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub wave_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Filter waves list by archival status.</p>
     pub is_archived: ::std::option::Option<bool>,
 }
-impl ListWavesRequestFilters {
+impl  ListWavesRequestFilters  {
     /// <p>Filter waves list by wave ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wave_ids.is_none()`.
-    pub fn wave_ids(&self) -> &[::std::string::String] {
-        self.wave_ids.as_deref().unwrap_or_default()
+    pub fn wave_ids(&self) -> & [::std::string::String] {
+        self.wave_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filter waves list by archival status.</p>
     pub fn is_archived(&self) -> ::std::option::Option<bool> {
@@ -32,7 +33,7 @@ impl ListWavesRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWavesRequestFiltersBuilder {
-    pub(crate) wave_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) wave_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) is_archived: ::std::option::Option<bool>,
 }
 impl ListWavesRequestFiltersBuilder {
@@ -43,17 +44,16 @@ impl ListWavesRequestFiltersBuilder {
     /// <p>Filter waves list by wave ID.</p>
     pub fn wave_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wave_ids.unwrap_or_default();
-        v.push(input.into());
-        self.wave_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.wave_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filter waves list by wave ID.</p>
-    pub fn set_wave_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.wave_ids = input;
-        self
+    pub fn set_wave_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.wave_ids = input; self
     }
     /// <p>Filter waves list by wave ID.</p>
-    pub fn get_wave_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wave_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.wave_ids
     }
     /// <p>Filter waves list by archival status.</p>
@@ -63,8 +63,7 @@ impl ListWavesRequestFiltersBuilder {
     }
     /// <p>Filter waves list by archival status.</p>
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_archived = input;
-        self
+        self.is_archived = input; self
     }
     /// <p>Filter waves list by archival status.</p>
     pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
@@ -73,8 +72,11 @@ impl ListWavesRequestFiltersBuilder {
     /// Consumes the builder and constructs a [`ListWavesRequestFilters`](crate::types::ListWavesRequestFilters).
     pub fn build(self) -> crate::types::ListWavesRequestFilters {
         crate::types::ListWavesRequestFilters {
-            wave_ids: self.wave_ids,
-            is_archived: self.is_archived,
+            wave_ids: self.wave_ids
+            ,
+            is_archived: self.is_archived
+            ,
         }
     }
 }
+

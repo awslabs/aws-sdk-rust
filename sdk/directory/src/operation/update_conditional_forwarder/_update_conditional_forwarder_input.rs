@@ -3,28 +3,29 @@
 /// <p>Updates a conditional forwarder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConditionalForwarderInput {
+pub struct UpdateConditionalForwarderInput  {
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateConditionalForwarderInput {
+impl  UpdateConditionalForwarderInput  {
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    pub fn remote_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn remote_domain_name(&self) -> ::std::option::Option<& str> {
         self.remote_domain_name.as_deref()
     }
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addrs.is_none()`.
-    pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
-        self.dns_ip_addrs.as_deref().unwrap_or_default()
+    pub fn dns_ip_addrs(&self) -> & [::std::string::String] {
+        self.dns_ip_addrs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateConditionalForwarderInput {
@@ -40,7 +41,7 @@ impl UpdateConditionalForwarderInput {
 pub struct UpdateConditionalForwarderInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) remote_domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ip_addrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateConditionalForwarderInputBuilder {
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
@@ -51,8 +52,7 @@ impl UpdateConditionalForwarderInputBuilder {
     }
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +66,7 @@ impl UpdateConditionalForwarderInputBuilder {
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remote_domain_name = input;
-        self
+        self.remote_domain_name = input; self
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,30 +79,30 @@ impl UpdateConditionalForwarderInputBuilder {
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
     pub fn dns_ip_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ip_addrs.unwrap_or_default();
-        v.push(input.into());
-        self.dns_ip_addrs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dns_ip_addrs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dns_ip_addrs = input;
-        self
+    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dns_ip_addrs = input; self
     }
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dns_ip_addrs
     }
     /// Consumes the builder and constructs a [`UpdateConditionalForwarderInput`](crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput {
-            directory_id: self.directory_id,
-            remote_domain_name: self.remote_domain_name,
-            dns_ip_addrs: self.dns_ip_addrs,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_conditional_forwarder::UpdateConditionalForwarderInput {
+                directory_id: self.directory_id
+                ,
+                remote_domain_name: self.remote_domain_name
+                ,
+                dns_ip_addrs: self.dns_ip_addrs
+                ,
+            }
+        )
     }
 }
+

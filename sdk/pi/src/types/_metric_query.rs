@@ -3,7 +3,7 @@
 /// <p>A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all data points for the specified metric. Optionally, you can request that the data points be aggregated by dimension group (<code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricQuery {
+pub struct MetricQuery  {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
@@ -25,9 +25,9 @@ pub struct MetricQuery {
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
     /// </ul>
-    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub filter: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl MetricQuery {
+impl  MetricQuery  {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
     /// <ul>
@@ -39,12 +39,11 @@ impl MetricQuery {
     /// <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
-    pub fn metric(&self) -> &str {
-        use std::ops::Deref;
-        self.metric.deref()
+    pub fn metric(&self) -> & str {
+        use std::ops::Deref; self.metric.deref()
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&crate::types::DimensionGroup> {
+    pub fn group_by(&self) -> ::std::option::Option<& crate::types::DimensionGroup> {
         self.group_by.as_ref()
     }
     /// <p>One or more filters to apply in the request. Restrictions:</p>
@@ -54,7 +53,7 @@ impl MetricQuery {
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
     /// </ul>
-    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn filter(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.filter.as_ref()
     }
 }
@@ -71,7 +70,7 @@ impl MetricQuery {
 pub struct MetricQueryBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) group_by: ::std::option::Option<crate::types::DimensionGroup>,
-    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl MetricQueryBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -102,8 +101,7 @@ impl MetricQueryBuilder {
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -126,8 +124,7 @@ impl MetricQueryBuilder {
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::DimensionGroup>) -> Self {
-        self.group_by = input;
-        self
+        self.group_by = input; self
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<crate::types::DimensionGroup> {
@@ -146,9 +143,9 @@ impl MetricQueryBuilder {
     /// </ul>
     pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.filter = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.filter = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
@@ -157,9 +154,8 @@ impl MetricQueryBuilder {
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
     /// </ul>
-    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.filter = input; self
     }
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
@@ -168,22 +164,26 @@ impl MetricQueryBuilder {
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
     /// </ul>
-    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`MetricQuery`](crate::types::MetricQuery).
     /// This method will fail if any of the following fields are not set:
     /// - [`metric`](crate::types::builders::MetricQueryBuilder::metric)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricQuery, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricQuery {
-            metric: self.metric.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric",
-                    "metric was not specified but it is required when building MetricQuery",
-                )
-            })?,
-            group_by: self.group_by,
-            filter: self.filter,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricQuery {
+                metric: self.metric
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metric", "metric was not specified but it is required when building MetricQuery")
+                    )?
+                ,
+                group_by: self.group_by
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

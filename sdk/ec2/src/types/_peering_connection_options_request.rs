@@ -3,7 +3,7 @@
 /// <p>The VPC peering connection options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PeeringConnectionOptionsRequest {
+pub struct PeeringConnectionOptionsRequest  {
     /// <p>If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p>
     pub allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
     /// <p>Deprecated.</p>
@@ -11,7 +11,7 @@ pub struct PeeringConnectionOptionsRequest {
     /// <p>Deprecated.</p>
     pub allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
 }
-impl PeeringConnectionOptionsRequest {
+impl  PeeringConnectionOptionsRequest  {
     /// <p>If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p>
     pub fn allow_dns_resolution_from_remote_vpc(&self) -> ::std::option::Option<bool> {
         self.allow_dns_resolution_from_remote_vpc
@@ -48,8 +48,7 @@ impl PeeringConnectionOptionsRequestBuilder {
     }
     /// <p>If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p>
     pub fn set_allow_dns_resolution_from_remote_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_dns_resolution_from_remote_vpc = input;
-        self
+        self.allow_dns_resolution_from_remote_vpc = input; self
     }
     /// <p>If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p>
     pub fn get_allow_dns_resolution_from_remote_vpc(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl PeeringConnectionOptionsRequestBuilder {
     }
     /// <p>Deprecated.</p>
     pub fn set_allow_egress_from_local_classic_link_to_remote_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_egress_from_local_classic_link_to_remote_vpc = input;
-        self
+        self.allow_egress_from_local_classic_link_to_remote_vpc = input; self
     }
     /// <p>Deprecated.</p>
     pub fn get_allow_egress_from_local_classic_link_to_remote_vpc(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl PeeringConnectionOptionsRequestBuilder {
     }
     /// <p>Deprecated.</p>
     pub fn set_allow_egress_from_local_vpc_to_remote_classic_link(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_egress_from_local_vpc_to_remote_classic_link = input;
-        self
+        self.allow_egress_from_local_vpc_to_remote_classic_link = input; self
     }
     /// <p>Deprecated.</p>
     pub fn get_allow_egress_from_local_vpc_to_remote_classic_link(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,13 @@ impl PeeringConnectionOptionsRequestBuilder {
     /// Consumes the builder and constructs a [`PeeringConnectionOptionsRequest`](crate::types::PeeringConnectionOptionsRequest).
     pub fn build(self) -> crate::types::PeeringConnectionOptionsRequest {
         crate::types::PeeringConnectionOptionsRequest {
-            allow_dns_resolution_from_remote_vpc: self.allow_dns_resolution_from_remote_vpc,
-            allow_egress_from_local_classic_link_to_remote_vpc: self.allow_egress_from_local_classic_link_to_remote_vpc,
-            allow_egress_from_local_vpc_to_remote_classic_link: self.allow_egress_from_local_vpc_to_remote_classic_link,
+            allow_dns_resolution_from_remote_vpc: self.allow_dns_resolution_from_remote_vpc
+            ,
+            allow_egress_from_local_classic_link_to_remote_vpc: self.allow_egress_from_local_classic_link_to_remote_vpc
+            ,
+            allow_egress_from_local_vpc_to_remote_classic_link: self.allow_egress_from_local_vpc_to_remote_classic_link
+            ,
         }
     }
 }
+

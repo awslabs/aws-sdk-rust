@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct InvokeAgentOutput {
+pub struct InvokeAgentOutput  {
     /// <p>The agent's response to the user prompt.</p>
     pub completion: crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
@@ -11,27 +11,25 @@ pub struct InvokeAgentOutput {
     pub session_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl InvokeAgentOutput {
+impl  InvokeAgentOutput  {
     /// <p>The agent's response to the user prompt.</p>
-    pub fn completion(&self) -> &crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError> {
+    pub fn completion(&self) -> & crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError> {
         &self.completion
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
-    pub fn content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.content_type.deref()
+    pub fn content_type(&self) -> & str {
+        use std::ops::Deref; self.content_type.deref()
     }
     /// <p>The unique identifier of the session with the agent.</p>
-    pub fn session_id(&self) -> &str {
-        use std::ops::Deref;
-        self.session_id.deref()
+    pub fn session_id(&self) -> & str {
+        use std::ops::Deref; self.session_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for InvokeAgentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InvokeAgentOutput {
     /// Creates a new builder-style object to manufacture [`InvokeAgentOutput`](crate::operation::invoke_agent::InvokeAgentOutput).
     pub fn builder() -> crate::operation::invoke_agent::builders::InvokeAgentOutputBuilder {
@@ -43,8 +41,7 @@ impl InvokeAgentOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct InvokeAgentOutputBuilder {
-    pub(crate) completion:
-        ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
+    pub(crate) completion: ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -52,25 +49,16 @@ pub struct InvokeAgentOutputBuilder {
 impl InvokeAgentOutputBuilder {
     /// <p>The agent's response to the user prompt.</p>
     /// This field is required.
-    pub fn completion(
-        mut self,
-        input: crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
-    ) -> Self {
+    pub fn completion(mut self, input: crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>) -> Self {
         self.completion = ::std::option::Option::Some(input);
         self
     }
     /// <p>The agent's response to the user prompt.</p>
-    pub fn set_completion(
-        mut self,
-        input: ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
-    ) -> Self {
-        self.completion = input;
-        self
+    pub fn set_completion(mut self, input: ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>) -> Self {
+        self.completion = input; self
     }
     /// <p>The agent's response to the user prompt.</p>
-    pub fn get_completion(
-        &self,
-    ) -> &::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>> {
+    pub fn get_completion(&self) -> &::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>> {
         &self.completion
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
@@ -81,8 +69,7 @@ impl InvokeAgentOutputBuilder {
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,48 +83,47 @@ impl InvokeAgentOutputBuilder {
     }
     /// <p>The unique identifier of the session with the agent.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The unique identifier of the session with the agent.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InvokeAgentOutput`](crate::operation::invoke_agent::InvokeAgentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`completion`](crate::operation::invoke_agent::builders::InvokeAgentOutputBuilder::completion)
     /// - [`content_type`](crate::operation::invoke_agent::builders::InvokeAgentOutputBuilder::content_type)
     /// - [`session_id`](crate::operation::invoke_agent::builders::InvokeAgentOutputBuilder::session_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_agent::InvokeAgentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::invoke_agent::InvokeAgentOutput {
-            completion: self.completion.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "completion",
-                    "completion was not specified but it is required when building InvokeAgentOutput",
-                )
-            })?,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building InvokeAgentOutput",
-                )
-            })?,
-            session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_id",
-                    "session_id was not specified but it is required when building InvokeAgentOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::invoke_agent::InvokeAgentOutput {
+                completion: self.completion
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("completion", "completion was not specified but it is required when building InvokeAgentOutput")
+                    )?
+                ,
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building InvokeAgentOutput")
+                    )?
+                ,
+                session_id: self.session_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_id", "session_id was not specified but it is required when building InvokeAgentOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

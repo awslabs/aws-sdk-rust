@@ -3,19 +3,19 @@
 /// <p>Combines the execution state and configuration of a step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StepDetail {
+pub struct StepDetail  {
     /// <p>The step configuration.</p>
     pub step_config: ::std::option::Option<crate::types::StepConfig>,
     /// <p>The description of the step status.</p>
     pub execution_status_detail: ::std::option::Option<crate::types::StepExecutionStatusDetail>,
 }
-impl StepDetail {
+impl  StepDetail  {
     /// <p>The step configuration.</p>
-    pub fn step_config(&self) -> ::std::option::Option<&crate::types::StepConfig> {
+    pub fn step_config(&self) -> ::std::option::Option<& crate::types::StepConfig> {
         self.step_config.as_ref()
     }
     /// <p>The description of the step status.</p>
-    pub fn execution_status_detail(&self) -> ::std::option::Option<&crate::types::StepExecutionStatusDetail> {
+    pub fn execution_status_detail(&self) -> ::std::option::Option<& crate::types::StepExecutionStatusDetail> {
         self.execution_status_detail.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl StepDetailBuilder {
     }
     /// <p>The step configuration.</p>
     pub fn set_step_config(mut self, input: ::std::option::Option<crate::types::StepConfig>) -> Self {
-        self.step_config = input;
-        self
+        self.step_config = input; self
     }
     /// <p>The step configuration.</p>
     pub fn get_step_config(&self) -> &::std::option::Option<crate::types::StepConfig> {
@@ -57,8 +56,7 @@ impl StepDetailBuilder {
     }
     /// <p>The description of the step status.</p>
     pub fn set_execution_status_detail(mut self, input: ::std::option::Option<crate::types::StepExecutionStatusDetail>) -> Self {
-        self.execution_status_detail = input;
-        self
+        self.execution_status_detail = input; self
     }
     /// <p>The description of the step status.</p>
     pub fn get_execution_status_detail(&self) -> &::std::option::Option<crate::types::StepExecutionStatusDetail> {
@@ -67,8 +65,11 @@ impl StepDetailBuilder {
     /// Consumes the builder and constructs a [`StepDetail`](crate::types::StepDetail).
     pub fn build(self) -> crate::types::StepDetail {
         crate::types::StepDetail {
-            step_config: self.step_config,
-            execution_status_detail: self.execution_status_detail,
+            step_config: self.step_config
+            ,
+            execution_status_detail: self.execution_status_detail
+            ,
         }
     }
 }
+

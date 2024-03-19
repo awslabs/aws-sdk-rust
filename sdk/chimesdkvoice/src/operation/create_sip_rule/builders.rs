@@ -5,54 +5,50 @@ pub use crate::operation::create_sip_rule::_create_sip_rule_input::CreateSipRule
 
 impl CreateSipRuleInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_sip_rule::CreateSipRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_sip_rule::CreateSipRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_sip_rule();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_sip_rule::CreateSipRuleOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_sip_rule::CreateSipRuleError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_sip_rule();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateSipRule`.
-///
+/// 
 /// <p>Creates a SIP rule, which can be used to run a SIP media application as a target for a specific trigger type. For more information about SIP rules, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSipRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_sip_rule::builders::CreateSipRuleInputBuilder,
+                    inner: crate::operation::create_sip_rule::builders::CreateSipRuleInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_sip_rule::CreateSipRuleOutput,
-        crate::operation::create_sip_rule::CreateSipRuleError,
-    > for CreateSipRuleFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_sip_rule::CreateSipRuleOutput,
-            crate::operation::create_sip_rule::CreateSipRuleError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_sip_rule::CreateSipRuleOutput,
+                    crate::operation::create_sip_rule::CreateSipRuleError,
+                > for CreateSipRuleFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_sip_rule::CreateSipRuleOutput,
+                        crate::operation::create_sip_rule::CreateSipRuleError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateSipRuleFluentBuilder {
     /// Creates a new `CreateSipRule`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateSipRuleFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sip_rule::CreateSipRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_sip_rule::CreateSipRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_sip_rule::CreateSipRule::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_sip_rule::CreateSipRule::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_sip_rule::CreateSipRuleOutput,
-        crate::operation::create_sip_rule::CreateSipRuleError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_sip_rule::CreateSipRuleOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sip_rule::CreateSipRuleError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_sip_rule::CreateSipRule::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_sip_rule::CreateSipRule::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_sip_rule::CreateSipRuleOutput, crate::operation::create_sip_rule::CreateSipRuleError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the SIP rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -174,12 +161,13 @@ impl CreateSipRuleFluentBuilder {
         self
     }
     /// <p>List of SIP media applications, with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>) -> Self {
+    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>>) -> Self {
         self.inner = self.inner.set_target_applications(input);
         self
     }
     /// <p>List of SIP media applications, with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>> {
         self.inner.get_target_applications()
     }
 }
+

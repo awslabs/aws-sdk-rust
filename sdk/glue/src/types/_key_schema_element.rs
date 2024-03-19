@@ -3,22 +3,20 @@
 /// <p>A partition key pair consisting of a name and a type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeySchemaElement {
+pub struct KeySchemaElement  {
     /// <p>The name of a partition key.</p>
     pub name: ::std::string::String,
     /// <p>The type of a partition key.</p>
     pub r#type: ::std::string::String,
 }
-impl KeySchemaElement {
+impl  KeySchemaElement  {
     /// <p>The name of a partition key.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of a partition key.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
 }
 impl KeySchemaElement {
@@ -44,8 +42,7 @@ impl KeySchemaElementBuilder {
     }
     /// <p>The name of a partition key.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a partition key.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl KeySchemaElementBuilder {
     }
     /// <p>The type of a partition key.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of a partition key.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl KeySchemaElementBuilder {
     /// - [`name`](crate::types::builders::KeySchemaElementBuilder::name)
     /// - [`r#type`](crate::types::builders::KeySchemaElementBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::KeySchemaElement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeySchemaElement {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building KeySchemaElement",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building KeySchemaElement",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeySchemaElement {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building KeySchemaElement")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building KeySchemaElement")
+                    )?
+                ,
+            }
+        )
     }
 }
+

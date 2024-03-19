@@ -3,7 +3,7 @@
 /// <p>A list of containers that this task depends on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskContainerDependency {
+pub struct TaskContainerDependency  {
     /// <p>A unique identifier for the container.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The dependency condition of the container. The following are the available conditions and their behavior:</p>
@@ -17,9 +17,9 @@ pub struct TaskContainerDependency {
     /// </ul>
     pub condition: ::std::option::Option<::std::string::String>,
 }
-impl TaskContainerDependency {
+impl  TaskContainerDependency  {
     /// <p>A unique identifier for the container.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
     /// <p>The dependency condition of the container. The following are the available conditions and their behavior:</p>
@@ -31,7 +31,7 @@ impl TaskContainerDependency {
     /// <li>
     /// <p><code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the container exits with a zero status. This condition can't be set on an essential container.</p></li>
     /// </ul>
-    pub fn condition(&self) -> ::std::option::Option<&str> {
+    pub fn condition(&self) -> ::std::option::Option<& str> {
         self.condition.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl TaskContainerDependencyBuilder {
     }
     /// <p>A unique identifier for the container.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>A unique identifier for the container.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl TaskContainerDependencyBuilder {
     /// <p><code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the container exits with a zero status. This condition can't be set on an essential container.</p></li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The dependency condition of the container. The following are the available conditions and their behavior:</p>
     /// <ul>
@@ -105,8 +103,11 @@ impl TaskContainerDependencyBuilder {
     /// Consumes the builder and constructs a [`TaskContainerDependency`](crate::types::TaskContainerDependency).
     pub fn build(self) -> crate::types::TaskContainerDependency {
         crate::types::TaskContainerDependency {
-            container_name: self.container_name,
-            condition: self.condition,
+            container_name: self.container_name
+            ,
+            condition: self.condition
+            ,
         }
     }
 }
+

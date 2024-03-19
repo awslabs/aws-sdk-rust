@@ -5,23 +5,20 @@ pub use crate::operation::create_workload::_create_workload_input::CreateWorkloa
 
 impl CreateWorkloadInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_workload::CreateWorkloadOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_workload::CreateWorkloadError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_workload();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_workload::CreateWorkloadOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_workload::CreateWorkloadError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_workload();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateWorkload`.
-///
+/// 
 /// <p>Create a new workload.</p>
 /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><important>
@@ -42,33 +39,32 @@ impl CreateWorkloadInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkloadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_workload::builders::CreateWorkloadInputBuilder,
+                    inner: crate::operation::create_workload::builders::CreateWorkloadInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_workload::CreateWorkloadOutput,
-        crate::operation::create_workload::CreateWorkloadError,
-    > for CreateWorkloadFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_workload::CreateWorkloadOutput,
-            crate::operation::create_workload::CreateWorkloadError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_workload::CreateWorkloadOutput,
+                    crate::operation::create_workload::CreateWorkloadError,
+                > for CreateWorkloadFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_workload::CreateWorkloadOutput,
+                        crate::operation::create_workload::CreateWorkloadError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateWorkloadFluentBuilder {
     /// Creates a new `CreateWorkload`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -77,53 +73,44 @@ impl CreateWorkloadFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workload::CreateWorkloadOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_workload::CreateWorkloadError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_workload::CreateWorkload::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_workload::CreateWorkload::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_workload::CreateWorkloadOutput,
-        crate::operation::create_workload::CreateWorkloadError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_workload::CreateWorkloadOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workload::CreateWorkloadError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_workload::CreateWorkload::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_workload::CreateWorkload::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_workload::CreateWorkloadOutput, crate::operation::create_workload::CreateWorkloadError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,12 +166,12 @@ impl CreateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `AwsRegions`.
@@ -197,12 +184,12 @@ impl CreateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_aws_regions(input);
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_aws_regions()
     }
     /// Appends an item to `NonAwsRegions`.
@@ -215,12 +202,12 @@ impl CreateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_non_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_non_aws_regions(input);
         self
     }
     /// <p>The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_non_aws_regions()
     }
     /// Appends an item to `PillarPriorities`.
@@ -233,12 +220,12 @@ impl CreateWorkloadFluentBuilder {
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_pillar_priorities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pillar_priorities(input);
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn get_pillar_priorities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pillar_priorities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_pillar_priorities()
     }
     /// <p>The URL of the architectural design for the workload.</p>
@@ -480,13 +467,13 @@ impl CreateWorkloadFluentBuilder {
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
-    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lenses(input);
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
-    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_lenses()
     }
     /// <p>The notes associated with the workload.</p>
@@ -539,12 +526,12 @@ impl CreateWorkloadFluentBuilder {
         self
     }
     /// <p>The tags to be associated with the workload.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be associated with the workload.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
@@ -571,12 +558,12 @@ impl CreateWorkloadFluentBuilder {
         self
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_applications()
     }
     /// Appends an item to `ProfileArns`.
@@ -589,12 +576,12 @@ impl CreateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of profile ARNs associated with the workload.</p>
-    pub fn set_profile_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_profile_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_profile_arns(input);
         self
     }
     /// <p>The list of profile ARNs associated with the workload.</p>
-    pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_profile_arns()
     }
     /// Appends an item to `ReviewTemplateArns`.
@@ -607,12 +594,13 @@ impl CreateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of review template ARNs to associate with the workload.</p>
-    pub fn set_review_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_review_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_review_template_arns(input);
         self
     }
     /// <p>The list of review template ARNs to associate with the workload.</p>
-    pub fn get_review_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_review_template_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_review_template_arns()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Response statistics for an edge.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdgeStatistics {
+pub struct EdgeStatistics  {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     pub ok_count: ::std::option::Option<i64>,
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
@@ -15,17 +15,17 @@ pub struct EdgeStatistics {
     /// <p>The aggregate response time of completed requests.</p>
     pub total_response_time: ::std::option::Option<f64>,
 }
-impl EdgeStatistics {
+impl  EdgeStatistics  {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     pub fn ok_count(&self) -> ::std::option::Option<i64> {
         self.ok_count
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-    pub fn error_statistics(&self) -> ::std::option::Option<&crate::types::ErrorStatistics> {
+    pub fn error_statistics(&self) -> ::std::option::Option<& crate::types::ErrorStatistics> {
         self.error_statistics.as_ref()
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-    pub fn fault_statistics(&self) -> ::std::option::Option<&crate::types::FaultStatistics> {
+    pub fn fault_statistics(&self) -> ::std::option::Option<& crate::types::FaultStatistics> {
         self.fault_statistics.as_ref()
     }
     /// <p>The total number of completed requests.</p>
@@ -62,8 +62,7 @@ impl EdgeStatisticsBuilder {
     }
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     pub fn set_ok_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ok_count = input;
-        self
+        self.ok_count = input; self
     }
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     pub fn get_ok_count(&self) -> &::std::option::Option<i64> {
@@ -76,8 +75,7 @@ impl EdgeStatisticsBuilder {
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
     pub fn set_error_statistics(mut self, input: ::std::option::Option<crate::types::ErrorStatistics>) -> Self {
-        self.error_statistics = input;
-        self
+        self.error_statistics = input; self
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
     pub fn get_error_statistics(&self) -> &::std::option::Option<crate::types::ErrorStatistics> {
@@ -90,8 +88,7 @@ impl EdgeStatisticsBuilder {
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
     pub fn set_fault_statistics(mut self, input: ::std::option::Option<crate::types::FaultStatistics>) -> Self {
-        self.fault_statistics = input;
-        self
+        self.fault_statistics = input; self
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
     pub fn get_fault_statistics(&self) -> &::std::option::Option<crate::types::FaultStatistics> {
@@ -104,8 +101,7 @@ impl EdgeStatisticsBuilder {
     }
     /// <p>The total number of completed requests.</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The total number of completed requests.</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i64> {
@@ -118,8 +114,7 @@ impl EdgeStatisticsBuilder {
     }
     /// <p>The aggregate response time of completed requests.</p>
     pub fn set_total_response_time(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total_response_time = input;
-        self
+        self.total_response_time = input; self
     }
     /// <p>The aggregate response time of completed requests.</p>
     pub fn get_total_response_time(&self) -> &::std::option::Option<f64> {
@@ -128,11 +123,17 @@ impl EdgeStatisticsBuilder {
     /// Consumes the builder and constructs a [`EdgeStatistics`](crate::types::EdgeStatistics).
     pub fn build(self) -> crate::types::EdgeStatistics {
         crate::types::EdgeStatistics {
-            ok_count: self.ok_count,
-            error_statistics: self.error_statistics,
-            fault_statistics: self.fault_statistics,
-            total_count: self.total_count,
-            total_response_time: self.total_response_time,
+            ok_count: self.ok_count
+            ,
+            error_statistics: self.error_statistics
+            ,
+            fault_statistics: self.fault_statistics
+            ,
+            total_count: self.total_count
+            ,
+            total_response_time: self.total_response_time
+            ,
         }
     }
 }
+

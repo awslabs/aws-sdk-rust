@@ -3,19 +3,19 @@
 /// <p>Provides information about the delegated Amazon Macie administrator account for an organization in Organizations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdminAccount {
+pub struct AdminAccount  {
     /// <p>The Amazon Web Services account ID for the account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
     pub status: ::std::option::Option<crate::types::AdminStatus>,
 }
-impl AdminAccount {
+impl  AdminAccount  {
     /// <p>The Amazon Web Services account ID for the account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AdminStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AdminStatus> {
         self.status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AdminAccountBuilder {
     }
     /// <p>The Amazon Web Services account ID for the account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID for the account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AdminAccountBuilder {
     }
     /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AdminStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the account as the delegated Amazon Macie administrator account for the organization.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AdminStatus> {
@@ -65,8 +63,11 @@ impl AdminAccountBuilder {
     /// Consumes the builder and constructs a [`AdminAccount`](crate::types::AdminAccount).
     pub fn build(self) -> crate::types::AdminAccount {
         crate::types::AdminAccount {
-            account_id: self.account_id,
-            status: self.status,
+            account_id: self.account_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

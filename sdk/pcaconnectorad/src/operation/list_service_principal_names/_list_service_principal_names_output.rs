@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServicePrincipalNamesOutput {
+pub struct ListServicePrincipalNamesOutput  {
     /// <p>The service principal name, if any, that the connector uses to authenticate with Active Directory.</p>
-    pub service_principal_names: ::std::option::Option<::std::vec::Vec<crate::types::ServicePrincipalNameSummary>>,
+    pub service_principal_names: ::std::option::Option<::std::vec::Vec::<crate::types::ServicePrincipalNameSummary>>,
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListServicePrincipalNamesOutput {
+impl  ListServicePrincipalNamesOutput  {
     /// <p>The service principal name, if any, that the connector uses to authenticate with Active Directory.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_principal_names.is_none()`.
-    pub fn service_principal_names(&self) -> &[crate::types::ServicePrincipalNameSummary] {
-        self.service_principal_names.as_deref().unwrap_or_default()
+    pub fn service_principal_names(&self) -> & [crate::types::ServicePrincipalNameSummary] {
+        self.service_principal_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListServicePrincipalNamesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListServicePrincipalNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListServicePrincipalNamesOutput`](crate::operation::list_service_principal_names::ListServicePrincipalNamesOutput).
     pub fn builder() -> crate::operation::list_service_principal_names::builders::ListServicePrincipalNamesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListServicePrincipalNamesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicePrincipalNamesOutputBuilder {
-    pub(crate) service_principal_names: ::std::option::Option<::std::vec::Vec<crate::types::ServicePrincipalNameSummary>>,
+    pub(crate) service_principal_names: ::std::option::Option<::std::vec::Vec::<crate::types::ServicePrincipalNameSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListServicePrincipalNamesOutputBuilder {
     /// <p>The service principal name, if any, that the connector uses to authenticate with Active Directory.</p>
     pub fn service_principal_names(mut self, input: crate::types::ServicePrincipalNameSummary) -> Self {
         let mut v = self.service_principal_names.unwrap_or_default();
-        v.push(input);
-        self.service_principal_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_principal_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The service principal name, if any, that the connector uses to authenticate with Active Directory.</p>
-    pub fn set_service_principal_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServicePrincipalNameSummary>>) -> Self {
-        self.service_principal_names = input;
-        self
+    pub fn set_service_principal_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServicePrincipalNameSummary>>) -> Self {
+        self.service_principal_names = input; self
     }
     /// <p>The service principal name, if any, that the connector uses to authenticate with Active Directory.</p>
-    pub fn get_service_principal_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServicePrincipalNameSummary>> {
+    pub fn get_service_principal_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServicePrincipalNameSummary>> {
         &self.service_principal_names
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
@@ -69,28 +69,30 @@ impl ListServicePrincipalNamesOutputBuilder {
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListServicePrincipalNamesOutput`](crate::operation::list_service_principal_names::ListServicePrincipalNamesOutput).
     pub fn build(self) -> crate::operation::list_service_principal_names::ListServicePrincipalNamesOutput {
         crate::operation::list_service_principal_names::ListServicePrincipalNamesOutput {
-            service_principal_names: self.service_principal_names,
-            next_token: self.next_token,
+            service_principal_names: self.service_principal_names
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

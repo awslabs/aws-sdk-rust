@@ -3,7 +3,7 @@
 /// <p>The phone number ID, product type, or calling name fields to update, used with the <code>BatchUpdatePhoneNumber</code> and <code>UpdatePhoneNumber</code> actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdatePhoneNumberRequestItem {
+pub struct UpdatePhoneNumberRequestItem  {
     /// <p>The phone number ID to update.</p>
     pub phone_number_id: ::std::string::String,
     /// <p>The product type to update.</p>
@@ -11,22 +11,21 @@ pub struct UpdatePhoneNumberRequestItem {
     /// <p>The outbound calling name to update.</p>
     pub calling_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePhoneNumberRequestItem {
+impl  UpdatePhoneNumberRequestItem  {
     /// <p>The phone number ID to update.</p>
-    pub fn phone_number_id(&self) -> &str {
-        use std::ops::Deref;
-        self.phone_number_id.deref()
+    pub fn phone_number_id(&self) -> & str {
+        use std::ops::Deref; self.phone_number_id.deref()
     }
     /// <p>The product type to update.</p>
-    pub fn product_type(&self) -> ::std::option::Option<&crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<& crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     /// <p>The outbound calling name to update.</p>
-    pub fn calling_name(&self) -> ::std::option::Option<&str> {
+    pub fn calling_name(&self) -> ::std::option::Option<& str> {
         self.calling_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdatePhoneNumberRequestItem {
+impl  ::std::fmt::Debug for UpdatePhoneNumberRequestItem  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberRequestItem");
         formatter.field("phone_number_id", &self.phone_number_id);
@@ -59,8 +58,7 @@ impl UpdatePhoneNumberRequestItemBuilder {
     }
     /// <p>The phone number ID to update.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>The phone number ID to update.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,7 @@ impl UpdatePhoneNumberRequestItemBuilder {
     }
     /// <p>The product type to update.</p>
     pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
-        self.product_type = input;
-        self
+        self.product_type = input; self
     }
     /// <p>The product type to update.</p>
     pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
@@ -87,8 +84,7 @@ impl UpdatePhoneNumberRequestItemBuilder {
     }
     /// <p>The outbound calling name to update.</p>
     pub fn set_calling_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calling_name = input;
-        self
+        self.calling_name = input; self
     }
     /// <p>The outbound calling name to update.</p>
     pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,16 +94,19 @@ impl UpdatePhoneNumberRequestItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`phone_number_id`](crate::types::builders::UpdatePhoneNumberRequestItemBuilder::phone_number_id)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdatePhoneNumberRequestItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdatePhoneNumberRequestItem {
-            phone_number_id: self.phone_number_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phone_number_id",
-                    "phone_number_id was not specified but it is required when building UpdatePhoneNumberRequestItem",
-                )
-            })?,
-            product_type: self.product_type,
-            calling_name: self.calling_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdatePhoneNumberRequestItem {
+                phone_number_id: self.phone_number_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phone_number_id", "phone_number_id was not specified but it is required when building UpdatePhoneNumberRequestItem")
+                    )?
+                ,
+                product_type: self.product_type
+                ,
+                calling_name: self.calling_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdatePhoneNumberRequestItemBuilder {
@@ -119,3 +118,4 @@ impl ::std::fmt::Debug for UpdatePhoneNumberRequestItemBuilder {
         formatter.finish()
     }
 }
+

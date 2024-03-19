@@ -3,7 +3,7 @@
 /// <p>Provides information about a user associated with a principal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrincipalUser {
+pub struct PrincipalUser  {
     /// <p>The identifier of the user.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
@@ -11,17 +11,17 @@ pub struct PrincipalUser {
     /// <p>The type of group.</p>
     pub membership_type: ::std::option::Option<crate::types::MembershipType>,
 }
-impl PrincipalUser {
+impl  PrincipalUser  {
     /// <p>The identifier of the user.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
-    pub fn access(&self) -> &crate::types::ReadAccessType {
+    pub fn access(&self) -> & crate::types::ReadAccessType {
         &self.access
     }
     /// <p>The type of group.</p>
-    pub fn membership_type(&self) -> ::std::option::Option<&crate::types::MembershipType> {
+    pub fn membership_type(&self) -> ::std::option::Option<& crate::types::MembershipType> {
         self.membership_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PrincipalUserBuilder {
     }
     /// <p>The identifier of the user.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the user.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PrincipalUserBuilder {
     }
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
     pub fn set_access(mut self, input: ::std::option::Option<crate::types::ReadAccessType>) -> Self {
-        self.access = input;
-        self
+        self.access = input; self
     }
     /// <p>Provides information about whether to allow or deny access to the principal.</p>
     pub fn get_access(&self) -> &::std::option::Option<crate::types::ReadAccessType> {
@@ -77,8 +75,7 @@ impl PrincipalUserBuilder {
     }
     /// <p>The type of group.</p>
     pub fn set_membership_type(mut self, input: ::std::option::Option<crate::types::MembershipType>) -> Self {
-        self.membership_type = input;
-        self
+        self.membership_type = input; self
     }
     /// <p>The type of group.</p>
     pub fn get_membership_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
@@ -88,15 +85,19 @@ impl PrincipalUserBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`access`](crate::types::builders::PrincipalUserBuilder::access)
     pub fn build(self) -> ::std::result::Result<crate::types::PrincipalUser, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrincipalUser {
-            id: self.id,
-            access: self.access.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access",
-                    "access was not specified but it is required when building PrincipalUser",
-                )
-            })?,
-            membership_type: self.membership_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrincipalUser {
+                id: self.id
+                ,
+                access: self.access
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access", "access was not specified but it is required when building PrincipalUser")
+                    )?
+                ,
+                membership_type: self.membership_type
+                ,
+            }
+        )
     }
 }
+

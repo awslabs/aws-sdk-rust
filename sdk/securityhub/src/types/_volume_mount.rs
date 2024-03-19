@@ -3,19 +3,19 @@
 /// <p>Describes the mounting of a volume in a container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeMount {
+pub struct VolumeMount  {
     /// <p>The name of the volume.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path in the container at which the volume should be mounted.</p>
     pub mount_path: ::std::option::Option<::std::string::String>,
 }
-impl VolumeMount {
+impl  VolumeMount  {
     /// <p>The name of the volume.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path in the container at which the volume should be mounted.</p>
-    pub fn mount_path(&self) -> ::std::option::Option<&str> {
+    pub fn mount_path(&self) -> ::std::option::Option<& str> {
         self.mount_path.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl VolumeMountBuilder {
     }
     /// <p>The name of the volume.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the volume.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VolumeMountBuilder {
     }
     /// <p>The path in the container at which the volume should be mounted.</p>
     pub fn set_mount_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mount_path = input;
-        self
+        self.mount_path = input; self
     }
     /// <p>The path in the container at which the volume should be mounted.</p>
     pub fn get_mount_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl VolumeMountBuilder {
     /// Consumes the builder and constructs a [`VolumeMount`](crate::types::VolumeMount).
     pub fn build(self) -> crate::types::VolumeMount {
         crate::types::VolumeMount {
-            name: self.name,
-            mount_path: self.mount_path,
+            name: self.name
+            ,
+            mount_path: self.mount_path
+            ,
         }
     }
 }
+

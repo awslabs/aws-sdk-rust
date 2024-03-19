@@ -3,7 +3,7 @@
 /// <p>The CPU and memory recommendations for a container within the tasks of your Amazon ECS service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerRecommendation {
+pub struct ContainerRecommendation  {
     /// <p>The name of the container.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The recommended memory size configurations for the container.</p>
@@ -11,13 +11,13 @@ pub struct ContainerRecommendation {
     /// <p>The recommended number of CPU units reserved for the container.</p>
     pub cpu: ::std::option::Option<i32>,
 }
-impl ContainerRecommendation {
+impl  ContainerRecommendation  {
     /// <p>The name of the container.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
     /// <p>The recommended memory size configurations for the container.</p>
-    pub fn memory_size_configuration(&self) -> ::std::option::Option<&crate::types::MemorySizeConfiguration> {
+    pub fn memory_size_configuration(&self) -> ::std::option::Option<& crate::types::MemorySizeConfiguration> {
         self.memory_size_configuration.as_ref()
     }
     /// <p>The recommended number of CPU units reserved for the container.</p>
@@ -48,8 +48,7 @@ impl ContainerRecommendationBuilder {
     }
     /// <p>The name of the container.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ContainerRecommendationBuilder {
     }
     /// <p>The recommended memory size configurations for the container.</p>
     pub fn set_memory_size_configuration(mut self, input: ::std::option::Option<crate::types::MemorySizeConfiguration>) -> Self {
-        self.memory_size_configuration = input;
-        self
+        self.memory_size_configuration = input; self
     }
     /// <p>The recommended memory size configurations for the container.</p>
     pub fn get_memory_size_configuration(&self) -> &::std::option::Option<crate::types::MemorySizeConfiguration> {
@@ -76,8 +74,7 @@ impl ContainerRecommendationBuilder {
     }
     /// <p>The recommended number of CPU units reserved for the container.</p>
     pub fn set_cpu(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The recommended number of CPU units reserved for the container.</p>
     pub fn get_cpu(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ContainerRecommendationBuilder {
     /// Consumes the builder and constructs a [`ContainerRecommendation`](crate::types::ContainerRecommendation).
     pub fn build(self) -> crate::types::ContainerRecommendation {
         crate::types::ContainerRecommendation {
-            container_name: self.container_name,
-            memory_size_configuration: self.memory_size_configuration,
-            cpu: self.cpu,
+            container_name: self.container_name
+            ,
+            memory_size_configuration: self.memory_size_configuration
+            ,
+            cpu: self.cpu
+            ,
         }
     }
 }
+

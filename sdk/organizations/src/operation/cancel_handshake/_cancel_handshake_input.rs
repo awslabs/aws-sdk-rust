@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelHandshakeInput {
+pub struct CancelHandshakeInput  {
     /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelHandshakeInput {
+impl  CancelHandshakeInput  {
     /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn handshake_id(&self) -> ::std::option::Option<&str> {
+    pub fn handshake_id(&self) -> ::std::option::Option<& str> {
         self.handshake_id.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl CancelHandshakeInputBuilder {
     /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_handshake_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.handshake_id = input;
-        self
+        self.handshake_id = input; self
     }
     /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
@@ -47,11 +46,13 @@ impl CancelHandshakeInputBuilder {
         &self.handshake_id
     }
     /// Consumes the builder and constructs a [`CancelHandshakeInput`](crate::operation::cancel_handshake::CancelHandshakeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_handshake::CancelHandshakeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_handshake::CancelHandshakeInput {
-            handshake_id: self.handshake_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_handshake::CancelHandshakeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_handshake::CancelHandshakeInput {
+                handshake_id: self.handshake_id
+                ,
+            }
+        )
     }
 }
+

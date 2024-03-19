@@ -3,7 +3,7 @@
 /// <p>The structure that contains the metadata of the volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxVolume {
+pub struct KxVolume  {
     /// <p>A unique identifier for the volume.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
@@ -37,19 +37,19 @@ pub struct KxVolume {
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
     /// <p>The identifier of the availability zones.</p>
-    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The timestamp at which the volume was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl KxVolume {
+impl  KxVolume  {
     /// <p>A unique identifier for the volume.</p>
-    pub fn volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn volume_name(&self) -> ::std::option::Option<& str> {
         self.volume_name.as_deref()
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::KxVolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<& crate::types::KxVolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>The status of volume.</p>
@@ -73,33 +73,34 @@ impl KxVolume {
     /// <li>
     /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::KxVolumeStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::KxVolumeStatus> {
         self.status.as_ref()
     }
     /// <p>A description of the volume.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The error message when a failed state occurs.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
-    pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
+    pub fn az_mode(&self) -> ::std::option::Option<& crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
     /// <p>The identifier of the availability zones.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
-    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
-        self.availability_zone_ids.as_deref().unwrap_or_default()
+    pub fn availability_zone_ids(&self) -> & [::std::string::String] {
+        self.availability_zone_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp at which the volume was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
 }
@@ -120,7 +121,7 @@ pub struct KxVolumeBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) az_mode: ::std::option::Option<crate::types::KxAzMode>,
-    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -132,8 +133,7 @@ impl KxVolumeBuilder {
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_name = input;
-        self
+        self.volume_name = input; self
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +146,7 @@ impl KxVolumeBuilder {
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::KxVolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::KxVolumeType> {
@@ -200,8 +199,7 @@ impl KxVolumeBuilder {
     /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxVolumeStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of volume.</p>
     /// <ul>
@@ -234,8 +232,7 @@ impl KxVolumeBuilder {
     }
     /// <p>A description of the volume.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the volume.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +245,7 @@ impl KxVolumeBuilder {
     }
     /// <p>The error message when a failed state occurs.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The error message when a failed state occurs.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,8 +258,7 @@ impl KxVolumeBuilder {
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
-        self.az_mode = input;
-        self
+        self.az_mode = input; self
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
@@ -276,17 +271,16 @@ impl KxVolumeBuilder {
     /// <p>The identifier of the availability zones.</p>
     pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zone_ids.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zone_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zone_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zone_ids = input;
-        self
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input; self
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zone_ids
     }
     /// <p>The timestamp at which the volume was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -296,8 +290,7 @@ impl KxVolumeBuilder {
     }
     /// <p>The timestamp at which the volume was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp at which the volume was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -310,8 +303,7 @@ impl KxVolumeBuilder {
     }
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -320,15 +312,25 @@ impl KxVolumeBuilder {
     /// Consumes the builder and constructs a [`KxVolume`](crate::types::KxVolume).
     pub fn build(self) -> crate::types::KxVolume {
         crate::types::KxVolume {
-            volume_name: self.volume_name,
-            volume_type: self.volume_type,
-            status: self.status,
-            description: self.description,
-            status_reason: self.status_reason,
-            az_mode: self.az_mode,
-            availability_zone_ids: self.availability_zone_ids,
-            created_timestamp: self.created_timestamp,
-            last_modified_timestamp: self.last_modified_timestamp,
+            volume_name: self.volume_name
+            ,
+            volume_type: self.volume_type
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
+            status_reason: self.status_reason
+            ,
+            az_mode: self.az_mode
+            ,
+            availability_zone_ids: self.availability_zone_ids
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
         }
     }
 }
+

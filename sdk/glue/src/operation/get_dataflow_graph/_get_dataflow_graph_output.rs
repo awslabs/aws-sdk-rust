@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataflowGraphOutput {
+pub struct GetDataflowGraphOutput  {
     /// <p>A list of the nodes in the resulting DAG.</p>
-    pub dag_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>,
+    pub dag_nodes: ::std::option::Option<::std::vec::Vec::<crate::types::CodeGenNode>>,
     /// <p>A list of the edges in the resulting DAG.</p>
-    pub dag_edges: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>,
+    pub dag_edges: ::std::option::Option<::std::vec::Vec::<crate::types::CodeGenEdge>>,
     _request_id: Option<String>,
 }
-impl GetDataflowGraphOutput {
+impl  GetDataflowGraphOutput  {
     /// <p>A list of the nodes in the resulting DAG.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dag_nodes.is_none()`.
-    pub fn dag_nodes(&self) -> &[crate::types::CodeGenNode] {
-        self.dag_nodes.as_deref().unwrap_or_default()
+    pub fn dag_nodes(&self) -> & [crate::types::CodeGenNode] {
+        self.dag_nodes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the edges in the resulting DAG.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dag_edges.is_none()`.
-    pub fn dag_edges(&self) -> &[crate::types::CodeGenEdge] {
-        self.dag_edges.as_deref().unwrap_or_default()
+    pub fn dag_edges(&self) -> & [crate::types::CodeGenEdge] {
+        self.dag_edges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataflowGraphOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataflowGraphOutput {
     /// Creates a new builder-style object to manufacture [`GetDataflowGraphOutput`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput).
     pub fn builder() -> crate::operation::get_dataflow_graph::builders::GetDataflowGraphOutputBuilder {
@@ -39,8 +41,8 @@ impl GetDataflowGraphOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataflowGraphOutputBuilder {
-    pub(crate) dag_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>,
-    pub(crate) dag_edges: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>,
+    pub(crate) dag_nodes: ::std::option::Option<::std::vec::Vec::<crate::types::CodeGenNode>>,
+    pub(crate) dag_edges: ::std::option::Option<::std::vec::Vec::<crate::types::CodeGenEdge>>,
     _request_id: Option<String>,
 }
 impl GetDataflowGraphOutputBuilder {
@@ -51,17 +53,16 @@ impl GetDataflowGraphOutputBuilder {
     /// <p>A list of the nodes in the resulting DAG.</p>
     pub fn dag_nodes(mut self, input: crate::types::CodeGenNode) -> Self {
         let mut v = self.dag_nodes.unwrap_or_default();
-        v.push(input);
-        self.dag_nodes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dag_nodes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the nodes in the resulting DAG.</p>
-    pub fn set_dag_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>) -> Self {
-        self.dag_nodes = input;
-        self
+    pub fn set_dag_nodes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeGenNode>>) -> Self {
+        self.dag_nodes = input; self
     }
     /// <p>A list of the nodes in the resulting DAG.</p>
-    pub fn get_dag_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>> {
+    pub fn get_dag_nodes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeGenNode>> {
         &self.dag_nodes
     }
     /// Appends an item to `dag_edges`.
@@ -71,34 +72,36 @@ impl GetDataflowGraphOutputBuilder {
     /// <p>A list of the edges in the resulting DAG.</p>
     pub fn dag_edges(mut self, input: crate::types::CodeGenEdge) -> Self {
         let mut v = self.dag_edges.unwrap_or_default();
-        v.push(input);
-        self.dag_edges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dag_edges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the edges in the resulting DAG.</p>
-    pub fn set_dag_edges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>) -> Self {
-        self.dag_edges = input;
-        self
+    pub fn set_dag_edges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeGenEdge>>) -> Self {
+        self.dag_edges = input; self
     }
     /// <p>A list of the edges in the resulting DAG.</p>
-    pub fn get_dag_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>> {
+    pub fn get_dag_edges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeGenEdge>> {
         &self.dag_edges
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataflowGraphOutput`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput).
     pub fn build(self) -> crate::operation::get_dataflow_graph::GetDataflowGraphOutput {
         crate::operation::get_dataflow_graph::GetDataflowGraphOutput {
-            dag_nodes: self.dag_nodes,
-            dag_edges: self.dag_edges,
+            dag_nodes: self.dag_nodes
+            ,
+            dag_edges: self.dag_edges
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

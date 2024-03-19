@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFindingsOutput {
+pub struct DescribeFindingsOutput  {
     /// <p>Information about the finding.</p>
-    pub findings: ::std::vec::Vec<crate::types::Finding>,
+    pub findings: ::std::vec::Vec::<crate::types::Finding>,
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
-    pub failed_items: ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
+    pub failed_items: ::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>,
     _request_id: Option<String>,
 }
-impl DescribeFindingsOutput {
+impl  DescribeFindingsOutput  {
     /// <p>Information about the finding.</p>
-    pub fn findings(&self) -> &[crate::types::Finding] {
-        use std::ops::Deref;
-        self.findings.deref()
+    pub fn findings(&self) -> & [crate::types::Finding] {
+        use std::ops::Deref; self.findings.deref()
     }
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails> {
+    pub fn failed_items(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails> {
         &self.failed_items
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFindingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFindingsOutput`](crate::operation::describe_findings::DescribeFindingsOutput).
     pub fn builder() -> crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder {
@@ -36,8 +35,8 @@ impl DescribeFindingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFindingsOutputBuilder {
-    pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
-    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
+    pub(crate) findings: ::std::option::Option<::std::vec::Vec::<crate::types::Finding>>,
+    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeFindingsOutputBuilder {
@@ -48,17 +47,16 @@ impl DescribeFindingsOutputBuilder {
     /// <p>Information about the finding.</p>
     pub fn findings(mut self, input: crate::types::Finding) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the finding.</p>
-    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Finding>>) -> Self {
+        self.findings = input; self
     }
     /// <p>Information about the finding.</p>
-    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Finding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Finding>> {
         &self.findings
     }
     /// Adds a key-value pair to `failed_items`.
@@ -68,52 +66,47 @@ impl DescribeFindingsOutputBuilder {
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
     pub fn failed_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.failed_items = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.failed_items = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn set_failed_items(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
-    ) -> Self {
-        self.failed_items = input;
-        self
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>>) -> Self {
+        self.failed_items = input; self
     }
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FailedItemDetails>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFindingsOutput`](crate::operation::describe_findings::DescribeFindingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`findings`](crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder::findings)
     /// - [`failed_items`](crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder::failed_items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_findings::DescribeFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_findings::DescribeFindingsOutput {
-            findings: self.findings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "findings",
-                    "findings was not specified but it is required when building DescribeFindingsOutput",
-                )
-            })?,
-            failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failed_items",
-                    "failed_items was not specified but it is required when building DescribeFindingsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_findings::DescribeFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_findings::DescribeFindingsOutput {
+                findings: self.findings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("findings", "findings was not specified but it is required when building DescribeFindingsOutput")
+                    )?
+                ,
+                failed_items: self.failed_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failed_items", "failed_items was not specified but it is required when building DescribeFindingsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

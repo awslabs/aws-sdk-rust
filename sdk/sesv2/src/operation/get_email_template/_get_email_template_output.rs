@@ -3,29 +3,28 @@
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEmailTemplateOutput {
+pub struct GetEmailTemplateOutput  {
     /// <p>The name of the template.</p>
     pub template_name: ::std::string::String,
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub template_content: ::std::option::Option<crate::types::EmailTemplateContent>,
     _request_id: Option<String>,
 }
-impl GetEmailTemplateOutput {
+impl  GetEmailTemplateOutput  {
     /// <p>The name of the template.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
-    pub fn template_content(&self) -> ::std::option::Option<&crate::types::EmailTemplateContent> {
+    pub fn template_content(&self) -> ::std::option::Option<& crate::types::EmailTemplateContent> {
         self.template_content.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEmailTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailTemplateOutput`](crate::operation::get_email_template::GetEmailTemplateOutput).
     pub fn builder() -> crate::operation::get_email_template::builders::GetEmailTemplateOutputBuilder {
@@ -50,8 +49,7 @@ impl GetEmailTemplateOutputBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,37 +63,37 @@ impl GetEmailTemplateOutputBuilder {
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn set_template_content(mut self, input: ::std::option::Option<crate::types::EmailTemplateContent>) -> Self {
-        self.template_content = input;
-        self
+        self.template_content = input; self
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn get_template_content(&self) -> &::std::option::Option<crate::types::EmailTemplateContent> {
         &self.template_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEmailTemplateOutput`](crate::operation::get_email_template::GetEmailTemplateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`template_name`](crate::operation::get_email_template::builders::GetEmailTemplateOutputBuilder::template_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_email_template::GetEmailTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_email_template::GetEmailTemplateOutput {
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building GetEmailTemplateOutput",
-                )
-            })?,
-            template_content: self.template_content,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_email_template::GetEmailTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_email_template::GetEmailTemplateOutput {
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building GetEmailTemplateOutput")
+                    )?
+                ,
+                template_content: self.template_content
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPickupLocations`](crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of locations to list per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::set_next_token):<br>required: **false**<br><p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsRequest</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p><br>
-    /// - On success, responds with [`ListPickupLocationsOutput`](crate::operation::list_pickup_locations::ListPickupLocationsOutput) with field(s):
+                            /// - On success, responds with [`ListPickupLocationsOutput`](crate::operation::list_pickup_locations::ListPickupLocationsOutput) with field(s):
     ///   - [`addresses(Option<Vec::<Address>>)`](crate::operation::list_pickup_locations::ListPickupLocationsOutput::addresses): <p>Information about the address of pickup locations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pickup_locations::ListPickupLocationsOutput::next_token): <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsResult</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
-    /// - On failure, responds with [`SdkError<ListPickupLocationsError>`](crate::operation::list_pickup_locations::ListPickupLocationsError)
+                            /// - On failure, responds with [`SdkError<ListPickupLocationsError>`](crate::operation::list_pickup_locations::ListPickupLocationsError)
     pub fn list_pickup_locations(&self) -> crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder {
-        crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pickup_locations::builders::ListPickupLocationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

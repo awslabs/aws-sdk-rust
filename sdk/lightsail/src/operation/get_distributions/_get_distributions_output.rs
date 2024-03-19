@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDistributionsOutput {
+pub struct GetDistributionsOutput  {
     /// <p>An array of objects that describe your distributions.</p>
-    pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::LightsailDistribution>>,
+    pub distributions: ::std::option::Option<::std::vec::Vec::<crate::types::LightsailDistribution>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDistributionsOutput {
+impl  GetDistributionsOutput  {
     /// <p>An array of objects that describe your distributions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distributions.is_none()`.
-    pub fn distributions(&self) -> &[crate::types::LightsailDistribution] {
-        self.distributions.as_deref().unwrap_or_default()
+    pub fn distributions(&self) -> & [crate::types::LightsailDistribution] {
+        self.distributions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDistributionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDistributionsOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionsOutput`](crate::operation::get_distributions::GetDistributionsOutput).
     pub fn builder() -> crate::operation::get_distributions::builders::GetDistributionsOutputBuilder {
@@ -41,7 +42,7 @@ impl GetDistributionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionsOutputBuilder {
-    pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::LightsailDistribution>>,
+    pub(crate) distributions: ::std::option::Option<::std::vec::Vec::<crate::types::LightsailDistribution>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl GetDistributionsOutputBuilder {
     /// <p>An array of objects that describe your distributions.</p>
     pub fn distributions(mut self, input: crate::types::LightsailDistribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.distributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe your distributions.</p>
-    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LightsailDistribution>>) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LightsailDistribution>>) -> Self {
+        self.distributions = input; self
     }
     /// <p>An array of objects that describe your distributions.</p>
-    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LightsailDistribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LightsailDistribution>> {
         &self.distributions
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -77,8 +77,7 @@ impl GetDistributionsOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -87,20 +86,23 @@ impl GetDistributionsOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDistributionsOutput`](crate::operation::get_distributions::GetDistributionsOutput).
     pub fn build(self) -> crate::operation::get_distributions::GetDistributionsOutput {
         crate::operation::get_distributions::GetDistributionsOutput {
-            distributions: self.distributions,
-            next_page_token: self.next_page_token,
+            distributions: self.distributions
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

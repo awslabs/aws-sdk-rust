@@ -3,7 +3,7 @@
 /// <p>The name of a prepared statement that could not be returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedPreparedStatementName {
+pub struct UnprocessedPreparedStatementName  {
     /// <p>The name of a prepared statement that could not be returned due to an error.</p>
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The error code returned when the request for the prepared statement failed.</p>
@@ -19,13 +19,13 @@ pub struct UnprocessedPreparedStatementName {
     /// </ul>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl UnprocessedPreparedStatementName {
+impl  UnprocessedPreparedStatementName  {
     /// <p>The name of a prepared statement that could not be returned due to an error.</p>
-    pub fn statement_name(&self) -> ::std::option::Option<&str> {
+    pub fn statement_name(&self) -> ::std::option::Option<& str> {
         self.statement_name.as_deref()
     }
     /// <p>The error code returned when the request for the prepared statement failed.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
@@ -37,7 +37,7 @@ impl UnprocessedPreparedStatementName {
     /// <li>
     /// <p><code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p></li>
     /// </ul>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl UnprocessedPreparedStatementNameBuilder {
     }
     /// <p>The name of a prepared statement that could not be returned due to an error.</p>
     pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_name = input;
-        self
+        self.statement_name = input; self
     }
     /// <p>The name of a prepared statement that could not be returned due to an error.</p>
     pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl UnprocessedPreparedStatementNameBuilder {
     }
     /// <p>The error code returned when the request for the prepared statement failed.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code returned when the request for the prepared statement failed.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl UnprocessedPreparedStatementNameBuilder {
     /// <p><code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p></li>
     /// </ul>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
@@ -126,9 +123,13 @@ impl UnprocessedPreparedStatementNameBuilder {
     /// Consumes the builder and constructs a [`UnprocessedPreparedStatementName`](crate::types::UnprocessedPreparedStatementName).
     pub fn build(self) -> crate::types::UnprocessedPreparedStatementName {
         crate::types::UnprocessedPreparedStatementName {
-            statement_name: self.statement_name,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            statement_name: self.statement_name
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

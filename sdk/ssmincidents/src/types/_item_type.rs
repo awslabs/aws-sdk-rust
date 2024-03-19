@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let itemtype = unimplemented!();
 /// match itemtype {
@@ -37,16 +37,14 @@
 /// Specifically, when `itemtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ItemType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ItemType {
     #[allow(missing_docs)] // documentation missing in model
     Analysis,
@@ -68,92 +66,83 @@ pub enum ItemType {
     Task,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ItemType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANALYSIS" => ItemType::Analysis,
-            "ATTACHMENT" => ItemType::Attachment,
-            "AUTOMATION" => ItemType::Automation,
-            "INCIDENT" => ItemType::Incident,
-            "INVOLVED_RESOURCE" => ItemType::InvolvedResource,
-            "METRIC" => ItemType::Metric,
-            "OTHER" => ItemType::Other,
-            "PARENT" => ItemType::Parent,
-            "TASK" => ItemType::Task,
-            other => ItemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ANALYSIS" => ItemType::Analysis,
+"ATTACHMENT" => ItemType::Attachment,
+"AUTOMATION" => ItemType::Automation,
+"INCIDENT" => ItemType::Incident,
+"INVOLVED_RESOURCE" => ItemType::InvolvedResource,
+"METRIC" => ItemType::Metric,
+"OTHER" => ItemType::Other,
+"PARENT" => ItemType::Parent,
+"TASK" => ItemType::Task,
+other => ItemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ItemType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ItemType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ItemType::from(s))
+                    }
+                }
 impl ItemType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ItemType::Analysis => "ANALYSIS",
-            ItemType::Attachment => "ATTACHMENT",
-            ItemType::Automation => "AUTOMATION",
-            ItemType::Incident => "INCIDENT",
-            ItemType::InvolvedResource => "INVOLVED_RESOURCE",
-            ItemType::Metric => "METRIC",
-            ItemType::Other => "OTHER",
-            ItemType::Parent => "PARENT",
-            ItemType::Task => "TASK",
-            ItemType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANALYSIS",
-            "ATTACHMENT",
-            "AUTOMATION",
-            "INCIDENT",
-            "INVOLVED_RESOURCE",
-            "METRIC",
-            "OTHER",
-            "PARENT",
-            "TASK",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ItemType::Analysis => "ANALYSIS",
+    ItemType::Attachment => "ATTACHMENT",
+    ItemType::Automation => "AUTOMATION",
+    ItemType::Incident => "INCIDENT",
+    ItemType::InvolvedResource => "INVOLVED_RESOURCE",
+    ItemType::Metric => "METRIC",
+    ItemType::Other => "OTHER",
+    ItemType::Parent => "PARENT",
+    ItemType::Task => "TASK",
+    ItemType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANALYSIS", "ATTACHMENT", "AUTOMATION", "INCIDENT", "INVOLVED_RESOURCE", "METRIC", "OTHER", "PARENT", "TASK"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ItemType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ItemType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ItemType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ItemType::Analysis => write!(f, "ANALYSIS"),
-            ItemType::Attachment => write!(f, "ATTACHMENT"),
-            ItemType::Automation => write!(f, "AUTOMATION"),
-            ItemType::Incident => write!(f, "INCIDENT"),
-            ItemType::InvolvedResource => write!(f, "INVOLVED_RESOURCE"),
-            ItemType::Metric => write!(f, "METRIC"),
-            ItemType::Other => write!(f, "OTHER"),
-            ItemType::Parent => write!(f, "PARENT"),
-            ItemType::Task => write!(f, "TASK"),
-            ItemType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ItemType::Analysis => write!(f, "ANALYSIS"),
+ItemType::Attachment => write!(f, "ATTACHMENT"),
+ItemType::Automation => write!(f, "AUTOMATION"),
+ItemType::Incident => write!(f, "INCIDENT"),
+ItemType::InvolvedResource => write!(f, "INVOLVED_RESOURCE"),
+ItemType::Metric => write!(f, "METRIC"),
+ItemType::Other => write!(f, "OTHER"),
+ItemType::Parent => write!(f, "PARENT"),
+ItemType::Task => write!(f, "TASK"),
+ItemType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

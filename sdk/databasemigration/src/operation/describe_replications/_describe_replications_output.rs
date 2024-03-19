@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicationsOutput {
+pub struct DescribeReplicationsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The replication descriptions.</p>
-    pub replications: ::std::option::Option<::std::vec::Vec<crate::types::Replication>>,
+    pub replications: ::std::option::Option<::std::vec::Vec::<crate::types::Replication>>,
     _request_id: Option<String>,
 }
-impl DescribeReplicationsOutput {
+impl  DescribeReplicationsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The replication descriptions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replications.is_none()`.
-    pub fn replications(&self) -> &[crate::types::Replication] {
-        self.replications.as_deref().unwrap_or_default()
+    pub fn replications(&self) -> & [crate::types::Replication] {
+        self.replications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReplicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationsOutput`](crate::operation::describe_replications::DescribeReplicationsOutput).
     pub fn builder() -> crate::operation::describe_replications::builders::DescribeReplicationsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReplicationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replications: ::std::option::Option<::std::vec::Vec<crate::types::Replication>>,
+    pub(crate) replications: ::std::option::Option<::std::vec::Vec::<crate::types::Replication>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReplicationsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeReplicationsOutputBuilder {
     /// <p>The replication descriptions.</p>
     pub fn replications(mut self, input: crate::types::Replication) -> Self {
         let mut v = self.replications.unwrap_or_default();
-        v.push(input);
-        self.replications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The replication descriptions.</p>
-    pub fn set_replications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Replication>>) -> Self {
-        self.replications = input;
-        self
+    pub fn set_replications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Replication>>) -> Self {
+        self.replications = input; self
     }
     /// <p>The replication descriptions.</p>
-    pub fn get_replications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Replication>> {
+    pub fn get_replications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Replication>> {
         &self.replications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReplicationsOutput`](crate::operation::describe_replications::DescribeReplicationsOutput).
     pub fn build(self) -> crate::operation::describe_replications::DescribeReplicationsOutput {
         crate::operation::describe_replications::DescribeReplicationsOutput {
-            marker: self.marker,
-            replications: self.replications,
+            marker: self.marker
+            ,
+            replications: self.replications
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

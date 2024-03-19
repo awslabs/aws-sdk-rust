@@ -3,7 +3,7 @@
 /// <p>Object describing a participant that has joined a stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Participant {
+pub struct Participant  {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
@@ -13,7 +13,7 @@ pub struct Participant {
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
     pub first_join_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Whether the participant ever published to the stage session.</p>
     pub published: bool,
     /// <p>The participant’s Internet Service Provider.</p>
@@ -29,25 +29,25 @@ pub struct Participant {
     /// <p>The participant’s SDK version.</p>
     pub sdk_version: ::std::option::Option<::std::string::String>,
 }
-impl Participant {
+impl  Participant  {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Whether the participant is connected to or disconnected from the stage.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ParticipantState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ParticipantState> {
         self.state.as_ref()
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
-    pub fn first_join_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn first_join_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.first_join_time.as_ref()
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>Whether the participant ever published to the stage session.</p>
@@ -55,27 +55,27 @@ impl Participant {
         self.published
     }
     /// <p>The participant’s Internet Service Provider.</p>
-    pub fn isp_name(&self) -> ::std::option::Option<&str> {
+    pub fn isp_name(&self) -> ::std::option::Option<& str> {
         self.isp_name.as_deref()
     }
     /// <p>The participant’s operating system.</p>
-    pub fn os_name(&self) -> ::std::option::Option<&str> {
+    pub fn os_name(&self) -> ::std::option::Option<& str> {
         self.os_name.as_deref()
     }
     /// <p>The participant’s operating system version.</p>
-    pub fn os_version(&self) -> ::std::option::Option<&str> {
+    pub fn os_version(&self) -> ::std::option::Option<& str> {
         self.os_version.as_deref()
     }
     /// <p>The participant’s browser.</p>
-    pub fn browser_name(&self) -> ::std::option::Option<&str> {
+    pub fn browser_name(&self) -> ::std::option::Option<& str> {
         self.browser_name.as_deref()
     }
     /// <p>The participant’s browser version.</p>
-    pub fn browser_version(&self) -> ::std::option::Option<&str> {
+    pub fn browser_version(&self) -> ::std::option::Option<& str> {
         self.browser_version.as_deref()
     }
     /// <p>The participant’s SDK version.</p>
-    pub fn sdk_version(&self) -> ::std::option::Option<&str> {
+    pub fn sdk_version(&self) -> ::std::option::Option<& str> {
         self.sdk_version.as_deref()
     }
 }
@@ -94,7 +94,7 @@ pub struct ParticipantBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ParticipantState>,
     pub(crate) first_join_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) published: ::std::option::Option<bool>,
     pub(crate) isp_name: ::std::option::Option<::std::string::String>,
     pub(crate) os_name: ::std::option::Option<::std::string::String>,
@@ -111,8 +111,7 @@ impl ParticipantBuilder {
     }
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl ParticipantBuilder {
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl ParticipantBuilder {
     }
     /// <p>Whether the participant is connected to or disconnected from the stage.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ParticipantState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Whether the participant is connected to or disconnected from the stage.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ParticipantState> {
@@ -153,8 +150,7 @@ impl ParticipantBuilder {
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
     pub fn set_first_join_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.first_join_time = input;
-        self
+        self.first_join_time = input; self
     }
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
     pub fn get_first_join_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,17 +163,16 @@ impl ParticipantBuilder {
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>Whether the participant ever published to the stage session.</p>
@@ -187,8 +182,7 @@ impl ParticipantBuilder {
     }
     /// <p>Whether the participant ever published to the stage session.</p>
     pub fn set_published(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.published = input;
-        self
+        self.published = input; self
     }
     /// <p>Whether the participant ever published to the stage session.</p>
     pub fn get_published(&self) -> &::std::option::Option<bool> {
@@ -201,8 +195,7 @@ impl ParticipantBuilder {
     }
     /// <p>The participant’s Internet Service Provider.</p>
     pub fn set_isp_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.isp_name = input;
-        self
+        self.isp_name = input; self
     }
     /// <p>The participant’s Internet Service Provider.</p>
     pub fn get_isp_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +208,7 @@ impl ParticipantBuilder {
     }
     /// <p>The participant’s operating system.</p>
     pub fn set_os_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.os_name = input;
-        self
+        self.os_name = input; self
     }
     /// <p>The participant’s operating system.</p>
     pub fn get_os_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +221,7 @@ impl ParticipantBuilder {
     }
     /// <p>The participant’s operating system version.</p>
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.os_version = input;
-        self
+        self.os_version = input; self
     }
     /// <p>The participant’s operating system version.</p>
     pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +234,7 @@ impl ParticipantBuilder {
     }
     /// <p>The participant’s browser.</p>
     pub fn set_browser_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.browser_name = input;
-        self
+        self.browser_name = input; self
     }
     /// <p>The participant’s browser.</p>
     pub fn get_browser_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +247,7 @@ impl ParticipantBuilder {
     }
     /// <p>The participant’s browser version.</p>
     pub fn set_browser_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.browser_version = input;
-        self
+        self.browser_version = input; self
     }
     /// <p>The participant’s browser version.</p>
     pub fn get_browser_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +260,7 @@ impl ParticipantBuilder {
     }
     /// <p>The participant’s SDK version.</p>
     pub fn set_sdk_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sdk_version = input;
-        self
+        self.sdk_version = input; self
     }
     /// <p>The participant’s SDK version.</p>
     pub fn get_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,18 +269,32 @@ impl ParticipantBuilder {
     /// Consumes the builder and constructs a [`Participant`](crate::types::Participant).
     pub fn build(self) -> crate::types::Participant {
         crate::types::Participant {
-            participant_id: self.participant_id,
-            user_id: self.user_id,
-            state: self.state,
-            first_join_time: self.first_join_time,
-            attributes: self.attributes,
-            published: self.published.unwrap_or_default(),
-            isp_name: self.isp_name,
-            os_name: self.os_name,
-            os_version: self.os_version,
-            browser_name: self.browser_name,
-            browser_version: self.browser_version,
-            sdk_version: self.sdk_version,
+            participant_id: self.participant_id
+            ,
+            user_id: self.user_id
+            ,
+            state: self.state
+            ,
+            first_join_time: self.first_join_time
+            ,
+            attributes: self.attributes
+            ,
+            published: self.published
+                .unwrap_or_default()
+            ,
+            isp_name: self.isp_name
+            ,
+            os_name: self.os_name
+            ,
+            os_version: self.os_version
+            ,
+            browser_name: self.browser_name
+            ,
+            browser_version: self.browser_version
+            ,
+            sdk_version: self.sdk_version
+            ,
         }
     }
 }
+

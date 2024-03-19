@@ -3,7 +3,7 @@
 /// <p>Information about registering an Identity and Access Management (IAM) resource so Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to Amazon Timestream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamRegistrationResponse {
+pub struct IamRegistrationResponse  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
     pub role_arn: ::std::string::String,
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
@@ -11,18 +11,17 @@ pub struct IamRegistrationResponse {
     /// <p>A message associated with a registration error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl IamRegistrationResponse {
+impl  IamRegistrationResponse  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub fn registration_status(&self) -> &crate::types::RegistrationStatus {
+    pub fn registration_status(&self) -> & crate::types::RegistrationStatus {
         &self.registration_status
     }
     /// <p>A message associated with a registration error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl IamRegistrationResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl IamRegistrationResponseBuilder {
     }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
     pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.registration_status = input;
-        self
+        self.registration_status = input; self
     }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
     pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
@@ -79,8 +76,7 @@ impl IamRegistrationResponseBuilder {
     }
     /// <p>A message associated with a registration error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A message associated with a registration error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl IamRegistrationResponseBuilder {
     /// - [`role_arn`](crate::types::builders::IamRegistrationResponseBuilder::role_arn)
     /// - [`registration_status`](crate::types::builders::IamRegistrationResponseBuilder::registration_status)
     pub fn build(self) -> ::std::result::Result<crate::types::IamRegistrationResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IamRegistrationResponse {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building IamRegistrationResponse",
-                )
-            })?,
-            registration_status: self.registration_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_status",
-                    "registration_status was not specified but it is required when building IamRegistrationResponse",
-                )
-            })?,
-            error_message: self.error_message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IamRegistrationResponse {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building IamRegistrationResponse")
+                    )?
+                ,
+                registration_status: self.registration_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_status", "registration_status was not specified but it is required when building IamRegistrationResponse")
+                    )?
+                ,
+                error_message: self.error_message
+                ,
+            }
+        )
     }
 }
+

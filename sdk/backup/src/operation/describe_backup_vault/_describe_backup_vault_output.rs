@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBackupVaultOutput {
+pub struct DescribeBackupVaultOutput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
@@ -31,29 +31,29 @@ pub struct DescribeBackupVaultOutput {
     pub lock_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeBackupVaultOutput {
+impl  DescribeBackupVaultOutput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_arn(&self) -> ::std::option::Option<& str> {
         self.backup_vault_arn.as_deref()
     }
     /// <p>This is the type of vault described.</p>
-    pub fn vault_type(&self) -> ::std::option::Option<&crate::types::VaultType> {
+    pub fn vault_type(&self) -> ::std::option::Option<& crate::types::VaultType> {
         self.vault_type.as_ref()
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The date and time that a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>The number of recovery points that are stored in a backup vault.</p>
@@ -77,15 +77,15 @@ impl DescribeBackupVaultOutput {
     /// <p>The date and time when Backup Vault Lock configuration cannot be changed or deleted.</p>
     /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn lock_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lock_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lock_date.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBackupVaultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBackupVaultOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupVaultOutput`](crate::operation::describe_backup_vault::DescribeBackupVaultOutput).
     pub fn builder() -> crate::operation::describe_backup_vault::builders::DescribeBackupVaultOutputBuilder {
@@ -118,8 +118,7 @@ impl DescribeBackupVaultOutputBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl DescribeBackupVaultOutputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_arn = input;
-        self
+        self.backup_vault_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl DescribeBackupVaultOutputBuilder {
     }
     /// <p>This is the type of vault described.</p>
     pub fn set_vault_type(mut self, input: ::std::option::Option<crate::types::VaultType>) -> Self {
-        self.vault_type = input;
-        self
+        self.vault_type = input; self
     }
     /// <p>This is the type of vault described.</p>
     pub fn get_vault_type(&self) -> &::std::option::Option<crate::types::VaultType> {
@@ -160,8 +157,7 @@ impl DescribeBackupVaultOutputBuilder {
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl DescribeBackupVaultOutputBuilder {
     }
     /// <p>The date and time that a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time that a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +183,7 @@ impl DescribeBackupVaultOutputBuilder {
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +196,7 @@ impl DescribeBackupVaultOutputBuilder {
     }
     /// <p>The number of recovery points that are stored in a backup vault.</p>
     pub fn set_number_of_recovery_points(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_recovery_points = input;
-        self
+        self.number_of_recovery_points = input; self
     }
     /// <p>The number of recovery points that are stored in a backup vault.</p>
     pub fn get_number_of_recovery_points(&self) -> &::std::option::Option<i64> {
@@ -216,8 +209,7 @@ impl DescribeBackupVaultOutputBuilder {
     }
     /// <p>A Boolean that indicates whether Backup Vault Lock is currently protecting the backup vault. <code>True</code> means that Vault Lock causes delete or update operations on the recovery points stored in the vault to fail.</p>
     pub fn set_locked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.locked = input;
-        self
+        self.locked = input; self
     }
     /// <p>A Boolean that indicates whether Backup Vault Lock is currently protecting the backup vault. <code>True</code> means that Vault Lock causes delete or update operations on the recovery points stored in the vault to fail.</p>
     pub fn get_locked(&self) -> &::std::option::Option<bool> {
@@ -232,8 +224,7 @@ impl DescribeBackupVaultOutputBuilder {
     /// <p>The Backup Vault Lock setting that specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, Vault Lock does not enforce a minimum retention period.</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already stored in the vault prior to Vault Lock are not affected.</p>
     pub fn set_min_retention_days(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.min_retention_days = input;
-        self
+        self.min_retention_days = input; self
     }
     /// <p>The Backup Vault Lock setting that specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, Vault Lock does not enforce a minimum retention period.</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already stored in the vault prior to Vault Lock are not affected.</p>
@@ -249,8 +240,7 @@ impl DescribeBackupVaultOutputBuilder {
     /// <p>The Backup Vault Lock setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Vault Lock does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already stored in the vault prior to Vault Lock are not affected.</p>
     pub fn set_max_retention_days(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_retention_days = input;
-        self
+        self.max_retention_days = input; self
     }
     /// <p>The Backup Vault Lock setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Vault Lock does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already stored in the vault prior to Vault Lock are not affected.</p>
@@ -268,8 +258,7 @@ impl DescribeBackupVaultOutputBuilder {
     /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_lock_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.lock_date = input;
-        self
+        self.lock_date = input; self
     }
     /// <p>The date and time when Backup Vault Lock configuration cannot be changed or deleted.</p>
     /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>
@@ -278,29 +267,42 @@ impl DescribeBackupVaultOutputBuilder {
         &self.lock_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBackupVaultOutput`](crate::operation::describe_backup_vault::DescribeBackupVaultOutput).
     pub fn build(self) -> crate::operation::describe_backup_vault::DescribeBackupVaultOutput {
         crate::operation::describe_backup_vault::DescribeBackupVaultOutput {
-            backup_vault_name: self.backup_vault_name,
-            backup_vault_arn: self.backup_vault_arn,
-            vault_type: self.vault_type,
-            encryption_key_arn: self.encryption_key_arn,
-            creation_date: self.creation_date,
-            creator_request_id: self.creator_request_id,
-            number_of_recovery_points: self.number_of_recovery_points.unwrap_or_default(),
-            locked: self.locked,
-            min_retention_days: self.min_retention_days,
-            max_retention_days: self.max_retention_days,
-            lock_date: self.lock_date,
+            backup_vault_name: self.backup_vault_name
+            ,
+            backup_vault_arn: self.backup_vault_arn
+            ,
+            vault_type: self.vault_type
+            ,
+            encryption_key_arn: self.encryption_key_arn
+            ,
+            creation_date: self.creation_date
+            ,
+            creator_request_id: self.creator_request_id
+            ,
+            number_of_recovery_points: self.number_of_recovery_points
+                .unwrap_or_default()
+            ,
+            locked: self.locked
+            ,
+            min_retention_days: self.min_retention_days
+            ,
+            max_retention_days: self.max_retention_days
+            ,
+            lock_date: self.lock_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

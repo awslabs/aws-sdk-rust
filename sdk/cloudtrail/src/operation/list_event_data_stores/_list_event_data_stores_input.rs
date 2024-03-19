@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEventDataStoresInput {
+pub struct ListEventDataStoresInput  {
     /// <p>A token you can use to get the next page of event data store results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of event data stores to display on a single page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListEventDataStoresInput {
+impl  ListEventDataStoresInput  {
     /// <p>A token you can use to get the next page of event data store results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of event data stores to display on a single page.</p>
@@ -40,8 +40,7 @@ impl ListEventDataStoresInputBuilder {
     }
     /// <p>A token you can use to get the next page of event data store results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token you can use to get the next page of event data store results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl ListEventDataStoresInputBuilder {
     }
     /// <p>The maximum number of event data stores to display on a single page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of event data stores to display on a single page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEventDataStoresInput`](crate::operation::list_event_data_stores::ListEventDataStoresInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_event_data_stores::ListEventDataStoresInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_event_data_stores::ListEventDataStoresInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_event_data_stores::ListEventDataStoresInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_event_data_stores::ListEventDataStoresInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

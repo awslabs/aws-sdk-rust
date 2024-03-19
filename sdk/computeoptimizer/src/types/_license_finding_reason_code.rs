@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let licensefindingreasoncode = unimplemented!();
 /// match licensefindingreasoncode {
@@ -32,16 +32,14 @@
 /// Specifically, when `licensefindingreasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LicenseFindingReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum LicenseFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CwAppInsightsError,
@@ -53,72 +51,68 @@ pub enum LicenseFindingReasonCode {
     Optimized,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for LicenseFindingReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CloudWatchApplicationInsightsError" => LicenseFindingReasonCode::CwAppInsightsError,
-            "InvalidCloudWatchApplicationInsightsSetup" => LicenseFindingReasonCode::CwAppInsightsDisabled,
-            "LicenseOverprovisioned" => LicenseFindingReasonCode::LicenseOverProvisioned,
-            "Optimized" => LicenseFindingReasonCode::Optimized,
-            other => LicenseFindingReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CloudWatchApplicationInsightsError" => LicenseFindingReasonCode::CwAppInsightsError,
+"InvalidCloudWatchApplicationInsightsSetup" => LicenseFindingReasonCode::CwAppInsightsDisabled,
+"LicenseOverprovisioned" => LicenseFindingReasonCode::LicenseOverProvisioned,
+"Optimized" => LicenseFindingReasonCode::Optimized,
+other => LicenseFindingReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for LicenseFindingReasonCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(LicenseFindingReasonCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(LicenseFindingReasonCode::from(s))
+                    }
+                }
 impl LicenseFindingReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LicenseFindingReasonCode::CwAppInsightsError => "CloudWatchApplicationInsightsError",
-            LicenseFindingReasonCode::CwAppInsightsDisabled => "InvalidCloudWatchApplicationInsightsSetup",
-            LicenseFindingReasonCode::LicenseOverProvisioned => "LicenseOverprovisioned",
-            LicenseFindingReasonCode::Optimized => "Optimized",
-            LicenseFindingReasonCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CloudWatchApplicationInsightsError",
-            "InvalidCloudWatchApplicationInsightsSetup",
-            "LicenseOverprovisioned",
-            "Optimized",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LicenseFindingReasonCode::CwAppInsightsError => "CloudWatchApplicationInsightsError",
+    LicenseFindingReasonCode::CwAppInsightsDisabled => "InvalidCloudWatchApplicationInsightsSetup",
+    LicenseFindingReasonCode::LicenseOverProvisioned => "LicenseOverprovisioned",
+    LicenseFindingReasonCode::Optimized => "Optimized",
+    LicenseFindingReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CloudWatchApplicationInsightsError", "InvalidCloudWatchApplicationInsightsSetup", "LicenseOverprovisioned", "Optimized"]
+                }
+            }
 impl ::std::convert::AsRef<str> for LicenseFindingReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl LicenseFindingReasonCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for LicenseFindingReasonCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            LicenseFindingReasonCode::CwAppInsightsError => write!(f, "CloudWatchApplicationInsightsError"),
-            LicenseFindingReasonCode::CwAppInsightsDisabled => write!(f, "InvalidCloudWatchApplicationInsightsSetup"),
-            LicenseFindingReasonCode::LicenseOverProvisioned => write!(f, "LicenseOverprovisioned"),
-            LicenseFindingReasonCode::Optimized => write!(f, "Optimized"),
-            LicenseFindingReasonCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                LicenseFindingReasonCode::CwAppInsightsError => write!(f, "CloudWatchApplicationInsightsError"),
+LicenseFindingReasonCode::CwAppInsightsDisabled => write!(f, "InvalidCloudWatchApplicationInsightsSetup"),
+LicenseFindingReasonCode::LicenseOverProvisioned => write!(f, "LicenseOverprovisioned"),
+LicenseFindingReasonCode::Optimized => write!(f, "Optimized"),
+LicenseFindingReasonCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeContactFlowInput {
+pub struct DescribeContactFlowInput  {
     /// <p>The identifier of the Amazon Connect instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow.</p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeContactFlowInput {
+impl  DescribeContactFlowInput  {
     /// <p>The identifier of the Amazon Connect instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> ::std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeContactFlowInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeContactFlowInputBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_id
     }
     /// Consumes the builder and constructs a [`DescribeContactFlowInput`](crate::operation::describe_contact_flow::DescribeContactFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_contact_flow::DescribeContactFlowInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_contact_flow::DescribeContactFlowInput {
-            instance_id: self.instance_id,
-            contact_flow_id: self.contact_flow_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_contact_flow::DescribeContactFlowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_contact_flow::DescribeContactFlowInput {
+                instance_id: self.instance_id
+                ,
+                contact_flow_id: self.contact_flow_id
+                ,
+            }
+        )
     }
 }
+

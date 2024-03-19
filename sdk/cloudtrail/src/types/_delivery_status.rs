@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deliverystatus = unimplemented!();
 /// match deliverystatus {
@@ -37,16 +37,14 @@
 /// Specifically, when `deliverystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeliveryStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `DeliveryStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DeliveryStatus {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -68,92 +66,83 @@ pub enum DeliveryStatus {
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DeliveryStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => DeliveryStatus::AccessDenied,
-            "ACCESS_DENIED_SIGNING_FILE" => DeliveryStatus::AccessDeniedSigningFile,
-            "CANCELLED" => DeliveryStatus::Cancelled,
-            "FAILED" => DeliveryStatus::Failed,
-            "FAILED_SIGNING_FILE" => DeliveryStatus::FailedSigningFile,
-            "PENDING" => DeliveryStatus::Pending,
-            "RESOURCE_NOT_FOUND" => DeliveryStatus::ResourceNotFound,
-            "SUCCESS" => DeliveryStatus::Success,
-            "UNKNOWN" => DeliveryStatus::UnknownValue,
-            other => DeliveryStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCESS_DENIED" => DeliveryStatus::AccessDenied,
+"ACCESS_DENIED_SIGNING_FILE" => DeliveryStatus::AccessDeniedSigningFile,
+"CANCELLED" => DeliveryStatus::Cancelled,
+"FAILED" => DeliveryStatus::Failed,
+"FAILED_SIGNING_FILE" => DeliveryStatus::FailedSigningFile,
+"PENDING" => DeliveryStatus::Pending,
+"RESOURCE_NOT_FOUND" => DeliveryStatus::ResourceNotFound,
+"SUCCESS" => DeliveryStatus::Success,
+"UNKNOWN" => DeliveryStatus::UnknownValue,
+other => DeliveryStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DeliveryStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DeliveryStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DeliveryStatus::from(s))
+                    }
+                }
 impl DeliveryStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeliveryStatus::AccessDenied => "ACCESS_DENIED",
-            DeliveryStatus::AccessDeniedSigningFile => "ACCESS_DENIED_SIGNING_FILE",
-            DeliveryStatus::Cancelled => "CANCELLED",
-            DeliveryStatus::Failed => "FAILED",
-            DeliveryStatus::FailedSigningFile => "FAILED_SIGNING_FILE",
-            DeliveryStatus::Pending => "PENDING",
-            DeliveryStatus::ResourceNotFound => "RESOURCE_NOT_FOUND",
-            DeliveryStatus::Success => "SUCCESS",
-            DeliveryStatus::UnknownValue => "UNKNOWN",
-            DeliveryStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "ACCESS_DENIED_SIGNING_FILE",
-            "CANCELLED",
-            "FAILED",
-            "FAILED_SIGNING_FILE",
-            "PENDING",
-            "RESOURCE_NOT_FOUND",
-            "SUCCESS",
-            "UNKNOWN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeliveryStatus::AccessDenied => "ACCESS_DENIED",
+    DeliveryStatus::AccessDeniedSigningFile => "ACCESS_DENIED_SIGNING_FILE",
+    DeliveryStatus::Cancelled => "CANCELLED",
+    DeliveryStatus::Failed => "FAILED",
+    DeliveryStatus::FailedSigningFile => "FAILED_SIGNING_FILE",
+    DeliveryStatus::Pending => "PENDING",
+    DeliveryStatus::ResourceNotFound => "RESOURCE_NOT_FOUND",
+    DeliveryStatus::Success => "SUCCESS",
+    DeliveryStatus::UnknownValue => "UNKNOWN",
+    DeliveryStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "ACCESS_DENIED_SIGNING_FILE", "CANCELLED", "FAILED", "FAILED_SIGNING_FILE", "PENDING", "RESOURCE_NOT_FOUND", "SUCCESS", "UNKNOWN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DeliveryStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DeliveryStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DeliveryStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DeliveryStatus::AccessDenied => write!(f, "ACCESS_DENIED"),
-            DeliveryStatus::AccessDeniedSigningFile => write!(f, "ACCESS_DENIED_SIGNING_FILE"),
-            DeliveryStatus::Cancelled => write!(f, "CANCELLED"),
-            DeliveryStatus::Failed => write!(f, "FAILED"),
-            DeliveryStatus::FailedSigningFile => write!(f, "FAILED_SIGNING_FILE"),
-            DeliveryStatus::Pending => write!(f, "PENDING"),
-            DeliveryStatus::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
-            DeliveryStatus::Success => write!(f, "SUCCESS"),
-            DeliveryStatus::UnknownValue => write!(f, "UNKNOWN"),
-            DeliveryStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DeliveryStatus::AccessDenied => write!(f, "ACCESS_DENIED"),
+DeliveryStatus::AccessDeniedSigningFile => write!(f, "ACCESS_DENIED_SIGNING_FILE"),
+DeliveryStatus::Cancelled => write!(f, "CANCELLED"),
+DeliveryStatus::Failed => write!(f, "FAILED"),
+DeliveryStatus::FailedSigningFile => write!(f, "FAILED_SIGNING_FILE"),
+DeliveryStatus::Pending => write!(f, "PENDING"),
+DeliveryStatus::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+DeliveryStatus::Success => write!(f, "SUCCESS"),
+DeliveryStatus::UnknownValue => write!(f, "UNKNOWN"),
+DeliveryStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

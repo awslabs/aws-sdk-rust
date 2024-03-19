@@ -2,18 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCloudFrontOriginAccessIdentities`](crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::set_marker):<br>required: **false**<br><p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of origin access identities you want in the response body.</p><br>
-    /// - On success, responds with [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput) with field(s):
+                            /// - On success, responds with [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput) with field(s):
     ///   - [`cloud_front_origin_access_identity_list(Option<CloudFrontOriginAccessIdentityList>)`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput::cloud_front_origin_access_identity_list): <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-    /// - On failure, responds with [`SdkError<ListCloudFrontOriginAccessIdentitiesError>`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError)
-    pub fn list_cloud_front_origin_access_identities(
-        &self,
-    ) -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder {
-        crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListCloudFrontOriginAccessIdentitiesError>`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError)
+    pub fn list_cloud_front_origin_access_identities(&self) -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder {
+                                crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

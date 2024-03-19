@@ -5,55 +5,51 @@ pub use crate::operation::set_resource_access_for_bucket::_set_resource_access_f
 
 impl SetResourceAccessForBucketInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.set_resource_access_for_bucket();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.set_resource_access_for_bucket();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SetResourceAccessForBucket`.
-///
+/// 
 /// <p>Sets the Amazon Lightsail resources that can access the specified Lightsail bucket.</p>
 /// <p>Lightsail buckets currently support setting access for Lightsail instances in the same Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetResourceAccessForBucketFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder,
+                    inner: crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
-        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-    > for SetResourceAccessForBucketFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
+                    crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
+                > for SetResourceAccessForBucketFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
+                        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SetResourceAccessForBucketFluentBuilder {
     /// Creates a new `SetResourceAccessForBucket`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl SetResourceAccessForBucketFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucket::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucket::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
-        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucket::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucket::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput, crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
@@ -173,3 +160,4 @@ impl SetResourceAccessForBucketFluentBuilder {
         self.inner.get_access()
     }
 }
+

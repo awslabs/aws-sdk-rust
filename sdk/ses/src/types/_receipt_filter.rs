@@ -4,7 +4,7 @@
 /// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-ip-filtering-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReceiptFilter {
+pub struct ReceiptFilter  {
     /// <p>The name of the IP address filter. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct ReceiptFilter {
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
     pub ip_filter: ::std::option::Option<crate::types::ReceiptIpFilter>,
 }
-impl ReceiptFilter {
+impl  ReceiptFilter  {
     /// <p>The name of the IP address filter. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -28,12 +28,11 @@ impl ReceiptFilter {
     /// <li>
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
-    pub fn ip_filter(&self) -> ::std::option::Option<&crate::types::ReceiptIpFilter> {
+    pub fn ip_filter(&self) -> ::std::option::Option<& crate::types::ReceiptIpFilter> {
         self.ip_filter.as_ref()
     }
 }
@@ -76,8 +75,7 @@ impl ReceiptFilterBuilder {
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the IP address filter. The name must meet the following requirements:</p>
     /// <ul>
@@ -99,8 +97,7 @@ impl ReceiptFilterBuilder {
     }
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
     pub fn set_ip_filter(mut self, input: ::std::option::Option<crate::types::ReceiptIpFilter>) -> Self {
-        self.ip_filter = input;
-        self
+        self.ip_filter = input; self
     }
     /// <p>A structure that provides the IP addresses to block or allow, and whether to block or allow incoming mail from them.</p>
     pub fn get_ip_filter(&self) -> &::std::option::Option<crate::types::ReceiptIpFilter> {
@@ -110,14 +107,17 @@ impl ReceiptFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ReceiptFilterBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ReceiptFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReceiptFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ReceiptFilter",
-                )
-            })?,
-            ip_filter: self.ip_filter,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReceiptFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ReceiptFilter")
+                    )?
+                ,
+                ip_filter: self.ip_filter
+                ,
+            }
+        )
     }
 }
+

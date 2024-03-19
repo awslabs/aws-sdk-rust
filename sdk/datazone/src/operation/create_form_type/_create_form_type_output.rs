@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateFormTypeOutput {
+pub struct CreateFormTypeOutput  {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
     pub domain_id: ::std::string::String,
     /// <p>The name of this Amazon DataZone metadata form type.</p>
@@ -19,40 +19,37 @@ pub struct CreateFormTypeOutput {
     pub origin_project_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateFormTypeOutput {
+impl  CreateFormTypeOutput  {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The name of this Amazon DataZone metadata form type.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The revision of this Amazon DataZone metadata form type.</p>
-    pub fn revision(&self) -> &str {
-        use std::ops::Deref;
-        self.revision.deref()
+    pub fn revision(&self) -> & str {
+        use std::ops::Deref; self.revision.deref()
     }
     /// <p>The description of this Amazon DataZone metadata form type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the project that owns this Amazon DataZone metadata form type.</p>
-    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
+    pub fn owning_project_id(&self) -> ::std::option::Option<& str> {
         self.owning_project_id.as_deref()
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type was originally created.</p>
-    pub fn origin_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_domain_id(&self) -> ::std::option::Option<& str> {
         self.origin_domain_id.as_deref()
     }
     /// <p>The ID of the project in which this Amazon DataZone metadata form type was originally created.</p>
-    pub fn origin_project_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_project_id(&self) -> ::std::option::Option<& str> {
         self.origin_project_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateFormTypeOutput {
+impl  ::std::fmt::Debug for CreateFormTypeOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFormTypeOutput");
         formatter.field("domain_id", &self.domain_id);
@@ -67,10 +64,10 @@ impl ::std::fmt::Debug for CreateFormTypeOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFormTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFormTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateFormTypeOutput`](crate::operation::create_form_type::CreateFormTypeOutput).
     pub fn builder() -> crate::operation::create_form_type::builders::CreateFormTypeOutputBuilder {
@@ -100,8 +97,7 @@ impl CreateFormTypeOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +111,7 @@ impl CreateFormTypeOutputBuilder {
     }
     /// <p>The name of this Amazon DataZone metadata form type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this Amazon DataZone metadata form type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +125,7 @@ impl CreateFormTypeOutputBuilder {
     }
     /// <p>The revision of this Amazon DataZone metadata form type.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of this Amazon DataZone metadata form type.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +138,7 @@ impl CreateFormTypeOutputBuilder {
     }
     /// <p>The description of this Amazon DataZone metadata form type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of this Amazon DataZone metadata form type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +151,7 @@ impl CreateFormTypeOutputBuilder {
     }
     /// <p>The ID of the project that owns this Amazon DataZone metadata form type.</p>
     pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_id = input;
-        self
+        self.owning_project_id = input; self
     }
     /// <p>The ID of the project that owns this Amazon DataZone metadata form type.</p>
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +164,7 @@ impl CreateFormTypeOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type was originally created.</p>
     pub fn set_origin_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_domain_id = input;
-        self
+        self.origin_domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type was originally created.</p>
     pub fn get_origin_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,55 +177,55 @@ impl CreateFormTypeOutputBuilder {
     }
     /// <p>The ID of the project in which this Amazon DataZone metadata form type was originally created.</p>
     pub fn set_origin_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_project_id = input;
-        self
+        self.origin_project_id = input; self
     }
     /// <p>The ID of the project in which this Amazon DataZone metadata form type was originally created.</p>
     pub fn get_origin_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin_project_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFormTypeOutput`](crate::operation::create_form_type::CreateFormTypeOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::operation::create_form_type::builders::CreateFormTypeOutputBuilder::domain_id)
     /// - [`name`](crate::operation::create_form_type::builders::CreateFormTypeOutputBuilder::name)
     /// - [`revision`](crate::operation::create_form_type::builders::CreateFormTypeOutputBuilder::revision)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_form_type::CreateFormTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_form_type::CreateFormTypeOutput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building CreateFormTypeOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateFormTypeOutput",
-                )
-            })?,
-            revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision",
-                    "revision was not specified but it is required when building CreateFormTypeOutput",
-                )
-            })?,
-            description: self.description,
-            owning_project_id: self.owning_project_id,
-            origin_domain_id: self.origin_domain_id,
-            origin_project_id: self.origin_project_id,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_form_type::CreateFormTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_form_type::CreateFormTypeOutput {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building CreateFormTypeOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreateFormTypeOutput")
+                    )?
+                ,
+                revision: self.revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision", "revision was not specified but it is required when building CreateFormTypeOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                owning_project_id: self.owning_project_id
+                ,
+                origin_domain_id: self.origin_domain_id
+                ,
+                origin_project_id: self.origin_project_id
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateFormTypeOutputBuilder {
@@ -251,3 +242,4 @@ impl ::std::fmt::Debug for CreateFormTypeOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccountsOutput {
+pub struct ListAccountsOutput  {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-    pub account_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountInfo>>,
+    pub account_list: ::std::option::Option<::std::vec::Vec::<crate::types::AccountInfo>>,
     _request_id: Option<String>,
 }
-impl ListAccountsOutput {
+impl  ListAccountsOutput  {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_list.is_none()`.
-    pub fn account_list(&self) -> &[crate::types::AccountInfo] {
-        self.account_list.as_deref().unwrap_or_default()
+    pub fn account_list(&self) -> & [crate::types::AccountInfo] {
+        self.account_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccountsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountsOutput`](crate::operation::list_accounts::ListAccountsOutput).
     pub fn builder() -> crate::operation::list_accounts::builders::ListAccountsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListAccountsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) account_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountInfo>>,
+    pub(crate) account_list: ::std::option::Option<::std::vec::Vec::<crate::types::AccountInfo>>,
     _request_id: Option<String>,
 }
 impl ListAccountsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListAccountsOutputBuilder {
     }
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListAccountsOutputBuilder {
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
     pub fn account_list(mut self, input: crate::types::AccountInfo) -> Self {
         let mut v = self.account_list.unwrap_or_default();
-        v.push(input);
-        self.account_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-    pub fn set_account_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountInfo>>) -> Self {
-        self.account_list = input;
-        self
+    pub fn set_account_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountInfo>>) -> Self {
+        self.account_list = input; self
     }
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-    pub fn get_account_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountInfo>> {
+    pub fn get_account_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountInfo>> {
         &self.account_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccountsOutput`](crate::operation::list_accounts::ListAccountsOutput).
     pub fn build(self) -> crate::operation::list_accounts::ListAccountsOutput {
         crate::operation::list_accounts::ListAccountsOutput {
-            next_token: self.next_token,
-            account_list: self.account_list,
+            next_token: self.next_token
+            ,
+            account_list: self.account_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -6,28 +6,29 @@
 /// <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchFilter {
+pub struct SearchFilter  {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
     pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
     pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SearchFilter {
+impl  SearchFilter  {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&str> {
+    pub fn attribute(&self) -> ::std::option::Option<& str> {
         self.attribute.as_deref()
     }
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
-    pub fn operator(&self) -> ::std::option::Option<&str> {
+    pub fn operator(&self) -> ::std::option::Option<& str> {
         self.operator.as_deref()
     }
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchFilter {
@@ -43,7 +44,7 @@ impl SearchFilter {
 pub struct SearchFilterBuilder {
     pub(crate) attribute: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SearchFilterBuilder {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
@@ -53,8 +54,7 @@ impl SearchFilterBuilder {
     }
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +67,7 @@ impl SearchFilterBuilder {
     }
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
     pub fn get_operator(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,25 +80,28 @@ impl SearchFilterBuilder {
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`SearchFilter`](crate::types::SearchFilter).
     pub fn build(self) -> crate::types::SearchFilter {
         crate::types::SearchFilter {
-            attribute: self.attribute,
-            operator: self.operator,
-            values: self.values,
+            attribute: self.attribute
+            ,
+            operator: self.operator
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCostAllocationTagsStatusInput {
+pub struct UpdateCostAllocationTagsStatusInput  {
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
-    pub cost_allocation_tags_status: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>>,
+    pub cost_allocation_tags_status: ::std::option::Option<::std::vec::Vec::<crate::types::CostAllocationTagStatusEntry>>,
 }
-impl UpdateCostAllocationTagsStatusInput {
+impl  UpdateCostAllocationTagsStatusInput  {
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_allocation_tags_status.is_none()`.
-    pub fn cost_allocation_tags_status(&self) -> &[crate::types::CostAllocationTagStatusEntry] {
-        self.cost_allocation_tags_status.as_deref().unwrap_or_default()
+    pub fn cost_allocation_tags_status(&self) -> & [crate::types::CostAllocationTagStatusEntry] {
+        self.cost_allocation_tags_status.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateCostAllocationTagsStatusInput {
@@ -25,7 +26,7 @@ impl UpdateCostAllocationTagsStatusInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusInputBuilder {
-    pub(crate) cost_allocation_tags_status: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>>,
+    pub(crate) cost_allocation_tags_status: ::std::option::Option<::std::vec::Vec::<crate::types::CostAllocationTagStatusEntry>>,
 }
 impl UpdateCostAllocationTagsStatusInputBuilder {
     /// Appends an item to `cost_allocation_tags_status`.
@@ -35,33 +36,26 @@ impl UpdateCostAllocationTagsStatusInputBuilder {
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     pub fn cost_allocation_tags_status(mut self, input: crate::types::CostAllocationTagStatusEntry) -> Self {
         let mut v = self.cost_allocation_tags_status.unwrap_or_default();
-        v.push(input);
-        self.cost_allocation_tags_status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cost_allocation_tags_status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
-    pub fn set_cost_allocation_tags_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>>,
-    ) -> Self {
-        self.cost_allocation_tags_status = input;
-        self
+    pub fn set_cost_allocation_tags_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CostAllocationTagStatusEntry>>) -> Self {
+        self.cost_allocation_tags_status = input; self
     }
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
-    pub fn get_cost_allocation_tags_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>> {
+    pub fn get_cost_allocation_tags_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CostAllocationTagStatusEntry>> {
         &self.cost_allocation_tags_status
     }
     /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusInput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusInput {
-                cost_allocation_tags_status: self.cost_allocation_tags_status,
-            },
+                cost_allocation_tags_status: self.cost_allocation_tags_status
+                ,
+            }
         )
     }
 }
+

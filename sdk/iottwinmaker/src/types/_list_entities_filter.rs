@@ -24,11 +24,7 @@ impl ListEntitiesFilter {
     /// Tries to convert the enum instance into [`ComponentTypeId`](crate::types::ListEntitiesFilter::ComponentTypeId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_component_type_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ListEntitiesFilter::ComponentTypeId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListEntitiesFilter::ComponentTypeId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ComponentTypeId`](crate::types::ListEntitiesFilter::ComponentTypeId).
     pub fn is_component_type_id(&self) -> bool {
@@ -37,11 +33,7 @@ impl ListEntitiesFilter {
     /// Tries to convert the enum instance into [`ExternalId`](crate::types::ListEntitiesFilter::ExternalId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_external_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ListEntitiesFilter::ExternalId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListEntitiesFilter::ExternalId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ExternalId`](crate::types::ListEntitiesFilter::ExternalId).
     pub fn is_external_id(&self) -> bool {
@@ -50,11 +42,7 @@ impl ListEntitiesFilter {
     /// Tries to convert the enum instance into [`ParentEntityId`](crate::types::ListEntitiesFilter::ParentEntityId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_parent_entity_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ListEntitiesFilter::ParentEntityId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ListEntitiesFilter::ParentEntityId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ParentEntityId`](crate::types::ListEntitiesFilter::ParentEntityId).
     pub fn is_parent_entity_id(&self) -> bool {
@@ -65,3 +53,4 @@ impl ListEntitiesFilter {
         matches!(self, Self::Unknown)
     }
 }
+

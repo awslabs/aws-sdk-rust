@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAttributeGroupInput {
+pub struct DeleteAttributeGroupInput  {
     /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAttributeGroupInput {
+impl  DeleteAttributeGroupInput  {
     /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
-    pub fn attribute_group(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_group(&self) -> ::std::option::Option<& str> {
         self.attribute_group.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteAttributeGroupInputBuilder {
     }
     /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_group = input;
-        self
+        self.attribute_group = input; self
     }
     /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_group
     }
     /// Consumes the builder and constructs a [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_attribute_group::DeleteAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_attribute_group::DeleteAttributeGroupInput {
-            attribute_group: self.attribute_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_attribute_group::DeleteAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_attribute_group::DeleteAttributeGroupInput {
+                attribute_group: self.attribute_group
+                ,
+            }
+        )
     }
 }
+

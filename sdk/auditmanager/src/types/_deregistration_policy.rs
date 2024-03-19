@@ -6,7 +6,7 @@
 /// </important>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregistrationPolicy {
+pub struct DeregistrationPolicy  {
     /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct DeregistrationPolicy {
     /// </ul>
     pub delete_resources: ::std::option::Option<crate::types::DeleteResources>,
 }
-impl DeregistrationPolicy {
+impl  DeregistrationPolicy  {
     /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ impl DeregistrationPolicy {
     /// <li>
     /// <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p></li>
     /// </ul>
-    pub fn delete_resources(&self) -> ::std::option::Option<&crate::types::DeleteResources> {
+    pub fn delete_resources(&self) -> ::std::option::Option<& crate::types::DeleteResources> {
         self.delete_resources.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl DeregistrationPolicyBuilder {
     /// <p>If you set the value to <code>DEFAULT</code>, none of your data is deleted at the time of deregistration. However, keep in mind that the Audit Manager data retention policy still applies. As a result, any evidence data will be deleted two years after its creation date. Your other Audit Manager resources will continue to exist indefinitely.</p></li>
     /// </ul>
     pub fn set_delete_resources(mut self, input: ::std::option::Option<crate::types::DeleteResources>) -> Self {
-        self.delete_resources = input;
-        self
+        self.delete_resources = input; self
     }
     /// <p>Specifies which Audit Manager data will be deleted when you deregister Audit Manager.</p>
     /// <ul>
@@ -77,7 +76,9 @@ impl DeregistrationPolicyBuilder {
     /// Consumes the builder and constructs a [`DeregistrationPolicy`](crate::types::DeregistrationPolicy).
     pub fn build(self) -> crate::types::DeregistrationPolicy {
         crate::types::DeregistrationPolicy {
-            delete_resources: self.delete_resources,
+            delete_resources: self.delete_resources
+            ,
         }
     }
 }
+

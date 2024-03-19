@@ -399,3 +399,4 @@ pub mod rotate_encryption_key;
 
 /// Types for the `UpdatePartnerStatus` operation.
 pub mod update_partner_status;
+

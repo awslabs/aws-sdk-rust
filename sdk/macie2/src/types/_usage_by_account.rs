@@ -3,7 +3,7 @@
 /// <p>Provides data for a specific usage metric and the corresponding quota for an Amazon Macie account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageByAccount {
+pub struct UsageByAccount  {
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
     pub currency: ::std::option::Option<crate::types::Currency>,
     /// <p>The estimated value for the metric.</p>
@@ -13,21 +13,21 @@ pub struct UsageByAccount {
     /// <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
     pub r#type: ::std::option::Option<crate::types::UsageType>,
 }
-impl UsageByAccount {
+impl  UsageByAccount  {
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
-    pub fn currency(&self) -> ::std::option::Option<&crate::types::Currency> {
+    pub fn currency(&self) -> ::std::option::Option<& crate::types::Currency> {
         self.currency.as_ref()
     }
     /// <p>The estimated value for the metric.</p>
-    pub fn estimated_cost(&self) -> ::std::option::Option<&str> {
+    pub fn estimated_cost(&self) -> ::std::option::Option<& str> {
         self.estimated_cost.as_deref()
     }
     /// <p>The current value for the quota that corresponds to the metric specified by the type field.</p>
-    pub fn service_limit(&self) -> ::std::option::Option<&crate::types::ServiceLimit> {
+    pub fn service_limit(&self) -> ::std::option::Option<& crate::types::ServiceLimit> {
         self.service_limit.as_ref()
     }
     /// <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UsageType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UsageType> {
         self.r#type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UsageByAccountBuilder {
     }
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<crate::types::Currency>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
     pub fn get_currency(&self) -> &::std::option::Option<crate::types::Currency> {
@@ -69,8 +68,7 @@ impl UsageByAccountBuilder {
     }
     /// <p>The estimated value for the metric.</p>
     pub fn set_estimated_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.estimated_cost = input;
-        self
+        self.estimated_cost = input; self
     }
     /// <p>The estimated value for the metric.</p>
     pub fn get_estimated_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UsageByAccountBuilder {
     }
     /// <p>The current value for the quota that corresponds to the metric specified by the type field.</p>
     pub fn set_service_limit(mut self, input: ::std::option::Option<crate::types::ServiceLimit>) -> Self {
-        self.service_limit = input;
-        self
+        self.service_limit = input; self
     }
     /// <p>The current value for the quota that corresponds to the metric specified by the type field.</p>
     pub fn get_service_limit(&self) -> &::std::option::Option<crate::types::ServiceLimit> {
@@ -97,8 +94,7 @@ impl UsageByAccountBuilder {
     }
     /// <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UsageType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UsageType> {
@@ -107,10 +103,15 @@ impl UsageByAccountBuilder {
     /// Consumes the builder and constructs a [`UsageByAccount`](crate::types::UsageByAccount).
     pub fn build(self) -> crate::types::UsageByAccount {
         crate::types::UsageByAccount {
-            currency: self.currency,
-            estimated_cost: self.estimated_cost,
-            service_limit: self.service_limit,
-            r#type: self.r#type,
+            currency: self.currency
+            ,
+            estimated_cost: self.estimated_cost
+            ,
+            service_limit: self.service_limit
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

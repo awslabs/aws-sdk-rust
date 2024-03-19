@@ -3,19 +3,19 @@
 /// Attributes that are related to the media stream.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaStreamAttributesRequest {
+pub struct MediaStreamAttributesRequest  {
     /// The settings that you want to use to define the media stream.
     pub fmtp: ::std::option::Option<crate::types::FmtpRequest>,
     /// The audio language, in a format that is recognized by the receiver.
     pub lang: ::std::option::Option<::std::string::String>,
 }
-impl MediaStreamAttributesRequest {
+impl  MediaStreamAttributesRequest  {
     /// The settings that you want to use to define the media stream.
-    pub fn fmtp(&self) -> ::std::option::Option<&crate::types::FmtpRequest> {
+    pub fn fmtp(&self) -> ::std::option::Option<& crate::types::FmtpRequest> {
         self.fmtp.as_ref()
     }
     /// The audio language, in a format that is recognized by the receiver.
-    pub fn lang(&self) -> ::std::option::Option<&str> {
+    pub fn lang(&self) -> ::std::option::Option<& str> {
         self.lang.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MediaStreamAttributesRequestBuilder {
     }
     /// The settings that you want to use to define the media stream.
     pub fn set_fmtp(mut self, input: ::std::option::Option<crate::types::FmtpRequest>) -> Self {
-        self.fmtp = input;
-        self
+        self.fmtp = input; self
     }
     /// The settings that you want to use to define the media stream.
     pub fn get_fmtp(&self) -> &::std::option::Option<crate::types::FmtpRequest> {
@@ -55,8 +54,7 @@ impl MediaStreamAttributesRequestBuilder {
     }
     /// The audio language, in a format that is recognized by the receiver.
     pub fn set_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lang = input;
-        self
+        self.lang = input; self
     }
     /// The audio language, in a format that is recognized by the receiver.
     pub fn get_lang(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MediaStreamAttributesRequestBuilder {
     /// Consumes the builder and constructs a [`MediaStreamAttributesRequest`](crate::types::MediaStreamAttributesRequest).
     pub fn build(self) -> crate::types::MediaStreamAttributesRequest {
         crate::types::MediaStreamAttributesRequest {
-            fmtp: self.fmtp,
-            lang: self.lang,
+            fmtp: self.fmtp
+            ,
+            lang: self.lang
+            ,
         }
     }
 }
+

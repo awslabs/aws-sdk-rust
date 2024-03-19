@@ -3,7 +3,7 @@
 /// <p>Defines an application summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppSummary {
+pub struct AppSummary  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::string::String,
     /// <p>The name of the application.</p>
@@ -29,27 +29,25 @@ pub struct AppSummary {
     /// <p>Recovery Point Objective (RPO) in seconds.</p>
     pub rpo_in_secs: ::std::option::Option<i32>,
 }
-impl AppSummary {
+impl  AppSummary  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> & str {
+        use std::ops::Deref; self.app_arn.deref()
     }
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The optional description for an app.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Date and time when the app was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::AppComplianceStatusType> {
+    pub fn compliance_status(&self) -> ::std::option::Option<& crate::types::AppComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
@@ -57,19 +55,19 @@ impl AppSummary {
         self.resiliency_score
     }
     /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
-    pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
+    pub fn assessment_schedule(&self) -> ::std::option::Option<& crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
     /// <p>Status of the application.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AppStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AppStatusType> {
         self.status.as_ref()
     }
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
-    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::AppDriftStatusType> {
+    pub fn drift_status(&self) -> ::std::option::Option<& crate::types::AppDriftStatusType> {
         self.drift_status.as_ref()
     }
     /// <p>Date and time of the most recent compliance evaluation.</p>
-    pub fn last_app_compliance_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_app_compliance_evaluation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_app_compliance_evaluation_time.as_ref()
     }
     /// <p>Recovery Time Objective (RTO) in seconds.</p>
@@ -114,8 +112,7 @@ impl AppSummaryBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +126,7 @@ impl AppSummaryBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +139,7 @@ impl AppSummaryBuilder {
     }
     /// <p>The optional description for an app.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The optional description for an app.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +153,7 @@ impl AppSummaryBuilder {
     }
     /// <p>Date and time when the app was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>Date and time when the app was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -172,8 +166,7 @@ impl AppSummaryBuilder {
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::AppComplianceStatusType>) -> Self {
-        self.compliance_status = input;
-        self
+        self.compliance_status = input; self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::AppComplianceStatusType> {
@@ -186,8 +179,7 @@ impl AppSummaryBuilder {
     }
     /// <p>The current resiliency score for the application.</p>
     pub fn set_resiliency_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.resiliency_score = input;
-        self
+        self.resiliency_score = input; self
     }
     /// <p>The current resiliency score for the application.</p>
     pub fn get_resiliency_score(&self) -> &::std::option::Option<f64> {
@@ -200,8 +192,7 @@ impl AppSummaryBuilder {
     }
     /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
     pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
-        self.assessment_schedule = input;
-        self
+        self.assessment_schedule = input; self
     }
     /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
@@ -214,8 +205,7 @@ impl AppSummaryBuilder {
     }
     /// <p>Status of the application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AppStatusType> {
@@ -228,8 +218,7 @@ impl AppSummaryBuilder {
     }
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::AppDriftStatusType>) -> Self {
-        self.drift_status = input;
-        self
+        self.drift_status = input; self
     }
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::AppDriftStatusType> {
@@ -242,8 +231,7 @@ impl AppSummaryBuilder {
     }
     /// <p>Date and time of the most recent compliance evaluation.</p>
     pub fn set_last_app_compliance_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_app_compliance_evaluation_time = input;
-        self
+        self.last_app_compliance_evaluation_time = input; self
     }
     /// <p>Date and time of the most recent compliance evaluation.</p>
     pub fn get_last_app_compliance_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -256,8 +244,7 @@ impl AppSummaryBuilder {
     }
     /// <p>Recovery Time Objective (RTO) in seconds.</p>
     pub fn set_rto_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rto_in_secs = input;
-        self
+        self.rto_in_secs = input; self
     }
     /// <p>Recovery Time Objective (RTO) in seconds.</p>
     pub fn get_rto_in_secs(&self) -> &::std::option::Option<i32> {
@@ -270,8 +257,7 @@ impl AppSummaryBuilder {
     }
     /// <p>Recovery Point Objective (RPO) in seconds.</p>
     pub fn set_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rpo_in_secs = input;
-        self
+        self.rpo_in_secs = input; self
     }
     /// <p>Recovery Point Objective (RPO) in seconds.</p>
     pub fn get_rpo_in_secs(&self) -> &::std::option::Option<i32> {
@@ -283,34 +269,44 @@ impl AppSummaryBuilder {
     /// - [`name`](crate::types::builders::AppSummaryBuilder::name)
     /// - [`creation_time`](crate::types::builders::AppSummaryBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::AppSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppSummary {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building AppSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AppSummary",
-                )
-            })?,
-            description: self.description,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building AppSummary",
-                )
-            })?,
-            compliance_status: self.compliance_status,
-            resiliency_score: self.resiliency_score.unwrap_or_default(),
-            assessment_schedule: self.assessment_schedule,
-            status: self.status,
-            drift_status: self.drift_status,
-            last_app_compliance_evaluation_time: self.last_app_compliance_evaluation_time,
-            rto_in_secs: self.rto_in_secs,
-            rpo_in_secs: self.rpo_in_secs,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppSummary {
+                app_arn: self.app_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_arn", "app_arn was not specified but it is required when building AppSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AppSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building AppSummary")
+                    )?
+                ,
+                compliance_status: self.compliance_status
+                ,
+                resiliency_score: self.resiliency_score
+                    .unwrap_or_default()
+                ,
+                assessment_schedule: self.assessment_schedule
+                ,
+                status: self.status
+                ,
+                drift_status: self.drift_status
+                ,
+                last_app_compliance_evaluation_time: self.last_app_compliance_evaluation_time
+                ,
+                rto_in_secs: self.rto_in_secs
+                ,
+                rpo_in_secs: self.rpo_in_secs
+                ,
+            }
+        )
     }
 }
+

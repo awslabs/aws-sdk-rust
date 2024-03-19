@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVodSourceOutput {
+pub struct DeleteVodSourceOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteVodSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteVodSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVodSourceOutput`](crate::operation::delete_vod_source::DeleteVodSourceOutput).
     pub fn builder() -> crate::operation::delete_vod_source::builders::DeleteVodSourceOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteVodSourceOutputBuilder {
 }
 impl DeleteVodSourceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteVodSourceOutput`](crate::operation::delete_vod_source::DeleteVodSourceOutput).
     pub fn build(self) -> crate::operation::delete_vod_source::DeleteVodSourceOutput {
         crate::operation::delete_vod_source::DeleteVodSourceOutput {
@@ -40,3 +40,4 @@ impl DeleteVodSourceOutputBuilder {
         }
     }
 }
+

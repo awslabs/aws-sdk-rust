@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterGameServerInput {
+pub struct DeregisterGameServerInput  {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
     pub game_server_id: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterGameServerInput {
+impl  DeregisterGameServerInput  {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> ::std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-    pub fn game_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_id(&self) -> ::std::option::Option<& str> {
         self.game_server_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeregisterGameServerInputBuilder {
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_name = input;
-        self
+        self.game_server_group_name = input; self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeregisterGameServerInputBuilder {
     }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
     pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_id = input;
-        self
+        self.game_server_id = input; self
     }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
     pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_server_id
     }
     /// Consumes the builder and constructs a [`DeregisterGameServerInput`](crate::operation::deregister_game_server::DeregisterGameServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deregister_game_server::DeregisterGameServerInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::deregister_game_server::DeregisterGameServerInput {
-            game_server_group_name: self.game_server_group_name,
-            game_server_id: self.game_server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_game_server::DeregisterGameServerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_game_server::DeregisterGameServerInput {
+                game_server_group_name: self.game_server_group_name
+                ,
+                game_server_id: self.game_server_id
+                ,
+            }
+        )
     }
 }
+

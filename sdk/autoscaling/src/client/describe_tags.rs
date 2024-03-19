@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTags`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(Filter)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters to scope the tags to return. The maximum number of filters per filter type (for example, <code>auto-scaling-group</code>) is 1000.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p><br>
-    /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
+                            /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
     ///   - [`tags(Option<Vec::<TagDescription>>)`](crate::operation::describe_tags::DescribeTagsOutput::tags): <p>One or more tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_tags::DescribeTagsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
+                            /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
     pub fn describe_tags(&self) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
-        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -5,7 +5,7 @@
 /// <p>In these settings, you specify how your application accepts account creation attempts by providing the request payload type and the names of the fields within the request body where the username, password, email, and primary address and phone number fields are provided.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestInspectionAcfp {
+pub struct RequestInspectionAcfp  {
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
     pub payload_type: crate::types::PayloadType,
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
@@ -52,7 +52,7 @@ pub struct RequestInspectionAcfp {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>.</p></li>
     /// </ul>
-    pub phone_number_fields: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>>,
+    pub phone_number_fields: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberField>>,
     /// <p>The names of the fields in the request payload that contain your customer's primary physical address.</p>
     /// <p>Order the address fields in the array exactly as they are ordered in the request payload.</p>
     /// <p>How you specify the address fields depends on the request inspection payload type.</p>
@@ -64,11 +64,11 @@ pub struct RequestInspectionAcfp {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>.</p></li>
     /// </ul>
-    pub address_fields: ::std::option::Option<::std::vec::Vec<crate::types::AddressField>>,
+    pub address_fields: ::std::option::Option<::std::vec::Vec::<crate::types::AddressField>>,
 }
-impl RequestInspectionAcfp {
+impl  RequestInspectionAcfp  {
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
-    pub fn payload_type(&self) -> &crate::types::PayloadType {
+    pub fn payload_type(&self) -> & crate::types::PayloadType {
         &self.payload_type
     }
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
@@ -81,7 +81,7 @@ impl RequestInspectionAcfp {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
-    pub fn username_field(&self) -> ::std::option::Option<&crate::types::UsernameField> {
+    pub fn username_field(&self) -> ::std::option::Option<& crate::types::UsernameField> {
         self.username_field.as_ref()
     }
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
@@ -94,7 +94,7 @@ impl RequestInspectionAcfp {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
-    pub fn password_field(&self) -> ::std::option::Option<&crate::types::PasswordField> {
+    pub fn password_field(&self) -> ::std::option::Option<& crate::types::PasswordField> {
         self.password_field.as_ref()
     }
     /// <p>The name of the field in the request payload that contains your customer's email.</p>
@@ -107,7 +107,7 @@ impl RequestInspectionAcfp {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with the input element named <code>email1</code>, the email field specification is <code>email1</code>.</p></li>
     /// </ul>
-    pub fn email_field(&self) -> ::std::option::Option<&crate::types::EmailField> {
+    pub fn email_field(&self) -> ::std::option::Option<& crate::types::EmailField> {
         self.email_field.as_ref()
     }
     /// <p>The names of the fields in the request payload that contain your customer's primary phone number.</p>
@@ -121,10 +121,11 @@ impl RequestInspectionAcfp {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_fields.is_none()`.
-    pub fn phone_number_fields(&self) -> &[crate::types::PhoneNumberField] {
-        self.phone_number_fields.as_deref().unwrap_or_default()
+    pub fn phone_number_fields(&self) -> & [crate::types::PhoneNumberField] {
+        self.phone_number_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The names of the fields in the request payload that contain your customer's primary physical address.</p>
     /// <p>Order the address fields in the array exactly as they are ordered in the request payload.</p>
@@ -137,10 +138,11 @@ impl RequestInspectionAcfp {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address_fields.is_none()`.
-    pub fn address_fields(&self) -> &[crate::types::AddressField] {
-        self.address_fields.as_deref().unwrap_or_default()
+    pub fn address_fields(&self) -> & [crate::types::AddressField] {
+        self.address_fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RequestInspectionAcfp {
@@ -158,8 +160,8 @@ pub struct RequestInspectionAcfpBuilder {
     pub(crate) username_field: ::std::option::Option<crate::types::UsernameField>,
     pub(crate) password_field: ::std::option::Option<crate::types::PasswordField>,
     pub(crate) email_field: ::std::option::Option<crate::types::EmailField>,
-    pub(crate) phone_number_fields: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>>,
-    pub(crate) address_fields: ::std::option::Option<::std::vec::Vec<crate::types::AddressField>>,
+    pub(crate) phone_number_fields: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberField>>,
+    pub(crate) address_fields: ::std::option::Option<::std::vec::Vec::<crate::types::AddressField>>,
 }
 impl RequestInspectionAcfpBuilder {
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
@@ -170,8 +172,7 @@ impl RequestInspectionAcfpBuilder {
     }
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
     pub fn set_payload_type(mut self, input: ::std::option::Option<crate::types::PayloadType>) -> Self {
-        self.payload_type = input;
-        self
+        self.payload_type = input; self
     }
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
     pub fn get_payload_type(&self) -> &::std::option::Option<crate::types::PayloadType> {
@@ -202,8 +203,7 @@ impl RequestInspectionAcfpBuilder {
     /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
     pub fn set_username_field(mut self, input: ::std::option::Option<crate::types::UsernameField>) -> Self {
-        self.username_field = input;
-        self
+        self.username_field = input; self
     }
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -243,8 +243,7 @@ impl RequestInspectionAcfpBuilder {
     /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
     pub fn set_password_field(mut self, input: ::std::option::Option<crate::types::PasswordField>) -> Self {
-        self.password_field = input;
-        self
+        self.password_field = input; self
     }
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -284,8 +283,7 @@ impl RequestInspectionAcfpBuilder {
     /// <p>For example, for an HTML form with the input element named <code>email1</code>, the email field specification is <code>email1</code>.</p></li>
     /// </ul>
     pub fn set_email_field(mut self, input: ::std::option::Option<crate::types::EmailField>) -> Self {
-        self.email_field = input;
-        self
+        self.email_field = input; self
     }
     /// <p>The name of the field in the request payload that contains your customer's email.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -317,9 +315,9 @@ impl RequestInspectionAcfpBuilder {
     /// </ul>
     pub fn phone_number_fields(mut self, input: crate::types::PhoneNumberField) -> Self {
         let mut v = self.phone_number_fields.unwrap_or_default();
-        v.push(input);
-        self.phone_number_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phone_number_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the fields in the request payload that contain your customer's primary phone number.</p>
     /// <p>Order the phone number fields in the array exactly as they are ordered in the request payload.</p>
@@ -332,9 +330,8 @@ impl RequestInspectionAcfpBuilder {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>.</p></li>
     /// </ul>
-    pub fn set_phone_number_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>>) -> Self {
-        self.phone_number_fields = input;
-        self
+    pub fn set_phone_number_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberField>>) -> Self {
+        self.phone_number_fields = input; self
     }
     /// <p>The names of the fields in the request payload that contain your customer's primary phone number.</p>
     /// <p>Order the phone number fields in the array exactly as they are ordered in the request payload.</p>
@@ -347,7 +344,7 @@ impl RequestInspectionAcfpBuilder {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>.</p></li>
     /// </ul>
-    pub fn get_phone_number_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>> {
+    pub fn get_phone_number_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberField>> {
         &self.phone_number_fields
     }
     /// Appends an item to `address_fields`.
@@ -367,9 +364,9 @@ impl RequestInspectionAcfpBuilder {
     /// </ul>
     pub fn address_fields(mut self, input: crate::types::AddressField) -> Self {
         let mut v = self.address_fields.unwrap_or_default();
-        v.push(input);
-        self.address_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.address_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the fields in the request payload that contain your customer's primary physical address.</p>
     /// <p>Order the address fields in the array exactly as they are ordered in the request payload.</p>
@@ -382,9 +379,8 @@ impl RequestInspectionAcfpBuilder {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>.</p></li>
     /// </ul>
-    pub fn set_address_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddressField>>) -> Self {
-        self.address_fields = input;
-        self
+    pub fn set_address_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddressField>>) -> Self {
+        self.address_fields = input; self
     }
     /// <p>The names of the fields in the request payload that contain your customer's primary physical address.</p>
     /// <p>Order the address fields in the array exactly as they are ordered in the request payload.</p>
@@ -397,25 +393,32 @@ impl RequestInspectionAcfpBuilder {
     /// <p>For form encoded payload types, use the HTML form names.</p>
     /// <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>.</p></li>
     /// </ul>
-    pub fn get_address_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressField>> {
+    pub fn get_address_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddressField>> {
         &self.address_fields
     }
     /// Consumes the builder and constructs a [`RequestInspectionAcfp`](crate::types::RequestInspectionAcfp).
     /// This method will fail if any of the following fields are not set:
     /// - [`payload_type`](crate::types::builders::RequestInspectionAcfpBuilder::payload_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RequestInspectionAcfp, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RequestInspectionAcfp {
-            payload_type: self.payload_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload_type",
-                    "payload_type was not specified but it is required when building RequestInspectionAcfp",
-                )
-            })?,
-            username_field: self.username_field,
-            password_field: self.password_field,
-            email_field: self.email_field,
-            phone_number_fields: self.phone_number_fields,
-            address_fields: self.address_fields,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RequestInspectionAcfp {
+                payload_type: self.payload_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload_type", "payload_type was not specified but it is required when building RequestInspectionAcfp")
+                    )?
+                ,
+                username_field: self.username_field
+                ,
+                password_field: self.password_field
+                ,
+                email_field: self.email_field
+                ,
+                phone_number_fields: self.phone_number_fields
+                ,
+                address_fields: self.address_fields
+                ,
+            }
+        )
     }
 }
+

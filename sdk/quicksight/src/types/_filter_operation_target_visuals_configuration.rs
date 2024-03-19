@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterOperationTargetVisualsConfiguration {
+pub struct FilterOperationTargetVisualsConfiguration  {
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
     pub same_sheet_target_visual_configuration: ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>,
 }
-impl FilterOperationTargetVisualsConfiguration {
+impl  FilterOperationTargetVisualsConfiguration  {
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
-    pub fn same_sheet_target_visual_configuration(&self) -> ::std::option::Option<&crate::types::SameSheetTargetVisualConfiguration> {
+    pub fn same_sheet_target_visual_configuration(&self) -> ::std::option::Option<& crate::types::SameSheetTargetVisualConfiguration> {
         self.same_sheet_target_visual_configuration.as_ref()
     }
 }
@@ -34,12 +34,8 @@ impl FilterOperationTargetVisualsConfigurationBuilder {
         self
     }
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
-    pub fn set_same_sheet_target_visual_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>,
-    ) -> Self {
-        self.same_sheet_target_visual_configuration = input;
-        self
+    pub fn set_same_sheet_target_visual_configuration(mut self, input: ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>) -> Self {
+        self.same_sheet_target_visual_configuration = input; self
     }
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
     pub fn get_same_sheet_target_visual_configuration(&self) -> &::std::option::Option<crate::types::SameSheetTargetVisualConfiguration> {
@@ -48,7 +44,9 @@ impl FilterOperationTargetVisualsConfigurationBuilder {
     /// Consumes the builder and constructs a [`FilterOperationTargetVisualsConfiguration`](crate::types::FilterOperationTargetVisualsConfiguration).
     pub fn build(self) -> crate::types::FilterOperationTargetVisualsConfiguration {
         crate::types::FilterOperationTargetVisualsConfiguration {
-            same_sheet_target_visual_configuration: self.same_sheet_target_visual_configuration,
+            same_sheet_target_visual_configuration: self.same_sheet_target_visual_configuration
+            ,
         }
     }
 }
+

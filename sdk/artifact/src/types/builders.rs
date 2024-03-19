@@ -6,3 +6,4 @@ pub use crate::types::_report_detail::ReportDetailBuilder;
 pub use crate::types::_report_summary::ReportSummaryBuilder;
 
 pub use crate::types::_account_settings::AccountSettingsBuilder;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcEndpointInput {
+pub struct CreateVpcEndpointInput  {
     /// <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
@@ -10,17 +10,17 @@ pub struct CreateVpcEndpointInput {
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateVpcEndpointInput {
+impl  CreateVpcEndpointInput  {
     /// <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
-    pub fn domain_arn(&self) -> ::std::option::Option<&str> {
+    pub fn domain_arn(&self) -> ::std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
-    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
+    pub fn vpc_options(&self) -> ::std::option::Option<& crate::types::VpcOptions> {
         self.vpc_options.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateVpcEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
     pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_arn = input;
-        self
+        self.domain_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain to create the endpoint for.</p>
     pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateVpcEndpointInputBuilder {
     }
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
     pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
-        self.vpc_options = input;
-        self
+        self.vpc_options = input; self
     }
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
     pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
@@ -77,21 +75,24 @@ impl CreateVpcEndpointInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
-            domain_arn: self.domain_arn,
-            vpc_options: self.vpc_options,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
+                domain_arn: self.domain_arn
+                ,
+                vpc_options: self.vpc_options
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

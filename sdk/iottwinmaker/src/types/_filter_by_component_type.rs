@@ -3,15 +3,14 @@
 /// <p>Filter by component type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterByComponentType {
+pub struct FilterByComponentType  {
     /// <p>The component type Id.</p>
     pub component_type_id: ::std::string::String,
 }
-impl FilterByComponentType {
+impl  FilterByComponentType  {
     /// <p>The component type Id.</p>
-    pub fn component_type_id(&self) -> &str {
-        use std::ops::Deref;
-        self.component_type_id.deref()
+    pub fn component_type_id(&self) -> & str {
+        use std::ops::Deref; self.component_type_id.deref()
     }
 }
 impl FilterByComponentType {
@@ -36,8 +35,7 @@ impl FilterByComponentTypeBuilder {
     }
     /// <p>The component type Id.</p>
     pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type_id = input;
-        self
+        self.component_type_id = input; self
     }
     /// <p>The component type Id.</p>
     pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl FilterByComponentTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`component_type_id`](crate::types::builders::FilterByComponentTypeBuilder::component_type_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterByComponentType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterByComponentType {
-            component_type_id: self.component_type_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_type_id",
-                    "component_type_id was not specified but it is required when building FilterByComponentType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilterByComponentType {
+                component_type_id: self.component_type_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_type_id", "component_type_id was not specified but it is required when building FilterByComponentType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

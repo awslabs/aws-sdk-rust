@@ -3,16 +3,17 @@
 /// <p>Determines the typography options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Typography {
+pub struct Typography  {
     /// <p>Determines the list of font families.</p>
-    pub font_families: ::std::option::Option<::std::vec::Vec<crate::types::Font>>,
+    pub font_families: ::std::option::Option<::std::vec::Vec::<crate::types::Font>>,
 }
-impl Typography {
+impl  Typography  {
     /// <p>Determines the list of font families.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.font_families.is_none()`.
-    pub fn font_families(&self) -> &[crate::types::Font] {
-        self.font_families.as_deref().unwrap_or_default()
+    pub fn font_families(&self) -> & [crate::types::Font] {
+        self.font_families.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Typography {
@@ -26,7 +27,7 @@ impl Typography {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypographyBuilder {
-    pub(crate) font_families: ::std::option::Option<::std::vec::Vec<crate::types::Font>>,
+    pub(crate) font_families: ::std::option::Option<::std::vec::Vec::<crate::types::Font>>,
 }
 impl TypographyBuilder {
     /// Appends an item to `font_families`.
@@ -36,23 +37,24 @@ impl TypographyBuilder {
     /// <p>Determines the list of font families.</p>
     pub fn font_families(mut self, input: crate::types::Font) -> Self {
         let mut v = self.font_families.unwrap_or_default();
-        v.push(input);
-        self.font_families = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.font_families = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Determines the list of font families.</p>
-    pub fn set_font_families(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Font>>) -> Self {
-        self.font_families = input;
-        self
+    pub fn set_font_families(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Font>>) -> Self {
+        self.font_families = input; self
     }
     /// <p>Determines the list of font families.</p>
-    pub fn get_font_families(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Font>> {
+    pub fn get_font_families(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Font>> {
         &self.font_families
     }
     /// Consumes the builder and constructs a [`Typography`](crate::types::Typography).
     pub fn build(self) -> crate::types::Typography {
         crate::types::Typography {
-            font_families: self.font_families,
+            font_families: self.font_families
+            ,
         }
     }
 }
+

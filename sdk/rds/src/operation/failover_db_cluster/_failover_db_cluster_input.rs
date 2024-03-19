@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailoverDbClusterInput {
+pub struct FailoverDbClusterInput  {
     /// <p>The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -16,20 +16,20 @@ pub struct FailoverDbClusterInput {
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
     pub target_db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
-impl FailoverDbClusterInput {
+impl  FailoverDbClusterInput  {
     /// <p>The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
-    pub fn target_db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.target_db_instance_identifier.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl FailoverDbClusterInputBuilder {
     /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -89,8 +88,7 @@ impl FailoverDbClusterInputBuilder {
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
     pub fn set_target_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_instance_identifier = input;
-        self
+        self.target_db_instance_identifier = input; self
     }
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
@@ -99,12 +97,15 @@ impl FailoverDbClusterInputBuilder {
         &self.target_db_instance_identifier
     }
     /// Consumes the builder and constructs a [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::failover_db_cluster::FailoverDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::failover_db_cluster::FailoverDbClusterInput {
-            db_cluster_identifier: self.db_cluster_identifier,
-            target_db_instance_identifier: self.target_db_instance_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::failover_db_cluster::FailoverDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::failover_db_cluster::FailoverDbClusterInput {
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                target_db_instance_identifier: self.target_db_instance_identifier
+                ,
+            }
+        )
     }
 }
+

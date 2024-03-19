@@ -2,24 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntityAggregatesForOrganizationInput {
+pub struct DescribeEntityAggregatesForOrganizationInput  {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    pub event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aws_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeEntityAggregatesForOrganizationInput {
+impl  DescribeEntityAggregatesForOrganizationInput  {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_arns.is_none()`.
-    pub fn event_arns(&self) -> &[::std::string::String] {
-        self.event_arns.as_deref().unwrap_or_default()
+    pub fn event_arns(&self) -> & [::std::string::String] {
+        self.event_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_ids.is_none()`.
-    pub fn aws_account_ids(&self) -> &[::std::string::String] {
-        self.aws_account_ids.as_deref().unwrap_or_default()
+    pub fn aws_account_ids(&self) -> & [::std::string::String] {
+        self.aws_account_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeEntityAggregatesForOrganizationInput {
@@ -33,8 +35,8 @@ impl DescribeEntityAggregatesForOrganizationInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityAggregatesForOrganizationInputBuilder {
-    pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) event_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeEntityAggregatesForOrganizationInputBuilder {
     /// Appends an item to `event_arns`.
@@ -44,17 +46,16 @@ impl DescribeEntityAggregatesForOrganizationInputBuilder {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
     pub fn event_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_arns.unwrap_or_default();
-        v.push(input.into());
-        self.event_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_arns = input;
-        self
+    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_arns = input; self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_arns
     }
     /// Appends an item to `aws_account_ids`.
@@ -64,31 +65,28 @@ impl DescribeEntityAggregatesForOrganizationInputBuilder {
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub fn aws_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.aws_account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn set_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aws_account_ids = input;
-        self
+    pub fn set_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aws_account_ids = input; self
     }
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aws_account_ids
     }
     /// Consumes the builder and constructs a [`DescribeEntityAggregatesForOrganizationInput`](crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationInput {
-                event_arns: self.event_arns,
-                aws_account_ids: self.aws_account_ids,
-            },
+                event_arns: self.event_arns
+                ,
+                aws_account_ids: self.aws_account_ids
+                ,
+            }
         )
     }
 }
+

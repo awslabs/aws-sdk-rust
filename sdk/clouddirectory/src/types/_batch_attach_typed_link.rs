@@ -3,7 +3,7 @@
 /// <p>Attaches a typed link to a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>AttachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAttachTypedLink {
+pub struct BatchAttachTypedLink  {
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub source_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Identifies the target object that the typed link will attach to.</p>
@@ -11,25 +11,24 @@ pub struct BatchAttachTypedLink {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub typed_link_facet: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub attributes: ::std::vec::Vec<crate::types::AttributeNameAndValue>,
+    pub attributes: ::std::vec::Vec::<crate::types::AttributeNameAndValue>,
 }
-impl BatchAttachTypedLink {
+impl  BatchAttachTypedLink  {
     /// <p>Identifies the source object that the typed link will attach to.</p>
-    pub fn source_object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn source_object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.source_object_reference.as_ref()
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
-    pub fn target_object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.target_object_reference.as_ref()
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-    pub fn typed_link_facet(&self) -> ::std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
+    pub fn typed_link_facet(&self) -> ::std::option::Option<& crate::types::TypedLinkSchemaAndFacetName> {
         self.typed_link_facet.as_ref()
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn attributes(&self) -> &[crate::types::AttributeNameAndValue] {
-        use std::ops::Deref;
-        self.attributes.deref()
+    pub fn attributes(&self) -> & [crate::types::AttributeNameAndValue] {
+        use std::ops::Deref; self.attributes.deref()
     }
 }
 impl BatchAttachTypedLink {
@@ -46,7 +45,7 @@ pub struct BatchAttachTypedLinkBuilder {
     pub(crate) source_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) target_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) typed_link_facet: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeNameAndValue>>,
 }
 impl BatchAttachTypedLinkBuilder {
     /// <p>Identifies the source object that the typed link will attach to.</p>
@@ -57,8 +56,7 @@ impl BatchAttachTypedLinkBuilder {
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn set_source_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.source_object_reference = input;
-        self
+        self.source_object_reference = input; self
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn get_source_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -72,8 +70,7 @@ impl BatchAttachTypedLinkBuilder {
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn set_target_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.target_object_reference = input;
-        self
+        self.target_object_reference = input; self
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn get_target_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -87,8 +84,7 @@ impl BatchAttachTypedLinkBuilder {
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn set_typed_link_facet(mut self, input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>) -> Self {
-        self.typed_link_facet = input;
-        self
+        self.typed_link_facet = input; self
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn get_typed_link_facet(&self) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
@@ -101,33 +97,37 @@ impl BatchAttachTypedLinkBuilder {
     /// <p>A set of attributes that are associated with the typed link.</p>
     pub fn attributes(mut self, input: crate::types::AttributeNameAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeNameAndValue>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeNameAndValue>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`BatchAttachTypedLink`](crate::types::BatchAttachTypedLink).
     /// This method will fail if any of the following fields are not set:
     /// - [`attributes`](crate::types::builders::BatchAttachTypedLinkBuilder::attributes)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchAttachTypedLink, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchAttachTypedLink {
-            source_object_reference: self.source_object_reference,
-            target_object_reference: self.target_object_reference,
-            typed_link_facet: self.typed_link_facet,
-            attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attributes",
-                    "attributes was not specified but it is required when building BatchAttachTypedLink",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchAttachTypedLink {
+                source_object_reference: self.source_object_reference
+                ,
+                target_object_reference: self.target_object_reference
+                ,
+                typed_link_facet: self.typed_link_facet
+                ,
+                attributes: self.attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attributes", "attributes was not specified but it is required when building BatchAttachTypedLink")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies the category, owner, provider, and version of the action type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionTypeIdentifier {
+pub struct ActionTypeIdentifier  {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ pub struct ActionTypeIdentifier {
     /// <p>A string that describes the action type version.</p>
     pub version: ::std::string::String,
 }
-impl ActionTypeIdentifier {
+impl  ActionTypeIdentifier  {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
     /// <li>
@@ -43,23 +43,20 @@ impl ActionTypeIdentifier {
     /// <li>
     /// <p><code>Invoke</code></p></li>
     /// </ul>
-    pub fn category(&self) -> &crate::types::ActionCategory {
+    pub fn category(&self) -> & crate::types::ActionCategory {
         &self.category
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    pub fn owner(&self) -> &str {
-        use std::ops::Deref;
-        self.owner.deref()
+    pub fn owner(&self) -> & str {
+        use std::ops::Deref; self.owner.deref()
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    pub fn provider(&self) -> &str {
-        use std::ops::Deref;
-        self.provider.deref()
+    pub fn provider(&self) -> & str {
+        use std::ops::Deref; self.provider.deref()
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
 }
 impl ActionTypeIdentifier {
@@ -115,8 +112,7 @@ impl ActionTypeIdentifierBuilder {
     /// <p><code>Invoke</code></p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
@@ -144,8 +140,7 @@ impl ActionTypeIdentifierBuilder {
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl ActionTypeIdentifierBuilder {
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl ActionTypeIdentifierBuilder {
     }
     /// <p>A string that describes the action type version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>A string that describes the action type version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,31 +181,30 @@ impl ActionTypeIdentifierBuilder {
     /// - [`provider`](crate::types::builders::ActionTypeIdentifierBuilder::provider)
     /// - [`version`](crate::types::builders::ActionTypeIdentifierBuilder::version)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionTypeIdentifier {
-            category: self.category.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "category",
-                    "category was not specified but it is required when building ActionTypeIdentifier",
-                )
-            })?,
-            owner: self.owner.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owner",
-                    "owner was not specified but it is required when building ActionTypeIdentifier",
-                )
-            })?,
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building ActionTypeIdentifier",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building ActionTypeIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionTypeIdentifier {
+                category: self.category
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("category", "category was not specified but it is required when building ActionTypeIdentifier")
+                    )?
+                ,
+                owner: self.owner
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owner", "owner was not specified but it is required when building ActionTypeIdentifier")
+                    )?
+                ,
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building ActionTypeIdentifier")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building ActionTypeIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

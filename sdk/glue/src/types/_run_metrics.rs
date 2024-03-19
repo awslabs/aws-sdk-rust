@@ -3,7 +3,7 @@
 /// <p>Metrics for the optimizer run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunMetrics {
+pub struct RunMetrics  {
     /// <p>The number of bytes removed by the compaction job run.</p>
     pub number_of_bytes_compacted: ::std::option::Option<::std::string::String>,
     /// <p>The number of files removed by the compaction job run.</p>
@@ -13,21 +13,21 @@ pub struct RunMetrics {
     /// <p>The duration of the job in hours.</p>
     pub job_duration_in_hour: ::std::option::Option<::std::string::String>,
 }
-impl RunMetrics {
+impl  RunMetrics  {
     /// <p>The number of bytes removed by the compaction job run.</p>
-    pub fn number_of_bytes_compacted(&self) -> ::std::option::Option<&str> {
+    pub fn number_of_bytes_compacted(&self) -> ::std::option::Option<& str> {
         self.number_of_bytes_compacted.as_deref()
     }
     /// <p>The number of files removed by the compaction job run.</p>
-    pub fn number_of_files_compacted(&self) -> ::std::option::Option<&str> {
+    pub fn number_of_files_compacted(&self) -> ::std::option::Option<& str> {
         self.number_of_files_compacted.as_deref()
     }
     /// <p>The number of DPU hours consumed by the job.</p>
-    pub fn number_of_dpus(&self) -> ::std::option::Option<&str> {
+    pub fn number_of_dpus(&self) -> ::std::option::Option<& str> {
         self.number_of_dpus.as_deref()
     }
     /// <p>The duration of the job in hours.</p>
-    pub fn job_duration_in_hour(&self) -> ::std::option::Option<&str> {
+    pub fn job_duration_in_hour(&self) -> ::std::option::Option<& str> {
         self.job_duration_in_hour.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl RunMetricsBuilder {
     }
     /// <p>The number of bytes removed by the compaction job run.</p>
     pub fn set_number_of_bytes_compacted(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.number_of_bytes_compacted = input;
-        self
+        self.number_of_bytes_compacted = input; self
     }
     /// <p>The number of bytes removed by the compaction job run.</p>
     pub fn get_number_of_bytes_compacted(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RunMetricsBuilder {
     }
     /// <p>The number of files removed by the compaction job run.</p>
     pub fn set_number_of_files_compacted(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.number_of_files_compacted = input;
-        self
+        self.number_of_files_compacted = input; self
     }
     /// <p>The number of files removed by the compaction job run.</p>
     pub fn get_number_of_files_compacted(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RunMetricsBuilder {
     }
     /// <p>The number of DPU hours consumed by the job.</p>
     pub fn set_number_of_dpus(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.number_of_dpus = input;
-        self
+        self.number_of_dpus = input; self
     }
     /// <p>The number of DPU hours consumed by the job.</p>
     pub fn get_number_of_dpus(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl RunMetricsBuilder {
     }
     /// <p>The duration of the job in hours.</p>
     pub fn set_job_duration_in_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_duration_in_hour = input;
-        self
+        self.job_duration_in_hour = input; self
     }
     /// <p>The duration of the job in hours.</p>
     pub fn get_job_duration_in_hour(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl RunMetricsBuilder {
     /// Consumes the builder and constructs a [`RunMetrics`](crate::types::RunMetrics).
     pub fn build(self) -> crate::types::RunMetrics {
         crate::types::RunMetrics {
-            number_of_bytes_compacted: self.number_of_bytes_compacted,
-            number_of_files_compacted: self.number_of_files_compacted,
-            number_of_dpus: self.number_of_dpus,
-            job_duration_in_hour: self.job_duration_in_hour,
+            number_of_bytes_compacted: self.number_of_bytes_compacted
+            ,
+            number_of_files_compacted: self.number_of_files_compacted
+            ,
+            number_of_dpus: self.number_of_dpus
+            ,
+            job_duration_in_hour: self.job_duration_in_hour
+            ,
         }
     }
 }
+

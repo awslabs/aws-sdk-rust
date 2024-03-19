@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSitesInput {
+pub struct GetSitesInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more site IDs. The maximum is 10.</p>
-    pub site_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub site_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetSitesInput {
+impl  GetSitesInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>One or more site IDs. The maximum is 10.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.site_ids.is_none()`.
-    pub fn site_ids(&self) -> &[::std::string::String] {
-        self.site_ids.as_deref().unwrap_or_default()
+    pub fn site_ids(&self) -> & [::std::string::String] {
+        self.site_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -44,7 +45,7 @@ impl GetSitesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSitesInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
-    pub(crate) site_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) site_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -57,8 +58,7 @@ impl GetSitesInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl GetSitesInputBuilder {
     /// <p>One or more site IDs. The maximum is 10.</p>
     pub fn site_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.site_ids.unwrap_or_default();
-        v.push(input.into());
-        self.site_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.site_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more site IDs. The maximum is 10.</p>
-    pub fn set_site_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.site_ids = input;
-        self
+    pub fn set_site_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.site_ids = input; self
     }
     /// <p>One or more site IDs. The maximum is 10.</p>
-    pub fn get_site_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_site_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.site_ids
     }
     /// <p>The maximum number of results to return.</p>
@@ -91,8 +90,7 @@ impl GetSitesInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -105,8 +103,7 @@ impl GetSitesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,11 +111,18 @@ impl GetSitesInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSitesInput`](crate::operation::get_sites::GetSitesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_sites::GetSitesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_sites::GetSitesInput {
-            global_network_id: self.global_network_id,
-            site_ids: self.site_ids,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_sites::GetSitesInput {
+                global_network_id: self.global_network_id
+                ,
+                site_ids: self.site_ids
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

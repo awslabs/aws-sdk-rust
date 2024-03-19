@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKxClustersInput {
+pub struct ListKxClustersInput  {
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
@@ -24,9 +24,9 @@ pub struct ListKxClustersInput {
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListKxClustersInput {
+impl  ListKxClustersInput  {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
@@ -42,7 +42,7 @@ impl ListKxClustersInput {
     /// <li>
     /// <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
-    pub fn cluster_type(&self) -> ::std::option::Option<&crate::types::KxClusterType> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& crate::types::KxClusterType> {
         self.cluster_type.as_ref()
     }
     /// <p>The maximum number of results to return in this request.</p>
@@ -50,7 +50,7 @@ impl ListKxClustersInput {
         self.max_results
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -79,8 +79,7 @@ impl ListKxClustersInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl ListKxClustersInputBuilder {
     /// <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
     /// <ul>
@@ -143,8 +141,7 @@ impl ListKxClustersInputBuilder {
     }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -157,22 +154,26 @@ impl ListKxClustersInputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListKxClustersInput`](crate::operation::list_kx_clusters::ListKxClustersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_kx_clusters::ListKxClustersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_kx_clusters::ListKxClustersInput {
-            environment_id: self.environment_id,
-            cluster_type: self.cluster_type,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_kx_clusters::ListKxClustersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_kx_clusters::ListKxClustersInput {
+                environment_id: self.environment_id
+                ,
+                cluster_type: self.cluster_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

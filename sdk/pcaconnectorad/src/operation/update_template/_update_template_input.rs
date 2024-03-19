@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTemplateInput {
+pub struct UpdateTemplateInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
@@ -10,13 +10,13 @@ pub struct UpdateTemplateInput {
     /// <p>This setting allows the major version of a template to be increased automatically. All members of Active Directory groups that are allowed to enroll with a template will receive a new certificate issued using that template.</p>
     pub reenroll_all_certificate_holders: ::std::option::Option<bool>,
 }
-impl UpdateTemplateInput {
+impl  UpdateTemplateInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::TemplateDefinition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::TemplateDefinition> {
         self.definition.as_ref()
     }
     /// <p>This setting allows the major version of a template to be increased automatically. All members of Active Directory groups that are allowed to enroll with a template will receive a new certificate issued using that template.</p>
@@ -48,8 +48,7 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::TemplateDefinition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::TemplateDefinition> {
@@ -76,21 +74,24 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>This setting allows the major version of a template to be increased automatically. All members of Active Directory groups that are allowed to enroll with a template will receive a new certificate issued using that template.</p>
     pub fn set_reenroll_all_certificate_holders(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reenroll_all_certificate_holders = input;
-        self
+        self.reenroll_all_certificate_holders = input; self
     }
     /// <p>This setting allows the major version of a template to be increased automatically. All members of Active Directory groups that are allowed to enroll with a template will receive a new certificate issued using that template.</p>
     pub fn get_reenroll_all_certificate_holders(&self) -> &::std::option::Option<bool> {
         &self.reenroll_all_certificate_holders
     }
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_template::UpdateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_template::UpdateTemplateInput {
-            template_arn: self.template_arn,
-            definition: self.definition,
-            reenroll_all_certificate_holders: self.reenroll_all_certificate_holders,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_template::UpdateTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_template::UpdateTemplateInput {
+                template_arn: self.template_arn
+                ,
+                definition: self.definition
+                ,
+                reenroll_all_certificate_holders: self.reenroll_all_certificate_holders
+                ,
+            }
+        )
     }
 }
+

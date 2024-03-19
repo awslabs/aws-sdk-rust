@@ -3,13 +3,13 @@
 /// <p>An object that contains information on the status of CloudTrail as a data source for the detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsGuardDutyDetectorDataSourcesCloudTrailDetails {
+pub struct AwsGuardDutyDetectorDataSourcesCloudTrailDetails  {
     /// <p>Specifies whether CloudTrail is activated as a data source for the detector.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsGuardDutyDetectorDataSourcesCloudTrailDetails {
+impl  AwsGuardDutyDetectorDataSourcesCloudTrailDetails  {
     /// <p>Specifies whether CloudTrail is activated as a data source for the detector.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsGuardDutyDetectorDataSourcesCloudTrailDetailsBuilder {
     }
     /// <p>Specifies whether CloudTrail is activated as a data source for the detector.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether CloudTrail is activated as a data source for the detector.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsGuardDutyDetectorDataSourcesCloudTrailDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesCloudTrailDetails`](crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails {
-        crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails { status: self.status }
+        crate::types::AwsGuardDutyDetectorDataSourcesCloudTrailDetails {
+            status: self.status
+            ,
+        }
     }
 }
+

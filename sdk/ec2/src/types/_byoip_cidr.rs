@@ -3,13 +3,13 @@
 /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ByoipCidr {
+pub struct ByoipCidr  {
     /// <p>The address range, in CIDR notation.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The description of the address range.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The BYOIP CIDR associations with ASNs.</p>
-    pub asn_associations: ::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>>,
+    pub asn_associations: ::std::option::Option<::std::vec::Vec::<crate::types::AsnAssociation>>,
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The state of the address pool.</p>
@@ -28,27 +28,28 @@ pub struct ByoipCidr {
     /// </note>
     pub network_border_group: ::std::option::Option<::std::string::String>,
 }
-impl ByoipCidr {
+impl  ByoipCidr  {
     /// <p>The address range, in CIDR notation.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>The description of the address range.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The BYOIP CIDR associations with ASNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asn_associations.is_none()`.
-    pub fn asn_associations(&self) -> &[crate::types::AsnAssociation] {
-        self.asn_associations.as_deref().unwrap_or_default()
+    pub fn asn_associations(&self) -> & [crate::types::AsnAssociation] {
+        self.asn_associations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The state of the address pool.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ByoipCidrState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ByoipCidrState> {
         self.state.as_ref()
     }
     /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
@@ -63,7 +64,7 @@ impl ByoipCidr {
     /// </ul><note>
     /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
     /// </note>
-    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+    pub fn network_border_group(&self) -> ::std::option::Option<& str> {
         self.network_border_group.as_deref()
     }
 }
@@ -80,7 +81,7 @@ impl ByoipCidr {
 pub struct ByoipCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) asn_associations: ::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>>,
+    pub(crate) asn_associations: ::std::option::Option<::std::vec::Vec::<crate::types::AsnAssociation>>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ByoipCidrState>,
     pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
@@ -93,8 +94,7 @@ impl ByoipCidrBuilder {
     }
     /// <p>The address range, in CIDR notation.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The address range, in CIDR notation.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl ByoipCidrBuilder {
     }
     /// <p>The description of the address range.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the address range.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,17 +120,16 @@ impl ByoipCidrBuilder {
     /// <p>The BYOIP CIDR associations with ASNs.</p>
     pub fn asn_associations(mut self, input: crate::types::AsnAssociation) -> Self {
         let mut v = self.asn_associations.unwrap_or_default();
-        v.push(input);
-        self.asn_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asn_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The BYOIP CIDR associations with ASNs.</p>
-    pub fn set_asn_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>>) -> Self {
-        self.asn_associations = input;
-        self
+    pub fn set_asn_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AsnAssociation>>) -> Self {
+        self.asn_associations = input; self
     }
     /// <p>The BYOIP CIDR associations with ASNs.</p>
-    pub fn get_asn_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>> {
+    pub fn get_asn_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AsnAssociation>> {
         &self.asn_associations
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
@@ -141,8 +139,7 @@ impl ByoipCidrBuilder {
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl ByoipCidrBuilder {
     }
     /// <p>The state of the address pool.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ByoipCidrState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the address pool.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ByoipCidrState> {
@@ -191,8 +187,7 @@ impl ByoipCidrBuilder {
     /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
     /// </note>
     pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_border_group = input;
-        self
+        self.network_border_group = input; self
     }
     /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
     /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
@@ -212,12 +207,19 @@ impl ByoipCidrBuilder {
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn build(self) -> crate::types::ByoipCidr {
         crate::types::ByoipCidr {
-            cidr: self.cidr,
-            description: self.description,
-            asn_associations: self.asn_associations,
-            status_message: self.status_message,
-            state: self.state,
-            network_border_group: self.network_border_group,
+            cidr: self.cidr
+            ,
+            description: self.description
+            ,
+            asn_associations: self.asn_associations
+            ,
+            status_message: self.status_message
+            ,
+            state: self.state
+            ,
+            network_border_group: self.network_border_group
+            ,
         }
     }
 }
+

@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBotAliasesOutput {
+pub struct ListBotAliasesOutput  {
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub bot_alias_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>,
+    pub bot_alias_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::BotAliasSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot associated with the aliases.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBotAliasesOutput {
+impl  ListBotAliasesOutput  {
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_alias_summaries.is_none()`.
-    pub fn bot_alias_summaries(&self) -> &[crate::types::BotAliasSummary] {
-        self.bot_alias_summaries.as_deref().unwrap_or_default()
+    pub fn bot_alias_summaries(&self) -> & [crate::types::BotAliasSummary] {
+        self.bot_alias_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The identifier of the bot associated with the aliases.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBotAliasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBotAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListBotAliasesOutput`](crate::operation::list_bot_aliases::ListBotAliasesOutput).
     pub fn builder() -> crate::operation::list_bot_aliases::builders::ListBotAliasesOutputBuilder {
@@ -43,7 +44,7 @@ impl ListBotAliasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotAliasesOutputBuilder {
-    pub(crate) bot_alias_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>,
+    pub(crate) bot_alias_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::BotAliasSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl ListBotAliasesOutputBuilder {
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     pub fn bot_alias_summaries(mut self, input: crate::types::BotAliasSummary) -> Self {
         let mut v = self.bot_alias_summaries.unwrap_or_default();
-        v.push(input);
-        self.bot_alias_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bot_alias_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_bot_alias_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>) -> Self {
-        self.bot_alias_summaries = input;
-        self
+    pub fn set_bot_alias_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BotAliasSummary>>) -> Self {
+        self.bot_alias_summaries = input; self
     }
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_bot_alias_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>> {
+    pub fn get_bot_alias_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BotAliasSummary>> {
         &self.bot_alias_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
@@ -76,8 +76,7 @@ impl ListBotAliasesOutputBuilder {
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl ListBotAliasesOutputBuilder {
     }
     /// <p>The identifier of the bot associated with the aliases.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot associated with the aliases.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBotAliasesOutput`](crate::operation::list_bot_aliases::ListBotAliasesOutput).
     pub fn build(self) -> crate::operation::list_bot_aliases::ListBotAliasesOutput {
         crate::operation::list_bot_aliases::ListBotAliasesOutput {
-            bot_alias_summaries: self.bot_alias_summaries,
-            next_token: self.next_token,
-            bot_id: self.bot_id,
+            bot_alias_summaries: self.bot_alias_summaries
+            ,
+            next_token: self.next_token
+            ,
+            bot_id: self.bot_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

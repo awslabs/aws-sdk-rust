@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopNotebookInstanceInput {
+pub struct StopNotebookInstanceInput  {
     /// <p>The name of the notebook instance to terminate.</p>
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
 }
-impl StopNotebookInstanceInput {
+impl  StopNotebookInstanceInput  {
     /// <p>The name of the notebook instance to terminate.</p>
-    pub fn notebook_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_instance_name(&self) -> ::std::option::Option<& str> {
         self.notebook_instance_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopNotebookInstanceInputBuilder {
     }
     /// <p>The name of the notebook instance to terminate.</p>
     pub fn set_notebook_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_instance_name = input;
-        self
+        self.notebook_instance_name = input; self
     }
     /// <p>The name of the notebook instance to terminate.</p>
     pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_name
     }
     /// Consumes the builder and constructs a [`StopNotebookInstanceInput`](crate::operation::stop_notebook_instance::StopNotebookInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_notebook_instance::StopNotebookInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_notebook_instance::StopNotebookInstanceInput {
-            notebook_instance_name: self.notebook_instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_notebook_instance::StopNotebookInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_notebook_instance::StopNotebookInstanceInput {
+                notebook_instance_name: self.notebook_instance_name
+                ,
+            }
+        )
     }
 }
+

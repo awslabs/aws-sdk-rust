@@ -3,23 +3,23 @@
 /// <p>Contains the OAuth authorization parameters to use for the connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateConnectionOAuthClientRequestParameters {
+pub struct UpdateConnectionOAuthClientRequestParameters  {
     /// <p>The client ID to use for OAuth authorization.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
     pub client_secret: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConnectionOAuthClientRequestParameters {
+impl  UpdateConnectionOAuthClientRequestParameters  {
     /// <p>The client ID to use for OAuth authorization.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<& str> {
         self.client_secret.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateConnectionOAuthClientRequestParameters {
+impl  ::std::fmt::Debug for UpdateConnectionOAuthClientRequestParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionOAuthClientRequestParameters");
         formatter.field("client_id", &self.client_id);
@@ -49,8 +49,7 @@ impl UpdateConnectionOAuthClientRequestParametersBuilder {
     }
     /// <p>The client ID to use for OAuth authorization.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The client ID to use for OAuth authorization.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateConnectionOAuthClientRequestParametersBuilder {
     }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
     pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_secret = input;
-        self
+        self.client_secret = input; self
     }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl UpdateConnectionOAuthClientRequestParametersBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectionOAuthClientRequestParameters`](crate::types::UpdateConnectionOAuthClientRequestParameters).
     pub fn build(self) -> crate::types::UpdateConnectionOAuthClientRequestParameters {
         crate::types::UpdateConnectionOAuthClientRequestParameters {
-            client_id: self.client_id,
-            client_secret: self.client_secret,
+            client_id: self.client_id
+            ,
+            client_secret: self.client_secret
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for UpdateConnectionOAuthClientRequestParametersBuilder {
         formatter.finish()
     }
 }
+

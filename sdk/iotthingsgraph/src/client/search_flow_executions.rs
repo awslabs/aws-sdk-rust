@@ -2,20 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchFlowExecutions`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`system_instance_id(impl Into<String>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::system_instance_id) / [`set_system_instance_id(Option<String>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::set_system_instance_id):<br>required: **true**<br><p>The ID of the system instance that contains the flow.</p><br>
     ///   - [`flow_execution_id(impl Into<String>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::flow_execution_id) / [`set_flow_execution_id(Option<String>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::set_flow_execution_id):<br>required: **false**<br><p>The ID of a flow execution.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::set_start_time):<br>required: **false**<br><p>The date and time of the earliest flow execution to return.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::set_end_time):<br>required: **false**<br><p>The date and time of the latest flow execution to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results. Use this when you're paginating results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
-    /// - On success, responds with [`SearchFlowExecutionsOutput`](crate::operation::search_flow_executions::SearchFlowExecutionsOutput) with field(s):
+                            /// - On success, responds with [`SearchFlowExecutionsOutput`](crate::operation::search_flow_executions::SearchFlowExecutionsOutput) with field(s):
     ///   - [`summaries(Option<Vec::<FlowExecutionSummary>>)`](crate::operation::search_flow_executions::SearchFlowExecutionsOutput::summaries): <p>An array of objects that contain summary information about each workflow execution in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_flow_executions::SearchFlowExecutionsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<SearchFlowExecutionsError>`](crate::operation::search_flow_executions::SearchFlowExecutionsError)
+                            /// - On failure, responds with [`SdkError<SearchFlowExecutionsError>`](crate::operation::search_flow_executions::SearchFlowExecutionsError)
     #[deprecated(note = "since: 2022-08-30")]
     pub fn search_flow_executions(&self) -> crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder {
-        crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_flow_executions::builders::SearchFlowExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

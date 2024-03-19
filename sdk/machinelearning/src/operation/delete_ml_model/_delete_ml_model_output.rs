@@ -4,22 +4,22 @@
 /// <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMlModelOutput {
+pub struct DeleteMlModelOutput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteMlModelOutput {
+impl  DeleteMlModelOutput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteMlModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteMlModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMlModelOutput`](crate::operation::delete_ml_model::DeleteMlModelOutput).
     pub fn builder() -> crate::operation::delete_ml_model::builders::DeleteMlModelOutputBuilder {
@@ -42,27 +42,28 @@ impl DeleteMlModelOutputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ml_model_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteMlModelOutput`](crate::operation::delete_ml_model::DeleteMlModelOutput).
     pub fn build(self) -> crate::operation::delete_ml_model::DeleteMlModelOutput {
         crate::operation::delete_ml_model::DeleteMlModelOutput {
-            ml_model_id: self.ml_model_id,
+            ml_model_id: self.ml_model_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartFailbackLaunchInput {
+pub struct StartFailbackLaunchInput  {
     /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-    pub recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub recovery_instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The tags to be associated with the failback launch Job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartFailbackLaunchInput {
+impl  StartFailbackLaunchInput  {
     /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_instance_ids.is_none()`.
-    pub fn recovery_instance_ids(&self) -> &[::std::string::String] {
-        self.recovery_instance_ids.as_deref().unwrap_or_default()
+    pub fn recovery_instance_ids(&self) -> & [::std::string::String] {
+        self.recovery_instance_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to be associated with the failback launch Job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for StartFailbackLaunchInput {
+impl  ::std::fmt::Debug for StartFailbackLaunchInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartFailbackLaunchInput");
         formatter.field("recovery_instance_ids", &self.recovery_instance_ids);
@@ -39,8 +40,8 @@ impl StartFailbackLaunchInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartFailbackLaunchInputBuilder {
-    pub(crate) recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) recovery_instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartFailbackLaunchInputBuilder {
     /// Appends an item to `recovery_instance_ids`.
@@ -50,17 +51,16 @@ impl StartFailbackLaunchInputBuilder {
     /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
     pub fn recovery_instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recovery_instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recovery_instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recovery_instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-    pub fn set_recovery_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.recovery_instance_ids = input;
-        self
+    pub fn set_recovery_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.recovery_instance_ids = input; self
     }
     /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-    pub fn get_recovery_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recovery_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.recovery_instance_ids
     }
     /// Adds a key-value pair to `tags`.
@@ -70,28 +70,28 @@ impl StartFailbackLaunchInputBuilder {
     /// <p>The tags to be associated with the failback launch Job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be associated with the failback launch Job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be associated with the failback launch Job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartFailbackLaunchInput`](crate::operation::start_failback_launch::StartFailbackLaunchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_failback_launch::StartFailbackLaunchInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_failback_launch::StartFailbackLaunchInput {
-            recovery_instance_ids: self.recovery_instance_ids,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_failback_launch::StartFailbackLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_failback_launch::StartFailbackLaunchInput {
+                recovery_instance_ids: self.recovery_instance_ids
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartFailbackLaunchInputBuilder {
@@ -102,3 +102,4 @@ impl ::std::fmt::Debug for StartFailbackLaunchInputBuilder {
         formatter.finish()
     }
 }
+

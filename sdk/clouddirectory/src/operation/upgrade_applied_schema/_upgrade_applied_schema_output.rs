@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpgradeAppliedSchemaOutput {
+pub struct UpgradeAppliedSchemaOutput  {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     pub upgraded_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the directory that is returned as part of the response.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpgradeAppliedSchemaOutput {
+impl  UpgradeAppliedSchemaOutput  {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-    pub fn upgraded_schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn upgraded_schema_arn(&self) -> ::std::option::Option<& str> {
         self.upgraded_schema_arn.as_deref()
     }
     /// <p>The ARN of the directory that is returned as part of the response.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpgradeAppliedSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpgradeAppliedSchemaOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeAppliedSchemaOutput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput).
     pub fn builder() -> crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaOutputBuilder {
@@ -47,8 +47,7 @@ impl UpgradeAppliedSchemaOutputBuilder {
     }
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     pub fn set_upgraded_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upgraded_schema_arn = input;
-        self
+        self.upgraded_schema_arn = input; self
     }
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     pub fn get_upgraded_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl UpgradeAppliedSchemaOutputBuilder {
     }
     /// <p>The ARN of the directory that is returned as part of the response.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN of the directory that is returned as part of the response.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpgradeAppliedSchemaOutput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput).
     pub fn build(self) -> crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput {
         crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput {
-            upgraded_schema_arn: self.upgraded_schema_arn,
-            directory_arn: self.directory_arn,
+            upgraded_schema_arn: self.upgraded_schema_arn
+            ,
+            directory_arn: self.directory_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

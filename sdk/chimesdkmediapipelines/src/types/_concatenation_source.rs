@@ -3,19 +3,19 @@
 /// <p>The source type and media pipeline configuration settings in a configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConcatenationSource {
+pub struct ConcatenationSource  {
     /// <p>The type of concatenation source in a configuration object.</p>
     pub r#type: crate::types::ConcatenationSourceType,
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     pub media_capture_pipeline_source_configuration: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
 }
-impl ConcatenationSource {
+impl  ConcatenationSource  {
     /// <p>The type of concatenation source in a configuration object.</p>
-    pub fn r#type(&self) -> &crate::types::ConcatenationSourceType {
+    pub fn r#type(&self) -> & crate::types::ConcatenationSourceType {
         &self.r#type
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
-    pub fn media_capture_pipeline_source_configuration(&self) -> ::std::option::Option<&crate::types::MediaCapturePipelineSourceConfiguration> {
+    pub fn media_capture_pipeline_source_configuration(&self) -> ::std::option::Option<& crate::types::MediaCapturePipelineSourceConfiguration> {
         self.media_capture_pipeline_source_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ConcatenationSourceBuilder {
     }
     /// <p>The type of concatenation source in a configuration object.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConcatenationSourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of concatenation source in a configuration object.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ConcatenationSourceType> {
@@ -56,12 +55,8 @@ impl ConcatenationSourceBuilder {
         self
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
-    pub fn set_media_capture_pipeline_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
-    ) -> Self {
-        self.media_capture_pipeline_source_configuration = input;
-        self
+    pub fn set_media_capture_pipeline_source_configuration(mut self, input: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>) -> Self {
+        self.media_capture_pipeline_source_configuration = input; self
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     pub fn get_media_capture_pipeline_source_configuration(&self) -> &::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration> {
@@ -71,14 +66,17 @@ impl ConcatenationSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ConcatenationSourceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ConcatenationSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConcatenationSource {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ConcatenationSource",
-                )
-            })?,
-            media_capture_pipeline_source_configuration: self.media_capture_pipeline_source_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConcatenationSource {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ConcatenationSource")
+                    )?
+                ,
+                media_capture_pipeline_source_configuration: self.media_capture_pipeline_source_configuration
+                ,
+            }
+        )
     }
 }
+

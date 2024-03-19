@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDocumentClassificationJobOutput {
+pub struct DescribeDocumentClassificationJobOutput  {
     /// <p>An object that describes the properties associated with the document classification job.</p>
     pub document_classification_job_properties: ::std::option::Option<crate::types::DocumentClassificationJobProperties>,
     _request_id: Option<String>,
 }
-impl DescribeDocumentClassificationJobOutput {
+impl  DescribeDocumentClassificationJobOutput  {
     /// <p>An object that describes the properties associated with the document classification job.</p>
-    pub fn document_classification_job_properties(&self) -> ::std::option::Option<&crate::types::DocumentClassificationJobProperties> {
+    pub fn document_classification_job_properties(&self) -> ::std::option::Option<& crate::types::DocumentClassificationJobProperties> {
         self.document_classification_job_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDocumentClassificationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDocumentClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobOutput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput).
     pub fn builder() -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobOutputBuilder {
@@ -39,31 +39,29 @@ impl DescribeDocumentClassificationJobOutputBuilder {
         self
     }
     /// <p>An object that describes the properties associated with the document classification job.</p>
-    pub fn set_document_classification_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassificationJobProperties>,
-    ) -> Self {
-        self.document_classification_job_properties = input;
-        self
+    pub fn set_document_classification_job_properties(mut self, input: ::std::option::Option<crate::types::DocumentClassificationJobProperties>) -> Self {
+        self.document_classification_job_properties = input; self
     }
     /// <p>An object that describes the properties associated with the document classification job.</p>
     pub fn get_document_classification_job_properties(&self) -> &::std::option::Option<crate::types::DocumentClassificationJobProperties> {
         &self.document_classification_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDocumentClassificationJobOutput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput).
     pub fn build(self) -> crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput {
         crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput {
-            document_classification_job_properties: self.document_classification_job_properties,
+            document_classification_job_properties: self.document_classification_job_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluatePullRequestApprovalRulesInput {
+pub struct EvaluatePullRequestApprovalRulesInput  {
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
-impl EvaluatePullRequestApprovalRulesInput {
+impl  EvaluatePullRequestApprovalRulesInput  {
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EvaluatePullRequestApprovalRulesInputBuilder {
     }
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pull_request_id = input;
-        self
+        self.pull_request_id = input; self
     }
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl EvaluatePullRequestApprovalRulesInputBuilder {
     }
     /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`EvaluatePullRequestApprovalRulesInput`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesInput {
-                pull_request_id: self.pull_request_id,
-                revision_id: self.revision_id,
-            },
+                pull_request_id: self.pull_request_id
+                ,
+                revision_id: self.revision_id
+                ,
+            }
         )
     }
 }
+

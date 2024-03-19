@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateExternalConnectionInput {
+pub struct AssociateExternalConnectionInput  {
     /// <p>The name of the domain that contains the repository.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -30,17 +30,17 @@ pub struct AssociateExternalConnectionInput {
     /// </ul>
     pub external_connection: ::std::option::Option<::std::string::String>,
 }
-impl AssociateExternalConnectionInput {
+impl  AssociateExternalConnectionInput  {
     /// <p>The name of the domain that contains the repository.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository to which the external connection is added.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The name of the external connection to add to the repository. The following values are supported:</p>
@@ -62,7 +62,7 @@ impl AssociateExternalConnectionInput {
     /// <li>
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
     /// </ul>
-    pub fn external_connection(&self) -> ::std::option::Option<&str> {
+    pub fn external_connection(&self) -> ::std::option::Option<& str> {
         self.external_connection.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl AssociateExternalConnectionInputBuilder {
     }
     /// <p>The name of the domain that contains the repository.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the repository.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl AssociateExternalConnectionInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl AssociateExternalConnectionInputBuilder {
     }
     /// <p>The name of the repository to which the external connection is added.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The name of the repository to which the external connection is added.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl AssociateExternalConnectionInputBuilder {
     /// <p><code>public:maven-clojars</code> - for the Clojars repository.</p></li>
     /// </ul>
     pub fn set_external_connection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_connection = input;
-        self
+        self.external_connection = input; self
     }
     /// <p>The name of the external connection to add to the repository. The following values are supported:</p>
     /// <ul>
@@ -197,17 +193,19 @@ impl AssociateExternalConnectionInputBuilder {
         &self.external_connection
     }
     /// Consumes the builder and constructs a [`AssociateExternalConnectionInput`](crate::operation::associate_external_connection::AssociateExternalConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_external_connection::AssociateExternalConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_external_connection::AssociateExternalConnectionInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            repository: self.repository,
-            external_connection: self.external_connection,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_external_connection::AssociateExternalConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_external_connection::AssociateExternalConnectionInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                external_connection: self.external_connection
+                ,
+            }
+        )
     }
 }
+

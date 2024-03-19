@@ -3,27 +3,29 @@
 /// <p>Contains the output of ValidatePipelineDefinition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidatePipelineDefinitionOutput {
+pub struct ValidatePipelineDefinitionOutput  {
     /// <p>Any validation errors that were found.</p>
-    pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
+    pub validation_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationError>>,
     /// <p>Any validation warnings that were found.</p>
-    pub validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
+    pub validation_warnings: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationWarning>>,
     /// <p>Indicates whether there were validation errors.</p>
     pub errored: bool,
     _request_id: Option<String>,
 }
-impl ValidatePipelineDefinitionOutput {
+impl  ValidatePipelineDefinitionOutput  {
     /// <p>Any validation errors that were found.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_errors.is_none()`.
-    pub fn validation_errors(&self) -> &[crate::types::ValidationError] {
-        self.validation_errors.as_deref().unwrap_or_default()
+    pub fn validation_errors(&self) -> & [crate::types::ValidationError] {
+        self.validation_errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any validation warnings that were found.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_warnings.is_none()`.
-    pub fn validation_warnings(&self) -> &[crate::types::ValidationWarning] {
-        self.validation_warnings.as_deref().unwrap_or_default()
+    pub fn validation_warnings(&self) -> & [crate::types::ValidationWarning] {
+        self.validation_warnings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether there were validation errors.</p>
     pub fn errored(&self) -> bool {
@@ -31,10 +33,10 @@ impl ValidatePipelineDefinitionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ValidatePipelineDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ValidatePipelineDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionOutput`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput).
     pub fn builder() -> crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionOutputBuilder {
@@ -46,8 +48,8 @@ impl ValidatePipelineDefinitionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionOutputBuilder {
-    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
-    pub(crate) validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
+    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationError>>,
+    pub(crate) validation_warnings: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationWarning>>,
     pub(crate) errored: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -59,17 +61,16 @@ impl ValidatePipelineDefinitionOutputBuilder {
     /// <p>Any validation errors that were found.</p>
     pub fn validation_errors(mut self, input: crate::types::ValidationError) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
-        v.push(input);
-        self.validation_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any validation errors that were found.</p>
-    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>) -> Self {
-        self.validation_errors = input;
-        self
+    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationError>>) -> Self {
+        self.validation_errors = input; self
     }
     /// <p>Any validation errors that were found.</p>
-    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidationError>> {
         &self.validation_errors
     }
     /// Appends an item to `validation_warnings`.
@@ -79,17 +80,16 @@ impl ValidatePipelineDefinitionOutputBuilder {
     /// <p>Any validation warnings that were found.</p>
     pub fn validation_warnings(mut self, input: crate::types::ValidationWarning) -> Self {
         let mut v = self.validation_warnings.unwrap_or_default();
-        v.push(input);
-        self.validation_warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any validation warnings that were found.</p>
-    pub fn set_validation_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>) -> Self {
-        self.validation_warnings = input;
-        self
+    pub fn set_validation_warnings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationWarning>>) -> Self {
+        self.validation_warnings = input; self
     }
     /// <p>Any validation warnings that were found.</p>
-    pub fn get_validation_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>> {
+    pub fn get_validation_warnings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidationWarning>> {
         &self.validation_warnings
     }
     /// <p>Indicates whether there were validation errors.</p>
@@ -100,29 +100,33 @@ impl ValidatePipelineDefinitionOutputBuilder {
     }
     /// <p>Indicates whether there were validation errors.</p>
     pub fn set_errored(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.errored = input;
-        self
+        self.errored = input; self
     }
     /// <p>Indicates whether there were validation errors.</p>
     pub fn get_errored(&self) -> &::std::option::Option<bool> {
         &self.errored
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ValidatePipelineDefinitionOutput`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput).
     pub fn build(self) -> crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput {
         crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput {
-            validation_errors: self.validation_errors,
-            validation_warnings: self.validation_warnings,
-            errored: self.errored.unwrap_or_default(),
+            validation_errors: self.validation_errors
+            ,
+            validation_warnings: self.validation_warnings
+            ,
+            errored: self.errored
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

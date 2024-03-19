@@ -3,13 +3,13 @@
 /// <p>Creates a new ActiveMQ user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserInput {
+pub struct CreateUserInput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub console_access: ::std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -17,9 +17,9 @@ pub struct CreateUserInput {
     /// <p>Defines if this user is intended for CRDR replication purposes.</p>
     pub replication_user: ::std::option::Option<bool>,
 }
-impl CreateUserInput {
+impl  CreateUserInput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
@@ -27,17 +27,18 @@ impl CreateUserInput {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>Defines if this user is intended for CRDR replication purposes.</p>
@@ -58,7 +59,7 @@ impl CreateUserInput {
 pub struct CreateUserInputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
     pub(crate) console_access: ::std::option::Option<bool>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) replication_user: ::std::option::Option<bool>,
@@ -72,8 +73,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn set_console_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.console_access = input;
-        self
+        self.console_access = input; self
     }
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn get_console_access(&self) -> &::std::option::Option<bool> {
@@ -100,17 +99,16 @@ impl CreateUserInputBuilder {
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
@@ -121,8 +119,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +133,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +146,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>Defines if this user is intended for CRDR replication purposes.</p>
     pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replication_user = input;
-        self
+        self.replication_user = input; self
     }
     /// <p>Defines if this user is intended for CRDR replication purposes.</p>
     pub fn get_replication_user(&self) -> &::std::option::Option<bool> {
@@ -159,13 +154,22 @@ impl CreateUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
-            broker_id: self.broker_id,
-            console_access: self.console_access,
-            groups: self.groups,
-            password: self.password,
-            username: self.username,
-            replication_user: self.replication_user,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_user::CreateUserInput {
+                broker_id: self.broker_id
+                ,
+                console_access: self.console_access
+                ,
+                groups: self.groups
+                ,
+                password: self.password
+                ,
+                username: self.username
+                ,
+                replication_user: self.replication_user
+                ,
+            }
+        )
     }
 }
+

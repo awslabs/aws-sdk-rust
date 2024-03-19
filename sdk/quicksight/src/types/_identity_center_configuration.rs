@@ -3,11 +3,11 @@
 /// <p>The parameters for an IAM Identity Center configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityCenterConfiguration {
+pub struct IdentityCenterConfiguration  {
     /// <p>A Boolean option that controls whether Trusted Identity Propagation should be used.</p>
     pub enable_identity_propagation: ::std::option::Option<bool>,
 }
-impl IdentityCenterConfiguration {
+impl  IdentityCenterConfiguration  {
     /// <p>A Boolean option that controls whether Trusted Identity Propagation should be used.</p>
     pub fn enable_identity_propagation(&self) -> ::std::option::Option<bool> {
         self.enable_identity_propagation
@@ -34,8 +34,7 @@ impl IdentityCenterConfigurationBuilder {
     }
     /// <p>A Boolean option that controls whether Trusted Identity Propagation should be used.</p>
     pub fn set_enable_identity_propagation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_identity_propagation = input;
-        self
+        self.enable_identity_propagation = input; self
     }
     /// <p>A Boolean option that controls whether Trusted Identity Propagation should be used.</p>
     pub fn get_enable_identity_propagation(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl IdentityCenterConfigurationBuilder {
     /// Consumes the builder and constructs a [`IdentityCenterConfiguration`](crate::types::IdentityCenterConfiguration).
     pub fn build(self) -> crate::types::IdentityCenterConfiguration {
         crate::types::IdentityCenterConfiguration {
-            enable_identity_propagation: self.enable_identity_propagation,
+            enable_identity_propagation: self.enable_identity_propagation
+            ,
         }
     }
 }
+

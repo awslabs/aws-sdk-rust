@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTenantDatabasesOutput {
+pub struct DescribeTenantDatabasesOutput  {
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of the tenant databases requested by the <code>DescribeTenantDatabases</code> operation.</p>
-    pub tenant_databases: ::std::option::Option<::std::vec::Vec<crate::types::TenantDatabase>>,
+    pub tenant_databases: ::std::option::Option<::std::vec::Vec::<crate::types::TenantDatabase>>,
     _request_id: Option<String>,
 }
-impl DescribeTenantDatabasesOutput {
+impl  DescribeTenantDatabasesOutput  {
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>An array of the tenant databases requested by the <code>DescribeTenantDatabases</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tenant_databases.is_none()`.
-    pub fn tenant_databases(&self) -> &[crate::types::TenantDatabase] {
-        self.tenant_databases.as_deref().unwrap_or_default()
+    pub fn tenant_databases(&self) -> & [crate::types::TenantDatabase] {
+        self.tenant_databases.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTenantDatabasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTenantDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTenantDatabasesOutput`](crate::operation::describe_tenant_databases::DescribeTenantDatabasesOutput).
     pub fn builder() -> crate::operation::describe_tenant_databases::builders::DescribeTenantDatabasesOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeTenantDatabasesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTenantDatabasesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) tenant_databases: ::std::option::Option<::std::vec::Vec<crate::types::TenantDatabase>>,
+    pub(crate) tenant_databases: ::std::option::Option<::std::vec::Vec::<crate::types::TenantDatabase>>,
     _request_id: Option<String>,
 }
 impl DescribeTenantDatabasesOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeTenantDatabasesOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeTenantDatabases</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeTenantDatabasesOutputBuilder {
     /// <p>An array of the tenant databases requested by the <code>DescribeTenantDatabases</code> operation.</p>
     pub fn tenant_databases(mut self, input: crate::types::TenantDatabase) -> Self {
         let mut v = self.tenant_databases.unwrap_or_default();
-        v.push(input);
-        self.tenant_databases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tenant_databases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the tenant databases requested by the <code>DescribeTenantDatabases</code> operation.</p>
-    pub fn set_tenant_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TenantDatabase>>) -> Self {
-        self.tenant_databases = input;
-        self
+    pub fn set_tenant_databases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TenantDatabase>>) -> Self {
+        self.tenant_databases = input; self
     }
     /// <p>An array of the tenant databases requested by the <code>DescribeTenantDatabases</code> operation.</p>
-    pub fn get_tenant_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TenantDatabase>> {
+    pub fn get_tenant_databases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TenantDatabase>> {
         &self.tenant_databases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTenantDatabasesOutput`](crate::operation::describe_tenant_databases::DescribeTenantDatabasesOutput).
     pub fn build(self) -> crate::operation::describe_tenant_databases::DescribeTenantDatabasesOutput {
         crate::operation::describe_tenant_databases::DescribeTenantDatabasesOutput {
-            marker: self.marker,
-            tenant_databases: self.tenant_databases,
+            marker: self.marker
+            ,
+            tenant_databases: self.tenant_databases
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

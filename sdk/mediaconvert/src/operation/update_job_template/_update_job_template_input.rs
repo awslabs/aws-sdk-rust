@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateJobTemplateInput {
+pub struct UpdateJobTemplateInput  {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     pub acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     /// The new category for the job template, if you are changing it.
@@ -10,7 +10,7 @@ pub struct UpdateJobTemplateInput {
     /// The new description for the job template, if you are changing it.
     pub description: ::std::option::Option<::std::string::String>,
     /// Optional list of hop destinations.
-    pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
+    pub hop_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::HopDestination>>,
     /// The name of the job template you are modifying
     pub name: ::std::option::Option<::std::string::String>,
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
@@ -22,27 +22,28 @@ pub struct UpdateJobTemplateInput {
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub status_update_interval: ::std::option::Option<crate::types::StatusUpdateInterval>,
 }
-impl UpdateJobTemplateInput {
+impl  UpdateJobTemplateInput  {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-    pub fn acceleration_settings(&self) -> ::std::option::Option<&crate::types::AccelerationSettings> {
+    pub fn acceleration_settings(&self) -> ::std::option::Option<& crate::types::AccelerationSettings> {
         self.acceleration_settings.as_ref()
     }
     /// The new category for the job template, if you are changing it.
-    pub fn category(&self) -> ::std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<& str> {
         self.category.as_deref()
     }
     /// The new description for the job template, if you are changing it.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Optional list of hop destinations.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hop_destinations.is_none()`.
-    pub fn hop_destinations(&self) -> &[crate::types::HopDestination] {
-        self.hop_destinations.as_deref().unwrap_or_default()
+    pub fn hop_destinations(&self) -> & [crate::types::HopDestination] {
+        self.hop_destinations.as_deref()
+        .unwrap_or_default()
     }
     /// The name of the job template you are modifying
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
@@ -50,15 +51,15 @@ impl UpdateJobTemplateInput {
         self.priority
     }
     /// The new queue for the job template, if you are changing it.
-    pub fn queue(&self) -> ::std::option::Option<&str> {
+    pub fn queue(&self) -> ::std::option::Option<& str> {
         self.queue.as_deref()
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::JobTemplateSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::JobTemplateSettings> {
         self.settings.as_ref()
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn status_update_interval(&self) -> ::std::option::Option<&crate::types::StatusUpdateInterval> {
+    pub fn status_update_interval(&self) -> ::std::option::Option<& crate::types::StatusUpdateInterval> {
         self.status_update_interval.as_ref()
     }
 }
@@ -76,7 +77,7 @@ pub struct UpdateJobTemplateInputBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
+    pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::HopDestination>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) queue: ::std::option::Option<::std::string::String>,
@@ -91,8 +92,7 @@ impl UpdateJobTemplateInputBuilder {
     }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     pub fn set_acceleration_settings(mut self, input: ::std::option::Option<crate::types::AccelerationSettings>) -> Self {
-        self.acceleration_settings = input;
-        self
+        self.acceleration_settings = input; self
     }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     pub fn get_acceleration_settings(&self) -> &::std::option::Option<crate::types::AccelerationSettings> {
@@ -105,8 +105,7 @@ impl UpdateJobTemplateInputBuilder {
     }
     /// The new category for the job template, if you are changing it.
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// The new category for the job template, if you are changing it.
     pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl UpdateJobTemplateInputBuilder {
     }
     /// The new description for the job template, if you are changing it.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// The new description for the job template, if you are changing it.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,17 +131,16 @@ impl UpdateJobTemplateInputBuilder {
     /// Optional list of hop destinations.
     pub fn hop_destinations(mut self, input: crate::types::HopDestination) -> Self {
         let mut v = self.hop_destinations.unwrap_or_default();
-        v.push(input);
-        self.hop_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hop_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// Optional list of hop destinations.
-    pub fn set_hop_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>) -> Self {
-        self.hop_destinations = input;
-        self
+    pub fn set_hop_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HopDestination>>) -> Self {
+        self.hop_destinations = input; self
     }
     /// Optional list of hop destinations.
-    pub fn get_hop_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
+    pub fn get_hop_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HopDestination>> {
         &self.hop_destinations
     }
     /// The name of the job template you are modifying
@@ -154,8 +151,7 @@ impl UpdateJobTemplateInputBuilder {
     }
     /// The name of the job template you are modifying
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the job template you are modifying
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +164,7 @@ impl UpdateJobTemplateInputBuilder {
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -182,8 +177,7 @@ impl UpdateJobTemplateInputBuilder {
     }
     /// The new queue for the job template, if you are changing it.
     pub fn set_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue = input;
-        self
+        self.queue = input; self
     }
     /// The new queue for the job template, if you are changing it.
     pub fn get_queue(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +190,7 @@ impl UpdateJobTemplateInputBuilder {
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::JobTemplateSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::JobTemplateSettings> {
@@ -210,27 +203,36 @@ impl UpdateJobTemplateInputBuilder {
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn set_status_update_interval(mut self, input: ::std::option::Option<crate::types::StatusUpdateInterval>) -> Self {
-        self.status_update_interval = input;
-        self
+        self.status_update_interval = input; self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn get_status_update_interval(&self) -> &::std::option::Option<crate::types::StatusUpdateInterval> {
         &self.status_update_interval
     }
     /// Consumes the builder and constructs a [`UpdateJobTemplateInput`](crate::operation::update_job_template::UpdateJobTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_job_template::UpdateJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_job_template::UpdateJobTemplateInput {
-            acceleration_settings: self.acceleration_settings,
-            category: self.category,
-            description: self.description,
-            hop_destinations: self.hop_destinations,
-            name: self.name,
-            priority: self.priority,
-            queue: self.queue,
-            settings: self.settings,
-            status_update_interval: self.status_update_interval,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_job_template::UpdateJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_job_template::UpdateJobTemplateInput {
+                acceleration_settings: self.acceleration_settings
+                ,
+                category: self.category
+                ,
+                description: self.description
+                ,
+                hop_destinations: self.hop_destinations
+                ,
+                name: self.name
+                ,
+                priority: self.priority
+                ,
+                queue: self.queue
+                ,
+                settings: self.settings
+                ,
+                status_update_interval: self.status_update_interval
+                ,
+            }
+        )
     }
 }
+

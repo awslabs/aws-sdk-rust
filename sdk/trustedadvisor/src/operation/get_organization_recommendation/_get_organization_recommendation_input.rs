@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOrganizationRecommendationInput {
+pub struct GetOrganizationRecommendationInput  {
     /// <p>The Recommendation identifier</p>
     pub organization_recommendation_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetOrganizationRecommendationInput {
+impl  GetOrganizationRecommendationInput  {
     /// <p>The Recommendation identifier</p>
-    pub fn organization_recommendation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn organization_recommendation_identifier(&self) -> ::std::option::Option<& str> {
         self.organization_recommendation_identifier.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetOrganizationRecommendationInputBuilder {
     }
     /// <p>The Recommendation identifier</p>
     pub fn set_organization_recommendation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_recommendation_identifier = input;
-        self
+        self.organization_recommendation_identifier = input; self
     }
     /// <p>The Recommendation identifier</p>
     pub fn get_organization_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_recommendation_identifier
     }
     /// Consumes the builder and constructs a [`GetOrganizationRecommendationInput`](crate::operation::get_organization_recommendation::GetOrganizationRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_organization_recommendation::GetOrganizationRecommendationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_organization_recommendation::GetOrganizationRecommendationInput {
-            organization_recommendation_identifier: self.organization_recommendation_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_organization_recommendation::GetOrganizationRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_organization_recommendation::GetOrganizationRecommendationInput {
+                organization_recommendation_identifier: self.organization_recommendation_identifier
+                ,
+            }
+        )
     }
 }
+

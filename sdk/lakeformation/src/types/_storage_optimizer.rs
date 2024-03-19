@@ -3,11 +3,11 @@
 /// <p>A structure describing the configuration and details of a storage optimizer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageOptimizer {
+pub struct StorageOptimizer  {
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
     pub storage_optimizer_type: ::std::option::Option<crate::types::OptimizerType>,
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
-    pub config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A message that contains information about any error (if present).</p>
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
@@ -17,27 +17,27 @@ pub struct StorageOptimizer {
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
     pub last_run_details: ::std::option::Option<::std::string::String>,
 }
-impl StorageOptimizer {
+impl  StorageOptimizer  {
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
-    pub fn storage_optimizer_type(&self) -> ::std::option::Option<&crate::types::OptimizerType> {
+    pub fn storage_optimizer_type(&self) -> ::std::option::Option<& crate::types::OptimizerType> {
         self.storage_optimizer_type.as_ref()
     }
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
-    pub fn config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn config(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.config.as_ref()
     }
     /// <p>A message that contains information about any error (if present).</p>
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>A message that contains information about any warnings (if present).</p>
-    pub fn warnings(&self) -> ::std::option::Option<&str> {
+    pub fn warnings(&self) -> ::std::option::Option<& str> {
         self.warnings.as_deref()
     }
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
-    pub fn last_run_details(&self) -> ::std::option::Option<&str> {
+    pub fn last_run_details(&self) -> ::std::option::Option<& str> {
         self.last_run_details.as_deref()
     }
 }
@@ -53,7 +53,7 @@ impl StorageOptimizer {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageOptimizerBuilder {
     pub(crate) storage_optimizer_type: ::std::option::Option<crate::types::OptimizerType>,
-    pub(crate) config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) warnings: ::std::option::Option<::std::string::String>,
     pub(crate) last_run_details: ::std::option::Option<::std::string::String>,
@@ -66,8 +66,7 @@ impl StorageOptimizerBuilder {
     }
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
     pub fn set_storage_optimizer_type(mut self, input: ::std::option::Option<crate::types::OptimizerType>) -> Self {
-        self.storage_optimizer_type = input;
-        self
+        self.storage_optimizer_type = input; self
     }
     /// <p>The specific type of storage optimizer. The supported value is <code>compaction</code>.</p>
     pub fn get_storage_optimizer_type(&self) -> &::std::option::Option<crate::types::OptimizerType> {
@@ -80,17 +79,16 @@ impl StorageOptimizerBuilder {
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
     pub fn config(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.config.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.config = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.config = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
-    pub fn set_config(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.config = input;
-        self
+    pub fn set_config(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.config = input; self
     }
     /// <p>A map of the storage optimizer configuration. Currently contains only one key-value pair: <code>is_enabled</code> indicates true or false for acceleration.</p>
-    pub fn get_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_config(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.config
     }
     /// <p>A message that contains information about any error (if present).</p>
@@ -104,8 +102,7 @@ impl StorageOptimizerBuilder {
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A message that contains information about any error (if present).</p>
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
@@ -120,8 +117,7 @@ impl StorageOptimizerBuilder {
     }
     /// <p>A message that contains information about any warnings (if present).</p>
     pub fn set_warnings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.warnings = input;
-        self
+        self.warnings = input; self
     }
     /// <p>A message that contains information about any warnings (if present).</p>
     pub fn get_warnings(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl StorageOptimizerBuilder {
     }
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
     pub fn set_last_run_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_run_details = input;
-        self
+        self.last_run_details = input; self
     }
     /// <p>When an acceleration result has an enabled status, contains the details of the last job run.</p>
     pub fn get_last_run_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,11 +139,17 @@ impl StorageOptimizerBuilder {
     /// Consumes the builder and constructs a [`StorageOptimizer`](crate::types::StorageOptimizer).
     pub fn build(self) -> crate::types::StorageOptimizer {
         crate::types::StorageOptimizer {
-            storage_optimizer_type: self.storage_optimizer_type,
-            config: self.config,
-            error_message: self.error_message,
-            warnings: self.warnings,
-            last_run_details: self.last_run_details,
+            storage_optimizer_type: self.storage_optimizer_type
+            ,
+            config: self.config
+            ,
+            error_message: self.error_message
+            ,
+            warnings: self.warnings
+            ,
+            last_run_details: self.last_run_details
+            ,
         }
     }
 }
+

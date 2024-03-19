@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWarmPoolOutput {
+pub struct DescribeWarmPoolOutput  {
     /// <p>The warm pool configuration details.</p>
     pub warm_pool_configuration: ::std::option::Option<crate::types::WarmPoolConfiguration>,
     /// <p>The instances that are currently in the warm pool.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>,
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeWarmPoolOutput {
+impl  DescribeWarmPoolOutput  {
     /// <p>The warm pool configuration details.</p>
-    pub fn warm_pool_configuration(&self) -> ::std::option::Option<&crate::types::WarmPoolConfiguration> {
+    pub fn warm_pool_configuration(&self) -> ::std::option::Option<& crate::types::WarmPoolConfiguration> {
         self.warm_pool_configuration.as_ref()
     }
     /// <p>The instances that are currently in the warm pool.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[crate::types::Instance] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [crate::types::Instance] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWarmPoolOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWarmPoolOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWarmPoolOutput`](crate::operation::describe_warm_pool::DescribeWarmPoolOutput).
     pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolOutputBuilder {
@@ -44,7 +45,7 @@ impl DescribeWarmPoolOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWarmPoolOutputBuilder {
     pub(crate) warm_pool_configuration: ::std::option::Option<crate::types::WarmPoolConfiguration>,
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,8 +57,7 @@ impl DescribeWarmPoolOutputBuilder {
     }
     /// <p>The warm pool configuration details.</p>
     pub fn set_warm_pool_configuration(mut self, input: ::std::option::Option<crate::types::WarmPoolConfiguration>) -> Self {
-        self.warm_pool_configuration = input;
-        self
+        self.warm_pool_configuration = input; self
     }
     /// <p>The warm pool configuration details.</p>
     pub fn get_warm_pool_configuration(&self) -> &::std::option::Option<crate::types::WarmPoolConfiguration> {
@@ -70,17 +70,16 @@ impl DescribeWarmPoolOutputBuilder {
     /// <p>The instances that are currently in the warm pool.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instances that are currently in the warm pool.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>) -> Self {
+        self.instances = input; self
     }
     /// <p>The instances that are currently in the warm pool.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Instance>> {
         &self.instances
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -90,29 +89,32 @@ impl DescribeWarmPoolOutputBuilder {
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWarmPoolOutput`](crate::operation::describe_warm_pool::DescribeWarmPoolOutput).
     pub fn build(self) -> crate::operation::describe_warm_pool::DescribeWarmPoolOutput {
         crate::operation::describe_warm_pool::DescribeWarmPoolOutput {
-            warm_pool_configuration: self.warm_pool_configuration,
-            instances: self.instances,
-            next_token: self.next_token,
+            warm_pool_configuration: self.warm_pool_configuration
+            ,
+            instances: self.instances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

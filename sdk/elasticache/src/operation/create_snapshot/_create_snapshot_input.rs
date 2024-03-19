@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>CreateSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotInput {
+pub struct CreateSnapshotInput  {
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
@@ -13,30 +13,31 @@ pub struct CreateSnapshotInput {
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateSnapshotInput {
+impl  CreateSnapshotInput  {
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
-    pub fn cache_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cache_cluster_id(&self) -> ::std::option::Option<& str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>A name for the snapshot being created.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSnapshotInput {
@@ -54,7 +55,7 @@ pub struct CreateSnapshotInputBuilder {
     pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateSnapshotInputBuilder {
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
@@ -64,8 +65,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_id = input;
-        self
+        self.replication_group_id = input; self
     }
     /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
     pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_cluster_id = input;
-        self
+        self.cache_cluster_id = input; self
     }
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
     pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>A name for the snapshot being created.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>A name for the snapshot being created.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,29 +118,34 @@ impl CreateSnapshotInputBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_snapshot::CreateSnapshotInput {
-            replication_group_id: self.replication_group_id,
-            cache_cluster_id: self.cache_cluster_id,
-            snapshot_name: self.snapshot_name,
-            kms_key_id: self.kms_key_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_snapshot::CreateSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_snapshot::CreateSnapshotInput {
+                replication_group_id: self.replication_group_id
+                ,
+                cache_cluster_id: self.cache_cluster_id
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

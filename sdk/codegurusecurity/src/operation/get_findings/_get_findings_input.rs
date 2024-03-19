@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingsInput {
+pub struct GetFindingsInput  {
     /// <p>The name of the scan you want to retrieve findings from.</p>
     pub scan_name: ::std::option::Option<::std::string::String>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -12,13 +12,13 @@ pub struct GetFindingsInput {
     /// <p>The status of the findings you want to get. Pass either <code>Open</code>, <code>Closed</code>, or <code>All</code>.</p>
     pub status: ::std::option::Option<crate::types::Status>,
 }
-impl GetFindingsInput {
+impl  GetFindingsInput  {
     /// <p>The name of the scan you want to retrieve findings from.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name(&self) -> ::std::option::Option<& str> {
         self.scan_name.as_deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
@@ -26,7 +26,7 @@ impl GetFindingsInput {
         self.max_results
     }
     /// <p>The status of the findings you want to get. Pass either <code>Open</code>, <code>Closed</code>, or <code>All</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl GetFindingsInputBuilder {
     }
     /// <p>The name of the scan you want to retrieve findings from.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The name of the scan you want to retrieve findings from.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GetFindingsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl GetFindingsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl GetFindingsInputBuilder {
     }
     /// <p>The status of the findings you want to get. Pass either <code>Open</code>, <code>Closed</code>, or <code>All</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the findings you want to get. Pass either <code>Open</code>, <code>Closed</code>, or <code>All</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -106,11 +102,18 @@ impl GetFindingsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_findings::GetFindingsInput {
-            scan_name: self.scan_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_findings::GetFindingsInput {
+                scan_name: self.scan_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListScans`](crate::operation::list_scans::builders::ListScansFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_scans::builders::ListScansFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_scans::builders::ListScansFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scans::builders::ListScansFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_scans::builders::ListScansFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_scans::builders::ListScansFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p><br>
-    /// - On success, responds with [`ListScansOutput`](crate::operation::list_scans::ListScansOutput) with field(s):
+                            /// - On success, responds with [`ListScansOutput`](crate::operation::list_scans::ListScansOutput) with field(s):
     ///   - [`summaries(Option<Vec::<ScanSummary>>)`](crate::operation::list_scans::ListScansOutput::summaries): <p>A list of <code>ScanSummary</code> objects with information about all scans in an account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scans::ListScansOutput::next_token): <p>A pagination token. You can use this in future calls to <code>ListScans</code> to continue listing results after the current page.</p>
-    /// - On failure, responds with [`SdkError<ListScansError>`](crate::operation::list_scans::ListScansError)
+                            /// - On failure, responds with [`SdkError<ListScansError>`](crate::operation::list_scans::ListScansError)
     pub fn list_scans(&self) -> crate::operation::list_scans::builders::ListScansFluentBuilder {
-        crate::operation::list_scans::builders::ListScansFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_scans::builders::ListScansFluentBuilder::new(self.handle.clone())
+                            }
 }
+

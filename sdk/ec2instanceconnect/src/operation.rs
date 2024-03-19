@@ -6,3 +6,4 @@ pub mod send_serial_console_ssh_public_key;
 
 /// Types for the `SendSSHPublicKey` operation.
 pub mod send_ssh_public_key;
+

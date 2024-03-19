@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaInput {
+pub struct GetSchemaInput  {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the relation to retrieve the schema for.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetSchemaInput {
+impl  GetSchemaInput  {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The name of the relation to retrieve the schema for.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetSchemaInputBuilder {
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetSchemaInputBuilder {
     }
     /// <p>The name of the relation to retrieve the schema for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the relation to retrieve the schema for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetSchemaInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaInput {
-            collaboration_identifier: self.collaboration_identifier,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_schema::GetSchemaInput {
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

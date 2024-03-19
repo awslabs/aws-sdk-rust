@@ -3,13 +3,13 @@
 /// <p>Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInstantBooking {
+pub struct CreateInstantBooking  {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub duration_in_minutes: i32,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: bool,
 }
-impl CreateInstantBooking {
+impl  CreateInstantBooking  {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn duration_in_minutes(&self) -> i32 {
         self.duration_in_minutes
@@ -42,8 +42,7 @@ impl CreateInstantBookingBuilder {
     }
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_minutes = input;
-        self
+        self.duration_in_minutes = input; self
     }
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl CreateInstantBookingBuilder {
     }
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -69,19 +67,20 @@ impl CreateInstantBookingBuilder {
     /// - [`duration_in_minutes`](crate::types::builders::CreateInstantBookingBuilder::duration_in_minutes)
     /// - [`enabled`](crate::types::builders::CreateInstantBookingBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateInstantBooking, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateInstantBooking {
-            duration_in_minutes: self.duration_in_minutes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "duration_in_minutes",
-                    "duration_in_minutes was not specified but it is required when building CreateInstantBooking",
-                )
-            })?,
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building CreateInstantBooking",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateInstantBooking {
+                duration_in_minutes: self.duration_in_minutes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("duration_in_minutes", "duration_in_minutes was not specified but it is required when building CreateInstantBooking")
+                    )?
+                ,
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building CreateInstantBooking")
+                    )?
+                ,
+            }
+        )
     }
 }
+

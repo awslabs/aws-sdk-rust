@@ -22,11 +22,7 @@ impl PathMatchType {
     /// Tries to convert the enum instance into [`Exact`](crate::types::PathMatchType::Exact), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let PathMatchType::Exact(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PathMatchType::Exact(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Exact`](crate::types::PathMatchType::Exact).
     pub fn is_exact(&self) -> bool {
@@ -35,11 +31,7 @@ impl PathMatchType {
     /// Tries to convert the enum instance into [`Prefix`](crate::types::PathMatchType::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let PathMatchType::Prefix(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PathMatchType::Prefix(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::types::PathMatchType::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -50,3 +42,4 @@ impl PathMatchType {
         matches!(self, Self::Unknown)
     }
 }
+

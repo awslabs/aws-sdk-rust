@@ -3,7 +3,7 @@
 /// <p>Unit of work sent to an activity worker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PollForActivityTaskOutput {
+pub struct PollForActivityTaskOutput  {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
     pub task_token: ::std::string::String,
     /// <p>The unique ID of the task.</p>
@@ -18,39 +18,37 @@ pub struct PollForActivityTaskOutput {
     pub input: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PollForActivityTaskOutput {
+impl  PollForActivityTaskOutput  {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    pub fn task_token(&self) -> &str {
-        use std::ops::Deref;
-        self.task_token.deref()
+    pub fn task_token(&self) -> & str {
+        use std::ops::Deref; self.task_token.deref()
     }
     /// <p>The unique ID of the task.</p>
-    pub fn activity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.activity_id.deref()
+    pub fn activity_id(&self) -> & str {
+        use std::ops::Deref; self.activity_id.deref()
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
     }
     /// <p>The workflow execution that started this activity task.</p>
-    pub fn workflow_execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> ::std::option::Option<& crate::types::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The type of this activity task.</p>
-    pub fn activity_type(&self) -> ::std::option::Option<&crate::types::ActivityType> {
+    pub fn activity_type(&self) -> ::std::option::Option<& crate::types::ActivityType> {
         self.activity_type.as_ref()
     }
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PollForActivityTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PollForActivityTaskOutput {
     /// Creates a new builder-style object to manufacture [`PollForActivityTaskOutput`](crate::operation::poll_for_activity_task::PollForActivityTaskOutput).
     pub fn builder() -> crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder {
@@ -79,8 +77,7 @@ impl PollForActivityTaskOutputBuilder {
     }
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
     pub fn set_task_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_token = input;
-        self
+        self.task_token = input; self
     }
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
     pub fn get_task_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +91,7 @@ impl PollForActivityTaskOutputBuilder {
     }
     /// <p>The unique ID of the task.</p>
     pub fn set_activity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activity_id = input;
-        self
+        self.activity_id = input; self
     }
     /// <p>The unique ID of the task.</p>
     pub fn get_activity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl PollForActivityTaskOutputBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
     pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
@@ -124,8 +119,7 @@ impl PollForActivityTaskOutputBuilder {
     }
     /// <p>The workflow execution that started this activity task.</p>
     pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
-        self.workflow_execution = input;
-        self
+        self.workflow_execution = input; self
     }
     /// <p>The workflow execution that started this activity task.</p>
     pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
@@ -139,8 +133,7 @@ impl PollForActivityTaskOutputBuilder {
     }
     /// <p>The type of this activity task.</p>
     pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
-        self.activity_type = input;
-        self
+        self.activity_type = input; self
     }
     /// <p>The type of this activity task.</p>
     pub fn get_activity_type(&self) -> &::std::option::Option<crate::types::ActivityType> {
@@ -153,48 +146,50 @@ impl PollForActivityTaskOutputBuilder {
     }
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
         &self.input
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PollForActivityTaskOutput`](crate::operation::poll_for_activity_task::PollForActivityTaskOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`task_token`](crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder::task_token)
     /// - [`activity_id`](crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder::activity_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::poll_for_activity_task::PollForActivityTaskOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::poll_for_activity_task::PollForActivityTaskOutput {
-            task_token: self.task_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_token",
-                    "task_token was not specified but it is required when building PollForActivityTaskOutput",
-                )
-            })?,
-            activity_id: self.activity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "activity_id",
-                    "activity_id was not specified but it is required when building PollForActivityTaskOutput",
-                )
-            })?,
-            started_event_id: self.started_event_id.unwrap_or_default(),
-            workflow_execution: self.workflow_execution,
-            activity_type: self.activity_type,
-            input: self.input,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_activity_task::PollForActivityTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::poll_for_activity_task::PollForActivityTaskOutput {
+                task_token: self.task_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("task_token", "task_token was not specified but it is required when building PollForActivityTaskOutput")
+                    )?
+                ,
+                activity_id: self.activity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("activity_id", "activity_id was not specified but it is required when building PollForActivityTaskOutput")
+                    )?
+                ,
+                started_event_id: self.started_event_id
+                    .unwrap_or_default()
+                ,
+                workflow_execution: self.workflow_execution
+                ,
+                activity_type: self.activity_type
+                ,
+                input: self.input
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResolverRulePolicyInput {
+pub struct GetResolverRulePolicyInput  {
     /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetResolverRulePolicyInput {
+impl  GetResolverRulePolicyInput  {
     /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetResolverRulePolicyInputBuilder {
     }
     /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetResolverRulePolicyInput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resolver_rule_policy::GetResolverRulePolicyInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

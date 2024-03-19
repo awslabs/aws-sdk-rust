@@ -3,7 +3,7 @@
 /// <p>Represents the timeline of the cluster's lifecycle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterTimeline {
+pub struct ClusterTimeline  {
     /// <p>The creation date and time of the cluster.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster was ready to run steps.</p>
@@ -11,17 +11,17 @@ pub struct ClusterTimeline {
     /// <p>The date and time when the cluster was terminated.</p>
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ClusterTimeline {
+impl  ClusterTimeline  {
     /// <p>The creation date and time of the cluster.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the cluster was ready to run steps.</p>
-    pub fn ready_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date and time when the cluster was terminated.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ClusterTimelineBuilder {
     }
     /// <p>The creation date and time of the cluster.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time of the cluster.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -62,8 +61,7 @@ impl ClusterTimelineBuilder {
     }
     /// <p>The date and time when the cluster was ready to run steps.</p>
     pub fn set_ready_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ready_date_time = input;
-        self
+        self.ready_date_time = input; self
     }
     /// <p>The date and time when the cluster was ready to run steps.</p>
     pub fn get_ready_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl ClusterTimelineBuilder {
     }
     /// <p>The date and time when the cluster was terminated.</p>
     pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input;
-        self
+        self.end_date_time = input; self
     }
     /// <p>The date and time when the cluster was terminated.</p>
     pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl ClusterTimelineBuilder {
     /// Consumes the builder and constructs a [`ClusterTimeline`](crate::types::ClusterTimeline).
     pub fn build(self) -> crate::types::ClusterTimeline {
         crate::types::ClusterTimeline {
-            creation_date_time: self.creation_date_time,
-            ready_date_time: self.ready_date_time,
-            end_date_time: self.end_date_time,
+            creation_date_time: self.creation_date_time
+            ,
+            ready_date_time: self.ready_date_time
+            ,
+            end_date_time: self.end_date_time
+            ,
         }
     }
 }
+

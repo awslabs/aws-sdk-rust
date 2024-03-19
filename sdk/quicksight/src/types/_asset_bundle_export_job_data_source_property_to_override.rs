@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assetbundleexportjobdatasourcepropertytooverride = unimplemented!();
 /// match assetbundleexportjobdatasourcepropertytooverride {
@@ -45,16 +45,14 @@
 /// Specifically, when `assetbundleexportjobdatasourcepropertytooverride` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssetBundleExportJobDataSourcePropertyToOverride::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AssetBundleExportJobDataSourcePropertyToOverride {
     #[allow(missing_docs)] // documentation missing in model
     Catalog,
@@ -92,126 +90,107 @@ pub enum AssetBundleExportJobDataSourcePropertyToOverride {
     WorkGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AssetBundleExportJobDataSourcePropertyToOverride {
-    fn from(s: &str) -> Self {
-        match s {
-            "Catalog" => AssetBundleExportJobDataSourcePropertyToOverride::Catalog,
-            "ClusterId" => AssetBundleExportJobDataSourcePropertyToOverride::ClusterId,
-            "DataSetName" => AssetBundleExportJobDataSourcePropertyToOverride::DataSetName,
-            "Database" => AssetBundleExportJobDataSourcePropertyToOverride::Database,
-            "DisableSsl" => AssetBundleExportJobDataSourcePropertyToOverride::DisableSsl,
-            "Domain" => AssetBundleExportJobDataSourcePropertyToOverride::Domain,
-            "Host" => AssetBundleExportJobDataSourcePropertyToOverride::Host,
-            "InstanceId" => AssetBundleExportJobDataSourcePropertyToOverride::InstanceId,
-            "ManifestFileLocation" => AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation,
-            "Name" => AssetBundleExportJobDataSourcePropertyToOverride::Name,
-            "Password" => AssetBundleExportJobDataSourcePropertyToOverride::Password,
-            "Port" => AssetBundleExportJobDataSourcePropertyToOverride::Port,
-            "RoleArn" => AssetBundleExportJobDataSourcePropertyToOverride::RoleArn,
-            "SecretArn" => AssetBundleExportJobDataSourcePropertyToOverride::SecretArn,
-            "Username" => AssetBundleExportJobDataSourcePropertyToOverride::Username,
-            "Warehouse" => AssetBundleExportJobDataSourcePropertyToOverride::Warehouse,
-            "WorkGroup" => AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup,
-            other => AssetBundleExportJobDataSourcePropertyToOverride::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Catalog" => AssetBundleExportJobDataSourcePropertyToOverride::Catalog,
+"ClusterId" => AssetBundleExportJobDataSourcePropertyToOverride::ClusterId,
+"DataSetName" => AssetBundleExportJobDataSourcePropertyToOverride::DataSetName,
+"Database" => AssetBundleExportJobDataSourcePropertyToOverride::Database,
+"DisableSsl" => AssetBundleExportJobDataSourcePropertyToOverride::DisableSsl,
+"Domain" => AssetBundleExportJobDataSourcePropertyToOverride::Domain,
+"Host" => AssetBundleExportJobDataSourcePropertyToOverride::Host,
+"InstanceId" => AssetBundleExportJobDataSourcePropertyToOverride::InstanceId,
+"ManifestFileLocation" => AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation,
+"Name" => AssetBundleExportJobDataSourcePropertyToOverride::Name,
+"Password" => AssetBundleExportJobDataSourcePropertyToOverride::Password,
+"Port" => AssetBundleExportJobDataSourcePropertyToOverride::Port,
+"RoleArn" => AssetBundleExportJobDataSourcePropertyToOverride::RoleArn,
+"SecretArn" => AssetBundleExportJobDataSourcePropertyToOverride::SecretArn,
+"Username" => AssetBundleExportJobDataSourcePropertyToOverride::Username,
+"Warehouse" => AssetBundleExportJobDataSourcePropertyToOverride::Warehouse,
+"WorkGroup" => AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup,
+other => AssetBundleExportJobDataSourcePropertyToOverride::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AssetBundleExportJobDataSourcePropertyToOverride {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AssetBundleExportJobDataSourcePropertyToOverride::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AssetBundleExportJobDataSourcePropertyToOverride::from(s))
+                    }
+                }
 impl AssetBundleExportJobDataSourcePropertyToOverride {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AssetBundleExportJobDataSourcePropertyToOverride::Catalog => "Catalog",
-            AssetBundleExportJobDataSourcePropertyToOverride::ClusterId => "ClusterId",
-            AssetBundleExportJobDataSourcePropertyToOverride::DataSetName => "DataSetName",
-            AssetBundleExportJobDataSourcePropertyToOverride::Database => "Database",
-            AssetBundleExportJobDataSourcePropertyToOverride::DisableSsl => "DisableSsl",
-            AssetBundleExportJobDataSourcePropertyToOverride::Domain => "Domain",
-            AssetBundleExportJobDataSourcePropertyToOverride::Host => "Host",
-            AssetBundleExportJobDataSourcePropertyToOverride::InstanceId => "InstanceId",
-            AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation => "ManifestFileLocation",
-            AssetBundleExportJobDataSourcePropertyToOverride::Name => "Name",
-            AssetBundleExportJobDataSourcePropertyToOverride::Password => "Password",
-            AssetBundleExportJobDataSourcePropertyToOverride::Port => "Port",
-            AssetBundleExportJobDataSourcePropertyToOverride::RoleArn => "RoleArn",
-            AssetBundleExportJobDataSourcePropertyToOverride::SecretArn => "SecretArn",
-            AssetBundleExportJobDataSourcePropertyToOverride::Username => "Username",
-            AssetBundleExportJobDataSourcePropertyToOverride::Warehouse => "Warehouse",
-            AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup => "WorkGroup",
-            AssetBundleExportJobDataSourcePropertyToOverride::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Catalog",
-            "ClusterId",
-            "DataSetName",
-            "Database",
-            "DisableSsl",
-            "Domain",
-            "Host",
-            "InstanceId",
-            "ManifestFileLocation",
-            "Name",
-            "Password",
-            "Port",
-            "RoleArn",
-            "SecretArn",
-            "Username",
-            "Warehouse",
-            "WorkGroup",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AssetBundleExportJobDataSourcePropertyToOverride::Catalog => "Catalog",
+    AssetBundleExportJobDataSourcePropertyToOverride::ClusterId => "ClusterId",
+    AssetBundleExportJobDataSourcePropertyToOverride::DataSetName => "DataSetName",
+    AssetBundleExportJobDataSourcePropertyToOverride::Database => "Database",
+    AssetBundleExportJobDataSourcePropertyToOverride::DisableSsl => "DisableSsl",
+    AssetBundleExportJobDataSourcePropertyToOverride::Domain => "Domain",
+    AssetBundleExportJobDataSourcePropertyToOverride::Host => "Host",
+    AssetBundleExportJobDataSourcePropertyToOverride::InstanceId => "InstanceId",
+    AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation => "ManifestFileLocation",
+    AssetBundleExportJobDataSourcePropertyToOverride::Name => "Name",
+    AssetBundleExportJobDataSourcePropertyToOverride::Password => "Password",
+    AssetBundleExportJobDataSourcePropertyToOverride::Port => "Port",
+    AssetBundleExportJobDataSourcePropertyToOverride::RoleArn => "RoleArn",
+    AssetBundleExportJobDataSourcePropertyToOverride::SecretArn => "SecretArn",
+    AssetBundleExportJobDataSourcePropertyToOverride::Username => "Username",
+    AssetBundleExportJobDataSourcePropertyToOverride::Warehouse => "Warehouse",
+    AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup => "WorkGroup",
+    AssetBundleExportJobDataSourcePropertyToOverride::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Catalog", "ClusterId", "DataSetName", "Database", "DisableSsl", "Domain", "Host", "InstanceId", "ManifestFileLocation", "Name", "Password", "Port", "RoleArn", "SecretArn", "Username", "Warehouse", "WorkGroup"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AssetBundleExportJobDataSourcePropertyToOverride {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AssetBundleExportJobDataSourcePropertyToOverride {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AssetBundleExportJobDataSourcePropertyToOverride {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AssetBundleExportJobDataSourcePropertyToOverride::Catalog => write!(f, "Catalog"),
-            AssetBundleExportJobDataSourcePropertyToOverride::ClusterId => write!(f, "ClusterId"),
-            AssetBundleExportJobDataSourcePropertyToOverride::DataSetName => write!(f, "DataSetName"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Database => write!(f, "Database"),
-            AssetBundleExportJobDataSourcePropertyToOverride::DisableSsl => write!(f, "DisableSsl"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Domain => write!(f, "Domain"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Host => write!(f, "Host"),
-            AssetBundleExportJobDataSourcePropertyToOverride::InstanceId => write!(f, "InstanceId"),
-            AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation => write!(f, "ManifestFileLocation"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Name => write!(f, "Name"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Password => write!(f, "Password"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Port => write!(f, "Port"),
-            AssetBundleExportJobDataSourcePropertyToOverride::RoleArn => write!(f, "RoleArn"),
-            AssetBundleExportJobDataSourcePropertyToOverride::SecretArn => write!(f, "SecretArn"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Username => write!(f, "Username"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Warehouse => write!(f, "Warehouse"),
-            AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup => write!(f, "WorkGroup"),
-            AssetBundleExportJobDataSourcePropertyToOverride::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AssetBundleExportJobDataSourcePropertyToOverride::Catalog => write!(f, "Catalog"),
+AssetBundleExportJobDataSourcePropertyToOverride::ClusterId => write!(f, "ClusterId"),
+AssetBundleExportJobDataSourcePropertyToOverride::DataSetName => write!(f, "DataSetName"),
+AssetBundleExportJobDataSourcePropertyToOverride::Database => write!(f, "Database"),
+AssetBundleExportJobDataSourcePropertyToOverride::DisableSsl => write!(f, "DisableSsl"),
+AssetBundleExportJobDataSourcePropertyToOverride::Domain => write!(f, "Domain"),
+AssetBundleExportJobDataSourcePropertyToOverride::Host => write!(f, "Host"),
+AssetBundleExportJobDataSourcePropertyToOverride::InstanceId => write!(f, "InstanceId"),
+AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation => write!(f, "ManifestFileLocation"),
+AssetBundleExportJobDataSourcePropertyToOverride::Name => write!(f, "Name"),
+AssetBundleExportJobDataSourcePropertyToOverride::Password => write!(f, "Password"),
+AssetBundleExportJobDataSourcePropertyToOverride::Port => write!(f, "Port"),
+AssetBundleExportJobDataSourcePropertyToOverride::RoleArn => write!(f, "RoleArn"),
+AssetBundleExportJobDataSourcePropertyToOverride::SecretArn => write!(f, "SecretArn"),
+AssetBundleExportJobDataSourcePropertyToOverride::Username => write!(f, "Username"),
+AssetBundleExportJobDataSourcePropertyToOverride::Warehouse => write!(f, "Warehouse"),
+AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup => write!(f, "WorkGroup"),
+AssetBundleExportJobDataSourcePropertyToOverride::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

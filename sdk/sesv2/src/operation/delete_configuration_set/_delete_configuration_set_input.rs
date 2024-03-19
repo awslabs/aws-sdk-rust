@@ -3,13 +3,13 @@
 /// <p>A request to delete a configuration set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfigurationSetInput {
+pub struct DeleteConfigurationSetInput  {
     /// <p>The name of the configuration set.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConfigurationSetInput {
+impl  DeleteConfigurationSetInput  {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteConfigurationSetInputBuilder {
     }
     /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configuration_set::DeleteConfigurationSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_configuration_set::DeleteConfigurationSetInput {
-            configuration_set_name: self.configuration_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configuration_set::DeleteConfigurationSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_configuration_set::DeleteConfigurationSetInput {
+                configuration_set_name: self.configuration_set_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>WCDMA local identification (local ID) information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WcdmaLocalId {
+pub struct WcdmaLocalId  {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub uarfcndl: i32,
     /// <p>Primary Scrambling Code.</p>
     pub psc: i32,
 }
-impl WcdmaLocalId {
+impl  WcdmaLocalId  {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub fn uarfcndl(&self) -> i32 {
         self.uarfcndl
@@ -42,8 +42,7 @@ impl WcdmaLocalIdBuilder {
     }
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub fn set_uarfcndl(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.uarfcndl = input;
-        self
+        self.uarfcndl = input; self
     }
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
     pub fn get_uarfcndl(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl WcdmaLocalIdBuilder {
     }
     /// <p>Primary Scrambling Code.</p>
     pub fn set_psc(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.psc = input;
-        self
+        self.psc = input; self
     }
     /// <p>Primary Scrambling Code.</p>
     pub fn get_psc(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl WcdmaLocalIdBuilder {
     /// - [`uarfcndl`](crate::types::builders::WcdmaLocalIdBuilder::uarfcndl)
     /// - [`psc`](crate::types::builders::WcdmaLocalIdBuilder::psc)
     pub fn build(self) -> ::std::result::Result<crate::types::WcdmaLocalId, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WcdmaLocalId {
-            uarfcndl: self.uarfcndl.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uarfcndl",
-                    "uarfcndl was not specified but it is required when building WcdmaLocalId",
-                )
-            })?,
-            psc: self.psc.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "psc",
-                    "psc was not specified but it is required when building WcdmaLocalId",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WcdmaLocalId {
+                uarfcndl: self.uarfcndl
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uarfcndl", "uarfcndl was not specified but it is required when building WcdmaLocalId")
+                    )?
+                ,
+                psc: self.psc
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("psc", "psc was not specified but it is required when building WcdmaLocalId")
+                    )?
+                ,
+            }
+        )
     }
 }
+

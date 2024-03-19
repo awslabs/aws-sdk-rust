@@ -3,7 +3,7 @@
 /// <p>Gets the documentation parts of an API. The result may be filtered by the type, name, or path of API entities (targets).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDocumentationPartsInput {
+pub struct GetDocumentationPartsInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
@@ -19,25 +19,25 @@ pub struct GetDocumentationPartsInput {
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
     pub location_status: ::std::option::Option<crate::types::LocationStatusType>,
 }
-impl GetDocumentationPartsInput {
+impl  GetDocumentationPartsInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DocumentationPartType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DocumentationPartType> {
         self.r#type.as_ref()
     }
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
-    pub fn name_query(&self) -> ::std::option::Option<&str> {
+    pub fn name_query(&self) -> ::std::option::Option<& str> {
         self.name_query.as_deref()
     }
     /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -45,7 +45,7 @@ impl GetDocumentationPartsInput {
         self.limit
     }
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
-    pub fn location_status(&self) -> ::std::option::Option<&crate::types::LocationStatusType> {
+    pub fn location_status(&self) -> ::std::option::Option<& crate::types::LocationStatusType> {
         self.location_status.as_ref()
     }
 }
@@ -77,8 +77,7 @@ impl GetDocumentationPartsInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl GetDocumentationPartsInputBuilder {
     }
     /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentationPartType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of API entities of the to-be-retrieved documentation parts.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentationPartType> {
@@ -105,8 +103,7 @@ impl GetDocumentationPartsInputBuilder {
     }
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
     pub fn set_name_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_query = input;
-        self
+        self.name_query = input; self
     }
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
     pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl GetDocumentationPartsInputBuilder {
     }
     /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl GetDocumentationPartsInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +142,7 @@ impl GetDocumentationPartsInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -161,26 +155,32 @@ impl GetDocumentationPartsInputBuilder {
     }
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
     pub fn set_location_status(mut self, input: ::std::option::Option<crate::types::LocationStatusType>) -> Self {
-        self.location_status = input;
-        self
+        self.location_status = input; self
     }
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
     pub fn get_location_status(&self) -> &::std::option::Option<crate::types::LocationStatusType> {
         &self.location_status
     }
     /// Consumes the builder and constructs a [`GetDocumentationPartsInput`](crate::operation::get_documentation_parts::GetDocumentationPartsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_documentation_parts::GetDocumentationPartsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_documentation_parts::GetDocumentationPartsInput {
-            rest_api_id: self.rest_api_id,
-            r#type: self.r#type,
-            name_query: self.name_query,
-            path: self.path,
-            position: self.position,
-            limit: self.limit,
-            location_status: self.location_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_documentation_parts::GetDocumentationPartsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_documentation_parts::GetDocumentationPartsInput {
+                rest_api_id: self.rest_api_id
+                ,
+                r#type: self.r#type
+                ,
+                name_query: self.name_query
+                ,
+                path: self.path
+                ,
+                position: self.position
+                ,
+                limit: self.limit
+                ,
+                location_status: self.location_status
+                ,
+            }
+        )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventDataStoreInput {
+pub struct CreateEventDataStoreInput  {
     /// <p>The name of the event data store.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The advanced event selectors to use to select the events for the data store. You can configure up to five advanced event selectors for each event data store.</p>
     /// <p>For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
-    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>,
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
@@ -22,7 +22,7 @@ pub struct CreateEventDataStoreInput {
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
     pub termination_protection_enabled: ::std::option::Option<bool>,
     /// <p>A list of tags.</p>
-    pub tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p><important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
     /// </important>
@@ -53,19 +53,20 @@ pub struct CreateEventDataStoreInput {
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
 }
-impl CreateEventDataStoreInput {
+impl  CreateEventDataStoreInput  {
     /// <p>The name of the event data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The advanced event selectors to use to select the events for the data store. You can configure up to five advanced event selectors for each event data store.</p>
     /// <p>For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
-    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
-        self.advanced_event_selectors.as_deref().unwrap_or_default()
+    pub fn advanced_event_selectors(&self) -> & [crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
@@ -87,10 +88,11 @@ impl CreateEventDataStoreInput {
         self.termination_protection_enabled
     }
     /// <p>A list of tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_list.is_none()`.
-    pub fn tags_list(&self) -> &[crate::types::Tag] {
-        self.tags_list.as_deref().unwrap_or_default()
+    pub fn tags_list(&self) -> & [crate::types::Tag] {
+        self.tags_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p><important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
@@ -107,7 +109,7 @@ impl CreateEventDataStoreInput {
     /// <li>
     /// <p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
@@ -124,7 +126,7 @@ impl CreateEventDataStoreInput {
     /// </ul>
     /// <p>The default value is <code>EXTENDABLE_RETENTION_PRICING</code>.</p>
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
-    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
+    pub fn billing_mode(&self) -> ::std::option::Option<& crate::types::BillingMode> {
         self.billing_mode.as_ref()
     }
 }
@@ -140,12 +142,12 @@ impl CreateEventDataStoreInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEventDataStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>,
     pub(crate) multi_region_enabled: ::std::option::Option<bool>,
     pub(crate) organization_enabled: ::std::option::Option<bool>,
     pub(crate) retention_period: ::std::option::Option<i32>,
     pub(crate) termination_protection_enabled: ::std::option::Option<bool>,
-    pub(crate) tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_ingestion: ::std::option::Option<bool>,
     pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
@@ -159,8 +161,7 @@ impl CreateEventDataStoreInputBuilder {
     }
     /// <p>The name of the event data store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event data store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,23 +177,22 @@ impl CreateEventDataStoreInputBuilder {
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
     pub fn advanced_event_selectors(mut self, input: crate::types::AdvancedEventSelector) -> Self {
         let mut v = self.advanced_event_selectors.unwrap_or_default();
-        v.push(input);
-        self.advanced_event_selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.advanced_event_selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The advanced event selectors to use to select the events for the data store. You can configure up to five advanced event selectors for each event data store.</p>
     /// <p>For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
-    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
-        self.advanced_event_selectors = input;
-        self
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>) -> Self {
+        self.advanced_event_selectors = input; self
     }
     /// <p>The advanced event selectors to use to select the events for the data store. You can configure up to five advanced event selectors for each event data store.</p>
     /// <p>For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
-    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>> {
         &self.advanced_event_selectors
     }
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
@@ -202,8 +202,7 @@ impl CreateEventDataStoreInputBuilder {
     }
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_region_enabled = input;
-        self
+        self.multi_region_enabled = input; self
     }
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
@@ -216,8 +215,7 @@ impl CreateEventDataStoreInputBuilder {
     }
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
     pub fn set_organization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.organization_enabled = input;
-        self
+        self.organization_enabled = input; self
     }
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
     pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
@@ -236,8 +234,7 @@ impl CreateEventDataStoreInputBuilder {
     /// <p>If you plan to copy trail events to this event data store, we recommend that you consider both the age of the events that you want to copy as well as how long you want to keep the copied events in your event data store. For example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data store will retain those events for two years.</p>
     /// </note>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>The retention period of the event data store, in days. If <code>BillingMode</code> is set to <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the equivalent of 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you can set a retention period of up to 2557 days, the equivalent of seven years.</p>
     /// <p>CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p><note>
@@ -253,8 +250,7 @@ impl CreateEventDataStoreInputBuilder {
     }
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
     pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.termination_protection_enabled = input;
-        self
+        self.termination_protection_enabled = input; self
     }
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
     pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
@@ -267,17 +263,16 @@ impl CreateEventDataStoreInputBuilder {
     /// <p>A list of tags.</p>
     pub fn tags_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_list.unwrap_or_default();
-        v.push(input);
-        self.tags_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags.</p>
-    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags_list = input;
-        self
+    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags_list = input; self
     }
     /// <p>A list of tags.</p>
-    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags_list
     }
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p><important>
@@ -315,8 +310,7 @@ impl CreateEventDataStoreInputBuilder {
     /// <p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p><important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
@@ -343,8 +337,7 @@ impl CreateEventDataStoreInputBuilder {
     }
     /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
     pub fn set_start_ingestion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.start_ingestion = input;
-        self
+        self.start_ingestion = input; self
     }
     /// <p>Specifies whether the event data store should start ingesting live events. The default is true.</p>
     pub fn get_start_ingestion(&self) -> &::std::option::Option<bool> {
@@ -375,8 +368,7 @@ impl CreateEventDataStoreInputBuilder {
     /// <p>The default value is <code>EXTENDABLE_RETENTION_PRICING</code>.</p>
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
     pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
-        self.billing_mode = input;
-        self
+        self.billing_mode = input; self
     }
     /// <p>The billing mode for the event data store determines the cost for ingesting events and the default and maximum retention period for the event data store.</p>
     /// <p>The following are the possible values:</p>
@@ -392,21 +384,31 @@ impl CreateEventDataStoreInputBuilder {
         &self.billing_mode
     }
     /// Consumes the builder and constructs a [`CreateEventDataStoreInput`](crate::operation::create_event_data_store::CreateEventDataStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_event_data_store::CreateEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_event_data_store::CreateEventDataStoreInput {
-            name: self.name,
-            advanced_event_selectors: self.advanced_event_selectors,
-            multi_region_enabled: self.multi_region_enabled,
-            organization_enabled: self.organization_enabled,
-            retention_period: self.retention_period,
-            termination_protection_enabled: self.termination_protection_enabled,
-            tags_list: self.tags_list,
-            kms_key_id: self.kms_key_id,
-            start_ingestion: self.start_ingestion,
-            billing_mode: self.billing_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_event_data_store::CreateEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_event_data_store::CreateEventDataStoreInput {
+                name: self.name
+                ,
+                advanced_event_selectors: self.advanced_event_selectors
+                ,
+                multi_region_enabled: self.multi_region_enabled
+                ,
+                organization_enabled: self.organization_enabled
+                ,
+                retention_period: self.retention_period
+                ,
+                termination_protection_enabled: self.termination_protection_enabled
+                ,
+                tags_list: self.tags_list
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                start_ingestion: self.start_ingestion
+                ,
+                billing_mode: self.billing_mode
+                ,
+            }
+        )
     }
 }
+

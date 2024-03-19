@@ -3,7 +3,7 @@
 /// <p>An error entity for the <code>BatchImportEvidenceToAssessmentControl</code> API. This is used to provide more meaningful errors than a simple string message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchImportEvidenceToAssessmentControlError {
+pub struct BatchImportEvidenceToAssessmentControlError  {
     /// <p>Manual evidence that can't be collected automatically by Audit Manager.</p>
     pub manual_evidence: ::std::option::Option<crate::types::ManualEvidence>,
     /// <p>The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.</p>
@@ -11,17 +11,17 @@ pub struct BatchImportEvidenceToAssessmentControlError {
     /// <p>The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchImportEvidenceToAssessmentControlError {
+impl  BatchImportEvidenceToAssessmentControlError  {
     /// <p>Manual evidence that can't be collected automatically by Audit Manager.</p>
-    pub fn manual_evidence(&self) -> ::std::option::Option<&crate::types::ManualEvidence> {
+    pub fn manual_evidence(&self) -> ::std::option::Option<& crate::types::ManualEvidence> {
         self.manual_evidence.as_ref()
     }
     /// <p>The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl BatchImportEvidenceToAssessmentControlErrorBuilder {
     }
     /// <p>Manual evidence that can't be collected automatically by Audit Manager.</p>
     pub fn set_manual_evidence(mut self, input: ::std::option::Option<crate::types::ManualEvidence>) -> Self {
-        self.manual_evidence = input;
-        self
+        self.manual_evidence = input; self
     }
     /// <p>Manual evidence that can't be collected automatically by Audit Manager.</p>
     pub fn get_manual_evidence(&self) -> &::std::option::Option<crate::types::ManualEvidence> {
@@ -62,8 +61,7 @@ impl BatchImportEvidenceToAssessmentControlErrorBuilder {
     }
     /// <p>The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl BatchImportEvidenceToAssessmentControlErrorBuilder {
     }
     /// <p>The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl BatchImportEvidenceToAssessmentControlErrorBuilder {
     /// Consumes the builder and constructs a [`BatchImportEvidenceToAssessmentControlError`](crate::types::BatchImportEvidenceToAssessmentControlError).
     pub fn build(self) -> crate::types::BatchImportEvidenceToAssessmentControlError {
         crate::types::BatchImportEvidenceToAssessmentControlError {
-            manual_evidence: self.manual_evidence,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            manual_evidence: self.manual_evidence
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

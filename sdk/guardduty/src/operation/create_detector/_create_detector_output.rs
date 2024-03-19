@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDetectorOutput {
+pub struct CreateDetectorOutput  {
     /// <p>The unique ID of the created detector.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
     pub unprocessed_data_sources: ::std::option::Option<crate::types::UnprocessedDataSourcesResult>,
     _request_id: Option<String>,
 }
-impl CreateDetectorOutput {
+impl  CreateDetectorOutput  {
     /// <p>The unique ID of the created detector.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
-    pub fn unprocessed_data_sources(&self) -> ::std::option::Option<&crate::types::UnprocessedDataSourcesResult> {
+    pub fn unprocessed_data_sources(&self) -> ::std::option::Option<& crate::types::UnprocessedDataSourcesResult> {
         self.unprocessed_data_sources.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDetectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDetectorOutput {
     /// Creates a new builder-style object to manufacture [`CreateDetectorOutput`](crate::operation::create_detector::CreateDetectorOutput).
     pub fn builder() -> crate::operation::create_detector::builders::CreateDetectorOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateDetectorOutputBuilder {
     }
     /// <p>The unique ID of the created detector.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the created detector.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateDetectorOutputBuilder {
     }
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
     pub fn set_unprocessed_data_sources(mut self, input: ::std::option::Option<crate::types::UnprocessedDataSourcesResult>) -> Self {
-        self.unprocessed_data_sources = input;
-        self
+        self.unprocessed_data_sources = input; self
     }
     /// <p>Specifies the data sources that couldn't be enabled when GuardDuty was enabled for the first time.</p>
     pub fn get_unprocessed_data_sources(&self) -> &::std::option::Option<crate::types::UnprocessedDataSourcesResult> {
         &self.unprocessed_data_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDetectorOutput`](crate::operation::create_detector::CreateDetectorOutput).
     pub fn build(self) -> crate::operation::create_detector::CreateDetectorOutput {
         crate::operation::create_detector::CreateDetectorOutput {
-            detector_id: self.detector_id,
-            unprocessed_data_sources: self.unprocessed_data_sources,
+            detector_id: self.detector_id
+            ,
+            unprocessed_data_sources: self.unprocessed_data_sources
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,8 @@
 /// <p>An empty result that represents success.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchRemoveFacetFromObjectResponse {}
+pub struct BatchRemoveFacetFromObjectResponse  {
+}
 impl BatchRemoveFacetFromObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObjectResponse`](crate::types::BatchRemoveFacetFromObjectResponse).
     pub fn builder() -> crate::types::builders::BatchRemoveFacetFromObjectResponseBuilder {
@@ -14,10 +15,13 @@ impl BatchRemoveFacetFromObjectResponse {
 /// A builder for [`BatchRemoveFacetFromObjectResponse`](crate::types::BatchRemoveFacetFromObjectResponse).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct BatchRemoveFacetFromObjectResponseBuilder {}
+pub struct BatchRemoveFacetFromObjectResponseBuilder {
+}
 impl BatchRemoveFacetFromObjectResponseBuilder {
     /// Consumes the builder and constructs a [`BatchRemoveFacetFromObjectResponse`](crate::types::BatchRemoveFacetFromObjectResponse).
     pub fn build(self) -> crate::types::BatchRemoveFacetFromObjectResponse {
-        crate::types::BatchRemoveFacetFromObjectResponse {}
+        crate::types::BatchRemoveFacetFromObjectResponse {
+        }
     }
 }
+

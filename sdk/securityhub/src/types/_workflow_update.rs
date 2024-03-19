@@ -3,7 +3,7 @@
 /// <p>Used to update information about the investigation into the finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowUpdate {
+pub struct WorkflowUpdate  {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
@@ -25,7 +25,7 @@ pub struct WorkflowUpdate {
     /// </ul>
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
 }
-impl WorkflowUpdate {
+impl  WorkflowUpdate  {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
@@ -45,7 +45,7 @@ impl WorkflowUpdate {
     /// <li>
     /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkflowStatus> {
         self.status.as_ref()
     }
 }
@@ -106,8 +106,7 @@ impl WorkflowUpdateBuilder {
     /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
@@ -133,6 +132,10 @@ impl WorkflowUpdateBuilder {
     }
     /// Consumes the builder and constructs a [`WorkflowUpdate`](crate::types::WorkflowUpdate).
     pub fn build(self) -> crate::types::WorkflowUpdate {
-        crate::types::WorkflowUpdate { status: self.status }
+        crate::types::WorkflowUpdate {
+            status: self.status
+            ,
+        }
     }
 }
+

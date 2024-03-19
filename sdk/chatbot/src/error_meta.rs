@@ -66,7 +66,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -99,128 +99,89 @@ impl ::std::fmt::Display for Error {
             Error::UpdateChimeWebhookConfigurationException(inner) => inner.fmt(f),
             Error::UpdateSlackChannelConfigurationException(inner) => inner.fmt(f),
             Error::UpdateTeamsChannelConfigurationException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::ConflictException(inner) => inner.meta(),
-            Self::CreateChimeWebhookConfigurationException(inner) => inner.meta(),
-            Self::CreateSlackChannelConfigurationException(inner) => inner.meta(),
-            Self::CreateTeamsChannelConfigurationException(inner) => inner.meta(),
-            Self::DeleteChimeWebhookConfigurationException(inner) => inner.meta(),
-            Self::DeleteMicrosoftTeamsUserIdentityException(inner) => inner.meta(),
-            Self::DeleteSlackChannelConfigurationException(inner) => inner.meta(),
-            Self::DeleteSlackUserIdentityException(inner) => inner.meta(),
-            Self::DeleteSlackWorkspaceAuthorizationFault(inner) => inner.meta(),
-            Self::DeleteTeamsChannelConfigurationException(inner) => inner.meta(),
-            Self::DeleteTeamsConfiguredTeamException(inner) => inner.meta(),
-            Self::DescribeChimeWebhookConfigurationsException(inner) => inner.meta(),
-            Self::DescribeSlackChannelConfigurationsException(inner) => inner.meta(),
-            Self::DescribeSlackUserIdentitiesException(inner) => inner.meta(),
-            Self::DescribeSlackWorkspacesException(inner) => inner.meta(),
-            Self::GetAccountPreferencesException(inner) => inner.meta(),
-            Self::GetTeamsChannelConfigurationException(inner) => inner.meta(),
-            Self::InvalidParameterException(inner) => inner.meta(),
-            Self::InvalidRequestException(inner) => inner.meta(),
-            Self::LimitExceededException(inner) => inner.meta(),
-            Self::ListMicrosoftTeamsConfiguredTeamsException(inner) => inner.meta(),
-            Self::ListMicrosoftTeamsUserIdentitiesException(inner) => inner.meta(),
-            Self::ListTeamsChannelConfigurationsException(inner) => inner.meta(),
-            Self::ResourceNotFoundException(inner) => inner.meta(),
-            Self::UpdateAccountPreferencesException(inner) => inner.meta(),
-            Self::UpdateChimeWebhookConfigurationException(inner) => inner.meta(),
-            Self::UpdateSlackChannelConfigurationException(inner) => inner.meta(),
-            Self::UpdateTeamsChannelConfigurationException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError,
-            R,
-        >,
-    ) -> Self {
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::ConflictException(inner) => inner.meta(),
+Self::CreateChimeWebhookConfigurationException(inner) => inner.meta(),
+Self::CreateSlackChannelConfigurationException(inner) => inner.meta(),
+Self::CreateTeamsChannelConfigurationException(inner) => inner.meta(),
+Self::DeleteChimeWebhookConfigurationException(inner) => inner.meta(),
+Self::DeleteMicrosoftTeamsUserIdentityException(inner) => inner.meta(),
+Self::DeleteSlackChannelConfigurationException(inner) => inner.meta(),
+Self::DeleteSlackUserIdentityException(inner) => inner.meta(),
+Self::DeleteSlackWorkspaceAuthorizationFault(inner) => inner.meta(),
+Self::DeleteTeamsChannelConfigurationException(inner) => inner.meta(),
+Self::DeleteTeamsConfiguredTeamException(inner) => inner.meta(),
+Self::DescribeChimeWebhookConfigurationsException(inner) => inner.meta(),
+Self::DescribeSlackChannelConfigurationsException(inner) => inner.meta(),
+Self::DescribeSlackUserIdentitiesException(inner) => inner.meta(),
+Self::DescribeSlackWorkspacesException(inner) => inner.meta(),
+Self::GetAccountPreferencesException(inner) => inner.meta(),
+Self::GetTeamsChannelConfigurationException(inner) => inner.meta(),
+Self::InvalidParameterException(inner) => inner.meta(),
+Self::InvalidRequestException(inner) => inner.meta(),
+Self::LimitExceededException(inner) => inner.meta(),
+Self::ListMicrosoftTeamsConfiguredTeamsException(inner) => inner.meta(),
+Self::ListMicrosoftTeamsUserIdentitiesException(inner) => inner.meta(),
+Self::ListTeamsChannelConfigurationsException(inner) => inner.meta(),
+Self::ResourceNotFoundException(inner) => inner.meta(),
+Self::UpdateAccountPreferencesException(inner) => inner.meta(),
+Self::UpdateChimeWebhookConfigurationException(inner) => inner.meta(),
+Self::UpdateSlackChannelConfigurationException(inner) => inner.meta(),
+Self::UpdateTeamsChannelConfigurationException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError> for Error {
     fn from(err: crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError) -> Self {
         match err {
-            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::CreateChimeWebhookConfigurationException(
-                inner,
-            ) => Error::CreateChimeWebhookConfigurationException(inner),
-            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
+            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::CreateChimeWebhookConfigurationException(inner) => Error::CreateChimeWebhookConfigurationException(inner),
+            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_microsoft_teams_channel_configuration::CreateMicrosoftTeamsChannelConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -236,119 +197,65 @@ impl From<crate::operation::create_microsoft_teams_channel_configuration::Create
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError> for Error {
     fn from(err: crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError) -> Self {
         match err {
-            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::CreateSlackChannelConfigurationException(
-                inner,
-            ) => Error::CreateSlackChannelConfigurationException(inner),
-            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
+            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::CreateSlackChannelConfigurationException(inner) => Error::CreateSlackChannelConfigurationException(inner),
+            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError> for Error {
     fn from(err: crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError) -> Self {
         match err {
-            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::DeleteChimeWebhookConfigurationException(
-                inner,
-            ) => Error::DeleteChimeWebhookConfigurationException(inner),
-            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::DeleteChimeWebhookConfigurationException(inner) => Error::DeleteChimeWebhookConfigurationException(inner),
+            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_chime_webhook_configuration::DeleteChimeWebhookConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_microsoft_teams_channel_configuration::DeleteMicrosoftTeamsChannelConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_microsoft_teams_channel_configuration::DeleteMicrosoftTeamsChannelConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_microsoft_teams_channel_configuration::DeleteMicrosoftTeamsChannelConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_microsoft_teams_channel_configuration::DeleteMicrosoftTeamsChannelConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -363,68 +270,38 @@ impl From<crate::operation::delete_microsoft_teams_channel_configuration::Delete
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError> for Error {
     fn from(err: crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError) -> Self {
         match err {
-            crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError::DeleteTeamsConfiguredTeamException(
-                inner,
-            ) => Error::DeleteTeamsConfiguredTeamException(inner),
-            crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError::DeleteTeamsConfiguredTeamException(inner) => Error::DeleteTeamsConfiguredTeamException(inner),
+            crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -438,105 +315,63 @@ impl From<crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosof
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError> for Error {
     fn from(err: crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError) -> Self {
         match err {
-            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::DeleteSlackChannelConfigurationException(
-                inner,
-            ) => Error::DeleteSlackChannelConfigurationException(inner),
-            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::DeleteSlackChannelConfigurationException(inner) => Error::DeleteSlackChannelConfigurationException(inner),
+            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError> for Error {
     fn from(err: crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError) -> Self {
         match err {
-            crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError::DeleteSlackUserIdentityException(inner) => {
-                Error::DeleteSlackUserIdentityException(inner)
-            }
-            crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError::DeleteSlackUserIdentityException(inner) => Error::DeleteSlackUserIdentityException(inner),
+            crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_slack_workspace_authorization::DeleteSlackWorkspaceAuthorizationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -549,28 +384,16 @@ impl From<crate::operation::delete_slack_workspace_authorization::DeleteSlackWor
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_chime_webhook_configurations::DescribeChimeWebhookConfigurationsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -584,28 +407,16 @@ impl From<crate::operation::describe_chime_webhook_configurations::DescribeChime
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -619,127 +430,84 @@ impl From<crate::operation::describe_slack_channel_configurations::DescribeSlack
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError> for Error {
     fn from(err: crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError) -> Self {
         match err {
-            crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError::DescribeSlackUserIdentitiesException(inner) => {
-                Error::DescribeSlackUserIdentitiesException(inner)
-            }
-            crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
+            crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError::DescribeSlackUserIdentitiesException(inner) => Error::DescribeSlackUserIdentitiesException(inner),
+            crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError> for Error {
     fn from(err: crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError) -> Self {
         match err {
-            crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError::DescribeSlackWorkspacesException(inner) => {
-                Error::DescribeSlackWorkspacesException(inner)
-            }
-            crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
+            crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError::DescribeSlackWorkspacesException(inner) => Error::DescribeSlackWorkspacesException(inner),
+            crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_preferences::GetAccountPreferencesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_preferences::GetAccountPreferencesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_preferences::GetAccountPreferencesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_preferences::GetAccountPreferencesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_account_preferences::GetAccountPreferencesError> for Error {
     fn from(err: crate::operation::get_account_preferences::GetAccountPreferencesError) -> Self {
         match err {
-            crate::operation::get_account_preferences::GetAccountPreferencesError::GetAccountPreferencesException(inner) => {
-                Error::GetAccountPreferencesException(inner)
-            }
-            crate::operation::get_account_preferences::GetAccountPreferencesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
+            crate::operation::get_account_preferences::GetAccountPreferencesError::GetAccountPreferencesException(inner) => Error::GetAccountPreferencesException(inner),
+            crate::operation::get_account_preferences::GetAccountPreferencesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::get_account_preferences::GetAccountPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -753,28 +521,16 @@ impl From<crate::operation::get_microsoft_teams_channel_configuration::GetMicros
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -788,28 +544,16 @@ impl From<crate::operation::list_microsoft_teams_channel_configurations::ListMic
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_microsoft_teams_configured_teams::ListMicrosoftTeamsConfiguredTeamsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_microsoft_teams_configured_teams::ListMicrosoftTeamsConfiguredTeamsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_microsoft_teams_configured_teams::ListMicrosoftTeamsConfiguredTeamsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_microsoft_teams_configured_teams::ListMicrosoftTeamsConfiguredTeamsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -823,28 +567,16 @@ impl From<crate::operation::list_microsoft_teams_configured_teams::ListMicrosoft
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_microsoft_teams_user_identities::ListMicrosoftTeamsUserIdentitiesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_microsoft_teams_user_identities::ListMicrosoftTeamsUserIdentitiesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_microsoft_teams_user_identities::ListMicrosoftTeamsUserIdentitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_microsoft_teams_user_identities::ListMicrosoftTeamsUserIdentitiesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -858,105 +590,63 @@ impl From<crate::operation::list_microsoft_teams_user_identities::ListMicrosoftT
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_preferences::UpdateAccountPreferencesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_preferences::UpdateAccountPreferencesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_preferences::UpdateAccountPreferencesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_preferences::UpdateAccountPreferencesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_account_preferences::UpdateAccountPreferencesError> for Error {
     fn from(err: crate::operation::update_account_preferences::UpdateAccountPreferencesError) -> Self {
         match err {
-            crate::operation::update_account_preferences::UpdateAccountPreferencesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_account_preferences::UpdateAccountPreferencesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::update_account_preferences::UpdateAccountPreferencesError::UpdateAccountPreferencesException(inner) => {
-                Error::UpdateAccountPreferencesException(inner)
-            }
+            crate::operation::update_account_preferences::UpdateAccountPreferencesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_account_preferences::UpdateAccountPreferencesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_account_preferences::UpdateAccountPreferencesError::UpdateAccountPreferencesException(inner) => Error::UpdateAccountPreferencesException(inner),
             crate::operation::update_account_preferences::UpdateAccountPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError> for Error {
     fn from(err: crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError) -> Self {
         match err {
-            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::UpdateChimeWebhookConfigurationException(
-                inner,
-            ) => Error::UpdateChimeWebhookConfigurationException(inner),
+            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::UpdateChimeWebhookConfigurationException(inner) => Error::UpdateChimeWebhookConfigurationException(inner),
             crate::operation::update_chime_webhook_configuration::UpdateChimeWebhookConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_microsoft_teams_channel_configuration::UpdateMicrosoftTeamsChannelConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_microsoft_teams_channel_configuration::UpdateMicrosoftTeamsChannelConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_microsoft_teams_channel_configuration::UpdateMicrosoftTeamsChannelConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_microsoft_teams_channel_configuration::UpdateMicrosoftTeamsChannelConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -971,46 +661,26 @@ impl From<crate::operation::update_microsoft_teams_channel_configuration::Update
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError> for Error {
     fn from(err: crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError) -> Self {
         match err {
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::UpdateSlackChannelConfigurationException(
-                inner,
-            ) => Error::UpdateSlackChannelConfigurationException(inner),
+            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::UpdateSlackChannelConfigurationException(inner) => Error::UpdateSlackChannelConfigurationException(inner),
             crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1046,7 +716,7 @@ impl ::std::error::Error for Error {
             Error::UpdateChimeWebhookConfigurationException(inner) => inner.source(),
             Error::UpdateSlackChannelConfigurationException(inner) => inner.source(),
             Error::UpdateTeamsChannelConfigurationException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -1085,3 +755,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

@@ -3,21 +3,21 @@
 /// <p>Describes the credit option for CPU usage of a burstable performance instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceCreditSpecification {
+pub struct InstanceCreditSpecification  {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The credit option for CPU usage of the instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code></p>
     pub cpu_credits: ::std::option::Option<::std::string::String>,
 }
-impl InstanceCreditSpecification {
+impl  InstanceCreditSpecification  {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The credit option for CPU usage of the instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code></p>
-    pub fn cpu_credits(&self) -> ::std::option::Option<&str> {
+    pub fn cpu_credits(&self) -> ::std::option::Option<& str> {
         self.cpu_credits.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl InstanceCreditSpecificationBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl InstanceCreditSpecificationBuilder {
     /// <p>The credit option for CPU usage of the instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code></p>
     pub fn set_cpu_credits(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu_credits = input;
-        self
+        self.cpu_credits = input; self
     }
     /// <p>The credit option for CPU usage of the instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code></p>
@@ -70,8 +68,11 @@ impl InstanceCreditSpecificationBuilder {
     /// Consumes the builder and constructs a [`InstanceCreditSpecification`](crate::types::InstanceCreditSpecification).
     pub fn build(self) -> crate::types::InstanceCreditSpecification {
         crate::types::InstanceCreditSpecification {
-            instance_id: self.instance_id,
-            cpu_credits: self.cpu_credits,
+            instance_id: self.instance_id
+            ,
+            cpu_credits: self.cpu_credits
+            ,
         }
     }
 }
+

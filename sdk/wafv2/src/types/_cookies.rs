@@ -5,7 +5,7 @@
 /// <p>Example JSON: <code>"Cookies": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Cookies {
+pub struct Cookies  {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
@@ -25,16 +25,16 @@ pub struct Cookies {
     /// </ul>
     pub oversize_handling: crate::types::OversizeHandling,
 }
-impl Cookies {
+impl  Cookies  {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
-    pub fn match_pattern(&self) -> ::std::option::Option<&crate::types::CookieMatchPattern> {
+    pub fn match_pattern(&self) -> ::std::option::Option<& crate::types::CookieMatchPattern> {
         self.match_pattern.as_ref()
     }
     /// <p>The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
-    pub fn match_scope(&self) -> &crate::types::MapMatchScope {
+    pub fn match_scope(&self) -> & crate::types::MapMatchScope {
         &self.match_scope
     }
     /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.</p>
@@ -47,7 +47,7 @@ impl Cookies {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    pub fn oversize_handling(&self) -> &crate::types::OversizeHandling {
+    pub fn oversize_handling(&self) -> & crate::types::OversizeHandling {
         &self.oversize_handling
     }
 }
@@ -79,8 +79,7 @@ impl CookiesBuilder {
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code></p>
     pub fn set_match_pattern(mut self, input: ::std::option::Option<crate::types::CookieMatchPattern>) -> Self {
-        self.match_pattern = input;
-        self
+        self.match_pattern = input; self
     }
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request.</p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
@@ -98,8 +97,7 @@ impl CookiesBuilder {
     /// <p>The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
     pub fn set_match_scope(mut self, input: ::std::option::Option<crate::types::MapMatchScope>) -> Self {
-        self.match_scope = input;
-        self
+        self.match_scope = input; self
     }
     /// <p>The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF inspects both keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
@@ -132,8 +130,7 @@ impl CookiesBuilder {
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
-        self.oversize_handling = input;
-        self
+        self.oversize_handling = input; self
     }
     /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
@@ -153,20 +150,22 @@ impl CookiesBuilder {
     /// - [`match_scope`](crate::types::builders::CookiesBuilder::match_scope)
     /// - [`oversize_handling`](crate::types::builders::CookiesBuilder::oversize_handling)
     pub fn build(self) -> ::std::result::Result<crate::types::Cookies, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Cookies {
-            match_pattern: self.match_pattern,
-            match_scope: self.match_scope.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_scope",
-                    "match_scope was not specified but it is required when building Cookies",
-                )
-            })?,
-            oversize_handling: self.oversize_handling.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "oversize_handling",
-                    "oversize_handling was not specified but it is required when building Cookies",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Cookies {
+                match_pattern: self.match_pattern
+                ,
+                match_scope: self.match_scope
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_scope", "match_scope was not specified but it is required when building Cookies")
+                    )?
+                ,
+                oversize_handling: self.oversize_handling
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("oversize_handling", "oversize_handling was not specified but it is required when building Cookies")
+                    )?
+                ,
+            }
+        )
     }
 }
+

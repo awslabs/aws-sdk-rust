@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNetworkSiteInput {
+pub struct UpdateNetworkSiteInput  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub network_site_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -10,17 +10,17 @@ pub struct UpdateNetworkSiteInput {
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateNetworkSiteInput {
+impl  UpdateNetworkSiteInput  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_site_arn(&self) -> ::std::option::Option<& str> {
         self.network_site_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateNetworkSiteInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_site_arn = input;
-        self
+        self.network_site_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateNetworkSiteInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl UpdateNetworkSiteInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateNetworkSiteInput`](crate::operation::update_network_site::UpdateNetworkSiteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_network_site::UpdateNetworkSiteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_network_site::UpdateNetworkSiteInput {
-            network_site_arn: self.network_site_arn,
-            client_token: self.client_token,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_network_site::UpdateNetworkSiteInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_network_site::UpdateNetworkSiteInput {
+                network_site_arn: self.network_site_arn
+                ,
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

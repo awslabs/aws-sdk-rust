@@ -16,53 +16,52 @@
 /// <p>For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub resource_arn: ::std::string::String,
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p><note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    pub log_destination_configs: ::std::vec::Vec<::std::string::String>,
+    pub log_destination_configs: ::std::vec::Vec::<::std::string::String>,
     /// <p>The parts of the request that you want to keep out of the logs.</p>
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
     /// </note>
-    pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
+    pub redacted_fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldToMatch>>,
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
     pub managed_by_firewall_manager: bool,
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.</p>
     pub logging_filter: ::std::option::Option<crate::types::LoggingFilter>,
 }
-impl LoggingConfiguration {
+impl  LoggingConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p><note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    pub fn log_destination_configs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.log_destination_configs.deref()
+    pub fn log_destination_configs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.log_destination_configs.deref()
     }
     /// <p>The parts of the request that you want to keep out of the logs.</p>
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redacted_fields.is_none()`.
-    pub fn redacted_fields(&self) -> &[crate::types::FieldToMatch] {
-        self.redacted_fields.as_deref().unwrap_or_default()
+    pub fn redacted_fields(&self) -> & [crate::types::FieldToMatch] {
+        self.redacted_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
     pub fn managed_by_firewall_manager(&self) -> bool {
         self.managed_by_firewall_manager
     }
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.</p>
-    pub fn logging_filter(&self) -> ::std::option::Option<&crate::types::LoggingFilter> {
+    pub fn logging_filter(&self) -> ::std::option::Option<& crate::types::LoggingFilter> {
         self.logging_filter.as_ref()
     }
 }
@@ -78,8 +77,8 @@ impl LoggingConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) log_destination_configs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
+    pub(crate) log_destination_configs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) redacted_fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldToMatch>>,
     pub(crate) managed_by_firewall_manager: ::std::option::Option<bool>,
     pub(crate) logging_filter: ::std::option::Option<crate::types::LoggingFilter>,
 }
@@ -92,8 +91,7 @@ impl LoggingConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,21 +106,20 @@ impl LoggingConfigurationBuilder {
     /// </note>
     pub fn log_destination_configs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_destination_configs.unwrap_or_default();
-        v.push(input.into());
-        self.log_destination_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_destination_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p><note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    pub fn set_log_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_destination_configs = input;
-        self
+    pub fn set_log_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_destination_configs = input; self
     }
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p><note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    pub fn get_log_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_destination_configs
     }
     /// Appends an item to `redacted_fields`.
@@ -136,25 +133,24 @@ impl LoggingConfigurationBuilder {
     /// </note>
     pub fn redacted_fields(mut self, input: crate::types::FieldToMatch) -> Self {
         let mut v = self.redacted_fields.unwrap_or_default();
-        v.push(input);
-        self.redacted_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.redacted_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parts of the request that you want to keep out of the logs.</p>
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
     /// </note>
-    pub fn set_redacted_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>) -> Self {
-        self.redacted_fields = input;
-        self
+    pub fn set_redacted_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldToMatch>>) -> Self {
+        self.redacted_fields = input; self
     }
     /// <p>The parts of the request that you want to keep out of the logs.</p>
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting.</p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p><note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
     /// </note>
-    pub fn get_redacted_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>> {
+    pub fn get_redacted_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldToMatch>> {
         &self.redacted_fields
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
@@ -164,8 +160,7 @@ impl LoggingConfigurationBuilder {
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
     pub fn set_managed_by_firewall_manager(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.managed_by_firewall_manager = input;
-        self
+        self.managed_by_firewall_manager = input; self
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration.</p>
     pub fn get_managed_by_firewall_manager(&self) -> &::std::option::Option<bool> {
@@ -178,8 +173,7 @@ impl LoggingConfigurationBuilder {
     }
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.</p>
     pub fn set_logging_filter(mut self, input: ::std::option::Option<crate::types::LoggingFilter>) -> Self {
-        self.logging_filter = input;
-        self
+        self.logging_filter = input; self
     }
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.</p>
     pub fn get_logging_filter(&self) -> &::std::option::Option<crate::types::LoggingFilter> {
@@ -190,22 +184,27 @@ impl LoggingConfigurationBuilder {
     /// - [`resource_arn`](crate::types::builders::LoggingConfigurationBuilder::resource_arn)
     /// - [`log_destination_configs`](crate::types::builders::LoggingConfigurationBuilder::log_destination_configs)
     pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LoggingConfiguration {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building LoggingConfiguration",
-                )
-            })?,
-            log_destination_configs: self.log_destination_configs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_destination_configs",
-                    "log_destination_configs was not specified but it is required when building LoggingConfiguration",
-                )
-            })?,
-            redacted_fields: self.redacted_fields,
-            managed_by_firewall_manager: self.managed_by_firewall_manager.unwrap_or_default(),
-            logging_filter: self.logging_filter,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LoggingConfiguration {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building LoggingConfiguration")
+                    )?
+                ,
+                log_destination_configs: self.log_destination_configs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_destination_configs", "log_destination_configs was not specified but it is required when building LoggingConfiguration")
+                    )?
+                ,
+                redacted_fields: self.redacted_fields
+                ,
+                managed_by_firewall_manager: self.managed_by_firewall_manager
+                    .unwrap_or_default()
+                ,
+                logging_filter: self.logging_filter
+                ,
+            }
+        )
     }
 }
+

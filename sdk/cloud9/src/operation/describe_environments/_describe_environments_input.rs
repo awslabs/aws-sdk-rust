@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEnvironmentsInput {
+pub struct DescribeEnvironmentsInput  {
     /// <p>The IDs of individual environments to get information about.</p>
-    pub environment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub environment_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeEnvironmentsInput {
+impl  DescribeEnvironmentsInput  {
     /// <p>The IDs of individual environments to get information about.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_ids.is_none()`.
-    pub fn environment_ids(&self) -> &[::std::string::String] {
-        self.environment_ids.as_deref().unwrap_or_default()
+    pub fn environment_ids(&self) -> & [::std::string::String] {
+        self.environment_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeEnvironmentsInput {
@@ -25,7 +26,7 @@ impl DescribeEnvironmentsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsInputBuilder {
-    pub(crate) environment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) environment_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeEnvironmentsInputBuilder {
     /// Appends an item to `environment_ids`.
@@ -35,26 +36,26 @@ impl DescribeEnvironmentsInputBuilder {
     /// <p>The IDs of individual environments to get information about.</p>
     pub fn environment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.environment_ids.unwrap_or_default();
-        v.push(input.into());
-        self.environment_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.environment_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of individual environments to get information about.</p>
-    pub fn set_environment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.environment_ids = input;
-        self
+    pub fn set_environment_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.environment_ids = input; self
     }
     /// <p>The IDs of individual environments to get information about.</p>
-    pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.environment_ids
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_environments::DescribeEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_environments::DescribeEnvironmentsInput {
-            environment_ids: self.environment_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_environments::DescribeEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_environments::DescribeEnvironmentsInput {
+                environment_ids: self.environment_ids
+                ,
+            }
+        )
     }
 }
+

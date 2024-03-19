@@ -2,22 +2,23 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTableOptimizerRuns`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::set_catalog_id):<br>required: **true**<br><p>The Catalog ID of the table.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::set_database_name):<br>required: **true**<br><p>The name of the database in the catalog in which the table resides.</p><br>
     ///   - [`table_name(impl Into<String>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table.</p><br>
     ///   - [`r#type(TableOptimizerType)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::type) / [`set_type(Option<TableOptimizerType>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::set_type):<br>required: **true**<br><p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of optimizer runs to return on each call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
-    /// - On success, responds with [`ListTableOptimizerRunsOutput`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput) with field(s):
+                            /// - On success, responds with [`ListTableOptimizerRunsOutput`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput) with field(s):
     ///   - [`catalog_id(Option<String>)`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput::catalog_id): <p>The Catalog ID of the table.</p>
     ///   - [`database_name(Option<String>)`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput::database_name): <p>The name of the database in the catalog in which the table resides.</p>
     ///   - [`table_name(Option<String>)`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput::table_name): <p>The name of the table.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput::next_token): <p>A continuation token for paginating the returned list of optimizer runs, returned if the current segment of the list is not the last.</p>
     ///   - [`table_optimizer_runs(Option<Vec::<TableOptimizerRun>>)`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput::table_optimizer_runs): <p>A list of the optimizer runs associated with a table.</p>
-    /// - On failure, responds with [`SdkError<ListTableOptimizerRunsError>`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError)
+                            /// - On failure, responds with [`SdkError<ListTableOptimizerRunsError>`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsError)
     pub fn list_table_optimizer_runs(&self) -> crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder {
-        crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

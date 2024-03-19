@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFreeTierUsageInput {
+pub struct GetFreeTierUsageInput  {
     /// <p>An expression that specifies the conditions that you want each <code>FreeTierUsage</code> object to meet.</p>
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The maximum number of results to return in the response. <code>MaxResults</code> means that there can be up to the specified number of values, but there might be fewer results based on your filters.</p>
@@ -10,9 +10,9 @@ pub struct GetFreeTierUsageInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetFreeTierUsageInput {
+impl  GetFreeTierUsageInput  {
     /// <p>An expression that specifies the conditions that you want each <code>FreeTierUsage</code> object to meet.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>The maximum number of results to return in the response. <code>MaxResults</code> means that there can be up to the specified number of values, but there might be fewer results based on your filters.</p>
@@ -20,7 +20,7 @@ impl GetFreeTierUsageInput {
         self.max_results
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetFreeTierUsageInputBuilder {
     }
     /// <p>An expression that specifies the conditions that you want each <code>FreeTierUsage</code> object to meet.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>An expression that specifies the conditions that you want each <code>FreeTierUsage</code> object to meet.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
@@ -61,8 +60,7 @@ impl GetFreeTierUsageInputBuilder {
     }
     /// <p>The maximum number of results to return in the response. <code>MaxResults</code> means that there can be up to the specified number of values, but there might be fewer results based on your filters.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response. <code>MaxResults</code> means that there can be up to the specified number of values, but there might be fewer results based on your filters.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl GetFreeTierUsageInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetFreeTierUsageInput`](crate::operation::get_free_tier_usage::GetFreeTierUsageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_free_tier_usage::GetFreeTierUsageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_free_tier_usage::GetFreeTierUsageInput {
-            filter: self.filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_free_tier_usage::GetFreeTierUsageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_free_tier_usage::GetFreeTierUsageInput {
+                filter: self.filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

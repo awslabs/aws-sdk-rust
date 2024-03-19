@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAlarmsOutput {
+pub struct ListAlarmsOutput  {
     /// <p>A list that summarizes each alarm.</p>
-    pub alarm_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>>,
+    pub alarm_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAlarmsOutput {
+impl  ListAlarmsOutput  {
     /// <p>A list that summarizes each alarm.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_summaries.is_none()`.
-    pub fn alarm_summaries(&self) -> &[crate::types::AlarmSummary] {
-        self.alarm_summaries.as_deref().unwrap_or_default()
+    pub fn alarm_summaries(&self) -> & [crate::types::AlarmSummary] {
+        self.alarm_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAlarmsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAlarmsOutput {
     /// Creates a new builder-style object to manufacture [`ListAlarmsOutput`](crate::operation::list_alarms::ListAlarmsOutput).
     pub fn builder() -> crate::operation::list_alarms::builders::ListAlarmsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAlarmsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlarmsOutputBuilder {
-    pub(crate) alarm_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>>,
+    pub(crate) alarm_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAlarmsOutputBuilder {
     /// <p>A list that summarizes each alarm.</p>
     pub fn alarm_summaries(mut self, input: crate::types::AlarmSummary) -> Self {
         let mut v = self.alarm_summaries.unwrap_or_default();
-        v.push(input);
-        self.alarm_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarm_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that summarizes each alarm.</p>
-    pub fn set_alarm_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>>) -> Self {
-        self.alarm_summaries = input;
-        self
+    pub fn set_alarm_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmSummary>>) -> Self {
+        self.alarm_summaries = input; self
     }
     /// <p>A list that summarizes each alarm.</p>
-    pub fn get_alarm_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmSummary>> {
+    pub fn get_alarm_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmSummary>> {
         &self.alarm_summaries
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
@@ -69,28 +69,30 @@ impl ListAlarmsOutputBuilder {
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAlarmsOutput`](crate::operation::list_alarms::ListAlarmsOutput).
     pub fn build(self) -> crate::operation::list_alarms::ListAlarmsOutput {
         crate::operation::list_alarms::ListAlarmsOutput {
-            alarm_summaries: self.alarm_summaries,
-            next_token: self.next_token,
+            alarm_summaries: self.alarm_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

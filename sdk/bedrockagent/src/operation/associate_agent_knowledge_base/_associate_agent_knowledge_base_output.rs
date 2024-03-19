@@ -3,22 +3,22 @@
 /// Associate Agent Knowledge Base Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAgentKnowledgeBaseOutput {
+pub struct AssociateAgentKnowledgeBaseOutput  {
     /// Contains the information of an Agent Knowledge Base.
     pub agent_knowledge_base: ::std::option::Option<crate::types::AgentKnowledgeBase>,
     _request_id: Option<String>,
 }
-impl AssociateAgentKnowledgeBaseOutput {
+impl  AssociateAgentKnowledgeBaseOutput  {
     /// Contains the information of an Agent Knowledge Base.
-    pub fn agent_knowledge_base(&self) -> ::std::option::Option<&crate::types::AgentKnowledgeBase> {
+    pub fn agent_knowledge_base(&self) -> ::std::option::Option<& crate::types::AgentKnowledgeBase> {
         self.agent_knowledge_base.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateAgentKnowledgeBaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateAgentKnowledgeBaseOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAgentKnowledgeBaseOutput`](crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseOutput).
     pub fn builder() -> crate::operation::associate_agent_knowledge_base::builders::AssociateAgentKnowledgeBaseOutputBuilder {
@@ -42,27 +42,28 @@ impl AssociateAgentKnowledgeBaseOutputBuilder {
     }
     /// Contains the information of an Agent Knowledge Base.
     pub fn set_agent_knowledge_base(mut self, input: ::std::option::Option<crate::types::AgentKnowledgeBase>) -> Self {
-        self.agent_knowledge_base = input;
-        self
+        self.agent_knowledge_base = input; self
     }
     /// Contains the information of an Agent Knowledge Base.
     pub fn get_agent_knowledge_base(&self) -> &::std::option::Option<crate::types::AgentKnowledgeBase> {
         &self.agent_knowledge_base
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateAgentKnowledgeBaseOutput`](crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseOutput).
     pub fn build(self) -> crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseOutput {
         crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseOutput {
-            agent_knowledge_base: self.agent_knowledge_base,
+            agent_knowledge_base: self.agent_knowledge_base
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

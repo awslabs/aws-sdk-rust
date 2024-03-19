@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRules`](crate::operation::list_rules::builders::ListRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rules::builders::ListRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_identifier(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
     ///   - [`listener_identifier(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_listener_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the listener.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
-    /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
+                            /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
     ///   - [`items(Vec::<RuleSummary>)`](crate::operation::list_rules::ListRulesOutput::items): <p>Information about the rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rules::ListRulesOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
+                            /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
     pub fn list_rules(&self) -> crate::operation::list_rules::builders::ListRulesFluentBuilder {
-        crate::operation::list_rules::builders::ListRulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_rules::builders::ListRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

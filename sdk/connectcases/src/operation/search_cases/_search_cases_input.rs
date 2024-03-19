@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchCasesInput {
+pub struct SearchCasesInput  {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
@@ -14,13 +14,13 @@ pub struct SearchCasesInput {
     /// <p>A list of filter objects.</p>
     pub filter: ::std::option::Option<crate::types::CaseFilter>,
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
-    pub sorts: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
+    pub sorts: ::std::option::Option<::std::vec::Vec::<crate::types::Sort>>,
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
+    pub fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldIdentifier>>,
 }
-impl SearchCasesInput {
+impl  SearchCasesInput  {
     /// <p>The unique identifier of the Cases domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
@@ -28,28 +28,30 @@ impl SearchCasesInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A word or phrase used to perform a quick search.</p>
-    pub fn search_term(&self) -> ::std::option::Option<&str> {
+    pub fn search_term(&self) -> ::std::option::Option<& str> {
         self.search_term.as_deref()
     }
     /// <p>A list of filter objects.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::CaseFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::CaseFilter> {
         self.filter.as_ref()
     }
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sorts.is_none()`.
-    pub fn sorts(&self) -> &[crate::types::Sort] {
-        self.sorts.as_deref().unwrap_or_default()
+    pub fn sorts(&self) -> & [crate::types::Sort] {
+        self.sorts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
-    pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
-        self.fields.as_deref().unwrap_or_default()
+    pub fn fields(&self) -> & [crate::types::FieldIdentifier] {
+        self.fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchCasesInput {
@@ -68,8 +70,8 @@ pub struct SearchCasesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) search_term: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::CaseFilter>,
-    pub(crate) sorts: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
+    pub(crate) sorts: ::std::option::Option<::std::vec::Vec::<crate::types::Sort>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldIdentifier>>,
 }
 impl SearchCasesInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -80,8 +82,7 @@ impl SearchCasesInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +95,7 @@ impl SearchCasesInputBuilder {
     }
     /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -108,8 +108,7 @@ impl SearchCasesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +121,7 @@ impl SearchCasesInputBuilder {
     }
     /// <p>A word or phrase used to perform a quick search.</p>
     pub fn set_search_term(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_term = input;
-        self
+        self.search_term = input; self
     }
     /// <p>A word or phrase used to perform a quick search.</p>
     pub fn get_search_term(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +134,7 @@ impl SearchCasesInputBuilder {
     }
     /// <p>A list of filter objects.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::CaseFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A list of filter objects.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::CaseFilter> {
@@ -150,17 +147,16 @@ impl SearchCasesInputBuilder {
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
     pub fn sorts(mut self, input: crate::types::Sort) -> Self {
         let mut v = self.sorts.unwrap_or_default();
-        v.push(input);
-        self.sorts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sorts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
-    pub fn set_sorts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
-        self.sorts = input;
-        self
+    pub fn set_sorts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Sort>>) -> Self {
+        self.sorts = input; self
     }
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
-    pub fn get_sorts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sort>> {
+    pub fn get_sorts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Sort>> {
         &self.sorts
     }
     /// Appends an item to `fields`.
@@ -170,29 +166,38 @@ impl SearchCasesInputBuilder {
     /// <p>The list of field identifiers to be returned as part of the response.</p>
     pub fn fields(mut self, input: crate::types::FieldIdentifier) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldIdentifier>>) -> Self {
+        self.fields = input; self
     }
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldIdentifier>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`SearchCasesInput`](crate::operation::search_cases::SearchCasesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_cases::SearchCasesInput {
-            domain_id: self.domain_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            search_term: self.search_term,
-            filter: self.filter,
-            sorts: self.sorts,
-            fields: self.fields,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::search_cases::SearchCasesInput {
+                domain_id: self.domain_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                search_term: self.search_term
+                ,
+                filter: self.filter
+                ,
+                sorts: self.sorts
+                ,
+                fields: self.fields
+                ,
+            }
+        )
     }
 }
+

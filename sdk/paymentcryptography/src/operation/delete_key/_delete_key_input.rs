@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeyInput {
+pub struct DeleteKeyInput  {
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The waiting period for key deletion. The default value is seven days.</p>
     pub delete_key_in_days: ::std::option::Option<i32>,
 }
-impl DeleteKeyInput {
+impl  DeleteKeyInput  {
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-    pub fn key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn key_identifier(&self) -> ::std::option::Option<& str> {
         self.key_identifier.as_deref()
     }
     /// <p>The waiting period for key deletion. The default value is seven days.</p>
@@ -41,8 +41,7 @@ impl DeleteKeyInputBuilder {
     }
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_identifier = input;
-        self
+        self.key_identifier = input; self
     }
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DeleteKeyInputBuilder {
     }
     /// <p>The waiting period for key deletion. The default value is seven days.</p>
     pub fn set_delete_key_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.delete_key_in_days = input;
-        self
+        self.delete_key_in_days = input; self
     }
     /// <p>The waiting period for key deletion. The default value is seven days.</p>
     pub fn get_delete_key_in_days(&self) -> &::std::option::Option<i32> {
@@ -64,9 +62,14 @@ impl DeleteKeyInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_key::DeleteKeyInput {
-            key_identifier: self.key_identifier,
-            delete_key_in_days: self.delete_key_in_days,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_key::DeleteKeyInput {
+                key_identifier: self.key_identifier
+                ,
+                delete_key_in_days: self.delete_key_in_days
+                ,
+            }
+        )
     }
 }
+

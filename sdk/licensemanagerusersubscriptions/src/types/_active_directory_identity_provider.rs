@@ -3,13 +3,13 @@
 /// <p>Details about an Active Directory identity provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActiveDirectoryIdentityProvider {
+pub struct ActiveDirectoryIdentityProvider  {
     /// <p>The directory ID for an Active Directory identity provider.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
-impl ActiveDirectoryIdentityProvider {
+impl  ActiveDirectoryIdentityProvider  {
     /// <p>The directory ID for an Active Directory identity provider.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ActiveDirectoryIdentityProviderBuilder {
     }
     /// <p>The directory ID for an Active Directory identity provider.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The directory ID for an Active Directory identity provider.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ActiveDirectoryIdentityProviderBuilder {
     /// Consumes the builder and constructs a [`ActiveDirectoryIdentityProvider`](crate::types::ActiveDirectoryIdentityProvider).
     pub fn build(self) -> crate::types::ActiveDirectoryIdentityProvider {
         crate::types::ActiveDirectoryIdentityProvider {
-            directory_id: self.directory_id,
+            directory_id: self.directory_id
+            ,
         }
     }
 }
+

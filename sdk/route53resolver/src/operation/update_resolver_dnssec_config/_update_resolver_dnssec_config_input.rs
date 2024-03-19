@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResolverDnssecConfigInput {
+pub struct UpdateResolverDnssecConfigInput  {
     /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
     pub validation: ::std::option::Option<crate::types::Validation>,
 }
-impl UpdateResolverDnssecConfigInput {
+impl  UpdateResolverDnssecConfigInput  {
     /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
-    pub fn validation(&self) -> ::std::option::Option<&crate::types::Validation> {
+    pub fn validation(&self) -> ::std::option::Option<& crate::types::Validation> {
         self.validation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateResolverDnssecConfigInputBuilder {
     }
     /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateResolverDnssecConfigInputBuilder {
     }
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
     pub fn set_validation(mut self, input: ::std::option::Option<crate::types::Validation>) -> Self {
-        self.validation = input;
-        self
+        self.validation = input; self
     }
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
     pub fn get_validation(&self) -> &::std::option::Option<crate::types::Validation> {
         &self.validation
     }
     /// Consumes the builder and constructs a [`UpdateResolverDnssecConfigInput`](crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput {
-            resource_id: self.resource_id,
-            validation: self.validation,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigInput {
+                resource_id: self.resource_id
+                ,
+                validation: self.validation
+                ,
+            }
+        )
     }
 }
+

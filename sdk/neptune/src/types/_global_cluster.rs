@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlobalCluster {
+pub struct GlobalCluster  {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
@@ -22,31 +22,31 @@ pub struct GlobalCluster {
     /// <p>The deletion protection setting for the global database.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
-    pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
+    pub global_cluster_members: ::std::option::Option<::std::vec::Vec::<crate::types::GlobalClusterMember>>,
 }
-impl GlobalCluster {
+impl  GlobalCluster  {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
-    pub fn global_cluster_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_resource_id(&self) -> ::std::option::Option<& str> {
         self.global_cluster_resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the global database.</p>
-    pub fn global_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.global_cluster_arn.as_deref()
     }
     /// <p>Specifies the current state of this global database.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The Neptune database engine used by the global database (<code>"neptune"</code>).</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The Neptune engine version used by the global database.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The storage encryption setting for the global database.</p>
@@ -58,10 +58,11 @@ impl GlobalCluster {
         self.deletion_protection
     }
     /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_cluster_members.is_none()`.
-    pub fn global_cluster_members(&self) -> &[crate::types::GlobalClusterMember] {
-        self.global_cluster_members.as_deref().unwrap_or_default()
+    pub fn global_cluster_members(&self) -> & [crate::types::GlobalClusterMember] {
+        self.global_cluster_members.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GlobalCluster {
@@ -83,7 +84,7 @@ pub struct GlobalClusterBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
-    pub(crate) global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
+    pub(crate) global_cluster_members: ::std::option::Option<::std::vec::Vec::<crate::types::GlobalClusterMember>>,
 }
 impl GlobalClusterBuilder {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
@@ -93,8 +94,7 @@ impl GlobalClusterBuilder {
     }
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_identifier = input;
-        self
+        self.global_cluster_identifier = input; self
     }
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl GlobalClusterBuilder {
     }
     /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
     pub fn set_global_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_resource_id = input;
-        self
+        self.global_cluster_resource_id = input; self
     }
     /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
     pub fn get_global_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl GlobalClusterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the global database.</p>
     pub fn set_global_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_arn = input;
-        self
+        self.global_cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the global database.</p>
     pub fn get_global_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl GlobalClusterBuilder {
     }
     /// <p>Specifies the current state of this global database.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies the current state of this global database.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +146,7 @@ impl GlobalClusterBuilder {
     }
     /// <p>The Neptune database engine used by the global database (<code>"neptune"</code>).</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The Neptune database engine used by the global database (<code>"neptune"</code>).</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +159,7 @@ impl GlobalClusterBuilder {
     }
     /// <p>The Neptune engine version used by the global database.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The Neptune engine version used by the global database.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +172,7 @@ impl GlobalClusterBuilder {
     }
     /// <p>The storage encryption setting for the global database.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_encrypted = input;
-        self
+        self.storage_encrypted = input; self
     }
     /// <p>The storage encryption setting for the global database.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
@@ -191,8 +185,7 @@ impl GlobalClusterBuilder {
     }
     /// <p>The deletion protection setting for the global database.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>The deletion protection setting for the global database.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -205,31 +198,40 @@ impl GlobalClusterBuilder {
     /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
     pub fn global_cluster_members(mut self, input: crate::types::GlobalClusterMember) -> Self {
         let mut v = self.global_cluster_members.unwrap_or_default();
-        v.push(input);
-        self.global_cluster_members = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.global_cluster_members = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
-    pub fn set_global_cluster_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>) -> Self {
-        self.global_cluster_members = input;
-        self
+    pub fn set_global_cluster_members(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlobalClusterMember>>) -> Self {
+        self.global_cluster_members = input; self
     }
     /// <p>A list of cluster ARNs and instance ARNs for all the DB clusters that are part of the global database.</p>
-    pub fn get_global_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>> {
+    pub fn get_global_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlobalClusterMember>> {
         &self.global_cluster_members
     }
     /// Consumes the builder and constructs a [`GlobalCluster`](crate::types::GlobalCluster).
     pub fn build(self) -> crate::types::GlobalCluster {
         crate::types::GlobalCluster {
-            global_cluster_identifier: self.global_cluster_identifier,
-            global_cluster_resource_id: self.global_cluster_resource_id,
-            global_cluster_arn: self.global_cluster_arn,
-            status: self.status,
-            engine: self.engine,
-            engine_version: self.engine_version,
-            storage_encrypted: self.storage_encrypted,
-            deletion_protection: self.deletion_protection,
-            global_cluster_members: self.global_cluster_members,
+            global_cluster_identifier: self.global_cluster_identifier
+            ,
+            global_cluster_resource_id: self.global_cluster_resource_id
+            ,
+            global_cluster_arn: self.global_cluster_arn
+            ,
+            status: self.status
+            ,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            storage_encrypted: self.storage_encrypted
+            ,
+            deletion_protection: self.deletion_protection
+            ,
+            global_cluster_members: self.global_cluster_members
+            ,
         }
     }
 }
+

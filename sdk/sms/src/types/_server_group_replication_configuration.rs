@@ -3,22 +3,23 @@
 /// <p>Replication configuration for a server group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerGroupReplicationConfiguration {
+pub struct ServerGroupReplicationConfiguration  {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
     pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The replication configuration for servers in the server group.</p>
-    pub server_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
+    pub server_replication_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ServerReplicationConfiguration>>,
 }
-impl ServerGroupReplicationConfiguration {
+impl  ServerGroupReplicationConfiguration  {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
-    pub fn server_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_group_id(&self) -> ::std::option::Option<& str> {
         self.server_group_id.as_deref()
     }
     /// <p>The replication configuration for servers in the server group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_replication_configurations.is_none()`.
-    pub fn server_replication_configurations(&self) -> &[crate::types::ServerReplicationConfiguration] {
-        self.server_replication_configurations.as_deref().unwrap_or_default()
+    pub fn server_replication_configurations(&self) -> & [crate::types::ServerReplicationConfiguration] {
+        self.server_replication_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ServerGroupReplicationConfiguration {
@@ -33,7 +34,7 @@ impl ServerGroupReplicationConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerGroupReplicationConfigurationBuilder {
     pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) server_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
+    pub(crate) server_replication_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ServerReplicationConfiguration>>,
 }
 impl ServerGroupReplicationConfigurationBuilder {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
@@ -43,8 +44,7 @@ impl ServerGroupReplicationConfigurationBuilder {
     }
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
     pub fn set_server_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_group_id = input;
-        self
+        self.server_group_id = input; self
     }
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
     pub fn get_server_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,26 @@ impl ServerGroupReplicationConfigurationBuilder {
     /// <p>The replication configuration for servers in the server group.</p>
     pub fn server_replication_configurations(mut self, input: crate::types::ServerReplicationConfiguration) -> Self {
         let mut v = self.server_replication_configurations.unwrap_or_default();
-        v.push(input);
-        self.server_replication_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.server_replication_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The replication configuration for servers in the server group.</p>
-    pub fn set_server_replication_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
-    ) -> Self {
-        self.server_replication_configurations = input;
-        self
+    pub fn set_server_replication_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServerReplicationConfiguration>>) -> Self {
+        self.server_replication_configurations = input; self
     }
     /// <p>The replication configuration for servers in the server group.</p>
-    pub fn get_server_replication_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>> {
+    pub fn get_server_replication_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServerReplicationConfiguration>> {
         &self.server_replication_configurations
     }
     /// Consumes the builder and constructs a [`ServerGroupReplicationConfiguration`](crate::types::ServerGroupReplicationConfiguration).
     pub fn build(self) -> crate::types::ServerGroupReplicationConfiguration {
         crate::types::ServerGroupReplicationConfiguration {
-            server_group_id: self.server_group_id,
-            server_replication_configurations: self.server_replication_configurations,
+            server_group_id: self.server_group_id
+            ,
+            server_replication_configurations: self.server_replication_configurations
+            ,
         }
     }
 }
+

@@ -23,11 +23,7 @@ impl Schedule {
     /// Tries to convert the enum instance into [`At`](crate::types::Schedule::At), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_at(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
-        if let Schedule::At(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Schedule::At(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`At`](crate::types::Schedule::At).
     pub fn is_at(&self) -> bool {
@@ -36,11 +32,7 @@ impl Schedule {
     /// Tries to convert the enum instance into [`Cron`](crate::types::Schedule::Cron), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cron(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Schedule::Cron(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Schedule::Cron(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Cron`](crate::types::Schedule::Cron).
     pub fn is_cron(&self) -> bool {
@@ -51,3 +43,4 @@ impl Schedule {
         matches!(self, Self::Unknown)
     }
 }
+

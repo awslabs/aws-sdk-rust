@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGlobalReplicationGroupsInput {
+pub struct DescribeGlobalReplicationGroupsInput  {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -12,9 +12,9 @@ pub struct DescribeGlobalReplicationGroupsInput {
     /// <p>Returns the list of members that comprise the Global datastore.</p>
     pub show_member_info: ::std::option::Option<bool>,
 }
-impl DescribeGlobalReplicationGroupsInput {
+impl  DescribeGlobalReplicationGroupsInput  {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_replication_group_id(&self) -> ::std::option::Option<& str> {
         self.global_replication_group_id.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -22,7 +22,7 @@ impl DescribeGlobalReplicationGroupsInput {
         self.max_records
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Returns the list of members that comprise the Global datastore.</p>
@@ -54,8 +54,7 @@ impl DescribeGlobalReplicationGroupsInputBuilder {
     }
     /// <p>The name of the Global datastore</p>
     pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_replication_group_id = input;
-        self
+        self.global_replication_group_id = input; self
     }
     /// <p>The name of the Global datastore</p>
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DescribeGlobalReplicationGroupsInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl DescribeGlobalReplicationGroupsInputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,27 +93,26 @@ impl DescribeGlobalReplicationGroupsInputBuilder {
     }
     /// <p>Returns the list of members that comprise the Global datastore.</p>
     pub fn set_show_member_info(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show_member_info = input;
-        self
+        self.show_member_info = input; self
     }
     /// <p>Returns the list of members that comprise the Global datastore.</p>
     pub fn get_show_member_info(&self) -> &::std::option::Option<bool> {
         &self.show_member_info
     }
     /// Consumes the builder and constructs a [`DescribeGlobalReplicationGroupsInput`](crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsInput {
-                global_replication_group_id: self.global_replication_group_id,
-                max_records: self.max_records,
-                marker: self.marker,
-                show_member_info: self.show_member_info,
-            },
+                global_replication_group_id: self.global_replication_group_id
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                show_member_info: self.show_member_info
+                ,
+            }
         )
     }
 }
+

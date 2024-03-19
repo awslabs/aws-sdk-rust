@@ -3,15 +3,15 @@
 /// <p>Details about a custom plugin file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomPluginFileDescription {
+pub struct CustomPluginFileDescription  {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
     pub file_md5: ::std::option::Option<::std::string::String>,
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
     pub file_size: i64,
 }
-impl CustomPluginFileDescription {
+impl  CustomPluginFileDescription  {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
-    pub fn file_md5(&self) -> ::std::option::Option<&str> {
+    pub fn file_md5(&self) -> ::std::option::Option<& str> {
         self.file_md5.as_deref()
     }
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
@@ -41,8 +41,7 @@ impl CustomPluginFileDescriptionBuilder {
     }
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
     pub fn set_file_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_md5 = input;
-        self
+        self.file_md5 = input; self
     }
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
     pub fn get_file_md5(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CustomPluginFileDescriptionBuilder {
     }
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
     pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.file_size = input;
-        self
+        self.file_size = input; self
     }
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
     pub fn get_file_size(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,12 @@ impl CustomPluginFileDescriptionBuilder {
     /// Consumes the builder and constructs a [`CustomPluginFileDescription`](crate::types::CustomPluginFileDescription).
     pub fn build(self) -> crate::types::CustomPluginFileDescription {
         crate::types::CustomPluginFileDescription {
-            file_md5: self.file_md5,
-            file_size: self.file_size.unwrap_or_default(),
+            file_md5: self.file_md5
+            ,
+            file_size: self.file_size
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

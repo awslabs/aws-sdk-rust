@@ -3,16 +3,17 @@
 /// <p>The default values of an integer parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerDatasetParameterDefaultValues {
+pub struct IntegerDatasetParameterDefaultValues  {
     /// <p>A list of static default values for a given integer parameter.</p>
-    pub static_values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub static_values: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
-impl IntegerDatasetParameterDefaultValues {
+impl  IntegerDatasetParameterDefaultValues  {
     /// <p>A list of static default values for a given integer parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_values.is_none()`.
-    pub fn static_values(&self) -> &[i64] {
-        self.static_values.as_deref().unwrap_or_default()
+    pub fn static_values(&self) -> & [i64] {
+        self.static_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IntegerDatasetParameterDefaultValues {
@@ -26,7 +27,7 @@ impl IntegerDatasetParameterDefaultValues {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegerDatasetParameterDefaultValuesBuilder {
-    pub(crate) static_values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub(crate) static_values: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
 impl IntegerDatasetParameterDefaultValuesBuilder {
     /// Appends an item to `static_values`.
@@ -36,23 +37,24 @@ impl IntegerDatasetParameterDefaultValuesBuilder {
     /// <p>A list of static default values for a given integer parameter.</p>
     pub fn static_values(mut self, input: i64) -> Self {
         let mut v = self.static_values.unwrap_or_default();
-        v.push(input);
-        self.static_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.static_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of static default values for a given integer parameter.</p>
-    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
-        self.static_values = input;
-        self
+    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec::<i64>>) -> Self {
+        self.static_values = input; self
     }
     /// <p>A list of static default values for a given integer parameter.</p>
-    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec::<i64>> {
         &self.static_values
     }
     /// Consumes the builder and constructs a [`IntegerDatasetParameterDefaultValues`](crate::types::IntegerDatasetParameterDefaultValues).
     pub fn build(self) -> crate::types::IntegerDatasetParameterDefaultValues {
         crate::types::IntegerDatasetParameterDefaultValues {
-            static_values: self.static_values,
+            static_values: self.static_values
+            ,
         }
     }
 }
+

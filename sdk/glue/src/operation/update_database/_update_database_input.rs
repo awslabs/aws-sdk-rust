@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatabaseInput {
+pub struct UpdateDatabaseInput  {
     /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
@@ -10,17 +10,17 @@ pub struct UpdateDatabaseInput {
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
     pub database_input: ::std::option::Option<crate::types::DatabaseInput>,
 }
-impl UpdateDatabaseInput {
+impl  UpdateDatabaseInput  {
     /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
-    pub fn database_input(&self) -> ::std::option::Option<&crate::types::DatabaseInput> {
+    pub fn database_input(&self) -> ::std::option::Option<& crate::types::DatabaseInput> {
         self.database_input.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl UpdateDatabaseInputBuilder {
     }
     /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateDatabaseInputBuilder {
     }
     /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl UpdateDatabaseInputBuilder {
     }
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
     pub fn set_database_input(mut self, input: ::std::option::Option<crate::types::DatabaseInput>) -> Self {
-        self.database_input = input;
-        self
+        self.database_input = input; self
     }
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
     pub fn get_database_input(&self) -> &::std::option::Option<crate::types::DatabaseInput> {
         &self.database_input
     }
     /// Consumes the builder and constructs a [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_database::UpdateDatabaseInput {
-            catalog_id: self.catalog_id,
-            name: self.name,
-            database_input: self.database_input,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_database::UpdateDatabaseInput {
+                catalog_id: self.catalog_id
+                ,
+                name: self.name
+                ,
+                database_input: self.database_input
+                ,
+            }
+        )
     }
 }
+

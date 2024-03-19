@@ -3,13 +3,13 @@
 /// <p>The field well configuration of a waterfall visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WaterfallChartFieldWells {
+pub struct WaterfallChartFieldWells  {
     /// <p>The field well configuration of a waterfall visual.</p>
     pub waterfall_chart_aggregated_field_wells: ::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
 }
-impl WaterfallChartFieldWells {
+impl  WaterfallChartFieldWells  {
     /// <p>The field well configuration of a waterfall visual.</p>
-    pub fn waterfall_chart_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::WaterfallChartAggregatedFieldWells> {
+    pub fn waterfall_chart_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::WaterfallChartAggregatedFieldWells> {
         self.waterfall_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl WaterfallChartFieldWellsBuilder {
         self
     }
     /// <p>The field well configuration of a waterfall visual.</p>
-    pub fn set_waterfall_chart_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
-    ) -> Self {
-        self.waterfall_chart_aggregated_field_wells = input;
-        self
+    pub fn set_waterfall_chart_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>) -> Self {
+        self.waterfall_chart_aggregated_field_wells = input; self
     }
     /// <p>The field well configuration of a waterfall visual.</p>
     pub fn get_waterfall_chart_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells> {
@@ -47,7 +43,9 @@ impl WaterfallChartFieldWellsBuilder {
     /// Consumes the builder and constructs a [`WaterfallChartFieldWells`](crate::types::WaterfallChartFieldWells).
     pub fn build(self) -> crate::types::WaterfallChartFieldWells {
         crate::types::WaterfallChartFieldWells {
-            waterfall_chart_aggregated_field_wells: self.waterfall_chart_aggregated_field_wells,
+            waterfall_chart_aggregated_field_wells: self.waterfall_chart_aggregated_field_wells
+            ,
         }
     }
 }
+

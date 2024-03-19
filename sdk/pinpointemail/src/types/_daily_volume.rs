@@ -3,28 +3,29 @@
 /// <p>An object that contains information about the volume of email sent on each day of the analysis period.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DailyVolume {
+pub struct DailyVolume  {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
     pub volume_statistics: ::std::option::Option<crate::types::VolumeStatistics>,
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
-    pub domain_isp_placements: ::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>>,
+    pub domain_isp_placements: ::std::option::Option<::std::vec::Vec::<crate::types::DomainIspPlacement>>,
 }
-impl DailyVolume {
+impl  DailyVolume  {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
-    pub fn volume_statistics(&self) -> ::std::option::Option<&crate::types::VolumeStatistics> {
+    pub fn volume_statistics(&self) -> ::std::option::Option<& crate::types::VolumeStatistics> {
         self.volume_statistics.as_ref()
     }
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_isp_placements.is_none()`.
-    pub fn domain_isp_placements(&self) -> &[crate::types::DomainIspPlacement] {
-        self.domain_isp_placements.as_deref().unwrap_or_default()
+    pub fn domain_isp_placements(&self) -> & [crate::types::DomainIspPlacement] {
+        self.domain_isp_placements.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DailyVolume {
@@ -40,7 +41,7 @@ impl DailyVolume {
 pub struct DailyVolumeBuilder {
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) volume_statistics: ::std::option::Option<crate::types::VolumeStatistics>,
-    pub(crate) domain_isp_placements: ::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>>,
+    pub(crate) domain_isp_placements: ::std::option::Option<::std::vec::Vec::<crate::types::DomainIspPlacement>>,
 }
 impl DailyVolumeBuilder {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
@@ -50,8 +51,7 @@ impl DailyVolumeBuilder {
     }
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -64,8 +64,7 @@ impl DailyVolumeBuilder {
     }
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
     pub fn set_volume_statistics(mut self, input: ::std::option::Option<crate::types::VolumeStatistics>) -> Self {
-        self.volume_statistics = input;
-        self
+        self.volume_statistics = input; self
     }
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
     pub fn get_volume_statistics(&self) -> &::std::option::Option<crate::types::VolumeStatistics> {
@@ -78,25 +77,28 @@ impl DailyVolumeBuilder {
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
     pub fn domain_isp_placements(mut self, input: crate::types::DomainIspPlacement) -> Self {
         let mut v = self.domain_isp_placements.unwrap_or_default();
-        v.push(input);
-        self.domain_isp_placements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_isp_placements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
-    pub fn set_domain_isp_placements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>>) -> Self {
-        self.domain_isp_placements = input;
-        self
+    pub fn set_domain_isp_placements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainIspPlacement>>) -> Self {
+        self.domain_isp_placements = input; self
     }
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
-    pub fn get_domain_isp_placements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>> {
+    pub fn get_domain_isp_placements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainIspPlacement>> {
         &self.domain_isp_placements
     }
     /// Consumes the builder and constructs a [`DailyVolume`](crate::types::DailyVolume).
     pub fn build(self) -> crate::types::DailyVolume {
         crate::types::DailyVolume {
-            start_date: self.start_date,
-            volume_statistics: self.volume_statistics,
-            domain_isp_placements: self.domain_isp_placements,
+            start_date: self.start_date
+            ,
+            volume_statistics: self.volume_statistics
+            ,
+            domain_isp_placements: self.domain_isp_placements
+            ,
         }
     }
 }
+

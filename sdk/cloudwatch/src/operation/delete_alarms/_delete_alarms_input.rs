@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAlarmsInput {
+pub struct DeleteAlarmsInput  {
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
-    pub alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub alarm_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteAlarmsInput {
+impl  DeleteAlarmsInput  {
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_names.is_none()`.
-    pub fn alarm_names(&self) -> &[::std::string::String] {
-        self.alarm_names.as_deref().unwrap_or_default()
+    pub fn alarm_names(&self) -> & [::std::string::String] {
+        self.alarm_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteAlarmsInput {
@@ -25,7 +26,7 @@ impl DeleteAlarmsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAlarmsInputBuilder {
-    pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteAlarmsInputBuilder {
     /// Appends an item to `alarm_names`.
@@ -35,25 +36,26 @@ impl DeleteAlarmsInputBuilder {
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
     pub fn alarm_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_names.unwrap_or_default();
-        v.push(input.into());
-        self.alarm_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alarm_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
-    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alarm_names = input;
-        self
+    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alarm_names = input; self
     }
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
-    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alarm_names
     }
     /// Consumes the builder and constructs a [`DeleteAlarmsInput`](crate::operation::delete_alarms::DeleteAlarmsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_alarms::DeleteAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_alarms::DeleteAlarmsInput {
-            alarm_names: self.alarm_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alarms::DeleteAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_alarms::DeleteAlarmsInput {
+                alarm_names: self.alarm_names
+                ,
+            }
+        )
     }
 }
+

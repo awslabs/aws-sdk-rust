@@ -3,7 +3,7 @@
 /// <p>The request object for this operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoginAuthConfigReqObj {
+pub struct LoginAuthConfigReqObj  {
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
     pub aws_cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region for the Amplify Admin UI login.</p>
@@ -13,21 +13,21 @@ pub struct LoginAuthConfigReqObj {
     /// <p>The web client ID for the Amazon Cognito user pools.</p>
     pub aws_user_pools_web_client_id: ::std::option::Option<::std::string::String>,
 }
-impl LoginAuthConfigReqObj {
+impl  LoginAuthConfigReqObj  {
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
-    pub fn aws_cognito_identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_cognito_identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.aws_cognito_identity_pool_id.as_deref()
     }
     /// <p>The AWS Region for the Amplify Admin UI login.</p>
-    pub fn aws_cognito_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_cognito_region(&self) -> ::std::option::Option<& str> {
         self.aws_cognito_region.as_deref()
     }
     /// <p>The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.</p>
-    pub fn aws_user_pools_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_user_pools_id(&self) -> ::std::option::Option<& str> {
         self.aws_user_pools_id.as_deref()
     }
     /// <p>The web client ID for the Amazon Cognito user pools.</p>
-    pub fn aws_user_pools_web_client_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_user_pools_web_client_id(&self) -> ::std::option::Option<& str> {
         self.aws_user_pools_web_client_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl LoginAuthConfigReqObjBuilder {
     }
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
     pub fn set_aws_cognito_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_cognito_identity_pool_id = input;
-        self
+        self.aws_cognito_identity_pool_id = input; self
     }
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
     pub fn get_aws_cognito_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl LoginAuthConfigReqObjBuilder {
     }
     /// <p>The AWS Region for the Amplify Admin UI login.</p>
     pub fn set_aws_cognito_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_cognito_region = input;
-        self
+        self.aws_cognito_region = input; self
     }
     /// <p>The AWS Region for the Amplify Admin UI login.</p>
     pub fn get_aws_cognito_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl LoginAuthConfigReqObjBuilder {
     }
     /// <p>The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.</p>
     pub fn set_aws_user_pools_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_user_pools_id = input;
-        self
+        self.aws_user_pools_id = input; self
     }
     /// <p>The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.</p>
     pub fn get_aws_user_pools_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl LoginAuthConfigReqObjBuilder {
     }
     /// <p>The web client ID for the Amazon Cognito user pools.</p>
     pub fn set_aws_user_pools_web_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_user_pools_web_client_id = input;
-        self
+        self.aws_user_pools_web_client_id = input; self
     }
     /// <p>The web client ID for the Amazon Cognito user pools.</p>
     pub fn get_aws_user_pools_web_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl LoginAuthConfigReqObjBuilder {
     /// Consumes the builder and constructs a [`LoginAuthConfigReqObj`](crate::types::LoginAuthConfigReqObj).
     pub fn build(self) -> crate::types::LoginAuthConfigReqObj {
         crate::types::LoginAuthConfigReqObj {
-            aws_cognito_identity_pool_id: self.aws_cognito_identity_pool_id,
-            aws_cognito_region: self.aws_cognito_region,
-            aws_user_pools_id: self.aws_user_pools_id,
-            aws_user_pools_web_client_id: self.aws_user_pools_web_client_id,
+            aws_cognito_identity_pool_id: self.aws_cognito_identity_pool_id
+            ,
+            aws_cognito_region: self.aws_cognito_region
+            ,
+            aws_user_pools_id: self.aws_user_pools_id
+            ,
+            aws_user_pools_web_client_id: self.aws_user_pools_web_client_id
+            ,
         }
     }
 }
+

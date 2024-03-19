@@ -5,54 +5,50 @@ pub use crate::operation::list_app_assessments::_list_app_assessments_input::Lis
 
 impl ListAppAssessmentsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_assessments::ListAppAssessmentsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_app_assessments::ListAppAssessmentsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_app_assessments();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_app_assessments::ListAppAssessmentsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_app_assessments::ListAppAssessmentsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_app_assessments();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListAppAssessments`.
-///
+/// 
 /// <p>Lists the assessments for an Resilience Hub application. You can use request parameters to refine the results for the response object.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAppAssessmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_app_assessments::builders::ListAppAssessmentsInputBuilder,
+                    inner: crate::operation::list_app_assessments::builders::ListAppAssessmentsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_app_assessments::ListAppAssessmentsOutput,
-        crate::operation::list_app_assessments::ListAppAssessmentsError,
-    > for ListAppAssessmentsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_app_assessments::ListAppAssessmentsOutput,
-            crate::operation::list_app_assessments::ListAppAssessmentsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_app_assessments::ListAppAssessmentsOutput,
+                    crate::operation::list_app_assessments::ListAppAssessmentsError,
+                > for ListAppAssessmentsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_app_assessments::ListAppAssessmentsOutput,
+                        crate::operation::list_app_assessments::ListAppAssessmentsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListAppAssessmentsFluentBuilder {
     /// Creates a new `ListAppAssessments`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListAppAssessmentsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_assessments::ListAppAssessmentsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_app_assessments::ListAppAssessmentsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_app_assessments::ListAppAssessments::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_app_assessments::ListAppAssessments::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_app_assessments::ListAppAssessmentsOutput,
-        crate::operation::list_app_assessments::ListAppAssessmentsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_app_assessments::ListAppAssessmentsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_app_assessments::ListAppAssessmentsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_app_assessments::ListAppAssessments::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_app_assessments::ListAppAssessments::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_app_assessments::ListAppAssessmentsOutput, crate::operation::list_app_assessments::ListAppAssessmentsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator {
-        crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator {
+                                crate::operation::list_app_assessments::paginator::ListAppAssessmentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
@@ -152,12 +139,12 @@ impl ListAppAssessmentsFluentBuilder {
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn set_assessment_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>) -> Self {
+    pub fn set_assessment_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentStatus>>) -> Self {
         self.inner = self.inner.set_assessment_status(input);
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn get_assessment_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>> {
+    pub fn get_assessment_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentStatus>> {
         self.inner.get_assessment_status()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
@@ -231,3 +218,4 @@ impl ListAppAssessmentsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

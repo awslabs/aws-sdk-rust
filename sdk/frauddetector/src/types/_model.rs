@@ -3,7 +3,7 @@
 /// <p>The model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Model {
+pub struct Model  {
     /// <p>The model ID.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
@@ -19,33 +19,33 @@ pub struct Model {
     /// <p>The ARN of the model.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl Model {
+impl  Model  {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<& crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>Timestamp of when the model was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
     /// <p>Timestamp of last time the model was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The ARN of the model.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl ModelBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model ID.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ModelBuilder {
     }
     /// <p>The model type.</p>
     pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
-        self.model_type = input;
-        self
+        self.model_type = input; self
     }
     /// <p>The model type.</p>
     pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
@@ -104,8 +102,7 @@ impl ModelBuilder {
     }
     /// <p>The model description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The model description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ModelBuilder {
     }
     /// <p>The name of the event type.</p>
     pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>The name of the event type.</p>
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ModelBuilder {
     }
     /// <p>Timestamp of when the model was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>Timestamp of when the model was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ModelBuilder {
     }
     /// <p>Timestamp of last time the model was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>Timestamp of last time the model was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl ModelBuilder {
     }
     /// <p>The ARN of the model.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the model.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl ModelBuilder {
     /// Consumes the builder and constructs a [`Model`](crate::types::Model).
     pub fn build(self) -> crate::types::Model {
         crate::types::Model {
-            model_id: self.model_id,
-            model_type: self.model_type,
-            description: self.description,
-            event_type_name: self.event_type_name,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            arn: self.arn,
+            model_id: self.model_id
+            ,
+            model_type: self.model_type
+            ,
+            description: self.description
+            ,
+            event_type_name: self.event_type_name
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

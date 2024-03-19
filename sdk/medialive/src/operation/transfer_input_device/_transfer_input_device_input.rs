@@ -3,7 +3,7 @@
 /// A request to transfer an input device.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransferInputDeviceInput {
+pub struct TransferInputDeviceInput  {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     pub input_device_id: ::std::option::Option<::std::string::String>,
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
@@ -13,21 +13,21 @@ pub struct TransferInputDeviceInput {
     /// An optional message for the recipient. Maximum 280 characters.
     pub transfer_message: ::std::option::Option<::std::string::String>,
 }
-impl TransferInputDeviceInput {
+impl  TransferInputDeviceInput  {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<& str> {
         self.input_device_id.as_deref()
     }
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
-    pub fn target_customer_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_customer_id(&self) -> ::std::option::Option<& str> {
         self.target_customer_id.as_deref()
     }
     /// The target AWS region to transfer the device.
-    pub fn target_region(&self) -> ::std::option::Option<&str> {
+    pub fn target_region(&self) -> ::std::option::Option<& str> {
         self.target_region.as_deref()
     }
     /// An optional message for the recipient. Maximum 280 characters.
-    pub fn transfer_message(&self) -> ::std::option::Option<&str> {
+    pub fn transfer_message(&self) -> ::std::option::Option<& str> {
         self.transfer_message.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl TransferInputDeviceInputBuilder {
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_device_id = input;
-        self
+        self.input_device_id = input; self
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl TransferInputDeviceInputBuilder {
     }
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
     pub fn set_target_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_customer_id = input;
-        self
+        self.target_customer_id = input; self
     }
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
     pub fn get_target_customer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl TransferInputDeviceInputBuilder {
     }
     /// The target AWS region to transfer the device.
     pub fn set_target_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_region = input;
-        self
+        self.target_region = input; self
     }
     /// The target AWS region to transfer the device.
     pub fn get_target_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,23 +95,26 @@ impl TransferInputDeviceInputBuilder {
     }
     /// An optional message for the recipient. Maximum 280 characters.
     pub fn set_transfer_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transfer_message = input;
-        self
+        self.transfer_message = input; self
     }
     /// An optional message for the recipient. Maximum 280 characters.
     pub fn get_transfer_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.transfer_message
     }
     /// Consumes the builder and constructs a [`TransferInputDeviceInput`](crate::operation::transfer_input_device::TransferInputDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::transfer_input_device::TransferInputDeviceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::transfer_input_device::TransferInputDeviceInput {
-            input_device_id: self.input_device_id,
-            target_customer_id: self.target_customer_id,
-            target_region: self.target_region,
-            transfer_message: self.transfer_message,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::transfer_input_device::TransferInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::transfer_input_device::TransferInputDeviceInput {
+                input_device_id: self.input_device_id
+                ,
+                target_customer_id: self.target_customer_id
+                ,
+                target_region: self.target_region
+                ,
+                transfer_message: self.transfer_message
+                ,
+            }
+        )
     }
 }
+

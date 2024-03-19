@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBackupSelectionInput {
+pub struct DeleteBackupSelectionInput  {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub selection_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBackupSelectionInput {
+impl  DeleteBackupSelectionInput  {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> ::std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
-    pub fn selection_id(&self) -> ::std::option::Option<&str> {
+    pub fn selection_id(&self) -> ::std::option::Option<& str> {
         self.selection_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteBackupSelectionInputBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_plan_id = input;
-        self
+        self.backup_plan_id = input; self
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteBackupSelectionInputBuilder {
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn set_selection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_id = input;
-        self
+        self.selection_id = input; self
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn get_selection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_id
     }
     /// Consumes the builder and constructs a [`DeleteBackupSelectionInput`](crate::operation::delete_backup_selection::DeleteBackupSelectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_backup_selection::DeleteBackupSelectionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_backup_selection::DeleteBackupSelectionInput {
-            backup_plan_id: self.backup_plan_id,
-            selection_id: self.selection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backup_selection::DeleteBackupSelectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_backup_selection::DeleteBackupSelectionInput {
+                backup_plan_id: self.backup_plan_id
+                ,
+                selection_id: self.selection_id
+                ,
+            }
+        )
     }
 }
+

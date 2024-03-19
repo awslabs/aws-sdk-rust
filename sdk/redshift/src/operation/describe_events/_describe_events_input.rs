@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventsInput {
+pub struct DescribeEventsInput  {
     /// <p>The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
@@ -48,7 +48,7 @@ pub struct DescribeEventsInput {
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeEvents</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEventsInput {
+impl  DescribeEventsInput  {
     /// <p>The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
@@ -62,7 +62,7 @@ impl DescribeEventsInput {
     /// <li>
     /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
-    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_identifier(&self) -> ::std::option::Option<& str> {
         self.source_identifier.as_deref()
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
@@ -78,17 +78,17 @@ impl DescribeEventsInput {
     /// <li>
     /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
     /// <p>Example: <code>2009-07-08T18:00Z</code></p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
     /// <p>Example: <code>2009-07-08T18:00Z</code></p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The number of minutes prior to the time of the request for which to retrieve events. For example, if the request is sent at 18:00 and you specify a duration of 60, then only events which have occurred after 17:00 will be returned.</p>
@@ -103,7 +103,7 @@ impl DescribeEventsInput {
         self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeEvents</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -158,8 +158,7 @@ impl DescribeEventsInputBuilder {
     /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_identifier = input;
-        self
+        self.source_identifier = input; self
     }
     /// <p>The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
@@ -208,8 +207,7 @@ impl DescribeEventsInputBuilder {
     /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     /// <p>Constraints:</p>
@@ -236,8 +234,7 @@ impl DescribeEventsInputBuilder {
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
     /// <p>Example: <code>2009-07-08T18:00Z</code></p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
     /// <p>Example: <code>2009-07-08T18:00Z</code></p>
@@ -253,8 +250,7 @@ impl DescribeEventsInputBuilder {
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
     /// <p>Example: <code>2009-07-08T18:00Z</code></p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
     /// <p>Example: <code>2009-07-08T18:00Z</code></p>
@@ -270,8 +266,7 @@ impl DescribeEventsInputBuilder {
     /// <p>The number of minutes prior to the time of the request for which to retrieve events. For example, if the request is sent at 18:00 and you specify a duration of 60, then only events which have occurred after 17:00 will be returned.</p>
     /// <p>Default: <code>60</code></p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The number of minutes prior to the time of the request for which to retrieve events. For example, if the request is sent at 18:00 and you specify a duration of 60, then only events which have occurred after 17:00 will be returned.</p>
     /// <p>Default: <code>60</code></p>
@@ -289,8 +284,7 @@ impl DescribeEventsInputBuilder {
     /// <p>Default: <code>100</code></p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     /// <p>Default: <code>100</code></p>
@@ -305,25 +299,32 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeEvents</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeEvents</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_events::DescribeEventsInput {
-            source_identifier: self.source_identifier,
-            source_type: self.source_type,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            duration: self.duration,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_events::DescribeEventsInput {
+                source_identifier: self.source_identifier
+                ,
+                source_type: self.source_type
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                duration: self.duration
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

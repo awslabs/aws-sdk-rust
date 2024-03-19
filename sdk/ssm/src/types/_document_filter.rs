@@ -3,21 +3,20 @@
 /// <p>This data type is deprecated. Instead, use <code>DocumentKeyValuesFilter</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentFilter {
+pub struct DocumentFilter  {
     /// <p>The name of the filter.</p>
     pub key: crate::types::DocumentFilterKey,
     /// <p>The value of the filter.</p>
     pub value: ::std::string::String,
 }
-impl DocumentFilter {
+impl  DocumentFilter  {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> &crate::types::DocumentFilterKey {
+    pub fn key(&self) -> & crate::types::DocumentFilterKey {
         &self.key
     }
     /// <p>The value of the filter.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl DocumentFilter {
@@ -43,8 +42,7 @@ impl DocumentFilterBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::DocumentFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the filter.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::DocumentFilterKey> {
@@ -58,8 +56,7 @@ impl DocumentFilterBuilder {
     }
     /// <p>The value of the filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl DocumentFilterBuilder {
     /// - [`key`](crate::types::builders::DocumentFilterBuilder::key)
     /// - [`value`](crate::types::builders::DocumentFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DocumentFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building DocumentFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building DocumentFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DocumentFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building DocumentFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building DocumentFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

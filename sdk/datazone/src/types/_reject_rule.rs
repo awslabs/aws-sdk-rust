@@ -3,15 +3,15 @@
 /// <p>Specifies the rule and the threshold under which a prediction can be rejected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectRule {
+pub struct RejectRule  {
     /// <p>Specifies whether you want to reject the top prediction for all targets or none.</p>
     pub rule: ::std::option::Option<crate::types::RejectRuleBehavior>,
     /// <p>The confidence score that specifies the condition at which a prediction can be rejected.</p>
     pub threshold: ::std::option::Option<f32>,
 }
-impl RejectRule {
+impl  RejectRule  {
     /// <p>Specifies whether you want to reject the top prediction for all targets or none.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::RejectRuleBehavior> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::RejectRuleBehavior> {
         self.rule.as_ref()
     }
     /// <p>The confidence score that specifies the condition at which a prediction can be rejected.</p>
@@ -41,8 +41,7 @@ impl RejectRuleBuilder {
     }
     /// <p>Specifies whether you want to reject the top prediction for all targets or none.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::RejectRuleBehavior>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>Specifies whether you want to reject the top prediction for all targets or none.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::RejectRuleBehavior> {
@@ -55,8 +54,7 @@ impl RejectRuleBuilder {
     }
     /// <p>The confidence score that specifies the condition at which a prediction can be rejected.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>The confidence score that specifies the condition at which a prediction can be rejected.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<f32> {
@@ -65,8 +63,11 @@ impl RejectRuleBuilder {
     /// Consumes the builder and constructs a [`RejectRule`](crate::types::RejectRule).
     pub fn build(self) -> crate::types::RejectRule {
         crate::types::RejectRule {
-            rule: self.rule,
-            threshold: self.threshold,
+            rule: self.rule
+            ,
+            threshold: self.threshold
+            ,
         }
     }
 }
+

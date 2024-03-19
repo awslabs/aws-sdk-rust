@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetOutcomes`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::set_name):<br>required: **false**<br><p>The name of the outcome or outcomes to get.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next page token for the request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
-    /// - On success, responds with [`GetOutcomesOutput`](crate::operation::get_outcomes::GetOutcomesOutput) with field(s):
+                            /// - On success, responds with [`GetOutcomesOutput`](crate::operation::get_outcomes::GetOutcomesOutput) with field(s):
     ///   - [`outcomes(Option<Vec::<Outcome>>)`](crate::operation::get_outcomes::GetOutcomesOutput::outcomes): <p>The outcomes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_outcomes::GetOutcomesOutput::next_token): <p>The next page token for subsequent requests.</p>
-    /// - On failure, responds with [`SdkError<GetOutcomesError>`](crate::operation::get_outcomes::GetOutcomesError)
+                            /// - On failure, responds with [`SdkError<GetOutcomesError>`](crate::operation::get_outcomes::GetOutcomesError)
     pub fn get_outcomes(&self) -> crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder {
-        crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_outcomes::builders::GetOutcomesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

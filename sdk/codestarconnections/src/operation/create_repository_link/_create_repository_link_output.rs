@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRepositoryLinkOutput {
+pub struct CreateRepositoryLinkOutput  {
     /// <p>The returned information about the created repository link.</p>
     pub repository_link_info: ::std::option::Option<crate::types::RepositoryLinkInfo>,
     _request_id: Option<String>,
 }
-impl CreateRepositoryLinkOutput {
+impl  CreateRepositoryLinkOutput  {
     /// <p>The returned information about the created repository link.</p>
-    pub fn repository_link_info(&self) -> ::std::option::Option<&crate::types::RepositoryLinkInfo> {
+    pub fn repository_link_info(&self) -> ::std::option::Option<& crate::types::RepositoryLinkInfo> {
         self.repository_link_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRepositoryLinkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRepositoryLinkOutput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryLinkOutput`](crate::operation::create_repository_link::CreateRepositoryLinkOutput).
     pub fn builder() -> crate::operation::create_repository_link::builders::CreateRepositoryLinkOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateRepositoryLinkOutputBuilder {
     }
     /// <p>The returned information about the created repository link.</p>
     pub fn set_repository_link_info(mut self, input: ::std::option::Option<crate::types::RepositoryLinkInfo>) -> Self {
-        self.repository_link_info = input;
-        self
+        self.repository_link_info = input; self
     }
     /// <p>The returned information about the created repository link.</p>
     pub fn get_repository_link_info(&self) -> &::std::option::Option<crate::types::RepositoryLinkInfo> {
         &self.repository_link_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRepositoryLinkOutput`](crate::operation::create_repository_link::CreateRepositoryLinkOutput).
     pub fn build(self) -> crate::operation::create_repository_link::CreateRepositoryLinkOutput {
         crate::operation::create_repository_link::CreateRepositoryLinkOutput {
-            repository_link_info: self.repository_link_info,
+            repository_link_info: self.repository_link_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

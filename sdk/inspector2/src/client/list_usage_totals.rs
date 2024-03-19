@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUsageTotals`](crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p><br>
     ///   - [`account_ids(impl Into<String>)`](crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec::<String>>)`](crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::set_account_ids):<br>required: **false**<br><p>The Amazon Web Services account IDs to retrieve usage totals for.</p><br>
-    /// - On success, responds with [`ListUsageTotalsOutput`](crate::operation::list_usage_totals::ListUsageTotalsOutput) with field(s):
+                            /// - On success, responds with [`ListUsageTotalsOutput`](crate::operation::list_usage_totals::ListUsageTotalsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_usage_totals::ListUsageTotalsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     ///   - [`totals(Option<Vec::<UsageTotal>>)`](crate::operation::list_usage_totals::ListUsageTotalsOutput::totals): <p>An object with details on the total usage for the requested account.</p>
-    /// - On failure, responds with [`SdkError<ListUsageTotalsError>`](crate::operation::list_usage_totals::ListUsageTotalsError)
+                            /// - On failure, responds with [`SdkError<ListUsageTotalsError>`](crate::operation::list_usage_totals::ListUsageTotalsError)
     pub fn list_usage_totals(&self) -> crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder {
-        crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

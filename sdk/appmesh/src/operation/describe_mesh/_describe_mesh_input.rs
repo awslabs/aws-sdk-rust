@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMeshInput {
+pub struct DescribeMeshInput  {
     /// <p>The name of the service mesh to describe.</p>
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMeshInput {
+impl  DescribeMeshInput  {
     /// <p>The name of the service mesh to describe.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> ::std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeMeshInputBuilder {
     }
     /// <p>The name of the service mesh to describe.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the service mesh to describe.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DescribeMeshInputBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_owner = input;
-        self
+        self.mesh_owner = input; self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DescribeMeshInput`](crate::operation::describe_mesh::DescribeMeshInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_mesh::DescribeMeshInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_mesh::DescribeMeshInput {
-            mesh_name: self.mesh_name,
-            mesh_owner: self.mesh_owner,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mesh::DescribeMeshInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_mesh::DescribeMeshInput {
+                mesh_name: self.mesh_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+            }
+        )
     }
 }
+

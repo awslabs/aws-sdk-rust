@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClearDefaultAuthorizerInput {}
+pub struct ClearDefaultAuthorizerInput  {
+}
 impl ClearDefaultAuthorizerInput {
     /// Creates a new builder-style object to manufacture [`ClearDefaultAuthorizerInput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput).
     pub fn builder() -> crate::operation::clear_default_authorizer::builders::ClearDefaultAuthorizerInputBuilder {
@@ -13,15 +14,15 @@ impl ClearDefaultAuthorizerInput {
 /// A builder for [`ClearDefaultAuthorizerInput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ClearDefaultAuthorizerInputBuilder {}
+pub struct ClearDefaultAuthorizerInputBuilder {
+}
 impl ClearDefaultAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`ClearDefaultAuthorizerInput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput {
+            }
+        )
     }
 }
+

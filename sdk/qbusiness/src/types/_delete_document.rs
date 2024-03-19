@@ -3,15 +3,14 @@
 /// <p>A document deleted from an Amazon Q data source connector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDocument {
+pub struct DeleteDocument  {
     /// <p>The identifier of the deleted document.</p>
     pub document_id: ::std::string::String,
 }
-impl DeleteDocument {
+impl  DeleteDocument  {
     /// <p>The identifier of the deleted document.</p>
-    pub fn document_id(&self) -> &str {
-        use std::ops::Deref;
-        self.document_id.deref()
+    pub fn document_id(&self) -> & str {
+        use std::ops::Deref; self.document_id.deref()
     }
 }
 impl DeleteDocument {
@@ -36,8 +35,7 @@ impl DeleteDocumentBuilder {
     }
     /// <p>The identifier of the deleted document.</p>
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// <p>The identifier of the deleted document.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DeleteDocumentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`document_id`](crate::types::builders::DeleteDocumentBuilder::document_id)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteDocument, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteDocument {
-            document_id: self.document_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "document_id",
-                    "document_id was not specified but it is required when building DeleteDocument",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteDocument {
+                document_id: self.document_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("document_id", "document_id was not specified but it is required when building DeleteDocument")
+                    )?
+                ,
+            }
+        )
     }
 }
+

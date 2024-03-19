@@ -3,60 +3,64 @@
 /// <p>Describes the permissions for a security group rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpPermission {
+pub struct IpPermission  {
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
     pub from_port: ::std::option::Option<i32>,
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
     /// <p>Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address ranges.</p>
-    pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
+    pub ip_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::IpRange>>,
     /// <p>The IPv6 address ranges.</p>
-    pub ipv6_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>>,
+    pub ipv6_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6Range>>,
     /// <p>The prefix list IDs.</p>
-    pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>>,
+    pub prefix_list_ids: ::std::option::Option<::std::vec::Vec::<crate::types::PrefixListId>>,
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
     pub to_port: ::std::option::Option<i32>,
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
+    pub user_id_group_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::UserIdGroupPair>>,
 }
-impl IpPermission {
+impl  IpPermission  {
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn from_port(&self) -> ::std::option::Option<i32> {
         self.from_port
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
     /// <p>Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
-    pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn ip_protocol(&self) -> ::std::option::Option<& str> {
         self.ip_protocol.as_deref()
     }
     /// <p>The IPv4 address ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
-    pub fn ip_ranges(&self) -> &[crate::types::IpRange] {
-        self.ip_ranges.as_deref().unwrap_or_default()
+    pub fn ip_ranges(&self) -> & [crate::types::IpRange] {
+        self.ip_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IPv6 address ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_ranges.is_none()`.
-    pub fn ipv6_ranges(&self) -> &[crate::types::Ipv6Range] {
-        self.ipv6_ranges.as_deref().unwrap_or_default()
+    pub fn ipv6_ranges(&self) -> & [crate::types::Ipv6Range] {
+        self.ipv6_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The prefix list IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_list_ids.is_none()`.
-    pub fn prefix_list_ids(&self) -> &[crate::types::PrefixListId] {
-        self.prefix_list_ids.as_deref().unwrap_or_default()
+    pub fn prefix_list_ids(&self) -> & [crate::types::PrefixListId] {
+        self.prefix_list_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
     pub fn to_port(&self) -> ::std::option::Option<i32> {
         self.to_port
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_id_group_pairs.is_none()`.
-    pub fn user_id_group_pairs(&self) -> &[crate::types::UserIdGroupPair] {
-        self.user_id_group_pairs.as_deref().unwrap_or_default()
+    pub fn user_id_group_pairs(&self) -> & [crate::types::UserIdGroupPair] {
+        self.user_id_group_pairs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IpPermission {
@@ -72,11 +76,11 @@ impl IpPermission {
 pub struct IpPermissionBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) ip_protocol: ::std::option::Option<::std::string::String>,
-    pub(crate) ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
-    pub(crate) ipv6_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>>,
-    pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>>,
+    pub(crate) ip_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::IpRange>>,
+    pub(crate) ipv6_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6Range>>,
+    pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec::<crate::types::PrefixListId>>,
     pub(crate) to_port: ::std::option::Option<i32>,
-    pub(crate) user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>,
+    pub(crate) user_id_group_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::UserIdGroupPair>>,
 }
 impl IpPermissionBuilder {
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
@@ -86,8 +90,7 @@ impl IpPermissionBuilder {
     }
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
@@ -102,8 +105,7 @@ impl IpPermissionBuilder {
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
     /// <p>Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_protocol = input;
-        self
+        self.ip_protocol = input; self
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).</p>
     /// <p>Use <code>-1</code> to specify all protocols. When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.</p>
@@ -117,17 +119,16 @@ impl IpPermissionBuilder {
     /// <p>The IPv4 address ranges.</p>
     pub fn ip_ranges(mut self, input: crate::types::IpRange) -> Self {
         let mut v = self.ip_ranges.unwrap_or_default();
-        v.push(input);
-        self.ip_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ip_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv4 address ranges.</p>
-    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>) -> Self {
-        self.ip_ranges = input;
-        self
+    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpRange>>) -> Self {
+        self.ip_ranges = input; self
     }
     /// <p>The IPv4 address ranges.</p>
-    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRange>> {
+    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpRange>> {
         &self.ip_ranges
     }
     /// Appends an item to `ipv6_ranges`.
@@ -137,17 +138,16 @@ impl IpPermissionBuilder {
     /// <p>The IPv6 address ranges.</p>
     pub fn ipv6_ranges(mut self, input: crate::types::Ipv6Range) -> Self {
         let mut v = self.ipv6_ranges.unwrap_or_default();
-        v.push(input);
-        self.ipv6_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipv6_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 address ranges.</p>
-    pub fn set_ipv6_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>>) -> Self {
-        self.ipv6_ranges = input;
-        self
+    pub fn set_ipv6_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6Range>>) -> Self {
+        self.ipv6_ranges = input; self
     }
     /// <p>The IPv6 address ranges.</p>
-    pub fn get_ipv6_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6Range>> {
+    pub fn get_ipv6_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ipv6Range>> {
         &self.ipv6_ranges
     }
     /// Appends an item to `prefix_list_ids`.
@@ -157,17 +157,16 @@ impl IpPermissionBuilder {
     /// <p>The prefix list IDs.</p>
     pub fn prefix_list_ids(mut self, input: crate::types::PrefixListId) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
-        v.push(input);
-        self.prefix_list_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.prefix_list_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The prefix list IDs.</p>
-    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>>) -> Self {
-        self.prefix_list_ids = input;
-        self
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PrefixListId>>) -> Self {
+        self.prefix_list_ids = input; self
     }
     /// <p>The prefix list IDs.</p>
-    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixListId>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PrefixListId>> {
         &self.prefix_list_ids
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
@@ -177,8 +176,7 @@ impl IpPermissionBuilder {
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
@@ -191,29 +189,36 @@ impl IpPermissionBuilder {
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
     pub fn user_id_group_pairs(mut self, input: crate::types::UserIdGroupPair) -> Self {
         let mut v = self.user_id_group_pairs.unwrap_or_default();
-        v.push(input);
-        self.user_id_group_pairs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_id_group_pairs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub fn set_user_id_group_pairs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>>) -> Self {
-        self.user_id_group_pairs = input;
-        self
+    pub fn set_user_id_group_pairs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserIdGroupPair>>) -> Self {
+        self.user_id_group_pairs = input; self
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub fn get_user_id_group_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserIdGroupPair>> {
+    pub fn get_user_id_group_pairs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserIdGroupPair>> {
         &self.user_id_group_pairs
     }
     /// Consumes the builder and constructs a [`IpPermission`](crate::types::IpPermission).
     pub fn build(self) -> crate::types::IpPermission {
         crate::types::IpPermission {
-            from_port: self.from_port,
-            ip_protocol: self.ip_protocol,
-            ip_ranges: self.ip_ranges,
-            ipv6_ranges: self.ipv6_ranges,
-            prefix_list_ids: self.prefix_list_ids,
-            to_port: self.to_port,
-            user_id_group_pairs: self.user_id_group_pairs,
+            from_port: self.from_port
+            ,
+            ip_protocol: self.ip_protocol
+            ,
+            ip_ranges: self.ip_ranges
+            ,
+            ipv6_ranges: self.ipv6_ranges
+            ,
+            prefix_list_ids: self.prefix_list_ids
+            ,
+            to_port: self.to_port
+            ,
+            user_id_group_pairs: self.user_id_group_pairs
+            ,
         }
     }
 }
+

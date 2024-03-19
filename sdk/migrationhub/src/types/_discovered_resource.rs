@@ -3,20 +3,19 @@
 /// <p>Object representing the on-premises resource being migrated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoveredResource {
+pub struct DiscoveredResource  {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
     pub configuration_id: ::std::string::String,
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl DiscoveredResource {
+impl  DiscoveredResource  {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
-    pub fn configuration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.configuration_id.deref()
+    pub fn configuration_id(&self) -> & str {
+        use std::ops::Deref; self.configuration_id.deref()
     }
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl DiscoveredResourceBuilder {
     }
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
     pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.</p>
     pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DiscoveredResourceBuilder {
     }
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description that can be free-form text to record additional detail about the discovered resource for clarity or later reference.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl DiscoveredResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration_id`](crate::types::builders::DiscoveredResourceBuilder::configuration_id)
     pub fn build(self) -> ::std::result::Result<crate::types::DiscoveredResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DiscoveredResource {
-            configuration_id: self.configuration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configuration_id",
-                    "configuration_id was not specified but it is required when building DiscoveredResource",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DiscoveredResource {
+                configuration_id: self.configuration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration_id", "configuration_id was not specified but it is required when building DiscoveredResource")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

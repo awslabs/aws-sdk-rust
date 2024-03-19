@@ -3,7 +3,7 @@
 /// <p>Information about active sessions for a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DevEnvironmentSessionSummary {
+pub struct DevEnvironmentSessionSummary  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
@@ -15,30 +15,26 @@ pub struct DevEnvironmentSessionSummary {
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub id: ::std::string::String,
 }
-impl DevEnvironmentSessionSummary {
+impl  DevEnvironmentSessionSummary  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> & str {
+        use std::ops::Deref; self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> & str {
+        use std::ops::Deref; self.project_name.deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn dev_environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.dev_environment_id.deref()
+    pub fn dev_environment_id(&self) -> & str {
+        use std::ops::Deref; self.dev_environment_id.deref()
     }
     /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
-    pub fn started_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn started_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.started_time
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl DevEnvironmentSessionSummary {
@@ -67,8 +63,7 @@ impl DevEnvironmentSessionSummaryBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl DevEnvironmentSessionSummaryBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl DevEnvironmentSessionSummaryBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn set_dev_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dev_environment_id = input;
-        self
+        self.dev_environment_id = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn get_dev_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl DevEnvironmentSessionSummaryBuilder {
     }
     /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn set_started_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_time = input;
-        self
+        self.started_time = input; self
     }
     /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn get_started_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -127,8 +119,7 @@ impl DevEnvironmentSessionSummaryBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,37 +133,35 @@ impl DevEnvironmentSessionSummaryBuilder {
     /// - [`started_time`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::started_time)
     /// - [`id`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSessionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DevEnvironmentSessionSummary {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building DevEnvironmentSessionSummary",
-                )
-            })?,
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building DevEnvironmentSessionSummary",
-                )
-            })?,
-            dev_environment_id: self.dev_environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dev_environment_id",
-                    "dev_environment_id was not specified but it is required when building DevEnvironmentSessionSummary",
-                )
-            })?,
-            started_time: self.started_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "started_time",
-                    "started_time was not specified but it is required when building DevEnvironmentSessionSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DevEnvironmentSessionSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DevEnvironmentSessionSummary {
+                space_name: self.space_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("space_name", "space_name was not specified but it is required when building DevEnvironmentSessionSummary")
+                    )?
+                ,
+                project_name: self.project_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_name", "project_name was not specified but it is required when building DevEnvironmentSessionSummary")
+                    )?
+                ,
+                dev_environment_id: self.dev_environment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dev_environment_id", "dev_environment_id was not specified but it is required when building DevEnvironmentSessionSummary")
+                    )?
+                ,
+                started_time: self.started_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("started_time", "started_time was not specified but it is required when building DevEnvironmentSessionSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DevEnvironmentSessionSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

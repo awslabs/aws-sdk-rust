@@ -3,7 +3,7 @@
 /// <p>Contains information about all the aliases replication statuses applicable for global resiliency.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotAliasReplicaSummary {
+pub struct BotAliasReplicaSummary  {
     /// <p>The bot alias ID for all the alias bot replications.</p>
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The replication statuses for all the alias bot replications.</p>
@@ -15,34 +15,35 @@ pub struct BotAliasReplicaSummary {
     /// <p>The last time and date updated for all the alias bot replications.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reasons for failure for the aliases bot replications.</p>
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BotAliasReplicaSummary {
+impl  BotAliasReplicaSummary  {
     /// <p>The bot alias ID for all the alias bot replications.</p>
-    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> ::std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The replication statuses for all the alias bot replications.</p>
-    pub fn bot_alias_replication_status(&self) -> ::std::option::Option<&crate::types::BotAliasReplicationStatus> {
+    pub fn bot_alias_replication_status(&self) -> ::std::option::Option<& crate::types::BotAliasReplicationStatus> {
         self.bot_alias_replication_status.as_ref()
     }
     /// <p>The bot version for all the alias bot replications.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The creation time and date for all the alias bot replications.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last time and date updated for all the alias bot replications.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The reasons for failure for the aliases bot replications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BotAliasReplicaSummary {
@@ -61,7 +62,7 @@ pub struct BotAliasReplicaSummaryBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BotAliasReplicaSummaryBuilder {
     /// <p>The bot alias ID for all the alias bot replications.</p>
@@ -71,8 +72,7 @@ impl BotAliasReplicaSummaryBuilder {
     }
     /// <p>The bot alias ID for all the alias bot replications.</p>
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_id = input;
-        self
+        self.bot_alias_id = input; self
     }
     /// <p>The bot alias ID for all the alias bot replications.</p>
     pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl BotAliasReplicaSummaryBuilder {
     }
     /// <p>The replication statuses for all the alias bot replications.</p>
     pub fn set_bot_alias_replication_status(mut self, input: ::std::option::Option<crate::types::BotAliasReplicationStatus>) -> Self {
-        self.bot_alias_replication_status = input;
-        self
+        self.bot_alias_replication_status = input; self
     }
     /// <p>The replication statuses for all the alias bot replications.</p>
     pub fn get_bot_alias_replication_status(&self) -> &::std::option::Option<crate::types::BotAliasReplicationStatus> {
@@ -99,8 +98,7 @@ impl BotAliasReplicaSummaryBuilder {
     }
     /// <p>The bot version for all the alias bot replications.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The bot version for all the alias bot replications.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl BotAliasReplicaSummaryBuilder {
     }
     /// <p>The creation time and date for all the alias bot replications.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation time and date for all the alias bot replications.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -127,8 +124,7 @@ impl BotAliasReplicaSummaryBuilder {
     }
     /// <p>The last time and date updated for all the alias bot replications.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The last time and date updated for all the alias bot replications.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,28 +137,34 @@ impl BotAliasReplicaSummaryBuilder {
     /// <p>The reasons for failure for the aliases bot replications.</p>
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reasons for failure for the aliases bot replications.</p>
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// <p>The reasons for failure for the aliases bot replications.</p>
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     /// Consumes the builder and constructs a [`BotAliasReplicaSummary`](crate::types::BotAliasReplicaSummary).
     pub fn build(self) -> crate::types::BotAliasReplicaSummary {
         crate::types::BotAliasReplicaSummary {
-            bot_alias_id: self.bot_alias_id,
-            bot_alias_replication_status: self.bot_alias_replication_status,
-            bot_version: self.bot_version,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            failure_reasons: self.failure_reasons,
+            bot_alias_id: self.bot_alias_id
+            ,
+            bot_alias_replication_status: self.bot_alias_replication_status
+            ,
+            bot_version: self.bot_version
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            failure_reasons: self.failure_reasons
+            ,
         }
     }
 }
+

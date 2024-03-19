@@ -3,20 +3,19 @@
 /// <p>The cell conditional formatting option for a table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableCellConditionalFormatting {
+pub struct TableCellConditionalFormatting  {
     /// <p>The field ID of the cell for conditional formatting.</p>
     pub field_id: ::std::string::String,
     /// <p>The text format of the cell for conditional formatting.</p>
     pub text_format: ::std::option::Option<crate::types::TextConditionalFormat>,
 }
-impl TableCellConditionalFormatting {
+impl  TableCellConditionalFormatting  {
     /// <p>The field ID of the cell for conditional formatting.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The text format of the cell for conditional formatting.</p>
-    pub fn text_format(&self) -> ::std::option::Option<&crate::types::TextConditionalFormat> {
+    pub fn text_format(&self) -> ::std::option::Option<& crate::types::TextConditionalFormat> {
         self.text_format.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl TableCellConditionalFormattingBuilder {
     }
     /// <p>The field ID of the cell for conditional formatting.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID of the cell for conditional formatting.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl TableCellConditionalFormattingBuilder {
     }
     /// <p>The text format of the cell for conditional formatting.</p>
     pub fn set_text_format(mut self, input: ::std::option::Option<crate::types::TextConditionalFormat>) -> Self {
-        self.text_format = input;
-        self
+        self.text_format = input; self
     }
     /// <p>The text format of the cell for conditional formatting.</p>
     pub fn get_text_format(&self) -> &::std::option::Option<crate::types::TextConditionalFormat> {
@@ -68,14 +65,17 @@ impl TableCellConditionalFormattingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::TableCellConditionalFormattingBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TableCellConditionalFormatting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TableCellConditionalFormatting {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building TableCellConditionalFormatting",
-                )
-            })?,
-            text_format: self.text_format,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TableCellConditionalFormatting {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building TableCellConditionalFormatting")
+                    )?
+                ,
+                text_format: self.text_format
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTestExecutionResultItemsInput {
+pub struct ListTestExecutionResultItemsInput  {
     /// <p>The unique identifier of the test execution to list the result items.</p>
     pub test_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the list of results from the test set execution.</p>
@@ -12,13 +12,13 @@ pub struct ListTestExecutionResultItemsInput {
     /// <p>If the response from the <code>ListTestExecutionResultItems</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTestExecutionResultItemsInput {
+impl  ListTestExecutionResultItemsInput  {
     /// <p>The unique identifier of the test execution to list the result items.</p>
-    pub fn test_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_execution_id(&self) -> ::std::option::Option<& str> {
         self.test_execution_id.as_deref()
     }
     /// <p>The filter for the list of results from the test set execution.</p>
-    pub fn result_filter_by(&self) -> ::std::option::Option<&crate::types::TestExecutionResultFilterBy> {
+    pub fn result_filter_by(&self) -> ::std::option::Option<& crate::types::TestExecutionResultFilterBy> {
         self.result_filter_by.as_ref()
     }
     /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -26,7 +26,7 @@ impl ListTestExecutionResultItemsInput {
         self.max_results
     }
     /// <p>If the response from the <code>ListTestExecutionResultItems</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListTestExecutionResultItemsInputBuilder {
     }
     /// <p>The unique identifier of the test execution to list the result items.</p>
     pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_execution_id = input;
-        self
+        self.test_execution_id = input; self
     }
     /// <p>The unique identifier of the test execution to list the result items.</p>
     pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListTestExecutionResultItemsInputBuilder {
     }
     /// <p>The filter for the list of results from the test set execution.</p>
     pub fn set_result_filter_by(mut self, input: ::std::option::Option<crate::types::TestExecutionResultFilterBy>) -> Self {
-        self.result_filter_by = input;
-        self
+        self.result_filter_by = input; self
     }
     /// <p>The filter for the list of results from the test set execution.</p>
     pub fn get_result_filter_by(&self) -> &::std::option::Option<crate::types::TestExecutionResultFilterBy> {
@@ -84,8 +82,7 @@ impl ListTestExecutionResultItemsInputBuilder {
     }
     /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,25 +95,26 @@ impl ListTestExecutionResultItemsInputBuilder {
     }
     /// <p>If the response from the <code>ListTestExecutionResultItems</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response from the <code>ListTestExecutionResultItems</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestExecutionResultItemsInput`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput {
-            test_execution_id: self.test_execution_id,
-            result_filter_by: self.result_filter_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput {
+                test_execution_id: self.test_execution_id
+                ,
+                result_filter_by: self.result_filter_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

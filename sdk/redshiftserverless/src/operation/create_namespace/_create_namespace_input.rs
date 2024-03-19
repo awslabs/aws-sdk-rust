@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateNamespaceInput {
+pub struct CreateNamespaceInput  {
     /// <p>The name of the namespace.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace.</p>
@@ -17,11 +17,11 @@ pub struct CreateNamespaceInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub iam_roles: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
+    pub log_exports: ::std::option::Option<::std::vec::Vec::<crate::types::LogExport>>,
     /// <p>A list of tag instances.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password.</p>
     pub manage_admin_password: ::std::option::Option<bool>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
@@ -29,64 +29,67 @@ pub struct CreateNamespaceInput {
     /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
     pub redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateNamespaceInput {
+impl  CreateNamespaceInput  {
     /// <p>The name of the namespace.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn admin_username(&self) -> ::std::option::Option<&str> {
+    pub fn admin_username(&self) -> ::std::option::Option<& str> {
         self.admin_username.as_deref()
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
-    pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn admin_user_password(&self) -> ::std::option::Option<& str> {
         self.admin_user_password.as_deref()
     }
     /// <p>The name of the first database created in the namespace.</p>
-    pub fn db_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn default_iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn default_iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.default_iam_role_arn.as_deref()
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
-    pub fn iam_roles(&self) -> &[::std::string::String] {
-        self.iam_roles.as_deref().unwrap_or_default()
+    pub fn iam_roles(&self) -> & [::std::string::String] {
+        self.iam_roles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
-    pub fn log_exports(&self) -> &[crate::types::LogExport] {
-        self.log_exports.as_deref().unwrap_or_default()
+    pub fn log_exports(&self) -> & [crate::types::LogExport] {
+        self.log_exports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tag instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password.</p>
     pub fn manage_admin_password(&self) -> ::std::option::Option<bool> {
         self.manage_admin_password
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
-    pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.admin_password_secret_kms_key_id.as_deref()
     }
     /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
-    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<& str> {
         self.redshift_idc_application_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateNamespaceInput {
+impl  ::std::fmt::Debug for CreateNamespaceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNamespaceInput");
         formatter.field("namespace_name", &self.namespace_name);
@@ -121,9 +124,9 @@ pub struct CreateNamespaceInputBuilder {
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_iam_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) log_exports: ::std::option::Option<::std::vec::Vec::<crate::types::LogExport>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) manage_admin_password: ::std::option::Option<bool>,
     pub(crate) admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
@@ -137,8 +140,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The name of the namespace.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the namespace.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +153,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
     pub fn set_admin_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_username = input;
-        self
+        self.admin_username = input; self
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
     pub fn get_admin_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +168,7 @@ impl CreateNamespaceInputBuilder {
     /// <p>The password of the administrator for the first database created in the namespace.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_user_password = input;
-        self
+        self.admin_user_password = input; self
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
@@ -182,8 +182,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The name of the first database created in the namespace.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_name = input;
-        self
+        self.db_name = input; self
     }
     /// <p>The name of the first database created in the namespace.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +195,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +208,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
     pub fn set_default_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_iam_role_arn = input;
-        self
+        self.default_iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
     pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,17 +221,16 @@ impl CreateNamespaceInputBuilder {
     /// <p>A list of IAM roles to associate with the namespace.</p>
     pub fn iam_roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.iam_roles.unwrap_or_default();
-        v.push(input.into());
-        self.iam_roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.iam_roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.iam_roles = input;
-        self
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.iam_roles = input; self
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.iam_roles
     }
     /// Appends an item to `log_exports`.
@@ -244,17 +240,16 @@ impl CreateNamespaceInputBuilder {
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
     pub fn log_exports(mut self, input: crate::types::LogExport) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
-        v.push(input);
-        self.log_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>) -> Self {
-        self.log_exports = input;
-        self
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogExport>>) -> Self {
+        self.log_exports = input; self
     }
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogExport>> {
         &self.log_exports
     }
     /// Appends an item to `tags`.
@@ -264,17 +259,16 @@ impl CreateNamespaceInputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password.</p>
@@ -284,8 +278,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password.</p>
     pub fn set_manage_admin_password(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manage_admin_password = input;
-        self
+        self.manage_admin_password = input; self
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password.</p>
     pub fn get_manage_admin_password(&self) -> &::std::option::Option<bool> {
@@ -298,8 +291,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
     pub fn set_admin_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_password_secret_kms_key_id = input;
-        self
+        self.admin_password_secret_kms_key_id = input; self
     }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
     pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -312,31 +304,42 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
     pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redshift_idc_application_arn = input;
-        self
+        self.redshift_idc_application_arn = input; self
     }
     /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
     pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.redshift_idc_application_arn
     }
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_namespace::CreateNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_namespace::CreateNamespaceInput {
-            namespace_name: self.namespace_name,
-            admin_username: self.admin_username,
-            admin_user_password: self.admin_user_password,
-            db_name: self.db_name,
-            kms_key_id: self.kms_key_id,
-            default_iam_role_arn: self.default_iam_role_arn,
-            iam_roles: self.iam_roles,
-            log_exports: self.log_exports,
-            tags: self.tags,
-            manage_admin_password: self.manage_admin_password,
-            admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
-            redshift_idc_application_arn: self.redshift_idc_application_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_namespace::CreateNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_namespace::CreateNamespaceInput {
+                namespace_name: self.namespace_name
+                ,
+                admin_username: self.admin_username
+                ,
+                admin_user_password: self.admin_user_password
+                ,
+                db_name: self.db_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                default_iam_role_arn: self.default_iam_role_arn
+                ,
+                iam_roles: self.iam_roles
+                ,
+                log_exports: self.log_exports
+                ,
+                tags: self.tags
+                ,
+                manage_admin_password: self.manage_admin_password
+                ,
+                admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id
+                ,
+                redshift_idc_application_arn: self.redshift_idc_application_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateNamespaceInputBuilder {
@@ -357,3 +360,4 @@ impl ::std::fmt::Debug for CreateNamespaceInputBuilder {
         formatter.finish()
     }
 }
+

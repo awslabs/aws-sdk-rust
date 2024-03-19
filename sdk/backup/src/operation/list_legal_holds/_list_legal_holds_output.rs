@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLegalHoldsOutput {
+pub struct ListLegalHoldsOutput  {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>This is an array of returned legal holds, both active and previous.</p>
-    pub legal_holds: ::std::option::Option<::std::vec::Vec<crate::types::LegalHold>>,
+    pub legal_holds: ::std::option::Option<::std::vec::Vec::<crate::types::LegalHold>>,
     _request_id: Option<String>,
 }
-impl ListLegalHoldsOutput {
+impl  ListLegalHoldsOutput  {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>This is an array of returned legal holds, both active and previous.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.legal_holds.is_none()`.
-    pub fn legal_holds(&self) -> &[crate::types::LegalHold] {
-        self.legal_holds.as_deref().unwrap_or_default()
+    pub fn legal_holds(&self) -> & [crate::types::LegalHold] {
+        self.legal_holds.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLegalHoldsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLegalHoldsOutput {
     /// Creates a new builder-style object to manufacture [`ListLegalHoldsOutput`](crate::operation::list_legal_holds::ListLegalHoldsOutput).
     pub fn builder() -> crate::operation::list_legal_holds::builders::ListLegalHoldsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListLegalHoldsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLegalHoldsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) legal_holds: ::std::option::Option<::std::vec::Vec<crate::types::LegalHold>>,
+    pub(crate) legal_holds: ::std::option::Option<::std::vec::Vec::<crate::types::LegalHold>>,
     _request_id: Option<String>,
 }
 impl ListLegalHoldsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListLegalHoldsOutputBuilder {
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListLegalHoldsOutputBuilder {
     /// <p>This is an array of returned legal holds, both active and previous.</p>
     pub fn legal_holds(mut self, input: crate::types::LegalHold) -> Self {
         let mut v = self.legal_holds.unwrap_or_default();
-        v.push(input);
-        self.legal_holds = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.legal_holds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This is an array of returned legal holds, both active and previous.</p>
-    pub fn set_legal_holds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LegalHold>>) -> Self {
-        self.legal_holds = input;
-        self
+    pub fn set_legal_holds(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LegalHold>>) -> Self {
+        self.legal_holds = input; self
     }
     /// <p>This is an array of returned legal holds, both active and previous.</p>
-    pub fn get_legal_holds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LegalHold>> {
+    pub fn get_legal_holds(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LegalHold>> {
         &self.legal_holds
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLegalHoldsOutput`](crate::operation::list_legal_holds::ListLegalHoldsOutput).
     pub fn build(self) -> crate::operation::list_legal_holds::ListLegalHoldsOutput {
         crate::operation::list_legal_holds::ListLegalHoldsOutput {
-            next_token: self.next_token,
-            legal_holds: self.legal_holds,
+            next_token: self.next_token
+            ,
+            legal_holds: self.legal_holds
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDevicesInPlacementOutput {
+pub struct GetDevicesInPlacementOutput  {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub devices: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub devices: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDevicesInPlacementOutput {
+impl  GetDevicesInPlacementOutput  {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn devices(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn devices(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.devices
     }
 }
 impl ::aws_types::request_id::RequestId for GetDevicesInPlacementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDevicesInPlacementOutput {
     /// Creates a new builder-style object to manufacture [`GetDevicesInPlacementOutput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput).
     pub fn builder() -> crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementOutputBuilder {
@@ -29,7 +29,7 @@ impl GetDevicesInPlacementOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicesInPlacementOutputBuilder {
-    pub(crate) devices: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) devices: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDevicesInPlacementOutputBuilder {
@@ -40,45 +40,41 @@ impl GetDevicesInPlacementOutputBuilder {
     /// <p>An object containing the devices (zero or more) within the placement.</p>
     pub fn devices(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.devices.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.devices = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.devices = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn set_devices(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.devices = input; self
     }
     /// <p>An object containing the devices (zero or more) within the placement.</p>
-    pub fn get_devices(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.devices
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDevicesInPlacementOutput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`devices`](crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementOutputBuilder::devices)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput {
-            devices: self.devices.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "devices",
-                    "devices was not specified but it is required when building GetDevicesInPlacementOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput {
+                devices: self.devices
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("devices", "devices was not specified but it is required when building GetDevicesInPlacementOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

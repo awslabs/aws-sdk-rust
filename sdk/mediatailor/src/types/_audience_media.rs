@@ -3,22 +3,23 @@
 /// <p>An AudienceMedia object contains an Audience and a list of AlternateMedia.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceMedia {
+pub struct AudienceMedia  {
     /// <p>The Audience defined in AudienceMedia.</p>
     pub audience: ::std::option::Option<::std::string::String>,
     /// <p>The list of AlternateMedia defined in AudienceMedia.</p>
-    pub alternate_media: ::std::option::Option<::std::vec::Vec<crate::types::AlternateMedia>>,
+    pub alternate_media: ::std::option::Option<::std::vec::Vec::<crate::types::AlternateMedia>>,
 }
-impl AudienceMedia {
+impl  AudienceMedia  {
     /// <p>The Audience defined in AudienceMedia.</p>
-    pub fn audience(&self) -> ::std::option::Option<&str> {
+    pub fn audience(&self) -> ::std::option::Option<& str> {
         self.audience.as_deref()
     }
     /// <p>The list of AlternateMedia defined in AudienceMedia.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternate_media.is_none()`.
-    pub fn alternate_media(&self) -> &[crate::types::AlternateMedia] {
-        self.alternate_media.as_deref().unwrap_or_default()
+    pub fn alternate_media(&self) -> & [crate::types::AlternateMedia] {
+        self.alternate_media.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AudienceMedia {
@@ -33,7 +34,7 @@ impl AudienceMedia {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudienceMediaBuilder {
     pub(crate) audience: ::std::option::Option<::std::string::String>,
-    pub(crate) alternate_media: ::std::option::Option<::std::vec::Vec<crate::types::AlternateMedia>>,
+    pub(crate) alternate_media: ::std::option::Option<::std::vec::Vec::<crate::types::AlternateMedia>>,
 }
 impl AudienceMediaBuilder {
     /// <p>The Audience defined in AudienceMedia.</p>
@@ -43,8 +44,7 @@ impl AudienceMediaBuilder {
     }
     /// <p>The Audience defined in AudienceMedia.</p>
     pub fn set_audience(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience = input;
-        self
+        self.audience = input; self
     }
     /// <p>The Audience defined in AudienceMedia.</p>
     pub fn get_audience(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl AudienceMediaBuilder {
     /// <p>The list of AlternateMedia defined in AudienceMedia.</p>
     pub fn alternate_media(mut self, input: crate::types::AlternateMedia) -> Self {
         let mut v = self.alternate_media.unwrap_or_default();
-        v.push(input);
-        self.alternate_media = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alternate_media = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of AlternateMedia defined in AudienceMedia.</p>
-    pub fn set_alternate_media(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlternateMedia>>) -> Self {
-        self.alternate_media = input;
-        self
+    pub fn set_alternate_media(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlternateMedia>>) -> Self {
+        self.alternate_media = input; self
     }
     /// <p>The list of AlternateMedia defined in AudienceMedia.</p>
-    pub fn get_alternate_media(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlternateMedia>> {
+    pub fn get_alternate_media(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlternateMedia>> {
         &self.alternate_media
     }
     /// Consumes the builder and constructs a [`AudienceMedia`](crate::types::AudienceMedia).
     pub fn build(self) -> crate::types::AudienceMedia {
         crate::types::AudienceMedia {
-            audience: self.audience,
-            alternate_media: self.alternate_media,
+            audience: self.audience
+            ,
+            alternate_media: self.alternate_media
+            ,
         }
     }
 }
+

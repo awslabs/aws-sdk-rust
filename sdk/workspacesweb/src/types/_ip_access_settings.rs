@@ -3,13 +3,13 @@
 /// <p>The IP access settings resource that can be associated with a web portal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct IpAccessSettings {
+pub struct IpAccessSettings  {
     /// <p>The ARN of the IP access settings resource.</p>
     pub ip_access_settings_arn: ::std::string::String,
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
-    pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub associated_portal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IP rules of the IP access settings.</p>
-    pub ip_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
+    pub ip_rules: ::std::option::Option<::std::vec::Vec::<crate::types::IpRule>>,
     /// <p>The display name of the IP access settings.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IP access settings.</p>
@@ -17,38 +17,39 @@ pub struct IpAccessSettings {
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl IpAccessSettings {
+impl  IpAccessSettings  {
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn ip_access_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_access_settings_arn.deref()
+    pub fn ip_access_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.ip_access_settings_arn.deref()
     }
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_portal_arns.is_none()`.
-    pub fn associated_portal_arns(&self) -> &[::std::string::String] {
-        self.associated_portal_arns.as_deref().unwrap_or_default()
+    pub fn associated_portal_arns(&self) -> & [::std::string::String] {
+        self.associated_portal_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IP rules of the IP access settings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_rules.is_none()`.
-    pub fn ip_rules(&self) -> &[crate::types::IpRule] {
-        self.ip_rules.as_deref().unwrap_or_default()
+    pub fn ip_rules(&self) -> & [crate::types::IpRule] {
+        self.ip_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The display name of the IP access settings.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the IP access settings.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for IpAccessSettings {
+impl  ::std::fmt::Debug for IpAccessSettings  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IpAccessSettings");
         formatter.field("ip_access_settings_arn", &self.ip_access_settings_arn);
@@ -72,8 +73,8 @@ impl IpAccessSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct IpAccessSettingsBuilder {
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ip_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
+    pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) ip_rules: ::std::option::Option<::std::vec::Vec::<crate::types::IpRule>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -87,8 +88,7 @@ impl IpAccessSettingsBuilder {
     }
     /// <p>The ARN of the IP access settings resource.</p>
     pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_access_settings_arn = input;
-        self
+        self.ip_access_settings_arn = input; self
     }
     /// <p>The ARN of the IP access settings resource.</p>
     pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,17 +101,16 @@ impl IpAccessSettingsBuilder {
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
     pub fn associated_portal_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_portal_arns.unwrap_or_default();
-        v.push(input.into());
-        self.associated_portal_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_portal_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
-    pub fn set_associated_portal_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.associated_portal_arns = input;
-        self
+    pub fn set_associated_portal_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.associated_portal_arns = input; self
     }
     /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
-    pub fn get_associated_portal_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_portal_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.associated_portal_arns
     }
     /// Appends an item to `ip_rules`.
@@ -121,17 +120,16 @@ impl IpAccessSettingsBuilder {
     /// <p>The IP rules of the IP access settings.</p>
     pub fn ip_rules(mut self, input: crate::types::IpRule) -> Self {
         let mut v = self.ip_rules.unwrap_or_default();
-        v.push(input);
-        self.ip_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ip_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IP rules of the IP access settings.</p>
-    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>) -> Self {
-        self.ip_rules = input;
-        self
+    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpRule>>) -> Self {
+        self.ip_rules = input; self
     }
     /// <p>The IP rules of the IP access settings.</p>
-    pub fn get_ip_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRule>> {
+    pub fn get_ip_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpRule>> {
         &self.ip_rules
     }
     /// <p>The display name of the IP access settings.</p>
@@ -141,8 +139,7 @@ impl IpAccessSettingsBuilder {
     }
     /// <p>The display name of the IP access settings.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the IP access settings.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl IpAccessSettingsBuilder {
     }
     /// <p>The description of the IP access settings.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the IP access settings.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +165,7 @@ impl IpAccessSettingsBuilder {
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,19 +175,25 @@ impl IpAccessSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_access_settings_arn`](crate::types::builders::IpAccessSettingsBuilder::ip_access_settings_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::IpAccessSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IpAccessSettings {
-            ip_access_settings_arn: self.ip_access_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_access_settings_arn",
-                    "ip_access_settings_arn was not specified but it is required when building IpAccessSettings",
-                )
-            })?,
-            associated_portal_arns: self.associated_portal_arns,
-            ip_rules: self.ip_rules,
-            display_name: self.display_name,
-            description: self.description,
-            creation_date: self.creation_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IpAccessSettings {
+                ip_access_settings_arn: self.ip_access_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_access_settings_arn", "ip_access_settings_arn was not specified but it is required when building IpAccessSettings")
+                    )?
+                ,
+                associated_portal_arns: self.associated_portal_arns
+                ,
+                ip_rules: self.ip_rules
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                creation_date: self.creation_date
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for IpAccessSettingsBuilder {
@@ -207,3 +208,4 @@ impl ::std::fmt::Debug for IpAccessSettingsBuilder {
         formatter.finish()
     }
 }
+

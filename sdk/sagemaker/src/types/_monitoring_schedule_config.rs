@@ -3,7 +3,7 @@
 /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringScheduleConfig {
+pub struct MonitoringScheduleConfig  {
     /// <p>Configures the monitoring schedule.</p>
     pub schedule_config: ::std::option::Option<crate::types::ScheduleConfig>,
     /// <p>Defines the monitoring job.</p>
@@ -13,21 +13,21 @@ pub struct MonitoringScheduleConfig {
     /// <p>The type of the monitoring job definition to schedule.</p>
     pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
 }
-impl MonitoringScheduleConfig {
+impl  MonitoringScheduleConfig  {
     /// <p>Configures the monitoring schedule.</p>
-    pub fn schedule_config(&self) -> ::std::option::Option<&crate::types::ScheduleConfig> {
+    pub fn schedule_config(&self) -> ::std::option::Option<& crate::types::ScheduleConfig> {
         self.schedule_config.as_ref()
     }
     /// <p>Defines the monitoring job.</p>
-    pub fn monitoring_job_definition(&self) -> ::std::option::Option<&crate::types::MonitoringJobDefinition> {
+    pub fn monitoring_job_definition(&self) -> ::std::option::Option<& crate::types::MonitoringJobDefinition> {
         self.monitoring_job_definition.as_ref()
     }
     /// <p>The name of the monitoring job definition to schedule.</p>
-    pub fn monitoring_job_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_job_definition_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_job_definition_name.as_deref()
     }
     /// <p>The type of the monitoring job definition to schedule.</p>
-    pub fn monitoring_type(&self) -> ::std::option::Option<&crate::types::MonitoringType> {
+    pub fn monitoring_type(&self) -> ::std::option::Option<& crate::types::MonitoringType> {
         self.monitoring_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl MonitoringScheduleConfigBuilder {
     }
     /// <p>Configures the monitoring schedule.</p>
     pub fn set_schedule_config(mut self, input: ::std::option::Option<crate::types::ScheduleConfig>) -> Self {
-        self.schedule_config = input;
-        self
+        self.schedule_config = input; self
     }
     /// <p>Configures the monitoring schedule.</p>
     pub fn get_schedule_config(&self) -> &::std::option::Option<crate::types::ScheduleConfig> {
@@ -69,8 +68,7 @@ impl MonitoringScheduleConfigBuilder {
     }
     /// <p>Defines the monitoring job.</p>
     pub fn set_monitoring_job_definition(mut self, input: ::std::option::Option<crate::types::MonitoringJobDefinition>) -> Self {
-        self.monitoring_job_definition = input;
-        self
+        self.monitoring_job_definition = input; self
     }
     /// <p>Defines the monitoring job.</p>
     pub fn get_monitoring_job_definition(&self) -> &::std::option::Option<crate::types::MonitoringJobDefinition> {
@@ -83,8 +81,7 @@ impl MonitoringScheduleConfigBuilder {
     }
     /// <p>The name of the monitoring job definition to schedule.</p>
     pub fn set_monitoring_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_job_definition_name = input;
-        self
+        self.monitoring_job_definition_name = input; self
     }
     /// <p>The name of the monitoring job definition to schedule.</p>
     pub fn get_monitoring_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl MonitoringScheduleConfigBuilder {
     }
     /// <p>The type of the monitoring job definition to schedule.</p>
     pub fn set_monitoring_type(mut self, input: ::std::option::Option<crate::types::MonitoringType>) -> Self {
-        self.monitoring_type = input;
-        self
+        self.monitoring_type = input; self
     }
     /// <p>The type of the monitoring job definition to schedule.</p>
     pub fn get_monitoring_type(&self) -> &::std::option::Option<crate::types::MonitoringType> {
@@ -107,10 +103,15 @@ impl MonitoringScheduleConfigBuilder {
     /// Consumes the builder and constructs a [`MonitoringScheduleConfig`](crate::types::MonitoringScheduleConfig).
     pub fn build(self) -> crate::types::MonitoringScheduleConfig {
         crate::types::MonitoringScheduleConfig {
-            schedule_config: self.schedule_config,
-            monitoring_job_definition: self.monitoring_job_definition,
-            monitoring_job_definition_name: self.monitoring_job_definition_name,
-            monitoring_type: self.monitoring_type,
+            schedule_config: self.schedule_config
+            ,
+            monitoring_job_definition: self.monitoring_job_definition
+            ,
+            monitoring_job_definition_name: self.monitoring_job_definition_name
+            ,
+            monitoring_type: self.monitoring_type
+            ,
         }
     }
 }
+

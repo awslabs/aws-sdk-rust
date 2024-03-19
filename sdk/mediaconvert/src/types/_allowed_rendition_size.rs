@@ -3,7 +3,7 @@
 /// Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllowedRenditionSize {
+pub struct AllowedRenditionSize  {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub height: ::std::option::Option<i32>,
     /// Set to ENABLED to force a rendition to be included.
@@ -11,13 +11,13 @@ pub struct AllowedRenditionSize {
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub width: ::std::option::Option<i32>,
 }
-impl AllowedRenditionSize {
+impl  AllowedRenditionSize  {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
     }
     /// Set to ENABLED to force a rendition to be included.
-    pub fn required(&self) -> ::std::option::Option<&crate::types::RequiredFlag> {
+    pub fn required(&self) -> ::std::option::Option<& crate::types::RequiredFlag> {
         self.required.as_ref()
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
@@ -48,8 +48,7 @@ impl AllowedRenditionSizeBuilder {
     }
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
     }
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn get_height(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl AllowedRenditionSizeBuilder {
     }
     /// Set to ENABLED to force a rendition to be included.
     pub fn set_required(mut self, input: ::std::option::Option<crate::types::RequiredFlag>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// Set to ENABLED to force a rendition to be included.
     pub fn get_required(&self) -> &::std::option::Option<crate::types::RequiredFlag> {
@@ -76,8 +74,7 @@ impl AllowedRenditionSizeBuilder {
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn get_width(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl AllowedRenditionSizeBuilder {
     /// Consumes the builder and constructs a [`AllowedRenditionSize`](crate::types::AllowedRenditionSize).
     pub fn build(self) -> crate::types::AllowedRenditionSize {
         crate::types::AllowedRenditionSize {
-            height: self.height,
-            required: self.required,
-            width: self.width,
+            height: self.height
+            ,
+            required: self.required
+            ,
+            width: self.width
+            ,
         }
     }
 }
+

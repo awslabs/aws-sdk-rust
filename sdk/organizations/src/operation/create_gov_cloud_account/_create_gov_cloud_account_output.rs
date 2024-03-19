@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGovCloudAccountOutput {
+pub struct CreateGovCloudAccountOutput  {
     /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
     pub create_account_status: ::std::option::Option<crate::types::CreateAccountStatus>,
     _request_id: Option<String>,
 }
-impl CreateGovCloudAccountOutput {
+impl  CreateGovCloudAccountOutput  {
     /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
-    pub fn create_account_status(&self) -> ::std::option::Option<&crate::types::CreateAccountStatus> {
+    pub fn create_account_status(&self) -> ::std::option::Option<& crate::types::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateGovCloudAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateGovCloudAccountOutput {
     /// Creates a new builder-style object to manufacture [`CreateGovCloudAccountOutput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountOutput).
     pub fn builder() -> crate::operation::create_gov_cloud_account::builders::CreateGovCloudAccountOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateGovCloudAccountOutputBuilder {
     }
     /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
     pub fn set_create_account_status(mut self, input: ::std::option::Option<crate::types::CreateAccountStatus>) -> Self {
-        self.create_account_status = input;
-        self
+        self.create_account_status = input; self
     }
     /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
     pub fn get_create_account_status(&self) -> &::std::option::Option<crate::types::CreateAccountStatus> {
         &self.create_account_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateGovCloudAccountOutput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountOutput).
     pub fn build(self) -> crate::operation::create_gov_cloud_account::CreateGovCloudAccountOutput {
         crate::operation::create_gov_cloud_account::CreateGovCloudAccountOutput {
-            create_account_status: self.create_account_status,
+            create_account_status: self.create_account_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

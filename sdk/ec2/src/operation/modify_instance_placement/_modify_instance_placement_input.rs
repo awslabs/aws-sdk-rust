@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyInstancePlacementInput {
+pub struct ModifyInstancePlacementInput  {
     /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub affinity: ::std::option::Option<crate::types::Affinity>,
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
@@ -23,28 +23,28 @@ pub struct ModifyInstancePlacementInput {
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl ModifyInstancePlacementInput {
+impl  ModifyInstancePlacementInput  {
     /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn affinity(&self) -> ::std::option::Option<&crate::types::Affinity> {
+    pub fn affinity(&self) -> ::std::option::Option<& crate::types::Affinity> {
         self.affinity.as_ref()
     }
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
-    pub fn host_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_id(&self) -> ::std::option::Option<& str> {
         self.host_id.as_deref()
     }
     /// <p>The ID of the instance that you are modifying.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
-    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::HostTenancy> {
+    pub fn tenancy(&self) -> ::std::option::Option<& crate::types::HostTenancy> {
         self.tenancy.as_ref()
     }
     /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
@@ -52,11 +52,11 @@ impl ModifyInstancePlacementInput {
         self.partition_number
     }
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
-    pub fn host_resource_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_resource_group_arn(&self) -> ::std::option::Option<& str> {
         self.host_resource_group_arn.as_deref()
     }
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -88,8 +88,7 @@ impl ModifyInstancePlacementInputBuilder {
     }
     /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_affinity(mut self, input: ::std::option::Option<crate::types::Affinity>) -> Self {
-        self.affinity = input;
-        self
+        self.affinity = input; self
     }
     /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_affinity(&self) -> &::std::option::Option<crate::types::Affinity> {
@@ -104,8 +103,7 @@ impl ModifyInstancePlacementInputBuilder {
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
@@ -119,8 +117,7 @@ impl ModifyInstancePlacementInputBuilder {
     }
     /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
     pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_id = input;
-        self
+        self.host_id = input; self
     }
     /// <p>The ID of the Dedicated Host with which to associate the instance.</p>
     pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl ModifyInstancePlacementInputBuilder {
     }
     /// <p>The ID of the instance that you are modifying.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance that you are modifying.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +148,7 @@ impl ModifyInstancePlacementInputBuilder {
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::HostTenancy>) -> Self {
-        self.tenancy = input;
-        self
+        self.tenancy = input; self
     }
     /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
@@ -168,8 +163,7 @@ impl ModifyInstancePlacementInputBuilder {
     }
     /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     pub fn set_partition_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.partition_number = input;
-        self
+        self.partition_number = input; self
     }
     /// <p>The number of the partition in which to place the instance. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     pub fn get_partition_number(&self) -> &::std::option::Option<i32> {
@@ -182,8 +176,7 @@ impl ModifyInstancePlacementInputBuilder {
     }
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
     pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_resource_group_arn = input;
-        self
+        self.host_resource_group_arn = input; self
     }
     /// <p>The ARN of the host resource group in which to place the instance. The instance must have a tenancy of <code>host</code> to specify this parameter.</p>
     pub fn get_host_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,29 +189,34 @@ impl ModifyInstancePlacementInputBuilder {
     }
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`ModifyInstancePlacementInput`](crate::operation::modify_instance_placement::ModifyInstancePlacementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_placement::ModifyInstancePlacementInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_instance_placement::ModifyInstancePlacementInput {
-            affinity: self.affinity,
-            group_name: self.group_name,
-            host_id: self.host_id,
-            instance_id: self.instance_id,
-            tenancy: self.tenancy,
-            partition_number: self.partition_number,
-            host_resource_group_arn: self.host_resource_group_arn,
-            group_id: self.group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_placement::ModifyInstancePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_instance_placement::ModifyInstancePlacementInput {
+                affinity: self.affinity
+                ,
+                group_name: self.group_name
+                ,
+                host_id: self.host_id
+                ,
+                instance_id: self.instance_id
+                ,
+                tenancy: self.tenancy
+                ,
+                partition_number: self.partition_number
+                ,
+                host_resource_group_arn: self.host_resource_group_arn
+                ,
+                group_id: self.group_id
+                ,
+            }
+        )
     }
 }
+

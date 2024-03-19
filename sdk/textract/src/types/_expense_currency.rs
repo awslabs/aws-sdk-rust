@@ -3,7 +3,7 @@
 /// <p>Returns the kind of currency detected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpenseCurrency {
+pub struct ExpenseCurrency  {
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
     /// <li>
@@ -35,7 +35,7 @@ pub struct ExpenseCurrency {
     /// <p>Percentage confideence in the detected currency.</p>
     pub confidence: ::std::option::Option<f32>,
 }
-impl ExpenseCurrency {
+impl  ExpenseCurrency  {
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
     /// <li>
@@ -63,7 +63,7 @@ impl ExpenseCurrency {
     /// <li>
     /// <p>HKD</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>Percentage confideence in the detected currency.</p>
@@ -145,8 +145,7 @@ impl ExpenseCurrencyBuilder {
     /// <p>HKD</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
@@ -185,8 +184,7 @@ impl ExpenseCurrencyBuilder {
     }
     /// <p>Percentage confideence in the detected currency.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>Percentage confideence in the detected currency.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -195,8 +193,11 @@ impl ExpenseCurrencyBuilder {
     /// Consumes the builder and constructs a [`ExpenseCurrency`](crate::types::ExpenseCurrency).
     pub fn build(self) -> crate::types::ExpenseCurrency {
         crate::types::ExpenseCurrency {
-            code: self.code,
-            confidence: self.confidence,
+            code: self.code
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

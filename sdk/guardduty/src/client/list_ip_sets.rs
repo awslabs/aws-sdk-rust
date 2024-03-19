@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIPSets`](crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that the IPSet is associated with.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p><br>
-    /// - On success, responds with [`ListIpSetsOutput`](crate::operation::list_ip_sets::ListIpSetsOutput) with field(s):
+                            /// - On success, responds with [`ListIpSetsOutput`](crate::operation::list_ip_sets::ListIpSetsOutput) with field(s):
     ///   - [`ip_set_ids(Option<Vec::<String>>)`](crate::operation::list_ip_sets::ListIpSetsOutput::ip_set_ids): <p>The IDs of the IPSet resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ip_sets::ListIpSetsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    /// - On failure, responds with [`SdkError<ListIPSetsError>`](crate::operation::list_ip_sets::ListIPSetsError)
+                            /// - On failure, responds with [`SdkError<ListIPSetsError>`](crate::operation::list_ip_sets::ListIPSetsError)
     pub fn list_ip_sets(&self) -> crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder {
-        crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

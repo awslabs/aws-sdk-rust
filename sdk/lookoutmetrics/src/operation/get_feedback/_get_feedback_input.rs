@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFeedbackInput {
+pub struct GetFeedbackInput  {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The anomalous metric and group ID.</p>
@@ -12,13 +12,13 @@ pub struct GetFeedbackInput {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetFeedbackInput {
+impl  GetFeedbackInput  {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The anomalous metric and group ID.</p>
-    pub fn anomaly_group_time_series_feedback(&self) -> ::std::option::Option<&crate::types::AnomalyGroupTimeSeries> {
+    pub fn anomaly_group_time_series_feedback(&self) -> ::std::option::Option<& crate::types::AnomalyGroupTimeSeries> {
         self.anomaly_group_time_series_feedback.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -26,7 +26,7 @@ impl GetFeedbackInput {
         self.max_results
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl GetFeedbackInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl GetFeedbackInputBuilder {
     }
     /// <p>The anomalous metric and group ID.</p>
     pub fn set_anomaly_group_time_series_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyGroupTimeSeries>) -> Self {
-        self.anomaly_group_time_series_feedback = input;
-        self
+        self.anomaly_group_time_series_feedback = input; self
     }
     /// <p>The anomalous metric and group ID.</p>
     pub fn get_anomaly_group_time_series_feedback(&self) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeries> {
@@ -84,8 +82,7 @@ impl GetFeedbackInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,8 +95,7 @@ impl GetFeedbackInputBuilder {
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,11 +103,18 @@ impl GetFeedbackInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetFeedbackInput`](crate::operation::get_feedback::GetFeedbackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_feedback::GetFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_feedback::GetFeedbackInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_feedback::GetFeedbackInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

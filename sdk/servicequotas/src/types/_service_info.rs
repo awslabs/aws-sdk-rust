@@ -3,19 +3,19 @@
 /// <p>Information about an Amazon Web Service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceInfo {
+pub struct ServiceInfo  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the service name.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
 }
-impl ServiceInfo {
+impl  ServiceInfo  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>Specifies the service name.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ServiceInfoBuilder {
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ServiceInfoBuilder {
     }
     /// <p>Specifies the service name.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>Specifies the service name.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ServiceInfoBuilder {
     /// Consumes the builder and constructs a [`ServiceInfo`](crate::types::ServiceInfo).
     pub fn build(self) -> crate::types::ServiceInfo {
         crate::types::ServiceInfo {
-            service_code: self.service_code,
-            service_name: self.service_name,
+            service_code: self.service_code
+            ,
+            service_name: self.service_name
+            ,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Object containing the choice of application destination that you specify.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoManagementPreference {
+pub struct NoManagementPreference  {
     /// <p>The choice of application destination that you specify.</p>
-    pub target_destination: ::std::vec::Vec<crate::types::NoPreferenceTargetDestination>,
+    pub target_destination: ::std::vec::Vec::<crate::types::NoPreferenceTargetDestination>,
 }
-impl NoManagementPreference {
+impl  NoManagementPreference  {
     /// <p>The choice of application destination that you specify.</p>
-    pub fn target_destination(&self) -> &[crate::types::NoPreferenceTargetDestination] {
-        use std::ops::Deref;
-        self.target_destination.deref()
+    pub fn target_destination(&self) -> & [crate::types::NoPreferenceTargetDestination] {
+        use std::ops::Deref; self.target_destination.deref()
     }
 }
 impl NoManagementPreference {
@@ -25,7 +24,7 @@ impl NoManagementPreference {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoManagementPreferenceBuilder {
-    pub(crate) target_destination: ::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
+    pub(crate) target_destination: ::std::option::Option<::std::vec::Vec::<crate::types::NoPreferenceTargetDestination>>,
 }
 impl NoManagementPreferenceBuilder {
     /// Appends an item to `target_destination`.
@@ -35,30 +34,31 @@ impl NoManagementPreferenceBuilder {
     /// <p>The choice of application destination that you specify.</p>
     pub fn target_destination(mut self, input: crate::types::NoPreferenceTargetDestination) -> Self {
         let mut v = self.target_destination.unwrap_or_default();
-        v.push(input);
-        self.target_destination = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_destination = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The choice of application destination that you specify.</p>
-    pub fn set_target_destination(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>>) -> Self {
-        self.target_destination = input;
-        self
+    pub fn set_target_destination(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NoPreferenceTargetDestination>>) -> Self {
+        self.target_destination = input; self
     }
     /// <p>The choice of application destination that you specify.</p>
-    pub fn get_target_destination(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>> {
+    pub fn get_target_destination(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NoPreferenceTargetDestination>> {
         &self.target_destination
     }
     /// Consumes the builder and constructs a [`NoManagementPreference`](crate::types::NoManagementPreference).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_destination`](crate::types::builders::NoManagementPreferenceBuilder::target_destination)
     pub fn build(self) -> ::std::result::Result<crate::types::NoManagementPreference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NoManagementPreference {
-            target_destination: self.target_destination.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_destination",
-                    "target_destination was not specified but it is required when building NoManagementPreference",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NoManagementPreference {
+                target_destination: self.target_destination
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_destination", "target_destination was not specified but it is required when building NoManagementPreference")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Settings for embedded captions Source
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmbeddedSourceSettings {
+pub struct EmbeddedSourceSettings  {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub convert608_to708: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
@@ -13,9 +13,9 @@ pub struct EmbeddedSourceSettings {
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub terminate_captions: ::std::option::Option<crate::types::EmbeddedTerminateCaptions>,
 }
-impl EmbeddedSourceSettings {
+impl  EmbeddedSourceSettings  {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn convert608_to708(&self) -> ::std::option::Option<&crate::types::EmbeddedConvert608To708> {
+    pub fn convert608_to708(&self) -> ::std::option::Option<& crate::types::EmbeddedConvert608To708> {
         self.convert608_to708.as_ref()
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
@@ -27,7 +27,7 @@ impl EmbeddedSourceSettings {
         self.source608_track_number
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
-    pub fn terminate_captions(&self) -> ::std::option::Option<&crate::types::EmbeddedTerminateCaptions> {
+    pub fn terminate_captions(&self) -> ::std::option::Option<& crate::types::EmbeddedTerminateCaptions> {
         self.terminate_captions.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl EmbeddedSourceSettingsBuilder {
     }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn set_convert608_to708(mut self, input: ::std::option::Option<crate::types::EmbeddedConvert608To708>) -> Self {
-        self.convert608_to708 = input;
-        self
+        self.convert608_to708 = input; self
     }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn get_convert608_to708(&self) -> &::std::option::Option<crate::types::EmbeddedConvert608To708> {
@@ -69,8 +68,7 @@ impl EmbeddedSourceSettingsBuilder {
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn set_source608_channel_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.source608_channel_number = input;
-        self
+        self.source608_channel_number = input; self
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn get_source608_channel_number(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl EmbeddedSourceSettingsBuilder {
     }
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
     pub fn set_source608_track_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.source608_track_number = input;
-        self
+        self.source608_track_number = input; self
     }
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
     pub fn get_source608_track_number(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl EmbeddedSourceSettingsBuilder {
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub fn set_terminate_captions(mut self, input: ::std::option::Option<crate::types::EmbeddedTerminateCaptions>) -> Self {
-        self.terminate_captions = input;
-        self
+        self.terminate_captions = input; self
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub fn get_terminate_captions(&self) -> &::std::option::Option<crate::types::EmbeddedTerminateCaptions> {
@@ -107,10 +103,15 @@ impl EmbeddedSourceSettingsBuilder {
     /// Consumes the builder and constructs a [`EmbeddedSourceSettings`](crate::types::EmbeddedSourceSettings).
     pub fn build(self) -> crate::types::EmbeddedSourceSettings {
         crate::types::EmbeddedSourceSettings {
-            convert608_to708: self.convert608_to708,
-            source608_channel_number: self.source608_channel_number,
-            source608_track_number: self.source608_track_number,
-            terminate_captions: self.terminate_captions,
+            convert608_to708: self.convert608_to708
+            ,
+            source608_channel_number: self.source608_channel_number
+            ,
+            source608_track_number: self.source608_track_number
+            ,
+            terminate_captions: self.terminate_captions
+            ,
         }
     }
 }
+

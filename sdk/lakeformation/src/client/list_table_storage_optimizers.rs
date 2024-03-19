@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTableStorageOptimizers`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The Catalog ID of the table.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::set_database_name):<br>required: **true**<br><p>Name of the database where the table is present.</p><br>
     ///   - [`table_name(impl Into<String>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::set_table_name):<br>required: **true**<br><p>Name of the table.</p><br>
     ///   - [`storage_optimizer_type(OptimizerType)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::storage_optimizer_type) / [`set_storage_optimizer_type(Option<OptimizerType>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::set_storage_optimizer_type):<br>required: **false**<br><p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of storage optimizers to return on each call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
-    /// - On success, responds with [`ListTableStorageOptimizersOutput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput) with field(s):
+                            /// - On success, responds with [`ListTableStorageOptimizersOutput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput) with field(s):
     ///   - [`storage_optimizer_list(Option<Vec::<StorageOptimizer>>)`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput::storage_optimizer_list): <p>A list of the storage optimizers associated with a table.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    /// - On failure, responds with [`SdkError<ListTableStorageOptimizersError>`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError)
-    pub fn list_table_storage_optimizers(
-        &self,
-    ) -> crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder {
-        crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListTableStorageOptimizersError>`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersError)
+    pub fn list_table_storage_optimizers(&self) -> crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder {
+                                crate::operation::list_table_storage_optimizers::builders::ListTableStorageOptimizersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

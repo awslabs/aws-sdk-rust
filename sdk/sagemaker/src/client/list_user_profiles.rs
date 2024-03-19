@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUserProfiles`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for the results. The default is Ascending.</p><br>
     ///   - [`sort_by(UserProfileSortKey)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::sort_by) / [`set_sort_by(Option<UserProfileSortKey>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_sort_by):<br>required: **false**<br><p>The parameter by which to sort the results. The default is CreationTime.</p><br>
     ///   - [`domain_id_equals(impl Into<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::domain_id_equals) / [`set_domain_id_equals(Option<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_domain_id_equals):<br>required: **false**<br><p>A parameter by which to filter the results.</p><br>
     ///   - [`user_profile_name_contains(impl Into<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::user_profile_name_contains) / [`set_user_profile_name_contains(Option<String>)`](crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::set_user_profile_name_contains):<br>required: **false**<br><p>A parameter by which to filter the results.</p><br>
-    /// - On success, responds with [`ListUserProfilesOutput`](crate::operation::list_user_profiles::ListUserProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListUserProfilesOutput`](crate::operation::list_user_profiles::ListUserProfilesOutput) with field(s):
     ///   - [`user_profiles(Option<Vec::<UserProfileDetails>>)`](crate::operation::list_user_profiles::ListUserProfilesOutput::user_profiles): <p>The list of user profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_profiles::ListUserProfilesOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListUserProfilesError>`](crate::operation::list_user_profiles::ListUserProfilesError)
+                            /// - On failure, responds with [`SdkError<ListUserProfilesError>`](crate::operation::list_user_profiles::ListUserProfilesError)
     pub fn list_user_profiles(&self) -> crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder {
-        crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_user_profiles::builders::ListUserProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

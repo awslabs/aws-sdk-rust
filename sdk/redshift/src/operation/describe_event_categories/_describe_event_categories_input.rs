@@ -3,15 +3,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventCategoriesInput {
+pub struct DescribeEventCategoriesInput  {
     /// <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>
     /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
     pub source_type: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEventCategoriesInput {
+impl  DescribeEventCategoriesInput  {
     /// <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>
     /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl DescribeEventCategoriesInputBuilder {
     /// <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>
     /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>
     /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
@@ -47,14 +46,13 @@ impl DescribeEventCategoriesInputBuilder {
         &self.source_type
     }
     /// Consumes the builder and constructs a [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_categories::DescribeEventCategoriesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_event_categories::DescribeEventCategoriesInput {
-            source_type: self.source_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_event_categories::DescribeEventCategoriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_event_categories::DescribeEventCategoriesInput {
+                source_type: self.source_type
+                ,
+            }
+        )
     }
 }
+

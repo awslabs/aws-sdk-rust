@@ -5,23 +5,20 @@ pub use crate::operation::update_records::_update_records_input::UpdateRecordsIn
 
 impl UpdateRecordsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_records::UpdateRecordsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_records::UpdateRecordsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_records();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_records::UpdateRecordsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_records::UpdateRecordsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_records();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateRecords`.
-///
+/// 
 /// <p>Posts updates to records and adds and deletes records for a dataset and user.</p>
 /// <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p>
 /// <p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p>
@@ -29,33 +26,32 @@ impl UpdateRecordsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_records::builders::UpdateRecordsInputBuilder,
+                    inner: crate::operation::update_records::builders::UpdateRecordsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_records::UpdateRecordsOutput,
-        crate::operation::update_records::UpdateRecordsError,
-    > for UpdateRecordsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_records::UpdateRecordsOutput,
-            crate::operation::update_records::UpdateRecordsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_records::UpdateRecordsOutput,
+                    crate::operation::update_records::UpdateRecordsError,
+                > for UpdateRecordsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_records::UpdateRecordsOutput,
+                        crate::operation::update_records::UpdateRecordsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateRecordsFluentBuilder {
     /// Creates a new `UpdateRecords`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl UpdateRecordsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_records::UpdateRecordsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_records::UpdateRecordsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_records::UpdateRecords::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_records::UpdateRecords::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_records::UpdateRecordsOutput,
-        crate::operation::update_records::UpdateRecordsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_records::UpdateRecordsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_records::UpdateRecordsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_records::UpdateRecords::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_records::UpdateRecords::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_records::UpdateRecordsOutput, crate::operation::update_records::UpdateRecordsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
@@ -177,12 +164,12 @@ impl UpdateRecordsFluentBuilder {
         self
     }
     /// A list of patch operations.
-    pub fn set_record_patches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordPatch>>) -> Self {
+    pub fn set_record_patches(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecordPatch>>) -> Self {
         self.inner = self.inner.set_record_patches(input);
         self
     }
     /// A list of patch operations.
-    pub fn get_record_patches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordPatch>> {
+    pub fn get_record_patches(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecordPatch>> {
         self.inner.get_record_patches()
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
@@ -214,3 +201,4 @@ impl UpdateRecordsFluentBuilder {
         self.inner.get_client_context()
     }
 }
+

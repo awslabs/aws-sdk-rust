@@ -3,7 +3,7 @@
 /// <p>Represents the input for <code>ListTagsForStream</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForStreamInput {
+pub struct ListTagsForStreamInput  {
     /// <p>The name of the stream.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
@@ -13,13 +13,13 @@ pub struct ListTagsForStreamInput {
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListTagsForStreamInput {
+impl  ListTagsForStreamInput  {
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
-    pub fn exclusive_start_tag_key(&self) -> ::std::option::Option<&str> {
+    pub fn exclusive_start_tag_key(&self) -> ::std::option::Option<& str> {
         self.exclusive_start_tag_key.as_deref()
     }
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
@@ -27,7 +27,7 @@ impl ListTagsForStreamInput {
         self.limit
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListTagsForStreamInputBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListTagsForStreamInputBuilder {
     }
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
     pub fn set_exclusive_start_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exclusive_start_tag_key = input;
-        self
+        self.exclusive_start_tag_key = input; self
     }
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
     pub fn get_exclusive_start_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListTagsForStreamInputBuilder {
     }
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -97,22 +94,26 @@ impl ListTagsForStreamInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`ListTagsForStreamInput`](crate::operation::list_tags_for_stream::ListTagsForStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_tags_for_stream::ListTagsForStreamInput {
-            stream_name: self.stream_name,
-            exclusive_start_tag_key: self.exclusive_start_tag_key,
-            limit: self.limit,
-            stream_arn: self.stream_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_tags_for_stream::ListTagsForStreamInput {
+                stream_name: self.stream_name
+                ,
+                exclusive_start_tag_key: self.exclusive_start_tag_key
+                ,
+                limit: self.limit
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

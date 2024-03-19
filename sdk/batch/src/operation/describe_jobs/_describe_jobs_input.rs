@@ -3,16 +3,17 @@
 /// <p>Contains the parameters for <code>DescribeJobs</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobsInput {
+pub struct DescribeJobsInput  {
     /// <p>A list of up to 100 job IDs.</p>
-    pub jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub jobs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeJobsInput {
+impl  DescribeJobsInput  {
     /// <p>A list of up to 100 job IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
-    pub fn jobs(&self) -> &[::std::string::String] {
-        self.jobs.as_deref().unwrap_or_default()
+    pub fn jobs(&self) -> & [::std::string::String] {
+        self.jobs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeJobsInput {
@@ -26,7 +27,7 @@ impl DescribeJobsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobsInputBuilder {
-    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeJobsInputBuilder {
     /// Appends an item to `jobs`.
@@ -36,23 +37,26 @@ impl DescribeJobsInputBuilder {
     /// <p>A list of up to 100 job IDs.</p>
     pub fn jobs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input.into());
-        self.jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 100 job IDs.</p>
-    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.jobs = input; self
     }
     /// <p>A list of up to 100 job IDs.</p>
-    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.jobs
     }
     /// Consumes the builder and constructs a [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_jobs::DescribeJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_jobs::DescribeJobsInput { jobs: self.jobs })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_jobs::DescribeJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_jobs::DescribeJobsInput {
+                jobs: self.jobs
+                ,
+            }
+        )
     }
 }
+

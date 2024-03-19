@@ -3,7 +3,7 @@
 /// <p>The push notification configuration of the message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PushNotificationConfiguration {
+pub struct PushNotificationConfiguration  {
     /// <p>The title of the push notification.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The body of the push notification.</p>
@@ -11,21 +11,21 @@ pub struct PushNotificationConfiguration {
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     pub r#type: ::std::option::Option<crate::types::PushNotificationType>,
 }
-impl PushNotificationConfiguration {
+impl  PushNotificationConfiguration  {
     /// <p>The title of the push notification.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The body of the push notification.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PushNotificationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PushNotificationType> {
         self.r#type.as_ref()
     }
 }
-impl ::std::fmt::Debug for PushNotificationConfiguration {
+impl  ::std::fmt::Debug for PushNotificationConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PushNotificationConfiguration");
         formatter.field("title", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl PushNotificationConfigurationBuilder {
     }
     /// <p>The title of the push notification.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the push notification.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl PushNotificationConfigurationBuilder {
     }
     /// <p>The body of the push notification.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The body of the push notification.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl PushNotificationConfigurationBuilder {
     }
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PushNotificationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PushNotificationType> {
@@ -95,9 +92,12 @@ impl PushNotificationConfigurationBuilder {
     /// Consumes the builder and constructs a [`PushNotificationConfiguration`](crate::types::PushNotificationConfiguration).
     pub fn build(self) -> crate::types::PushNotificationConfiguration {
         crate::types::PushNotificationConfiguration {
-            title: self.title,
-            body: self.body,
-            r#type: self.r#type,
+            title: self.title
+            ,
+            body: self.body
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for PushNotificationConfigurationBuilder {
         formatter.finish()
     }
 }
+

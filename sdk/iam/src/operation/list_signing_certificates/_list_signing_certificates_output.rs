@@ -3,35 +3,34 @@
 /// <p>Contains the response to a successful <code>ListSigningCertificates</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSigningCertificatesOutput {
+pub struct ListSigningCertificatesOutput  {
     /// <p>A list of the user's signing certificate information.</p>
-    pub certificates: ::std::vec::Vec<crate::types::SigningCertificate>,
+    pub certificates: ::std::vec::Vec::<crate::types::SigningCertificate>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSigningCertificatesOutput {
+impl  ListSigningCertificatesOutput  {
     /// <p>A list of the user's signing certificate information.</p>
-    pub fn certificates(&self) -> &[crate::types::SigningCertificate] {
-        use std::ops::Deref;
-        self.certificates.deref()
+    pub fn certificates(&self) -> & [crate::types::SigningCertificate] {
+        use std::ops::Deref; self.certificates.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSigningCertificatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSigningCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningCertificatesOutput`](crate::operation::list_signing_certificates::ListSigningCertificatesOutput).
     pub fn builder() -> crate::operation::list_signing_certificates::builders::ListSigningCertificatesOutputBuilder {
@@ -43,7 +42,7 @@ impl ListSigningCertificatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningCertificatesOutputBuilder {
-    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::SigningCertificate>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec::<crate::types::SigningCertificate>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +55,16 @@ impl ListSigningCertificatesOutputBuilder {
     /// <p>A list of the user's signing certificate information.</p>
     pub fn certificates(mut self, input: crate::types::SigningCertificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the user's signing certificate information.</p>
-    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningCertificate>>) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SigningCertificate>>) -> Self {
+        self.certificates = input; self
     }
     /// <p>A list of the user's signing certificate information.</p>
-    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningCertificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SigningCertificate>> {
         &self.certificates
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -76,8 +74,7 @@ impl ListSigningCertificatesOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -90,41 +87,40 @@ impl ListSigningCertificatesOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSigningCertificatesOutput`](crate::operation::list_signing_certificates::ListSigningCertificatesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificates`](crate::operation::list_signing_certificates::builders::ListSigningCertificatesOutputBuilder::certificates)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_signing_certificates::ListSigningCertificatesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_signing_certificates::ListSigningCertificatesOutput {
-            certificates: self.certificates.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificates",
-                    "certificates was not specified but it is required when building ListSigningCertificatesOutput",
-                )
-            })?,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            marker: self.marker,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_signing_certificates::ListSigningCertificatesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_signing_certificates::ListSigningCertificatesOutput {
+                certificates: self.certificates
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificates", "certificates was not specified but it is required when building ListSigningCertificatesOutput")
+                    )?
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFieldLevelEncryptionConfigInput {
+pub struct UpdateFieldLevelEncryptionConfigInput  {
     /// <p>Request to update a field-level encryption configuration.</p>
     pub field_level_encryption_config: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
     /// <p>The ID of the configuration you want to update.</p>
@@ -10,17 +10,17 @@ pub struct UpdateFieldLevelEncryptionConfigInput {
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl UpdateFieldLevelEncryptionConfigInput {
+impl  UpdateFieldLevelEncryptionConfigInput  {
     /// <p>Request to update a field-level encryption configuration.</p>
-    pub fn field_level_encryption_config(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionConfig> {
+    pub fn field_level_encryption_config(&self) -> ::std::option::Option<& crate::types::FieldLevelEncryptionConfig> {
         self.field_level_encryption_config.as_ref()
     }
     /// <p>The ID of the configuration you want to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>Request to update a field-level encryption configuration.</p>
     pub fn set_field_level_encryption_config(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>) -> Self {
-        self.field_level_encryption_config = input;
-        self
+        self.field_level_encryption_config = input; self
     }
     /// <p>Request to update a field-level encryption configuration.</p>
     pub fn get_field_level_encryption_config(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionConfig> {
@@ -63,8 +62,7 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>The ID of the configuration you want to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the configuration you want to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionConfigInput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput {
-                field_level_encryption_config: self.field_level_encryption_config,
-                id: self.id,
-                if_match: self.if_match,
-            },
+                field_level_encryption_config: self.field_level_encryption_config
+                ,
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
         )
     }
 }
+

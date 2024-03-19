@@ -3,7 +3,7 @@
 /// <p>Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Preset {
+pub struct Preset  {
     /// <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the preset.</p>
@@ -23,41 +23,41 @@ pub struct Preset {
     /// <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl Preset {
+impl  Preset  {
     /// <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the preset.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the preset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the preset.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
-    pub fn container(&self) -> ::std::option::Option<&str> {
+    pub fn container(&self) -> ::std::option::Option<& str> {
         self.container.as_deref()
     }
     /// <p>A section of the response body that provides information about the audio preset values.</p>
-    pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioParameters> {
+    pub fn audio(&self) -> ::std::option::Option<& crate::types::AudioParameters> {
         self.audio.as_ref()
     }
     /// <p>A section of the response body that provides information about the video preset values.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoParameters> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::VideoParameters> {
         self.video.as_ref()
     }
     /// <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
-    pub fn thumbnails(&self) -> ::std::option::Option<&crate::types::Thumbnails> {
+    pub fn thumbnails(&self) -> ::std::option::Option<& crate::types::Thumbnails> {
         self.thumbnails.as_ref()
     }
     /// <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl PresetBuilder {
     }
     /// <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl PresetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the preset.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the preset.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl PresetBuilder {
     }
     /// <p>The name of the preset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the preset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl PresetBuilder {
     }
     /// <p>A description of the preset.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the preset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl PresetBuilder {
     }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container = input;
-        self
+        self.container = input; self
     }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     pub fn get_container(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl PresetBuilder {
     }
     /// <p>A section of the response body that provides information about the audio preset values.</p>
     pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioParameters>) -> Self {
-        self.audio = input;
-        self
+        self.audio = input; self
     }
     /// <p>A section of the response body that provides information about the audio preset values.</p>
     pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioParameters> {
@@ -174,8 +168,7 @@ impl PresetBuilder {
     }
     /// <p>A section of the response body that provides information about the video preset values.</p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoParameters>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
     }
     /// <p>A section of the response body that provides information about the video preset values.</p>
     pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoParameters> {
@@ -188,8 +181,7 @@ impl PresetBuilder {
     }
     /// <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
     pub fn set_thumbnails(mut self, input: ::std::option::Option<crate::types::Thumbnails>) -> Self {
-        self.thumbnails = input;
-        self
+        self.thumbnails = input; self
     }
     /// <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
     pub fn get_thumbnails(&self) -> &::std::option::Option<crate::types::Thumbnails> {
@@ -202,8 +194,7 @@ impl PresetBuilder {
     }
     /// <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,15 +203,25 @@ impl PresetBuilder {
     /// Consumes the builder and constructs a [`Preset`](crate::types::Preset).
     pub fn build(self) -> crate::types::Preset {
         crate::types::Preset {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            container: self.container,
-            audio: self.audio,
-            video: self.video,
-            thumbnails: self.thumbnails,
-            r#type: self.r#type,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            container: self.container
+            ,
+            audio: self.audio
+            ,
+            video: self.video
+            ,
+            thumbnails: self.thumbnails
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

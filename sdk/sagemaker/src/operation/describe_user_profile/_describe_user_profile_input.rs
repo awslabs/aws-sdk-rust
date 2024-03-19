@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserProfileInput {
+pub struct DescribeUserProfileInput  {
     /// <p>The domain ID.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name. This value is not case sensitive.</p>
     pub user_profile_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeUserProfileInput {
+impl  DescribeUserProfileInput  {
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
-    pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_profile_name(&self) -> ::std::option::Option<& str> {
         self.user_profile_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeUserProfileInputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The domain ID.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeUserProfileInputBuilder {
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
     pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_profile_name = input;
-        self
+        self.user_profile_name = input; self
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_profile_name
     }
     /// Consumes the builder and constructs a [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_user_profile::DescribeUserProfileInput {
-            domain_id: self.domain_id,
-            user_profile_name: self.user_profile_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_user_profile::DescribeUserProfileInput {
+                domain_id: self.domain_id
+                ,
+                user_profile_name: self.user_profile_name
+                ,
+            }
+        )
     }
 }
+

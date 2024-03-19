@@ -3,7 +3,7 @@
 /// <p>Specifies the contents of an email message, composed of a subject, a text part, and an HTML part.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimpleEmail {
+pub struct SimpleEmail  {
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
     pub html_part: ::std::option::Option<crate::types::SimpleEmailPart>,
     /// <p>The subject line, or title, of the email.</p>
@@ -11,17 +11,17 @@ pub struct SimpleEmail {
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub text_part: ::std::option::Option<crate::types::SimpleEmailPart>,
 }
-impl SimpleEmail {
+impl  SimpleEmail  {
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
-    pub fn html_part(&self) -> ::std::option::Option<&crate::types::SimpleEmailPart> {
+    pub fn html_part(&self) -> ::std::option::Option<& crate::types::SimpleEmailPart> {
         self.html_part.as_ref()
     }
     /// <p>The subject line, or title, of the email.</p>
-    pub fn subject(&self) -> ::std::option::Option<&crate::types::SimpleEmailPart> {
+    pub fn subject(&self) -> ::std::option::Option<& crate::types::SimpleEmailPart> {
         self.subject.as_ref()
     }
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
-    pub fn text_part(&self) -> ::std::option::Option<&crate::types::SimpleEmailPart> {
+    pub fn text_part(&self) -> ::std::option::Option<& crate::types::SimpleEmailPart> {
         self.text_part.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl SimpleEmailBuilder {
     }
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
     pub fn set_html_part(mut self, input: ::std::option::Option<crate::types::SimpleEmailPart>) -> Self {
-        self.html_part = input;
-        self
+        self.html_part = input; self
     }
     /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
     pub fn get_html_part(&self) -> &::std::option::Option<crate::types::SimpleEmailPart> {
@@ -62,8 +61,7 @@ impl SimpleEmailBuilder {
     }
     /// <p>The subject line, or title, of the email.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<crate::types::SimpleEmailPart>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The subject line, or title, of the email.</p>
     pub fn get_subject(&self) -> &::std::option::Option<crate::types::SimpleEmailPart> {
@@ -76,8 +74,7 @@ impl SimpleEmailBuilder {
     }
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub fn set_text_part(mut self, input: ::std::option::Option<crate::types::SimpleEmailPart>) -> Self {
-        self.text_part = input;
-        self
+        self.text_part = input; self
     }
     /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
     pub fn get_text_part(&self) -> &::std::option::Option<crate::types::SimpleEmailPart> {
@@ -86,9 +83,13 @@ impl SimpleEmailBuilder {
     /// Consumes the builder and constructs a [`SimpleEmail`](crate::types::SimpleEmail).
     pub fn build(self) -> crate::types::SimpleEmail {
         crate::types::SimpleEmail {
-            html_part: self.html_part,
-            subject: self.subject,
-            text_part: self.text_part,
+            html_part: self.html_part
+            ,
+            subject: self.subject
+            ,
+            text_part: self.text_part
+            ,
         }
     }
 }
+

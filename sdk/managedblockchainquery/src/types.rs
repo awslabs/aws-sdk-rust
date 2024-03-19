@@ -140,3 +140,4 @@ pub mod builders;
 
 /// Error types that Amazon Managed Blockchain Query can respond with.
 pub mod error;
+

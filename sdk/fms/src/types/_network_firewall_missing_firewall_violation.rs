@@ -3,7 +3,7 @@
 /// <p>Violation detail for Network Firewall for a subnet that doesn't have a Firewall Manager managed firewall in its VPC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkFirewallMissingFirewallViolation {
+pub struct NetworkFirewallMissingFirewallViolation  {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
@@ -13,21 +13,21 @@ pub struct NetworkFirewallMissingFirewallViolation {
     /// <p>The reason the resource has this violation, if one is available.</p>
     pub target_violation_reason: ::std::option::Option<::std::string::String>,
 }
-impl NetworkFirewallMissingFirewallViolation {
+impl  NetworkFirewallMissingFirewallViolation  {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    pub fn violation_target(&self) -> ::std::option::Option<&str> {
+    pub fn violation_target(&self) -> ::std::option::Option<& str> {
         self.violation_target.as_deref()
     }
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
-    pub fn vpc(&self) -> ::std::option::Option<&str> {
+    pub fn vpc(&self) -> ::std::option::Option<& str> {
         self.vpc.as_deref()
     }
     /// <p>The Availability Zone of a violating subnet.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The reason the resource has this violation, if one is available.</p>
-    pub fn target_violation_reason(&self) -> ::std::option::Option<&str> {
+    pub fn target_violation_reason(&self) -> ::std::option::Option<& str> {
         self.target_violation_reason.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl NetworkFirewallMissingFirewallViolationBuilder {
     }
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.violation_target = input;
-        self
+        self.violation_target = input; self
     }
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
     pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl NetworkFirewallMissingFirewallViolationBuilder {
     }
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
     pub fn set_vpc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
     pub fn get_vpc(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl NetworkFirewallMissingFirewallViolationBuilder {
     }
     /// <p>The Availability Zone of a violating subnet.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone of a violating subnet.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl NetworkFirewallMissingFirewallViolationBuilder {
     }
     /// <p>The reason the resource has this violation, if one is available.</p>
     pub fn set_target_violation_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_violation_reason = input;
-        self
+        self.target_violation_reason = input; self
     }
     /// <p>The reason the resource has this violation, if one is available.</p>
     pub fn get_target_violation_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl NetworkFirewallMissingFirewallViolationBuilder {
     /// Consumes the builder and constructs a [`NetworkFirewallMissingFirewallViolation`](crate::types::NetworkFirewallMissingFirewallViolation).
     pub fn build(self) -> crate::types::NetworkFirewallMissingFirewallViolation {
         crate::types::NetworkFirewallMissingFirewallViolation {
-            violation_target: self.violation_target,
-            vpc: self.vpc,
-            availability_zone: self.availability_zone,
-            target_violation_reason: self.target_violation_reason,
+            violation_target: self.violation_target
+            ,
+            vpc: self.vpc
+            ,
+            availability_zone: self.availability_zone
+            ,
+            target_violation_reason: self.target_violation_reason
+            ,
         }
     }
 }
+

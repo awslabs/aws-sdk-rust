@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFunctionDefinitionVersionInput {
+pub struct GetFunctionDefinitionVersionInput  {
     /// The ID of the Lambda function definition.
     pub function_definition_id: ::std::option::Option<::std::string::String>,
     /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -10,17 +10,17 @@ pub struct GetFunctionDefinitionVersionInput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetFunctionDefinitionVersionInput {
+impl  GetFunctionDefinitionVersionInput  {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn function_definition_id(&self) -> ::std::option::Option<& str> {
         self.function_definition_id.as_deref()
     }
     /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn function_definition_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn function_definition_version_id(&self) -> ::std::option::Option<& str> {
         self.function_definition_version_id.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetFunctionDefinitionVersionInputBuilder {
     }
     /// The ID of the Lambda function definition.
     pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_definition_id = input;
-        self
+        self.function_definition_id = input; self
     }
     /// The ID of the Lambda function definition.
     pub fn get_function_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetFunctionDefinitionVersionInputBuilder {
     }
     /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn set_function_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_definition_version_id = input;
-        self
+        self.function_definition_version_id = input; self
     }
     /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn get_function_definition_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl GetFunctionDefinitionVersionInputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetFunctionDefinitionVersionInput`](crate::operation::get_function_definition_version::GetFunctionDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_function_definition_version::GetFunctionDefinitionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_function_definition_version::GetFunctionDefinitionVersionInput {
-            function_definition_id: self.function_definition_id,
-            function_definition_version_id: self.function_definition_version_id,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_function_definition_version::GetFunctionDefinitionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_function_definition_version::GetFunctionDefinitionVersionInput {
+                function_definition_id: self.function_definition_id
+                ,
+                function_definition_version_id: self.function_definition_version_id
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

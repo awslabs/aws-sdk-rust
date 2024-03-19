@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBonusPaymentsOutput {
+pub struct ListBonusPaymentsOutput  {
     /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call.</p>
     pub num_results: ::std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects.</p>
-    pub bonus_payments: ::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>>,
+    pub bonus_payments: ::std::option::Option<::std::vec::Vec::<crate::types::BonusPayment>>,
     _request_id: Option<String>,
 }
-impl ListBonusPaymentsOutput {
+impl  ListBonusPaymentsOutput  {
     /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call.</p>
     pub fn num_results(&self) -> ::std::option::Option<i32> {
         self.num_results
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bonus_payments.is_none()`.
-    pub fn bonus_payments(&self) -> &[crate::types::BonusPayment] {
-        self.bonus_payments.as_deref().unwrap_or_default()
+    pub fn bonus_payments(&self) -> & [crate::types::BonusPayment] {
+        self.bonus_payments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBonusPaymentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBonusPaymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListBonusPaymentsOutput`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput).
     pub fn builder() -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsOutputBuilder {
@@ -45,7 +46,7 @@ impl ListBonusPaymentsOutput {
 pub struct ListBonusPaymentsOutputBuilder {
     pub(crate) num_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) bonus_payments: ::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>>,
+    pub(crate) bonus_payments: ::std::option::Option<::std::vec::Vec::<crate::types::BonusPayment>>,
     _request_id: Option<String>,
 }
 impl ListBonusPaymentsOutputBuilder {
@@ -56,8 +57,7 @@ impl ListBonusPaymentsOutputBuilder {
     }
     /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call.</p>
     pub fn set_num_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_results = input;
-        self
+        self.num_results = input; self
     }
     /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call.</p>
     pub fn get_num_results(&self) -> &::std::option::Option<i32> {
@@ -70,8 +70,7 @@ impl ListBonusPaymentsOutputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,35 +83,38 @@ impl ListBonusPaymentsOutputBuilder {
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects.</p>
     pub fn bonus_payments(mut self, input: crate::types::BonusPayment) -> Self {
         let mut v = self.bonus_payments.unwrap_or_default();
-        v.push(input);
-        self.bonus_payments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bonus_payments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects.</p>
-    pub fn set_bonus_payments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>>) -> Self {
-        self.bonus_payments = input;
-        self
+    pub fn set_bonus_payments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BonusPayment>>) -> Self {
+        self.bonus_payments = input; self
     }
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects.</p>
-    pub fn get_bonus_payments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>> {
+    pub fn get_bonus_payments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BonusPayment>> {
         &self.bonus_payments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBonusPaymentsOutput`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput).
     pub fn build(self) -> crate::operation::list_bonus_payments::ListBonusPaymentsOutput {
         crate::operation::list_bonus_payments::ListBonusPaymentsOutput {
-            num_results: self.num_results,
-            next_token: self.next_token,
-            bonus_payments: self.bonus_payments,
+            num_results: self.num_results
+            ,
+            next_token: self.next_token
+            ,
+            bonus_payments: self.bonus_payments
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

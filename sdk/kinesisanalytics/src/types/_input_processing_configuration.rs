@@ -3,13 +3,13 @@
 /// <p>Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputProcessingConfiguration {
+pub struct InputProcessingConfiguration  {
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your application code.</p>
     pub input_lambda_processor: ::std::option::Option<crate::types::InputLambdaProcessor>,
 }
-impl InputProcessingConfiguration {
+impl  InputProcessingConfiguration  {
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your application code.</p>
-    pub fn input_lambda_processor(&self) -> ::std::option::Option<&crate::types::InputLambdaProcessor> {
+    pub fn input_lambda_processor(&self) -> ::std::option::Option<& crate::types::InputLambdaProcessor> {
         self.input_lambda_processor.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl InputProcessingConfigurationBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your application code.</p>
     pub fn set_input_lambda_processor(mut self, input: ::std::option::Option<crate::types::InputLambdaProcessor>) -> Self {
-        self.input_lambda_processor = input;
-        self
+        self.input_lambda_processor = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by your application code.</p>
     pub fn get_input_lambda_processor(&self) -> &::std::option::Option<crate::types::InputLambdaProcessor> {
@@ -45,7 +44,9 @@ impl InputProcessingConfigurationBuilder {
     /// Consumes the builder and constructs a [`InputProcessingConfiguration`](crate::types::InputProcessingConfiguration).
     pub fn build(self) -> crate::types::InputProcessingConfiguration {
         crate::types::InputProcessingConfiguration {
-            input_lambda_processor: self.input_lambda_processor,
+            input_lambda_processor: self.input_lambda_processor
+            ,
         }
     }
 }
+

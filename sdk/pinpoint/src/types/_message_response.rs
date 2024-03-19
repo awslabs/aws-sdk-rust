@@ -3,31 +3,31 @@
 /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageResponse {
+pub struct MessageResponse  {
     /// <p>The unique identifier for the application that was used to send the message.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
-    pub endpoint_result: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
+    pub endpoint_result: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::EndpointMessageResult>>,
     /// <p>The identifier for the original request that the message was delivered for.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
-    pub result: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageResult>>,
+    pub result: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageResult>>,
 }
-impl MessageResponse {
+impl  MessageResponse  {
     /// <p>The unique identifier for the application that was used to send the message.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
-    pub fn endpoint_result(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>> {
+    pub fn endpoint_result(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::EndpointMessageResult>> {
         self.endpoint_result.as_ref()
     }
     /// <p>The identifier for the original request that the message was delivered for.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
-    pub fn result(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MessageResult>> {
+    pub fn result(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::MessageResult>> {
         self.result.as_ref()
     }
 }
@@ -43,9 +43,9 @@ impl MessageResponse {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoint_result: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
+    pub(crate) endpoint_result: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::EndpointMessageResult>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) result: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageResult>>,
+    pub(crate) result: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageResult>>,
 }
 impl MessageResponseBuilder {
     /// <p>The unique identifier for the application that was used to send the message.</p>
@@ -56,8 +56,7 @@ impl MessageResponseBuilder {
     }
     /// <p>The unique identifier for the application that was used to send the message.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application that was used to send the message.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,22 +69,16 @@ impl MessageResponseBuilder {
     /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
     pub fn endpoint_result(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::EndpointMessageResult) -> Self {
         let mut hash_map = self.endpoint_result.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.endpoint_result = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.endpoint_result = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
-    pub fn set_endpoint_result(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
-    ) -> Self {
-        self.endpoint_result = input;
-        self
+    pub fn set_endpoint_result(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::EndpointMessageResult>>) -> Self {
+        self.endpoint_result = input; self
     }
     /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
-    pub fn get_endpoint_result(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>> {
+    pub fn get_endpoint_result(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::EndpointMessageResult>> {
         &self.endpoint_result
     }
     /// <p>The identifier for the original request that the message was delivered for.</p>
@@ -95,8 +88,7 @@ impl MessageResponseBuilder {
     }
     /// <p>The identifier for the original request that the message was delivered for.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The identifier for the original request that the message was delivered for.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,29 +101,30 @@ impl MessageResponseBuilder {
     /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
     pub fn result(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MessageResult) -> Self {
         let mut hash_map = self.result.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.result = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.result = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageResult>>,
-    ) -> Self {
-        self.result = input;
-        self
+    pub fn set_result(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageResult>>) -> Self {
+        self.result = input; self
     }
     /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
-    pub fn get_result(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageResult>> {
+    pub fn get_result(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageResult>> {
         &self.result
     }
     /// Consumes the builder and constructs a [`MessageResponse`](crate::types::MessageResponse).
     pub fn build(self) -> crate::types::MessageResponse {
         crate::types::MessageResponse {
-            application_id: self.application_id,
-            endpoint_result: self.endpoint_result,
-            request_id: self.request_id,
-            result: self.result,
+            application_id: self.application_id
+            ,
+            endpoint_result: self.endpoint_result
+            ,
+            request_id: self.request_id
+            ,
+            result: self.result
+            ,
         }
     }
 }
+

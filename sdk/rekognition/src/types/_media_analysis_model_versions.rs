@@ -3,13 +3,13 @@
 /// <p>Object containing information about the model versions of selected features in a given job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaAnalysisModelVersions {
+pub struct MediaAnalysisModelVersions  {
     /// <p>The Moderation base model version.</p>
     pub moderation: ::std::option::Option<::std::string::String>,
 }
-impl MediaAnalysisModelVersions {
+impl  MediaAnalysisModelVersions  {
     /// <p>The Moderation base model version.</p>
-    pub fn moderation(&self) -> ::std::option::Option<&str> {
+    pub fn moderation(&self) -> ::std::option::Option<& str> {
         self.moderation.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl MediaAnalysisModelVersionsBuilder {
     }
     /// <p>The Moderation base model version.</p>
     pub fn set_moderation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.moderation = input;
-        self
+        self.moderation = input; self
     }
     /// <p>The Moderation base model version.</p>
     pub fn get_moderation(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl MediaAnalysisModelVersionsBuilder {
     }
     /// Consumes the builder and constructs a [`MediaAnalysisModelVersions`](crate::types::MediaAnalysisModelVersions).
     pub fn build(self) -> crate::types::MediaAnalysisModelVersions {
-        crate::types::MediaAnalysisModelVersions { moderation: self.moderation }
+        crate::types::MediaAnalysisModelVersions {
+            moderation: self.moderation
+            ,
+        }
     }
 }
+

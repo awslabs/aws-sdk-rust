@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNotebookExecutionsInput {
+pub struct ListNotebookExecutionsInput  {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
     pub editor_id: ::std::option::Option<::std::string::String>,
     /// <p>The status filter for listing notebook executions.</p>
@@ -38,9 +38,9 @@ pub struct ListNotebookExecutionsInput {
     /// <p>The unique ID of the execution engine.</p>
     pub execution_engine_id: ::std::option::Option<::std::string::String>,
 }
-impl ListNotebookExecutionsInput {
+impl  ListNotebookExecutionsInput  {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
-    pub fn editor_id(&self) -> ::std::option::Option<&str> {
+    pub fn editor_id(&self) -> ::std::option::Option<& str> {
         self.editor_id.as_deref()
     }
     /// <p>The status filter for listing notebook executions.</p>
@@ -66,23 +66,23 @@ impl ListNotebookExecutionsInput {
     /// <li>
     /// <p><code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NotebookExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::NotebookExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
-    pub fn from(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn from(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.from.as_ref()
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
-    pub fn to(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn to(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.to.as_ref()
     }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The unique ID of the execution engine.</p>
-    pub fn execution_engine_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_engine_id(&self) -> ::std::option::Option<& str> {
         self.execution_engine_id.as_deref()
     }
 }
@@ -112,8 +112,7 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
     pub fn set_editor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.editor_id = input;
-        self
+        self.editor_id = input; self
     }
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
     pub fn get_editor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +169,7 @@ impl ListNotebookExecutionsInputBuilder {
     /// <p><code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotebookExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status filter for listing notebook executions.</p>
     /// <ul>
@@ -206,8 +204,7 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
     pub fn set_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
     pub fn get_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -220,8 +217,7 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
     pub fn set_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.to = input;
-        self
+        self.to = input; self
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
     pub fn get_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -234,8 +230,7 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,27 +243,30 @@ impl ListNotebookExecutionsInputBuilder {
     }
     /// <p>The unique ID of the execution engine.</p>
     pub fn set_execution_engine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_engine_id = input;
-        self
+        self.execution_engine_id = input; self
     }
     /// <p>The unique ID of the execution engine.</p>
     pub fn get_execution_engine_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_engine_id
     }
     /// Consumes the builder and constructs a [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_notebook_executions::ListNotebookExecutionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_notebook_executions::ListNotebookExecutionsInput {
-            editor_id: self.editor_id,
-            status: self.status,
-            from: self.from,
-            to: self.to,
-            marker: self.marker,
-            execution_engine_id: self.execution_engine_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_notebook_executions::ListNotebookExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_notebook_executions::ListNotebookExecutionsInput {
+                editor_id: self.editor_id
+                ,
+                status: self.status
+                ,
+                from: self.from
+                ,
+                to: self.to
+                ,
+                marker: self.marker
+                ,
+                execution_engine_id: self.execution_engine_id
+                ,
+            }
+        )
     }
 }
+

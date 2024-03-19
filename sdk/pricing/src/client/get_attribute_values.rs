@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetAttributeValues`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_code(impl Into<String>)`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::service_code) / [`set_service_code(Option<String>)`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::set_service_code):<br>required: **true**<br><p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p><br>
     ///   - [`attribute_name(impl Into<String>)`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::attribute_name) / [`set_attribute_name(Option<String>)`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::set_attribute_name):<br>required: **true**<br><p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results that you want to retrieve.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in response.</p><br>
-    /// - On success, responds with [`GetAttributeValuesOutput`](crate::operation::get_attribute_values::GetAttributeValuesOutput) with field(s):
+                            /// - On success, responds with [`GetAttributeValuesOutput`](crate::operation::get_attribute_values::GetAttributeValuesOutput) with field(s):
     ///   - [`attribute_values(Option<Vec::<AttributeValue>>)`](crate::operation::get_attribute_values::GetAttributeValuesOutput::attribute_values): <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_attribute_values::GetAttributeValuesOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<GetAttributeValuesError>`](crate::operation::get_attribute_values::GetAttributeValuesError)
+                            /// - On failure, responds with [`SdkError<GetAttributeValuesError>`](crate::operation::get_attribute_values::GetAttributeValuesError)
     pub fn get_attribute_values(&self) -> crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder {
-        crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_attribute_values::builders::GetAttributeValuesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

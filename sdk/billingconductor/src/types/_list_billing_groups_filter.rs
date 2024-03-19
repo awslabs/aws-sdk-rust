@@ -3,32 +3,34 @@
 /// <p>The filter that specifies the billing groups and pricing plans to retrieve billing group information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBillingGroupsFilter {
+pub struct ListBillingGroupsFilter  {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
     pub pricing_plan: ::std::option::Option<::std::string::String>,
     /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
-    pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>,
+    pub statuses: ::std::option::Option<::std::vec::Vec::<crate::types::BillingGroupStatus>>,
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub auto_associate: ::std::option::Option<bool>,
 }
-impl ListBillingGroupsFilter {
+impl  ListBillingGroupsFilter  {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
-    pub fn arns(&self) -> &[::std::string::String] {
-        self.arns.as_deref().unwrap_or_default()
+    pub fn arns(&self) -> & [::std::string::String] {
+        self.arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn pricing_plan(&self) -> ::std::option::Option<&str> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& str> {
         self.pricing_plan.as_deref()
     }
     /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
-    pub fn statuses(&self) -> &[crate::types::BillingGroupStatus] {
-        self.statuses.as_deref().unwrap_or_default()
+    pub fn statuses(&self) -> & [crate::types::BillingGroupStatus] {
+        self.statuses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn auto_associate(&self) -> ::std::option::Option<bool> {
@@ -46,9 +48,9 @@ impl ListBillingGroupsFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupsFilterBuilder {
-    pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) pricing_plan: ::std::option::Option<::std::string::String>,
-    pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>,
+    pub(crate) statuses: ::std::option::Option<::std::vec::Vec::<crate::types::BillingGroupStatus>>,
     pub(crate) auto_associate: ::std::option::Option<bool>,
 }
 impl ListBillingGroupsFilterBuilder {
@@ -59,17 +61,16 @@ impl ListBillingGroupsFilterBuilder {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.arns
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
@@ -79,8 +80,7 @@ impl ListBillingGroupsFilterBuilder {
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn get_pricing_plan(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,17 +93,16 @@ impl ListBillingGroupsFilterBuilder {
     /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
     pub fn statuses(mut self, input: crate::types::BillingGroupStatus) -> Self {
         let mut v = self.statuses.unwrap_or_default();
-        v.push(input);
-        self.statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
-    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>) -> Self {
-        self.statuses = input;
-        self
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BillingGroupStatus>>) -> Self {
+        self.statuses = input; self
     }
     /// <p>A list of billing groups to retrieve their current status for a specific time range</p>
-    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BillingGroupStatus>> {
         &self.statuses
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
@@ -113,8 +112,7 @@ impl ListBillingGroupsFilterBuilder {
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn set_auto_associate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_associate = input;
-        self
+        self.auto_associate = input; self
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn get_auto_associate(&self) -> &::std::option::Option<bool> {
@@ -123,10 +121,15 @@ impl ListBillingGroupsFilterBuilder {
     /// Consumes the builder and constructs a [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupsFilter {
         crate::types::ListBillingGroupsFilter {
-            arns: self.arns,
-            pricing_plan: self.pricing_plan,
-            statuses: self.statuses,
-            auto_associate: self.auto_associate,
+            arns: self.arns
+            ,
+            pricing_plan: self.pricing_plan
+            ,
+            statuses: self.statuses
+            ,
+            auto_associate: self.auto_associate
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The request object for the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFileSystemInput {
+pub struct UpdateFileSystemInput  {
     /// <p>The ID of the file system that you are updating.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -36,13 +36,13 @@ pub struct UpdateFileSystemInput {
     /// <p>Specifies the file system's storage type.</p>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
-impl UpdateFileSystemInput {
+impl  UpdateFileSystemInput  {
     /// <p>The ID of the file system that you are updating.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating.</p><note>
@@ -65,23 +65,23 @@ impl UpdateFileSystemInput {
         self.storage_capacity
     }
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
-    pub fn windows_configuration(&self) -> ::std::option::Option<&crate::types::UpdateFileSystemWindowsConfiguration> {
+    pub fn windows_configuration(&self) -> ::std::option::Option<& crate::types::UpdateFileSystemWindowsConfiguration> {
         self.windows_configuration.as_ref()
     }
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
-    pub fn lustre_configuration(&self) -> ::std::option::Option<&crate::types::UpdateFileSystemLustreConfiguration> {
+    pub fn lustre_configuration(&self) -> ::std::option::Option<& crate::types::UpdateFileSystemLustreConfiguration> {
         self.lustre_configuration.as_ref()
     }
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::UpdateFileSystemOntapConfiguration> {
+    pub fn ontap_configuration(&self) -> ::std::option::Option<& crate::types::UpdateFileSystemOntapConfiguration> {
         self.ontap_configuration.as_ref()
     }
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
-    pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::UpdateFileSystemOpenZfsConfiguration> {
+    pub fn open_zfs_configuration(&self) -> ::std::option::Option<& crate::types::UpdateFileSystemOpenZfsConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
     /// <p>Specifies the file system's storage type.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+    pub fn storage_type(&self) -> ::std::option::Option<& crate::types::StorageType> {
         self.storage_type.as_ref()
     }
 }
@@ -114,8 +114,7 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>The ID of the file system that you are updating.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system that you are updating.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +170,7 @@ impl UpdateFileSystemInputBuilder {
     /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSxfor Windows File Server User Guide</i>.</p>
     /// <p>For ONTAP file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity = input;
-        self
+        self.storage_capacity = input; self
     }
     /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating.</p><note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
@@ -201,8 +198,7 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
     pub fn set_windows_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemWindowsConfiguration>) -> Self {
-        self.windows_configuration = input;
-        self
+        self.windows_configuration = input; self
     }
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
     pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemWindowsConfiguration> {
@@ -215,8 +211,7 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
     pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration>) -> Self {
-        self.lustre_configuration = input;
-        self
+        self.lustre_configuration = input; self
     }
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
     pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration> {
@@ -229,8 +224,7 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
     pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration>) -> Self {
-        self.ontap_configuration = input;
-        self
+        self.ontap_configuration = input; self
     }
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
     pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration> {
@@ -243,8 +237,7 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
     pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>) -> Self {
-        self.open_zfs_configuration = input;
-        self
+        self.open_zfs_configuration = input; self
     }
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration> {
@@ -257,26 +250,34 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>Specifies the file system's storage type.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Specifies the file system's storage type.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_file_system::UpdateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_file_system::UpdateFileSystemInput {
-            file_system_id: self.file_system_id,
-            client_request_token: self.client_request_token,
-            storage_capacity: self.storage_capacity,
-            windows_configuration: self.windows_configuration,
-            lustre_configuration: self.lustre_configuration,
-            ontap_configuration: self.ontap_configuration,
-            open_zfs_configuration: self.open_zfs_configuration,
-            storage_type: self.storage_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_file_system::UpdateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_file_system::UpdateFileSystemInput {
+                file_system_id: self.file_system_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+                storage_capacity: self.storage_capacity
+                ,
+                windows_configuration: self.windows_configuration
+                ,
+                lustre_configuration: self.lustre_configuration
+                ,
+                ontap_configuration: self.ontap_configuration
+                ,
+                open_zfs_configuration: self.open_zfs_configuration
+                ,
+                storage_type: self.storage_type
+                ,
+            }
+        )
     }
 }
+

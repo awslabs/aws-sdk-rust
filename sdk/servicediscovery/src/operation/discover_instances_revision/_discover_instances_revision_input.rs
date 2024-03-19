@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoverInstancesRevisionInput {
+pub struct DiscoverInstancesRevisionInput  {
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
 }
-impl DiscoverInstancesRevisionInput {
+impl  DiscoverInstancesRevisionInput  {
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DiscoverInstancesRevisionInputBuilder {
     }
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DiscoverInstancesRevisionInputBuilder {
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`DiscoverInstancesRevisionInput`](crate::operation::discover_instances_revision::DiscoverInstancesRevisionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::discover_instances_revision::DiscoverInstancesRevisionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::discover_instances_revision::DiscoverInstancesRevisionInput {
-            namespace_name: self.namespace_name,
-            service_name: self.service_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::discover_instances_revision::DiscoverInstancesRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::discover_instances_revision::DiscoverInstancesRevisionInput {
+                namespace_name: self.namespace_name
+                ,
+                service_name: self.service_name
+                ,
+            }
+        )
     }
 }
+

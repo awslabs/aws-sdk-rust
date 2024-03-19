@@ -21,11 +21,7 @@ impl ActionGroupExecutor {
     /// Tries to convert the enum instance into [`Lambda`](crate::types::ActionGroupExecutor::Lambda), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_lambda(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ActionGroupExecutor::Lambda(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ActionGroupExecutor::Lambda(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Lambda`](crate::types::ActionGroupExecutor::Lambda).
     pub fn is_lambda(&self) -> bool {
@@ -36,3 +32,4 @@ impl ActionGroupExecutor {
         matches!(self, Self::Unknown)
     }
 }
+

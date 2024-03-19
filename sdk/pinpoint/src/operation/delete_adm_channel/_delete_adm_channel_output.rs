@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAdmChannelOutput {
+pub struct DeleteAdmChannelOutput  {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     pub adm_channel_response: ::std::option::Option<crate::types::AdmChannelResponse>,
     _request_id: Option<String>,
 }
-impl DeleteAdmChannelOutput {
+impl  DeleteAdmChannelOutput  {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    pub fn adm_channel_response(&self) -> ::std::option::Option<&crate::types::AdmChannelResponse> {
+    pub fn adm_channel_response(&self) -> ::std::option::Option<& crate::types::AdmChannelResponse> {
         self.adm_channel_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAdmChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAdmChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAdmChannelOutput`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput).
     pub fn builder() -> crate::operation::delete_adm_channel::builders::DeleteAdmChannelOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteAdmChannelOutputBuilder {
     }
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     pub fn set_adm_channel_response(mut self, input: ::std::option::Option<crate::types::AdmChannelResponse>) -> Self {
-        self.adm_channel_response = input;
-        self
+        self.adm_channel_response = input; self
     }
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     pub fn get_adm_channel_response(&self) -> &::std::option::Option<crate::types::AdmChannelResponse> {
         &self.adm_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAdmChannelOutput`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput).
     pub fn build(self) -> crate::operation::delete_adm_channel::DeleteAdmChannelOutput {
         crate::operation::delete_adm_channel::DeleteAdmChannelOutput {
-            adm_channel_response: self.adm_channel_response,
+            adm_channel_response: self.adm_channel_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskDefinition {
+pub struct TaskDefinition  {
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
     pub task_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
+    pub container_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerDefinition>>,
     /// <p>The name of a family that this task definition is registered to. Up to 255 characters are allowed. Letters (both uppercase and lowercase letters), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.</p>
     pub family: ::std::option::Option<::std::string::String>,
@@ -30,24 +30,24 @@ pub struct TaskDefinition {
     /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>The <code>host</code> and <code>sourcePath</code> parameters aren't supported for tasks run on Fargate.</p>
     /// </note>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
     /// <p>The status of the task definition.</p>
     pub status: ::std::option::Option<crate::types::TaskDefinitionStatus>,
     /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is registered to your cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom attributes. These are specified as key-value pairs using the Amazon ECS console or the <code>PutAttributes</code> API. These attributes are used when determining task placement for tasks hosted on Amazon EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    pub requires_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub requires_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     /// <p>An array of placement constraint objects to use for tasks.</p><note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>>,
+    pub placement_constraints: ::std::option::Option<::std::vec::Vec::<crate::types::TaskDefinitionPlacementConstraint>>,
     /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
+    pub compatibilities: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>,
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub requires_compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
+    pub requires_compatibilities: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>,
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
@@ -92,7 +92,7 @@ pub struct TaskDefinition {
     /// </ul>
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
+    pub inference_accelerators: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceAccelerator>>,
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
@@ -127,29 +127,30 @@ pub struct TaskDefinition {
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
 }
-impl TaskDefinition {
+impl  TaskDefinition  {
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
-    pub fn task_definition_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_definition_arn(&self) -> ::std::option::Option<& str> {
         self.task_definition_arn.as_deref()
     }
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_definitions.is_none()`.
-    pub fn container_definitions(&self) -> &[crate::types::ContainerDefinition] {
-        self.container_definitions.as_deref().unwrap_or_default()
+    pub fn container_definitions(&self) -> & [crate::types::ContainerDefinition] {
+        self.container_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of a family that this task definition is registered to. Up to 255 characters are allowed. Letters (both uppercase and lowercase letters), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.</p>
-    pub fn family(&self) -> ::std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access Management role that grants containers in the task permission to call Amazon Web Services APIs on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code to use the feature. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn task_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_role_arn(&self) -> ::std::option::Option<& str> {
         self.task_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is <code>bridge</code>.</p>
@@ -160,7 +161,7 @@ impl TaskDefinition {
     /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must specify a <code>NetworkConfiguration</code> value when you create a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single container instance when port mappings are used.</p>
     /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network settings</a> in the <i>Docker run reference</i>.</p>
-    pub fn network_mode(&self) -> ::std::option::Option<&crate::types::NetworkMode> {
+    pub fn network_mode(&self) -> ::std::option::Option<& crate::types::NetworkMode> {
         self.network_mode.as_ref()
     }
     /// <p>The revision of the task in a particular family. The revision is a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>. Each time that you register a new revision of a task definition in the same family, the revision value always increases by one. This is even if you deregistered previous revisions in this family.</p>
@@ -170,47 +171,52 @@ impl TaskDefinition {
     /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>The <code>host</code> and <code>sourcePath</code> parameters aren't supported for tasks run on Fargate.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
-    pub fn volumes(&self) -> &[crate::types::Volume] {
-        self.volumes.as_deref().unwrap_or_default()
+    pub fn volumes(&self) -> & [crate::types::Volume] {
+        self.volumes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the task definition.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskDefinitionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskDefinitionStatus> {
         self.status.as_ref()
     }
     /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is registered to your cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom attributes. These are specified as key-value pairs using the Amazon ECS console or the <code>PutAttributes</code> API. These attributes are used when determining task placement for tasks hosted on Amazon EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires_attributes.is_none()`.
-    pub fn requires_attributes(&self) -> &[crate::types::Attribute] {
-        self.requires_attributes.as_deref().unwrap_or_default()
+    pub fn requires_attributes(&self) -> & [crate::types::Attribute] {
+        self.requires_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of placement constraint objects to use for tasks.</p><note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
-    pub fn placement_constraints(&self) -> &[crate::types::TaskDefinitionPlacementConstraint] {
-        self.placement_constraints.as_deref().unwrap_or_default()
+    pub fn placement_constraints(&self) -> & [crate::types::TaskDefinitionPlacementConstraint] {
+        self.placement_constraints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatibilities.is_none()`.
-    pub fn compatibilities(&self) -> &[crate::types::Compatibility] {
-        self.compatibilities.as_deref().unwrap_or_default()
+    pub fn compatibilities(&self) -> & [crate::types::Compatibility] {
+        self.compatibilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
-    pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
+    pub fn runtime_platform(&self) -> ::std::option::Option<& crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
     /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires_compatibilities.is_none()`.
-    pub fn requires_compatibilities(&self) -> &[crate::types::Compatibility] {
-        self.requires_compatibilities.as_deref().unwrap_or_default()
+    pub fn requires_compatibilities(&self) -> & [crate::types::Compatibility] {
+        self.requires_compatibilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
@@ -232,7 +238,7 @@ impl TaskDefinition {
     /// <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p>
     /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
     /// </ul>
-    pub fn cpu(&self) -> ::std::option::Option<&str> {
+    pub fn cpu(&self) -> ::std::option::Option<& str> {
         self.cpu.as_deref()
     }
     /// <p>The amount (in MiB) of memory used by the task.</p>
@@ -256,14 +262,15 @@ impl TaskDefinition {
     /// <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p>
     /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
     /// </ul>
-    pub fn memory(&self) -> ::std::option::Option<&str> {
+    pub fn memory(&self) -> ::std::option::Option<& str> {
         self.memory.as_deref()
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerators.is_none()`.
-    pub fn inference_accelerators(&self) -> &[crate::types::InferenceAccelerator] {
-        self.inference_accelerators.as_deref().unwrap_or_default()
+    pub fn inference_accelerators(&self) -> & [crate::types::InferenceAccelerator] {
+        self.inference_accelerators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
@@ -274,7 +281,7 @@ impl TaskDefinition {
     /// </note> <note>
     /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
-    pub fn pid_mode(&self) -> ::std::option::Option<&crate::types::PidMode> {
+    pub fn pid_mode(&self) -> ::std::option::Option<& crate::types::PidMode> {
         self.pid_mode.as_ref()
     }
     /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker run reference</i>.</p>
@@ -288,28 +295,28 @@ impl TaskDefinition {
     /// </ul><note>
     /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
     /// </note>
-    pub fn ipc_mode(&self) -> ::std::option::Option<&crate::types::IpcMode> {
+    pub fn ipc_mode(&self) -> ::std::option::Option<& crate::types::IpcMode> {
         self.ipc_mode.as_ref()
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
     /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn proxy_configuration(&self) -> ::std::option::Option<&crate::types::ProxyConfiguration> {
+    pub fn proxy_configuration(&self) -> ::std::option::Option<& crate::types::ProxyConfiguration> {
         self.proxy_configuration.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task definition was registered.</p>
-    pub fn registered_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn registered_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.registered_at.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task definition was deregistered.</p>
-    pub fn deregistered_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deregistered_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deregistered_at.as_ref()
     }
     /// <p>The principal that registered the task definition.</p>
-    pub fn registered_by(&self) -> ::std::option::Option<&str> {
+    pub fn registered_by(&self) -> ::std::option::Option<& str> {
         self.registered_by.as_deref()
     }
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
-    pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> ::std::option::Option<& crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
 }
@@ -325,22 +332,22 @@ impl TaskDefinition {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskDefinitionBuilder {
     pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
+    pub(crate) container_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerDefinition>>,
     pub(crate) family: ::std::option::Option<::std::string::String>,
     pub(crate) task_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_mode: ::std::option::Option<crate::types::NetworkMode>,
     pub(crate) revision: ::std::option::Option<i32>,
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
     pub(crate) status: ::std::option::Option<crate::types::TaskDefinitionStatus>,
-    pub(crate) requires_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>>,
-    pub(crate) compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
+    pub(crate) requires_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
+    pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec::<crate::types::TaskDefinitionPlacementConstraint>>,
+    pub(crate) compatibilities: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>,
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
-    pub(crate) requires_compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
+    pub(crate) requires_compatibilities: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
+    pub(crate) inference_accelerators: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceAccelerator>>,
     pub(crate) pid_mode: ::std::option::Option<crate::types::PidMode>,
     pub(crate) ipc_mode: ::std::option::Option<crate::types::IpcMode>,
     pub(crate) proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
@@ -357,8 +364,7 @@ impl TaskDefinitionBuilder {
     }
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
     pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_definition_arn = input;
-        self
+        self.task_definition_arn = input; self
     }
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
     pub fn get_task_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -371,17 +377,16 @@ impl TaskDefinitionBuilder {
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn container_definitions(mut self, input: crate::types::ContainerDefinition) -> Self {
         let mut v = self.container_definitions.unwrap_or_default();
-        v.push(input);
-        self.container_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.container_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_container_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>) -> Self {
-        self.container_definitions = input;
-        self
+    pub fn set_container_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerDefinition>>) -> Self {
+        self.container_definitions = input; self
     }
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
+    pub fn get_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContainerDefinition>> {
         &self.container_definitions
     }
     /// <p>The name of a family that this task definition is registered to. Up to 255 characters are allowed. Letters (both uppercase and lowercase letters), numbers, hyphens (-), and underscores (_) are allowed.</p>
@@ -393,8 +398,7 @@ impl TaskDefinitionBuilder {
     /// <p>The name of a family that this task definition is registered to. Up to 255 characters are allowed. Letters (both uppercase and lowercase letters), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.</p>
     pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.family = input;
-        self
+        self.family = input; self
     }
     /// <p>The name of a family that this task definition is registered to. Up to 255 characters are allowed. Letters (both uppercase and lowercase letters), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.</p>
@@ -410,8 +414,7 @@ impl TaskDefinitionBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access Management role that grants containers in the task permission to call Amazon Web Services APIs on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code to use the feature. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_task_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_role_arn = input;
-        self
+        self.task_role_arn = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access Management role that grants containers in the task permission to call Amazon Web Services APIs on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code to use the feature. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -425,8 +428,7 @@ impl TaskDefinitionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -453,8 +455,7 @@ impl TaskDefinitionBuilder {
     /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single container instance when port mappings are used.</p>
     /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network settings</a> in the <i>Docker run reference</i>.</p>
     pub fn set_network_mode(mut self, input: ::std::option::Option<crate::types::NetworkMode>) -> Self {
-        self.network_mode = input;
-        self
+        self.network_mode = input; self
     }
     /// <p>The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is <code>bridge</code>.</p>
     /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon EC2 Windows instances, <code><default></default></code> or <code>awsvpc</code> can be used. If the network mode is set to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.</p>
@@ -474,8 +475,7 @@ impl TaskDefinitionBuilder {
     }
     /// <p>The revision of the task in a particular family. The revision is a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>. Each time that you register a new revision of a task definition in the same family, the revision value always increases by one. This is even if you deregistered previous revisions in this family.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of the task in a particular family. The revision is a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>. Each time that you register a new revision of a task definition in the same family, the revision value always increases by one. This is even if you deregistered previous revisions in this family.</p>
     pub fn get_revision(&self) -> &::std::option::Option<i32> {
@@ -490,21 +490,20 @@ impl TaskDefinitionBuilder {
     /// </note>
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>The <code>host</code> and <code>sourcePath</code> parameters aren't supported for tasks run on Fargate.</p>
     /// </note>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>) -> Self {
+        self.volumes = input; self
     }
     /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>The <code>host</code> and <code>sourcePath</code> parameters aren't supported for tasks run on Fargate.</p>
     /// </note>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Volume>> {
         &self.volumes
     }
     /// <p>The status of the task definition.</p>
@@ -514,8 +513,7 @@ impl TaskDefinitionBuilder {
     }
     /// <p>The status of the task definition.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskDefinitionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the task definition.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskDefinitionStatus> {
@@ -530,21 +528,20 @@ impl TaskDefinitionBuilder {
     /// </note>
     pub fn requires_attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.requires_attributes.unwrap_or_default();
-        v.push(input);
-        self.requires_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.requires_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is registered to your cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom attributes. These are specified as key-value pairs using the Amazon ECS console or the <code>PutAttributes</code> API. These attributes are used when determining task placement for tasks hosted on Amazon EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    pub fn set_requires_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.requires_attributes = input;
-        self
+    pub fn set_requires_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.requires_attributes = input; self
     }
     /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is registered to your cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom attributes. These are specified as key-value pairs using the Amazon ECS console or the <code>PutAttributes</code> API. These attributes are used when determining task placement for tasks hosted on Amazon EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    pub fn get_requires_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_requires_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.requires_attributes
     }
     /// Appends an item to `placement_constraints`.
@@ -556,24 +553,20 @@ impl TaskDefinitionBuilder {
     /// </note>
     pub fn placement_constraints(mut self, input: crate::types::TaskDefinitionPlacementConstraint) -> Self {
         let mut v = self.placement_constraints.unwrap_or_default();
-        v.push(input);
-        self.placement_constraints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.placement_constraints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of placement constraint objects to use for tasks.</p><note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    pub fn set_placement_constraints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>>,
-    ) -> Self {
-        self.placement_constraints = input;
-        self
+    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskDefinitionPlacementConstraint>>) -> Self {
+        self.placement_constraints = input; self
     }
     /// <p>An array of placement constraint objects to use for tasks.</p><note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>> {
+    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskDefinitionPlacementConstraint>> {
         &self.placement_constraints
     }
     /// Appends an item to `compatibilities`.
@@ -583,17 +576,16 @@ impl TaskDefinitionBuilder {
     /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn compatibilities(mut self, input: crate::types::Compatibility) -> Self {
         let mut v = self.compatibilities.unwrap_or_default();
-        v.push(input);
-        self.compatibilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compatibilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>) -> Self {
-        self.compatibilities = input;
-        self
+    pub fn set_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>) -> Self {
+        self.compatibilities = input; self
     }
     /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
+    pub fn get_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>> {
         &self.compatibilities
     }
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
@@ -605,8 +597,7 @@ impl TaskDefinitionBuilder {
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     pub fn set_runtime_platform(mut self, input: ::std::option::Option<crate::types::RuntimePlatform>) -> Self {
-        self.runtime_platform = input;
-        self
+        self.runtime_platform = input; self
     }
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type.</p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
@@ -620,17 +611,16 @@ impl TaskDefinitionBuilder {
     /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn requires_compatibilities(mut self, input: crate::types::Compatibility) -> Self {
         let mut v = self.requires_compatibilities.unwrap_or_default();
-        v.push(input);
-        self.requires_compatibilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.requires_compatibilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>) -> Self {
-        self.requires_compatibilities = input;
-        self
+    pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>) -> Self {
+        self.requires_compatibilities = input; self
     }
     /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
+    pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>> {
         &self.requires_compatibilities
     }
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
@@ -678,8 +668,7 @@ impl TaskDefinitionBuilder {
     /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
     /// </ul>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
@@ -751,8 +740,7 @@ impl TaskDefinitionBuilder {
     /// <p>This option requires Linux platform <code>1.4.0</code> or later.</p></li>
     /// </ul>
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>If your tasks runs on Amazon EC2 instances, you must specify either a task-level memory value or a container-level memory value. This field is optional and any value can be used. If a task-level memory value is specified, the container-level memory value is optional. For more information regarding container-level memory and memory reservation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
@@ -785,17 +773,16 @@ impl TaskDefinitionBuilder {
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
     pub fn inference_accelerators(mut self, input: crate::types::InferenceAccelerator) -> Self {
         let mut v = self.inference_accelerators.unwrap_or_default();
-        v.push(input);
-        self.inference_accelerators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inference_accelerators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    pub fn set_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>) -> Self {
-        self.inference_accelerators = input;
-        self
+    pub fn set_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceAccelerator>>) -> Self {
+        self.inference_accelerators = input; self
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>> {
+    pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InferenceAccelerator>> {
         &self.inference_accelerators
     }
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
@@ -821,8 +808,7 @@ impl TaskDefinitionBuilder {
     /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn set_pid_mode(mut self, input: ::std::option::Option<crate::types::PidMode>) -> Self {
-        self.pid_mode = input;
-        self
+        self.pid_mode = input; self
     }
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
@@ -863,8 +849,7 @@ impl TaskDefinitionBuilder {
     /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
     /// </note>
     pub fn set_ipc_mode(mut self, input: ::std::option::Option<crate::types::IpcMode>) -> Self {
-        self.ipc_mode = input;
-        self
+        self.ipc_mode = input; self
     }
     /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker run reference</i>.</p>
     /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p>
@@ -889,8 +874,7 @@ impl TaskDefinitionBuilder {
     /// <p>The configuration details for the App Mesh proxy.</p>
     /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_proxy_configuration(mut self, input: ::std::option::Option<crate::types::ProxyConfiguration>) -> Self {
-        self.proxy_configuration = input;
-        self
+        self.proxy_configuration = input; self
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
     /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -904,8 +888,7 @@ impl TaskDefinitionBuilder {
     }
     /// <p>The Unix timestamp for the time when the task definition was registered.</p>
     pub fn set_registered_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.registered_at = input;
-        self
+        self.registered_at = input; self
     }
     /// <p>The Unix timestamp for the time when the task definition was registered.</p>
     pub fn get_registered_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -918,8 +901,7 @@ impl TaskDefinitionBuilder {
     }
     /// <p>The Unix timestamp for the time when the task definition was deregistered.</p>
     pub fn set_deregistered_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deregistered_at = input;
-        self
+        self.deregistered_at = input; self
     }
     /// <p>The Unix timestamp for the time when the task definition was deregistered.</p>
     pub fn get_deregistered_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -932,8 +914,7 @@ impl TaskDefinitionBuilder {
     }
     /// <p>The principal that registered the task definition.</p>
     pub fn set_registered_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registered_by = input;
-        self
+        self.registered_by = input; self
     }
     /// <p>The principal that registered the task definition.</p>
     pub fn get_registered_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -946,8 +927,7 @@ impl TaskDefinitionBuilder {
     }
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
-        self.ephemeral_storage = input;
-        self
+        self.ephemeral_storage = input; self
     }
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
@@ -956,30 +936,56 @@ impl TaskDefinitionBuilder {
     /// Consumes the builder and constructs a [`TaskDefinition`](crate::types::TaskDefinition).
     pub fn build(self) -> crate::types::TaskDefinition {
         crate::types::TaskDefinition {
-            task_definition_arn: self.task_definition_arn,
-            container_definitions: self.container_definitions,
-            family: self.family,
-            task_role_arn: self.task_role_arn,
-            execution_role_arn: self.execution_role_arn,
-            network_mode: self.network_mode,
-            revision: self.revision.unwrap_or_default(),
-            volumes: self.volumes,
-            status: self.status,
-            requires_attributes: self.requires_attributes,
-            placement_constraints: self.placement_constraints,
-            compatibilities: self.compatibilities,
-            runtime_platform: self.runtime_platform,
-            requires_compatibilities: self.requires_compatibilities,
-            cpu: self.cpu,
-            memory: self.memory,
-            inference_accelerators: self.inference_accelerators,
-            pid_mode: self.pid_mode,
-            ipc_mode: self.ipc_mode,
-            proxy_configuration: self.proxy_configuration,
-            registered_at: self.registered_at,
-            deregistered_at: self.deregistered_at,
-            registered_by: self.registered_by,
-            ephemeral_storage: self.ephemeral_storage,
+            task_definition_arn: self.task_definition_arn
+            ,
+            container_definitions: self.container_definitions
+            ,
+            family: self.family
+            ,
+            task_role_arn: self.task_role_arn
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            network_mode: self.network_mode
+            ,
+            revision: self.revision
+                .unwrap_or_default()
+            ,
+            volumes: self.volumes
+            ,
+            status: self.status
+            ,
+            requires_attributes: self.requires_attributes
+            ,
+            placement_constraints: self.placement_constraints
+            ,
+            compatibilities: self.compatibilities
+            ,
+            runtime_platform: self.runtime_platform
+            ,
+            requires_compatibilities: self.requires_compatibilities
+            ,
+            cpu: self.cpu
+            ,
+            memory: self.memory
+            ,
+            inference_accelerators: self.inference_accelerators
+            ,
+            pid_mode: self.pid_mode
+            ,
+            ipc_mode: self.ipc_mode
+            ,
+            proxy_configuration: self.proxy_configuration
+            ,
+            registered_at: self.registered_at
+            ,
+            deregistered_at: self.deregistered_at
+            ,
+            registered_by: self.registered_by
+            ,
+            ephemeral_storage: self.ephemeral_storage
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The structure representing the GetRecommendationsRequest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationsInput {
+pub struct GetRecommendationsInput  {
     /// <p>The name of the profiling group to get analysis data about.</p>
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
@@ -37,17 +37,17 @@ pub struct GetRecommendationsInput {
     /// </ul>
     pub locale: ::std::option::Option<::std::string::String>,
 }
-impl GetRecommendationsInput {
+impl  GetRecommendationsInput  {
     /// <p>The name of the profiling group to get analysis data about.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> ::std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes.</p>
@@ -75,7 +75,7 @@ impl GetRecommendationsInput {
     /// <li>
     /// <p><code>zh-TW</code> - Chinese, Taiwan</p></li>
     /// </ul>
-    pub fn locale(&self) -> ::std::option::Option<&str> {
+    pub fn locale(&self) -> ::std::option::Option<& str> {
         self.locale.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl GetRecommendationsInputBuilder {
     }
     /// <p>The name of the profiling group to get analysis data about.</p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profiling_group_name = input;
-        self
+        self.profiling_group_name = input; self
     }
     /// <p>The name of the profiling group to get analysis data about.</p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl GetRecommendationsInputBuilder {
     }
     /// <p>The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -134,8 +132,7 @@ impl GetRecommendationsInputBuilder {
     }
     /// <p>The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -196,8 +193,7 @@ impl GetRecommendationsInputBuilder {
     /// <p><code>zh-TW</code> - Chinese, Taiwan</p></li>
     /// </ul>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes.</p>
     /// <ul>
@@ -228,14 +224,19 @@ impl GetRecommendationsInputBuilder {
         &self.locale
     }
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsInput {
-            profiling_group_name: self.profiling_group_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            locale: self.locale,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_recommendations::GetRecommendationsInput {
+                profiling_group_name: self.profiling_group_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                locale: self.locale
+                ,
+            }
+        )
     }
 }
+

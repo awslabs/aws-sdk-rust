@@ -3,19 +3,19 @@
 /// <p>Request to describe an existing Authorizer resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAuthorizerInput {
+pub struct GetAuthorizerInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Authorizer resource.</p>
     pub authorizer_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAuthorizerInput {
+impl  GetAuthorizerInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The identifier of the Authorizer resource.</p>
-    pub fn authorizer_id(&self) -> ::std::option::Option<&str> {
+    pub fn authorizer_id(&self) -> ::std::option::Option<& str> {
         self.authorizer_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetAuthorizerInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl GetAuthorizerInputBuilder {
     }
     /// <p>The identifier of the Authorizer resource.</p>
     pub fn set_authorizer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorizer_id = input;
-        self
+        self.authorizer_id = input; self
     }
     /// <p>The identifier of the Authorizer resource.</p>
     pub fn get_authorizer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorizer_id
     }
     /// Consumes the builder and constructs a [`GetAuthorizerInput`](crate::operation::get_authorizer::GetAuthorizerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_authorizer::GetAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_authorizer::GetAuthorizerInput {
-            rest_api_id: self.rest_api_id,
-            authorizer_id: self.authorizer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_authorizer::GetAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_authorizer::GetAuthorizerInput {
+                rest_api_id: self.rest_api_id
+                ,
+                authorizer_id: self.authorizer_id
+                ,
+            }
+        )
     }
 }
+

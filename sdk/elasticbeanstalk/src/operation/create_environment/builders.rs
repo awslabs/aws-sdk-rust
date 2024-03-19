@@ -5,54 +5,50 @@ pub use crate::operation::create_environment::_create_environment_input::CreateE
 
 impl CreateEnvironmentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_environment();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_environment::CreateEnvironmentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_environment::CreateEnvironmentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_environment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateEnvironment`.
-///
+/// 
 /// <p>Launches an AWS Elastic Beanstalk environment for the specified application using the specified configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder,
+                    inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_environment::CreateEnvironmentOutput,
-        crate::operation::create_environment::CreateEnvironmentError,
-    > for CreateEnvironmentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_environment::CreateEnvironmentOutput,
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_environment::CreateEnvironmentOutput,
+                    crate::operation::create_environment::CreateEnvironmentError,
+                > for CreateEnvironmentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_environment::CreateEnvironmentOutput,
+                        crate::operation::create_environment::CreateEnvironmentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateEnvironmentFluentBuilder {
     /// Creates a new `CreateEnvironment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateEnvironmentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_environment::CreateEnvironment::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_environment::CreateEnvironment::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_environment::CreateEnvironmentOutput,
-        crate::operation::create_environment::CreateEnvironmentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_environment::CreateEnvironmentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_environment::CreateEnvironment::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_environment::CreateEnvironment::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_environment::CreateEnvironmentOutput, crate::operation::create_environment::CreateEnvironmentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the application that is associated with this environment.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -208,12 +195,12 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The name of the application version to deploy.</p>
@@ -303,12 +290,12 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>> {
         self.inner.get_option_settings()
     }
     /// Appends an item to `OptionsToRemove`.
@@ -321,12 +308,12 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
+    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>>) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>> {
         self.inner.get_options_to_remove()
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
@@ -344,3 +331,4 @@ impl CreateEnvironmentFluentBuilder {
         self.inner.get_operations_role()
     }
 }
+

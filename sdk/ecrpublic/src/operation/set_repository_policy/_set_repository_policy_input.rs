@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetRepositoryPolicyInput {
+pub struct SetRepositoryPolicyInput  {
     /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to receive the policy.</p>
@@ -12,17 +12,17 @@ pub struct SetRepositoryPolicyInput {
     /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl SetRepositoryPolicyInput {
+impl  SetRepositoryPolicyInput  {
     /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository to receive the policy.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    pub fn policy_text(&self) -> ::std::option::Option<&str> {
+    pub fn policy_text(&self) -> ::std::option::Option<& str> {
         self.policy_text.as_deref()
     }
     /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
@@ -54,8 +54,7 @@ impl SetRepositoryPolicyInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SetRepositoryPolicyInputBuilder {
     }
     /// <p>The name of the repository to receive the policy.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository to receive the policy.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl SetRepositoryPolicyInputBuilder {
     }
     /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub fn set_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_text = input;
-        self
+        self.policy_text = input; self
     }
     /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,23 +95,26 @@ impl SetRepositoryPolicyInputBuilder {
     }
     /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This prevents accidental repository lockouts.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`SetRepositoryPolicyInput`](crate::operation::set_repository_policy::SetRepositoryPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_repository_policy::SetRepositoryPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_repository_policy::SetRepositoryPolicyInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            policy_text: self.policy_text,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_repository_policy::SetRepositoryPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_repository_policy::SetRepositoryPolicyInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                policy_text: self.policy_text
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

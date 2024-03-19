@@ -3,27 +3,28 @@
 /// <p>A set of filters by which to return Source Networks.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSourceNetworksRequestFilters {
+pub struct DescribeSourceNetworksRequestFilters  {
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    pub source_network_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_network_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
     pub origin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
     pub origin_region: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSourceNetworksRequestFilters {
+impl  DescribeSourceNetworksRequestFilters  {
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_network_ids.is_none()`.
-    pub fn source_network_ids(&self) -> &[::std::string::String] {
-        self.source_network_ids.as_deref().unwrap_or_default()
+    pub fn source_network_ids(&self) -> & [::std::string::String] {
+        self.source_network_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
-    pub fn origin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_account_id(&self) -> ::std::option::Option<& str> {
         self.origin_account_id.as_deref()
     }
     /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
-    pub fn origin_region(&self) -> ::std::option::Option<&str> {
+    pub fn origin_region(&self) -> ::std::option::Option<& str> {
         self.origin_region.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl DescribeSourceNetworksRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceNetworksRequestFiltersBuilder {
-    pub(crate) source_network_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_network_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) origin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_region: ::std::option::Option<::std::string::String>,
 }
@@ -50,17 +51,16 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
     pub fn source_network_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_network_ids.unwrap_or_default();
-        v.push(input.into());
-        self.source_network_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_network_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    pub fn set_source_network_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_network_ids = input;
-        self
+    pub fn set_source_network_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source_network_ids = input; self
     }
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    pub fn get_source_network_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_network_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source_network_ids
     }
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
@@ -70,8 +70,7 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
     }
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
     pub fn set_origin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_account_id = input;
-        self
+        self.origin_account_id = input; self
     }
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
     pub fn get_origin_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
     }
     /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
     pub fn set_origin_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_region = input;
-        self
+        self.origin_region = input; self
     }
     /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
     pub fn get_origin_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,9 +92,13 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceNetworksRequestFilters`](crate::types::DescribeSourceNetworksRequestFilters).
     pub fn build(self) -> crate::types::DescribeSourceNetworksRequestFilters {
         crate::types::DescribeSourceNetworksRequestFilters {
-            source_network_ids: self.source_network_ids,
-            origin_account_id: self.origin_account_id,
-            origin_region: self.origin_region,
+            source_network_ids: self.source_network_ids
+            ,
+            origin_account_id: self.origin_account_id
+            ,
+            origin_region: self.origin_region
+            ,
         }
     }
 }
+

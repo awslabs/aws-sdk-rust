@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEcsServiceRecommendationProjectedMetricsOutput {
+pub struct GetEcsServiceRecommendationProjectedMetricsOutput  {
     /// <p>An array of objects that describes the projected metrics.</p>
-    pub recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
+    pub recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
     _request_id: Option<String>,
 }
-impl GetEcsServiceRecommendationProjectedMetricsOutput {
+impl  GetEcsServiceRecommendationProjectedMetricsOutput  {
     /// <p>An array of objects that describes the projected metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommended_option_projected_metrics.is_none()`.
-    pub fn recommended_option_projected_metrics(&self) -> &[crate::types::EcsServiceRecommendedOptionProjectedMetric] {
-        self.recommended_option_projected_metrics.as_deref().unwrap_or_default()
+    pub fn recommended_option_projected_metrics(&self) -> & [crate::types::EcsServiceRecommendedOptionProjectedMetric] {
+        self.recommended_option_projected_metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEcsServiceRecommendationProjectedMetricsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEcsServiceRecommendationProjectedMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
         crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsOutputBuilder::default()
     }
 }
@@ -32,7 +32,7 @@ impl GetEcsServiceRecommendationProjectedMetricsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
-    pub(crate) recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
+    pub(crate) recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
     _request_id: Option<String>,
 }
 impl GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
@@ -43,38 +43,34 @@ impl GetEcsServiceRecommendationProjectedMetricsOutputBuilder {
     /// <p>An array of objects that describes the projected metrics.</p>
     pub fn recommended_option_projected_metrics(mut self, input: crate::types::EcsServiceRecommendedOptionProjectedMetric) -> Self {
         let mut v = self.recommended_option_projected_metrics.unwrap_or_default();
-        v.push(input);
-        self.recommended_option_projected_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommended_option_projected_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describes the projected metrics.</p>
-    pub fn set_recommended_option_projected_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
-    ) -> Self {
-        self.recommended_option_projected_metrics = input;
-        self
+    pub fn set_recommended_option_projected_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceRecommendedOptionProjectedMetric>>) -> Self {
+        self.recommended_option_projected_metrics = input; self
     }
     /// <p>An array of objects that describes the projected metrics.</p>
-    pub fn get_recommended_option_projected_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>> {
+    pub fn get_recommended_option_projected_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EcsServiceRecommendedOptionProjectedMetric>> {
         &self.recommended_option_projected_metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsOutput).
     pub fn build(self) -> crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsOutput {
         crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsOutput {
-            recommended_option_projected_metrics: self.recommended_option_projected_metrics,
+            recommended_option_projected_metrics: self.recommended_option_projected_metrics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

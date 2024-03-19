@@ -3,22 +3,20 @@
 /// <p>A structure containing the alert target ARN and the role ARN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlertTarget {
+pub struct AlertTarget  {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
     pub alert_target_arn: ::std::string::String,
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
     pub role_arn: ::std::string::String,
 }
-impl AlertTarget {
+impl  AlertTarget  {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    pub fn alert_target_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.alert_target_arn.deref()
+    pub fn alert_target_arn(&self) -> & str {
+        use std::ops::Deref; self.alert_target_arn.deref()
     }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl AlertTarget {
@@ -44,8 +42,7 @@ impl AlertTargetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
     pub fn set_alert_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alert_target_arn = input;
-        self
+        self.alert_target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
     pub fn get_alert_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl AlertTargetBuilder {
     }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl AlertTargetBuilder {
     /// - [`alert_target_arn`](crate::types::builders::AlertTargetBuilder::alert_target_arn)
     /// - [`role_arn`](crate::types::builders::AlertTargetBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AlertTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AlertTarget {
-            alert_target_arn: self.alert_target_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alert_target_arn",
-                    "alert_target_arn was not specified but it is required when building AlertTarget",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building AlertTarget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AlertTarget {
+                alert_target_arn: self.alert_target_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alert_target_arn", "alert_target_arn was not specified but it is required when building AlertTarget")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building AlertTarget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

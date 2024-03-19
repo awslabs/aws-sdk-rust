@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGameServerGroupInput {
+pub struct CreateGameServerGroupInput  {
     /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
@@ -16,7 +16,7 @@ pub struct CreateGameServerGroupInput {
     /// </note>
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    pub instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
+    pub instance_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>,
     /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     pub auto_scaling_policy: ::std::option::Option<crate::types::GameServerGroupAutoScalingPolicy>,
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
@@ -32,17 +32,17 @@ pub struct CreateGameServerGroupInput {
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
     /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all Amazon GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
-    pub vpc_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateGameServerGroupInput {
+impl  CreateGameServerGroupInput  {
     /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
-    pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> ::std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
@@ -56,17 +56,18 @@ impl CreateGameServerGroupInput {
     /// <p>The Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p><note>
     /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, Amazon GameLift FleetIQ uses your account's default VPC.</p>
     /// </note>
-    pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
+    pub fn launch_template(&self) -> ::std::option::Option<& crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
     /// <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_definitions.is_none()`.
-    pub fn instance_definitions(&self) -> &[crate::types::InstanceDefinition] {
-        self.instance_definitions.as_deref().unwrap_or_default()
+    pub fn instance_definitions(&self) -> & [crate::types::InstanceDefinition] {
+        self.instance_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
-    pub fn auto_scaling_policy(&self) -> ::std::option::Option<&crate::types::GameServerGroupAutoScalingPolicy> {
+    pub fn auto_scaling_policy(&self) -> ::std::option::Option<& crate::types::GameServerGroupAutoScalingPolicy> {
         self.auto_scaling_policy.as_ref()
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
@@ -78,24 +79,26 @@ impl CreateGameServerGroupInput {
     /// <li>
     /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
-    pub fn balancing_strategy(&self) -> ::std::option::Option<&crate::types::BalancingStrategy> {
+    pub fn balancing_strategy(&self) -> ::std::option::Option<& crate::types::BalancingStrategy> {
         self.balancing_strategy.as_ref()
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
-    pub fn game_server_protection_policy(&self) -> ::std::option::Option<&crate::types::GameServerProtectionPolicy> {
+    pub fn game_server_protection_policy(&self) -> ::std::option::Option<& crate::types::GameServerProtectionPolicy> {
         self.game_server_protection_policy.as_ref()
     }
     /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all Amazon GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnets.is_none()`.
-    pub fn vpc_subnets(&self) -> &[::std::string::String] {
-        self.vpc_subnets.as_deref().unwrap_or_default()
+    pub fn vpc_subnets(&self) -> & [::std::string::String] {
+        self.vpc_subnets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateGameServerGroupInput {
@@ -114,12 +117,12 @@ pub struct CreateGameServerGroupInputBuilder {
     pub(crate) min_size: ::std::option::Option<i32>,
     pub(crate) max_size: ::std::option::Option<i32>,
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    pub(crate) instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
+    pub(crate) instance_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>,
     pub(crate) auto_scaling_policy: ::std::option::Option<crate::types::GameServerGroupAutoScalingPolicy>,
     pub(crate) balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
     pub(crate) game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
-    pub(crate) vpc_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) vpc_subnets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateGameServerGroupInputBuilder {
     /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
@@ -130,8 +133,7 @@ impl CreateGameServerGroupInputBuilder {
     }
     /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
     pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_name = input;
-        self
+        self.game_server_group_name = input; self
     }
     /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the Amazon EC2 Auto Scaling group and the Amazon GameLift FleetIQ game server group. The name must be unique per Region per Amazon Web Services account.</p>
     pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +147,7 @@ impl CreateGameServerGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +161,7 @@ impl CreateGameServerGroupInputBuilder {
     }
     /// <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_size = input;
-        self
+        self.min_size = input; self
     }
     /// <p>The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and Amazon EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     pub fn get_min_size(&self) -> &::std::option::Option<i32> {
@@ -175,8 +175,7 @@ impl CreateGameServerGroupInputBuilder {
     }
     /// <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_size = input;
-        self
+        self.max_size = input; self
     }
     /// <p>The maximum number of instances allowed in the Amazon EC2 Auto Scaling group. During automatic scaling events, Amazon GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     pub fn get_max_size(&self) -> &::std::option::Option<i32> {
@@ -194,8 +193,7 @@ impl CreateGameServerGroupInputBuilder {
     /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, Amazon GameLift FleetIQ uses your account's default VPC.</p>
     /// </note>
     pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
-        self.launch_template = input;
-        self
+        self.launch_template = input; self
     }
     /// <p>The Amazon EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p><note>
     /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, Amazon GameLift FleetIQ uses your account's default VPC.</p>
@@ -210,17 +208,16 @@ impl CreateGameServerGroupInputBuilder {
     /// <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
     pub fn instance_definitions(mut self, input: crate::types::InstanceDefinition) -> Self {
         let mut v = self.instance_definitions.unwrap_or_default();
-        v.push(input);
-        self.instance_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    pub fn set_instance_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>) -> Self {
-        self.instance_definitions = input;
-        self
+    pub fn set_instance_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>) -> Self {
+        self.instance_definitions = input; self
     }
     /// <p>The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    pub fn get_instance_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>> {
+    pub fn get_instance_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>> {
         &self.instance_definitions
     }
     /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
@@ -230,8 +227,7 @@ impl CreateGameServerGroupInputBuilder {
     }
     /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     pub fn set_auto_scaling_policy(mut self, input: ::std::option::Option<crate::types::GameServerGroupAutoScalingPolicy>) -> Self {
-        self.auto_scaling_policy = input;
-        self
+        self.auto_scaling_policy = input; self
     }
     /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the Amazon Web Services console or APIs.</p>
     pub fn get_auto_scaling_policy(&self) -> &::std::option::Option<crate::types::GameServerGroupAutoScalingPolicy> {
@@ -260,8 +256,7 @@ impl CreateGameServerGroupInputBuilder {
     /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub fn set_balancing_strategy(mut self, input: ::std::option::Option<crate::types::BalancingStrategy>) -> Self {
-        self.balancing_strategy = input;
-        self
+        self.balancing_strategy = input; self
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
@@ -282,8 +277,7 @@ impl CreateGameServerGroupInputBuilder {
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub fn set_game_server_protection_policy(mut self, input: ::std::option::Option<crate::types::GameServerProtectionPolicy>) -> Self {
-        self.game_server_protection_policy = input;
-        self
+        self.game_server_protection_policy = input; self
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub fn get_game_server_protection_policy(&self) -> &::std::option::Option<crate::types::GameServerProtectionPolicy> {
@@ -296,17 +290,16 @@ impl CreateGameServerGroupInputBuilder {
     /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all Amazon GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
     pub fn vpc_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_subnets.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_subnets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_subnets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all Amazon GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
-    pub fn set_vpc_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_subnets = input;
-        self
+    pub fn set_vpc_subnets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_subnets = input; self
     }
     /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all Amazon GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
-    pub fn get_vpc_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_subnets
     }
     /// Appends an item to `tags`.
@@ -316,36 +309,46 @@ impl CreateGameServerGroupInputBuilder {
     /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGameServerGroupInput`](crate::operation::create_game_server_group::CreateGameServerGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_game_server_group::CreateGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_game_server_group::CreateGameServerGroupInput {
-            game_server_group_name: self.game_server_group_name,
-            role_arn: self.role_arn,
-            min_size: self.min_size,
-            max_size: self.max_size,
-            launch_template: self.launch_template,
-            instance_definitions: self.instance_definitions,
-            auto_scaling_policy: self.auto_scaling_policy,
-            balancing_strategy: self.balancing_strategy,
-            game_server_protection_policy: self.game_server_protection_policy,
-            vpc_subnets: self.vpc_subnets,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_game_server_group::CreateGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_game_server_group::CreateGameServerGroupInput {
+                game_server_group_name: self.game_server_group_name
+                ,
+                role_arn: self.role_arn
+                ,
+                min_size: self.min_size
+                ,
+                max_size: self.max_size
+                ,
+                launch_template: self.launch_template
+                ,
+                instance_definitions: self.instance_definitions
+                ,
+                auto_scaling_policy: self.auto_scaling_policy
+                ,
+                balancing_strategy: self.balancing_strategy
+                ,
+                game_server_protection_policy: self.game_server_protection_policy
+                ,
+                vpc_subnets: self.vpc_subnets
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

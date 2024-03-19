@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIndexInput {
+pub struct CreateIndexInput  {
     /// <p>The identifier of the Amazon Q application using the index.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the Amazon Q index.</p>
@@ -10,37 +10,38 @@ pub struct CreateIndexInput {
     /// <p>A description for the Amazon Q index.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The capacity units you want to provision for your index. You can add and remove capacity to fit your usage needs.</p>
     pub capacity_configuration: ::std::option::Option<crate::types::IndexCapacityConfiguration>,
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateIndexInput {
+impl  CreateIndexInput  {
     /// <p>The identifier of the Amazon Q application using the index.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>A name for the Amazon Q index.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description for the Amazon Q index.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The capacity units you want to provision for your index. You can add and remove capacity to fit your usage needs.</p>
-    pub fn capacity_configuration(&self) -> ::std::option::Option<&crate::types::IndexCapacityConfiguration> {
+    pub fn capacity_configuration(&self) -> ::std::option::Option<& crate::types::IndexCapacityConfiguration> {
         self.capacity_configuration.as_ref()
     }
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -58,7 +59,7 @@ pub struct CreateIndexInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) capacity_configuration: ::std::option::Option<crate::types::IndexCapacityConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -71,8 +72,7 @@ impl CreateIndexInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application using the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application using the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl CreateIndexInputBuilder {
     }
     /// <p>A name for the Amazon Q index.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A name for the Amazon Q index.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl CreateIndexInputBuilder {
     }
     /// <p>A description for the Amazon Q index.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the Amazon Q index.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,17 +112,16 @@ impl CreateIndexInputBuilder {
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The capacity units you want to provision for your index. You can add and remove capacity to fit your usage needs.</p>
@@ -134,8 +131,7 @@ impl CreateIndexInputBuilder {
     }
     /// <p>The capacity units you want to provision for your index. You can add and remove capacity to fit your usage needs.</p>
     pub fn set_capacity_configuration(mut self, input: ::std::option::Option<crate::types::IndexCapacityConfiguration>) -> Self {
-        self.capacity_configuration = input;
-        self
+        self.capacity_configuration = input; self
     }
     /// <p>The capacity units you want to provision for your index. You can add and remove capacity to fit your usage needs.</p>
     pub fn get_capacity_configuration(&self) -> &::std::option::Option<crate::types::IndexCapacityConfiguration> {
@@ -148,8 +144,7 @@ impl CreateIndexInputBuilder {
     }
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,13 +152,22 @@ impl CreateIndexInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateIndexInput`](crate::operation::create_index::CreateIndexInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_index::CreateIndexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_index::CreateIndexInput {
-            application_id: self.application_id,
-            display_name: self.display_name,
-            description: self.description,
-            tags: self.tags,
-            capacity_configuration: self.capacity_configuration,
-            client_token: self.client_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_index::CreateIndexInput {
+                application_id: self.application_id
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                capacity_configuration: self.capacity_configuration
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

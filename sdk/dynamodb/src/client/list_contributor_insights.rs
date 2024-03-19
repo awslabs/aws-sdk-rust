@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListContributorInsights`](crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`table_name(impl Into<String>)`](crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::set_table_name):<br>required: **false**<br><p>The name of the table.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to for the desired page, if there is one.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListContributorInsightsOutput`](crate::operation::list_contributor_insights::ListContributorInsightsOutput) with field(s):
+                            /// - On success, responds with [`ListContributorInsightsOutput`](crate::operation::list_contributor_insights::ListContributorInsightsOutput) with field(s):
     ///   - [`contributor_insights_summaries(Option<Vec::<ContributorInsightsSummary>>)`](crate::operation::list_contributor_insights::ListContributorInsightsOutput::contributor_insights_summaries): <p>A list of ContributorInsightsSummary.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contributor_insights::ListContributorInsightsOutput::next_token): <p>A token to go to the next page if there is one.</p>
-    /// - On failure, responds with [`SdkError<ListContributorInsightsError>`](crate::operation::list_contributor_insights::ListContributorInsightsError)
+                            /// - On failure, responds with [`SdkError<ListContributorInsightsError>`](crate::operation::list_contributor_insights::ListContributorInsightsError)
     pub fn list_contributor_insights(&self) -> crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder {
-        crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_contributor_insights::builders::ListContributorInsightsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

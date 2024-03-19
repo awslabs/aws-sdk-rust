@@ -3,7 +3,7 @@
 /// <p>Describes the properties of an entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityDescription {
+pub struct EntityDescription  {
     /// <p>The entity ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The entity ARN.</p>
@@ -15,25 +15,25 @@ pub struct EntityDescription {
     /// <p>The definition document of the entity.</p>
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
 }
-impl EntityDescription {
+impl  EntityDescription  {
     /// <p>The entity ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The entity ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The entity type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EntityType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EntityType> {
         self.r#type.as_ref()
     }
     /// <p>The time at which the entity was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The definition document of the entity.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl EntityDescriptionBuilder {
     }
     /// <p>The entity ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The entity ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl EntityDescriptionBuilder {
     }
     /// <p>The entity ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The entity ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl EntityDescriptionBuilder {
     }
     /// <p>The entity type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The entity type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EntityType> {
@@ -104,8 +101,7 @@ impl EntityDescriptionBuilder {
     }
     /// <p>The time at which the entity was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the entity was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl EntityDescriptionBuilder {
     }
     /// <p>The definition document of the entity.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The definition document of the entity.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
@@ -128,11 +123,17 @@ impl EntityDescriptionBuilder {
     /// Consumes the builder and constructs a [`EntityDescription`](crate::types::EntityDescription).
     pub fn build(self) -> crate::types::EntityDescription {
         crate::types::EntityDescription {
-            id: self.id,
-            arn: self.arn,
-            r#type: self.r#type,
-            created_at: self.created_at,
-            definition: self.definition,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            created_at: self.created_at
+            ,
+            definition: self.definition
+            ,
         }
     }
 }
+

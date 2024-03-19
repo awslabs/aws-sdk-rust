@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyInstanceEventStartTimeInput {
+pub struct ModifyInstanceEventStartTimeInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance with the scheduled event.</p>
@@ -12,21 +12,21 @@ pub struct ModifyInstanceEventStartTimeInput {
     /// <p>The new date and time when the event will take place.</p>
     pub not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ModifyInstanceEventStartTimeInput {
+impl  ModifyInstanceEventStartTimeInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the instance with the scheduled event.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
-    pub fn instance_event_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_event_id(&self) -> ::std::option::Option<& str> {
         self.instance_event_id.as_deref()
     }
     /// <p>The new date and time when the event will take place.</p>
-    pub fn not_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
     }
     /// <p>The ID of the instance with the scheduled event.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance with the scheduled event.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ModifyInstanceEventStartTimeInputBuilder {
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
     pub fn set_instance_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_event_id = input;
-        self
+        self.instance_event_id = input; self
     }
     /// <p>The ID of the event whose date and time you are modifying.</p>
     pub fn get_instance_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl ModifyInstanceEventStartTimeInputBuilder {
     }
     /// <p>The new date and time when the event will take place.</p>
     pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_before = input;
-        self
+        self.not_before = input; self
     }
     /// <p>The new date and time when the event will take place.</p>
     pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.not_before
     }
     /// Consumes the builder and constructs a [`ModifyInstanceEventStartTimeInput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput {
-            dry_run: self.dry_run,
-            instance_id: self.instance_id,
-            instance_event_id: self.instance_event_id,
-            not_before: self.not_before,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput {
+                dry_run: self.dry_run
+                ,
+                instance_id: self.instance_id
+                ,
+                instance_event_id: self.instance_event_id
+                ,
+                not_before: self.not_before
+                ,
+            }
+        )
     }
 }
+

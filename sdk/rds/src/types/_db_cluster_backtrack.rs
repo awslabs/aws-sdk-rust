@@ -3,7 +3,7 @@
 /// <p>This data type is used as a response element in the <code>DescribeDBClusterBacktracks</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbClusterBacktrack {
+pub struct DbClusterBacktrack  {
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains the backtrack identifier.</p>
@@ -27,25 +27,25 @@ pub struct DbClusterBacktrack {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl DbClusterBacktrack {
+impl  DbClusterBacktrack  {
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Contains the backtrack identifier.</p>
-    pub fn backtrack_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn backtrack_identifier(&self) -> ::std::option::Option<& str> {
         self.backtrack_identifier.as_deref()
     }
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-    pub fn backtrack_to(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn backtrack_to(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.backtrack_to.as_ref()
     }
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-    pub fn backtracked_from(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn backtracked_from(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.backtracked_from.as_ref()
     }
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
-    pub fn backtrack_request_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn backtrack_request_creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.backtrack_request_creation_time.as_ref()
     }
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
@@ -59,7 +59,7 @@ impl DbClusterBacktrack {
     /// <li>
     /// <p><code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -89,8 +89,7 @@ impl DbClusterBacktrackBuilder {
     }
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl DbClusterBacktrackBuilder {
     }
     /// <p>Contains the backtrack identifier.</p>
     pub fn set_backtrack_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backtrack_identifier = input;
-        self
+        self.backtrack_identifier = input; self
     }
     /// <p>Contains the backtrack identifier.</p>
     pub fn get_backtrack_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl DbClusterBacktrackBuilder {
     }
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
     pub fn set_backtrack_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.backtrack_to = input;
-        self
+        self.backtrack_to = input; self
     }
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
     pub fn get_backtrack_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -131,8 +128,7 @@ impl DbClusterBacktrackBuilder {
     }
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
     pub fn set_backtracked_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.backtracked_from = input;
-        self
+        self.backtracked_from = input; self
     }
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
     pub fn get_backtracked_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +141,7 @@ impl DbClusterBacktrackBuilder {
     }
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
     pub fn set_backtrack_request_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.backtrack_request_creation_time = input;
-        self
+        self.backtrack_request_creation_time = input; self
     }
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
     pub fn get_backtrack_request_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -179,8 +174,7 @@ impl DbClusterBacktrackBuilder {
     /// <p><code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
     /// <ul>
@@ -199,12 +193,19 @@ impl DbClusterBacktrackBuilder {
     /// Consumes the builder and constructs a [`DbClusterBacktrack`](crate::types::DbClusterBacktrack).
     pub fn build(self) -> crate::types::DbClusterBacktrack {
         crate::types::DbClusterBacktrack {
-            db_cluster_identifier: self.db_cluster_identifier,
-            backtrack_identifier: self.backtrack_identifier,
-            backtrack_to: self.backtrack_to,
-            backtracked_from: self.backtracked_from,
-            backtrack_request_creation_time: self.backtrack_request_creation_time,
-            status: self.status,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            backtrack_identifier: self.backtrack_identifier
+            ,
+            backtrack_to: self.backtrack_to
+            ,
+            backtracked_from: self.backtracked_from
+            ,
+            backtrack_request_creation_time: self.backtrack_request_creation_time
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

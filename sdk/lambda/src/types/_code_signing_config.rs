@@ -3,7 +3,7 @@
 /// <p>Details about a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Code signing configuration</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeSigningConfig {
+pub struct CodeSigningConfig  {
     /// <p>Unique identifer for the Code signing configuration.</p>
     pub code_signing_config_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
@@ -17,33 +17,30 @@ pub struct CodeSigningConfig {
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub last_modified: ::std::string::String,
 }
-impl CodeSigningConfig {
+impl  CodeSigningConfig  {
     /// <p>Unique identifer for the Code signing configuration.</p>
-    pub fn code_signing_config_id(&self) -> &str {
-        use std::ops::Deref;
-        self.code_signing_config_id.deref()
+    pub fn code_signing_config_id(&self) -> & str {
+        use std::ops::Deref; self.code_signing_config_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.code_signing_config_arn.deref()
+    pub fn code_signing_config_arn(&self) -> & str {
+        use std::ops::Deref; self.code_signing_config_arn.deref()
     }
     /// <p>Code signing configuration description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>List of allowed publishers.</p>
-    pub fn allowed_publishers(&self) -> ::std::option::Option<&crate::types::AllowedPublishers> {
+    pub fn allowed_publishers(&self) -> ::std::option::Option<& crate::types::AllowedPublishers> {
         self.allowed_publishers.as_ref()
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    pub fn code_signing_policies(&self) -> ::std::option::Option<&crate::types::CodeSigningPolicies> {
+    pub fn code_signing_policies(&self) -> ::std::option::Option<& crate::types::CodeSigningPolicies> {
         self.code_signing_policies.as_ref()
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified(&self) -> &str {
-        use std::ops::Deref;
-        self.last_modified.deref()
+    pub fn last_modified(&self) -> & str {
+        use std::ops::Deref; self.last_modified.deref()
     }
 }
 impl CodeSigningConfig {
@@ -73,8 +70,7 @@ impl CodeSigningConfigBuilder {
     }
     /// <p>Unique identifer for the Code signing configuration.</p>
     pub fn set_code_signing_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_signing_config_id = input;
-        self
+        self.code_signing_config_id = input; self
     }
     /// <p>Unique identifer for the Code signing configuration.</p>
     pub fn get_code_signing_config_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl CodeSigningConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
     pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_signing_config_arn = input;
-        self
+        self.code_signing_config_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl CodeSigningConfigBuilder {
     }
     /// <p>Code signing configuration description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Code signing configuration description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl CodeSigningConfigBuilder {
     }
     /// <p>List of allowed publishers.</p>
     pub fn set_allowed_publishers(mut self, input: ::std::option::Option<crate::types::AllowedPublishers>) -> Self {
-        self.allowed_publishers = input;
-        self
+        self.allowed_publishers = input; self
     }
     /// <p>List of allowed publishers.</p>
     pub fn get_allowed_publishers(&self) -> &::std::option::Option<crate::types::AllowedPublishers> {
@@ -132,8 +125,7 @@ impl CodeSigningConfigBuilder {
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
     pub fn set_code_signing_policies(mut self, input: ::std::option::Option<crate::types::CodeSigningPolicies>) -> Self {
-        self.code_signing_policies = input;
-        self
+        self.code_signing_policies = input; self
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
     pub fn get_code_signing_policies(&self) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
@@ -147,8 +139,7 @@ impl CodeSigningConfigBuilder {
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,28 +151,31 @@ impl CodeSigningConfigBuilder {
     /// - [`code_signing_config_arn`](crate::types::builders::CodeSigningConfigBuilder::code_signing_config_arn)
     /// - [`last_modified`](crate::types::builders::CodeSigningConfigBuilder::last_modified)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeSigningConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeSigningConfig {
-            code_signing_config_id: self.code_signing_config_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code_signing_config_id",
-                    "code_signing_config_id was not specified but it is required when building CodeSigningConfig",
-                )
-            })?,
-            code_signing_config_arn: self.code_signing_config_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code_signing_config_arn",
-                    "code_signing_config_arn was not specified but it is required when building CodeSigningConfig",
-                )
-            })?,
-            description: self.description,
-            allowed_publishers: self.allowed_publishers,
-            code_signing_policies: self.code_signing_policies,
-            last_modified: self.last_modified.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified",
-                    "last_modified was not specified but it is required when building CodeSigningConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeSigningConfig {
+                code_signing_config_id: self.code_signing_config_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code_signing_config_id", "code_signing_config_id was not specified but it is required when building CodeSigningConfig")
+                    )?
+                ,
+                code_signing_config_arn: self.code_signing_config_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code_signing_config_arn", "code_signing_config_arn was not specified but it is required when building CodeSigningConfig")
+                    )?
+                ,
+                description: self.description
+                ,
+                allowed_publishers: self.allowed_publishers
+                ,
+                code_signing_policies: self.code_signing_policies
+                ,
+                last_modified: self.last_modified
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified", "last_modified was not specified but it is required when building CodeSigningConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

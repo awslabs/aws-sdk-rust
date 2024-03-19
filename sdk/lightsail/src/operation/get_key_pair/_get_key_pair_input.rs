@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyPairInput {
+pub struct GetKeyPairInput  {
     /// <p>The name of the key pair for which you are requesting information.</p>
     pub key_pair_name: ::std::option::Option<::std::string::String>,
 }
-impl GetKeyPairInput {
+impl  GetKeyPairInput  {
     /// <p>The name of the key pair for which you are requesting information.</p>
-    pub fn key_pair_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair_name(&self) -> ::std::option::Option<& str> {
         self.key_pair_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetKeyPairInputBuilder {
     }
     /// <p>The name of the key pair for which you are requesting information.</p>
     pub fn set_key_pair_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair_name = input;
-        self
+        self.key_pair_name = input; self
     }
     /// <p>The name of the key pair for which you are requesting information.</p>
     pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetKeyPairInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetKeyPairInput`](crate::operation::get_key_pair::GetKeyPairInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_key_pair::GetKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_key_pair::GetKeyPairInput {
-            key_pair_name: self.key_pair_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_key_pair::GetKeyPairInput {
+                key_pair_name: self.key_pair_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a parameter used to set up an Amazon Elastic Block Store (Amazon EBS) volume in a block device mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsInstanceBlockDevice {
+pub struct EbsInstanceBlockDevice  {
     /// <p>When the attachment was initiated.</p>
     pub attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
@@ -13,9 +13,9 @@ pub struct EbsInstanceBlockDevice {
     /// <p>The ID of the Amazon EBS volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
 }
-impl EbsInstanceBlockDevice {
+impl  EbsInstanceBlockDevice  {
     /// <p>When the attachment was initiated.</p>
-    pub fn attach_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn attach_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
@@ -23,11 +23,11 @@ impl EbsInstanceBlockDevice {
         self.delete_on_termination
     }
     /// <p>The attachment state.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AttachmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AttachmentStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the Amazon EBS volume.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl EbsInstanceBlockDeviceBuilder {
     }
     /// <p>When the attachment was initiated.</p>
     pub fn set_attach_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.attach_time = input;
-        self
+        self.attach_time = input; self
     }
     /// <p>When the attachment was initiated.</p>
     pub fn get_attach_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,8 +68,7 @@ impl EbsInstanceBlockDeviceBuilder {
     }
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl EbsInstanceBlockDeviceBuilder {
     }
     /// <p>The attachment state.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The attachment state.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AttachmentStatus> {
@@ -97,8 +94,7 @@ impl EbsInstanceBlockDeviceBuilder {
     }
     /// <p>The ID of the Amazon EBS volume.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The ID of the Amazon EBS volume.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl EbsInstanceBlockDeviceBuilder {
     /// Consumes the builder and constructs a [`EbsInstanceBlockDevice`](crate::types::EbsInstanceBlockDevice).
     pub fn build(self) -> crate::types::EbsInstanceBlockDevice {
         crate::types::EbsInstanceBlockDevice {
-            attach_time: self.attach_time,
-            delete_on_termination: self.delete_on_termination,
-            status: self.status,
-            volume_id: self.volume_id,
+            attach_time: self.attach_time
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
+            status: self.status
+            ,
+            volume_id: self.volume_id
+            ,
         }
     }
 }
+

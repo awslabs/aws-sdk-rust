@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceNetworkVpcAssociationInput {
+pub struct UpdateServiceNetworkVpcAssociationInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateServiceNetworkVpcAssociationInput {
+impl  UpdateServiceNetworkVpcAssociationInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_vpc_association_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_network_vpc_association_identifier(&self) -> ::std::option::Option<& str> {
         self.service_network_vpc_association_identifier.as_deref()
     }
     /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateServiceNetworkVpcAssociationInput {
@@ -32,7 +33,7 @@ impl UpdateServiceNetworkVpcAssociationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationInputBuilder {
     pub(crate) service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
@@ -43,8 +44,7 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     pub fn set_service_network_vpc_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_network_vpc_association_identifier = input;
-        self
+        self.service_network_vpc_association_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     pub fn get_service_network_vpc_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +57,28 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
     /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkVpcAssociationInput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput {
-                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier,
-                security_group_ids: self.security_group_ids,
-            },
+                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+            }
         )
     }
 }
+

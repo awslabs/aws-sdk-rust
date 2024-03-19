@@ -3,13 +3,13 @@
 /// <p>The image configuration of a table field URL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableFieldImageConfiguration {
+pub struct TableFieldImageConfiguration  {
     /// <p>The sizing options for the table image configuration.</p>
     pub sizing_options: ::std::option::Option<crate::types::TableCellImageSizingConfiguration>,
 }
-impl TableFieldImageConfiguration {
+impl  TableFieldImageConfiguration  {
     /// <p>The sizing options for the table image configuration.</p>
-    pub fn sizing_options(&self) -> ::std::option::Option<&crate::types::TableCellImageSizingConfiguration> {
+    pub fn sizing_options(&self) -> ::std::option::Option<& crate::types::TableCellImageSizingConfiguration> {
         self.sizing_options.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TableFieldImageConfigurationBuilder {
     }
     /// <p>The sizing options for the table image configuration.</p>
     pub fn set_sizing_options(mut self, input: ::std::option::Option<crate::types::TableCellImageSizingConfiguration>) -> Self {
-        self.sizing_options = input;
-        self
+        self.sizing_options = input; self
     }
     /// <p>The sizing options for the table image configuration.</p>
     pub fn get_sizing_options(&self) -> &::std::option::Option<crate::types::TableCellImageSizingConfiguration> {
@@ -44,7 +43,9 @@ impl TableFieldImageConfigurationBuilder {
     /// Consumes the builder and constructs a [`TableFieldImageConfiguration`](crate::types::TableFieldImageConfiguration).
     pub fn build(self) -> crate::types::TableFieldImageConfiguration {
         crate::types::TableFieldImageConfiguration {
-            sizing_options: self.sizing_options,
+            sizing_options: self.sizing_options
+            ,
         }
     }
 }
+

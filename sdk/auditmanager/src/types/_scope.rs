@@ -3,27 +3,29 @@
 /// <p>The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Scope {
+pub struct Scope  {
     /// <p>The Amazon Web Services accounts that are included in the scope of the assessment.</p>
-    pub aws_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>,
+    pub aws_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::AwsAccount>>,
     /// <p>The Amazon Web Services services that are included in the scope of the assessment.</p>
-    pub aws_services: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>,
+    pub aws_services: ::std::option::Option<::std::vec::Vec::<crate::types::AwsService>>,
 }
-impl Scope {
+impl  Scope  {
     /// <p>The Amazon Web Services accounts that are included in the scope of the assessment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_accounts.is_none()`.
-    pub fn aws_accounts(&self) -> &[crate::types::AwsAccount] {
-        self.aws_accounts.as_deref().unwrap_or_default()
+    pub fn aws_accounts(&self) -> & [crate::types::AwsAccount] {
+        self.aws_accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services services that are included in the scope of the assessment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_services.is_none()`.
-    pub fn aws_services(&self) -> &[crate::types::AwsService] {
-        self.aws_services.as_deref().unwrap_or_default()
+    pub fn aws_services(&self) -> & [crate::types::AwsService] {
+        self.aws_services.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for Scope {
+impl  ::std::fmt::Debug for Scope  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Scope");
         formatter.field("aws_accounts", &"*** Sensitive Data Redacted ***");
@@ -42,8 +44,8 @@ impl Scope {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ScopeBuilder {
-    pub(crate) aws_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>,
-    pub(crate) aws_services: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>,
+    pub(crate) aws_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::AwsAccount>>,
+    pub(crate) aws_services: ::std::option::Option<::std::vec::Vec::<crate::types::AwsService>>,
 }
 impl ScopeBuilder {
     /// Appends an item to `aws_accounts`.
@@ -53,17 +55,16 @@ impl ScopeBuilder {
     /// <p>The Amazon Web Services accounts that are included in the scope of the assessment.</p>
     pub fn aws_accounts(mut self, input: crate::types::AwsAccount) -> Self {
         let mut v = self.aws_accounts.unwrap_or_default();
-        v.push(input);
-        self.aws_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aws_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services accounts that are included in the scope of the assessment.</p>
-    pub fn set_aws_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>) -> Self {
-        self.aws_accounts = input;
-        self
+    pub fn set_aws_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsAccount>>) -> Self {
+        self.aws_accounts = input; self
     }
     /// <p>The Amazon Web Services accounts that are included in the scope of the assessment.</p>
-    pub fn get_aws_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>> {
+    pub fn get_aws_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsAccount>> {
         &self.aws_accounts
     }
     /// Appends an item to `aws_services`.
@@ -73,24 +74,25 @@ impl ScopeBuilder {
     /// <p>The Amazon Web Services services that are included in the scope of the assessment.</p>
     pub fn aws_services(mut self, input: crate::types::AwsService) -> Self {
         let mut v = self.aws_services.unwrap_or_default();
-        v.push(input);
-        self.aws_services = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aws_services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services services that are included in the scope of the assessment.</p>
-    pub fn set_aws_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>) -> Self {
-        self.aws_services = input;
-        self
+    pub fn set_aws_services(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsService>>) -> Self {
+        self.aws_services = input; self
     }
     /// <p>The Amazon Web Services services that are included in the scope of the assessment.</p>
-    pub fn get_aws_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsService>> {
+    pub fn get_aws_services(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsService>> {
         &self.aws_services
     }
     /// Consumes the builder and constructs a [`Scope`](crate::types::Scope).
     pub fn build(self) -> crate::types::Scope {
         crate::types::Scope {
-            aws_accounts: self.aws_accounts,
-            aws_services: self.aws_services,
+            aws_accounts: self.aws_accounts
+            ,
+            aws_services: self.aws_services
+            ,
         }
     }
 }
@@ -102,3 +104,4 @@ impl ::std::fmt::Debug for ScopeBuilder {
         formatter.finish()
     }
 }
+

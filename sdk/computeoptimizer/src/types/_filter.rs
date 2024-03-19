@@ -4,7 +4,7 @@
 /// <p>You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, and <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification. For example, <code>Underprovisioned</code>.</p>
     /// <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For example, <code>Ec2Instance</code>.</p>
@@ -60,9 +60,9 @@ pub struct Filter {
     /// <p><b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk throughput performance.</p></li>
     /// </ul></li>
     /// </ul>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification. For example, <code>Underprovisioned</code>.</p>
     /// <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For example, <code>Ec2Instance</code>.</p>
@@ -71,7 +71,7 @@ impl Filter {
     /// <p>You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all of your recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::FilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::FilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
@@ -120,10 +120,11 @@ impl Filter {
     /// <p><b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk throughput performance.</p></li>
     /// </ul></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Filter {
@@ -138,7 +139,7 @@ impl Filter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FilterBuilder {
     /// <p>The name of the filter.</p>
@@ -162,8 +163,7 @@ impl FilterBuilder {
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all of your recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::FilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification. For example, <code>Underprovisioned</code>.</p>
@@ -228,9 +228,9 @@ impl FilterBuilder {
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter and the resource type that you wish to filter results for:</p>
@@ -278,9 +278,8 @@ impl FilterBuilder {
     /// <p><b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk throughput performance.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter and the resource type that you wish to filter results for:</p>
@@ -328,14 +327,17 @@ impl FilterBuilder {
     /// <p><b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk throughput performance.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

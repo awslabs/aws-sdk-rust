@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAddonVersionsOutput {
+pub struct DescribeAddonVersionsOutput  {
     /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
-    pub addons: ::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>>,
+    pub addons: ::std::option::Option<::std::vec::Vec::<crate::types::AddonInfo>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeAddonVersions</code> request. When the results of a <code>DescribeAddonVersions</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAddonVersionsOutput {
+impl  DescribeAddonVersionsOutput  {
     /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addons.is_none()`.
-    pub fn addons(&self) -> &[crate::types::AddonInfo] {
-        self.addons.as_deref().unwrap_or_default()
+    pub fn addons(&self) -> & [crate::types::AddonInfo] {
+        self.addons.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeAddonVersions</code> request. When the results of a <code>DescribeAddonVersions</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAddonVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAddonVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonVersionsOutput`](crate::operation::describe_addon_versions::DescribeAddonVersionsOutput).
     pub fn builder() -> crate::operation::describe_addon_versions::builders::DescribeAddonVersionsOutputBuilder {
@@ -41,7 +42,7 @@ impl DescribeAddonVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAddonVersionsOutputBuilder {
-    pub(crate) addons: ::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>>,
+    pub(crate) addons: ::std::option::Option<::std::vec::Vec::<crate::types::AddonInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl DescribeAddonVersionsOutputBuilder {
     /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
     pub fn addons(mut self, input: crate::types::AddonInfo) -> Self {
         let mut v = self.addons.unwrap_or_default();
-        v.push(input);
-        self.addons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.addons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
-    pub fn set_addons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>>) -> Self {
-        self.addons = input;
-        self
+    pub fn set_addons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddonInfo>>) -> Self {
+        self.addons = input; self
     }
     /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
-    pub fn get_addons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonInfo>> {
+    pub fn get_addons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddonInfo>> {
         &self.addons
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeAddonVersions</code> request. When the results of a <code>DescribeAddonVersions</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
@@ -77,8 +77,7 @@ impl DescribeAddonVersionsOutputBuilder {
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeAddonVersions</code> request. When the results of a <code>DescribeAddonVersions</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -87,20 +86,23 @@ impl DescribeAddonVersionsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAddonVersionsOutput`](crate::operation::describe_addon_versions::DescribeAddonVersionsOutput).
     pub fn build(self) -> crate::operation::describe_addon_versions::DescribeAddonVersionsOutput {
         crate::operation::describe_addon_versions::DescribeAddonVersionsOutput {
-            addons: self.addons,
-            next_token: self.next_token,
+            addons: self.addons
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

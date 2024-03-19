@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPackageInput {
+pub struct GetPackageInput  {
     /// <p>The name of the target software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
 }
-impl GetPackageInput {
+impl  GetPackageInput  {
     /// <p>The name of the target software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetPackageInputBuilder {
     }
     /// <p>The name of the target software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name of the target software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetPackageInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetPackageInput`](crate::operation::get_package::GetPackageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_package::GetPackageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_package::GetPackageInput {
-            package_name: self.package_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_package::GetPackageInput {
+                package_name: self.package_name
+                ,
+            }
+        )
     }
 }
+

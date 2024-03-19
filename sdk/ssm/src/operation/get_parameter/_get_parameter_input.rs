@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetParameterInput {
+pub struct GetParameterInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the parameter that you want to query. For parameters shared with you from another account, you must use the full ARN.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     /// <p>For more information about shared parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -10,11 +10,11 @@ pub struct GetParameterInput {
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub with_decryption: ::std::option::Option<bool>,
 }
-impl GetParameterInput {
+impl  GetParameterInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the parameter that you want to query. For parameters shared with you from another account, you must use the full ARN.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     /// <p>For more information about shared parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
@@ -49,8 +49,7 @@ impl GetParameterInputBuilder {
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
     /// <p>For more information about shared parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the parameter that you want to query. For parameters shared with you from another account, you must use the full ARN.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
@@ -65,20 +64,22 @@ impl GetParameterInputBuilder {
     }
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn set_with_decryption(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.with_decryption = input;
-        self
+        self.with_decryption = input; self
     }
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub fn get_with_decryption(&self) -> &::std::option::Option<bool> {
         &self.with_decryption
     }
     /// Consumes the builder and constructs a [`GetParameterInput`](crate::operation::get_parameter::GetParameterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_parameter::GetParameterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_parameter::GetParameterInput {
-            name: self.name,
-            with_decryption: self.with_decryption,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_parameter::GetParameterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_parameter::GetParameterInput {
+                name: self.name
+                ,
+                with_decryption: self.with_decryption
+                ,
+            }
+        )
     }
 }
+

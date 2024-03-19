@@ -3,13 +3,13 @@
 /// <p>The configuration information for the Wisdom assistant integration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssistantIntegrationConfiguration {
+pub struct AssistantIntegrationConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>
     pub topic_integration_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssistantIntegrationConfiguration {
+impl  AssistantIntegrationConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>
-    pub fn topic_integration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_integration_arn(&self) -> ::std::option::Option<& str> {
         self.topic_integration_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AssistantIntegrationConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>
     pub fn set_topic_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_integration_arn = input;
-        self
+        self.topic_integration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>
     pub fn get_topic_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AssistantIntegrationConfigurationBuilder {
     /// Consumes the builder and constructs a [`AssistantIntegrationConfiguration`](crate::types::AssistantIntegrationConfiguration).
     pub fn build(self) -> crate::types::AssistantIntegrationConfiguration {
         crate::types::AssistantIntegrationConfiguration {
-            topic_integration_arn: self.topic_integration_arn,
+            topic_integration_arn: self.topic_integration_arn
+            ,
         }
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccountConfigurationInput {}
+pub struct GetAccountConfigurationInput  {
+}
 impl GetAccountConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAccountConfigurationInput`](crate::operation::get_account_configuration::GetAccountConfigurationInput).
     pub fn builder() -> crate::operation::get_account_configuration::builders::GetAccountConfigurationInputBuilder {
@@ -13,15 +14,15 @@ impl GetAccountConfigurationInput {
 /// A builder for [`GetAccountConfigurationInput`](crate::operation::get_account_configuration::GetAccountConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetAccountConfigurationInputBuilder {}
+pub struct GetAccountConfigurationInputBuilder {
+}
 impl GetAccountConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountConfigurationInput`](crate::operation::get_account_configuration::GetAccountConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_account_configuration::GetAccountConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_account_configuration::GetAccountConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_account_configuration::GetAccountConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_account_configuration::GetAccountConfigurationInput {
+            }
+        )
     }
 }
+

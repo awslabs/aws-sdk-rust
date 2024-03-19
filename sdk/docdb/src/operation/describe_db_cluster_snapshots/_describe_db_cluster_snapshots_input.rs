@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>DescribeDBClusterSnapshots</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbClusterSnapshotsInput {
+pub struct DescribeDbClusterSnapshotsInput  {
     /// <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -35,7 +35,7 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is not currently supported.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -47,14 +47,14 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub include_public: ::std::option::Option<bool>,
 }
-impl DescribeDbClusterSnapshotsInput {
+impl  DescribeDbClusterSnapshotsInput  {
     /// <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A specific cluster snapshot identifier to describe. This parameter can't be used with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
@@ -65,7 +65,7 @@ impl DescribeDbClusterSnapshotsInput {
     /// <li>
     /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
-    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
@@ -81,14 +81,15 @@ impl DescribeDbClusterSnapshotsInput {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn snapshot_type(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_type(&self) -> ::std::option::Option<& str> {
         self.snapshot_type.as_deref()
     }
     /// <p>This parameter is not currently supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -97,7 +98,7 @@ impl DescribeDbClusterSnapshotsInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
@@ -123,7 +124,7 @@ pub struct DescribeDbClusterSnapshotsInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_type: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) include_shared: ::std::option::Option<bool>,
@@ -147,8 +148,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
@@ -180,8 +180,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_snapshot_identifier = input;
-        self
+        self.db_cluster_snapshot_identifier = input; self
     }
     /// <p>A specific cluster snapshot identifier to describe. This parameter can't be used with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -225,8 +224,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
     pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_type = input;
-        self
+        self.snapshot_type = input; self
     }
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
@@ -251,17 +249,16 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>This parameter is not currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
@@ -275,8 +272,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -291,8 +287,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,8 +300,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     }
     /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_shared = input;
-        self
+        self.include_shared = input; self
     }
     /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
@@ -319,29 +313,34 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     }
     /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub fn set_include_public(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_public = input;
-        self
+        self.include_public = input; self
     }
     /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub fn get_include_public(&self) -> &::std::option::Option<bool> {
         &self.include_public
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsInput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput {
-            db_cluster_identifier: self.db_cluster_identifier,
-            db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
-            snapshot_type: self.snapshot_type,
-            filters: self.filters,
-            max_records: self.max_records,
-            marker: self.marker,
-            include_shared: self.include_shared,
-            include_public: self.include_public,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput {
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier
+                ,
+                snapshot_type: self.snapshot_type
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                include_shared: self.include_shared
+                ,
+                include_public: self.include_public
+                ,
+            }
+        )
     }
 }
+

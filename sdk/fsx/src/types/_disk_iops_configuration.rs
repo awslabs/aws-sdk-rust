@@ -3,7 +3,7 @@
 /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiskIopsConfiguration {
+pub struct DiskIopsConfiguration  {
     /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub mode: ::std::option::Option<crate::types::DiskIopsConfigurationMode>,
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
@@ -11,9 +11,9 @@ pub struct DiskIopsConfiguration {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of the minimum or maximum values.</p>
     pub iops: ::std::option::Option<i64>,
 }
-impl DiskIopsConfiguration {
+impl  DiskIopsConfiguration  {
     /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::DiskIopsConfigurationMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::DiskIopsConfigurationMode> {
         self.mode.as_ref()
     }
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
@@ -45,8 +45,7 @@ impl DiskIopsConfigurationBuilder {
     }
     /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DiskIopsConfigurationMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::DiskIopsConfigurationMode> {
@@ -63,8 +62,7 @@ impl DiskIopsConfigurationBuilder {
     /// <p>The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000 * <code>HAPairs</code>.</p>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of the minimum or maximum values.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
     /// <p>The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000 * <code>HAPairs</code>.</p>
@@ -75,8 +73,11 @@ impl DiskIopsConfigurationBuilder {
     /// Consumes the builder and constructs a [`DiskIopsConfiguration`](crate::types::DiskIopsConfiguration).
     pub fn build(self) -> crate::types::DiskIopsConfiguration {
         crate::types::DiskIopsConfiguration {
-            mode: self.mode,
-            iops: self.iops,
+            mode: self.mode
+            ,
+            iops: self.iops
+            ,
         }
     }
 }
+

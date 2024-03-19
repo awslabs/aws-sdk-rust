@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAppVersionResourceOutput {
+pub struct UpdateAppVersionResourceOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::string::String,
     /// <p>Resilience Hub application version.</p>
@@ -11,27 +11,25 @@ pub struct UpdateAppVersionResourceOutput {
     pub physical_resource: ::std::option::Option<crate::types::PhysicalResource>,
     _request_id: Option<String>,
 }
-impl UpdateAppVersionResourceOutput {
+impl  UpdateAppVersionResourceOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> & str {
+        use std::ops::Deref; self.app_arn.deref()
     }
     /// <p>Resilience Hub application version.</p>
-    pub fn app_version(&self) -> &str {
-        use std::ops::Deref;
-        self.app_version.deref()
+    pub fn app_version(&self) -> & str {
+        use std::ops::Deref; self.app_version.deref()
     }
     /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.</p>
-    pub fn physical_resource(&self) -> ::std::option::Option<&crate::types::PhysicalResource> {
+    pub fn physical_resource(&self) -> ::std::option::Option<& crate::types::PhysicalResource> {
         self.physical_resource.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAppVersionResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAppVersionResourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppVersionResourceOutput`](crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput).
     pub fn builder() -> crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceOutputBuilder {
@@ -57,8 +55,7 @@ impl UpdateAppVersionResourceOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl UpdateAppVersionResourceOutputBuilder {
     }
     /// <p>Resilience Hub application version.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>Resilience Hub application version.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,47 +82,43 @@ impl UpdateAppVersionResourceOutputBuilder {
     }
     /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.</p>
     pub fn set_physical_resource(mut self, input: ::std::option::Option<crate::types::PhysicalResource>) -> Self {
-        self.physical_resource = input;
-        self
+        self.physical_resource = input; self
     }
     /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.</p>
     pub fn get_physical_resource(&self) -> &::std::option::Option<crate::types::PhysicalResource> {
         &self.physical_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAppVersionResourceOutput`](crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_arn`](crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceOutputBuilder::app_arn)
     /// - [`app_version`](crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceOutputBuilder::app_version)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building UpdateAppVersionResourceOutput",
-                )
-            })?,
-            app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_version",
-                    "app_version was not specified but it is required when building UpdateAppVersionResourceOutput",
-                )
-            })?,
-            physical_resource: self.physical_resource,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput {
+                app_arn: self.app_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_arn", "app_arn was not specified but it is required when building UpdateAppVersionResourceOutput")
+                    )?
+                ,
+                app_version: self.app_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_version", "app_version was not specified but it is required when building UpdateAppVersionResourceOutput")
+                    )?
+                ,
+                physical_resource: self.physical_resource
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

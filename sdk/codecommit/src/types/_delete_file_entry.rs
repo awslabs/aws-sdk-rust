@@ -3,15 +3,14 @@
 /// <p>A file that is deleted as part of a commit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFileEntry {
+pub struct DeleteFileEntry  {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     pub file_path: ::std::string::String,
 }
-impl DeleteFileEntry {
+impl  DeleteFileEntry  {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    pub fn file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.file_path.deref()
+    pub fn file_path(&self) -> & str {
+        use std::ops::Deref; self.file_path.deref()
     }
 }
 impl DeleteFileEntry {
@@ -36,8 +35,7 @@ impl DeleteFileEntryBuilder {
     }
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DeleteFileEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_path`](crate::types::builders::DeleteFileEntryBuilder::file_path)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteFileEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteFileEntry {
-            file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_path",
-                    "file_path was not specified but it is required when building DeleteFileEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteFileEntry {
+                file_path: self.file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_path", "file_path was not specified but it is required when building DeleteFileEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

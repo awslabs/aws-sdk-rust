@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePresignedNotebookUrlInput {
+pub struct CreatePresignedNotebookUrlInput  {
     /// <p>The session ID.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
 }
-impl CreatePresignedNotebookUrlInput {
+impl  CreatePresignedNotebookUrlInput  {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl CreatePresignedNotebookUrlInputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The session ID.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookUrlInput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput { session_id: self.session_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput {
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWebAclOutput {
+pub struct GetWebAclOutput  {
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct GetWebAclOutput {
     pub web_acl: ::std::option::Option<crate::types::WebAcl>,
     _request_id: Option<String>,
 }
-impl GetWebAclOutput {
+impl  GetWebAclOutput  {
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
     /// <li>
@@ -29,15 +29,15 @@ impl GetWebAclOutput {
     /// <li>
     /// <p><code>Action</code>: Contains <code>Type</code></p></li>
     /// </ul>
-    pub fn web_acl(&self) -> ::std::option::Option<&crate::types::WebAcl> {
+    pub fn web_acl(&self) -> ::std::option::Option<& crate::types::WebAcl> {
         self.web_acl.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWebAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWebAclOutput {
     /// Creates a new builder-style object to manufacture [`GetWebAclOutput`](crate::operation::get_web_acl::GetWebAclOutput).
     pub fn builder() -> crate::operation::get_web_acl::builders::GetWebAclOutputBuilder {
@@ -80,8 +80,7 @@ impl GetWebAclOutputBuilder {
     /// <p><code>Action</code>: Contains <code>Type</code></p></li>
     /// </ul>
     pub fn set_web_acl(mut self, input: ::std::option::Option<crate::types::WebAcl>) -> Self {
-        self.web_acl = input;
-        self
+        self.web_acl = input; self
     }
     /// <p>Information about the <code>WebACL</code> that you specified in the <code>GetWebACL</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -98,19 +97,21 @@ impl GetWebAclOutputBuilder {
         &self.web_acl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWebAclOutput`](crate::operation::get_web_acl::GetWebAclOutput).
     pub fn build(self) -> crate::operation::get_web_acl::GetWebAclOutput {
         crate::operation::get_web_acl::GetWebAclOutput {
-            web_acl: self.web_acl,
+            web_acl: self.web_acl
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectToxicContentOutput {
+pub struct DetectToxicContentOutput  {
     /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
-    pub result_list: ::std::option::Option<::std::vec::Vec<crate::types::ToxicLabels>>,
+    pub result_list: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicLabels>>,
     _request_id: Option<String>,
 }
-impl DetectToxicContentOutput {
+impl  DetectToxicContentOutput  {
     /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_list.is_none()`.
-    pub fn result_list(&self) -> &[crate::types::ToxicLabels] {
-        self.result_list.as_deref().unwrap_or_default()
+    pub fn result_list(&self) -> & [crate::types::ToxicLabels] {
+        self.result_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectToxicContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectToxicContentOutput {
     /// Creates a new builder-style object to manufacture [`DetectToxicContentOutput`](crate::operation::detect_toxic_content::DetectToxicContentOutput).
     pub fn builder() -> crate::operation::detect_toxic_content::builders::DetectToxicContentOutputBuilder {
@@ -31,7 +32,7 @@ impl DetectToxicContentOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectToxicContentOutputBuilder {
-    pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::ToxicLabels>>,
+    pub(crate) result_list: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicLabels>>,
     _request_id: Option<String>,
 }
 impl DetectToxicContentOutputBuilder {
@@ -42,33 +43,34 @@ impl DetectToxicContentOutputBuilder {
     /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
     pub fn result_list(mut self, input: crate::types::ToxicLabels) -> Self {
         let mut v = self.result_list.unwrap_or_default();
-        v.push(input);
-        self.result_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.result_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
-    pub fn set_result_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ToxicLabels>>) -> Self {
-        self.result_list = input;
-        self
+    pub fn set_result_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ToxicLabels>>) -> Self {
+        self.result_list = input; self
     }
     /// <p>Results of the content moderation analysis. Each entry in the results list contains a list of toxic content types identified in the text, along with a confidence score for each content type. The results list also includes a toxicity score for each entry in the results list.</p>
-    pub fn get_result_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicLabels>> {
+    pub fn get_result_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ToxicLabels>> {
         &self.result_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectToxicContentOutput`](crate::operation::detect_toxic_content::DetectToxicContentOutput).
     pub fn build(self) -> crate::operation::detect_toxic_content::DetectToxicContentOutput {
         crate::operation::detect_toxic_content::DetectToxicContentOutput {
-            result_list: self.result_list,
+            result_list: self.result_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

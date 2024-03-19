@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateTransitGatewayConnectPeerInput {
+pub struct DisassociateTransitGatewayConnectPeerInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub transit_gateway_connect_peer_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateTransitGatewayConnectPeerInput {
+impl  DisassociateTransitGatewayConnectPeerInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
-    pub fn transit_gateway_connect_peer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_connect_peer_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_connect_peer_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateTransitGatewayConnectPeerInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DisassociateTransitGatewayConnectPeerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub fn set_transit_gateway_connect_peer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_connect_peer_arn = input;
-        self
+        self.transit_gateway_connect_peer_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
     pub fn get_transit_gateway_connect_peer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_connect_peer_arn
     }
     /// Consumes the builder and constructs a [`DisassociateTransitGatewayConnectPeerInput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput {
-                global_network_id: self.global_network_id,
-                transit_gateway_connect_peer_arn: self.transit_gateway_connect_peer_arn,
-            },
+                global_network_id: self.global_network_id
+                ,
+                transit_gateway_connect_peer_arn: self.transit_gateway_connect_peer_arn
+                ,
+            }
         )
     }
 }
+

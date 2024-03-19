@@ -3,7 +3,8 @@
 /// <p>Contains the inputs for the <code>ListAvailableZones</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAvailableZonesInput {}
+pub struct ListAvailableZonesInput  {
+}
 impl ListAvailableZonesInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).
     pub fn builder() -> crate::operation::list_available_zones::builders::ListAvailableZonesInputBuilder {
@@ -14,13 +15,15 @@ impl ListAvailableZonesInput {
 /// A builder for [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ListAvailableZonesInputBuilder {}
+pub struct ListAvailableZonesInputBuilder {
+}
 impl ListAvailableZonesInputBuilder {
     /// Consumes the builder and constructs a [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_available_zones::ListAvailableZonesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_available_zones::ListAvailableZonesInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_available_zones::ListAvailableZonesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_available_zones::ListAvailableZonesInput {
+            }
+        )
     }
 }
+

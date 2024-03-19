@@ -3,24 +3,25 @@
 /// <p>Contains the output of DescribeCustomerGateways.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCustomerGatewaysOutput {
+pub struct DescribeCustomerGatewaysOutput  {
     /// <p>Information about one or more customer gateways.</p>
-    pub customer_gateways: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
+    pub customer_gateways: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerGateway>>,
     _request_id: Option<String>,
 }
-impl DescribeCustomerGatewaysOutput {
+impl  DescribeCustomerGatewaysOutput  {
     /// <p>Information about one or more customer gateways.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customer_gateways.is_none()`.
-    pub fn customer_gateways(&self) -> &[crate::types::CustomerGateway] {
-        self.customer_gateways.as_deref().unwrap_or_default()
+    pub fn customer_gateways(&self) -> & [crate::types::CustomerGateway] {
+        self.customer_gateways.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCustomerGatewaysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCustomerGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerGatewaysOutput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput).
     pub fn builder() -> crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeCustomerGatewaysOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomerGatewaysOutputBuilder {
-    pub(crate) customer_gateways: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
+    pub(crate) customer_gateways: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerGateway>>,
     _request_id: Option<String>,
 }
 impl DescribeCustomerGatewaysOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeCustomerGatewaysOutputBuilder {
     /// <p>Information about one or more customer gateways.</p>
     pub fn customer_gateways(mut self, input: crate::types::CustomerGateway) -> Self {
         let mut v = self.customer_gateways.unwrap_or_default();
-        v.push(input);
-        self.customer_gateways = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.customer_gateways = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about one or more customer gateways.</p>
-    pub fn set_customer_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>) -> Self {
-        self.customer_gateways = input;
-        self
+    pub fn set_customer_gateways(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomerGateway>>) -> Self {
+        self.customer_gateways = input; self
     }
     /// <p>Information about one or more customer gateways.</p>
-    pub fn get_customer_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>> {
+    pub fn get_customer_gateways(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomerGateway>> {
         &self.customer_gateways
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCustomerGatewaysOutput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput).
     pub fn build(self) -> crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput {
         crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput {
-            customer_gateways: self.customer_gateways,
+            customer_gateways: self.customer_gateways
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

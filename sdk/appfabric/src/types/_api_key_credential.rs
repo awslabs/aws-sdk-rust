@@ -3,18 +3,17 @@
 /// <p>Contains API key credential information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ApiKeyCredential {
+pub struct ApiKeyCredential  {
     /// <p>An API key for an application.</p>
     pub api_key: ::std::string::String,
 }
-impl ApiKeyCredential {
+impl  ApiKeyCredential  {
     /// <p>An API key for an application.</p>
-    pub fn api_key(&self) -> &str {
-        use std::ops::Deref;
-        self.api_key.deref()
+    pub fn api_key(&self) -> & str {
+        use std::ops::Deref; self.api_key.deref()
     }
 }
-impl ::std::fmt::Debug for ApiKeyCredential {
+impl  ::std::fmt::Debug for ApiKeyCredential  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ApiKeyCredential");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl ApiKeyCredentialBuilder {
     }
     /// <p>An API key for an application.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p>An API key for an application.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl ApiKeyCredentialBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`api_key`](crate::types::builders::ApiKeyCredentialBuilder::api_key)
     pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyCredential, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApiKeyCredential {
-            api_key: self.api_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "api_key",
-                    "api_key was not specified but it is required when building ApiKeyCredential",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApiKeyCredential {
+                api_key: self.api_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_key", "api_key was not specified but it is required when building ApiKeyCredential")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ApiKeyCredentialBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for ApiKeyCredentialBuilder {
         formatter.finish()
     }
 }
+

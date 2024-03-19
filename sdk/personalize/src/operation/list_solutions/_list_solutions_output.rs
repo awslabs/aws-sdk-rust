@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSolutionsOutput {
+pub struct ListSolutionsOutput  {
     /// <p>A list of the current solutions.</p>
-    pub solutions: ::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>>,
+    pub solutions: ::std::option::Option<::std::vec::Vec::<crate::types::SolutionSummary>>,
     /// <p>A token for getting the next set of solutions (if they exist).</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSolutionsOutput {
+impl  ListSolutionsOutput  {
     /// <p>A list of the current solutions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solutions.is_none()`.
-    pub fn solutions(&self) -> &[crate::types::SolutionSummary] {
-        self.solutions.as_deref().unwrap_or_default()
+    pub fn solutions(&self) -> & [crate::types::SolutionSummary] {
+        self.solutions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token for getting the next set of solutions (if they exist).</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSolutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSolutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSolutionsOutput`](crate::operation::list_solutions::ListSolutionsOutput).
     pub fn builder() -> crate::operation::list_solutions::builders::ListSolutionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSolutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolutionsOutputBuilder {
-    pub(crate) solutions: ::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>>,
+    pub(crate) solutions: ::std::option::Option<::std::vec::Vec::<crate::types::SolutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListSolutionsOutputBuilder {
     /// <p>A list of the current solutions.</p>
     pub fn solutions(mut self, input: crate::types::SolutionSummary) -> Self {
         let mut v = self.solutions.unwrap_or_default();
-        v.push(input);
-        self.solutions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.solutions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the current solutions.</p>
-    pub fn set_solutions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>>) -> Self {
-        self.solutions = input;
-        self
+    pub fn set_solutions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SolutionSummary>>) -> Self {
+        self.solutions = input; self
     }
     /// <p>A list of the current solutions.</p>
-    pub fn get_solutions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>> {
+    pub fn get_solutions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SolutionSummary>> {
         &self.solutions
     }
     /// <p>A token for getting the next set of solutions (if they exist).</p>
@@ -69,28 +69,30 @@ impl ListSolutionsOutputBuilder {
     }
     /// <p>A token for getting the next set of solutions (if they exist).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token for getting the next set of solutions (if they exist).</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSolutionsOutput`](crate::operation::list_solutions::ListSolutionsOutput).
     pub fn build(self) -> crate::operation::list_solutions::ListSolutionsOutput {
         crate::operation::list_solutions::ListSolutionsOutput {
-            solutions: self.solutions,
-            next_token: self.next_token,
+            solutions: self.solutions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

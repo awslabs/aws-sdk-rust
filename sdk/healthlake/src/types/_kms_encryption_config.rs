@@ -3,19 +3,19 @@
 /// <p>The customer-managed-key(CMK) used when creating a data store. If a customer owned key is not specified, an AWS owned key will be used for encryption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KmsEncryptionConfig {
+pub struct KmsEncryptionConfig  {
     /// <p>The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs.</p>
     pub cmk_type: crate::types::CmkType,
     /// <p>The KMS encryption key id/alias used to encrypt the data store contents at rest.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl KmsEncryptionConfig {
+impl  KmsEncryptionConfig  {
     /// <p>The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs.</p>
-    pub fn cmk_type(&self) -> &crate::types::CmkType {
+    pub fn cmk_type(&self) -> & crate::types::CmkType {
         &self.cmk_type
     }
     /// <p>The KMS encryption key id/alias used to encrypt the data store contents at rest.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl KmsEncryptionConfigBuilder {
     }
     /// <p>The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs.</p>
     pub fn set_cmk_type(mut self, input: ::std::option::Option<crate::types::CmkType>) -> Self {
-        self.cmk_type = input;
-        self
+        self.cmk_type = input; self
     }
     /// <p>The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs.</p>
     pub fn get_cmk_type(&self) -> &::std::option::Option<crate::types::CmkType> {
@@ -56,8 +55,7 @@ impl KmsEncryptionConfigBuilder {
     }
     /// <p>The KMS encryption key id/alias used to encrypt the data store contents at rest.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS encryption key id/alias used to encrypt the data store contents at rest.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl KmsEncryptionConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cmk_type`](crate::types::builders::KmsEncryptionConfigBuilder::cmk_type)
     pub fn build(self) -> ::std::result::Result<crate::types::KmsEncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KmsEncryptionConfig {
-            cmk_type: self.cmk_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cmk_type",
-                    "cmk_type was not specified but it is required when building KmsEncryptionConfig",
-                )
-            })?,
-            kms_key_id: self.kms_key_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KmsEncryptionConfig {
+                cmk_type: self.cmk_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cmk_type", "cmk_type was not specified but it is required when building KmsEncryptionConfig")
+                    )?
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
+        )
     }
 }
+

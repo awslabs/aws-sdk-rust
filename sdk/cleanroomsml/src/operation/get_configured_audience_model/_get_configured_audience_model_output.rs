@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfiguredAudienceModelOutput {
+pub struct GetConfiguredAudienceModelOutput  {
     /// <p>The time at which the configured audience model was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the configured audience model was updated.</p>
@@ -20,80 +20,76 @@ pub struct GetConfiguredAudienceModelOutput {
     /// <p>The status of the configured audience model.</p>
     pub status: crate::types::ConfiguredAudienceModelStatus,
     /// <p>Whether audience metrics are shared.</p>
-    pub shared_audience_metrics: ::std::vec::Vec<crate::types::SharedAudienceMetrics>,
+    pub shared_audience_metrics: ::std::vec::Vec::<crate::types::SharedAudienceMetrics>,
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub min_matching_seed_size: ::std::option::Option<i32>,
     /// <p>The list of output sizes of audiences that can be created using this configured audience model. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
     pub audience_size_config: ::std::option::Option<crate::types::AudienceSizeConfig>,
     /// <p>The tags that are associated to this configured audience model.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Provides the <code>childResourceTagOnCreatePolicy</code> that was used for this configured audience model.</p>
     pub child_resource_tag_on_create_policy: ::std::option::Option<crate::types::TagOnCreatePolicy>,
     _request_id: Option<String>,
 }
-impl GetConfiguredAudienceModelOutput {
+impl  GetConfiguredAudienceModelOutput  {
     /// <p>The time at which the configured audience model was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the configured audience model was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model.</p>
-    pub fn configured_audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_arn.deref()
+    pub fn configured_audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_arn.deref()
     }
     /// <p>The name of the configured audience model.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model used for this configured audience model.</p>
-    pub fn audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.audience_model_arn.deref()
+    pub fn audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.audience_model_arn.deref()
     }
     /// <p>The output configuration of the configured audience model</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::ConfiguredAudienceModelOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::ConfiguredAudienceModelOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The description of the configured audience model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the configured audience model.</p>
-    pub fn status(&self) -> &crate::types::ConfiguredAudienceModelStatus {
+    pub fn status(&self) -> & crate::types::ConfiguredAudienceModelStatus {
         &self.status
     }
     /// <p>Whether audience metrics are shared.</p>
-    pub fn shared_audience_metrics(&self) -> &[crate::types::SharedAudienceMetrics] {
-        use std::ops::Deref;
-        self.shared_audience_metrics.deref()
+    pub fn shared_audience_metrics(&self) -> & [crate::types::SharedAudienceMetrics] {
+        use std::ops::Deref; self.shared_audience_metrics.deref()
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn min_matching_seed_size(&self) -> ::std::option::Option<i32> {
         self.min_matching_seed_size
     }
     /// <p>The list of output sizes of audiences that can be created using this configured audience model. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
-    pub fn audience_size_config(&self) -> ::std::option::Option<&crate::types::AudienceSizeConfig> {
+    pub fn audience_size_config(&self) -> ::std::option::Option<& crate::types::AudienceSizeConfig> {
         self.audience_size_config.as_ref()
     }
     /// <p>The tags that are associated to this configured audience model.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Provides the <code>childResourceTagOnCreatePolicy</code> that was used for this configured audience model.</p>
-    pub fn child_resource_tag_on_create_policy(&self) -> ::std::option::Option<&crate::types::TagOnCreatePolicy> {
+    pub fn child_resource_tag_on_create_policy(&self) -> ::std::option::Option<& crate::types::TagOnCreatePolicy> {
         self.child_resource_tag_on_create_policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConfiguredAudienceModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetConfiguredAudienceModelOutput {
     /// Creates a new builder-style object to manufacture [`GetConfiguredAudienceModelOutput`](crate::operation::get_configured_audience_model::GetConfiguredAudienceModelOutput).
     pub fn builder() -> crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder {
@@ -113,10 +109,10 @@ pub struct GetConfiguredAudienceModelOutputBuilder {
     pub(crate) output_config: ::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ConfiguredAudienceModelStatus>,
-    pub(crate) shared_audience_metrics: ::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>>,
+    pub(crate) shared_audience_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>>,
     pub(crate) min_matching_seed_size: ::std::option::Option<i32>,
     pub(crate) audience_size_config: ::std::option::Option<crate::types::AudienceSizeConfig>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) child_resource_tag_on_create_policy: ::std::option::Option<crate::types::TagOnCreatePolicy>,
     _request_id: Option<String>,
 }
@@ -129,8 +125,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The time at which the configured audience model was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the configured audience model was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -144,8 +139,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The most recent time at which the configured audience model was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the configured audience model was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +153,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +167,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The name of the configured audience model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configured audience model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +181,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model used for this configured audience model.</p>
     pub fn set_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_model_arn = input;
-        self
+        self.audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model used for this configured audience model.</p>
     pub fn get_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +195,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The output configuration of the configured audience model</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>The output configuration of the configured audience model</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ConfiguredAudienceModelOutputConfig> {
@@ -218,8 +208,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The description of the configured audience model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configured audience model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +222,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The status of the configured audience model.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConfiguredAudienceModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the configured audience model.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ConfiguredAudienceModelStatus> {
@@ -247,17 +235,16 @@ impl GetConfiguredAudienceModelOutputBuilder {
     /// <p>Whether audience metrics are shared.</p>
     pub fn shared_audience_metrics(mut self, input: crate::types::SharedAudienceMetrics) -> Self {
         let mut v = self.shared_audience_metrics.unwrap_or_default();
-        v.push(input);
-        self.shared_audience_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shared_audience_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Whether audience metrics are shared.</p>
-    pub fn set_shared_audience_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>>) -> Self {
-        self.shared_audience_metrics = input;
-        self
+    pub fn set_shared_audience_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>>) -> Self {
+        self.shared_audience_metrics = input; self
     }
     /// <p>Whether audience metrics are shared.</p>
-    pub fn get_shared_audience_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>> {
+    pub fn get_shared_audience_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SharedAudienceMetrics>> {
         &self.shared_audience_metrics
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
@@ -267,8 +254,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn set_min_matching_seed_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_matching_seed_size = input;
-        self
+        self.min_matching_seed_size = input; self
     }
     /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
     pub fn get_min_matching_seed_size(&self) -> &::std::option::Option<i32> {
@@ -281,8 +267,7 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The list of output sizes of audiences that can be created using this configured audience model. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
     pub fn set_audience_size_config(mut self, input: ::std::option::Option<crate::types::AudienceSizeConfig>) -> Self {
-        self.audience_size_config = input;
-        self
+        self.audience_size_config = input; self
     }
     /// <p>The list of output sizes of audiences that can be created using this configured audience model. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
     pub fn get_audience_size_config(&self) -> &::std::option::Option<crate::types::AudienceSizeConfig> {
@@ -295,17 +280,16 @@ impl GetConfiguredAudienceModelOutputBuilder {
     /// <p>The tags that are associated to this configured audience model.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that are associated to this configured audience model.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that are associated to this configured audience model.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Provides the <code>childResourceTagOnCreatePolicy</code> that was used for this configured audience model.</p>
@@ -315,22 +299,21 @@ impl GetConfiguredAudienceModelOutputBuilder {
     }
     /// <p>Provides the <code>childResourceTagOnCreatePolicy</code> that was used for this configured audience model.</p>
     pub fn set_child_resource_tag_on_create_policy(mut self, input: ::std::option::Option<crate::types::TagOnCreatePolicy>) -> Self {
-        self.child_resource_tag_on_create_policy = input;
-        self
+        self.child_resource_tag_on_create_policy = input; self
     }
     /// <p>Provides the <code>childResourceTagOnCreatePolicy</code> that was used for this configured audience model.</p>
     pub fn get_child_resource_tag_on_create_policy(&self) -> &::std::option::Option<crate::types::TagOnCreatePolicy> {
         &self.child_resource_tag_on_create_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetConfiguredAudienceModelOutput`](crate::operation::get_configured_audience_model::GetConfiguredAudienceModelOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`create_time`](crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder::create_time)
@@ -340,62 +323,59 @@ impl GetConfiguredAudienceModelOutputBuilder {
     /// - [`audience_model_arn`](crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder::audience_model_arn)
     /// - [`status`](crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder::status)
     /// - [`shared_audience_metrics`](crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder::shared_audience_metrics)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configured_audience_model::GetConfiguredAudienceModelOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_configured_audience_model::GetConfiguredAudienceModelOutput {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building GetConfiguredAudienceModelOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building GetConfiguredAudienceModelOutput",
-                )
-            })?,
-            configured_audience_model_arn: self.configured_audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_audience_model_arn",
-                    "configured_audience_model_arn was not specified but it is required when building GetConfiguredAudienceModelOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetConfiguredAudienceModelOutput",
-                )
-            })?,
-            audience_model_arn: self.audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_model_arn",
-                    "audience_model_arn was not specified but it is required when building GetConfiguredAudienceModelOutput",
-                )
-            })?,
-            output_config: self.output_config,
-            description: self.description,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetConfiguredAudienceModelOutput",
-                )
-            })?,
-            shared_audience_metrics: self.shared_audience_metrics.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "shared_audience_metrics",
-                    "shared_audience_metrics was not specified but it is required when building GetConfiguredAudienceModelOutput",
-                )
-            })?,
-            min_matching_seed_size: self.min_matching_seed_size,
-            audience_size_config: self.audience_size_config,
-            tags: self.tags,
-            child_resource_tag_on_create_policy: self.child_resource_tag_on_create_policy,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_configured_audience_model::GetConfiguredAudienceModelOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_configured_audience_model::GetConfiguredAudienceModelOutput {
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building GetConfiguredAudienceModelOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building GetConfiguredAudienceModelOutput")
+                    )?
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_arn", "configured_audience_model_arn was not specified but it is required when building GetConfiguredAudienceModelOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetConfiguredAudienceModelOutput")
+                    )?
+                ,
+                audience_model_arn: self.audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_model_arn", "audience_model_arn was not specified but it is required when building GetConfiguredAudienceModelOutput")
+                    )?
+                ,
+                output_config: self.output_config
+                ,
+                description: self.description
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetConfiguredAudienceModelOutput")
+                    )?
+                ,
+                shared_audience_metrics: self.shared_audience_metrics
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("shared_audience_metrics", "shared_audience_metrics was not specified but it is required when building GetConfiguredAudienceModelOutput")
+                    )?
+                ,
+                min_matching_seed_size: self.min_matching_seed_size
+                ,
+                audience_size_config: self.audience_size_config
+                ,
+                tags: self.tags
+                ,
+                child_resource_tag_on_create_policy: self.child_resource_tag_on_create_policy
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

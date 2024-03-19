@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WriteRecordsOutput {
+pub struct WriteRecordsOutput  {
     /// <p>Information on the records ingested by this request.</p>
     pub records_ingested: ::std::option::Option<crate::types::RecordsIngested>,
     _request_id: Option<String>,
 }
-impl WriteRecordsOutput {
+impl  WriteRecordsOutput  {
     /// <p>Information on the records ingested by this request.</p>
-    pub fn records_ingested(&self) -> ::std::option::Option<&crate::types::RecordsIngested> {
+    pub fn records_ingested(&self) -> ::std::option::Option<& crate::types::RecordsIngested> {
         self.records_ingested.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for WriteRecordsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl WriteRecordsOutput {
     /// Creates a new builder-style object to manufacture [`WriteRecordsOutput`](crate::operation::write_records::WriteRecordsOutput).
     pub fn builder() -> crate::operation::write_records::builders::WriteRecordsOutputBuilder {
@@ -40,27 +40,28 @@ impl WriteRecordsOutputBuilder {
     }
     /// <p>Information on the records ingested by this request.</p>
     pub fn set_records_ingested(mut self, input: ::std::option::Option<crate::types::RecordsIngested>) -> Self {
-        self.records_ingested = input;
-        self
+        self.records_ingested = input; self
     }
     /// <p>Information on the records ingested by this request.</p>
     pub fn get_records_ingested(&self) -> &::std::option::Option<crate::types::RecordsIngested> {
         &self.records_ingested
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`WriteRecordsOutput`](crate::operation::write_records::WriteRecordsOutput).
     pub fn build(self) -> crate::operation::write_records::WriteRecordsOutput {
         crate::operation::write_records::WriteRecordsOutput {
-            records_ingested: self.records_ingested,
+            records_ingested: self.records_ingested
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

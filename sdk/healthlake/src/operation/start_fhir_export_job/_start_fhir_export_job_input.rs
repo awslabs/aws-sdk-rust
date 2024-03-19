@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFhirExportJobInput {
+pub struct StartFhirExportJobInput  {
     /// <p>The user generated name for an export job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
@@ -14,25 +14,25 @@ pub struct StartFhirExportJobInput {
     /// <p>An optional user provided token used for ensuring idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl StartFhirExportJobInput {
+impl  StartFhirExportJobInput  {
     /// <p>The user generated name for an export job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>An optional user provided token used for ensuring idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl StartFhirExportJobInputBuilder {
     }
     /// <p>The user generated name for an export job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The user generated name for an export job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl StartFhirExportJobInputBuilder {
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input;
-        self
+        self.output_data_config = input; self
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
@@ -91,8 +89,7 @@ impl StartFhirExportJobInputBuilder {
     }
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl StartFhirExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,24 +117,28 @@ impl StartFhirExportJobInputBuilder {
     }
     /// <p>An optional user provided token used for ensuring idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>An optional user provided token used for ensuring idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartFhirExportJobInput`](crate::operation::start_fhir_export_job::StartFhirExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_fhir_export_job::StartFhirExportJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_fhir_export_job::StartFhirExportJobInput {
-            job_name: self.job_name,
-            output_data_config: self.output_data_config,
-            datastore_id: self.datastore_id,
-            data_access_role_arn: self.data_access_role_arn,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_fhir_export_job::StartFhirExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_fhir_export_job::StartFhirExportJobInput {
+                job_name: self.job_name
+                ,
+                output_data_config: self.output_data_config
+                ,
+                datastore_id: self.datastore_id
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

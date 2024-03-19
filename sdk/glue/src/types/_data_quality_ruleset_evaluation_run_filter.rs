@@ -3,7 +3,7 @@
 /// <p>The filter criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityRulesetEvaluationRunFilter {
+pub struct DataQualityRulesetEvaluationRunFilter  {
     /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Filter results by runs that started before this time.</p>
@@ -11,17 +11,17 @@ pub struct DataQualityRulesetEvaluationRunFilter {
     /// <p>Filter results by runs that started after this time.</p>
     pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DataQualityRulesetEvaluationRunFilter {
+impl  DataQualityRulesetEvaluationRunFilter  {
     /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>Filter results by runs that started before this time.</p>
-    pub fn started_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_before.as_ref()
     }
     /// <p>Filter results by runs that started after this time.</p>
-    pub fn started_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_after.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl DataQualityRulesetEvaluationRunFilterBuilder {
     }
     /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -63,8 +62,7 @@ impl DataQualityRulesetEvaluationRunFilterBuilder {
     }
     /// <p>Filter results by runs that started before this time.</p>
     pub fn set_started_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_before = input;
-        self
+        self.started_before = input; self
     }
     /// <p>Filter results by runs that started before this time.</p>
     pub fn get_started_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -77,8 +75,7 @@ impl DataQualityRulesetEvaluationRunFilterBuilder {
     }
     /// <p>Filter results by runs that started after this time.</p>
     pub fn set_started_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_after = input;
-        self
+        self.started_after = input; self
     }
     /// <p>Filter results by runs that started after this time.</p>
     pub fn get_started_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -87,9 +84,13 @@ impl DataQualityRulesetEvaluationRunFilterBuilder {
     /// Consumes the builder and constructs a [`DataQualityRulesetEvaluationRunFilter`](crate::types::DataQualityRulesetEvaluationRunFilter).
     pub fn build(self) -> crate::types::DataQualityRulesetEvaluationRunFilter {
         crate::types::DataQualityRulesetEvaluationRunFilter {
-            data_source: self.data_source,
-            started_before: self.started_before,
-            started_after: self.started_after,
+            data_source: self.data_source
+            ,
+            started_before: self.started_before
+            ,
+            started_after: self.started_after
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3LogDestination {
+pub struct S3LogDestination  {
     /// <p>The name of the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix text with which to begin Amazon S3 log object names.</p>
@@ -22,18 +22,18 @@ pub struct S3LogDestination {
     /// </ul>
     pub output_format: ::std::option::Option<crate::types::S3OutputFormat>,
 }
-impl S3LogDestination {
+impl  S3LogDestination  {
     /// <p>The name of the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The prefix text with which to begin Amazon S3 log object names.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
-    pub fn bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_owner(&self) -> ::std::option::Option<& str> {
         self.bucket_owner.as_deref()
     }
     /// <p>The format EventBridge uses for the log records.</p>
@@ -45,7 +45,7 @@ impl S3LogDestination {
     /// <li>
     /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
-    pub fn output_format(&self) -> ::std::option::Option<&crate::types::S3OutputFormat> {
+    pub fn output_format(&self) -> ::std::option::Option<& crate::types::S3OutputFormat> {
         self.output_format.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl S3LogDestinationBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl S3LogDestinationBuilder {
     /// <p>The prefix text with which to begin Amazon S3 log object names.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix text with which to begin Amazon S3 log object names.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
@@ -104,8 +102,7 @@ impl S3LogDestinationBuilder {
     }
     /// <p>The Amazon Web Services account that owns the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub fn set_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_owner = input;
-        self
+        self.bucket_owner = input; self
     }
     /// <p>The Amazon Web Services account that owns the Amazon S3 bucket to which EventBridge delivers the log records for the pipe.</p>
     pub fn get_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl S3LogDestinationBuilder {
     /// <p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::S3OutputFormat>) -> Self {
-        self.output_format = input;
-        self
+        self.output_format = input; self
     }
     /// <p>The format EventBridge uses for the log records.</p>
     /// <ul>
@@ -152,10 +148,15 @@ impl S3LogDestinationBuilder {
     /// Consumes the builder and constructs a [`S3LogDestination`](crate::types::S3LogDestination).
     pub fn build(self) -> crate::types::S3LogDestination {
         crate::types::S3LogDestination {
-            bucket_name: self.bucket_name,
-            prefix: self.prefix,
-            bucket_owner: self.bucket_owner,
-            output_format: self.output_format,
+            bucket_name: self.bucket_name
+            ,
+            prefix: self.prefix
+            ,
+            bucket_owner: self.bucket_owner
+            ,
+            output_format: self.output_format
+            ,
         }
     }
 }
+

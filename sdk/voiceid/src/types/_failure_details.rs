@@ -3,19 +3,19 @@
 /// <p>Contains error details for a failed batch job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailureDetails {
+pub struct FailureDetails  {
     /// <p>An HTTP status code representing the nature of the error.</p>
     pub status_code: ::std::option::Option<i32>,
     /// <p>A description of the error that caused the batch job failure.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl FailureDetails {
+impl  FailureDetails  {
     /// <p>An HTTP status code representing the nature of the error.</p>
     pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
     }
     /// <p>A description of the error that caused the batch job failure.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl FailureDetailsBuilder {
     }
     /// <p>An HTTP status code representing the nature of the error.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>An HTTP status code representing the nature of the error.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl FailureDetailsBuilder {
     }
     /// <p>A description of the error that caused the batch job failure.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A description of the error that caused the batch job failure.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl FailureDetailsBuilder {
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
     pub fn build(self) -> crate::types::FailureDetails {
         crate::types::FailureDetails {
-            status_code: self.status_code,
-            message: self.message,
+            status_code: self.status_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

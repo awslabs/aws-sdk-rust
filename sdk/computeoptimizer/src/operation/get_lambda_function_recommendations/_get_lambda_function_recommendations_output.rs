@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLambdaFunctionRecommendationsOutput {
+pub struct GetLambdaFunctionRecommendationsOutput  {
     /// <p>The token to use to advance to the next page of function recommendations.</p>
     /// <p>This value is null when there are no more pages of function recommendations to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe function recommendations.</p>
-    pub lambda_function_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>>,
+    pub lambda_function_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionRecommendation>>,
     _request_id: Option<String>,
 }
-impl GetLambdaFunctionRecommendationsOutput {
+impl  GetLambdaFunctionRecommendationsOutput  {
     /// <p>The token to use to advance to the next page of function recommendations.</p>
     /// <p>This value is null when there are no more pages of function recommendations to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe function recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_recommendations.is_none()`.
-    pub fn lambda_function_recommendations(&self) -> &[crate::types::LambdaFunctionRecommendation] {
-        self.lambda_function_recommendations.as_deref().unwrap_or_default()
+    pub fn lambda_function_recommendations(&self) -> & [crate::types::LambdaFunctionRecommendation] {
+        self.lambda_function_recommendations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLambdaFunctionRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLambdaFunctionRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsOutput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput).
     pub fn builder() -> crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsOutputBuilder {
@@ -40,7 +41,7 @@ impl GetLambdaFunctionRecommendationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) lambda_function_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>>,
+    pub(crate) lambda_function_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionRecommendation>>,
     _request_id: Option<String>,
 }
 impl GetLambdaFunctionRecommendationsOutputBuilder {
@@ -53,8 +54,7 @@ impl GetLambdaFunctionRecommendationsOutputBuilder {
     /// <p>The token to use to advance to the next page of function recommendations.</p>
     /// <p>This value is null when there are no more pages of function recommendations to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to advance to the next page of function recommendations.</p>
     /// <p>This value is null when there are no more pages of function recommendations to return.</p>
@@ -68,37 +68,36 @@ impl GetLambdaFunctionRecommendationsOutputBuilder {
     /// <p>An array of objects that describe function recommendations.</p>
     pub fn lambda_function_recommendations(mut self, input: crate::types::LambdaFunctionRecommendation) -> Self {
         let mut v = self.lambda_function_recommendations.unwrap_or_default();
-        v.push(input);
-        self.lambda_function_recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lambda_function_recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe function recommendations.</p>
-    pub fn set_lambda_function_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>>,
-    ) -> Self {
-        self.lambda_function_recommendations = input;
-        self
+    pub fn set_lambda_function_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionRecommendation>>) -> Self {
+        self.lambda_function_recommendations = input; self
     }
     /// <p>An array of objects that describe function recommendations.</p>
-    pub fn get_lambda_function_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>> {
+    pub fn get_lambda_function_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionRecommendation>> {
         &self.lambda_function_recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLambdaFunctionRecommendationsOutput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput).
     pub fn build(self) -> crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput {
         crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput {
-            next_token: self.next_token,
-            lambda_function_recommendations: self.lambda_function_recommendations,
+            next_token: self.next_token
+            ,
+            lambda_function_recommendations: self.lambda_function_recommendations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

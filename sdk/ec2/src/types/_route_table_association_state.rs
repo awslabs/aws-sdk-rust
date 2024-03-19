@@ -3,19 +3,19 @@
 /// <p>Describes the state of an association between a route table and a subnet or gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteTableAssociationState {
+pub struct RouteTableAssociationState  {
     /// <p>The state of the association.</p>
     pub state: ::std::option::Option<crate::types::RouteTableAssociationStateCode>,
     /// <p>The status message, if applicable.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl RouteTableAssociationState {
+impl  RouteTableAssociationState  {
     /// <p>The state of the association.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::RouteTableAssociationStateCode> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::RouteTableAssociationStateCode> {
         self.state.as_ref()
     }
     /// <p>The status message, if applicable.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RouteTableAssociationStateBuilder {
     }
     /// <p>The state of the association.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RouteTableAssociationStateCode>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the association.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteTableAssociationStateCode> {
@@ -55,8 +54,7 @@ impl RouteTableAssociationStateBuilder {
     }
     /// <p>The status message, if applicable.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message, if applicable.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RouteTableAssociationStateBuilder {
     /// Consumes the builder and constructs a [`RouteTableAssociationState`](crate::types::RouteTableAssociationState).
     pub fn build(self) -> crate::types::RouteTableAssociationState {
         crate::types::RouteTableAssociationState {
-            state: self.state,
-            status_message: self.status_message,
+            state: self.state
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

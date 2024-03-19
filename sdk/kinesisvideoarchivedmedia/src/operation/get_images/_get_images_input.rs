@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImagesInput {
+pub struct GetImagesInput  {
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
@@ -18,7 +18,7 @@ pub struct GetImagesInput {
     /// <p>The format that will be used to encode the image.</p>
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
+    pub format_config: ::std::option::Option<::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>>,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
     pub width_pixels: ::std::option::Option<i32>,
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
@@ -30,25 +30,25 @@ pub struct GetImagesInput {
     /// <p>A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetImagesInput {
+impl  GetImagesInput  {
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn image_selector_type(&self) -> ::std::option::Option<&crate::types::ImageSelectorType> {
+    pub fn image_selector_type(&self) -> ::std::option::Option<& crate::types::ImageSelectorType> {
         self.image_selector_type.as_ref()
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
-    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
-    pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.</p>
@@ -56,11 +56,11 @@ impl GetImagesInput {
         self.sampling_interval
     }
     /// <p>The format that will be used to encode the image.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn format_config(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>> {
+    pub fn format_config(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>> {
         self.format_config.as_ref()
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
@@ -78,7 +78,7 @@ impl GetImagesInput {
         self.max_results
     }
     /// <p>A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -100,7 +100,7 @@ pub struct GetImagesInputBuilder {
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sampling_interval: ::std::option::Option<i32>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
-    pub(crate) format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
+    pub(crate) format_config: ::std::option::Option<::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>>,
     pub(crate) width_pixels: ::std::option::Option<i32>,
     pub(crate) height_pixels: ::std::option::Option<i32>,
     pub(crate) max_results: ::std::option::Option<i64>,
@@ -114,8 +114,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
     pub fn set_image_selector_type(mut self, input: ::std::option::Option<crate::types::ImageSelectorType>) -> Self {
-        self.image_selector_type = input;
-        self
+        self.image_selector_type = input; self
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
     pub fn get_image_selector_type(&self) -> &::std::option::Option<crate::types::ImageSelectorType> {
@@ -158,8 +155,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
     pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_timestamp = input;
-        self
+        self.start_timestamp = input; self
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
     pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +169,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
     pub fn set_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_timestamp = input;
-        self
+        self.end_timestamp = input; self
     }
     /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
     pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +182,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.</p>
     pub fn set_sampling_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sampling_interval = input;
-        self
+        self.sampling_interval = input; self
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.</p>
     pub fn get_sampling_interval(&self) -> &::std::option::Option<i32> {
@@ -202,8 +196,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The format that will be used to encode the image.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format that will be used to encode the image.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -216,20 +209,16 @@ impl GetImagesInputBuilder {
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
     pub fn format_config(mut self, k: crate::types::FormatConfigKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.format_config.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.format_config = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.format_config = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn set_format_config(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
-    ) -> Self {
-        self.format_config = input;
-        self
+    pub fn set_format_config(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>>) -> Self {
+        self.format_config = input; self
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn get_format_config(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>> {
+    pub fn get_format_config(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::FormatConfigKey, ::std::string::String>> {
         &self.format_config
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
@@ -239,8 +228,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
     pub fn set_width_pixels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width_pixels = input;
-        self
+        self.width_pixels = input; self
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code> is provided, a <code>ValidationException</code> will be thrown. If neither parameter is provided, the original image size from the stream will be returned.</p>
     pub fn get_width_pixels(&self) -> &::std::option::Option<i32> {
@@ -253,8 +241,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn set_height_pixels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height_pixels = input;
-        self
+        self.height_pixels = input; self
     }
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn get_height_pixels(&self) -> &::std::option::Option<i32> {
@@ -271,8 +258,7 @@ impl GetImagesInputBuilder {
     /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated.</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of images to be returned by the API.</p><note>
     /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated.</p>
@@ -287,8 +273,7 @@ impl GetImagesInputBuilder {
     }
     /// <p>A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -296,19 +281,34 @@ impl GetImagesInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetImagesInput`](crate::operation::get_images::GetImagesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_images::GetImagesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_images::GetImagesInput {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            image_selector_type: self.image_selector_type,
-            start_timestamp: self.start_timestamp,
-            end_timestamp: self.end_timestamp,
-            sampling_interval: self.sampling_interval,
-            format: self.format,
-            format_config: self.format_config,
-            width_pixels: self.width_pixels,
-            height_pixels: self.height_pixels,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_images::GetImagesInput {
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                image_selector_type: self.image_selector_type
+                ,
+                start_timestamp: self.start_timestamp
+                ,
+                end_timestamp: self.end_timestamp
+                ,
+                sampling_interval: self.sampling_interval
+                ,
+                format: self.format
+                ,
+                format_config: self.format_config
+                ,
+                width_pixels: self.width_pixels
+                ,
+                height_pixels: self.height_pixels
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

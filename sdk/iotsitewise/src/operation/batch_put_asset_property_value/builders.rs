@@ -5,23 +5,20 @@ pub use crate::operation::batch_put_asset_property_value::_batch_put_asset_prope
 
 impl BatchPutAssetPropertyValueInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_put_asset_property_value();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_put_asset_property_value();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchPutAssetPropertyValue`.
-///
+/// 
 /// <p>Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a> in the <i>IoT SiteWise User Guide</i>.</p>
 /// <p>To identify an asset property, you must specify one of the following:</p>
 /// <ul>
@@ -37,33 +34,32 @@ impl BatchPutAssetPropertyValueInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder,
+                    inner: crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-    > for BatchPutAssetPropertyValueFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
+                    crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
+                > for BatchPutAssetPropertyValueFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
+                        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchPutAssetPropertyValueFluentBuilder {
     /// Creates a new `BatchPutAssetPropertyValue`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -72,53 +68,44 @@ impl BatchPutAssetPropertyValueFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValue::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValue::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValue::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValue::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput, crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -129,12 +116,13 @@ impl BatchPutAssetPropertyValueFluentBuilder {
         self
     }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>> {
         self.inner.get_entries()
     }
 }
+

@@ -3,25 +3,25 @@
 /// <p>An error associated with a statement in a PartiQL batch that was run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStatementError {
+pub struct BatchStatementError  {
     /// <p>The error code associated with the failed PartiQL batch statement.</p>
     pub code: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>,
     /// <p>The error message associated with the PartiQL batch response.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
-    pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub item: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
 }
-impl BatchStatementError {
+impl  BatchStatementError  {
     /// <p>The error code associated with the failed PartiQL batch statement.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::BatchStatementErrorCodeEnum> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::BatchStatementErrorCodeEnum> {
         self.code.as_ref()
     }
     /// <p>The error message associated with the PartiQL batch response.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
-    pub fn item(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn item(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         self.item.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl BatchStatementError {
 pub struct BatchStatementErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub(crate) item: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>,
 }
 impl BatchStatementErrorBuilder {
     /// <p>The error code associated with the failed PartiQL batch statement.</p>
@@ -48,8 +48,7 @@ impl BatchStatementErrorBuilder {
     }
     /// <p>The error code associated with the failed PartiQL batch statement.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code associated with the failed PartiQL batch statement.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::BatchStatementErrorCodeEnum> {
@@ -62,8 +61,7 @@ impl BatchStatementErrorBuilder {
     }
     /// <p>The error message associated with the PartiQL batch response.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message associated with the PartiQL batch response.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,28 +74,28 @@ impl BatchStatementErrorBuilder {
     /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
     pub fn item(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.item.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.item = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.item = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
-    pub fn set_item(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
-    ) -> Self {
-        self.item = input;
-        self
+    pub fn set_item(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.item = input; self
     }
     /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
-    pub fn get_item(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>> {
         &self.item
     }
     /// Consumes the builder and constructs a [`BatchStatementError`](crate::types::BatchStatementError).
     pub fn build(self) -> crate::types::BatchStatementError {
         crate::types::BatchStatementError {
-            code: self.code,
-            message: self.message,
-            item: self.item,
+            code: self.code
+            ,
+            message: self.message
+            ,
+            item: self.item
+            ,
         }
     }
 }
+

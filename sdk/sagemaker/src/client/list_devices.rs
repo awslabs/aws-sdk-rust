@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDevices`](crate::operation::list_devices::builders::ListDevicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The response from the last list when returning a list large enough to need tokening.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to select.</p><br>
     ///   - [`latest_heartbeat_after(DateTime)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::latest_heartbeat_after) / [`set_latest_heartbeat_after(Option<DateTime>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_latest_heartbeat_after):<br>required: **false**<br><p>Select fleets where the job was updated after X</p><br>
     ///   - [`model_name(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_model_name):<br>required: **false**<br><p>A filter that searches devices that contains this name in any of their models.</p><br>
     ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_device_fleet_name):<br>required: **false**<br><p>Filter for fleets containing this name in their device fleet name.</p><br>
-    /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
+                            /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
     ///   - [`device_summaries(Option<Vec::<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::device_summaries): <p>Summary of devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_devices::ListDevicesOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
-    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
+                            /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::operation::list_devices::ListDevicesError)
     pub fn list_devices(&self) -> crate::operation::list_devices::builders::ListDevicesFluentBuilder {
-        crate::operation::list_devices::builders::ListDevicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_devices::builders::ListDevicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

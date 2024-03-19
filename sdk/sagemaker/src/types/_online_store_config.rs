@@ -4,7 +4,7 @@
 /// <p>The default value is <code>False</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnlineStoreConfig {
+pub struct OnlineStoreConfig  {
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
     pub security_config: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
@@ -21,9 +21,9 @@ pub struct OnlineStoreConfig {
     /// </ul>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
-impl OnlineStoreConfig {
+impl  OnlineStoreConfig  {
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
-    pub fn security_config(&self) -> ::std::option::Option<&crate::types::OnlineStoreSecurityConfig> {
+    pub fn security_config(&self) -> ::std::option::Option<& crate::types::OnlineStoreSecurityConfig> {
         self.security_config.as_ref()
     }
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
@@ -32,7 +32,7 @@ impl OnlineStoreConfig {
         self.enable_online_store
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
-    pub fn ttl_duration(&self) -> ::std::option::Option<&crate::types::TtlDuration> {
+    pub fn ttl_duration(&self) -> ::std::option::Option<& crate::types::TtlDuration> {
         self.ttl_duration.as_ref()
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
@@ -42,7 +42,7 @@ impl OnlineStoreConfig {
     /// <li>
     /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
-    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+    pub fn storage_type(&self) -> ::std::option::Option<& crate::types::StorageType> {
         self.storage_type.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl OnlineStoreConfigBuilder {
     }
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
     pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>) -> Self {
-        self.security_config = input;
-        self
+        self.security_config = input; self
     }
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
     pub fn get_security_config(&self) -> &::std::option::Option<crate::types::OnlineStoreSecurityConfig> {
@@ -86,8 +85,7 @@ impl OnlineStoreConfigBuilder {
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
     /// <p>The default value is <code>False</code>.</p>
     pub fn set_enable_online_store(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_online_store = input;
-        self
+        self.enable_online_store = input; self
     }
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
     /// <p>The default value is <code>False</code>.</p>
@@ -101,8 +99,7 @@ impl OnlineStoreConfigBuilder {
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn set_ttl_duration(mut self, input: ::std::option::Option<crate::types::TtlDuration>) -> Self {
-        self.ttl_duration = input;
-        self
+        self.ttl_duration = input; self
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn get_ttl_duration(&self) -> &::std::option::Option<crate::types::TtlDuration> {
@@ -127,8 +124,7 @@ impl OnlineStoreConfigBuilder {
     /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
@@ -143,10 +139,15 @@ impl OnlineStoreConfigBuilder {
     /// Consumes the builder and constructs a [`OnlineStoreConfig`](crate::types::OnlineStoreConfig).
     pub fn build(self) -> crate::types::OnlineStoreConfig {
         crate::types::OnlineStoreConfig {
-            security_config: self.security_config,
-            enable_online_store: self.enable_online_store,
-            ttl_duration: self.ttl_duration,
-            storage_type: self.storage_type,
+            security_config: self.security_config
+            ,
+            enable_online_store: self.enable_online_store
+            ,
+            ttl_duration: self.ttl_duration
+            ,
+            storage_type: self.storage_type
+            ,
         }
     }
 }
+

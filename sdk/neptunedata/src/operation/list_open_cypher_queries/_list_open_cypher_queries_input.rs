@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOpenCypherQueriesInput {
+pub struct ListOpenCypherQueriesInput  {
     /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub include_waiting: ::std::option::Option<bool>,
 }
-impl ListOpenCypherQueriesInput {
+impl  ListOpenCypherQueriesInput  {
     /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn include_waiting(&self) -> ::std::option::Option<bool> {
         self.include_waiting
@@ -33,20 +33,20 @@ impl ListOpenCypherQueriesInputBuilder {
     }
     /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn set_include_waiting(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_waiting = input;
-        self
+        self.include_waiting = input; self
     }
     /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn get_include_waiting(&self) -> &::std::option::Option<bool> {
         &self.include_waiting
     }
     /// Consumes the builder and constructs a [`ListOpenCypherQueriesInput`](crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput {
-            include_waiting: self.include_waiting,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesInput {
+                include_waiting: self.include_waiting
+                ,
+            }
+        )
     }
 }
+

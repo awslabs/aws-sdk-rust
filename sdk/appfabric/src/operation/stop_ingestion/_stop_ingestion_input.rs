@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopIngestionInput {
+pub struct StopIngestionInput  {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
     pub ingestion_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
 }
-impl StopIngestionInput {
+impl  StopIngestionInput  {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn ingestion_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn ingestion_identifier(&self) -> ::std::option::Option<& str> {
         self.ingestion_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn app_bundle_identifier(&self) -> ::std::option::Option<& str> {
         self.app_bundle_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StopIngestionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
     pub fn set_ingestion_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ingestion_identifier = input;
-        self
+        self.ingestion_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
     pub fn get_ingestion_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl StopIngestionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_bundle_identifier = input;
-        self
+        self.app_bundle_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_bundle_identifier
     }
     /// Consumes the builder and constructs a [`StopIngestionInput`](crate::operation::stop_ingestion::StopIngestionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_ingestion::StopIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_ingestion::StopIngestionInput {
-            ingestion_identifier: self.ingestion_identifier,
-            app_bundle_identifier: self.app_bundle_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_ingestion::StopIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_ingestion::StopIngestionInput {
+                ingestion_identifier: self.ingestion_identifier
+                ,
+                app_bundle_identifier: self.app_bundle_identifier
+                ,
+            }
+        )
     }
 }
+

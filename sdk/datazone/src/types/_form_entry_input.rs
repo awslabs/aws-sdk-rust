@@ -3,7 +3,7 @@
 /// <p>The details of the form entry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FormEntryInput {
+pub struct FormEntryInput  {
     /// <p>The type ID of the form entry.</p>
     pub type_identifier: ::std::string::String,
     /// <p>The type revision of the form entry.</p>
@@ -11,16 +11,14 @@ pub struct FormEntryInput {
     /// <p>Specifies whether a form entry is required.</p>
     pub required: ::std::option::Option<bool>,
 }
-impl FormEntryInput {
+impl  FormEntryInput  {
     /// <p>The type ID of the form entry.</p>
-    pub fn type_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.type_identifier.deref()
+    pub fn type_identifier(&self) -> & str {
+        use std::ops::Deref; self.type_identifier.deref()
     }
     /// <p>The type revision of the form entry.</p>
-    pub fn type_revision(&self) -> &str {
-        use std::ops::Deref;
-        self.type_revision.deref()
+    pub fn type_revision(&self) -> & str {
+        use std::ops::Deref; self.type_revision.deref()
     }
     /// <p>Specifies whether a form entry is required.</p>
     pub fn required(&self) -> ::std::option::Option<bool> {
@@ -51,8 +49,7 @@ impl FormEntryInputBuilder {
     }
     /// <p>The type ID of the form entry.</p>
     pub fn set_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_identifier = input;
-        self
+        self.type_identifier = input; self
     }
     /// <p>The type ID of the form entry.</p>
     pub fn get_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl FormEntryInputBuilder {
     }
     /// <p>The type revision of the form entry.</p>
     pub fn set_type_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_revision = input;
-        self
+        self.type_revision = input; self
     }
     /// <p>The type revision of the form entry.</p>
     pub fn get_type_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl FormEntryInputBuilder {
     }
     /// <p>Specifies whether a form entry is required.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>Specifies whether a form entry is required.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -92,20 +87,22 @@ impl FormEntryInputBuilder {
     /// - [`type_identifier`](crate::types::builders::FormEntryInputBuilder::type_identifier)
     /// - [`type_revision`](crate::types::builders::FormEntryInputBuilder::type_revision)
     pub fn build(self) -> ::std::result::Result<crate::types::FormEntryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FormEntryInput {
-            type_identifier: self.type_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_identifier",
-                    "type_identifier was not specified but it is required when building FormEntryInput",
-                )
-            })?,
-            type_revision: self.type_revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_revision",
-                    "type_revision was not specified but it is required when building FormEntryInput",
-                )
-            })?,
-            required: self.required,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FormEntryInput {
+                type_identifier: self.type_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_identifier", "type_identifier was not specified but it is required when building FormEntryInput")
+                    )?
+                ,
+                type_revision: self.type_revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_revision", "type_revision was not specified but it is required when building FormEntryInput")
+                    )?
+                ,
+                required: self.required
+                ,
+            }
+        )
     }
 }
+

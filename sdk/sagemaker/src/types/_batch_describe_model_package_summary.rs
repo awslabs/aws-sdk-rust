@@ -3,7 +3,7 @@
 /// <p>Provides summary information about the model package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeModelPackageSummary {
+pub struct BatchDescribeModelPackageSummary  {
     /// <p>The group name for the model package</p>
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of a versioned model.</p>
@@ -21,9 +21,9 @@ pub struct BatchDescribeModelPackageSummary {
     /// <p>The approval status of the model.</p>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
 }
-impl BatchDescribeModelPackageSummary {
+impl  BatchDescribeModelPackageSummary  {
     /// <p>The group name for the model package</p>
-    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> ::std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
     /// <p>The version number of a versioned model.</p>
@@ -31,27 +31,27 @@ impl BatchDescribeModelPackageSummary {
         self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn model_package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_arn(&self) -> ::std::option::Option<& str> {
         self.model_package_arn.as_deref()
     }
     /// <p>The description of the model package.</p>
-    pub fn model_package_description(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_description(&self) -> ::std::option::Option<& str> {
         self.model_package_description.as_deref()
     }
     /// <p>The creation time of the mortgage package summary.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Defines how to perform inference generation after a training job is run.</p>
-    pub fn inference_specification(&self) -> ::std::option::Option<&crate::types::InferenceSpecification> {
+    pub fn inference_specification(&self) -> ::std::option::Option<& crate::types::InferenceSpecification> {
         self.inference_specification.as_ref()
     }
     /// <p>The status of the mortgage package.</p>
-    pub fn model_package_status(&self) -> ::std::option::Option<&crate::types::ModelPackageStatus> {
+    pub fn model_package_status(&self) -> ::std::option::Option<& crate::types::ModelPackageStatus> {
         self.model_package_status.as_ref()
     }
     /// <p>The approval status of the model.</p>
-    pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
+    pub fn model_approval_status(&self) -> ::std::option::Option<& crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
     }
     /// <p>The group name for the model package</p>
     pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_group_name = input;
-        self
+        self.model_package_group_name = input; self
     }
     /// <p>The group name for the model package</p>
     pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
     }
     /// <p>The version number of a versioned model.</p>
     pub fn set_model_package_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_package_version = input;
-        self
+        self.model_package_version = input; self
     }
     /// <p>The version number of a versioned model.</p>
     pub fn get_model_package_version(&self) -> &::std::option::Option<i32> {
@@ -113,8 +111,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn set_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_arn = input;
-        self
+        self.model_package_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn get_model_package_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
     }
     /// <p>The description of the model package.</p>
     pub fn set_model_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_description = input;
-        self
+        self.model_package_description = input; self
     }
     /// <p>The description of the model package.</p>
     pub fn get_model_package_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +138,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
     }
     /// <p>The creation time of the mortgage package summary.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time of the mortgage package summary.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -157,8 +152,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
     }
     /// <p>Defines how to perform inference generation after a training job is run.</p>
     pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
-        self.inference_specification = input;
-        self
+        self.inference_specification = input; self
     }
     /// <p>Defines how to perform inference generation after a training job is run.</p>
     pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
@@ -172,8 +166,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
     }
     /// <p>The status of the mortgage package.</p>
     pub fn set_model_package_status(mut self, input: ::std::option::Option<crate::types::ModelPackageStatus>) -> Self {
-        self.model_package_status = input;
-        self
+        self.model_package_status = input; self
     }
     /// <p>The status of the mortgage package.</p>
     pub fn get_model_package_status(&self) -> &::std::option::Option<crate::types::ModelPackageStatus> {
@@ -186,8 +179,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
     }
     /// <p>The approval status of the model.</p>
     pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
-        self.model_approval_status = input;
-        self
+        self.model_approval_status = input; self
     }
     /// <p>The approval status of the model.</p>
     pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
@@ -196,14 +188,23 @@ impl BatchDescribeModelPackageSummaryBuilder {
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageSummary`](crate::types::BatchDescribeModelPackageSummary).
     pub fn build(self) -> crate::types::BatchDescribeModelPackageSummary {
         crate::types::BatchDescribeModelPackageSummary {
-            model_package_group_name: self.model_package_group_name,
-            model_package_version: self.model_package_version,
-            model_package_arn: self.model_package_arn,
-            model_package_description: self.model_package_description,
-            creation_time: self.creation_time,
-            inference_specification: self.inference_specification,
-            model_package_status: self.model_package_status,
-            model_approval_status: self.model_approval_status,
+            model_package_group_name: self.model_package_group_name
+            ,
+            model_package_version: self.model_package_version
+            ,
+            model_package_arn: self.model_package_arn
+            ,
+            model_package_description: self.model_package_description
+            ,
+            creation_time: self.creation_time
+            ,
+            inference_specification: self.inference_specification
+            ,
+            model_package_status: self.model_package_status
+            ,
+            model_approval_status: self.model_approval_status
+            ,
         }
     }
 }
+

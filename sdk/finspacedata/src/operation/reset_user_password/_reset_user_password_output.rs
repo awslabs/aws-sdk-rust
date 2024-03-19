@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ResetUserPasswordOutput {
+pub struct ResetUserPasswordOutput  {
     /// <p>The unique identifier of the user that a new password is generated for.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
     pub temporary_password: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ResetUserPasswordOutput {
+impl  ResetUserPasswordOutput  {
     /// <p>The unique identifier of the user that a new password is generated for.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
-    pub fn temporary_password(&self) -> ::std::option::Option<&str> {
+    pub fn temporary_password(&self) -> ::std::option::Option<& str> {
         self.temporary_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for ResetUserPasswordOutput {
+impl  ::std::fmt::Debug for ResetUserPasswordOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResetUserPasswordOutput");
         formatter.field("user_id", &self.user_id);
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for ResetUserPasswordOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ResetUserPasswordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResetUserPasswordOutput {
     /// Creates a new builder-style object to manufacture [`ResetUserPasswordOutput`](crate::operation::reset_user_password::ResetUserPasswordOutput).
     pub fn builder() -> crate::operation::reset_user_password::builders::ResetUserPasswordOutputBuilder {
@@ -56,8 +56,7 @@ impl ResetUserPasswordOutputBuilder {
     }
     /// <p>The unique identifier of the user that a new password is generated for.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier of the user that a new password is generated for.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,27 +69,28 @@ impl ResetUserPasswordOutputBuilder {
     }
     /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
     pub fn set_temporary_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.temporary_password = input;
-        self
+        self.temporary_password = input; self
     }
     /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
     pub fn get_temporary_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.temporary_password
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResetUserPasswordOutput`](crate::operation::reset_user_password::ResetUserPasswordOutput).
     pub fn build(self) -> crate::operation::reset_user_password::ResetUserPasswordOutput {
         crate::operation::reset_user_password::ResetUserPasswordOutput {
-            user_id: self.user_id,
-            temporary_password: self.temporary_password,
+            user_id: self.user_id
+            ,
+            temporary_password: self.temporary_password
+            ,
             _request_id: self._request_id,
         }
     }
@@ -104,3 +104,4 @@ impl ::std::fmt::Debug for ResetUserPasswordOutputBuilder {
         formatter.finish()
     }
 }
+

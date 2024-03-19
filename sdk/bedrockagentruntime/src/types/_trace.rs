@@ -26,11 +26,7 @@ impl Trace {
     /// Tries to convert the enum instance into [`FailureTrace`](crate::types::Trace::FailureTrace), extracting the inner [`FailureTrace`](crate::types::FailureTrace).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_failure_trace(&self) -> ::std::result::Result<&crate::types::FailureTrace, &Self> {
-        if let Trace::FailureTrace(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Trace::FailureTrace(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FailureTrace`](crate::types::Trace::FailureTrace).
     pub fn is_failure_trace(&self) -> bool {
@@ -39,11 +35,7 @@ impl Trace {
     /// Tries to convert the enum instance into [`OrchestrationTrace`](crate::types::Trace::OrchestrationTrace), extracting the inner [`OrchestrationTrace`](crate::types::OrchestrationTrace).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_orchestration_trace(&self) -> ::std::result::Result<&crate::types::OrchestrationTrace, &Self> {
-        if let Trace::OrchestrationTrace(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Trace::OrchestrationTrace(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OrchestrationTrace`](crate::types::Trace::OrchestrationTrace).
     pub fn is_orchestration_trace(&self) -> bool {
@@ -52,11 +44,7 @@ impl Trace {
     /// Tries to convert the enum instance into [`PostProcessingTrace`](crate::types::Trace::PostProcessingTrace), extracting the inner [`PostProcessingTrace`](crate::types::PostProcessingTrace).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_post_processing_trace(&self) -> ::std::result::Result<&crate::types::PostProcessingTrace, &Self> {
-        if let Trace::PostProcessingTrace(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Trace::PostProcessingTrace(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PostProcessingTrace`](crate::types::Trace::PostProcessingTrace).
     pub fn is_post_processing_trace(&self) -> bool {
@@ -65,11 +53,7 @@ impl Trace {
     /// Tries to convert the enum instance into [`PreProcessingTrace`](crate::types::Trace::PreProcessingTrace), extracting the inner [`PreProcessingTrace`](crate::types::PreProcessingTrace).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_pre_processing_trace(&self) -> ::std::result::Result<&crate::types::PreProcessingTrace, &Self> {
-        if let Trace::PreProcessingTrace(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Trace::PreProcessingTrace(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PreProcessingTrace`](crate::types::Trace::PreProcessingTrace).
     pub fn is_pre_processing_trace(&self) -> bool {
@@ -81,7 +65,8 @@ impl Trace {
     }
 }
 impl ::std::fmt::Debug for Trace {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        ::std::write!(f, "*** Sensitive Data Redacted ***")
-    }
-}
+                fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    ::std::write!(f, "*** Sensitive Data Redacted ***")
+                }
+            }
+

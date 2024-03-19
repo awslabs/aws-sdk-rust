@@ -3,22 +3,23 @@
 /// Thumbnail details for one pipeline of a running channel.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThumbnailDetail {
+pub struct ThumbnailDetail  {
     /// Pipeline ID
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// thumbnails of a single pipeline
-    pub thumbnails: ::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>>,
+    pub thumbnails: ::std::option::Option<::std::vec::Vec::<crate::types::Thumbnail>>,
 }
-impl ThumbnailDetail {
+impl  ThumbnailDetail  {
     /// Pipeline ID
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// thumbnails of a single pipeline
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thumbnails.is_none()`.
-    pub fn thumbnails(&self) -> &[crate::types::Thumbnail] {
-        self.thumbnails.as_deref().unwrap_or_default()
+    pub fn thumbnails(&self) -> & [crate::types::Thumbnail] {
+        self.thumbnails.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ThumbnailDetail {
@@ -33,7 +34,7 @@ impl ThumbnailDetail {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThumbnailDetailBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
-    pub(crate) thumbnails: ::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>>,
+    pub(crate) thumbnails: ::std::option::Option<::std::vec::Vec::<crate::types::Thumbnail>>,
 }
 impl ThumbnailDetailBuilder {
     /// Pipeline ID
@@ -43,8 +44,7 @@ impl ThumbnailDetailBuilder {
     }
     /// Pipeline ID
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// Pipeline ID
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ThumbnailDetailBuilder {
     /// thumbnails of a single pipeline
     pub fn thumbnails(mut self, input: crate::types::Thumbnail) -> Self {
         let mut v = self.thumbnails.unwrap_or_default();
-        v.push(input);
-        self.thumbnails = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.thumbnails = ::std::option::Option::Some(v);
+                        self
     }
     /// thumbnails of a single pipeline
-    pub fn set_thumbnails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>>) -> Self {
-        self.thumbnails = input;
-        self
+    pub fn set_thumbnails(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Thumbnail>>) -> Self {
+        self.thumbnails = input; self
     }
     /// thumbnails of a single pipeline
-    pub fn get_thumbnails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>> {
+    pub fn get_thumbnails(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Thumbnail>> {
         &self.thumbnails
     }
     /// Consumes the builder and constructs a [`ThumbnailDetail`](crate::types::ThumbnailDetail).
     pub fn build(self) -> crate::types::ThumbnailDetail {
         crate::types::ThumbnailDetail {
-            pipeline_id: self.pipeline_id,
-            thumbnails: self.thumbnails,
+            pipeline_id: self.pipeline_id
+            ,
+            thumbnails: self.thumbnails
+            ,
         }
     }
 }
+

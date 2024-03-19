@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAgreements`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of agreements to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::set_next_token):<br>required: **false**<br><p>When you can get additional results from the <code>ListAgreements</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional agreements.</p><br>
     ///   - [`server_id(impl Into<String>)`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::set_server_id):<br>required: **true**<br><p>The identifier of the server for which you want a list of agreements.</p><br>
-    /// - On success, responds with [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput) with field(s):
+                            /// - On success, responds with [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_agreements::ListAgreementsOutput::next_token): <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     ///   - [`agreements(Vec::<ListedAgreement>)`](crate::operation::list_agreements::ListAgreementsOutput::agreements): <p>Returns an array, where each item contains the details of an agreement.</p>
-    /// - On failure, responds with [`SdkError<ListAgreementsError>`](crate::operation::list_agreements::ListAgreementsError)
+                            /// - On failure, responds with [`SdkError<ListAgreementsError>`](crate::operation::list_agreements::ListAgreementsError)
     pub fn list_agreements(&self) -> crate::operation::list_agreements::builders::ListAgreementsFluentBuilder {
-        crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_agreements::builders::ListAgreementsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

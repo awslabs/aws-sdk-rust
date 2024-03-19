@@ -3,19 +3,19 @@
 /// <p>Specifies the subject or body of an email message, represented as textual email data and the applicable character set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimpleEmailPart {
+pub struct SimpleEmailPart  {
     /// <p>The applicable character set for the message content.</p>
     pub charset: ::std::option::Option<::std::string::String>,
     /// <p>The textual data of the message content.</p>
     pub data: ::std::option::Option<::std::string::String>,
 }
-impl SimpleEmailPart {
+impl  SimpleEmailPart  {
     /// <p>The applicable character set for the message content.</p>
-    pub fn charset(&self) -> ::std::option::Option<&str> {
+    pub fn charset(&self) -> ::std::option::Option<& str> {
         self.charset.as_deref()
     }
     /// <p>The textual data of the message content.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SimpleEmailPartBuilder {
     }
     /// <p>The applicable character set for the message content.</p>
     pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.charset = input;
-        self
+        self.charset = input; self
     }
     /// <p>The applicable character set for the message content.</p>
     pub fn get_charset(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SimpleEmailPartBuilder {
     }
     /// <p>The textual data of the message content.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The textual data of the message content.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SimpleEmailPartBuilder {
     /// Consumes the builder and constructs a [`SimpleEmailPart`](crate::types::SimpleEmailPart).
     pub fn build(self) -> crate::types::SimpleEmailPart {
         crate::types::SimpleEmailPart {
-            charset: self.charset,
-            data: self.data,
+            charset: self.charset
+            ,
+            data: self.data
+            ,
         }
     }
 }
+

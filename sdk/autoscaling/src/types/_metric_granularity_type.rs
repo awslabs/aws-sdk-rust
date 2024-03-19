@@ -3,13 +3,13 @@
 /// <p>Describes a granularity of a metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricGranularityType {
+pub struct MetricGranularityType  {
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     pub granularity: ::std::option::Option<::std::string::String>,
 }
-impl MetricGranularityType {
+impl  MetricGranularityType  {
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&str> {
+    pub fn granularity(&self) -> ::std::option::Option<& str> {
         self.granularity.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl MetricGranularityTypeBuilder {
     }
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.granularity = input;
-        self
+        self.granularity = input; self
     }
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
     pub fn get_granularity(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl MetricGranularityTypeBuilder {
     /// Consumes the builder and constructs a [`MetricGranularityType`](crate::types::MetricGranularityType).
     pub fn build(self) -> crate::types::MetricGranularityType {
         crate::types::MetricGranularityType {
-            granularity: self.granularity,
+            granularity: self.granularity
+            ,
         }
     }
 }
+

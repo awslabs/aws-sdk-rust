@@ -2,30 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeServicesInput {
+pub struct DescribeServicesInput  {
     /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
-    pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub services: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub include: ::std::option::Option<::std::vec::Vec<crate::types::ServiceField>>,
+    pub include: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceField>>,
 }
-impl DescribeServicesInput {
+impl  DescribeServicesInput  {
     /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
-    pub fn services(&self) -> &[::std::string::String] {
-        self.services.as_deref().unwrap_or_default()
+    pub fn services(&self) -> & [::std::string::String] {
+        self.services.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
-    pub fn include(&self) -> &[crate::types::ServiceField] {
-        self.include.as_deref().unwrap_or_default()
+    pub fn include(&self) -> & [crate::types::ServiceField] {
+        self.include.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeServicesInput {
@@ -40,8 +42,8 @@ impl DescribeServicesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServicesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
-    pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::ServiceField>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) include: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceField>>,
 }
 impl DescribeServicesInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
@@ -51,8 +53,7 @@ impl DescribeServicesInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +66,16 @@ impl DescribeServicesInputBuilder {
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
     pub fn services(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.services.unwrap_or_default();
-        v.push(input.into());
-        self.services = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
-    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.services = input;
-        self
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.services = input; self
     }
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
-    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.services
     }
     /// Appends an item to `include`.
@@ -85,27 +85,30 @@ impl DescribeServicesInputBuilder {
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
     pub fn include(mut self, input: crate::types::ServiceField) -> Self {
         let mut v = self.include.unwrap_or_default();
-        v.push(input);
-        self.include = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceField>>) -> Self {
-        self.include = input;
-        self
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceField>>) -> Self {
+        self.include = input; self
     }
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceField>> {
         &self.include
     }
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_services::DescribeServicesInput {
-            cluster: self.cluster,
-            services: self.services,
-            include: self.include,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_services::DescribeServicesInput {
+                cluster: self.cluster
+                ,
+                services: self.services
+                ,
+                include: self.include
+                ,
+            }
+        )
     }
 }
+

@@ -5,55 +5,51 @@ pub use crate::operation::start_audit_mitigation_actions_task::_start_audit_miti
 
 impl StartAuditMitigationActionsTaskInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_audit_mitigation_actions_task();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_audit_mitigation_actions_task();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartAuditMitigationActionsTask`.
-///
+/// 
 /// <p>Starts a task that applies a set of mitigation actions to the specified target.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartAuditMitigationActionsTask</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAuditMitigationActionsTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskInputBuilder,
+                    inner: crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput,
-        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError,
-    > for StartAuditMitigationActionsTaskFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput,
-            crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput,
+                    crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError,
+                > for StartAuditMitigationActionsTaskFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput,
+                        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartAuditMitigationActionsTaskFluentBuilder {
     /// Creates a new `StartAuditMitigationActionsTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl StartAuditMitigationActionsTaskFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTask::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTask::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput,
-        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTask::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTask::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput, crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
@@ -142,26 +129,17 @@ impl StartAuditMitigationActionsTaskFluentBuilder {
     /// To override the contents of this collection use [`set_audit_check_to_actions_mapping`](Self::set_audit_check_to_actions_mapping).
     ///
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
-    pub fn audit_check_to_actions_mapping(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn audit_check_to_actions_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         self.inner = self.inner.audit_check_to_actions_mapping(k.into(), v);
         self
     }
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
-    pub fn set_audit_check_to_actions_mapping(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_audit_check_to_actions_mapping(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_audit_check_to_actions_mapping(input);
         self
     }
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
-    pub fn get_audit_check_to_actions_mapping(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_audit_check_to_actions_mapping(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.inner.get_audit_check_to_actions_mapping()
     }
     /// <p>Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.</p>
@@ -179,3 +157,4 @@ impl StartAuditMitigationActionsTaskFluentBuilder {
         self.inner.get_client_request_token()
     }
 }
+

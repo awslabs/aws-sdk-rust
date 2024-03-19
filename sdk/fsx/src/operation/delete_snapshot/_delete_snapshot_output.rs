@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSnapshotOutput {
+pub struct DeleteSnapshotOutput  {
     /// <p>The ID of the deleted snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub lifecycle: ::std::option::Option<crate::types::SnapshotLifecycle>,
     _request_id: Option<String>,
 }
-impl DeleteSnapshotOutput {
+impl  DeleteSnapshotOutput  {
     /// <p>The ID of the deleted snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::SnapshotLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::SnapshotLifecycle> {
         self.lifecycle.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotOutput`](crate::operation::delete_snapshot::DeleteSnapshotOutput).
     pub fn builder() -> crate::operation::delete_snapshot::builders::DeleteSnapshotOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteSnapshotOutputBuilder {
     }
     /// <p>The ID of the deleted snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the deleted snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteSnapshotOutputBuilder {
     }
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::SnapshotLifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::SnapshotLifecycle> {
         &self.lifecycle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSnapshotOutput`](crate::operation::delete_snapshot::DeleteSnapshotOutput).
     pub fn build(self) -> crate::operation::delete_snapshot::DeleteSnapshotOutput {
         crate::operation::delete_snapshot::DeleteSnapshotOutput {
-            snapshot_id: self.snapshot_id,
-            lifecycle: self.lifecycle,
+            snapshot_id: self.snapshot_id
+            ,
+            lifecycle: self.lifecycle
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

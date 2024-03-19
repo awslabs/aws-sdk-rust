@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResponsePlanInput {
+pub struct CreateResponsePlanInput  {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The short format name of the response plan. Can't include spaces.</p>
@@ -14,56 +14,59 @@ pub struct CreateResponsePlanInput {
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub engagements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub engagements: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
+    pub integrations: ::std::option::Option<::std::vec::Vec::<crate::types::Integration>>,
 }
-impl CreateResponsePlanInput {
+impl  CreateResponsePlanInput  {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The short format name of the response plan. Can't include spaces.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The long format of the response plan name. This field can contain spaces.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Details used to create an incident when using this response plan.</p>
-    pub fn incident_template(&self) -> ::std::option::Option<&crate::types::IncidentTemplate> {
+    pub fn incident_template(&self) -> ::std::option::Option<& crate::types::IncidentTemplate> {
         self.incident_template.as_ref()
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    pub fn chat_channel(&self) -> ::std::option::Option<&crate::types::ChatChannel> {
+    pub fn chat_channel(&self) -> ::std::option::Option<& crate::types::ChatChannel> {
         self.chat_channel.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engagements.is_none()`.
-    pub fn engagements(&self) -> &[::std::string::String] {
-        self.engagements.as_deref().unwrap_or_default()
+    pub fn engagements(&self) -> & [::std::string::String] {
+        self.engagements.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::Action] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::Action] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integrations.is_none()`.
-    pub fn integrations(&self) -> &[crate::types::Integration] {
-        self.integrations.as_deref().unwrap_or_default()
+    pub fn integrations(&self) -> & [crate::types::Integration] {
+        self.integrations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateResponsePlanInput {
@@ -82,10 +85,10 @@ pub struct CreateResponsePlanInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) incident_template: ::std::option::Option<crate::types::IncidentTemplate>,
     pub(crate) chat_channel: ::std::option::Option<crate::types::ChatChannel>,
-    pub(crate) engagements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
+    pub(crate) engagements: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) integrations: ::std::option::Option<::std::vec::Vec::<crate::types::Integration>>,
 }
 impl CreateResponsePlanInputBuilder {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
@@ -95,8 +98,7 @@ impl CreateResponsePlanInputBuilder {
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +112,7 @@ impl CreateResponsePlanInputBuilder {
     }
     /// <p>The short format name of the response plan. Can't include spaces.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The short format name of the response plan. Can't include spaces.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +125,7 @@ impl CreateResponsePlanInputBuilder {
     }
     /// <p>The long format of the response plan name. This field can contain spaces.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The long format of the response plan name. This field can contain spaces.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +139,7 @@ impl CreateResponsePlanInputBuilder {
     }
     /// <p>Details used to create an incident when using this response plan.</p>
     pub fn set_incident_template(mut self, input: ::std::option::Option<crate::types::IncidentTemplate>) -> Self {
-        self.incident_template = input;
-        self
+        self.incident_template = input; self
     }
     /// <p>Details used to create an incident when using this response plan.</p>
     pub fn get_incident_template(&self) -> &::std::option::Option<crate::types::IncidentTemplate> {
@@ -153,8 +152,7 @@ impl CreateResponsePlanInputBuilder {
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub fn set_chat_channel(mut self, input: ::std::option::Option<crate::types::ChatChannel>) -> Self {
-        self.chat_channel = input;
-        self
+        self.chat_channel = input; self
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub fn get_chat_channel(&self) -> &::std::option::Option<crate::types::ChatChannel> {
@@ -167,17 +165,16 @@ impl CreateResponsePlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
     pub fn engagements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.engagements.unwrap_or_default();
-        v.push(input.into());
-        self.engagements = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.engagements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.engagements = input;
-        self
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.engagements = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.engagements
     }
     /// Appends an item to `actions`.
@@ -187,17 +184,16 @@ impl CreateResponsePlanInputBuilder {
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         &self.actions
     }
     /// Adds a key-value pair to `tags`.
@@ -207,17 +203,16 @@ impl CreateResponsePlanInputBuilder {
     /// <p>A list of tags that you are adding to the response plan.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `integrations`.
@@ -227,34 +222,42 @@ impl CreateResponsePlanInputBuilder {
     /// <p>Information about third-party services integrated into the response plan.</p>
     pub fn integrations(mut self, input: crate::types::Integration) -> Self {
         let mut v = self.integrations.unwrap_or_default();
-        v.push(input);
-        self.integrations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.integrations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
-        self.integrations = input;
-        self
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Integration>>) -> Self {
+        self.integrations = input; self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Integration>> {
         &self.integrations
     }
     /// Consumes the builder and constructs a [`CreateResponsePlanInput`](crate::operation::create_response_plan::CreateResponsePlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_response_plan::CreateResponsePlanInput {
-            client_token: self.client_token,
-            name: self.name,
-            display_name: self.display_name,
-            incident_template: self.incident_template,
-            chat_channel: self.chat_channel,
-            engagements: self.engagements,
-            actions: self.actions,
-            tags: self.tags,
-            integrations: self.integrations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_response_plan::CreateResponsePlanInput {
+                client_token: self.client_token
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                incident_template: self.incident_template
+                ,
+                chat_channel: self.chat_channel
+                ,
+                engagements: self.engagements
+                ,
+                actions: self.actions
+                ,
+                tags: self.tags
+                ,
+                integrations: self.integrations
+                ,
+            }
+        )
     }
 }
+

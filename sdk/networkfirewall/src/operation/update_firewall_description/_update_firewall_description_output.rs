@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFirewallDescriptionOutput {
+pub struct UpdateFirewallDescriptionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -15,31 +15,31 @@ pub struct UpdateFirewallDescriptionOutput {
     pub update_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateFirewallDescriptionOutput {
+impl  UpdateFirewallDescriptionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_arn.as_deref()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_name(&self) -> ::std::option::Option<& str> {
         self.firewall_name.as_deref()
     }
     /// <p>A description of the firewall.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
-    pub fn update_token(&self) -> ::std::option::Option<&str> {
+    pub fn update_token(&self) -> ::std::option::Option<& str> {
         self.update_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFirewallDescriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateFirewallDescriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDescriptionOutput`](crate::operation::update_firewall_description::UpdateFirewallDescriptionOutput).
     pub fn builder() -> crate::operation::update_firewall_description::builders::UpdateFirewallDescriptionOutputBuilder {
@@ -65,8 +65,7 @@ impl UpdateFirewallDescriptionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_arn = input;
-        self
+        self.firewall_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl UpdateFirewallDescriptionOutputBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_name = input;
-        self
+        self.firewall_name = input; self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UpdateFirewallDescriptionOutputBuilder {
     }
     /// <p>A description of the firewall.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the firewall.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl UpdateFirewallDescriptionOutputBuilder {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_token = input;
-        self
+        self.update_token = input; self
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -121,22 +117,27 @@ impl UpdateFirewallDescriptionOutputBuilder {
         &self.update_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateFirewallDescriptionOutput`](crate::operation::update_firewall_description::UpdateFirewallDescriptionOutput).
     pub fn build(self) -> crate::operation::update_firewall_description::UpdateFirewallDescriptionOutput {
         crate::operation::update_firewall_description::UpdateFirewallDescriptionOutput {
-            firewall_arn: self.firewall_arn,
-            firewall_name: self.firewall_name,
-            description: self.description,
-            update_token: self.update_token,
+            firewall_arn: self.firewall_arn
+            ,
+            firewall_name: self.firewall_name
+            ,
+            description: self.description
+            ,
+            update_token: self.update_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,18 +3,17 @@
 /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Ssekms {
+pub struct Ssekms  {
     /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
     pub key_id: ::std::string::String,
 }
-impl Ssekms {
+impl  Ssekms  {
     /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
-    pub fn key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.key_id.deref()
+    pub fn key_id(&self) -> & str {
+        use std::ops::Deref; self.key_id.deref()
     }
 }
-impl ::std::fmt::Debug for Ssekms {
+impl  ::std::fmt::Debug for Ssekms  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Ssekms");
         formatter.field("key_id", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl SsekmsBuilder {
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key to use for encrypting inventory reports.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl SsekmsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key_id`](crate::types::builders::SsekmsBuilder::key_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Ssekms, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ssekms {
-            key_id: self.key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_id",
-                    "key_id was not specified but it is required when building Ssekms",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ssekms {
+                key_id: self.key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_id", "key_id was not specified but it is required when building Ssekms")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SsekmsBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for SsekmsBuilder {
         formatter.finish()
     }
 }
+

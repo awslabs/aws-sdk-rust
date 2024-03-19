@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyAccountInput {
+pub struct ModifyAccountInput  {
     /// <p>The status of BYOL.</p>
     pub dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportEnum>,
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,
 }
-impl ModifyAccountInput {
+impl  ModifyAccountInput  {
     /// <p>The status of BYOL.</p>
-    pub fn dedicated_tenancy_support(&self) -> ::std::option::Option<&crate::types::DedicatedTenancySupportEnum> {
+    pub fn dedicated_tenancy_support(&self) -> ::std::option::Option<& crate::types::DedicatedTenancySupportEnum> {
         self.dedicated_tenancy_support.as_ref()
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
-    pub fn dedicated_tenancy_management_cidr_range(&self) -> ::std::option::Option<&str> {
+    pub fn dedicated_tenancy_management_cidr_range(&self) -> ::std::option::Option<& str> {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl ModifyAccountInputBuilder {
     }
     /// <p>The status of BYOL.</p>
     pub fn set_dedicated_tenancy_support(mut self, input: ::std::option::Option<crate::types::DedicatedTenancySupportEnum>) -> Self {
-        self.dedicated_tenancy_support = input;
-        self
+        self.dedicated_tenancy_support = input; self
     }
     /// <p>The status of BYOL.</p>
     pub fn get_dedicated_tenancy_support(&self) -> &::std::option::Option<crate::types::DedicatedTenancySupportEnum> {
@@ -54,20 +53,22 @@ impl ModifyAccountInputBuilder {
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub fn set_dedicated_tenancy_management_cidr_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dedicated_tenancy_management_cidr_range = input;
-        self
+        self.dedicated_tenancy_management_cidr_range = input; self
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub fn get_dedicated_tenancy_management_cidr_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.dedicated_tenancy_management_cidr_range
     }
     /// Consumes the builder and constructs a [`ModifyAccountInput`](crate::operation::modify_account::ModifyAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_account::ModifyAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_account::ModifyAccountInput {
-            dedicated_tenancy_support: self.dedicated_tenancy_support,
-            dedicated_tenancy_management_cidr_range: self.dedicated_tenancy_management_cidr_range,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_account::ModifyAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_account::ModifyAccountInput {
+                dedicated_tenancy_support: self.dedicated_tenancy_support
+                ,
+                dedicated_tenancy_management_cidr_range: self.dedicated_tenancy_management_cidr_range
+                ,
+            }
+        )
     }
 }
+

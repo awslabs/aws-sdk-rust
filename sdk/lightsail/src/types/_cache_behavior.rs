@@ -3,7 +3,7 @@
 /// <p>Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CacheBehavior {
+pub struct CacheBehavior  {
     /// <p>The cache behavior of the distribution.</p>
     /// <p>The following cache behaviors can be specified:</p>
     /// <ul>
@@ -14,7 +14,7 @@ pub struct CacheBehavior {
     /// </ul>
     pub behavior: ::std::option::Option<crate::types::BehaviorEnum>,
 }
-impl CacheBehavior {
+impl  CacheBehavior  {
     /// <p>The cache behavior of the distribution.</p>
     /// <p>The following cache behaviors can be specified:</p>
     /// <ul>
@@ -23,7 +23,7 @@ impl CacheBehavior {
     /// <li>
     /// <p><b> <code>dont-cache</code> </b> - This option is best for sites that serve a mix of static and dynamic content. When specified, your distribution caches and serve only the content that is specified in the distribution's <code>CacheBehaviorPerPath</code> parameter. This behavior is ideal for websites or web applications that use cookies, headers, and query strings to personalize content for individual users.</p></li>
     /// </ul>
-    pub fn behavior(&self) -> ::std::option::Option<&crate::types::BehaviorEnum> {
+    pub fn behavior(&self) -> ::std::option::Option<& crate::types::BehaviorEnum> {
         self.behavior.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl CacheBehaviorBuilder {
     /// <p><b> <code>dont-cache</code> </b> - This option is best for sites that serve a mix of static and dynamic content. When specified, your distribution caches and serve only the content that is specified in the distribution's <code>CacheBehaviorPerPath</code> parameter. This behavior is ideal for websites or web applications that use cookies, headers, and query strings to personalize content for individual users.</p></li>
     /// </ul>
     pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::BehaviorEnum>) -> Self {
-        self.behavior = input;
-        self
+        self.behavior = input; self
     }
     /// <p>The cache behavior of the distribution.</p>
     /// <p>The following cache behaviors can be specified:</p>
@@ -78,6 +77,10 @@ impl CacheBehaviorBuilder {
     }
     /// Consumes the builder and constructs a [`CacheBehavior`](crate::types::CacheBehavior).
     pub fn build(self) -> crate::types::CacheBehavior {
-        crate::types::CacheBehavior { behavior: self.behavior }
+        crate::types::CacheBehavior {
+            behavior: self.behavior
+            ,
+        }
     }
 }
+

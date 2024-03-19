@@ -3,28 +3,28 @@
 /// <p>The output from the RegisterCACertificateResponse operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterCaCertificateOutput {
+pub struct RegisterCaCertificateOutput  {
     /// <p>The CA certificate ARN.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CA certificate identifier.</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RegisterCaCertificateOutput {
+impl  RegisterCaCertificateOutput  {
     /// <p>The CA certificate ARN.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The CA certificate identifier.</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterCaCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterCaCertificateOutput {
     /// Creates a new builder-style object to manufacture [`RegisterCaCertificateOutput`](crate::operation::register_ca_certificate::RegisterCaCertificateOutput).
     pub fn builder() -> crate::operation::register_ca_certificate::builders::RegisterCaCertificateOutputBuilder {
@@ -48,8 +48,7 @@ impl RegisterCaCertificateOutputBuilder {
     }
     /// <p>The CA certificate ARN.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The CA certificate ARN.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl RegisterCaCertificateOutputBuilder {
     }
     /// <p>The CA certificate identifier.</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The CA certificate identifier.</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterCaCertificateOutput`](crate::operation::register_ca_certificate::RegisterCaCertificateOutput).
     pub fn build(self) -> crate::operation::register_ca_certificate::RegisterCaCertificateOutput {
         crate::operation::register_ca_certificate::RegisterCaCertificateOutput {
-            certificate_arn: self.certificate_arn,
-            certificate_id: self.certificate_id,
+            certificate_arn: self.certificate_arn
+            ,
+            certificate_id: self.certificate_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

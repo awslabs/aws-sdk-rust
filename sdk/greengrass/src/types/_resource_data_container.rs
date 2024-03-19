@@ -3,7 +3,7 @@
 /// A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDataContainer {
+pub struct ResourceDataContainer  {
     /// Attributes that define the local device resource.
     pub local_device_resource_data: ::std::option::Option<crate::types::LocalDeviceResourceData>,
     /// Attributes that define the local volume resource.
@@ -15,25 +15,25 @@ pub struct ResourceDataContainer {
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
     pub secrets_manager_secret_resource_data: ::std::option::Option<crate::types::SecretsManagerSecretResourceData>,
 }
-impl ResourceDataContainer {
+impl  ResourceDataContainer  {
     /// Attributes that define the local device resource.
-    pub fn local_device_resource_data(&self) -> ::std::option::Option<&crate::types::LocalDeviceResourceData> {
+    pub fn local_device_resource_data(&self) -> ::std::option::Option<& crate::types::LocalDeviceResourceData> {
         self.local_device_resource_data.as_ref()
     }
     /// Attributes that define the local volume resource.
-    pub fn local_volume_resource_data(&self) -> ::std::option::Option<&crate::types::LocalVolumeResourceData> {
+    pub fn local_volume_resource_data(&self) -> ::std::option::Option<& crate::types::LocalVolumeResourceData> {
         self.local_volume_resource_data.as_ref()
     }
     /// Attributes that define an Amazon S3 machine learning resource.
-    pub fn s3_machine_learning_model_resource_data(&self) -> ::std::option::Option<&crate::types::S3MachineLearningModelResourceData> {
+    pub fn s3_machine_learning_model_resource_data(&self) -> ::std::option::Option<& crate::types::S3MachineLearningModelResourceData> {
         self.s3_machine_learning_model_resource_data.as_ref()
     }
     /// Attributes that define an Amazon SageMaker machine learning resource.
-    pub fn sage_maker_machine_learning_model_resource_data(&self) -> ::std::option::Option<&crate::types::SageMakerMachineLearningModelResourceData> {
+    pub fn sage_maker_machine_learning_model_resource_data(&self) -> ::std::option::Option<& crate::types::SageMakerMachineLearningModelResourceData> {
         self.sage_maker_machine_learning_model_resource_data.as_ref()
     }
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
-    pub fn secrets_manager_secret_resource_data(&self) -> ::std::option::Option<&crate::types::SecretsManagerSecretResourceData> {
+    pub fn secrets_manager_secret_resource_data(&self) -> ::std::option::Option<& crate::types::SecretsManagerSecretResourceData> {
         self.secrets_manager_secret_resource_data.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl ResourceDataContainerBuilder {
     }
     /// Attributes that define the local device resource.
     pub fn set_local_device_resource_data(mut self, input: ::std::option::Option<crate::types::LocalDeviceResourceData>) -> Self {
-        self.local_device_resource_data = input;
-        self
+        self.local_device_resource_data = input; self
     }
     /// Attributes that define the local device resource.
     pub fn get_local_device_resource_data(&self) -> &::std::option::Option<crate::types::LocalDeviceResourceData> {
@@ -76,8 +75,7 @@ impl ResourceDataContainerBuilder {
     }
     /// Attributes that define the local volume resource.
     pub fn set_local_volume_resource_data(mut self, input: ::std::option::Option<crate::types::LocalVolumeResourceData>) -> Self {
-        self.local_volume_resource_data = input;
-        self
+        self.local_volume_resource_data = input; self
     }
     /// Attributes that define the local volume resource.
     pub fn get_local_volume_resource_data(&self) -> &::std::option::Option<crate::types::LocalVolumeResourceData> {
@@ -89,12 +87,8 @@ impl ResourceDataContainerBuilder {
         self
     }
     /// Attributes that define an Amazon S3 machine learning resource.
-    pub fn set_s3_machine_learning_model_resource_data(
-        mut self,
-        input: ::std::option::Option<crate::types::S3MachineLearningModelResourceData>,
-    ) -> Self {
-        self.s3_machine_learning_model_resource_data = input;
-        self
+    pub fn set_s3_machine_learning_model_resource_data(mut self, input: ::std::option::Option<crate::types::S3MachineLearningModelResourceData>) -> Self {
+        self.s3_machine_learning_model_resource_data = input; self
     }
     /// Attributes that define an Amazon S3 machine learning resource.
     pub fn get_s3_machine_learning_model_resource_data(&self) -> &::std::option::Option<crate::types::S3MachineLearningModelResourceData> {
@@ -106,17 +100,11 @@ impl ResourceDataContainerBuilder {
         self
     }
     /// Attributes that define an Amazon SageMaker machine learning resource.
-    pub fn set_sage_maker_machine_learning_model_resource_data(
-        mut self,
-        input: ::std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>,
-    ) -> Self {
-        self.sage_maker_machine_learning_model_resource_data = input;
-        self
+    pub fn set_sage_maker_machine_learning_model_resource_data(mut self, input: ::std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>) -> Self {
+        self.sage_maker_machine_learning_model_resource_data = input; self
     }
     /// Attributes that define an Amazon SageMaker machine learning resource.
-    pub fn get_sage_maker_machine_learning_model_resource_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::SageMakerMachineLearningModelResourceData> {
+    pub fn get_sage_maker_machine_learning_model_resource_data(&self) -> &::std::option::Option<crate::types::SageMakerMachineLearningModelResourceData> {
         &self.sage_maker_machine_learning_model_resource_data
     }
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
@@ -126,8 +114,7 @@ impl ResourceDataContainerBuilder {
     }
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
     pub fn set_secrets_manager_secret_resource_data(mut self, input: ::std::option::Option<crate::types::SecretsManagerSecretResourceData>) -> Self {
-        self.secrets_manager_secret_resource_data = input;
-        self
+        self.secrets_manager_secret_resource_data = input; self
     }
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
     pub fn get_secrets_manager_secret_resource_data(&self) -> &::std::option::Option<crate::types::SecretsManagerSecretResourceData> {
@@ -136,11 +123,17 @@ impl ResourceDataContainerBuilder {
     /// Consumes the builder and constructs a [`ResourceDataContainer`](crate::types::ResourceDataContainer).
     pub fn build(self) -> crate::types::ResourceDataContainer {
         crate::types::ResourceDataContainer {
-            local_device_resource_data: self.local_device_resource_data,
-            local_volume_resource_data: self.local_volume_resource_data,
-            s3_machine_learning_model_resource_data: self.s3_machine_learning_model_resource_data,
-            sage_maker_machine_learning_model_resource_data: self.sage_maker_machine_learning_model_resource_data,
-            secrets_manager_secret_resource_data: self.secrets_manager_secret_resource_data,
+            local_device_resource_data: self.local_device_resource_data
+            ,
+            local_volume_resource_data: self.local_volume_resource_data
+            ,
+            s3_machine_learning_model_resource_data: self.s3_machine_learning_model_resource_data
+            ,
+            sage_maker_machine_learning_model_resource_data: self.sage_maker_machine_learning_model_resource_data
+            ,
+            secrets_manager_secret_resource_data: self.secrets_manager_secret_resource_data
+            ,
         }
     }
 }
+

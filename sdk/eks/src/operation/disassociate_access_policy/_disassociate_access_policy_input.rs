@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateAccessPolicyInput {
+pub struct DisassociateAccessPolicyInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
@@ -10,17 +10,17 @@ pub struct DisassociateAccessPolicyInput {
     /// <p>The ARN of the policy to disassociate from the access entry. For a list of associated policies ARNs, use <code>ListAssociatedAccessPolicies</code>.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateAccessPolicyInput {
+impl  DisassociateAccessPolicyInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
-    pub fn principal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn principal_arn(&self) -> ::std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
     /// <p>The ARN of the policy to disassociate from the access entry. For a list of associated policies ARNs, use <code>ListAssociatedAccessPolicies</code>.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DisassociateAccessPolicyInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DisassociateAccessPolicyInputBuilder {
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DisassociateAccessPolicyInputBuilder {
     }
     /// <p>The ARN of the policy to disassociate from the access entry. For a list of associated policies ARNs, use <code>ListAssociatedAccessPolicies</code>.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The ARN of the policy to disassociate from the access entry. For a list of associated policies ARNs, use <code>ListAssociatedAccessPolicies</code>.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
     /// Consumes the builder and constructs a [`DisassociateAccessPolicyInput`](crate::operation::disassociate_access_policy::DisassociateAccessPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_access_policy::DisassociateAccessPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_access_policy::DisassociateAccessPolicyInput {
-            cluster_name: self.cluster_name,
-            principal_arn: self.principal_arn,
-            policy_arn: self.policy_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_access_policy::DisassociateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_access_policy::DisassociateAccessPolicyInput {
+                cluster_name: self.cluster_name
+                ,
+                principal_arn: self.principal_arn
+                ,
+                policy_arn: self.policy_arn
+                ,
+            }
+        )
     }
 }
+

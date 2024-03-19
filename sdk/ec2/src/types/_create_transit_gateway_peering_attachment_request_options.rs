@@ -3,13 +3,13 @@
 /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTransitGatewayPeeringAttachmentRequestOptions {
+pub struct CreateTransitGatewayPeeringAttachmentRequestOptions  {
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
     pub dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
 }
-impl CreateTransitGatewayPeeringAttachmentRequestOptions {
+impl  CreateTransitGatewayPeeringAttachmentRequestOptions  {
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
-    pub fn dynamic_routing(&self) -> ::std::option::Option<&crate::types::DynamicRoutingValue> {
+    pub fn dynamic_routing(&self) -> ::std::option::Option<& crate::types::DynamicRoutingValue> {
         self.dynamic_routing.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder {
     }
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
     pub fn set_dynamic_routing(mut self, input: ::std::option::Option<crate::types::DynamicRoutingValue>) -> Self {
-        self.dynamic_routing = input;
-        self
+        self.dynamic_routing = input; self
     }
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
     pub fn get_dynamic_routing(&self) -> &::std::option::Option<crate::types::DynamicRoutingValue> {
@@ -44,7 +43,9 @@ impl CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder {
     /// Consumes the builder and constructs a [`CreateTransitGatewayPeeringAttachmentRequestOptions`](crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions).
     pub fn build(self) -> crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions {
         crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions {
-            dynamic_routing: self.dynamic_routing,
+            dynamic_routing: self.dynamic_routing
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLiveSources`](crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p><br>
     ///   - [`source_location_name(impl Into<String>)`](crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::set_source_location_name):<br>required: **true**<br><p>The name of the source location associated with this Live Sources list.</p><br>
-    /// - On success, responds with [`ListLiveSourcesOutput`](crate::operation::list_live_sources::ListLiveSourcesOutput) with field(s):
+                            /// - On success, responds with [`ListLiveSourcesOutput`](crate::operation::list_live_sources::ListLiveSourcesOutput) with field(s):
     ///   - [`items(Option<Vec::<LiveSource>>)`](crate::operation::list_live_sources::ListLiveSourcesOutput::items): <p>Lists the live sources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_live_sources::ListLiveSourcesOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListLiveSourcesError>`](crate::operation::list_live_sources::ListLiveSourcesError)
+                            /// - On failure, responds with [`SdkError<ListLiveSourcesError>`](crate::operation::list_live_sources::ListLiveSourcesError)
     pub fn list_live_sources(&self) -> crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder {
-        crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_live_sources::builders::ListLiveSourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

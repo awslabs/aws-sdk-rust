@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let chatitemtype = unimplemented!();
 /// match chatitemtype {
@@ -40,16 +40,14 @@
 /// Specifically, when `chatitemtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChatItemType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ChatItemType {
     #[allow(missing_docs)] // documentation missing in model
     Attachment,
@@ -77,104 +75,92 @@ pub enum ChatItemType {
     Typing,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ChatItemType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ATTACHMENT" => ChatItemType::Attachment,
-            "CHAT_ENDED" => ChatItemType::ChatEnded,
-            "CONNECTION_ACK" => ChatItemType::ConnectionAck,
-            "EVENT" => ChatItemType::Event,
-            "MESSAGE" => ChatItemType::Message,
-            "MESSAGE_DELIVERED" => ChatItemType::MessageDelivered,
-            "MESSAGE_READ" => ChatItemType::MessageRead,
-            "PARTICIPANT_JOINED" => ChatItemType::ParticipantJoined,
-            "PARTICIPANT_LEFT" => ChatItemType::ParticipantLeft,
-            "TRANSFER_FAILED" => ChatItemType::TransferFailed,
-            "TRANSFER_SUCCEEDED" => ChatItemType::TransferSucceeded,
-            "TYPING" => ChatItemType::Typing,
-            other => ChatItemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ATTACHMENT" => ChatItemType::Attachment,
+"CHAT_ENDED" => ChatItemType::ChatEnded,
+"CONNECTION_ACK" => ChatItemType::ConnectionAck,
+"EVENT" => ChatItemType::Event,
+"MESSAGE" => ChatItemType::Message,
+"MESSAGE_DELIVERED" => ChatItemType::MessageDelivered,
+"MESSAGE_READ" => ChatItemType::MessageRead,
+"PARTICIPANT_JOINED" => ChatItemType::ParticipantJoined,
+"PARTICIPANT_LEFT" => ChatItemType::ParticipantLeft,
+"TRANSFER_FAILED" => ChatItemType::TransferFailed,
+"TRANSFER_SUCCEEDED" => ChatItemType::TransferSucceeded,
+"TYPING" => ChatItemType::Typing,
+other => ChatItemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ChatItemType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ChatItemType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ChatItemType::from(s))
+                    }
+                }
 impl ChatItemType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChatItemType::Attachment => "ATTACHMENT",
-            ChatItemType::ChatEnded => "CHAT_ENDED",
-            ChatItemType::ConnectionAck => "CONNECTION_ACK",
-            ChatItemType::Event => "EVENT",
-            ChatItemType::Message => "MESSAGE",
-            ChatItemType::MessageDelivered => "MESSAGE_DELIVERED",
-            ChatItemType::MessageRead => "MESSAGE_READ",
-            ChatItemType::ParticipantJoined => "PARTICIPANT_JOINED",
-            ChatItemType::ParticipantLeft => "PARTICIPANT_LEFT",
-            ChatItemType::TransferFailed => "TRANSFER_FAILED",
-            ChatItemType::TransferSucceeded => "TRANSFER_SUCCEEDED",
-            ChatItemType::Typing => "TYPING",
-            ChatItemType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ATTACHMENT",
-            "CHAT_ENDED",
-            "CONNECTION_ACK",
-            "EVENT",
-            "MESSAGE",
-            "MESSAGE_DELIVERED",
-            "MESSAGE_READ",
-            "PARTICIPANT_JOINED",
-            "PARTICIPANT_LEFT",
-            "TRANSFER_FAILED",
-            "TRANSFER_SUCCEEDED",
-            "TYPING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChatItemType::Attachment => "ATTACHMENT",
+    ChatItemType::ChatEnded => "CHAT_ENDED",
+    ChatItemType::ConnectionAck => "CONNECTION_ACK",
+    ChatItemType::Event => "EVENT",
+    ChatItemType::Message => "MESSAGE",
+    ChatItemType::MessageDelivered => "MESSAGE_DELIVERED",
+    ChatItemType::MessageRead => "MESSAGE_READ",
+    ChatItemType::ParticipantJoined => "PARTICIPANT_JOINED",
+    ChatItemType::ParticipantLeft => "PARTICIPANT_LEFT",
+    ChatItemType::TransferFailed => "TRANSFER_FAILED",
+    ChatItemType::TransferSucceeded => "TRANSFER_SUCCEEDED",
+    ChatItemType::Typing => "TYPING",
+    ChatItemType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ATTACHMENT", "CHAT_ENDED", "CONNECTION_ACK", "EVENT", "MESSAGE", "MESSAGE_DELIVERED", "MESSAGE_READ", "PARTICIPANT_JOINED", "PARTICIPANT_LEFT", "TRANSFER_FAILED", "TRANSFER_SUCCEEDED", "TYPING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ChatItemType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ChatItemType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ChatItemType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ChatItemType::Attachment => write!(f, "ATTACHMENT"),
-            ChatItemType::ChatEnded => write!(f, "CHAT_ENDED"),
-            ChatItemType::ConnectionAck => write!(f, "CONNECTION_ACK"),
-            ChatItemType::Event => write!(f, "EVENT"),
-            ChatItemType::Message => write!(f, "MESSAGE"),
-            ChatItemType::MessageDelivered => write!(f, "MESSAGE_DELIVERED"),
-            ChatItemType::MessageRead => write!(f, "MESSAGE_READ"),
-            ChatItemType::ParticipantJoined => write!(f, "PARTICIPANT_JOINED"),
-            ChatItemType::ParticipantLeft => write!(f, "PARTICIPANT_LEFT"),
-            ChatItemType::TransferFailed => write!(f, "TRANSFER_FAILED"),
-            ChatItemType::TransferSucceeded => write!(f, "TRANSFER_SUCCEEDED"),
-            ChatItemType::Typing => write!(f, "TYPING"),
-            ChatItemType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ChatItemType::Attachment => write!(f, "ATTACHMENT"),
+ChatItemType::ChatEnded => write!(f, "CHAT_ENDED"),
+ChatItemType::ConnectionAck => write!(f, "CONNECTION_ACK"),
+ChatItemType::Event => write!(f, "EVENT"),
+ChatItemType::Message => write!(f, "MESSAGE"),
+ChatItemType::MessageDelivered => write!(f, "MESSAGE_DELIVERED"),
+ChatItemType::MessageRead => write!(f, "MESSAGE_READ"),
+ChatItemType::ParticipantJoined => write!(f, "PARTICIPANT_JOINED"),
+ChatItemType::ParticipantLeft => write!(f, "PARTICIPANT_LEFT"),
+ChatItemType::TransferFailed => write!(f, "TRANSFER_FAILED"),
+ChatItemType::TransferSucceeded => write!(f, "TRANSFER_SUCCEEDED"),
+ChatItemType::Typing => write!(f, "TYPING"),
+ChatItemType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

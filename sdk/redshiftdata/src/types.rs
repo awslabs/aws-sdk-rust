@@ -36,3 +36,4 @@ pub mod builders;
 
 /// Error types that Redshift Data API Service can respond with.
 pub mod error;
+

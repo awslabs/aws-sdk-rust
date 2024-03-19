@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFormInput {
+pub struct DeleteFormInput  {
     /// <p>The unique ID of the Amplify app associated with the form to delete.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
@@ -10,17 +10,17 @@ pub struct DeleteFormInput {
     /// <p>The unique ID of the form to delete.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFormInput {
+impl  DeleteFormInput  {
     /// <p>The unique ID of the Amplify app associated with the form to delete.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique ID of the form to delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteFormInputBuilder {
     }
     /// <p>The unique ID of the Amplify app associated with the form to delete.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID of the Amplify app associated with the form to delete.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteFormInputBuilder {
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl DeleteFormInputBuilder {
     }
     /// <p>The unique ID of the form to delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of the form to delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,10 +84,16 @@ impl DeleteFormInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteFormInput`](crate::operation::delete_form::DeleteFormInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_form::DeleteFormInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_form::DeleteFormInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_form::DeleteFormInput {
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

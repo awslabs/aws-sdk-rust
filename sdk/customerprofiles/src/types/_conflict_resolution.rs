@@ -3,7 +3,7 @@
 /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConflictResolution {
+pub struct ConflictResolution  {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct ConflictResolution {
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     pub source_name: ::std::option::Option<::std::string::String>,
 }
-impl ConflictResolution {
+impl  ConflictResolution  {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl ConflictResolution {
     /// <li>
     /// <p><code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p></li>
     /// </ul>
-    pub fn conflict_resolving_model(&self) -> &crate::types::ConflictResolvingModel {
+    pub fn conflict_resolving_model(&self) -> & crate::types::ConflictResolvingModel {
         &self.conflict_resolving_model
     }
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl ConflictResolutionBuilder {
     /// <p><code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p></li>
     /// </ul>
     pub fn set_conflict_resolving_model(mut self, input: ::std::option::Option<crate::types::ConflictResolvingModel>) -> Self {
-        self.conflict_resolving_model = input;
-        self
+        self.conflict_resolving_model = input; self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
@@ -86,8 +85,7 @@ impl ConflictResolutionBuilder {
     }
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,14 +95,17 @@ impl ConflictResolutionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`conflict_resolving_model`](crate::types::builders::ConflictResolutionBuilder::conflict_resolving_model)
     pub fn build(self) -> ::std::result::Result<crate::types::ConflictResolution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConflictResolution {
-            conflict_resolving_model: self.conflict_resolving_model.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "conflict_resolving_model",
-                    "conflict_resolving_model was not specified but it is required when building ConflictResolution",
-                )
-            })?,
-            source_name: self.source_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConflictResolution {
+                conflict_resolving_model: self.conflict_resolving_model
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conflict_resolving_model", "conflict_resolving_model was not specified but it is required when building ConflictResolution")
+                    )?
+                ,
+                source_name: self.source_name
+                ,
+            }
+        )
     }
 }
+

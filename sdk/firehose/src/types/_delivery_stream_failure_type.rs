@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deliverystreamfailuretype = unimplemented!();
 /// match deliverystreamfailuretype {
@@ -43,16 +43,14 @@
 /// Specifically, when `deliverystreamfailuretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeliveryStreamFailureType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DeliveryStreamFailureType {
     #[allow(missing_docs)] // documentation missing in model
     CreateEniFailed,
@@ -86,116 +84,101 @@ pub enum DeliveryStreamFailureType {
     UnknownError,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DeliveryStreamFailureType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_ENI_FAILED" => DeliveryStreamFailureType::CreateEniFailed,
-            "CREATE_KMS_GRANT_FAILED" => DeliveryStreamFailureType::CreateKmsGrantFailed,
-            "DELETE_ENI_FAILED" => DeliveryStreamFailureType::DeleteEniFailed,
-            "DISABLED_KMS_KEY" => DeliveryStreamFailureType::DisabledKmsKey,
-            "ENI_ACCESS_DENIED" => DeliveryStreamFailureType::EniAccessDenied,
-            "INVALID_KMS_KEY" => DeliveryStreamFailureType::InvalidKmsKey,
-            "KMS_ACCESS_DENIED" => DeliveryStreamFailureType::KmsAccessDenied,
-            "KMS_KEY_NOT_FOUND" => DeliveryStreamFailureType::KmsKeyNotFound,
-            "KMS_OPT_IN_REQUIRED" => DeliveryStreamFailureType::KmsOptInRequired,
-            "RETIRE_KMS_GRANT_FAILED" => DeliveryStreamFailureType::RetireKmsGrantFailed,
-            "SECURITY_GROUP_ACCESS_DENIED" => DeliveryStreamFailureType::SecurityGroupAccessDenied,
-            "SECURITY_GROUP_NOT_FOUND" => DeliveryStreamFailureType::SecurityGroupNotFound,
-            "SUBNET_ACCESS_DENIED" => DeliveryStreamFailureType::SubnetAccessDenied,
-            "SUBNET_NOT_FOUND" => DeliveryStreamFailureType::SubnetNotFound,
-            "UNKNOWN_ERROR" => DeliveryStreamFailureType::UnknownError,
-            other => DeliveryStreamFailureType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATE_ENI_FAILED" => DeliveryStreamFailureType::CreateEniFailed,
+"CREATE_KMS_GRANT_FAILED" => DeliveryStreamFailureType::CreateKmsGrantFailed,
+"DELETE_ENI_FAILED" => DeliveryStreamFailureType::DeleteEniFailed,
+"DISABLED_KMS_KEY" => DeliveryStreamFailureType::DisabledKmsKey,
+"ENI_ACCESS_DENIED" => DeliveryStreamFailureType::EniAccessDenied,
+"INVALID_KMS_KEY" => DeliveryStreamFailureType::InvalidKmsKey,
+"KMS_ACCESS_DENIED" => DeliveryStreamFailureType::KmsAccessDenied,
+"KMS_KEY_NOT_FOUND" => DeliveryStreamFailureType::KmsKeyNotFound,
+"KMS_OPT_IN_REQUIRED" => DeliveryStreamFailureType::KmsOptInRequired,
+"RETIRE_KMS_GRANT_FAILED" => DeliveryStreamFailureType::RetireKmsGrantFailed,
+"SECURITY_GROUP_ACCESS_DENIED" => DeliveryStreamFailureType::SecurityGroupAccessDenied,
+"SECURITY_GROUP_NOT_FOUND" => DeliveryStreamFailureType::SecurityGroupNotFound,
+"SUBNET_ACCESS_DENIED" => DeliveryStreamFailureType::SubnetAccessDenied,
+"SUBNET_NOT_FOUND" => DeliveryStreamFailureType::SubnetNotFound,
+"UNKNOWN_ERROR" => DeliveryStreamFailureType::UnknownError,
+other => DeliveryStreamFailureType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DeliveryStreamFailureType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DeliveryStreamFailureType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DeliveryStreamFailureType::from(s))
+                    }
+                }
 impl DeliveryStreamFailureType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeliveryStreamFailureType::CreateEniFailed => "CREATE_ENI_FAILED",
-            DeliveryStreamFailureType::CreateKmsGrantFailed => "CREATE_KMS_GRANT_FAILED",
-            DeliveryStreamFailureType::DeleteEniFailed => "DELETE_ENI_FAILED",
-            DeliveryStreamFailureType::DisabledKmsKey => "DISABLED_KMS_KEY",
-            DeliveryStreamFailureType::EniAccessDenied => "ENI_ACCESS_DENIED",
-            DeliveryStreamFailureType::InvalidKmsKey => "INVALID_KMS_KEY",
-            DeliveryStreamFailureType::KmsAccessDenied => "KMS_ACCESS_DENIED",
-            DeliveryStreamFailureType::KmsKeyNotFound => "KMS_KEY_NOT_FOUND",
-            DeliveryStreamFailureType::KmsOptInRequired => "KMS_OPT_IN_REQUIRED",
-            DeliveryStreamFailureType::RetireKmsGrantFailed => "RETIRE_KMS_GRANT_FAILED",
-            DeliveryStreamFailureType::SecurityGroupAccessDenied => "SECURITY_GROUP_ACCESS_DENIED",
-            DeliveryStreamFailureType::SecurityGroupNotFound => "SECURITY_GROUP_NOT_FOUND",
-            DeliveryStreamFailureType::SubnetAccessDenied => "SUBNET_ACCESS_DENIED",
-            DeliveryStreamFailureType::SubnetNotFound => "SUBNET_NOT_FOUND",
-            DeliveryStreamFailureType::UnknownError => "UNKNOWN_ERROR",
-            DeliveryStreamFailureType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_ENI_FAILED",
-            "CREATE_KMS_GRANT_FAILED",
-            "DELETE_ENI_FAILED",
-            "DISABLED_KMS_KEY",
-            "ENI_ACCESS_DENIED",
-            "INVALID_KMS_KEY",
-            "KMS_ACCESS_DENIED",
-            "KMS_KEY_NOT_FOUND",
-            "KMS_OPT_IN_REQUIRED",
-            "RETIRE_KMS_GRANT_FAILED",
-            "SECURITY_GROUP_ACCESS_DENIED",
-            "SECURITY_GROUP_NOT_FOUND",
-            "SUBNET_ACCESS_DENIED",
-            "SUBNET_NOT_FOUND",
-            "UNKNOWN_ERROR",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeliveryStreamFailureType::CreateEniFailed => "CREATE_ENI_FAILED",
+    DeliveryStreamFailureType::CreateKmsGrantFailed => "CREATE_KMS_GRANT_FAILED",
+    DeliveryStreamFailureType::DeleteEniFailed => "DELETE_ENI_FAILED",
+    DeliveryStreamFailureType::DisabledKmsKey => "DISABLED_KMS_KEY",
+    DeliveryStreamFailureType::EniAccessDenied => "ENI_ACCESS_DENIED",
+    DeliveryStreamFailureType::InvalidKmsKey => "INVALID_KMS_KEY",
+    DeliveryStreamFailureType::KmsAccessDenied => "KMS_ACCESS_DENIED",
+    DeliveryStreamFailureType::KmsKeyNotFound => "KMS_KEY_NOT_FOUND",
+    DeliveryStreamFailureType::KmsOptInRequired => "KMS_OPT_IN_REQUIRED",
+    DeliveryStreamFailureType::RetireKmsGrantFailed => "RETIRE_KMS_GRANT_FAILED",
+    DeliveryStreamFailureType::SecurityGroupAccessDenied => "SECURITY_GROUP_ACCESS_DENIED",
+    DeliveryStreamFailureType::SecurityGroupNotFound => "SECURITY_GROUP_NOT_FOUND",
+    DeliveryStreamFailureType::SubnetAccessDenied => "SUBNET_ACCESS_DENIED",
+    DeliveryStreamFailureType::SubnetNotFound => "SUBNET_NOT_FOUND",
+    DeliveryStreamFailureType::UnknownError => "UNKNOWN_ERROR",
+    DeliveryStreamFailureType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_ENI_FAILED", "CREATE_KMS_GRANT_FAILED", "DELETE_ENI_FAILED", "DISABLED_KMS_KEY", "ENI_ACCESS_DENIED", "INVALID_KMS_KEY", "KMS_ACCESS_DENIED", "KMS_KEY_NOT_FOUND", "KMS_OPT_IN_REQUIRED", "RETIRE_KMS_GRANT_FAILED", "SECURITY_GROUP_ACCESS_DENIED", "SECURITY_GROUP_NOT_FOUND", "SUBNET_ACCESS_DENIED", "SUBNET_NOT_FOUND", "UNKNOWN_ERROR"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DeliveryStreamFailureType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DeliveryStreamFailureType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DeliveryStreamFailureType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DeliveryStreamFailureType::CreateEniFailed => write!(f, "CREATE_ENI_FAILED"),
-            DeliveryStreamFailureType::CreateKmsGrantFailed => write!(f, "CREATE_KMS_GRANT_FAILED"),
-            DeliveryStreamFailureType::DeleteEniFailed => write!(f, "DELETE_ENI_FAILED"),
-            DeliveryStreamFailureType::DisabledKmsKey => write!(f, "DISABLED_KMS_KEY"),
-            DeliveryStreamFailureType::EniAccessDenied => write!(f, "ENI_ACCESS_DENIED"),
-            DeliveryStreamFailureType::InvalidKmsKey => write!(f, "INVALID_KMS_KEY"),
-            DeliveryStreamFailureType::KmsAccessDenied => write!(f, "KMS_ACCESS_DENIED"),
-            DeliveryStreamFailureType::KmsKeyNotFound => write!(f, "KMS_KEY_NOT_FOUND"),
-            DeliveryStreamFailureType::KmsOptInRequired => write!(f, "KMS_OPT_IN_REQUIRED"),
-            DeliveryStreamFailureType::RetireKmsGrantFailed => write!(f, "RETIRE_KMS_GRANT_FAILED"),
-            DeliveryStreamFailureType::SecurityGroupAccessDenied => write!(f, "SECURITY_GROUP_ACCESS_DENIED"),
-            DeliveryStreamFailureType::SecurityGroupNotFound => write!(f, "SECURITY_GROUP_NOT_FOUND"),
-            DeliveryStreamFailureType::SubnetAccessDenied => write!(f, "SUBNET_ACCESS_DENIED"),
-            DeliveryStreamFailureType::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
-            DeliveryStreamFailureType::UnknownError => write!(f, "UNKNOWN_ERROR"),
-            DeliveryStreamFailureType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DeliveryStreamFailureType::CreateEniFailed => write!(f, "CREATE_ENI_FAILED"),
+DeliveryStreamFailureType::CreateKmsGrantFailed => write!(f, "CREATE_KMS_GRANT_FAILED"),
+DeliveryStreamFailureType::DeleteEniFailed => write!(f, "DELETE_ENI_FAILED"),
+DeliveryStreamFailureType::DisabledKmsKey => write!(f, "DISABLED_KMS_KEY"),
+DeliveryStreamFailureType::EniAccessDenied => write!(f, "ENI_ACCESS_DENIED"),
+DeliveryStreamFailureType::InvalidKmsKey => write!(f, "INVALID_KMS_KEY"),
+DeliveryStreamFailureType::KmsAccessDenied => write!(f, "KMS_ACCESS_DENIED"),
+DeliveryStreamFailureType::KmsKeyNotFound => write!(f, "KMS_KEY_NOT_FOUND"),
+DeliveryStreamFailureType::KmsOptInRequired => write!(f, "KMS_OPT_IN_REQUIRED"),
+DeliveryStreamFailureType::RetireKmsGrantFailed => write!(f, "RETIRE_KMS_GRANT_FAILED"),
+DeliveryStreamFailureType::SecurityGroupAccessDenied => write!(f, "SECURITY_GROUP_ACCESS_DENIED"),
+DeliveryStreamFailureType::SecurityGroupNotFound => write!(f, "SECURITY_GROUP_NOT_FOUND"),
+DeliveryStreamFailureType::SubnetAccessDenied => write!(f, "SUBNET_ACCESS_DENIED"),
+DeliveryStreamFailureType::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
+DeliveryStreamFailureType::UnknownError => write!(f, "UNKNOWN_ERROR"),
+DeliveryStreamFailureType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

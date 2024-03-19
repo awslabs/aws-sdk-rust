@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchSchemasInput {
+pub struct SearchSchemasInput  {
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
     pub keywords: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -12,9 +12,9 @@ pub struct SearchSchemasInput {
     /// <p>The name of the registry.</p>
     pub registry_name: ::std::option::Option<::std::string::String>,
 }
-impl SearchSchemasInput {
+impl  SearchSchemasInput  {
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
-    pub fn keywords(&self) -> ::std::option::Option<&str> {
+    pub fn keywords(&self) -> ::std::option::Option<& str> {
         self.keywords.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -22,11 +22,11 @@ impl SearchSchemasInput {
         self.limit
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl SearchSchemasInputBuilder {
     }
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
     pub fn set_keywords(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keywords = input;
-        self
+        self.keywords = input; self
     }
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
     pub fn get_keywords(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SearchSchemasInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl SearchSchemasInputBuilder {
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl SearchSchemasInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the registry.</p>
     pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_name
     }
     /// Consumes the builder and constructs a [`SearchSchemasInput`](crate::operation::search_schemas::SearchSchemasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_schemas::SearchSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_schemas::SearchSchemasInput {
-            keywords: self.keywords,
-            limit: self.limit,
-            next_token: self.next_token,
-            registry_name: self.registry_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_schemas::SearchSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_schemas::SearchSchemasInput {
+                keywords: self.keywords
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+                registry_name: self.registry_name
+                ,
+            }
+        )
     }
 }
+

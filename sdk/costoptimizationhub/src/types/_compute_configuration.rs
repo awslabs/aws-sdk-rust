@@ -3,7 +3,7 @@
 /// <p>Describes the performance configuration for compute services such as Amazon EC2, Lambda, and ECS.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComputeConfiguration {
+pub struct ComputeConfiguration  {
     /// <p>The number of vCPU cores in the resource.</p>
     pub v_cpu: ::std::option::Option<f64>,
     /// <p>The memory size of the resource.</p>
@@ -13,7 +13,7 @@ pub struct ComputeConfiguration {
     /// <p>The platform of the resource. The platform is the specific combination of operating system, license model, and software on an instance.</p>
     pub platform: ::std::option::Option<::std::string::String>,
 }
-impl ComputeConfiguration {
+impl  ComputeConfiguration  {
     /// <p>The number of vCPU cores in the resource.</p>
     pub fn v_cpu(&self) -> ::std::option::Option<f64> {
         self.v_cpu
@@ -23,11 +23,11 @@ impl ComputeConfiguration {
         self.memory_size_in_mb
     }
     /// <p>The architecture of the resource.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<& str> {
         self.architecture.as_deref()
     }
     /// <p>The platform of the resource. The platform is the specific combination of operating system, license model, and software on an instance.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ComputeConfigurationBuilder {
     }
     /// <p>The number of vCPU cores in the resource.</p>
     pub fn set_v_cpu(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.v_cpu = input;
-        self
+        self.v_cpu = input; self
     }
     /// <p>The number of vCPU cores in the resource.</p>
     pub fn get_v_cpu(&self) -> &::std::option::Option<f64> {
@@ -69,8 +68,7 @@ impl ComputeConfigurationBuilder {
     }
     /// <p>The memory size of the resource.</p>
     pub fn set_memory_size_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.memory_size_in_mb = input;
-        self
+        self.memory_size_in_mb = input; self
     }
     /// <p>The memory size of the resource.</p>
     pub fn get_memory_size_in_mb(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ComputeConfigurationBuilder {
     }
     /// <p>The architecture of the resource.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The architecture of the resource.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ComputeConfigurationBuilder {
     }
     /// <p>The platform of the resource. The platform is the specific combination of operating system, license model, and software on an instance.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the resource. The platform is the specific combination of operating system, license model, and software on an instance.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ComputeConfigurationBuilder {
     /// Consumes the builder and constructs a [`ComputeConfiguration`](crate::types::ComputeConfiguration).
     pub fn build(self) -> crate::types::ComputeConfiguration {
         crate::types::ComputeConfiguration {
-            v_cpu: self.v_cpu,
-            memory_size_in_mb: self.memory_size_in_mb,
-            architecture: self.architecture,
-            platform: self.platform,
+            v_cpu: self.v_cpu
+            ,
+            memory_size_in_mb: self.memory_size_in_mb
+            ,
+            architecture: self.architecture
+            ,
+            platform: self.platform
+            ,
         }
     }
 }
+

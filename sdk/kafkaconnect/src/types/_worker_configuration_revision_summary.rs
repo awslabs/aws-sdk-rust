@@ -3,7 +3,7 @@
 /// <p>The summary of a worker configuration revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkerConfigurationRevisionSummary {
+pub struct WorkerConfigurationRevisionSummary  {
     /// <p>The time that a worker configuration revision was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of a worker configuration revision.</p>
@@ -11,13 +11,13 @@ pub struct WorkerConfigurationRevisionSummary {
     /// <p>The revision of a worker configuration.</p>
     pub revision: i64,
 }
-impl WorkerConfigurationRevisionSummary {
+impl  WorkerConfigurationRevisionSummary  {
     /// <p>The time that a worker configuration revision was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of a worker configuration revision.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The revision of a worker configuration.</p>
@@ -48,8 +48,7 @@ impl WorkerConfigurationRevisionSummaryBuilder {
     }
     /// <p>The time that a worker configuration revision was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that a worker configuration revision was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -62,8 +61,7 @@ impl WorkerConfigurationRevisionSummaryBuilder {
     }
     /// <p>The description of a worker configuration revision.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a worker configuration revision.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl WorkerConfigurationRevisionSummaryBuilder {
     }
     /// <p>The revision of a worker configuration.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of a worker configuration.</p>
     pub fn get_revision(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,14 @@ impl WorkerConfigurationRevisionSummaryBuilder {
     /// Consumes the builder and constructs a [`WorkerConfigurationRevisionSummary`](crate::types::WorkerConfigurationRevisionSummary).
     pub fn build(self) -> crate::types::WorkerConfigurationRevisionSummary {
         crate::types::WorkerConfigurationRevisionSummary {
-            creation_time: self.creation_time,
-            description: self.description,
-            revision: self.revision.unwrap_or_default(),
+            creation_time: self.creation_time
+            ,
+            description: self.description
+            ,
+            revision: self.revision
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Configuration information of an Amazon Lex bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LexBot {
+pub struct LexBot  {
     /// <p>The name of the Amazon Lex bot.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     pub lex_region: ::std::string::String,
 }
-impl LexBot {
+impl  LexBot  {
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
-    pub fn lex_region(&self) -> &str {
-        use std::ops::Deref;
-        self.lex_region.deref()
+    pub fn lex_region(&self) -> & str {
+        use std::ops::Deref; self.lex_region.deref()
     }
 }
 impl LexBot {
@@ -44,8 +42,7 @@ impl LexBotBuilder {
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl LexBotBuilder {
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     pub fn set_lex_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lex_region = input;
-        self
+        self.lex_region = input; self
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     pub fn get_lex_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl LexBotBuilder {
     /// - [`name`](crate::types::builders::LexBotBuilder::name)
     /// - [`lex_region`](crate::types::builders::LexBotBuilder::lex_region)
     pub fn build(self) -> ::std::result::Result<crate::types::LexBot, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LexBot {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building LexBot",
-                )
-            })?,
-            lex_region: self.lex_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lex_region",
-                    "lex_region was not specified but it is required when building LexBot",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LexBot {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building LexBot")
+                    )?
+                ,
+                lex_region: self.lex_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lex_region", "lex_region was not specified but it is required when building LexBot")
+                    )?
+                ,
+            }
+        )
     }
 }
+

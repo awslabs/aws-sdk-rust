@@ -3,7 +3,7 @@
 /// <p>An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WeightedTarget {
+pub struct WeightedTarget  {
     /// <p>The virtual node to associate with the weighted target.</p>
     pub virtual_node: ::std::string::String,
     /// <p>The relative weight of the weighted target.</p>
@@ -11,11 +11,10 @@ pub struct WeightedTarget {
     /// <p>The targeted port of the weighted object.</p>
     pub port: ::std::option::Option<i32>,
 }
-impl WeightedTarget {
+impl  WeightedTarget  {
     /// <p>The virtual node to associate with the weighted target.</p>
-    pub fn virtual_node(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_node.deref()
+    pub fn virtual_node(&self) -> & str {
+        use std::ops::Deref; self.virtual_node.deref()
     }
     /// <p>The relative weight of the weighted target.</p>
     pub fn weight(&self) -> i32 {
@@ -50,8 +49,7 @@ impl WeightedTargetBuilder {
     }
     /// <p>The virtual node to associate with the weighted target.</p>
     pub fn set_virtual_node(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_node = input;
-        self
+        self.virtual_node = input; self
     }
     /// <p>The virtual node to associate with the weighted target.</p>
     pub fn get_virtual_node(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl WeightedTargetBuilder {
     }
     /// <p>The relative weight of the weighted target.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The relative weight of the weighted target.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
@@ -79,8 +76,7 @@ impl WeightedTargetBuilder {
     }
     /// <p>The targeted port of the weighted object.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The targeted port of the weighted object.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -90,15 +86,20 @@ impl WeightedTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_node`](crate::types::builders::WeightedTargetBuilder::virtual_node)
     pub fn build(self) -> ::std::result::Result<crate::types::WeightedTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WeightedTarget {
-            virtual_node: self.virtual_node.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_node",
-                    "virtual_node was not specified but it is required when building WeightedTarget",
-                )
-            })?,
-            weight: self.weight.unwrap_or_default(),
-            port: self.port,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WeightedTarget {
+                virtual_node: self.virtual_node
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_node", "virtual_node was not specified but it is required when building WeightedTarget")
+                    )?
+                ,
+                weight: self.weight
+                    .unwrap_or_default()
+                ,
+                port: self.port
+                ,
+            }
+        )
     }
 }
+

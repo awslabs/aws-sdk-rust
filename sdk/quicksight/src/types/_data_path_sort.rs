@@ -3,21 +3,20 @@
 /// <p>Allows data paths to be sorted by a specific data value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataPathSort {
+pub struct DataPathSort  {
     /// <p>Determines the sort direction.</p>
     pub direction: crate::types::SortDirection,
     /// <p>The list of data paths that need to be sorted.</p>
-    pub sort_paths: ::std::vec::Vec<crate::types::DataPathValue>,
+    pub sort_paths: ::std::vec::Vec::<crate::types::DataPathValue>,
 }
-impl DataPathSort {
+impl  DataPathSort  {
     /// <p>Determines the sort direction.</p>
-    pub fn direction(&self) -> &crate::types::SortDirection {
+    pub fn direction(&self) -> & crate::types::SortDirection {
         &self.direction
     }
     /// <p>The list of data paths that need to be sorted.</p>
-    pub fn sort_paths(&self) -> &[crate::types::DataPathValue] {
-        use std::ops::Deref;
-        self.sort_paths.deref()
+    pub fn sort_paths(&self) -> & [crate::types::DataPathValue] {
+        use std::ops::Deref; self.sort_paths.deref()
     }
 }
 impl DataPathSort {
@@ -32,7 +31,7 @@ impl DataPathSort {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataPathSortBuilder {
     pub(crate) direction: ::std::option::Option<crate::types::SortDirection>,
-    pub(crate) sort_paths: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
+    pub(crate) sort_paths: ::std::option::Option<::std::vec::Vec::<crate::types::DataPathValue>>,
 }
 impl DataPathSortBuilder {
     /// <p>Determines the sort direction.</p>
@@ -43,8 +42,7 @@ impl DataPathSortBuilder {
     }
     /// <p>Determines the sort direction.</p>
     pub fn set_direction(mut self, input: ::std::option::Option<crate::types::SortDirection>) -> Self {
-        self.direction = input;
-        self
+        self.direction = input; self
     }
     /// <p>Determines the sort direction.</p>
     pub fn get_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
@@ -57,17 +55,16 @@ impl DataPathSortBuilder {
     /// <p>The list of data paths that need to be sorted.</p>
     pub fn sort_paths(mut self, input: crate::types::DataPathValue) -> Self {
         let mut v = self.sort_paths.unwrap_or_default();
-        v.push(input);
-        self.sort_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sort_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of data paths that need to be sorted.</p>
-    pub fn set_sort_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>) -> Self {
-        self.sort_paths = input;
-        self
+    pub fn set_sort_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataPathValue>>) -> Self {
+        self.sort_paths = input; self
     }
     /// <p>The list of data paths that need to be sorted.</p>
-    pub fn get_sort_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>> {
+    pub fn get_sort_paths(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataPathValue>> {
         &self.sort_paths
     }
     /// Consumes the builder and constructs a [`DataPathSort`](crate::types::DataPathSort).
@@ -75,19 +72,20 @@ impl DataPathSortBuilder {
     /// - [`direction`](crate::types::builders::DataPathSortBuilder::direction)
     /// - [`sort_paths`](crate::types::builders::DataPathSortBuilder::sort_paths)
     pub fn build(self) -> ::std::result::Result<crate::types::DataPathSort, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataPathSort {
-            direction: self.direction.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "direction",
-                    "direction was not specified but it is required when building DataPathSort",
-                )
-            })?,
-            sort_paths: self.sort_paths.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sort_paths",
-                    "sort_paths was not specified but it is required when building DataPathSort",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataPathSort {
+                direction: self.direction
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("direction", "direction was not specified but it is required when building DataPathSort")
+                    )?
+                ,
+                sort_paths: self.sort_paths
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sort_paths", "sort_paths was not specified but it is required when building DataPathSort")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAllowLists`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of a paginated response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
-    /// - On success, responds with [`ListAllowListsOutput`](crate::operation::list_allow_lists::ListAllowListsOutput) with field(s):
+                            /// - On success, responds with [`ListAllowListsOutput`](crate::operation::list_allow_lists::ListAllowListsOutput) with field(s):
     ///   - [`allow_lists(Option<Vec::<AllowListSummary>>)`](crate::operation::list_allow_lists::ListAllowListsOutput::allow_lists): <p>An array of objects, one for each allow list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_allow_lists::ListAllowListsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListAllowListsError>`](crate::operation::list_allow_lists::ListAllowListsError)
+                            /// - On failure, responds with [`SdkError<ListAllowListsError>`](crate::operation::list_allow_lists::ListAllowListsError)
     pub fn list_allow_lists(&self) -> crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder {
-        crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_allow_lists::builders::ListAllowListsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

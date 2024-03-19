@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>ListDomainMaintenances</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainMaintenancesInput {
+pub struct ListDomainMaintenancesInput  {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action.</p>
@@ -15,17 +15,17 @@ pub struct ListDomainMaintenancesInput {
     /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDomainMaintenancesInput {
+impl  ListDomainMaintenancesInput  {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the action.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::MaintenanceType> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::MaintenanceType> {
         self.action.as_ref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MaintenanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MaintenanceStatus> {
         self.status.as_ref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -33,7 +33,7 @@ impl ListDomainMaintenancesInput {
         self.max_results
     }
     /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl ListDomainMaintenancesInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListDomainMaintenancesInputBuilder {
     }
     /// <p>The name of the action.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::MaintenanceType>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The name of the action.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::MaintenanceType> {
@@ -91,8 +89,7 @@ impl ListDomainMaintenancesInputBuilder {
     }
     /// <p>The status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceStatus> {
@@ -105,8 +102,7 @@ impl ListDomainMaintenancesInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,26 +115,28 @@ impl ListDomainMaintenancesInputBuilder {
     }
     /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDomainMaintenancesInput`](crate::operation::list_domain_maintenances::ListDomainMaintenancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_domain_maintenances::ListDomainMaintenancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_domain_maintenances::ListDomainMaintenancesInput {
-            domain_name: self.domain_name,
-            action: self.action,
-            status: self.status,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domain_maintenances::ListDomainMaintenancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_domain_maintenances::ListDomainMaintenancesInput {
+                domain_name: self.domain_name
+                ,
+                action: self.action
+                ,
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

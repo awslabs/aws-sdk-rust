@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChannelOutput {
+pub struct UpdateChannelOutput  {
     /// <p>The ARN of the channel that was updated.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel that was updated.</p>
@@ -10,34 +10,35 @@ pub struct UpdateChannelOutput {
     /// <p>The event source of the channel that was updated.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The event data stores that log events arriving through the channel.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>,
     _request_id: Option<String>,
 }
-impl UpdateChannelOutput {
+impl  UpdateChannelOutput  {
     /// <p>The ARN of the channel that was updated.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The name of the channel that was updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The event source of the channel that was updated.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The event data stores that log events arriving through the channel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::Destination] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::Destination] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
     pub fn builder() -> crate::operation::update_channel::builders::UpdateChannelOutputBuilder {
@@ -52,7 +53,7 @@ pub struct UpdateChannelOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>,
     _request_id: Option<String>,
 }
 impl UpdateChannelOutputBuilder {
@@ -63,8 +64,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The ARN of the channel that was updated.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel that was updated.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The name of the channel that was updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the channel that was updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The event source of the channel that was updated.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The event source of the channel that was updated.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,36 +103,40 @@ impl UpdateChannelOutputBuilder {
     /// <p>The event data stores that log events arriving through the channel.</p>
     pub fn destinations(mut self, input: crate::types::Destination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The event data stores that log events arriving through the channel.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Destination>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>The event data stores that log events arriving through the channel.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Destination>> {
         &self.destinations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
     pub fn build(self) -> crate::operation::update_channel::UpdateChannelOutput {
         crate::operation::update_channel::UpdateChannelOutput {
-            channel_arn: self.channel_arn,
-            name: self.name,
-            source: self.source,
-            destinations: self.destinations,
+            channel_arn: self.channel_arn
+            ,
+            name: self.name
+            ,
+            source: self.source
+            ,
+            destinations: self.destinations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

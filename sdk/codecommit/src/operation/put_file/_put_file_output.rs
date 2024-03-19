@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutFileOutput {
+pub struct PutFileOutput  {
     /// <p>The full SHA ID of the commit that contains this file change.</p>
     pub commit_id: ::std::string::String,
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
@@ -11,28 +11,25 @@ pub struct PutFileOutput {
     pub tree_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl PutFileOutput {
+impl  PutFileOutput  {
     /// <p>The full SHA ID of the commit that contains this file change.</p>
-    pub fn commit_id(&self) -> &str {
-        use std::ops::Deref;
-        self.commit_id.deref()
+    pub fn commit_id(&self) -> & str {
+        use std::ops::Deref; self.commit_id.deref()
     }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
-    pub fn blob_id(&self) -> &str {
-        use std::ops::Deref;
-        self.blob_id.deref()
+    pub fn blob_id(&self) -> & str {
+        use std::ops::Deref; self.blob_id.deref()
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
-    pub fn tree_id(&self) -> &str {
-        use std::ops::Deref;
-        self.tree_id.deref()
+    pub fn tree_id(&self) -> & str {
+        use std::ops::Deref; self.tree_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutFileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutFileOutput {
     /// Creates a new builder-style object to manufacture [`PutFileOutput`](crate::operation::put_file::PutFileOutput).
     pub fn builder() -> crate::operation::put_file::builders::PutFileOutputBuilder {
@@ -58,8 +55,7 @@ impl PutFileOutputBuilder {
     }
     /// <p>The full SHA ID of the commit that contains this file change.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The full SHA ID of the commit that contains this file change.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +69,7 @@ impl PutFileOutputBuilder {
     }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blob_id = input;
-        self
+        self.blob_id = input; self
     }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
     pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,48 +83,47 @@ impl PutFileOutputBuilder {
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tree_id = input;
-        self
+        self.tree_id = input; self
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
     pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.tree_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutFileOutput`](crate::operation::put_file::PutFileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`commit_id`](crate::operation::put_file::builders::PutFileOutputBuilder::commit_id)
     /// - [`blob_id`](crate::operation::put_file::builders::PutFileOutputBuilder::blob_id)
     /// - [`tree_id`](crate::operation::put_file::builders::PutFileOutputBuilder::tree_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::put_file::PutFileOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_file::PutFileOutput {
-            commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_id",
-                    "commit_id was not specified but it is required when building PutFileOutput",
-                )
-            })?,
-            blob_id: self.blob_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "blob_id",
-                    "blob_id was not specified but it is required when building PutFileOutput",
-                )
-            })?,
-            tree_id: self.tree_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tree_id",
-                    "tree_id was not specified but it is required when building PutFileOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_file::PutFileOutput {
+                commit_id: self.commit_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_id", "commit_id was not specified but it is required when building PutFileOutput")
+                    )?
+                ,
+                blob_id: self.blob_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("blob_id", "blob_id was not specified but it is required when building PutFileOutput")
+                    )?
+                ,
+                tree_id: self.tree_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tree_id", "tree_id was not specified but it is required when building PutFileOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

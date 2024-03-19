@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStreamConsumerInput {
+pub struct DescribeStreamConsumerInput  {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that you gave to the consumer.</p>
@@ -10,17 +10,17 @@ pub struct DescribeStreamConsumerInput {
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
     pub consumer_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStreamConsumerInput {
+impl  DescribeStreamConsumerInput  {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The name that you gave to the consumer.</p>
-    pub fn consumer_name(&self) -> ::std::option::Option<&str> {
+    pub fn consumer_name(&self) -> ::std::option::Option<& str> {
         self.consumer_name.as_deref()
     }
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
-    pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn consumer_arn(&self) -> ::std::option::Option<& str> {
         self.consumer_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DescribeStreamConsumerInputBuilder {
     }
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DescribeStreamConsumerInputBuilder {
     }
     /// <p>The name that you gave to the consumer.</p>
     pub fn set_consumer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumer_name = input;
-        self
+        self.consumer_name = input; self
     }
     /// <p>The name that you gave to the consumer.</p>
     pub fn get_consumer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,24 +73,24 @@ impl DescribeStreamConsumerInputBuilder {
     }
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.consumer_arn = input;
-        self
+        self.consumer_arn = input; self
     }
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_arn
     }
     /// Consumes the builder and constructs a [`DescribeStreamConsumerInput`](crate::operation::describe_stream_consumer::DescribeStreamConsumerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stream_consumer::DescribeStreamConsumerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_stream_consumer::DescribeStreamConsumerInput {
-            stream_arn: self.stream_arn,
-            consumer_name: self.consumer_name,
-            consumer_arn: self.consumer_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stream_consumer::DescribeStreamConsumerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_stream_consumer::DescribeStreamConsumerInput {
+                stream_arn: self.stream_arn
+                ,
+                consumer_name: self.consumer_name
+                ,
+                consumer_arn: self.consumer_arn
+                ,
+            }
+        )
     }
 }
+

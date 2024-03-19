@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTableOptimizerInput {
+pub struct CreateTableOptimizerInput  {
     /// <p>The Catalog ID of the table.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database in the catalog in which the table resides.</p>
@@ -14,25 +14,25 @@ pub struct CreateTableOptimizerInput {
     /// <p>A <code>TableOptimizerConfiguration</code> object representing the configuration of a table optimizer.</p>
     pub table_optimizer_configuration: ::std::option::Option<crate::types::TableOptimizerConfiguration>,
 }
-impl CreateTableOptimizerInput {
+impl  CreateTableOptimizerInput  {
     /// <p>The Catalog ID of the table.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TableOptimizerType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TableOptimizerType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>TableOptimizerConfiguration</code> object representing the configuration of a table optimizer.</p>
-    pub fn table_optimizer_configuration(&self) -> ::std::option::Option<&crate::types::TableOptimizerConfiguration> {
+    pub fn table_optimizer_configuration(&self) -> ::std::option::Option<& crate::types::TableOptimizerConfiguration> {
         self.table_optimizer_configuration.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl CreateTableOptimizerInputBuilder {
     }
     /// <p>The Catalog ID of the table.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The Catalog ID of the table.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateTableOptimizerInputBuilder {
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateTableOptimizerInputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl CreateTableOptimizerInputBuilder {
     }
     /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableOptimizerType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of table optimizer. Currently, the only valid value is <code>compaction</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TableOptimizerType> {
@@ -122,24 +118,28 @@ impl CreateTableOptimizerInputBuilder {
     }
     /// <p>A <code>TableOptimizerConfiguration</code> object representing the configuration of a table optimizer.</p>
     pub fn set_table_optimizer_configuration(mut self, input: ::std::option::Option<crate::types::TableOptimizerConfiguration>) -> Self {
-        self.table_optimizer_configuration = input;
-        self
+        self.table_optimizer_configuration = input; self
     }
     /// <p>A <code>TableOptimizerConfiguration</code> object representing the configuration of a table optimizer.</p>
     pub fn get_table_optimizer_configuration(&self) -> &::std::option::Option<crate::types::TableOptimizerConfiguration> {
         &self.table_optimizer_configuration
     }
     /// Consumes the builder and constructs a [`CreateTableOptimizerInput`](crate::operation::create_table_optimizer::CreateTableOptimizerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_table_optimizer::CreateTableOptimizerInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_table_optimizer::CreateTableOptimizerInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            r#type: self.r#type,
-            table_optimizer_configuration: self.table_optimizer_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_table_optimizer::CreateTableOptimizerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_table_optimizer::CreateTableOptimizerInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                r#type: self.r#type
+                ,
+                table_optimizer_configuration: self.table_optimizer_configuration
+                ,
+            }
+        )
     }
 }
+

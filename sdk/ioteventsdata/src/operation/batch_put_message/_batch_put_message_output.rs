@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutMessageOutput {
+pub struct BatchPutMessageOutput  {
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub batch_put_message_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
+    pub batch_put_message_error_entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPutMessageErrorEntry>>,
     _request_id: Option<String>,
 }
-impl BatchPutMessageOutput {
+impl  BatchPutMessageOutput  {
     /// <p>A list of any errors encountered when sending the messages.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batch_put_message_error_entries.is_none()`.
-    pub fn batch_put_message_error_entries(&self) -> &[crate::types::BatchPutMessageErrorEntry] {
-        self.batch_put_message_error_entries.as_deref().unwrap_or_default()
+    pub fn batch_put_message_error_entries(&self) -> & [crate::types::BatchPutMessageErrorEntry] {
+        self.batch_put_message_error_entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchPutMessageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchPutMessageOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput).
     pub fn builder() -> crate::operation::batch_put_message::builders::BatchPutMessageOutputBuilder {
@@ -31,7 +32,7 @@ impl BatchPutMessageOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutMessageOutputBuilder {
-    pub(crate) batch_put_message_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
+    pub(crate) batch_put_message_error_entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPutMessageErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutMessageOutputBuilder {
@@ -42,36 +43,34 @@ impl BatchPutMessageOutputBuilder {
     /// <p>A list of any errors encountered when sending the messages.</p>
     pub fn batch_put_message_error_entries(mut self, input: crate::types::BatchPutMessageErrorEntry) -> Self {
         let mut v = self.batch_put_message_error_entries.unwrap_or_default();
-        v.push(input);
-        self.batch_put_message_error_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.batch_put_message_error_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn set_batch_put_message_error_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
-    ) -> Self {
-        self.batch_put_message_error_entries = input;
-        self
+    pub fn set_batch_put_message_error_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPutMessageErrorEntry>>) -> Self {
+        self.batch_put_message_error_entries = input; self
     }
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn get_batch_put_message_error_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>> {
+    pub fn get_batch_put_message_error_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchPutMessageErrorEntry>> {
         &self.batch_put_message_error_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput).
     pub fn build(self) -> crate::operation::batch_put_message::BatchPutMessageOutput {
         crate::operation::batch_put_message::BatchPutMessageOutput {
-            batch_put_message_error_entries: self.batch_put_message_error_entries,
+            batch_put_message_error_entries: self.batch_put_message_error_entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

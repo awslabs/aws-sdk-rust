@@ -3,7 +3,7 @@
 /// Information needed to reset deployments.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetDeploymentsInput {
+pub struct ResetDeploymentsInput  {
     /// A client token used to correlate requests and responses.
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// If true, performs a best-effort only core reset.
@@ -11,9 +11,9 @@ pub struct ResetDeploymentsInput {
     /// The ID of the Greengrass group.
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl ResetDeploymentsInput {
+impl  ResetDeploymentsInput  {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// If true, performs a best-effort only core reset.
@@ -21,7 +21,7 @@ impl ResetDeploymentsInput {
         self.force
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ResetDeploymentsInputBuilder {
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amzn_client_token = input;
-        self
+        self.amzn_client_token = input; self
     }
     /// A client token used to correlate requests and responses.
     pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ResetDeploymentsInputBuilder {
     }
     /// If true, performs a best-effort only core reset.
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// If true, performs a best-effort only core reset.
     pub fn get_force(&self) -> &::std::option::Option<bool> {
@@ -77,21 +75,24 @@ impl ResetDeploymentsInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// The ID of the Greengrass group.
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_deployments::ResetDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reset_deployments::ResetDeploymentsInput {
-            amzn_client_token: self.amzn_client_token,
-            force: self.force,
-            group_id: self.group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_deployments::ResetDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_deployments::ResetDeploymentsInput {
+                amzn_client_token: self.amzn_client_token
+                ,
+                force: self.force
+                ,
+                group_id: self.group_id
+                ,
+            }
+        )
     }
 }
+

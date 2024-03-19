@@ -3,24 +3,26 @@
 /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GaugeChartFieldWells {
+pub struct GaugeChartFieldWells  {
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub target_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub target_values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
 }
-impl GaugeChartFieldWells {
+impl  GaugeChartFieldWells  {
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[crate::types::MeasureField] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [crate::types::MeasureField] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_values.is_none()`.
-    pub fn target_values(&self) -> &[crate::types::MeasureField] {
-        self.target_values.as_deref().unwrap_or_default()
+    pub fn target_values(&self) -> & [crate::types::MeasureField] {
+        self.target_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GaugeChartFieldWells {
@@ -34,8 +36,8 @@ impl GaugeChartFieldWells {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GaugeChartFieldWellsBuilder {
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    pub(crate) target_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
+    pub(crate) target_values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
 }
 impl GaugeChartFieldWellsBuilder {
     /// Appends an item to `values`.
@@ -45,17 +47,16 @@ impl GaugeChartFieldWellsBuilder {
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>> {
         &self.values
     }
     /// Appends an item to `target_values`.
@@ -65,24 +66,26 @@ impl GaugeChartFieldWellsBuilder {
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
     pub fn target_values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.target_values.unwrap_or_default();
-        v.push(input);
-        self.target_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_target_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.target_values = input;
-        self
+    pub fn set_target_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>) -> Self {
+        self.target_values = input; self
     }
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn get_target_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_target_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>> {
         &self.target_values
     }
     /// Consumes the builder and constructs a [`GaugeChartFieldWells`](crate::types::GaugeChartFieldWells).
     pub fn build(self) -> crate::types::GaugeChartFieldWells {
         crate::types::GaugeChartFieldWells {
-            values: self.values,
-            target_values: self.target_values,
+            values: self.values
+            ,
+            target_values: self.target_values
+            ,
         }
     }
 }
+

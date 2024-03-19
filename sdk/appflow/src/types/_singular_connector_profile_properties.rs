@@ -3,7 +3,8 @@
 /// <p>The connector-specific profile properties required when using Singular.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SingularConnectorProfileProperties {}
+pub struct SingularConnectorProfileProperties  {
+}
 impl SingularConnectorProfileProperties {
     /// Creates a new builder-style object to manufacture [`SingularConnectorProfileProperties`](crate::types::SingularConnectorProfileProperties).
     pub fn builder() -> crate::types::builders::SingularConnectorProfilePropertiesBuilder {
@@ -14,10 +15,13 @@ impl SingularConnectorProfileProperties {
 /// A builder for [`SingularConnectorProfileProperties`](crate::types::SingularConnectorProfileProperties).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct SingularConnectorProfilePropertiesBuilder {}
+pub struct SingularConnectorProfilePropertiesBuilder {
+}
 impl SingularConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`SingularConnectorProfileProperties`](crate::types::SingularConnectorProfileProperties).
     pub fn build(self) -> crate::types::SingularConnectorProfileProperties {
-        crate::types::SingularConnectorProfileProperties {}
+        crate::types::SingularConnectorProfileProperties {
+        }
     }
 }
+

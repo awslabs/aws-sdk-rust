@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFindings`](crate::operation::list_findings::builders::ListFindingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`finding_criteria(FindingCriteria)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_finding_criteria):<br>required: **false**<br><p>The criteria to use to filter the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
     ///   - [`sort_criteria(SortCriteria)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::operation::list_findings::builders::ListFindingsFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>The criteria to use to sort the results.</p><br>
-    /// - On success, responds with [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput) with field(s):
+                            /// - On success, responds with [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput) with field(s):
     ///   - [`finding_ids(Option<Vec::<String>>)`](crate::operation::list_findings::ListFindingsOutput::finding_ids): <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings::ListFindingsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::operation::list_findings::ListFindingsError)
+                            /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::operation::list_findings::ListFindingsError)
     pub fn list_findings(&self) -> crate::operation::list_findings::builders::ListFindingsFluentBuilder {
-        crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_findings::builders::ListFindingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetadataOutput {
+pub struct GetMetadataOutput  {
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub features: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub features: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetMetadataOutput {
+impl  GetMetadataOutput  {
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn features(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn features(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.features
     }
 }
 impl ::aws_types::request_id::RequestId for GetMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetMetadataOutput`](crate::operation::get_metadata::GetMetadataOutput).
     pub fn builder() -> crate::operation::get_metadata::builders::GetMetadataOutputBuilder {
@@ -29,7 +29,7 @@ impl GetMetadataOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetadataOutputBuilder {
-    pub(crate) features: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) features: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetMetadataOutputBuilder {
@@ -40,40 +40,41 @@ impl GetMetadataOutputBuilder {
     /// <p>Represents the configuration settings for the features metadata.</p>
     pub fn features(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.features.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.features = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.features = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn set_features(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.features = input; self
     }
     /// <p>Represents the configuration settings for the features metadata.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.features
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMetadataOutput`](crate::operation::get_metadata::GetMetadataOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`features`](crate::operation::get_metadata::builders::GetMetadataOutputBuilder::features)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_metadata::GetMetadataOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_metadata::GetMetadataOutput {
-            features: self.features.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "features",
-                    "features was not specified but it is required when building GetMetadataOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_metadata::GetMetadataOutput {
+                features: self.features
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("features", "features was not specified but it is required when building GetMetadataOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAnnotationStoreInput {
+pub struct GetAnnotationStoreInput  {
     /// <p>The store's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetAnnotationStoreInput {
+impl  GetAnnotationStoreInput  {
     /// <p>The store's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetAnnotationStoreInputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The store's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetAnnotationStoreInput`](crate::operation::get_annotation_store::GetAnnotationStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_annotation_store::GetAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_annotation_store::GetAnnotationStoreInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_annotation_store::GetAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_annotation_store::GetAnnotationStoreInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

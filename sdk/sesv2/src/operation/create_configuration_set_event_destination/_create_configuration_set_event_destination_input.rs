@@ -3,7 +3,7 @@
 /// <p>A request to add an event destination to a configuration set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfigurationSetEventDestinationInput {
+pub struct CreateConfigurationSetEventDestinationInput  {
     /// <p>The name of the configuration set .</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A name that identifies the event destination within the configuration set.</p>
@@ -11,17 +11,17 @@ pub struct CreateConfigurationSetEventDestinationInput {
     /// <p>An object that defines the event destination.</p>
     pub event_destination: ::std::option::Option<crate::types::EventDestinationDefinition>,
 }
-impl CreateConfigurationSetEventDestinationInput {
+impl  CreateConfigurationSetEventDestinationInput  {
     /// <p>The name of the configuration set .</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>A name that identifies the event destination within the configuration set.</p>
-    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> ::std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
     /// <p>An object that defines the event destination.</p>
-    pub fn event_destination(&self) -> ::std::option::Option<&crate::types::EventDestinationDefinition> {
+    pub fn event_destination(&self) -> ::std::option::Option<& crate::types::EventDestinationDefinition> {
         self.event_destination.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
     }
     /// <p>The name of the configuration set .</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set .</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
     }
     /// <p>A name that identifies the event destination within the configuration set.</p>
     pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_destination_name = input;
-        self
+        self.event_destination_name = input; self
     }
     /// <p>A name that identifies the event destination within the configuration set.</p>
     pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,26 +77,24 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
     }
     /// <p>An object that defines the event destination.</p>
     pub fn set_event_destination(mut self, input: ::std::option::Option<crate::types::EventDestinationDefinition>) -> Self {
-        self.event_destination = input;
-        self
+        self.event_destination = input; self
     }
     /// <p>An object that defines the event destination.</p>
     pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestinationDefinition> {
         &self.event_destination
     }
     /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationInput`](crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-                event_destination: self.event_destination,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination_name: self.event_destination_name
+                ,
+                event_destination: self.event_destination
+                ,
+            }
         )
     }
 }
+

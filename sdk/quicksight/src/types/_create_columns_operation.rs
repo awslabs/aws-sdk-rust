@@ -3,15 +3,14 @@
 /// <p>A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateColumnsOperation {
+pub struct CreateColumnsOperation  {
     /// <p>Calculated columns to create.</p>
-    pub columns: ::std::vec::Vec<crate::types::CalculatedColumn>,
+    pub columns: ::std::vec::Vec::<crate::types::CalculatedColumn>,
 }
-impl CreateColumnsOperation {
+impl  CreateColumnsOperation  {
     /// <p>Calculated columns to create.</p>
-    pub fn columns(&self) -> &[crate::types::CalculatedColumn] {
-        use std::ops::Deref;
-        self.columns.deref()
+    pub fn columns(&self) -> & [crate::types::CalculatedColumn] {
+        use std::ops::Deref; self.columns.deref()
     }
 }
 impl CreateColumnsOperation {
@@ -25,7 +24,7 @@ impl CreateColumnsOperation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateColumnsOperationBuilder {
-    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec::<crate::types::CalculatedColumn>>,
 }
 impl CreateColumnsOperationBuilder {
     /// Appends an item to `columns`.
@@ -35,30 +34,31 @@ impl CreateColumnsOperationBuilder {
     /// <p>Calculated columns to create.</p>
     pub fn columns(mut self, input: crate::types::CalculatedColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Calculated columns to create.</p>
-    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>>) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CalculatedColumn>>) -> Self {
+        self.columns = input; self
     }
     /// <p>Calculated columns to create.</p>
-    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CalculatedColumn>> {
         &self.columns
     }
     /// Consumes the builder and constructs a [`CreateColumnsOperation`](crate::types::CreateColumnsOperation).
     /// This method will fail if any of the following fields are not set:
     /// - [`columns`](crate::types::builders::CreateColumnsOperationBuilder::columns)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateColumnsOperation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateColumnsOperation {
-            columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "columns",
-                    "columns was not specified but it is required when building CreateColumnsOperation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateColumnsOperation {
+                columns: self.columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("columns", "columns was not specified but it is required when building CreateColumnsOperation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateViewInput {
+pub struct CreateViewInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique Id for each create view request to avoid duplicate view creation. For example, the view is idempotent ClientToken is provided.</p>
@@ -17,40 +17,40 @@ pub struct CreateViewInput {
     /// <p>The name of the view.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the view resource (not specific to view version).These tags can be used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateViewInput {
+impl  CreateViewInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A unique Id for each create view request to avoid duplicate view creation. For example, the view is idempotent ClientToken is provided.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ViewStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ViewStatus> {
         self.status.as_ref()
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     /// <p>The total uncompressed content has a maximum file size of 400kB.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::ViewInputContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::ViewInputContent> {
         self.content.as_ref()
     }
     /// <p>The description of the view.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the view.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags associated with the view resource (not specific to view version).These tags can be used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateViewInput {
+impl  ::std::fmt::Debug for CreateViewInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateViewInput");
         formatter.field("instance_id", &self.instance_id);
@@ -80,7 +80,7 @@ pub struct CreateViewInputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::ViewInputContent>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateViewInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -91,8 +91,7 @@ impl CreateViewInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl CreateViewInputBuilder {
     }
     /// <p>A unique Id for each create view request to avoid duplicate view creation. For example, the view is idempotent ClientToken is provided.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique Id for each create view request to avoid duplicate view creation. For example, the view is idempotent ClientToken is provided.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl CreateViewInputBuilder {
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ViewStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ViewStatus> {
@@ -137,8 +134,7 @@ impl CreateViewInputBuilder {
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     /// <p>The total uncompressed content has a maximum file size of 400kB.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::ViewInputContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     /// <p>The total uncompressed content has a maximum file size of 400kB.</p>
@@ -152,8 +148,7 @@ impl CreateViewInputBuilder {
     }
     /// <p>The description of the view.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the view.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl CreateViewInputBuilder {
     }
     /// <p>The name of the view.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the view.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,30 +175,38 @@ impl CreateViewInputBuilder {
     /// <p>The tags associated with the view resource (not specific to view version).These tags can be used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags associated with the view resource (not specific to view version).These tags can be used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the view resource (not specific to view version).These tags can be used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateViewInput`](crate::operation::create_view::CreateViewInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_view::CreateViewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_view::CreateViewInput {
-            instance_id: self.instance_id,
-            client_token: self.client_token,
-            status: self.status,
-            content: self.content,
-            description: self.description,
-            name: self.name,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_view::CreateViewInput {
+                instance_id: self.instance_id
+                ,
+                client_token: self.client_token
+                ,
+                status: self.status
+                ,
+                content: self.content
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateViewInputBuilder {
@@ -220,3 +222,4 @@ impl ::std::fmt::Debug for CreateViewInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The Amazon Elastic Block Store volume configuration used for recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsVolumeConfiguration {
+pub struct EbsVolumeConfiguration  {
     /// <p>The disk storage of the Amazon Elastic Block Store volume.</p>
     pub storage: ::std::option::Option<crate::types::StorageConfiguration>,
     /// <p>The Amazon Elastic Block Store performance configuration.</p>
@@ -11,17 +11,17 @@ pub struct EbsVolumeConfiguration {
     /// <p>The Amazon Elastic Block Store attachment state.</p>
     pub attachment_state: ::std::option::Option<::std::string::String>,
 }
-impl EbsVolumeConfiguration {
+impl  EbsVolumeConfiguration  {
     /// <p>The disk storage of the Amazon Elastic Block Store volume.</p>
-    pub fn storage(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
+    pub fn storage(&self) -> ::std::option::Option<& crate::types::StorageConfiguration> {
         self.storage.as_ref()
     }
     /// <p>The Amazon Elastic Block Store performance configuration.</p>
-    pub fn performance(&self) -> ::std::option::Option<&crate::types::BlockStoragePerformanceConfiguration> {
+    pub fn performance(&self) -> ::std::option::Option<& crate::types::BlockStoragePerformanceConfiguration> {
         self.performance.as_ref()
     }
     /// <p>The Amazon Elastic Block Store attachment state.</p>
-    pub fn attachment_state(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_state(&self) -> ::std::option::Option<& str> {
         self.attachment_state.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl EbsVolumeConfigurationBuilder {
     }
     /// <p>The disk storage of the Amazon Elastic Block Store volume.</p>
     pub fn set_storage(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
-        self.storage = input;
-        self
+        self.storage = input; self
     }
     /// <p>The disk storage of the Amazon Elastic Block Store volume.</p>
     pub fn get_storage(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
@@ -62,8 +61,7 @@ impl EbsVolumeConfigurationBuilder {
     }
     /// <p>The Amazon Elastic Block Store performance configuration.</p>
     pub fn set_performance(mut self, input: ::std::option::Option<crate::types::BlockStoragePerformanceConfiguration>) -> Self {
-        self.performance = input;
-        self
+        self.performance = input; self
     }
     /// <p>The Amazon Elastic Block Store performance configuration.</p>
     pub fn get_performance(&self) -> &::std::option::Option<crate::types::BlockStoragePerformanceConfiguration> {
@@ -76,8 +74,7 @@ impl EbsVolumeConfigurationBuilder {
     }
     /// <p>The Amazon Elastic Block Store attachment state.</p>
     pub fn set_attachment_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_state = input;
-        self
+        self.attachment_state = input; self
     }
     /// <p>The Amazon Elastic Block Store attachment state.</p>
     pub fn get_attachment_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl EbsVolumeConfigurationBuilder {
     /// Consumes the builder and constructs a [`EbsVolumeConfiguration`](crate::types::EbsVolumeConfiguration).
     pub fn build(self) -> crate::types::EbsVolumeConfiguration {
         crate::types::EbsVolumeConfiguration {
-            storage: self.storage,
-            performance: self.performance,
-            attachment_state: self.attachment_state,
+            storage: self.storage
+            ,
+            performance: self.performance
+            ,
+            attachment_state: self.attachment_state
+            ,
         }
     }
 }
+

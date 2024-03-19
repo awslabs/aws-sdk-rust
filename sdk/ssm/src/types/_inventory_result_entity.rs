@@ -3,19 +3,19 @@
 /// <p>Inventory query results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryResultEntity {
+pub struct InventoryResultEntity  {
     /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data section in the inventory result entity JSON.</p>
-    pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InventoryResultItem>>,
+    pub data: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InventoryResultItem>>,
 }
-impl InventoryResultEntity {
+impl  InventoryResultEntity  {
     /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The data section in the inventory result entity JSON.</p>
-    pub fn data(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::InventoryResultItem>> {
+    pub fn data(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::InventoryResultItem>> {
         self.data.as_ref()
     }
 }
@@ -31,7 +31,7 @@ impl InventoryResultEntity {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryResultEntityBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InventoryResultItem>>,
+    pub(crate) data: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InventoryResultItem>>,
 }
 impl InventoryResultEntityBuilder {
     /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.</p>
@@ -41,8 +41,7 @@ impl InventoryResultEntityBuilder {
     }
     /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,27 +54,26 @@ impl InventoryResultEntityBuilder {
     /// <p>The data section in the inventory result entity JSON.</p>
     pub fn data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::InventoryResultItem) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.data = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.data = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The data section in the inventory result entity JSON.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InventoryResultItem>>,
-    ) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InventoryResultItem>>) -> Self {
+        self.data = input; self
     }
     /// <p>The data section in the inventory result entity JSON.</p>
-    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InventoryResultItem>> {
+    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InventoryResultItem>> {
         &self.data
     }
     /// Consumes the builder and constructs a [`InventoryResultEntity`](crate::types::InventoryResultEntity).
     pub fn build(self) -> crate::types::InventoryResultEntity {
         crate::types::InventoryResultEntity {
-            id: self.id,
-            data: self.data,
+            id: self.id
+            ,
+            data: self.data
+            ,
         }
     }
 }
+

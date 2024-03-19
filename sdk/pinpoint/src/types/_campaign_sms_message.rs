@@ -3,7 +3,7 @@
 /// <p>Specifies the content and settings for an SMS message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CampaignSmsMessage {
+pub struct CampaignSmsMessage  {
     /// <p>The body of the SMS message.</p>
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
@@ -17,29 +17,29 @@ pub struct CampaignSmsMessage {
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub template_id: ::std::option::Option<::std::string::String>,
 }
-impl CampaignSmsMessage {
+impl  CampaignSmsMessage  {
     /// <p>The body of the SMS message.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<& crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
-    pub fn origination_number(&self) -> ::std::option::Option<&str> {
+    pub fn origination_number(&self) -> ::std::option::Option<& str> {
         self.origination_number.as_deref()
     }
     /// <p>The sender ID to display on recipients' devices when they receive the SMS message.</p>
-    pub fn sender_id(&self) -> ::std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<& str> {
         self.sender_id.as_deref()
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl CampaignSmsMessageBuilder {
     }
     /// <p>The body of the SMS message.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The body of the SMS message.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl CampaignSmsMessageBuilder {
     }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
@@ -97,8 +95,7 @@ impl CampaignSmsMessageBuilder {
     }
     /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
     pub fn set_origination_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origination_number = input;
-        self
+        self.origination_number = input; self
     }
     /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
     pub fn get_origination_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl CampaignSmsMessageBuilder {
     }
     /// <p>The sender ID to display on recipients' devices when they receive the SMS message.</p>
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender_id = input;
-        self
+        self.sender_id = input; self
     }
     /// <p>The sender ID to display on recipients' devices when they receive the SMS message.</p>
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl CampaignSmsMessageBuilder {
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl CampaignSmsMessageBuilder {
     }
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl CampaignSmsMessageBuilder {
     /// Consumes the builder and constructs a [`CampaignSmsMessage`](crate::types::CampaignSmsMessage).
     pub fn build(self) -> crate::types::CampaignSmsMessage {
         crate::types::CampaignSmsMessage {
-            body: self.body,
-            message_type: self.message_type,
-            origination_number: self.origination_number,
-            sender_id: self.sender_id,
-            entity_id: self.entity_id,
-            template_id: self.template_id,
+            body: self.body
+            ,
+            message_type: self.message_type
+            ,
+            origination_number: self.origination_number
+            ,
+            sender_id: self.sender_id
+            ,
+            entity_id: self.entity_id
+            ,
+            template_id: self.template_id
+            ,
         }
     }
 }
+

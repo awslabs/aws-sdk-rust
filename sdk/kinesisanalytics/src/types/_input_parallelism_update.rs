@@ -3,11 +3,11 @@
 /// <p>Provides updates to the parallelism count.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputParallelismUpdate {
+pub struct InputParallelismUpdate  {
     /// <p>Number of in-application streams to create for the specified streaming source.</p>
     pub count_update: ::std::option::Option<i32>,
 }
-impl InputParallelismUpdate {
+impl  InputParallelismUpdate  {
     /// <p>Number of in-application streams to create for the specified streaming source.</p>
     pub fn count_update(&self) -> ::std::option::Option<i32> {
         self.count_update
@@ -34,8 +34,7 @@ impl InputParallelismUpdateBuilder {
     }
     /// <p>Number of in-application streams to create for the specified streaming source.</p>
     pub fn set_count_update(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count_update = input;
-        self
+        self.count_update = input; self
     }
     /// <p>Number of in-application streams to create for the specified streaming source.</p>
     pub fn get_count_update(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl InputParallelismUpdateBuilder {
     /// Consumes the builder and constructs a [`InputParallelismUpdate`](crate::types::InputParallelismUpdate).
     pub fn build(self) -> crate::types::InputParallelismUpdate {
         crate::types::InputParallelismUpdate {
-            count_update: self.count_update,
+            count_update: self.count_update
+            ,
         }
     }
 }
+

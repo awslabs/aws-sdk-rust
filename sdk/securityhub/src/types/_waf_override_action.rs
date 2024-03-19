@@ -3,15 +3,15 @@
 /// <p>Details about an override action for a rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WafOverrideAction {
+pub struct WafOverrideAction  {
     /// <p><code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .</p>
     /// <p>If set to <code>NONE</code>, the rule's action takes place.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl WafOverrideAction {
+impl  WafOverrideAction  {
     /// <p><code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .</p>
     /// <p>If set to <code>NONE</code>, the rule's action takes place.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl WafOverrideActionBuilder {
     /// <p><code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .</p>
     /// <p>If set to <code>NONE</code>, the rule's action takes place.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p><code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .</p>
     /// <p>If set to <code>NONE</code>, the rule's action takes place.</p>
@@ -48,6 +47,10 @@ impl WafOverrideActionBuilder {
     }
     /// Consumes the builder and constructs a [`WafOverrideAction`](crate::types::WafOverrideAction).
     pub fn build(self) -> crate::types::WafOverrideAction {
-        crate::types::WafOverrideAction { r#type: self.r#type }
+        crate::types::WafOverrideAction {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

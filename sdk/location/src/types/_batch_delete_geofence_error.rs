@@ -3,20 +3,19 @@
 /// <p>Contains error details for each geofence that failed to delete from the geofence collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteGeofenceError {
+pub struct BatchDeleteGeofenceError  {
     /// <p>The geofence associated with the error message.</p>
     pub geofence_id: ::std::string::String,
     /// <p>Contains details associated to the batch error.</p>
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
-impl BatchDeleteGeofenceError {
+impl  BatchDeleteGeofenceError  {
     /// <p>The geofence associated with the error message.</p>
-    pub fn geofence_id(&self) -> &str {
-        use std::ops::Deref;
-        self.geofence_id.deref()
+    pub fn geofence_id(&self) -> & str {
+        use std::ops::Deref; self.geofence_id.deref()
     }
     /// <p>Contains details associated to the batch error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::BatchItemError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::BatchItemError> {
         self.error.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl BatchDeleteGeofenceErrorBuilder {
     }
     /// <p>The geofence associated with the error message.</p>
     pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.geofence_id = input;
-        self
+        self.geofence_id = input; self
     }
     /// <p>The geofence associated with the error message.</p>
     pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl BatchDeleteGeofenceErrorBuilder {
     }
     /// <p>Contains details associated to the batch error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::BatchItemError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Contains details associated to the batch error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::BatchItemError> {
@@ -69,14 +66,17 @@ impl BatchDeleteGeofenceErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`geofence_id`](crate::types::builders::BatchDeleteGeofenceErrorBuilder::geofence_id)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteGeofenceError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchDeleteGeofenceError {
-            geofence_id: self.geofence_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "geofence_id",
-                    "geofence_id was not specified but it is required when building BatchDeleteGeofenceError",
-                )
-            })?,
-            error: self.error,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchDeleteGeofenceError {
+                geofence_id: self.geofence_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("geofence_id", "geofence_id was not specified but it is required when building BatchDeleteGeofenceError")
+                    )?
+                ,
+                error: self.error
+                ,
+            }
+        )
     }
 }
+

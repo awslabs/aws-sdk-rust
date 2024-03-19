@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateObjectAttributesOutput {
+pub struct UpdateObjectAttributesOutput  {
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
     pub object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateObjectAttributesOutput {
+impl  UpdateObjectAttributesOutput  {
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateObjectAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateObjectAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateObjectAttributesOutput`](crate::operation::update_object_attributes::UpdateObjectAttributesOutput).
     pub fn builder() -> crate::operation::update_object_attributes::builders::UpdateObjectAttributesOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateObjectAttributesOutputBuilder {
     }
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
     pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_identifier = input;
-        self
+        self.object_identifier = input; self
     }
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
     pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateObjectAttributesOutput`](crate::operation::update_object_attributes::UpdateObjectAttributesOutput).
     pub fn build(self) -> crate::operation::update_object_attributes::UpdateObjectAttributesOutput {
         crate::operation::update_object_attributes::UpdateObjectAttributesOutput {
-            object_identifier: self.object_identifier,
+            object_identifier: self.object_identifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

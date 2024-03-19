@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOutpostsWithS3Output {
+pub struct ListOutpostsWithS3Output  {
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
     /// <li>
@@ -12,12 +12,12 @@ pub struct ListOutpostsWithS3Output {
     /// <li>
     /// <p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
-    pub outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
+    pub outposts: ::std::option::Option<::std::vec::Vec::<crate::types::Outpost>>,
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOutpostsWithS3Output {
+impl  ListOutpostsWithS3Output  {
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
     /// <li>
@@ -27,21 +27,22 @@ impl ListOutpostsWithS3Output {
     /// <li>
     /// <p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outposts.is_none()`.
-    pub fn outposts(&self) -> &[crate::types::Outpost] {
-        self.outposts.as_deref().unwrap_or_default()
+    pub fn outposts(&self) -> & [crate::types::Outpost] {
+        self.outposts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOutpostsWithS3Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOutpostsWithS3Output {
     /// Creates a new builder-style object to manufacture [`ListOutpostsWithS3Output`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output).
     pub fn builder() -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder {
@@ -53,7 +54,7 @@ impl ListOutpostsWithS3Output {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutpostsWithS3OutputBuilder {
-    pub(crate) outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
+    pub(crate) outposts: ::std::option::Option<::std::vec::Vec::<crate::types::Outpost>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -73,9 +74,9 @@ impl ListOutpostsWithS3OutputBuilder {
     /// </ul>
     pub fn outposts(mut self, input: crate::types::Outpost) -> Self {
         let mut v = self.outposts.unwrap_or_default();
-        v.push(input);
-        self.outposts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outposts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
@@ -86,9 +87,8 @@ impl ListOutpostsWithS3OutputBuilder {
     /// <li>
     /// <p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
-    pub fn set_outposts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>) -> Self {
-        self.outposts = input;
-        self
+    pub fn set_outposts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Outpost>>) -> Self {
+        self.outposts = input; self
     }
     /// <p>Returns the list of Outposts that have the following characteristics:</p>
     /// <ul>
@@ -99,7 +99,7 @@ impl ListOutpostsWithS3OutputBuilder {
     /// <li>
     /// <p>outposts to which the the calling Amazon Web Services account has access</p></li>
     /// </ul>
-    pub fn get_outposts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Outpost>> {
+    pub fn get_outposts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Outpost>> {
         &self.outposts
     }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
@@ -109,28 +109,30 @@ impl ListOutpostsWithS3OutputBuilder {
     }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOutpostsWithS3Output`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output).
     pub fn build(self) -> crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output {
         crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output {
-            outposts: self.outposts,
-            next_token: self.next_token,
+            outposts: self.outposts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

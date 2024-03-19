@@ -3,17 +3,16 @@
 /// <p>Wi-Fi access point.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WiFiAccessPoint {
+pub struct WiFiAccessPoint  {
     /// <p>Wi-Fi MAC Address.</p>
     pub mac_address: ::std::string::String,
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub rss: i32,
 }
-impl WiFiAccessPoint {
+impl  WiFiAccessPoint  {
     /// <p>Wi-Fi MAC Address.</p>
-    pub fn mac_address(&self) -> &str {
-        use std::ops::Deref;
-        self.mac_address.deref()
+    pub fn mac_address(&self) -> & str {
+        use std::ops::Deref; self.mac_address.deref()
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn rss(&self) -> i32 {
@@ -43,8 +42,7 @@ impl WiFiAccessPointBuilder {
     }
     /// <p>Wi-Fi MAC Address.</p>
     pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
     }
     /// <p>Wi-Fi MAC Address.</p>
     pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl WiFiAccessPointBuilder {
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn set_rss(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rss = input;
-        self
+        self.rss = input; self
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn get_rss(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl WiFiAccessPointBuilder {
     /// - [`mac_address`](crate::types::builders::WiFiAccessPointBuilder::mac_address)
     /// - [`rss`](crate::types::builders::WiFiAccessPointBuilder::rss)
     pub fn build(self) -> ::std::result::Result<crate::types::WiFiAccessPoint, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WiFiAccessPoint {
-            mac_address: self.mac_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mac_address",
-                    "mac_address was not specified but it is required when building WiFiAccessPoint",
-                )
-            })?,
-            rss: self.rss.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rss",
-                    "rss was not specified but it is required when building WiFiAccessPoint",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WiFiAccessPoint {
+                mac_address: self.mac_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mac_address", "mac_address was not specified but it is required when building WiFiAccessPoint")
+                    )?
+                ,
+                rss: self.rss
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rss", "rss was not specified but it is required when building WiFiAccessPoint")
+                    )?
+                ,
+            }
+        )
     }
 }
+

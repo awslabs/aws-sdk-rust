@@ -3,7 +3,7 @@
 /// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchGroupConfig {
+pub struct LaunchGroupConfig  {
     /// <p>A name for this launch group.</p>
     pub name: ::std::string::String,
     /// <p>A description of the launch group.</p>
@@ -13,25 +13,22 @@ pub struct LaunchGroupConfig {
     /// <p>The feature variation to use for this launch group.</p>
     pub variation: ::std::string::String,
 }
-impl LaunchGroupConfig {
+impl  LaunchGroupConfig  {
     /// <p>A name for this launch group.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description of the launch group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The feature that this launch is using.</p>
-    pub fn feature(&self) -> &str {
-        use std::ops::Deref;
-        self.feature.deref()
+    pub fn feature(&self) -> & str {
+        use std::ops::Deref; self.feature.deref()
     }
     /// <p>The feature variation to use for this launch group.</p>
-    pub fn variation(&self) -> &str {
-        use std::ops::Deref;
-        self.variation.deref()
+    pub fn variation(&self) -> & str {
+        use std::ops::Deref; self.variation.deref()
     }
 }
 impl LaunchGroupConfig {
@@ -59,8 +56,7 @@ impl LaunchGroupConfigBuilder {
     }
     /// <p>A name for this launch group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for this launch group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +69,7 @@ impl LaunchGroupConfigBuilder {
     }
     /// <p>A description of the launch group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the launch group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +83,7 @@ impl LaunchGroupConfigBuilder {
     }
     /// <p>The feature that this launch is using.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// <p>The feature that this launch is using.</p>
     pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl LaunchGroupConfigBuilder {
     }
     /// <p>The feature variation to use for this launch group.</p>
     pub fn set_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variation = input;
-        self
+        self.variation = input; self
     }
     /// <p>The feature variation to use for this launch group.</p>
     pub fn get_variation(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,26 +109,27 @@ impl LaunchGroupConfigBuilder {
     /// - [`feature`](crate::types::builders::LaunchGroupConfigBuilder::feature)
     /// - [`variation`](crate::types::builders::LaunchGroupConfigBuilder::variation)
     pub fn build(self) -> ::std::result::Result<crate::types::LaunchGroupConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LaunchGroupConfig {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building LaunchGroupConfig",
-                )
-            })?,
-            description: self.description,
-            feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "feature",
-                    "feature was not specified but it is required when building LaunchGroupConfig",
-                )
-            })?,
-            variation: self.variation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "variation",
-                    "variation was not specified but it is required when building LaunchGroupConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LaunchGroupConfig {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building LaunchGroupConfig")
+                    )?
+                ,
+                description: self.description
+                ,
+                feature: self.feature
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("feature", "feature was not specified but it is required when building LaunchGroupConfig")
+                    )?
+                ,
+                variation: self.variation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("variation", "variation was not specified but it is required when building LaunchGroupConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

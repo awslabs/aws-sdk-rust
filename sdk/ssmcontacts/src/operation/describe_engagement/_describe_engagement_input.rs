@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEngagementInput {
+pub struct DescribeEngagementInput  {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     pub engagement_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEngagementInput {
+impl  DescribeEngagementInput  {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-    pub fn engagement_id(&self) -> ::std::option::Option<&str> {
+    pub fn engagement_id(&self) -> ::std::option::Option<& str> {
         self.engagement_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeEngagementInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     pub fn set_engagement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engagement_id = input;
-        self
+        self.engagement_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_id
     }
     /// Consumes the builder and constructs a [`DescribeEngagementInput`](crate::operation::describe_engagement::DescribeEngagementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_engagement::DescribeEngagementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_engagement::DescribeEngagementInput {
-            engagement_id: self.engagement_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_engagement::DescribeEngagementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_engagement::DescribeEngagementInput {
+                engagement_id: self.engagement_id
+                ,
+            }
+        )
     }
 }
+

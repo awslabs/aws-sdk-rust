@@ -3,13 +3,13 @@
 /// <p>Information that SageMaker Neo automatically derived about the model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DerivedInformation {
+pub struct DerivedInformation  {
     /// <p>The data input configuration that SageMaker Neo automatically derived for the model. When SageMaker Neo derives this information, you don't need to specify the data input configuration when you create a compilation job.</p>
     pub derived_data_input_config: ::std::option::Option<::std::string::String>,
 }
-impl DerivedInformation {
+impl  DerivedInformation  {
     /// <p>The data input configuration that SageMaker Neo automatically derived for the model. When SageMaker Neo derives this information, you don't need to specify the data input configuration when you create a compilation job.</p>
-    pub fn derived_data_input_config(&self) -> ::std::option::Option<&str> {
+    pub fn derived_data_input_config(&self) -> ::std::option::Option<& str> {
         self.derived_data_input_config.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DerivedInformationBuilder {
     }
     /// <p>The data input configuration that SageMaker Neo automatically derived for the model. When SageMaker Neo derives this information, you don't need to specify the data input configuration when you create a compilation job.</p>
     pub fn set_derived_data_input_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.derived_data_input_config = input;
-        self
+        self.derived_data_input_config = input; self
     }
     /// <p>The data input configuration that SageMaker Neo automatically derived for the model. When SageMaker Neo derives this information, you don't need to specify the data input configuration when you create a compilation job.</p>
     pub fn get_derived_data_input_config(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl DerivedInformationBuilder {
     /// Consumes the builder and constructs a [`DerivedInformation`](crate::types::DerivedInformation).
     pub fn build(self) -> crate::types::DerivedInformation {
         crate::types::DerivedInformation {
-            derived_data_input_config: self.derived_data_input_config,
+            derived_data_input_config: self.derived_data_input_config
+            ,
         }
     }
 }
+

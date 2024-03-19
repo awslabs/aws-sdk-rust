@@ -3,7 +3,7 @@
 /// <p>The response object for the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFileSystemOutput {
+pub struct DeleteFileSystemOutput  {
     /// <p>The ID of the file system that's being deleted.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
@@ -16,33 +16,33 @@ pub struct DeleteFileSystemOutput {
     pub open_zfs_response: ::std::option::Option<crate::types::DeleteFileSystemOpenZfsResponse>,
     _request_id: Option<String>,
 }
-impl DeleteFileSystemOutput {
+impl  DeleteFileSystemOutput  {
     /// <p>The ID of the file system that's being deleted.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::FileSystemLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::FileSystemLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
-    pub fn windows_response(&self) -> ::std::option::Option<&crate::types::DeleteFileSystemWindowsResponse> {
+    pub fn windows_response(&self) -> ::std::option::Option<& crate::types::DeleteFileSystemWindowsResponse> {
         self.windows_response.as_ref()
     }
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
-    pub fn lustre_response(&self) -> ::std::option::Option<&crate::types::DeleteFileSystemLustreResponse> {
+    pub fn lustre_response(&self) -> ::std::option::Option<& crate::types::DeleteFileSystemLustreResponse> {
         self.lustre_response.as_ref()
     }
     /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
-    pub fn open_zfs_response(&self) -> ::std::option::Option<&crate::types::DeleteFileSystemOpenZfsResponse> {
+    pub fn open_zfs_response(&self) -> ::std::option::Option<& crate::types::DeleteFileSystemOpenZfsResponse> {
         self.open_zfs_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteFileSystemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemOutput`](crate::operation::delete_file_system::DeleteFileSystemOutput).
     pub fn builder() -> crate::operation::delete_file_system::builders::DeleteFileSystemOutputBuilder {
@@ -69,8 +69,7 @@ impl DeleteFileSystemOutputBuilder {
     }
     /// <p>The ID of the file system that's being deleted.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system that's being deleted.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DeleteFileSystemOutputBuilder {
     }
     /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::FileSystemLifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::FileSystemLifecycle> {
@@ -97,8 +95,7 @@ impl DeleteFileSystemOutputBuilder {
     }
     /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_windows_response(mut self, input: ::std::option::Option<crate::types::DeleteFileSystemWindowsResponse>) -> Self {
-        self.windows_response = input;
-        self
+        self.windows_response = input; self
     }
     /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn get_windows_response(&self) -> &::std::option::Option<crate::types::DeleteFileSystemWindowsResponse> {
@@ -111,8 +108,7 @@ impl DeleteFileSystemOutputBuilder {
     }
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_lustre_response(mut self, input: ::std::option::Option<crate::types::DeleteFileSystemLustreResponse>) -> Self {
-        self.lustre_response = input;
-        self
+        self.lustre_response = input; self
     }
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn get_lustre_response(&self) -> &::std::option::Option<crate::types::DeleteFileSystemLustreResponse> {
@@ -125,31 +121,36 @@ impl DeleteFileSystemOutputBuilder {
     }
     /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_open_zfs_response(mut self, input: ::std::option::Option<crate::types::DeleteFileSystemOpenZfsResponse>) -> Self {
-        self.open_zfs_response = input;
-        self
+        self.open_zfs_response = input; self
     }
     /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn get_open_zfs_response(&self) -> &::std::option::Option<crate::types::DeleteFileSystemOpenZfsResponse> {
         &self.open_zfs_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteFileSystemOutput`](crate::operation::delete_file_system::DeleteFileSystemOutput).
     pub fn build(self) -> crate::operation::delete_file_system::DeleteFileSystemOutput {
         crate::operation::delete_file_system::DeleteFileSystemOutput {
-            file_system_id: self.file_system_id,
-            lifecycle: self.lifecycle,
-            windows_response: self.windows_response,
-            lustre_response: self.lustre_response,
-            open_zfs_response: self.open_zfs_response,
+            file_system_id: self.file_system_id
+            ,
+            lifecycle: self.lifecycle
+            ,
+            windows_response: self.windows_response
+            ,
+            lustre_response: self.lustre_response
+            ,
+            open_zfs_response: self.open_zfs_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

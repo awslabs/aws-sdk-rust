@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFieldOptionsOutput {
+pub struct ListFieldOptionsOutput  {
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub options: ::std::vec::Vec<crate::types::FieldOption>,
+    pub options: ::std::vec::Vec::<crate::types::FieldOption>,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFieldOptionsOutput {
+impl  ListFieldOptionsOutput  {
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn options(&self) -> &[crate::types::FieldOption] {
-        use std::ops::Deref;
-        self.options.deref()
+    pub fn options(&self) -> & [crate::types::FieldOption] {
+        use std::ops::Deref; self.options.deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFieldOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFieldOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFieldOptionsOutput`](crate::operation::list_field_options::ListFieldOptionsOutput).
     pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListFieldOptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFieldOptionsOutputBuilder {
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<crate::types::FieldOption>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListFieldOptionsOutputBuilder {
     /// <p>A list of <code>FieldOption</code> objects.</p>
     pub fn options(mut self, input: crate::types::FieldOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldOption>>) -> Self {
+        self.options = input; self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldOption>> {
         &self.options
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
@@ -68,37 +66,37 @@ impl ListFieldOptionsOutputBuilder {
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFieldOptionsOutput`](crate::operation::list_field_options::ListFieldOptionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder::options)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_field_options::ListFieldOptionsOutput {
-            options: self.options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "options",
-                    "options was not specified but it is required when building ListFieldOptionsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_field_options::ListFieldOptionsOutput {
+                options: self.options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("options", "options was not specified but it is required when building ListFieldOptionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

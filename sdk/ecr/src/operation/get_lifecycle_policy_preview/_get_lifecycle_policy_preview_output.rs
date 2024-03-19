@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLifecyclePolicyPreviewOutput {
+pub struct GetLifecyclePolicyPreviewOutput  {
     /// <p>The registry ID associated with the request.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name associated with the request.</p>
@@ -14,48 +14,49 @@ pub struct GetLifecyclePolicyPreviewOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>GetLifecyclePolicyPreview</code> request. When the results of a <code>GetLifecyclePolicyPreview</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The results of the lifecycle policy preview request.</p>
-    pub preview_results: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
+    pub preview_results: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyPreviewResult>>,
     /// <p>The list of images that is returned as a result of the action.</p>
     pub summary: ::std::option::Option<crate::types::LifecyclePolicyPreviewSummary>,
     _request_id: Option<String>,
 }
-impl GetLifecyclePolicyPreviewOutput {
+impl  GetLifecyclePolicyPreviewOutput  {
     /// <p>The registry ID associated with the request.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The JSON lifecycle policy text.</p>
-    pub fn lifecycle_policy_text(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_policy_text(&self) -> ::std::option::Option<& str> {
         self.lifecycle_policy_text.as_deref()
     }
     /// <p>The status of the lifecycle policy preview request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyPreviewStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyPreviewStatus> {
         self.status.as_ref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetLifecyclePolicyPreview</code> request. When the results of a <code>GetLifecyclePolicyPreview</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The results of the lifecycle policy preview request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preview_results.is_none()`.
-    pub fn preview_results(&self) -> &[crate::types::LifecyclePolicyPreviewResult] {
-        self.preview_results.as_deref().unwrap_or_default()
+    pub fn preview_results(&self) -> & [crate::types::LifecyclePolicyPreviewResult] {
+        self.preview_results.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of images that is returned as a result of the action.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyPreviewSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyPreviewSummary> {
         self.summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLifecyclePolicyPreviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLifecyclePolicyPreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyPreviewOutput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput).
     pub fn builder() -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewOutputBuilder {
@@ -72,7 +73,7 @@ pub struct GetLifecyclePolicyPreviewOutputBuilder {
     pub(crate) lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) preview_results: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
+    pub(crate) preview_results: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyPreviewResult>>,
     pub(crate) summary: ::std::option::Option<crate::types::LifecyclePolicyPreviewSummary>,
     _request_id: Option<String>,
 }
@@ -84,8 +85,7 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
     }
     /// <p>The registry ID associated with the request.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The registry ID associated with the request.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
     }
     /// <p>The repository name associated with the request.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The repository name associated with the request.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
     }
     /// <p>The JSON lifecycle policy text.</p>
     pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_policy_text = input;
-        self
+        self.lifecycle_policy_text = input; self
     }
     /// <p>The JSON lifecycle policy text.</p>
     pub fn get_lifecycle_policy_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
     }
     /// <p>The status of the lifecycle policy preview request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyPreviewStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the lifecycle policy preview request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecyclePolicyPreviewStatus> {
@@ -140,8 +137,7 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetLifecyclePolicyPreview</code> request. When the results of a <code>GetLifecyclePolicyPreview</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetLifecyclePolicyPreview</code> request. When the results of a <code>GetLifecyclePolicyPreview</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,17 +150,16 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
     /// <p>The results of the lifecycle policy preview request.</p>
     pub fn preview_results(mut self, input: crate::types::LifecyclePolicyPreviewResult) -> Self {
         let mut v = self.preview_results.unwrap_or_default();
-        v.push(input);
-        self.preview_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.preview_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The results of the lifecycle policy preview request.</p>
-    pub fn set_preview_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>) -> Self {
-        self.preview_results = input;
-        self
+    pub fn set_preview_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyPreviewResult>>) -> Self {
+        self.preview_results = input; self
     }
     /// <p>The results of the lifecycle policy preview request.</p>
-    pub fn get_preview_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>> {
+    pub fn get_preview_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyPreviewResult>> {
         &self.preview_results
     }
     /// <p>The list of images that is returned as a result of the action.</p>
@@ -174,33 +169,40 @@ impl GetLifecyclePolicyPreviewOutputBuilder {
     }
     /// <p>The list of images that is returned as a result of the action.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyPreviewSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>The list of images that is returned as a result of the action.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::LifecyclePolicyPreviewSummary> {
         &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLifecyclePolicyPreviewOutput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput).
     pub fn build(self) -> crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput {
         crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            lifecycle_policy_text: self.lifecycle_policy_text,
-            status: self.status,
-            next_token: self.next_token,
-            preview_results: self.preview_results,
-            summary: self.summary,
+            registry_id: self.registry_id
+            ,
+            repository_name: self.repository_name
+            ,
+            lifecycle_policy_text: self.lifecycle_policy_text
+            ,
+            status: self.status
+            ,
+            next_token: self.next_token
+            ,
+            preview_results: self.preview_results
+            ,
+            summary: self.summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

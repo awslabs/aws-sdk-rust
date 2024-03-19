@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteChannelModeratorOutput {
+pub struct DeleteChannelModeratorOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteChannelModeratorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteChannelModeratorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelModeratorOutput`](crate::operation::delete_channel_moderator::DeleteChannelModeratorOutput).
     pub fn builder() -> crate::operation::delete_channel_moderator::builders::DeleteChannelModeratorOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteChannelModeratorOutputBuilder {
 }
 impl DeleteChannelModeratorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteChannelModeratorOutput`](crate::operation::delete_channel_moderator::DeleteChannelModeratorOutput).
     pub fn build(self) -> crate::operation::delete_channel_moderator::DeleteChannelModeratorOutput {
         crate::operation::delete_channel_moderator::DeleteChannelModeratorOutput {
@@ -40,3 +40,4 @@ impl DeleteChannelModeratorOutputBuilder {
         }
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>Represents the input of a <code>BatchGetApplications</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetApplicationsInput {
+pub struct BatchGetApplicationsInput  {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetApplicationsInput {
+impl  BatchGetApplicationsInput  {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_names.is_none()`.
-    pub fn application_names(&self) -> &[::std::string::String] {
-        self.application_names.as_deref().unwrap_or_default()
+    pub fn application_names(&self) -> & [::std::string::String] {
+        self.application_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetApplicationsInput {
@@ -26,7 +27,7 @@ impl BatchGetApplicationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetApplicationsInputBuilder {
-    pub(crate) application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetApplicationsInputBuilder {
     /// Appends an item to `application_names`.
@@ -36,26 +37,26 @@ impl BatchGetApplicationsInputBuilder {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
     pub fn application_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_names.unwrap_or_default();
-        v.push(input.into());
-        self.application_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.application_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn set_application_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_names = input;
-        self
+    pub fn set_application_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.application_names = input; self
     }
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn get_application_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.application_names
     }
     /// Consumes the builder and constructs a [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_applications::BatchGetApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_get_applications::BatchGetApplicationsInput {
-            application_names: self.application_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_applications::BatchGetApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_applications::BatchGetApplicationsInput {
+                application_names: self.application_names
+                ,
+            }
+        )
     }
 }
+

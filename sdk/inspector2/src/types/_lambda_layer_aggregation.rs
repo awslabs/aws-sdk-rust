@@ -3,43 +3,46 @@
 /// <p>The details that define a findings aggregation based on an Amazon Web Services Lambda function's layers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaLayerAggregation {
+pub struct LambdaLayerAggregation  {
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
-    pub function_names: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub function_names: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>
-    pub layer_arns: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub layer_arns: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The order to use for sorting the results.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The finding severity to use for sorting the results.</p>
     pub sort_by: ::std::option::Option<crate::types::LambdaLayerSortBy>,
 }
-impl LambdaLayerAggregation {
+impl  LambdaLayerAggregation  {
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_names.is_none()`.
-    pub fn function_names(&self) -> &[crate::types::StringFilter] {
-        self.function_names.as_deref().unwrap_or_default()
+    pub fn function_names(&self) -> & [crate::types::StringFilter] {
+        self.function_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[crate::types::StringFilter] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [crate::types::StringFilter] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_arns.is_none()`.
-    pub fn layer_arns(&self) -> &[crate::types::StringFilter] {
-        self.layer_arns.as_deref().unwrap_or_default()
+    pub fn layer_arns(&self) -> & [crate::types::StringFilter] {
+        self.layer_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The order to use for sorting the results.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The finding severity to use for sorting the results.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::LambdaLayerSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::LambdaLayerSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -54,9 +57,9 @@ impl LambdaLayerAggregation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaLayerAggregationBuilder {
-    pub(crate) function_names: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) layer_arns: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) function_names: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) layer_arns: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::LambdaLayerSortBy>,
 }
@@ -68,17 +71,16 @@ impl LambdaLayerAggregationBuilder {
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
     pub fn function_names(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.function_names.unwrap_or_default();
-        v.push(input);
-        self.function_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.function_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
-    pub fn set_function_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.function_names = input;
-        self
+    pub fn set_function_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.function_names = input; self
     }
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
-    pub fn get_function_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_function_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.function_names
     }
     /// Appends an item to `resource_ids`.
@@ -88,17 +90,16 @@ impl LambdaLayerAggregationBuilder {
     /// <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
     pub fn resource_ids(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input);
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.resource_ids
     }
     /// Appends an item to `layer_arns`.
@@ -108,17 +109,16 @@ impl LambdaLayerAggregationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>
     pub fn layer_arns(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.layer_arns.unwrap_or_default();
-        v.push(input);
-        self.layer_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.layer_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>
-    pub fn set_layer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.layer_arns = input;
-        self
+    pub fn set_layer_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.layer_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>
-    pub fn get_layer_arns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_layer_arns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.layer_arns
     }
     /// <p>The order to use for sorting the results.</p>
@@ -128,8 +128,7 @@ impl LambdaLayerAggregationBuilder {
     }
     /// <p>The order to use for sorting the results.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The order to use for sorting the results.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -142,8 +141,7 @@ impl LambdaLayerAggregationBuilder {
     }
     /// <p>The finding severity to use for sorting the results.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::LambdaLayerSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The finding severity to use for sorting the results.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::LambdaLayerSortBy> {
@@ -152,11 +150,17 @@ impl LambdaLayerAggregationBuilder {
     /// Consumes the builder and constructs a [`LambdaLayerAggregation`](crate::types::LambdaLayerAggregation).
     pub fn build(self) -> crate::types::LambdaLayerAggregation {
         crate::types::LambdaLayerAggregation {
-            function_names: self.function_names,
-            resource_ids: self.resource_ids,
-            layer_arns: self.layer_arns,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
+            function_names: self.function_names
+            ,
+            resource_ids: self.resource_ids
+            ,
+            layer_arns: self.layer_arns
+            ,
+            sort_order: self.sort_order
+            ,
+            sort_by: self.sort_by
+            ,
         }
     }
 }
+

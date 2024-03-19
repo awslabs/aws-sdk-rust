@@ -21,11 +21,7 @@ impl EvaluationFormSingleSelectQuestionAutomationOption {
     /// Tries to convert the enum instance into [`RuleCategory`](crate::types::EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory), extracting the inner [`SingleSelectQuestionRuleCategoryAutomation`](crate::types::SingleSelectQuestionRuleCategoryAutomation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_rule_category(&self) -> ::std::result::Result<&crate::types::SingleSelectQuestionRuleCategoryAutomation, &Self> {
-        if let EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RuleCategory`](crate::types::EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory).
     pub fn is_rule_category(&self) -> bool {
@@ -36,3 +32,4 @@ impl EvaluationFormSingleSelectQuestionAutomationOption {
         matches!(self, Self::Unknown)
     }
 }
+

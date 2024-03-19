@@ -3,20 +3,19 @@
 /// <p>Details for associating a license configuration with a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LicenseSpecification {
+pub struct LicenseSpecification  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub license_configuration_arn: ::std::string::String,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub ami_association_scope: ::std::option::Option<::std::string::String>,
 }
-impl LicenseSpecification {
+impl  LicenseSpecification  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.license_configuration_arn.deref()
+    pub fn license_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.license_configuration_arn.deref()
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    pub fn ami_association_scope(&self) -> ::std::option::Option<&str> {
+    pub fn ami_association_scope(&self) -> ::std::option::Option<& str> {
         self.ami_association_scope.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl LicenseSpecificationBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_configuration_arn = input;
-        self
+        self.license_configuration_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl LicenseSpecificationBuilder {
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub fn set_ami_association_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ami_association_scope = input;
-        self
+        self.ami_association_scope = input; self
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub fn get_ami_association_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl LicenseSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`license_configuration_arn`](crate::types::builders::LicenseSpecificationBuilder::license_configuration_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LicenseSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LicenseSpecification {
-            license_configuration_arn: self.license_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "license_configuration_arn",
-                    "license_configuration_arn was not specified but it is required when building LicenseSpecification",
-                )
-            })?,
-            ami_association_scope: self.ami_association_scope,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LicenseSpecification {
+                license_configuration_arn: self.license_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("license_configuration_arn", "license_configuration_arn was not specified but it is required when building LicenseSpecification")
+                    )?
+                ,
+                ami_association_scope: self.ami_association_scope
+                ,
+            }
+        )
     }
 }
+

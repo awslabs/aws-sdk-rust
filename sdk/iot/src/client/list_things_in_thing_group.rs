@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThingsInThingGroup`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`thing_group_name(impl Into<String>)`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::set_thing_group_name):<br>required: **true**<br><p>The thing group name.</p><br>
     ///   - [`recursive(bool)`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::recursive) / [`set_recursive(Option<bool>)`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::set_recursive):<br>required: **false**<br><p>When true, list things in this thing group and in all child groups as well.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListThingsInThingGroupOutput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput) with field(s):
+                            /// - On success, responds with [`ListThingsInThingGroupOutput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput) with field(s):
     ///   - [`things(Option<Vec::<String>>)`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput::things): <p>The things in the specified thing group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListThingsInThingGroupError>`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupError)
+                            /// - On failure, responds with [`SdkError<ListThingsInThingGroupError>`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupError)
     pub fn list_things_in_thing_group(&self) -> crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder {
-        crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupFluentBuilder::new(self.handle.clone())
+                            }
 }
+

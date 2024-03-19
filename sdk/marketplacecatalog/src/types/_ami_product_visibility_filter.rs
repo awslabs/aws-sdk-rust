@@ -3,16 +3,17 @@
 /// <p>Object that allows filtering on the visibility of the product in the AWS Marketplace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmiProductVisibilityFilter {
+pub struct AmiProductVisibilityFilter  {
     /// <p>A string array of unique visibility values to be filtered on.</p>
-    pub value_list: ::std::option::Option<::std::vec::Vec<crate::types::AmiProductVisibilityString>>,
+    pub value_list: ::std::option::Option<::std::vec::Vec::<crate::types::AmiProductVisibilityString>>,
 }
-impl AmiProductVisibilityFilter {
+impl  AmiProductVisibilityFilter  {
     /// <p>A string array of unique visibility values to be filtered on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
-    pub fn value_list(&self) -> &[crate::types::AmiProductVisibilityString] {
-        self.value_list.as_deref().unwrap_or_default()
+    pub fn value_list(&self) -> & [crate::types::AmiProductVisibilityString] {
+        self.value_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AmiProductVisibilityFilter {
@@ -26,7 +27,7 @@ impl AmiProductVisibilityFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmiProductVisibilityFilterBuilder {
-    pub(crate) value_list: ::std::option::Option<::std::vec::Vec<crate::types::AmiProductVisibilityString>>,
+    pub(crate) value_list: ::std::option::Option<::std::vec::Vec::<crate::types::AmiProductVisibilityString>>,
 }
 impl AmiProductVisibilityFilterBuilder {
     /// Appends an item to `value_list`.
@@ -36,21 +37,24 @@ impl AmiProductVisibilityFilterBuilder {
     /// <p>A string array of unique visibility values to be filtered on.</p>
     pub fn value_list(mut self, input: crate::types::AmiProductVisibilityString) -> Self {
         let mut v = self.value_list.unwrap_or_default();
-        v.push(input);
-        self.value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A string array of unique visibility values to be filtered on.</p>
-    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AmiProductVisibilityString>>) -> Self {
-        self.value_list = input;
-        self
+    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AmiProductVisibilityString>>) -> Self {
+        self.value_list = input; self
     }
     /// <p>A string array of unique visibility values to be filtered on.</p>
-    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AmiProductVisibilityString>> {
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AmiProductVisibilityString>> {
         &self.value_list
     }
     /// Consumes the builder and constructs a [`AmiProductVisibilityFilter`](crate::types::AmiProductVisibilityFilter).
     pub fn build(self) -> crate::types::AmiProductVisibilityFilter {
-        crate::types::AmiProductVisibilityFilter { value_list: self.value_list }
+        crate::types::AmiProductVisibilityFilter {
+            value_list: self.value_list
+            ,
+        }
     }
 }
+

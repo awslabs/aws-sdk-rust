@@ -3,11 +3,11 @@
 /// <p>Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputTransformer {
+pub struct InputTransformer  {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
     /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services."</p>
-    pub input_paths_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub input_paths_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
@@ -19,7 +19,7 @@ pub struct InputTransformer {
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
     /// <p><code>"InputTemplate": "<instance>
-    /// is in state
+    /// is in state 
     /// <status>
     /// "
     /// </status>
@@ -52,11 +52,11 @@ pub struct InputTransformer {
     /// <p><code>}</code></p>
     pub input_template: ::std::string::String,
 }
-impl InputTransformer {
+impl  InputTransformer  {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
     /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services."</p>
-    pub fn input_paths_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn input_paths_map(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.input_paths_map.as_ref()
     }
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
@@ -70,7 +70,7 @@ impl InputTransformer {
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
     /// <p><code>"InputTemplate": "<instance>
-    /// is in state
+    /// is in state 
     /// <status>
     /// "
     /// </status>
@@ -101,9 +101,8 @@ impl InputTransformer {
     /// </instance>
     /// </instance></code></p>
     /// <p><code>}</code></p>
-    pub fn input_template(&self) -> &str {
-        use std::ops::Deref;
-        self.input_template.deref()
+    pub fn input_template(&self) -> & str {
+        use std::ops::Deref; self.input_template.deref()
     }
 }
 impl InputTransformer {
@@ -117,7 +116,7 @@ impl InputTransformer {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputTransformerBuilder {
-    pub(crate) input_paths_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) input_paths_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) input_template: ::std::option::Option<::std::string::String>,
 }
 impl InputTransformerBuilder {
@@ -128,30 +127,22 @@ impl InputTransformerBuilder {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
     /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services."</p>
-    pub fn input_paths_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_paths_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.input_paths_map.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.input_paths_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.input_paths_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
     /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services."</p>
-    pub fn set_input_paths_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.input_paths_map = input;
-        self
+    pub fn set_input_paths_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.input_paths_map = input; self
     }
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
     /// <p><code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services."</p>
-    pub fn get_input_paths_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_input_paths_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.input_paths_map
     }
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
@@ -165,7 +156,7 @@ impl InputTransformerBuilder {
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
     /// <p><code>"InputTemplate": "<instance>
-    /// is in state
+    /// is in state 
     /// <status>
     /// "
     /// </status>
@@ -212,7 +203,7 @@ impl InputTransformerBuilder {
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
     /// <p><code>"InputTemplate": "<instance>
-    /// is in state
+    /// is in state 
     /// <status>
     /// "
     /// </status>
@@ -244,8 +235,7 @@ impl InputTransformerBuilder {
     /// </instance></code></p>
     /// <p><code>}</code></p>
     pub fn set_input_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_template = input;
-        self
+        self.input_template = input; self
     }
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
@@ -258,7 +248,7 @@ impl InputTransformerBuilder {
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
     /// <p><code>"InputTemplate": "<instance>
-    /// is in state
+    /// is in state 
     /// <status>
     /// "
     /// </status>
@@ -296,14 +286,17 @@ impl InputTransformerBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`input_template`](crate::types::builders::InputTransformerBuilder::input_template)
     pub fn build(self) -> ::std::result::Result<crate::types::InputTransformer, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputTransformer {
-            input_paths_map: self.input_paths_map,
-            input_template: self.input_template.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_template",
-                    "input_template was not specified but it is required when building InputTransformer",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputTransformer {
+                input_paths_map: self.input_paths_map
+                ,
+                input_template: self.input_template
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_template", "input_template was not specified but it is required when building InputTransformer")
+                    )?
+                ,
+            }
+        )
     }
 }
+

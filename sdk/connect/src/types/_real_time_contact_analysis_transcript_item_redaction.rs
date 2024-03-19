@@ -3,16 +3,17 @@
 /// <p>Object describing redaction applied to the segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisTranscriptItemRedaction {
+pub struct RealTimeContactAnalysisTranscriptItemRedaction  {
     /// <p>List of character intervals each describing a part of the text that was redacted. For <code>OutputType.Raw</code>, part of the original text that contains data that can be redacted. For <code> OutputType.Redacted</code>, part of the string with redaction tag.</p>
-    pub character_offsets: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisCharacterInterval>>,
+    pub character_offsets: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisCharacterInterval>>,
 }
-impl RealTimeContactAnalysisTranscriptItemRedaction {
+impl  RealTimeContactAnalysisTranscriptItemRedaction  {
     /// <p>List of character intervals each describing a part of the text that was redacted. For <code>OutputType.Raw</code>, part of the original text that contains data that can be redacted. For <code> OutputType.Redacted</code>, part of the string with redaction tag.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.character_offsets.is_none()`.
-    pub fn character_offsets(&self) -> &[crate::types::RealTimeContactAnalysisCharacterInterval] {
-        self.character_offsets.as_deref().unwrap_or_default()
+    pub fn character_offsets(&self) -> & [crate::types::RealTimeContactAnalysisCharacterInterval] {
+        self.character_offsets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RealTimeContactAnalysisTranscriptItemRedaction {
@@ -26,7 +27,7 @@ impl RealTimeContactAnalysisTranscriptItemRedaction {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealTimeContactAnalysisTranscriptItemRedactionBuilder {
-    pub(crate) character_offsets: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisCharacterInterval>>,
+    pub(crate) character_offsets: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisCharacterInterval>>,
 }
 impl RealTimeContactAnalysisTranscriptItemRedactionBuilder {
     /// Appends an item to `character_offsets`.
@@ -36,26 +37,24 @@ impl RealTimeContactAnalysisTranscriptItemRedactionBuilder {
     /// <p>List of character intervals each describing a part of the text that was redacted. For <code>OutputType.Raw</code>, part of the original text that contains data that can be redacted. For <code> OutputType.Redacted</code>, part of the string with redaction tag.</p>
     pub fn character_offsets(mut self, input: crate::types::RealTimeContactAnalysisCharacterInterval) -> Self {
         let mut v = self.character_offsets.unwrap_or_default();
-        v.push(input);
-        self.character_offsets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.character_offsets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of character intervals each describing a part of the text that was redacted. For <code>OutputType.Raw</code>, part of the original text that contains data that can be redacted. For <code> OutputType.Redacted</code>, part of the string with redaction tag.</p>
-    pub fn set_character_offsets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisCharacterInterval>>,
-    ) -> Self {
-        self.character_offsets = input;
-        self
+    pub fn set_character_offsets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisCharacterInterval>>) -> Self {
+        self.character_offsets = input; self
     }
     /// <p>List of character intervals each describing a part of the text that was redacted. For <code>OutputType.Raw</code>, part of the original text that contains data that can be redacted. For <code> OutputType.Redacted</code>, part of the string with redaction tag.</p>
-    pub fn get_character_offsets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisCharacterInterval>> {
+    pub fn get_character_offsets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisCharacterInterval>> {
         &self.character_offsets
     }
     /// Consumes the builder and constructs a [`RealTimeContactAnalysisTranscriptItemRedaction`](crate::types::RealTimeContactAnalysisTranscriptItemRedaction).
     pub fn build(self) -> crate::types::RealTimeContactAnalysisTranscriptItemRedaction {
         crate::types::RealTimeContactAnalysisTranscriptItemRedaction {
-            character_offsets: self.character_offsets,
+            character_offsets: self.character_offsets
+            ,
         }
     }
 }
+

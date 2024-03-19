@@ -3,7 +3,7 @@
 /// <p>Describes the information used to create a WorkSpace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkspaceRequest {
+pub struct WorkspaceRequest  {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
     pub directory_id: ::std::string::String,
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
@@ -20,29 +20,26 @@ pub struct WorkspaceRequest {
     /// <p>The WorkSpace properties.</p>
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     /// <p>The tags for the WorkSpace.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The name of the user-decoupled WorkSpace.</p>
     pub workspace_name: ::std::option::Option<::std::string::String>,
 }
-impl WorkspaceRequest {
+impl  WorkspaceRequest  {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
-    pub fn directory_id(&self) -> &str {
-        use std::ops::Deref;
-        self.directory_id.deref()
+    pub fn directory_id(&self) -> & str {
+        use std::ops::Deref; self.directory_id.deref()
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
     /// <p>The reserved keyword, <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
-    pub fn user_name(&self) -> &str {
-        use std::ops::Deref;
-        self.user_name.deref()
+    pub fn user_name(&self) -> & str {
+        use std::ops::Deref; self.user_name.deref()
     }
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
-    pub fn bundle_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bundle_id.deref()
+    pub fn bundle_id(&self) -> & str {
+        use std::ops::Deref; self.bundle_id.deref()
     }
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
-    pub fn volume_encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn volume_encryption_key(&self) -> ::std::option::Option<& str> {
         self.volume_encryption_key.as_deref()
     }
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
@@ -54,17 +51,18 @@ impl WorkspaceRequest {
         self.root_volume_encryption_enabled
     }
     /// <p>The WorkSpace properties.</p>
-    pub fn workspace_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceProperties> {
+    pub fn workspace_properties(&self) -> ::std::option::Option<& crate::types::WorkspaceProperties> {
         self.workspace_properties.as_ref()
     }
     /// <p>The tags for the WorkSpace.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the user-decoupled WorkSpace.</p>
-    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_name(&self) -> ::std::option::Option<& str> {
         self.workspace_name.as_deref()
     }
 }
@@ -86,7 +84,7 @@ pub struct WorkspaceRequestBuilder {
     pub(crate) user_volume_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) root_volume_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceRequestBuilder {
@@ -98,8 +96,7 @@ impl WorkspaceRequestBuilder {
     }
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl WorkspaceRequestBuilder {
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
     /// <p>The reserved keyword, <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
     /// <p>The reserved keyword, <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
@@ -131,8 +127,7 @@ impl WorkspaceRequestBuilder {
     }
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +140,7 @@ impl WorkspaceRequestBuilder {
     }
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn set_volume_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_encryption_key = input;
-        self
+        self.volume_encryption_key = input; self
     }
     /// <p>The ARN of the symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn get_volume_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +153,7 @@ impl WorkspaceRequestBuilder {
     }
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
     pub fn set_user_volume_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_volume_encryption_enabled = input;
-        self
+        self.user_volume_encryption_enabled = input; self
     }
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
     pub fn get_user_volume_encryption_enabled(&self) -> &::std::option::Option<bool> {
@@ -173,8 +166,7 @@ impl WorkspaceRequestBuilder {
     }
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
     pub fn set_root_volume_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.root_volume_encryption_enabled = input;
-        self
+        self.root_volume_encryption_enabled = input; self
     }
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
     pub fn get_root_volume_encryption_enabled(&self) -> &::std::option::Option<bool> {
@@ -187,8 +179,7 @@ impl WorkspaceRequestBuilder {
     }
     /// <p>The WorkSpace properties.</p>
     pub fn set_workspace_properties(mut self, input: ::std::option::Option<crate::types::WorkspaceProperties>) -> Self {
-        self.workspace_properties = input;
-        self
+        self.workspace_properties = input; self
     }
     /// <p>The WorkSpace properties.</p>
     pub fn get_workspace_properties(&self) -> &::std::option::Option<crate::types::WorkspaceProperties> {
@@ -201,17 +192,16 @@ impl WorkspaceRequestBuilder {
     /// <p>The tags for the WorkSpace.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the WorkSpace.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the WorkSpace.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The name of the user-decoupled WorkSpace.</p>
@@ -221,8 +211,7 @@ impl WorkspaceRequestBuilder {
     }
     /// <p>The name of the user-decoupled WorkSpace.</p>
     pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_name = input;
-        self
+        self.workspace_name = input; self
     }
     /// <p>The name of the user-decoupled WorkSpace.</p>
     pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,31 +223,37 @@ impl WorkspaceRequestBuilder {
     /// - [`user_name`](crate::types::builders::WorkspaceRequestBuilder::user_name)
     /// - [`bundle_id`](crate::types::builders::WorkspaceRequestBuilder::bundle_id)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkspaceRequest {
-            directory_id: self.directory_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "directory_id",
-                    "directory_id was not specified but it is required when building WorkspaceRequest",
-                )
-            })?,
-            user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_name",
-                    "user_name was not specified but it is required when building WorkspaceRequest",
-                )
-            })?,
-            bundle_id: self.bundle_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bundle_id",
-                    "bundle_id was not specified but it is required when building WorkspaceRequest",
-                )
-            })?,
-            volume_encryption_key: self.volume_encryption_key,
-            user_volume_encryption_enabled: self.user_volume_encryption_enabled,
-            root_volume_encryption_enabled: self.root_volume_encryption_enabled,
-            workspace_properties: self.workspace_properties,
-            tags: self.tags,
-            workspace_name: self.workspace_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkspaceRequest {
+                directory_id: self.directory_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("directory_id", "directory_id was not specified but it is required when building WorkspaceRequest")
+                    )?
+                ,
+                user_name: self.user_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_name", "user_name was not specified but it is required when building WorkspaceRequest")
+                    )?
+                ,
+                bundle_id: self.bundle_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bundle_id", "bundle_id was not specified but it is required when building WorkspaceRequest")
+                    )?
+                ,
+                volume_encryption_key: self.volume_encryption_key
+                ,
+                user_volume_encryption_enabled: self.user_volume_encryption_enabled
+                ,
+                root_volume_encryption_enabled: self.root_volume_encryption_enabled
+                ,
+                workspace_properties: self.workspace_properties
+                ,
+                tags: self.tags
+                ,
+                workspace_name: self.workspace_name
+                ,
+            }
+        )
     }
 }
+

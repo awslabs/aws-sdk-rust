@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateRecoveryInstancesInput {
+pub struct TerminateRecoveryInstancesInput  {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub recovery_instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TerminateRecoveryInstancesInput {
+impl  TerminateRecoveryInstancesInput  {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_instance_ids.is_none()`.
-    pub fn recovery_instance_ids(&self) -> &[::std::string::String] {
-        self.recovery_instance_ids.as_deref().unwrap_or_default()
+    pub fn recovery_instance_ids(&self) -> & [::std::string::String] {
+        self.recovery_instance_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TerminateRecoveryInstancesInput {
@@ -25,7 +26,7 @@ impl TerminateRecoveryInstancesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesInputBuilder {
-    pub(crate) recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recovery_instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TerminateRecoveryInstancesInputBuilder {
     /// Appends an item to `recovery_instance_ids`.
@@ -35,28 +36,26 @@ impl TerminateRecoveryInstancesInputBuilder {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
     pub fn recovery_instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recovery_instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recovery_instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recovery_instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn set_recovery_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.recovery_instance_ids = input;
-        self
+    pub fn set_recovery_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.recovery_instance_ids = input; self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn get_recovery_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recovery_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.recovery_instance_ids
     }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput {
-            recovery_instance_ids: self.recovery_instance_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput {
+                recovery_instance_ids: self.recovery_instance_ids
+                ,
+            }
+        )
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListObjectParentPaths`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The ARN of the directory to which the parent path applies.</p><br>
     ///   - [`object_reference(ObjectReference)`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::set_object_reference):<br>required: **true**<br><p>The reference that identifies the object whose parent paths are listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p><br>
-    /// - On success, responds with [`ListObjectParentPathsOutput`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput) with field(s):
+                            /// - On success, responds with [`ListObjectParentPathsOutput`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput) with field(s):
     ///   - [`path_to_object_identifiers_list(Option<Vec::<PathToObjectIdentifiers>>)`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput::path_to_object_identifiers_list): <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListObjectParentPathsError>`](crate::operation::list_object_parent_paths::ListObjectParentPathsError)
+                            /// - On failure, responds with [`SdkError<ListObjectParentPathsError>`](crate::operation::list_object_parent_paths::ListObjectParentPathsError)
     pub fn list_object_parent_paths(&self) -> crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder {
-        crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_object_parent_paths::builders::ListObjectParentPathsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

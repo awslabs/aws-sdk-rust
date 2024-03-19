@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableControlInput {
+pub struct EnableControlInput  {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Tags to be applied to the <code>EnabledControl</code> resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlParameter>>,
 }
-impl EnableControlInput {
+impl  EnableControlInput  {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn control_identifier(&self) -> ::std::option::Option<& str> {
         self.control_identifier.as_deref()
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_identifier(&self) -> ::std::option::Option<& str> {
         self.target_identifier.as_deref()
     }
     /// <p>Tags to be applied to the <code>EnabledControl</code> resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::EnabledControlParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::EnabledControlParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EnableControlInput {
@@ -45,8 +46,8 @@ impl EnableControlInput {
 pub struct EnableControlInputBuilder {
     pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlParameter>>,
 }
 impl EnableControlInputBuilder {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
@@ -57,8 +58,7 @@ impl EnableControlInputBuilder {
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_identifier = input;
-        self
+        self.control_identifier = input; self
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl EnableControlInputBuilder {
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_identifier = input;
-        self
+        self.target_identifier = input; self
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl EnableControlInputBuilder {
     /// <p>Tags to be applied to the <code>EnabledControl</code> resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags to be applied to the <code>EnabledControl</code> resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to be applied to the <code>EnabledControl</code> resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `parameters`.
@@ -106,28 +104,32 @@ impl EnableControlInputBuilder {
     /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     pub fn parameters(mut self, input: crate::types::EnabledControlParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnabledControlParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`EnableControlInput`](crate::operation::enable_control::EnableControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_control::EnableControlInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_control::EnableControlInput {
-            control_identifier: self.control_identifier,
-            target_identifier: self.target_identifier,
-            tags: self.tags,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_control::EnableControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_control::EnableControlInput {
+                control_identifier: self.control_identifier
+                ,
+                target_identifier: self.target_identifier
+                ,
+                tags: self.tags
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

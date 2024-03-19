@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>GetSAMLProvider</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSamlProviderOutput {
+pub struct GetSamlProviderOutput  {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub saml_metadata_document: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the SAML provider was created.</p>
@@ -11,34 +11,35 @@ pub struct GetSamlProviderOutput {
     /// <p>The expiration date and time for the SAML provider.</p>
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl GetSamlProviderOutput {
+impl  GetSamlProviderOutput  {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
-    pub fn saml_metadata_document(&self) -> ::std::option::Option<&str> {
+    pub fn saml_metadata_document(&self) -> ::std::option::Option<& str> {
         self.saml_metadata_document.as_deref()
     }
     /// <p>The date and time when the SAML provider was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub fn valid_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn valid_until(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSamlProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`GetSamlProviderOutput`](crate::operation::get_saml_provider::GetSamlProviderOutput).
     pub fn builder() -> crate::operation::get_saml_provider::builders::GetSamlProviderOutputBuilder {
@@ -53,7 +54,7 @@ pub struct GetSamlProviderOutputBuilder {
     pub(crate) saml_metadata_document: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetSamlProviderOutputBuilder {
@@ -64,8 +65,7 @@ impl GetSamlProviderOutputBuilder {
     }
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub fn set_saml_metadata_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.saml_metadata_document = input;
-        self
+        self.saml_metadata_document = input; self
     }
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub fn get_saml_metadata_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl GetSamlProviderOutputBuilder {
     }
     /// <p>The date and time when the SAML provider was created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date and time when the SAML provider was created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -92,8 +91,7 @@ impl GetSamlProviderOutputBuilder {
     }
     /// <p>The expiration date and time for the SAML provider.</p>
     pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.valid_until = input;
-        self
+        self.valid_until = input; self
     }
     /// <p>The expiration date and time for the SAML provider.</p>
     pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -106,36 +104,40 @@ impl GetSamlProviderOutputBuilder {
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSamlProviderOutput`](crate::operation::get_saml_provider::GetSamlProviderOutput).
     pub fn build(self) -> crate::operation::get_saml_provider::GetSamlProviderOutput {
         crate::operation::get_saml_provider::GetSamlProviderOutput {
-            saml_metadata_document: self.saml_metadata_document,
-            create_date: self.create_date,
-            valid_until: self.valid_until,
-            tags: self.tags,
+            saml_metadata_document: self.saml_metadata_document
+            ,
+            create_date: self.create_date
+            ,
+            valid_until: self.valid_until
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

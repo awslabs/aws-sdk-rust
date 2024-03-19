@@ -5,23 +5,20 @@ pub use crate::operation::validate_matchmaking_rule_set::_validate_matchmaking_r
 
 impl ValidateMatchmakingRuleSetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.validate_matchmaking_rule_set();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.validate_matchmaking_rule_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ValidateMatchmakingRuleSet`.
-///
+/// 
 /// <p>Validates the syntax of a matchmaking rule or rule set. This operation checks that the rule set is using syntactically correct JSON and that it conforms to allowed property expressions. To validate syntax, provide a rule set JSON string.</p>
 /// <p><b>Learn more</b></p>
 /// <ul>
@@ -31,33 +28,32 @@ impl ValidateMatchmakingRuleSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder,
+                    inner: crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
-        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-    > for ValidateMatchmakingRuleSetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
+                    crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
+                > for ValidateMatchmakingRuleSetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
+                        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ValidateMatchmakingRuleSetFluentBuilder {
     /// Creates a new `ValidateMatchmakingRuleSet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSet::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSet::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
-        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSet::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSet::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput, crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
     pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_body(input.into());
@@ -128,3 +115,4 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
         self.inner.get_rule_set_body()
     }
 }
+

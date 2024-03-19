@@ -5,54 +5,50 @@ pub use crate::operation::reset_resource_log_level::_reset_resource_log_level_in
 
 impl ResetResourceLogLevelInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.reset_resource_log_level();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.reset_resource_log_level();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ResetResourceLogLevel`.
-///
+/// 
 /// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetResourceLogLevelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelInputBuilder,
+                    inner: crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
-        crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
-    > for ResetResourceLogLevelFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
-            crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
+                    crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
+                > for ResetResourceLogLevelFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
+                        crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ResetResourceLogLevelFluentBuilder {
     /// Creates a new `ResetResourceLogLevel`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl ResetResourceLogLevelFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::reset_resource_log_level::ResetResourceLogLevel::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::reset_resource_log_level::ResetResourceLogLevel::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
-        crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_resource_log_level::ResetResourceLogLevelError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::reset_resource_log_level::ResetResourceLogLevel::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::reset_resource_log_level::ResetResourceLogLevel::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput, crate::operation::reset_resource_log_level::ResetResourceLogLevelError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
@@ -137,3 +124,4 @@ impl ResetResourceLogLevelFluentBuilder {
         self.inner.get_resource_type()
     }
 }
+

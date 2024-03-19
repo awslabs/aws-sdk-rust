@@ -3,15 +3,14 @@
 /// <p>A structure that contains one or more attendee IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttendeeIdItem {
+pub struct AttendeeIdItem  {
     /// <p>A list of one or more attendee IDs.</p>
     pub attendee_id: ::std::string::String,
 }
-impl AttendeeIdItem {
+impl  AttendeeIdItem  {
     /// <p>A list of one or more attendee IDs.</p>
-    pub fn attendee_id(&self) -> &str {
-        use std::ops::Deref;
-        self.attendee_id.deref()
+    pub fn attendee_id(&self) -> & str {
+        use std::ops::Deref; self.attendee_id.deref()
     }
 }
 impl AttendeeIdItem {
@@ -36,8 +35,7 @@ impl AttendeeIdItemBuilder {
     }
     /// <p>A list of one or more attendee IDs.</p>
     pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attendee_id = input;
-        self
+        self.attendee_id = input; self
     }
     /// <p>A list of one or more attendee IDs.</p>
     pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AttendeeIdItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attendee_id`](crate::types::builders::AttendeeIdItemBuilder::attendee_id)
     pub fn build(self) -> ::std::result::Result<crate::types::AttendeeIdItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttendeeIdItem {
-            attendee_id: self.attendee_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attendee_id",
-                    "attendee_id was not specified but it is required when building AttendeeIdItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttendeeIdItem {
+                attendee_id: self.attendee_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attendee_id", "attendee_id was not specified but it is required when building AttendeeIdItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that displays information about one destination that CloudWatch RUM sends extended metrics to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDestinationSummary {
+pub struct MetricDestinationSummary  {
     /// <p>Specifies whether the destination is <code>CloudWatch</code> or <code>Evidently</code>.</p>
     pub destination: ::std::option::Option<crate::types::MetricDestination>,
     /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
@@ -11,17 +11,17 @@ pub struct MetricDestinationSummary {
     /// <p>This field appears only when the destination is <code>Evidently</code>. It specifies the ARN of the IAM role that is used to write to the Evidently experiment that receives the metrics.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl MetricDestinationSummary {
+impl  MetricDestinationSummary  {
     /// <p>Specifies whether the destination is <code>CloudWatch</code> or <code>Evidently</code>.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::MetricDestination> {
         self.destination.as_ref()
     }
     /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>This field appears only when the destination is <code>Evidently</code>. It specifies the ARN of the IAM role that is used to write to the Evidently experiment that receives the metrics.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl MetricDestinationSummaryBuilder {
     }
     /// <p>Specifies whether the destination is <code>CloudWatch</code> or <code>Evidently</code>.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>Specifies whether the destination is <code>CloudWatch</code> or <code>Evidently</code>.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
@@ -62,8 +61,7 @@ impl MetricDestinationSummaryBuilder {
     }
     /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl MetricDestinationSummaryBuilder {
     }
     /// <p>This field appears only when the destination is <code>Evidently</code>. It specifies the ARN of the IAM role that is used to write to the Evidently experiment that receives the metrics.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>This field appears only when the destination is <code>Evidently</code>. It specifies the ARN of the IAM role that is used to write to the Evidently experiment that receives the metrics.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl MetricDestinationSummaryBuilder {
     /// Consumes the builder and constructs a [`MetricDestinationSummary`](crate::types::MetricDestinationSummary).
     pub fn build(self) -> crate::types::MetricDestinationSummary {
         crate::types::MetricDestinationSummary {
-            destination: self.destination,
-            destination_arn: self.destination_arn,
-            iam_role_arn: self.iam_role_arn,
+            destination: self.destination
+            ,
+            destination_arn: self.destination_arn
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
         }
     }
 }
+

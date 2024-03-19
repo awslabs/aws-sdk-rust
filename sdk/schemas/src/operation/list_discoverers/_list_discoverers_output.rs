@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDiscoverersOutput {
+pub struct ListDiscoverersOutput  {
     /// <p>An array of DiscovererSummary information.</p>
-    pub discoverers: ::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>>,
+    pub discoverers: ::std::option::Option<::std::vec::Vec::<crate::types::DiscovererSummary>>,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDiscoverersOutput {
+impl  ListDiscoverersOutput  {
     /// <p>An array of DiscovererSummary information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.discoverers.is_none()`.
-    pub fn discoverers(&self) -> &[crate::types::DiscovererSummary] {
-        self.discoverers.as_deref().unwrap_or_default()
+    pub fn discoverers(&self) -> & [crate::types::DiscovererSummary] {
+        self.discoverers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDiscoverersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDiscoverersOutput {
     /// Creates a new builder-style object to manufacture [`ListDiscoverersOutput`](crate::operation::list_discoverers::ListDiscoverersOutput).
     pub fn builder() -> crate::operation::list_discoverers::builders::ListDiscoverersOutputBuilder {
@@ -37,7 +38,7 @@ impl ListDiscoverersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoverersOutputBuilder {
-    pub(crate) discoverers: ::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>>,
+    pub(crate) discoverers: ::std::option::Option<::std::vec::Vec::<crate::types::DiscovererSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListDiscoverersOutputBuilder {
     /// <p>An array of DiscovererSummary information.</p>
     pub fn discoverers(mut self, input: crate::types::DiscovererSummary) -> Self {
         let mut v = self.discoverers.unwrap_or_default();
-        v.push(input);
-        self.discoverers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.discoverers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of DiscovererSummary information.</p>
-    pub fn set_discoverers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>>) -> Self {
-        self.discoverers = input;
-        self
+    pub fn set_discoverers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DiscovererSummary>>) -> Self {
+        self.discoverers = input; self
     }
     /// <p>An array of DiscovererSummary information.</p>
-    pub fn get_discoverers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>> {
+    pub fn get_discoverers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DiscovererSummary>> {
         &self.discoverers
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -69,28 +69,30 @@ impl ListDiscoverersOutputBuilder {
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDiscoverersOutput`](crate::operation::list_discoverers::ListDiscoverersOutput).
     pub fn build(self) -> crate::operation::list_discoverers::ListDiscoverersOutput {
         crate::operation::list_discoverers::ListDiscoverersOutput {
-            discoverers: self.discoverers,
-            next_token: self.next_token,
+            discoverers: self.discoverers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

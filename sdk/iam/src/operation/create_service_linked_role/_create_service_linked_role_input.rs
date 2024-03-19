@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceLinkedRoleInput {
+pub struct CreateServiceLinkedRoleInput  {
     /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.</p>
     /// <p>Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that service.</p>
     pub aws_service_name: ::std::option::Option<::std::string::String>,
@@ -13,20 +13,20 @@ pub struct CreateServiceLinkedRoleInput {
     /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.</p>
     pub custom_suffix: ::std::option::Option<::std::string::String>,
 }
-impl CreateServiceLinkedRoleInput {
+impl  CreateServiceLinkedRoleInput  {
     /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.</p>
     /// <p>Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that service.</p>
-    pub fn aws_service_name(&self) -> ::std::option::Option<&str> {
+    pub fn aws_service_name(&self) -> ::std::option::Option<& str> {
         self.aws_service_name.as_deref()
     }
     /// <p>The description of the role.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p></p>
     /// <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
     /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.</p>
-    pub fn custom_suffix(&self) -> ::std::option::Option<&str> {
+    pub fn custom_suffix(&self) -> ::std::option::Option<& str> {
         self.custom_suffix.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl CreateServiceLinkedRoleInputBuilder {
     /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.</p>
     /// <p>Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that service.</p>
     pub fn set_aws_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_service_name = input;
-        self
+        self.aws_service_name = input; self
     }
     /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.</p>
     /// <p>Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that service.</p>
@@ -71,8 +70,7 @@ impl CreateServiceLinkedRoleInputBuilder {
     }
     /// <p>The description of the role.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the role.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl CreateServiceLinkedRoleInputBuilder {
     /// <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
     /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.</p>
     pub fn set_custom_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_suffix = input;
-        self
+        self.custom_suffix = input; self
     }
     /// <p></p>
     /// <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
@@ -99,16 +96,17 @@ impl CreateServiceLinkedRoleInputBuilder {
         &self.custom_suffix
     }
     /// Consumes the builder and constructs a [`CreateServiceLinkedRoleInput`](crate::operation::create_service_linked_role::CreateServiceLinkedRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service_linked_role::CreateServiceLinkedRoleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_service_linked_role::CreateServiceLinkedRoleInput {
-            aws_service_name: self.aws_service_name,
-            description: self.description,
-            custom_suffix: self.custom_suffix,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_service_linked_role::CreateServiceLinkedRoleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_service_linked_role::CreateServiceLinkedRoleInput {
+                aws_service_name: self.aws_service_name
+                ,
+                description: self.description
+                ,
+                custom_suffix: self.custom_suffix
+                ,
+            }
+        )
     }
 }
+

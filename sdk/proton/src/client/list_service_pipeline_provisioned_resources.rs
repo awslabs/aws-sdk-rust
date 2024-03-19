@@ -2,19 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServicePipelineProvisionedResources`](crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_name(impl Into<String>)`](crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder::set_service_name):<br>required: **true**<br><p>The name of the service whose pipeline's provisioned resources you want.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p><br>
-    /// - On success, responds with [`ListServicePipelineProvisionedResourcesOutput`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListServicePipelineProvisionedResourcesOutput`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesOutput::next_token): <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     ///   - [`provisioned_resources(Vec::<ProvisionedResource>)`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesOutput::provisioned_resources): <p>An array of provisioned resources for a service and pipeline.</p>
-    /// - On failure, responds with [`SdkError<ListServicePipelineProvisionedResourcesError>`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesError)
-    pub fn list_service_pipeline_provisioned_resources(
-        &self,
-    ) -> crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder {
-        crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListServicePipelineProvisionedResourcesError>`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesError)
+    pub fn list_service_pipeline_provisioned_resources(&self) -> crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder {
+                                crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

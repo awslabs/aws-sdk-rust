@@ -3,7 +3,7 @@
 /// <p>An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services account ID that it's associated with. The distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don't own.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConflictingAlias {
+pub struct ConflictingAlias  {
     /// <p>An alias (also called a CNAME).</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
@@ -11,17 +11,17 @@ pub struct ConflictingAlias {
     /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with the alias.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ConflictingAlias {
+impl  ConflictingAlias  {
     /// <p>An alias (also called a CNAME).</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
-    pub fn distribution_id(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_id(&self) -> ::std::option::Option<& str> {
         self.distribution_id.as_deref()
     }
     /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with the alias.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ConflictingAliasBuilder {
     }
     /// <p>An alias (also called a CNAME).</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>An alias (also called a CNAME).</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ConflictingAliasBuilder {
     }
     /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
     pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_id = input;
-        self
+        self.distribution_id = input; self
     }
     /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
     pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ConflictingAliasBuilder {
     }
     /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with the alias.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with the alias.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ConflictingAliasBuilder {
     /// Consumes the builder and constructs a [`ConflictingAlias`](crate::types::ConflictingAlias).
     pub fn build(self) -> crate::types::ConflictingAlias {
         crate::types::ConflictingAlias {
-            alias: self.alias,
-            distribution_id: self.distribution_id,
-            account_id: self.account_id,
+            alias: self.alias
+            ,
+            distribution_id: self.distribution_id
+            ,
+            account_id: self.account_id
+            ,
         }
     }
 }
+

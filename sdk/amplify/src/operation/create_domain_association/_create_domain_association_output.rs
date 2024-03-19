@@ -3,22 +3,22 @@
 /// <p>The result structure for the create domain association request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDomainAssociationOutput {
+pub struct CreateDomainAssociationOutput  {
     /// <p>Describes the structure of a domain association, which associates a custom domain with an Amplify app.</p>
     pub domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,
 }
-impl CreateDomainAssociationOutput {
+impl  CreateDomainAssociationOutput  {
     /// <p>Describes the structure of a domain association, which associates a custom domain with an Amplify app.</p>
-    pub fn domain_association(&self) -> ::std::option::Option<&crate::types::DomainAssociation> {
+    pub fn domain_association(&self) -> ::std::option::Option<& crate::types::DomainAssociation> {
         self.domain_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDomainAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDomainAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainAssociationOutput`](crate::operation::create_domain_association::CreateDomainAssociationOutput).
     pub fn builder() -> crate::operation::create_domain_association::builders::CreateDomainAssociationOutputBuilder {
@@ -42,27 +42,28 @@ impl CreateDomainAssociationOutputBuilder {
     }
     /// <p>Describes the structure of a domain association, which associates a custom domain with an Amplify app.</p>
     pub fn set_domain_association(mut self, input: ::std::option::Option<crate::types::DomainAssociation>) -> Self {
-        self.domain_association = input;
-        self
+        self.domain_association = input; self
     }
     /// <p>Describes the structure of a domain association, which associates a custom domain with an Amplify app.</p>
     pub fn get_domain_association(&self) -> &::std::option::Option<crate::types::DomainAssociation> {
         &self.domain_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDomainAssociationOutput`](crate::operation::create_domain_association::CreateDomainAssociationOutput).
     pub fn build(self) -> crate::operation::create_domain_association::CreateDomainAssociationOutput {
         crate::operation::create_domain_association::CreateDomainAssociationOutput {
-            domain_association: self.domain_association,
+            domain_association: self.domain_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

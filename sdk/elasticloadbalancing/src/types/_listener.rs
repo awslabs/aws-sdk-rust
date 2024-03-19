@@ -4,7 +4,7 @@
 /// <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Listener {
+pub struct Listener  {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     pub protocol: ::std::string::String,
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
@@ -19,11 +19,10 @@ pub struct Listener {
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
-impl Listener {
+impl  Listener  {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
-    pub fn protocol(&self) -> &str {
-        use std::ops::Deref;
-        self.protocol.deref()
+    pub fn protocol(&self) -> & str {
+        use std::ops::Deref; self.protocol.deref()
     }
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub fn load_balancer_port(&self) -> i32 {
@@ -33,7 +32,7 @@ impl Listener {
     /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
-    pub fn instance_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn instance_protocol(&self) -> ::std::option::Option<& str> {
         self.instance_protocol.as_deref()
     }
     /// <p>The port on which the instance is listening.</p>
@@ -41,7 +40,7 @@ impl Listener {
         self.instance_port
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
-    pub fn ssl_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_certificate_id(&self) -> ::std::option::Option<& str> {
         self.ssl_certificate_id.as_deref()
     }
 }
@@ -71,8 +70,7 @@ impl ListenerBuilder {
     }
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl ListenerBuilder {
     }
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub fn set_load_balancer_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.load_balancer_port = input;
-        self
+        self.load_balancer_port = input; self
     }
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub fn get_load_balancer_port(&self) -> &::std::option::Option<i32> {
@@ -106,8 +103,7 @@ impl ListenerBuilder {
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     pub fn set_instance_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_protocol = input;
-        self
+        self.instance_protocol = input; self
     }
     /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
     /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
@@ -124,8 +120,7 @@ impl ListenerBuilder {
     }
     /// <p>The port on which the instance is listening.</p>
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_port = input;
-        self
+        self.instance_port = input; self
     }
     /// <p>The port on which the instance is listening.</p>
     pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
@@ -138,8 +133,7 @@ impl ListenerBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub fn set_ssl_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_certificate_id = input;
-        self
+        self.ssl_certificate_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub fn get_ssl_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,22 +144,27 @@ impl ListenerBuilder {
     /// - [`protocol`](crate::types::builders::ListenerBuilder::protocol)
     /// - [`instance_port`](crate::types::builders::ListenerBuilder::instance_port)
     pub fn build(self) -> ::std::result::Result<crate::types::Listener, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Listener {
-            protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol",
-                    "protocol was not specified but it is required when building Listener",
-                )
-            })?,
-            load_balancer_port: self.load_balancer_port.unwrap_or_default(),
-            instance_protocol: self.instance_protocol,
-            instance_port: self.instance_port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instance_port",
-                    "instance_port was not specified but it is required when building Listener",
-                )
-            })?,
-            ssl_certificate_id: self.ssl_certificate_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Listener {
+                protocol: self.protocol
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocol", "protocol was not specified but it is required when building Listener")
+                    )?
+                ,
+                load_balancer_port: self.load_balancer_port
+                    .unwrap_or_default()
+                ,
+                instance_protocol: self.instance_protocol
+                ,
+                instance_port: self.instance_port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instance_port", "instance_port was not specified but it is required when building Listener")
+                    )?
+                ,
+                ssl_certificate_id: self.ssl_certificate_id
+                ,
+            }
+        )
     }
 }
+

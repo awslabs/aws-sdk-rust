@@ -3,15 +3,14 @@
 /// <p>A structure that contains the configuration settings for an issue detection task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IssueDetectionConfiguration {
+pub struct IssueDetectionConfiguration  {
     /// <p>The name of the issue detection rule.</p>
     pub rule_name: ::std::string::String,
 }
-impl IssueDetectionConfiguration {
+impl  IssueDetectionConfiguration  {
     /// <p>The name of the issue detection rule.</p>
-    pub fn rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_name.deref()
+    pub fn rule_name(&self) -> & str {
+        use std::ops::Deref; self.rule_name.deref()
     }
 }
 impl IssueDetectionConfiguration {
@@ -36,8 +35,7 @@ impl IssueDetectionConfigurationBuilder {
     }
     /// <p>The name of the issue detection rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the issue detection rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl IssueDetectionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_name`](crate::types::builders::IssueDetectionConfigurationBuilder::rule_name)
     pub fn build(self) -> ::std::result::Result<crate::types::IssueDetectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IssueDetectionConfiguration {
-            rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_name",
-                    "rule_name was not specified but it is required when building IssueDetectionConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IssueDetectionConfiguration {
+                rule_name: self.rule_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_name", "rule_name was not specified but it is required when building IssueDetectionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

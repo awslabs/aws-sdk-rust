@@ -3,23 +3,22 @@
 /// <p>A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHealthCheckLastFailureReasonOutput {
+pub struct GetHealthCheckLastFailureReasonOutput  {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
-    pub health_check_observations: ::std::vec::Vec<crate::types::HealthCheckObservation>,
+    pub health_check_observations: ::std::vec::Vec::<crate::types::HealthCheckObservation>,
     _request_id: Option<String>,
 }
-impl GetHealthCheckLastFailureReasonOutput {
+impl  GetHealthCheckLastFailureReasonOutput  {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
-    pub fn health_check_observations(&self) -> &[crate::types::HealthCheckObservation] {
-        use std::ops::Deref;
-        self.health_check_observations.deref()
+    pub fn health_check_observations(&self) -> & [crate::types::HealthCheckObservation] {
+        use std::ops::Deref; self.health_check_observations.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetHealthCheckLastFailureReasonOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetHealthCheckLastFailureReasonOutput {
     /// Creates a new builder-style object to manufacture [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput).
     pub fn builder() -> crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonOutputBuilder {
@@ -31,7 +30,7 @@ impl GetHealthCheckLastFailureReasonOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonOutputBuilder {
-    pub(crate) health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
+    pub(crate) health_check_observations: ::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckLastFailureReasonOutputBuilder {
@@ -42,47 +41,41 @@ impl GetHealthCheckLastFailureReasonOutputBuilder {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
     pub fn health_check_observations(mut self, input: crate::types::HealthCheckObservation) -> Self {
         let mut v = self.health_check_observations.unwrap_or_default();
-        v.push(input);
-        self.health_check_observations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.health_check_observations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
-    pub fn set_health_check_observations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>) -> Self {
-        self.health_check_observations = input;
-        self
+    pub fn set_health_check_observations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckObservation>>) -> Self {
+        self.health_check_observations = input; self
     }
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason.</p>
-    pub fn get_health_check_observations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>> {
+    pub fn get_health_check_observations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckObservation>> {
         &self.health_check_observations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`health_check_observations`](crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonOutputBuilder::health_check_observations)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput {
-                health_check_observations: self.health_check_observations.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "health_check_observations",
-                        "health_check_observations was not specified but it is required when building GetHealthCheckLastFailureReasonOutput",
-                    )
-                })?,
+                health_check_observations: self.health_check_observations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("health_check_observations", "health_check_observations was not specified but it is required when building GetHealthCheckLastFailureReasonOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

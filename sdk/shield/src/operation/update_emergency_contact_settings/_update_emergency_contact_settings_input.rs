@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEmergencyContactSettingsInput {
+pub struct UpdateEmergencyContactSettingsInput  {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
-    pub emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
+    pub emergency_contact_list: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>,
 }
-impl UpdateEmergencyContactSettingsInput {
+impl  UpdateEmergencyContactSettingsInput  {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emergency_contact_list.is_none()`.
-    pub fn emergency_contact_list(&self) -> &[crate::types::EmergencyContact] {
-        self.emergency_contact_list.as_deref().unwrap_or_default()
+    pub fn emergency_contact_list(&self) -> & [crate::types::EmergencyContact] {
+        self.emergency_contact_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateEmergencyContactSettingsInput {
@@ -27,7 +28,7 @@ impl UpdateEmergencyContactSettingsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEmergencyContactSettingsInputBuilder {
-    pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
+    pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>,
 }
 impl UpdateEmergencyContactSettingsInputBuilder {
     /// Appends an item to `emergency_contact_list`.
@@ -38,30 +39,28 @@ impl UpdateEmergencyContactSettingsInputBuilder {
     /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
     pub fn emergency_contact_list(mut self, input: crate::types::EmergencyContact) -> Self {
         let mut v = self.emergency_contact_list.unwrap_or_default();
-        v.push(input);
-        self.emergency_contact_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.emergency_contact_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
-    pub fn set_emergency_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>) -> Self {
-        self.emergency_contact_list = input;
-        self
+    pub fn set_emergency_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>) -> Self {
+        self.emergency_contact_list = input; self
     }
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
-    pub fn get_emergency_contact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>> {
+    pub fn get_emergency_contact_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>> {
         &self.emergency_contact_list
     }
     /// Consumes the builder and constructs a [`UpdateEmergencyContactSettingsInput`](crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput {
-            emergency_contact_list: self.emergency_contact_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput {
+                emergency_contact_list: self.emergency_contact_list
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides information about the access method and settings that are used to retrieve occurrences of sensitive data reported by findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrievalConfiguration {
+pub struct RetrievalConfiguration  {
     /// <p>The external ID to specify in the trust policy for the IAM role to assume when retrieving sensitive data from affected S3 objects (roleName). This value is null if the value for retrievalMode is CALLER_CREDENTIALS.</p>
     /// <p>This ID is a unique alphanumeric string that Amazon Macie generates automatically after you configure it to assume an IAM role. For a Macie administrator to retrieve sensitive data from an affected S3 object for a member account, the trust policy for the role in the member account must include an sts:ExternalId condition that requires this ID.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
@@ -12,18 +12,18 @@ pub struct RetrievalConfiguration {
     /// <p>The name of the IAM role that is in the affected Amazon Web Services account and Amazon Macie is allowed to assume when retrieving sensitive data from affected S3 objects for the account. This value is null if the value for retrievalMode is CALLER_CREDENTIALS.</p>
     pub role_name: ::std::option::Option<::std::string::String>,
 }
-impl RetrievalConfiguration {
+impl  RetrievalConfiguration  {
     /// <p>The external ID to specify in the trust policy for the IAM role to assume when retrieving sensitive data from affected S3 objects (roleName). This value is null if the value for retrievalMode is CALLER_CREDENTIALS.</p>
     /// <p>This ID is a unique alphanumeric string that Amazon Macie generates automatically after you configure it to assume an IAM role. For a Macie administrator to retrieve sensitive data from an affected S3 object for a member account, the trust policy for the role in the member account must include an sts:ExternalId condition that requires this ID.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The access method that's used to retrieve sensitive data from affected S3 objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the affected Amazon Web Services account and delegates access to Amazon Macie (roleName); and, CALLER_CREDENTIALS, use the credentials of the IAM user who requests the sensitive data.</p>
-    pub fn retrieval_mode(&self) -> ::std::option::Option<&crate::types::RetrievalMode> {
+    pub fn retrieval_mode(&self) -> ::std::option::Option<& crate::types::RetrievalMode> {
         self.retrieval_mode.as_ref()
     }
     /// <p>The name of the IAM role that is in the affected Amazon Web Services account and Amazon Macie is allowed to assume when retrieving sensitive data from affected S3 objects for the account. This value is null if the value for retrievalMode is CALLER_CREDENTIALS.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl RetrievalConfigurationBuilder {
     /// <p>The external ID to specify in the trust policy for the IAM role to assume when retrieving sensitive data from affected S3 objects (roleName). This value is null if the value for retrievalMode is CALLER_CREDENTIALS.</p>
     /// <p>This ID is a unique alphanumeric string that Amazon Macie generates automatically after you configure it to assume an IAM role. For a Macie administrator to retrieve sensitive data from an affected S3 object for a member account, the trust policy for the role in the member account must include an sts:ExternalId condition that requires this ID.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external ID to specify in the trust policy for the IAM role to assume when retrieving sensitive data from affected S3 objects (roleName). This value is null if the value for retrievalMode is CALLER_CREDENTIALS.</p>
     /// <p>This ID is a unique alphanumeric string that Amazon Macie generates automatically after you configure it to assume an IAM role. For a Macie administrator to retrieve sensitive data from an affected S3 object for a member account, the trust policy for the role in the member account must include an sts:ExternalId condition that requires this ID.</p>
@@ -68,8 +67,7 @@ impl RetrievalConfigurationBuilder {
     }
     /// <p>The access method that's used to retrieve sensitive data from affected S3 objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the affected Amazon Web Services account and delegates access to Amazon Macie (roleName); and, CALLER_CREDENTIALS, use the credentials of the IAM user who requests the sensitive data.</p>
     pub fn set_retrieval_mode(mut self, input: ::std::option::Option<crate::types::RetrievalMode>) -> Self {
-        self.retrieval_mode = input;
-        self
+        self.retrieval_mode = input; self
     }
     /// <p>The access method that's used to retrieve sensitive data from affected S3 objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the affected Amazon Web Services account and delegates access to Amazon Macie (roleName); and, CALLER_CREDENTIALS, use the credentials of the IAM user who requests the sensitive data.</p>
     pub fn get_retrieval_mode(&self) -> &::std::option::Option<crate::types::RetrievalMode> {
@@ -82,8 +80,7 @@ impl RetrievalConfigurationBuilder {
     }
     /// <p>The name of the IAM role that is in the affected Amazon Web Services account and Amazon Macie is allowed to assume when retrieving sensitive data from affected S3 objects for the account. This value is null if the value for retrievalMode is CALLER_CREDENTIALS.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name of the IAM role that is in the affected Amazon Web Services account and Amazon Macie is allowed to assume when retrieving sensitive data from affected S3 objects for the account. This value is null if the value for retrievalMode is CALLER_CREDENTIALS.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,9 +89,13 @@ impl RetrievalConfigurationBuilder {
     /// Consumes the builder and constructs a [`RetrievalConfiguration`](crate::types::RetrievalConfiguration).
     pub fn build(self) -> crate::types::RetrievalConfiguration {
         crate::types::RetrievalConfiguration {
-            external_id: self.external_id,
-            retrieval_mode: self.retrieval_mode,
-            role_name: self.role_name,
+            external_id: self.external_id
+            ,
+            retrieval_mode: self.retrieval_mode
+            ,
+            role_name: self.role_name
+            ,
         }
     }
 }
+

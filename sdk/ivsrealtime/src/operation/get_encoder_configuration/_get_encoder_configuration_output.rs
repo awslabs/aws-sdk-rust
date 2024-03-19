@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEncoderConfigurationOutput {
+pub struct GetEncoderConfigurationOutput  {
     /// <p>The EncoderConfiguration that was returned.</p>
     pub encoder_configuration: ::std::option::Option<crate::types::EncoderConfiguration>,
     _request_id: Option<String>,
 }
-impl GetEncoderConfigurationOutput {
+impl  GetEncoderConfigurationOutput  {
     /// <p>The EncoderConfiguration that was returned.</p>
-    pub fn encoder_configuration(&self) -> ::std::option::Option<&crate::types::EncoderConfiguration> {
+    pub fn encoder_configuration(&self) -> ::std::option::Option<& crate::types::EncoderConfiguration> {
         self.encoder_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEncoderConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEncoderConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetEncoderConfigurationOutput`](crate::operation::get_encoder_configuration::GetEncoderConfigurationOutput).
     pub fn builder() -> crate::operation::get_encoder_configuration::builders::GetEncoderConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl GetEncoderConfigurationOutputBuilder {
     }
     /// <p>The EncoderConfiguration that was returned.</p>
     pub fn set_encoder_configuration(mut self, input: ::std::option::Option<crate::types::EncoderConfiguration>) -> Self {
-        self.encoder_configuration = input;
-        self
+        self.encoder_configuration = input; self
     }
     /// <p>The EncoderConfiguration that was returned.</p>
     pub fn get_encoder_configuration(&self) -> &::std::option::Option<crate::types::EncoderConfiguration> {
         &self.encoder_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEncoderConfigurationOutput`](crate::operation::get_encoder_configuration::GetEncoderConfigurationOutput).
     pub fn build(self) -> crate::operation::get_encoder_configuration::GetEncoderConfigurationOutput {
         crate::operation::get_encoder_configuration::GetEncoderConfigurationOutput {
-            encoder_configuration: self.encoder_configuration,
+            encoder_configuration: self.encoder_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchAnalysesOutput {
+pub struct SearchAnalysesOutput  {
     /// <p>Metadata describing the analyses that you searched for.</p>
-    pub analysis_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
+    pub analysis_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisSummary>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
@@ -13,15 +13,16 @@ pub struct SearchAnalysesOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchAnalysesOutput {
+impl  SearchAnalysesOutput  {
     /// <p>Metadata describing the analyses that you searched for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_summary_list.is_none()`.
-    pub fn analysis_summary_list(&self) -> &[crate::types::AnalysisSummary] {
-        self.analysis_summary_list.as_deref().unwrap_or_default()
+    pub fn analysis_summary_list(&self) -> & [crate::types::AnalysisSummary] {
+        self.analysis_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -29,15 +30,15 @@ impl SearchAnalysesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchAnalysesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchAnalysesOutput {
     /// Creates a new builder-style object to manufacture [`SearchAnalysesOutput`](crate::operation::search_analyses::SearchAnalysesOutput).
     pub fn builder() -> crate::operation::search_analyses::builders::SearchAnalysesOutputBuilder {
@@ -49,7 +50,7 @@ impl SearchAnalysesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAnalysesOutputBuilder {
-    pub(crate) analysis_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
+    pub(crate) analysis_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -63,17 +64,16 @@ impl SearchAnalysesOutputBuilder {
     /// <p>Metadata describing the analyses that you searched for.</p>
     pub fn analysis_summary_list(mut self, input: crate::types::AnalysisSummary) -> Self {
         let mut v = self.analysis_summary_list.unwrap_or_default();
-        v.push(input);
-        self.analysis_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata describing the analyses that you searched for.</p>
-    pub fn set_analysis_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>) -> Self {
-        self.analysis_summary_list = input;
-        self
+    pub fn set_analysis_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisSummary>>) -> Self {
+        self.analysis_summary_list = input; self
     }
     /// <p>Metadata describing the analyses that you searched for.</p>
-    pub fn get_analysis_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
+    pub fn get_analysis_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisSummary>> {
         &self.analysis_summary_list
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -83,8 +83,7 @@ impl SearchAnalysesOutputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl SearchAnalysesOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -111,30 +109,35 @@ impl SearchAnalysesOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchAnalysesOutput`](crate::operation::search_analyses::SearchAnalysesOutput).
     pub fn build(self) -> crate::operation::search_analyses::SearchAnalysesOutput {
         crate::operation::search_analyses::SearchAnalysesOutput {
-            analysis_summary_list: self.analysis_summary_list,
-            next_token: self.next_token,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
+            analysis_summary_list: self.analysis_summary_list
+            ,
+            next_token: self.next_token
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

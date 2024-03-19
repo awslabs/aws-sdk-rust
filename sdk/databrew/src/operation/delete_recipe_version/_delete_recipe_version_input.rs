@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRecipeVersionInput {
+pub struct DeleteRecipeVersionInput  {
     /// <p>The name of the recipe.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRecipeVersionInput {
+impl  DeleteRecipeVersionInput  {
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn recipe_version(&self) -> ::std::option::Option<&str> {
+    pub fn recipe_version(&self) -> ::std::option::Option<& str> {
         self.recipe_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteRecipeVersionInputBuilder {
     }
     /// <p>The name of the recipe.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the recipe.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteRecipeVersionInputBuilder {
     }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe_version = input;
-        self
+        self.recipe_version = input; self
     }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe_version
     }
     /// Consumes the builder and constructs a [`DeleteRecipeVersionInput`](crate::operation::delete_recipe_version::DeleteRecipeVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_recipe_version::DeleteRecipeVersionInput {
-            name: self.name,
-            recipe_version: self.recipe_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_recipe_version::DeleteRecipeVersionInput {
+                name: self.name
+                ,
+                recipe_version: self.recipe_version
+                ,
+            }
+        )
     }
 }
+

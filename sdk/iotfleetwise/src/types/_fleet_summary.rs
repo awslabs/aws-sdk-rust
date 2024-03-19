@@ -4,7 +4,7 @@
 /// <p>You can use the API operation to return this information about multiple fleets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetSummary {
+pub struct FleetSummary  {
     /// <p>The unique ID of the fleet.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -18,32 +18,29 @@ pub struct FleetSummary {
     /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl FleetSummary {
+impl  FleetSummary  {
     /// <p>The unique ID of the fleet.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A brief description of the fleet.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the signal catalog associated with the fleet.</p>
-    pub fn signal_catalog_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.signal_catalog_arn.deref()
+    pub fn signal_catalog_arn(&self) -> & str {
+        use std::ops::Deref; self.signal_catalog_arn.deref()
     }
     /// <p>The time the fleet was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -74,8 +71,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The unique ID of the fleet.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of the fleet.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +85,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>A brief description of the fleet.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the fleet.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The ARN of the signal catalog associated with the fleet.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signal_catalog_arn = input;
-        self
+        self.signal_catalog_arn = input; self
     }
     /// <p>The ARN of the signal catalog associated with the fleet.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +126,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The time the fleet was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the fleet was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -147,8 +139,7 @@ impl FleetSummaryBuilder {
     }
     /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The time the fleet was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -161,33 +152,34 @@ impl FleetSummaryBuilder {
     /// - [`signal_catalog_arn`](crate::types::builders::FleetSummaryBuilder::signal_catalog_arn)
     /// - [`creation_time`](crate::types::builders::FleetSummaryBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::FleetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FleetSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FleetSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building FleetSummary",
-                )
-            })?,
-            description: self.description,
-            signal_catalog_arn: self.signal_catalog_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signal_catalog_arn",
-                    "signal_catalog_arn was not specified but it is required when building FleetSummary",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building FleetSummary",
-                )
-            })?,
-            last_modification_time: self.last_modification_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FleetSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FleetSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building FleetSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                signal_catalog_arn: self.signal_catalog_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signal_catalog_arn", "signal_catalog_arn was not specified but it is required when building FleetSummary")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building FleetSummary")
+                    )?
+                ,
+                last_modification_time: self.last_modification_time
+                ,
+            }
+        )
     }
 }
+

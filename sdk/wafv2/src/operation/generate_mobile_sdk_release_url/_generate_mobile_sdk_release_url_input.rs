@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateMobileSdkReleaseUrlInput {
+pub struct GenerateMobileSdkReleaseUrlInput  {
     /// <p>The device platform.</p>
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
     pub release_version: ::std::option::Option<::std::string::String>,
 }
-impl GenerateMobileSdkReleaseUrlInput {
+impl  GenerateMobileSdkReleaseUrlInput  {
     /// <p>The device platform.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
-    pub fn release_version(&self) -> ::std::option::Option<&str> {
+    pub fn release_version(&self) -> ::std::option::Option<& str> {
         self.release_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
     }
     /// <p>The device platform.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The device platform.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
@@ -56,23 +55,22 @@ impl GenerateMobileSdkReleaseUrlInputBuilder {
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
     pub fn set_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_version = input;
-        self
+        self.release_version = input; self
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
     pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_version
     }
     /// Consumes the builder and constructs a [`GenerateMobileSdkReleaseUrlInput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput {
-            platform: self.platform,
-            release_version: self.release_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput {
+                platform: self.platform
+                ,
+                release_version: self.release_version
+                ,
+            }
+        )
     }
 }
+

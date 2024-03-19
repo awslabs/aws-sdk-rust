@@ -3,13 +3,13 @@
 /// Placeholder documentation for DescribeInputRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInputInput {
+pub struct DescribeInputInput  {
     /// Unique ID of the input
     pub input_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInputInput {
+impl  DescribeInputInput  {
     /// Unique ID of the input
-    pub fn input_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_id(&self) -> ::std::option::Option<& str> {
         self.input_id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DescribeInputInputBuilder {
     }
     /// Unique ID of the input
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_id = input;
-        self
+        self.input_id = input; self
     }
     /// Unique ID of the input
     pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_id
     }
     /// Consumes the builder and constructs a [`DescribeInputInput`](crate::operation::describe_input::DescribeInputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_input::DescribeInputInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_input::DescribeInputInput { input_id: self.input_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_input::DescribeInputInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_input::DescribeInputInput {
+                input_id: self.input_id
+                ,
+            }
+        )
     }
 }
+

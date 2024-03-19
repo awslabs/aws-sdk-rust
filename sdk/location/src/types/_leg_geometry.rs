@@ -3,26 +3,27 @@
 /// <p>Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LegGeometry {
+pub struct LegGeometry  {
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
     /// <ul>
     /// <li>
     /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
-    pub line_string: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
+    pub line_string: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<f64>>>,
 }
-impl LegGeometry {
+impl  LegGeometry  {
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
     /// <ul>
     /// <li>
     /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_string.is_none()`.
-    pub fn line_string(&self) -> &[::std::vec::Vec<f64>] {
-        self.line_string.as_deref().unwrap_or_default()
+    pub fn line_string(&self) -> & [::std::vec::Vec::<f64>] {
+        self.line_string.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LegGeometry {
@@ -36,7 +37,7 @@ impl LegGeometry {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LegGeometryBuilder {
-    pub(crate) line_string: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
+    pub(crate) line_string: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<f64>>>,
 }
 impl LegGeometryBuilder {
     /// Appends an item to `line_string`.
@@ -49,11 +50,11 @@ impl LegGeometryBuilder {
     /// <li>
     /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
-    pub fn line_string(mut self, input: ::std::vec::Vec<f64>) -> Self {
+    pub fn line_string(mut self, input: ::std::vec::Vec::<f64>) -> Self {
         let mut v = self.line_string.unwrap_or_default();
-        v.push(input);
-        self.line_string = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.line_string = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
@@ -61,9 +62,8 @@ impl LegGeometryBuilder {
     /// <li>
     /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
-    pub fn set_line_string(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
-        self.line_string = input;
-        self
+    pub fn set_line_string(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<f64>>>) -> Self {
+        self.line_string = input; self
     }
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
@@ -71,13 +71,15 @@ impl LegGeometryBuilder {
     /// <li>
     /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code></p></li>
     /// </ul>
-    pub fn get_line_string(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+    pub fn get_line_string(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<f64>>> {
         &self.line_string
     }
     /// Consumes the builder and constructs a [`LegGeometry`](crate::types::LegGeometry).
     pub fn build(self) -> crate::types::LegGeometry {
         crate::types::LegGeometry {
-            line_string: self.line_string,
+            line_string: self.line_string
+            ,
         }
     }
 }
+

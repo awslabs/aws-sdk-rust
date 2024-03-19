@@ -3,7 +3,7 @@
 /// <p>The dimension type field with date type columns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateDimensionField {
+pub struct DateDimensionField  {
     /// <p>The custom field ID.</p>
     pub field_id: ::std::string::String,
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
@@ -35,14 +35,13 @@ pub struct DateDimensionField {
     /// <p>The format configuration of the field.</p>
     pub format_configuration: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
-impl DateDimensionField {
+impl  DateDimensionField  {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
@@ -66,15 +65,15 @@ impl DateDimensionField {
     /// <li>
     /// <p><code>MILLISECOND</code></p></li>
     /// </ul>
-    pub fn date_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
+    pub fn date_granularity(&self) -> ::std::option::Option<& crate::types::TimeGranularity> {
         self.date_granularity.as_ref()
     }
     /// <p>The custom hierarchy ID.</p>
-    pub fn hierarchy_id(&self) -> ::std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> ::std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(&self) -> ::std::option::Option<&crate::types::DateTimeFormatConfiguration> {
+    pub fn format_configuration(&self) -> ::std::option::Option<& crate::types::DateTimeFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -104,8 +103,7 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The custom field ID.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -173,8 +170,7 @@ impl DateDimensionFieldBuilder {
     /// <p><code>MILLISECOND</code></p></li>
     /// </ul>
     pub fn set_date_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
-        self.date_granularity = input;
-        self
+        self.date_granularity = input; self
     }
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
     /// <ul>
@@ -207,8 +203,7 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The custom hierarchy ID.</p>
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hierarchy_id = input;
-        self
+        self.hierarchy_id = input; self
     }
     /// <p>The custom hierarchy ID.</p>
     pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +216,7 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The format configuration of the field.</p>
     pub fn set_format_configuration(mut self, input: ::std::option::Option<crate::types::DateTimeFormatConfiguration>) -> Self {
-        self.format_configuration = input;
-        self
+        self.format_configuration = input; self
     }
     /// <p>The format configuration of the field.</p>
     pub fn get_format_configuration(&self) -> &::std::option::Option<crate::types::DateTimeFormatConfiguration> {
@@ -232,17 +226,23 @@ impl DateDimensionFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::DateDimensionFieldBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::DateDimensionField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DateDimensionField {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building DateDimensionField",
-                )
-            })?,
-            column: self.column,
-            date_granularity: self.date_granularity,
-            hierarchy_id: self.hierarchy_id,
-            format_configuration: self.format_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DateDimensionField {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building DateDimensionField")
+                    )?
+                ,
+                column: self.column
+                ,
+                date_granularity: self.date_granularity
+                ,
+                hierarchy_id: self.hierarchy_id
+                ,
+                format_configuration: self.format_configuration
+                ,
+            }
+        )
     }
 }
+

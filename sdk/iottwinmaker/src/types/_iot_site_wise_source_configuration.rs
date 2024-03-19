@@ -3,16 +3,17 @@
 /// <p>The metadata transfer job AWS IoT SiteWise source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotSiteWiseSourceConfiguration {
+pub struct IotSiteWiseSourceConfiguration  {
     /// <p>The AWS IoT SiteWise soucre configuration filters.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::IotSiteWiseSourceConfigurationFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::IotSiteWiseSourceConfigurationFilter>>,
 }
-impl IotSiteWiseSourceConfiguration {
+impl  IotSiteWiseSourceConfiguration  {
     /// <p>The AWS IoT SiteWise soucre configuration filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::IotSiteWiseSourceConfigurationFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::IotSiteWiseSourceConfigurationFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IotSiteWiseSourceConfiguration {
@@ -26,7 +27,7 @@ impl IotSiteWiseSourceConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotSiteWiseSourceConfigurationBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::IotSiteWiseSourceConfigurationFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::IotSiteWiseSourceConfigurationFilter>>,
 }
 impl IotSiteWiseSourceConfigurationBuilder {
     /// Appends an item to `filters`.
@@ -36,21 +37,24 @@ impl IotSiteWiseSourceConfigurationBuilder {
     /// <p>The AWS IoT SiteWise soucre configuration filters.</p>
     pub fn filters(mut self, input: crate::types::IotSiteWiseSourceConfigurationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The AWS IoT SiteWise soucre configuration filters.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IotSiteWiseSourceConfigurationFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IotSiteWiseSourceConfigurationFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The AWS IoT SiteWise soucre configuration filters.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IotSiteWiseSourceConfigurationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IotSiteWiseSourceConfigurationFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`IotSiteWiseSourceConfiguration`](crate::types::IotSiteWiseSourceConfiguration).
     pub fn build(self) -> crate::types::IotSiteWiseSourceConfiguration {
-        crate::types::IotSiteWiseSourceConfiguration { filters: self.filters }
+        crate::types::IotSiteWiseSourceConfiguration {
+            filters: self.filters
+            ,
+        }
     }
 }
+

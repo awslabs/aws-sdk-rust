@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCompilationJobInput {
+pub struct DescribeCompilationJobInput  {
     /// <p>The name of the model compilation job that you want information about.</p>
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCompilationJobInput {
+impl  DescribeCompilationJobInput  {
     /// <p>The name of the model compilation job that you want information about.</p>
-    pub fn compilation_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn compilation_job_name(&self) -> ::std::option::Option<& str> {
         self.compilation_job_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeCompilationJobInputBuilder {
     }
     /// <p>The name of the model compilation job that you want information about.</p>
     pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compilation_job_name = input;
-        self
+        self.compilation_job_name = input; self
     }
     /// <p>The name of the model compilation job that you want information about.</p>
     pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.compilation_job_name
     }
     /// Consumes the builder and constructs a [`DescribeCompilationJobInput`](crate::operation::describe_compilation_job::DescribeCompilationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compilation_job::DescribeCompilationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_compilation_job::DescribeCompilationJobInput {
-            compilation_job_name: self.compilation_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_compilation_job::DescribeCompilationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_compilation_job::DescribeCompilationJobInput {
+                compilation_job_name: self.compilation_job_name
+                ,
+            }
+        )
     }
 }
+

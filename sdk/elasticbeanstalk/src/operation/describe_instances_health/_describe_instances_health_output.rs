@@ -3,38 +3,39 @@
 /// <p>Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstancesHealthOutput {
+pub struct DescribeInstancesHealthOutput  {
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
-    pub instance_health_list: ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>,
+    pub instance_health_list: ::std::option::Option<::std::vec::Vec::<crate::types::SingleInstanceHealth>>,
     /// <p>The date and time that the health information was retrieved.</p>
     pub refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Pagination token for the next page of results, if available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeInstancesHealthOutput {
+impl  DescribeInstancesHealthOutput  {
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_health_list.is_none()`.
-    pub fn instance_health_list(&self) -> &[crate::types::SingleInstanceHealth] {
-        self.instance_health_list.as_deref().unwrap_or_default()
+    pub fn instance_health_list(&self) -> & [crate::types::SingleInstanceHealth] {
+        self.instance_health_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time that the health information was retrieved.</p>
-    pub fn refreshed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn refreshed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.refreshed_at.as_ref()
     }
     /// <p>Pagination token for the next page of results, if available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstancesHealthOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInstancesHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesHealthOutput`](crate::operation::describe_instances_health::DescribeInstancesHealthOutput).
     pub fn builder() -> crate::operation::describe_instances_health::builders::DescribeInstancesHealthOutputBuilder {
@@ -46,7 +47,7 @@ impl DescribeInstancesHealthOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancesHealthOutputBuilder {
-    pub(crate) instance_health_list: ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>,
+    pub(crate) instance_health_list: ::std::option::Option<::std::vec::Vec::<crate::types::SingleInstanceHealth>>,
     pub(crate) refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,19 +61,18 @@ impl DescribeInstancesHealthOutputBuilder {
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
     pub fn instance_health_list(mut self, input: crate::types::SingleInstanceHealth) -> Self {
         let mut v = self.instance_health_list.unwrap_or_default();
-        v.push(input);
-        self.instance_health_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_health_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
-    pub fn set_instance_health_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>) -> Self {
-        self.instance_health_list = input;
-        self
+    pub fn set_instance_health_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SingleInstanceHealth>>) -> Self {
+        self.instance_health_list = input; self
     }
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
-    pub fn get_instance_health_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>> {
+    pub fn get_instance_health_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SingleInstanceHealth>> {
         &self.instance_health_list
     }
     /// <p>The date and time that the health information was retrieved.</p>
@@ -82,8 +82,7 @@ impl DescribeInstancesHealthOutputBuilder {
     }
     /// <p>The date and time that the health information was retrieved.</p>
     pub fn set_refreshed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.refreshed_at = input;
-        self
+        self.refreshed_at = input; self
     }
     /// <p>The date and time that the health information was retrieved.</p>
     pub fn get_refreshed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -96,29 +95,32 @@ impl DescribeInstancesHealthOutputBuilder {
     }
     /// <p>Pagination token for the next page of results, if available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token for the next page of results, if available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInstancesHealthOutput`](crate::operation::describe_instances_health::DescribeInstancesHealthOutput).
     pub fn build(self) -> crate::operation::describe_instances_health::DescribeInstancesHealthOutput {
         crate::operation::describe_instances_health::DescribeInstancesHealthOutput {
-            instance_health_list: self.instance_health_list,
-            refreshed_at: self.refreshed_at,
-            next_token: self.next_token,
+            instance_health_list: self.instance_health_list
+            ,
+            refreshed_at: self.refreshed_at
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

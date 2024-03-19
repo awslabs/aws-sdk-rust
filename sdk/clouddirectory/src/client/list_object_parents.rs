@@ -2,20 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListObjectParents`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p><br>
     ///   - [`object_reference(ObjectReference)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::set_object_reference):<br>required: **true**<br><p>The reference that identifies the object for which parent objects are being listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p><br>
     ///   - [`consistency_level(ConsistencyLevel)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::set_consistency_level):<br>required: **false**<br><p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p><br>
     ///   - [`include_all_links_to_each_parent(bool)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::include_all_links_to_each_parent) / [`set_include_all_links_to_each_parent(Option<bool>)`](crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::set_include_all_links_to_each_parent):<br>required: **false**<br><p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p><br>
-    /// - On success, responds with [`ListObjectParentsOutput`](crate::operation::list_object_parents::ListObjectParentsOutput) with field(s):
+                            /// - On success, responds with [`ListObjectParentsOutput`](crate::operation::list_object_parents::ListObjectParentsOutput) with field(s):
     ///   - [`parents(Option<HashMap::<String, String>>)`](crate::operation::list_object_parents::ListObjectParentsOutput::parents): <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_parents::ListObjectParentsOutput::next_token): <p>The pagination token.</p>
     ///   - [`parent_links(Option<Vec::<ObjectIdentifierAndLinkNameTuple>>)`](crate::operation::list_object_parents::ListObjectParentsOutput::parent_links): <p>Returns a list of parent reference and LinkName Tuples.</p>
-    /// - On failure, responds with [`SdkError<ListObjectParentsError>`](crate::operation::list_object_parents::ListObjectParentsError)
+                            /// - On failure, responds with [`SdkError<ListObjectParentsError>`](crate::operation::list_object_parents::ListObjectParentsError)
     pub fn list_object_parents(&self) -> crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder {
-        crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_object_parents::builders::ListObjectParentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

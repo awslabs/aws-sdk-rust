@@ -3,19 +3,19 @@
 /// <p>Proximity event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProximityEventConfiguration {
+pub struct ProximityEventConfiguration  {
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
     pub wireless_device_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
-impl ProximityEventConfiguration {
+impl  ProximityEventConfiguration  {
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkEventNotificationConfigurations> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkEventNotificationConfigurations> {
         self.sidewalk.as_ref()
     }
     /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
-    pub fn wireless_device_id_event_topic(&self) -> ::std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn wireless_device_id_event_topic(&self) -> ::std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ProximityEventConfigurationBuilder {
     }
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
     pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkEventNotificationConfigurations>) -> Self {
-        self.sidewalk = input;
-        self
+        self.sidewalk = input; self
     }
     /// <p>Proximity event configuration object for enabling or disabling Sidewalk related event topics.</p>
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkEventNotificationConfigurations> {
@@ -55,8 +54,7 @@ impl ProximityEventConfigurationBuilder {
     }
     /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
     pub fn set_wireless_device_id_event_topic(mut self, input: ::std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
-        self.wireless_device_id_event_topic = input;
-        self
+        self.wireless_device_id_event_topic = input; self
     }
     /// <p>Denotes whether the wireless device ID proximity event topic is enabled or disabled.</p>
     pub fn get_wireless_device_id_event_topic(&self) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
@@ -65,8 +63,11 @@ impl ProximityEventConfigurationBuilder {
     /// Consumes the builder and constructs a [`ProximityEventConfiguration`](crate::types::ProximityEventConfiguration).
     pub fn build(self) -> crate::types::ProximityEventConfiguration {
         crate::types::ProximityEventConfiguration {
-            sidewalk: self.sidewalk,
-            wireless_device_id_event_topic: self.wireless_device_id_event_topic,
+            sidewalk: self.sidewalk
+            ,
+            wireless_device_id_event_topic: self.wireless_device_id_event_topic
+            ,
         }
     }
 }
+

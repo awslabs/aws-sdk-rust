@@ -3,19 +3,19 @@
 /// <p>This input determines which instance groups to retrieve.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInstanceGroupsInput {
+pub struct ListInstanceGroupsInput  {
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListInstanceGroupsInput {
+impl  ListInstanceGroupsInput  {
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ListInstanceGroupsInputBuilder {
     }
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl ListInstanceGroupsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListInstanceGroupsInput`](crate::operation::list_instance_groups::ListInstanceGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_instance_groups::ListInstanceGroupsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_instance_groups::ListInstanceGroupsInput {
-            cluster_id: self.cluster_id,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_instance_groups::ListInstanceGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_instance_groups::ListInstanceGroupsInput {
+                cluster_id: self.cluster_id
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

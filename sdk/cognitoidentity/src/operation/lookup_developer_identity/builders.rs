@@ -5,56 +5,52 @@ pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_
 
 impl LookupDeveloperIdentityInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.lookup_developer_identity();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.lookup_developer_identity();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `LookupDeveloperIdentity`.
-///
+/// 
 /// <p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p>
 /// <p><code>LookupDeveloperIdentity</code> is intended for low-throughput control plane operations: for example, to enable customer service to locate an identity ID by username. If you are using it for higher-volume operations such as user authentication, your requests are likely to be throttled. <code>GetOpenIdTokenForDeveloperIdentity</code> is a better option for higher-volume operations for user authentication.</p>
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct LookupDeveloperIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder,
+                    inner: crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
-        crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-    > for LookupDeveloperIdentityFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
+                    crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
+                > for LookupDeveloperIdentityFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
+                        crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl LookupDeveloperIdentityFluentBuilder {
     /// Creates a new `LookupDeveloperIdentity`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl LookupDeveloperIdentityFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::lookup_developer_identity::LookupDeveloperIdentity::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::lookup_developer_identity::LookupDeveloperIdentity::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
-        crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::lookup_developer_identity::LookupDeveloperIdentityError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::lookup_developer_identity::LookupDeveloperIdentity::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::lookup_developer_identity::LookupDeveloperIdentity::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput, crate::operation::lookup_developer_identity::LookupDeveloperIdentityError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
@@ -181,3 +168,4 @@ impl LookupDeveloperIdentityFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

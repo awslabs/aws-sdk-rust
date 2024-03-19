@@ -3,18 +3,19 @@
 /// <p>The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition uses the training dataset to create a test dataset with a temporary split of the training dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestingData {
+pub struct TestingData  {
     /// <p>The assets used for testing.</p>
-    pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
+    pub assets: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>,
     /// <p>If specified, Rekognition splits training dataset to create a test dataset for the training job.</p>
     pub auto_create: bool,
 }
-impl TestingData {
+impl  TestingData  {
     /// <p>The assets used for testing.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
-    pub fn assets(&self) -> &[crate::types::Asset] {
-        self.assets.as_deref().unwrap_or_default()
+    pub fn assets(&self) -> & [crate::types::Asset] {
+        self.assets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If specified, Rekognition splits training dataset to create a test dataset for the training job.</p>
     pub fn auto_create(&self) -> bool {
@@ -32,7 +33,7 @@ impl TestingData {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestingDataBuilder {
-    pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
+    pub(crate) assets: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>,
     pub(crate) auto_create: ::std::option::Option<bool>,
 }
 impl TestingDataBuilder {
@@ -43,17 +44,16 @@ impl TestingDataBuilder {
     /// <p>The assets used for testing.</p>
     pub fn assets(mut self, input: crate::types::Asset) -> Self {
         let mut v = self.assets.unwrap_or_default();
-        v.push(input);
-        self.assets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The assets used for testing.</p>
-    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>) -> Self {
-        self.assets = input;
-        self
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>) -> Self {
+        self.assets = input; self
     }
     /// <p>The assets used for testing.</p>
-    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Asset>> {
+    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Asset>> {
         &self.assets
     }
     /// <p>If specified, Rekognition splits training dataset to create a test dataset for the training job.</p>
@@ -63,8 +63,7 @@ impl TestingDataBuilder {
     }
     /// <p>If specified, Rekognition splits training dataset to create a test dataset for the training job.</p>
     pub fn set_auto_create(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_create = input;
-        self
+        self.auto_create = input; self
     }
     /// <p>If specified, Rekognition splits training dataset to create a test dataset for the training job.</p>
     pub fn get_auto_create(&self) -> &::std::option::Option<bool> {
@@ -73,8 +72,12 @@ impl TestingDataBuilder {
     /// Consumes the builder and constructs a [`TestingData`](crate::types::TestingData).
     pub fn build(self) -> crate::types::TestingData {
         crate::types::TestingData {
-            assets: self.assets,
-            auto_create: self.auto_create.unwrap_or_default(),
+            assets: self.assets
+            ,
+            auto_create: self.auto_create
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

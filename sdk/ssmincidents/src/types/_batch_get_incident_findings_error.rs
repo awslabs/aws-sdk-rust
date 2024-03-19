@@ -3,7 +3,7 @@
 /// <p>Details about an error returned for a <code>BatchGetIncidentFindings</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetIncidentFindingsError {
+pub struct BatchGetIncidentFindingsError  {
     /// <p>The ID of a specified finding for which an error was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
     pub finding_id: ::std::string::String,
     /// <p>The code associated with an error that was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
@@ -11,21 +11,18 @@ pub struct BatchGetIncidentFindingsError {
     /// <p>The description for an error that was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
     pub message: ::std::string::String,
 }
-impl BatchGetIncidentFindingsError {
+impl  BatchGetIncidentFindingsError  {
     /// <p>The ID of a specified finding for which an error was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
-    pub fn finding_id(&self) -> &str {
-        use std::ops::Deref;
-        self.finding_id.deref()
+    pub fn finding_id(&self) -> & str {
+        use std::ops::Deref; self.finding_id.deref()
     }
     /// <p>The code associated with an error that was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
-    pub fn code(&self) -> &str {
-        use std::ops::Deref;
-        self.code.deref()
+    pub fn code(&self) -> & str {
+        use std::ops::Deref; self.code.deref()
     }
     /// <p>The description for an error that was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl BatchGetIncidentFindingsError {
@@ -52,8 +49,7 @@ impl BatchGetIncidentFindingsErrorBuilder {
     }
     /// <p>The ID of a specified finding for which an error was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>The ID of a specified finding for which an error was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl BatchGetIncidentFindingsErrorBuilder {
     }
     /// <p>The code associated with an error that was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The code associated with an error that was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl BatchGetIncidentFindingsErrorBuilder {
     }
     /// <p>The description for an error that was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The description for an error that was returned for a <code>BatchGetIncidentFindings</code> operation.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl BatchGetIncidentFindingsErrorBuilder {
     /// - [`code`](crate::types::builders::BatchGetIncidentFindingsErrorBuilder::code)
     /// - [`message`](crate::types::builders::BatchGetIncidentFindingsErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetIncidentFindingsError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetIncidentFindingsError {
-            finding_id: self.finding_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_id",
-                    "finding_id was not specified but it is required when building BatchGetIncidentFindingsError",
-                )
-            })?,
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building BatchGetIncidentFindingsError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building BatchGetIncidentFindingsError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetIncidentFindingsError {
+                finding_id: self.finding_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_id", "finding_id was not specified but it is required when building BatchGetIncidentFindingsError")
+                    )?
+                ,
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building BatchGetIncidentFindingsError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building BatchGetIncidentFindingsError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

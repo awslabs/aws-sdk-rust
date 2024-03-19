@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>BatchWrite</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchWriteOperation {
+pub struct BatchWriteOperation  {
     /// <p>Creates an object.</p>
     pub create_object: ::std::option::Option<crate::types::BatchCreateObject>,
     /// <p>Attaches an object to a <code>Directory</code>.</p>
@@ -35,65 +35,65 @@ pub struct BatchWriteOperation {
     /// <p>Updates a given object's attributes.</p>
     pub update_link_attributes: ::std::option::Option<crate::types::BatchUpdateLinkAttributes>,
 }
-impl BatchWriteOperation {
+impl  BatchWriteOperation  {
     /// <p>Creates an object.</p>
-    pub fn create_object(&self) -> ::std::option::Option<&crate::types::BatchCreateObject> {
+    pub fn create_object(&self) -> ::std::option::Option<& crate::types::BatchCreateObject> {
         self.create_object.as_ref()
     }
     /// <p>Attaches an object to a <code>Directory</code>.</p>
-    pub fn attach_object(&self) -> ::std::option::Option<&crate::types::BatchAttachObject> {
+    pub fn attach_object(&self) -> ::std::option::Option<& crate::types::BatchAttachObject> {
         self.attach_object.as_ref()
     }
     /// <p>Detaches an object from a <code>Directory</code>.</p>
-    pub fn detach_object(&self) -> ::std::option::Option<&crate::types::BatchDetachObject> {
+    pub fn detach_object(&self) -> ::std::option::Option<& crate::types::BatchDetachObject> {
         self.detach_object.as_ref()
     }
     /// <p>Updates a given object's attributes.</p>
-    pub fn update_object_attributes(&self) -> ::std::option::Option<&crate::types::BatchUpdateObjectAttributes> {
+    pub fn update_object_attributes(&self) -> ::std::option::Option<& crate::types::BatchUpdateObjectAttributes> {
         self.update_object_attributes.as_ref()
     }
     /// <p>Deletes an object in a <code>Directory</code>.</p>
-    pub fn delete_object(&self) -> ::std::option::Option<&crate::types::BatchDeleteObject> {
+    pub fn delete_object(&self) -> ::std::option::Option<& crate::types::BatchDeleteObject> {
         self.delete_object.as_ref()
     }
     /// <p>A batch operation that adds a facet to an object.</p>
-    pub fn add_facet_to_object(&self) -> ::std::option::Option<&crate::types::BatchAddFacetToObject> {
+    pub fn add_facet_to_object(&self) -> ::std::option::Option<& crate::types::BatchAddFacetToObject> {
         self.add_facet_to_object.as_ref()
     }
     /// <p>A batch operation that removes a facet from an object.</p>
-    pub fn remove_facet_from_object(&self) -> ::std::option::Option<&crate::types::BatchRemoveFacetFromObject> {
+    pub fn remove_facet_from_object(&self) -> ::std::option::Option<& crate::types::BatchRemoveFacetFromObject> {
         self.remove_facet_from_object.as_ref()
     }
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
-    pub fn attach_policy(&self) -> ::std::option::Option<&crate::types::BatchAttachPolicy> {
+    pub fn attach_policy(&self) -> ::std::option::Option<& crate::types::BatchAttachPolicy> {
         self.attach_policy.as_ref()
     }
     /// <p>Detaches a policy from a <code>Directory</code>.</p>
-    pub fn detach_policy(&self) -> ::std::option::Option<&crate::types::BatchDetachPolicy> {
+    pub fn detach_policy(&self) -> ::std::option::Option<& crate::types::BatchDetachPolicy> {
         self.detach_policy.as_ref()
     }
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
-    pub fn create_index(&self) -> ::std::option::Option<&crate::types::BatchCreateIndex> {
+    pub fn create_index(&self) -> ::std::option::Option<& crate::types::BatchCreateIndex> {
         self.create_index.as_ref()
     }
     /// <p>Attaches the specified object to the specified index.</p>
-    pub fn attach_to_index(&self) -> ::std::option::Option<&crate::types::BatchAttachToIndex> {
+    pub fn attach_to_index(&self) -> ::std::option::Option<& crate::types::BatchAttachToIndex> {
         self.attach_to_index.as_ref()
     }
     /// <p>Detaches the specified object from the specified index.</p>
-    pub fn detach_from_index(&self) -> ::std::option::Option<&crate::types::BatchDetachFromIndex> {
+    pub fn detach_from_index(&self) -> ::std::option::Option<& crate::types::BatchDetachFromIndex> {
         self.detach_from_index.as_ref()
     }
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn attach_typed_link(&self) -> ::std::option::Option<&crate::types::BatchAttachTypedLink> {
+    pub fn attach_typed_link(&self) -> ::std::option::Option<& crate::types::BatchAttachTypedLink> {
         self.attach_typed_link.as_ref()
     }
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn detach_typed_link(&self) -> ::std::option::Option<&crate::types::BatchDetachTypedLink> {
+    pub fn detach_typed_link(&self) -> ::std::option::Option<& crate::types::BatchDetachTypedLink> {
         self.detach_typed_link.as_ref()
     }
     /// <p>Updates a given object's attributes.</p>
-    pub fn update_link_attributes(&self) -> ::std::option::Option<&crate::types::BatchUpdateLinkAttributes> {
+    pub fn update_link_attributes(&self) -> ::std::option::Option<& crate::types::BatchUpdateLinkAttributes> {
         self.update_link_attributes.as_ref()
     }
 }
@@ -132,8 +132,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Creates an object.</p>
     pub fn set_create_object(mut self, input: ::std::option::Option<crate::types::BatchCreateObject>) -> Self {
-        self.create_object = input;
-        self
+        self.create_object = input; self
     }
     /// <p>Creates an object.</p>
     pub fn get_create_object(&self) -> &::std::option::Option<crate::types::BatchCreateObject> {
@@ -146,8 +145,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Attaches an object to a <code>Directory</code>.</p>
     pub fn set_attach_object(mut self, input: ::std::option::Option<crate::types::BatchAttachObject>) -> Self {
-        self.attach_object = input;
-        self
+        self.attach_object = input; self
     }
     /// <p>Attaches an object to a <code>Directory</code>.</p>
     pub fn get_attach_object(&self) -> &::std::option::Option<crate::types::BatchAttachObject> {
@@ -160,8 +158,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Detaches an object from a <code>Directory</code>.</p>
     pub fn set_detach_object(mut self, input: ::std::option::Option<crate::types::BatchDetachObject>) -> Self {
-        self.detach_object = input;
-        self
+        self.detach_object = input; self
     }
     /// <p>Detaches an object from a <code>Directory</code>.</p>
     pub fn get_detach_object(&self) -> &::std::option::Option<crate::types::BatchDetachObject> {
@@ -174,8 +171,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Updates a given object's attributes.</p>
     pub fn set_update_object_attributes(mut self, input: ::std::option::Option<crate::types::BatchUpdateObjectAttributes>) -> Self {
-        self.update_object_attributes = input;
-        self
+        self.update_object_attributes = input; self
     }
     /// <p>Updates a given object's attributes.</p>
     pub fn get_update_object_attributes(&self) -> &::std::option::Option<crate::types::BatchUpdateObjectAttributes> {
@@ -188,8 +184,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Deletes an object in a <code>Directory</code>.</p>
     pub fn set_delete_object(mut self, input: ::std::option::Option<crate::types::BatchDeleteObject>) -> Self {
-        self.delete_object = input;
-        self
+        self.delete_object = input; self
     }
     /// <p>Deletes an object in a <code>Directory</code>.</p>
     pub fn get_delete_object(&self) -> &::std::option::Option<crate::types::BatchDeleteObject> {
@@ -202,8 +197,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>A batch operation that adds a facet to an object.</p>
     pub fn set_add_facet_to_object(mut self, input: ::std::option::Option<crate::types::BatchAddFacetToObject>) -> Self {
-        self.add_facet_to_object = input;
-        self
+        self.add_facet_to_object = input; self
     }
     /// <p>A batch operation that adds a facet to an object.</p>
     pub fn get_add_facet_to_object(&self) -> &::std::option::Option<crate::types::BatchAddFacetToObject> {
@@ -216,8 +210,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>A batch operation that removes a facet from an object.</p>
     pub fn set_remove_facet_from_object(mut self, input: ::std::option::Option<crate::types::BatchRemoveFacetFromObject>) -> Self {
-        self.remove_facet_from_object = input;
-        self
+        self.remove_facet_from_object = input; self
     }
     /// <p>A batch operation that removes a facet from an object.</p>
     pub fn get_remove_facet_from_object(&self) -> &::std::option::Option<crate::types::BatchRemoveFacetFromObject> {
@@ -230,8 +223,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
     pub fn set_attach_policy(mut self, input: ::std::option::Option<crate::types::BatchAttachPolicy>) -> Self {
-        self.attach_policy = input;
-        self
+        self.attach_policy = input; self
     }
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
     pub fn get_attach_policy(&self) -> &::std::option::Option<crate::types::BatchAttachPolicy> {
@@ -244,8 +236,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Detaches a policy from a <code>Directory</code>.</p>
     pub fn set_detach_policy(mut self, input: ::std::option::Option<crate::types::BatchDetachPolicy>) -> Self {
-        self.detach_policy = input;
-        self
+        self.detach_policy = input; self
     }
     /// <p>Detaches a policy from a <code>Directory</code>.</p>
     pub fn get_detach_policy(&self) -> &::std::option::Option<crate::types::BatchDetachPolicy> {
@@ -258,8 +249,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
     pub fn set_create_index(mut self, input: ::std::option::Option<crate::types::BatchCreateIndex>) -> Self {
-        self.create_index = input;
-        self
+        self.create_index = input; self
     }
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
     pub fn get_create_index(&self) -> &::std::option::Option<crate::types::BatchCreateIndex> {
@@ -272,8 +262,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Attaches the specified object to the specified index.</p>
     pub fn set_attach_to_index(mut self, input: ::std::option::Option<crate::types::BatchAttachToIndex>) -> Self {
-        self.attach_to_index = input;
-        self
+        self.attach_to_index = input; self
     }
     /// <p>Attaches the specified object to the specified index.</p>
     pub fn get_attach_to_index(&self) -> &::std::option::Option<crate::types::BatchAttachToIndex> {
@@ -286,8 +275,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Detaches the specified object from the specified index.</p>
     pub fn set_detach_from_index(mut self, input: ::std::option::Option<crate::types::BatchDetachFromIndex>) -> Self {
-        self.detach_from_index = input;
-        self
+        self.detach_from_index = input; self
     }
     /// <p>Detaches the specified object from the specified index.</p>
     pub fn get_detach_from_index(&self) -> &::std::option::Option<crate::types::BatchDetachFromIndex> {
@@ -300,8 +288,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn set_attach_typed_link(mut self, input: ::std::option::Option<crate::types::BatchAttachTypedLink>) -> Self {
-        self.attach_typed_link = input;
-        self
+        self.attach_typed_link = input; self
     }
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn get_attach_typed_link(&self) -> &::std::option::Option<crate::types::BatchAttachTypedLink> {
@@ -314,8 +301,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn set_detach_typed_link(mut self, input: ::std::option::Option<crate::types::BatchDetachTypedLink>) -> Self {
-        self.detach_typed_link = input;
-        self
+        self.detach_typed_link = input; self
     }
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn get_detach_typed_link(&self) -> &::std::option::Option<crate::types::BatchDetachTypedLink> {
@@ -328,8 +314,7 @@ impl BatchWriteOperationBuilder {
     }
     /// <p>Updates a given object's attributes.</p>
     pub fn set_update_link_attributes(mut self, input: ::std::option::Option<crate::types::BatchUpdateLinkAttributes>) -> Self {
-        self.update_link_attributes = input;
-        self
+        self.update_link_attributes = input; self
     }
     /// <p>Updates a given object's attributes.</p>
     pub fn get_update_link_attributes(&self) -> &::std::option::Option<crate::types::BatchUpdateLinkAttributes> {
@@ -338,21 +323,37 @@ impl BatchWriteOperationBuilder {
     /// Consumes the builder and constructs a [`BatchWriteOperation`](crate::types::BatchWriteOperation).
     pub fn build(self) -> crate::types::BatchWriteOperation {
         crate::types::BatchWriteOperation {
-            create_object: self.create_object,
-            attach_object: self.attach_object,
-            detach_object: self.detach_object,
-            update_object_attributes: self.update_object_attributes,
-            delete_object: self.delete_object,
-            add_facet_to_object: self.add_facet_to_object,
-            remove_facet_from_object: self.remove_facet_from_object,
-            attach_policy: self.attach_policy,
-            detach_policy: self.detach_policy,
-            create_index: self.create_index,
-            attach_to_index: self.attach_to_index,
-            detach_from_index: self.detach_from_index,
-            attach_typed_link: self.attach_typed_link,
-            detach_typed_link: self.detach_typed_link,
-            update_link_attributes: self.update_link_attributes,
+            create_object: self.create_object
+            ,
+            attach_object: self.attach_object
+            ,
+            detach_object: self.detach_object
+            ,
+            update_object_attributes: self.update_object_attributes
+            ,
+            delete_object: self.delete_object
+            ,
+            add_facet_to_object: self.add_facet_to_object
+            ,
+            remove_facet_from_object: self.remove_facet_from_object
+            ,
+            attach_policy: self.attach_policy
+            ,
+            detach_policy: self.detach_policy
+            ,
+            create_index: self.create_index
+            ,
+            attach_to_index: self.attach_to_index
+            ,
+            detach_from_index: self.detach_from_index
+            ,
+            attach_typed_link: self.attach_typed_link
+            ,
+            detach_typed_link: self.detach_typed_link
+            ,
+            update_link_attributes: self.update_link_attributes
+            ,
         }
     }
 }
+

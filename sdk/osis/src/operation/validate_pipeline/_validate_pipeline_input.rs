@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidatePipelineInput {
+pub struct ValidatePipelineInput  {
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
     pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
 }
-impl ValidatePipelineInput {
+impl  ValidatePipelineInput  {
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn pipeline_configuration_body(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_configuration_body(&self) -> ::std::option::Option<& str> {
         self.pipeline_configuration_body.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl ValidatePipelineInputBuilder {
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
     pub fn set_pipeline_configuration_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_configuration_body = input;
-        self
+        self.pipeline_configuration_body = input; self
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
     pub fn get_pipeline_configuration_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_configuration_body
     }
     /// Consumes the builder and constructs a [`ValidatePipelineInput`](crate::operation::validate_pipeline::ValidatePipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::validate_pipeline::ValidatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::validate_pipeline::ValidatePipelineInput {
-            pipeline_configuration_body: self.pipeline_configuration_body,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::validate_pipeline::ValidatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::validate_pipeline::ValidatePipelineInput {
+                pipeline_configuration_body: self.pipeline_configuration_body
+                ,
+            }
+        )
     }
 }
+

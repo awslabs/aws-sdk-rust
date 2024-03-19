@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDevEnvironmentInput {
+pub struct CreateDevEnvironmentInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
-    pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
+    pub repositories: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryInput>>,
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined alias for a Dev Environment.</p>
@@ -16,7 +16,7 @@ pub struct CreateDevEnvironmentInput {
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
-    pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
+    pub ides: ::std::option::Option<::std::vec::Vec::<crate::types::IdeConfiguration>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
@@ -28,39 +28,41 @@ pub struct CreateDevEnvironmentInput {
     /// <p>The name of the connection to use connect to a Amazon VPC.</p>
     pub vpc_connection_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateDevEnvironmentInput {
+impl  CreateDevEnvironmentInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
-    pub fn repositories(&self) -> &[crate::types::RepositoryInput] {
-        self.repositories.as_deref().unwrap_or_default()
+    pub fn repositories(&self) -> & [crate::types::RepositoryInput] {
+        self.repositories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The user-defined alias for a Dev Environment.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ides.is_none()`.
-    pub fn ides(&self) -> &[crate::types::IdeConfiguration] {
-        self.ides.as_deref().unwrap_or_default()
+    pub fn ides(&self) -> & [crate::types::IdeConfiguration] {
+        self.ides.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
@@ -70,11 +72,11 @@ impl CreateDevEnvironmentInput {
     /// <p>Information about the amount of storage allocated to the Dev Environment.</p><note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn persistent_storage(&self) -> ::std::option::Option<&crate::types::PersistentStorageConfiguration> {
+    pub fn persistent_storage(&self) -> ::std::option::Option<& crate::types::PersistentStorageConfiguration> {
         self.persistent_storage.as_ref()
     }
     /// <p>The name of the connection to use connect to a Amazon VPC.</p>
-    pub fn vpc_connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_name(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_name.as_deref()
     }
 }
@@ -91,10 +93,10 @@ impl CreateDevEnvironmentInput {
 pub struct CreateDevEnvironmentInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
-    pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
+    pub(crate) repositories: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryInput>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
-    pub(crate) ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
+    pub(crate) ides: ::std::option::Option<::std::vec::Vec::<crate::types::IdeConfiguration>>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) inactivity_timeout_minutes: ::std::option::Option<i32>,
     pub(crate) persistent_storage: ::std::option::Option<crate::types::PersistentStorageConfiguration>,
@@ -109,8 +111,7 @@ impl CreateDevEnvironmentInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +125,7 @@ impl CreateDevEnvironmentInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,17 +138,16 @@ impl CreateDevEnvironmentInputBuilder {
     /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
     pub fn repositories(mut self, input: crate::types::RepositoryInput) -> Self {
         let mut v = self.repositories.unwrap_or_default();
-        v.push(input);
-        self.repositories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.repositories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
-    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>) -> Self {
-        self.repositories = input;
-        self
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryInput>>) -> Self {
+        self.repositories = input; self
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
-    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositoryInput>> {
         &self.repositories
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
@@ -158,8 +157,7 @@ impl CreateDevEnvironmentInputBuilder {
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +170,7 @@ impl CreateDevEnvironmentInputBuilder {
     }
     /// <p>The user-defined alias for a Dev Environment.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The user-defined alias for a Dev Environment.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,21 +185,20 @@ impl CreateDevEnvironmentInputBuilder {
     /// </note>
     pub fn ides(mut self, input: crate::types::IdeConfiguration) -> Self {
         let mut v = self.ides.unwrap_or_default();
-        v.push(input);
-        self.ides = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ides = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
-    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
-        self.ides = input;
-        self
+    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdeConfiguration>>) -> Self {
+        self.ides = input; self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
-    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdeConfiguration>> {
         &self.ides
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
@@ -213,8 +209,7 @@ impl CreateDevEnvironmentInputBuilder {
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
@@ -227,8 +222,7 @@ impl CreateDevEnvironmentInputBuilder {
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     pub fn set_inactivity_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.inactivity_timeout_minutes = input;
-        self
+        self.inactivity_timeout_minutes = input; self
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {
@@ -246,8 +240,7 @@ impl CreateDevEnvironmentInputBuilder {
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn set_persistent_storage(mut self, input: ::std::option::Option<crate::types::PersistentStorageConfiguration>) -> Self {
-        self.persistent_storage = input;
-        self
+        self.persistent_storage = input; self
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment.</p><note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
@@ -262,29 +255,38 @@ impl CreateDevEnvironmentInputBuilder {
     }
     /// <p>The name of the connection to use connect to a Amazon VPC.</p>
     pub fn set_vpc_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_connection_name = input;
-        self
+        self.vpc_connection_name = input; self
     }
     /// <p>The name of the connection to use connect to a Amazon VPC.</p>
     pub fn get_vpc_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_connection_name
     }
     /// Consumes the builder and constructs a [`CreateDevEnvironmentInput`](crate::operation::create_dev_environment::CreateDevEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_dev_environment::CreateDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_dev_environment::CreateDevEnvironmentInput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            repositories: self.repositories,
-            client_token: self.client_token,
-            alias: self.alias,
-            ides: self.ides,
-            instance_type: self.instance_type,
-            inactivity_timeout_minutes: self.inactivity_timeout_minutes,
-            persistent_storage: self.persistent_storage,
-            vpc_connection_name: self.vpc_connection_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_dev_environment::CreateDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_dev_environment::CreateDevEnvironmentInput {
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                repositories: self.repositories
+                ,
+                client_token: self.client_token
+                ,
+                alias: self.alias
+                ,
+                ides: self.ides
+                ,
+                instance_type: self.instance_type
+                ,
+                inactivity_timeout_minutes: self.inactivity_timeout_minutes
+                ,
+                persistent_storage: self.persistent_storage
+                ,
+                vpc_connection_name: self.vpc_connection_name
+                ,
+            }
+        )
     }
 }
+

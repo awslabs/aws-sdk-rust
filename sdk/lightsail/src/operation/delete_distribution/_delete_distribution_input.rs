@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDistributionInput {
+pub struct DeleteDistributionInput  {
     /// <p>The name of the distribution to delete.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     pub distribution_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDistributionInput {
+impl  DeleteDistributionInput  {
     /// <p>The name of the distribution to delete.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_name(&self) -> ::std::option::Option<& str> {
         self.distribution_name.as_deref()
     }
 }
@@ -37,8 +37,7 @@ impl DeleteDistributionInputBuilder {
     /// <p>The name of the distribution to delete.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_name = input;
-        self
+        self.distribution_name = input; self
     }
     /// <p>The name of the distribution to delete.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
@@ -46,11 +45,13 @@ impl DeleteDistributionInputBuilder {
         &self.distribution_name
     }
     /// Consumes the builder and constructs a [`DeleteDistributionInput`](crate::operation::delete_distribution::DeleteDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_distribution::DeleteDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_distribution::DeleteDistributionInput {
-            distribution_name: self.distribution_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_distribution::DeleteDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_distribution::DeleteDistributionInput {
+                distribution_name: self.distribution_name
+                ,
+            }
+        )
     }
 }
+

@@ -4,13 +4,13 @@
 /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMarkerReplication {
+pub struct DeleteMarkerReplication  {
     /// <p>Indicates whether to replicate delete markers.</p>
     pub status: crate::types::DeleteMarkerReplicationStatus,
 }
-impl DeleteMarkerReplication {
+impl  DeleteMarkerReplication  {
     /// <p>Indicates whether to replicate delete markers.</p>
-    pub fn status(&self) -> &crate::types::DeleteMarkerReplicationStatus {
+    pub fn status(&self) -> & crate::types::DeleteMarkerReplicationStatus {
         &self.status
     }
 }
@@ -36,8 +36,7 @@ impl DeleteMarkerReplicationBuilder {
     }
     /// <p>Indicates whether to replicate delete markers.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether to replicate delete markers.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeleteMarkerReplicationStatus> {
@@ -47,13 +46,15 @@ impl DeleteMarkerReplicationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::DeleteMarkerReplicationBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteMarkerReplication, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteMarkerReplication {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DeleteMarkerReplication",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteMarkerReplication {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DeleteMarkerReplication")
+                    )?
+                ,
+            }
+        )
     }
 }
+

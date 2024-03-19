@@ -3,28 +3,28 @@
 /// <p>Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoaOutput {
+pub struct DescribeLoaOutput  {
     /// <p>The binary contents of the LOA-CFA document.</p>
     pub loa_content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub loa_content_type: ::std::option::Option<crate::types::LoaContentType>,
     _request_id: Option<String>,
 }
-impl DescribeLoaOutput {
+impl  DescribeLoaOutput  {
     /// <p>The binary contents of the LOA-CFA document.</p>
-    pub fn loa_content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn loa_content(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.loa_content.as_ref()
     }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-    pub fn loa_content_type(&self) -> ::std::option::Option<&crate::types::LoaContentType> {
+    pub fn loa_content_type(&self) -> ::std::option::Option<& crate::types::LoaContentType> {
         self.loa_content_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLoaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLoaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoaOutput`](crate::operation::describe_loa::DescribeLoaOutput).
     pub fn builder() -> crate::operation::describe_loa::builders::DescribeLoaOutputBuilder {
@@ -48,8 +48,7 @@ impl DescribeLoaOutputBuilder {
     }
     /// <p>The binary contents of the LOA-CFA document.</p>
     pub fn set_loa_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.loa_content = input;
-        self
+        self.loa_content = input; self
     }
     /// <p>The binary contents of the LOA-CFA document.</p>
     pub fn get_loa_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -62,28 +61,30 @@ impl DescribeLoaOutputBuilder {
     }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub fn set_loa_content_type(mut self, input: ::std::option::Option<crate::types::LoaContentType>) -> Self {
-        self.loa_content_type = input;
-        self
+        self.loa_content_type = input; self
     }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub fn get_loa_content_type(&self) -> &::std::option::Option<crate::types::LoaContentType> {
         &self.loa_content_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLoaOutput`](crate::operation::describe_loa::DescribeLoaOutput).
     pub fn build(self) -> crate::operation::describe_loa::DescribeLoaOutput {
         crate::operation::describe_loa::DescribeLoaOutput {
-            loa_content: self.loa_content,
-            loa_content_type: self.loa_content_type,
+            loa_content: self.loa_content
+            ,
+            loa_content_type: self.loa_content_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

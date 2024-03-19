@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobRunsInput {
+pub struct ListJobRunsInput  {
     /// <p>The ID of the virtual cluster for which to list the job run.</p>
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time before which the job runs were submitted.</p>
@@ -12,41 +12,42 @@ pub struct ListJobRunsInput {
     /// <p>The name of the job run.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The states of the job run.</p>
-    pub states: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
+    pub states: ::std::option::Option<::std::vec::Vec::<crate::types::JobRunState>>,
     /// <p>The maximum number of job runs that can be listed.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of job runs to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListJobRunsInput {
+impl  ListJobRunsInput  {
     /// <p>The ID of the virtual cluster for which to list the job run.</p>
-    pub fn virtual_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> ::std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
     /// <p>The date and time before which the job runs were submitted.</p>
-    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The date and time after which the job runs were submitted.</p>
-    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The name of the job run.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The states of the job run.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
-    pub fn states(&self) -> &[crate::types::JobRunState] {
-        self.states.as_deref().unwrap_or_default()
+    pub fn states(&self) -> & [crate::types::JobRunState] {
+        self.states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of job runs to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -65,7 +66,7 @@ pub struct ListJobRunsInputBuilder {
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::JobRunState>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -78,8 +79,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The ID of the virtual cluster for which to list the job run.</p>
     pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_cluster_id = input;
-        self
+        self.virtual_cluster_id = input; self
     }
     /// <p>The ID of the virtual cluster for which to list the job run.</p>
     pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The date and time before which the job runs were submitted.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input;
-        self
+        self.created_before = input; self
     }
     /// <p>The date and time before which the job runs were submitted.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -106,8 +105,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The date and time after which the job runs were submitted.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input;
-        self
+        self.created_after = input; self
     }
     /// <p>The date and time after which the job runs were submitted.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -120,8 +118,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The name of the job run.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the job run.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,17 +131,16 @@ impl ListJobRunsInputBuilder {
     /// <p>The states of the job run.</p>
     pub fn states(mut self, input: crate::types::JobRunState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The states of the job run.</p>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobRunState>>) -> Self {
+        self.states = input; self
     }
     /// <p>The states of the job run.</p>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobRunState>> {
         &self.states
     }
     /// <p>The maximum number of job runs that can be listed.</p>
@@ -154,8 +150,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -168,8 +163,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The token for the next set of job runs to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of job runs to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,14 +171,24 @@ impl ListJobRunsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
-            virtual_cluster_id: self.virtual_cluster_id,
-            created_before: self.created_before,
-            created_after: self.created_after,
-            name: self.name,
-            states: self.states,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_job_runs::ListJobRunsInput {
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
+                created_before: self.created_before
+                ,
+                created_after: self.created_after
+                ,
+                name: self.name
+                ,
+                states: self.states
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

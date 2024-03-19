@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourcePositionInput {
+pub struct GetResourcePositionInput  {
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
 }
-impl GetResourcePositionInput {
+impl  GetResourcePositionInput  {
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::PositionResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::PositionResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetResourcePositionInputBuilder {
     }
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetResourcePositionInputBuilder {
     }
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`GetResourcePositionInput`](crate::operation::get_resource_position::GetResourcePositionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resource_position::GetResourcePositionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_resource_position::GetResourcePositionInput {
-            resource_identifier: self.resource_identifier,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_position::GetResourcePositionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resource_position::GetResourcePositionInput {
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

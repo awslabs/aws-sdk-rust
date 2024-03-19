@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessGatewayInput {
+pub struct GetWirelessGatewayInput  {
     /// <p>The identifier of the wireless gateway to get.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of identifier used in <code>identifier</code>.</p>
     pub identifier_type: ::std::option::Option<crate::types::WirelessGatewayIdType>,
 }
-impl GetWirelessGatewayInput {
+impl  GetWirelessGatewayInput  {
     /// <p>The identifier of the wireless gateway to get.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The type of identifier used in <code>identifier</code>.</p>
-    pub fn identifier_type(&self) -> ::std::option::Option<&crate::types::WirelessGatewayIdType> {
+    pub fn identifier_type(&self) -> ::std::option::Option<& crate::types::WirelessGatewayIdType> {
         self.identifier_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetWirelessGatewayInputBuilder {
     }
     /// <p>The identifier of the wireless gateway to get.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the wireless gateway to get.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetWirelessGatewayInputBuilder {
     }
     /// <p>The type of identifier used in <code>identifier</code>.</p>
     pub fn set_identifier_type(mut self, input: ::std::option::Option<crate::types::WirelessGatewayIdType>) -> Self {
-        self.identifier_type = input;
-        self
+        self.identifier_type = input; self
     }
     /// <p>The type of identifier used in <code>identifier</code>.</p>
     pub fn get_identifier_type(&self) -> &::std::option::Option<crate::types::WirelessGatewayIdType> {
         &self.identifier_type
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayInput`](crate::operation::get_wireless_gateway::GetWirelessGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_wireless_gateway::GetWirelessGatewayInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_wireless_gateway::GetWirelessGatewayInput {
-            identifier: self.identifier,
-            identifier_type: self.identifier_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway::GetWirelessGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_wireless_gateway::GetWirelessGatewayInput {
+                identifier: self.identifier
+                ,
+                identifier_type: self.identifier_type
+                ,
+            }
+        )
     }
 }
+

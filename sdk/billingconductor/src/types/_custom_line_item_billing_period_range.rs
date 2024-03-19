@@ -3,20 +3,19 @@
 /// <p>The billing period range in which the custom line item request will be applied.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomLineItemBillingPeriodRange {
+pub struct CustomLineItemBillingPeriodRange  {
     /// <p>The inclusive start billing period that defines a billing period range where a custom line is applied.</p>
     pub inclusive_start_billing_period: ::std::string::String,
     /// <p>The inclusive end billing period that defines a billing period range where a custom line is applied.</p>
     pub exclusive_end_billing_period: ::std::option::Option<::std::string::String>,
 }
-impl CustomLineItemBillingPeriodRange {
+impl  CustomLineItemBillingPeriodRange  {
     /// <p>The inclusive start billing period that defines a billing period range where a custom line is applied.</p>
-    pub fn inclusive_start_billing_period(&self) -> &str {
-        use std::ops::Deref;
-        self.inclusive_start_billing_period.deref()
+    pub fn inclusive_start_billing_period(&self) -> & str {
+        use std::ops::Deref; self.inclusive_start_billing_period.deref()
     }
     /// <p>The inclusive end billing period that defines a billing period range where a custom line is applied.</p>
-    pub fn exclusive_end_billing_period(&self) -> ::std::option::Option<&str> {
+    pub fn exclusive_end_billing_period(&self) -> ::std::option::Option<& str> {
         self.exclusive_end_billing_period.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl CustomLineItemBillingPeriodRangeBuilder {
     }
     /// <p>The inclusive start billing period that defines a billing period range where a custom line is applied.</p>
     pub fn set_inclusive_start_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inclusive_start_billing_period = input;
-        self
+        self.inclusive_start_billing_period = input; self
     }
     /// <p>The inclusive start billing period that defines a billing period range where a custom line is applied.</p>
     pub fn get_inclusive_start_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl CustomLineItemBillingPeriodRangeBuilder {
     }
     /// <p>The inclusive end billing period that defines a billing period range where a custom line is applied.</p>
     pub fn set_exclusive_end_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exclusive_end_billing_period = input;
-        self
+        self.exclusive_end_billing_period = input; self
     }
     /// <p>The inclusive end billing period that defines a billing period range where a custom line is applied.</p>
     pub fn get_exclusive_end_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl CustomLineItemBillingPeriodRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`inclusive_start_billing_period`](crate::types::builders::CustomLineItemBillingPeriodRangeBuilder::inclusive_start_billing_period)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomLineItemBillingPeriodRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomLineItemBillingPeriodRange {
-            inclusive_start_billing_period: self.inclusive_start_billing_period.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inclusive_start_billing_period",
-                    "inclusive_start_billing_period was not specified but it is required when building CustomLineItemBillingPeriodRange",
-                )
-            })?,
-            exclusive_end_billing_period: self.exclusive_end_billing_period,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomLineItemBillingPeriodRange {
+                inclusive_start_billing_period: self.inclusive_start_billing_period
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inclusive_start_billing_period", "inclusive_start_billing_period was not specified but it is required when building CustomLineItemBillingPeriodRange")
+                    )?
+                ,
+                exclusive_end_billing_period: self.exclusive_end_billing_period
+                ,
+            }
+        )
     }
 }
+

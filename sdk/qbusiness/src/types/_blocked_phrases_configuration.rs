@@ -3,21 +3,22 @@
 /// <p>Provides information about the phrases blocked from chat by your chat control configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlockedPhrasesConfiguration {
+pub struct BlockedPhrasesConfiguration  {
     /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
-    pub blocked_phrases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub blocked_phrases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
     pub system_message_override: ::std::option::Option<::std::string::String>,
 }
-impl BlockedPhrasesConfiguration {
+impl  BlockedPhrasesConfiguration  {
     /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocked_phrases.is_none()`.
-    pub fn blocked_phrases(&self) -> &[::std::string::String] {
-        self.blocked_phrases.as_deref().unwrap_or_default()
+    pub fn blocked_phrases(&self) -> & [::std::string::String] {
+        self.blocked_phrases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
-    pub fn system_message_override(&self) -> ::std::option::Option<&str> {
+    pub fn system_message_override(&self) -> ::std::option::Option<& str> {
         self.system_message_override.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl BlockedPhrasesConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockedPhrasesConfigurationBuilder {
-    pub(crate) blocked_phrases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) blocked_phrases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) system_message_override: ::std::option::Option<::std::string::String>,
 }
 impl BlockedPhrasesConfigurationBuilder {
@@ -43,17 +44,16 @@ impl BlockedPhrasesConfigurationBuilder {
     /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
     pub fn blocked_phrases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_phrases.unwrap_or_default();
-        v.push(input.into());
-        self.blocked_phrases = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.blocked_phrases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
-    pub fn set_blocked_phrases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.blocked_phrases = input;
-        self
+    pub fn set_blocked_phrases(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.blocked_phrases = input; self
     }
     /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
-    pub fn get_blocked_phrases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blocked_phrases(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.blocked_phrases
     }
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
@@ -63,8 +63,7 @@ impl BlockedPhrasesConfigurationBuilder {
     }
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
     pub fn set_system_message_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.system_message_override = input;
-        self
+        self.system_message_override = input; self
     }
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
     pub fn get_system_message_override(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl BlockedPhrasesConfigurationBuilder {
     /// Consumes the builder and constructs a [`BlockedPhrasesConfiguration`](crate::types::BlockedPhrasesConfiguration).
     pub fn build(self) -> crate::types::BlockedPhrasesConfiguration {
         crate::types::BlockedPhrasesConfiguration {
-            blocked_phrases: self.blocked_phrases,
-            system_message_override: self.system_message_override,
+            blocked_phrases: self.blocked_phrases
+            ,
+            system_message_override: self.system_message_override
+            ,
         }
     }
 }
+

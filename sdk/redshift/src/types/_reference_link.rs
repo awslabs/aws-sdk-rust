@@ -3,19 +3,19 @@
 /// <p>A link to an Amazon Redshift Advisor reference for more information about a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferenceLink {
+pub struct ReferenceLink  {
     /// <p>The hyperlink text that describes the link to more information.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The URL address to find more information.</p>
     pub link: ::std::option::Option<::std::string::String>,
 }
-impl ReferenceLink {
+impl  ReferenceLink  {
     /// <p>The hyperlink text that describes the link to more information.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The URL address to find more information.</p>
-    pub fn link(&self) -> ::std::option::Option<&str> {
+    pub fn link(&self) -> ::std::option::Option<& str> {
         self.link.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ReferenceLinkBuilder {
     }
     /// <p>The hyperlink text that describes the link to more information.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The hyperlink text that describes the link to more information.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ReferenceLinkBuilder {
     }
     /// <p>The URL address to find more information.</p>
     pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link = input;
-        self
+        self.link = input; self
     }
     /// <p>The URL address to find more information.</p>
     pub fn get_link(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ReferenceLinkBuilder {
     /// Consumes the builder and constructs a [`ReferenceLink`](crate::types::ReferenceLink).
     pub fn build(self) -> crate::types::ReferenceLink {
         crate::types::ReferenceLink {
-            text: self.text,
-            link: self.link,
+            text: self.text
+            ,
+            link: self.link
+            ,
         }
     }
 }
+

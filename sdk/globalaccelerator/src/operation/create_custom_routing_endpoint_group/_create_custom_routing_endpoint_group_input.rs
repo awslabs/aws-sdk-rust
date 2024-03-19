@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomRoutingEndpointGroupInput {
+pub struct CreateCustomRoutingEndpointGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
-    pub destination_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>>,
+    pub destination_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingDestinationConfiguration>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateCustomRoutingEndpointGroupInput {
+impl  CreateCustomRoutingEndpointGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
-    pub fn listener_arn(&self) -> ::std::option::Option<&str> {
+    pub fn listener_arn(&self) -> ::std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
-    pub fn endpoint_group_region(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_region(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_region.as_deref()
     }
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_configurations.is_none()`.
-    pub fn destination_configurations(&self) -> &[crate::types::CustomRoutingDestinationConfiguration] {
-        self.destination_configurations.as_deref().unwrap_or_default()
+    pub fn destination_configurations(&self) -> & [crate::types::CustomRoutingDestinationConfiguration] {
+        self.destination_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -45,7 +46,7 @@ impl CreateCustomRoutingEndpointGroupInput {
 pub struct CreateCustomRoutingEndpointGroupInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_group_region: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>>,
+    pub(crate) destination_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingDestinationConfiguration>>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCustomRoutingEndpointGroupInputBuilder {
@@ -57,8 +58,7 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
     pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub fn set_endpoint_group_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_region = input;
-        self
+        self.endpoint_group_region = input; self
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub fn get_endpoint_group_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,20 +85,16 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
     pub fn destination_configurations(mut self, input: crate::types::CustomRoutingDestinationConfiguration) -> Self {
         let mut v = self.destination_configurations.unwrap_or_default();
-        v.push(input);
-        self.destination_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
-    pub fn set_destination_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>>,
-    ) -> Self {
-        self.destination_configurations = input;
-        self
+    pub fn set_destination_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingDestinationConfiguration>>) -> Self {
+        self.destination_configurations = input; self
     }
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
-    pub fn get_destination_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>> {
+    pub fn get_destination_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingDestinationConfiguration>> {
         &self.destination_configurations
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
@@ -110,27 +105,26 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateCustomRoutingEndpointGroupInput`](crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput {
-                listener_arn: self.listener_arn,
-                endpoint_group_region: self.endpoint_group_region,
-                destination_configurations: self.destination_configurations,
-                idempotency_token: self.idempotency_token,
-            },
+                listener_arn: self.listener_arn
+                ,
+                endpoint_group_region: self.endpoint_group_region
+                ,
+                destination_configurations: self.destination_configurations
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
         )
     }
 }
+

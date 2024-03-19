@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share. You must specify either <code>resourceShareArn</code>, or <code>resourceArn</code>, but not both.</p>
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl UntagResourceInput {
+impl  UntagResourceInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share. You must specify either <code>resourceShareArn</code>, or <code>resourceArn</code>, but not both.</p>
-    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> ::std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl UntagResourceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagResourceInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl UntagResourceInputBuilder {
@@ -49,8 +50,7 @@ impl UntagResourceInputBuilder {
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share. You must specify either <code>resourceShareArn</code>, or <code>resourceArn</code>, but not both.</p>
     pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_share_arn = input;
-        self
+        self.resource_share_arn = input; self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share. You must specify either <code>resourceShareArn</code>, or <code>resourceArn</code>, but not both.</p>
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,17 +63,16 @@ impl UntagResourceInputBuilder {
     /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.</p>
@@ -83,21 +82,24 @@ impl UntagResourceInputBuilder {
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
-            resource_share_arn: self.resource_share_arn,
-            tag_keys: self.tag_keys,
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::untag_resource::UntagResourceInput {
+                resource_share_arn: self.resource_share_arn
+                ,
+                tag_keys: self.tag_keys
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

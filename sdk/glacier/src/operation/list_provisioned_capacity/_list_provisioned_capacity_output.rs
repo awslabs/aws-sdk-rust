@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProvisionedCapacityOutput {
+pub struct ListProvisionedCapacityOutput  {
     /// <p>The response body contains the following JSON fields.</p>
-    pub provisioned_capacity_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
+    pub provisioned_capacity_list: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedCapacityDescription>>,
     _request_id: Option<String>,
 }
-impl ListProvisionedCapacityOutput {
+impl  ListProvisionedCapacityOutput  {
     /// <p>The response body contains the following JSON fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_capacity_list.is_none()`.
-    pub fn provisioned_capacity_list(&self) -> &[crate::types::ProvisionedCapacityDescription] {
-        self.provisioned_capacity_list.as_deref().unwrap_or_default()
+    pub fn provisioned_capacity_list(&self) -> & [crate::types::ProvisionedCapacityDescription] {
+        self.provisioned_capacity_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListProvisionedCapacityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListProvisionedCapacityOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityOutput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput).
     pub fn builder() -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder {
@@ -31,7 +32,7 @@ impl ListProvisionedCapacityOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProvisionedCapacityOutputBuilder {
-    pub(crate) provisioned_capacity_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
+    pub(crate) provisioned_capacity_list: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedCapacityDescription>>,
     _request_id: Option<String>,
 }
 impl ListProvisionedCapacityOutputBuilder {
@@ -42,36 +43,34 @@ impl ListProvisionedCapacityOutputBuilder {
     /// <p>The response body contains the following JSON fields.</p>
     pub fn provisioned_capacity_list(mut self, input: crate::types::ProvisionedCapacityDescription) -> Self {
         let mut v = self.provisioned_capacity_list.unwrap_or_default();
-        v.push(input);
-        self.provisioned_capacity_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioned_capacity_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The response body contains the following JSON fields.</p>
-    pub fn set_provisioned_capacity_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
-    ) -> Self {
-        self.provisioned_capacity_list = input;
-        self
+    pub fn set_provisioned_capacity_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedCapacityDescription>>) -> Self {
+        self.provisioned_capacity_list = input; self
     }
     /// <p>The response body contains the following JSON fields.</p>
-    pub fn get_provisioned_capacity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>> {
+    pub fn get_provisioned_capacity_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProvisionedCapacityDescription>> {
         &self.provisioned_capacity_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListProvisionedCapacityOutput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput).
     pub fn build(self) -> crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput {
         crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput {
-            provisioned_capacity_list: self.provisioned_capacity_list,
+            provisioned_capacity_list: self.provisioned_capacity_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

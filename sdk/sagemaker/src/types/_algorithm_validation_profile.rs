@@ -4,7 +4,7 @@
 /// <p>The data provided in the validation profile is made available to your buyers on Amazon Web Services Marketplace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlgorithmValidationProfile {
+pub struct AlgorithmValidationProfile  {
     /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
@@ -12,17 +12,17 @@ pub struct AlgorithmValidationProfile {
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
     pub transform_job_definition: ::std::option::Option<crate::types::TransformJobDefinition>,
 }
-impl AlgorithmValidationProfile {
+impl  AlgorithmValidationProfile  {
     /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
-    pub fn training_job_definition(&self) -> ::std::option::Option<&crate::types::TrainingJobDefinition> {
+    pub fn training_job_definition(&self) -> ::std::option::Option<& crate::types::TrainingJobDefinition> {
         self.training_job_definition.as_ref()
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
-    pub fn transform_job_definition(&self) -> ::std::option::Option<&crate::types::TransformJobDefinition> {
+    pub fn transform_job_definition(&self) -> ::std::option::Option<& crate::types::TransformJobDefinition> {
         self.transform_job_definition.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl AlgorithmValidationProfileBuilder {
     }
     /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl AlgorithmValidationProfileBuilder {
     }
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
     pub fn set_training_job_definition(mut self, input: ::std::option::Option<crate::types::TrainingJobDefinition>) -> Self {
-        self.training_job_definition = input;
-        self
+        self.training_job_definition = input; self
     }
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
     pub fn get_training_job_definition(&self) -> &::std::option::Option<crate::types::TrainingJobDefinition> {
@@ -79,8 +77,7 @@ impl AlgorithmValidationProfileBuilder {
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
     pub fn set_transform_job_definition(mut self, input: ::std::option::Option<crate::types::TransformJobDefinition>) -> Self {
-        self.transform_job_definition = input;
-        self
+        self.transform_job_definition = input; self
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
     pub fn get_transform_job_definition(&self) -> &::std::option::Option<crate::types::TransformJobDefinition> {
@@ -89,9 +86,13 @@ impl AlgorithmValidationProfileBuilder {
     /// Consumes the builder and constructs a [`AlgorithmValidationProfile`](crate::types::AlgorithmValidationProfile).
     pub fn build(self) -> crate::types::AlgorithmValidationProfile {
         crate::types::AlgorithmValidationProfile {
-            profile_name: self.profile_name,
-            training_job_definition: self.training_job_definition,
-            transform_job_definition: self.transform_job_definition,
+            profile_name: self.profile_name
+            ,
+            training_job_definition: self.training_job_definition
+            ,
+            transform_job_definition: self.transform_job_definition
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A package version output configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageVersionOutputConfig {
+pub struct PackageVersionOutputConfig  {
     /// <p>The output's package name.</p>
     pub package_name: ::std::string::String,
     /// <p>The output's package version.</p>
@@ -11,16 +11,14 @@ pub struct PackageVersionOutputConfig {
     /// <p>Indicates that the version is recommended for all users.</p>
     pub mark_latest: bool,
 }
-impl PackageVersionOutputConfig {
+impl  PackageVersionOutputConfig  {
     /// <p>The output's package name.</p>
-    pub fn package_name(&self) -> &str {
-        use std::ops::Deref;
-        self.package_name.deref()
+    pub fn package_name(&self) -> & str {
+        use std::ops::Deref; self.package_name.deref()
     }
     /// <p>The output's package version.</p>
-    pub fn package_version(&self) -> &str {
-        use std::ops::Deref;
-        self.package_version.deref()
+    pub fn package_version(&self) -> & str {
+        use std::ops::Deref; self.package_version.deref()
     }
     /// <p>Indicates that the version is recommended for all users.</p>
     pub fn mark_latest(&self) -> bool {
@@ -51,8 +49,7 @@ impl PackageVersionOutputConfigBuilder {
     }
     /// <p>The output's package name.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The output's package name.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl PackageVersionOutputConfigBuilder {
     }
     /// <p>The output's package version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>The output's package version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl PackageVersionOutputConfigBuilder {
     }
     /// <p>Indicates that the version is recommended for all users.</p>
     pub fn set_mark_latest(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.mark_latest = input;
-        self
+        self.mark_latest = input; self
     }
     /// <p>Indicates that the version is recommended for all users.</p>
     pub fn get_mark_latest(&self) -> &::std::option::Option<bool> {
@@ -92,20 +87,23 @@ impl PackageVersionOutputConfigBuilder {
     /// - [`package_name`](crate::types::builders::PackageVersionOutputConfigBuilder::package_name)
     /// - [`package_version`](crate::types::builders::PackageVersionOutputConfigBuilder::package_version)
     pub fn build(self) -> ::std::result::Result<crate::types::PackageVersionOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PackageVersionOutputConfig {
-            package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_name",
-                    "package_name was not specified but it is required when building PackageVersionOutputConfig",
-                )
-            })?,
-            package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_version",
-                    "package_version was not specified but it is required when building PackageVersionOutputConfig",
-                )
-            })?,
-            mark_latest: self.mark_latest.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::PackageVersionOutputConfig {
+                package_name: self.package_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_name", "package_name was not specified but it is required when building PackageVersionOutputConfig")
+                    )?
+                ,
+                package_version: self.package_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_version", "package_version was not specified but it is required when building PackageVersionOutputConfig")
+                    )?
+                ,
+                mark_latest: self.mark_latest
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that contains the response from the <code>SendBulkTemplatedEmail</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BulkEmailDestinationStatus {
+pub struct BulkEmailDestinationStatus  {
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     /// <p>Possible values for this parameter include:</p>
     /// <ul>
@@ -42,7 +42,7 @@ pub struct BulkEmailDestinationStatus {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
 }
-impl BulkEmailDestinationStatus {
+impl  BulkEmailDestinationStatus  {
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     /// <p>Possible values for this parameter include:</p>
     /// <ul>
@@ -75,15 +75,15 @@ impl BulkEmailDestinationStatus {
     /// <li>
     /// <p><code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BulkEmailStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BulkEmailStatus> {
         self.status.as_ref()
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
@@ -172,8 +172,7 @@ impl BulkEmailDestinationStatusBuilder {
     /// <p><code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BulkEmailStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     /// <p>Possible values for this parameter include:</p>
@@ -217,8 +216,7 @@ impl BulkEmailDestinationStatusBuilder {
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +229,7 @@ impl BulkEmailDestinationStatusBuilder {
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,9 +238,13 @@ impl BulkEmailDestinationStatusBuilder {
     /// Consumes the builder and constructs a [`BulkEmailDestinationStatus`](crate::types::BulkEmailDestinationStatus).
     pub fn build(self) -> crate::types::BulkEmailDestinationStatus {
         crate::types::BulkEmailDestinationStatus {
-            status: self.status,
-            error: self.error,
-            message_id: self.message_id,
+            status: self.status
+            ,
+            error: self.error
+            ,
+            message_id: self.message_id
+            ,
         }
     }
 }
+

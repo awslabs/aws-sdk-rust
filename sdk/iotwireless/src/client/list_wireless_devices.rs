@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWirelessDevices`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`destination_name(impl Into<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::destination_name) / [`set_destination_name(Option<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::set_destination_name):<br>required: **false**<br><p>A filter to list only the wireless devices that use this destination.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`wireless_device_type(WirelessDeviceType)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::wireless_device_type) / [`set_wireless_device_type(Option<WirelessDeviceType>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::set_wireless_device_type):<br>required: **false**<br><p>A filter to list only the wireless devices that use this wireless device type.</p><br>
     ///   - [`fuota_task_id(impl Into<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::fuota_task_id) / [`set_fuota_task_id(Option<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::set_fuota_task_id):<br>required: **false**<br><p>The ID of a FUOTA task.</p><br>
     ///   - [`multicast_group_id(impl Into<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::multicast_group_id) / [`set_multicast_group_id(Option<String>)`](crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::set_multicast_group_id):<br>required: **false**<br><p>The ID of the multicast group.</p><br>
-    /// - On success, responds with [`ListWirelessDevicesOutput`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput) with field(s):
+                            /// - On success, responds with [`ListWirelessDevicesOutput`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`wireless_device_list(Option<Vec::<WirelessDeviceStatistics>>)`](crate::operation::list_wireless_devices::ListWirelessDevicesOutput::wireless_device_list): <p>The ID of the wireless device.</p>
-    /// - On failure, responds with [`SdkError<ListWirelessDevicesError>`](crate::operation::list_wireless_devices::ListWirelessDevicesError)
+                            /// - On failure, responds with [`SdkError<ListWirelessDevicesError>`](crate::operation::list_wireless_devices::ListWirelessDevicesError)
     pub fn list_wireless_devices(&self) -> crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder {
-        crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_wireless_devices::builders::ListWirelessDevicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

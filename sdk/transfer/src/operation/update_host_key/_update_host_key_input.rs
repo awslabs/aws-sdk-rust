@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateHostKeyInput {
+pub struct UpdateHostKeyInput  {
     /// <p>The identifier of the server that contains the host key that you are updating.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the host key that you are updating.</p>
@@ -10,17 +10,17 @@ pub struct UpdateHostKeyInput {
     /// <p>An updated description for the host key.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateHostKeyInput {
+impl  UpdateHostKeyInput  {
     /// <p>The identifier of the server that contains the host key that you are updating.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The identifier of the host key that you are updating.</p>
-    pub fn host_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_key_id(&self) -> ::std::option::Option<& str> {
         self.host_key_id.as_deref()
     }
     /// <p>An updated description for the host key.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateHostKeyInputBuilder {
     }
     /// <p>The identifier of the server that contains the host key that you are updating.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The identifier of the server that contains the host key that you are updating.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateHostKeyInputBuilder {
     }
     /// <p>The identifier of the host key that you are updating.</p>
     pub fn set_host_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_key_id = input;
-        self
+        self.host_key_id = input; self
     }
     /// <p>The identifier of the host key that you are updating.</p>
     pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl UpdateHostKeyInputBuilder {
     }
     /// <p>An updated description for the host key.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An updated description for the host key.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateHostKeyInput`](crate::operation::update_host_key::UpdateHostKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_host_key::UpdateHostKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_host_key::UpdateHostKeyInput {
-            server_id: self.server_id,
-            host_key_id: self.host_key_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_host_key::UpdateHostKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_host_key::UpdateHostKeyInput {
+                server_id: self.server_id
+                ,
+                host_key_id: self.host_key_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

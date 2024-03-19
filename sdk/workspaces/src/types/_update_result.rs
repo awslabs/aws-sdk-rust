@@ -5,19 +5,19 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResult {
+pub struct UpdateResult  {
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
     pub update_available: ::std::option::Option<bool>,
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateResult {
+impl  UpdateResult  {
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
     pub fn update_available(&self) -> ::std::option::Option<bool> {
         self.update_available
     }
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateResultBuilder {
     }
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
     pub fn set_update_available(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.update_available = input;
-        self
+        self.update_available = input; self
     }
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
     pub fn get_update_available(&self) -> &::std::option::Option<bool> {
@@ -57,8 +56,7 @@ impl UpdateResultBuilder {
     }
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl UpdateResultBuilder {
     /// Consumes the builder and constructs a [`UpdateResult`](crate::types::UpdateResult).
     pub fn build(self) -> crate::types::UpdateResult {
         crate::types::UpdateResult {
-            update_available: self.update_available,
-            description: self.description,
+            update_available: self.update_available
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

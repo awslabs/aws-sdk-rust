@@ -14,7 +14,7 @@
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignalExternalWorkflowExecutionDecisionAttributes {
+pub struct SignalExternalWorkflowExecutionDecisionAttributes  {
     /// <p>The <code>workflowId</code> of the workflow execution to be signaled.</p>
     pub workflow_id: ::std::string::String,
     /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
@@ -26,27 +26,25 @@ pub struct SignalExternalWorkflowExecutionDecisionAttributes {
     /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
     pub control: ::std::option::Option<::std::string::String>,
 }
-impl SignalExternalWorkflowExecutionDecisionAttributes {
+impl  SignalExternalWorkflowExecutionDecisionAttributes  {
     /// <p>The <code>workflowId</code> of the workflow execution to be signaled.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> & str {
+        use std::ops::Deref; self.workflow_id.deref()
     }
     /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
-    pub fn signal_name(&self) -> &str {
-        use std::ops::Deref;
-        self.signal_name.deref()
+    pub fn signal_name(&self) -> & str {
+        use std::ops::Deref; self.signal_name.deref()
     }
     /// <p>The input data to be provided with the signal. The target workflow execution uses the signal name and input data to process the signal.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
-    pub fn control(&self) -> ::std::option::Option<&str> {
+    pub fn control(&self) -> ::std::option::Option<& str> {
         self.control.as_deref()
     }
 }
@@ -76,8 +74,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The <code>workflowId</code> of the workflow execution to be signaled.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The <code>workflowId</code> of the workflow execution to be signaled.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +87,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +101,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
     pub fn set_signal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signal_name = input;
-        self
+        self.signal_name = input; self
     }
     /// <p>The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
     pub fn get_signal_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +114,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The input data to be provided with the signal. The target workflow execution uses the signal name and input data to process the signal.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The input data to be provided with the signal. The target workflow execution uses the signal name and input data to process the signal.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +127,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control = input;
-        self
+        self.control = input; self
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
     pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,26 +137,27 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_id`](crate::types::builders::SignalExternalWorkflowExecutionDecisionAttributesBuilder::workflow_id)
     /// - [`signal_name`](crate::types::builders::SignalExternalWorkflowExecutionDecisionAttributesBuilder::signal_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::SignalExternalWorkflowExecutionDecisionAttributes, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::types::SignalExternalWorkflowExecutionDecisionAttributes {
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building SignalExternalWorkflowExecutionDecisionAttributes",
-                )
-            })?,
-            run_id: self.run_id,
-            signal_name: self.signal_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signal_name",
-                    "signal_name was not specified but it is required when building SignalExternalWorkflowExecutionDecisionAttributes",
-                )
-            })?,
-            input: self.input,
-            control: self.control,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::SignalExternalWorkflowExecutionDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::SignalExternalWorkflowExecutionDecisionAttributes {
+                workflow_id: self.workflow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_id", "workflow_id was not specified but it is required when building SignalExternalWorkflowExecutionDecisionAttributes")
+                    )?
+                ,
+                run_id: self.run_id
+                ,
+                signal_name: self.signal_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signal_name", "signal_name was not specified but it is required when building SignalExternalWorkflowExecutionDecisionAttributes")
+                    )?
+                ,
+                input: self.input
+                ,
+                control: self.control
+                ,
+            }
+        )
     }
 }
+

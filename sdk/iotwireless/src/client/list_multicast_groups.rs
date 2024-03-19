@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMulticastGroups`](crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
-    /// - On success, responds with [`ListMulticastGroupsOutput`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListMulticastGroupsOutput`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`multicast_group_list(Option<Vec::<MulticastGroup>>)`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput::multicast_group_list): <p>List of multicast groups.</p>
-    /// - On failure, responds with [`SdkError<ListMulticastGroupsError>`](crate::operation::list_multicast_groups::ListMulticastGroupsError)
+                            /// - On failure, responds with [`SdkError<ListMulticastGroupsError>`](crate::operation::list_multicast_groups::ListMulticastGroupsError)
     pub fn list_multicast_groups(&self) -> crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder {
-        crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_multicast_groups::builders::ListMulticastGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

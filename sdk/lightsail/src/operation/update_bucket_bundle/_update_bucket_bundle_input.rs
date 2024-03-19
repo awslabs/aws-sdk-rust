@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBucketBundleInput {
+pub struct UpdateBucketBundleInput  {
     /// <p>The name of the bucket for which to update the bundle.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the new bundle to apply to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateBucketBundleInput {
+impl  UpdateBucketBundleInput  {
     /// <p>The name of the bucket for which to update the bundle.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The ID of the new bundle to apply to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateBucketBundleInputBuilder {
     }
     /// <p>The name of the bucket for which to update the bundle.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the bucket for which to update the bundle.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +59,7 @@ impl UpdateBucketBundleInputBuilder {
     /// <p>The ID of the new bundle to apply to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The ID of the new bundle to apply to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
@@ -69,13 +67,15 @@ impl UpdateBucketBundleInputBuilder {
         &self.bundle_id
     }
     /// Consumes the builder and constructs a [`UpdateBucketBundleInput`](crate::operation::update_bucket_bundle::UpdateBucketBundleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_bucket_bundle::UpdateBucketBundleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_bucket_bundle::UpdateBucketBundleInput {
-            bucket_name: self.bucket_name,
-            bundle_id: self.bundle_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bucket_bundle::UpdateBucketBundleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_bucket_bundle::UpdateBucketBundleInput {
+                bucket_name: self.bucket_name
+                ,
+                bundle_id: self.bundle_id
+                ,
+            }
+        )
     }
 }
+

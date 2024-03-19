@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetClusterParameterGroupInput {
+pub struct ResetClusterParameterGroupInput  {
     /// <p>The name of the cluster parameter group to be reset.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values.</p>
@@ -11,11 +11,11 @@ pub struct ResetClusterParameterGroupInput {
     pub reset_all_parameters: ::std::option::Option<bool>,
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied.</p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
 }
-impl ResetClusterParameterGroupInput {
+impl  ResetClusterParameterGroupInput  {
     /// <p>The name of the cluster parameter group to be reset.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values.</p>
@@ -25,10 +25,11 @@ impl ResetClusterParameterGroupInput {
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied.</p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResetClusterParameterGroupInput {
@@ -44,7 +45,7 @@ impl ResetClusterParameterGroupInput {
 pub struct ResetClusterParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) reset_all_parameters: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
 }
 impl ResetClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group to be reset.</p>
@@ -55,8 +56,7 @@ impl ResetClusterParameterGroupInputBuilder {
     }
     /// <p>The name of the cluster parameter group to be reset.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the cluster parameter group to be reset.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ResetClusterParameterGroupInputBuilder {
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values.</p>
     /// <p>Default: <code>true</code></p>
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reset_all_parameters = input;
-        self
+        self.reset_all_parameters = input; self
     }
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values.</p>
     /// <p>Default: <code>true</code></p>
@@ -87,32 +86,32 @@ impl ResetClusterParameterGroupInputBuilder {
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied.</p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied.</p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ResetClusterParameterGroupInput`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput {
-            parameter_group_name: self.parameter_group_name,
-            reset_all_parameters: self.reset_all_parameters,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput {
+                parameter_group_name: self.parameter_group_name
+                ,
+                reset_all_parameters: self.reset_all_parameters
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

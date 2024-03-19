@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBotReplicasInput {
+pub struct ListBotReplicasInput  {
     /// <p>The request for the unique bot IDs in the list of replicated bots.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
 }
-impl ListBotReplicasInput {
+impl  ListBotReplicasInput  {
     /// <p>The request for the unique bot IDs in the list of replicated bots.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl ListBotReplicasInputBuilder {
     }
     /// <p>The request for the unique bot IDs in the list of replicated bots.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The request for the unique bot IDs in the list of replicated bots.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_id
     }
     /// Consumes the builder and constructs a [`ListBotReplicasInput`](crate::operation::list_bot_replicas::ListBotReplicasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_bot_replicas::ListBotReplicasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_bot_replicas::ListBotReplicasInput { bot_id: self.bot_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bot_replicas::ListBotReplicasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_bot_replicas::ListBotReplicasInput {
+                bot_id: self.bot_id
+                ,
+            }
+        )
     }
 }
+

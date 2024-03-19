@@ -3,28 +3,26 @@
 /// <p>The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FrameMetric {
+pub struct FrameMetric  {
     /// <p>Name of the method common across the multiple occurrences of a frame in an application profile.</p>
     pub frame_name: ::std::string::String,
     /// <p>A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile.</p>
     pub r#type: crate::types::MetricType,
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub thread_states: ::std::vec::Vec<::std::string::String>,
+    pub thread_states: ::std::vec::Vec::<::std::string::String>,
 }
-impl FrameMetric {
+impl  FrameMetric  {
     /// <p>Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    pub fn frame_name(&self) -> &str {
-        use std::ops::Deref;
-        self.frame_name.deref()
+    pub fn frame_name(&self) -> & str {
+        use std::ops::Deref; self.frame_name.deref()
     }
     /// <p>A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile.</p>
-    pub fn r#type(&self) -> &crate::types::MetricType {
+    pub fn r#type(&self) -> & crate::types::MetricType {
         &self.r#type
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn thread_states(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.thread_states.deref()
+    pub fn thread_states(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.thread_states.deref()
     }
 }
 impl FrameMetric {
@@ -40,7 +38,7 @@ impl FrameMetric {
 pub struct FrameMetricBuilder {
     pub(crate) frame_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MetricType>,
-    pub(crate) thread_states: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) thread_states: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FrameMetricBuilder {
     /// <p>Name of the method common across the multiple occurrences of a frame in an application profile.</p>
@@ -51,8 +49,7 @@ impl FrameMetricBuilder {
     }
     /// <p>Name of the method common across the multiple occurrences of a frame in an application profile.</p>
     pub fn set_frame_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.frame_name = input;
-        self
+        self.frame_name = input; self
     }
     /// <p>Name of the method common across the multiple occurrences of a frame in an application profile.</p>
     pub fn get_frame_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl FrameMetricBuilder {
     }
     /// <p>A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MetricType> {
@@ -80,17 +76,16 @@ impl FrameMetricBuilder {
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
     pub fn thread_states(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thread_states.unwrap_or_default();
-        v.push(input.into());
-        self.thread_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.thread_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn set_thread_states(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.thread_states = input;
-        self
+    pub fn set_thread_states(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.thread_states = input; self
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn get_thread_states(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thread_states(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.thread_states
     }
     /// Consumes the builder and constructs a [`FrameMetric`](crate::types::FrameMetric).
@@ -99,25 +94,25 @@ impl FrameMetricBuilder {
     /// - [`r#type`](crate::types::builders::FrameMetricBuilder::r#type)
     /// - [`thread_states`](crate::types::builders::FrameMetricBuilder::thread_states)
     pub fn build(self) -> ::std::result::Result<crate::types::FrameMetric, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FrameMetric {
-            frame_name: self.frame_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "frame_name",
-                    "frame_name was not specified but it is required when building FrameMetric",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FrameMetric",
-                )
-            })?,
-            thread_states: self.thread_states.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "thread_states",
-                    "thread_states was not specified but it is required when building FrameMetric",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FrameMetric {
+                frame_name: self.frame_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("frame_name", "frame_name was not specified but it is required when building FrameMetric")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FrameMetric")
+                    )?
+                ,
+                thread_states: self.thread_states
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("thread_states", "thread_states was not specified but it is required when building FrameMetric")
+                    )?
+                ,
+            }
+        )
     }
 }
+

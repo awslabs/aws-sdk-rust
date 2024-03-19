@@ -3,7 +3,7 @@
 /// <p>An object for you to specify your overrides for the recording mode.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordingModeOverride {
+pub struct RecordingModeOverride  {
     /// <p>A description that you provide for the override.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
@@ -17,7 +17,7 @@ pub struct RecordingModeOverride {
     /// <p><code>AWS::Config::ConfigurationRecorder</code></p></li>
     /// </ul>
     /// </important>
-    pub resource_types: ::std::vec::Vec<crate::types::ResourceType>,
+    pub resource_types: ::std::vec::Vec::<crate::types::ResourceType>,
     /// <p>The recording frequency that will be applied to all the resource types specified in the override.</p>
     /// <ul>
     /// <li>
@@ -29,9 +29,9 @@ pub struct RecordingModeOverride {
     /// </note>
     pub recording_frequency: crate::types::RecordingFrequency,
 }
-impl RecordingModeOverride {
+impl  RecordingModeOverride  {
     /// <p>A description that you provide for the override.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
@@ -45,9 +45,8 @@ impl RecordingModeOverride {
     /// <p><code>AWS::Config::ConfigurationRecorder</code></p></li>
     /// </ul>
     /// </important>
-    pub fn resource_types(&self) -> &[crate::types::ResourceType] {
-        use std::ops::Deref;
-        self.resource_types.deref()
+    pub fn resource_types(&self) -> & [crate::types::ResourceType] {
+        use std::ops::Deref; self.resource_types.deref()
     }
     /// <p>The recording frequency that will be applied to all the resource types specified in the override.</p>
     /// <ul>
@@ -58,7 +57,7 @@ impl RecordingModeOverride {
     /// </ul><note>
     /// <p>Firewall Manager depends on continuous recording to monitor your resources. If you are using Firewall Manager, it is recommended that you set the recording frequency to Continuous.</p>
     /// </note>
-    pub fn recording_frequency(&self) -> &crate::types::RecordingFrequency {
+    pub fn recording_frequency(&self) -> & crate::types::RecordingFrequency {
         &self.recording_frequency
     }
 }
@@ -74,7 +73,7 @@ impl RecordingModeOverride {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordingModeOverrideBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceType>>,
     pub(crate) recording_frequency: ::std::option::Option<crate::types::RecordingFrequency>,
 }
 impl RecordingModeOverrideBuilder {
@@ -85,8 +84,7 @@ impl RecordingModeOverrideBuilder {
     }
     /// <p>A description that you provide for the override.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description that you provide for the override.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,9 +107,9 @@ impl RecordingModeOverrideBuilder {
     /// </important>
     pub fn resource_types(mut self, input: crate::types::ResourceType) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input);
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
     /// <p>Daily recording is not supported for the following resource types:</p>
@@ -124,9 +122,8 @@ impl RecordingModeOverrideBuilder {
     /// <p><code>AWS::Config::ConfigurationRecorder</code></p></li>
     /// </ul>
     /// </important>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceType>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>A comma-separated list that specifies which resource types Config includes in the override.</p><important>
     /// <p>Daily recording is not supported for the following resource types:</p>
@@ -139,7 +136,7 @@ impl RecordingModeOverrideBuilder {
     /// <p><code>AWS::Config::ConfigurationRecorder</code></p></li>
     /// </ul>
     /// </important>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceType>> {
         &self.resource_types
     }
     /// <p>The recording frequency that will be applied to all the resource types specified in the override.</p>
@@ -166,8 +163,7 @@ impl RecordingModeOverrideBuilder {
     /// <p>Firewall Manager depends on continuous recording to monitor your resources. If you are using Firewall Manager, it is recommended that you set the recording frequency to Continuous.</p>
     /// </note>
     pub fn set_recording_frequency(mut self, input: ::std::option::Option<crate::types::RecordingFrequency>) -> Self {
-        self.recording_frequency = input;
-        self
+        self.recording_frequency = input; self
     }
     /// <p>The recording frequency that will be applied to all the resource types specified in the override.</p>
     /// <ul>
@@ -186,20 +182,22 @@ impl RecordingModeOverrideBuilder {
     /// - [`resource_types`](crate::types::builders::RecordingModeOverrideBuilder::resource_types)
     /// - [`recording_frequency`](crate::types::builders::RecordingModeOverrideBuilder::recording_frequency)
     pub fn build(self) -> ::std::result::Result<crate::types::RecordingModeOverride, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecordingModeOverride {
-            description: self.description,
-            resource_types: self.resource_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_types",
-                    "resource_types was not specified but it is required when building RecordingModeOverride",
-                )
-            })?,
-            recording_frequency: self.recording_frequency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recording_frequency",
-                    "recording_frequency was not specified but it is required when building RecordingModeOverride",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecordingModeOverride {
+                description: self.description
+                ,
+                resource_types: self.resource_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_types", "resource_types was not specified but it is required when building RecordingModeOverride")
+                    )?
+                ,
+                recording_frequency: self.recording_frequency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recording_frequency", "recording_frequency was not specified but it is required when building RecordingModeOverride")
+                    )?
+                ,
+            }
+        )
     }
 }
+

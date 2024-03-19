@@ -3,7 +3,7 @@
 /// <p>Contains information pertaining to the action group or knowledge base that is being invoked.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvocationInput {
+pub struct InvocationInput  {
     /// <p>The unique identifier of the trace.</p>
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the agent is invoking an action group or a knowledge base.</p>
@@ -13,25 +13,25 @@ pub struct InvocationInput {
     /// <p>Contains details about the knowledge base to look up and the query to be made.</p>
     pub knowledge_base_lookup_input: ::std::option::Option<crate::types::KnowledgeBaseLookupInput>,
 }
-impl InvocationInput {
+impl  InvocationInput  {
     /// <p>The unique identifier of the trace.</p>
-    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+    pub fn trace_id(&self) -> ::std::option::Option<& str> {
         self.trace_id.as_deref()
     }
     /// <p>Specifies whether the agent is invoking an action group or a knowledge base.</p>
-    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::InvocationType> {
+    pub fn invocation_type(&self) -> ::std::option::Option<& crate::types::InvocationType> {
         self.invocation_type.as_ref()
     }
     /// <p>Contains information about the action group to be invoked.</p>
-    pub fn action_group_invocation_input(&self) -> ::std::option::Option<&crate::types::ActionGroupInvocationInput> {
+    pub fn action_group_invocation_input(&self) -> ::std::option::Option<& crate::types::ActionGroupInvocationInput> {
         self.action_group_invocation_input.as_ref()
     }
     /// <p>Contains details about the knowledge base to look up and the query to be made.</p>
-    pub fn knowledge_base_lookup_input(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseLookupInput> {
+    pub fn knowledge_base_lookup_input(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseLookupInput> {
         self.knowledge_base_lookup_input.as_ref()
     }
 }
-impl ::std::fmt::Debug for InvocationInput {
+impl  ::std::fmt::Debug for InvocationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvocationInput");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
@@ -65,8 +65,7 @@ impl InvocationInputBuilder {
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_id = input;
-        self
+        self.trace_id = input; self
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl InvocationInputBuilder {
     }
     /// <p>Specifies whether the agent is invoking an action group or a knowledge base.</p>
     pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::InvocationType>) -> Self {
-        self.invocation_type = input;
-        self
+        self.invocation_type = input; self
     }
     /// <p>Specifies whether the agent is invoking an action group or a knowledge base.</p>
     pub fn get_invocation_type(&self) -> &::std::option::Option<crate::types::InvocationType> {
@@ -93,8 +91,7 @@ impl InvocationInputBuilder {
     }
     /// <p>Contains information about the action group to be invoked.</p>
     pub fn set_action_group_invocation_input(mut self, input: ::std::option::Option<crate::types::ActionGroupInvocationInput>) -> Self {
-        self.action_group_invocation_input = input;
-        self
+        self.action_group_invocation_input = input; self
     }
     /// <p>Contains information about the action group to be invoked.</p>
     pub fn get_action_group_invocation_input(&self) -> &::std::option::Option<crate::types::ActionGroupInvocationInput> {
@@ -107,8 +104,7 @@ impl InvocationInputBuilder {
     }
     /// <p>Contains details about the knowledge base to look up and the query to be made.</p>
     pub fn set_knowledge_base_lookup_input(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseLookupInput>) -> Self {
-        self.knowledge_base_lookup_input = input;
-        self
+        self.knowledge_base_lookup_input = input; self
     }
     /// <p>Contains details about the knowledge base to look up and the query to be made.</p>
     pub fn get_knowledge_base_lookup_input(&self) -> &::std::option::Option<crate::types::KnowledgeBaseLookupInput> {
@@ -117,10 +113,14 @@ impl InvocationInputBuilder {
     /// Consumes the builder and constructs a [`InvocationInput`](crate::types::InvocationInput).
     pub fn build(self) -> crate::types::InvocationInput {
         crate::types::InvocationInput {
-            trace_id: self.trace_id,
-            invocation_type: self.invocation_type,
-            action_group_invocation_input: self.action_group_invocation_input,
-            knowledge_base_lookup_input: self.knowledge_base_lookup_input,
+            trace_id: self.trace_id
+            ,
+            invocation_type: self.invocation_type
+            ,
+            action_group_invocation_input: self.action_group_invocation_input
+            ,
+            knowledge_base_lookup_input: self.knowledge_base_lookup_input
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for InvocationInputBuilder {
         formatter.finish()
     }
 }
+

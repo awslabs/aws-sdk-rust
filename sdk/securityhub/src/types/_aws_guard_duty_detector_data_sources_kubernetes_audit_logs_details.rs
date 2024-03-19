@@ -3,13 +3,13 @@
 /// <p>An object that contains information on the status of Kubernetes audit logs as a data source for the detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails {
+pub struct AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails  {
     /// <p>Describes whether Kubernetes audit logs are activated as a data source for the detector.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails {
+impl  AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails  {
     /// <p>Describes whether Kubernetes audit logs are activated as a data source for the detector.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetailsBuilder {
     }
     /// <p>Describes whether Kubernetes audit logs are activated as a data source for the detector.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes whether Kubernetes audit logs are activated as a data source for the detector.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails {
-        crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails { status: self.status }
+        crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails {
+            status: self.status
+            ,
+        }
     }
 }
+

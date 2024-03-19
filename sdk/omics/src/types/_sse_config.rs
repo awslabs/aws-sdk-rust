@@ -3,19 +3,19 @@
 /// <p>Server-side encryption (SSE) settings for a store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SseConfig {
+pub struct SseConfig  {
     /// <p>The encryption type.</p>
     pub r#type: crate::types::EncryptionType,
     /// <p>An encryption key ARN.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
-impl SseConfig {
+impl  SseConfig  {
     /// <p>The encryption type.</p>
-    pub fn r#type(&self) -> &crate::types::EncryptionType {
+    pub fn r#type(&self) -> & crate::types::EncryptionType {
         &self.r#type
     }
     /// <p>An encryption key ARN.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<& str> {
         self.key_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl SseConfigBuilder {
     }
     /// <p>The encryption type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The encryption type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
@@ -56,8 +55,7 @@ impl SseConfigBuilder {
     }
     /// <p>An encryption key ARN.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>An encryption key ARN.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl SseConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::SseConfigBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SseConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SseConfig {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SseConfig",
-                )
-            })?,
-            key_arn: self.key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SseConfig {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SseConfig")
+                    )?
+                ,
+                key_arn: self.key_arn
+                ,
+            }
+        )
     }
 }
+

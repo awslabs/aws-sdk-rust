@@ -3,15 +3,14 @@
 /// <p>The version of a bot used for a bot locale.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotVersionLocaleDetails {
+pub struct BotVersionLocaleDetails  {
     /// <p>The version of a bot used for a bot locale.</p>
     pub source_bot_version: ::std::string::String,
 }
-impl BotVersionLocaleDetails {
+impl  BotVersionLocaleDetails  {
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn source_bot_version(&self) -> &str {
-        use std::ops::Deref;
-        self.source_bot_version.deref()
+    pub fn source_bot_version(&self) -> & str {
+        use std::ops::Deref; self.source_bot_version.deref()
     }
 }
 impl BotVersionLocaleDetails {
@@ -36,8 +35,7 @@ impl BotVersionLocaleDetailsBuilder {
     }
     /// <p>The version of a bot used for a bot locale.</p>
     pub fn set_source_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_bot_version = input;
-        self
+        self.source_bot_version = input; self
     }
     /// <p>The version of a bot used for a bot locale.</p>
     pub fn get_source_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl BotVersionLocaleDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_bot_version`](crate::types::builders::BotVersionLocaleDetailsBuilder::source_bot_version)
     pub fn build(self) -> ::std::result::Result<crate::types::BotVersionLocaleDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotVersionLocaleDetails {
-            source_bot_version: self.source_bot_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_bot_version",
-                    "source_bot_version was not specified but it is required when building BotVersionLocaleDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotVersionLocaleDetails {
+                source_bot_version: self.source_bot_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_bot_version", "source_bot_version was not specified but it is required when building BotVersionLocaleDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p><code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Condition {
+pub struct Condition  {
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
     pub r#type: ::std::string::String,
     /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
@@ -12,21 +12,18 @@ pub struct Condition {
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
     pub value: ::std::string::String,
 }
-impl Condition {
+impl  Condition  {
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Condition {
@@ -53,8 +50,7 @@ impl ConditionBuilder {
     }
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +64,7 @@ impl ConditionBuilder {
     }
     /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +78,7 @@ impl ConditionBuilder {
     }
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,25 +90,25 @@ impl ConditionBuilder {
     /// - [`key`](crate::types::builders::ConditionBuilder::key)
     /// - [`value`](crate::types::builders::ConditionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Condition {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Condition",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building Condition",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Condition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Condition {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Condition")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Condition")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Condition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

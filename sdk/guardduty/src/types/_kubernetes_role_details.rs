@@ -3,7 +3,7 @@
 /// <p>Information about the Kubernetes role name and role type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesRoleDetails {
+pub struct KubernetesRoleDetails  {
     /// <p>The kind of role. For this API, the value of <code>kind</code> will be <code>Role</code>.</p>
     pub kind: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Kubernetes role.</p>
@@ -11,17 +11,17 @@ pub struct KubernetesRoleDetails {
     /// <p>The unique identifier of the Kubernetes role name.</p>
     pub uid: ::std::option::Option<::std::string::String>,
 }
-impl KubernetesRoleDetails {
+impl  KubernetesRoleDetails  {
     /// <p>The kind of role. For this API, the value of <code>kind</code> will be <code>Role</code>.</p>
-    pub fn kind(&self) -> ::std::option::Option<&str> {
+    pub fn kind(&self) -> ::std::option::Option<& str> {
         self.kind.as_deref()
     }
     /// <p>The name of the Kubernetes role.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier of the Kubernetes role name.</p>
-    pub fn uid(&self) -> ::std::option::Option<&str> {
+    pub fn uid(&self) -> ::std::option::Option<& str> {
         self.uid.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl KubernetesRoleDetailsBuilder {
     }
     /// <p>The kind of role. For this API, the value of <code>kind</code> will be <code>Role</code>.</p>
     pub fn set_kind(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kind = input;
-        self
+        self.kind = input; self
     }
     /// <p>The kind of role. For this API, the value of <code>kind</code> will be <code>Role</code>.</p>
     pub fn get_kind(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl KubernetesRoleDetailsBuilder {
     }
     /// <p>The name of the Kubernetes role.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Kubernetes role.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl KubernetesRoleDetailsBuilder {
     }
     /// <p>The unique identifier of the Kubernetes role name.</p>
     pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
     }
     /// <p>The unique identifier of the Kubernetes role name.</p>
     pub fn get_uid(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl KubernetesRoleDetailsBuilder {
     /// Consumes the builder and constructs a [`KubernetesRoleDetails`](crate::types::KubernetesRoleDetails).
     pub fn build(self) -> crate::types::KubernetesRoleDetails {
         crate::types::KubernetesRoleDetails {
-            kind: self.kind,
-            name: self.name,
-            uid: self.uid,
+            kind: self.kind
+            ,
+            name: self.name
+            ,
+            uid: self.uid
+            ,
         }
     }
 }
+

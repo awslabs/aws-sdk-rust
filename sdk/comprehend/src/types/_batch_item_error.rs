@@ -3,7 +3,7 @@
 /// <p>Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchItemError {
+pub struct BatchItemError  {
     /// <p>The zero-based index of the document in the input list.</p>
     pub index: ::std::option::Option<i32>,
     /// <p>The numeric error code of the error.</p>
@@ -11,17 +11,17 @@ pub struct BatchItemError {
     /// <p>A text description of the error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchItemError {
+impl  BatchItemError  {
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn index(&self) -> ::std::option::Option<i32> {
         self.index
     }
     /// <p>The numeric error code of the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A text description of the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl BatchItemErrorBuilder {
     }
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn get_index(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl BatchItemErrorBuilder {
     }
     /// <p>The numeric error code of the error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The numeric error code of the error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl BatchItemErrorBuilder {
     }
     /// <p>A text description of the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A text description of the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl BatchItemErrorBuilder {
     /// Consumes the builder and constructs a [`BatchItemError`](crate::types::BatchItemError).
     pub fn build(self) -> crate::types::BatchItemError {
         crate::types::BatchItemError {
-            index: self.index,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            index: self.index
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

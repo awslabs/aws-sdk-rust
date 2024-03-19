@@ -4,7 +4,7 @@
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSolFunctionPackageInfo {
+pub struct ListSolFunctionPackageInfo  {
     /// <p>ID of the function package.</p>
     pub id: ::std::string::String,
     /// <p>Function package ARN.</p>
@@ -26,47 +26,45 @@ pub struct ListSolFunctionPackageInfo {
     /// <p>The metadata of the function package.</p>
     pub metadata: ::std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
 }
-impl ListSolFunctionPackageInfo {
+impl  ListSolFunctionPackageInfo  {
     /// <p>ID of the function package.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Function package ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Onboarding state of the function package.</p>
-    pub fn onboarding_state(&self) -> &crate::types::OnboardingState {
+    pub fn onboarding_state(&self) -> & crate::types::OnboardingState {
         &self.onboarding_state
     }
     /// <p>Operational state of the function package.</p>
-    pub fn operational_state(&self) -> &crate::types::OperationalState {
+    pub fn operational_state(&self) -> & crate::types::OperationalState {
         &self.operational_state
     }
     /// <p>Usage state of the function package.</p>
-    pub fn usage_state(&self) -> &crate::types::UsageState {
+    pub fn usage_state(&self) -> & crate::types::UsageState {
         &self.usage_state
     }
     /// <p>Identifies the function package and the function package descriptor.</p>
-    pub fn vnfd_id(&self) -> ::std::option::Option<&str> {
+    pub fn vnfd_id(&self) -> ::std::option::Option<& str> {
         self.vnfd_id.as_deref()
     }
     /// <p>Provider of the function package and the function package descriptor.</p>
-    pub fn vnf_provider(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_provider(&self) -> ::std::option::Option<& str> {
         self.vnf_provider.as_deref()
     }
     /// <p>The product name for the network function.</p>
-    pub fn vnf_product_name(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_product_name(&self) -> ::std::option::Option<& str> {
         self.vnf_product_name.as_deref()
     }
     /// <p>Identifies the version of the function package descriptor.</p>
-    pub fn vnfd_version(&self) -> ::std::option::Option<&str> {
+    pub fn vnfd_version(&self) -> ::std::option::Option<& str> {
         self.vnfd_version.as_deref()
     }
     /// <p>The metadata of the function package.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ListSolFunctionPackageMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ListSolFunctionPackageMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -101,8 +99,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>ID of the function package.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>ID of the function package.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +113,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>Function package ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Function package ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>Onboarding state of the function package.</p>
     pub fn set_onboarding_state(mut self, input: ::std::option::Option<crate::types::OnboardingState>) -> Self {
-        self.onboarding_state = input;
-        self
+        self.onboarding_state = input; self
     }
     /// <p>Onboarding state of the function package.</p>
     pub fn get_onboarding_state(&self) -> &::std::option::Option<crate::types::OnboardingState> {
@@ -146,8 +141,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>Operational state of the function package.</p>
     pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
-        self.operational_state = input;
-        self
+        self.operational_state = input; self
     }
     /// <p>Operational state of the function package.</p>
     pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
@@ -161,8 +155,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>Usage state of the function package.</p>
     pub fn set_usage_state(mut self, input: ::std::option::Option<crate::types::UsageState>) -> Self {
-        self.usage_state = input;
-        self
+        self.usage_state = input; self
     }
     /// <p>Usage state of the function package.</p>
     pub fn get_usage_state(&self) -> &::std::option::Option<crate::types::UsageState> {
@@ -175,8 +168,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>Identifies the function package and the function package descriptor.</p>
     pub fn set_vnfd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnfd_id = input;
-        self
+        self.vnfd_id = input; self
     }
     /// <p>Identifies the function package and the function package descriptor.</p>
     pub fn get_vnfd_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +181,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>Provider of the function package and the function package descriptor.</p>
     pub fn set_vnf_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_provider = input;
-        self
+        self.vnf_provider = input; self
     }
     /// <p>Provider of the function package and the function package descriptor.</p>
     pub fn get_vnf_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +194,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>The product name for the network function.</p>
     pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_product_name = input;
-        self
+        self.vnf_product_name = input; self
     }
     /// <p>The product name for the network function.</p>
     pub fn get_vnf_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +207,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>Identifies the version of the function package descriptor.</p>
     pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnfd_version = input;
-        self
+        self.vnfd_version = input; self
     }
     /// <p>Identifies the version of the function package descriptor.</p>
     pub fn get_vnfd_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +220,7 @@ impl ListSolFunctionPackageInfoBuilder {
     }
     /// <p>The metadata of the function package.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ListSolFunctionPackageMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of the function package.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ListSolFunctionPackageMetadata> {
@@ -246,42 +234,45 @@ impl ListSolFunctionPackageInfoBuilder {
     /// - [`operational_state`](crate::types::builders::ListSolFunctionPackageInfoBuilder::operational_state)
     /// - [`usage_state`](crate::types::builders::ListSolFunctionPackageInfoBuilder::usage_state)
     pub fn build(self) -> ::std::result::Result<crate::types::ListSolFunctionPackageInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListSolFunctionPackageInfo {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ListSolFunctionPackageInfo",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ListSolFunctionPackageInfo",
-                )
-            })?,
-            onboarding_state: self.onboarding_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "onboarding_state",
-                    "onboarding_state was not specified but it is required when building ListSolFunctionPackageInfo",
-                )
-            })?,
-            operational_state: self.operational_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operational_state",
-                    "operational_state was not specified but it is required when building ListSolFunctionPackageInfo",
-                )
-            })?,
-            usage_state: self.usage_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "usage_state",
-                    "usage_state was not specified but it is required when building ListSolFunctionPackageInfo",
-                )
-            })?,
-            vnfd_id: self.vnfd_id,
-            vnf_provider: self.vnf_provider,
-            vnf_product_name: self.vnf_product_name,
-            vnfd_version: self.vnfd_version,
-            metadata: self.metadata,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListSolFunctionPackageInfo {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ListSolFunctionPackageInfo")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ListSolFunctionPackageInfo")
+                    )?
+                ,
+                onboarding_state: self.onboarding_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("onboarding_state", "onboarding_state was not specified but it is required when building ListSolFunctionPackageInfo")
+                    )?
+                ,
+                operational_state: self.operational_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operational_state", "operational_state was not specified but it is required when building ListSolFunctionPackageInfo")
+                    )?
+                ,
+                usage_state: self.usage_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("usage_state", "usage_state was not specified but it is required when building ListSolFunctionPackageInfo")
+                    )?
+                ,
+                vnfd_id: self.vnfd_id
+                ,
+                vnf_provider: self.vnf_provider
+                ,
+                vnf_product_name: self.vnf_product_name
+                ,
+                vnfd_version: self.vnfd_version
+                ,
+                metadata: self.metadata
+                ,
+            }
+        )
     }
 }
+

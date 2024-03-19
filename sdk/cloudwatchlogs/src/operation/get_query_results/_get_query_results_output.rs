@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryResultsOutput {
+pub struct GetQueryResultsOutput  {
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
+    pub results: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::ResultField>>>,
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
     pub statistics: ::std::option::Option<crate::types::QueryStatistics>,
     /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
@@ -15,33 +15,34 @@ pub struct GetQueryResultsOutput {
     pub encryption_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetQueryResultsOutput {
+impl  GetQueryResultsOutput  {
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
-    pub fn results(&self) -> &[::std::vec::Vec<crate::types::ResultField>] {
-        self.results.as_deref().unwrap_or_default()
+    pub fn results(&self) -> & [::std::vec::Vec::<crate::types::ResultField>] {
+        self.results.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&crate::types::QueryStatistics> {
+    pub fn statistics(&self) -> ::std::option::Option<& crate::types::QueryStatistics> {
         self.statistics.as_ref()
     }
     /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
     /// <p>Queries time out after 60 minutes of runtime. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QueryStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::QueryStatus> {
         self.status.as_ref()
     }
     /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
-    pub fn encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key(&self) -> ::std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetQueryResultsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetQueryResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
     pub fn builder() -> crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder {
@@ -53,7 +54,7 @@ impl GetQueryResultsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryResultsOutputBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::ResultField>>>,
     pub(crate) statistics: ::std::option::Option<crate::types::QueryStatistics>,
     pub(crate) status: ::std::option::Option<crate::types::QueryStatus>,
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
@@ -66,21 +67,20 @@ impl GetQueryResultsOutputBuilder {
     ///
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    pub fn results(mut self, input: ::std::vec::Vec<crate::types::ResultField>) -> Self {
+    pub fn results(mut self, input: ::std::vec::Vec::<crate::types::ResultField>) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::ResultField>>>) -> Self {
+        self.results = input; self
     }
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::ResultField>>> {
         &self.results
     }
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
@@ -90,8 +90,7 @@ impl GetQueryResultsOutputBuilder {
     }
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
     pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::QueryStatistics>) -> Self {
-        self.statistics = input;
-        self
+        self.statistics = input; self
     }
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
     pub fn get_statistics(&self) -> &::std::option::Option<crate::types::QueryStatistics> {
@@ -106,8 +105,7 @@ impl GetQueryResultsOutputBuilder {
     /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
     /// <p>Queries time out after 60 minutes of runtime. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
     /// <p>Queries time out after 60 minutes of runtime. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
@@ -121,30 +119,34 @@ impl GetQueryResultsOutputBuilder {
     }
     /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key = input;
-        self
+        self.encryption_key = input; self
     }
     /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
     pub fn build(self) -> crate::operation::get_query_results::GetQueryResultsOutput {
         crate::operation::get_query_results::GetQueryResultsOutput {
-            results: self.results,
-            statistics: self.statistics,
-            status: self.status,
-            encryption_key: self.encryption_key,
+            results: self.results
+            ,
+            statistics: self.statistics
+            ,
+            status: self.status
+            ,
+            encryption_key: self.encryption_key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

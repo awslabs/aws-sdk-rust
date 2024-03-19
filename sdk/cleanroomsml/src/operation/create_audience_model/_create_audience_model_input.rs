@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAudienceModelInput {
+pub struct CreateAudienceModelInput  {
     /// <p>The start date and time of the training window.</p>
     pub training_data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date and time of the training window.</p>
@@ -31,29 +31,29 @@ pub struct CreateAudienceModelInput {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The description of the audience model.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreateAudienceModelInput {
+impl  CreateAudienceModelInput  {
     /// <p>The start date and time of the training window.</p>
-    pub fn training_data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_start_time.as_ref()
     }
     /// <p>The end date and time of the training window.</p>
-    pub fn training_data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_end_time.as_ref()
     }
     /// <p>The name of the audience model resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset for this audience model.</p>
-    pub fn training_dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn training_dataset_arn(&self) -> ::std::option::Option<& str> {
         self.training_dataset_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key. This key is used to encrypt and decrypt customer-owned data in the trained ML model and the associated data.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
@@ -74,11 +74,11 @@ impl CreateAudienceModelInput {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The description of the audience model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -98,7 +98,7 @@ pub struct CreateAudienceModelInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) training_dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl CreateAudienceModelInputBuilder {
@@ -109,8 +109,7 @@ impl CreateAudienceModelInputBuilder {
     }
     /// <p>The start date and time of the training window.</p>
     pub fn set_training_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_data_start_time = input;
-        self
+        self.training_data_start_time = input; self
     }
     /// <p>The start date and time of the training window.</p>
     pub fn get_training_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -123,8 +122,7 @@ impl CreateAudienceModelInputBuilder {
     }
     /// <p>The end date and time of the training window.</p>
     pub fn set_training_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_data_end_time = input;
-        self
+        self.training_data_end_time = input; self
     }
     /// <p>The end date and time of the training window.</p>
     pub fn get_training_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -138,8 +136,7 @@ impl CreateAudienceModelInputBuilder {
     }
     /// <p>The name of the audience model resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the audience model resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl CreateAudienceModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset for this audience model.</p>
     pub fn set_training_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_dataset_arn = input;
-        self
+        self.training_dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset for this audience model.</p>
     pub fn get_training_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +163,7 @@ impl CreateAudienceModelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key. This key is used to encrypt and decrypt customer-owned data in the trained ML model and the associated data.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key. This key is used to encrypt and decrypt customer-owned data in the trained ML model and the associated data.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,9 +193,9 @@ impl CreateAudienceModelInputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -220,9 +215,8 @@ impl CreateAudienceModelInputBuilder {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -242,7 +236,7 @@ impl CreateAudienceModelInputBuilder {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The description of the audience model.</p>
@@ -252,26 +246,32 @@ impl CreateAudienceModelInputBuilder {
     }
     /// <p>The description of the audience model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the audience model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateAudienceModelInput`](crate::operation::create_audience_model::CreateAudienceModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_audience_model::CreateAudienceModelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_audience_model::CreateAudienceModelInput {
-            training_data_start_time: self.training_data_start_time,
-            training_data_end_time: self.training_data_end_time,
-            name: self.name,
-            training_dataset_arn: self.training_dataset_arn,
-            kms_key_arn: self.kms_key_arn,
-            tags: self.tags,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_audience_model::CreateAudienceModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_audience_model::CreateAudienceModelInput {
+                training_data_start_time: self.training_data_start_time
+                ,
+                training_data_end_time: self.training_data_end_time
+                ,
+                name: self.name
+                ,
+                training_dataset_arn: self.training_dataset_arn
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tags: self.tags
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -9,19 +9,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaStorageConfiguration {
+pub struct MediaStorageConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the media storage configuration.</p>
     pub status: crate::types::MediaStorageConfigurationStatus,
 }
-impl MediaStorageConfiguration {
+impl  MediaStorageConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The status of the media storage configuration.</p>
-    pub fn status(&self) -> &crate::types::MediaStorageConfigurationStatus {
+    pub fn status(&self) -> & crate::types::MediaStorageConfigurationStatus {
         &self.status
     }
 }
@@ -47,8 +47,7 @@ impl MediaStorageConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl MediaStorageConfigurationBuilder {
     }
     /// <p>The status of the media storage configuration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the media storage configuration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MediaStorageConfigurationStatus> {
@@ -73,14 +71,17 @@ impl MediaStorageConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::MediaStorageConfigurationBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::MediaStorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MediaStorageConfiguration {
-            stream_arn: self.stream_arn,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building MediaStorageConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MediaStorageConfiguration {
+                stream_arn: self.stream_arn
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building MediaStorageConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

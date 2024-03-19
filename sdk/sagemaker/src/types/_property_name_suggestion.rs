@@ -3,13 +3,13 @@
 /// <p>A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyNameSuggestion {
+pub struct PropertyNameSuggestion  {
     /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
     pub property_name: ::std::option::Option<::std::string::String>,
 }
-impl PropertyNameSuggestion {
+impl  PropertyNameSuggestion  {
     /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
-    pub fn property_name(&self) -> ::std::option::Option<&str> {
+    pub fn property_name(&self) -> ::std::option::Option<& str> {
         self.property_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PropertyNameSuggestionBuilder {
     }
     /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
     pub fn set_property_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_name = input;
-        self
+        self.property_name = input; self
     }
     /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
     pub fn get_property_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl PropertyNameSuggestionBuilder {
     /// Consumes the builder and constructs a [`PropertyNameSuggestion`](crate::types::PropertyNameSuggestion).
     pub fn build(self) -> crate::types::PropertyNameSuggestion {
         crate::types::PropertyNameSuggestion {
-            property_name: self.property_name,
+            property_name: self.property_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateArchiveInput {
+pub struct UpdateArchiveInput  {
     /// <p>The name of the archive to update.</p>
     pub archive_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the archive.</p>
@@ -12,17 +12,17 @@ pub struct UpdateArchiveInput {
     /// <p>The number of days to retain events in the archive.</p>
     pub retention_days: ::std::option::Option<i32>,
 }
-impl UpdateArchiveInput {
+impl  UpdateArchiveInput  {
     /// <p>The name of the archive to update.</p>
-    pub fn archive_name(&self) -> ::std::option::Option<&str> {
+    pub fn archive_name(&self) -> ::std::option::Option<& str> {
         self.archive_name.as_deref()
     }
     /// <p>The description for the archive.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
-    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>The number of days to retain events in the archive.</p>
@@ -55,8 +55,7 @@ impl UpdateArchiveInputBuilder {
     }
     /// <p>The name of the archive to update.</p>
     pub fn set_archive_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.archive_name = input;
-        self
+        self.archive_name = input; self
     }
     /// <p>The name of the archive to update.</p>
     pub fn get_archive_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateArchiveInputBuilder {
     }
     /// <p>The description for the archive.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the archive.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateArchiveInputBuilder {
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_pattern = input;
-        self
+        self.event_pattern = input; self
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
     pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl UpdateArchiveInputBuilder {
     }
     /// <p>The number of days to retain events in the archive.</p>
     pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_days = input;
-        self
+        self.retention_days = input; self
     }
     /// <p>The number of days to retain events in the archive.</p>
     pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
         &self.retention_days
     }
     /// Consumes the builder and constructs a [`UpdateArchiveInput`](crate::operation::update_archive::UpdateArchiveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_archive::UpdateArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_archive::UpdateArchiveInput {
-            archive_name: self.archive_name,
-            description: self.description,
-            event_pattern: self.event_pattern,
-            retention_days: self.retention_days,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_archive::UpdateArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_archive::UpdateArchiveInput {
+                archive_name: self.archive_name
+                ,
+                description: self.description
+                ,
+                event_pattern: self.event_pattern
+                ,
+                retention_days: self.retention_days
+                ,
+            }
+        )
     }
 }
+

@@ -5,19 +5,19 @@
 /// </important>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PermissionsBoundary {
+pub struct PermissionsBoundary  {
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub customer_managed_policy_reference: ::std::option::Option<crate::types::CustomerManagedPolicyReference>,
     /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
     pub managed_policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl PermissionsBoundary {
+impl  PermissionsBoundary  {
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
-    pub fn customer_managed_policy_reference(&self) -> ::std::option::Option<&crate::types::CustomerManagedPolicyReference> {
+    pub fn customer_managed_policy_reference(&self) -> ::std::option::Option<& crate::types::CustomerManagedPolicyReference> {
         self.customer_managed_policy_reference.as_ref()
     }
     /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
-    pub fn managed_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn managed_policy_arn(&self) -> ::std::option::Option<& str> {
         self.managed_policy_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl PermissionsBoundaryBuilder {
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn set_customer_managed_policy_reference(mut self, input: ::std::option::Option<crate::types::CustomerManagedPolicyReference>) -> Self {
-        self.customer_managed_policy_reference = input;
-        self
+        self.customer_managed_policy_reference = input; self
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn get_customer_managed_policy_reference(&self) -> &::std::option::Option<crate::types::CustomerManagedPolicyReference> {
@@ -57,8 +56,7 @@ impl PermissionsBoundaryBuilder {
     }
     /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
     pub fn set_managed_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.managed_policy_arn = input;
-        self
+        self.managed_policy_arn = input; self
     }
     /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
     pub fn get_managed_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl PermissionsBoundaryBuilder {
     /// Consumes the builder and constructs a [`PermissionsBoundary`](crate::types::PermissionsBoundary).
     pub fn build(self) -> crate::types::PermissionsBoundary {
         crate::types::PermissionsBoundary {
-            customer_managed_policy_reference: self.customer_managed_policy_reference,
-            managed_policy_arn: self.managed_policy_arn,
+            customer_managed_policy_reference: self.customer_managed_policy_reference
+            ,
+            managed_policy_arn: self.managed_policy_arn
+            ,
         }
     }
 }
+

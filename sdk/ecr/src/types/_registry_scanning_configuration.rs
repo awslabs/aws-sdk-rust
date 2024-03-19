@@ -3,22 +3,23 @@
 /// <p>The scanning configuration for a private registry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistryScanningConfiguration {
+pub struct RegistryScanningConfiguration  {
     /// <p>The type of scanning configured for the registry.</p>
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
     /// <p>The scanning rules associated with the registry.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::RegistryScanningRule>>,
 }
-impl RegistryScanningConfiguration {
+impl  RegistryScanningConfiguration  {
     /// <p>The type of scanning configured for the registry.</p>
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<& crate::types::ScanType> {
         self.scan_type.as_ref()
     }
     /// <p>The scanning rules associated with the registry.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::RegistryScanningRule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::RegistryScanningRule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegistryScanningConfiguration {
@@ -33,7 +34,7 @@ impl RegistryScanningConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistryScanningConfigurationBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::RegistryScanningRule>>,
 }
 impl RegistryScanningConfigurationBuilder {
     /// <p>The type of scanning configured for the registry.</p>
@@ -43,8 +44,7 @@ impl RegistryScanningConfigurationBuilder {
     }
     /// <p>The type of scanning configured for the registry.</p>
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
-        self.scan_type = input;
-        self
+        self.scan_type = input; self
     }
     /// <p>The type of scanning configured for the registry.</p>
     pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
@@ -57,24 +57,26 @@ impl RegistryScanningConfigurationBuilder {
     /// <p>The scanning rules associated with the registry.</p>
     pub fn rules(mut self, input: crate::types::RegistryScanningRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The scanning rules associated with the registry.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistryScanningRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The scanning rules associated with the registry.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistryScanningRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`RegistryScanningConfiguration`](crate::types::RegistryScanningConfiguration).
     pub fn build(self) -> crate::types::RegistryScanningConfiguration {
         crate::types::RegistryScanningConfiguration {
-            scan_type: self.scan_type,
-            rules: self.rules,
+            scan_type: self.scan_type
+            ,
+            rules: self.rules
+            ,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::update_project::_update_project_input::UpdateProjectIn
 
 impl UpdateProjectInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_project::UpdateProjectOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_project::UpdateProjectError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_project();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_project::UpdateProjectOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_project::UpdateProjectError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_project();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateProject`.
-///
+/// 
 /// <p>Changes the settings of a build project.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_project::builders::UpdateProjectInputBuilder,
+                    inner: crate::operation::update_project::builders::UpdateProjectInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_project::UpdateProjectOutput,
-        crate::operation::update_project::UpdateProjectError,
-    > for UpdateProjectFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_project::UpdateProjectOutput,
-            crate::operation::update_project::UpdateProjectError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_project::UpdateProjectOutput,
+                    crate::operation::update_project::UpdateProjectError,
+                > for UpdateProjectFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_project::UpdateProjectOutput,
+                        crate::operation::update_project::UpdateProjectError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateProjectFluentBuilder {
     /// Creates a new `UpdateProject`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateProjectFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_project::UpdateProjectOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_project::UpdateProjectError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_project::UpdateProject::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_project::UpdateProject::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_project::UpdateProjectOutput,
-        crate::operation::update_project::UpdateProjectError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_project::UpdateProjectOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_project::UpdateProjectError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_project::UpdateProject::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_project::UpdateProject::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_project::UpdateProjectOutput, crate::operation::update_project::UpdateProjectError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the build project.</p><note>
     /// <p>You cannot change a build project's name.</p>
     /// </note>
@@ -166,12 +153,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>An array of <code>ProjectSource</code> objects.</p>
-    pub fn set_secondary_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>) -> Self {
+    pub fn set_secondary_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSource>>) -> Self {
         self.inner = self.inner.set_secondary_sources(input);
         self
     }
     /// <p>An array of <code>ProjectSource</code> objects.</p>
-    pub fn get_secondary_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+    pub fn get_secondary_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectSource>> {
         self.inner.get_secondary_sources()
     }
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
@@ -234,12 +221,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level).</p>
-    pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>) -> Self {
+    pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSourceVersion>>) -> Self {
         self.inner = self.inner.set_secondary_source_versions(input);
         self
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level).</p>
-    pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+    pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectSourceVersion>> {
         self.inner.get_secondary_source_versions()
     }
     /// <p>Information to be changed about the build output artifacts for the build project.</p>
@@ -266,12 +253,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>An array of <code>ProjectArtifact</code> objects.</p>
-    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>) -> Self {
+    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectArtifacts>>) -> Self {
         self.inner = self.inner.set_secondary_artifacts(input);
         self
     }
     /// <p>An array of <code>ProjectArtifact</code> objects.</p>
-    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
+    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectArtifacts>> {
         self.inner.get_secondary_artifacts()
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
@@ -379,13 +366,13 @@ impl UpdateProjectFluentBuilder {
     }
     /// <p>An updated list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An updated list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
@@ -440,12 +427,12 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
-    pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>) -> Self {
+    pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectFileSystemLocation>>) -> Self {
         self.inner = self.inner.set_file_system_locations(input);
         self
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
-    pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
+    pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectFileSystemLocation>> {
         self.inner.get_file_system_locations()
     }
     /// <p>Contains configuration information about a batch build project.</p>
@@ -483,3 +470,4 @@ impl UpdateProjectFluentBuilder {
         self.inner.get_concurrent_build_limit()
     }
 }
+

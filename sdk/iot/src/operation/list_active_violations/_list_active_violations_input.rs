@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListActiveViolationsInput {
+pub struct ListActiveViolationsInput  {
     /// <p>The name of the thing whose active violations are listed.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
@@ -18,17 +18,17 @@ pub struct ListActiveViolationsInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListActiveViolationsInput {
+impl  ListActiveViolationsInput  {
     /// <p>The name of the thing whose active violations are listed.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
-    pub fn security_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> ::std::option::Option<& str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The criteria for a behavior.</p>
-    pub fn behavior_criteria_type(&self) -> ::std::option::Option<&crate::types::BehaviorCriteriaType> {
+    pub fn behavior_criteria_type(&self) -> ::std::option::Option<& crate::types::BehaviorCriteriaType> {
         self.behavior_criteria_type.as_ref()
     }
     /// <p>A list of all suppressed alerts.</p>
@@ -36,11 +36,11 @@ impl ListActiveViolationsInput {
         self.list_suppressed_alerts
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn verification_state(&self) -> ::std::option::Option<&crate::types::VerificationState> {
+    pub fn verification_state(&self) -> ::std::option::Option<& crate::types::VerificationState> {
         self.verification_state.as_ref()
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -75,8 +75,7 @@ impl ListActiveViolationsInputBuilder {
     }
     /// <p>The name of the thing whose active violations are listed.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing whose active violations are listed.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ListActiveViolationsInputBuilder {
     }
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
     pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_profile_name = input;
-        self
+        self.security_profile_name = input; self
     }
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
     pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl ListActiveViolationsInputBuilder {
     }
     /// <p>The criteria for a behavior.</p>
     pub fn set_behavior_criteria_type(mut self, input: ::std::option::Option<crate::types::BehaviorCriteriaType>) -> Self {
-        self.behavior_criteria_type = input;
-        self
+        self.behavior_criteria_type = input; self
     }
     /// <p>The criteria for a behavior.</p>
     pub fn get_behavior_criteria_type(&self) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
@@ -117,8 +114,7 @@ impl ListActiveViolationsInputBuilder {
     }
     /// <p>A list of all suppressed alerts.</p>
     pub fn set_list_suppressed_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.list_suppressed_alerts = input;
-        self
+        self.list_suppressed_alerts = input; self
     }
     /// <p>A list of all suppressed alerts.</p>
     pub fn get_list_suppressed_alerts(&self) -> &::std::option::Option<bool> {
@@ -131,8 +127,7 @@ impl ListActiveViolationsInputBuilder {
     }
     /// <p>The verification state of the violation (detect alarm).</p>
     pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
-        self.verification_state = input;
-        self
+        self.verification_state = input; self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
     pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
@@ -145,8 +140,7 @@ impl ListActiveViolationsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,26 +153,32 @@ impl ListActiveViolationsInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListActiveViolationsInput`](crate::operation::list_active_violations::ListActiveViolationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_active_violations::ListActiveViolationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_active_violations::ListActiveViolationsInput {
-            thing_name: self.thing_name,
-            security_profile_name: self.security_profile_name,
-            behavior_criteria_type: self.behavior_criteria_type,
-            list_suppressed_alerts: self.list_suppressed_alerts,
-            verification_state: self.verification_state,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_active_violations::ListActiveViolationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_active_violations::ListActiveViolationsInput {
+                thing_name: self.thing_name
+                ,
+                security_profile_name: self.security_profile_name
+                ,
+                behavior_criteria_type: self.behavior_criteria_type
+                ,
+                list_suppressed_alerts: self.list_suppressed_alerts
+                ,
+                verification_state: self.verification_state
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

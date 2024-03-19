@@ -3,15 +3,14 @@
 /// <p>A batch job definition contained in a script.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScriptBatchJobDefinition {
+pub struct ScriptBatchJobDefinition  {
     /// <p>The name of the script containing the batch job definition.</p>
     pub script_name: ::std::string::String,
 }
-impl ScriptBatchJobDefinition {
+impl  ScriptBatchJobDefinition  {
     /// <p>The name of the script containing the batch job definition.</p>
-    pub fn script_name(&self) -> &str {
-        use std::ops::Deref;
-        self.script_name.deref()
+    pub fn script_name(&self) -> & str {
+        use std::ops::Deref; self.script_name.deref()
     }
 }
 impl ScriptBatchJobDefinition {
@@ -36,8 +35,7 @@ impl ScriptBatchJobDefinitionBuilder {
     }
     /// <p>The name of the script containing the batch job definition.</p>
     pub fn set_script_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.script_name = input;
-        self
+        self.script_name = input; self
     }
     /// <p>The name of the script containing the batch job definition.</p>
     pub fn get_script_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ScriptBatchJobDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`script_name`](crate::types::builders::ScriptBatchJobDefinitionBuilder::script_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ScriptBatchJobDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScriptBatchJobDefinition {
-            script_name: self.script_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "script_name",
-                    "script_name was not specified but it is required when building ScriptBatchJobDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScriptBatchJobDefinition {
+                script_name: self.script_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("script_name", "script_name was not specified but it is required when building ScriptBatchJobDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

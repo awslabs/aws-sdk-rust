@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateColumnStatisticsForTableInput {
+pub struct UpdateColumnStatisticsForTableInput  {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
@@ -10,26 +10,27 @@ pub struct UpdateColumnStatisticsForTableInput {
     /// <p>The name of the partitions' table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the column statistics.</p>
-    pub column_statistics_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
+    pub column_statistics_list: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnStatistics>>,
 }
-impl UpdateColumnStatisticsForTableInput {
+impl  UpdateColumnStatisticsForTableInput  {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partitions' table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of the column statistics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_statistics_list.is_none()`.
-    pub fn column_statistics_list(&self) -> &[crate::types::ColumnStatistics] {
-        self.column_statistics_list.as_deref().unwrap_or_default()
+    pub fn column_statistics_list(&self) -> & [crate::types::ColumnStatistics] {
+        self.column_statistics_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateColumnStatisticsForTableInput {
@@ -46,7 +47,7 @@ pub struct UpdateColumnStatisticsForTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) column_statistics_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
+    pub(crate) column_statistics_list: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnStatistics>>,
 }
 impl UpdateColumnStatisticsForTableInputBuilder {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
@@ -56,8 +57,7 @@ impl UpdateColumnStatisticsForTableInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl UpdateColumnStatisticsForTableInputBuilder {
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl UpdateColumnStatisticsForTableInputBuilder {
     }
     /// <p>The name of the partitions' table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the partitions' table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,33 +98,32 @@ impl UpdateColumnStatisticsForTableInputBuilder {
     /// <p>A list of the column statistics.</p>
     pub fn column_statistics_list(mut self, input: crate::types::ColumnStatistics) -> Self {
         let mut v = self.column_statistics_list.unwrap_or_default();
-        v.push(input);
-        self.column_statistics_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_statistics_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the column statistics.</p>
-    pub fn set_column_statistics_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>) -> Self {
-        self.column_statistics_list = input;
-        self
+    pub fn set_column_statistics_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnStatistics>>) -> Self {
+        self.column_statistics_list = input; self
     }
     /// <p>A list of the column statistics.</p>
-    pub fn get_column_statistics_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>> {
+    pub fn get_column_statistics_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnStatistics>> {
         &self.column_statistics_list
     }
     /// Consumes the builder and constructs a [`UpdateColumnStatisticsForTableInput`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                column_statistics_list: self.column_statistics_list,
-            },
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                column_statistics_list: self.column_statistics_list
+                ,
+            }
         )
     }
 }
+

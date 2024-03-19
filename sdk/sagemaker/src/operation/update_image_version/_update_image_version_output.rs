@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateImageVersionOutput {
+pub struct UpdateImageVersionOutput  {
     /// <p>The ARN of the image version.</p>
     pub image_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateImageVersionOutput {
+impl  UpdateImageVersionOutput  {
     /// <p>The ARN of the image version.</p>
-    pub fn image_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_version_arn(&self) -> ::std::option::Option<& str> {
         self.image_version_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateImageVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateImageVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateImageVersionOutput`](crate::operation::update_image_version::UpdateImageVersionOutput).
     pub fn builder() -> crate::operation::update_image_version::builders::UpdateImageVersionOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateImageVersionOutputBuilder {
     }
     /// <p>The ARN of the image version.</p>
     pub fn set_image_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_version_arn = input;
-        self
+        self.image_version_arn = input; self
     }
     /// <p>The ARN of the image version.</p>
     pub fn get_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateImageVersionOutput`](crate::operation::update_image_version::UpdateImageVersionOutput).
     pub fn build(self) -> crate::operation::update_image_version::UpdateImageVersionOutput {
         crate::operation::update_image_version::UpdateImageVersionOutput {
-            image_version_arn: self.image_version_arn,
+            image_version_arn: self.image_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

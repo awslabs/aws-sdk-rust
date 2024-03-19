@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyFpgaImageInput {
+pub struct CopyFpgaImageInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the source AFI.</p>
@@ -16,29 +16,29 @@ pub struct CopyFpgaImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CopyFpgaImageInput {
+impl  CopyFpgaImageInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the source AFI.</p>
-    pub fn source_fpga_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_fpga_image_id(&self) -> ::std::option::Option<& str> {
         self.source_fpga_image_id.as_deref()
     }
     /// <p>The description for the new AFI.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name for the new AFI. The default is the name of the source AFI.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Region that contains the source AFI.</p>
-    pub fn source_region(&self) -> ::std::option::Option<&str> {
+    pub fn source_region(&self) -> ::std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl CopyFpgaImageInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -83,8 +82,7 @@ impl CopyFpgaImageInputBuilder {
     }
     /// <p>The ID of the source AFI.</p>
     pub fn set_source_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_fpga_image_id = input;
-        self
+        self.source_fpga_image_id = input; self
     }
     /// <p>The ID of the source AFI.</p>
     pub fn get_source_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl CopyFpgaImageInputBuilder {
     }
     /// <p>The description for the new AFI.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the new AFI.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl CopyFpgaImageInputBuilder {
     }
     /// <p>The name for the new AFI. The default is the name of the source AFI.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the new AFI. The default is the name of the source AFI.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +122,7 @@ impl CopyFpgaImageInputBuilder {
     }
     /// <p>The Region that contains the source AFI.</p>
     pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_region = input;
-        self
+        self.source_region = input; self
     }
     /// <p>The Region that contains the source AFI.</p>
     pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,24 +135,30 @@ impl CopyFpgaImageInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CopyFpgaImageInput`](crate::operation::copy_fpga_image::CopyFpgaImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::copy_fpga_image::CopyFpgaImageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::copy_fpga_image::CopyFpgaImageInput {
-            dry_run: self.dry_run,
-            source_fpga_image_id: self.source_fpga_image_id,
-            description: self.description,
-            name: self.name,
-            source_region: self.source_region,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_fpga_image::CopyFpgaImageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_fpga_image::CopyFpgaImageInput {
+                dry_run: self.dry_run
+                ,
+                source_fpga_image_id: self.source_fpga_image_id
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+                source_region: self.source_region
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

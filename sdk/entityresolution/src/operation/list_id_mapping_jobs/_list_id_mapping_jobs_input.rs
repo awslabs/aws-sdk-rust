@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIdMappingJobsInput {
+pub struct ListIdMappingJobsInput  {
     /// <p>The name of the workflow to be retrieved.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token from the previous API call.</p>
@@ -10,13 +10,13 @@ pub struct ListIdMappingJobsInput {
     /// <p>The maximum number of objects returned per page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListIdMappingJobsInput {
+impl  ListIdMappingJobsInput  {
     /// <p>The name of the workflow to be retrieved.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
     /// <p>The pagination token from the previous API call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects returned per page.</p>
@@ -48,8 +48,7 @@ impl ListIdMappingJobsInputBuilder {
     }
     /// <p>The name of the workflow to be retrieved.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow to be retrieved.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListIdMappingJobsInputBuilder {
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl ListIdMappingJobsInputBuilder {
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListIdMappingJobsInput`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput {
-            workflow_name: self.workflow_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput {
+                workflow_name: self.workflow_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

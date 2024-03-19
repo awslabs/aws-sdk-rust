@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutScalingPolicyInput {
+pub struct PutScalingPolicyInput  {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
@@ -56,13 +56,13 @@ pub struct PutScalingPolicyInput {
     /// <p>An object that contains settings for a target-based scaling policy.</p>
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
 }
-impl PutScalingPolicyInput {
+impl  PutScalingPolicyInput  {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
@@ -78,7 +78,7 @@ impl PutScalingPolicyInput {
     /// <li>
     /// <p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p></li>
     /// </ul>
-    pub fn scaling_adjustment_type(&self) -> ::std::option::Option<&crate::types::ScalingAdjustmentType> {
+    pub fn scaling_adjustment_type(&self) -> ::std::option::Option<& crate::types::ScalingAdjustmentType> {
         self.scaling_adjustment_type.as_ref()
     }
     /// <p>Metric value used to trigger a scaling event.</p>
@@ -86,7 +86,7 @@ impl PutScalingPolicyInput {
         self.threshold
     }
     /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperatorType> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperatorType> {
         self.comparison_operator.as_ref()
     }
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
@@ -118,15 +118,15 @@ impl PutScalingPolicyInput {
     /// <li>
     /// <p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::MetricName> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::MetricName> {
         self.metric_name.as_ref()
     }
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
+    pub fn policy_type(&self) -> ::std::option::Option<& crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
     /// <p>An object that contains settings for a target-based scaling policy.</p>
-    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::TargetConfiguration> {
+    pub fn target_configuration(&self) -> ::std::option::Option<& crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
 }
@@ -161,8 +161,7 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +175,7 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +188,7 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
     pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scaling_adjustment = input;
-        self
+        self.scaling_adjustment = input; self
     }
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
     pub fn get_scaling_adjustment(&self) -> &::std::option::Option<i32> {
@@ -220,8 +217,7 @@ impl PutScalingPolicyInputBuilder {
     /// <p><b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p></li>
     /// </ul>
     pub fn set_scaling_adjustment_type(mut self, input: ::std::option::Option<crate::types::ScalingAdjustmentType>) -> Self {
-        self.scaling_adjustment_type = input;
-        self
+        self.scaling_adjustment_type = input; self
     }
     /// <p>The type of adjustment to make to a fleet's instance count:</p>
     /// <ul>
@@ -242,8 +238,7 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>Metric value used to trigger a scaling event.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>Metric value used to trigger a scaling event.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<f64> {
@@ -256,8 +251,7 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperatorType>) -> Self {
-        self.comparison_operator = input;
-        self
+        self.comparison_operator = input; self
     }
     /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperatorType> {
@@ -270,8 +264,7 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evaluation_periods = input;
-        self
+        self.evaluation_periods = input; self
     }
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub fn get_evaluation_periods(&self) -> &::std::option::Option<i32> {
@@ -333,8 +326,7 @@ impl PutScalingPolicyInputBuilder {
     /// <p><b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>.</p>
     /// <ul>
@@ -371,8 +363,7 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
@@ -385,28 +376,38 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>An object that contains settings for a target-based scaling policy.</p>
     pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::TargetConfiguration>) -> Self {
-        self.target_configuration = input;
-        self
+        self.target_configuration = input; self
     }
     /// <p>An object that contains settings for a target-based scaling policy.</p>
     pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::TargetConfiguration> {
         &self.target_configuration
     }
     /// Consumes the builder and constructs a [`PutScalingPolicyInput`](crate::operation::put_scaling_policy::PutScalingPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_scaling_policy::PutScalingPolicyInput {
-            name: self.name,
-            fleet_id: self.fleet_id,
-            scaling_adjustment: self.scaling_adjustment,
-            scaling_adjustment_type: self.scaling_adjustment_type,
-            threshold: self.threshold,
-            comparison_operator: self.comparison_operator,
-            evaluation_periods: self.evaluation_periods,
-            metric_name: self.metric_name,
-            policy_type: self.policy_type,
-            target_configuration: self.target_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_scaling_policy::PutScalingPolicyInput {
+                name: self.name
+                ,
+                fleet_id: self.fleet_id
+                ,
+                scaling_adjustment: self.scaling_adjustment
+                ,
+                scaling_adjustment_type: self.scaling_adjustment_type
+                ,
+                threshold: self.threshold
+                ,
+                comparison_operator: self.comparison_operator
+                ,
+                evaluation_periods: self.evaluation_periods
+                ,
+                metric_name: self.metric_name
+                ,
+                policy_type: self.policy_type
+                ,
+                target_configuration: self.target_configuration
+                ,
+            }
+        )
     }
 }
+

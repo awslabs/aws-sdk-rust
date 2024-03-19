@@ -5,7 +5,7 @@
 /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Object {
+pub struct S3Object  {
     /// <p>Name of the S3 bucket.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>S3 object key name.</p>
@@ -13,17 +13,17 @@ pub struct S3Object {
     /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl S3Object {
+impl  S3Object  {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>S3 object key name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl S3ObjectBuilder {
     }
     /// <p>Name of the S3 bucket.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Name of the S3 bucket.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl S3ObjectBuilder {
     }
     /// <p>S3 object key name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>S3 object key name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl S3ObjectBuilder {
     }
     /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>If the bucket is versioning enabled, you can specify the object version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,9 +85,13 @@ impl S3ObjectBuilder {
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
     pub fn build(self) -> crate::types::S3Object {
         crate::types::S3Object {
-            bucket: self.bucket,
-            name: self.name,
-            version: self.version,
+            bucket: self.bucket
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>The translated content.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TranslatedDocument {
+pub struct TranslatedDocument  {
     /// <p>The document containing the translated content.</p>
     pub content: ::aws_smithy_types::Blob,
 }
-impl TranslatedDocument {
+impl  TranslatedDocument  {
     /// <p>The document containing the translated content.</p>
-    pub fn content(&self) -> &::aws_smithy_types::Blob {
+    pub fn content(&self) -> & ::aws_smithy_types::Blob {
         &self.content
     }
 }
-impl ::std::fmt::Debug for TranslatedDocument {
+impl  ::std::fmt::Debug for TranslatedDocument  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TranslatedDocument");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -42,8 +42,7 @@ impl TranslatedDocumentBuilder {
     }
     /// <p>The document containing the translated content.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The document containing the translated content.</p>
     pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -53,14 +52,15 @@ impl TranslatedDocumentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`content`](crate::types::builders::TranslatedDocumentBuilder::content)
     pub fn build(self) -> ::std::result::Result<crate::types::TranslatedDocument, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TranslatedDocument {
-            content: self.content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content",
-                    "content was not specified but it is required when building TranslatedDocument",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TranslatedDocument {
+                content: self.content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content", "content was not specified but it is required when building TranslatedDocument")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TranslatedDocumentBuilder {
@@ -70,3 +70,4 @@ impl ::std::fmt::Debug for TranslatedDocumentBuilder {
         formatter.finish()
     }
 }
+

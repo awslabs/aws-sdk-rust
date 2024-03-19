@@ -6,23 +6,23 @@
 /// <p>The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <code>CreatePredictor</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDataConfig {
+pub struct InputDataConfig  {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub dataset_group_arn: ::std::string::String,
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    pub supplementary_features: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
+    pub supplementary_features: ::std::option::Option<::std::vec::Vec::<crate::types::SupplementaryFeature>>,
 }
-impl InputDataConfig {
+impl  InputDataConfig  {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.dataset_group_arn.deref()
+    pub fn dataset_group_arn(&self) -> & str {
+        use std::ops::Deref; self.dataset_group_arn.deref()
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supplementary_features.is_none()`.
-    pub fn supplementary_features(&self) -> &[crate::types::SupplementaryFeature] {
-        self.supplementary_features.as_deref().unwrap_or_default()
+    pub fn supplementary_features(&self) -> & [crate::types::SupplementaryFeature] {
+        self.supplementary_features.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InputDataConfig {
@@ -37,7 +37,7 @@ impl InputDataConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDataConfigBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) supplementary_features: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
+    pub(crate) supplementary_features: ::std::option::Option<::std::vec::Vec::<crate::types::SupplementaryFeature>>,
 }
 impl InputDataConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
@@ -48,8 +48,7 @@ impl InputDataConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,31 +61,33 @@ impl InputDataConfigBuilder {
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
     pub fn supplementary_features(mut self, input: crate::types::SupplementaryFeature) -> Self {
         let mut v = self.supplementary_features.unwrap_or_default();
-        v.push(input);
-        self.supplementary_features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supplementary_features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    pub fn set_supplementary_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>) -> Self {
-        self.supplementary_features = input;
-        self
+    pub fn set_supplementary_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SupplementaryFeature>>) -> Self {
+        self.supplementary_features = input; self
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
-    pub fn get_supplementary_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>> {
+    pub fn get_supplementary_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SupplementaryFeature>> {
         &self.supplementary_features
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`dataset_group_arn`](crate::types::builders::InputDataConfigBuilder::dataset_group_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputDataConfig {
-            dataset_group_arn: self.dataset_group_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dataset_group_arn",
-                    "dataset_group_arn was not specified but it is required when building InputDataConfig",
-                )
-            })?,
-            supplementary_features: self.supplementary_features,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputDataConfig {
+                dataset_group_arn: self.dataset_group_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dataset_group_arn", "dataset_group_arn was not specified but it is required when building InputDataConfig")
+                    )?
+                ,
+                supplementary_features: self.supplementary_features
+                ,
+            }
+        )
     }
 }
+

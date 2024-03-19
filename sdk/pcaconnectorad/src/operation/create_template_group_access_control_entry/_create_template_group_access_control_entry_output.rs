@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTemplateGroupAccessControlEntryOutput {
+pub struct CreateTemplateGroupAccessControlEntryOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for CreateTemplateGroupAccessControlEntryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTemplateGroupAccessControlEntryOutput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateGroupAccessControlEntryOutput`](crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryOutput).
     pub fn builder() -> crate::operation::create_template_group_access_control_entry::builders::CreateTemplateGroupAccessControlEntryOutputBuilder {
@@ -25,14 +25,14 @@ pub struct CreateTemplateGroupAccessControlEntryOutputBuilder {
 }
 impl CreateTemplateGroupAccessControlEntryOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTemplateGroupAccessControlEntryOutput`](crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryOutput).
     pub fn build(self) -> crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryOutput {
         crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryOutput {
@@ -40,3 +40,4 @@ impl CreateTemplateGroupAccessControlEntryOutputBuilder {
         }
     }
 }
+

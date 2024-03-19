@@ -15,7 +15,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetainRule {
+pub struct RetainRule  {
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
     pub count: ::std::option::Option<i32>,
     /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
@@ -23,7 +23,7 @@ pub struct RetainRule {
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
-impl RetainRule {
+impl  RetainRule  {
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
@@ -33,7 +33,7 @@ impl RetainRule {
         self.interval
     }
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
-    pub fn interval_unit(&self) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(&self) -> ::std::option::Option<& crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl RetainRuleBuilder {
     }
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -74,8 +73,7 @@ impl RetainRuleBuilder {
     }
     /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub fn get_interval(&self) -> &::std::option::Option<i32> {
@@ -88,8 +86,7 @@ impl RetainRuleBuilder {
     }
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
     pub fn set_interval_unit(mut self, input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>) -> Self {
-        self.interval_unit = input;
-        self
+        self.interval_unit = input; self
     }
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <a href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
     pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
@@ -98,9 +95,13 @@ impl RetainRuleBuilder {
     /// Consumes the builder and constructs a [`RetainRule`](crate::types::RetainRule).
     pub fn build(self) -> crate::types::RetainRule {
         crate::types::RetainRule {
-            count: self.count,
-            interval: self.interval,
-            interval_unit: self.interval_unit,
+            count: self.count
+            ,
+            interval: self.interval
+            ,
+            interval_unit: self.interval_unit
+            ,
         }
     }
 }
+

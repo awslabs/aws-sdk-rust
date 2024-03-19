@@ -3,7 +3,7 @@
 /// <p>Summary information about the Application Association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationAssociationSummary {
+pub struct ApplicationAssociationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the Application Association.</p>
     pub application_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -11,17 +11,17 @@ pub struct ApplicationAssociationSummary {
     /// <p>The identifier for the client that is associated with the Application Association.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
 }
-impl ApplicationAssociationSummary {
+impl  ApplicationAssociationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the Application Association.</p>
-    pub fn application_association_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_association_arn(&self) -> ::std::option::Option<& str> {
         self.application_association_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The identifier for the client that is associated with the Application Association.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ApplicationAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Application Association.</p>
     pub fn set_application_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_association_arn = input;
-        self
+        self.application_association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Application Association.</p>
     pub fn get_application_association_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ApplicationAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ApplicationAssociationSummaryBuilder {
     }
     /// <p>The identifier for the client that is associated with the Application Association.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The identifier for the client that is associated with the Application Association.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ApplicationAssociationSummaryBuilder {
     /// Consumes the builder and constructs a [`ApplicationAssociationSummary`](crate::types::ApplicationAssociationSummary).
     pub fn build(self) -> crate::types::ApplicationAssociationSummary {
         crate::types::ApplicationAssociationSummary {
-            application_association_arn: self.application_association_arn,
-            application_arn: self.application_arn,
-            client_id: self.client_id,
+            application_association_arn: self.application_association_arn
+            ,
+            application_arn: self.application_arn
+            ,
+            client_id: self.client_id
+            ,
         }
     }
 }
+

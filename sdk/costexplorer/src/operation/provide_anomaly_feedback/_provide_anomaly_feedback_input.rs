@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvideAnomalyFeedbackInput {
+pub struct ProvideAnomalyFeedbackInput  {
     /// <p>A cost anomaly ID.</p>
     pub anomaly_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
 }
-impl ProvideAnomalyFeedbackInput {
+impl  ProvideAnomalyFeedbackInput  {
     /// <p>A cost anomaly ID.</p>
-    pub fn anomaly_id(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_id(&self) -> ::std::option::Option<& str> {
         self.anomaly_id.as_deref()
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
-    pub fn feedback(&self) -> ::std::option::Option<&crate::types::AnomalyFeedbackType> {
+    pub fn feedback(&self) -> ::std::option::Option<& crate::types::AnomalyFeedbackType> {
         self.feedback.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ProvideAnomalyFeedbackInputBuilder {
     }
     /// <p>A cost anomaly ID.</p>
     pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_id = input;
-        self
+        self.anomaly_id = input; self
     }
     /// <p>A cost anomaly ID.</p>
     pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ProvideAnomalyFeedbackInputBuilder {
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub fn set_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
-        self.feedback = input;
-        self
+        self.feedback = input; self
     }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly.</p>
     pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
         &self.feedback
     }
     /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput {
-            anomaly_id: self.anomaly_id,
-            feedback: self.feedback,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput {
+                anomaly_id: self.anomaly_id
+                ,
+                feedback: self.feedback
+                ,
+            }
+        )
     }
 }
+

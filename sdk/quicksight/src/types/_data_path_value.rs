@@ -3,7 +3,7 @@
 /// <p>The data path that needs to be sorted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DataPathValue {
+pub struct DataPathValue  {
     /// <p>The field ID of the field that needs to be sorted.</p>
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual value of the field that needs to be sorted.</p>
@@ -11,21 +11,21 @@ pub struct DataPathValue {
     /// <p>The type configuration of the field.</p>
     pub data_path_type: ::std::option::Option<crate::types::DataPathType>,
 }
-impl DataPathValue {
+impl  DataPathValue  {
     /// <p>The field ID of the field that needs to be sorted.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
-    pub fn field_value(&self) -> ::std::option::Option<&str> {
+    pub fn field_value(&self) -> ::std::option::Option<& str> {
         self.field_value.as_deref()
     }
     /// <p>The type configuration of the field.</p>
-    pub fn data_path_type(&self) -> ::std::option::Option<&crate::types::DataPathType> {
+    pub fn data_path_type(&self) -> ::std::option::Option<& crate::types::DataPathType> {
         self.data_path_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for DataPathValue {
+impl  ::std::fmt::Debug for DataPathValue  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataPathValue");
         formatter.field("field_id", &self.field_id);
@@ -57,8 +57,7 @@ impl DataPathValueBuilder {
     }
     /// <p>The field ID of the field that needs to be sorted.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID of the field that needs to be sorted.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DataPathValueBuilder {
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
     pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_value = input;
-        self
+        self.field_value = input; self
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
     pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DataPathValueBuilder {
     }
     /// <p>The type configuration of the field.</p>
     pub fn set_data_path_type(mut self, input: ::std::option::Option<crate::types::DataPathType>) -> Self {
-        self.data_path_type = input;
-        self
+        self.data_path_type = input; self
     }
     /// <p>The type configuration of the field.</p>
     pub fn get_data_path_type(&self) -> &::std::option::Option<crate::types::DataPathType> {
@@ -95,9 +92,12 @@ impl DataPathValueBuilder {
     /// Consumes the builder and constructs a [`DataPathValue`](crate::types::DataPathValue).
     pub fn build(self) -> crate::types::DataPathValue {
         crate::types::DataPathValue {
-            field_id: self.field_id,
-            field_value: self.field_value,
-            data_path_type: self.data_path_type,
+            field_id: self.field_id
+            ,
+            field_value: self.field_value
+            ,
+            data_path_type: self.data_path_type
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for DataPathValueBuilder {
         formatter.finish()
     }
 }
+

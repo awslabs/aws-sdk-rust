@@ -10,7 +10,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRule {
+pub struct CreateRule  {
     /// <p><b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
     /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
     pub location: ::std::option::Option<crate::types::LocationValues>,
@@ -20,17 +20,17 @@ pub struct CreateRule {
     pub interval_unit: ::std::option::Option<crate::types::IntervalUnitValues>,
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
-    pub times: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub times: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p><b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
-    pub scripts: ::std::option::Option<::std::vec::Vec<crate::types::Script>>,
+    pub scripts: ::std::option::Option<::std::vec::Vec::<crate::types::Script>>,
 }
-impl CreateRule {
+impl  CreateRule  {
     /// <p><b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
     /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::LocationValues> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::LocationValues> {
         self.location.as_ref()
     }
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
@@ -38,26 +38,28 @@ impl CreateRule {
         self.interval
     }
     /// <p>The interval unit.</p>
-    pub fn interval_unit(&self) -> ::std::option::Option<&crate::types::IntervalUnitValues> {
+    pub fn interval_unit(&self) -> ::std::option::Option<& crate::types::IntervalUnitValues> {
         self.interval_unit.as_ref()
     }
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.times.is_none()`.
-    pub fn times(&self) -> &[::std::string::String] {
-        self.times.as_deref().unwrap_or_default()
+    pub fn times(&self) -> & [::std::string::String] {
+        self.times.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn cron_expression(&self) -> ::std::option::Option<&str> {
+    pub fn cron_expression(&self) -> ::std::option::Option<& str> {
         self.cron_expression.as_deref()
     }
     /// <p><b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scripts.is_none()`.
-    pub fn scripts(&self) -> &[crate::types::Script] {
-        self.scripts.as_deref().unwrap_or_default()
+    pub fn scripts(&self) -> & [crate::types::Script] {
+        self.scripts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateRule {
@@ -74,9 +76,9 @@ pub struct CreateRuleBuilder {
     pub(crate) location: ::std::option::Option<crate::types::LocationValues>,
     pub(crate) interval: ::std::option::Option<i32>,
     pub(crate) interval_unit: ::std::option::Option<crate::types::IntervalUnitValues>,
-    pub(crate) times: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) times: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) scripts: ::std::option::Option<::std::vec::Vec<crate::types::Script>>,
+    pub(crate) scripts: ::std::option::Option<::std::vec::Vec::<crate::types::Script>>,
 }
 impl CreateRuleBuilder {
     /// <p><b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
@@ -88,8 +90,7 @@ impl CreateRuleBuilder {
     /// <p><b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
     /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::LocationValues>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p><b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
     /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
@@ -103,8 +104,7 @@ impl CreateRuleBuilder {
     }
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
     pub fn get_interval(&self) -> &::std::option::Option<i32> {
@@ -117,8 +117,7 @@ impl CreateRuleBuilder {
     }
     /// <p>The interval unit.</p>
     pub fn set_interval_unit(mut self, input: ::std::option::Option<crate::types::IntervalUnitValues>) -> Self {
-        self.interval_unit = input;
-        self
+        self.interval_unit = input; self
     }
     /// <p>The interval unit.</p>
     pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::IntervalUnitValues> {
@@ -132,19 +131,18 @@ impl CreateRuleBuilder {
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
     pub fn times(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.times.unwrap_or_default();
-        v.push(input.into());
-        self.times = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.times = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
-    pub fn set_times(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.times = input;
-        self
+    pub fn set_times(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.times = input; self
     }
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
-    pub fn get_times(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_times(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.times
     }
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
@@ -154,8 +152,7 @@ impl CreateRuleBuilder {
     }
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cron_expression = input;
-        self
+        self.cron_expression = input; self
     }
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,30 +166,36 @@ impl CreateRuleBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
     pub fn scripts(mut self, input: crate::types::Script) -> Self {
         let mut v = self.scripts.unwrap_or_default();
-        v.push(input);
-        self.scripts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scripts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p><b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
-    pub fn set_scripts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Script>>) -> Self {
-        self.scripts = input;
-        self
+    pub fn set_scripts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Script>>) -> Self {
+        self.scripts = input; self
     }
     /// <p><b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating application-consistent snapshots with pre and post scripts</a>.</p>
-    pub fn get_scripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Script>> {
+    pub fn get_scripts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Script>> {
         &self.scripts
     }
     /// Consumes the builder and constructs a [`CreateRule`](crate::types::CreateRule).
     pub fn build(self) -> crate::types::CreateRule {
         crate::types::CreateRule {
-            location: self.location,
-            interval: self.interval,
-            interval_unit: self.interval_unit,
-            times: self.times,
-            cron_expression: self.cron_expression,
-            scripts: self.scripts,
+            location: self.location
+            ,
+            interval: self.interval
+            ,
+            interval_unit: self.interval_unit
+            ,
+            times: self.times
+            ,
+            cron_expression: self.cron_expression
+            ,
+            scripts: self.scripts
+            ,
         }
     }
 }
+

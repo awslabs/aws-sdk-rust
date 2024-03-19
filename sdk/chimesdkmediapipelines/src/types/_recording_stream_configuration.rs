@@ -3,13 +3,13 @@
 /// <p>A structure that holds the settings for recording media.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordingStreamConfiguration {
+pub struct RecordingStreamConfiguration  {
     /// <p>The ARN of the recording stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl RecordingStreamConfiguration {
+impl  RecordingStreamConfiguration  {
     /// <p>The ARN of the recording stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RecordingStreamConfigurationBuilder {
     }
     /// <p>The ARN of the recording stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the recording stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl RecordingStreamConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`RecordingStreamConfiguration`](crate::types::RecordingStreamConfiguration).
     pub fn build(self) -> crate::types::RecordingStreamConfiguration {
-        crate::types::RecordingStreamConfiguration { stream_arn: self.stream_arn }
+        crate::types::RecordingStreamConfiguration {
+            stream_arn: self.stream_arn
+            ,
+        }
     }
 }
+

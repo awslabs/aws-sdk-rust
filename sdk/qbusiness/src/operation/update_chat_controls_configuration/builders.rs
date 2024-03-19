@@ -5,54 +5,50 @@ pub use crate::operation::update_chat_controls_configuration::_update_chat_contr
 
 impl UpdateChatControlsConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_chat_controls_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_chat_controls_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateChatControlsConfiguration`.
-///
+/// 
 /// <p>Updates an set of chat controls configured for an existing Amazon Q application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateChatControlsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_chat_controls_configuration::builders::UpdateChatControlsConfigurationInputBuilder,
+                    inner: crate::operation::update_chat_controls_configuration::builders::UpdateChatControlsConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput,
-        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError,
-    > for UpdateChatControlsConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput,
-            crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput,
+                    crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError,
+                > for UpdateChatControlsConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput,
+                        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateChatControlsConfigurationFluentBuilder {
     /// Creates a new `UpdateChatControlsConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateChatControlsConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_chat_controls_configuration::UpdateChatControlsConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput,
-        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_chat_controls_configuration::UpdateChatControlsConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationOutput, crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
@@ -174,15 +161,12 @@ impl UpdateChatControlsConfigurationFluentBuilder {
         self
     }
     /// <p>The configured topic specific chat controls you want to update.</p>
-    pub fn set_topic_configurations_to_create_or_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
-    ) -> Self {
+    pub fn set_topic_configurations_to_create_or_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>) -> Self {
         self.inner = self.inner.set_topic_configurations_to_create_or_update(input);
         self
     }
     /// <p>The configured topic specific chat controls you want to update.</p>
-    pub fn get_topic_configurations_to_create_or_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+    pub fn get_topic_configurations_to_create_or_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>> {
         self.inner.get_topic_configurations_to_create_or_update()
     }
     /// Appends an item to `topicConfigurationsToDelete`.
@@ -195,12 +179,13 @@ impl UpdateChatControlsConfigurationFluentBuilder {
         self
     }
     /// <p>The configured topic specific chat controls you want to delete.</p>
-    pub fn set_topic_configurations_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>) -> Self {
+    pub fn set_topic_configurations_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>) -> Self {
         self.inner = self.inner.set_topic_configurations_to_delete(input);
         self
     }
     /// <p>The configured topic specific chat controls you want to delete.</p>
-    pub fn get_topic_configurations_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+    pub fn get_topic_configurations_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>> {
         self.inner.get_topic_configurations_to_delete()
     }
 }
+

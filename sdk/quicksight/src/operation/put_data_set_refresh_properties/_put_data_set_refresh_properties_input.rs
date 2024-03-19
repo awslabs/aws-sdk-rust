@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDataSetRefreshPropertiesInput {
+pub struct PutDataSetRefreshPropertiesInput  {
     /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dataset.</p>
@@ -10,17 +10,17 @@ pub struct PutDataSetRefreshPropertiesInput {
     /// <p>The dataset refresh properties.</p>
     pub data_set_refresh_properties: ::std::option::Option<crate::types::DataSetRefreshProperties>,
 }
-impl PutDataSetRefreshPropertiesInput {
+impl  PutDataSetRefreshPropertiesInput  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the dataset.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn data_set_refresh_properties(&self) -> ::std::option::Option<&crate::types::DataSetRefreshProperties> {
+    pub fn data_set_refresh_properties(&self) -> ::std::option::Option<& crate::types::DataSetRefreshProperties> {
         self.data_set_refresh_properties.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PutDataSetRefreshPropertiesInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutDataSetRefreshPropertiesInputBuilder {
     }
     /// <p>The ID of the dataset.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The ID of the dataset.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl PutDataSetRefreshPropertiesInputBuilder {
     }
     /// <p>The dataset refresh properties.</p>
     pub fn set_data_set_refresh_properties(mut self, input: ::std::option::Option<crate::types::DataSetRefreshProperties>) -> Self {
-        self.data_set_refresh_properties = input;
-        self
+        self.data_set_refresh_properties = input; self
     }
     /// <p>The dataset refresh properties.</p>
     pub fn get_data_set_refresh_properties(&self) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
         &self.data_set_refresh_properties
     }
     /// Consumes the builder and constructs a [`PutDataSetRefreshPropertiesInput`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput {
-            aws_account_id: self.aws_account_id,
-            data_set_id: self.data_set_id,
-            data_set_refresh_properties: self.data_set_refresh_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesInput {
+                aws_account_id: self.aws_account_id
+                ,
+                data_set_id: self.data_set_id
+                ,
+                data_set_refresh_properties: self.data_set_refresh_properties
+                ,
+            }
+        )
     }
 }
+

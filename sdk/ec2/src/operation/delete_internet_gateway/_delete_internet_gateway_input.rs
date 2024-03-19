@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInternetGatewayInput {
+pub struct DeleteInternetGatewayInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the internet gateway.</p>
     pub internet_gateway_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInternetGatewayInput {
+impl  DeleteInternetGatewayInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn internet_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn internet_gateway_id(&self) -> ::std::option::Option<& str> {
         self.internet_gateway_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeleteInternetGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,21 +54,22 @@ impl DeleteInternetGatewayInputBuilder {
     }
     /// <p>The ID of the internet gateway.</p>
     pub fn set_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.internet_gateway_id = input;
-        self
+        self.internet_gateway_id = input; self
     }
     /// <p>The ID of the internet gateway.</p>
     pub fn get_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.internet_gateway_id
     }
     /// Consumes the builder and constructs a [`DeleteInternetGatewayInput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_internet_gateway::DeleteInternetGatewayInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_internet_gateway::DeleteInternetGatewayInput {
-            dry_run: self.dry_run,
-            internet_gateway_id: self.internet_gateway_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_internet_gateway::DeleteInternetGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_internet_gateway::DeleteInternetGatewayInput {
+                dry_run: self.dry_run
+                ,
+                internet_gateway_id: self.internet_gateway_id
+                ,
+            }
+        )
     }
 }
+

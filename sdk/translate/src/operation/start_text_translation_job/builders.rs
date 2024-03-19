@@ -5,55 +5,51 @@ pub use crate::operation::start_text_translation_job::_start_text_translation_jo
 
 impl StartTextTranslationJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_text_translation_job::StartTextTranslationJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_text_translation_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_text_translation_job::StartTextTranslationJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_text_translation_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartTextTranslationJob`.
-///
+/// 
 /// <p>Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text across multiple documents at once. For batch translation, you can input documents with different source languages (specify <code>auto</code> as the source language). You can specify one or more target languages. Batch translation translates each input document into each of the target languages. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>.</p>
 /// <p>Batch translation jobs can be described with the <code>DescribeTextTranslationJob</code> operation, listed with the <code>ListTextTranslationJobs</code> operation, and stopped with the <code>StopTextTranslationJob</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTextTranslationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder,
+                    inner: crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
-        crate::operation::start_text_translation_job::StartTextTranslationJobError,
-    > for StartTextTranslationJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
-            crate::operation::start_text_translation_job::StartTextTranslationJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
+                    crate::operation::start_text_translation_job::StartTextTranslationJobError,
+                > for StartTextTranslationJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
+                        crate::operation::start_text_translation_job::StartTextTranslationJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartTextTranslationJobFluentBuilder {
     /// Creates a new `StartTextTranslationJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl StartTextTranslationJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_text_translation_job::StartTextTranslationJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_text_translation_job::StartTextTranslationJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_text_translation_job::StartTextTranslationJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
-        crate::operation::start_text_translation_job::StartTextTranslationJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_text_translation_job::StartTextTranslationJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_text_translation_job::StartTextTranslationJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_text_translation_job::StartTextTranslationJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_text_translation_job::StartTextTranslationJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_text_translation_job::StartTextTranslationJobOutput, crate::operation::start_text_translation_job::StartTextTranslationJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the batch translation job to be performed.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
@@ -191,13 +178,13 @@ impl StartTextTranslationJobFluentBuilder {
     }
     /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>
     /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_language_codes(input);
         self
     }
     /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>
     /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_target_language_codes()
     }
     /// Appends an item to `TerminologyNames`.
@@ -218,7 +205,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>
     /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn set_terminology_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_terminology_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_terminology_names(input);
         self
     }
@@ -227,7 +214,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>
     /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    pub fn get_terminology_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_terminology_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_terminology_names()
     }
     /// Appends an item to `ParallelDataNames`.
@@ -252,7 +239,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
-    pub fn set_parallel_data_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_parallel_data_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_parallel_data_names(input);
         self
     }
@@ -263,7 +250,7 @@ impl StartTextTranslationJobFluentBuilder {
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
-    pub fn get_parallel_data_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parallel_data_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_parallel_data_names()
     }
     /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
@@ -319,3 +306,4 @@ impl StartTextTranslationJobFluentBuilder {
         self.inner.get_settings()
     }
 }
+

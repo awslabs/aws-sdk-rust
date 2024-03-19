@@ -3,7 +3,7 @@
 /// <p>The object that shows the details of the column stats run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnStatisticsTaskRun {
+pub struct ColumnStatisticsTaskRun  {
     /// <p>The Amazon Web Services account ID.</p>
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the particular column statistics task run.</p>
@@ -13,7 +13,7 @@ pub struct ColumnStatisticsTaskRun {
     /// <p>The name of the table for which column statistics is generated.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the column names. If none is supplied, all column names for the table will be used by default.</p>
-    pub column_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub column_name_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that the service assumes to generate statistics.</p>
@@ -41,35 +41,36 @@ pub struct ColumnStatisticsTaskRun {
     /// <p>The calculated DPU usage in seconds for all autoscaled workers.</p>
     pub dpu_seconds: f64,
 }
-impl ColumnStatisticsTaskRun {
+impl  ColumnStatisticsTaskRun  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn customer_id(&self) -> ::std::option::Option<&str> {
+    pub fn customer_id(&self) -> ::std::option::Option<& str> {
         self.customer_id.as_deref()
     }
     /// <p>The identifier for the particular column statistics task run.</p>
-    pub fn column_statistics_task_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn column_statistics_task_run_id(&self) -> ::std::option::Option<& str> {
         self.column_statistics_task_run_id.as_deref()
     }
     /// <p>The database where the table resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table for which column statistics is generated.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of the column names. If none is supplied, all column names for the table will be used by default.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_name_list.is_none()`.
-    pub fn column_name_list(&self) -> &[::std::string::String] {
-        self.column_name_list.as_deref().unwrap_or_default()
+    pub fn column_name_list(&self) -> & [::std::string::String] {
+        self.column_name_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The IAM role that the service assumes to generate statistics.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.</p>
@@ -77,7 +78,7 @@ impl ColumnStatisticsTaskRun {
         self.sample_size
     }
     /// <p>Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.</p>
-    pub fn security_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn security_configuration(&self) -> ::std::option::Option<& str> {
         self.security_configuration.as_deref()
     }
     /// <p>The number of workers used to generate column statistics. The job is preconfigured to autoscale up to 25 instances.</p>
@@ -85,31 +86,31 @@ impl ColumnStatisticsTaskRun {
         self.number_of_workers
     }
     /// <p>The type of workers being used for generating stats. The default is <code>g.1x</code>.</p>
-    pub fn worker_type(&self) -> ::std::option::Option<&str> {
+    pub fn worker_type(&self) -> ::std::option::Option<& str> {
         self.worker_type.as_deref()
     }
     /// <p>The status of the task run.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ColumnStatisticsState> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ColumnStatisticsState> {
         self.status.as_ref()
     }
     /// <p>The time that this task was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last point in time when this task was modified.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The start time of the task.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the task.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The error message for the job.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The calculated DPU usage in seconds for all autoscaled workers.</p>
@@ -132,7 +133,7 @@ pub struct ColumnStatisticsTaskRunBuilder {
     pub(crate) column_statistics_task_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) column_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) column_name_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) sample_size: ::std::option::Option<f64>,
@@ -155,8 +156,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_id = input;
-        self
+        self.customer_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +169,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The identifier for the particular column statistics task run.</p>
     pub fn set_column_statistics_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_statistics_task_run_id = input;
-        self
+        self.column_statistics_task_run_id = input; self
     }
     /// <p>The identifier for the particular column statistics task run.</p>
     pub fn get_column_statistics_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +182,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The database where the table resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database where the table resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +195,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The name of the table for which column statistics is generated.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table for which column statistics is generated.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,17 +208,16 @@ impl ColumnStatisticsTaskRunBuilder {
     /// <p>A list of the column names. If none is supplied, all column names for the table will be used by default.</p>
     pub fn column_name_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.column_name_list.unwrap_or_default();
-        v.push(input.into());
-        self.column_name_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.column_name_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the column names. If none is supplied, all column names for the table will be used by default.</p>
-    pub fn set_column_name_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.column_name_list = input;
-        self
+    pub fn set_column_name_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.column_name_list = input; self
     }
     /// <p>A list of the column names. If none is supplied, all column names for the table will be used by default.</p>
-    pub fn get_column_name_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_name_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.column_name_list
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
@@ -231,8 +227,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +240,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The IAM role that the service assumes to generate statistics.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The IAM role that the service assumes to generate statistics.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +253,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.</p>
     pub fn set_sample_size(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sample_size = input;
-        self
+        self.sample_size = input; self
     }
     /// <p>The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.</p>
     pub fn get_sample_size(&self) -> &::std::option::Option<f64> {
@@ -273,8 +266,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.</p>
     pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_configuration = input;
-        self
+        self.security_configuration = input; self
     }
     /// <p>Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.</p>
     pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +279,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The number of workers used to generate column statistics. The job is preconfigured to autoscale up to 25 instances.</p>
     pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_workers = input;
-        self
+        self.number_of_workers = input; self
     }
     /// <p>The number of workers used to generate column statistics. The job is preconfigured to autoscale up to 25 instances.</p>
     pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
@@ -301,8 +292,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The type of workers being used for generating stats. The default is <code>g.1x</code>.</p>
     pub fn set_worker_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_type = input;
-        self
+        self.worker_type = input; self
     }
     /// <p>The type of workers being used for generating stats. The default is <code>g.1x</code>.</p>
     pub fn get_worker_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,8 +305,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The status of the task run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ColumnStatisticsState>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the task run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ColumnStatisticsState> {
@@ -329,8 +318,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The time that this task was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that this task was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -343,8 +331,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The last point in time when this task was modified.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>The last point in time when this task was modified.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -357,8 +344,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The start time of the task.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the task.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -371,8 +357,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The end time of the task.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the task.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -385,8 +370,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The error message for the job.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message for the job.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -399,8 +383,7 @@ impl ColumnStatisticsTaskRunBuilder {
     }
     /// <p>The calculated DPU usage in seconds for all autoscaled workers.</p>
     pub fn set_dpu_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.dpu_seconds = input;
-        self
+        self.dpu_seconds = input; self
     }
     /// <p>The calculated DPU usage in seconds for all autoscaled workers.</p>
     pub fn get_dpu_seconds(&self) -> &::std::option::Option<f64> {
@@ -409,24 +392,46 @@ impl ColumnStatisticsTaskRunBuilder {
     /// Consumes the builder and constructs a [`ColumnStatisticsTaskRun`](crate::types::ColumnStatisticsTaskRun).
     pub fn build(self) -> crate::types::ColumnStatisticsTaskRun {
         crate::types::ColumnStatisticsTaskRun {
-            customer_id: self.customer_id,
-            column_statistics_task_run_id: self.column_statistics_task_run_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            column_name_list: self.column_name_list,
-            catalog_id: self.catalog_id,
-            role: self.role,
-            sample_size: self.sample_size.unwrap_or_default(),
-            security_configuration: self.security_configuration,
-            number_of_workers: self.number_of_workers.unwrap_or_default(),
-            worker_type: self.worker_type,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_updated: self.last_updated,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            error_message: self.error_message,
-            dpu_seconds: self.dpu_seconds.unwrap_or_default(),
+            customer_id: self.customer_id
+            ,
+            column_statistics_task_run_id: self.column_statistics_task_run_id
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            column_name_list: self.column_name_list
+            ,
+            catalog_id: self.catalog_id
+            ,
+            role: self.role
+            ,
+            sample_size: self.sample_size
+                .unwrap_or_default()
+            ,
+            security_configuration: self.security_configuration
+            ,
+            number_of_workers: self.number_of_workers
+                .unwrap_or_default()
+            ,
+            worker_type: self.worker_type
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated: self.last_updated
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            error_message: self.error_message
+            ,
+            dpu_seconds: self.dpu_seconds
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

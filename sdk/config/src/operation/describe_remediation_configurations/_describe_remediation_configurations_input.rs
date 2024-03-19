@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRemediationConfigurationsInput {
+pub struct DescribeRemediationConfigurationsInput  {
     /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
-    pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeRemediationConfigurationsInput {
+impl  DescribeRemediationConfigurationsInput  {
     /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
-    pub fn config_rule_names(&self) -> &[::std::string::String] {
-        self.config_rule_names.as_deref().unwrap_or_default()
+    pub fn config_rule_names(&self) -> & [::std::string::String] {
+        self.config_rule_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeRemediationConfigurationsInput {
@@ -25,7 +26,7 @@ impl DescribeRemediationConfigurationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsInputBuilder {
-    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeRemediationConfigurationsInputBuilder {
     /// Appends an item to `config_rule_names`.
@@ -35,30 +36,26 @@ impl DescribeRemediationConfigurationsInputBuilder {
     /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
     pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.config_rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.config_rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
-    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.config_rule_names = input;
-        self
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.config_rule_names = input; self
     }
     /// <p>A list of Config rule names of remediation configurations for which you want details.</p>
-    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.config_rule_names
     }
     /// Consumes the builder and constructs a [`DescribeRemediationConfigurationsInput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsInput {
-                config_rule_names: self.config_rule_names,
-            },
+                config_rule_names: self.config_rule_names
+                ,
+            }
         )
     }
 }
+

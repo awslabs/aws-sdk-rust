@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDefaultPatchBaselineInput {
+pub struct GetDefaultPatchBaselineInput  {
     /// <p>Returns the default patch baseline for the specified operating system.</p>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
 }
-impl GetDefaultPatchBaselineInput {
+impl  GetDefaultPatchBaselineInput  {
     /// <p>Returns the default patch baseline for the specified operating system.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> ::std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
 }
@@ -33,22 +33,20 @@ impl GetDefaultPatchBaselineInputBuilder {
     }
     /// <p>Returns the default patch baseline for the specified operating system.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>Returns the default patch baseline for the specified operating system.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system
     }
     /// Consumes the builder and constructs a [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput {
-            operating_system: self.operating_system,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput {
+                operating_system: self.operating_system
+                ,
+            }
+        )
     }
 }
+

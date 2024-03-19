@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePrincipalMappingOutput {
+pub struct DescribePrincipalMappingOutput  {
     /// <p>Shows the identifier of the index to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
@@ -22,20 +22,20 @@ pub struct DescribePrincipalMappingOutput {
     /// <li>
     /// <p>Failure reason—the reason an action could not be processed.</p></li>
     /// </ul>
-    pub group_ordering_id_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
+    pub group_ordering_id_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::GroupOrderingIdSummary>>,
     _request_id: Option<String>,
 }
-impl DescribePrincipalMappingOutput {
+impl  DescribePrincipalMappingOutput  {
     /// <p>Shows the identifier of the index to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>Shows the identifier of the group to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
@@ -51,17 +51,18 @@ impl DescribePrincipalMappingOutput {
     /// <li>
     /// <p>Failure reason—the reason an action could not be processed.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ordering_id_summaries.is_none()`.
-    pub fn group_ordering_id_summaries(&self) -> &[crate::types::GroupOrderingIdSummary] {
-        self.group_ordering_id_summaries.as_deref().unwrap_or_default()
+    pub fn group_ordering_id_summaries(&self) -> & [crate::types::GroupOrderingIdSummary] {
+        self.group_ordering_id_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePrincipalMappingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePrincipalMappingOutput {
     /// Creates a new builder-style object to manufacture [`DescribePrincipalMappingOutput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput).
     pub fn builder() -> crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingOutputBuilder {
@@ -76,7 +77,7 @@ pub struct DescribePrincipalMappingOutputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) group_ordering_id_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
+    pub(crate) group_ordering_id_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::GroupOrderingIdSummary>>,
     _request_id: Option<String>,
 }
 impl DescribePrincipalMappingOutputBuilder {
@@ -87,8 +88,7 @@ impl DescribePrincipalMappingOutputBuilder {
     }
     /// <p>Shows the identifier of the index to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>Shows the identifier of the index to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +101,7 @@ impl DescribePrincipalMappingOutputBuilder {
     }
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +114,7 @@ impl DescribePrincipalMappingOutputBuilder {
     }
     /// <p>Shows the identifier of the group to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>Shows the identifier of the group to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,9 +139,9 @@ impl DescribePrincipalMappingOutputBuilder {
     /// </ul>
     pub fn group_ordering_id_summaries(mut self, input: crate::types::GroupOrderingIdSummary) -> Self {
         let mut v = self.group_ordering_id_summaries.unwrap_or_default();
-        v.push(input);
-        self.group_ordering_id_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_ordering_id_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
     /// <ul>
@@ -158,9 +156,8 @@ impl DescribePrincipalMappingOutputBuilder {
     /// <li>
     /// <p>Failure reason—the reason an action could not be processed.</p></li>
     /// </ul>
-    pub fn set_group_ordering_id_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>) -> Self {
-        self.group_ordering_id_summaries = input;
-        self
+    pub fn set_group_ordering_id_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupOrderingIdSummary>>) -> Self {
+        self.group_ordering_id_summaries = input; self
     }
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
     /// <ul>
@@ -175,26 +172,31 @@ impl DescribePrincipalMappingOutputBuilder {
     /// <li>
     /// <p>Failure reason—the reason an action could not be processed.</p></li>
     /// </ul>
-    pub fn get_group_ordering_id_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>> {
+    pub fn get_group_ordering_id_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupOrderingIdSummary>> {
         &self.group_ordering_id_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePrincipalMappingOutput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput).
     pub fn build(self) -> crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput {
         crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput {
-            index_id: self.index_id,
-            data_source_id: self.data_source_id,
-            group_id: self.group_id,
-            group_ordering_id_summaries: self.group_ordering_id_summaries,
+            index_id: self.index_id
+            ,
+            data_source_id: self.data_source_id
+            ,
+            group_id: self.group_id
+            ,
+            group_ordering_id_summaries: self.group_ordering_id_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

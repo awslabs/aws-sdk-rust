@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscardRegistrationVersionInput {
+pub struct DiscardRegistrationVersionInput  {
     /// <p>The unique identifier for the registration.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
 }
-impl DiscardRegistrationVersionInput {
+impl  DiscardRegistrationVersionInput  {
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+    pub fn registration_id(&self) -> ::std::option::Option<& str> {
         self.registration_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DiscardRegistrationVersionInputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_id
     }
     /// Consumes the builder and constructs a [`DiscardRegistrationVersionInput`](crate::operation::discard_registration_version::DiscardRegistrationVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::discard_registration_version::DiscardRegistrationVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::discard_registration_version::DiscardRegistrationVersionInput {
-            registration_id: self.registration_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::discard_registration_version::DiscardRegistrationVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::discard_registration_version::DiscardRegistrationVersionInput {
+                registration_id: self.registration_id
+                ,
+            }
+        )
     }
 }
+

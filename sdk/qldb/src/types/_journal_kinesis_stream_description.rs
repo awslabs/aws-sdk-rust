@@ -3,7 +3,7 @@
 /// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of the original stream creation request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JournalKinesisStreamDescription {
+pub struct JournalKinesisStreamDescription  {
     /// <p>The name of the ledger.</p>
     pub ledger_name: ::std::string::String,
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
@@ -27,54 +27,50 @@ pub struct JournalKinesisStreamDescription {
     /// <p>The user-defined name of the QLDB journal stream.</p>
     pub stream_name: ::std::string::String,
 }
-impl JournalKinesisStreamDescription {
+impl  JournalKinesisStreamDescription  {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(&self) -> &str {
-        use std::ops::Deref;
-        self.ledger_name.deref()
+    pub fn ledger_name(&self) -> & str {
+        use std::ops::Deref; self.ledger_name.deref()
     }
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    pub fn inclusive_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn inclusive_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
-    pub fn exclusive_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn exclusive_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
-    pub fn stream_id(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_id.deref()
+    pub fn stream_id(&self) -> & str {
+        use std::ops::Deref; self.stream_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The current state of the QLDB journal stream.</p>
-    pub fn status(&self) -> &crate::types::StreamStatus {
+    pub fn status(&self) -> & crate::types::StreamStatus {
         &self.status
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
-    pub fn kinesis_configuration(&self) -> ::std::option::Option<&crate::types::KinesisConfiguration> {
+    pub fn kinesis_configuration(&self) -> ::std::option::Option<& crate::types::KinesisConfiguration> {
         self.kinesis_configuration.as_ref()
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
-    pub fn error_cause(&self) -> ::std::option::Option<&crate::types::ErrorCause> {
+    pub fn error_cause(&self) -> ::std::option::Option<& crate::types::ErrorCause> {
         self.error_cause.as_ref()
     }
     /// <p>The user-defined name of the QLDB journal stream.</p>
-    pub fn stream_name(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_name.deref()
+    pub fn stream_name(&self) -> & str {
+        use std::ops::Deref; self.stream_name.deref()
     }
 }
 impl JournalKinesisStreamDescription {
@@ -109,8 +105,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_ledger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ledger_name = input;
-        self
+        self.ledger_name = input; self
     }
     /// <p>The name of the ledger.</p>
     pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +118,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -137,8 +131,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
     pub fn set_inclusive_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inclusive_start_time = input;
-        self
+        self.inclusive_start_time = input; self
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
     pub fn get_inclusive_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -151,8 +144,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
     pub fn set_exclusive_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.exclusive_end_time = input;
-        self
+        self.exclusive_end_time = input; self
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
     pub fn get_exclusive_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -166,8 +158,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +172,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
     pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +185,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +199,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The current state of the QLDB journal stream.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StreamStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the QLDB journal stream.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StreamStatus> {
@@ -225,8 +213,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
     pub fn set_kinesis_configuration(mut self, input: ::std::option::Option<crate::types::KinesisConfiguration>) -> Self {
-        self.kinesis_configuration = input;
-        self
+        self.kinesis_configuration = input; self
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
     pub fn get_kinesis_configuration(&self) -> &::std::option::Option<crate::types::KinesisConfiguration> {
@@ -239,8 +226,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
     pub fn set_error_cause(mut self, input: ::std::option::Option<crate::types::ErrorCause>) -> Self {
-        self.error_cause = input;
-        self
+        self.error_cause = input; self
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
     pub fn get_error_cause(&self) -> &::std::option::Option<crate::types::ErrorCause> {
@@ -254,8 +240,7 @@ impl JournalKinesisStreamDescriptionBuilder {
     }
     /// <p>The user-defined name of the QLDB journal stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The user-defined name of the QLDB journal stream.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,43 +254,47 @@ impl JournalKinesisStreamDescriptionBuilder {
     /// - [`status`](crate::types::builders::JournalKinesisStreamDescriptionBuilder::status)
     /// - [`stream_name`](crate::types::builders::JournalKinesisStreamDescriptionBuilder::stream_name)
     pub fn build(self) -> ::std::result::Result<crate::types::JournalKinesisStreamDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JournalKinesisStreamDescription {
-            ledger_name: self.ledger_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ledger_name",
-                    "ledger_name was not specified but it is required when building JournalKinesisStreamDescription",
-                )
-            })?,
-            creation_time: self.creation_time,
-            inclusive_start_time: self.inclusive_start_time,
-            exclusive_end_time: self.exclusive_end_time,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building JournalKinesisStreamDescription",
-                )
-            })?,
-            stream_id: self.stream_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_id",
-                    "stream_id was not specified but it is required when building JournalKinesisStreamDescription",
-                )
-            })?,
-            arn: self.arn,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building JournalKinesisStreamDescription",
-                )
-            })?,
-            kinesis_configuration: self.kinesis_configuration,
-            error_cause: self.error_cause,
-            stream_name: self.stream_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_name",
-                    "stream_name was not specified but it is required when building JournalKinesisStreamDescription",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JournalKinesisStreamDescription {
+                ledger_name: self.ledger_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ledger_name", "ledger_name was not specified but it is required when building JournalKinesisStreamDescription")
+                    )?
+                ,
+                creation_time: self.creation_time
+                ,
+                inclusive_start_time: self.inclusive_start_time
+                ,
+                exclusive_end_time: self.exclusive_end_time
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building JournalKinesisStreamDescription")
+                    )?
+                ,
+                stream_id: self.stream_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_id", "stream_id was not specified but it is required when building JournalKinesisStreamDescription")
+                    )?
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building JournalKinesisStreamDescription")
+                    )?
+                ,
+                kinesis_configuration: self.kinesis_configuration
+                ,
+                error_cause: self.error_cause
+                ,
+                stream_name: self.stream_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_name", "stream_name was not specified but it is required when building JournalKinesisStreamDescription")
+                    )?
+                ,
+            }
+        )
     }
 }
+

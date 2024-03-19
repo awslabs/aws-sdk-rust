@@ -24,11 +24,7 @@ impl AnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`Aggregation`](crate::types::AnalysisRulePolicyV1::Aggregation), extracting the inner [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aggregation(&self) -> ::std::result::Result<&crate::types::AnalysisRuleAggregation, &Self> {
-        if let AnalysisRulePolicyV1::Aggregation(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalysisRulePolicyV1::Aggregation(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Aggregation`](crate::types::AnalysisRulePolicyV1::Aggregation).
     pub fn is_aggregation(&self) -> bool {
@@ -37,11 +33,7 @@ impl AnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`Custom`](crate::types::AnalysisRulePolicyV1::Custom), extracting the inner [`AnalysisRuleCustom`](crate::types::AnalysisRuleCustom).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_custom(&self) -> ::std::result::Result<&crate::types::AnalysisRuleCustom, &Self> {
-        if let AnalysisRulePolicyV1::Custom(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalysisRulePolicyV1::Custom(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Custom`](crate::types::AnalysisRulePolicyV1::Custom).
     pub fn is_custom(&self) -> bool {
@@ -50,11 +42,7 @@ impl AnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`List`](crate::types::AnalysisRulePolicyV1::List), extracting the inner [`AnalysisRuleList`](crate::types::AnalysisRuleList).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_list(&self) -> ::std::result::Result<&crate::types::AnalysisRuleList, &Self> {
-        if let AnalysisRulePolicyV1::List(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalysisRulePolicyV1::List(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`List`](crate::types::AnalysisRulePolicyV1::List).
     pub fn is_list(&self) -> bool {
@@ -65,3 +53,4 @@ impl AnalysisRulePolicyV1 {
         matches!(self, Self::Unknown)
     }
 }
+

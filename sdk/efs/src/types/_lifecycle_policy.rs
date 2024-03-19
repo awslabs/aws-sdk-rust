@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicy {
+pub struct LifecyclePolicy  {
     /// <p>The number of days after files were last accessed in primary storage (the Standard storage class) at which to move them to Infrequent Access (IA) storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub transition_to_ia: ::std::option::Option<crate::types::TransitionToIaRules>,
     /// <p>Whether to move files back to primary (Standard) storage after they are accessed in IA or Archive storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
@@ -13,17 +13,17 @@ pub struct LifecyclePolicy {
     /// <p>The number of days after files were last accessed in primary storage (the Standard storage class) files at which to move them to Archive storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub transition_to_archive: ::std::option::Option<crate::types::TransitionToArchiveRules>,
 }
-impl LifecyclePolicy {
+impl  LifecyclePolicy  {
     /// <p>The number of days after files were last accessed in primary storage (the Standard storage class) at which to move them to Infrequent Access (IA) storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-    pub fn transition_to_ia(&self) -> ::std::option::Option<&crate::types::TransitionToIaRules> {
+    pub fn transition_to_ia(&self) -> ::std::option::Option<& crate::types::TransitionToIaRules> {
         self.transition_to_ia.as_ref()
     }
     /// <p>Whether to move files back to primary (Standard) storage after they are accessed in IA or Archive storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-    pub fn transition_to_primary_storage_class(&self) -> ::std::option::Option<&crate::types::TransitionToPrimaryStorageClassRules> {
+    pub fn transition_to_primary_storage_class(&self) -> ::std::option::Option<& crate::types::TransitionToPrimaryStorageClassRules> {
         self.transition_to_primary_storage_class.as_ref()
     }
     /// <p>The number of days after files were last accessed in primary storage (the Standard storage class) files at which to move them to Archive storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-    pub fn transition_to_archive(&self) -> ::std::option::Option<&crate::types::TransitionToArchiveRules> {
+    pub fn transition_to_archive(&self) -> ::std::option::Option<& crate::types::TransitionToArchiveRules> {
         self.transition_to_archive.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The number of days after files were last accessed in primary storage (the Standard storage class) at which to move them to Infrequent Access (IA) storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn set_transition_to_ia(mut self, input: ::std::option::Option<crate::types::TransitionToIaRules>) -> Self {
-        self.transition_to_ia = input;
-        self
+        self.transition_to_ia = input; self
     }
     /// <p>The number of days after files were last accessed in primary storage (the Standard storage class) at which to move them to Infrequent Access (IA) storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn get_transition_to_ia(&self) -> &::std::option::Option<crate::types::TransitionToIaRules> {
@@ -63,12 +62,8 @@ impl LifecyclePolicyBuilder {
         self
     }
     /// <p>Whether to move files back to primary (Standard) storage after they are accessed in IA or Archive storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-    pub fn set_transition_to_primary_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitionToPrimaryStorageClassRules>,
-    ) -> Self {
-        self.transition_to_primary_storage_class = input;
-        self
+    pub fn set_transition_to_primary_storage_class(mut self, input: ::std::option::Option<crate::types::TransitionToPrimaryStorageClassRules>) -> Self {
+        self.transition_to_primary_storage_class = input; self
     }
     /// <p>Whether to move files back to primary (Standard) storage after they are accessed in IA or Archive storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn get_transition_to_primary_storage_class(&self) -> &::std::option::Option<crate::types::TransitionToPrimaryStorageClassRules> {
@@ -81,8 +76,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The number of days after files were last accessed in primary storage (the Standard storage class) files at which to move them to Archive storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn set_transition_to_archive(mut self, input: ::std::option::Option<crate::types::TransitionToArchiveRules>) -> Self {
-        self.transition_to_archive = input;
-        self
+        self.transition_to_archive = input; self
     }
     /// <p>The number of days after files were last accessed in primary storage (the Standard storage class) files at which to move them to Archive storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
     pub fn get_transition_to_archive(&self) -> &::std::option::Option<crate::types::TransitionToArchiveRules> {
@@ -91,9 +85,13 @@ impl LifecyclePolicyBuilder {
     /// Consumes the builder and constructs a [`LifecyclePolicy`](crate::types::LifecyclePolicy).
     pub fn build(self) -> crate::types::LifecyclePolicy {
         crate::types::LifecyclePolicy {
-            transition_to_ia: self.transition_to_ia,
-            transition_to_primary_storage_class: self.transition_to_primary_storage_class,
-            transition_to_archive: self.transition_to_archive,
+            transition_to_ia: self.transition_to_ia
+            ,
+            transition_to_primary_storage_class: self.transition_to_primary_storage_class
+            ,
+            transition_to_archive: self.transition_to_archive
+            ,
         }
     }
 }
+

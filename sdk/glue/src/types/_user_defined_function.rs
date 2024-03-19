@@ -3,7 +3,7 @@
 /// <p>Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserDefinedFunction {
+pub struct UserDefinedFunction  {
     /// <p>The name of the function.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database that contains the function.</p>
@@ -17,43 +17,44 @@ pub struct UserDefinedFunction {
     /// <p>The time at which the function was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The resource URIs for the function.</p>
-    pub resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
+    pub resource_uris: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceUri>>,
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
 }
-impl UserDefinedFunction {
+impl  UserDefinedFunction  {
     /// <p>The name of the function.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The name of the catalog database that contains the function.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The Java class that contains the function code.</p>
-    pub fn class_name(&self) -> ::std::option::Option<&str> {
+    pub fn class_name(&self) -> ::std::option::Option<& str> {
         self.class_name.as_deref()
     }
     /// <p>The owner of the function.</p>
-    pub fn owner_name(&self) -> ::std::option::Option<&str> {
+    pub fn owner_name(&self) -> ::std::option::Option<& str> {
         self.owner_name.as_deref()
     }
     /// <p>The owner type.</p>
-    pub fn owner_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
+    pub fn owner_type(&self) -> ::std::option::Option<& crate::types::PrincipalType> {
         self.owner_type.as_ref()
     }
     /// <p>The time at which the function was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The resource URIs for the function.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_uris.is_none()`.
-    pub fn resource_uris(&self) -> &[crate::types::ResourceUri] {
-        self.resource_uris.as_deref().unwrap_or_default()
+    pub fn resource_uris(&self) -> & [crate::types::ResourceUri] {
+        self.resource_uris.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the Data Catalog in which the function resides.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
 }
@@ -74,7 +75,7 @@ pub struct UserDefinedFunctionBuilder {
     pub(crate) owner_name: ::std::option::Option<::std::string::String>,
     pub(crate) owner_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
+    pub(crate) resource_uris: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceUri>>,
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl UserDefinedFunctionBuilder {
@@ -85,8 +86,7 @@ impl UserDefinedFunctionBuilder {
     }
     /// <p>The name of the function.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name of the function.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl UserDefinedFunctionBuilder {
     }
     /// <p>The name of the catalog database that contains the function.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database that contains the function.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl UserDefinedFunctionBuilder {
     }
     /// <p>The Java class that contains the function code.</p>
     pub fn set_class_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.class_name = input;
-        self
+        self.class_name = input; self
     }
     /// <p>The Java class that contains the function code.</p>
     pub fn get_class_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl UserDefinedFunctionBuilder {
     }
     /// <p>The owner of the function.</p>
     pub fn set_owner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_name = input;
-        self
+        self.owner_name = input; self
     }
     /// <p>The owner of the function.</p>
     pub fn get_owner_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl UserDefinedFunctionBuilder {
     }
     /// <p>The owner type.</p>
     pub fn set_owner_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.owner_type = input;
-        self
+        self.owner_type = input; self
     }
     /// <p>The owner type.</p>
     pub fn get_owner_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
@@ -155,8 +151,7 @@ impl UserDefinedFunctionBuilder {
     }
     /// <p>The time at which the function was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the function was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,17 +164,16 @@ impl UserDefinedFunctionBuilder {
     /// <p>The resource URIs for the function.</p>
     pub fn resource_uris(mut self, input: crate::types::ResourceUri) -> Self {
         let mut v = self.resource_uris.unwrap_or_default();
-        v.push(input);
-        self.resource_uris = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_uris = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource URIs for the function.</p>
-    pub fn set_resource_uris(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>) -> Self {
-        self.resource_uris = input;
-        self
+    pub fn set_resource_uris(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceUri>>) -> Self {
+        self.resource_uris = input; self
     }
     /// <p>The resource URIs for the function.</p>
-    pub fn get_resource_uris(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>> {
+    pub fn get_resource_uris(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceUri>> {
         &self.resource_uris
     }
     /// <p>The ID of the Data Catalog in which the function resides.</p>
@@ -189,8 +183,7 @@ impl UserDefinedFunctionBuilder {
     }
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,14 +192,23 @@ impl UserDefinedFunctionBuilder {
     /// Consumes the builder and constructs a [`UserDefinedFunction`](crate::types::UserDefinedFunction).
     pub fn build(self) -> crate::types::UserDefinedFunction {
         crate::types::UserDefinedFunction {
-            function_name: self.function_name,
-            database_name: self.database_name,
-            class_name: self.class_name,
-            owner_name: self.owner_name,
-            owner_type: self.owner_type,
-            create_time: self.create_time,
-            resource_uris: self.resource_uris,
-            catalog_id: self.catalog_id,
+            function_name: self.function_name
+            ,
+            database_name: self.database_name
+            ,
+            class_name: self.class_name
+            ,
+            owner_name: self.owner_name
+            ,
+            owner_type: self.owner_type
+            ,
+            create_time: self.create_time
+            ,
+            resource_uris: self.resource_uris
+            ,
+            catalog_id: self.catalog_id
+            ,
         }
     }
 }
+

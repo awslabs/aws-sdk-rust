@@ -3,7 +3,7 @@
 /// <p>Information about the repository link resource, such as the repository link ARN, the associated connection ARN, encryption key ARN, and owner ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryLinkInfo {
+pub struct RepositoryLinkInfo  {
     /// <p>The Amazon Resource Name (ARN) of the connection associated with the repository link.</p>
     pub connection_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the encryption key for the repository associated with the repository link.</p>
@@ -19,39 +19,34 @@ pub struct RepositoryLinkInfo {
     /// <p>The name of the repository associated with the repository link.</p>
     pub repository_name: ::std::string::String,
 }
-impl RepositoryLinkInfo {
+impl  RepositoryLinkInfo  {
     /// <p>The Amazon Resource Name (ARN) of the connection associated with the repository link.</p>
-    pub fn connection_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_arn.deref()
+    pub fn connection_arn(&self) -> & str {
+        use std::ops::Deref; self.connection_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key for the repository associated with the repository link.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The owner ID for the repository associated with the repository link, such as the owner ID in GitHub.</p>
-    pub fn owner_id(&self) -> &str {
-        use std::ops::Deref;
-        self.owner_id.deref()
+    pub fn owner_id(&self) -> & str {
+        use std::ops::Deref; self.owner_id.deref()
     }
     /// <p>The provider type for the connection, such as GitHub, associated with the repository link.</p>
-    pub fn provider_type(&self) -> &crate::types::ProviderType {
+    pub fn provider_type(&self) -> & crate::types::ProviderType {
         &self.provider_type
     }
     /// <p>The Amazon Resource Name (ARN) of the repository link.</p>
-    pub fn repository_link_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_link_arn.deref()
+    pub fn repository_link_arn(&self) -> & str {
+        use std::ops::Deref; self.repository_link_arn.deref()
     }
     /// <p>The ID of the repository link.</p>
-    pub fn repository_link_id(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_link_id.deref()
+    pub fn repository_link_id(&self) -> & str {
+        use std::ops::Deref; self.repository_link_id.deref()
     }
     /// <p>The name of the repository associated with the repository link.</p>
-    pub fn repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_name.deref()
+    pub fn repository_name(&self) -> & str {
+        use std::ops::Deref; self.repository_name.deref()
     }
 }
 impl RepositoryLinkInfo {
@@ -82,8 +77,7 @@ impl RepositoryLinkInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the connection associated with the repository link.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the connection associated with the repository link.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +90,7 @@ impl RepositoryLinkInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key for the repository associated with the repository link.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key for the repository associated with the repository link.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +104,7 @@ impl RepositoryLinkInfoBuilder {
     }
     /// <p>The owner ID for the repository associated with the repository link, such as the owner ID in GitHub.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The owner ID for the repository associated with the repository link, such as the owner ID in GitHub.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +118,7 @@ impl RepositoryLinkInfoBuilder {
     }
     /// <p>The provider type for the connection, such as GitHub, associated with the repository link.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The provider type for the connection, such as GitHub, associated with the repository link.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -141,8 +132,7 @@ impl RepositoryLinkInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the repository link.</p>
     pub fn set_repository_link_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_arn = input;
-        self
+        self.repository_link_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository link.</p>
     pub fn get_repository_link_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +146,7 @@ impl RepositoryLinkInfoBuilder {
     }
     /// <p>The ID of the repository link.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +160,7 @@ impl RepositoryLinkInfoBuilder {
     }
     /// <p>The name of the repository associated with the repository link.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository associated with the repository link.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,44 +175,42 @@ impl RepositoryLinkInfoBuilder {
     /// - [`repository_link_id`](crate::types::builders::RepositoryLinkInfoBuilder::repository_link_id)
     /// - [`repository_name`](crate::types::builders::RepositoryLinkInfoBuilder::repository_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositoryLinkInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RepositoryLinkInfo {
-            connection_arn: self.connection_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_arn",
-                    "connection_arn was not specified but it is required when building RepositoryLinkInfo",
-                )
-            })?,
-            encryption_key_arn: self.encryption_key_arn,
-            owner_id: self.owner_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owner_id",
-                    "owner_id was not specified but it is required when building RepositoryLinkInfo",
-                )
-            })?,
-            provider_type: self.provider_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_type",
-                    "provider_type was not specified but it is required when building RepositoryLinkInfo",
-                )
-            })?,
-            repository_link_arn: self.repository_link_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_link_arn",
-                    "repository_link_arn was not specified but it is required when building RepositoryLinkInfo",
-                )
-            })?,
-            repository_link_id: self.repository_link_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_link_id",
-                    "repository_link_id was not specified but it is required when building RepositoryLinkInfo",
-                )
-            })?,
-            repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_name",
-                    "repository_name was not specified but it is required when building RepositoryLinkInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RepositoryLinkInfo {
+                connection_arn: self.connection_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_arn", "connection_arn was not specified but it is required when building RepositoryLinkInfo")
+                    )?
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                ,
+                owner_id: self.owner_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owner_id", "owner_id was not specified but it is required when building RepositoryLinkInfo")
+                    )?
+                ,
+                provider_type: self.provider_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_type", "provider_type was not specified but it is required when building RepositoryLinkInfo")
+                    )?
+                ,
+                repository_link_arn: self.repository_link_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_link_arn", "repository_link_arn was not specified but it is required when building RepositoryLinkInfo")
+                    )?
+                ,
+                repository_link_id: self.repository_link_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_link_id", "repository_link_id was not specified but it is required when building RepositoryLinkInfo")
+                    )?
+                ,
+                repository_name: self.repository_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_name", "repository_name was not specified but it is required when building RepositoryLinkInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

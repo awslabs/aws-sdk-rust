@@ -3,7 +3,7 @@
 /// <p>S3 bucket source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3BucketSource {
+pub struct S3BucketSource  {
     /// <p>S3 bucket source s3 bucket.</p>
     pub s3_bucket: ::std::string::String,
     /// <p>S3 bucket source s3 key.</p>
@@ -11,19 +11,17 @@ pub struct S3BucketSource {
     /// <p>S3 bucket source s3 bucket owner.</p>
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl S3BucketSource {
+impl  S3BucketSource  {
     /// <p>S3 bucket source s3 bucket.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket.deref()
     }
     /// <p>S3 bucket source s3 key.</p>
-    pub fn s3_key(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_key.deref()
+    pub fn s3_key(&self) -> & str {
+        use std::ops::Deref; self.s3_key.deref()
     }
     /// <p>S3 bucket source s3 bucket owner.</p>
-    pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_owner.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl S3BucketSourceBuilder {
     }
     /// <p>S3 bucket source s3 bucket.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>S3 bucket source s3 bucket.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl S3BucketSourceBuilder {
     }
     /// <p>S3 bucket source s3 key.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>S3 bucket source s3 key.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl S3BucketSourceBuilder {
     }
     /// <p>S3 bucket source s3 bucket owner.</p>
     pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_owner = input;
-        self
+        self.s3_bucket_owner = input; self
     }
     /// <p>S3 bucket source s3 bucket owner.</p>
     pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl S3BucketSourceBuilder {
     /// - [`s3_bucket`](crate::types::builders::S3BucketSourceBuilder::s3_bucket)
     /// - [`s3_key`](crate::types::builders::S3BucketSourceBuilder::s3_key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3BucketSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3BucketSource {
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building S3BucketSource",
-                )
-            })?,
-            s3_key: self.s3_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_key",
-                    "s3_key was not specified but it is required when building S3BucketSource",
-                )
-            })?,
-            s3_bucket_owner: self.s3_bucket_owner,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3BucketSource {
+                s3_bucket: self.s3_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket", "s3_bucket was not specified but it is required when building S3BucketSource")
+                    )?
+                ,
+                s3_key: self.s3_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_key", "s3_key was not specified but it is required when building S3BucketSource")
+                    )?
+                ,
+                s3_bucket_owner: self.s3_bucket_owner
+                ,
+            }
+        )
     }
 }
+

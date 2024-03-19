@@ -4,7 +4,7 @@
 /// <p>Using Origin Shield can help reduce the load on your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginShield {
+pub struct OriginShield  {
     /// <p>A flag that specifies whether Origin Shield is enabled.</p>
     /// <p>When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional edge caches.</p>
     pub enabled: bool,
@@ -13,7 +13,7 @@ pub struct OriginShield {
     /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_shield_region: ::std::option::Option<::std::string::String>,
 }
-impl OriginShield {
+impl  OriginShield  {
     /// <p>A flag that specifies whether Origin Shield is enabled.</p>
     /// <p>When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional edge caches.</p>
     pub fn enabled(&self) -> bool {
@@ -22,7 +22,7 @@ impl OriginShield {
     /// <p>The Amazon Web Services Region for Origin Shield.</p>
     /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
     /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_shield_region(&self) -> ::std::option::Option<&str> {
+    pub fn origin_shield_region(&self) -> ::std::option::Option<& str> {
         self.origin_shield_region.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl OriginShieldBuilder {
     /// <p>A flag that specifies whether Origin Shield is enabled.</p>
     /// <p>When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional edge caches.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>A flag that specifies whether Origin Shield is enabled.</p>
     /// <p>When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional edge caches.</p>
@@ -70,8 +69,7 @@ impl OriginShieldBuilder {
     /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
     /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_origin_shield_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_shield_region = input;
-        self
+        self.origin_shield_region = input; self
     }
     /// <p>The Amazon Web Services Region for Origin Shield.</p>
     /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
@@ -83,14 +81,17 @@ impl OriginShieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::OriginShieldBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginShield, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginShield {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building OriginShield",
-                )
-            })?,
-            origin_shield_region: self.origin_shield_region,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginShield {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building OriginShield")
+                    )?
+                ,
+                origin_shield_region: self.origin_shield_region
+                ,
+            }
+        )
     }
 }
+

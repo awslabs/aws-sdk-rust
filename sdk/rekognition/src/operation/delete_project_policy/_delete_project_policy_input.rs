@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectPolicyInput {
+pub struct DeleteProjectPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy that you want to delete.</p>
@@ -10,17 +10,17 @@ pub struct DeleteProjectPolicyInput {
     /// <p>The ID of the project policy revision that you want to delete.</p>
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProjectPolicyInput {
+impl  DeleteProjectPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The name of the policy that you want to delete.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
-    pub fn policy_revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> ::std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteProjectPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteProjectPolicyInputBuilder {
     }
     /// <p>The name of the policy that you want to delete.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy that you want to delete.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DeleteProjectPolicyInputBuilder {
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
     pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_revision_id = input;
-        self
+        self.policy_revision_id = input; self
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_revision_id
     }
     /// Consumes the builder and constructs a [`DeleteProjectPolicyInput`](crate::operation::delete_project_policy::DeleteProjectPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_project_policy::DeleteProjectPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_project_policy::DeleteProjectPolicyInput {
-            project_arn: self.project_arn,
-            policy_name: self.policy_name,
-            policy_revision_id: self.policy_revision_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_project_policy::DeleteProjectPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_project_policy::DeleteProjectPolicyInput {
+                project_arn: self.project_arn
+                ,
+                policy_name: self.policy_name
+                ,
+                policy_revision_id: self.policy_revision_id
+                ,
+            }
+        )
     }
 }
+

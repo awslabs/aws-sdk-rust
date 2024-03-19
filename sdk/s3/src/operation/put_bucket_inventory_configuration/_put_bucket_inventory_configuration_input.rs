@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBucketInventoryConfigurationInput {
+pub struct PutBucketInventoryConfigurationInput  {
     /// <p>The name of the bucket where the inventory configuration will be stored.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify the inventory configuration.</p>
@@ -12,21 +12,21 @@ pub struct PutBucketInventoryConfigurationInput {
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl PutBucketInventoryConfigurationInput {
+impl  PutBucketInventoryConfigurationInput  {
     /// <p>The name of the bucket where the inventory configuration will be stored.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The ID used to identify the inventory configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Specifies the inventory configuration.</p>
-    pub fn inventory_configuration(&self) -> ::std::option::Option<&crate::types::InventoryConfiguration> {
+    pub fn inventory_configuration(&self) -> ::std::option::Option<& crate::types::InventoryConfiguration> {
         self.inventory_configuration.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PutBucketInventoryConfigurationInputBuilder {
     }
     /// <p>The name of the bucket where the inventory configuration will be stored.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket where the inventory configuration will be stored.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutBucketInventoryConfigurationInputBuilder {
     }
     /// <p>The ID used to identify the inventory configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID used to identify the inventory configuration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl PutBucketInventoryConfigurationInputBuilder {
     }
     /// <p>Specifies the inventory configuration.</p>
     pub fn set_inventory_configuration(mut self, input: ::std::option::Option<crate::types::InventoryConfiguration>) -> Self {
-        self.inventory_configuration = input;
-        self
+        self.inventory_configuration = input; self
     }
     /// <p>Specifies the inventory configuration.</p>
     pub fn get_inventory_configuration(&self) -> &::std::option::Option<crate::types::InventoryConfiguration> {
@@ -99,27 +96,26 @@ impl PutBucketInventoryConfigurationInputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`PutBucketInventoryConfigurationInput`](crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationInput {
-                bucket: self.bucket,
-                id: self.id,
-                inventory_configuration: self.inventory_configuration,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
+                bucket: self.bucket
+                ,
+                id: self.id
+                ,
+                inventory_configuration: self.inventory_configuration
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+            }
         )
     }
 }
+

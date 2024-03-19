@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStoredQueryInput {
+pub struct DeleteStoredQueryInput  {
     /// <p>The name of the query that you want to delete.</p>
     pub query_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStoredQueryInput {
+impl  DeleteStoredQueryInput  {
     /// <p>The name of the query that you want to delete.</p>
-    pub fn query_name(&self) -> ::std::option::Option<&str> {
+    pub fn query_name(&self) -> ::std::option::Option<& str> {
         self.query_name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteStoredQueryInputBuilder {
     }
     /// <p>The name of the query that you want to delete.</p>
     pub fn set_query_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_name = input;
-        self
+        self.query_name = input; self
     }
     /// <p>The name of the query that you want to delete.</p>
     pub fn get_query_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_name
     }
     /// Consumes the builder and constructs a [`DeleteStoredQueryInput`](crate::operation::delete_stored_query::DeleteStoredQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_stored_query::DeleteStoredQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_stored_query::DeleteStoredQueryInput { query_name: self.query_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stored_query::DeleteStoredQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_stored_query::DeleteStoredQueryInput {
+                query_name: self.query_name
+                ,
+            }
+        )
     }
 }
+

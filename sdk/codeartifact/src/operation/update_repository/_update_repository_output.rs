@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRepositoryOutput {
+pub struct UpdateRepositoryOutput  {
     /// <p>The updated repository.</p>
     pub repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,
 }
-impl UpdateRepositoryOutput {
+impl  UpdateRepositoryOutput  {
     /// <p>The updated repository.</p>
-    pub fn repository(&self) -> ::std::option::Option<&crate::types::RepositoryDescription> {
+    pub fn repository(&self) -> ::std::option::Option<& crate::types::RepositoryDescription> {
         self.repository.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRepositoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryOutput`](crate::operation::update_repository::UpdateRepositoryOutput).
     pub fn builder() -> crate::operation::update_repository::builders::UpdateRepositoryOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateRepositoryOutputBuilder {
     }
     /// <p>The updated repository.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<crate::types::RepositoryDescription>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The updated repository.</p>
     pub fn get_repository(&self) -> &::std::option::Option<crate::types::RepositoryDescription> {
         &self.repository
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRepositoryOutput`](crate::operation::update_repository::UpdateRepositoryOutput).
     pub fn build(self) -> crate::operation::update_repository::UpdateRepositoryOutput {
         crate::operation::update_repository::UpdateRepositoryOutput {
-            repository: self.repository,
+            repository: self.repository
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

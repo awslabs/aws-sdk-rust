@@ -5,54 +5,50 @@ pub use crate::operation::get_recovery_point_restore_metadata::_get_recovery_poi
 
 impl GetRecoveryPointRestoreMetadataInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_recovery_point_restore_metadata();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_recovery_point_restore_metadata();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetRecoveryPointRestoreMetadata`.
-///
+/// 
 /// <p>Returns a set of metadata key-value pairs that were used to create the backup.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecoveryPointRestoreMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataInputBuilder,
+                    inner: crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput,
-        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
-    > for GetRecoveryPointRestoreMetadataFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput,
-            crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput,
+                    crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
+                > for GetRecoveryPointRestoreMetadataFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput,
+                        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetRecoveryPointRestoreMetadataFluentBuilder {
     /// Creates a new `GetRecoveryPointRestoreMetadata`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl GetRecoveryPointRestoreMetadataFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadata::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadata::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput,
-        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadata::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadata::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput, crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
@@ -151,3 +138,4 @@ impl GetRecoveryPointRestoreMetadataFluentBuilder {
         self.inner.get_backup_vault_account_id()
     }
 }
+

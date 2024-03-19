@@ -3,16 +3,17 @@
 /// <p>Describes the placement group support of the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlacementGroupInfo {
+pub struct PlacementGroupInfo  {
     /// <p>The supported placement group types.</p>
-    pub supported_strategies: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupStrategy>>,
+    pub supported_strategies: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementGroupStrategy>>,
 }
-impl PlacementGroupInfo {
+impl  PlacementGroupInfo  {
     /// <p>The supported placement group types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_strategies.is_none()`.
-    pub fn supported_strategies(&self) -> &[crate::types::PlacementGroupStrategy] {
-        self.supported_strategies.as_deref().unwrap_or_default()
+    pub fn supported_strategies(&self) -> & [crate::types::PlacementGroupStrategy] {
+        self.supported_strategies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PlacementGroupInfo {
@@ -26,7 +27,7 @@ impl PlacementGroupInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlacementGroupInfoBuilder {
-    pub(crate) supported_strategies: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupStrategy>>,
+    pub(crate) supported_strategies: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementGroupStrategy>>,
 }
 impl PlacementGroupInfoBuilder {
     /// Appends an item to `supported_strategies`.
@@ -36,23 +37,24 @@ impl PlacementGroupInfoBuilder {
     /// <p>The supported placement group types.</p>
     pub fn supported_strategies(mut self, input: crate::types::PlacementGroupStrategy) -> Self {
         let mut v = self.supported_strategies.unwrap_or_default();
-        v.push(input);
-        self.supported_strategies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_strategies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported placement group types.</p>
-    pub fn set_supported_strategies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupStrategy>>) -> Self {
-        self.supported_strategies = input;
-        self
+    pub fn set_supported_strategies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementGroupStrategy>>) -> Self {
+        self.supported_strategies = input; self
     }
     /// <p>The supported placement group types.</p>
-    pub fn get_supported_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupStrategy>> {
+    pub fn get_supported_strategies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementGroupStrategy>> {
         &self.supported_strategies
     }
     /// Consumes the builder and constructs a [`PlacementGroupInfo`](crate::types::PlacementGroupInfo).
     pub fn build(self) -> crate::types::PlacementGroupInfo {
         crate::types::PlacementGroupInfo {
-            supported_strategies: self.supported_strategies,
+            supported_strategies: self.supported_strategies
+            ,
         }
     }
 }
+

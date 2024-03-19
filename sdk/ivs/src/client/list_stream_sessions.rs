@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStreamSessions`](crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::set_channel_arn):<br>required: **true**<br><p>Channel ARN used to filter the list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of streams to return. Default: 100.</p><br>
-    /// - On success, responds with [`ListStreamSessionsOutput`](crate::operation::list_stream_sessions::ListStreamSessionsOutput) with field(s):
+                            /// - On success, responds with [`ListStreamSessionsOutput`](crate::operation::list_stream_sessions::ListStreamSessionsOutput) with field(s):
     ///   - [`stream_sessions(Vec::<StreamSessionSummary>)`](crate::operation::list_stream_sessions::ListStreamSessionsOutput::stream_sessions): <p>List of stream sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stream_sessions::ListStreamSessionsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    /// - On failure, responds with [`SdkError<ListStreamSessionsError>`](crate::operation::list_stream_sessions::ListStreamSessionsError)
+                            /// - On failure, responds with [`SdkError<ListStreamSessionsError>`](crate::operation::list_stream_sessions::ListStreamSessionsError)
     pub fn list_stream_sessions(&self) -> crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder {
-        crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_stream_sessions::builders::ListStreamSessionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

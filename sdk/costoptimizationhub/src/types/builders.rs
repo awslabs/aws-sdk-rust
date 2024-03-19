@@ -88,3 +88,4 @@ pub use crate::types::_compute_configuration::ComputeConfigurationBuilder;
 pub use crate::types::_lambda_function::LambdaFunctionBuilder;
 
 pub use crate::types::_lambda_function_configuration::LambdaFunctionConfigurationBuilder;
+

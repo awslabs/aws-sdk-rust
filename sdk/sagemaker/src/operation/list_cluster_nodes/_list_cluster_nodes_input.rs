@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListClusterNodesInput {
+pub struct ListClusterNodesInput  {
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which you want to retrieve the list of nodes.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns nodes in a SageMaker HyperPod cluster created after the specified time. Timestamps are formatted according to the ISO 8601 standard.</p>
@@ -32,9 +32,9 @@ pub struct ListClusterNodesInput {
     /// <p>The sort order for results. The default value is <code>Ascending</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ListClusterNodesInput {
+impl  ListClusterNodesInput  {
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which you want to retrieve the list of nodes.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>A filter that returns nodes in a SageMaker HyperPod cluster created after the specified time. Timestamps are formatted according to the ISO 8601 standard.</p>
@@ -50,15 +50,15 @@ impl ListClusterNodesInput {
     /// <p>Unix time in seconds, for example, <code>1412195400</code>. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.</p></li>
     /// </ul>
     /// <p>For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns nodes in a SageMaker HyperPod cluster created before the specified time. The acceptable formats are the same as the timestamp formats for <code>CreationTimeAfter</code>. For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns the instance groups whose name contain a specified string.</p>
-    pub fn instance_group_name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn instance_group_name_contains(&self) -> ::std::option::Option<& str> {
         self.instance_group_name_contains.as_deref()
     }
     /// <p>The maximum number of nodes to return in the response.</p>
@@ -66,15 +66,15 @@ impl ListClusterNodesInput {
         self.max_results
     }
     /// <p>If the result of the previous <code>ListClusterNodes</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of cluster nodes, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The field by which to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ClusterSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ClusterSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default value is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -107,8 +107,7 @@ impl ListClusterNodesInputBuilder {
     }
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which you want to retrieve the list of nodes.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which you want to retrieve the list of nodes.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +144,7 @@ impl ListClusterNodesInputBuilder {
     /// </ul>
     /// <p>For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>A filter that returns nodes in a SageMaker HyperPod cluster created after the specified time. Timestamps are formatted according to the ISO 8601 standard.</p>
     /// <p>Acceptable formats include:</p>
@@ -171,8 +169,7 @@ impl ListClusterNodesInputBuilder {
     }
     /// <p>A filter that returns nodes in a SageMaker HyperPod cluster created before the specified time. The acceptable formats are the same as the timestamp formats for <code>CreationTimeAfter</code>. For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>A filter that returns nodes in a SageMaker HyperPod cluster created before the specified time. The acceptable formats are the same as the timestamp formats for <code>CreationTimeAfter</code>. For more information about the timestamp format, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -185,8 +182,7 @@ impl ListClusterNodesInputBuilder {
     }
     /// <p>A filter that returns the instance groups whose name contain a specified string.</p>
     pub fn set_instance_group_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_group_name_contains = input;
-        self
+        self.instance_group_name_contains = input; self
     }
     /// <p>A filter that returns the instance groups whose name contain a specified string.</p>
     pub fn get_instance_group_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +195,7 @@ impl ListClusterNodesInputBuilder {
     }
     /// <p>The maximum number of nodes to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of nodes to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -213,8 +208,7 @@ impl ListClusterNodesInputBuilder {
     }
     /// <p>If the result of the previous <code>ListClusterNodes</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of cluster nodes, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListClusterNodes</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of cluster nodes, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +221,7 @@ impl ListClusterNodesInputBuilder {
     }
     /// <p>The field by which to sort results. The default value is <code>CREATION_TIME</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ClusterSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field by which to sort results. The default value is <code>CREATION_TIME</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ClusterSortBy> {
@@ -241,26 +234,34 @@ impl ListClusterNodesInputBuilder {
     }
     /// <p>The sort order for results. The default value is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for results. The default value is <code>Ascending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListClusterNodesInput`](crate::operation::list_cluster_nodes::ListClusterNodesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_cluster_nodes::ListClusterNodesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_cluster_nodes::ListClusterNodesInput {
-            cluster_name: self.cluster_name,
-            creation_time_after: self.creation_time_after,
-            creation_time_before: self.creation_time_before,
-            instance_group_name_contains: self.instance_group_name_contains,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_cluster_nodes::ListClusterNodesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_cluster_nodes::ListClusterNodesInput {
+                cluster_name: self.cluster_name
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                instance_group_name_contains: self.instance_group_name_contains
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
+        )
     }
 }
+

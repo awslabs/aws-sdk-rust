@@ -3,19 +3,19 @@
 /// <p>Provides information about sorting a list of exports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportSortBy {
+pub struct ExportSortBy  {
     /// <p>The export field to use for sorting.</p>
     pub attribute: crate::types::ExportSortAttribute,
     /// <p>The order to sort the list.</p>
     pub order: crate::types::SortOrder,
 }
-impl ExportSortBy {
+impl  ExportSortBy  {
     /// <p>The export field to use for sorting.</p>
-    pub fn attribute(&self) -> &crate::types::ExportSortAttribute {
+    pub fn attribute(&self) -> & crate::types::ExportSortAttribute {
         &self.attribute
     }
     /// <p>The order to sort the list.</p>
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -42,8 +42,7 @@ impl ExportSortByBuilder {
     }
     /// <p>The export field to use for sorting.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ExportSortAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The export field to use for sorting.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ExportSortAttribute> {
@@ -57,8 +56,7 @@ impl ExportSortByBuilder {
     }
     /// <p>The order to sort the list.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order to sort the list.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl ExportSortByBuilder {
     /// - [`attribute`](crate::types::builders::ExportSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::ExportSortByBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportSortBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportSortBy {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building ExportSortBy",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building ExportSortBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportSortBy {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building ExportSortBy")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building ExportSortBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

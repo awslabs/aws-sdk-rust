@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExecutionInput {
+pub struct DescribeExecutionInput  {
     /// <p>A unique identifier for the execution of a workflow.</p>
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeExecutionInput {
+impl  DescribeExecutionInput  {
     /// <p>A unique identifier for the execution of a workflow.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeExecutionInputBuilder {
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeExecutionInputBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_id
     }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionInput {
-            execution_id: self.execution_id,
-            workflow_id: self.workflow_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_execution::DescribeExecutionInput {
+                execution_id: self.execution_id
+                ,
+                workflow_id: self.workflow_id
+                ,
+            }
+        )
     }
 }
+

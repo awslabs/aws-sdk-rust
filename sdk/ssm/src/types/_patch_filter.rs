@@ -6,25 +6,24 @@
 /// <p>You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <code>DescribePatchProperties</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PatchFilter {
+pub struct PatchFilter  {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
     pub key: crate::types::PatchFilterKey,
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl PatchFilter {
+impl  PatchFilter  {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
-    pub fn key(&self) -> &crate::types::PatchFilterKey {
+    pub fn key(&self) -> & crate::types::PatchFilterKey {
         &self.key
     }
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl PatchFilter {
@@ -39,7 +38,7 @@ impl PatchFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::PatchFilterKey>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PatchFilterBuilder {
     /// <p>The key for the filter.</p>
@@ -52,8 +51,7 @@ impl PatchFilterBuilder {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::PatchFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
@@ -68,19 +66,18 @@ impl PatchFilterBuilder {
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`PatchFilter`](crate::types::PatchFilter).
@@ -88,19 +85,20 @@ impl PatchFilterBuilder {
     /// - [`key`](crate::types::builders::PatchFilterBuilder::key)
     /// - [`values`](crate::types::builders::PatchFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::PatchFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PatchFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building PatchFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building PatchFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PatchFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building PatchFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building PatchFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

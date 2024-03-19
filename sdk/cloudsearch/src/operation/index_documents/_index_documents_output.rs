@@ -3,24 +3,25 @@
 /// <p>The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IndexDocumentsOutput {
+pub struct IndexDocumentsOutput  {
     /// <p>The names of the fields that are currently being indexed.</p>
-    pub field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub field_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl IndexDocumentsOutput {
+impl  IndexDocumentsOutput  {
     /// <p>The names of the fields that are currently being indexed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_names.is_none()`.
-    pub fn field_names(&self) -> &[::std::string::String] {
-        self.field_names.as_deref().unwrap_or_default()
+    pub fn field_names(&self) -> & [::std::string::String] {
+        self.field_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for IndexDocumentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl IndexDocumentsOutput {
     /// Creates a new builder-style object to manufacture [`IndexDocumentsOutput`](crate::operation::index_documents::IndexDocumentsOutput).
     pub fn builder() -> crate::operation::index_documents::builders::IndexDocumentsOutputBuilder {
@@ -32,7 +33,7 @@ impl IndexDocumentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IndexDocumentsOutputBuilder {
-    pub(crate) field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) field_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl IndexDocumentsOutputBuilder {
@@ -43,33 +44,34 @@ impl IndexDocumentsOutputBuilder {
     /// <p>The names of the fields that are currently being indexed.</p>
     pub fn field_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.field_names.unwrap_or_default();
-        v.push(input.into());
-        self.field_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.field_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the fields that are currently being indexed.</p>
-    pub fn set_field_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.field_names = input;
-        self
+    pub fn set_field_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.field_names = input; self
     }
     /// <p>The names of the fields that are currently being indexed.</p>
-    pub fn get_field_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_field_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.field_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`IndexDocumentsOutput`](crate::operation::index_documents::IndexDocumentsOutput).
     pub fn build(self) -> crate::operation::index_documents::IndexDocumentsOutput {
         crate::operation::index_documents::IndexDocumentsOutput {
-            field_names: self.field_names,
+            field_names: self.field_names
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

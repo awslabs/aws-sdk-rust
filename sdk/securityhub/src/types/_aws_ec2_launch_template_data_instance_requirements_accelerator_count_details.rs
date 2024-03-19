@@ -3,13 +3,13 @@
 /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails  {
     /// <p>The maximum number of accelerators. If this parameter isn't specified, there's no maximum limit. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     pub max: ::std::option::Option<i32>,
     /// <p>The minimum number of accelerators. If this parameter isn't specified, there's no minimum limit.</p>
     pub min: ::std::option::Option<i32>,
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
+impl  AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails  {
     /// <p>The maximum number of accelerators. If this parameter isn't specified, there's no maximum limit. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
@@ -41,8 +41,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder 
     }
     /// <p>The maximum number of accelerators. If this parameter isn't specified, there's no maximum limit. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum number of accelerators. If this parameter isn't specified, there's no maximum limit. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     pub fn get_max(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder 
     }
     /// <p>The minimum number of accelerators. If this parameter isn't specified, there's no minimum limit.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum number of accelerators. If this parameter isn't specified, there's no minimum limit.</p>
     pub fn get_min(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder 
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
-            max: self.max,
-            min: self.min,
+            max: self.max
+            ,
+            min: self.min
+            ,
         }
     }
 }
+

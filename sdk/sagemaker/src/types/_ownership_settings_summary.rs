@@ -3,13 +3,13 @@
 /// <p>Specifies summary information about the ownership settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OwnershipSettingsSummary {
+pub struct OwnershipSettingsSummary  {
     /// <p>The user profile who is the owner of the private space.</p>
     pub owner_user_profile_name: ::std::option::Option<::std::string::String>,
 }
-impl OwnershipSettingsSummary {
+impl  OwnershipSettingsSummary  {
     /// <p>The user profile who is the owner of the private space.</p>
-    pub fn owner_user_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn owner_user_profile_name(&self) -> ::std::option::Option<& str> {
         self.owner_user_profile_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl OwnershipSettingsSummaryBuilder {
     }
     /// <p>The user profile who is the owner of the private space.</p>
     pub fn set_owner_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_user_profile_name = input;
-        self
+        self.owner_user_profile_name = input; self
     }
     /// <p>The user profile who is the owner of the private space.</p>
     pub fn get_owner_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl OwnershipSettingsSummaryBuilder {
     /// Consumes the builder and constructs a [`OwnershipSettingsSummary`](crate::types::OwnershipSettingsSummary).
     pub fn build(self) -> crate::types::OwnershipSettingsSummary {
         crate::types::OwnershipSettingsSummary {
-            owner_user_profile_name: self.owner_user_profile_name,
+            owner_user_profile_name: self.owner_user_profile_name
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourcePoliciesResponseEntry {
+pub struct GetResourcePoliciesResponseEntry  {
     /// <p>A policy ID.</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
@@ -11,17 +11,17 @@ pub struct GetResourcePoliciesResponseEntry {
     /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl GetResourcePoliciesResponseEntry {
+impl  GetResourcePoliciesResponseEntry  {
     /// <p>A policy ID.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
-    pub fn policy_hash(&self) -> ::std::option::Option<&str> {
+    pub fn policy_hash(&self) -> ::std::option::Option<& str> {
         self.policy_hash.as_deref()
     }
     /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetResourcePoliciesResponseEntryBuilder {
     }
     /// <p>A policy ID.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>A policy ID.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetResourcePoliciesResponseEntryBuilder {
     }
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_hash = input;
-        self
+        self.policy_hash = input; self
     }
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
     pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl GetResourcePoliciesResponseEntryBuilder {
     }
     /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl GetResourcePoliciesResponseEntryBuilder {
     /// Consumes the builder and constructs a [`GetResourcePoliciesResponseEntry`](crate::types::GetResourcePoliciesResponseEntry).
     pub fn build(self) -> crate::types::GetResourcePoliciesResponseEntry {
         crate::types::GetResourcePoliciesResponseEntry {
-            policy_id: self.policy_id,
-            policy_hash: self.policy_hash,
-            policy: self.policy,
+            policy_id: self.policy_id
+            ,
+            policy_hash: self.policy_hash
+            ,
+            policy: self.policy
+            ,
         }
     }
 }
+

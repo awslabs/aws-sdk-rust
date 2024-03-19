@@ -2,35 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
+pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput  {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the quota increase requests.</p>
-    pub requested_quotas: ::std::option::Option<::std::vec::Vec<crate::types::RequestedServiceQuotaChange>>,
+    pub requested_quotas: ::std::option::Option<::std::vec::Vec::<crate::types::RequestedServiceQuotaChange>>,
     _request_id: Option<String>,
 }
-impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
+impl  ListRequestedServiceQuotaChangeHistoryByQuotaOutput  {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the quota increase requests.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_quotas.is_none()`.
-    pub fn requested_quotas(&self) -> &[crate::types::RequestedServiceQuotaChange] {
-        self.requested_quotas.as_deref().unwrap_or_default()
+    pub fn requested_quotas(&self) -> & [crate::types::RequestedServiceQuotaChange] {
+        self.requested_quotas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
-    pub fn builder(
-    ) -> crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder {
         crate::operation::list_requested_service_quota_change_history_by_quota::builders::ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder::default()
     }
 }
@@ -40,7 +39,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) requested_quotas: ::std::option::Option<::std::vec::Vec<crate::types::RequestedServiceQuotaChange>>,
+    pub(crate) requested_quotas: ::std::option::Option<::std::vec::Vec::<crate::types::RequestedServiceQuotaChange>>,
     _request_id: Option<String>,
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder {
@@ -51,8 +50,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,36 +63,36 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder {
     /// <p>Information about the quota increase requests.</p>
     pub fn requested_quotas(mut self, input: crate::types::RequestedServiceQuotaChange) -> Self {
         let mut v = self.requested_quotas.unwrap_or_default();
-        v.push(input);
-        self.requested_quotas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.requested_quotas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the quota increase requests.</p>
-    pub fn set_requested_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequestedServiceQuotaChange>>) -> Self {
-        self.requested_quotas = input;
-        self
+    pub fn set_requested_quotas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RequestedServiceQuotaChange>>) -> Self {
+        self.requested_quotas = input; self
     }
     /// <p>Information about the quota increase requests.</p>
-    pub fn get_requested_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestedServiceQuotaChange>> {
+    pub fn get_requested_quotas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RequestedServiceQuotaChange>> {
         &self.requested_quotas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
+    pub fn build(self) -> crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
         crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
-            next_token: self.next_token,
-            requested_quotas: self.requested_quotas,
+            next_token: self.next_token
+            ,
+            requested_quotas: self.requested_quotas
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

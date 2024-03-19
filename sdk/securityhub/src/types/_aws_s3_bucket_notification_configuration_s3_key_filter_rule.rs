@@ -3,19 +3,19 @@
 /// <p>Details for a filter rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+pub struct AwsS3BucketNotificationConfigurationS3KeyFilterRule  {
     /// <p>Indicates whether the filter is based on the prefix or suffix of the Amazon S3 key.</p>
     pub name: ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName>,
     /// <p>The filter value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+impl  AwsS3BucketNotificationConfigurationS3KeyFilterRule  {
     /// <p>Indicates whether the filter is based on the prefix or suffix of the Amazon S3 key.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName> {
         self.name.as_ref()
     }
     /// <p>The filter value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRuleBuilder {
     }
     /// <p>Indicates whether the filter is based on the prefix or suffix of the Amazon S3 key.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Indicates whether the filter is based on the prefix or suffix of the Amazon S3 key.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName> {
@@ -55,8 +54,7 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRuleBuilder {
     }
     /// <p>The filter value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The filter value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRuleBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
     pub fn build(self) -> crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule {
         crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

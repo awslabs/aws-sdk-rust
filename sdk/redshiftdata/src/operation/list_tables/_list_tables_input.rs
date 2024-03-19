@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTablesInput {
+pub struct ListTablesInput  {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
@@ -24,37 +24,37 @@ pub struct ListTablesInput {
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
-impl ListTablesInput {
+impl  ListTablesInput  {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p>
-    pub fn db_user(&self) -> ::std::option::Option<&str> {
+    pub fn db_user(&self) -> ::std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials.</p>
-    pub fn connected_database(&self) -> ::std::option::Option<&str> {
+    pub fn connected_database(&self) -> ::std::option::Option<& str> {
         self.connected_database.as_deref()
     }
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned.</p>
-    pub fn schema_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn schema_pattern(&self) -> ::std::option::Option<& str> {
         self.schema_pattern.as_deref()
     }
     /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned.</p>
-    pub fn table_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn table_pattern(&self) -> ::std::option::Option<& str> {
         self.table_pattern.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results.</p>
@@ -62,7 +62,7 @@ impl ListTablesInput {
         self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
@@ -96,8 +96,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p>
     pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_user = input;
-        self
+        self.db_user = input; self
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p>
     pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials.</p>
     pub fn set_connected_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connected_database = input;
-        self
+        self.connected_database = input; self
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials.</p>
     pub fn get_connected_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned.</p>
     pub fn set_schema_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_pattern = input;
-        self
+        self.schema_pattern = input; self
     }
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned.</p>
     pub fn get_schema_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned.</p>
     pub fn set_table_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_pattern = input;
-        self
+        self.table_pattern = input; self
     }
     /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned.</p>
     pub fn get_table_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +188,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -223,8 +214,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,17 +222,30 @@ impl ListTablesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
-            cluster_identifier: self.cluster_identifier,
-            secret_arn: self.secret_arn,
-            db_user: self.db_user,
-            database: self.database,
-            connected_database: self.connected_database,
-            schema_pattern: self.schema_pattern,
-            table_pattern: self.table_pattern,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            workgroup_name: self.workgroup_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_tables::ListTablesInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                secret_arn: self.secret_arn
+                ,
+                db_user: self.db_user
+                ,
+                database: self.database
+                ,
+                connected_database: self.connected_database
+                ,
+                schema_pattern: self.schema_pattern
+                ,
+                table_pattern: self.table_pattern
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+            }
+        )
     }
 }
+

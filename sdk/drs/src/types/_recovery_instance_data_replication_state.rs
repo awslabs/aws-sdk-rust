@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recoveryinstancedatareplicationstate = unimplemented!();
 /// match recoveryinstancedatareplicationstate {
@@ -40,16 +40,14 @@
 /// Specifically, when `recoveryinstancedatareplicationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecoveryInstanceDataReplicationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum RecoveryInstanceDataReplicationState {
     #[allow(missing_docs)] // documentation missing in model
     Backlog,
@@ -77,104 +75,92 @@ pub enum RecoveryInstanceDataReplicationState {
     Stopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for RecoveryInstanceDataReplicationState {
-    fn from(s: &str) -> Self {
-        match s {
-            "BACKLOG" => RecoveryInstanceDataReplicationState::Backlog,
-            "CONTINUOUS" => RecoveryInstanceDataReplicationState::Continuous,
-            "CREATING_SNAPSHOT" => RecoveryInstanceDataReplicationState::CreatingSnapshot,
-            "DISCONNECTED" => RecoveryInstanceDataReplicationState::Disconnected,
-            "INITIAL_SYNC" => RecoveryInstanceDataReplicationState::InitialSync,
-            "INITIATING" => RecoveryInstanceDataReplicationState::Initiating,
-            "NOT_STARTED" => RecoveryInstanceDataReplicationState::NotStarted,
-            "PAUSED" => RecoveryInstanceDataReplicationState::Paused,
-            "REPLICATION_STATE_NOT_AVAILABLE" => RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable,
-            "RESCAN" => RecoveryInstanceDataReplicationState::Rescan,
-            "STALLED" => RecoveryInstanceDataReplicationState::Stalled,
-            "STOPPED" => RecoveryInstanceDataReplicationState::Stopped,
-            other => RecoveryInstanceDataReplicationState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BACKLOG" => RecoveryInstanceDataReplicationState::Backlog,
+"CONTINUOUS" => RecoveryInstanceDataReplicationState::Continuous,
+"CREATING_SNAPSHOT" => RecoveryInstanceDataReplicationState::CreatingSnapshot,
+"DISCONNECTED" => RecoveryInstanceDataReplicationState::Disconnected,
+"INITIAL_SYNC" => RecoveryInstanceDataReplicationState::InitialSync,
+"INITIATING" => RecoveryInstanceDataReplicationState::Initiating,
+"NOT_STARTED" => RecoveryInstanceDataReplicationState::NotStarted,
+"PAUSED" => RecoveryInstanceDataReplicationState::Paused,
+"REPLICATION_STATE_NOT_AVAILABLE" => RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable,
+"RESCAN" => RecoveryInstanceDataReplicationState::Rescan,
+"STALLED" => RecoveryInstanceDataReplicationState::Stalled,
+"STOPPED" => RecoveryInstanceDataReplicationState::Stopped,
+other => RecoveryInstanceDataReplicationState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for RecoveryInstanceDataReplicationState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RecoveryInstanceDataReplicationState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(RecoveryInstanceDataReplicationState::from(s))
+                    }
+                }
 impl RecoveryInstanceDataReplicationState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecoveryInstanceDataReplicationState::Backlog => "BACKLOG",
-            RecoveryInstanceDataReplicationState::Continuous => "CONTINUOUS",
-            RecoveryInstanceDataReplicationState::CreatingSnapshot => "CREATING_SNAPSHOT",
-            RecoveryInstanceDataReplicationState::Disconnected => "DISCONNECTED",
-            RecoveryInstanceDataReplicationState::InitialSync => "INITIAL_SYNC",
-            RecoveryInstanceDataReplicationState::Initiating => "INITIATING",
-            RecoveryInstanceDataReplicationState::NotStarted => "NOT_STARTED",
-            RecoveryInstanceDataReplicationState::Paused => "PAUSED",
-            RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => "REPLICATION_STATE_NOT_AVAILABLE",
-            RecoveryInstanceDataReplicationState::Rescan => "RESCAN",
-            RecoveryInstanceDataReplicationState::Stalled => "STALLED",
-            RecoveryInstanceDataReplicationState::Stopped => "STOPPED",
-            RecoveryInstanceDataReplicationState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BACKLOG",
-            "CONTINUOUS",
-            "CREATING_SNAPSHOT",
-            "DISCONNECTED",
-            "INITIAL_SYNC",
-            "INITIATING",
-            "NOT_STARTED",
-            "PAUSED",
-            "REPLICATION_STATE_NOT_AVAILABLE",
-            "RESCAN",
-            "STALLED",
-            "STOPPED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecoveryInstanceDataReplicationState::Backlog => "BACKLOG",
+    RecoveryInstanceDataReplicationState::Continuous => "CONTINUOUS",
+    RecoveryInstanceDataReplicationState::CreatingSnapshot => "CREATING_SNAPSHOT",
+    RecoveryInstanceDataReplicationState::Disconnected => "DISCONNECTED",
+    RecoveryInstanceDataReplicationState::InitialSync => "INITIAL_SYNC",
+    RecoveryInstanceDataReplicationState::Initiating => "INITIATING",
+    RecoveryInstanceDataReplicationState::NotStarted => "NOT_STARTED",
+    RecoveryInstanceDataReplicationState::Paused => "PAUSED",
+    RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => "REPLICATION_STATE_NOT_AVAILABLE",
+    RecoveryInstanceDataReplicationState::Rescan => "RESCAN",
+    RecoveryInstanceDataReplicationState::Stalled => "STALLED",
+    RecoveryInstanceDataReplicationState::Stopped => "STOPPED",
+    RecoveryInstanceDataReplicationState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BACKLOG", "CONTINUOUS", "CREATING_SNAPSHOT", "DISCONNECTED", "INITIAL_SYNC", "INITIATING", "NOT_STARTED", "PAUSED", "REPLICATION_STATE_NOT_AVAILABLE", "RESCAN", "STALLED", "STOPPED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for RecoveryInstanceDataReplicationState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl RecoveryInstanceDataReplicationState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for RecoveryInstanceDataReplicationState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            RecoveryInstanceDataReplicationState::Backlog => write!(f, "BACKLOG"),
-            RecoveryInstanceDataReplicationState::Continuous => write!(f, "CONTINUOUS"),
-            RecoveryInstanceDataReplicationState::CreatingSnapshot => write!(f, "CREATING_SNAPSHOT"),
-            RecoveryInstanceDataReplicationState::Disconnected => write!(f, "DISCONNECTED"),
-            RecoveryInstanceDataReplicationState::InitialSync => write!(f, "INITIAL_SYNC"),
-            RecoveryInstanceDataReplicationState::Initiating => write!(f, "INITIATING"),
-            RecoveryInstanceDataReplicationState::NotStarted => write!(f, "NOT_STARTED"),
-            RecoveryInstanceDataReplicationState::Paused => write!(f, "PAUSED"),
-            RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => write!(f, "REPLICATION_STATE_NOT_AVAILABLE"),
-            RecoveryInstanceDataReplicationState::Rescan => write!(f, "RESCAN"),
-            RecoveryInstanceDataReplicationState::Stalled => write!(f, "STALLED"),
-            RecoveryInstanceDataReplicationState::Stopped => write!(f, "STOPPED"),
-            RecoveryInstanceDataReplicationState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                RecoveryInstanceDataReplicationState::Backlog => write!(f, "BACKLOG"),
+RecoveryInstanceDataReplicationState::Continuous => write!(f, "CONTINUOUS"),
+RecoveryInstanceDataReplicationState::CreatingSnapshot => write!(f, "CREATING_SNAPSHOT"),
+RecoveryInstanceDataReplicationState::Disconnected => write!(f, "DISCONNECTED"),
+RecoveryInstanceDataReplicationState::InitialSync => write!(f, "INITIAL_SYNC"),
+RecoveryInstanceDataReplicationState::Initiating => write!(f, "INITIATING"),
+RecoveryInstanceDataReplicationState::NotStarted => write!(f, "NOT_STARTED"),
+RecoveryInstanceDataReplicationState::Paused => write!(f, "PAUSED"),
+RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => write!(f, "REPLICATION_STATE_NOT_AVAILABLE"),
+RecoveryInstanceDataReplicationState::Rescan => write!(f, "RESCAN"),
+RecoveryInstanceDataReplicationState::Stalled => write!(f, "STALLED"),
+RecoveryInstanceDataReplicationState::Stopped => write!(f, "STOPPED"),
+RecoveryInstanceDataReplicationState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

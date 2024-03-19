@@ -3,19 +3,19 @@
 /// <p>The aggregate results of entities affected by the specified event in your organization. The results are aggregated by the entity status codes for the specified set of accountsIDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationEntityAggregate {
+pub struct OrganizationEntityAggregate  {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
     pub event_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of entities for the organization that match the filter criteria for the specified events.</p>
     pub count: i32,
     /// <p>The number of affected entities aggregated by the entitiy status codes.</p>
-    pub statuses: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>,
+    pub statuses: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>,
     /// <p>A list of entity aggregates for each of the specified accounts in your organization that are affected by a specific event. If there are no <code>awsAccountIds</code> provided in the request, this field will be empty in the response.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountEntityAggregate>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec::<crate::types::AccountEntityAggregate>>,
 }
-impl OrganizationEntityAggregate {
+impl  OrganizationEntityAggregate  {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    pub fn event_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_arn(&self) -> ::std::option::Option<& str> {
         self.event_arn.as_deref()
     }
     /// <p>The number of entities for the organization that match the filter criteria for the specified events.</p>
@@ -23,14 +23,15 @@ impl OrganizationEntityAggregate {
         self.count
     }
     /// <p>The number of affected entities aggregated by the entitiy status codes.</p>
-    pub fn statuses(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EntityStatusCode, i32>> {
+    pub fn statuses(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::EntityStatusCode, i32>> {
         self.statuses.as_ref()
     }
     /// <p>A list of entity aggregates for each of the specified accounts in your organization that are affected by a specific event. If there are no <code>awsAccountIds</code> provided in the request, this field will be empty in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
-    pub fn accounts(&self) -> &[crate::types::AccountEntityAggregate] {
-        self.accounts.as_deref().unwrap_or_default()
+    pub fn accounts(&self) -> & [crate::types::AccountEntityAggregate] {
+        self.accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OrganizationEntityAggregate {
@@ -46,8 +47,8 @@ impl OrganizationEntityAggregate {
 pub struct OrganizationEntityAggregateBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
-    pub(crate) statuses: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>,
-    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountEntityAggregate>>,
+    pub(crate) statuses: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec::<crate::types::AccountEntityAggregate>>,
 }
 impl OrganizationEntityAggregateBuilder {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
@@ -57,8 +58,7 @@ impl OrganizationEntityAggregateBuilder {
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
     pub fn set_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
     pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl OrganizationEntityAggregateBuilder {
     }
     /// <p>The number of entities for the organization that match the filter criteria for the specified events.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of entities for the organization that match the filter criteria for the specified events.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -85,17 +84,16 @@ impl OrganizationEntityAggregateBuilder {
     /// <p>The number of affected entities aggregated by the entitiy status codes.</p>
     pub fn statuses(mut self, k: crate::types::EntityStatusCode, v: i32) -> Self {
         let mut hash_map = self.statuses.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.statuses = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.statuses = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The number of affected entities aggregated by the entitiy status codes.</p>
-    pub fn set_statuses(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>) -> Self {
-        self.statuses = input;
-        self
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>>) -> Self {
+        self.statuses = input; self
     }
     /// <p>The number of affected entities aggregated by the entitiy status codes.</p>
-    pub fn get_statuses(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>> {
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::EntityStatusCode, i32>> {
         &self.statuses
     }
     /// Appends an item to `accounts`.
@@ -105,26 +103,31 @@ impl OrganizationEntityAggregateBuilder {
     /// <p>A list of entity aggregates for each of the specified accounts in your organization that are affected by a specific event. If there are no <code>awsAccountIds</code> provided in the request, this field will be empty in the response.</p>
     pub fn accounts(mut self, input: crate::types::AccountEntityAggregate) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input);
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of entity aggregates for each of the specified accounts in your organization that are affected by a specific event. If there are no <code>awsAccountIds</code> provided in the request, this field will be empty in the response.</p>
-    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountEntityAggregate>>) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountEntityAggregate>>) -> Self {
+        self.accounts = input; self
     }
     /// <p>A list of entity aggregates for each of the specified accounts in your organization that are affected by a specific event. If there are no <code>awsAccountIds</code> provided in the request, this field will be empty in the response.</p>
-    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountEntityAggregate>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountEntityAggregate>> {
         &self.accounts
     }
     /// Consumes the builder and constructs a [`OrganizationEntityAggregate`](crate::types::OrganizationEntityAggregate).
     pub fn build(self) -> crate::types::OrganizationEntityAggregate {
         crate::types::OrganizationEntityAggregate {
-            event_arn: self.event_arn,
-            count: self.count.unwrap_or_default(),
-            statuses: self.statuses,
-            accounts: self.accounts,
+            event_arn: self.event_arn
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            statuses: self.statuses
+            ,
+            accounts: self.accounts
+            ,
         }
     }
 }
+

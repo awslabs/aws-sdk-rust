@@ -5,23 +5,20 @@ pub use crate::operation::unassign_private_nat_gateway_address::_unassign_privat
 
 impl UnassignPrivateNatGatewayAddressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.unassign_private_nat_gateway_address();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.unassign_private_nat_gateway_address();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UnassignPrivateNatGatewayAddress`.
-///
+/// 
 /// <p>Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.</p>
 /// <p>While unassigning is in progress, you cannot assign/unassign additional IP addresses while the connections are being drained. You are, however, allowed to delete the NAT gateway.</p>
 /// <p>A private IP address will only be released at the end of MaxDrainDurationSeconds. The private IP addresses stay associated and support the existing connections, but do not support any new connections (new connections are distributed across the remaining assigned private IP address). After the existing connections drain out, the private IP addresses are released.</p>
@@ -30,33 +27,32 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnassignPrivateNatGatewayAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder,
+                    inner: crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
-        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
-    > for UnassignPrivateNatGatewayAddressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
-            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
+                    crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
+                > for UnassignPrivateNatGatewayAddressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
+                        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UnassignPrivateNatGatewayAddressFluentBuilder {
     /// Creates a new `UnassignPrivateNatGatewayAddress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
-        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput, crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
@@ -136,12 +123,12 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder {
         self
     }
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_private_ip_addresses()
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
@@ -173,3 +160,4 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder {
         self.inner.get_dry_run()
     }
 }
+

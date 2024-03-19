@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIngestions`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_bundle_identifier(impl Into<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::app_bundle_identifier) / [`set_app_bundle_identifier(Option<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::set_app_bundle_identifier):<br>required: **true**<br><p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.</p> <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p><br>
-    /// - On success, responds with [`ListIngestionsOutput`](crate::operation::list_ingestions::ListIngestionsOutput) with field(s):
+                            /// - On success, responds with [`ListIngestionsOutput`](crate::operation::list_ingestions::ListIngestionsOutput) with field(s):
     ///   - [`ingestions(Vec::<IngestionSummary>)`](crate::operation::list_ingestions::ListIngestionsOutput::ingestions): <p>Contains a list of ingestion summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ingestions::ListIngestionsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
-    /// - On failure, responds with [`SdkError<ListIngestionsError>`](crate::operation::list_ingestions::ListIngestionsError)
+                            /// - On failure, responds with [`SdkError<ListIngestionsError>`](crate::operation::list_ingestions::ListIngestionsError)
     pub fn list_ingestions(&self) -> crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder {
-        crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

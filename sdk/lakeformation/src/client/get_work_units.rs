@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkUnits`](crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
     ///   - [`page_size(i32)`](crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::set_page_size):<br>required: **false**<br><p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p><br>
     ///   - [`query_id(impl Into<String>)`](crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::set_query_id):<br>required: **true**<br><p>The ID of the plan query operation.</p><br>
-    /// - On success, responds with [`GetWorkUnitsOutput`](crate::operation::get_work_units::GetWorkUnitsOutput) with field(s):
+                            /// - On success, responds with [`GetWorkUnitsOutput`](crate::operation::get_work_units::GetWorkUnitsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_work_units::GetWorkUnitsOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     ///   - [`query_id(String)`](crate::operation::get_work_units::GetWorkUnitsOutput::query_id): <p>The ID of the plan query operation.</p>
     ///   - [`work_unit_ranges(Vec::<WorkUnitRange>)`](crate::operation::get_work_units::GetWorkUnitsOutput::work_unit_ranges): <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    /// - On failure, responds with [`SdkError<GetWorkUnitsError>`](crate::operation::get_work_units::GetWorkUnitsError)
+                            /// - On failure, responds with [`SdkError<GetWorkUnitsError>`](crate::operation::get_work_units::GetWorkUnitsError)
     pub fn get_work_units(&self) -> crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder {
-        crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,13 +3,13 @@
 /// <p>An object that contains information on the status of scanning EC2 instances with findings for an organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationScanEc2InstanceWithFindingsResult {
+pub struct OrganizationScanEc2InstanceWithFindingsResult  {
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
     pub ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>,
 }
-impl OrganizationScanEc2InstanceWithFindingsResult {
+impl  OrganizationScanEc2InstanceWithFindingsResult  {
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-    pub fn ebs_volumes(&self) -> ::std::option::Option<&crate::types::OrganizationEbsVolumesResult> {
+    pub fn ebs_volumes(&self) -> ::std::option::Option<& crate::types::OrganizationEbsVolumesResult> {
         self.ebs_volumes.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl OrganizationScanEc2InstanceWithFindingsResultBuilder {
     }
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
     pub fn set_ebs_volumes(mut self, input: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>) -> Self {
-        self.ebs_volumes = input;
-        self
+        self.ebs_volumes = input; self
     }
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
     pub fn get_ebs_volumes(&self) -> &::std::option::Option<crate::types::OrganizationEbsVolumesResult> {
@@ -44,7 +43,9 @@ impl OrganizationScanEc2InstanceWithFindingsResultBuilder {
     /// Consumes the builder and constructs a [`OrganizationScanEc2InstanceWithFindingsResult`](crate::types::OrganizationScanEc2InstanceWithFindingsResult).
     pub fn build(self) -> crate::types::OrganizationScanEc2InstanceWithFindingsResult {
         crate::types::OrganizationScanEc2InstanceWithFindingsResult {
-            ebs_volumes: self.ebs_volumes,
+            ebs_volumes: self.ebs_volumes
+            ,
         }
     }
 }
+

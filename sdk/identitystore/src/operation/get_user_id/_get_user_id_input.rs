@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUserIdInput {
+pub struct GetUserIdInput  {
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.</p>
     pub alternate_identifier: ::std::option::Option<crate::types::AlternateIdentifier>,
 }
-impl GetUserIdInput {
+impl  GetUserIdInput  {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> ::std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.</p>
-    pub fn alternate_identifier(&self) -> ::std::option::Option<&crate::types::AlternateIdentifier> {
+    pub fn alternate_identifier(&self) -> ::std::option::Option<& crate::types::AlternateIdentifier> {
         self.alternate_identifier.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetUserIdInputBuilder {
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetUserIdInputBuilder {
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.</p>
     pub fn set_alternate_identifier(mut self, input: ::std::option::Option<crate::types::AlternateIdentifier>) -> Self {
-        self.alternate_identifier = input;
-        self
+        self.alternate_identifier = input; self
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are <code>userName</code> and <code>emails.value</code>.</p>
     pub fn get_alternate_identifier(&self) -> &::std::option::Option<crate::types::AlternateIdentifier> {
@@ -65,9 +63,14 @@ impl GetUserIdInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetUserIdInput`](crate::operation::get_user_id::GetUserIdInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_user_id::GetUserIdInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_user_id::GetUserIdInput {
-            identity_store_id: self.identity_store_id,
-            alternate_identifier: self.alternate_identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_user_id::GetUserIdInput {
+                identity_store_id: self.identity_store_id
+                ,
+                alternate_identifier: self.alternate_identifier
+                ,
+            }
+        )
     }
 }
+

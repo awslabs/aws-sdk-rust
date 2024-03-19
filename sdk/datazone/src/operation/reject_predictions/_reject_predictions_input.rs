@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectPredictionsInput {
+pub struct RejectPredictionsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the prediction.</p>
@@ -12,35 +12,36 @@ pub struct RejectPredictionsInput {
     /// <p></p>
     pub reject_rule: ::std::option::Option<crate::types::RejectRule>,
     /// <p></p>
-    pub reject_choices: ::std::option::Option<::std::vec::Vec<crate::types::RejectChoice>>,
+    pub reject_choices: ::std::option::Option<::std::vec::Vec::<crate::types::RejectChoice>>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl RejectPredictionsInput {
+impl  RejectPredictionsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the prediction.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p></p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p></p>
-    pub fn reject_rule(&self) -> ::std::option::Option<&crate::types::RejectRule> {
+    pub fn reject_rule(&self) -> ::std::option::Option<& crate::types::RejectRule> {
         self.reject_rule.as_ref()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reject_choices.is_none()`.
-    pub fn reject_choices(&self) -> &[crate::types::RejectChoice] {
-        self.reject_choices.as_deref().unwrap_or_default()
+    pub fn reject_choices(&self) -> & [crate::types::RejectChoice] {
+        self.reject_choices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -59,7 +60,7 @@ pub struct RejectPredictionsInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<::std::string::String>,
     pub(crate) reject_rule: ::std::option::Option<crate::types::RejectRule>,
-    pub(crate) reject_choices: ::std::option::Option<::std::vec::Vec<crate::types::RejectChoice>>,
+    pub(crate) reject_choices: ::std::option::Option<::std::vec::Vec::<crate::types::RejectChoice>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl RejectPredictionsInputBuilder {
@@ -71,8 +72,7 @@ impl RejectPredictionsInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl RejectPredictionsInputBuilder {
     }
     /// <p>The identifier of the prediction.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the prediction.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl RejectPredictionsInputBuilder {
     }
     /// <p></p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p></p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl RejectPredictionsInputBuilder {
     }
     /// <p></p>
     pub fn set_reject_rule(mut self, input: ::std::option::Option<crate::types::RejectRule>) -> Self {
-        self.reject_rule = input;
-        self
+        self.reject_rule = input; self
     }
     /// <p></p>
     pub fn get_reject_rule(&self) -> &::std::option::Option<crate::types::RejectRule> {
@@ -128,17 +125,16 @@ impl RejectPredictionsInputBuilder {
     /// <p></p>
     pub fn reject_choices(mut self, input: crate::types::RejectChoice) -> Self {
         let mut v = self.reject_choices.unwrap_or_default();
-        v.push(input);
-        self.reject_choices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reject_choices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_reject_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RejectChoice>>) -> Self {
-        self.reject_choices = input;
-        self
+    pub fn set_reject_choices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RejectChoice>>) -> Self {
+        self.reject_choices = input; self
     }
     /// <p></p>
-    pub fn get_reject_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RejectChoice>> {
+    pub fn get_reject_choices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RejectChoice>> {
         &self.reject_choices
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
@@ -148,24 +144,30 @@ impl RejectPredictionsInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`RejectPredictionsInput`](crate::operation::reject_predictions::RejectPredictionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reject_predictions::RejectPredictionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reject_predictions::RejectPredictionsInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            revision: self.revision,
-            reject_rule: self.reject_rule,
-            reject_choices: self.reject_choices,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_predictions::RejectPredictionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reject_predictions::RejectPredictionsInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                revision: self.revision
+                ,
+                reject_rule: self.reject_rule
+                ,
+                reject_choices: self.reject_choices
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

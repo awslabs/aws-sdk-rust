@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCoreNetworkPolicyInput {
+pub struct GetCoreNetworkPolicyInput  {
     /// <p>The ID of a core network.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network policy version.</p>
@@ -10,9 +10,9 @@ pub struct GetCoreNetworkPolicyInput {
     /// <p>The alias of a core network policy</p>
     pub alias: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
 }
-impl GetCoreNetworkPolicyInput {
+impl  GetCoreNetworkPolicyInput  {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ID of a core network policy version.</p>
@@ -20,7 +20,7 @@ impl GetCoreNetworkPolicyInput {
         self.policy_version_id
     }
     /// <p>The alias of a core network policy</p>
-    pub fn alias(&self) -> ::std::option::Option<&crate::types::CoreNetworkPolicyAlias> {
+    pub fn alias(&self) -> ::std::option::Option<& crate::types::CoreNetworkPolicyAlias> {
         self.alias.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GetCoreNetworkPolicyInputBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetCoreNetworkPolicyInputBuilder {
     }
     /// <p>The ID of a core network policy version.</p>
     pub fn set_policy_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.policy_version_id = input;
-        self
+        self.policy_version_id = input; self
     }
     /// <p>The ID of a core network policy version.</p>
     pub fn get_policy_version_id(&self) -> &::std::option::Option<i32> {
@@ -76,22 +74,24 @@ impl GetCoreNetworkPolicyInputBuilder {
     }
     /// <p>The alias of a core network policy</p>
     pub fn set_alias(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias of a core network policy</p>
     pub fn get_alias(&self) -> &::std::option::Option<crate::types::CoreNetworkPolicyAlias> {
         &self.alias
     }
     /// Consumes the builder and constructs a [`GetCoreNetworkPolicyInput`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput {
-            core_network_id: self.core_network_id,
-            policy_version_id: self.policy_version_id,
-            alias: self.alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput {
+                core_network_id: self.core_network_id
+                ,
+                policy_version_id: self.policy_version_id
+                ,
+                alias: self.alias
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The field series item configuration of a line chart.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldSeriesItem {
+pub struct FieldSeriesItem  {
     /// <p>The field ID of the field for which you are setting the axis binding.</p>
     pub field_id: ::std::string::String,
     /// <p>The axis that you are binding the field to.</p>
@@ -11,18 +11,17 @@ pub struct FieldSeriesItem {
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub settings: ::std::option::Option<crate::types::LineChartSeriesSettings>,
 }
-impl FieldSeriesItem {
+impl  FieldSeriesItem  {
     /// <p>The field ID of the field for which you are setting the axis binding.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The axis that you are binding the field to.</p>
-    pub fn axis_binding(&self) -> &crate::types::AxisBinding {
+    pub fn axis_binding(&self) -> & crate::types::AxisBinding {
         &self.axis_binding
     }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::LineChartSeriesSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::LineChartSeriesSettings> {
         self.settings.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl FieldSeriesItemBuilder {
     }
     /// <p>The field ID of the field for which you are setting the axis binding.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID of the field for which you are setting the axis binding.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl FieldSeriesItemBuilder {
     }
     /// <p>The axis that you are binding the field to.</p>
     pub fn set_axis_binding(mut self, input: ::std::option::Option<crate::types::AxisBinding>) -> Self {
-        self.axis_binding = input;
-        self
+        self.axis_binding = input; self
     }
     /// <p>The axis that you are binding the field to.</p>
     pub fn get_axis_binding(&self) -> &::std::option::Option<crate::types::AxisBinding> {
@@ -79,8 +76,7 @@ impl FieldSeriesItemBuilder {
     }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::LineChartSeriesSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::LineChartSeriesSettings> {
@@ -91,20 +87,22 @@ impl FieldSeriesItemBuilder {
     /// - [`field_id`](crate::types::builders::FieldSeriesItemBuilder::field_id)
     /// - [`axis_binding`](crate::types::builders::FieldSeriesItemBuilder::axis_binding)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldSeriesItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldSeriesItem {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building FieldSeriesItem",
-                )
-            })?,
-            axis_binding: self.axis_binding.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "axis_binding",
-                    "axis_binding was not specified but it is required when building FieldSeriesItem",
-                )
-            })?,
-            settings: self.settings,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldSeriesItem {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building FieldSeriesItem")
+                    )?
+                ,
+                axis_binding: self.axis_binding
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("axis_binding", "axis_binding was not specified but it is required when building FieldSeriesItem")
+                    )?
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

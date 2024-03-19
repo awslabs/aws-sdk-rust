@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon EC2 security group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2SecurityGroup {
+pub struct Ec2SecurityGroup  {
     /// <p>The status of the EC2 security group.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the EC2 Security Group.</p>
@@ -11,26 +11,27 @@ pub struct Ec2SecurityGroup {
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the EC2 security group.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl Ec2SecurityGroup {
+impl  Ec2SecurityGroup  {
     /// <p>The status of the EC2 security group.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The name of the EC2 Security Group.</p>
-    pub fn ec2_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_security_group_name(&self) -> ::std::option::Option<& str> {
         self.ec2_security_group_name.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
-    pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<& str> {
         self.ec2_security_group_owner_id.as_deref()
     }
     /// <p>The list of tags for the EC2 security group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Ec2SecurityGroup {
@@ -47,7 +48,7 @@ pub struct Ec2SecurityGroupBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl Ec2SecurityGroupBuilder {
     /// <p>The status of the EC2 security group.</p>
@@ -57,8 +58,7 @@ impl Ec2SecurityGroupBuilder {
     }
     /// <p>The status of the EC2 security group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the EC2 security group.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl Ec2SecurityGroupBuilder {
     }
     /// <p>The name of the EC2 Security Group.</p>
     pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_security_group_name = input;
-        self
+        self.ec2_security_group_name = input; self
     }
     /// <p>The name of the EC2 Security Group.</p>
     pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl Ec2SecurityGroupBuilder {
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_security_group_owner_id = input;
-        self
+        self.ec2_security_group_owner_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl Ec2SecurityGroupBuilder {
     /// <p>The list of tags for the EC2 security group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags for the EC2 security group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tags for the EC2 security group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Ec2SecurityGroup`](crate::types::Ec2SecurityGroup).
     pub fn build(self) -> crate::types::Ec2SecurityGroup {
         crate::types::Ec2SecurityGroup {
-            status: self.status,
-            ec2_security_group_name: self.ec2_security_group_name,
-            ec2_security_group_owner_id: self.ec2_security_group_owner_id,
-            tags: self.tags,
+            status: self.status
+            ,
+            ec2_security_group_name: self.ec2_security_group_name
+            ,
+            ec2_security_group_owner_id: self.ec2_security_group_owner_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

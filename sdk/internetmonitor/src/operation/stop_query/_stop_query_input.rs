@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopQueryInput {
+pub struct StopQueryInput  {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the query that you want to stop. A <code>QueryId</code> is an internally-generated identifier for a specific query.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
 }
-impl StopQueryInput {
+impl  StopQueryInput  {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The ID of the query that you want to stop. A <code>QueryId</code> is an internally-generated identifier for a specific query.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StopQueryInputBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl StopQueryInputBuilder {
     }
     /// <p>The ID of the query that you want to stop. A <code>QueryId</code> is an internally-generated identifier for a specific query.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The ID of the query that you want to stop. A <code>QueryId</code> is an internally-generated identifier for a specific query.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl StopQueryInputBuilder {
     }
     /// Consumes the builder and constructs a [`StopQueryInput`](crate::operation::stop_query::StopQueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_query::StopQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_query::StopQueryInput {
-            monitor_name: self.monitor_name,
-            query_id: self.query_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::stop_query::StopQueryInput {
+                monitor_name: self.monitor_name
+                ,
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

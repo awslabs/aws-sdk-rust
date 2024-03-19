@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTagsInput {
+pub struct DescribeTagsInput  {
     /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
     pub max_items: ::std::option::Option<i32>,
     /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
@@ -11,17 +11,17 @@ pub struct DescribeTagsInput {
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTagsInput {
+impl  DescribeTagsInput  {
     /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
     /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_id
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
-            max_items: self.max_items,
-            marker: self.marker,
-            file_system_id: self.file_system_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_tags::DescribeTagsInput {
+                max_items: self.max_items
+                ,
+                marker: self.marker
+                ,
+                file_system_id: self.file_system_id
+                ,
+            }
+        )
     }
 }
+

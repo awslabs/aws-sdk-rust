@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMilestones`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::set_workload_id):<br>required: **true**<br><p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
-    /// - On success, responds with [`ListMilestonesOutput`](crate::operation::list_milestones::ListMilestonesOutput) with field(s):
+                            /// - On success, responds with [`ListMilestonesOutput`](crate::operation::list_milestones::ListMilestonesOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::operation::list_milestones::ListMilestonesOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`milestone_summaries(Option<Vec::<MilestoneSummary>>)`](crate::operation::list_milestones::ListMilestonesOutput::milestone_summaries): <p>A list of milestone summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_milestones::ListMilestonesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListMilestonesError>`](crate::operation::list_milestones::ListMilestonesError)
+                            /// - On failure, responds with [`SdkError<ListMilestonesError>`](crate::operation::list_milestones::ListMilestonesError)
     pub fn list_milestones(&self) -> crate::operation::list_milestones::builders::ListMilestonesFluentBuilder {
-        crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_milestones::builders::ListMilestonesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConsoleScreenshotInput {
+pub struct GetConsoleScreenshotInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance.</p>
@@ -10,13 +10,13 @@ pub struct GetConsoleScreenshotInput {
     /// <p>When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep" mode.</p>
     pub wake_up: ::std::option::Option<bool>,
 }
-impl GetConsoleScreenshotInput {
+impl  GetConsoleScreenshotInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep" mode.</p>
@@ -47,8 +47,7 @@ impl GetConsoleScreenshotInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl GetConsoleScreenshotInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl GetConsoleScreenshotInputBuilder {
     }
     /// <p>When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep" mode.</p>
     pub fn set_wake_up(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.wake_up = input;
-        self
+        self.wake_up = input; self
     }
     /// <p>When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep" mode.</p>
     pub fn get_wake_up(&self) -> &::std::option::Option<bool> {
         &self.wake_up
     }
     /// Consumes the builder and constructs a [`GetConsoleScreenshotInput`](crate::operation::get_console_screenshot::GetConsoleScreenshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_console_screenshot::GetConsoleScreenshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_console_screenshot::GetConsoleScreenshotInput {
-            dry_run: self.dry_run,
-            instance_id: self.instance_id,
-            wake_up: self.wake_up,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_console_screenshot::GetConsoleScreenshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_console_screenshot::GetConsoleScreenshotInput {
+                dry_run: self.dry_run
+                ,
+                instance_id: self.instance_id
+                ,
+                wake_up: self.wake_up
+                ,
+            }
+        )
     }
 }
+

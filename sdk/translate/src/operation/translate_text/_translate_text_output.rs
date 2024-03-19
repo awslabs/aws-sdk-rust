@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranslateTextOutput {
+pub struct TranslateTextOutput  {
     /// <p>The translated text.</p>
     pub translated_text: ::std::string::String,
     /// <p>The language code for the language of the source text.</p>
@@ -10,43 +10,41 @@ pub struct TranslateTextOutput {
     /// <p>The language code for the language of the target text.</p>
     pub target_language_code: ::std::string::String,
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
-    pub applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
+    pub applied_terminologies: ::std::option::Option<::std::vec::Vec::<crate::types::AppliedTerminology>>,
     /// <p>Optional settings that modify the translation output.</p>
     pub applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
 }
-impl TranslateTextOutput {
+impl  TranslateTextOutput  {
     /// <p>The translated text.</p>
-    pub fn translated_text(&self) -> &str {
-        use std::ops::Deref;
-        self.translated_text.deref()
+    pub fn translated_text(&self) -> & str {
+        use std::ops::Deref; self.translated_text.deref()
     }
     /// <p>The language code for the language of the source text.</p>
-    pub fn source_language_code(&self) -> &str {
-        use std::ops::Deref;
-        self.source_language_code.deref()
+    pub fn source_language_code(&self) -> & str {
+        use std::ops::Deref; self.source_language_code.deref()
     }
     /// <p>The language code for the language of the target text.</p>
-    pub fn target_language_code(&self) -> &str {
-        use std::ops::Deref;
-        self.target_language_code.deref()
+    pub fn target_language_code(&self) -> & str {
+        use std::ops::Deref; self.target_language_code.deref()
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applied_terminologies.is_none()`.
-    pub fn applied_terminologies(&self) -> &[crate::types::AppliedTerminology] {
-        self.applied_terminologies.as_deref().unwrap_or_default()
+    pub fn applied_terminologies(&self) -> & [crate::types::AppliedTerminology] {
+        self.applied_terminologies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Optional settings that modify the translation output.</p>
-    pub fn applied_settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
+    pub fn applied_settings(&self) -> ::std::option::Option<& crate::types::TranslationSettings> {
         self.applied_settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for TranslateTextOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TranslateTextOutput {
     /// Creates a new builder-style object to manufacture [`TranslateTextOutput`](crate::operation::translate_text::TranslateTextOutput).
     pub fn builder() -> crate::operation::translate_text::builders::TranslateTextOutputBuilder {
@@ -61,7 +59,7 @@ pub struct TranslateTextOutputBuilder {
     pub(crate) translated_text: ::std::option::Option<::std::string::String>,
     pub(crate) source_language_code: ::std::option::Option<::std::string::String>,
     pub(crate) target_language_code: ::std::option::Option<::std::string::String>,
-    pub(crate) applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
+    pub(crate) applied_terminologies: ::std::option::Option<::std::vec::Vec::<crate::types::AppliedTerminology>>,
     pub(crate) applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
 }
@@ -74,8 +72,7 @@ impl TranslateTextOutputBuilder {
     }
     /// <p>The translated text.</p>
     pub fn set_translated_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.translated_text = input;
-        self
+        self.translated_text = input; self
     }
     /// <p>The translated text.</p>
     pub fn get_translated_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +86,7 @@ impl TranslateTextOutputBuilder {
     }
     /// <p>The language code for the language of the source text.</p>
     pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_language_code = input;
-        self
+        self.source_language_code = input; self
     }
     /// <p>The language code for the language of the source text.</p>
     pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +100,7 @@ impl TranslateTextOutputBuilder {
     }
     /// <p>The language code for the language of the target text.</p>
     pub fn set_target_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_language_code = input;
-        self
+        self.target_language_code = input; self
     }
     /// <p>The language code for the language of the target text.</p>
     pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,17 +113,16 @@ impl TranslateTextOutputBuilder {
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
     pub fn applied_terminologies(mut self, input: crate::types::AppliedTerminology) -> Self {
         let mut v = self.applied_terminologies.unwrap_or_default();
-        v.push(input);
-        self.applied_terminologies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applied_terminologies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
-    pub fn set_applied_terminologies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>) -> Self {
-        self.applied_terminologies = input;
-        self
+    pub fn set_applied_terminologies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppliedTerminology>>) -> Self {
+        self.applied_terminologies = input; self
     }
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
-    pub fn get_applied_terminologies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>> {
+    pub fn get_applied_terminologies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppliedTerminology>> {
         &self.applied_terminologies
     }
     /// <p>Optional settings that modify the translation output.</p>
@@ -138,52 +132,51 @@ impl TranslateTextOutputBuilder {
     }
     /// <p>Optional settings that modify the translation output.</p>
     pub fn set_applied_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
-        self.applied_settings = input;
-        self
+        self.applied_settings = input; self
     }
     /// <p>Optional settings that modify the translation output.</p>
     pub fn get_applied_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
         &self.applied_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TranslateTextOutput`](crate::operation::translate_text::TranslateTextOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`translated_text`](crate::operation::translate_text::builders::TranslateTextOutputBuilder::translated_text)
     /// - [`source_language_code`](crate::operation::translate_text::builders::TranslateTextOutputBuilder::source_language_code)
     /// - [`target_language_code`](crate::operation::translate_text::builders::TranslateTextOutputBuilder::target_language_code)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::translate_text::TranslateTextOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::translate_text::TranslateTextOutput {
-            translated_text: self.translated_text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "translated_text",
-                    "translated_text was not specified but it is required when building TranslateTextOutput",
-                )
-            })?,
-            source_language_code: self.source_language_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_language_code",
-                    "source_language_code was not specified but it is required when building TranslateTextOutput",
-                )
-            })?,
-            target_language_code: self.target_language_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_language_code",
-                    "target_language_code was not specified but it is required when building TranslateTextOutput",
-                )
-            })?,
-            applied_terminologies: self.applied_terminologies,
-            applied_settings: self.applied_settings,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::translate_text::TranslateTextOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::translate_text::TranslateTextOutput {
+                translated_text: self.translated_text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("translated_text", "translated_text was not specified but it is required when building TranslateTextOutput")
+                    )?
+                ,
+                source_language_code: self.source_language_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_language_code", "source_language_code was not specified but it is required when building TranslateTextOutput")
+                    )?
+                ,
+                target_language_code: self.target_language_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_language_code", "target_language_code was not specified but it is required when building TranslateTextOutput")
+                    )?
+                ,
+                applied_terminologies: self.applied_terminologies
+                ,
+                applied_settings: self.applied_settings
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

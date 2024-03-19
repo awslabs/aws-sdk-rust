@@ -3,7 +3,7 @@
 /// <p>A summary of a view's metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ViewSummary {
+pub struct ViewSummary  {
     /// <p>The identifier of the view.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
@@ -17,33 +17,33 @@ pub struct ViewSummary {
     /// <p>The description of the view.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ViewSummary {
+impl  ViewSummary  {
     /// <p>The identifier of the view.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the view.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the view.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ViewType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ViewType> {
         self.r#type.as_ref()
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ViewStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ViewStatus> {
         self.status.as_ref()
     }
     /// <p>The description of the view.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for ViewSummary {
+impl  ::std::fmt::Debug for ViewSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ViewSummary");
         formatter.field("id", &self.id);
@@ -81,8 +81,7 @@ impl ViewSummaryBuilder {
     }
     /// <p>The identifier of the view.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the view.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl ViewSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl ViewSummaryBuilder {
     }
     /// <p>The name of the view.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the view.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl ViewSummaryBuilder {
     }
     /// <p>The type of the view.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ViewType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the view.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ViewType> {
@@ -137,8 +133,7 @@ impl ViewSummaryBuilder {
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ViewStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate validation on the content.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ViewStatus> {
@@ -151,8 +146,7 @@ impl ViewSummaryBuilder {
     }
     /// <p>The description of the view.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the view.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,12 +155,18 @@ impl ViewSummaryBuilder {
     /// Consumes the builder and constructs a [`ViewSummary`](crate::types::ViewSummary).
     pub fn build(self) -> crate::types::ViewSummary {
         crate::types::ViewSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            status: self.status,
-            description: self.description,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
         }
     }
 }
@@ -182,3 +182,4 @@ impl ::std::fmt::Debug for ViewSummaryBuilder {
         formatter.finish()
     }
 }
+

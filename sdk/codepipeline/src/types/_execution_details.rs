@@ -3,7 +3,7 @@
 /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionDetails {
+pub struct ExecutionDetails  {
     /// <p>The summary of the current status of the actions.</p>
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
@@ -11,13 +11,13 @@ pub struct ExecutionDetails {
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
     pub percent_complete: ::std::option::Option<i32>,
 }
-impl ExecutionDetails {
+impl  ExecutionDetails  {
     /// <p>The summary of the current status of the actions.</p>
-    pub fn summary(&self) -> ::std::option::Option<&str> {
+    pub fn summary(&self) -> ::std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
-    pub fn external_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_execution_id(&self) -> ::std::option::Option<& str> {
         self.external_execution_id.as_deref()
     }
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
@@ -48,8 +48,7 @@ impl ExecutionDetailsBuilder {
     }
     /// <p>The summary of the current status of the actions.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>The summary of the current status of the actions.</p>
     pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ExecutionDetailsBuilder {
     }
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
     pub fn set_external_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_execution_id = input;
-        self
+        self.external_execution_id = input; self
     }
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
     pub fn get_external_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ExecutionDetailsBuilder {
     }
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
     pub fn set_percent_complete(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percent_complete = input;
-        self
+        self.percent_complete = input; self
     }
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
     pub fn get_percent_complete(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ExecutionDetailsBuilder {
     /// Consumes the builder and constructs a [`ExecutionDetails`](crate::types::ExecutionDetails).
     pub fn build(self) -> crate::types::ExecutionDetails {
         crate::types::ExecutionDetails {
-            summary: self.summary,
-            external_execution_id: self.external_execution_id,
-            percent_complete: self.percent_complete,
+            summary: self.summary
+            ,
+            external_execution_id: self.external_execution_id
+            ,
+            percent_complete: self.percent_complete
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRepositoryInput {
+pub struct UpdateRepositoryInput  {
     /// <p>The name of the domain associated with the repository to update.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -12,30 +12,31 @@ pub struct UpdateRepositoryInput {
     /// <p>An updated repository description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
-    pub upstreams: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>,
+    pub upstreams: ::std::option::Option<::std::vec::Vec::<crate::types::UpstreamRepository>>,
 }
-impl UpdateRepositoryInput {
+impl  UpdateRepositoryInput  {
     /// <p>The name of the domain associated with the repository to update.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository to update.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>An updated repository description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upstreams.is_none()`.
-    pub fn upstreams(&self) -> &[crate::types::UpstreamRepository] {
-        self.upstreams.as_deref().unwrap_or_default()
+    pub fn upstreams(&self) -> & [crate::types::UpstreamRepository] {
+        self.upstreams.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateRepositoryInput {
@@ -53,7 +54,7 @@ pub struct UpdateRepositoryInputBuilder {
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) upstreams: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>,
+    pub(crate) upstreams: ::std::option::Option<::std::vec::Vec::<crate::types::UpstreamRepository>>,
 }
 impl UpdateRepositoryInputBuilder {
     /// <p>The name of the domain associated with the repository to update.</p>
@@ -64,8 +65,7 @@ impl UpdateRepositoryInputBuilder {
     }
     /// <p>The name of the domain associated with the repository to update.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain associated with the repository to update.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl UpdateRepositoryInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl UpdateRepositoryInputBuilder {
     }
     /// <p>The name of the repository to update.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The name of the repository to update.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl UpdateRepositoryInputBuilder {
     }
     /// <p>An updated repository description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An updated repository description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,29 +118,34 @@ impl UpdateRepositoryInputBuilder {
     /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     pub fn upstreams(mut self, input: crate::types::UpstreamRepository) -> Self {
         let mut v = self.upstreams.unwrap_or_default();
-        v.push(input);
-        self.upstreams = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.upstreams = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
-    pub fn set_upstreams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>>) -> Self {
-        self.upstreams = input;
-        self
+    pub fn set_upstreams(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpstreamRepository>>) -> Self {
+        self.upstreams = input; self
     }
     /// <p>A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
-    pub fn get_upstreams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
+    pub fn get_upstreams(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpstreamRepository>> {
         &self.upstreams
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryInput`](crate::operation::update_repository::UpdateRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_repository::UpdateRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_repository::UpdateRepositoryInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            repository: self.repository,
-            description: self.description,
-            upstreams: self.upstreams,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_repository::UpdateRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_repository::UpdateRepositoryInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                description: self.description
+                ,
+                upstreams: self.upstreams
+                ,
+            }
+        )
     }
 }
+

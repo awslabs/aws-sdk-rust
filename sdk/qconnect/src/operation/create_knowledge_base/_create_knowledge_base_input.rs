@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKnowledgeBaseInput {
+pub struct CreateKnowledgeBaseInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the knowledge base.</p>
@@ -20,41 +20,41 @@ pub struct CreateKnowledgeBaseInput {
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateKnowledgeBaseInput {
+impl  CreateKnowledgeBaseInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the knowledge base.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically.</p>
-    pub fn knowledge_base_type(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseType> {
+    pub fn knowledge_base_type(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseType> {
         self.knowledge_base_type.as_ref()
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
-    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
+    pub fn source_configuration(&self) -> ::std::option::Option<& crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>Information about how to render the content.</p>
-    pub fn rendering_configuration(&self) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
+    pub fn rendering_configuration(&self) -> ::std::option::Option<& crate::types::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
     }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
-    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -76,7 +76,7 @@ pub struct CreateKnowledgeBaseInputBuilder {
     pub(crate) rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateKnowledgeBaseInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -86,8 +86,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// <p>The name of the knowledge base.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the knowledge base.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically.</p>
     pub fn set_knowledge_base_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseType>) -> Self {
-        self.knowledge_base_type = input;
-        self
+        self.knowledge_base_type = input; self
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically.</p>
     pub fn get_knowledge_base_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
@@ -130,8 +127,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
-        self.source_configuration = input;
-        self
+        self.source_configuration = input; self
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
@@ -144,8 +140,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// <p>Information about how to render the content.</p>
     pub fn set_rendering_configuration(mut self, input: ::std::option::Option<crate::types::RenderingConfiguration>) -> Self {
-        self.rendering_configuration = input;
-        self
+        self.rendering_configuration = input; self
     }
     /// <p>Information about how to render the content.</p>
     pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
@@ -162,8 +157,7 @@ impl CreateKnowledgeBaseInputBuilder {
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+        self.server_side_encryption_configuration = input; self
     }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q.</p>
@@ -178,8 +172,7 @@ impl CreateKnowledgeBaseInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,33 +185,40 @@ impl CreateKnowledgeBaseInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKnowledgeBaseInput`](crate::operation::create_knowledge_base::CreateKnowledgeBaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_knowledge_base::CreateKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_knowledge_base::CreateKnowledgeBaseInput {
-            client_token: self.client_token,
-            name: self.name,
-            knowledge_base_type: self.knowledge_base_type,
-            source_configuration: self.source_configuration,
-            rendering_configuration: self.rendering_configuration,
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_knowledge_base::CreateKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_knowledge_base::CreateKnowledgeBaseInput {
+                client_token: self.client_token
+                ,
+                name: self.name
+                ,
+                knowledge_base_type: self.knowledge_base_type
+                ,
+                source_configuration: self.source_configuration
+                ,
+                rendering_configuration: self.rendering_configuration
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

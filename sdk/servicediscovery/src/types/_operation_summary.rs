@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about an operation that matches the criteria that you specified in a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OperationSummary {
+pub struct OperationSummary  {
     /// <p>The ID for an operation.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the operation. Values include the following:</p>
@@ -19,9 +19,9 @@ pub struct OperationSummary {
     /// </ul>
     pub status: ::std::option::Option<crate::types::OperationStatus>,
 }
-impl OperationSummary {
+impl  OperationSummary  {
     /// <p>The ID for an operation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the operation. Values include the following:</p>
@@ -35,7 +35,7 @@ impl OperationSummary {
     /// <li>
     /// <p><b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OperationStatus> {
         self.status.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl OperationSummaryBuilder {
     }
     /// <p>The ID for an operation.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID for an operation.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl OperationSummaryBuilder {
     /// <p><b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
@@ -115,8 +113,11 @@ impl OperationSummaryBuilder {
     /// Consumes the builder and constructs a [`OperationSummary`](crate::types::OperationSummary).
     pub fn build(self) -> crate::types::OperationSummary {
         crate::types::OperationSummary {
-            id: self.id,
-            status: self.status,
+            id: self.id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

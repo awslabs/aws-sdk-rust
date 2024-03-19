@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResumeSessionInput {
+pub struct ResumeSessionInput  {
     /// <p>The ID of the disconnected session to resume.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
 }
-impl ResumeSessionInput {
+impl  ResumeSessionInput  {
     /// <p>The ID of the disconnected session to resume.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl ResumeSessionInputBuilder {
     }
     /// <p>The ID of the disconnected session to resume.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The ID of the disconnected session to resume.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
     /// Consumes the builder and constructs a [`ResumeSessionInput`](crate::operation::resume_session::ResumeSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::resume_session::ResumeSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::resume_session::ResumeSessionInput { session_id: self.session_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resume_session::ResumeSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::resume_session::ResumeSessionInput {
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

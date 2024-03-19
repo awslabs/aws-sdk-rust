@@ -3,17 +3,16 @@
 /// <p>Information about the socket address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SocketAddress {
+pub struct SocketAddress  {
     /// <p>Name of a socket address.</p>
     pub name: ::std::string::String,
     /// <p>Port of a socket address.</p>
     pub port: i32,
 }
-impl SocketAddress {
+impl  SocketAddress  {
     /// <p>Name of a socket address.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Port of a socket address.</p>
     pub fn port(&self) -> i32 {
@@ -43,8 +42,7 @@ impl SocketAddressBuilder {
     }
     /// <p>Name of a socket address.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of a socket address.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl SocketAddressBuilder {
     }
     /// <p>Port of a socket address.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>Port of a socket address.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl SocketAddressBuilder {
     /// - [`name`](crate::types::builders::SocketAddressBuilder::name)
     /// - [`port`](crate::types::builders::SocketAddressBuilder::port)
     pub fn build(self) -> ::std::result::Result<crate::types::SocketAddress, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SocketAddress {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SocketAddress",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building SocketAddress",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SocketAddress {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SocketAddress")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building SocketAddress")
+                    )?
+                ,
+            }
+        )
     }
 }
+

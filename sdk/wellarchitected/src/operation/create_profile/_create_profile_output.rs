@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProfileOutput {
+pub struct CreateProfileOutput  {
     /// <p>The profile ARN.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>Version of the profile.</p>
     pub profile_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateProfileOutput {
+impl  CreateProfileOutput  {
     /// <p>The profile ARN.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>Version of the profile.</p>
-    pub fn profile_version(&self) -> ::std::option::Option<&str> {
+    pub fn profile_version(&self) -> ::std::option::Option<& str> {
         self.profile_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput).
     pub fn builder() -> crate::operation::create_profile::builders::CreateProfileOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateProfileOutputBuilder {
     }
     /// <p>The profile ARN.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The profile ARN.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateProfileOutputBuilder {
     }
     /// <p>Version of the profile.</p>
     pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_version = input;
-        self
+        self.profile_version = input; self
     }
     /// <p>Version of the profile.</p>
     pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput).
     pub fn build(self) -> crate::operation::create_profile::CreateProfileOutput {
         crate::operation::create_profile::CreateProfileOutput {
-            profile_arn: self.profile_arn,
-            profile_version: self.profile_version,
+            profile_arn: self.profile_arn
+            ,
+            profile_version: self.profile_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

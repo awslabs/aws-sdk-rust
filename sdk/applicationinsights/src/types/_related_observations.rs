@@ -3,16 +3,17 @@
 /// <p>Describes observations related to the problem.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelatedObservations {
+pub struct RelatedObservations  {
     /// <p>The list of observations related to the problem.</p>
-    pub observation_list: ::std::option::Option<::std::vec::Vec<crate::types::Observation>>,
+    pub observation_list: ::std::option::Option<::std::vec::Vec::<crate::types::Observation>>,
 }
-impl RelatedObservations {
+impl  RelatedObservations  {
     /// <p>The list of observations related to the problem.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.observation_list.is_none()`.
-    pub fn observation_list(&self) -> &[crate::types::Observation] {
-        self.observation_list.as_deref().unwrap_or_default()
+    pub fn observation_list(&self) -> & [crate::types::Observation] {
+        self.observation_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RelatedObservations {
@@ -26,7 +27,7 @@ impl RelatedObservations {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelatedObservationsBuilder {
-    pub(crate) observation_list: ::std::option::Option<::std::vec::Vec<crate::types::Observation>>,
+    pub(crate) observation_list: ::std::option::Option<::std::vec::Vec::<crate::types::Observation>>,
 }
 impl RelatedObservationsBuilder {
     /// Appends an item to `observation_list`.
@@ -36,23 +37,24 @@ impl RelatedObservationsBuilder {
     /// <p>The list of observations related to the problem.</p>
     pub fn observation_list(mut self, input: crate::types::Observation) -> Self {
         let mut v = self.observation_list.unwrap_or_default();
-        v.push(input);
-        self.observation_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.observation_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of observations related to the problem.</p>
-    pub fn set_observation_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Observation>>) -> Self {
-        self.observation_list = input;
-        self
+    pub fn set_observation_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Observation>>) -> Self {
+        self.observation_list = input; self
     }
     /// <p>The list of observations related to the problem.</p>
-    pub fn get_observation_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Observation>> {
+    pub fn get_observation_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Observation>> {
         &self.observation_list
     }
     /// Consumes the builder and constructs a [`RelatedObservations`](crate::types::RelatedObservations).
     pub fn build(self) -> crate::types::RelatedObservations {
         crate::types::RelatedObservations {
-            observation_list: self.observation_list,
+            observation_list: self.observation_list
+            ,
         }
     }
 }
+

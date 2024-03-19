@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRunsInput {
+pub struct ListRunsInput  {
     /// <p>Filter the list by run name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Filter the list by run group ID.</p>
@@ -14,17 +14,17 @@ pub struct ListRunsInput {
     /// <p>The status of a run.</p>
     pub status: ::std::option::Option<crate::types::RunStatus>,
 }
-impl ListRunsInput {
+impl  ListRunsInput  {
     /// <p>Filter the list by run name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Filter the list by run group ID.</p>
-    pub fn run_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_group_id(&self) -> ::std::option::Option<& str> {
         self.run_group_id.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn starting_token(&self) -> ::std::option::Option<&str> {
+    pub fn starting_token(&self) -> ::std::option::Option<& str> {
         self.starting_token.as_deref()
     }
     /// <p>The maximum number of runs to return in one page of results.</p>
@@ -32,7 +32,7 @@ impl ListRunsInput {
         self.max_results
     }
     /// <p>The status of a run.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RunStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RunStatus> {
         self.status.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl ListRunsInputBuilder {
     }
     /// <p>Filter the list by run name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Filter the list by run name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ListRunsInputBuilder {
     }
     /// <p>Filter the list by run group ID.</p>
     pub fn set_run_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_group_id = input;
-        self
+        self.run_group_id = input; self
     }
     /// <p>Filter the list by run group ID.</p>
     pub fn get_run_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl ListRunsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_starting_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.starting_token = input;
-        self
+        self.starting_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_starting_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl ListRunsInputBuilder {
     }
     /// <p>The maximum number of runs to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of runs to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -117,8 +113,7 @@ impl ListRunsInputBuilder {
     }
     /// <p>The status of a run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
@@ -126,12 +121,20 @@ impl ListRunsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_runs::ListRunsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_runs::ListRunsInput {
-            name: self.name,
-            run_group_id: self.run_group_id,
-            starting_token: self.starting_token,
-            max_results: self.max_results,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_runs::ListRunsInput {
+                name: self.name
+                ,
+                run_group_id: self.run_group_id
+                ,
+                starting_token: self.starting_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

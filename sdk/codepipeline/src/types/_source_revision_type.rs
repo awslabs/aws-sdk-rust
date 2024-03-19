@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourcerevisiontype = unimplemented!();
 /// match sourcerevisiontype {
@@ -31,16 +31,14 @@
 /// Specifically, when `sourcerevisiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceRevisionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SourceRevisionType {
     #[allow(missing_docs)] // documentation missing in model
     CommitId,
@@ -50,64 +48,65 @@ pub enum SourceRevisionType {
     S3ObjectVersionId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SourceRevisionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMMIT_ID" => SourceRevisionType::CommitId,
-            "IMAGE_DIGEST" => SourceRevisionType::ImageDigest,
-            "S3_OBJECT_VERSION_ID" => SourceRevisionType::S3ObjectVersionId,
-            other => SourceRevisionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COMMIT_ID" => SourceRevisionType::CommitId,
+"IMAGE_DIGEST" => SourceRevisionType::ImageDigest,
+"S3_OBJECT_VERSION_ID" => SourceRevisionType::S3ObjectVersionId,
+other => SourceRevisionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SourceRevisionType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SourceRevisionType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SourceRevisionType::from(s))
+                    }
+                }
 impl SourceRevisionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SourceRevisionType::CommitId => "COMMIT_ID",
-            SourceRevisionType::ImageDigest => "IMAGE_DIGEST",
-            SourceRevisionType::S3ObjectVersionId => "S3_OBJECT_VERSION_ID",
-            SourceRevisionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["COMMIT_ID", "IMAGE_DIGEST", "S3_OBJECT_VERSION_ID"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SourceRevisionType::CommitId => "COMMIT_ID",
+    SourceRevisionType::ImageDigest => "IMAGE_DIGEST",
+    SourceRevisionType::S3ObjectVersionId => "S3_OBJECT_VERSION_ID",
+    SourceRevisionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMMIT_ID", "IMAGE_DIGEST", "S3_OBJECT_VERSION_ID"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SourceRevisionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SourceRevisionType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SourceRevisionType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SourceRevisionType::CommitId => write!(f, "COMMIT_ID"),
-            SourceRevisionType::ImageDigest => write!(f, "IMAGE_DIGEST"),
-            SourceRevisionType::S3ObjectVersionId => write!(f, "S3_OBJECT_VERSION_ID"),
-            SourceRevisionType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SourceRevisionType::CommitId => write!(f, "COMMIT_ID"),
+SourceRevisionType::ImageDigest => write!(f, "IMAGE_DIGEST"),
+SourceRevisionType::S3ObjectVersionId => write!(f, "S3_OBJECT_VERSION_ID"),
+SourceRevisionType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

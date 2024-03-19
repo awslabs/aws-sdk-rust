@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssetInput {
+pub struct DescribeAssetInput  {
     /// <p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not to exclude asset properties from the response.</p>
     pub exclude_properties: ::std::option::Option<bool>,
 }
-impl DescribeAssetInput {
+impl  DescribeAssetInput  {
     /// <p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>Whether or not to exclude asset properties from the response.</p>
@@ -41,8 +41,7 @@ impl DescribeAssetInputBuilder {
     }
     /// <p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DescribeAssetInputBuilder {
     }
     /// <p>Whether or not to exclude asset properties from the response.</p>
     pub fn set_exclude_properties(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exclude_properties = input;
-        self
+        self.exclude_properties = input; self
     }
     /// <p>Whether or not to exclude asset properties from the response.</p>
     pub fn get_exclude_properties(&self) -> &::std::option::Option<bool> {
         &self.exclude_properties
     }
     /// Consumes the builder and constructs a [`DescribeAssetInput`](crate::operation::describe_asset::DescribeAssetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_asset::DescribeAssetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_asset::DescribeAssetInput {
-            asset_id: self.asset_id,
-            exclude_properties: self.exclude_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_asset::DescribeAssetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_asset::DescribeAssetInput {
+                asset_id: self.asset_id
+                ,
+                exclude_properties: self.exclude_properties
+                ,
+            }
+        )
     }
 }
+

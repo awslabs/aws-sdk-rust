@@ -3,25 +3,26 @@
 /// <p>Represents the request to set user settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SetUserSettingsInput {
+pub struct SetUserSettingsInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
+    pub mfa_options: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>,
 }
-impl SetUserSettingsInput {
+impl  SetUserSettingsInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
-    pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
-        self.mfa_options.as_deref().unwrap_or_default()
+    pub fn mfa_options(&self) -> & [crate::types::MfaOptionType] {
+        self.mfa_options.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for SetUserSettingsInput {
+impl  ::std::fmt::Debug for SetUserSettingsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SetUserSettingsInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -41,7 +42,7 @@ impl SetUserSettingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SetUserSettingsInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
-    pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
+    pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>,
 }
 impl SetUserSettingsInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
@@ -52,8 +53,7 @@ impl SetUserSettingsInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,27 +66,28 @@ impl SetUserSettingsInputBuilder {
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     pub fn mfa_options(mut self, input: crate::types::MfaOptionType) -> Self {
         let mut v = self.mfa_options.unwrap_or_default();
-        v.push(input);
-        self.mfa_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mfa_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
-        self.mfa_options = input;
-        self
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>) -> Self {
+        self.mfa_options = input; self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>> {
         &self.mfa_options
     }
     /// Consumes the builder and constructs a [`SetUserSettingsInput`](crate::operation::set_user_settings::SetUserSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_user_settings::SetUserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::set_user_settings::SetUserSettingsInput {
-            access_token: self.access_token,
-            mfa_options: self.mfa_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_user_settings::SetUserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_user_settings::SetUserSettingsInput {
+                access_token: self.access_token
+                ,
+                mfa_options: self.mfa_options
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SetUserSettingsInputBuilder {
@@ -97,3 +98,4 @@ impl ::std::fmt::Debug for SetUserSettingsInputBuilder {
         formatter.finish()
     }
 }
+

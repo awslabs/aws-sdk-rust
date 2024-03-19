@@ -3,13 +3,13 @@
 /// <p>An object containing the intent that the bot mapped the utterance to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsUtteranceAttributeResult {
+pub struct AnalyticsUtteranceAttributeResult  {
     /// <p>The intent that the bot mapped the utterance to.</p>
     pub last_used_intent: ::std::option::Option<::std::string::String>,
 }
-impl AnalyticsUtteranceAttributeResult {
+impl  AnalyticsUtteranceAttributeResult  {
     /// <p>The intent that the bot mapped the utterance to.</p>
-    pub fn last_used_intent(&self) -> ::std::option::Option<&str> {
+    pub fn last_used_intent(&self) -> ::std::option::Option<& str> {
         self.last_used_intent.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AnalyticsUtteranceAttributeResultBuilder {
     }
     /// <p>The intent that the bot mapped the utterance to.</p>
     pub fn set_last_used_intent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_used_intent = input;
-        self
+        self.last_used_intent = input; self
     }
     /// <p>The intent that the bot mapped the utterance to.</p>
     pub fn get_last_used_intent(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AnalyticsUtteranceAttributeResultBuilder {
     /// Consumes the builder and constructs a [`AnalyticsUtteranceAttributeResult`](crate::types::AnalyticsUtteranceAttributeResult).
     pub fn build(self) -> crate::types::AnalyticsUtteranceAttributeResult {
         crate::types::AnalyticsUtteranceAttributeResult {
-            last_used_intent: self.last_used_intent,
+            last_used_intent: self.last_used_intent
+            ,
         }
     }
 }
+

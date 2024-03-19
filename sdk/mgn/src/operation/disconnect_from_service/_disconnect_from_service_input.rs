@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisconnectFromServiceInput {
+pub struct DisconnectFromServiceInput  {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Request to disconnect Source Server from service by Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DisconnectFromServiceInput {
+impl  DisconnectFromServiceInput  {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Request to disconnect Source Server from service by Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisconnectFromServiceInputBuilder {
     }
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl DisconnectFromServiceInputBuilder {
     }
     /// <p>Request to disconnect Source Server from service by Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Request to disconnect Source Server from service by Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DisconnectFromServiceInput`](crate::operation::disconnect_from_service::DisconnectFromServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disconnect_from_service::DisconnectFromServiceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disconnect_from_service::DisconnectFromServiceInput {
-            source_server_id: self.source_server_id,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disconnect_from_service::DisconnectFromServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disconnect_from_service::DisconnectFromServiceInput {
+                source_server_id: self.source_server_id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

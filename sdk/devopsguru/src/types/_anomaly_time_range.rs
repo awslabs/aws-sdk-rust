@@ -3,19 +3,19 @@
 /// <p>A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyTimeRange {
+pub struct AnomalyTimeRange  {
     /// <p>The time when the anomalous behavior started.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The time when the anomalous behavior ended.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AnomalyTimeRange {
+impl  AnomalyTimeRange  {
     /// <p>The time when the anomalous behavior started.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The time when the anomalous behavior ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl AnomalyTimeRangeBuilder {
     }
     /// <p>The time when the anomalous behavior started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time when the anomalous behavior started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -56,8 +55,7 @@ impl AnomalyTimeRangeBuilder {
     }
     /// <p>The time when the anomalous behavior ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time when the anomalous behavior ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -67,14 +65,17 @@ impl AnomalyTimeRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_time`](crate::types::builders::AnomalyTimeRangeBuilder::start_time)
     pub fn build(self) -> ::std::result::Result<crate::types::AnomalyTimeRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnomalyTimeRange {
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building AnomalyTimeRange",
-                )
-            })?,
-            end_time: self.end_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnomalyTimeRange {
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building AnomalyTimeRange")
+                    )?
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

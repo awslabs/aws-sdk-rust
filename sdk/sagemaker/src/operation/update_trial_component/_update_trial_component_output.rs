@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTrialComponentOutput {
+pub struct UpdateTrialComponentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub trial_component_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateTrialComponentOutput {
+impl  UpdateTrialComponentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trial_component_arn(&self) -> ::std::option::Option<& str> {
         self.trial_component_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateTrialComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateTrialComponentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrialComponentOutput`](crate::operation::update_trial_component::UpdateTrialComponentOutput).
     pub fn builder() -> crate::operation::update_trial_component::builders::UpdateTrialComponentOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateTrialComponentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub fn set_trial_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_component_arn = input;
-        self
+        self.trial_component_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub fn get_trial_component_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trial_component_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateTrialComponentOutput`](crate::operation::update_trial_component::UpdateTrialComponentOutput).
     pub fn build(self) -> crate::operation::update_trial_component::UpdateTrialComponentOutput {
         crate::operation::update_trial_component::UpdateTrialComponentOutput {
-            trial_component_arn: self.trial_component_arn,
+            trial_component_arn: self.trial_component_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

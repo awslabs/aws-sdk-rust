@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFirewallRuleInput {
+pub struct DeleteFirewallRuleInput  {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the domain list that's used in the rule.</p>
@@ -38,13 +38,13 @@ pub struct DeleteFirewallRuleInput {
     /// </ul>
     pub qtype: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFirewallRuleInput {
+impl  DeleteFirewallRuleInput  {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
-    pub fn firewall_rule_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_rule_group_id(&self) -> ::std::option::Option<& str> {
         self.firewall_rule_group_id.as_deref()
     }
     /// <p>The ID of the domain list that's used in the rule.</p>
-    pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_domain_list_id(&self) -> ::std::option::Option<& str> {
         self.firewall_domain_list_id.as_deref()
     }
     /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
@@ -76,7 +76,7 @@ impl DeleteFirewallRuleInput {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// </ul>
-    pub fn qtype(&self) -> ::std::option::Option<&str> {
+    pub fn qtype(&self) -> ::std::option::Option<& str> {
         self.qtype.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl DeleteFirewallRuleInputBuilder {
     }
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_rule_group_id = input;
-        self
+        self.firewall_rule_group_id = input; self
     }
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl DeleteFirewallRuleInputBuilder {
     }
     /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_domain_list_id = input;
-        self
+        self.firewall_domain_list_id = input; self
     }
     /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +187,7 @@ impl DeleteFirewallRuleInputBuilder {
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// </ul>
     pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qtype = input;
-        self
+        self.qtype = input; self
     }
     /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
     /// <ul>
@@ -225,14 +222,17 @@ impl DeleteFirewallRuleInputBuilder {
         &self.qtype
     }
     /// Consumes the builder and constructs a [`DeleteFirewallRuleInput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_firewall_rule::DeleteFirewallRuleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_firewall_rule::DeleteFirewallRuleInput {
-            firewall_rule_group_id: self.firewall_rule_group_id,
-            firewall_domain_list_id: self.firewall_domain_list_id,
-            qtype: self.qtype,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_firewall_rule::DeleteFirewallRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_firewall_rule::DeleteFirewallRuleInput {
+                firewall_rule_group_id: self.firewall_rule_group_id
+                ,
+                firewall_domain_list_id: self.firewall_domain_list_id
+                ,
+                qtype: self.qtype
+                ,
+            }
+        )
     }
 }
+

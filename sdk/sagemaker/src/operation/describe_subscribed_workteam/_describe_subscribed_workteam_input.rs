@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSubscribedWorkteamInput {
+pub struct DescribeSubscribedWorkteamInput  {
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
     pub workteam_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSubscribedWorkteamInput {
+impl  DescribeSubscribedWorkteamInput  {
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-    pub fn workteam_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workteam_arn(&self) -> ::std::option::Option<& str> {
         self.workteam_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeSubscribedWorkteamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
     pub fn set_workteam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workteam_arn = input;
-        self
+        self.workteam_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
     pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workteam_arn
     }
     /// Consumes the builder and constructs a [`DescribeSubscribedWorkteamInput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput {
-            workteam_arn: self.workteam_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput {
+                workteam_arn: self.workteam_arn
+                ,
+            }
+        )
     }
 }
+

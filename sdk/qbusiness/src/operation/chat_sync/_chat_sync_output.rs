@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChatSyncOutput {
+pub struct ChatSyncOutput  {
     /// <p>The identifier of the Amazon Q conversation.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>An AI-generated message in a conversation.</p>
@@ -14,50 +14,52 @@ pub struct ChatSyncOutput {
     /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
     pub action_review: ::std::option::Option<crate::types::ActionReview>,
     /// <p>The source documents used to generate the conversation response.</p>
-    pub source_attributions: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SourceAttribution>>>,
+    pub source_attributions: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::SourceAttribution>>>,
     /// <p>A list of files which failed to upload during chat.</p>
-    pub failed_attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentOutput>>,
+    pub failed_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentOutput>>,
     _request_id: Option<String>,
 }
-impl ChatSyncOutput {
+impl  ChatSyncOutput  {
     /// <p>The identifier of the Amazon Q conversation.</p>
-    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversation_id(&self) -> ::std::option::Option<& str> {
         self.conversation_id.as_deref()
     }
     /// <p>An AI-generated message in a conversation.</p>
-    pub fn system_message(&self) -> ::std::option::Option<&str> {
+    pub fn system_message(&self) -> ::std::option::Option<& str> {
         self.system_message.as_deref()
     }
     /// <p>The identifier of an Amazon Q AI generated message within the conversation.</p>
-    pub fn system_message_id(&self) -> ::std::option::Option<&str> {
+    pub fn system_message_id(&self) -> ::std::option::Option<& str> {
         self.system_message_id.as_deref()
     }
     /// <p>The identifier of an Amazon Q end user text input message within the conversation.</p>
-    pub fn user_message_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_message_id(&self) -> ::std::option::Option<& str> {
         self.user_message_id.as_deref()
     }
     /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
-    pub fn action_review(&self) -> ::std::option::Option<&crate::types::ActionReview> {
+    pub fn action_review(&self) -> ::std::option::Option<& crate::types::ActionReview> {
         self.action_review.as_ref()
     }
     /// <p>The source documents used to generate the conversation response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_attributions.is_none()`.
-    pub fn source_attributions(&self) -> &[::std::option::Option<crate::types::SourceAttribution>] {
-        self.source_attributions.as_deref().unwrap_or_default()
+    pub fn source_attributions(&self) -> & [::std::option::Option<crate::types::SourceAttribution>] {
+        self.source_attributions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of files which failed to upload during chat.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_attachments.is_none()`.
-    pub fn failed_attachments(&self) -> &[crate::types::AttachmentOutput] {
-        self.failed_attachments.as_deref().unwrap_or_default()
+    pub fn failed_attachments(&self) -> & [crate::types::AttachmentOutput] {
+        self.failed_attachments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ChatSyncOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ChatSyncOutput {
     /// Creates a new builder-style object to manufacture [`ChatSyncOutput`](crate::operation::chat_sync::ChatSyncOutput).
     pub fn builder() -> crate::operation::chat_sync::builders::ChatSyncOutputBuilder {
@@ -74,8 +76,8 @@ pub struct ChatSyncOutputBuilder {
     pub(crate) system_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_review: ::std::option::Option<crate::types::ActionReview>,
-    pub(crate) source_attributions: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SourceAttribution>>>,
-    pub(crate) failed_attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentOutput>>,
+    pub(crate) source_attributions: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::SourceAttribution>>>,
+    pub(crate) failed_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentOutput>>,
     _request_id: Option<String>,
 }
 impl ChatSyncOutputBuilder {
@@ -86,8 +88,7 @@ impl ChatSyncOutputBuilder {
     }
     /// <p>The identifier of the Amazon Q conversation.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversation_id = input;
-        self
+        self.conversation_id = input; self
     }
     /// <p>The identifier of the Amazon Q conversation.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +101,7 @@ impl ChatSyncOutputBuilder {
     }
     /// <p>An AI-generated message in a conversation.</p>
     pub fn set_system_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.system_message = input;
-        self
+        self.system_message = input; self
     }
     /// <p>An AI-generated message in a conversation.</p>
     pub fn get_system_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl ChatSyncOutputBuilder {
     }
     /// <p>The identifier of an Amazon Q AI generated message within the conversation.</p>
     pub fn set_system_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.system_message_id = input;
-        self
+        self.system_message_id = input; self
     }
     /// <p>The identifier of an Amazon Q AI generated message within the conversation.</p>
     pub fn get_system_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl ChatSyncOutputBuilder {
     }
     /// <p>The identifier of an Amazon Q end user text input message within the conversation.</p>
     pub fn set_user_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_message_id = input;
-        self
+        self.user_message_id = input; self
     }
     /// <p>The identifier of an Amazon Q end user text input message within the conversation.</p>
     pub fn get_user_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl ChatSyncOutputBuilder {
     }
     /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
     pub fn set_action_review(mut self, input: ::std::option::Option<crate::types::ActionReview>) -> Self {
-        self.action_review = input;
-        self
+        self.action_review = input; self
     }
     /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
     pub fn get_action_review(&self) -> &::std::option::Option<crate::types::ActionReview> {
@@ -156,20 +153,16 @@ impl ChatSyncOutputBuilder {
     /// <p>The source documents used to generate the conversation response.</p>
     pub fn source_attributions(mut self, input: ::std::option::Option<crate::types::SourceAttribution>) -> Self {
         let mut v = self.source_attributions.unwrap_or_default();
-        v.push(input);
-        self.source_attributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_attributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source documents used to generate the conversation response.</p>
-    pub fn set_source_attributions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SourceAttribution>>>,
-    ) -> Self {
-        self.source_attributions = input;
-        self
+    pub fn set_source_attributions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::SourceAttribution>>>) -> Self {
+        self.source_attributions = input; self
     }
     /// <p>The source documents used to generate the conversation response.</p>
-    pub fn get_source_attributions(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SourceAttribution>>> {
+    pub fn get_source_attributions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::SourceAttribution>>> {
         &self.source_attributions
     }
     /// Appends an item to `failed_attachments`.
@@ -179,39 +172,46 @@ impl ChatSyncOutputBuilder {
     /// <p>A list of files which failed to upload during chat.</p>
     pub fn failed_attachments(mut self, input: crate::types::AttachmentOutput) -> Self {
         let mut v = self.failed_attachments.unwrap_or_default();
-        v.push(input);
-        self.failed_attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of files which failed to upload during chat.</p>
-    pub fn set_failed_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentOutput>>) -> Self {
-        self.failed_attachments = input;
-        self
+    pub fn set_failed_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttachmentOutput>>) -> Self {
+        self.failed_attachments = input; self
     }
     /// <p>A list of files which failed to upload during chat.</p>
-    pub fn get_failed_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentOutput>> {
+    pub fn get_failed_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttachmentOutput>> {
         &self.failed_attachments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ChatSyncOutput`](crate::operation::chat_sync::ChatSyncOutput).
     pub fn build(self) -> crate::operation::chat_sync::ChatSyncOutput {
         crate::operation::chat_sync::ChatSyncOutput {
-            conversation_id: self.conversation_id,
-            system_message: self.system_message,
-            system_message_id: self.system_message_id,
-            user_message_id: self.user_message_id,
-            action_review: self.action_review,
-            source_attributions: self.source_attributions,
-            failed_attachments: self.failed_attachments,
+            conversation_id: self.conversation_id
+            ,
+            system_message: self.system_message
+            ,
+            system_message_id: self.system_message_id
+            ,
+            user_message_id: self.user_message_id
+            ,
+            action_review: self.action_review
+            ,
+            source_attributions: self.source_attributions
+            ,
+            failed_attachments: self.failed_attachments
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

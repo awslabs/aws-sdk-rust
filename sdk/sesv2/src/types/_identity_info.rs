@@ -3,7 +3,7 @@
 /// <p>Information about an email identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityInfo {
+pub struct IdentityInfo  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The address or domain of the identity.</p>
@@ -26,13 +26,13 @@ pub struct IdentityInfo {
     /// </ul>
     pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
 }
-impl IdentityInfo {
+impl  IdentityInfo  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
-    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The address or domain of the identity.</p>
-    pub fn identity_name(&self) -> ::std::option::Option<&str> {
+    pub fn identity_name(&self) -> ::std::option::Option<& str> {
         self.identity_name.as_deref()
     }
     /// <p>Indicates whether or not you can send email from the identity.</p>
@@ -53,7 +53,7 @@ impl IdentityInfo {
     /// <li>
     /// <p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
-    pub fn verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
+    pub fn verification_status(&self) -> ::std::option::Option<& crate::types::VerificationStatus> {
         self.verification_status.as_ref()
     }
 }
@@ -81,8 +81,7 @@ impl IdentityInfoBuilder {
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
-        self.identity_type = input;
-        self
+        self.identity_type = input; self
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
@@ -95,8 +94,7 @@ impl IdentityInfoBuilder {
     }
     /// <p>The address or domain of the identity.</p>
     pub fn set_identity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_name = input;
-        self
+        self.identity_name = input; self
     }
     /// <p>The address or domain of the identity.</p>
     pub fn get_identity_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl IdentityInfoBuilder {
     /// <p>Indicates whether or not you can send email from the identity.</p>
     /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sending_enabled = input;
-        self
+        self.sending_enabled = input; self
     }
     /// <p>Indicates whether or not you can send email from the identity.</p>
     /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
@@ -150,8 +147,7 @@ impl IdentityInfoBuilder {
     /// <p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
     pub fn set_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
-        self.verification_status = input;
-        self
+        self.verification_status = input; self
     }
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
@@ -172,10 +168,16 @@ impl IdentityInfoBuilder {
     /// Consumes the builder and constructs a [`IdentityInfo`](crate::types::IdentityInfo).
     pub fn build(self) -> crate::types::IdentityInfo {
         crate::types::IdentityInfo {
-            identity_type: self.identity_type,
-            identity_name: self.identity_name,
-            sending_enabled: self.sending_enabled.unwrap_or_default(),
-            verification_status: self.verification_status,
+            identity_type: self.identity_type
+            ,
+            identity_name: self.identity_name
+            ,
+            sending_enabled: self.sending_enabled
+                .unwrap_or_default()
+            ,
+            verification_status: self.verification_status
+            ,
         }
     }
 }
+

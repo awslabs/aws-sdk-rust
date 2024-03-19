@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExplainabilityInput {
+pub struct DeleteExplainabilityInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
     pub explainability_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteExplainabilityInput {
+impl  DeleteExplainabilityInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-    pub fn explainability_arn(&self) -> ::std::option::Option<&str> {
+    pub fn explainability_arn(&self) -> ::std::option::Option<& str> {
         self.explainability_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteExplainabilityInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
     pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.explainability_arn = input;
-        self
+        self.explainability_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
     pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.explainability_arn
     }
     /// Consumes the builder and constructs a [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_explainability::DeleteExplainabilityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_explainability::DeleteExplainabilityInput {
-            explainability_arn: self.explainability_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_explainability::DeleteExplainabilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_explainability::DeleteExplainabilityInput {
+                explainability_arn: self.explainability_arn
+                ,
+            }
+        )
     }
 }
+

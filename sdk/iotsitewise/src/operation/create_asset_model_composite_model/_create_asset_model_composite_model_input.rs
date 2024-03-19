@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssetModelCompositeModelInput {
+pub struct CreateAssetModelCompositeModelInput  {
     /// <p>The ID of the asset model this composite model is a part of.</p>
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent composite model in this asset model relationship.</p>
@@ -22,56 +22,57 @@ pub struct CreateAssetModelCompositeModelInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a composite model on this asset.</p>
     pub composed_asset_model_id: ::std::option::Option<::std::string::String>,
-    /// <p>The property definitions of the composite model. For more information, see
+    /// <p>The property definitions of the composite model. For more information, see 
     /// <link>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyDefinition>>,
 }
-impl CreateAssetModelCompositeModelInput {
+impl  CreateAssetModelCompositeModelInput  {
     /// <p>The ID of the asset model this composite model is a part of.</p>
-    pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> ::std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
     /// <p>The ID of the parent composite model in this asset model relationship.</p>
-    pub fn parent_asset_model_composite_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_asset_model_composite_model_id(&self) -> ::std::option::Option<& str> {
         self.parent_asset_model_composite_model_id.as_deref()
     }
     /// <p>An external ID to assign to the composite model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
-    pub fn asset_model_composite_model_external_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_composite_model_external_id(&self) -> ::std::option::Option<& str> {
         self.asset_model_composite_model_external_id.as_deref()
     }
     /// <p>The ID of the composite model. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
-    pub fn asset_model_composite_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_composite_model_id(&self) -> ::std::option::Option<& str> {
         self.asset_model_composite_model_id.as_deref()
     }
     /// <p>A description for the composite model.</p>
-    pub fn asset_model_composite_model_description(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_composite_model_description(&self) -> ::std::option::Option<& str> {
         self.asset_model_composite_model_description.as_deref()
     }
     /// <p>A unique, friendly name for the composite model.</p>
-    pub fn asset_model_composite_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_composite_model_name(&self) -> ::std::option::Option<& str> {
         self.asset_model_composite_model_name.as_deref()
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
-    pub fn asset_model_composite_model_type(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_composite_model_type(&self) -> ::std::option::Option<& str> {
         self.asset_model_composite_model_type.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ID of a composite model on this asset.</p>
-    pub fn composed_asset_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn composed_asset_model_id(&self) -> ::std::option::Option<& str> {
         self.composed_asset_model_id.as_deref()
     }
-    /// <p>The property definitions of the composite model. For more information, see
+    /// <p>The property definitions of the composite model. For more information, see 
     /// <link>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_composite_model_properties.is_none()`.
-    pub fn asset_model_composite_model_properties(&self) -> &[crate::types::AssetModelPropertyDefinition] {
-        self.asset_model_composite_model_properties.as_deref().unwrap_or_default()
+    pub fn asset_model_composite_model_properties(&self) -> & [crate::types::AssetModelPropertyDefinition] {
+        self.asset_model_composite_model_properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAssetModelCompositeModelInput {
@@ -94,7 +95,7 @@ pub struct CreateAssetModelCompositeModelInputBuilder {
     pub(crate) asset_model_composite_model_type: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) composed_asset_model_id: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub(crate) asset_model_composite_model_properties: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyDefinition>>,
 }
 impl CreateAssetModelCompositeModelInputBuilder {
     /// <p>The ID of the asset model this composite model is a part of.</p>
@@ -105,8 +106,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     }
     /// <p>The ID of the asset model this composite model is a part of.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_id = input;
-        self
+        self.asset_model_id = input; self
     }
     /// <p>The ID of the asset model this composite model is a part of.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +119,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     }
     /// <p>The ID of the parent composite model in this asset model relationship.</p>
     pub fn set_parent_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_asset_model_composite_model_id = input;
-        self
+        self.parent_asset_model_composite_model_id = input; self
     }
     /// <p>The ID of the parent composite model in this asset model relationship.</p>
     pub fn get_parent_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     /// <p>An external ID to assign to the composite model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
     pub fn set_asset_model_composite_model_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_external_id = input;
-        self
+        self.asset_model_composite_model_external_id = input; self
     }
     /// <p>An external ID to assign to the composite model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
@@ -150,8 +148,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     }
     /// <p>The ID of the composite model. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
     pub fn set_asset_model_composite_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_id = input;
-        self
+        self.asset_model_composite_model_id = input; self
     }
     /// <p>The ID of the composite model. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
     pub fn get_asset_model_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +161,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     }
     /// <p>A description for the composite model.</p>
     pub fn set_asset_model_composite_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_description = input;
-        self
+        self.asset_model_composite_model_description = input; self
     }
     /// <p>A description for the composite model.</p>
     pub fn get_asset_model_composite_model_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +175,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     }
     /// <p>A unique, friendly name for the composite model.</p>
     pub fn set_asset_model_composite_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_name = input;
-        self
+        self.asset_model_composite_model_name = input; self
     }
     /// <p>A unique, friendly name for the composite model.</p>
     pub fn get_asset_model_composite_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn set_asset_model_composite_model_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_composite_model_type = input;
-        self
+        self.asset_model_composite_model_type = input; self
     }
     /// <p>The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>, or <code> AWS/L4E_ANOMALY</code>.</p>
     pub fn get_asset_model_composite_model_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +202,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +215,7 @@ impl CreateAssetModelCompositeModelInputBuilder {
     }
     /// <p>The ID of a composite model on this asset.</p>
     pub fn set_composed_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.composed_asset_model_id = input;
-        self
+        self.composed_asset_model_id = input; self
     }
     /// <p>The ID of a composite model on this asset.</p>
     pub fn get_composed_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,51 +225,53 @@ impl CreateAssetModelCompositeModelInputBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_model_properties`](Self::set_asset_model_composite_model_properties).
     ///
-    /// <p>The property definitions of the composite model. For more information, see
+    /// <p>The property definitions of the composite model. For more information, see 
     /// <link>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_composite_model_properties(mut self, input: crate::types::AssetModelPropertyDefinition) -> Self {
         let mut v = self.asset_model_composite_model_properties.unwrap_or_default();
-        v.push(input);
-        self.asset_model_composite_model_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_model_composite_model_properties = ::std::option::Option::Some(v);
+                        self
     }
-    /// <p>The property definitions of the composite model. For more information, see
+    /// <p>The property definitions of the composite model. For more information, see 
     /// <link>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_asset_model_composite_model_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
-    ) -> Self {
-        self.asset_model_composite_model_properties = input;
-        self
+    pub fn set_asset_model_composite_model_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyDefinition>>) -> Self {
+        self.asset_model_composite_model_properties = input; self
     }
-    /// <p>The property definitions of the composite model. For more information, see
+    /// <p>The property definitions of the composite model. For more information, see 
     /// <link>.</p>
     /// <p>You can specify up to 200 properties per composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
+    pub fn get_asset_model_composite_model_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyDefinition>> {
         &self.asset_model_composite_model_properties
     }
     /// Consumes the builder and constructs a [`CreateAssetModelCompositeModelInput`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput {
-                asset_model_id: self.asset_model_id,
-                parent_asset_model_composite_model_id: self.parent_asset_model_composite_model_id,
-                asset_model_composite_model_external_id: self.asset_model_composite_model_external_id,
-                asset_model_composite_model_id: self.asset_model_composite_model_id,
-                asset_model_composite_model_description: self.asset_model_composite_model_description,
-                asset_model_composite_model_name: self.asset_model_composite_model_name,
-                asset_model_composite_model_type: self.asset_model_composite_model_type,
-                client_token: self.client_token,
-                composed_asset_model_id: self.composed_asset_model_id,
-                asset_model_composite_model_properties: self.asset_model_composite_model_properties,
-            },
+                asset_model_id: self.asset_model_id
+                ,
+                parent_asset_model_composite_model_id: self.parent_asset_model_composite_model_id
+                ,
+                asset_model_composite_model_external_id: self.asset_model_composite_model_external_id
+                ,
+                asset_model_composite_model_id: self.asset_model_composite_model_id
+                ,
+                asset_model_composite_model_description: self.asset_model_composite_model_description
+                ,
+                asset_model_composite_model_name: self.asset_model_composite_model_name
+                ,
+                asset_model_composite_model_type: self.asset_model_composite_model_type
+                ,
+                client_token: self.client_token
+                ,
+                composed_asset_model_id: self.composed_asset_model_id
+                ,
+                asset_model_composite_model_properties: self.asset_model_composite_model_properties
+                ,
+            }
         )
     }
 }
+

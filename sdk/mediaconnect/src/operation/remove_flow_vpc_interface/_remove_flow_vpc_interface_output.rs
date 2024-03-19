@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveFlowVpcInterfaceOutput {
+pub struct RemoveFlowVpcInterfaceOutput  {
     /// The ARN of the flow that is associated with the VPC interface you removed.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub non_deleted_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub non_deleted_network_interface_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// The name of the VPC interface that was removed.
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RemoveFlowVpcInterfaceOutput {
+impl  RemoveFlowVpcInterfaceOutput  {
     /// The ARN of the flow that is associated with the VPC interface you removed.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_deleted_network_interface_ids.is_none()`.
-    pub fn non_deleted_network_interface_ids(&self) -> &[::std::string::String] {
-        self.non_deleted_network_interface_ids.as_deref().unwrap_or_default()
+    pub fn non_deleted_network_interface_ids(&self) -> & [::std::string::String] {
+        self.non_deleted_network_interface_ids.as_deref()
+        .unwrap_or_default()
     }
     /// The name of the VPC interface that was removed.
-    pub fn vpc_interface_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_interface_name(&self) -> ::std::option::Option<& str> {
         self.vpc_interface_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RemoveFlowVpcInterfaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RemoveFlowVpcInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowVpcInterfaceOutput`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput).
     pub fn builder() -> crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceOutputBuilder {
@@ -44,7 +45,7 @@ impl RemoveFlowVpcInterfaceOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFlowVpcInterfaceOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) non_deleted_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) non_deleted_network_interface_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vpc_interface_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,8 +57,7 @@ impl RemoveFlowVpcInterfaceOutputBuilder {
     }
     /// The ARN of the flow that is associated with the VPC interface you removed.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the flow that is associated with the VPC interface you removed.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,17 +70,16 @@ impl RemoveFlowVpcInterfaceOutputBuilder {
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
     pub fn non_deleted_network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_deleted_network_interface_ids.unwrap_or_default();
-        v.push(input.into());
-        self.non_deleted_network_interface_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.non_deleted_network_interface_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub fn set_non_deleted_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.non_deleted_network_interface_ids = input;
-        self
+    pub fn set_non_deleted_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.non_deleted_network_interface_ids = input; self
     }
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub fn get_non_deleted_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_deleted_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.non_deleted_network_interface_ids
     }
     /// The name of the VPC interface that was removed.
@@ -90,29 +89,32 @@ impl RemoveFlowVpcInterfaceOutputBuilder {
     }
     /// The name of the VPC interface that was removed.
     pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_interface_name = input;
-        self
+        self.vpc_interface_name = input; self
     }
     /// The name of the VPC interface that was removed.
     pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_interface_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RemoveFlowVpcInterfaceOutput`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput).
     pub fn build(self) -> crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput {
         crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput {
-            flow_arn: self.flow_arn,
-            non_deleted_network_interface_ids: self.non_deleted_network_interface_ids,
-            vpc_interface_name: self.vpc_interface_name,
+            flow_arn: self.flow_arn
+            ,
+            non_deleted_network_interface_ids: self.non_deleted_network_interface_ids
+            ,
+            vpc_interface_name: self.vpc_interface_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

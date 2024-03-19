@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSpaceOutput {
+pub struct UpdateSpaceOutput  {
     /// <p>The name of the space.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the space displayed to users in Amazon CodeCatalyst.</p>
@@ -11,25 +11,25 @@ pub struct UpdateSpaceOutput {
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateSpaceOutput {
+impl  UpdateSpaceOutput  {
     /// <p>The name of the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The friendly name of the space displayed to users in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the space.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSpaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSpaceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSpaceOutput`](crate::operation::update_space::UpdateSpaceOutput).
     pub fn builder() -> crate::operation::update_space::builders::UpdateSpaceOutputBuilder {
@@ -54,8 +54,7 @@ impl UpdateSpaceOutputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl UpdateSpaceOutputBuilder {
     }
     /// <p>The friendly name of the space displayed to users in Amazon CodeCatalyst.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The friendly name of the space displayed to users in Amazon CodeCatalyst.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl UpdateSpaceOutputBuilder {
     }
     /// <p>The description of the space.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the space.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSpaceOutput`](crate::operation::update_space::UpdateSpaceOutput).
     pub fn build(self) -> crate::operation::update_space::UpdateSpaceOutput {
         crate::operation::update_space::UpdateSpaceOutput {
-            name: self.name,
-            display_name: self.display_name,
-            description: self.description,
+            name: self.name
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

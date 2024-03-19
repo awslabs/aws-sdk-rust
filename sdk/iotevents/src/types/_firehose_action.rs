@@ -3,7 +3,7 @@
 /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirehoseAction {
+pub struct FirehoseAction  {
     /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
     pub delivery_stream_name: ::std::string::String,
     /// <p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
@@ -11,18 +11,17 @@ pub struct FirehoseAction {
     /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
-impl FirehoseAction {
+impl  FirehoseAction  {
     /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
-    pub fn delivery_stream_name(&self) -> &str {
-        use std::ops::Deref;
-        self.delivery_stream_name.deref()
+    pub fn delivery_stream_name(&self) -> & str {
+        use std::ops::Deref; self.delivery_stream_name.deref()
     }
     /// <p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
-    pub fn separator(&self) -> ::std::option::Option<&str> {
+    pub fn separator(&self) -> ::std::option::Option<& str> {
         self.separator.as_deref()
     }
     /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl FirehoseActionBuilder {
     }
     /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream_name = input;
-        self
+        self.delivery_stream_name = input; self
     }
     /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl FirehoseActionBuilder {
     }
     /// <p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub fn set_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.separator = input;
-        self
+        self.separator = input; self
     }
     /// <p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub fn get_separator(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl FirehoseActionBuilder {
     }
     /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
@@ -89,15 +85,19 @@ impl FirehoseActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`delivery_stream_name`](crate::types::builders::FirehoseActionBuilder::delivery_stream_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FirehoseAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FirehoseAction {
-            delivery_stream_name: self.delivery_stream_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "delivery_stream_name",
-                    "delivery_stream_name was not specified but it is required when building FirehoseAction",
-                )
-            })?,
-            separator: self.separator,
-            payload: self.payload,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FirehoseAction {
+                delivery_stream_name: self.delivery_stream_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("delivery_stream_name", "delivery_stream_name was not specified but it is required when building FirehoseAction")
+                    )?
+                ,
+                separator: self.separator
+                ,
+                payload: self.payload
+                ,
+            }
+        )
     }
 }
+

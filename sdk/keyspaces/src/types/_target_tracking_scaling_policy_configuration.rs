@@ -3,7 +3,7 @@
 /// <p>The auto scaling policy that scales a table based on the ratio of consumed to provisioned capacity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetTrackingScalingPolicyConfiguration {
+pub struct TargetTrackingScalingPolicyConfiguration  {
     /// <p>Specifies if <code>scale-in</code> is enabled.</p>
     /// <p>When auto scaling automatically decreases capacity for a table, the table <i>scales in</i>. When scaling policies are set, they can't scale in the table lower than its minimum capacity.</p>
     pub disable_scale_in: bool,
@@ -17,7 +17,7 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>Amazon Keyspaces auto scaling scales up capacity automatically when traffic exceeds this target utilization rate, and then back down when it falls below the target. This ensures that the ratio of consumed capacity to provisioned capacity stays at or near this value. You define <code>targetValue</code> as a percentage. A <code>double</code> between 20 and 90.</p>
     pub target_value: f64,
 }
-impl TargetTrackingScalingPolicyConfiguration {
+impl  TargetTrackingScalingPolicyConfiguration  {
     /// <p>Specifies if <code>scale-in</code> is enabled.</p>
     /// <p>When auto scaling automatically decreases capacity for a table, the table <i>scales in</i>. When scaling policies are set, they can't scale in the table lower than its minimum capacity.</p>
     pub fn disable_scale_in(&self) -> bool {
@@ -65,8 +65,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <p>Specifies if <code>scale-in</code> is enabled.</p>
     /// <p>When auto scaling automatically decreases capacity for a table, the table <i>scales in</i>. When scaling policies are set, they can't scale in the table lower than its minimum capacity.</p>
     pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_scale_in = input;
-        self
+        self.disable_scale_in = input; self
     }
     /// <p>Specifies if <code>scale-in</code> is enabled.</p>
     /// <p>When auto scaling automatically decreases capacity for a table, the table <i>scales in</i>. When scaling policies are set, they can't scale in the table lower than its minimum capacity.</p>
@@ -82,8 +81,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <p>Specifies a <code>scale-in</code> cool down period.</p>
     /// <p>A cooldown period in seconds between scaling activities that lets the table stabilize before another scaling activity starts.</p>
     pub fn set_scale_in_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scale_in_cooldown = input;
-        self
+        self.scale_in_cooldown = input; self
     }
     /// <p>Specifies a <code>scale-in</code> cool down period.</p>
     /// <p>A cooldown period in seconds between scaling activities that lets the table stabilize before another scaling activity starts.</p>
@@ -99,8 +97,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <p>Specifies a scale out cool down period.</p>
     /// <p>A cooldown period in seconds between scaling activities that lets the table stabilize before another scaling activity starts.</p>
     pub fn set_scale_out_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scale_out_cooldown = input;
-        self
+        self.scale_out_cooldown = input; self
     }
     /// <p>Specifies a scale out cool down period.</p>
     /// <p>A cooldown period in seconds between scaling activities that lets the table stabilize before another scaling activity starts.</p>
@@ -117,8 +114,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <p>Specifies the target value for the target tracking auto scaling policy.</p>
     /// <p>Amazon Keyspaces auto scaling scales up capacity automatically when traffic exceeds this target utilization rate, and then back down when it falls below the target. This ensures that the ratio of consumed capacity to provisioned capacity stays at or near this value. You define <code>targetValue</code> as a percentage. A <code>double</code> between 20 and 90.</p>
     pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.target_value = input;
-        self
+        self.target_value = input; self
     }
     /// <p>Specifies the target value for the target tracking auto scaling policy.</p>
     /// <p>Amazon Keyspaces auto scaling scales up capacity automatically when traffic exceeds this target utilization rate, and then back down when it falls below the target. This ensures that the ratio of consumed capacity to provisioned capacity stays at or near this value. You define <code>targetValue</code> as a percentage. A <code>double</code> between 20 and 90.</p>
@@ -128,10 +124,19 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// Consumes the builder and constructs a [`TargetTrackingScalingPolicyConfiguration`](crate::types::TargetTrackingScalingPolicyConfiguration).
     pub fn build(self) -> crate::types::TargetTrackingScalingPolicyConfiguration {
         crate::types::TargetTrackingScalingPolicyConfiguration {
-            disable_scale_in: self.disable_scale_in.unwrap_or_default(),
-            scale_in_cooldown: self.scale_in_cooldown.unwrap_or_default(),
-            scale_out_cooldown: self.scale_out_cooldown.unwrap_or_default(),
-            target_value: self.target_value.unwrap_or_default(),
+            disable_scale_in: self.disable_scale_in
+                .unwrap_or_default()
+            ,
+            scale_in_cooldown: self.scale_in_cooldown
+                .unwrap_or_default()
+            ,
+            scale_out_cooldown: self.scale_out_cooldown
+                .unwrap_or_default()
+            ,
+            target_value: self.target_value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

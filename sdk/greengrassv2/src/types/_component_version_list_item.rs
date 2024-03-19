@@ -3,7 +3,7 @@
 /// <p>Contains information about a component version in a list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentVersionListItem {
+pub struct ComponentVersionListItem  {
     /// <p>The name of the component.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
@@ -11,17 +11,17 @@ pub struct ComponentVersionListItem {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl ComponentVersionListItem {
+impl  ComponentVersionListItem  {
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> ::std::option::Option<&str> {
+    pub fn component_version(&self) -> ::std::option::Option<& str> {
         self.component_version.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ComponentVersionListItemBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ComponentVersionListItemBuilder {
     }
     /// <p>The version of the component.</p>
     pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_version = input;
-        self
+        self.component_version = input; self
     }
     /// <p>The version of the component.</p>
     pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ComponentVersionListItemBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ComponentVersionListItemBuilder {
     /// Consumes the builder and constructs a [`ComponentVersionListItem`](crate::types::ComponentVersionListItem).
     pub fn build(self) -> crate::types::ComponentVersionListItem {
         crate::types::ComponentVersionListItem {
-            component_name: self.component_name,
-            component_version: self.component_version,
-            arn: self.arn,
+            component_name: self.component_name
+            ,
+            component_version: self.component_version
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

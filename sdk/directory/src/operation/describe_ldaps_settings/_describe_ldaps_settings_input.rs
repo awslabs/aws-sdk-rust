@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLdapsSettingsInput {
+pub struct DescribeLdapsSettingsInput  {
     /// <p>The identifier of the directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
@@ -12,17 +12,17 @@ pub struct DescribeLdapsSettingsInput {
     /// <p>Specifies the number of items that should be displayed on one page.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeLdapsSettingsInput {
+impl  DescribeLdapsSettingsInput  {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LdapsType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LdapsType> {
         self.r#type.as_ref()
     }
     /// <p>The type of next token used for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the number of items that should be displayed on one page.</p>
@@ -55,8 +55,7 @@ impl DescribeLdapsSettingsInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeLdapsSettingsInputBuilder {
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LdapsType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LdapsType> {
@@ -83,8 +81,7 @@ impl DescribeLdapsSettingsInputBuilder {
     }
     /// <p>The type of next token used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The type of next token used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl DescribeLdapsSettingsInputBuilder {
     }
     /// <p>Specifies the number of items that should be displayed on one page.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>Specifies the number of items that should be displayed on one page.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeLdapsSettingsInput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput {
-            directory_id: self.directory_id,
-            r#type: self.r#type,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_ldaps_settings::DescribeLdapsSettingsInput {
+                directory_id: self.directory_id
+                ,
+                r#type: self.r#type
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

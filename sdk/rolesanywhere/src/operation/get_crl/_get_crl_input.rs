@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCrlInput {
+pub struct GetCrlInput  {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     pub crl_id: ::std::option::Option<::std::string::String>,
 }
-impl GetCrlInput {
+impl  GetCrlInput  {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(&self) -> ::std::option::Option<&str> {
+    pub fn crl_id(&self) -> ::std::option::Option<& str> {
         self.crl_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetCrlInputBuilder {
     }
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     pub fn set_crl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crl_id = input;
-        self
+        self.crl_id = input; self
     }
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     pub fn get_crl_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetCrlInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetCrlInput`](crate::operation::get_crl::GetCrlInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_crl::GetCrlInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_crl::GetCrlInput { crl_id: self.crl_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_crl::GetCrlInput {
+                crl_id: self.crl_id
+                ,
+            }
+        )
     }
 }
+

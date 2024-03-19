@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelOpenCypherQueryInput {
+pub struct CancelOpenCypherQueryInput  {
     /// <p>The unique ID of the openCypher query to cancel.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>TRUE</code>, causes the cancelation of the openCypher query to happen silently.</p>
     pub silent: ::std::option::Option<bool>,
 }
-impl CancelOpenCypherQueryInput {
+impl  CancelOpenCypherQueryInput  {
     /// <p>The unique ID of the openCypher query to cancel.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>If set to <code>TRUE</code>, causes the cancelation of the openCypher query to happen silently.</p>
@@ -41,8 +41,7 @@ impl CancelOpenCypherQueryInputBuilder {
     }
     /// <p>The unique ID of the openCypher query to cancel.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The unique ID of the openCypher query to cancel.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl CancelOpenCypherQueryInputBuilder {
     }
     /// <p>If set to <code>TRUE</code>, causes the cancelation of the openCypher query to happen silently.</p>
     pub fn set_silent(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.silent = input;
-        self
+        self.silent = input; self
     }
     /// <p>If set to <code>TRUE</code>, causes the cancelation of the openCypher query to happen silently.</p>
     pub fn get_silent(&self) -> &::std::option::Option<bool> {
         &self.silent
     }
     /// Consumes the builder and constructs a [`CancelOpenCypherQueryInput`](crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput {
-            query_id: self.query_id,
-            silent: self.silent,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput {
+                query_id: self.query_id
+                ,
+                silent: self.silent
+                ,
+            }
+        )
     }
 }
+

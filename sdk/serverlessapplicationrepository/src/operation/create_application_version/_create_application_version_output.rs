@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationVersionOutput {
+pub struct CreateApplicationVersionOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this resource was created.</p>
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameter types supported by the application.</p>
-    pub parameter_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDefinition>>,
+    pub parameter_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterDefinition>>,
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
     /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
     /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub required_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub required_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub resources_supported: ::std::option::Option<bool>,
     /// <p>The semantic version of the application:</p>
@@ -30,20 +30,21 @@ pub struct CreateApplicationVersionOutput {
     pub template_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateApplicationVersionOutput {
+impl  CreateApplicationVersionOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>An array of parameter types supported by the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_definitions.is_none()`.
-    pub fn parameter_definitions(&self) -> &[crate::types::ParameterDefinition] {
-        self.parameter_definitions.as_deref().unwrap_or_default()
+    pub fn parameter_definitions(&self) -> & [crate::types::ParameterDefinition] {
+        self.parameter_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
     /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
@@ -51,10 +52,11 @@ impl CreateApplicationVersionOutput {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_capabilities.is_none()`.
-    pub fn required_capabilities(&self) -> &[crate::types::Capability] {
-        self.required_capabilities.as_deref().unwrap_or_default()
+    pub fn required_capabilities(&self) -> & [crate::types::Capability] {
+        self.required_capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub fn resources_supported(&self) -> ::std::option::Option<bool> {
@@ -62,28 +64,28 @@ impl CreateApplicationVersionOutput {
     }
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
-    pub fn semantic_version(&self) -> ::std::option::Option<&str> {
+    pub fn semantic_version(&self) -> ::std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn source_code_archive_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_code_archive_url(&self) -> ::std::option::Option<& str> {
         self.source_code_archive_url.as_deref()
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_code_url(&self) -> ::std::option::Option<& str> {
         self.source_code_url.as_deref()
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
-    pub fn template_url(&self) -> ::std::option::Option<&str> {
+    pub fn template_url(&self) -> ::std::option::Option<& str> {
         self.template_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateApplicationVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationVersionOutput`](crate::operation::create_application_version::CreateApplicationVersionOutput).
     pub fn builder() -> crate::operation::create_application_version::builders::CreateApplicationVersionOutputBuilder {
@@ -97,8 +99,8 @@ impl CreateApplicationVersionOutput {
 pub struct CreateApplicationVersionOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDefinition>>,
-    pub(crate) required_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub(crate) parameter_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterDefinition>>,
+    pub(crate) required_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     pub(crate) resources_supported: ::std::option::Option<bool>,
     pub(crate) semantic_version: ::std::option::Option<::std::string::String>,
     pub(crate) source_code_archive_url: ::std::option::Option<::std::string::String>,
@@ -114,8 +116,7 @@ impl CreateApplicationVersionOutputBuilder {
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +129,7 @@ impl CreateApplicationVersionOutputBuilder {
     }
     /// <p>The date and time this resource was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time this resource was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,17 +142,16 @@ impl CreateApplicationVersionOutputBuilder {
     /// <p>An array of parameter types supported by the application.</p>
     pub fn parameter_definitions(mut self, input: crate::types::ParameterDefinition) -> Self {
         let mut v = self.parameter_definitions.unwrap_or_default();
-        v.push(input);
-        self.parameter_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameter_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of parameter types supported by the application.</p>
-    pub fn set_parameter_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDefinition>>) -> Self {
-        self.parameter_definitions = input;
-        self
+    pub fn set_parameter_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterDefinition>>) -> Self {
+        self.parameter_definitions = input; self
     }
     /// <p>An array of parameter types supported by the application.</p>
-    pub fn get_parameter_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterDefinition>> {
+    pub fn get_parameter_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterDefinition>> {
         &self.parameter_definitions
     }
     /// Appends an item to `required_capabilities`.
@@ -167,9 +166,9 @@ impl CreateApplicationVersionOutputBuilder {
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
     pub fn required_capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.required_capabilities.unwrap_or_default();
-        v.push(input);
-        self.required_capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.required_capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
     /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
@@ -177,9 +176,8 @@ impl CreateApplicationVersionOutputBuilder {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub fn set_required_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.required_capabilities = input;
-        self
+    pub fn set_required_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>) -> Self {
+        self.required_capabilities = input; self
     }
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
     /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
@@ -187,7 +185,7 @@ impl CreateApplicationVersionOutputBuilder {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub fn get_required_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_required_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Capability>> {
         &self.required_capabilities
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
@@ -197,8 +195,7 @@ impl CreateApplicationVersionOutputBuilder {
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub fn set_resources_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.resources_supported = input;
-        self
+        self.resources_supported = input; self
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub fn get_resources_supported(&self) -> &::std::option::Option<bool> {
@@ -213,8 +210,7 @@ impl CreateApplicationVersionOutputBuilder {
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.semantic_version = input;
-        self
+        self.semantic_version = input; self
     }
     /// <p>The semantic version of the application:</p>
     /// <p><a href="https://semver.org/">https://semver.org/</a></p>
@@ -230,8 +226,7 @@ impl CreateApplicationVersionOutputBuilder {
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
     pub fn set_source_code_archive_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_code_archive_url = input;
-        self
+        self.source_code_archive_url = input; self
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
@@ -245,8 +240,7 @@ impl CreateApplicationVersionOutputBuilder {
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn set_source_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_code_url = input;
-        self
+        self.source_code_url = input; self
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
     pub fn get_source_code_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,35 +253,44 @@ impl CreateApplicationVersionOutputBuilder {
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
     pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateApplicationVersionOutput`](crate::operation::create_application_version::CreateApplicationVersionOutput).
     pub fn build(self) -> crate::operation::create_application_version::CreateApplicationVersionOutput {
         crate::operation::create_application_version::CreateApplicationVersionOutput {
-            application_id: self.application_id,
-            creation_time: self.creation_time,
-            parameter_definitions: self.parameter_definitions,
-            required_capabilities: self.required_capabilities,
-            resources_supported: self.resources_supported,
-            semantic_version: self.semantic_version,
-            source_code_archive_url: self.source_code_archive_url,
-            source_code_url: self.source_code_url,
-            template_url: self.template_url,
+            application_id: self.application_id
+            ,
+            creation_time: self.creation_time
+            ,
+            parameter_definitions: self.parameter_definitions
+            ,
+            required_capabilities: self.required_capabilities
+            ,
+            resources_supported: self.resources_supported
+            ,
+            semantic_version: self.semantic_version
+            ,
+            source_code_archive_url: self.source_code_archive_url
+            ,
+            source_code_url: self.source_code_url
+            ,
+            template_url: self.template_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Output configuration information for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelDiagnosticsOutputConfiguration {
+pub struct ModelDiagnosticsOutputConfiguration  {
     /// <p>The Amazon S3 location for the pointwise model diagnostics.</p>
     pub s3_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsS3OutputConfiguration>,
     /// <p>The Amazon Web Services Key Management Service (KMS) key identifier to encrypt the pointwise model diagnostics files.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl ModelDiagnosticsOutputConfiguration {
+impl  ModelDiagnosticsOutputConfiguration  {
     /// <p>The Amazon S3 location for the pointwise model diagnostics.</p>
-    pub fn s3_output_configuration(&self) -> ::std::option::Option<&crate::types::ModelDiagnosticsS3OutputConfiguration> {
+    pub fn s3_output_configuration(&self) -> ::std::option::Option<& crate::types::ModelDiagnosticsS3OutputConfiguration> {
         self.s3_output_configuration.as_ref()
     }
     /// <p>The Amazon Web Services Key Management Service (KMS) key identifier to encrypt the pointwise model diagnostics files.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ModelDiagnosticsOutputConfigurationBuilder {
     }
     /// <p>The Amazon S3 location for the pointwise model diagnostics.</p>
     pub fn set_s3_output_configuration(mut self, input: ::std::option::Option<crate::types::ModelDiagnosticsS3OutputConfiguration>) -> Self {
-        self.s3_output_configuration = input;
-        self
+        self.s3_output_configuration = input; self
     }
     /// <p>The Amazon S3 location for the pointwise model diagnostics.</p>
     pub fn get_s3_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsS3OutputConfiguration> {
@@ -56,8 +55,7 @@ impl ModelDiagnosticsOutputConfigurationBuilder {
     }
     /// <p>The Amazon Web Services Key Management Service (KMS) key identifier to encrypt the pointwise model diagnostics files.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (KMS) key identifier to encrypt the pointwise model diagnostics files.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl ModelDiagnosticsOutputConfigurationBuilder {
     /// Consumes the builder and constructs a [`ModelDiagnosticsOutputConfiguration`](crate::types::ModelDiagnosticsOutputConfiguration).
     pub fn build(self) -> crate::types::ModelDiagnosticsOutputConfiguration {
         crate::types::ModelDiagnosticsOutputConfiguration {
-            s3_output_configuration: self.s3_output_configuration,
-            kms_key_id: self.kms_key_id,
+            s3_output_configuration: self.s3_output_configuration
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

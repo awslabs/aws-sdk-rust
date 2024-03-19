@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelJobRunInput {
+pub struct CancelJobRunInput  {
     /// <p>The ID of the job run to cancel.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelJobRunInput {
+impl  CancelJobRunInput  {
     /// <p>The ID of the job run to cancel.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
-    pub fn virtual_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> ::std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CancelJobRunInputBuilder {
     }
     /// <p>The ID of the job run to cancel.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the job run to cancel.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl CancelJobRunInputBuilder {
     }
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
     pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_cluster_id = input;
-        self
+        self.virtual_cluster_id = input; self
     }
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
     pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_cluster_id
     }
     /// Consumes the builder and constructs a [`CancelJobRunInput`](crate::operation::cancel_job_run::CancelJobRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_job_run::CancelJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_job_run::CancelJobRunInput {
-            id: self.id,
-            virtual_cluster_id: self.virtual_cluster_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job_run::CancelJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_job_run::CancelJobRunInput {
+                id: self.id
+                ,
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
+            }
+        )
     }
 }
+

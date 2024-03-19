@@ -3,19 +3,19 @@
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
 }
-impl NetworkInterface {
+impl  NetworkInterface  {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl NetworkInterfaceBuilder {
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
-            subnet_id: self.subnet_id,
-            network_interface_id: self.network_interface_id,
+            subnet_id: self.subnet_id
+            ,
+            network_interface_id: self.network_interface_id
+            ,
         }
     }
 }
+

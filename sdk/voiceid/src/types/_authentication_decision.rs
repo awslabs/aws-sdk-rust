@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authenticationdecision = unimplemented!();
 /// match authenticationdecision {
@@ -35,16 +35,14 @@
 /// Specifically, when `authenticationdecision` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthenticationDecision::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AuthenticationDecision {
     #[allow(missing_docs)] // documentation missing in model
     Accept,
@@ -62,84 +60,77 @@ pub enum AuthenticationDecision {
     SpeakerOptedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AuthenticationDecision {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCEPT" => AuthenticationDecision::Accept,
-            "NOT_ENOUGH_SPEECH" => AuthenticationDecision::NotEnoughSpeech,
-            "REJECT" => AuthenticationDecision::Reject,
-            "SPEAKER_EXPIRED" => AuthenticationDecision::SpeakerExpired,
-            "SPEAKER_ID_NOT_PROVIDED" => AuthenticationDecision::SpeakerIdNotProvided,
-            "SPEAKER_NOT_ENROLLED" => AuthenticationDecision::SpeakerNotEnrolled,
-            "SPEAKER_OPTED_OUT" => AuthenticationDecision::SpeakerOptedOut,
-            other => AuthenticationDecision::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCEPT" => AuthenticationDecision::Accept,
+"NOT_ENOUGH_SPEECH" => AuthenticationDecision::NotEnoughSpeech,
+"REJECT" => AuthenticationDecision::Reject,
+"SPEAKER_EXPIRED" => AuthenticationDecision::SpeakerExpired,
+"SPEAKER_ID_NOT_PROVIDED" => AuthenticationDecision::SpeakerIdNotProvided,
+"SPEAKER_NOT_ENROLLED" => AuthenticationDecision::SpeakerNotEnrolled,
+"SPEAKER_OPTED_OUT" => AuthenticationDecision::SpeakerOptedOut,
+other => AuthenticationDecision::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AuthenticationDecision {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AuthenticationDecision::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AuthenticationDecision::from(s))
+                    }
+                }
 impl AuthenticationDecision {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AuthenticationDecision::Accept => "ACCEPT",
-            AuthenticationDecision::NotEnoughSpeech => "NOT_ENOUGH_SPEECH",
-            AuthenticationDecision::Reject => "REJECT",
-            AuthenticationDecision::SpeakerExpired => "SPEAKER_EXPIRED",
-            AuthenticationDecision::SpeakerIdNotProvided => "SPEAKER_ID_NOT_PROVIDED",
-            AuthenticationDecision::SpeakerNotEnrolled => "SPEAKER_NOT_ENROLLED",
-            AuthenticationDecision::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
-            AuthenticationDecision::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCEPT",
-            "NOT_ENOUGH_SPEECH",
-            "REJECT",
-            "SPEAKER_EXPIRED",
-            "SPEAKER_ID_NOT_PROVIDED",
-            "SPEAKER_NOT_ENROLLED",
-            "SPEAKER_OPTED_OUT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AuthenticationDecision::Accept => "ACCEPT",
+    AuthenticationDecision::NotEnoughSpeech => "NOT_ENOUGH_SPEECH",
+    AuthenticationDecision::Reject => "REJECT",
+    AuthenticationDecision::SpeakerExpired => "SPEAKER_EXPIRED",
+    AuthenticationDecision::SpeakerIdNotProvided => "SPEAKER_ID_NOT_PROVIDED",
+    AuthenticationDecision::SpeakerNotEnrolled => "SPEAKER_NOT_ENROLLED",
+    AuthenticationDecision::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
+    AuthenticationDecision::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCEPT", "NOT_ENOUGH_SPEECH", "REJECT", "SPEAKER_EXPIRED", "SPEAKER_ID_NOT_PROVIDED", "SPEAKER_NOT_ENROLLED", "SPEAKER_OPTED_OUT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AuthenticationDecision {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AuthenticationDecision {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AuthenticationDecision {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AuthenticationDecision::Accept => write!(f, "ACCEPT"),
-            AuthenticationDecision::NotEnoughSpeech => write!(f, "NOT_ENOUGH_SPEECH"),
-            AuthenticationDecision::Reject => write!(f, "REJECT"),
-            AuthenticationDecision::SpeakerExpired => write!(f, "SPEAKER_EXPIRED"),
-            AuthenticationDecision::SpeakerIdNotProvided => write!(f, "SPEAKER_ID_NOT_PROVIDED"),
-            AuthenticationDecision::SpeakerNotEnrolled => write!(f, "SPEAKER_NOT_ENROLLED"),
-            AuthenticationDecision::SpeakerOptedOut => write!(f, "SPEAKER_OPTED_OUT"),
-            AuthenticationDecision::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AuthenticationDecision::Accept => write!(f, "ACCEPT"),
+AuthenticationDecision::NotEnoughSpeech => write!(f, "NOT_ENOUGH_SPEECH"),
+AuthenticationDecision::Reject => write!(f, "REJECT"),
+AuthenticationDecision::SpeakerExpired => write!(f, "SPEAKER_EXPIRED"),
+AuthenticationDecision::SpeakerIdNotProvided => write!(f, "SPEAKER_ID_NOT_PROVIDED"),
+AuthenticationDecision::SpeakerNotEnrolled => write!(f, "SPEAKER_NOT_ENROLLED"),
+AuthenticationDecision::SpeakerOptedOut => write!(f, "SPEAKER_OPTED_OUT"),
+AuthenticationDecision::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,7 +3,7 @@
 /// <p>The warnings generated for a specific resource for this generated template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WarningDetail {
+pub struct WarningDetail  {
     /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <ul>
     /// <li>
@@ -17,9 +17,9 @@ pub struct WarningDetail {
     /// </note>
     pub r#type: ::std::option::Option<crate::types::WarningType>,
     /// <p>The properties of the resource that are impacted by this warning.</p>
-    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::WarningProperty>>,
+    pub properties: ::std::option::Option<::std::vec::Vec::<crate::types::WarningProperty>>,
 }
-impl WarningDetail {
+impl  WarningDetail  {
     /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <ul>
     /// <li>
@@ -31,14 +31,15 @@ impl WarningDetail {
     /// </ul><note>
     /// <p>Currently the resource and property reference documentation does not indicate if a property uses a type of <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource provider schema.</p>
     /// </note>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WarningType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::WarningType> {
         self.r#type.as_ref()
     }
     /// <p>The properties of the resource that are impacted by this warning.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
-    pub fn properties(&self) -> &[crate::types::WarningProperty] {
-        self.properties.as_deref().unwrap_or_default()
+    pub fn properties(&self) -> & [crate::types::WarningProperty] {
+        self.properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl WarningDetail {
@@ -53,7 +54,7 @@ impl WarningDetail {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WarningDetailBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WarningType>,
-    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::WarningProperty>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec::<crate::types::WarningProperty>>,
 }
 impl WarningDetailBuilder {
     /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -83,8 +84,7 @@ impl WarningDetailBuilder {
     /// <p>Currently the resource and property reference documentation does not indicate if a property uses a type of <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource provider schema.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WarningType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <ul>
@@ -107,24 +107,26 @@ impl WarningDetailBuilder {
     /// <p>The properties of the resource that are impacted by this warning.</p>
     pub fn properties(mut self, input: crate::types::WarningProperty) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties of the resource that are impacted by this warning.</p>
-    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WarningProperty>>) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WarningProperty>>) -> Self {
+        self.properties = input; self
     }
     /// <p>The properties of the resource that are impacted by this warning.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WarningProperty>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WarningProperty>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`WarningDetail`](crate::types::WarningDetail).
     pub fn build(self) -> crate::types::WarningDetail {
         crate::types::WarningDetail {
-            r#type: self.r#type,
-            properties: self.properties,
+            r#type: self.r#type
+            ,
+            properties: self.properties
+            ,
         }
     }
 }
+

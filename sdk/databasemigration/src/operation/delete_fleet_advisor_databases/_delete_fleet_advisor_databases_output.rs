@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetAdvisorDatabasesOutput {
+pub struct DeleteFleetAdvisorDatabasesOutput  {
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub database_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub database_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DeleteFleetAdvisorDatabasesOutput {
+impl  DeleteFleetAdvisorDatabasesOutput  {
     /// <p>The IDs of the databases that the operation deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_ids.is_none()`.
-    pub fn database_ids(&self) -> &[::std::string::String] {
-        self.database_ids.as_deref().unwrap_or_default()
+    pub fn database_ids(&self) -> & [::std::string::String] {
+        self.database_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteFleetAdvisorDatabasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteFleetAdvisorDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput).
     pub fn builder() -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesOutputBuilder {
@@ -31,7 +32,7 @@ impl DeleteFleetAdvisorDatabasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetAdvisorDatabasesOutputBuilder {
-    pub(crate) database_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) database_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DeleteFleetAdvisorDatabasesOutputBuilder {
@@ -42,33 +43,34 @@ impl DeleteFleetAdvisorDatabasesOutputBuilder {
     /// <p>The IDs of the databases that the operation deleted.</p>
     pub fn database_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.database_ids.unwrap_or_default();
-        v.push(input.into());
-        self.database_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.database_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub fn set_database_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.database_ids = input;
-        self
+    pub fn set_database_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.database_ids = input; self
     }
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub fn get_database_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_database_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.database_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput).
     pub fn build(self) -> crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput {
         crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput {
-            database_ids: self.database_ids,
+            database_ids: self.database_ids
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

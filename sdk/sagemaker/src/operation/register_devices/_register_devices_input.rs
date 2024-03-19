@@ -2,30 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterDevicesInput {
+pub struct RegisterDevicesInput  {
     /// <p>The name of the fleet.</p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
+    pub devices: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>,
     /// <p>The tags associated with devices.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl RegisterDevicesInput {
+impl  RegisterDevicesInput  {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
-    pub fn devices(&self) -> &[crate::types::Device] {
-        self.devices.as_deref().unwrap_or_default()
+    pub fn devices(&self) -> & [crate::types::Device] {
+        self.devices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags associated with devices.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegisterDevicesInput {
@@ -40,8 +42,8 @@ impl RegisterDevicesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDevicesInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
-    pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) devices: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl RegisterDevicesInputBuilder {
     /// <p>The name of the fleet.</p>
@@ -52,8 +54,7 @@ impl RegisterDevicesInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +67,16 @@ impl RegisterDevicesInputBuilder {
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
     pub fn devices(mut self, input: crate::types::Device) -> Self {
         let mut v = self.devices.unwrap_or_default();
-        v.push(input);
-        self.devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Device>>) -> Self {
+        self.devices = input; self
     }
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Device>> {
         &self.devices
     }
     /// Appends an item to `tags`.
@@ -86,27 +86,30 @@ impl RegisterDevicesInputBuilder {
     /// <p>The tags associated with devices.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with devices.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with devices.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RegisterDevicesInput`](crate::operation::register_devices::RegisterDevicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_devices::RegisterDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_devices::RegisterDevicesInput {
-            device_fleet_name: self.device_fleet_name,
-            devices: self.devices,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_devices::RegisterDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_devices::RegisterDevicesInput {
+                device_fleet_name: self.device_fleet_name
+                ,
+                devices: self.devices
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLineageGroupPolicyOutput {
+pub struct GetLineageGroupPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy that gives access to the lineage group in another account.</p>
     pub resource_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetLineageGroupPolicyOutput {
+impl  GetLineageGroupPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lineage_group_arn(&self) -> ::std::option::Option<& str> {
         self.lineage_group_arn.as_deref()
     }
     /// <p>The resource policy that gives access to the lineage group in another account.</p>
-    pub fn resource_policy(&self) -> ::std::option::Option<&str> {
+    pub fn resource_policy(&self) -> ::std::option::Option<& str> {
         self.resource_policy.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLineageGroupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLineageGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetLineageGroupPolicyOutput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput).
     pub fn builder() -> crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl GetLineageGroupPolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn set_lineage_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lineage_group_arn = input;
-        self
+        self.lineage_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn get_lineage_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetLineageGroupPolicyOutputBuilder {
     }
     /// <p>The resource policy that gives access to the lineage group in another account.</p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_policy = input;
-        self
+        self.resource_policy = input; self
     }
     /// <p>The resource policy that gives access to the lineage group in another account.</p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLineageGroupPolicyOutput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput).
     pub fn build(self) -> crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput {
         crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput {
-            lineage_group_arn: self.lineage_group_arn,
-            resource_policy: self.resource_policy,
+            lineage_group_arn: self.lineage_group_arn
+            ,
+            resource_policy: self.resource_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

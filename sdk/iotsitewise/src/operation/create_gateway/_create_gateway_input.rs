@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGatewayInput {
+pub struct CreateGatewayInput  {
     /// <p>A unique, friendly name for the gateway.</p>
     pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateGatewayInput {
+impl  CreateGatewayInput  {
     /// <p>A unique, friendly name for the gateway.</p>
-    pub fn gateway_name(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_name(&self) -> ::std::option::Option<& str> {
         self.gateway_name.as_deref()
     }
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
-    pub fn gateway_platform(&self) -> ::std::option::Option<&crate::types::GatewayPlatform> {
+    pub fn gateway_platform(&self) -> ::std::option::Option<& crate::types::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl CreateGatewayInput {
 pub struct CreateGatewayInputBuilder {
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateGatewayInputBuilder {
     /// <p>A unique, friendly name for the gateway.</p>
@@ -48,8 +48,7 @@ impl CreateGatewayInputBuilder {
     }
     /// <p>A unique, friendly name for the gateway.</p>
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_name = input;
-        self
+        self.gateway_name = input; self
     }
     /// <p>A unique, friendly name for the gateway.</p>
     pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateGatewayInputBuilder {
     }
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub fn set_gateway_platform(mut self, input: ::std::option::Option<crate::types::GatewayPlatform>) -> Self {
-        self.gateway_platform = input;
-        self
+        self.gateway_platform = input; self
     }
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub fn get_gateway_platform(&self) -> &::std::option::Option<crate::types::GatewayPlatform> {
@@ -77,27 +75,30 @@ impl CreateGatewayInputBuilder {
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_gateway::CreateGatewayInput {
-            gateway_name: self.gateway_name,
-            gateway_platform: self.gateway_platform,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_gateway::CreateGatewayInput {
+                gateway_name: self.gateway_name
+                ,
+                gateway_platform: self.gateway_platform
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

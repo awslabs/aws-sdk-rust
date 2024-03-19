@@ -3,27 +3,28 @@
 /// <p>Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetGroupPairInfo {
+pub struct TargetGroupPairInfo  {
     /// <p>One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete.</p>
-    pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>,
+    pub target_groups: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupInfo>>,
     /// <p>The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete.</p>
     pub prod_traffic_route: ::std::option::Option<crate::types::TrafficRoute>,
     /// <p>An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment.</p>
     pub test_traffic_route: ::std::option::Option<crate::types::TrafficRoute>,
 }
-impl TargetGroupPairInfo {
+impl  TargetGroupPairInfo  {
     /// <p>One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_groups.is_none()`.
-    pub fn target_groups(&self) -> &[crate::types::TargetGroupInfo] {
-        self.target_groups.as_deref().unwrap_or_default()
+    pub fn target_groups(&self) -> & [crate::types::TargetGroupInfo] {
+        self.target_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete.</p>
-    pub fn prod_traffic_route(&self) -> ::std::option::Option<&crate::types::TrafficRoute> {
+    pub fn prod_traffic_route(&self) -> ::std::option::Option<& crate::types::TrafficRoute> {
         self.prod_traffic_route.as_ref()
     }
     /// <p>An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment.</p>
-    pub fn test_traffic_route(&self) -> ::std::option::Option<&crate::types::TrafficRoute> {
+    pub fn test_traffic_route(&self) -> ::std::option::Option<& crate::types::TrafficRoute> {
         self.test_traffic_route.as_ref()
     }
 }
@@ -38,7 +39,7 @@ impl TargetGroupPairInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGroupPairInfoBuilder {
-    pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>,
+    pub(crate) target_groups: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupInfo>>,
     pub(crate) prod_traffic_route: ::std::option::Option<crate::types::TrafficRoute>,
     pub(crate) test_traffic_route: ::std::option::Option<crate::types::TrafficRoute>,
 }
@@ -50,17 +51,16 @@ impl TargetGroupPairInfoBuilder {
     /// <p>One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete.</p>
     pub fn target_groups(mut self, input: crate::types::TargetGroupInfo) -> Self {
         let mut v = self.target_groups.unwrap_or_default();
-        v.push(input);
-        self.target_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete.</p>
-    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>) -> Self {
-        self.target_groups = input;
-        self
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupInfo>>) -> Self {
+        self.target_groups = input; self
     }
     /// <p>One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete.</p>
-    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>> {
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupInfo>> {
         &self.target_groups
     }
     /// <p>The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete.</p>
@@ -70,8 +70,7 @@ impl TargetGroupPairInfoBuilder {
     }
     /// <p>The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete.</p>
     pub fn set_prod_traffic_route(mut self, input: ::std::option::Option<crate::types::TrafficRoute>) -> Self {
-        self.prod_traffic_route = input;
-        self
+        self.prod_traffic_route = input; self
     }
     /// <p>The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete.</p>
     pub fn get_prod_traffic_route(&self) -> &::std::option::Option<crate::types::TrafficRoute> {
@@ -84,8 +83,7 @@ impl TargetGroupPairInfoBuilder {
     }
     /// <p>An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment.</p>
     pub fn set_test_traffic_route(mut self, input: ::std::option::Option<crate::types::TrafficRoute>) -> Self {
-        self.test_traffic_route = input;
-        self
+        self.test_traffic_route = input; self
     }
     /// <p>An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment.</p>
     pub fn get_test_traffic_route(&self) -> &::std::option::Option<crate::types::TrafficRoute> {
@@ -94,9 +92,13 @@ impl TargetGroupPairInfoBuilder {
     /// Consumes the builder and constructs a [`TargetGroupPairInfo`](crate::types::TargetGroupPairInfo).
     pub fn build(self) -> crate::types::TargetGroupPairInfo {
         crate::types::TargetGroupPairInfo {
-            target_groups: self.target_groups,
-            prod_traffic_route: self.prod_traffic_route,
-            test_traffic_route: self.test_traffic_route,
+            target_groups: self.target_groups
+            ,
+            prod_traffic_route: self.prod_traffic_route
+            ,
+            test_traffic_route: self.test_traffic_route
+            ,
         }
     }
 }
+

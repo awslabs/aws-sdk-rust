@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessorOutput {
+pub struct CreateAccessorOutput  {
     /// <p>The unique identifier of the accessor.</p>
     pub accessor_id: ::std::option::Option<::std::string::String>,
     /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
@@ -11,25 +11,25 @@ pub struct CreateAccessorOutput {
     pub network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
     _request_id: Option<String>,
 }
-impl CreateAccessorOutput {
+impl  CreateAccessorOutput  {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn accessor_id(&self) -> ::std::option::Option<&str> {
+    pub fn accessor_id(&self) -> ::std::option::Option<& str> {
         self.accessor_id.as_deref()
     }
     /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
-    pub fn billing_token(&self) -> ::std::option::Option<&str> {
+    pub fn billing_token(&self) -> ::std::option::Option<& str> {
         self.billing_token.as_deref()
     }
     /// <p>The blockchain network that the accessor token is created for.</p>
-    pub fn network_type(&self) -> ::std::option::Option<&crate::types::AccessorNetworkType> {
+    pub fn network_type(&self) -> ::std::option::Option<& crate::types::AccessorNetworkType> {
         self.network_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAccessorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAccessorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessorOutput`](crate::operation::create_accessor::CreateAccessorOutput).
     pub fn builder() -> crate::operation::create_accessor::builders::CreateAccessorOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateAccessorOutputBuilder {
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn set_accessor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accessor_id = input;
-        self
+        self.accessor_id = input; self
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn get_accessor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl CreateAccessorOutputBuilder {
     }
     /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub fn set_billing_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_token = input;
-        self
+        self.billing_token = input; self
     }
     /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub fn get_billing_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateAccessorOutputBuilder {
     }
     /// <p>The blockchain network that the accessor token is created for.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>The blockchain network that the accessor token is created for.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AccessorNetworkType> {
         &self.network_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAccessorOutput`](crate::operation::create_accessor::CreateAccessorOutput).
     pub fn build(self) -> crate::operation::create_accessor::CreateAccessorOutput {
         crate::operation::create_accessor::CreateAccessorOutput {
-            accessor_id: self.accessor_id,
-            billing_token: self.billing_token,
-            network_type: self.network_type,
+            accessor_id: self.accessor_id
+            ,
+            billing_token: self.billing_token
+            ,
+            network_type: self.network_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

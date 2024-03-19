@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inputpreference = unimplemented!();
 /// match inputpreference {
@@ -30,7 +30,7 @@
 /// Specifically, when `inputpreference` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InputPreference::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -39,9 +39,7 @@
 /// If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
 /// If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum InputPreference {
     #[allow(missing_docs)] // documentation missing in model
     EqualInputPreference,
@@ -49,61 +47,62 @@ pub enum InputPreference {
     PrimaryInputPreferred,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for InputPreference {
-    fn from(s: &str) -> Self {
-        match s {
-            "EQUAL_INPUT_PREFERENCE" => InputPreference::EqualInputPreference,
-            "PRIMARY_INPUT_PREFERRED" => InputPreference::PrimaryInputPreferred,
-            other => InputPreference::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "EQUAL_INPUT_PREFERENCE" => InputPreference::EqualInputPreference,
+"PRIMARY_INPUT_PREFERRED" => InputPreference::PrimaryInputPreferred,
+other => InputPreference::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for InputPreference {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(InputPreference::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(InputPreference::from(s))
+                    }
+                }
 impl InputPreference {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InputPreference::EqualInputPreference => "EQUAL_INPUT_PREFERENCE",
-            InputPreference::PrimaryInputPreferred => "PRIMARY_INPUT_PREFERRED",
-            InputPreference::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EQUAL_INPUT_PREFERENCE", "PRIMARY_INPUT_PREFERRED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InputPreference::EqualInputPreference => "EQUAL_INPUT_PREFERENCE",
+    InputPreference::PrimaryInputPreferred => "PRIMARY_INPUT_PREFERRED",
+    InputPreference::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EQUAL_INPUT_PREFERENCE", "PRIMARY_INPUT_PREFERRED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for InputPreference {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl InputPreference {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for InputPreference {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            InputPreference::EqualInputPreference => write!(f, "EQUAL_INPUT_PREFERENCE"),
-            InputPreference::PrimaryInputPreferred => write!(f, "PRIMARY_INPUT_PREFERRED"),
-            InputPreference::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                InputPreference::EqualInputPreference => write!(f, "EQUAL_INPUT_PREFERENCE"),
+InputPreference::PrimaryInputPreferred => write!(f, "PRIMARY_INPUT_PREFERRED"),
+InputPreference::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

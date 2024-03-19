@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestMetricFilterOutput {
+pub struct TestMetricFilterOutput  {
     /// <p>The matched events.</p>
-    pub matches: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterMatchRecord>>,
+    pub matches: ::std::option::Option<::std::vec::Vec::<crate::types::MetricFilterMatchRecord>>,
     _request_id: Option<String>,
 }
-impl TestMetricFilterOutput {
+impl  TestMetricFilterOutput  {
     /// <p>The matched events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matches.is_none()`.
-    pub fn matches(&self) -> &[crate::types::MetricFilterMatchRecord] {
-        self.matches.as_deref().unwrap_or_default()
+    pub fn matches(&self) -> & [crate::types::MetricFilterMatchRecord] {
+        self.matches.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for TestMetricFilterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestMetricFilterOutput {
     /// Creates a new builder-style object to manufacture [`TestMetricFilterOutput`](crate::operation::test_metric_filter::TestMetricFilterOutput).
     pub fn builder() -> crate::operation::test_metric_filter::builders::TestMetricFilterOutputBuilder {
@@ -31,7 +32,7 @@ impl TestMetricFilterOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestMetricFilterOutputBuilder {
-    pub(crate) matches: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterMatchRecord>>,
+    pub(crate) matches: ::std::option::Option<::std::vec::Vec::<crate::types::MetricFilterMatchRecord>>,
     _request_id: Option<String>,
 }
 impl TestMetricFilterOutputBuilder {
@@ -42,33 +43,34 @@ impl TestMetricFilterOutputBuilder {
     /// <p>The matched events.</p>
     pub fn matches(mut self, input: crate::types::MetricFilterMatchRecord) -> Self {
         let mut v = self.matches.unwrap_or_default();
-        v.push(input);
-        self.matches = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.matches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The matched events.</p>
-    pub fn set_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterMatchRecord>>) -> Self {
-        self.matches = input;
-        self
+    pub fn set_matches(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricFilterMatchRecord>>) -> Self {
+        self.matches = input; self
     }
     /// <p>The matched events.</p>
-    pub fn get_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricFilterMatchRecord>> {
+    pub fn get_matches(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricFilterMatchRecord>> {
         &self.matches
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestMetricFilterOutput`](crate::operation::test_metric_filter::TestMetricFilterOutput).
     pub fn build(self) -> crate::operation::test_metric_filter::TestMetricFilterOutput {
         crate::operation::test_metric_filter::TestMetricFilterOutput {
-            matches: self.matches,
+            matches: self.matches
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

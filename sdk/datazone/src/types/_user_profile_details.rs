@@ -22,11 +22,7 @@ impl UserProfileDetails {
     /// Tries to convert the enum instance into [`Iam`](crate::types::UserProfileDetails::Iam), extracting the inner [`IamUserProfileDetails`](crate::types::IamUserProfileDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iam(&self) -> ::std::result::Result<&crate::types::IamUserProfileDetails, &Self> {
-        if let UserProfileDetails::Iam(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let UserProfileDetails::Iam(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Iam`](crate::types::UserProfileDetails::Iam).
     pub fn is_iam(&self) -> bool {
@@ -35,11 +31,7 @@ impl UserProfileDetails {
     /// Tries to convert the enum instance into [`Sso`](crate::types::UserProfileDetails::Sso), extracting the inner [`SsoUserProfileDetails`](crate::types::SsoUserProfileDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sso(&self) -> ::std::result::Result<&crate::types::SsoUserProfileDetails, &Self> {
-        if let UserProfileDetails::Sso(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let UserProfileDetails::Sso(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Sso`](crate::types::UserProfileDetails::Sso).
     pub fn is_sso(&self) -> bool {
@@ -50,3 +42,4 @@ impl UserProfileDetails {
         matches!(self, Self::Unknown)
     }
 }
+

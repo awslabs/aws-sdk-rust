@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOrgEc2DeepInspectionConfigurationInput {
+pub struct UpdateOrgEc2DeepInspectionConfigurationInput  {
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
-    pub org_package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub org_package_paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateOrgEc2DeepInspectionConfigurationInput {
+impl  UpdateOrgEc2DeepInspectionConfigurationInput  {
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.org_package_paths.is_none()`.
-    pub fn org_package_paths(&self) -> &[::std::string::String] {
-        self.org_package_paths.as_deref().unwrap_or_default()
+    pub fn org_package_paths(&self) -> & [::std::string::String] {
+        self.org_package_paths.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateOrgEc2DeepInspectionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateOrgEc2DeepInspectionConfigurationInput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput).
-    pub fn builder() -> crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
         crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationInputBuilder::default()
     }
 }
@@ -26,7 +26,7 @@ impl UpdateOrgEc2DeepInspectionConfigurationInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
-    pub(crate) org_package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) org_package_paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
     /// Appends an item to `org_package_paths`.
@@ -36,30 +36,26 @@ impl UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
     pub fn org_package_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.org_package_paths.unwrap_or_default();
-        v.push(input.into());
-        self.org_package_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.org_package_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
-    pub fn set_org_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.org_package_paths = input;
-        self
+    pub fn set_org_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.org_package_paths = input; self
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>
-    pub fn get_org_package_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_org_package_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.org_package_paths
     }
     /// Consumes the builder and constructs a [`UpdateOrgEc2DeepInspectionConfigurationInput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput {
-                org_package_paths: self.org_package_paths,
-            },
+                org_package_paths: self.org_package_paths
+                ,
+            }
         )
     }
 }
+

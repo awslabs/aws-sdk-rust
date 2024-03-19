@@ -3,7 +3,7 @@
 /// <p>The field-level encryption profile summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldLevelEncryptionProfileSummary {
+pub struct FieldLevelEncryptionProfileSummary  {
     /// <p>ID for the field-level encryption profile summary.</p>
     pub id: ::std::string::String,
     /// <p>The time when the field-level encryption profile summary was last updated.</p>
@@ -15,27 +15,25 @@ pub struct FieldLevelEncryptionProfileSummary {
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl FieldLevelEncryptionProfileSummary {
+impl  FieldLevelEncryptionProfileSummary  {
     /// <p>ID for the field-level encryption profile summary.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The time when the field-level encryption profile summary was last updated.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>Name for the field-level encryption profile summary.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
-    pub fn encryption_entities(&self) -> ::std::option::Option<&crate::types::EncryptionEntities> {
+    pub fn encryption_entities(&self) -> ::std::option::Option<& crate::types::EncryptionEntities> {
         self.encryption_entities.as_ref()
     }
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -65,8 +63,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     }
     /// <p>ID for the field-level encryption profile summary.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>ID for the field-level encryption profile summary.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     }
     /// <p>The time when the field-level encryption profile summary was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time when the field-level encryption profile summary was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -95,8 +91,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     }
     /// <p>Name for the field-level encryption profile summary.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name for the field-level encryption profile summary.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
     pub fn set_encryption_entities(mut self, input: ::std::option::Option<crate::types::EncryptionEntities>) -> Self {
-        self.encryption_entities = input;
-        self
+        self.encryption_entities = input; self
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
     pub fn get_encryption_entities(&self) -> &::std::option::Option<crate::types::EncryptionEntities> {
@@ -124,8 +118,7 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     }
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,27 +130,29 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     /// - [`last_modified_time`](crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder::last_modified_time)
     /// - [`name`](crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionProfileSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldLevelEncryptionProfileSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FieldLevelEncryptionProfileSummary",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building FieldLevelEncryptionProfileSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building FieldLevelEncryptionProfileSummary",
-                )
-            })?,
-            encryption_entities: self.encryption_entities,
-            comment: self.comment,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldLevelEncryptionProfileSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FieldLevelEncryptionProfileSummary")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building FieldLevelEncryptionProfileSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building FieldLevelEncryptionProfileSummary")
+                    )?
+                ,
+                encryption_entities: self.encryption_entities
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

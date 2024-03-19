@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListContactEvaluationsInput {
+pub struct ListContactEvaluationsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -12,19 +12,19 @@ pub struct ListContactEvaluationsInput {
     /// </important>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListContactEvaluationsInput {
+impl  ListContactEvaluationsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
     /// <p>This is not expected to be set because the value returned in the previous response is always null.</p>
     /// </important>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl ListContactEvaluationsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl ListContactEvaluationsInputBuilder {
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ListContactEvaluationsInputBuilder {
     /// <p>This is not expected to be set because the value returned in the previous response is always null.</p>
     /// </important>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><important>
     /// <p>This is not expected to be set because the value returned in the previous response is always null.</p>
@@ -95,16 +92,17 @@ impl ListContactEvaluationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListContactEvaluationsInput`](crate::operation::list_contact_evaluations::ListContactEvaluationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contact_evaluations::ListContactEvaluationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_contact_evaluations::ListContactEvaluationsInput {
-            instance_id: self.instance_id,
-            contact_id: self.contact_id,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_contact_evaluations::ListContactEvaluationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_contact_evaluations::ListContactEvaluationsInput {
+                instance_id: self.instance_id
+                ,
+                contact_id: self.contact_id
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

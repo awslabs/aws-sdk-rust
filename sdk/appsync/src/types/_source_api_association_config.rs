@@ -3,15 +3,15 @@
 /// <p>Describes properties used to specify configurations related to a source API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceApiAssociationConfig {
+pub struct SourceApiAssociationConfig  {
     /// <p>The property that indicates which merging option is enabled in the source API association.</p>
     /// <p>Valid merge types are <code>MANUAL_MERGE</code> (default) and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require the user to trigger any changes from the source APIs to the merged API manually. Auto merges subscribe the merged API to the changes performed on the source APIs so that any change in the source APIs are also made to the merged API. Auto merges use <code>MergedApiExecutionRoleArn</code> to perform merge operations.</p>
     pub merge_type: ::std::option::Option<crate::types::MergeType>,
 }
-impl SourceApiAssociationConfig {
+impl  SourceApiAssociationConfig  {
     /// <p>The property that indicates which merging option is enabled in the source API association.</p>
     /// <p>Valid merge types are <code>MANUAL_MERGE</code> (default) and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require the user to trigger any changes from the source APIs to the merged API manually. Auto merges subscribe the merged API to the changes performed on the source APIs so that any change in the source APIs are also made to the merged API. Auto merges use <code>MergedApiExecutionRoleArn</code> to perform merge operations.</p>
-    pub fn merge_type(&self) -> ::std::option::Option<&crate::types::MergeType> {
+    pub fn merge_type(&self) -> ::std::option::Option<& crate::types::MergeType> {
         self.merge_type.as_ref()
     }
 }
@@ -38,8 +38,7 @@ impl SourceApiAssociationConfigBuilder {
     /// <p>The property that indicates which merging option is enabled in the source API association.</p>
     /// <p>Valid merge types are <code>MANUAL_MERGE</code> (default) and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require the user to trigger any changes from the source APIs to the merged API manually. Auto merges subscribe the merged API to the changes performed on the source APIs so that any change in the source APIs are also made to the merged API. Auto merges use <code>MergedApiExecutionRoleArn</code> to perform merge operations.</p>
     pub fn set_merge_type(mut self, input: ::std::option::Option<crate::types::MergeType>) -> Self {
-        self.merge_type = input;
-        self
+        self.merge_type = input; self
     }
     /// <p>The property that indicates which merging option is enabled in the source API association.</p>
     /// <p>Valid merge types are <code>MANUAL_MERGE</code> (default) and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require the user to trigger any changes from the source APIs to the merged API manually. Auto merges subscribe the merged API to the changes performed on the source APIs so that any change in the source APIs are also made to the merged API. Auto merges use <code>MergedApiExecutionRoleArn</code> to perform merge operations.</p>
@@ -48,6 +47,10 @@ impl SourceApiAssociationConfigBuilder {
     }
     /// Consumes the builder and constructs a [`SourceApiAssociationConfig`](crate::types::SourceApiAssociationConfig).
     pub fn build(self) -> crate::types::SourceApiAssociationConfig {
-        crate::types::SourceApiAssociationConfig { merge_type: self.merge_type }
+        crate::types::SourceApiAssociationConfig {
+            merge_type: self.merge_type
+            ,
+        }
     }
 }
+

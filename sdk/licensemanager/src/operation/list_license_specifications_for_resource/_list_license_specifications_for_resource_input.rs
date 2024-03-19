@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLicenseSpecificationsForResourceInput {
+pub struct ListLicenseSpecificationsForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
@@ -10,9 +10,9 @@ pub struct ListLicenseSpecificationsForResourceInput {
     /// <p>Token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListLicenseSpecificationsForResourceInput {
+impl  ListLicenseSpecificationsForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -20,7 +20,7 @@ impl ListLicenseSpecificationsForResourceInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListLicenseSpecificationsForResourceInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListLicenseSpecificationsForResourceInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,26 +74,24 @@ impl ListLicenseSpecificationsForResourceInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLicenseSpecificationsForResourceInput`](crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceInput {
-                resource_arn: self.resource_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                resource_arn: self.resource_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

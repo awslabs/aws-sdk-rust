@@ -3,7 +3,7 @@
 /// <p>Describes parameters for how a Managed Service for Apache Flink application executes multiple tasks simultaneously. For more information about parallelism, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/dev/parallel.html">Parallel Execution</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParallelismConfiguration {
+pub struct ParallelismConfiguration  {
     /// <p>Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
     pub configuration_type: crate::types::ConfigurationType,
     /// <p>Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can perform. If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
@@ -13,9 +13,9 @@ pub struct ParallelismConfiguration {
     /// <p>Describes whether the Managed Service for Apache Flink service can increase the parallelism of the application in response to increased throughput.</p>
     pub auto_scaling_enabled: ::std::option::Option<bool>,
 }
-impl ParallelismConfiguration {
+impl  ParallelismConfiguration  {
     /// <p>Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
-    pub fn configuration_type(&self) -> &crate::types::ConfigurationType {
+    pub fn configuration_type(&self) -> & crate::types::ConfigurationType {
         &self.configuration_type
     }
     /// <p>Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can perform. If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
@@ -56,8 +56,7 @@ impl ParallelismConfigurationBuilder {
     }
     /// <p>Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
-        self.configuration_type = input;
-        self
+        self.configuration_type = input; self
     }
     /// <p>Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
     pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
@@ -70,8 +69,7 @@ impl ParallelismConfigurationBuilder {
     }
     /// <p>Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can perform. If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
     pub fn set_parallelism(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.parallelism = input;
-        self
+        self.parallelism = input; self
     }
     /// <p>Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can perform. If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink increases the <code>CurrentParallelism</code> value in response to application load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
     pub fn get_parallelism(&self) -> &::std::option::Option<i32> {
@@ -84,8 +82,7 @@ impl ParallelismConfigurationBuilder {
     }
     /// <p>Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Managed Service for Apache Flink Pricing</a>.</p>
     pub fn set_parallelism_per_kpu(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.parallelism_per_kpu = input;
-        self
+        self.parallelism_per_kpu = input; self
     }
     /// <p>Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform per Kinesis Processing Unit (KPU) used by the application. For more information about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Managed Service for Apache Flink Pricing</a>.</p>
     pub fn get_parallelism_per_kpu(&self) -> &::std::option::Option<i32> {
@@ -98,8 +95,7 @@ impl ParallelismConfigurationBuilder {
     }
     /// <p>Describes whether the Managed Service for Apache Flink service can increase the parallelism of the application in response to increased throughput.</p>
     pub fn set_auto_scaling_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_scaling_enabled = input;
-        self
+        self.auto_scaling_enabled = input; self
     }
     /// <p>Describes whether the Managed Service for Apache Flink service can increase the parallelism of the application in response to increased throughput.</p>
     pub fn get_auto_scaling_enabled(&self) -> &::std::option::Option<bool> {
@@ -109,16 +105,21 @@ impl ParallelismConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration_type`](crate::types::builders::ParallelismConfigurationBuilder::configuration_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ParallelismConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParallelismConfiguration {
-            configuration_type: self.configuration_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configuration_type",
-                    "configuration_type was not specified but it is required when building ParallelismConfiguration",
-                )
-            })?,
-            parallelism: self.parallelism,
-            parallelism_per_kpu: self.parallelism_per_kpu,
-            auto_scaling_enabled: self.auto_scaling_enabled,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParallelismConfiguration {
+                configuration_type: self.configuration_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration_type", "configuration_type was not specified but it is required when building ParallelismConfiguration")
+                    )?
+                ,
+                parallelism: self.parallelism
+                ,
+                parallelism_per_kpu: self.parallelism_per_kpu
+                ,
+                auto_scaling_enabled: self.auto_scaling_enabled
+                ,
+            }
+        )
     }
 }
+

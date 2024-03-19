@@ -3,7 +3,7 @@
 /// <p>Information about a constraint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConstraintDetail {
+pub struct ConstraintDetail  {
     /// <p>The identifier of the constraint.</p>
     pub constraint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of constraint.</p>
@@ -27,9 +27,9 @@ pub struct ConstraintDetail {
     /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
     pub portfolio_id: ::std::option::Option<::std::string::String>,
 }
-impl ConstraintDetail {
+impl  ConstraintDetail  {
     /// <p>The identifier of the constraint.</p>
-    pub fn constraint_id(&self) -> ::std::option::Option<&str> {
+    pub fn constraint_id(&self) -> ::std::option::Option<& str> {
         self.constraint_id.as_deref()
     }
     /// <p>The type of constraint.</p>
@@ -43,23 +43,23 @@ impl ConstraintDetail {
     /// <li>
     /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The description of the constraint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The owner of the constraint.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
-    pub fn portfolio_id(&self) -> ::std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> ::std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
 }
@@ -89,8 +89,7 @@ impl ConstraintDetailBuilder {
     }
     /// <p>The identifier of the constraint.</p>
     pub fn set_constraint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.constraint_id = input;
-        self
+        self.constraint_id = input; self
     }
     /// <p>The identifier of the constraint.</p>
     pub fn get_constraint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +122,7 @@ impl ConstraintDetailBuilder {
     /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of constraint.</p>
     /// <ul>
@@ -147,8 +145,7 @@ impl ConstraintDetailBuilder {
     }
     /// <p>The description of the constraint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the constraint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +158,7 @@ impl ConstraintDetailBuilder {
     }
     /// <p>The owner of the constraint.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the constraint.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +171,7 @@ impl ConstraintDetailBuilder {
     }
     /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +184,7 @@ impl ConstraintDetailBuilder {
     }
     /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portfolio_id = input;
-        self
+        self.portfolio_id = input; self
     }
     /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
     pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,12 +193,19 @@ impl ConstraintDetailBuilder {
     /// Consumes the builder and constructs a [`ConstraintDetail`](crate::types::ConstraintDetail).
     pub fn build(self) -> crate::types::ConstraintDetail {
         crate::types::ConstraintDetail {
-            constraint_id: self.constraint_id,
-            r#type: self.r#type,
-            description: self.description,
-            owner: self.owner,
-            product_id: self.product_id,
-            portfolio_id: self.portfolio_id,
+            constraint_id: self.constraint_id
+            ,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
+            owner: self.owner
+            ,
+            product_id: self.product_id
+            ,
+            portfolio_id: self.portfolio_id
+            ,
         }
     }
 }
+

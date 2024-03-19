@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationsource = unimplemented!();
 /// match recommendationsource {
@@ -41,16 +41,14 @@
 /// Specifically, when `recommendationsource` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationSource::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum RecommendationSource {
     #[allow(missing_docs)] // documentation missing in model
     AwsConfig,
@@ -80,108 +78,95 @@ pub enum RecommendationSource {
     WellArchitected,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for RecommendationSource {
-    fn from(s: &str) -> Self {
-        match s {
-            "aws_config" => RecommendationSource::AwsConfig,
-            "compute_optimizer" => RecommendationSource::ComputeOptimizer,
-            "cost_explorer" => RecommendationSource::CostExplorer,
-            "lse" => RecommendationSource::Lse,
-            "manual" => RecommendationSource::Manual,
-            "pse" => RecommendationSource::Pse,
-            "rds" => RecommendationSource::Rds,
-            "resilience" => RecommendationSource::Resilience,
-            "resilience_hub" => RecommendationSource::ResilienceHub,
-            "security_hub" => RecommendationSource::SecurityHub,
-            "stir" => RecommendationSource::Stir,
-            "ta_check" => RecommendationSource::TaCheck,
-            "well_architected" => RecommendationSource::WellArchitected,
-            other => RecommendationSource::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "aws_config" => RecommendationSource::AwsConfig,
+"compute_optimizer" => RecommendationSource::ComputeOptimizer,
+"cost_explorer" => RecommendationSource::CostExplorer,
+"lse" => RecommendationSource::Lse,
+"manual" => RecommendationSource::Manual,
+"pse" => RecommendationSource::Pse,
+"rds" => RecommendationSource::Rds,
+"resilience" => RecommendationSource::Resilience,
+"resilience_hub" => RecommendationSource::ResilienceHub,
+"security_hub" => RecommendationSource::SecurityHub,
+"stir" => RecommendationSource::Stir,
+"ta_check" => RecommendationSource::TaCheck,
+"well_architected" => RecommendationSource::WellArchitected,
+other => RecommendationSource::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for RecommendationSource {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RecommendationSource::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(RecommendationSource::from(s))
+                    }
+                }
 impl RecommendationSource {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecommendationSource::AwsConfig => "aws_config",
-            RecommendationSource::ComputeOptimizer => "compute_optimizer",
-            RecommendationSource::CostExplorer => "cost_explorer",
-            RecommendationSource::Lse => "lse",
-            RecommendationSource::Manual => "manual",
-            RecommendationSource::Pse => "pse",
-            RecommendationSource::Rds => "rds",
-            RecommendationSource::Resilience => "resilience",
-            RecommendationSource::ResilienceHub => "resilience_hub",
-            RecommendationSource::SecurityHub => "security_hub",
-            RecommendationSource::Stir => "stir",
-            RecommendationSource::TaCheck => "ta_check",
-            RecommendationSource::WellArchitected => "well_architected",
-            RecommendationSource::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "aws_config",
-            "compute_optimizer",
-            "cost_explorer",
-            "lse",
-            "manual",
-            "pse",
-            "rds",
-            "resilience",
-            "resilience_hub",
-            "security_hub",
-            "stir",
-            "ta_check",
-            "well_architected",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecommendationSource::AwsConfig => "aws_config",
+    RecommendationSource::ComputeOptimizer => "compute_optimizer",
+    RecommendationSource::CostExplorer => "cost_explorer",
+    RecommendationSource::Lse => "lse",
+    RecommendationSource::Manual => "manual",
+    RecommendationSource::Pse => "pse",
+    RecommendationSource::Rds => "rds",
+    RecommendationSource::Resilience => "resilience",
+    RecommendationSource::ResilienceHub => "resilience_hub",
+    RecommendationSource::SecurityHub => "security_hub",
+    RecommendationSource::Stir => "stir",
+    RecommendationSource::TaCheck => "ta_check",
+    RecommendationSource::WellArchitected => "well_architected",
+    RecommendationSource::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["aws_config", "compute_optimizer", "cost_explorer", "lse", "manual", "pse", "rds", "resilience", "resilience_hub", "security_hub", "stir", "ta_check", "well_architected"]
+                }
+            }
 impl ::std::convert::AsRef<str> for RecommendationSource {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl RecommendationSource {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for RecommendationSource {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            RecommendationSource::AwsConfig => write!(f, "aws_config"),
-            RecommendationSource::ComputeOptimizer => write!(f, "compute_optimizer"),
-            RecommendationSource::CostExplorer => write!(f, "cost_explorer"),
-            RecommendationSource::Lse => write!(f, "lse"),
-            RecommendationSource::Manual => write!(f, "manual"),
-            RecommendationSource::Pse => write!(f, "pse"),
-            RecommendationSource::Rds => write!(f, "rds"),
-            RecommendationSource::Resilience => write!(f, "resilience"),
-            RecommendationSource::ResilienceHub => write!(f, "resilience_hub"),
-            RecommendationSource::SecurityHub => write!(f, "security_hub"),
-            RecommendationSource::Stir => write!(f, "stir"),
-            RecommendationSource::TaCheck => write!(f, "ta_check"),
-            RecommendationSource::WellArchitected => write!(f, "well_architected"),
-            RecommendationSource::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                RecommendationSource::AwsConfig => write!(f, "aws_config"),
+RecommendationSource::ComputeOptimizer => write!(f, "compute_optimizer"),
+RecommendationSource::CostExplorer => write!(f, "cost_explorer"),
+RecommendationSource::Lse => write!(f, "lse"),
+RecommendationSource::Manual => write!(f, "manual"),
+RecommendationSource::Pse => write!(f, "pse"),
+RecommendationSource::Rds => write!(f, "rds"),
+RecommendationSource::Resilience => write!(f, "resilience"),
+RecommendationSource::ResilienceHub => write!(f, "resilience_hub"),
+RecommendationSource::SecurityHub => write!(f, "security_hub"),
+RecommendationSource::Stir => write!(f, "stir"),
+RecommendationSource::TaCheck => write!(f, "ta_check"),
+RecommendationSource::WellArchitected => write!(f, "well_architected"),
+RecommendationSource::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

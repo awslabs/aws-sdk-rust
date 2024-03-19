@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutProfileObjectTypeInput {
+pub struct PutProfileObjectTypeInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the profile object type.</p>
@@ -20,27 +20,27 @@ pub struct PutProfileObjectTypeInput {
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
-    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
+    pub fields: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
+    pub keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PutProfileObjectTypeInput {
+impl  PutProfileObjectTypeInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn object_type_name(&self) -> ::std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>Description of the profile object type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The number of days until the data in the object expires.</p>
@@ -48,7 +48,7 @@ impl PutProfileObjectTypeInput {
         self.expiration_days
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key(&self) -> ::std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
@@ -56,23 +56,23 @@ impl PutProfileObjectTypeInput {
         self.allow_profile_creation
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
-    pub fn source_last_updated_timestamp_format(&self) -> ::std::option::Option<&str> {
+    pub fn source_last_updated_timestamp_format(&self) -> ::std::option::Option<& str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
+    pub fn fields(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>> {
         self.fields.as_ref()
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
+    pub fn keys(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>> {
         self.keys.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for PutProfileObjectTypeInput {
+impl  ::std::fmt::Debug for PutProfileObjectTypeInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutProfileObjectTypeInput");
         formatter.field("domain_name", &self.domain_name);
@@ -108,9 +108,9 @@ pub struct PutProfileObjectTypeInputBuilder {
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) allow_profile_creation: ::std::option::Option<bool>,
     pub(crate) source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
-    pub(crate) keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) fields: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>>,
+    pub(crate) keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PutProfileObjectTypeInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -121,8 +121,7 @@ impl PutProfileObjectTypeInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl PutProfileObjectTypeInputBuilder {
     }
     /// <p>The name of the profile object type.</p>
     pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_type_name = input;
-        self
+        self.object_type_name = input; self
     }
     /// <p>The name of the profile object type.</p>
     pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +149,7 @@ impl PutProfileObjectTypeInputBuilder {
     }
     /// <p>Description of the profile object type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the profile object type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +162,7 @@ impl PutProfileObjectTypeInputBuilder {
     }
     /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +175,7 @@ impl PutProfileObjectTypeInputBuilder {
     }
     /// <p>The number of days until the data in the object expires.</p>
     pub fn set_expiration_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expiration_days = input;
-        self
+        self.expiration_days = input; self
     }
     /// <p>The number of days until the data in the object expires.</p>
     pub fn get_expiration_days(&self) -> &::std::option::Option<i32> {
@@ -193,8 +188,7 @@ impl PutProfileObjectTypeInputBuilder {
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key = input;
-        self
+        self.encryption_key = input; self
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +201,7 @@ impl PutProfileObjectTypeInputBuilder {
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn set_allow_profile_creation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_profile_creation = input;
-        self
+        self.allow_profile_creation = input; self
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn get_allow_profile_creation(&self) -> &::std::option::Option<bool> {
@@ -221,8 +214,7 @@ impl PutProfileObjectTypeInputBuilder {
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn set_source_last_updated_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_last_updated_timestamp_format = input;
-        self
+        self.source_last_updated_timestamp_format = input; self
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn get_source_last_updated_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,20 +227,16 @@ impl PutProfileObjectTypeInputBuilder {
     /// <p>A map of the name and ObjectType field.</p>
     pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ObjectTypeField) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.fields = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.fields = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
-    ) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>>) -> Self {
+        self.fields = input; self
     }
     /// <p>A map of the name and ObjectType field.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>> {
         &self.fields
     }
     /// Adds a key-value pair to `keys`.
@@ -256,24 +244,18 @@ impl PutProfileObjectTypeInputBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::ObjectTypeKey>) -> Self {
+    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<crate::types::ObjectTypeKey>) -> Self {
         let mut hash_map = self.keys.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.keys = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.keys = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>>) -> Self {
+        self.keys = input; self
     }
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    pub fn get_keys(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>> {
         &self.keys
     }
     /// Adds a key-value pair to `tags`.
@@ -283,37 +265,46 @@ impl PutProfileObjectTypeInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutProfileObjectTypeInput`](crate::operation::put_profile_object_type::PutProfileObjectTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_profile_object_type::PutProfileObjectTypeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_profile_object_type::PutProfileObjectTypeInput {
-            domain_name: self.domain_name,
-            object_type_name: self.object_type_name,
-            description: self.description,
-            template_id: self.template_id,
-            expiration_days: self.expiration_days,
-            encryption_key: self.encryption_key,
-            allow_profile_creation: self.allow_profile_creation,
-            source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
-            fields: self.fields,
-            keys: self.keys,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_profile_object_type::PutProfileObjectTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_profile_object_type::PutProfileObjectTypeInput {
+                domain_name: self.domain_name
+                ,
+                object_type_name: self.object_type_name
+                ,
+                description: self.description
+                ,
+                template_id: self.template_id
+                ,
+                expiration_days: self.expiration_days
+                ,
+                encryption_key: self.encryption_key
+                ,
+                allow_profile_creation: self.allow_profile_creation
+                ,
+                source_last_updated_timestamp_format: self.source_last_updated_timestamp_format
+                ,
+                fields: self.fields
+                ,
+                keys: self.keys
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutProfileObjectTypeInputBuilder {
@@ -333,3 +324,4 @@ impl ::std::fmt::Debug for PutProfileObjectTypeInputBuilder {
         formatter.finish()
     }
 }
+

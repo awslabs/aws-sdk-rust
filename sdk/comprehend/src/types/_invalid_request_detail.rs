@@ -3,7 +3,7 @@
 /// <p>Provides additional detail about why the request failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidRequestDetail {
+pub struct InvalidRequestDetail  {
     /// <p>Reason codes include the following values:</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct InvalidRequestDetail {
     /// </ul>
     pub reason: ::std::option::Option<crate::types::InvalidRequestDetailReason>,
 }
-impl InvalidRequestDetail {
+impl  InvalidRequestDetail  {
     /// <p>Reason codes include the following values:</p>
     /// <ul>
     /// <li>
@@ -41,7 +41,7 @@ impl InvalidRequestDetail {
     /// <li>
     /// <p>INVALID_DOCUMENT - Invalid document. Check the file and resubmit the request.</p></li>
     /// </ul>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::InvalidRequestDetailReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::InvalidRequestDetailReason> {
         self.reason.as_ref()
     }
 }
@@ -98,8 +98,7 @@ impl InvalidRequestDetailBuilder {
     /// <p>INVALID_DOCUMENT - Invalid document. Check the file and resubmit the request.</p></li>
     /// </ul>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::InvalidRequestDetailReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Reason codes include the following values:</p>
     /// <ul>
@@ -123,6 +122,10 @@ impl InvalidRequestDetailBuilder {
     }
     /// Consumes the builder and constructs a [`InvalidRequestDetail`](crate::types::InvalidRequestDetail).
     pub fn build(self) -> crate::types::InvalidRequestDetail {
-        crate::types::InvalidRequestDetail { reason: self.reason }
+        crate::types::InvalidRequestDetail {
+            reason: self.reason
+            ,
+        }
     }
 }
+

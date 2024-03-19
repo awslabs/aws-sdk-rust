@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSkillGroupInput {
+pub struct CreateSkillGroupInput  {
     /// <p>The name for the skill group.</p>
     pub skill_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the skill group.</p>
@@ -10,26 +10,27 @@ pub struct CreateSkillGroupInput {
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the skill group.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateSkillGroupInput {
+impl  CreateSkillGroupInput  {
     /// <p>The name for the skill group.</p>
-    pub fn skill_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn skill_group_name(&self) -> ::std::option::Option<& str> {
         self.skill_group_name.as_deref()
     }
     /// <p>The description for the skill group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the skill group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSkillGroupInput {
@@ -46,7 +47,7 @@ pub struct CreateSkillGroupInputBuilder {
     pub(crate) skill_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateSkillGroupInputBuilder {
     /// <p>The name for the skill group.</p>
@@ -57,8 +58,7 @@ impl CreateSkillGroupInputBuilder {
     }
     /// <p>The name for the skill group.</p>
     pub fn set_skill_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_group_name = input;
-        self
+        self.skill_group_name = input; self
     }
     /// <p>The name for the skill group.</p>
     pub fn get_skill_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl CreateSkillGroupInputBuilder {
     }
     /// <p>The description for the skill group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the skill group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl CreateSkillGroupInputBuilder {
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,28 +97,32 @@ impl CreateSkillGroupInputBuilder {
     /// <p>The tags for the skill group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the skill group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the skill group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSkillGroupInput`](crate::operation::create_skill_group::CreateSkillGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_skill_group::CreateSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_skill_group::CreateSkillGroupInput {
-            skill_group_name: self.skill_group_name,
-            description: self.description,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_skill_group::CreateSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_skill_group::CreateSkillGroupInput {
+                skill_group_name: self.skill_group_name
+                ,
+                description: self.description
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

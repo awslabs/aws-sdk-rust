@@ -3,7 +3,7 @@
 /// <p>Information about a dataflow edge used in a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataflowDetail {
+pub struct DataflowDetail  {
     /// <p>Dataflow details for the source side.</p>
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>Dataflow details for the destination side.</p>
@@ -11,17 +11,17 @@ pub struct DataflowDetail {
     /// <p>Error message for a dataflow.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl DataflowDetail {
+impl  DataflowDetail  {
     /// <p>Dataflow details for the source side.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>Dataflow details for the destination side.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>Error message for a dataflow.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DataflowDetailBuilder {
     }
     /// <p>Dataflow details for the source side.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Dataflow details for the source side.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -62,8 +61,7 @@ impl DataflowDetailBuilder {
     }
     /// <p>Dataflow details for the destination side.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>Dataflow details for the destination side.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
@@ -76,8 +74,7 @@ impl DataflowDetailBuilder {
     }
     /// <p>Error message for a dataflow.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Error message for a dataflow.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl DataflowDetailBuilder {
     /// Consumes the builder and constructs a [`DataflowDetail`](crate::types::DataflowDetail).
     pub fn build(self) -> crate::types::DataflowDetail {
         crate::types::DataflowDetail {
-            source: self.source,
-            destination: self.destination,
-            error_message: self.error_message,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

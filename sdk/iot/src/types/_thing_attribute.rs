@@ -3,7 +3,7 @@
 /// <p>The properties of the thing, including thing name, thing type name, and a list of thing attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThingAttribute {
+pub struct ThingAttribute  {
     /// <p>The name of the thing.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing type, if the thing has been associated with a type.</p>
@@ -11,25 +11,25 @@ pub struct ThingAttribute {
     /// <p>The thing ARN.</p>
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of thing attributes which are name-value pairs.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The version of the thing record in the registry.</p>
     pub version: i64,
 }
-impl ThingAttribute {
+impl  ThingAttribute  {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the thing type, if the thing has been associated with a type.</p>
-    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
     /// <p>The thing ARN.</p>
-    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
     /// <p>A list of thing attributes which are name-value pairs.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The version of the thing record in the registry.</p>
@@ -51,7 +51,7 @@ pub struct ThingAttributeBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) version: ::std::option::Option<i64>,
 }
 impl ThingAttributeBuilder {
@@ -62,8 +62,7 @@ impl ThingAttributeBuilder {
     }
     /// <p>The name of the thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ThingAttributeBuilder {
     }
     /// <p>The name of the thing type, if the thing has been associated with a type.</p>
     pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// <p>The name of the thing type, if the thing has been associated with a type.</p>
     pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ThingAttributeBuilder {
     }
     /// <p>The thing ARN.</p>
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
     }
     /// <p>The thing ARN.</p>
     pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,17 +101,16 @@ impl ThingAttributeBuilder {
     /// <p>A list of thing attributes which are name-value pairs.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of thing attributes which are name-value pairs.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A list of thing attributes which are name-value pairs.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The version of the thing record in the registry.</p>
@@ -124,8 +120,7 @@ impl ThingAttributeBuilder {
     }
     /// <p>The version of the thing record in the registry.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the thing record in the registry.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -134,11 +129,18 @@ impl ThingAttributeBuilder {
     /// Consumes the builder and constructs a [`ThingAttribute`](crate::types::ThingAttribute).
     pub fn build(self) -> crate::types::ThingAttribute {
         crate::types::ThingAttribute {
-            thing_name: self.thing_name,
-            thing_type_name: self.thing_type_name,
-            thing_arn: self.thing_arn,
-            attributes: self.attributes,
-            version: self.version.unwrap_or_default(),
+            thing_name: self.thing_name
+            ,
+            thing_type_name: self.thing_type_name
+            ,
+            thing_arn: self.thing_arn
+            ,
+            attributes: self.attributes
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

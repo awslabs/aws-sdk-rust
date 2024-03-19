@@ -6,13 +6,13 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicaModifications {
+pub struct ReplicaModifications  {
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
     pub status: crate::types::ReplicaModificationsStatus,
 }
-impl ReplicaModifications {
+impl  ReplicaModifications  {
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
-    pub fn status(&self) -> &crate::types::ReplicaModificationsStatus {
+    pub fn status(&self) -> & crate::types::ReplicaModificationsStatus {
         &self.status
     }
 }
@@ -38,8 +38,7 @@ impl ReplicaModificationsBuilder {
     }
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicaModificationsStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplicaModificationsStatus> {
@@ -49,13 +48,15 @@ impl ReplicaModificationsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::ReplicaModificationsBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicaModifications, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicaModifications {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ReplicaModifications",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicaModifications {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ReplicaModifications")
+                    )?
+                ,
+            }
+        )
     }
 }
+

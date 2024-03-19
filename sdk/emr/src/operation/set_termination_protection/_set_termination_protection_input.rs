@@ -3,18 +3,19 @@
 /// <p>The input argument to the <code>TerminationProtection</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetTerminationProtectionInput {
+pub struct SetTerminationProtectionInput  {
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> .</p>
-    pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub termination_protected: ::std::option::Option<bool>,
 }
-impl SetTerminationProtectionInput {
+impl  SetTerminationProtectionInput  {
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> .</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
-    pub fn job_flow_ids(&self) -> &[::std::string::String] {
-        self.job_flow_ids.as_deref().unwrap_or_default()
+    pub fn job_flow_ids(&self) -> & [::std::string::String] {
+        self.job_flow_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub fn termination_protected(&self) -> ::std::option::Option<bool> {
@@ -32,7 +33,7 @@ impl SetTerminationProtectionInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTerminationProtectionInputBuilder {
-    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) termination_protected: ::std::option::Option<bool>,
 }
 impl SetTerminationProtectionInputBuilder {
@@ -43,17 +44,16 @@ impl SetTerminationProtectionInputBuilder {
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> .</p>
     pub fn job_flow_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_flow_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_flow_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_flow_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> .</p>
-    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_flow_ids = input;
-        self
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.job_flow_ids = input; self
     }
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> .</p>
-    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.job_flow_ids
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
@@ -64,23 +64,22 @@ impl SetTerminationProtectionInputBuilder {
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub fn set_termination_protected(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.termination_protected = input;
-        self
+        self.termination_protected = input; self
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub fn get_termination_protected(&self) -> &::std::option::Option<bool> {
         &self.termination_protected
     }
     /// Consumes the builder and constructs a [`SetTerminationProtectionInput`](crate::operation::set_termination_protection::SetTerminationProtectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_termination_protection::SetTerminationProtectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::set_termination_protection::SetTerminationProtectionInput {
-            job_flow_ids: self.job_flow_ids,
-            termination_protected: self.termination_protected,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_termination_protection::SetTerminationProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_termination_protection::SetTerminationProtectionInput {
+                job_flow_ids: self.job_flow_ids
+                ,
+                termination_protected: self.termination_protected
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMembers`](crate::operation::list_members::builders::ListMembersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_members::builders::ListMembersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`network_id(impl Into<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::network_id) / [`set_network_id(Option<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_network_id):<br>required: **true**<br><p>The unique identifier of the network for which to list members.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_name):<br>required: **false**<br><p>The optional name of the member to list.</p><br>
     ///   - [`status(MemberStatus)`](crate::operation::list_members::builders::ListMembersFluentBuilder::status) / [`set_status(Option<MemberStatus>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_status):<br>required: **false**<br><p>An optional status specifier. If provided, only members currently in this status are listed.</p><br>
     ///   - [`is_owned(bool)`](crate::operation::list_members::builders::ListMembersFluentBuilder::is_owned) / [`set_is_owned(Option<bool>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_is_owned):<br>required: **false**<br><p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_members::builders::ListMembersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of members to return in the request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
-    /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
+                            /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
     ///   - [`members(Option<Vec::<MemberSummary>>)`](crate::operation::list_members::ListMembersOutput::members): <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_members::ListMembersOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
+                            /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
     pub fn list_members(&self) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
-        crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

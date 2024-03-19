@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetGlossaryTermOutput {
+pub struct GetGlossaryTermOutput  {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term exists.</p>
     pub domain_id: ::std::string::String,
     /// <p>The ID of the business glossary to which this term belongs.</p>
@@ -29,61 +29,57 @@ pub struct GetGlossaryTermOutput {
     pub updated_by: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetGlossaryTermOutput {
+impl  GetGlossaryTermOutput  {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term exists.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The ID of the business glossary to which this term belongs.</p>
-    pub fn glossary_id(&self) -> &str {
-        use std::ops::Deref;
-        self.glossary_id.deref()
+    pub fn glossary_id(&self) -> & str {
+        use std::ops::Deref; self.glossary_id.deref()
     }
     /// <p>The ID of the business glossary term.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the business glossary term.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The short decription of the business glossary term.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>The long description of the business glossary term.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>The relations of the business glossary term.</p>
-    pub fn term_relations(&self) -> ::std::option::Option<&crate::types::TermRelations> {
+    pub fn term_relations(&self) -> ::std::option::Option<& crate::types::TermRelations> {
         self.term_relations.as_ref()
     }
     /// <p>The status of the business glossary term.</p>
-    pub fn status(&self) -> &crate::types::GlossaryTermStatus {
+    pub fn status(&self) -> & crate::types::GlossaryTermStatus {
         &self.status
     }
     /// <p>The timestamp of when the business glossary term was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon DataZone user who created the business glossary.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The timestamp of when the business glossary term was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetGlossaryTermOutput {
+impl  ::std::fmt::Debug for GetGlossaryTermOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetGlossaryTermOutput");
         formatter.field("domain_id", &self.domain_id);
@@ -103,10 +99,10 @@ impl ::std::fmt::Debug for GetGlossaryTermOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetGlossaryTermOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGlossaryTermOutput {
     /// Creates a new builder-style object to manufacture [`GetGlossaryTermOutput`](crate::operation::get_glossary_term::GetGlossaryTermOutput).
     pub fn builder() -> crate::operation::get_glossary_term::builders::GetGlossaryTermOutputBuilder {
@@ -141,8 +137,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term exists.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term exists.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +151,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The ID of the business glossary to which this term belongs.</p>
     pub fn set_glossary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.glossary_id = input;
-        self
+        self.glossary_id = input; self
     }
     /// <p>The ID of the business glossary to which this term belongs.</p>
     pub fn get_glossary_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +165,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The ID of the business glossary term.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the business glossary term.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +179,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The name of the business glossary term.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the business glossary term.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +192,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The short decription of the business glossary term.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>The short decription of the business glossary term.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +205,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The long description of the business glossary term.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>The long description of the business glossary term.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,8 +218,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The relations of the business glossary term.</p>
     pub fn set_term_relations(mut self, input: ::std::option::Option<crate::types::TermRelations>) -> Self {
-        self.term_relations = input;
-        self
+        self.term_relations = input; self
     }
     /// <p>The relations of the business glossary term.</p>
     pub fn get_term_relations(&self) -> &::std::option::Option<crate::types::TermRelations> {
@@ -243,8 +232,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The status of the business glossary term.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GlossaryTermStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the business glossary term.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryTermStatus> {
@@ -257,8 +245,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The timestamp of when the business glossary term was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the business glossary term was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -271,8 +258,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The Amazon DataZone user who created the business glossary.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon DataZone user who created the business glossary.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,8 +271,7 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The timestamp of when the business glossary term was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the business glossary term was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -299,22 +284,21 @@ impl GetGlossaryTermOutputBuilder {
     }
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGlossaryTermOutput`](crate::operation::get_glossary_term::GetGlossaryTermOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::operation::get_glossary_term::builders::GetGlossaryTermOutputBuilder::domain_id)
@@ -322,49 +306,51 @@ impl GetGlossaryTermOutputBuilder {
     /// - [`id`](crate::operation::get_glossary_term::builders::GetGlossaryTermOutputBuilder::id)
     /// - [`name`](crate::operation::get_glossary_term::builders::GetGlossaryTermOutputBuilder::name)
     /// - [`status`](crate::operation::get_glossary_term::builders::GetGlossaryTermOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_glossary_term::GetGlossaryTermOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_glossary_term::GetGlossaryTermOutput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building GetGlossaryTermOutput",
-                )
-            })?,
-            glossary_id: self.glossary_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "glossary_id",
-                    "glossary_id was not specified but it is required when building GetGlossaryTermOutput",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetGlossaryTermOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetGlossaryTermOutput",
-                )
-            })?,
-            short_description: self.short_description,
-            long_description: self.long_description,
-            term_relations: self.term_relations,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetGlossaryTermOutput",
-                )
-            })?,
-            created_at: self.created_at,
-            created_by: self.created_by,
-            updated_at: self.updated_at,
-            updated_by: self.updated_by,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_glossary_term::GetGlossaryTermOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_glossary_term::GetGlossaryTermOutput {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building GetGlossaryTermOutput")
+                    )?
+                ,
+                glossary_id: self.glossary_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("glossary_id", "glossary_id was not specified but it is required when building GetGlossaryTermOutput")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetGlossaryTermOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetGlossaryTermOutput")
+                    )?
+                ,
+                short_description: self.short_description
+                ,
+                long_description: self.long_description
+                ,
+                term_relations: self.term_relations
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetGlossaryTermOutput")
+                    )?
+                ,
+                created_at: self.created_at
+                ,
+                created_by: self.created_by
+                ,
+                updated_at: self.updated_at
+                ,
+                updated_by: self.updated_by
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetGlossaryTermOutputBuilder {
@@ -386,3 +372,4 @@ impl ::std::fmt::Debug for GetGlossaryTermOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddProfilePermissionInput {
+pub struct AddProfilePermissionInput  {
     /// <p>The human-readable name of the signing profile.</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the signing profile.</p>
@@ -16,29 +16,29 @@ pub struct AddProfilePermissionInput {
     /// <p>A unique identifier for the cross-account permission statement.</p>
     pub statement_id: ::std::option::Option<::std::string::String>,
 }
-impl AddProfilePermissionInput {
+impl  AddProfilePermissionInput  {
     /// <p>The human-readable name of the signing profile.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The version of the signing profile.</p>
-    pub fn profile_version(&self) -> ::std::option::Option<&str> {
+    pub fn profile_version(&self) -> ::std::option::Option<& str> {
         self.profile_version.as_deref()
     }
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>A unique identifier for the current profile revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>A unique identifier for the cross-account permission statement.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl AddProfilePermissionInputBuilder {
     }
     /// <p>The human-readable name of the signing profile.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>The human-readable name of the signing profile.</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl AddProfilePermissionInputBuilder {
     }
     /// <p>The version of the signing profile.</p>
     pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_version = input;
-        self
+        self.profile_version = input; self
     }
     /// <p>The version of the signing profile.</p>
     pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl AddProfilePermissionInputBuilder {
     }
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl AddProfilePermissionInputBuilder {
     }
     /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl AddProfilePermissionInputBuilder {
     }
     /// <p>A unique identifier for the current profile revision.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>A unique identifier for the current profile revision.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,25 +137,30 @@ impl AddProfilePermissionInputBuilder {
     }
     /// <p>A unique identifier for the cross-account permission statement.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
     }
     /// <p>A unique identifier for the cross-account permission statement.</p>
     pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.statement_id
     }
     /// Consumes the builder and constructs a [`AddProfilePermissionInput`](crate::operation::add_profile_permission::AddProfilePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_profile_permission::AddProfilePermissionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::add_profile_permission::AddProfilePermissionInput {
-            profile_name: self.profile_name,
-            profile_version: self.profile_version,
-            action: self.action,
-            principal: self.principal,
-            revision_id: self.revision_id,
-            statement_id: self.statement_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_profile_permission::AddProfilePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_profile_permission::AddProfilePermissionInput {
+                profile_name: self.profile_name
+                ,
+                profile_version: self.profile_version
+                ,
+                action: self.action
+                ,
+                principal: self.principal
+                ,
+                revision_id: self.revision_id
+                ,
+                statement_id: self.statement_id
+                ,
+            }
+        )
     }
 }
+

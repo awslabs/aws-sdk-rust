@@ -4,19 +4,19 @@
 /// <p>If conflicting or duplicate certificate information is supplied from other sources, Amazon Web Services Private CA applies <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApiPassthrough {
+pub struct ApiPassthrough  {
     /// <p>Specifies X.509 extension information for a certificate.</p>
     pub extensions: ::std::option::Option<crate::types::Extensions>,
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub subject: ::std::option::Option<crate::types::Asn1Subject>,
 }
-impl ApiPassthrough {
+impl  ApiPassthrough  {
     /// <p>Specifies X.509 extension information for a certificate.</p>
-    pub fn extensions(&self) -> ::std::option::Option<&crate::types::Extensions> {
+    pub fn extensions(&self) -> ::std::option::Option<& crate::types::Extensions> {
         self.extensions.as_ref()
     }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
-    pub fn subject(&self) -> ::std::option::Option<&crate::types::Asn1Subject> {
+    pub fn subject(&self) -> ::std::option::Option<& crate::types::Asn1Subject> {
         self.subject.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ApiPassthroughBuilder {
     }
     /// <p>Specifies X.509 extension information for a certificate.</p>
     pub fn set_extensions(mut self, input: ::std::option::Option<crate::types::Extensions>) -> Self {
-        self.extensions = input;
-        self
+        self.extensions = input; self
     }
     /// <p>Specifies X.509 extension information for a certificate.</p>
     pub fn get_extensions(&self) -> &::std::option::Option<crate::types::Extensions> {
@@ -56,8 +55,7 @@ impl ApiPassthroughBuilder {
     }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<crate::types::Asn1Subject>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub fn get_subject(&self) -> &::std::option::Option<crate::types::Asn1Subject> {
@@ -66,8 +64,11 @@ impl ApiPassthroughBuilder {
     /// Consumes the builder and constructs a [`ApiPassthrough`](crate::types::ApiPassthrough).
     pub fn build(self) -> crate::types::ApiPassthrough {
         crate::types::ApiPassthrough {
-            extensions: self.extensions,
-            subject: self.subject,
+            extensions: self.extensions
+            ,
+            subject: self.subject
+            ,
         }
     }
 }
+

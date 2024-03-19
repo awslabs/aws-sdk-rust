@@ -3,7 +3,7 @@
 /// <p>Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
+pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError  {
     /// <p>The name of the repository where the association was not made.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
@@ -11,17 +11,17 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
+impl  BatchAssociateApprovalRuleTemplateWithRepositoriesError  {
     /// <p>The name of the repository where the association was not made.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
     }
     /// <p>The name of the repository where the association was not made.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository where the association was not made.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
     }
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
     }
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder {
     /// Consumes the builder and constructs a [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
     pub fn build(self) -> crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError {
         crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-            repository_name: self.repository_name,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            repository_name: self.repository_name
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

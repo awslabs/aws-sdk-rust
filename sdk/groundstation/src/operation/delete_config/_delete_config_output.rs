@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfigOutput {
+pub struct DeleteConfigOutput  {
     /// <p>UUID of a <code>Config</code>.</p>
     pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
@@ -12,25 +12,25 @@ pub struct DeleteConfigOutput {
     pub config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteConfigOutput {
+impl  DeleteConfigOutput  {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> ::std::option::Option<&str> {
+    pub fn config_id(&self) -> ::std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> ::std::option::Option<& crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>ARN of a <code>Config</code>.</p>
-    pub fn config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn config_arn(&self) -> ::std::option::Option<& str> {
         self.config_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigOutput`](crate::operation::delete_config::DeleteConfigOutput).
     pub fn builder() -> crate::operation::delete_config::builders::DeleteConfigOutputBuilder {
@@ -55,8 +55,7 @@ impl DeleteConfigOutputBuilder {
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_id = input;
-        self
+        self.config_id = input; self
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteConfigOutputBuilder {
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
-        self.config_type = input;
-        self
+        self.config_type = input; self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
@@ -83,29 +81,32 @@ impl DeleteConfigOutputBuilder {
     }
     /// <p>ARN of a <code>Config</code>.</p>
     pub fn set_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_arn = input;
-        self
+        self.config_arn = input; self
     }
     /// <p>ARN of a <code>Config</code>.</p>
     pub fn get_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteConfigOutput`](crate::operation::delete_config::DeleteConfigOutput).
     pub fn build(self) -> crate::operation::delete_config::DeleteConfigOutput {
         crate::operation::delete_config::DeleteConfigOutput {
-            config_id: self.config_id,
-            config_type: self.config_type,
-            config_arn: self.config_arn,
+            config_id: self.config_id
+            ,
+            config_type: self.config_type
+            ,
+            config_arn: self.config_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

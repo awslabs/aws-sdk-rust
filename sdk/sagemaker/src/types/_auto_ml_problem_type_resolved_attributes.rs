@@ -22,11 +22,7 @@ impl AutoMlProblemTypeResolvedAttributes {
     /// Tries to convert the enum instance into [`TabularResolvedAttributes`](crate::types::AutoMlProblemTypeResolvedAttributes::TabularResolvedAttributes), extracting the inner [`TabularResolvedAttributes`](crate::types::TabularResolvedAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tabular_resolved_attributes(&self) -> ::std::result::Result<&crate::types::TabularResolvedAttributes, &Self> {
-        if let AutoMlProblemTypeResolvedAttributes::TabularResolvedAttributes(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AutoMlProblemTypeResolvedAttributes::TabularResolvedAttributes(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TabularResolvedAttributes`](crate::types::AutoMlProblemTypeResolvedAttributes::TabularResolvedAttributes).
     pub fn is_tabular_resolved_attributes(&self) -> bool {
@@ -35,11 +31,7 @@ impl AutoMlProblemTypeResolvedAttributes {
     /// Tries to convert the enum instance into [`TextGenerationResolvedAttributes`](crate::types::AutoMlProblemTypeResolvedAttributes::TextGenerationResolvedAttributes), extracting the inner [`TextGenerationResolvedAttributes`](crate::types::TextGenerationResolvedAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text_generation_resolved_attributes(&self) -> ::std::result::Result<&crate::types::TextGenerationResolvedAttributes, &Self> {
-        if let AutoMlProblemTypeResolvedAttributes::TextGenerationResolvedAttributes(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AutoMlProblemTypeResolvedAttributes::TextGenerationResolvedAttributes(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TextGenerationResolvedAttributes`](crate::types::AutoMlProblemTypeResolvedAttributes::TextGenerationResolvedAttributes).
     pub fn is_text_generation_resolved_attributes(&self) -> bool {
@@ -50,3 +42,4 @@ impl AutoMlProblemTypeResolvedAttributes {
         matches!(self, Self::Unknown)
     }
 }
+

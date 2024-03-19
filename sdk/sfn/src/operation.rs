@@ -108,3 +108,4 @@ pub mod update_state_machine;
 
 /// Types for the `UpdateStateMachineAlias` operation.
 pub mod update_state_machine_alias;
+

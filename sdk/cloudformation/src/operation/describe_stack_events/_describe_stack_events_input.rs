@@ -3,7 +3,7 @@
 /// <p>The input for <code>DescribeStackEvents</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackEventsInput {
+pub struct DescribeStackEventsInput  {
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct DescribeStackEventsInput {
     /// <p>A string that identifies the next page of events that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStackEventsInput {
+impl  DescribeStackEventsInput  {
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
     /// <li>
@@ -25,11 +25,11 @@ impl DescribeStackEventsInput {
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>A string that identifies the next page of events that you want to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl DescribeStackEventsInputBuilder {
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -90,21 +89,22 @@ impl DescribeStackEventsInputBuilder {
     }
     /// <p>A string that identifies the next page of events that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that identifies the next page of events that you want to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeStackEventsInput`](crate::operation::describe_stack_events::DescribeStackEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_stack_events::DescribeStackEventsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_stack_events::DescribeStackEventsInput {
-            stack_name: self.stack_name,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stack_events::DescribeStackEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_stack_events::DescribeStackEventsInput {
+                stack_name: self.stack_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

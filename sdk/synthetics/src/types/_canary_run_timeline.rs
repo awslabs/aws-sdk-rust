@@ -3,19 +3,19 @@
 /// <p>This structure contains the start and end times of a single canary run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CanaryRunTimeline {
+pub struct CanaryRunTimeline  {
     /// <p>The start time of the run.</p>
     pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the run.</p>
     pub completed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CanaryRunTimeline {
+impl  CanaryRunTimeline  {
     /// <p>The start time of the run.</p>
-    pub fn started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The end time of the run.</p>
-    pub fn completed(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CanaryRunTimelineBuilder {
     }
     /// <p>The start time of the run.</p>
     pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started = input;
-        self
+        self.started = input; self
     }
     /// <p>The start time of the run.</p>
     pub fn get_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl CanaryRunTimelineBuilder {
     }
     /// <p>The end time of the run.</p>
     pub fn set_completed(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed = input;
-        self
+        self.completed = input; self
     }
     /// <p>The end time of the run.</p>
     pub fn get_completed(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl CanaryRunTimelineBuilder {
     /// Consumes the builder and constructs a [`CanaryRunTimeline`](crate::types::CanaryRunTimeline).
     pub fn build(self) -> crate::types::CanaryRunTimeline {
         crate::types::CanaryRunTimeline {
-            started: self.started,
-            completed: self.completed,
+            started: self.started
+            ,
+            completed: self.completed
+            ,
         }
     }
 }
+

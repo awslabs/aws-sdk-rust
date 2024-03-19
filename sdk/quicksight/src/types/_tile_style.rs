@@ -3,13 +3,13 @@
 /// <p>Display options related to tiles on a sheet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TileStyle {
+pub struct TileStyle  {
     /// <p>The border around a tile.</p>
     pub border: ::std::option::Option<crate::types::BorderStyle>,
 }
-impl TileStyle {
+impl  TileStyle  {
     /// <p>The border around a tile.</p>
-    pub fn border(&self) -> ::std::option::Option<&crate::types::BorderStyle> {
+    pub fn border(&self) -> ::std::option::Option<& crate::types::BorderStyle> {
         self.border.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TileStyleBuilder {
     }
     /// <p>The border around a tile.</p>
     pub fn set_border(mut self, input: ::std::option::Option<crate::types::BorderStyle>) -> Self {
-        self.border = input;
-        self
+        self.border = input; self
     }
     /// <p>The border around a tile.</p>
     pub fn get_border(&self) -> &::std::option::Option<crate::types::BorderStyle> {
@@ -43,6 +42,10 @@ impl TileStyleBuilder {
     }
     /// Consumes the builder and constructs a [`TileStyle`](crate::types::TileStyle).
     pub fn build(self) -> crate::types::TileStyle {
-        crate::types::TileStyle { border: self.border }
+        crate::types::TileStyle {
+            border: self.border
+            ,
+        }
     }
 }
+

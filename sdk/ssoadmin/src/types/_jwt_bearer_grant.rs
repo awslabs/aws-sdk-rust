@@ -3,16 +3,17 @@
 /// <p>A structure that defines configuration settings for an application that supports the JWT Bearer Token Authorization Grant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JwtBearerGrant {
+pub struct JwtBearerGrant  {
     /// <p>A list of allowed token issuers trusted by the Identity Center instances for this application.</p>
-    pub authorized_token_issuers: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
+    pub authorized_token_issuers: ::std::option::Option<::std::vec::Vec::<crate::types::AuthorizedTokenIssuer>>,
 }
-impl JwtBearerGrant {
+impl  JwtBearerGrant  {
     /// <p>A list of allowed token issuers trusted by the Identity Center instances for this application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_token_issuers.is_none()`.
-    pub fn authorized_token_issuers(&self) -> &[crate::types::AuthorizedTokenIssuer] {
-        self.authorized_token_issuers.as_deref().unwrap_or_default()
+    pub fn authorized_token_issuers(&self) -> & [crate::types::AuthorizedTokenIssuer] {
+        self.authorized_token_issuers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl JwtBearerGrant {
@@ -26,7 +27,7 @@ impl JwtBearerGrant {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JwtBearerGrantBuilder {
-    pub(crate) authorized_token_issuers: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
+    pub(crate) authorized_token_issuers: ::std::option::Option<::std::vec::Vec::<crate::types::AuthorizedTokenIssuer>>,
 }
 impl JwtBearerGrantBuilder {
     /// Appends an item to `authorized_token_issuers`.
@@ -36,23 +37,24 @@ impl JwtBearerGrantBuilder {
     /// <p>A list of allowed token issuers trusted by the Identity Center instances for this application.</p>
     pub fn authorized_token_issuers(mut self, input: crate::types::AuthorizedTokenIssuer) -> Self {
         let mut v = self.authorized_token_issuers.unwrap_or_default();
-        v.push(input);
-        self.authorized_token_issuers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.authorized_token_issuers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of allowed token issuers trusted by the Identity Center instances for this application.</p>
-    pub fn set_authorized_token_issuers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>) -> Self {
-        self.authorized_token_issuers = input;
-        self
+    pub fn set_authorized_token_issuers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuthorizedTokenIssuer>>) -> Self {
+        self.authorized_token_issuers = input; self
     }
     /// <p>A list of allowed token issuers trusted by the Identity Center instances for this application.</p>
-    pub fn get_authorized_token_issuers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>> {
+    pub fn get_authorized_token_issuers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuthorizedTokenIssuer>> {
         &self.authorized_token_issuers
     }
     /// Consumes the builder and constructs a [`JwtBearerGrant`](crate::types::JwtBearerGrant).
     pub fn build(self) -> crate::types::JwtBearerGrant {
         crate::types::JwtBearerGrant {
-            authorized_token_issuers: self.authorized_token_issuers,
+            authorized_token_issuers: self.authorized_token_issuers
+            ,
         }
     }
 }
+

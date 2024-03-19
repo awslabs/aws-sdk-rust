@@ -3,7 +3,7 @@
 /// <p>Contains information about a data set import task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetImportTask {
+pub struct DataSetImportTask  {
     /// <p>The identifier of the data set import task.</p>
     pub task_id: ::std::string::String,
     /// <p>The status of the data set import task.</p>
@@ -13,22 +13,21 @@ pub struct DataSetImportTask {
     /// <p>If dataset import failed, the failure reason will show here.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
-impl DataSetImportTask {
+impl  DataSetImportTask  {
     /// <p>The identifier of the data set import task.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> & str {
+        use std::ops::Deref; self.task_id.deref()
     }
     /// <p>The status of the data set import task.</p>
-    pub fn status(&self) -> &crate::types::DataSetTaskLifecycle {
+    pub fn status(&self) -> & crate::types::DataSetTaskLifecycle {
         &self.status
     }
     /// <p>A summary of the data set import task.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::DataSetImportSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::DataSetImportSummary> {
         self.summary.as_ref()
     }
     /// <p>If dataset import failed, the failure reason will show here.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl DataSetImportTaskBuilder {
     }
     /// <p>The identifier of the data set import task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The identifier of the data set import task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl DataSetImportTaskBuilder {
     }
     /// <p>The status of the data set import task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSetTaskLifecycle>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the data set import task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSetTaskLifecycle> {
@@ -87,8 +84,7 @@ impl DataSetImportTaskBuilder {
     }
     /// <p>A summary of the data set import task.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::DataSetImportSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>A summary of the data set import task.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::DataSetImportSummary> {
@@ -101,8 +97,7 @@ impl DataSetImportTaskBuilder {
     }
     /// <p>If dataset import failed, the failure reason will show here.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>If dataset import failed, the failure reason will show here.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,21 +108,24 @@ impl DataSetImportTaskBuilder {
     /// - [`task_id`](crate::types::builders::DataSetImportTaskBuilder::task_id)
     /// - [`status`](crate::types::builders::DataSetImportTaskBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSetImportTask, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSetImportTask {
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building DataSetImportTask",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DataSetImportTask",
-                )
-            })?,
-            summary: self.summary,
-            status_reason: self.status_reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSetImportTask {
+                task_id: self.task_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("task_id", "task_id was not specified but it is required when building DataSetImportTask")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DataSetImportTask")
+                    )?
+                ,
+                summary: self.summary
+                ,
+                status_reason: self.status_reason
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInstanceExportTaskOutput {
+pub struct CreateInstanceExportTaskOutput  {
     /// <p>Information about the export instance task.</p>
     pub export_task: ::std::option::Option<crate::types::ExportTask>,
     _request_id: Option<String>,
 }
-impl CreateInstanceExportTaskOutput {
+impl  CreateInstanceExportTaskOutput  {
     /// <p>Information about the export instance task.</p>
-    pub fn export_task(&self) -> ::std::option::Option<&crate::types::ExportTask> {
+    pub fn export_task(&self) -> ::std::option::Option<& crate::types::ExportTask> {
         self.export_task.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateInstanceExportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateInstanceExportTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceExportTaskOutput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput).
     pub fn builder() -> crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateInstanceExportTaskOutputBuilder {
     }
     /// <p>Information about the export instance task.</p>
     pub fn set_export_task(mut self, input: ::std::option::Option<crate::types::ExportTask>) -> Self {
-        self.export_task = input;
-        self
+        self.export_task = input; self
     }
     /// <p>Information about the export instance task.</p>
     pub fn get_export_task(&self) -> &::std::option::Option<crate::types::ExportTask> {
         &self.export_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateInstanceExportTaskOutput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput).
     pub fn build(self) -> crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput {
         crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput {
-            export_task: self.export_task,
+            export_task: self.export_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

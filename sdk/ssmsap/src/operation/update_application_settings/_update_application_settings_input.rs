@@ -2,41 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationSettingsInput {
+pub struct UpdateApplicationSettingsInput  {
     /// <p>The ID of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The credentials to be added or updated.</p>
-    pub credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>,
     /// <p>The credentials to be removed.</p>
-    pub credentials_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub credentials_to_remove: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>,
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     pub backint: ::std::option::Option<crate::types::BackintConfig>,
     /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
     pub database_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateApplicationSettingsInput {
+impl  UpdateApplicationSettingsInput  {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The credentials to be added or updated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials_to_add_or_update.is_none()`.
-    pub fn credentials_to_add_or_update(&self) -> &[crate::types::ApplicationCredential] {
-        self.credentials_to_add_or_update.as_deref().unwrap_or_default()
+    pub fn credentials_to_add_or_update(&self) -> & [crate::types::ApplicationCredential] {
+        self.credentials_to_add_or_update.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The credentials to be removed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials_to_remove.is_none()`.
-    pub fn credentials_to_remove(&self) -> &[crate::types::ApplicationCredential] {
-        self.credentials_to_remove.as_deref().unwrap_or_default()
+    pub fn credentials_to_remove(&self) -> & [crate::types::ApplicationCredential] {
+        self.credentials_to_remove.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
-    pub fn backint(&self) -> ::std::option::Option<&crate::types::BackintConfig> {
+    pub fn backint(&self) -> ::std::option::Option<& crate::types::BackintConfig> {
         self.backint.as_ref()
     }
     /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
-    pub fn database_arn(&self) -> ::std::option::Option<&str> {
+    pub fn database_arn(&self) -> ::std::option::Option<& str> {
         self.database_arn.as_deref()
     }
 }
@@ -52,8 +54,8 @@ impl UpdateApplicationSettingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
-    pub(crate) credentials_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>,
+    pub(crate) credentials_to_remove: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>,
     pub(crate) backint: ::std::option::Option<crate::types::BackintConfig>,
     pub(crate) database_arn: ::std::option::Option<::std::string::String>,
 }
@@ -66,8 +68,7 @@ impl UpdateApplicationSettingsInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl UpdateApplicationSettingsInputBuilder {
     /// <p>The credentials to be added or updated.</p>
     pub fn credentials_to_add_or_update(mut self, input: crate::types::ApplicationCredential) -> Self {
         let mut v = self.credentials_to_add_or_update.unwrap_or_default();
-        v.push(input);
-        self.credentials_to_add_or_update = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.credentials_to_add_or_update = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The credentials to be added or updated.</p>
-    pub fn set_credentials_to_add_or_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
-        self.credentials_to_add_or_update = input;
-        self
+    pub fn set_credentials_to_add_or_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>) -> Self {
+        self.credentials_to_add_or_update = input; self
     }
     /// <p>The credentials to be added or updated.</p>
-    pub fn get_credentials_to_add_or_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials_to_add_or_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>> {
         &self.credentials_to_add_or_update
     }
     /// Appends an item to `credentials_to_remove`.
@@ -100,17 +100,16 @@ impl UpdateApplicationSettingsInputBuilder {
     /// <p>The credentials to be removed.</p>
     pub fn credentials_to_remove(mut self, input: crate::types::ApplicationCredential) -> Self {
         let mut v = self.credentials_to_remove.unwrap_or_default();
-        v.push(input);
-        self.credentials_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.credentials_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The credentials to be removed.</p>
-    pub fn set_credentials_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
-        self.credentials_to_remove = input;
-        self
+    pub fn set_credentials_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>) -> Self {
+        self.credentials_to_remove = input; self
     }
     /// <p>The credentials to be removed.</p>
-    pub fn get_credentials_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>> {
         &self.credentials_to_remove
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
@@ -120,8 +119,7 @@ impl UpdateApplicationSettingsInputBuilder {
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     pub fn set_backint(mut self, input: ::std::option::Option<crate::types::BackintConfig>) -> Self {
-        self.backint = input;
-        self
+        self.backint = input; self
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     pub fn get_backint(&self) -> &::std::option::Option<crate::types::BackintConfig> {
@@ -134,26 +132,28 @@ impl UpdateApplicationSettingsInputBuilder {
     }
     /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
     pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_arn = input;
-        self
+        self.database_arn = input; self
     }
     /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
     pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_arn
     }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application_settings::UpdateApplicationSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_application_settings::UpdateApplicationSettingsInput {
-            application_id: self.application_id,
-            credentials_to_add_or_update: self.credentials_to_add_or_update,
-            credentials_to_remove: self.credentials_to_remove,
-            backint: self.backint,
-            database_arn: self.database_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application_settings::UpdateApplicationSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application_settings::UpdateApplicationSettingsInput {
+                application_id: self.application_id
+                ,
+                credentials_to_add_or_update: self.credentials_to_add_or_update
+                ,
+                credentials_to_remove: self.credentials_to_remove
+                ,
+                backint: self.backint
+                ,
+                database_arn: self.database_arn
+                ,
+            }
+        )
     }
 }
+

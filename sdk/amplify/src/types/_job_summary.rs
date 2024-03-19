@@ -3,7 +3,7 @@
 /// <p>Describes the summary for an execution job for an Amplify app.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobSummary {
+pub struct JobSummary  {
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
     pub job_arn: ::std::string::String,
     /// <p>The unique ID for the job.</p>
@@ -23,45 +23,41 @@ pub struct JobSummary {
     /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
     pub job_type: crate::types::JobType,
 }
-impl JobSummary {
+impl  JobSummary  {
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
-    pub fn job_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.job_arn.deref()
+    pub fn job_arn(&self) -> & str {
+        use std::ops::Deref; self.job_arn.deref()
     }
     /// <p>The unique ID for the job.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The commit ID from a third-party repository provider for the job.</p>
-    pub fn commit_id(&self) -> &str {
-        use std::ops::Deref;
-        self.commit_id.deref()
+    pub fn commit_id(&self) -> & str {
+        use std::ops::Deref; self.commit_id.deref()
     }
     /// <p>The commit message from a third-party repository provider for the job.</p>
-    pub fn commit_message(&self) -> &str {
-        use std::ops::Deref;
-        self.commit_message.deref()
+    pub fn commit_message(&self) -> & str {
+        use std::ops::Deref; self.commit_message.deref()
     }
     /// <p>The commit date and time for the job.</p>
-    pub fn commit_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn commit_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.commit_time
     }
     /// <p>The start date and time for the job.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The current status for the job.</p>
-    pub fn status(&self) -> &crate::types::JobStatus {
+    pub fn status(&self) -> & crate::types::JobStatus {
         &self.status
     }
     /// <p>The end date and time for the job.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
-    pub fn job_type(&self) -> &crate::types::JobType {
+    pub fn job_type(&self) -> & crate::types::JobType {
         &self.job_type
     }
 }
@@ -95,8 +91,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The unique ID for the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The unique ID for the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +119,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The commit ID from a third-party repository provider for the job.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The commit ID from a third-party repository provider for the job.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +133,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The commit message from a third-party repository provider for the job.</p>
     pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_message = input;
-        self
+        self.commit_message = input; self
     }
     /// <p>The commit message from a third-party repository provider for the job.</p>
     pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +147,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The commit date and time for the job.</p>
     pub fn set_commit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.commit_time = input;
-        self
+        self.commit_time = input; self
     }
     /// <p>The commit date and time for the job.</p>
     pub fn get_commit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,8 +161,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The start date and time for the job.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start date and time for the job.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -185,8 +175,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The current status for the job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status for the job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -199,8 +188,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The end date and time for the job.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end date and time for the job.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -214,8 +202,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
@@ -232,56 +219,52 @@ impl JobSummaryBuilder {
     /// - [`status`](crate::types::builders::JobSummaryBuilder::status)
     /// - [`job_type`](crate::types::builders::JobSummaryBuilder::job_type)
     pub fn build(self) -> ::std::result::Result<crate::types::JobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobSummary {
-            job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_arn",
-                    "job_arn was not specified but it is required when building JobSummary",
-                )
-            })?,
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building JobSummary",
-                )
-            })?,
-            commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_id",
-                    "commit_id was not specified but it is required when building JobSummary",
-                )
-            })?,
-            commit_message: self.commit_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_message",
-                    "commit_message was not specified but it is required when building JobSummary",
-                )
-            })?,
-            commit_time: self.commit_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_time",
-                    "commit_time was not specified but it is required when building JobSummary",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building JobSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building JobSummary",
-                )
-            })?,
-            end_time: self.end_time,
-            job_type: self.job_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_type",
-                    "job_type was not specified but it is required when building JobSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobSummary {
+                job_arn: self.job_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_arn", "job_arn was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                commit_id: self.commit_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_id", "commit_id was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                commit_message: self.commit_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_message", "commit_message was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                commit_time: self.commit_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_time", "commit_time was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                end_time: self.end_time
+                ,
+                job_type: self.job_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_type", "job_type was not specified but it is required when building JobSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

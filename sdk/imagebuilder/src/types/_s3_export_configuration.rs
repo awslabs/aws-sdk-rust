@@ -3,7 +3,7 @@
 /// <p>Properties that configure export from your build instance to a compatible file format for your VM.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ExportConfiguration {
+pub struct S3ExportConfiguration  {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
     pub role_name: ::std::string::String,
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
@@ -21,11 +21,10 @@ pub struct S3ExportConfiguration {
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
     pub s3_prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3ExportConfiguration {
+impl  S3ExportConfiguration  {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
-    pub fn role_name(&self) -> &str {
-        use std::ops::Deref;
-        self.role_name.deref()
+    pub fn role_name(&self) -> & str {
+        use std::ops::Deref; self.role_name.deref()
     }
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
@@ -36,16 +35,15 @@ impl S3ExportConfiguration {
     /// <li>
     /// <p><b>Raw</b> – Raw format.</p></li>
     /// </ul>
-    pub fn disk_image_format(&self) -> &crate::types::DiskImageFormat {
+    pub fn disk_image_format(&self) -> & crate::types::DiskImageFormat {
         &self.disk_image_format
     }
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket.deref()
     }
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
-    pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
 }
@@ -74,8 +72,7 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl S3ExportConfigurationBuilder {
     /// <p><b>Raw</b> – Raw format.</p></li>
     /// </ul>
     pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
-        self.disk_image_format = input;
-        self
+        self.disk_image_format = input; self
     }
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
@@ -128,8 +124,7 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +137,7 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_prefix = input;
-        self
+        self.s3_prefix = input; self
     }
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
     pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,26 +149,27 @@ impl S3ExportConfigurationBuilder {
     /// - [`disk_image_format`](crate::types::builders::S3ExportConfigurationBuilder::disk_image_format)
     /// - [`s3_bucket`](crate::types::builders::S3ExportConfigurationBuilder::s3_bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::S3ExportConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3ExportConfiguration {
-            role_name: self.role_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_name",
-                    "role_name was not specified but it is required when building S3ExportConfiguration",
-                )
-            })?,
-            disk_image_format: self.disk_image_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "disk_image_format",
-                    "disk_image_format was not specified but it is required when building S3ExportConfiguration",
-                )
-            })?,
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building S3ExportConfiguration",
-                )
-            })?,
-            s3_prefix: self.s3_prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3ExportConfiguration {
+                role_name: self.role_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_name", "role_name was not specified but it is required when building S3ExportConfiguration")
+                    )?
+                ,
+                disk_image_format: self.disk_image_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("disk_image_format", "disk_image_format was not specified but it is required when building S3ExportConfiguration")
+                    )?
+                ,
+                s3_bucket: self.s3_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket", "s3_bucket was not specified but it is required when building S3ExportConfiguration")
+                    )?
+                ,
+                s3_prefix: self.s3_prefix
+                ,
+            }
+        )
     }
 }
+

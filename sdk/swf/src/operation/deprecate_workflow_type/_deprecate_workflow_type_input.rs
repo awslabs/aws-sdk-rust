@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeprecateWorkflowTypeInput {
+pub struct DeprecateWorkflowTypeInput  {
     /// <p>The name of the domain in which the workflow type is registered.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The workflow type to deprecate.</p>
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
 }
-impl DeprecateWorkflowTypeInput {
+impl  DeprecateWorkflowTypeInput  {
     /// <p>The name of the domain in which the workflow type is registered.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflow type to deprecate.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeprecateWorkflowTypeInputBuilder {
     }
     /// <p>The name of the domain in which the workflow type is registered.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain in which the workflow type is registered.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeprecateWorkflowTypeInputBuilder {
     }
     /// <p>The workflow type to deprecate.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.workflow_type = input;
-        self
+        self.workflow_type = input; self
     }
     /// <p>The workflow type to deprecate.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         &self.workflow_type
     }
     /// Consumes the builder and constructs a [`DeprecateWorkflowTypeInput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput {
-            domain: self.domain,
-            workflow_type: self.workflow_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput {
+                domain: self.domain
+                ,
+                workflow_type: self.workflow_type
+                ,
+            }
+        )
     }
 }
+

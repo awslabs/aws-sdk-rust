@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportLicenseRecommendationsOutput {
+pub struct ExportLicenseRecommendationsOutput  {
     /// <p>The identification number of the export job.</p>
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -10,22 +10,22 @@ pub struct ExportLicenseRecommendationsOutput {
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
     _request_id: Option<String>,
 }
-impl ExportLicenseRecommendationsOutput {
+impl  ExportLicenseRecommendationsOutput  {
     /// <p>The identification number of the export job.</p>
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
-    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<& crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportLicenseRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportLicenseRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ExportLicenseRecommendationsOutput`](crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput).
     pub fn builder() -> crate::operation::export_license_recommendations::builders::ExportLicenseRecommendationsOutputBuilder {
@@ -51,8 +51,7 @@ impl ExportLicenseRecommendationsOutputBuilder {
     /// <p>The identification number of the export job.</p>
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identification number of the export job.</p>
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID.</p>
@@ -66,28 +65,30 @@ impl ExportLicenseRecommendationsOutputBuilder {
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
-        self.s3_destination = input;
-        self
+        self.s3_destination = input; self
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
         &self.s3_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportLicenseRecommendationsOutput`](crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput).
     pub fn build(self) -> crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput {
         crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput {
-            job_id: self.job_id,
-            s3_destination: self.s3_destination,
+            job_id: self.job_id
+            ,
+            s3_destination: self.s3_destination
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

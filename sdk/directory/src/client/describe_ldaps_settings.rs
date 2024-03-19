@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLDAPSSettings`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory.</p><br>
     ///   - [`r#type(LdapsType)`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::type) / [`set_type(Option<LdapsType>)`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::set_type):<br>required: **false**<br><p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The type of next token used for pagination.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::set_limit):<br>required: **false**<br><p>Specifies the number of items that should be displayed on one page.</p><br>
-    /// - On success, responds with [`DescribeLdapsSettingsOutput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput) with field(s):
+                            /// - On success, responds with [`DescribeLdapsSettingsOutput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput) with field(s):
     ///   - [`ldaps_settings_info(Option<Vec::<LdapsSettingInfo>>)`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput::ldaps_settings_info): <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput::next_token): <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
-    /// - On failure, responds with [`SdkError<DescribeLDAPSSettingsError>`](crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError)
+                            /// - On failure, responds with [`SdkError<DescribeLDAPSSettingsError>`](crate::operation::describe_ldaps_settings::DescribeLDAPSSettingsError)
     pub fn describe_ldaps_settings(&self) -> crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder {
-        crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_ldaps_settings::builders::DescribeLDAPSSettingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDatasetInput {
+pub struct UpdateDatasetInput  {
     /// <p>The name of the dataset to be updated.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
@@ -14,25 +14,25 @@ pub struct UpdateDatasetInput {
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub path_options: ::std::option::Option<crate::types::PathOptions>,
 }
-impl UpdateDatasetInput {
+impl  UpdateDatasetInput  {
     /// <p>The name of the dataset to be updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::InputFormat> {
         self.format.as_ref()
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
-    pub fn format_options(&self) -> ::std::option::Option<&crate::types::FormatOptions> {
+    pub fn format_options(&self) -> ::std::option::Option<& crate::types::FormatOptions> {
         self.format_options.as_ref()
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
-    pub fn input(&self) -> ::std::option::Option<&crate::types::Input> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::Input> {
         self.input.as_ref()
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn path_options(&self) -> ::std::option::Option<&crate::types::PathOptions> {
+    pub fn path_options(&self) -> ::std::option::Option<& crate::types::PathOptions> {
         self.path_options.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateDatasetInputBuilder {
     }
     /// <p>The name of the dataset to be updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the dataset to be updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateDatasetInputBuilder {
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
@@ -90,8 +88,7 @@ impl UpdateDatasetInputBuilder {
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn set_format_options(mut self, input: ::std::option::Option<crate::types::FormatOptions>) -> Self {
-        self.format_options = input;
-        self
+        self.format_options = input; self
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn get_format_options(&self) -> &::std::option::Option<crate::types::FormatOptions> {
@@ -105,8 +102,7 @@ impl UpdateDatasetInputBuilder {
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
@@ -119,23 +115,28 @@ impl UpdateDatasetInputBuilder {
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn set_path_options(mut self, input: ::std::option::Option<crate::types::PathOptions>) -> Self {
-        self.path_options = input;
-        self
+        self.path_options = input; self
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn get_path_options(&self) -> &::std::option::Option<crate::types::PathOptions> {
         &self.path_options
     }
     /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetInput {
-            name: self.name,
-            format: self.format,
-            format_options: self.format_options,
-            input: self.input,
-            path_options: self.path_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_dataset::UpdateDatasetInput {
+                name: self.name
+                ,
+                format: self.format
+                ,
+                format_options: self.format_options
+                ,
+                input: self.input
+                ,
+                path_options: self.path_options
+                ,
+            }
+        )
     }
 }
+

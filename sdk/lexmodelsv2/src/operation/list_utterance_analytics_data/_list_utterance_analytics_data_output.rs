@@ -2,38 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUtteranceAnalyticsDataOutput {
+pub struct ListUtteranceAnalyticsDataOutput  {
     /// <p>The unique identifier of the bot that the utterances belong to.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
-    pub utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>>,
+    pub utterances: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceSpecification>>,
     _request_id: Option<String>,
 }
-impl ListUtteranceAnalyticsDataOutput {
+impl  ListUtteranceAnalyticsDataOutput  {
     /// <p>The unique identifier of the bot that the utterances belong to.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utterances.is_none()`.
-    pub fn utterances(&self) -> &[crate::types::UtteranceSpecification] {
-        self.utterances.as_deref().unwrap_or_default()
+    pub fn utterances(&self) -> & [crate::types::UtteranceSpecification] {
+        self.utterances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUtteranceAnalyticsDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUtteranceAnalyticsDataOutput {
     /// Creates a new builder-style object to manufacture [`ListUtteranceAnalyticsDataOutput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput).
     pub fn builder() -> crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataOutputBuilder {
@@ -47,7 +48,7 @@ impl ListUtteranceAnalyticsDataOutput {
 pub struct ListUtteranceAnalyticsDataOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>>,
+    pub(crate) utterances: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceSpecification>>,
     _request_id: Option<String>,
 }
 impl ListUtteranceAnalyticsDataOutputBuilder {
@@ -58,8 +59,7 @@ impl ListUtteranceAnalyticsDataOutputBuilder {
     }
     /// <p>The unique identifier of the bot that the utterances belong to.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot that the utterances belong to.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +74,7 @@ impl ListUtteranceAnalyticsDataOutputBuilder {
     /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
@@ -89,35 +88,38 @@ impl ListUtteranceAnalyticsDataOutputBuilder {
     /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
     pub fn utterances(mut self, input: crate::types::UtteranceSpecification) -> Self {
         let mut v = self.utterances.unwrap_or_default();
-        v.push(input);
-        self.utterances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.utterances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
-    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>>) -> Self {
-        self.utterances = input;
-        self
+    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceSpecification>>) -> Self {
+        self.utterances = input; self
     }
     /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
-    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>> {
+    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UtteranceSpecification>> {
         &self.utterances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUtteranceAnalyticsDataOutput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput).
     pub fn build(self) -> crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput {
         crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataOutput {
-            bot_id: self.bot_id,
-            next_token: self.next_token,
-            utterances: self.utterances,
+            bot_id: self.bot_id
+            ,
+            next_token: self.next_token
+            ,
+            utterances: self.utterances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

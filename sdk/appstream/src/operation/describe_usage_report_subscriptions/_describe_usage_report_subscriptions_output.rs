@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUsageReportSubscriptionsOutput {
+pub struct DescribeUsageReportSubscriptionsOutput  {
     /// <p>Information about the usage report subscription.</p>
-    pub usage_report_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>,
+    pub usage_report_subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::UsageReportSubscription>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeUsageReportSubscriptionsOutput {
+impl  DescribeUsageReportSubscriptionsOutput  {
     /// <p>Information about the usage report subscription.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_report_subscriptions.is_none()`.
-    pub fn usage_report_subscriptions(&self) -> &[crate::types::UsageReportSubscription] {
-        self.usage_report_subscriptions.as_deref().unwrap_or_default()
+    pub fn usage_report_subscriptions(&self) -> & [crate::types::UsageReportSubscription] {
+        self.usage_report_subscriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUsageReportSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUsageReportSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUsageReportSubscriptionsOutput`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput).
     pub fn builder() -> crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeUsageReportSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUsageReportSubscriptionsOutputBuilder {
-    pub(crate) usage_report_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>,
+    pub(crate) usage_report_subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::UsageReportSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeUsageReportSubscriptionsOutputBuilder {
     /// <p>Information about the usage report subscription.</p>
     pub fn usage_report_subscriptions(mut self, input: crate::types::UsageReportSubscription) -> Self {
         let mut v = self.usage_report_subscriptions.unwrap_or_default();
-        v.push(input);
-        self.usage_report_subscriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.usage_report_subscriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the usage report subscription.</p>
-    pub fn set_usage_report_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>>) -> Self {
-        self.usage_report_subscriptions = input;
-        self
+    pub fn set_usage_report_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UsageReportSubscription>>) -> Self {
+        self.usage_report_subscriptions = input; self
     }
     /// <p>Information about the usage report subscription.</p>
-    pub fn get_usage_report_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageReportSubscription>> {
+    pub fn get_usage_report_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UsageReportSubscription>> {
         &self.usage_report_subscriptions
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -69,28 +69,30 @@ impl DescribeUsageReportSubscriptionsOutputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUsageReportSubscriptionsOutput`](crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput).
     pub fn build(self) -> crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput {
         crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput {
-            usage_report_subscriptions: self.usage_report_subscriptions,
-            next_token: self.next_token,
+            usage_report_subscriptions: self.usage_report_subscriptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

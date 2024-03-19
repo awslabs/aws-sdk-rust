@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfigurationPolicyAssociationInput {
+pub struct GetConfigurationPolicyAssociationInput  {
     /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub target: ::std::option::Option<crate::types::Target>,
 }
-impl GetConfigurationPolicyAssociationInput {
+impl  GetConfigurationPolicyAssociationInput  {
     /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::Target> {
         self.target.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl GetConfigurationPolicyAssociationInputBuilder {
     }
     /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         &self.target
     }
     /// Consumes the builder and constructs a [`GetConfigurationPolicyAssociationInput`](crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationInput { target: self.target },
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationInput {
+                target: self.target
+                ,
+            }
         )
     }
 }
+

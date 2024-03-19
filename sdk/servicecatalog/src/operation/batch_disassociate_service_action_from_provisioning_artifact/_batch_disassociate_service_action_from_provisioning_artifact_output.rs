@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDisassociateServiceActionFromProvisioningArtifactOutput {
+pub struct BatchDisassociateServiceActionFromProvisioningArtifactOutput  {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub failed_service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
+    pub failed_service_action_associations: ::std::option::Option<::std::vec::Vec::<crate::types::FailedServiceActionAssociation>>,
     _request_id: Option<String>,
 }
-impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
+impl  BatchDisassociateServiceActionFromProvisioningArtifactOutput  {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_service_action_associations.is_none()`.
-    pub fn failed_service_action_associations(&self) -> &[crate::types::FailedServiceActionAssociation] {
-        self.failed_service_action_associations.as_deref().unwrap_or_default()
+    pub fn failed_service_action_associations(&self) -> & [crate::types::FailedServiceActionAssociation] {
+        self.failed_service_action_associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDisassociateServiceActionFromProvisioningArtifactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput).
-    pub fn builder() -> crate::operation::batch_disassociate_service_action_from_provisioning_artifact::builders::BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder{
+    pub fn builder() -> crate::operation::batch_disassociate_service_action_from_provisioning_artifact::builders::BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder {
         crate::operation::batch_disassociate_service_action_from_provisioning_artifact::builders::BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder::default()
     }
 }
@@ -31,7 +32,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder {
-    pub(crate) failed_service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
+    pub(crate) failed_service_action_associations: ::std::option::Option<::std::vec::Vec::<crate::types::FailedServiceActionAssociation>>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder {
@@ -42,39 +43,34 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
     pub fn failed_service_action_associations(mut self, input: crate::types::FailedServiceActionAssociation) -> Self {
         let mut v = self.failed_service_action_associations.unwrap_or_default();
-        v.push(input);
-        self.failed_service_action_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_service_action_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub fn set_failed_service_action_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
-    ) -> Self {
-        self.failed_service_action_associations = input;
-        self
+    pub fn set_failed_service_action_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedServiceActionAssociation>>) -> Self {
+        self.failed_service_action_associations = input; self
     }
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub fn get_failed_service_action_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>> {
+    pub fn get_failed_service_action_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedServiceActionAssociation>> {
         &self.failed_service_action_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput
-    {
+    pub fn build(self) -> crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput {
         crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput {
-            failed_service_action_associations: self.failed_service_action_associations,
+            failed_service_action_associations: self.failed_service_action_associations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

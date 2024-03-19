@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckoutLicenseInput {
+pub struct CheckoutLicenseInput  {
     /// <p>Product SKU.</p>
     pub product_sku: ::std::option::Option<::std::string::String>,
     /// <p>Checkout type.</p>
@@ -10,7 +10,7 @@ pub struct CheckoutLicenseInput {
     /// <p>Key fingerprint identifying the license.</p>
     pub key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>License entitlements.</p>
-    pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
+    pub entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementData>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>License beneficiary.</p>
@@ -18,35 +18,36 @@ pub struct CheckoutLicenseInput {
     /// <p>Node ID.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
 }
-impl CheckoutLicenseInput {
+impl  CheckoutLicenseInput  {
     /// <p>Product SKU.</p>
-    pub fn product_sku(&self) -> ::std::option::Option<&str> {
+    pub fn product_sku(&self) -> ::std::option::Option<& str> {
         self.product_sku.as_deref()
     }
     /// <p>Checkout type.</p>
-    pub fn checkout_type(&self) -> ::std::option::Option<&crate::types::CheckoutType> {
+    pub fn checkout_type(&self) -> ::std::option::Option<& crate::types::CheckoutType> {
         self.checkout_type.as_ref()
     }
     /// <p>Key fingerprint identifying the license.</p>
-    pub fn key_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn key_fingerprint(&self) -> ::std::option::Option<& str> {
         self.key_fingerprint.as_deref()
     }
     /// <p>License entitlements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
-    pub fn entitlements(&self) -> &[crate::types::EntitlementData] {
-        self.entitlements.as_deref().unwrap_or_default()
+    pub fn entitlements(&self) -> & [crate::types::EntitlementData] {
+        self.entitlements.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>License beneficiary.</p>
-    pub fn beneficiary(&self) -> ::std::option::Option<&str> {
+    pub fn beneficiary(&self) -> ::std::option::Option<& str> {
         self.beneficiary.as_deref()
     }
     /// <p>Node ID.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
 }
@@ -64,7 +65,7 @@ pub struct CheckoutLicenseInputBuilder {
     pub(crate) product_sku: ::std::option::Option<::std::string::String>,
     pub(crate) checkout_type: ::std::option::Option<crate::types::CheckoutType>,
     pub(crate) key_fingerprint: ::std::option::Option<::std::string::String>,
-    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
+    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementData>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) beneficiary: ::std::option::Option<::std::string::String>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
@@ -78,8 +79,7 @@ impl CheckoutLicenseInputBuilder {
     }
     /// <p>Product SKU.</p>
     pub fn set_product_sku(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_sku = input;
-        self
+        self.product_sku = input; self
     }
     /// <p>Product SKU.</p>
     pub fn get_product_sku(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl CheckoutLicenseInputBuilder {
     }
     /// <p>Checkout type.</p>
     pub fn set_checkout_type(mut self, input: ::std::option::Option<crate::types::CheckoutType>) -> Self {
-        self.checkout_type = input;
-        self
+        self.checkout_type = input; self
     }
     /// <p>Checkout type.</p>
     pub fn get_checkout_type(&self) -> &::std::option::Option<crate::types::CheckoutType> {
@@ -108,8 +107,7 @@ impl CheckoutLicenseInputBuilder {
     }
     /// <p>Key fingerprint identifying the license.</p>
     pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_fingerprint = input;
-        self
+        self.key_fingerprint = input; self
     }
     /// <p>Key fingerprint identifying the license.</p>
     pub fn get_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,17 +120,16 @@ impl CheckoutLicenseInputBuilder {
     /// <p>License entitlements.</p>
     pub fn entitlements(mut self, input: crate::types::EntitlementData) -> Self {
         let mut v = self.entitlements.unwrap_or_default();
-        v.push(input);
-        self.entitlements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entitlements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>) -> Self {
-        self.entitlements = input;
-        self
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementData>>) -> Self {
+        self.entitlements = input; self
     }
     /// <p>License entitlements.</p>
-    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntitlementData>> {
         &self.entitlements
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -143,8 +140,7 @@ impl CheckoutLicenseInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +153,7 @@ impl CheckoutLicenseInputBuilder {
     }
     /// <p>License beneficiary.</p>
     pub fn set_beneficiary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.beneficiary = input;
-        self
+        self.beneficiary = input; self
     }
     /// <p>License beneficiary.</p>
     pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,25 +166,32 @@ impl CheckoutLicenseInputBuilder {
     }
     /// <p>Node ID.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>Node ID.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`CheckoutLicenseInput`](crate::operation::checkout_license::CheckoutLicenseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::checkout_license::CheckoutLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::checkout_license::CheckoutLicenseInput {
-            product_sku: self.product_sku,
-            checkout_type: self.checkout_type,
-            key_fingerprint: self.key_fingerprint,
-            entitlements: self.entitlements,
-            client_token: self.client_token,
-            beneficiary: self.beneficiary,
-            node_id: self.node_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::checkout_license::CheckoutLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::checkout_license::CheckoutLicenseInput {
+                product_sku: self.product_sku
+                ,
+                checkout_type: self.checkout_type
+                ,
+                key_fingerprint: self.key_fingerprint
+                ,
+                entitlements: self.entitlements
+                ,
+                client_token: self.client_token
+                ,
+                beneficiary: self.beneficiary
+                ,
+                node_id: self.node_id
+                ,
+            }
+        )
     }
 }
+

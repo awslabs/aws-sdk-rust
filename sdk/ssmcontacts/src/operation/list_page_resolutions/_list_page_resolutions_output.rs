@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPageResolutionsOutput {
+pub struct ListPageResolutionsOutput  {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resolution for an engagement.</p>
-    pub page_resolutions: ::std::vec::Vec<crate::types::ResolutionContact>,
+    pub page_resolutions: ::std::vec::Vec::<crate::types::ResolutionContact>,
     _request_id: Option<String>,
 }
-impl ListPageResolutionsOutput {
+impl  ListPageResolutionsOutput  {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the resolution for an engagement.</p>
-    pub fn page_resolutions(&self) -> &[crate::types::ResolutionContact] {
-        use std::ops::Deref;
-        self.page_resolutions.deref()
+    pub fn page_resolutions(&self) -> & [crate::types::ResolutionContact] {
+        use std::ops::Deref; self.page_resolutions.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPageResolutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPageResolutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPageResolutionsOutput`](crate::operation::list_page_resolutions::ListPageResolutionsOutput).
     pub fn builder() -> crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListPageResolutionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPageResolutionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) page_resolutions: ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>>,
+    pub(crate) page_resolutions: ::std::option::Option<::std::vec::Vec::<crate::types::ResolutionContact>>,
     _request_id: Option<String>,
 }
 impl ListPageResolutionsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListPageResolutionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListPageResolutionsOutputBuilder {
     /// <p>Information about the resolution for an engagement.</p>
     pub fn page_resolutions(mut self, input: crate::types::ResolutionContact) -> Self {
         let mut v = self.page_resolutions.unwrap_or_default();
-        v.push(input);
-        self.page_resolutions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.page_resolutions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the resolution for an engagement.</p>
-    pub fn set_page_resolutions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>>) -> Self {
-        self.page_resolutions = input;
-        self
+    pub fn set_page_resolutions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResolutionContact>>) -> Self {
+        self.page_resolutions = input; self
     }
     /// <p>Information about the resolution for an engagement.</p>
-    pub fn get_page_resolutions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>> {
+    pub fn get_page_resolutions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResolutionContact>> {
         &self.page_resolutions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPageResolutionsOutput`](crate::operation::list_page_resolutions::ListPageResolutionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`page_resolutions`](crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder::page_resolutions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_page_resolutions::ListPageResolutionsOutput {
-            next_token: self.next_token,
-            page_resolutions: self.page_resolutions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "page_resolutions",
-                    "page_resolutions was not specified but it is required when building ListPageResolutionsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_page_resolutions::ListPageResolutionsOutput {
+                next_token: self.next_token
+                ,
+                page_resolutions: self.page_resolutions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("page_resolutions", "page_resolutions was not specified but it is required when building ListPageResolutionsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

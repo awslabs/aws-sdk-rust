@@ -5,23 +5,17 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using runtime hints to improve recognition of slot values</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuntimeHints {
+pub struct RuntimeHints  {
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
     /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
-    pub slot_hints: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
-    >,
+    pub slot_hints: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>>>,
 }
-impl RuntimeHints {
+impl  RuntimeHints  {
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
     /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
-    pub fn slot_hints(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
-    > {
+    pub fn slot_hints(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>>> {
         self.slot_hints.as_ref()
     }
 }
@@ -36,9 +30,7 @@ impl RuntimeHints {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeHintsBuilder {
-    pub(crate) slot_hints: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
-    >,
+    pub(crate) slot_hints: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>>>,
 }
 impl RuntimeHintsBuilder {
     /// Adds a key-value pair to `slot_hints`.
@@ -48,40 +40,30 @@ impl RuntimeHintsBuilder {
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
     /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
-    pub fn slot_hints(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>,
-    ) -> Self {
+    pub fn slot_hints(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>) -> Self {
         let mut hash_map = self.slot_hints.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.slot_hints = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.slot_hints = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
     /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
-    pub fn set_slot_hints(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
-        >,
-    ) -> Self {
-        self.slot_hints = input;
-        self
+    pub fn set_slot_hints(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>>>) -> Self {
+        self.slot_hints = input; self
     }
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
     /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
-    pub fn get_slot_hints(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
-    > {
+    pub fn get_slot_hints(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, crate::types::RuntimeHintDetails>>> {
         &self.slot_hints
     }
     /// Consumes the builder and constructs a [`RuntimeHints`](crate::types::RuntimeHints).
     pub fn build(self) -> crate::types::RuntimeHints {
-        crate::types::RuntimeHints { slot_hints: self.slot_hints }
+        crate::types::RuntimeHints {
+            slot_hints: self.slot_hints
+            ,
+        }
     }
 }
+

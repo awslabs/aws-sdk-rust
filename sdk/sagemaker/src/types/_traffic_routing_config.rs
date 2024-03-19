@@ -3,7 +3,7 @@
 /// <p>Defines the traffic routing strategy during an endpoint deployment to shift traffic from the old fleet to the new fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrafficRoutingConfig {
+pub struct TrafficRoutingConfig  {
     /// <p>Traffic routing strategy type.</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ pub struct TrafficRoutingConfig {
     /// <p>Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the variant's total instance count.</p>
     pub linear_step_size: ::std::option::Option<crate::types::CapacitySize>,
 }
-impl TrafficRoutingConfig {
+impl  TrafficRoutingConfig  {
     /// <p>Traffic routing strategy type.</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ impl TrafficRoutingConfig {
     /// <li>
     /// <p><code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TrafficRoutingConfigType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TrafficRoutingConfigType> {
         self.r#type.as_ref()
     }
     /// <p>The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.</p>
@@ -39,11 +39,11 @@ impl TrafficRoutingConfig {
         self.wait_interval_in_seconds
     }
     /// <p>Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than or equal to 50% of the variant's total instance count.</p>
-    pub fn canary_size(&self) -> ::std::option::Option<&crate::types::CapacitySize> {
+    pub fn canary_size(&self) -> ::std::option::Option<& crate::types::CapacitySize> {
         self.canary_size.as_ref()
     }
     /// <p>Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the variant's total instance count.</p>
-    pub fn linear_step_size(&self) -> ::std::option::Option<&crate::types::CapacitySize> {
+    pub fn linear_step_size(&self) -> ::std::option::Option<& crate::types::CapacitySize> {
         self.linear_step_size.as_ref()
     }
 }
@@ -88,8 +88,7 @@ impl TrafficRoutingConfigBuilder {
     /// <p><code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TrafficRoutingConfigType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Traffic routing strategy type.</p>
     /// <ul>
@@ -111,8 +110,7 @@ impl TrafficRoutingConfigBuilder {
     }
     /// <p>The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.</p>
     pub fn set_wait_interval_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.wait_interval_in_seconds = input;
-        self
+        self.wait_interval_in_seconds = input; self
     }
     /// <p>The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.</p>
     pub fn get_wait_interval_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -125,8 +123,7 @@ impl TrafficRoutingConfigBuilder {
     }
     /// <p>Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than or equal to 50% of the variant's total instance count.</p>
     pub fn set_canary_size(mut self, input: ::std::option::Option<crate::types::CapacitySize>) -> Self {
-        self.canary_size = input;
-        self
+        self.canary_size = input; self
     }
     /// <p>Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than or equal to 50% of the variant's total instance count.</p>
     pub fn get_canary_size(&self) -> &::std::option::Option<crate::types::CapacitySize> {
@@ -139,8 +136,7 @@ impl TrafficRoutingConfigBuilder {
     }
     /// <p>Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the variant's total instance count.</p>
     pub fn set_linear_step_size(mut self, input: ::std::option::Option<crate::types::CapacitySize>) -> Self {
-        self.linear_step_size = input;
-        self
+        self.linear_step_size = input; self
     }
     /// <p>Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the variant's total instance count.</p>
     pub fn get_linear_step_size(&self) -> &::std::option::Option<crate::types::CapacitySize> {
@@ -149,10 +145,15 @@ impl TrafficRoutingConfigBuilder {
     /// Consumes the builder and constructs a [`TrafficRoutingConfig`](crate::types::TrafficRoutingConfig).
     pub fn build(self) -> crate::types::TrafficRoutingConfig {
         crate::types::TrafficRoutingConfig {
-            r#type: self.r#type,
-            wait_interval_in_seconds: self.wait_interval_in_seconds,
-            canary_size: self.canary_size,
-            linear_step_size: self.linear_step_size,
+            r#type: self.r#type
+            ,
+            wait_interval_in_seconds: self.wait_interval_in_seconds
+            ,
+            canary_size: self.canary_size
+            ,
+            linear_step_size: self.linear_step_size
+            ,
         }
     }
 }
+

@@ -3,24 +3,23 @@
 /// <p>Parameter information for root public key certificate import.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RootCertificatePublicKey {
+pub struct RootCertificatePublicKey  {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     /// <p>Parameter information for root public key certificate import.</p>
     pub public_key_certificate: ::std::string::String,
 }
-impl RootCertificatePublicKey {
+impl  RootCertificatePublicKey  {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
-    pub fn key_attributes(&self) -> ::std::option::Option<&crate::types::KeyAttributes> {
+    pub fn key_attributes(&self) -> ::std::option::Option<& crate::types::KeyAttributes> {
         self.key_attributes.as_ref()
     }
     /// <p>Parameter information for root public key certificate import.</p>
-    pub fn public_key_certificate(&self) -> &str {
-        use std::ops::Deref;
-        self.public_key_certificate.deref()
+    pub fn public_key_certificate(&self) -> & str {
+        use std::ops::Deref; self.public_key_certificate.deref()
     }
 }
-impl ::std::fmt::Debug for RootCertificatePublicKey {
+impl  ::std::fmt::Debug for RootCertificatePublicKey  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RootCertificatePublicKey");
         formatter.field("key_attributes", &self.key_attributes);
@@ -51,8 +50,7 @@ impl RootCertificatePublicKeyBuilder {
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
     pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
-        self.key_attributes = input;
-        self
+        self.key_attributes = input; self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the root public key is imported.</p>
     pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
@@ -66,8 +64,7 @@ impl RootCertificatePublicKeyBuilder {
     }
     /// <p>Parameter information for root public key certificate import.</p>
     pub fn set_public_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_key_certificate = input;
-        self
+        self.public_key_certificate = input; self
     }
     /// <p>Parameter information for root public key certificate import.</p>
     pub fn get_public_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,15 +74,17 @@ impl RootCertificatePublicKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`public_key_certificate`](crate::types::builders::RootCertificatePublicKeyBuilder::public_key_certificate)
     pub fn build(self) -> ::std::result::Result<crate::types::RootCertificatePublicKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RootCertificatePublicKey {
-            key_attributes: self.key_attributes,
-            public_key_certificate: self.public_key_certificate.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "public_key_certificate",
-                    "public_key_certificate was not specified but it is required when building RootCertificatePublicKey",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RootCertificatePublicKey {
+                key_attributes: self.key_attributes
+                ,
+                public_key_certificate: self.public_key_certificate
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("public_key_certificate", "public_key_certificate was not specified but it is required when building RootCertificatePublicKey")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RootCertificatePublicKeyBuilder {
@@ -96,3 +95,4 @@ impl ::std::fmt::Debug for RootCertificatePublicKeyBuilder {
         formatter.finish()
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>An object representing a Kubernetes <code>label</code> change for a managed node group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLabelsPayload {
+pub struct UpdateLabelsPayload  {
     /// <p>The Kubernetes <code>labels</code> to add or update.</p>
-    pub add_or_update_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub add_or_update_labels: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The Kubernetes <code>labels</code> to remove.</p>
-    pub remove_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateLabelsPayload {
+impl  UpdateLabelsPayload  {
     /// <p>The Kubernetes <code>labels</code> to add or update.</p>
-    pub fn add_or_update_labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn add_or_update_labels(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.add_or_update_labels.as_ref()
     }
     /// <p>The Kubernetes <code>labels</code> to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_labels.is_none()`.
-    pub fn remove_labels(&self) -> &[::std::string::String] {
-        self.remove_labels.as_deref().unwrap_or_default()
+    pub fn remove_labels(&self) -> & [::std::string::String] {
+        self.remove_labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateLabelsPayload {
@@ -32,8 +33,8 @@ impl UpdateLabelsPayload {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLabelsPayloadBuilder {
-    pub(crate) add_or_update_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) remove_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_or_update_labels: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) remove_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateLabelsPayloadBuilder {
     /// Adds a key-value pair to `add_or_update_labels`.
@@ -41,26 +42,18 @@ impl UpdateLabelsPayloadBuilder {
     /// To override the contents of this collection use [`set_add_or_update_labels`](Self::set_add_or_update_labels).
     ///
     /// <p>The Kubernetes <code>labels</code> to add or update.</p>
-    pub fn add_or_update_labels(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_or_update_labels(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.add_or_update_labels.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.add_or_update_labels = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.add_or_update_labels = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The Kubernetes <code>labels</code> to add or update.</p>
-    pub fn set_add_or_update_labels(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.add_or_update_labels = input;
-        self
+    pub fn set_add_or_update_labels(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.add_or_update_labels = input; self
     }
     /// <p>The Kubernetes <code>labels</code> to add or update.</p>
-    pub fn get_add_or_update_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_add_or_update_labels(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.add_or_update_labels
     }
     /// Appends an item to `remove_labels`.
@@ -70,24 +63,26 @@ impl UpdateLabelsPayloadBuilder {
     /// <p>The Kubernetes <code>labels</code> to remove.</p>
     pub fn remove_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_labels.unwrap_or_default();
-        v.push(input.into());
-        self.remove_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Kubernetes <code>labels</code> to remove.</p>
-    pub fn set_remove_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_labels = input;
-        self
+    pub fn set_remove_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_labels = input; self
     }
     /// <p>The Kubernetes <code>labels</code> to remove.</p>
-    pub fn get_remove_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_labels
     }
     /// Consumes the builder and constructs a [`UpdateLabelsPayload`](crate::types::UpdateLabelsPayload).
     pub fn build(self) -> crate::types::UpdateLabelsPayload {
         crate::types::UpdateLabelsPayload {
-            add_or_update_labels: self.add_or_update_labels,
-            remove_labels: self.remove_labels,
+            add_or_update_labels: self.add_or_update_labels
+            ,
+            remove_labels: self.remove_labels
+            ,
         }
     }
 }
+

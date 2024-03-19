@@ -3,28 +3,28 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClusterParameterGroupOutput {
+pub struct ModifyClusterParameterGroupOutput  {
     /// <p>The name of the cluster parameter group.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub parameter_group_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ModifyClusterParameterGroupOutput {
+impl  ModifyClusterParameterGroupOutput  {
     /// <p>The name of the cluster parameter group.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
-    pub fn parameter_group_status(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_status(&self) -> ::std::option::Option<& str> {
         self.parameter_group_status.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyClusterParameterGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterParameterGroupOutput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput).
     pub fn builder() -> crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder {
@@ -48,8 +48,7 @@ impl ModifyClusterParameterGroupOutputBuilder {
     }
     /// <p>The name of the cluster parameter group.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the cluster parameter group.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl ModifyClusterParameterGroupOutputBuilder {
     }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub fn set_parameter_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_status = input;
-        self
+        self.parameter_group_status = input; self
     }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub fn get_parameter_group_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_group_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyClusterParameterGroupOutput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput).
     pub fn build(self) -> crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput {
         crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput {
-            parameter_group_name: self.parameter_group_name,
-            parameter_group_status: self.parameter_group_status,
+            parameter_group_name: self.parameter_group_name
+            ,
+            parameter_group_status: self.parameter_group_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

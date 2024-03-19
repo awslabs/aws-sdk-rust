@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ruletype = unimplemented!();
 /// match ruletype {
@@ -32,16 +32,14 @@
 /// Specifically, when `ruletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution. Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size. Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting. Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * (Required) The number of resolutions that you specify must be equal to, or greater than, the Max renditions setting. * MediaConvert will create an ABR stack exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum RuleType {
     #[allow(missing_docs)] // documentation missing in model
     AllowedRenditions,
@@ -53,72 +51,68 @@ pub enum RuleType {
     MinTopRenditionSize,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for RuleType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALLOWED_RENDITIONS" => RuleType::AllowedRenditions,
-            "FORCE_INCLUDE_RENDITIONS" => RuleType::ForceIncludeRenditions,
-            "MIN_BOTTOM_RENDITION_SIZE" => RuleType::MinBottomRenditionSize,
-            "MIN_TOP_RENDITION_SIZE" => RuleType::MinTopRenditionSize,
-            other => RuleType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ALLOWED_RENDITIONS" => RuleType::AllowedRenditions,
+"FORCE_INCLUDE_RENDITIONS" => RuleType::ForceIncludeRenditions,
+"MIN_BOTTOM_RENDITION_SIZE" => RuleType::MinBottomRenditionSize,
+"MIN_TOP_RENDITION_SIZE" => RuleType::MinTopRenditionSize,
+other => RuleType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for RuleType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RuleType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(RuleType::from(s))
+                    }
+                }
 impl RuleType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuleType::AllowedRenditions => "ALLOWED_RENDITIONS",
-            RuleType::ForceIncludeRenditions => "FORCE_INCLUDE_RENDITIONS",
-            RuleType::MinBottomRenditionSize => "MIN_BOTTOM_RENDITION_SIZE",
-            RuleType::MinTopRenditionSize => "MIN_TOP_RENDITION_SIZE",
-            RuleType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALLOWED_RENDITIONS",
-            "FORCE_INCLUDE_RENDITIONS",
-            "MIN_BOTTOM_RENDITION_SIZE",
-            "MIN_TOP_RENDITION_SIZE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuleType::AllowedRenditions => "ALLOWED_RENDITIONS",
+    RuleType::ForceIncludeRenditions => "FORCE_INCLUDE_RENDITIONS",
+    RuleType::MinBottomRenditionSize => "MIN_BOTTOM_RENDITION_SIZE",
+    RuleType::MinTopRenditionSize => "MIN_TOP_RENDITION_SIZE",
+    RuleType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALLOWED_RENDITIONS", "FORCE_INCLUDE_RENDITIONS", "MIN_BOTTOM_RENDITION_SIZE", "MIN_TOP_RENDITION_SIZE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for RuleType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl RuleType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for RuleType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            RuleType::AllowedRenditions => write!(f, "ALLOWED_RENDITIONS"),
-            RuleType::ForceIncludeRenditions => write!(f, "FORCE_INCLUDE_RENDITIONS"),
-            RuleType::MinBottomRenditionSize => write!(f, "MIN_BOTTOM_RENDITION_SIZE"),
-            RuleType::MinTopRenditionSize => write!(f, "MIN_TOP_RENDITION_SIZE"),
-            RuleType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                RuleType::AllowedRenditions => write!(f, "ALLOWED_RENDITIONS"),
+RuleType::ForceIncludeRenditions => write!(f, "FORCE_INCLUDE_RENDITIONS"),
+RuleType::MinBottomRenditionSize => write!(f, "MIN_BOTTOM_RENDITION_SIZE"),
+RuleType::MinTopRenditionSize => write!(f, "MIN_TOP_RENDITION_SIZE"),
+RuleType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

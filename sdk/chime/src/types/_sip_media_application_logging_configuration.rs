@@ -3,11 +3,11 @@
 /// <p>Logging configuration of the SIP media application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SipMediaApplicationLoggingConfiguration {
+pub struct SipMediaApplicationLoggingConfiguration  {
     /// <p>Enables application message logs for the SIP media application.</p>
     pub enable_sip_media_application_message_logs: ::std::option::Option<bool>,
 }
-impl SipMediaApplicationLoggingConfiguration {
+impl  SipMediaApplicationLoggingConfiguration  {
     /// <p>Enables application message logs for the SIP media application.</p>
     pub fn enable_sip_media_application_message_logs(&self) -> ::std::option::Option<bool> {
         self.enable_sip_media_application_message_logs
@@ -34,8 +34,7 @@ impl SipMediaApplicationLoggingConfigurationBuilder {
     }
     /// <p>Enables application message logs for the SIP media application.</p>
     pub fn set_enable_sip_media_application_message_logs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_sip_media_application_message_logs = input;
-        self
+        self.enable_sip_media_application_message_logs = input; self
     }
     /// <p>Enables application message logs for the SIP media application.</p>
     pub fn get_enable_sip_media_application_message_logs(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl SipMediaApplicationLoggingConfigurationBuilder {
     /// Consumes the builder and constructs a [`SipMediaApplicationLoggingConfiguration`](crate::types::SipMediaApplicationLoggingConfiguration).
     pub fn build(self) -> crate::types::SipMediaApplicationLoggingConfiguration {
         crate::types::SipMediaApplicationLoggingConfiguration {
-            enable_sip_media_application_message_logs: self.enable_sip_media_application_message_logs,
+            enable_sip_media_application_message_logs: self.enable_sip_media_application_message_logs
+            ,
         }
     }
 }
+

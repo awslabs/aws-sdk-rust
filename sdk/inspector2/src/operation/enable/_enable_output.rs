@@ -2,31 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableOutput {
+pub struct EnableOutput  {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-    pub accounts: ::std::vec::Vec<crate::types::Account>,
+    pub accounts: ::std::vec::Vec::<crate::types::Account>,
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-    pub failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,
+    pub failed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::FailedAccount>>,
     _request_id: Option<String>,
 }
-impl EnableOutput {
+impl  EnableOutput  {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-    pub fn accounts(&self) -> &[crate::types::Account] {
-        use std::ops::Deref;
-        self.accounts.deref()
+    pub fn accounts(&self) -> & [crate::types::Account] {
+        use std::ops::Deref; self.accounts.deref()
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_accounts.is_none()`.
-    pub fn failed_accounts(&self) -> &[crate::types::FailedAccount] {
-        self.failed_accounts.as_deref().unwrap_or_default()
+    pub fn failed_accounts(&self) -> & [crate::types::FailedAccount] {
+        self.failed_accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for EnableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableOutput {
     /// Creates a new builder-style object to manufacture [`EnableOutput`](crate::operation::enable::EnableOutput).
     pub fn builder() -> crate::operation::enable::builders::EnableOutputBuilder {
@@ -38,8 +38,8 @@ impl EnableOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableOutputBuilder {
-    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
-    pub(crate) failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec::<crate::types::Account>>,
+    pub(crate) failed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::FailedAccount>>,
     _request_id: Option<String>,
 }
 impl EnableOutputBuilder {
@@ -50,17 +50,16 @@ impl EnableOutputBuilder {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
     pub fn accounts(mut self, input: crate::types::Account) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input);
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Account>>) -> Self {
+        self.accounts = input; self
     }
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Account>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Account>> {
         &self.accounts
     }
     /// Appends an item to `failed_accounts`.
@@ -70,41 +69,43 @@ impl EnableOutputBuilder {
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
     pub fn failed_accounts(mut self, input: crate::types::FailedAccount) -> Self {
         let mut v = self.failed_accounts.unwrap_or_default();
-        v.push(input);
-        self.failed_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-    pub fn set_failed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>) -> Self {
-        self.failed_accounts = input;
-        self
+    pub fn set_failed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedAccount>>) -> Self {
+        self.failed_accounts = input; self
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-    pub fn get_failed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>> {
+    pub fn get_failed_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedAccount>> {
         &self.failed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableOutput`](crate::operation::enable::EnableOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`accounts`](crate::operation::enable::builders::EnableOutputBuilder::accounts)
     pub fn build(self) -> ::std::result::Result<crate::operation::enable::EnableOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable::EnableOutput {
-            accounts: self.accounts.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "accounts",
-                    "accounts was not specified but it is required when building EnableOutput",
-                )
-            })?,
-            failed_accounts: self.failed_accounts,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::enable::EnableOutput {
+                accounts: self.accounts
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("accounts", "accounts was not specified but it is required when building EnableOutput")
+                    )?
+                ,
+                failed_accounts: self.failed_accounts
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

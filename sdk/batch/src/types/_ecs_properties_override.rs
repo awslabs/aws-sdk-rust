@@ -3,20 +3,21 @@
 /// <p>An object that contains overrides for the Amazon ECS task definition of a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsPropertiesOverride {
+pub struct EcsPropertiesOverride  {
     /// <p>The overrides for the Amazon ECS task definition of a job.</p><note>
     /// <p>This object is currently limited to one element.</p>
     /// </note>
-    pub task_properties: ::std::option::Option<::std::vec::Vec<crate::types::TaskPropertiesOverride>>,
+    pub task_properties: ::std::option::Option<::std::vec::Vec::<crate::types::TaskPropertiesOverride>>,
 }
-impl EcsPropertiesOverride {
+impl  EcsPropertiesOverride  {
     /// <p>The overrides for the Amazon ECS task definition of a job.</p><note>
     /// <p>This object is currently limited to one element.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_properties.is_none()`.
-    pub fn task_properties(&self) -> &[crate::types::TaskPropertiesOverride] {
-        self.task_properties.as_deref().unwrap_or_default()
+    pub fn task_properties(&self) -> & [crate::types::TaskPropertiesOverride] {
+        self.task_properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EcsPropertiesOverride {
@@ -30,7 +31,7 @@ impl EcsPropertiesOverride {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsPropertiesOverrideBuilder {
-    pub(crate) task_properties: ::std::option::Option<::std::vec::Vec<crate::types::TaskPropertiesOverride>>,
+    pub(crate) task_properties: ::std::option::Option<::std::vec::Vec::<crate::types::TaskPropertiesOverride>>,
 }
 impl EcsPropertiesOverrideBuilder {
     /// Appends an item to `task_properties`.
@@ -42,27 +43,28 @@ impl EcsPropertiesOverrideBuilder {
     /// </note>
     pub fn task_properties(mut self, input: crate::types::TaskPropertiesOverride) -> Self {
         let mut v = self.task_properties.unwrap_or_default();
-        v.push(input);
-        self.task_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.task_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The overrides for the Amazon ECS task definition of a job.</p><note>
     /// <p>This object is currently limited to one element.</p>
     /// </note>
-    pub fn set_task_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskPropertiesOverride>>) -> Self {
-        self.task_properties = input;
-        self
+    pub fn set_task_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskPropertiesOverride>>) -> Self {
+        self.task_properties = input; self
     }
     /// <p>The overrides for the Amazon ECS task definition of a job.</p><note>
     /// <p>This object is currently limited to one element.</p>
     /// </note>
-    pub fn get_task_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskPropertiesOverride>> {
+    pub fn get_task_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskPropertiesOverride>> {
         &self.task_properties
     }
     /// Consumes the builder and constructs a [`EcsPropertiesOverride`](crate::types::EcsPropertiesOverride).
     pub fn build(self) -> crate::types::EcsPropertiesOverride {
         crate::types::EcsPropertiesOverride {
-            task_properties: self.task_properties,
+            task_properties: self.task_properties
+            ,
         }
     }
 }
+

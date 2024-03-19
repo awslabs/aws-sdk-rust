@@ -3,24 +3,25 @@
 /// <p>A list of email addresses that you have verified with Amazon SES under your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVerifiedEmailAddressesOutput {
+pub struct ListVerifiedEmailAddressesOutput  {
     /// <p>A list of email addresses that have been verified.</p>
-    pub verified_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub verified_email_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListVerifiedEmailAddressesOutput {
+impl  ListVerifiedEmailAddressesOutput  {
     /// <p>A list of email addresses that have been verified.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_email_addresses.is_none()`.
-    pub fn verified_email_addresses(&self) -> &[::std::string::String] {
-        self.verified_email_addresses.as_deref().unwrap_or_default()
+    pub fn verified_email_addresses(&self) -> & [::std::string::String] {
+        self.verified_email_addresses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListVerifiedEmailAddressesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListVerifiedEmailAddressesOutput {
     /// Creates a new builder-style object to manufacture [`ListVerifiedEmailAddressesOutput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput).
     pub fn builder() -> crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesOutputBuilder {
@@ -32,7 +33,7 @@ impl ListVerifiedEmailAddressesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVerifiedEmailAddressesOutputBuilder {
-    pub(crate) verified_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) verified_email_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListVerifiedEmailAddressesOutputBuilder {
@@ -43,33 +44,34 @@ impl ListVerifiedEmailAddressesOutputBuilder {
     /// <p>A list of email addresses that have been verified.</p>
     pub fn verified_email_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.verified_email_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.verified_email_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.verified_email_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of email addresses that have been verified.</p>
-    pub fn set_verified_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.verified_email_addresses = input;
-        self
+    pub fn set_verified_email_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.verified_email_addresses = input; self
     }
     /// <p>A list of email addresses that have been verified.</p>
-    pub fn get_verified_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_verified_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.verified_email_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListVerifiedEmailAddressesOutput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput).
     pub fn build(self) -> crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput {
         crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput {
-            verified_email_addresses: self.verified_email_addresses,
+            verified_email_addresses: self.verified_email_addresses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

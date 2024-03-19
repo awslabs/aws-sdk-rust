@@ -3,7 +3,7 @@
 /// <p>Detailed information about an instance group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceGroupDetail {
+pub struct InstanceGroupDetail  {
     /// <p>Unique identifier for the instance group.</p>
     pub instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Friendly name for the instance group.</p>
@@ -35,29 +35,29 @@ pub struct InstanceGroupDetail {
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
-impl InstanceGroupDetail {
+impl  InstanceGroupDetail  {
     /// <p>Unique identifier for the instance group.</p>
-    pub fn instance_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_group_id(&self) -> ::std::option::Option<& str> {
         self.instance_group_id.as_deref()
     }
     /// <p>Friendly name for the instance group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
-    pub fn market(&self) -> ::std::option::Option<&crate::types::MarketType> {
+    pub fn market(&self) -> ::std::option::Option<& crate::types::MarketType> {
         self.market.as_ref()
     }
     /// <p>Instance group role in the cluster</p>
-    pub fn instance_role(&self) -> ::std::option::Option<&crate::types::InstanceRoleType> {
+    pub fn instance_role(&self) -> ::std::option::Option<& crate::types::InstanceRoleType> {
         self.instance_role.as_ref()
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    pub fn bid_price(&self) -> ::std::option::Option<&str> {
+    pub fn bid_price(&self) -> ::std::option::Option<& str> {
         self.bid_price.as_deref()
     }
     /// <p>Amazon EC2 instance type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>Target number of instances to run in the instance group.</p>
@@ -69,31 +69,31 @@ impl InstanceGroupDetail {
         self.instance_running_count
     }
     /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceGroupState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::InstanceGroupState> {
         self.state.as_ref()
     }
     /// <p>Details regarding the state of the instance group.</p>
-    pub fn last_state_change_reason(&self) -> ::std::option::Option<&str> {
+    pub fn last_state_change_reason(&self) -> ::std::option::Option<& str> {
         self.last_state_change_reason.as_deref()
     }
     /// <p>The date/time the instance group was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date/time the instance group was started.</p>
-    pub fn start_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date/time the instance group was available to the cluster.</p>
-    pub fn ready_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date/time the instance group was terminated.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn custom_ami_id(&self) -> ::std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> ::std::option::Option<& str> {
         self.custom_ami_id.as_deref()
     }
 }
@@ -132,8 +132,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>Unique identifier for the instance group.</p>
     pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_group_id = input;
-        self
+        self.instance_group_id = input; self
     }
     /// <p>Unique identifier for the instance group.</p>
     pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +145,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>Friendly name for the instance group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Friendly name for the instance group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +159,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     pub fn set_market(mut self, input: ::std::option::Option<crate::types::MarketType>) -> Self {
-        self.market = input;
-        self
+        self.market = input; self
     }
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     pub fn get_market(&self) -> &::std::option::Option<crate::types::MarketType> {
@@ -176,8 +173,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>Instance group role in the cluster</p>
     pub fn set_instance_role(mut self, input: ::std::option::Option<crate::types::InstanceRoleType>) -> Self {
-        self.instance_role = input;
-        self
+        self.instance_role = input; self
     }
     /// <p>Instance group role in the cluster</p>
     pub fn get_instance_role(&self) -> &::std::option::Option<crate::types::InstanceRoleType> {
@@ -190,8 +186,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
     pub fn set_bid_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bid_price = input;
-        self
+        self.bid_price = input; self
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
     pub fn get_bid_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +200,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>Amazon EC2 instance type.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>Amazon EC2 instance type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +214,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>Target number of instances to run in the instance group.</p>
     pub fn set_instance_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_request_count = input;
-        self
+        self.instance_request_count = input; self
     }
     /// <p>Target number of instances to run in the instance group.</p>
     pub fn get_instance_request_count(&self) -> &::std::option::Option<i32> {
@@ -235,8 +228,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>Actual count of running instances.</p>
     pub fn set_instance_running_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_running_count = input;
-        self
+        self.instance_running_count = input; self
     }
     /// <p>Actual count of running instances.</p>
     pub fn get_instance_running_count(&self) -> &::std::option::Option<i32> {
@@ -250,8 +242,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceGroupState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceGroupState> {
@@ -264,8 +255,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>Details regarding the state of the instance group.</p>
     pub fn set_last_state_change_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_state_change_reason = input;
-        self
+        self.last_state_change_reason = input; self
     }
     /// <p>Details regarding the state of the instance group.</p>
     pub fn get_last_state_change_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,8 +269,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>The date/time the instance group was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date/time the instance group was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -293,8 +282,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>The date/time the instance group was started.</p>
     pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date_time = input;
-        self
+        self.start_date_time = input; self
     }
     /// <p>The date/time the instance group was started.</p>
     pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -307,8 +295,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>The date/time the instance group was available to the cluster.</p>
     pub fn set_ready_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ready_date_time = input;
-        self
+        self.ready_date_time = input; self
     }
     /// <p>The date/time the instance group was available to the cluster.</p>
     pub fn get_ready_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -321,8 +308,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>The date/time the instance group was terminated.</p>
     pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input;
-        self
+        self.end_date_time = input; self
     }
     /// <p>The date/time the instance group was terminated.</p>
     pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -335,8 +321,7 @@ impl InstanceGroupDetailBuilder {
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     pub fn set_custom_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_ami_id = input;
-        self
+        self.custom_ami_id = input; self
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     pub fn get_custom_ami_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -345,21 +330,37 @@ impl InstanceGroupDetailBuilder {
     /// Consumes the builder and constructs a [`InstanceGroupDetail`](crate::types::InstanceGroupDetail).
     pub fn build(self) -> crate::types::InstanceGroupDetail {
         crate::types::InstanceGroupDetail {
-            instance_group_id: self.instance_group_id,
-            name: self.name,
-            market: self.market,
-            instance_role: self.instance_role,
-            bid_price: self.bid_price,
-            instance_type: self.instance_type,
-            instance_request_count: self.instance_request_count,
-            instance_running_count: self.instance_running_count,
-            state: self.state,
-            last_state_change_reason: self.last_state_change_reason,
-            creation_date_time: self.creation_date_time,
-            start_date_time: self.start_date_time,
-            ready_date_time: self.ready_date_time,
-            end_date_time: self.end_date_time,
-            custom_ami_id: self.custom_ami_id,
+            instance_group_id: self.instance_group_id
+            ,
+            name: self.name
+            ,
+            market: self.market
+            ,
+            instance_role: self.instance_role
+            ,
+            bid_price: self.bid_price
+            ,
+            instance_type: self.instance_type
+            ,
+            instance_request_count: self.instance_request_count
+            ,
+            instance_running_count: self.instance_running_count
+            ,
+            state: self.state
+            ,
+            last_state_change_reason: self.last_state_change_reason
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            start_date_time: self.start_date_time
+            ,
+            ready_date_time: self.ready_date_time
+            ,
+            end_date_time: self.end_date_time
+            ,
+            custom_ami_id: self.custom_ami_id
+            ,
         }
     }
 }
+

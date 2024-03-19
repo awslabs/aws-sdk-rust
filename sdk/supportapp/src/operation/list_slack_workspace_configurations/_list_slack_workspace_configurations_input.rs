@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSlackWorkspaceConfigurationsInput {
+pub struct ListSlackWorkspaceConfigurationsInput  {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListSlackWorkspaceConfigurationsInput {
+impl  ListSlackWorkspaceConfigurationsInput  {
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -33,22 +33,20 @@ impl ListSlackWorkspaceConfigurationsInputBuilder {
     }
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSlackWorkspaceConfigurationsInput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput { next_token: self.next_token },
+            crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsInput {
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

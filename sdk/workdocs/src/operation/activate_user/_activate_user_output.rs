@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivateUserOutput {
+pub struct ActivateUserOutput  {
     /// <p>The user information.</p>
     pub user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,
 }
-impl ActivateUserOutput {
+impl  ActivateUserOutput  {
     /// <p>The user information.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::User> {
         self.user.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ActivateUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ActivateUserOutput {
     /// Creates a new builder-style object to manufacture [`ActivateUserOutput`](crate::operation::activate_user::ActivateUserOutput).
     pub fn builder() -> crate::operation::activate_user::builders::ActivateUserOutputBuilder {
@@ -40,27 +40,28 @@ impl ActivateUserOutputBuilder {
     }
     /// <p>The user information.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>The user information.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
         &self.user
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ActivateUserOutput`](crate::operation::activate_user::ActivateUserOutput).
     pub fn build(self) -> crate::operation::activate_user::ActivateUserOutput {
         crate::operation::activate_user::ActivateUserOutput {
-            user: self.user,
+            user: self.user
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

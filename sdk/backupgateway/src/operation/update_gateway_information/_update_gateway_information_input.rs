@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGatewayInformationInput {
+pub struct UpdateGatewayInformationInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated display name of the gateway.</p>
     pub gateway_display_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGatewayInformationInput {
+impl  UpdateGatewayInformationInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The updated display name of the gateway.</p>
-    pub fn gateway_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_display_name(&self) -> ::std::option::Option<& str> {
         self.gateway_display_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateGatewayInformationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl UpdateGatewayInformationInputBuilder {
     }
     /// <p>The updated display name of the gateway.</p>
     pub fn set_gateway_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_display_name = input;
-        self
+        self.gateway_display_name = input; self
     }
     /// <p>The updated display name of the gateway.</p>
     pub fn get_gateway_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_display_name
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_gateway_information::UpdateGatewayInformationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_gateway_information::UpdateGatewayInformationInput {
-            gateway_arn: self.gateway_arn,
-            gateway_display_name: self.gateway_display_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_gateway_information::UpdateGatewayInformationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_gateway_information::UpdateGatewayInformationInput {
+                gateway_arn: self.gateway_arn
+                ,
+                gateway_display_name: self.gateway_display_name
+                ,
+            }
+        )
     }
 }
+

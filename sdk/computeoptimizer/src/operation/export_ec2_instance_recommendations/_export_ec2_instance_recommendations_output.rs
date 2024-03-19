@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportEc2InstanceRecommendationsOutput {
+pub struct ExportEc2InstanceRecommendationsOutput  {
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -10,22 +10,22 @@ pub struct ExportEc2InstanceRecommendationsOutput {
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
     _request_id: Option<String>,
 }
-impl ExportEc2InstanceRecommendationsOutput {
+impl  ExportEc2InstanceRecommendationsOutput  {
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
-    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<& crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportEc2InstanceRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportEc2InstanceRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsOutput`](crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput).
     pub fn builder() -> crate::operation::export_ec2_instance_recommendations::builders::ExportEc2InstanceRecommendationsOutputBuilder {
@@ -51,8 +51,7 @@ impl ExportEc2InstanceRecommendationsOutputBuilder {
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identification number of the export job.</p>
     /// <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
@@ -66,28 +65,30 @@ impl ExportEc2InstanceRecommendationsOutputBuilder {
     }
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
     pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
-        self.s3_destination = input;
-        self
+        self.s3_destination = input; self
     }
     /// <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
     pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
         &self.s3_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportEc2InstanceRecommendationsOutput`](crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput).
     pub fn build(self) -> crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput {
         crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput {
-            job_id: self.job_id,
-            s3_destination: self.s3_destination,
+            job_id: self.job_id
+            ,
+            s3_destination: self.s3_destination
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

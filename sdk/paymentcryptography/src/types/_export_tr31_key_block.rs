@@ -3,15 +3,14 @@
 /// <p>Parameter information for key material export using symmetric TR-31 key exchange method.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportTr31KeyBlock {
+pub struct ExportTr31KeyBlock  {
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
     pub wrapping_key_identifier: ::std::string::String,
 }
-impl ExportTr31KeyBlock {
+impl  ExportTr31KeyBlock  {
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
-    pub fn wrapping_key_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.wrapping_key_identifier.deref()
+    pub fn wrapping_key_identifier(&self) -> & str {
+        use std::ops::Deref; self.wrapping_key_identifier.deref()
     }
 }
 impl ExportTr31KeyBlock {
@@ -36,8 +35,7 @@ impl ExportTr31KeyBlockBuilder {
     }
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
     pub fn set_wrapping_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wrapping_key_identifier = input;
-        self
+        self.wrapping_key_identifier = input; self
     }
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
     pub fn get_wrapping_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ExportTr31KeyBlockBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`wrapping_key_identifier`](crate::types::builders::ExportTr31KeyBlockBuilder::wrapping_key_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportTr31KeyBlock, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportTr31KeyBlock {
-            wrapping_key_identifier: self.wrapping_key_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "wrapping_key_identifier",
-                    "wrapping_key_identifier was not specified but it is required when building ExportTr31KeyBlock",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportTr31KeyBlock {
+                wrapping_key_identifier: self.wrapping_key_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("wrapping_key_identifier", "wrapping_key_identifier was not specified but it is required when building ExportTr31KeyBlock")
+                    )?
+                ,
+            }
+        )
     }
 }
+

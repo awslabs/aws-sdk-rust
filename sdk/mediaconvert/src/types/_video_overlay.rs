@@ -3,7 +3,7 @@
 /// Overlay one or more videos on top of your input video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-overlays.html
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoOverlay {
+pub struct VideoOverlay  {
     /// Enter the end timecode in the underlying input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00.
     pub end_timecode: ::std::option::Option<::std::string::String>,
     /// Input settings for Video overlay. You can include one or more video overlays in sequence at different times that you specify.
@@ -11,17 +11,17 @@ pub struct VideoOverlay {
     /// Enter the start timecode in the underlying input video for this overlay. Your overlay will be active starting with this frame. To display your video overlay starting at the beginning of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to begin five minutes into the video, enter 01:05:00:00.
     pub start_timecode: ::std::option::Option<::std::string::String>,
 }
-impl VideoOverlay {
+impl  VideoOverlay  {
     /// Enter the end timecode in the underlying input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00.
-    pub fn end_timecode(&self) -> ::std::option::Option<&str> {
+    pub fn end_timecode(&self) -> ::std::option::Option<& str> {
         self.end_timecode.as_deref()
     }
     /// Input settings for Video overlay. You can include one or more video overlays in sequence at different times that you specify.
-    pub fn input(&self) -> ::std::option::Option<&crate::types::VideoOverlayInput> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::VideoOverlayInput> {
         self.input.as_ref()
     }
     /// Enter the start timecode in the underlying input video for this overlay. Your overlay will be active starting with this frame. To display your video overlay starting at the beginning of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to begin five minutes into the video, enter 01:05:00:00.
-    pub fn start_timecode(&self) -> ::std::option::Option<&str> {
+    pub fn start_timecode(&self) -> ::std::option::Option<& str> {
         self.start_timecode.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl VideoOverlayBuilder {
     }
     /// Enter the end timecode in the underlying input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00.
     pub fn set_end_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_timecode = input;
-        self
+        self.end_timecode = input; self
     }
     /// Enter the end timecode in the underlying input video for this overlay. Your overlay will be active through this frame. To display your video overlay for the duration of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes into the video, enter 01:10:00:00.
     pub fn get_end_timecode(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl VideoOverlayBuilder {
     }
     /// Input settings for Video overlay. You can include one or more video overlays in sequence at different times that you specify.
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::VideoOverlayInput>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// Input settings for Video overlay. You can include one or more video overlays in sequence at different times that you specify.
     pub fn get_input(&self) -> &::std::option::Option<crate::types::VideoOverlayInput> {
@@ -76,8 +74,7 @@ impl VideoOverlayBuilder {
     }
     /// Enter the start timecode in the underlying input video for this overlay. Your overlay will be active starting with this frame. To display your video overlay starting at the beginning of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to begin five minutes into the video, enter 01:05:00:00.
     pub fn set_start_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_timecode = input;
-        self
+        self.start_timecode = input; self
     }
     /// Enter the start timecode in the underlying input video for this overlay. Your overlay will be active starting with this frame. To display your video overlay starting at the beginning of the underlying video: Leave blank. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for the underlying Input timecode source. For example, if you have embedded timecodes that start at 01:00:00:00 and you want your overlay to begin five minutes into the video, enter 01:05:00:00.
     pub fn get_start_timecode(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl VideoOverlayBuilder {
     /// Consumes the builder and constructs a [`VideoOverlay`](crate::types::VideoOverlay).
     pub fn build(self) -> crate::types::VideoOverlay {
         crate::types::VideoOverlay {
-            end_timecode: self.end_timecode,
-            input: self.input,
-            start_timecode: self.start_timecode,
+            end_timecode: self.end_timecode
+            ,
+            input: self.input
+            ,
+            start_timecode: self.start_timecode
+            ,
         }
     }
 }
+

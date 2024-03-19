@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowExecutionsOutput {
+pub struct DescribeMaintenanceWindowExecutionsOutput  {
     /// <p>Information about the maintenance window executions.</p>
-    pub window_executions: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecution>>,
+    pub window_executions: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowExecution>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeMaintenanceWindowExecutionsOutput {
+impl  DescribeMaintenanceWindowExecutionsOutput  {
     /// <p>Information about the maintenance window executions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.window_executions.is_none()`.
-    pub fn window_executions(&self) -> &[crate::types::MaintenanceWindowExecution] {
-        self.window_executions.as_deref().unwrap_or_default()
+    pub fn window_executions(&self) -> & [crate::types::MaintenanceWindowExecution] {
+        self.window_executions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMaintenanceWindowExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMaintenanceWindowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionsOutput`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput).
     pub fn builder() -> crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeMaintenanceWindowExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionsOutputBuilder {
-    pub(crate) window_executions: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecution>>,
+    pub(crate) window_executions: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowExecution>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeMaintenanceWindowExecutionsOutputBuilder {
     /// <p>Information about the maintenance window executions.</p>
     pub fn window_executions(mut self, input: crate::types::MaintenanceWindowExecution) -> Self {
         let mut v = self.window_executions.unwrap_or_default();
-        v.push(input);
-        self.window_executions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.window_executions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the maintenance window executions.</p>
-    pub fn set_window_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecution>>) -> Self {
-        self.window_executions = input;
-        self
+    pub fn set_window_executions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowExecution>>) -> Self {
+        self.window_executions = input; self
     }
     /// <p>Information about the maintenance window executions.</p>
-    pub fn get_window_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowExecution>> {
+    pub fn get_window_executions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MaintenanceWindowExecution>> {
         &self.window_executions
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -69,28 +69,30 @@ impl DescribeMaintenanceWindowExecutionsOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionsOutput`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput).
     pub fn build(self) -> crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput {
         crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput {
-            window_executions: self.window_executions,
-            next_token: self.next_token,
+            window_executions: self.window_executions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

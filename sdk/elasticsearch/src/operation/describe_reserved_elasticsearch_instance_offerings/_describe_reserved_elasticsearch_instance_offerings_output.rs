@@ -3,35 +3,34 @@
 /// <p>Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedElasticsearchInstanceOfferingsOutput {
+pub struct DescribeReservedElasticsearchInstanceOfferingsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of reserved Elasticsearch instance offerings</p>
-    pub reserved_elasticsearch_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
+    pub reserved_elasticsearch_instance_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedElasticsearchInstanceOffering>>,
     _request_id: Option<String>,
 }
-impl DescribeReservedElasticsearchInstanceOfferingsOutput {
+impl  DescribeReservedElasticsearchInstanceOfferingsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of reserved Elasticsearch instance offerings</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_elasticsearch_instance_offerings.is_none()`.
-    pub fn reserved_elasticsearch_instance_offerings(&self) -> &[crate::types::ReservedElasticsearchInstanceOffering] {
-        self.reserved_elasticsearch_instance_offerings.as_deref().unwrap_or_default()
+    pub fn reserved_elasticsearch_instance_offerings(&self) -> & [crate::types::ReservedElasticsearchInstanceOffering] {
+        self.reserved_elasticsearch_instance_offerings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReservedElasticsearchInstanceOfferingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReservedElasticsearchInstanceOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
         crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder::default()
     }
 }
@@ -41,7 +40,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_elasticsearch_instance_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
+    pub(crate) reserved_elasticsearch_instance_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedElasticsearchInstanceOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
@@ -52,8 +51,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,39 +64,36 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     /// <p>List of reserved Elasticsearch instance offerings</p>
     pub fn reserved_elasticsearch_instance_offerings(mut self, input: crate::types::ReservedElasticsearchInstanceOffering) -> Self {
         let mut v = self.reserved_elasticsearch_instance_offerings.unwrap_or_default();
-        v.push(input);
-        self.reserved_elasticsearch_instance_offerings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reserved_elasticsearch_instance_offerings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of reserved Elasticsearch instance offerings</p>
-    pub fn set_reserved_elasticsearch_instance_offerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
-    ) -> Self {
-        self.reserved_elasticsearch_instance_offerings = input;
-        self
+    pub fn set_reserved_elasticsearch_instance_offerings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedElasticsearchInstanceOffering>>) -> Self {
+        self.reserved_elasticsearch_instance_offerings = input; self
     }
     /// <p>List of reserved Elasticsearch instance offerings</p>
-    pub fn get_reserved_elasticsearch_instance_offerings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>> {
+    pub fn get_reserved_elasticsearch_instance_offerings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservedElasticsearchInstanceOffering>> {
         &self.reserved_elasticsearch_instance_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput).
     pub fn build(self) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput {
         crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput {
-            next_token: self.next_token,
-            reserved_elasticsearch_instance_offerings: self.reserved_elasticsearch_instance_offerings,
+            next_token: self.next_token
+            ,
+            reserved_elasticsearch_instance_offerings: self.reserved_elasticsearch_instance_offerings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

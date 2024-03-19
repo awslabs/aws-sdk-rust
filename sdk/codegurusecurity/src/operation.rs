@@ -39,3 +39,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAccountConfiguration` operation.
 pub mod update_account_configuration;
+

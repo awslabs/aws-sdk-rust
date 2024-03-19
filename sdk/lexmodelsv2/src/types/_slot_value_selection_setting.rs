@@ -3,7 +3,7 @@
 /// <p>Contains settings used by Amazon Lex to select a slot value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotValueSelectionSetting {
+pub struct SlotValueSelectionSetting  {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct SlotValueSelectionSetting {
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
     pub advanced_recognition_setting: ::std::option::Option<crate::types::AdvancedRecognitionSetting>,
 }
-impl SlotValueSelectionSetting {
+impl  SlotValueSelectionSetting  {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
     /// <li>
@@ -27,15 +27,15 @@ impl SlotValueSelectionSetting {
     /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    pub fn resolution_strategy(&self) -> &crate::types::SlotValueResolutionStrategy {
+    pub fn resolution_strategy(&self) -> & crate::types::SlotValueResolutionStrategy {
         &self.resolution_strategy
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
-    pub fn regex_filter(&self) -> ::std::option::Option<&crate::types::SlotValueRegexFilter> {
+    pub fn regex_filter(&self) -> ::std::option::Option<& crate::types::SlotValueRegexFilter> {
         self.regex_filter.as_ref()
     }
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
-    pub fn advanced_recognition_setting(&self) -> ::std::option::Option<&crate::types::AdvancedRecognitionSetting> {
+    pub fn advanced_recognition_setting(&self) -> ::std::option::Option<& crate::types::AdvancedRecognitionSetting> {
         self.advanced_recognition_setting.as_ref()
     }
 }
@@ -77,8 +77,7 @@ impl SlotValueSelectionSettingBuilder {
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn set_resolution_strategy(mut self, input: ::std::option::Option<crate::types::SlotValueResolutionStrategy>) -> Self {
-        self.resolution_strategy = input;
-        self
+        self.resolution_strategy = input; self
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
@@ -98,8 +97,7 @@ impl SlotValueSelectionSettingBuilder {
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub fn set_regex_filter(mut self, input: ::std::option::Option<crate::types::SlotValueRegexFilter>) -> Self {
-        self.regex_filter = input;
-        self
+        self.regex_filter = input; self
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub fn get_regex_filter(&self) -> &::std::option::Option<crate::types::SlotValueRegexFilter> {
@@ -112,8 +110,7 @@ impl SlotValueSelectionSettingBuilder {
     }
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
     pub fn set_advanced_recognition_setting(mut self, input: ::std::option::Option<crate::types::AdvancedRecognitionSetting>) -> Self {
-        self.advanced_recognition_setting = input;
-        self
+        self.advanced_recognition_setting = input; self
     }
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
     pub fn get_advanced_recognition_setting(&self) -> &::std::option::Option<crate::types::AdvancedRecognitionSetting> {
@@ -123,15 +120,19 @@ impl SlotValueSelectionSettingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resolution_strategy`](crate::types::builders::SlotValueSelectionSettingBuilder::resolution_strategy)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotValueSelectionSetting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotValueSelectionSetting {
-            resolution_strategy: self.resolution_strategy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resolution_strategy",
-                    "resolution_strategy was not specified but it is required when building SlotValueSelectionSetting",
-                )
-            })?,
-            regex_filter: self.regex_filter,
-            advanced_recognition_setting: self.advanced_recognition_setting,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotValueSelectionSetting {
+                resolution_strategy: self.resolution_strategy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resolution_strategy", "resolution_strategy was not specified but it is required when building SlotValueSelectionSetting")
+                    )?
+                ,
+                regex_filter: self.regex_filter
+                ,
+                advanced_recognition_setting: self.advanced_recognition_setting
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A request to change your account's suppression preferences.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountSuppressionAttributesInput {
+pub struct PutAccountSuppressionAttributesInput  {
     /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
     /// <li>
@@ -11,9 +11,9 @@ pub struct PutAccountSuppressionAttributesInput {
     /// <li>
     /// <p><code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p></li>
     /// </ul>
-    pub suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub suppressed_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::SuppressionListReason>>,
 }
-impl PutAccountSuppressionAttributesInput {
+impl  PutAccountSuppressionAttributesInput  {
     /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
     /// <li>
@@ -21,10 +21,11 @@ impl PutAccountSuppressionAttributesInput {
     /// <li>
     /// <p><code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suppressed_reasons.is_none()`.
-    pub fn suppressed_reasons(&self) -> &[crate::types::SuppressionListReason] {
-        self.suppressed_reasons.as_deref().unwrap_or_default()
+    pub fn suppressed_reasons(&self) -> & [crate::types::SuppressionListReason] {
+        self.suppressed_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutAccountSuppressionAttributesInput {
@@ -38,7 +39,7 @@ impl PutAccountSuppressionAttributesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountSuppressionAttributesInputBuilder {
-    pub(crate) suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub(crate) suppressed_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::SuppressionListReason>>,
 }
 impl PutAccountSuppressionAttributesInputBuilder {
     /// Appends an item to `suppressed_reasons`.
@@ -54,9 +55,9 @@ impl PutAccountSuppressionAttributesInputBuilder {
     /// </ul>
     pub fn suppressed_reasons(mut self, input: crate::types::SuppressionListReason) -> Self {
         let mut v = self.suppressed_reasons.unwrap_or_default();
-        v.push(input);
-        self.suppressed_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suppressed_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
@@ -65,9 +66,8 @@ impl PutAccountSuppressionAttributesInputBuilder {
     /// <li>
     /// <p><code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p></li>
     /// </ul>
-    pub fn set_suppressed_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
-        self.suppressed_reasons = input;
-        self
+    pub fn set_suppressed_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuppressionListReason>>) -> Self {
+        self.suppressed_reasons = input; self
     }
     /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
@@ -76,20 +76,17 @@ impl PutAccountSuppressionAttributesInputBuilder {
     /// <li>
     /// <p><code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p></li>
     /// </ul>
-    pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+    pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuppressionListReason>> {
         &self.suppressed_reasons
     }
     /// Consumes the builder and constructs a [`PutAccountSuppressionAttributesInput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesInput {
-                suppressed_reasons: self.suppressed_reasons,
-            },
+                suppressed_reasons: self.suppressed_reasons
+                ,
+            }
         )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Describes an artifact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Artifact {
+pub struct Artifact  {
     /// <p>The file name for the artifact.</p>
     pub artifact_file_name: ::std::string::String,
     /// <p>The unique ID for the artifact.</p>
     pub artifact_id: ::std::string::String,
 }
-impl Artifact {
+impl  Artifact  {
     /// <p>The file name for the artifact.</p>
-    pub fn artifact_file_name(&self) -> &str {
-        use std::ops::Deref;
-        self.artifact_file_name.deref()
+    pub fn artifact_file_name(&self) -> & str {
+        use std::ops::Deref; self.artifact_file_name.deref()
     }
     /// <p>The unique ID for the artifact.</p>
-    pub fn artifact_id(&self) -> &str {
-        use std::ops::Deref;
-        self.artifact_id.deref()
+    pub fn artifact_id(&self) -> & str {
+        use std::ops::Deref; self.artifact_id.deref()
     }
 }
 impl Artifact {
@@ -44,8 +42,7 @@ impl ArtifactBuilder {
     }
     /// <p>The file name for the artifact.</p>
     pub fn set_artifact_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_file_name = input;
-        self
+        self.artifact_file_name = input; self
     }
     /// <p>The file name for the artifact.</p>
     pub fn get_artifact_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ArtifactBuilder {
     }
     /// <p>The unique ID for the artifact.</p>
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_id = input;
-        self
+        self.artifact_id = input; self
     }
     /// <p>The unique ID for the artifact.</p>
     pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ArtifactBuilder {
     /// - [`artifact_file_name`](crate::types::builders::ArtifactBuilder::artifact_file_name)
     /// - [`artifact_id`](crate::types::builders::ArtifactBuilder::artifact_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Artifact, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Artifact {
-            artifact_file_name: self.artifact_file_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "artifact_file_name",
-                    "artifact_file_name was not specified but it is required when building Artifact",
-                )
-            })?,
-            artifact_id: self.artifact_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "artifact_id",
-                    "artifact_id was not specified but it is required when building Artifact",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Artifact {
+                artifact_file_name: self.artifact_file_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("artifact_file_name", "artifact_file_name was not specified but it is required when building Artifact")
+                    )?
+                ,
+                artifact_id: self.artifact_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("artifact_id", "artifact_id was not specified but it is required when building Artifact")
+                    )?
+                ,
+            }
+        )
     }
 }
+

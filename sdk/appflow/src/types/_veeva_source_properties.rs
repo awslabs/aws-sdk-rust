@@ -3,7 +3,7 @@
 /// <p>The properties that are applied when using Veeva as a flow source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VeevaSourceProperties {
+pub struct VeevaSourceProperties  {
     /// <p>The object specified in the Veeva flow source.</p>
     pub object: ::std::string::String,
     /// <p>The document type specified in the Veeva document extract flow.</p>
@@ -15,14 +15,13 @@ pub struct VeevaSourceProperties {
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub include_all_versions: bool,
 }
-impl VeevaSourceProperties {
+impl  VeevaSourceProperties  {
     /// <p>The object specified in the Veeva flow source.</p>
-    pub fn object(&self) -> &str {
-        use std::ops::Deref;
-        self.object.deref()
+    pub fn object(&self) -> & str {
+        use std::ops::Deref; self.object.deref()
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
-    pub fn document_type(&self) -> ::std::option::Option<&str> {
+    pub fn document_type(&self) -> ::std::option::Option<& str> {
         self.document_type.as_deref()
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
@@ -64,8 +63,7 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>The object specified in the Veeva flow source.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// <p>The object specified in the Veeva flow source.</p>
     pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
     pub fn set_document_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_type = input;
-        self
+        self.document_type = input; self
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
     pub fn get_document_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
     pub fn set_include_source_files(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_source_files = input;
-        self
+        self.include_source_files = input; self
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
     pub fn get_include_source_files(&self) -> &::std::option::Option<bool> {
@@ -106,8 +102,7 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
     pub fn set_include_renditions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_renditions = input;
-        self
+        self.include_renditions = input; self
     }
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
     pub fn get_include_renditions(&self) -> &::std::option::Option<bool> {
@@ -120,8 +115,7 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub fn set_include_all_versions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_all_versions = input;
-        self
+        self.include_all_versions = input; self
     }
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub fn get_include_all_versions(&self) -> &::std::option::Option<bool> {
@@ -131,17 +125,26 @@ impl VeevaSourcePropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object`](crate::types::builders::VeevaSourcePropertiesBuilder::object)
     pub fn build(self) -> ::std::result::Result<crate::types::VeevaSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VeevaSourceProperties {
-            object: self.object.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object",
-                    "object was not specified but it is required when building VeevaSourceProperties",
-                )
-            })?,
-            document_type: self.document_type,
-            include_source_files: self.include_source_files.unwrap_or_default(),
-            include_renditions: self.include_renditions.unwrap_or_default(),
-            include_all_versions: self.include_all_versions.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::VeevaSourceProperties {
+                object: self.object
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object", "object was not specified but it is required when building VeevaSourceProperties")
+                    )?
+                ,
+                document_type: self.document_type
+                ,
+                include_source_files: self.include_source_files
+                    .unwrap_or_default()
+                ,
+                include_renditions: self.include_renditions
+                    .unwrap_or_default()
+                ,
+                include_all_versions: self.include_all_versions
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

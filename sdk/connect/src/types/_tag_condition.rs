@@ -3,19 +3,19 @@
 /// <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagCondition {
+pub struct TagCondition  {
     /// <p>The tag key in the tag condition.</p>
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value in the tag condition.</p>
     pub tag_value: ::std::option::Option<::std::string::String>,
 }
-impl TagCondition {
+impl  TagCondition  {
     /// <p>The tag key in the tag condition.</p>
-    pub fn tag_key(&self) -> ::std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>The tag value in the tag condition.</p>
-    pub fn tag_value(&self) -> ::std::option::Option<&str> {
+    pub fn tag_value(&self) -> ::std::option::Option<& str> {
         self.tag_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TagConditionBuilder {
     }
     /// <p>The tag key in the tag condition.</p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
     }
     /// <p>The tag key in the tag condition.</p>
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TagConditionBuilder {
     }
     /// <p>The tag value in the tag condition.</p>
     pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_value = input;
-        self
+        self.tag_value = input; self
     }
     /// <p>The tag value in the tag condition.</p>
     pub fn get_tag_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TagConditionBuilder {
     /// Consumes the builder and constructs a [`TagCondition`](crate::types::TagCondition).
     pub fn build(self) -> crate::types::TagCondition {
         crate::types::TagCondition {
-            tag_key: self.tag_key,
-            tag_value: self.tag_value,
+            tag_key: self.tag_key
+            ,
+            tag_value: self.tag_value
+            ,
         }
     }
 }
+

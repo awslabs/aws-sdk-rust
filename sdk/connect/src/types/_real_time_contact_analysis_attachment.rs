@@ -3,7 +3,7 @@
 /// <p>Object that describes attached file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisAttachment {
+pub struct RealTimeContactAnalysisAttachment  {
     /// <p>A case-sensitive name of the attachment being uploaded. Can be redacted.</p>
     pub attachment_name: ::std::string::String,
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
@@ -13,23 +13,21 @@ pub struct RealTimeContactAnalysisAttachment {
     /// <p>Status of the attachment.</p>
     pub status: ::std::option::Option<crate::types::ArtifactStatus>,
 }
-impl RealTimeContactAnalysisAttachment {
+impl  RealTimeContactAnalysisAttachment  {
     /// <p>A case-sensitive name of the attachment being uploaded. Can be redacted.</p>
-    pub fn attachment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.attachment_name.deref()
+    pub fn attachment_name(&self) -> & str {
+        use std::ops::Deref; self.attachment_name.deref()
     }
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>A unique identifier for the attachment.</p>
-    pub fn attachment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.attachment_id.deref()
+    pub fn attachment_id(&self) -> & str {
+        use std::ops::Deref; self.attachment_id.deref()
     }
     /// <p>Status of the attachment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ArtifactStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ArtifactStatus> {
         self.status.as_ref()
     }
 }
@@ -58,8 +56,7 @@ impl RealTimeContactAnalysisAttachmentBuilder {
     }
     /// <p>A case-sensitive name of the attachment being uploaded. Can be redacted.</p>
     pub fn set_attachment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_name = input;
-        self
+        self.attachment_name = input; self
     }
     /// <p>A case-sensitive name of the attachment being uploaded. Can be redacted.</p>
     pub fn get_attachment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl RealTimeContactAnalysisAttachmentBuilder {
     }
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl RealTimeContactAnalysisAttachmentBuilder {
     }
     /// <p>A unique identifier for the attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>A unique identifier for the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +96,7 @@ impl RealTimeContactAnalysisAttachmentBuilder {
     }
     /// <p>Status of the attachment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ArtifactStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the attachment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ArtifactStatus> {
@@ -113,21 +107,24 @@ impl RealTimeContactAnalysisAttachmentBuilder {
     /// - [`attachment_name`](crate::types::builders::RealTimeContactAnalysisAttachmentBuilder::attachment_name)
     /// - [`attachment_id`](crate::types::builders::RealTimeContactAnalysisAttachmentBuilder::attachment_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisAttachment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisAttachment {
-            attachment_name: self.attachment_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attachment_name",
-                    "attachment_name was not specified but it is required when building RealTimeContactAnalysisAttachment",
-                )
-            })?,
-            content_type: self.content_type,
-            attachment_id: self.attachment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attachment_id",
-                    "attachment_id was not specified but it is required when building RealTimeContactAnalysisAttachment",
-                )
-            })?,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisAttachment {
+                attachment_name: self.attachment_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attachment_name", "attachment_name was not specified but it is required when building RealTimeContactAnalysisAttachment")
+                    )?
+                ,
+                content_type: self.content_type
+                ,
+                attachment_id: self.attachment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attachment_id", "attachment_id was not specified but it is required when building RealTimeContactAnalysisAttachment")
+                    )?
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

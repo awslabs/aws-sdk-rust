@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssetInput {
+pub struct UpdateAssetInput  {
     /// <p>The unique identifier for an asset.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a data set.</p>
@@ -12,21 +12,21 @@ pub struct UpdateAssetInput {
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAssetInput {
+impl  UpdateAssetInput  {
     /// <p>The unique identifier for an asset.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in LF-tag policy" are used as the name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateAssetInputBuilder {
     }
     /// <p>The unique identifier for an asset.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The unique identifier for an asset.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateAssetInputBuilder {
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateAssetInputBuilder {
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in LF-tag policy" are used as the name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in LF-tag policy" are used as the name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +97,7 @@ impl UpdateAssetInputBuilder {
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,11 +105,18 @@ impl UpdateAssetInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateAssetInput`](crate::operation::update_asset::UpdateAssetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_asset::UpdateAssetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_asset::UpdateAssetInput {
-            asset_id: self.asset_id,
-            data_set_id: self.data_set_id,
-            name: self.name,
-            revision_id: self.revision_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_asset::UpdateAssetInput {
+                asset_id: self.asset_id
+                ,
+                data_set_id: self.data_set_id
+                ,
+                name: self.name
+                ,
+                revision_id: self.revision_id
+                ,
+            }
+        )
     }
 }
+

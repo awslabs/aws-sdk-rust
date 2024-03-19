@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>DescribeScraper</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScraperOutput {
+pub struct DescribeScraperOutput  {
     /// <p>Contains details about the scraper.</p>
     pub scraper: ::std::option::Option<crate::types::ScraperDescription>,
     _request_id: Option<String>,
 }
-impl DescribeScraperOutput {
+impl  DescribeScraperOutput  {
     /// <p>Contains details about the scraper.</p>
-    pub fn scraper(&self) -> ::std::option::Option<&crate::types::ScraperDescription> {
+    pub fn scraper(&self) -> ::std::option::Option<& crate::types::ScraperDescription> {
         self.scraper.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeScraperOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeScraperOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScraperOutput`](crate::operation::describe_scraper::DescribeScraperOutput).
     pub fn builder() -> crate::operation::describe_scraper::builders::DescribeScraperOutputBuilder {
@@ -42,27 +42,28 @@ impl DescribeScraperOutputBuilder {
     }
     /// <p>Contains details about the scraper.</p>
     pub fn set_scraper(mut self, input: ::std::option::Option<crate::types::ScraperDescription>) -> Self {
-        self.scraper = input;
-        self
+        self.scraper = input; self
     }
     /// <p>Contains details about the scraper.</p>
     pub fn get_scraper(&self) -> &::std::option::Option<crate::types::ScraperDescription> {
         &self.scraper
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeScraperOutput`](crate::operation::describe_scraper::DescribeScraperOutput).
     pub fn build(self) -> crate::operation::describe_scraper::DescribeScraperOutput {
         crate::operation::describe_scraper::DescribeScraperOutput {
-            scraper: self.scraper,
+            scraper: self.scraper
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

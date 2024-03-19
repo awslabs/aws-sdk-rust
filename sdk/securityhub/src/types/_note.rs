@@ -3,7 +3,7 @@
 /// <p>A user-defined note added to a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Note {
+pub struct Note  {
     /// <p>The text of a note.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The principal that created a note.</p>
@@ -12,18 +12,18 @@ pub struct Note {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub updated_at: ::std::option::Option<::std::string::String>,
 }
-impl Note {
+impl  Note  {
     /// <p>The text of a note.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The principal that created a note.</p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
     /// <p>The timestamp of when the note was updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&str> {
+    pub fn updated_at(&self) -> ::std::option::Option<& str> {
         self.updated_at.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl NoteBuilder {
     }
     /// <p>The text of a note.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text of a note.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl NoteBuilder {
     }
     /// <p>The principal that created a note.</p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p>The principal that created a note.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl NoteBuilder {
     /// <p>The timestamp of when the note was updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the note was updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -94,9 +91,13 @@ impl NoteBuilder {
     /// Consumes the builder and constructs a [`Note`](crate::types::Note).
     pub fn build(self) -> crate::types::Note {
         crate::types::Note {
-            text: self.text,
-            updated_by: self.updated_by,
-            updated_at: self.updated_at,
+            text: self.text
+            ,
+            updated_by: self.updated_by
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

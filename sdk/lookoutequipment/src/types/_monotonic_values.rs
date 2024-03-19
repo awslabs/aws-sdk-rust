@@ -3,19 +3,19 @@
 /// <p>Entity that comprises information on monotonic values in the data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonotonicValues {
+pub struct MonotonicValues  {
     /// <p>Indicates whether there is a potential data issue related to having monotonic values.</p>
     pub status: crate::types::StatisticalIssueStatus,
     /// <p>Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC.</p>
     pub monotonicity: ::std::option::Option<crate::types::Monotonicity>,
 }
-impl MonotonicValues {
+impl  MonotonicValues  {
     /// <p>Indicates whether there is a potential data issue related to having monotonic values.</p>
-    pub fn status(&self) -> &crate::types::StatisticalIssueStatus {
+    pub fn status(&self) -> & crate::types::StatisticalIssueStatus {
         &self.status
     }
     /// <p>Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC.</p>
-    pub fn monotonicity(&self) -> ::std::option::Option<&crate::types::Monotonicity> {
+    pub fn monotonicity(&self) -> ::std::option::Option<& crate::types::Monotonicity> {
         self.monotonicity.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl MonotonicValuesBuilder {
     }
     /// <p>Indicates whether there is a potential data issue related to having monotonic values.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether there is a potential data issue related to having monotonic values.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatisticalIssueStatus> {
@@ -56,8 +55,7 @@ impl MonotonicValuesBuilder {
     }
     /// <p>Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC.</p>
     pub fn set_monotonicity(mut self, input: ::std::option::Option<crate::types::Monotonicity>) -> Self {
-        self.monotonicity = input;
-        self
+        self.monotonicity = input; self
     }
     /// <p>Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC.</p>
     pub fn get_monotonicity(&self) -> &::std::option::Option<crate::types::Monotonicity> {
@@ -67,14 +65,17 @@ impl MonotonicValuesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::MonotonicValuesBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::MonotonicValues, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MonotonicValues {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building MonotonicValues",
-                )
-            })?,
-            monotonicity: self.monotonicity,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MonotonicValues {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building MonotonicValues")
+                    )?
+                ,
+                monotonicity: self.monotonicity
+                ,
+            }
+        )
     }
 }
+

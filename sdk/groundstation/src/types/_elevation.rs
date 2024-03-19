@@ -3,19 +3,19 @@
 /// <p>Elevation angle of the satellite in the sky during a contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Elevation {
+pub struct Elevation  {
     /// <p>Elevation angle value.</p>
     pub value: f64,
     /// <p>Elevation angle units.</p>
     pub unit: crate::types::AngleUnits,
 }
-impl Elevation {
+impl  Elevation  {
     /// <p>Elevation angle value.</p>
     pub fn value(&self) -> f64 {
         self.value
     }
     /// <p>Elevation angle units.</p>
-    pub fn unit(&self) -> &crate::types::AngleUnits {
+    pub fn unit(&self) -> & crate::types::AngleUnits {
         &self.unit
     }
 }
@@ -42,8 +42,7 @@ impl ElevationBuilder {
     }
     /// <p>Elevation angle value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Elevation angle value.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -57,8 +56,7 @@ impl ElevationBuilder {
     }
     /// <p>Elevation angle units.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::AngleUnits>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Elevation angle units.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::AngleUnits> {
@@ -69,19 +67,20 @@ impl ElevationBuilder {
     /// - [`value`](crate::types::builders::ElevationBuilder::value)
     /// - [`unit`](crate::types::builders::ElevationBuilder::unit)
     pub fn build(self) -> ::std::result::Result<crate::types::Elevation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Elevation {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Elevation",
-                )
-            })?,
-            unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unit",
-                    "unit was not specified but it is required when building Elevation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Elevation {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Elevation")
+                    )?
+                ,
+                unit: self.unit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unit", "unit was not specified but it is required when building Elevation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

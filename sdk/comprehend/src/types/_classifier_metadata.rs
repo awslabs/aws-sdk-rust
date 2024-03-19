@@ -3,7 +3,7 @@
 /// <p>Provides information about a document classifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ClassifierMetadata {
+pub struct ClassifierMetadata  {
     /// <p>The number of labels in the input data.</p>
     pub number_of_labels: ::std::option::Option<i32>,
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
@@ -13,7 +13,7 @@ pub struct ClassifierMetadata {
     /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub evaluation_metrics: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>,
 }
-impl ClassifierMetadata {
+impl  ClassifierMetadata  {
     /// <p>The number of labels in the input data.</p>
     pub fn number_of_labels(&self) -> ::std::option::Option<i32> {
         self.number_of_labels
@@ -27,11 +27,11 @@ impl ClassifierMetadata {
         self.number_of_test_documents
     }
     /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
-    pub fn evaluation_metrics(&self) -> ::std::option::Option<&crate::types::ClassifierEvaluationMetrics> {
+    pub fn evaluation_metrics(&self) -> ::std::option::Option<& crate::types::ClassifierEvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
 }
-impl ::std::fmt::Debug for ClassifierMetadata {
+impl  ::std::fmt::Debug for ClassifierMetadata  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifierMetadata");
         formatter.field("number_of_labels", &"*** Sensitive Data Redacted ***");
@@ -65,8 +65,7 @@ impl ClassifierMetadataBuilder {
     }
     /// <p>The number of labels in the input data.</p>
     pub fn set_number_of_labels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_labels = input;
-        self
+        self.number_of_labels = input; self
     }
     /// <p>The number of labels in the input data.</p>
     pub fn get_number_of_labels(&self) -> &::std::option::Option<i32> {
@@ -79,8 +78,7 @@ impl ClassifierMetadataBuilder {
     }
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
     pub fn set_number_of_trained_documents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_trained_documents = input;
-        self
+        self.number_of_trained_documents = input; self
     }
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
     pub fn get_number_of_trained_documents(&self) -> &::std::option::Option<i32> {
@@ -93,8 +91,7 @@ impl ClassifierMetadataBuilder {
     }
     /// <p>The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
     pub fn set_number_of_test_documents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_test_documents = input;
-        self
+        self.number_of_test_documents = input; self
     }
     /// <p>The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
     pub fn get_number_of_test_documents(&self) -> &::std::option::Option<i32> {
@@ -107,8 +104,7 @@ impl ClassifierMetadataBuilder {
     }
     /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn set_evaluation_metrics(mut self, input: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>) -> Self {
-        self.evaluation_metrics = input;
-        self
+        self.evaluation_metrics = input; self
     }
     /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn get_evaluation_metrics(&self) -> &::std::option::Option<crate::types::ClassifierEvaluationMetrics> {
@@ -117,10 +113,14 @@ impl ClassifierMetadataBuilder {
     /// Consumes the builder and constructs a [`ClassifierMetadata`](crate::types::ClassifierMetadata).
     pub fn build(self) -> crate::types::ClassifierMetadata {
         crate::types::ClassifierMetadata {
-            number_of_labels: self.number_of_labels,
-            number_of_trained_documents: self.number_of_trained_documents,
-            number_of_test_documents: self.number_of_test_documents,
-            evaluation_metrics: self.evaluation_metrics,
+            number_of_labels: self.number_of_labels
+            ,
+            number_of_trained_documents: self.number_of_trained_documents
+            ,
+            number_of_test_documents: self.number_of_test_documents
+            ,
+            evaluation_metrics: self.evaluation_metrics
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for ClassifierMetadataBuilder {
         formatter.finish()
     }
 }
+

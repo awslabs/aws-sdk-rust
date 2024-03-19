@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let customermasterkeyspec = unimplemented!();
 /// match customermasterkeyspec {
@@ -41,7 +41,7 @@
 /// Specifically, when `customermasterkeyspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CustomerMasterKeySpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -49,9 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This enum has been deprecated. Instead, use the KeySpec enum.")]
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum CustomerMasterKeySpec {
     #[allow(missing_docs)] // documentation missing in model
     EccNistP256,
@@ -81,108 +79,95 @@ pub enum CustomerMasterKeySpec {
     SymmetricDefault,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for CustomerMasterKeySpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECC_NIST_P256" => CustomerMasterKeySpec::EccNistP256,
-            "ECC_NIST_P384" => CustomerMasterKeySpec::EccNistP384,
-            "ECC_NIST_P521" => CustomerMasterKeySpec::EccNistP521,
-            "ECC_SECG_P256K1" => CustomerMasterKeySpec::EccSecgP256K1,
-            "HMAC_224" => CustomerMasterKeySpec::Hmac224,
-            "HMAC_256" => CustomerMasterKeySpec::Hmac256,
-            "HMAC_384" => CustomerMasterKeySpec::Hmac384,
-            "HMAC_512" => CustomerMasterKeySpec::Hmac512,
-            "RSA_2048" => CustomerMasterKeySpec::Rsa2048,
-            "RSA_3072" => CustomerMasterKeySpec::Rsa3072,
-            "RSA_4096" => CustomerMasterKeySpec::Rsa4096,
-            "SM2" => CustomerMasterKeySpec::Sm2,
-            "SYMMETRIC_DEFAULT" => CustomerMasterKeySpec::SymmetricDefault,
-            other => CustomerMasterKeySpec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ECC_NIST_P256" => CustomerMasterKeySpec::EccNistP256,
+"ECC_NIST_P384" => CustomerMasterKeySpec::EccNistP384,
+"ECC_NIST_P521" => CustomerMasterKeySpec::EccNistP521,
+"ECC_SECG_P256K1" => CustomerMasterKeySpec::EccSecgP256K1,
+"HMAC_224" => CustomerMasterKeySpec::Hmac224,
+"HMAC_256" => CustomerMasterKeySpec::Hmac256,
+"HMAC_384" => CustomerMasterKeySpec::Hmac384,
+"HMAC_512" => CustomerMasterKeySpec::Hmac512,
+"RSA_2048" => CustomerMasterKeySpec::Rsa2048,
+"RSA_3072" => CustomerMasterKeySpec::Rsa3072,
+"RSA_4096" => CustomerMasterKeySpec::Rsa4096,
+"SM2" => CustomerMasterKeySpec::Sm2,
+"SYMMETRIC_DEFAULT" => CustomerMasterKeySpec::SymmetricDefault,
+other => CustomerMasterKeySpec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for CustomerMasterKeySpec {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(CustomerMasterKeySpec::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(CustomerMasterKeySpec::from(s))
+                    }
+                }
 impl CustomerMasterKeySpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomerMasterKeySpec::EccNistP256 => "ECC_NIST_P256",
-            CustomerMasterKeySpec::EccNistP384 => "ECC_NIST_P384",
-            CustomerMasterKeySpec::EccNistP521 => "ECC_NIST_P521",
-            CustomerMasterKeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
-            CustomerMasterKeySpec::Hmac224 => "HMAC_224",
-            CustomerMasterKeySpec::Hmac256 => "HMAC_256",
-            CustomerMasterKeySpec::Hmac384 => "HMAC_384",
-            CustomerMasterKeySpec::Hmac512 => "HMAC_512",
-            CustomerMasterKeySpec::Rsa2048 => "RSA_2048",
-            CustomerMasterKeySpec::Rsa3072 => "RSA_3072",
-            CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
-            CustomerMasterKeySpec::Sm2 => "SM2",
-            CustomerMasterKeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            CustomerMasterKeySpec::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ECC_NIST_P256",
-            "ECC_NIST_P384",
-            "ECC_NIST_P521",
-            "ECC_SECG_P256K1",
-            "HMAC_224",
-            "HMAC_256",
-            "HMAC_384",
-            "HMAC_512",
-            "RSA_2048",
-            "RSA_3072",
-            "RSA_4096",
-            "SM2",
-            "SYMMETRIC_DEFAULT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CustomerMasterKeySpec::EccNistP256 => "ECC_NIST_P256",
+    CustomerMasterKeySpec::EccNistP384 => "ECC_NIST_P384",
+    CustomerMasterKeySpec::EccNistP521 => "ECC_NIST_P521",
+    CustomerMasterKeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+    CustomerMasterKeySpec::Hmac224 => "HMAC_224",
+    CustomerMasterKeySpec::Hmac256 => "HMAC_256",
+    CustomerMasterKeySpec::Hmac384 => "HMAC_384",
+    CustomerMasterKeySpec::Hmac512 => "HMAC_512",
+    CustomerMasterKeySpec::Rsa2048 => "RSA_2048",
+    CustomerMasterKeySpec::Rsa3072 => "RSA_3072",
+    CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
+    CustomerMasterKeySpec::Sm2 => "SM2",
+    CustomerMasterKeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
+    CustomerMasterKeySpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "HMAC_224", "HMAC_256", "HMAC_384", "HMAC_512", "RSA_2048", "RSA_3072", "RSA_4096", "SM2", "SYMMETRIC_DEFAULT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for CustomerMasterKeySpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl CustomerMasterKeySpec {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for CustomerMasterKeySpec {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            CustomerMasterKeySpec::EccNistP256 => write!(f, "ECC_NIST_P256"),
-            CustomerMasterKeySpec::EccNistP384 => write!(f, "ECC_NIST_P384"),
-            CustomerMasterKeySpec::EccNistP521 => write!(f, "ECC_NIST_P521"),
-            CustomerMasterKeySpec::EccSecgP256K1 => write!(f, "ECC_SECG_P256K1"),
-            CustomerMasterKeySpec::Hmac224 => write!(f, "HMAC_224"),
-            CustomerMasterKeySpec::Hmac256 => write!(f, "HMAC_256"),
-            CustomerMasterKeySpec::Hmac384 => write!(f, "HMAC_384"),
-            CustomerMasterKeySpec::Hmac512 => write!(f, "HMAC_512"),
-            CustomerMasterKeySpec::Rsa2048 => write!(f, "RSA_2048"),
-            CustomerMasterKeySpec::Rsa3072 => write!(f, "RSA_3072"),
-            CustomerMasterKeySpec::Rsa4096 => write!(f, "RSA_4096"),
-            CustomerMasterKeySpec::Sm2 => write!(f, "SM2"),
-            CustomerMasterKeySpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
-            CustomerMasterKeySpec::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                CustomerMasterKeySpec::EccNistP256 => write!(f, "ECC_NIST_P256"),
+CustomerMasterKeySpec::EccNistP384 => write!(f, "ECC_NIST_P384"),
+CustomerMasterKeySpec::EccNistP521 => write!(f, "ECC_NIST_P521"),
+CustomerMasterKeySpec::EccSecgP256K1 => write!(f, "ECC_SECG_P256K1"),
+CustomerMasterKeySpec::Hmac224 => write!(f, "HMAC_224"),
+CustomerMasterKeySpec::Hmac256 => write!(f, "HMAC_256"),
+CustomerMasterKeySpec::Hmac384 => write!(f, "HMAC_384"),
+CustomerMasterKeySpec::Hmac512 => write!(f, "HMAC_512"),
+CustomerMasterKeySpec::Rsa2048 => write!(f, "RSA_2048"),
+CustomerMasterKeySpec::Rsa3072 => write!(f, "RSA_3072"),
+CustomerMasterKeySpec::Rsa4096 => write!(f, "RSA_4096"),
+CustomerMasterKeySpec::Sm2 => write!(f, "SM2"),
+CustomerMasterKeySpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
+CustomerMasterKeySpec::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

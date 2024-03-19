@@ -3,7 +3,7 @@
 /// <p>Contains information about the finding that is generated when abnormal or suspicious activity is detected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Finding {
+pub struct Finding  {
     /// <p>The ID of the account in which the finding was generated.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the finding.</p>
@@ -35,13 +35,13 @@ pub struct Finding {
     /// <p>The time and date when the finding was last updated.</p>
     pub updated_at: ::std::option::Option<::std::string::String>,
 }
-impl Finding {
+impl  Finding  {
     /// <p>The ID of the account in which the finding was generated.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the finding.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The confidence score for the finding.</p>
@@ -49,35 +49,35 @@ impl Finding {
         self.confidence
     }
     /// <p>The time and date when the finding was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>The description of the finding.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The partition associated with the finding.</p>
-    pub fn partition(&self) -> ::std::option::Option<&str> {
+    pub fn partition(&self) -> ::std::option::Option<& str> {
         self.partition.as_deref()
     }
     /// <p>The Region where the finding was generated.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>The version of the schema used for the finding.</p>
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version(&self) -> ::std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>Contains additional information about the generated finding.</p>
-    pub fn service(&self) -> ::std::option::Option<&crate::types::Service> {
+    pub fn service(&self) -> ::std::option::Option<& crate::types::Service> {
         self.service.as_ref()
     }
     /// <p>The severity of the finding.</p>
@@ -85,15 +85,15 @@ impl Finding {
         self.severity
     }
     /// <p>The title of the finding.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The type of finding.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The time and date when the finding was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&str> {
+    pub fn updated_at(&self) -> ::std::option::Option<& str> {
         self.updated_at.as_deref()
     }
 }
@@ -133,8 +133,7 @@ impl FindingBuilder {
     }
     /// <p>The ID of the account in which the finding was generated.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the account in which the finding was generated.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +147,7 @@ impl FindingBuilder {
     }
     /// <p>The ARN of the finding.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the finding.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +160,7 @@ impl FindingBuilder {
     }
     /// <p>The confidence score for the finding.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence score for the finding.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f64> {
@@ -177,8 +174,7 @@ impl FindingBuilder {
     }
     /// <p>The time and date when the finding was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time and date when the finding was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +187,7 @@ impl FindingBuilder {
     }
     /// <p>The description of the finding.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the finding.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +201,7 @@ impl FindingBuilder {
     }
     /// <p>The ID of the finding.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the finding.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +214,7 @@ impl FindingBuilder {
     }
     /// <p>The partition associated with the finding.</p>
     pub fn set_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partition = input;
-        self
+        self.partition = input; self
     }
     /// <p>The partition associated with the finding.</p>
     pub fn get_partition(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +228,7 @@ impl FindingBuilder {
     }
     /// <p>The Region where the finding was generated.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Region where the finding was generated.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +242,7 @@ impl FindingBuilder {
     }
     /// <p>Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
@@ -265,8 +256,7 @@ impl FindingBuilder {
     }
     /// <p>The version of the schema used for the finding.</p>
     pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// <p>The version of the schema used for the finding.</p>
     pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,8 +269,7 @@ impl FindingBuilder {
     }
     /// <p>Contains additional information about the generated finding.</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::Service>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>Contains additional information about the generated finding.</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
@@ -294,8 +283,7 @@ impl FindingBuilder {
     }
     /// <p>The severity of the finding.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The severity of the finding.</p>
     pub fn get_severity(&self) -> &::std::option::Option<f64> {
@@ -308,8 +296,7 @@ impl FindingBuilder {
     }
     /// <p>The title of the finding.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the finding.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -323,8 +310,7 @@ impl FindingBuilder {
     }
     /// <p>The type of finding.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of finding.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -338,8 +324,7 @@ impl FindingBuilder {
     }
     /// <p>The time and date when the finding was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time and date when the finding was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -348,21 +333,37 @@ impl FindingBuilder {
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {
         crate::types::Finding {
-            account_id: self.account_id,
-            arn: self.arn,
-            confidence: self.confidence,
-            created_at: self.created_at,
-            description: self.description,
-            id: self.id,
-            partition: self.partition,
-            region: self.region,
-            resource: self.resource,
-            schema_version: self.schema_version,
-            service: self.service,
-            severity: self.severity,
-            title: self.title,
-            r#type: self.r#type,
-            updated_at: self.updated_at,
+            account_id: self.account_id
+            ,
+            arn: self.arn
+            ,
+            confidence: self.confidence
+            ,
+            created_at: self.created_at
+            ,
+            description: self.description
+            ,
+            id: self.id
+            ,
+            partition: self.partition
+            ,
+            region: self.region
+            ,
+            resource: self.resource
+            ,
+            schema_version: self.schema_version
+            ,
+            service: self.service
+            ,
+            severity: self.severity
+            ,
+            title: self.title
+            ,
+            r#type: self.r#type
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

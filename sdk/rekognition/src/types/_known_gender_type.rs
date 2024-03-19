@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let knowngendertype = unimplemented!();
 /// match knowngendertype {
@@ -32,16 +32,14 @@
 /// Specifically, when `knowngendertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KnownGenderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>A list of enum string of possible gender values that Celebrity returns.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum KnownGenderType {
     #[allow(missing_docs)] // documentation missing in model
     Female,
@@ -53,67 +51,68 @@ pub enum KnownGenderType {
     Unlisted,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for KnownGenderType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Female" => KnownGenderType::Female,
-            "Male" => KnownGenderType::Male,
-            "Nonbinary" => KnownGenderType::Nonbinary,
-            "Unlisted" => KnownGenderType::Unlisted,
-            other => KnownGenderType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Female" => KnownGenderType::Female,
+"Male" => KnownGenderType::Male,
+"Nonbinary" => KnownGenderType::Nonbinary,
+"Unlisted" => KnownGenderType::Unlisted,
+other => KnownGenderType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for KnownGenderType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(KnownGenderType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(KnownGenderType::from(s))
+                    }
+                }
 impl KnownGenderType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KnownGenderType::Female => "Female",
-            KnownGenderType::Male => "Male",
-            KnownGenderType::Nonbinary => "Nonbinary",
-            KnownGenderType::Unlisted => "Unlisted",
-            KnownGenderType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Female", "Male", "Nonbinary", "Unlisted"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KnownGenderType::Female => "Female",
+    KnownGenderType::Male => "Male",
+    KnownGenderType::Nonbinary => "Nonbinary",
+    KnownGenderType::Unlisted => "Unlisted",
+    KnownGenderType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Female", "Male", "Nonbinary", "Unlisted"]
+                }
+            }
 impl ::std::convert::AsRef<str> for KnownGenderType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl KnownGenderType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for KnownGenderType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            KnownGenderType::Female => write!(f, "Female"),
-            KnownGenderType::Male => write!(f, "Male"),
-            KnownGenderType::Nonbinary => write!(f, "Nonbinary"),
-            KnownGenderType::Unlisted => write!(f, "Unlisted"),
-            KnownGenderType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                KnownGenderType::Female => write!(f, "Female"),
+KnownGenderType::Male => write!(f, "Male"),
+KnownGenderType::Nonbinary => write!(f, "Nonbinary"),
+KnownGenderType::Unlisted => write!(f, "Unlisted"),
+KnownGenderType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

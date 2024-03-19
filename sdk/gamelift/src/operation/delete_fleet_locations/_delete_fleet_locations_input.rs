@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetLocationsInput {
+pub struct DeleteFleetLocationsInput  {
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteFleetLocationsInput {
+impl  DeleteFleetLocationsInput  {
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
-    pub fn locations(&self) -> &[::std::string::String] {
-        self.locations.as_deref().unwrap_or_default()
+    pub fn locations(&self) -> & [::std::string::String] {
+        self.locations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteFleetLocationsInput {
@@ -32,7 +33,7 @@ impl DeleteFleetLocationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetLocationsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteFleetLocationsInputBuilder {
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
@@ -43,8 +44,7 @@ impl DeleteFleetLocationsInputBuilder {
     }
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl DeleteFleetLocationsInputBuilder {
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.locations.unwrap_or_default();
-        v.push(input.into());
-        self.locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.locations = input;
-        self
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.locations = input; self
     }
     /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.locations
     }
     /// Consumes the builder and constructs a [`DeleteFleetLocationsInput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_fleet_locations::DeleteFleetLocationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_fleet_locations::DeleteFleetLocationsInput {
-            fleet_id: self.fleet_id,
-            locations: self.locations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet_locations::DeleteFleetLocationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsInput {
+                fleet_id: self.fleet_id
+                ,
+                locations: self.locations
+                ,
+            }
+        )
     }
 }
+

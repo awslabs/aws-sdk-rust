@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MoveAddressToVpcInput {
+pub struct MoveAddressToVpcInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The Elastic IP address.</p>
     pub public_ip: ::std::option::Option<::std::string::String>,
 }
-impl MoveAddressToVpcInput {
+impl  MoveAddressToVpcInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The Elastic IP address.</p>
-    pub fn public_ip(&self) -> ::std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<& str> {
         self.public_ip.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl MoveAddressToVpcInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,20 +54,22 @@ impl MoveAddressToVpcInputBuilder {
     }
     /// <p>The Elastic IP address.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip = input;
-        self
+        self.public_ip = input; self
     }
     /// <p>The Elastic IP address.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_ip
     }
     /// Consumes the builder and constructs a [`MoveAddressToVpcInput`](crate::operation::move_address_to_vpc::MoveAddressToVpcInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::move_address_to_vpc::MoveAddressToVpcInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::move_address_to_vpc::MoveAddressToVpcInput {
-            dry_run: self.dry_run,
-            public_ip: self.public_ip,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::move_address_to_vpc::MoveAddressToVpcInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::move_address_to_vpc::MoveAddressToVpcInput {
+                dry_run: self.dry_run
+                ,
+                public_ip: self.public_ip
+                ,
+            }
+        )
     }
 }
+

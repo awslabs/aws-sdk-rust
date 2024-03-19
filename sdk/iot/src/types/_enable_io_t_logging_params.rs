@@ -3,20 +3,19 @@
 /// <p>Parameters used when defining a mitigation action that enable Amazon Web Services IoT Core logging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableIoTLoggingParams {
+pub struct EnableIoTLoggingParams  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
     pub role_arn_for_logging: ::std::string::String,
     /// <p>Specifies the type of information to be logged.</p>
     pub log_level: crate::types::LogLevel,
 }
-impl EnableIoTLoggingParams {
+impl  EnableIoTLoggingParams  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
-    pub fn role_arn_for_logging(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn_for_logging.deref()
+    pub fn role_arn_for_logging(&self) -> & str {
+        use std::ops::Deref; self.role_arn_for_logging.deref()
     }
     /// <p>Specifies the type of information to be logged.</p>
-    pub fn log_level(&self) -> &crate::types::LogLevel {
+    pub fn log_level(&self) -> & crate::types::LogLevel {
         &self.log_level
     }
 }
@@ -43,8 +42,7 @@ impl EnableIoTLoggingParamsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
     pub fn set_role_arn_for_logging(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn_for_logging = input;
-        self
+        self.role_arn_for_logging = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for logging.</p>
     pub fn get_role_arn_for_logging(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl EnableIoTLoggingParamsBuilder {
     }
     /// <p>Specifies the type of information to be logged.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>Specifies the type of information to be logged.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
@@ -70,19 +67,20 @@ impl EnableIoTLoggingParamsBuilder {
     /// - [`role_arn_for_logging`](crate::types::builders::EnableIoTLoggingParamsBuilder::role_arn_for_logging)
     /// - [`log_level`](crate::types::builders::EnableIoTLoggingParamsBuilder::log_level)
     pub fn build(self) -> ::std::result::Result<crate::types::EnableIoTLoggingParams, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnableIoTLoggingParams {
-            role_arn_for_logging: self.role_arn_for_logging.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn_for_logging",
-                    "role_arn_for_logging was not specified but it is required when building EnableIoTLoggingParams",
-                )
-            })?,
-            log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_level",
-                    "log_level was not specified but it is required when building EnableIoTLoggingParams",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnableIoTLoggingParams {
+                role_arn_for_logging: self.role_arn_for_logging
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn_for_logging", "role_arn_for_logging was not specified but it is required when building EnableIoTLoggingParams")
+                    )?
+                ,
+                log_level: self.log_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_level", "log_level was not specified but it is required when building EnableIoTLoggingParams")
+                    )?
+                ,
+            }
+        )
     }
 }
+

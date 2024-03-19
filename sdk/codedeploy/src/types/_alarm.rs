@@ -3,13 +3,13 @@
 /// <p>Information about an alarm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Alarm {
+pub struct Alarm  {
     /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl Alarm {
+impl  Alarm  {
     /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AlarmBuilder {
     }
     /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AlarmBuilder {
     }
     /// Consumes the builder and constructs a [`Alarm`](crate::types::Alarm).
     pub fn build(self) -> crate::types::Alarm {
-        crate::types::Alarm { name: self.name }
+        crate::types::Alarm {
+            name: self.name
+            ,
+        }
     }
 }
+

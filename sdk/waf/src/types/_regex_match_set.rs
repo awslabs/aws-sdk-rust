@@ -8,7 +8,7 @@
 /// <p>The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegexMatchSet {
+pub struct RegexMatchSet  {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
     /// <p><code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub regex_match_set_id: ::std::option::Option<::std::string::String>,
@@ -23,16 +23,16 @@ pub struct RegexMatchSet {
     /// <li>
     /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
-    pub regex_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchTuple>>,
+    pub regex_match_tuples: ::std::option::Option<::std::vec::Vec::<crate::types::RegexMatchTuple>>,
 }
-impl RegexMatchSet {
+impl  RegexMatchSet  {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
     /// <p><code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn regex_match_set_id(&self) -> ::std::option::Option<& str> {
         self.regex_match_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains:</p>
@@ -44,10 +44,11 @@ impl RegexMatchSet {
     /// <li>
     /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_match_tuples.is_none()`.
-    pub fn regex_match_tuples(&self) -> &[crate::types::RegexMatchTuple] {
-        self.regex_match_tuples.as_deref().unwrap_or_default()
+    pub fn regex_match_tuples(&self) -> & [crate::types::RegexMatchTuple] {
+        self.regex_match_tuples.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegexMatchSet {
@@ -63,7 +64,7 @@ impl RegexMatchSet {
 pub struct RegexMatchSetBuilder {
     pub(crate) regex_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) regex_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchTuple>>,
+    pub(crate) regex_match_tuples: ::std::option::Option<::std::vec::Vec::<crate::types::RegexMatchTuple>>,
 }
 impl RegexMatchSetBuilder {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
@@ -75,8 +76,7 @@ impl RegexMatchSetBuilder {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
     /// <p><code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub fn set_regex_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.regex_match_set_id = input;
-        self
+        self.regex_match_set_id = input; self
     }
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
     /// <p><code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
@@ -90,8 +90,7 @@ impl RegexMatchSetBuilder {
     }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,9 +111,9 @@ impl RegexMatchSetBuilder {
     /// </ul>
     pub fn regex_match_tuples(mut self, input: crate::types::RegexMatchTuple) -> Self {
         let mut v = self.regex_match_tuples.unwrap_or_default();
-        v.push(input);
-        self.regex_match_tuples = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regex_match_tuples = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains:</p>
     /// <ul>
@@ -125,9 +124,8 @@ impl RegexMatchSetBuilder {
     /// <li>
     /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
-    pub fn set_regex_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchTuple>>) -> Self {
-        self.regex_match_tuples = input;
-        self
+    pub fn set_regex_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegexMatchTuple>>) -> Self {
+        self.regex_match_tuples = input; self
     }
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains:</p>
     /// <ul>
@@ -138,15 +136,19 @@ impl RegexMatchSetBuilder {
     /// <li>
     /// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
     /// </ul>
-    pub fn get_regex_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexMatchTuple>> {
+    pub fn get_regex_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegexMatchTuple>> {
         &self.regex_match_tuples
     }
     /// Consumes the builder and constructs a [`RegexMatchSet`](crate::types::RegexMatchSet).
     pub fn build(self) -> crate::types::RegexMatchSet {
         crate::types::RegexMatchSet {
-            regex_match_set_id: self.regex_match_set_id,
-            name: self.name,
-            regex_match_tuples: self.regex_match_tuples,
+            regex_match_set_id: self.regex_match_set_id
+            ,
+            name: self.name
+            ,
+            regex_match_tuples: self.regex_match_tuples
+            ,
         }
     }
 }
+

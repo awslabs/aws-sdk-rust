@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRegistrationAttachments`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`registration_attachment_ids(impl Into<String>)`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::registration_attachment_ids) / [`set_registration_attachment_ids(Option<Vec::<String>>)`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::set_registration_attachment_ids):<br>required: **false**<br><p>The unique identifier of registration attachments to find. This is an array of <b>RegistrationAttachmentId</b>.</p><br>
     ///   - [`filters(RegistrationAttachmentFilter)`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::filters) / [`set_filters(Option<Vec::<RegistrationAttachmentFilter>>)`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::set_filters):<br>required: **false**<br><p>An array of RegistrationAttachmentFilter objects to filter the results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`DescribeRegistrationAttachmentsOutput`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput) with field(s):
+                            /// - On success, responds with [`DescribeRegistrationAttachmentsOutput`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput) with field(s):
     ///   - [`registration_attachments(Vec::<RegistrationAttachmentsInformation>)`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput::registration_attachments): <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput::next_token): <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    /// - On failure, responds with [`SdkError<DescribeRegistrationAttachmentsError>`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError)
-    pub fn describe_registration_attachments(
-        &self,
-    ) -> crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder {
-        crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeRegistrationAttachmentsError>`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsError)
+    pub fn describe_registration_attachments(&self) -> crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder {
+                                crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

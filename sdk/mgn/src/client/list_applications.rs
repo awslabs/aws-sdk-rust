@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplications`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(ListApplicationsRequestFilters)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::filters) / [`set_filters(Option<ListApplicationsRequestFilters>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_filters):<br>required: **false**<br><p>Applications list filters.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum results to return when listing applications.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Request next token.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_account_id):<br>required: **false**<br><p>Applications list Account ID.</p><br>
-    /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
     ///   - [`items(Option<Vec::<Application>>)`](crate::operation::list_applications::ListApplicationsOutput::items): <p>Applications list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>Response next token.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
+                            /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
     pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

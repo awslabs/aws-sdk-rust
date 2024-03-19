@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPrefetchScheduleInput {
+pub struct GetPrefetchScheduleInput  {
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
 }
-impl GetPrefetchScheduleInput {
+impl  GetPrefetchScheduleInput  {
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
-    pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn playback_configuration_name(&self) -> ::std::option::Option<& str> {
         self.playback_configuration_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetPrefetchScheduleInputBuilder {
     }
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetPrefetchScheduleInputBuilder {
     }
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
     pub fn set_playback_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.playback_configuration_name = input;
-        self
+        self.playback_configuration_name = input; self
     }
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
     pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_configuration_name
     }
     /// Consumes the builder and constructs a [`GetPrefetchScheduleInput`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput {
-            name: self.name,
-            playback_configuration_name: self.playback_configuration_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput {
+                name: self.name
+                ,
+                playback_configuration_name: self.playback_configuration_name
+                ,
+            }
+        )
     }
 }
+

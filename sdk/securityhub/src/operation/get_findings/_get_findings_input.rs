@@ -2,35 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingsInput {
+pub struct GetFindingsInput  {
     /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
     /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
     pub filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    pub sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
+    pub sort_criteria: ::std::option::Option<::std::vec::Vec::<crate::types::SortCriterion>>,
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of findings to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetFindingsInput {
+impl  GetFindingsInput  {
     /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
     /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::AwsSecurityFindingFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_criteria.is_none()`.
-    pub fn sort_criteria(&self) -> &[crate::types::SortCriterion] {
-        self.sort_criteria.as_deref().unwrap_or_default()
+    pub fn sort_criteria(&self) -> & [crate::types::SortCriterion] {
+        self.sort_criteria.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of findings to return.</p>
@@ -50,7 +51,7 @@ impl GetFindingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
+    pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec::<crate::types::SortCriterion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -66,8 +67,7 @@ impl GetFindingsInputBuilder {
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
     /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
@@ -82,17 +82,16 @@ impl GetFindingsInputBuilder {
     /// <p>The finding attributes used to sort the list of returned findings.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriterion) -> Self {
         let mut v = self.sort_criteria.unwrap_or_default();
-        v.push(input);
-        self.sort_criteria = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sort_criteria = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>) -> Self {
-        self.sort_criteria = input;
-        self
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SortCriterion>>) -> Self {
+        self.sort_criteria = input; self
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SortCriterion>> {
         &self.sort_criteria
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -104,8 +103,7 @@ impl GetFindingsInputBuilder {
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
@@ -119,8 +117,7 @@ impl GetFindingsInputBuilder {
     }
     /// <p>The maximum number of findings to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of findings to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -128,11 +125,18 @@ impl GetFindingsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_findings::GetFindingsInput {
-            filters: self.filters,
-            sort_criteria: self.sort_criteria,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_findings::GetFindingsInput {
+                filters: self.filters
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

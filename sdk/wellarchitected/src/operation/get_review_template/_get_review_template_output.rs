@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReviewTemplateOutput {
+pub struct GetReviewTemplateOutput  {
     /// <p>The review template.</p>
     pub review_template: ::std::option::Option<crate::types::ReviewTemplate>,
     _request_id: Option<String>,
 }
-impl GetReviewTemplateOutput {
+impl  GetReviewTemplateOutput  {
     /// <p>The review template.</p>
-    pub fn review_template(&self) -> ::std::option::Option<&crate::types::ReviewTemplate> {
+    pub fn review_template(&self) -> ::std::option::Option<& crate::types::ReviewTemplate> {
         self.review_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReviewTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReviewTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetReviewTemplateOutput`](crate::operation::get_review_template::GetReviewTemplateOutput).
     pub fn builder() -> crate::operation::get_review_template::builders::GetReviewTemplateOutputBuilder {
@@ -40,27 +40,28 @@ impl GetReviewTemplateOutputBuilder {
     }
     /// <p>The review template.</p>
     pub fn set_review_template(mut self, input: ::std::option::Option<crate::types::ReviewTemplate>) -> Self {
-        self.review_template = input;
-        self
+        self.review_template = input; self
     }
     /// <p>The review template.</p>
     pub fn get_review_template(&self) -> &::std::option::Option<crate::types::ReviewTemplate> {
         &self.review_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReviewTemplateOutput`](crate::operation::get_review_template::GetReviewTemplateOutput).
     pub fn build(self) -> crate::operation::get_review_template::GetReviewTemplateOutput {
         crate::operation::get_review_template::GetReviewTemplateOutput {
-            review_template: self.review_template,
+            review_template: self.review_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

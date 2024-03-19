@@ -3,7 +3,7 @@
 /// <p>Describes a metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricCollectionType {
+pub struct MetricCollectionType  {
     /// <p>One of the following metrics:</p>
     /// <ul>
     /// <li>
@@ -49,7 +49,7 @@ pub struct MetricCollectionType {
     /// </ul>
     pub metric: ::std::option::Option<::std::string::String>,
 }
-impl MetricCollectionType {
+impl  MetricCollectionType  {
     /// <p>One of the following metrics:</p>
     /// <ul>
     /// <li>
@@ -93,7 +93,7 @@ impl MetricCollectionType {
     /// <li>
     /// <p><code>GroupAndWarmPoolTotalCapacity</code></p></li>
     /// </ul>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<& str> {
         self.metric.as_deref()
     }
 }
@@ -202,8 +202,7 @@ impl MetricCollectionTypeBuilder {
     /// <p><code>GroupAndWarmPoolTotalCapacity</code></p></li>
     /// </ul>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>One of the following metrics:</p>
     /// <ul>
@@ -253,6 +252,10 @@ impl MetricCollectionTypeBuilder {
     }
     /// Consumes the builder and constructs a [`MetricCollectionType`](crate::types::MetricCollectionType).
     pub fn build(self) -> crate::types::MetricCollectionType {
-        crate::types::MetricCollectionType { metric: self.metric }
+        crate::types::MetricCollectionType {
+            metric: self.metric
+            ,
+        }
     }
 }
+

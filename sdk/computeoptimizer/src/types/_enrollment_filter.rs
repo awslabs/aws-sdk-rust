@@ -3,26 +3,27 @@
 /// <p>Describes a filter that returns a more specific list of account enrollment statuses. Use this filter with the <code>GetEnrollmentStatusesForOrganization</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnrollmentFilter {
+pub struct EnrollmentFilter  {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
     pub name: ::std::option::Option<crate::types::EnrollmentFilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EnrollmentFilter {
+impl  EnrollmentFilter  {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::EnrollmentFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::EnrollmentFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EnrollmentFilter {
@@ -37,7 +38,7 @@ impl EnrollmentFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnrollmentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::EnrollmentFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EnrollmentFilterBuilder {
     /// <p>The name of the filter.</p>
@@ -49,8 +50,7 @@ impl EnrollmentFilterBuilder {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::EnrollmentFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Status</code> to return accounts with a specific enrollment status (for example, <code>Active</code>).</p>
@@ -65,26 +65,28 @@ impl EnrollmentFilterBuilder {
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>, and <code>Failed</code>.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`EnrollmentFilter`](crate::types::EnrollmentFilter).
     pub fn build(self) -> crate::types::EnrollmentFilter {
         crate::types::EnrollmentFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

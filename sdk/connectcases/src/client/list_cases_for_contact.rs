@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCasesForContact`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain.</p><br>
     ///   - [`contact_arn(impl Into<String>)`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::contact_arn) / [`set_contact_arn(Option<String>)`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::set_contact_arn):<br>required: **true**<br><p>A unique identifier of a contact in Amazon Connect.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListCasesForContactOutput`](crate::operation::list_cases_for_contact::ListCasesForContactOutput) with field(s):
+                            /// - On success, responds with [`ListCasesForContactOutput`](crate::operation::list_cases_for_contact::ListCasesForContactOutput) with field(s):
     ///   - [`cases(Vec::<CaseSummary>)`](crate::operation::list_cases_for_contact::ListCasesForContactOutput::cases): <p>A list of Case summary information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cases_for_contact::ListCasesForContactOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListCasesForContactError>`](crate::operation::list_cases_for_contact::ListCasesForContactError)
+                            /// - On failure, responds with [`SdkError<ListCasesForContactError>`](crate::operation::list_cases_for_contact::ListCasesForContactError)
     pub fn list_cases_for_contact(&self) -> crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder {
-        crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_cases_for_contact::builders::ListCasesForContactFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAccessLoggingInput {
+pub struct StartAccessLoggingInput  {
     /// <p>The name of the container that you want to start access logging on.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
 }
-impl StartAccessLoggingInput {
+impl  StartAccessLoggingInput  {
     /// <p>The name of the container that you want to start access logging on.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StartAccessLoggingInputBuilder {
     }
     /// <p>The name of the container that you want to start access logging on.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container that you want to start access logging on.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_name
     }
     /// Consumes the builder and constructs a [`StartAccessLoggingInput`](crate::operation::start_access_logging::StartAccessLoggingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_access_logging::StartAccessLoggingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_access_logging::StartAccessLoggingInput {
-            container_name: self.container_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_access_logging::StartAccessLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_access_logging::StartAccessLoggingInput {
+                container_name: self.container_name
+                ,
+            }
+        )
     }
 }
+

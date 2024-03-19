@@ -5,56 +5,52 @@ pub use crate::operation::decrease_replication_factor::_decrease_replication_fac
 
 impl DecreaseReplicationFactorInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.decrease_replication_factor();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.decrease_replication_factor();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DecreaseReplicationFactor`.
-///
+/// 
 /// <p>Removes one or more nodes from a DAX cluster.</p><note>
 /// <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DecreaseReplicationFactorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder,
+                    inner: crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
-        crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-    > for DecreaseReplicationFactorFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
+                    crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
+                > for DecreaseReplicationFactorFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
+                        crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DecreaseReplicationFactorFluentBuilder {
     /// Creates a new `DecreaseReplicationFactor`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl DecreaseReplicationFactorFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::decrease_replication_factor::DecreaseReplicationFactor::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::decrease_replication_factor::DecreaseReplicationFactor::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
-        crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::decrease_replication_factor::DecreaseReplicationFactor::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::decrease_replication_factor::DecreaseReplicationFactor::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput, crate::operation::decrease_replication_factor::DecreaseReplicationFactorError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -148,12 +135,12 @@ impl DecreaseReplicationFactorFluentBuilder {
         self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_availability_zones()
     }
     /// Appends an item to `NodeIdsToRemove`.
@@ -166,12 +153,13 @@ impl DecreaseReplicationFactorFluentBuilder {
         self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn set_node_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_node_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_node_ids_to_remove(input);
         self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn get_node_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_node_ids_to_remove()
     }
 }
+

@@ -12,50 +12,52 @@
 /// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomizedMetricSpecification {
+pub struct CustomizedMetricSpecification  {
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the metric.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDimension>>,
     /// <p>The statistic of the metric.</p>
     pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<crate::types::TargetTrackingMetricDataQuery>>,
 }
-impl CustomizedMetricSpecification {
+impl  CustomizedMetricSpecification  {
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace of the metric.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[crate::types::MetricDimension] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [crate::types::MetricDimension] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The statistic of the metric.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::MetricStatistic> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::MetricStatistic> {
         self.statistic.as_ref()
     }
     /// <p>The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[crate::types::TargetTrackingMetricDataQuery] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [crate::types::TargetTrackingMetricDataQuery] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomizedMetricSpecification {
@@ -71,10 +73,10 @@ impl CustomizedMetricSpecification {
 pub struct CustomizedMetricSpecificationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDimension>>,
     pub(crate) statistic: ::std::option::Option<crate::types::MetricStatistic>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<crate::types::TargetTrackingMetricDataQuery>>,
 }
 impl CustomizedMetricSpecificationBuilder {
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
@@ -84,8 +86,7 @@ impl CustomizedMetricSpecificationBuilder {
     }
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's returned by a call to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +99,7 @@ impl CustomizedMetricSpecificationBuilder {
     }
     /// <p>The namespace of the metric.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the metric.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,19 +113,18 @@ impl CustomizedMetricSpecificationBuilder {
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     pub fn dimensions(mut self, input: crate::types::MetricDimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDimension>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricDimension>> {
         &self.dimensions
     }
     /// <p>The statistic of the metric.</p>
@@ -135,8 +134,7 @@ impl CustomizedMetricSpecificationBuilder {
     }
     /// <p>The statistic of the metric.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::MetricStatistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The statistic of the metric.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
@@ -149,8 +147,7 @@ impl CustomizedMetricSpecificationBuilder {
     }
     /// <p>The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,28 +160,34 @@ impl CustomizedMetricSpecificationBuilder {
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
     pub fn metrics(mut self, input: crate::types::TargetTrackingMetricDataQuery) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetTrackingMetricDataQuery>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetTrackingMetricDataQuery>> {
         &self.metrics
     }
     /// Consumes the builder and constructs a [`CustomizedMetricSpecification`](crate::types::CustomizedMetricSpecification).
     pub fn build(self) -> crate::types::CustomizedMetricSpecification {
         crate::types::CustomizedMetricSpecification {
-            metric_name: self.metric_name,
-            namespace: self.namespace,
-            dimensions: self.dimensions,
-            statistic: self.statistic,
-            unit: self.unit,
-            metrics: self.metrics,
+            metric_name: self.metric_name
+            ,
+            namespace: self.namespace
+            ,
+            dimensions: self.dimensions
+            ,
+            statistic: self.statistic
+            ,
+            unit: self.unit
+            ,
+            metrics: self.metrics
+            ,
         }
     }
 }
+

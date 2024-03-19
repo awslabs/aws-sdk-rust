@@ -21,11 +21,7 @@ impl OutputDataConfig {
     /// Tries to convert the enum instance into [`S3Configuration`](crate::types::OutputDataConfig::S3Configuration), extracting the inner [`S3Configuration`](crate::types::S3Configuration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_configuration(&self) -> ::std::result::Result<&crate::types::S3Configuration, &Self> {
-        if let OutputDataConfig::S3Configuration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let OutputDataConfig::S3Configuration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3Configuration`](crate::types::OutputDataConfig::S3Configuration).
     pub fn is_s3_configuration(&self) -> bool {
@@ -36,3 +32,4 @@ impl OutputDataConfig {
         matches!(self, Self::Unknown)
     }
 }
+

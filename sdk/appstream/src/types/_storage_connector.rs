@@ -3,28 +3,29 @@
 /// <p>Describes a connector that enables persistent storage for users.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageConnector {
+pub struct StorageConnector  {
     /// <p>The type of storage connector.</p>
     pub connector_type: ::std::option::Option<crate::types::StorageConnectorType>,
     /// <p>The ARN of the storage connector.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The names of the domains for the account.</p>
-    pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StorageConnector {
+impl  StorageConnector  {
     /// <p>The type of storage connector.</p>
-    pub fn connector_type(&self) -> ::std::option::Option<&crate::types::StorageConnectorType> {
+    pub fn connector_type(&self) -> ::std::option::Option<& crate::types::StorageConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The ARN of the storage connector.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The names of the domains for the account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
-    pub fn domains(&self) -> &[::std::string::String] {
-        self.domains.as_deref().unwrap_or_default()
+    pub fn domains(&self) -> & [::std::string::String] {
+        self.domains.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StorageConnector {
@@ -40,7 +41,7 @@ impl StorageConnector {
 pub struct StorageConnectorBuilder {
     pub(crate) connector_type: ::std::option::Option<crate::types::StorageConnectorType>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StorageConnectorBuilder {
     /// <p>The type of storage connector.</p>
@@ -51,8 +52,7 @@ impl StorageConnectorBuilder {
     }
     /// <p>The type of storage connector.</p>
     pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::StorageConnectorType>) -> Self {
-        self.connector_type = input;
-        self
+        self.connector_type = input; self
     }
     /// <p>The type of storage connector.</p>
     pub fn get_connector_type(&self) -> &::std::option::Option<crate::types::StorageConnectorType> {
@@ -65,8 +65,7 @@ impl StorageConnectorBuilder {
     }
     /// <p>The ARN of the storage connector.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The ARN of the storage connector.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,25 +78,28 @@ impl StorageConnectorBuilder {
     /// <p>The names of the domains for the account.</p>
     pub fn domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input.into());
-        self.domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the domains for the account.</p>
-    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.domains = input; self
     }
     /// <p>The names of the domains for the account.</p>
-    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.domains
     }
     /// Consumes the builder and constructs a [`StorageConnector`](crate::types::StorageConnector).
     pub fn build(self) -> crate::types::StorageConnector {
         crate::types::StorageConnector {
-            connector_type: self.connector_type,
-            resource_identifier: self.resource_identifier,
-            domains: self.domains,
+            connector_type: self.connector_type
+            ,
+            resource_identifier: self.resource_identifier
+            ,
+            domains: self.domains
+            ,
         }
     }
 }
+

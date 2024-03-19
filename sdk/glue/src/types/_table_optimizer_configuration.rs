@@ -3,15 +3,15 @@
 /// <p>Contains details on the configuration of a table optimizer. You pass this configuration when creating or updating a table optimizer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableOptimizerConfiguration {
+pub struct TableOptimizerConfiguration  {
     /// <p>A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether table optimization is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl TableOptimizerConfiguration {
+impl  TableOptimizerConfiguration  {
     /// <p>A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Whether table optimization is enabled.</p>
@@ -41,8 +41,7 @@ impl TableOptimizerConfigurationBuilder {
     }
     /// <p>A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TableOptimizerConfigurationBuilder {
     }
     /// <p>Whether table optimization is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether table optimization is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl TableOptimizerConfigurationBuilder {
     /// Consumes the builder and constructs a [`TableOptimizerConfiguration`](crate::types::TableOptimizerConfiguration).
     pub fn build(self) -> crate::types::TableOptimizerConfiguration {
         crate::types::TableOptimizerConfiguration {
-            role_arn: self.role_arn,
-            enabled: self.enabled,
+            role_arn: self.role_arn
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

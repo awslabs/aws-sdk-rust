@@ -3,7 +3,7 @@
 /// <p>The structure representing the GetFindingsReportAccountSummaryRequest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingsReportAccountSummaryInput {
+pub struct GetFindingsReportAccountSummaryInput  {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
@@ -13,11 +13,11 @@ pub struct GetFindingsReportAccountSummaryInput {
     /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
     pub daily_reports_only: ::std::option::Option<bool>,
 }
-impl GetFindingsReportAccountSummaryInput {
+impl  GetFindingsReportAccountSummaryInput  {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
@@ -56,8 +56,7 @@ impl GetFindingsReportAccountSummaryInputBuilder {
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -72,8 +71,7 @@ impl GetFindingsReportAccountSummaryInputBuilder {
     }
     /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -86,26 +84,24 @@ impl GetFindingsReportAccountSummaryInputBuilder {
     }
     /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
     pub fn set_daily_reports_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.daily_reports_only = input;
-        self
+        self.daily_reports_only = input; self
     }
     /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
     pub fn get_daily_reports_only(&self) -> &::std::option::Option<bool> {
         &self.daily_reports_only
     }
     /// Consumes the builder and constructs a [`GetFindingsReportAccountSummaryInput`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                daily_reports_only: self.daily_reports_only,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                daily_reports_only: self.daily_reports_only
+                ,
+            }
         )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Details about the content data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentDataDetails {
+pub struct ContentDataDetails  {
     /// <p>Details about the content text data.</p>
     pub text_data: ::std::option::Option<crate::types::TextData>,
     /// <p>Details about the content ranking data.</p>
     pub ranking_data: ::std::option::Option<crate::types::RankingData>,
 }
-impl ContentDataDetails {
+impl  ContentDataDetails  {
     /// <p>Details about the content text data.</p>
-    pub fn text_data(&self) -> ::std::option::Option<&crate::types::TextData> {
+    pub fn text_data(&self) -> ::std::option::Option<& crate::types::TextData> {
         self.text_data.as_ref()
     }
     /// <p>Details about the content ranking data.</p>
-    pub fn ranking_data(&self) -> ::std::option::Option<&crate::types::RankingData> {
+    pub fn ranking_data(&self) -> ::std::option::Option<& crate::types::RankingData> {
         self.ranking_data.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ContentDataDetailsBuilder {
     }
     /// <p>Details about the content text data.</p>
     pub fn set_text_data(mut self, input: ::std::option::Option<crate::types::TextData>) -> Self {
-        self.text_data = input;
-        self
+        self.text_data = input; self
     }
     /// <p>Details about the content text data.</p>
     pub fn get_text_data(&self) -> &::std::option::Option<crate::types::TextData> {
@@ -57,8 +56,7 @@ impl ContentDataDetailsBuilder {
     }
     /// <p>Details about the content ranking data.</p>
     pub fn set_ranking_data(mut self, input: ::std::option::Option<crate::types::RankingData>) -> Self {
-        self.ranking_data = input;
-        self
+        self.ranking_data = input; self
     }
     /// <p>Details about the content ranking data.</p>
     pub fn get_ranking_data(&self) -> &::std::option::Option<crate::types::RankingData> {
@@ -67,8 +65,11 @@ impl ContentDataDetailsBuilder {
     /// Consumes the builder and constructs a [`ContentDataDetails`](crate::types::ContentDataDetails).
     pub fn build(self) -> crate::types::ContentDataDetails {
         crate::types::ContentDataDetails {
-            text_data: self.text_data,
-            ranking_data: self.ranking_data,
+            text_data: self.text_data
+            ,
+            ranking_data: self.ranking_data
+            ,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::search_provisioned_products::_search_provisioned_produ
 
 impl SearchProvisionedProductsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.search_provisioned_products();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.search_provisioned_products();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SearchProvisionedProducts`.
-///
+/// 
 /// <p>Gets information about the provisioned products that meet the specified criteria.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchProvisionedProductsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder,
+                    inner: crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
-        crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-    > for SearchProvisionedProductsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
-            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
+                    crate::operation::search_provisioned_products::SearchProvisionedProductsError,
+                > for SearchProvisionedProductsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
+                        crate::operation::search_provisioned_products::SearchProvisionedProductsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SearchProvisionedProductsFluentBuilder {
     /// Creates a new `SearchProvisionedProducts`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl SearchProvisionedProductsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::search_provisioned_products::SearchProvisionedProducts::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::search_provisioned_products::SearchProvisionedProducts::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
-        crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::search_provisioned_products::SearchProvisionedProductsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_provisioned_products::SearchProvisionedProductsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::search_provisioned_products::SearchProvisionedProducts::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::search_provisioned_products::SearchProvisionedProducts::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::search_provisioned_products::SearchProvisionedProductsOutput, crate::operation::search_provisioned_products::SearchProvisionedProductsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator {
-        crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator {
+                                crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -167,29 +154,21 @@ impl SearchProvisionedProductsFluentBuilder {
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code></p>
-    pub fn filters(mut self, k: crate::types::ProvisionedProductViewFilterBy, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn filters(mut self, k: crate::types::ProvisionedProductViewFilterBy, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code></p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec::<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code></p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec::<::std::string::String>>> {
         self.inner.get_filters()
     }
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
@@ -249,3 +228,4 @@ impl SearchProvisionedProductsFluentBuilder {
         self.inner.get_page_token()
     }
 }
+

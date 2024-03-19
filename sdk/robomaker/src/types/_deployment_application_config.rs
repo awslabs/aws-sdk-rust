@@ -3,7 +3,7 @@
 /// <p>Information about a deployment application configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentApplicationConfig {
+pub struct DeploymentApplicationConfig  {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     pub application: ::std::string::String,
     /// <p>The version of the application.</p>
@@ -11,19 +11,17 @@ pub struct DeploymentApplicationConfig {
     /// <p>The launch configuration.</p>
     pub launch_config: ::std::option::Option<crate::types::DeploymentLaunchConfig>,
 }
-impl DeploymentApplicationConfig {
+impl  DeploymentApplicationConfig  {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    pub fn application(&self) -> &str {
-        use std::ops::Deref;
-        self.application.deref()
+    pub fn application(&self) -> & str {
+        use std::ops::Deref; self.application.deref()
     }
     /// <p>The version of the application.</p>
-    pub fn application_version(&self) -> &str {
-        use std::ops::Deref;
-        self.application_version.deref()
+    pub fn application_version(&self) -> & str {
+        use std::ops::Deref; self.application_version.deref()
     }
     /// <p>The launch configuration.</p>
-    pub fn launch_config(&self) -> ::std::option::Option<&crate::types::DeploymentLaunchConfig> {
+    pub fn launch_config(&self) -> ::std::option::Option<& crate::types::DeploymentLaunchConfig> {
         self.launch_config.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl DeploymentApplicationConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl DeploymentApplicationConfigBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The version of the application.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl DeploymentApplicationConfigBuilder {
     }
     /// <p>The launch configuration.</p>
     pub fn set_launch_config(mut self, input: ::std::option::Option<crate::types::DeploymentLaunchConfig>) -> Self {
-        self.launch_config = input;
-        self
+        self.launch_config = input; self
     }
     /// <p>The launch configuration.</p>
     pub fn get_launch_config(&self) -> &::std::option::Option<crate::types::DeploymentLaunchConfig> {
@@ -93,20 +88,22 @@ impl DeploymentApplicationConfigBuilder {
     /// - [`application`](crate::types::builders::DeploymentApplicationConfigBuilder::application)
     /// - [`application_version`](crate::types::builders::DeploymentApplicationConfigBuilder::application_version)
     pub fn build(self) -> ::std::result::Result<crate::types::DeploymentApplicationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeploymentApplicationConfig {
-            application: self.application.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application",
-                    "application was not specified but it is required when building DeploymentApplicationConfig",
-                )
-            })?,
-            application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_version",
-                    "application_version was not specified but it is required when building DeploymentApplicationConfig",
-                )
-            })?,
-            launch_config: self.launch_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeploymentApplicationConfig {
+                application: self.application
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application", "application was not specified but it is required when building DeploymentApplicationConfig")
+                    )?
+                ,
+                application_version: self.application_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_version", "application_version was not specified but it is required when building DeploymentApplicationConfig")
+                    )?
+                ,
+                launch_config: self.launch_config
+                ,
+            }
+        )
     }
 }
+

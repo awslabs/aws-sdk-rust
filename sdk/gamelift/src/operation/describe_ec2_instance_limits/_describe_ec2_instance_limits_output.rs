@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEc2InstanceLimitsOutput {
+pub struct DescribeEc2InstanceLimitsOutput  {
     /// <p>The maximum number of instances for the specified instance type.</p>
-    pub ec2_instance_limits: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>,
+    pub ec2_instance_limits: ::std::option::Option<::std::vec::Vec::<crate::types::Ec2InstanceLimit>>,
     _request_id: Option<String>,
 }
-impl DescribeEc2InstanceLimitsOutput {
+impl  DescribeEc2InstanceLimitsOutput  {
     /// <p>The maximum number of instances for the specified instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_limits.is_none()`.
-    pub fn ec2_instance_limits(&self) -> &[crate::types::Ec2InstanceLimit] {
-        self.ec2_instance_limits.as_deref().unwrap_or_default()
+    pub fn ec2_instance_limits(&self) -> & [crate::types::Ec2InstanceLimit] {
+        self.ec2_instance_limits.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEc2InstanceLimitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEc2InstanceLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEc2InstanceLimitsOutput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput).
     pub fn builder() -> crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeEc2InstanceLimitsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEc2InstanceLimitsOutputBuilder {
-    pub(crate) ec2_instance_limits: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>,
+    pub(crate) ec2_instance_limits: ::std::option::Option<::std::vec::Vec::<crate::types::Ec2InstanceLimit>>,
     _request_id: Option<String>,
 }
 impl DescribeEc2InstanceLimitsOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeEc2InstanceLimitsOutputBuilder {
     /// <p>The maximum number of instances for the specified instance type.</p>
     pub fn ec2_instance_limits(mut self, input: crate::types::Ec2InstanceLimit) -> Self {
         let mut v = self.ec2_instance_limits.unwrap_or_default();
-        v.push(input);
-        self.ec2_instance_limits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ec2_instance_limits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The maximum number of instances for the specified instance type.</p>
-    pub fn set_ec2_instance_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>) -> Self {
-        self.ec2_instance_limits = input;
-        self
+    pub fn set_ec2_instance_limits(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ec2InstanceLimit>>) -> Self {
+        self.ec2_instance_limits = input; self
     }
     /// <p>The maximum number of instances for the specified instance type.</p>
-    pub fn get_ec2_instance_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>> {
+    pub fn get_ec2_instance_limits(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ec2InstanceLimit>> {
         &self.ec2_instance_limits
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEc2InstanceLimitsOutput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput).
     pub fn build(self) -> crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput {
         crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput {
-            ec2_instance_limits: self.ec2_instance_limits,
+            ec2_instance_limits: self.ec2_instance_limits
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

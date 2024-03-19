@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceMetricsInput {
+pub struct GetResourceMetricsInput  {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct GetResourceMetricsInput {
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    pub metric_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>,
+    pub metric_queries: ::std::option::Option<::std::vec::Vec::<crate::types::MetricQuery>>,
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,7 +44,7 @@ pub struct GetResourceMetricsInput {
     /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
     pub period_alignment: ::std::option::Option<crate::types::PeriodAlignment>,
 }
-impl GetResourceMetricsInput {
+impl  GetResourceMetricsInput  {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -52,28 +52,29 @@ impl GetResourceMetricsInput {
     /// <li>
     /// <p><code>DOCDB</code></p></li>
     /// </ul>
-    pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service_type(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service_type.as_ref()
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_queries.is_none()`.
-    pub fn metric_queries(&self) -> &[crate::types::MetricQuery] {
-        self.metric_queries.as_deref().unwrap_or_default()
+    pub fn metric_queries(&self) -> & [crate::types::MetricQuery] {
+        self.metric_queries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
@@ -98,11 +99,11 @@ impl GetResourceMetricsInput {
         self.max_results
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
-    pub fn period_alignment(&self) -> ::std::option::Option<&crate::types::PeriodAlignment> {
+    pub fn period_alignment(&self) -> ::std::option::Option<& crate::types::PeriodAlignment> {
         self.period_alignment.as_ref()
     }
 }
@@ -119,7 +120,7 @@ impl GetResourceMetricsInput {
 pub struct GetResourceMetricsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>,
+    pub(crate) metric_queries: ::std::option::Option<::std::vec::Vec::<crate::types::MetricQuery>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) period_in_seconds: ::std::option::Option<i32>,
@@ -148,8 +149,7 @@ impl GetResourceMetricsInputBuilder {
     /// <p><code>DOCDB</code></p></li>
     /// </ul>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
@@ -171,8 +171,7 @@ impl GetResourceMetricsInputBuilder {
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
@@ -186,17 +185,16 @@ impl GetResourceMetricsInputBuilder {
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
     pub fn metric_queries(mut self, input: crate::types::MetricQuery) -> Self {
         let mut v = self.metric_queries.unwrap_or_default();
-        v.push(input);
-        self.metric_queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    pub fn set_metric_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>) -> Self {
-        self.metric_queries = input;
-        self
+    pub fn set_metric_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricQuery>>) -> Self {
+        self.metric_queries = input; self
     }
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    pub fn get_metric_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>> {
+    pub fn get_metric_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricQuery>> {
         &self.metric_queries
     }
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
@@ -209,8 +207,7 @@ impl GetResourceMetricsInputBuilder {
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
@@ -227,8 +224,7 @@ impl GetResourceMetricsInputBuilder {
     /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
@@ -268,8 +264,7 @@ impl GetResourceMetricsInputBuilder {
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
     pub fn set_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period_in_seconds = input;
-        self
+        self.period_in_seconds = input; self
     }
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:</p>
     /// <ul>
@@ -295,8 +290,7 @@ impl GetResourceMetricsInputBuilder {
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -309,8 +303,7 @@ impl GetResourceMetricsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -323,28 +316,36 @@ impl GetResourceMetricsInputBuilder {
     }
     /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
     pub fn set_period_alignment(mut self, input: ::std::option::Option<crate::types::PeriodAlignment>) -> Self {
-        self.period_alignment = input;
-        self
+        self.period_alignment = input; self
     }
     /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
     pub fn get_period_alignment(&self) -> &::std::option::Option<crate::types::PeriodAlignment> {
         &self.period_alignment
     }
     /// Consumes the builder and constructs a [`GetResourceMetricsInput`](crate::operation::get_resource_metrics::GetResourceMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resource_metrics::GetResourceMetricsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_resource_metrics::GetResourceMetricsInput {
-            service_type: self.service_type,
-            identifier: self.identifier,
-            metric_queries: self.metric_queries,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            period_in_seconds: self.period_in_seconds,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            period_alignment: self.period_alignment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_metrics::GetResourceMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resource_metrics::GetResourceMetricsInput {
+                service_type: self.service_type
+                ,
+                identifier: self.identifier
+                ,
+                metric_queries: self.metric_queries
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                period_in_seconds: self.period_in_seconds
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                period_alignment: self.period_alignment
+                ,
+            }
+        )
     }
 }
+

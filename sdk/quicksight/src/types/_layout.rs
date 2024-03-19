@@ -5,13 +5,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Layout {
+pub struct Layout  {
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
     pub configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
 }
-impl Layout {
+impl  Layout  {
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::LayoutConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::LayoutConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -37,8 +37,7 @@ impl LayoutBuilder {
     }
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::LayoutConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::LayoutConfiguration> {
@@ -47,7 +46,9 @@ impl LayoutBuilder {
     /// Consumes the builder and constructs a [`Layout`](crate::types::Layout).
     pub fn build(self) -> crate::types::Layout {
         crate::types::Layout {
-            configuration: self.configuration,
+            configuration: self.configuration
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The structure with error messages.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangesetErrorInfo {
+pub struct ChangesetErrorInfo  {
     /// <p>The text of the error message.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The category of the error.</p>
@@ -27,9 +27,9 @@ pub struct ChangesetErrorInfo {
     /// </ul>
     pub error_category: ::std::option::Option<crate::types::ErrorCategory>,
 }
-impl ChangesetErrorInfo {
+impl  ChangesetErrorInfo  {
     /// <p>The text of the error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The category of the error.</p>
@@ -51,7 +51,7 @@ impl ChangesetErrorInfo {
     /// <li>
     /// <p><code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p></li>
     /// </ul>
-    pub fn error_category(&self) -> ::std::option::Option<&crate::types::ErrorCategory> {
+    pub fn error_category(&self) -> ::std::option::Option<& crate::types::ErrorCategory> {
         self.error_category.as_ref()
     }
 }
@@ -77,8 +77,7 @@ impl ChangesetErrorInfoBuilder {
     }
     /// <p>The text of the error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The text of the error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl ChangesetErrorInfoBuilder {
     /// <p><code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p></li>
     /// </ul>
     pub fn set_error_category(mut self, input: ::std::option::Option<crate::types::ErrorCategory>) -> Self {
-        self.error_category = input;
-        self
+        self.error_category = input; self
     }
     /// <p>The category of the error.</p>
     /// <ul>
@@ -155,8 +153,11 @@ impl ChangesetErrorInfoBuilder {
     /// Consumes the builder and constructs a [`ChangesetErrorInfo`](crate::types::ChangesetErrorInfo).
     pub fn build(self) -> crate::types::ChangesetErrorInfo {
         crate::types::ChangesetErrorInfo {
-            error_message: self.error_message,
-            error_category: self.error_category,
+            error_message: self.error_message
+            ,
+            error_category: self.error_category
+            ,
         }
     }
 }
+

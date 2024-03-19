@@ -3,19 +3,19 @@
 /// <p>Membership details, such as member ID and member role.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MembershipItem {
+pub struct MembershipItem  {
     /// <p>The member ID.</p>
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The member role.</p>
     pub role: ::std::option::Option<crate::types::RoomMembershipRole>,
 }
-impl MembershipItem {
+impl  MembershipItem  {
     /// <p>The member ID.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The member role.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::RoomMembershipRole> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::RoomMembershipRole> {
         self.role.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl MembershipItemBuilder {
     }
     /// <p>The member ID.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The member ID.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MembershipItemBuilder {
     }
     /// <p>The member role.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoomMembershipRole>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The member role.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::RoomMembershipRole> {
@@ -65,8 +63,11 @@ impl MembershipItemBuilder {
     /// Consumes the builder and constructs a [`MembershipItem`](crate::types::MembershipItem).
     pub fn build(self) -> crate::types::MembershipItem {
         crate::types::MembershipItem {
-            member_id: self.member_id,
-            role: self.role,
+            member_id: self.member_id
+            ,
+            role: self.role
+            ,
         }
     }
 }
+

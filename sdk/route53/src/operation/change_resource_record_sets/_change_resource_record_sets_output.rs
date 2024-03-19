@@ -3,24 +3,24 @@
 /// <p>A complex type containing the response for the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeResourceRecordSetsOutput {
+pub struct ChangeResourceRecordSetsOutput  {
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }
-impl ChangeResourceRecordSetsOutput {
+impl  ChangeResourceRecordSetsOutput  {
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
-    pub fn change_info(&self) -> ::std::option::Option<&crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> ::std::option::Option<& crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ChangeResourceRecordSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ChangeResourceRecordSetsOutput {
     /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsOutput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput).
     pub fn builder() -> crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsOutputBuilder {
@@ -46,8 +46,7 @@ impl ChangeResourceRecordSetsOutputBuilder {
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
     pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
-        self.change_info = input;
-        self
+        self.change_info = input; self
     }
     /// <p>A complex type that contains information about changes made to your hosted zone.</p>
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
@@ -55,19 +54,21 @@ impl ChangeResourceRecordSetsOutputBuilder {
         &self.change_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ChangeResourceRecordSetsOutput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput).
     pub fn build(self) -> crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput {
         crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput {
-            change_info: self.change_info,
+            change_info: self.change_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

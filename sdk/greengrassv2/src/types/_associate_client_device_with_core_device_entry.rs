@@ -3,15 +3,14 @@
 /// <p>Contains a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation consumes a list of these requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateClientDeviceWithCoreDeviceEntry {
+pub struct AssociateClientDeviceWithCoreDeviceEntry  {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
     pub thing_name: ::std::string::String,
 }
-impl AssociateClientDeviceWithCoreDeviceEntry {
+impl  AssociateClientDeviceWithCoreDeviceEntry  {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
-    pub fn thing_name(&self) -> &str {
-        use std::ops::Deref;
-        self.thing_name.deref()
+    pub fn thing_name(&self) -> & str {
+        use std::ops::Deref; self.thing_name.deref()
     }
 }
 impl AssociateClientDeviceWithCoreDeviceEntry {
@@ -36,8 +35,7 @@ impl AssociateClientDeviceWithCoreDeviceEntryBuilder {
     }
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,16 +44,16 @@ impl AssociateClientDeviceWithCoreDeviceEntryBuilder {
     /// Consumes the builder and constructs a [`AssociateClientDeviceWithCoreDeviceEntry`](crate::types::AssociateClientDeviceWithCoreDeviceEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`thing_name`](crate::types::builders::AssociateClientDeviceWithCoreDeviceEntryBuilder::thing_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssociateClientDeviceWithCoreDeviceEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssociateClientDeviceWithCoreDeviceEntry {
-            thing_name: self.thing_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "thing_name",
-                    "thing_name was not specified but it is required when building AssociateClientDeviceWithCoreDeviceEntry",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssociateClientDeviceWithCoreDeviceEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssociateClientDeviceWithCoreDeviceEntry {
+                thing_name: self.thing_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("thing_name", "thing_name was not specified but it is required when building AssociateClientDeviceWithCoreDeviceEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

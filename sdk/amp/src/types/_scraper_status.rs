@@ -3,13 +3,13 @@
 /// <p>The <code>ScraperStatus</code> structure contains status information about the scraper.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScraperStatus {
+pub struct ScraperStatus  {
     /// <p>The current status of the scraper.</p>
     pub status_code: crate::types::ScraperStatusCode,
 }
-impl ScraperStatus {
+impl  ScraperStatus  {
     /// <p>The current status of the scraper.</p>
-    pub fn status_code(&self) -> &crate::types::ScraperStatusCode {
+    pub fn status_code(&self) -> & crate::types::ScraperStatusCode {
         &self.status_code
     }
 }
@@ -35,8 +35,7 @@ impl ScraperStatusBuilder {
     }
     /// <p>The current status of the scraper.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ScraperStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The current status of the scraper.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ScraperStatusCode> {
@@ -46,13 +45,15 @@ impl ScraperStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status_code`](crate::types::builders::ScraperStatusBuilder::status_code)
     pub fn build(self) -> ::std::result::Result<crate::types::ScraperStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScraperStatus {
-            status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_code",
-                    "status_code was not specified but it is required when building ScraperStatus",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScraperStatus {
+                status_code: self.status_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_code", "status_code was not specified but it is required when building ScraperStatus")
+                    )?
+                ,
+            }
+        )
     }
 }
+

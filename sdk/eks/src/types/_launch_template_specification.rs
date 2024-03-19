@@ -4,7 +4,7 @@
 /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateSpecification {
+pub struct LaunchTemplateSpecification  {
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -14,19 +14,19 @@ pub struct LaunchTemplateSpecification {
     /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl LaunchTemplateSpecification {
+impl  LaunchTemplateSpecification  {
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl LaunchTemplateSpecificationBuilder {
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
@@ -70,8 +69,7 @@ impl LaunchTemplateSpecificationBuilder {
     }
     /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl LaunchTemplateSpecificationBuilder {
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
@@ -97,9 +94,13 @@ impl LaunchTemplateSpecificationBuilder {
     /// Consumes the builder and constructs a [`LaunchTemplateSpecification`](crate::types::LaunchTemplateSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateSpecification {
         crate::types::LaunchTemplateSpecification {
-            name: self.name,
-            version: self.version,
-            id: self.id,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTrafficMirrorFilterRuleOutput {
+pub struct ModifyTrafficMirrorFilterRuleOutput  {
     /// <p>Modifies a Traffic Mirror rule.</p>
     pub traffic_mirror_filter_rule: ::std::option::Option<crate::types::TrafficMirrorFilterRule>,
     _request_id: Option<String>,
 }
-impl ModifyTrafficMirrorFilterRuleOutput {
+impl  ModifyTrafficMirrorFilterRuleOutput  {
     /// <p>Modifies a Traffic Mirror rule.</p>
-    pub fn traffic_mirror_filter_rule(&self) -> ::std::option::Option<&crate::types::TrafficMirrorFilterRule> {
+    pub fn traffic_mirror_filter_rule(&self) -> ::std::option::Option<& crate::types::TrafficMirrorFilterRule> {
         self.traffic_mirror_filter_rule.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyTrafficMirrorFilterRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyTrafficMirrorFilterRuleOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTrafficMirrorFilterRuleOutput`](crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleOutput).
     pub fn builder() -> crate::operation::modify_traffic_mirror_filter_rule::builders::ModifyTrafficMirrorFilterRuleOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyTrafficMirrorFilterRuleOutputBuilder {
     }
     /// <p>Modifies a Traffic Mirror rule.</p>
     pub fn set_traffic_mirror_filter_rule(mut self, input: ::std::option::Option<crate::types::TrafficMirrorFilterRule>) -> Self {
-        self.traffic_mirror_filter_rule = input;
-        self
+        self.traffic_mirror_filter_rule = input; self
     }
     /// <p>Modifies a Traffic Mirror rule.</p>
     pub fn get_traffic_mirror_filter_rule(&self) -> &::std::option::Option<crate::types::TrafficMirrorFilterRule> {
         &self.traffic_mirror_filter_rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyTrafficMirrorFilterRuleOutput`](crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleOutput).
     pub fn build(self) -> crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleOutput {
         crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleOutput {
-            traffic_mirror_filter_rule: self.traffic_mirror_filter_rule,
+            traffic_mirror_filter_rule: self.traffic_mirror_filter_rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

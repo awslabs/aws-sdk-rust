@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProvisionedModelThroughputInput {
+pub struct DeleteProvisionedModelThroughputInput  {
     /// <p>The ARN or name of the provisioned throughput.</p>
     pub provisioned_model_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProvisionedModelThroughputInput {
+impl  DeleteProvisionedModelThroughputInput  {
     /// <p>The ARN or name of the provisioned throughput.</p>
-    pub fn provisioned_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioned_model_id(&self) -> ::std::option::Option<& str> {
         self.provisioned_model_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteProvisionedModelThroughputInputBuilder {
     }
     /// <p>The ARN or name of the provisioned throughput.</p>
     pub fn set_provisioned_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_model_id = input;
-        self
+        self.provisioned_model_id = input; self
     }
     /// <p>The ARN or name of the provisioned throughput.</p>
     pub fn get_provisioned_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioned_model_id
     }
     /// Consumes the builder and constructs a [`DeleteProvisionedModelThroughputInput`](crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputInput {
-                provisioned_model_id: self.provisioned_model_id,
-            },
+                provisioned_model_id: self.provisioned_model_id
+                ,
+            }
         )
     }
 }
+

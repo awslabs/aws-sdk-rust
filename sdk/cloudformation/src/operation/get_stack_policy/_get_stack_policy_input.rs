@@ -3,13 +3,13 @@
 /// <p>The input for the <code>GetStackPolicy</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStackPolicyInput {
+pub struct GetStackPolicyInput  {
     /// <p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
-impl GetStackPolicyInput {
+impl  GetStackPolicyInput  {
     /// <p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl GetStackPolicyInputBuilder {
     }
     /// <p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }
     /// Consumes the builder and constructs a [`GetStackPolicyInput`](crate::operation::get_stack_policy::GetStackPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_stack_policy::GetStackPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_stack_policy::GetStackPolicyInput { stack_name: self.stack_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stack_policy::GetStackPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_stack_policy::GetStackPolicyInput {
+                stack_name: self.stack_name
+                ,
+            }
+        )
     }
 }
+

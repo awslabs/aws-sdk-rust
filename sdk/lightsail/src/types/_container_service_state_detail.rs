@@ -3,7 +3,7 @@
 /// <p>Describes the current state of a container service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerServiceStateDetail {
+pub struct ContainerServiceStateDetail  {
     /// <p>The state code of the container service.</p>
     /// <p>The following state codes are possible:</p>
     /// <ul>
@@ -40,7 +40,7 @@ pub struct ContainerServiceStateDetail {
     /// </note>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ContainerServiceStateDetail {
+impl  ContainerServiceStateDetail  {
     /// <p>The state code of the container service.</p>
     /// <p>The following state codes are possible:</p>
     /// <ul>
@@ -71,13 +71,13 @@ impl ContainerServiceStateDetail {
     /// <p><code>UNKNOWN_ERROR</code> - An error was experienced when your container service was being created.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ContainerServiceStateDetailCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ContainerServiceStateDetailCode> {
         self.code.as_ref()
     }
     /// <p>A message that provides more information for the state code.</p><note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -161,8 +161,7 @@ impl ContainerServiceStateDetailBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ContainerServiceStateDetailCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The state code of the container service.</p>
     /// <p>The following state codes are possible:</p>
@@ -208,8 +207,7 @@ impl ContainerServiceStateDetailBuilder {
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
     /// </note>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message that provides more information for the state code.</p><note>
     /// <p>The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
@@ -220,8 +218,11 @@ impl ContainerServiceStateDetailBuilder {
     /// Consumes the builder and constructs a [`ContainerServiceStateDetail`](crate::types::ContainerServiceStateDetail).
     pub fn build(self) -> crate::types::ContainerServiceStateDetail {
         crate::types::ContainerServiceStateDetail {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

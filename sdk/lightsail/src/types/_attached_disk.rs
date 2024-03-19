@@ -3,15 +3,15 @@
 /// <p>Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachedDisk {
+pub struct AttachedDisk  {
     /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in GB.</p>
     pub size_in_gb: ::std::option::Option<i32>,
 }
-impl AttachedDisk {
+impl  AttachedDisk  {
     /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The size of the disk in GB.</p>
@@ -41,8 +41,7 @@ impl AttachedDiskBuilder {
     }
     /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AttachedDiskBuilder {
     }
     /// <p>The size of the disk in GB.</p>
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_gb = input;
-        self
+        self.size_in_gb = input; self
     }
     /// <p>The size of the disk in GB.</p>
     pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AttachedDiskBuilder {
     /// Consumes the builder and constructs a [`AttachedDisk`](crate::types::AttachedDisk).
     pub fn build(self) -> crate::types::AttachedDisk {
         crate::types::AttachedDisk {
-            path: self.path,
-            size_in_gb: self.size_in_gb,
+            path: self.path
+            ,
+            size_in_gb: self.size_in_gb
+            ,
         }
     }
 }
+

@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeSimulationJobOutput {
+pub struct BatchDescribeSimulationJobOutput  {
     /// <p>A list of simulation jobs.</p>
-    pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJob>>,
+    pub jobs: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJob>>,
     /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
-    pub unprocessed_jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub unprocessed_jobs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl BatchDescribeSimulationJobOutput {
+impl  BatchDescribeSimulationJobOutput  {
     /// <p>A list of simulation jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
-    pub fn jobs(&self) -> &[crate::types::SimulationJob] {
-        self.jobs.as_deref().unwrap_or_default()
+    pub fn jobs(&self) -> & [crate::types::SimulationJob] {
+        self.jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_jobs.is_none()`.
-    pub fn unprocessed_jobs(&self) -> &[::std::string::String] {
-        self.unprocessed_jobs.as_deref().unwrap_or_default()
+    pub fn unprocessed_jobs(&self) -> & [::std::string::String] {
+        self.unprocessed_jobs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDescribeSimulationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDescribeSimulationJobOutput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeSimulationJobOutput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput).
     pub fn builder() -> crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchDescribeSimulationJobOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeSimulationJobOutputBuilder {
-    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJob>>,
-    pub(crate) unprocessed_jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJob>>,
+    pub(crate) unprocessed_jobs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchDescribeSimulationJobOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchDescribeSimulationJobOutputBuilder {
     /// <p>A list of simulation jobs.</p>
     pub fn jobs(mut self, input: crate::types::SimulationJob) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input);
-        self.jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of simulation jobs.</p>
-    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJob>>) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SimulationJob>>) -> Self {
+        self.jobs = input; self
     }
     /// <p>A list of simulation jobs.</p>
-    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJob>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SimulationJob>> {
         &self.jobs
     }
     /// Appends an item to `unprocessed_jobs`.
@@ -71,34 +72,36 @@ impl BatchDescribeSimulationJobOutputBuilder {
     /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
     pub fn unprocessed_jobs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.unprocessed_jobs.unwrap_or_default();
-        v.push(input.into());
-        self.unprocessed_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.unprocessed_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
-    pub fn set_unprocessed_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.unprocessed_jobs = input;
-        self
+    pub fn set_unprocessed_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.unprocessed_jobs = input; self
     }
     /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
-    pub fn get_unprocessed_jobs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_unprocessed_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.unprocessed_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDescribeSimulationJobOutput`](crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput).
     pub fn build(self) -> crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput {
         crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput {
-            jobs: self.jobs,
-            unprocessed_jobs: self.unprocessed_jobs,
+            jobs: self.jobs
+            ,
+            unprocessed_jobs: self.unprocessed_jobs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOpenCypherQueryStatusOutput {
+pub struct GetOpenCypherQueryStatusOutput  {
     /// <p>The unique ID of the query for which status is being returned.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The openCypher query string.</p>
@@ -11,25 +11,25 @@ pub struct GetOpenCypherQueryStatusOutput {
     pub query_eval_stats: ::std::option::Option<crate::types::QueryEvalStats>,
     _request_id: Option<String>,
 }
-impl GetOpenCypherQueryStatusOutput {
+impl  GetOpenCypherQueryStatusOutput  {
     /// <p>The unique ID of the query for which status is being returned.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>The openCypher query string.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The openCypher query evaluation status.</p>
-    pub fn query_eval_stats(&self) -> ::std::option::Option<&crate::types::QueryEvalStats> {
+    pub fn query_eval_stats(&self) -> ::std::option::Option<& crate::types::QueryEvalStats> {
         self.query_eval_stats.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOpenCypherQueryStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetOpenCypherQueryStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetOpenCypherQueryStatusOutput`](crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusOutput).
     pub fn builder() -> crate::operation::get_open_cypher_query_status::builders::GetOpenCypherQueryStatusOutputBuilder {
@@ -54,8 +54,7 @@ impl GetOpenCypherQueryStatusOutputBuilder {
     }
     /// <p>The unique ID of the query for which status is being returned.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The unique ID of the query for which status is being returned.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetOpenCypherQueryStatusOutputBuilder {
     }
     /// <p>The openCypher query string.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The openCypher query string.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetOpenCypherQueryStatusOutputBuilder {
     }
     /// <p>The openCypher query evaluation status.</p>
     pub fn set_query_eval_stats(mut self, input: ::std::option::Option<crate::types::QueryEvalStats>) -> Self {
-        self.query_eval_stats = input;
-        self
+        self.query_eval_stats = input; self
     }
     /// <p>The openCypher query evaluation status.</p>
     pub fn get_query_eval_stats(&self) -> &::std::option::Option<crate::types::QueryEvalStats> {
         &self.query_eval_stats
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetOpenCypherQueryStatusOutput`](crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusOutput).
     pub fn build(self) -> crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusOutput {
         crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusOutput {
-            query_id: self.query_id,
-            query_string: self.query_string,
-            query_eval_stats: self.query_eval_stats,
+            query_id: self.query_id
+            ,
+            query_string: self.query_string
+            ,
+            query_eval_stats: self.query_eval_stats
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

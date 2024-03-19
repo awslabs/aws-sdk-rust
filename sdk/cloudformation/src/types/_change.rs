@@ -3,7 +3,7 @@
 /// <p>The <code>Change</code> structure describes the changes CloudFormation will perform if you execute the change set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Change {
+pub struct Change  {
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
@@ -11,9 +11,9 @@ pub struct Change {
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub resource_change: ::std::option::Option<crate::types::ResourceChange>,
 }
-impl Change {
+impl  Change  {
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChangeType> {
         self.r#type.as_ref()
     }
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
@@ -21,7 +21,7 @@ impl Change {
         self.hook_invocation_count
     }
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
-    pub fn resource_change(&self) -> ::std::option::Option<&crate::types::ResourceChange> {
+    pub fn resource_change(&self) -> ::std::option::Option<& crate::types::ResourceChange> {
         self.resource_change.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ChangeBuilder {
     }
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
@@ -62,8 +61,7 @@ impl ChangeBuilder {
     }
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
     pub fn set_hook_invocation_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hook_invocation_count = input;
-        self
+        self.hook_invocation_count = input; self
     }
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
     pub fn get_hook_invocation_count(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ChangeBuilder {
     }
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub fn set_resource_change(mut self, input: ::std::option::Option<crate::types::ResourceChange>) -> Self {
-        self.resource_change = input;
-        self
+        self.resource_change = input; self
     }
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub fn get_resource_change(&self) -> &::std::option::Option<crate::types::ResourceChange> {
@@ -86,9 +83,13 @@ impl ChangeBuilder {
     /// Consumes the builder and constructs a [`Change`](crate::types::Change).
     pub fn build(self) -> crate::types::Change {
         crate::types::Change {
-            r#type: self.r#type,
-            hook_invocation_count: self.hook_invocation_count,
-            resource_change: self.resource_change,
+            r#type: self.r#type
+            ,
+            hook_invocation_count: self.hook_invocation_count
+            ,
+            resource_change: self.resource_change
+            ,
         }
     }
 }
+

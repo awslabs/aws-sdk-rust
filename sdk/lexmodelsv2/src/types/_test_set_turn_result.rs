@@ -3,19 +3,19 @@
 /// <p>Contains information about the results of the analysis of a turn in the test set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestSetTurnResult {
+pub struct TestSetTurnResult  {
     /// <p>Contains information about the agent messages in the turn.</p>
     pub agent: ::std::option::Option<crate::types::AgentTurnResult>,
     /// <p>Contains information about the user messages in the turn.</p>
     pub user: ::std::option::Option<crate::types::UserTurnResult>,
 }
-impl TestSetTurnResult {
+impl  TestSetTurnResult  {
     /// <p>Contains information about the agent messages in the turn.</p>
-    pub fn agent(&self) -> ::std::option::Option<&crate::types::AgentTurnResult> {
+    pub fn agent(&self) -> ::std::option::Option<& crate::types::AgentTurnResult> {
         self.agent.as_ref()
     }
     /// <p>Contains information about the user messages in the turn.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::UserTurnResult> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::UserTurnResult> {
         self.user.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TestSetTurnResultBuilder {
     }
     /// <p>Contains information about the agent messages in the turn.</p>
     pub fn set_agent(mut self, input: ::std::option::Option<crate::types::AgentTurnResult>) -> Self {
-        self.agent = input;
-        self
+        self.agent = input; self
     }
     /// <p>Contains information about the agent messages in the turn.</p>
     pub fn get_agent(&self) -> &::std::option::Option<crate::types::AgentTurnResult> {
@@ -55,8 +54,7 @@ impl TestSetTurnResultBuilder {
     }
     /// <p>Contains information about the user messages in the turn.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserTurnResult>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>Contains information about the user messages in the turn.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::UserTurnResult> {
@@ -65,8 +63,11 @@ impl TestSetTurnResultBuilder {
     /// Consumes the builder and constructs a [`TestSetTurnResult`](crate::types::TestSetTurnResult).
     pub fn build(self) -> crate::types::TestSetTurnResult {
         crate::types::TestSetTurnResult {
-            agent: self.agent,
-            user: self.user,
+            agent: self.agent
+            ,
+            user: self.user
+            ,
         }
     }
 }
+

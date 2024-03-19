@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAlarmRecommendationsOutput {
+pub struct ListAlarmRecommendationsOutput  {
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub alarm_recommendations: ::std::vec::Vec<crate::types::AlarmRecommendation>,
+    pub alarm_recommendations: ::std::vec::Vec::<crate::types::AlarmRecommendation>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAlarmRecommendationsOutput {
+impl  ListAlarmRecommendationsOutput  {
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub fn alarm_recommendations(&self) -> &[crate::types::AlarmRecommendation] {
-        use std::ops::Deref;
-        self.alarm_recommendations.deref()
+    pub fn alarm_recommendations(&self) -> & [crate::types::AlarmRecommendation] {
+        use std::ops::Deref; self.alarm_recommendations.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAlarmRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAlarmRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAlarmRecommendationsOutput`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput).
     pub fn builder() -> crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAlarmRecommendationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAlarmRecommendationsOutputBuilder {
-    pub(crate) alarm_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
+    pub(crate) alarm_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmRecommendation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAlarmRecommendationsOutputBuilder {
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     pub fn alarm_recommendations(mut self, input: crate::types::AlarmRecommendation) -> Self {
         let mut v = self.alarm_recommendations.unwrap_or_default();
-        v.push(input);
-        self.alarm_recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarm_recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub fn set_alarm_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>) -> Self {
-        self.alarm_recommendations = input;
-        self
+    pub fn set_alarm_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmRecommendation>>) -> Self {
+        self.alarm_recommendations = input; self
     }
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
-    pub fn get_alarm_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>> {
+    pub fn get_alarm_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmRecommendation>> {
         &self.alarm_recommendations
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
@@ -68,40 +66,37 @@ impl ListAlarmRecommendationsOutputBuilder {
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAlarmRecommendationsOutput`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`alarm_recommendations`](crate::operation::list_alarm_recommendations::builders::ListAlarmRecommendationsOutputBuilder::alarm_recommendations)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
-            alarm_recommendations: self.alarm_recommendations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarm_recommendations",
-                    "alarm_recommendations was not specified but it is required when building ListAlarmRecommendationsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
+                alarm_recommendations: self.alarm_recommendations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarm_recommendations", "alarm_recommendations was not specified but it is required when building ListAlarmRecommendationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>A description of the settings for delivering logs to Amazon Kinesis Data Firehose.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirehoseLogDeliveryDescription {
+pub struct FirehoseLogDeliveryDescription  {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
     pub delivery_stream: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
     pub enabled: bool,
 }
-impl FirehoseLogDeliveryDescription {
+impl  FirehoseLogDeliveryDescription  {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
-    pub fn delivery_stream(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_stream(&self) -> ::std::option::Option<& str> {
         self.delivery_stream.as_deref()
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
@@ -41,8 +41,7 @@ impl FirehoseLogDeliveryDescriptionBuilder {
     }
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
     pub fn set_delivery_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream = input;
-        self
+        self.delivery_stream = input; self
     }
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
     pub fn get_delivery_stream(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl FirehoseLogDeliveryDescriptionBuilder {
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,12 @@ impl FirehoseLogDeliveryDescriptionBuilder {
     /// Consumes the builder and constructs a [`FirehoseLogDeliveryDescription`](crate::types::FirehoseLogDeliveryDescription).
     pub fn build(self) -> crate::types::FirehoseLogDeliveryDescription {
         crate::types::FirehoseLogDeliveryDescription {
-            delivery_stream: self.delivery_stream,
-            enabled: self.enabled.unwrap_or_default(),
+            delivery_stream: self.delivery_stream
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

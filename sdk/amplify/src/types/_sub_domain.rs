@@ -3,7 +3,7 @@
 /// <p>The subdomain for the domain association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubDomain {
+pub struct SubDomain  {
     /// <p>Describes the settings for the subdomain.</p>
     pub sub_domain_setting: ::std::option::Option<crate::types::SubDomainSetting>,
     /// <p>The verified status of the subdomain</p>
@@ -11,9 +11,9 @@ pub struct SubDomain {
     /// <p>The DNS record for the subdomain.</p>
     pub dns_record: ::std::string::String,
 }
-impl SubDomain {
+impl  SubDomain  {
     /// <p>Describes the settings for the subdomain.</p>
-    pub fn sub_domain_setting(&self) -> ::std::option::Option<&crate::types::SubDomainSetting> {
+    pub fn sub_domain_setting(&self) -> ::std::option::Option<& crate::types::SubDomainSetting> {
         self.sub_domain_setting.as_ref()
     }
     /// <p>The verified status of the subdomain</p>
@@ -21,9 +21,8 @@ impl SubDomain {
         self.verified
     }
     /// <p>The DNS record for the subdomain.</p>
-    pub fn dns_record(&self) -> &str {
-        use std::ops::Deref;
-        self.dns_record.deref()
+    pub fn dns_record(&self) -> & str {
+        use std::ops::Deref; self.dns_record.deref()
     }
 }
 impl SubDomain {
@@ -50,8 +49,7 @@ impl SubDomainBuilder {
     }
     /// <p>Describes the settings for the subdomain.</p>
     pub fn set_sub_domain_setting(mut self, input: ::std::option::Option<crate::types::SubDomainSetting>) -> Self {
-        self.sub_domain_setting = input;
-        self
+        self.sub_domain_setting = input; self
     }
     /// <p>Describes the settings for the subdomain.</p>
     pub fn get_sub_domain_setting(&self) -> &::std::option::Option<crate::types::SubDomainSetting> {
@@ -65,8 +63,7 @@ impl SubDomainBuilder {
     }
     /// <p>The verified status of the subdomain</p>
     pub fn set_verified(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.verified = input;
-        self
+        self.verified = input; self
     }
     /// <p>The verified status of the subdomain</p>
     pub fn get_verified(&self) -> &::std::option::Option<bool> {
@@ -80,8 +77,7 @@ impl SubDomainBuilder {
     }
     /// <p>The DNS record for the subdomain.</p>
     pub fn set_dns_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_record = input;
-        self
+        self.dns_record = input; self
     }
     /// <p>The DNS record for the subdomain.</p>
     pub fn get_dns_record(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +88,22 @@ impl SubDomainBuilder {
     /// - [`verified`](crate::types::builders::SubDomainBuilder::verified)
     /// - [`dns_record`](crate::types::builders::SubDomainBuilder::dns_record)
     pub fn build(self) -> ::std::result::Result<crate::types::SubDomain, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SubDomain {
-            sub_domain_setting: self.sub_domain_setting,
-            verified: self.verified.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "verified",
-                    "verified was not specified but it is required when building SubDomain",
-                )
-            })?,
-            dns_record: self.dns_record.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dns_record",
-                    "dns_record was not specified but it is required when building SubDomain",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SubDomain {
+                sub_domain_setting: self.sub_domain_setting
+                ,
+                verified: self.verified
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("verified", "verified was not specified but it is required when building SubDomain")
+                    )?
+                ,
+                dns_record: self.dns_record
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dns_record", "dns_record was not specified but it is required when building SubDomain")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEmailChannelInput {
+pub struct UpdateEmailChannelInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status and settings of the email channel for an application.</p>
     pub email_channel_request: ::std::option::Option<crate::types::EmailChannelRequest>,
 }
-impl UpdateEmailChannelInput {
+impl  UpdateEmailChannelInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies the status and settings of the email channel for an application.</p>
-    pub fn email_channel_request(&self) -> ::std::option::Option<&crate::types::EmailChannelRequest> {
+    pub fn email_channel_request(&self) -> ::std::option::Option<& crate::types::EmailChannelRequest> {
         self.email_channel_request.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateEmailChannelInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateEmailChannelInputBuilder {
     }
     /// <p>Specifies the status and settings of the email channel for an application.</p>
     pub fn set_email_channel_request(mut self, input: ::std::option::Option<crate::types::EmailChannelRequest>) -> Self {
-        self.email_channel_request = input;
-        self
+        self.email_channel_request = input; self
     }
     /// <p>Specifies the status and settings of the email channel for an application.</p>
     pub fn get_email_channel_request(&self) -> &::std::option::Option<crate::types::EmailChannelRequest> {
         &self.email_channel_request
     }
     /// Consumes the builder and constructs a [`UpdateEmailChannelInput`](crate::operation::update_email_channel::UpdateEmailChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_email_channel::UpdateEmailChannelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_email_channel::UpdateEmailChannelInput {
-            application_id: self.application_id,
-            email_channel_request: self.email_channel_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_email_channel::UpdateEmailChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_email_channel::UpdateEmailChannelInput {
+                application_id: self.application_id
+                ,
+                email_channel_request: self.email_channel_request
+                ,
+            }
+        )
     }
 }
+

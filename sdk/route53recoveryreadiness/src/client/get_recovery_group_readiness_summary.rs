@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetRecoveryGroupReadinessSummary`](crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
     ///   - [`recovery_group_name(impl Into<String>)`](crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::set_recovery_group_name):<br>required: **true**<br><p>The name of a recovery group.</p><br>
-    /// - On success, responds with [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput) with field(s):
+                            /// - On success, responds with [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness(Option<Readiness>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::readiness): <p>The readiness status at a recovery group level.</p>
     ///   - [`readiness_checks(Option<Vec::<ReadinessCheckSummary>>)`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput::readiness_checks): <p>Summaries of the readiness checks for the recovery group.</p>
-    /// - On failure, responds with [`SdkError<GetRecoveryGroupReadinessSummaryError>`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryError)
-    pub fn get_recovery_group_readiness_summary(
-        &self,
-    ) -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder {
-        crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetRecoveryGroupReadinessSummaryError>`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryError)
+    pub fn get_recovery_group_readiness_summary(&self) -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder {
+                                crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

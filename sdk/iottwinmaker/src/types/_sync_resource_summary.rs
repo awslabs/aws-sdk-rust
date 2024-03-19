@@ -3,7 +3,7 @@
 /// <p>The sync resource summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SyncResourceSummary {
+pub struct SyncResourceSummary  {
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::SyncResourceType>,
     /// <p>The external ID.</p>
@@ -15,25 +15,25 @@ pub struct SyncResourceSummary {
     /// <p>The update date and time.</p>
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SyncResourceSummary {
+impl  SyncResourceSummary  {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::SyncResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::SyncResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The external ID.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The resource ID.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The sync resource summary status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SyncResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SyncResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The update date and time.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl SyncResourceSummaryBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::SyncResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::SyncResourceType> {
@@ -76,8 +75,7 @@ impl SyncResourceSummaryBuilder {
     }
     /// <p>The external ID.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external ID.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl SyncResourceSummaryBuilder {
     }
     /// <p>The resource ID.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl SyncResourceSummaryBuilder {
     }
     /// <p>The sync resource summary status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SyncResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The sync resource summary status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SyncResourceStatus> {
@@ -118,8 +114,7 @@ impl SyncResourceSummaryBuilder {
     }
     /// <p>The update date and time.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The update date and time.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl SyncResourceSummaryBuilder {
     /// Consumes the builder and constructs a [`SyncResourceSummary`](crate::types::SyncResourceSummary).
     pub fn build(self) -> crate::types::SyncResourceSummary {
         crate::types::SyncResourceSummary {
-            resource_type: self.resource_type,
-            external_id: self.external_id,
-            resource_id: self.resource_id,
-            status: self.status,
-            update_date_time: self.update_date_time,
+            resource_type: self.resource_type
+            ,
+            external_id: self.external_id
+            ,
+            resource_id: self.resource_id
+            ,
+            status: self.status
+            ,
+            update_date_time: self.update_date_time
+            ,
         }
     }
 }
+

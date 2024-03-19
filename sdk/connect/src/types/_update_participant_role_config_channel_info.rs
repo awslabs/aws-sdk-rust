@@ -21,11 +21,7 @@ impl UpdateParticipantRoleConfigChannelInfo {
     /// Tries to convert the enum instance into [`Chat`](crate::types::UpdateParticipantRoleConfigChannelInfo::Chat), extracting the inner [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_chat(&self) -> ::std::result::Result<&crate::types::ChatParticipantRoleConfig, &Self> {
-        if let UpdateParticipantRoleConfigChannelInfo::Chat(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let UpdateParticipantRoleConfigChannelInfo::Chat(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Chat`](crate::types::UpdateParticipantRoleConfigChannelInfo::Chat).
     pub fn is_chat(&self) -> bool {
@@ -36,3 +32,4 @@ impl UpdateParticipantRoleConfigChannelInfo {
         matches!(self, Self::Unknown)
     }
 }
+

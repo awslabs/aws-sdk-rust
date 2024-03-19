@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSchedulesInput {
+pub struct ListSchedulesInput  {
     /// <p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>Schedule name prefix to return the filtered list of resources.</p>
@@ -14,21 +14,21 @@ pub struct ListSchedulesInput {
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListSchedulesInput {
+impl  ListSchedulesInput  {
     /// <p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>Schedule name prefix to return the filtered list of resources.</p>
-    pub fn name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix(&self) -> ::std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>If specified, only lists the schedules whose current state matches the given filter.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduleState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ScheduleState> {
         self.state.as_ref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -61,8 +61,7 @@ impl ListSchedulesInputBuilder {
     }
     /// <p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ListSchedulesInputBuilder {
     }
     /// <p>Schedule name prefix to return the filtered list of resources.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>Schedule name prefix to return the filtered list of resources.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl ListSchedulesInputBuilder {
     }
     /// <p>If specified, only lists the schedules whose current state matches the given filter.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduleState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>If specified, only lists the schedules whose current state matches the given filter.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduleState> {
@@ -103,8 +100,7 @@ impl ListSchedulesInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,23 +113,28 @@ impl ListSchedulesInputBuilder {
     }
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSchedulesInput`](crate::operation::list_schedules::ListSchedulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_schedules::ListSchedulesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_schedules::ListSchedulesInput {
-            group_name: self.group_name,
-            name_prefix: self.name_prefix,
-            state: self.state,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schedules::ListSchedulesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_schedules::ListSchedulesInput {
+                group_name: self.group_name
+                ,
+                name_prefix: self.name_prefix
+                ,
+                state: self.state
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

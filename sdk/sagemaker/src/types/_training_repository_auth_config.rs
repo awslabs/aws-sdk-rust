@@ -3,13 +3,13 @@
 /// <p>An object containing authentication information for a private Docker registry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrainingRepositoryAuthConfig {
+pub struct TrainingRepositoryAuthConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
     pub training_repository_credentials_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl TrainingRepositoryAuthConfig {
+impl  TrainingRepositoryAuthConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
-    pub fn training_repository_credentials_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn training_repository_credentials_provider_arn(&self) -> ::std::option::Option<& str> {
         self.training_repository_credentials_provider_arn.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl TrainingRepositoryAuthConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
     pub fn set_training_repository_credentials_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_repository_credentials_provider_arn = input;
-        self
+        self.training_repository_credentials_provider_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
     pub fn get_training_repository_credentials_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl TrainingRepositoryAuthConfigBuilder {
     /// Consumes the builder and constructs a [`TrainingRepositoryAuthConfig`](crate::types::TrainingRepositoryAuthConfig).
     pub fn build(self) -> crate::types::TrainingRepositoryAuthConfig {
         crate::types::TrainingRepositoryAuthConfig {
-            training_repository_credentials_provider_arn: self.training_repository_credentials_provider_arn,
+            training_repository_credentials_provider_arn: self.training_repository_credentials_provider_arn
+            ,
         }
     }
 }
+

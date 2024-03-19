@@ -3,7 +3,7 @@
 /// <p>The quality of an image provided for label detection, with regard to brightness, sharpness, and contrast.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectLabelsImageQuality {
+pub struct DetectLabelsImageQuality  {
     /// <p>The brightness of an image provided for label detection.</p>
     pub brightness: ::std::option::Option<f32>,
     /// <p>The sharpness of an image provided for label detection.</p>
@@ -11,7 +11,7 @@ pub struct DetectLabelsImageQuality {
     /// <p>The contrast of an image provided for label detection.</p>
     pub contrast: ::std::option::Option<f32>,
 }
-impl DetectLabelsImageQuality {
+impl  DetectLabelsImageQuality  {
     /// <p>The brightness of an image provided for label detection.</p>
     pub fn brightness(&self) -> ::std::option::Option<f32> {
         self.brightness
@@ -48,8 +48,7 @@ impl DetectLabelsImageQualityBuilder {
     }
     /// <p>The brightness of an image provided for label detection.</p>
     pub fn set_brightness(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.brightness = input;
-        self
+        self.brightness = input; self
     }
     /// <p>The brightness of an image provided for label detection.</p>
     pub fn get_brightness(&self) -> &::std::option::Option<f32> {
@@ -62,8 +61,7 @@ impl DetectLabelsImageQualityBuilder {
     }
     /// <p>The sharpness of an image provided for label detection.</p>
     pub fn set_sharpness(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.sharpness = input;
-        self
+        self.sharpness = input; self
     }
     /// <p>The sharpness of an image provided for label detection.</p>
     pub fn get_sharpness(&self) -> &::std::option::Option<f32> {
@@ -76,8 +74,7 @@ impl DetectLabelsImageQualityBuilder {
     }
     /// <p>The contrast of an image provided for label detection.</p>
     pub fn set_contrast(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.contrast = input;
-        self
+        self.contrast = input; self
     }
     /// <p>The contrast of an image provided for label detection.</p>
     pub fn get_contrast(&self) -> &::std::option::Option<f32> {
@@ -86,9 +83,13 @@ impl DetectLabelsImageQualityBuilder {
     /// Consumes the builder and constructs a [`DetectLabelsImageQuality`](crate::types::DetectLabelsImageQuality).
     pub fn build(self) -> crate::types::DetectLabelsImageQuality {
         crate::types::DetectLabelsImageQuality {
-            brightness: self.brightness,
-            sharpness: self.sharpness,
-            contrast: self.contrast,
+            brightness: self.brightness
+            ,
+            sharpness: self.sharpness
+            ,
+            contrast: self.contrast
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about managed Contributor Insights rules, as returned by <code>ListManagedInsightRules</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedRuleDescription {
+pub struct ManagedRuleDescription  {
     /// <p>The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource.</p>
@@ -11,17 +11,17 @@ pub struct ManagedRuleDescription {
     /// <p>Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource.</p>
     pub rule_state: ::std::option::Option<crate::types::ManagedRuleState>,
 }
-impl ManagedRuleDescription {
+impl  ManagedRuleDescription  {
     /// <p>The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource.</p>
-    pub fn rule_state(&self) -> ::std::option::Option<&crate::types::ManagedRuleState> {
+    pub fn rule_state(&self) -> ::std::option::Option<& crate::types::ManagedRuleState> {
         self.rule_state.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ManagedRuleDescriptionBuilder {
     }
     /// <p>The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ManagedRuleDescriptionBuilder {
     }
     /// <p>If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ManagedRuleDescriptionBuilder {
     }
     /// <p>Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource.</p>
     pub fn set_rule_state(mut self, input: ::std::option::Option<crate::types::ManagedRuleState>) -> Self {
-        self.rule_state = input;
-        self
+        self.rule_state = input; self
     }
     /// <p>Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource.</p>
     pub fn get_rule_state(&self) -> &::std::option::Option<crate::types::ManagedRuleState> {
@@ -86,9 +83,13 @@ impl ManagedRuleDescriptionBuilder {
     /// Consumes the builder and constructs a [`ManagedRuleDescription`](crate::types::ManagedRuleDescription).
     pub fn build(self) -> crate::types::ManagedRuleDescription {
         crate::types::ManagedRuleDescription {
-            template_name: self.template_name,
-            resource_arn: self.resource_arn,
-            rule_state: self.rule_state,
+            template_name: self.template_name
+            ,
+            resource_arn: self.resource_arn
+            ,
+            rule_state: self.rule_state
+            ,
         }
     }
 }
+

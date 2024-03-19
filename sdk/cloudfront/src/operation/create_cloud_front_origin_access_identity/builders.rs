@@ -5,122 +5,103 @@ pub use crate::operation::create_cloud_front_origin_access_identity::_create_clo
 
 impl CreateCloudFrontOriginAccessIdentityInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_cloud_front_origin_access_identity();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_cloud_front_origin_access_identity();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCloudFrontOriginAccessIdentity`.
-///
+/// 
 /// <p>Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more information about how to use origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCloudFrontOriginAccessIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder,
+                    inner: crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput,
-        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
-    > for CreateCloudFrontOriginAccessIdentityFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput,
-            crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput,
+                    crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
+                > for CreateCloudFrontOriginAccessIdentityFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput,
+                        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCloudFrontOriginAccessIdentityFluentBuilder {
     /// Creates a new `CreateCloudFrontOriginAccessIdentity`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the CreateCloudFrontOriginAccessIdentity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentity::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentity::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput,
-        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentity::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentity::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityOutput, crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The current configuration information for the identity.</p>
     pub fn cloud_front_origin_access_identity_config(mut self, input: crate::types::CloudFrontOriginAccessIdentityConfig) -> Self {
         self.inner = self.inner.cloud_front_origin_access_identity_config(input);
         self
     }
     /// <p>The current configuration information for the identity.</p>
-    pub fn set_cloud_front_origin_access_identity_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
-    ) -> Self {
+    pub fn set_cloud_front_origin_access_identity_config(mut self, input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>) -> Self {
         self.inner = self.inner.set_cloud_front_origin_access_identity_config(input);
         self
     }
@@ -129,3 +110,4 @@ impl CreateCloudFrontOriginAccessIdentityFluentBuilder {
         self.inner.get_cloud_front_origin_access_identity_config()
     }
 }
+

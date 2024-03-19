@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpgradeLensReviewInput {
+pub struct UpgradeLensReviewInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -19,28 +19,28 @@ pub struct UpgradeLensReviewInput {
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl UpgradeLensReviewInput {
+impl  UpgradeLensReviewInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn milestone_name(&self) -> ::std::option::Option<&str> {
+    pub fn milestone_name(&self) -> ::std::option::Option<& str> {
         self.milestone_name.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl UpgradeLensReviewInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl UpgradeLensReviewInputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -110,8 +108,7 @@ impl UpgradeLensReviewInputBuilder {
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
     pub fn set_milestone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.milestone_name = input;
-        self
+        self.milestone_name = input; self
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
@@ -131,8 +128,7 @@ impl UpgradeLensReviewInputBuilder {
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
@@ -142,14 +138,19 @@ impl UpgradeLensReviewInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpgradeLensReviewInput`](crate::operation::upgrade_lens_review::UpgradeLensReviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::upgrade_lens_review::UpgradeLensReviewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::upgrade_lens_review::UpgradeLensReviewInput {
-            workload_id: self.workload_id,
-            lens_alias: self.lens_alias,
-            milestone_name: self.milestone_name,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upgrade_lens_review::UpgradeLensReviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upgrade_lens_review::UpgradeLensReviewInput {
+                workload_id: self.workload_id
+                ,
+                lens_alias: self.lens_alias
+                ,
+                milestone_name: self.milestone_name
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

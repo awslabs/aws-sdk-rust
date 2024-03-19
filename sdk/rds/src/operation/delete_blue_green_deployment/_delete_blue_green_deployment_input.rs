@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBlueGreenDeploymentInput {
+pub struct DeleteBlueGreenDeploymentInput  {
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -13,14 +13,14 @@ pub struct DeleteBlueGreenDeploymentInput {
     /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub delete_target: ::std::option::Option<bool>,
 }
-impl DeleteBlueGreenDeploymentInput {
+impl  DeleteBlueGreenDeploymentInput  {
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
-    pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<& str> {
         self.blue_green_deployment_identifier.as_deref()
     }
     /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
@@ -61,8 +61,7 @@ impl DeleteBlueGreenDeploymentInputBuilder {
     /// <p>Must match an existing blue/green deployment identifier.</p></li>
     /// </ul>
     pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blue_green_deployment_identifier = input;
-        self
+        self.blue_green_deployment_identifier = input; self
     }
     /// <p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -80,23 +79,22 @@ impl DeleteBlueGreenDeploymentInputBuilder {
     }
     /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn set_delete_target(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_target = input;
-        self
+        self.delete_target = input; self
     }
     /// <p>Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn get_delete_target(&self) -> &::std::option::Option<bool> {
         &self.delete_target
     }
     /// Consumes the builder and constructs a [`DeleteBlueGreenDeploymentInput`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput {
-            blue_green_deployment_identifier: self.blue_green_deployment_identifier,
-            delete_target: self.delete_target,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput {
+                blue_green_deployment_identifier: self.blue_green_deployment_identifier
+                ,
+                delete_target: self.delete_target
+                ,
+            }
+        )
     }
 }
+

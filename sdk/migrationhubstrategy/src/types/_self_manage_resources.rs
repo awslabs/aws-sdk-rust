@@ -3,15 +3,14 @@
 /// <p>Self-managed resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelfManageResources {
+pub struct SelfManageResources  {
     /// <p>Self-managed resources target destination.</p>
-    pub target_destination: ::std::vec::Vec<crate::types::SelfManageTargetDestination>,
+    pub target_destination: ::std::vec::Vec::<crate::types::SelfManageTargetDestination>,
 }
-impl SelfManageResources {
+impl  SelfManageResources  {
     /// <p>Self-managed resources target destination.</p>
-    pub fn target_destination(&self) -> &[crate::types::SelfManageTargetDestination] {
-        use std::ops::Deref;
-        self.target_destination.deref()
+    pub fn target_destination(&self) -> & [crate::types::SelfManageTargetDestination] {
+        use std::ops::Deref; self.target_destination.deref()
     }
 }
 impl SelfManageResources {
@@ -25,7 +24,7 @@ impl SelfManageResources {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelfManageResourcesBuilder {
-    pub(crate) target_destination: ::std::option::Option<::std::vec::Vec<crate::types::SelfManageTargetDestination>>,
+    pub(crate) target_destination: ::std::option::Option<::std::vec::Vec::<crate::types::SelfManageTargetDestination>>,
 }
 impl SelfManageResourcesBuilder {
     /// Appends an item to `target_destination`.
@@ -35,30 +34,31 @@ impl SelfManageResourcesBuilder {
     /// <p>Self-managed resources target destination.</p>
     pub fn target_destination(mut self, input: crate::types::SelfManageTargetDestination) -> Self {
         let mut v = self.target_destination.unwrap_or_default();
-        v.push(input);
-        self.target_destination = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_destination = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Self-managed resources target destination.</p>
-    pub fn set_target_destination(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelfManageTargetDestination>>) -> Self {
-        self.target_destination = input;
-        self
+    pub fn set_target_destination(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SelfManageTargetDestination>>) -> Self {
+        self.target_destination = input; self
     }
     /// <p>Self-managed resources target destination.</p>
-    pub fn get_target_destination(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelfManageTargetDestination>> {
+    pub fn get_target_destination(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SelfManageTargetDestination>> {
         &self.target_destination
     }
     /// Consumes the builder and constructs a [`SelfManageResources`](crate::types::SelfManageResources).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_destination`](crate::types::builders::SelfManageResourcesBuilder::target_destination)
     pub fn build(self) -> ::std::result::Result<crate::types::SelfManageResources, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SelfManageResources {
-            target_destination: self.target_destination.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_destination",
-                    "target_destination was not specified but it is required when building SelfManageResources",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SelfManageResources {
+                target_destination: self.target_destination
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_destination", "target_destination was not specified but it is required when building SelfManageResources")
+                    )?
+                ,
+            }
+        )
     }
 }
+

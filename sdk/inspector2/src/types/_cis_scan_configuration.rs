@@ -3,7 +3,7 @@
 /// <p>The CIS scan configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisScanConfiguration {
+pub struct CisScanConfiguration  {
     /// <p>The CIS scan configuration's scan configuration ARN.</p>
     pub scan_configuration_arn: ::std::string::String,
     /// <p>The CIS scan configuration's owner ID.</p>
@@ -17,36 +17,35 @@ pub struct CisScanConfiguration {
     /// <p>The CIS scan configuration's targets.</p>
     pub targets: ::std::option::Option<crate::types::CisTargets>,
     /// <p>The CIS scan configuration's tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CisScanConfiguration {
+impl  CisScanConfiguration  {
     /// <p>The CIS scan configuration's scan configuration ARN.</p>
-    pub fn scan_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_configuration_arn.deref()
+    pub fn scan_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.scan_configuration_arn.deref()
     }
     /// <p>The CIS scan configuration's owner ID.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The name of the CIS scan configuration.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name(&self) -> ::std::option::Option<& str> {
         self.scan_name.as_deref()
     }
     /// <p>The CIS scan configuration's security level.</p>
-    pub fn security_level(&self) -> ::std::option::Option<&crate::types::CisSecurityLevel> {
+    pub fn security_level(&self) -> ::std::option::Option<& crate::types::CisSecurityLevel> {
         self.security_level.as_ref()
     }
     /// <p>The CIS scan configuration's schedule.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>The CIS scan configuration's targets.</p>
-    pub fn targets(&self) -> ::std::option::Option<&crate::types::CisTargets> {
+    pub fn targets(&self) -> ::std::option::Option<& crate::types::CisTargets> {
         self.targets.as_ref()
     }
     /// <p>The CIS scan configuration's tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -67,7 +66,7 @@ pub struct CisScanConfigurationBuilder {
     pub(crate) security_level: ::std::option::Option<crate::types::CisSecurityLevel>,
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) targets: ::std::option::Option<crate::types::CisTargets>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CisScanConfigurationBuilder {
     /// <p>The CIS scan configuration's scan configuration ARN.</p>
@@ -78,8 +77,7 @@ impl CisScanConfigurationBuilder {
     }
     /// <p>The CIS scan configuration's scan configuration ARN.</p>
     pub fn set_scan_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_configuration_arn = input;
-        self
+        self.scan_configuration_arn = input; self
     }
     /// <p>The CIS scan configuration's scan configuration ARN.</p>
     pub fn get_scan_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CisScanConfigurationBuilder {
     }
     /// <p>The CIS scan configuration's owner ID.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The CIS scan configuration's owner ID.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl CisScanConfigurationBuilder {
     }
     /// <p>The name of the CIS scan configuration.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The name of the CIS scan configuration.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl CisScanConfigurationBuilder {
     }
     /// <p>The CIS scan configuration's security level.</p>
     pub fn set_security_level(mut self, input: ::std::option::Option<crate::types::CisSecurityLevel>) -> Self {
-        self.security_level = input;
-        self
+        self.security_level = input; self
     }
     /// <p>The CIS scan configuration's security level.</p>
     pub fn get_security_level(&self) -> &::std::option::Option<crate::types::CisSecurityLevel> {
@@ -134,8 +129,7 @@ impl CisScanConfigurationBuilder {
     }
     /// <p>The CIS scan configuration's schedule.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The CIS scan configuration's schedule.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
@@ -148,8 +142,7 @@ impl CisScanConfigurationBuilder {
     }
     /// <p>The CIS scan configuration's targets.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<crate::types::CisTargets>) -> Self {
-        self.targets = input;
-        self
+        self.targets = input; self
     }
     /// <p>The CIS scan configuration's targets.</p>
     pub fn get_targets(&self) -> &::std::option::Option<crate::types::CisTargets> {
@@ -162,36 +155,43 @@ impl CisScanConfigurationBuilder {
     /// <p>The CIS scan configuration's tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The CIS scan configuration's tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The CIS scan configuration's tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CisScanConfiguration`](crate::types::CisScanConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`scan_configuration_arn`](crate::types::builders::CisScanConfigurationBuilder::scan_configuration_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CisScanConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisScanConfiguration {
-            scan_configuration_arn: self.scan_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_configuration_arn",
-                    "scan_configuration_arn was not specified but it is required when building CisScanConfiguration",
-                )
-            })?,
-            owner_id: self.owner_id,
-            scan_name: self.scan_name,
-            security_level: self.security_level,
-            schedule: self.schedule,
-            targets: self.targets,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisScanConfiguration {
+                scan_configuration_arn: self.scan_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_configuration_arn", "scan_configuration_arn was not specified but it is required when building CisScanConfiguration")
+                    )?
+                ,
+                owner_id: self.owner_id
+                ,
+                scan_name: self.scan_name
+                ,
+                security_level: self.security_level
+                ,
+                schedule: self.schedule
+                ,
+                targets: self.targets
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGlobalTableInput {
+pub struct DescribeGlobalTableInput  {
     /// <p>The name of the global table.</p>
     pub global_table_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeGlobalTableInput {
+impl  DescribeGlobalTableInput  {
     /// <p>The name of the global table.</p>
-    pub fn global_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn global_table_name(&self) -> ::std::option::Option<& str> {
         self.global_table_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeGlobalTableInputBuilder {
     }
     /// <p>The name of the global table.</p>
     pub fn set_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_table_name = input;
-        self
+        self.global_table_name = input; self
     }
     /// <p>The name of the global table.</p>
     pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_table_name
     }
     /// Consumes the builder and constructs a [`DescribeGlobalTableInput`](crate::operation::describe_global_table::DescribeGlobalTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_global_table::DescribeGlobalTableInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_global_table::DescribeGlobalTableInput {
-            global_table_name: self.global_table_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_global_table::DescribeGlobalTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_global_table::DescribeGlobalTableInput {
+                global_table_name: self.global_table_name
+                ,
+            }
+        )
     }
 }
+

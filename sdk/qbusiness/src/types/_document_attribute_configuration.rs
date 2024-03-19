@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes.html">Understanding document attributes</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentAttributeConfiguration {
+pub struct DocumentAttributeConfiguration  {
     /// <p>The name of the document attribute.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of document attribute.</p>
@@ -12,17 +12,17 @@ pub struct DocumentAttributeConfiguration {
     /// <p>Information about whether the document attribute can be used by an end user to search for information on their web experience.</p>
     pub search: ::std::option::Option<crate::types::Status>,
 }
-impl DocumentAttributeConfiguration {
+impl  DocumentAttributeConfiguration  {
     /// <p>The name of the document attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of document attribute.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AttributeType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AttributeType> {
         self.r#type.as_ref()
     }
     /// <p>Information about whether the document attribute can be used by an end user to search for information on their web experience.</p>
-    pub fn search(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn search(&self) -> ::std::option::Option<& crate::types::Status> {
         self.search.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl DocumentAttributeConfigurationBuilder {
     }
     /// <p>The name of the document attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the document attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DocumentAttributeConfigurationBuilder {
     }
     /// <p>The type of document attribute.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AttributeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of document attribute.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AttributeType> {
@@ -77,8 +75,7 @@ impl DocumentAttributeConfigurationBuilder {
     }
     /// <p>Information about whether the document attribute can be used by an end user to search for information on their web experience.</p>
     pub fn set_search(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.search = input;
-        self
+        self.search = input; self
     }
     /// <p>Information about whether the document attribute can be used by an end user to search for information on their web experience.</p>
     pub fn get_search(&self) -> &::std::option::Option<crate::types::Status> {
@@ -87,9 +84,13 @@ impl DocumentAttributeConfigurationBuilder {
     /// Consumes the builder and constructs a [`DocumentAttributeConfiguration`](crate::types::DocumentAttributeConfiguration).
     pub fn build(self) -> crate::types::DocumentAttributeConfiguration {
         crate::types::DocumentAttributeConfiguration {
-            name: self.name,
-            r#type: self.r#type,
-            search: self.search,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            search: self.search
+            ,
         }
     }
 }
+

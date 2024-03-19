@@ -3,7 +3,7 @@
 /// <p>Specifies an Amazon DynamoDB table to crawl.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DynamoDbTarget {
+pub struct DynamoDbTarget  {
     /// <p>The name of the DynamoDB table to crawl.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
@@ -13,9 +13,9 @@ pub struct DynamoDbTarget {
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
     pub scan_rate: ::std::option::Option<f64>,
 }
-impl DynamoDbTarget {
+impl  DynamoDbTarget  {
     /// <p>The name of the DynamoDB table to crawl.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
@@ -52,8 +52,7 @@ impl DynamoDbTargetBuilder {
     }
     /// <p>The name of the DynamoDB table to crawl.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The name of the DynamoDB table to crawl.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DynamoDbTargetBuilder {
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub fn set_scan_all(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.scan_all = input;
-        self
+        self.scan_all = input; self
     }
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
@@ -85,8 +83,7 @@ impl DynamoDbTargetBuilder {
     /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
     pub fn set_scan_rate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.scan_rate = input;
-        self
+        self.scan_rate = input; self
     }
     /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
@@ -96,9 +93,13 @@ impl DynamoDbTargetBuilder {
     /// Consumes the builder and constructs a [`DynamoDbTarget`](crate::types::DynamoDbTarget).
     pub fn build(self) -> crate::types::DynamoDbTarget {
         crate::types::DynamoDbTarget {
-            path: self.path,
-            scan_all: self.scan_all,
-            scan_rate: self.scan_rate,
+            path: self.path
+            ,
+            scan_all: self.scan_all
+            ,
+            scan_rate: self.scan_rate
+            ,
         }
     }
 }
+

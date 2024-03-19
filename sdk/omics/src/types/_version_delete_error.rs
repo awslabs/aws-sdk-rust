@@ -3,22 +3,20 @@
 /// <p>The error preventing deletion of the annotation store version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersionDeleteError {
+pub struct VersionDeleteError  {
     /// <p>The name given to an annotation store version.</p>
     pub version_name: ::std::string::String,
     /// <p>The message explaining the error in annotation store deletion.</p>
     pub message: ::std::string::String,
 }
-impl VersionDeleteError {
+impl  VersionDeleteError  {
     /// <p>The name given to an annotation store version.</p>
-    pub fn version_name(&self) -> &str {
-        use std::ops::Deref;
-        self.version_name.deref()
+    pub fn version_name(&self) -> & str {
+        use std::ops::Deref; self.version_name.deref()
     }
     /// <p>The message explaining the error in annotation store deletion.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl VersionDeleteError {
@@ -44,8 +42,7 @@ impl VersionDeleteErrorBuilder {
     }
     /// <p>The name given to an annotation store version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The name given to an annotation store version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl VersionDeleteErrorBuilder {
     }
     /// <p>The message explaining the error in annotation store deletion.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message explaining the error in annotation store deletion.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl VersionDeleteErrorBuilder {
     /// - [`version_name`](crate::types::builders::VersionDeleteErrorBuilder::version_name)
     /// - [`message`](crate::types::builders::VersionDeleteErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::VersionDeleteError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VersionDeleteError {
-            version_name: self.version_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version_name",
-                    "version_name was not specified but it is required when building VersionDeleteError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building VersionDeleteError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VersionDeleteError {
+                version_name: self.version_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version_name", "version_name was not specified but it is required when building VersionDeleteError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building VersionDeleteError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

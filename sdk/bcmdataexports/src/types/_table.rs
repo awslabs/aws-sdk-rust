@@ -3,28 +3,29 @@
 /// <p>The details for the data export table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Table {
+pub struct Table  {
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the table.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The properties for the table.</p>
-    pub table_properties: ::std::option::Option<::std::vec::Vec<crate::types::TablePropertyDescription>>,
+    pub table_properties: ::std::option::Option<::std::vec::Vec::<crate::types::TablePropertyDescription>>,
 }
-impl Table {
+impl  Table  {
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The description for the table.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The properties for the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_properties.is_none()`.
-    pub fn table_properties(&self) -> &[crate::types::TablePropertyDescription] {
-        self.table_properties.as_deref().unwrap_or_default()
+    pub fn table_properties(&self) -> & [crate::types::TablePropertyDescription] {
+        self.table_properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Table {
@@ -40,7 +41,7 @@ impl Table {
 pub struct TableBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) table_properties: ::std::option::Option<::std::vec::Vec<crate::types::TablePropertyDescription>>,
+    pub(crate) table_properties: ::std::option::Option<::std::vec::Vec::<crate::types::TablePropertyDescription>>,
 }
 impl TableBuilder {
     /// <p>The name of the table.</p>
@@ -50,8 +51,7 @@ impl TableBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl TableBuilder {
     }
     /// <p>The description for the table.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the table.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl TableBuilder {
     /// <p>The properties for the table.</p>
     pub fn table_properties(mut self, input: crate::types::TablePropertyDescription) -> Self {
         let mut v = self.table_properties.unwrap_or_default();
-        v.push(input);
-        self.table_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.table_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties for the table.</p>
-    pub fn set_table_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TablePropertyDescription>>) -> Self {
-        self.table_properties = input;
-        self
+    pub fn set_table_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TablePropertyDescription>>) -> Self {
+        self.table_properties = input; self
     }
     /// <p>The properties for the table.</p>
-    pub fn get_table_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TablePropertyDescription>> {
+    pub fn get_table_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TablePropertyDescription>> {
         &self.table_properties
     }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     pub fn build(self) -> crate::types::Table {
         crate::types::Table {
-            table_name: self.table_name,
-            description: self.description,
-            table_properties: self.table_properties,
+            table_name: self.table_name
+            ,
+            description: self.description
+            ,
+            table_properties: self.table_properties
+            ,
         }
     }
 }
+

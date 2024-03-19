@@ -3,30 +3,31 @@
 /// Placeholder documentation for ListMultiplexesResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMultiplexesOutput {
+pub struct ListMultiplexesOutput  {
     /// List of multiplexes.
-    pub multiplexes: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>>,
+    pub multiplexes: ::std::option::Option<::std::vec::Vec::<crate::types::MultiplexSummary>>,
     /// Token for the next ListMultiplexes request.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMultiplexesOutput {
+impl  ListMultiplexesOutput  {
     /// List of multiplexes.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multiplexes.is_none()`.
-    pub fn multiplexes(&self) -> &[crate::types::MultiplexSummary] {
-        self.multiplexes.as_deref().unwrap_or_default()
+    pub fn multiplexes(&self) -> & [crate::types::MultiplexSummary] {
+        self.multiplexes.as_deref()
+        .unwrap_or_default()
     }
     /// Token for the next ListMultiplexes request.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMultiplexesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMultiplexesOutput {
     /// Creates a new builder-style object to manufacture [`ListMultiplexesOutput`](crate::operation::list_multiplexes::ListMultiplexesOutput).
     pub fn builder() -> crate::operation::list_multiplexes::builders::ListMultiplexesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListMultiplexesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultiplexesOutputBuilder {
-    pub(crate) multiplexes: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>>,
+    pub(crate) multiplexes: ::std::option::Option<::std::vec::Vec::<crate::types::MultiplexSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListMultiplexesOutputBuilder {
     /// List of multiplexes.
     pub fn multiplexes(mut self, input: crate::types::MultiplexSummary) -> Self {
         let mut v = self.multiplexes.unwrap_or_default();
-        v.push(input);
-        self.multiplexes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.multiplexes = ::std::option::Option::Some(v);
+                        self
     }
     /// List of multiplexes.
-    pub fn set_multiplexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>>) -> Self {
-        self.multiplexes = input;
-        self
+    pub fn set_multiplexes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MultiplexSummary>>) -> Self {
+        self.multiplexes = input; self
     }
     /// List of multiplexes.
-    pub fn get_multiplexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiplexSummary>> {
+    pub fn get_multiplexes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MultiplexSummary>> {
         &self.multiplexes
     }
     /// Token for the next ListMultiplexes request.
@@ -70,28 +70,30 @@ impl ListMultiplexesOutputBuilder {
     }
     /// Token for the next ListMultiplexes request.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Token for the next ListMultiplexes request.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMultiplexesOutput`](crate::operation::list_multiplexes::ListMultiplexesOutput).
     pub fn build(self) -> crate::operation::list_multiplexes::ListMultiplexesOutput {
         crate::operation::list_multiplexes::ListMultiplexesOutput {
-            multiplexes: self.multiplexes,
-            next_token: self.next_token,
+            multiplexes: self.multiplexes
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

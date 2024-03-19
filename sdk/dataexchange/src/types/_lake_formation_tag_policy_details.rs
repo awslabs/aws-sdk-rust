@@ -3,19 +3,19 @@
 /// <p>Extra details specific to the affected scope in this LF data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LakeFormationTagPolicyDetails {
+pub struct LakeFormationTagPolicyDetails  {
     /// <p>The underlying Glue database that the notification is referring to.</p>
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The underlying Glue table that the notification is referring to.</p>
     pub table: ::std::option::Option<::std::string::String>,
 }
-impl LakeFormationTagPolicyDetails {
+impl  LakeFormationTagPolicyDetails  {
     /// <p>The underlying Glue database that the notification is referring to.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The underlying Glue table that the notification is referring to.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
+    pub fn table(&self) -> ::std::option::Option<& str> {
         self.table.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LakeFormationTagPolicyDetailsBuilder {
     }
     /// <p>The underlying Glue database that the notification is referring to.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The underlying Glue database that the notification is referring to.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl LakeFormationTagPolicyDetailsBuilder {
     }
     /// <p>The underlying Glue table that the notification is referring to.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The underlying Glue table that the notification is referring to.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LakeFormationTagPolicyDetailsBuilder {
     /// Consumes the builder and constructs a [`LakeFormationTagPolicyDetails`](crate::types::LakeFormationTagPolicyDetails).
     pub fn build(self) -> crate::types::LakeFormationTagPolicyDetails {
         crate::types::LakeFormationTagPolicyDetails {
-            database: self.database,
-            table: self.table,
+            database: self.database
+            ,
+            table: self.table
+            ,
         }
     }
 }
+

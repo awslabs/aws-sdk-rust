@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyLoadBalancerAttributesOutput {
+pub struct ModifyLoadBalancerAttributesOutput  {
     /// <p>Information about the load balancer attributes.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerAttribute>>,
     _request_id: Option<String>,
 }
-impl ModifyLoadBalancerAttributesOutput {
+impl  ModifyLoadBalancerAttributesOutput  {
     /// <p>Information about the load balancer attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::LoadBalancerAttribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::LoadBalancerAttribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyLoadBalancerAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyLoadBalancerAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput).
     pub fn builder() -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder {
@@ -31,7 +32,7 @@ impl ModifyLoadBalancerAttributesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesOutputBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerAttribute>>,
     _request_id: Option<String>,
 }
 impl ModifyLoadBalancerAttributesOutputBuilder {
@@ -42,33 +43,34 @@ impl ModifyLoadBalancerAttributesOutputBuilder {
     /// <p>Information about the load balancer attributes.</p>
     pub fn attributes(mut self, input: crate::types::LoadBalancerAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the load balancer attributes.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Information about the load balancer attributes.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerAttribute>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput).
     pub fn build(self) -> crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput {
         crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput {
-            attributes: self.attributes,
+            attributes: self.attributes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

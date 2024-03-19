@@ -3,15 +3,15 @@
 /// <p>Specifies summary attributes to return from a call to <code>DetectProtectiveEquipment</code>. You can specify which types of PPE to summarize. You can also specify a minimum confidence value for detections. Summary information is returned in the <code>Summary</code> (<code>ProtectiveEquipmentSummary</code>) field of the response from <code>DetectProtectiveEquipment</code>. The summary includes which persons in an image were detected wearing the requested types of person protective equipment (PPE), which persons were detected as not wearing PPE, and the persons in which a determination could not be made. For more information, see <code>ProtectiveEquipmentSummary</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectiveEquipmentSummarizationAttributes {
+pub struct ProtectiveEquipmentSummarizationAttributes  {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
     /// <p></p>
     pub min_confidence: f32,
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>.</p>
-    pub required_equipment_types: ::std::vec::Vec<crate::types::ProtectiveEquipmentType>,
+    pub required_equipment_types: ::std::vec::Vec::<crate::types::ProtectiveEquipmentType>,
 }
-impl ProtectiveEquipmentSummarizationAttributes {
+impl  ProtectiveEquipmentSummarizationAttributes  {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
     /// <p></p>
@@ -19,9 +19,8 @@ impl ProtectiveEquipmentSummarizationAttributes {
         self.min_confidence
     }
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>.</p>
-    pub fn required_equipment_types(&self) -> &[crate::types::ProtectiveEquipmentType] {
-        use std::ops::Deref;
-        self.required_equipment_types.deref()
+    pub fn required_equipment_types(&self) -> & [crate::types::ProtectiveEquipmentType] {
+        use std::ops::Deref; self.required_equipment_types.deref()
     }
 }
 impl ProtectiveEquipmentSummarizationAttributes {
@@ -36,7 +35,7 @@ impl ProtectiveEquipmentSummarizationAttributes {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentSummarizationAttributesBuilder {
     pub(crate) min_confidence: ::std::option::Option<f32>,
-    pub(crate) required_equipment_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,
+    pub(crate) required_equipment_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectiveEquipmentType>>,
 }
 impl ProtectiveEquipmentSummarizationAttributesBuilder {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
@@ -51,8 +50,7 @@ impl ProtectiveEquipmentSummarizationAttributesBuilder {
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
     /// <p></p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_confidence = input;
-        self
+        self.min_confidence = input; self
     }
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
@@ -67,39 +65,37 @@ impl ProtectiveEquipmentSummarizationAttributesBuilder {
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>.</p>
     pub fn required_equipment_types(mut self, input: crate::types::ProtectiveEquipmentType) -> Self {
         let mut v = self.required_equipment_types.unwrap_or_default();
-        v.push(input);
-        self.required_equipment_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.required_equipment_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>.</p>
-    pub fn set_required_equipment_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>) -> Self {
-        self.required_equipment_types = input;
-        self
+    pub fn set_required_equipment_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectiveEquipmentType>>) -> Self {
+        self.required_equipment_types = input; self
     }
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>.</p>
-    pub fn get_required_equipment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>> {
+    pub fn get_required_equipment_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProtectiveEquipmentType>> {
         &self.required_equipment_types
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentSummarizationAttributes`](crate::types::ProtectiveEquipmentSummarizationAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`min_confidence`](crate::types::builders::ProtectiveEquipmentSummarizationAttributesBuilder::min_confidence)
     /// - [`required_equipment_types`](crate::types::builders::ProtectiveEquipmentSummarizationAttributesBuilder::required_equipment_types)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ProtectiveEquipmentSummarizationAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProtectiveEquipmentSummarizationAttributes {
-            min_confidence: self.min_confidence.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "min_confidence",
-                    "min_confidence was not specified but it is required when building ProtectiveEquipmentSummarizationAttributes",
-                )
-            })?,
-            required_equipment_types: self.required_equipment_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "required_equipment_types",
-                    "required_equipment_types was not specified but it is required when building ProtectiveEquipmentSummarizationAttributes",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectiveEquipmentSummarizationAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ProtectiveEquipmentSummarizationAttributes {
+                min_confidence: self.min_confidence
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("min_confidence", "min_confidence was not specified but it is required when building ProtectiveEquipmentSummarizationAttributes")
+                    )?
+                ,
+                required_equipment_types: self.required_equipment_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("required_equipment_types", "required_equipment_types was not specified but it is required when building ProtectiveEquipmentSummarizationAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

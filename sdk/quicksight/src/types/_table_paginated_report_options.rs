@@ -3,19 +3,19 @@
 /// <p>The paginated report options for a table visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TablePaginatedReportOptions {
+pub struct TablePaginatedReportOptions  {
     /// <p>The visibility of printing table overflow across pages.</p>
     pub vertical_overflow_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility of repeating header rows on each page.</p>
     pub overflow_column_header_visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl TablePaginatedReportOptions {
+impl  TablePaginatedReportOptions  {
     /// <p>The visibility of printing table overflow across pages.</p>
-    pub fn vertical_overflow_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn vertical_overflow_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.vertical_overflow_visibility.as_ref()
     }
     /// <p>The visibility of repeating header rows on each page.</p>
-    pub fn overflow_column_header_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn overflow_column_header_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.overflow_column_header_visibility.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TablePaginatedReportOptionsBuilder {
     }
     /// <p>The visibility of printing table overflow across pages.</p>
     pub fn set_vertical_overflow_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.vertical_overflow_visibility = input;
-        self
+        self.vertical_overflow_visibility = input; self
     }
     /// <p>The visibility of printing table overflow across pages.</p>
     pub fn get_vertical_overflow_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -55,8 +54,7 @@ impl TablePaginatedReportOptionsBuilder {
     }
     /// <p>The visibility of repeating header rows on each page.</p>
     pub fn set_overflow_column_header_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.overflow_column_header_visibility = input;
-        self
+        self.overflow_column_header_visibility = input; self
     }
     /// <p>The visibility of repeating header rows on each page.</p>
     pub fn get_overflow_column_header_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -65,8 +63,11 @@ impl TablePaginatedReportOptionsBuilder {
     /// Consumes the builder and constructs a [`TablePaginatedReportOptions`](crate::types::TablePaginatedReportOptions).
     pub fn build(self) -> crate::types::TablePaginatedReportOptions {
         crate::types::TablePaginatedReportOptions {
-            vertical_overflow_visibility: self.vertical_overflow_visibility,
-            overflow_column_header_visibility: self.overflow_column_header_visibility,
+            vertical_overflow_visibility: self.vertical_overflow_visibility
+            ,
+            overflow_column_header_visibility: self.overflow_column_header_visibility
+            ,
         }
     }
 }
+

@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMultiRegionAccessPointOperationOutput {
+pub struct DescribeMultiRegionAccessPointOperationOutput  {
     /// <p>A container element containing the details of the asynchronous operation.</p>
     pub async_operation: ::std::option::Option<crate::types::AsyncOperation>,
     _request_id: Option<String>,
 }
-impl DescribeMultiRegionAccessPointOperationOutput {
+impl  DescribeMultiRegionAccessPointOperationOutput  {
     /// <p>A container element containing the details of the asynchronous operation.</p>
-    pub fn async_operation(&self) -> ::std::option::Option<&crate::types::AsyncOperation> {
+    pub fn async_operation(&self) -> ::std::option::Option<& crate::types::AsyncOperation> {
         self.async_operation.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMultiRegionAccessPointOperationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMultiRegionAccessPointOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationOutput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput).
-    pub fn builder() -> crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationOutputBuilder {
         crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationOutputBuilder::default()
     }
 }
@@ -41,27 +40,28 @@ impl DescribeMultiRegionAccessPointOperationOutputBuilder {
     }
     /// <p>A container element containing the details of the asynchronous operation.</p>
     pub fn set_async_operation(mut self, input: ::std::option::Option<crate::types::AsyncOperation>) -> Self {
-        self.async_operation = input;
-        self
+        self.async_operation = input; self
     }
     /// <p>A container element containing the details of the asynchronous operation.</p>
     pub fn get_async_operation(&self) -> &::std::option::Option<crate::types::AsyncOperation> {
         &self.async_operation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMultiRegionAccessPointOperationOutput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput).
     pub fn build(self) -> crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput {
         crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput {
-            async_operation: self.async_operation,
+            async_operation: self.async_operation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

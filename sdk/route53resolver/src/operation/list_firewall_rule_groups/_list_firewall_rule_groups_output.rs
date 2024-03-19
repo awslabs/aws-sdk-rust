@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFirewallRuleGroupsOutput {
+pub struct ListFirewallRuleGroupsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
-    pub firewall_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
+    pub firewall_rule_groups: ::std::option::Option<::std::vec::Vec::<crate::types::FirewallRuleGroupMetadata>>,
     _request_id: Option<String>,
 }
-impl ListFirewallRuleGroupsOutput {
+impl  ListFirewallRuleGroupsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_rule_groups.is_none()`.
-    pub fn firewall_rule_groups(&self) -> &[crate::types::FirewallRuleGroupMetadata] {
-        self.firewall_rule_groups.as_deref().unwrap_or_default()
+    pub fn firewall_rule_groups(&self) -> & [crate::types::FirewallRuleGroupMetadata] {
+        self.firewall_rule_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFirewallRuleGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFirewallRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsOutput`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput).
     pub fn builder() -> crate::operation::list_firewall_rule_groups::builders::ListFirewallRuleGroupsOutputBuilder {
@@ -40,7 +41,7 @@ impl ListFirewallRuleGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallRuleGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) firewall_rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
+    pub(crate) firewall_rule_groups: ::std::option::Option<::std::vec::Vec::<crate::types::FirewallRuleGroupMetadata>>,
     _request_id: Option<String>,
 }
 impl ListFirewallRuleGroupsOutputBuilder {
@@ -51,8 +52,7 @@ impl ListFirewallRuleGroupsOutputBuilder {
     }
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,36 +66,38 @@ impl ListFirewallRuleGroupsOutputBuilder {
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
     pub fn firewall_rule_groups(mut self, input: crate::types::FirewallRuleGroupMetadata) -> Self {
         let mut v = self.firewall_rule_groups.unwrap_or_default();
-        v.push(input);
-        self.firewall_rule_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.firewall_rule_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
-    pub fn set_firewall_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>) -> Self {
-        self.firewall_rule_groups = input;
-        self
+    pub fn set_firewall_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FirewallRuleGroupMetadata>>) -> Self {
+        self.firewall_rule_groups = input; self
     }
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>.</p>
-    pub fn get_firewall_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleGroupMetadata>> {
+    pub fn get_firewall_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FirewallRuleGroupMetadata>> {
         &self.firewall_rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFirewallRuleGroupsOutput`](crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput).
     pub fn build(self) -> crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput {
         crate::operation::list_firewall_rule_groups::ListFirewallRuleGroupsOutput {
-            next_token: self.next_token,
-            firewall_rule_groups: self.firewall_rule_groups,
+            next_token: self.next_token
+            ,
+            firewall_rule_groups: self.firewall_rule_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

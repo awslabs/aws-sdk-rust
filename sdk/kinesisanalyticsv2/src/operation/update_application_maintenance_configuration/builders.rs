@@ -5,23 +5,20 @@ pub use crate::operation::update_application_maintenance_configuration::_update_
 
 impl UpdateApplicationMaintenanceConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_application_maintenance_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_application_maintenance_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateApplicationMaintenanceConfiguration`.
-///
+/// 
 /// <p>Updates the maintenance configuration of the Managed Service for Apache Flink application.</p>
 /// <p>You can invoke this operation on an application that is in one of the two following states: <code>READY</code> or <code>RUNNING</code>. If you invoke it when the application is in a state other than these two states, it throws a <code>ResourceInUseException</code>. The service makes use of the updated configuration the next time it schedules maintenance for the application. If you invoke this operation after the service schedules maintenance, the service will apply the configuration update the next time it schedules maintenance for the application. This means that you might not see the maintenance configuration update applied to the maintenance process that follows a successful invocation of this operation, but to the following maintenance process instead.</p>
 /// <p>To see the current maintenance configuration of your application, invoke the <code>DescribeApplication</code> operation.</p>
@@ -31,95 +28,78 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationMaintenanceConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder,
+                    inner: crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
-        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
-    > for UpdateApplicationMaintenanceConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
-            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
+                    crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
+                > for UpdateApplicationMaintenanceConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
+                        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
     /// Creates a new `UpdateApplicationMaintenanceConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the UpdateApplicationMaintenanceConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfiguration::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfiguration::orchestrate(
-            &runtime_plugins,
-            input,
-        )
-        .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
-        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput, crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -140,17 +120,13 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
         self
     }
     /// <p>Describes the application maintenance configuration update.</p>
-    pub fn set_application_maintenance_configuration_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate>,
-    ) -> Self {
+    pub fn set_application_maintenance_configuration_update(mut self, input: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate>) -> Self {
         self.inner = self.inner.set_application_maintenance_configuration_update(input);
         self
     }
     /// <p>Describes the application maintenance configuration update.</p>
-    pub fn get_application_maintenance_configuration_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate> {
+    pub fn get_application_maintenance_configuration_update(&self) -> &::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate> {
         self.inner.get_application_maintenance_configuration_update()
     }
 }
+

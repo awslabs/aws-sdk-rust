@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAvailableManagementCidrRangesInput {
+pub struct ListAvailableManagementCidrRangesInput  {
     /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     pub management_cidr_range_constraint: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
@@ -10,9 +10,9 @@ pub struct ListAvailableManagementCidrRangesInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAvailableManagementCidrRangesInput {
+impl  ListAvailableManagementCidrRangesInput  {
     /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
-    pub fn management_cidr_range_constraint(&self) -> ::std::option::Option<&str> {
+    pub fn management_cidr_range_constraint(&self) -> ::std::option::Option<& str> {
         self.management_cidr_range_constraint.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -20,7 +20,7 @@ impl ListAvailableManagementCidrRangesInput {
         self.max_results
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListAvailableManagementCidrRangesInputBuilder {
     }
     /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     pub fn set_management_cidr_range_constraint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.management_cidr_range_constraint = input;
-        self
+        self.management_cidr_range_constraint = input; self
     }
     /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     pub fn get_management_cidr_range_constraint(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListAvailableManagementCidrRangesInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,26 +74,24 @@ impl ListAvailableManagementCidrRangesInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAvailableManagementCidrRangesInput`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesInput {
-                management_cidr_range_constraint: self.management_cidr_range_constraint,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                management_cidr_range_constraint: self.management_cidr_range_constraint
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

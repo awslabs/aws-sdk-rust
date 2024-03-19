@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkResourceRelationshipsOutput {
+pub struct GetNetworkResourceRelationshipsOutput  {
     /// <p>The resource relationships.</p>
-    pub relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
+    pub relationships: ::std::option::Option<::std::vec::Vec::<crate::types::Relationship>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetNetworkResourceRelationshipsOutput {
+impl  GetNetworkResourceRelationshipsOutput  {
     /// <p>The resource relationships.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relationships.is_none()`.
-    pub fn relationships(&self) -> &[crate::types::Relationship] {
-        self.relationships.as_deref().unwrap_or_default()
+    pub fn relationships(&self) -> & [crate::types::Relationship] {
+        self.relationships.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetNetworkResourceRelationshipsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetNetworkResourceRelationshipsOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceRelationshipsOutput`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput).
     pub fn builder() -> crate::operation::get_network_resource_relationships::builders::GetNetworkResourceRelationshipsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetNetworkResourceRelationshipsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkResourceRelationshipsOutputBuilder {
-    pub(crate) relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
+    pub(crate) relationships: ::std::option::Option<::std::vec::Vec::<crate::types::Relationship>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetNetworkResourceRelationshipsOutputBuilder {
     /// <p>The resource relationships.</p>
     pub fn relationships(mut self, input: crate::types::Relationship) -> Self {
         let mut v = self.relationships.unwrap_or_default();
-        v.push(input);
-        self.relationships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.relationships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource relationships.</p>
-    pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>) -> Self {
-        self.relationships = input;
-        self
+    pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Relationship>>) -> Self {
+        self.relationships = input; self
     }
     /// <p>The resource relationships.</p>
-    pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Relationship>> {
+    pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Relationship>> {
         &self.relationships
     }
     /// <p>The token for the next page of results.</p>
@@ -69,28 +69,30 @@ impl GetNetworkResourceRelationshipsOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetNetworkResourceRelationshipsOutput`](crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput).
     pub fn build(self) -> crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput {
         crate::operation::get_network_resource_relationships::GetNetworkResourceRelationshipsOutput {
-            relationships: self.relationships,
-            next_token: self.next_token,
+            relationships: self.relationships
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

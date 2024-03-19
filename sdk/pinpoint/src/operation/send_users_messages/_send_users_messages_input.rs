@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendUsersMessagesInput {
+pub struct SendUsersMessagesInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
     pub send_users_message_request: ::std::option::Option<crate::types::SendUsersMessageRequest>,
 }
-impl SendUsersMessagesInput {
+impl  SendUsersMessagesInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
-    pub fn send_users_message_request(&self) -> ::std::option::Option<&crate::types::SendUsersMessageRequest> {
+    pub fn send_users_message_request(&self) -> ::std::option::Option<& crate::types::SendUsersMessageRequest> {
         self.send_users_message_request.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SendUsersMessagesInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl SendUsersMessagesInputBuilder {
     }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
     pub fn set_send_users_message_request(mut self, input: ::std::option::Option<crate::types::SendUsersMessageRequest>) -> Self {
-        self.send_users_message_request = input;
-        self
+        self.send_users_message_request = input; self
     }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
     pub fn get_send_users_message_request(&self) -> &::std::option::Option<crate::types::SendUsersMessageRequest> {
         &self.send_users_message_request
     }
     /// Consumes the builder and constructs a [`SendUsersMessagesInput`](crate::operation::send_users_messages::SendUsersMessagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::send_users_messages::SendUsersMessagesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::send_users_messages::SendUsersMessagesInput {
-            application_id: self.application_id,
-            send_users_message_request: self.send_users_message_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_users_messages::SendUsersMessagesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_users_messages::SendUsersMessagesInput {
+                application_id: self.application_id
+                ,
+                send_users_message_request: self.send_users_message_request
+                ,
+            }
+        )
     }
 }
+

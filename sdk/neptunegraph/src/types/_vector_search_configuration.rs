@@ -3,11 +3,11 @@
 /// <p>Specifies the number of dimensions for vector embeddings loaded into the graph. Max = 65535</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VectorSearchConfiguration {
+pub struct VectorSearchConfiguration  {
     /// <p>The number of dimensions.</p>
     pub dimension: i32,
 }
-impl VectorSearchConfiguration {
+impl  VectorSearchConfiguration  {
     /// <p>The number of dimensions.</p>
     pub fn dimension(&self) -> i32 {
         self.dimension
@@ -35,8 +35,7 @@ impl VectorSearchConfigurationBuilder {
     }
     /// <p>The number of dimensions.</p>
     pub fn set_dimension(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dimension = input;
-        self
+        self.dimension = input; self
     }
     /// <p>The number of dimensions.</p>
     pub fn get_dimension(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl VectorSearchConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension`](crate::types::builders::VectorSearchConfigurationBuilder::dimension)
     pub fn build(self) -> ::std::result::Result<crate::types::VectorSearchConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VectorSearchConfiguration {
-            dimension: self.dimension.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension",
-                    "dimension was not specified but it is required when building VectorSearchConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VectorSearchConfiguration {
+                dimension: self.dimension
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension", "dimension was not specified but it is required when building VectorSearchConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

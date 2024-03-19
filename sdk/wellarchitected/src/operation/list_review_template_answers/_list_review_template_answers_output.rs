@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReviewTemplateAnswersOutput {
+pub struct ListReviewTemplateAnswersOutput  {
     /// <p>The ARN of the review template.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -11,39 +11,40 @@ pub struct ListReviewTemplateAnswersOutput {
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: ::std::option::Option<::std::string::String>,
     /// <p>List of answer summaries of a lens review in a review template.</p>
-    pub answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplateAnswerSummary>>,
+    pub answer_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ReviewTemplateAnswerSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListReviewTemplateAnswersOutput {
+impl  ListReviewTemplateAnswersOutput  {
     /// <p>The ARN of the review template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>List of answer summaries of a lens review in a review template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.answer_summaries.is_none()`.
-    pub fn answer_summaries(&self) -> &[crate::types::ReviewTemplateAnswerSummary] {
-        self.answer_summaries.as_deref().unwrap_or_default()
+    pub fn answer_summaries(&self) -> & [crate::types::ReviewTemplateAnswerSummary] {
+        self.answer_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListReviewTemplateAnswersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListReviewTemplateAnswersOutput {
     /// Creates a new builder-style object to manufacture [`ListReviewTemplateAnswersOutput`](crate::operation::list_review_template_answers::ListReviewTemplateAnswersOutput).
     pub fn builder() -> crate::operation::list_review_template_answers::builders::ListReviewTemplateAnswersOutputBuilder {
@@ -57,7 +58,7 @@ impl ListReviewTemplateAnswersOutput {
 pub struct ListReviewTemplateAnswersOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
-    pub(crate) answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplateAnswerSummary>>,
+    pub(crate) answer_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ReviewTemplateAnswerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -69,8 +70,7 @@ impl ListReviewTemplateAnswersOutputBuilder {
     }
     /// <p>The ARN of the review template.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The ARN of the review template.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl ListReviewTemplateAnswersOutputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -106,17 +105,16 @@ impl ListReviewTemplateAnswersOutputBuilder {
     /// <p>List of answer summaries of a lens review in a review template.</p>
     pub fn answer_summaries(mut self, input: crate::types::ReviewTemplateAnswerSummary) -> Self {
         let mut v = self.answer_summaries.unwrap_or_default();
-        v.push(input);
-        self.answer_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.answer_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of answer summaries of a lens review in a review template.</p>
-    pub fn set_answer_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplateAnswerSummary>>) -> Self {
-        self.answer_summaries = input;
-        self
+    pub fn set_answer_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReviewTemplateAnswerSummary>>) -> Self {
+        self.answer_summaries = input; self
     }
     /// <p>List of answer summaries of a lens review in a review template.</p>
-    pub fn get_answer_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplateAnswerSummary>> {
+    pub fn get_answer_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReviewTemplateAnswerSummary>> {
         &self.answer_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -126,30 +124,34 @@ impl ListReviewTemplateAnswersOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListReviewTemplateAnswersOutput`](crate::operation::list_review_template_answers::ListReviewTemplateAnswersOutput).
     pub fn build(self) -> crate::operation::list_review_template_answers::ListReviewTemplateAnswersOutput {
         crate::operation::list_review_template_answers::ListReviewTemplateAnswersOutput {
-            template_arn: self.template_arn,
-            lens_alias: self.lens_alias,
-            answer_summaries: self.answer_summaries,
-            next_token: self.next_token,
+            template_arn: self.template_arn
+            ,
+            lens_alias: self.lens_alias
+            ,
+            answer_summaries: self.answer_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

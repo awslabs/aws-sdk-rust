@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVirtualRouterOutput {
+pub struct CreateVirtualRouterOutput  {
     /// <p>The full description of your virtual router following the create call.</p>
     pub virtual_router: ::std::option::Option<crate::types::VirtualRouterData>,
     _request_id: Option<String>,
 }
-impl CreateVirtualRouterOutput {
+impl  CreateVirtualRouterOutput  {
     /// <p>The full description of your virtual router following the create call.</p>
-    pub fn virtual_router(&self) -> ::std::option::Option<&crate::types::VirtualRouterData> {
+    pub fn virtual_router(&self) -> ::std::option::Option<& crate::types::VirtualRouterData> {
         self.virtual_router.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateVirtualRouterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateVirtualRouterOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualRouterOutput`](crate::operation::create_virtual_router::CreateVirtualRouterOutput).
     pub fn builder() -> crate::operation::create_virtual_router::builders::CreateVirtualRouterOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateVirtualRouterOutputBuilder {
     }
     /// <p>The full description of your virtual router following the create call.</p>
     pub fn set_virtual_router(mut self, input: ::std::option::Option<crate::types::VirtualRouterData>) -> Self {
-        self.virtual_router = input;
-        self
+        self.virtual_router = input; self
     }
     /// <p>The full description of your virtual router following the create call.</p>
     pub fn get_virtual_router(&self) -> &::std::option::Option<crate::types::VirtualRouterData> {
         &self.virtual_router
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateVirtualRouterOutput`](crate::operation::create_virtual_router::CreateVirtualRouterOutput).
     pub fn build(self) -> crate::operation::create_virtual_router::CreateVirtualRouterOutput {
         crate::operation::create_virtual_router::CreateVirtualRouterOutput {
-            virtual_router: self.virtual_router,
+            virtual_router: self.virtual_router
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

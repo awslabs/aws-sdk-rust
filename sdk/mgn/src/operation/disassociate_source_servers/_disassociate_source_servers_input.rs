@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateSourceServersInput {
+pub struct DisassociateSourceServersInput  {
     /// <p>Application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server IDs list.</p>
-    pub source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_server_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateSourceServersInput {
+impl  DisassociateSourceServersInput  {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Source server IDs list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_ids.is_none()`.
-    pub fn source_server_ids(&self) -> &[::std::string::String] {
-        self.source_server_ids.as_deref().unwrap_or_default()
+    pub fn source_server_ids(&self) -> & [::std::string::String] {
+        self.source_server_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl DisassociateSourceServersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSourceServersInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSourceServersInputBuilder {
@@ -50,8 +51,7 @@ impl DisassociateSourceServersInputBuilder {
     }
     /// <p>Application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>Application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl DisassociateSourceServersInputBuilder {
     /// <p>Source server IDs list.</p>
     pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_server_ids.unwrap_or_default();
-        v.push(input.into());
-        self.source_server_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_server_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Source server IDs list.</p>
-    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_server_ids = input;
-        self
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source_server_ids = input; self
     }
     /// <p>Source server IDs list.</p>
-    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source_server_ids
     }
     /// <p>Account ID.</p>
@@ -84,24 +83,24 @@ impl DisassociateSourceServersInputBuilder {
     }
     /// <p>Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DisassociateSourceServersInput`](crate::operation::disassociate_source_servers::DisassociateSourceServersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_source_servers::DisassociateSourceServersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_source_servers::DisassociateSourceServersInput {
-            application_id: self.application_id,
-            source_server_ids: self.source_server_ids,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_source_servers::DisassociateSourceServersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_source_servers::DisassociateSourceServersInput {
+                application_id: self.application_id
+                ,
+                source_server_ids: self.source_server_ids
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

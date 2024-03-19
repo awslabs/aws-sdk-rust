@@ -5,54 +5,50 @@ pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_sna
 
 impl RestoreVolumeFromSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.restore_volume_from_snapshot();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.restore_volume_from_snapshot();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RestoreVolumeFromSnapshot`.
-///
+/// 
 /// <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified snapshot.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder,
+                    inner: crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-    > for RestoreVolumeFromSnapshotFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
+                    crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
+                > for RestoreVolumeFromSnapshotFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
+                        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RestoreVolumeFromSnapshotFluentBuilder {
     /// Creates a new `RestoreVolumeFromSnapshot`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshot::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshot::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshot::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshot::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput, crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
@@ -172,7 +159,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     /// <li>
     /// <p><code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p></li>
     /// </ul>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RestoreOpenZfsVolumeOption>>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
@@ -183,7 +170,8 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     /// <li>
     /// <p><code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p></li>
     /// </ul>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RestoreOpenZfsVolumeOption>> {
         self.inner.get_options()
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApiKeyInput {
+pub struct DeleteApiKeyInput  {
     /// <p>The API ID.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the API key.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteApiKeyInput {
+impl  DeleteApiKeyInput  {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The ID for the API key.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteApiKeyInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API ID.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteApiKeyInputBuilder {
     }
     /// <p>The ID for the API key.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID for the API key.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteApiKeyInput`](crate::operation::delete_api_key::DeleteApiKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_api_key::DeleteApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_api_key::DeleteApiKeyInput {
-            api_id: self.api_id,
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_api_key::DeleteApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_api_key::DeleteApiKeyInput {
+                api_id: self.api_id
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

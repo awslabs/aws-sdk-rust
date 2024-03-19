@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetLocationUtilizationInput {
+pub struct DescribeFleetLocationUtilizationInput  {
     /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFleetLocationUtilizationInput {
+impl  DescribeFleetLocationUtilizationInput  {
     /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeFleetLocationUtilizationInputBuilder {
     }
     /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DescribeFleetLocationUtilizationInputBuilder {
     }
     /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     /// Consumes the builder and constructs a [`DescribeFleetLocationUtilizationInput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationInput {
-                fleet_id: self.fleet_id,
-                location: self.location,
-            },
+                fleet_id: self.fleet_id
+                ,
+                location: self.location
+                ,
+            }
         )
     }
 }
+

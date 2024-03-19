@@ -3,7 +3,7 @@
 /// <p>Information about the target S3 bucket for the resource data sync.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDataSyncS3Destination {
+pub struct ResourceDataSyncS3Destination  {
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
     pub bucket_name: ::std::string::String,
     /// <p>An Amazon S3 prefix for the bucket.</p>
@@ -17,31 +17,29 @@ pub struct ResourceDataSyncS3Destination {
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
     pub destination_data_sharing: ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>,
 }
-impl ResourceDataSyncS3Destination {
+impl  ResourceDataSyncS3Destination  {
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>An Amazon S3 prefix for the bucket.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
-    pub fn sync_format(&self) -> &crate::types::ResourceDataSyncS3Format {
+    pub fn sync_format(&self) -> & crate::types::ResourceDataSyncS3Format {
         &self.sync_format
     }
     /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
-    pub fn awskms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn awskms_key_arn(&self) -> ::std::option::Option<& str> {
         self.awskms_key_arn.as_deref()
     }
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
-    pub fn destination_data_sharing(&self) -> ::std::option::Option<&crate::types::ResourceDataSyncDestinationDataSharing> {
+    pub fn destination_data_sharing(&self) -> ::std::option::Option<& crate::types::ResourceDataSyncDestinationDataSharing> {
         self.destination_data_sharing.as_ref()
     }
 }
@@ -72,8 +70,7 @@ impl ResourceDataSyncS3DestinationBuilder {
     }
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl ResourceDataSyncS3DestinationBuilder {
     }
     /// <p>An Amazon S3 prefix for the bucket.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>An Amazon S3 prefix for the bucket.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +97,7 @@ impl ResourceDataSyncS3DestinationBuilder {
     }
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
     pub fn set_sync_format(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncS3Format>) -> Self {
-        self.sync_format = input;
-        self
+        self.sync_format = input; self
     }
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
     pub fn get_sync_format(&self) -> &::std::option::Option<crate::types::ResourceDataSyncS3Format> {
@@ -116,8 +111,7 @@ impl ResourceDataSyncS3DestinationBuilder {
     }
     /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +124,7 @@ impl ResourceDataSyncS3DestinationBuilder {
     }
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
     pub fn set_awskms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.awskms_key_arn = input;
-        self
+        self.awskms_key_arn = input; self
     }
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
     pub fn get_awskms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +137,7 @@ impl ResourceDataSyncS3DestinationBuilder {
     }
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
     pub fn set_destination_data_sharing(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>) -> Self {
-        self.destination_data_sharing = input;
-        self
+        self.destination_data_sharing = input; self
     }
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
     pub fn get_destination_data_sharing(&self) -> &::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing> {
@@ -157,28 +149,31 @@ impl ResourceDataSyncS3DestinationBuilder {
     /// - [`sync_format`](crate::types::builders::ResourceDataSyncS3DestinationBuilder::sync_format)
     /// - [`region`](crate::types::builders::ResourceDataSyncS3DestinationBuilder::region)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceDataSyncS3Destination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceDataSyncS3Destination {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building ResourceDataSyncS3Destination",
-                )
-            })?,
-            prefix: self.prefix,
-            sync_format: self.sync_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sync_format",
-                    "sync_format was not specified but it is required when building ResourceDataSyncS3Destination",
-                )
-            })?,
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building ResourceDataSyncS3Destination",
-                )
-            })?,
-            awskms_key_arn: self.awskms_key_arn,
-            destination_data_sharing: self.destination_data_sharing,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceDataSyncS3Destination {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building ResourceDataSyncS3Destination")
+                    )?
+                ,
+                prefix: self.prefix
+                ,
+                sync_format: self.sync_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sync_format", "sync_format was not specified but it is required when building ResourceDataSyncS3Destination")
+                    )?
+                ,
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building ResourceDataSyncS3Destination")
+                    )?
+                ,
+                awskms_key_arn: self.awskms_key_arn
+                ,
+                destination_data_sharing: self.destination_data_sharing
+                ,
+            }
+        )
     }
 }
+

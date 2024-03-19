@@ -3,30 +3,31 @@
 /// Placeholder documentation for ListReservationsResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReservationsOutput {
+pub struct ListReservationsOutput  {
     /// Token to retrieve the next page of results
     pub next_token: ::std::option::Option<::std::string::String>,
     /// List of reservations
-    pub reservations: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>,
+    pub reservations: ::std::option::Option<::std::vec::Vec::<crate::types::Reservation>>,
     _request_id: Option<String>,
 }
-impl ListReservationsOutput {
+impl  ListReservationsOutput  {
     /// Token to retrieve the next page of results
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of reservations
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reservations.is_none()`.
-    pub fn reservations(&self) -> &[crate::types::Reservation] {
-        self.reservations.as_deref().unwrap_or_default()
+    pub fn reservations(&self) -> & [crate::types::Reservation] {
+        self.reservations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListReservationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListReservationsOutput {
     /// Creates a new builder-style object to manufacture [`ListReservationsOutput`](crate::operation::list_reservations::ListReservationsOutput).
     pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsOutputBuilder {
@@ -39,7 +40,7 @@ impl ListReservationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReservationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reservations: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>,
+    pub(crate) reservations: ::std::option::Option<::std::vec::Vec::<crate::types::Reservation>>,
     _request_id: Option<String>,
 }
 impl ListReservationsOutputBuilder {
@@ -50,8 +51,7 @@ impl ListReservationsOutputBuilder {
     }
     /// Token to retrieve the next page of results
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Token to retrieve the next page of results
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl ListReservationsOutputBuilder {
     /// List of reservations
     pub fn reservations(mut self, input: crate::types::Reservation) -> Self {
         let mut v = self.reservations.unwrap_or_default();
-        v.push(input);
-        self.reservations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reservations = ::std::option::Option::Some(v);
+                        self
     }
     /// List of reservations
-    pub fn set_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>) -> Self {
-        self.reservations = input;
-        self
+    pub fn set_reservations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Reservation>>) -> Self {
+        self.reservations = input; self
     }
     /// List of reservations
-    pub fn get_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
+    pub fn get_reservations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Reservation>> {
         &self.reservations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListReservationsOutput`](crate::operation::list_reservations::ListReservationsOutput).
     pub fn build(self) -> crate::operation::list_reservations::ListReservationsOutput {
         crate::operation::list_reservations::ListReservationsOutput {
-            next_token: self.next_token,
-            reservations: self.reservations,
+            next_token: self.next_token
+            ,
+            reservations: self.reservations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

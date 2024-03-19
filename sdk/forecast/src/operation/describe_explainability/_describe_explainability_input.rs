@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExplainabilityInput {
+pub struct DescribeExplainabilityInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
     pub explainability_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeExplainabilityInput {
+impl  DescribeExplainabilityInput  {
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
-    pub fn explainability_arn(&self) -> ::std::option::Option<&str> {
+    pub fn explainability_arn(&self) -> ::std::option::Option<& str> {
         self.explainability_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeExplainabilityInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
     pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.explainability_arn = input;
-        self
+        self.explainability_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
     pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.explainability_arn
     }
     /// Consumes the builder and constructs a [`DescribeExplainabilityInput`](crate::operation::describe_explainability::DescribeExplainabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_explainability::DescribeExplainabilityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_explainability::DescribeExplainabilityInput {
-            explainability_arn: self.explainability_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_explainability::DescribeExplainabilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_explainability::DescribeExplainabilityInput {
+                explainability_arn: self.explainability_arn
+                ,
+            }
+        )
     }
 }
+

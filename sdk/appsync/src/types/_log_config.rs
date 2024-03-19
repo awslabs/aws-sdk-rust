@@ -3,7 +3,7 @@
 /// <p>The Amazon CloudWatch Logs configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogConfig {
+pub struct LogConfig  {
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
     /// <li>
@@ -33,7 +33,7 @@ pub struct LogConfig {
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub exclude_verbose_content: bool,
 }
-impl LogConfig {
+impl  LogConfig  {
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
     /// <li>
@@ -57,13 +57,12 @@ impl LogConfig {
     /// <p>The generated request/response functions that got resolved for each field.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn field_log_level(&self) -> &crate::types::FieldLogLevel {
+    pub fn field_log_level(&self) -> & crate::types::FieldLogLevel {
         &self.field_log_level
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.cloud_watch_logs_role_arn.deref()
+    pub fn cloud_watch_logs_role_arn(&self) -> & str {
+        use std::ops::Deref; self.cloud_watch_logs_role_arn.deref()
     }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub fn exclude_verbose_content(&self) -> bool {
@@ -138,8 +137,7 @@ impl LogConfigBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_field_log_level(mut self, input: ::std::option::Option<crate::types::FieldLogLevel>) -> Self {
-        self.field_log_level = input;
-        self
+        self.field_log_level = input; self
     }
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
@@ -175,8 +173,7 @@ impl LogConfigBuilder {
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
     pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_role_arn = input;
-        self
+        self.cloud_watch_logs_role_arn = input; self
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +186,7 @@ impl LogConfigBuilder {
     }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub fn set_exclude_verbose_content(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exclude_verbose_content = input;
-        self
+        self.exclude_verbose_content = input; self
     }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub fn get_exclude_verbose_content(&self) -> &::std::option::Option<bool> {
@@ -201,20 +197,23 @@ impl LogConfigBuilder {
     /// - [`field_log_level`](crate::types::builders::LogConfigBuilder::field_log_level)
     /// - [`cloud_watch_logs_role_arn`](crate::types::builders::LogConfigBuilder::cloud_watch_logs_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LogConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LogConfig {
-            field_log_level: self.field_log_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_log_level",
-                    "field_log_level was not specified but it is required when building LogConfig",
-                )
-            })?,
-            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cloud_watch_logs_role_arn",
-                    "cloud_watch_logs_role_arn was not specified but it is required when building LogConfig",
-                )
-            })?,
-            exclude_verbose_content: self.exclude_verbose_content.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::LogConfig {
+                field_log_level: self.field_log_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_log_level", "field_log_level was not specified but it is required when building LogConfig")
+                    )?
+                ,
+                cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cloud_watch_logs_role_arn", "cloud_watch_logs_role_arn was not specified but it is required when building LogConfig")
+                    )?
+                ,
+                exclude_verbose_content: self.exclude_verbose_content
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

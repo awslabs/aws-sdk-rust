@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBillingGroupCostReportsInput {
+pub struct ListBillingGroupCostReportsInput  {
     /// <p>The preferred billing period for your report.</p>
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of reports to retrieve.</p>
@@ -12,9 +12,9 @@ pub struct ListBillingGroupCostReportsInput {
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from.</p>
     pub filters: ::std::option::Option<crate::types::ListBillingGroupCostReportsFilter>,
 }
-impl ListBillingGroupCostReportsInput {
+impl  ListBillingGroupCostReportsInput  {
     /// <p>The preferred billing period for your report.</p>
-    pub fn billing_period(&self) -> ::std::option::Option<&str> {
+    pub fn billing_period(&self) -> ::std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>The maximum number of reports to retrieve.</p>
@@ -22,11 +22,11 @@ impl ListBillingGroupCostReportsInput {
         self.max_results
     }
     /// <p>The pagination token that's used on subsequent calls to get reports.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListBillingGroupCostReportsFilter> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ListBillingGroupCostReportsFilter> {
         self.filters.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListBillingGroupCostReportsInputBuilder {
     }
     /// <p>The preferred billing period for your report.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_period = input;
-        self
+        self.billing_period = input; self
     }
     /// <p>The preferred billing period for your report.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListBillingGroupCostReportsInputBuilder {
     }
     /// <p>The maximum number of reports to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of reports to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListBillingGroupCostReportsInputBuilder {
     }
     /// <p>The pagination token that's used on subsequent calls to get reports.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's used on subsequent calls to get reports.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,25 +93,26 @@ impl ListBillingGroupCostReportsInputBuilder {
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListBillingGroupCostReportsFilter>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListBillingGroupCostReportsFilter> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListBillingGroupCostReportsInput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput {
-            billing_period: self.billing_period,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput {
+                billing_period: self.billing_period
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

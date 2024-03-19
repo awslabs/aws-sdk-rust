@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lookbackperiodpreference = unimplemented!();
 /// match lookbackperiodpreference {
@@ -31,16 +31,14 @@
 /// Specifically, when `lookbackperiodpreference` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LookBackPeriodPreference::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum LookBackPeriodPreference {
     #[allow(missing_docs)] // documentation missing in model
     Days14,
@@ -50,64 +48,65 @@ pub enum LookBackPeriodPreference {
     Days93,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for LookBackPeriodPreference {
-    fn from(s: &str) -> Self {
-        match s {
-            "DAYS_14" => LookBackPeriodPreference::Days14,
-            "DAYS_32" => LookBackPeriodPreference::Days32,
-            "DAYS_93" => LookBackPeriodPreference::Days93,
-            other => LookBackPeriodPreference::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DAYS_14" => LookBackPeriodPreference::Days14,
+"DAYS_32" => LookBackPeriodPreference::Days32,
+"DAYS_93" => LookBackPeriodPreference::Days93,
+other => LookBackPeriodPreference::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for LookBackPeriodPreference {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(LookBackPeriodPreference::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(LookBackPeriodPreference::from(s))
+                    }
+                }
 impl LookBackPeriodPreference {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LookBackPeriodPreference::Days14 => "DAYS_14",
-            LookBackPeriodPreference::Days32 => "DAYS_32",
-            LookBackPeriodPreference::Days93 => "DAYS_93",
-            LookBackPeriodPreference::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DAYS_14", "DAYS_32", "DAYS_93"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LookBackPeriodPreference::Days14 => "DAYS_14",
+    LookBackPeriodPreference::Days32 => "DAYS_32",
+    LookBackPeriodPreference::Days93 => "DAYS_93",
+    LookBackPeriodPreference::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DAYS_14", "DAYS_32", "DAYS_93"]
+                }
+            }
 impl ::std::convert::AsRef<str> for LookBackPeriodPreference {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl LookBackPeriodPreference {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for LookBackPeriodPreference {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            LookBackPeriodPreference::Days14 => write!(f, "DAYS_14"),
-            LookBackPeriodPreference::Days32 => write!(f, "DAYS_32"),
-            LookBackPeriodPreference::Days93 => write!(f, "DAYS_93"),
-            LookBackPeriodPreference::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                LookBackPeriodPreference::Days14 => write!(f, "DAYS_14"),
+LookBackPeriodPreference::Days32 => write!(f, "DAYS_32"),
+LookBackPeriodPreference::Days93 => write!(f, "DAYS_93"),
+LookBackPeriodPreference::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

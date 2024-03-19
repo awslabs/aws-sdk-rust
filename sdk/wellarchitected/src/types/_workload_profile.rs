@@ -3,19 +3,19 @@
 /// <p>The profile associated with a workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkloadProfile {
+pub struct WorkloadProfile  {
     /// <p>The profile ARN.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile version.</p>
     pub profile_version: ::std::option::Option<::std::string::String>,
 }
-impl WorkloadProfile {
+impl  WorkloadProfile  {
     /// <p>The profile ARN.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The profile version.</p>
-    pub fn profile_version(&self) -> ::std::option::Option<&str> {
+    pub fn profile_version(&self) -> ::std::option::Option<& str> {
         self.profile_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl WorkloadProfileBuilder {
     }
     /// <p>The profile ARN.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The profile ARN.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl WorkloadProfileBuilder {
     }
     /// <p>The profile version.</p>
     pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_version = input;
-        self
+        self.profile_version = input; self
     }
     /// <p>The profile version.</p>
     pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl WorkloadProfileBuilder {
     /// Consumes the builder and constructs a [`WorkloadProfile`](crate::types::WorkloadProfile).
     pub fn build(self) -> crate::types::WorkloadProfile {
         crate::types::WorkloadProfile {
-            profile_arn: self.profile_arn,
-            profile_version: self.profile_version,
+            profile_arn: self.profile_arn
+            ,
+            profile_version: self.profile_version
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobEntry {
+pub struct JobEntry  {
     /// <p>The ARN for the job.</p>
     pub arn: ::std::string::String,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
@@ -11,7 +11,7 @@ pub struct JobEntry {
     /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
     pub details: ::std::option::Option<crate::types::ResponseDetails>,
     /// <p>Errors for jobs.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::JobError>>,
     /// <p>The unique identifier for the job.</p>
     pub id: ::std::string::String,
     /// <p>The state of the job.</p>
@@ -21,41 +21,40 @@ pub struct JobEntry {
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl JobEntry {
+impl  JobEntry  {
     /// <p>The ARN for the job.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::ResponseDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::ResponseDetails> {
         self.details.as_ref()
     }
     /// <p>Errors for jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::JobError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::JobError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unique identifier for the job.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The state of the job.</p>
-    pub fn state(&self) -> &crate::types::State {
+    pub fn state(&self) -> & crate::types::State {
         &self.state
     }
     /// <p>The job type.</p>
-    pub fn r#type(&self) -> &crate::types::Type {
+    pub fn r#type(&self) -> & crate::types::Type {
         &self.r#type
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -73,7 +72,7 @@ pub struct JobEntryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) details: ::std::option::Option<crate::types::ResponseDetails>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::JobError>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
@@ -88,8 +87,7 @@ impl JobEntryBuilder {
     }
     /// <p>The ARN for the job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN for the job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl JobEntryBuilder {
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +115,7 @@ impl JobEntryBuilder {
     }
     /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::ResponseDetails>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::ResponseDetails> {
@@ -132,17 +128,16 @@ impl JobEntryBuilder {
     /// <p>Errors for jobs.</p>
     pub fn errors(mut self, input: crate::types::JobError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Errors for jobs.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Errors for jobs.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobError>> {
         &self.errors
     }
     /// <p>The unique identifier for the job.</p>
@@ -153,8 +148,7 @@ impl JobEntryBuilder {
     }
     /// <p>The unique identifier for the job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +162,7 @@ impl JobEntryBuilder {
     }
     /// <p>The state of the job.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the job.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
@@ -183,8 +176,7 @@ impl JobEntryBuilder {
     }
     /// <p>The job type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The job type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
@@ -198,8 +190,7 @@ impl JobEntryBuilder {
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -214,45 +205,44 @@ impl JobEntryBuilder {
     /// - [`r#type`](crate::types::builders::JobEntryBuilder::r#type)
     /// - [`updated_at`](crate::types::builders::JobEntryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::JobEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobEntry {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building JobEntry",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building JobEntry",
-                )
-            })?,
-            details: self.details,
-            errors: self.errors,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building JobEntry",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building JobEntry",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building JobEntry",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building JobEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobEntry {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building JobEntry")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building JobEntry")
+                    )?
+                ,
+                details: self.details
+                ,
+                errors: self.errors
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building JobEntry")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building JobEntry")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building JobEntry")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building JobEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

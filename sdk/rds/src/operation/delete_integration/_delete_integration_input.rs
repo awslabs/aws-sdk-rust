@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIntegrationInput {
+pub struct DeleteIntegrationInput  {
     /// <p>The unique identifier of the integration.</p>
     pub integration_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteIntegrationInput {
+impl  DeleteIntegrationInput  {
     /// <p>The unique identifier of the integration.</p>
-    pub fn integration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn integration_identifier(&self) -> ::std::option::Option<& str> {
         self.integration_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteIntegrationInputBuilder {
     }
     /// <p>The unique identifier of the integration.</p>
     pub fn set_integration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_identifier = input;
-        self
+        self.integration_identifier = input; self
     }
     /// <p>The unique identifier of the integration.</p>
     pub fn get_integration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_identifier
     }
     /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_integration::DeleteIntegrationInput {
-            integration_identifier: self.integration_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_integration::DeleteIntegrationInput {
+                integration_identifier: self.integration_identifier
+                ,
+            }
+        )
     }
 }
+

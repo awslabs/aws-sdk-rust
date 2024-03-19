@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOperationsInput {
+pub struct ListOperationsInput  {
     /// <p>For the first <code>ListOperations</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
     /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
@@ -12,14 +12,14 @@ pub struct ListOperationsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OperationFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::OperationFilter>>,
 }
-impl ListOperationsInput {
+impl  ListOperationsInput  {
     /// <p>For the first <code>ListOperations</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
     /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
@@ -28,10 +28,11 @@ impl ListOperationsInput {
     }
     /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::OperationFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::OperationFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListOperationsInput {
@@ -47,7 +48,7 @@ impl ListOperationsInput {
 pub struct ListOperationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OperationFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::OperationFilter>>,
 }
 impl ListOperationsInputBuilder {
     /// <p>For the first <code>ListOperations</code> request, omit this value.</p>
@@ -63,8 +64,7 @@ impl ListOperationsInputBuilder {
     /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For the first <code>ListOperations</code> request, omit this value.</p>
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p><note>
@@ -80,8 +80,7 @@ impl ListOperationsInputBuilder {
     }
     /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -95,29 +94,32 @@ impl ListOperationsInputBuilder {
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
     pub fn filters(mut self, input: crate::types::OperationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperationFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperationFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_operations::ListOperationsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_operations::ListOperationsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

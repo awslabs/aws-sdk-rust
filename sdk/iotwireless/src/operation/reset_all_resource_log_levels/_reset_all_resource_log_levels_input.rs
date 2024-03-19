@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetAllResourceLogLevelsInput {}
+pub struct ResetAllResourceLogLevelsInput  {
+}
 impl ResetAllResourceLogLevelsInput {
     /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsInput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput).
     pub fn builder() -> crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsInputBuilder {
@@ -13,15 +14,15 @@ impl ResetAllResourceLogLevelsInput {
 /// A builder for [`ResetAllResourceLogLevelsInput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ResetAllResourceLogLevelsInputBuilder {}
+pub struct ResetAllResourceLogLevelsInputBuilder {
+}
 impl ResetAllResourceLogLevelsInputBuilder {
     /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsInput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput {
+            }
+        )
     }
 }
+

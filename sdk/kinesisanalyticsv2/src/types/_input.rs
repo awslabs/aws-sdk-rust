@@ -3,7 +3,7 @@
 /// <p>When you configure the application input for a SQL-based Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Input {
+pub struct Input  {
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on.</p>
     pub name_prefix: ::std::string::String,
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>.</p>
@@ -18,31 +18,30 @@ pub struct Input {
     /// <p>Also used to describe the format of the reference data source.</p>
     pub input_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
-impl Input {
+impl  Input  {
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on.</p>
-    pub fn name_prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.name_prefix.deref()
+    pub fn name_prefix(&self) -> & str {
+        use std::ops::Deref; self.name_prefix.deref()
     }
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>.</p>
-    pub fn input_processing_configuration(&self) -> ::std::option::Option<&crate::types::InputProcessingConfiguration> {
+    pub fn input_processing_configuration(&self) -> ::std::option::Option<& crate::types::InputProcessingConfiguration> {
         self.input_processing_configuration.as_ref()
     }
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN).</p>
-    pub fn kinesis_streams_input(&self) -> ::std::option::Option<&crate::types::KinesisStreamsInput> {
+    pub fn kinesis_streams_input(&self) -> ::std::option::Option<& crate::types::KinesisStreamsInput> {
         self.kinesis_streams_input.as_ref()
     }
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
-    pub fn kinesis_firehose_input(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseInput> {
+    pub fn kinesis_firehose_input(&self) -> ::std::option::Option<& crate::types::KinesisFirehoseInput> {
         self.kinesis_firehose_input.as_ref()
     }
     /// <p>Describes the number of in-application streams to create.</p>
-    pub fn input_parallelism(&self) -> ::std::option::Option<&crate::types::InputParallelism> {
+    pub fn input_parallelism(&self) -> ::std::option::Option<& crate::types::InputParallelism> {
         self.input_parallelism.as_ref()
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
-    pub fn input_schema(&self) -> ::std::option::Option<&crate::types::SourceSchema> {
+    pub fn input_schema(&self) -> ::std::option::Option<& crate::types::SourceSchema> {
         self.input_schema.as_ref()
     }
 }
@@ -73,8 +72,7 @@ impl InputBuilder {
     }
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl InputBuilder {
     }
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>.</p>
     pub fn set_input_processing_configuration(mut self, input: ::std::option::Option<crate::types::InputProcessingConfiguration>) -> Self {
-        self.input_processing_configuration = input;
-        self
+        self.input_processing_configuration = input; self
     }
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>.</p>
     pub fn get_input_processing_configuration(&self) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
@@ -101,8 +98,7 @@ impl InputBuilder {
     }
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN).</p>
     pub fn set_kinesis_streams_input(mut self, input: ::std::option::Option<crate::types::KinesisStreamsInput>) -> Self {
-        self.kinesis_streams_input = input;
-        self
+        self.kinesis_streams_input = input; self
     }
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN).</p>
     pub fn get_kinesis_streams_input(&self) -> &::std::option::Option<crate::types::KinesisStreamsInput> {
@@ -115,8 +111,7 @@ impl InputBuilder {
     }
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
     pub fn set_kinesis_firehose_input(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseInput>) -> Self {
-        self.kinesis_firehose_input = input;
-        self
+        self.kinesis_firehose_input = input; self
     }
     /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
     pub fn get_kinesis_firehose_input(&self) -> &::std::option::Option<crate::types::KinesisFirehoseInput> {
@@ -129,8 +124,7 @@ impl InputBuilder {
     }
     /// <p>Describes the number of in-application streams to create.</p>
     pub fn set_input_parallelism(mut self, input: ::std::option::Option<crate::types::InputParallelism>) -> Self {
-        self.input_parallelism = input;
-        self
+        self.input_parallelism = input; self
     }
     /// <p>Describes the number of in-application streams to create.</p>
     pub fn get_input_parallelism(&self) -> &::std::option::Option<crate::types::InputParallelism> {
@@ -146,8 +140,7 @@ impl InputBuilder {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
     pub fn set_input_schema(mut self, input: ::std::option::Option<crate::types::SourceSchema>) -> Self {
-        self.input_schema = input;
-        self
+        self.input_schema = input; self
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
@@ -158,18 +151,25 @@ impl InputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name_prefix`](crate::types::builders::InputBuilder::name_prefix)
     pub fn build(self) -> ::std::result::Result<crate::types::Input, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Input {
-            name_prefix: self.name_prefix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name_prefix",
-                    "name_prefix was not specified but it is required when building Input",
-                )
-            })?,
-            input_processing_configuration: self.input_processing_configuration,
-            kinesis_streams_input: self.kinesis_streams_input,
-            kinesis_firehose_input: self.kinesis_firehose_input,
-            input_parallelism: self.input_parallelism,
-            input_schema: self.input_schema,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Input {
+                name_prefix: self.name_prefix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name_prefix", "name_prefix was not specified but it is required when building Input")
+                    )?
+                ,
+                input_processing_configuration: self.input_processing_configuration
+                ,
+                kinesis_streams_input: self.kinesis_streams_input
+                ,
+                kinesis_firehose_input: self.kinesis_firehose_input
+                ,
+                input_parallelism: self.input_parallelism
+                ,
+                input_schema: self.input_schema
+                ,
+            }
+        )
     }
 }
+

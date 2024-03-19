@@ -3,7 +3,7 @@
 /// <p>Information about an Amazon Q plugin and its configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Plugin {
+pub struct Plugin  {
     /// <p>The identifier of the plugin.</p>
     pub plugin_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the plugin.</p>
@@ -19,33 +19,33 @@ pub struct Plugin {
     /// <p>The timestamp for when the plugin was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Plugin {
+impl  Plugin  {
     /// <p>The identifier of the plugin.</p>
-    pub fn plugin_id(&self) -> ::std::option::Option<&str> {
+    pub fn plugin_id(&self) -> ::std::option::Option<& str> {
         self.plugin_id.as_deref()
     }
     /// <p>The name of the plugin.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The type of the plugin.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PluginType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PluginType> {
         self.r#type.as_ref()
     }
     /// <p>The plugin server URL used for configuration.</p>
-    pub fn server_url(&self) -> ::std::option::Option<&str> {
+    pub fn server_url(&self) -> ::std::option::Option<& str> {
         self.server_url.as_deref()
     }
     /// <p>The current status of the plugin.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PluginState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::PluginState> {
         self.state.as_ref()
     }
     /// <p>The timestamp for when the plugin was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp for when the plugin was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl PluginBuilder {
     }
     /// <p>The identifier of the plugin.</p>
     pub fn set_plugin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_id = input;
-        self
+        self.plugin_id = input; self
     }
     /// <p>The identifier of the plugin.</p>
     pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl PluginBuilder {
     }
     /// <p>The name of the plugin.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the plugin.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl PluginBuilder {
     }
     /// <p>The type of the plugin.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PluginType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the plugin.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PluginType> {
@@ -118,8 +115,7 @@ impl PluginBuilder {
     }
     /// <p>The plugin server URL used for configuration.</p>
     pub fn set_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_url = input;
-        self
+        self.server_url = input; self
     }
     /// <p>The plugin server URL used for configuration.</p>
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl PluginBuilder {
     }
     /// <p>The current status of the plugin.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PluginState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current status of the plugin.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PluginState> {
@@ -146,8 +141,7 @@ impl PluginBuilder {
     }
     /// <p>The timestamp for when the plugin was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp for when the plugin was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl PluginBuilder {
     }
     /// <p>The timestamp for when the plugin was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp for when the plugin was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl PluginBuilder {
     /// Consumes the builder and constructs a [`Plugin`](crate::types::Plugin).
     pub fn build(self) -> crate::types::Plugin {
         crate::types::Plugin {
-            plugin_id: self.plugin_id,
-            display_name: self.display_name,
-            r#type: self.r#type,
-            server_url: self.server_url,
-            state: self.state,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            plugin_id: self.plugin_id
+            ,
+            display_name: self.display_name
+            ,
+            r#type: self.r#type
+            ,
+            server_url: self.server_url
+            ,
+            state: self.state
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextGenerationJobConfig {
+pub struct TextGenerationJobConfig  {
     /// <p>How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code> problem types, the <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of <code>AutoMLJobCompletionCriteria</code> defaults to 72h (259200s).</p>
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     /// <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a variety of large language models. For information on the list of supported models, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text generation models supporting fine-tuning in Autopilot</a>. If no <code>BaseModelName</code> is provided, the default model used is <b>Falcon7BInstruct</b>.</p>
@@ -23,7 +23,7 @@ pub struct TextGenerationJobConfig {
     /// </ul>
     /// <p>Here is an example where all four hyperparameters are configured.</p>
     /// <p><code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps": "10" }</code></p>
-    pub text_generation_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub text_generation_hyper_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
     /// <ul>
     /// <li>
@@ -33,13 +33,13 @@ pub struct TextGenerationJobConfig {
     /// </ul>
     pub model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
 }
-impl TextGenerationJobConfig {
+impl  TextGenerationJobConfig  {
     /// <p>How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code> problem types, the <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of <code>AutoMLJobCompletionCriteria</code> defaults to 72h (259200s).</p>
-    pub fn completion_criteria(&self) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
+    pub fn completion_criteria(&self) -> ::std::option::Option<& crate::types::AutoMlJobCompletionCriteria> {
         self.completion_criteria.as_ref()
     }
     /// <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a variety of large language models. For information on the list of supported models, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text generation models supporting fine-tuning in Autopilot</a>. If no <code>BaseModelName</code> is provided, the default model used is <b>Falcon7BInstruct</b>.</p>
-    pub fn base_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn base_model_name(&self) -> ::std::option::Option<& str> {
         self.base_model_name.as_deref()
     }
     /// <p>The hyperparameters used to configure and optimize the learning process of the base model. You can set any combination of the following hyperparameters for all base models. For more information on each supported hyperparameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-set-hyperparameters.html">Optimize the learning process of your text generation models with hyperparameters</a>.</p>
@@ -55,9 +55,7 @@ impl TextGenerationJobConfig {
     /// </ul>
     /// <p>Here is an example where all four hyperparameters are configured.</p>
     /// <p><code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps": "10" }</code></p>
-    pub fn text_generation_hyper_parameters(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn text_generation_hyper_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.text_generation_hyper_parameters.as_ref()
     }
     /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
@@ -67,7 +65,7 @@ impl TextGenerationJobConfig {
     /// <li>
     /// <p>If you are an AutoML user, see the <i>Optional Parameters</i> section of <i>Create an AutoML job to fine-tune text generation models using the API</i> for details on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How to set the EULA acceptance when fine-tuning a model using the AutoML API</a>.</p></li>
     /// </ul>
-    pub fn model_access_config(&self) -> ::std::option::Option<&crate::types::ModelAccessConfig> {
+    pub fn model_access_config(&self) -> ::std::option::Option<& crate::types::ModelAccessConfig> {
         self.model_access_config.as_ref()
     }
 }
@@ -84,7 +82,7 @@ impl TextGenerationJobConfig {
 pub struct TextGenerationJobConfigBuilder {
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     pub(crate) base_model_name: ::std::option::Option<::std::string::String>,
-    pub(crate) text_generation_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) text_generation_hyper_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
 }
 impl TextGenerationJobConfigBuilder {
@@ -95,8 +93,7 @@ impl TextGenerationJobConfigBuilder {
     }
     /// <p>How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code> problem types, the <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of <code>AutoMLJobCompletionCriteria</code> defaults to 72h (259200s).</p>
     pub fn set_completion_criteria(mut self, input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>) -> Self {
-        self.completion_criteria = input;
-        self
+        self.completion_criteria = input; self
     }
     /// <p>How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code> problem types, the <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of <code>AutoMLJobCompletionCriteria</code> defaults to 72h (259200s).</p>
     pub fn get_completion_criteria(&self) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
@@ -109,8 +106,7 @@ impl TextGenerationJobConfigBuilder {
     }
     /// <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a variety of large language models. For information on the list of supported models, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text generation models supporting fine-tuning in Autopilot</a>. If no <code>BaseModelName</code> is provided, the default model used is <b>Falcon7BInstruct</b>.</p>
     pub fn set_base_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_model_name = input;
-        self
+        self.base_model_name = input; self
     }
     /// <p>The name of the base model to fine-tune. Autopilot supports fine-tuning a variety of large language models. For information on the list of supported models, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text generation models supporting fine-tuning in Autopilot</a>. If no <code>BaseModelName</code> is provided, the default model used is <b>Falcon7BInstruct</b>.</p>
     pub fn get_base_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,15 +129,11 @@ impl TextGenerationJobConfigBuilder {
     /// </ul>
     /// <p>Here is an example where all four hyperparameters are configured.</p>
     /// <p><code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps": "10" }</code></p>
-    pub fn text_generation_hyper_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn text_generation_hyper_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.text_generation_hyper_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.text_generation_hyper_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.text_generation_hyper_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The hyperparameters used to configure and optimize the learning process of the base model. You can set any combination of the following hyperparameters for all base models. For more information on each supported hyperparameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-set-hyperparameters.html">Optimize the learning process of your text generation models with hyperparameters</a>.</p>
     /// <ul>
@@ -156,12 +148,8 @@ impl TextGenerationJobConfigBuilder {
     /// </ul>
     /// <p>Here is an example where all four hyperparameters are configured.</p>
     /// <p><code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps": "10" }</code></p>
-    pub fn set_text_generation_hyper_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.text_generation_hyper_parameters = input;
-        self
+    pub fn set_text_generation_hyper_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.text_generation_hyper_parameters = input; self
     }
     /// <p>The hyperparameters used to configure and optimize the learning process of the base model. You can set any combination of the following hyperparameters for all base models. For more information on each supported hyperparameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-set-hyperparameters.html">Optimize the learning process of your text generation models with hyperparameters</a>.</p>
     /// <ul>
@@ -176,9 +164,7 @@ impl TextGenerationJobConfigBuilder {
     /// </ul>
     /// <p>Here is an example where all four hyperparameters are configured.</p>
     /// <p><code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps": "10" }</code></p>
-    pub fn get_text_generation_hyper_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_text_generation_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.text_generation_hyper_parameters
     }
     /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
@@ -200,8 +186,7 @@ impl TextGenerationJobConfigBuilder {
     /// <p>If you are an AutoML user, see the <i>Optional Parameters</i> section of <i>Create an AutoML job to fine-tune text generation models using the API</i> for details on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How to set the EULA acceptance when fine-tuning a model using the AutoML API</a>.</p></li>
     /// </ul>
     pub fn set_model_access_config(mut self, input: ::std::option::Option<crate::types::ModelAccessConfig>) -> Self {
-        self.model_access_config = input;
-        self
+        self.model_access_config = input; self
     }
     /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
     /// <ul>
@@ -216,10 +201,15 @@ impl TextGenerationJobConfigBuilder {
     /// Consumes the builder and constructs a [`TextGenerationJobConfig`](crate::types::TextGenerationJobConfig).
     pub fn build(self) -> crate::types::TextGenerationJobConfig {
         crate::types::TextGenerationJobConfig {
-            completion_criteria: self.completion_criteria,
-            base_model_name: self.base_model_name,
-            text_generation_hyper_parameters: self.text_generation_hyper_parameters,
-            model_access_config: self.model_access_config,
+            completion_criteria: self.completion_criteria
+            ,
+            base_model_name: self.base_model_name
+            ,
+            text_generation_hyper_parameters: self.text_generation_hyper_parameters
+            ,
+            model_access_config: self.model_access_config
+            ,
         }
     }
 }
+

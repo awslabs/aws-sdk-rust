@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOutpostInput {
+pub struct GetOutpostInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
-impl GetOutpostInput {
+impl  GetOutpostInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_id(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_id(&self) -> ::std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetOutpostInputBuilder {
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_id = input;
-        self
+        self.outpost_id = input; self
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetOutpostInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetOutpostInput`](crate::operation::get_outpost::GetOutpostInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_outpost::GetOutpostInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_outpost::GetOutpostInput { outpost_id: self.outpost_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_outpost::GetOutpostInput {
+                outpost_id: self.outpost_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>A static structure that contains the configuration data for a <code>VoiceEnhancementSinkConfiguration</code> element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoiceEnhancementSinkConfiguration {
+pub struct VoiceEnhancementSinkConfiguration  {
     /// <p>Disables the <code>VoiceEnhancementSinkConfiguration</code> element.</p>
     pub disabled: bool,
 }
-impl VoiceEnhancementSinkConfiguration {
+impl  VoiceEnhancementSinkConfiguration  {
     /// <p>Disables the <code>VoiceEnhancementSinkConfiguration</code> element.</p>
     pub fn disabled(&self) -> bool {
         self.disabled
@@ -34,8 +34,7 @@ impl VoiceEnhancementSinkConfigurationBuilder {
     }
     /// <p>Disables the <code>VoiceEnhancementSinkConfiguration</code> element.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>Disables the <code>VoiceEnhancementSinkConfiguration</code> element.</p>
     pub fn get_disabled(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,10 @@ impl VoiceEnhancementSinkConfigurationBuilder {
     /// Consumes the builder and constructs a [`VoiceEnhancementSinkConfiguration`](crate::types::VoiceEnhancementSinkConfiguration).
     pub fn build(self) -> crate::types::VoiceEnhancementSinkConfiguration {
         crate::types::VoiceEnhancementSinkConfiguration {
-            disabled: self.disabled.unwrap_or_default(),
+            disabled: self.disabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUploadUrlInput {
+pub struct CreateUploadUrlInput  {
     /// <p>The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this <code>scanName</code> when you call <code>CreateScan</code> on the code resource you upload to this URL.</p>
     pub scan_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateUploadUrlInput {
+impl  CreateUploadUrlInput  {
     /// <p>The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this <code>scanName</code> when you call <code>CreateScan</code> on the code resource you upload to this URL.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name(&self) -> ::std::option::Option<& str> {
         self.scan_name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl CreateUploadUrlInputBuilder {
     }
     /// <p>The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this <code>scanName</code> when you call <code>CreateScan</code> on the code resource you upload to this URL.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this <code>scanName</code> when you call <code>CreateScan</code> on the code resource you upload to this URL.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scan_name
     }
     /// Consumes the builder and constructs a [`CreateUploadUrlInput`](crate::operation::create_upload_url::CreateUploadUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_upload_url::CreateUploadUrlInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_upload_url::CreateUploadUrlInput { scan_name: self.scan_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_upload_url::CreateUploadUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_upload_url::CreateUploadUrlInput {
+                scan_name: self.scan_name
+                ,
+            }
+        )
     }
 }
+

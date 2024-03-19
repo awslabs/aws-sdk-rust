@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProfileShares`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`profile_arn(impl Into<String>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::profile_arn) / [`set_profile_arn(Option<String>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::set_profile_arn):<br>required: **true**<br><p>The profile ARN.</p><br>
     ///   - [`shared_with_prefix(impl Into<String>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::set_shared_with_prefix):<br>required: **false**<br><p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     ///   - [`status(ShareStatus)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::status) / [`set_status(Option<ShareStatus>)`](crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the share request.</p><br>
-    /// - On success, responds with [`ListProfileSharesOutput`](crate::operation::list_profile_shares::ListProfileSharesOutput) with field(s):
+                            /// - On success, responds with [`ListProfileSharesOutput`](crate::operation::list_profile_shares::ListProfileSharesOutput) with field(s):
     ///   - [`profile_share_summaries(Option<Vec::<ProfileShareSummary>>)`](crate::operation::list_profile_shares::ListProfileSharesOutput::profile_share_summaries): <p>Profile share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_profile_shares::ListProfileSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListProfileSharesError>`](crate::operation::list_profile_shares::ListProfileSharesError)
+                            /// - On failure, responds with [`SdkError<ListProfileSharesError>`](crate::operation::list_profile_shares::ListProfileSharesError)
     pub fn list_profile_shares(&self) -> crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder {
-        crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_profile_shares::builders::ListProfileSharesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

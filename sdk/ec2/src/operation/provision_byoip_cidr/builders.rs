@@ -5,56 +5,52 @@ pub use crate::operation::provision_byoip_cidr::_provision_byoip_cidr_input::Pro
 
 impl ProvisionByoipCidrInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.provision_byoip_cidr();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.provision_byoip_cidr();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ProvisionByoipCidr`.
-///
+/// 
 /// <p>Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using <code>AdvertiseByoipCidr</code>.</p>
 /// <p>Amazon Web Services verifies that you own the address range and are authorized to advertise it. You must ensure that the address range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the address range. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>Provisioning an address range is an asynchronous operation, so the call returns immediately, but the address range is not ready to use until its status changes from <code>pending-provision</code> to <code>provisioned</code>. To monitor the status of an address range, use <code>DescribeByoipCidrs</code>. To allocate an Elastic IP address from your IPv4 address pool, use <code>AllocateAddress</code> with either the specific address from the address pool or the ID of the address pool.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ProvisionByoipCidrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder,
+                    inner: crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-    > for ProvisionByoipCidrFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
+                    crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
+                > for ProvisionByoipCidrFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
+                        crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ProvisionByoipCidrFluentBuilder {
     /// Creates a new `ProvisionByoipCidr`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl ProvisionByoipCidrFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::provision_byoip_cidr::ProvisionByoipCidr::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidr::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::provision_byoip_cidr::ProvisionByoipCidrError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::provision_byoip_cidr::ProvisionByoipCidr::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::provision_byoip_cidr::ProvisionByoipCidr::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput, crate::operation::provision_byoip_cidr::ProvisionByoipCidrError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 address range that you can bring is /48 for CIDRs that are publicly advertisable and /56 for CIDRs that are not publicly advertisable. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
@@ -193,12 +180,12 @@ impl ProvisionByoipCidrFluentBuilder {
         self
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn set_pool_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_pool_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_pool_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn get_pool_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_pool_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         self.inner.get_pool_tag_specifications()
     }
     /// <p>Reserved.</p>
@@ -263,3 +250,4 @@ impl ProvisionByoipCidrFluentBuilder {
         self.inner.get_network_border_group()
     }
 }
+

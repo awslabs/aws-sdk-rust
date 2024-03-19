@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProbeInput {
+pub struct UpdateProbeInput  {
     /// <p>The name of the monitor that the probe was updated for.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
@@ -18,21 +18,21 @@ pub struct UpdateProbeInput {
     /// <p>he updated packets size for network traffic between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     pub packet_size: ::std::option::Option<i32>,
 }
-impl UpdateProbeInput {
+impl  UpdateProbeInput  {
     /// <p>The name of the monitor that the probe was updated for.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
-    pub fn probe_id(&self) -> ::std::option::Option<&str> {
+    pub fn probe_id(&self) -> ::std::option::Option<& str> {
         self.probe_id.as_deref()
     }
     /// <p>The state of the probe update.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ProbeState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ProbeState> {
         self.state.as_ref()
     }
     /// <p>The updated IP address for the probe destination. This must be either an IPv4 or IPv6 address.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The updated port for the probe destination. This is required only if the <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.</p>
@@ -40,7 +40,7 @@ impl UpdateProbeInput {
         self.destination_port
     }
     /// <p>The updated network protocol for the destination. This can be either <code>TCP</code> or <code>ICMP</code>. If the protocol is <code>TCP</code>, then <code>port</code> is also required.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// <p>he updated packets size for network traffic between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
@@ -76,8 +76,7 @@ impl UpdateProbeInputBuilder {
     }
     /// <p>The name of the monitor that the probe was updated for.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor that the probe was updated for.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdateProbeInputBuilder {
     }
     /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
     pub fn set_probe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.probe_id = input;
-        self
+        self.probe_id = input; self
     }
     /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
     pub fn get_probe_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl UpdateProbeInputBuilder {
     }
     /// <p>The state of the probe update.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ProbeState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the probe update.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ProbeState> {
@@ -119,8 +116,7 @@ impl UpdateProbeInputBuilder {
     }
     /// <p>The updated IP address for the probe destination. This must be either an IPv4 or IPv6 address.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The updated IP address for the probe destination. This must be either an IPv4 or IPv6 address.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl UpdateProbeInputBuilder {
     }
     /// <p>The updated port for the probe destination. This is required only if the <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.destination_port = input;
-        self
+        self.destination_port = input; self
     }
     /// <p>The updated port for the probe destination. This is required only if the <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
@@ -147,8 +142,7 @@ impl UpdateProbeInputBuilder {
     }
     /// <p>The updated network protocol for the destination. This can be either <code>TCP</code> or <code>ICMP</code>. If the protocol is <code>TCP</code>, then <code>port</code> is also required.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The updated network protocol for the destination. This can be either <code>TCP</code> or <code>ICMP</code>. If the protocol is <code>TCP</code>, then <code>port</code> is also required.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
@@ -161,8 +155,7 @@ impl UpdateProbeInputBuilder {
     }
     /// <p>he updated packets size for network traffic between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     pub fn set_packet_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.packet_size = input;
-        self
+        self.packet_size = input; self
     }
     /// <p>he updated packets size for network traffic between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     pub fn get_packet_size(&self) -> &::std::option::Option<i32> {
@@ -170,14 +163,24 @@ impl UpdateProbeInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateProbeInput`](crate::operation::update_probe::UpdateProbeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_probe::UpdateProbeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_probe::UpdateProbeInput {
-            monitor_name: self.monitor_name,
-            probe_id: self.probe_id,
-            state: self.state,
-            destination: self.destination,
-            destination_port: self.destination_port,
-            protocol: self.protocol,
-            packet_size: self.packet_size,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_probe::UpdateProbeInput {
+                monitor_name: self.monitor_name
+                ,
+                probe_id: self.probe_id
+                ,
+                state: self.state
+                ,
+                destination: self.destination
+                ,
+                destination_port: self.destination_port
+                ,
+                protocol: self.protocol
+                ,
+                packet_size: self.packet_size
+                ,
+            }
+        )
     }
 }
+

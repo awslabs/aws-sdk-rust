@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHoursOfOperationOutput {
+pub struct CreateHoursOfOperationOutput  {
     /// <p>The identifier for the hours of operation.</p>
     pub hours_of_operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
     pub hours_of_operation_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateHoursOfOperationOutput {
+impl  CreateHoursOfOperationOutput  {
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn hours_of_operation_id(&self) -> ::std::option::Option<& str> {
         self.hours_of_operation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
-    pub fn hours_of_operation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hours_of_operation_arn(&self) -> ::std::option::Option<& str> {
         self.hours_of_operation_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateHoursOfOperationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateHoursOfOperationOutput {
     /// Creates a new builder-style object to manufacture [`CreateHoursOfOperationOutput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput).
     pub fn builder() -> crate::operation::create_hours_of_operation::builders::CreateHoursOfOperationOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateHoursOfOperationOutputBuilder {
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hours_of_operation_id = input;
-        self
+        self.hours_of_operation_id = input; self
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateHoursOfOperationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
     pub fn set_hours_of_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hours_of_operation_arn = input;
-        self
+        self.hours_of_operation_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
     pub fn get_hours_of_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hours_of_operation_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateHoursOfOperationOutput`](crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput).
     pub fn build(self) -> crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput {
         crate::operation::create_hours_of_operation::CreateHoursOfOperationOutput {
-            hours_of_operation_id: self.hours_of_operation_id,
-            hours_of_operation_arn: self.hours_of_operation_arn,
+            hours_of_operation_id: self.hours_of_operation_id
+            ,
+            hours_of_operation_arn: self.hours_of_operation_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

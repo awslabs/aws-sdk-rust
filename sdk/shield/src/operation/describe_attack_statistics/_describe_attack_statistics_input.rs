@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAttackStatisticsInput {}
+pub struct DescribeAttackStatisticsInput  {
+}
 impl DescribeAttackStatisticsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAttackStatisticsInput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput).
     pub fn builder() -> crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeAttackStatisticsInput {
 /// A builder for [`DescribeAttackStatisticsInput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeAttackStatisticsInputBuilder {}
+pub struct DescribeAttackStatisticsInputBuilder {
+}
 impl DescribeAttackStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttackStatisticsInput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput {
+            }
+        )
     }
 }
+

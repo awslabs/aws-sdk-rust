@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSourceNetworkReplicationOutput {
+pub struct StartSourceNetworkReplicationOutput  {
     /// <p>Source Network which was requested for replication.</p>
     pub source_network: ::std::option::Option<crate::types::SourceNetwork>,
     _request_id: Option<String>,
 }
-impl StartSourceNetworkReplicationOutput {
+impl  StartSourceNetworkReplicationOutput  {
     /// <p>Source Network which was requested for replication.</p>
-    pub fn source_network(&self) -> ::std::option::Option<&crate::types::SourceNetwork> {
+    pub fn source_network(&self) -> ::std::option::Option<& crate::types::SourceNetwork> {
         self.source_network.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartSourceNetworkReplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartSourceNetworkReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartSourceNetworkReplicationOutput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput).
     pub fn builder() -> crate::operation::start_source_network_replication::builders::StartSourceNetworkReplicationOutputBuilder {
@@ -40,27 +40,28 @@ impl StartSourceNetworkReplicationOutputBuilder {
     }
     /// <p>Source Network which was requested for replication.</p>
     pub fn set_source_network(mut self, input: ::std::option::Option<crate::types::SourceNetwork>) -> Self {
-        self.source_network = input;
-        self
+        self.source_network = input; self
     }
     /// <p>Source Network which was requested for replication.</p>
     pub fn get_source_network(&self) -> &::std::option::Option<crate::types::SourceNetwork> {
         &self.source_network
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartSourceNetworkReplicationOutput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput).
     pub fn build(self) -> crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput {
         crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput {
-            source_network: self.source_network,
+            source_network: self.source_network
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

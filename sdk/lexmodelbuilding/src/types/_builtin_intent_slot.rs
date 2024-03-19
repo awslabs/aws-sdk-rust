@@ -3,13 +3,13 @@
 /// <p>Provides information about a slot used in a built-in intent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuiltinIntentSlot {
+pub struct BuiltinIntentSlot  {
     /// <p>A list of the slots defined for the intent.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl BuiltinIntentSlot {
+impl  BuiltinIntentSlot  {
     /// <p>A list of the slots defined for the intent.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl BuiltinIntentSlotBuilder {
     }
     /// <p>A list of the slots defined for the intent.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A list of the slots defined for the intent.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl BuiltinIntentSlotBuilder {
     }
     /// Consumes the builder and constructs a [`BuiltinIntentSlot`](crate::types::BuiltinIntentSlot).
     pub fn build(self) -> crate::types::BuiltinIntentSlot {
-        crate::types::BuiltinIntentSlot { name: self.name }
+        crate::types::BuiltinIntentSlot {
+            name: self.name
+            ,
+        }
     }
 }
+

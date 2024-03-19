@@ -3,23 +3,23 @@
 /// <p>Optionally configure a Snowflake role. Otherwise the default user role will be used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SnowflakeRoleConfiguration {
+pub struct SnowflakeRoleConfiguration  {
     /// <p>Enable Snowflake role</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Snowflake role you wish to configure</p>
     pub snowflake_role: ::std::option::Option<::std::string::String>,
 }
-impl SnowflakeRoleConfiguration {
+impl  SnowflakeRoleConfiguration  {
     /// <p>Enable Snowflake role</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The Snowflake role you wish to configure</p>
-    pub fn snowflake_role(&self) -> ::std::option::Option<&str> {
+    pub fn snowflake_role(&self) -> ::std::option::Option<& str> {
         self.snowflake_role.as_deref()
     }
 }
-impl ::std::fmt::Debug for SnowflakeRoleConfiguration {
+impl  ::std::fmt::Debug for SnowflakeRoleConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnowflakeRoleConfiguration");
         formatter.field("enabled", &self.enabled);
@@ -49,8 +49,7 @@ impl SnowflakeRoleConfigurationBuilder {
     }
     /// <p>Enable Snowflake role</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Enable Snowflake role</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -63,8 +62,7 @@ impl SnowflakeRoleConfigurationBuilder {
     }
     /// <p>The Snowflake role you wish to configure</p>
     pub fn set_snowflake_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snowflake_role = input;
-        self
+        self.snowflake_role = input; self
     }
     /// <p>The Snowflake role you wish to configure</p>
     pub fn get_snowflake_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl SnowflakeRoleConfigurationBuilder {
     /// Consumes the builder and constructs a [`SnowflakeRoleConfiguration`](crate::types::SnowflakeRoleConfiguration).
     pub fn build(self) -> crate::types::SnowflakeRoleConfiguration {
         crate::types::SnowflakeRoleConfiguration {
-            enabled: self.enabled,
-            snowflake_role: self.snowflake_role,
+            enabled: self.enabled
+            ,
+            snowflake_role: self.snowflake_role
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for SnowflakeRoleConfigurationBuilder {
         formatter.finish()
     }
 }
+

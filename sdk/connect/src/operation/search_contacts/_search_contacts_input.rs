@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchContactsInput {
+pub struct SearchContactsInput  {
     /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Time range that you want to search results.</p>
@@ -16,17 +16,17 @@ pub struct SearchContactsInput {
     /// <p>Specifies a field to sort by and a sort order.</p>
     pub sort: ::std::option::Option<crate::types::Sort>,
 }
-impl SearchContactsInput {
+impl  SearchContactsInput  {
     /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Time range that you want to search results.</p>
-    pub fn time_range(&self) -> ::std::option::Option<&crate::types::SearchContactsTimeRange> {
+    pub fn time_range(&self) -> ::std::option::Option<& crate::types::SearchContactsTimeRange> {
         self.time_range.as_ref()
     }
     /// <p>The search criteria to be used to return contacts.</p>
-    pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::SearchCriteria> {
+    pub fn search_criteria(&self) -> ::std::option::Option<& crate::types::SearchCriteria> {
         self.search_criteria.as_ref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -34,11 +34,11 @@ impl SearchContactsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies a field to sort by and a sort order.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::Sort> {
         self.sort.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl SearchContactsInputBuilder {
     }
     /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl SearchContactsInputBuilder {
     }
     /// <p>Time range that you want to search results.</p>
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::SearchContactsTimeRange>) -> Self {
-        self.time_range = input;
-        self
+        self.time_range = input; self
     }
     /// <p>Time range that you want to search results.</p>
     pub fn get_time_range(&self) -> &::std::option::Option<crate::types::SearchContactsTimeRange> {
@@ -98,8 +96,7 @@ impl SearchContactsInputBuilder {
     }
     /// <p>The search criteria to be used to return contacts.</p>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::SearchCriteria>) -> Self {
-        self.search_criteria = input;
-        self
+        self.search_criteria = input; self
     }
     /// <p>The search criteria to be used to return contacts.</p>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::SearchCriteria> {
@@ -112,8 +109,7 @@ impl SearchContactsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -126,8 +122,7 @@ impl SearchContactsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,24 +135,30 @@ impl SearchContactsInputBuilder {
     }
     /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
         &self.sort
     }
     /// Consumes the builder and constructs a [`SearchContactsInput`](crate::operation::search_contacts::SearchContactsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_contacts::SearchContactsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_contacts::SearchContactsInput {
-            instance_id: self.instance_id,
-            time_range: self.time_range,
-            search_criteria: self.search_criteria,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            sort: self.sort,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_contacts::SearchContactsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_contacts::SearchContactsInput {
+                instance_id: self.instance_id
+                ,
+                time_range: self.time_range
+                ,
+                search_criteria: self.search_criteria
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort: self.sort
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HibernationOptionsRequest {
+pub struct HibernationOptionsRequest  {
     /// <p>Set to <code>true</code> to enable your instance for hibernation.</p>
     /// <p>For Spot Instances, if you set <code>Configured</code> to <code>true</code>, either omit the <code>InstanceInterruptionBehavior</code> parameter (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotMarketOptions.html"> <code>SpotMarketOptions</code> </a>), or set it to <code>hibernate</code>. When <code>Configured</code> is true:</p>
     /// <ul>
@@ -15,7 +15,7 @@ pub struct HibernationOptionsRequest {
     /// <p>Default: <code>false</code></p>
     pub configured: ::std::option::Option<bool>,
 }
-impl HibernationOptionsRequest {
+impl  HibernationOptionsRequest  {
     /// <p>Set to <code>true</code> to enable your instance for hibernation.</p>
     /// <p>For Spot Instances, if you set <code>Configured</code> to <code>true</code>, either omit the <code>InstanceInterruptionBehavior</code> parameter (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotMarketOptions.html"> <code>SpotMarketOptions</code> </a>), or set it to <code>hibernate</code>. When <code>Configured</code> is true:</p>
     /// <ul>
@@ -66,8 +66,7 @@ impl HibernationOptionsRequestBuilder {
     /// </ul>
     /// <p>Default: <code>false</code></p>
     pub fn set_configured(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.configured = input;
-        self
+        self.configured = input; self
     }
     /// <p>Set to <code>true</code> to enable your instance for hibernation.</p>
     /// <p>For Spot Instances, if you set <code>Configured</code> to <code>true</code>, either omit the <code>InstanceInterruptionBehavior</code> parameter (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotMarketOptions.html"> <code>SpotMarketOptions</code> </a>), or set it to <code>hibernate</code>. When <code>Configured</code> is true:</p>
@@ -83,6 +82,10 @@ impl HibernationOptionsRequestBuilder {
     }
     /// Consumes the builder and constructs a [`HibernationOptionsRequest`](crate::types::HibernationOptionsRequest).
     pub fn build(self) -> crate::types::HibernationOptionsRequest {
-        crate::types::HibernationOptionsRequest { configured: self.configured }
+        crate::types::HibernationOptionsRequest {
+            configured: self.configured
+            ,
+        }
     }
 }
+

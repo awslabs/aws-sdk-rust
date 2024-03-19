@@ -3,7 +3,7 @@
 /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustedAdvisorResourcesSummary {
+pub struct TrustedAdvisorResourcesSummary  {
     /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
     pub resources_processed: i64,
     /// <p>The number of Amazon Web Services resources that were flagged (listed) by the Trusted Advisor check.</p>
@@ -13,7 +13,7 @@ pub struct TrustedAdvisorResourcesSummary {
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
     pub resources_suppressed: i64,
 }
-impl TrustedAdvisorResourcesSummary {
+impl  TrustedAdvisorResourcesSummary  {
     /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
     pub fn resources_processed(&self) -> i64 {
         self.resources_processed
@@ -56,8 +56,7 @@ impl TrustedAdvisorResourcesSummaryBuilder {
     }
     /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
     pub fn set_resources_processed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.resources_processed = input;
-        self
+        self.resources_processed = input; self
     }
     /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
     pub fn get_resources_processed(&self) -> &::std::option::Option<i64> {
@@ -71,8 +70,7 @@ impl TrustedAdvisorResourcesSummaryBuilder {
     }
     /// <p>The number of Amazon Web Services resources that were flagged (listed) by the Trusted Advisor check.</p>
     pub fn set_resources_flagged(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.resources_flagged = input;
-        self
+        self.resources_flagged = input; self
     }
     /// <p>The number of Amazon Web Services resources that were flagged (listed) by the Trusted Advisor check.</p>
     pub fn get_resources_flagged(&self) -> &::std::option::Option<i64> {
@@ -86,8 +84,7 @@ impl TrustedAdvisorResourcesSummaryBuilder {
     }
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because information was unavailable.</p>
     pub fn set_resources_ignored(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.resources_ignored = input;
-        self
+        self.resources_ignored = input; self
     }
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because information was unavailable.</p>
     pub fn get_resources_ignored(&self) -> &::std::option::Option<i64> {
@@ -101,8 +98,7 @@ impl TrustedAdvisorResourcesSummaryBuilder {
     }
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
     pub fn set_resources_suppressed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.resources_suppressed = input;
-        self
+        self.resources_suppressed = input; self
     }
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
     pub fn get_resources_suppressed(&self) -> &::std::option::Option<i64> {
@@ -111,10 +107,19 @@ impl TrustedAdvisorResourcesSummaryBuilder {
     /// Consumes the builder and constructs a [`TrustedAdvisorResourcesSummary`](crate::types::TrustedAdvisorResourcesSummary).
     pub fn build(self) -> crate::types::TrustedAdvisorResourcesSummary {
         crate::types::TrustedAdvisorResourcesSummary {
-            resources_processed: self.resources_processed.unwrap_or_default(),
-            resources_flagged: self.resources_flagged.unwrap_or_default(),
-            resources_ignored: self.resources_ignored.unwrap_or_default(),
-            resources_suppressed: self.resources_suppressed.unwrap_or_default(),
+            resources_processed: self.resources_processed
+                .unwrap_or_default()
+            ,
+            resources_flagged: self.resources_flagged
+                .unwrap_or_default()
+            ,
+            resources_ignored: self.resources_ignored
+                .unwrap_or_default()
+            ,
+            resources_suppressed: self.resources_suppressed
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

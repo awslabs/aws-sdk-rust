@@ -3,56 +3,62 @@
 /// <p>A structure that contains the override tag configuration that modify the tags that are assigned to specified resources before the resource is imported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobOverrideTags {
+pub struct AssetBundleImportJobOverrideTags  {
     /// <p>A list of tag overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    pub vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>>,
+    pub vpc_connections: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>>,
     /// <p>A list of tag overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideTags>>,
+    pub data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverrideTags>>,
     /// <p>A list of tag overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideTags>>,
+    pub data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverrideTags>>,
     /// <p>A list of tag overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideTags>>,
+    pub themes: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverrideTags>>,
     /// <p>A list of tag overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideTags>>,
+    pub analyses: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverrideTags>>,
     /// <p>A list of tag overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideTags>>,
+    pub dashboards: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverrideTags>>,
 }
-impl AssetBundleImportJobOverrideTags {
+impl  AssetBundleImportJobOverrideTags  {
     /// <p>A list of tag overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_connections.is_none()`.
-    pub fn vpc_connections(&self) -> &[crate::types::AssetBundleImportJobVpcConnectionOverrideTags] {
-        self.vpc_connections.as_deref().unwrap_or_default()
+    pub fn vpc_connections(&self) -> & [crate::types::AssetBundleImportJobVpcConnectionOverrideTags] {
+        self.vpc_connections.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tag overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
-    pub fn data_sources(&self) -> &[crate::types::AssetBundleImportJobDataSourceOverrideTags] {
-        self.data_sources.as_deref().unwrap_or_default()
+    pub fn data_sources(&self) -> & [crate::types::AssetBundleImportJobDataSourceOverrideTags] {
+        self.data_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tag overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
-    pub fn data_sets(&self) -> &[crate::types::AssetBundleImportJobDataSetOverrideTags] {
-        self.data_sets.as_deref().unwrap_or_default()
+    pub fn data_sets(&self) -> & [crate::types::AssetBundleImportJobDataSetOverrideTags] {
+        self.data_sets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tag overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.themes.is_none()`.
-    pub fn themes(&self) -> &[crate::types::AssetBundleImportJobThemeOverrideTags] {
-        self.themes.as_deref().unwrap_or_default()
+    pub fn themes(&self) -> & [crate::types::AssetBundleImportJobThemeOverrideTags] {
+        self.themes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tag overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analyses.is_none()`.
-    pub fn analyses(&self) -> &[crate::types::AssetBundleImportJobAnalysisOverrideTags] {
-        self.analyses.as_deref().unwrap_or_default()
+    pub fn analyses(&self) -> & [crate::types::AssetBundleImportJobAnalysisOverrideTags] {
+        self.analyses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tag overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboards.is_none()`.
-    pub fn dashboards(&self) -> &[crate::types::AssetBundleImportJobDashboardOverrideTags] {
-        self.dashboards.as_deref().unwrap_or_default()
+    pub fn dashboards(&self) -> & [crate::types::AssetBundleImportJobDashboardOverrideTags] {
+        self.dashboards.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssetBundleImportJobOverrideTags {
@@ -66,12 +72,12 @@ impl AssetBundleImportJobOverrideTags {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobOverrideTagsBuilder {
-    pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>>,
-    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideTags>>,
-    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideTags>>,
-    pub(crate) themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideTags>>,
-    pub(crate) analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideTags>>,
-    pub(crate) dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideTags>>,
+    pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>>,
+    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverrideTags>>,
+    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverrideTags>>,
+    pub(crate) themes: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverrideTags>>,
+    pub(crate) analyses: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverrideTags>>,
+    pub(crate) dashboards: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverrideTags>>,
 }
 impl AssetBundleImportJobOverrideTagsBuilder {
     /// Appends an item to `vpc_connections`.
@@ -81,20 +87,16 @@ impl AssetBundleImportJobOverrideTagsBuilder {
     /// <p>A list of tag overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
     pub fn vpc_connections(mut self, input: crate::types::AssetBundleImportJobVpcConnectionOverrideTags) -> Self {
         let mut v = self.vpc_connections.unwrap_or_default();
-        v.push(input);
-        self.vpc_connections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_connections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_vpc_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>>,
-    ) -> Self {
-        self.vpc_connections = input;
-        self
+    pub fn set_vpc_connections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>>) -> Self {
+        self.vpc_connections = input; self
     }
     /// <p>A list of tag overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_vpc_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>> {
+    pub fn get_vpc_connections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>> {
         &self.vpc_connections
     }
     /// Appends an item to `data_sources`.
@@ -104,20 +106,16 @@ impl AssetBundleImportJobOverrideTagsBuilder {
     /// <p>A list of tag overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
     pub fn data_sources(mut self, input: crate::types::AssetBundleImportJobDataSourceOverrideTags) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_data_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideTags>>,
-    ) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverrideTags>>) -> Self {
+        self.data_sources = input; self
     }
     /// <p>A list of tag overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideTags>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSourceOverrideTags>> {
         &self.data_sources
     }
     /// Appends an item to `data_sets`.
@@ -127,17 +125,16 @@ impl AssetBundleImportJobOverrideTagsBuilder {
     /// <p>A list of tag overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
     pub fn data_sets(mut self, input: crate::types::AssetBundleImportJobDataSetOverrideTags) -> Self {
         let mut v = self.data_sets.unwrap_or_default();
-        v.push(input);
-        self.data_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideTags>>) -> Self {
-        self.data_sets = input;
-        self
+    pub fn set_data_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverrideTags>>) -> Self {
+        self.data_sets = input; self
     }
     /// <p>A list of tag overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideTags>> {
+    pub fn get_data_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDataSetOverrideTags>> {
         &self.data_sets
     }
     /// Appends an item to `themes`.
@@ -147,17 +144,16 @@ impl AssetBundleImportJobOverrideTagsBuilder {
     /// <p>A list of tag overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
     pub fn themes(mut self, input: crate::types::AssetBundleImportJobThemeOverrideTags) -> Self {
         let mut v = self.themes.unwrap_or_default();
-        v.push(input);
-        self.themes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.themes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_themes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideTags>>) -> Self {
-        self.themes = input;
-        self
+    pub fn set_themes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverrideTags>>) -> Self {
+        self.themes = input; self
     }
     /// <p>A list of tag overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_themes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideTags>> {
+    pub fn get_themes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobThemeOverrideTags>> {
         &self.themes
     }
     /// Appends an item to `analyses`.
@@ -167,17 +163,16 @@ impl AssetBundleImportJobOverrideTagsBuilder {
     /// <p>A list of tag overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
     pub fn analyses(mut self, input: crate::types::AssetBundleImportJobAnalysisOverrideTags) -> Self {
         let mut v = self.analyses.unwrap_or_default();
-        v.push(input);
-        self.analyses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analyses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_analyses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideTags>>) -> Self {
-        self.analyses = input;
-        self
+    pub fn set_analyses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverrideTags>>) -> Self {
+        self.analyses = input; self
     }
     /// <p>A list of tag overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_analyses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideTags>> {
+    pub fn get_analyses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobAnalysisOverrideTags>> {
         &self.analyses
     }
     /// Appends an item to `dashboards`.
@@ -187,28 +182,34 @@ impl AssetBundleImportJobOverrideTagsBuilder {
     /// <p>A list of tag overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
     pub fn dashboards(mut self, input: crate::types::AssetBundleImportJobDashboardOverrideTags) -> Self {
         let mut v = self.dashboards.unwrap_or_default();
-        v.push(input);
-        self.dashboards = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dashboards = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn set_dashboards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideTags>>) -> Self {
-        self.dashboards = input;
-        self
+    pub fn set_dashboards(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverrideTags>>) -> Self {
+        self.dashboards = input; self
     }
     /// <p>A list of tag overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideTags>> {
+    pub fn get_dashboards(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetBundleImportJobDashboardOverrideTags>> {
         &self.dashboards
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobOverrideTags`](crate::types::AssetBundleImportJobOverrideTags).
     pub fn build(self) -> crate::types::AssetBundleImportJobOverrideTags {
         crate::types::AssetBundleImportJobOverrideTags {
-            vpc_connections: self.vpc_connections,
-            data_sources: self.data_sources,
-            data_sets: self.data_sets,
-            themes: self.themes,
-            analyses: self.analyses,
-            dashboards: self.dashboards,
+            vpc_connections: self.vpc_connections
+            ,
+            data_sources: self.data_sources
+            ,
+            data_sets: self.data_sets
+            ,
+            themes: self.themes
+            ,
+            analyses: self.analyses
+            ,
+            dashboards: self.dashboards
+            ,
         }
     }
 }
+

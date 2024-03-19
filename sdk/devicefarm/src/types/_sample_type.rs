@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sampletype = unimplemented!();
 /// match sampletype {
@@ -45,16 +45,14 @@
 /// Specifically, when `sampletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SampleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SampleType {
     #[allow(missing_docs)] // documentation missing in model
     Cpu,
@@ -92,124 +90,107 @@ pub enum SampleType {
     TxRate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SampleType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CPU" => SampleType::Cpu,
-            "MEMORY" => SampleType::Memory,
-            "NATIVE_AVG_DRAWTIME" => SampleType::NativeAvgDrawtime,
-            "NATIVE_FPS" => SampleType::NativeFps,
-            "NATIVE_FRAMES" => SampleType::NativeFrames,
-            "NATIVE_MAX_DRAWTIME" => SampleType::NativeMaxDrawtime,
-            "NATIVE_MIN_DRAWTIME" => SampleType::NativeMinDrawtime,
-            "OPENGL_AVG_DRAWTIME" => SampleType::OpenglAvgDrawtime,
-            "OPENGL_FPS" => SampleType::OpenglFps,
-            "OPENGL_FRAMES" => SampleType::OpenglFrames,
-            "OPENGL_MAX_DRAWTIME" => SampleType::OpenglMaxDrawtime,
-            "OPENGL_MIN_DRAWTIME" => SampleType::OpenglMinDrawtime,
-            "RX" => SampleType::Rx,
-            "RX_RATE" => SampleType::RxRate,
-            "THREADS" => SampleType::Threads,
-            "TX" => SampleType::Tx,
-            "TX_RATE" => SampleType::TxRate,
-            other => SampleType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CPU" => SampleType::Cpu,
+"MEMORY" => SampleType::Memory,
+"NATIVE_AVG_DRAWTIME" => SampleType::NativeAvgDrawtime,
+"NATIVE_FPS" => SampleType::NativeFps,
+"NATIVE_FRAMES" => SampleType::NativeFrames,
+"NATIVE_MAX_DRAWTIME" => SampleType::NativeMaxDrawtime,
+"NATIVE_MIN_DRAWTIME" => SampleType::NativeMinDrawtime,
+"OPENGL_AVG_DRAWTIME" => SampleType::OpenglAvgDrawtime,
+"OPENGL_FPS" => SampleType::OpenglFps,
+"OPENGL_FRAMES" => SampleType::OpenglFrames,
+"OPENGL_MAX_DRAWTIME" => SampleType::OpenglMaxDrawtime,
+"OPENGL_MIN_DRAWTIME" => SampleType::OpenglMinDrawtime,
+"RX" => SampleType::Rx,
+"RX_RATE" => SampleType::RxRate,
+"THREADS" => SampleType::Threads,
+"TX" => SampleType::Tx,
+"TX_RATE" => SampleType::TxRate,
+other => SampleType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SampleType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SampleType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SampleType::from(s))
+                    }
+                }
 impl SampleType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SampleType::Cpu => "CPU",
-            SampleType::Memory => "MEMORY",
-            SampleType::NativeAvgDrawtime => "NATIVE_AVG_DRAWTIME",
-            SampleType::NativeFps => "NATIVE_FPS",
-            SampleType::NativeFrames => "NATIVE_FRAMES",
-            SampleType::NativeMaxDrawtime => "NATIVE_MAX_DRAWTIME",
-            SampleType::NativeMinDrawtime => "NATIVE_MIN_DRAWTIME",
-            SampleType::OpenglAvgDrawtime => "OPENGL_AVG_DRAWTIME",
-            SampleType::OpenglFps => "OPENGL_FPS",
-            SampleType::OpenglFrames => "OPENGL_FRAMES",
-            SampleType::OpenglMaxDrawtime => "OPENGL_MAX_DRAWTIME",
-            SampleType::OpenglMinDrawtime => "OPENGL_MIN_DRAWTIME",
-            SampleType::Rx => "RX",
-            SampleType::RxRate => "RX_RATE",
-            SampleType::Threads => "THREADS",
-            SampleType::Tx => "TX",
-            SampleType::TxRate => "TX_RATE",
-            SampleType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CPU",
-            "MEMORY",
-            "NATIVE_AVG_DRAWTIME",
-            "NATIVE_FPS",
-            "NATIVE_FRAMES",
-            "NATIVE_MAX_DRAWTIME",
-            "NATIVE_MIN_DRAWTIME",
-            "OPENGL_AVG_DRAWTIME",
-            "OPENGL_FPS",
-            "OPENGL_FRAMES",
-            "OPENGL_MAX_DRAWTIME",
-            "OPENGL_MIN_DRAWTIME",
-            "RX",
-            "RX_RATE",
-            "THREADS",
-            "TX",
-            "TX_RATE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SampleType::Cpu => "CPU",
+    SampleType::Memory => "MEMORY",
+    SampleType::NativeAvgDrawtime => "NATIVE_AVG_DRAWTIME",
+    SampleType::NativeFps => "NATIVE_FPS",
+    SampleType::NativeFrames => "NATIVE_FRAMES",
+    SampleType::NativeMaxDrawtime => "NATIVE_MAX_DRAWTIME",
+    SampleType::NativeMinDrawtime => "NATIVE_MIN_DRAWTIME",
+    SampleType::OpenglAvgDrawtime => "OPENGL_AVG_DRAWTIME",
+    SampleType::OpenglFps => "OPENGL_FPS",
+    SampleType::OpenglFrames => "OPENGL_FRAMES",
+    SampleType::OpenglMaxDrawtime => "OPENGL_MAX_DRAWTIME",
+    SampleType::OpenglMinDrawtime => "OPENGL_MIN_DRAWTIME",
+    SampleType::Rx => "RX",
+    SampleType::RxRate => "RX_RATE",
+    SampleType::Threads => "THREADS",
+    SampleType::Tx => "TX",
+    SampleType::TxRate => "TX_RATE",
+    SampleType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CPU", "MEMORY", "NATIVE_AVG_DRAWTIME", "NATIVE_FPS", "NATIVE_FRAMES", "NATIVE_MAX_DRAWTIME", "NATIVE_MIN_DRAWTIME", "OPENGL_AVG_DRAWTIME", "OPENGL_FPS", "OPENGL_FRAMES", "OPENGL_MAX_DRAWTIME", "OPENGL_MIN_DRAWTIME", "RX", "RX_RATE", "THREADS", "TX", "TX_RATE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SampleType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SampleType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SampleType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SampleType::Cpu => write!(f, "CPU"),
-            SampleType::Memory => write!(f, "MEMORY"),
-            SampleType::NativeAvgDrawtime => write!(f, "NATIVE_AVG_DRAWTIME"),
-            SampleType::NativeFps => write!(f, "NATIVE_FPS"),
-            SampleType::NativeFrames => write!(f, "NATIVE_FRAMES"),
-            SampleType::NativeMaxDrawtime => write!(f, "NATIVE_MAX_DRAWTIME"),
-            SampleType::NativeMinDrawtime => write!(f, "NATIVE_MIN_DRAWTIME"),
-            SampleType::OpenglAvgDrawtime => write!(f, "OPENGL_AVG_DRAWTIME"),
-            SampleType::OpenglFps => write!(f, "OPENGL_FPS"),
-            SampleType::OpenglFrames => write!(f, "OPENGL_FRAMES"),
-            SampleType::OpenglMaxDrawtime => write!(f, "OPENGL_MAX_DRAWTIME"),
-            SampleType::OpenglMinDrawtime => write!(f, "OPENGL_MIN_DRAWTIME"),
-            SampleType::Rx => write!(f, "RX"),
-            SampleType::RxRate => write!(f, "RX_RATE"),
-            SampleType::Threads => write!(f, "THREADS"),
-            SampleType::Tx => write!(f, "TX"),
-            SampleType::TxRate => write!(f, "TX_RATE"),
-            SampleType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SampleType::Cpu => write!(f, "CPU"),
+SampleType::Memory => write!(f, "MEMORY"),
+SampleType::NativeAvgDrawtime => write!(f, "NATIVE_AVG_DRAWTIME"),
+SampleType::NativeFps => write!(f, "NATIVE_FPS"),
+SampleType::NativeFrames => write!(f, "NATIVE_FRAMES"),
+SampleType::NativeMaxDrawtime => write!(f, "NATIVE_MAX_DRAWTIME"),
+SampleType::NativeMinDrawtime => write!(f, "NATIVE_MIN_DRAWTIME"),
+SampleType::OpenglAvgDrawtime => write!(f, "OPENGL_AVG_DRAWTIME"),
+SampleType::OpenglFps => write!(f, "OPENGL_FPS"),
+SampleType::OpenglFrames => write!(f, "OPENGL_FRAMES"),
+SampleType::OpenglMaxDrawtime => write!(f, "OPENGL_MAX_DRAWTIME"),
+SampleType::OpenglMinDrawtime => write!(f, "OPENGL_MIN_DRAWTIME"),
+SampleType::Rx => write!(f, "RX"),
+SampleType::RxRate => write!(f, "RX_RATE"),
+SampleType::Threads => write!(f, "THREADS"),
+SampleType::Tx => write!(f, "TX"),
+SampleType::TxRate => write!(f, "TX_RATE"),
+SampleType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

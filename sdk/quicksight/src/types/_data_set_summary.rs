@@ -3,7 +3,7 @@
 /// <p>Dataset summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetSummary {
+pub struct DataSetSummary  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dataset.</p>
@@ -23,33 +23,33 @@ pub struct DataSetSummary {
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
     pub column_level_permission_rules_applied: bool,
 }
-impl DataSetSummary {
+impl  DataSetSummary  {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the dataset.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>A display name for the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time that this dataset was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The last time that this dataset was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
-    pub fn import_mode(&self) -> ::std::option::Option<&crate::types::DataSetImportMode> {
+    pub fn import_mode(&self) -> ::std::option::Option<& crate::types::DataSetImportMode> {
         self.import_mode.as_ref()
     }
     /// <p>The row-level security configuration for the dataset.</p>
-    pub fn row_level_permission_data_set(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionDataSet> {
+    pub fn row_level_permission_data_set(&self) -> ::std::option::Option<& crate::types::RowLevelPermissionDataSet> {
         self.row_level_permission_data_set.as_ref()
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
@@ -90,8 +90,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>The ID of the dataset.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The ID of the dataset.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>A display name for the dataset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A display name for the dataset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>The time that this dataset was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that this dataset was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +142,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>The last time that this dataset was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The last time that this dataset was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +155,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
     pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::DataSetImportMode>) -> Self {
-        self.import_mode = input;
-        self
+        self.import_mode = input; self
     }
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
     pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::DataSetImportMode> {
@@ -174,8 +168,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>The row-level security configuration for the dataset.</p>
     pub fn set_row_level_permission_data_set(mut self, input: ::std::option::Option<crate::types::RowLevelPermissionDataSet>) -> Self {
-        self.row_level_permission_data_set = input;
-        self
+        self.row_level_permission_data_set = input; self
     }
     /// <p>The row-level security configuration for the dataset.</p>
     pub fn get_row_level_permission_data_set(&self) -> &::std::option::Option<crate::types::RowLevelPermissionDataSet> {
@@ -188,8 +181,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
     pub fn set_row_level_permission_tag_configuration_applied(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.row_level_permission_tag_configuration_applied = input;
-        self
+        self.row_level_permission_tag_configuration_applied = input; self
     }
     /// <p>Whether or not the row level permission tags are applied.</p>
     pub fn get_row_level_permission_tag_configuration_applied(&self) -> &::std::option::Option<bool> {
@@ -202,8 +194,7 @@ impl DataSetSummaryBuilder {
     }
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
     pub fn set_column_level_permission_rules_applied(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.column_level_permission_rules_applied = input;
-        self
+        self.column_level_permission_rules_applied = input; self
     }
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
     pub fn get_column_level_permission_rules_applied(&self) -> &::std::option::Option<bool> {
@@ -212,15 +203,27 @@ impl DataSetSummaryBuilder {
     /// Consumes the builder and constructs a [`DataSetSummary`](crate::types::DataSetSummary).
     pub fn build(self) -> crate::types::DataSetSummary {
         crate::types::DataSetSummary {
-            arn: self.arn,
-            data_set_id: self.data_set_id,
-            name: self.name,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            import_mode: self.import_mode,
-            row_level_permission_data_set: self.row_level_permission_data_set,
-            row_level_permission_tag_configuration_applied: self.row_level_permission_tag_configuration_applied.unwrap_or_default(),
-            column_level_permission_rules_applied: self.column_level_permission_rules_applied.unwrap_or_default(),
+            arn: self.arn
+            ,
+            data_set_id: self.data_set_id
+            ,
+            name: self.name
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            import_mode: self.import_mode
+            ,
+            row_level_permission_data_set: self.row_level_permission_data_set
+            ,
+            row_level_permission_tag_configuration_applied: self.row_level_permission_tag_configuration_applied
+                .unwrap_or_default()
+            ,
+            column_level_permission_rules_applied: self.column_level_permission_rules_applied
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

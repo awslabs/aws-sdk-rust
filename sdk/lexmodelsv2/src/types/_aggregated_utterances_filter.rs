@@ -3,26 +3,25 @@
 /// <p>Filters responses returned by the <code>ListAggregatedUtterances</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregatedUtterancesFilter {
+pub struct AggregatedUtterancesFilter  {
     /// <p>The name of the field to filter the utterance list.</p>
     pub name: crate::types::AggregatedUtterancesFilterName,
     /// <p>The value to use for filtering the list of bots.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
     pub operator: crate::types::AggregatedUtterancesFilterOperator,
 }
-impl AggregatedUtterancesFilter {
+impl  AggregatedUtterancesFilter  {
     /// <p>The name of the field to filter the utterance list.</p>
-    pub fn name(&self) -> &crate::types::AggregatedUtterancesFilterName {
+    pub fn name(&self) -> & crate::types::AggregatedUtterancesFilterName {
         &self.name
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub fn operator(&self) -> &crate::types::AggregatedUtterancesFilterOperator {
+    pub fn operator(&self) -> & crate::types::AggregatedUtterancesFilterOperator {
         &self.operator
     }
 }
@@ -38,7 +37,7 @@ impl AggregatedUtterancesFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operator: ::std::option::Option<crate::types::AggregatedUtterancesFilterOperator>,
 }
 impl AggregatedUtterancesFilterBuilder {
@@ -50,8 +49,7 @@ impl AggregatedUtterancesFilterBuilder {
     }
     /// <p>The name of the field to filter the utterance list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the field to filter the utterance list.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesFilterName> {
@@ -64,17 +62,16 @@ impl AggregatedUtterancesFilterBuilder {
     /// <p>The value to use for filtering the list of bots.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
@@ -85,8 +82,7 @@ impl AggregatedUtterancesFilterBuilder {
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::AggregatedUtterancesFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesFilterOperator> {
@@ -98,25 +94,25 @@ impl AggregatedUtterancesFilterBuilder {
     /// - [`values`](crate::types::builders::AggregatedUtterancesFilterBuilder::values)
     /// - [`operator`](crate::types::builders::AggregatedUtterancesFilterBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::AggregatedUtterancesFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AggregatedUtterancesFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AggregatedUtterancesFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building AggregatedUtterancesFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building AggregatedUtterancesFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AggregatedUtterancesFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AggregatedUtterancesFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building AggregatedUtterancesFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building AggregatedUtterancesFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,30 +3,32 @@
 /// <p>A node structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeStructure {
+pub struct NodeStructure  {
     /// <p>Number of nodes that have this specific structure.</p>
     pub count: ::std::option::Option<i64>,
     /// <p>A list of the node properties present in this specific structure.</p>
-    pub node_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub node_properties: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of distinct outgoing edge labels present in this specific structure.</p>
-    pub distinct_outgoing_edge_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub distinct_outgoing_edge_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl NodeStructure {
+impl  NodeStructure  {
     /// <p>Number of nodes that have this specific structure.</p>
     pub fn count(&self) -> ::std::option::Option<i64> {
         self.count
     }
     /// <p>A list of the node properties present in this specific structure.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_properties.is_none()`.
-    pub fn node_properties(&self) -> &[::std::string::String] {
-        self.node_properties.as_deref().unwrap_or_default()
+    pub fn node_properties(&self) -> & [::std::string::String] {
+        self.node_properties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of distinct outgoing edge labels present in this specific structure.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distinct_outgoing_edge_labels.is_none()`.
-    pub fn distinct_outgoing_edge_labels(&self) -> &[::std::string::String] {
-        self.distinct_outgoing_edge_labels.as_deref().unwrap_or_default()
+    pub fn distinct_outgoing_edge_labels(&self) -> & [::std::string::String] {
+        self.distinct_outgoing_edge_labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NodeStructure {
@@ -41,8 +43,8 @@ impl NodeStructure {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeStructureBuilder {
     pub(crate) count: ::std::option::Option<i64>,
-    pub(crate) node_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) distinct_outgoing_edge_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) node_properties: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) distinct_outgoing_edge_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl NodeStructureBuilder {
     /// <p>Number of nodes that have this specific structure.</p>
@@ -52,8 +54,7 @@ impl NodeStructureBuilder {
     }
     /// <p>Number of nodes that have this specific structure.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>Number of nodes that have this specific structure.</p>
     pub fn get_count(&self) -> &::std::option::Option<i64> {
@@ -66,17 +67,16 @@ impl NodeStructureBuilder {
     /// <p>A list of the node properties present in this specific structure.</p>
     pub fn node_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_properties.unwrap_or_default();
-        v.push(input.into());
-        self.node_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.node_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the node properties present in this specific structure.</p>
-    pub fn set_node_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.node_properties = input;
-        self
+    pub fn set_node_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.node_properties = input; self
     }
     /// <p>A list of the node properties present in this specific structure.</p>
-    pub fn get_node_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_properties(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.node_properties
     }
     /// Appends an item to `distinct_outgoing_edge_labels`.
@@ -86,25 +86,28 @@ impl NodeStructureBuilder {
     /// <p>A list of distinct outgoing edge labels present in this specific structure.</p>
     pub fn distinct_outgoing_edge_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.distinct_outgoing_edge_labels.unwrap_or_default();
-        v.push(input.into());
-        self.distinct_outgoing_edge_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.distinct_outgoing_edge_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of distinct outgoing edge labels present in this specific structure.</p>
-    pub fn set_distinct_outgoing_edge_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.distinct_outgoing_edge_labels = input;
-        self
+    pub fn set_distinct_outgoing_edge_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.distinct_outgoing_edge_labels = input; self
     }
     /// <p>A list of distinct outgoing edge labels present in this specific structure.</p>
-    pub fn get_distinct_outgoing_edge_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_distinct_outgoing_edge_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.distinct_outgoing_edge_labels
     }
     /// Consumes the builder and constructs a [`NodeStructure`](crate::types::NodeStructure).
     pub fn build(self) -> crate::types::NodeStructure {
         crate::types::NodeStructure {
-            count: self.count,
-            node_properties: self.node_properties,
-            distinct_outgoing_edge_labels: self.distinct_outgoing_edge_labels,
+            count: self.count
+            ,
+            node_properties: self.node_properties
+            ,
+            distinct_outgoing_edge_labels: self.distinct_outgoing_edge_labels
+            ,
         }
     }
 }
+

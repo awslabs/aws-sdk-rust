@@ -2,43 +2,45 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllowCustomRoutingTrafficInput {
+pub struct AllowCustomRoutingTrafficInput  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p><code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub destination_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-    pub destination_ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub destination_ports: ::std::option::Option<::std::vec::Vec::<i32>>,
     /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE.</p>
     /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
     /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
     /// <p>The default value is FALSE.</p>
     pub allow_all_traffic_to_endpoint: ::std::option::Option<bool>,
 }
-impl AllowCustomRoutingTrafficInput {
+impl  AllowCustomRoutingTrafficInput  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p><code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_addresses.is_none()`.
-    pub fn destination_addresses(&self) -> &[::std::string::String] {
-        self.destination_addresses.as_deref().unwrap_or_default()
+    pub fn destination_addresses(&self) -> & [::std::string::String] {
+        self.destination_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
-    pub fn destination_ports(&self) -> &[i32] {
-        self.destination_ports.as_deref().unwrap_or_default()
+    pub fn destination_ports(&self) -> & [i32] {
+        self.destination_ports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE.</p>
     /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
@@ -61,8 +63,8 @@ impl AllowCustomRoutingTrafficInput {
 pub struct AllowCustomRoutingTrafficInputBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) destination_ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) destination_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) destination_ports: ::std::option::Option<::std::vec::Vec::<i32>>,
     pub(crate) allow_all_traffic_to_endpoint: ::std::option::Option<bool>,
 }
 impl AllowCustomRoutingTrafficInputBuilder {
@@ -74,8 +76,7 @@ impl AllowCustomRoutingTrafficInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_arn = input;
-        self
+        self.endpoint_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +90,7 @@ impl AllowCustomRoutingTrafficInputBuilder {
     }
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,19 +104,18 @@ impl AllowCustomRoutingTrafficInputBuilder {
     /// <p><code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
     pub fn destination_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.destination_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.destination_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p><code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.destination_addresses = input;
-        self
+    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.destination_addresses = input; self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p><code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.destination_addresses
     }
     /// Appends an item to `destination_ports`.
@@ -126,17 +125,16 @@ impl AllowCustomRoutingTrafficInputBuilder {
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
     pub fn destination_ports(mut self, input: i32) -> Self {
         let mut v = self.destination_ports.unwrap_or_default();
-        v.push(input);
-        self.destination_ports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_ports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.destination_ports = input;
-        self
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.destination_ports = input; self
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.destination_ports
     }
     /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE.</p>
@@ -152,8 +150,7 @@ impl AllowCustomRoutingTrafficInputBuilder {
     /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
     /// <p>The default value is FALSE.</p>
     pub fn set_allow_all_traffic_to_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_all_traffic_to_endpoint = input;
-        self
+        self.allow_all_traffic_to_endpoint = input; self
     }
     /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE.</p>
     /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
@@ -163,18 +160,21 @@ impl AllowCustomRoutingTrafficInputBuilder {
         &self.allow_all_traffic_to_endpoint
     }
     /// Consumes the builder and constructs a [`AllowCustomRoutingTrafficInput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput {
-            endpoint_group_arn: self.endpoint_group_arn,
-            endpoint_id: self.endpoint_id,
-            destination_addresses: self.destination_addresses,
-            destination_ports: self.destination_ports,
-            allow_all_traffic_to_endpoint: self.allow_all_traffic_to_endpoint,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput {
+                endpoint_group_arn: self.endpoint_group_arn
+                ,
+                endpoint_id: self.endpoint_id
+                ,
+                destination_addresses: self.destination_addresses
+                ,
+                destination_ports: self.destination_ports
+                ,
+                allow_all_traffic_to_endpoint: self.allow_all_traffic_to_endpoint
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to one output captions track. Depending on your output captions format, one tab might correspond to a set of output captions tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaptionDestinationSettings {
+pub struct CaptionDestinationSettings  {
     /// Burn-in is a captions delivery method, rather than a captions format. Burn-in writes the captions directly on your video frames, replacing pixels of video content with the captions. Set up burn-in captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
     pub burnin_destination_settings: ::std::option::Option<crate::types::BurninDestinationSettings>,
     /// Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note that your choice of video output container constrains your choice of output captions format. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20.
@@ -25,45 +25,45 @@ pub struct CaptionDestinationSettings {
     /// Settings related to WebVTT captions. WebVTT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
     pub webvtt_destination_settings: ::std::option::Option<crate::types::WebvttDestinationSettings>,
 }
-impl CaptionDestinationSettings {
+impl  CaptionDestinationSettings  {
     /// Burn-in is a captions delivery method, rather than a captions format. Burn-in writes the captions directly on your video frames, replacing pixels of video content with the captions. Set up burn-in captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
-    pub fn burnin_destination_settings(&self) -> ::std::option::Option<&crate::types::BurninDestinationSettings> {
+    pub fn burnin_destination_settings(&self) -> ::std::option::Option<& crate::types::BurninDestinationSettings> {
         self.burnin_destination_settings.as_ref()
     }
     /// Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note that your choice of video output container constrains your choice of output captions format. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20.
-    pub fn destination_type(&self) -> ::std::option::Option<&crate::types::CaptionDestinationType> {
+    pub fn destination_type(&self) -> ::std::option::Option<& crate::types::CaptionDestinationType> {
         self.destination_type.as_ref()
     }
     /// Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
-    pub fn dvb_sub_destination_settings(&self) -> ::std::option::Option<&crate::types::DvbSubDestinationSettings> {
+    pub fn dvb_sub_destination_settings(&self) -> ::std::option::Option<& crate::types::DvbSubDestinationSettings> {
         self.dvb_sub_destination_settings.as_ref()
     }
     /// Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
-    pub fn embedded_destination_settings(&self) -> ::std::option::Option<&crate::types::EmbeddedDestinationSettings> {
+    pub fn embedded_destination_settings(&self) -> ::std::option::Option<& crate::types::EmbeddedDestinationSettings> {
         self.embedded_destination_settings.as_ref()
     }
     /// Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-    pub fn imsc_destination_settings(&self) -> ::std::option::Option<&crate::types::ImscDestinationSettings> {
+    pub fn imsc_destination_settings(&self) -> ::std::option::Option<& crate::types::ImscDestinationSettings> {
         self.imsc_destination_settings.as_ref()
     }
     /// Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
-    pub fn scc_destination_settings(&self) -> ::std::option::Option<&crate::types::SccDestinationSettings> {
+    pub fn scc_destination_settings(&self) -> ::std::option::Option<& crate::types::SccDestinationSettings> {
         self.scc_destination_settings.as_ref()
     }
     /// Settings related to SRT captions. SRT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video.
-    pub fn srt_destination_settings(&self) -> ::std::option::Option<&crate::types::SrtDestinationSettings> {
+    pub fn srt_destination_settings(&self) -> ::std::option::Option<& crate::types::SrtDestinationSettings> {
         self.srt_destination_settings.as_ref()
     }
     /// Settings related to teletext captions. Set up teletext captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
-    pub fn teletext_destination_settings(&self) -> ::std::option::Option<&crate::types::TeletextDestinationSettings> {
+    pub fn teletext_destination_settings(&self) -> ::std::option::Option<& crate::types::TeletextDestinationSettings> {
         self.teletext_destination_settings.as_ref()
     }
     /// Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-    pub fn ttml_destination_settings(&self) -> ::std::option::Option<&crate::types::TtmlDestinationSettings> {
+    pub fn ttml_destination_settings(&self) -> ::std::option::Option<& crate::types::TtmlDestinationSettings> {
         self.ttml_destination_settings.as_ref()
     }
     /// Settings related to WebVTT captions. WebVTT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-    pub fn webvtt_destination_settings(&self) -> ::std::option::Option<&crate::types::WebvttDestinationSettings> {
+    pub fn webvtt_destination_settings(&self) -> ::std::option::Option<& crate::types::WebvttDestinationSettings> {
         self.webvtt_destination_settings.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Burn-in is a captions delivery method, rather than a captions format. Burn-in writes the captions directly on your video frames, replacing pixels of video content with the captions. Set up burn-in captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
     pub fn set_burnin_destination_settings(mut self, input: ::std::option::Option<crate::types::BurninDestinationSettings>) -> Self {
-        self.burnin_destination_settings = input;
-        self
+        self.burnin_destination_settings = input; self
     }
     /// Burn-in is a captions delivery method, rather than a captions format. Burn-in writes the captions directly on your video frames, replacing pixels of video content with the captions. Set up burn-in captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
     pub fn get_burnin_destination_settings(&self) -> &::std::option::Option<crate::types::BurninDestinationSettings> {
@@ -111,8 +110,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note that your choice of video output container constrains your choice of output captions format. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20.
     pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::CaptionDestinationType>) -> Self {
-        self.destination_type = input;
-        self
+        self.destination_type = input; self
     }
     /// Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note that your choice of video output container constrains your choice of output captions format. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20.
     pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::CaptionDestinationType> {
@@ -125,8 +123,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
     pub fn set_dvb_sub_destination_settings(mut self, input: ::std::option::Option<crate::types::DvbSubDestinationSettings>) -> Self {
-        self.dvb_sub_destination_settings = input;
-        self
+        self.dvb_sub_destination_settings = input; self
     }
     /// Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
     pub fn get_dvb_sub_destination_settings(&self) -> &::std::option::Option<crate::types::DvbSubDestinationSettings> {
@@ -139,8 +136,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
     pub fn set_embedded_destination_settings(mut self, input: ::std::option::Option<crate::types::EmbeddedDestinationSettings>) -> Self {
-        self.embedded_destination_settings = input;
-        self
+        self.embedded_destination_settings = input; self
     }
     /// Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
     pub fn get_embedded_destination_settings(&self) -> &::std::option::Option<crate::types::EmbeddedDestinationSettings> {
@@ -153,8 +149,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
     pub fn set_imsc_destination_settings(mut self, input: ::std::option::Option<crate::types::ImscDestinationSettings>) -> Self {
-        self.imsc_destination_settings = input;
-        self
+        self.imsc_destination_settings = input; self
     }
     /// Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
     pub fn get_imsc_destination_settings(&self) -> &::std::option::Option<crate::types::ImscDestinationSettings> {
@@ -167,8 +162,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
     pub fn set_scc_destination_settings(mut self, input: ::std::option::Option<crate::types::SccDestinationSettings>) -> Self {
-        self.scc_destination_settings = input;
-        self
+        self.scc_destination_settings = input; self
     }
     /// Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
     pub fn get_scc_destination_settings(&self) -> &::std::option::Option<crate::types::SccDestinationSettings> {
@@ -181,8 +175,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Settings related to SRT captions. SRT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video.
     pub fn set_srt_destination_settings(mut self, input: ::std::option::Option<crate::types::SrtDestinationSettings>) -> Self {
-        self.srt_destination_settings = input;
-        self
+        self.srt_destination_settings = input; self
     }
     /// Settings related to SRT captions. SRT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video.
     pub fn get_srt_destination_settings(&self) -> &::std::option::Option<crate::types::SrtDestinationSettings> {
@@ -195,8 +188,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Settings related to teletext captions. Set up teletext captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
     pub fn set_teletext_destination_settings(mut self, input: ::std::option::Option<crate::types::TeletextDestinationSettings>) -> Self {
-        self.teletext_destination_settings = input;
-        self
+        self.teletext_destination_settings = input; self
     }
     /// Settings related to teletext captions. Set up teletext captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
     pub fn get_teletext_destination_settings(&self) -> &::std::option::Option<crate::types::TeletextDestinationSettings> {
@@ -209,8 +201,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
     pub fn set_ttml_destination_settings(mut self, input: ::std::option::Option<crate::types::TtmlDestinationSettings>) -> Self {
-        self.ttml_destination_settings = input;
-        self
+        self.ttml_destination_settings = input; self
     }
     /// Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
     pub fn get_ttml_destination_settings(&self) -> &::std::option::Option<crate::types::TtmlDestinationSettings> {
@@ -223,8 +214,7 @@ impl CaptionDestinationSettingsBuilder {
     }
     /// Settings related to WebVTT captions. WebVTT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
     pub fn set_webvtt_destination_settings(mut self, input: ::std::option::Option<crate::types::WebvttDestinationSettings>) -> Self {
-        self.webvtt_destination_settings = input;
-        self
+        self.webvtt_destination_settings = input; self
     }
     /// Settings related to WebVTT captions. WebVTT is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
     pub fn get_webvtt_destination_settings(&self) -> &::std::option::Option<crate::types::WebvttDestinationSettings> {
@@ -233,16 +223,27 @@ impl CaptionDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`CaptionDestinationSettings`](crate::types::CaptionDestinationSettings).
     pub fn build(self) -> crate::types::CaptionDestinationSettings {
         crate::types::CaptionDestinationSettings {
-            burnin_destination_settings: self.burnin_destination_settings,
-            destination_type: self.destination_type,
-            dvb_sub_destination_settings: self.dvb_sub_destination_settings,
-            embedded_destination_settings: self.embedded_destination_settings,
-            imsc_destination_settings: self.imsc_destination_settings,
-            scc_destination_settings: self.scc_destination_settings,
-            srt_destination_settings: self.srt_destination_settings,
-            teletext_destination_settings: self.teletext_destination_settings,
-            ttml_destination_settings: self.ttml_destination_settings,
-            webvtt_destination_settings: self.webvtt_destination_settings,
+            burnin_destination_settings: self.burnin_destination_settings
+            ,
+            destination_type: self.destination_type
+            ,
+            dvb_sub_destination_settings: self.dvb_sub_destination_settings
+            ,
+            embedded_destination_settings: self.embedded_destination_settings
+            ,
+            imsc_destination_settings: self.imsc_destination_settings
+            ,
+            scc_destination_settings: self.scc_destination_settings
+            ,
+            srt_destination_settings: self.srt_destination_settings
+            ,
+            teletext_destination_settings: self.teletext_destination_settings
+            ,
+            ttml_destination_settings: self.ttml_destination_settings
+            ,
+            webvtt_destination_settings: self.webvtt_destination_settings
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IsAuthorizedInput {
+pub struct IsAuthorizedInput  {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
@@ -18,31 +18,31 @@ pub struct IsAuthorizedInput {
     /// </note>
     pub entities: ::std::option::Option<crate::types::EntitiesDefinition>,
 }
-impl IsAuthorizedInput {
+impl  IsAuthorizedInput  {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::EntityIdentifier> {
         self.principal.as_ref()
     }
     /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ActionIdentifier> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::ActionIdentifier> {
         self.action.as_ref()
     }
     /// <p>Specifies the resource for which the authorization decision is to be made.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::EntityIdentifier> {
         self.resource.as_ref()
     }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
-    pub fn context(&self) -> ::std::option::Option<&crate::types::ContextDefinition> {
+    pub fn context(&self) -> ::std::option::Option<& crate::types::ContextDefinition> {
         self.context.as_ref()
     }
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
-    pub fn entities(&self) -> ::std::option::Option<&crate::types::EntitiesDefinition> {
+    pub fn entities(&self) -> ::std::option::Option<& crate::types::EntitiesDefinition> {
         self.entities.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl IsAuthorizedInputBuilder {
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl IsAuthorizedInputBuilder {
     }
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
@@ -101,8 +99,7 @@ impl IsAuthorizedInputBuilder {
     }
     /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionIdentifier>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionIdentifier> {
@@ -115,8 +112,7 @@ impl IsAuthorizedInputBuilder {
     }
     /// <p>Specifies the resource for which the authorization decision is to be made.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>Specifies the resource for which the authorization decision is to be made.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
@@ -129,8 +125,7 @@ impl IsAuthorizedInputBuilder {
     }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
     pub fn set_context(mut self, input: ::std::option::Option<crate::types::ContextDefinition>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
     }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
     pub fn get_context(&self) -> &::std::option::Option<crate::types::ContextDefinition> {
@@ -147,8 +142,7 @@ impl IsAuthorizedInputBuilder {
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
     pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
-        self.entities = input;
-        self
+        self.entities = input; self
     }
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
@@ -157,16 +151,23 @@ impl IsAuthorizedInputBuilder {
         &self.entities
     }
     /// Consumes the builder and constructs a [`IsAuthorizedInput`](crate::operation::is_authorized::IsAuthorizedInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::is_authorized::IsAuthorizedInput {
-            policy_store_id: self.policy_store_id,
-            principal: self.principal,
-            action: self.action,
-            resource: self.resource,
-            context: self.context,
-            entities: self.entities,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::is_authorized::IsAuthorizedInput {
+                policy_store_id: self.policy_store_id
+                ,
+                principal: self.principal
+                ,
+                action: self.action
+                ,
+                resource: self.resource
+                ,
+                context: self.context
+                ,
+                entities: self.entities
+                ,
+            }
+        )
     }
 }
+

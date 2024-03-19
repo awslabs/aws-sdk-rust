@@ -3,22 +3,20 @@
 /// <p>Metadata assigned to an AWS IoT Things Graph resource consisting of a key-value pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
     pub key: ::std::string::String,
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
     pub value: ::std::string::String,
 }
-impl Tag {
+impl  Tag  {
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Tag {
@@ -44,8 +42,7 @@ impl TagBuilder {
     }
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl TagBuilder {
     }
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,16 +67,20 @@ impl TagBuilder {
     /// - [`key`](crate::types::builders::TagBuilder::key)
     /// - [`value`](crate::types::builders::TagBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Tag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Tag {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Tag")
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Tag",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Tag {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Tag")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Tag")
+                    )?
+                ,
+            }
+        )
     }
 }
+

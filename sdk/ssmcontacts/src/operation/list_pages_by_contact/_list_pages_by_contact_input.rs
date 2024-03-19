@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPagesByContactInput {
+pub struct ListPagesByContactInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
@@ -10,13 +10,13 @@ pub struct ListPagesByContactInput {
     /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListPagesByContactInput {
+impl  ListPagesByContactInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
@@ -48,8 +48,7 @@ impl ListPagesByContactInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListPagesByContactInputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl ListPagesByContactInputBuilder {
     }
     /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPagesByContactInput`](crate::operation::list_pages_by_contact::ListPagesByContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_pages_by_contact::ListPagesByContactInput {
-            contact_id: self.contact_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_pages_by_contact::ListPagesByContactInput {
+                contact_id: self.contact_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

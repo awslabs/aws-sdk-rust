@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHostedConfigurationVersionInput {
+pub struct DeleteHostedConfigurationVersionInput  {
     /// <p>The application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile ID.</p>
@@ -10,13 +10,13 @@ pub struct DeleteHostedConfigurationVersionInput {
     /// <p>The versions number to delete.</p>
     pub version_number: ::std::option::Option<i32>,
 }
-impl DeleteHostedConfigurationVersionInput {
+impl  DeleteHostedConfigurationVersionInput  {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> ::std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The versions number to delete.</p>
@@ -48,8 +48,7 @@ impl DeleteHostedConfigurationVersionInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteHostedConfigurationVersionInputBuilder {
     }
     /// <p>The configuration profile ID.</p>
     pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_profile_id = input;
-        self
+        self.configuration_profile_id = input; self
     }
     /// <p>The configuration profile ID.</p>
     pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl DeleteHostedConfigurationVersionInputBuilder {
     }
     /// <p>The versions number to delete.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The versions number to delete.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i32> {
         &self.version_number
     }
     /// Consumes the builder and constructs a [`DeleteHostedConfigurationVersionInput`](crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionInput {
-                application_id: self.application_id,
-                configuration_profile_id: self.configuration_profile_id,
-                version_number: self.version_number,
-            },
+                application_id: self.application_id
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                ,
+                version_number: self.version_number
+                ,
+            }
         )
     }
 }
+

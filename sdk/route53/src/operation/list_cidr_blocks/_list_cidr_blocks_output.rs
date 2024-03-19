@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCidrBlocksOutput {
+pub struct ListCidrBlocksOutput  {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about the CIDR blocks.</p>
-    pub cidr_blocks: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>>,
+    pub cidr_blocks: ::std::option::Option<::std::vec::Vec::<crate::types::CidrBlockSummary>>,
     _request_id: Option<String>,
 }
-impl ListCidrBlocksOutput {
+impl  ListCidrBlocksOutput  {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A complex type that contains information about the CIDR blocks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_blocks.is_none()`.
-    pub fn cidr_blocks(&self) -> &[crate::types::CidrBlockSummary] {
-        self.cidr_blocks.as_deref().unwrap_or_default()
+    pub fn cidr_blocks(&self) -> & [crate::types::CidrBlockSummary] {
+        self.cidr_blocks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCidrBlocksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCidrBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListCidrBlocksOutput`](crate::operation::list_cidr_blocks::ListCidrBlocksOutput).
     pub fn builder() -> crate::operation::list_cidr_blocks::builders::ListCidrBlocksOutputBuilder {
@@ -40,7 +41,7 @@ impl ListCidrBlocksOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCidrBlocksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) cidr_blocks: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>>,
+    pub(crate) cidr_blocks: ::std::option::Option<::std::vec::Vec::<crate::types::CidrBlockSummary>>,
     _request_id: Option<String>,
 }
 impl ListCidrBlocksOutputBuilder {
@@ -53,8 +54,7 @@ impl ListCidrBlocksOutputBuilder {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
@@ -68,34 +68,36 @@ impl ListCidrBlocksOutputBuilder {
     /// <p>A complex type that contains information about the CIDR blocks.</p>
     pub fn cidr_blocks(mut self, input: crate::types::CidrBlockSummary) -> Self {
         let mut v = self.cidr_blocks.unwrap_or_default();
-        v.push(input);
-        self.cidr_blocks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cidr_blocks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains information about the CIDR blocks.</p>
-    pub fn set_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>>) -> Self {
-        self.cidr_blocks = input;
-        self
+    pub fn set_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CidrBlockSummary>>) -> Self {
+        self.cidr_blocks = input; self
     }
     /// <p>A complex type that contains information about the CIDR blocks.</p>
-    pub fn get_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>> {
+    pub fn get_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CidrBlockSummary>> {
         &self.cidr_blocks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCidrBlocksOutput`](crate::operation::list_cidr_blocks::ListCidrBlocksOutput).
     pub fn build(self) -> crate::operation::list_cidr_blocks::ListCidrBlocksOutput {
         crate::operation::list_cidr_blocks::ListCidrBlocksOutput {
-            next_token: self.next_token,
-            cidr_blocks: self.cidr_blocks,
+            next_token: self.next_token
+            ,
+            cidr_blocks: self.cidr_blocks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

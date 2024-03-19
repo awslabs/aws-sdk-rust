@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopKeyPhrasesDetectionJobOutput {
+pub struct StopKeyPhrasesDetectionJobOutput  {
     /// <p>The identifier of the key phrases detection job to stop.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }
-impl StopKeyPhrasesDetectionJobOutput {
+impl  StopKeyPhrasesDetectionJobOutput  {
     /// <p>The identifier of the key phrases detection job to stop.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopKeyPhrasesDetectionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopKeyPhrasesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopKeyPhrasesDetectionJobOutput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput).
     pub fn builder() -> crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobOutputBuilder {
@@ -47,8 +47,7 @@ impl StopKeyPhrasesDetectionJobOutputBuilder {
     }
     /// <p>The identifier of the key phrases detection job to stop.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier of the key phrases detection job to stop.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl StopKeyPhrasesDetectionJobOutputBuilder {
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopKeyPhrasesDetectionJobOutput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput).
     pub fn build(self) -> crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput {
         crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput {
-            job_id: self.job_id,
-            job_status: self.job_status,
+            job_id: self.job_id
+            ,
+            job_status: self.job_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

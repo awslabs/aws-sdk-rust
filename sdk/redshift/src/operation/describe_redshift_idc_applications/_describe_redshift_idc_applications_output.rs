@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRedshiftIdcApplicationsOutput {
+pub struct DescribeRedshiftIdcApplicationsOutput  {
     /// <p>The list of Amazon Redshift IAM Identity Center applications.</p>
-    pub redshift_idc_applications: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftIdcApplication>>,
+    pub redshift_idc_applications: ::std::option::Option<::std::vec::Vec::<crate::types::RedshiftIdcApplication>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRedshiftIdcApplicationsOutput {
+impl  DescribeRedshiftIdcApplicationsOutput  {
     /// <p>The list of Amazon Redshift IAM Identity Center applications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redshift_idc_applications.is_none()`.
-    pub fn redshift_idc_applications(&self) -> &[crate::types::RedshiftIdcApplication] {
-        self.redshift_idc_applications.as_deref().unwrap_or_default()
+    pub fn redshift_idc_applications(&self) -> & [crate::types::RedshiftIdcApplication] {
+        self.redshift_idc_applications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRedshiftIdcApplicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRedshiftIdcApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRedshiftIdcApplicationsOutput`](crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsOutput).
     pub fn builder() -> crate::operation::describe_redshift_idc_applications::builders::DescribeRedshiftIdcApplicationsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeRedshiftIdcApplicationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRedshiftIdcApplicationsOutputBuilder {
-    pub(crate) redshift_idc_applications: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftIdcApplication>>,
+    pub(crate) redshift_idc_applications: ::std::option::Option<::std::vec::Vec::<crate::types::RedshiftIdcApplication>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeRedshiftIdcApplicationsOutputBuilder {
     /// <p>The list of Amazon Redshift IAM Identity Center applications.</p>
     pub fn redshift_idc_applications(mut self, input: crate::types::RedshiftIdcApplication) -> Self {
         let mut v = self.redshift_idc_applications.unwrap_or_default();
-        v.push(input);
-        self.redshift_idc_applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.redshift_idc_applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Redshift IAM Identity Center applications.</p>
-    pub fn set_redshift_idc_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftIdcApplication>>) -> Self {
-        self.redshift_idc_applications = input;
-        self
+    pub fn set_redshift_idc_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RedshiftIdcApplication>>) -> Self {
+        self.redshift_idc_applications = input; self
     }
     /// <p>The list of Amazon Redshift IAM Identity Center applications.</p>
-    pub fn get_redshift_idc_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RedshiftIdcApplication>> {
+    pub fn get_redshift_idc_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RedshiftIdcApplication>> {
         &self.redshift_idc_applications
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
@@ -69,28 +69,30 @@ impl DescribeRedshiftIdcApplicationsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRedshiftIdcApplicationsOutput`](crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsOutput).
     pub fn build(self) -> crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsOutput {
         crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsOutput {
-            redshift_idc_applications: self.redshift_idc_applications,
-            marker: self.marker,
+            redshift_idc_applications: self.redshift_idc_applications
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

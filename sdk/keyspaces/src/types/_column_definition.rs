@@ -3,22 +3,20 @@
 /// <p>The names and data types of regular columns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnDefinition {
+pub struct ColumnDefinition  {
     /// <p>The name of the column.</p>
     pub name: ::std::string::String,
     /// <p>The data type of the column. For a list of available data types, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub r#type: ::std::string::String,
 }
-impl ColumnDefinition {
+impl  ColumnDefinition  {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data type of the column. For a list of available data types, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
 }
 impl ColumnDefinition {
@@ -44,8 +42,7 @@ impl ColumnDefinitionBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ColumnDefinitionBuilder {
     }
     /// <p>The data type of the column. For a list of available data types, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The data type of the column. For a list of available data types, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ColumnDefinitionBuilder {
     /// - [`name`](crate::types::builders::ColumnDefinitionBuilder::name)
     /// - [`r#type`](crate::types::builders::ColumnDefinitionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ColumnDefinition {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ColumnDefinition",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ColumnDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ColumnDefinition {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ColumnDefinition")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ColumnDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

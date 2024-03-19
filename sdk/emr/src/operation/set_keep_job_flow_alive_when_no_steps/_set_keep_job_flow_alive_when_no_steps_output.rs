@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetKeepJobFlowAliveWhenNoStepsOutput {
+pub struct SetKeepJobFlowAliveWhenNoStepsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for SetKeepJobFlowAliveWhenNoStepsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetKeepJobFlowAliveWhenNoStepsOutput {
     /// Creates a new builder-style object to manufacture [`SetKeepJobFlowAliveWhenNoStepsOutput`](crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsOutput).
     pub fn builder() -> crate::operation::set_keep_job_flow_alive_when_no_steps::builders::SetKeepJobFlowAliveWhenNoStepsOutputBuilder {
@@ -25,14 +25,14 @@ pub struct SetKeepJobFlowAliveWhenNoStepsOutputBuilder {
 }
 impl SetKeepJobFlowAliveWhenNoStepsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetKeepJobFlowAliveWhenNoStepsOutput`](crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsOutput).
     pub fn build(self) -> crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsOutput {
         crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsOutput {
@@ -40,3 +40,4 @@ impl SetKeepJobFlowAliveWhenNoStepsOutputBuilder {
         }
     }
 }
+

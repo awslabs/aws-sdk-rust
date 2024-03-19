@@ -3,22 +3,22 @@
 /// <p>AttachVolumeOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachVolumeOutput {
+pub struct DetachVolumeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DetachVolumeOutput {
+impl  DetachVolumeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DetachVolumeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetachVolumeOutput {
     /// Creates a new builder-style object to manufacture [`DetachVolumeOutput`](crate::operation::detach_volume::DetachVolumeOutput).
     pub fn builder() -> crate::operation::detach_volume::builders::DetachVolumeOutputBuilder {
@@ -41,27 +41,28 @@ impl DetachVolumeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetachVolumeOutput`](crate::operation::detach_volume::DetachVolumeOutput).
     pub fn build(self) -> crate::operation::detach_volume::DetachVolumeOutput {
         crate::operation::detach_volume::DetachVolumeOutput {
-            volume_arn: self.volume_arn,
+            volume_arn: self.volume_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

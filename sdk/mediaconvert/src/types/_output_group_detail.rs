@@ -3,16 +3,17 @@
 /// Contains details about the output groups specified in the job settings.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputGroupDetail {
+pub struct OutputGroupDetail  {
     /// Details about the output
-    pub output_details: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>,
+    pub output_details: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDetail>>,
 }
-impl OutputGroupDetail {
+impl  OutputGroupDetail  {
     /// Details about the output
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_details.is_none()`.
-    pub fn output_details(&self) -> &[crate::types::OutputDetail] {
-        self.output_details.as_deref().unwrap_or_default()
+    pub fn output_details(&self) -> & [crate::types::OutputDetail] {
+        self.output_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OutputGroupDetail {
@@ -26,7 +27,7 @@ impl OutputGroupDetail {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputGroupDetailBuilder {
-    pub(crate) output_details: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>,
+    pub(crate) output_details: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDetail>>,
 }
 impl OutputGroupDetailBuilder {
     /// Appends an item to `output_details`.
@@ -36,23 +37,24 @@ impl OutputGroupDetailBuilder {
     /// Details about the output
     pub fn output_details(mut self, input: crate::types::OutputDetail) -> Self {
         let mut v = self.output_details.unwrap_or_default();
-        v.push(input);
-        self.output_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_details = ::std::option::Option::Some(v);
+                        self
     }
     /// Details about the output
-    pub fn set_output_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>) -> Self {
-        self.output_details = input;
-        self
+    pub fn set_output_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputDetail>>) -> Self {
+        self.output_details = input; self
     }
     /// Details about the output
-    pub fn get_output_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>> {
+    pub fn get_output_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputDetail>> {
         &self.output_details
     }
     /// Consumes the builder and constructs a [`OutputGroupDetail`](crate::types::OutputGroupDetail).
     pub fn build(self) -> crate::types::OutputGroupDetail {
         crate::types::OutputGroupDetail {
-            output_details: self.output_details,
+            output_details: self.output_details
+            ,
         }
     }
 }
+

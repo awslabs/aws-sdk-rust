@@ -3,19 +3,19 @@
 /// <p>Allows to sort ResaleAuthorization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResaleAuthorizationSort {
+pub struct ResaleAuthorizationSort  {
     /// <p>Allows to sort ResaleAuthorization.</p>
     pub sort_by: ::std::option::Option<crate::types::ResaleAuthorizationSortBy>,
     /// <p>Allows to sort ResaleAuthorization.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ResaleAuthorizationSort {
+impl  ResaleAuthorizationSort  {
     /// <p>Allows to sort ResaleAuthorization.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Allows to sort ResaleAuthorization.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ResaleAuthorizationSortBuilder {
     }
     /// <p>Allows to sort ResaleAuthorization.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Allows to sort ResaleAuthorization.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationSortBy> {
@@ -55,8 +54,7 @@ impl ResaleAuthorizationSortBuilder {
     }
     /// <p>Allows to sort ResaleAuthorization.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Allows to sort ResaleAuthorization.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -65,8 +63,11 @@ impl ResaleAuthorizationSortBuilder {
     /// Consumes the builder and constructs a [`ResaleAuthorizationSort`](crate::types::ResaleAuthorizationSort).
     pub fn build(self) -> crate::types::ResaleAuthorizationSort {
         crate::types::ResaleAuthorizationSort {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
+            sort_by: self.sort_by
+            ,
+            sort_order: self.sort_order
+            ,
         }
     }
 }
+

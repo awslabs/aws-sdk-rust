@@ -3,21 +3,22 @@
 /// <p>The metadata and rows that make up a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultSet {
+pub struct ResultSet  {
     /// <p>The rows in the table.</p>
-    pub rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
+    pub rows: ::std::option::Option<::std::vec::Vec::<crate::types::Row>>,
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
     pub result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
 }
-impl ResultSet {
+impl  ResultSet  {
     /// <p>The rows in the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
-    pub fn rows(&self) -> &[crate::types::Row] {
-        self.rows.as_deref().unwrap_or_default()
+    pub fn rows(&self) -> & [crate::types::Row] {
+        self.rows.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
-    pub fn result_set_metadata(&self) -> ::std::option::Option<&crate::types::ResultSetMetadata> {
+    pub fn result_set_metadata(&self) -> ::std::option::Option<& crate::types::ResultSetMetadata> {
         self.result_set_metadata.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl ResultSet {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultSetBuilder {
-    pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
+    pub(crate) rows: ::std::option::Option<::std::vec::Vec::<crate::types::Row>>,
     pub(crate) result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
 }
 impl ResultSetBuilder {
@@ -43,17 +44,16 @@ impl ResultSetBuilder {
     /// <p>The rows in the table.</p>
     pub fn rows(mut self, input: crate::types::Row) -> Self {
         let mut v = self.rows.unwrap_or_default();
-        v.push(input);
-        self.rows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rows in the table.</p>
-    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Row>>) -> Self {
-        self.rows = input;
-        self
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Row>>) -> Self {
+        self.rows = input; self
     }
     /// <p>The rows in the table.</p>
-    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Row>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Row>> {
         &self.rows
     }
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
@@ -63,8 +63,7 @@ impl ResultSetBuilder {
     }
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
     pub fn set_result_set_metadata(mut self, input: ::std::option::Option<crate::types::ResultSetMetadata>) -> Self {
-        self.result_set_metadata = input;
-        self
+        self.result_set_metadata = input; self
     }
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
     pub fn get_result_set_metadata(&self) -> &::std::option::Option<crate::types::ResultSetMetadata> {
@@ -73,8 +72,11 @@ impl ResultSetBuilder {
     /// Consumes the builder and constructs a [`ResultSet`](crate::types::ResultSet).
     pub fn build(self) -> crate::types::ResultSet {
         crate::types::ResultSet {
-            rows: self.rows,
-            result_set_metadata: self.result_set_metadata,
+            rows: self.rows
+            ,
+            result_set_metadata: self.result_set_metadata
+            ,
         }
     }
 }
+

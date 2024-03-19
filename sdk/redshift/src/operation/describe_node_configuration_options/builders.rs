@@ -5,54 +5,50 @@ pub use crate::operation::describe_node_configuration_options::_describe_node_co
 
 impl DescribeNodeConfigurationOptionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_node_configuration_options();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_node_configuration_options();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeNodeConfigurationOptions`.
-///
+/// 
 /// <p>Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNodeConfigurationOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsInputBuilder,
+                    inner: crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
-        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
-    > for DescribeNodeConfigurationOptionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
-            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
+                    crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
+                > for DescribeNodeConfigurationOptionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
+                        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeNodeConfigurationOptionsFluentBuilder {
     /// Creates a new `DescribeNodeConfigurationOptions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
-        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput, crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator {
-        crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator {
+                                crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster.</p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.inner = self.inner.action_type(input);
@@ -194,12 +181,12 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self
     }
     /// <p>A set of name, operator, and value items to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeConfigurationOptionsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A set of name, operator, and value items to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeConfigurationOptionsFilter>> {
         self.inner.get_filters()
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
@@ -237,3 +224,4 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self.inner.get_max_records()
     }
 }
+

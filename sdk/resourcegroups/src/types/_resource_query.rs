@@ -8,7 +8,7 @@
 /// <p><code>"ResourceTypeFilters":["AWS::S3::Bucket", "AWS::EC2::Instance"]</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceQuery {
+pub struct ResourceQuery  {
     /// <p>The type of the query to perform. This can have one of two values:</p>
     /// <ul>
     /// <li>
@@ -54,7 +54,7 @@ pub struct ResourceQuery {
     /// </ul>
     pub query: ::std::string::String,
 }
-impl ResourceQuery {
+impl  ResourceQuery  {
     /// <p>The type of the query to perform. This can have one of two values:</p>
     /// <ul>
     /// <li>
@@ -62,7 +62,7 @@ impl ResourceQuery {
     /// <li>
     /// <p><i> <code>TAG_FILTERS_1_0:</code> </i> Specifies that you want the group to include resource that have tags that match the query.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::QueryType {
+    pub fn r#type(&self) -> & crate::types::QueryType {
         &self.r#type
     }
     /// <p>The query that defines a group or a search. The contents depends on the value of the <code>Type</code> element.</p>
@@ -100,9 +100,8 @@ impl ResourceQuery {
     /// <li>
     /// <p><code>StackIdentifier</code> – applicable only if <code>Type</code> = <code>CLOUDFORMATION_STACK_1_0</code>. The value of this parameter is the Amazon Resource Name (ARN) of the CloudFormation stack whose resources you want included in the group.</p></li>
     /// </ul>
-    pub fn query(&self) -> &str {
-        use std::ops::Deref;
-        self.query.deref()
+    pub fn query(&self) -> & str {
+        use std::ops::Deref; self.query.deref()
     }
 }
 impl ResourceQuery {
@@ -140,8 +139,7 @@ impl ResourceQueryBuilder {
     /// <p><i> <code>TAG_FILTERS_1_0:</code> </i> Specifies that you want the group to include resource that have tags that match the query.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::QueryType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the query to perform. This can have one of two values:</p>
     /// <ul>
@@ -229,8 +227,7 @@ impl ResourceQueryBuilder {
     /// <p><code>StackIdentifier</code> – applicable only if <code>Type</code> = <code>CLOUDFORMATION_STACK_1_0</code>. The value of this parameter is the Amazon Resource Name (ARN) of the CloudFormation stack whose resources you want included in the group.</p></li>
     /// </ul>
     pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query = input;
-        self
+        self.query = input; self
     }
     /// <p>The query that defines a group or a search. The contents depends on the value of the <code>Type</code> element.</p>
     /// <ul>
@@ -275,19 +272,20 @@ impl ResourceQueryBuilder {
     /// - [`r#type`](crate::types::builders::ResourceQueryBuilder::r#type)
     /// - [`query`](crate::types::builders::ResourceQueryBuilder::query)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceQuery, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceQuery {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ResourceQuery",
-                )
-            })?,
-            query: self.query.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query",
-                    "query was not specified but it is required when building ResourceQuery",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceQuery {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ResourceQuery")
+                    )?
+                ,
+                query: self.query
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query", "query was not specified but it is required when building ResourceQuery")
+                    )?
+                ,
+            }
+        )
     }
 }
+

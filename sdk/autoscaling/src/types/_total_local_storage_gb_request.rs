@@ -3,13 +3,13 @@
 /// <p>Specifies the minimum and maximum for the <code>TotalLocalStorageGB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TotalLocalStorageGbRequest {
+pub struct TotalLocalStorageGbRequest  {
     /// <p>The storage minimum in GB.</p>
     pub min: ::std::option::Option<f64>,
     /// <p>The storage maximum in GB.</p>
     pub max: ::std::option::Option<f64>,
 }
-impl TotalLocalStorageGbRequest {
+impl  TotalLocalStorageGbRequest  {
     /// <p>The storage minimum in GB.</p>
     pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
@@ -41,8 +41,7 @@ impl TotalLocalStorageGbRequestBuilder {
     }
     /// <p>The storage minimum in GB.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The storage minimum in GB.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl TotalLocalStorageGbRequestBuilder {
     }
     /// <p>The storage maximum in GB.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The storage maximum in GB.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl TotalLocalStorageGbRequestBuilder {
     /// Consumes the builder and constructs a [`TotalLocalStorageGbRequest`](crate::types::TotalLocalStorageGbRequest).
     pub fn build(self) -> crate::types::TotalLocalStorageGbRequest {
         crate::types::TotalLocalStorageGbRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

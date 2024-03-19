@@ -3,15 +3,14 @@
 /// <p>Configuration of the schedule of the query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleConfiguration {
+pub struct ScheduleConfiguration  {
     /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
     pub schedule_expression: ::std::string::String,
 }
-impl ScheduleConfiguration {
+impl  ScheduleConfiguration  {
     /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
-    pub fn schedule_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.schedule_expression.deref()
+    pub fn schedule_expression(&self) -> & str {
+        use std::ops::Deref; self.schedule_expression.deref()
     }
 }
 impl ScheduleConfiguration {
@@ -36,8 +35,7 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>An expression that denotes when to trigger the scheduled query run. This can be a cron expression or a rate expression.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ScheduleConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schedule_expression`](crate::types::builders::ScheduleConfigurationBuilder::schedule_expression)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduleConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduleConfiguration {
-            schedule_expression: self.schedule_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schedule_expression",
-                    "schedule_expression was not specified but it is required when building ScheduleConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScheduleConfiguration {
+                schedule_expression: self.schedule_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schedule_expression", "schedule_expression was not specified but it is required when building ScheduleConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

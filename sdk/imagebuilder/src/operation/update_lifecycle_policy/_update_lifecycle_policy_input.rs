@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLifecyclePolicyInput {
+pub struct UpdateLifecyclePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource.</p>
     pub lifecycle_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Optional description for the lifecycle policy.</p>
@@ -14,45 +14,46 @@ pub struct UpdateLifecyclePolicyInput {
     /// <p>The type of image resource that the lifecycle policy applies to.</p>
     pub resource_type: ::std::option::Option<crate::types::LifecyclePolicyResourceType>,
     /// <p>The configuration details for a lifecycle policy resource.</p>
-    pub policy_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>,
+    pub policy_details: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyDetail>>,
     /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
     pub resource_selection: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateLifecyclePolicyInput {
+impl  UpdateLifecyclePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource.</p>
-    pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<& str> {
         self.lifecycle_policy_arn.as_deref()
     }
     /// <p>Optional description for the lifecycle policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyStatus> {
         self.status.as_ref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>The type of image resource that the lifecycle policy applies to.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The configuration details for a lifecycle policy resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_details.is_none()`.
-    pub fn policy_details(&self) -> &[crate::types::LifecyclePolicyDetail] {
-        self.policy_details.as_deref().unwrap_or_default()
+    pub fn policy_details(&self) -> & [crate::types::LifecyclePolicyDetail] {
+        self.policy_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
-    pub fn resource_selection(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyResourceSelection> {
+    pub fn resource_selection(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyResourceSelection> {
         self.resource_selection.as_ref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -72,7 +73,7 @@ pub struct UpdateLifecyclePolicyInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LifecyclePolicyStatus>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::LifecyclePolicyResourceType>,
-    pub(crate) policy_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>,
+    pub(crate) policy_details: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyDetail>>,
     pub(crate) resource_selection: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -85,8 +86,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource.</p>
     pub fn set_lifecycle_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_policy_arn = input;
-        self
+        self.lifecycle_policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource.</p>
     pub fn get_lifecycle_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>Optional description for the lifecycle policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Optional description for the lifecycle policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecyclePolicyStatus> {
@@ -128,8 +126,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +140,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>The type of image resource that the lifecycle policy applies to.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of image resource that the lifecycle policy applies to.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceType> {
@@ -157,17 +153,16 @@ impl UpdateLifecyclePolicyInputBuilder {
     /// <p>The configuration details for a lifecycle policy resource.</p>
     pub fn policy_details(mut self, input: crate::types::LifecyclePolicyDetail) -> Self {
         let mut v = self.policy_details.unwrap_or_default();
-        v.push(input);
-        self.policy_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration details for a lifecycle policy resource.</p>
-    pub fn set_policy_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>) -> Self {
-        self.policy_details = input;
-        self
+    pub fn set_policy_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyDetail>>) -> Self {
+        self.policy_details = input; self
     }
     /// <p>The configuration details for a lifecycle policy resource.</p>
-    pub fn get_policy_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>> {
+    pub fn get_policy_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyDetail>> {
         &self.policy_details
     }
     /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
@@ -178,8 +173,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
     pub fn set_resource_selection(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>) -> Self {
-        self.resource_selection = input;
-        self
+        self.resource_selection = input; self
     }
     /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
     pub fn get_resource_selection(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceSelection> {
@@ -193,27 +187,34 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput {
-            lifecycle_policy_arn: self.lifecycle_policy_arn,
-            description: self.description,
-            status: self.status,
-            execution_role: self.execution_role,
-            resource_type: self.resource_type,
-            policy_details: self.policy_details,
-            resource_selection: self.resource_selection,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput {
+                lifecycle_policy_arn: self.lifecycle_policy_arn
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                execution_role: self.execution_role
+                ,
+                resource_type: self.resource_type
+                ,
+                policy_details: self.policy_details
+                ,
+                resource_selection: self.resource_selection
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

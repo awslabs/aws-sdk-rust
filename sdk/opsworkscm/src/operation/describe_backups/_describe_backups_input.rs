@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBackupsInput {
+pub struct DescribeBackupsInput  {
     /// <p>Describes a single backup.</p>
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns backups for the server with the specified ServerName.</p>
@@ -12,17 +12,17 @@ pub struct DescribeBackupsInput {
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeBackupsInput {
+impl  DescribeBackupsInput  {
     /// <p>Describes a single backup.</p>
-    pub fn backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_id(&self) -> ::std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>Returns backups for the server with the specified ServerName.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
@@ -54,8 +54,7 @@ impl DescribeBackupsInputBuilder {
     }
     /// <p>Describes a single backup.</p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// <p>Describes a single backup.</p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DescribeBackupsInputBuilder {
     }
     /// <p>Returns backups for the server with the specified ServerName.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>Returns backups for the server with the specified ServerName.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl DescribeBackupsInputBuilder {
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,22 +93,26 @@ impl DescribeBackupsInputBuilder {
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeBackupsInput`](crate::operation::describe_backups::DescribeBackupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_backups::DescribeBackupsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_backups::DescribeBackupsInput {
-            backup_id: self.backup_id,
-            server_name: self.server_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_backups::DescribeBackupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_backups::DescribeBackupsInput {
+                backup_id: self.backup_id
+                ,
+                server_name: self.server_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

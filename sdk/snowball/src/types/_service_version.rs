@@ -3,13 +3,13 @@
 /// <p>The version of the requested service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceVersion {
+pub struct ServiceVersion  {
     /// <p>The version number of the requested service.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl ServiceVersion {
+impl  ServiceVersion  {
     /// <p>The version number of the requested service.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ServiceVersionBuilder {
     }
     /// <p>The version number of the requested service.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the requested service.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ServiceVersionBuilder {
     }
     /// Consumes the builder and constructs a [`ServiceVersion`](crate::types::ServiceVersion).
     pub fn build(self) -> crate::types::ServiceVersion {
-        crate::types::ServiceVersion { version: self.version }
+        crate::types::ServiceVersion {
+            version: self.version
+            ,
+        }
     }
 }
+

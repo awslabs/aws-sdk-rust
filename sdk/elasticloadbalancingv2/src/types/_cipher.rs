@@ -3,15 +3,15 @@
 /// <p>Information about a cipher used in a policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Cipher {
+pub struct Cipher  {
     /// <p>The name of the cipher.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the cipher.</p>
     pub priority: ::std::option::Option<i32>,
 }
-impl Cipher {
+impl  Cipher  {
     /// <p>The name of the cipher.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The priority of the cipher.</p>
@@ -41,8 +41,7 @@ impl CipherBuilder {
     }
     /// <p>The name of the cipher.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the cipher.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CipherBuilder {
     }
     /// <p>The priority of the cipher.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority of the cipher.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl CipherBuilder {
     /// Consumes the builder and constructs a [`Cipher`](crate::types::Cipher).
     pub fn build(self) -> crate::types::Cipher {
         crate::types::Cipher {
-            name: self.name,
-            priority: self.priority,
+            name: self.name
+            ,
+            priority: self.priority
+            ,
         }
     }
 }
+

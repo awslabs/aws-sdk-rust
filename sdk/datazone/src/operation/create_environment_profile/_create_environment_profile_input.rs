@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateEnvironmentProfileInput {
+pub struct CreateEnvironmentProfileInput  {
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of this Amazon DataZone environment profile.</p>
@@ -14,49 +14,50 @@ pub struct CreateEnvironmentProfileInput {
     /// <p>The identifier of the project in which to create the environment profile.</p>
     pub project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
+    pub user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>,
     /// <p>The Amazon Web Services account in which the Amazon DataZone environment is created.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services region in which this environment profile is created.</p>
     pub aws_account_region: ::std::option::Option<::std::string::String>,
 }
-impl CreateEnvironmentProfileInput {
+impl  CreateEnvironmentProfileInput  {
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The name of this Amazon DataZone environment profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of this Amazon DataZone environment profile.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the blueprint with which this environment profile is created.</p>
-    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_blueprint_identifier.as_deref()
     }
     /// <p>The identifier of the project in which to create the environment profile.</p>
-    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn project_identifier(&self) -> ::std::option::Option<& str> {
         self.project_identifier.as_deref()
     }
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
-    pub fn user_parameters(&self) -> &[crate::types::EnvironmentParameter] {
-        self.user_parameters.as_deref().unwrap_or_default()
+    pub fn user_parameters(&self) -> & [crate::types::EnvironmentParameter] {
+        self.user_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services account in which the Amazon DataZone environment is created.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Services region in which this environment profile is created.</p>
-    pub fn aws_account_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_region(&self) -> ::std::option::Option<& str> {
         self.aws_account_region.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateEnvironmentProfileInput {
+impl  ::std::fmt::Debug for CreateEnvironmentProfileInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentProfileInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -86,7 +87,7 @@ pub struct CreateEnvironmentProfileInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_region: ::std::option::Option<::std::string::String>,
 }
@@ -99,8 +100,7 @@ impl CreateEnvironmentProfileInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl CreateEnvironmentProfileInputBuilder {
     }
     /// <p>The name of this Amazon DataZone environment profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this Amazon DataZone environment profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl CreateEnvironmentProfileInputBuilder {
     }
     /// <p>The description of this Amazon DataZone environment profile.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of this Amazon DataZone environment profile.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl CreateEnvironmentProfileInputBuilder {
     }
     /// <p>The ID of the blueprint with which this environment profile is created.</p>
     pub fn set_environment_blueprint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_blueprint_identifier = input;
-        self
+        self.environment_blueprint_identifier = input; self
     }
     /// <p>The ID of the blueprint with which this environment profile is created.</p>
     pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +155,7 @@ impl CreateEnvironmentProfileInputBuilder {
     }
     /// <p>The identifier of the project in which to create the environment profile.</p>
     pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_identifier = input;
-        self
+        self.project_identifier = input; self
     }
     /// <p>The identifier of the project in which to create the environment profile.</p>
     pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,17 +168,16 @@ impl CreateEnvironmentProfileInputBuilder {
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
     pub fn user_parameters(mut self, input: crate::types::EnvironmentParameter) -> Self {
         let mut v = self.user_parameters.unwrap_or_default();
-        v.push(input);
-        self.user_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>) -> Self {
-        self.user_parameters = input;
-        self
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>) -> Self {
+        self.user_parameters = input; self
     }
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>> {
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>> {
         &self.user_parameters
     }
     /// <p>The Amazon Web Services account in which the Amazon DataZone environment is created.</p>
@@ -192,8 +187,7 @@ impl CreateEnvironmentProfileInputBuilder {
     }
     /// <p>The Amazon Web Services account in which the Amazon DataZone environment is created.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account in which the Amazon DataZone environment is created.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,30 +200,34 @@ impl CreateEnvironmentProfileInputBuilder {
     }
     /// <p>The Amazon Web Services region in which this environment profile is created.</p>
     pub fn set_aws_account_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_region = input;
-        self
+        self.aws_account_region = input; self
     }
     /// <p>The Amazon Web Services region in which this environment profile is created.</p>
     pub fn get_aws_account_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_region
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentProfileInput`](crate::operation::create_environment_profile::CreateEnvironmentProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment_profile::CreateEnvironmentProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_environment_profile::CreateEnvironmentProfileInput {
-            domain_identifier: self.domain_identifier,
-            name: self.name,
-            description: self.description,
-            environment_blueprint_identifier: self.environment_blueprint_identifier,
-            project_identifier: self.project_identifier,
-            user_parameters: self.user_parameters,
-            aws_account_id: self.aws_account_id,
-            aws_account_region: self.aws_account_region,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment_profile::CreateEnvironmentProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_environment_profile::CreateEnvironmentProfileInput {
+                domain_identifier: self.domain_identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                environment_blueprint_identifier: self.environment_blueprint_identifier
+                ,
+                project_identifier: self.project_identifier
+                ,
+                user_parameters: self.user_parameters
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                aws_account_region: self.aws_account_region
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentProfileInputBuilder {
@@ -246,3 +244,4 @@ impl ::std::fmt::Debug for CreateEnvironmentProfileInputBuilder {
         formatter.finish()
     }
 }
+

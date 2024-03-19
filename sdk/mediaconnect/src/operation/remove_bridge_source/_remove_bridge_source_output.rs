@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveBridgeSourceOutput {
+pub struct RemoveBridgeSourceOutput  {
     #[allow(missing_docs)] // documentation missing in model
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub source_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RemoveBridgeSourceOutput {
+impl  RemoveBridgeSourceOutput  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RemoveBridgeSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RemoveBridgeSourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveBridgeSourceOutput`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput).
     pub fn builder() -> crate::operation::remove_bridge_source::builders::RemoveBridgeSourceOutputBuilder {
@@ -47,8 +47,7 @@ impl RemoveBridgeSourceOutputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl RemoveBridgeSourceOutputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RemoveBridgeSourceOutput`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput).
     pub fn build(self) -> crate::operation::remove_bridge_source::RemoveBridgeSourceOutput {
         crate::operation::remove_bridge_source::RemoveBridgeSourceOutput {
-            bridge_arn: self.bridge_arn,
-            source_name: self.source_name,
+            bridge_arn: self.bridge_arn
+            ,
+            source_name: self.source_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

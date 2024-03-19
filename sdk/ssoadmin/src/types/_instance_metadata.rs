@@ -3,7 +3,7 @@
 /// <p>Provides information about the IAM Identity Center instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceMetadata {
+pub struct InstanceMetadata  {
     /// <p>The ARN of the Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the identity store that is connected to the Identity Center instance.</p>
@@ -17,29 +17,29 @@ pub struct InstanceMetadata {
     /// <p>The current status of this Identity Center instance.</p>
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
 }
-impl InstanceMetadata {
+impl  InstanceMetadata  {
     /// <p>The ARN of the Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier of the identity store that is connected to the Identity Center instance.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> ::std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID number of the owner of the Identity Center instance.</p>
-    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The name of the Identity Center instance.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time that the Identity Center instance was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The current status of this Identity Center instance.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InstanceStatus> {
         self.status.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl InstanceMetadataBuilder {
     }
     /// <p>The ARN of the Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl InstanceMetadataBuilder {
     }
     /// <p>The identifier of the identity store that is connected to the Identity Center instance.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The identifier of the identity store that is connected to the Identity Center instance.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl InstanceMetadataBuilder {
     }
     /// <p>The Amazon Web Services account ID number of the owner of the Identity Center instance.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account_id = input;
-        self
+        self.owner_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID number of the owner of the Identity Center instance.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl InstanceMetadataBuilder {
     }
     /// <p>The name of the Identity Center instance.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Identity Center instance.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl InstanceMetadataBuilder {
     }
     /// <p>The date and time that the Identity Center instance was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time that the Identity Center instance was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl InstanceMetadataBuilder {
     }
     /// <p>The current status of this Identity Center instance.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of this Identity Center instance.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
@@ -149,12 +143,19 @@ impl InstanceMetadataBuilder {
     /// Consumes the builder and constructs a [`InstanceMetadata`](crate::types::InstanceMetadata).
     pub fn build(self) -> crate::types::InstanceMetadata {
         crate::types::InstanceMetadata {
-            instance_arn: self.instance_arn,
-            identity_store_id: self.identity_store_id,
-            owner_account_id: self.owner_account_id,
-            name: self.name,
-            created_date: self.created_date,
-            status: self.status,
+            instance_arn: self.instance_arn
+            ,
+            identity_store_id: self.identity_store_id
+            ,
+            owner_account_id: self.owner_account_id
+            ,
+            name: self.name
+            ,
+            created_date: self.created_date
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

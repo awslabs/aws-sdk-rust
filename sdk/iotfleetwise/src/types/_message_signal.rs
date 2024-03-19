@@ -3,20 +3,19 @@
 /// <p>The decoding information for a specific message which support higher order data types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageSignal {
+pub struct MessageSignal  {
     /// <p>The topic name for the message signal. It corresponds to topics in ROS 2.</p>
     pub topic_name: ::std::string::String,
     /// <p>The structured message for the message signal. It can be defined with either a <code>primitiveMessageDefinition</code>, <code>structuredMessageListDefinition</code>, or <code>structuredMessageDefinition</code> recursively.</p>
     pub structured_message: ::std::option::Option<crate::types::StructuredMessage>,
 }
-impl MessageSignal {
+impl  MessageSignal  {
     /// <p>The topic name for the message signal. It corresponds to topics in ROS 2.</p>
-    pub fn topic_name(&self) -> &str {
-        use std::ops::Deref;
-        self.topic_name.deref()
+    pub fn topic_name(&self) -> & str {
+        use std::ops::Deref; self.topic_name.deref()
     }
     /// <p>The structured message for the message signal. It can be defined with either a <code>primitiveMessageDefinition</code>, <code>structuredMessageListDefinition</code>, or <code>structuredMessageDefinition</code> recursively.</p>
-    pub fn structured_message(&self) -> ::std::option::Option<&crate::types::StructuredMessage> {
+    pub fn structured_message(&self) -> ::std::option::Option<& crate::types::StructuredMessage> {
         self.structured_message.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl MessageSignalBuilder {
     }
     /// <p>The topic name for the message signal. It corresponds to topics in ROS 2.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
     }
     /// <p>The topic name for the message signal. It corresponds to topics in ROS 2.</p>
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl MessageSignalBuilder {
     }
     /// <p>The structured message for the message signal. It can be defined with either a <code>primitiveMessageDefinition</code>, <code>structuredMessageListDefinition</code>, or <code>structuredMessageDefinition</code> recursively.</p>
     pub fn set_structured_message(mut self, input: ::std::option::Option<crate::types::StructuredMessage>) -> Self {
-        self.structured_message = input;
-        self
+        self.structured_message = input; self
     }
     /// <p>The structured message for the message signal. It can be defined with either a <code>primitiveMessageDefinition</code>, <code>structuredMessageListDefinition</code>, or <code>structuredMessageDefinition</code> recursively.</p>
     pub fn get_structured_message(&self) -> &::std::option::Option<crate::types::StructuredMessage> {
@@ -69,14 +66,17 @@ impl MessageSignalBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_name`](crate::types::builders::MessageSignalBuilder::topic_name)
     pub fn build(self) -> ::std::result::Result<crate::types::MessageSignal, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MessageSignal {
-            topic_name: self.topic_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic_name",
-                    "topic_name was not specified but it is required when building MessageSignal",
-                )
-            })?,
-            structured_message: self.structured_message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MessageSignal {
+                topic_name: self.topic_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic_name", "topic_name was not specified but it is required when building MessageSignal")
+                    )?
+                ,
+                structured_message: self.structured_message
+                ,
+            }
+        )
     }
 }
+

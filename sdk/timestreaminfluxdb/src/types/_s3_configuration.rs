@@ -3,17 +3,16 @@
 /// <p>Configuration for S3 bucket log delivery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Configuration {
+pub struct S3Configuration  {
     /// <p>The name of the S3 bucket to deliver logs to.</p>
     pub bucket_name: ::std::string::String,
     /// <p>Indicates whether log delivery to the S3 bucket is enabled.</p>
     pub enabled: bool,
 }
-impl S3Configuration {
+impl  S3Configuration  {
     /// <p>The name of the S3 bucket to deliver logs to.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>Indicates whether log delivery to the S3 bucket is enabled.</p>
     pub fn enabled(&self) -> bool {
@@ -43,8 +42,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>The name of the S3 bucket to deliver logs to.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the S3 bucket to deliver logs to.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>Indicates whether log delivery to the S3 bucket is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether log delivery to the S3 bucket is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -70,19 +67,20 @@ impl S3ConfigurationBuilder {
     /// - [`bucket_name`](crate::types::builders::S3ConfigurationBuilder::bucket_name)
     /// - [`enabled`](crate::types::builders::S3ConfigurationBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Configuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Configuration {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3Configuration",
-                )
-            })?,
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building S3Configuration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Configuration {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3Configuration")
+                    )?
+                ,
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building S3Configuration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

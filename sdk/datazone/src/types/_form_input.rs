@@ -3,7 +3,7 @@
 /// <p>The details of a metadata form.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct FormInput {
+pub struct FormInput  {
     /// <p>The name of the metadata form.</p>
     pub form_name: ::std::string::String,
     /// <p>The ID of the metadata form type.</p>
@@ -13,26 +13,25 @@ pub struct FormInput {
     /// <p>The content of the metadata form.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl FormInput {
+impl  FormInput  {
     /// <p>The name of the metadata form.</p>
-    pub fn form_name(&self) -> &str {
-        use std::ops::Deref;
-        self.form_name.deref()
+    pub fn form_name(&self) -> & str {
+        use std::ops::Deref; self.form_name.deref()
     }
     /// <p>The ID of the metadata form type.</p>
-    pub fn type_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn type_identifier(&self) -> ::std::option::Option<& str> {
         self.type_identifier.as_deref()
     }
     /// <p>The revision of the metadata form type.</p>
-    pub fn type_revision(&self) -> ::std::option::Option<&str> {
+    pub fn type_revision(&self) -> ::std::option::Option<& str> {
         self.type_revision.as_deref()
     }
     /// <p>The content of the metadata form.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
-impl ::std::fmt::Debug for FormInput {
+impl  ::std::fmt::Debug for FormInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FormInput");
         formatter.field("form_name", &"*** Sensitive Data Redacted ***");
@@ -67,8 +66,7 @@ impl FormInputBuilder {
     }
     /// <p>The name of the metadata form.</p>
     pub fn set_form_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.form_name = input;
-        self
+        self.form_name = input; self
     }
     /// <p>The name of the metadata form.</p>
     pub fn get_form_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl FormInputBuilder {
     }
     /// <p>The ID of the metadata form type.</p>
     pub fn set_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_identifier = input;
-        self
+        self.type_identifier = input; self
     }
     /// <p>The ID of the metadata form type.</p>
     pub fn get_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +92,7 @@ impl FormInputBuilder {
     }
     /// <p>The revision of the metadata form type.</p>
     pub fn set_type_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_revision = input;
-        self
+        self.type_revision = input; self
     }
     /// <p>The revision of the metadata form type.</p>
     pub fn get_type_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl FormInputBuilder {
     }
     /// <p>The content of the metadata form.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of the metadata form.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,17 +115,21 @@ impl FormInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`form_name`](crate::types::builders::FormInputBuilder::form_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FormInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FormInput {
-            form_name: self.form_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "form_name",
-                    "form_name was not specified but it is required when building FormInput",
-                )
-            })?,
-            type_identifier: self.type_identifier,
-            type_revision: self.type_revision,
-            content: self.content,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FormInput {
+                form_name: self.form_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("form_name", "form_name was not specified but it is required when building FormInput")
+                    )?
+                ,
+                type_identifier: self.type_identifier
+                ,
+                type_revision: self.type_revision
+                ,
+                content: self.content
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for FormInputBuilder {
@@ -143,3 +142,4 @@ impl ::std::fmt::Debug for FormInputBuilder {
         formatter.finish()
     }
 }
+

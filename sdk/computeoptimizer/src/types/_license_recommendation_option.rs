@@ -3,7 +3,7 @@
 /// <p>Describes the recommendation options for licenses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LicenseRecommendationOption {
+pub struct LicenseRecommendationOption  {
     /// <p>The rank of the license recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub rank: i32,
@@ -19,29 +19,29 @@ pub struct LicenseRecommendationOption {
     /// </important>
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
 }
-impl LicenseRecommendationOption {
+impl  LicenseRecommendationOption  {
     /// <p>The rank of the license recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(&self) -> i32 {
         self.rank
     }
     /// <p>The operating system of a license recommendation option.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&str> {
+    pub fn operating_system(&self) -> ::std::option::Option<& str> {
         self.operating_system.as_deref()
     }
     /// <p>The recommended edition of the license for the application that runs on the instance.</p>
-    pub fn license_edition(&self) -> ::std::option::Option<&crate::types::LicenseEdition> {
+    pub fn license_edition(&self) -> ::std::option::Option<& crate::types::LicenseEdition> {
         self.license_edition.as_ref()
     }
     /// <p>The recommended license type associated with the instance.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&crate::types::LicenseModel> {
+    pub fn license_model(&self) -> ::std::option::Option<& crate::types::LicenseModel> {
         self.license_model.as_ref()
     }
     /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
     /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
     /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
     /// </important>
-    pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
+    pub fn savings_opportunity(&self) -> ::std::option::Option<& crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
 }
@@ -72,8 +72,7 @@ impl LicenseRecommendationOptionBuilder {
     /// <p>The rank of the license recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rank = input;
-        self
+        self.rank = input; self
     }
     /// <p>The rank of the license recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
@@ -87,8 +86,7 @@ impl LicenseRecommendationOptionBuilder {
     }
     /// <p>The operating system of a license recommendation option.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>The operating system of a license recommendation option.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl LicenseRecommendationOptionBuilder {
     }
     /// <p>The recommended edition of the license for the application that runs on the instance.</p>
     pub fn set_license_edition(mut self, input: ::std::option::Option<crate::types::LicenseEdition>) -> Self {
-        self.license_edition = input;
-        self
+        self.license_edition = input; self
     }
     /// <p>The recommended edition of the license for the application that runs on the instance.</p>
     pub fn get_license_edition(&self) -> &::std::option::Option<crate::types::LicenseEdition> {
@@ -115,8 +112,7 @@ impl LicenseRecommendationOptionBuilder {
     }
     /// <p>The recommended license type associated with the instance.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<crate::types::LicenseModel>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>The recommended license type associated with the instance.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<crate::types::LicenseModel> {
@@ -135,8 +131,7 @@ impl LicenseRecommendationOptionBuilder {
     /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
     /// </important>
     pub fn set_savings_opportunity(mut self, input: ::std::option::Option<crate::types::SavingsOpportunity>) -> Self {
-        self.savings_opportunity = input;
-        self
+        self.savings_opportunity = input; self
     }
     /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
     /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p><important>
@@ -148,11 +143,18 @@ impl LicenseRecommendationOptionBuilder {
     /// Consumes the builder and constructs a [`LicenseRecommendationOption`](crate::types::LicenseRecommendationOption).
     pub fn build(self) -> crate::types::LicenseRecommendationOption {
         crate::types::LicenseRecommendationOption {
-            rank: self.rank.unwrap_or_default(),
-            operating_system: self.operating_system,
-            license_edition: self.license_edition,
-            license_model: self.license_model,
-            savings_opportunity: self.savings_opportunity,
+            rank: self.rank
+                .unwrap_or_default()
+            ,
+            operating_system: self.operating_system
+            ,
+            license_edition: self.license_edition
+            ,
+            license_model: self.license_model
+            ,
+            savings_opportunity: self.savings_opportunity
+            ,
         }
     }
 }
+

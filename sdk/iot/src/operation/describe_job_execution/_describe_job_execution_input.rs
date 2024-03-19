@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobExecutionInput {
+pub struct DescribeJobExecutionInput  {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing on which the job execution is running.</p>
@@ -10,13 +10,13 @@ pub struct DescribeJobExecutionInput {
     /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub execution_number: ::std::option::Option<i64>,
 }
-impl DescribeJobExecutionInput {
+impl  DescribeJobExecutionInput  {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the thing on which the job execution is running.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
@@ -48,8 +48,7 @@ impl DescribeJobExecutionInputBuilder {
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DescribeJobExecutionInputBuilder {
     }
     /// <p>The name of the thing on which the job execution is running.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing on which the job execution is running.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl DescribeJobExecutionInputBuilder {
     }
     /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.execution_number = input;
-        self
+        self.execution_number = input; self
     }
     /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub fn get_execution_number(&self) -> &::std::option::Option<i64> {
         &self.execution_number
     }
     /// Consumes the builder and constructs a [`DescribeJobExecutionInput`](crate::operation::describe_job_execution::DescribeJobExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_job_execution::DescribeJobExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_job_execution::DescribeJobExecutionInput {
-            job_id: self.job_id,
-            thing_name: self.thing_name,
-            execution_number: self.execution_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job_execution::DescribeJobExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_job_execution::DescribeJobExecutionInput {
+                job_id: self.job_id
+                ,
+                thing_name: self.thing_name
+                ,
+                execution_number: self.execution_number
+                ,
+            }
+        )
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your Amazon Web Services resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessControlAttribute {
+pub struct AccessControlAttribute  {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     pub key: ::std::string::String,
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub value: ::std::option::Option<crate::types::AccessControlAttributeValue>,
 }
-impl AccessControlAttribute {
+impl  AccessControlAttribute  {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::AccessControlAttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::AccessControlAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl AccessControlAttributeBuilder {
     }
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AccessControlAttributeBuilder {
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::AccessControlAttributeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::AccessControlAttributeValue> {
@@ -69,14 +66,17 @@ impl AccessControlAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::AccessControlAttributeBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessControlAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessControlAttribute {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building AccessControlAttribute",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessControlAttribute {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building AccessControlAttribute")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

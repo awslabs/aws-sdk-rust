@@ -3,19 +3,19 @@
 /// <p>Describes the limit price of a Reserved Instance offering.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedInstanceLimitPrice {
+pub struct ReservedInstanceLimitPrice  {
     /// <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
     pub amount: ::std::option::Option<f64>,
     /// <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
 }
-impl ReservedInstanceLimitPrice {
+impl  ReservedInstanceLimitPrice  {
     /// <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
     pub fn amount(&self) -> ::std::option::Option<f64> {
         self.amount
     }
     /// <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&crate::types::CurrencyCodeValues> {
+    pub fn currency_code(&self) -> ::std::option::Option<& crate::types::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ReservedInstanceLimitPriceBuilder {
     }
     /// <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
     pub fn set_amount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.amount = input;
-        self
+        self.amount = input; self
     }
     /// <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
     pub fn get_amount(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl ReservedInstanceLimitPriceBuilder {
     }
     /// <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
@@ -65,8 +63,11 @@ impl ReservedInstanceLimitPriceBuilder {
     /// Consumes the builder and constructs a [`ReservedInstanceLimitPrice`](crate::types::ReservedInstanceLimitPrice).
     pub fn build(self) -> crate::types::ReservedInstanceLimitPrice {
         crate::types::ReservedInstanceLimitPrice {
-            amount: self.amount,
-            currency_code: self.currency_code,
+            amount: self.amount
+            ,
+            currency_code: self.currency_code
+            ,
         }
     }
 }
+

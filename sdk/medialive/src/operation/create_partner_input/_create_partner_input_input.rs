@@ -3,25 +3,25 @@
 /// A request to create a partner input
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePartnerInputInput {
+pub struct CreatePartnerInputInput  {
     /// Unique ID of the input.
     pub input_id: ::std::option::Option<::std::string::String>,
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub request_id: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreatePartnerInputInput {
+impl  CreatePartnerInputInput  {
     /// Unique ID of the input.
-    pub fn input_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_id(&self) -> ::std::option::Option<& str> {
         self.input_id.as_deref()
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl CreatePartnerInputInput {
 pub struct CreatePartnerInputInputBuilder {
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreatePartnerInputInputBuilder {
     /// Unique ID of the input.
@@ -49,8 +49,7 @@ impl CreatePartnerInputInputBuilder {
     }
     /// Unique ID of the input.
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_id = input;
-        self
+        self.input_id = input; self
     }
     /// Unique ID of the input.
     pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreatePartnerInputInputBuilder {
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,28 +75,30 @@ impl CreatePartnerInputInputBuilder {
     /// A collection of key-value pairs.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_partner_input::CreatePartnerInputInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_partner_input::CreatePartnerInputInput {
-            input_id: self.input_id,
-            request_id: self.request_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_partner_input::CreatePartnerInputInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_partner_input::CreatePartnerInputInput {
+                input_id: self.input_id
+                ,
+                request_id: self.request_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

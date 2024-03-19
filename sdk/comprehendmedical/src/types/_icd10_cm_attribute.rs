@@ -3,7 +3,7 @@
 /// <p>The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Icd10CmAttribute {
+pub struct Icd10CmAttribute  {
     /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
     pub r#type: ::std::option::Option<crate::types::Icd10CmAttributeType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
@@ -19,15 +19,15 @@ pub struct Icd10CmAttribute {
     /// <p>The segment of input text which contains the detected attribute.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
-    pub traits: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>,
+    pub traits: ::std::option::Option<::std::vec::Vec::<crate::types::Icd10CmTrait>>,
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
     pub category: ::std::option::Option<crate::types::Icd10CmEntityType>,
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
     pub relationship_type: ::std::option::Option<crate::types::Icd10CmRelationshipType>,
 }
-impl Icd10CmAttribute {
+impl  Icd10CmAttribute  {
     /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Icd10CmAttributeType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Icd10CmAttributeType> {
         self.r#type.as_ref()
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
@@ -51,21 +51,22 @@ impl Icd10CmAttribute {
         self.end_offset
     }
     /// <p>The segment of input text which contains the detected attribute.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
-    pub fn traits(&self) -> &[crate::types::Icd10CmTrait] {
-        self.traits.as_deref().unwrap_or_default()
+    pub fn traits(&self) -> & [crate::types::Icd10CmTrait] {
+        self.traits.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::Icd10CmEntityType> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::Icd10CmEntityType> {
         self.category.as_ref()
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
-    pub fn relationship_type(&self) -> ::std::option::Option<&crate::types::Icd10CmRelationshipType> {
+    pub fn relationship_type(&self) -> ::std::option::Option<& crate::types::Icd10CmRelationshipType> {
         self.relationship_type.as_ref()
     }
 }
@@ -87,7 +88,7 @@ pub struct Icd10CmAttributeBuilder {
     pub(crate) begin_offset: ::std::option::Option<i32>,
     pub(crate) end_offset: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
-    pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>,
+    pub(crate) traits: ::std::option::Option<::std::vec::Vec::<crate::types::Icd10CmTrait>>,
     pub(crate) category: ::std::option::Option<crate::types::Icd10CmEntityType>,
     pub(crate) relationship_type: ::std::option::Option<crate::types::Icd10CmRelationshipType>,
 }
@@ -99,8 +100,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Icd10CmAttributeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Icd10CmAttributeType> {
@@ -113,8 +113,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
     pub fn get_score(&self) -> &::std::option::Option<f32> {
@@ -127,8 +126,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
     pub fn set_relationship_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.relationship_score = input;
-        self
+        self.relationship_score = input; self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity.</p>
     pub fn get_relationship_score(&self) -> &::std::option::Option<f32> {
@@ -141,8 +139,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<i32> {
@@ -155,8 +152,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
@@ -169,8 +165,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
     }
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
@@ -183,8 +178,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The segment of input text which contains the detected attribute.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The segment of input text which contains the detected attribute.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,17 +191,16 @@ impl Icd10CmAttributeBuilder {
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
     pub fn traits(mut self, input: crate::types::Icd10CmTrait) -> Self {
         let mut v = self.traits.unwrap_or_default();
-        v.push(input);
-        self.traits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.traits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
-    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>) -> Self {
-        self.traits = input;
-        self
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Icd10CmTrait>>) -> Self {
+        self.traits = input; self
     }
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
-    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>> {
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Icd10CmTrait>> {
         &self.traits
     }
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
@@ -217,8 +210,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::Icd10CmEntityType>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::Icd10CmEntityType> {
@@ -231,8 +223,7 @@ impl Icd10CmAttributeBuilder {
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
     pub fn set_relationship_type(mut self, input: ::std::option::Option<crate::types::Icd10CmRelationshipType>) -> Self {
-        self.relationship_type = input;
-        self
+        self.relationship_type = input; self
     }
     /// <p>The type of relationship between the entity and attribute. Type for the relationship can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.</p>
     pub fn get_relationship_type(&self) -> &::std::option::Option<crate::types::Icd10CmRelationshipType> {
@@ -241,16 +232,27 @@ impl Icd10CmAttributeBuilder {
     /// Consumes the builder and constructs a [`Icd10CmAttribute`](crate::types::Icd10CmAttribute).
     pub fn build(self) -> crate::types::Icd10CmAttribute {
         crate::types::Icd10CmAttribute {
-            r#type: self.r#type,
-            score: self.score,
-            relationship_score: self.relationship_score,
-            id: self.id,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
-            text: self.text,
-            traits: self.traits,
-            category: self.category,
-            relationship_type: self.relationship_type,
+            r#type: self.r#type
+            ,
+            score: self.score
+            ,
+            relationship_score: self.relationship_score
+            ,
+            id: self.id
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
+            text: self.text
+            ,
+            traits: self.traits
+            ,
+            category: self.category
+            ,
+            relationship_type: self.relationship_type
+            ,
         }
     }
 }
+

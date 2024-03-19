@@ -3,7 +3,7 @@
 /// Archive Output Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArchiveOutputSettings {
+pub struct ArchiveOutputSettings  {
     /// Settings specific to the container type of the file.
     pub container_settings: ::std::option::Option<crate::types::ArchiveContainerSettings>,
     /// Output file extension. If excluded, this will be auto-selected from the container type.
@@ -11,17 +11,17 @@ pub struct ArchiveOutputSettings {
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub name_modifier: ::std::option::Option<::std::string::String>,
 }
-impl ArchiveOutputSettings {
+impl  ArchiveOutputSettings  {
     /// Settings specific to the container type of the file.
-    pub fn container_settings(&self) -> ::std::option::Option<&crate::types::ArchiveContainerSettings> {
+    pub fn container_settings(&self) -> ::std::option::Option<& crate::types::ArchiveContainerSettings> {
         self.container_settings.as_ref()
     }
     /// Output file extension. If excluded, this will be auto-selected from the container type.
-    pub fn extension(&self) -> ::std::option::Option<&str> {
+    pub fn extension(&self) -> ::std::option::Option<& str> {
         self.extension.as_deref()
     }
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
-    pub fn name_modifier(&self) -> ::std::option::Option<&str> {
+    pub fn name_modifier(&self) -> ::std::option::Option<& str> {
         self.name_modifier.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ArchiveOutputSettingsBuilder {
     }
     /// Settings specific to the container type of the file.
     pub fn set_container_settings(mut self, input: ::std::option::Option<crate::types::ArchiveContainerSettings>) -> Self {
-        self.container_settings = input;
-        self
+        self.container_settings = input; self
     }
     /// Settings specific to the container type of the file.
     pub fn get_container_settings(&self) -> &::std::option::Option<crate::types::ArchiveContainerSettings> {
@@ -63,8 +62,7 @@ impl ArchiveOutputSettingsBuilder {
     }
     /// Output file extension. If excluded, this will be auto-selected from the container type.
     pub fn set_extension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension = input;
-        self
+        self.extension = input; self
     }
     /// Output file extension. If excluded, this will be auto-selected from the container type.
     pub fn get_extension(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl ArchiveOutputSettingsBuilder {
     }
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub fn set_name_modifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_modifier = input;
-        self
+        self.name_modifier = input; self
     }
     /// String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
     pub fn get_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl ArchiveOutputSettingsBuilder {
     /// Consumes the builder and constructs a [`ArchiveOutputSettings`](crate::types::ArchiveOutputSettings).
     pub fn build(self) -> crate::types::ArchiveOutputSettings {
         crate::types::ArchiveOutputSettings {
-            container_settings: self.container_settings,
-            extension: self.extension,
-            name_modifier: self.name_modifier,
+            container_settings: self.container_settings
+            ,
+            extension: self.extension
+            ,
+            name_modifier: self.name_modifier
+            ,
         }
     }
 }
+

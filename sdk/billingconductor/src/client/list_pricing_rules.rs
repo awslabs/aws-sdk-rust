@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPricingRules`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`billing_period(impl Into<String>)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::billing_period) / [`set_billing_period(Option<String>)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::set_billing_period):<br>required: **false**<br><p>The preferred billing period to get the pricing plan.</p><br>
     ///   - [`filters(ListPricingRulesFilter)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::filters) / [`set_filters(Option<ListPricingRulesFilter>)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::set_filters):<br>required: **false**<br><p>A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of pricing rules to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that's used on subsequent call to get pricing rules.</p><br>
-    /// - On success, responds with [`ListPricingRulesOutput`](crate::operation::list_pricing_rules::ListPricingRulesOutput) with field(s):
+                            /// - On success, responds with [`ListPricingRulesOutput`](crate::operation::list_pricing_rules::ListPricingRulesOutput) with field(s):
     ///   - [`billing_period(Option<String>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::billing_period): <p>The billing period for which the described pricing rules are applicable.</p>
     ///   - [`pricing_rules(Option<Vec::<PricingRuleListElement>>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::pricing_rules): <p>A list containing the described pricing rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pricing_rules::ListPricingRulesOutput::next_token): <p>The pagination token that's used on subsequent calls to get pricing rules.</p>
-    /// - On failure, responds with [`SdkError<ListPricingRulesError>`](crate::operation::list_pricing_rules::ListPricingRulesError)
+                            /// - On failure, responds with [`SdkError<ListPricingRulesError>`](crate::operation::list_pricing_rules::ListPricingRulesError)
     pub fn list_pricing_rules(&self) -> crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder {
-        crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pricing_rules::builders::ListPricingRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

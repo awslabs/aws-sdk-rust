@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIndexTypeOutput {
+pub struct UpdateIndexTypeOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of the specified index after the operation completes.</p>
@@ -13,29 +13,29 @@ pub struct UpdateIndexTypeOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateIndexTypeOutput {
+impl  UpdateIndexTypeOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies the type of the specified index after the operation completes.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::IndexType> {
         self.r#type.as_ref()
     }
     /// <p>Indicates the state of the request to update the index. This operation is asynchronous. Call the <code>GetIndex</code> operation to check for changes.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::IndexState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::IndexState> {
         self.state.as_ref()
     }
     /// <p>The date and timestamp when the index was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateIndexTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateIndexTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIndexTypeOutput`](crate::operation::update_index_type::UpdateIndexTypeOutput).
     pub fn builder() -> crate::operation::update_index_type::builders::UpdateIndexTypeOutputBuilder {
@@ -61,8 +61,7 @@ impl UpdateIndexTypeOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you updated.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdateIndexTypeOutputBuilder {
     }
     /// <p>Specifies the type of the specified index after the operation completes.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the type of the specified index after the operation completes.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
@@ -89,8 +87,7 @@ impl UpdateIndexTypeOutputBuilder {
     }
     /// <p>Indicates the state of the request to update the index. This operation is asynchronous. Call the <code>GetIndex</code> operation to check for changes.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IndexState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates the state of the request to update the index. This operation is asynchronous. Call the <code>GetIndex</code> operation to check for changes.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IndexState> {
@@ -103,30 +100,34 @@ impl UpdateIndexTypeOutputBuilder {
     }
     /// <p>The date and timestamp when the index was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and timestamp when the index was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateIndexTypeOutput`](crate::operation::update_index_type::UpdateIndexTypeOutput).
     pub fn build(self) -> crate::operation::update_index_type::UpdateIndexTypeOutput {
         crate::operation::update_index_type::UpdateIndexTypeOutput {
-            arn: self.arn,
-            r#type: self.r#type,
-            state: self.state,
-            last_updated_at: self.last_updated_at,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
+            last_updated_at: self.last_updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

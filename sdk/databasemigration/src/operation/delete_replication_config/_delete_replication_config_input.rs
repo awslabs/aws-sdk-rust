@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicationConfigInput {
+pub struct DeleteReplicationConfigInput  {
     /// <p>The replication config to delete.</p>
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReplicationConfigInput {
+impl  DeleteReplicationConfigInput  {
     /// <p>The replication config to delete.</p>
-    pub fn replication_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_config_arn(&self) -> ::std::option::Option<& str> {
         self.replication_config_arn.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteReplicationConfigInputBuilder {
     }
     /// <p>The replication config to delete.</p>
     pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_config_arn = input;
-        self
+        self.replication_config_arn = input; self
     }
     /// <p>The replication config to delete.</p>
     pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_config_arn
     }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigInput`](crate::operation::delete_replication_config::DeleteReplicationConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_replication_config::DeleteReplicationConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_replication_config::DeleteReplicationConfigInput {
-            replication_config_arn: self.replication_config_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_config::DeleteReplicationConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_replication_config::DeleteReplicationConfigInput {
+                replication_config_arn: self.replication_config_arn
+                ,
+            }
+        )
     }
 }
+

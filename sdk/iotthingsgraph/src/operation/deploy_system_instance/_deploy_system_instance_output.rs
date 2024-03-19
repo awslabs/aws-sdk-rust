@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploySystemInstanceOutput {
+pub struct DeploySystemInstanceOutput  {
     /// <p>An object that contains summary information about a system instance that was deployed.</p>
     pub summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
     pub greengrass_deployment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeploySystemInstanceOutput {
+impl  DeploySystemInstanceOutput  {
     /// <p>An object that contains summary information about a system instance that was deployed.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::SystemInstanceSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::SystemInstanceSummary> {
         self.summary.as_ref()
     }
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
-    pub fn greengrass_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn greengrass_deployment_id(&self) -> ::std::option::Option<& str> {
         self.greengrass_deployment_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeploySystemInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeploySystemInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeploySystemInstanceOutput`](crate::operation::deploy_system_instance::DeploySystemInstanceOutput).
     pub fn builder() -> crate::operation::deploy_system_instance::builders::DeploySystemInstanceOutputBuilder {
@@ -48,8 +48,7 @@ impl DeploySystemInstanceOutputBuilder {
     }
     /// <p>An object that contains summary information about a system instance that was deployed.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SystemInstanceSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>An object that contains summary information about a system instance that was deployed.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemInstanceSummary> {
@@ -62,28 +61,30 @@ impl DeploySystemInstanceOutputBuilder {
     }
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
     pub fn set_greengrass_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.greengrass_deployment_id = input;
-        self
+        self.greengrass_deployment_id = input; self
     }
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
     pub fn get_greengrass_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.greengrass_deployment_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeploySystemInstanceOutput`](crate::operation::deploy_system_instance::DeploySystemInstanceOutput).
     pub fn build(self) -> crate::operation::deploy_system_instance::DeploySystemInstanceOutput {
         crate::operation::deploy_system_instance::DeploySystemInstanceOutput {
-            summary: self.summary,
-            greengrass_deployment_id: self.greengrass_deployment_id,
+            summary: self.summary
+            ,
+            greengrass_deployment_id: self.greengrass_deployment_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

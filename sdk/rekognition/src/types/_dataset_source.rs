@@ -5,19 +5,19 @@
 /// <p>For more information, see <code>CreateDataset</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetSource {
+pub struct DatasetSource  {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.</p>
     pub ground_truth_manifest: ::std::option::Option<crate::types::GroundTruthManifest>,
     /// <p>The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
 }
-impl DatasetSource {
+impl  DatasetSource  {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.</p>
-    pub fn ground_truth_manifest(&self) -> ::std::option::Option<&crate::types::GroundTruthManifest> {
+    pub fn ground_truth_manifest(&self) -> ::std::option::Option<& crate::types::GroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
     /// <p>The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DatasetSourceBuilder {
     }
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.</p>
     pub fn set_ground_truth_manifest(mut self, input: ::std::option::Option<crate::types::GroundTruthManifest>) -> Self {
-        self.ground_truth_manifest = input;
-        self
+        self.ground_truth_manifest = input; self
     }
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.</p>
     pub fn get_ground_truth_manifest(&self) -> &::std::option::Option<crate::types::GroundTruthManifest> {
@@ -57,8 +56,7 @@ impl DatasetSourceBuilder {
     }
     /// <p>The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl DatasetSourceBuilder {
     /// Consumes the builder and constructs a [`DatasetSource`](crate::types::DatasetSource).
     pub fn build(self) -> crate::types::DatasetSource {
         crate::types::DatasetSource {
-            ground_truth_manifest: self.ground_truth_manifest,
-            dataset_arn: self.dataset_arn,
+            ground_truth_manifest: self.ground_truth_manifest
+            ,
+            dataset_arn: self.dataset_arn
+            ,
         }
     }
 }
+

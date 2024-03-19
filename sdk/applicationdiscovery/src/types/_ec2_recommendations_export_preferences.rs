@@ -3,7 +3,7 @@
 /// <p>Indicates that the exported data must include EC2 instance type matches for on-premises servers that are discovered through Amazon Web Services Application Discovery Service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2RecommendationsExportPreferences {
+pub struct Ec2RecommendationsExportPreferences  {
     /// <p>If set to true, the export <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestSyntax">preferences</a> is set to <code>Ec2RecommendationsExportPreferences</code>.</p>
     pub enabled: bool,
     /// <p>The recommended EC2 instance type that matches the CPU usage metric of server performance data.</p>
@@ -13,41 +13,42 @@ pub struct Ec2RecommendationsExportPreferences {
     /// <p>The target tenancy to use for your recommended EC2 instances.</p>
     pub tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>An array of instance types to exclude from recommendations.</p>
-    pub excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub excluded_instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub preferred_region: ::std::option::Option<::std::string::String>,
     /// <p>The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred.</p>
     pub reserved_instance_options: ::std::option::Option<crate::types::ReservedInstanceOptions>,
 }
-impl Ec2RecommendationsExportPreferences {
+impl  Ec2RecommendationsExportPreferences  {
     /// <p>If set to true, the export <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestSyntax">preferences</a> is set to <code>Ec2RecommendationsExportPreferences</code>.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The recommended EC2 instance type that matches the CPU usage metric of server performance data.</p>
-    pub fn cpu_performance_metric_basis(&self) -> ::std::option::Option<&crate::types::UsageMetricBasis> {
+    pub fn cpu_performance_metric_basis(&self) -> ::std::option::Option<& crate::types::UsageMetricBasis> {
         self.cpu_performance_metric_basis.as_ref()
     }
     /// <p>The recommended EC2 instance type that matches the Memory usage metric of server performance data.</p>
-    pub fn ram_performance_metric_basis(&self) -> ::std::option::Option<&crate::types::UsageMetricBasis> {
+    pub fn ram_performance_metric_basis(&self) -> ::std::option::Option<& crate::types::UsageMetricBasis> {
         self.ram_performance_metric_basis.as_ref()
     }
     /// <p>The target tenancy to use for your recommended EC2 instances.</p>
-    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::Tenancy> {
+    pub fn tenancy(&self) -> ::std::option::Option<& crate::types::Tenancy> {
         self.tenancy.as_ref()
     }
     /// <p>An array of instance types to exclude from recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_instance_types.is_none()`.
-    pub fn excluded_instance_types(&self) -> &[::std::string::String] {
-        self.excluded_instance_types.as_deref().unwrap_or_default()
+    pub fn excluded_instance_types(&self) -> & [::std::string::String] {
+        self.excluded_instance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn preferred_region(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_region(&self) -> ::std::option::Option<& str> {
         self.preferred_region.as_deref()
     }
     /// <p>The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred.</p>
-    pub fn reserved_instance_options(&self) -> ::std::option::Option<&crate::types::ReservedInstanceOptions> {
+    pub fn reserved_instance_options(&self) -> ::std::option::Option<& crate::types::ReservedInstanceOptions> {
         self.reserved_instance_options.as_ref()
     }
 }
@@ -66,7 +67,7 @@ pub struct Ec2RecommendationsExportPreferencesBuilder {
     pub(crate) cpu_performance_metric_basis: ::std::option::Option<crate::types::UsageMetricBasis>,
     pub(crate) ram_performance_metric_basis: ::std::option::Option<crate::types::UsageMetricBasis>,
     pub(crate) tenancy: ::std::option::Option<crate::types::Tenancy>,
-    pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) preferred_region: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_instance_options: ::std::option::Option<crate::types::ReservedInstanceOptions>,
 }
@@ -78,8 +79,7 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     }
     /// <p>If set to true, the export <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestSyntax">preferences</a> is set to <code>Ec2RecommendationsExportPreferences</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>If set to true, the export <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestSyntax">preferences</a> is set to <code>Ec2RecommendationsExportPreferences</code>.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -92,8 +92,7 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     }
     /// <p>The recommended EC2 instance type that matches the CPU usage metric of server performance data.</p>
     pub fn set_cpu_performance_metric_basis(mut self, input: ::std::option::Option<crate::types::UsageMetricBasis>) -> Self {
-        self.cpu_performance_metric_basis = input;
-        self
+        self.cpu_performance_metric_basis = input; self
     }
     /// <p>The recommended EC2 instance type that matches the CPU usage metric of server performance data.</p>
     pub fn get_cpu_performance_metric_basis(&self) -> &::std::option::Option<crate::types::UsageMetricBasis> {
@@ -106,8 +105,7 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     }
     /// <p>The recommended EC2 instance type that matches the Memory usage metric of server performance data.</p>
     pub fn set_ram_performance_metric_basis(mut self, input: ::std::option::Option<crate::types::UsageMetricBasis>) -> Self {
-        self.ram_performance_metric_basis = input;
-        self
+        self.ram_performance_metric_basis = input; self
     }
     /// <p>The recommended EC2 instance type that matches the Memory usage metric of server performance data.</p>
     pub fn get_ram_performance_metric_basis(&self) -> &::std::option::Option<crate::types::UsageMetricBasis> {
@@ -120,8 +118,7 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     }
     /// <p>The target tenancy to use for your recommended EC2 instances.</p>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
-        self.tenancy = input;
-        self
+        self.tenancy = input; self
     }
     /// <p>The target tenancy to use for your recommended EC2 instances.</p>
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
@@ -134,17 +131,16 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     /// <p>An array of instance types to exclude from recommendations.</p>
     pub fn excluded_instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_instance_types.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of instance types to exclude from recommendations.</p>
-    pub fn set_excluded_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.excluded_instance_types = input;
-        self
+    pub fn set_excluded_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.excluded_instance_types = input; self
     }
     /// <p>An array of instance types to exclude from recommendations.</p>
-    pub fn get_excluded_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.excluded_instance_types
     }
     /// <p>The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -154,8 +150,7 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     }
     /// <p>The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_preferred_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_region = input;
-        self
+        self.preferred_region = input; self
     }
     /// <p>The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_preferred_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +163,7 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     }
     /// <p>The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred.</p>
     pub fn set_reserved_instance_options(mut self, input: ::std::option::Option<crate::types::ReservedInstanceOptions>) -> Self {
-        self.reserved_instance_options = input;
-        self
+        self.reserved_instance_options = input; self
     }
     /// <p>The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred.</p>
     pub fn get_reserved_instance_options(&self) -> &::std::option::Option<crate::types::ReservedInstanceOptions> {
@@ -178,13 +172,22 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     /// Consumes the builder and constructs a [`Ec2RecommendationsExportPreferences`](crate::types::Ec2RecommendationsExportPreferences).
     pub fn build(self) -> crate::types::Ec2RecommendationsExportPreferences {
         crate::types::Ec2RecommendationsExportPreferences {
-            enabled: self.enabled.unwrap_or_default(),
-            cpu_performance_metric_basis: self.cpu_performance_metric_basis,
-            ram_performance_metric_basis: self.ram_performance_metric_basis,
-            tenancy: self.tenancy,
-            excluded_instance_types: self.excluded_instance_types,
-            preferred_region: self.preferred_region,
-            reserved_instance_options: self.reserved_instance_options,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            cpu_performance_metric_basis: self.cpu_performance_metric_basis
+            ,
+            ram_performance_metric_basis: self.ram_performance_metric_basis
+            ,
+            tenancy: self.tenancy
+            ,
+            excluded_instance_types: self.excluded_instance_types
+            ,
+            preferred_region: self.preferred_region
+            ,
+            reserved_instance_options: self.reserved_instance_options
+            ,
         }
     }
 }
+

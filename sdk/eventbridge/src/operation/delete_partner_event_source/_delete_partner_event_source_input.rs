@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePartnerEventSourceInput {
+pub struct DeletePartnerEventSourceInput  {
     /// <p>The name of the event source to delete.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     pub account: ::std::option::Option<::std::string::String>,
 }
-impl DeletePartnerEventSourceInput {
+impl  DeletePartnerEventSourceInput  {
     /// <p>The name of the event source to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeletePartnerEventSourceInputBuilder {
     }
     /// <p>The name of the event source to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event source to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeletePartnerEventSourceInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
     /// Consumes the builder and constructs a [`DeletePartnerEventSourceInput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput {
-            name: self.name,
-            account: self.account,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_partner_event_source::DeletePartnerEventSourceInput {
+                name: self.name
+                ,
+                account: self.account
+                ,
+            }
+        )
     }
 }
+

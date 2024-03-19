@@ -3,15 +3,15 @@
 /// <p>The endpoint from which data should be migrated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomerNodeEndpoint {
+pub struct CustomerNodeEndpoint  {
     /// <p>The address of the node endpoint</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port of the node endpoint</p>
     pub port: ::std::option::Option<i32>,
 }
-impl CustomerNodeEndpoint {
+impl  CustomerNodeEndpoint  {
     /// <p>The address of the node endpoint</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The port of the node endpoint</p>
@@ -41,8 +41,7 @@ impl CustomerNodeEndpointBuilder {
     }
     /// <p>The address of the node endpoint</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The address of the node endpoint</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CustomerNodeEndpointBuilder {
     }
     /// <p>The port of the node endpoint</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port of the node endpoint</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl CustomerNodeEndpointBuilder {
     /// Consumes the builder and constructs a [`CustomerNodeEndpoint`](crate::types::CustomerNodeEndpoint).
     pub fn build(self) -> crate::types::CustomerNodeEndpoint {
         crate::types::CustomerNodeEndpoint {
-            address: self.address,
-            port: self.port,
+            address: self.address
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFileSystemInput {
+pub struct UpdateFileSystemInput  {
     /// <p>The ID of the file system that you want to update.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
@@ -10,13 +10,13 @@ pub struct UpdateFileSystemInput {
     /// <p>(Optional) The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub provisioned_throughput_in_mibps: ::std::option::Option<f64>,
 }
-impl UpdateFileSystemInput {
+impl  UpdateFileSystemInput  {
     /// <p>The ID of the file system that you want to update.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
-    pub fn throughput_mode(&self) -> ::std::option::Option<&crate::types::ThroughputMode> {
+    pub fn throughput_mode(&self) -> ::std::option::Option<& crate::types::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
     /// <p>(Optional) The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
@@ -48,8 +48,7 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>The ID of the file system that you want to update.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system that you want to update.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
     pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
-        self.throughput_mode = input;
-        self
+        self.throughput_mode = input; self
     }
     /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
     pub fn get_throughput_mode(&self) -> &::std::option::Option<crate::types::ThroughputMode> {
@@ -76,21 +74,24 @@ impl UpdateFileSystemInputBuilder {
     }
     /// <p>(Optional) The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn set_provisioned_throughput_in_mibps(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.provisioned_throughput_in_mibps = input;
-        self
+        self.provisioned_throughput_in_mibps = input; self
     }
     /// <p>(Optional) The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn get_provisioned_throughput_in_mibps(&self) -> &::std::option::Option<f64> {
         &self.provisioned_throughput_in_mibps
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_file_system::UpdateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_file_system::UpdateFileSystemInput {
-            file_system_id: self.file_system_id,
-            throughput_mode: self.throughput_mode,
-            provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_file_system::UpdateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_file_system::UpdateFileSystemInput {
+                file_system_id: self.file_system_id
+                ,
+                throughput_mode: self.throughput_mode
+                ,
+                provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps
+                ,
+            }
+        )
     }
 }
+

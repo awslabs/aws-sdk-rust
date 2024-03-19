@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartExperimentInput {
+pub struct StartExperimentInput  {
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to start.</p>
@@ -10,17 +10,17 @@ pub struct StartExperimentInput {
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
     pub analysis_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl StartExperimentInput {
+impl  StartExperimentInput  {
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the experiment to start.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&str> {
+    pub fn experiment(&self) -> ::std::option::Option<& str> {
         self.experiment.as_deref()
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
-    pub fn analysis_complete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn analysis_complete_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.analysis_complete_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl StartExperimentInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl StartExperimentInputBuilder {
     }
     /// <p>The name of the experiment to start.</p>
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment = input;
-        self
+        self.experiment = input; self
     }
     /// <p>The name of the experiment to start.</p>
     pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl StartExperimentInputBuilder {
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
     pub fn set_analysis_complete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.analysis_complete_time = input;
-        self
+        self.analysis_complete_time = input; self
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
     pub fn get_analysis_complete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.analysis_complete_time
     }
     /// Consumes the builder and constructs a [`StartExperimentInput`](crate::operation::start_experiment::StartExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_experiment::StartExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_experiment::StartExperimentInput {
-            project: self.project,
-            experiment: self.experiment,
-            analysis_complete_time: self.analysis_complete_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_experiment::StartExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_experiment::StartExperimentInput {
+                project: self.project
+                ,
+                experiment: self.experiment
+                ,
+                analysis_complete_time: self.analysis_complete_time
+                ,
+            }
+        )
     }
 }
+

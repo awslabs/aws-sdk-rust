@@ -3,19 +3,19 @@
 /// <p>The SMS text message multi-factor authentication (MFA) configuration type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SmsMfaConfigType {
+pub struct SmsMfaConfigType  {
     /// <p>The SMS authentication message that will be sent to users with the code they must sign in. The message must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default message will be used.</p>
     pub sms_authentication_message: ::std::option::Option<::std::string::String>,
     /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
     pub sms_configuration: ::std::option::Option<crate::types::SmsConfigurationType>,
 }
-impl SmsMfaConfigType {
+impl  SmsMfaConfigType  {
     /// <p>The SMS authentication message that will be sent to users with the code they must sign in. The message must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default message will be used.</p>
-    pub fn sms_authentication_message(&self) -> ::std::option::Option<&str> {
+    pub fn sms_authentication_message(&self) -> ::std::option::Option<& str> {
         self.sms_authentication_message.as_deref()
     }
     /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
-    pub fn sms_configuration(&self) -> ::std::option::Option<&crate::types::SmsConfigurationType> {
+    pub fn sms_configuration(&self) -> ::std::option::Option<& crate::types::SmsConfigurationType> {
         self.sms_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SmsMfaConfigTypeBuilder {
     }
     /// <p>The SMS authentication message that will be sent to users with the code they must sign in. The message must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default message will be used.</p>
     pub fn set_sms_authentication_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sms_authentication_message = input;
-        self
+        self.sms_authentication_message = input; self
     }
     /// <p>The SMS authentication message that will be sent to users with the code they must sign in. The message must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default message will be used.</p>
     pub fn get_sms_authentication_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SmsMfaConfigTypeBuilder {
     }
     /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
     pub fn set_sms_configuration(mut self, input: ::std::option::Option<crate::types::SmsConfigurationType>) -> Self {
-        self.sms_configuration = input;
-        self
+        self.sms_configuration = input; self
     }
     /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
     pub fn get_sms_configuration(&self) -> &::std::option::Option<crate::types::SmsConfigurationType> {
@@ -65,8 +63,11 @@ impl SmsMfaConfigTypeBuilder {
     /// Consumes the builder and constructs a [`SmsMfaConfigType`](crate::types::SmsMfaConfigType).
     pub fn build(self) -> crate::types::SmsMfaConfigType {
         crate::types::SmsMfaConfigType {
-            sms_authentication_message: self.sms_authentication_message,
-            sms_configuration: self.sms_configuration,
+            sms_authentication_message: self.sms_authentication_message
+            ,
+            sms_configuration: self.sms_configuration
+            ,
         }
     }
 }
+

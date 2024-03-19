@@ -3,7 +3,7 @@
 /// <p>A configured table association links a configured table to a collaboration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfiguredTableAssociation {
+pub struct ConfiguredTableAssociation  {
     /// <p>The unique ARN for the configured table association.</p>
     pub arn: ::std::string::String,
     /// <p>The unique ID for the configured table association.</p>
@@ -27,57 +27,49 @@ pub struct ConfiguredTableAssociation {
     /// <p>The time the configured table association was last updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
-impl ConfiguredTableAssociation {
+impl  ConfiguredTableAssociation  {
     /// <p>The unique ARN for the configured table association.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The unique ID for the configured table association.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The unique ID for the configured table that the association refers to.</p>
-    pub fn configured_table_id(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_table_id.deref()
+    pub fn configured_table_id(&self) -> & str {
+        use std::ops::Deref; self.configured_table_id.deref()
     }
     /// <p>The unique ARN for the configured table that the association refers to.</p>
-    pub fn configured_table_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_table_arn.deref()
+    pub fn configured_table_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_table_arn.deref()
     }
     /// <p>The unique ID for the membership this configured table association belongs to.</p>
-    pub fn membership_id(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_id.deref()
+    pub fn membership_id(&self) -> & str {
+        use std::ops::Deref; self.membership_id.deref()
     }
     /// <p>The unique ARN for the membership this configured table association belongs to.</p>
-    pub fn membership_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_arn.deref()
+    pub fn membership_arn(&self) -> & str {
+        use std::ops::Deref; self.membership_arn.deref()
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The name of the configured table association, in lowercase. The table is identified by this name when running protected queries against the underlying data.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description of the configured table association.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time the configured table association was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The time the configured table association was last updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
@@ -113,8 +105,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The unique ARN for the configured table association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique ARN for the configured table association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +119,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The unique ID for the configured table association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID for the configured table association.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +133,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The unique ID for the configured table that the association refers to.</p>
     pub fn set_configured_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_table_id = input;
-        self
+        self.configured_table_id = input; self
     }
     /// <p>The unique ID for the configured table that the association refers to.</p>
     pub fn get_configured_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +147,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The unique ARN for the configured table that the association refers to.</p>
     pub fn set_configured_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_table_arn = input;
-        self
+        self.configured_table_arn = input; self
     }
     /// <p>The unique ARN for the configured table that the association refers to.</p>
     pub fn get_configured_table_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +161,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The unique ID for the membership this configured table association belongs to.</p>
     pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// <p>The unique ID for the membership this configured table association belongs to.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +175,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The unique ARN for the membership this configured table association belongs to.</p>
     pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_arn = input;
-        self
+        self.membership_arn = input; self
     }
     /// <p>The unique ARN for the membership this configured table association belongs to.</p>
     pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +189,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +203,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The name of the configured table association, in lowercase. The table is identified by this name when running protected queries against the underlying data.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configured table association, in lowercase. The table is identified by this name when running protected queries against the underlying data.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +216,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>A description of the configured table association.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the configured table association.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +230,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The time the configured table association was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time the configured table association was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -262,8 +244,7 @@ impl ConfiguredTableAssociationBuilder {
     }
     /// <p>The time the configured table association was last updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The time the configured table association was last updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -282,68 +263,62 @@ impl ConfiguredTableAssociationBuilder {
     /// - [`create_time`](crate::types::builders::ConfiguredTableAssociationBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ConfiguredTableAssociationBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableAssociation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfiguredTableAssociation {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            configured_table_id: self.configured_table_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_table_id",
-                    "configured_table_id was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            configured_table_arn: self.configured_table_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_table_arn",
-                    "configured_table_arn was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_id",
-                    "membership_id was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_arn",
-                    "membership_arn was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            description: self.description,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building ConfiguredTableAssociation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfiguredTableAssociation {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                configured_table_id: self.configured_table_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_table_id", "configured_table_id was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                configured_table_arn: self.configured_table_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_table_arn", "configured_table_arn was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                membership_id: self.membership_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_id", "membership_id was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                membership_arn: self.membership_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_arn", "membership_arn was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                description: self.description
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building ConfiguredTableAssociation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

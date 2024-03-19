@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the specified service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Service {
+pub struct Service  {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
@@ -54,25 +54,25 @@ pub struct Service {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
-impl Service {
+impl  Service  {
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the namespace that was used to create the service.</p>
-    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_id(&self) -> ::std::option::Option<& str> {
         self.namespace_id.as_deref()
     }
     /// <p>The description of the service.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
@@ -82,7 +82,7 @@ impl Service {
     /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p><important>
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
     /// </important>
-    pub fn dns_config(&self) -> ::std::option::Option<&crate::types::DnsConfig> {
+    pub fn dns_config(&self) -> ::std::option::Option<& crate::types::DnsConfig> {
         self.dns_config.as_ref()
     }
     /// <p>Describes the systems that can be used to discover the service instances.</p>
@@ -106,26 +106,26 @@ impl Service {
     /// <p>Reserved.</p>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.r#type.as_ref()
     }
     /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
-    pub fn health_check_config(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
+    pub fn health_check_config(&self) -> ::std::option::Option<& crate::types::HealthCheckConfig> {
         self.health_check_config.as_ref()
     }
     /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
-    pub fn health_check_custom_config(&self) -> ::std::option::Option<&crate::types::HealthCheckCustomConfig> {
+    pub fn health_check_custom_config(&self) -> ::std::option::Option<& crate::types::HealthCheckCustomConfig> {
         self.health_check_custom_config.as_ref()
     }
     /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
 }
@@ -161,8 +161,7 @@ impl ServiceBuilder {
     }
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +174,7 @@ impl ServiceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +187,7 @@ impl ServiceBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +200,7 @@ impl ServiceBuilder {
     }
     /// <p>The ID of the namespace that was used to create the service.</p>
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_id = input;
-        self
+        self.namespace_id = input; self
     }
     /// <p>The ID of the namespace that was used to create the service.</p>
     pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +213,7 @@ impl ServiceBuilder {
     }
     /// <p>The description of the service.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the service.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +226,7 @@ impl ServiceBuilder {
     }
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -249,8 +243,7 @@ impl ServiceBuilder {
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
     /// </important>
     pub fn set_dns_config(mut self, input: ::std::option::Option<crate::types::DnsConfig>) -> Self {
-        self.dns_config = input;
-        self
+        self.dns_config = input; self
     }
     /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p><important>
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
@@ -305,8 +298,7 @@ impl ServiceBuilder {
     /// </dd>
     /// </dl>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Describes the systems that can be used to discover the service instances.</p>
     /// <dl>
@@ -341,8 +333,7 @@ impl ServiceBuilder {
     /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
     pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
-        self.health_check_config = input;
-        self
+        self.health_check_config = input; self
     }
     /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
@@ -360,8 +351,7 @@ impl ServiceBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn set_health_check_custom_config(mut self, input: ::std::option::Option<crate::types::HealthCheckCustomConfig>) -> Self {
-        self.health_check_custom_config = input;
-        self
+        self.health_check_custom_config = input; self
     }
     /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
@@ -376,8 +366,7 @@ impl ServiceBuilder {
     }
     /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -390,8 +379,7 @@ impl ServiceBuilder {
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,18 +388,31 @@ impl ServiceBuilder {
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {
         crate::types::Service {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            namespace_id: self.namespace_id,
-            description: self.description,
-            instance_count: self.instance_count,
-            dns_config: self.dns_config,
-            r#type: self.r#type,
-            health_check_config: self.health_check_config,
-            health_check_custom_config: self.health_check_custom_config,
-            create_date: self.create_date,
-            creator_request_id: self.creator_request_id,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            namespace_id: self.namespace_id
+            ,
+            description: self.description
+            ,
+            instance_count: self.instance_count
+            ,
+            dns_config: self.dns_config
+            ,
+            r#type: self.r#type
+            ,
+            health_check_config: self.health_check_config
+            ,
+            health_check_custom_config: self.health_check_custom_config
+            ,
+            create_date: self.create_date
+            ,
+            creator_request_id: self.creator_request_id
+            ,
         }
     }
 }
+

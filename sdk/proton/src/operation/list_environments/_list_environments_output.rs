@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnvironmentsOutput {
+pub struct ListEnvironmentsOutput  {
     /// <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment detail data summaries.</p>
-    pub environments: ::std::vec::Vec<crate::types::EnvironmentSummary>,
+    pub environments: ::std::vec::Vec::<crate::types::EnvironmentSummary>,
     _request_id: Option<String>,
 }
-impl ListEnvironmentsOutput {
+impl  ListEnvironmentsOutput  {
     /// <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of environment detail data summaries.</p>
-    pub fn environments(&self) -> &[crate::types::EnvironmentSummary] {
-        use std::ops::Deref;
-        self.environments.deref()
+    pub fn environments(&self) -> & [crate::types::EnvironmentSummary] {
+        use std::ops::Deref; self.environments.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEnvironmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
     pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListEnvironmentsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
+    pub(crate) environments: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentSummary>>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListEnvironmentsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListEnvironmentsOutputBuilder {
     /// <p>An array of environment detail data summaries.</p>
     pub fn environments(mut self, input: crate::types::EnvironmentSummary) -> Self {
         let mut v = self.environments.unwrap_or_default();
-        v.push(input);
-        self.environments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.environments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of environment detail data summaries.</p>
-    pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>) -> Self {
-        self.environments = input;
-        self
+    pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentSummary>>) -> Self {
+        self.environments = input; self
     }
     /// <p>An array of environment detail data summaries.</p>
-    pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
+    pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentSummary>> {
         &self.environments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`environments`](crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::environments)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsOutput {
-            next_token: self.next_token,
-            environments: self.environments.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environments",
-                    "environments was not specified but it is required when building ListEnvironmentsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_environments::ListEnvironmentsOutput {
+                next_token: self.next_token
+                ,
+                environments: self.environments
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environments", "environments was not specified but it is required when building ListEnvironmentsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

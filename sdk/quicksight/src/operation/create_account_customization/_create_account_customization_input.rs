@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccountCustomizationInput {
+pub struct CreateAccountCustomizationInput  {
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
@@ -11,27 +11,28 @@ pub struct CreateAccountCustomizationInput {
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
     /// <p>A list of the tags that you want to attach to this resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateAccountCustomizationInput {
+impl  CreateAccountCustomizationInput  {
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
-    pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
+    pub fn account_customization(&self) -> ::std::option::Option<& crate::types::AccountCustomization> {
         self.account_customization.as_ref()
     }
     /// <p>A list of the tags that you want to attach to this resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAccountCustomizationInput {
@@ -48,7 +49,7 @@ pub struct CreateAccountCustomizationInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) account_customization: ::std::option::Option<crate::types::AccountCustomization>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateAccountCustomizationInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
@@ -59,8 +60,7 @@ impl CreateAccountCustomizationInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +73,7 @@ impl CreateAccountCustomizationInputBuilder {
     }
     /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl CreateAccountCustomizationInputBuilder {
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
     pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
-        self.account_customization = input;
-        self
+        self.account_customization = input; self
     }
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add these to an Amazon Web Services account and a QuickSight namespace.</p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.</p>
@@ -105,31 +103,32 @@ impl CreateAccountCustomizationInputBuilder {
     /// <p>A list of the tags that you want to attach to this resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the tags that you want to attach to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of the tags that you want to attach to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAccountCustomizationInput`](crate::operation::create_account_customization::CreateAccountCustomizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_account_customization::CreateAccountCustomizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_account_customization::CreateAccountCustomizationInput {
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-            account_customization: self.account_customization,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_account_customization::CreateAccountCustomizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_account_customization::CreateAccountCustomizationInput {
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+                account_customization: self.account_customization
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendationResourcesInput {
+pub struct ListRecommendationResourcesInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -14,9 +14,9 @@ pub struct ListRecommendationResourcesInput {
     /// <p>The Recommendation identifier</p>
     pub recommendation_identifier: ::std::option::Option<::std::string::String>,
 }
-impl ListRecommendationResourcesInput {
+impl  ListRecommendationResourcesInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -24,15 +24,15 @@ impl ListRecommendationResourcesInput {
         self.max_results
     }
     /// <p>The status of the resource</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The AWS Region code of the resource</p>
-    pub fn region_code(&self) -> ::std::option::Option<&str> {
+    pub fn region_code(&self) -> ::std::option::Option<& str> {
         self.region_code.as_deref()
     }
     /// <p>The Recommendation identifier</p>
-    pub fn recommendation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_identifier(&self) -> ::std::option::Option<& str> {
         self.recommendation_identifier.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl ListRecommendationResourcesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ListRecommendationResourcesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -89,8 +87,7 @@ impl ListRecommendationResourcesInputBuilder {
     }
     /// <p>The status of the resource</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the resource</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -103,8 +100,7 @@ impl ListRecommendationResourcesInputBuilder {
     }
     /// <p>The AWS Region code of the resource</p>
     pub fn set_region_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_code = input;
-        self
+        self.region_code = input; self
     }
     /// <p>The AWS Region code of the resource</p>
     pub fn get_region_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,26 +114,28 @@ impl ListRecommendationResourcesInputBuilder {
     }
     /// <p>The Recommendation identifier</p>
     pub fn set_recommendation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_identifier = input;
-        self
+        self.recommendation_identifier = input; self
     }
     /// <p>The Recommendation identifier</p>
     pub fn get_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_identifier
     }
     /// Consumes the builder and constructs a [`ListRecommendationResourcesInput`](crate::operation::list_recommendation_resources::ListRecommendationResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recommendation_resources::ListRecommendationResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_recommendation_resources::ListRecommendationResourcesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            status: self.status,
-            region_code: self.region_code,
-            recommendation_identifier: self.recommendation_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recommendation_resources::ListRecommendationResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_recommendation_resources::ListRecommendationResourcesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+                region_code: self.region_code
+                ,
+                recommendation_identifier: self.recommendation_identifier
+                ,
+            }
+        )
     }
 }
+

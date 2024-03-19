@@ -3,19 +3,19 @@
 /// <p>A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryAnalysis {
+pub struct RepositoryAnalysis  {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     pub repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
 }
-impl RepositoryAnalysis {
+impl  RepositoryAnalysis  {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    pub fn repository_head(&self) -> ::std::option::Option<&crate::types::RepositoryHeadSourceCodeType> {
+    pub fn repository_head(&self) -> ::std::option::Option<& crate::types::RepositoryHeadSourceCodeType> {
         self.repository_head.as_ref()
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    pub fn source_code_type(&self) -> ::std::option::Option<&crate::types::SourceCodeType> {
+    pub fn source_code_type(&self) -> ::std::option::Option<& crate::types::SourceCodeType> {
         self.source_code_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RepositoryAnalysisBuilder {
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     pub fn set_repository_head(mut self, input: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>) -> Self {
-        self.repository_head = input;
-        self
+        self.repository_head = input; self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     pub fn get_repository_head(&self) -> &::std::option::Option<crate::types::RepositoryHeadSourceCodeType> {
@@ -55,8 +54,7 @@ impl RepositoryAnalysisBuilder {
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn set_source_code_type(mut self, input: ::std::option::Option<crate::types::SourceCodeType>) -> Self {
-        self.source_code_type = input;
-        self
+        self.source_code_type = input; self
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn get_source_code_type(&self) -> &::std::option::Option<crate::types::SourceCodeType> {
@@ -65,8 +63,11 @@ impl RepositoryAnalysisBuilder {
     /// Consumes the builder and constructs a [`RepositoryAnalysis`](crate::types::RepositoryAnalysis).
     pub fn build(self) -> crate::types::RepositoryAnalysis {
         crate::types::RepositoryAnalysis {
-            repository_head: self.repository_head,
-            source_code_type: self.source_code_type,
+            repository_head: self.repository_head
+            ,
+            source_code_type: self.source_code_type
+            ,
         }
     }
 }
+

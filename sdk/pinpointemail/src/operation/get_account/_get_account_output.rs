@@ -3,7 +3,7 @@
 /// <p>A list of details about the email-sending capabilities of your Amazon Pinpoint account in the current AWS Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccountOutput {
+pub struct GetAccountOutput  {
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
     pub send_quota: ::std::option::Option<crate::types::SendQuota>,
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
@@ -26,9 +26,9 @@ pub struct GetAccountOutput {
     pub production_access_enabled: bool,
     _request_id: Option<String>,
 }
-impl GetAccountOutput {
+impl  GetAccountOutput  {
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
-    pub fn send_quota(&self) -> ::std::option::Option<&crate::types::SendQuota> {
+    pub fn send_quota(&self) -> ::std::option::Option<& crate::types::SendQuota> {
         self.send_quota.as_ref()
     }
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
@@ -48,7 +48,7 @@ impl GetAccountOutput {
     /// <li>
     /// <p><code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p></li>
     /// </ul>
-    pub fn enforcement_status(&self) -> ::std::option::Option<&str> {
+    pub fn enforcement_status(&self) -> ::std::option::Option<& str> {
         self.enforcement_status.as_deref()
     }
     /// <p>Indicates whether or not your account has production access in the current AWS Region.</p>
@@ -59,10 +59,10 @@ impl GetAccountOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountOutput`](crate::operation::get_account::GetAccountOutput).
     pub fn builder() -> crate::operation::get_account::builders::GetAccountOutputBuilder {
@@ -89,8 +89,7 @@ impl GetAccountOutputBuilder {
     }
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
     pub fn set_send_quota(mut self, input: ::std::option::Option<crate::types::SendQuota>) -> Self {
-        self.send_quota = input;
-        self
+        self.send_quota = input; self
     }
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
     pub fn get_send_quota(&self) -> &::std::option::Option<crate::types::SendQuota> {
@@ -103,8 +102,7 @@ impl GetAccountOutputBuilder {
     }
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sending_enabled = input;
-        self
+        self.sending_enabled = input; self
     }
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
     pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
@@ -117,8 +115,7 @@ impl GetAccountOutputBuilder {
     }
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
     pub fn set_dedicated_ip_auto_warmup_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dedicated_ip_auto_warmup_enabled = input;
-        self
+        self.dedicated_ip_auto_warmup_enabled = input; self
     }
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
     pub fn get_dedicated_ip_auto_warmup_enabled(&self) -> &::std::option::Option<bool> {
@@ -147,8 +144,7 @@ impl GetAccountOutputBuilder {
     /// <p><code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p></li>
     /// </ul>
     pub fn set_enforcement_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enforcement_status = input;
-        self
+        self.enforcement_status = input; self
     }
     /// <p>The reputation status of your Amazon Pinpoint account. The status can be one of the following:</p>
     /// <ul>
@@ -173,8 +169,7 @@ impl GetAccountOutputBuilder {
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn set_production_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.production_access_enabled = input;
-        self
+        self.production_access_enabled = input; self
     }
     /// <p>Indicates whether or not your account has production access in the current AWS Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
@@ -183,23 +178,32 @@ impl GetAccountOutputBuilder {
         &self.production_access_enabled
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAccountOutput`](crate::operation::get_account::GetAccountOutput).
     pub fn build(self) -> crate::operation::get_account::GetAccountOutput {
         crate::operation::get_account::GetAccountOutput {
-            send_quota: self.send_quota,
-            sending_enabled: self.sending_enabled.unwrap_or_default(),
-            dedicated_ip_auto_warmup_enabled: self.dedicated_ip_auto_warmup_enabled.unwrap_or_default(),
-            enforcement_status: self.enforcement_status,
-            production_access_enabled: self.production_access_enabled.unwrap_or_default(),
+            send_quota: self.send_quota
+            ,
+            sending_enabled: self.sending_enabled
+                .unwrap_or_default()
+            ,
+            dedicated_ip_auto_warmup_enabled: self.dedicated_ip_auto_warmup_enabled
+                .unwrap_or_default()
+            ,
+            enforcement_status: self.enforcement_status
+            ,
+            production_access_enabled: self.production_access_enabled
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

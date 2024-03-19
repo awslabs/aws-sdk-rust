@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartRecommendationReportGenerationInput {
+pub struct StartRecommendationReportGenerationInput  {
     /// <p>The output format for the recommendation report file. The default format is Microsoft Excel.</p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>Groups the resources in the recommendation report with a unique name.</p>
-    pub group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub group_id_filter: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>,
 }
-impl StartRecommendationReportGenerationInput {
+impl  StartRecommendationReportGenerationInput  {
     /// <p>The output format for the recommendation report file. The default format is Microsoft Excel.</p>
-    pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
+    pub fn output_format(&self) -> ::std::option::Option<& crate::types::OutputFormat> {
         self.output_format.as_ref()
     }
     /// <p>Groups the resources in the recommendation report with a unique name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_id_filter.is_none()`.
-    pub fn group_id_filter(&self) -> &[crate::types::Group] {
-        self.group_id_filter.as_deref().unwrap_or_default()
+    pub fn group_id_filter(&self) -> & [crate::types::Group] {
+        self.group_id_filter.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartRecommendationReportGenerationInput {
@@ -32,7 +33,7 @@ impl StartRecommendationReportGenerationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRecommendationReportGenerationInputBuilder {
     pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,
-    pub(crate) group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub(crate) group_id_filter: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>,
 }
 impl StartRecommendationReportGenerationInputBuilder {
     /// <p>The output format for the recommendation report file. The default format is Microsoft Excel.</p>
@@ -42,8 +43,7 @@ impl StartRecommendationReportGenerationInputBuilder {
     }
     /// <p>The output format for the recommendation report file. The default format is Microsoft Excel.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
-        self.output_format = input;
-        self
+        self.output_format = input; self
     }
     /// <p>The output format for the recommendation report file. The default format is Microsoft Excel.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
@@ -56,31 +56,28 @@ impl StartRecommendationReportGenerationInputBuilder {
     /// <p>Groups the resources in the recommendation report with a unique name.</p>
     pub fn group_id_filter(mut self, input: crate::types::Group) -> Self {
         let mut v = self.group_id_filter.unwrap_or_default();
-        v.push(input);
-        self.group_id_filter = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_id_filter = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Groups the resources in the recommendation report with a unique name.</p>
-    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
-        self.group_id_filter = input;
-        self
+    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>) -> Self {
+        self.group_id_filter = input; self
     }
     /// <p>Groups the resources in the recommendation report with a unique name.</p>
-    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Group>> {
         &self.group_id_filter
     }
     /// Consumes the builder and constructs a [`StartRecommendationReportGenerationInput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput {
-                output_format: self.output_format,
-                group_id_filter: self.group_id_filter,
-            },
+                output_format: self.output_format
+                ,
+                group_id_filter: self.group_id_filter
+                ,
+            }
         )
     }
 }
+

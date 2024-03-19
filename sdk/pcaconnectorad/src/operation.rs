@@ -75,3 +75,4 @@ pub mod update_template;
 
 /// Types for the `UpdateTemplateGroupAccessControlEntry` operation.
 pub mod update_template_group_access_control_entry;
+

@@ -22,11 +22,7 @@ impl RetrieverConfiguration {
     /// Tries to convert the enum instance into [`KendraIndexConfiguration`](crate::types::RetrieverConfiguration::KendraIndexConfiguration), extracting the inner [`KendraIndexConfiguration`](crate::types::KendraIndexConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_kendra_index_configuration(&self) -> ::std::result::Result<&crate::types::KendraIndexConfiguration, &Self> {
-        if let RetrieverConfiguration::KendraIndexConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RetrieverConfiguration::KendraIndexConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`KendraIndexConfiguration`](crate::types::RetrieverConfiguration::KendraIndexConfiguration).
     pub fn is_kendra_index_configuration(&self) -> bool {
@@ -35,11 +31,7 @@ impl RetrieverConfiguration {
     /// Tries to convert the enum instance into [`NativeIndexConfiguration`](crate::types::RetrieverConfiguration::NativeIndexConfiguration), extracting the inner [`NativeIndexConfiguration`](crate::types::NativeIndexConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_native_index_configuration(&self) -> ::std::result::Result<&crate::types::NativeIndexConfiguration, &Self> {
-        if let RetrieverConfiguration::NativeIndexConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RetrieverConfiguration::NativeIndexConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NativeIndexConfiguration`](crate::types::RetrieverConfiguration::NativeIndexConfiguration).
     pub fn is_native_index_configuration(&self) -> bool {
@@ -50,3 +42,4 @@ impl RetrieverConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

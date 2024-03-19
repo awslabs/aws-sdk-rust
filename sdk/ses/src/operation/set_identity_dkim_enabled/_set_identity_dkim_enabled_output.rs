@@ -3,14 +3,14 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetIdentityDkimEnabledOutput {
+pub struct SetIdentityDkimEnabledOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for SetIdentityDkimEnabledOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetIdentityDkimEnabledOutput {
     /// Creates a new builder-style object to manufacture [`SetIdentityDkimEnabledOutput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput).
     pub fn builder() -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledOutputBuilder {
@@ -26,14 +26,14 @@ pub struct SetIdentityDkimEnabledOutputBuilder {
 }
 impl SetIdentityDkimEnabledOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetIdentityDkimEnabledOutput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput).
     pub fn build(self) -> crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput {
         crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput {
@@ -41,3 +41,4 @@ impl SetIdentityDkimEnabledOutputBuilder {
         }
     }
 }
+

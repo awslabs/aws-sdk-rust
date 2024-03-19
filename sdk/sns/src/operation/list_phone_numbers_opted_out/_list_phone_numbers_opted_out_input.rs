@@ -3,13 +3,13 @@
 /// <p>The input for the <code>ListPhoneNumbersOptedOut</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPhoneNumbersOptedOutInput {
+pub struct ListPhoneNumbersOptedOutInput  {
     /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPhoneNumbersOptedOutInput {
+impl  ListPhoneNumbersOptedOutInput  {
     /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl ListPhoneNumbersOptedOutInputBuilder {
     }
     /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersOptedOutInput`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutInput { next_token: self.next_token })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

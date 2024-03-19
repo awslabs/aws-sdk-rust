@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snowballtype = unimplemented!();
 /// match snowballtype {
@@ -38,16 +38,14 @@
 /// Specifically, when `snowballtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnowballType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SnowballType {
     #[allow(missing_docs)] // documentation missing in model
     Edge,
@@ -71,96 +69,86 @@ pub enum SnowballType {
     V35S,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SnowballType {
-    fn from(s: &str) -> Self {
-        match s {
-            "EDGE" => SnowballType::Edge,
-            "EDGE_C" => SnowballType::EdgeC,
-            "EDGE_CG" => SnowballType::EdgeCg,
-            "EDGE_S" => SnowballType::EdgeS,
-            "RACK_5U_C" => SnowballType::Rack5Uc,
-            "SNC1_HDD" => SnowballType::Snc1Hdd,
-            "SNC1_SSD" => SnowballType::Snc1Ssd,
-            "STANDARD" => SnowballType::Standard,
-            "V3_5C" => SnowballType::V35C,
-            "V3_5S" => SnowballType::V35S,
-            other => SnowballType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "EDGE" => SnowballType::Edge,
+"EDGE_C" => SnowballType::EdgeC,
+"EDGE_CG" => SnowballType::EdgeCg,
+"EDGE_S" => SnowballType::EdgeS,
+"RACK_5U_C" => SnowballType::Rack5Uc,
+"SNC1_HDD" => SnowballType::Snc1Hdd,
+"SNC1_SSD" => SnowballType::Snc1Ssd,
+"STANDARD" => SnowballType::Standard,
+"V3_5C" => SnowballType::V35C,
+"V3_5S" => SnowballType::V35S,
+other => SnowballType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SnowballType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SnowballType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SnowballType::from(s))
+                    }
+                }
 impl SnowballType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SnowballType::Edge => "EDGE",
-            SnowballType::EdgeC => "EDGE_C",
-            SnowballType::EdgeCg => "EDGE_CG",
-            SnowballType::EdgeS => "EDGE_S",
-            SnowballType::Rack5Uc => "RACK_5U_C",
-            SnowballType::Snc1Hdd => "SNC1_HDD",
-            SnowballType::Snc1Ssd => "SNC1_SSD",
-            SnowballType::Standard => "STANDARD",
-            SnowballType::V35C => "V3_5C",
-            SnowballType::V35S => "V3_5S",
-            SnowballType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EDGE",
-            "EDGE_C",
-            "EDGE_CG",
-            "EDGE_S",
-            "RACK_5U_C",
-            "SNC1_HDD",
-            "SNC1_SSD",
-            "STANDARD",
-            "V3_5C",
-            "V3_5S",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SnowballType::Edge => "EDGE",
+    SnowballType::EdgeC => "EDGE_C",
+    SnowballType::EdgeCg => "EDGE_CG",
+    SnowballType::EdgeS => "EDGE_S",
+    SnowballType::Rack5Uc => "RACK_5U_C",
+    SnowballType::Snc1Hdd => "SNC1_HDD",
+    SnowballType::Snc1Ssd => "SNC1_SSD",
+    SnowballType::Standard => "STANDARD",
+    SnowballType::V35C => "V3_5C",
+    SnowballType::V35S => "V3_5S",
+    SnowballType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EDGE", "EDGE_C", "EDGE_CG", "EDGE_S", "RACK_5U_C", "SNC1_HDD", "SNC1_SSD", "STANDARD", "V3_5C", "V3_5S"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SnowballType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SnowballType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SnowballType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SnowballType::Edge => write!(f, "EDGE"),
-            SnowballType::EdgeC => write!(f, "EDGE_C"),
-            SnowballType::EdgeCg => write!(f, "EDGE_CG"),
-            SnowballType::EdgeS => write!(f, "EDGE_S"),
-            SnowballType::Rack5Uc => write!(f, "RACK_5U_C"),
-            SnowballType::Snc1Hdd => write!(f, "SNC1_HDD"),
-            SnowballType::Snc1Ssd => write!(f, "SNC1_SSD"),
-            SnowballType::Standard => write!(f, "STANDARD"),
-            SnowballType::V35C => write!(f, "V3_5C"),
-            SnowballType::V35S => write!(f, "V3_5S"),
-            SnowballType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SnowballType::Edge => write!(f, "EDGE"),
+SnowballType::EdgeC => write!(f, "EDGE_C"),
+SnowballType::EdgeCg => write!(f, "EDGE_CG"),
+SnowballType::EdgeS => write!(f, "EDGE_S"),
+SnowballType::Rack5Uc => write!(f, "RACK_5U_C"),
+SnowballType::Snc1Hdd => write!(f, "SNC1_HDD"),
+SnowballType::Snc1Ssd => write!(f, "SNC1_SSD"),
+SnowballType::Standard => write!(f, "STANDARD"),
+SnowballType::V35C => write!(f, "V3_5C"),
+SnowballType::V35S => write!(f, "V3_5S"),
+SnowballType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

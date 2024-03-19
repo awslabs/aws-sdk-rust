@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePoolOutput {
+pub struct DeletePoolOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
     pub pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The PoolId of the pool that was deleted.</p>
@@ -35,13 +35,13 @@ pub struct DeletePoolOutput {
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DeletePoolOutput {
+impl  DeletePoolOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
-    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The PoolId of the pool that was deleted.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The current status of the pool.</p>
@@ -53,11 +53,11 @@ impl DeletePoolOutput {
     /// <li>
     /// <p>DELETING: The pool is being deleted.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PoolStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PoolStatus> {
         self.status.as_ref()
     }
     /// <p>The message type that was associated with the deleted pool.</p>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<& crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -65,11 +65,11 @@ impl DeletePoolOutput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
-    pub fn two_way_channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> ::std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
-    pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
+    pub fn two_way_channel_role(&self) -> ::std::option::Option<& str> {
         self.two_way_channel_role.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -77,7 +77,7 @@ impl DeletePoolOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
@@ -85,15 +85,15 @@ impl DeletePoolOutput {
         self.shared_routes_enabled
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePoolOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePoolOutput {
     /// Creates a new builder-style object to manufacture [`DeletePoolOutput`](crate::operation::delete_pool::DeletePoolOutput).
     pub fn builder() -> crate::operation::delete_pool::builders::DeletePoolOutputBuilder {
@@ -126,8 +126,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
     pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
     pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +139,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The PoolId of the pool that was deleted.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The PoolId of the pool that was deleted.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +168,7 @@ impl DeletePoolOutputBuilder {
     /// <p>DELETING: The pool is being deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PoolStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the pool.</p>
     /// <ul>
@@ -192,8 +189,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The message type that was associated with the deleted pool.</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>The message type that was associated with the deleted pool.</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
@@ -206,8 +202,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.two_way_enabled = input;
-        self
+        self.two_way_enabled = input; self
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
@@ -220,8 +215,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
     pub fn set_two_way_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.two_way_channel_arn = input;
-        self
+        self.two_way_channel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
     pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +228,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub fn set_two_way_channel_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.two_way_channel_role = input;
-        self
+        self.two_way_channel_role = input; self
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +241,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.self_managed_opt_outs_enabled = input;
-        self
+        self.self_managed_opt_outs_enabled = input; self
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
@@ -262,8 +254,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_name = input;
-        self
+        self.opt_out_list_name = input; self
     }
     /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,8 +267,7 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn set_shared_routes_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.shared_routes_enabled = input;
-        self
+        self.shared_routes_enabled = input; self
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn get_shared_routes_enabled(&self) -> &::std::option::Option<bool> {
@@ -290,37 +280,51 @@ impl DeletePoolOutputBuilder {
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePoolOutput`](crate::operation::delete_pool::DeletePoolOutput).
     pub fn build(self) -> crate::operation::delete_pool::DeletePoolOutput {
         crate::operation::delete_pool::DeletePoolOutput {
-            pool_arn: self.pool_arn,
-            pool_id: self.pool_id,
-            status: self.status,
-            message_type: self.message_type,
-            two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-            two_way_channel_arn: self.two_way_channel_arn,
-            two_way_channel_role: self.two_way_channel_role,
-            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
-            opt_out_list_name: self.opt_out_list_name,
-            shared_routes_enabled: self.shared_routes_enabled.unwrap_or_default(),
-            created_timestamp: self.created_timestamp,
+            pool_arn: self.pool_arn
+            ,
+            pool_id: self.pool_id
+            ,
+            status: self.status
+            ,
+            message_type: self.message_type
+            ,
+            two_way_enabled: self.two_way_enabled
+                .unwrap_or_default()
+            ,
+            two_way_channel_arn: self.two_way_channel_arn
+            ,
+            two_way_channel_role: self.two_way_channel_role
+            ,
+            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                .unwrap_or_default()
+            ,
+            opt_out_list_name: self.opt_out_list_name
+            ,
+            shared_routes_enabled: self.shared_routes_enabled
+                .unwrap_or_default()
+            ,
+            created_timestamp: self.created_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

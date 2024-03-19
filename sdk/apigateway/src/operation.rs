@@ -360,3 +360,4 @@ pub mod update_usage_plan;
 
 /// Types for the `UpdateVpcLink` operation.
 pub mod update_vpc_link;
+

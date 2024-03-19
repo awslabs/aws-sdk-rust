@@ -4,7 +4,7 @@
 /// <p>When you run a flow that you've configured to use a metadata catalog, Amazon AppFlow registers a metadata table and data partitions with that catalog. This operation provides the status of that registration attempt. The operation also indicates how many related resources Amazon AppFlow created or updated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationOutput {
+pub struct RegistrationOutput  {
     /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
@@ -12,17 +12,17 @@ pub struct RegistrationOutput {
     /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
 }
-impl RegistrationOutput {
+impl  RegistrationOutput  {
     /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
     /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl RegistrationOutputBuilder {
     }
     /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RegistrationOutputBuilder {
     }
     /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
     pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl RegistrationOutputBuilder {
     }
     /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
@@ -87,9 +84,13 @@ impl RegistrationOutputBuilder {
     /// Consumes the builder and constructs a [`RegistrationOutput`](crate::types::RegistrationOutput).
     pub fn build(self) -> crate::types::RegistrationOutput {
         crate::types::RegistrationOutput {
-            message: self.message,
-            result: self.result,
-            status: self.status,
+            message: self.message
+            ,
+            result: self.result
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

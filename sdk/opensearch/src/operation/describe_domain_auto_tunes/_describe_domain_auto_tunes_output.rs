@@ -3,30 +3,31 @@
 /// <p>The result of a <code>DescribeDomainAutoTunes</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainAutoTunesOutput {
+pub struct DescribeDomainAutoTunesOutput  {
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
-    pub auto_tunes: ::std::option::Option<::std::vec::Vec<crate::types::AutoTune>>,
+    pub auto_tunes: ::std::option::Option<::std::vec::Vec::<crate::types::AutoTune>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDomainAutoTunesOutput {
+impl  DescribeDomainAutoTunesOutput  {
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_tunes.is_none()`.
-    pub fn auto_tunes(&self) -> &[crate::types::AutoTune] {
-        self.auto_tunes.as_deref().unwrap_or_default()
+    pub fn auto_tunes(&self) -> & [crate::types::AutoTune] {
+        self.auto_tunes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDomainAutoTunesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDomainAutoTunesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput).
     pub fn builder() -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeDomainAutoTunesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainAutoTunesOutputBuilder {
-    pub(crate) auto_tunes: ::std::option::Option<::std::vec::Vec<crate::types::AutoTune>>,
+    pub(crate) auto_tunes: ::std::option::Option<::std::vec::Vec::<crate::types::AutoTune>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl DescribeDomainAutoTunesOutputBuilder {
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
     pub fn auto_tunes(mut self, input: crate::types::AutoTune) -> Self {
         let mut v = self.auto_tunes.unwrap_or_default();
-        v.push(input);
-        self.auto_tunes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auto_tunes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
-    pub fn set_auto_tunes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoTune>>) -> Self {
-        self.auto_tunes = input;
-        self
+    pub fn set_auto_tunes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutoTune>>) -> Self {
+        self.auto_tunes = input; self
     }
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain.</p>
-    pub fn get_auto_tunes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoTune>> {
+    pub fn get_auto_tunes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutoTune>> {
         &self.auto_tunes
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
@@ -70,28 +70,30 @@ impl DescribeDomainAutoTunesOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput).
     pub fn build(self) -> crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput {
         crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput {
-            auto_tunes: self.auto_tunes,
-            next_token: self.next_token,
+            auto_tunes: self.auto_tunes
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

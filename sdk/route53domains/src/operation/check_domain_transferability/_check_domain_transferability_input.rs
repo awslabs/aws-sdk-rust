@@ -3,7 +3,7 @@
 /// <p>The CheckDomainTransferability request contains the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CheckDomainTransferabilityInput {
+pub struct CheckDomainTransferabilityInput  {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
@@ -20,7 +20,7 @@ pub struct CheckDomainTransferabilityInput {
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
     pub auth_code: ::std::option::Option<::std::string::String>,
 }
-impl CheckDomainTransferabilityInput {
+impl  CheckDomainTransferabilityInput  {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
@@ -33,15 +33,15 @@ impl CheckDomainTransferabilityInput {
     /// <li>
     /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p></li>
     /// </ul>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
-    pub fn auth_code(&self) -> ::std::option::Option<&str> {
+    pub fn auth_code(&self) -> ::std::option::Option<& str> {
         self.auth_code.as_deref()
     }
 }
-impl ::std::fmt::Debug for CheckDomainTransferabilityInput {
+impl  ::std::fmt::Debug for CheckDomainTransferabilityInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CheckDomainTransferabilityInput");
         formatter.field("domain_name", &self.domain_name);
@@ -94,8 +94,7 @@ impl CheckDomainTransferabilityInputBuilder {
     /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p></li>
     /// </ul>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
@@ -119,24 +118,22 @@ impl CheckDomainTransferabilityInputBuilder {
     }
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
     pub fn set_auth_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_code = input;
-        self
+        self.auth_code = input; self
     }
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
     pub fn get_auth_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_code
     }
     /// Consumes the builder and constructs a [`CheckDomainTransferabilityInput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::check_domain_transferability::CheckDomainTransferabilityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::check_domain_transferability::CheckDomainTransferabilityInput {
-            domain_name: self.domain_name,
-            auth_code: self.auth_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::check_domain_transferability::CheckDomainTransferabilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::check_domain_transferability::CheckDomainTransferabilityInput {
+                domain_name: self.domain_name
+                ,
+                auth_code: self.auth_code
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CheckDomainTransferabilityInputBuilder {
@@ -147,3 +144,4 @@ impl ::std::fmt::Debug for CheckDomainTransferabilityInputBuilder {
         formatter.finish()
     }
 }
+

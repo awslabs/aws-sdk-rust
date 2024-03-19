@@ -3,19 +3,19 @@
 /// <p>Information about a resource, such as an Amazon S3 bucket or AWS Lambda function, that contains a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The identifier for the resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
     pub sub_resource_id: ::std::option::Option<::std::string::String>,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The identifier for the resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
-    pub fn sub_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn sub_resource_id(&self) -> ::std::option::Option<& str> {
         self.sub_resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResourceBuilder {
     }
     /// <p>The identifier for the resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ResourceBuilder {
     }
     /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
     pub fn set_sub_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sub_resource_id = input;
-        self
+        self.sub_resource_id = input; self
     }
     /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
     pub fn get_sub_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ResourceBuilder {
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            id: self.id,
-            sub_resource_id: self.sub_resource_id,
+            id: self.id
+            ,
+            sub_resource_id: self.sub_resource_id
+            ,
         }
     }
 }
+

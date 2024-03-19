@@ -3,7 +3,7 @@
 /// <p>The attributes of a skill group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SkillGroupData {
+pub struct SkillGroupData  {
     /// <p>The skill group ARN of a skill group.</p>
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The skill group name of a skill group.</p>
@@ -11,17 +11,17 @@ pub struct SkillGroupData {
     /// <p>The description of a skill group.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl SkillGroupData {
+impl  SkillGroupData  {
     /// <p>The skill group ARN of a skill group.</p>
-    pub fn skill_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn skill_group_arn(&self) -> ::std::option::Option<& str> {
         self.skill_group_arn.as_deref()
     }
     /// <p>The skill group name of a skill group.</p>
-    pub fn skill_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn skill_group_name(&self) -> ::std::option::Option<& str> {
         self.skill_group_name.as_deref()
     }
     /// <p>The description of a skill group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl SkillGroupDataBuilder {
     }
     /// <p>The skill group ARN of a skill group.</p>
     pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_group_arn = input;
-        self
+        self.skill_group_arn = input; self
     }
     /// <p>The skill group ARN of a skill group.</p>
     pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SkillGroupDataBuilder {
     }
     /// <p>The skill group name of a skill group.</p>
     pub fn set_skill_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_group_name = input;
-        self
+        self.skill_group_name = input; self
     }
     /// <p>The skill group name of a skill group.</p>
     pub fn get_skill_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl SkillGroupDataBuilder {
     }
     /// <p>The description of a skill group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a skill group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl SkillGroupDataBuilder {
     /// Consumes the builder and constructs a [`SkillGroupData`](crate::types::SkillGroupData).
     pub fn build(self) -> crate::types::SkillGroupData {
         crate::types::SkillGroupData {
-            skill_group_arn: self.skill_group_arn,
-            skill_group_name: self.skill_group_name,
-            description: self.description,
+            skill_group_arn: self.skill_group_arn
+            ,
+            skill_group_name: self.skill_group_name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

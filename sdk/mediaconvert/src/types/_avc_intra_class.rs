@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let avcintraclass = unimplemented!();
 /// match avcintraclass {
@@ -32,16 +32,14 @@
 /// Specifically, when `avcintraclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AvcIntraClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AvcIntraClass {
     #[allow(missing_docs)] // documentation missing in model
     Class100,
@@ -53,67 +51,68 @@ pub enum AvcIntraClass {
     Class50,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AvcIntraClass {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLASS_100" => AvcIntraClass::Class100,
-            "CLASS_200" => AvcIntraClass::Class200,
-            "CLASS_4K_2K" => AvcIntraClass::Class4K2K,
-            "CLASS_50" => AvcIntraClass::Class50,
-            other => AvcIntraClass::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CLASS_100" => AvcIntraClass::Class100,
+"CLASS_200" => AvcIntraClass::Class200,
+"CLASS_4K_2K" => AvcIntraClass::Class4K2K,
+"CLASS_50" => AvcIntraClass::Class50,
+other => AvcIntraClass::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AvcIntraClass {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AvcIntraClass::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AvcIntraClass::from(s))
+                    }
+                }
 impl AvcIntraClass {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AvcIntraClass::Class100 => "CLASS_100",
-            AvcIntraClass::Class200 => "CLASS_200",
-            AvcIntraClass::Class4K2K => "CLASS_4K_2K",
-            AvcIntraClass::Class50 => "CLASS_50",
-            AvcIntraClass::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CLASS_100", "CLASS_200", "CLASS_4K_2K", "CLASS_50"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AvcIntraClass::Class100 => "CLASS_100",
+    AvcIntraClass::Class200 => "CLASS_200",
+    AvcIntraClass::Class4K2K => "CLASS_4K_2K",
+    AvcIntraClass::Class50 => "CLASS_50",
+    AvcIntraClass::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLASS_100", "CLASS_200", "CLASS_4K_2K", "CLASS_50"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AvcIntraClass {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AvcIntraClass {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AvcIntraClass {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AvcIntraClass::Class100 => write!(f, "CLASS_100"),
-            AvcIntraClass::Class200 => write!(f, "CLASS_200"),
-            AvcIntraClass::Class4K2K => write!(f, "CLASS_4K_2K"),
-            AvcIntraClass::Class50 => write!(f, "CLASS_50"),
-            AvcIntraClass::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AvcIntraClass::Class100 => write!(f, "CLASS_100"),
+AvcIntraClass::Class200 => write!(f, "CLASS_200"),
+AvcIntraClass::Class4K2K => write!(f, "CLASS_4K_2K"),
+AvcIntraClass::Class50 => write!(f, "CLASS_50"),
+AvcIntraClass::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

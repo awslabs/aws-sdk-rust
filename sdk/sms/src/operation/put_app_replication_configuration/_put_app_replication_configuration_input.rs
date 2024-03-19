@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAppReplicationConfigurationInput {
+pub struct PutAppReplicationConfigurationInput  {
     /// <p>The ID of the application.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    pub server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
+    pub server_group_replication_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ServerGroupReplicationConfiguration>>,
 }
-impl PutAppReplicationConfigurationInput {
+impl  PutAppReplicationConfigurationInput  {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_group_replication_configurations.is_none()`.
-    pub fn server_group_replication_configurations(&self) -> &[crate::types::ServerGroupReplicationConfiguration] {
-        self.server_group_replication_configurations.as_deref().unwrap_or_default()
+    pub fn server_group_replication_configurations(&self) -> & [crate::types::ServerGroupReplicationConfiguration] {
+        self.server_group_replication_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutAppReplicationConfigurationInput {
@@ -32,7 +33,7 @@ impl PutAppReplicationConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppReplicationConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
-    pub(crate) server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
+    pub(crate) server_group_replication_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ServerGroupReplicationConfiguration>>,
 }
 impl PutAppReplicationConfigurationInputBuilder {
     /// <p>The ID of the application.</p>
@@ -42,8 +43,7 @@ impl PutAppReplicationConfigurationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,34 +56,28 @@ impl PutAppReplicationConfigurationInputBuilder {
     /// <p>Information about the replication configurations for server groups in the application.</p>
     pub fn server_group_replication_configurations(mut self, input: crate::types::ServerGroupReplicationConfiguration) -> Self {
         let mut v = self.server_group_replication_configurations.unwrap_or_default();
-        v.push(input);
-        self.server_group_replication_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.server_group_replication_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    pub fn set_server_group_replication_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
-    ) -> Self {
-        self.server_group_replication_configurations = input;
-        self
+    pub fn set_server_group_replication_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServerGroupReplicationConfiguration>>) -> Self {
+        self.server_group_replication_configurations = input; self
     }
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    pub fn get_server_group_replication_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>> {
+    pub fn get_server_group_replication_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServerGroupReplicationConfiguration>> {
         &self.server_group_replication_configurations
     }
     /// Consumes the builder and constructs a [`PutAppReplicationConfigurationInput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput {
-            app_id: self.app_id,
-            server_group_replication_configurations: self.server_group_replication_configurations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput {
+                app_id: self.app_id
+                ,
+                server_group_replication_configurations: self.server_group_replication_configurations
+                ,
+            }
+        )
     }
 }
+

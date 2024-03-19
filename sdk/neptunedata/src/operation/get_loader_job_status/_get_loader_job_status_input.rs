@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLoaderJobStatusInput {
+pub struct GetLoaderJobStatusInput  {
     /// <p>The load ID of the load job to get the status of.</p>
     pub load_id: ::std::option::Option<::std::string::String>,
     /// <p>Flag indicating whether or not to include details beyond the overall status (<code>TRUE</code> or <code>FALSE</code>; the default is <code>FALSE</code>).</p>
@@ -15,9 +15,9 @@ pub struct GetLoaderJobStatusInput {
     /// <p>The number of errors returned in each page (a positive integer; the default is <code>10</code>). Only valid when the <code>errors</code> parameter set to <code>TRUE</code>.</p>
     pub errors_per_page: ::std::option::Option<i32>,
 }
-impl GetLoaderJobStatusInput {
+impl  GetLoaderJobStatusInput  {
     /// <p>The load ID of the load job to get the status of.</p>
-    pub fn load_id(&self) -> ::std::option::Option<&str> {
+    pub fn load_id(&self) -> ::std::option::Option<& str> {
         self.load_id.as_deref()
     }
     /// <p>Flag indicating whether or not to include details beyond the overall status (<code>TRUE</code> or <code>FALSE</code>; the default is <code>FALSE</code>).</p>
@@ -64,8 +64,7 @@ impl GetLoaderJobStatusInputBuilder {
     }
     /// <p>The load ID of the load job to get the status of.</p>
     pub fn set_load_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_id = input;
-        self
+        self.load_id = input; self
     }
     /// <p>The load ID of the load job to get the status of.</p>
     pub fn get_load_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl GetLoaderJobStatusInputBuilder {
     }
     /// <p>Flag indicating whether or not to include details beyond the overall status (<code>TRUE</code> or <code>FALSE</code>; the default is <code>FALSE</code>).</p>
     pub fn set_details(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Flag indicating whether or not to include details beyond the overall status (<code>TRUE</code> or <code>FALSE</code>; the default is <code>FALSE</code>).</p>
     pub fn get_details(&self) -> &::std::option::Option<bool> {
@@ -94,8 +92,7 @@ impl GetLoaderJobStatusInputBuilder {
     /// <p>Flag indicating whether or not to include a list of errors encountered (<code>TRUE</code> or <code>FALSE</code>; the default is <code>FALSE</code>).</p>
     /// <p>The list of errors is paged. The <code>page</code> and <code>errorsPerPage</code> parameters allow you to page through all the errors.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.errors = input;
-        self
+        self.errors = input; self
     }
     /// <p>Flag indicating whether or not to include a list of errors encountered (<code>TRUE</code> or <code>FALSE</code>; the default is <code>FALSE</code>).</p>
     /// <p>The list of errors is paged. The <code>page</code> and <code>errorsPerPage</code> parameters allow you to page through all the errors.</p>
@@ -109,8 +106,7 @@ impl GetLoaderJobStatusInputBuilder {
     }
     /// <p>The error page number (a positive integer; the default is <code>1</code>). Only valid when the <code>errors</code> parameter is set to <code>TRUE</code>.</p>
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page = input;
-        self
+        self.page = input; self
     }
     /// <p>The error page number (a positive integer; the default is <code>1</code>). Only valid when the <code>errors</code> parameter is set to <code>TRUE</code>.</p>
     pub fn get_page(&self) -> &::std::option::Option<i32> {
@@ -123,24 +119,28 @@ impl GetLoaderJobStatusInputBuilder {
     }
     /// <p>The number of errors returned in each page (a positive integer; the default is <code>10</code>). Only valid when the <code>errors</code> parameter set to <code>TRUE</code>.</p>
     pub fn set_errors_per_page(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.errors_per_page = input;
-        self
+        self.errors_per_page = input; self
     }
     /// <p>The number of errors returned in each page (a positive integer; the default is <code>10</code>). Only valid when the <code>errors</code> parameter set to <code>TRUE</code>.</p>
     pub fn get_errors_per_page(&self) -> &::std::option::Option<i32> {
         &self.errors_per_page
     }
     /// Consumes the builder and constructs a [`GetLoaderJobStatusInput`](crate::operation::get_loader_job_status::GetLoaderJobStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_loader_job_status::GetLoaderJobStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_loader_job_status::GetLoaderJobStatusInput {
-            load_id: self.load_id,
-            details: self.details,
-            errors: self.errors,
-            page: self.page,
-            errors_per_page: self.errors_per_page,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_loader_job_status::GetLoaderJobStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_loader_job_status::GetLoaderJobStatusInput {
+                load_id: self.load_id
+                ,
+                details: self.details
+                ,
+                errors: self.errors
+                ,
+                page: self.page
+                ,
+                errors_per_page: self.errors_per_page
+                ,
+            }
+        )
     }
 }
+

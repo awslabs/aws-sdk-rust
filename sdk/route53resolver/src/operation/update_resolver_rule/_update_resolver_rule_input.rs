@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResolverRuleInput {
+pub struct UpdateResolverRuleInput  {
     /// <p>The ID of the Resolver rule that you want to update.</p>
     pub resolver_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The new settings for the Resolver rule.</p>
     pub config: ::std::option::Option<crate::types::ResolverRuleConfig>,
 }
-impl UpdateResolverRuleInput {
+impl  UpdateResolverRuleInput  {
     /// <p>The ID of the Resolver rule that you want to update.</p>
-    pub fn resolver_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_rule_id(&self) -> ::std::option::Option<& str> {
         self.resolver_rule_id.as_deref()
     }
     /// <p>The new settings for the Resolver rule.</p>
-    pub fn config(&self) -> ::std::option::Option<&crate::types::ResolverRuleConfig> {
+    pub fn config(&self) -> ::std::option::Option<& crate::types::ResolverRuleConfig> {
         self.config.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateResolverRuleInputBuilder {
     }
     /// <p>The ID of the Resolver rule that you want to update.</p>
     pub fn set_resolver_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_rule_id = input;
-        self
+        self.resolver_rule_id = input; self
     }
     /// <p>The ID of the Resolver rule that you want to update.</p>
     pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateResolverRuleInputBuilder {
     }
     /// <p>The new settings for the Resolver rule.</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::ResolverRuleConfig>) -> Self {
-        self.config = input;
-        self
+        self.config = input; self
     }
     /// <p>The new settings for the Resolver rule.</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::ResolverRuleConfig> {
         &self.config
     }
     /// Consumes the builder and constructs a [`UpdateResolverRuleInput`](crate::operation::update_resolver_rule::UpdateResolverRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_resolver_rule::UpdateResolverRuleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_resolver_rule::UpdateResolverRuleInput {
-            resolver_rule_id: self.resolver_rule_id,
-            config: self.config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_resolver_rule::UpdateResolverRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_resolver_rule::UpdateResolverRuleInput {
+                resolver_rule_id: self.resolver_rule_id
+                ,
+                config: self.config
+                ,
+            }
+        )
     }
 }
+

@@ -3,24 +3,26 @@
 /// <p>Configures conversation logging that saves audio, text, and metadata for the conversations with your users.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversationLogSettings {
+pub struct ConversationLogSettings  {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    pub text_log_settings: ::std::option::Option<::std::vec::Vec<crate::types::TextLogSetting>>,
+    pub text_log_settings: ::std::option::Option<::std::vec::Vec::<crate::types::TextLogSetting>>,
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    pub audio_log_settings: ::std::option::Option<::std::vec::Vec<crate::types::AudioLogSetting>>,
+    pub audio_log_settings: ::std::option::Option<::std::vec::Vec::<crate::types::AudioLogSetting>>,
 }
-impl ConversationLogSettings {
+impl  ConversationLogSettings  {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_log_settings.is_none()`.
-    pub fn text_log_settings(&self) -> &[crate::types::TextLogSetting] {
-        self.text_log_settings.as_deref().unwrap_or_default()
+    pub fn text_log_settings(&self) -> & [crate::types::TextLogSetting] {
+        self.text_log_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_log_settings.is_none()`.
-    pub fn audio_log_settings(&self) -> &[crate::types::AudioLogSetting] {
-        self.audio_log_settings.as_deref().unwrap_or_default()
+    pub fn audio_log_settings(&self) -> & [crate::types::AudioLogSetting] {
+        self.audio_log_settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConversationLogSettings {
@@ -34,8 +36,8 @@ impl ConversationLogSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLogSettingsBuilder {
-    pub(crate) text_log_settings: ::std::option::Option<::std::vec::Vec<crate::types::TextLogSetting>>,
-    pub(crate) audio_log_settings: ::std::option::Option<::std::vec::Vec<crate::types::AudioLogSetting>>,
+    pub(crate) text_log_settings: ::std::option::Option<::std::vec::Vec::<crate::types::TextLogSetting>>,
+    pub(crate) audio_log_settings: ::std::option::Option<::std::vec::Vec::<crate::types::AudioLogSetting>>,
 }
 impl ConversationLogSettingsBuilder {
     /// Appends an item to `text_log_settings`.
@@ -45,17 +47,16 @@ impl ConversationLogSettingsBuilder {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
     pub fn text_log_settings(mut self, input: crate::types::TextLogSetting) -> Self {
         let mut v = self.text_log_settings.unwrap_or_default();
-        v.push(input);
-        self.text_log_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_log_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    pub fn set_text_log_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextLogSetting>>) -> Self {
-        self.text_log_settings = input;
-        self
+    pub fn set_text_log_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TextLogSetting>>) -> Self {
+        self.text_log_settings = input; self
     }
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    pub fn get_text_log_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextLogSetting>> {
+    pub fn get_text_log_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TextLogSetting>> {
         &self.text_log_settings
     }
     /// Appends an item to `audio_log_settings`.
@@ -65,24 +66,26 @@ impl ConversationLogSettingsBuilder {
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
     pub fn audio_log_settings(mut self, input: crate::types::AudioLogSetting) -> Self {
         let mut v = self.audio_log_settings.unwrap_or_default();
-        v.push(input);
-        self.audio_log_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.audio_log_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    pub fn set_audio_log_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioLogSetting>>) -> Self {
-        self.audio_log_settings = input;
-        self
+    pub fn set_audio_log_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AudioLogSetting>>) -> Self {
+        self.audio_log_settings = input; self
     }
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    pub fn get_audio_log_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioLogSetting>> {
+    pub fn get_audio_log_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AudioLogSetting>> {
         &self.audio_log_settings
     }
     /// Consumes the builder and constructs a [`ConversationLogSettings`](crate::types::ConversationLogSettings).
     pub fn build(self) -> crate::types::ConversationLogSettings {
         crate::types::ConversationLogSettings {
-            text_log_settings: self.text_log_settings,
-            audio_log_settings: self.audio_log_settings,
+            text_log_settings: self.text_log_settings
+            ,
+            audio_log_settings: self.audio_log_settings
+            ,
         }
     }
 }
+

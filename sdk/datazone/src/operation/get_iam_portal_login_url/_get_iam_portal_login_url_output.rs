@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIamPortalLoginUrlOutput {
+pub struct GetIamPortalLoginUrlOutput  {
     /// <p>The data portal URL of the specified Amazon DataZone domain.</p>
     pub auth_code_url: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user profile.</p>
     pub user_profile_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetIamPortalLoginUrlOutput {
+impl  GetIamPortalLoginUrlOutput  {
     /// <p>The data portal URL of the specified Amazon DataZone domain.</p>
-    pub fn auth_code_url(&self) -> ::std::option::Option<&str> {
+    pub fn auth_code_url(&self) -> ::std::option::Option<& str> {
         self.auth_code_url.as_deref()
     }
     /// <p>The ID of the user profile.</p>
-    pub fn user_profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_profile_id.deref()
+    pub fn user_profile_id(&self) -> & str {
+        use std::ops::Deref; self.user_profile_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIamPortalLoginUrlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIamPortalLoginUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetIamPortalLoginUrlOutput`](crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput).
     pub fn builder() -> crate::operation::get_iam_portal_login_url::builders::GetIamPortalLoginUrlOutputBuilder {
@@ -48,8 +47,7 @@ impl GetIamPortalLoginUrlOutputBuilder {
     }
     /// <p>The data portal URL of the specified Amazon DataZone domain.</p>
     pub fn set_auth_code_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_code_url = input;
-        self
+        self.auth_code_url = input; self
     }
     /// <p>The data portal URL of the specified Amazon DataZone domain.</p>
     pub fn get_auth_code_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,38 +61,37 @@ impl GetIamPortalLoginUrlOutputBuilder {
     }
     /// <p>The ID of the user profile.</p>
     pub fn set_user_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_profile_id = input;
-        self
+        self.user_profile_id = input; self
     }
     /// <p>The ID of the user profile.</p>
     pub fn get_user_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_profile_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIamPortalLoginUrlOutput`](crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_profile_id`](crate::operation::get_iam_portal_login_url::builders::GetIamPortalLoginUrlOutputBuilder::user_profile_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput {
-            auth_code_url: self.auth_code_url,
-            user_profile_id: self.user_profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_profile_id",
-                    "user_profile_id was not specified but it is required when building GetIamPortalLoginUrlOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlOutput {
+                auth_code_url: self.auth_code_url
+                ,
+                user_profile_id: self.user_profile_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_profile_id", "user_profile_id was not specified but it is required when building GetIamPortalLoginUrlOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

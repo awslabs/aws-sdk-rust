@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImportLabelsTaskRunInput {
+pub struct StartImportLabelsTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
@@ -10,13 +10,13 @@ pub struct StartImportLabelsTaskRunInput {
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub replace_all_labels: ::std::option::Option<bool>,
 }
-impl StartImportLabelsTaskRunInput {
+impl  StartImportLabelsTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> ::std::option::Option<&str> {
+    pub fn transform_id(&self) -> ::std::option::Option<& str> {
         self.transform_id.as_deref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
-    pub fn input_s3_path(&self) -> ::std::option::Option<&str> {
+    pub fn input_s3_path(&self) -> ::std::option::Option<& str> {
         self.input_s3_path.as_deref()
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
@@ -48,8 +48,7 @@ impl StartImportLabelsTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl StartImportLabelsTaskRunInputBuilder {
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
     pub fn set_input_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_s3_path = input;
-        self
+        self.input_s3_path = input; self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
     pub fn get_input_s3_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl StartImportLabelsTaskRunInputBuilder {
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn set_replace_all_labels(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replace_all_labels = input;
-        self
+        self.replace_all_labels = input; self
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn get_replace_all_labels(&self) -> &::std::option::Option<bool> {
         &self.replace_all_labels
     }
     /// Consumes the builder and constructs a [`StartImportLabelsTaskRunInput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput {
-            transform_id: self.transform_id,
-            input_s3_path: self.input_s3_path,
-            replace_all_labels: self.replace_all_labels,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput {
+                transform_id: self.transform_id
+                ,
+                input_s3_path: self.input_s3_path
+                ,
+                replace_all_labels: self.replace_all_labels
+                ,
+            }
+        )
     }
 }
+

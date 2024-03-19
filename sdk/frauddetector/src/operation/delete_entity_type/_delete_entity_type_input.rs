@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEntityTypeInput {
+pub struct DeleteEntityTypeInput  {
     /// <p>The name of the entity type to delete.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEntityTypeInput {
+impl  DeleteEntityTypeInput  {
     /// <p>The name of the entity type to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteEntityTypeInputBuilder {
     }
     /// <p>The name of the entity type to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the entity type to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_entity_type::DeleteEntityTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_entity_type::DeleteEntityTypeInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_entity_type::DeleteEntityTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_entity_type::DeleteEntityTypeInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

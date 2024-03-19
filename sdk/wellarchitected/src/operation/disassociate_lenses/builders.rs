@@ -5,23 +5,20 @@ pub use crate::operation::disassociate_lenses::_disassociate_lenses_input::Disas
 
 impl DisassociateLensesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_lenses::DisassociateLensesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_lenses::DisassociateLensesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.disassociate_lenses();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::disassociate_lenses::DisassociateLensesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::disassociate_lenses::DisassociateLensesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.disassociate_lenses();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DisassociateLenses`.
-///
+/// 
 /// <p>Disassociate a lens from a workload.</p>
 /// <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p><note>
 /// <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p>
@@ -29,33 +26,32 @@ impl DisassociateLensesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateLensesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disassociate_lenses::builders::DisassociateLensesInputBuilder,
+                    inner: crate::operation::disassociate_lenses::builders::DisassociateLensesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::disassociate_lenses::DisassociateLensesOutput,
-        crate::operation::disassociate_lenses::DisassociateLensesError,
-    > for DisassociateLensesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::disassociate_lenses::DisassociateLensesOutput,
-            crate::operation::disassociate_lenses::DisassociateLensesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::disassociate_lenses::DisassociateLensesOutput,
+                    crate::operation::disassociate_lenses::DisassociateLensesError,
+                > for DisassociateLensesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::disassociate_lenses::DisassociateLensesOutput,
+                        crate::operation::disassociate_lenses::DisassociateLensesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DisassociateLensesFluentBuilder {
     /// Creates a new `DisassociateLenses`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl DisassociateLensesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_lenses::DisassociateLensesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_lenses::DisassociateLensesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::disassociate_lenses::DisassociateLenses::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::disassociate_lenses::DisassociateLenses::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::disassociate_lenses::DisassociateLensesOutput,
-        crate::operation::disassociate_lenses::DisassociateLensesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_lenses::DisassociateLensesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_lenses::DisassociateLensesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::disassociate_lenses::DisassociateLenses::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::disassociate_lenses::DisassociateLenses::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::disassociate_lenses::DisassociateLensesOutput, crate::operation::disassociate_lenses::DisassociateLensesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_id(input.into());
@@ -137,13 +124,14 @@ impl DisassociateLensesFluentBuilder {
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lens_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_lens_aliases(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lens_aliases(input);
         self
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
-    pub fn get_lens_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lens_aliases(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_lens_aliases()
     }
 }
+

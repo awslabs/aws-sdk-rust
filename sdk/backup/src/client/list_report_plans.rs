@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReportPlans`](crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
-    /// - On success, responds with [`ListReportPlansOutput`](crate::operation::list_report_plans::ListReportPlansOutput) with field(s):
+                            /// - On success, responds with [`ListReportPlansOutput`](crate::operation::list_report_plans::ListReportPlansOutput) with field(s):
     ///   - [`report_plans(Option<Vec::<ReportPlan>>)`](crate::operation::list_report_plans::ListReportPlansOutput::report_plans): <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_report_plans::ListReportPlansOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<ListReportPlansError>`](crate::operation::list_report_plans::ListReportPlansError)
+                            /// - On failure, responds with [`SdkError<ListReportPlansError>`](crate::operation::list_report_plans::ListReportPlansError)
     pub fn list_report_plans(&self) -> crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder {
-        crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_report_plans::builders::ListReportPlansFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,29 +3,31 @@
 /// <p>Updates a blocked phrases configuration in your Amazon Q application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlockedPhrasesConfigurationUpdate {
+pub struct BlockedPhrasesConfigurationUpdate  {
     /// <p>Creates or updates a blocked phrases configuration in your Amazon Q application.</p>
-    pub blocked_phrases_to_create_or_update: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub blocked_phrases_to_create_or_update: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
-    pub blocked_phrases_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub blocked_phrases_to_delete: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The configured custom message displayed to your end user when they use blocked phrase during chat.</p>
     pub system_message_override: ::std::option::Option<::std::string::String>,
 }
-impl BlockedPhrasesConfigurationUpdate {
+impl  BlockedPhrasesConfigurationUpdate  {
     /// <p>Creates or updates a blocked phrases configuration in your Amazon Q application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocked_phrases_to_create_or_update.is_none()`.
-    pub fn blocked_phrases_to_create_or_update(&self) -> &[::std::string::String] {
-        self.blocked_phrases_to_create_or_update.as_deref().unwrap_or_default()
+    pub fn blocked_phrases_to_create_or_update(&self) -> & [::std::string::String] {
+        self.blocked_phrases_to_create_or_update.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocked_phrases_to_delete.is_none()`.
-    pub fn blocked_phrases_to_delete(&self) -> &[::std::string::String] {
-        self.blocked_phrases_to_delete.as_deref().unwrap_or_default()
+    pub fn blocked_phrases_to_delete(&self) -> & [::std::string::String] {
+        self.blocked_phrases_to_delete.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configured custom message displayed to your end user when they use blocked phrase during chat.</p>
-    pub fn system_message_override(&self) -> ::std::option::Option<&str> {
+    pub fn system_message_override(&self) -> ::std::option::Option<& str> {
         self.system_message_override.as_deref()
     }
 }
@@ -40,8 +42,8 @@ impl BlockedPhrasesConfigurationUpdate {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockedPhrasesConfigurationUpdateBuilder {
-    pub(crate) blocked_phrases_to_create_or_update: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) blocked_phrases_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) blocked_phrases_to_create_or_update: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) blocked_phrases_to_delete: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) system_message_override: ::std::option::Option<::std::string::String>,
 }
 impl BlockedPhrasesConfigurationUpdateBuilder {
@@ -52,17 +54,16 @@ impl BlockedPhrasesConfigurationUpdateBuilder {
     /// <p>Creates or updates a blocked phrases configuration in your Amazon Q application.</p>
     pub fn blocked_phrases_to_create_or_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_phrases_to_create_or_update.unwrap_or_default();
-        v.push(input.into());
-        self.blocked_phrases_to_create_or_update = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.blocked_phrases_to_create_or_update = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Creates or updates a blocked phrases configuration in your Amazon Q application.</p>
-    pub fn set_blocked_phrases_to_create_or_update(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.blocked_phrases_to_create_or_update = input;
-        self
+    pub fn set_blocked_phrases_to_create_or_update(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.blocked_phrases_to_create_or_update = input; self
     }
     /// <p>Creates or updates a blocked phrases configuration in your Amazon Q application.</p>
-    pub fn get_blocked_phrases_to_create_or_update(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blocked_phrases_to_create_or_update(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.blocked_phrases_to_create_or_update
     }
     /// Appends an item to `blocked_phrases_to_delete`.
@@ -72,17 +73,16 @@ impl BlockedPhrasesConfigurationUpdateBuilder {
     /// <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
     pub fn blocked_phrases_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_phrases_to_delete.unwrap_or_default();
-        v.push(input.into());
-        self.blocked_phrases_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.blocked_phrases_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
-    pub fn set_blocked_phrases_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.blocked_phrases_to_delete = input;
-        self
+    pub fn set_blocked_phrases_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.blocked_phrases_to_delete = input; self
     }
     /// <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
-    pub fn get_blocked_phrases_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_blocked_phrases_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.blocked_phrases_to_delete
     }
     /// <p>The configured custom message displayed to your end user when they use blocked phrase during chat.</p>
@@ -92,8 +92,7 @@ impl BlockedPhrasesConfigurationUpdateBuilder {
     }
     /// <p>The configured custom message displayed to your end user when they use blocked phrase during chat.</p>
     pub fn set_system_message_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.system_message_override = input;
-        self
+        self.system_message_override = input; self
     }
     /// <p>The configured custom message displayed to your end user when they use blocked phrase during chat.</p>
     pub fn get_system_message_override(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,9 +101,13 @@ impl BlockedPhrasesConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`BlockedPhrasesConfigurationUpdate`](crate::types::BlockedPhrasesConfigurationUpdate).
     pub fn build(self) -> crate::types::BlockedPhrasesConfigurationUpdate {
         crate::types::BlockedPhrasesConfigurationUpdate {
-            blocked_phrases_to_create_or_update: self.blocked_phrases_to_create_or_update,
-            blocked_phrases_to_delete: self.blocked_phrases_to_delete,
-            system_message_override: self.system_message_override,
+            blocked_phrases_to_create_or_update: self.blocked_phrases_to_create_or_update
+            ,
+            blocked_phrases_to_delete: self.blocked_phrases_to_delete
+            ,
+            system_message_override: self.system_message_override
+            ,
         }
     }
 }
+

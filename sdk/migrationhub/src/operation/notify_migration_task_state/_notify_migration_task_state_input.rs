@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyMigrationTaskStateInput {
+pub struct NotifyMigrationTaskStateInput  {
     /// <p>The name of the ProgressUpdateStream.</p>
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
@@ -16,21 +16,21 @@ pub struct NotifyMigrationTaskStateInput {
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl NotifyMigrationTaskStateInput {
+impl  NotifyMigrationTaskStateInput  {
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
+    pub fn progress_update_stream(&self) -> ::std::option::Option<& str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
-    pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
+    pub fn migration_task_name(&self) -> ::std::option::Option<& str> {
         self.migration_task_name.as_deref()
     }
     /// <p>Information about the task's progress and status.</p>
-    pub fn task(&self) -> ::std::option::Option<&crate::types::Task> {
+    pub fn task(&self) -> ::std::option::Option<& crate::types::Task> {
         self.task.as_ref()
     }
     /// <p>The timestamp when the task was gathered.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
@@ -69,8 +69,7 @@ impl NotifyMigrationTaskStateInputBuilder {
     }
     /// <p>The name of the ProgressUpdateStream.</p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progress_update_stream = input;
-        self
+        self.progress_update_stream = input; self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl NotifyMigrationTaskStateInputBuilder {
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_task_name = input;
-        self
+        self.migration_task_name = input; self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl NotifyMigrationTaskStateInputBuilder {
     }
     /// <p>Information about the task's progress and status.</p>
     pub fn set_task(mut self, input: ::std::option::Option<crate::types::Task>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>Information about the task's progress and status.</p>
     pub fn get_task(&self) -> &::std::option::Option<crate::types::Task> {
@@ -114,8 +111,7 @@ impl NotifyMigrationTaskStateInputBuilder {
     }
     /// <p>The timestamp when the task was gathered.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The timestamp when the task was gathered.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -129,8 +125,7 @@ impl NotifyMigrationTaskStateInputBuilder {
     }
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
     pub fn set_next_update_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.next_update_seconds = input;
-        self
+        self.next_update_seconds = input; self
     }
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
     pub fn get_next_update_seconds(&self) -> &::std::option::Option<i32> {
@@ -143,27 +138,30 @@ impl NotifyMigrationTaskStateInputBuilder {
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`NotifyMigrationTaskStateInput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput {
-            progress_update_stream: self.progress_update_stream,
-            migration_task_name: self.migration_task_name,
-            task: self.task,
-            update_date_time: self.update_date_time,
-            next_update_seconds: self.next_update_seconds,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput {
+                progress_update_stream: self.progress_update_stream
+                ,
+                migration_task_name: self.migration_task_name
+                ,
+                task: self.task
+                ,
+                update_date_time: self.update_date_time
+                ,
+                next_update_seconds: self.next_update_seconds
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

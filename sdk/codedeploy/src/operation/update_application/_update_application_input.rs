@@ -3,19 +3,19 @@
 /// <p>Represents the input of an <code>UpdateApplication</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>The current name of the application you want to change.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The new name to give the application.</p>
     pub new_application_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateApplicationInput {
+impl  UpdateApplicationInput  {
     /// <p>The current name of the application you want to change.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The new name to give the application.</p>
-    pub fn new_application_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_application_name(&self) -> ::std::option::Option<& str> {
         self.new_application_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The current name of the application you want to change.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The current name of the application you want to change.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The new name to give the application.</p>
     pub fn set_new_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_application_name = input;
-        self
+        self.new_application_name = input; self
     }
     /// <p>The new name to give the application.</p>
     pub fn get_new_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_application_name
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            application_name: self.application_name,
-            new_application_name: self.new_application_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application::UpdateApplicationInput {
+                application_name: self.application_name
+                ,
+                new_application_name: self.new_application_name
+                ,
+            }
+        )
     }
 }
+

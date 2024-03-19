@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let runtimeenvironment = unimplemented!();
 /// match runtimeenvironment {
@@ -38,16 +38,14 @@
 /// Specifically, when `runtimeenvironment` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuntimeEnvironment::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum RuntimeEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Flink111,
@@ -71,96 +69,86 @@ pub enum RuntimeEnvironment {
     ZeppelinFlink30,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for RuntimeEnvironment {
-    fn from(s: &str) -> Self {
-        match s {
-            "FLINK-1_11" => RuntimeEnvironment::Flink111,
-            "FLINK-1_13" => RuntimeEnvironment::Flink113,
-            "FLINK-1_15" => RuntimeEnvironment::Flink115,
-            "FLINK-1_18" => RuntimeEnvironment::Flink118,
-            "FLINK-1_6" => RuntimeEnvironment::Flink16,
-            "FLINK-1_8" => RuntimeEnvironment::Flink18,
-            "SQL-1_0" => RuntimeEnvironment::Sql10,
-            "ZEPPELIN-FLINK-1_0" => RuntimeEnvironment::ZeppelinFlink10,
-            "ZEPPELIN-FLINK-2_0" => RuntimeEnvironment::ZeppelinFlink20,
-            "ZEPPELIN-FLINK-3_0" => RuntimeEnvironment::ZeppelinFlink30,
-            other => RuntimeEnvironment::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "FLINK-1_11" => RuntimeEnvironment::Flink111,
+"FLINK-1_13" => RuntimeEnvironment::Flink113,
+"FLINK-1_15" => RuntimeEnvironment::Flink115,
+"FLINK-1_18" => RuntimeEnvironment::Flink118,
+"FLINK-1_6" => RuntimeEnvironment::Flink16,
+"FLINK-1_8" => RuntimeEnvironment::Flink18,
+"SQL-1_0" => RuntimeEnvironment::Sql10,
+"ZEPPELIN-FLINK-1_0" => RuntimeEnvironment::ZeppelinFlink10,
+"ZEPPELIN-FLINK-2_0" => RuntimeEnvironment::ZeppelinFlink20,
+"ZEPPELIN-FLINK-3_0" => RuntimeEnvironment::ZeppelinFlink30,
+other => RuntimeEnvironment::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for RuntimeEnvironment {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RuntimeEnvironment::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(RuntimeEnvironment::from(s))
+                    }
+                }
 impl RuntimeEnvironment {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuntimeEnvironment::Flink111 => "FLINK-1_11",
-            RuntimeEnvironment::Flink113 => "FLINK-1_13",
-            RuntimeEnvironment::Flink115 => "FLINK-1_15",
-            RuntimeEnvironment::Flink118 => "FLINK-1_18",
-            RuntimeEnvironment::Flink16 => "FLINK-1_6",
-            RuntimeEnvironment::Flink18 => "FLINK-1_8",
-            RuntimeEnvironment::Sql10 => "SQL-1_0",
-            RuntimeEnvironment::ZeppelinFlink10 => "ZEPPELIN-FLINK-1_0",
-            RuntimeEnvironment::ZeppelinFlink20 => "ZEPPELIN-FLINK-2_0",
-            RuntimeEnvironment::ZeppelinFlink30 => "ZEPPELIN-FLINK-3_0",
-            RuntimeEnvironment::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FLINK-1_11",
-            "FLINK-1_13",
-            "FLINK-1_15",
-            "FLINK-1_18",
-            "FLINK-1_6",
-            "FLINK-1_8",
-            "SQL-1_0",
-            "ZEPPELIN-FLINK-1_0",
-            "ZEPPELIN-FLINK-2_0",
-            "ZEPPELIN-FLINK-3_0",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuntimeEnvironment::Flink111 => "FLINK-1_11",
+    RuntimeEnvironment::Flink113 => "FLINK-1_13",
+    RuntimeEnvironment::Flink115 => "FLINK-1_15",
+    RuntimeEnvironment::Flink118 => "FLINK-1_18",
+    RuntimeEnvironment::Flink16 => "FLINK-1_6",
+    RuntimeEnvironment::Flink18 => "FLINK-1_8",
+    RuntimeEnvironment::Sql10 => "SQL-1_0",
+    RuntimeEnvironment::ZeppelinFlink10 => "ZEPPELIN-FLINK-1_0",
+    RuntimeEnvironment::ZeppelinFlink20 => "ZEPPELIN-FLINK-2_0",
+    RuntimeEnvironment::ZeppelinFlink30 => "ZEPPELIN-FLINK-3_0",
+    RuntimeEnvironment::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FLINK-1_11", "FLINK-1_13", "FLINK-1_15", "FLINK-1_18", "FLINK-1_6", "FLINK-1_8", "SQL-1_0", "ZEPPELIN-FLINK-1_0", "ZEPPELIN-FLINK-2_0", "ZEPPELIN-FLINK-3_0"]
+                }
+            }
 impl ::std::convert::AsRef<str> for RuntimeEnvironment {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl RuntimeEnvironment {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for RuntimeEnvironment {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            RuntimeEnvironment::Flink111 => write!(f, "FLINK-1_11"),
-            RuntimeEnvironment::Flink113 => write!(f, "FLINK-1_13"),
-            RuntimeEnvironment::Flink115 => write!(f, "FLINK-1_15"),
-            RuntimeEnvironment::Flink118 => write!(f, "FLINK-1_18"),
-            RuntimeEnvironment::Flink16 => write!(f, "FLINK-1_6"),
-            RuntimeEnvironment::Flink18 => write!(f, "FLINK-1_8"),
-            RuntimeEnvironment::Sql10 => write!(f, "SQL-1_0"),
-            RuntimeEnvironment::ZeppelinFlink10 => write!(f, "ZEPPELIN-FLINK-1_0"),
-            RuntimeEnvironment::ZeppelinFlink20 => write!(f, "ZEPPELIN-FLINK-2_0"),
-            RuntimeEnvironment::ZeppelinFlink30 => write!(f, "ZEPPELIN-FLINK-3_0"),
-            RuntimeEnvironment::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                RuntimeEnvironment::Flink111 => write!(f, "FLINK-1_11"),
+RuntimeEnvironment::Flink113 => write!(f, "FLINK-1_13"),
+RuntimeEnvironment::Flink115 => write!(f, "FLINK-1_15"),
+RuntimeEnvironment::Flink118 => write!(f, "FLINK-1_18"),
+RuntimeEnvironment::Flink16 => write!(f, "FLINK-1_6"),
+RuntimeEnvironment::Flink18 => write!(f, "FLINK-1_8"),
+RuntimeEnvironment::Sql10 => write!(f, "SQL-1_0"),
+RuntimeEnvironment::ZeppelinFlink10 => write!(f, "ZEPPELIN-FLINK-1_0"),
+RuntimeEnvironment::ZeppelinFlink20 => write!(f, "ZEPPELIN-FLINK-2_0"),
+RuntimeEnvironment::ZeppelinFlink30 => write!(f, "ZEPPELIN-FLINK-3_0"),
+RuntimeEnvironment::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

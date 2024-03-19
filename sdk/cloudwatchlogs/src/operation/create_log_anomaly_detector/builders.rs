@@ -5,23 +5,20 @@ pub use crate::operation::create_log_anomaly_detector::_create_log_anomaly_detec
 
 impl CreateLogAnomalyDetectorInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_log_anomaly_detector();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_log_anomaly_detector();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateLogAnomalyDetector`.
-///
+/// 
 /// <p>Creates an <i>anomaly detector</i> that regularly scans one or more log groups and look for patterns and anomalies in the logs.</p>
 /// <p>An anomaly detector can help surface issues by automatically discovering anomalies in your log event traffic. An anomaly detector uses machine learning algorithms to scan log events and find <i>patterns</i>. A pattern is a shared text structure that recurs among your log fields. Patterns provide a useful tool for analyzing large sets of logs because a large number of log events can often be compressed into a few patterns.</p>
 /// <p>The anomaly detector uses pattern recognition to find <code>anomalies</code>, which are unusual log events. It uses the <code>evaluationFrequency</code> to compare current log events and patterns with trained baselines.</p>
@@ -34,33 +31,32 @@ impl CreateLogAnomalyDetectorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLogAnomalyDetectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_log_anomaly_detector::builders::CreateLogAnomalyDetectorInputBuilder,
+                    inner: crate::operation::create_log_anomaly_detector::builders::CreateLogAnomalyDetectorInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput,
-        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError,
-    > for CreateLogAnomalyDetectorFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput,
-            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput,
+                    crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError,
+                > for CreateLogAnomalyDetectorFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput,
+                        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateLogAnomalyDetectorFluentBuilder {
     /// Creates a new `CreateLogAnomalyDetector`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -69,53 +65,44 @@ impl CreateLogAnomalyDetectorFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetector::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetector::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput,
-        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetector::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetector::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorOutput, crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `logGroupArnList`.
     ///
     /// To override the contents of this collection use [`set_log_group_arn_list`](Self::set_log_group_arn_list).
@@ -126,12 +113,12 @@ impl CreateLogAnomalyDetectorFluentBuilder {
         self
     }
     /// <p>An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN.</p>
-    pub fn set_log_group_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_log_group_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_log_group_arn_list(input);
         self
     }
     /// <p>An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN.</p>
-    pub fn get_log_group_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_group_arn_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_log_group_arn_list()
     }
     /// <p>A name for this anomaly detector.</p>
@@ -219,13 +206,14 @@ impl CreateLogAnomalyDetectorFluentBuilder {
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The metadata transfer job's progress.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetadataTransferJobProgress {
+pub struct MetadataTransferJobProgress  {
     /// <p>The total count. [of what]</p>
     pub total_count: ::std::option::Option<i32>,
     /// <p>The succeeded count.</p>
@@ -13,7 +13,7 @@ pub struct MetadataTransferJobProgress {
     /// <p>The failed count.</p>
     pub failed_count: ::std::option::Option<i32>,
 }
-impl MetadataTransferJobProgress {
+impl  MetadataTransferJobProgress  {
     /// <p>The total count. [of what]</p>
     pub fn total_count(&self) -> ::std::option::Option<i32> {
         self.total_count
@@ -55,8 +55,7 @@ impl MetadataTransferJobProgressBuilder {
     }
     /// <p>The total count. [of what]</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The total count. [of what]</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl MetadataTransferJobProgressBuilder {
     }
     /// <p>The succeeded count.</p>
     pub fn set_succeeded_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.succeeded_count = input;
-        self
+        self.succeeded_count = input; self
     }
     /// <p>The succeeded count.</p>
     pub fn get_succeeded_count(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl MetadataTransferJobProgressBuilder {
     }
     /// <p>The skipped count.</p>
     pub fn set_skipped_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.skipped_count = input;
-        self
+        self.skipped_count = input; self
     }
     /// <p>The skipped count.</p>
     pub fn get_skipped_count(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl MetadataTransferJobProgressBuilder {
     }
     /// <p>The failed count.</p>
     pub fn set_failed_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_count = input;
-        self
+        self.failed_count = input; self
     }
     /// <p>The failed count.</p>
     pub fn get_failed_count(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl MetadataTransferJobProgressBuilder {
     /// Consumes the builder and constructs a [`MetadataTransferJobProgress`](crate::types::MetadataTransferJobProgress).
     pub fn build(self) -> crate::types::MetadataTransferJobProgress {
         crate::types::MetadataTransferJobProgress {
-            total_count: self.total_count,
-            succeeded_count: self.succeeded_count,
-            skipped_count: self.skipped_count,
-            failed_count: self.failed_count,
+            total_count: self.total_count
+            ,
+            succeeded_count: self.succeeded_count
+            ,
+            skipped_count: self.skipped_count
+            ,
+            failed_count: self.failed_count
+            ,
         }
     }
 }
+

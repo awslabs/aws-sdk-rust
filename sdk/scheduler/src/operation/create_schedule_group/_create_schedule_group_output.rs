@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateScheduleGroupOutput {
+pub struct CreateScheduleGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub schedule_group_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateScheduleGroupOutput {
+impl  CreateScheduleGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    pub fn schedule_group_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.schedule_group_arn.deref()
+    pub fn schedule_group_arn(&self) -> & str {
+        use std::ops::Deref; self.schedule_group_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateScheduleGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateScheduleGroupOutput`](crate::operation::create_schedule_group::CreateScheduleGroupOutput).
     pub fn builder() -> crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder {
@@ -42,37 +41,35 @@ impl CreateScheduleGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub fn set_schedule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_group_arn = input;
-        self
+        self.schedule_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     pub fn get_schedule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateScheduleGroupOutput`](crate::operation::create_schedule_group::CreateScheduleGroupOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`schedule_group_arn`](crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder::schedule_group_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_schedule_group::CreateScheduleGroupOutput {
-            schedule_group_arn: self.schedule_group_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schedule_group_arn",
-                    "schedule_group_arn was not specified but it is required when building CreateScheduleGroupOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_schedule_group::CreateScheduleGroupOutput {
+                schedule_group_arn: self.schedule_group_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schedule_group_arn", "schedule_group_arn was not specified but it is required when building CreateScheduleGroupOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

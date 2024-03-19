@@ -3,7 +3,7 @@
 /// <p>A structure that describes a provider that can be used to connect an Amazon Web Services managed application or customer managed application to IAM Identity Center.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationProvider {
+pub struct ApplicationProvider  {
     /// <p>The ARN of the application provider.</p>
     pub application_provider_arn: ::std::string::String,
     /// <p>The protocol that the application provider uses to perform federation.</p>
@@ -13,22 +13,21 @@ pub struct ApplicationProvider {
     /// <p>A structure that describes the application provider's resource server.</p>
     pub resource_server_config: ::std::option::Option<crate::types::ResourceServerConfig>,
 }
-impl ApplicationProvider {
+impl  ApplicationProvider  {
     /// <p>The ARN of the application provider.</p>
-    pub fn application_provider_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.application_provider_arn.deref()
+    pub fn application_provider_arn(&self) -> & str {
+        use std::ops::Deref; self.application_provider_arn.deref()
     }
     /// <p>The protocol that the application provider uses to perform federation.</p>
-    pub fn federation_protocol(&self) -> ::std::option::Option<&crate::types::FederationProtocol> {
+    pub fn federation_protocol(&self) -> ::std::option::Option<& crate::types::FederationProtocol> {
         self.federation_protocol.as_ref()
     }
     /// <p>A structure that describes how IAM Identity Center represents the application provider in the portal.</p>
-    pub fn display_data(&self) -> ::std::option::Option<&crate::types::DisplayData> {
+    pub fn display_data(&self) -> ::std::option::Option<& crate::types::DisplayData> {
         self.display_data.as_ref()
     }
     /// <p>A structure that describes the application provider's resource server.</p>
-    pub fn resource_server_config(&self) -> ::std::option::Option<&crate::types::ResourceServerConfig> {
+    pub fn resource_server_config(&self) -> ::std::option::Option<& crate::types::ResourceServerConfig> {
         self.resource_server_config.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl ApplicationProviderBuilder {
     }
     /// <p>The ARN of the application provider.</p>
     pub fn set_application_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_provider_arn = input;
-        self
+        self.application_provider_arn = input; self
     }
     /// <p>The ARN of the application provider.</p>
     pub fn get_application_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl ApplicationProviderBuilder {
     }
     /// <p>The protocol that the application provider uses to perform federation.</p>
     pub fn set_federation_protocol(mut self, input: ::std::option::Option<crate::types::FederationProtocol>) -> Self {
-        self.federation_protocol = input;
-        self
+        self.federation_protocol = input; self
     }
     /// <p>The protocol that the application provider uses to perform federation.</p>
     pub fn get_federation_protocol(&self) -> &::std::option::Option<crate::types::FederationProtocol> {
@@ -85,8 +82,7 @@ impl ApplicationProviderBuilder {
     }
     /// <p>A structure that describes how IAM Identity Center represents the application provider in the portal.</p>
     pub fn set_display_data(mut self, input: ::std::option::Option<crate::types::DisplayData>) -> Self {
-        self.display_data = input;
-        self
+        self.display_data = input; self
     }
     /// <p>A structure that describes how IAM Identity Center represents the application provider in the portal.</p>
     pub fn get_display_data(&self) -> &::std::option::Option<crate::types::DisplayData> {
@@ -99,8 +95,7 @@ impl ApplicationProviderBuilder {
     }
     /// <p>A structure that describes the application provider's resource server.</p>
     pub fn set_resource_server_config(mut self, input: ::std::option::Option<crate::types::ResourceServerConfig>) -> Self {
-        self.resource_server_config = input;
-        self
+        self.resource_server_config = input; self
     }
     /// <p>A structure that describes the application provider's resource server.</p>
     pub fn get_resource_server_config(&self) -> &::std::option::Option<crate::types::ResourceServerConfig> {
@@ -110,16 +105,21 @@ impl ApplicationProviderBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`application_provider_arn`](crate::types::builders::ApplicationProviderBuilder::application_provider_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationProvider, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationProvider {
-            application_provider_arn: self.application_provider_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_provider_arn",
-                    "application_provider_arn was not specified but it is required when building ApplicationProvider",
-                )
-            })?,
-            federation_protocol: self.federation_protocol,
-            display_data: self.display_data,
-            resource_server_config: self.resource_server_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationProvider {
+                application_provider_arn: self.application_provider_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_provider_arn", "application_provider_arn was not specified but it is required when building ApplicationProvider")
+                    )?
+                ,
+                federation_protocol: self.federation_protocol
+                ,
+                display_data: self.display_data
+                ,
+                resource_server_config: self.resource_server_config
+                ,
+            }
+        )
     }
 }
+

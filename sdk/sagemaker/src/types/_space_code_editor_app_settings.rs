@@ -3,13 +3,13 @@
 /// <p>The application settings for a Code Editor space.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpaceCodeEditorAppSettings {
+pub struct SpaceCodeEditorAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
-impl SpaceCodeEditorAppSettings {
+impl  SpaceCodeEditorAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> ::std::option::Option<& crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SpaceCodeEditorAppSettingsBuilder {
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
-        self.default_resource_spec = input;
-        self
+        self.default_resource_spec = input; self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
@@ -44,7 +43,9 @@ impl SpaceCodeEditorAppSettingsBuilder {
     /// Consumes the builder and constructs a [`SpaceCodeEditorAppSettings`](crate::types::SpaceCodeEditorAppSettings).
     pub fn build(self) -> crate::types::SpaceCodeEditorAppSettings {
         crate::types::SpaceCodeEditorAppSettings {
-            default_resource_spec: self.default_resource_spec,
+            default_resource_spec: self.default_resource_spec
+            ,
         }
     }
 }
+

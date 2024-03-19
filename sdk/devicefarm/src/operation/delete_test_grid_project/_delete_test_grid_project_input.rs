@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTestGridProjectInput {
+pub struct DeleteTestGridProjectInput  {
     /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTestGridProjectInput {
+impl  DeleteTestGridProjectInput  {
     /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteTestGridProjectInputBuilder {
     }
     /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_arn
     }
     /// Consumes the builder and constructs a [`DeleteTestGridProjectInput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_test_grid_project::DeleteTestGridProjectInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_test_grid_project::DeleteTestGridProjectInput {
-            project_arn: self.project_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_test_grid_project::DeleteTestGridProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_test_grid_project::DeleteTestGridProjectInput {
+                project_arn: self.project_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>Represents the input of a <code>BatchGetDeployments</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDeploymentsInput {
+pub struct BatchGetDeploymentsInput  {
     /// <p>A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    pub deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub deployment_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetDeploymentsInput {
+impl  BatchGetDeploymentsInput  {
     /// <p>A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_ids.is_none()`.
-    pub fn deployment_ids(&self) -> &[::std::string::String] {
-        self.deployment_ids.as_deref().unwrap_or_default()
+    pub fn deployment_ids(&self) -> & [::std::string::String] {
+        self.deployment_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetDeploymentsInput {
@@ -26,7 +27,7 @@ impl BatchGetDeploymentsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentsInputBuilder {
-    pub(crate) deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deployment_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetDeploymentsInputBuilder {
     /// Appends an item to `deployment_ids`.
@@ -36,26 +37,26 @@ impl BatchGetDeploymentsInputBuilder {
     /// <p>A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
     pub fn deployment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deployment_ids.unwrap_or_default();
-        v.push(input.into());
-        self.deployment_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.deployment_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    pub fn set_deployment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.deployment_ids = input;
-        self
+    pub fn set_deployment_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.deployment_ids = input; self
     }
     /// <p>A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    pub fn get_deployment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deployment_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.deployment_ids
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentsInput`](crate::operation::batch_get_deployments::BatchGetDeploymentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_get_deployments::BatchGetDeploymentsInput {
-            deployment_ids: self.deployment_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_deployments::BatchGetDeploymentsInput {
+                deployment_ids: self.deployment_ids
+                ,
+            }
+        )
     }
 }
+

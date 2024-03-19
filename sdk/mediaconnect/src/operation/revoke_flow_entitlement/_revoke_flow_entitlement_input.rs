@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokeFlowEntitlementInput {
+pub struct RevokeFlowEntitlementInput  {
     /// The ARN of the entitlement that you want to revoke.
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// The flow that you want to revoke an entitlement from.
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
-impl RevokeFlowEntitlementInput {
+impl  RevokeFlowEntitlementInput  {
     /// The ARN of the entitlement that you want to revoke.
-    pub fn entitlement_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> ::std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// The flow that you want to revoke an entitlement from.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RevokeFlowEntitlementInputBuilder {
     }
     /// The ARN of the entitlement that you want to revoke.
     pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entitlement_arn = input;
-        self
+        self.entitlement_arn = input; self
     }
     /// The ARN of the entitlement that you want to revoke.
     pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl RevokeFlowEntitlementInputBuilder {
     }
     /// The flow that you want to revoke an entitlement from.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The flow that you want to revoke an entitlement from.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
     /// Consumes the builder and constructs a [`RevokeFlowEntitlementInput`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput {
-            entitlement_arn: self.entitlement_arn,
-            flow_arn: self.flow_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput {
+                entitlement_arn: self.entitlement_arn
+                ,
+                flow_arn: self.flow_arn
+                ,
+            }
+        )
     }
 }
+

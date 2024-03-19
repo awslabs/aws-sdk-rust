@@ -3,7 +3,7 @@
 /// <p>Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchForSuggestionsResult {
+pub struct SearchForSuggestionsResult  {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     pub text: ::std::string::String,
     /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p>
@@ -28,15 +28,14 @@ pub struct SearchForSuggestionsResult {
     pub place_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Location categories that describe the Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supplemental_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SearchForSuggestionsResult {
+impl  SearchForSuggestionsResult  {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> & str {
+        use std::ops::Deref; self.text.deref()
     }
     /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p>
     /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p><note>
@@ -57,21 +56,23 @@ impl SearchForSuggestionsResult {
     /// <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn place_id(&self) -> ::std::option::Option<&str> {
+    pub fn place_id(&self) -> ::std::option::Option<& str> {
         self.place_id.as_deref()
     }
     /// <p>The Amazon Location categories that describe the Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
-    pub fn categories(&self) -> &[::std::string::String] {
-        self.categories.as_deref().unwrap_or_default()
+    pub fn categories(&self) -> & [::std::string::String] {
+        self.categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supplemental_categories.is_none()`.
-    pub fn supplemental_categories(&self) -> &[::std::string::String] {
-        self.supplemental_categories.as_deref().unwrap_or_default()
+    pub fn supplemental_categories(&self) -> & [::std::string::String] {
+        self.supplemental_categories.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchForSuggestionsResult {
@@ -87,8 +88,8 @@ impl SearchForSuggestionsResult {
 pub struct SearchForSuggestionsResultBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) place_id: ::std::option::Option<::std::string::String>,
-    pub(crate) categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) supplemental_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SearchForSuggestionsResultBuilder {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
@@ -99,8 +100,7 @@ impl SearchForSuggestionsResultBuilder {
     }
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +149,7 @@ impl SearchForSuggestionsResultBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.place_id = input;
-        self
+        self.place_id = input; self
     }
     /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p>
     /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p><note>
@@ -182,19 +181,18 @@ impl SearchForSuggestionsResultBuilder {
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.categories.unwrap_or_default();
-        v.push(input.into());
-        self.categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Location categories that describe the Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.categories = input;
-        self
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.categories = input; self
     }
     /// <p>The Amazon Location categories that describe the Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.categories
     }
     /// Appends an item to `supplemental_categories`.
@@ -204,33 +202,37 @@ impl SearchForSuggestionsResultBuilder {
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
     pub fn supplemental_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supplemental_categories.unwrap_or_default();
-        v.push(input.into());
-        self.supplemental_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supplemental_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn set_supplemental_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supplemental_categories = input;
-        self
+    pub fn set_supplemental_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supplemental_categories = input; self
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supplemental_categories
     }
     /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::SearchForSuggestionsResultBuilder::text)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchForSuggestionsResult, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchForSuggestionsResult {
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building SearchForSuggestionsResult",
-                )
-            })?,
-            place_id: self.place_id,
-            categories: self.categories,
-            supplemental_categories: self.supplemental_categories,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchForSuggestionsResult {
+                text: self.text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text", "text was not specified but it is required when building SearchForSuggestionsResult")
+                    )?
+                ,
+                place_id: self.place_id
+                ,
+                categories: self.categories
+                ,
+                supplemental_categories: self.supplemental_categories
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationOutputInput {
+pub struct AddApplicationOutputInput  {
     /// <p>Name of the application to which you want to add the output configuration.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -11,9 +11,9 @@ pub struct AddApplicationOutputInput {
     /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
     pub output: ::std::option::Option<crate::types::Output>,
 }
-impl AddApplicationOutputInput {
+impl  AddApplicationOutputInput  {
     /// <p>Name of the application to which you want to add the output configuration.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -21,7 +21,7 @@ impl AddApplicationOutputInput {
         self.current_application_version_id
     }
     /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
-    pub fn output(&self) -> ::std::option::Option<&crate::types::Output> {
+    pub fn output(&self) -> ::std::option::Option<& crate::types::Output> {
         self.output.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl AddApplicationOutputInputBuilder {
     }
     /// <p>Name of the application to which you want to add the output configuration.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>Name of the application to which you want to add the output configuration.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl AddApplicationOutputInputBuilder {
     }
     /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -79,22 +77,24 @@ impl AddApplicationOutputInputBuilder {
     }
     /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::Output>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::Output> {
         &self.output
     }
     /// Consumes the builder and constructs a [`AddApplicationOutputInput`](crate::operation::add_application_output::AddApplicationOutputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_application_output::AddApplicationOutputInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::add_application_output::AddApplicationOutputInput {
-            application_name: self.application_name,
-            current_application_version_id: self.current_application_version_id,
-            output: self.output,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_application_output::AddApplicationOutputInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_application_output::AddApplicationOutputInput {
+                application_name: self.application_name
+                ,
+                current_application_version_id: self.current_application_version_id
+                ,
+                output: self.output
+                ,
+            }
+        )
     }
 }
+

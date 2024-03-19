@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProjectAssets`](crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`project_id(impl Into<String>)`](crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::set_project_id):<br>required: **true**<br><p>The ID of the project.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p><br>
-    /// - On success, responds with [`ListProjectAssetsOutput`](crate::operation::list_project_assets::ListProjectAssetsOutput) with field(s):
+                            /// - On success, responds with [`ListProjectAssetsOutput`](crate::operation::list_project_assets::ListProjectAssetsOutput) with field(s):
     ///   - [`asset_ids(Vec::<String>)`](crate::operation::list_project_assets::ListProjectAssetsOutput::asset_ids): <p>A list that contains the IDs of each asset associated with the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_project_assets::ListProjectAssetsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListProjectAssetsError>`](crate::operation::list_project_assets::ListProjectAssetsError)
+                            /// - On failure, responds with [`SdkError<ListProjectAssetsError>`](crate::operation::list_project_assets::ListProjectAssetsError)
     pub fn list_project_assets(&self) -> crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder {
-        crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_project_assets::builders::ListProjectAssetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

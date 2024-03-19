@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelChangeSetInput {
+pub struct CancelChangeSetInput  {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     pub change_set_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelChangeSetInput {
+impl  CancelChangeSetInput  {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<& str> {
         self.catalog.as_deref()
     }
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
-    pub fn change_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn change_set_id(&self) -> ::std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CancelChangeSetInputBuilder {
     }
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl CancelChangeSetInputBuilder {
     }
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_set_id = input;
-        self
+        self.change_set_id = input; self
     }
     /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
     pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_set_id
     }
     /// Consumes the builder and constructs a [`CancelChangeSetInput`](crate::operation::cancel_change_set::CancelChangeSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_change_set::CancelChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_change_set::CancelChangeSetInput {
-            catalog: self.catalog,
-            change_set_id: self.change_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_change_set::CancelChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_change_set::CancelChangeSetInput {
+                catalog: self.catalog
+                ,
+                change_set_id: self.change_set_id
+                ,
+            }
+        )
     }
 }
+

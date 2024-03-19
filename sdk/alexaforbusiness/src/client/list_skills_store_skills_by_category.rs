@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSkillsStoreSkillsByCategory`](crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`category_id(i64)`](crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::category_id) / [`set_category_id(Option<i64>)`](crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::set_category_id):<br>required: **true**<br><p>The category ID for which the skills are being retrieved from the skill store.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::set_next_token):<br>required: **false**<br><p>The tokens used for pagination.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of skills returned per paginated calls.</p><br>
-    /// - On success, responds with [`ListSkillsStoreSkillsByCategoryOutput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput) with field(s):
+                            /// - On success, responds with [`ListSkillsStoreSkillsByCategoryOutput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput) with field(s):
     ///   - [`skills_store_skills(Option<Vec::<SkillsStoreSkill>>)`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput::skills_store_skills): <p>The skill store skills.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput::next_token): <p>The tokens used for pagination.</p>
-    /// - On failure, responds with [`SdkError<ListSkillsStoreSkillsByCategoryError>`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryError)
+                            /// - On failure, responds with [`SdkError<ListSkillsStoreSkillsByCategoryError>`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn list_skills_store_skills_by_category(
-        &self,
-    ) -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder {
-        crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::new(self.handle.clone())
-    }
+    pub fn list_skills_store_skills_by_category(&self) -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder {
+                                crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

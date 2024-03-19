@@ -3,7 +3,7 @@
 /// A HarvestJob resource configuration
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HarvestJob {
+pub struct HarvestJob  {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
     pub arn: ::std::option::Option<::std::string::String>,
     /// The ID of the Channel that the HarvestJob will harvest from.
@@ -23,41 +23,41 @@ pub struct HarvestJob {
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
     pub status: ::std::option::Option<crate::types::Status>,
 }
-impl HarvestJob {
+impl  HarvestJob  {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The ID of the Channel that the HarvestJob will harvest from.
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// The date and time the HarvestJob was submitted.
-    pub fn created_at(&self) -> ::std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The end of the time-window which will be harvested.
-    pub fn end_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn origin_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.origin_endpoint_id.as_deref()
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<& crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
     /// The start of the time-window which will be harvested.
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl HarvestJobBuilder {
     }
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl HarvestJobBuilder {
     }
     /// The ID of the Channel that the HarvestJob will harvest from.
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// The ID of the Channel that the HarvestJob will harvest from.
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl HarvestJobBuilder {
     }
     /// The date and time the HarvestJob was submitted.
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// The date and time the HarvestJob was submitted.
     pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl HarvestJobBuilder {
     }
     /// The end of the time-window which will be harvested.
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// The end of the time-window which will be harvested.
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl HarvestJobBuilder {
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl HarvestJobBuilder {
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
     pub fn set_origin_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_endpoint_id = input;
-        self
+        self.origin_endpoint_id = input; self
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
     pub fn get_origin_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl HarvestJobBuilder {
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
     pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
-        self.s3_destination = input;
-        self
+        self.s3_destination = input; self
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
     pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
@@ -188,8 +181,7 @@ impl HarvestJobBuilder {
     }
     /// The start of the time-window which will be harvested.
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// The start of the time-window which will be harvested.
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl HarvestJobBuilder {
     }
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -212,15 +203,25 @@ impl HarvestJobBuilder {
     /// Consumes the builder and constructs a [`HarvestJob`](crate::types::HarvestJob).
     pub fn build(self) -> crate::types::HarvestJob {
         crate::types::HarvestJob {
-            arn: self.arn,
-            channel_id: self.channel_id,
-            created_at: self.created_at,
-            end_time: self.end_time,
-            id: self.id,
-            origin_endpoint_id: self.origin_endpoint_id,
-            s3_destination: self.s3_destination,
-            start_time: self.start_time,
-            status: self.status,
+            arn: self.arn
+            ,
+            channel_id: self.channel_id
+            ,
+            created_at: self.created_at
+            ,
+            end_time: self.end_time
+            ,
+            id: self.id
+            ,
+            origin_endpoint_id: self.origin_endpoint_id
+            ,
+            s3_destination: self.s3_destination
+            ,
+            start_time: self.start_time
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

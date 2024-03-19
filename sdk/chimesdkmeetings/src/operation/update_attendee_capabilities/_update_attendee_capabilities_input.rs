@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAttendeeCapabilitiesInput {
+pub struct UpdateAttendeeCapabilitiesInput  {
     /// <p>The ID of the meeting associated with the update request.</p>
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attendee associated with the update request.</p>
@@ -10,17 +10,17 @@ pub struct UpdateAttendeeCapabilitiesInput {
     /// <p>The capabilities that you want to update.</p>
     pub capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
-impl UpdateAttendeeCapabilitiesInput {
+impl  UpdateAttendeeCapabilitiesInput  {
     /// <p>The ID of the meeting associated with the update request.</p>
-    pub fn meeting_id(&self) -> ::std::option::Option<&str> {
+    pub fn meeting_id(&self) -> ::std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The ID of the attendee associated with the update request.</p>
-    pub fn attendee_id(&self) -> ::std::option::Option<&str> {
+    pub fn attendee_id(&self) -> ::std::option::Option<& str> {
         self.attendee_id.as_deref()
     }
     /// <p>The capabilities that you want to update.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&crate::types::AttendeeCapabilities> {
+    pub fn capabilities(&self) -> ::std::option::Option<& crate::types::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
     }
     /// <p>The ID of the meeting associated with the update request.</p>
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// <p>The ID of the meeting associated with the update request.</p>
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
     }
     /// <p>The ID of the attendee associated with the update request.</p>
     pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attendee_id = input;
-        self
+        self.attendee_id = input; self
     }
     /// <p>The ID of the attendee associated with the update request.</p>
     pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
     }
     /// <p>The capabilities that you want to update.</p>
     pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::AttendeeCapabilities>) -> Self {
-        self.capabilities = input;
-        self
+        self.capabilities = input; self
     }
     /// <p>The capabilities that you want to update.</p>
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::AttendeeCapabilities> {
         &self.capabilities
     }
     /// Consumes the builder and constructs a [`UpdateAttendeeCapabilitiesInput`](crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput {
-            meeting_id: self.meeting_id,
-            attendee_id: self.attendee_id,
-            capabilities: self.capabilities,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput {
+                meeting_id: self.meeting_id
+                ,
+                attendee_id: self.attendee_id
+                ,
+                capabilities: self.capabilities
+                ,
+            }
+        )
     }
 }
+

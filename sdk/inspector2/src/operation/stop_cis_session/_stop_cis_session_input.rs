@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopCisSessionInput {
+pub struct StopCisSessionInput  {
     /// <p>A unique identifier for the scan job.</p>
     pub scan_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique token that identifies the CIS session.</p>
@@ -10,17 +10,17 @@ pub struct StopCisSessionInput {
     /// <p>The stop CIS session message.</p>
     pub message: ::std::option::Option<crate::types::StopCisSessionMessage>,
 }
-impl StopCisSessionInput {
+impl  StopCisSessionInput  {
     /// <p>A unique identifier for the scan job.</p>
-    pub fn scan_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn scan_job_id(&self) -> ::std::option::Option<& str> {
         self.scan_job_id.as_deref()
     }
     /// <p>The unique token that identifies the CIS session.</p>
-    pub fn session_token(&self) -> ::std::option::Option<&str> {
+    pub fn session_token(&self) -> ::std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>The stop CIS session message.</p>
-    pub fn message(&self) -> ::std::option::Option<&crate::types::StopCisSessionMessage> {
+    pub fn message(&self) -> ::std::option::Option<& crate::types::StopCisSessionMessage> {
         self.message.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl StopCisSessionInputBuilder {
     }
     /// <p>A unique identifier for the scan job.</p>
     pub fn set_scan_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_job_id = input;
-        self
+        self.scan_job_id = input; self
     }
     /// <p>A unique identifier for the scan job.</p>
     pub fn get_scan_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl StopCisSessionInputBuilder {
     }
     /// <p>The unique token that identifies the CIS session.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>The unique token that identifies the CIS session.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl StopCisSessionInputBuilder {
     }
     /// <p>The stop CIS session message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<crate::types::StopCisSessionMessage>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The stop CIS session message.</p>
     pub fn get_message(&self) -> &::std::option::Option<crate::types::StopCisSessionMessage> {
         &self.message
     }
     /// Consumes the builder and constructs a [`StopCisSessionInput`](crate::operation::stop_cis_session::StopCisSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_cis_session::StopCisSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_cis_session::StopCisSessionInput {
-            scan_job_id: self.scan_job_id,
-            session_token: self.session_token,
-            message: self.message,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_cis_session::StopCisSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_cis_session::StopCisSessionInput {
+                scan_job_id: self.scan_job_id
+                ,
+                session_token: self.session_token
+                ,
+                message: self.message
+                ,
+            }
+        )
     }
 }
+

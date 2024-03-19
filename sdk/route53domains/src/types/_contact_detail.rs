@@ -3,7 +3,7 @@
 /// <p>ContactDetail includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ContactDetail {
+pub struct ContactDetail  {
     /// <p>First name of contact.</p>
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>Last name of contact.</p>
@@ -41,15 +41,15 @@ pub struct ContactDetail {
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     pub fax: ::std::option::Option<::std::string::String>,
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    pub extra_params: ::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>>,
+    pub extra_params: ::std::option::Option<::std::vec::Vec::<crate::types::ExtraParam>>,
 }
-impl ContactDetail {
+impl  ContactDetail  {
     /// <p>First name of contact.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>Last name of contact.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
@@ -61,59 +61,60 @@ impl ContactDetail {
     /// <li>
     /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p></li>
     /// </ul>
-    pub fn contact_type(&self) -> ::std::option::Option<&crate::types::ContactType> {
+    pub fn contact_type(&self) -> ::std::option::Option<& crate::types::ContactType> {
         self.contact_type.as_ref()
     }
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
-    pub fn organization_name(&self) -> ::std::option::Option<&str> {
+    pub fn organization_name(&self) -> ::std::option::Option<& str> {
         self.organization_name.as_deref()
     }
     /// <p>First line of the contact's address.</p>
-    pub fn address_line1(&self) -> ::std::option::Option<&str> {
+    pub fn address_line1(&self) -> ::std::option::Option<& str> {
         self.address_line1.as_deref()
     }
     /// <p>Second line of contact's address, if any.</p>
-    pub fn address_line2(&self) -> ::std::option::Option<&str> {
+    pub fn address_line2(&self) -> ::std::option::Option<& str> {
         self.address_line2.as_deref()
     }
     /// <p>The city of the contact's address.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The state or province of the contact's city.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Code for the country of the contact's address.</p>
-    pub fn country_code(&self) -> ::std::option::Option<&crate::types::CountryCode> {
+    pub fn country_code(&self) -> ::std::option::Option<& crate::types::CountryCode> {
         self.country_code.as_ref()
     }
     /// <p>The zip or postal code of the contact's address.</p>
-    pub fn zip_code(&self) -> ::std::option::Option<&str> {
+    pub fn zip_code(&self) -> ::std::option::Option<& str> {
         self.zip_code.as_deref()
     }
     /// <p>The phone number of the contact.</p>
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>Email address of the contact.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>Fax number of the contact.</p>
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
-    pub fn fax(&self) -> ::std::option::Option<&str> {
+    pub fn fax(&self) -> ::std::option::Option<& str> {
         self.fax.as_deref()
     }
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extra_params.is_none()`.
-    pub fn extra_params(&self) -> &[crate::types::ExtraParam] {
-        self.extra_params.as_deref().unwrap_or_default()
+    pub fn extra_params(&self) -> & [crate::types::ExtraParam] {
+        self.extra_params.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for ContactDetail {
+impl  ::std::fmt::Debug for ContactDetail  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ContactDetail");
         formatter.field("first_name", &"*** Sensitive Data Redacted ***");
@@ -157,7 +158,7 @@ pub struct ContactDetailBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) fax: ::std::option::Option<::std::string::String>,
-    pub(crate) extra_params: ::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>>,
+    pub(crate) extra_params: ::std::option::Option<::std::vec::Vec::<crate::types::ExtraParam>>,
 }
 impl ContactDetailBuilder {
     /// <p>First name of contact.</p>
@@ -167,8 +168,7 @@ impl ContactDetailBuilder {
     }
     /// <p>First name of contact.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>First name of contact.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +181,7 @@ impl ContactDetailBuilder {
     }
     /// <p>Last name of contact.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>Last name of contact.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +210,7 @@ impl ContactDetailBuilder {
     /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p></li>
     /// </ul>
     pub fn set_contact_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
-        self.contact_type = input;
-        self
+        self.contact_type = input; self
     }
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
@@ -233,8 +231,7 @@ impl ContactDetailBuilder {
     }
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
     pub fn set_organization_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_name = input;
-        self
+        self.organization_name = input; self
     }
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
     pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +244,7 @@ impl ContactDetailBuilder {
     }
     /// <p>First line of the contact's address.</p>
     pub fn set_address_line1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_line1 = input;
-        self
+        self.address_line1 = input; self
     }
     /// <p>First line of the contact's address.</p>
     pub fn get_address_line1(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,8 +257,7 @@ impl ContactDetailBuilder {
     }
     /// <p>Second line of contact's address, if any.</p>
     pub fn set_address_line2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_line2 = input;
-        self
+        self.address_line2 = input; self
     }
     /// <p>Second line of contact's address, if any.</p>
     pub fn get_address_line2(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,8 +270,7 @@ impl ContactDetailBuilder {
     }
     /// <p>The city of the contact's address.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>The city of the contact's address.</p>
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
@@ -289,8 +283,7 @@ impl ContactDetailBuilder {
     }
     /// <p>The state or province of the contact's city.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state or province of the contact's city.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -303,8 +296,7 @@ impl ContactDetailBuilder {
     }
     /// <p>Code for the country of the contact's address.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<crate::types::CountryCode>) -> Self {
-        self.country_code = input;
-        self
+        self.country_code = input; self
     }
     /// <p>Code for the country of the contact's address.</p>
     pub fn get_country_code(&self) -> &::std::option::Option<crate::types::CountryCode> {
@@ -317,8 +309,7 @@ impl ContactDetailBuilder {
     }
     /// <p>The zip or postal code of the contact's address.</p>
     pub fn set_zip_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zip_code = input;
-        self
+        self.zip_code = input; self
     }
     /// <p>The zip or postal code of the contact's address.</p>
     pub fn get_zip_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -333,8 +324,7 @@ impl ContactDetailBuilder {
     /// <p>The phone number of the contact.</p>
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number of the contact.</p>
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
@@ -348,8 +338,7 @@ impl ContactDetailBuilder {
     }
     /// <p>Email address of the contact.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>Email address of the contact.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -364,8 +353,7 @@ impl ContactDetailBuilder {
     /// <p>Fax number of the contact.</p>
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     pub fn set_fax(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fax = input;
-        self
+        self.fax = input; self
     }
     /// <p>Fax number of the contact.</p>
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
@@ -379,36 +367,49 @@ impl ContactDetailBuilder {
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
     pub fn extra_params(mut self, input: crate::types::ExtraParam) -> Self {
         let mut v = self.extra_params.unwrap_or_default();
-        v.push(input);
-        self.extra_params = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.extra_params = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    pub fn set_extra_params(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>>) -> Self {
-        self.extra_params = input;
-        self
+    pub fn set_extra_params(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExtraParam>>) -> Self {
+        self.extra_params = input; self
     }
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    pub fn get_extra_params(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>> {
+    pub fn get_extra_params(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExtraParam>> {
         &self.extra_params
     }
     /// Consumes the builder and constructs a [`ContactDetail`](crate::types::ContactDetail).
     pub fn build(self) -> crate::types::ContactDetail {
         crate::types::ContactDetail {
-            first_name: self.first_name,
-            last_name: self.last_name,
-            contact_type: self.contact_type,
-            organization_name: self.organization_name,
-            address_line1: self.address_line1,
-            address_line2: self.address_line2,
-            city: self.city,
-            state: self.state,
-            country_code: self.country_code,
-            zip_code: self.zip_code,
-            phone_number: self.phone_number,
-            email: self.email,
-            fax: self.fax,
-            extra_params: self.extra_params,
+            first_name: self.first_name
+            ,
+            last_name: self.last_name
+            ,
+            contact_type: self.contact_type
+            ,
+            organization_name: self.organization_name
+            ,
+            address_line1: self.address_line1
+            ,
+            address_line2: self.address_line2
+            ,
+            city: self.city
+            ,
+            state: self.state
+            ,
+            country_code: self.country_code
+            ,
+            zip_code: self.zip_code
+            ,
+            phone_number: self.phone_number
+            ,
+            email: self.email
+            ,
+            fax: self.fax
+            ,
+            extra_params: self.extra_params
+            ,
         }
     }
 }
@@ -432,3 +433,4 @@ impl ::std::fmt::Debug for ContactDetailBuilder {
         formatter.finish()
     }
 }
+

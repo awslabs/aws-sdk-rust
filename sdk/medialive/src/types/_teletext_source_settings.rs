@@ -3,19 +3,19 @@
 /// Teletext Source Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TeletextSourceSettings {
+pub struct TeletextSourceSettings  {
     /// Optionally defines a region where TTML style captions will be displayed
     pub output_rectangle: ::std::option::Option<crate::types::CaptionRectangle>,
     /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
     pub page_number: ::std::option::Option<::std::string::String>,
 }
-impl TeletextSourceSettings {
+impl  TeletextSourceSettings  {
     /// Optionally defines a region where TTML style captions will be displayed
-    pub fn output_rectangle(&self) -> ::std::option::Option<&crate::types::CaptionRectangle> {
+    pub fn output_rectangle(&self) -> ::std::option::Option<& crate::types::CaptionRectangle> {
         self.output_rectangle.as_ref()
     }
     /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
-    pub fn page_number(&self) -> ::std::option::Option<&str> {
+    pub fn page_number(&self) -> ::std::option::Option<& str> {
         self.page_number.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TeletextSourceSettingsBuilder {
     }
     /// Optionally defines a region where TTML style captions will be displayed
     pub fn set_output_rectangle(mut self, input: ::std::option::Option<crate::types::CaptionRectangle>) -> Self {
-        self.output_rectangle = input;
-        self
+        self.output_rectangle = input; self
     }
     /// Optionally defines a region where TTML style captions will be displayed
     pub fn get_output_rectangle(&self) -> &::std::option::Option<crate::types::CaptionRectangle> {
@@ -55,8 +54,7 @@ impl TeletextSourceSettingsBuilder {
     }
     /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
     pub fn set_page_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_number = input;
-        self
+        self.page_number = input; self
     }
     /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
     pub fn get_page_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TeletextSourceSettingsBuilder {
     /// Consumes the builder and constructs a [`TeletextSourceSettings`](crate::types::TeletextSourceSettings).
     pub fn build(self) -> crate::types::TeletextSourceSettings {
         crate::types::TeletextSourceSettings {
-            output_rectangle: self.output_rectangle,
-            page_number: self.page_number,
+            output_rectangle: self.output_rectangle
+            ,
+            page_number: self.page_number
+            ,
         }
     }
 }
+

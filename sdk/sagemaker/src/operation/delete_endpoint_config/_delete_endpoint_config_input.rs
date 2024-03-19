@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEndpointConfigInput {
+pub struct DeleteEndpointConfigInput  {
     /// <p>The name of the endpoint configuration that you want to delete.</p>
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEndpointConfigInput {
+impl  DeleteEndpointConfigInput  {
     /// <p>The name of the endpoint configuration that you want to delete.</p>
-    pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_config_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteEndpointConfigInputBuilder {
     }
     /// <p>The name of the endpoint configuration that you want to delete.</p>
     pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_config_name = input;
-        self
+        self.endpoint_config_name = input; self
     }
     /// <p>The name of the endpoint configuration that you want to delete.</p>
     pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_config_name
     }
     /// Consumes the builder and constructs a [`DeleteEndpointConfigInput`](crate::operation::delete_endpoint_config::DeleteEndpointConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint_config::DeleteEndpointConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_endpoint_config::DeleteEndpointConfigInput {
-            endpoint_config_name: self.endpoint_config_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_endpoint_config::DeleteEndpointConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_endpoint_config::DeleteEndpointConfigInput {
+                endpoint_config_name: self.endpoint_config_name
+                ,
+            }
+        )
     }
 }
+

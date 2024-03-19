@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceCollectionInput {
+pub struct GetResourceCollectionInput  {
     /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
     pub resource_collection_type: ::std::option::Option<crate::types::ResourceCollectionType>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetResourceCollectionInput {
+impl  GetResourceCollectionInput  {
     /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
-    pub fn resource_collection_type(&self) -> ::std::option::Option<&crate::types::ResourceCollectionType> {
+    pub fn resource_collection_type(&self) -> ::std::option::Option<& crate::types::ResourceCollectionType> {
         self.resource_collection_type.as_ref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetResourceCollectionInputBuilder {
     }
     /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
     pub fn set_resource_collection_type(mut self, input: ::std::option::Option<crate::types::ResourceCollectionType>) -> Self {
-        self.resource_collection_type = input;
-        self
+        self.resource_collection_type = input; self
     }
     /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
     pub fn get_resource_collection_type(&self) -> &::std::option::Option<crate::types::ResourceCollectionType> {
@@ -55,21 +54,22 @@ impl GetResourceCollectionInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetResourceCollectionInput`](crate::operation::get_resource_collection::GetResourceCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resource_collection::GetResourceCollectionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_resource_collection::GetResourceCollectionInput {
-            resource_collection_type: self.resource_collection_type,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_collection::GetResourceCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resource_collection::GetResourceCollectionInput {
+                resource_collection_type: self.resource_collection_type
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

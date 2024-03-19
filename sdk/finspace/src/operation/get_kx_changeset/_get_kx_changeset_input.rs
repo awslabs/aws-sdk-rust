@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKxChangesetInput {
+pub struct GetKxChangesetInput  {
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the kdb database.</p>
@@ -10,17 +10,17 @@ pub struct GetKxChangesetInput {
     /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
 }
-impl GetKxChangesetInput {
+impl  GetKxChangesetInput  {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetKxChangesetInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetKxChangesetInputBuilder {
     }
     /// <p>The name of the kdb database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the kdb database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetKxChangesetInputBuilder {
     }
     /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
     }
     /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.changeset_id
     }
     /// Consumes the builder and constructs a [`GetKxChangesetInput`](crate::operation::get_kx_changeset::GetKxChangesetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_kx_changeset::GetKxChangesetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_kx_changeset::GetKxChangesetInput {
-            environment_id: self.environment_id,
-            database_name: self.database_name,
-            changeset_id: self.changeset_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_kx_changeset::GetKxChangesetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_kx_changeset::GetKxChangesetInput {
+                environment_id: self.environment_id
+                ,
+                database_name: self.database_name
+                ,
+                changeset_id: self.changeset_id
+                ,
+            }
+        )
     }
 }
+

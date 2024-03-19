@@ -3,15 +3,14 @@
 /// <p>Represents a task list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskList {
+pub struct TaskList  {
     /// <p>The name of the task list.</p>
     pub name: ::std::string::String,
 }
-impl TaskList {
+impl  TaskList  {
     /// <p>The name of the task list.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl TaskList {
@@ -36,8 +35,7 @@ impl TaskListBuilder {
     }
     /// <p>The name of the task list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the task list.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl TaskListBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TaskListBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::TaskList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TaskList {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TaskList",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TaskList {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TaskList")
+                    )?
+                ,
+            }
+        )
     }
 }
+

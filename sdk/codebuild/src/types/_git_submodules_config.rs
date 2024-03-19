@@ -3,11 +3,11 @@
 /// <p>Information about the Git submodules configuration for an CodeBuild build project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitSubmodulesConfig {
+pub struct GitSubmodulesConfig  {
     /// <p>Set to true to fetch Git submodules for your CodeBuild build project.</p>
     pub fetch_submodules: bool,
 }
-impl GitSubmodulesConfig {
+impl  GitSubmodulesConfig  {
     /// <p>Set to true to fetch Git submodules for your CodeBuild build project.</p>
     pub fn fetch_submodules(&self) -> bool {
         self.fetch_submodules
@@ -35,8 +35,7 @@ impl GitSubmodulesConfigBuilder {
     }
     /// <p>Set to true to fetch Git submodules for your CodeBuild build project.</p>
     pub fn set_fetch_submodules(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fetch_submodules = input;
-        self
+        self.fetch_submodules = input; self
     }
     /// <p>Set to true to fetch Git submodules for your CodeBuild build project.</p>
     pub fn get_fetch_submodules(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl GitSubmodulesConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`fetch_submodules`](crate::types::builders::GitSubmodulesConfigBuilder::fetch_submodules)
     pub fn build(self) -> ::std::result::Result<crate::types::GitSubmodulesConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GitSubmodulesConfig {
-            fetch_submodules: self.fetch_submodules.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fetch_submodules",
-                    "fetch_submodules was not specified but it is required when building GitSubmodulesConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GitSubmodulesConfig {
+                fetch_submodules: self.fetch_submodules
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fetch_submodules", "fetch_submodules was not specified but it is required when building GitSubmodulesConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

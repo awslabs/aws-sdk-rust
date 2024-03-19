@@ -3,7 +3,7 @@
 /// <p>Provides the source and the message types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceDetail {
+pub struct SourceDetail  {
     /// <p>The source of the event, such as an Amazon Web Services service, that triggers Config to evaluate your Amazon Web Services resources.</p>
     pub event_source: ::std::option::Option<crate::types::EventSource>,
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
@@ -25,9 +25,9 @@ pub struct SourceDetail {
     /// </note>
     pub maximum_execution_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
 }
-impl SourceDetail {
+impl  SourceDetail  {
     /// <p>The source of the event, such as an Amazon Web Services service, that triggers Config to evaluate your Amazon Web Services resources.</p>
-    pub fn event_source(&self) -> ::std::option::Option<&crate::types::EventSource> {
+    pub fn event_source(&self) -> ::std::option::Option<& crate::types::EventSource> {
         self.event_source.as_ref()
     }
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
@@ -42,14 +42,14 @@ impl SourceDetail {
     /// <p><code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation when Config delivers a configuration snapshot.</p></li>
     /// </ul>
     /// <p>If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for <code>ConfigurationItemChangeNotification</code> and one for <code>OversizedConfigurationItemChangeNotification</code>.</p>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<& crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>The frequency at which you want Config to run evaluations for a custom rule with a periodic trigger. If you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the <code>ScheduledNotification</code> value.</p><note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// <p>Based on the valid value you choose, Config runs evaluations once for each valid value. For example, if you choose <code>Three_Hours</code>, Config runs evaluations once every three hours. In this case, <code>Three_Hours</code> is the frequency of this rule.</p>
     /// </note>
-    pub fn maximum_execution_frequency(&self) -> ::std::option::Option<&crate::types::MaximumExecutionFrequency> {
+    pub fn maximum_execution_frequency(&self) -> ::std::option::Option<& crate::types::MaximumExecutionFrequency> {
         self.maximum_execution_frequency.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl SourceDetailBuilder {
     }
     /// <p>The source of the event, such as an Amazon Web Services service, that triggers Config to evaluate your Amazon Web Services resources.</p>
     pub fn set_event_source(mut self, input: ::std::option::Option<crate::types::EventSource>) -> Self {
-        self.event_source = input;
-        self
+        self.event_source = input; self
     }
     /// <p>The source of the event, such as an Amazon Web Services service, that triggers Config to evaluate your Amazon Web Services resources.</p>
     pub fn get_event_source(&self) -> &::std::option::Option<crate::types::EventSource> {
@@ -112,8 +111,7 @@ impl SourceDetailBuilder {
     /// </ul>
     /// <p>If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for <code>ConfigurationItemChangeNotification</code> and one for <code>OversizedConfigurationItemChangeNotification</code>.</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
     /// <ul>
@@ -143,8 +141,7 @@ impl SourceDetailBuilder {
     /// <p>Based on the valid value you choose, Config runs evaluations once for each valid value. For example, if you choose <code>Three_Hours</code>, Config runs evaluations once every three hours. In this case, <code>Three_Hours</code> is the frequency of this rule.</p>
     /// </note>
     pub fn set_maximum_execution_frequency(mut self, input: ::std::option::Option<crate::types::MaximumExecutionFrequency>) -> Self {
-        self.maximum_execution_frequency = input;
-        self
+        self.maximum_execution_frequency = input; self
     }
     /// <p>The frequency at which you want Config to run evaluations for a custom rule with a periodic trigger. If you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the <code>ScheduledNotification</code> value.</p><note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
@@ -156,9 +153,13 @@ impl SourceDetailBuilder {
     /// Consumes the builder and constructs a [`SourceDetail`](crate::types::SourceDetail).
     pub fn build(self) -> crate::types::SourceDetail {
         crate::types::SourceDetail {
-            event_source: self.event_source,
-            message_type: self.message_type,
-            maximum_execution_frequency: self.maximum_execution_frequency,
+            event_source: self.event_source
+            ,
+            message_type: self.message_type
+            ,
+            maximum_execution_frequency: self.maximum_execution_frequency
+            ,
         }
     }
 }
+

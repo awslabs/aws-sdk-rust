@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomKeyStoreInput {
+pub struct DeleteCustomKeyStoreInput  {
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub custom_key_store_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCustomKeyStoreInput {
+impl  DeleteCustomKeyStoreInput  {
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn custom_key_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn custom_key_store_id(&self) -> ::std::option::Option<& str> {
         self.custom_key_store_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteCustomKeyStoreInputBuilder {
     }
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_key_store_id = input;
-        self
+        self.custom_key_store_id = input; self
     }
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     pub fn get_custom_key_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_key_store_id
     }
     /// Consumes the builder and constructs a [`DeleteCustomKeyStoreInput`](crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput {
-            custom_key_store_id: self.custom_key_store_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput {
+                custom_key_store_id: self.custom_key_store_id
+                ,
+            }
+        )
     }
 }
+

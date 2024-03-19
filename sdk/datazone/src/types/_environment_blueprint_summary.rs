@@ -3,7 +3,7 @@
 /// <p>The details of an environment blueprint summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EnvironmentBlueprintSummary {
+pub struct EnvironmentBlueprintSummary  {
     /// <p>The identifier of the blueprint.</p>
     pub id: ::std::string::String,
     /// <p>The name of the blueprint.</p>
@@ -19,40 +19,37 @@ pub struct EnvironmentBlueprintSummary {
     /// <p>The timestamp of when the blueprint was enabled.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EnvironmentBlueprintSummary {
+impl  EnvironmentBlueprintSummary  {
     /// <p>The identifier of the blueprint.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the blueprint.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of a blueprint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The provider of the blueprint.</p>
-    pub fn provider(&self) -> &str {
-        use std::ops::Deref;
-        self.provider.deref()
+    pub fn provider(&self) -> & str {
+        use std::ops::Deref; self.provider.deref()
     }
     /// <p>The provisioning properties of the blueprint.</p>
-    pub fn provisioning_properties(&self) -> ::std::option::Option<&crate::types::ProvisioningProperties> {
+    pub fn provisioning_properties(&self) -> ::std::option::Option<& crate::types::ProvisioningProperties> {
         self.provisioning_properties.as_ref()
     }
     /// <p>The timestamp of when an environment blueprint was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the blueprint was enabled.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for EnvironmentBlueprintSummary {
+impl  ::std::fmt::Debug for EnvironmentBlueprintSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentBlueprintSummary");
         formatter.field("id", &self.id);
@@ -93,8 +90,7 @@ impl EnvironmentBlueprintSummaryBuilder {
     }
     /// <p>The identifier of the blueprint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the blueprint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +104,7 @@ impl EnvironmentBlueprintSummaryBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the blueprint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +117,7 @@ impl EnvironmentBlueprintSummaryBuilder {
     }
     /// <p>The description of a blueprint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a blueprint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +131,7 @@ impl EnvironmentBlueprintSummaryBuilder {
     }
     /// <p>The provider of the blueprint.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of the blueprint.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +145,7 @@ impl EnvironmentBlueprintSummaryBuilder {
     }
     /// <p>The provisioning properties of the blueprint.</p>
     pub fn set_provisioning_properties(mut self, input: ::std::option::Option<crate::types::ProvisioningProperties>) -> Self {
-        self.provisioning_properties = input;
-        self
+        self.provisioning_properties = input; self
     }
     /// <p>The provisioning properties of the blueprint.</p>
     pub fn get_provisioning_properties(&self) -> &::std::option::Option<crate::types::ProvisioningProperties> {
@@ -166,8 +158,7 @@ impl EnvironmentBlueprintSummaryBuilder {
     }
     /// <p>The timestamp of when an environment blueprint was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when an environment blueprint was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,8 +171,7 @@ impl EnvironmentBlueprintSummaryBuilder {
     }
     /// <p>The timestamp of when the blueprint was enabled.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the blueprint was enabled.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -193,30 +183,33 @@ impl EnvironmentBlueprintSummaryBuilder {
     /// - [`name`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::name)
     /// - [`provider`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::provider)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentBlueprintSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentBlueprintSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building EnvironmentBlueprintSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building EnvironmentBlueprintSummary",
-                )
-            })?,
-            description: self.description,
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building EnvironmentBlueprintSummary",
-                )
-            })?,
-            provisioning_properties: self.provisioning_properties,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentBlueprintSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building EnvironmentBlueprintSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building EnvironmentBlueprintSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building EnvironmentBlueprintSummary")
+                    )?
+                ,
+                provisioning_properties: self.provisioning_properties
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EnvironmentBlueprintSummaryBuilder {
@@ -232,3 +225,4 @@ impl ::std::fmt::Debug for EnvironmentBlueprintSummaryBuilder {
         formatter.finish()
     }
 }
+

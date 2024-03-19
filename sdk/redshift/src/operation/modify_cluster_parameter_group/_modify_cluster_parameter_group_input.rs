@@ -3,26 +3,27 @@
 /// <p>Describes a modify cluster parameter group operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClusterParameterGroupInput {
+pub struct ModifyClusterParameterGroupInput  {
     /// <p>The name of the parameter group to be modified.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
 }
-impl ModifyClusterParameterGroupInput {
+impl  ModifyClusterParameterGroupInput  {
     /// <p>The name of the parameter group to be modified.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyClusterParameterGroupInput {
@@ -37,7 +38,7 @@ impl ModifyClusterParameterGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
 }
 impl ModifyClusterParameterGroupInputBuilder {
     /// <p>The name of the parameter group to be modified.</p>
@@ -48,8 +49,7 @@ impl ModifyClusterParameterGroupInputBuilder {
     }
     /// <p>The name of the parameter group to be modified.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the parameter group to be modified.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,33 +64,32 @@ impl ModifyClusterParameterGroupInputBuilder {
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ModifyClusterParameterGroupInput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput {
-            parameter_group_name: self.parameter_group_name,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput {
+                parameter_group_name: self.parameter_group_name
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

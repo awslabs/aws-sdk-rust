@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStateMachineAliasOutput {
+pub struct DeleteStateMachineAliasOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteStateMachineAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteStateMachineAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStateMachineAliasOutput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput).
     pub fn builder() -> crate::operation::delete_state_machine_alias::builders::DeleteStateMachineAliasOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteStateMachineAliasOutputBuilder {
 }
 impl DeleteStateMachineAliasOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteStateMachineAliasOutput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput).
     pub fn build(self) -> crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput {
         crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput {
@@ -40,3 +40,4 @@ impl DeleteStateMachineAliasOutputBuilder {
         }
     }
 }
+

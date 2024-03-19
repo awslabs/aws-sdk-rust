@@ -3,28 +3,26 @@
 /// <p>Performs an Amazon Q plugin action during a non-streaming chat conversation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionExecution {
+pub struct ActionExecution  {
     /// <p>The identifier of the plugin the action is attached to.</p>
     pub plugin_id: ::std::string::String,
     /// <p>A mapping of field names to the field values in input that an end user provides to Amazon Q requests to perform their plugin action.</p>
-    pub payload: ::std::collections::HashMap<::std::string::String, crate::types::ActionExecutionPayloadField>,
+    pub payload: ::std::collections::HashMap::<::std::string::String, crate::types::ActionExecutionPayloadField>,
     /// <p>A string used to retain information about the hierarchical contexts within an action execution event payload.</p>
     pub payload_field_name_separator: ::std::string::String,
 }
-impl ActionExecution {
+impl  ActionExecution  {
     /// <p>The identifier of the plugin the action is attached to.</p>
-    pub fn plugin_id(&self) -> &str {
-        use std::ops::Deref;
-        self.plugin_id.deref()
+    pub fn plugin_id(&self) -> & str {
+        use std::ops::Deref; self.plugin_id.deref()
     }
     /// <p>A mapping of field names to the field values in input that an end user provides to Amazon Q requests to perform their plugin action.</p>
-    pub fn payload(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::ActionExecutionPayloadField> {
+    pub fn payload(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::ActionExecutionPayloadField> {
         &self.payload
     }
     /// <p>A string used to retain information about the hierarchical contexts within an action execution event payload.</p>
-    pub fn payload_field_name_separator(&self) -> &str {
-        use std::ops::Deref;
-        self.payload_field_name_separator.deref()
+    pub fn payload_field_name_separator(&self) -> & str {
+        use std::ops::Deref; self.payload_field_name_separator.deref()
     }
 }
 impl ActionExecution {
@@ -39,7 +37,7 @@ impl ActionExecution {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionExecutionBuilder {
     pub(crate) plugin_id: ::std::option::Option<::std::string::String>,
-    pub(crate) payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionExecutionPayloadField>>,
+    pub(crate) payload: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ActionExecutionPayloadField>>,
     pub(crate) payload_field_name_separator: ::std::option::Option<::std::string::String>,
 }
 impl ActionExecutionBuilder {
@@ -51,8 +49,7 @@ impl ActionExecutionBuilder {
     }
     /// <p>The identifier of the plugin the action is attached to.</p>
     pub fn set_plugin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_id = input;
-        self
+        self.plugin_id = input; self
     }
     /// <p>The identifier of the plugin the action is attached to.</p>
     pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,22 +62,16 @@ impl ActionExecutionBuilder {
     /// <p>A mapping of field names to the field values in input that an end user provides to Amazon Q requests to perform their plugin action.</p>
     pub fn payload(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ActionExecutionPayloadField) -> Self {
         let mut hash_map = self.payload.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.payload = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.payload = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A mapping of field names to the field values in input that an end user provides to Amazon Q requests to perform their plugin action.</p>
-    pub fn set_payload(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionExecutionPayloadField>>,
-    ) -> Self {
-        self.payload = input;
-        self
+    pub fn set_payload(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ActionExecutionPayloadField>>) -> Self {
+        self.payload = input; self
     }
     /// <p>A mapping of field names to the field values in input that an end user provides to Amazon Q requests to perform their plugin action.</p>
-    pub fn get_payload(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionExecutionPayloadField>> {
+    pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ActionExecutionPayloadField>> {
         &self.payload
     }
     /// <p>A string used to retain information about the hierarchical contexts within an action execution event payload.</p>
@@ -91,8 +82,7 @@ impl ActionExecutionBuilder {
     }
     /// <p>A string used to retain information about the hierarchical contexts within an action execution event payload.</p>
     pub fn set_payload_field_name_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_field_name_separator = input;
-        self
+        self.payload_field_name_separator = input; self
     }
     /// <p>A string used to retain information about the hierarchical contexts within an action execution event payload.</p>
     pub fn get_payload_field_name_separator(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,25 +94,25 @@ impl ActionExecutionBuilder {
     /// - [`payload`](crate::types::builders::ActionExecutionBuilder::payload)
     /// - [`payload_field_name_separator`](crate::types::builders::ActionExecutionBuilder::payload_field_name_separator)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionExecution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionExecution {
-            plugin_id: self.plugin_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "plugin_id",
-                    "plugin_id was not specified but it is required when building ActionExecution",
-                )
-            })?,
-            payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload",
-                    "payload was not specified but it is required when building ActionExecution",
-                )
-            })?,
-            payload_field_name_separator: self.payload_field_name_separator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload_field_name_separator",
-                    "payload_field_name_separator was not specified but it is required when building ActionExecution",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionExecution {
+                plugin_id: self.plugin_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("plugin_id", "plugin_id was not specified but it is required when building ActionExecution")
+                    )?
+                ,
+                payload: self.payload
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload", "payload was not specified but it is required when building ActionExecution")
+                    )?
+                ,
+                payload_field_name_separator: self.payload_field_name_separator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload_field_name_separator", "payload_field_name_separator was not specified but it is required when building ActionExecution")
+                    )?
+                ,
+            }
+        )
     }
 }
+

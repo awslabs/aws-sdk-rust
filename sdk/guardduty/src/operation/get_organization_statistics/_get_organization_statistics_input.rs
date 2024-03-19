@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOrganizationStatisticsInput {}
+pub struct GetOrganizationStatisticsInput  {
+}
 impl GetOrganizationStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationStatisticsInput`](crate::operation::get_organization_statistics::GetOrganizationStatisticsInput).
     pub fn builder() -> crate::operation::get_organization_statistics::builders::GetOrganizationStatisticsInputBuilder {
@@ -13,15 +14,15 @@ impl GetOrganizationStatisticsInput {
 /// A builder for [`GetOrganizationStatisticsInput`](crate::operation::get_organization_statistics::GetOrganizationStatisticsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetOrganizationStatisticsInputBuilder {}
+pub struct GetOrganizationStatisticsInputBuilder {
+}
 impl GetOrganizationStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetOrganizationStatisticsInput`](crate::operation::get_organization_statistics::GetOrganizationStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_organization_statistics::GetOrganizationStatisticsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_organization_statistics::GetOrganizationStatisticsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_organization_statistics::GetOrganizationStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_organization_statistics::GetOrganizationStatisticsInput {
+            }
+        )
     }
 }
+

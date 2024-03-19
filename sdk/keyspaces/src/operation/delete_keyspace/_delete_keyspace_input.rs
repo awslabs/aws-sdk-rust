@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKeyspaceInput {
+pub struct DeleteKeyspaceInput  {
     /// <p>The name of the keyspace to be deleted.</p>
     pub keyspace_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteKeyspaceInput {
+impl  DeleteKeyspaceInput  {
     /// <p>The name of the keyspace to be deleted.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteKeyspaceInputBuilder {
     }
     /// <p>The name of the keyspace to be deleted.</p>
     pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// <p>The name of the keyspace to be deleted.</p>
     pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.keyspace_name
     }
     /// Consumes the builder and constructs a [`DeleteKeyspaceInput`](crate::operation::delete_keyspace::DeleteKeyspaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_keyspace::DeleteKeyspaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_keyspace::DeleteKeyspaceInput {
-            keyspace_name: self.keyspace_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_keyspace::DeleteKeyspaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_keyspace::DeleteKeyspaceInput {
+                keyspace_name: self.keyspace_name
+                ,
+            }
+        )
     }
 }
+

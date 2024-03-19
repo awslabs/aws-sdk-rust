@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateRecoveryPointFromParentOutput {
+pub struct DisassociateRecoveryPointFromParentOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DisassociateRecoveryPointFromParentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateRecoveryPointFromParentOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRecoveryPointFromParentOutput`](crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput).
     pub fn builder() -> crate::operation::disassociate_recovery_point_from_parent::builders::DisassociateRecoveryPointFromParentOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DisassociateRecoveryPointFromParentOutputBuilder {
 }
 impl DisassociateRecoveryPointFromParentOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateRecoveryPointFromParentOutput`](crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput).
     pub fn build(self) -> crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput {
         crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput {
@@ -40,3 +40,4 @@ impl DisassociateRecoveryPointFromParentOutputBuilder {
         }
     }
 }
+

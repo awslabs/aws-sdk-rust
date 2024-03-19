@@ -3,7 +3,7 @@
 /// <p>A key-signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeySigningKey {
+pub struct KeySigningKey  {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
@@ -111,9 +111,9 @@ pub struct KeySigningKey {
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl KeySigningKey {
+impl  KeySigningKey  {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
@@ -158,7 +158,7 @@ impl KeySigningKey {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with the customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    pub fn kms_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_arn(&self) -> ::std::option::Option<& str> {
         self.kms_arn.as_deref()
     }
     /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
@@ -166,7 +166,7 @@ impl KeySigningKey {
         self.flag
     }
     /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
-    pub fn signing_algorithm_mnemonic(&self) -> ::std::option::Option<&str> {
+    pub fn signing_algorithm_mnemonic(&self) -> ::std::option::Option<& str> {
         self.signing_algorithm_mnemonic.as_deref()
     }
     /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
@@ -174,7 +174,7 @@ impl KeySigningKey {
         self.signing_algorithm_type
     }
     /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
-    pub fn digest_algorithm_mnemonic(&self) -> ::std::option::Option<&str> {
+    pub fn digest_algorithm_mnemonic(&self) -> ::std::option::Option<& str> {
         self.digest_algorithm_mnemonic.as_deref()
     }
     /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
@@ -186,19 +186,19 @@ impl KeySigningKey {
         self.key_tag
     }
     /// <p>A cryptographic digest of a DNSKEY resource record (RR). DNSKEY records are used to publish the public key that resolvers can use to verify DNSSEC signatures that are used to secure certain kinds of information provided by the DNS system.</p>
-    pub fn digest_value(&self) -> ::std::option::Option<&str> {
+    pub fn digest_value(&self) -> ::std::option::Option<& str> {
         self.digest_value.as_deref()
     }
     /// <p>The public key, represented as a Base64 encoding, as required by <a href="https://tools.ietf.org/rfc/rfc4034.txt"> RFC-4034 Page 5</a>.</p>
-    pub fn public_key(&self) -> ::std::option::Option<&str> {
+    pub fn public_key(&self) -> ::std::option::Option<& str> {
         self.public_key.as_deref()
     }
     /// <p>A string that represents a delegation signer (DS) record.</p>
-    pub fn ds_record(&self) -> ::std::option::Option<&str> {
+    pub fn ds_record(&self) -> ::std::option::Option<& str> {
         self.ds_record.as_deref()
     }
     /// <p>A string that represents a DNSKEY record.</p>
-    pub fn dnskey_record(&self) -> ::std::option::Option<&str> {
+    pub fn dnskey_record(&self) -> ::std::option::Option<& str> {
         self.dnskey_record.as_deref()
     }
     /// <p>A string that represents the current key-signing key (KSK) status.</p>
@@ -235,19 +235,19 @@ impl KeySigningKey {
     /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The date when the key-signing key (KSK) was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -287,8 +287,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -383,8 +382,7 @@ impl KeySigningKeyBuilder {
     /// </dl>
     /// <p>For more information about working with the customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
     pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_arn = input;
-        self
+        self.kms_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
     /// <p>You must configure the customer managed key as follows:</p>
@@ -438,8 +436,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
     pub fn set_flag(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.flag = input;
-        self
+        self.flag = input; self
     }
     /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
     pub fn get_flag(&self) -> &::std::option::Option<i32> {
@@ -452,8 +449,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
     pub fn set_signing_algorithm_mnemonic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signing_algorithm_mnemonic = input;
-        self
+        self.signing_algorithm_mnemonic = input; self
     }
     /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
     pub fn get_signing_algorithm_mnemonic(&self) -> &::std::option::Option<::std::string::String> {
@@ -466,8 +462,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
     pub fn set_signing_algorithm_type(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.signing_algorithm_type = input;
-        self
+        self.signing_algorithm_type = input; self
     }
     /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.</p>
     pub fn get_signing_algorithm_type(&self) -> &::std::option::Option<i32> {
@@ -480,8 +475,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
     pub fn set_digest_algorithm_mnemonic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.digest_algorithm_mnemonic = input;
-        self
+        self.digest_algorithm_mnemonic = input; self
     }
     /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
     pub fn get_digest_algorithm_mnemonic(&self) -> &::std::option::Option<::std::string::String> {
@@ -494,8 +488,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
     pub fn set_digest_algorithm_type(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.digest_algorithm_type = input;
-        self
+        self.digest_algorithm_type = input; self
     }
     /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
     pub fn get_digest_algorithm_type(&self) -> &::std::option::Option<i32> {
@@ -508,8 +501,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>An integer used to identify the DNSSEC record for the domain name. The process used to calculate the value is described in <a href="https://tools.ietf.org/rfc/rfc4034.txt">RFC-4034 Appendix B</a>.</p>
     pub fn set_key_tag(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.key_tag = input;
-        self
+        self.key_tag = input; self
     }
     /// <p>An integer used to identify the DNSSEC record for the domain name. The process used to calculate the value is described in <a href="https://tools.ietf.org/rfc/rfc4034.txt">RFC-4034 Appendix B</a>.</p>
     pub fn get_key_tag(&self) -> &::std::option::Option<i32> {
@@ -522,8 +514,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>A cryptographic digest of a DNSKEY resource record (RR). DNSKEY records are used to publish the public key that resolvers can use to verify DNSSEC signatures that are used to secure certain kinds of information provided by the DNS system.</p>
     pub fn set_digest_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.digest_value = input;
-        self
+        self.digest_value = input; self
     }
     /// <p>A cryptographic digest of a DNSKEY resource record (RR). DNSKEY records are used to publish the public key that resolvers can use to verify DNSSEC signatures that are used to secure certain kinds of information provided by the DNS system.</p>
     pub fn get_digest_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -536,8 +527,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>The public key, represented as a Base64 encoding, as required by <a href="https://tools.ietf.org/rfc/rfc4034.txt"> RFC-4034 Page 5</a>.</p>
     pub fn set_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_key = input;
-        self
+        self.public_key = input; self
     }
     /// <p>The public key, represented as a Base64 encoding, as required by <a href="https://tools.ietf.org/rfc/rfc4034.txt"> RFC-4034 Page 5</a>.</p>
     pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -550,8 +540,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>A string that represents a delegation signer (DS) record.</p>
     pub fn set_ds_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ds_record = input;
-        self
+        self.ds_record = input; self
     }
     /// <p>A string that represents a delegation signer (DS) record.</p>
     pub fn get_ds_record(&self) -> &::std::option::Option<::std::string::String> {
@@ -564,8 +553,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>A string that represents a DNSKEY record.</p>
     pub fn set_dnskey_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dnskey_record = input;
-        self
+        self.dnskey_record = input; self
     }
     /// <p>A string that represents a DNSKEY record.</p>
     pub fn get_dnskey_record(&self) -> &::std::option::Option<::std::string::String> {
@@ -644,8 +632,7 @@ impl KeySigningKeyBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A string that represents the current key-signing key (KSK) status.</p>
     /// <p>Status can have one of the following values:</p>
@@ -691,8 +678,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -705,8 +691,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>The date when the key-signing key (KSK) was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date when the key-signing key (KSK) was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -719,8 +704,7 @@ impl KeySigningKeyBuilder {
     }
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -729,22 +713,43 @@ impl KeySigningKeyBuilder {
     /// Consumes the builder and constructs a [`KeySigningKey`](crate::types::KeySigningKey).
     pub fn build(self) -> crate::types::KeySigningKey {
         crate::types::KeySigningKey {
-            name: self.name,
-            kms_arn: self.kms_arn,
-            flag: self.flag.unwrap_or_default(),
-            signing_algorithm_mnemonic: self.signing_algorithm_mnemonic,
-            signing_algorithm_type: self.signing_algorithm_type.unwrap_or_default(),
-            digest_algorithm_mnemonic: self.digest_algorithm_mnemonic,
-            digest_algorithm_type: self.digest_algorithm_type.unwrap_or_default(),
-            key_tag: self.key_tag.unwrap_or_default(),
-            digest_value: self.digest_value,
-            public_key: self.public_key,
-            ds_record: self.ds_record,
-            dnskey_record: self.dnskey_record,
-            status: self.status,
-            status_message: self.status_message,
-            created_date: self.created_date,
-            last_modified_date: self.last_modified_date,
+            name: self.name
+            ,
+            kms_arn: self.kms_arn
+            ,
+            flag: self.flag
+                .unwrap_or_default()
+            ,
+            signing_algorithm_mnemonic: self.signing_algorithm_mnemonic
+            ,
+            signing_algorithm_type: self.signing_algorithm_type
+                .unwrap_or_default()
+            ,
+            digest_algorithm_mnemonic: self.digest_algorithm_mnemonic
+            ,
+            digest_algorithm_type: self.digest_algorithm_type
+                .unwrap_or_default()
+            ,
+            key_tag: self.key_tag
+                .unwrap_or_default()
+            ,
+            digest_value: self.digest_value
+            ,
+            public_key: self.public_key
+            ,
+            ds_record: self.ds_record
+            ,
+            dnskey_record: self.dnskey_record
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            created_date: self.created_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

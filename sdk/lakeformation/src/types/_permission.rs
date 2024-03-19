@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permission = unimplemented!();
 /// match permission {
@@ -41,16 +41,14 @@
 /// Specifically, when `permission` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Permission::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -80,108 +78,95 @@ pub enum Permission {
     Select,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Permission {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALL" => Permission::All,
-            "ALTER" => Permission::Alter,
-            "ASSOCIATE" => Permission::Associate,
-            "CREATE_DATABASE" => Permission::CreateDatabase,
-            "CREATE_LF_TAG" => Permission::CreateLfTag,
-            "CREATE_TABLE" => Permission::CreateTable,
-            "DATA_LOCATION_ACCESS" => Permission::DataLocationAccess,
-            "DELETE" => Permission::Delete,
-            "DESCRIBE" => Permission::Describe,
-            "DROP" => Permission::Drop,
-            "GRANT_WITH_LF_TAG_EXPRESSION" => Permission::GrantWithLfTagExpression,
-            "INSERT" => Permission::Insert,
-            "SELECT" => Permission::Select,
-            other => Permission::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ALL" => Permission::All,
+"ALTER" => Permission::Alter,
+"ASSOCIATE" => Permission::Associate,
+"CREATE_DATABASE" => Permission::CreateDatabase,
+"CREATE_LF_TAG" => Permission::CreateLfTag,
+"CREATE_TABLE" => Permission::CreateTable,
+"DATA_LOCATION_ACCESS" => Permission::DataLocationAccess,
+"DELETE" => Permission::Delete,
+"DESCRIBE" => Permission::Describe,
+"DROP" => Permission::Drop,
+"GRANT_WITH_LF_TAG_EXPRESSION" => Permission::GrantWithLfTagExpression,
+"INSERT" => Permission::Insert,
+"SELECT" => Permission::Select,
+other => Permission::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Permission {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Permission::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Permission::from(s))
+                    }
+                }
 impl Permission {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Permission::All => "ALL",
-            Permission::Alter => "ALTER",
-            Permission::Associate => "ASSOCIATE",
-            Permission::CreateDatabase => "CREATE_DATABASE",
-            Permission::CreateLfTag => "CREATE_LF_TAG",
-            Permission::CreateTable => "CREATE_TABLE",
-            Permission::DataLocationAccess => "DATA_LOCATION_ACCESS",
-            Permission::Delete => "DELETE",
-            Permission::Describe => "DESCRIBE",
-            Permission::Drop => "DROP",
-            Permission::GrantWithLfTagExpression => "GRANT_WITH_LF_TAG_EXPRESSION",
-            Permission::Insert => "INSERT",
-            Permission::Select => "SELECT",
-            Permission::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL",
-            "ALTER",
-            "ASSOCIATE",
-            "CREATE_DATABASE",
-            "CREATE_LF_TAG",
-            "CREATE_TABLE",
-            "DATA_LOCATION_ACCESS",
-            "DELETE",
-            "DESCRIBE",
-            "DROP",
-            "GRANT_WITH_LF_TAG_EXPRESSION",
-            "INSERT",
-            "SELECT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Permission::All => "ALL",
+    Permission::Alter => "ALTER",
+    Permission::Associate => "ASSOCIATE",
+    Permission::CreateDatabase => "CREATE_DATABASE",
+    Permission::CreateLfTag => "CREATE_LF_TAG",
+    Permission::CreateTable => "CREATE_TABLE",
+    Permission::DataLocationAccess => "DATA_LOCATION_ACCESS",
+    Permission::Delete => "DELETE",
+    Permission::Describe => "DESCRIBE",
+    Permission::Drop => "DROP",
+    Permission::GrantWithLfTagExpression => "GRANT_WITH_LF_TAG_EXPRESSION",
+    Permission::Insert => "INSERT",
+    Permission::Select => "SELECT",
+    Permission::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALL", "ALTER", "ASSOCIATE", "CREATE_DATABASE", "CREATE_LF_TAG", "CREATE_TABLE", "DATA_LOCATION_ACCESS", "DELETE", "DESCRIBE", "DROP", "GRANT_WITH_LF_TAG_EXPRESSION", "INSERT", "SELECT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Permission {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Permission {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Permission {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Permission::All => write!(f, "ALL"),
-            Permission::Alter => write!(f, "ALTER"),
-            Permission::Associate => write!(f, "ASSOCIATE"),
-            Permission::CreateDatabase => write!(f, "CREATE_DATABASE"),
-            Permission::CreateLfTag => write!(f, "CREATE_LF_TAG"),
-            Permission::CreateTable => write!(f, "CREATE_TABLE"),
-            Permission::DataLocationAccess => write!(f, "DATA_LOCATION_ACCESS"),
-            Permission::Delete => write!(f, "DELETE"),
-            Permission::Describe => write!(f, "DESCRIBE"),
-            Permission::Drop => write!(f, "DROP"),
-            Permission::GrantWithLfTagExpression => write!(f, "GRANT_WITH_LF_TAG_EXPRESSION"),
-            Permission::Insert => write!(f, "INSERT"),
-            Permission::Select => write!(f, "SELECT"),
-            Permission::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Permission::All => write!(f, "ALL"),
+Permission::Alter => write!(f, "ALTER"),
+Permission::Associate => write!(f, "ASSOCIATE"),
+Permission::CreateDatabase => write!(f, "CREATE_DATABASE"),
+Permission::CreateLfTag => write!(f, "CREATE_LF_TAG"),
+Permission::CreateTable => write!(f, "CREATE_TABLE"),
+Permission::DataLocationAccess => write!(f, "DATA_LOCATION_ACCESS"),
+Permission::Delete => write!(f, "DELETE"),
+Permission::Describe => write!(f, "DESCRIBE"),
+Permission::Drop => write!(f, "DROP"),
+Permission::GrantWithLfTagExpression => write!(f, "GRANT_WITH_LF_TAG_EXPRESSION"),
+Permission::Insert => write!(f, "INSERT"),
+Permission::Select => write!(f, "SELECT"),
+Permission::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

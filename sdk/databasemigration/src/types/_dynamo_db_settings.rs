@@ -3,15 +3,14 @@
 /// <p>Provides the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DynamoDbSettings {
+pub struct DynamoDbSettings  {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: ::std::string::String,
 }
-impl DynamoDbSettings {
+impl  DynamoDbSettings  {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.service_access_role_arn.deref()
+    pub fn service_access_role_arn(&self) -> & str {
+        use std::ops::Deref; self.service_access_role_arn.deref()
     }
 }
 impl DynamoDbSettings {
@@ -36,8 +35,7 @@ impl DynamoDbSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_access_role_arn = input;
-        self
+        self.service_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DynamoDbSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`service_access_role_arn`](crate::types::builders::DynamoDbSettingsBuilder::service_access_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DynamoDbSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DynamoDbSettings {
-            service_access_role_arn: self.service_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_access_role_arn",
-                    "service_access_role_arn was not specified but it is required when building DynamoDbSettings",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DynamoDbSettings {
+                service_access_role_arn: self.service_access_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_access_role_arn", "service_access_role_arn was not specified but it is required when building DynamoDbSettings")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTextTranslationJobOutput {
+pub struct DescribeTextTranslationJobOutput  {
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
     pub text_translation_job_properties: ::std::option::Option<crate::types::TextTranslationJobProperties>,
     _request_id: Option<String>,
 }
-impl DescribeTextTranslationJobOutput {
+impl  DescribeTextTranslationJobOutput  {
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
-    pub fn text_translation_job_properties(&self) -> ::std::option::Option<&crate::types::TextTranslationJobProperties> {
+    pub fn text_translation_job_properties(&self) -> ::std::option::Option<& crate::types::TextTranslationJobProperties> {
         self.text_translation_job_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTextTranslationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTextTranslationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTextTranslationJobOutput`](crate::operation::describe_text_translation_job::DescribeTextTranslationJobOutput).
     pub fn builder() -> crate::operation::describe_text_translation_job::builders::DescribeTextTranslationJobOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeTextTranslationJobOutputBuilder {
     }
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
     pub fn set_text_translation_job_properties(mut self, input: ::std::option::Option<crate::types::TextTranslationJobProperties>) -> Self {
-        self.text_translation_job_properties = input;
-        self
+        self.text_translation_job_properties = input; self
     }
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
     pub fn get_text_translation_job_properties(&self) -> &::std::option::Option<crate::types::TextTranslationJobProperties> {
         &self.text_translation_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTextTranslationJobOutput`](crate::operation::describe_text_translation_job::DescribeTextTranslationJobOutput).
     pub fn build(self) -> crate::operation::describe_text_translation_job::DescribeTextTranslationJobOutput {
         crate::operation::describe_text_translation_job::DescribeTextTranslationJobOutput {
-            text_translation_job_properties: self.text_translation_job_properties,
+            text_translation_job_properties: self.text_translation_job_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

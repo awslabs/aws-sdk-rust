@@ -3,7 +3,7 @@
 /// <p>A set of actions that Amazon Lex should run if the condition is matched.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConditionalBranch {
+pub struct ConditionalBranch  {
     /// <p>The name of the branch.</p>
     pub name: ::std::string::String,
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
@@ -13,22 +13,21 @@ pub struct ConditionalBranch {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
-impl ConditionalBranch {
+impl  ConditionalBranch  {
     /// <p>The name of the branch.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::Condition> {
         self.condition.as_ref()
     }
     /// <p>The next step in the conversation.</p>
-    pub fn next_step(&self) -> ::std::option::Option<&crate::types::DialogState> {
+    pub fn next_step(&self) -> ::std::option::Option<& crate::types::DialogState> {
         self.next_step.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
+    pub fn response(&self) -> ::std::option::Option<& crate::types::ResponseSpecification> {
         self.response.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl ConditionalBranchBuilder {
     }
     /// <p>The name of the branch.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the branch.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl ConditionalBranchBuilder {
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
@@ -87,8 +84,7 @@ impl ConditionalBranchBuilder {
     }
     /// <p>The next step in the conversation.</p>
     pub fn set_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
-        self.next_step = input;
-        self
+        self.next_step = input; self
     }
     /// <p>The next step in the conversation.</p>
     pub fn get_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
@@ -101,8 +97,7 @@ impl ConditionalBranchBuilder {
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn set_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
-        self.response = input;
-        self
+        self.response = input; self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn get_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
@@ -112,16 +107,21 @@ impl ConditionalBranchBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ConditionalBranchBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ConditionalBranch, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConditionalBranch {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ConditionalBranch",
-                )
-            })?,
-            condition: self.condition,
-            next_step: self.next_step,
-            response: self.response,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConditionalBranch {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ConditionalBranch")
+                    )?
+                ,
+                condition: self.condition
+                ,
+                next_step: self.next_step
+                ,
+                response: self.response
+                ,
+            }
+        )
     }
 }
+

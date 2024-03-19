@@ -8,7 +8,7 @@
 /// <p>Enable response inspection by configuring exactly one component of the response to inspect, for example, <code>Header</code> or <code>StatusCode</code>. You can't configure more than one component for inspection. If you don't configure any of the response inspection options, response inspection is disabled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseInspection {
+pub struct ResponseInspection  {
     /// <p>Configures inspection of the response status code for success and failure indicators.</p>
     pub status_code: ::std::option::Option<crate::types::ResponseInspectionStatusCode>,
     /// <p>Configures inspection of the response header for success and failure indicators.</p>
@@ -18,21 +18,21 @@ pub struct ResponseInspection {
     /// <p>Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.</p>
     pub json: ::std::option::Option<crate::types::ResponseInspectionJson>,
 }
-impl ResponseInspection {
+impl  ResponseInspection  {
     /// <p>Configures inspection of the response status code for success and failure indicators.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::ResponseInspectionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::ResponseInspectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Configures inspection of the response header for success and failure indicators.</p>
-    pub fn header(&self) -> ::std::option::Option<&crate::types::ResponseInspectionHeader> {
+    pub fn header(&self) -> ::std::option::Option<& crate::types::ResponseInspectionHeader> {
         self.header.as_ref()
     }
     /// <p>Configures inspection of the response body for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response body.</p>
-    pub fn body_contains(&self) -> ::std::option::Option<&crate::types::ResponseInspectionBodyContains> {
+    pub fn body_contains(&self) -> ::std::option::Option<& crate::types::ResponseInspectionBodyContains> {
         self.body_contains.as_ref()
     }
     /// <p>Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.</p>
-    pub fn json(&self) -> ::std::option::Option<&crate::types::ResponseInspectionJson> {
+    pub fn json(&self) -> ::std::option::Option<& crate::types::ResponseInspectionJson> {
         self.json.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl ResponseInspectionBuilder {
     }
     /// <p>Configures inspection of the response status code for success and failure indicators.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ResponseInspectionStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>Configures inspection of the response status code for success and failure indicators.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ResponseInspectionStatusCode> {
@@ -74,8 +73,7 @@ impl ResponseInspectionBuilder {
     }
     /// <p>Configures inspection of the response header for success and failure indicators.</p>
     pub fn set_header(mut self, input: ::std::option::Option<crate::types::ResponseInspectionHeader>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>Configures inspection of the response header for success and failure indicators.</p>
     pub fn get_header(&self) -> &::std::option::Option<crate::types::ResponseInspectionHeader> {
@@ -88,8 +86,7 @@ impl ResponseInspectionBuilder {
     }
     /// <p>Configures inspection of the response body for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response body.</p>
     pub fn set_body_contains(mut self, input: ::std::option::Option<crate::types::ResponseInspectionBodyContains>) -> Self {
-        self.body_contains = input;
-        self
+        self.body_contains = input; self
     }
     /// <p>Configures inspection of the response body for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response body.</p>
     pub fn get_body_contains(&self) -> &::std::option::Option<crate::types::ResponseInspectionBodyContains> {
@@ -102,8 +99,7 @@ impl ResponseInspectionBuilder {
     }
     /// <p>Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.</p>
     pub fn set_json(mut self, input: ::std::option::Option<crate::types::ResponseInspectionJson>) -> Self {
-        self.json = input;
-        self
+        self.json = input; self
     }
     /// <p>Configures inspection of the response JSON for success and failure indicators. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.</p>
     pub fn get_json(&self) -> &::std::option::Option<crate::types::ResponseInspectionJson> {
@@ -112,10 +108,15 @@ impl ResponseInspectionBuilder {
     /// Consumes the builder and constructs a [`ResponseInspection`](crate::types::ResponseInspection).
     pub fn build(self) -> crate::types::ResponseInspection {
         crate::types::ResponseInspection {
-            status_code: self.status_code,
-            header: self.header,
-            body_contains: self.body_contains,
-            json: self.json,
+            status_code: self.status_code
+            ,
+            header: self.header
+            ,
+            body_contains: self.body_contains
+            ,
+            json: self.json
+            ,
         }
     }
 }
+

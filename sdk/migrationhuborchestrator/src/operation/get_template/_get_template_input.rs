@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateInput {
+pub struct GetTemplateInput  {
     /// <p>The ID of the template.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetTemplateInput {
+impl  GetTemplateInput  {
     /// <p>The ID of the template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetTemplateInputBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetTemplateInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_template::GetTemplateInput { id: self.id })
+        ::std::result::Result::Ok(
+            crate::operation::get_template::GetTemplateInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

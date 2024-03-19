@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDeviceFleetInput {
+pub struct CreateDeviceFleetInput  {
     /// <p>The name of the fleet that the device belongs to.</p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
@@ -12,33 +12,34 @@ pub struct CreateDeviceFleetInput {
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
     pub output_config: ::std::option::Option<crate::types::EdgeOutputConfig>,
     /// <p>Creates tags for the specified fleet.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub enable_iot_role_alias: ::std::option::Option<bool>,
 }
-impl CreateDeviceFleetInput {
+impl  CreateDeviceFleetInput  {
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A description of the fleet.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::EdgeOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::EdgeOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>Creates tags for the specified fleet.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
@@ -61,7 +62,7 @@ pub struct CreateDeviceFleetInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) output_config: ::std::option::Option<crate::types::EdgeOutputConfig>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) enable_iot_role_alias: ::std::option::Option<bool>,
 }
 impl CreateDeviceFleetInputBuilder {
@@ -73,8 +74,7 @@ impl CreateDeviceFleetInputBuilder {
     }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +87,7 @@ impl CreateDeviceFleetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl CreateDeviceFleetInputBuilder {
     }
     /// <p>A description of the fleet.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the fleet.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl CreateDeviceFleetInputBuilder {
     }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::EdgeOutputConfig> {
@@ -130,17 +127,16 @@ impl CreateDeviceFleetInputBuilder {
     /// <p>Creates tags for the specified fleet.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Creates tags for the specified fleet.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Creates tags for the specified fleet.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
@@ -152,8 +148,7 @@ impl CreateDeviceFleetInputBuilder {
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub fn set_enable_iot_role_alias(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_iot_role_alias = input;
-        self
+        self.enable_iot_role_alias = input; self
     }
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
@@ -161,16 +156,23 @@ impl CreateDeviceFleetInputBuilder {
         &self.enable_iot_role_alias
     }
     /// Consumes the builder and constructs a [`CreateDeviceFleetInput`](crate::operation::create_device_fleet::CreateDeviceFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_device_fleet::CreateDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_device_fleet::CreateDeviceFleetInput {
-            device_fleet_name: self.device_fleet_name,
-            role_arn: self.role_arn,
-            description: self.description,
-            output_config: self.output_config,
-            tags: self.tags,
-            enable_iot_role_alias: self.enable_iot_role_alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_device_fleet::CreateDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_device_fleet::CreateDeviceFleetInput {
+                device_fleet_name: self.device_fleet_name
+                ,
+                role_arn: self.role_arn
+                ,
+                description: self.description
+                ,
+                output_config: self.output_config
+                ,
+                tags: self.tags
+                ,
+                enable_iot_role_alias: self.enable_iot_role_alias
+                ,
+            }
+        )
     }
 }
+

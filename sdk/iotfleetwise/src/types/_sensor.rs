@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Sensor {
+pub struct Sensor  {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
     pub fully_qualified_name: ::std::string::String,
     /// <p>The specified data type of the sensor.</p>
@@ -15,7 +15,7 @@ pub struct Sensor {
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>A list of possible values a sensor can take.</p>
-    pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The specified possible minimum value of the sensor.</p>
     pub min: ::std::option::Option<f64>,
     /// <p>The specified possible maximum value of the sensor.</p>
@@ -27,29 +27,29 @@ pub struct Sensor {
     /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
     pub struct_fully_qualified_name: ::std::option::Option<::std::string::String>,
 }
-impl Sensor {
+impl  Sensor  {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
-    pub fn fully_qualified_name(&self) -> &str {
-        use std::ops::Deref;
-        self.fully_qualified_name.deref()
+    pub fn fully_qualified_name(&self) -> & str {
+        use std::ops::Deref; self.fully_qualified_name.deref()
     }
     /// <p>The specified data type of the sensor.</p>
-    pub fn data_type(&self) -> &crate::types::NodeDataType {
+    pub fn data_type(&self) -> & crate::types::NodeDataType {
         &self.data_type
     }
     /// <p>A brief description of a sensor.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>A list of possible values a sensor can take.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
-    pub fn allowed_values(&self) -> &[::std::string::String] {
-        self.allowed_values.as_deref().unwrap_or_default()
+    pub fn allowed_values(&self) -> & [::std::string::String] {
+        self.allowed_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The specified possible minimum value of the sensor.</p>
     pub fn min(&self) -> ::std::option::Option<f64> {
@@ -60,15 +60,15 @@ impl Sensor {
         self.max
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    pub fn deprecation_message(&self) -> ::std::option::Option<&str> {
+    pub fn deprecation_message(&self) -> ::std::option::Option<& str> {
         self.deprecation_message.as_deref()
     }
     /// <p>A comment in addition to the description.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
-    pub fn struct_fully_qualified_name(&self) -> ::std::option::Option<&str> {
+    pub fn struct_fully_qualified_name(&self) -> ::std::option::Option<& str> {
         self.struct_fully_qualified_name.as_deref()
     }
 }
@@ -87,7 +87,7 @@ pub struct SensorBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::NodeDataType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) min: ::std::option::Option<f64>,
     pub(crate) max: ::std::option::Option<f64>,
     pub(crate) deprecation_message: ::std::option::Option<::std::string::String>,
@@ -103,8 +103,7 @@ impl SensorBuilder {
     }
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
     pub fn set_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fully_qualified_name = input;
-        self
+        self.fully_qualified_name = input; self
     }
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
     pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl SensorBuilder {
     }
     /// <p>The specified data type of the sensor.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::NodeDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The specified data type of the sensor.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::NodeDataType> {
@@ -132,8 +130,7 @@ impl SensorBuilder {
     }
     /// <p>A brief description of a sensor.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of a sensor.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl SensorBuilder {
     }
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,17 +156,16 @@ impl SensorBuilder {
     /// <p>A list of possible values a sensor can take.</p>
     pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of possible values a sensor can take.</p>
-    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_values = input; self
     }
     /// <p>A list of possible values a sensor can take.</p>
-    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_values
     }
     /// <p>The specified possible minimum value of the sensor.</p>
@@ -180,8 +175,7 @@ impl SensorBuilder {
     }
     /// <p>The specified possible minimum value of the sensor.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The specified possible minimum value of the sensor.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -194,8 +188,7 @@ impl SensorBuilder {
     }
     /// <p>The specified possible maximum value of the sensor.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The specified possible maximum value of the sensor.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -208,8 +201,7 @@ impl SensorBuilder {
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn set_deprecation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deprecation_message = input;
-        self
+        self.deprecation_message = input; self
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn get_deprecation_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +214,7 @@ impl SensorBuilder {
     }
     /// <p>A comment in addition to the description.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment in addition to the description.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +227,7 @@ impl SensorBuilder {
     }
     /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
     pub fn set_struct_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.struct_fully_qualified_name = input;
-        self
+        self.struct_fully_qualified_name = input; self
     }
     /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
     pub fn get_struct_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,27 +238,36 @@ impl SensorBuilder {
     /// - [`fully_qualified_name`](crate::types::builders::SensorBuilder::fully_qualified_name)
     /// - [`data_type`](crate::types::builders::SensorBuilder::data_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Sensor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Sensor {
-            fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fully_qualified_name",
-                    "fully_qualified_name was not specified but it is required when building Sensor",
-                )
-            })?,
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building Sensor",
-                )
-            })?,
-            description: self.description,
-            unit: self.unit,
-            allowed_values: self.allowed_values,
-            min: self.min,
-            max: self.max,
-            deprecation_message: self.deprecation_message,
-            comment: self.comment,
-            struct_fully_qualified_name: self.struct_fully_qualified_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Sensor {
+                fully_qualified_name: self.fully_qualified_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fully_qualified_name", "fully_qualified_name was not specified but it is required when building Sensor")
+                    )?
+                ,
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building Sensor")
+                    )?
+                ,
+                description: self.description
+                ,
+                unit: self.unit
+                ,
+                allowed_values: self.allowed_values
+                ,
+                min: self.min
+                ,
+                max: self.max
+                ,
+                deprecation_message: self.deprecation_message
+                ,
+                comment: self.comment
+                ,
+                struct_fully_qualified_name: self.struct_fully_qualified_name
+                ,
+            }
+        )
     }
 }
+

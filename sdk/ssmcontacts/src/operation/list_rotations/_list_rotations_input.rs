@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRotationsInput {
+pub struct ListRotationsInput  {
     /// <p>A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with <code>prod</code>, such as <code>production</code> and <code>prod-1</code>.</p>
     pub rotation_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -10,13 +10,13 @@ pub struct ListRotationsInput {
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListRotationsInput {
+impl  ListRotationsInput  {
     /// <p>A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with <code>prod</code>, such as <code>production</code> and <code>prod-1</code>.</p>
-    pub fn rotation_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn rotation_name_prefix(&self) -> ::std::option::Option<& str> {
         self.rotation_name_prefix.as_deref()
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -47,8 +47,7 @@ impl ListRotationsInputBuilder {
     }
     /// <p>A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with <code>prod</code>, such as <code>production</code> and <code>prod-1</code>.</p>
     pub fn set_rotation_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_name_prefix = input;
-        self
+        self.rotation_name_prefix = input; self
     }
     /// <p>A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with <code>prod</code>, such as <code>production</code> and <code>prod-1</code>.</p>
     pub fn get_rotation_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListRotationsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl ListRotationsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRotationsInput`](crate::operation::list_rotations::ListRotationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_rotations::ListRotationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_rotations::ListRotationsInput {
-            rotation_name_prefix: self.rotation_name_prefix,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rotations::ListRotationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_rotations::ListRotationsInput {
+                rotation_name_prefix: self.rotation_name_prefix
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

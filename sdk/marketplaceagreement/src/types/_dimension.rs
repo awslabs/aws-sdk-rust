@@ -3,7 +3,7 @@
 /// <p>Defines the dimensions that the acceptor has purchased from the overall set of dimensions presented in the rate card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dimension {
+pub struct Dimension  {
     /// <p>The name of key value of the dimension.</p>
     pub dimension_key: ::std::string::String,
     /// <p>The number of units of the dimension the acceptor has purchased.</p><note>
@@ -11,11 +11,10 @@ pub struct Dimension {
     /// </note>
     pub dimension_value: i32,
 }
-impl Dimension {
+impl  Dimension  {
     /// <p>The name of key value of the dimension.</p>
-    pub fn dimension_key(&self) -> &str {
-        use std::ops::Deref;
-        self.dimension_key.deref()
+    pub fn dimension_key(&self) -> & str {
+        use std::ops::Deref; self.dimension_key.deref()
     }
     /// <p>The number of units of the dimension the acceptor has purchased.</p><note>
     /// <p>For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code> section will define the prices and dimensions defined by the seller (proposer), whereas the <code>Configuration</code> section will define the actual dimensions, prices, and units the buyer has chosen to accept.</p>
@@ -47,8 +46,7 @@ impl DimensionBuilder {
     }
     /// <p>The name of key value of the dimension.</p>
     pub fn set_dimension_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_key = input;
-        self
+        self.dimension_key = input; self
     }
     /// <p>The name of key value of the dimension.</p>
     pub fn get_dimension_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl DimensionBuilder {
     /// <p>For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code> section will define the prices and dimensions defined by the seller (proposer), whereas the <code>Configuration</code> section will define the actual dimensions, prices, and units the buyer has chosen to accept.</p>
     /// </note>
     pub fn set_dimension_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dimension_value = input;
-        self
+        self.dimension_value = input; self
     }
     /// <p>The number of units of the dimension the acceptor has purchased.</p><note>
     /// <p>For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code> section will define the prices and dimensions defined by the seller (proposer), whereas the <code>Configuration</code> section will define the actual dimensions, prices, and units the buyer has chosen to accept.</p>
@@ -79,14 +76,18 @@ impl DimensionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension_key`](crate::types::builders::DimensionBuilder::dimension_key)
     pub fn build(self) -> ::std::result::Result<crate::types::Dimension, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Dimension {
-            dimension_key: self.dimension_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension_key",
-                    "dimension_key was not specified but it is required when building Dimension",
-                )
-            })?,
-            dimension_value: self.dimension_value.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::Dimension {
+                dimension_key: self.dimension_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension_key", "dimension_key was not specified but it is required when building Dimension")
+                    )?
+                ,
+                dimension_value: self.dimension_value
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

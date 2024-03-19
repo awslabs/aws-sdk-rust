@@ -5,23 +5,20 @@ pub use crate::operation::create_service::_create_service_input::CreateServiceIn
 
 impl CreateServiceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_service::CreateServiceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_service::CreateServiceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_service();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_service::CreateServiceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_service::CreateServiceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_service();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateService`.
-///
+/// 
 /// <p>Runs and maintains your desired number of tasks from a specified task definition. If the number of tasks running in a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified cluster. To update an existing service, see the <code>UpdateService</code> action.</p><note>
 /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
 /// </note>
@@ -44,33 +41,32 @@ impl CreateServiceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_service::builders::CreateServiceInputBuilder,
+                    inner: crate::operation::create_service::builders::CreateServiceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_service::CreateServiceOutput,
-        crate::operation::create_service::CreateServiceError,
-    > for CreateServiceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_service::CreateServiceOutput,
-            crate::operation::create_service::CreateServiceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_service::CreateServiceOutput,
+                    crate::operation::create_service::CreateServiceError,
+                > for CreateServiceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_service::CreateServiceOutput,
+                        crate::operation::create_service::CreateServiceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateServiceFluentBuilder {
     /// Creates a new `CreateService`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -79,53 +75,44 @@ impl CreateServiceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_service::CreateServiceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_service::CreateServiceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_service::CreateService::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_service::CreateService::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_service::CreateServiceOutput,
-        crate::operation::create_service::CreateServiceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_service::CreateServiceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_service::CreateServiceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_service::CreateService::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_service::CreateService::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_service::CreateServiceOutput, crate::operation::create_service::CreateServiceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
@@ -196,7 +183,7 @@ impl CreateServiceFluentBuilder {
     /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN, the container name, and the container port to access from the load balancer. The container name must be as it appears in a container definition. The load balancer name parameter must be omitted. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group that's specified here.</p>
     /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and the container port to access from the load balancer. The container name must be as it appears in a container definition. The target group ARN parameter must be omitted. When a task from this service is placed on a container instance, the container instance is registered with the load balancer that's specified here.</p>
     /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers aren't supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. This is because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
-    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>) -> Self {
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>) -> Self {
         self.inner = self.inner.set_load_balancers(input);
         self
     }
@@ -207,7 +194,7 @@ impl CreateServiceFluentBuilder {
     /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN, the container name, and the container port to access from the load balancer. The container name must be as it appears in a container definition. The load balancer name parameter must be omitted. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group that's specified here.</p>
     /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and the container port to access from the load balancer. The container name must be as it appears in a container definition. The target group ARN parameter must be omitted. When a task from this service is placed on a container instance, the container instance is registered with the load balancer that's specified here.</p>
     /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers aren't supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. This is because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
-    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>> {
         self.inner.get_load_balancers()
     }
     /// Appends an item to `serviceRegistries`.
@@ -224,14 +211,14 @@ impl CreateServiceFluentBuilder {
     /// <p>The details of the service discovery registry to associate with this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p><note>
     /// <p>Each service may be associated with one service registry. Multiple service registries for each service isn't supported.</p>
     /// </note>
-    pub fn set_service_registries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>) -> Self {
+    pub fn set_service_registries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>>) -> Self {
         self.inner = self.inner.set_service_registries(input);
         self
     }
     /// <p>The details of the service discovery registry to associate with this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p><note>
     /// <p>Each service may be associated with one service registry. Multiple service registries for each service isn't supported.</p>
     /// </note>
-    pub fn get_service_registries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>> {
+    pub fn get_service_registries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>> {
         self.inner.get_service_registries()
     }
     /// <p>The number of instantiations of the specified task definition to place and keep running in your service.</p>
@@ -311,17 +298,14 @@ impl CreateServiceFluentBuilder {
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    pub fn set_capacity_provider_strategy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    ) -> Self {
+    pub fn set_capacity_provider_strategy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>) -> Self {
         self.inner = self.inner.set_capacity_provider_strategy(input);
         self
     }
     /// <p>The capacity provider strategy to use for the service.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>> {
         self.inner.get_capacity_provider_strategy()
     }
     /// <p>The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -385,12 +369,12 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
-    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>) -> Self {
+    pub fn set_placement_constraints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementConstraint>>) -> Self {
         self.inner = self.inner.set_placement_constraints(input);
         self
     }
     /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
-    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
+    pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementConstraint>> {
         self.inner.get_placement_constraints()
     }
     /// Appends an item to `placementStrategy`.
@@ -403,12 +387,12 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
-    pub fn set_placement_strategy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>) -> Self {
+    pub fn set_placement_strategy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementStrategy>>) -> Self {
         self.inner = self.inner.set_placement_strategy(input);
         self
     }
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
-    pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
+    pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementStrategy>> {
         self.inner.get_placement_strategy()
     }
     /// <p>The network configuration for the service. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -544,7 +528,7 @@ impl CreateServiceFluentBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -566,7 +550,7 @@ impl CreateServiceFluentBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -644,12 +628,13 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
-    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>) -> Self {
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceVolumeConfiguration>>) -> Self {
         self.inner = self.inner.set_volume_configurations(input);
         self
     }
     /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
-    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>> {
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceVolumeConfiguration>> {
         self.inner.get_volume_configurations()
     }
 }
+

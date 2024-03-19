@@ -3,15 +3,15 @@
 /// <p>The log configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElasticsearchDomainLogPublishingOptionsLogConfig {
+pub struct AwsElasticsearchDomainLogPublishingOptionsLogConfig  {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the log publishing is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
+impl  AwsElasticsearchDomainLogPublishingOptionsLogConfig  {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p>Whether the log publishing is enabled.</p>
@@ -41,8 +41,7 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfigBuilder {
     }
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_log_group_arn = input;
-        self
+        self.cloud_watch_logs_log_group_arn = input; self
     }
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfigBuilder {
     }
     /// <p>Whether the log publishing is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether the log publishing is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfigBuilder {
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig {
         crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig {
-            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
-            enabled: self.enabled,
+            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

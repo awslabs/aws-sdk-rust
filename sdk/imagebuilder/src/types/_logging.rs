@@ -3,13 +3,13 @@
 /// <p>Logging configuration defines where Image Builder uploads your logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Logging {
+pub struct Logging  {
     /// <p>The Amazon S3 logging configuration.</p>
     pub s3_logs: ::std::option::Option<crate::types::S3Logs>,
 }
-impl Logging {
+impl  Logging  {
     /// <p>The Amazon S3 logging configuration.</p>
-    pub fn s3_logs(&self) -> ::std::option::Option<&crate::types::S3Logs> {
+    pub fn s3_logs(&self) -> ::std::option::Option<& crate::types::S3Logs> {
         self.s3_logs.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LoggingBuilder {
     }
     /// <p>The Amazon S3 logging configuration.</p>
     pub fn set_s3_logs(mut self, input: ::std::option::Option<crate::types::S3Logs>) -> Self {
-        self.s3_logs = input;
-        self
+        self.s3_logs = input; self
     }
     /// <p>The Amazon S3 logging configuration.</p>
     pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::S3Logs> {
@@ -43,6 +42,10 @@ impl LoggingBuilder {
     }
     /// Consumes the builder and constructs a [`Logging`](crate::types::Logging).
     pub fn build(self) -> crate::types::Logging {
-        crate::types::Logging { s3_logs: self.s3_logs }
+        crate::types::Logging {
+            s3_logs: self.s3_logs
+            ,
+        }
     }
 }
+

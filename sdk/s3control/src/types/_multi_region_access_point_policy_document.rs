@@ -4,19 +4,19 @@
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiRegionAccessPointPolicyDocument {
+pub struct MultiRegionAccessPointPolicyDocument  {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
     pub established: ::std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>,
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     pub proposed: ::std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>,
 }
-impl MultiRegionAccessPointPolicyDocument {
+impl  MultiRegionAccessPointPolicyDocument  {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
-    pub fn established(&self) -> ::std::option::Option<&crate::types::EstablishedMultiRegionAccessPointPolicy> {
+    pub fn established(&self) -> ::std::option::Option<& crate::types::EstablishedMultiRegionAccessPointPolicy> {
         self.established.as_ref()
     }
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
-    pub fn proposed(&self) -> ::std::option::Option<&crate::types::ProposedMultiRegionAccessPointPolicy> {
+    pub fn proposed(&self) -> ::std::option::Option<& crate::types::ProposedMultiRegionAccessPointPolicy> {
         self.proposed.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl MultiRegionAccessPointPolicyDocumentBuilder {
     }
     /// <p>The last established policy for the Multi-Region Access Point.</p>
     pub fn set_established(mut self, input: ::std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>) -> Self {
-        self.established = input;
-        self
+        self.established = input; self
     }
     /// <p>The last established policy for the Multi-Region Access Point.</p>
     pub fn get_established(&self) -> &::std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy> {
@@ -56,8 +55,7 @@ impl MultiRegionAccessPointPolicyDocumentBuilder {
     }
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     pub fn set_proposed(mut self, input: ::std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>) -> Self {
-        self.proposed = input;
-        self
+        self.proposed = input; self
     }
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     pub fn get_proposed(&self) -> &::std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy> {
@@ -66,8 +64,11 @@ impl MultiRegionAccessPointPolicyDocumentBuilder {
     /// Consumes the builder and constructs a [`MultiRegionAccessPointPolicyDocument`](crate::types::MultiRegionAccessPointPolicyDocument).
     pub fn build(self) -> crate::types::MultiRegionAccessPointPolicyDocument {
         crate::types::MultiRegionAccessPointPolicyDocument {
-            established: self.established,
-            proposed: self.proposed,
+            established: self.established
+            ,
+            proposed: self.proposed
+            ,
         }
     }
 }
+

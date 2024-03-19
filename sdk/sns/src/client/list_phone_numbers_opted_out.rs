@@ -2,14 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPhoneNumbersOptedOut`](crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder::set_next_token):<br>required: **false**<br><p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p><br>
-    /// - On success, responds with [`ListPhoneNumbersOptedOutOutput`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput) with field(s):
+                            /// - On success, responds with [`ListPhoneNumbersOptedOutOutput`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput) with field(s):
     ///   - [`phone_numbers(Option<Vec::<String>>)`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput::phone_numbers): <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput::next_token): <p>A <code>NextToken</code> string is returned when you call the <code>ListPhoneNumbersOptedOut</code> action if additional records are available after the first page of results.</p>
-    /// - On failure, responds with [`SdkError<ListPhoneNumbersOptedOutError>`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError)
+                            /// - On failure, responds with [`SdkError<ListPhoneNumbersOptedOutError>`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError)
     pub fn list_phone_numbers_opted_out(&self) -> crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder {
-        crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder::new(self.handle.clone())
+                            }
 }
+

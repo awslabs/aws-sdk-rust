@@ -5,13 +5,13 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkBandwidthGbpsRequest {
+pub struct NetworkBandwidthGbpsRequest  {
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
     pub min: ::std::option::Option<f64>,
     /// <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum limit, omit this parameter.</p>
     pub max: ::std::option::Option<f64>,
 }
-impl NetworkBandwidthGbpsRequest {
+impl  NetworkBandwidthGbpsRequest  {
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
     pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
@@ -43,8 +43,7 @@ impl NetworkBandwidthGbpsRequestBuilder {
     }
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -57,8 +56,7 @@ impl NetworkBandwidthGbpsRequestBuilder {
     }
     /// <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum limit, omit this parameter.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum limit, omit this parameter.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -67,8 +65,11 @@ impl NetworkBandwidthGbpsRequestBuilder {
     /// Consumes the builder and constructs a [`NetworkBandwidthGbpsRequest`](crate::types::NetworkBandwidthGbpsRequest).
     pub fn build(self) -> crate::types::NetworkBandwidthGbpsRequest {
         crate::types::NetworkBandwidthGbpsRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

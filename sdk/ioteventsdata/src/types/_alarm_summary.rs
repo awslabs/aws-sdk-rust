@@ -3,7 +3,7 @@
 /// <p>Contains a summary of an alarm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlarmSummary {
+pub struct AlarmSummary  {
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the alarm model.</p>
@@ -31,17 +31,17 @@ pub struct AlarmSummary {
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AlarmSummary {
+impl  AlarmSummary  {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The version of the alarm model.</p>
-    pub fn alarm_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_version(&self) -> ::std::option::Option<& str> {
         self.alarm_model_version.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> ::std::option::Option<&str> {
+    pub fn key_value(&self) -> ::std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
@@ -59,15 +59,15 @@ impl AlarmSummary {
     /// <li>
     /// <p><code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p></li>
     /// </ul>
-    pub fn state_name(&self) -> ::std::option::Option<&crate::types::AlarmStateName> {
+    pub fn state_name(&self) -> ::std::option::Option<& crate::types::AlarmStateName> {
         self.state_name.as_ref()
     }
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl AlarmSummaryBuilder {
     }
     /// <p>The name of the alarm model.</p>
     pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_name = input;
-        self
+        self.alarm_model_name = input; self
     }
     /// <p>The name of the alarm model.</p>
     pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl AlarmSummaryBuilder {
     }
     /// <p>The version of the alarm model.</p>
     pub fn set_alarm_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_version = input;
-        self
+        self.alarm_model_version = input; self
     }
     /// <p>The version of the alarm model.</p>
     pub fn get_alarm_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl AlarmSummaryBuilder {
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +164,7 @@ impl AlarmSummaryBuilder {
     /// <p><code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p></li>
     /// </ul>
     pub fn set_state_name(mut self, input: ::std::option::Option<crate::types::AlarmStateName>) -> Self {
-        self.state_name = input;
-        self
+        self.state_name = input; self
     }
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
@@ -195,8 +191,7 @@ impl AlarmSummaryBuilder {
     }
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -209,8 +204,7 @@ impl AlarmSummaryBuilder {
     }
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The time the alarm was last updated, in the Unix epoch format.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -219,12 +213,19 @@ impl AlarmSummaryBuilder {
     /// Consumes the builder and constructs a [`AlarmSummary`](crate::types::AlarmSummary).
     pub fn build(self) -> crate::types::AlarmSummary {
         crate::types::AlarmSummary {
-            alarm_model_name: self.alarm_model_name,
-            alarm_model_version: self.alarm_model_version,
-            key_value: self.key_value,
-            state_name: self.state_name,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
+            alarm_model_name: self.alarm_model_name
+            ,
+            alarm_model_version: self.alarm_model_version
+            ,
+            key_value: self.key_value
+            ,
+            state_name: self.state_name
+            ,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
         }
     }
 }
+

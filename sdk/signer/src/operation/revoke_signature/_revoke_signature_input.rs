@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokeSignatureInput {
+pub struct RevokeSignatureInput  {
     /// <p>ID of the signing job to be revoked.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>AWS account ID of the job owner.</p>
@@ -10,17 +10,17 @@ pub struct RevokeSignatureInput {
     /// <p>The reason for revoking the signing job.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl RevokeSignatureInput {
+impl  RevokeSignatureInput  {
     /// <p>ID of the signing job to be revoked.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>AWS account ID of the job owner.</p>
-    pub fn job_owner(&self) -> ::std::option::Option<&str> {
+    pub fn job_owner(&self) -> ::std::option::Option<& str> {
         self.job_owner.as_deref()
     }
     /// <p>The reason for revoking the signing job.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RevokeSignatureInputBuilder {
     }
     /// <p>ID of the signing job to be revoked.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>ID of the signing job to be revoked.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RevokeSignatureInputBuilder {
     }
     /// <p>AWS account ID of the job owner.</p>
     pub fn set_job_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_owner = input;
-        self
+        self.job_owner = input; self
     }
     /// <p>AWS account ID of the job owner.</p>
     pub fn get_job_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl RevokeSignatureInputBuilder {
     }
     /// <p>The reason for revoking the signing job.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for revoking the signing job.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`RevokeSignatureInput`](crate::operation::revoke_signature::RevokeSignatureInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::revoke_signature::RevokeSignatureInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::revoke_signature::RevokeSignatureInput {
-            job_id: self.job_id,
-            job_owner: self.job_owner,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_signature::RevokeSignatureInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::revoke_signature::RevokeSignatureInput {
+                job_id: self.job_id
+                ,
+                job_owner: self.job_owner
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

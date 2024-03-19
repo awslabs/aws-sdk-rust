@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCopyJobsInput {
+pub struct ListCopyJobsInput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
@@ -68,9 +68,9 @@ pub struct ListCopyJobsInput {
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub by_message_category: ::std::option::Option<::std::string::String>,
 }
-impl ListCopyJobsInput {
+impl  ListCopyJobsInput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -78,19 +78,19 @@ impl ListCopyJobsInput {
         self.max_results
     }
     /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn by_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn by_resource_arn(&self) -> ::std::option::Option<& str> {
         self.by_resource_arn.as_deref()
     }
     /// <p>Returns only copy jobs that are in the specified state.</p>
-    pub fn by_state(&self) -> ::std::option::Option<&crate::types::CopyJobState> {
+    pub fn by_state(&self) -> ::std::option::Option<& crate::types::CopyJobState> {
         self.by_state.as_ref()
     }
     /// <p>Returns only copy jobs that were created before the specified date.</p>
-    pub fn by_created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_created_before.as_ref()
     }
     /// <p>Returns only copy jobs that were created after the specified date.</p>
-    pub fn by_created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_created_after.as_ref()
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
@@ -128,27 +128,27 @@ impl ListCopyJobsInput {
     /// <li>
     /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
-    pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn by_resource_type(&self) -> ::std::option::Option<& str> {
         self.by_resource_type.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn by_destination_vault_arn(&self) -> ::std::option::Option<&str> {
+    pub fn by_destination_vault_arn(&self) -> ::std::option::Option<& str> {
         self.by_destination_vault_arn.as_deref()
     }
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
-    pub fn by_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn by_account_id(&self) -> ::std::option::Option<& str> {
         self.by_account_id.as_deref()
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_complete_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_complete_before.as_ref()
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_complete_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_complete_after.as_ref()
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    pub fn by_parent_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn by_parent_job_id(&self) -> ::std::option::Option<& str> {
         self.by_parent_job_id.as_deref()
     }
     /// <p>This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value you input.</p>
@@ -156,7 +156,7 @@ impl ListCopyJobsInput {
     /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
-    pub fn by_message_category(&self) -> ::std::option::Option<&str> {
+    pub fn by_message_category(&self) -> ::std::option::Option<& str> {
         self.by_message_category.as_deref()
     }
 }
@@ -193,8 +193,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +206,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -221,8 +219,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn set_by_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_resource_arn = input;
-        self
+        self.by_resource_arn = input; self
     }
     /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn get_by_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +232,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only copy jobs that are in the specified state.</p>
     pub fn set_by_state(mut self, input: ::std::option::Option<crate::types::CopyJobState>) -> Self {
-        self.by_state = input;
-        self
+        self.by_state = input; self
     }
     /// <p>Returns only copy jobs that are in the specified state.</p>
     pub fn get_by_state(&self) -> &::std::option::Option<crate::types::CopyJobState> {
@@ -249,8 +245,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only copy jobs that were created before the specified date.</p>
     pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_created_before = input;
-        self
+        self.by_created_before = input; self
     }
     /// <p>Returns only copy jobs that were created before the specified date.</p>
     pub fn get_by_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -263,8 +258,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only copy jobs that were created after the specified date.</p>
     pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_created_after = input;
-        self
+        self.by_created_after = input; self
     }
     /// <p>Returns only copy jobs that were created after the specified date.</p>
     pub fn get_by_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -345,8 +339,7 @@ impl ListCopyJobsInputBuilder {
     /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_resource_type = input;
-        self
+        self.by_resource_type = input; self
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
@@ -393,8 +386,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn set_by_destination_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_destination_vault_arn = input;
-        self
+        self.by_destination_vault_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn get_by_destination_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -407,8 +399,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     pub fn set_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_account_id = input;
-        self
+        self.by_account_id = input; self
     }
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     pub fn get_by_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -421,8 +412,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn set_by_complete_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_complete_before = input;
-        self
+        self.by_complete_before = input; self
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn get_by_complete_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -435,8 +425,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn set_by_complete_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_complete_after = input;
-        self
+        self.by_complete_after = input; self
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn get_by_complete_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -449,8 +438,7 @@ impl ListCopyJobsInputBuilder {
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     pub fn set_by_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_parent_job_id = input;
-        self
+        self.by_parent_job_id = input; self
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -471,8 +459,7 @@ impl ListCopyJobsInputBuilder {
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_by_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_message_category = input;
-        self
+        self.by_message_category = input; self
     }
     /// <p>This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value you input.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
@@ -483,23 +470,37 @@ impl ListCopyJobsInputBuilder {
         &self.by_message_category
     }
     /// Consumes the builder and constructs a [`ListCopyJobsInput`](crate::operation::list_copy_jobs::ListCopyJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_copy_jobs::ListCopyJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_copy_jobs::ListCopyJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            by_resource_arn: self.by_resource_arn,
-            by_state: self.by_state,
-            by_created_before: self.by_created_before,
-            by_created_after: self.by_created_after,
-            by_resource_type: self.by_resource_type,
-            by_destination_vault_arn: self.by_destination_vault_arn,
-            by_account_id: self.by_account_id,
-            by_complete_before: self.by_complete_before,
-            by_complete_after: self.by_complete_after,
-            by_parent_job_id: self.by_parent_job_id,
-            by_message_category: self.by_message_category,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_copy_jobs::ListCopyJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_copy_jobs::ListCopyJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                by_resource_arn: self.by_resource_arn
+                ,
+                by_state: self.by_state
+                ,
+                by_created_before: self.by_created_before
+                ,
+                by_created_after: self.by_created_after
+                ,
+                by_resource_type: self.by_resource_type
+                ,
+                by_destination_vault_arn: self.by_destination_vault_arn
+                ,
+                by_account_id: self.by_account_id
+                ,
+                by_complete_before: self.by_complete_before
+                ,
+                by_complete_after: self.by_complete_after
+                ,
+                by_parent_job_id: self.by_parent_job_id
+                ,
+                by_message_category: self.by_message_category
+                ,
+            }
+        )
     }
 }
+

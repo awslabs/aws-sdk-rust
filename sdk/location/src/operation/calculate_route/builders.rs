@@ -5,23 +5,20 @@ pub use crate::operation::calculate_route::_calculate_route_input::CalculateRout
 
 impl CalculateRouteInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::calculate_route::CalculateRouteOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::calculate_route::CalculateRouteError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.calculate_route();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::calculate_route::CalculateRouteOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::calculate_route::CalculateRouteError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.calculate_route();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CalculateRoute`.
-///
+/// 
 /// <p><a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>
 /// <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating the route.</p>
 /// <p>Additional options include:</p>
@@ -38,33 +35,32 @@ impl CalculateRouteInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CalculateRouteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::calculate_route::builders::CalculateRouteInputBuilder,
+                    inner: crate::operation::calculate_route::builders::CalculateRouteInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::calculate_route::CalculateRouteOutput,
-        crate::operation::calculate_route::CalculateRouteError,
-    > for CalculateRouteFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::calculate_route::CalculateRouteOutput,
-            crate::operation::calculate_route::CalculateRouteError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::calculate_route::CalculateRouteOutput,
+                    crate::operation::calculate_route::CalculateRouteError,
+                > for CalculateRouteFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::calculate_route::CalculateRouteOutput,
+                        crate::operation::calculate_route::CalculateRouteError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CalculateRouteFluentBuilder {
     /// Creates a new `CalculateRoute`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -73,53 +69,44 @@ impl CalculateRouteFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::calculate_route::CalculateRouteOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::calculate_route::CalculateRouteError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::calculate_route::CalculateRoute::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::calculate_route::CalculateRoute::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::calculate_route::CalculateRouteOutput,
-        crate::operation::calculate_route::CalculateRouteError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::calculate_route::CalculateRouteError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::calculate_route::CalculateRoute::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::calculate_route::CalculateRoute::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::calculate_route::CalculateRouteOutput, crate::operation::calculate_route::CalculateRouteError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the route calculator resource that you want to use to calculate the route.</p>
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculator_name(input.into());
@@ -158,7 +145,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
-    pub fn set_departure_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
+    pub fn set_departure_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
         self.inner = self.inner.set_departure_position(input);
         self
     }
@@ -170,7 +157,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
-    pub fn get_departure_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_departure_position(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         self.inner.get_departure_position()
     }
     /// Appends an item to `DestinationPosition`.
@@ -197,7 +184,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
-    pub fn set_destination_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
+    pub fn set_destination_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
         self.inner = self.inner.set_destination_position(input);
         self
     }
@@ -209,7 +196,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
-    pub fn get_destination_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_destination_position(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         self.inner.get_destination_position()
     }
     /// Appends an item to `WaypointPositions`.
@@ -226,7 +213,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
-    pub fn waypoint_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
+    pub fn waypoint_positions(mut self, input: ::std::vec::Vec::<f64>) -> Self {
         self.inner = self.inner.waypoint_positions(input);
         self
     }
@@ -240,7 +227,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
-    pub fn set_waypoint_positions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>) -> Self {
+    pub fn set_waypoint_positions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<f64>>>) -> Self {
         self.inner = self.inner.set_waypoint_positions(input);
         self
     }
@@ -254,7 +241,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code></p>
-    pub fn get_waypoint_positions(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>> {
+    pub fn get_waypoint_positions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<f64>>> {
         self.inner.get_waypoint_positions()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p><note>
@@ -473,3 +460,4 @@ impl CalculateRouteFluentBuilder {
         self.inner.get_key()
     }
 }
+

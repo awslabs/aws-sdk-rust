@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAssociateAnalyticsDataSetInput {
+pub struct BatchAssociateAnalyticsDataSetInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of dataset identifiers to associate.</p>
-    pub data_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub data_set_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifier of the target account. Use to associate a dataset to a different account than the one containing the Amazon Connect instance. If not specified, by default this value is the Amazon Web Services account that has the Amazon Connect instance.</p>
     pub target_account_id: ::std::option::Option<::std::string::String>,
 }
-impl BatchAssociateAnalyticsDataSetInput {
+impl  BatchAssociateAnalyticsDataSetInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>An array of dataset identifiers to associate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_set_ids.is_none()`.
-    pub fn data_set_ids(&self) -> &[::std::string::String] {
-        self.data_set_ids.as_deref().unwrap_or_default()
+    pub fn data_set_ids(&self) -> & [::std::string::String] {
+        self.data_set_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the target account. Use to associate a dataset to a different account than the one containing the Amazon Connect instance. If not specified, by default this value is the Amazon Web Services account that has the Amazon Connect instance.</p>
-    pub fn target_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_account_id(&self) -> ::std::option::Option<& str> {
         self.target_account_id.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl BatchAssociateAnalyticsDataSetInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateAnalyticsDataSetInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) data_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_set_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) target_account_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchAssociateAnalyticsDataSetInputBuilder {
@@ -50,8 +51,7 @@ impl BatchAssociateAnalyticsDataSetInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl BatchAssociateAnalyticsDataSetInputBuilder {
     /// <p>An array of dataset identifiers to associate.</p>
     pub fn data_set_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_set_ids.unwrap_or_default();
-        v.push(input.into());
-        self.data_set_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.data_set_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of dataset identifiers to associate.</p>
-    pub fn set_data_set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.data_set_ids = input;
-        self
+    pub fn set_data_set_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.data_set_ids = input; self
     }
     /// <p>An array of dataset identifiers to associate.</p>
-    pub fn get_data_set_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_set_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.data_set_ids
     }
     /// <p>The identifier of the target account. Use to associate a dataset to a different account than the one containing the Amazon Connect instance. If not specified, by default this value is the Amazon Web Services account that has the Amazon Connect instance.</p>
@@ -84,26 +83,24 @@ impl BatchAssociateAnalyticsDataSetInputBuilder {
     }
     /// <p>The identifier of the target account. Use to associate a dataset to a different account than the one containing the Amazon Connect instance. If not specified, by default this value is the Amazon Web Services account that has the Amazon Connect instance.</p>
     pub fn set_target_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_account_id = input;
-        self
+        self.target_account_id = input; self
     }
     /// <p>The identifier of the target account. Use to associate a dataset to a different account than the one containing the Amazon Connect instance. If not specified, by default this value is the Amazon Web Services account that has the Amazon Connect instance.</p>
     pub fn get_target_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_account_id
     }
     /// Consumes the builder and constructs a [`BatchAssociateAnalyticsDataSetInput`](crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetInput {
-                instance_id: self.instance_id,
-                data_set_ids: self.data_set_ids,
-                target_account_id: self.target_account_id,
-            },
+                instance_id: self.instance_id
+                ,
+                data_set_ids: self.data_set_ids
+                ,
+                target_account_id: self.target_account_id
+                ,
+            }
         )
     }
 }
+

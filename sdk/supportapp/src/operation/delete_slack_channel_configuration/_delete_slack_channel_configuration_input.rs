@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlackChannelConfigurationInput {
+pub struct DeleteSlackChannelConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub team_id: ::std::option::Option<::std::string::String>,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub channel_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSlackChannelConfigurationInput {
+impl  DeleteSlackChannelConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteSlackChannelConfigurationInputBuilder {
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteSlackChannelConfigurationInputBuilder {
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_id
     }
     /// Consumes the builder and constructs a [`DeleteSlackChannelConfigurationInput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput {
-                team_id: self.team_id,
-                channel_id: self.channel_id,
-            },
+                team_id: self.team_id
+                ,
+                channel_id: self.channel_id
+                ,
+            }
         )
     }
 }
+

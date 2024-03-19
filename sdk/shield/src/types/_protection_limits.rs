@@ -3,15 +3,14 @@
 /// <p>Limits settings on protections for your subscription.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectionLimits {
+pub struct ProtectionLimits  {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub protected_resource_type_limits: ::std::vec::Vec<crate::types::Limit>,
+    pub protected_resource_type_limits: ::std::vec::Vec::<crate::types::Limit>,
 }
-impl ProtectionLimits {
+impl  ProtectionLimits  {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub fn protected_resource_type_limits(&self) -> &[crate::types::Limit] {
-        use std::ops::Deref;
-        self.protected_resource_type_limits.deref()
+    pub fn protected_resource_type_limits(&self) -> & [crate::types::Limit] {
+        use std::ops::Deref; self.protected_resource_type_limits.deref()
     }
 }
 impl ProtectionLimits {
@@ -25,7 +24,7 @@ impl ProtectionLimits {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectionLimitsBuilder {
-    pub(crate) protected_resource_type_limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
+    pub(crate) protected_resource_type_limits: ::std::option::Option<::std::vec::Vec::<crate::types::Limit>>,
 }
 impl ProtectionLimitsBuilder {
     /// Appends an item to `protected_resource_type_limits`.
@@ -35,30 +34,31 @@ impl ProtectionLimitsBuilder {
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
     pub fn protected_resource_type_limits(mut self, input: crate::types::Limit) -> Self {
         let mut v = self.protected_resource_type_limits.unwrap_or_default();
-        v.push(input);
-        self.protected_resource_type_limits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protected_resource_type_limits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub fn set_protected_resource_type_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>) -> Self {
-        self.protected_resource_type_limits = input;
-        self
+    pub fn set_protected_resource_type_limits(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Limit>>) -> Self {
+        self.protected_resource_type_limits = input; self
     }
     /// <p>The maximum number of resource types that you can specify in a protection.</p>
-    pub fn get_protected_resource_type_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Limit>> {
+    pub fn get_protected_resource_type_limits(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Limit>> {
         &self.protected_resource_type_limits
     }
     /// Consumes the builder and constructs a [`ProtectionLimits`](crate::types::ProtectionLimits).
     /// This method will fail if any of the following fields are not set:
     /// - [`protected_resource_type_limits`](crate::types::builders::ProtectionLimitsBuilder::protected_resource_type_limits)
     pub fn build(self) -> ::std::result::Result<crate::types::ProtectionLimits, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProtectionLimits {
-            protected_resource_type_limits: self.protected_resource_type_limits.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protected_resource_type_limits",
-                    "protected_resource_type_limits was not specified but it is required when building ProtectionLimits",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProtectionLimits {
+                protected_resource_type_limits: self.protected_resource_type_limits
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protected_resource_type_limits", "protected_resource_type_limits was not specified but it is required when building ProtectionLimits")
+                    )?
+                ,
+            }
+        )
     }
 }
+

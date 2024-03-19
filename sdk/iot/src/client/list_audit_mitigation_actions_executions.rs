@@ -2,22 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAuditMitigationActionsExecutions`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`task_id(impl Into<String>)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::set_task_id):<br>required: **true**<br><p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p><br>
     ///   - [`action_status(AuditMitigationActionsExecutionStatus)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::action_status) / [`set_action_status(Option<AuditMitigationActionsExecutionStatus>)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::set_action_status):<br>required: **false**<br><p>Specify this filter to limit results to those with a specific status.</p><br>
     ///   - [`finding_id(impl Into<String>)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::finding_id) / [`set_finding_id(Option<String>)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::set_finding_id):<br>required: **true**<br><p>Specify this filter to limit results to those that were applied to a specific audit finding.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
-    /// - On success, responds with [`ListAuditMitigationActionsExecutionsOutput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListAuditMitigationActionsExecutionsOutput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput) with field(s):
     ///   - [`actions_executions(Option<Vec::<AuditMitigationActionExecutionMetadata>>)`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput::actions_executions): <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput::next_token): <p>The token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListAuditMitigationActionsExecutionsError>`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError)
-    pub fn list_audit_mitigation_actions_executions(
-        &self,
-    ) -> crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder {
-        crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListAuditMitigationActionsExecutionsError>`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError)
+    pub fn list_audit_mitigation_actions_executions(&self) -> crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder {
+                                crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

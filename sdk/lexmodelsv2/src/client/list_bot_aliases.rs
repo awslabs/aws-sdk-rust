@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBotAliases`](crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::set_bot_id):<br>required: **true**<br><p>The identifier of the bot to list aliases for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the <code>ListBotAliases</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p><br>
-    /// - On success, responds with [`ListBotAliasesOutput`](crate::operation::list_bot_aliases::ListBotAliasesOutput) with field(s):
+                            /// - On success, responds with [`ListBotAliasesOutput`](crate::operation::list_bot_aliases::ListBotAliasesOutput) with field(s):
     ///   - [`bot_alias_summaries(Option<Vec::<BotAliasSummary>>)`](crate::operation::list_bot_aliases::ListBotAliasesOutput::bot_alias_summaries): <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bot_aliases::ListBotAliasesOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
     ///   - [`bot_id(Option<String>)`](crate::operation::list_bot_aliases::ListBotAliasesOutput::bot_id): <p>The identifier of the bot associated with the aliases.</p>
-    /// - On failure, responds with [`SdkError<ListBotAliasesError>`](crate::operation::list_bot_aliases::ListBotAliasesError)
+                            /// - On failure, responds with [`SdkError<ListBotAliasesError>`](crate::operation::list_bot_aliases::ListBotAliasesError)
     pub fn list_bot_aliases(&self) -> crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder {
-        crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_bot_aliases::builders::ListBotAliasesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

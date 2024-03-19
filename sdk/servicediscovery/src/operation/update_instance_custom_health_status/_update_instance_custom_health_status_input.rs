@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInstanceCustomHealthStatusInput {
+pub struct UpdateInstanceCustomHealthStatusInput  {
     /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance that you want to change the health status for.</p>
@@ -10,17 +10,17 @@ pub struct UpdateInstanceCustomHealthStatusInput {
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
     pub status: ::std::option::Option<crate::types::CustomHealthStatus>,
 }
-impl UpdateInstanceCustomHealthStatusInput {
+impl  UpdateInstanceCustomHealthStatusInput  {
     /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
-    pub fn service_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the instance that you want to change the health status for.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CustomHealthStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CustomHealthStatus> {
         self.status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateInstanceCustomHealthStatusInputBuilder {
     }
     /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateInstanceCustomHealthStatusInputBuilder {
     }
     /// <p>The ID of the instance that you want to change the health status for.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance that you want to change the health status for.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl UpdateInstanceCustomHealthStatusInputBuilder {
     }
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomHealthStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomHealthStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateInstanceCustomHealthStatusInput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput {
-                service_id: self.service_id,
-                instance_id: self.instance_id,
-                status: self.status,
-            },
+                service_id: self.service_id
+                ,
+                instance_id: self.instance_id
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

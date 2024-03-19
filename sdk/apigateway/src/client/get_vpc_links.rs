@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetVpcLinks`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`position(impl Into<String>)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
-    /// - On success, responds with [`GetVpcLinksOutput`](crate::operation::get_vpc_links::GetVpcLinksOutput) with field(s):
+                            /// - On success, responds with [`GetVpcLinksOutput`](crate::operation::get_vpc_links::GetVpcLinksOutput) with field(s):
     ///   - [`items(Option<Vec::<VpcLink>>)`](crate::operation::get_vpc_links::GetVpcLinksOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_vpc_links::GetVpcLinksOutput::position): <p>The current pagination position in the paged result set.</p>
-    /// - On failure, responds with [`SdkError<GetVpcLinksError>`](crate::operation::get_vpc_links::GetVpcLinksError)
+                            /// - On failure, responds with [`SdkError<GetVpcLinksError>`](crate::operation::get_vpc_links::GetVpcLinksError)
     pub fn get_vpc_links(&self) -> crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder {
-        crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListComponentTypes`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace.</p><br>
     ///   - [`filters(ListComponentTypesFilter)`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::filters) / [`set_filters(Option<Vec::<ListComponentTypesFilter>>)`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::set_filters):<br>required: **false**<br><p>A list of objects that filter the request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>The string that specifies the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p> <p>Valid Range: Minimum value of 1. Maximum value of 250.</p><br>
-    /// - On success, responds with [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput) with field(s):
+                            /// - On success, responds with [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput) with field(s):
     ///   - [`workspace_id(String)`](crate::operation::list_component_types::ListComponentTypesOutput::workspace_id): <p>The ID of the workspace.</p>
     ///   - [`component_type_summaries(Vec::<ComponentTypeSummary>)`](crate::operation::list_component_types::ListComponentTypesOutput::component_type_summaries): <p>A list of objects that contain information about the component types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_component_types::ListComponentTypesOutput::next_token): <p>The string that specifies the next page of results.</p>
     ///   - [`max_results(Option<i32>)`](crate::operation::list_component_types::ListComponentTypesOutput::max_results): <p>Specifies the maximum number of results to display.</p>
-    /// - On failure, responds with [`SdkError<ListComponentTypesError>`](crate::operation::list_component_types::ListComponentTypesError)
+                            /// - On failure, responds with [`SdkError<ListComponentTypesError>`](crate::operation::list_component_types::ListComponentTypesError)
     pub fn list_component_types(&self) -> crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder {
-        crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_component_types::builders::ListComponentTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

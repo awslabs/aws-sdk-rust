@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGatewaysOutput {
+pub struct ListGatewaysOutput  {
     /// <p>The gateways in the list.</p>
-    pub gateways: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>,
+    pub gateways: ::std::option::Option<::std::vec::Vec::<crate::types::GatewaySummary>>,
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListGatewaysOutput {
+impl  ListGatewaysOutput  {
     /// <p>The gateways in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateways.is_none()`.
-    pub fn gateways(&self) -> &[crate::types::GatewaySummary] {
-        self.gateways.as_deref().unwrap_or_default()
+    pub fn gateways(&self) -> & [crate::types::GatewaySummary] {
+        self.gateways.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListGatewaysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput).
     pub fn builder() -> crate::operation::list_gateways::builders::ListGatewaysOutputBuilder {
@@ -37,7 +38,7 @@ impl ListGatewaysOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewaysOutputBuilder {
-    pub(crate) gateways: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>,
+    pub(crate) gateways: ::std::option::Option<::std::vec::Vec::<crate::types::GatewaySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListGatewaysOutputBuilder {
     /// <p>The gateways in the list.</p>
     pub fn gateways(mut self, input: crate::types::GatewaySummary) -> Self {
         let mut v = self.gateways.unwrap_or_default();
-        v.push(input);
-        self.gateways = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.gateways = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The gateways in the list.</p>
-    pub fn set_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>) -> Self {
-        self.gateways = input;
-        self
+    pub fn set_gateways(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GatewaySummary>>) -> Self {
+        self.gateways = input; self
     }
     /// <p>The gateways in the list.</p>
-    pub fn get_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>> {
+    pub fn get_gateways(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GatewaySummary>> {
         &self.gateways
     }
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
@@ -69,28 +69,30 @@ impl ListGatewaysOutputBuilder {
     }
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput).
     pub fn build(self) -> crate::operation::list_gateways::ListGatewaysOutput {
         crate::operation::list_gateways::ListGatewaysOutput {
-            gateways: self.gateways,
-            next_token: self.next_token,
+            gateways: self.gateways
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

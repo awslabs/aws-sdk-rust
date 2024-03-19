@@ -3,19 +3,19 @@
 /// <p>Input for RemovePermission action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemovePermissionInput {
+pub struct RemovePermissionInput  {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique label of the statement you want to remove.</p>
     pub label: ::std::option::Option<::std::string::String>,
 }
-impl RemovePermissionInput {
+impl  RemovePermissionInput  {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>The unique label of the statement you want to remove.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>The unique label of the statement you want to remove.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The unique label of the statement you want to remove.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.label
     }
     /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_permission::RemovePermissionInput {
-            topic_arn: self.topic_arn,
-            label: self.label,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_permission::RemovePermissionInput {
+                topic_arn: self.topic_arn
+                ,
+                label: self.label
+                ,
+            }
+        )
     }
 }
+

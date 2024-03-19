@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListSubChannelsOutput {
+pub struct ListSubChannelsOutput  {
     /// <p>The ARN of elastic channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information about each sub-channel.</p>
-    pub sub_channels: ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>,
+    pub sub_channels: ::std::option::Option<::std::vec::Vec::<crate::types::SubChannelSummary>>,
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSubChannelsOutput {
+impl  ListSubChannelsOutput  {
     /// <p>The ARN of elastic channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The information about each sub-channel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_channels.is_none()`.
-    pub fn sub_channels(&self) -> &[crate::types::SubChannelSummary] {
-        self.sub_channels.as_deref().unwrap_or_default()
+    pub fn sub_channels(&self) -> & [crate::types::SubChannelSummary] {
+        self.sub_channels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListSubChannelsOutput {
+impl  ::std::fmt::Debug for ListSubChannelsOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListSubChannelsOutput");
         formatter.field("channel_arn", &self.channel_arn);
@@ -38,10 +39,10 @@ impl ::std::fmt::Debug for ListSubChannelsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListSubChannelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSubChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubChannelsOutput`](crate::operation::list_sub_channels::ListSubChannelsOutput).
     pub fn builder() -> crate::operation::list_sub_channels::builders::ListSubChannelsOutputBuilder {
@@ -54,7 +55,7 @@ impl ListSubChannelsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListSubChannelsOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) sub_channels: ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>,
+    pub(crate) sub_channels: ::std::option::Option<::std::vec::Vec::<crate::types::SubChannelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,8 +67,7 @@ impl ListSubChannelsOutputBuilder {
     }
     /// <p>The ARN of elastic channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of elastic channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +80,16 @@ impl ListSubChannelsOutputBuilder {
     /// <p>The information about each sub-channel.</p>
     pub fn sub_channels(mut self, input: crate::types::SubChannelSummary) -> Self {
         let mut v = self.sub_channels.unwrap_or_default();
-        v.push(input);
-        self.sub_channels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sub_channels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information about each sub-channel.</p>
-    pub fn set_sub_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>>) -> Self {
-        self.sub_channels = input;
-        self
+    pub fn set_sub_channels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubChannelSummary>>) -> Self {
+        self.sub_channels = input; self
     }
     /// <p>The information about each sub-channel.</p>
-    pub fn get_sub_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>> {
+    pub fn get_sub_channels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubChannelSummary>> {
         &self.sub_channels
     }
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
@@ -100,28 +99,30 @@ impl ListSubChannelsOutputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSubChannelsOutput`](crate::operation::list_sub_channels::ListSubChannelsOutput).
     pub fn build(self) -> crate::operation::list_sub_channels::ListSubChannelsOutput {
         crate::operation::list_sub_channels::ListSubChannelsOutput {
-            channel_arn: self.channel_arn,
-            sub_channels: self.sub_channels,
-            next_token: self.next_token,
+            channel_arn: self.channel_arn
+            ,
+            sub_channels: self.sub_channels
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -136,3 +137,4 @@ impl ::std::fmt::Debug for ListSubChannelsOutputBuilder {
         formatter.finish()
     }
 }
+

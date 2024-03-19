@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelVersionsInput {
+pub struct ListModelVersionsInput  {
     /// <p>Then name of the machine learning model for which the model versions are to be listed.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
@@ -22,13 +22,13 @@ pub struct ListModelVersionsInput {
     /// <p>Specifies the lowest version of the model to return in the list.</p>
     pub min_model_version: ::std::option::Option<i64>,
 }
-impl ListModelVersionsInput {
+impl  ListModelVersionsInput  {
     /// <p>Then name of the machine learning model for which the model versions are to be listed.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the maximum number of machine learning model versions to list.</p>
@@ -36,19 +36,19 @@ impl ListModelVersionsInput {
         self.max_results
     }
     /// <p>Filter the results based on the current status of the model version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ModelVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ModelVersionStatus> {
         self.status.as_ref()
     }
     /// <p>Filter the results based on the way the model version was generated.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::ModelVersionSourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::ModelVersionSourceType> {
         self.source_type.as_ref()
     }
     /// <p>Filter results to return all the model versions created before this time.</p>
-    pub fn created_at_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at_end_time.as_ref()
     }
     /// <p>Filter results to return all the model versions created after this time.</p>
-    pub fn created_at_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at_start_time.as_ref()
     }
     /// <p>Specifies the highest version of the model to return in the list.</p>
@@ -90,8 +90,7 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>Then name of the machine learning model for which the model versions are to be listed.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>Then name of the machine learning model for which the model versions are to be listed.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>Specifies the maximum number of machine learning model versions to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of machine learning model versions to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -132,8 +129,7 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>Filter the results based on the current status of the model version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Filter the results based on the current status of the model version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelVersionStatus> {
@@ -146,8 +142,7 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>Filter the results based on the way the model version was generated.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ModelVersionSourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>Filter the results based on the way the model version was generated.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ModelVersionSourceType> {
@@ -160,8 +155,7 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>Filter results to return all the model versions created before this time.</p>
     pub fn set_created_at_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at_end_time = input;
-        self
+        self.created_at_end_time = input; self
     }
     /// <p>Filter results to return all the model versions created before this time.</p>
     pub fn get_created_at_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +168,7 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>Filter results to return all the model versions created after this time.</p>
     pub fn set_created_at_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at_start_time = input;
-        self
+        self.created_at_start_time = input; self
     }
     /// <p>Filter results to return all the model versions created after this time.</p>
     pub fn get_created_at_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +181,7 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>Specifies the highest version of the model to return in the list.</p>
     pub fn set_max_model_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_model_version = input;
-        self
+        self.max_model_version = input; self
     }
     /// <p>Specifies the highest version of the model to return in the list.</p>
     pub fn get_max_model_version(&self) -> &::std::option::Option<i64> {
@@ -202,27 +194,36 @@ impl ListModelVersionsInputBuilder {
     }
     /// <p>Specifies the lowest version of the model to return in the list.</p>
     pub fn set_min_model_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.min_model_version = input;
-        self
+        self.min_model_version = input; self
     }
     /// <p>Specifies the lowest version of the model to return in the list.</p>
     pub fn get_min_model_version(&self) -> &::std::option::Option<i64> {
         &self.min_model_version
     }
     /// Consumes the builder and constructs a [`ListModelVersionsInput`](crate::operation::list_model_versions::ListModelVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_model_versions::ListModelVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_model_versions::ListModelVersionsInput {
-            model_name: self.model_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            status: self.status,
-            source_type: self.source_type,
-            created_at_end_time: self.created_at_end_time,
-            created_at_start_time: self.created_at_start_time,
-            max_model_version: self.max_model_version,
-            min_model_version: self.min_model_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_model_versions::ListModelVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_model_versions::ListModelVersionsInput {
+                model_name: self.model_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+                source_type: self.source_type
+                ,
+                created_at_end_time: self.created_at_end_time
+                ,
+                created_at_start_time: self.created_at_start_time
+                ,
+                max_model_version: self.max_model_version
+                ,
+                min_model_version: self.min_model_version
+                ,
+            }
+        )
     }
 }
+

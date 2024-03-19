@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateDevicePositionOutput {
+pub struct BatchUpdateDevicePositionOutput  {
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchUpdateDevicePositionError>,
     _request_id: Option<String>,
 }
-impl BatchUpdateDevicePositionOutput {
+impl  BatchUpdateDevicePositionOutput  {
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn errors(&self) -> &[crate::types::BatchUpdateDevicePositionError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchUpdateDevicePositionError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchUpdateDevicePositionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchUpdateDevicePositionOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
     pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder {
@@ -30,7 +29,7 @@ impl BatchUpdateDevicePositionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateDevicePositionError>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateDevicePositionOutputBuilder {
@@ -41,45 +40,41 @@ impl BatchUpdateDevicePositionOutputBuilder {
     /// <p>Contains error details for each device that failed to update its position.</p>
     pub fn errors(mut self, input: crate::types::BatchUpdateDevicePositionError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateDevicePositionError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdateDevicePositionError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
-            errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "errors",
-                    "errors was not specified but it is required when building BatchUpdateDevicePositionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchUpdateDevicePositionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTransformers`](crate::operation::list_transformers::builders::ListTransformersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_transformers::builders::ListTransformersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_transformers::builders::ListTransformersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_transformers::builders::ListTransformersFluentBuilder::set_next_token):<br>required: **false**<br><p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_transformers::builders::ListTransformersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_transformers::builders::ListTransformersFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the number of items to return for the API response.</p><br>
-    /// - On success, responds with [`ListTransformersOutput`](crate::operation::list_transformers::ListTransformersOutput) with field(s):
+                            /// - On success, responds with [`ListTransformersOutput`](crate::operation::list_transformers::ListTransformersOutput) with field(s):
     ///   - [`transformers(Vec::<TransformerSummary>)`](crate::operation::list_transformers::ListTransformersOutput::transformers): <p>Returns an array of one or more transformer objects.</p> <p>For each transformer, a <code>TransformerSummary</code> object is returned. The <code>TransformerSummary</code> contains all the details for a specific transformer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_transformers::ListTransformersOutput::next_token): <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
-    /// - On failure, responds with [`SdkError<ListTransformersError>`](crate::operation::list_transformers::ListTransformersError)
+                            /// - On failure, responds with [`SdkError<ListTransformersError>`](crate::operation::list_transformers::ListTransformersError)
     pub fn list_transformers(&self) -> crate::operation::list_transformers::builders::ListTransformersFluentBuilder {
-        crate::operation::list_transformers::builders::ListTransformersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_transformers::builders::ListTransformersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

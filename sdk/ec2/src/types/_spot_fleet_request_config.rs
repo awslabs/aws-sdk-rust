@@ -3,7 +3,7 @@
 /// <p>Describes a Spot Fleet request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotFleetRequestConfig {
+pub struct SpotFleetRequestConfig  {
     /// <p>The progress of the Spot Fleet request. If there is an error, the status is <code>error</code>. After all requests are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code> while Spot Instances are terminating.</p>
     pub activity_status: ::std::option::Option<crate::types::ActivityStatus>,
     /// <p>The creation date and time of the request.</p>
@@ -15,34 +15,35 @@ pub struct SpotFleetRequestConfig {
     /// <p>The state of the Spot Fleet request.</p>
     pub spot_fleet_request_state: ::std::option::Option<crate::types::BatchState>,
     /// <p>The tags for a Spot Fleet resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl SpotFleetRequestConfig {
+impl  SpotFleetRequestConfig  {
     /// <p>The progress of the Spot Fleet request. If there is an error, the status is <code>error</code>. After all requests are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code> while Spot Instances are terminating.</p>
-    pub fn activity_status(&self) -> ::std::option::Option<&crate::types::ActivityStatus> {
+    pub fn activity_status(&self) -> ::std::option::Option<& crate::types::ActivityStatus> {
         self.activity_status.as_ref()
     }
     /// <p>The creation date and time of the request.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The configuration of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_config(&self) -> ::std::option::Option<&crate::types::SpotFleetRequestConfigData> {
+    pub fn spot_fleet_request_config(&self) -> ::std::option::Option<& crate::types::SpotFleetRequestConfigData> {
         self.spot_fleet_request_config.as_ref()
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn spot_fleet_request_id(&self) -> ::std::option::Option<& str> {
         self.spot_fleet_request_id.as_deref()
     }
     /// <p>The state of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_state(&self) -> ::std::option::Option<&crate::types::BatchState> {
+    pub fn spot_fleet_request_state(&self) -> ::std::option::Option<& crate::types::BatchState> {
         self.spot_fleet_request_state.as_ref()
     }
     /// <p>The tags for a Spot Fleet resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SpotFleetRequestConfig {
@@ -61,7 +62,7 @@ pub struct SpotFleetRequestConfigBuilder {
     pub(crate) spot_fleet_request_config: ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
     pub(crate) spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) spot_fleet_request_state: ::std::option::Option<crate::types::BatchState>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl SpotFleetRequestConfigBuilder {
     /// <p>The progress of the Spot Fleet request. If there is an error, the status is <code>error</code>. After all requests are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code> while Spot Instances are terminating.</p>
@@ -71,8 +72,7 @@ impl SpotFleetRequestConfigBuilder {
     }
     /// <p>The progress of the Spot Fleet request. If there is an error, the status is <code>error</code>. After all requests are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code> while Spot Instances are terminating.</p>
     pub fn set_activity_status(mut self, input: ::std::option::Option<crate::types::ActivityStatus>) -> Self {
-        self.activity_status = input;
-        self
+        self.activity_status = input; self
     }
     /// <p>The progress of the Spot Fleet request. If there is an error, the status is <code>error</code>. After all requests are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code> while Spot Instances are terminating.</p>
     pub fn get_activity_status(&self) -> &::std::option::Option<crate::types::ActivityStatus> {
@@ -85,8 +85,7 @@ impl SpotFleetRequestConfigBuilder {
     }
     /// <p>The creation date and time of the request.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The creation date and time of the request.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +98,7 @@ impl SpotFleetRequestConfigBuilder {
     }
     /// <p>The configuration of the Spot Fleet request.</p>
     pub fn set_spot_fleet_request_config(mut self, input: ::std::option::Option<crate::types::SpotFleetRequestConfigData>) -> Self {
-        self.spot_fleet_request_config = input;
-        self
+        self.spot_fleet_request_config = input; self
     }
     /// <p>The configuration of the Spot Fleet request.</p>
     pub fn get_spot_fleet_request_config(&self) -> &::std::option::Option<crate::types::SpotFleetRequestConfigData> {
@@ -113,8 +111,7 @@ impl SpotFleetRequestConfigBuilder {
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_fleet_request_id = input;
-        self
+        self.spot_fleet_request_id = input; self
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn get_spot_fleet_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl SpotFleetRequestConfigBuilder {
     }
     /// <p>The state of the Spot Fleet request.</p>
     pub fn set_spot_fleet_request_state(mut self, input: ::std::option::Option<crate::types::BatchState>) -> Self {
-        self.spot_fleet_request_state = input;
-        self
+        self.spot_fleet_request_state = input; self
     }
     /// <p>The state of the Spot Fleet request.</p>
     pub fn get_spot_fleet_request_state(&self) -> &::std::option::Option<crate::types::BatchState> {
@@ -141,28 +137,34 @@ impl SpotFleetRequestConfigBuilder {
     /// <p>The tags for a Spot Fleet resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for a Spot Fleet resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for a Spot Fleet resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SpotFleetRequestConfig`](crate::types::SpotFleetRequestConfig).
     pub fn build(self) -> crate::types::SpotFleetRequestConfig {
         crate::types::SpotFleetRequestConfig {
-            activity_status: self.activity_status,
-            create_time: self.create_time,
-            spot_fleet_request_config: self.spot_fleet_request_config,
-            spot_fleet_request_id: self.spot_fleet_request_id,
-            spot_fleet_request_state: self.spot_fleet_request_state,
-            tags: self.tags,
+            activity_status: self.activity_status
+            ,
+            create_time: self.create_time
+            ,
+            spot_fleet_request_config: self.spot_fleet_request_config
+            ,
+            spot_fleet_request_id: self.spot_fleet_request_id
+            ,
+            spot_fleet_request_state: self.spot_fleet_request_state
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -3,31 +3,28 @@
 /// <p>Represents a node in a directed acyclic graph (DAG)</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeGenNode {
+pub struct CodeGenNode  {
     /// <p>A node identifier that is unique within the node's graph.</p>
     pub id: ::std::string::String,
     /// <p>The type of node that this is.</p>
     pub node_type: ::std::string::String,
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub args: ::std::vec::Vec<crate::types::CodeGenNodeArg>,
+    pub args: ::std::vec::Vec::<crate::types::CodeGenNodeArg>,
     /// <p>The line number of the node.</p>
     pub line_number: i32,
 }
-impl CodeGenNode {
+impl  CodeGenNode  {
     /// <p>A node identifier that is unique within the node's graph.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The type of node that this is.</p>
-    pub fn node_type(&self) -> &str {
-        use std::ops::Deref;
-        self.node_type.deref()
+    pub fn node_type(&self) -> & str {
+        use std::ops::Deref; self.node_type.deref()
     }
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub fn args(&self) -> &[crate::types::CodeGenNodeArg] {
-        use std::ops::Deref;
-        self.args.deref()
+    pub fn args(&self) -> & [crate::types::CodeGenNodeArg] {
+        use std::ops::Deref; self.args.deref()
     }
     /// <p>The line number of the node.</p>
     pub fn line_number(&self) -> i32 {
@@ -47,7 +44,7 @@ impl CodeGenNode {
 pub struct CodeGenNodeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
-    pub(crate) args: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec::<crate::types::CodeGenNodeArg>>,
     pub(crate) line_number: ::std::option::Option<i32>,
 }
 impl CodeGenNodeBuilder {
@@ -59,8 +56,7 @@ impl CodeGenNodeBuilder {
     }
     /// <p>A node identifier that is unique within the node's graph.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A node identifier that is unique within the node's graph.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl CodeGenNodeBuilder {
     }
     /// <p>The type of node that this is.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The type of node that this is.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +83,16 @@ impl CodeGenNodeBuilder {
     /// <p>Properties of the node, in the form of name-value pairs.</p>
     pub fn args(mut self, input: crate::types::CodeGenNodeArg) -> Self {
         let mut v = self.args.unwrap_or_default();
-        v.push(input);
-        self.args = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.args = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>) -> Self {
-        self.args = input;
-        self
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeGenNodeArg>>) -> Self {
+        self.args = input; self
     }
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeGenNodeArg>> {
         &self.args
     }
     /// <p>The line number of the node.</p>
@@ -108,8 +102,7 @@ impl CodeGenNodeBuilder {
     }
     /// <p>The line number of the node.</p>
     pub fn set_line_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.line_number = input;
-        self
+        self.line_number = input; self
     }
     /// <p>The line number of the node.</p>
     pub fn get_line_number(&self) -> &::std::option::Option<i32> {
@@ -121,26 +114,28 @@ impl CodeGenNodeBuilder {
     /// - [`node_type`](crate::types::builders::CodeGenNodeBuilder::node_type)
     /// - [`args`](crate::types::builders::CodeGenNodeBuilder::args)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeGenNode, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeGenNode {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CodeGenNode",
-                )
-            })?,
-            node_type: self.node_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "node_type",
-                    "node_type was not specified but it is required when building CodeGenNode",
-                )
-            })?,
-            args: self.args.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "args",
-                    "args was not specified but it is required when building CodeGenNode",
-                )
-            })?,
-            line_number: self.line_number.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeGenNode {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CodeGenNode")
+                    )?
+                ,
+                node_type: self.node_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("node_type", "node_type was not specified but it is required when building CodeGenNode")
+                    )?
+                ,
+                args: self.args
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("args", "args was not specified but it is required when building CodeGenNode")
+                    )?
+                ,
+                line_number: self.line_number
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

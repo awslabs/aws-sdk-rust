@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppAssessmentComplianceDrifts`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`assessment_arn(impl Into<String>)`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::assessment_arn) / [`set_assessment_arn(Option<String>)`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::set_assessment_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::set_next_token):<br>required: **false**<br><p>Indicates the unique token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::set_max_results):<br>required: **false**<br><p>Indicates the maximum number of applications requested.</p><br>
-    /// - On success, responds with [`ListAppAssessmentComplianceDriftsOutput`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput) with field(s):
+                            /// - On success, responds with [`ListAppAssessmentComplianceDriftsOutput`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput) with field(s):
     ///   - [`compliance_drifts(Vec::<ComplianceDrift>)`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput::compliance_drifts): <p>Indicates compliance drifts (recovery time objective (RTO) and recovery point objective (RPO)) detected for an assessed entity.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput::next_token): <p>Token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
-    /// - On failure, responds with [`SdkError<ListAppAssessmentComplianceDriftsError>`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError)
-    pub fn list_app_assessment_compliance_drifts(
-        &self,
-    ) -> crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder {
-        crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAppAssessmentComplianceDriftsError>`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError)
+    pub fn list_app_assessment_compliance_drifts(&self) -> crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder {
+                                crate::operation::list_app_assessment_compliance_drifts::builders::ListAppAssessmentComplianceDriftsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

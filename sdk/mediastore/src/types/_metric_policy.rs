@@ -4,22 +4,23 @@
 /// <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricPolicy {
+pub struct MetricPolicy  {
     /// <p>A setting to enable or disable metrics at the container level.</p>
     pub container_level_metrics: crate::types::ContainerLevelMetrics,
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
-    pub metric_policy_rules: ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>,
+    pub metric_policy_rules: ::std::option::Option<::std::vec::Vec::<crate::types::MetricPolicyRule>>,
 }
-impl MetricPolicy {
+impl  MetricPolicy  {
     /// <p>A setting to enable or disable metrics at the container level.</p>
-    pub fn container_level_metrics(&self) -> &crate::types::ContainerLevelMetrics {
+    pub fn container_level_metrics(&self) -> & crate::types::ContainerLevelMetrics {
         &self.container_level_metrics
     }
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_policy_rules.is_none()`.
-    pub fn metric_policy_rules(&self) -> &[crate::types::MetricPolicyRule] {
-        self.metric_policy_rules.as_deref().unwrap_or_default()
+    pub fn metric_policy_rules(&self) -> & [crate::types::MetricPolicyRule] {
+        self.metric_policy_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MetricPolicy {
@@ -34,7 +35,7 @@ impl MetricPolicy {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricPolicyBuilder {
     pub(crate) container_level_metrics: ::std::option::Option<crate::types::ContainerLevelMetrics>,
-    pub(crate) metric_policy_rules: ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>,
+    pub(crate) metric_policy_rules: ::std::option::Option<::std::vec::Vec::<crate::types::MetricPolicyRule>>,
 }
 impl MetricPolicyBuilder {
     /// <p>A setting to enable or disable metrics at the container level.</p>
@@ -45,8 +46,7 @@ impl MetricPolicyBuilder {
     }
     /// <p>A setting to enable or disable metrics at the container level.</p>
     pub fn set_container_level_metrics(mut self, input: ::std::option::Option<crate::types::ContainerLevelMetrics>) -> Self {
-        self.container_level_metrics = input;
-        self
+        self.container_level_metrics = input; self
     }
     /// <p>A setting to enable or disable metrics at the container level.</p>
     pub fn get_container_level_metrics(&self) -> &::std::option::Option<crate::types::ContainerLevelMetrics> {
@@ -59,31 +59,33 @@ impl MetricPolicyBuilder {
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
     pub fn metric_policy_rules(mut self, input: crate::types::MetricPolicyRule) -> Self {
         let mut v = self.metric_policy_rules.unwrap_or_default();
-        v.push(input);
-        self.metric_policy_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_policy_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
-    pub fn set_metric_policy_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>) -> Self {
-        self.metric_policy_rules = input;
-        self
+    pub fn set_metric_policy_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricPolicyRule>>) -> Self {
+        self.metric_policy_rules = input; self
     }
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
-    pub fn get_metric_policy_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>> {
+    pub fn get_metric_policy_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricPolicyRule>> {
         &self.metric_policy_rules
     }
     /// Consumes the builder and constructs a [`MetricPolicy`](crate::types::MetricPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`container_level_metrics`](crate::types::builders::MetricPolicyBuilder::container_level_metrics)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricPolicy {
-            container_level_metrics: self.container_level_metrics.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "container_level_metrics",
-                    "container_level_metrics was not specified but it is required when building MetricPolicy",
-                )
-            })?,
-            metric_policy_rules: self.metric_policy_rules,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricPolicy {
+                container_level_metrics: self.container_level_metrics
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("container_level_metrics", "container_level_metrics was not specified but it is required when building MetricPolicy")
+                    )?
+                ,
+                metric_policy_rules: self.metric_policy_rules
+                ,
+            }
+        )
     }
 }
+

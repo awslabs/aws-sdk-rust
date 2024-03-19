@@ -3,7 +3,8 @@
 /// Arib Destination Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AribDestinationSettings {}
+pub struct AribDestinationSettings  {
+}
 impl AribDestinationSettings {
     /// Creates a new builder-style object to manufacture [`AribDestinationSettings`](crate::types::AribDestinationSettings).
     pub fn builder() -> crate::types::builders::AribDestinationSettingsBuilder {
@@ -14,10 +15,13 @@ impl AribDestinationSettings {
 /// A builder for [`AribDestinationSettings`](crate::types::AribDestinationSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct AribDestinationSettingsBuilder {}
+pub struct AribDestinationSettingsBuilder {
+}
 impl AribDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`AribDestinationSettings`](crate::types::AribDestinationSettings).
     pub fn build(self) -> crate::types::AribDestinationSettings {
-        crate::types::AribDestinationSettings {}
+        crate::types::AribDestinationSettings {
+        }
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PresetWatermark {
+pub struct PresetWatermark  {
     /// <p>A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters long.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum width of the watermark in one of the following formats:</p>
@@ -92,9 +92,9 @@ pub struct PresetWatermark {
     /// </ul>
     pub target: ::std::option::Option<::std::string::String>,
 }
-impl PresetWatermark {
+impl  PresetWatermark  {
     /// <p>A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters long.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The maximum width of the watermark in one of the following formats:</p>
@@ -105,7 +105,7 @@ impl PresetWatermark {
     /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p>
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
     /// </ul>
-    pub fn max_width(&self) -> ::std::option::Option<&str> {
+    pub fn max_width(&self) -> ::std::option::Option<& str> {
         self.max_width.as_deref()
     }
     /// <p>The maximum height of the watermark in one of the following formats:</p>
@@ -116,7 +116,7 @@ impl PresetWatermark {
     /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
     /// </ul>
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.</p>
-    pub fn max_height(&self) -> ::std::option::Option<&str> {
+    pub fn max_height(&self) -> ::std::option::Option<& str> {
         self.max_height.as_deref()
     }
     /// <p>A value that controls scaling of the watermark:</p>
@@ -128,7 +128,7 @@ impl PresetWatermark {
     /// <li>
     /// <p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
     /// </ul>
-    pub fn sizing_policy(&self) -> ::std::option::Option<&str> {
+    pub fn sizing_policy(&self) -> ::std::option::Option<& str> {
         self.sizing_policy.as_deref()
     }
     /// <p>The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:</p>
@@ -140,7 +140,7 @@ impl PresetWatermark {
     /// <li>
     /// <p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
     /// </ul>
-    pub fn horizontal_align(&self) -> ::std::option::Option<&str> {
+    pub fn horizontal_align(&self) -> ::std::option::Option<& str> {
         self.horizontal_align.as_deref()
     }
     /// <p>The amount by which you want the horizontal position of the watermark to be offset from the position specified by HorizontalAlign:</p>
@@ -153,7 +153,7 @@ impl PresetWatermark {
     /// <p>For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the output video.</p>
     /// <p><code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
     /// <p>Use the value of <code>Target</code> to specify whether you want to include the black bars that are added by Elastic Transcoder, if any, in the offset calculation.</p>
-    pub fn horizontal_offset(&self) -> ::std::option::Option<&str> {
+    pub fn horizontal_offset(&self) -> ::std::option::Option<& str> {
         self.horizontal_offset.as_deref()
     }
     /// <p>The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:</p>
@@ -165,7 +165,7 @@ impl PresetWatermark {
     /// <li>
     /// <p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
     /// </ul>
-    pub fn vertical_align(&self) -> ::std::option::Option<&str> {
+    pub fn vertical_align(&self) -> ::std::option::Option<& str> {
         self.vertical_align.as_deref()
     }
     /// <p><code>VerticalOffset</code></p>
@@ -180,12 +180,12 @@ impl PresetWatermark {
     /// <p><code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.</p>
     /// <p>If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
     /// <p>Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the offset calculation.</p>
-    pub fn vertical_offset(&self) -> ::std::option::Option<&str> {
+    pub fn vertical_offset(&self) -> ::std::option::Option<& str> {
         self.vertical_offset.as_deref()
     }
     /// <p>A percentage that indicates how much you want a watermark to obscure the video in the location where it appears. Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the video in the specified location). The datatype of <code>Opacity</code> is float.</p>
     /// <p>Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent portion of the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file format doesn't support transparency.</p>
-    pub fn opacity(&self) -> ::std::option::Option<&str> {
+    pub fn opacity(&self) -> ::std::option::Option<& str> {
         self.opacity.as_deref()
     }
     /// <p>A value that determines how Elastic Transcoder interprets values that you specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:</p>
@@ -195,7 +195,7 @@ impl PresetWatermark {
     /// <li>
     /// <p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
     /// </ul>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
 }
@@ -229,8 +229,7 @@ impl PresetWatermarkBuilder {
     }
     /// <p>A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters long.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters long.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +256,7 @@ impl PresetWatermarkBuilder {
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
     /// </ul>
     pub fn set_max_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_width = input;
-        self
+        self.max_width = input; self
     }
     /// <p>The maximum width of the watermark in one of the following formats:</p>
     /// <ul>
@@ -292,8 +290,7 @@ impl PresetWatermarkBuilder {
     /// </ul>
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.</p>
     pub fn set_max_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_height = input;
-        self
+        self.max_height = input; self
     }
     /// <p>The maximum height of the watermark in one of the following formats:</p>
     /// <ul>
@@ -329,8 +326,7 @@ impl PresetWatermarkBuilder {
     /// <p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
     /// </ul>
     pub fn set_sizing_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sizing_policy = input;
-        self
+        self.sizing_policy = input; self
     }
     /// <p>A value that controls scaling of the watermark:</p>
     /// <ul>
@@ -367,8 +363,7 @@ impl PresetWatermarkBuilder {
     /// <p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
     /// </ul>
     pub fn set_horizontal_align(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.horizontal_align = input;
-        self
+        self.horizontal_align = input; self
     }
     /// <p>The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:</p>
     /// <ul>
@@ -407,8 +402,7 @@ impl PresetWatermarkBuilder {
     /// <p><code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
     /// <p>Use the value of <code>Target</code> to specify whether you want to include the black bars that are added by Elastic Transcoder, if any, in the offset calculation.</p>
     pub fn set_horizontal_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.horizontal_offset = input;
-        self
+        self.horizontal_offset = input; self
     }
     /// <p>The amount by which you want the horizontal position of the watermark to be offset from the position specified by HorizontalAlign:</p>
     /// <ul>
@@ -446,8 +440,7 @@ impl PresetWatermarkBuilder {
     /// <p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
     /// </ul>
     pub fn set_vertical_align(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vertical_align = input;
-        self
+        self.vertical_align = input; self
     }
     /// <p>The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:</p>
     /// <ul>
@@ -490,8 +483,7 @@ impl PresetWatermarkBuilder {
     /// <p>If you specify an offset that causes the watermark to extend beyond the top or bottom border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
     /// <p>Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the offset calculation.</p>
     pub fn set_vertical_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vertical_offset = input;
-        self
+        self.vertical_offset = input; self
     }
     /// <p><code>VerticalOffset</code></p>
     /// <p>The amount by which you want the vertical position of the watermark to be offset from the position specified by VerticalAlign:</p>
@@ -517,8 +509,7 @@ impl PresetWatermarkBuilder {
     /// <p>A percentage that indicates how much you want a watermark to obscure the video in the location where it appears. Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the video in the specified location). The datatype of <code>Opacity</code> is float.</p>
     /// <p>Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent portion of the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file format doesn't support transparency.</p>
     pub fn set_opacity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opacity = input;
-        self
+        self.opacity = input; self
     }
     /// <p>A percentage that indicates how much you want a watermark to obscure the video in the location where it appears. Valid values are 0 (the watermark is invisible) to 100 (the watermark completely obscures the video in the specified location). The datatype of <code>Opacity</code> is float.</p>
     /// <p>Elastic Transcoder supports transparent .png graphics. If you use a transparent .png, the transparent portion of the video appears as if you had specified a value of 0 for <code>Opacity</code>. The .jpg file format doesn't support transparency.</p>
@@ -544,8 +535,7 @@ impl PresetWatermarkBuilder {
     /// <p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
     /// </ul>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>A value that determines how Elastic Transcoder interprets values that you specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:</p>
     /// <ul>
@@ -560,16 +550,27 @@ impl PresetWatermarkBuilder {
     /// Consumes the builder and constructs a [`PresetWatermark`](crate::types::PresetWatermark).
     pub fn build(self) -> crate::types::PresetWatermark {
         crate::types::PresetWatermark {
-            id: self.id,
-            max_width: self.max_width,
-            max_height: self.max_height,
-            sizing_policy: self.sizing_policy,
-            horizontal_align: self.horizontal_align,
-            horizontal_offset: self.horizontal_offset,
-            vertical_align: self.vertical_align,
-            vertical_offset: self.vertical_offset,
-            opacity: self.opacity,
-            target: self.target,
+            id: self.id
+            ,
+            max_width: self.max_width
+            ,
+            max_height: self.max_height
+            ,
+            sizing_policy: self.sizing_policy
+            ,
+            horizontal_align: self.horizontal_align
+            ,
+            horizontal_offset: self.horizontal_offset
+            ,
+            vertical_align: self.vertical_align
+            ,
+            vertical_offset: self.vertical_offset
+            ,
+            opacity: self.opacity
+            ,
+            target: self.target
+            ,
         }
     }
 }
+

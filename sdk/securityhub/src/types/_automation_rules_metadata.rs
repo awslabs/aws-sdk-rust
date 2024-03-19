@@ -3,7 +3,7 @@
 /// <p>Metadata for automation rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutomationRulesMetadata {
+pub struct AutomationRulesMetadata  {
     /// <p>The Amazon Resource Name (ARN) for the rule.</p>
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>.</p>
@@ -25,13 +25,13 @@ pub struct AutomationRulesMetadata {
     /// <p>The principal that created a rule.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
 }
-impl AutomationRulesMetadata {
+impl  AutomationRulesMetadata  {
     /// <p>The Amazon Resource Name (ARN) for the rule.</p>
-    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_arn(&self) -> ::std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>.</p>
-    pub fn rule_status(&self) -> ::std::option::Option<&crate::types::RuleStatus> {
+    pub fn rule_status(&self) -> ::std::option::Option<& crate::types::RuleStatus> {
         self.rule_status.as_ref()
     }
     /// <p>An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first.</p>
@@ -39,11 +39,11 @@ impl AutomationRulesMetadata {
         self.rule_order
     }
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>A description of the rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.</p>
@@ -52,16 +52,16 @@ impl AutomationRulesMetadata {
     }
     /// <p>A timestamp that indicates when the rule was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp that indicates when the rule was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The principal that created a rule.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
 }
@@ -94,8 +94,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the rule.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the rule.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p>Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>.</p>
     pub fn set_rule_status(mut self, input: ::std::option::Option<crate::types::RuleStatus>) -> Self {
-        self.rule_status = input;
-        self
+        self.rule_status = input; self
     }
     /// <p>Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>.</p>
     pub fn get_rule_status(&self) -> &::std::option::Option<crate::types::RuleStatus> {
@@ -122,8 +120,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p>An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first.</p>
     pub fn set_rule_order(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_order = input;
-        self
+        self.rule_order = input; self
     }
     /// <p>An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first.</p>
     pub fn get_rule_order(&self) -> &::std::option::Option<i32> {
@@ -136,8 +133,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +146,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p>A description of the rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +159,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.</p>
     pub fn set_is_terminal(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_terminal = input;
-        self
+        self.is_terminal = input; self
     }
     /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.</p>
     pub fn get_is_terminal(&self) -> &::std::option::Option<bool> {
@@ -180,8 +174,7 @@ impl AutomationRulesMetadataBuilder {
     /// <p>A timestamp that indicates when the rule was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>A timestamp that indicates when the rule was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -197,8 +190,7 @@ impl AutomationRulesMetadataBuilder {
     /// <p>A timestamp that indicates when the rule was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>A timestamp that indicates when the rule was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -212,8 +204,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p>The principal that created a rule.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The principal that created a rule.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,15 +213,25 @@ impl AutomationRulesMetadataBuilder {
     /// Consumes the builder and constructs a [`AutomationRulesMetadata`](crate::types::AutomationRulesMetadata).
     pub fn build(self) -> crate::types::AutomationRulesMetadata {
         crate::types::AutomationRulesMetadata {
-            rule_arn: self.rule_arn,
-            rule_status: self.rule_status,
-            rule_order: self.rule_order,
-            rule_name: self.rule_name,
-            description: self.description,
-            is_terminal: self.is_terminal,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            created_by: self.created_by,
+            rule_arn: self.rule_arn
+            ,
+            rule_status: self.rule_status
+            ,
+            rule_order: self.rule_order
+            ,
+            rule_name: self.rule_name
+            ,
+            description: self.description
+            ,
+            is_terminal: self.is_terminal
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            created_by: self.created_by
+            ,
         }
     }
 }
+

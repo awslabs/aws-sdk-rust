@@ -3,15 +3,15 @@
 /// <p>Information about how traffic will be distributed between multiple target groups in a forward rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetGroupTuple {
+pub struct TargetGroupTuple  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The weight. The range is 0 to 999.</p>
     pub weight: ::std::option::Option<i32>,
 }
-impl TargetGroupTuple {
+impl  TargetGroupTuple  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> ::std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The weight. The range is 0 to 999.</p>
@@ -41,8 +41,7 @@ impl TargetGroupTupleBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_group_arn = input;
-        self
+        self.target_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TargetGroupTupleBuilder {
     }
     /// <p>The weight. The range is 0 to 999.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The weight. The range is 0 to 999.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl TargetGroupTupleBuilder {
     /// Consumes the builder and constructs a [`TargetGroupTuple`](crate::types::TargetGroupTuple).
     pub fn build(self) -> crate::types::TargetGroupTuple {
         crate::types::TargetGroupTuple {
-            target_group_arn: self.target_group_arn,
-            weight: self.weight,
+            target_group_arn: self.target_group_arn
+            ,
+            weight: self.weight
+            ,
         }
     }
 }
+

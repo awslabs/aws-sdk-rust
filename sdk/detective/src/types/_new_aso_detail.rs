@@ -3,15 +3,15 @@
 /// <p>Details new Autonomous System Organizations (ASOs) used either at the resource or account level.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewAsoDetail {
+pub struct NewAsoDetail  {
     /// <p>Details about the new Autonomous System Organization (ASO).</p>
     pub aso: ::std::option::Option<::std::string::String>,
     /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
     pub is_new_for_entire_account: bool,
 }
-impl NewAsoDetail {
+impl  NewAsoDetail  {
     /// <p>Details about the new Autonomous System Organization (ASO).</p>
-    pub fn aso(&self) -> ::std::option::Option<&str> {
+    pub fn aso(&self) -> ::std::option::Option<& str> {
         self.aso.as_deref()
     }
     /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
@@ -41,8 +41,7 @@ impl NewAsoDetailBuilder {
     }
     /// <p>Details about the new Autonomous System Organization (ASO).</p>
     pub fn set_aso(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aso = input;
-        self
+        self.aso = input; self
     }
     /// <p>Details about the new Autonomous System Organization (ASO).</p>
     pub fn get_aso(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NewAsoDetailBuilder {
     }
     /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
     pub fn set_is_new_for_entire_account(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_new_for_entire_account = input;
-        self
+        self.is_new_for_entire_account = input; self
     }
     /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
     pub fn get_is_new_for_entire_account(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,12 @@ impl NewAsoDetailBuilder {
     /// Consumes the builder and constructs a [`NewAsoDetail`](crate::types::NewAsoDetail).
     pub fn build(self) -> crate::types::NewAsoDetail {
         crate::types::NewAsoDetail {
-            aso: self.aso,
-            is_new_for_entire_account: self.is_new_for_entire_account.unwrap_or_default(),
+            aso: self.aso
+            ,
+            is_new_for_entire_account: self.is_new_for_entire_account
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

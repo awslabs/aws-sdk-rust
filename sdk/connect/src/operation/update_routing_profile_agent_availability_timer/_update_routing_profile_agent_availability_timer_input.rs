@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRoutingProfileAgentAvailabilityTimerInput {
+pub struct UpdateRoutingProfileAgentAvailabilityTimerInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the routing profile.</p>
@@ -10,24 +10,23 @@ pub struct UpdateRoutingProfileAgentAvailabilityTimerInput {
     /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
     pub agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
 }
-impl UpdateRoutingProfileAgentAvailabilityTimerInput {
+impl  UpdateRoutingProfileAgentAvailabilityTimerInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> ::std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
-    pub fn agent_availability_timer(&self) -> ::std::option::Option<&crate::types::AgentAvailabilityTimer> {
+    pub fn agent_availability_timer(&self) -> ::std::option::Option<& crate::types::AgentAvailabilityTimer> {
         self.agent_availability_timer.as_ref()
     }
 }
 impl UpdateRoutingProfileAgentAvailabilityTimerInput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileAgentAvailabilityTimerInput`](crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerInput).
-    pub fn builder(
-    ) -> crate::operation::update_routing_profile_agent_availability_timer::builders::UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
+    pub fn builder() -> crate::operation::update_routing_profile_agent_availability_timer::builders::UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
         crate::operation::update_routing_profile_agent_availability_timer::builders::UpdateRoutingProfileAgentAvailabilityTimerInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ impl UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_profile_id = input;
-        self
+        self.routing_profile_id = input; self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,26 +76,24 @@ impl UpdateRoutingProfileAgentAvailabilityTimerInputBuilder {
     }
     /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
     pub fn set_agent_availability_timer(mut self, input: ::std::option::Option<crate::types::AgentAvailabilityTimer>) -> Self {
-        self.agent_availability_timer = input;
-        self
+        self.agent_availability_timer = input; self
     }
     /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.</p>
     pub fn get_agent_availability_timer(&self) -> &::std::option::Option<crate::types::AgentAvailabilityTimer> {
         &self.agent_availability_timer
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileAgentAvailabilityTimerInput`](crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerInput {
-                instance_id: self.instance_id,
-                routing_profile_id: self.routing_profile_id,
-                agent_availability_timer: self.agent_availability_timer,
-            },
+                instance_id: self.instance_id
+                ,
+                routing_profile_id: self.routing_profile_id
+                ,
+                agent_availability_timer: self.agent_availability_timer
+                ,
+            }
         )
     }
 }
+

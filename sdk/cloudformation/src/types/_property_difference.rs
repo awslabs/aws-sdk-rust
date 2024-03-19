@@ -3,7 +3,7 @@
 /// <p>Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyDifference {
+pub struct PropertyDifference  {
     /// <p>The fully-qualified path to the resource property.</p>
     pub property_path: ::std::option::Option<::std::string::String>,
     /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
@@ -21,17 +21,17 @@ pub struct PropertyDifference {
     /// </ul>
     pub difference_type: ::std::option::Option<crate::types::DifferenceType>,
 }
-impl PropertyDifference {
+impl  PropertyDifference  {
     /// <p>The fully-qualified path to the resource property.</p>
-    pub fn property_path(&self) -> ::std::option::Option<&str> {
+    pub fn property_path(&self) -> ::std::option::Option<& str> {
         self.property_path.as_deref()
     }
     /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
-    pub fn expected_value(&self) -> ::std::option::Option<&str> {
+    pub fn expected_value(&self) -> ::std::option::Option<& str> {
         self.expected_value.as_deref()
     }
     /// <p>The actual property value of the resource property.</p>
-    pub fn actual_value(&self) -> ::std::option::Option<&str> {
+    pub fn actual_value(&self) -> ::std::option::Option<& str> {
         self.actual_value.as_deref()
     }
     /// <p>The type of property difference.</p>
@@ -43,7 +43,7 @@ impl PropertyDifference {
     /// <li>
     /// <p><code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p></li>
     /// </ul>
-    pub fn difference_type(&self) -> ::std::option::Option<&crate::types::DifferenceType> {
+    pub fn difference_type(&self) -> ::std::option::Option<& crate::types::DifferenceType> {
         self.difference_type.as_ref()
     }
 }
@@ -72,8 +72,7 @@ impl PropertyDifferenceBuilder {
     }
     /// <p>The fully-qualified path to the resource property.</p>
     pub fn set_property_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_path = input;
-        self
+        self.property_path = input; self
     }
     /// <p>The fully-qualified path to the resource property.</p>
     pub fn get_property_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl PropertyDifferenceBuilder {
     }
     /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
     pub fn set_expected_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_value = input;
-        self
+        self.expected_value = input; self
     }
     /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
     pub fn get_expected_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl PropertyDifferenceBuilder {
     }
     /// <p>The actual property value of the resource property.</p>
     pub fn set_actual_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.actual_value = input;
-        self
+        self.actual_value = input; self
     }
     /// <p>The actual property value of the resource property.</p>
     pub fn get_actual_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +130,7 @@ impl PropertyDifferenceBuilder {
     /// <p><code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p></li>
     /// </ul>
     pub fn set_difference_type(mut self, input: ::std::option::Option<crate::types::DifferenceType>) -> Self {
-        self.difference_type = input;
-        self
+        self.difference_type = input; self
     }
     /// <p>The type of property difference.</p>
     /// <ul>
@@ -151,10 +147,15 @@ impl PropertyDifferenceBuilder {
     /// Consumes the builder and constructs a [`PropertyDifference`](crate::types::PropertyDifference).
     pub fn build(self) -> crate::types::PropertyDifference {
         crate::types::PropertyDifference {
-            property_path: self.property_path,
-            expected_value: self.expected_value,
-            actual_value: self.actual_value,
-            difference_type: self.difference_type,
+            property_path: self.property_path
+            ,
+            expected_value: self.expected_value
+            ,
+            actual_value: self.actual_value
+            ,
+            difference_type: self.difference_type
+            ,
         }
     }
 }
+

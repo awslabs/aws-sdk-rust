@@ -3,7 +3,7 @@
 /// <p>Describes the current Amazon Pinpoint monthly spend limits for sending voice and text messages. For more information on increasing your monthly spend limit, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-spend-threshold.html"> Requesting increases to your monthly SMS spending quota for Amazon Pinpoint </a> in the <i>Amazon Pinpoint User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpendLimit {
+pub struct SpendLimit  {
     /// <p>The name for the SpendLimit.</p>
     pub name: crate::types::SpendLimitName,
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
@@ -13,9 +13,9 @@ pub struct SpendLimit {
     /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
     pub overridden: bool,
 }
-impl SpendLimit {
+impl  SpendLimit  {
     /// <p>The name for the SpendLimit.</p>
-    pub fn name(&self) -> &crate::types::SpendLimitName {
+    pub fn name(&self) -> & crate::types::SpendLimitName {
         &self.name
     }
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
@@ -56,8 +56,7 @@ impl SpendLimitBuilder {
     }
     /// <p>The name for the SpendLimit.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::SpendLimitName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the SpendLimit.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::SpendLimitName> {
@@ -71,8 +70,7 @@ impl SpendLimitBuilder {
     }
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
     pub fn set_enforced_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.enforced_limit = input;
-        self
+        self.enforced_limit = input; self
     }
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
     pub fn get_enforced_limit(&self) -> &::std::option::Option<i64> {
@@ -86,8 +84,7 @@ impl SpendLimitBuilder {
     }
     /// <p>The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
     pub fn set_max_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_limit = input;
-        self
+        self.max_limit = input; self
     }
     /// <p>The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
     pub fn get_max_limit(&self) -> &::std::option::Option<i64> {
@@ -101,8 +98,7 @@ impl SpendLimitBuilder {
     }
     /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
     pub fn set_overridden(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.overridden = input;
-        self
+        self.overridden = input; self
     }
     /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
     pub fn get_overridden(&self) -> &::std::option::Option<bool> {
@@ -112,16 +108,24 @@ impl SpendLimitBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SpendLimitBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::SpendLimit, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SpendLimit {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SpendLimit",
-                )
-            })?,
-            enforced_limit: self.enforced_limit.unwrap_or_default(),
-            max_limit: self.max_limit.unwrap_or_default(),
-            overridden: self.overridden.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::SpendLimit {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SpendLimit")
+                    )?
+                ,
+                enforced_limit: self.enforced_limit
+                    .unwrap_or_default()
+                ,
+                max_limit: self.max_limit
+                    .unwrap_or_default()
+                ,
+                overridden: self.overridden
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

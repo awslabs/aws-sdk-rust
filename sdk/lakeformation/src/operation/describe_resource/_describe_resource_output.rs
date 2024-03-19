@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResourceOutput {
+pub struct DescribeResourceOutput  {
     /// <p>A structure containing information about an Lake Formation resource.</p>
     pub resource_info: ::std::option::Option<crate::types::ResourceInfo>,
     _request_id: Option<String>,
 }
-impl DescribeResourceOutput {
+impl  DescribeResourceOutput  {
     /// <p>A structure containing information about an Lake Formation resource.</p>
-    pub fn resource_info(&self) -> ::std::option::Option<&crate::types::ResourceInfo> {
+    pub fn resource_info(&self) -> ::std::option::Option<& crate::types::ResourceInfo> {
         self.resource_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput).
     pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>A structure containing information about an Lake Formation resource.</p>
     pub fn set_resource_info(mut self, input: ::std::option::Option<crate::types::ResourceInfo>) -> Self {
-        self.resource_info = input;
-        self
+        self.resource_info = input; self
     }
     /// <p>A structure containing information about an Lake Formation resource.</p>
     pub fn get_resource_info(&self) -> &::std::option::Option<crate::types::ResourceInfo> {
         &self.resource_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput).
     pub fn build(self) -> crate::operation::describe_resource::DescribeResourceOutput {
         crate::operation::describe_resource::DescribeResourceOutput {
-            resource_info: self.resource_info,
+            resource_info: self.resource_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

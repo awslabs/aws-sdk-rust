@@ -3,7 +3,7 @@
 /// Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen instead.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsRenditionGroupSettings {
+pub struct HlsRenditionGroupSettings  {
     /// Optional. Specify alternative group ID
     pub rendition_group_id: ::std::option::Option<::std::string::String>,
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
@@ -11,17 +11,17 @@ pub struct HlsRenditionGroupSettings {
     /// Optional. Specify media name
     pub rendition_name: ::std::option::Option<::std::string::String>,
 }
-impl HlsRenditionGroupSettings {
+impl  HlsRenditionGroupSettings  {
     /// Optional. Specify alternative group ID
-    pub fn rendition_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn rendition_group_id(&self) -> ::std::option::Option<& str> {
         self.rendition_group_id.as_deref()
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
-    pub fn rendition_language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn rendition_language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.rendition_language_code.as_ref()
     }
     /// Optional. Specify media name
-    pub fn rendition_name(&self) -> ::std::option::Option<&str> {
+    pub fn rendition_name(&self) -> ::std::option::Option<& str> {
         self.rendition_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl HlsRenditionGroupSettingsBuilder {
     }
     /// Optional. Specify alternative group ID
     pub fn set_rendition_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rendition_group_id = input;
-        self
+        self.rendition_group_id = input; self
     }
     /// Optional. Specify alternative group ID
     pub fn get_rendition_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl HlsRenditionGroupSettingsBuilder {
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
     pub fn set_rendition_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.rendition_language_code = input;
-        self
+        self.rendition_language_code = input; self
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
     pub fn get_rendition_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
@@ -76,8 +74,7 @@ impl HlsRenditionGroupSettingsBuilder {
     }
     /// Optional. Specify media name
     pub fn set_rendition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rendition_name = input;
-        self
+        self.rendition_name = input; self
     }
     /// Optional. Specify media name
     pub fn get_rendition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl HlsRenditionGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`HlsRenditionGroupSettings`](crate::types::HlsRenditionGroupSettings).
     pub fn build(self) -> crate::types::HlsRenditionGroupSettings {
         crate::types::HlsRenditionGroupSettings {
-            rendition_group_id: self.rendition_group_id,
-            rendition_language_code: self.rendition_language_code,
-            rendition_name: self.rendition_name,
+            rendition_group_id: self.rendition_group_id
+            ,
+            rendition_language_code: self.rendition_language_code
+            ,
+            rendition_name: self.rendition_name
+            ,
         }
     }
 }
+

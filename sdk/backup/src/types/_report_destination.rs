@@ -3,22 +3,23 @@
 /// <p>Contains information from your report job about your report destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportDestination {
+pub struct ReportDestination  {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    pub s3_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub s3_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ReportDestination {
+impl  ReportDestination  {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_keys.is_none()`.
-    pub fn s3_keys(&self) -> &[::std::string::String] {
-        self.s3_keys.as_deref().unwrap_or_default()
+    pub fn s3_keys(&self) -> & [::std::string::String] {
+        self.s3_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReportDestination {
@@ -33,7 +34,7 @@ impl ReportDestination {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportDestinationBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
-    pub(crate) s3_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) s3_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ReportDestinationBuilder {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
@@ -43,8 +44,7 @@ impl ReportDestinationBuilder {
     }
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ReportDestinationBuilder {
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
     pub fn s3_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.s3_keys.unwrap_or_default();
-        v.push(input.into());
-        self.s3_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.s3_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    pub fn set_s3_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.s3_keys = input;
-        self
+    pub fn set_s3_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.s3_keys = input; self
     }
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    pub fn get_s3_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_s3_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.s3_keys
     }
     /// Consumes the builder and constructs a [`ReportDestination`](crate::types::ReportDestination).
     pub fn build(self) -> crate::types::ReportDestination {
         crate::types::ReportDestination {
-            s3_bucket_name: self.s3_bucket_name,
-            s3_keys: self.s3_keys,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            s3_keys: self.s3_keys
+            ,
         }
     }
 }
+

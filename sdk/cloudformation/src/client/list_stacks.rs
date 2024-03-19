@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStacks`](crate::operation::list_stacks::builders::ListStacksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_stacks::builders::ListStacksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_stacks::builders::ListStacksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stacks::builders::ListStacksFluentBuilder::set_next_token):<br>required: **false**<br><p>A string that identifies the next page of stacks that you want to retrieve.</p><br>
     ///   - [`stack_status_filter(StackStatus)`](crate::operation::list_stacks::builders::ListStacksFluentBuilder::stack_status_filter) / [`set_stack_status_filter(Option<Vec::<StackStatus>>)`](crate::operation::list_stacks::builders::ListStacksFluentBuilder::set_stack_status_filter):<br>required: **false**<br><p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p><br>
-    /// - On success, responds with [`ListStacksOutput`](crate::operation::list_stacks::ListStacksOutput) with field(s):
+                            /// - On success, responds with [`ListStacksOutput`](crate::operation::list_stacks::ListStacksOutput) with field(s):
     ///   - [`stack_summaries(Option<Vec::<StackSummary>>)`](crate::operation::list_stacks::ListStacksOutput::stack_summaries): <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stacks::ListStacksOutput::next_token): <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListStacksError>`](crate::operation::list_stacks::ListStacksError)
+                            /// - On failure, responds with [`SdkError<ListStacksError>`](crate::operation::list_stacks::ListStacksError)
     pub fn list_stacks(&self) -> crate::operation::list_stacks::builders::ListStacksFluentBuilder {
-        crate::operation::list_stacks::builders::ListStacksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_stacks::builders::ListStacksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

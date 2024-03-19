@@ -3,19 +3,19 @@
 /// <p>Describes the state of an association between a route table and a subnet or gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociationStateDetails {
+pub struct AssociationStateDetails  {
     /// <p>The state of the association.</p>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The status message, if applicable.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl AssociationStateDetails {
+impl  AssociationStateDetails  {
     /// <p>The state of the association.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The status message, if applicable.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociationStateDetailsBuilder {
     }
     /// <p>The state of the association.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the association.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AssociationStateDetailsBuilder {
     }
     /// <p>The status message, if applicable.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message, if applicable.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AssociationStateDetailsBuilder {
     /// Consumes the builder and constructs a [`AssociationStateDetails`](crate::types::AssociationStateDetails).
     pub fn build(self) -> crate::types::AssociationStateDetails {
         crate::types::AssociationStateDetails {
-            state: self.state,
-            status_message: self.status_message,
+            state: self.state
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

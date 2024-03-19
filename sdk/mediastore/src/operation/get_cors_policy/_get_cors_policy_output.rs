@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCorsPolicyOutput {
+pub struct GetCorsPolicyOutput  {
     /// <p>The CORS policy assigned to the container.</p>
-    pub cors_policy: ::std::vec::Vec<crate::types::CorsRule>,
+    pub cors_policy: ::std::vec::Vec::<crate::types::CorsRule>,
     _request_id: Option<String>,
 }
-impl GetCorsPolicyOutput {
+impl  GetCorsPolicyOutput  {
     /// <p>The CORS policy assigned to the container.</p>
-    pub fn cors_policy(&self) -> &[crate::types::CorsRule] {
-        use std::ops::Deref;
-        self.cors_policy.deref()
+    pub fn cors_policy(&self) -> & [crate::types::CorsRule] {
+        use std::ops::Deref; self.cors_policy.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCorsPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCorsPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetCorsPolicyOutput`](crate::operation::get_cors_policy::GetCorsPolicyOutput).
     pub fn builder() -> crate::operation::get_cors_policy::builders::GetCorsPolicyOutputBuilder {
@@ -30,7 +29,7 @@ impl GetCorsPolicyOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCorsPolicyOutputBuilder {
-    pub(crate) cors_policy: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
+    pub(crate) cors_policy: ::std::option::Option<::std::vec::Vec::<crate::types::CorsRule>>,
     _request_id: Option<String>,
 }
 impl GetCorsPolicyOutputBuilder {
@@ -41,42 +40,41 @@ impl GetCorsPolicyOutputBuilder {
     /// <p>The CORS policy assigned to the container.</p>
     pub fn cors_policy(mut self, input: crate::types::CorsRule) -> Self {
         let mut v = self.cors_policy.unwrap_or_default();
-        v.push(input);
-        self.cors_policy = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cors_policy = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CORS policy assigned to the container.</p>
-    pub fn set_cors_policy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>) -> Self {
-        self.cors_policy = input;
-        self
+    pub fn set_cors_policy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CorsRule>>) -> Self {
+        self.cors_policy = input; self
     }
     /// <p>The CORS policy assigned to the container.</p>
-    pub fn get_cors_policy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
+    pub fn get_cors_policy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CorsRule>> {
         &self.cors_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCorsPolicyOutput`](crate::operation::get_cors_policy::GetCorsPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`cors_policy`](crate::operation::get_cors_policy::builders::GetCorsPolicyOutputBuilder::cors_policy)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_cors_policy::GetCorsPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_cors_policy::GetCorsPolicyOutput {
-            cors_policy: self.cors_policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cors_policy",
-                    "cors_policy was not specified but it is required when building GetCorsPolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cors_policy::GetCorsPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cors_policy::GetCorsPolicyOutput {
+                cors_policy: self.cors_policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cors_policy", "cors_policy was not specified but it is required when building GetCorsPolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

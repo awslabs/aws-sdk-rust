@@ -3,22 +3,20 @@
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueHistorySuccessEntry {
+pub struct BatchGetAssetPropertyValueHistorySuccessEntry  {
     /// <p>The ID of the entry.</p>
     pub entry_id: ::std::string::String,
     /// <p>The requested historical values for the specified asset property.</p>
-    pub asset_property_value_history: ::std::vec::Vec<crate::types::AssetPropertyValue>,
+    pub asset_property_value_history: ::std::vec::Vec::<crate::types::AssetPropertyValue>,
 }
-impl BatchGetAssetPropertyValueHistorySuccessEntry {
+impl  BatchGetAssetPropertyValueHistorySuccessEntry  {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_id.deref()
+    pub fn entry_id(&self) -> & str {
+        use std::ops::Deref; self.entry_id.deref()
     }
     /// <p>The requested historical values for the specified asset property.</p>
-    pub fn asset_property_value_history(&self) -> &[crate::types::AssetPropertyValue] {
-        use std::ops::Deref;
-        self.asset_property_value_history.deref()
+    pub fn asset_property_value_history(&self) -> & [crate::types::AssetPropertyValue] {
+        use std::ops::Deref; self.asset_property_value_history.deref()
     }
 }
 impl BatchGetAssetPropertyValueHistorySuccessEntry {
@@ -33,7 +31,7 @@ impl BatchGetAssetPropertyValueHistorySuccessEntry {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_property_value_history: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub(crate) asset_property_value_history: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyValue>>,
 }
 impl BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
     /// <p>The ID of the entry.</p>
@@ -44,8 +42,7 @@ impl BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>The ID of the entry.</p>
     pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,39 +55,37 @@ impl BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
     /// <p>The requested historical values for the specified asset property.</p>
     pub fn asset_property_value_history(mut self, input: crate::types::AssetPropertyValue) -> Self {
         let mut v = self.asset_property_value_history.unwrap_or_default();
-        v.push(input);
-        self.asset_property_value_history = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_property_value_history = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The requested historical values for the specified asset property.</p>
-    pub fn set_asset_property_value_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>) -> Self {
-        self.asset_property_value_history = input;
-        self
+    pub fn set_asset_property_value_history(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyValue>>) -> Self {
+        self.asset_property_value_history = input; self
     }
     /// <p>The requested historical values for the specified asset property.</p>
-    pub fn get_asset_property_value_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+    pub fn get_asset_property_value_history(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyValue>> {
         &self.asset_property_value_history
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::types::BatchGetAssetPropertyValueHistorySuccessEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyValueHistorySuccessEntryBuilder::entry_id)
     /// - [`asset_property_value_history`](crate::types::builders::BatchGetAssetPropertyValueHistorySuccessEntryBuilder::asset_property_value_history)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistorySuccessEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueHistorySuccessEntry {
-            entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_id",
-                    "entry_id was not specified but it is required when building BatchGetAssetPropertyValueHistorySuccessEntry",
-                )
-            })?,
-            asset_property_value_history: self.asset_property_value_history.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_property_value_history",
-                    "asset_property_value_history was not specified but it is required when building BatchGetAssetPropertyValueHistorySuccessEntry",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistorySuccessEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::BatchGetAssetPropertyValueHistorySuccessEntry {
+                entry_id: self.entry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_id", "entry_id was not specified but it is required when building BatchGetAssetPropertyValueHistorySuccessEntry")
+                    )?
+                ,
+                asset_property_value_history: self.asset_property_value_history
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_property_value_history", "asset_property_value_history was not specified but it is required when building BatchGetAssetPropertyValueHistorySuccessEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

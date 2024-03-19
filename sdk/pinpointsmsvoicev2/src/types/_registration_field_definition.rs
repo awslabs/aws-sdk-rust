@@ -3,7 +3,7 @@
 /// <p>Provides a description of the specified field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationFieldDefinition {
+pub struct RegistrationFieldDefinition  {
     /// <p>The section path of the field.</p>
     pub section_path: ::std::string::String,
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
@@ -19,35 +19,33 @@ pub struct RegistrationFieldDefinition {
     /// <p>An array of RegistrationFieldDisplayHints objects for the field.</p>
     pub display_hints: ::std::option::Option<crate::types::RegistrationFieldDisplayHints>,
 }
-impl RegistrationFieldDefinition {
+impl  RegistrationFieldDefinition  {
     /// <p>The section path of the field.</p>
-    pub fn section_path(&self) -> &str {
-        use std::ops::Deref;
-        self.section_path.deref()
+    pub fn section_path(&self) -> & str {
+        use std::ops::Deref; self.section_path.deref()
     }
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
-    pub fn field_path(&self) -> &str {
-        use std::ops::Deref;
-        self.field_path.deref()
+    pub fn field_path(&self) -> & str {
+        use std::ops::Deref; self.field_path.deref()
     }
     /// <p>The type of field.</p>
-    pub fn field_type(&self) -> &crate::types::FieldType {
+    pub fn field_type(&self) -> & crate::types::FieldType {
         &self.field_type
     }
     /// <p>Specifies if the field for the registration form is required, conditional or optional.</p>
-    pub fn field_requirement(&self) -> &crate::types::FieldRequirement {
+    pub fn field_requirement(&self) -> & crate::types::FieldRequirement {
         &self.field_requirement
     }
     /// <p>The validation rules for a select field.</p>
-    pub fn select_validation(&self) -> ::std::option::Option<&crate::types::SelectValidation> {
+    pub fn select_validation(&self) -> ::std::option::Option<& crate::types::SelectValidation> {
         self.select_validation.as_ref()
     }
     /// <p>The validation rules for a text field.</p>
-    pub fn text_validation(&self) -> ::std::option::Option<&crate::types::TextValidation> {
+    pub fn text_validation(&self) -> ::std::option::Option<& crate::types::TextValidation> {
         self.text_validation.as_ref()
     }
     /// <p>An array of RegistrationFieldDisplayHints objects for the field.</p>
-    pub fn display_hints(&self) -> ::std::option::Option<&crate::types::RegistrationFieldDisplayHints> {
+    pub fn display_hints(&self) -> ::std::option::Option<& crate::types::RegistrationFieldDisplayHints> {
         self.display_hints.as_ref()
     }
 }
@@ -79,8 +77,7 @@ impl RegistrationFieldDefinitionBuilder {
     }
     /// <p>The section path of the field.</p>
     pub fn set_section_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.section_path = input;
-        self
+        self.section_path = input; self
     }
     /// <p>The section path of the field.</p>
     pub fn get_section_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +91,7 @@ impl RegistrationFieldDefinitionBuilder {
     }
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
     pub fn set_field_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_path = input;
-        self
+        self.field_path = input; self
     }
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
     pub fn get_field_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl RegistrationFieldDefinitionBuilder {
     }
     /// <p>The type of field.</p>
     pub fn set_field_type(mut self, input: ::std::option::Option<crate::types::FieldType>) -> Self {
-        self.field_type = input;
-        self
+        self.field_type = input; self
     }
     /// <p>The type of field.</p>
     pub fn get_field_type(&self) -> &::std::option::Option<crate::types::FieldType> {
@@ -124,8 +119,7 @@ impl RegistrationFieldDefinitionBuilder {
     }
     /// <p>Specifies if the field for the registration form is required, conditional or optional.</p>
     pub fn set_field_requirement(mut self, input: ::std::option::Option<crate::types::FieldRequirement>) -> Self {
-        self.field_requirement = input;
-        self
+        self.field_requirement = input; self
     }
     /// <p>Specifies if the field for the registration form is required, conditional or optional.</p>
     pub fn get_field_requirement(&self) -> &::std::option::Option<crate::types::FieldRequirement> {
@@ -138,8 +132,7 @@ impl RegistrationFieldDefinitionBuilder {
     }
     /// <p>The validation rules for a select field.</p>
     pub fn set_select_validation(mut self, input: ::std::option::Option<crate::types::SelectValidation>) -> Self {
-        self.select_validation = input;
-        self
+        self.select_validation = input; self
     }
     /// <p>The validation rules for a select field.</p>
     pub fn get_select_validation(&self) -> &::std::option::Option<crate::types::SelectValidation> {
@@ -152,8 +145,7 @@ impl RegistrationFieldDefinitionBuilder {
     }
     /// <p>The validation rules for a text field.</p>
     pub fn set_text_validation(mut self, input: ::std::option::Option<crate::types::TextValidation>) -> Self {
-        self.text_validation = input;
-        self
+        self.text_validation = input; self
     }
     /// <p>The validation rules for a text field.</p>
     pub fn get_text_validation(&self) -> &::std::option::Option<crate::types::TextValidation> {
@@ -167,8 +159,7 @@ impl RegistrationFieldDefinitionBuilder {
     }
     /// <p>An array of RegistrationFieldDisplayHints objects for the field.</p>
     pub fn set_display_hints(mut self, input: ::std::option::Option<crate::types::RegistrationFieldDisplayHints>) -> Self {
-        self.display_hints = input;
-        self
+        self.display_hints = input; self
     }
     /// <p>An array of RegistrationFieldDisplayHints objects for the field.</p>
     pub fn get_display_hints(&self) -> &::std::option::Option<crate::types::RegistrationFieldDisplayHints> {
@@ -181,34 +172,36 @@ impl RegistrationFieldDefinitionBuilder {
     /// - [`field_type`](crate::types::builders::RegistrationFieldDefinitionBuilder::field_type)
     /// - [`field_requirement`](crate::types::builders::RegistrationFieldDefinitionBuilder::field_requirement)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationFieldDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationFieldDefinition {
-            section_path: self.section_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "section_path",
-                    "section_path was not specified but it is required when building RegistrationFieldDefinition",
-                )
-            })?,
-            field_path: self.field_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_path",
-                    "field_path was not specified but it is required when building RegistrationFieldDefinition",
-                )
-            })?,
-            field_type: self.field_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_type",
-                    "field_type was not specified but it is required when building RegistrationFieldDefinition",
-                )
-            })?,
-            field_requirement: self.field_requirement.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_requirement",
-                    "field_requirement was not specified but it is required when building RegistrationFieldDefinition",
-                )
-            })?,
-            select_validation: self.select_validation,
-            text_validation: self.text_validation,
-            display_hints: self.display_hints,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationFieldDefinition {
+                section_path: self.section_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("section_path", "section_path was not specified but it is required when building RegistrationFieldDefinition")
+                    )?
+                ,
+                field_path: self.field_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_path", "field_path was not specified but it is required when building RegistrationFieldDefinition")
+                    )?
+                ,
+                field_type: self.field_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_type", "field_type was not specified but it is required when building RegistrationFieldDefinition")
+                    )?
+                ,
+                field_requirement: self.field_requirement
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_requirement", "field_requirement was not specified but it is required when building RegistrationFieldDefinition")
+                    )?
+                ,
+                select_validation: self.select_validation
+                ,
+                text_validation: self.text_validation
+                ,
+                display_hints: self.display_hints
+                ,
+            }
+        )
     }
 }
+

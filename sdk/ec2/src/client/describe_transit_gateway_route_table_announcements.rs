@@ -2,21 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTransitGatewayRouteTableAnnouncements`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`transit_gateway_route_table_announcement_ids(impl Into<String>)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::transit_gateway_route_table_announcement_ids) / [`set_transit_gateway_route_table_announcement_ids(Option<Vec::<String>>)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::set_transit_gateway_route_table_announcement_ids):<br>required: **false**<br><p>The IDs of the transit gateway route tables that are being advertised.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::set_filters):<br>required: **false**<br><p>The filters associated with the transit gateway policy table.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
-    /// - On success, responds with [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput) with field(s):
+                            /// - On success, responds with [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput) with field(s):
     ///   - [`transit_gateway_route_table_announcements(Option<Vec::<TransitGatewayRouteTableAnnouncement>>)`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput::transit_gateway_route_table_announcements): <p>Describes the transit gateway route table announcement.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeTransitGatewayRouteTableAnnouncementsError>`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsError)
-    pub fn describe_transit_gateway_route_table_announcements(
-        &self,
-    ) -> crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder
-    {
-        crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeTransitGatewayRouteTableAnnouncementsError>`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsError)
+    pub fn describe_transit_gateway_route_table_announcements(&self) -> crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
+                                crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

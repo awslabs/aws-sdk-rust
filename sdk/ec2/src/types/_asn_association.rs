@@ -3,7 +3,7 @@
 /// <p>An Autonomous System Number (ASN) and BYOIP CIDR association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AsnAssociation {
+pub struct AsnAssociation  {
     /// <p>The association's ASN.</p>
     pub asn: ::std::option::Option<::std::string::String>,
     /// <p>The association's CIDR.</p>
@@ -13,21 +13,21 @@ pub struct AsnAssociation {
     /// <p>The association's state.</p>
     pub state: ::std::option::Option<crate::types::AsnAssociationState>,
 }
-impl AsnAssociation {
+impl  AsnAssociation  {
     /// <p>The association's ASN.</p>
-    pub fn asn(&self) -> ::std::option::Option<&str> {
+    pub fn asn(&self) -> ::std::option::Option<& str> {
         self.asn.as_deref()
     }
     /// <p>The association's CIDR.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>The association's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The association's state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AsnAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AsnAssociationState> {
         self.state.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AsnAssociationBuilder {
     }
     /// <p>The association's ASN.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>The association's ASN.</p>
     pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AsnAssociationBuilder {
     }
     /// <p>The association's CIDR.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The association's CIDR.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AsnAssociationBuilder {
     }
     /// <p>The association's status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The association's status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AsnAssociationBuilder {
     }
     /// <p>The association's state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AsnAssociationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The association's state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AsnAssociationState> {
@@ -107,10 +103,15 @@ impl AsnAssociationBuilder {
     /// Consumes the builder and constructs a [`AsnAssociation`](crate::types::AsnAssociation).
     pub fn build(self) -> crate::types::AsnAssociation {
         crate::types::AsnAssociation {
-            asn: self.asn,
-            cidr: self.cidr,
-            status_message: self.status_message,
-            state: self.state,
+            asn: self.asn
+            ,
+            cidr: self.cidr
+            ,
+            status_message: self.status_message
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

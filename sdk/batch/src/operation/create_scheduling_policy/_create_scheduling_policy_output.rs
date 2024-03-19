@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSchedulingPolicyOutput {
+pub struct CreateSchedulingPolicyOutput  {
     /// <p>The name of the scheduling policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateSchedulingPolicyOutput {
+impl  CreateSchedulingPolicyOutput  {
     /// <p>The name of the scheduling policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSchedulingPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSchedulingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateSchedulingPolicyOutput`](crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput).
     pub fn builder() -> crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyOutputBuilder {
@@ -48,8 +48,7 @@ impl CreateSchedulingPolicyOutputBuilder {
     }
     /// <p>The name of the scheduling policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the scheduling policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,28 +62,30 @@ impl CreateSchedulingPolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSchedulingPolicyOutput`](crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput).
     pub fn build(self) -> crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput {
         crate::operation::create_scheduling_policy::CreateSchedulingPolicyOutput {
-            name: self.name,
-            arn: self.arn,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

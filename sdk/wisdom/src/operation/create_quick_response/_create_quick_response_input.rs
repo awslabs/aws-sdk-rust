@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateQuickResponseInput {
+pub struct CreateQuickResponseInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the quick response.</p>
@@ -26,25 +26,25 @@ pub struct CreateQuickResponseInput {
     /// <p>Whether the quick response is active.</p>
     pub is_active: ::std::option::Option<bool>,
     /// <p>The Amazon Connect channels this quick response applies to.</p>
-    pub channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub channels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateQuickResponseInput {
+impl  CreateQuickResponseInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The name of the quick response.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The content of the quick response.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::QuickResponseDataProvider> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::QuickResponseDataProvider> {
         self.content.as_ref()
     }
     /// <p>The media type of the quick response content.</p>
@@ -54,19 +54,19 @@ impl CreateQuickResponseInput {
     /// <li>
     /// <p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p></li>
     /// </ul>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The configuration information of the user groups that the quick response is accessible to.</p>
-    pub fn grouping_configuration(&self) -> ::std::option::Option<&crate::types::GroupingConfiguration> {
+    pub fn grouping_configuration(&self) -> ::std::option::Option<& crate::types::GroupingConfiguration> {
         self.grouping_configuration.as_ref()
     }
     /// <p>The description of the quick response.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
-    pub fn shortcut_key(&self) -> ::std::option::Option<&str> {
+    pub fn shortcut_key(&self) -> ::std::option::Option<& str> {
         self.shortcut_key.as_deref()
     }
     /// <p>Whether the quick response is active.</p>
@@ -74,21 +74,22 @@ impl CreateQuickResponseInput {
         self.is_active
     }
     /// <p>The Amazon Connect channels this quick response applies to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
-    pub fn channels(&self) -> &[::std::string::String] {
-        self.channels.as_deref().unwrap_or_default()
+    pub fn channels(&self) -> & [::std::string::String] {
+        self.channels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -111,10 +112,10 @@ pub struct CreateQuickResponseInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) shortcut_key: ::std::option::Option<::std::string::String>,
     pub(crate) is_active: ::std::option::Option<bool>,
-    pub(crate) channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateQuickResponseInputBuilder {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -125,8 +126,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +140,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The name of the quick response.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the quick response.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +154,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The content of the quick response.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::QuickResponseDataProvider>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of the quick response.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::QuickResponseDataProvider> {
@@ -181,8 +179,7 @@ impl CreateQuickResponseInputBuilder {
     /// <p>Use <code>application/x.quickresponse;format=markdown</code> for a quick response written in richtext.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
@@ -201,8 +198,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The configuration information of the user groups that the quick response is accessible to.</p>
     pub fn set_grouping_configuration(mut self, input: ::std::option::Option<crate::types::GroupingConfiguration>) -> Self {
-        self.grouping_configuration = input;
-        self
+        self.grouping_configuration = input; self
     }
     /// <p>The configuration information of the user groups that the quick response is accessible to.</p>
     pub fn get_grouping_configuration(&self) -> &::std::option::Option<crate::types::GroupingConfiguration> {
@@ -215,8 +211,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The description of the quick response.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the quick response.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +224,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub fn set_shortcut_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shortcut_key = input;
-        self
+        self.shortcut_key = input; self
     }
     /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub fn get_shortcut_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +237,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>Whether the quick response is active.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_active = input;
-        self
+        self.is_active = input; self
     }
     /// <p>Whether the quick response is active.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
@@ -257,17 +250,16 @@ impl CreateQuickResponseInputBuilder {
     /// <p>The Amazon Connect channels this quick response applies to.</p>
     pub fn channels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input.into());
-        self.channels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.channels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Connect channels this quick response applies to.</p>
-    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.channels = input; self
     }
     /// <p>The Amazon Connect channels this quick response applies to.</p>
-    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.channels
     }
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
@@ -277,8 +269,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
@@ -291,8 +282,7 @@ impl CreateQuickResponseInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,37 +295,48 @@ impl CreateQuickResponseInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateQuickResponseInput`](crate::operation::create_quick_response::CreateQuickResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_quick_response::CreateQuickResponseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_quick_response::CreateQuickResponseInput {
-            knowledge_base_id: self.knowledge_base_id,
-            name: self.name,
-            content: self.content,
-            content_type: self.content_type,
-            grouping_configuration: self.grouping_configuration,
-            description: self.description,
-            shortcut_key: self.shortcut_key,
-            is_active: self.is_active,
-            channels: self.channels,
-            language: self.language,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_quick_response::CreateQuickResponseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_quick_response::CreateQuickResponseInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                name: self.name
+                ,
+                content: self.content
+                ,
+                content_type: self.content_type
+                ,
+                grouping_configuration: self.grouping_configuration
+                ,
+                description: self.description
+                ,
+                shortcut_key: self.shortcut_key
+                ,
+                is_active: self.is_active
+                ,
+                channels: self.channels
+                ,
+                language: self.language
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendDataToWirelessDeviceInput {
+pub struct SendDataToWirelessDeviceInput  {
     /// <p>The ID of the wireless device to receive the data.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
@@ -12,9 +12,9 @@ pub struct SendDataToWirelessDeviceInput {
     /// <p>Metadata about the message request.</p>
     pub wireless_metadata: ::std::option::Option<crate::types::WirelessMetadata>,
 }
-impl SendDataToWirelessDeviceInput {
+impl  SendDataToWirelessDeviceInput  {
     /// <p>The ID of the wireless device to receive the data.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
@@ -22,11 +22,11 @@ impl SendDataToWirelessDeviceInput {
         self.transmit_mode
     }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
-    pub fn payload_data(&self) -> ::std::option::Option<&str> {
+    pub fn payload_data(&self) -> ::std::option::Option<& str> {
         self.payload_data.as_deref()
     }
     /// <p>Metadata about the message request.</p>
-    pub fn wireless_metadata(&self) -> ::std::option::Option<&crate::types::WirelessMetadata> {
+    pub fn wireless_metadata(&self) -> ::std::option::Option<& crate::types::WirelessMetadata> {
         self.wireless_metadata.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl SendDataToWirelessDeviceInputBuilder {
     }
     /// <p>The ID of the wireless device to receive the data.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the wireless device to receive the data.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl SendDataToWirelessDeviceInputBuilder {
     }
     /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     pub fn set_transmit_mode(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.transmit_mode = input;
-        self
+        self.transmit_mode = input; self
     }
     /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     pub fn get_transmit_mode(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl SendDataToWirelessDeviceInputBuilder {
     }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
     pub fn set_payload_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_data = input;
-        self
+        self.payload_data = input; self
     }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
     pub fn get_payload_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl SendDataToWirelessDeviceInputBuilder {
     }
     /// <p>Metadata about the message request.</p>
     pub fn set_wireless_metadata(mut self, input: ::std::option::Option<crate::types::WirelessMetadata>) -> Self {
-        self.wireless_metadata = input;
-        self
+        self.wireless_metadata = input; self
     }
     /// <p>Metadata about the message request.</p>
     pub fn get_wireless_metadata(&self) -> &::std::option::Option<crate::types::WirelessMetadata> {
         &self.wireless_metadata
     }
     /// Consumes the builder and constructs a [`SendDataToWirelessDeviceInput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput {
-            id: self.id,
-            transmit_mode: self.transmit_mode,
-            payload_data: self.payload_data,
-            wireless_metadata: self.wireless_metadata,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput {
+                id: self.id
+                ,
+                transmit_mode: self.transmit_mode
+                ,
+                payload_data: self.payload_data
+                ,
+                wireless_metadata: self.wireless_metadata
+                ,
+            }
+        )
     }
 }
+

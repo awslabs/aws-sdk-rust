@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelMlModelTransformJobInput {
+pub struct CancelMlModelTransformJobInput  {
     /// <p>The unique ID of the model transform job to be canceled.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
@@ -10,13 +10,13 @@ pub struct CancelMlModelTransformJobInput {
     /// <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
     pub clean: ::std::option::Option<bool>,
 }
-impl CancelMlModelTransformJobInput {
+impl  CancelMlModelTransformJobInput  {
     /// <p>The unique ID of the model transform job to be canceled.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
-    pub fn neptune_iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn neptune_iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.neptune_iam_role_arn.as_deref()
     }
     /// <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
@@ -48,8 +48,7 @@ impl CancelMlModelTransformJobInputBuilder {
     }
     /// <p>The unique ID of the model transform job to be canceled.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of the model transform job to be canceled.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CancelMlModelTransformJobInputBuilder {
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
     pub fn set_neptune_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.neptune_iam_role_arn = input;
-        self
+        self.neptune_iam_role_arn = input; self
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
     pub fn get_neptune_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl CancelMlModelTransformJobInputBuilder {
     }
     /// <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
     pub fn set_clean(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.clean = input;
-        self
+        self.clean = input; self
     }
     /// <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
     pub fn get_clean(&self) -> &::std::option::Option<bool> {
         &self.clean
     }
     /// Consumes the builder and constructs a [`CancelMlModelTransformJobInput`](crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput {
-            id: self.id,
-            neptune_iam_role_arn: self.neptune_iam_role_arn,
-            clean: self.clean,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput {
+                id: self.id
+                ,
+                neptune_iam_role_arn: self.neptune_iam_role_arn
+                ,
+                clean: self.clean
+                ,
+            }
+        )
     }
 }
+

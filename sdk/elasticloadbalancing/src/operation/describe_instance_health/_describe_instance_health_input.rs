@@ -3,22 +3,23 @@
 /// <p>Contains the parameters for DescribeInstanceHealth.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstanceHealthInput {
+pub struct DescribeInstanceHealthInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the instances.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>,
 }
-impl DescribeInstanceHealthInput {
+impl  DescribeInstanceHealthInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[crate::types::Instance] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [crate::types::Instance] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeInstanceHealthInput {
@@ -33,7 +34,7 @@ impl DescribeInstanceHealthInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceHealthInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>,
 }
 impl DescribeInstanceHealthInputBuilder {
     /// <p>The name of the load balancer.</p>
@@ -44,8 +45,7 @@ impl DescribeInstanceHealthInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,29 +58,28 @@ impl DescribeInstanceHealthInputBuilder {
     /// <p>The IDs of the instances.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>) -> Self {
+        self.instances = input; self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Instance>> {
         &self.instances
     }
     /// Consumes the builder and constructs a [`DescribeInstanceHealthInput`](crate::operation::describe_instance_health::DescribeInstanceHealthInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_health::DescribeInstanceHealthInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_instance_health::DescribeInstanceHealthInput {
-            load_balancer_name: self.load_balancer_name,
-            instances: self.instances,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_health::DescribeInstanceHealthInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_instance_health::DescribeInstanceHealthInput {
+                load_balancer_name: self.load_balancer_name
+                ,
+                instances: self.instances
+                ,
+            }
+        )
     }
 }
+

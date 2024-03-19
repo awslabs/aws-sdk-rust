@@ -3,7 +3,7 @@
 /// <p>A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SmartHomeAppliance {
+pub struct SmartHomeAppliance  {
     /// <p>The friendly name of the smart home appliance.</p>
     pub friendly_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the smart home appliance.</p>
@@ -11,17 +11,17 @@ pub struct SmartHomeAppliance {
     /// <p>The name of the manufacturer of the smart home appliance.</p>
     pub manufacturer_name: ::std::option::Option<::std::string::String>,
 }
-impl SmartHomeAppliance {
+impl  SmartHomeAppliance  {
     /// <p>The friendly name of the smart home appliance.</p>
-    pub fn friendly_name(&self) -> ::std::option::Option<&str> {
+    pub fn friendly_name(&self) -> ::std::option::Option<& str> {
         self.friendly_name.as_deref()
     }
     /// <p>The description of the smart home appliance.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
-    pub fn manufacturer_name(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer_name(&self) -> ::std::option::Option<& str> {
         self.manufacturer_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl SmartHomeApplianceBuilder {
     }
     /// <p>The friendly name of the smart home appliance.</p>
     pub fn set_friendly_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.friendly_name = input;
-        self
+        self.friendly_name = input; self
     }
     /// <p>The friendly name of the smart home appliance.</p>
     pub fn get_friendly_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SmartHomeApplianceBuilder {
     }
     /// <p>The description of the smart home appliance.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the smart home appliance.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl SmartHomeApplianceBuilder {
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
     pub fn set_manufacturer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer_name = input;
-        self
+        self.manufacturer_name = input; self
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
     pub fn get_manufacturer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl SmartHomeApplianceBuilder {
     /// Consumes the builder and constructs a [`SmartHomeAppliance`](crate::types::SmartHomeAppliance).
     pub fn build(self) -> crate::types::SmartHomeAppliance {
         crate::types::SmartHomeAppliance {
-            friendly_name: self.friendly_name,
-            description: self.description,
-            manufacturer_name: self.manufacturer_name,
+            friendly_name: self.friendly_name
+            ,
+            description: self.description
+            ,
+            manufacturer_name: self.manufacturer_name
+            ,
         }
     }
 }
+

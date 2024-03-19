@@ -11,7 +11,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainConfigurationSummary {
+pub struct DomainConfigurationSummary  {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
     pub domain_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the domain configuration.</p>
@@ -19,17 +19,17 @@ pub struct DomainConfigurationSummary {
     /// <p>The type of service delivered by the endpoint.</p>
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
 }
-impl DomainConfigurationSummary {
+impl  DomainConfigurationSummary  {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
-    pub fn domain_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_configuration_name(&self) -> ::std::option::Option<& str> {
         self.domain_configuration_name.as_deref()
     }
     /// <p>The ARN of the domain configuration.</p>
-    pub fn domain_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn domain_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.domain_configuration_arn.as_deref()
     }
     /// <p>The type of service delivered by the endpoint.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service_type(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service_type.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl DomainConfigurationSummaryBuilder {
     }
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
     pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_configuration_name = input;
-        self
+        self.domain_configuration_name = input; self
     }
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
     pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DomainConfigurationSummaryBuilder {
     }
     /// <p>The ARN of the domain configuration.</p>
     pub fn set_domain_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_configuration_arn = input;
-        self
+        self.domain_configuration_arn = input; self
     }
     /// <p>The ARN of the domain configuration.</p>
     pub fn get_domain_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl DomainConfigurationSummaryBuilder {
     }
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -94,9 +91,13 @@ impl DomainConfigurationSummaryBuilder {
     /// Consumes the builder and constructs a [`DomainConfigurationSummary`](crate::types::DomainConfigurationSummary).
     pub fn build(self) -> crate::types::DomainConfigurationSummary {
         crate::types::DomainConfigurationSummary {
-            domain_configuration_name: self.domain_configuration_name,
-            domain_configuration_arn: self.domain_configuration_arn,
-            service_type: self.service_type,
+            domain_configuration_name: self.domain_configuration_name
+            ,
+            domain_configuration_arn: self.domain_configuration_arn
+            ,
+            service_type: self.service_type
+            ,
         }
     }
 }
+

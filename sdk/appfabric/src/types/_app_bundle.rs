@@ -3,20 +3,19 @@
 /// <p>Contains information about an app bundle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppBundle {
+pub struct AppBundle  {
     /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
     pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
     pub customer_managed_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl AppBundle {
+impl  AppBundle  {
     /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
-    pub fn customer_managed_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn customer_managed_key_arn(&self) -> ::std::option::Option<& str> {
         self.customer_managed_key_arn.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl AppBundleBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AppBundleBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
     pub fn set_customer_managed_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_managed_key_arn = input;
-        self
+        self.customer_managed_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
     pub fn get_customer_managed_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AppBundleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::AppBundleBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AppBundle, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppBundle {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building AppBundle",
-                )
-            })?,
-            customer_managed_key_arn: self.customer_managed_key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppBundle {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building AppBundle")
+                    )?
+                ,
+                customer_managed_key_arn: self.customer_managed_key_arn
+                ,
+            }
+        )
     }
 }
+

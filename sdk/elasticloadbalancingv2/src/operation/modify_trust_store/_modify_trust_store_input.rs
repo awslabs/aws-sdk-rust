@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTrustStoreInput {
+pub struct ModifyTrustStoreInput  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket for the ca certificates bundle.</p>
@@ -12,21 +12,21 @@ pub struct ModifyTrustStoreInput {
     /// <p>The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.</p>
     pub ca_certificates_bundle_s3_object_version: ::std::option::Option<::std::string::String>,
 }
-impl ModifyTrustStoreInput {
+impl  ModifyTrustStoreInput  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The Amazon S3 bucket for the ca certificates bundle.</p>
-    pub fn ca_certificates_bundle_s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificates_bundle_s3_bucket(&self) -> ::std::option::Option<& str> {
         self.ca_certificates_bundle_s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 path for the ca certificates bundle.</p>
-    pub fn ca_certificates_bundle_s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificates_bundle_s3_key(&self) -> ::std::option::Option<& str> {
         self.ca_certificates_bundle_s3_key.as_deref()
     }
     /// <p>The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.</p>
-    pub fn ca_certificates_bundle_s3_object_version(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificates_bundle_s3_object_version(&self) -> ::std::option::Option<& str> {
         self.ca_certificates_bundle_s3_object_version.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ModifyTrustStoreInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ModifyTrustStoreInputBuilder {
     }
     /// <p>The Amazon S3 bucket for the ca certificates bundle.</p>
     pub fn set_ca_certificates_bundle_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificates_bundle_s3_bucket = input;
-        self
+        self.ca_certificates_bundle_s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket for the ca certificates bundle.</p>
     pub fn get_ca_certificates_bundle_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ModifyTrustStoreInputBuilder {
     }
     /// <p>The Amazon S3 path for the ca certificates bundle.</p>
     pub fn set_ca_certificates_bundle_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificates_bundle_s3_key = input;
-        self
+        self.ca_certificates_bundle_s3_key = input; self
     }
     /// <p>The Amazon S3 path for the ca certificates bundle.</p>
     pub fn get_ca_certificates_bundle_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +96,26 @@ impl ModifyTrustStoreInputBuilder {
     }
     /// <p>The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.</p>
     pub fn set_ca_certificates_bundle_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificates_bundle_s3_object_version = input;
-        self
+        self.ca_certificates_bundle_s3_object_version = input; self
     }
     /// <p>The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.</p>
     pub fn get_ca_certificates_bundle_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.ca_certificates_bundle_s3_object_version
     }
     /// Consumes the builder and constructs a [`ModifyTrustStoreInput`](crate::operation::modify_trust_store::ModifyTrustStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_trust_store::ModifyTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_trust_store::ModifyTrustStoreInput {
-            trust_store_arn: self.trust_store_arn,
-            ca_certificates_bundle_s3_bucket: self.ca_certificates_bundle_s3_bucket,
-            ca_certificates_bundle_s3_key: self.ca_certificates_bundle_s3_key,
-            ca_certificates_bundle_s3_object_version: self.ca_certificates_bundle_s3_object_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_trust_store::ModifyTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_trust_store::ModifyTrustStoreInput {
+                trust_store_arn: self.trust_store_arn
+                ,
+                ca_certificates_bundle_s3_bucket: self.ca_certificates_bundle_s3_bucket
+                ,
+                ca_certificates_bundle_s3_key: self.ca_certificates_bundle_s3_key
+                ,
+                ca_certificates_bundle_s3_object_version: self.ca_certificates_bundle_s3_object_version
+                ,
+            }
+        )
     }
 }
+

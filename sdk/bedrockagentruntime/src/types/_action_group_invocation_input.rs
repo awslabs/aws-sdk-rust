@@ -3,7 +3,7 @@
 /// <p>Contains information about the action group being invoked.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ActionGroupInvocationInput {
+pub struct ActionGroupInvocationInput  {
     /// <p>The name of the action group.</p>
     pub action_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The API method being used, based off the action group.</p>
@@ -11,35 +11,36 @@ pub struct ActionGroupInvocationInput {
     /// <p>The path to the API to call, based off the action group.</p>
     pub api_path: ::std::option::Option<::std::string::String>,
     /// <p>The parameters in the Lambda input event.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     /// <p>The parameters in the request body for the Lambda input event.</p>
     pub request_body: ::std::option::Option<crate::types::RequestBody>,
 }
-impl ActionGroupInvocationInput {
+impl  ActionGroupInvocationInput  {
     /// <p>The name of the action group.</p>
-    pub fn action_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_group_name(&self) -> ::std::option::Option<& str> {
         self.action_group_name.as_deref()
     }
     /// <p>The API method being used, based off the action group.</p>
-    pub fn verb(&self) -> ::std::option::Option<&str> {
+    pub fn verb(&self) -> ::std::option::Option<& str> {
         self.verb.as_deref()
     }
     /// <p>The path to the API to call, based off the action group.</p>
-    pub fn api_path(&self) -> ::std::option::Option<&str> {
+    pub fn api_path(&self) -> ::std::option::Option<& str> {
         self.api_path.as_deref()
     }
     /// <p>The parameters in the Lambda input event.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The parameters in the request body for the Lambda input event.</p>
-    pub fn request_body(&self) -> ::std::option::Option<&crate::types::RequestBody> {
+    pub fn request_body(&self) -> ::std::option::Option<& crate::types::RequestBody> {
         self.request_body.as_ref()
     }
 }
-impl ::std::fmt::Debug for ActionGroupInvocationInput {
+impl  ::std::fmt::Debug for ActionGroupInvocationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActionGroupInvocationInput");
         formatter.field("action_group_name", &"*** Sensitive Data Redacted ***");
@@ -64,7 +65,7 @@ pub struct ActionGroupInvocationInputBuilder {
     pub(crate) action_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) verb: ::std::option::Option<::std::string::String>,
     pub(crate) api_path: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     pub(crate) request_body: ::std::option::Option<crate::types::RequestBody>,
 }
 impl ActionGroupInvocationInputBuilder {
@@ -75,8 +76,7 @@ impl ActionGroupInvocationInputBuilder {
     }
     /// <p>The name of the action group.</p>
     pub fn set_action_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_group_name = input;
-        self
+        self.action_group_name = input; self
     }
     /// <p>The name of the action group.</p>
     pub fn get_action_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl ActionGroupInvocationInputBuilder {
     }
     /// <p>The API method being used, based off the action group.</p>
     pub fn set_verb(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verb = input;
-        self
+        self.verb = input; self
     }
     /// <p>The API method being used, based off the action group.</p>
     pub fn get_verb(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ActionGroupInvocationInputBuilder {
     }
     /// <p>The path to the API to call, based off the action group.</p>
     pub fn set_api_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_path = input;
-        self
+        self.api_path = input; self
     }
     /// <p>The path to the API to call, based off the action group.</p>
     pub fn get_api_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,17 +115,16 @@ impl ActionGroupInvocationInputBuilder {
     /// <p>The parameters in the Lambda input event.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameters in the Lambda input event.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters in the Lambda input event.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// <p>The parameters in the request body for the Lambda input event.</p>
@@ -137,8 +134,7 @@ impl ActionGroupInvocationInputBuilder {
     }
     /// <p>The parameters in the request body for the Lambda input event.</p>
     pub fn set_request_body(mut self, input: ::std::option::Option<crate::types::RequestBody>) -> Self {
-        self.request_body = input;
-        self
+        self.request_body = input; self
     }
     /// <p>The parameters in the request body for the Lambda input event.</p>
     pub fn get_request_body(&self) -> &::std::option::Option<crate::types::RequestBody> {
@@ -147,11 +143,16 @@ impl ActionGroupInvocationInputBuilder {
     /// Consumes the builder and constructs a [`ActionGroupInvocationInput`](crate::types::ActionGroupInvocationInput).
     pub fn build(self) -> crate::types::ActionGroupInvocationInput {
         crate::types::ActionGroupInvocationInput {
-            action_group_name: self.action_group_name,
-            verb: self.verb,
-            api_path: self.api_path,
-            parameters: self.parameters,
-            request_body: self.request_body,
+            action_group_name: self.action_group_name
+            ,
+            verb: self.verb
+            ,
+            api_path: self.api_path
+            ,
+            parameters: self.parameters
+            ,
+            request_body: self.request_body
+            ,
         }
     }
 }
@@ -166,3 +167,4 @@ impl ::std::fmt::Debug for ActionGroupInvocationInputBuilder {
         formatter.finish()
     }
 }
+

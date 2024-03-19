@@ -3,7 +3,7 @@
 /// <p>A complex type that is an entry in an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CidrCollection.html">CidrCollection</a> array.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CollectionSummary {
+pub struct CollectionSummary  {
     /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique ID for the CIDR collection.</p>
@@ -13,17 +13,17 @@ pub struct CollectionSummary {
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
     pub version: ::std::option::Option<i64>,
 }
-impl CollectionSummary {
+impl  CollectionSummary  {
     /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Unique ID for the CIDR collection.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of a CIDR collection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
@@ -55,8 +55,7 @@ impl CollectionSummaryBuilder {
     }
     /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CollectionSummaryBuilder {
     }
     /// <p>Unique ID for the CIDR collection.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique ID for the CIDR collection.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CollectionSummaryBuilder {
     }
     /// <p>The name of a CIDR collection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a CIDR collection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl CollectionSummaryBuilder {
     }
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -107,10 +103,15 @@ impl CollectionSummaryBuilder {
     /// Consumes the builder and constructs a [`CollectionSummary`](crate::types::CollectionSummary).
     pub fn build(self) -> crate::types::CollectionSummary {
         crate::types::CollectionSummary {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            version: self.version,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

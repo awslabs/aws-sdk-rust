@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSubscriptionDefinitionInput {
+pub struct UpdateSubscriptionDefinitionInput  {
     /// The name of the definition.
     pub name: ::std::option::Option<::std::string::String>,
     /// The ID of the subscription definition.
     pub subscription_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSubscriptionDefinitionInput {
+impl  UpdateSubscriptionDefinitionInput  {
     /// The name of the definition.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_definition_id(&self) -> ::std::option::Option<& str> {
         self.subscription_definition_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateSubscriptionDefinitionInputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the definition.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl UpdateSubscriptionDefinitionInputBuilder {
     }
     /// The ID of the subscription definition.
     pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_definition_id = input;
-        self
+        self.subscription_definition_id = input; self
     }
     /// The ID of the subscription definition.
     pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_definition_id
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionDefinitionInput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput {
-            name: self.name,
-            subscription_definition_id: self.subscription_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput {
+                name: self.name
+                ,
+                subscription_definition_id: self.subscription_definition_id
+                ,
+            }
+        )
     }
 }
+

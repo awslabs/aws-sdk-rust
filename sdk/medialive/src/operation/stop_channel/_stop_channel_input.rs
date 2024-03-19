@@ -3,13 +3,13 @@
 /// Placeholder documentation for StopChannelRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopChannelInput {
+pub struct StopChannelInput  {
     /// A request to stop a running channel
     pub channel_id: ::std::option::Option<::std::string::String>,
 }
-impl StopChannelInput {
+impl  StopChannelInput  {
     /// A request to stop a running channel
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl StopChannelInputBuilder {
     }
     /// A request to stop a running channel
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// A request to stop a running channel
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl StopChannelInputBuilder {
     }
     /// Consumes the builder and constructs a [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_channel::StopChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_channel::StopChannelInput { channel_id: self.channel_id })
+        ::std::result::Result::Ok(
+            crate::operation::stop_channel::StopChannelInput {
+                channel_id: self.channel_id
+                ,
+            }
+        )
     }
 }
+

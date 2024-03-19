@@ -3,7 +3,7 @@
 /// <p>Information about the mutual authentication attributes of a listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MutualAuthenticationAttributes {
+pub struct MutualAuthenticationAttributes  {
     /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
     pub mode: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
@@ -11,13 +11,13 @@ pub struct MutualAuthenticationAttributes {
     /// <p>Indicates whether expired client certificates are ignored.</p>
     pub ignore_client_certificate_expiry: ::std::option::Option<bool>,
 }
-impl MutualAuthenticationAttributes {
+impl  MutualAuthenticationAttributes  {
     /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
-    pub fn mode(&self) -> ::std::option::Option<&str> {
+    pub fn mode(&self) -> ::std::option::Option<& str> {
         self.mode.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>Indicates whether expired client certificates are ignored.</p>
@@ -48,8 +48,7 @@ impl MutualAuthenticationAttributesBuilder {
     }
     /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
     pub fn get_mode(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl MutualAuthenticationAttributesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl MutualAuthenticationAttributesBuilder {
     }
     /// <p>Indicates whether expired client certificates are ignored.</p>
     pub fn set_ignore_client_certificate_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_client_certificate_expiry = input;
-        self
+        self.ignore_client_certificate_expiry = input; self
     }
     /// <p>Indicates whether expired client certificates are ignored.</p>
     pub fn get_ignore_client_certificate_expiry(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,13 @@ impl MutualAuthenticationAttributesBuilder {
     /// Consumes the builder and constructs a [`MutualAuthenticationAttributes`](crate::types::MutualAuthenticationAttributes).
     pub fn build(self) -> crate::types::MutualAuthenticationAttributes {
         crate::types::MutualAuthenticationAttributes {
-            mode: self.mode,
-            trust_store_arn: self.trust_store_arn,
-            ignore_client_certificate_expiry: self.ignore_client_certificate_expiry,
+            mode: self.mode
+            ,
+            trust_store_arn: self.trust_store_arn
+            ,
+            ignore_client_certificate_expiry: self.ignore_client_certificate_expiry
+            ,
         }
     }
 }
+

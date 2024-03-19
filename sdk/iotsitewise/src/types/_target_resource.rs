@@ -3,15 +3,14 @@
 /// <p>The resource the action will be taken on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetResource {
+pub struct TargetResource  {
     /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::string::String,
 }
-impl TargetResource {
+impl  TargetResource  {
     /// <p>The ID of the asset, in UUID format.</p>
-    pub fn asset_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_id.deref()
+    pub fn asset_id(&self) -> & str {
+        use std::ops::Deref; self.asset_id.deref()
     }
 }
 impl TargetResource {
@@ -36,8 +35,7 @@ impl TargetResourceBuilder {
     }
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl TargetResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_id`](crate::types::builders::TargetResourceBuilder::asset_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TargetResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TargetResource {
-            asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_id",
-                    "asset_id was not specified but it is required when building TargetResource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TargetResource {
+                asset_id: self.asset_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_id", "asset_id was not specified but it is required when building TargetResource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

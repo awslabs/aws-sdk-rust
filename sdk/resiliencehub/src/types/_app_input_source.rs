@@ -3,7 +3,7 @@
 /// <p>The list of Resilience Hub application input sources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppInputSource {
+pub struct AppInputSource  {
     /// <p>The name of the input source.</p>
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the input source.</p>
@@ -17,21 +17,21 @@ pub struct AppInputSource {
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
     pub eks_source_cluster_namespace: ::std::option::Option<crate::types::EksSourceClusterNamespace>,
 }
-impl AppInputSource {
+impl  AppInputSource  {
     /// <p>The name of the input source.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
     /// <p>The resource type of the input source.</p>
-    pub fn import_type(&self) -> &crate::types::ResourceMappingType {
+    pub fn import_type(&self) -> & crate::types::ResourceMappingType {
         &self.import_type
     }
     /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The name of the Terraform s3 state ﬁle.</p>
-    pub fn terraform_source(&self) -> ::std::option::Option<&crate::types::TerraformSource> {
+    pub fn terraform_source(&self) -> ::std::option::Option<& crate::types::TerraformSource> {
         self.terraform_source.as_ref()
     }
     /// <p>The number of resources.</p>
@@ -39,7 +39,7 @@ impl AppInputSource {
         self.resource_count
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
-    pub fn eks_source_cluster_namespace(&self) -> ::std::option::Option<&crate::types::EksSourceClusterNamespace> {
+    pub fn eks_source_cluster_namespace(&self) -> ::std::option::Option<& crate::types::EksSourceClusterNamespace> {
         self.eks_source_cluster_namespace.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl AppInputSourceBuilder {
     }
     /// <p>The name of the input source.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// <p>The name of the input source.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl AppInputSourceBuilder {
     }
     /// <p>The resource type of the input source.</p>
     pub fn set_import_type(mut self, input: ::std::option::Option<crate::types::ResourceMappingType>) -> Self {
-        self.import_type = input;
-        self
+        self.import_type = input; self
     }
     /// <p>The resource type of the input source.</p>
     pub fn get_import_type(&self) -> &::std::option::Option<crate::types::ResourceMappingType> {
@@ -98,8 +96,7 @@ impl AppInputSourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl AppInputSourceBuilder {
     }
     /// <p>The name of the Terraform s3 state ﬁle.</p>
     pub fn set_terraform_source(mut self, input: ::std::option::Option<crate::types::TerraformSource>) -> Self {
-        self.terraform_source = input;
-        self
+        self.terraform_source = input; self
     }
     /// <p>The name of the Terraform s3 state ﬁle.</p>
     pub fn get_terraform_source(&self) -> &::std::option::Option<crate::types::TerraformSource> {
@@ -126,8 +122,7 @@ impl AppInputSourceBuilder {
     }
     /// <p>The number of resources.</p>
     pub fn set_resource_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.resource_count = input;
-        self
+        self.resource_count = input; self
     }
     /// <p>The number of resources.</p>
     pub fn get_resource_count(&self) -> &::std::option::Option<i32> {
@@ -140,8 +135,7 @@ impl AppInputSourceBuilder {
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
     pub fn set_eks_source_cluster_namespace(mut self, input: ::std::option::Option<crate::types::EksSourceClusterNamespace>) -> Self {
-        self.eks_source_cluster_namespace = input;
-        self
+        self.eks_source_cluster_namespace = input; self
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
     pub fn get_eks_source_cluster_namespace(&self) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
@@ -151,18 +145,26 @@ impl AppInputSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`import_type`](crate::types::builders::AppInputSourceBuilder::import_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AppInputSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppInputSource {
-            source_name: self.source_name,
-            import_type: self.import_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "import_type",
-                    "import_type was not specified but it is required when building AppInputSource",
-                )
-            })?,
-            source_arn: self.source_arn,
-            terraform_source: self.terraform_source,
-            resource_count: self.resource_count.unwrap_or_default(),
-            eks_source_cluster_namespace: self.eks_source_cluster_namespace,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppInputSource {
+                source_name: self.source_name
+                ,
+                import_type: self.import_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("import_type", "import_type was not specified but it is required when building AppInputSource")
+                    )?
+                ,
+                source_arn: self.source_arn
+                ,
+                terraform_source: self.terraform_source
+                ,
+                resource_count: self.resource_count
+                    .unwrap_or_default()
+                ,
+                eks_source_cluster_namespace: self.eks_source_cluster_namespace
+                ,
+            }
+        )
     }
 }
+

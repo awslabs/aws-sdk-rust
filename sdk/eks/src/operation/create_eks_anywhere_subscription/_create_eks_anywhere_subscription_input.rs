@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEksAnywhereSubscriptionInput {
+pub struct CreateEksAnywhereSubscriptionInput  {
     /// <p>The unique name for your subscription. It must be unique in your Amazon Web Services account in the Amazon Web Services Region you're creating the subscription in. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphabetic character and can't be longer than 100 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the term duration and term unit type of your subscription. This determines the term length of your subscription. Valid values are MONTHS for term unit and 12 or 36 for term duration, indicating a 12 month or 36 month subscription. This value cannot be changed after creating the subscription.</p>
@@ -16,15 +16,15 @@ pub struct CreateEksAnywhereSubscriptionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateEksAnywhereSubscriptionInput {
+impl  CreateEksAnywhereSubscriptionInput  {
     /// <p>The unique name for your subscription. It must be unique in your Amazon Web Services account in the Amazon Web Services Region you're creating the subscription in. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphabetic character and can't be longer than 100 characters.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An object representing the term duration and term unit type of your subscription. This determines the term length of your subscription. Valid values are MONTHS for term unit and 12 or 36 for term duration, indicating a 12 month or 36 month subscription. This value cannot be changed after creating the subscription.</p>
-    pub fn term(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscriptionTerm> {
+    pub fn term(&self) -> ::std::option::Option<& crate::types::EksAnywhereSubscriptionTerm> {
         self.term.as_ref()
     }
     /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
@@ -32,7 +32,7 @@ impl CreateEksAnywhereSubscriptionInput {
         self.license_quantity
     }
     /// <p>The license type for all licenses in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
-    pub fn license_type(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscriptionLicenseType> {
+    pub fn license_type(&self) -> ::std::option::Option<& crate::types::EksAnywhereSubscriptionLicenseType> {
         self.license_type.as_ref()
     }
     /// <p>A boolean indicating whether the subscription auto renews at the end of the term.</p>
@@ -40,11 +40,11 @@ impl CreateEksAnywhereSubscriptionInput {
         self.auto_renew
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -65,7 +65,7 @@ pub struct CreateEksAnywhereSubscriptionInputBuilder {
     pub(crate) license_type: ::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType>,
     pub(crate) auto_renew: ::std::option::Option<bool>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateEksAnywhereSubscriptionInputBuilder {
     /// <p>The unique name for your subscription. It must be unique in your Amazon Web Services account in the Amazon Web Services Region you're creating the subscription in. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphabetic character and can't be longer than 100 characters.</p>
@@ -76,8 +76,7 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>The unique name for your subscription. It must be unique in your Amazon Web Services account in the Amazon Web Services Region you're creating the subscription in. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphabetic character and can't be longer than 100 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique name for your subscription. It must be unique in your Amazon Web Services account in the Amazon Web Services Region you're creating the subscription in. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphabetic character and can't be longer than 100 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>An object representing the term duration and term unit type of your subscription. This determines the term length of your subscription. Valid values are MONTHS for term unit and 12 or 36 for term duration, indicating a 12 month or 36 month subscription. This value cannot be changed after creating the subscription.</p>
     pub fn set_term(mut self, input: ::std::option::Option<crate::types::EksAnywhereSubscriptionTerm>) -> Self {
-        self.term = input;
-        self
+        self.term = input; self
     }
     /// <p>An object representing the term duration and term unit type of your subscription. This determines the term length of your subscription. Valid values are MONTHS for term unit and 12 or 36 for term duration, indicating a 12 month or 36 month subscription. This value cannot be changed after creating the subscription.</p>
     pub fn get_term(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionTerm> {
@@ -105,8 +103,7 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn set_license_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.license_quantity = input;
-        self
+        self.license_quantity = input; self
     }
     /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn get_license_quantity(&self) -> &::std::option::Option<i32> {
@@ -119,8 +116,7 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>The license type for all licenses in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The license type for all licenses in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType> {
@@ -133,8 +129,7 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>A boolean indicating whether the subscription auto renews at the end of the term.</p>
     pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_renew = input;
-        self
+        self.auto_renew = input; self
     }
     /// <p>A boolean indicating whether the subscription auto renews at the end of the term.</p>
     pub fn get_auto_renew(&self) -> &::std::option::Option<bool> {
@@ -147,8 +142,7 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,34 +155,38 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEksAnywhereSubscriptionInput`](crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionInput {
-            name: self.name,
-            term: self.term,
-            license_quantity: self.license_quantity,
-            license_type: self.license_type,
-            auto_renew: self.auto_renew,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionInput {
+                name: self.name
+                ,
+                term: self.term
+                ,
+                license_quantity: self.license_quantity
+                ,
+                license_type: self.license_type
+                ,
+                auto_renew: self.auto_renew
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

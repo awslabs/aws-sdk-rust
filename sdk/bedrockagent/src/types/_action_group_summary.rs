@@ -3,7 +3,7 @@
 /// ActionGroup Summary
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionGroupSummary {
+pub struct ActionGroupSummary  {
     /// Identifier for a resource.
     pub action_group_id: ::std::string::String,
     /// Name for a resource.
@@ -15,27 +15,25 @@ pub struct ActionGroupSummary {
     /// Time Stamp.
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl ActionGroupSummary {
+impl  ActionGroupSummary  {
     /// Identifier for a resource.
-    pub fn action_group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_group_id.deref()
+    pub fn action_group_id(&self) -> & str {
+        use std::ops::Deref; self.action_group_id.deref()
     }
     /// Name for a resource.
-    pub fn action_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.action_group_name.deref()
+    pub fn action_group_name(&self) -> & str {
+        use std::ops::Deref; self.action_group_name.deref()
     }
     /// State of the action group
-    pub fn action_group_state(&self) -> &crate::types::ActionGroupState {
+    pub fn action_group_state(&self) -> & crate::types::ActionGroupState {
         &self.action_group_state
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -65,8 +63,7 @@ impl ActionGroupSummaryBuilder {
     }
     /// Identifier for a resource.
     pub fn set_action_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_group_id = input;
-        self
+        self.action_group_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_action_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl ActionGroupSummaryBuilder {
     }
     /// Name for a resource.
     pub fn set_action_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_group_name = input;
-        self
+        self.action_group_name = input; self
     }
     /// Name for a resource.
     pub fn get_action_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl ActionGroupSummaryBuilder {
     }
     /// State of the action group
     pub fn set_action_group_state(mut self, input: ::std::option::Option<crate::types::ActionGroupState>) -> Self {
-        self.action_group_state = input;
-        self
+        self.action_group_state = input; self
     }
     /// State of the action group
     pub fn get_action_group_state(&self) -> &::std::option::Option<crate::types::ActionGroupState> {
@@ -109,8 +104,7 @@ impl ActionGroupSummaryBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl ActionGroupSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -138,32 +131,32 @@ impl ActionGroupSummaryBuilder {
     /// - [`action_group_state`](crate::types::builders::ActionGroupSummaryBuilder::action_group_state)
     /// - [`updated_at`](crate::types::builders::ActionGroupSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionGroupSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionGroupSummary {
-            action_group_id: self.action_group_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_group_id",
-                    "action_group_id was not specified but it is required when building ActionGroupSummary",
-                )
-            })?,
-            action_group_name: self.action_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_group_name",
-                    "action_group_name was not specified but it is required when building ActionGroupSummary",
-                )
-            })?,
-            action_group_state: self.action_group_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_group_state",
-                    "action_group_state was not specified but it is required when building ActionGroupSummary",
-                )
-            })?,
-            description: self.description,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building ActionGroupSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionGroupSummary {
+                action_group_id: self.action_group_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_group_id", "action_group_id was not specified but it is required when building ActionGroupSummary")
+                    )?
+                ,
+                action_group_name: self.action_group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_group_name", "action_group_name was not specified but it is required when building ActionGroupSummary")
+                    )?
+                ,
+                action_group_state: self.action_group_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_group_state", "action_group_state was not specified but it is required when building ActionGroupSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building ActionGroupSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

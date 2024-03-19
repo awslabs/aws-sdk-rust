@@ -3,7 +3,8 @@
 /// <p>Information used to sort workflow runs in the returned list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowRunSortCriteria {}
+pub struct WorkflowRunSortCriteria  {
+}
 impl WorkflowRunSortCriteria {
     /// Creates a new builder-style object to manufacture [`WorkflowRunSortCriteria`](crate::types::WorkflowRunSortCriteria).
     pub fn builder() -> crate::types::builders::WorkflowRunSortCriteriaBuilder {
@@ -14,10 +15,13 @@ impl WorkflowRunSortCriteria {
 /// A builder for [`WorkflowRunSortCriteria`](crate::types::WorkflowRunSortCriteria).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct WorkflowRunSortCriteriaBuilder {}
+pub struct WorkflowRunSortCriteriaBuilder {
+}
 impl WorkflowRunSortCriteriaBuilder {
     /// Consumes the builder and constructs a [`WorkflowRunSortCriteria`](crate::types::WorkflowRunSortCriteria).
     pub fn build(self) -> crate::types::WorkflowRunSortCriteria {
-        crate::types::WorkflowRunSortCriteria {}
+        crate::types::WorkflowRunSortCriteria {
+        }
     }
 }
+

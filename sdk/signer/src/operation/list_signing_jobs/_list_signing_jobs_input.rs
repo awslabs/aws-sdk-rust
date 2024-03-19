@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSigningJobsInput {
+pub struct ListSigningJobsInput  {
     /// <p>A status value with which to filter your results.</p>
     pub status: ::std::option::Option<crate::types::SigningStatus>,
     /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
@@ -22,17 +22,17 @@ pub struct ListSigningJobsInput {
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
     pub job_invoker: ::std::option::Option<::std::string::String>,
 }
-impl ListSigningJobsInput {
+impl  ListSigningJobsInput  {
     /// <p>A status value with which to filter your results.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SigningStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SigningStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
-    pub fn platform_id(&self) -> ::std::option::Option<&str> {
+    pub fn platform_id(&self) -> ::std::option::Option<& str> {
         self.platform_id.as_deref()
     }
     /// <p>The IAM principal that requested the signing job.</p>
-    pub fn requested_by(&self) -> ::std::option::Option<&str> {
+    pub fn requested_by(&self) -> ::std::option::Option<& str> {
         self.requested_by.as_deref()
     }
     /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items.</p>
@@ -40,7 +40,7 @@ impl ListSigningJobsInput {
         self.max_results
     }
     /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
@@ -48,15 +48,15 @@ impl ListSigningJobsInput {
         self.is_revoked
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
-    pub fn signature_expires_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn signature_expires_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.signature_expires_before.as_ref()
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
-    pub fn signature_expires_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn signature_expires_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.signature_expires_after.as_ref()
     }
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
-    pub fn job_invoker(&self) -> ::std::option::Option<&str> {
+    pub fn job_invoker(&self) -> ::std::option::Option<& str> {
         self.job_invoker.as_deref()
     }
 }
@@ -89,8 +89,7 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>A status value with which to filter your results.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SigningStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A status value with which to filter your results.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SigningStatus> {
@@ -103,8 +102,7 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_id = input;
-        self
+        self.platform_id = input; self
     }
     /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
     pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>The IAM principal that requested the signing job.</p>
     pub fn set_requested_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.requested_by = input;
-        self
+        self.requested_by = input; self
     }
     /// <p>The IAM principal that requested the signing job.</p>
     pub fn get_requested_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -145,8 +141,7 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
     pub fn set_is_revoked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_revoked = input;
-        self
+        self.is_revoked = input; self
     }
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
     pub fn get_is_revoked(&self) -> &::std::option::Option<bool> {
@@ -173,8 +167,7 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
     pub fn set_signature_expires_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.signature_expires_before = input;
-        self
+        self.signature_expires_before = input; self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
     pub fn get_signature_expires_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +180,7 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
     pub fn set_signature_expires_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.signature_expires_after = input;
-        self
+        self.signature_expires_after = input; self
     }
     /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
     pub fn get_signature_expires_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -201,27 +193,36 @@ impl ListSigningJobsInputBuilder {
     }
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
     pub fn set_job_invoker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_invoker = input;
-        self
+        self.job_invoker = input; self
     }
     /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
     pub fn get_job_invoker(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_invoker
     }
     /// Consumes the builder and constructs a [`ListSigningJobsInput`](crate::operation::list_signing_jobs::ListSigningJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_signing_jobs::ListSigningJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_signing_jobs::ListSigningJobsInput {
-            status: self.status,
-            platform_id: self.platform_id,
-            requested_by: self.requested_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            is_revoked: self.is_revoked,
-            signature_expires_before: self.signature_expires_before,
-            signature_expires_after: self.signature_expires_after,
-            job_invoker: self.job_invoker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_signing_jobs::ListSigningJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_signing_jobs::ListSigningJobsInput {
+                status: self.status
+                ,
+                platform_id: self.platform_id
+                ,
+                requested_by: self.requested_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                is_revoked: self.is_revoked
+                ,
+                signature_expires_before: self.signature_expires_before
+                ,
+                signature_expires_after: self.signature_expires_after
+                ,
+                job_invoker: self.job_invoker
+                ,
+            }
+        )
     }
 }
+

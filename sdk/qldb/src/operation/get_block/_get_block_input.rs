@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetBlockInput {
+pub struct GetBlockInput  {
     /// <p>The name of the ledger.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
@@ -12,23 +12,23 @@ pub struct GetBlockInput {
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub digest_tip_address: ::std::option::Option<crate::types::ValueHolder>,
 }
-impl GetBlockInput {
+impl  GetBlockInput  {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-    pub fn block_address(&self) -> ::std::option::Option<&crate::types::ValueHolder> {
+    pub fn block_address(&self) -> ::std::option::Option<& crate::types::ValueHolder> {
         self.block_address.as_ref()
     }
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-    pub fn digest_tip_address(&self) -> ::std::option::Option<&crate::types::ValueHolder> {
+    pub fn digest_tip_address(&self) -> ::std::option::Option<& crate::types::ValueHolder> {
         self.digest_tip_address.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetBlockInput {
+impl  ::std::fmt::Debug for GetBlockInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetBlockInput");
         formatter.field("name", &self.name);
@@ -61,8 +61,7 @@ impl GetBlockInputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the ledger.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl GetBlockInputBuilder {
     /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub fn set_block_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
-        self.block_address = input;
-        self
+        self.block_address = input; self
     }
     /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
@@ -95,8 +93,7 @@ impl GetBlockInputBuilder {
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub fn set_digest_tip_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
-        self.digest_tip_address = input;
-        self
+        self.digest_tip_address = input; self
     }
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
@@ -105,11 +102,16 @@ impl GetBlockInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetBlockInput`](crate::operation::get_block::GetBlockInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_block::GetBlockInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_block::GetBlockInput {
-            name: self.name,
-            block_address: self.block_address,
-            digest_tip_address: self.digest_tip_address,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_block::GetBlockInput {
+                name: self.name
+                ,
+                block_address: self.block_address
+                ,
+                digest_tip_address: self.digest_tip_address
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetBlockInputBuilder {
@@ -121,3 +123,4 @@ impl ::std::fmt::Debug for GetBlockInputBuilder {
         formatter.finish()
     }
 }
+

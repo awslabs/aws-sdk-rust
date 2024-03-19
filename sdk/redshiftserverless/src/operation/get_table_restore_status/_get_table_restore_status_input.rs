@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTableRestoreStatusInput {
+pub struct GetTableRestoreStatusInput  {
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
     pub table_restore_request_id: ::std::option::Option<::std::string::String>,
 }
-impl GetTableRestoreStatusInput {
+impl  GetTableRestoreStatusInput  {
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
-    pub fn table_restore_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn table_restore_request_id(&self) -> ::std::option::Option<& str> {
         self.table_restore_request_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetTableRestoreStatusInputBuilder {
     }
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
     pub fn set_table_restore_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_restore_request_id = input;
-        self
+        self.table_restore_request_id = input; self
     }
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
     pub fn get_table_restore_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_restore_request_id
     }
     /// Consumes the builder and constructs a [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_table_restore_status::GetTableRestoreStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_table_restore_status::GetTableRestoreStatusInput {
-            table_restore_request_id: self.table_restore_request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_table_restore_status::GetTableRestoreStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_table_restore_status::GetTableRestoreStatusInput {
+                table_restore_request_id: self.table_restore_request_id
+                ,
+            }
+        )
     }
 }
+

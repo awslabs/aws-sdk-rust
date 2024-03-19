@@ -3,7 +3,7 @@
 /// Desired VPC Interface for a Flow
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcInterfaceRequest {
+pub struct VpcInterfaceRequest  {
     /// The name of the VPC Interface. This value must be unique within the current flow.
     pub name: ::std::option::Option<::std::string::String>,
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
@@ -11,31 +11,32 @@ pub struct VpcInterfaceRequest {
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// Security Group IDs to be used on ENI.
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// Subnet must be in the AZ of the Flow
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
-impl VpcInterfaceRequest {
+impl  VpcInterfaceRequest  {
     /// The name of the VPC Interface. This value must be unique within the current flow.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
-    pub fn network_interface_type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
+    pub fn network_interface_type(&self) -> ::std::option::Option<& crate::types::NetworkInterfaceType> {
         self.network_interface_type.as_ref()
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Security Group IDs to be used on ENI.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// Subnet must be in the AZ of the Flow
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
 }
@@ -53,7 +54,7 @@ pub struct VpcInterfaceRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_type: ::std::option::Option<crate::types::NetworkInterfaceType>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcInterfaceRequestBuilder {
@@ -65,8 +66,7 @@ impl VpcInterfaceRequestBuilder {
     }
     /// The name of the VPC Interface. This value must be unique within the current flow.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the VPC Interface. This value must be unique within the current flow.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl VpcInterfaceRequestBuilder {
     }
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
     pub fn set_network_interface_type(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceType>) -> Self {
-        self.network_interface_type = input;
-        self
+        self.network_interface_type = input; self
     }
     /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
     pub fn get_network_interface_type(&self) -> &::std::option::Option<crate::types::NetworkInterfaceType> {
@@ -94,8 +93,7 @@ impl VpcInterfaceRequestBuilder {
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,17 +106,16 @@ impl VpcInterfaceRequestBuilder {
     /// Security Group IDs to be used on ENI.
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// Security Group IDs to be used on ENI.
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// Security Group IDs to be used on ENI.
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Subnet must be in the AZ of the Flow
@@ -129,8 +126,7 @@ impl VpcInterfaceRequestBuilder {
     }
     /// Subnet must be in the AZ of the Flow
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// Subnet must be in the AZ of the Flow
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,11 +135,17 @@ impl VpcInterfaceRequestBuilder {
     /// Consumes the builder and constructs a [`VpcInterfaceRequest`](crate::types::VpcInterfaceRequest).
     pub fn build(self) -> crate::types::VpcInterfaceRequest {
         crate::types::VpcInterfaceRequest {
-            name: self.name,
-            network_interface_type: self.network_interface_type,
-            role_arn: self.role_arn,
-            security_group_ids: self.security_group_ids,
-            subnet_id: self.subnet_id,
+            name: self.name
+            ,
+            network_interface_type: self.network_interface_type
+            ,
+            role_arn: self.role_arn
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            subnet_id: self.subnet_id
+            ,
         }
     }
 }
+

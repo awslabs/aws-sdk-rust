@@ -3,19 +3,19 @@
 /// <p>Specifies membership in a designated DB security group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbSecurityGroupMembership {
+pub struct DbSecurityGroupMembership  {
     /// <p>The name of the DB security group.</p>
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the DB security group.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl DbSecurityGroupMembership {
+impl  DbSecurityGroupMembership  {
     /// <p>The name of the DB security group.</p>
-    pub fn db_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_security_group_name(&self) -> ::std::option::Option<& str> {
         self.db_security_group_name.as_deref()
     }
     /// <p>The status of the DB security group.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DbSecurityGroupMembershipBuilder {
     }
     /// <p>The name of the DB security group.</p>
     pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_security_group_name = input;
-        self
+        self.db_security_group_name = input; self
     }
     /// <p>The name of the DB security group.</p>
     pub fn get_db_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DbSecurityGroupMembershipBuilder {
     }
     /// <p>The status of the DB security group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the DB security group.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DbSecurityGroupMembershipBuilder {
     /// Consumes the builder and constructs a [`DbSecurityGroupMembership`](crate::types::DbSecurityGroupMembership).
     pub fn build(self) -> crate::types::DbSecurityGroupMembership {
         crate::types::DbSecurityGroupMembership {
-            db_security_group_name: self.db_security_group_name,
-            status: self.status,
+            db_security_group_name: self.db_security_group_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

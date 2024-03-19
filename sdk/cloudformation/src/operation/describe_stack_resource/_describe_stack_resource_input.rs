@@ -3,7 +3,7 @@
 /// <p>The input for <code>DescribeStackResource</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackResourceInput {
+pub struct DescribeStackResourceInput  {
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct DescribeStackResourceInput {
     /// <p>Default: There is no default value.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStackResourceInput {
+impl  DescribeStackResourceInput  {
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
     /// <li>
@@ -26,12 +26,12 @@ impl DescribeStackResourceInput {
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<& str> {
         self.logical_resource_id.as_deref()
     }
 }
@@ -72,8 +72,7 @@ impl DescribeStackResourceInputBuilder {
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
@@ -96,8 +95,7 @@ impl DescribeStackResourceInputBuilder {
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logical_resource_id = input;
-        self
+        self.logical_resource_id = input; self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
@@ -105,13 +103,15 @@ impl DescribeStackResourceInputBuilder {
         &self.logical_resource_id
     }
     /// Consumes the builder and constructs a [`DescribeStackResourceInput`](crate::operation::describe_stack_resource::DescribeStackResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_stack_resource::DescribeStackResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_stack_resource::DescribeStackResourceInput {
-            stack_name: self.stack_name,
-            logical_resource_id: self.logical_resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stack_resource::DescribeStackResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_stack_resource::DescribeStackResourceInput {
+                stack_name: self.stack_name
+                ,
+                logical_resource_id: self.logical_resource_id
+                ,
+            }
+        )
     }
 }
+

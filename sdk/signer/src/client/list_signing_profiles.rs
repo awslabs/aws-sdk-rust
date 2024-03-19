@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSigningProfiles`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`include_canceled(bool)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::include_canceled) / [`set_include_canceled(Option<bool>)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::set_include_canceled):<br>required: **false**<br><p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of profiles to be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p><br>
     ///   - [`platform_id(impl Into<String>)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::platform_id) / [`set_platform_id(Option<String>)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::set_platform_id):<br>required: **false**<br><p>Filters results to return only signing jobs initiated for a specified signing platform.</p><br>
     ///   - [`statuses(SigningProfileStatus)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::statuses) / [`set_statuses(Option<Vec::<SigningProfileStatus>>)`](crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::set_statuses):<br>required: **false**<br><p>Filters results to return only signing jobs with statuses in the specified list.</p><br>
-    /// - On success, responds with [`ListSigningProfilesOutput`](crate::operation::list_signing_profiles::ListSigningProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListSigningProfilesOutput`](crate::operation::list_signing_profiles::ListSigningProfilesOutput) with field(s):
     ///   - [`profiles(Option<Vec::<SigningProfile>>)`](crate::operation::list_signing_profiles::ListSigningProfilesOutput::profiles): <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signing_profiles::ListSigningProfilesOutput::next_token): <p>Value for specifying the next set of paginated results to return.</p>
-    /// - On failure, responds with [`SdkError<ListSigningProfilesError>`](crate::operation::list_signing_profiles::ListSigningProfilesError)
+                            /// - On failure, responds with [`SdkError<ListSigningProfilesError>`](crate::operation::list_signing_profiles::ListSigningProfilesError)
     pub fn list_signing_profiles(&self) -> crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder {
-        crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

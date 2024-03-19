@@ -3,7 +3,8 @@
 /// <p>The connector metadata specific to Amazon EventBridge.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventBridgeMetadata {}
+pub struct EventBridgeMetadata  {
+}
 impl EventBridgeMetadata {
     /// Creates a new builder-style object to manufacture [`EventBridgeMetadata`](crate::types::EventBridgeMetadata).
     pub fn builder() -> crate::types::builders::EventBridgeMetadataBuilder {
@@ -14,10 +15,13 @@ impl EventBridgeMetadata {
 /// A builder for [`EventBridgeMetadata`](crate::types::EventBridgeMetadata).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct EventBridgeMetadataBuilder {}
+pub struct EventBridgeMetadataBuilder {
+}
 impl EventBridgeMetadataBuilder {
     /// Consumes the builder and constructs a [`EventBridgeMetadata`](crate::types::EventBridgeMetadata).
     pub fn build(self) -> crate::types::EventBridgeMetadata {
-        crate::types::EventBridgeMetadata {}
+        crate::types::EventBridgeMetadata {
+        }
     }
 }
+

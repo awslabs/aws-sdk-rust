@@ -3,22 +3,22 @@
 /// <p>Represents the output for <code>GetShardIterator</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetShardIteratorOutput {
+pub struct GetShardIteratorOutput  {
     /// <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     pub shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetShardIteratorOutput {
+impl  GetShardIteratorOutput  {
     /// <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
-    pub fn shard_iterator(&self) -> ::std::option::Option<&str> {
+    pub fn shard_iterator(&self) -> ::std::option::Option<& str> {
         self.shard_iterator.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetShardIteratorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetShardIteratorOutput {
     /// Creates a new builder-style object to manufacture [`GetShardIteratorOutput`](crate::operation::get_shard_iterator::GetShardIteratorOutput).
     pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorOutputBuilder {
@@ -41,27 +41,28 @@ impl GetShardIteratorOutputBuilder {
     }
     /// <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     pub fn set_shard_iterator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shard_iterator = input;
-        self
+        self.shard_iterator = input; self
     }
     /// <p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>
     pub fn get_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
         &self.shard_iterator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetShardIteratorOutput`](crate::operation::get_shard_iterator::GetShardIteratorOutput).
     pub fn build(self) -> crate::operation::get_shard_iterator::GetShardIteratorOutput {
         crate::operation::get_shard_iterator::GetShardIteratorOutput {
-            shard_iterator: self.shard_iterator,
+            shard_iterator: self.shard_iterator
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

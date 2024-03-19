@@ -3,7 +3,7 @@
 /// <p>An address book with attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddressBook {
+pub struct AddressBook  {
     /// <p>The ARN of the address book.</p>
     pub address_book_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the address book.</p>
@@ -11,17 +11,17 @@ pub struct AddressBook {
     /// <p>The description of the address book.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl AddressBook {
+impl  AddressBook  {
     /// <p>The ARN of the address book.</p>
-    pub fn address_book_arn(&self) -> ::std::option::Option<&str> {
+    pub fn address_book_arn(&self) -> ::std::option::Option<& str> {
         self.address_book_arn.as_deref()
     }
     /// <p>The name of the address book.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the address book.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AddressBookBuilder {
     }
     /// <p>The ARN of the address book.</p>
     pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_book_arn = input;
-        self
+        self.address_book_arn = input; self
     }
     /// <p>The ARN of the address book.</p>
     pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AddressBookBuilder {
     }
     /// <p>The name of the address book.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the address book.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AddressBookBuilder {
     }
     /// <p>The description of the address book.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the address book.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AddressBookBuilder {
     /// Consumes the builder and constructs a [`AddressBook`](crate::types::AddressBook).
     pub fn build(self) -> crate::types::AddressBook {
         crate::types::AddressBook {
-            address_book_arn: self.address_book_arn,
-            name: self.name,
-            description: self.description,
+            address_book_arn: self.address_book_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

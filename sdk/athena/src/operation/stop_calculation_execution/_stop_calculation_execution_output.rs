@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopCalculationExecutionOutput {
+pub struct StopCalculationExecutionOutput  {
     /// <p><code>CREATING</code> - The calculation is in the process of being created.</p>
     /// <p><code>CREATED</code> - The calculation has been created and is ready to run.</p>
     /// <p><code>QUEUED</code> - The calculation has been queued for processing.</p>
@@ -14,7 +14,7 @@ pub struct StopCalculationExecutionOutput {
     pub state: ::std::option::Option<crate::types::CalculationExecutionState>,
     _request_id: Option<String>,
 }
-impl StopCalculationExecutionOutput {
+impl  StopCalculationExecutionOutput  {
     /// <p><code>CREATING</code> - The calculation is in the process of being created.</p>
     /// <p><code>CREATED</code> - The calculation has been created and is ready to run.</p>
     /// <p><code>QUEUED</code> - The calculation has been queued for processing.</p>
@@ -23,15 +23,15 @@ impl StopCalculationExecutionOutput {
     /// <p><code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p><code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p><code>FAILED</code> - The calculation failed and is no longer running.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::CalculationExecutionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::CalculationExecutionState> {
         self.state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopCalculationExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopCalculationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopCalculationExecutionOutput`](crate::operation::stop_calculation_execution::StopCalculationExecutionOutput).
     pub fn builder() -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionOutputBuilder {
@@ -68,8 +68,7 @@ impl StopCalculationExecutionOutputBuilder {
     /// <p><code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p><code>FAILED</code> - The calculation failed and is no longer running.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CalculationExecutionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p><code>CREATING</code> - The calculation is in the process of being created.</p>
     /// <p><code>CREATED</code> - The calculation has been created and is ready to run.</p>
@@ -83,19 +82,21 @@ impl StopCalculationExecutionOutputBuilder {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopCalculationExecutionOutput`](crate::operation::stop_calculation_execution::StopCalculationExecutionOutput).
     pub fn build(self) -> crate::operation::stop_calculation_execution::StopCalculationExecutionOutput {
         crate::operation::stop_calculation_execution::StopCalculationExecutionOutput {
-            state: self.state,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

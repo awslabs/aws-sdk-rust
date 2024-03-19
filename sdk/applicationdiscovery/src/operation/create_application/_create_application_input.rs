@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>Name of the application to be created.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the application to be created.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>Name of the application to be created.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description of the application to be created.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Name of the application to be created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the application to be created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Description of the application to be created.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the application to be created.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

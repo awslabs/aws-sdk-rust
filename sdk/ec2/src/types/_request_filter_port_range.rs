@@ -3,13 +3,13 @@
 /// <p>Describes a port range.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestFilterPortRange {
+pub struct RequestFilterPortRange  {
     /// <p>The first port in the range.</p>
     pub from_port: ::std::option::Option<i32>,
     /// <p>The last port in the range.</p>
     pub to_port: ::std::option::Option<i32>,
 }
-impl RequestFilterPortRange {
+impl  RequestFilterPortRange  {
     /// <p>The first port in the range.</p>
     pub fn from_port(&self) -> ::std::option::Option<i32> {
         self.from_port
@@ -41,8 +41,7 @@ impl RequestFilterPortRangeBuilder {
     }
     /// <p>The first port in the range.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>The first port in the range.</p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl RequestFilterPortRangeBuilder {
     }
     /// <p>The last port in the range.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// <p>The last port in the range.</p>
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl RequestFilterPortRangeBuilder {
     /// Consumes the builder and constructs a [`RequestFilterPortRange`](crate::types::RequestFilterPortRange).
     pub fn build(self) -> crate::types::RequestFilterPortRange {
         crate::types::RequestFilterPortRange {
-            from_port: self.from_port,
-            to_port: self.to_port,
+            from_port: self.from_port
+            ,
+            to_port: self.to_port
+            ,
         }
     }
 }
+

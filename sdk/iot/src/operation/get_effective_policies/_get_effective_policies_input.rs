@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEffectivePoliciesInput {
+pub struct GetEffectivePoliciesInput  {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The Cognito identity pool ID.</p>
@@ -10,17 +10,17 @@ pub struct GetEffectivePoliciesInput {
     /// <p>The thing name.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
-impl GetEffectivePoliciesInput {
+impl  GetEffectivePoliciesInput  {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn cognito_identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn cognito_identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.cognito_identity_pool_id.as_deref()
     }
     /// <p>The thing name.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetEffectivePoliciesInputBuilder {
     }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetEffectivePoliciesInputBuilder {
     }
     /// <p>The Cognito identity pool ID.</p>
     pub fn set_cognito_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cognito_identity_pool_id = input;
-        self
+        self.cognito_identity_pool_id = input; self
     }
     /// <p>The Cognito identity pool ID.</p>
     pub fn get_cognito_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl GetEffectivePoliciesInputBuilder {
     }
     /// <p>The thing name.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The thing name.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
     /// Consumes the builder and constructs a [`GetEffectivePoliciesInput`](crate::operation::get_effective_policies::GetEffectivePoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_effective_policies::GetEffectivePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_effective_policies::GetEffectivePoliciesInput {
-            principal: self.principal,
-            cognito_identity_pool_id: self.cognito_identity_pool_id,
-            thing_name: self.thing_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_effective_policies::GetEffectivePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_effective_policies::GetEffectivePoliciesInput {
+                principal: self.principal
+                ,
+                cognito_identity_pool_id: self.cognito_identity_pool_id
+                ,
+                thing_name: self.thing_name
+                ,
+            }
+        )
     }
 }
+

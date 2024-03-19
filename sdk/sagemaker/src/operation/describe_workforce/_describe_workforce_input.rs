@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkforceInput {
+pub struct DescribeWorkforceInput  {
     /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
     pub workforce_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeWorkforceInput {
+impl  DescribeWorkforceInput  {
     /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
-    pub fn workforce_name(&self) -> ::std::option::Option<&str> {
+    pub fn workforce_name(&self) -> ::std::option::Option<& str> {
         self.workforce_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeWorkforceInputBuilder {
     }
     /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
     pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workforce_name = input;
-        self
+        self.workforce_name = input; self
     }
     /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified.</p>
     pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workforce_name
     }
     /// Consumes the builder and constructs a [`DescribeWorkforceInput`](crate::operation::describe_workforce::DescribeWorkforceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_workforce::DescribeWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_workforce::DescribeWorkforceInput {
-            workforce_name: self.workforce_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workforce::DescribeWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_workforce::DescribeWorkforceInput {
+                workforce_name: self.workforce_name
+                ,
+            }
+        )
     }
 }
+

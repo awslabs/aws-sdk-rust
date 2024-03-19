@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbSecurityGroupInput {
+pub struct CreateDbSecurityGroupInput  {
     /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -21,9 +21,9 @@ pub struct CreateDbSecurityGroupInput {
     /// <p>The description for the DB security group.</p>
     pub db_security_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the DB security group.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDbSecurityGroupInput {
+impl  CreateDbSecurityGroupInput  {
     /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -37,18 +37,19 @@ impl CreateDbSecurityGroupInput {
     /// <p>Must not be "Default"</p></li>
     /// </ul>
     /// <p>Example: <code>mysecuritygroup</code></p>
-    pub fn db_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_security_group_name(&self) -> ::std::option::Option<& str> {
         self.db_security_group_name.as_deref()
     }
     /// <p>The description for the DB security group.</p>
-    pub fn db_security_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn db_security_group_description(&self) -> ::std::option::Option<& str> {
         self.db_security_group_description.as_deref()
     }
     /// <p>Tags to assign to the DB security group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDbSecurityGroupInput {
@@ -64,7 +65,7 @@ impl CreateDbSecurityGroupInput {
 pub struct CreateDbSecurityGroupInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_group_description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDbSecurityGroupInputBuilder {
     /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
@@ -99,8 +100,7 @@ impl CreateDbSecurityGroupInputBuilder {
     /// </ul>
     /// <p>Example: <code>mysecuritygroup</code></p>
     pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_security_group_name = input;
-        self
+        self.db_security_group_name = input; self
     }
     /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -126,8 +126,7 @@ impl CreateDbSecurityGroupInputBuilder {
     }
     /// <p>The description for the DB security group.</p>
     pub fn set_db_security_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_security_group_description = input;
-        self
+        self.db_security_group_description = input; self
     }
     /// <p>The description for the DB security group.</p>
     pub fn get_db_security_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,28 +139,30 @@ impl CreateDbSecurityGroupInputBuilder {
     /// <p>Tags to assign to the DB security group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to assign to the DB security group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to assign to the DB security group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbSecurityGroupInput`](crate::operation::create_db_security_group::CreateDbSecurityGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_db_security_group::CreateDbSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_db_security_group::CreateDbSecurityGroupInput {
-            db_security_group_name: self.db_security_group_name,
-            db_security_group_description: self.db_security_group_description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_db_security_group::CreateDbSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_db_security_group::CreateDbSecurityGroupInput {
+                db_security_group_name: self.db_security_group_name
+                ,
+                db_security_group_description: self.db_security_group_description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

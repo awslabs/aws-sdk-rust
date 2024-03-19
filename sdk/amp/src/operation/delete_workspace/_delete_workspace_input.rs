@@ -3,19 +3,19 @@
 /// <p>Represents the input of a <code>DeleteWorkspace</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkspaceInput {
+pub struct DeleteWorkspaceInput  {
     /// <p>The ID of the workspace to delete.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWorkspaceInput {
+impl  DeleteWorkspaceInput  {
     /// <p>The ID of the workspace to delete.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteWorkspaceInputBuilder {
     }
     /// <p>The ID of the workspace to delete.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to delete.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteWorkspaceInputBuilder {
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteWorkspaceInput`](crate::operation::delete_workspace::DeleteWorkspaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_workspace::DeleteWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_workspace::DeleteWorkspaceInput {
-            workspace_id: self.workspace_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_workspace::DeleteWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_workspace::DeleteWorkspaceInput {
+                workspace_id: self.workspace_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

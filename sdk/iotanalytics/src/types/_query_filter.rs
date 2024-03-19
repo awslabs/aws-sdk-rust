@@ -3,13 +3,13 @@
 /// <p>Information that is used to filter message data, to segregate it according to the timeframe in which it arrives.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryFilter {
+pub struct QueryFilter  {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     pub delta_time: ::std::option::Option<crate::types::DeltaTime>,
 }
-impl QueryFilter {
+impl  QueryFilter  {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
-    pub fn delta_time(&self) -> ::std::option::Option<&crate::types::DeltaTime> {
+    pub fn delta_time(&self) -> ::std::option::Option<& crate::types::DeltaTime> {
         self.delta_time.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl QueryFilterBuilder {
     }
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     pub fn set_delta_time(mut self, input: ::std::option::Option<crate::types::DeltaTime>) -> Self {
-        self.delta_time = input;
-        self
+        self.delta_time = input; self
     }
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     pub fn get_delta_time(&self) -> &::std::option::Option<crate::types::DeltaTime> {
@@ -43,6 +42,10 @@ impl QueryFilterBuilder {
     }
     /// Consumes the builder and constructs a [`QueryFilter`](crate::types::QueryFilter).
     pub fn build(self) -> crate::types::QueryFilter {
-        crate::types::QueryFilter { delta_time: self.delta_time }
+        crate::types::QueryFilter {
+            delta_time: self.delta_time
+            ,
+        }
     }
 }
+

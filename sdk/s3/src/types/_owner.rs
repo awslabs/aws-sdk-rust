@@ -3,7 +3,7 @@
 /// <p>Container for the owner's display name and ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Owner {
+pub struct Owner  {
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ pub struct Owner {
     /// <p>Container for the ID of the owner.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl Owner {
+impl  Owner  {
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
     /// <li>
@@ -51,11 +51,11 @@ impl Owner {
     /// </ul><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Container for the ID of the owner.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -121,8 +121,7 @@ impl OwnerBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
@@ -155,8 +154,7 @@ impl OwnerBuilder {
     }
     /// <p>Container for the ID of the owner.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Container for the ID of the owner.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +163,11 @@ impl OwnerBuilder {
     /// Consumes the builder and constructs a [`Owner`](crate::types::Owner).
     pub fn build(self) -> crate::types::Owner {
         crate::types::Owner {
-            display_name: self.display_name,
-            id: self.id,
+            display_name: self.display_name
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

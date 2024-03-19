@@ -3,19 +3,19 @@
 /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityCenterConfiguration {
+pub struct IdentityCenterConfiguration  {
     /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
     pub enable_identity_center: ::std::option::Option<bool>,
     /// <p>The IAM Identity Center instance ARN that the workgroup associates to.</p>
     pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
-impl IdentityCenterConfiguration {
+impl  IdentityCenterConfiguration  {
     /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
     pub fn enable_identity_center(&self) -> ::std::option::Option<bool> {
         self.enable_identity_center
     }
     /// <p>The IAM Identity Center instance ARN that the workgroup associates to.</p>
-    pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn identity_center_instance_arn(&self) -> ::std::option::Option<& str> {
         self.identity_center_instance_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IdentityCenterConfigurationBuilder {
     }
     /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
     pub fn set_enable_identity_center(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_identity_center = input;
-        self
+        self.enable_identity_center = input; self
     }
     /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
     pub fn get_enable_identity_center(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl IdentityCenterConfigurationBuilder {
     }
     /// <p>The IAM Identity Center instance ARN that the workgroup associates to.</p>
     pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_center_instance_arn = input;
-        self
+        self.identity_center_instance_arn = input; self
     }
     /// <p>The IAM Identity Center instance ARN that the workgroup associates to.</p>
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl IdentityCenterConfigurationBuilder {
     /// Consumes the builder and constructs a [`IdentityCenterConfiguration`](crate::types::IdentityCenterConfiguration).
     pub fn build(self) -> crate::types::IdentityCenterConfiguration {
         crate::types::IdentityCenterConfiguration {
-            enable_identity_center: self.enable_identity_center,
-            identity_center_instance_arn: self.identity_center_instance_arn,
+            enable_identity_center: self.enable_identity_center
+            ,
+            identity_center_instance_arn: self.identity_center_instance_arn
+            ,
         }
     }
 }
+

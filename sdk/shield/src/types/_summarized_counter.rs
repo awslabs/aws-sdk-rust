@@ -3,7 +3,7 @@
 /// <p>The counter that describes a DDoS attack.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SummarizedCounter {
+pub struct SummarizedCounter  {
     /// <p>The counter name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the counter for a specified time period.</p>
@@ -17,9 +17,9 @@ pub struct SummarizedCounter {
     /// <p>The unit of the counters.</p>
     pub unit: ::std::option::Option<::std::string::String>,
 }
-impl SummarizedCounter {
+impl  SummarizedCounter  {
     /// <p>The counter name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum value of the counter for a specified time period.</p>
@@ -39,7 +39,7 @@ impl SummarizedCounter {
         self.n
     }
     /// <p>The unit of the counters.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl SummarizedCounterBuilder {
     }
     /// <p>The counter name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The counter name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl SummarizedCounterBuilder {
     }
     /// <p>The maximum value of the counter for a specified time period.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum value of the counter for a specified time period.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -97,8 +95,7 @@ impl SummarizedCounterBuilder {
     }
     /// <p>The average value of the counter for a specified time period.</p>
     pub fn set_average(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.average = input;
-        self
+        self.average = input; self
     }
     /// <p>The average value of the counter for a specified time period.</p>
     pub fn get_average(&self) -> &::std::option::Option<f64> {
@@ -111,8 +108,7 @@ impl SummarizedCounterBuilder {
     }
     /// <p>The total of counter values for a specified time period.</p>
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sum = input;
-        self
+        self.sum = input; self
     }
     /// <p>The total of counter values for a specified time period.</p>
     pub fn get_sum(&self) -> &::std::option::Option<f64> {
@@ -125,8 +121,7 @@ impl SummarizedCounterBuilder {
     }
     /// <p>The number of counters for a specified time period.</p>
     pub fn set_n(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.n = input;
-        self
+        self.n = input; self
     }
     /// <p>The number of counters for a specified time period.</p>
     pub fn get_n(&self) -> &::std::option::Option<i32> {
@@ -139,8 +134,7 @@ impl SummarizedCounterBuilder {
     }
     /// <p>The unit of the counters.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of the counters.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,23 @@ impl SummarizedCounterBuilder {
     /// Consumes the builder and constructs a [`SummarizedCounter`](crate::types::SummarizedCounter).
     pub fn build(self) -> crate::types::SummarizedCounter {
         crate::types::SummarizedCounter {
-            name: self.name,
-            max: self.max.unwrap_or_default(),
-            average: self.average.unwrap_or_default(),
-            sum: self.sum.unwrap_or_default(),
-            n: self.n.unwrap_or_default(),
-            unit: self.unit,
+            name: self.name
+            ,
+            max: self.max
+                .unwrap_or_default()
+            ,
+            average: self.average
+                .unwrap_or_default()
+            ,
+            sum: self.sum
+                .unwrap_or_default()
+            ,
+            n: self.n
+                .unwrap_or_default()
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

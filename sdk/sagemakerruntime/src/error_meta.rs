@@ -40,7 +40,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,50 +53,44 @@ impl ::std::fmt::Display for Error {
             Error::ModelStreamError(inner) => inner.fmt(f),
             Error::ServiceUnavailable(inner) => inner.fmt(f),
             Error::ValidationError(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::InternalDependencyException(inner) => inner.meta(),
-            Self::InternalFailure(inner) => inner.meta(),
-            Self::InternalStreamFailure(inner) => inner.meta(),
-            Self::ModelError(inner) => inner.meta(),
-            Self::ModelNotReadyException(inner) => inner.meta(),
-            Self::ModelStreamError(inner) => inner.meta(),
-            Self::ServiceUnavailable(inner) => inner.meta(),
-            Self::ValidationError(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint::InvokeEndpointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::InternalDependencyException(inner) => inner.meta(),
+Self::InternalFailure(inner) => inner.meta(),
+Self::InternalStreamFailure(inner) => inner.meta(),
+Self::ModelError(inner) => inner.meta(),
+Self::ModelNotReadyException(inner) => inner.meta(),
+Self::ModelStreamError(inner) => inner.meta(),
+Self::ServiceUnavailable(inner) => inner.meta(),
+Self::ValidationError(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint::InvokeEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint::InvokeEndpointError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -113,17 +107,16 @@ impl From<crate::operation::invoke_endpoint::InvokeEndpointError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -137,69 +130,42 @@ impl From<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> for
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError> for Error {
     fn from(err: crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError) -> Self {
         match err {
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalFailure(inner) => {
-                Error::InternalFailure(inner)
-            }
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ValidationError(inner) => {
-                Error::ValidationError(inner)
-            }
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ModelError(inner) => {
-                Error::ModelError(inner)
-            }
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ModelStreamError(inner) => {
-                Error::ModelStreamError(inner)
-            }
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalStreamFailure(inner) => {
-                Error::InternalStreamFailure(inner)
-            }
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ServiceUnavailable(inner) => {
-                Error::ServiceUnavailable(inner)
-            }
-            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ModelError(inner) => Error::ModelError(inner),
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ModelStreamError(inner) => Error::ModelStreamError(inner),
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalStreamFailure(inner) => Error::InternalStreamFailure(inner),
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ResponseStreamError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ResponseStreamError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ResponseStreamError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -223,7 +189,7 @@ impl ::std::error::Error for Error {
             Error::ModelStreamError(inner) => inner.source(),
             Error::ServiceUnavailable(inner) => inner.source(),
             Error::ValidationError(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -242,3 +208,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

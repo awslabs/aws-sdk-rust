@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLakeFormationOptInsOutput {
+pub struct ListLakeFormationOptInsOutput  {
     /// <p>A list of principal-resource pairs that have Lake Formation permissins enforced.</p>
-    pub lake_formation_opt_ins_info_list: ::std::option::Option<::std::vec::Vec<crate::types::LakeFormationOptInsInfo>>,
+    pub lake_formation_opt_ins_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::LakeFormationOptInsInfo>>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLakeFormationOptInsOutput {
+impl  ListLakeFormationOptInsOutput  {
     /// <p>A list of principal-resource pairs that have Lake Formation permissins enforced.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lake_formation_opt_ins_info_list.is_none()`.
-    pub fn lake_formation_opt_ins_info_list(&self) -> &[crate::types::LakeFormationOptInsInfo] {
-        self.lake_formation_opt_ins_info_list.as_deref().unwrap_or_default()
+    pub fn lake_formation_opt_ins_info_list(&self) -> & [crate::types::LakeFormationOptInsInfo] {
+        self.lake_formation_opt_ins_info_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLakeFormationOptInsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLakeFormationOptInsOutput {
     /// Creates a new builder-style object to manufacture [`ListLakeFormationOptInsOutput`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput).
     pub fn builder() -> crate::operation::list_lake_formation_opt_ins::builders::ListLakeFormationOptInsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListLakeFormationOptInsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLakeFormationOptInsOutputBuilder {
-    pub(crate) lake_formation_opt_ins_info_list: ::std::option::Option<::std::vec::Vec<crate::types::LakeFormationOptInsInfo>>,
+    pub(crate) lake_formation_opt_ins_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::LakeFormationOptInsInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListLakeFormationOptInsOutputBuilder {
     /// <p>A list of principal-resource pairs that have Lake Formation permissins enforced.</p>
     pub fn lake_formation_opt_ins_info_list(mut self, input: crate::types::LakeFormationOptInsInfo) -> Self {
         let mut v = self.lake_formation_opt_ins_info_list.unwrap_or_default();
-        v.push(input);
-        self.lake_formation_opt_ins_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lake_formation_opt_ins_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of principal-resource pairs that have Lake Formation permissins enforced.</p>
-    pub fn set_lake_formation_opt_ins_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LakeFormationOptInsInfo>>,
-    ) -> Self {
-        self.lake_formation_opt_ins_info_list = input;
-        self
+    pub fn set_lake_formation_opt_ins_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LakeFormationOptInsInfo>>) -> Self {
+        self.lake_formation_opt_ins_info_list = input; self
     }
     /// <p>A list of principal-resource pairs that have Lake Formation permissins enforced.</p>
-    pub fn get_lake_formation_opt_ins_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LakeFormationOptInsInfo>> {
+    pub fn get_lake_formation_opt_ins_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LakeFormationOptInsInfo>> {
         &self.lake_formation_opt_ins_info_list
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
@@ -72,28 +69,30 @@ impl ListLakeFormationOptInsOutputBuilder {
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLakeFormationOptInsOutput`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput).
     pub fn build(self) -> crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput {
         crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput {
-            lake_formation_opt_ins_info_list: self.lake_formation_opt_ins_info_list,
-            next_token: self.next_token,
+            lake_formation_opt_ins_info_list: self.lake_formation_opt_ins_info_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

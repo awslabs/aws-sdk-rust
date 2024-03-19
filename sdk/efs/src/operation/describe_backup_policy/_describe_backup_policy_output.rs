@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBackupPolicyOutput {
+pub struct DescribeBackupPolicyOutput  {
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     pub backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
     _request_id: Option<String>,
 }
-impl DescribeBackupPolicyOutput {
+impl  DescribeBackupPolicyOutput  {
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
-    pub fn backup_policy(&self) -> ::std::option::Option<&crate::types::BackupPolicy> {
+    pub fn backup_policy(&self) -> ::std::option::Option<& crate::types::BackupPolicy> {
         self.backup_policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBackupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBackupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupPolicyOutput`](crate::operation::describe_backup_policy::DescribeBackupPolicyOutput).
     pub fn builder() -> crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeBackupPolicyOutputBuilder {
     }
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     pub fn set_backup_policy(mut self, input: ::std::option::Option<crate::types::BackupPolicy>) -> Self {
-        self.backup_policy = input;
-        self
+        self.backup_policy = input; self
     }
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     pub fn get_backup_policy(&self) -> &::std::option::Option<crate::types::BackupPolicy> {
         &self.backup_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBackupPolicyOutput`](crate::operation::describe_backup_policy::DescribeBackupPolicyOutput).
     pub fn build(self) -> crate::operation::describe_backup_policy::DescribeBackupPolicyOutput {
         crate::operation::describe_backup_policy::DescribeBackupPolicyOutput {
-            backup_policy: self.backup_policy,
+            backup_policy: self.backup_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

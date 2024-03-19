@@ -5,55 +5,51 @@ pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_pa
 
 impl GetUnfilteredPartitionsMetadataInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_unfiltered_partitions_metadata();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_unfiltered_partitions_metadata();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetUnfilteredPartitionsMetadata`.
-///
+/// 
 /// <p>Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.</p>
 /// <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartitions</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder,
+                    inner: crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput,
-        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError,
-    > for GetUnfilteredPartitionsMetadataFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput,
-            crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput,
+                    crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError,
+                > for GetUnfilteredPartitionsMetadataFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput,
+                        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetUnfilteredPartitionsMetadataFluentBuilder {
     /// Creates a new `GetUnfilteredPartitionsMetadata`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadata::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadata::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput,
-        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadata::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadata::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput, crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator {
-        crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator {
+                                crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region(input.into());
@@ -434,12 +421,12 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
         self
     }
     /// <p>A list of supported permission types.</p>
-    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
+    pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PermissionType>>) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
     }
     /// <p>A list of supported permission types.</p>
-    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
+    pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PermissionType>> {
         self.inner.get_supported_permission_types()
     }
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
@@ -499,3 +486,4 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
         self.inner.get_query_session_context()
     }
 }
+

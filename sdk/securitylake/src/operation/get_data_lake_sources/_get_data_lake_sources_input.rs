@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataLakeSourcesInput {
+pub struct GetDataLakeSourcesInput  {
     /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and log sources, is retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetDataLakeSourcesInput {
+impl  GetDataLakeSourcesInput  {
     /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
-    pub fn accounts(&self) -> &[::std::string::String] {
-        self.accounts.as_deref().unwrap_or_default()
+    pub fn accounts(&self) -> & [::std::string::String] {
+        self.accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and log sources, is retrieved.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -24,7 +25,7 @@ impl GetDataLakeSourcesInput {
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl GetDataLakeSourcesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeSourcesInputBuilder {
-    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -51,17 +52,16 @@ impl GetDataLakeSourcesInputBuilder {
     /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input.into());
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accounts = input; self
     }
     /// <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accounts
     }
     /// <p>The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and log sources, is retrieved.</p>
@@ -71,8 +71,7 @@ impl GetDataLakeSourcesInputBuilder {
     }
     /// <p>The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and log sources, is retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and log sources, is retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -87,8 +86,7 @@ impl GetDataLakeSourcesInputBuilder {
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
@@ -96,14 +94,17 @@ impl GetDataLakeSourcesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetDataLakeSourcesInput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_lake_sources::GetDataLakeSourcesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_data_lake_sources::GetDataLakeSourcesInput {
-            accounts: self.accounts,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_lake_sources::GetDataLakeSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_lake_sources::GetDataLakeSourcesInput {
+                accounts: self.accounts
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

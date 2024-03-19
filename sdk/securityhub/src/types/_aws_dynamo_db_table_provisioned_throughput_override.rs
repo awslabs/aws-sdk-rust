@@ -3,11 +3,11 @@
 /// <p>Replica-specific configuration for the provisioned throughput.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDynamoDbTableProvisionedThroughputOverride {
+pub struct AwsDynamoDbTableProvisionedThroughputOverride  {
     /// <p>The read capacity units for the replica.</p>
     pub read_capacity_units: ::std::option::Option<i32>,
 }
-impl AwsDynamoDbTableProvisionedThroughputOverride {
+impl  AwsDynamoDbTableProvisionedThroughputOverride  {
     /// <p>The read capacity units for the replica.</p>
     pub fn read_capacity_units(&self) -> ::std::option::Option<i32> {
         self.read_capacity_units
@@ -34,8 +34,7 @@ impl AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
     }
     /// <p>The read capacity units for the replica.</p>
     pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
     }
     /// <p>The read capacity units for the replica.</p>
     pub fn get_read_capacity_units(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
     /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::types::AwsDynamoDbTableProvisionedThroughputOverride).
     pub fn build(self) -> crate::types::AwsDynamoDbTableProvisionedThroughputOverride {
         crate::types::AwsDynamoDbTableProvisionedThroughputOverride {
-            read_capacity_units: self.read_capacity_units,
+            read_capacity_units: self.read_capacity_units
+            ,
         }
     }
 }
+

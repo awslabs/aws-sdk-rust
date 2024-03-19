@@ -3,7 +3,7 @@
 /// <p>Contains configuration information about a CloudFront function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionConfig {
+pub struct FunctionConfig  {
     /// <p>A comment to describe the function.</p>
     pub comment: ::std::string::String,
     /// <p>The function's runtime environment version.</p>
@@ -11,18 +11,17 @@ pub struct FunctionConfig {
     /// <p>The configuration for the Key Value Store associations.</p>
     pub key_value_store_associations: ::std::option::Option<crate::types::KeyValueStoreAssociations>,
 }
-impl FunctionConfig {
+impl  FunctionConfig  {
     /// <p>A comment to describe the function.</p>
-    pub fn comment(&self) -> &str {
-        use std::ops::Deref;
-        self.comment.deref()
+    pub fn comment(&self) -> & str {
+        use std::ops::Deref; self.comment.deref()
     }
     /// <p>The function's runtime environment version.</p>
-    pub fn runtime(&self) -> &crate::types::FunctionRuntime {
+    pub fn runtime(&self) -> & crate::types::FunctionRuntime {
         &self.runtime
     }
     /// <p>The configuration for the Key Value Store associations.</p>
-    pub fn key_value_store_associations(&self) -> ::std::option::Option<&crate::types::KeyValueStoreAssociations> {
+    pub fn key_value_store_associations(&self) -> ::std::option::Option<& crate::types::KeyValueStoreAssociations> {
         self.key_value_store_associations.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl FunctionConfigBuilder {
     }
     /// <p>A comment to describe the function.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment to describe the function.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl FunctionConfigBuilder {
     }
     /// <p>The function's runtime environment version.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::FunctionRuntime>) -> Self {
-        self.runtime = input;
-        self
+        self.runtime = input; self
     }
     /// <p>The function's runtime environment version.</p>
     pub fn get_runtime(&self) -> &::std::option::Option<crate::types::FunctionRuntime> {
@@ -79,8 +76,7 @@ impl FunctionConfigBuilder {
     }
     /// <p>The configuration for the Key Value Store associations.</p>
     pub fn set_key_value_store_associations(mut self, input: ::std::option::Option<crate::types::KeyValueStoreAssociations>) -> Self {
-        self.key_value_store_associations = input;
-        self
+        self.key_value_store_associations = input; self
     }
     /// <p>The configuration for the Key Value Store associations.</p>
     pub fn get_key_value_store_associations(&self) -> &::std::option::Option<crate::types::KeyValueStoreAssociations> {
@@ -91,20 +87,22 @@ impl FunctionConfigBuilder {
     /// - [`comment`](crate::types::builders::FunctionConfigBuilder::comment)
     /// - [`runtime`](crate::types::builders::FunctionConfigBuilder::runtime)
     pub fn build(self) -> ::std::result::Result<crate::types::FunctionConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FunctionConfig {
-            comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comment",
-                    "comment was not specified but it is required when building FunctionConfig",
-                )
-            })?,
-            runtime: self.runtime.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "runtime",
-                    "runtime was not specified but it is required when building FunctionConfig",
-                )
-            })?,
-            key_value_store_associations: self.key_value_store_associations,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FunctionConfig {
+                comment: self.comment
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comment", "comment was not specified but it is required when building FunctionConfig")
+                    )?
+                ,
+                runtime: self.runtime
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("runtime", "runtime was not specified but it is required when building FunctionConfig")
+                    )?
+                ,
+                key_value_store_associations: self.key_value_store_associations
+                ,
+            }
+        )
     }
 }
+

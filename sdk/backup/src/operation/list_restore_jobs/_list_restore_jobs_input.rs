@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRestoreJobsInput {
+pub struct ListRestoreJobsInput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
@@ -58,9 +58,9 @@ pub struct ListRestoreJobsInput {
     /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub by_restore_testing_plan_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListRestoreJobsInput {
+impl  ListRestoreJobsInput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -68,7 +68,7 @@ impl ListRestoreJobsInput {
         self.max_results
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
-    pub fn by_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn by_account_id(&self) -> ::std::option::Option<& str> {
         self.by_account_id.as_deref()
     }
     /// <p>Include this parameter to return only restore jobs for the specified resources:</p>
@@ -106,31 +106,31 @@ impl ListRestoreJobsInput {
     /// <li>
     /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
-    pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn by_resource_type(&self) -> ::std::option::Option<& str> {
         self.by_resource_type.as_deref()
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
-    pub fn by_created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_created_before.as_ref()
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
-    pub fn by_created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_created_after.as_ref()
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
-    pub fn by_status(&self) -> ::std::option::Option<&crate::types::RestoreJobStatus> {
+    pub fn by_status(&self) -> ::std::option::Option<& crate::types::RestoreJobStatus> {
         self.by_status.as_ref()
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_complete_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_complete_before.as_ref()
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn by_complete_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_complete_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_complete_after.as_ref()
     }
     /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn by_restore_testing_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn by_restore_testing_plan_arn(&self) -> ::std::option::Option<& str> {
         self.by_restore_testing_plan_arn.as_deref()
     }
 }
@@ -164,8 +164,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +177,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -192,8 +190,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub fn set_by_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_account_id = input;
-        self
+        self.by_account_id = input; self
     }
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub fn get_by_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +271,7 @@ impl ListRestoreJobsInputBuilder {
     /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_resource_type = input;
-        self
+        self.by_resource_type = input; self
     }
     /// <p>Include this parameter to return only restore jobs for the specified resources:</p>
     /// <ul>
@@ -322,8 +318,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
     pub fn set_by_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_created_before = input;
-        self
+        self.by_created_before = input; self
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
     pub fn get_by_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -336,8 +331,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
     pub fn set_by_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_created_after = input;
-        self
+        self.by_created_after = input; self
     }
     /// <p>Returns only restore jobs that were created after the specified date.</p>
     pub fn get_by_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -350,8 +344,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
     pub fn set_by_status(mut self, input: ::std::option::Option<crate::types::RestoreJobStatus>) -> Self {
-        self.by_status = input;
-        self
+        self.by_status = input; self
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
     pub fn get_by_status(&self) -> &::std::option::Option<crate::types::RestoreJobStatus> {
@@ -364,8 +357,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn set_by_complete_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_complete_before = input;
-        self
+        self.by_complete_before = input; self
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn get_by_complete_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -378,8 +370,7 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn set_by_complete_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_complete_after = input;
-        self
+        self.by_complete_after = input; self
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn get_by_complete_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -392,28 +383,38 @@ impl ListRestoreJobsInputBuilder {
     }
     /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn set_by_restore_testing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_restore_testing_plan_arn = input;
-        self
+        self.by_restore_testing_plan_arn = input; self
     }
     /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn get_by_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_restore_testing_plan_arn
     }
     /// Consumes the builder and constructs a [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_restore_jobs::ListRestoreJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_restore_jobs::ListRestoreJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            by_account_id: self.by_account_id,
-            by_resource_type: self.by_resource_type,
-            by_created_before: self.by_created_before,
-            by_created_after: self.by_created_after,
-            by_status: self.by_status,
-            by_complete_before: self.by_complete_before,
-            by_complete_after: self.by_complete_after,
-            by_restore_testing_plan_arn: self.by_restore_testing_plan_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_restore_jobs::ListRestoreJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_restore_jobs::ListRestoreJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                by_account_id: self.by_account_id
+                ,
+                by_resource_type: self.by_resource_type
+                ,
+                by_created_before: self.by_created_before
+                ,
+                by_created_after: self.by_created_after
+                ,
+                by_status: self.by_status
+                ,
+                by_complete_before: self.by_complete_before
+                ,
+                by_complete_after: self.by_complete_after
+                ,
+                by_restore_testing_plan_arn: self.by_restore_testing_plan_arn
+                ,
+            }
+        )
     }
 }
+

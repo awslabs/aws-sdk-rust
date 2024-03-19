@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCheckLayerAvailabilityOutput {
+pub struct BatchCheckLayerAvailabilityOutput  {
     /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
-    pub layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
+    pub layers: ::std::option::Option<::std::vec::Vec::<crate::types::Layer>>,
     /// <p>Any failures associated with the call.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::LayerFailure>>,
     _request_id: Option<String>,
 }
-impl BatchCheckLayerAvailabilityOutput {
+impl  BatchCheckLayerAvailabilityOutput  {
     /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layers.is_none()`.
-    pub fn layers(&self) -> &[crate::types::Layer] {
-        self.layers.as_deref().unwrap_or_default()
+    pub fn layers(&self) -> & [crate::types::Layer] {
+        self.layers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::LayerFailure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::LayerFailure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchCheckLayerAvailabilityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchCheckLayerAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityOutput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput).
     pub fn builder() -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchCheckLayerAvailabilityOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCheckLayerAvailabilityOutputBuilder {
-    pub(crate) layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>>,
+    pub(crate) layers: ::std::option::Option<::std::vec::Vec::<crate::types::Layer>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::LayerFailure>>,
     _request_id: Option<String>,
 }
 impl BatchCheckLayerAvailabilityOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchCheckLayerAvailabilityOutputBuilder {
     /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
     pub fn layers(mut self, input: crate::types::Layer) -> Self {
         let mut v = self.layers.unwrap_or_default();
-        v.push(input);
-        self.layers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.layers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
-    pub fn set_layers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>) -> Self {
-        self.layers = input;
-        self
+    pub fn set_layers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Layer>>) -> Self {
+        self.layers = input; self
     }
     /// <p>A list of image layer objects that correspond to the image layer references in the request.</p>
-    pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Layer>> {
+    pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Layer>> {
         &self.layers
     }
     /// Appends an item to `failures`.
@@ -71,34 +72,36 @@ impl BatchCheckLayerAvailabilityOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::LayerFailure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LayerFailure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LayerFailure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchCheckLayerAvailabilityOutput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput).
     pub fn build(self) -> crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput {
         crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput {
-            layers: self.layers,
-            failures: self.failures,
+            layers: self.layers
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

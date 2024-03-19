@@ -3,7 +3,7 @@
 /// <p>Contains the metadata required to introspect the RDS cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsDataApiConfig {
+pub struct RdsDataApiConfig  {
     /// <p>The resource ARN of the RDS cluster.</p>
     pub resource_arn: ::std::string::String,
     /// <p>The secret's ARN that was obtained from Secrets Manager. A secret consists of secret information, the secret value, plus metadata about the secret. A secret value can be a string or binary. It typically includes the ARN, secret name and description, policies, tags, encryption key from the Key Management Service, and key rotation data.</p>
@@ -11,21 +11,18 @@ pub struct RdsDataApiConfig {
     /// <p>The name of the database in the cluster.</p>
     pub database_name: ::std::string::String,
 }
-impl RdsDataApiConfig {
+impl  RdsDataApiConfig  {
     /// <p>The resource ARN of the RDS cluster.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The secret's ARN that was obtained from Secrets Manager. A secret consists of secret information, the secret value, plus metadata about the secret. A secret value can be a string or binary. It typically includes the ARN, secret name and description, policies, tags, encryption key from the Key Management Service, and key rotation data.</p>
-    pub fn secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_arn.deref()
+    pub fn secret_arn(&self) -> & str {
+        use std::ops::Deref; self.secret_arn.deref()
     }
     /// <p>The name of the database in the cluster.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
 }
 impl RdsDataApiConfig {
@@ -52,8 +49,7 @@ impl RdsDataApiConfigBuilder {
     }
     /// <p>The resource ARN of the RDS cluster.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The resource ARN of the RDS cluster.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl RdsDataApiConfigBuilder {
     }
     /// <p>The secret's ARN that was obtained from Secrets Manager. A secret consists of secret information, the secret value, plus metadata about the secret. A secret value can be a string or binary. It typically includes the ARN, secret name and description, policies, tags, encryption key from the Key Management Service, and key rotation data.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The secret's ARN that was obtained from Secrets Manager. A secret consists of secret information, the secret value, plus metadata about the secret. A secret value can be a string or binary. It typically includes the ARN, secret name and description, policies, tags, encryption key from the Key Management Service, and key rotation data.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl RdsDataApiConfigBuilder {
     }
     /// <p>The name of the database in the cluster.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database in the cluster.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl RdsDataApiConfigBuilder {
     /// - [`secret_arn`](crate::types::builders::RdsDataApiConfigBuilder::secret_arn)
     /// - [`database_name`](crate::types::builders::RdsDataApiConfigBuilder::database_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RdsDataApiConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RdsDataApiConfig {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building RdsDataApiConfig",
-                )
-            })?,
-            secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_arn",
-                    "secret_arn was not specified but it is required when building RdsDataApiConfig",
-                )
-            })?,
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building RdsDataApiConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RdsDataApiConfig {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building RdsDataApiConfig")
+                    )?
+                ,
+                secret_arn: self.secret_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_arn", "secret_arn was not specified but it is required when building RdsDataApiConfig")
+                    )?
+                ,
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building RdsDataApiConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

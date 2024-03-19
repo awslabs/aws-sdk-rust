@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAliasInput {
+pub struct UpdateAliasInput  {
     /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
@@ -21,11 +21,11 @@ pub struct UpdateAliasInput {
     /// <p>To verify that the alias is mapped to the correct KMS key, use <code>ListAliases</code>.</p>
     pub target_key_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAliasInput {
+impl  UpdateAliasInput  {
     /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>
@@ -40,7 +40,7 @@ impl UpdateAliasInput {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     /// <p>To verify that the alias is mapped to the correct KMS key, use <code>ListAliases</code>.</p>
-    pub fn target_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_key_id(&self) -> ::std::option::Option<& str> {
         self.target_key_id.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl UpdateAliasInputBuilder {
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -110,8 +109,7 @@ impl UpdateAliasInputBuilder {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     /// <p>To verify that the alias is mapped to the correct KMS key, use <code>ListAliases</code>.</p>
     pub fn set_target_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_key_id = input;
-        self
+        self.target_key_id = input; self
     }
     /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>
     /// <p>The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.</p>
@@ -130,9 +128,14 @@ impl UpdateAliasInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_alias::UpdateAliasInput {
-            alias_name: self.alias_name,
-            target_key_id: self.target_key_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_alias::UpdateAliasInput {
+                alias_name: self.alias_name
+                ,
+                target_key_id: self.target_key_id
+                ,
+            }
+        )
     }
 }
+

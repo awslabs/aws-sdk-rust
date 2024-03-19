@@ -3,7 +3,7 @@
 /// <p>Container for the stats details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Stats {
+pub struct Stats  {
     /// <p>The total number of object bytes scanned.</p>
     pub bytes_scanned: ::std::option::Option<i64>,
     /// <p>The total number of uncompressed object bytes processed.</p>
@@ -11,7 +11,7 @@ pub struct Stats {
     /// <p>The total number of bytes of records payload data returned.</p>
     pub bytes_returned: ::std::option::Option<i64>,
 }
-impl Stats {
+impl  Stats  {
     /// <p>The total number of object bytes scanned.</p>
     pub fn bytes_scanned(&self) -> ::std::option::Option<i64> {
         self.bytes_scanned
@@ -48,8 +48,7 @@ impl StatsBuilder {
     }
     /// <p>The total number of object bytes scanned.</p>
     pub fn set_bytes_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_scanned = input;
-        self
+        self.bytes_scanned = input; self
     }
     /// <p>The total number of object bytes scanned.</p>
     pub fn get_bytes_scanned(&self) -> &::std::option::Option<i64> {
@@ -62,8 +61,7 @@ impl StatsBuilder {
     }
     /// <p>The total number of uncompressed object bytes processed.</p>
     pub fn set_bytes_processed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_processed = input;
-        self
+        self.bytes_processed = input; self
     }
     /// <p>The total number of uncompressed object bytes processed.</p>
     pub fn get_bytes_processed(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl StatsBuilder {
     }
     /// <p>The total number of bytes of records payload data returned.</p>
     pub fn set_bytes_returned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_returned = input;
-        self
+        self.bytes_returned = input; self
     }
     /// <p>The total number of bytes of records payload data returned.</p>
     pub fn get_bytes_returned(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl StatsBuilder {
     /// Consumes the builder and constructs a [`Stats`](crate::types::Stats).
     pub fn build(self) -> crate::types::Stats {
         crate::types::Stats {
-            bytes_scanned: self.bytes_scanned,
-            bytes_processed: self.bytes_processed,
-            bytes_returned: self.bytes_returned,
+            bytes_scanned: self.bytes_scanned
+            ,
+            bytes_processed: self.bytes_processed
+            ,
+            bytes_returned: self.bytes_returned
+            ,
         }
     }
 }
+

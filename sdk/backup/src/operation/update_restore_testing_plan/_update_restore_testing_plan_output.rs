@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRestoreTestingPlanOutput {
+pub struct UpdateRestoreTestingPlanOutput  {
     /// <p>This is the time the resource testing plan was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Unique ARN (Amazon Resource Name) of the restore testing plan.</p>
@@ -13,31 +13,29 @@ pub struct UpdateRestoreTestingPlanOutput {
     pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl UpdateRestoreTestingPlanOutput {
+impl  UpdateRestoreTestingPlanOutput  {
     /// <p>This is the time the resource testing plan was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>Unique ARN (Amazon Resource Name) of the restore testing plan.</p>
-    pub fn restore_testing_plan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_arn.deref()
+    pub fn restore_testing_plan_arn(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_arn.deref()
     }
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
-    pub fn restore_testing_plan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_name.deref()
+    pub fn restore_testing_plan_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_name.deref()
     }
     /// <p>This is the time the update completed for the restore testing plan.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRestoreTestingPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRestoreTestingPlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRestoreTestingPlanOutput`](crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanOutput).
     pub fn builder() -> crate::operation::update_restore_testing_plan::builders::UpdateRestoreTestingPlanOutputBuilder {
@@ -64,8 +62,7 @@ impl UpdateRestoreTestingPlanOutputBuilder {
     }
     /// <p>This is the time the resource testing plan was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>This is the time the resource testing plan was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -79,8 +76,7 @@ impl UpdateRestoreTestingPlanOutputBuilder {
     }
     /// <p>Unique ARN (Amazon Resource Name) of the restore testing plan.</p>
     pub fn set_restore_testing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_arn = input;
-        self
+        self.restore_testing_plan_arn = input; self
     }
     /// <p>Unique ARN (Amazon Resource Name) of the restore testing plan.</p>
     pub fn get_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl UpdateRestoreTestingPlanOutputBuilder {
     }
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>The name cannot be changed after creation. The name consists of only alphanumeric characters and underscores. Maximum length is 50.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,60 +104,53 @@ impl UpdateRestoreTestingPlanOutputBuilder {
     }
     /// <p>This is the time the update completed for the restore testing plan.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>This is the time the update completed for the restore testing plan.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRestoreTestingPlanOutput`](crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`creation_time`](crate::operation::update_restore_testing_plan::builders::UpdateRestoreTestingPlanOutputBuilder::creation_time)
     /// - [`restore_testing_plan_arn`](crate::operation::update_restore_testing_plan::builders::UpdateRestoreTestingPlanOutputBuilder::restore_testing_plan_arn)
     /// - [`restore_testing_plan_name`](crate::operation::update_restore_testing_plan::builders::UpdateRestoreTestingPlanOutputBuilder::restore_testing_plan_name)
     /// - [`update_time`](crate::operation::update_restore_testing_plan::builders::UpdateRestoreTestingPlanOutputBuilder::update_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanOutput {
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building UpdateRestoreTestingPlanOutput",
-                )
-            })?,
-            restore_testing_plan_arn: self.restore_testing_plan_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_arn",
-                    "restore_testing_plan_arn was not specified but it is required when building UpdateRestoreTestingPlanOutput",
-                )
-            })?,
-            restore_testing_plan_name: self.restore_testing_plan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_name",
-                    "restore_testing_plan_name was not specified but it is required when building UpdateRestoreTestingPlanOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building UpdateRestoreTestingPlanOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanOutput {
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building UpdateRestoreTestingPlanOutput")
+                    )?
+                ,
+                restore_testing_plan_arn: self.restore_testing_plan_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_arn", "restore_testing_plan_arn was not specified but it is required when building UpdateRestoreTestingPlanOutput")
+                    )?
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_name", "restore_testing_plan_name was not specified but it is required when building UpdateRestoreTestingPlanOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building UpdateRestoreTestingPlanOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

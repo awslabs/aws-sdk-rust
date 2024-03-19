@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFileInput {
+pub struct DeleteFileInput  {
     /// <p>The name of the repository that contains the file to delete.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch where the commit that deletes the file is made.</p>
@@ -20,21 +20,21 @@ pub struct DeleteFileInput {
     /// <p>The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.</p>
     pub email: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFileInput {
+impl  DeleteFileInput  {
     /// <p>The name of the repository that contains the file to delete.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch where the commit that deletes the file is made.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p>The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
-    pub fn parent_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_commit_id(&self) -> ::std::option::Option<& str> {
         self.parent_commit_id.as_deref()
     }
     /// <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
@@ -42,15 +42,15 @@ impl DeleteFileInput {
         self.keep_empty_folders
     }
     /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
-    pub fn commit_message(&self) -> ::std::option::Option<&str> {
+    pub fn commit_message(&self) -> ::std::option::Option<& str> {
         self.commit_message.as_deref()
     }
     /// <p>The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl DeleteFileInputBuilder {
     }
     /// <p>The name of the repository that contains the file to delete.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository that contains the file to delete.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl DeleteFileInputBuilder {
     }
     /// <p>The name of the branch where the commit that deletes the file is made.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the branch where the commit that deletes the file is made.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl DeleteFileInputBuilder {
     }
     /// <p>The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +125,7 @@ impl DeleteFileInputBuilder {
     }
     /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
     pub fn set_parent_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_commit_id = input;
-        self
+        self.parent_commit_id = input; self
     }
     /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
     pub fn get_parent_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +138,7 @@ impl DeleteFileInputBuilder {
     }
     /// <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
     pub fn set_keep_empty_folders(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.keep_empty_folders = input;
-        self
+        self.keep_empty_folders = input; self
     }
     /// <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
     pub fn get_keep_empty_folders(&self) -> &::std::option::Option<bool> {
@@ -156,8 +151,7 @@ impl DeleteFileInputBuilder {
     }
     /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
     pub fn set_commit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_message = input;
-        self
+        self.commit_message = input; self
     }
     /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
     pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +164,7 @@ impl DeleteFileInputBuilder {
     }
     /// <p>The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +177,7 @@ impl DeleteFileInputBuilder {
     }
     /// <p>The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,15 +185,26 @@ impl DeleteFileInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteFileInput`](crate::operation::delete_file::DeleteFileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_file::DeleteFileInput {
-            repository_name: self.repository_name,
-            branch_name: self.branch_name,
-            file_path: self.file_path,
-            parent_commit_id: self.parent_commit_id,
-            keep_empty_folders: self.keep_empty_folders,
-            commit_message: self.commit_message,
-            name: self.name,
-            email: self.email,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_file::DeleteFileInput {
+                repository_name: self.repository_name
+                ,
+                branch_name: self.branch_name
+                ,
+                file_path: self.file_path
+                ,
+                parent_commit_id: self.parent_commit_id
+                ,
+                keep_empty_folders: self.keep_empty_folders
+                ,
+                commit_message: self.commit_message
+                ,
+                name: self.name
+                ,
+                email: self.email
+                ,
+            }
+        )
     }
 }
+

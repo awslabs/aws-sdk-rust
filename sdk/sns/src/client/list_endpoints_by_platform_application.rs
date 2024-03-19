@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEndpointsByPlatformApplication`](crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`platform_application_arn(impl Into<String>)`](crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder::platform_application_arn) / [`set_platform_application_arn(Option<String>)`](crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder::set_platform_application_arn):<br>required: **true**<br><p><code>PlatformApplicationArn</code> for <code>ListEndpointsByPlatformApplicationInput</code> action.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder::set_next_token):<br>required: **false**<br><p><code>NextToken</code> string is used when calling <code>ListEndpointsByPlatformApplication</code> action to retrieve additional records that are available after the first page results.</p><br>
-    /// - On success, responds with [`ListEndpointsByPlatformApplicationOutput`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput) with field(s):
+                            /// - On success, responds with [`ListEndpointsByPlatformApplicationOutput`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput) with field(s):
     ///   - [`endpoints(Option<Vec::<Endpoint>>)`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput::endpoints): <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput::next_token): <p><code>NextToken</code> string is returned when calling <code>ListEndpointsByPlatformApplication</code> action if additional records are available after the first page results.</p>
-    /// - On failure, responds with [`SdkError<ListEndpointsByPlatformApplicationError>`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError)
-    pub fn list_endpoints_by_platform_application(
-        &self,
-    ) -> crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder {
-        crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListEndpointsByPlatformApplicationError>`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError)
+    pub fn list_endpoints_by_platform_application(&self) -> crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder {
+                                crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder::new(self.handle.clone())
+                            }
 }
+

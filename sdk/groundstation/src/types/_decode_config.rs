@@ -3,15 +3,14 @@
 /// <p>Information about the decode <code>Config</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DecodeConfig {
+pub struct DecodeConfig  {
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
     pub unvalidated_json: ::std::string::String,
 }
-impl DecodeConfig {
+impl  DecodeConfig  {
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-    pub fn unvalidated_json(&self) -> &str {
-        use std::ops::Deref;
-        self.unvalidated_json.deref()
+    pub fn unvalidated_json(&self) -> & str {
+        use std::ops::Deref; self.unvalidated_json.deref()
     }
 }
 impl DecodeConfig {
@@ -36,8 +35,7 @@ impl DecodeConfigBuilder {
     }
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
     pub fn set_unvalidated_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unvalidated_json = input;
-        self
+        self.unvalidated_json = input; self
     }
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
     pub fn get_unvalidated_json(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DecodeConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`unvalidated_json`](crate::types::builders::DecodeConfigBuilder::unvalidated_json)
     pub fn build(self) -> ::std::result::Result<crate::types::DecodeConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DecodeConfig {
-            unvalidated_json: self.unvalidated_json.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "unvalidated_json",
-                    "unvalidated_json was not specified but it is required when building DecodeConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DecodeConfig {
+                unvalidated_json: self.unvalidated_json
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("unvalidated_json", "unvalidated_json was not specified but it is required when building DecodeConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDeploymentParameterOutput {
+pub struct PutDeploymentParameterOutput  {
     /// <p>The Amazon Resource Name (ARN) associated with the deployment parameter resource you want to create or update.</p>
     pub resource_arn: ::std::string::String,
     /// <p>The unique identifier of the agreement.</p>
@@ -10,35 +10,32 @@ pub struct PutDeploymentParameterOutput {
     /// <p>The unique identifier of the deployment parameter.</p>
     pub deployment_parameter_id: ::std::string::String,
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl PutDeploymentParameterOutput {
+impl  PutDeploymentParameterOutput  {
     /// <p>The Amazon Resource Name (ARN) associated with the deployment parameter resource you want to create or update.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The unique identifier of the agreement.</p>
-    pub fn agreement_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agreement_id.deref()
+    pub fn agreement_id(&self) -> & str {
+        use std::ops::Deref; self.agreement_id.deref()
     }
     /// <p>The unique identifier of the deployment parameter.</p>
-    pub fn deployment_parameter_id(&self) -> &str {
-        use std::ops::Deref;
-        self.deployment_parameter_id.deref()
+    pub fn deployment_parameter_id(&self) -> & str {
+        use std::ops::Deref; self.deployment_parameter_id.deref()
     }
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutDeploymentParameterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutDeploymentParameterOutput {
     /// Creates a new builder-style object to manufacture [`PutDeploymentParameterOutput`](crate::operation::put_deployment_parameter::PutDeploymentParameterOutput).
     pub fn builder() -> crate::operation::put_deployment_parameter::builders::PutDeploymentParameterOutputBuilder {
@@ -53,7 +50,7 @@ pub struct PutDeploymentParameterOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_parameter_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl PutDeploymentParameterOutputBuilder {
@@ -65,8 +62,7 @@ impl PutDeploymentParameterOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the deployment parameter resource you want to create or update.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the deployment parameter resource you want to create or update.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl PutDeploymentParameterOutputBuilder {
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl PutDeploymentParameterOutputBuilder {
     }
     /// <p>The unique identifier of the deployment parameter.</p>
     pub fn set_deployment_parameter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_parameter_id = input;
-        self
+        self.deployment_parameter_id = input; self
     }
     /// <p>The unique identifier of the deployment parameter.</p>
     pub fn get_deployment_parameter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,60 +103,55 @@ impl PutDeploymentParameterOutputBuilder {
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutDeploymentParameterOutput`](crate::operation::put_deployment_parameter::PutDeploymentParameterOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::operation::put_deployment_parameter::builders::PutDeploymentParameterOutputBuilder::resource_arn)
     /// - [`agreement_id`](crate::operation::put_deployment_parameter::builders::PutDeploymentParameterOutputBuilder::agreement_id)
     /// - [`deployment_parameter_id`](crate::operation::put_deployment_parameter::builders::PutDeploymentParameterOutputBuilder::deployment_parameter_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_deployment_parameter::PutDeploymentParameterOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_deployment_parameter::PutDeploymentParameterOutput {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building PutDeploymentParameterOutput",
-                )
-            })?,
-            agreement_id: self.agreement_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agreement_id",
-                    "agreement_id was not specified but it is required when building PutDeploymentParameterOutput",
-                )
-            })?,
-            deployment_parameter_id: self.deployment_parameter_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployment_parameter_id",
-                    "deployment_parameter_id was not specified but it is required when building PutDeploymentParameterOutput",
-                )
-            })?,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_deployment_parameter::PutDeploymentParameterOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_deployment_parameter::PutDeploymentParameterOutput {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building PutDeploymentParameterOutput")
+                    )?
+                ,
+                agreement_id: self.agreement_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agreement_id", "agreement_id was not specified but it is required when building PutDeploymentParameterOutput")
+                    )?
+                ,
+                deployment_parameter_id: self.deployment_parameter_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployment_parameter_id", "deployment_parameter_id was not specified but it is required when building PutDeploymentParameterOutput")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

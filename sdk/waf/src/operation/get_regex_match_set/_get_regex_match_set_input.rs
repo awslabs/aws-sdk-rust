@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRegexMatchSetInput {
+pub struct GetRegexMatchSetInput  {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub regex_match_set_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRegexMatchSetInput {
+impl  GetRegexMatchSetInput  {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn regex_match_set_id(&self) -> ::std::option::Option<& str> {
         self.regex_match_set_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetRegexMatchSetInputBuilder {
     }
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub fn set_regex_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.regex_match_set_id = input;
-        self
+        self.regex_match_set_id = input; self
     }
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub fn get_regex_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.regex_match_set_id
     }
     /// Consumes the builder and constructs a [`GetRegexMatchSetInput`](crate::operation::get_regex_match_set::GetRegexMatchSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_regex_match_set::GetRegexMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_regex_match_set::GetRegexMatchSetInput {
-            regex_match_set_id: self.regex_match_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_regex_match_set::GetRegexMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_regex_match_set::GetRegexMatchSetInput {
+                regex_match_set_id: self.regex_match_set_id
+                ,
+            }
+        )
     }
 }
+

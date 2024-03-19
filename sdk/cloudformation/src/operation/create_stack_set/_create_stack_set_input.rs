@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStackSetInput {
+pub struct CreateStackSetInput  {
     /// <p>The name to associate with the stack set. The name must be unique in the Region where you create your stack set.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
     /// </note>
@@ -18,7 +18,7 @@ pub struct CreateStackSetInput {
     /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The input parameters for the stack set template.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in order for CloudFormation to create the stack set and related stack instances.</p>
     /// <ul>
     /// <li>
@@ -57,10 +57,10 @@ pub struct CreateStackSetInput {
     /// <p>Stack sets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
     /// </important></li>
     /// </ul>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
     /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
     /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
     pub administration_role_arn: ::std::option::Option<::std::string::String>,
@@ -94,36 +94,37 @@ pub struct CreateStackSetInput {
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
 }
-impl CreateStackSetInput {
+impl  CreateStackSetInput  {
     /// <p>The name to associate with the stack set. The name must be unique in the Region where you create your stack set.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
     /// </note>
-    pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_set_name(&self) -> ::std::option::Option<& str> {
         self.stack_set_name.as_deref()
     }
     /// <p>A description of the stack set. You can use the description to identify the stack set's purpose or other important information.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The structure that contains the template body, with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
-    pub fn template_body(&self) -> ::std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
-    pub fn template_url(&self) -> ::std::option::Option<&str> {
+    pub fn template_url(&self) -> ::std::option::Option<& str> {
         self.template_url.as_deref()
     }
     /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The input parameters for the stack set template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in order for CloudFormation to create the stack set and related stack instances.</p>
     /// <ul>
@@ -163,26 +164,28 @@ impl CreateStackSetInput {
     /// <p>Stack sets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
     /// </important></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[crate::types::Capability] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [crate::types::Capability] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
     /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
     /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn administration_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn administration_role_arn(&self) -> ::std::option::Option<& str> {
         self.administration_role_arn.as_deref()
     }
     /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
-    pub fn execution_role_name(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_name(&self) -> ::std::option::Option<& str> {
         self.execution_role_name.as_deref()
     }
     /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
@@ -192,11 +195,11 @@ impl CreateStackSetInput {
     /// <li>
     /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
     /// </ul>
-    pub fn permission_model(&self) -> ::std::option::Option<&crate::types::PermissionModels> {
+    pub fn permission_model(&self) -> ::std::option::Option<& crate::types::PermissionModels> {
         self.permission_model.as_ref()
     }
     /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
-    pub fn auto_deployment(&self) -> ::std::option::Option<&crate::types::AutoDeployment> {
+    pub fn auto_deployment(&self) -> ::std::option::Option<& crate::types::AutoDeployment> {
         self.auto_deployment.as_ref()
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -209,16 +212,16 @@ impl CreateStackSetInput {
     /// <p>Your Amazon Web Services account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
-    pub fn call_as(&self) -> ::std::option::Option<&crate::types::CallAs> {
+    pub fn call_as(&self) -> ::std::option::Option<& crate::types::CallAs> {
         self.call_as.as_ref()
     }
     /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another stack set with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
-    pub fn managed_execution(&self) -> ::std::option::Option<&crate::types::ManagedExecution> {
+    pub fn managed_execution(&self) -> ::std::option::Option<& crate::types::ManagedExecution> {
         self.managed_execution.as_ref()
     }
 }
@@ -238,9 +241,9 @@ pub struct CreateStackSetInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_url: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) administration_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_name: ::std::option::Option<::std::string::String>,
     pub(crate) permission_model: ::std::option::Option<crate::types::PermissionModels>,
@@ -262,8 +265,7 @@ impl CreateStackSetInputBuilder {
     /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
     /// </note>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_set_name = input;
-        self
+        self.stack_set_name = input; self
     }
     /// <p>The name to associate with the stack set. The name must be unique in the Region where you create your stack set.</p><note>
     /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
@@ -278,8 +280,7 @@ impl CreateStackSetInputBuilder {
     }
     /// <p>A description of the stack set. You can use the description to identify the stack set's purpose or other important information.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the stack set. You can use the description to identify the stack set's purpose or other important information.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +295,7 @@ impl CreateStackSetInputBuilder {
     /// <p>The structure that contains the template body, with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>The structure that contains the template body, with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -311,8 +311,7 @@ impl CreateStackSetInputBuilder {
     /// <p>The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
     }
     /// <p>The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
@@ -326,8 +325,7 @@ impl CreateStackSetInputBuilder {
     }
     /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Name (ARN) of the stack.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,17 +338,16 @@ impl CreateStackSetInputBuilder {
     /// <p>The input parameters for the stack set template.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The input parameters for the stack set template.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The input parameters for the stack set template.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// Appends an item to `capabilities`.
@@ -397,9 +394,9 @@ impl CreateStackSetInputBuilder {
     /// </ul>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in order for CloudFormation to create the stack set and related stack instances.</p>
     /// <ul>
@@ -439,9 +436,8 @@ impl CreateStackSetInputBuilder {
     /// <p>Stack sets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
     /// </important></li>
     /// </ul>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in order for CloudFormation to create the stack set and related stack instances.</p>
     /// <ul>
@@ -481,7 +477,7 @@ impl CreateStackSetInputBuilder {
     /// <p>Stack sets with service-managed permissions don't currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will fail.</p>
     /// </important></li>
     /// </ul>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Capability>> {
         &self.capabilities
     }
     /// Appends an item to `tags`.
@@ -492,19 +488,18 @@ impl CreateStackSetInputBuilder {
     /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
     /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it. CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
     /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access denied</code> error, and the stack set is not created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
@@ -516,8 +511,7 @@ impl CreateStackSetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
     /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_administration_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.administration_role_arn = input;
-        self
+        self.administration_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
     /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -533,8 +527,7 @@ impl CreateStackSetInputBuilder {
     /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
     pub fn set_execution_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_name = input;
-        self
+        self.execution_role_name = input; self
     }
     /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
@@ -560,8 +553,7 @@ impl CreateStackSetInputBuilder {
     /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p></li>
     /// </ul>
     pub fn set_permission_model(mut self, input: ::std::option::Option<crate::types::PermissionModels>) -> Self {
-        self.permission_model = input;
-        self
+        self.permission_model = input; self
     }
     /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
     /// <ul>
@@ -580,8 +572,7 @@ impl CreateStackSetInputBuilder {
     }
     /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
     pub fn set_auto_deployment(mut self, input: ::std::option::Option<crate::types::AutoDeployment>) -> Self {
-        self.auto_deployment = input;
-        self
+        self.auto_deployment = input; self
     }
     /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
     pub fn get_auto_deployment(&self) -> &::std::option::Option<crate::types::AutoDeployment> {
@@ -612,8 +603,7 @@ impl CreateStackSetInputBuilder {
     /// </ul>
     /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
-        self.call_as = input;
-        self
+        self.call_as = input; self
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -637,8 +627,7 @@ impl CreateStackSetInputBuilder {
     /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another stack set with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another stack set with the same name. You might retry <code>CreateStackSet</code> requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
@@ -652,33 +641,48 @@ impl CreateStackSetInputBuilder {
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn set_managed_execution(mut self, input: ::std::option::Option<crate::types::ManagedExecution>) -> Self {
-        self.managed_execution = input;
-        self
+        self.managed_execution = input; self
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn get_managed_execution(&self) -> &::std::option::Option<crate::types::ManagedExecution> {
         &self.managed_execution
     }
     /// Consumes the builder and constructs a [`CreateStackSetInput`](crate::operation::create_stack_set::CreateStackSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_stack_set::CreateStackSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_stack_set::CreateStackSetInput {
-            stack_set_name: self.stack_set_name,
-            description: self.description,
-            template_body: self.template_body,
-            template_url: self.template_url,
-            stack_id: self.stack_id,
-            parameters: self.parameters,
-            capabilities: self.capabilities,
-            tags: self.tags,
-            administration_role_arn: self.administration_role_arn,
-            execution_role_name: self.execution_role_name,
-            permission_model: self.permission_model,
-            auto_deployment: self.auto_deployment,
-            call_as: self.call_as,
-            client_request_token: self.client_request_token,
-            managed_execution: self.managed_execution,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stack_set::CreateStackSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_stack_set::CreateStackSetInput {
+                stack_set_name: self.stack_set_name
+                ,
+                description: self.description
+                ,
+                template_body: self.template_body
+                ,
+                template_url: self.template_url
+                ,
+                stack_id: self.stack_id
+                ,
+                parameters: self.parameters
+                ,
+                capabilities: self.capabilities
+                ,
+                tags: self.tags
+                ,
+                administration_role_arn: self.administration_role_arn
+                ,
+                execution_role_name: self.execution_role_name
+                ,
+                permission_model: self.permission_model
+                ,
+                auto_deployment: self.auto_deployment
+                ,
+                call_as: self.call_as
+                ,
+                client_request_token: self.client_request_token
+                ,
+                managed_execution: self.managed_execution
+                ,
+            }
+        )
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p>A structure that contains the information about an evaluation rule for this feature, if it is used in a launch or experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationRule {
+pub struct EvaluationRule  {
     /// <p>The name of the experiment or launch.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
     pub r#type: ::std::string::String,
 }
-impl EvaluationRule {
+impl  EvaluationRule  {
     /// <p>The name of the experiment or launch.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
 }
 impl EvaluationRule {
@@ -42,8 +41,7 @@ impl EvaluationRuleBuilder {
     }
     /// <p>The name of the experiment or launch.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the experiment or launch.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl EvaluationRuleBuilder {
     }
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl EvaluationRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::EvaluationRuleBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationRule {
-            name: self.name,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building EvaluationRule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationRule {
+                name: self.name
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building EvaluationRule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

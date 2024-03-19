@@ -3,7 +3,7 @@
 /// <p>The progress details of a pipeline configuration change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeProgressStatus {
+pub struct ChangeProgressStatus  {
     /// <p>The time at which the configuration change is made on the pipeline.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The overall status of the pipeline configuration change.</p>
@@ -11,15 +11,15 @@ pub struct ChangeProgressStatus {
     /// <p>The total number of stages required for the pipeline configuration change.</p>
     pub total_number_of_stages: i32,
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    pub change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
+    pub change_progress_stages: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeProgressStage>>,
 }
-impl ChangeProgressStatus {
+impl  ChangeProgressStatus  {
     /// <p>The time at which the configuration change is made on the pipeline.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The overall status of the pipeline configuration change.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ChangeProgressStatuses> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ChangeProgressStatuses> {
         self.status.as_ref()
     }
     /// <p>The total number of stages required for the pipeline configuration change.</p>
@@ -27,10 +27,11 @@ impl ChangeProgressStatus {
         self.total_number_of_stages
     }
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_progress_stages.is_none()`.
-    pub fn change_progress_stages(&self) -> &[crate::types::ChangeProgressStage] {
-        self.change_progress_stages.as_deref().unwrap_or_default()
+    pub fn change_progress_stages(&self) -> & [crate::types::ChangeProgressStage] {
+        self.change_progress_stages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ChangeProgressStatus {
@@ -47,7 +48,7 @@ pub struct ChangeProgressStatusBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ChangeProgressStatuses>,
     pub(crate) total_number_of_stages: ::std::option::Option<i32>,
-    pub(crate) change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
+    pub(crate) change_progress_stages: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeProgressStage>>,
 }
 impl ChangeProgressStatusBuilder {
     /// <p>The time at which the configuration change is made on the pipeline.</p>
@@ -57,8 +58,7 @@ impl ChangeProgressStatusBuilder {
     }
     /// <p>The time at which the configuration change is made on the pipeline.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time at which the configuration change is made on the pipeline.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -71,8 +71,7 @@ impl ChangeProgressStatusBuilder {
     }
     /// <p>The overall status of the pipeline configuration change.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeProgressStatuses>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The overall status of the pipeline configuration change.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeProgressStatuses> {
@@ -85,8 +84,7 @@ impl ChangeProgressStatusBuilder {
     }
     /// <p>The total number of stages required for the pipeline configuration change.</p>
     pub fn set_total_number_of_stages(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_number_of_stages = input;
-        self
+        self.total_number_of_stages = input; self
     }
     /// <p>The total number of stages required for the pipeline configuration change.</p>
     pub fn get_total_number_of_stages(&self) -> &::std::option::Option<i32> {
@@ -99,26 +97,31 @@ impl ChangeProgressStatusBuilder {
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
     pub fn change_progress_stages(mut self, input: crate::types::ChangeProgressStage) -> Self {
         let mut v = self.change_progress_stages.unwrap_or_default();
-        v.push(input);
-        self.change_progress_stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.change_progress_stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    pub fn set_change_progress_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>) -> Self {
-        self.change_progress_stages = input;
-        self
+    pub fn set_change_progress_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeProgressStage>>) -> Self {
+        self.change_progress_stages = input; self
     }
     /// <p>Information about the stages that the pipeline is going through to perform the configuration change.</p>
-    pub fn get_change_progress_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>> {
+    pub fn get_change_progress_stages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChangeProgressStage>> {
         &self.change_progress_stages
     }
     /// Consumes the builder and constructs a [`ChangeProgressStatus`](crate::types::ChangeProgressStatus).
     pub fn build(self) -> crate::types::ChangeProgressStatus {
         crate::types::ChangeProgressStatus {
-            start_time: self.start_time,
-            status: self.status,
-            total_number_of_stages: self.total_number_of_stages.unwrap_or_default(),
-            change_progress_stages: self.change_progress_stages,
+            start_time: self.start_time
+            ,
+            status: self.status
+            ,
+            total_number_of_stages: self.total_number_of_stages
+                .unwrap_or_default()
+            ,
+            change_progress_stages: self.change_progress_stages
+            ,
         }
     }
 }
+

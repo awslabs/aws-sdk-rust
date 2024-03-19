@@ -4,13 +4,13 @@
 /// <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics. For more information about Amazon Web Services Regions that can contain Amazon Pinpoint resources for use with Amazon Cognito user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics with Amazon Cognito user pools</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsMetadataType {
+pub struct AnalyticsMetadataType  {
     /// <p>The endpoint ID.</p>
     pub analytics_endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl AnalyticsMetadataType {
+impl  AnalyticsMetadataType  {
     /// <p>The endpoint ID.</p>
-    pub fn analytics_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn analytics_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.analytics_endpoint_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl AnalyticsMetadataTypeBuilder {
     }
     /// <p>The endpoint ID.</p>
     pub fn set_analytics_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analytics_endpoint_id = input;
-        self
+        self.analytics_endpoint_id = input; self
     }
     /// <p>The endpoint ID.</p>
     pub fn get_analytics_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl AnalyticsMetadataTypeBuilder {
     /// Consumes the builder and constructs a [`AnalyticsMetadataType`](crate::types::AnalyticsMetadataType).
     pub fn build(self) -> crate::types::AnalyticsMetadataType {
         crate::types::AnalyticsMetadataType {
-            analytics_endpoint_id: self.analytics_endpoint_id,
+            analytics_endpoint_id: self.analytics_endpoint_id
+            ,
         }
     }
 }
+

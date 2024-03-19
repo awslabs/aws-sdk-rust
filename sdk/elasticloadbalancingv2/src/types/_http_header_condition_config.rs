@@ -4,28 +4,29 @@
 /// <p>There is a set of standard HTTP header fields. You can also define custom HTTP header fields.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpHeaderConditionConfig {
+pub struct HttpHeaderConditionConfig  {
     /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
     pub http_header_name: ::std::option::Option<::std::string::String>,
     /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl HttpHeaderConditionConfig {
+impl  HttpHeaderConditionConfig  {
     /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
-    pub fn http_header_name(&self) -> ::std::option::Option<&str> {
+    pub fn http_header_name(&self) -> ::std::option::Option<& str> {
         self.http_header_name.as_deref()
     }
     /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl HttpHeaderConditionConfig {
@@ -40,7 +41,7 @@ impl HttpHeaderConditionConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpHeaderConditionConfigBuilder {
     pub(crate) http_header_name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl HttpHeaderConditionConfigBuilder {
     /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
@@ -52,8 +53,7 @@ impl HttpHeaderConditionConfigBuilder {
     /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
     pub fn set_http_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_header_name = input;
-        self
+        self.http_header_name = input; self
     }
     /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
     /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
@@ -69,28 +69,30 @@ impl HttpHeaderConditionConfigBuilder {
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
     /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
     /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`HttpHeaderConditionConfig`](crate::types::HttpHeaderConditionConfig).
     pub fn build(self) -> crate::types::HttpHeaderConditionConfig {
         crate::types::HttpHeaderConditionConfig {
-            http_header_name: self.http_header_name,
-            values: self.values,
+            http_header_name: self.http_header_name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -4,14 +4,14 @@
 /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceCreationLimitPolicy {
+pub struct ResourceCreationLimitPolicy  {
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
     pub new_game_sessions_per_creator: ::std::option::Option<i32>,
     /// <p>The time span used in evaluating the resource creation limit policy.</p>
     pub policy_period_in_minutes: ::std::option::Option<i32>,
 }
-impl ResourceCreationLimitPolicy {
+impl  ResourceCreationLimitPolicy  {
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
     pub fn new_game_sessions_per_creator(&self) -> ::std::option::Option<i32> {
@@ -46,8 +46,7 @@ impl ResourceCreationLimitPolicyBuilder {
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
     pub fn set_new_game_sessions_per_creator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.new_game_sessions_per_creator = input;
-        self
+        self.new_game_sessions_per_creator = input; self
     }
     /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
     /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
@@ -61,8 +60,7 @@ impl ResourceCreationLimitPolicyBuilder {
     }
     /// <p>The time span used in evaluating the resource creation limit policy.</p>
     pub fn set_policy_period_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.policy_period_in_minutes = input;
-        self
+        self.policy_period_in_minutes = input; self
     }
     /// <p>The time span used in evaluating the resource creation limit policy.</p>
     pub fn get_policy_period_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -71,8 +69,11 @@ impl ResourceCreationLimitPolicyBuilder {
     /// Consumes the builder and constructs a [`ResourceCreationLimitPolicy`](crate::types::ResourceCreationLimitPolicy).
     pub fn build(self) -> crate::types::ResourceCreationLimitPolicy {
         crate::types::ResourceCreationLimitPolicy {
-            new_game_sessions_per_creator: self.new_game_sessions_per_creator,
-            policy_period_in_minutes: self.policy_period_in_minutes,
+            new_game_sessions_per_creator: self.new_game_sessions_per_creator
+            ,
+            policy_period_in_minutes: self.policy_period_in_minutes
+            ,
         }
     }
 }
+

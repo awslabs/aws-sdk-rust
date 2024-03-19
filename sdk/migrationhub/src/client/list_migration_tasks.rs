@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMigrationTasks`](crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>Value to specify how many results are returned per page.</p><br>
     ///   - [`resource_name(impl Into<String>)`](crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::set_resource_name):<br>required: **false**<br><p>Filter migration tasks by discovered resource name.</p><br>
-    /// - On success, responds with [`ListMigrationTasksOutput`](crate::operation::list_migration_tasks::ListMigrationTasksOutput) with field(s):
+                            /// - On success, responds with [`ListMigrationTasksOutput`](crate::operation::list_migration_tasks::ListMigrationTasksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_migration_tasks::ListMigrationTasksOutput::next_token): <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     ///   - [`migration_task_summary_list(Option<Vec::<MigrationTaskSummary>>)`](crate::operation::list_migration_tasks::ListMigrationTasksOutput::migration_task_summary_list): <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
-    /// - On failure, responds with [`SdkError<ListMigrationTasksError>`](crate::operation::list_migration_tasks::ListMigrationTasksError)
+                            /// - On failure, responds with [`SdkError<ListMigrationTasksError>`](crate::operation::list_migration_tasks::ListMigrationTasksError)
     pub fn list_migration_tasks(&self) -> crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder {
-        crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_migration_tasks::builders::ListMigrationTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

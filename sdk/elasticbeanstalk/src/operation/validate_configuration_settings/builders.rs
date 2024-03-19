@@ -5,55 +5,51 @@ pub use crate::operation::validate_configuration_settings::_validate_configurati
 
 impl ValidateConfigurationSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.validate_configuration_settings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.validate_configuration_settings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ValidateConfigurationSettings`.
-///
+/// 
 /// <p>Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid.</p>
 /// <p>This action returns a list of messages indicating any errors or warnings associated with the selection of option values.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsInputBuilder,
+                    inner: crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
-        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-    > for ValidateConfigurationSettingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
-            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
+                    crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
+                > for ValidateConfigurationSettingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
+                        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ValidateConfigurationSettingsFluentBuilder {
     /// Creates a new `ValidateConfigurationSettings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ValidateConfigurationSettingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::validate_configuration_settings::ValidateConfigurationSettings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::validate_configuration_settings::ValidateConfigurationSettings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
-        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::validate_configuration_settings::ValidateConfigurationSettings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::validate_configuration_settings::ValidateConfigurationSettings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput, crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the application that the configuration template or environment belongs to.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -167,12 +154,13 @@ impl ValidateConfigurationSettingsFluentBuilder {
         self
     }
     /// <p>A list of the options and desired values to evaluate.</p>
-    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
     }
     /// <p>A list of the options and desired values to evaluate.</p>
-    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>> {
         self.inner.get_option_settings()
     }
 }
+

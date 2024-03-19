@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNotificationsForBudget`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::set_account_id):<br>required: **true**<br><p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p><br>
     ///   - [`budget_name(impl Into<String>)`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::budget_name) / [`set_budget_name(Option<String>)`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::set_budget_name):<br>required: **true**<br><p>The name of the budget whose notifications you want descriptions of.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional integer that represents how many entries a paginated response contains.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p><br>
-    /// - On success, responds with [`DescribeNotificationsForBudgetOutput`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput) with field(s):
+                            /// - On success, responds with [`DescribeNotificationsForBudgetOutput`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput) with field(s):
     ///   - [`notifications(Option<Vec::<Notification>>)`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput::notifications): <p>A list of notifications that are associated with a budget.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    /// - On failure, responds with [`SdkError<DescribeNotificationsForBudgetError>`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError)
-    pub fn describe_notifications_for_budget(
-        &self,
-    ) -> crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder {
-        crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeNotificationsForBudgetError>`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetError)
+    pub fn describe_notifications_for_budget(&self) -> crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder {
+                                crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetFluentBuilder::new(self.handle.clone())
+                            }
 }
+

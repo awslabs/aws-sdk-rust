@@ -3,7 +3,7 @@
 /// <p>Displays summary information about a monitor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitorSummary {
+pub struct MonitorSummary  {
     /// <p>The ARN of the monitor.</p>
     pub monitor_arn: ::std::string::String,
     /// <p>The name of the monitor.</p>
@@ -13,21 +13,19 @@ pub struct MonitorSummary {
     /// <p>The time, in seconds, that metrics are collected and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
     pub aggregation_period: ::std::option::Option<i64>,
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl MonitorSummary {
+impl  MonitorSummary  {
     /// <p>The ARN of the monitor.</p>
-    pub fn monitor_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_arn.deref()
+    pub fn monitor_arn(&self) -> & str {
+        use std::ops::Deref; self.monitor_arn.deref()
     }
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> & str {
+        use std::ops::Deref; self.monitor_name.deref()
     }
     /// <p>The state of the monitor.</p>
-    pub fn state(&self) -> &crate::types::MonitorState {
+    pub fn state(&self) -> & crate::types::MonitorState {
         &self.state
     }
     /// <p>The time, in seconds, that metrics are collected and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
@@ -35,7 +33,7 @@ impl MonitorSummary {
         self.aggregation_period
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -54,7 +52,7 @@ pub struct MonitorSummaryBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::MonitorState>,
     pub(crate) aggregation_period: ::std::option::Option<i64>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl MonitorSummaryBuilder {
     /// <p>The ARN of the monitor.</p>
@@ -65,8 +63,7 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The ARN of the monitor.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The ARN of the monitor.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The state of the monitor.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::MonitorState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the monitor.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::MonitorState> {
@@ -109,8 +104,7 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The time, in seconds, that metrics are collected and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.aggregation_period = input;
-        self
+        self.aggregation_period = input; self
     }
     /// <p>The time, in seconds, that metrics are collected and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<i64> {
@@ -123,17 +117,16 @@ impl MonitorSummaryBuilder {
     /// <p>The list of key-value pairs assigned to the monitor.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`MonitorSummary`](crate::types::MonitorSummary).
@@ -142,27 +135,29 @@ impl MonitorSummaryBuilder {
     /// - [`monitor_name`](crate::types::builders::MonitorSummaryBuilder::monitor_name)
     /// - [`state`](crate::types::builders::MonitorSummaryBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::MonitorSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MonitorSummary {
-            monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_arn",
-                    "monitor_arn was not specified but it is required when building MonitorSummary",
-                )
-            })?,
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building MonitorSummary",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building MonitorSummary",
-                )
-            })?,
-            aggregation_period: self.aggregation_period,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MonitorSummary {
+                monitor_arn: self.monitor_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_arn", "monitor_arn was not specified but it is required when building MonitorSummary")
+                    )?
+                ,
+                monitor_name: self.monitor_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_name", "monitor_name was not specified but it is required when building MonitorSummary")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building MonitorSummary")
+                    )?
+                ,
+                aggregation_period: self.aggregation_period
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

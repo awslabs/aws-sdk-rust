@@ -2,30 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDirectConnectGatewayAssociationInput {
+pub struct UpdateDirectConnectGatewayAssociationInput  {
     /// <p>The ID of the Direct Connect gateway association.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub add_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub add_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>,
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    pub remove_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub remove_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>,
 }
-impl UpdateDirectConnectGatewayAssociationInput {
+impl  UpdateDirectConnectGatewayAssociationInput  {
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_allowed_prefixes_to_direct_connect_gateway.is_none()`.
-    pub fn add_allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
-        self.add_allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
+    pub fn add_allowed_prefixes_to_direct_connect_gateway(&self) -> & [crate::types::RouteFilterPrefix] {
+        self.add_allowed_prefixes_to_direct_connect_gateway.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_allowed_prefixes_to_direct_connect_gateway.is_none()`.
-    pub fn remove_allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
-        self.remove_allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
+    pub fn remove_allowed_prefixes_to_direct_connect_gateway(&self) -> & [crate::types::RouteFilterPrefix] {
+        self.remove_allowed_prefixes_to_direct_connect_gateway.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateDirectConnectGatewayAssociationInput {
@@ -40,8 +42,8 @@ impl UpdateDirectConnectGatewayAssociationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
-    pub(crate) add_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    pub(crate) remove_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub(crate) add_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>,
+    pub(crate) remove_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>,
 }
 impl UpdateDirectConnectGatewayAssociationInputBuilder {
     /// <p>The ID of the Direct Connect gateway association.</p>
@@ -51,8 +53,7 @@ impl UpdateDirectConnectGatewayAssociationInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,20 +66,16 @@ impl UpdateDirectConnectGatewayAssociationInputBuilder {
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
     pub fn add_allowed_prefixes_to_direct_connect_gateway(mut self, input: crate::types::RouteFilterPrefix) -> Self {
         let mut v = self.add_allowed_prefixes_to_direct_connect_gateway.unwrap_or_default();
-        v.push(input);
-        self.add_allowed_prefixes_to_direct_connect_gateway = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add_allowed_prefixes_to_direct_connect_gateway = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn set_add_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    ) -> Self {
-        self.add_allowed_prefixes_to_direct_connect_gateway = input;
-        self
+    pub fn set_add_allowed_prefixes_to_direct_connect_gateway(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>) -> Self {
+        self.add_allowed_prefixes_to_direct_connect_gateway = input; self
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>> {
         &self.add_allowed_prefixes_to_direct_connect_gateway
     }
     /// Appends an item to `remove_allowed_prefixes_to_direct_connect_gateway`.
@@ -88,35 +85,30 @@ impl UpdateDirectConnectGatewayAssociationInputBuilder {
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
     pub fn remove_allowed_prefixes_to_direct_connect_gateway(mut self, input: crate::types::RouteFilterPrefix) -> Self {
         let mut v = self.remove_allowed_prefixes_to_direct_connect_gateway.unwrap_or_default();
-        v.push(input);
-        self.remove_allowed_prefixes_to_direct_connect_gateway = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remove_allowed_prefixes_to_direct_connect_gateway = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    pub fn set_remove_allowed_prefixes_to_direct_connect_gateway(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    ) -> Self {
-        self.remove_allowed_prefixes_to_direct_connect_gateway = input;
-        self
+    pub fn set_remove_allowed_prefixes_to_direct_connect_gateway(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>>) -> Self {
+        self.remove_allowed_prefixes_to_direct_connect_gateway = input; self
     }
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    pub fn get_remove_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+    pub fn get_remove_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RouteFilterPrefix>> {
         &self.remove_allowed_prefixes_to_direct_connect_gateway
     }
     /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayAssociationInput`](crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput {
-                association_id: self.association_id,
-                add_allowed_prefixes_to_direct_connect_gateway: self.add_allowed_prefixes_to_direct_connect_gateway,
-                remove_allowed_prefixes_to_direct_connect_gateway: self.remove_allowed_prefixes_to_direct_connect_gateway,
-            },
+                association_id: self.association_id
+                ,
+                add_allowed_prefixes_to_direct_connect_gateway: self.add_allowed_prefixes_to_direct_connect_gateway
+                ,
+                remove_allowed_prefixes_to_direct_connect_gateway: self.remove_allowed_prefixes_to_direct_connect_gateway
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigurationRevisionOutput {
+pub struct DescribeConfigurationRevisionOutput  {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Required. The date and time of the configuration.</p>
@@ -13,29 +13,29 @@ pub struct DescribeConfigurationRevisionOutput {
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeConfigurationRevisionOutput {
+impl  DescribeConfigurationRevisionOutput  {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>Required. The date and time of the configuration.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
     /// <p>The description of the configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConfigurationRevisionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConfigurationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
     pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionOutputBuilder {
@@ -61,8 +61,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
     }
     /// <p>Required. The date and time of the configuration.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>Required. The date and time of the configuration.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -89,8 +87,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
     }
     /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl DescribeConfigurationRevisionOutputBuilder {
     }
     /// <p>The description of the configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConfigurationRevisionOutput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput).
     pub fn build(self) -> crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput {
         crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput {
-            configuration_id: self.configuration_id,
-            created: self.created,
-            data: self.data,
-            description: self.description,
+            configuration_id: self.configuration_id
+            ,
+            created: self.created
+            ,
+            data: self.data
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

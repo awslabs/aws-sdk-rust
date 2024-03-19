@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInputsOutput {
+pub struct ListInputsOutput  {
     /// <p>Summary information about the inputs.</p>
-    pub input_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InputSummary>>,
+    pub input_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::InputSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInputsOutput {
+impl  ListInputsOutput  {
     /// <p>Summary information about the inputs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_summaries.is_none()`.
-    pub fn input_summaries(&self) -> &[crate::types::InputSummary] {
-        self.input_summaries.as_deref().unwrap_or_default()
+    pub fn input_summaries(&self) -> & [crate::types::InputSummary] {
+        self.input_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInputsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInputsOutput {
     /// Creates a new builder-style object to manufacture [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput).
     pub fn builder() -> crate::operation::list_inputs::builders::ListInputsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListInputsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputsOutputBuilder {
-    pub(crate) input_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InputSummary>>,
+    pub(crate) input_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::InputSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListInputsOutputBuilder {
     /// <p>Summary information about the inputs.</p>
     pub fn input_summaries(mut self, input: crate::types::InputSummary) -> Self {
         let mut v = self.input_summaries.unwrap_or_default();
-        v.push(input);
-        self.input_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information about the inputs.</p>
-    pub fn set_input_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSummary>>) -> Self {
-        self.input_summaries = input;
-        self
+    pub fn set_input_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputSummary>>) -> Self {
+        self.input_summaries = input; self
     }
     /// <p>Summary information about the inputs.</p>
-    pub fn get_input_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSummary>> {
+    pub fn get_input_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputSummary>> {
         &self.input_summaries
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
@@ -69,28 +69,30 @@ impl ListInputsOutputBuilder {
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput).
     pub fn build(self) -> crate::operation::list_inputs::ListInputsOutput {
         crate::operation::list_inputs::ListInputsOutput {
-            input_summaries: self.input_summaries,
-            next_token: self.next_token,
+            input_summaries: self.input_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

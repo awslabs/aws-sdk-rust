@@ -3,7 +3,7 @@
 /// <p>The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordOutput {
+pub struct RecordOutput  {
     /// <p>The output key.</p>
     pub output_key: ::std::option::Option<::std::string::String>,
     /// <p>The output value.</p>
@@ -11,17 +11,17 @@ pub struct RecordOutput {
     /// <p>The description of the output.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl RecordOutput {
+impl  RecordOutput  {
     /// <p>The output key.</p>
-    pub fn output_key(&self) -> ::std::option::Option<&str> {
+    pub fn output_key(&self) -> ::std::option::Option<& str> {
         self.output_key.as_deref()
     }
     /// <p>The output value.</p>
-    pub fn output_value(&self) -> ::std::option::Option<&str> {
+    pub fn output_value(&self) -> ::std::option::Option<& str> {
         self.output_value.as_deref()
     }
     /// <p>The description of the output.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RecordOutputBuilder {
     }
     /// <p>The output key.</p>
     pub fn set_output_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_key = input;
-        self
+        self.output_key = input; self
     }
     /// <p>The output key.</p>
     pub fn get_output_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RecordOutputBuilder {
     }
     /// <p>The output value.</p>
     pub fn set_output_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_value = input;
-        self
+        self.output_value = input; self
     }
     /// <p>The output value.</p>
     pub fn get_output_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl RecordOutputBuilder {
     }
     /// <p>The description of the output.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the output.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl RecordOutputBuilder {
     /// Consumes the builder and constructs a [`RecordOutput`](crate::types::RecordOutput).
     pub fn build(self) -> crate::types::RecordOutput {
         crate::types::RecordOutput {
-            output_key: self.output_key,
-            output_value: self.output_value,
-            description: self.description,
+            output_key: self.output_key
+            ,
+            output_value: self.output_value
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

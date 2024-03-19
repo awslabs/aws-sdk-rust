@@ -3,20 +3,19 @@
 /// <p>A key-value parameter to an <code>EnabledBaseline</code> resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnabledBaselineParameter {
+pub struct EnabledBaselineParameter  {
     /// <p>A string denoting the parameter key.</p>
     pub key: ::std::string::String,
     /// <p>A low-level <code>Document</code> object of any type (for example, a Java Object).</p>
     pub value: ::aws_smithy_types::Document,
 }
-impl EnabledBaselineParameter {
+impl  EnabledBaselineParameter  {
     /// <p>A string denoting the parameter key.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>A low-level <code>Document</code> object of any type (for example, a Java Object).</p>
-    pub fn value(&self) -> &::aws_smithy_types::Document {
+    pub fn value(&self) -> & ::aws_smithy_types::Document {
         &self.value
     }
 }
@@ -43,8 +42,7 @@ impl EnabledBaselineParameterBuilder {
     }
     /// <p>A string denoting the parameter key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>A string denoting the parameter key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl EnabledBaselineParameterBuilder {
     }
     /// <p>A low-level <code>Document</code> object of any type (for example, a Java Object).</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A low-level <code>Document</code> object of any type (for example, a Java Object).</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -70,19 +67,20 @@ impl EnabledBaselineParameterBuilder {
     /// - [`key`](crate::types::builders::EnabledBaselineParameterBuilder::key)
     /// - [`value`](crate::types::builders::EnabledBaselineParameterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::EnabledBaselineParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnabledBaselineParameter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building EnabledBaselineParameter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building EnabledBaselineParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnabledBaselineParameter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building EnabledBaselineParameter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building EnabledBaselineParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

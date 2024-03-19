@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSensitivityInspectionTemplateInput {
+pub struct GetSensitivityInspectionTemplateInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetSensitivityInspectionTemplateInput {
+impl  GetSensitivityInspectionTemplateInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetSensitivityInspectionTemplateInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetSensitivityInspectionTemplateInput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

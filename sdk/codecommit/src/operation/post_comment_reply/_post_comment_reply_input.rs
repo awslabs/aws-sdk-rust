@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PostCommentReplyInput {
+pub struct PostCommentReplyInput  {
     /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     pub in_reply_to: ::std::option::Option<::std::string::String>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
@@ -10,17 +10,17 @@ pub struct PostCommentReplyInput {
     /// <p>The contents of your reply to a comment.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl PostCommentReplyInput {
+impl  PostCommentReplyInput  {
     /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
-    pub fn in_reply_to(&self) -> ::std::option::Option<&str> {
+    pub fn in_reply_to(&self) -> ::std::option::Option<& str> {
         self.in_reply_to.as_deref()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The contents of your reply to a comment.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PostCommentReplyInputBuilder {
     }
     /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     pub fn set_in_reply_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.in_reply_to = input;
-        self
+        self.in_reply_to = input; self
     }
     /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     pub fn get_in_reply_to(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PostCommentReplyInputBuilder {
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl PostCommentReplyInputBuilder {
     }
     /// <p>The contents of your reply to a comment.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The contents of your reply to a comment.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }
     /// Consumes the builder and constructs a [`PostCommentReplyInput`](crate::operation::post_comment_reply::PostCommentReplyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::post_comment_reply::PostCommentReplyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::post_comment_reply::PostCommentReplyInput {
-            in_reply_to: self.in_reply_to,
-            client_request_token: self.client_request_token,
-            content: self.content,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::post_comment_reply::PostCommentReplyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::post_comment_reply::PostCommentReplyInput {
+                in_reply_to: self.in_reply_to
+                ,
+                client_request_token: self.client_request_token
+                ,
+                content: self.content
+                ,
+            }
+        )
     }
 }
+

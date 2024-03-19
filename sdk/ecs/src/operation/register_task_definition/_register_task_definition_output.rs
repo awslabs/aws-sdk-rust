@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterTaskDefinitionOutput {
+pub struct RegisterTaskDefinitionOutput  {
     /// <p>The full description of the registered task definition.</p>
     pub task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     /// <p>The list of tags associated with the task definition.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl RegisterTaskDefinitionOutput {
+impl  RegisterTaskDefinitionOutput  {
     /// <p>The full description of the registered task definition.</p>
-    pub fn task_definition(&self) -> ::std::option::Option<&crate::types::TaskDefinition> {
+    pub fn task_definition(&self) -> ::std::option::Option<& crate::types::TaskDefinition> {
         self.task_definition.as_ref()
     }
     /// <p>The list of tags associated with the task definition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterTaskDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTaskDefinitionOutput`](crate::operation::register_task_definition::RegisterTaskDefinitionOutput).
     pub fn builder() -> crate::operation::register_task_definition::builders::RegisterTaskDefinitionOutputBuilder {
@@ -38,7 +39,7 @@ impl RegisterTaskDefinitionOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterTaskDefinitionOutputBuilder {
     pub(crate) task_definition: ::std::option::Option<crate::types::TaskDefinition>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl RegisterTaskDefinitionOutputBuilder {
@@ -49,8 +50,7 @@ impl RegisterTaskDefinitionOutputBuilder {
     }
     /// <p>The full description of the registered task definition.</p>
     pub fn set_task_definition(mut self, input: ::std::option::Option<crate::types::TaskDefinition>) -> Self {
-        self.task_definition = input;
-        self
+        self.task_definition = input; self
     }
     /// <p>The full description of the registered task definition.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<crate::types::TaskDefinition> {
@@ -63,34 +63,36 @@ impl RegisterTaskDefinitionOutputBuilder {
     /// <p>The list of tags associated with the task definition.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags associated with the task definition.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tags associated with the task definition.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterTaskDefinitionOutput`](crate::operation::register_task_definition::RegisterTaskDefinitionOutput).
     pub fn build(self) -> crate::operation::register_task_definition::RegisterTaskDefinitionOutput {
         crate::operation::register_task_definition::RegisterTaskDefinitionOutput {
-            task_definition: self.task_definition,
-            tags: self.tags,
+            task_definition: self.task_definition
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

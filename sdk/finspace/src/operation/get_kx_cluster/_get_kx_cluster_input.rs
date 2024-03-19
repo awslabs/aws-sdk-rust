@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKxClusterInput {
+pub struct GetKxClusterInput  {
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster that you want to retrieve.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
 }
-impl GetKxClusterInput {
+impl  GetKxClusterInput  {
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the cluster that you want to retrieve.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetKxClusterInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetKxClusterInputBuilder {
     }
     /// <p>The name of the cluster that you want to retrieve.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster that you want to retrieve.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
     /// Consumes the builder and constructs a [`GetKxClusterInput`](crate::operation::get_kx_cluster::GetKxClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_kx_cluster::GetKxClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_kx_cluster::GetKxClusterInput {
-            environment_id: self.environment_id,
-            cluster_name: self.cluster_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_kx_cluster::GetKxClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_kx_cluster::GetKxClusterInput {
+                environment_id: self.environment_id
+                ,
+                cluster_name: self.cluster_name
+                ,
+            }
+        )
     }
 }
+

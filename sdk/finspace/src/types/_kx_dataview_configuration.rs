@@ -3,7 +3,7 @@
 /// <p>The structure that stores the configuration details of a dataview.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxDataviewConfiguration {
+pub struct KxDataviewConfiguration  {
     /// <p>The unique identifier of the dataview.</p>
     pub dataview_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the dataview corresponding to a given changeset.</p>
@@ -11,26 +11,27 @@ pub struct KxDataviewConfiguration {
     /// <p>A unique identifier for the changeset.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The db path and volume configuration for the segmented database.</p>
-    pub segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
+    pub segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
 }
-impl KxDataviewConfiguration {
+impl  KxDataviewConfiguration  {
     /// <p>The unique identifier of the dataview.</p>
-    pub fn dataview_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataview_name(&self) -> ::std::option::Option<& str> {
         self.dataview_name.as_deref()
     }
     /// <p>The version of the dataview corresponding to a given changeset.</p>
-    pub fn dataview_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataview_version_id(&self) -> ::std::option::Option<& str> {
         self.dataview_version_id.as_deref()
     }
     /// <p>A unique identifier for the changeset.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The db path and volume configuration for the segmented database.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_configurations.is_none()`.
-    pub fn segment_configurations(&self) -> &[crate::types::KxDataviewSegmentConfiguration] {
-        self.segment_configurations.as_deref().unwrap_or_default()
+    pub fn segment_configurations(&self) -> & [crate::types::KxDataviewSegmentConfiguration] {
+        self.segment_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl KxDataviewConfiguration {
@@ -47,7 +48,7 @@ pub struct KxDataviewConfigurationBuilder {
     pub(crate) dataview_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataview_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
-    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
+    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
 }
 impl KxDataviewConfigurationBuilder {
     /// <p>The unique identifier of the dataview.</p>
@@ -57,8 +58,7 @@ impl KxDataviewConfigurationBuilder {
     }
     /// <p>The unique identifier of the dataview.</p>
     pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataview_name = input;
-        self
+        self.dataview_name = input; self
     }
     /// <p>The unique identifier of the dataview.</p>
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl KxDataviewConfigurationBuilder {
     }
     /// <p>The version of the dataview corresponding to a given changeset.</p>
     pub fn set_dataview_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataview_version_id = input;
-        self
+        self.dataview_version_id = input; self
     }
     /// <p>The version of the dataview corresponding to a given changeset.</p>
     pub fn get_dataview_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl KxDataviewConfigurationBuilder {
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl KxDataviewConfigurationBuilder {
     /// <p>The db path and volume configuration for the segmented database.</p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         let mut v = self.segment_configurations.unwrap_or_default();
-        v.push(input);
-        self.segment_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segment_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The db path and volume configuration for the segmented database.</p>
-    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
-        self.segment_configurations = input;
-        self
+    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
+        self.segment_configurations = input; self
     }
     /// <p>The db path and volume configuration for the segmented database.</p>
-    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
+    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>> {
         &self.segment_configurations
     }
     /// Consumes the builder and constructs a [`KxDataviewConfiguration`](crate::types::KxDataviewConfiguration).
     pub fn build(self) -> crate::types::KxDataviewConfiguration {
         crate::types::KxDataviewConfiguration {
-            dataview_name: self.dataview_name,
-            dataview_version_id: self.dataview_version_id,
-            changeset_id: self.changeset_id,
-            segment_configurations: self.segment_configurations,
+            dataview_name: self.dataview_name
+            ,
+            dataview_version_id: self.dataview_version_id
+            ,
+            changeset_id: self.changeset_id
+            ,
+            segment_configurations: self.segment_configurations
+            ,
         }
     }
 }
+

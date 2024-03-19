@@ -3,29 +3,28 @@
 /// <p>Represents the output of a <code>ListActionTypes</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListActionTypesOutput {
+pub struct ListActionTypesOutput  {
     /// <p>Provides details of the action types.</p>
-    pub action_types: ::std::vec::Vec<crate::types::ActionType>,
+    pub action_types: ::std::vec::Vec::<crate::types::ActionType>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListActionTypesOutput {
+impl  ListActionTypesOutput  {
     /// <p>Provides details of the action types.</p>
-    pub fn action_types(&self) -> &[crate::types::ActionType] {
-        use std::ops::Deref;
-        self.action_types.deref()
+    pub fn action_types(&self) -> & [crate::types::ActionType] {
+        use std::ops::Deref; self.action_types.deref()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListActionTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListActionTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListActionTypesOutput`](crate::operation::list_action_types::ListActionTypesOutput).
     pub fn builder() -> crate::operation::list_action_types::builders::ListActionTypesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListActionTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionTypesOutputBuilder {
-    pub(crate) action_types: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
+    pub(crate) action_types: ::std::option::Option<::std::vec::Vec::<crate::types::ActionType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListActionTypesOutputBuilder {
     /// <p>Provides details of the action types.</p>
     pub fn action_types(mut self, input: crate::types::ActionType) -> Self {
         let mut v = self.action_types.unwrap_or_default();
-        v.push(input);
-        self.action_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.action_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides details of the action types.</p>
-    pub fn set_action_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>) -> Self {
-        self.action_types = input;
-        self
+    pub fn set_action_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionType>>) -> Self {
+        self.action_types = input; self
     }
     /// <p>Provides details of the action types.</p>
-    pub fn get_action_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionType>> {
+    pub fn get_action_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionType>> {
         &self.action_types
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
@@ -69,37 +67,37 @@ impl ListActionTypesOutputBuilder {
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListActionTypesOutput`](crate::operation::list_action_types::ListActionTypesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_types`](crate::operation::list_action_types::builders::ListActionTypesOutputBuilder::action_types)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_action_types::ListActionTypesOutput {
-            action_types: self.action_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_types",
-                    "action_types was not specified but it is required when building ListActionTypesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_action_types::ListActionTypesOutput {
+                action_types: self.action_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_types", "action_types was not specified but it is required when building ListActionTypesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

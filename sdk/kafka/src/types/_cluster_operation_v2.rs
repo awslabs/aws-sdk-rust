@@ -3,7 +3,7 @@
 /// <p>Returns information about a cluster operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterOperationV2 {
+pub struct ClusterOperationV2  {
     /// <p>ARN of the cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Type of the backend cluster.</p>
@@ -25,45 +25,45 @@ pub struct ClusterOperationV2 {
     /// <p>Properties of a serverless cluster.</p>
     pub serverless: ::std::option::Option<crate::types::ClusterOperationV2Serverless>,
 }
-impl ClusterOperationV2 {
+impl  ClusterOperationV2  {
     /// <p>ARN of the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>Type of the backend cluster.</p>
-    pub fn cluster_type(&self) -> ::std::option::Option<&crate::types::ClusterType> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& crate::types::ClusterType> {
         self.cluster_type.as_ref()
     }
     /// <p>The time at which operation was started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time at which the operation finished.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>If cluster operation failed from an error, it describes the error.</p>
-    pub fn error_info(&self) -> ::std::option::Option<&crate::types::ErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<& crate::types::ErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p>ARN of the cluster operation.</p>
-    pub fn operation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn operation_arn(&self) -> ::std::option::Option<& str> {
         self.operation_arn.as_deref()
     }
     /// <p>State of the cluster operation.</p>
-    pub fn operation_state(&self) -> ::std::option::Option<&str> {
+    pub fn operation_state(&self) -> ::std::option::Option<& str> {
         self.operation_state.as_deref()
     }
     /// <p>Type of the cluster operation.</p>
-    pub fn operation_type(&self) -> ::std::option::Option<&str> {
+    pub fn operation_type(&self) -> ::std::option::Option<& str> {
         self.operation_type.as_deref()
     }
     /// <p>Properties of a provisioned cluster.</p>
-    pub fn provisioned(&self) -> ::std::option::Option<&crate::types::ClusterOperationV2Provisioned> {
+    pub fn provisioned(&self) -> ::std::option::Option<& crate::types::ClusterOperationV2Provisioned> {
         self.provisioned.as_ref()
     }
     /// <p>Properties of a serverless cluster.</p>
-    pub fn serverless(&self) -> ::std::option::Option<&crate::types::ClusterOperationV2Serverless> {
+    pub fn serverless(&self) -> ::std::option::Option<& crate::types::ClusterOperationV2Serverless> {
         self.serverless.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>ARN of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>ARN of the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>Type of the backend cluster.</p>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::ClusterType>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>Type of the backend cluster.</p>
     pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::ClusterType> {
@@ -125,8 +123,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>The time at which operation was started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time at which operation was started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +136,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>The time at which the operation finished.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time at which the operation finished.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -153,8 +149,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>If cluster operation failed from an error, it describes the error.</p>
     pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
-        self.error_info = input;
-        self
+        self.error_info = input; self
     }
     /// <p>If cluster operation failed from an error, it describes the error.</p>
     pub fn get_error_info(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
@@ -167,8 +162,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>ARN of the cluster operation.</p>
     pub fn set_operation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_arn = input;
-        self
+        self.operation_arn = input; self
     }
     /// <p>ARN of the cluster operation.</p>
     pub fn get_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>State of the cluster operation.</p>
     pub fn set_operation_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_state = input;
-        self
+        self.operation_state = input; self
     }
     /// <p>State of the cluster operation.</p>
     pub fn get_operation_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +188,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>Type of the cluster operation.</p>
     pub fn set_operation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_type = input;
-        self
+        self.operation_type = input; self
     }
     /// <p>Type of the cluster operation.</p>
     pub fn get_operation_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>Properties of a provisioned cluster.</p>
     pub fn set_provisioned(mut self, input: ::std::option::Option<crate::types::ClusterOperationV2Provisioned>) -> Self {
-        self.provisioned = input;
-        self
+        self.provisioned = input; self
     }
     /// <p>Properties of a provisioned cluster.</p>
     pub fn get_provisioned(&self) -> &::std::option::Option<crate::types::ClusterOperationV2Provisioned> {
@@ -223,8 +214,7 @@ impl ClusterOperationV2Builder {
     }
     /// <p>Properties of a serverless cluster.</p>
     pub fn set_serverless(mut self, input: ::std::option::Option<crate::types::ClusterOperationV2Serverless>) -> Self {
-        self.serverless = input;
-        self
+        self.serverless = input; self
     }
     /// <p>Properties of a serverless cluster.</p>
     pub fn get_serverless(&self) -> &::std::option::Option<crate::types::ClusterOperationV2Serverless> {
@@ -233,16 +223,27 @@ impl ClusterOperationV2Builder {
     /// Consumes the builder and constructs a [`ClusterOperationV2`](crate::types::ClusterOperationV2).
     pub fn build(self) -> crate::types::ClusterOperationV2 {
         crate::types::ClusterOperationV2 {
-            cluster_arn: self.cluster_arn,
-            cluster_type: self.cluster_type,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            error_info: self.error_info,
-            operation_arn: self.operation_arn,
-            operation_state: self.operation_state,
-            operation_type: self.operation_type,
-            provisioned: self.provisioned,
-            serverless: self.serverless,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_type: self.cluster_type
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            error_info: self.error_info
+            ,
+            operation_arn: self.operation_arn
+            ,
+            operation_state: self.operation_state
+            ,
+            operation_type: self.operation_type
+            ,
+            provisioned: self.provisioned
+            ,
+            serverless: self.serverless
+            ,
         }
     }
 }
+

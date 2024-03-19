@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInstanceStorageConfigOutput {
+pub struct UpdateInstanceStorageConfigOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateInstanceStorageConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateInstanceStorageConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceStorageConfigOutput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput).
     pub fn builder() -> crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateInstanceStorageConfigOutputBuilder {
 }
 impl UpdateInstanceStorageConfigOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateInstanceStorageConfigOutput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput).
     pub fn build(self) -> crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput {
         crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput {
@@ -40,3 +40,4 @@ impl UpdateInstanceStorageConfigOutputBuilder {
         }
     }
 }
+

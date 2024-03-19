@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAssistantInput {
+pub struct DeleteAssistantInput  {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAssistantInput {
+impl  DeleteAssistantInput  {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteAssistantInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assistant_id
     }
     /// Consumes the builder and constructs a [`DeleteAssistantInput`](crate::operation::delete_assistant::DeleteAssistantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_assistant::DeleteAssistantInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_assistant::DeleteAssistantInput {
-            assistant_id: self.assistant_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_assistant::DeleteAssistantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_assistant::DeleteAssistantInput {
+                assistant_id: self.assistant_id
+                ,
+            }
+        )
     }
 }
+

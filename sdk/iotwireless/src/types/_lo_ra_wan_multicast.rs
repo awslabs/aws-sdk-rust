@@ -3,19 +3,19 @@
 /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanMulticast {
+pub struct LoRaWanMulticast  {
     /// <p>Supported RfRegions</p>
     pub rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub dl_class: ::std::option::Option<crate::types::DlClass>,
 }
-impl LoRaWanMulticast {
+impl  LoRaWanMulticast  {
     /// <p>Supported RfRegions</p>
-    pub fn rf_region(&self) -> ::std::option::Option<&crate::types::SupportedRfRegion> {
+    pub fn rf_region(&self) -> ::std::option::Option<& crate::types::SupportedRfRegion> {
         self.rf_region.as_ref()
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
-    pub fn dl_class(&self) -> ::std::option::Option<&crate::types::DlClass> {
+    pub fn dl_class(&self) -> ::std::option::Option<& crate::types::DlClass> {
         self.dl_class.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LoRaWanMulticastBuilder {
     }
     /// <p>Supported RfRegions</p>
     pub fn set_rf_region(mut self, input: ::std::option::Option<crate::types::SupportedRfRegion>) -> Self {
-        self.rf_region = input;
-        self
+        self.rf_region = input; self
     }
     /// <p>Supported RfRegions</p>
     pub fn get_rf_region(&self) -> &::std::option::Option<crate::types::SupportedRfRegion> {
@@ -55,8 +54,7 @@ impl LoRaWanMulticastBuilder {
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub fn set_dl_class(mut self, input: ::std::option::Option<crate::types::DlClass>) -> Self {
-        self.dl_class = input;
-        self
+        self.dl_class = input; self
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub fn get_dl_class(&self) -> &::std::option::Option<crate::types::DlClass> {
@@ -65,8 +63,11 @@ impl LoRaWanMulticastBuilder {
     /// Consumes the builder and constructs a [`LoRaWanMulticast`](crate::types::LoRaWanMulticast).
     pub fn build(self) -> crate::types::LoRaWanMulticast {
         crate::types::LoRaWanMulticast {
-            rf_region: self.rf_region,
-            dl_class: self.dl_class,
+            rf_region: self.rf_region
+            ,
+            dl_class: self.dl_class
+            ,
         }
     }
 }
+

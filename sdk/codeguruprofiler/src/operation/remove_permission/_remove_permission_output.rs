@@ -3,30 +3,28 @@
 /// <p>The structure representing the <code>removePermissionResponse</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemovePermissionOutput {
+pub struct RemovePermissionOutput  {
     /// <p>The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed.</p>
     pub policy: ::std::string::String,
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub revision_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl RemovePermissionOutput {
+impl  RemovePermissionOutput  {
     /// <p>The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> & str {
+        use std::ops::Deref; self.policy.deref()
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RemovePermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RemovePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionOutput`](crate::operation::remove_permission::RemovePermissionOutput).
     pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionOutputBuilder {
@@ -51,8 +49,7 @@ impl RemovePermissionOutputBuilder {
     }
     /// <p>The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,43 +63,41 @@ impl RemovePermissionOutputBuilder {
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RemovePermissionOutput`](crate::operation::remove_permission::RemovePermissionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy`](crate::operation::remove_permission::builders::RemovePermissionOutputBuilder::policy)
     /// - [`revision_id`](crate::operation::remove_permission::builders::RemovePermissionOutputBuilder::revision_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_permission::RemovePermissionOutput {
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building RemovePermissionOutput",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building RemovePermissionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_permission::RemovePermissionOutput {
+                policy: self.policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy", "policy was not specified but it is required when building RemovePermissionOutput")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building RemovePermissionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

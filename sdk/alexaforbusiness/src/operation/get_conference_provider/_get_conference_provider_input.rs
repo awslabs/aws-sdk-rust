@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConferenceProviderInput {
+pub struct GetConferenceProviderInput  {
     /// <p>The ARN of the newly created conference provider.</p>
     pub conference_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetConferenceProviderInput {
+impl  GetConferenceProviderInput  {
     /// <p>The ARN of the newly created conference provider.</p>
-    pub fn conference_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn conference_provider_arn(&self) -> ::std::option::Option<& str> {
         self.conference_provider_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetConferenceProviderInputBuilder {
     }
     /// <p>The ARN of the newly created conference provider.</p>
     pub fn set_conference_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conference_provider_arn = input;
-        self
+        self.conference_provider_arn = input; self
     }
     /// <p>The ARN of the newly created conference provider.</p>
     pub fn get_conference_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.conference_provider_arn
     }
     /// Consumes the builder and constructs a [`GetConferenceProviderInput`](crate::operation::get_conference_provider::GetConferenceProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_conference_provider::GetConferenceProviderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_conference_provider::GetConferenceProviderInput {
-            conference_provider_arn: self.conference_provider_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_conference_provider::GetConferenceProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_conference_provider::GetConferenceProviderInput {
+                conference_provider_arn: self.conference_provider_arn
+                ,
+            }
+        )
     }
 }
+

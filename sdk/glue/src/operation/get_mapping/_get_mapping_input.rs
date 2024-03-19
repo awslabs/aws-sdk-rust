@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMappingInput {
+pub struct GetMappingInput  {
     /// <p>Specifies the source table.</p>
     pub source: ::std::option::Option<crate::types::CatalogEntry>,
     /// <p>A list of target tables.</p>
-    pub sinks: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>,
+    pub sinks: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogEntry>>,
     /// <p>Parameters for the mapping.</p>
     pub location: ::std::option::Option<crate::types::Location>,
 }
-impl GetMappingInput {
+impl  GetMappingInput  {
     /// <p>Specifies the source table.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::CatalogEntry> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::CatalogEntry> {
         self.source.as_ref()
     }
     /// <p>A list of target tables.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sinks.is_none()`.
-    pub fn sinks(&self) -> &[crate::types::CatalogEntry] {
-        self.sinks.as_deref().unwrap_or_default()
+    pub fn sinks(&self) -> & [crate::types::CatalogEntry] {
+        self.sinks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Parameters for the mapping.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::Location> {
         self.location.as_ref()
     }
 }
@@ -38,7 +39,7 @@ impl GetMappingInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMappingInputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::CatalogEntry>,
-    pub(crate) sinks: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>,
+    pub(crate) sinks: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogEntry>>,
     pub(crate) location: ::std::option::Option<crate::types::Location>,
 }
 impl GetMappingInputBuilder {
@@ -50,8 +51,7 @@ impl GetMappingInputBuilder {
     }
     /// <p>Specifies the source table.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::CatalogEntry>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Specifies the source table.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::CatalogEntry> {
@@ -64,17 +64,16 @@ impl GetMappingInputBuilder {
     /// <p>A list of target tables.</p>
     pub fn sinks(mut self, input: crate::types::CatalogEntry) -> Self {
         let mut v = self.sinks.unwrap_or_default();
-        v.push(input);
-        self.sinks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sinks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of target tables.</p>
-    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>) -> Self {
-        self.sinks = input;
-        self
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CatalogEntry>>) -> Self {
+        self.sinks = input; self
     }
     /// <p>A list of target tables.</p>
-    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>> {
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CatalogEntry>> {
         &self.sinks
     }
     /// <p>Parameters for the mapping.</p>
@@ -84,8 +83,7 @@ impl GetMappingInputBuilder {
     }
     /// <p>Parameters for the mapping.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Parameters for the mapping.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
@@ -93,10 +91,16 @@ impl GetMappingInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetMappingInput`](crate::operation::get_mapping::GetMappingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_mapping::GetMappingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_mapping::GetMappingInput {
-            source: self.source,
-            sinks: self.sinks,
-            location: self.location,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_mapping::GetMappingInput {
+                source: self.source
+                ,
+                sinks: self.sinks
+                ,
+                location: self.location
+                ,
+            }
+        )
     }
 }
+

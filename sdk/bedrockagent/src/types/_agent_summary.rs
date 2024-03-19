@@ -3,7 +3,7 @@
 /// Summary of Agent.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentSummary {
+pub struct AgentSummary  {
     /// Identifier for a resource.
     pub agent_id: ::std::string::String,
     /// Name for a resource.
@@ -17,31 +17,29 @@ pub struct AgentSummary {
     /// Agent Version.
     pub latest_agent_version: ::std::option::Option<::std::string::String>,
 }
-impl AgentSummary {
+impl  AgentSummary  {
     /// Identifier for a resource.
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// Name for a resource.
-    pub fn agent_name(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_name.deref()
+    pub fn agent_name(&self) -> & str {
+        use std::ops::Deref; self.agent_name.deref()
     }
     /// Schema Type for Action APIs.
-    pub fn agent_status(&self) -> &crate::types::AgentStatus {
+    pub fn agent_status(&self) -> & crate::types::AgentStatus {
         &self.agent_status
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// Agent Version.
-    pub fn latest_agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn latest_agent_version(&self) -> ::std::option::Option<& str> {
         self.latest_agent_version.as_deref()
     }
 }
@@ -72,8 +70,7 @@ impl AgentSummaryBuilder {
     }
     /// Identifier for a resource.
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl AgentSummaryBuilder {
     }
     /// Name for a resource.
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_name = input;
-        self
+        self.agent_name = input; self
     }
     /// Name for a resource.
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl AgentSummaryBuilder {
     }
     /// Schema Type for Action APIs.
     pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.agent_status = input;
-        self
+        self.agent_status = input; self
     }
     /// Schema Type for Action APIs.
     pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
@@ -116,8 +111,7 @@ impl AgentSummaryBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +125,7 @@ impl AgentSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +138,7 @@ impl AgentSummaryBuilder {
     }
     /// Agent Version.
     pub fn set_latest_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_agent_version = input;
-        self
+        self.latest_agent_version = input; self
     }
     /// Agent Version.
     pub fn get_latest_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,33 +151,34 @@ impl AgentSummaryBuilder {
     /// - [`agent_status`](crate::types::builders::AgentSummaryBuilder::agent_status)
     /// - [`updated_at`](crate::types::builders::AgentSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentSummary {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building AgentSummary",
-                )
-            })?,
-            agent_name: self.agent_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_name",
-                    "agent_name was not specified but it is required when building AgentSummary",
-                )
-            })?,
-            agent_status: self.agent_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_status",
-                    "agent_status was not specified but it is required when building AgentSummary",
-                )
-            })?,
-            description: self.description,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AgentSummary",
-                )
-            })?,
-            latest_agent_version: self.latest_agent_version,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentSummary {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building AgentSummary")
+                    )?
+                ,
+                agent_name: self.agent_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_name", "agent_name was not specified but it is required when building AgentSummary")
+                    )?
+                ,
+                agent_status: self.agent_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_status", "agent_status was not specified but it is required when building AgentSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AgentSummary")
+                    )?
+                ,
+                latest_agent_version: self.latest_agent_version
+                ,
+            }
+        )
     }
 }
+

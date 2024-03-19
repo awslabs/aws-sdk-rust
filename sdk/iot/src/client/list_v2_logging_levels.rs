@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListV2LoggingLevels`](crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`target_type(LogTargetType)`](crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::target_type) / [`set_target_type(Option<LogTargetType>)`](crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::set_target_type):<br>required: **false**<br><p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListV2LoggingLevelsOutput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput) with field(s):
+                            /// - On success, responds with [`ListV2LoggingLevelsOutput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput) with field(s):
     ///   - [`log_target_configurations(Option<Vec::<LogTargetConfiguration>>)`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput::log_target_configurations): <p>The logging configuration for a target.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListV2LoggingLevelsError>`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError)
+                            /// - On failure, responds with [`SdkError<ListV2LoggingLevelsError>`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError)
     pub fn list_v2_logging_levels(&self) -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder {
-        crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,21 +3,19 @@
 /// <p>Specifies updates to an FSx for ONTAP storage virtual machine's (SVM) Microsoft Active Directory (AD) configuration. Note that account credentials are not returned in the response payload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSvmActiveDirectoryConfiguration {
+pub struct UpdateSvmActiveDirectoryConfiguration  {
     /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
     pub self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
     /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
     pub net_bios_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSvmActiveDirectoryConfiguration {
+impl  UpdateSvmActiveDirectoryConfiguration  {
     /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
-    pub fn self_managed_active_directory_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
+    pub fn self_managed_active_directory_configuration(&self) -> ::std::option::Option<& crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
         self.self_managed_active_directory_configuration.as_ref()
     }
     /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
-    pub fn net_bios_name(&self) -> ::std::option::Option<&str> {
+    pub fn net_bios_name(&self) -> ::std::option::Option<& str> {
         self.net_bios_name.as_deref()
     }
 }
@@ -42,17 +40,11 @@ impl UpdateSvmActiveDirectoryConfigurationBuilder {
         self
     }
     /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
-    pub fn set_self_managed_active_directory_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
-    ) -> Self {
-        self.self_managed_active_directory_configuration = input;
-        self
+    pub fn set_self_managed_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>) -> Self {
+        self.self_managed_active_directory_configuration = input; self
     }
     /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
-    pub fn get_self_managed_active_directory_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
+    pub fn get_self_managed_active_directory_configuration(&self) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
         &self.self_managed_active_directory_configuration
     }
     /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
@@ -62,8 +54,7 @@ impl UpdateSvmActiveDirectoryConfigurationBuilder {
     }
     /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
     pub fn set_net_bios_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.net_bios_name = input;
-        self
+        self.net_bios_name = input; self
     }
     /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
     pub fn get_net_bios_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +63,11 @@ impl UpdateSvmActiveDirectoryConfigurationBuilder {
     /// Consumes the builder and constructs a [`UpdateSvmActiveDirectoryConfiguration`](crate::types::UpdateSvmActiveDirectoryConfiguration).
     pub fn build(self) -> crate::types::UpdateSvmActiveDirectoryConfiguration {
         crate::types::UpdateSvmActiveDirectoryConfiguration {
-            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration,
-            net_bios_name: self.net_bios_name,
+            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration
+            ,
+            net_bios_name: self.net_bios_name
+            ,
         }
     }
 }
+

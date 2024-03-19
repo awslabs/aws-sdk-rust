@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountInput {
+pub struct UpdateAccountInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the specified Amazon Chime account.</p>
@@ -10,17 +10,17 @@ pub struct UpdateAccountInput {
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
     pub default_license: ::std::option::Option<crate::types::License>,
 }
-impl UpdateAccountInput {
+impl  UpdateAccountInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The new name for the specified Amazon Chime account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
-    pub fn default_license(&self) -> ::std::option::Option<&crate::types::License> {
+    pub fn default_license(&self) -> ::std::option::Option<& crate::types::License> {
         self.default_license.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateAccountInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateAccountInputBuilder {
     }
     /// <p>The new name for the specified Amazon Chime account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The new name for the specified Amazon Chime account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl UpdateAccountInputBuilder {
     }
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
     pub fn set_default_license(mut self, input: ::std::option::Option<crate::types::License>) -> Self {
-        self.default_license = input;
-        self
+        self.default_license = input; self
     }
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
     pub fn get_default_license(&self) -> &::std::option::Option<crate::types::License> {
         &self.default_license
     }
     /// Consumes the builder and constructs a [`UpdateAccountInput`](crate::operation::update_account::UpdateAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_account::UpdateAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_account::UpdateAccountInput {
-            account_id: self.account_id,
-            name: self.name,
-            default_license: self.default_license,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_account::UpdateAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_account::UpdateAccountInput {
+                account_id: self.account_id
+                ,
+                name: self.name
+                ,
+                default_license: self.default_license
+                ,
+            }
+        )
     }
 }
+

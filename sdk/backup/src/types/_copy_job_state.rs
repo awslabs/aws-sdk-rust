@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let copyjobstate = unimplemented!();
 /// match copyjobstate {
@@ -33,16 +33,14 @@
 /// Specifically, when `copyjobstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CopyJobState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum CopyJobState {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -56,70 +54,71 @@ pub enum CopyJobState {
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for CopyJobState {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => CopyJobState::Completed,
-            "CREATED" => CopyJobState::Created,
-            "FAILED" => CopyJobState::Failed,
-            "PARTIAL" => CopyJobState::Partial,
-            "RUNNING" => CopyJobState::Running,
-            other => CopyJobState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COMPLETED" => CopyJobState::Completed,
+"CREATED" => CopyJobState::Created,
+"FAILED" => CopyJobState::Failed,
+"PARTIAL" => CopyJobState::Partial,
+"RUNNING" => CopyJobState::Running,
+other => CopyJobState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for CopyJobState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(CopyJobState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(CopyJobState::from(s))
+                    }
+                }
 impl CopyJobState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CopyJobState::Completed => "COMPLETED",
-            CopyJobState::Created => "CREATED",
-            CopyJobState::Failed => "FAILED",
-            CopyJobState::Partial => "PARTIAL",
-            CopyJobState::Running => "RUNNING",
-            CopyJobState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "CREATED", "FAILED", "PARTIAL", "RUNNING"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CopyJobState::Completed => "COMPLETED",
+    CopyJobState::Created => "CREATED",
+    CopyJobState::Failed => "FAILED",
+    CopyJobState::Partial => "PARTIAL",
+    CopyJobState::Running => "RUNNING",
+    CopyJobState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "CREATED", "FAILED", "PARTIAL", "RUNNING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for CopyJobState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl CopyJobState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for CopyJobState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            CopyJobState::Completed => write!(f, "COMPLETED"),
-            CopyJobState::Created => write!(f, "CREATED"),
-            CopyJobState::Failed => write!(f, "FAILED"),
-            CopyJobState::Partial => write!(f, "PARTIAL"),
-            CopyJobState::Running => write!(f, "RUNNING"),
-            CopyJobState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                CopyJobState::Completed => write!(f, "COMPLETED"),
+CopyJobState::Created => write!(f, "CREATED"),
+CopyJobState::Failed => write!(f, "FAILED"),
+CopyJobState::Partial => write!(f, "PARTIAL"),
+CopyJobState::Running => write!(f, "RUNNING"),
+CopyJobState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxDataviewInput {
+pub struct CreateKxDataviewInput  {
     /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database where you want to create a dataview.</p>
@@ -16,7 +16,7 @@ pub struct CreateKxDataviewInput {
     /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
+    pub segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.</p>
     pub auto_update: ::std::option::Option<bool>,
     /// <p>The option to specify whether you want to make the dataview writable to perform database maintenance. The following are some considerations related to writable dataviews.  </p>
@@ -34,40 +34,41 @@ pub struct CreateKxDataviewInput {
     /// <p>A description of the dataview.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateKxDataviewInput {
+impl  CreateKxDataviewInput  {
     /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the database where you want to create a dataview.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A unique identifier for the dataview.</p>
-    pub fn dataview_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataview_name(&self) -> ::std::option::Option<& str> {
         self.dataview_name.as_deref()
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
-    pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
+    pub fn az_mode(&self) -> ::std::option::Option<& crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_configurations.is_none()`.
-    pub fn segment_configurations(&self) -> &[crate::types::KxDataviewSegmentConfiguration] {
-        self.segment_configurations.as_deref().unwrap_or_default()
+    pub fn segment_configurations(&self) -> & [crate::types::KxDataviewSegmentConfiguration] {
+        self.segment_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.</p>
     pub fn auto_update(&self) -> ::std::option::Option<bool> {
@@ -88,15 +89,15 @@ impl CreateKxDataviewInput {
         self.read_write
     }
     /// <p>A description of the dataview.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -117,11 +118,11 @@ pub struct CreateKxDataviewInputBuilder {
     pub(crate) az_mode: ::std::option::Option<crate::types::KxAzMode>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
-    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
+    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
     pub(crate) auto_update: ::std::option::Option<bool>,
     pub(crate) read_write: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxDataviewInputBuilder {
@@ -133,8 +134,7 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, where you want to create the dataview.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +148,7 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>The name of the database where you want to create a dataview.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database where you want to create a dataview.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +162,7 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>A unique identifier for the dataview.</p>
     pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataview_name = input;
-        self
+        self.dataview_name = input; self
     }
     /// <p>A unique identifier for the dataview.</p>
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +176,7 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
-        self.az_mode = input;
-        self
+        self.az_mode = input; self
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
@@ -192,8 +189,7 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>The identifier of the availability zones.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The identifier of the availability zones.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +202,7 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
     }
     /// <p>A unique identifier of the changeset that you want to use to ingest data.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,17 +215,16 @@ impl CreateKxDataviewInputBuilder {
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         let mut v = self.segment_configurations.unwrap_or_default();
-        v.push(input);
-        self.segment_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segment_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
-        self.segment_configurations = input;
-        self
+    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
+        self.segment_configurations = input; self
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
+    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>> {
         &self.segment_configurations
     }
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.</p>
@@ -240,8 +234,7 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview, when you ingest new changesets. The default value is false.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
@@ -274,8 +267,7 @@ impl CreateKxDataviewInputBuilder {
     /// <p>Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the <code>readWrite</code> parameter later.</p></li>
     /// </ul>
     pub fn set_read_write(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.read_write = input;
-        self
+        self.read_write = input; self
     }
     /// <p>The option to specify whether you want to make the dataview writable to perform database maintenance. The following are some considerations related to writable dataviews.  </p>
     /// <ul>
@@ -298,8 +290,7 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>A description of the dataview.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the dataview.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -312,17 +303,16 @@ impl CreateKxDataviewInputBuilder {
     /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to label the dataview. You can add up to 50 tags to a dataview.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -333,30 +323,42 @@ impl CreateKxDataviewInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateKxDataviewInput`](crate::operation::create_kx_dataview::CreateKxDataviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_kx_dataview::CreateKxDataviewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_kx_dataview::CreateKxDataviewInput {
-            environment_id: self.environment_id,
-            database_name: self.database_name,
-            dataview_name: self.dataview_name,
-            az_mode: self.az_mode,
-            availability_zone_id: self.availability_zone_id,
-            changeset_id: self.changeset_id,
-            segment_configurations: self.segment_configurations,
-            auto_update: self.auto_update,
-            read_write: self.read_write,
-            description: self.description,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_kx_dataview::CreateKxDataviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_kx_dataview::CreateKxDataviewInput {
+                environment_id: self.environment_id
+                ,
+                database_name: self.database_name
+                ,
+                dataview_name: self.dataview_name
+                ,
+                az_mode: self.az_mode
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                changeset_id: self.changeset_id
+                ,
+                segment_configurations: self.segment_configurations
+                ,
+                auto_update: self.auto_update
+                ,
+                read_write: self.read_write
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

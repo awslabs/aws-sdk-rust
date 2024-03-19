@@ -5,55 +5,51 @@ pub use crate::operation::list_operations::_list_operations_input::ListOperation
 
 impl ListOperationsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_operations::ListOperationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_operations::ListOperationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_operations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_operations::ListOperationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_operations::ListOperationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_operations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListOperations`.
-///
+/// 
 /// <p>Returns information about all of the operations that return an operation ID and that have ever been performed on domains that were registered by the current account.</p>
 /// <p>This command runs only in the us-east-1 Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOperationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_operations::builders::ListOperationsInputBuilder,
+                    inner: crate::operation::list_operations::builders::ListOperationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_operations::ListOperationsOutput,
-        crate::operation::list_operations::ListOperationsError,
-    > for ListOperationsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_operations::ListOperationsOutput,
-            crate::operation::list_operations::ListOperationsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_operations::ListOperationsOutput,
+                    crate::operation::list_operations::ListOperationsError,
+                > for ListOperationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_operations::ListOperationsOutput,
+                        crate::operation::list_operations::ListOperationsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListOperationsFluentBuilder {
     /// Creates a new `ListOperations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl ListOperationsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_operations::ListOperationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_operations::ListOperationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_operations::ListOperations::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_operations::ListOperations::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_operations::ListOperationsOutput,
-        crate::operation::list_operations::ListOperationsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_operations::ListOperationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_operations::ListOperationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_operations::ListOperations::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_operations::ListOperations::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_operations::ListOperationsOutput, crate::operation::list_operations::ListOperationsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_operations::paginator::ListOperationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_operations::paginator::ListOperationsPaginator {
-        crate::operation::list_operations::paginator::ListOperationsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_operations::paginator::ListOperationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_operations::paginator::ListOperationsPaginator {
+                                crate::operation::list_operations::paginator::ListOperationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn submitted_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.submitted_since(input);
@@ -170,12 +157,12 @@ impl ListOperationsFluentBuilder {
         self
     }
     /// <p>The status of the operations.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>The status of the operations.</p>
-    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>> {
         self.inner.get_status()
     }
     /// Appends an item to `Type`.
@@ -188,12 +175,12 @@ impl ListOperationsFluentBuilder {
         self
     }
     /// <p>An arrays of the domains operation types.</p>
-    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperationType>>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>An arrays of the domains operation types.</p>
-    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationType>> {
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperationType>> {
         self.inner.get_type()
     }
     /// <p>The sort type for returned values.</p>
@@ -225,3 +212,4 @@ impl ListOperationsFluentBuilder {
         self.inner.get_sort_order()
     }
 }
+

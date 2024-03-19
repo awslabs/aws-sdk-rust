@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClusterSubnetGroupInput {
+pub struct CreateClusterSubnetGroupInput  {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -19,11 +19,11 @@ pub struct CreateClusterSubnetGroupInput {
     /// <p>A description for the subnet group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of tag instances.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateClusterSubnetGroupInput {
+impl  CreateClusterSubnetGroupInput  {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -35,24 +35,26 @@ impl CreateClusterSubnetGroupInput {
     /// <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code></p>
-    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cluster_subnet_group_name.as_deref()
     }
     /// <p>A description for the subnet group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tag instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateClusterSubnetGroupInput {
@@ -68,8 +70,8 @@ impl CreateClusterSubnetGroupInput {
 pub struct CreateClusterSubnetGroupInputBuilder {
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateClusterSubnetGroupInputBuilder {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
@@ -100,8 +102,7 @@ impl CreateClusterSubnetGroupInputBuilder {
     /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code></p>
     pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_subnet_group_name = input;
-        self
+        self.cluster_subnet_group_name = input; self
     }
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -125,8 +126,7 @@ impl CreateClusterSubnetGroupInputBuilder {
     }
     /// <p>A description for the subnet group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the subnet group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,17 +139,16 @@ impl CreateClusterSubnetGroupInputBuilder {
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Appends an item to `tags`.
@@ -159,31 +158,32 @@ impl CreateClusterSubnetGroupInputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateClusterSubnetGroupInput`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput {
-            cluster_subnet_group_name: self.cluster_subnet_group_name,
-            description: self.description,
-            subnet_ids: self.subnet_ids,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput {
+                cluster_subnet_group_name: self.cluster_subnet_group_name
+                ,
+                description: self.description
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRevealConfigurationInput {}
+pub struct GetRevealConfigurationInput  {
+}
 impl GetRevealConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).
     pub fn builder() -> crate::operation::get_reveal_configuration::builders::GetRevealConfigurationInputBuilder {
@@ -13,15 +14,15 @@ impl GetRevealConfigurationInput {
 /// A builder for [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetRevealConfigurationInputBuilder {}
+pub struct GetRevealConfigurationInputBuilder {
+}
 impl GetRevealConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reveal_configuration::GetRevealConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_reveal_configuration::GetRevealConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reveal_configuration::GetRevealConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_reveal_configuration::GetRevealConfigurationInput {
+            }
+        )
     }
 }
+

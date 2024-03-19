@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEdgePackagingJobInput {
+pub struct DescribeEdgePackagingJobInput  {
     /// <p>The name of the edge packaging job.</p>
     pub edge_packaging_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEdgePackagingJobInput {
+impl  DescribeEdgePackagingJobInput  {
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn edge_packaging_job_name(&self) -> ::std::option::Option<& str> {
         self.edge_packaging_job_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeEdgePackagingJobInputBuilder {
     }
     /// <p>The name of the edge packaging job.</p>
     pub fn set_edge_packaging_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_packaging_job_name = input;
-        self
+        self.edge_packaging_job_name = input; self
     }
     /// <p>The name of the edge packaging job.</p>
     pub fn get_edge_packaging_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.edge_packaging_job_name
     }
     /// Consumes the builder and constructs a [`DescribeEdgePackagingJobInput`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput {
-            edge_packaging_job_name: self.edge_packaging_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobInput {
+                edge_packaging_job_name: self.edge_packaging_job_name
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let starttimerfailedcause = unimplemented!();
 /// match starttimerfailedcause {
@@ -32,16 +32,14 @@
 /// Specifically, when `starttimerfailedcause` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StartTimerFailedCause::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StartTimerFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     OpenTimersLimitExceeded,
@@ -53,72 +51,68 @@ pub enum StartTimerFailedCause {
     TimerIdAlreadyInUse,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StartTimerFailedCause {
-    fn from(s: &str) -> Self {
-        match s {
-            "OPEN_TIMERS_LIMIT_EXCEEDED" => StartTimerFailedCause::OpenTimersLimitExceeded,
-            "OPERATION_NOT_PERMITTED" => StartTimerFailedCause::OperationNotPermitted,
-            "TIMER_CREATION_RATE_EXCEEDED" => StartTimerFailedCause::TimerCreationRateExceeded,
-            "TIMER_ID_ALREADY_IN_USE" => StartTimerFailedCause::TimerIdAlreadyInUse,
-            other => StartTimerFailedCause::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "OPEN_TIMERS_LIMIT_EXCEEDED" => StartTimerFailedCause::OpenTimersLimitExceeded,
+"OPERATION_NOT_PERMITTED" => StartTimerFailedCause::OperationNotPermitted,
+"TIMER_CREATION_RATE_EXCEEDED" => StartTimerFailedCause::TimerCreationRateExceeded,
+"TIMER_ID_ALREADY_IN_USE" => StartTimerFailedCause::TimerIdAlreadyInUse,
+other => StartTimerFailedCause::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StartTimerFailedCause {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StartTimerFailedCause::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StartTimerFailedCause::from(s))
+                    }
+                }
 impl StartTimerFailedCause {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StartTimerFailedCause::OpenTimersLimitExceeded => "OPEN_TIMERS_LIMIT_EXCEEDED",
-            StartTimerFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-            StartTimerFailedCause::TimerCreationRateExceeded => "TIMER_CREATION_RATE_EXCEEDED",
-            StartTimerFailedCause::TimerIdAlreadyInUse => "TIMER_ID_ALREADY_IN_USE",
-            StartTimerFailedCause::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OPEN_TIMERS_LIMIT_EXCEEDED",
-            "OPERATION_NOT_PERMITTED",
-            "TIMER_CREATION_RATE_EXCEEDED",
-            "TIMER_ID_ALREADY_IN_USE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StartTimerFailedCause::OpenTimersLimitExceeded => "OPEN_TIMERS_LIMIT_EXCEEDED",
+    StartTimerFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+    StartTimerFailedCause::TimerCreationRateExceeded => "TIMER_CREATION_RATE_EXCEEDED",
+    StartTimerFailedCause::TimerIdAlreadyInUse => "TIMER_ID_ALREADY_IN_USE",
+    StartTimerFailedCause::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OPEN_TIMERS_LIMIT_EXCEEDED", "OPERATION_NOT_PERMITTED", "TIMER_CREATION_RATE_EXCEEDED", "TIMER_ID_ALREADY_IN_USE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StartTimerFailedCause {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StartTimerFailedCause {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StartTimerFailedCause {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StartTimerFailedCause::OpenTimersLimitExceeded => write!(f, "OPEN_TIMERS_LIMIT_EXCEEDED"),
-            StartTimerFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
-            StartTimerFailedCause::TimerCreationRateExceeded => write!(f, "TIMER_CREATION_RATE_EXCEEDED"),
-            StartTimerFailedCause::TimerIdAlreadyInUse => write!(f, "TIMER_ID_ALREADY_IN_USE"),
-            StartTimerFailedCause::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StartTimerFailedCause::OpenTimersLimitExceeded => write!(f, "OPEN_TIMERS_LIMIT_EXCEEDED"),
+StartTimerFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+StartTimerFailedCause::TimerCreationRateExceeded => write!(f, "TIMER_CREATION_RATE_EXCEEDED"),
+StartTimerFailedCause::TimerIdAlreadyInUse => write!(f, "TIMER_ID_ALREADY_IN_USE"),
+StartTimerFailedCause::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

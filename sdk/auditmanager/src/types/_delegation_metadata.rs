@@ -3,7 +3,7 @@
 /// <p>The metadata that's associated with the delegation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DelegationMetadata {
+pub struct DelegationMetadata  {
     /// <p>The unique identifier for the delegation.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the associated assessment.</p>
@@ -19,37 +19,37 @@ pub struct DelegationMetadata {
     /// <p>Specifies the name of the control set that was delegated for review.</p>
     pub control_set_name: ::std::option::Option<::std::string::String>,
 }
-impl DelegationMetadata {
+impl  DelegationMetadata  {
     /// <p>The unique identifier for the delegation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the associated assessment.</p>
-    pub fn assessment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_name(&self) -> ::std::option::Option<& str> {
         self.assessment_name.as_deref()
     }
     /// <p>The unique identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The current status of the delegation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DelegationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DelegationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Specifies when the delegation was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Specifies the name of the control set that was delegated for review.</p>
-    pub fn control_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn control_set_name(&self) -> ::std::option::Option<& str> {
         self.control_set_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for DelegationMetadata {
+impl  ::std::fmt::Debug for DelegationMetadata  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DelegationMetadata");
         formatter.field("id", &self.id);
@@ -89,8 +89,7 @@ impl DelegationMetadataBuilder {
     }
     /// <p>The unique identifier for the delegation.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the delegation.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl DelegationMetadataBuilder {
     }
     /// <p>The name of the associated assessment.</p>
     pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_name = input;
-        self
+        self.assessment_name = input; self
     }
     /// <p>The name of the associated assessment.</p>
     pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl DelegationMetadataBuilder {
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl DelegationMetadataBuilder {
     }
     /// <p>The current status of the delegation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DelegationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the delegation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DelegationStatus> {
@@ -145,8 +141,7 @@ impl DelegationMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl DelegationMetadataBuilder {
     }
     /// <p>Specifies when the delegation was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>Specifies when the delegation was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +167,7 @@ impl DelegationMetadataBuilder {
     }
     /// <p>Specifies the name of the control set that was delegated for review.</p>
     pub fn set_control_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_set_name = input;
-        self
+        self.control_set_name = input; self
     }
     /// <p>Specifies the name of the control set that was delegated for review.</p>
     pub fn get_control_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,13 +176,20 @@ impl DelegationMetadataBuilder {
     /// Consumes the builder and constructs a [`DelegationMetadata`](crate::types::DelegationMetadata).
     pub fn build(self) -> crate::types::DelegationMetadata {
         crate::types::DelegationMetadata {
-            id: self.id,
-            assessment_name: self.assessment_name,
-            assessment_id: self.assessment_id,
-            status: self.status,
-            role_arn: self.role_arn,
-            creation_time: self.creation_time,
-            control_set_name: self.control_set_name,
+            id: self.id
+            ,
+            assessment_name: self.assessment_name
+            ,
+            assessment_id: self.assessment_id
+            ,
+            status: self.status
+            ,
+            role_arn: self.role_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            control_set_name: self.control_set_name
+            ,
         }
     }
 }
@@ -206,3 +206,4 @@ impl ::std::fmt::Debug for DelegationMetadataBuilder {
         formatter.finish()
     }
 }
+

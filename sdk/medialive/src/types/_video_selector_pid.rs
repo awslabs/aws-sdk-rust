@@ -3,11 +3,11 @@
 /// Video Selector Pid
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoSelectorPid {
+pub struct VideoSelectorPid  {
     /// Selects a specific PID from within a video source.
     pub pid: ::std::option::Option<i32>,
 }
-impl VideoSelectorPid {
+impl  VideoSelectorPid  {
     /// Selects a specific PID from within a video source.
     pub fn pid(&self) -> ::std::option::Option<i32> {
         self.pid
@@ -34,8 +34,7 @@ impl VideoSelectorPidBuilder {
     }
     /// Selects a specific PID from within a video source.
     pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pid = input;
-        self
+        self.pid = input; self
     }
     /// Selects a specific PID from within a video source.
     pub fn get_pid(&self) -> &::std::option::Option<i32> {
@@ -43,6 +42,10 @@ impl VideoSelectorPidBuilder {
     }
     /// Consumes the builder and constructs a [`VideoSelectorPid`](crate::types::VideoSelectorPid).
     pub fn build(self) -> crate::types::VideoSelectorPid {
-        crate::types::VideoSelectorPid { pid: self.pid }
+        crate::types::VideoSelectorPid {
+            pid: self.pid
+            ,
+        }
     }
 }
+

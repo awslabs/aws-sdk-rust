@@ -16,45 +16,46 @@
 /// <p>You can configure a single delivery source to send logs to multiple destinations by creating multiple deliveries. You can also create multiple deliveries to configure multiple delivery sources to send logs to the same delivery destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeliverySource {
+pub struct DeliverySource  {
     /// <p>The unique name of the delivery source.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery source.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>This array contains the ARN of the Amazon Web Services resource that sends logs and is represented by this delivery source. Currently, only one ARN can be in the array.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Web Services service that is sending logs.</p>
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The type of log that the source is sending. For valid values for this parameter, see the documentation for the source service.</p>
     pub log_type: ::std::option::Option<::std::string::String>,
     /// <p>The tags that have been assigned to this delivery source.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DeliverySource {
+impl  DeliverySource  {
     /// <p>The unique name of the delivery source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery source.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>This array contains the ARN of the Amazon Web Services resource that sends logs and is represented by this delivery source. Currently, only one ARN can be in the array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
-    pub fn resource_arns(&self) -> &[::std::string::String] {
-        self.resource_arns.as_deref().unwrap_or_default()
+    pub fn resource_arns(&self) -> & [::std::string::String] {
+        self.resource_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services service that is sending logs.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The type of log that the source is sending. For valid values for this parameter, see the documentation for the source service.</p>
-    pub fn log_type(&self) -> ::std::option::Option<&str> {
+    pub fn log_type(&self) -> ::std::option::Option<& str> {
         self.log_type.as_deref()
     }
     /// <p>The tags that have been assigned to this delivery source.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,10 +72,10 @@ impl DeliverySource {
 pub struct DeliverySourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) service: ::std::option::Option<::std::string::String>,
     pub(crate) log_type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DeliverySourceBuilder {
     /// <p>The unique name of the delivery source.</p>
@@ -84,8 +85,7 @@ impl DeliverySourceBuilder {
     }
     /// <p>The unique name of the delivery source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique name of the delivery source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl DeliverySourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery source.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery source.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,17 +111,16 @@ impl DeliverySourceBuilder {
     /// <p>This array contains the ARN of the Amazon Web Services resource that sends logs and is represented by this delivery source. Currently, only one ARN can be in the array.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This array contains the ARN of the Amazon Web Services resource that sends logs and is represented by this delivery source. Currently, only one ARN can be in the array.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// <p>This array contains the ARN of the Amazon Web Services resource that sends logs and is represented by this delivery source. Currently, only one ARN can be in the array.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_arns
     }
     /// <p>The Amazon Web Services service that is sending logs.</p>
@@ -132,8 +130,7 @@ impl DeliverySourceBuilder {
     }
     /// <p>The Amazon Web Services service that is sending logs.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The Amazon Web Services service that is sending logs.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl DeliverySourceBuilder {
     }
     /// <p>The type of log that the source is sending. For valid values for this parameter, see the documentation for the source service.</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>The type of log that the source is sending. For valid values for this parameter, see the documentation for the source service.</p>
     pub fn get_log_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,28 +156,34 @@ impl DeliverySourceBuilder {
     /// <p>The tags that have been assigned to this delivery source.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that have been assigned to this delivery source.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that have been assigned to this delivery source.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DeliverySource`](crate::types::DeliverySource).
     pub fn build(self) -> crate::types::DeliverySource {
         crate::types::DeliverySource {
-            name: self.name,
-            arn: self.arn,
-            resource_arns: self.resource_arns,
-            service: self.service,
-            log_type: self.log_type,
-            tags: self.tags,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            resource_arns: self.resource_arns
+            ,
+            service: self.service
+            ,
+            log_type: self.log_type
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

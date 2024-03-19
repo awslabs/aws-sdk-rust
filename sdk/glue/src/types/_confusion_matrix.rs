@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfusionMatrix {
+pub struct ConfusionMatrix  {
     /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
     pub num_true_positives: ::std::option::Option<i64>,
     /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
@@ -14,7 +14,7 @@ pub struct ConfusionMatrix {
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
     pub num_false_negatives: ::std::option::Option<i64>,
 }
-impl ConfusionMatrix {
+impl  ConfusionMatrix  {
     /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
     pub fn num_true_positives(&self) -> ::std::option::Option<i64> {
         self.num_true_positives
@@ -56,8 +56,7 @@ impl ConfusionMatrixBuilder {
     }
     /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
     pub fn set_num_true_positives(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_true_positives = input;
-        self
+        self.num_true_positives = input; self
     }
     /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
     pub fn get_num_true_positives(&self) -> &::std::option::Option<i64> {
@@ -70,8 +69,7 @@ impl ConfusionMatrixBuilder {
     }
     /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
     pub fn set_num_false_positives(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_false_positives = input;
-        self
+        self.num_false_positives = input; self
     }
     /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
     pub fn get_num_false_positives(&self) -> &::std::option::Option<i64> {
@@ -84,8 +82,7 @@ impl ConfusionMatrixBuilder {
     }
     /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
     pub fn set_num_true_negatives(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_true_negatives = input;
-        self
+        self.num_true_negatives = input; self
     }
     /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
     pub fn get_num_true_negatives(&self) -> &::std::option::Option<i64> {
@@ -98,8 +95,7 @@ impl ConfusionMatrixBuilder {
     }
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
     pub fn set_num_false_negatives(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_false_negatives = input;
-        self
+        self.num_false_negatives = input; self
     }
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
     pub fn get_num_false_negatives(&self) -> &::std::option::Option<i64> {
@@ -108,10 +104,15 @@ impl ConfusionMatrixBuilder {
     /// Consumes the builder and constructs a [`ConfusionMatrix`](crate::types::ConfusionMatrix).
     pub fn build(self) -> crate::types::ConfusionMatrix {
         crate::types::ConfusionMatrix {
-            num_true_positives: self.num_true_positives,
-            num_false_positives: self.num_false_positives,
-            num_true_negatives: self.num_true_negatives,
-            num_false_negatives: self.num_false_negatives,
+            num_true_positives: self.num_true_positives
+            ,
+            num_false_positives: self.num_false_positives
+            ,
+            num_true_negatives: self.num_true_negatives
+            ,
+            num_false_negatives: self.num_false_negatives
+            ,
         }
     }
 }
+

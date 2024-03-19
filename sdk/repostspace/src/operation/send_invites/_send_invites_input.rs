@@ -2,37 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SendInvitesInput {
+pub struct SendInvitesInput  {
     /// <p>The ID of the private re:Post.</p>
     pub space_id: ::std::option::Option<::std::string::String>,
     /// <p>The array of identifiers for the users and groups.</p>
-    pub accessor_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accessor_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The title of the invite.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The body of the invite.</p>
     pub body: ::std::option::Option<::std::string::String>,
 }
-impl SendInvitesInput {
+impl  SendInvitesInput  {
     /// <p>The ID of the private re:Post.</p>
-    pub fn space_id(&self) -> ::std::option::Option<&str> {
+    pub fn space_id(&self) -> ::std::option::Option<& str> {
         self.space_id.as_deref()
     }
     /// <p>The array of identifiers for the users and groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accessor_ids.is_none()`.
-    pub fn accessor_ids(&self) -> &[::std::string::String] {
-        self.accessor_ids.as_deref().unwrap_or_default()
+    pub fn accessor_ids(&self) -> & [::std::string::String] {
+        self.accessor_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The title of the invite.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The body of the invite.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
 }
-impl ::std::fmt::Debug for SendInvitesInput {
+impl  ::std::fmt::Debug for SendInvitesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SendInvitesInput");
         formatter.field("space_id", &self.space_id);
@@ -54,7 +55,7 @@ impl SendInvitesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SendInvitesInputBuilder {
     pub(crate) space_id: ::std::option::Option<::std::string::String>,
-    pub(crate) accessor_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accessor_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
 }
@@ -67,8 +68,7 @@ impl SendInvitesInputBuilder {
     }
     /// <p>The ID of the private re:Post.</p>
     pub fn set_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_id = input;
-        self
+        self.space_id = input; self
     }
     /// <p>The ID of the private re:Post.</p>
     pub fn get_space_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,17 +81,16 @@ impl SendInvitesInputBuilder {
     /// <p>The array of identifiers for the users and groups.</p>
     pub fn accessor_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accessor_ids.unwrap_or_default();
-        v.push(input.into());
-        self.accessor_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accessor_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of identifiers for the users and groups.</p>
-    pub fn set_accessor_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accessor_ids = input;
-        self
+    pub fn set_accessor_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accessor_ids = input; self
     }
     /// <p>The array of identifiers for the users and groups.</p>
-    pub fn get_accessor_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accessor_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accessor_ids
     }
     /// <p>The title of the invite.</p>
@@ -102,8 +101,7 @@ impl SendInvitesInputBuilder {
     }
     /// <p>The title of the invite.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the invite.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl SendInvitesInputBuilder {
     }
     /// <p>The body of the invite.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The body of the invite.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,12 +123,18 @@ impl SendInvitesInputBuilder {
     }
     /// Consumes the builder and constructs a [`SendInvitesInput`](crate::operation::send_invites::SendInvitesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_invites::SendInvitesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::send_invites::SendInvitesInput {
-            space_id: self.space_id,
-            accessor_ids: self.accessor_ids,
-            title: self.title,
-            body: self.body,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::send_invites::SendInvitesInput {
+                space_id: self.space_id
+                ,
+                accessor_ids: self.accessor_ids
+                ,
+                title: self.title
+                ,
+                body: self.body
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SendInvitesInputBuilder {
@@ -144,3 +147,4 @@ impl ::std::fmt::Debug for SendInvitesInputBuilder {
         formatter.finish()
     }
 }
+

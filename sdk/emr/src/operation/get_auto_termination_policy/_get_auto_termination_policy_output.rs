@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAutoTerminationPolicyOutput {
+pub struct GetAutoTerminationPolicyOutput  {
     /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     pub auto_termination_policy: ::std::option::Option<crate::types::AutoTerminationPolicy>,
     _request_id: Option<String>,
 }
-impl GetAutoTerminationPolicyOutput {
+impl  GetAutoTerminationPolicyOutput  {
     /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
-    pub fn auto_termination_policy(&self) -> ::std::option::Option<&crate::types::AutoTerminationPolicy> {
+    pub fn auto_termination_policy(&self) -> ::std::option::Option<& crate::types::AutoTerminationPolicy> {
         self.auto_termination_policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAutoTerminationPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAutoTerminationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetAutoTerminationPolicyOutput`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput).
     pub fn builder() -> crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl GetAutoTerminationPolicyOutputBuilder {
     }
     /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     pub fn set_auto_termination_policy(mut self, input: ::std::option::Option<crate::types::AutoTerminationPolicy>) -> Self {
-        self.auto_termination_policy = input;
-        self
+        self.auto_termination_policy = input; self
     }
     /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     pub fn get_auto_termination_policy(&self) -> &::std::option::Option<crate::types::AutoTerminationPolicy> {
         &self.auto_termination_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAutoTerminationPolicyOutput`](crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput).
     pub fn build(self) -> crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput {
         crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput {
-            auto_termination_policy: self.auto_termination_policy,
+            auto_termination_policy: self.auto_termination_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

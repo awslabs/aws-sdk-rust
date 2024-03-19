@@ -3,19 +3,19 @@
 /// <p>A toggle for an individual feature at the instance level.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The type of attribute.</p>
     pub attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
     /// <p>The value of the attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Attribute {
+impl  Attribute  {
     /// <p>The type of attribute.</p>
-    pub fn attribute_type(&self) -> ::std::option::Option<&crate::types::InstanceAttributeType> {
+    pub fn attribute_type(&self) -> ::std::option::Option<& crate::types::InstanceAttributeType> {
         self.attribute_type.as_ref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AttributeBuilder {
     }
     /// <p>The type of attribute.</p>
     pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
-        self.attribute_type = input;
-        self
+        self.attribute_type = input; self
     }
     /// <p>The type of attribute.</p>
     pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
@@ -55,8 +54,7 @@ impl AttributeBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AttributeBuilder {
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {
         crate::types::Attribute {
-            attribute_type: self.attribute_type,
-            value: self.value,
+            attribute_type: self.attribute_type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

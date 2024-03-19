@@ -3,15 +3,14 @@
 /// <p>The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutItemInput {
+pub struct PutItemInput  {
     /// <p>The table where the message data will be written.</p>
     pub table_name: ::std::string::String,
 }
-impl PutItemInput {
+impl  PutItemInput  {
     /// <p>The table where the message data will be written.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
 }
 impl PutItemInput {
@@ -36,8 +35,7 @@ impl PutItemInputBuilder {
     }
     /// <p>The table where the message data will be written.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The table where the message data will be written.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PutItemInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`table_name`](crate::types::builders::PutItemInputBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::PutItemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PutItemInput {
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building PutItemInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PutItemInput {
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building PutItemInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

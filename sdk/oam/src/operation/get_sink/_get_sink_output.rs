@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSinkOutput {
+pub struct GetSinkOutput  {
     /// <p>The ARN of the sink.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
@@ -10,32 +10,32 @@ pub struct GetSinkOutput {
     /// <p>The name of the sink.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the sink.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetSinkOutput {
+impl  GetSinkOutput  {
     /// <p>The ARN of the sink.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the sink.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags assigned to the sink.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSinkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSinkOutput {
     /// Creates a new builder-style object to manufacture [`GetSinkOutput`](crate::operation::get_sink::GetSinkOutput).
     pub fn builder() -> crate::operation::get_sink::builders::GetSinkOutputBuilder {
@@ -50,7 +50,7 @@ pub struct GetSinkOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSinkOutputBuilder {
@@ -61,8 +61,7 @@ impl GetSinkOutputBuilder {
     }
     /// <p>The ARN of the sink.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the sink.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl GetSinkOutputBuilder {
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl GetSinkOutputBuilder {
     }
     /// <p>The name of the sink.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the sink.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,36 +100,40 @@ impl GetSinkOutputBuilder {
     /// <p>The tags assigned to the sink.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags assigned to the sink.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the sink.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSinkOutput`](crate::operation::get_sink::GetSinkOutput).
     pub fn build(self) -> crate::operation::get_sink::GetSinkOutput {
         crate::operation::get_sink::GetSinkOutput {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

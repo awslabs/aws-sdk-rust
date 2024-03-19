@@ -3,15 +3,14 @@
 /// <p>Provides information about the category rule that was matched.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisCategoryDetails {
+pub struct RealTimeContactAnalysisCategoryDetails  {
     /// <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-    pub points_of_interest: ::std::vec::Vec<crate::types::RealTimeContactAnalysisPointOfInterest>,
+    pub points_of_interest: ::std::vec::Vec::<crate::types::RealTimeContactAnalysisPointOfInterest>,
 }
-impl RealTimeContactAnalysisCategoryDetails {
+impl  RealTimeContactAnalysisCategoryDetails  {
     /// <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-    pub fn points_of_interest(&self) -> &[crate::types::RealTimeContactAnalysisPointOfInterest] {
-        use std::ops::Deref;
-        self.points_of_interest.deref()
+    pub fn points_of_interest(&self) -> & [crate::types::RealTimeContactAnalysisPointOfInterest] {
+        use std::ops::Deref; self.points_of_interest.deref()
     }
 }
 impl RealTimeContactAnalysisCategoryDetails {
@@ -25,7 +24,7 @@ impl RealTimeContactAnalysisCategoryDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealTimeContactAnalysisCategoryDetailsBuilder {
-    pub(crate) points_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisPointOfInterest>>,
+    pub(crate) points_of_interest: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisPointOfInterest>>,
 }
 impl RealTimeContactAnalysisCategoryDetailsBuilder {
     /// Appends an item to `points_of_interest`.
@@ -35,35 +34,31 @@ impl RealTimeContactAnalysisCategoryDetailsBuilder {
     /// <p>List of PointOfInterest - objects describing a single match of a rule.</p>
     pub fn points_of_interest(mut self, input: crate::types::RealTimeContactAnalysisPointOfInterest) -> Self {
         let mut v = self.points_of_interest.unwrap_or_default();
-        v.push(input);
-        self.points_of_interest = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.points_of_interest = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-    pub fn set_points_of_interest(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisPointOfInterest>>,
-    ) -> Self {
-        self.points_of_interest = input;
-        self
+    pub fn set_points_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisPointOfInterest>>) -> Self {
+        self.points_of_interest = input; self
     }
     /// <p>List of PointOfInterest - objects describing a single match of a rule.</p>
-    pub fn get_points_of_interest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisPointOfInterest>> {
+    pub fn get_points_of_interest(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisPointOfInterest>> {
         &self.points_of_interest
     }
     /// Consumes the builder and constructs a [`RealTimeContactAnalysisCategoryDetails`](crate::types::RealTimeContactAnalysisCategoryDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`points_of_interest`](crate::types::builders::RealTimeContactAnalysisCategoryDetailsBuilder::points_of_interest)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RealTimeContactAnalysisCategoryDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisCategoryDetails {
-            points_of_interest: self.points_of_interest.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "points_of_interest",
-                    "points_of_interest was not specified but it is required when building RealTimeContactAnalysisCategoryDetails",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisCategoryDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisCategoryDetails {
+                points_of_interest: self.points_of_interest
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("points_of_interest", "points_of_interest was not specified but it is required when building RealTimeContactAnalysisCategoryDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

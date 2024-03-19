@@ -21,11 +21,7 @@ impl Action {
     /// Tries to convert the enum instance into [`SsmAutomation`](crate::types::Action::SsmAutomation), extracting the inner [`SsmAutomation`](crate::types::SsmAutomation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ssm_automation(&self) -> ::std::result::Result<&crate::types::SsmAutomation, &Self> {
-        if let Action::SsmAutomation(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Action::SsmAutomation(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SsmAutomation`](crate::types::Action::SsmAutomation).
     pub fn is_ssm_automation(&self) -> bool {
@@ -36,3 +32,4 @@ impl Action {
         matches!(self, Self::Unknown)
     }
 }
+

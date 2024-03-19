@@ -3,16 +3,16 @@
 /// <p>StartTaskExecutionRequest</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTaskExecutionInput {
+pub struct StartTaskExecutionInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub override_options: ::std::option::Option<crate::types::Options>,
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub includes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub excludes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a manifest configuration, specify this parameter with an empty value.</p>
@@ -23,48 +23,51 @@ pub struct StartTaskExecutionInput {
     pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
 }
-impl StartTaskExecutionInput {
+impl  StartTaskExecutionInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
-    pub fn task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_arn(&self) -> ::std::option::Option<& str> {
         self.task_arn.as_deref()
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
-    pub fn override_options(&self) -> ::std::option::Option<&crate::types::Options> {
+    pub fn override_options(&self) -> ::std::option::Option<& crate::types::Options> {
         self.override_options.as_ref()
     }
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
-    pub fn includes(&self) -> &[crate::types::FilterRule] {
-        self.includes.as_deref().unwrap_or_default()
+    pub fn includes(&self) -> & [crate::types::FilterRule] {
+        self.includes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
-    pub fn excludes(&self) -> &[crate::types::FilterRule] {
-        self.excludes.as_deref().unwrap_or_default()
+    pub fn excludes(&self) -> & [crate::types::FilterRule] {
+        self.excludes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a manifest configuration, specify this parameter with an empty value.</p>
-    pub fn manifest_config(&self) -> ::std::option::Option<&crate::types::ManifestConfig> {
+    pub fn manifest_config(&self) -> ::std::option::Option<& crate::types::ManifestConfig> {
         self.manifest_config.as_ref()
     }
     /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a task report configuration, specify this parameter as empty.</p>
-    pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
+    pub fn task_report_config(&self) -> ::std::option::Option<& crate::types::TaskReportConfig> {
         self.task_report_config.as_ref()
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagListEntry] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagListEntry] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartTaskExecutionInput {
@@ -80,11 +83,11 @@ impl StartTaskExecutionInput {
 pub struct StartTaskExecutionInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) override_options: ::std::option::Option<crate::types::Options>,
-    pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) includes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
+    pub(crate) excludes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     pub(crate) manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
 }
 impl StartTaskExecutionInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
@@ -95,8 +98,7 @@ impl StartTaskExecutionInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_arn = input;
-        self
+        self.task_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +113,7 @@ impl StartTaskExecutionInputBuilder {
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn set_override_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
-        self.override_options = input;
-        self
+        self.override_options = input; self
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
@@ -126,17 +127,16 @@ impl StartTaskExecutionInputBuilder {
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.includes.unwrap_or_default();
-        v.push(input);
-        self.includes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.includes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
-        self.includes = input;
-        self
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>) -> Self {
+        self.includes = input; self
     }
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>> {
         &self.includes
     }
     /// Appends an item to `excludes`.
@@ -146,17 +146,16 @@ impl StartTaskExecutionInputBuilder {
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub fn excludes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.excludes.unwrap_or_default();
-        v.push(input);
-        self.excludes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.excludes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
-        self.excludes = input;
-        self
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>) -> Self {
+        self.excludes = input; self
     }
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>> {
         &self.excludes
     }
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
@@ -170,8 +169,7 @@ impl StartTaskExecutionInputBuilder {
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a manifest configuration, specify this parameter with an empty value.</p>
     pub fn set_manifest_config(mut self, input: ::std::option::Option<crate::types::ManifestConfig>) -> Self {
-        self.manifest_config = input;
-        self
+        self.manifest_config = input; self
     }
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
@@ -190,8 +188,7 @@ impl StartTaskExecutionInputBuilder {
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a task report configuration, specify this parameter as empty.</p>
     pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
-        self.task_report_config = input;
-        self
+        self.task_report_config = input; self
     }
     /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
@@ -207,34 +204,40 @@ impl StartTaskExecutionInputBuilder {
     /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartTaskExecutionInput`](crate::operation::start_task_execution::StartTaskExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_task_execution::StartTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_task_execution::StartTaskExecutionInput {
-            task_arn: self.task_arn,
-            override_options: self.override_options,
-            includes: self.includes,
-            excludes: self.excludes,
-            manifest_config: self.manifest_config,
-            task_report_config: self.task_report_config,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_task_execution::StartTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_task_execution::StartTaskExecutionInput {
+                task_arn: self.task_arn
+                ,
+                override_options: self.override_options
+                ,
+                includes: self.includes
+                ,
+                excludes: self.excludes
+                ,
+                manifest_config: self.manifest_config
+                ,
+                task_report_config: self.task_report_config
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

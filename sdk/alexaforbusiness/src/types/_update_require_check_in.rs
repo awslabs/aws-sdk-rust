@@ -3,13 +3,13 @@
 /// <p>Updates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRequireCheckIn {
+pub struct UpdateRequireCheckIn  {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
     pub release_after_minutes: ::std::option::Option<i32>,
     /// <p>Whether require check in is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl UpdateRequireCheckIn {
+impl  UpdateRequireCheckIn  {
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
     pub fn release_after_minutes(&self) -> ::std::option::Option<i32> {
         self.release_after_minutes
@@ -41,8 +41,7 @@ impl UpdateRequireCheckInBuilder {
     }
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
     pub fn set_release_after_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.release_after_minutes = input;
-        self
+        self.release_after_minutes = input; self
     }
     /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
     pub fn get_release_after_minutes(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl UpdateRequireCheckInBuilder {
     }
     /// <p>Whether require check in is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether require check in is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl UpdateRequireCheckInBuilder {
     /// Consumes the builder and constructs a [`UpdateRequireCheckIn`](crate::types::UpdateRequireCheckIn).
     pub fn build(self) -> crate::types::UpdateRequireCheckIn {
         crate::types::UpdateRequireCheckIn {
-            release_after_minutes: self.release_after_minutes,
-            enabled: self.enabled,
+            release_after_minutes: self.release_after_minutes
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

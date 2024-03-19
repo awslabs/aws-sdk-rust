@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateSpaceInput {
+pub struct UpdateSpaceInput  {
     /// <p>The unique ID of this private re:Post.</p>
     pub space_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the private re:Post. This is used only to help you identify this private re:Post.</p>
@@ -12,25 +12,25 @@ pub struct UpdateSpaceInput {
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSpaceInput {
+impl  UpdateSpaceInput  {
     /// <p>The unique ID of this private re:Post.</p>
-    pub fn space_id(&self) -> ::std::option::Option<&str> {
+    pub fn space_id(&self) -> ::std::option::Option<& str> {
         self.space_id.as_deref()
     }
     /// <p>A description for the private re:Post. This is used only to help you identify this private re:Post.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The pricing tier of this private re:Post.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::TierLevel> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::TierLevel> {
         self.tier.as_ref()
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateSpaceInput {
+impl  ::std::fmt::Debug for UpdateSpaceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSpaceInput");
         formatter.field("space_id", &self.space_id);
@@ -65,8 +65,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The unique ID of this private re:Post.</p>
     pub fn set_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_id = input;
-        self
+        self.space_id = input; self
     }
     /// <p>The unique ID of this private re:Post.</p>
     pub fn get_space_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>A description for the private re:Post. This is used only to help you identify this private re:Post.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the private re:Post. This is used only to help you identify this private re:Post.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The pricing tier of this private re:Post.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::TierLevel>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The pricing tier of this private re:Post.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::TierLevel> {
@@ -107,8 +104,7 @@ impl UpdateSpaceInputBuilder {
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,12 +112,18 @@ impl UpdateSpaceInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_space::UpdateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_space::UpdateSpaceInput {
-            space_id: self.space_id,
-            description: self.description,
-            tier: self.tier,
-            role_arn: self.role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_space::UpdateSpaceInput {
+                space_id: self.space_id
+                ,
+                description: self.description
+                ,
+                tier: self.tier
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateSpaceInputBuilder {
@@ -134,3 +136,4 @@ impl ::std::fmt::Debug for UpdateSpaceInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChannelOutput {
+pub struct UpdateChannelOutput  {
     /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel.</p>
@@ -16,82 +16,84 @@ pub struct UpdateChannelOutput {
     /// <p>The timestamp that indicates when the channel was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The channel's output properties.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseOutputItem>>,
     /// <p>The type of playback mode for this channel.</p>
     /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
     /// <p><code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
     pub playback_mode: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The tier associated with this Channel.</p>
     pub tier: ::std::option::Option<::std::string::String>,
     /// <p>The time-shifted viewing configuration for the channel.</p>
     pub time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
     /// <p>The list of audiences defined in channel.</p>
-    pub audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub audiences: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UpdateChannelOutput {
+impl  UpdateChannelOutput  {
     /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Returns the state whether the channel is running or not.</p>
-    pub fn channel_state(&self) -> ::std::option::Option<&crate::types::ChannelState> {
+    pub fn channel_state(&self) -> ::std::option::Option<& crate::types::ChannelState> {
         self.channel_state.as_ref()
     }
     /// <p>The timestamp of when the channel was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
-    pub fn filler_slate(&self) -> ::std::option::Option<&crate::types::SlateSource> {
+    pub fn filler_slate(&self) -> ::std::option::Option<& crate::types::SlateSource> {
         self.filler_slate.as_ref()
     }
     /// <p>The timestamp that indicates when the channel was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The channel's output properties.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::ResponseOutputItem] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::ResponseOutputItem] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of playback mode for this channel.</p>
     /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
     /// <p><code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
-    pub fn playback_mode(&self) -> ::std::option::Option<&str> {
+    pub fn playback_mode(&self) -> ::std::option::Option<& str> {
         self.playback_mode.as_deref()
     }
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The tier associated with this Channel.</p>
-    pub fn tier(&self) -> ::std::option::Option<&str> {
+    pub fn tier(&self) -> ::std::option::Option<& str> {
         self.tier.as_deref()
     }
     /// <p>The time-shifted viewing configuration for the channel.</p>
-    pub fn time_shift_configuration(&self) -> ::std::option::Option<&crate::types::TimeShiftConfiguration> {
+    pub fn time_shift_configuration(&self) -> ::std::option::Option<& crate::types::TimeShiftConfiguration> {
         self.time_shift_configuration.as_ref()
     }
     /// <p>The list of audiences defined in channel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audiences.is_none()`.
-    pub fn audiences(&self) -> &[::std::string::String] {
-        self.audiences.as_deref().unwrap_or_default()
+    pub fn audiences(&self) -> & [::std::string::String] {
+        self.audiences.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
     pub fn builder() -> crate::operation::update_channel::builders::UpdateChannelOutputBuilder {
@@ -109,12 +111,12 @@ pub struct UpdateChannelOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) filler_slate: ::std::option::Option<crate::types::SlateSource>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseOutputItem>>,
     pub(crate) playback_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
     pub(crate) time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
-    pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) audiences: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateChannelOutputBuilder {
@@ -125,8 +127,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +140,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the channel.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +153,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>Returns the state whether the channel is running or not.</p>
     pub fn set_channel_state(mut self, input: ::std::option::Option<crate::types::ChannelState>) -> Self {
-        self.channel_state = input;
-        self
+        self.channel_state = input; self
     }
     /// <p>Returns the state whether the channel is running or not.</p>
     pub fn get_channel_state(&self) -> &::std::option::Option<crate::types::ChannelState> {
@@ -167,8 +166,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The timestamp of when the channel was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp of when the channel was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +179,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn set_filler_slate(mut self, input: ::std::option::Option<crate::types::SlateSource>) -> Self {
-        self.filler_slate = input;
-        self
+        self.filler_slate = input; self
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn get_filler_slate(&self) -> &::std::option::Option<crate::types::SlateSource> {
@@ -195,8 +192,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The timestamp that indicates when the channel was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp that indicates when the channel was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -209,17 +205,16 @@ impl UpdateChannelOutputBuilder {
     /// <p>The channel's output properties.</p>
     pub fn outputs(mut self, input: crate::types::ResponseOutputItem) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The channel's output properties.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseOutputItem>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>The channel's output properties.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResponseOutputItem>> {
         &self.outputs
     }
     /// <p>The type of playback mode for this channel.</p>
@@ -233,8 +228,7 @@ impl UpdateChannelOutputBuilder {
     /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
     /// <p><code>LOOP</code> - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
     pub fn set_playback_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.playback_mode = input;
-        self
+        self.playback_mode = input; self
     }
     /// <p>The type of playback mode for this channel.</p>
     /// <p><code>LINEAR</code> - Programs play back-to-back only once.</p>
@@ -249,17 +243,16 @@ impl UpdateChannelOutputBuilder {
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The tier associated with this Channel.</p>
@@ -269,8 +262,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The tier associated with this Channel.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The tier associated with this Channel.</p>
     pub fn get_tier(&self) -> &::std::option::Option<::std::string::String> {
@@ -283,8 +275,7 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>The time-shifted viewing configuration for the channel.</p>
     pub fn set_time_shift_configuration(mut self, input: ::std::option::Option<crate::types::TimeShiftConfiguration>) -> Self {
-        self.time_shift_configuration = input;
-        self
+        self.time_shift_configuration = input; self
     }
     /// <p>The time-shifted viewing configuration for the channel.</p>
     pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
@@ -297,44 +288,56 @@ impl UpdateChannelOutputBuilder {
     /// <p>The list of audiences defined in channel.</p>
     pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.audiences.unwrap_or_default();
-        v.push(input.into());
-        self.audiences = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.audiences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of audiences defined in channel.</p>
-    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.audiences = input;
-        self
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.audiences = input; self
     }
     /// <p>The list of audiences defined in channel.</p>
-    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.audiences
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
     pub fn build(self) -> crate::operation::update_channel::UpdateChannelOutput {
         crate::operation::update_channel::UpdateChannelOutput {
-            arn: self.arn,
-            channel_name: self.channel_name,
-            channel_state: self.channel_state,
-            creation_time: self.creation_time,
-            filler_slate: self.filler_slate,
-            last_modified_time: self.last_modified_time,
-            outputs: self.outputs,
-            playback_mode: self.playback_mode,
-            tags: self.tags,
-            tier: self.tier,
-            time_shift_configuration: self.time_shift_configuration,
-            audiences: self.audiences,
+            arn: self.arn
+            ,
+            channel_name: self.channel_name
+            ,
+            channel_state: self.channel_state
+            ,
+            creation_time: self.creation_time
+            ,
+            filler_slate: self.filler_slate
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            outputs: self.outputs
+            ,
+            playback_mode: self.playback_mode
+            ,
+            tags: self.tags
+            ,
+            tier: self.tier
+            ,
+            time_shift_configuration: self.time_shift_configuration
+            ,
+            audiences: self.audiences
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

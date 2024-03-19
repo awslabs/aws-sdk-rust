@@ -3,13 +3,13 @@
 /// <p>The wrapper for position solver details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PositionSolverDetails {
+pub struct PositionSolverDetails  {
     /// <p>The Semtech GNSS solver object details.</p>
     pub semtech_gnss: ::std::option::Option<crate::types::SemtechGnssDetail>,
 }
-impl PositionSolverDetails {
+impl  PositionSolverDetails  {
     /// <p>The Semtech GNSS solver object details.</p>
-    pub fn semtech_gnss(&self) -> ::std::option::Option<&crate::types::SemtechGnssDetail> {
+    pub fn semtech_gnss(&self) -> ::std::option::Option<& crate::types::SemtechGnssDetail> {
         self.semtech_gnss.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl PositionSolverDetailsBuilder {
     }
     /// <p>The Semtech GNSS solver object details.</p>
     pub fn set_semtech_gnss(mut self, input: ::std::option::Option<crate::types::SemtechGnssDetail>) -> Self {
-        self.semtech_gnss = input;
-        self
+        self.semtech_gnss = input; self
     }
     /// <p>The Semtech GNSS solver object details.</p>
     pub fn get_semtech_gnss(&self) -> &::std::option::Option<crate::types::SemtechGnssDetail> {
@@ -44,7 +43,9 @@ impl PositionSolverDetailsBuilder {
     /// Consumes the builder and constructs a [`PositionSolverDetails`](crate::types::PositionSolverDetails).
     pub fn build(self) -> crate::types::PositionSolverDetails {
         crate::types::PositionSolverDetails {
-            semtech_gnss: self.semtech_gnss,
+            semtech_gnss: self.semtech_gnss
+            ,
         }
     }
 }
+

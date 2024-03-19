@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutSessionInput {
+pub struct PutSessionInput  {
     /// <p>The name of the bot that contains the session data.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias in use for the bot that contains the session data.</p>
@@ -10,7 +10,7 @@ pub struct PutSessionInput {
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub session_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
@@ -24,7 +24,7 @@ pub struct PutSessionInput {
     /// <p><code>slotToElict</code></p></li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
-    pub recent_intent_summary_view: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>,
+    pub recent_intent_summary_view: ::std::option::Option<::std::vec::Vec::<crate::types::IntentSummary>>,
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
     /// <li>
@@ -51,27 +51,27 @@ pub struct PutSessionInput {
     pub accept: ::std::option::Option<::std::string::String>,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
 }
-impl PutSessionInput {
+impl  PutSessionInput  {
     /// <p>The name of the bot that contains the session data.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
-    pub fn bot_alias(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias(&self) -> ::std::option::Option<& str> {
         self.bot_alias.as_deref()
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn session_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.session_attributes.as_ref()
     }
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
-    pub fn dialog_action(&self) -> ::std::option::Option<&crate::types::DialogAction> {
+    pub fn dialog_action(&self) -> ::std::option::Option<& crate::types::DialogAction> {
         self.dialog_action.as_ref()
     }
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
@@ -85,10 +85,11 @@ impl PutSessionInput {
     /// <p><code>slotToElict</code></p></li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recent_intent_summary_view.is_none()`.
-    pub fn recent_intent_summary_view(&self) -> &[crate::types::IntentSummary] {
-        self.recent_intent_summary_view.as_deref().unwrap_or_default()
+    pub fn recent_intent_summary_view(&self) -> & [crate::types::IntentSummary] {
+        self.recent_intent_summary_view.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
@@ -113,18 +114,19 @@ impl PutSessionInput {
     /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
-    pub fn accept(&self) -> ::std::option::Option<&str> {
+    pub fn accept(&self) -> ::std::option::Option<& str> {
         self.accept.as_deref()
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
-    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
-        self.active_contexts.as_deref().unwrap_or_default()
+    pub fn active_contexts(&self) -> & [crate::types::ActiveContext] {
+        self.active_contexts.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for PutSessionInput {
+impl  ::std::fmt::Debug for PutSessionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutSessionInput");
         formatter.field("bot_name", &self.bot_name);
@@ -152,11 +154,11 @@ pub struct PutSessionInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) dialog_action: ::std::option::Option<crate::types::DialogAction>,
-    pub(crate) recent_intent_summary_view: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>,
+    pub(crate) recent_intent_summary_view: ::std::option::Option<::std::vec::Vec::<crate::types::IntentSummary>>,
     pub(crate) accept: ::std::option::Option<::std::string::String>,
-    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
 }
 impl PutSessionInputBuilder {
     /// <p>The name of the bot that contains the session data.</p>
@@ -167,8 +169,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>The name of the bot that contains the session data.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the bot that contains the session data.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +183,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias = input;
-        self
+        self.bot_alias = input; self
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +197,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,26 +208,18 @@ impl PutSessionInputBuilder {
     /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
     ///
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn session_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.session_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.session_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.session_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn set_session_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.session_attributes = input;
-        self
+    pub fn set_session_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.session_attributes = input; self
     }
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.session_attributes
     }
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
@@ -238,8 +229,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
     pub fn set_dialog_action(mut self, input: ::std::option::Option<crate::types::DialogAction>) -> Self {
-        self.dialog_action = input;
-        self
+        self.dialog_action = input; self
     }
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
     pub fn get_dialog_action(&self) -> &::std::option::Option<crate::types::DialogAction> {
@@ -262,9 +252,9 @@ impl PutSessionInputBuilder {
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
     pub fn recent_intent_summary_view(mut self, input: crate::types::IntentSummary) -> Self {
         let mut v = self.recent_intent_summary_view.unwrap_or_default();
-        v.push(input);
-        self.recent_intent_summary_view = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recent_intent_summary_view = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
     /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
@@ -277,9 +267,8 @@ impl PutSessionInputBuilder {
     /// <p><code>slotToElict</code></p></li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
-    pub fn set_recent_intent_summary_view(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>) -> Self {
-        self.recent_intent_summary_view = input;
-        self
+    pub fn set_recent_intent_summary_view(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IntentSummary>>) -> Self {
+        self.recent_intent_summary_view = input; self
     }
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
     /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
@@ -292,7 +281,7 @@ impl PutSessionInputBuilder {
     /// <p><code>slotToElict</code></p></li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
-    pub fn get_recent_intent_summary_view(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>> {
+    pub fn get_recent_intent_summary_view(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IntentSummary>> {
         &self.recent_intent_summary_view
     }
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
@@ -346,8 +335,7 @@ impl PutSessionInputBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept = input;
-        self
+        self.accept = input; self
     }
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
@@ -383,33 +371,42 @@ impl PutSessionInputBuilder {
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
     pub fn active_contexts(mut self, input: crate::types::ActiveContext) -> Self {
         let mut v = self.active_contexts.unwrap_or_default();
-        v.push(input);
-        self.active_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.active_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>) -> Self {
-        self.active_contexts = input;
-        self
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>) -> Self {
+        self.active_contexts = input; self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>> {
         &self.active_contexts
     }
     /// Consumes the builder and constructs a [`PutSessionInput`](crate::operation::put_session::PutSessionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_session::PutSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_session::PutSessionInput {
-            bot_name: self.bot_name,
-            bot_alias: self.bot_alias,
-            user_id: self.user_id,
-            session_attributes: self.session_attributes,
-            dialog_action: self.dialog_action,
-            recent_intent_summary_view: self.recent_intent_summary_view,
-            accept: self.accept,
-            active_contexts: self.active_contexts,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_session::PutSessionInput {
+                bot_name: self.bot_name
+                ,
+                bot_alias: self.bot_alias
+                ,
+                user_id: self.user_id
+                ,
+                session_attributes: self.session_attributes
+                ,
+                dialog_action: self.dialog_action
+                ,
+                recent_intent_summary_view: self.recent_intent_summary_view
+                ,
+                accept: self.accept
+                ,
+                active_contexts: self.active_contexts
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutSessionInputBuilder {
@@ -426,3 +423,4 @@ impl ::std::fmt::Debug for PutSessionInputBuilder {
         formatter.finish()
     }
 }
+

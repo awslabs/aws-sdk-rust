@@ -3,7 +3,7 @@
 /// <p>Contains details for one of the table optimizers returned by the <code>BatchGetTableOptimizer</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchTableOptimizer {
+pub struct BatchTableOptimizer  {
     /// <p>The Catalog ID of the table.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database in the catalog in which the table resides.</p>
@@ -13,21 +13,21 @@ pub struct BatchTableOptimizer {
     /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
     pub table_optimizer: ::std::option::Option<crate::types::TableOptimizer>,
 }
-impl BatchTableOptimizer {
+impl  BatchTableOptimizer  {
     /// <p>The Catalog ID of the table.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
-    pub fn table_optimizer(&self) -> ::std::option::Option<&crate::types::TableOptimizer> {
+    pub fn table_optimizer(&self) -> ::std::option::Option<& crate::types::TableOptimizer> {
         self.table_optimizer.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl BatchTableOptimizerBuilder {
     }
     /// <p>The Catalog ID of the table.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The Catalog ID of the table.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl BatchTableOptimizerBuilder {
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl BatchTableOptimizerBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl BatchTableOptimizerBuilder {
     }
     /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
     pub fn set_table_optimizer(mut self, input: ::std::option::Option<crate::types::TableOptimizer>) -> Self {
-        self.table_optimizer = input;
-        self
+        self.table_optimizer = input; self
     }
     /// <p>A <code>TableOptimizer</code> object that contains details on the configuration and last run of a table optimzer.</p>
     pub fn get_table_optimizer(&self) -> &::std::option::Option<crate::types::TableOptimizer> {
@@ -107,10 +103,15 @@ impl BatchTableOptimizerBuilder {
     /// Consumes the builder and constructs a [`BatchTableOptimizer`](crate::types::BatchTableOptimizer).
     pub fn build(self) -> crate::types::BatchTableOptimizer {
         crate::types::BatchTableOptimizer {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            table_optimizer: self.table_optimizer,
+            catalog_id: self.catalog_id
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            table_optimizer: self.table_optimizer
+            ,
         }
     }
 }
+

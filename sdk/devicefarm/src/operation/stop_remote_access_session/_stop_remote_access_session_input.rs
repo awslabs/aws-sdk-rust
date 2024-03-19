@@ -3,13 +3,13 @@
 /// <p>Represents the request to stop the remote access session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopRemoteAccessSessionInput {
+pub struct StopRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl StopRemoteAccessSessionInput {
+impl  StopRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl StopRemoteAccessSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`StopRemoteAccessSessionInput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

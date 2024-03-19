@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOrganizationServiceAccessStatusOutput {
+pub struct ListOrganizationServiceAccessStatusOutput  {
     /// <p>Displays the status of an Amazon Web Services Organization.</p>
     pub organization_status: ::std::option::Option<crate::types::OrganizationStatus>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOrganizationServiceAccessStatusOutput {
+impl  ListOrganizationServiceAccessStatusOutput  {
     /// <p>Displays the status of an Amazon Web Services Organization.</p>
-    pub fn organization_status(&self) -> ::std::option::Option<&crate::types::OrganizationStatus> {
+    pub fn organization_status(&self) -> ::std::option::Option<& crate::types::OrganizationStatus> {
         self.organization_status.as_ref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOrganizationServiceAccessStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOrganizationServiceAccessStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationServiceAccessStatusOutput`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput).
     pub fn builder() -> crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusOutputBuilder {
@@ -47,8 +47,7 @@ impl ListOrganizationServiceAccessStatusOutputBuilder {
     }
     /// <p>Displays the status of an Amazon Web Services Organization.</p>
     pub fn set_organization_status(mut self, input: ::std::option::Option<crate::types::OrganizationStatus>) -> Self {
-        self.organization_status = input;
-        self
+        self.organization_status = input; self
     }
     /// <p>Displays the status of an Amazon Web Services Organization.</p>
     pub fn get_organization_status(&self) -> &::std::option::Option<crate::types::OrganizationStatus> {
@@ -61,28 +60,30 @@ impl ListOrganizationServiceAccessStatusOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOrganizationServiceAccessStatusOutput`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput).
     pub fn build(self) -> crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput {
         crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput {
-            organization_status: self.organization_status,
-            next_token: self.next_token,
+            organization_status: self.organization_status
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

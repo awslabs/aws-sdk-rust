@@ -3,7 +3,7 @@
 /// <p>Specifies key usage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyUsagePropertyFlags {
+pub struct KeyUsagePropertyFlags  {
     /// <p>Allows key for encryption and decryption.</p>
     pub decrypt: ::std::option::Option<bool>,
     /// <p>Allows key exchange without encryption.</p>
@@ -11,7 +11,7 @@ pub struct KeyUsagePropertyFlags {
     /// <p>Allow key use for digital signature.</p>
     pub sign: ::std::option::Option<bool>,
 }
-impl KeyUsagePropertyFlags {
+impl  KeyUsagePropertyFlags  {
     /// <p>Allows key for encryption and decryption.</p>
     pub fn decrypt(&self) -> ::std::option::Option<bool> {
         self.decrypt
@@ -48,8 +48,7 @@ impl KeyUsagePropertyFlagsBuilder {
     }
     /// <p>Allows key for encryption and decryption.</p>
     pub fn set_decrypt(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.decrypt = input;
-        self
+        self.decrypt = input; self
     }
     /// <p>Allows key for encryption and decryption.</p>
     pub fn get_decrypt(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl KeyUsagePropertyFlagsBuilder {
     }
     /// <p>Allows key exchange without encryption.</p>
     pub fn set_key_agreement(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.key_agreement = input;
-        self
+        self.key_agreement = input; self
     }
     /// <p>Allows key exchange without encryption.</p>
     pub fn get_key_agreement(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl KeyUsagePropertyFlagsBuilder {
     }
     /// <p>Allow key use for digital signature.</p>
     pub fn set_sign(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sign = input;
-        self
+        self.sign = input; self
     }
     /// <p>Allow key use for digital signature.</p>
     pub fn get_sign(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,13 @@ impl KeyUsagePropertyFlagsBuilder {
     /// Consumes the builder and constructs a [`KeyUsagePropertyFlags`](crate::types::KeyUsagePropertyFlags).
     pub fn build(self) -> crate::types::KeyUsagePropertyFlags {
         crate::types::KeyUsagePropertyFlags {
-            decrypt: self.decrypt,
-            key_agreement: self.key_agreement,
-            sign: self.sign,
+            decrypt: self.decrypt
+            ,
+            key_agreement: self.key_agreement
+            ,
+            sign: self.sign
+            ,
         }
     }
 }
+

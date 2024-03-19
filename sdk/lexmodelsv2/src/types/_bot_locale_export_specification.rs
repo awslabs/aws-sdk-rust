@@ -3,7 +3,7 @@
 /// <p>Provides the bot locale parameters required for exporting a bot locale.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotLocaleExportSpecification {
+pub struct BotLocaleExportSpecification  {
     /// <p>The identifier of the bot to create the locale for.</p>
     pub bot_id: ::std::string::String,
     /// <p>The version of the bot to export.</p>
@@ -11,21 +11,18 @@ pub struct BotLocaleExportSpecification {
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
     pub locale_id: ::std::string::String,
 }
-impl BotLocaleExportSpecification {
+impl  BotLocaleExportSpecification  {
     /// <p>The identifier of the bot to create the locale for.</p>
-    pub fn bot_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_id.deref()
+    pub fn bot_id(&self) -> & str {
+        use std::ops::Deref; self.bot_id.deref()
     }
     /// <p>The version of the bot to export.</p>
-    pub fn bot_version(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_version.deref()
+    pub fn bot_version(&self) -> & str {
+        use std::ops::Deref; self.bot_version.deref()
     }
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
-    pub fn locale_id(&self) -> &str {
-        use std::ops::Deref;
-        self.locale_id.deref()
+    pub fn locale_id(&self) -> & str {
+        use std::ops::Deref; self.locale_id.deref()
     }
 }
 impl BotLocaleExportSpecification {
@@ -52,8 +49,7 @@ impl BotLocaleExportSpecificationBuilder {
     }
     /// <p>The identifier of the bot to create the locale for.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot to create the locale for.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl BotLocaleExportSpecificationBuilder {
     }
     /// <p>The version of the bot to export.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot to export.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl BotLocaleExportSpecificationBuilder {
     }
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl BotLocaleExportSpecificationBuilder {
     /// - [`bot_version`](crate::types::builders::BotLocaleExportSpecificationBuilder::bot_version)
     /// - [`locale_id`](crate::types::builders::BotLocaleExportSpecificationBuilder::locale_id)
     pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleExportSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotLocaleExportSpecification {
-            bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_id",
-                    "bot_id was not specified but it is required when building BotLocaleExportSpecification",
-                )
-            })?,
-            bot_version: self.bot_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_version",
-                    "bot_version was not specified but it is required when building BotLocaleExportSpecification",
-                )
-            })?,
-            locale_id: self.locale_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "locale_id",
-                    "locale_id was not specified but it is required when building BotLocaleExportSpecification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotLocaleExportSpecification {
+                bot_id: self.bot_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_id", "bot_id was not specified but it is required when building BotLocaleExportSpecification")
+                    )?
+                ,
+                bot_version: self.bot_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_version", "bot_version was not specified but it is required when building BotLocaleExportSpecification")
+                    )?
+                ,
+                locale_id: self.locale_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("locale_id", "locale_id was not specified but it is required when building BotLocaleExportSpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

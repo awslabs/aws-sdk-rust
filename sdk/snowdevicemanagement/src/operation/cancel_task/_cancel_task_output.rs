@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelTaskOutput {
+pub struct CancelTaskOutput  {
     /// <p>The ID of the task that you are attempting to cancel.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CancelTaskOutput {
+impl  CancelTaskOutput  {
     /// <p>The ID of the task that you are attempting to cancel.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelTaskOutput`](crate::operation::cancel_task::CancelTaskOutput).
     pub fn builder() -> crate::operation::cancel_task::builders::CancelTaskOutputBuilder {
@@ -40,27 +40,28 @@ impl CancelTaskOutputBuilder {
     }
     /// <p>The ID of the task that you are attempting to cancel.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the task that you are attempting to cancel.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelTaskOutput`](crate::operation::cancel_task::CancelTaskOutput).
     pub fn build(self) -> crate::operation::cancel_task::CancelTaskOutput {
         crate::operation::cancel_task::CancelTaskOutput {
-            task_id: self.task_id,
+            task_id: self.task_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

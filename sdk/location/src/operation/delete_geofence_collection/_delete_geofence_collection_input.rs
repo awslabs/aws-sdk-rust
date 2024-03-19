@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGeofenceCollectionInput {
+pub struct DeleteGeofenceCollectionInput  {
     /// <p>The name of the geofence collection to be deleted.</p>
     pub collection_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteGeofenceCollectionInput {
+impl  DeleteGeofenceCollectionInput  {
     /// <p>The name of the geofence collection to be deleted.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<& str> {
         self.collection_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteGeofenceCollectionInputBuilder {
     }
     /// <p>The name of the geofence collection to be deleted.</p>
     pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_name = input;
-        self
+        self.collection_name = input; self
     }
     /// <p>The name of the geofence collection to be deleted.</p>
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_name
     }
     /// Consumes the builder and constructs a [`DeleteGeofenceCollectionInput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput {
-            collection_name: self.collection_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput {
+                collection_name: self.collection_name
+                ,
+            }
+        )
     }
 }
+

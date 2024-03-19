@@ -3,7 +3,7 @@
 /// <p>A description of a version of a Amazon Rekognition project version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectVersionDescription {
+pub struct ProjectVersionDescription  {
     /// <p>The Amazon Resource Name (ARN) of the project version.</p>
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Unix datetime for the date and time that training started.</p>
@@ -43,13 +43,13 @@ pub struct ProjectVersionDescription {
     /// <p>Feature specific configuration that was applied during training.</p>
     pub feature_config: ::std::option::Option<crate::types::CustomizationFeatureConfig>,
 }
-impl ProjectVersionDescription {
+impl  ProjectVersionDescription  {
     /// <p>The Amazon Resource Name (ARN) of the project version.</p>
-    pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_version_arn(&self) -> ::std::option::Option<& str> {
         self.project_version_arn.as_deref()
     }
     /// <p>The Unix datetime for the date and time that training started.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The minimum number of inference units used by the model. Applies only to Custom Labels projects. For more information, see <code>StartProjectVersion</code>.</p>
@@ -57,11 +57,11 @@ impl ProjectVersionDescription {
         self.min_inference_units
     }
     /// <p>The current status of the model version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ProjectVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A descriptive message for an error or warning that occurred.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
@@ -69,31 +69,31 @@ impl ProjectVersionDescription {
         self.billable_training_time_in_seconds
     }
     /// <p>The Unix date and time that training of the model ended.</p>
-    pub fn training_end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_end_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_end_timestamp.as_ref()
     }
     /// <p>The location where training results are saved.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>Contains information about the training results.</p>
-    pub fn training_data_result(&self) -> ::std::option::Option<&crate::types::TrainingDataResult> {
+    pub fn training_data_result(&self) -> ::std::option::Option<& crate::types::TrainingDataResult> {
         self.training_data_result.as_ref()
     }
     /// <p>Contains information about the testing results.</p>
-    pub fn testing_data_result(&self) -> ::std::option::Option<&crate::types::TestingDataResult> {
+    pub fn testing_data_result(&self) -> ::std::option::Option<& crate::types::TestingDataResult> {
         self.testing_data_result.as_ref()
     }
     /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
-    pub fn evaluation_result(&self) -> ::std::option::Option<&crate::types::EvaluationResult> {
+    pub fn evaluation_result(&self) -> ::std::option::Option<& crate::types::EvaluationResult> {
         self.evaluation_result.as_ref()
     }
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
-    pub fn manifest_summary(&self) -> ::std::option::Option<&crate::types::GroundTruthManifest> {
+    pub fn manifest_summary(&self) -> ::std::option::Option<& crate::types::GroundTruthManifest> {
         self.manifest_summary.as_ref()
     }
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The maximum number of inference units Amazon Rekognition uses to auto-scale the model. Applies only to Custom Labels projects. For more information, see <code>StartProjectVersion</code>.</p>
@@ -101,23 +101,23 @@ impl ProjectVersionDescription {
         self.max_inference_units
     }
     /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version.</p>
-    pub fn source_project_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_project_version_arn(&self) -> ::std::option::Option<& str> {
         self.source_project_version_arn.as_deref()
     }
     /// <p>A user-provided description of the project version.</p>
-    pub fn version_description(&self) -> ::std::option::Option<&str> {
+    pub fn version_description(&self) -> ::std::option::Option<& str> {
         self.version_description.as_deref()
     }
     /// <p>The feature that was customized.</p>
-    pub fn feature(&self) -> ::std::option::Option<&crate::types::CustomizationFeature> {
+    pub fn feature(&self) -> ::std::option::Option<& crate::types::CustomizationFeature> {
         self.feature.as_ref()
     }
     /// <p>The base detection model version used to create the project version.</p>
-    pub fn base_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn base_model_version(&self) -> ::std::option::Option<& str> {
         self.base_model_version.as_deref()
     }
     /// <p>Feature specific configuration that was applied during training.</p>
-    pub fn feature_config(&self) -> ::std::option::Option<&crate::types::CustomizationFeatureConfig> {
+    pub fn feature_config(&self) -> ::std::option::Option<& crate::types::CustomizationFeatureConfig> {
         self.feature_config.as_ref()
     }
 }
@@ -160,8 +160,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project version.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_version_arn = input;
-        self
+        self.project_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project version.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +173,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The Unix datetime for the date and time that training started.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The Unix datetime for the date and time that training started.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +186,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The minimum number of inference units used by the model. Applies only to Custom Labels projects. For more information, see <code>StartProjectVersion</code>.</p>
     pub fn set_min_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_inference_units = input;
-        self
+        self.min_inference_units = input; self
     }
     /// <p>The minimum number of inference units used by the model. Applies only to Custom Labels projects. For more information, see <code>StartProjectVersion</code>.</p>
     pub fn get_min_inference_units(&self) -> &::std::option::Option<i32> {
@@ -202,8 +199,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The current status of the model version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the model version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProjectVersionStatus> {
@@ -216,8 +212,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>A descriptive message for an error or warning that occurred.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A descriptive message for an error or warning that occurred.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +225,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
     pub fn set_billable_training_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.billable_training_time_in_seconds = input;
-        self
+        self.billable_training_time_in_seconds = input; self
     }
     /// <p>The duration, in seconds, that you were billed for a successful training of the model version. This value is only returned if the model version has been successfully trained.</p>
     pub fn get_billable_training_time_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -244,8 +238,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The Unix date and time that training of the model ended.</p>
     pub fn set_training_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_end_timestamp = input;
-        self
+        self.training_end_timestamp = input; self
     }
     /// <p>The Unix date and time that training of the model ended.</p>
     pub fn get_training_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -258,8 +251,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The location where training results are saved.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>The location where training results are saved.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
@@ -272,8 +264,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>Contains information about the training results.</p>
     pub fn set_training_data_result(mut self, input: ::std::option::Option<crate::types::TrainingDataResult>) -> Self {
-        self.training_data_result = input;
-        self
+        self.training_data_result = input; self
     }
     /// <p>Contains information about the training results.</p>
     pub fn get_training_data_result(&self) -> &::std::option::Option<crate::types::TrainingDataResult> {
@@ -286,8 +277,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>Contains information about the testing results.</p>
     pub fn set_testing_data_result(mut self, input: ::std::option::Option<crate::types::TestingDataResult>) -> Self {
-        self.testing_data_result = input;
-        self
+        self.testing_data_result = input; self
     }
     /// <p>Contains information about the testing results.</p>
     pub fn get_testing_data_result(&self) -> &::std::option::Option<crate::types::TestingDataResult> {
@@ -300,8 +290,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
     pub fn set_evaluation_result(mut self, input: ::std::option::Option<crate::types::EvaluationResult>) -> Self {
-        self.evaluation_result = input;
-        self
+        self.evaluation_result = input; self
     }
     /// <p>The training results. <code>EvaluationResult</code> is only returned if training is successful.</p>
     pub fn get_evaluation_result(&self) -> &::std::option::Option<crate::types::EvaluationResult> {
@@ -314,8 +303,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
     pub fn set_manifest_summary(mut self, input: ::std::option::Option<crate::types::GroundTruthManifest>) -> Self {
-        self.manifest_summary = input;
-        self
+        self.manifest_summary = input; self
     }
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
     pub fn get_manifest_summary(&self) -> &::std::option::Option<crate::types::GroundTruthManifest> {
@@ -328,8 +316,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -342,8 +329,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The maximum number of inference units Amazon Rekognition uses to auto-scale the model. Applies only to Custom Labels projects. For more information, see <code>StartProjectVersion</code>.</p>
     pub fn set_max_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_inference_units = input;
-        self
+        self.max_inference_units = input; self
     }
     /// <p>The maximum number of inference units Amazon Rekognition uses to auto-scale the model. Applies only to Custom Labels projects. For more information, see <code>StartProjectVersion</code>.</p>
     pub fn get_max_inference_units(&self) -> &::std::option::Option<i32> {
@@ -356,8 +342,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version.</p>
     pub fn set_source_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_project_version_arn = input;
-        self
+        self.source_project_version_arn = input; self
     }
     /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version.</p>
     pub fn get_source_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -370,8 +355,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>A user-provided description of the project version.</p>
     pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_description = input;
-        self
+        self.version_description = input; self
     }
     /// <p>A user-provided description of the project version.</p>
     pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -384,8 +368,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The feature that was customized.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<crate::types::CustomizationFeature>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// <p>The feature that was customized.</p>
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::CustomizationFeature> {
@@ -398,8 +381,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>The base detection model version used to create the project version.</p>
     pub fn set_base_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_model_version = input;
-        self
+        self.base_model_version = input; self
     }
     /// <p>The base detection model version used to create the project version.</p>
     pub fn get_base_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -412,8 +394,7 @@ impl ProjectVersionDescriptionBuilder {
     }
     /// <p>Feature specific configuration that was applied during training.</p>
     pub fn set_feature_config(mut self, input: ::std::option::Option<crate::types::CustomizationFeatureConfig>) -> Self {
-        self.feature_config = input;
-        self
+        self.feature_config = input; self
     }
     /// <p>Feature specific configuration that was applied during training.</p>
     pub fn get_feature_config(&self) -> &::std::option::Option<crate::types::CustomizationFeatureConfig> {
@@ -422,25 +403,45 @@ impl ProjectVersionDescriptionBuilder {
     /// Consumes the builder and constructs a [`ProjectVersionDescription`](crate::types::ProjectVersionDescription).
     pub fn build(self) -> crate::types::ProjectVersionDescription {
         crate::types::ProjectVersionDescription {
-            project_version_arn: self.project_version_arn,
-            creation_timestamp: self.creation_timestamp,
-            min_inference_units: self.min_inference_units,
-            status: self.status,
-            status_message: self.status_message,
-            billable_training_time_in_seconds: self.billable_training_time_in_seconds,
-            training_end_timestamp: self.training_end_timestamp,
-            output_config: self.output_config,
-            training_data_result: self.training_data_result,
-            testing_data_result: self.testing_data_result,
-            evaluation_result: self.evaluation_result,
-            manifest_summary: self.manifest_summary,
-            kms_key_id: self.kms_key_id,
-            max_inference_units: self.max_inference_units,
-            source_project_version_arn: self.source_project_version_arn,
-            version_description: self.version_description,
-            feature: self.feature,
-            base_model_version: self.base_model_version,
-            feature_config: self.feature_config,
+            project_version_arn: self.project_version_arn
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            min_inference_units: self.min_inference_units
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            billable_training_time_in_seconds: self.billable_training_time_in_seconds
+            ,
+            training_end_timestamp: self.training_end_timestamp
+            ,
+            output_config: self.output_config
+            ,
+            training_data_result: self.training_data_result
+            ,
+            testing_data_result: self.testing_data_result
+            ,
+            evaluation_result: self.evaluation_result
+            ,
+            manifest_summary: self.manifest_summary
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            max_inference_units: self.max_inference_units
+            ,
+            source_project_version_arn: self.source_project_version_arn
+            ,
+            version_description: self.version_description
+            ,
+            feature: self.feature
+            ,
+            base_model_version: self.base_model_version
+            ,
+            feature_config: self.feature_config
+            ,
         }
     }
 }
+

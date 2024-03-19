@@ -3,7 +3,7 @@
 /// <p>Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceSelectionConfiguration {
+pub struct DeviceSelectionConfiguration  {
     /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
     /// <li>
@@ -71,11 +71,11 @@ pub struct DeviceSelectionConfiguration {
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
     /// </ul>
-    pub filters: ::std::vec::Vec<crate::types::DeviceFilter>,
+    pub filters: ::std::vec::Vec::<crate::types::DeviceFilter>,
     /// <p>The maximum number of devices to be included in a test run.</p>
     pub max_devices: i32,
 }
-impl DeviceSelectionConfiguration {
+impl  DeviceSelectionConfiguration  {
     /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
     /// <li>
@@ -143,9 +143,8 @@ impl DeviceSelectionConfiguration {
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn filters(&self) -> &[crate::types::DeviceFilter] {
-        use std::ops::Deref;
-        self.filters.deref()
+    pub fn filters(&self) -> & [crate::types::DeviceFilter] {
+        use std::ops::Deref; self.filters.deref()
     }
     /// <p>The maximum number of devices to be included in a test run.</p>
     pub fn max_devices(&self) -> i32 {
@@ -163,7 +162,7 @@ impl DeviceSelectionConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceSelectionConfigurationBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceFilter>>,
     pub(crate) max_devices: ::std::option::Option<i32>,
 }
 impl DeviceSelectionConfigurationBuilder {
@@ -240,9 +239,9 @@ impl DeviceSelectionConfigurationBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::DeviceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
@@ -311,9 +310,8 @@ impl DeviceSelectionConfigurationBuilder {
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
@@ -382,7 +380,7 @@ impl DeviceSelectionConfigurationBuilder {
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeviceFilter>> {
         &self.filters
     }
     /// <p>The maximum number of devices to be included in a test run.</p>
@@ -393,8 +391,7 @@ impl DeviceSelectionConfigurationBuilder {
     }
     /// <p>The maximum number of devices to be included in a test run.</p>
     pub fn set_max_devices(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_devices = input;
-        self
+        self.max_devices = input; self
     }
     /// <p>The maximum number of devices to be included in a test run.</p>
     pub fn get_max_devices(&self) -> &::std::option::Option<i32> {
@@ -405,19 +402,20 @@ impl DeviceSelectionConfigurationBuilder {
     /// - [`filters`](crate::types::builders::DeviceSelectionConfigurationBuilder::filters)
     /// - [`max_devices`](crate::types::builders::DeviceSelectionConfigurationBuilder::max_devices)
     pub fn build(self) -> ::std::result::Result<crate::types::DeviceSelectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeviceSelectionConfiguration {
-            filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filters",
-                    "filters was not specified but it is required when building DeviceSelectionConfiguration",
-                )
-            })?,
-            max_devices: self.max_devices.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_devices",
-                    "max_devices was not specified but it is required when building DeviceSelectionConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeviceSelectionConfiguration {
+                filters: self.filters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filters", "filters was not specified but it is required when building DeviceSelectionConfiguration")
+                    )?
+                ,
+                max_devices: self.max_devices
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_devices", "max_devices was not specified but it is required when building DeviceSelectionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

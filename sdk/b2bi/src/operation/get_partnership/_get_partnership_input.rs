@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPartnershipInput {
+pub struct GetPartnershipInput  {
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
     pub partnership_id: ::std::option::Option<::std::string::String>,
 }
-impl GetPartnershipInput {
+impl  GetPartnershipInput  {
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
-    pub fn partnership_id(&self) -> ::std::option::Option<&str> {
+    pub fn partnership_id(&self) -> ::std::option::Option<& str> {
         self.partnership_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetPartnershipInputBuilder {
     }
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
     pub fn set_partnership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partnership_id = input;
-        self
+        self.partnership_id = input; self
     }
     /// <p>Specifies the unique, system-generated identifier for a partnership.</p>
     pub fn get_partnership_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.partnership_id
     }
     /// Consumes the builder and constructs a [`GetPartnershipInput`](crate::operation::get_partnership::GetPartnershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_partnership::GetPartnershipInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_partnership::GetPartnershipInput {
-            partnership_id: self.partnership_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_partnership::GetPartnershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_partnership::GetPartnershipInput {
+                partnership_id: self.partnership_id
+                ,
+            }
+        )
     }
 }
+

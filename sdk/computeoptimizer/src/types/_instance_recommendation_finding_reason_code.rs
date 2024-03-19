@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancerecommendationfindingreasoncode = unimplemented!();
 /// match instancerecommendationfindingreasoncode {
@@ -48,16 +48,14 @@
 /// Specifically, when `instancerecommendationfindingreasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceRecommendationFindingReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum InstanceRecommendationFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CpuOverProvisioned,
@@ -101,136 +99,116 @@ pub enum InstanceRecommendationFindingReasonCode {
     NetworkPpsUnderProvisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for InstanceRecommendationFindingReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CPUOverprovisioned" => InstanceRecommendationFindingReasonCode::CpuOverProvisioned,
-            "CPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::CpuUnderProvisioned,
-            "DiskIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned,
-            "DiskIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned,
-            "DiskThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned,
-            "DiskThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned,
-            "EBSIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned,
-            "EBSIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned,
-            "EBSThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned,
-            "EBSThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned,
-            "GPUMemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned,
-            "GPUMemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned,
-            "GPUOverprovisioned" => InstanceRecommendationFindingReasonCode::GpuOverProvisioned,
-            "GPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::GpuUnderProvisioned,
-            "MemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::MemoryOverProvisioned,
-            "MemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned,
-            "NetworkBandwidthOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned,
-            "NetworkBandwidthUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned,
-            "NetworkPPSOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned,
-            "NetworkPPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned,
-            other => InstanceRecommendationFindingReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CPUOverprovisioned" => InstanceRecommendationFindingReasonCode::CpuOverProvisioned,
+"CPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::CpuUnderProvisioned,
+"DiskIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned,
+"DiskIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned,
+"DiskThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned,
+"DiskThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned,
+"EBSIOPSOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned,
+"EBSIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned,
+"EBSThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned,
+"EBSThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned,
+"GPUMemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned,
+"GPUMemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned,
+"GPUOverprovisioned" => InstanceRecommendationFindingReasonCode::GpuOverProvisioned,
+"GPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::GpuUnderProvisioned,
+"MemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::MemoryOverProvisioned,
+"MemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned,
+"NetworkBandwidthOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned,
+"NetworkBandwidthUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned,
+"NetworkPPSOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned,
+"NetworkPPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned,
+other => InstanceRecommendationFindingReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for InstanceRecommendationFindingReasonCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(InstanceRecommendationFindingReasonCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(InstanceRecommendationFindingReasonCode::from(s))
+                    }
+                }
 impl InstanceRecommendationFindingReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
-            InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => "DiskIOPSOverprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => "DiskIOPSUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => "DiskThroughputOverprovisioned",
-            InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => "DiskThroughputUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => "EBSIOPSOverprovisioned",
-            InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => "EBSIOPSUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => "EBSThroughputOverprovisioned",
-            InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => "EBSThroughputUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned => "GPUMemoryOverprovisioned",
-            InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned => "GPUMemoryUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::GpuOverProvisioned => "GPUOverprovisioned",
-            InstanceRecommendationFindingReasonCode::GpuUnderProvisioned => "GPUUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
-            InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => "NetworkBandwidthOverprovisioned",
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => "NetworkBandwidthUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => "NetworkPPSOverprovisioned",
-            InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => "NetworkPPSUnderprovisioned",
-            InstanceRecommendationFindingReasonCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CPUOverprovisioned",
-            "CPUUnderprovisioned",
-            "DiskIOPSOverprovisioned",
-            "DiskIOPSUnderprovisioned",
-            "DiskThroughputOverprovisioned",
-            "DiskThroughputUnderprovisioned",
-            "EBSIOPSOverprovisioned",
-            "EBSIOPSUnderprovisioned",
-            "EBSThroughputOverprovisioned",
-            "EBSThroughputUnderprovisioned",
-            "GPUMemoryOverprovisioned",
-            "GPUMemoryUnderprovisioned",
-            "GPUOverprovisioned",
-            "GPUUnderprovisioned",
-            "MemoryOverprovisioned",
-            "MemoryUnderprovisioned",
-            "NetworkBandwidthOverprovisioned",
-            "NetworkBandwidthUnderprovisioned",
-            "NetworkPPSOverprovisioned",
-            "NetworkPPSUnderprovisioned",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceRecommendationFindingReasonCode::CpuOverProvisioned => "CPUOverprovisioned",
+    InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => "CPUUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => "DiskIOPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => "DiskIOPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => "DiskThroughputOverprovisioned",
+    InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => "DiskThroughputUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => "EBSIOPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => "EBSIOPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => "EBSThroughputOverprovisioned",
+    InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => "EBSThroughputUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned => "GPUMemoryOverprovisioned",
+    InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned => "GPUMemoryUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::GpuOverProvisioned => "GPUOverprovisioned",
+    InstanceRecommendationFindingReasonCode::GpuUnderProvisioned => "GPUUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
+    InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => "NetworkBandwidthOverprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => "NetworkBandwidthUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => "NetworkPPSOverprovisioned",
+    InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => "NetworkPPSUnderprovisioned",
+    InstanceRecommendationFindingReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CPUOverprovisioned", "CPUUnderprovisioned", "DiskIOPSOverprovisioned", "DiskIOPSUnderprovisioned", "DiskThroughputOverprovisioned", "DiskThroughputUnderprovisioned", "EBSIOPSOverprovisioned", "EBSIOPSUnderprovisioned", "EBSThroughputOverprovisioned", "EBSThroughputUnderprovisioned", "GPUMemoryOverprovisioned", "GPUMemoryUnderprovisioned", "GPUOverprovisioned", "GPUUnderprovisioned", "MemoryOverprovisioned", "MemoryUnderprovisioned", "NetworkBandwidthOverprovisioned", "NetworkBandwidthUnderprovisioned", "NetworkPPSOverprovisioned", "NetworkPPSUnderprovisioned"]
+                }
+            }
 impl ::std::convert::AsRef<str> for InstanceRecommendationFindingReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl InstanceRecommendationFindingReasonCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for InstanceRecommendationFindingReasonCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            InstanceRecommendationFindingReasonCode::CpuOverProvisioned => write!(f, "CPUOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => write!(f, "CPUUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => write!(f, "DiskIOPSOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => write!(f, "DiskIOPSUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => write!(f, "DiskThroughputOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => write!(f, "DiskThroughputUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => write!(f, "EBSIOPSOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => write!(f, "EBSIOPSUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => write!(f, "EBSThroughputOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => write!(f, "EBSThroughputUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned => write!(f, "GPUMemoryOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned => write!(f, "GPUMemoryUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::GpuOverProvisioned => write!(f, "GPUOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::GpuUnderProvisioned => write!(f, "GPUUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => write!(f, "NetworkBandwidthOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => write!(f, "NetworkBandwidthUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => write!(f, "NetworkPPSOverprovisioned"),
-            InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => write!(f, "NetworkPPSUnderprovisioned"),
-            InstanceRecommendationFindingReasonCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                InstanceRecommendationFindingReasonCode::CpuOverProvisioned => write!(f, "CPUOverprovisioned"),
+InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => write!(f, "CPUUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => write!(f, "DiskIOPSOverprovisioned"),
+InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => write!(f, "DiskIOPSUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => write!(f, "DiskThroughputOverprovisioned"),
+InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => write!(f, "DiskThroughputUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => write!(f, "EBSIOPSOverprovisioned"),
+InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => write!(f, "EBSIOPSUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => write!(f, "EBSThroughputOverprovisioned"),
+InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => write!(f, "EBSThroughputUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned => write!(f, "GPUMemoryOverprovisioned"),
+InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned => write!(f, "GPUMemoryUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::GpuOverProvisioned => write!(f, "GPUOverprovisioned"),
+InstanceRecommendationFindingReasonCode::GpuUnderProvisioned => write!(f, "GPUUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
+InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => write!(f, "NetworkBandwidthOverprovisioned"),
+InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => write!(f, "NetworkBandwidthUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => write!(f, "NetworkPPSOverprovisioned"),
+InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => write!(f, "NetworkPPSUnderprovisioned"),
+InstanceRecommendationFindingReasonCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

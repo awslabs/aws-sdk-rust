@@ -3,19 +3,19 @@
 /// <p>Metadata of the user stored in a collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct User {
+pub struct User  {
     /// <p>A provided ID for the User. Unique within the collection.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
 }
-impl User {
+impl  User  {
     /// <p>A provided ID for the User. Unique within the collection.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
-    pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatus> {
+    pub fn user_status(&self) -> ::std::option::Option<& crate::types::UserStatus> {
         self.user_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UserBuilder {
     }
     /// <p>A provided ID for the User. Unique within the collection.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>A provided ID for the User. Unique within the collection.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UserBuilder {
     }
     /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
     pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
-        self.user_status = input;
-        self
+        self.user_status = input; self
     }
     /// <p>Communicates if the UserID has been updated with latest set of faces to be associated with the UserID.</p>
     pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
@@ -65,8 +63,11 @@ impl UserBuilder {
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {
         crate::types::User {
-            user_id: self.user_id,
-            user_status: self.user_status,
+            user_id: self.user_id
+            ,
+            user_status: self.user_status
+            ,
         }
     }
 }
+

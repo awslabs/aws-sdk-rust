@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analyticssessionmetricname = unimplemented!();
 /// match analyticssessionmetricname {
@@ -35,16 +35,14 @@
 /// Specifically, when `analyticssessionmetricname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalyticsSessionMetricName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AnalyticsSessionMetricName {
     #[allow(missing_docs)] // documentation missing in model
     Concurrency,
@@ -62,84 +60,77 @@ pub enum AnalyticsSessionMetricName {
     TurnsPerConversation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AnalyticsSessionMetricName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Concurrency" => AnalyticsSessionMetricName::Concurrency,
-            "Count" => AnalyticsSessionMetricName::Count,
-            "Dropped" => AnalyticsSessionMetricName::Dropped,
-            "Duration" => AnalyticsSessionMetricName::Duration,
-            "Failure" => AnalyticsSessionMetricName::Failure,
-            "Success" => AnalyticsSessionMetricName::Success,
-            "TurnsPerConversation" => AnalyticsSessionMetricName::TurnsPerConversation,
-            other => AnalyticsSessionMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Concurrency" => AnalyticsSessionMetricName::Concurrency,
+"Count" => AnalyticsSessionMetricName::Count,
+"Dropped" => AnalyticsSessionMetricName::Dropped,
+"Duration" => AnalyticsSessionMetricName::Duration,
+"Failure" => AnalyticsSessionMetricName::Failure,
+"Success" => AnalyticsSessionMetricName::Success,
+"TurnsPerConversation" => AnalyticsSessionMetricName::TurnsPerConversation,
+other => AnalyticsSessionMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AnalyticsSessionMetricName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AnalyticsSessionMetricName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AnalyticsSessionMetricName::from(s))
+                    }
+                }
 impl AnalyticsSessionMetricName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AnalyticsSessionMetricName::Concurrency => "Concurrency",
-            AnalyticsSessionMetricName::Count => "Count",
-            AnalyticsSessionMetricName::Dropped => "Dropped",
-            AnalyticsSessionMetricName::Duration => "Duration",
-            AnalyticsSessionMetricName::Failure => "Failure",
-            AnalyticsSessionMetricName::Success => "Success",
-            AnalyticsSessionMetricName::TurnsPerConversation => "TurnsPerConversation",
-            AnalyticsSessionMetricName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Concurrency",
-            "Count",
-            "Dropped",
-            "Duration",
-            "Failure",
-            "Success",
-            "TurnsPerConversation",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AnalyticsSessionMetricName::Concurrency => "Concurrency",
+    AnalyticsSessionMetricName::Count => "Count",
+    AnalyticsSessionMetricName::Dropped => "Dropped",
+    AnalyticsSessionMetricName::Duration => "Duration",
+    AnalyticsSessionMetricName::Failure => "Failure",
+    AnalyticsSessionMetricName::Success => "Success",
+    AnalyticsSessionMetricName::TurnsPerConversation => "TurnsPerConversation",
+    AnalyticsSessionMetricName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Concurrency", "Count", "Dropped", "Duration", "Failure", "Success", "TurnsPerConversation"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AnalyticsSessionMetricName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AnalyticsSessionMetricName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AnalyticsSessionMetricName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AnalyticsSessionMetricName::Concurrency => write!(f, "Concurrency"),
-            AnalyticsSessionMetricName::Count => write!(f, "Count"),
-            AnalyticsSessionMetricName::Dropped => write!(f, "Dropped"),
-            AnalyticsSessionMetricName::Duration => write!(f, "Duration"),
-            AnalyticsSessionMetricName::Failure => write!(f, "Failure"),
-            AnalyticsSessionMetricName::Success => write!(f, "Success"),
-            AnalyticsSessionMetricName::TurnsPerConversation => write!(f, "TurnsPerConversation"),
-            AnalyticsSessionMetricName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AnalyticsSessionMetricName::Concurrency => write!(f, "Concurrency"),
+AnalyticsSessionMetricName::Count => write!(f, "Count"),
+AnalyticsSessionMetricName::Dropped => write!(f, "Dropped"),
+AnalyticsSessionMetricName::Duration => write!(f, "Duration"),
+AnalyticsSessionMetricName::Failure => write!(f, "Failure"),
+AnalyticsSessionMetricName::Success => write!(f, "Success"),
+AnalyticsSessionMetricName::TurnsPerConversation => write!(f, "TurnsPerConversation"),
+AnalyticsSessionMetricName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

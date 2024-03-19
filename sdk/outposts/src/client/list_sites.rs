@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSites`](crate::operation::list_sites::builders::ListSitesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_sites::builders::ListSitesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum page size.</p><br>
     ///   - [`operating_address_country_code_filter(impl Into<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::operating_address_country_code_filter) / [`set_operating_address_country_code_filter(Option<Vec::<String>>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_operating_address_country_code_filter):<br>required: **false**<br><p>Filters the results by country code.</p><br>
     ///   - [`operating_address_state_or_region_filter(impl Into<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::operating_address_state_or_region_filter) / [`set_operating_address_state_or_region_filter(Option<Vec::<String>>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_operating_address_state_or_region_filter):<br>required: **false**<br><p>Filters the results by state or region.</p><br>
     ///   - [`operating_address_city_filter(impl Into<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::operating_address_city_filter) / [`set_operating_address_city_filter(Option<Vec::<String>>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_operating_address_city_filter):<br>required: **false**<br><p>Filters the results by city.</p><br>
-    /// - On success, responds with [`ListSitesOutput`](crate::operation::list_sites::ListSitesOutput) with field(s):
+                            /// - On success, responds with [`ListSitesOutput`](crate::operation::list_sites::ListSitesOutput) with field(s):
     ///   - [`sites(Option<Vec::<Site>>)`](crate::operation::list_sites::ListSitesOutput::sites): <p>Information about the sites.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sites::ListSitesOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListSitesError>`](crate::operation::list_sites::ListSitesError)
+                            /// - On failure, responds with [`SdkError<ListSitesError>`](crate::operation::list_sites::ListSitesError)
     pub fn list_sites(&self) -> crate::operation::list_sites::builders::ListSitesFluentBuilder {
-        crate::operation::list_sites::builders::ListSitesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_sites::builders::ListSitesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

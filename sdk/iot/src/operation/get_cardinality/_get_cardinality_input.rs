@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCardinalityInput {
+pub struct GetCardinalityInput  {
     /// <p>The name of the index to search.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The search query string.</p>
@@ -12,21 +12,21 @@ pub struct GetCardinalityInput {
     /// <p>The query version.</p>
     pub query_version: ::std::option::Option<::std::string::String>,
 }
-impl GetCardinalityInput {
+impl  GetCardinalityInput  {
     /// <p>The name of the index to search.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The search query string.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The field to aggregate.</p>
-    pub fn aggregation_field(&self) -> ::std::option::Option<&str> {
+    pub fn aggregation_field(&self) -> ::std::option::Option<& str> {
         self.aggregation_field.as_deref()
     }
     /// <p>The query version.</p>
-    pub fn query_version(&self) -> ::std::option::Option<&str> {
+    pub fn query_version(&self) -> ::std::option::Option<& str> {
         self.query_version.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl GetCardinalityInputBuilder {
     }
     /// <p>The name of the index to search.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the index to search.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GetCardinalityInputBuilder {
     }
     /// <p>The search query string.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The search query string.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl GetCardinalityInputBuilder {
     }
     /// <p>The field to aggregate.</p>
     pub fn set_aggregation_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aggregation_field = input;
-        self
+        self.aggregation_field = input; self
     }
     /// <p>The field to aggregate.</p>
     pub fn get_aggregation_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl GetCardinalityInputBuilder {
     }
     /// <p>The query version.</p>
     pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_version = input;
-        self
+        self.query_version = input; self
     }
     /// <p>The query version.</p>
     pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_version
     }
     /// Consumes the builder and constructs a [`GetCardinalityInput`](crate::operation::get_cardinality::GetCardinalityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_cardinality::GetCardinalityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_cardinality::GetCardinalityInput {
-            index_name: self.index_name,
-            query_string: self.query_string,
-            aggregation_field: self.aggregation_field,
-            query_version: self.query_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cardinality::GetCardinalityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cardinality::GetCardinalityInput {
+                index_name: self.index_name
+                ,
+                query_string: self.query_string
+                ,
+                aggregation_field: self.aggregation_field
+                ,
+                query_version: self.query_version
+                ,
+            }
+        )
     }
 }
+

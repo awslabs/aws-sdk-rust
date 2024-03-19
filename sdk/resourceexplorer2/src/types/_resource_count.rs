@@ -4,7 +4,7 @@
 /// <p>This field is included in every page when you paginate the results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceCount {
+pub struct ResourceCount  {
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
     pub total_resources: ::std::option::Option<i64>,
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
@@ -16,7 +16,7 @@ pub struct ResourceCount {
     /// </ul>
     pub complete: ::std::option::Option<bool>,
 }
-impl ResourceCount {
+impl  ResourceCount  {
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
     pub fn total_resources(&self) -> ::std::option::Option<i64> {
         self.total_resources
@@ -54,8 +54,7 @@ impl ResourceCountBuilder {
     }
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
     pub fn set_total_resources(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_resources = input;
-        self
+        self.total_resources = input; self
     }
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
     pub fn get_total_resources(&self) -> &::std::option::Option<i64> {
@@ -80,8 +79,7 @@ impl ResourceCountBuilder {
     /// <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
     /// </ul>
     pub fn set_complete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.complete = input;
-        self
+        self.complete = input; self
     }
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
     /// <ul>
@@ -96,8 +94,11 @@ impl ResourceCountBuilder {
     /// Consumes the builder and constructs a [`ResourceCount`](crate::types::ResourceCount).
     pub fn build(self) -> crate::types::ResourceCount {
         crate::types::ResourceCount {
-            total_resources: self.total_resources,
-            complete: self.complete,
+            total_resources: self.total_resources
+            ,
+            complete: self.complete
+            ,
         }
     }
 }
+

@@ -5,26 +5,25 @@
 /// to an MP3 file that is played in the announcement:
 /// </input-file></p>
 /// <p><code>ffmpeg -i <input-file>
-/// -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000
+/// -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 
 /// <output-file.mp3></output-file.mp3>
 /// </input-file></code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Audio {
+pub struct Audio  {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
     pub locale: crate::types::Locale,
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
     pub location: ::std::string::String,
 }
-impl Audio {
+impl  Audio  {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> &crate::types::Locale {
+    pub fn locale(&self) -> & crate::types::Locale {
         &self.locale
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
 }
 impl Audio {
@@ -50,8 +49,7 @@ impl AudioBuilder {
     }
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
@@ -65,8 +63,7 @@ impl AudioBuilder {
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,19 +74,20 @@ impl AudioBuilder {
     /// - [`locale`](crate::types::builders::AudioBuilder::locale)
     /// - [`location`](crate::types::builders::AudioBuilder::location)
     pub fn build(self) -> ::std::result::Result<crate::types::Audio, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Audio {
-            locale: self.locale.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "locale",
-                    "locale was not specified but it is required when building Audio",
-                )
-            })?,
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building Audio",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Audio {
+                locale: self.locale
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("locale", "locale was not specified but it is required when building Audio")
+                    )?
+                ,
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building Audio")
+                    )?
+                ,
+            }
+        )
     }
 }
+

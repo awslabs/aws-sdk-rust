@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportModelVersionOutput {
+pub struct ImportModelVersionOutput  {
     /// <p>The name for the machine learning model.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
@@ -15,17 +15,17 @@ pub struct ImportModelVersionOutput {
     pub status: ::std::option::Option<crate::types::ModelVersionStatus>,
     _request_id: Option<String>,
 }
-impl ImportModelVersionOutput {
+impl  ImportModelVersionOutput  {
     /// <p>The name for the machine learning model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model version being created.</p>
-    pub fn model_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_version_arn(&self) -> ::std::option::Option<& str> {
         self.model_version_arn.as_deref()
     }
     /// <p>The version of the model being created.</p>
@@ -33,15 +33,15 @@ impl ImportModelVersionOutput {
         self.model_version
     }
     /// <p>The status of the <code>ImportModelVersion</code> operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ModelVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ModelVersionStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportModelVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`ImportModelVersionOutput`](crate::operation::import_model_version::ImportModelVersionOutput).
     pub fn builder() -> crate::operation::import_model_version::builders::ImportModelVersionOutputBuilder {
@@ -68,8 +68,7 @@ impl ImportModelVersionOutputBuilder {
     }
     /// <p>The name for the machine learning model.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name for the machine learning model.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl ImportModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model being created.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl ImportModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model version being created.</p>
     pub fn set_model_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version_arn = input;
-        self
+        self.model_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version being created.</p>
     pub fn get_model_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl ImportModelVersionOutputBuilder {
     }
     /// <p>The version of the model being created.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The version of the model being created.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<i64> {
@@ -124,31 +120,36 @@ impl ImportModelVersionOutputBuilder {
     }
     /// <p>The status of the <code>ImportModelVersion</code> operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the <code>ImportModelVersion</code> operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelVersionStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportModelVersionOutput`](crate::operation::import_model_version::ImportModelVersionOutput).
     pub fn build(self) -> crate::operation::import_model_version::ImportModelVersionOutput {
         crate::operation::import_model_version::ImportModelVersionOutput {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            model_version_arn: self.model_version_arn,
-            model_version: self.model_version,
-            status: self.status,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            model_version_arn: self.model_version_arn
+            ,
+            model_version: self.model_version
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

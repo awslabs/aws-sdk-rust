@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateListingChangeSetOutput {
+pub struct CreateListingChangeSetOutput  {
     /// <p></p>
     pub listing_id: ::std::string::String,
     /// <p></p>
@@ -11,27 +11,25 @@ pub struct CreateListingChangeSetOutput {
     pub status: crate::types::ListingStatus,
     _request_id: Option<String>,
 }
-impl CreateListingChangeSetOutput {
+impl  CreateListingChangeSetOutput  {
     /// <p></p>
-    pub fn listing_id(&self) -> &str {
-        use std::ops::Deref;
-        self.listing_id.deref()
+    pub fn listing_id(&self) -> & str {
+        use std::ops::Deref; self.listing_id.deref()
     }
     /// <p></p>
-    pub fn listing_revision(&self) -> &str {
-        use std::ops::Deref;
-        self.listing_revision.deref()
+    pub fn listing_revision(&self) -> & str {
+        use std::ops::Deref; self.listing_revision.deref()
     }
     /// <p></p>
-    pub fn status(&self) -> &crate::types::ListingStatus {
+    pub fn status(&self) -> & crate::types::ListingStatus {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for CreateListingChangeSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateListingChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateListingChangeSetOutput`](crate::operation::create_listing_change_set::CreateListingChangeSetOutput).
     pub fn builder() -> crate::operation::create_listing_change_set::builders::CreateListingChangeSetOutputBuilder {
@@ -57,8 +55,7 @@ impl CreateListingChangeSetOutputBuilder {
     }
     /// <p></p>
     pub fn set_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_id = input;
-        self
+        self.listing_id = input; self
     }
     /// <p></p>
     pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl CreateListingChangeSetOutputBuilder {
     }
     /// <p></p>
     pub fn set_listing_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_revision = input;
-        self
+        self.listing_revision = input; self
     }
     /// <p></p>
     pub fn get_listing_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,53 +83,47 @@ impl CreateListingChangeSetOutputBuilder {
     }
     /// <p></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ListingStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ListingStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateListingChangeSetOutput`](crate::operation::create_listing_change_set::CreateListingChangeSetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`listing_id`](crate::operation::create_listing_change_set::builders::CreateListingChangeSetOutputBuilder::listing_id)
     /// - [`listing_revision`](crate::operation::create_listing_change_set::builders::CreateListingChangeSetOutputBuilder::listing_revision)
     /// - [`status`](crate::operation::create_listing_change_set::builders::CreateListingChangeSetOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_listing_change_set::CreateListingChangeSetOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_listing_change_set::CreateListingChangeSetOutput {
-            listing_id: self.listing_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "listing_id",
-                    "listing_id was not specified but it is required when building CreateListingChangeSetOutput",
-                )
-            })?,
-            listing_revision: self.listing_revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "listing_revision",
-                    "listing_revision was not specified but it is required when building CreateListingChangeSetOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building CreateListingChangeSetOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_listing_change_set::CreateListingChangeSetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_listing_change_set::CreateListingChangeSetOutput {
+                listing_id: self.listing_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("listing_id", "listing_id was not specified but it is required when building CreateListingChangeSetOutput")
+                    )?
+                ,
+                listing_revision: self.listing_revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("listing_revision", "listing_revision was not specified but it is required when building CreateListingChangeSetOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building CreateListingChangeSetOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

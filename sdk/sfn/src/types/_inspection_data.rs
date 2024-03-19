@@ -3,7 +3,7 @@
 /// <p>Contains additional details about the state's execution, including its input and output data processing flow, and HTTP request and response information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InspectionData {
+pub struct InspectionData  {
     /// <p>The raw state input.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
@@ -21,41 +21,41 @@ pub struct InspectionData {
     /// <p>The raw HTTP response that is returned when you test an HTTP Task.</p>
     pub response: ::std::option::Option<crate::types::InspectionDataResponse>,
 }
-impl InspectionData {
+impl  InspectionData  {
     /// <p>The raw state input.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
-    pub fn after_input_path(&self) -> ::std::option::Option<&str> {
+    pub fn after_input_path(&self) -> ::std::option::Option<& str> {
         self.after_input_path.as_deref()
     }
     /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter.</p>
-    pub fn after_parameters(&self) -> ::std::option::Option<&str> {
+    pub fn after_parameters(&self) -> ::std::option::Option<& str> {
         self.after_parameters.as_deref()
     }
     /// <p>The state's raw result.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
     /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter.</p>
-    pub fn after_result_selector(&self) -> ::std::option::Option<&str> {
+    pub fn after_result_selector(&self) -> ::std::option::Option<& str> {
         self.after_result_selector.as_deref()
     }
     /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter.</p>
-    pub fn after_result_path(&self) -> ::std::option::Option<&str> {
+    pub fn after_result_path(&self) -> ::std::option::Option<& str> {
         self.after_result_path.as_deref()
     }
     /// <p>The raw HTTP request that is sent when you test an HTTP Task.</p>
-    pub fn request(&self) -> ::std::option::Option<&crate::types::InspectionDataRequest> {
+    pub fn request(&self) -> ::std::option::Option<& crate::types::InspectionDataRequest> {
         self.request.as_ref()
     }
     /// <p>The raw HTTP response that is returned when you test an HTTP Task.</p>
-    pub fn response(&self) -> ::std::option::Option<&crate::types::InspectionDataResponse> {
+    pub fn response(&self) -> ::std::option::Option<& crate::types::InspectionDataResponse> {
         self.response.as_ref()
     }
 }
-impl ::std::fmt::Debug for InspectionData {
+impl  ::std::fmt::Debug for InspectionData  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InspectionData");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
@@ -97,8 +97,7 @@ impl InspectionDataBuilder {
     }
     /// <p>The raw state input.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The raw state input.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl InspectionDataBuilder {
     }
     /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
     pub fn set_after_input_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_input_path = input;
-        self
+        self.after_input_path = input; self
     }
     /// <p>The input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a> filter.</p>
     pub fn get_after_input_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl InspectionDataBuilder {
     }
     /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter.</p>
     pub fn set_after_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_parameters = input;
-        self
+        self.after_parameters = input; self
     }
     /// <p>The effective input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a> filter.</p>
     pub fn get_after_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl InspectionDataBuilder {
     }
     /// <p>The state's raw result.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The state's raw result.</p>
     pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl InspectionDataBuilder {
     }
     /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter.</p>
     pub fn set_after_result_selector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_result_selector = input;
-        self
+        self.after_result_selector = input; self
     }
     /// <p>The effective result after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a> filter.</p>
     pub fn get_after_result_selector(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl InspectionDataBuilder {
     }
     /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter.</p>
     pub fn set_after_result_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_result_path = input;
-        self
+        self.after_result_path = input; self
     }
     /// <p>The effective result combined with the raw state input after Step Functions applies the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a> filter.</p>
     pub fn get_after_result_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl InspectionDataBuilder {
     }
     /// <p>The raw HTTP request that is sent when you test an HTTP Task.</p>
     pub fn set_request(mut self, input: ::std::option::Option<crate::types::InspectionDataRequest>) -> Self {
-        self.request = input;
-        self
+        self.request = input; self
     }
     /// <p>The raw HTTP request that is sent when you test an HTTP Task.</p>
     pub fn get_request(&self) -> &::std::option::Option<crate::types::InspectionDataRequest> {
@@ -195,8 +188,7 @@ impl InspectionDataBuilder {
     }
     /// <p>The raw HTTP response that is returned when you test an HTTP Task.</p>
     pub fn set_response(mut self, input: ::std::option::Option<crate::types::InspectionDataResponse>) -> Self {
-        self.response = input;
-        self
+        self.response = input; self
     }
     /// <p>The raw HTTP response that is returned when you test an HTTP Task.</p>
     pub fn get_response(&self) -> &::std::option::Option<crate::types::InspectionDataResponse> {
@@ -205,14 +197,22 @@ impl InspectionDataBuilder {
     /// Consumes the builder and constructs a [`InspectionData`](crate::types::InspectionData).
     pub fn build(self) -> crate::types::InspectionData {
         crate::types::InspectionData {
-            input: self.input,
-            after_input_path: self.after_input_path,
-            after_parameters: self.after_parameters,
-            result: self.result,
-            after_result_selector: self.after_result_selector,
-            after_result_path: self.after_result_path,
-            request: self.request,
-            response: self.response,
+            input: self.input
+            ,
+            after_input_path: self.after_input_path
+            ,
+            after_parameters: self.after_parameters
+            ,
+            result: self.result
+            ,
+            after_result_selector: self.after_result_selector
+            ,
+            after_result_path: self.after_result_path
+            ,
+            request: self.request
+            ,
+            response: self.response
+            ,
         }
     }
 }
@@ -230,3 +230,4 @@ impl ::std::fmt::Debug for InspectionDataBuilder {
         formatter.finish()
     }
 }
+

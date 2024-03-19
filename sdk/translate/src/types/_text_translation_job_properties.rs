@@ -3,7 +3,7 @@
 /// <p>Provides information about a translation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextTranslationJobProperties {
+pub struct TextTranslationJobProperties  {
     /// <p>The ID of the translation job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined name of the translation job.</p>
@@ -15,11 +15,11 @@ pub struct TextTranslationJobProperties {
     /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    pub target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_language_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
-    pub terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub terminology_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
-    pub parallel_data_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub parallel_data_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the translation job was submitted.</p>
@@ -35,71 +35,74 @@ pub struct TextTranslationJobProperties {
     /// <p>Settings that modify the translation output.</p>
     pub settings: ::std::option::Option<crate::types::TranslationSettings>,
 }
-impl TextTranslationJobProperties {
+impl  TextTranslationJobProperties  {
     /// <p>The ID of the translation job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The user-defined name of the translation job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The status of the translation job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
-    pub fn job_details(&self) -> ::std::option::Option<&crate::types::JobDetails> {
+    pub fn job_details(&self) -> ::std::option::Option<& crate::types::JobDetails> {
         self.job_details.as_ref()
     }
     /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
-    pub fn source_language_code(&self) -> ::std::option::Option<&str> {
+    pub fn source_language_code(&self) -> ::std::option::Option<& str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_language_codes.is_none()`.
-    pub fn target_language_codes(&self) -> &[::std::string::String] {
-        self.target_language_codes.as_deref().unwrap_or_default()
+    pub fn target_language_codes(&self) -> & [::std::string::String] {
+        self.target_language_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terminology_names.is_none()`.
-    pub fn terminology_names(&self) -> &[::std::string::String] {
-        self.terminology_names.as_deref().unwrap_or_default()
+    pub fn terminology_names(&self) -> & [::std::string::String] {
+        self.terminology_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parallel_data_names.is_none()`.
-    pub fn parallel_data_names(&self) -> &[::std::string::String] {
-        self.parallel_data_names.as_deref().unwrap_or_default()
+    pub fn parallel_data_names(&self) -> & [::std::string::String] {
+        self.parallel_data_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time at which the translation job was submitted.</p>
-    pub fn submitted_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submitted_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submitted_time.as_ref()
     }
     /// <p>The time at which the translation job ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The input configuration properties that were specified when the job was requested.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<& crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output configuration properties that were specified when the job was requested.</p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Settings that modify the translation output.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::TranslationSettings> {
         self.settings.as_ref()
     }
 }
@@ -119,9 +122,9 @@ pub struct TextTranslationJobPropertiesBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) job_details: ::std::option::Option<crate::types::JobDetails>,
     pub(crate) source_language_code: ::std::option::Option<::std::string::String>,
-    pub(crate) target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) parallel_data_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_language_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) terminology_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) parallel_data_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) submitted_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -138,8 +141,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The ID of the translation job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the translation job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +154,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The user-defined name of the translation job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The user-defined name of the translation job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +167,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The status of the translation job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the translation job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -180,8 +180,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
     pub fn set_job_details(mut self, input: ::std::option::Option<crate::types::JobDetails>) -> Self {
-        self.job_details = input;
-        self
+        self.job_details = input; self
     }
     /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
     pub fn get_job_details(&self) -> &::std::option::Option<crate::types::JobDetails> {
@@ -194,8 +193,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
     pub fn set_source_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_language_code = input;
-        self
+        self.source_language_code = input; self
     }
     /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
     pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,17 +206,16 @@ impl TextTranslationJobPropertiesBuilder {
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
     pub fn target_language_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_language_codes.unwrap_or_default();
-        v.push(input.into());
-        self.target_language_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_language_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_language_codes = input;
-        self
+    pub fn set_target_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_language_codes = input; self
     }
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_language_codes
     }
     /// Appends an item to `terminology_names`.
@@ -228,17 +225,16 @@ impl TextTranslationJobPropertiesBuilder {
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
     pub fn terminology_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.terminology_names.unwrap_or_default();
-        v.push(input.into());
-        self.terminology_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.terminology_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
-    pub fn set_terminology_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.terminology_names = input;
-        self
+    pub fn set_terminology_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.terminology_names = input; self
     }
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
-    pub fn get_terminology_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_terminology_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.terminology_names
     }
     /// Appends an item to `parallel_data_names`.
@@ -248,17 +244,16 @@ impl TextTranslationJobPropertiesBuilder {
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
     pub fn parallel_data_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parallel_data_names.unwrap_or_default();
-        v.push(input.into());
-        self.parallel_data_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.parallel_data_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
-    pub fn set_parallel_data_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.parallel_data_names = input;
-        self
+    pub fn set_parallel_data_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.parallel_data_names = input; self
     }
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
-    pub fn get_parallel_data_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parallel_data_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.parallel_data_names
     }
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
@@ -268,8 +263,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -282,8 +276,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The time at which the translation job was submitted.</p>
     pub fn set_submitted_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submitted_time = input;
-        self
+        self.submitted_time = input; self
     }
     /// <p>The time at which the translation job was submitted.</p>
     pub fn get_submitted_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -296,8 +289,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The time at which the translation job ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time at which the translation job ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -310,8 +302,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The input configuration properties that were specified when the job was requested.</p>
     pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input;
-        self
+        self.input_data_config = input; self
     }
     /// <p>The input configuration properties that were specified when the job was requested.</p>
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
@@ -324,8 +315,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The output configuration properties that were specified when the job was requested.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input;
-        self
+        self.output_data_config = input; self
     }
     /// <p>The output configuration properties that were specified when the job was requested.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
@@ -338,8 +328,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -352,8 +341,7 @@ impl TextTranslationJobPropertiesBuilder {
     }
     /// <p>Settings that modify the translation output.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>Settings that modify the translation output.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
@@ -362,21 +350,37 @@ impl TextTranslationJobPropertiesBuilder {
     /// Consumes the builder and constructs a [`TextTranslationJobProperties`](crate::types::TextTranslationJobProperties).
     pub fn build(self) -> crate::types::TextTranslationJobProperties {
         crate::types::TextTranslationJobProperties {
-            job_id: self.job_id,
-            job_name: self.job_name,
-            job_status: self.job_status,
-            job_details: self.job_details,
-            source_language_code: self.source_language_code,
-            target_language_codes: self.target_language_codes,
-            terminology_names: self.terminology_names,
-            parallel_data_names: self.parallel_data_names,
-            message: self.message,
-            submitted_time: self.submitted_time,
-            end_time: self.end_time,
-            input_data_config: self.input_data_config,
-            output_data_config: self.output_data_config,
-            data_access_role_arn: self.data_access_role_arn,
-            settings: self.settings,
+            job_id: self.job_id
+            ,
+            job_name: self.job_name
+            ,
+            job_status: self.job_status
+            ,
+            job_details: self.job_details
+            ,
+            source_language_code: self.source_language_code
+            ,
+            target_language_codes: self.target_language_codes
+            ,
+            terminology_names: self.terminology_names
+            ,
+            parallel_data_names: self.parallel_data_names
+            ,
+            message: self.message
+            ,
+            submitted_time: self.submitted_time
+            ,
+            end_time: self.end_time
+            ,
+            input_data_config: self.input_data_config
+            ,
+            output_data_config: self.output_data_config
+            ,
+            data_access_role_arn: self.data_access_role_arn
+            ,
+            settings: self.settings
+            ,
         }
     }
 }
+

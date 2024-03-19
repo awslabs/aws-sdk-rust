@@ -3,15 +3,15 @@
 /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate. Used in output responses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Authentication {
+pub struct Authentication  {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
     pub r#type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub password_count: ::std::option::Option<i32>,
 }
-impl Authentication {
+impl  Authentication  {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AuthenticationType> {
         self.r#type.as_ref()
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
@@ -41,8 +41,7 @@ impl AuthenticationBuilder {
     }
     /// <p>Indicates whether the user requires a password to authenticate.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Indicates whether the user requires a password to authenticate.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
@@ -55,8 +54,7 @@ impl AuthenticationBuilder {
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub fn set_password_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.password_count = input;
-        self
+        self.password_count = input; self
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub fn get_password_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AuthenticationBuilder {
     /// Consumes the builder and constructs a [`Authentication`](crate::types::Authentication).
     pub fn build(self) -> crate::types::Authentication {
         crate::types::Authentication {
-            r#type: self.r#type,
-            password_count: self.password_count,
+            r#type: self.r#type
+            ,
+            password_count: self.password_count
+            ,
         }
     }
 }
+

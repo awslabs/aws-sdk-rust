@@ -217,3 +217,4 @@ pub fn de_flow_log(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
     }
     Ok(builder.build())
 }
+

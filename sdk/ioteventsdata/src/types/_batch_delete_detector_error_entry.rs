@@ -3,7 +3,7 @@
 /// <p>Contains error messages associated with the deletion request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteDetectorErrorEntry {
+pub struct BatchDeleteDetectorErrorEntry  {
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
@@ -11,17 +11,17 @@ pub struct BatchDeleteDetectorErrorEntry {
     /// <p>A message that describes the error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl BatchDeleteDetectorErrorEntry {
+impl  BatchDeleteDetectorErrorEntry  {
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl BatchDeleteDetectorErrorEntryBuilder {
     }
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl BatchDeleteDetectorErrorEntryBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -76,8 +74,7 @@ impl BatchDeleteDetectorErrorEntryBuilder {
     }
     /// <p>A message that describes the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A message that describes the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl BatchDeleteDetectorErrorEntryBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteDetectorErrorEntry`](crate::types::BatchDeleteDetectorErrorEntry).
     pub fn build(self) -> crate::types::BatchDeleteDetectorErrorEntry {
         crate::types::BatchDeleteDetectorErrorEntry {
-            message_id: self.message_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            message_id: self.message_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

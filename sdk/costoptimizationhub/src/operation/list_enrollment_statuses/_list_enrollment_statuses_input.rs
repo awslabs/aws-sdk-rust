@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnrollmentStatusesInput {
+pub struct ListEnrollmentStatusesInput  {
     /// <p>Indicates whether to return the enrollment status for the organization.</p>
     pub include_organization_info: ::std::option::Option<bool>,
     /// <p>The account ID of a member account in the organization.</p>
@@ -12,17 +12,17 @@ pub struct ListEnrollmentStatusesInput {
     /// <p>The maximum number of objects that are returned for the request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListEnrollmentStatusesInput {
+impl  ListEnrollmentStatusesInput  {
     /// <p>Indicates whether to return the enrollment status for the organization.</p>
     pub fn include_organization_info(&self) -> ::std::option::Option<bool> {
         self.include_organization_info
     }
     /// <p>The account ID of a member account in the organization.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects that are returned for the request.</p>
@@ -54,8 +54,7 @@ impl ListEnrollmentStatusesInputBuilder {
     }
     /// <p>Indicates whether to return the enrollment status for the organization.</p>
     pub fn set_include_organization_info(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_organization_info = input;
-        self
+        self.include_organization_info = input; self
     }
     /// <p>Indicates whether to return the enrollment status for the organization.</p>
     pub fn get_include_organization_info(&self) -> &::std::option::Option<bool> {
@@ -68,8 +67,7 @@ impl ListEnrollmentStatusesInputBuilder {
     }
     /// <p>The account ID of a member account in the organization.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID of a member account in the organization.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl ListEnrollmentStatusesInputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,25 +93,26 @@ impl ListEnrollmentStatusesInputBuilder {
     }
     /// <p>The maximum number of objects that are returned for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects that are returned for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEnrollmentStatusesInput`](crate::operation::list_enrollment_statuses::ListEnrollmentStatusesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_enrollment_statuses::ListEnrollmentStatusesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_enrollment_statuses::ListEnrollmentStatusesInput {
-            include_organization_info: self.include_organization_info,
-            account_id: self.account_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_enrollment_statuses::ListEnrollmentStatusesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_enrollment_statuses::ListEnrollmentStatusesInput {
+                include_organization_info: self.include_organization_info
+                ,
+                account_id: self.account_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

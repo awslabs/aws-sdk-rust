@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDomainAutoTunes`](crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::set_domain_name):<br>required: **true**<br><p>Specifies the domain name for which you want Auto-Tune action details.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::set_max_results):<br>required: **false**<br><p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::set_next_token):<br>required: **false**<br><p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p><br>
-    /// - On success, responds with [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput) with field(s):
+                            /// - On success, responds with [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput) with field(s):
     ///   - [`auto_tunes(Option<Vec::<AutoTune>>)`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput::auto_tunes): <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput::next_token): <p>Specifies an identifier to allow retrieval of paginated results.</p>
-    /// - On failure, responds with [`SdkError<DescribeDomainAutoTunesError>`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError)
+                            /// - On failure, responds with [`SdkError<DescribeDomainAutoTunesError>`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesError)
     pub fn describe_domain_auto_tunes(&self) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder {
-        crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

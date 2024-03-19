@@ -4,15 +4,15 @@
 /// <p>For more information on how boosting document attributes work in Amazon Q, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting using document attributes</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateAttributeBoostingConfiguration {
+pub struct DateAttributeBoostingConfiguration  {
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub boosting_level: crate::types::DocumentAttributeBoostingLevel,
     /// <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.</p>
     pub boosting_duration_in_seconds: ::std::option::Option<i64>,
 }
-impl DateAttributeBoostingConfiguration {
+impl  DateAttributeBoostingConfiguration  {
     /// <p>Specifies how much a document attribute is boosted.</p>
-    pub fn boosting_level(&self) -> &crate::types::DocumentAttributeBoostingLevel {
+    pub fn boosting_level(&self) -> & crate::types::DocumentAttributeBoostingLevel {
         &self.boosting_level
     }
     /// <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.</p>
@@ -43,8 +43,7 @@ impl DateAttributeBoostingConfigurationBuilder {
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub fn set_boosting_level(mut self, input: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>) -> Self {
-        self.boosting_level = input;
-        self
+        self.boosting_level = input; self
     }
     /// <p>Specifies how much a document attribute is boosted.</p>
     pub fn get_boosting_level(&self) -> &::std::option::Option<crate::types::DocumentAttributeBoostingLevel> {
@@ -57,8 +56,7 @@ impl DateAttributeBoostingConfigurationBuilder {
     }
     /// <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.</p>
     pub fn set_boosting_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.boosting_duration_in_seconds = input;
-        self
+        self.boosting_duration_in_seconds = input; self
     }
     /// <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.</p>
     pub fn get_boosting_duration_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -68,14 +66,17 @@ impl DateAttributeBoostingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`boosting_level`](crate::types::builders::DateAttributeBoostingConfigurationBuilder::boosting_level)
     pub fn build(self) -> ::std::result::Result<crate::types::DateAttributeBoostingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DateAttributeBoostingConfiguration {
-            boosting_level: self.boosting_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "boosting_level",
-                    "boosting_level was not specified but it is required when building DateAttributeBoostingConfiguration",
-                )
-            })?,
-            boosting_duration_in_seconds: self.boosting_duration_in_seconds,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DateAttributeBoostingConfiguration {
+                boosting_level: self.boosting_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("boosting_level", "boosting_level was not specified but it is required when building DateAttributeBoostingConfiguration")
+                    )?
+                ,
+                boosting_duration_in_seconds: self.boosting_duration_in_seconds
+                ,
+            }
+        )
     }
 }
+

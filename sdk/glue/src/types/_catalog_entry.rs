@@ -3,22 +3,20 @@
 /// <p>Specifies a table definition in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CatalogEntry {
+pub struct CatalogEntry  {
     /// <p>The database in which the table metadata resides.</p>
     pub database_name: ::std::string::String,
     /// <p>The name of the table in question.</p>
     pub table_name: ::std::string::String,
 }
-impl CatalogEntry {
+impl  CatalogEntry  {
     /// <p>The database in which the table metadata resides.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>The name of the table in question.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
 }
 impl CatalogEntry {
@@ -44,8 +42,7 @@ impl CatalogEntryBuilder {
     }
     /// <p>The database in which the table metadata resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database in which the table metadata resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl CatalogEntryBuilder {
     }
     /// <p>The name of the table in question.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table in question.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl CatalogEntryBuilder {
     /// - [`database_name`](crate::types::builders::CatalogEntryBuilder::database_name)
     /// - [`table_name`](crate::types::builders::CatalogEntryBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::CatalogEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CatalogEntry {
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building CatalogEntry",
-                )
-            })?,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building CatalogEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CatalogEntry {
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building CatalogEntry")
+                    )?
+                ,
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building CatalogEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

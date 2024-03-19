@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConfigurationHistory`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_group_name(impl Into<String>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::set_resource_group_name):<br>required: **false**<br><p>Resource group to which the application belongs.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::set_start_time):<br>required: **false**<br><p>The start time of the event.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::set_end_time):<br>required: **false**<br><p>The end time of the event.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID for the resource group owner.</p><br>
-    /// - On success, responds with [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput) with field(s):
+                            /// - On success, responds with [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput) with field(s):
     ///   - [`event_list(Option<Vec::<ConfigurationEvent>>)`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput::event_list): <p>The list of configuration events and their corresponding details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput::next_token): <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListConfigurationHistoryError>`](crate::operation::list_configuration_history::ListConfigurationHistoryError)
+                            /// - On failure, responds with [`SdkError<ListConfigurationHistoryError>`](crate::operation::list_configuration_history::ListConfigurationHistoryError)
     pub fn list_configuration_history(&self) -> crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder {
-        crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_configuration_history::builders::ListConfigurationHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

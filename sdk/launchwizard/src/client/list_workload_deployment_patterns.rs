@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkloadDeploymentPatterns`](crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workload_name(impl Into<String>)`](crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::workload_name) / [`set_workload_name(Option<String>)`](crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::set_workload_name):<br>required: **true**<br><p>The name of the workload.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p><br>
-    /// - On success, responds with [`ListWorkloadDeploymentPatternsOutput`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkloadDeploymentPatternsOutput`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput) with field(s):
     ///   - [`workload_deployment_patterns(Option<Vec::<WorkloadDeploymentPatternDataSummary>>)`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput::workload_deployment_patterns): <p>Describes the workload deployment patterns.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<ListWorkloadDeploymentPatternsError>`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsError)
-    pub fn list_workload_deployment_patterns(
-        &self,
-    ) -> crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder {
-        crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListWorkloadDeploymentPatternsError>`](crate::operation::list_workload_deployment_patterns::ListWorkloadDeploymentPatternsError)
+    pub fn list_workload_deployment_patterns(&self) -> crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder {
+                                crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

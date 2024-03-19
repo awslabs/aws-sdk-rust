@@ -3,9 +3,9 @@
 /// Encoder Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncoderSettings {
+pub struct EncoderSettings  {
     /// Placeholder documentation for __listOfAudioDescription
-    pub audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
+    pub audio_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::AudioDescription>>,
     /// Settings for ad avail blanking.
     pub avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
     /// Event-wide configuration settings for ad avail insertion.
@@ -13,7 +13,7 @@ pub struct EncoderSettings {
     /// Settings for blackout slate.
     pub blackout_slate: ::std::option::Option<crate::types::BlackoutSlate>,
     /// Settings for caption decriptions
-    pub caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
+    pub caption_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionDescription>>,
     /// Feature Activations
     pub feature_activations: ::std::option::Option<crate::types::FeatureActivations>,
     /// Configuration settings that apply to the event as a whole.
@@ -23,79 +23,83 @@ pub struct EncoderSettings {
     /// Nielsen configuration settings.
     pub nielsen_configuration: ::std::option::Option<crate::types::NielsenConfiguration>,
     /// Placeholder documentation for __listOfOutputGroup
-    pub output_groups: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>,
+    pub output_groups: ::std::option::Option<::std::vec::Vec::<crate::types::OutputGroup>>,
     /// Contains settings used to acquire and adjust timecode information from inputs.
     pub timecode_config: ::std::option::Option<crate::types::TimecodeConfig>,
     /// Placeholder documentation for __listOfVideoDescription
-    pub video_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VideoDescription>>,
+    pub video_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::VideoDescription>>,
     /// Thumbnail configuration settings.
     pub thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
     /// Color Correction Settings
     pub color_correction_settings: ::std::option::Option<crate::types::ColorCorrectionSettings>,
 }
-impl EncoderSettings {
+impl  EncoderSettings  {
     /// Placeholder documentation for __listOfAudioDescription
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_descriptions.is_none()`.
-    pub fn audio_descriptions(&self) -> &[crate::types::AudioDescription] {
-        self.audio_descriptions.as_deref().unwrap_or_default()
+    pub fn audio_descriptions(&self) -> & [crate::types::AudioDescription] {
+        self.audio_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// Settings for ad avail blanking.
-    pub fn avail_blanking(&self) -> ::std::option::Option<&crate::types::AvailBlanking> {
+    pub fn avail_blanking(&self) -> ::std::option::Option<& crate::types::AvailBlanking> {
         self.avail_blanking.as_ref()
     }
     /// Event-wide configuration settings for ad avail insertion.
-    pub fn avail_configuration(&self) -> ::std::option::Option<&crate::types::AvailConfiguration> {
+    pub fn avail_configuration(&self) -> ::std::option::Option<& crate::types::AvailConfiguration> {
         self.avail_configuration.as_ref()
     }
     /// Settings for blackout slate.
-    pub fn blackout_slate(&self) -> ::std::option::Option<&crate::types::BlackoutSlate> {
+    pub fn blackout_slate(&self) -> ::std::option::Option<& crate::types::BlackoutSlate> {
         self.blackout_slate.as_ref()
     }
     /// Settings for caption decriptions
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_descriptions.is_none()`.
-    pub fn caption_descriptions(&self) -> &[crate::types::CaptionDescription] {
-        self.caption_descriptions.as_deref().unwrap_or_default()
+    pub fn caption_descriptions(&self) -> & [crate::types::CaptionDescription] {
+        self.caption_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// Feature Activations
-    pub fn feature_activations(&self) -> ::std::option::Option<&crate::types::FeatureActivations> {
+    pub fn feature_activations(&self) -> ::std::option::Option<& crate::types::FeatureActivations> {
         self.feature_activations.as_ref()
     }
     /// Configuration settings that apply to the event as a whole.
-    pub fn global_configuration(&self) -> ::std::option::Option<&crate::types::GlobalConfiguration> {
+    pub fn global_configuration(&self) -> ::std::option::Option<& crate::types::GlobalConfiguration> {
         self.global_configuration.as_ref()
     }
     /// Settings for motion graphics.
-    pub fn motion_graphics_configuration(&self) -> ::std::option::Option<&crate::types::MotionGraphicsConfiguration> {
+    pub fn motion_graphics_configuration(&self) -> ::std::option::Option<& crate::types::MotionGraphicsConfiguration> {
         self.motion_graphics_configuration.as_ref()
     }
     /// Nielsen configuration settings.
-    pub fn nielsen_configuration(&self) -> ::std::option::Option<&crate::types::NielsenConfiguration> {
+    pub fn nielsen_configuration(&self) -> ::std::option::Option<& crate::types::NielsenConfiguration> {
         self.nielsen_configuration.as_ref()
     }
     /// Placeholder documentation for __listOfOutputGroup
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_groups.is_none()`.
-    pub fn output_groups(&self) -> &[crate::types::OutputGroup] {
-        self.output_groups.as_deref().unwrap_or_default()
+    pub fn output_groups(&self) -> & [crate::types::OutputGroup] {
+        self.output_groups.as_deref()
+        .unwrap_or_default()
     }
     /// Contains settings used to acquire and adjust timecode information from inputs.
-    pub fn timecode_config(&self) -> ::std::option::Option<&crate::types::TimecodeConfig> {
+    pub fn timecode_config(&self) -> ::std::option::Option<& crate::types::TimecodeConfig> {
         self.timecode_config.as_ref()
     }
     /// Placeholder documentation for __listOfVideoDescription
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.video_descriptions.is_none()`.
-    pub fn video_descriptions(&self) -> &[crate::types::VideoDescription] {
-        self.video_descriptions.as_deref().unwrap_or_default()
+    pub fn video_descriptions(&self) -> & [crate::types::VideoDescription] {
+        self.video_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// Thumbnail configuration settings.
-    pub fn thumbnail_configuration(&self) -> ::std::option::Option<&crate::types::ThumbnailConfiguration> {
+    pub fn thumbnail_configuration(&self) -> ::std::option::Option<& crate::types::ThumbnailConfiguration> {
         self.thumbnail_configuration.as_ref()
     }
     /// Color Correction Settings
-    pub fn color_correction_settings(&self) -> ::std::option::Option<&crate::types::ColorCorrectionSettings> {
+    pub fn color_correction_settings(&self) -> ::std::option::Option<& crate::types::ColorCorrectionSettings> {
         self.color_correction_settings.as_ref()
     }
 }
@@ -110,18 +114,18 @@ impl EncoderSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncoderSettingsBuilder {
-    pub(crate) audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
+    pub(crate) audio_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::AudioDescription>>,
     pub(crate) avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
     pub(crate) avail_configuration: ::std::option::Option<crate::types::AvailConfiguration>,
     pub(crate) blackout_slate: ::std::option::Option<crate::types::BlackoutSlate>,
-    pub(crate) caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
+    pub(crate) caption_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionDescription>>,
     pub(crate) feature_activations: ::std::option::Option<crate::types::FeatureActivations>,
     pub(crate) global_configuration: ::std::option::Option<crate::types::GlobalConfiguration>,
     pub(crate) motion_graphics_configuration: ::std::option::Option<crate::types::MotionGraphicsConfiguration>,
     pub(crate) nielsen_configuration: ::std::option::Option<crate::types::NielsenConfiguration>,
-    pub(crate) output_groups: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>,
+    pub(crate) output_groups: ::std::option::Option<::std::vec::Vec::<crate::types::OutputGroup>>,
     pub(crate) timecode_config: ::std::option::Option<crate::types::TimecodeConfig>,
-    pub(crate) video_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VideoDescription>>,
+    pub(crate) video_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::VideoDescription>>,
     pub(crate) thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
     pub(crate) color_correction_settings: ::std::option::Option<crate::types::ColorCorrectionSettings>,
 }
@@ -133,17 +137,16 @@ impl EncoderSettingsBuilder {
     /// Placeholder documentation for __listOfAudioDescription
     pub fn audio_descriptions(mut self, input: crate::types::AudioDescription) -> Self {
         let mut v = self.audio_descriptions.unwrap_or_default();
-        v.push(input);
-        self.audio_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.audio_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// Placeholder documentation for __listOfAudioDescription
-    pub fn set_audio_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>) -> Self {
-        self.audio_descriptions = input;
-        self
+    pub fn set_audio_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AudioDescription>>) -> Self {
+        self.audio_descriptions = input; self
     }
     /// Placeholder documentation for __listOfAudioDescription
-    pub fn get_audio_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>> {
+    pub fn get_audio_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AudioDescription>> {
         &self.audio_descriptions
     }
     /// Settings for ad avail blanking.
@@ -153,8 +156,7 @@ impl EncoderSettingsBuilder {
     }
     /// Settings for ad avail blanking.
     pub fn set_avail_blanking(mut self, input: ::std::option::Option<crate::types::AvailBlanking>) -> Self {
-        self.avail_blanking = input;
-        self
+        self.avail_blanking = input; self
     }
     /// Settings for ad avail blanking.
     pub fn get_avail_blanking(&self) -> &::std::option::Option<crate::types::AvailBlanking> {
@@ -167,8 +169,7 @@ impl EncoderSettingsBuilder {
     }
     /// Event-wide configuration settings for ad avail insertion.
     pub fn set_avail_configuration(mut self, input: ::std::option::Option<crate::types::AvailConfiguration>) -> Self {
-        self.avail_configuration = input;
-        self
+        self.avail_configuration = input; self
     }
     /// Event-wide configuration settings for ad avail insertion.
     pub fn get_avail_configuration(&self) -> &::std::option::Option<crate::types::AvailConfiguration> {
@@ -181,8 +182,7 @@ impl EncoderSettingsBuilder {
     }
     /// Settings for blackout slate.
     pub fn set_blackout_slate(mut self, input: ::std::option::Option<crate::types::BlackoutSlate>) -> Self {
-        self.blackout_slate = input;
-        self
+        self.blackout_slate = input; self
     }
     /// Settings for blackout slate.
     pub fn get_blackout_slate(&self) -> &::std::option::Option<crate::types::BlackoutSlate> {
@@ -195,17 +195,16 @@ impl EncoderSettingsBuilder {
     /// Settings for caption decriptions
     pub fn caption_descriptions(mut self, input: crate::types::CaptionDescription) -> Self {
         let mut v = self.caption_descriptions.unwrap_or_default();
-        v.push(input);
-        self.caption_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.caption_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// Settings for caption decriptions
-    pub fn set_caption_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>) -> Self {
-        self.caption_descriptions = input;
-        self
+    pub fn set_caption_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CaptionDescription>>) -> Self {
+        self.caption_descriptions = input; self
     }
     /// Settings for caption decriptions
-    pub fn get_caption_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>> {
+    pub fn get_caption_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CaptionDescription>> {
         &self.caption_descriptions
     }
     /// Feature Activations
@@ -215,8 +214,7 @@ impl EncoderSettingsBuilder {
     }
     /// Feature Activations
     pub fn set_feature_activations(mut self, input: ::std::option::Option<crate::types::FeatureActivations>) -> Self {
-        self.feature_activations = input;
-        self
+        self.feature_activations = input; self
     }
     /// Feature Activations
     pub fn get_feature_activations(&self) -> &::std::option::Option<crate::types::FeatureActivations> {
@@ -229,8 +227,7 @@ impl EncoderSettingsBuilder {
     }
     /// Configuration settings that apply to the event as a whole.
     pub fn set_global_configuration(mut self, input: ::std::option::Option<crate::types::GlobalConfiguration>) -> Self {
-        self.global_configuration = input;
-        self
+        self.global_configuration = input; self
     }
     /// Configuration settings that apply to the event as a whole.
     pub fn get_global_configuration(&self) -> &::std::option::Option<crate::types::GlobalConfiguration> {
@@ -243,8 +240,7 @@ impl EncoderSettingsBuilder {
     }
     /// Settings for motion graphics.
     pub fn set_motion_graphics_configuration(mut self, input: ::std::option::Option<crate::types::MotionGraphicsConfiguration>) -> Self {
-        self.motion_graphics_configuration = input;
-        self
+        self.motion_graphics_configuration = input; self
     }
     /// Settings for motion graphics.
     pub fn get_motion_graphics_configuration(&self) -> &::std::option::Option<crate::types::MotionGraphicsConfiguration> {
@@ -257,8 +253,7 @@ impl EncoderSettingsBuilder {
     }
     /// Nielsen configuration settings.
     pub fn set_nielsen_configuration(mut self, input: ::std::option::Option<crate::types::NielsenConfiguration>) -> Self {
-        self.nielsen_configuration = input;
-        self
+        self.nielsen_configuration = input; self
     }
     /// Nielsen configuration settings.
     pub fn get_nielsen_configuration(&self) -> &::std::option::Option<crate::types::NielsenConfiguration> {
@@ -271,17 +266,16 @@ impl EncoderSettingsBuilder {
     /// Placeholder documentation for __listOfOutputGroup
     pub fn output_groups(mut self, input: crate::types::OutputGroup) -> Self {
         let mut v = self.output_groups.unwrap_or_default();
-        v.push(input);
-        self.output_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// Placeholder documentation for __listOfOutputGroup
-    pub fn set_output_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>) -> Self {
-        self.output_groups = input;
-        self
+    pub fn set_output_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputGroup>>) -> Self {
+        self.output_groups = input; self
     }
     /// Placeholder documentation for __listOfOutputGroup
-    pub fn get_output_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>> {
+    pub fn get_output_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputGroup>> {
         &self.output_groups
     }
     /// Contains settings used to acquire and adjust timecode information from inputs.
@@ -292,8 +286,7 @@ impl EncoderSettingsBuilder {
     }
     /// Contains settings used to acquire and adjust timecode information from inputs.
     pub fn set_timecode_config(mut self, input: ::std::option::Option<crate::types::TimecodeConfig>) -> Self {
-        self.timecode_config = input;
-        self
+        self.timecode_config = input; self
     }
     /// Contains settings used to acquire and adjust timecode information from inputs.
     pub fn get_timecode_config(&self) -> &::std::option::Option<crate::types::TimecodeConfig> {
@@ -306,17 +299,16 @@ impl EncoderSettingsBuilder {
     /// Placeholder documentation for __listOfVideoDescription
     pub fn video_descriptions(mut self, input: crate::types::VideoDescription) -> Self {
         let mut v = self.video_descriptions.unwrap_or_default();
-        v.push(input);
-        self.video_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.video_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// Placeholder documentation for __listOfVideoDescription
-    pub fn set_video_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VideoDescription>>) -> Self {
-        self.video_descriptions = input;
-        self
+    pub fn set_video_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VideoDescription>>) -> Self {
+        self.video_descriptions = input; self
     }
     /// Placeholder documentation for __listOfVideoDescription
-    pub fn get_video_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VideoDescription>> {
+    pub fn get_video_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VideoDescription>> {
         &self.video_descriptions
     }
     /// Thumbnail configuration settings.
@@ -326,8 +318,7 @@ impl EncoderSettingsBuilder {
     }
     /// Thumbnail configuration settings.
     pub fn set_thumbnail_configuration(mut self, input: ::std::option::Option<crate::types::ThumbnailConfiguration>) -> Self {
-        self.thumbnail_configuration = input;
-        self
+        self.thumbnail_configuration = input; self
     }
     /// Thumbnail configuration settings.
     pub fn get_thumbnail_configuration(&self) -> &::std::option::Option<crate::types::ThumbnailConfiguration> {
@@ -340,8 +331,7 @@ impl EncoderSettingsBuilder {
     }
     /// Color Correction Settings
     pub fn set_color_correction_settings(mut self, input: ::std::option::Option<crate::types::ColorCorrectionSettings>) -> Self {
-        self.color_correction_settings = input;
-        self
+        self.color_correction_settings = input; self
     }
     /// Color Correction Settings
     pub fn get_color_correction_settings(&self) -> &::std::option::Option<crate::types::ColorCorrectionSettings> {
@@ -350,20 +340,35 @@ impl EncoderSettingsBuilder {
     /// Consumes the builder and constructs a [`EncoderSettings`](crate::types::EncoderSettings).
     pub fn build(self) -> crate::types::EncoderSettings {
         crate::types::EncoderSettings {
-            audio_descriptions: self.audio_descriptions,
-            avail_blanking: self.avail_blanking,
-            avail_configuration: self.avail_configuration,
-            blackout_slate: self.blackout_slate,
-            caption_descriptions: self.caption_descriptions,
-            feature_activations: self.feature_activations,
-            global_configuration: self.global_configuration,
-            motion_graphics_configuration: self.motion_graphics_configuration,
-            nielsen_configuration: self.nielsen_configuration,
-            output_groups: self.output_groups,
-            timecode_config: self.timecode_config,
-            video_descriptions: self.video_descriptions,
-            thumbnail_configuration: self.thumbnail_configuration,
-            color_correction_settings: self.color_correction_settings,
+            audio_descriptions: self.audio_descriptions
+            ,
+            avail_blanking: self.avail_blanking
+            ,
+            avail_configuration: self.avail_configuration
+            ,
+            blackout_slate: self.blackout_slate
+            ,
+            caption_descriptions: self.caption_descriptions
+            ,
+            feature_activations: self.feature_activations
+            ,
+            global_configuration: self.global_configuration
+            ,
+            motion_graphics_configuration: self.motion_graphics_configuration
+            ,
+            nielsen_configuration: self.nielsen_configuration
+            ,
+            output_groups: self.output_groups
+            ,
+            timecode_config: self.timecode_config
+            ,
+            video_descriptions: self.video_descriptions
+            ,
+            thumbnail_configuration: self.thumbnail_configuration
+            ,
+            color_correction_settings: self.color_correction_settings
+            ,
         }
     }
 }
+

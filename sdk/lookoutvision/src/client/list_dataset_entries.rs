@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatasetEntries`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`project_name(impl Into<String>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::set_project_name):<br>required: **true**<br><p>The name of the project that contains the dataset that you want to list.</p><br>
     ///   - [`dataset_type(impl Into<String>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::dataset_type) / [`set_dataset_type(Option<String>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::set_dataset_type):<br>required: **true**<br><p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p><br>
     ///   - [`labeled(bool)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::labeled) / [`set_labeled(Option<bool>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::set_labeled):<br>required: **false**<br><p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p><br>
     ///   - [`source_ref_contains(impl Into<String>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::source_ref_contains) / [`set_source_ref_contains(Option<String>)`](crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::set_source_ref_contains):<br>required: **false**<br><p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p><br>
-    /// - On success, responds with [`ListDatasetEntriesOutput`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput) with field(s):
+                            /// - On success, responds with [`ListDatasetEntriesOutput`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput) with field(s):
     ///   - [`dataset_entries(Option<Vec::<String>>)`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput::dataset_entries): <p>A list of the entries (JSON Lines) within the dataset.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_entries::ListDatasetEntriesOutput::next_token): <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
-    /// - On failure, responds with [`SdkError<ListDatasetEntriesError>`](crate::operation::list_dataset_entries::ListDatasetEntriesError)
+                            /// - On failure, responds with [`SdkError<ListDatasetEntriesError>`](crate::operation::list_dataset_entries::ListDatasetEntriesError)
     pub fn list_dataset_entries(&self) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder {
-        crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dataset_entries::builders::ListDatasetEntriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about a consumption configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConsumptionConfiguration {
+pub struct ConsumptionConfiguration  {
     /// <p>Renewal frequency.</p>
     pub renew_type: ::std::option::Option<crate::types::RenewType>,
     /// <p>Details about a provisional configuration.</p>
@@ -11,17 +11,17 @@ pub struct ConsumptionConfiguration {
     /// <p>Details about a borrow configuration.</p>
     pub borrow_configuration: ::std::option::Option<crate::types::BorrowConfiguration>,
 }
-impl ConsumptionConfiguration {
+impl  ConsumptionConfiguration  {
     /// <p>Renewal frequency.</p>
-    pub fn renew_type(&self) -> ::std::option::Option<&crate::types::RenewType> {
+    pub fn renew_type(&self) -> ::std::option::Option<& crate::types::RenewType> {
         self.renew_type.as_ref()
     }
     /// <p>Details about a provisional configuration.</p>
-    pub fn provisional_configuration(&self) -> ::std::option::Option<&crate::types::ProvisionalConfiguration> {
+    pub fn provisional_configuration(&self) -> ::std::option::Option<& crate::types::ProvisionalConfiguration> {
         self.provisional_configuration.as_ref()
     }
     /// <p>Details about a borrow configuration.</p>
-    pub fn borrow_configuration(&self) -> ::std::option::Option<&crate::types::BorrowConfiguration> {
+    pub fn borrow_configuration(&self) -> ::std::option::Option<& crate::types::BorrowConfiguration> {
         self.borrow_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ConsumptionConfigurationBuilder {
     }
     /// <p>Renewal frequency.</p>
     pub fn set_renew_type(mut self, input: ::std::option::Option<crate::types::RenewType>) -> Self {
-        self.renew_type = input;
-        self
+        self.renew_type = input; self
     }
     /// <p>Renewal frequency.</p>
     pub fn get_renew_type(&self) -> &::std::option::Option<crate::types::RenewType> {
@@ -62,8 +61,7 @@ impl ConsumptionConfigurationBuilder {
     }
     /// <p>Details about a provisional configuration.</p>
     pub fn set_provisional_configuration(mut self, input: ::std::option::Option<crate::types::ProvisionalConfiguration>) -> Self {
-        self.provisional_configuration = input;
-        self
+        self.provisional_configuration = input; self
     }
     /// <p>Details about a provisional configuration.</p>
     pub fn get_provisional_configuration(&self) -> &::std::option::Option<crate::types::ProvisionalConfiguration> {
@@ -76,8 +74,7 @@ impl ConsumptionConfigurationBuilder {
     }
     /// <p>Details about a borrow configuration.</p>
     pub fn set_borrow_configuration(mut self, input: ::std::option::Option<crate::types::BorrowConfiguration>) -> Self {
-        self.borrow_configuration = input;
-        self
+        self.borrow_configuration = input; self
     }
     /// <p>Details about a borrow configuration.</p>
     pub fn get_borrow_configuration(&self) -> &::std::option::Option<crate::types::BorrowConfiguration> {
@@ -86,9 +83,13 @@ impl ConsumptionConfigurationBuilder {
     /// Consumes the builder and constructs a [`ConsumptionConfiguration`](crate::types::ConsumptionConfiguration).
     pub fn build(self) -> crate::types::ConsumptionConfiguration {
         crate::types::ConsumptionConfiguration {
-            renew_type: self.renew_type,
-            provisional_configuration: self.provisional_configuration,
-            borrow_configuration: self.borrow_configuration,
+            renew_type: self.renew_type
+            ,
+            provisional_configuration: self.provisional_configuration
+            ,
+            borrow_configuration: self.borrow_configuration
+            ,
         }
     }
 }
+

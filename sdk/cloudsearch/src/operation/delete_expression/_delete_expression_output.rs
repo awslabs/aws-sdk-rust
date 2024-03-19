@@ -3,22 +3,22 @@
 /// <p>The result of a <code><code>DeleteExpression</code></code> request. Specifies the expression being deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExpressionOutput {
+pub struct DeleteExpressionOutput  {
     /// <p>The status of the expression being deleted.</p>
     pub expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }
-impl DeleteExpressionOutput {
+impl  DeleteExpressionOutput  {
     /// <p>The status of the expression being deleted.</p>
-    pub fn expression(&self) -> ::std::option::Option<&crate::types::ExpressionStatus> {
+    pub fn expression(&self) -> ::std::option::Option<& crate::types::ExpressionStatus> {
         self.expression.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteExpressionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteExpressionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExpressionOutput`](crate::operation::delete_expression::DeleteExpressionOutput).
     pub fn builder() -> crate::operation::delete_expression::builders::DeleteExpressionOutputBuilder {
@@ -42,27 +42,28 @@ impl DeleteExpressionOutputBuilder {
     }
     /// <p>The status of the expression being deleted.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<crate::types::ExpressionStatus>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The status of the expression being deleted.</p>
     pub fn get_expression(&self) -> &::std::option::Option<crate::types::ExpressionStatus> {
         &self.expression
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteExpressionOutput`](crate::operation::delete_expression::DeleteExpressionOutput).
     pub fn build(self) -> crate::operation::delete_expression::DeleteExpressionOutput {
         crate::operation::delete_expression::DeleteExpressionOutput {
-            expression: self.expression,
+            expression: self.expression
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

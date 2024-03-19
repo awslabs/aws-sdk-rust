@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRotationOutput {
+pub struct CreateRotationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created rotation.</p>
     pub rotation_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateRotationOutput {
+impl  CreateRotationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-    pub fn rotation_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.rotation_arn.deref()
+    pub fn rotation_arn(&self) -> & str {
+        use std::ops::Deref; self.rotation_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRotationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRotationOutput {
     /// Creates a new builder-style object to manufacture [`CreateRotationOutput`](crate::operation::create_rotation::CreateRotationOutput).
     pub fn builder() -> crate::operation::create_rotation::builders::CreateRotationOutputBuilder {
@@ -42,36 +41,35 @@ impl CreateRotationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the created rotation.</p>
     pub fn set_rotation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_arn = input;
-        self
+        self.rotation_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the created rotation.</p>
     pub fn get_rotation_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rotation_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRotationOutput`](crate::operation::create_rotation::CreateRotationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rotation_arn`](crate::operation::create_rotation::builders::CreateRotationOutputBuilder::rotation_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_rotation::CreateRotationOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_rotation::CreateRotationOutput {
-            rotation_arn: self.rotation_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rotation_arn",
-                    "rotation_arn was not specified but it is required when building CreateRotationOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rotation::CreateRotationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_rotation::CreateRotationOutput {
+                rotation_arn: self.rotation_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rotation_arn", "rotation_arn was not specified but it is required when building CreateRotationOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

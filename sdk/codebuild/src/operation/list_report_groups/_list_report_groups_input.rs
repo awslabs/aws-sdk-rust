@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReportGroupsInput {
+pub struct ListReportGroupsInput  {
     /// <p>Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>The criterion to be used to list build report groups. Valid values include:</p>
@@ -20,9 +20,9 @@ pub struct ListReportGroupsInput {
     /// <p>The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListReportGroupsInput {
+impl  ListReportGroupsInput  {
     /// <p>Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>The criterion to be used to list build report groups. Valid values include:</p>
@@ -34,11 +34,11 @@ impl ListReportGroupsInput {
     /// <li>
     /// <p><code>NAME</code>: List based on each report group's name.</p></li>
     /// </ul>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ReportGroupSortByType> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ReportGroupSortByType> {
         self.sort_by.as_ref()
     }
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
@@ -70,8 +70,7 @@ impl ListReportGroupsInputBuilder {
     }
     /// <p>Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
@@ -100,8 +99,7 @@ impl ListReportGroupsInputBuilder {
     /// <p><code>NAME</code>: List based on each report group's name.</p></li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ReportGroupSortByType>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The criterion to be used to list build report groups. Valid values include:</p>
     /// <ul>
@@ -122,8 +120,7 @@ impl ListReportGroupsInputBuilder {
     }
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,22 +133,26 @@ impl ListReportGroupsInputBuilder {
     }
     /// <p>The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListReportGroupsInput`](crate::operation::list_report_groups::ListReportGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_report_groups::ListReportGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_report_groups::ListReportGroupsInput {
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_report_groups::ListReportGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_report_groups::ListReportGroupsInput {
+                sort_order: self.sort_order
+                ,
+                sort_by: self.sort_by
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

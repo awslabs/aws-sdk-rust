@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePromptOutput {
+pub struct CreatePromptOutput  {
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
     pub prompt_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the prompt.</p>
     pub prompt_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePromptOutput {
+impl  CreatePromptOutput  {
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
-    pub fn prompt_arn(&self) -> ::std::option::Option<&str> {
+    pub fn prompt_arn(&self) -> ::std::option::Option<& str> {
         self.prompt_arn.as_deref()
     }
     /// <p>A unique identifier for the prompt.</p>
-    pub fn prompt_id(&self) -> ::std::option::Option<&str> {
+    pub fn prompt_id(&self) -> ::std::option::Option<& str> {
         self.prompt_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePromptOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePromptOutput {
     /// Creates a new builder-style object to manufacture [`CreatePromptOutput`](crate::operation::create_prompt::CreatePromptOutput).
     pub fn builder() -> crate::operation::create_prompt::builders::CreatePromptOutputBuilder {
@@ -47,8 +47,7 @@ impl CreatePromptOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
     pub fn set_prompt_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prompt_arn = input;
-        self
+        self.prompt_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
     pub fn get_prompt_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreatePromptOutputBuilder {
     }
     /// <p>A unique identifier for the prompt.</p>
     pub fn set_prompt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prompt_id = input;
-        self
+        self.prompt_id = input; self
     }
     /// <p>A unique identifier for the prompt.</p>
     pub fn get_prompt_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.prompt_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePromptOutput`](crate::operation::create_prompt::CreatePromptOutput).
     pub fn build(self) -> crate::operation::create_prompt::CreatePromptOutput {
         crate::operation::create_prompt::CreatePromptOutput {
-            prompt_arn: self.prompt_arn,
-            prompt_id: self.prompt_id,
+            prompt_arn: self.prompt_arn
+            ,
+            prompt_id: self.prompt_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

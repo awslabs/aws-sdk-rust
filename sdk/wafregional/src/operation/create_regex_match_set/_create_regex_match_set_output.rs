@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRegexMatchSetOutput {
+pub struct CreateRegexMatchSetOutput  {
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
     pub regex_match_set: ::std::option::Option<crate::types::RegexMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateRegexMatchSetOutput {
+impl  CreateRegexMatchSetOutput  {
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
-    pub fn regex_match_set(&self) -> ::std::option::Option<&crate::types::RegexMatchSet> {
+    pub fn regex_match_set(&self) -> ::std::option::Option<& crate::types::RegexMatchSet> {
         self.regex_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRegexMatchSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRegexMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetOutput`](crate::operation::create_regex_match_set::CreateRegexMatchSetOutput).
     pub fn builder() -> crate::operation::create_regex_match_set::builders::CreateRegexMatchSetOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateRegexMatchSetOutputBuilder {
     }
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
     pub fn set_regex_match_set(mut self, input: ::std::option::Option<crate::types::RegexMatchSet>) -> Self {
-        self.regex_match_set = input;
-        self
+        self.regex_match_set = input; self
     }
     /// <p>A <code>RegexMatchSet</code> that contains no <code>RegexMatchTuple</code> objects.</p>
     pub fn get_regex_match_set(&self) -> &::std::option::Option<crate::types::RegexMatchSet> {
@@ -61,28 +60,30 @@ impl CreateRegexMatchSetOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRegexMatchSetOutput`](crate::operation::create_regex_match_set::CreateRegexMatchSetOutput).
     pub fn build(self) -> crate::operation::create_regex_match_set::CreateRegexMatchSetOutput {
         crate::operation::create_regex_match_set::CreateRegexMatchSetOutput {
-            regex_match_set: self.regex_match_set,
-            change_token: self.change_token,
+            regex_match_set: self.regex_match_set
+            ,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

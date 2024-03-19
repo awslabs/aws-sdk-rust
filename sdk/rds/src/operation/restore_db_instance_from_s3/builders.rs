@@ -5,55 +5,51 @@ pub use crate::operation::restore_db_instance_from_s3::_restore_db_instance_from
 
 impl RestoreDbInstanceFromS3InputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.restore_db_instance_from_s3();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.restore_db_instance_from_s3();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RestoreDBInstanceFromS3`.
-///
+/// 
 /// <p>Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i></p>
 /// <p>This operation doesn't apply to RDS Custom.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBInstanceFromS3FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3InputBuilder,
+                    inner: crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3InputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
-        crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
-    > for RestoreDBInstanceFromS3FluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
-            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
+                    crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
+                > for RestoreDBInstanceFromS3FluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
+                        crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RestoreDBInstanceFromS3FluentBuilder {
     /// Creates a new `RestoreDBInstanceFromS3`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl RestoreDBInstanceFromS3FluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
-        crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output, crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_name(input.into());
@@ -354,13 +341,13 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
-    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_db_security_groups(input);
         self
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
-    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_db_security_groups()
     }
     /// Appends an item to `VpcSecurityGroupIds`.
@@ -373,12 +360,12 @@ impl RestoreDBInstanceFromS3FluentBuilder {
         self
     }
     /// <p>A list of VPC security groups to associate with this DB instance.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>A list of VPC security groups to associate with this DB instance.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -695,12 +682,12 @@ impl RestoreDBInstanceFromS3FluentBuilder {
         self
     }
     /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -1031,12 +1018,12 @@ impl RestoreDBInstanceFromS3FluentBuilder {
         self
     }
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
     /// Appends an item to `ProcessorFeatures`.
@@ -1049,12 +1036,12 @@ impl RestoreDBInstanceFromS3FluentBuilder {
         self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>) -> Self {
+    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessorFeature>>) -> Self {
         self.inner = self.inner.set_processor_features(input);
         self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
+    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProcessorFeature>> {
         self.inner.get_processor_features()
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
@@ -1233,3 +1220,4 @@ impl RestoreDBInstanceFromS3FluentBuilder {
         self.inner.get_dedicated_log_volume()
     }
 }
+

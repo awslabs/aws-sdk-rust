@@ -3,19 +3,19 @@
 /// The identifier for the S3 resource.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Identifier {
+pub struct S3Identifier  {
     /// A bucket in S3.
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// A object key in S3.
     pub s3_object_key: ::std::option::Option<::std::string::String>,
 }
-impl S3Identifier {
+impl  S3Identifier  {
     /// A bucket in S3.
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// A object key in S3.
-    pub fn s3_object_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_object_key(&self) -> ::std::option::Option<& str> {
         self.s3_object_key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3IdentifierBuilder {
     }
     /// A bucket in S3.
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// A bucket in S3.
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3IdentifierBuilder {
     }
     /// A object key in S3.
     pub fn set_s3_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_key = input;
-        self
+        self.s3_object_key = input; self
     }
     /// A object key in S3.
     pub fn get_s3_object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3IdentifierBuilder {
     /// Consumes the builder and constructs a [`S3Identifier`](crate::types::S3Identifier).
     pub fn build(self) -> crate::types::S3Identifier {
         crate::types::S3Identifier {
-            s3_bucket_name: self.s3_bucket_name,
-            s3_object_key: self.s3_object_key,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            s3_object_key: self.s3_object_key
+            ,
         }
     }
 }
+

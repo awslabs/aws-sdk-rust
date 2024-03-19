@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUpdatesInput {
+pub struct ListUpdatesInput  {
     /// <p>The name of the Amazon EKS cluster to list updates for.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
@@ -16,23 +16,23 @@ pub struct ListUpdatesInput {
     /// <p>The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are returned.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListUpdatesInput {
+impl  ListUpdatesInput  {
     /// <p>The name of the Amazon EKS cluster to list updates for.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
-    pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn nodegroup_name(&self) -> ::std::option::Option<& str> {
         self.nodegroup_name.as_deref()
     }
     /// <p>The names of the installed add-ons that have available updates.</p>
-    pub fn addon_name(&self) -> ::std::option::Option<&str> {
+    pub fn addon_name(&self) -> ::std::option::Option<& str> {
         self.addon_name.as_deref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are returned.</p>
@@ -66,8 +66,7 @@ impl ListUpdatesInputBuilder {
     }
     /// <p>The name of the Amazon EKS cluster to list updates for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon EKS cluster to list updates for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl ListUpdatesInputBuilder {
     }
     /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
     pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nodegroup_name = input;
-        self
+        self.nodegroup_name = input; self
     }
     /// <p>The name of the Amazon EKS managed node group to list updates for.</p>
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl ListUpdatesInputBuilder {
     }
     /// <p>The names of the installed add-ons that have available updates.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_name = input;
-        self
+        self.addon_name = input; self
     }
     /// <p>The names of the installed add-ons that have available updates.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl ListUpdatesInputBuilder {
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -128,8 +124,7 @@ impl ListUpdatesInputBuilder {
     }
     /// <p>The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -137,12 +132,20 @@ impl ListUpdatesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListUpdatesInput`](crate::operation::list_updates::ListUpdatesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_updates::ListUpdatesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_updates::ListUpdatesInput {
-            name: self.name,
-            nodegroup_name: self.nodegroup_name,
-            addon_name: self.addon_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_updates::ListUpdatesInput {
+                name: self.name
+                ,
+                nodegroup_name: self.nodegroup_name
+                ,
+                addon_name: self.addon_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

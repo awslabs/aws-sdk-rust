@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let headerenum = unimplemented!();
 /// match headerenum {
@@ -43,16 +43,14 @@
 /// Specifically, when `headerenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HeaderEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum HeaderEnum {
     #[allow(missing_docs)] // documentation missing in model
     Accept,
@@ -86,116 +84,101 @@ pub enum HeaderEnum {
     Referer,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for HeaderEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "Accept" => HeaderEnum::Accept,
-            "Accept-Charset" => HeaderEnum::AcceptCharset,
-            "Accept-Datetime" => HeaderEnum::AcceptDatetime,
-            "Accept-Encoding" => HeaderEnum::AcceptEncoding,
-            "Accept-Language" => HeaderEnum::AcceptLanguage,
-            "Authorization" => HeaderEnum::Authorization,
-            "CloudFront-Forwarded-Proto" => HeaderEnum::CloudFrontForwardedProto,
-            "CloudFront-Is-Desktop-Viewer" => HeaderEnum::CloudFrontIsDesktopViewer,
-            "CloudFront-Is-Mobile-Viewer" => HeaderEnum::CloudFrontIsMobileViewer,
-            "CloudFront-Is-SmartTV-Viewer" => HeaderEnum::CloudFrontIsSmartTvViewer,
-            "CloudFront-Is-Tablet-Viewer" => HeaderEnum::CloudFrontIsTabletViewer,
-            "CloudFront-Viewer-Country" => HeaderEnum::CloudFrontViewerCountry,
-            "Host" => HeaderEnum::Host,
-            "Origin" => HeaderEnum::Origin,
-            "Referer" => HeaderEnum::Referer,
-            other => HeaderEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Accept" => HeaderEnum::Accept,
+"Accept-Charset" => HeaderEnum::AcceptCharset,
+"Accept-Datetime" => HeaderEnum::AcceptDatetime,
+"Accept-Encoding" => HeaderEnum::AcceptEncoding,
+"Accept-Language" => HeaderEnum::AcceptLanguage,
+"Authorization" => HeaderEnum::Authorization,
+"CloudFront-Forwarded-Proto" => HeaderEnum::CloudFrontForwardedProto,
+"CloudFront-Is-Desktop-Viewer" => HeaderEnum::CloudFrontIsDesktopViewer,
+"CloudFront-Is-Mobile-Viewer" => HeaderEnum::CloudFrontIsMobileViewer,
+"CloudFront-Is-SmartTV-Viewer" => HeaderEnum::CloudFrontIsSmartTvViewer,
+"CloudFront-Is-Tablet-Viewer" => HeaderEnum::CloudFrontIsTabletViewer,
+"CloudFront-Viewer-Country" => HeaderEnum::CloudFrontViewerCountry,
+"Host" => HeaderEnum::Host,
+"Origin" => HeaderEnum::Origin,
+"Referer" => HeaderEnum::Referer,
+other => HeaderEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for HeaderEnum {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(HeaderEnum::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(HeaderEnum::from(s))
+                    }
+                }
 impl HeaderEnum {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HeaderEnum::Accept => "Accept",
-            HeaderEnum::AcceptCharset => "Accept-Charset",
-            HeaderEnum::AcceptDatetime => "Accept-Datetime",
-            HeaderEnum::AcceptEncoding => "Accept-Encoding",
-            HeaderEnum::AcceptLanguage => "Accept-Language",
-            HeaderEnum::Authorization => "Authorization",
-            HeaderEnum::CloudFrontForwardedProto => "CloudFront-Forwarded-Proto",
-            HeaderEnum::CloudFrontIsDesktopViewer => "CloudFront-Is-Desktop-Viewer",
-            HeaderEnum::CloudFrontIsMobileViewer => "CloudFront-Is-Mobile-Viewer",
-            HeaderEnum::CloudFrontIsSmartTvViewer => "CloudFront-Is-SmartTV-Viewer",
-            HeaderEnum::CloudFrontIsTabletViewer => "CloudFront-Is-Tablet-Viewer",
-            HeaderEnum::CloudFrontViewerCountry => "CloudFront-Viewer-Country",
-            HeaderEnum::Host => "Host",
-            HeaderEnum::Origin => "Origin",
-            HeaderEnum::Referer => "Referer",
-            HeaderEnum::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Accept",
-            "Accept-Charset",
-            "Accept-Datetime",
-            "Accept-Encoding",
-            "Accept-Language",
-            "Authorization",
-            "CloudFront-Forwarded-Proto",
-            "CloudFront-Is-Desktop-Viewer",
-            "CloudFront-Is-Mobile-Viewer",
-            "CloudFront-Is-SmartTV-Viewer",
-            "CloudFront-Is-Tablet-Viewer",
-            "CloudFront-Viewer-Country",
-            "Host",
-            "Origin",
-            "Referer",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HeaderEnum::Accept => "Accept",
+    HeaderEnum::AcceptCharset => "Accept-Charset",
+    HeaderEnum::AcceptDatetime => "Accept-Datetime",
+    HeaderEnum::AcceptEncoding => "Accept-Encoding",
+    HeaderEnum::AcceptLanguage => "Accept-Language",
+    HeaderEnum::Authorization => "Authorization",
+    HeaderEnum::CloudFrontForwardedProto => "CloudFront-Forwarded-Proto",
+    HeaderEnum::CloudFrontIsDesktopViewer => "CloudFront-Is-Desktop-Viewer",
+    HeaderEnum::CloudFrontIsMobileViewer => "CloudFront-Is-Mobile-Viewer",
+    HeaderEnum::CloudFrontIsSmartTvViewer => "CloudFront-Is-SmartTV-Viewer",
+    HeaderEnum::CloudFrontIsTabletViewer => "CloudFront-Is-Tablet-Viewer",
+    HeaderEnum::CloudFrontViewerCountry => "CloudFront-Viewer-Country",
+    HeaderEnum::Host => "Host",
+    HeaderEnum::Origin => "Origin",
+    HeaderEnum::Referer => "Referer",
+    HeaderEnum::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Accept", "Accept-Charset", "Accept-Datetime", "Accept-Encoding", "Accept-Language", "Authorization", "CloudFront-Forwarded-Proto", "CloudFront-Is-Desktop-Viewer", "CloudFront-Is-Mobile-Viewer", "CloudFront-Is-SmartTV-Viewer", "CloudFront-Is-Tablet-Viewer", "CloudFront-Viewer-Country", "Host", "Origin", "Referer"]
+                }
+            }
 impl ::std::convert::AsRef<str> for HeaderEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl HeaderEnum {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for HeaderEnum {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            HeaderEnum::Accept => write!(f, "Accept"),
-            HeaderEnum::AcceptCharset => write!(f, "Accept-Charset"),
-            HeaderEnum::AcceptDatetime => write!(f, "Accept-Datetime"),
-            HeaderEnum::AcceptEncoding => write!(f, "Accept-Encoding"),
-            HeaderEnum::AcceptLanguage => write!(f, "Accept-Language"),
-            HeaderEnum::Authorization => write!(f, "Authorization"),
-            HeaderEnum::CloudFrontForwardedProto => write!(f, "CloudFront-Forwarded-Proto"),
-            HeaderEnum::CloudFrontIsDesktopViewer => write!(f, "CloudFront-Is-Desktop-Viewer"),
-            HeaderEnum::CloudFrontIsMobileViewer => write!(f, "CloudFront-Is-Mobile-Viewer"),
-            HeaderEnum::CloudFrontIsSmartTvViewer => write!(f, "CloudFront-Is-SmartTV-Viewer"),
-            HeaderEnum::CloudFrontIsTabletViewer => write!(f, "CloudFront-Is-Tablet-Viewer"),
-            HeaderEnum::CloudFrontViewerCountry => write!(f, "CloudFront-Viewer-Country"),
-            HeaderEnum::Host => write!(f, "Host"),
-            HeaderEnum::Origin => write!(f, "Origin"),
-            HeaderEnum::Referer => write!(f, "Referer"),
-            HeaderEnum::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                HeaderEnum::Accept => write!(f, "Accept"),
+HeaderEnum::AcceptCharset => write!(f, "Accept-Charset"),
+HeaderEnum::AcceptDatetime => write!(f, "Accept-Datetime"),
+HeaderEnum::AcceptEncoding => write!(f, "Accept-Encoding"),
+HeaderEnum::AcceptLanguage => write!(f, "Accept-Language"),
+HeaderEnum::Authorization => write!(f, "Authorization"),
+HeaderEnum::CloudFrontForwardedProto => write!(f, "CloudFront-Forwarded-Proto"),
+HeaderEnum::CloudFrontIsDesktopViewer => write!(f, "CloudFront-Is-Desktop-Viewer"),
+HeaderEnum::CloudFrontIsMobileViewer => write!(f, "CloudFront-Is-Mobile-Viewer"),
+HeaderEnum::CloudFrontIsSmartTvViewer => write!(f, "CloudFront-Is-SmartTV-Viewer"),
+HeaderEnum::CloudFrontIsTabletViewer => write!(f, "CloudFront-Is-Tablet-Viewer"),
+HeaderEnum::CloudFrontViewerCountry => write!(f, "CloudFront-Viewer-Country"),
+HeaderEnum::Host => write!(f, "Host"),
+HeaderEnum::Origin => write!(f, "Origin"),
+HeaderEnum::Referer => write!(f, "Referer"),
+HeaderEnum::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

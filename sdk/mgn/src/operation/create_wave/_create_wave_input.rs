@@ -2,35 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateWaveInput {
+pub struct CreateWaveInput  {
     /// <p>Wave name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Wave description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Wave tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateWaveInput {
+impl  CreateWaveInput  {
     /// <p>Wave name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Wave tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateWaveInput {
+impl  ::std::fmt::Debug for CreateWaveInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWaveInput");
         formatter.field("name", &self.name);
@@ -53,7 +53,7 @@ impl CreateWaveInput {
 pub struct CreateWaveInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateWaveInputBuilder {
@@ -65,8 +65,7 @@ impl CreateWaveInputBuilder {
     }
     /// <p>Wave name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Wave name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl CreateWaveInputBuilder {
     }
     /// <p>Wave description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Wave description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,17 +91,16 @@ impl CreateWaveInputBuilder {
     /// <p>Wave tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Wave tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Wave tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Account ID.</p>
@@ -113,8 +110,7 @@ impl CreateWaveInputBuilder {
     }
     /// <p>Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,12 +118,18 @@ impl CreateWaveInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateWaveInput`](crate::operation::create_wave::CreateWaveInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_wave::CreateWaveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_wave::CreateWaveInput {
-            name: self.name,
-            description: self.description,
-            tags: self.tags,
-            account_id: self.account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_wave::CreateWaveInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateWaveInputBuilder {
@@ -140,3 +142,4 @@ impl ::std::fmt::Debug for CreateWaveInputBuilder {
         formatter.finish()
     }
 }
+

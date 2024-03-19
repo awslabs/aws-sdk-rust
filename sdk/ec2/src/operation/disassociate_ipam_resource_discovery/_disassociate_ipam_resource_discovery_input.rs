@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateIpamResourceDiscoveryInput {
+pub struct DisassociateIpamResourceDiscoveryInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A resource discovery association ID.</p>
     pub ipam_resource_discovery_association_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateIpamResourceDiscoveryInput {
+impl  DisassociateIpamResourceDiscoveryInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>A resource discovery association ID.</p>
-    pub fn ipam_resource_discovery_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_resource_discovery_association_id(&self) -> ::std::option::Option<& str> {
         self.ipam_resource_discovery_association_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DisassociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,25 +54,22 @@ impl DisassociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A resource discovery association ID.</p>
     pub fn set_ipam_resource_discovery_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_resource_discovery_association_id = input;
-        self
+        self.ipam_resource_discovery_association_id = input; self
     }
     /// <p>A resource discovery association ID.</p>
     pub fn get_ipam_resource_discovery_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_resource_discovery_association_id
     }
     /// Consumes the builder and constructs a [`DisassociateIpamResourceDiscoveryInput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput {
-                dry_run: self.dry_run,
-                ipam_resource_discovery_association_id: self.ipam_resource_discovery_association_id,
-            },
+                dry_run: self.dry_run
+                ,
+                ipam_resource_discovery_association_id: self.ipam_resource_discovery_association_id
+                ,
+            }
         )
     }
 }
+

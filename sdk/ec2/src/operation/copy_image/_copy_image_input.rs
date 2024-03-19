@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for CopyImage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyImageInput {
+pub struct CopyImageInput  {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A description for the new AMI in the destination Region.</p>
@@ -56,15 +56,15 @@ pub struct CopyImageInput {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
-impl CopyImageInput {
+impl  CopyImageInput  {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A description for the new AMI in the destination Region.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
@@ -86,24 +86,24 @@ impl CopyImageInput {
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an identifier that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>The specified KMS key must exist in the destination Region.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The name of the new AMI in the destination Region.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the AMI to copy.</p>
-    pub fn source_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_image_id(&self) -> ::std::option::Option<& str> {
         self.source_image_id.as_deref()
     }
     /// <p>The name of the Region that contains the AMI to copy.</p>
-    pub fn source_region(&self) -> ::std::option::Option<&str> {
+    pub fn source_region(&self) -> ::std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
-    pub fn destination_outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_outpost_arn(&self) -> ::std::option::Option<& str> {
         self.destination_outpost_arn.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -131,10 +131,11 @@ impl CopyImageInput {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CopyImageInput {
@@ -158,7 +159,7 @@ pub struct CopyImageInputBuilder {
     pub(crate) destination_outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) copy_image_tags: ::std::option::Option<bool>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
 impl CopyImageInputBuilder {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -168,8 +169,7 @@ impl CopyImageInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +182,7 @@ impl CopyImageInputBuilder {
     }
     /// <p>A description for the new AMI in the destination Region.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the new AMI in the destination Region.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +195,7 @@ impl CopyImageInputBuilder {
     }
     /// <p>Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -238,8 +236,7 @@ impl CopyImageInputBuilder {
     /// <p>The specified KMS key must exist in the destination Region.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of the symmetric Key Management Service (KMS) KMS key to use when creating encrypted volumes. If this parameter is not specified, your Amazon Web Services managed KMS key for Amazon EBS is used. If you specify a KMS key, you must also set the encrypted state to <code>true</code>.</p>
     /// <p>You can specify a KMS key using any of the following:</p>
@@ -267,8 +264,7 @@ impl CopyImageInputBuilder {
     }
     /// <p>The name of the new AMI in the destination Region.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the new AMI in the destination Region.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -282,8 +278,7 @@ impl CopyImageInputBuilder {
     }
     /// <p>The ID of the AMI to copy.</p>
     pub fn set_source_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_image_id = input;
-        self
+        self.source_image_id = input; self
     }
     /// <p>The ID of the AMI to copy.</p>
     pub fn get_source_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -297,8 +292,7 @@ impl CopyImageInputBuilder {
     }
     /// <p>The name of the Region that contains the AMI to copy.</p>
     pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_region = input;
-        self
+        self.source_region = input; self
     }
     /// <p>The name of the Region that contains the AMI to copy.</p>
     pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,8 +307,7 @@ impl CopyImageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_destination_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_outpost_arn = input;
-        self
+        self.destination_outpost_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify this parameter when copying an AMI from an Amazon Web Services Region to an Outpost. The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
@@ -328,8 +321,7 @@ impl CopyImageInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -358,8 +350,7 @@ impl CopyImageInputBuilder {
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn set_copy_image_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_image_tags = input;
-        self
+        self.copy_image_tags = input; self
     }
     /// <p>Indicates whether to include your user-defined AMI tags when copying the AMI.</p>
     /// <p>The following tags will not be copied:</p>
@@ -388,9 +379,9 @@ impl CopyImageInputBuilder {
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
@@ -401,9 +392,8 @@ impl CopyImageInputBuilder {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
@@ -414,23 +404,37 @@ impl CopyImageInputBuilder {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CopyImageInput`](crate::operation::copy_image::CopyImageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::copy_image::CopyImageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::copy_image::CopyImageInput {
-            client_token: self.client_token,
-            description: self.description,
-            encrypted: self.encrypted,
-            kms_key_id: self.kms_key_id,
-            name: self.name,
-            source_image_id: self.source_image_id,
-            source_region: self.source_region,
-            destination_outpost_arn: self.destination_outpost_arn,
-            dry_run: self.dry_run,
-            copy_image_tags: self.copy_image_tags,
-            tag_specifications: self.tag_specifications,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::copy_image::CopyImageInput {
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                name: self.name
+                ,
+                source_image_id: self.source_image_id
+                ,
+                source_region: self.source_region
+                ,
+                destination_outpost_arn: self.destination_outpost_arn
+                ,
+                dry_run: self.dry_run
+                ,
+                copy_image_tags: self.copy_image_tags
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
+        )
     }
 }
+

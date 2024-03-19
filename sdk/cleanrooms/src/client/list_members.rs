@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMembers`](crate::operation::list_members::builders::ListMembersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_members::builders::ListMembersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`collaboration_identifier(impl Into<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_collaboration_identifier):<br>required: **true**<br><p>The identifier of the collaboration in which the members are listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_members::builders::ListMembersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call.</p><br>
-    /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
+                            /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_members::ListMembersOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`member_summaries(Vec::<MemberSummary>)`](crate::operation::list_members::ListMembersOutput::member_summaries): <p>The list of members returned by the ListMembers operation.</p>
-    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
+                            /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
     pub fn list_members(&self) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
-        crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

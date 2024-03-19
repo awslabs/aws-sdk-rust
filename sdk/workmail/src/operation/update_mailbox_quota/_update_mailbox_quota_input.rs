@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMailboxQuotaInput {
+pub struct UpdateMailboxQuotaInput  {
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
@@ -19,9 +19,9 @@ pub struct UpdateMailboxQuotaInput {
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
     pub mailbox_quota: ::std::option::Option<i32>,
 }
-impl UpdateMailboxQuotaInput {
+impl  UpdateMailboxQuotaInput  {
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
@@ -34,7 +34,7 @@ impl UpdateMailboxQuotaInput {
     /// <li>
     /// <p>User name: user</p></li>
     /// </ul>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
@@ -66,8 +66,7 @@ impl UpdateMailboxQuotaInputBuilder {
     }
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl UpdateMailboxQuotaInputBuilder {
     /// <p>User name: user</p></li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
     /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
@@ -123,22 +121,24 @@ impl UpdateMailboxQuotaInputBuilder {
     }
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
     pub fn set_mailbox_quota(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mailbox_quota = input;
-        self
+        self.mailbox_quota = input; self
     }
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
     pub fn get_mailbox_quota(&self) -> &::std::option::Option<i32> {
         &self.mailbox_quota
     }
     /// Consumes the builder and constructs a [`UpdateMailboxQuotaInput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput {
-            organization_id: self.organization_id,
-            user_id: self.user_id,
-            mailbox_quota: self.mailbox_quota,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput {
+                organization_id: self.organization_id
+                ,
+                user_id: self.user_id
+                ,
+                mailbox_quota: self.mailbox_quota
+                ,
+            }
+        )
     }
 }
+

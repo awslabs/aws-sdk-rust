@@ -3,9 +3,9 @@
 /// <p>Information about a replica of a DynamoDB table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDynamoDbTableReplica {
+pub struct AwsDynamoDbTableReplica  {
     /// <p>List of global secondary indexes for the replica.</p>
-    pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>,
+    pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec::<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>,
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
@@ -29,23 +29,24 @@ pub struct AwsDynamoDbTableReplica {
     /// <p>Detailed information about the replica status.</p>
     pub replica_status_description: ::std::option::Option<::std::string::String>,
 }
-impl AwsDynamoDbTableReplica {
+impl  AwsDynamoDbTableReplica  {
     /// <p>List of global secondary indexes for the replica.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
-    pub fn global_secondary_indexes(&self) -> &[crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex] {
-        self.global_secondary_indexes.as_deref().unwrap_or_default()
+    pub fn global_secondary_indexes(&self) -> & [crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex] {
+        self.global_secondary_indexes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
-    pub fn kms_master_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_master_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_master_key_id.as_deref()
     }
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
-    pub fn provisioned_throughput_override(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
+    pub fn provisioned_throughput_override(&self) -> ::std::option::Option<& crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
     /// <p>The name of the Region where the replica is located.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
@@ -61,11 +62,11 @@ impl AwsDynamoDbTableReplica {
     /// <li>
     /// <p><code>UPDATING</code></p></li>
     /// </ul>
-    pub fn replica_status(&self) -> ::std::option::Option<&str> {
+    pub fn replica_status(&self) -> ::std::option::Option<& str> {
         self.replica_status.as_deref()
     }
     /// <p>Detailed information about the replica status.</p>
-    pub fn replica_status_description(&self) -> ::std::option::Option<&str> {
+    pub fn replica_status_description(&self) -> ::std::option::Option<& str> {
         self.replica_status_description.as_deref()
     }
 }
@@ -80,7 +81,7 @@ impl AwsDynamoDbTableReplica {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableReplicaBuilder {
-    pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>,
+    pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec::<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_throughput_override: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -95,20 +96,16 @@ impl AwsDynamoDbTableReplicaBuilder {
     /// <p>List of global secondary indexes for the replica.</p>
     pub fn global_secondary_indexes(mut self, input: crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex) -> Self {
         let mut v = self.global_secondary_indexes.unwrap_or_default();
-        v.push(input);
-        self.global_secondary_indexes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.global_secondary_indexes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of global secondary indexes for the replica.</p>
-    pub fn set_global_secondary_indexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>,
-    ) -> Self {
-        self.global_secondary_indexes = input;
-        self
+    pub fn set_global_secondary_indexes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>>) -> Self {
+        self.global_secondary_indexes = input; self
     }
     /// <p>List of global secondary indexes for the replica.</p>
-    pub fn get_global_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>> {
+    pub fn get_global_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>> {
         &self.global_secondary_indexes
     }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
@@ -118,8 +115,7 @@ impl AwsDynamoDbTableReplicaBuilder {
     }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
     pub fn set_kms_master_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_master_key_id = input;
-        self
+        self.kms_master_key_id = input; self
     }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
     pub fn get_kms_master_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,12 +127,8 @@ impl AwsDynamoDbTableReplicaBuilder {
         self
     }
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
-    pub fn set_provisioned_throughput_override(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
-    ) -> Self {
-        self.provisioned_throughput_override = input;
-        self
+    pub fn set_provisioned_throughput_override(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>) -> Self {
+        self.provisioned_throughput_override = input; self
     }
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
     pub fn get_provisioned_throughput_override(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
@@ -149,8 +141,7 @@ impl AwsDynamoDbTableReplicaBuilder {
     }
     /// <p>The name of the Region where the replica is located.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The name of the Region where the replica is located.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +178,7 @@ impl AwsDynamoDbTableReplicaBuilder {
     /// <p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn set_replica_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_status = input;
-        self
+        self.replica_status = input; self
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
@@ -213,8 +203,7 @@ impl AwsDynamoDbTableReplicaBuilder {
     }
     /// <p>Detailed information about the replica status.</p>
     pub fn set_replica_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replica_status_description = input;
-        self
+        self.replica_status_description = input; self
     }
     /// <p>Detailed information about the replica status.</p>
     pub fn get_replica_status_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,12 +212,19 @@ impl AwsDynamoDbTableReplicaBuilder {
     /// Consumes the builder and constructs a [`AwsDynamoDbTableReplica`](crate::types::AwsDynamoDbTableReplica).
     pub fn build(self) -> crate::types::AwsDynamoDbTableReplica {
         crate::types::AwsDynamoDbTableReplica {
-            global_secondary_indexes: self.global_secondary_indexes,
-            kms_master_key_id: self.kms_master_key_id,
-            provisioned_throughput_override: self.provisioned_throughput_override,
-            region_name: self.region_name,
-            replica_status: self.replica_status,
-            replica_status_description: self.replica_status_description,
+            global_secondary_indexes: self.global_secondary_indexes
+            ,
+            kms_master_key_id: self.kms_master_key_id
+            ,
+            provisioned_throughput_override: self.provisioned_throughput_override
+            ,
+            region_name: self.region_name
+            ,
+            replica_status: self.replica_status
+            ,
+            replica_status_description: self.replica_status_description
+            ,
         }
     }
 }
+

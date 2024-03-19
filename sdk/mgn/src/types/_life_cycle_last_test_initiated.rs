@@ -3,19 +3,19 @@
 /// <p>Lifecycle last Test initiated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifeCycleLastTestInitiated {
+pub struct LifeCycleLastTestInitiated  {
     /// <p>Lifecycle last Test initiated API call date and time.</p>
     pub api_call_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle last Test initiated Job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl LifeCycleLastTestInitiated {
+impl  LifeCycleLastTestInitiated  {
     /// <p>Lifecycle last Test initiated API call date and time.</p>
-    pub fn api_call_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> ::std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
     /// <p>Lifecycle last Test initiated Job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LifeCycleLastTestInitiatedBuilder {
     }
     /// <p>Lifecycle last Test initiated API call date and time.</p>
     pub fn set_api_call_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_call_date_time = input;
-        self
+        self.api_call_date_time = input; self
     }
     /// <p>Lifecycle last Test initiated API call date and time.</p>
     pub fn get_api_call_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl LifeCycleLastTestInitiatedBuilder {
     }
     /// <p>Lifecycle last Test initiated Job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Lifecycle last Test initiated Job ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LifeCycleLastTestInitiatedBuilder {
     /// Consumes the builder and constructs a [`LifeCycleLastTestInitiated`](crate::types::LifeCycleLastTestInitiated).
     pub fn build(self) -> crate::types::LifeCycleLastTestInitiated {
         crate::types::LifeCycleLastTestInitiated {
-            api_call_date_time: self.api_call_date_time,
-            job_id: self.job_id,
+            api_call_date_time: self.api_call_date_time
+            ,
+            job_id: self.job_id
+            ,
         }
     }
 }
+
